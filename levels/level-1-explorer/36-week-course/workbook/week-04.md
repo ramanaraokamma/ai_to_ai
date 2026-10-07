@@ -362,8 +362,8 @@ ONE ROW = ONE FISH
   the box where "stripe" meets "length_cm" = one CELL, meaning "stripe is 6 cm long"
 
   CAN answer:    which fish is longest?
-  CANNOT answer: how many fish are in the big tank in total? (well - you can, by
-                 counting rows! Try: how heavy is the big tank?)
+  CANNOT answer: how heavy is the big tank's fish in total? (there is no weight
+                 column - nobody wrote it down)
   Row unit I rejected: one row = one tank. Then a fish has nowhere to put its length.
 ```
 

@@ -775,9 +775,9 @@ ask **"which card taught you that?"** and let them go hunting for a card that is
   more examples changed which rule was correct — and it previews Week 15 exactly.
 - **Two rules, one deck.** Ask them to find a *second* rule that also gets 8 out of 8, different from
   their first. (Feel and smell both work.) Then ask: **"Which one would you trust more on a mango you
-  can only see in a photo?"** Answer: feel, because you can't smell a photo — and that is a Week 12
-  idea (which features are actually available) arriving five months early, entirely on their own
-  reasoning.
+  can only see in a photo?"** Answer: neither — you can't feel a photo or smell one, and the only clue
+  a photo shows is colour, which scored 4 out of 8. That is a Week 12 idea (which features are actually
+  available) arriving five months early, entirely on their own reasoning.
 - **Write the rule as if-then.** Convert their sentence into the Week 1 format:
   `IF feel is not hard AND smell is sweet THEN ripe`. Then ask the killer: **"You just wrote it as a
   rule. So could a person have written this rule without the cards?"** (For mangoes — yes, probably.

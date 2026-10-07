@@ -49,7 +49,7 @@ You said the second one. Everyone says the second one. And here is the part that
 
 Two. Out of eleven. The model file and the app. The other nine are paper, cardboard and pencil.
 
-That ratio is not a joke about school projects. **That is the actual job.** In a real company, the model is roughly a fifth of the work. The rest is: writing down what problem you're solving, writing down where your data came from and who said yes, hiding some data before you train so you can measure honestly, measuring honestly, finding out who your system fails, and being able to explain all of that to a person who wasn't there.
+That ratio is not a joke about school projects. **That is the actual job.** In a real company, the model is often a small part of the work. The rest is: writing down what problem you're solving, writing down where your data came from and who said yes, hiding some data before you train so you can measure honestly, measuring honestly, finding out who your system fails, and being able to explain all of that to a person who wasn't there.
 
 This week you build the first half of that. Next week, the second half.
 
@@ -229,7 +229,7 @@ You only need to read two things off it:
 
 That second reading is what makes a booth good. Anyone can say "75%". Almost nobody says:
 
-> *"And the 25% it gets wrong is nearly all landfill being called recycling — shiny landfill things look like cans to it."*
+> *"And the biggest single chunk of the 25% it gets wrong is landfill being called recycling — my guess is that shiny landfill things look like cans to it, and next I'll test that guess."*
 
 That sentence tells a visitor what to hold up to break it, what photos would fix it, and that you actually looked.
 
@@ -326,7 +326,7 @@ He is in a hurry, so he drags **all 200** into Teachable Machine, trains, and th
    baseline 25%  →  "gain of 70 percentage points!"
 ```
 
-Ninety-five percent. He is thrilled. And that number is **worth nothing**, because every one of those 40 photos trained the model. A machine that had done nothing but memorise all 200 images would also score about 95% on that test. The score cannot tell "learned what a cricket ball looks like" apart from "recognised photo number 118."
+Ninety-five percent. He is thrilled. And that number is **worth nothing**, because every one of those 40 photos trained the model. A machine that had done nothing but memorise all 200 images would score 95% or higher on that test (a perfect memoriser would get 100%). The score cannot tell "learned what a cricket ball looks like" apart from "recognised photo number 118."
 
 > **A measurement that can't tell success from failure is not a measurement.**
 

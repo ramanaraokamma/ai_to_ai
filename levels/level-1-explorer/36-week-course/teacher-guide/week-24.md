@@ -70,7 +70,7 @@ One small photo, 150,528 whole numbers. And how many colours can a single pixel 
 ```
 
 Sixteen point seven million. When a television is advertised as "16.7 million colours", that is not a
-boast — it is just 256 cubed, and it has been true of essentially every screen for thirty years.
+boast — it is just 256 cubed, and it has been the standard for ordinary screens for about thirty years.
 
 ### The eight triples worth memorising
 
@@ -163,8 +163,9 @@ Here is the whole mechanism, and it is just addition and division:
 A 12 × 12 grid has 36 such blocks, so it becomes a 6 × 6 grid: **144 numbers become 36**. Do it
 again and 36 become 9. Each step throws away three quarters of the numbers.
 
-This is not a hypothetical. It is exactly what Teachable Machine did to every photo your student
-uploaded in Week 17, on the way down from 12 megapixels to 224 × 224.
+This is not a hypothetical. Teachable Machine shrank every photo your student uploaded in Week 17
+from 12 megapixels down to 224 × 224. It does not use neat 2 × 2 blocks, but the principle is identical:
+many numbers become few, and the rest are thrown away.
 
 ![What downsampling deletes, step by step](../figures/fig-w24-4-face-three-resolutions.svg)
 *Figure 24.4 — The same face at 24 × 24, 12 × 12 and 6 × 6, each step made by averaging 2 × 2 blocks. Circled at each stage: the specific feature that has just stopped existing.*
@@ -333,7 +334,7 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 > *(Take the guess. Most people say one, or "none, it's white", or "loads".)*
 >
 > "Three. That's the answer. Red, green and blue. There is no white lamp in there at all. There
-> never has been, in any screen you have ever looked at. White is what you get when all three are on
+> never has been, in almost any screen you have ever looked at. White is what you get when all three are on
 > at once and your eye can't tell them apart.
 >
 > Here — look."
@@ -733,7 +734,8 @@ Because screens are built to match your **eye**, not your paint set. The back of
 kinds of colour detector, and they are most sensitive to reddish light, greenish light and bluish
 light. If you build a screen with lamps at those three, you can trigger your eye's three detectors in
 any combination, and that is enough to make you see essentially any colour. Red, yellow and blue is
-the right set for *paint*, which works by taking light away. Different job, different primaries.
+the set art lessons teach for *paint*, which works by taking light away (printers actually use cyan,
+magenta and yellow). Different job, different primaries.
 
 **"Is there a black lamp?"**
 No, and there cannot be. Black is not a kind of light; it is the *absence* of light. A screen makes
@@ -765,8 +767,8 @@ original, and that distinction matters enormously if anyone is going to use the 
 **"If we can't see 16.7 million colours, why bother storing that many?"**
 Because you cannot see the *steps*. If a screen only had, say, 32 levels of red, a smooth sunset
 would come out as visible stripes — and you would notice that instantly. 256 levels per channel is
-comfortably more than anyone can distinguish, which is exactly the point: the steps are invisible, so
-the sky looks smooth. It is chosen to be more than enough, not to be impressive.
+close to what most people can tell apart in everyday pictures, so the steps are nearly invisible and
+the sky looks smooth. (In very smooth, dark gradients you can sometimes still spot faint bands, which is why some screens use more levels.) It is chosen to be enough, not to be impressive.
 
 **"Why do we divide by 4 and not something else?"**
 Because a 2 × 2 block has four numbers in it, and an average is "add them all up and divide by how
@@ -792,7 +794,7 @@ a gap in the science yet; it may be a permanent one.
 | They insist **red + green = brown** and will not budge. | They are right about paint, and thirteen art lessons say so. Being told "no" just makes them dig in. | Never say they are wrong. Say: *"You are completely right about paint. I'm talking about lamps, and they work backwards."* Then get physical — magnifier on the screen, or two coloured torch beams overlapping on a white wall, or Figure 24.6 drawn big. This needs a demonstration, not a sentence. |
 | They treat each pixel as being **red *or* green *or* blue**. | "Three colours" is easy to hear as "pick one of three". | Point at one single pixel in Figure 24.1 and read its three numbers out loud: *"this one pixel has a red number AND a green number AND a blue number. All three. Always."* Then ask them to read out a different pixel's three numbers themselves. |
 | Block averages come out **wrong by a factor of 2** — they add two numbers instead of four. | They average the top pair, or the left pair, and forget the block is 2 × 2. | Prevention: make them draw the heavy block borders on the 12 × 12 *before* any arithmetic. Cure: point at a block and say "how many squares are in there?" Then have them circle the four numbers before adding. |
-| A decimal appears (223.25, 127.5) and everything **stops**. | They expect grid numbers to be whole, and they are right that pixels must be — so the decimal feels like an error. | Announce the rule before it happens: *exact answer first, then round to the nearest whole number, .5 rounds up.* Add the honest reason: a pixel must hold a whole number, so real software rounds too, exactly like this. |
+| A decimal appears (223.25, 127.5) and everything **stops**. | They expect grid numbers to be whole, and they are right that pixels must be — so the decimal feels like an error. | Announce the rule before it happens: *exact answer first, then round to the nearest whole number, .5 rounds up.* Add the honest reason: a pixel must hold a whole number, so real software has to end with whole numbers too (some rounds, some chops the decimal off; the idea is the same). |
 | They shrink the grid and conclude **"nothing much was lost, it still looks like a T"**. | At 6 × 6 a big fat letter often *does* survive, so the conclusion is reasonable and the lesson seems to fail. | Do not argue. Go to 3 × 3, which always kills it. And in the meantime redirect from "can I still read it" to "which specific squares changed": the crossbar going from 0 to 128 is a real, nameable loss even though the letter survives. |
 | They believe **"a computer could get it back"**. | Deference to computers. It feels like a limitation of pencils, not of arithmetic. | Do not explain — make them do the 80 exercise. Get *them* to produce three different blocks averaging 80. Once they have written all three with their own hand, the belief cannot survive. Then add: "a computer would have exactly these three options and no way to choose." |
 | Last week's grid has been **lost or folded into confetti**. | It is a loose sheet of graph paper in the life of an 11-year-old. | Use the letter-T grid printed in the Answer Key below, handed over as "here's one I made earlier". Do not spend lesson time redrawing. Then, quietly, start a folder. |
@@ -1133,7 +1135,7 @@ block-column 3, covering image rows 3–4 and columns 5–6.
 
 **A5.** Grid **A** (0, 0 / 255, 255) = **blue** channel. Grid **B** (255, 255 / 0, 255) = **red** channel. Grid **C** (0, 255 / 0, 255) = **green** channel. The yellow pixel is **(255, 255, 0)**. The method is to write the four colours as triples, then read the first numbers (255, 255, 0, 255 = grid B, red), the second (0, 255, 0, 255 = grid C, green) and the third (0, 0, 255, 255 = grid A, blue).
 (e) The giveaway for grid A is the **blue pixel** (bottom-left): the only channel where the bottom-left is 255 while the top-left is 0.
-(f) The **green channel (grid C)**: 0 for the **red** pixel and the **blue** pixel, which use no green. Grid A (blue channel) also has exactly two 0s (the red and yellow pixels), so that answer is correct if the two pixels are named; the red channel has only one 0.
+(f) The **green channel (grid C)**: 0 for the **red** pixel and the **blue** pixel, which use no green. Grid A (blue channel) also has exactly two 0s (the red and yellow pixels), so either grid is correct if the two pixels are named; the red channel has only one 0.
 
 **A6.**
 
@@ -1201,7 +1203,7 @@ Both are paragraphs, so mark against the ingredients rather than the wording.
 
 **T1 — full marks needs:** a definition of both words (recovering = getting back what was there; generating = producing something that could plausibly have been there) · the arithmetic reason (many originals, one number, so nothing can pick the true one) · and a **named** situation with real consequences, such as a sharpened CCTV face used to accuse someone or an invented number plate used for a fine. Best answers notice the errors are not evenly spread: the app is least reliable for whoever is least typical of its training photos.
 
-**T2 — full marks needs:** that the eye detects **steps or joins** between nearly identical shades rather than absolute values · that 32 levels per channel would show visible **banding** (stripes in a smooth sunset) · and that 256 was chosen as "comfortably more than enough", helped by the fact that one byte holds exactly 256 values.
+**T2 — full marks needs:** that the eye detects **steps or joins** between nearly identical shades rather than absolute values · that 32 levels per channel would show visible **banding** (stripes in a smooth sunset) · and that 256 was chosen as "close to or just beyond what the eye can tell apart in everyday pictures", helped by the fact that one byte holds exactly 256 values.
 
 ### Workbook · Build It, Part 1 — colour by numbers, both directions
 
@@ -1253,7 +1255,7 @@ else is either four 255s or a straightforward repeat):
 
 *Marking note:* the sixteen blocks that are four identical 255s (B31, B32, B35, B36, B41, B42, B45, B46, B51, B52, B55, B56, B61, B62, B65, B66; count them in the 6 × 6 grid above) may be written straight down with no
 working. That is not a shortcut being tolerated; it is correct reasoning, and a student who *notices*
-it and says why should be credited for it. *(The workbook's own Answers section says "20 of the 36"; counting the grid gives 16, so accept 16. A student who writes 20 has probably counted the 128 and 223 blocks as 255s.)*
+it and says why should be credited for it. *(Counting the grid gives 16. A student who writes 20 has probably counted the 128 and 223 blocks as 255s.)*
 
 ### Workbook · Build It, Part 3 — what was lost
 

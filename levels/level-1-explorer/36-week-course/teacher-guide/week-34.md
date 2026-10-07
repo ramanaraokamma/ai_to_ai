@@ -45,11 +45,11 @@ By the end of today the student can:
 
 ### The one-paragraph version
 
-Most people think an AI project *is* the model. It isn't. In a real company the model is roughly
-20% of the work. The other 80% is: writing down what problem you are solving, writing down where
+Most people think an AI project *is* the model. It isn't. In a real company the model is often a
+small part of the work. The rest is: writing down what problem you are solving, writing down where
 your data came from and who said yes, hiding some data before you train so you can measure
 honestly, measuring honestly, finding out who your system fails, and being able to explain all of
-that to a person who was not there. **Today the student builds the first half of that 80%.**
+that to a person who was not there. **Today the student builds the first half of that rest.**
 
 ### Why the paperwork is not busywork
 
@@ -150,11 +150,11 @@ Two things to read off it, and only two. That is all you need today:
    and "what it said" agree. Add them up, divide by the total, that is the accuracy.
 2. **The off-diagonal boxes tell you the story.** In Figure 34.3, the landfill row reads 3, 1, 6, 0.
    The model got 6 of 10 landfill photos right, and it called **three of them recycling**. That is
-   not "the model is a bit wrong". That is "shiny landfill things look like cans to it", which
-   points straight at what photos to take next.
+   not "the model is a bit wrong". It is a lead: perhaps shiny landfill things look like cans to it
+   (a guess to test, not a fact), which points straight at what photos to take next.
 
 That second reading is the thing that makes a booth good. Anyone can say "75%". Almost nobody says
-"and the 25% it gets wrong is nearly all landfill being called recycling."
+"and the biggest single chunk of the 25% it gets wrong is landfill being called recycling."
 
 ### The two misconceptions you will meet today
 
@@ -877,7 +877,7 @@ mark against the checklists.
 |---|---|
 | **B1** | (i) **"Out of how many?"** (19/20 and 950/1000 are different claims.) (ii) **"What's the baseline?"** (95% is impressive against 25%, worthless against 94%.) |
 | **B2** | 18/24: 24 × 0.7 = 16.8 ; 18 − 16.8 = 1.2 ; 1.2 ÷ 24 = 0.05 ; 0.7 + 0.05 = **0.75 = 75%** (check: ÷ 6 → 3/4).<br>33/60: 60 × 0.5 = 30 ; 33 − 30 = 3 ; 3 ÷ 60 = 0.05 ; **0.55 = 55%** (check: ÷ 3 → 11/20).<br>7/8: 8 × 0.8 = 6.4 ; 7 − 6.4 = 0.6 ; 0.6 ÷ 8 = 0.075 ; **0.875 = 87.5%** |
-| **B3** | (a) (60 − 8) ÷ 60 = 52 ÷ 60 = **0.867 = 86.7%**. (b) **No**; the target is under 20%. (c) The model barely saw `other` (8 photos, about 6 left to train on), so it learns not to bet on it. A visitor holds up car keys and the booth confidently says `lunchbox`. The held-out `other` score rests on 2 photos. Fix: about 50 more `other` photos, retrain, and write the failed check on the data card. |
+| **B3** | (a) (60 − 8) ÷ 60 = 52 ÷ 60 = **0.867 = 86.7%**. (b) **No**; the target is under 20%. (c) The model barely saw `other` (8 photos, about 6 left to train on), so it is likely to learn not to bet on it. A visitor holds up car keys and the booth confidently says `lunchbox`. The held-out `other` score rests on 2 photos. Fix: about 50 more `other` photos, retrain, and write the failed check on the data card. |
 | **B4** | (a) Most likely: he tested on photos the model trained on (second: the test was tiny). (b) **"Were any of those test photos in the training pile?"** (or "out of how many?"). (c) 100% from 4 photos is 4 out of 4, and one lucky photo swings it 25 points; 30 out of 40 has forty written-down attempts behind it. The fraction shows the size of the test. |
 | **B5** | (a) 3 + 1 + 6 + 0 = **10**. (b) **6/10 · 0.6 · 60%**. (c) "My model is worst at **landfill** — 6 out of 10 — and when it gets landfill wrong it usually says **recycling** (3 of its 4 mistakes)." |
 
@@ -922,8 +922,8 @@ makes the column total 6, not 5.
 Both are paragraphs; mark the defence, not a verdict.
 
 - **T1 (more training or more held-out photos).** No right answer. A strong answer picks a side and
-  prices it. *For held-out:* with 40 photos one photo is 2.5 points, so 75% could really be about
-  72–78%; more held-out gives a more reliable measurement of a possibly worse model. *For training:*
+  prices it. *For held-out:* with 40 photos one photo is 2.5 points and a 75% score could easily be
+  10 or more points off the model's true accuracy either way (roughly 62–88%); more held-out gives a more reliable measurement of a possibly worse model. *For training:*
   40 per class is thin and a better model may be worth more than a sharper measurement. The best
   answers state the trade. A weak answer says "more training, obviously" with no number.
 - **T2 (same-day held-out photos).** Same table, tablecloth, lamp, hands and camera, so the model can

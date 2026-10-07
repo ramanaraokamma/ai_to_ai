@@ -35,9 +35,9 @@ Not the edge of a table. Not a line somebody drew. Just: the number was 200, and
 
 Now here is the strange bit, and it is the reason this whole week exists.
 
-Switch the big light off and use a torch instead. The wall gets darker. The door frame gets darker. **Everything** gets darker. So — is there still a jump at the door frame?
+Now switch on an extra lamp that shines on the whole wall. The wall gets brighter. The door frame gets brighter. **Everything** gets brighter. So — is there still a jump at the door frame?
 
-Yes. Every time. The brightness moved. The jump did not.
+Yes — in these numbers it is still exactly 160. The brightness moved. The jump did not.
 
 ![The jump survives; the brightness does not](../figures/fig-w25-6-jump-survives-lamp.svg)
 *Figure 25.1 — Room light: wall 200, frame 40, jump 160. Lamp on: wall 250, frame 90, jump still 160. Every single number moved. The jump did not budge.*
@@ -213,7 +213,7 @@ Both raw numbers moved. **The difference did not move at all.**
 
 And a difference is exactly what a filter computes. This is not luck. Add up the filter's nine weights: −1, 0, +1, −1, 0, +1, −1, 0, +1. **They add up to zero.** Add the same amount to every pixel in the patch and the filter's answer changes by (that amount) × 0 = nothing at all.
 
-> **A filter whose nine numbers add up to zero is completely blind to how bright the room is.**
+> **A filter whose nine numbers add up to zero is completely blind to a lamp that adds the same amount to every pixel.**
 
 That is the sentence this whole week is built on:
 
@@ -429,7 +429,7 @@ Those six were not picked at random. Every one is on the list for a reason:
 
 ### The honest bit at the end
 
-Our filter only found the **left and right** edges. Look at the *top* of the letter — the flat top edge where paper meets ink going downwards. Our filter is completely **blind** to it. It scores zero along the whole thing.
+Our filter only found the **left and right** edges. Look at the *top* of the letter — the flat top edge where paper meets ink going downwards. Our filter is completely **blind** to it. It scores zero all the way along it, between the two corners.
 
 Why? Because we only ever compared *left to right*. We never once compared *up to down*.
 
@@ -504,10 +504,10 @@ This matters more than it sounds. Next week your finished edge map will look fla
 
 ## 🌍 Where You've Seen This
 
-1. **The "sharpen" slider in any photo app.** That slider is literally a filter like today's, run over every pixel of your photo. Slide it up and you are asking a small grid of numbers to shout louder wherever it finds a change.
+1. **The "sharpen" slider in any photo app.** That slider uses a filter of the same kind as today's (a different set of nine numbers), run over every pixel of your photo. Slide it up and you are asking a small grid of numbers to shout louder wherever it finds a change.
 2. **Your own eyes in a dark room.** You cannot tell me the exact brightness of a wall. But you can find the door frame instantly, even by torchlight. Your visual system is a change-detector, not a light-meter — which is exactly the trade-off in this chapter.
 3. **A supermarket barcode scanner.** A barcode is nothing *but* edges — black-to-white jumps. The scanner does not care whether the shop is bright or dim, because it is reading the jumps, not the brightness.
-4. **A car with lane-keeping assist.** It finds the painted white line on the road. In sun, in rain, at dusk, under a bridge. Brightness is different in every one of those. The edge at the paint's boundary barely moves.
+4. **A car with lane-keeping assist.** It looks for the painted white line on the road. In sun, at dusk, under a bridge the brightness is different each time, but the jump at the paint's boundary stays much steadier than the brightness does. (It can still fail on faded paint, snow or glare, which is why the driver must keep watching the road.)
 5. **A cartoon or a manga drawing.** An artist draws the outlines and leaves the middles flat. That is an edge map made by a human hand — and it is enough for you to recognise a character instantly, which tells you how much information lives in the outline.
 6. **Scanning a page with your phone.** The document scanner finds the four edges of the paper and straightens it. It is hunting for long straight brightness jumps, then joining them into a rectangle.
 

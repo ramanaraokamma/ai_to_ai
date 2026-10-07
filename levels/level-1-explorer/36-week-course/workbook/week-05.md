@@ -525,7 +525,7 @@ For each one, **either** solution is right. **Naming the ambiguity is what earns
 | 1 | `sleep_h` = 19 | **IMPOSSIBLE** | 19 is outside the range 0–16. Blank it, note `was 19, impossible`. Do not guess 9 or 1.9 |
 | 2 | `screen_min` = 600 | **OUTLIER** | 600 is inside 0–1440, so it is legal — 10 hours is possible. **Keep it** and note why that day was different |
 | 3 | `bag_kg` = 0 | **IMPOSSIBLE** | Outside 0.1–12. An empty bag still weighs something. Blank it — **and strongly suspect somebody filled a blank with 0** |
-| 4 | `age_years` = 19 | **OUTLIER** | Inside 5–19, so legal. Unusual in a class of 11-year-olds, so **keep it and check it** — it may be a real repeated year, or a typo for 9 |
+| 4 | `age_years` = 19 | **OUTLIER** | Inside 5–19, so legal. Unusual in a class of 11-year-olds, so **keep it and check it** — it is far more likely a typo (for 9 or 11) than a real 19-year-old, but only a check can say |
 | 5 | `jump_cm` = 892 | **OUTLIER** | Inside 50–900, so legal by our own rule — but the world record is about 895 cm, so at a primary school this is almost certainly wrong. **Keep it, flag it hard, and go and ask.** This is the honest hard case: our range was too loose |
 | 6 | `temp_c` = 51 | **IMPOSSIBLE** | Outside −10 to 50. Blank it and note it |
 
@@ -552,6 +552,8 @@ For each one, **either** solution is right. **Naming the ambiguity is what earns
 **C. The exact duplicate is orders 1 and 8.** `Margherita · 12 · 1` and `Margherita · 12 · 1` — identical in every single column, spelling included.
 
 **D. Orders 6 and 7 look like a duplicate and are not.** `Veggie · 12 · 3` and `veggie · 12 · 3` have the same size and the same quantity — but **different spellings**, so they are not identical, and two different tables really could both have ordered three 12-inch veggies.
+
+*(Orders 1 and 2, and orders 2 and 8, differ only in capital letters and fit the same description, so accept either of them as an answer too.)*
 
 This is the trap and it cuts both ways:
 - To a **computer** they are not duplicates (the text differs), so a duplicate-checking program will miss them.

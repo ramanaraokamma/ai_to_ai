@@ -417,7 +417,7 @@ Draw a picture that would make a 9-year-old understand why nobody writes 258 rul
 ![Draw It frame for Week 10](../figures/fig-w10-11-draw-frame.svg)
 *Figure W10.3 — Your page.*
 
-> **What a good answer might look like:** a cartoon of a person at a desk with a rulebook that has grown taller than they are, and a speech bubble saying *"I've written 258 rules and it's still wrong."* Beside them, a second person calmly stacking photos into a crate labelled *5,000 examples, 50 minutes*, with a small sign underneath: *"but I can't tell you why it works."* Bottom boxes: **1,073,741,824** · *writing the rules, and knowing the reason* · *labelled examples, thousands of them.*
+> **What a good answer might look like:** a cartoon of a person at a desk with a rulebook that has grown taller than they are, and a speech bubble saying *"I've written 258 rules and it's still wrong."* Beside them, a second person calmly stacking photos into a crate labelled *300 examples, 50 minutes*, with a small sign underneath: *"but I can't tell you why it works."* Bottom boxes: **1,073,741,824** · *writing the rules, and knowing the reason* · *labelled examples, thousands of them.*
 >
 > A diagram works just as well: the doubling staircase with a tiny stick figure standing on step 8 looking up at step 30 disappearing off the top of the page.
 
@@ -533,7 +533,7 @@ So check 10 created:  1,024 - 512 = 512
 | Recognise a friend's voice | **learning** | You can do it instantly and cannot explain how. There is nothing to write down. |
 | Is a chess move legal | **rules** | The rules are complete, finite and published on two pages. |
 | Is this photo a cat | **learning** | You know a cat when you see one and cannot say how. Nothing your rules can talk about is actually in the photo. |
-| Drug dose below the safe maximum | **rules** | The limit comes from published trials. A 99.9% accurate model kills one patient per thousand; a comparison against a number is right by construction. |
+| Drug dose below the safe maximum | **rules** | The limit comes from published trials. A 99.9% accurate model is still wrong one time in a thousand, and a wrong dose can harm a patient; a comparison against a number is right by construction. |
 
 **What the rules answers have in common:** in every one, **the correct answer already exists in written form** — a law, a game's rulebook, a published safety limit. Learning can only ever make a fuzzy copy of something that is already exact. Use rules when somebody already wrote the answer down; use learning when the answer only lives in people's ability to recognise something without explaining it.
 

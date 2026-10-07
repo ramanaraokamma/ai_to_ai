@@ -173,7 +173,7 @@ This trade-off does not go away with better rules. It does not go away with mach
 | The words *precision* and *recall* | Level 2. The ideas are here; the vocabulary is not. Your vocabulary budget this week is already five words |
 | The phrase *confusion matrix* | You may say "grown-ups call this grid a confusion matrix" once if a student asks. Do not teach the term |
 | Rule explosion, "why not just add more rules" as a *counting* argument | Week 10, deliberately. Today they should *feel* that patching fails. Week 10 puts numbers on it |
-| Bias, and errors that fall unevenly on different groups of people | Week 31. If a student gets there on their own — "so the height rule is unfair to short adults" — praise it hard, write it on the parking lot, and say "that's Week 31, and you got there fourteen weeks early" |
+| Bias, and errors that fall unevenly on different groups of people | Week 31. If a student gets there on their own — "so the height rule is unfair to short adults" — praise it hard, write it on the parking lot, and say "that's Week 31, and you got there twenty-three weeks early" |
 | Probability, "60% likely to be spam" | Week 16 |
 
 ### If you have five spare minutes before class
@@ -337,7 +337,7 @@ THE EDGE CASE: 138 cm         ->  refused, and she was fine
 
 **Say this:**
 
-> "Look at rule 3. It says 'on time'. It *disagrees* with the answer we gave. And it never got a turn. Not outvoted — **never read.** The machine stopped three rungs above it.
+> "Look at rule 3. It says 'on time'. It *disagrees* with the answer we gave. And it never got a turn. Not outvoted — **never read.** The machine stopped two rungs above it.
 >
 > So three consequences, and they're all a bit unsettling.
 >
@@ -431,7 +431,7 @@ THE EDGE CASE: 138 cm         ->  refused, and she was fine
 | Ask | Hoping for | If they say something else |
 |---|---|---|
 | "Airport bag scanner. Which error would you rather?" | "A false alarm — search the bag" | If they say miss, ask what a miss means here. Once "a weapon on the plane" is said out loud they change their mind unprompted. |
-| "Your phone's face unlock. Which error would you rather?" | "A false alarm" — meaning it refuses *you* and you type your code | **This one is genuinely tricky and worth the time.** The flag here is "this is the owner". A miss means it fails to recognise you: annoying. A false alarm means it unlocks for your sibling: bad. So here you want to avoid the false alarm, which is the opposite of the spam answer. Same maths, opposite choice. |
+| "Your phone's face unlock. Which error would you rather?" | "A miss" — meaning it fails to recognise *you* and you type your code | **This one is genuinely tricky and worth the time.** The flag here is "this is the owner". A miss means it fails to recognise you: annoying. A false alarm means it unlocks for your sibling: bad. So here you would rather have the miss and avoid the false alarm, which is the opposite of the spam answer. Same maths, opposite choice. |
 | "Can a system have zero false alarms and zero misses?" | "No" | If they say yes: "Show me. Set the threshold anywhere you like and I'll find you a message on the other side of it." |
 
 ---
@@ -1019,7 +1019,7 @@ DEFAULT: OTHERWISE                          THEN ham
 
 Re-scoring the ten training messages with the order `RULE 3 → RULE 1 → RULE 2 → DEFAULT`:
 
-Every answer stays the same. Message 4 and 5 already fired on Rule 3; messages 1, 2, 3 are all under 30 characters so Rule 3 doesn't touch them; all the hams are 21–23 characters. **Ten out of ten, again, with a different reason for two rows.**
+Every answer stays the same. Message 4 and 5 already fired on Rule 3; messages 1, 2, 3 are all under 30 characters so Rule 3 doesn't touch them; all the hams are 21–23 characters. **Ten out of ten, again, with exactly the same rule firing on every row.**
 
 The finding to lead a strong student to: **you cannot change an answer by reordering, because every rule in this book outputs the same verdict — spam.** Order only changes answers when rules disagree, and this rulebook contains no rule that says "ham". Ask them to add one — for example `IF contains "?" THEN ham` — and *then* reorder. Put the `?` rule at the top and B3 (`Free period tomorrow?`) flips from spam to ham, fixing a false alarm. Put it at the bottom and nothing changes at all. **Same rule, two positions, one useful and one dead.**
 
@@ -1141,7 +1141,7 @@ Each answer needs three parts: the sharpened rule, where the number came from, a
 **(c) `IF the photo is blurry THEN reject it`**
 
 > **Sharpened:** `IF the image is smaller than 400 × 400 pixels OR more than 60% of pixels are pure black or pure white THEN reject it`
-> **Where the numbers came from:** 400 × 400 is roughly the smallest size a face is recognisable at on a screen; the black/white check catches photos taken with the lens covered or straight into a light.
+> **Where the numbers came from:** 400 × 400 is about where a photo starts to look small on a laptop screen (a guess, not a standard); the black/white check catches photos taken with the lens covered or straight into a light.
 > **Edge case:** a deliberately high-contrast black-and-white photograph — an excellent photo, rejected by the second clause. **False alarm.**
 
 **(d) `IF the parcel is heavy THEN charge extra`**

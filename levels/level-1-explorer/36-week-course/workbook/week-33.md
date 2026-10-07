@@ -641,7 +641,7 @@ Read the two number columns together: **96 → 91.7% · 32 → 66.7% · 12 → 5
 |---|---|
 | "Don't use it in bad light" | "…naming anything in lamplight. It was right **4 times out of 12**, which is **33.3%**." |
 | "It's not perfect" | "…anything where a wrong answer costs something. Overall it was right **30 times out of 48**, which is **62.5%**." |
-| "Don't use it for important things" | "…deciding on your own. In the two worst conditions it was wrong more often than right — **33.3%** and **58.3%**. Check it yourself." |
+| "Don't use it for important things" | "…deciding on your own. In lamplight it was right only **33.3%** of the time, and on an odd background only **58.3%** — against 91.7% in daylight. Check it yourself." |
 
 Every rewrite must contain a **specific use** and a **number**. "Be careful" scores zero, because it warns nobody about anything in particular.
 
@@ -702,8 +702,8 @@ What people actually do is a **loop**, not a formula: test, look at the size of 
 
 **What you can and cannot claim from twelve photos per group:**
 
-- One photo changing side moves a group by 1/12, which is **8.3 points**. So a gap under about 9 points might be pure luck.
-- A **58-point** gap is far too big to be luck. Claim it.
+- One photo changing side moves a group by 1/12, which is **8.3 points**. So a gap of one to three photos (8 to 25 points) could easily be pure luck with groups this small.
+- A **58-point** gap (seven photos) is very unlikely to be luck. Claim it.
 - A **3-point** gap: claim nothing, go and take more photos.
 
 **The sentence that belongs on the poster:** *"Twelve photos per group, so this is a strong hint rather than a final number."* Writing that down is part of the audit, not an apology for it.

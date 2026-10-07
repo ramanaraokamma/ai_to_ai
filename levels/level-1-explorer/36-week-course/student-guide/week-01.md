@@ -161,7 +161,7 @@ Judgement is not an on/off switch. It is a slider. Some jobs sit right in the mi
 | Decide which video to show you next | Yes — depends on you, right now | ✅ |
 | Decide if this text message is spam | Yes — a marketing text splits people | ✅ |
 
-Two of those six could be AI jobs. The other four never will be, no matter how modern the box looks.
+Three of those six could be AI jobs. The other three never will be, no matter how modern the box looks.
 
 > **✅ Stop. Cover this page with your hand.**
 >
@@ -218,7 +218,7 @@ every one of those boxes.*
 
 **The real numbers:** that flowchart is four boxes. A person probably wrote it in about ten minutes,
 and the thermostat will do exactly those four boxes, in that order, roughly once a minute, until it
-is thrown away. If it runs for ten years that is about **5.2 million** trips round the loop and
+is thrown away. If it runs for ten years that is about **5.3 million** trips round the loop and
 **zero** new ideas.
 
 And rule-based systems have one genuinely brilliant property, which this course never sneers at:
@@ -359,7 +359,7 @@ Stop and answer it in your head before you read on. Most people get this wrong, 
 
 **Answer: Rule 2 fires.** The machine says **SOLD OUT** and returns the 20p.
 
-Did you say "ADD MORE"? About two out of three people do — because 20p is obviously not enough for
+Did you say "ADD MORE"? Many people do — because 20p is obviously not enough for
 45p chocolate, so Rule 3 feels right. Your answer was the *sensible* answer. The machine gives the
 *Rule 2* answer, because Rule 2 comes first and fires first.
 

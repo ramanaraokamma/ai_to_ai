@@ -138,7 +138,7 @@ Today's sheet does the same thing more subtly, and that subtlety is the lesson:
 up.*
 
 Overall 73.3%. Per class: spoon **100%**, toothbrush **80%**, comb **40%**. There is no class scoring
-73.3%. The average describes nobody — exactly like a class averaging 70% where half the room got 85%
+73.3%. The average describes nobody — exactly like a class averaging 70% where half the room got 100%
 and half got 40%.
 
 ### 5. Percentage versus percentage point — read this even if you skip everything else
@@ -412,7 +412,7 @@ were.*
 > to hide the spread — that's not a bug, that's what averages are for."
 >
 > "Imagine a class averages 70% on a test. Sounds fine. Then you look at the actual marks: half the
-> room got 85% and the other half got 40%. The average of 70% is completely true and completely
+> room got 100% and the other half got 40%. The average of 70% is completely true and completely
 > useless. It described **nobody in the room.**"
 >
 > "So we break the average open. For every class in your model, you work out the accuracy separately.
@@ -628,7 +628,7 @@ bottom: 11/15 = 0.7333 = 73.3%.
 > *(None of them. That's the answer, and it should feel slightly wrong.)*
 >
 > "None of them. The overall number describes **no class in this model.** Spoons are basically solved.
-> Combs are barely above the coin-toss line — blind guessing gets 33.3% and combs got 40%."
+> Combs are barely above the blind-guessing line — blind guessing gets 33.3% and combs got 40%."
 >
 > "And here's the thing to take away and never lose: the 73.3% was **honest**. Nobody cheated to get
 > it. It's just an average, and averages hide bodies. That's why you never, ever report one accuracy

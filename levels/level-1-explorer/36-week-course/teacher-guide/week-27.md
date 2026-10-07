@@ -120,7 +120,7 @@ a token that means *"a sentence ended here"*, which turns out to be enormously u
 **Decision 2 — does `Pizza` mean the same as `pizza`?**
 
 To a computer, `Pizza` and `pizza` are as different as `Pizza` and `banana`. Different letters,
-different word. So almost every real system **lowercases everything first**:
+different word. So many real systems **lowercase everything first**:
 
 ```
    "Pizza is great. I love pizza."
@@ -129,6 +129,7 @@ different word. So almost every real system **lowercases everything first**:
    with lowercasing:      pizza (2)               <- correctly counted as one word
 ```
 
+(Not every system does: many modern chatbots keep capital letters and accept the extra pieces.)
 But you pay for it. `Apple` the company and `apple` the fruit become identical. `Polish` from Poland
 and `polish` for shoes merge into one. **There is no free choice here — only a trade you should make
 deliberately.** We lowercase.
@@ -575,7 +576,7 @@ decision. Do not quiz them on the threads; the map is orientation, never assessm
 | "Why does the emoji get to be a token?" | "Because it means something." | If "because it isn't a word": that is the wrong reason for the right answer. Say: *"So does a full stop get to be a token? It isn't a word either."* Steer to **it carries meaning, so we count it**. |
 | "26 tokens but only 22 unique. Why the gap?" | "Because four things appeared twice." | If they say "because some are punctuation": no — punctuation are tokens too. Point at `pizza` in sentences 1 and 4. That fixes it in one move. |
 | "If I gave you a whole book, which number would grow faster?" | "The token count." | If "the unique count": ask *"how many brand-new words are on page 300 of a book?"* Almost none — it is `the` again. This is a strong extension question and worth two minutes if you have them. |
-| "Would a different person get 26 tokens?" | "Only if they used our rules." | If "yes, 26 is the answer": push. *"What if they glued the punctuation on?"* Then 26 drops to 17. Different rules, different number, neither wrong. |
+| "Would a different person get 26 tokens?" | "Only if they used our rules." | If "yes, 26 is the answer": push. *"What if they glued the punctuation on?"* Then 26 drops to 20. Different rules, different number, neither wrong. |
 
 ---
 
@@ -597,8 +598,8 @@ decision. Do not quiz them on the threads; the map is orientation, never assessm
 > Which is exactly what you did next to `pizza`. Twice, apparently.
 >
 > Next week you take that same pile of tokens and count something new: not how often each word turns
-> up, but **which word tends to follow which**. And that turns out to be almost the whole engine
-> behind the thing on your phone that finishes your sentences."
+> up, but **which word tends to follow which**. And that is the basic idea behind
+> the thing on your phone that finishes your sentences. Real phones use bigger, cleverer versions."
 
 **Do this:**
 
@@ -742,10 +743,10 @@ of thumb for English: about 4 characters per token, so 100 tokens is roughly 75 
 
 **"What about languages that don't put spaces between words?"**
 
-Great question, and this is exactly why sub-word pieces won. Chinese, Japanese and Thai are written
+Great question, and this is one of the reasons sub-word pieces are popular. Chinese, Japanese and Thai are written
 without spaces, so "split on spaces" produces one enormous token for the whole sentence. Sub-word
-tokenizing does not care about spaces at all — it just finds pieces that turn up a lot. That is a real
-reason the technique was adopted, not a side effect.
+tokenizing does not care about spaces at all — it just finds pieces that turn up a lot. That is one
+real reason the technique was adopted, alongside handling rare words and names.
 
 **"Does the machine know what the words mean?"**
 
@@ -1227,8 +1228,8 @@ appear two, four and two times.
 
 *If you had glued punctuation onto the words instead, how would the total change?* — The 9
 punctuation tokens vanish as separate pieces, so the total drops from 69 to 60. But you gain new
-look-alike words: `gate.` and `gate,` and plain `gate` become three separate entries instead of one
-with a count of 4. Fewer tokens, and less useful ones.
+look-alike words: `gate.` (2) and `gate,` (2) become two separate entries instead of one
+`gate` with a count of 4. Fewer tokens, and less useful ones.
 
 ### Part G — the student workbook, section by section (mark the homework from this)
 
@@ -1292,7 +1293,7 @@ have miscounted the repeats — have them list the repeats first, as the sheet s
 
 - **Part 1 — reflection sheet:** Part E above. The "weeks to go back to" line is copied from the sheet on the table, or **"nothing to go back to"** for a score of 16.
 - **Part 2 — their paragraph:** no fixed answer; mark the **method** against Part F. Rules written before chopping; tokens numbered as they go; the frequency table's "how many times" column must add up to the total tokens (**Step 5**) and the number of rows must equal the unique tokens. If the student used the fallback paragraph the answers are **69 tokens, 38 unique**, with the full table in Part F.
-- **Part 3 — Q1 and Q2:** the model answers are in Part F ("The two written questions"). For the fallback paragraph the most common token is `the` (9). In Q2 the strong point is that glued punctuation makes look-alike entries (`gate.` and `gate,` and `gate` instead of one `gate`) and throws away the sentence-end information. (Check the fallback paragraph by hand before you quote counts for the glued entries: `gate` appears four times, twice before a full stop and twice before a comma.)
+- **Part 3 — Q1 and Q2:** the model answers are in Part F ("The two written questions"). For the fallback paragraph the most common token is `the` (9). In Q2 the strong point is that glued punctuation makes look-alike entries (`gate.` (2) and `gate,` (2) instead of one `gate` (4)) and throws away the sentence-end information. (Check the fallback paragraph by hand before you quote counts for the glued entries: `gate` appears four times, twice before a full stop and twice before a comma.)
 - **Vocabulary boxes:** **corpus** — the pile of text you are learning from (a body of text); **token** — one piece of text after chopping, usually a word but punctuation and emoji count too; **tokenize** — to chop text into tokens following written rules. Any paraphrase that is in their own words is correct.
 
 **🎨 Draw It**
@@ -1337,7 +1338,7 @@ Not marked. Read the ticks against the quiz: a 😕 on "define corpus, token and
 Next week the tally marks arrive. Your student takes the paragraph they tokenized for homework and
 counts something new: not how often each word appears, but **which word tends to follow which**. Those
 counts go into a next-word table, and that table — built by hand, on paper, from about seventy tokens
-— is very nearly the entire engine behind the thing on a phone that finishes your sentences. The
+— is the basic idea behind the thing on a phone that finishes your sentences (real keyboards use bigger, cleverer versions). The
 hook is the best one in the course: type one word into a messaging app, tap the middle suggestion
 twenty times without thinking, and read the fluent nonsense you just produced. Nobody wrote that
 sentence.

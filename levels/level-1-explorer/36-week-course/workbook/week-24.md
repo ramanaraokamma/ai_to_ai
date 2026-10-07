@@ -111,7 +111,7 @@ Then two more from the same figure:
 
 ________________________________________________________________
 
-(f) One of the three grids contains a 0 in exactly **two** places. Which grid, and which two pixels?
+(f) Two of the three grids contain a 0 in exactly **two** places. Pick one: which grid, and which two pixels?
 
 ________________________________________________________________
 
@@ -488,7 +488,7 @@ Draw **one single colour pixel** pulled apart into its three numbers — big eno
 ![Draw it here: three grids stacked](../figures/fig-w24-12-draw-frame.svg)
 *Figure W24.3 — Your page.*
 
-> **What a good answer might look like:** on the left, one large square coloured orange, with three arrows coming out of it leading to three small labelled boxes: **R = 255**, **G = 140**, **B = 0**, each box shaded to show that value as a grey. A caption underneath: *"one pixel, three numbers, each 0–255."* On the right, a 2 × 2 block of four orange-ish squares with their R values written in — 255, 200, 180, 165 — a big arrow, and one new square holding **200**, with the working shown: *255 + 200 + 180 + 165 = 800, ÷ 4 = 200*. Underneath, one line: *"four numbers became one, and there are 8 million blocks that would give 200."*
+> **What a good answer might look like:** on the left, one large square coloured orange, with three arrows coming out of it leading to three small labelled boxes: **R = 255**, **G = 140**, **B = 0**, each box shaded to show that value as a grey. A caption underneath: *"one pixel, three numbers, each 0–255."* On the right, a 2 × 2 block of four orange-ish squares with their R values written in — 255, 200, 180, 165 — a big arrow, and one new square holding **200**, with the working shown: *255 + 200 + 180 + 165 = 800, ÷ 4 = 200*. Underneath, one line: *"four numbers became one, and there are about 1.8 million blocks that would give 200."*
 >
 > **What a weak answer looks like:** a rainbow, with the letters R, G and B written under it. There are no numbers, so nothing on the page can be checked, and a rainbow is not what RGB is — RGB is three lamps, not a spectrum. If your page has no number on it between 0 and 255, start again.
 
@@ -572,7 +572,7 @@ Now read the **first** number of each: 255, 255, 0, 255 — that is grid B, so B
 
 (e) The giveaway for grid A is the **blue pixel** (bottom-left). It is the only channel where the bottom-left cell is 255 while the top-left is 0. In the red channel the top-left is 255 (red uses full red); in the green channel it is 0 in both left-hand cells.
 
-(f) The **green channel (grid C)** has a 0 in exactly two places — the **red** pixel and the **blue** pixel, because neither of those uses any green. *(The blue channel also has two 0s — the red and yellow pixels — so "grid A" is an equally correct answer if you name the right two pixels. The red channel has only one 0.)*
+(f) The **green channel (grid C)** has a 0 in exactly two places — the **red** pixel and the **blue** pixel, because neither of those uses any green. *(The blue channel also has two 0s — the red and yellow pixels — so "grid A" is an equally correct answer if you name the right two pixels, and either grid earns the mark. The red channel has only one 0.)*
 
 **A6.**
 
@@ -602,7 +602,7 @@ Now read the **first** number of each: 255, 255, 0, 255 — that is grid B, so B
 | (c) | 192, 64, 255, 0 | 511 | 127.75 | **128** |
 | (d) | 255, 128, 192, 64 | 639 | 159.75 | **160** |
 
-**(a) needed no arithmetic.** If all four numbers are identical, the average is that number — averaging four copies of something cannot possibly change it. That is not a shortcut being tolerated, it is **correct reasoning**, and noticing it is worth credit. (It also saves you about twenty divisions in Part 2.)
+**(a) needed no arithmetic.** If all four numbers are identical, the average is that number — averaging four copies of something cannot possibly change it. That is not a shortcut being tolerated, it is **correct reasoning**, and noticing it is worth credit. (It also saves you about sixteen divisions in Part 2.)
 
 *Handy trick for the rest:* ÷ 4 is halve, then halve again. 1020 → 510 → 255.
 
@@ -670,7 +670,7 @@ Both give 160. So **no**, you cannot get the original back: the number does not 
 | 3 | (255, 140, 60) is far too bright to be brown — it is a light orange. Brown must have **nothing near 255** | about **(150, 75, 0)** |
 | 4 | (0, 0, 100) is a **dark** blue, not a pale one. "Pale" does not mean turning the colour down | about **(180, 220, 255)** — push R and G **up**, washing it towards white |
 
-**The deepest misunderstanding is number 4.** Faults 1, 2 and 3 are all about reading numbers carefully. Fault 4 is a wrong idea about how colour *works*: it assumes "paler" means "less", when on a screen paler means **more light in the other two channels.** Get that wrong and you cannot produce pink, cream, pale blue, lilac or any pastel at all — a whole third of the colour space is unreachable.
+**The deepest misunderstanding is number 4.** Faults 1, 2 and 3 are all about reading numbers carefully. Fault 4 is a wrong idea about how colour *works*: it assumes "paler" means "less", when on a screen paler means **more light in the other two channels.** Get that wrong and you cannot produce pink, cream, pale blue, lilac or any pastel at all — a large part of the colour space is unreachable.
 
 *(Fault 2 is a close second, and it is worth being kind about: (150, 75, 0) really is orange-shaped. The student just has not yet learned that brown **is** a dark orange.)*
 
@@ -728,9 +728,9 @@ Both give 160. So **no**, you cannot get the original back: the number does not 
 >
 > With only 32 levels per channel, a smooth sunset would come out as visible stripes — bands of flat colour with hard lines between them, where the real sky changes gradually. You would notice that instantly, and it would look broken. The eye is very bad at judging *which* grey a patch is on its own, and very good at spotting a **join** between two nearly identical greys sitting side by side. So the number of levels you need is set by that second ability, not the first.
 >
-> So 256 was not chosen to be impressive. It was chosen to be **comfortably more than enough**, so that the steps disappear and the sky looks smooth — and because 256 values is exactly what one byte holds, which makes it free. The engineering and the eye happened to agree.
+> So 256 was not chosen to be impressive. It was chosen to be **enough for everyday pictures**, so that the steps nearly disappear and the sky looks smooth (in very smooth, dark gradients faint bands can still show, which is why some screens use more levels) — and because 256 values is exactly what one byte holds, which makes it free. The engineering and the eye happened to agree.
 
-*Full marks needs:* that the eye detects **steps/joins** rather than absolute values · that too few levels produces visible banding · and that 256 is "more than enough on purpose", helped by the byte.
+*Full marks needs:* that the eye detects **steps/joins** rather than absolute values · that too few levels produces visible banding · and that 256 is "enough on purpose", helped by the byte.
 
 ---
 
@@ -823,7 +823,7 @@ Both give 160. So **no**, you cannot get the original back: the number does not 
    R6   255  255  144  144  255  255
 ```
 
-**Blocks that were four identical 255s: 20 of the 36.** You may write those straight down with no working — and a student who *notices* that and says why should be credited for it.
+**Blocks that were four identical 255s: 16 of the 36.** You may write those straight down with no working — and a student who *notices* that and says why should be credited for it.
 
 **The four blocks worth showing full working for** (they are the only genuinely interesting ones):
 

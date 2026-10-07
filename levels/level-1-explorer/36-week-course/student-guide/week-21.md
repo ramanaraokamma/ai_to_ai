@@ -517,7 +517,7 @@ Green pen. Shade the three cells where truth and guess match: top-left, middle, 
 
 **Step 4 — say every mistake out loud (6 min).**
 
-There are **four** off-diagonal cells with numbers in them. Each becomes a full sentence, in the shape *"N of the Xs were called Y."*
+There are **three** off-diagonal cells with numbers in them (they hold four mistakes between them: 1 + 1 + 2). Each becomes a full sentence, in the shape *"N of the Xs were called Y."*
 
 ```
    true toothbrush → said comb,   1   →  "one toothbrush was called a comb."
@@ -562,7 +562,7 @@ Written down, dated, initialled: **which cell of *your* grid will be worst next 
 - [ ] Fifteen marks in it, and a tick beside all fifteen sheet rows
 - [ ] The diagonal shaded green and summed to 11, **written down**
 - [ ] Both checks written as lines on the page
-- [ ] All four off-diagonal cells said out loud as sentences
+- [ ] All three non-zero off-diagonal cells said out loud as sentences
 - [ ] The biggest one circled in red
 - [ ] The column reading done: comb was said only 3 times
 - [ ] A written, dated prediction about your own model

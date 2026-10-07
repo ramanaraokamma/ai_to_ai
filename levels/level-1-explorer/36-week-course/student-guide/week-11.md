@@ -119,7 +119,7 @@ That's all it means. But it matters for one genuinely startling reason:
 
 > **A machine can only ever answer with a class you gave it.**
 
-Build a dog-or-cat machine and show it a rabbit. It will say "cat". Confidently. Every single time, forever. Show a three-class fruit model a lime and it will say "orange" and never once hesitate.
+Build a dog-or-cat machine and show it a rabbit. It will say "dog" or "cat" — it has no other answer to give, and nothing in the machine can say "that's a rabbit". Show a three-class fruit model a lime and it will name an apple, an orange or a banana.
 
 It is not being stupid. **There is no rabbit box, and you are the one who didn't make one.**
 
@@ -393,7 +393,7 @@ A real mismatch, and the fix:
 
 **What "finished" looks like:** the label question written first · four instructions in your own handwriting, each with a tool-or-list, a unit and a rounding · twelve measurements, no blanks · at least **three of four** re-measurements matching · every failed instruction rewritten and re-tested.
 
-> **💡 Try this:** two of your three spoon rows say `1` for parts and `silver` for colour. Every row identical. Is that column doing anything for you at all? Hold that thought — next week you'll settle it with numbers instead of opinions.
+> **💡 Try this:** all three of your spoon rows say `1` for parts and `silver` for colour. Every row identical. Is that column doing anything for you at all? Hold that thought — next week you'll settle it with numbers instead of opinions.
 
 ---
 
@@ -439,7 +439,7 @@ Use this rule mechanically, on yourself: **if you cannot write the measuring ins
 |---|---|
 | "`animal` is the label because it's on the end." | "`animal` is the label because it's the column I chose to cover up. Ask a different question and a different column becomes the label." |
 
-Test yourself: take the dog table and cover `mass_g` instead. Now you're asking "how heavy is a brown, four-pawed animal with 14 cm ears likely to be?" — and `animal` has quietly become just another feature.
+Test yourself: take the dog table and cover `mass_g` instead. Now you're asking "how heavy is a brown animal with 14 cm ears and 2 white paws likely to be?" — and `animal` has quietly become just another feature.
 
 ### Trick 4 — "This isn't AI, it's just measuring stuff"
 
@@ -447,7 +447,7 @@ Test yourself: take the dog table and cover `mass_g` instead. Now you're asking 
 |---|---|
 | "Measuring spoons is not artificial intelligence." | "Correct, and in Week 17 you'll train a real model — and the thing that decides whether it works won't be the model. It'll be this table." |
 
-Every professional who builds these systems will tell you the same thing: **the table decides everything.** A brilliant model on a badly measured table loses to a simple model on an honest one, every single time.
+Every professional who builds these systems will tell you the same thing: **the table decides everything.** A brilliant model on a badly measured table usually loses to a simple model on an honest one.
 
 ---
 
@@ -494,7 +494,7 @@ of the year.*
 - **A machine never meets the real thing. It only ever meets the row.** Everything you didn't measure does not exist for it.
 - **A feature is one *measured* description.** No measurement, no feature — not a weak one, none.
 - **The label is the answer you want back**, and it's whichever column you decided to cover up. Change the question, change the label.
-- **A class is one allowed answer.** A machine can only ever reply with a class you gave it, so a dog-or-cat machine will call a rabbit a cat, forever.
+- **A class is one allowed answer.** A machine can only ever reply with a class you gave it, so a dog-or-cat machine will call a rabbit a dog or a cat — never a rabbit.
 - **A measuring instruction names a tool (or a fixed list), a unit, and a rounding** — and the only test that counts is whether a different person gets your number.
 - **One row = one example. Every row measured the same way. Say which column is the label.**
 

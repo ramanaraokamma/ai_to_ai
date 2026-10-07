@@ -91,7 +91,7 @@ Here is our class bot, PizzaBot:
 
 Three consequences follow, and all three will bite you in the lab.
 
-**Consequence 1 — the order of the list is a rule.** Because the loop stops at the *first* match, `pineapple` beats `topping` **only because it sits higher up**. Move it to the bottom and the pineapple reply becomes permanently unreachable, because almost any question with the word "pineapple" in it also mentions toppings. It was not deleted. It was **demoted**.
+**Consequence 1 — the order of the list is a rule.** Because the loop stops at the *first* match, `pineapple` beats `topping` **only because it sits higher up**. Move it to the bottom and the pineapple reply becomes nearly unreachable, because most questions with the word "pineapple" in them also mention toppings. It was not deleted. It was **demoted**.
 
 > **💡 You have met this before.** In Week 8 you built rule ladders where the first rule that fitted decided the answer, so a general rule at the top made every specific rule below it unreachable. This is the same idea wearing different clothes.
 
@@ -638,7 +638,7 @@ lit threads are **model** and **evaluation** — you build a machine, and then y
 ## 🔑 Remember This
 
 - **A rule-based bot is two lists joined by a position number.** Ask, walk the trigger list from the top, take the **first** match, say the reply at that position, stop.
-- **The order of your list is a rule.** A general trigger above a specific one makes the specific one permanently unreachable. It is not deleted. It is demoted.
+- **The order of your list is a rule.** If one trigger sits inside another (`practice` inside `practice ground`), the shorter one above the longer makes the longer permanently unreachable. It is not deleted. It is demoted.
 - **`contains` knows nothing about meaning.** `open` matches "how do I open the box". No trigger shorter than four letters.
 - **A good fallback admits, doesn't pretend, and steers.** "Interesting question!" is the worst option, not the nicest.
 - **The repeat bug has exactly three causes:** the two `set` blocks above the `forever`; a missing `set matched to 1`; a too-short trigger sitting too high.

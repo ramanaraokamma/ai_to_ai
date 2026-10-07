@@ -127,7 +127,7 @@ That's why forty photos is enough, and why it takes twenty seconds instead of a 
 
 After training, the photos are **not inside the model.** What's left is a pile of adjusted numbers that happen to work.
 
-Here is the clinching evidence, and it's arithmetic you can check yourself: a Teachable Machine model file is a **few megabytes**. Your 120 photos might be **forty megabytes**. The model is much *smaller* than the data that made it, so it cannot possibly be storing them. It genuinely squeezed them into a pattern and let them go.
+Here is the clinching evidence, and it's arithmetic you can check yourself: a Teachable Machine model file is a **few megabytes**. Your 120 photos might be **forty megabytes**. The model is much *smaller* than the data that made it, so it cannot possibly be storing them. It genuinely squeezed them into a pattern and let them go. (One honest wrinkle: the `.tm` **project file** you save in Part 4 is a different thing. It keeps a copy of your photos so you can reopen and edit the project, so it is much bigger than the model. The argument above is about the trained model itself.)
 
 🍕 **The analogy — you cannot get the eggs back out of a cake.**
 Once it's baked, you can't retrieve the eggs, you can't read the recipe off the sponge, and if the cake tastes bad, arguing with it changes nothing. **The only fix is to bake a new one with better ingredients.** You never fix a model by telling it off. You fix it by changing the photos.
@@ -270,7 +270,7 @@ The quickest legal fix is **level down** — 17.5% passes. The *best* fix is the
 
 ### Example 3 — School: the wobble, and why 74% on a pencil case is not a fault
 
-You've trained a model on your school desk: **pencil**, **rubber**, **ruler**. Forty photos each, balance 2.5%, everything healthy. Your first nine readings look brilliant:
+You've trained a model on your school desk: **pencil**, **rubber**, **ruler**. Forty photos each, balance 0%, everything healthy. Your first nine readings look brilliant:
 
 | object | position | pencil | rubber | ruler | sum | margin | ✓/✗ |
 |---|---|:--:|:--:|:--:|:--:|:--:|:--:|
@@ -292,17 +292,17 @@ Nine out of nine, every margin over 29. You are, quite correctly, delighted.
    pencil 74   ·   rubber 9   ·   ruler 17
 ```
 
-Sum: 74 + 9 + 17 = **100** ✓. Winner: **pencil**. Margin: 74 − 9 = **65**.
+Sum: 74 + 9 + 17 = **100** ✓. Winner: **pencil**. Margin: 74 − 17 = **57** (second place is the ruler, not the rubber).
 
-**Compare that margin with your table.** 65 is bigger than five of your nine correct readings. The most confident-*looking* reading you have taken all day is the completely wrong one.
+**Compare that margin with your table.** 57 is bigger than three of your nine correct readings (49, 52 and 30). A completely wrong answer is looking more confident than some of your right ones.
 
 **Now answer the three questions properly:**
 
-**Q1 — What did it say?** Pencil, at 74%, with a margin of 65.
+**Q1 — What did it say?** Pencil, at 74%, with a margin of 57.
 
 **Q2 — Is it right?** No. A pencil case is not a pencil.
 
-**Q3 — Is it broken?** **No.** And this is the answer that matters. It has three boxes and 100 points of belief, and no way at all to say "none of these." A pencil case is long and thin, so of the three boxes it lands nearest **pencil**. It is stuck, not stupid.
+**Q3 — Is it broken?** **No.** And this is the answer that matters. It has three boxes and 100 points of belief, and no way at all to say "none of these." A pencil case is long and thin, so (my best guess) of the three boxes it lands nearest **pencil**. It is stuck, not stupid.
 
 **What would have helped?** An **`other` class** — a fourth box filled with photos of the empty desk, your hand, a pencil case, a book, a phone. Then the belief would have somewhere honest to go. And remember the cost from Week 16: adding that big messy class usually **shrinks every other margin**. It's a trade, not a free win.
 
@@ -458,7 +458,7 @@ Holding an object up to the camera where you trained is the loosest possible che
 
 ## 🌍 Where You've Seen This
 
-1. **Your phone unlocking with your face.** Trained on photos of exactly one class — you — and it wobbles in the dark, at odd angles, and behind sunglasses. Same weaknesses as your table's "far away" rows.
+1. **Your phone unlocking with your face.** It checks what the camera sees against a saved scan of exactly one face — yours — and it can wobble in the dark, at odd angles, and behind sunglasses. Same weaknesses as your table's "far away" rows.
 2. **The photo app sorting your pictures into "dogs", "beaches", "food".** Same idea as your three boxes, with millions of photos and a much bigger network.
 3. **Supermarket self-checkout produce cameras.** They classify a small set of items, and they get confidently confused by anything not in the set — your fork, in a shop.
 4. **Automatic number-plate cameras in car parks.** They read plates brilliantly in the conditions they were trained for, and badly in heavy rain or low sun. "Same distance, same light" is why your baseline rules exist.

@@ -525,7 +525,7 @@ That is the whole reason the arithmetic check exists. **A hand tally with no che
 5. Write down the sentence it produced, exactly, including anything stupid.
 6. Then answer, out loud: *what tally must be sitting behind those three keys?*
 
-Two things almost certainly happened, and both are worth writing down. The sentence was grammatical — a proper English sentence, made by a machine with no idea what it was saying. And somewhere near the end it started **going round in a circle**. Hold that thought. Next week explains it in about four minutes.
+Two things almost certainly happened, and both are worth writing down. The sentence read like English one pair at a time — each little step sounded fine — made by a machine with no idea what it was saying, so the whole thing probably means very little. And somewhere near the end it started **going round in a circle**. Hold that thought. Next week explains it in about four minutes.
 
 ---
 
@@ -589,9 +589,9 @@ Write a pair backwards and the total is still 39 — one mark went down either w
 ## 🌍 Where You've Seen This
 
 1. **The three suggestions above your phone keyboard.** Now you know: a next-word table, looked up on the word you just typed, top three by count. That is the entire feature.
-2. **Google's search box finishing your question.** Same idea, bigger tally — except the pairs were counted in what *millions of people typed into the search box*, not in books. That is why it sometimes suggests something odd: lots of people really did type that.
+2. **Google's search box finishing your question.** Same idea, bigger tally — except what was counted was *what millions of people typed into the search box*, not books (and it suggests whole searches, not just one next word). That is why it sometimes suggests something odd: lots of people really did type that.
 3. **The autocomplete in a chat app that guesses your friend's name.** That one comes from the small personal tally of *your* typing, sitting on top of the big general one. It is why your phone eventually learns a nickname no dictionary contains.
-4. **Song lyrics you can finish without trying.** Hum the first half of a chorus and the rest arrives by itself. You have heard the pairs hundreds of times. Your head is running a lookup, not a memory search.
+4. **Song lyrics you can finish without trying.** Hum the first half of a chorus and the rest arrives by itself. You have heard the pairs hundreds of times. It feels like your head is running a lookup, though nobody knows exactly how the brain does it.
 5. **Finishing your family's sentences.** Everyone knows what their mum is about to say when she starts a particular sentence. You have the densest possible corpus on one speaker.
 6. **A spell-checker suggesting "their" instead of "there".** It is partly comparing which word usually appears next to the words around it. Pairs, counted, looked up.
 

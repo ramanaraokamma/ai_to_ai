@@ -341,7 +341,7 @@ POPULATION: every meal I will eat this year.  Drew a big blob and wrote
 
 SAMPLE:     shaded a small patch of 30 dots in one corner - deliberately
             in a CORNER, not the middle, and labelled it
-            "30 meals, 3-12 September, school days only".
+            "30 meals, 3-16 September, school days only".
 
 MISSING:    an arrow to the rest of the blob: "about 1,070 meals never
             measured - including every single weekend and all of December."
@@ -456,7 +456,7 @@ The word is **sample** — or more precisely, the sample does not match the popu
 **B3. The volunteer survey.**
 Population: **all 30 students in the class.** Sample: **the 11 who chose to walk up to the desk.**
 This is **self-selection**.
-The people most likely to volunteer are those with a **strong feeling** — usually the ones who dislike maths and want to say so, and sometimes the ones who love it. The 19 who thought maths was fine did not bother, and "fine" is exactly the answer that never gets recorded. So a 2.1 out of 5 is not the class's opinion — it is the opinion of the people who cared enough to walk over.
+The people most likely to volunteer are those with a **strong feeling** — quite possibly the ones who dislike maths and want to say so, or the ones who love it — the average alone cannot tell us which. The 19 who thought maths was fine did not bother, and "fine" is exactly the answer that never gets recorded. So a 2.1 out of 5 is not the class's opinion — it is the opinion of the people who cared enough to walk over.
 
 The honest sentence to add:
 > *"This is 11 students out of 30 who chose to answer. It under-represents students who feel neutral about maths, because neutral people do not usually volunteer."*
@@ -498,7 +498,7 @@ Writing "16.5, average of 30" would record something that did not happen.
 
 **2. Survey A**, with 400 people. It is nearly the worst because the sample came from the **one place in the school where pizza-lovers had collected**. Being in the pizza queue was the entry ticket — exactly like walking into the sleep clinic. **More rows from the wrong place is not more truth; it is a wrong answer that looks scientific.**
 
-**3.** Because **B was stirred and A and C were not.** B took 5 students from each of the 6 year groups, chosen by lottery, so no single group could take over. That is the whole idea: **a well-stirred teaspoon beats an unstirred ladle.** B used 13 times less data than A and landed 39 points closer to the truth.
+**3.** Because **B was stirred and A and C were not.** B took 5 students from each of the 6 year groups, chosen by lottery, so no single group could take over. That is the whole idea: **a well-stirred teaspoon beats an unstirred ladle.** B used 13 times less data than A and landed 39 points closer to the truth. *(Honest limit: with only 30 people even a well-stirred sample can miss by ten points or more, so B was also a little lucky. Stirring removes the lean; it does not remove the luck, and one close result is an illustration, not proof.)*
 
 **4. For Survey D:** population = **all 800 students**; sample = **all 800 students**.
 
@@ -549,7 +549,7 @@ No single answer. Mark your own page against these:
 
 > **DATA CARD — My Meals & Sleepiness, September 2026**
 > **What it is:** 30 meals I ate, with what I ate, how long I took, and how sleepy I felt one hour later. One row = one meal.
-> **How much:** 30 rows × 5 columns, 3 to 12 September 2026.
+> **How much:** 30 rows × 5 columns, 3 to 16 September 2026.
 > **Who collected it:** Me, by hand, in a notebook — time at the first bite and the last bite, and the sleepiness exactly one hour later with a phone timer.
 > **Who it is about:** One person: me, age 11. Nobody else appears.
 > **Permission:** My own data. A parent read it before I shared it. No names, no address, no photos.

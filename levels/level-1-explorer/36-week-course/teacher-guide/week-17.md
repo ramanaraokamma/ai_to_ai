@@ -146,7 +146,7 @@ They are not. After training, the photos are gone from the model entirely. What 
 adjusted numbers that happen to work. The clinching evidence is size: a Teachable Machine model file
 is a few megabytes, while the 120 photos that made it might be forty megabytes. **The model is much
 smaller than the data that made it.** It could not possibly be storing them. It genuinely compressed
-them into a pattern.
+them into a pattern. *Careful:* the saved `.tm` **project file** is different. It also keeps copies of the photos (that is how Week 18 can delete samples after reopening it), so it will be far bigger than a few megabytes. The size argument is about the trained model, not the project file; say so if the student looks at the file size.
 
 Useful analogy: the examples are the ingredients, training is the baking, the model is the cake. Once
 it's baked you cannot get the eggs back out, you cannot read the recipe off the cake, and if the cake
@@ -268,7 +268,7 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 
 **Say this:**
 
-> "Ten weeks ago, in Week 10, you tried to write rules to spot spam and you gave up somewhere around
+> "Seven weeks ago, in Week 10, you tried to write rules to spot spam and you gave up somewhere around
 > rule number five, because every rule you added broke two others. Do you remember what that felt
 > like?"
 >
@@ -615,8 +615,8 @@ small step — which of those already-known patterns goes with which of your thr
 
 **4. "Can I use more than three classes?"**
 Yes, as many as you like. But keep them balanced — every class needs roughly the same number of
-photos — and remember that more classes means the 100 points of belief get split more ways, so every
-margin gets smaller. Three is a good number for learning; two is easier; ten is a lot of
+photos — and remember that more classes means the 100 points of belief get split more ways, so margins
+usually get smaller. Three is a good number for learning; two is easier; ten is a lot of
 photographing.
 
 **5. "Why does the number keep changing when I hold still?"**
@@ -893,8 +893,8 @@ present.
 
 **What every row has in common, and what the student should notice:** none of the five objects is in
 any class, so **every single answer is wrong**, and yet three of the five have margins over 40. The
-correct summary sentence is something like: *"The model was confident five times out of five and
-wrong five times out of five."*
+correct summary sentence is something like: *"The model named a winner five times out of five and
+was wrong five times out of five, and three of those wrong answers had margins over 40."*
 
 **Row-by-row reasoning to look for:**
 
@@ -982,7 +982,7 @@ Five questions about last week's confidence idea. Notebook closed.
 - **A2.** **C** — gone completely, and nothing warned you. There is no autosave; refreshing the page loses it too, and on some machines a long sleep does. Rebuild time: about **15 minutes**, if the photos are already sorted. (Which is why "I'll save it later" is an expensive sentence.)
 - **A3.** **FALSE.** The two numbers: the model file is about **3 megabytes**, the 120 photos that made it about **40 megabytes**. The model is much smaller than the data, so it cannot be storing it. Training squeezed the photos into a pattern and let them go, like a cake: you cannot get the eggs back out. Full credit needs both numbers.
 - **A4.** pencil beside a class name = **S**; + Add a class = **T**; Webcam / Upload = **Q**; Train Model = **R**; ☰ → Download project as file = **P**.
-- **A5.** The five clicks on Figure W17.1, in the order the workbook's answer gives them: (1) the **☰ menu**, top-left, needed at the very end for *Download project as file* and next week for *Open project from file*; (2) the **pencil beside a class name**, renaming `Class 1` to `spoon`, the step everybody skips and regrets; (3) **Webcam / Upload**, loading photos into that class; (4) **+ Add a class**, the third box, also named properly; (5) **Train Model**, the twenty seconds, touch nothing while it runs. Full credit needs the five things named. A slightly different order is fine as long as **Train Model is last of the building steps** and the **save** is identified as its own separate step that nothing else does for you.
+- **A5.** The five clicks on Figure W17.1, in the order the workbook's answer gives them: (1) the **pencil beside a class name**, renaming `Class 1` to `spoon`, the step everybody skips and regrets; (2) **+ Add a class**, the third box, also named properly; (3) **Webcam / Upload**, loading photos into that class; (4) **Train Model**, the twenty seconds, touch nothing while it runs; (5) the **☰ menu**, top-left, for *Download project as file* (and next week *Open project from file*). Full credit needs the five things named. A slightly different order is fine as long as **Train Model comes after the classes and photos are set up** and the **save** is identified as its own separate step that nothing else does for you.
 - **A6.**
 
 | | counts | working | % | verdict |

@@ -65,7 +65,7 @@ That sentence has a name: **provenance**. This week you learn to ask for it, and
 
 > **Provenance** — the origin story of a dataset: who collected it, from whom, when, how, and with whose permission.
 
-The word comes from the art world. When a museum buys a painting it demands the provenance: who painted it, who has owned it, where it has been. Not because knowing that changes the paint — but because **a painting with no history is probably stolen or fake.**
+The word is best known from the art world. When a museum buys a painting it demands the provenance: who painted it, who has owned it, where it has been. Not because knowing that changes the paint — but because **a painting with no history is a warning sign: it might be stolen or fake.**
 
 **The analogy: the unlabelled tin.** You would not eat from a tin with no label. You want to know what is in it, who made it, when, and whether it has expired. A dataset with no provenance is exactly that tin — and people feed them to models every single day.
 
@@ -113,7 +113,7 @@ That works — and it works for one specific reason: *you stirred*. Skim your sp
 
 So here is the sentence to remember all year:
 
-> **Stirring matters more than spoon size. A well-stirred teaspoon beats an unstirred ladle. Every time.**
+> **Stirring matters more than spoon size. A well-stirred teaspoon beats an unstirred ladle.**
 
 ![Thirty measured, eight hundred hoped for](../figures/fig-w06-1-sample-vs-population.svg)
 *Figure 6.3 — You measured 30. You are talking about 800. Every claim you make has to survive that gap.*
@@ -200,7 +200,7 @@ Here is a full-credit card for a meals dataset:
 
 > **DATA CARD — My Meals & Sleepiness, September 2026**
 > **What it is:** 30 meals I ate, with what I ate, how long I took, and how sleepy I felt one hour later. One row = one meal.
-> **How much:** 30 rows × 5 columns, 3 to 12 September 2026.
+> **How much:** 30 rows × 5 columns, 3 to 16 September 2026.
 > **Who collected it:** Me, by hand, in a notebook — writing the time at the first bite and the last bite, and the sleepiness exactly one hour later with a phone timer.
 > **Who it is about:** One person: me, age 11. Nobody else appears.
 > **Permission:** My own data. A parent read it before I shared it. No names, no address, no photos.
@@ -255,7 +255,7 @@ The **IS** line must contain *whose* and *when*. The **is NOT** line must name *
 
 ### Worked Example 1 — Two averages, and what they are not (food)
 
-Somebody's meals table. Thirty rows, one row = one meal, 3 to 12 September.
+Somebody's meals table. Thirty rows, one row = one meal, 3 to 16 September.
 
 **Step 1 — compute the first average.** The `minutes` column: the thirty values sum to **492**.
 
@@ -556,7 +556,7 @@ this the tile goes white like ONE JOB EACH, and the left-hand room is where the 
 
 | Word | What it means | Example |
 |---|---|---|
-| **provenance** | The origin story of a dataset: who, from whom, when, how, with whose permission | "Me, by hand, in a notebook, at 21:00 each night, 3–12 September" |
+| **provenance** | The origin story of a dataset: who, from whom, when, how, with whose permission | "Me, by hand, in a notebook, at 21:00 each night, 3–16 September" |
 | **sample** | The smaller set you actually managed to measure | The 30 students you asked |
 | **population** | Every single thing you would like your answer to be true about | All 800 students in the school |
 | **data card** | A short honest note describing a dataset and its limits | The seven-line card in Figure 6.5 |

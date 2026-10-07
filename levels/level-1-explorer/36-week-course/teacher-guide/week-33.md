@@ -374,14 +374,14 @@ enjoyable and it is not really prep, it is step 3 of the audit.
 > and put it under the sensor, and out came the soap immediately.
 >
 > The sensor worked by bouncing a little beam of light off your hand and measuring how much came
-> back. It had been tuned and tested on hands that bounced back plenty of light. Nobody in the
+> back. It was most likely tuned and tested on hands that bounced back plenty of light. Nobody in the
 > factory hated anybody. There was no line of code that said 'refuse this person'. The machine had
 > simply been checked against a narrow set of hands, and it passed, and it shipped."
 
 Pause. Then the turn:
 
-> "Now. That dispenser had been tested. Somebody signed it off. It had an accuracy number and the
-> number was fine. What it did not have was a **second** number — the number for the hands it was
+> "Now. That dispenser had almost certainly been tested. Somebody signed it off, and it passed. What it
+> very likely did not have was a **second** number — the number for the hands it was
 > bad at. Nobody ever measured that, so nobody ever knew.
 >
 > Today you are going to do the thing that factory did not do. You are going to take your own
@@ -1181,7 +1181,7 @@ better.
 |---|---|
 | "Don't use it in bad light" | "…naming anything in lamplight. It was right **4 times out of 12**, which is **33.3%**." |
 | "It's not perfect" | "…anything where a wrong answer costs something. Overall it was right **30 times out of 48**, which is **62.5%**." |
-| "Don't use it for important things" | "…deciding on your own. In the two worst conditions it was wrong more often than right: **33.3%** and **58.3%**." |
+| "Don't use it for important things" | "…deciding on your own. In lamplight it was right only **33.3%** of the time, and on an odd background only **58.3%**, against 91.7% in daylight." |
 
 "Be careful" with no use and no number scores zero.
 
@@ -1214,8 +1214,8 @@ bias bites hardest. Not publishing misleads nobody but helps nobody. Most profes
 
 **2. How many photos is enough?** Honest answer: nobody knows for sure; it depends on how varied the
 group is and how big a difference you want to detect, and in practice it is a loop (test, look at the
-gap, add data, retest). One photo changing side moves a group by 1/12 = **8.3 points**, so a gap under
-about 9 points might be luck; a **58-point** gap is far too big to be luck; a **3-point** gap claims
+gap, add data, retest). One photo changing side moves a group by 1/12 = **8.3 points**, so a gap of one to three
+photos (8 to 25 points) could easily be luck; a **58-point** gap is very unlikely to be luck; a **3-point** gap claims
 nothing. The sentence for the poster: *"Twelve photos per group, so this is a strong hint rather than a
 final number."*
 

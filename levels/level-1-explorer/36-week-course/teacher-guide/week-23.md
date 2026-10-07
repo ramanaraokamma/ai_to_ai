@@ -67,7 +67,8 @@ believing something they did not believe an hour earlier.
 
 Hold a bright phone screen right up against your eye — closer than you can focus. Look at a plain
 white area. If the screen is bright enough and your eye is close enough, the smooth white breaks
-apart into a grid of tiny squares. Those squares are not an illusion. They are the whole picture.
+apart into a grid of tiny dots or stripes of light. Those are not an illusion. They are the screen's own
+tiny lights, one small cluster per pixel, and the picture is nothing but how bright each one is.
 There is nothing else there.
 
 ![From a photo to the numbers underneath](../figures/fig-w23-1-zoom-to-numbers.svg)
@@ -217,7 +218,7 @@ that would not be possible. It is possible, because there is nothing else.
 
 A third one to have ready, in case it comes up: **"grayscale means low quality."** It does not.
 Grayscale means one number per pixel instead of three. A grayscale photo can be enormously detailed
-— hospital scans, most old photography, every fax ever sent. It is missing colour, not detail.
+— hospital scans, most old photography. It is missing colour, not detail.
 
 ### How deep to go, and where to stop
 
@@ -573,10 +574,10 @@ write the answer. Let them use the calculator for the big ones.
 > cause. Is it possible that the thing that made that class special was *thin*? Thin enough to
 > disappear when a photo gets shrunk by 243 times?
 >
-> One last bit of arithmetic, for scale. It took you about ten minutes to write 144 numbers. That's
-> roughly one number per second. At one per second: 144 numbers takes two and a half minutes. 50,176
+> One last bit of arithmetic, for scale. It took you about ten minutes to decide and write 144
+> numbers. Let's be generous and say the writing alone could go at one number per second. At one per second: 144 numbers takes two and a half minutes. 50,176
 > numbers takes **fourteen hours**. And 12,192,768 numbers takes **141 days**, non-stop, no sleeping.
-> That's what one photo is. You've written out one 144th of a percent of a photograph."
+> That's what one photo is. You've written out about one 85,000th of a photograph — roughly a thousandth of one percent."
 
 **Ask this:**
 
@@ -682,7 +683,7 @@ be both "small" and "huge" at the same time and everyone gets confused.
 
 **"If a photo is 12 million numbers, how does it fit on my phone at all?"**
 Because it is stored squashed. There are clever tricks for writing "the next four hundred numbers
-are all 255" instead of writing 255 four hundred times, and that is roughly what a JPEG is. But —
+are all 255" instead of writing 255 four hundred times, and that is the basic idea behind compression (JPEG uses cleverer tricks, and also throws away a little detail you will not miss). But —
 and this is the bit that matters for us — before *anything* looks at that photo, the phone unsquashes
 it back into a full grid of numbers. The grid is always what gets looked at.
 
@@ -699,8 +700,8 @@ This one is genuinely unsettled, and it is worth saying so. Estimates run from a
 the greys are shown one at a time, up to several hundred if they are side by side where you can
 compare them. The number depends on how bright the room is, whether the patches touch, how big they
 are, how long you look, and which person is looking. There is no single true answer, which is partly
-why 256 levels got chosen — it is comfortably more than anyone can distinguish, so nobody notices
-the steps.
+why 256 levels got chosen — it is enough that in most photos you cannot see the steps
+(in a very smooth sky or shadow you sometimes can).
 
 **"Could I write out a whole real photo by hand?"**
 Yes, and it would take about 141 days without sleeping, at one number per second — and that is for a
@@ -714,9 +715,9 @@ that they are clever. It is that they are fast and they never get bored.
 | What happens | Why | What to do right now |
 |---|---|---|
 | They write **255 in the shaded squares and 0 in the blank ones** — the whole grid is inverted. | 255 feels like "full" and "lots of pencil". It is a meaning error, not a carelessness error. | Do not correct the numbers. Point at the boxed reminder on the board and ask: *"how much light comes out of a solid black square?"* Then let them fix it. Catch it in the first two rows by glancing at row 1 — if row 1 is all 0s and the top of the page is blank paper, it is inverted. |
-| They **skip squares** and the row has 11 numbers, so everything after that point is shifted and the reconstruction comes out as garbage. | 144 squares is genuinely boring and blank squares feel skippable. | Prevention beats cure: insist on numbered rows and columns, and on saying the numbers out loud. Cure: count each row as they finish it. Twelve or start again. It is cheaper to recount row 4 now than to rebuild 100 squares later. |
+| They **skip squares** and the row has 11 numbers, so everything after that point is shifted one square and the reconstruction comes out jogged and smeared (or garbled if there are several skips). | 144 squares is genuinely boring and blank squares feel skippable. | Prevention beats cure: insist on numbered rows and columns, and on saying the numbers out loud. Cure: count each row as they finish it. Twelve or start again. It is cheaper to recount row 4 now than to rebuild 100 squares later. |
 | The drawing is **carefully aligned to the grid lines**, so every square is 0 or 255 and there are no greys. | Students naturally tidy. It feels like doing it properly. | This kills the best part of the lesson, so head it off before they start: *"let the line fall wherever it falls — I actively want some awkward squares."* If it has already happened, ask them to add a diagonal stroke or a curve to their letter. |
-| **The reconstruction fails** — you shade the numbers and it does not look like any letter. | Almost always a skipped square, or a row copied out of order between the drawing and the clean sheet. Occasionally a letter drawn only one square thick. | Do not treat this as a failure — treat it as a bug hunt, out loud, and it becomes the best five minutes of the lesson. Count each row: which row has 11 or 13? That is where the picture broke. Fix it and re-shade. The lesson learned ("one missing number wrecked everything after it") is *more* valuable than a clean success. |
+| **The reconstruction fails** — you shade the numbers and the letter is distorted or unrecognisable. | Almost always a skipped square, or a row copied out of order between the drawing and the clean sheet. Occasionally a letter drawn only one square thick. | Do not treat this as a failure — treat it as a bug hunt, out loud, and it becomes the best five minutes of the lesson. Count each row: which row has 11 or 13? That is where the picture broke. Fix it and re-shade. The lesson learned ("one missing number wrecked everything after it") is *more* valuable than a clean success. |
 | It takes **twice as long as planned** and there is no time for the resolution arithmetic. | 144 squares at a considered pace is 10–12 minutes for an 11-year-old, not 7. | Plan for it. If you are past minute 58 and still numbering, stop the activity, do the reconstruction with the rows they have finished (a partial letter still reads), and move the resolution sums into homework (Build It Part 3), which is where they already live. |
 | They ask **"but where's the actual picture?"** after the whole activity. | Misconception 2 — the belief that the numbers describe a picture stored somewhere else. It survives the activity surprisingly often. | Answer with the activity itself: *"I have never seen your drawing. Not once. The only thing that came across the table was your numbers. So if the picture is somewhere else — where?"* Let them chase it. There is nowhere for it to be. |
 | They get **bored halfway through numbering** and start guessing whole rows. | Rows 6 to 9 of a letter are often identical and it feels pointless to write them out. | Name it honestly: *"rows 6, 7, 8 and 9 are identical and writing them out is dull. That dullness is exactly why computers do this and people don't. Four more rows."* Then let them write "same as above" **nowhere** — but do let them copy quickly. Identical rows are a legitimate speed-up to *notice*, and a note on their page saying "rows 6–9 identical" is a genuine observation, not a shortcut. |
@@ -747,7 +748,7 @@ Extension questions, roughly in order of difficulty. Every one has a worked answ
 1. **"Your 12 × 12 grid has 144 numbers. How many *different pictures* could a 12 × 12 grayscale grid hold?"** (Warning: the honest answer is 256¹⁴⁴, a number with 347 digits. The interesting part is not the number, it is realising that almost every one of those pictures is meaningless noise. Recognisable pictures are a vanishingly thin sliver of everything possible.)
 2. **"Shrink your own letter: cover up the odd rows and odd columns so only 36 squares are left. Can you still read it?"** Usually yes, barely. This is next week's lesson, discovered a week early, which is fine — let them have it.
 3. **"Invert your grid — replace every number *v* with 255 − *v*. What happens?"** You get a photographic negative: white letter on black. Good arithmetic, instant visual payoff.
-4. **"You wrote 144 numbers in about 10 minutes. How long for a full 12-megapixel photo, at that rate?"** About 141 days non-stop. Then: **"and in colour?"** About 423 days.
+4. **"You wrote 144 numbers in about 10 minutes. How long for a full 12-megapixel photo — first at a generous one number per second, then at your real rate?"** At one per second, about 141 days non-stop; at your real rate (about 4 seconds per number) closer to 590 days. Then: **"and in colour?"** About 423 days.
 5. **"Here are two grids with the same average brightness but different pictures. Make me a pair."** Genuinely hard, genuinely doable, and it lands the point that averages destroy arrangement.
 
 ### If they won't engage today
@@ -928,7 +929,7 @@ is 1 pixel in 243. *How many numbers in a colour photo of the same size?* Three 
 
 **A2.** (i) **(c) almost black**. (ii) **(c) 600** (30 × 20). (iii) **(b) 600** — one number per pixel in grayscale. *Wrong-answer map:* (a) 50 means they added; (c) 1800 is the colour answer and is next week; (d) means they have not yet taken in that the count depends only on the size.
 
-**A3.** **FALSE.** Grayscale means one number per pixel instead of three: it is missing colour, not detail. X-rays, most of photographic history and every fax are grayscale.
+**A3.** **FALSE.** Grayscale means one number per pixel instead of three: it is missing colour, not detail. X-rays and most of photographic history are grayscale.
 
 **A4.** pixel = **C** · grayscale = **E** · resolution = **A** · megapixel = **B** · byte = **D**.
 
@@ -956,7 +957,7 @@ is 1 pixel in 243. *How many numbers in a colour photo of the same size?* Three 
 
 **B2.** (a) 2048 × 1536 = **3,145,728** pixels, about **3.1** megapixels. (b) 64 × 64 = **4,096** pixels, **4,096** numbers. (c) 3,145,728 ÷ 4,096 = **768** times. (d) **4,096** seconds = 68.3 minutes = about **1 hour 8 minutes**.
 
-**B3.** (a) **143**. (b) Perfect down to the end of row 4; from the missing square on, everything is one place early, the shift carries into every later row, and the picture slides diagonally and dissolves. (c) Count each row on the original and find the one with 11. (d) A number carries no record of where it belongs; a list of 143 numbers cut into twelves looks perfectly reasonable.
+**B3.** (a) **143**. (b) Perfect down to the end of row 4; from the missing square on, everything is one place early, every later row is shifted by the same one square (not a growing shift), so the lower part is a jogged, smeared copy rather than noise; more skips shift it further. (c) Count each row on the original and find the one with 11. (d) A number carries no record of where it belongs; a list of 143 numbers cut into twelves looks perfectly reasonable.
 
 **B4.** (a) **0** greys. (b) He lost the interesting part of the exercise: he never sees the boundary squares or what a camera does at an edge, and the picture is unlike any real photo. (c) **No, it is not wrong**; it is valid but unrealistic, since real shapes essentially never line up with the pixel grid. (d) Add a diagonal or a curve, or shift the letter half a square sideways.
 
@@ -998,7 +999,7 @@ The fault that makes the grid **completely unusable** is **no key**: the inversi
 Marked on reasoning, not on wording. Full marks:
 
 - **T1** needs: the order is **not stored** anywhere; it is an agreement between sender and receiver (row by row, left to right, with a known width); and the numbers alone are genuinely not enough. The workbook's model answer makes the point that sending the numbers without saying the grid is 12 wide leaves you with all the data and no picture.
-- **T2** needs: a real gain named (memory or speed); a **specific** cost tied to *their own* model and one of *their* classes (the workbook's model answer uses "comb" and its thin teeth; a shrink factor of 13.5 from 3024 to 224 means anything thinner than about 14 original pixels stops existing as a separate thing); and an honest trade rather than "keep everything". Do not mark down a student whose worst class was different from comb.
+- **T2** needs: a real gain named (memory or speed); a **specific** cost tied to *their own* model and one of *their* classes (the workbook's model answer uses "comb" and its thin teeth; a shrink factor of 13.5 from 3024 to 224 means anything thinner than about 14 original pixels is squeezed into less than one pixel and blended with its neighbours); and an honest trade rather than "keep everything". Do not mark down a student whose worst class was different from comb.
 
 ### Workbook · Build It, Part 1 — a second 12 × 12 drawing
 
@@ -1029,8 +1030,8 @@ things, and mark them in this order:
    r12  255  255  255  255  255  255  255  255  255  255  255  255
 ```
 
-Checks on the model answer: 48 squares of 0 (16 in the left upright, 16 in the right upright, 16 in
-the crossbar), 20 squares of 192 (the faint outer edge of each upright, ten rows × two), and
+Checks on the model answer: 48 squares of 0 (20 in the left upright, 20 in the right upright, 8 in
+the crossbar between them), 20 squares of 192 (the faint outer edge of each upright, ten rows × two), and
 144 − 48 − 20 = 76 squares of 255. Sum = (20 × 192) + (76 × 255) = 3840 + 19,380 = **23,220**;
 average = 23,220 ÷ 144 = **161.25**.
 
@@ -1147,7 +1148,7 @@ so accept 12,000,000 **if** the multiplication 4032 × 3024 is shown correctly s
 
 1. **How many different 12 × 12 grayscale pictures are possible?** Each of the 144 squares can hold any of 256 values, so the count is 256¹⁴⁴ — a number with 347 digits. The point is not the number. It is that virtually every one of those pictures is random noise; recognisable pictures are an unimaginably thin sliver of what a grid *could* hold.
 2. **Cover the odd rows and columns — can you still read the letter?** Usually yes, but only just; thin strokes and the grey boundary squares are the first things to go. That is Week 24 in one move.
-3. **Invert every number: replace *v* with 255 − *v*.** 0 becomes 255, 255 becomes 0, 128 stays 128, 64 becomes 191, 192 becomes 63. You get a photographic negative — a white letter on a black background.
+3. **Invert every number: replace *v* with 255 − *v*.** 0 becomes 255, 255 becomes 0, 128 becomes 127, 64 becomes 191, 192 becomes 63. You get a photographic negative — a white letter on a black background.
 4. **141 days** for a grayscale 12-megapixel photo at one number per second; **423 days** in colour, because colour needs three numbers per pixel (12,192,768 × 3 = 36,578,304 numbers).
 5. **Two grids, same average, different picture.** Easiest recipe: take any grid and swap two squares with different values. The sum is unchanged, so the average is unchanged, but the picture is different. A neat pair on a 2 × 2: `[0, 255 / 255, 0]` and `[255, 0 / 0, 255]` both average 127.5 and are opposite diagonals.
 

@@ -133,7 +133,7 @@ Use the name baseline as your headline, because that's the game the tester actua
 
 **The sentence you are aiming to be able to write:**
 
-> *"My deck beat the baseline by 58 percentage points."*
+> *"My deck beat the baseline by 59 percentage points."*
 
 Not "my tester got 8". The **gap**.
 
@@ -157,7 +157,7 @@ So instead: **look at the cards they got wrong.**
 
 **The analogy: a footprint in a flowerbed.** You don't need a confession. You need the one explanation that fits all the evidence, and no others.
 
-This is the best part of the week, and it is a habit that will serve you for the rest of your life: **check the evidence, don't trust the story.** Grown-ups doing this professionally call it an *ablation study* — they remove one feature, retrain the model, and see how much worse it gets. Same experiment. Bigger budget.
+This is the best part of the week, and it is a habit that will serve you for the rest of your life: **check the evidence, don't trust the story.** Grown-ups doing this professionally call it an *ablation study* — they remove one feature, retrain the model, and see how much worse it gets. A close cousin of what you just did, with a bigger budget: you look at the mistakes, they take a feature away and re-test.
 
 ---
 
@@ -353,13 +353,13 @@ category correct   = 6 out of 8                             = 75%
 | 06 | sticky pad (7.5 cm, 30 g, yellow, paper) | pencil (17.5 cm, 5 g, yellow, wood) | **colour: yellow** | the same three |
 | 04 | protractor (12.0 cm, 14 g, clear) | ruler (30.0 cm, 22 g, clear) | **colour: clear** | length by 18 cm |
 
-On all three, the only line the two objects **share** is the colour, and on all three at least one number line would have handed over the right answer.
+On all three, colour is the line the two objects **share** that is not just a common value (the pencil and sticky pad also both say `is_hollow: no`, and the protractor and ruler are both plastic and not hollow, but most cards say that too), and on all three at least one number line would have handed over the right answer.
 
 > *"The tester used `main_colour`. Cards 02, 06 and 04 prove it: on every one of them the object they named has the same colour as the object on the card, and on every one of them the length alone would have got it right — card 04 by 18 centimetres."*
 
 **Step 4 — the interesting difference from the demo deck.** In the demo deck, every error stayed *inside* a category. Here, two of the three errors cross category lines: a pencil called a sticky pad is `writing` called `paper`. That tells you something extra — this tester wasn't using `material` for the category either. Colour was doing everything.
 
-**Step 5 — what would you change to make it harder?** Remove `main_colour` and predict what happens. Given that all three errors were colour-driven, the honest prediction is that the score goes **up**, not down, because the tester will be forced onto the length, which was right every time. That is a genuinely surprising prediction, and worth writing down before you test it.
+**Step 5 — what would you change to make it harder?** Remove `main_colour` and predict what happens. Given that all three errors were colour-driven, the honest prediction is that the score goes **up**, not down, because the tester will be forced onto the length, which would have been right on all three of those cards. (It is only a prediction: length may also confuse pairs the tester currently gets right, such as the pen and the protractor, 2 cm apart.) That is a genuinely surprising prediction, and worth writing down before you test it.
 
 ---
 
@@ -519,7 +519,7 @@ So if the score comes out at 19/20, don't celebrate — **investigate.** Ask: *w
 |---|---|
 | "They only got 6 out of 20. My deck is rubbish, this was a waste of an afternoon." | "6 out of 20 is 30% against a 5% baseline — six times the baseline. My features carry real information; they just don't pin down the exact object." |
 
-That second sentence is a genuine finding, and a properly interesting one: *"my five features identify the category reliably and the individual object unreliably."* Then you get to ask the useful question — **which pairs got confused, and what one feature would separate them?**
+That second sentence is a genuine finding. And if you then find that the wrong guesses mostly stayed inside the right category, you can add a second one: *"my five features identify the category reliably and the individual object unreliably."* (The 6 out of 20 alone does not tell you that. The wrong cards do.) Then you get to ask the useful question — **which pairs got confused, and what one feature would separate them?**
 
 Both outcomes are wins. Decide that **before** you run the test, not after, or it sounds like a consolation prize.
 
@@ -557,7 +557,7 @@ box turns white with "wk 11-14" written under it, and the shading moves down to 
 
 | | |
 |---|---|
-| **The mental model you now own** | If your features carry enough, a stranger who has never seen the objects can name them **from the numbers alone**. If the stranger cannot, no machine could have either — so the problem was never the machine. A model is never cleverer than its columns. |
+| **The mental model you now own** | If your features carry enough, a stranger who has never seen the objects can name them **from the numbers alone**. If the stranger cannot, that is a warning that the numbers may not carry enough — and a machine can use nothing beyond what is written on the card either, so look at the columns before you blame the machine. A model is never cleverer than its columns. |
 | **The one question it answers** | *"Could somebody who has never seen this thing name it from my numbers alone?"* |
 | **What it plugs into** | All three weeks behind you at once: five features in a fixed order on the front of the card (Week 11), no leaks allowed (Week 12), one label on the back whose shape you chose on purpose (Week 13), and a score that only counts next to the random baseline. |
 | **What carries forward** | Asking your tester *which feature did you actually use?* is precisely the move you make in Week 18 when you sabotage photos one thing at a time — and the question Week 25 finally answers with edges. |

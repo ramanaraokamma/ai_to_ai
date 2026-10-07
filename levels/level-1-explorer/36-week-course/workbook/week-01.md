@@ -136,7 +136,7 @@ ________________________________________________________________
 
 **B1. Write Rule 6 — then watch it break.**
 
-Last week's vending machine had no rule for the customer with the burst crisp packet. Write one.
+The vending machine from the chapter had no rule for the customer with the burst crisp packet. Write one.
 
 `RULE 6: IF ` ______________________________________________________
 
@@ -189,7 +189,7 @@ What would deciding this properly actually need? _______________________________
 
 ---
 
-**B3. The dog flap.** A cat flap in a back door opens whenever something warm pushes against it.
+**B3. The cat flap.** A cat flap in a back door opens whenever something warm pushes against it.
 
 **(a)** Input: ______________________  **(b)** Output: ______________________
 
@@ -718,7 +718,7 @@ guesses**. Any of those means you've swapped magic for a mechanism, which is the
 | 4 | B1, 20p | **R3** | ADD MORE. Waits, and **keeps** the 20p | Saying it returns the coins — it doesn't, R3 says *wait* |
 | 5 | B2, 60p | **R5** | Drops the juice, returns 10p | — |
 | 6 | B1, 25p | **R4** | Drops the water, no change | R5 — counting *equal* as *more* |
-| 7 | A2, 20p | **R2** | SOLD OUT, returns 20p | **R3 "ADD MORE" — about two out of three people say this** |
+| 7 | A2, 20p | **R2** | SOLD OUT, returns 20p | **R3 "ADD MORE" — many people say this** |
 | 8 | A1, 100p | **R5** | Drops the crisps, returns 70p | Arithmetic: 100 − 30 = 70 |
 | 9 | Burst bag | **none** | Nothing at all | Inventing a rule — go back and read Rule 2 aloud |
 

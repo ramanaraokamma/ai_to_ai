@@ -26,7 +26,7 @@ Look at any screen showing plain white. Here is a question that sounds stupid:
 
 Most people say one. Some say none, because white isn't a colour. Some say millions.
 
-**Three.** Red, green and blue. There is **no white lamp in there at all** — there never has been, in any screen you have ever looked at in your life. Every single pixel on a phone screen is actually *three tiny lamps* sitting side by side, too small to tell apart. White is what you see when all three are on at once.
+**Three.** Red, green and blue. There is **no white lamp in there at all** — there never has been, in almost any screen you have ever looked at in your life. Every single pixel on a phone screen is actually *three tiny lamps* sitting side by side, too small to tell apart. White is what you see when all three are on at once.
 
 ![Mixing light, not paint](../figures/fig-w24-2-rgb-mixing.svg)
 *Figure 24.2 — Six triples and the colour each one makes. Notice the last one: white is not a lamp, it is all three lamps at full.*
@@ -75,7 +75,7 @@ Now: **how many different colours can a single pixel be?** Three numbers, each w
    256 x 256 x 256  =  16,777,216
 ```
 
-Sixteen point seven million. When a television is advertised as "16.7 million colours", that is not a boast. It is just 256 cubed, and it has been true of essentially every screen for thirty years. You can never be impressed by that sticker again.
+Sixteen point seven million. When a television is advertised as "16.7 million colours", that is not a boast. It is just 256 cubed, and it has been the standard for ordinary screens for about thirty years. You can never be impressed by that sticker again.
 
 ---
 
@@ -145,7 +145,7 @@ Same two colours. Opposite results. **You were never wrong about paint.** It is 
 
 > **🧑‍🏫 If someone asks "so how does a printer make colours?"** — ink is paint. It sits on paper and takes light away. So printers start from a *different* set: cyan, magenta, yellow and black. That is why printer cartridges come in those odd colours instead of red, green and blue — and it is why a photo never looks quite the same printed as it did on screen. One is made of lamps adding light; the other of ink removing it, and they cannot reach exactly the same set of colours.
 
-**One more thing, and it is a warm-up for the second half of this chapter.** To turn a colour pixel grey, you average its three numbers:
+**One more thing, and it is a warm-up for the second half of this chapter.** One simple way to turn a colour pixel grey is to average its three numbers (real photo software weights green a little more, because eyes are more sensitive to it, but plain averaging is all we need):
 
 ```
    grey  =  (R + G + B) ÷ 3
@@ -181,7 +181,7 @@ Sometimes it does not divide neatly, and that is fine. **The rule: work out the 
      255  128
 ```
 
-Why round at all? Because a pixel must hold a **whole** number. Real software rounds too, in exactly this way.
+Why round at all? Because a pixel must hold a **whole** number. Real software has to end up with whole numbers too (some rounds, some just chops the decimal off, but the idea is the same).
 
 **How many blocks are in a 12 × 12 grid?** Each block is 2 across and 2 down, so 6 blocks across and 6 rows of blocks:
 
@@ -194,7 +194,7 @@ Each step throws away **three quarters** of the numbers.
 
 > **💡 A trick worth having:** dividing by 4 is halving, then halving again. 1020 → 510 → 255. There are 36 of these coming and you do not want a calculator for most of them.
 
-And this is not hypothetical. It is precisely what Teachable Machine did to every photo you uploaded in Week 17, on the way down from 12 megapixels to 224 × 224.
+And this is not hypothetical. Teachable Machine shrank every photo you uploaded in Week 17 down from 12 megapixels to 224 × 224. It does not use neat 2 × 2 blocks, but the principle is identical: many numbers become few, and the rest are thrown away.
 
 ![What downsampling deletes, step by step](../figures/fig-w24-4-face-three-resolutions.svg)
 *Figure 24.4 — The same face at 24 × 24, 12 × 12 and 6 × 6, each step made by averaging 2 × 2 blocks. Circled at each stage: the specific feature that has just stopped existing.*
@@ -336,7 +336,7 @@ You photograph a cricket pitch. Here is a 4 × 4 patch of it, in grayscale, cont
 **What was lost, specifically?** Two things, and neither of them is "it got blurrier":
 
 1. **The line stopped being white.** It was 255. It is now 160 — a light grey. You can no longer tell from the numbers whether the original line was brilliant white or a medium grey.
-2. **The line's width is now unknowable.** 160 could have come from one 255 and one 64 in each row, or from two 112s, or from lots of other pairs. A one-pixel white line and a two-pixel grey line would produce the same 160.
+2. **The line's width is now unknowable.** 160 could have come from one 255 and one 64 in each row, or from two 160s, or from lots of other pairs. A one-pixel white line and a two-pixel grey line would produce the same 160.
 
 **Step 4 — shrink once more, to 1 × 1.**
 
@@ -498,7 +498,7 @@ Do not answer from opinion. Take one of your shrunk numbers and produce **three 
 ## 💬 Talk About It
 
 **1. "Why red, green and blue? Why not red, yellow and blue like in art?"**
-> *Hint:* because screens are built to match your **eye**, not your paint set. The back of your eye has three kinds of colour detector, most sensitive to reddish, greenish and bluish light. Put lamps at those three and you can trigger your eye's three detectors in any combination — which is enough to make you see essentially any colour. Red, yellow and blue is the right set for *paint*, which works by taking light away. Ask the other person: different job, or different world?
+> *Hint:* because screens are built to match your **eye**, not your paint set. The back of your eye has three kinds of colour detector, most sensitive to reddish, greenish and bluish light. Put lamps at those three and you can trigger your eye's three detectors in any combination — which is enough to make you see essentially any colour. Red, yellow and blue is the set art lessons teach for *paint*, which works by taking light away (printers actually use cyan, magenta and yellow, but it is the same idea). Ask the other person: different job, or different world?
 
 **2. "My phone can un-blur a photo. So you *can* get it back, can't you?"**
 > *Hint:* it can make a blurry photo look sharp, and it is not lying about what it shows you. Ask them this instead: *if millions of different blocks all average to 80, how does the app know which one yours was?* It doesn't. It **invents** something plausible, because it has seen millions of similar pictures. Sometimes the guess is excellent. Sometimes it invents a number plate that reads perfectly and is not the real one. Then ask the question that matters: would you send someone a court summons based on it?
@@ -575,7 +575,7 @@ week, with data and representation lit along the bottom.*
 | **The mental model you now own** | A colour picture is **three grids stacked** — red, green and blue — with one number each per pixel. And shrinking a picture **throws information away forever**: the numbers that went into an average do not come back, no matter what button anybody presses. |
 | **The one question it answers** | *"How many numbers is this picture, and what did shrinking it destroy?"* |
 | **What it plugs into** | Week 23's single grid, now three deep. There is genuinely nothing new to learn — it is the same 0-to-255 square, counted three times. |
-| **What carries forward** | Teachable Machine had already shrunk your Week 17 photos to 224 × 224 × 3 before it ever looked at them, so you now know exactly what it threw away before it started. Next week goes back to working on one grid at a time. |
+| **What carries forward** | Teachable Machine had already shrunk your Week 17 photos to 224 × 224 × 3 before it ever looked at them, so you now know the kind of thing it threw away before it started. Next week goes back to working on one grid at a time. |
 | **Spiral thread** | 📊 **Data** — how much of it there really is, and what quietly gets binned — and 🏷️ **Representation**, the three-stacked-grids shape itself. |
 
 > **💡 Try this:** work out how many numbers your favourite photo is — width × height × 3 — and write

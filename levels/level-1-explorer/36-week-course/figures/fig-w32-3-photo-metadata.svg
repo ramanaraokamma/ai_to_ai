@@ -32,5 +32,5 @@
     <text x="378" y="312">Owner name: R. Kumar</text>
   </g>
 
-  <text x="400" y="368" font-size="14" fill="#55636F" text-anchor="middle">Metadata: the hidden notes a file keeps about itself. The location line is a street address.</text>
+  <text x="400" y="368" font-size="14" fill="#55636F" text-anchor="middle">Metadata: the hidden notes a file keeps about itself. The location line can point to a street address.</text>
 </svg>

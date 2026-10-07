@@ -47,7 +47,7 @@ A number is never just a number: it carries an invisible label saying *who was m
 
 > **Provenance** — the origin story of a dataset: who collected it, from whom, when, how, and with whose permission.
 
-The word comes from the art world. When a museum buys a painting, it demands the provenance: who painted it, who owned it, where it has been. Not because the paint changes, but because a painting with no history is probably stolen or fake.
+The word is best known from the art world. When a museum buys a painting, it demands the provenance: who painted it, who owned it, where it has been. Not because the paint changes, but because a painting with no history is a warning sign: it might be stolen or fake.
 
 **🍕 The analogy to use with the student: the unlabelled tin.**
 
@@ -336,7 +336,7 @@ Dataset B:  average sleep = 7.8 hours   <-  every student in 4 RANDOMLY CHOSEN S
 >
 > That works. And it works for one specific reason: **you stirred**. If you skim your spoonful off the top without stirring, you get the oily layer floating on top, and you tell everyone the soup is greasy — and you are wrong about the pot even though you were completely right about your spoonful.
 >
-> So here is the sentence I want you to remember all year: **stirring matters more than spoon size.** A well-stirred teaspoon beats an unstirred ladle. Every time."
+> So here is the sentence I want you to remember all year: **stirring matters more than spoon size.** A well-stirred teaspoon beats an unstirred ladle."
 
 **Do this:** draw the two-word diagram on the board — this is the core board work of the lesson and everything else hangs off it.
 
@@ -847,7 +847,7 @@ Marking criteria rather than a single answer:
 
 > **DATA CARD — My Meals & Sleepiness, September 2026**
 > **What it is:** 30 meals I ate, with what I ate, how long I took, and how sleepy I felt one hour later. One row = one meal.
-> **How much:** 30 rows × 5 columns, 3 to 12 September 2026.
+> **How much:** 30 rows × 5 columns, 3 to 16 September 2026.
 > **Who collected it:** Me, by hand, in a notebook, writing the time at the first bite and the last bite, and the sleepiness exactly one hour later with a phone timer.
 > **Who it is about:** One person: me, age 11. Nobody else appears.
 > **Permission:** My own data. A parent read it before I shared it. No names, no address, no photos.
@@ -919,7 +919,7 @@ Further repairs you may need at the desk:
 
 1. **Order, most trustworthy first: D → B → C → A.** D measured **all 800**, so there is no sampling error. B is only 30 but **stirred** (a lottery pick of 5 from each of 6 year groups), and its 34% is within 4 points of the true 38%. C is 120 but **self-selected**, off by 24 points. A is 400 but every one stood **in the pizza queue**, off by 43 points.
 2. **Survey A.** 400 people, but all from the one place in the school where pizza-lovers had collected. Being in the queue was the entry ticket, exactly like walking into the sleep clinic. More rows from the wrong place is a wrong answer that looks scientific.
-3. Because **B was stirred and A and C were not.** A well-stirred teaspoon beats an unstirred ladle. B used about 13 times less data than A and landed 39 points closer to the truth.
+3. Because **B was stirred and A and C were not.** A well-stirred teaspoon beats an unstirred ladle. B used about 13 times less data than A and landed 39 points closer to the truth. Be honest about the limit: with only 30 people even a well-stirred sample can miss by ten points or more, so B was also somewhat lucky. Stirring removes the lean; it does not remove the luck, and one close result is an illustration, not proof.
 4. **Survey D:** population = **all 800 students**; sample = **all 800 students**. The unusual thing is that **they are the same set**. When the sample is the whole population the result is a fact, not an estimate. (It is a fact only about *that* question: ask about students in the whole town and the same 800 rows become a sample again.)
 5. **A: wrong place** · **B: nothing wrong** (accept "too small" as a fair worry, but B landed closest of the three samples) · **C: self-selection** · **D: nothing wrong**.
 
@@ -958,7 +958,7 @@ Sentences that do not earn credit are in the B4 repair tables above; use the sam
 
 ### Workbook Week 6 — Draw It
 
-Marked on four things, not artistic skill: the population drawn **much bigger** than the sample and labelled with a real number or description; the sample patch **shaded** and labelled with the actual rows and dates; the **missing** part labelled, ideally with a count; and one "This does not show that…" sentence naming something **specific and absent**. **The single most common mistake** is drawing the sample as a neat patch in the **middle**, evenly spread, which quietly claims the spoonful was stirred. For a one-person, ten-school-day table it was not, so **draw it in a corner**; where the patch goes is an honest claim about how it was sampled. The workbook's own example (about 1,100 meals a year; a corner patch of 30 meals, 3–12 September; "about 1,070 meals never measured") is a full-credit answer.
+Marked on four things, not artistic skill: the population drawn **much bigger** than the sample and labelled with a real number or description; the sample patch **shaded** and labelled with the actual rows and dates; the **missing** part labelled, ideally with a count; and one "This does not show that…" sentence naming something **specific and absent**. **The single most common mistake** is drawing the sample as a neat patch in the **middle**, evenly spread, which quietly claims the spoonful was stirred. For a one-person, ten-school-day table it was not, so **draw it in a corner**; where the patch goes is an honest claim about how it was sampled. The workbook's own example (about 1,100 meals a year; a corner patch of 30 meals, 3–16 September; "about 1,070 meals never measured") is a full-credit answer.
 
 ### Workbook Week 6 — Self-Check
 

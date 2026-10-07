@@ -471,7 +471,7 @@ Rows A and C: taking ten times as many photos bought **nothing at all.** Still t
 **B1.** **YES**, it still works, completely unchanged.
 
 1. **The arithmetic:** 500 phone photos are far bigger than the model they made, so the photos are not in there. There is nowhere to keep them.
-2. **What happened in class:** the twelve training cards were sealed in an envelope and put in a drawer, and you still classified six brand-new cards correctly about four times out of six. The cards were in the drawer. Something else did the work.
+2. **What happened in class:** the twelve training cards were sealed in an envelope and put in a drawer, and you still got the easy brand-new cards right. The cards were in the drawer. Something else did the work.
 
 **B2.**
 

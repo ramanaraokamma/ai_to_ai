@@ -309,11 +309,11 @@ Pause here. Let that sit for a second. Then:
 > sorted them by skin tone and by whether the person was a man or a woman. Then she ran three
 > face-analysis products that companies were already selling to real customers.
 >
-> The best of those three products got lighter-skinned men wrong about **0.8%** of the time. One
-> mistake in every hundred and twenty-five.
+> On lighter-skinned men, none of those three products got more than **0.8%** wrong. One
+> mistake in every hundred and twenty-five, at worst.
 >
-> The same product, same day, same test — got darker-skinned women wrong **34.7%** of the time.
-> One mistake in every three."
+> On darker-skinned women, same day, same test, the error rates were 20.8%, 34.5% and **34.7%**.
+> The worst product got more than one in every three wrong."
 
 **Do this:** write only these four things on the board, nothing else:
 
@@ -777,7 +777,7 @@ adults do not do, is notice that a choice is being made at all, and ask **who is
 **7. "What if I test my model and find a huge gap? Doesn't that mean I failed?"**
 
 The opposite. Finding the gap *is* the skill. Anyone can train a model; almost nobody bothers to
-find out who it fails. "91.7% in daylight, 33.3% by lamplight, here is why, here is the fix" is a
+find out who it fails. "91.7% in daylight, 58.3% by lamplight, here is why, here is the fix" is a
 better piece of work than "my model is 92% accurate" with nobody having looked closer. And you will
 not remember what you predicted unless you wrote it down — memory quietly rewrites expectations to
 match outcomes. Paper is the only witness in the room that cannot be got at.
@@ -882,7 +882,7 @@ Three checks, five minutes, in this order.
 | **2** | Computes per-group accuracy correctly with prompting. Says "50%" for the gap. Sees the training counts as unrelated to the results. |
 | **3** | Computes all four groups unaided, gets the gap right **with the unit**, and connects a low score to a low count when asked. |
 | **4** | Does all of level 3 unprompted, and explains without help why the overall 60.4% should not be quoted on its own. Writes a specific, reasoned prediction about their own model. |
-| **5** | All of the above, plus finds something nobody asked for — e.g. spots from the class grid that fork and spoon are being confused with each other, or asks whether twelve photos is enough to trust. Can argue both sides of "was anyone to blame?" |
+| **5** | All of the above, plus finds something nobody asked for — e.g. notices from the class grid that spoon and fork score lower than mug, or asks whether twelve photos is enough to trust. Can argue both sides of "was anyone to blame?" |
 
 **Target for a typical student: 3, moving to 4 during Week 33.** Level 5 is not expected this week.
 
@@ -1122,15 +1122,14 @@ carries four times the load. It is the voice-assistant problem again, with a per
    check:  13 + 9 + 7 = 29 ✓      16 × 3 = 48 ✓
 ```
 
-**What the grid shows that the condition table could not:** mug holds up everywhere (81.3%) while
-spoon and fork both collapse. That is not about the lighting at all — it is that a mug is a chunky
-round shape with a handle, whereas a spoon and a fork are both thin shiny metal objects of roughly
-the same length and outline. As soon as conditions get hard the model falls back on "long thin
-shiny thing" and cannot separate the two.
-
-The condition table blamed the lighting. The grid says the app also has a spoon-versus-fork problem
-that exists in *every* condition, including bright daylight. **That is why an audit uses a grid, not
-a list.**
+**What the grid shows that the condition table could not:** read down the columns. The mug stays at
+3/4 in every hard condition (81.3% overall), while spoon (56.3%) and fork (43.8%) fall further, and
+the fork is never ahead of the spoon. So *which object* matters as well as *which lighting*, and the
+condition table could not show that because it added the three objects together. A guess worth
+testing: a mug is a chunky shape with a handle, while a spoon and a fork are both thin metal objects
+of similar length, so they may be harder to tell apart. But the grid only counts right and wrong; it
+does not say what the app said instead, and each cell is only 4 photos (one photo is 25 points). Treat
+it as a hint to investigate, not a finding. **That is why an audit uses a grid, not a list.**
 
 ---
 
@@ -1278,8 +1277,8 @@ that can be moved 15.6 points by the tester is a fact about the test, not about 
 
 Any answer of this shape is correct:
 
-> *Do not use this app to name an object you are holding, or in anything dimmer than daylight. In
-> those situations it is wrong more often than it is right.*
+> *Do not use this app to name an object you are holding: it was wrong nearly six times in ten on
+> those photos. In lamplight it was wrong about four times in ten.*
 
 Marks are for **specificity and a number**, not for style. "Be careful using this app" scores zero.
 

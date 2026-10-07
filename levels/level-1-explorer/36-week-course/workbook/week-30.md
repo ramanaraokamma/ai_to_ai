@@ -142,7 +142,7 @@ Is (iii) a pass or a failure? ______  Why? ______________________________
 
 ## ✍️ Practice Set B — Use It
 
-**B1.** Your bot works perfectly on turn 1. Then every single turn after that gets the fallback, no matter what you type.
+**B1.** Your bot works perfectly on turn 1 and gives a proper answer. Then every single turn after that, it says nothing at all, no matter what you type.
 
 Which of the three causes is it? ______________________________________
 
@@ -498,7 +498,7 @@ It walks all four rows, matches nothing, `matched` stays 0, so the fallback fire
 
 ### Practice Set B
 
-**B1.** **Cause 1: `set i to 1` and `set matched to 0` are sitting ABOVE the `forever` block**, so they only ever run once. After turn 1, `i` is parked past the end of the list (or `matched` is parked at 1), so the `repeat until` exits before checking anything.
+**B1.** **Cause 1: `set i to 1` and `set matched to 0` are sitting ABOVE the `forever` block**, so they only ever run once. After a turn that found a match, `matched` is parked at 1 and `i` is left part-way down the list, so the `repeat until` exits before checking anything, and `if matched = 0` is false too, so the bot says **nothing at all**. (If turn 1 had found no match, `i` would be parked past the end of the list and `matched` at 0, and you would get the **fallback on every turn** instead.)
 **The fix:** drag both `set` blocks **inside** the forever loop, directly under `ask and wait`.
 
 **B2.** **Cause 2: `set matched to 1` is missing from inside the `if`.** So the loop says the right reply, then carries on walking to the bottom of the list, and at the end `matched` is still 0 — so the fallback fires as well. (The other symptom of the same bug: a question containing **two** trigger words gets two replies stacked on top of each other.)

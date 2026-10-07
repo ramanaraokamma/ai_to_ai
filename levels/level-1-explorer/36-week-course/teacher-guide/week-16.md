@@ -145,9 +145,9 @@ for "none of the above."**
 > real classes: an empty hand, a bare table, a fork, a pen, a wall.
 
 It is not a magic fix. Adding a big messy class often steals a few points of belief from your real
-classes and shrinks every margin. But it gives the model somewhere honest to put its belief instead
-of forcing all 100 points into a wrong answer. Almost no real product does this, which is worth
-mentioning to the student, because it is one of the reasons real products are confidently wrong.
+classes and shrinks many margins. But it gives the model somewhere honest to put its belief instead
+of forcing all 100 points into a wrong answer. Many real products don't do this, which is worth
+mentioning to the student, because it is one reason they can be confidently wrong.
 
 ![The other class is a box for none of the above](../figures/fig-w16-3-other-class-bin.svg)
 *Figure 16.3 — Give it somewhere honest to put the belief, or it will put it somewhere wrong.*
@@ -673,8 +673,8 @@ Then — and this is the important part — **argue with them.** Whatever number
 
 - If they write 50%: *"Card 5's top score was 45. Card 7's was 34. Your policy lets 51/45/4 straight
   through. Is that what you want?"*
-- If they write 90%: *"Card 6 was 99. Your policy waves the stapler through and blocks a perfectly
-  good 88% spoon. Is that what you want?"*
+- If they write 90%: *"Card 6 was 99. Your policy waves the stapler through and blocks card 4, a perfectly
+  good 68% spoon. Is that what you want?"*
 - If they write no margin threshold: *"Then 45/44/11 passes. Show me why that's fine."*
 
 You are not trying to get them to a particular number. You are trying to make them **defend one**.
@@ -714,9 +714,9 @@ add up to 100 so they're easy to compare. That's all. The model has no memory of
 right or wrong.
 
 **2. "Can it ever be 100%?"**
-You'll see 100% on the screen, but it's usually 99.6% rounded up. And a 100% reading should make you
-*more* suspicious, not less — it usually means the thing you're holding looks almost exactly like
-one of the training photos, which is a sign your test isn't testing anything.
+You'll sometimes see 100% on the screen, but it's really something like 99.6% rounded up. And a 100%
+reading is no proof of anything: a model can be that sure about an object it has never seen (card 6),
+and if it is a photo the model was trained on, the test isn't testing anything.
 
 **3. "If it's only 45% sure, is it broken?"**
 No — that's the model being unusually honest. It's telling you it genuinely can't separate those two
@@ -1057,9 +1057,10 @@ one.
 
 **H5 — a spoon. 100 / 0 / 0.**
 Sum = 100 ✅. Winner **spoon**, margin 100 − 0 = **100**. **Technically perfect, and suspicious.**
-A real model almost never produces a clean 100 / 0 / 0; it's usually 99.6 rounded. If you see this,
-the most likely explanation is that you are testing on a photo the model was trained on — which means
-you are not testing anything. *(This is Week 19 knocking at the door. Don't open it yet, but if the
+A real model's 100 / 0 / 0 is usually something like 99.6 rounded up. It can happen on a genuinely
+easy spoon, but it is also what you would see if you were testing on a photo the model was trained
+on — in which case you are not testing anything. Either way a clean 100 proves nothing (card 6's
+stapler got 99). *(This is Week 19 knocking at the door. Don't open it yet, but if the
 student raises it, say "hold that thought, it's the whole of next term.")*
 
 **H6 — a comb. 38 / 36 / 24.  ⚠️ The broken sum.**
@@ -1081,8 +1082,8 @@ Card 6 again with a different object. A banana is long, curved and smooth, so of
 lands nearest spoon. The model isn't malfunctioning. It has 100 points and three boxes.
 
 **Overall pattern the student should notice and write down:** the two highest margins in the set
-(H5 at 100, H8 at 81) are the two you should trust least — one because the test was invalid, one
-because the object wasn't in any class. **Margin is necessary but not sufficient. You also have to
+(H5 at 100, H1 at 88) are not automatically the two to trust most: H1 is genuinely good, H5 may be an
+invalid test, and the next one down (H8 at 81) is a banana that was in no class at all. **Margin is necessary but not sufficient. You also have to
 know what was held up.**
 
 ### K5 — Workbook 🛠️ Build It, Part 2: the confidence policy
@@ -1112,7 +1113,7 @@ counter-example.
 > making a person do work that didn't need doing. H3 was a real spoon at 62% with a margin of 41 —
 > and my 65% threshold **blocks it**, which is a miss I have chosen to accept. If I set the threshold
 > at 80% instead I'd block H3 *and* probably half of my correct answers, and a model that says "not
-> sure" half the time is a model nobody uses. If I set it at 55% I'd let H4 (a wrong answer)
+> sure" half the time is a model nobody uses. If I dropped the margin rule from 25 to 10, I'd let H4 (a wrong answer, margin 15)
 > through. 65 is my chosen trade.
 >
 > **Why OR, not AND.** With **OR**, failing *either* test blocks the answer. 45 / 44 / 11 has a
@@ -1144,7 +1145,7 @@ different counts; check their table against *their* policy, not against this one
 |---|---|---|
 | "Trust anything over 50%" | H4 was 55 and wrong. | "Do you want H4 through?" |
 | One threshold only (top score) | 45/44/11 has no defence at all. | "Show me how your policy handles a margin of 1." |
-| "Trust anything over 95%" | Blocks nearly every real answer, and H8 still passes. | "How many of the eight does this let through? Is that a useful machine?" |
+| "Trust anything over 95%" | Blocks nearly every real answer (only H5 gets through), and a 99% wrong answer like card 6's stapler would still pass. | "How many of the eight does this let through? Is that a useful machine?" |
 | Two numbers, no reasons | Objective 4 is the defence, not the number. | Hand it back. "Now tell me why 70 and not 60." |
 | "Never trust it" | Consistent, but useless. | "H1 was 93/5/2 on a real spoon. What's wrong with that one?" |
 
@@ -1275,8 +1276,8 @@ close race. *Check that the student's readout sums to 100.*
 
 **B4.** Any two genuinely different problems, each with a person who is hurt. Model answers:
 - **Users cannot tell a 97 / 2 / 1 from a 45 / 44 / 11.** Both just say "foxglove". The user is hurt:
-  eating or touching a plant on the strength of a coin toss. (Foxglove is poisonous; its lookalikes
-  are not.)
+  eating or touching a plant on the strength of a coin toss. (Foxglove is poisonous; some of its lookalikes
+  are far less dangerous.)
 - **The app cannot tell you the plant isn't in its list.** With no `other` class and no visible
   scores, an unknown plant still gets a confident name. The user is hurt, and so are the developers,
   who never learn the app is failing because nobody can see the low margins.
@@ -1287,8 +1288,7 @@ close race. *Check that the student's readout sums to 100.*
 adding to 100 is fine. (b) Add an **`other` class**, filled with about forty photos of everything
 that is not one of the three birds: empty feeder, feeder with a squirrel, a branch, a leaf, a passing
 cat, the fence, the sky. It must contain the *kinds* of things the camera will actually see. (c) The
-cost: one big messy class usually steals some belief from the real classes, so **every margin gets
-smaller** (robin might drop from 88% to 79%). Wrong: "it costs nothing". True but not the point: "it
+cost: one big messy class usually steals some belief from the real classes, so **margins often get smaller** (robin might drop from 88% to 79%). Wrong: "it costs nothing". True but not the point: "it
 takes time to photograph".
 
 ### K11 — Workbook 🧩 Puzzle of the Week

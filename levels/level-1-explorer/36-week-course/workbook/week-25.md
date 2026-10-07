@@ -460,7 +460,7 @@ Filter C's weights add up to 9, so its answer goes **up by 40 × 9 = 360**. C is
 
 **T2. Model answer.**
 
-> Instead of clipping, I would **divide every answer by 6 first** and then shade. The biggest possible combined answer is 1020 + 1020 = 2040… but with just two filters the biggest is 1020 + 765, and dividing 1020 by 6 gives 170 and dividing 765 by 6 gives about 128. Both of those fit inside 0–255 without any pinning, and 170 is clearly darker than 128, so the corners would come out visibly stronger than the straight edges — which is the truth.
+> Instead of clipping, I would **divide every answer by 6 first** and then shade. The biggest combined answer in this picture is 1020 (and no cell could ever go above 765 + 765 = 1530, which is exactly 255 after dividing by 6). Dividing 1020 by 6 gives 170 and dividing 765 by 6 gives about 128. Both of those fit inside 0–255 without any pinning, and 170 is clearly darker than 128, so the corners would come out visibly stronger than the straight edges — which is the truth.
 >
 > What it costs: every *small* answer gets squashed towards zero. A genuine weak edge of 30 becomes 5, which is nearly white and disappears from the picture. So I have kept the difference at the top by losing the detail at the bottom. Clipping keeps the bottom perfectly and destroys the top. There is no way to have both, because there are only 256 shades and I have more than 256 different answers.
 

@@ -39,9 +39,9 @@ Now here is the part that actually matters, and it is not the mask.
 
 **She did not shrug, and she did not just complain about it. She built a test set.** She collected 1,270 photographs of members of parliament — three African countries, three European countries — and she sorted them into groups by skin tone and by whether the person was a man or a woman. Then she ran three face-analysis products that real companies were already selling to real customers.
 
-The best of the three got **lighter-skinned men** wrong about **0.8%** of the time. One mistake in every hundred and twenty-five.
+On **lighter-skinned men**, none of the three got more than **0.8%** wrong. One mistake in every hundred and twenty-five, at worst.
 
-The same product, the same day, the same test, got **darker-skinned women** wrong **34.7%** of the time. One mistake in every three.
+On **darker-skinned women**, on the same test, the error rates were 20.8%, 34.5% and **34.7%**. The worst product got more than one in every three wrong.
 
 ```
         0.8%                        34.7%

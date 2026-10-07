@@ -537,7 +537,7 @@ Start at `the`. Greedy picks `bus` (4 beats 1 and 1). From `bus`, `to` (2 beats 
 
 **Words greedy reaches from `the`: `{ the, bus, to }`** — three words. **Why the set can never grow:** greedy's choice depends only on which word it is at, and the table never changes, so each of those three always hands back the same next word — and all three of those are already in the set. No way in, no way out. The set is **closed**.
 
-**So `amma` is impossible, not merely unlikely.** So are `market`, `late`, `like`, `shop`, `goes`, `town` and eleven more — **17 of the 20 words.** Greedy is not a cautious version of the model; it is the model with 85% of it amputated.
+**So `amma` is impossible, not merely unlikely.** So are `market`, `late`, `like`, `shop`, `goes`, `town` and ten more — **17 of the 20 words.** Greedy is not a cautious version of the model; it is the model with 85% of it amputated.
 
 ---
 

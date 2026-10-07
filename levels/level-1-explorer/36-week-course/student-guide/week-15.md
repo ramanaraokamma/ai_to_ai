@@ -414,7 +414,7 @@ The rules, and they are strict:
 | 5 | **large** Zunk | **Blorb** ✗ | Zunk | Three spikes, no legs — but every Zunk you saw was **small** |
 | 6 | three legs **and** a tail | anything, slowly | **none of the three** | A mixture that was never in training |
 
-**Typical score: 4 out of 6.**
+**Typical score: 3 out of 6** (cards 1-3; card 6 has no right answer).
 
 Now the five questions, in this order, because the order is the lesson:
 
@@ -431,7 +431,7 @@ No. The three rules were legs, spikes, tail. Size was never mentioned once.
 **The cards.** Blorbs at mixed sizes and Zunks at mixed sizes, and size stops being a separator, so the only thing left to learn is legs versus spikes. "I'd try harder" is arguing with the cake. You change the ingredients.
 
 **"Where are the twelve cards right now?"**
-In the envelope, in the drawer. And you still got about four out of six. **So what did the work?**
+In the envelope, in the drawer. And you still got the three easy cards right. **So what did the work?**
 
 Card 3 is the proof that the trap really was about size: Fip was drawn at mixed sizes, and Fip was fine.
 

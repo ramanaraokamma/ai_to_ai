@@ -493,7 +493,7 @@ Number-shaped categories you will meet: bus routes, shirt numbers, house numbers
 
 In regression, **every prediction has an error, including the excellent ones.** After six years of being marked right or wrong, this feels strange. Say the definition to yourself: error means *how far off*, not *how wrong you were*.
 
-And be slightly suspicious of an error of exactly zero, over and over. One perfect guess is luck. Twenty perfect guesses usually means the answer is leaking into the features somehow.
+And be slightly suspicious of an error of exactly zero, over and over. One perfect guess is luck. Twenty perfect guesses is a reason to investigate: the answer may be leaking into the features, or the test may be too easy.
 
 ### Trick 3 — "My error is minus five"
 
@@ -521,7 +521,7 @@ When there is no honest way to produce the number, regression is not on the menu
 
 1. **Your weather app, twice on one screen.** "Rain tomorrow: yes" is classification. "12 mm" right beside it is regression. Two separate predictions from the same data, sitting next to each other.
 2. **A music app.** It classifies (which genre is this?) and regresses (how many seconds before you skip?) constantly, at the same time, about the same song.
-3. **The spam folder.** Underneath, a filter usually produces a *score* — regression — and then a threshold turns it into `spam` or `not spam` for you. Somebody chose that threshold, and whoever chooses it quietly controls what you see.
+3. **The spam folder.** Underneath, a filter usually produces a *score* (how sure it is that the message is spam) and then a threshold turns it into `spam` or `not spam` for you. Somebody chose that threshold, and whoever chooses it quietly controls what you see.
 4. **Second-hand selling sites.** The price box is regression. The search filters (`under £2,000` / `£2,000–£6,000` / `over £6,000`) are the same thing bucketed, because a buyer narrowing a page wants bands, not a single number.
 5. **Your school report.** A percentage is regression. The grade letter is that percentage bucketed. Notice both losses: 79% and 80% might be different grades, and 80% and 89% might be the same one.
 6. **A fitness watch.** Step count is regression. "Are you asleep?" is binary classification. "Running / walking / cycling" is multi-class. All three, all night, from the same wrist.

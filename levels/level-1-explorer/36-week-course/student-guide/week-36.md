@@ -228,7 +228,7 @@ Here's the map from wobbly topic to week:
 | Confidence scores | `model.predict_proba(X_new)` |
 | "Which class is it worst at?" | `classification_report(...)` |
 
-Look at that `test_size=0.2`. That's your envelope. Somebody wrote `0.2` in a library that millions of people use, for exactly the reason you sealed ten photos out of every fifty.
+Look at that `test_size=0.2`. That's your envelope, written as one number: `0.2` means one photo in five is sealed away, the same as the ten you sealed out of every fifty. The person writing the code chooses that number, and `0.2` is a very common choice.
 
 **And then the certificate.**
 
@@ -395,7 +395,8 @@ And the hamster class — the class with 11 photos, the one everything will fail
 ```
    MOVE 1 — the test photos were training photos.
             A model that had done nothing but MEMORISE those 611
-            images would ALSO score about 95% here. So the number
+            images would score at least this well here (probably
+            100%). So the number
             cannot tell "learned what a cat looks like" apart from
             "recognised photo number 418".
             A measurement that can't tell success from failure

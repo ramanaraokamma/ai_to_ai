@@ -322,9 +322,9 @@ DEFAULT: OTHERWISE                THEN predict "no drop"
 
 **Step 6 — the best question in the whole example. Why does row 5 matter more than the others?**
 
-Row 5 is a **morning** call — so the evening pattern says it should be fine — with **five people** — so the people pattern says it should drop. It dropped.
+Row 5 is a **morning** call — so the evening pattern says it should be fine — with **five people** — so the people pattern says it should drop. It dropped. Row 6 is the mirror image: an **evening** call with only **two people**, where the evening pattern says drop and the people pattern says fine. It did not drop.
 
-It is the only row where the two candidate patterns **disagree**, and it settles the argument. The people count is doing the real work. Time of day was just going along for the ride, because evening calls happen to have more people on them.
+Those are the only two rows where the two candidate patterns **disagree**, and both go to the people count. With only eight rows that is a strong hint rather than proof, but it suggests the people count is doing the real work and time of day may just be going along for the ride, because evening calls happen to have more people on them.
 
 > **Rows where your two ideas agree cannot tell you which idea matters.** When you have two candidate patterns, hunt for the row where they contradict each other. That single row is worth more than all the others put together.
 
@@ -394,7 +394,7 @@ DEFAULT: OTHERWISE                THEN predict "doesn't run out"
 | 9 — Thu, chips, queue 19 | runs out | doesn't | **didn't** | the queue |
 | 10 — Fri, rice, queue 24 | doesn't | runs out | **ran out** | the queue |
 
-Two disagreements, two wins for the queue. **The chips were never causing anything.** Chips days simply *tend* to have long queues, so "chips" was standing next to the real cause and getting the credit.
+Two disagreements, two wins for the queue. **The chips look like they were never causing anything.** Chips days simply *tend* to have long queues in this table, so "chips" was probably standing next to the real cause and getting the credit. Ten rows is a strong hint, not proof.
 
 > **💡 Try this:** the chips rule would still work, most of the time, for a completely wrong reason. Then one day the school puts chips on a Wednesday when half the year group is out on a trip, the queue is 11 people long, and the chips rule confidently predicts a disaster that never happens. **A rule that is right for the wrong reason will betray you the moment the coincidence stops holding.**
 
@@ -485,7 +485,7 @@ Rule 1 still takes all six home matches and is still right on five of them. Noth
 
 Two right became one right. **The score drops from 10 out of 12 to 9 out of 12 — from 83% to 75%.**
 
-> **A real pattern can still make your rulebook worse.** The toss pattern genuinely exists, and it is genuinely too weak to override the home-ground pattern. Adding it swapped one correct answer for two wrong ones. **Adding a rule is not automatically an improvement, and the only way to find out is to score it both ways.**
+> **A real pattern can still make your rulebook worse.** The toss pattern genuinely exists, and it is genuinely too weak to override the home-ground pattern. Adding it fixed one wrong answer (row 6) and broke two right ones (rows 4 and 12). **Adding a rule is not automatically an improvement, and the only way to find out is to score it both ways.**
 
 That is the honest, slightly annoying state of rule-writing, and it is the reason the very next thing we do is count how many rules it takes before the whole thing falls over.
 
@@ -615,7 +615,7 @@ You need nothing but a pencil. Copy the fourteen rows onto ruled paper, cover th
 *Hint:* then you have understood something most adults haven't. Monday is not *causing* anything — Monday is a **stand-in** for whatever actually happens on Mondays: market traffic, the bin lorry, the school run. Your rule still works, because the stand-in turns up at the same time as the real cause. But it will break silently the day the market moves to Tuesday, and nobody will know why. Ask the other person: *how would you ever find out?*
 
 **3. "Does a computer find patterns the same way I just did with a pencil?"**
-*Hint:* roughly yes, and this genuinely surprises people. A machine learning program looking at the bus table would do essentially what you did — split the rows by a column, count how the answers land on each side, work out the rates, and keep the split with the biggest gap. It just does it for thousands of columns and thousands of possible thresholds in under a second, and it never gets bored on row 400. **Your hand-drawn counting grid is not a toy version of the real thing. It is the real thing, done slowly.**
+*Hint:* roughly yes, and this genuinely surprises people. One kind of machine learning program, a decision tree, looking at the bus table would do essentially what you did — split the rows by a column, count how the answers land on each side, work out the rates, and keep the split that separates the answers best. It just does it for thousands of columns and thousands of possible thresholds in under a second, and it never gets bored on row 400. **Your hand-drawn counting grid is not a toy version of how that kind of program works. It is the same idea, done slowly.** (Other kinds of machine learning find patterns differently, and you will meet some of them later.)
 
 ---
 
@@ -625,7 +625,7 @@ You need nothing but a pencil. Copy the fourteen rows onto ruled paper, cover th
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "One Monday the bus was on time, so the Monday pattern is dead." | "A pattern is a **bet**, not a law. Three out of four is still a much better bet than two out of eleven." |
+| "One Monday the bus was on time, so the Monday pattern is dead." | "A pattern is a **bet**, not a law. Three out of four is still a much better bet than three out of eleven." |
 
 This one comes straight from school maths, where patterns are exact: 2, 4, 6, 8. Real-world patterns are not like that. Say the biscuit tin sentence to yourself: *is it always the blue tin? No. Would you check the blue tin first? Yes.*
 
@@ -665,7 +665,7 @@ Finding a pattern and writing a rule are **two separate steps**, and the second 
 3. **A shop's "buy 2, get 1 free" sign.** That is a rulebook with a first-match-wins order. If the shop also has "20% off everything today", *which one applies to your basket?* The order was decided by a person, and it decides what you pay.
 4. **The "you might also like" row on a video app.** Underneath it is a counting grid the size of a warehouse: of everybody who watched *this*, how many then watched *that*? Divided, compared, ranked by the gap.
 5. **A smoke alarm.** `IF smoke_particles >= (a threshold) THEN scream.` Push the threshold down and it goes off when you make toast. Push it up and it stays quiet when it shouldn't. Somebody picked a number.
-6. **Weather forecasts.** "70% chance of rain" is a counting grid in disguise: on all the past days that looked like today, how many of them rained? A pattern, counted, and honestly reported as a bet rather than a promise.
+6. **Weather forecasts.** "70% chance of rain" is reported as a bet rather than a promise. Forecasters build it with much more than a tally, but the idea is close to a counting grid: on past days that looked like today, how often did it rain?
 7. **A parent saying "you're always on your phone".** Ask them, warmly, for the counting grid. Both halves.
 
 ---

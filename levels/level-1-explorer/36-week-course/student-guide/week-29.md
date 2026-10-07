@@ -263,7 +263,7 @@ Three complete runs on three small tables. Every bag, every roll. Cover the answ
    Everything else is FORCED.
 ```
 
-**Run A — prompt `i`, rolls 2, 1.**
+**Run A — prompt `i`, rolls 2, 2, 1.**
 
 | STEP | AT WORD | SLIPS IN BAG | ROLL | GOT |
 |---:|---|---|---|---|
@@ -406,7 +406,7 @@ Reachable set from `maya`: `{maya, is, here, ., rohan}` — five words out of se
 
 > **⚠️ Watch out:** think about what that means if anybody trusted this thing. Greedy's register says everybody is present, for ever, because "present" was the more common answer in the training data. Nothing is broken. It is working exactly as designed.
 
-**Part 2 — sampling, prompt `dev`, rolls 1.**
+**Part 2 — sampling, prompt `dev`, rolls 1, 1.**
 
 | STEP | AT WORD | SLIPS IN BAG | ROLL | GOT |
 |---:|---|---|---|---|

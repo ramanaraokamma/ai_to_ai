@@ -430,7 +430,7 @@ ________________________________________________________________
 **A2.** **C — it is gone completely, and nothing warned you.** There is no autosave at all. Refreshing the page loses it too, and on some machines letting the laptop sleep long enough loses it.
 Rebuild time: about **15 minutes**, if the photos are already sorted. *(Which is exactly why "I'll save it later" is such an expensive sentence.)*
 
-**A3.** **FALSE.** The two numbers: the model file is about **3 megabytes**; the 120 photos that made it are about **40 megabytes**. The model is much *smaller* than the data that made it, so it cannot possibly be storing them. Training squeezed the photos into a pattern and then let them go — like a cake, where you can't get the eggs back out.
+**A3.** **FALSE.** The two numbers: the model file is about **3 megabytes**; the 120 photos that made it are about **40 megabytes**. The model is much *smaller* than the data that made it, so it cannot possibly be storing them. Training squeezed the photos into a pattern and then let them go — like a cake, where you can't get the eggs back out. *(This is about the trained model. The saved `.tm` project file also keeps a copy of your photos so you can reopen and edit it, which is why Week 18 can delete samples from it.)*
 
 **A4.**
 
@@ -444,13 +444,13 @@ Rebuild time: about **15 minutes**, if the photos are already sorted. *(Which is
 
 **A5.** In the order you use them:
 
-1. **the ☰ menu** — top-left. You need it at the very end for **Download project as file**, and next week for **Open project from file**.
-2. **the pencil beside a class name** — renames `Class 1` to `spoon`. The step everybody skips and everybody regrets.
+1. **the pencil beside a class name** — renames `Class 1` to `spoon`. The step everybody skips and everybody regrets.
+2. **+ Add a class** — gives you the third box, which you also name properly.
 3. **Webcam / Upload** — loads photos into that class. Upload lets you drag a whole folder in; Webcam records live in 2-second bursts.
-4. **+ Add a class** — gives you the third box, which you also name properly.
-5. **Train Model** — the twenty seconds. Don't touch anything while it runs.
+4. **Train Model** — the twenty seconds. Don't touch anything while it runs.
+5. **the ☰ menu** — top-left. **Download project as file** saves it (and next week **Open project from file** brings it back).
 
-*Full credit needs the five things named. Getting the exact order slightly different is fine as long as **Train Model is last of the building steps** and the **save** is identified as its own separate thing that nothing else does for you.*
+*Full credit needs the five things named. Getting the exact order slightly different is fine as long as **Train Model comes after the classes and photos are set up** and the **save** is identified as its own separate thing that nothing else does for you.*
 
 **A6.**
 
@@ -566,7 +566,7 @@ Your five objects will differ. Here is a model answer so you can see the shape a
 
 **The counts:** objects in a class: **0 of 5.** Right answers: **0 of 5.** Margins over 40: **3 of 5.**
 
-**The summary sentence:** *"The model was confident five times out of five and wrong five times out of five."*
+**The summary sentence:** *"The model named a winner five times out of five and was wrong five times out of five, and three of those wrong answers had margins over 40."*
 
 **Row-by-row reasoning to check yours against:**
 

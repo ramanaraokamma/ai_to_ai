@@ -33,11 +33,11 @@ Then he laid a **white paper towel** over his hand and put it under the sensor. 
 ![The soap dispenser that only worked for some hands](../figures/fig-w33-14-soap-dispenser.svg)
 *Figure 33.1 — Nobody wrote a rule to refuse him. The sensor was checked against a narrow set of hands, and it passed.*
 
-The sensor worked by bouncing a little beam of light off your hand and measuring how much bounced back. It had been tuned and tested on hands that bounced back plenty of light. **Nobody in that factory hated anybody.** There was no line of code that said "refuse this person". There was no bug to find.
+The sensor worked by bouncing a little beam of light off your hand and measuring how much bounced back. It was most likely tuned and tested on hands that bounced back plenty of light. **Nobody in that factory hated anybody.** There was no line of code that said "refuse this person". There was no bug to find.
 
 Now here is the sentence that matters.
 
-**That dispenser had been tested.** Somebody signed it off. It had an accuracy number, and the number was fine. What it did not have was a **second number** — the number for the hands it was bad at. Nobody ever measured that, so nobody ever knew, and it shipped, and it went into hotels.
+**That dispenser had almost certainly been tested.** Somebody signed it off, and whatever it was tested on, it passed. What it very likely did not have was a **second number** — the number for the hands it was bad at. Nobody ever measured that, so nobody ever knew, and it shipped, and it went into hotels.
 
 ```
         WORKS            DOESN'T WORK
@@ -625,7 +625,7 @@ Somebody reads only the biggest number on your poster and walks away thinking yo
 2. **A voice assistant in a noisy kitchen versus a quiet bedroom.** Same model, two conditions, two very different accuracies — and nobody prints the second one on the box.
 3. **The nutrition label on a packet.** Somebody was made to publish the numbers they would rather not have published, in a fixed format, so you can compare. **That is a warning sign with legal force.**
 4. **"Contains nuts" on a wrapper.** Three words that name a specific limit for a specific person. Compare that to "may be unsuitable for some people", which warns nobody about anything.
-5. **A car's stopping distance in the wet versus the dry.** Manufacturers publish both, because publishing only the dry one would be misinformation made entirely of true numbers.
+5. **Car tyre labels.** In the EU a tyre label grades wet grip separately from fuel efficiency and noise, because a tyre that is excellent in the dry and poor in the wet would otherwise look fine on true numbers alone.
 6. **A trainer's "waterproof" claim.** Waterproof in what? Rain, a puddle, a river? A claim without a measured boundary is not a claim, it is a mood.
 7. **Your own test results at school.** A single overall percentage hides which topic you are actually shaky at. Splitting it up by topic is exactly what you did today — and it is exactly as uncomfortable, and exactly as useful.
 

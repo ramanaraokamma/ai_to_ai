@@ -580,7 +580,7 @@ The full frequency table, most common first:
 
 **Q2 model answer:**
 
-> The 9 punctuation tokens stop existing as separate pieces, so the total drops from **69 to 60**. But I would create a new problem: `gate.` and `gate,` and plain `gate` become **three separate entries** with counts of 2, 2 and… whatever is left, instead of one entry with a count of 4. So I would have fewer tokens *and* worse counts — and I would have thrown away the `.` tokens that tell me where each sentence ended.
+> The 9 punctuation tokens stop existing as separate pieces, so the total drops from **69 to 60**. But I would create a new problem: `gate.` and `gate,` become **two separate entries**, each with a count of 2, instead of one entry with a count of 4. So I would have fewer tokens *and* worse counts — and I would have thrown away the `.` tokens that tell me where each sentence ended.
 
 **Vocabulary boxes:**
 

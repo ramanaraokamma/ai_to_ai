@@ -143,7 +143,7 @@ If the score comes out at 19/20, do not celebrate — investigate. Ask: "which t
 
 ### Misconception 2 — "the tester failed, so the test failed"
 
-A tester scoring 6/20 has not wasted your afternoon. Six out of twenty is still six times the baseline of one, so the features carried real information — just not enough to pin down the exact object. That is a genuine, publishable-shaped result: *"my five features identify the category reliably and the individual object unreliably."*
+A tester scoring 6/20 has not wasted your afternoon. Six out of twenty is still six times the baseline of one, so the features carried real information — just not enough to pin down the exact object. That is a genuine result. If the wrong guesses also stayed inside the right category, it becomes: *"my five features identify the category reliably and the individual object unreliably."* (6/20 alone does not show that; the wrong cards do.)
 
 The lesson is about **measuring honestly**, not about winning. Say so before the test, not after, or it sounds like consolation.
 
@@ -154,9 +154,9 @@ The lesson is about **measuring honestly**, not about winning. Say so before the
 | Five features, fixed order, no leaks | Feature engineering, normalisation, one-hot encoding |
 | Two baselines and why you need one | Confusion matrices, precision and recall (Week 20) |
 | Bucketing as a design choice with a cost | Optimal bin widths, quantiles |
-| Elimination from the wrong cards | Feature importance scores, ablation studies (the grown-up name for what you're doing) |
+| Elimination from the wrong cards | Feature importance scores, ablation studies (the grown-up name for a close cousin of what you're doing) |
 
-If the student asks whether computers do this elimination thing too: yes, and it is called an ablation study, and it works exactly the same way — you remove a feature and see how much worse things get. Saying the name is fine. Going further is not.
+If the student asks whether computers do this elimination thing too: yes, and it is called an ablation study, and it is a close cousin of what the student did — you remove a feature, retrain, and see how much worse things get, instead of reading the mistakes. Saying the name is fine. Going further is not.
 
 ---
 
@@ -412,7 +412,7 @@ Let them answer. Whatever they say, ask "compared to what?"
 >
 > Do the percentages: 8 ÷ 12 = 0.667, so 67%. And 1 ÷ 12 = 0.083, so 8%.
 >
-> **67 minus 8 is 58.** The tester beat blind guessing by fifty-eight percentage points. That's the result. Write it as a sentence: *'the deck beat the baseline by 58 points.'*"
+> **67 minus 8 is 59.** The tester beat blind guessing by fifty-nine percentage points. That's the result. Write it as a sentence: *'the deck beat the baseline by 59 points.'*"
 
 **Do this:** Show the bar chart.
 
@@ -634,7 +634,7 @@ You can, and you should. But then check it, because people are genuinely bad at 
 Ten out of ten — but be suspicious of it. A perfect score means either your features are outstanding **or** your objects were too easy to confuse in the first place. Check: were at least two of your objects genuinely hard to tell apart? If not, run it again with three of the same kind of thing and watch the score fall. That fall is the real measurement.
 
 **"Does a real computer do the elimination thing?"**
-Yes, and it has a proper name: an **ablation study**. You remove one feature, retrain the model, and see how much worse it gets. Big companies run these constantly, on models with thousands of features, and the results are often surprising — the feature everyone assumed was carrying the model turns out not to be. You are doing the same experiment with index cards and one human. It is the same experiment.
+Yes, and it has a proper name: an **ablation study**. You remove one feature, retrain the model, and see how much worse it gets. Big companies run these constantly, on models with thousands of features, and the results are often surprising — the feature everyone assumed was carrying the model turns out not to be. You are doing a close cousin of that with index cards and one human: they remove the feature and re-test, you read which cards went wrong.
 
 **"How many objects do you need before the score means anything?"**
 Nobody can give you a clean number, and this is one of those questions where the honest answer is *it depends and there's no formula*. What's certain is that with three cards the score means almost nothing — get all three right and that could easily be luck. With twenty, luck can't explain a score of fifteen. Somewhere between those it starts to count, and where exactly depends on how many categories you have and how different they are. Statisticians have tools for this and they still argue about the answers.
@@ -784,7 +784,7 @@ Aim for 3, and expect 4 on objective 4 from a student who enjoyed the detective 
 ```
 correct  = 8 out of 12          8 ÷ 12 = 0.667 = 66.7%, call it 67%
 baseline = about 1 out of 12    1 ÷ 12 = 0.083 =  8.3%, call it  8%
-gap      = 67 − 8 = 59 points   (58.4 exactly)
+gap      = 67 − 8 = 59 points   (58.3 exactly, before rounding)
 ```
 
 **"Did they get any category wrong?"** No — 12 out of 12 on category. Every mistake is a swap *inside* a category: toy↔toy and fruit↔fruit.
@@ -858,7 +858,7 @@ And every pair the tester got **right** has a length gap of at least 3.5 cm:
 | 20 cards | 13 | **65%** | **1/20** | **5%** | **60 points** |
 | 20 cards | 6 | **30%** | **1/20** | **5%** | **25 points** |
 
-The 13/20 deck is the better result (60 points against 25). The 6/20 deck is still worth something: six times the baseline of one, so the features carry real information. *"My five features identify the category reliably and the individual object unreliably"* is a genuine finding. Watch for the gap written as "percent" rather than "points" (see Build It, Step 5).
+The 13/20 deck is the better result (60 points against 25). The 6/20 deck is still worth something: six times the baseline of one, so the features carry real information. If the wrong guesses also stayed in the right category, *"my five features identify the category reliably and the individual object unreliably"* is a genuine finding (6/20 alone does not show that). Watch for the gap written as "percent" rather than "points" (see Build It, Step 5).
 
 #### ✍️ Practice Set B — Use It
 

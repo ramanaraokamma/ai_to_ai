@@ -101,7 +101,7 @@ Try it out loud:
 1,070,003 ÷ 3 = 356,667.67
 ```
 
-Postcode 356667 is a real place. It is a village none of the three has ever visited. **The maths is perfect. The answer is garbage.** The column was a category wearing number clothes.
+Postcode 356667 may not even exist, and if it does it is a place none of the three has ever visited. **The maths is perfect. The answer is garbage.** The column was a category wearing number clothes.
 
 Student IDs, shirt numbers, phone numbers, house numbers, bus routes, postcodes, room numbers, table numbers in a canteen: **all categories.** A spreadsheet will happily average every single one of them and will never once warn you.
 
@@ -313,7 +313,7 @@ With five groups of one or two dogs each, there is nothing to learn from the bre
 
 > **💡 Try this:** read that last bit again. Cleaning did not tidy the breed column. **Cleaning created the information.** That is a genuinely different claim and it is the best thing in this example.
 
-> **🧑‍🏫 If a student says the duplicate might be two different dogs both called Bruno:** that is an excellent objection. Two Bruno labradors, both aged 3, both 22 kg, is *possible*. We call it a duplicate because **everything** matches exactly, which is far more likely to be a copy-paste than a coincidence. And the reason we cannot be certain is that nobody gave the rows unique IDs at collection time. That uncertainty is real and permanent.
+> **🧑‍🏫 If a student says the duplicate might be two different dogs both called Bruno:** that is an excellent objection. Two Bruno labradors, both aged 3, both 22 kg, is *possible*. We call it a duplicate because **everything** matches exactly, which is far more likely to be a copy-paste than a coincidence. And the reason we cannot be certain is that the `id` here is only a row number, not a real identifier (like a microchip number) that was recorded for each dog at collection time. That uncertainty is real and permanent.
 
 ### Worked Example 2 — A school canteen order log (food)
 
@@ -389,7 +389,7 @@ Same sum, different count, and the answer moves by more than ten rupees. That is
 | `day` | 4 (`Mon`, `mon`, `Tue`, `Wed`) | 3 |
 | `item` | 4 (`samosa`, `Samosa`, `dosa`, `SAMOSA`) | 2 |
 
-Before cleaning, the canteen manager asks "which is more popular, samosas or dosas?" The computer reports four items, none of them selling much. **The answer is not wrong — the question has been made unanswerable.**
+Before cleaning, the canteen manager asks "which is more popular, samosas or dosas?" A program that treats every spelling as different counts `dosa` four times and `samosa` only twice, so it says dosas win. After cleaning, samosas have 4 orders and dosas have 3. **The spelling mess did not just blur the answer; it flipped it.**
 
 **Step 6 — write the controlled vocabulary that would have prevented it.**
 
@@ -464,7 +464,7 @@ Now the table can say what actually happened. `result = foul` is the real inform
 1907 ÷ 6 = 317.83 cm
 ```
 
-**The average jumped up by 80.95 cm.** Two faults — one negative and one wrongly-recorded zero — were dragging the whole day's result down by nearly a metre.
+**The average jumped up by 80.95 cm.** Two faults — one negative and one wrongly-recorded zero — were dragging the whole day's result down by more than 80 cm.
 
 **Step 5 — prove the outlier was worth keeping.** What if we had crossed out the 421 too?
 
@@ -623,7 +623,7 @@ Say the sentence out loud each time: *"Did this person sleep zero hours, or did 
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "Computers are clever now; it'll figure that out." | "It will not. A spreadsheet counting distinct values reports **6** where I see 3." |
+| "Computers are clever now; it'll figure that out." | "It will not. A program counting distinct values reports **6** where I see 3. (Some spreadsheet tools ignore capital letters, but none will match `Mon.` or `Monday` with `Mon`.)" |
 
 Not by being clever, not by being modern. To a machine, `Monday` and `monday` are as related as `dog` and `Thursday`. The only fix is a controlled vocabulary written before you collect anything.
 

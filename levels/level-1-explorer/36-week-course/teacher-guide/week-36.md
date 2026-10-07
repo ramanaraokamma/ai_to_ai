@@ -238,7 +238,7 @@ homework from last night.)*
 
 | Minutes | Segment | What happens |
 |---|---|---|
-| 0–8 | 🪝 **Hook** | Twelve weeks ago you couldn't do any of this. Today, three parts. |
+| 0–8 | 🪝 **Hook** | Thirty-six weeks ago you couldn't do any of this. Today, three parts. |
 | 8–26 | 🧠 **Concept** | How the 60 marks add up · the four bands · the six outcomes · what "not yet" means |
 | 26–40 | 🔍 **Worked Example** | Mark three specimen items together, out loud, before marking the real paper |
 | 40–60 | 🎲 **Activity** | The showcase: five minutes, no notes, real adults, break-it log open |
@@ -431,7 +431,7 @@ Build the answer with them in two moves, and make them say the first one:
 ```
    MOVE 1 — the test photos were training photos.
             A model that had done nothing but MEMORISE those 611 images
-            would also score about 95% here. So the number cannot tell
+            would score at least this well here (probably 100%). So the number cannot tell
             "learned what a cat looks like" apart from "recognised photo
             number 418". A measurement that can't tell success from
             failure is not a measurement.
@@ -706,7 +706,7 @@ six ticks and no examples is an unfinished one.
 ### If they are struggling
 
 - **Use the short form and say so plainly:** Part A plus B1, B6, B8 plus C3. That is 20 + 9 + 4 = 33
-  marks, and it covers all nine modules. Scale the bands by half (21+ = solid) and write "short form"
+  marks, and it covers all nine modules. Scale the bands by 33/60 (23+ = solid, since 42 × 33/60 ≈ 23) and write "short form"
   on the paper so nobody misreads it later.
 - **Read the questions aloud** for Part B and C if reading is the obstacle rather than the ideas. It
   is a machine-learning assessment, not a reading test.
@@ -928,11 +928,12 @@ the object. With 5, almost anything looks "consistent" because there is nothing 
 with, so the learned pattern is thin and a real object matches it only weakly — belief spreads across
 all three classes instead of concentrating. The **margin** must have collapsed, and you can prove it
 without being told the runner-up: three scores sum to 100%, so with a top score of 54% the other two
-share 46%, the runner-up is **at most 46%**, and the margin is **at most 8 points**. At 91% the other
-two share 9%, so the margin is **at least 82 points**. That is why margin beats top score: the top
-score says who won, the margin says how close the race was — and an 8-point race is a coin toss
+share 46%, so the runner-up is **at least 23%** (an even split) and the margin is **at most 31 points**
+(it could be as low as 8). At 91% the other two share 9%, so the margin is **at least 82 points**. The
+margin has gone from "at least 82" to "at most 31". That is why margin beats top score: the top
+score says who won, the margin says how close the race was — and a narrow race is close to a coin toss
 wearing a percentage sign.
-*(Marks: 1 thinner pattern from fewer examples · 1 deducing margin ≤ 8 points from the sum-to-100 rule · 1 why margin is more informative.)*
+*(Marks: 1 thinner pattern from fewer examples · 1 deducing margin ≤ 31 points (versus ≥ 82 before) from the sum-to-100 rule · 1 why margin is more informative.)*
 
 **B6 — the confusion matrix.**
 
@@ -1055,7 +1056,7 @@ a real setting with real consequences, and there is no per-class accuracy, no co
 `other` class for the animals a vet actually sees, and no limits. *(Fifth, also accepted: no data
 card — and the 11 hamster photos are almost certainly 11 shots of the same hamster.)*
 
-**(b)** See Specimen 3 above: a purely memorising model would also score ~95% on those photos, so the
+**(b)** See Specimen 3 above: a purely memorising model would score at least 95% (probably 100%) on those photos, so the
 number cannot distinguish learning from memorising — and 19 of the 20 came from the two easy
 300-photo classes.
 

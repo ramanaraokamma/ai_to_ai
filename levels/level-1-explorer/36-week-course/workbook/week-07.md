@@ -628,7 +628,7 @@ DEFAULT: OTHERWISE             THEN predict "not dead"
 | Fault | Why it's a fault | The fix |
 |---|---|---|
 | `IF the queue is huge` | "Huge" is an adjective. Two people would disagree, and a machine cannot disagree — it needs one answer, the same every time | `IF queue_at_1230 >= 21` |
-| The **default line is empty** | With no default, the rulebook has *no answer* for every row where neither rule fires — which here is most of them | `DEFAULT: OTHERWISE THEN "doesn't run out"` |
+| The **default line is empty** | With no default, the rulebook has *no answer* for every row where neither rule fires — which here is about half of them | `DEFAULT: OTHERWISE THEN "doesn't run out"` |
 | Rule 2 is the **weaker** pattern and sits below the stronger one — but more importantly, it fires on chips days with short queues and gets them wrong | From the class example, chips is 75% against 17%; queue is 100% against 0%. Rule 2 wrongly flags row 9 (Thu, chips, queue 19, didn't run out) | Either delete Rule 2, or accept the false alarm on purpose and write down that you chose it |
 
 **The fault that stops a machine working completely: the empty default.** A vague condition gives *bad* answers, which is survivable and detectable. A missing default gives *no* answer, and no answer is not a value the next piece of software can do anything with.
@@ -660,7 +660,7 @@ Check the ends, because that is where people slip. Threshold **24** would flag d
 
 - **"28, the lowest observed sell-out."** It is the only one of the four that any real day actually demonstrated.
 - **"26 or 27, the middle of the hole."** If a new day lands anywhere in the hole, a middle line is least likely to be caught out.
-- **"25, the cautious one."** Making extra smoothies costs a little; running out costs a customer. Cheap error, so lean towards flagging.
+- **"25, the cautious one."** Stocking extra ice cream costs a little; running out costs a customer. Cheap error, so lean towards flagging.
 
 Any answer that names a **reason** wins. A bare number wins nothing, because the whole point is that the data cannot choose for you.
 
@@ -685,7 +685,7 @@ Any answer that names a **reason** wins. A bare number wins nothing, because the
 
 > The rulebook knows one small thing: on the three Mondays somebody happened to watch, the bus was late all three times. That is enough to say **"late is the better bet on a Monday"** and it is nowhere near enough to say **"the bus will be late on Monday"**. Those two sentences sound almost the same and they are not, and almost everybody says the second when the evidence only supports the first.
 >
-> What would change my mind upwards: ten more Mondays, all late. What would change my mind downwards: two Mondays on time — which would take Monday from 3 out of 3 to 3 out of 5, i.e. 60%, level-pegging with the rain pattern. **One or two rows can move the whole conclusion, and that fragility is the honest state of a three-row group.**
+> What would change my mind upwards: ten more Mondays, all late. What would change my mind downwards: two Mondays on time — which would take Monday from 3 out of 3 to 3 out of 5, i.e. 60% — no longer the strongest pattern, because the rain pattern's 75% would now be higher. **One or two rows can move the whole conclusion, and that fragility is the honest state of a three-row group.**
 >
 > If the roadworks finished tomorrow, the pattern would vanish overnight and the rulebook would carry on confidently announcing "late" every Monday, wrong every single time, with no signal that anything had changed. Nobody would notice until a person happened to count again — which might be never, because the rulebook does not complain and its output looks identical either way.
 

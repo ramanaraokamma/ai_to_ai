@@ -47,7 +47,7 @@ By the end of this chapter you will hand somebody a page with 144 numbers on it 
 
 > **Pixel** — one tiny square of a picture, and the smallest piece a computer can store. The word is just "**pic**ture **el**ement" squashed together, which is a very boring origin for such a good word.
 
-Hold a bright phone screen right up against your eye, closer than you can focus, and look at a plain white area. If the screen is bright enough, the smooth white breaks apart into a grid of tiny squares. Those squares are not an illusion. They are the whole picture. **There is nothing else there.**
+Hold a bright phone screen right up against your eye, closer than you can focus, and look at a plain white area. If the screen is bright enough, the smooth white breaks apart into a grid of tiny dots or stripes of light. Those are not an illusion. They are the screen's own tiny lights, one small cluster per pixel, and the picture is nothing but how bright each one is. **There is nothing else there.**
 
 > **Grayscale** — a black-and-white picture where each pixel is a single number for brightness, and nothing else.
 
@@ -79,7 +79,7 @@ Not how much ink. Not how much pencil. How much **light**.
 
 **Why does it stop at 255?** Because computers store things in **bytes**, and one byte holds exactly 256 different values: 0, 1, 2, … , 255. Nobody chose 255 because it was tidy. It is simply what fits in one byte, and one byte per pixel is cheap. That is the whole reason, and you now know something most adults do not.
 
-> **🧑‍🏫 If someone asks "can a pixel be 300, or −5, or 12.7?"** — no, no, and no. Whole numbers only, 0 to 255. If a calculation comes out at 300, the software squashes it back down to 255; if it comes out at −5, it becomes 0. You will meet that squashing properly in Week 25, where it has a name and it costs you something real.
+> **🧑‍🏫 If someone asks "can a pixel be 300, or −5, or 12.7?"** — no, no, and no. Whole numbers only, 0 to 255. If a calculation comes out at 300, careful software squashes it back down to 255; if it comes out at −5, it becomes 0. (Careless software can wrap around instead, which is much worse.) You will meet that squashing properly in Week 25, where it has a name and it costs you something real.
 
 ---
 
@@ -171,7 +171,7 @@ Ask yourself one question about that figure: **at which of the three could you s
 2. Small pictures train in seconds instead of hours.
 3. Most fine detail genuinely does not help tell a sock from a glove.
 
-And one bit of arithmetic for scale. Writing out 144 numbers by hand takes about ten minutes — roughly one number per second.
+And one bit of arithmetic for scale. Deciding and writing 144 numbers took you about ten minutes, but let us be generous and say the writing alone could be done at one number per second.
 
 ```
         144 numbers  ->  2 minutes 24 seconds
@@ -179,7 +179,7 @@ And one bit of arithmetic for scale. Writing out 144 numbers by hand takes about
  12,192,768 numbers  ->  141 days, non-stop, no sleeping
 ```
 
-That is what **one photograph** is. This week you will write out about one 144th of one percent of one.
+That is what **one photograph** is. This week you will write out about 0.001% of one — roughly one 85,000th.
 
 ---
 
@@ -219,7 +219,7 @@ Here is a 6 × 6 grid of numbers. Nobody is going to show you the picture. This 
 | r4 | c2–c5 | 4 |
 | r5 | c3–c4 | 2 |
 
-**2, 4, 4, 2** — narrow, wide, wide, narrow, and symmetrical left-to-right about the gap between columns 3 and 4. A square would give 4, 4, 4, 4. A triangle would give 2, 3, 4, 5. Only a **round** shape gives 2, 4, 4, 2. It is a dark circle on a white background — a chocolate biscuit on a plate.
+**2, 4, 4, 2** — narrow, wide, wide, narrow, and symmetrical left-to-right about the gap between columns 3 and 4. A square would give 4, 4, 4, 4. A triangle would give 2, 3, 4, 5. A **round** shape gives 2, 4, 4, 2 (a small diamond could too, but the grey squares sit where a curve would put them). The best guess is a dark circle on a white background — a chocolate biscuit on a plate.
 
 **Q5 — where are the 128s, and why?** All eight of them trace the **outline** of the circle. A circle's edge is curved and the squares are square, so along the boundary the curve cuts some squares roughly in half — and halfway is the honest answer for a half-covered square. Squares fully inside are 0; squares fully outside are 255. **Doubt only exists on the boundary.**
 
@@ -397,7 +397,7 @@ This happens, and it is the best five minutes of the lesson if you treat it as a
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| The picture is recognisable at the top and nonsense from partway down | A **skipped square**. One row has 11 numbers instead of 12, so everything after it is shifted | Count each row. Find the row with 11 or 13. That is where the picture broke. |
+| The picture is fine at the top and jagged, jogged sideways or smeared from partway down | A **skipped square**. One row has 11 numbers instead of 12, so everything after it slides one square out of place (and every extra skip slides it further) | Count each row. Find the row with 11 or 13. That is where the picture broke. |
 | The letter comes out white on a black background | The grid is **inside out** — 255 where the pencil was | Re-read the ramp. Pencil blocks light, so pencil means a *small* number. |
 
 One missing number wrecked everything after it. That lesson is worth more than a clean success.
@@ -422,7 +422,7 @@ One missing number wrecked everything after it. That lesson is worth more than a
 > *Hint:* sort of, and the differences are the interesting part. Your eye has about 100 million light detectors, so in a rough sense yes. But they are **not in a tidy grid** — they are packed densely in the middle of your vision and thinly at the edges — they do not all report at the same instant, and a lot of processing happens in your eye before anything reaches your brain. A camera records everywhere evenly. Your eye records the middle extremely well and mostly guesses the rest.
 
 **3. "How many different greys can a person actually see?"**
-> *Hint:* **nobody knows for sure**, and it is worth saying that out loud. Estimates run from about 30 shades if you see the greys one at a time, up to several hundred if they are side by side where you can compare them. It depends on how bright the room is, whether the patches touch, how big they are, how long you look, and which person is looking. That uncertainty is partly *why* 256 levels got chosen — it is comfortably more than anyone can distinguish, so nobody notices the steps.
+> *Hint:* **nobody knows for sure**, and it is worth saying that out loud. Estimates run from about 30 shades if you see the greys one at a time, up to several hundred if they are side by side where you can compare them. It depends on how bright the room is, whether the patches touch, how big they are, how long you look, and which person is looking. That uncertainty is partly *why* 256 levels got chosen — it is enough that in most photos you cannot see the steps (though in a very smooth sky or shadow you sometimes can).
 
 ---
 
@@ -453,7 +453,7 @@ Your own activity is the proof. Nothing crossed the table except numbers. There 
 |---|---|
 | "Black-and-white pictures are blurry old rubbish." | "Grayscale means **one number per pixel instead of three**. It is missing colour, not detail." |
 
-Hospital scans, most of the history of photography, and every fax ever sent are grayscale and can be enormously detailed.
+Hospital scans and most of the history of photography are grayscale and can be enormously detailed.
 
 ### Trick 4 — "the average brightness tells you what the picture is"
 
@@ -467,11 +467,11 @@ Averages destroy arrangement. That comes back in two weeks when you start huntin
 
 ## 🌍 Where You've Seen This
 
-1. **The moment a video call goes bad.** The picture breaks into visible blocks of flat colour. You are watching a smaller grid of numbers being stretched over the same screen.
+1. **The moment a video call goes bad.** The picture breaks into visible blocks of flat colour. You are watching a picture with far less detail (fewer numbers, or numbers squashed together) being stretched over the same screen.
 2. **"Zoom and enhance" in every police drama ever.** They zoom into a car park camera and read a number plate. Next week you will know exactly why that is fiction.
 3. **Minecraft, and pixel art generally.** A deliberate choice to make the grid visible instead of hiding it. Every block face is a tiny grid of numbers you are *meant* to see.
 4. **The megapixel number on a phone box.** 12 MP means about 12 million pixels, which means about 12 million numbers per grayscale photo — or three times that in colour.
-5. **Fingerprint and face unlock.** Both start by turning a camera image into a grid of brightness numbers. Everything after that is arithmetic on that grid.
+5. **Fingerprint and face unlock.** Both start by turning what a sensor measures into a grid of numbers. Everything after that is arithmetic on that grid.
 6. **A dot-matrix bus destination board, or a scoreboard at a match.** A very low-resolution grid where each pixel is a whole lamp. Stand close and you can count them.
 7. **Cross-stitch, knitting charts and Lego mosaic kits.** A picture given to you as a grid of instructions, one square at a time — which is exactly what you did with graph paper.
 

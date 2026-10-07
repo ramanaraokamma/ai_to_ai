@@ -68,8 +68,8 @@ where the danger lives:
 | Voice recording, fingerprint | Your exact route to school | A photo of an empty street |
 | School ID number | The times of day you are online | The plot of a novel |
 
-No single item in the middle column identifies anybody. Put three together and there is exactly one
-person in the country they can refer to. This is called **re-identification**, and it is why *"we
+No single item in the middle column identifies anybody. Put enough together (in Round 1 it takes five) and there is exactly one
+person they can refer to. This is called **re-identification**, and it is why *"we
 removed the names, so it's anonymous"* is one of the most commonly repeated false statements in
 technology.
 
@@ -292,7 +292,7 @@ best question of the wrap. Do not quiz them on the threads; the map is orientati
 >
 > And then, attached to the file — not in the picture, *attached to the file* — the exact latitude
 > and longitude to about five metres, the exact date and time, the make and model of the phone, and
-> often the name of the account the phone is signed in to.
+> sometimes the owner's name.
 >
 > You shared one thing. You gave away nine."
 
@@ -325,7 +325,7 @@ Three blocks, six minutes each. Do not let block 1 eat block 3.
 > are a hundred and twenty of you. 'Lives in postcode area 3' is not personal data on its own.
 > 'Left-handed' is not personal data on its own.
 >
-> Put those three together and there is one person. That is called **re-identification**, and it is
+> Put enough facts like those together — in a minute you will see it takes five — and there is one person. That is called **re-identification**, and it is
 > why the sentence 'we removed the names so it's anonymous' is one of the most common false
 > statements in the whole of technology."
 
@@ -411,8 +411,8 @@ findings beside each.
 >
 > **2. WHEN — is the timing plausible?**
 > "Eleven minutes old. Ninety thousand shares from a forty-follower account. Think about what that
-> requires: each of forty people would have to have produced two thousand two hundred and fifty
-> shares. That is not how things spread. Either somebody is pushing it deliberately or it was
+> requires: forty followers cannot explain that. Shares come from other people passing it on, so a huge
+> number of other accounts would have had to pick it up within minutes. That can happen to real news from a big, trusted source; it almost never happens to a brand-new account nobody follows. Either somebody is pushing it deliberately or it was
 > engineered to be maximally shareable. Both are reasons to slow down."
 >
 > **3. WHO ELSE HAS IT — corroboration.**
@@ -623,7 +623,7 @@ actually opened.
 
 ### Variation — easier
 
-Run Round 1 with three facts instead of five (Year 7 → postcode → left-handed gets you to two
+Run Round 1 with four facts instead of five (Year 7 → postcode → plays cricket → left-handed gets you to two
 people, which is close enough to make the point). Skip Round 2's map step. In Round 3, tell the
 student which card is false and make the task "find the proof and write down where you found it" —
 the procedure is what is being taught, not the detective work.
@@ -903,7 +903,7 @@ each, not a ranking.
 
 ### A3 — True or false, and explain
 
-**(i) FALSE.** Names are the easy part. Year group + postcode area + bus route took us from 600
+**(i) FALSE.** Names are the easy part. Year group + postcode area + bus route + days late took us from 600
 students to one, with no name anywhere. Combinations identify people.
 
 **(ii) FALSE.** It is stored **inside the file**. Which is exactly why it matters: send the file, send
@@ -930,7 +930,7 @@ make and model of the phone · **(3)** the camera settings — exposure, flash, 
 location, latitude and longitude, often to about five metres · **(5)** the edit history — whether it was
 cropped, filtered or rotated.
 
-Also acceptable in place of one of those: the account the phone was signed in to, or the file's
+Also acceptable in place of one of those: the owner's name (if the phone fills it in), or the file's
 original filename.
 
 *Watch for:* "GPS", "address", "map place" and "city" as five lines — that is one kind of thing five

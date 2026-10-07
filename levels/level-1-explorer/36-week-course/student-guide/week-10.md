@@ -500,7 +500,7 @@ But the shortcut buys you a **bigger n**, not a different shape. It helps enormo
 |---|---|
 | "Rules lost. Machine learning won." | "Rules win whenever a human already wrote the correct answer down. Learning wins when the answer only lives in people's ability to recognise something." |
 
-Tax bands, chess legality, speed limits, safe drug doses — all rules, all correctly rules, all would be *worse* with machine learning. A 99.9% accurate dosage model kills one patient in a thousand. A comparison against a published safety limit is right by construction.
+Tax bands, chess legality, speed limits, safe drug doses — all rules, all correctly rules, all would be *worse* with machine learning. A 99.9% accurate dosage model is still wrong one time in a thousand, and a wrong dose can harm a patient. A comparison against a published safety limit is right by construction.
 
 ### Trick 4 — "So machine learning is less work"
 
@@ -515,10 +515,10 @@ Labelling five thousand messages is hours of dull work, and every mistake in it 
 ## 🌍 Where You've Seen This
 
 1. **Pizza and burger menus.** Nobody lists every possible combination. They list toppings and charge per topping — a shortcut that dodges the explosion and gives up combo pricing to do it.
-2. **Spam folders on a phone.** In the 1990s these really were hand-written rulebooks, and they really did get beaten by people writing "FR33". Every one you use today learned from labelled examples instead.
-3. **A school timetable.** Try writing rules that satisfy every teacher, room, class and lunch break. Every extra requirement doubles what has to be checked, which is exactly why timetabling is famously the worst job in the school.
-4. **Password rules.** "At least 8 characters" sounds weak until you notice each extra character multiplies the possibilities. Doubling works *for* you here — it's the same maths, pointed the other way.
-5. **Wordle or Guess Who.** Every question halves the possibilities. That's the doubling staircase running backwards, and it's why you can find one face out of 24 in five questions.
+2. **Spam folders on a phone.** In the 1990s these really were hand-written rulebooks, and they really did get beaten by people writing "FR33". Most of the ones you use today learn from labelled examples instead (usually with a few hand-written rules added on top).
+3. **A school timetable.** Try writing rules that satisfy every teacher, room, class and lunch break. Every extra requirement can multiply what has to be checked, which is exactly why timetabling is famously the worst job in the school.
+4. **Password rules.** "At least 8 characters" sounds weak until you notice each extra character multiplies the possibilities. Multiplying works *for* you here — it's the same kind of maths, pointed the other way.
+5. **Wordle or Guess Who.** A good question can halve the possibilities. That's the doubling staircase running backwards, and it's why, with well-chosen questions, you can find one face out of 24 in about five.
 6. **Autocorrect and predictive text.** No human wrote a rule for "when I type 'gonig', mean 'going'". It learned from millions of labelled examples of what people typed and then fixed.
 
 ---

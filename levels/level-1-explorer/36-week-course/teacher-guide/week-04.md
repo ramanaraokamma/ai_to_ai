@@ -764,7 +764,7 @@ Complete answers to everything asked in this lesson and in the Week 4 workbook. 
 ### Lesson questions
 
 **Hook — "Which is the heaviest, and how much longer is it than the shortest?"**
-From the twelve sticky notes: the **bottle** is heaviest at 500 g. The shortest thing is the **pencil**… no — check carefully: pencil 18 cm, book 26 cm, bottle 22 cm, ball 22 cm. Shortest is the pencil at 18 cm. The bottle is 22 cm. So the bottle is **4 cm longer than the shortest thing**. Full answer: *the bottle, at 500 g, and it is 4 cm longer than the pencil.*
+From the twelve sticky notes: the **bottle** is heaviest at 500 g. Check the lengths: pencil 18 cm, book 26 cm, bottle 22 cm, ball 22 cm. The shortest is the pencil at 18 cm. The bottle is 22 cm. So the bottle is **4 cm longer than the shortest thing**. Full answer: *the bottle, at 500 g, and it is 4 cm longer than the pencil.*
 
 **Hook — "What did I add between the pile and the table?"**
 Nothing. No new facts. Only structure: the facts about one object were put on one line, and the same kind of fact was put in the same column every time. That structure is what makes comparison possible — for a human in four seconds, and for a machine at all.

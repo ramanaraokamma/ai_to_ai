@@ -198,7 +198,7 @@ Which means: **do not soften it.** There are four ready-made excuses, and every 
 |---|---|
 | "Those messages were unfair / trick questions." | Every one of them is a message a real phone actually receives. If your rulebook can't handle real messages, **that is the finding.** |
 | "I could easily fix it now I've seen them." | Yes — and then you would be back to writing rules from messages you have seen, which is exactly where the 100% came from. Fixing *using the test* is the thing the envelope existed to prevent. |
-| "Ten messages isn't many." | **Completely correct, and the best objection anybody makes.** Ten is few, so the 50% has real wobble in it — the true value might be 40% or 60%. But notice what the objection cannot do: **it cannot get you back to 100%.** The gap is much bigger than the wobble. The finding survives. |
+| "Ten messages isn't many." | **Completely correct, and the best objection anybody makes.** Ten is few, so the 50% has real wobble in it — the true value could easily be 30% or 70%, and might be wider still. But notice what the objection cannot do: **it cannot get you back to 100%.** The gap is much bigger than the wobble. The finding survives. |
 | "It's only spam, it doesn't matter." | Swap in a machine that decides who gets seen by a doctor first, and ask again. The mechanism is identical. Only the stakes change. |
 
 And the last thing to know, because it will make you feel better and it is also simply true:
@@ -561,7 +561,7 @@ The gap                                                50 percentage points
 
 > So of the five correct answers: two were length coincidences, two (#11 and #18) were correct by **doing nothing**, and only **#17** caught spam for a defensible reason. **One out of ten answers was right for a good reason.** That is a devastating and completely fair way to describe the rulebook.
 
-**And notice which rule did the most damage.** Rule 3, the character count, caused **three** of the five errors and got **two** right by accident. **The rule with the most action was the rule with the least understanding.**
+**And notice which rule did the most damage.** Rule 3, the character count, caused **two** of the five errors (#16 and #19) and got **two** right by accident (#12 and #20). **The rule with the most action was the rule with the least understanding.**
 
 ### Part 2 — the Term 1 checkpoint quiz
 
@@ -632,7 +632,7 @@ Write ten new messages of your own — five spam, five ham, truths written next 
 *Hint:* not fake — honest measurements of the wrong thing. Push towards precision, because it matters: a training score genuinely tells you your rules are *consistent* with the examples you had, which is worth knowing. It just cannot tell you anything about tomorrow. Try to get the other person to say the difference between *"that number is a lie"* and *"that number is a true answer to a useless question."*
 
 **2. "Ten messages isn't very many. Isn't the 50% unreliable too?"**
-*Hint:* yes, and this is the best objection anybody makes. Ten is few, so the true value sits somewhere in a fuzzy band — maybe 40% to 60%. Then the key move: **the objection cannot get you back to 100%.** The gap between the two bars is far bigger than the wobble in either bar, which is why the finding survives. Then the practical question: how would you narrow the band? (More fresh examples. A hundred. Which is an hour of writing.)
+*Hint:* yes, and this is the best objection anybody makes. Ten is few, so the true value sits somewhere in a fuzzy band — roughly 25% to 75%. Then the key move: **the objection cannot get you back to 100%.** The gap between the two bars is far bigger than the wobble in either bar, which is why the finding survives. Then the practical question: how would you narrow the band? (More fresh examples. A hundred. Which is an hour of writing.)
 
 **3. "Do professional researchers actually get this wrong?"**
 *Hint:* yes, regularly, and it ruins real work. It has a name — contaminating your test set — and it usually happens by accident: somebody peeks at the locked-away examples "just to check something", or tunes their system twenty times against the same test until it fits *that test* specifically. Papers get retracted for it. Medical AI systems have been announced with brilliant scores and then failed completely in real hospitals for exactly this reason. **The envelope on the table was a small version of the most important procedural rule in the whole field.**

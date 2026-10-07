@@ -28,7 +28,7 @@ You are thinking: *my face*. Fair enough. Here is what actually went out of the 
 
 Your face. The house number on the gate behind you. Your school uniform, so now somebody knows which school. Your neighbour's car number plate. A reflection in the window, which sometimes shows the inside of the room. The plants, which tell somebody roughly what country and what season. The shadow, which gives away the time of day.
 
-And then, attached to the file — not visible in the picture, *attached to the file* — the exact latitude and longitude to about five metres, the exact date and time to the minute, the make and model of your phone, and often the name of the account the phone is signed in to.
+And then, attached to the file — not visible in the picture, *attached to the file* — the exact latitude and longitude to about five metres, the exact date and time to the minute, the make and model of your phone, and sometimes the owner's name.
 
 **You shared one thing. You gave away nine.**
 
@@ -60,7 +60,7 @@ That second half is the whole lesson, and almost nobody thinks about it.
 Sort information into three columns. The danger does not live in the first column, where everyone expects it. It lives in the middle.
 
 ![Three columns, and the middle one is the trap](../figures/fig-w32-6-three-columns-personal-data.svg)
-*Figure 32.2 — Nothing in the middle column identifies anybody. Put three of them together and there is one person left.*
+*Figure 32.2 — Nothing in the middle column identifies anybody. Put enough of them together and there is one person left.*
 
 | Clearly personal | Personal **in combination** | Usually not personal |
 |---|---|---|
@@ -69,7 +69,7 @@ Sort information into three columns. The danger does not live in the first colum
 | Voice recording, fingerprint | Your exact route to school | A photo of an empty street |
 | School ID number | The times of day you are online | The plot of a novel |
 
-Not one single item in that middle column identifies anybody. Put three of them together and there is exactly **one** person in the country they can refer to.
+Not one single item in that middle column identifies anybody. Put enough of them together (in the town of 800 below, it takes five) and there is exactly **one** person they can refer to.
 
 That trick has a name.
 
@@ -273,7 +273,7 @@ Let us do it more carefully: of the 40 students in postcode area 5, about a fift
    1 student.
 ```
 
-**We just identified a specific child, by name, from a file with no names in it.** And we did it using year group, postcode area, bus route and lateness — four columns that anybody publishing that spreadsheet would describe as harmless background information.
+**We just narrowed a file with no names in it down to one specific child** — and anyone who knows the school could now put a name to row 3. And we did it using year group, postcode area, bus route and lateness — four columns that anybody publishing that spreadsheet would describe as harmless background information.
 
 **Which single column did the most work?** Year 7 — it removed 480 of the 600 in one step. **Which one feels the most private?** The lateness. Which removed two people.
 
@@ -301,7 +301,7 @@ Eleven minutes old. 90,000 shares. From 40 followers. Do the arithmetic:
    90,000 shares ÷ 40 followers = 2,250 shares per follower
 ```
 
-Each of those forty people would have to have personally produced two thousand two hundred and fifty shares in eleven minutes. **That is not how things spread.** Either somebody is pushing it deliberately, or it was engineered to be maximally shareable. Both are reasons to slow down.
+Forty followers cannot explain that. Shares come from other people passing it on, so a huge number of other accounts would have had to pick it up within minutes. That happens to real news from a big, trusted source. It almost never happens to a post from a brand-new account nobody follows. Either somebody is pushing it deliberately, or it was engineered to be maximally shareable. Both are reasons to slow down.
 
 **Check 3 — WHO ELSE HAS IT. Corroboration.**
 
@@ -447,7 +447,7 @@ Card C is a beautiful specimen, so look at everything it got right. Edmund Hilla
 |---|---|
 | "They removed the names, so nobody can tell who anyone is." | "They removed the names. What columns are left, and how few people fit all of them at once?" |
 
-Year group plus postcode area plus bus route got us from 600 students to one. **No name required at any point.** "We removed the names" tells you almost nothing about whether a file is safe to publish.
+Year group plus postcode area plus bus route plus days late got us from 600 students to one. **No name required at any point.** "We removed the names" tells you almost nothing about whether a file is safe to publish.
 
 ### 2. "I'd be able to tell if it was fake"
 

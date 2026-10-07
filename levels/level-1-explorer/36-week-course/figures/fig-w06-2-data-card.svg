@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>A finished data card, all seven lines</title>
-  <desc>An index card headed Data Card, Sleep and School Bag, August 2026. Seven ruled lines are filled in: what it is, how much, who collected it, who it is about, permission, known gaps, and do not use for.</desc>
+  <desc>An index card headed Data Card, Sleep and School Bag, August to September 2026. Seven ruled lines are filled in: what it is, how much, who collected it, who it is about, permission, known gaps, and do not use for.</desc>
   <text x="400" y="34" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Seven lines that make a table trustworthy</text>
 
   <rect x="40" y="56" width="720" height="300" rx="12" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
@@ -15,13 +15,13 @@
   </g>
   <line x1="216" y1="70" x2="216" y2="342" stroke="#F6AEA6" stroke-width="2"/>
 
-  <text x="64" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">DATA CARD &#8212; Sleep &amp; School Bag, August 2026</text>
+  <text x="64" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">DATA CARD &#8212; Sleep &amp; School Bag, Aug&#8211;Sep 2026</text>
 
   <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">
     <text x="64" y="130">What it is</text>
     <text x="228" y="130">30 school days of my own sleep, bag weight and screen time.</text>
     <text x="64" y="166">How much</text>
-    <text x="228" y="166">30 rows &#215; 5 columns. 3 to 28 August 2026. One row = one school day.</text>
+    <text x="228" y="166">30 rows &#215; 5 columns. 3 Aug to 11 Sep 2026. One row = one school day.</text>
     <text x="64" y="202">Who collected it</text>
     <text x="228" y="202">Me, by hand, written on paper at 21:00 every night, then typed up.</text>
     <text x="64" y="238">Who it is about</text>

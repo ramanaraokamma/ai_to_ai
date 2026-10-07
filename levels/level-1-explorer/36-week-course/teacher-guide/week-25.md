@@ -160,8 +160,9 @@ edge filter computes.
 
 This is not luck. Add up the filter's nine weights: −1, 0, +1, −1, 0, +1, −1, 0, +1. **They sum to
 zero.** Add the same amount to every pixel in the patch and the filter's answer changes by
-(that amount) × 0 = nothing. A filter whose weights sum to zero is mathematically blind to how bright
-the room is.
+(that amount) × 0 = nothing. A filter whose weights sum to zero is mathematically blind to a lamp that
+adds the same amount to every pixel. (Real light is not quite that tidy: a much dimmer room also
+shrinks the jumps a little. But the jump moves far less than the raw brightness does.)
 
 That is the payoff, and it is next week's lesson in advance: **raw brightness is a bad feature
 because it moves whenever the light moves. An edge is a good feature because it holds still.**
@@ -240,8 +241,8 @@ a vision model does first — they are the thing itself, at a size a pencil can 
 
 > **🧑‍🏫 Why this is worth two minutes.** This is the lesson most likely to be mistaken for a maths
 > drill — sixty multiplications and a lot of arguing about minus signs. The map is what stops that. It
-> tells the learner that the tedious cell they just finished is the first thing every camera, every
-> scanner and every photo app in their house does, and that it sits on the *examples* branch of the
+> tells the learner that the tedious cell they just finished is the same kind of step that photo apps,
+> scanners and vision software use, and that it sits on the *examples* branch of the
 > year, not off to one side.
 
 **The six threads** along the bottom are the spine of all four levels. **Representation** and **model**
@@ -316,9 +317,9 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 > That jump has a name in this course. It's called an **edge**. Not the edge of a table — an edge in
 > a picture is just this: **a place where the brightness suddenly changes.**
 >
-> Here's the strange thing I want you to notice. If I switch the big light off and use a torch
-> instead, the wall gets darker, the door frame gets darker, everything gets darker. But is there
-> *still* a jump at the door frame? … Yes. The jump survives. The brightness didn't.
+> Here's the strange thing I want you to notice. If I switch an extra lamp on, the wall gets
+> brighter, the door frame gets brighter, everything gets brighter. But is there *still* a jump at
+> the door frame? … Yes. In these numbers the jump survives. The brightness didn't.
 >
 > Hold on to that, because it's the reason this whole week exists. Today you're going to build a
 > tiny machine — nine numbers on a scrap of paper — whose only job in life is to find those jumps."
@@ -615,11 +616,11 @@ computes the remaining **four** cells largely alone, with you checking each one.
 > You can see the two top corners of the letter, and both sides of the stem. From **six numbers**.
 > Nobody told the filter there was a letter T in there. Nobody wrote a rule that said 'look for a
 > horizontal bar with a stick under it'. All it did was subtract the left side from the right side,
-> ninety-six more times than we had time for, and the shape fell out.
+> ninety-four more times than we had time for, and the shape fell out.
 >
 > One more thing before you go, and it's the honest bit. Our filter only found the **left and right**
 > edges. Look at the top of the letter — the flat top edge, where paper meets ink going downwards.
-> Our filter is completely blind to it. It scored zero along the whole top. Why? Because we only ever
+> Our filter is completely blind to it. It scored zero all along the top, between the two corners. Why? Because we only ever
 > compared *left to right*. We never compared *up to down*.
 >
 > That's your homework. There's a second filter that compares top to bottom, and you're going to run
@@ -738,7 +739,8 @@ If the student finishes early and is enjoying it:
 - **Ask them to predict before computing.** For each new cell: "Look at the picture. Big, zero, or
   negative?" Then compute and see. Prediction-then-check is worth double the practice.
 - **Ask the killer question:** "Is there any cell anywhere in this whole grid where the vertical
-  filter gives a big answer along the *top* of the letter?" The answer is no — and if they can
+  filter gives a big answer along the *top* of the letter?" The answer is no, apart from the two corners (2,2) and (2,11), which are
+  really the ends of the side edges — and if they can
   explain why, they have understood the filter completely. (Because the top edge is a change going
   *down*, and this filter only ever compares left to right.)
 
@@ -750,7 +752,7 @@ If the student finishes early and is enjoying it:
 
 Nobody official — a person picked them because they are the simplest numbers that mean
 "subtract this side, add that side". You could absolutely use −5 and +5 instead; every answer would
-be exactly five times bigger and the picture of the edges would look identical after clipping. What
+be exactly five times bigger, and on this letter the shaded picture would look identical after clipping (every non-zero answer is already 510 or more). What
 you *cannot* change is the **pattern**: minuses on one side, pluses on the other, and the whole set
 adding up to zero. That pattern is what makes it an edge detector rather than something else.
 
@@ -782,7 +784,7 @@ pretend edges around the border. For a 12×12 grid we just accept the 10×10 and
 
 Partly, and more than you would guess. Your phone runs filters over the image constantly — to
 sharpen it, to reduce noise, to find your face so it can focus on it. The "sharpen" slider in any
-photo app is literally a filter like today's, run over every pixel. What your phone does *not* do is
+photo app uses a filter of the same kind (different nine numbers), run over every pixel. What your phone does *not* do is
 stop at edges; it stacks hundreds of filters on top of each other, and the later ones look at the
 output of the earlier ones. That stacking is Level 3.
 
@@ -813,8 +815,8 @@ both sides get the lamp equally. That is exactly what you will prove with real n
 Hold that thought until you have done the homework, because you are about to find out and the answer
 is genuinely interesting. Short version: a corner is a left-right change *and* an up-down change in
 the same place, so both filters fire at once, and the two answers add up. Corners come out stronger
-than straight edges. That is not a bug — it is why the very first automatic feature-finders ever
-built for computer vision were corner detectors. A straight line looks like every other straight
+than straight edges. That is not a bug — it is why corner detectors were among the earliest
+and most popular automatic feature-finders in computer vision. A straight line looks like every other straight
 line; a corner tells you about shape.
 
 ---
@@ -830,7 +832,7 @@ line; a corner tells you about shape.
 | Arithmetic errors pile up and the shaded grid comes out wrong, so the "outline appears" moment falls flat | 255 + 255 + 255 by hand is where mistakes live | Insist on the calculator from cell one, and check each answer *before* they move to the next cell. Never let a wrong cell sit — the payoff at the end depends on all six being right |
 | Student is computing the right arithmetic on the wrong patch | They lost track of which cell they were on | Highlight the target cell on the input grid before each computation. Have them write "cell (8,4)" at the top of the working before any numbers |
 | Student asks "but how does it know it's a T?" and the lesson derails into a much bigger conversation | It is the obvious next question and it is a good one | Answer in one sentence and park it: "It doesn't. Today it only knows *where things change*. Turning 'where things change' into 'that's a T' takes a few more steps and we build them later." Then point at the ladder on the board |
-| Student finishes the six cells in eight minutes and gets bored | Some students find this arithmetic trivially easy | Go straight to the harder variation: add (6,6) and (6,3), and make them *predict before computing*. Then the killer question about the top edge |
+| Student finishes the six cells in eight minutes and gets bored | Some students find this arithmetic trivially easy | Go straight to the harder variation: add (6,4) and (6,6), and make them *predict before computing*. Then the killer question about the top edge |
 
 ---
 

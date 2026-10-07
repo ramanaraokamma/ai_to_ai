@@ -597,7 +597,7 @@ finger. Do not skip a rule even though you know the answer.
   OUT and return the 20p.
 - **The trap:** most students answer "ADD MORE" (rule 3), because 20p is obviously not enough for a
   45p chocolate. That answer is *sensible* and *wrong*, because rule 2 comes first and fires first.
-- **If they fall in the trap** — and roughly two-thirds do — do not correct them. Ask:
+- **If they fall in the trap** — and many do — do not correct them. Ask:
   **"Which rule did you use?"** … *"Rule 3."* … **"Which rules come before rule 3?"** Let them find it.
   Then say the line that matters:
 
@@ -828,7 +828,8 @@ THE EIGHT REQUESTS
   face unlock, autocorrect, alarm clock, video doorbell. That keeps the three genuinely hard ones and
   drops the repetitive ones.
 - Run the vending rulebook with only **three rules** (drop rules 1 and 2, renumber) and only four
-  requests. The order trap still works if you keep "coins < price" before "coins = price".
+  requests. The order trap disappears (the three comparison rules never overlap, so their order
+  cannot matter) but the "no rule fires" moment on Request 9 survives.
 - Let them use two bins instead of three at first, then introduce *not sure* halfway and let them
   move cards.
 
@@ -840,8 +841,9 @@ THE EIGHT REQUESTS
   They add a condition. You attack again. Three rounds of this teaches more about the limits of rules
   than any explanation, and it sets up Week 10 beautifully. Stop after three rounds; do not grind.
 - **The order challenge.** Give them the same five rules on separate slips and ask them to find an
-  ordering that makes the machine give away free juice. (Answer: put rule 4 or 5 above rule 2, and a
-  sold-out item is "dropped" anyway. Also: put rule 3 above rule 1, and an unknown code with too few
+  ordering that makes the machine "drop" an item that is sold out. (Answer: put rule 4 or 5 above rule 2, and a
+  sold-out chocolate is "dropped" anyway; no ordering gives anything away for free, because every
+  drop rule needs coins at least equal to the price. Also: put rule 3 above rule 1, and an unknown code with too few
   coins says ADD MORE forever instead of returning the money.)
 - **The twelfth-card interrogation.** Take the three *not sure* cards and ask, for each: *"Who could
   you ask, and what exactly would you ask them?"* Written, in full sentences.
@@ -1089,7 +1091,7 @@ with none.
 | 8 | Autocorrect | **NOT SURE — correct answer is "both"** | The red-underline part is a word list: pure rules. The suggestion bar that predicts your next word is learned. Same feature, two systems. | ⭐ Celebrate this one loudly. |
 | 9 | Alarm clock | **Human wrote the steps** | `IF time = 07:00 THEN ring`. | |
 | 10 | Self-checkout scale | **NOT SURE** | "Unexpected item in bagging area" is a weight threshold — a rule. But many shops now add a camera doing theft detection, and that part is learned. | The fact that would settle it: *does the overhead camera feed into the alert, or is it just recording?* Ask a staff member. |
-| 11 | Google Translate | **It worked it out itself** | Learned from millions of documents that already existed in two languages. Nobody wrote grammar rules for 130 languages. | Older versions (pre-2016) were much more rule-based. Same product, different era. |
+| 11 | Google Translate | **It worked it out itself** | Learned from millions of documents that already existed in two languages. Nobody wrote grammar rules for each of its 100+ languages. | Before 2016 it used an older statistical method (still learned from translated documents, just less well); only much older translators (before about 2007) were mostly hand-written rules. Same product, different era. |
 | 12 | Video doorbell | **NOT SURE** | Motion detection is a rule (`IF pixels change THEN record`). "That's a person, not a cat" and "that's a parcel" are learned. | Settling fact: *does the app distinguish people from animals?* If yes, learned part confirmed. |
 
 **Expected distribution:** 5 in *human wrote the steps*, 4 in *worked it out itself*, 3 in *not sure*.
@@ -1105,7 +1107,7 @@ Any student who lands 3 cards in *not sure* with reasons has done excellent work
 | 4 | B1, 20p | **R3** (20 < 25) | ADD MORE. Waits, keeps the 20p. | Saying it returns the coins — it doesn't; R3 says *wait*. |
 | 5 | B2, 60p | **R5** (60 > 50) | Drops the juice, returns 10p. | *(This is the one you demonstrate.)* |
 | 6 | B1, 25p | **R4** (25 = 25) | Drops the water. No change. | R5 — miscounting equal as more. |
-| 7 | A2, 20p | **R2** (stock 0) | SOLD OUT. Returns 20p. | **R3 — "ADD MORE". About two-thirds of students say this. It is the trap and it is the best moment in the lesson.** |
+| 7 | A2, 20p | **R2** (stock 0) | SOLD OUT. Returns 20p. | **R3 — "ADD MORE". Many students say this. It is the trap and it is the best moment in the lesson.** |
 | 8 | A1, 100p | **R5** (100 > 30) | Drops the crisps, returns 70p. | Arithmetic slip: 100 − 30 = 70. |
 | 9 | "The bag was burst, can I have another?" | **None** | Nothing. The machine has no rule for this and never will. | Inventing a rule. Ask them to read rule 2 aloud. |
 
@@ -1249,7 +1251,7 @@ teachers by their ages (R3 or R4). Nothing in the rulebook knows about groups. D
 needs somebody to judge whether this counts as a school group and whether the promise applies — two
 sensible people could disagree about even three cousins. **That is judgement.**
 
-**B3. The dog flap.**
+**B3. The cat flap.**
 **(a)** Input: something warm pressing on the flap. **(b)** Output: `open` or `stay shut`.
 **(c) NO.**
 **(d) NO, not AI**; the evidence is the neighbour's cat — it opens for anything warm that pushes. A
@@ -1378,7 +1380,7 @@ are ticked.
 | 4 | B1, 20p | **R3** (20 < 25) | ADD MORE. Waits, keeps the 20p. | Saying it returns the coins — it doesn't; R3 says *wait*. |
 | 5 | B2, 60p | **R5** (60 > 50) | Drops the juice, returns 10p. | *(This is the one you demonstrate.)* |
 | 6 | B1, 25p | **R4** (25 = 25) | Drops the water. No change. | R5 — miscounting equal as more. |
-| 7 | A2, 20p | **R2** (stock 0) | SOLD OUT. Returns 20p. | **R3 — "ADD MORE". About two-thirds of students say this. It is the trap and it is the best moment in the lesson.** |
+| 7 | A2, 20p | **R2** (stock 0) | SOLD OUT. Returns 20p. | **R3 — "ADD MORE". Many students say this. It is the trap and it is the best moment in the lesson.** |
 | 8 | A1, 100p | **R5** (100 > 30) | Drops the crisps, returns 70p. | Arithmetic slip: 100 − 30 = 70. |
 | 9 | "The bag was burst, can I have another?" | **None** | Nothing. The machine has no rule for this. | Inventing a rule. Ask them to read rule 2 aloud. |
 

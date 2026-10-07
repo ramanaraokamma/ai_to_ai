@@ -181,7 +181,7 @@ Get the flag backwards and false alarms and misses **swap places**, and everythi
 | Smoke detector | It shrieks while you make toast | The house burns down | **The miss**, obviously and enormously. |
 | Exam cheating detector | An honest student is accused of cheating | One cheat gets away with it | **The false alarm**, by a mile. |
 | Airport bag scanner | Somebody's bag gets searched for nothing | A weapon gets on a plane | **The miss.** |
-| Face unlock on your phone | It refuses you and you type your code | It unlocks for your brother | **The false alarm** — the opposite of the spam answer! |
+| Face unlock on your phone | It unlocks for your brother | It refuses you and you type your code | **The false alarm** — the opposite of the spam answer! |
 
 Look down the last column. **It changes every single row.**
 

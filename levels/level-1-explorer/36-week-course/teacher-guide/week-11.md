@@ -90,7 +90,7 @@ If the label is `animal` and the only allowed answers are `dog` and `cat`, then 
 
 That is all "class" means this week. It matters for one reason, and you should say this reason out loud because it is genuinely startling:
 
-> **A machine can only ever answer with a class you gave it.** Show a three-class fruit model a lime and it will say "orange", confidently, forever. There is no lime box. It is not being stupid; you did not give it the word.
+> **A machine can only ever answer with a class you gave it.** Show a three-class fruit model a lime and it will name an apple, an orange or a banana, because those are the only answers it has. There is no lime box. It is not being stupid; you did not give it the word.
 
 Do not go further than that. The full consequences arrive in Weeks 13 and 16.
 
@@ -295,13 +295,13 @@ Write it up:
 
 > **Label** — the answer you want the machine to output. It is the one column you cover up.
 
-> "Now the bit that catches adults out. The label isn't a special *kind* of column. It's just whichever one I decided to cover. If I take the same animal table and instead cover up `mass`, and ask the machine to guess how heavy a brown four-pawed dog with 14 cm ears probably is — now `mass` is the label and `dog` is just a feature. Same table. Different question. Different label. **The label is a choice, not a fact about the table.**"
+> "Now the bit that catches adults out. The label isn't a special *kind* of column. It's just whichever one I decided to cover. If I take the same animal table and instead cover up `mass`, and ask the machine to guess how heavy a brown dog with 14 cm ears and 2 white paws probably is — now `mass` is the label and `dog` is just a feature. Same table. Different question. Different label. **The label is a choice, not a fact about the table.**"
 
 **Say this — part 3, class:**
 
 > "One small word and then the big one. If the label can only be `dog` or `cat`, those are the two **classes** — the boxes the answer is allowed to go in.
 >
-> And this matters more than it sounds. A machine can only ever answer with a class you gave it. If I build something with two boxes, dog and cat, and I show it a rabbit — it will say 'cat'. Confidently. Every single time. It's not being thick. There is no rabbit box, and I'm the one who didn't make one."
+> And this matters more than it sounds. A machine can only ever answer with a class you gave it. If I build something with two boxes, dog and cat, and I show it a rabbit — it will say 'dog' or 'cat' — one of the two, because those are the only answers it has. It's not being thick. There is no rabbit box, and I'm the one who didn't make one."
 
 **Say this — part 4, the measuring instruction:**
 
@@ -700,7 +700,7 @@ f3  pockets_count  count every opening that closes with a zip, popper or velcro,
 
 **B3.** (a) **Meaningless.** Three numbers mean one thing and two mean another, so comparing any two rows tells you nothing. "Slightly inaccurate" would mean every number is a bit off in the same direction. (b) A blank column is honestly useless and would be noticed; this one is dishonestly useful, it would be trusted, and nobody could tell which rows were which. (c) **The sentence.** Write `lid ON` into the instruction, then re-measure the two rows done the other way. Never adjust a number to fit.
 
-**B4.** (a) "dog" or "cat" — never anything else. (b) **Very confident**; it has no way to express doubt about a category it does not have. (c) **Meera's mistake, made before the machine ran:** she chose two classes; there is no rabbit box. The machine is not being stupid. (d) She is asking for **a third class** such as `other` or `neither`, which is a change to the design and needs examples of "other" too. (This returns in Week 16.)
+**B4.** (a) "dog" or "cat" — never anything else. (b) **It can look very confident**; it must pick one of its two boxes, and nothing in it can say "this is neither". (c) **Meera's mistake, made before the machine ran:** she chose two classes; there is no rabbit box. The machine is not being stupid. (d) She is asking for **a third class** such as `other` or `neither`, which is a change to the design and needs examples of "other" too. (This returns in Week 16.)
 
 **B5.** Three faults (any three of these):
 
@@ -800,7 +800,7 @@ Model answer:
 | material | plastic | plastic | ✓ | — |
 | lid_type | screw | screw | ✓ | — |
 
-**Score:** 3 out of 5 matched. **Model closing sentence:** "Three out of five matched. Both the ones that didn't were my fault, not theirs — I knew what I meant and didn't write it down. The mass one is the worse mistake, because an 18-gram error is bigger than the difference between two of my bottles (92 g and 118 g are only 26 g apart), so that column would have told the machine something false."
+**Score:** 3 out of 5 matched. **Model closing sentence:** "Three out of five matched. Both the ones that didn't were my fault, not theirs — I knew what I meant and didn't write it down. The mass one is the worse mistake, because an 18-gram error is bigger than the difference between two of my bottles (92 g and 78 g are only 14 g apart), so that column would have told the machine something false."
 
 The workbook also asks for a re-test: the student rewrites the worst instruction, the adult measures that one feature again, and the student records the new numbers and whether they match now. Any rewrite that adds the missing detail is full marks.
 
@@ -827,7 +827,7 @@ Because it is a judgement, not a reading off an instrument. Writing "1, 2 or 3" 
 
 ### 🎨 Draw It
 
-There is no single right drawing. A strong answer has **six leader lines, every one landing on something measurable**, with a unit written on it. A line that says *nice*, *cool*, *fast* or *big* is not finished: ask it "with what tool, in what unit, rounded how?" The three boxes (tool, unit, rounding) must be **specific**: *bathroom scale*, not "a scale"; *nearest 0.1 kg*, not "grams-ish"; *bike lifted clear of the floor*, not "carefully". The workbook's example is a bicycle with `wheel_diameter_cm` (26.0), `mass_kg` (11.4), `gears_count` (7), `frame_colour` (blue, from a list), `has_bell` (yes) and `saddle_height_cm` (82.0). If somebody could follow the three boxes and still get a different number, the student should keep writing.
+There is no single right drawing. A strong answer has **six leader lines, every one landing on something measurable**, with a unit written on it. A line that says *nice*, *cool*, *fast* or *big* is not finished: ask it "with what tool, in what unit, rounded how?" The three boxes (tool, unit, rounding) must be **specific**: *bathroom scale*, not "a scale"; *nearest 0.1 kg*, not "grams-ish"; *bike lifted clear of the floor*, not "carefully". The workbook's example is a bicycle with `wheel_diameter_cm` (66.0), `mass_kg` (11.4), `gears_count` (7), `frame_colour` (blue, from a list), `has_bell` (yes) and `saddle_height_cm` (82.0). If somebody could follow the three boxes and still get a different number, the student should keep writing.
 
 ### 📊 Self-Check
 

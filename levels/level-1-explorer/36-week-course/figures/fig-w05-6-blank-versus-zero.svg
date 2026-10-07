@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>Wrong and right: what to do with an empty box</title>
-  <desc>Two panels. On the left, marked wrong, the empty sleep box has been filled with a zero and the average drops to six point nine hours. On the right, marked correct, the box is left blank with a note saying forgot to record, and the average stays at seven point six hours computed from nine values instead of ten.</desc>
+  <desc>Two panels. On the left, marked wrong, the empty sleep box has been filled with a zero and the average drops to six point nine hours. On the right, marked correct, the box is left blank with a note saying forgot to record, and the average stays at seven point seven hours computed from nine values instead of ten.</desc>
   <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One empty box. Two ways to handle it.</text>
   <line x1="400" y1="66" x2="400" y2="332" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>
   <rect x="24" y="66" width="352" height="268" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
@@ -69,7 +69,7 @@
   <path d="M586 168 H756 V204 L740 218 H586 Z" fill="#E8C671" stroke="#845F00" stroke-width="2.5" stroke-linejoin="round"/>
   <text x="596" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">note: forgot to</text>
   <text x="596" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">record that night</text>
-  <text x="668" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#1B7A4B" text-anchor="middle">7.6 h</text>
+  <text x="668" y="248" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#1B7A4B" text-anchor="middle">7.7 h</text>
   <text x="668" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">average of 9 values,</text>
   <text x="668" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and it says so</text>
   <text x="600" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">One measurement lost. Nothing invented.</text>

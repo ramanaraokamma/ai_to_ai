@@ -73,9 +73,9 @@ Here is the entire architecture, and it is genuinely this small:
 Three consequences follow, and all three will bite in the lab:
 
 **Order is a rule.** Because the loop stops at the first match, `pineapple` beats `topping` only because
-it sits higher in the list. Move it to the bottom and the pineapple joke becomes permanently
-unreachable — the word "pineapple" appears in questions about toppings, so `topping` will always grab
-those questions first. Your student met this exact idea in Week 8 with first-match-wins rule ladders;
+it sits higher in the list. Move it to the bottom and the pineapple joke becomes nearly
+unreachable — the word "pineapple" usually appears in questions about toppings, so `topping` will
+usually grab those questions first. Your student met this exact idea in Week 8 with first-match-wins rule ladders;
 name that connection out loud, because recognising an old idea in new clothes is worth a lot.
 
 **`contains` is generous, sometimes too generous.** The trigger `open` matches "what time do you open"
@@ -262,8 +262,9 @@ the threads; the map is orientation, never assessment.
       asked "why isn't it working" at least twice, and the only way to answer in ten seconds is to have
       made the same mistakes yourself the night before.
 - [ ] **Deliberately break it three ways and fix each**, so you recognise the symptoms instantly:
-      (a) drag `set i to 1` and `set matched to 0` *above* the `forever` block — the bot will fall back to
-      "I don't know that one" on every turn after the first;
+      (a) drag `set i to 1` and `set matched to 0` *above* the `forever` block — after a turn that matched, the
+      bot goes silent on every later turn (after a turn that did not match, it falls back to "I don't know
+      that one" every time);
       (b) delete `set matched to 1` from inside the `if` — a question containing two triggers gets two
       replies stacked;
       (c) add a trigger of just `is` at the top of the list — almost every question now gets reply 1.
@@ -583,7 +584,7 @@ The three causes, which the student diagnoses rather than being told:
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| Turn 1 works, then everything gets the fallback | `set i to 1` and `set matched to 0` are **above** the `forever` block, so `i` is stuck past the end of the list | Drag both `set` blocks **inside** the forever loop, directly under `ask and wait` |
+| Turn 1 works, then silence on every turn (or the fallback on every turn, if turn 1 matched nothing) | `set i to 1` and `set matched to 0` are **above** the `forever` block, so `matched` (or `i`) is stuck and the loop exits at once | Drag both `set` blocks **inside** the forever loop, directly under `ask and wait` |
 | A question containing two trigger words gets two replies stacked on top of each other | `set matched to 1` is missing from inside the `if`, so the loop never stops early | Add `set matched to 1` immediately after the `say` inside the `if` |
 | Almost every question gets the *same* reply, from near the top of the list | A trigger is too short or too general and sits too high — `open`, `is`, `to`, `a` | Lengthen it, or move it below the specific triggers, or both. **No trigger shorter than four letters** |
 
@@ -853,7 +854,7 @@ piece of thinking.
 | A block ends up inside a wrapper instead of after it, and the bot behaves impossibly | Scratch's drop zones are small, and `if` and `repeat` blocks look similar when collapsed | Check nesting before anything else. Two specifics: `change i by 1` must be inside the repeat-until but outside the if. The fallback `if` must be inside the forever but after the repeat-until. Drag the suspect block out to a blank area and re-drop it — that is usually faster than squinting |
 | Scratch appears to freeze the moment a question doesn't match row 1 | `change i by 1` is inside the `if`, so `i` never advances and the same row is checked forever | Drag it out of the if, still inside the repeat. Then have the student explain what was happening. This one is worth understanding, not just fixing |
 | A single question gets two replies stacked on top of each other | `set matched to 1` is missing inside the `if`, so the loop keeps walking after a match | Add it directly under the `say`. Then test with a question containing two trigger words, so they see it fixed |
-| After turn 1, everything gets the fallback | `set i to 1` and `set matched to 0` sit above the `forever` loop, so they only ever run once | Drag both inside the forever, directly under `ask and wait`. This is the classic bug and worth staging deliberately if it doesn't happen naturally |
+| After a turn that matched, the bot goes silent (after one that did not, it falls back every time) | `set i to 1` and `set matched to 0` sit above the `forever` loop, so they only ever run once | Drag both inside the forever, directly under `ask and wait`. This is the classic bug and worth staging deliberately if it doesn't happen naturally |
 | Almost every question gets the same reply from near the top of the list | A short or general trigger is sitting too high — `open`, `is`, `to` | Lengthen it or demote it. Then state the rule: no trigger shorter than four letters, specific above general. Then re-run the failing questions |
 | The whole hour goes into typing ten replies and the comparison never happens | Writing replies is fun, feels productive, and has no natural end | Cap it at **five** pairs in class, hard. Extending to ten is homework. Set a timer if you must. The comparison is the objective; the bot is only the apparatus |
 | The log gets filled in with only questions the bot can answer | Nobody enjoys writing down their own project failing | Require at least two questions you know it will fail, agreed *before* typing. Then reframe: "the failures are the data. A log of ten passes proves nothing about anything" |
@@ -1074,8 +1075,8 @@ sheets, the fully worked ten-question log, the three-sentence model answers and 
 
 | Item | Answer | Marking note |
 |---|---|---|
-| **B1** | **Cause 1:** `set i to 1` and `set matched to 0` sit **above** the `forever` block, so they run once. After turn 1, `i` is parked past the end of the list (or `matched` at 1) and the `repeat until` exits before checking anything. **Fix:** drag both `set` blocks **inside** the forever loop, directly under `ask and wait`. | See Part B for the full symptom table. |
-| **B2** | **Cause 2:** `set matched to 1` is missing from inside the `if`. The loop says the right reply, keeps walking, and at the end `matched` is still 0, so the fallback fires too. (Same bug, other symptom: a question with two trigger words gets two stacked replies.) **Fix:** add `set matched to 1` straight after the `say`, still **inside** the `if`. | Students confuse B1 and B2 because both end in the fallback. The difference: B1 fails on every turn after the first, B2 fails after a **correct** answer. |
+| **B1** | **Cause 1:** `set i to 1` and `set matched to 0` sit **above** the `forever` block, so they run once. After a turn that matched, `matched` is parked at 1 so the `repeat until` exits before checking anything and `if matched = 0` is false too: **silence** on every later turn. (If turn 1 found no match, `i` is parked past the end and `matched` stays 0: the **fallback** on every later turn.) **Fix:** drag both `set` blocks **inside** the forever loop, directly under `ask and wait`. | See Part B for the full symptom table. |
+| **B2** | **Cause 2:** `set matched to 1` is missing from inside the `if`. The loop says the right reply, keeps walking, and at the end `matched` is still 0, so the fallback fires too. (Same bug, other symptom: a question with two trigger words gets two stacked replies.) **Fix:** add `set matched to 1` straight after the `say`, still **inside** the `if`. | Students confuse B1 and B2. The difference: B1 gives silence (or the fallback, if turn 1 found no match) on every turn after the first; B2 gives a **correct** answer and then the fallback on top of it. |
 | **B3** | (a) Almost every question gets reply 1, whatever it was about. (b) The letters `is` occur inside a huge number of ordinary questions, e.g. *"where **is** the bus"*, *"**is** there lunch"*, and inside whole words: *"what time do you close th**is** week"*. (c) **Lengthen it** (e.g. `is it open`), or **demote** it below all specific triggers; best, do both. Rule: no trigger shorter than four letters, specific above general. | Accept any two sensible example questions; the test is whether they contain the letters `is`. Two different fixes are required for (c). |
 | **B4** | (a) It **invents**, fluently and confidently, in exactly the voice it uses when it is right; no step checks reality. (b) The **cost of being wrong** is enormous and the claim is specific, checkable and consequential; on a story website a made-up sentence is the product. The person asking is the least able to spot the error. (c) A layered design: hand-written, doctor-approved answers for the commonest questions, and anything else straight to a human with a clear button; no generator near medicine questions. | Full credit for putting rules where the stakes are highest and a human where the rules run out. |
 | **B5** | (a) The **`opening time`** reply, row 2. (b) A question would have to contain "opening time" but not "open", which is impossible because "opening time" has "open" inside it; row 1 always matches first and the loop stops. (c) **Swap them**, so `opening time` sits above `open`. (d) The swap itself costs nothing. Tightening a trigger is what costs: if `open` were changed to `what time do you open`, *"are you open on Sunday?"* would stop matching. Every tightening loses something: the Week 8 tighten-versus-loosen trade-off. | For (d), accept any genuine example of a question that stops working after a trigger is made longer. "It costs nothing" with no example is half marks. |
@@ -1208,7 +1209,7 @@ repeat bug) means set Practice Set B5 and the Puzzle again before Week 31.
 
 | Cause | Exact symptom | Fix |
 |---|---|---|
-| `set i to 1` and `set matched to 0` are **above** the `forever` block | Turn 1 works normally. Every turn after that gets the fallback, no matter what you type — because `i` is stuck at 6 (past the end of a 5-item list) so the repeat-until exits before checking anything | Drag both `set` blocks inside the forever loop, directly under `ask and wait` |
+| `set i to 1` and `set matched to 0` are **above** the `forever` block | Turn 1 works normally. If turn 1 matched, every later turn is **silence** (`matched` is stuck at 1, so the repeat-until exits at once and `if matched = 0` is false); if turn 1 matched nothing, every later turn gets the **fallback** (`i` is stuck at 6, past the end of a 5-item list, so the repeat-until exits before checking anything) | Drag both `set` blocks inside the forever loop, directly under `ask and wait` |
 | `set matched to 1` is **missing** from inside the `if` | A question containing two trigger words gets two replies, one after the other. The loop walks the whole list every time instead of stopping at the first match | Add `set matched to 1` immediately after the `say`, still inside the `if` |
 | A trigger is too short or too general and sits too high | Almost every question gets the same reply, from a row near the top | Lengthen the trigger, demote it below the specific ones, or both. No trigger shorter than four letters |
 

@@ -565,7 +565,7 @@ ________________________________________________________________
 
 **A3.** **FALSE.**
 
-Grayscale means **one number per pixel instead of three**. It is missing **colour**, not **detail**. A grayscale photo can be enormously detailed — hospital X-rays and scans, most of the history of photography, and every fax ever sent are all grayscale. Quality and colour are two separate things: you can have a razor-sharp grey picture and a blurry colour one.
+Grayscale means **one number per pixel instead of three**. It is missing **colour**, not **detail**. A grayscale photo can be enormously detailed — hospital X-rays and scans and most of the history of photography are all grayscale. Quality and colour are two separate things: you can have a razor-sharp grey picture and a blurry colour one.
 
 **A4.** pixel = **C** · grayscale = **E** · resolution = **A** · megapixel = **B** · byte = **D**.
 
@@ -631,7 +631,7 @@ Grayscale means **one number per pixel instead of three**. It is missing **colou
 
 (a) **143** numbers.
 
-(b) It is **perfect down to the end of row 4.** From the missing square onwards, every number is one place too early: the rest of row 5 shifts one square left, and then **every row after it shifts too** — and the shift keeps growing, because the rebuilder is cutting the list into twelves. You get a recognisable top, then a picture that seems to slide diagonally and dissolve.
+(b) It is **perfect down to the end of row 4.** From the missing square onwards, every number is one place too early: the rest of row 5 shifts one square left, and every row after it is shifted one square left too (the first square of each row is really the last square of the row above). The shift is one square, not a growing one, so the lower part is a recognisable but jogged and smeared copy of the picture, with the edges of strokes pulled to the wrong side. A second skipped square would shift it by two, and so on.
 
 (c) **Count each row on the original.** Find the row with 11 instead of 12. It takes under a minute and it tells you exactly where the picture broke.
 
@@ -717,7 +717,7 @@ A survives because its dark squares are **paired up inside blocks** — two in t
 
 > It was not a mistake, but it was a real cost and it was hidden from me. What it gained is enormous: 12 million numbers per photo, times 60 photos, is far too much for a browser tab to hold, and my model trained in twenty seconds instead of hours. Almost all of the detail it deleted genuinely does not help tell a sock from a glove.
 >
-> What it cost me is specific. My worst class was comb, and the thing that makes a comb a comb is its **teeth** — thin, evenly spaced lines. At a shrink factor of 13.5, anything thinner than about 14 original pixels stops existing as a separate thing. So it is entirely possible my model never saw a single tooth. That is not the model being stupid; the information was deleted before it was born.
+> What it cost me is specific. My worst class was comb, and the thing that makes a comb a comb is its **teeth** — thin, evenly spaced lines. At a shrink factor of 13.5, anything thinner than about 14 original pixels gets squeezed into less than one pixel, so it is blended with its neighbours and fades. So it is entirely possible my model never saw a single clear tooth. That is not the model being stupid; the information was deleted before it was born.
 >
 > Would I choose differently? I would keep 224 × 224 for training, because I do not have hours to spare — but I would change **my photos** instead: get much closer, so the teeth are big enough in the original that they survive being shrunk. That costs me nothing except walking two steps forward.
 
@@ -753,7 +753,7 @@ There is no single correct grid, because it is your own drawing. Check it agains
    r12  255  255  255  255  255  255  255  255  255  255  255  255
 ```
 
-Counts: **48** squares of 0 (16 in the left upright, 16 in the right upright, 16 in the crossbar), **20** squares of 192 (the faint outer edge of each upright, ten rows × two), and 144 − 48 − 20 = **76** squares of 255.
+Counts: **48** squares of 0 (20 in the left upright, 20 in the right upright, 8 in the crossbar between them), **20** squares of 192 (the faint outer edge of each upright, ten rows × two), and 144 − 48 − 20 = **76** squares of 255.
 
 ```
    sum     = (20 x 192) + (76 x 255) = 3,840 + 19,380 = 23,220

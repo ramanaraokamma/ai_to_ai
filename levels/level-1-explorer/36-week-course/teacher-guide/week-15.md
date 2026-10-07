@@ -363,7 +363,7 @@ They can't, obviously. Sit in that for a second.
 >
 > **Box two: training.** This is a *process*, not a thing. The machine reads all 120 photos, over and over, and adjusts itself. It takes about twenty seconds and it happens **once**.
 >
-> **Box three: the model.** The guessing machine that comes out. This is the bit you keep. It's a file. It's about three megabytes — smaller than one good photo from a phone.
+> **Box three: the model.** The guessing machine that comes out. This is the bit you keep. It's a file. It's about three megabytes — about the size of ten of your photos.
 >
 > **Box four: guesses.** You show the model a photo it has never seen, and it tells you `spoon`, `toothbrush` or `comb`. You can do that a million times. The model doesn't wear out and it doesn't change.
 >
@@ -640,7 +640,7 @@ Then ask the questions, in this order — the order matters:
 | "So who put 'big means Blorb' in your head?" | The examples did — because I drew them that way | This is the moment. Let it land before you speak again |
 | "What's the fix — you, or the cards?" | The cards. Mixed sizes in training would have killed it | If they say "I'd try harder", say: "that's arguing with the cake. You change the ingredients" |
 | "Card 6. What went wrong there?" | It wasn't any of the three. There was no right answer available | If they defend their choice, praise it, then say: "you had three boxes and no way to say 'none of these'. Next week is exactly about that" |
-| "Where are the twelve cards right now?" | In the envelope, in the drawer | Then: "and you still got four out of six. So what did the work?" |
+| "Where are the twelve cards right now?" | In the envelope, in the drawer | Then: "and you still got the three easy cards right. So what did the work?" |
 
 **Say this to close the phase:**
 
@@ -792,7 +792,7 @@ If even that stalls, the minimum viable Week 15 is one exchange:
 
 > **You:** "Where are the twelve cards?"
 > **Them:** "In the drawer."
-> **You:** "And you still got four out of six right. So what did the work?"
+> **You:** "And you still got the three easy cards right. So what did the work?"
 
 Get an answer in their own words, write it on a sticky note, stop. The shot list becomes homework with the checklist attached, and you pick the rest up in Week 16.
 
@@ -808,7 +808,7 @@ Three checks for the last five minutes. Use the exact wording.
 
 **A good answer:** "Yes. The photos aren't in the model — training already happened. Deleting them changes nothing."
 **An acceptable answer:** "Yes" with a gesture at the envelope. The physical memory counts.
-**A wrong answer:** "No, it needs the photos to compare against." Reteach with the envelope: the twelve cards were in a drawer and they still scored four out of six. Then the size arithmetic.
+**A wrong answer:** "No, it needs the photos to compare against." Reteach with the envelope: the twelve cards were in a drawer and they still got the three easy cards right. Then the size arithmetic.
 
 ### Check 2 — the epoch
 
@@ -924,7 +924,7 @@ Aim for 3. A student who genuinely gets cards 4 and 5 is at 4 already, whatever 
 | 5 | **large** Zunk | **Blorb** ✗ | Zunk | Three spikes, no legs — but every Zunk in training was small. Same trap, mirrored |
 | 6 | legs **and** a tail | anything, slowly | none of the three | It's a mixture that was never in training. Three boxes, no correct one, and no way to decline |
 
-**Typical score: 4 out of 6.** Cards 4 and 5 are the informative ones. Card 3 being correct is the control that proves the trap is about size and not about being generally confused: Fip was drawn at mixed sizes and Fip was fine.
+**Typical score: 3 out of 6** (cards 1-3; card 6 has no right answer). Cards 4 and 5 are the informative ones. Card 3 being correct is the control that proves the trap is about size and not about being generally confused: Fip was drawn at mixed sizes and Fip was fine.
 
 **"What did you get cards 4 and 5 wrong because of?"** Size. Not carelessness. Every single Blorb they saw was large and every single Zunk was small, so size was a perfect separator in training — and a much easier thing to notice than counting three legs against three spikes.
 
@@ -936,7 +936,7 @@ Aim for 3. A student who genuinely gets cards 4 and 5 is at 4 already, whatever 
 
 **"Card 6 — what went wrong?"** Nothing they did. Card 6 belongs to none of the three classes, so no available answer was correct. They had three boxes and had to put their belief in one. A model is in this position constantly. Next week is about the confidence number it shows while doing it.
 
-**"Where are the twelve cards right now?"** In the envelope, in the drawer. And they still scored around four out of six. Therefore the thing that answered was not the cards — it was the model in their head, and it is unreadable even to them.
+**"Where are the twelve cards right now?"** In the envelope, in the drawer. And they still got the three easy cards right. Therefore the thing that answered was not the cards — it was the model in their head, and it is unreadable even to them.
 
 ### Worked example — the shot list arithmetic
 

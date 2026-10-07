@@ -409,7 +409,7 @@ Write both definitions on the board. Leave them up.
 table. Do **not** re-measure it — re-measuring would change a variable.
 
 ```
-   row 0  |  baseline: 40 each, full variety  |  5 / 5 correct  |  margins 86, 82, 66
+   row 0  |  baseline: 40 each, full variety  |  3 / 3 real objects correct  |  margins 86, 82, 66
 ```
 
 **Step 2 — the prediction slip (3 min).** Hand them prediction slip 1. Say:
@@ -434,11 +434,11 @@ the top score and the margin for each of the five. Then the score out of five.
 **Model result and model explanation:**
 
 ```
-   row 1  |  5 photos per class  |  3 / 5 correct  |  margins 41, 14, 7
+   row 1  |  5 photos per class  |  2 / 3 real objects correct  |  margins 41, 14, 7
 ```
 
 > "The margins fell from 86, 82 and 66 down to 41, 14 and 7 — every single one collapsed. It still got
-> three out of five right, so if I only looked at the score I'd think it was only a bit worse. But
+> two of the three real objects right, so if I only looked at the score I'd think it was only a bit worse. But
 > with five photos it saw almost no variety, so the pattern it found is thin and fragile. **Too few
 > examples doesn't make the answers wrong so much as unstable** — and unstable answers become wrong
 > answers the moment anything shifts."
@@ -451,7 +451,7 @@ the top score and the margin for each of the five. Then the score out of five.
 > - *If they try to change what they wrote:* don't allow it, warmly. "No — the whole point is that it's
 >   in ink. That's what makes it worth something."
 
-> **2. "It got 3 out of 5, and the baseline got 5 out of 5. Is 'two fewer' the whole story?"**
+> **2. "It got 2 of 3 real objects, and the baseline got 3 of 3. Is 'one fewer' the whole story?"**
 > - *Hoping for:* no — the margins collapsed much more dramatically than the score did.
 > - *If they say yes:* put the two margin rows side by side and read them out. 86 → 41. 82 → 14. Then
 >   ask again.
@@ -923,7 +923,7 @@ predicted experiment 2 and can say why, say so out loud — that is genuinely st
 | Concept | Which sabotage will hurt most? | A written guess. Usually experiment 2, and usually not what they guessed. |
 | Concept | What are we comparing against? | The Week 17 baseline. |
 | Worked ex. | Was your prediction right? | Either answer is fine. The update is the marks. |
-| Worked ex. | Is "two fewer correct" the whole story? | No — the margins collapsed far more than the score did. |
+| Worked ex. | Is "one fewer correct" the whole story? | No — the margins collapsed far more than the score did. |
 | Worked ex. | Why reload the baseline? | Otherwise the next experiment starts from a damaged model and you've turned two knobs. |
 | Activity | Which is better, 91% or 95%? | The 91%. The 95% only works in one place. |
 | Activity | If you'd only tested on the table, what would you conclude? | That the single-background model was better. That is exactly the trap. |

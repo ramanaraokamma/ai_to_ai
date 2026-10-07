@@ -247,7 +247,7 @@ Now rewrite the claim *"edges survive a lighting change"* so that it is honest.
 
 - [ ] **Step 1.** 144 numbers typed into `B2:M13`.
 - [ ] **Step 2.** Input shaded with conditional formatting — minimum 0 **black**, maximum 255 **white**. Letter readable.
-- [ ] **Step 3.** The formula typed by hand into `C18`. Five closing brackets counted.
+- [ ] **Step 3.** The formula typed by hand into `C18`. Seven closing brackets counted.
 - [ ] **Step 4.** Dragged right to `L18`, then down to row `27`. 100 cells.
 - [ ] **Step 5.** Edge map shaded with the colours **flipped** — minimum 0 **white**, maximum 255 **black**.
 - [ ] **Step 6.** **One cell checked by hand**, and it matched.
@@ -439,11 +439,11 @@ That is the dangerous kind of wrong: silent. Error messages only catch *broken* 
 
 **B3.**
 
-(i) **Not a hollow outline — a solid block.** Every cell in the neighbourhood of the stroke fires, and there is no white middle anywhere.
+(i) **Not a hollow outline — a thick, almost solid shape.** Every cell beside the stroke fires, and there is no white middle anywhere.
 
-(ii) A 3 × 3 filter compares the column two places apart (or the row two places apart). With a one-pixel stroke, **there is never a position where all nine pixels are the same**, so there is never a zero. Wherever you put the window, one side is on the stroke and the other is on the paper.
+(ii) A 3 × 3 filter compares the column two places apart (or the row two places apart). With a one-pixel stroke, **no window that touches the stroke ever has all nine pixels the same**, so there is no flat patch of ink to give a zero. Wherever you put a window that touches the stroke, one side of it is on the stroke and the other is on the paper (apart from the oddity below).
 
-To get a hollow interior you need the stroke to be at least about **4 pixels** thick, so that the whole 3 × 3 window can sit inside the ink with nothing changing. (There is a nice extra oddity: with a stroke exactly one pixel wide, the cell sitting *directly on top of it* gives **zero**, because it compares the paper on the left with the paper on the right and ignores the middle column entirely. So a one-pixel line comes out as *two* lines with a gap.)
+To get a hollow interior you need the stroke to be at least **3 pixels** thick (and about 4 or more to see a clear hollow), so that the whole 3 × 3 window can sit inside the ink with nothing changing. (There is a nice extra oddity: with a stroke exactly one pixel wide, the cell sitting *directly on top of it* gives **zero**, because it compares the paper on the left with the paper on the right and ignores the middle column entirely. So a one-pixel line comes out as *two* lines with a gap.)
 
 **B4.**
 

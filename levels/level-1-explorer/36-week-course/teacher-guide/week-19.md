@@ -639,7 +639,7 @@ answer: all six were already studied. Fix: split first, then train on the 24 onl
 > properly and held out 6. I got 6 out of 6."*
 
 Timing: 3 minutes. Harder. The student will often defend it, because the shuffle *was* fair. The point
-to draw out: frame 14 and frame 17 are a twentieth of a second apart — same angle, same shadow, same
+to draw out: frame 14 and frame 17 are about a third of a second apart — same angle, same shadow, same
 smudge on the spoon. They are the same photo wearing different names. Fix: split by *session*, not by
 frame. Shoot two clips in two places and use one entirely for testing.
 
@@ -1135,7 +1135,7 @@ themselves, say so out loud — it is the most valuable single observation of th
   from scratch — you cannot un-train a photo.
 
 **Cheat 2 — same burst of photos.**
-- *What leaked:* near-duplicates. Frames a twentieth of a second apart share the angle, the shadow,
+- *What leaked:* near-duplicates. Frames about a third of a second apart share the angle, the shadow,
   the background and the smudge on the object. Each held-out frame has an almost-identical twin in the
   training pile, so the model has effectively seen it.
 - *Direction:* far too high — often 95–100% for a model that fails on any genuinely new photo.

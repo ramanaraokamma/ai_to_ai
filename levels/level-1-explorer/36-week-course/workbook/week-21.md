@@ -65,7 +65,7 @@ Work out all four gaps first:
    (a) ______ pts     (b) ______ pts     (c) ______ pts     (d) ______ pts
 ```
 
-Now: **which two have the same gap, and why are they nowhere near equally good?**
+Now: **which two have nearly the same gap, and why are they nowhere near equally good?**
 
 ________________________________________________________________
 
@@ -533,7 +533,7 @@ And that tie is itself informative: **the confusion is symmetric.** These two re
 
 **B2.** Both checks pass because **the diagonal is exactly the same either way round.** If you flip a grid along its diagonal, the diagonal cells don't move — so `5 + 4 + 2 = 11` still works. And flipping doesn't add or lose any marks, so all nine cells still total 15. The grid is a **mirror image** of the truth and both safety nets sail straight past it.
 
-**How you would catch it:** **read a cell out loud as a sentence** and notice it describes something that did not happen. Take the cell holding 2. Read the wrong-way grid and it says something like *"two combs were called comb wrongly"* — which is nonsense — instead of *"two combs were called toothbrush"*, which is a real event.
+**How you would catch it:** **read a cell out loud as a sentence** and notice it describes something that did not happen. Take the cell holding 2. In the wrong-way grid that 2 sits in the toothbrush row and the comb column, so read the standard way it says *"two toothbrushes were called comb"* — a perfectly sensible-sounding sentence, but the sheet shows only one toothbrush was called a comb. So the catch is: read a cell as a sentence **and check it against the sheet**.
 
 **How to stop it happening:** write the words **`TRUTH` down the left** and **`SAID` across the top** *before a single number goes in.* Prevention, not detection — because detection is genuinely hard here.
 
@@ -629,7 +629,7 @@ Both of the biggest mistakes are in the **fox row.** That is a much more useful 
 
 **The traffic runs away from fox.** The model said `fox` only **7** times in 30 tries, though 10 foxes existed — it is **reluctant about fox** — while it said `cat` **12** times against 10 real cats.
 
-**Put together, the diagnosis is:** *foxes are being lost, mostly to cat.* And the action follows straight from it: count the fox training photos first, and if there are fewer or less varied than the others, that is your answer before you look at anything else.
+**Put together, the diagnosis is:** *foxes are being lost, equally to cat and to dog (3 each).* And the action follows straight from it: count the fox training photos first, and if there are fewer or less varied than the others, that is your answer before you look at anything else.
 
 ### Think Deeper
 
@@ -640,7 +640,7 @@ They are **not** for catching **set-up** errors — labelling the whole grid the
 **What that tells you about checks in general:** a check that passes tells you *"nothing I was checking for has gone wrong."* It does **not** tell you *"nothing has gone wrong."* Checks are **necessary but not sufficient.** So you need two different kinds of safety net:
 
 1. **Arithmetic checks** for slips (the two you did).
-2. **Reading it out loud in plain words** for nonsense — because a human ear catches *"two combs were called comb wrongly"* instantly, and no sum ever will.
+2. **Reading it out loud in plain words** for nonsense — because a sentence about real objects can be checked against the sheet, and no sum will ever do that.
 
 That second habit — say your answer as a sentence about the real world and see whether it makes sense — is worth more than any formula in this book.
 

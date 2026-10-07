@@ -621,7 +621,7 @@ when green flag clicked
         set [conf v] to (answer)
 
         ┌── THE THRESHOLD — this block is the whole point ──┐
-        if <(conf) < (threshold)> then
+        if <not <(conf) > (threshold)>> then
 
             switch backdrop to [white v]
             say (join [Not sure - only ] (join (conf) [%.])) for (3) seconds
@@ -1130,7 +1130,7 @@ confidence number rather than saying only "not sure".
 ```
    set [threshold v] to (70)
 
-   if <(conf) < (threshold)> then
+   if <not <(conf) > (threshold)>> then
        say (join [Not sure - only ] (join (conf) [%.]))
    else
        ... the four class behaviours ...

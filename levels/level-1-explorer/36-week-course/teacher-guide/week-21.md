@@ -658,8 +658,8 @@ Then add them up and write the sum outside the grid.
 
 ### Step 3 — Say every mistake out loud (6 min)
 
-This is the part that makes the grid worth drawing. There are **four** off-diagonal cells with numbers
-in them. Each one becomes a full sentence, said aloud, in the form *"N of X were called Y."*
+This is the part that makes the grid worth drawing. There are **three** off-diagonal cells with numbers
+in them (four mistakes between them: 1 + 1 + 2). Each one becomes a full sentence, said aloud, in the form *"N of X were called Y."*
 
 ```
    true toothbrush → said comb,   1   →  "one toothbrush was called a comb."
@@ -1032,7 +1032,7 @@ photos ✓
   reluctant to use that word at all, which points at the comb class having too few or too samey
   training photos rather than at combs and toothbrushes merely resembling each other.
 
-**The four off-diagonal cells, as sentences:**
+**The three non-zero off-diagonal cells, as sentences (plus the zeros):**
 1. "One toothbrush was called a comb." *(1)*
 2. "One comb was called a spoon." *(1)*
 3. **"Two combs were called toothbrush."** *(2 — the biggest, and the one to circle)*
@@ -1236,7 +1236,7 @@ sentence alone is a correct sentence, but the pattern is the point: look for a t
    dog → fox 2 vs fox → dog 3   mildly lopsided
 ```
 The traffic runs **away from fox**: it said `fox` only 7 times though 10 foxes existed (reluctant), and
-`cat` 12 times against 10 real cats. Diagnosis: foxes are being lost, mostly to cat; count the fox
+`cat` 12 times against 10 real cats. Diagnosis: foxes are being lost, equally to cat and dog (3 each); count the fox
 training photos first.
 
 ### K9 — Workbook 🤔 Think Deeper (T1–T2)

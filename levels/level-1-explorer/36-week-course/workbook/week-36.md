@@ -666,7 +666,7 @@ Being able to assess your own understanding is genuinely rarer than a good score
 | Your paper confusion matrix | `confusion_matrix(y_test, y_pred)` |
 | The model | `model.fit(...)` then `model.predict(...)` |
 
-Look hard at `test_size=0.2`. That is your sealed envelope, written down as one number, in a library millions of people use — and it's `0.2` for exactly the reason you pulled ten photos out of every fifty.
+Look hard at `test_size=0.2`. That is your sealed envelope, written down as one number: `0.2` means one photo in five is sealed away, the same as the ten you pulled out of every fifty. The person writing the code chooses that number, and `0.2` is a very common choice.
 
 **Not one new *idea* in the right-hand column.** Only spelling.
 
@@ -709,7 +709,7 @@ Why it matters: a circled band is a *label*. An instruction is a **next action**
 
 **B3.**
 
-(a) **The test photos were training photos.** The 15 came from the same 420, so there is no held-out set at all. A model that had done nothing but memorise those 420 images would also score about 93% here — so the number cannot tell learning from memorising, and there is no way to make a model un-see a photo.
+(a) **The test photos were training photos.** The 15 came from the same 420, so there is no held-out set at all. A model that had done nothing but memorise those 420 images would score at least 93% here (probably 100%) — so the number cannot tell learning from memorising, and there is no way to make a model un-see a photo.
 
 (b) `(200 − 20) ÷ 200 = 180 ÷ 200 = ` **0.9 = 90%.** The target is under 20%. This is a severe imbalance.
 

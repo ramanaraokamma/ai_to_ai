@@ -825,7 +825,7 @@ D and B are the only two that measured anything at all, and D has forty times th
 
 > D's 52% is honest and is almost exactly what a coin gets, so D's filter is genuinely nearly worthless — we just happen to *know* that. B's 60% might be genuinely better than a coin or might be luck on five messages; there is not enough evidence to say. A's and C's filters could be brilliant or dreadful, and their own teams have no idea, because neither of them ever measured honestly.
 >
-> So the honest answer is: **B, tentatively** — it is the only filter with any evidence at all of beating a coin, and that evidence is weak. And **I cannot choose A or C at all**, not because their filters are bad but because they have told me literally nothing about them.
+> So the honest answer is: **B, tentatively** — it has the highest honest score, though on five tries even that is not evidence of beating a coin (a coin gets 3 or more right out of 5 half the time). And **I cannot choose A or C at all**, not because their filters are bad but because they have told me literally nothing about them.
 
 **Is that the same as P2?** **No** — and that is the whole insight. P2 ranks *measurements*. P4 asks about *filters*. A trustworthy measurement of something poor (D) and an untrustworthy claim about something unknown (A) are different problems, and the second one is worse, because you cannot even begin.
 
@@ -865,9 +865,9 @@ Team D:
 
 **T2. Model answer:**
 
-> Ten is very few. If a different ten had been sealed I might have got 4 or 6 instead of 5, so the true value is somewhere in a fuzzy band — maybe 40% to 60%. Taking the objection as far as it will go: even at the very top of that band, the honest score is **60%.**
+> Ten is very few. If a different ten had been sealed I might easily have got 3 or 7 instead of 5, so the true value is somewhere in a fuzzy band — roughly 25% to 75%. Taking the objection as far as it will go: even at the very top of that band, the honest score is about **75%.**
 >
-> Which is the crucial move. The objection makes the 50% wobbly; **it does not get me anywhere near 100%.** The gap between the two bars is fifty points and the wobble in either bar is about ten, so the finding — that the training score was wildly optimistic — survives the objection completely. Being uncertain about *how* bad it is is not the same as being uncertain about *whether* the drop is real.
+> Which is the crucial move. The objection makes the 50% wobbly; **it does not get me anywhere near 100%.** The gap between the two bars is fifty points and the wobble in the fresh bar is about twenty-five, so the finding — that the training score was wildly optimistic — survives the objection completely. Being uncertain about *how* bad it is is not the same as being uncertain about *whether* the drop is real.
 >
 > To narrow it down I would need more fresh examples. A hundred would give a much tighter answer; two hundred tighter still. And almost nobody does it because writing and **labelling** a hundred messages by hand is about an hour of tedious work with nothing to show at the end, and the temptation to reuse the ten you already have is enormous. **The reason honest testing is rare is not that it is difficult. It is that it is boring and it makes your number worse.**
 

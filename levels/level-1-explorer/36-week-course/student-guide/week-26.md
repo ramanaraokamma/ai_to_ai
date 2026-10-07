@@ -105,7 +105,7 @@ Take it apart:
 
 **How big is the output block?** Same rule as last week. 12 − 2 = 10, so it runs from `C18` to `L27`. Ten columns (C to L), ten rows (18 to 27). **One hundred cells.** Count them.
 
-> **⚠️ Watch out:** there are **five** closing brackets in that formula. Count them before you press Enter. A missing bracket is the single most common reason it refuses to work.
+> **⚠️ Watch out:** there are **seven** closing brackets in that formula. Count them before you press Enter. A missing bracket is the single most common reason it refuses to work.
 
 ### 3. Conditional formatting turns numbers back into a picture
 
@@ -509,7 +509,7 @@ This is the most useful trick in the chapter, because it is really about you and
 ## 🌍 Where You've Seen This
 
 1. **A spreadsheet at home or at work.** Any adult who keeps a budget has typed one formula and dragged it down a column. It is the same mechanism you used today, and now you know why it works.
-2. **A phone camera in the dark.** Grainy photos look terrible partly because the camera's own edge-finding starts firing on random grain. Your phone is fighting exactly the problem in this chapter.
+2. **A phone camera in the dark.** Grainy photos look terrible partly because grain is random pixel-to-pixel change, and an edge filter reports every bit of it as a tiny false edge. Dark photos make exactly the problem in this chapter.
 3. **A car reading lane markings at dusk.** The brightness of the road changes enormously between noon and dusk. The edge at the white paint barely moves — which is why the system keeps working.
 4. **A self-checkout scanner under any lighting.** It reads the black-to-white jumps of the barcode, not how bright the shop is.
 5. **A face-unlock that fails on a new background.** If a system was tuned mostly on one kind of scene, changing the scene changes the strongest edges in the frame. Same trap as your Week 17 model, in a much more expensive product.

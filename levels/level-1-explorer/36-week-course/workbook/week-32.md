@@ -389,7 +389,7 @@ Draw **one photo you might really post**, and label everything in it — and att
 
 ### A3
 
-**(i) FALSE.** Names are the easy part. Year group + postcode area + bus route took us from 600 students to one, with no name anywhere. Combinations identify people.
+**(i) FALSE.** Names are the easy part. Year group + postcode area + bus route + days late took us from 600 students to one, with no name anywhere. Combinations identify people.
 
 **(ii) FALSE.** It is stored **inside the file**. Which is exactly why it matters: send the file, send all of it. (Many chat apps strip it on the way through — which is good for you and is also why the demo photo has to be transferred by cable or as an email attachment.)
 
@@ -403,7 +403,7 @@ Draw **one photo you might really post**, and label everything in it — and att
 
 Five different kinds: **(1)** the date and time, to the minute · **(2)** the device — make and model of the phone · **(3)** the camera settings — exposure, flash, which lens · **(4)** the location, latitude and longitude, often to about five metres · **(5)** the edit history — whether it was cropped, filtered or rotated.
 
-Also acceptable in place of one of those: the account the phone was signed in to, or the file's original filename.
+Also acceptable in place of one of those: the owner's name (if the phone fills it in), or the file's original filename.
 
 ### A6 — Vocabulary
 

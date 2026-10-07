@@ -292,14 +292,14 @@ Two questions, two row units, two tables. That is not a failure — that is the 
 
 ### Worked Example 2 — Batting averages, and the row unit that traps everybody (sport)
 
-**The job:** work out each player's batting average across a cricket tournament.
+**The job:** work out each player's batting average across a cricket tournament. (To keep the numbers small, imagine a team of just two batters, Priya and Sam.)
 
 **Attempt 1 — one row = one match.**
 
 | match_id | date | opponent | total_runs |
 |---|---|---|---|
-| 1 | 12 Aug | Eagles | 148 |
-| 2 | 19 Aug | Tigers | 121 |
+| 1 | 12 Aug | Eagles | 73 |
+| 2 | 19 Aug | Tigers | 77 |
 
 Now try to answer *"what is Priya's batting average?"* You cannot. Priya is nowhere in this table. Her runs got melted into a team total.
 

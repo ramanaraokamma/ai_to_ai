@@ -454,11 +454,11 @@ error *is* the teaching.
 
 > "Right, sentence two. `amma takes the bus to the shop .` — tokens 9 to 16. I'll go faster.
 >
-> `.` then `amma` — wait, no. We're at token 9 now, so… let's start at `amma`. `amma → takes`, mark.
+> `.` then `amma` — that join counts, mark. `amma → takes`, mark.
 > `takes → the`, mark. `the → bus` — already have that row, second mark on it. `bus → to`, second mark.
 > `to → the`, second mark. `the → shop`, new row, mark. `shop → .`, new row, mark.
 >
-> Seven more marks. Fourteen so far. On to sentence three: `the bus goes to town .`"
+> Eight more marks. Fifteen so far. On to sentence three: `the bus goes to town .`"
 
 Now go quiet and wait. If your student catches it — brilliant, celebrate loudly. If not, finish all
 six sentences at speed, tally them up, and let the check do the work:
@@ -659,7 +659,7 @@ row. One mark. Slide to token 2. Repeat 38 more times.
 prediction. If it is 39, say so out loud. If it is not, go to step 4.
 
 **Step 4 (2 min, only if needed) — hunt the error.** Two techniques, in this order:
-- Walk the six sentence joins first: tokens 8→9, 16→17, 22→23, 28→29, 36→37. Missed joins are the
+- Walk the five sentence joins first: tokens 8→9, 16→17, 22→23, 28→29, 36→37. Missed joins are the
   commonest error by a distance.
 - Then check each group against the word's frequency: `the` must have 6, `.` must have 5, `bus` 5,
   `to` 4, `i` 3, `amma` 2. The group that is short or long tells you where to look.
@@ -723,9 +723,9 @@ Week 32. Good instinct for asking now.
 
 **2. "Why only three suggestions? Why not ten?"**
 
-Because three is about how many you can read without slowing down your typing, and because the fourth
-guess is nearly always much weaker than the third. Look at Figure 28.3: `shop` 812, `bus` 640, `park`
-377, `street` 291. The gap from first to third is big; after that the counts trail off into a long tail
+Because three is about how many you can read without slowing down your typing, and because each further
+guess is weaker than the one before. Look at Figure 28.3: `shop` 812, `bus` 640, `park`
+377, `street` 291. The counts fall steadily and then trail off into a long tail
 of hundreds of possible words with tiny counts each. Printing them wouldn't help you. It's a design
 choice about screens and thumbs, not a mathematical law.
 
@@ -1125,7 +1125,7 @@ own Answers section; the extra lines are for you. Build It is Part G, Draw It an
 | **A3** | (a) **False.** Order is part of what a bigram is: `hot dog` and `dog hot` differ. (b) **False** — the most important false of the week. A pair written backwards (`the → to` for `to → the`) still puts exactly one mark on the sheet, so the total is blind to direction. Passing a check means you did not fail *that* check. (c) **True.** A word gets one row for each **different** follower; `the` has three (`bus`, `market`, `shop`). |
 | **A4** | 1 → **C** · 2 → **A** · 3 → **D** · 4 → **B** · 5 → **E** |
 | **A5** | Box 1 **CURRENT** · Box 2 **NEXT** · Box 3 **COUNT** · Box 4 **OUT OF** · Box 5 **bigrams = tokens − 1**. Swapping CURRENT and NEXT makes every pair point backwards and nothing warns them. |
-| **A6** | (a) **3** — `barks`, `sleeps`, `runs`. (b) **`sleeps`, 4 out of 5.** (c) **6 times** — the OUT OF for `dog` is 6, and `dog` is not the final token of that corpus. (d) **`cat` is more predictable**: best guess 4 out of 5, against `dog`'s 3 out of 6 (half the time), even though `dog` appears more often. How often is not the same as how predictable. |
+| **A6** | (a) **3** — `barks`, `sleeps`, `runs`. (b) **`sleeps`, 4 out of 5.** (c) **6 times** — the OUT OF for `dog` is 6, and a corpus of sentences ends with `.`, so `dog` is not the final token and none of its appearances is lost. (d) **`cat` is more predictable**: best guess 4 out of 5, against `dog`'s 3 out of 6 (half the time), even though `dog` appears more often. How often is not the same as how predictable. |
 
 What to watch for in A: in A6(d) many students pick `dog` because its count (6) is bigger. Ask them to
 compare "out of" fractions, not totals. In A3(b) accept any explanation that a backwards pair still
@@ -1207,7 +1207,7 @@ and the *checks*.
 
 **Prediction:** 60 − 1 = **59 pairs.**
 
-**The groups with more than one follower:**
+**The groups with more than one mark:**
 
 | CURRENT | NEXT | COUNT | OUT OF |
 |---|---|---:|---:|
@@ -1286,8 +1286,8 @@ answer has three parts:
    are `shop`, `store`, `hospital`, `gym`, `park`, `bus`, `same`, `end`. Any three are fine.
 2. **The fifteen-tap sentence, unedited.** Typically something like *"I am going to the shop and get a
    new one for me to be able to see you soon and I will be there in a bit and I will be there in a
-   bit."* Look for two features and praise them if present: it is grammatical, and it goes round in a
-   circle near the end.
+   bit."* Look for two features and praise them if present: it reads like English one pair at a time (though
+   the whole thing means nothing), and it goes round in a circle near the end.
 3. **The explanation.** Full credit needs all three of: (a) somebody counted word pairs in a large
    amount of text beforehand, (b) the phone looks up the word just typed, (c) it shows the three
    followers with the biggest counts. Half credit for "it has a table of what follows what" without the
@@ -1329,7 +1329,7 @@ through, because that is the week's main idea.
 | Worked ex. | "Does the total check catch a backwards pair?" | No. Passing a check means you did not fail *that* check — not that you are right. |
 | Worked ex. | "What could catch it?" | Check 2: each group's size must equal that word's frequency. A backwards pair makes one group too big and another too small. |
 | Activity | "What's on the phone's tally sheet?" | Word pairs and their counts, drawn from an enormous amount of text — plus a smaller tally of the owner's own typing. |
-| Activity | "Why exactly three suggestions?" | Three fit on a strip and can be read without slowing your thumbs; the fourth guess is usually much weaker. A design choice, not a law. |
+| Activity | "Why exactly three suggestions?" | Three fit on a strip and can be read without slowing your thumbs; each further guess is weaker than the last. A design choice, not a law. |
 | Activity | "Did the sentence say anything true?" | Almost certainly not — and deliberately left unresolved. This is the Week 29 hook. |
 | Activity | "Did it start repeating?" | Nearly always yes, usually within a dozen taps. Also deliberately left unexplained until Week 29. |
 | Wrap | "Is there anything on that row about what the word means?" | No. A word, another word, and a number. Meaning was never stored, so it was never lost. |

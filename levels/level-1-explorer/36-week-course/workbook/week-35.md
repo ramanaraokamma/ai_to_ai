@@ -624,7 +624,7 @@ If you put `other` for the squashed carton, look at the cause again: `other` nee
 **The fix:** the threshold check must **wrap** all four class blocks. One threshold `if` on the outside; the four class `if`s go inside it; the "not sure" line goes in its `else`:
 
 ```
-   if <(conf) < (threshold)> then
+   if <not <(conf) > (threshold)>> then
        say [Not sure - only __%.]
    else
        if <(choice) = [1]> then ... end
@@ -757,7 +757,7 @@ In order of importance: **five** rows not four · each row changes something *vi
 ```
    set [threshold v] to (70)
 
-   if <(conf) < (threshold)> then
+   if <not <(conf) > (threshold)>> then
        say (join [Not sure - only ] (join (conf) [%.]))
    else
        ... the four class behaviours ...

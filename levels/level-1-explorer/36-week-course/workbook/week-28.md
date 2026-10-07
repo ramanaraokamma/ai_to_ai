@@ -458,7 +458,7 @@ Neither is "the right answer" — they are two different rules. What matters is 
 
 (b) **`sleeps`, 4 out of 5.** Read it straight off: the biggest count in the `cat` group is 4, and the group's OUT OF is 5.
 
-(c) **6 times.** The OUT OF number for a group tells you how many times that word was followed by something — which is how many times it appears, unless it happens to be the very last token of the corpus. It isn't, because `.` is (the `.` group's OUT OF is 3 and there is no other group after it), so 6 it is.
+(c) **6 times.** The OUT OF number for a group tells you how many times that word was followed by something — which is how many times it appears, unless it happens to be the very last token of the corpus. It isn't: a corpus of sentences ends with `.`, so the last token is a full stop, not `dog`. So 6 it is.
 
 (d) **`cat` is more predictable.** Its best guess is 4 out of 5 — right about four times in five. `dog`'s best guess is 3 out of 6, which is only half the time. So even though `dog` appears *more often*, it is *less* predictable. That surprises most people, and it is worth remembering: **how often ≠ how predictable.**
 
@@ -567,7 +567,7 @@ Your table will be your own, so there is no single answer — but here is a full
 
 **60 tokens. Prediction: 60 − 1 = 59 pairs.**
 
-**The groups with more than one follower:**
+**The groups with more than one mark:**
 
 | CURRENT | NEXT | COUNT | OUT OF |
 |---|---|---:|---:|
@@ -606,7 +606,7 @@ That is the **best possible outcome** for this question, and if you got it you s
 **The phone task.** The exact sentence differs on every device, so what is being marked is the **reasoning**, not the output. A full-credit answer has three parts:
 
 1. **The three suggestions**, written down as they appeared. Common results after `I am going to the` are `shop`, `store`, `hospital`, `gym`, `park`, `bus`, `same`, `end`. Any three are fine.
-2. **The fifteen-tap sentence, unedited.** Typically something like *"I am going to the shop and get a new one for me to be able to see you soon and I will be there in a bit and I will be there in a bit."* Two features are worth praising: it is **grammatical**, and it **goes round in a circle** near the end.
+2. **The fifteen-tap sentence, unedited.** Typically something like *"I am going to the shop and get a new one for me to be able to see you soon and I will be there in a bit and I will be there in a bit."* Two features are worth praising: it **reads like English one pair at a time** (even though the whole thing means very little), and it **goes round in a circle** near the end.
 3. **The explanation.** Full credit needs all three of: (a) somebody counted word pairs in a large amount of text, beforehand; (b) the phone **looks up** the word you just typed; (c) it shows the **three followers with the biggest counts**. Half credit for "it has a table of what follows what" with no lookup and no top-three rule.
 
 ---

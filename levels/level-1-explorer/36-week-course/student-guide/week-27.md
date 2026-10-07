@@ -511,7 +511,7 @@ The instant cure, and it takes three seconds: `pizza pizza pizza`. **Three token
 3. **A word cloud.** The biggest word in the middle is almost always something like `the`, unless whoever made it deliberately threw the common words away first. That is a frequency table with the boring rows deleted.
 4. **Your phone's predictive keyboard.** It is working on tokens right now, this second — which is exactly next week's lesson.
 5. **A spam filter.** It chops your message into tokens and counts them. `FREE!!!` and `free` being the same token, or not, is a real decision somebody made.
-6. **Autocorrect getting a name wrong.** Names are the classic tokenizing headache: they are not in any word list, so a whole-word system has never met them. Sub-word pieces are the fix, and they are why your phone can now guess at names it has never seen.
+6. **Autocorrect getting a name wrong.** Names are the classic tokenizing headache: they are not in any word list, so a whole-word system has never met them. Sub-word pieces are one fix that some modern systems use for exactly this.
 
 ---
 
@@ -577,7 +577,7 @@ Go to **[the Week 27 workbook](../workbook/week-27.md)**. About **50 minutes** i
 
 > **⚠️ Watch out:** on page 27.2, "I learned about pixels" is **not** an answer. Start every one with the words **"I can"**, and get a number into at least one of them. *"I can work out that a 12×12 image with a 3×3 filter gives a 10×10 output, and say why"* — that is the standard.
 
-**Keep your paragraph.** Next week uses the **same** one, and re-tokenizing from scratch would cost you twenty minutes you would rather spend on the interesting part. Next week you count something new in it: not how often each word turns up, but **which word tends to follow which** — which turns out to be very nearly the whole engine behind the thing on a phone that finishes your sentences.
+**Keep your paragraph.** Next week uses the **same** one, and re-tokenizing from scratch would cost you twenty minutes you would rather spend on the interesting part. Next week you count something new in it: not how often each word turns up, but **which word tends to follow which** — which is the basic idea behind the thing on a phone that finishes your sentences (real phones use bigger, cleverer versions of it).
 
 ---
 

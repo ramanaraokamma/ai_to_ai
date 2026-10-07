@@ -441,7 +441,7 @@ The question to ask: **"which two of my objects were hardest to tell apart, and 
 
 The **13/20** result is better — a 60-point gap against a 25-point gap.
 
-But **6 out of 20 is still worth a lot.** It is six times the baseline of one, so the features carry real information. The honest way to write it: *"my five features identify the category reliably and the individual object unreliably."* That is a genuine finding, not a failure. The useful next question is: which pairs got confused, and what one feature would separate them?
+But **6 out of 20 is still worth a lot.** It is six times the baseline of one, so the features carry real information. If the wrong guesses also stayed inside the right category, the honest way to write it is: *"my five features identify the category reliably and the individual object unreliably."* (6 out of 20 alone does not show that; the wrong cards do.) Either way it is a finding, not a failure. The useful next question is: which pairs got confused, and what one feature would separate them?
 
 ### Practice Set B
 
@@ -590,7 +590,7 @@ Marking: names **one** feature, not a vague list · gives **at least three speci
 | Replace `main_colour` with `is_shiny` | Removes the easy feature people reach for first |
 | Add an object with the same colour, weight and material as an existing one | Manufactures a genuine tie and exposes the deck's ceiling |
 
-Marking: *"make it harder"* with no mechanism is not an answer. *"Remove colour, and I predict the score drops from 13 to about 8, because five of the seven errors were already colour-driven"* is a very good one. And a prediction that turns out **wrong** but was properly reasoned is worth just as much — write down what actually happened underneath it.
+Marking: *"make it harder"* with no mechanism is not an answer. *"Remove colour, and I predict the score rises from 13 to about 17, because five of the seven errors were colour-driven and length would have got them right"* is a very good one. And a prediction that turns out **wrong** but was properly reasoned is worth just as much — write down what actually happened underneath it.
 
 ### Draw It
 

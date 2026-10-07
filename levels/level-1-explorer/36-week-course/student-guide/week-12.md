@@ -348,12 +348,12 @@ No. It landed **exactly** on the baseline. Keeping it is the same as keeping a c
 **And a trap worth knowing.** Suppose somebody writes this rule for `we_batted_first`:
 
 ```
-IF we_batted_first = yes THEN we_lost, ELSE we_won
+IF we_batted_first = yes THEN we_won, ELSE we_won
 ```
 
-and it scores **2 out of 10 = 20%** — way *below* the baseline. Have they broken the maths?
+(it says "we won" every time) and it scores **4 out of 10 = 40%** — way *below* the baseline. Have they broken the maths?
 
-No. **A score below the baseline is a message about your rule, not about your feature.** They predicted the *less* common label inside each group. Go back and, in each group, predict the label that is actually commonest in that group. Do that and `we_batted_first` climbs back to exactly 60% — where it belongs.
+No. **A score below the baseline is a message about your rule, not about your feature.** They predicted the *less* common label, "we won" (only 4 of the 10 matches), instead of the commonest label in each group. Go back and, in each group, predict the label that is actually commonest in that group. Do that and `we_batted_first` climbs back to exactly 60% — where it belongs.
 
 ### Worked Example 3 — Will this student pass Friday's test? (school)
 

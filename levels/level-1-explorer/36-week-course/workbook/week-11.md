@@ -418,7 +418,7 @@ Draw **one object from your own home** with six measurable features called out o
 ![Draw It frame for Week 11](../figures/fig-w11-11-draw-frame.svg)
 *Figure W11.3 — Your page.*
 
-> **What a good answer might look like:** a drawing of a bicycle, with six lines pointing out: `wheel_diameter_cm` (26.0) · `mass_kg` (11.4) · `gears_count` (7) · `frame_colour` (blue, from a list) · `has_bell` (yes) · `saddle_height_cm` (82.0). Underneath, for the hardest one — `mass_kg` — the three boxes read: *bathroom scale* · *kilograms* · *nearest 0.1 kg, with the bike lifted clear of the floor by the handlebars and saddle.*
+> **What a good answer might look like:** a drawing of a bicycle, with six lines pointing out: `wheel_diameter_cm` (66.0) · `mass_kg` (11.4) · `gears_count` (7) · `frame_colour` (blue, from a list) · `has_bell` (yes) · `saddle_height_cm` (82.0). Underneath, for the hardest one — `mass_kg` — the three boxes read: *bathroom scale* · *kilograms* · *nearest 0.1 kg, with the bike lifted clear of the floor by the handlebars and saddle.*
 >
 > **What a weak answer looks like:** six lines pointing at *fast*, *cool*, *comfy*, *nearly new*, *good brakes*, *big*. None of those are features yet. If you catch yourself writing those, ask each one: with what tool, in what unit, rounded how?
 
@@ -432,7 +432,7 @@ Draw **one object from your own home** with six measurable features called out o
 | Write a measuring instruction precise enough that someone else gets my number | ☐ | ☐ | ☐ |
 | Point at any table and say which columns are features and which is the label | ☐ | ☐ | ☐ |
 | Explain why a machine cannot use a description that hasn't been measured | ☐ | ☐ | ☐ |
-| Explain why a dog-or-cat machine calls a rabbit a cat | ☐ | ☐ | ☐ |
+| Explain why a dog-or-cat machine calls a rabbit a dog or a cat | ☐ | ☐ | ☐ |
 
 One thing I'd like explained again:
 
@@ -536,7 +536,7 @@ f3  pockets_count  count every opening that closes with a zip, popper or velcro,
 
 **B4.**
 (a) **"dog" or "cat"** — one of the two, never anything else.
-(b) **Very confident.** That's the disturbing part. It has no way to express doubt about a category it doesn't have.
+(b) **It can look very confident.** That's the disturbing part: it must pick one of its two boxes, and nothing in it can say "this is neither".
 (c) **Meera's mistake, and it was made before the machine ever ran:** she chose two classes. The machine is doing exactly what it was built to do. It is not being stupid — **there is no rabbit box, and she is the one who didn't make one.**
 (d) She is asking for **a third class**, called something like `other` or `neither`. That's a perfectly reasonable thing to build — but notice it isn't a patch on the end, it's a change to the *design*, and you'd have to collect examples of "other" too. (This comes back properly in Week 16.)
 
@@ -655,7 +655,7 @@ f5 lid_type         ONE of {screw, flip, push, straw}
 
 **Model closing sentences:**
 
-> Three out of five matched. Both mismatches were my fault, not theirs — I knew what I meant and didn't write it down. **The mass one is the worse mistake**, because an 18-gram error is bigger than the gap between two of my own bottles (92 g and 118 g are only 26 g apart). So that column would have told the machine something false about which bottle was which — not just imprecise, actually wrong.
+> Three out of five matched. Both mismatches were my fault, not theirs — I knew what I meant and didn't write it down. **The mass one is the worse mistake**, because an 18-gram error is bigger than the gap between two of my own bottles (92 g and 78 g are only 14 g apart). So that column would have told the machine something false about which bottle was which — not just imprecise, actually wrong.
 
 **If you scored 5 out of 5 on the first attempt:** possible, but uncommon. Ask yourself honestly — did they measure it, or did they glance at your number first? A helpful adult produces a perfect score and teaches you nothing. Ask them to be a literalist next time: if your sentence says "the length", they should measure the shortest thing they can defend calling a length.
 

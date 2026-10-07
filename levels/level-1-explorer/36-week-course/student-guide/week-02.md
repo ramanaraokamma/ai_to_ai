@@ -368,12 +368,12 @@ That is what a model is *for*. But those answers are guesses — nobody has chec
 **Step 4 — the scary bit.** Suppose the teacher had made one small mistake and typed *no help
 needed* next to Cara. Recount:
 
-- Needed help: Ana ✅ → **1 of 2.** (Cara is now in the other group.)
+- Needed help: Ana ✅ → **1 of 1.** (Cara is now in the other group, so Ana is alone.)
 - No help needed: Cara (8 minutes) ✅, Ben ❌, Dev ❌ → **1 of 3.**
 
-Our beautiful perfect split has become 1-of-2 against 1-of-3 — which is almost no split at all. **One
-wrong label wrecked the clue.** And the machine has no way of knowing. It doesn't check labels; it
-counts them.
+Our beautiful perfect split has become 1-of-1 against 1-of-3 — it is no longer a clean split, and
+"under 10 minutes" now gets Cara "wrong". **One wrong label spoiled the clue.** And the machine has no
+way of knowing. It doesn't check labels; it counts them.
 
 > **💡 Try this:** any time someone tells you a model is wrong, ask the Week 2 question:
 > *what was in its examples?* That question does more work than any other question in this course.

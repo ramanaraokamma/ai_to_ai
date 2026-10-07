@@ -405,7 +405,7 @@ Here are the four cards, and the answers.
 
 **Card 2.** *"I took a 3-second video of each object and pulled 30 frames out of it. I shuffled the frames properly and held out 6. I got 6 out of 6."*
 
-- **Leaked:** near-duplicates. Frame 14 and frame 17 are a twentieth of a second apart — same angle, same shadow, same smudge on the spoon. Each hidden frame has an almost-identical twin in the training pile.
+- **Leaked:** near-duplicates. Frame 14 and frame 17 are about a third of a second apart — same angle, same shadow, same smudge on the spoon. Each hidden frame has an almost-identical twin in the training pile.
 - **Direction:** far too high. Often 95–100% for a model that fails on any genuinely new photo.
 - **Fix:** split by **session**, not by frame. Shoot two clips, in two places, on two days, and use one clip entirely for testing.
 - **The thing worth understanding:** random splitting only works when your examples are genuinely independent of each other. Video frames are not.

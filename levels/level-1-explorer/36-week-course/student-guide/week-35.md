@@ -427,7 +427,7 @@ when green flag clicked
         set [conf v] to (answer)
 
         ┌── THE THRESHOLD — this block is the whole point ──┐
-        if <(conf) < (threshold)> then
+        if <not <(conf) > (threshold)>> then
 
             switch backdrop to [white v]
             say (join [Not sure - only ] (join (conf) [%.])) for (3) seconds

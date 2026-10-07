@@ -105,7 +105,7 @@ The fix, when a student says "it's a number so it's regression":
 
 ### Misconception 2 — "Error means the model got it wrong"
 
-In regression, **every prediction has an error, including the good ones.** An error of 0.2 grams is not a failure; it is an excellent prediction. An error of 0 is so rare it is usually a sign that something is leaking.
+In regression, **every prediction has an error, including the good ones.** An error of 0.2 grams is not a failure; it is an excellent prediction. An error of exactly 0 on a real measurement is rare enough to be worth a second look (leaking is one possible cause).
 
 Students who have spent six years being marked right or wrong find this genuinely hard. They will write "error = 0" for a good guess because they think error means "mistake". Head it off in the concept segment with a single line:
 
@@ -242,7 +242,7 @@ the learner has seen 36 weeks land on six shelves rather than 36 unrelated topic
 
 - [ ] **Make two pile headers.** Two more cards: one saying `WHICH ONE?` and one saying `HOW MUCH?`. These go at the top of the table.
 - [ ] **Print or copy the fruit table** (it is in the Worked Example section below, and it is the same table the student built in Week 12 — if their own copy survives, use theirs, it is more motivating).
-- [ ] **Put one small object in an opaque bag.** A rubber, a AA battery, a spoon, a highlighter. Something with a weight between about 5 g and 60 g. Do not let the student see it.
+- [ ] **Put one small object in an opaque bag.** A rubber, a AA battery or a pencil (it must be one of the three things named in Question 1). Something with a weight between about 5 g and 60 g. Do not let the student see it.
 - [ ] **Read the Worked Example numbers once** so the arithmetic doesn't ambush you mid-lesson. There are only three divisions and three subtractions.
 
 ### 3 minutes before class
@@ -622,7 +622,7 @@ Not the same question, no. But the same *table* can give you both, which is what
 Because somebody has to produce the numbers to learn from. For the fruit, that was easy — we had a scale. Now try "how much of a cat is this photo, from 0 to 100?" There's no cat-o-meter. To get those labels you'd have to ask a hundred people about every single photo, and even then you'd only be measuring *what people think*, not what's true. When there's no honest way to produce the number, regression isn't available, however much you'd like it.
 
 **"What if my prediction is exactly right? Is the error zero?"**
-Yes — error 0 means you nailed it. It's rare, and worth being slightly suspicious of. If your model gets error 0 over and over on a real measurement, something is usually leaking: the answer is sneaking into the features somehow. One perfect guess is luck. Twenty perfect guesses is a bug.
+Yes — error 0 means you nailed it. It's rare, and worth being slightly suspicious of. If your model gets error 0 over and over on a real measurement, something may be leaking (the answer sneaking into the features) or the test may be too easy, so go and check. One perfect guess is luck. Twenty perfect guesses is a reason to investigate.
 
 **"Does it matter if I guessed too high or too low?"**
 Sometimes enormously, and this week we're ignoring it on purpose. For the fruit, being 7 g over or 7 g under is the same size of miss. But imagine predicting how long a journey takes: guessing 10 minutes short means you miss your train, and guessing 10 minutes long means you wait on a platform. Same error size, wildly different cost. Real systems do handle this, and we won't this year. You spotted something real.
@@ -965,7 +965,7 @@ There is no single right answer; the student's own numbers vary. The workbook as
 | `chunky` | over 10 g | 16, 18, 20 → three rows |
 | | **total** | **10** rows |
 
-I put the boundaries in the empty gaps rather than in the middle of a cluster: there's a real gap between 7 and 16, and a smaller one between 5 and 6.
+I put the boundaries in the empty gaps rather than in the middle of a cluster: there's a real gap between 7 and 16, so my big boundary goes there. The other boundary has to cut through the 4-to-7 group somewhere, because I need three buckets, and I put it between 5 and 6.
 
 **What the bucketing threw away.**
 

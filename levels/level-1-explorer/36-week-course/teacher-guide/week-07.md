@@ -24,7 +24,7 @@ By the end of this lesson the student can:
 
 1. **Find a pattern in a two-column table by counting** — filling in a counting grid with *days* and *late* and a *rate* for each group, instead of saying "it feels like Mondays".
 2. **Turn that pattern into an if-then rule** and point at its three parts by name: the condition, the threshold inside the condition, and the action.
-3. **Explain what a default is** and why a rulebook without one has no answer for most inputs.
+3. **Explain what a default is** and why a rulebook without one has no answer for every input that matches no rule.
 4. **Run a two-rule rulebook by hand on four rows it has never seen**, recording which rule fired first and what it answered — including when it answers wrongly.
 
 Objective 1 is the one that carries the week. A student who names the right pattern *without counting* has not met it.
@@ -54,7 +54,7 @@ Suppose you watch the 9:05 bus for four weeks. All four Mondays it was late. One
 
 Four out of four is worth a bet. One out of four is not — betting "late" every Friday would make you wrong three times out of four. It isn't a pattern; it's just something that happened once.
 
-**Here is the part that adults skip, and it is the mathematical heart of the lesson.** "Beats guessing" only means something if you first work out how well guessing does. That number has a name in the later weeks of this course (Week 20 calls it the *baseline*), and this week we just do it by hand and call it "the best you could do by guessing".
+**Here is the part that adults skip, and it is the mathematical heart of the lesson.** "Beats guessing" only means something if you first work out how well guessing does. That number has a name in the later weeks of this course (Week 12 introduces it as the *baseline*), and this week we just do it by hand and call it "the best you could do by guessing".
 
 Take the fourteen bus days in today's activity. Six were late, eight were on time. So:
 
@@ -352,7 +352,7 @@ Flip a coin                 ->  right about 7   ->  7 ÷ 14 = 0.50  = 50%
 | Ask | Hoping for | If they say something else |
 |---|---|---|
 | "Is 'it rains sometimes in June' a pattern?" | "No — sometimes isn't often enough" | If they say yes: "Would you carry an umbrella every day in June because of it? What would you actually *do* differently?" A pattern you can't act on isn't earning its keep. |
-| "Is 'the sun comes up in the morning' a pattern?" | "Yes, obviously" | Then push: "How much better than guessing is it?" Answer: enormously — 100% versus 50%. Then the sting: **a pattern that good is usually called a law, and there are about four of those. Everything else is a bet.** |
+| "Is 'the sun comes up in the morning' a pattern?" | "Yes, obviously" | Then push: "How much better than guessing is it?" Answer: enormously — 100% versus 50%. Then the sting: **a pattern that good is usually called a law, and there are very few of those. Almost everything else is a bet.** |
 | "My friend won at cards three times in a row. Pattern?" | "No, three times isn't enough" / "out of how many games?" | If they say yes, ask how many games were played. If it was three out of three that *is* suspicious — and the honest answer is "it's not enough rows to tell, and this is exactly what Week 9 is about". |
 
 #### Part B — The three parts of a rule (6 minutes)
@@ -463,11 +463,11 @@ IF   rain_mm >= 3      THEN   predict "late"
 | "Where did the 5 come from? Why not 4 or 6?" | "It's between 4 and 5" — the gap argument | If they say "because 5 is in the table", push: our no-drop calls had 2, 3, 4 people; our drop calls had 5, 5, 6, 7. Any cut-off above 4 and up to 5 fits perfectly. **The data gives you a gap, not a number.** |
 | "Score the rulebook on all eight days. What do you get?" | 8 out of 8 | Walk it row by row if needed. Rows 1, 3, 6, 7 have fewer than 5 → predict no drop, all correct. Rows 2, 4, 5, 8 have 5+ → predict drop, all correct. |
 | "How well would guessing do?" | "4 out of 8, 50%" | If stuck: 4 dropped, 4 didn't, so saying the same word every day gets exactly half. Then land it: the rule beats guessing by **50 percentage points**, which is enormous. |
-| "Row 5 is the interesting one. Why?" | "It's a morning that dropped" / "the two clues disagree" | **This is the best question in the segment.** Row 5 is a *morning* call — so the evening pattern says it should be fine — with *five people*, so the people pattern says it should drop. It dropped. That single row tells you the people count is doing the real work and the time of day was just going along for the ride. Rows where two clues agree teach you nothing about which clue matters. |
+| "Row 5 is the interesting one. Why?" | "It's a morning that dropped" / "the two clues disagree" | **This is the best question in the segment.** Row 5 is a *morning* call — so the evening pattern says it should be fine — with *five people*, so the people pattern says it should drop. It dropped. That row, and row 6 (evening, two people, no drop) which points the same way, hint that the people count is doing the real work and the time of day was just going along for the ride. Rows where two clues agree teach you nothing about which clue matters. |
 
 **Say this** (the close of the segment):
 
-> "And why would evening look like a pattern at all? Because evening calls happen to have more people on them. The time of day wasn't *causing* anything — it was just sitting next to the thing that was. That happens constantly with data, and row 5 is how you catch it: **find the row where your two ideas disagree, and see which one wins.**"
+> "And why would evening look like a pattern at all? Because evening calls happen to have more people on them. In this table the time of day doesn't seem to be *causing* anything — it looks like it was just sitting next to the thing that was. (Eight rows can only hint at that. In a real house, evening Wi-Fi congestion could be a genuine cause.) That happens constantly with data, and rows 5 and 6 are how you catch it: **find the rows where your two ideas disagree, and see which one wins.**"
 
 > **⚠️ Watch out:** do not use the words *correlation* and *causation* today. The idea lands perfectly well in plain English and the vocabulary budget for this week is already full at five words.
 
@@ -701,7 +701,7 @@ Yes, and that's real. `IF day = "Monday" AND rain_mm >= 3 THEN late` is a perfec
 Yours, by a mile — 93% against 57%. And I want you to notice how you know that: you *counted both*. Anyone can say "my system is good". Only counting the lazy alternative tells you whether "good" means anything.
 
 **"Does a computer find patterns the same way I just did?"**
-Roughly, yes — and this is one of the most surprising things in the whole course. A machine learning program looking at this table would do essentially what you did: split the rows by a column, count how the answers land on each side, work out the rates, and keep the split with the biggest gap. It just does it for thousands of columns and thousands of possible thresholds in under a second, and it never gets bored on row 400. Your hand-drawn counting grid is not a toy version of the real thing. It's the real thing, done slowly.
+Roughly, yes — and this is one of the most surprising things in the whole course. One kind of machine learning program, a decision tree, looking at this table would do essentially what you did: split the rows by a column, count how the answers land on each side, work out the rates, and keep the split that separates the answers best. It just does it for thousands of columns and thousands of possible thresholds in under a second, and it never gets bored on row 400. Your hand-drawn counting grid is not a toy version of how that kind of program works. It's the same idea, done slowly. (Other kinds of machine learning find patterns differently; don't go there today.)
 
 **"Will the Monday pattern still be true next month?"**
 **Nobody knows for sure, and here's why that isn't a dodge.** A pattern is a statement about the past. Using it on the future is a bet, and the world is under no obligation to keep behaving the way it did while you were watching. If the roadworks finish, the pattern vanishes overnight and your rulebook will keep confidently saying "late" every Monday, wrong every time, with total confidence, until somebody notices. There is no cleverness that fixes this — the only defence is to keep collecting data and keep checking. Every real AI system in the world has this problem, and companies pay people full-time salaries to watch for it.
@@ -742,7 +742,7 @@ Park that one. Genuinely — I want you to write it on your page and bring it ba
 
 1. **"Try every threshold."** Score the rulebook with `rain_mm >= 1`, `>= 2`, `>= 3`, `>= 4`, `>= 5`. Answers in the key: 11, 13, 13, 13, 14. Then the real question — *"Three thresholds tie at 13, and the winner scores 14 by excluding exactly one row. Which one do you ship?"* There is no data-based answer. Any reasoning that admits it's a judgement call is a strong answer.
 2. **"Find a rule that predicts 'on time'."** `IF weather = "sunny" THEN on time` fires on 7 rows and is right on 5 of them. Then: where in the ladder do you put it? Above Rule 1 it wrecks the sunny Mondays (rows 1 and 11). Below both rules it barely changes anything. **Position is part of the rule.**
-3. **"Which single row is the most valuable in the table?"** Best answer: row 14 (Thursday, 4 mm, on time) — the only row where a rule fires and is wrong, so it's the only row carrying information about where the rule's edge is. Row 6 (Monday, 2 mm, late) is also defensible: it's the only Monday that *isn't* rainy, which proves Monday is doing work on its own rather than just being wet.
+3. **"Which single row is the most valuable in the table?"** Best answer: row 14 (Thursday, 4 mm, on time) — the only row where a rule fires and is wrong, so it's the only row carrying information about where the rule's edge is. Row 6 (Monday, 2 mm, late) is also defensible: it is a late Monday sitting just under the rain threshold, so the rain rule alone would have missed it. (Rows 1 and 11 are dry late Mondays too, which is further evidence that Monday is doing work on its own rather than just being wet.)
 4. **"Invent a fifteenth row that turns the strongest pattern into the weakest."** A sunny Monday that's on time takes Monday from 3/3 to 3/4 (75%), level-pegging with rain. One row, and the whole conclusion moves. That fragility is the honest state of a three-row group.
 5. **The two-condition rule.** `IF day = "Monday" AND rain_mm >= 3` fires on zero rows in this table. Ask what a rule that never fires is worth, and how you'd find such a rule in a rulebook of fifty.
 
@@ -851,7 +851,7 @@ Any specific count is correct: `IF character_count > 100 THEN spam`. The marking
 Rule 1: day is not Monday, no match. Rule 2: 0 is not ≥ 3, no match. **Default: on time.**
 
 **Concept C — "What if I delete the default?"**
-The rulebook has no answer at all for that input. Not "no" — *nothing*. Eight of the fourteen days are in that position.
+The rulebook has no answer at all for that input. Not "no" — *nothing*. Seven of the fourteen days are in that position.
 
 ### Worked Example — the Wi-Fi table
 
@@ -874,7 +874,7 @@ The rulebook has no answer at all for that input. Not "no" — *nothing*. Eight 
 
 **Where does the 5 come from?** No-drop calls had 2, 3, 4 people. Drop calls had 5, 5, 6, 7. The gap is between 4 and 5, so any cut-off above 4 and up to 5 fits the data identically. We wrote 5 because people come in whole numbers.
 
-**Why row 5 matters.** Row 5 is a *morning* call (so the evening pattern predicts "fine") with *five people* (so the people pattern predicts "drops"). It dropped. It is the only row where the two candidate patterns disagree, and it settles the argument: people count is doing the work, and evening was only along for the ride because evening calls happen to be bigger. **Rows where your clues agree cannot tell you which clue matters.**
+**Why row 5 matters.** Row 5 is a *morning* call (so the evening pattern predicts "fine") with *five people* (so the people pattern predicts "drops"). It dropped. It and row 6 (an evening call with only two people, which did not drop) are the only two rows where the two candidate patterns disagree, and both go to the people count. With eight rows that is a strong hint, not proof: the people count looks like it is doing the work, and evening may only be along for the ride because evening calls happen to be bigger. **Rows where your clues agree cannot tell you which clue matters.**
 
 ### Activity — the counting grid
 
@@ -1067,7 +1067,7 @@ Any threshold from **121 to 160** scores 8 out of 8. A tidy choice: `IF screen_m
 | Fault | Why it's a fault | The fix |
 |---|---|---|
 | `IF the queue is huge` | "Huge" is an adjective; a machine needs the same answer every time | `IF queue_at_1230 >= 21` |
-| The **default line is empty** | No answer for every row where neither rule fires, which here is most of them | `DEFAULT: OTHERWISE THEN "doesn't run out"` |
+| The **default line is empty** | No answer for every row where neither rule fires, which here is about half of them | `DEFAULT: OTHERWISE THEN "doesn't run out"` |
 | Rule 2 (`dish = "chips"`) is the weaker pattern and gives false alarms | From the student guide's canteen example, chips is 75% against 17% while queue is 100% against 0%. Rule 2 wrongly flags row 9 (Thu, chips, queue 19, didn't run out) | Delete Rule 2, or keep the false alarm on purpose and write down that you chose it |
 
 **The fault that stops a machine completely: the empty default.** A vague condition gives *bad* answers, which are survivable and detectable. A missing default gives *no* answer, which the next piece of software cannot use.

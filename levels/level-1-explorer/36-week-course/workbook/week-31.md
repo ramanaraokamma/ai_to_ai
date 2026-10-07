@@ -611,9 +611,7 @@ Also acceptable: *"the groups and the number of photos in each must be decided a
 
 **(b)** 13 + 9 + 7 = **29** ✓ and 16 × 3 = **48** ✓
 
-**(c)** The mug holds up everywhere (81.3%) while spoon and fork both collapse — and **that has nothing to do with the lighting at all.** A mug is a chunky round shape with a handle. A spoon and a fork are both thin shiny metal objects of roughly the same length and outline. As soon as conditions get hard, the model falls back on "long thin shiny thing" and cannot separate the two.
-
-The condition table blamed the light. The grid says there is *also* a spoon-versus-fork problem, present in **every** condition including bright daylight. **That is why an audit uses a grid and not a list.**
+**(c)** Read down the columns. The mug stays at 3/4 in every hard condition (81.3% overall), while spoon (56.3%) and fork (43.8%) fall further, and the fork is never ahead of the spoon. So the grid shows that *which object* matters as well as *which lighting* — something the four-condition table could not show, because it added all three objects together. A guess worth testing: a mug is a chunky shape with a handle, while a spoon and a fork are both thin metal objects of similar length, so they may be harder to tell apart. But the grid only counts right and wrong; it does not say what the app said instead, and each cell is only 4 photos (one photo is 25 points). So treat this as a hint to investigate, not a finding. **That is why an audit uses a grid and not a list.**
 
 ### B5 — Price the fix
 
@@ -722,7 +720,7 @@ So the table reads: A **11/12 = 0.9167 = 91.7%** · B **7/12 = 0.5833 = 58.3%** 
 
 **(e)** Any answer of this shape:
 
-> *Do not use this app to name an object you are holding, or in anything dimmer than daylight. In those situations it is wrong more often than it is right.*
+> *Do not use this app to name an object you are holding: it was wrong nearly six times in ten on those photos. In lamplight it was wrong about four times in ten.*
 
 Marks are for **a specific situation and a number**, not for style. "Be careful using this app" scores zero — it warns nobody about anything.
 

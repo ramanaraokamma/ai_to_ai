@@ -529,7 +529,7 @@ Every one of those decimals is below 1.00. If yours came out above 1, you divide
 
 (b) **No.** 86.7% against a target of under 20% is a severe failure — the worst kind of class imbalance.
 
-(c) The model barely saw `other` — only 8 photos, of which 20% (rounding to 2) get held out, leaving about 6 to train on. So it learns **not to bet on `other`**. What a visitor sees: they hold up their car keys, and the booth confidently says `lunchbox` at 74%, because "confidently say one of the three big classes" is almost always the winning strategy for a model trained like this. And the held-out `other` accuracy will be measured on 2 photos, which is not a measurement at all.
+(c) The model barely saw `other` — only 8 photos, of which 20% (rounding to 2) get held out, leaving about 6 to train on. So it is likely to learn **not to bet on `other`**. What a visitor sees: they hold up their car keys, and the booth confidently says `lunchbox` at 74%, because "confidently say one of the three big classes" is almost always the winning strategy for a model trained like this. And the held-out `other` accuracy will be measured on 2 photos, which is not a measurement at all.
 
 Her fix: about **50 more `other` photos**, then retrain. And she should write the failed balance check on her data card — it's a **finding**, not a secret.
 
@@ -605,7 +605,7 @@ That last clause — *I can't tell yet, and here's what would tell me* — is a 
 
 There is genuinely no right answer, and the defence is what's being marked. A strong answer picks a side and prices it:
 
-> **For more held-out photos:** "My test is 40 photos. One photo is worth 2.5 percentage points, so my 75% could really be anywhere near 72% to 78%. Doubling the held-out set to 80 halves how much one photo can move the number. I'd rather have a slightly worse model that I know the true score of than a slightly better model I'm guessing about."
+> **For more held-out photos:** "My test is 40 photos. One photo is worth 2.5 percentage points, and with only 40 photos a 75% score could easily be 10 or more points off the model's true accuracy either way (roughly 62% to 88%). Doubling the held-out set to 80 halves how much one photo can move the number. I'd rather have a slightly worse model that I know the true score of than a slightly better model I'm guessing about."
 
 > **For more training photos:** "40 photos per class is thin. My `coriander` class is at 50%, which is barely above guessing, and the most likely reason is that 40 photos of a yellow powder don't cover enough angles and lighting. More training photos might actually make the model better, and a better model is worth more than a more precise measurement of a bad one."
 
@@ -688,7 +688,7 @@ The finding:
 
 > *"My model is worst at **landfill** — 6 out of 10 — and when it gets landfill wrong it usually says **recycling** (3 of the 4 mistakes)."*
 
-"75%" tells a visitor nothing they can act on. "It calls shiny landfill things recycling" tells them what to hold up, tells you what photos would fix it, and proves you looked. *(If two classes tie for worst, say so, and name the biggest single off-diagonal box instead of inventing a pattern.)*
+"75%" tells a visitor nothing they can act on. "It seems to call shiny landfill things recycling" tells them what to hold up, tells you what photos would fix it, and proves you looked. *(If two classes tie for worst, say so, and name the biggest single off-diagonal box instead of inventing a pattern.)*
 
 **W34-7 — the data card.** All eight boxes filled. Model answers for the two that get skipped:
 

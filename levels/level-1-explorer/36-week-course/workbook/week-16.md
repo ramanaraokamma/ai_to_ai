@@ -523,14 +523,14 @@ Even worse: **34 / 33 / 33** has a top score of 34, so his rule blocks it — bu
 **The fix:** add a **second threshold about the margin**, joined with **OR** — e.g. *"...or the margin is below 25 points."* One number about the top score can never catch a close race.
 
 **B4.** Any two genuinely different problems, each with a person attached. Model answers:
-- **Problem 1: users cannot tell a 97 / 2 / 1 from a 45 / 44 / 11.** Both just say "foxglove." **Who gets hurt:** the user, who eats or touches a plant on the strength of a coin toss. (Foxglove is poisonous. Its lookalikes are not.)
+- **Problem 1: users cannot tell a 97 / 2 / 1 from a 45 / 44 / 11.** Both just say "foxglove." **Who gets hurt:** the user, who eats or touches a plant on the strength of a coin toss. (Foxglove is poisonous. Some of its lookalikes are far less dangerous.)
 - **Problem 2: the app cannot tell you when the plant isn't in its list at all.** With no `other` class and no visible scores, a plant it has never seen still produces a confident name. **Who gets hurt:** the user again, and also the developers, who never find out their app is failing because nobody can see the low margins.
 - *Also accepted:* nobody can report a bug usefully ("it said X and was wrong" vs "it said X at 41% with a margin of 3"); and the company can't tell which classes need more photos.
 
 **B5.**
 (a) A plausible readout: **robin 52 · sparrow 31 · blue tit 17** (sum 100 ✓, margin 21). *Any readout adding to 100 is fine.*
 (b) Add an **`other` class**, and fill it with about forty photos of everything that is **not** one of the three birds: the empty feeder, the feeder with a squirrel on it, a branch, a leaf, a passing cat, the fence, the sky. The point is that it must contain the *kinds* of things the camera will actually see.
-(c) **The cost:** adding one big messy class usually steals a few points of belief from the real classes, so **every margin gets smaller**. Your robin might drop from 88% to 79%. That is a genuine trade: you give up a little sharpness in exchange for the ability to say "none of these." *Answers saying "it costs nothing" are wrong. Answers saying "it takes time to photograph" are true but not the point being asked about.*
+(c) **The cost:** adding one big messy class usually steals a few points of belief from the real classes, so **margins often get smaller**. Your robin might drop from 88% to 79%. That is a genuine trade: you give up a little sharpness in exchange for the ability to say "none of these." *Answers saying "it costs nothing" are wrong. Answers saying "it takes time to photograph" are true but not the point being asked about.*
 
 ---
 
@@ -608,16 +608,16 @@ What that tells you about Row 3: **this readout IS the blind-guessing rate.** Th
 
 **H4.** Margin 15 sits right on the boundary of the shaky band — and it turns out to be a miss. Look at the third number: comb, the **true** answer, got 5 points. The model isn't merely unsure between two options; it has essentially ruled the correct one out.
 
-**H5.** Technically perfect and genuinely suspicious. A real model almost never gives a clean 100 / 0 / 0 — it's usually 99.6% rounded up. The most likely explanation is that you are testing on a photo the model was **trained** on, which means you are not testing anything at all.
+**H5.** Technically perfect, and worth a second look. A real model's 100 / 0 / 0 is usually something like 99.6% rounded up. It can happen on a genuinely easy spoon, but it is also what you would see if you were testing on a photo the model was **trained** on, in which case you are not testing anything at all. Either way, a clean 100 proves nothing: card 6's stapler got 99.
 
-**H6. ⚠️ The broken sum.** `38 + 36 + 24 = 98`, not 100, so **one bar was misread**. The correct handling: do not guess and do not average — write "sum = 98, so I misread a bar; I need to read it again." **Full credit requires spotting the 98.** *(If you must proceed: the missing 2 points almost certainly belong to the bar you misread, so re-reading gives 38 / 36 / 26 = 100 — winner spoon, margin 2, don't trust it, and it's wrong.)*
+**H6. ⚠️ The broken sum.** `38 + 36 + 24 = 98`, not 100, so **one bar was misread**. The correct handling: do not guess and do not average — write "sum = 98, so I misread a bar; I need to read it again." **Full credit requires spotting the 98.** *(If you must proceed: the missing 2 points belong to whichever bar you misread, and you cannot tell which without looking again; if it were the comb bar, re-reading would give 38 / 36 / 26 = 100 — winner spoon, margin 2, don't trust it, and it's wrong.)*
 
 **H7.** Right answer, good margin of 56. Note that the two losers are almost level (15 and 14) — that is completely normal and means nothing. **The margin is only ever about first versus second.**
 
 **H8.** A **banana** was held up. There is no banana class. A banana is long, curved and smooth, so of the three boxes it lands nearest spoon, and 100 points of belief had to go somewhere. Margin 81 and 100% wrong. The model is not malfunctioning; it has three boxes and no way to say "none of these."
 
-**The pattern question.** The two biggest margins are **H5 (100)** and **H8 (81)**.
-Are those the two you trust most? **No — they are the two you should trust least.** H5's margin is huge because the test itself was invalid (almost certainly a training photo). H8's margin is huge because the object wasn't in any class at all, so the model committed to the nearest shape. The lesson, written out: **margin is necessary but not sufficient. You also have to know what was held up.**
+**The pattern question.** The two biggest margins are **H5 (100)** and **H1 (88)**; H8 (81) is third.
+Are those the two you trust most? **Only partly.** H1 is a genuinely good reading. H5 deserves a second look: a margin of 100 can come from a test that was not valid (for example a training photo). And the very next margin, H8's 81, belongs to a banana that wasn't in any class at all, so the model committed to the nearest shape. A big margin alone is never the whole story. The lesson, written out: **margin is necessary but not sufficient. You also have to know what was held up.**
 
 ---
 
@@ -637,7 +637,7 @@ There is no single correct policy. **The defence is what gets marked, not the nu
 
 > **Reason 1 — about false alarms.** A false alarm here means saying "spoon" when it isn't one. Every wrong row in my table except H8 had a margin under 25: H2 had 1, H4 had 15, H6 was a misread. So a 25-point margin rule catches my false alarms **without me needing to know the true answer first** — which is the whole trick, because in real use nobody tells you the true answer. H8 (margin 81 on a banana) still gets through, and I have to be honest that no threshold catches that one; only an `other` class would.
 >
-> **Reason 2 — about misses.** A miss here means saying "not sure" about a perfectly good spoon and making a person do work that didn't need doing. H3 was a real spoon at 62% with a margin of 41 — and my 65% threshold **blocks it**, which is a miss I have chosen to accept. If I set the threshold at 80% instead I'd block H3 *and* probably half of my correct answers, and a model that says "not sure" half the time is a model nobody uses. If I set it at 55% I'd let H4 (a wrong answer) through. 65 is my chosen trade.
+> **Reason 2 — about misses.** A miss here means saying "not sure" about a perfectly good spoon and making a person do work that didn't need doing. H3 was a real spoon at 62% with a margin of 41 — and my 65% threshold **blocks it**, which is a miss I have chosen to accept. If I set the threshold at 80% instead I'd block H3 *and* probably half of my correct answers, and a model that says "not sure" half the time is a model nobody uses. If I dropped the margin rule from 25 to 10, I'd let H4 (a wrong answer, margin 15) through. 65 is my chosen trade.
 >
 > **Why OR, not AND.** With **OR**, failing *either* test blocks the answer. 45 / 44 / 11 has a middling top score and a terrible margin — with AND it would need to fail *both* to be blocked, so it would sneak through. OR is stricter, and stricter is right here.
 
@@ -662,7 +662,7 @@ There is no single correct policy. **The defence is what gets marked, not the nu
 |---|---|---|
 | "Trust anything over 50%" | H4 was 55 and wrong. | "Do you want H4 through?" |
 | One threshold only | 45 / 44 / 11 has no defence at all. | "Show me how your policy handles a margin of 1." |
-| "Trust anything over 95%" | Blocks nearly every real answer, and H8 still passes. | "How many of the eight does this let through? Is that a useful machine?" |
+| "Trust anything over 95%" | Blocks nearly every real answer (only H5 gets through), and a 99% wrong answer like card 6's stapler would still pass. | "How many of the eight does this let through? Is that a useful machine?" |
 | Two numbers, no reasons | The defence is the task, not the number. | "Why 70 and not 60?" |
 | "Never trust it" | Consistent, and useless. | "H1 was 93 / 5 / 2 on a real spoon. What's wrong with that one?" |
 

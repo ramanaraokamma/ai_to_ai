@@ -851,7 +851,7 @@ Before any checks there is exactly 1 situation. After *n*−1 checks there are 2
 **"Three jobs where hand-written rules clearly win, and what they have in common."**
 
 1. **Income tax.** `IF income is between 300,000 and 600,000 THEN tax = 5% of (income − 300,000)`. The bands were decided by a parliament; there is nothing to discover, and two people with identical incomes must get identical bills.
-2. **A hospital drug-dosage cut-off.** `IF dose > max_safe_dose_for_weight THEN block and alert the pharmacist`. The limit comes from controlled trials, not from data. A 99.9% accurate model kills one person per thousand; a comparison against a published number is right by construction.
+2. **A hospital drug-dosage cut-off.** `IF dose > max_safe_dose_for_weight THEN block and alert the pharmacist`. The limit comes from controlled trials, not from data. A model that is 99.9% accurate is still wrong one time in a thousand, and in dosing a wrong answer can harm a patient; a comparison against a published number is right by construction.
 3. **Whether a chess move is legal.** The rules are complete, finite and published on two pages. A learned system could only ever produce a fuzzy copy, occasionally allowing an illegal move or rejecting a rare legal one like en passant.
 
 **What they have in common:** in all three, *the correct answer already exists in written form* — a law, a published safety limit, a game's rulebook. Learning can only make an approximate copy of something already exact. Use rules when the answer was written down by someone. Use learning when the answer lives only in people's ability to recognise it without explaining it.

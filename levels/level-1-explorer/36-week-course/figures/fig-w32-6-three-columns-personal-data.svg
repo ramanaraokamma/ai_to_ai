@@ -32,6 +32,6 @@
     <text x="552" y="200">The rules of cricket</text>
     <text x="552" y="228">The plot of a novel</text>
   </g>
-  <text x="400" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">any three of these = one person</text>
-  <text x="400" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Nothing in the middle column identifies anybody. Put three of them together and there is one person left.</text>
+  <text x="400" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">enough of these = one person</text>
+  <text x="400" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Nothing in the middle column identifies anybody. Put enough of them together and there is one person left.</text>
 </svg>

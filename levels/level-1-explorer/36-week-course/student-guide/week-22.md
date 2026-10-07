@@ -564,7 +564,7 @@ Then go and look at your training photos and add one more line: *"I checked, and
 
 | ❌ Wrong | ✅ Right |
 |---|---|
-| "The webcam was blurry — let me hold it straighter." Score: 12/14 = 85.7% | Write **"blurry"** in the notes column. The cross stays. Score: 11/15 = 73.3% |
+| "The webcam was blurry — let me hold it straighter." Score: 12/15 = 80.0% | Write **"blurry"** in the notes column. The cross stays. Score: 11/15 = 73.3% |
 
 The complaint is real and it belongs on the record. The photo still counts. Otherwise your score stops measuring the model and starts measuring how many photos you were willing to delete.
 

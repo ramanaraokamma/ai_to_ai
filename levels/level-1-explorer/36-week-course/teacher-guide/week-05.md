@@ -66,7 +66,7 @@ Try it:
 - Class 6A + class 6B = ? Does not even compute. **Category.**
 - Postcode 560001 + postcode 110001 = 670002. Perfectly valid arithmetic, complete nonsense. **Category.**
 
-**This is the single most valuable idea in the section, so let me make it concrete.** Take three friends with postcodes 560001, 110001 and 400001. Average them: 1,070,003 ÷ 3 = **356,667.67**. Postcode 356667 is a real place — a village none of the three has ever visited. The maths is perfect. The answer is garbage. The column was a category wearing number clothes.
+**This is the single most valuable idea in the section, so let me make it concrete.** Take three friends with postcodes 560001, 110001 and 400001. Average them: 1,070,003 ÷ 3 = **356,667.67**. Postcode 356667 may not even exist, and if it does it is a place none of the three has ever visited. The maths is perfect. The answer is garbage. The column was a category wearing number clothes.
 
 Student ID numbers, shirt numbers, phone numbers, house numbers, bus routes, postcodes, room numbers: all categories. Spreadsheets will happily average every one of them and will never warn you.
 
@@ -134,7 +134,7 @@ And here is the honest hard part you should be ready to say out loud: **sometime
 
 **Misconception 1: "Anything weird is an error."** Students find 480 and cross it out with enormous confidence, usually within ten seconds of finding it. This is the single most common failure in the lesson and you should expect it, welcome it, and then spend five minutes on it. The question that unpicks it: *"What number would have made you suspicious? Now — is 480 outside what's physically possible, or just outside what's usual?"*
 
-**Misconception 2: "The computer will work out that Monday and monday are the same."** It will not. Not by being clever, not by being modern. A spreadsheet counting distinct values will report 4 where you see 1. Demonstrate it if you can, but even just saying it plainly with total confidence usually lands.
+**Misconception 2: "The computer will work out that Monday and monday are the same."** It will not. Not by being clever, not by being modern. A program counting distinct values will report 4 where you see 1. (Be careful if you demo it in a spreadsheet: many spreadsheet tools ignore capital letters, so `Monday` and `monday` may merge, but `Mon.`, `MON` and `Monday` will still count as different.) Demonstrate it if you can, but even just saying it plainly with total confidence usually lands.
 
 A third, smaller one: **"a blank is a zero."** Attack this every single time you see it. It is the error with the biggest consequences per second of effort.
 
@@ -421,7 +421,7 @@ The full diagnosis, in the order most students find them:
 | `Beagle` (row 2) vs `beagle` (row 5) | **Inconsistent** | Standardise to `beagle`. |
 | `labrador` (rows 1, 3) vs `Labrador` (row 6) | **Inconsistent** | Standardise to `labrador`. |
 
-> **🧑‍🏫 If a student says the duplicate might be two different dogs both called Bruno:** that is a genuinely excellent objection, and you should say so out loud. Two Bruno labradors, both 3, both 22 kg, is *possible*. The reason we call it a duplicate here is that everything matches exactly, which is much more likely to be a copy-paste than a coincidence — and the reason we can't be certain is that nobody gave the rows unique IDs at collection time. That uncertainty is real and permanent. Praise it.
+> **🧑‍🏫 If a student says the duplicate might be two different dogs both called Bruno:** that is a genuinely excellent objection, and you should say so out loud. Two Bruno labradors, both 3, both 22 kg, is *possible*. The reason we call it a duplicate here is that everything matches exactly, which is much more likely to be a copy-paste than a coincidence — and the reason we can't be certain is that the `id` here is only a row number, not a real identifier (like a microchip number) recorded for each dog at collection time. That uncertainty is real and permanent. Praise it.
 
 **Do this — the payoff.** Compute the average weight before and after, out loud, together.
 
@@ -609,7 +609,7 @@ Marking points: it must be an explicit written list, it must be short, and it mu
 
 - **Tell them the count per type up front:** "two missing, one duplicate, two impossible, four spellings." Removes the searching load and keeps the diagnosis.
 - **Do the first two faults together**, out loud, then hand over.
-- **Cut to eight rows** (delete Aug 21, Aug 24, Aug 26, Aug 26 — but then you lose the duplicate, so instead delete Aug 5, Aug 12, Aug 17 and keep the rest). Six faults in nine rows is a fair reduced target.
+- **Cut to eight rows** (delete Aug 21, Aug 24, Aug 26, Aug 26 — but then you lose the duplicate, so instead delete Aug 5, Aug 12, Aug 17 and keep the rest). Seven faults in nine rows (three spellings of Monday, the -3.2, the 88, the blank screen time and the duplicate) is a fair reduced target.
 - Skip the controlled vocabulary writing and just *say* it together.
 
 ### Variation — harder
@@ -988,7 +988,7 @@ Either solution is right for each. **Naming the ambiguity earns the credit**, no
 | 1 | `sleep_h` = 19 | **IMPOSSIBLE** | Outside 0–16. Blank it, note `was 19, impossible`. Do not guess 9 or 1.9 |
 | 2 | `screen_min` = 600 | **OUTLIER** | Inside 0–1440, so legal: ten hours is possible. **Keep it** and note why that day was different |
 | 3 | `bag_kg` = 0 | **IMPOSSIBLE** | Outside 0.1–12. An empty bag still weighs something. Blank it, **and strongly suspect somebody filled a blank with 0** |
-| 4 | `age_years` = 19 | **OUTLIER** | Inside 5–19, so legal. Unusual among 11-year-olds, so **keep it and check it**: a real repeated year, or a typo for 9 |
+| 4 | `age_years` = 19 | **OUTLIER** | Inside 5–19, so legal. Unusual among 11-year-olds, so **keep it and check it**: far more likely a typo (for 9 or 11) than a real 19-year-old, but only a check can say |
 | 5 | `jump_cm` = 892 | **OUTLIER** | Inside 50–900, so legal by our own rule, but the world record is about 895 cm, so at a primary school it is almost certainly wrong. **Keep it, flag it hard, and go and ask.** Our range was too loose |
 | 6 | `temp_c` = 51 | **IMPOSSIBLE** | Outside −10 to 50. Blank it and note it |
 
@@ -999,7 +999,7 @@ Either solution is right for each. **Naming the ambiguity earns the credit**, no
 - **A.** A person sees **3** toppings: margherita, paneer, veggie.
 - **B.** The computer sees **7**: `Margherita` (orders 1, 8), `margherita` (2), `MARGHERITA` (3), `Paneer` (4), `paneer` (5), `Veggie` (6), `veggie` (7). *Rushing gives 6; make them list all seven.* With seven "products", "which topping is most popular?" becomes unanswerable and nothing looks broken.
 - **C.** The exact duplicate is **orders 1 and 8**: `Margherita · 12 · 1` twice, identical in every column, spelling included.
-- **D.** Orders **6 and 7** look like a duplicate and are not: `Veggie · 12 · 3` and `veggie · 12 · 3` have the same size and quantity but **different spellings**, and two different tables could both have ordered three 12-inch veggies. It cuts both ways: a program that compares text misses them as duplicates, and a person may delete one and destroy a real order. The honest answer is that you cannot be sure, because nobody gave the rows unique IDs at collection time.
+- **D.** Orders **6 and 7** look like a duplicate and are not: `Veggie · 12 · 3` and `veggie · 12 · 3` have the same size and quantity but **different spellings**, and two different tables could both have ordered three 12-inch veggies. It cuts both ways: a program that compares text misses them as duplicates, and a person may delete one and destroy a real order. The honest answer is that you cannot be sure, because nobody gave the rows unique IDs at collection time. (Orders 1 and 2, and orders 2 and 8, differ only in capitals and fit the same description, so accept them as answers too.)
 - **E.**
 
 ```text

@@ -49,7 +49,7 @@ This week — before the camera starts moving and distracting you — you are go
 
 When you hold a spoon up to a trained model, it does **not** say "spoon."
 
-It never says "spoon." What actually comes out is **one number for every box you gave it**, like this:
+What actually comes out underneath is never just "spoon." It is **one number for every box you gave it**, like this:
 
 ```
    spoon       ████████████████████░░░░░░░░░░   62%
@@ -145,7 +145,7 @@ This is the sentence to tattoo on your brain:
    spoon 74%   ·   toothbrush 15%   ·   comb 11%
 ```
 
-Check it: 74 + 15 + 11 = 100 ✓. Winner: spoon. Margin: 74 − 15 = **59** — that's in the "not far off clear" band, and it is a **bigger margin than this model usually gets on a real comb.**
+Check it: 74 + 15 + 11 = 100 ✓. Winner: spoon. Margin: 74 − 15 = **59** — that's in the "reasonably clear" band, and it is a **bigger margin than this model usually gets on a real comb.**
 
 And it is 100% wrong.
 
@@ -163,9 +163,9 @@ If a model must always pick one of your boxes, then the fix is obvious the momen
 ![The other class is a box for none of the above](../figures/fig-w16-3-other-class-bin.svg)
 *Figure 16.3 — Give it somewhere honest to put the belief, or it will put it somewhere wrong.*
 
-It is not a magic fix, and you should know the cost. Adding one big messy class usually steals a few points of belief from your real classes, so **every margin gets a bit smaller**. That's a real trade: you lose a little sharpness and you gain the ability to say "I don't know."
+It is not a magic fix, and you should know the cost. Adding one big messy class usually steals a few points of belief from your real classes, so **many margins get a bit smaller**. That's a real trade: you lose a little sharpness and you gain the ability to say "I don't know."
 
-Here is the part worth being slightly annoyed about: **almost no real product does this.** That is one of the reasons real products are confidently wrong at you.
+Here is the part worth being slightly annoyed about: **many real products don't do this.** That is one reason they can be confidently wrong at you.
 
 ---
 

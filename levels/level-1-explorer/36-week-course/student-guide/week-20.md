@@ -141,7 +141,7 @@ You cannot tell. And those are wildly different claims. Three out of four is one
 
 Accuracy is an **average.** And an average's whole job is to hide the spread. That is not a flaw; that is what averages are *for*. It just means **you must never stop at one.**
 
-🍕 **The class-average analogy.** A class averages 70% on a test. Sounds fine. Then you look at the actual marks: **half the room got 85% and the other half got 40%.** The average of 70% is completely true and completely useless. It described **nobody in the room.**
+🍕 **The class-average analogy.** A class averages 70% on a test. Sounds fine. Then you look at the actual marks: **half the room got 100% and the other half got 40%.** The average of 70% is completely true and completely useless. It described **nobody in the room.**
 
 So you break the average open, one class at a time.
 

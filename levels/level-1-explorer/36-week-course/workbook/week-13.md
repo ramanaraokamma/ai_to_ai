@@ -540,7 +540,7 @@ There's no single right answer, because it's your table. Here is a full model an
 | `chunky` | over 10 g | 16, 18, 20 | 3 |
 | | | **total** | **10** |
 
-I put the boundaries in the empty gaps rather than in the middle of a cluster: there is a real gap between 7 and 16, and a smaller one between 5 and 6.
+I put the boundaries in the empty gaps rather than in the middle of a cluster: there is a real gap between 7 and 16, so my big boundary goes there. The other boundary has to cut through the 4-to-7 group somewhere, because I need three buckets, and I put it between 5 and 6.
 
 **Loss 1 — differences inside a bucket vanish.** The 16 g marker and the 20 g marker are now the identical answer, `chunky`, even though one is 25% heavier than the other. If I later wanted to tell my two markers apart, this column cannot help me at all any more.
 

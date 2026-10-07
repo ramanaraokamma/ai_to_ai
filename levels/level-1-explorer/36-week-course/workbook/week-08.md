@@ -618,7 +618,7 @@ A third, and it is the most interesting: **your phone's face unlock.** The flag 
 | Fault | Why it's a fault | The fix |
 |---|---|---|
 | `IF the photo looks a bit fuzzy` | Still an adjective. "A bit fuzzy" is not a number, and two people would disagree — which is the exact thing the exercise was asking them to remove | `IF the image is smaller than 400 x 400 pixels OR more than 60% of pixels are pure black or pure white THEN reject` |
-| **"Where the number came from" is blank** | There is no number, so there is nothing to explain — and the blank hides that fact rather than admitting it | Write the origin: *"400 x 400 is roughly the smallest size a face is recognisable at on screen"* — or, honestly, *"I made it up"* |
+| **"Where the number came from" is blank** | There is no number, so there is nothing to explain — and the blank hides that fact rather than admitting it | Write the origin: *"400 x 400 is about where a photo starts to look small on a laptop screen"* — or, honestly, *"I made it up"* |
 | The edge case does not test the rule's boundary | A black wall is an awkward *photo*, but it is not sitting either side of any threshold, because the rule has no threshold to sit beside | Build it from the number: a photo at **401 x 401** pixels (accepted) against one at **399 x 399** (rejected) — indistinguishable to any human eye |
 
 **Why the black wall isn't an edge case for their rule:** an edge case is an example the rule gets wrong **at its boundary**. Their rule has no boundary, so nothing can be near it. Once the rule *does* have a number in it, the black wall becomes something more interesting — it is a case where the **stand-in itself has failed**, like the mouldy apple with a small bruise. That is a real and harder problem, and it cannot be fixed by moving any threshold.
@@ -733,7 +733,7 @@ An answer that claims to have solved it completely has missed the lesson.
 **(c) the blurry photo**
 
 > **Sharpened:** `IF the image is smaller than 400 x 400 pixels OR more than 60% of pixels are pure black or pure white THEN reject it`
-> **Where the numbers came from:** 400 x 400 is roughly the smallest size a face is recognisable at on a screen; the black/white check catches photos taken with the lens covered or straight into a light.
+> **Where the numbers came from:** 400 x 400 is about where a photo starts to look small on a laptop screen (a guess, not a standard); the black/white check catches photos taken with the lens covered or straight into a light.
 > **Edge case:** a deliberately high-contrast black-and-white photograph — an excellent photo, rejected by the second clause. → **FALSE ALARM.**
 
 **(d) the heavy parcel**
