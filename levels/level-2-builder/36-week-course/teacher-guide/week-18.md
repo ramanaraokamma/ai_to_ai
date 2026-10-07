@@ -362,6 +362,8 @@ to 18. Two threads lit: toolcraft and representation.*
 
 ## 🧰 Prep Checklist
 
+This section lists what to prepare before the lesson and holds the complete runnable files. Do the night-before list first.
+
 ### 25 minutes the night before
 
 - [ ] **Check numpy still works.** Four seconds: `python3 -c "import numpy; print(numpy.__version__)"`. If it fails, **do not run this lesson** — fix the install and do a Week 17 consolidation instead. There is no paper version of a numpy lab.
@@ -370,7 +372,7 @@ to 18. Two threads lit: toolcraft and representation.*
 
 If their files are gone, these eight work:
 
-```
+```python
 CARD 1   doubled = []
          for score in scores:
              doubled.append(score * 2)
@@ -624,6 +626,8 @@ we put in 3 and 3. How many came out?
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the whole lesson: a summary table first, then each segment in order.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Count the Ways to Get It Wrong | 7 | 7 | The four-line loop on the board. Count its failure modes. |
@@ -638,7 +642,7 @@ we put in 3 and 3. How many came out?
 
 **Do this:** Write this on the board, by hand, exactly as it is. Eight cards face down beside you. Nothing on the screen yet.
 
-```
+```python
 doubled = []
 for score in scores:
     doubled.append(score * 2)
@@ -714,7 +718,7 @@ Write it up:
 
 Write on the board:
 
-```
+```text
 runs   48  12  77   5  63  30
 balls  32  20  55   9  41  28
        --  --  ---  --  ---  --
@@ -806,7 +810,7 @@ print(np.zeros((2, 3)))
 
 Write both on the board:
 
-```
+```text
 loop: [96, 24, 154, 10, 126, 60]
 line: [ 96  24 154  10 126  60]
 ```
@@ -1016,6 +1020,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full set-up, rules and cards for the Loop Retirement Party.
+
 ### Setup
 
 **On the table:** the eight cards (two already in the retired pile from the live-code), the REVISIT space, the Term 2 Bug Log, workbook *Practice Set A*, A2 (shapes that work and shapes that don't).
@@ -1220,6 +1226,8 @@ None of these need syntax from a later week.
 
 ## 🐞 The Debugging Clinic
 
+Use this section when the student hits an error this week. Each entry gives the message, the cause and the fix.
+
 Every message below came from running a broken version of this week's actual code, on numpy 1.26.
 
 > **🧑‍🏫 If a student asks:** the exact wording of numpy's own errors changes a little between numpy versions, and Python 3.11 and newer add `~~~^^^` arrows under the failing part of the line. The *meaning* of each message below does not change.
@@ -1254,6 +1262,8 @@ And the sentence for this week, which is the Term 2 summary:
 ---
 
 ## ❓ Questions Students Ask This Week
+
+These are the questions that come up most, with suggested answers.
 
 **"Is a loop bad now?"**
 
@@ -1311,6 +1321,8 @@ So: use it, enjoy it, and **print the shape.** That is not a compromise. That is
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual ways the lesson goes off course and what to do about each.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | Twenty minutes are lost to "the printing is different so it's wrong" | Because it genuinely looks different and the student is being careful, which is a virtue | **Pre-empt it in the Concept segment**, on the board, with `list(arr) == loop_result` shown before the lab starts. If it happens anyway, stop the room and do it once for everybody. |
@@ -1327,6 +1339,8 @@ So: use it, enjoy it, and **print the shape.** That is not a compromise. That is
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson for a student who is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1447,6 +1461,8 @@ for score in scores:
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to say when you set the homework, and what it contains.
 
 **Say this:**
 
@@ -2181,7 +2197,9 @@ The "I can…" grid is self-rated; read it alongside the revisit list and ask ab
 
 ## 🔮 Next Week Preview
 
-Term 3 starts, and it starts by taking the one thing we have carefully avoided for two weeks: **which direction?** So far every array operation has treated all the numbers as one heap. Week 19 asks the question that makes a table a table — *do you want the average of each row, or the average of each column?* — and gives the student `axis=0` and `axis=1` to say which. It is one keyword, it is two characters different, and picking the wrong one gives you a beautifully formatted, completely confident, entirely wrong answer, because both answers are numbers and both look plausible. The lesson is a rainfall grid — cities down the side, months across the top — and the rule is that **row 1 gets hand-checked on paper with a calculator before anybody believes a single thing the code says.** This week's habit of printing the answer's shape turns out to be the tell: if you asked for a per-city average and got twelve numbers back, you asked the wrong direction, and the shape said so.
+Term 3 starts, and it starts by taking the one thing we have carefully avoided for two weeks: **which direction?** So far every array operation has treated all the numbers as one heap. Week 19 asks the question that makes a table a table — *do you want the average of each row, or the average of each column?* — and gives the student `axis=0` and `axis=1` to say which. It is one keyword, it is two characters different, and picking the wrong one gives you a beautifully formatted, completely confident, entirely wrong answer, because both answers are numbers and both look plausible.
+
+The lesson is a rainfall grid — cities down the side, months across the top — and the rule is that **row 1 gets hand-checked on paper with a calculator before anybody believes a single thing the code says.** This week's habit of printing the answer's shape turns out to be the tell: if you asked for a per-city average and got twelve numbers back, you asked the wrong direction, and the shape said so.
 
 **Prep early:** three things, and the first one is five minutes well spent. **Read the revisit lists** from tonight's homework, and plan to spend the first ten minutes of Week 19 on whatever is on them — that is what the list is for, and Week 19's lesson is short enough to afford it. **Keep `retire.py` and any array files**, because Week 19 opens with a two-minute warm-up that retires three more loops before the new idea arrives. And **find a calculator and put it on the table**, because the hand-check of row 1 is not optional next week: it is the thing that decides whether the student believes `axis=0` or checks it, and that difference is the entire reason Week 19 exists.
 

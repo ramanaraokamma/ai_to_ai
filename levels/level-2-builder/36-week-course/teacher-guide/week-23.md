@@ -526,11 +526,13 @@ dropped to "holes · duplicates". Two pills are lit: **data** and **impact**.*
 
 ## 🧰 Prep Checklist
 
+This section lists what to get ready before class, so the files and the paper log exist when the lesson starts.
+
 ### 20 minutes the night before
 
 **1. Rule the cleaning log sheet (3 minutes).** One sheet of A4, landscape, a line down the middle:
 
-```
+```text
    CLEANING LOG - club_raw.csv, 12 rows
    -------------------------------------------------------------
    #  |  WHAT I DID                    |  WHY I DID IT
@@ -704,7 +706,7 @@ dtype: object
 - Cleaning log sheet on the table, blank, WHY column facing them.
 - Write on the board and leave up all lesson:
 
-```
+```text
 1. a hole            ->  isna().sum()          ->  fillna
 2. text pretending   ->  info() says object    ->  to_numeric, astype
 3. the same row twice->  duplicated().sum()    ->  next week
@@ -728,6 +730,8 @@ Do the typing next lesson as a twenty-minute warm-up. Week 24 needs `club_raw.cs
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the whole lesson, one segment at a time. The table gives the running order and the sections below give the words to use.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — The Form Nobody Filled In | 7 | 7 | A real broken paper form. Four things wrong with it. |
@@ -742,7 +746,7 @@ Do the typing next lesson as a twenty-minute warm-up. Week 24 needs `club_raw.cs
 
 **Do this:** Laptop closed. Hold up a piece of paper on which you have hand-written a deliberately awful club sign-up sheet. Write it out for real, by hand, before class — the messiness has to look human.
 
-```
+```text
         CHESS CLUB SIGN-UP
    Name          Age     House
    Aarav          13     red
@@ -934,7 +938,7 @@ if the hole were 0: 3.25
 >
 > So:" *(board)*
 
-```
+```text
 NaN is not 0.        0 means: we asked, the answer was none.
 NaN is not "".       NaN means: nobody told us.
 ```
@@ -951,7 +955,7 @@ IntCastingNaNError: Cannot convert non-finite values (NA or inf) to integer
 
 > "It refuses. It will average round a hole, but it will **not pretend a hole is a whole number.** Which tells you the order to do everything in today:" *(board, and box it)*
 
-```
+```text
 Deal with the hole FIRST. Then change the type. Never the other way round.
 ```
 
@@ -1043,7 +1047,7 @@ Let them argue. Some will say yes.
 
 **Do this:** Write log entry 1 on the paper, out loud, in front of them, with the WHY.
 
-```
+```text
 1 | Turned age from writing into numbers | three rows said "unknown", and that
   | with to_numeric(errors="coerce")     | one word made the whole column object,
   |                                      | which blocked astype(int)
@@ -1094,7 +1098,7 @@ Name: age, dtype: int64
 
 **Do this:** Log entries 2 and 3, with the warning written into entry 2.
 
-```
+```text
 2 | Filled 3 missing ages with 13 | 13 is the median of the 9 we know, and the
   |                              | median isn't dragged about by one silly value.
   |                              | WARNING: those 3 ages are GUESSES now.
@@ -1167,7 +1171,7 @@ dtype: int64
 
 > "Exactly. **A log that only lists fixes is a to-do list. A log that also lists what you found and deliberately didn't fix is honest work.**"
 
-```
+```text
 5 | Found 1 duplicate row (Bela Roy,   | no tool for it until next week, so it
   | twice, identical) - NOT removed    | is flagged here so it isn't forgotten
 6 | Found 9 spellings of 3 houses      | next week's job
@@ -1230,7 +1234,7 @@ They should look uncomfortable, and then say: *it depends.*
 
 Write on the board:
 
-```
+```text
 fillna, astype and sort_values all hand you a COPY.
 No "=" on the left means nothing happened, and nothing warns you.
 ```
@@ -1278,13 +1282,15 @@ And the sentence for this week:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full set-up and steps for the two parts of the student's turn, so you can run them without improvising.
+
 ### Part A — Fill or Drop: compute both, then choose (14 minutes)
 
 **Setup.** Student at the keyboard with `clean_club.py` open and working through Step 8. Cleaning log sheet beside them with entries 1–6 already written. The workbook's **Build It** page open beside it (Part 4 uses the same WHAT / WHY layout).
 
 **The question, and write it on the board so it stays put:**
 
-```
+```text
 What is the average SCORE of the 13-year-olds in this club?
 ```
 
@@ -1359,7 +1365,7 @@ B - dropped: 9 rows total
 
 **Step 5 — the log entry that names the cost (2 minutes).** Whichever they chose, one more line goes on the log:
 
-```
+```text
 7 | Answered "average score at 13" | I FILLED the ages, so 3 of those 7
   | using the filled version: 70.0 | pupils are only 13 because I said so.
   |                                | Dropping instead gives 75.0. Anybody
@@ -1401,6 +1407,8 @@ If naming all four from memory stalls, give initial letters on the board: `h___`
 ---
 
 ## ❓ Questions Students Ask This Week
+
+This section gives short answers to the questions that come up most often this week.
 
 **"Why doesn't pandas just work out that `unknown` means missing?"**
 
@@ -1456,6 +1464,8 @@ You do not, and that is exactly why `drop_duplicates` waits until next week and 
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut, add or change for a student who is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1580,6 +1590,8 @@ Run all three in the last five minutes. Say them exactly as written.
 
 ## 📤 Homework to Assign
 
+This section gives the words to use when you set the homework.
+
 **Say this:**
 
 > "One job, about an hour, and it's today's lesson on a different table. A **reading log** — twelve rows, six columns, and it's broken in exactly the same four ways as the club register. Different words, same four problems.
@@ -1611,8 +1623,9 @@ Run all three in the last five minutes. Say them exactly as written.
 
 ## 🔑 Answer Key
 
-Every line of code below was run on Python 3.10 with pandas 1.5.3, and every output block is copied from the real run. Item labels (W1, P1, A3, B2, T1 …) are the workbook's own; the workbook ends with its own Answers section, and this key agrees with it value for value.
+This section holds the working files and the answers to every homework item. Keep it away from the student.
 
+Every line of code below was run on Python 3.10 with pandas 1.5.3, and every output block is copied from the real run. Item labels (W1, P1, A3, B2, T1 …) are the workbook's own; the workbook ends with its own Answers section, and this key agrees with it value for value.
 
 ### The homework file
 
@@ -2279,6 +2292,12 @@ The twelve true-or-false statements:
 
 ## 🔮 Next Week Preview
 
-Next week is a lab, and it is the payoff for this one. The table goes from twelve rows to **forty**, which is too many to eyeball — so the diagnosis has to be done with commands rather than eyes. The student meets the last two kinds of broken and fixes them properly: `drop_duplicates()` removes two rows and they have to be able to **name which two**, and `.str.strip().str.title()` collapses fourteen spellings into four houses in a single line. Then `groupby` arrives, and it is the most powerful line of pandas in this whole course: `df.groupby("house")["score"].mean()` does in one line what fifteen lines of Week 15 loops used to do. And with it comes the trap that the whole term has been building towards — one house has **two members**, its average is 95.00, it sits proudly at the top of the table, and the average says nothing whatsoever about how many rows it came from. The student prints `.size()` next to `.mean()`, or they mislead themselves.
+This section says what next week covers and what to prepare now.
+
+Next week is a lab, and it is the payoff for this one. The table goes from twelve rows to **forty**, which is too many to eyeball — so the diagnosis has to be done with commands rather than eyes. The student meets the last two kinds of broken and fixes them properly: `drop_duplicates()` removes two rows and they have to be able to **name which two**, and `.str.strip().str.title()` collapses fourteen spellings into four houses in a single line.
+
+Then `groupby` arrives, and it is the most powerful line of pandas in this whole course: `df.groupby("house")["score"].mean()` does in one line what fifteen lines of Week 15 loops used to do.
+
+With it comes the trap that the whole term has been building towards — one house has **two members**, its average is 95.00, it sits proudly at the top of the table, and the average says nothing whatsoever about how many rows it came from. The student prints `.size()` next to `.mean()`, or they mislead themselves.
 
 **Prep early, and this one is worth doing before the weekend:** run the Week 24 prep script so `house_raw.csv` exists, then run `raw["house"].value_counts()` yourself and count the spellings — there are **fourteen**, and seeing that number with your own eyes is what will let you sound confident about it in class. Also keep this week's cleaning log sheets: next week's log continues on the same paper, because next week's table has the *same four problems* and the student should feel the log growing rather than starting again.

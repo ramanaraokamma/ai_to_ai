@@ -55,6 +55,8 @@ And you measured, with a ruler, that it looks **six times** bigger.
 
 ## 🧠 The Big Idea
 
+This section explains the ideas behind the week, one at a time: how a truncated axis works, how to read a correlation, and why a chart leads to a decision about a real person.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. The lie lives below the axis
@@ -242,7 +244,9 @@ No artists with labels found to put in legend.  Note that artists whose label st
 
 **A concrete example of the second half, which costs nothing and almost nobody does.** Notice `marker="o"` on the first line and `marker="s"` — a square — on the second.
 
-**Colour alone is not enough.** This chart will be photocopied, printed in black and white, or read by somebody who cannot distinguish those two colours, and in every one of those cases the colour is gone and the shapes are not. **Two cues instead of one.** It is simply what a careful person does.
+**Colour alone is not enough.** This chart will be photocopied, printed in black and white, or read by somebody who cannot distinguish those two colours, and in every one of those cases the colour is gone and the shapes are not.
+
+**Two cues instead of one.** It is what a careful person does.
 
 *(And when do you **not** need a legend? When there is exactly one series — the title and the y label already name it. A legend on a one-line chart just repeats what the title already says and uses up space.)*
 
@@ -293,7 +297,9 @@ temperature vs drownings : r = 0.989
 
 **How to talk about a scatter honestly.** Say *"students who studied more tended to score higher"* — a description of a picture. Do not say *"studying raised their scores"* — a claim about cause, which needs an **experiment**, not a chart.
 
-And what would that experiment be? Take a large group, split it **randomly** in half — randomly is the whole trick, because it makes the two halves similar in everything you did not measure, including the quiet room — ask one half to study two extra hours, leave the other half alone, compare afterwards. That is genuinely how it is done, and it is why medical trials work the way they do.
+And what would that experiment be? Take a large group and split it **randomly** in half. Randomly is the whole trick, because it makes the two halves similar in everything you did not measure, including the quiet room.
+
+Then ask one half to study two extra hours, leave the other half alone, and compare afterwards. That is genuinely how it is done, and it is why medical trials work the way they do.
 
 ### 6. A chart leads to a decision, and a decision lands on a person
 
@@ -317,7 +323,14 @@ Bruno Costa   13 Green   art    1.0     50
 
 So now the question that matters: **why might a fourteen-year-old be studying half an hour a week?**
 
-A part-time job. A younger brother or sister to look after. No quiet room or desk at home. A long journey to school. Illness — their own or somebody else's. Something difficult going on at home.
+Here are some reasons:
+
+- A part-time job.
+- A younger brother or sister to look after.
+- No quiet room or desk at home.
+- A long journey to school.
+- Illness — their own or somebody else's.
+- Something difficult going on at home.
 
 **None of those are on the chart. Not one.** And **none of them are fixed by being told to study more** — they are *punished* by it. Hugo gets a detention for a bus timetable.
 
@@ -362,6 +375,8 @@ Read it back. **There is no word in it that means "caused"**, except in the sent
 ---
 
 ## 💻 Type This
+
+In this section you build the lie yourself, in ten steps, and then check it with a ruler and with arithmetic.
 
 Everything goes in your `level2` folder, alongside `students.py` (Week 24) and `myweek.py` (Week 21).
 
@@ -520,6 +535,8 @@ Read the last line. *"`axes` is a box, not a frame. Which frame did you mean?"*
 **And ignore the "did you mean var" bit.** Python is guessing badly this time — `var` is about variance and has nothing to do with drawing. **Suggestions are hints, not answers.**
 
 ### Step 7 — both panels
+
+Type this under the `subplots` line in `week27_pair.py`. It fills the left frame and the right frame:
 
 ```python
 # ---- LEFT frame: the lie --------------------------------------------------
@@ -686,6 +703,8 @@ Anika Verma   12 music    5.0     93
 ---
 
 ## 🔍 Worked Examples
+
+This section gives you three complete programs to read and type, each using a different idea from the week.
 
 Three complete programs. Type each one, and for the first one, **print it and measure the bars with a ruler.**
 
@@ -860,6 +879,8 @@ Perhaps late-night screens are eating the sleep. Perhaps a strict bedtime is pro
 
 ## 🐞 When It Breaks
 
+This section shows the errors you are most likely to meet this week, what each one means, and how to fix it.
+
 Every message below came from really running a broken version of this week's code.
 
 ### Break 1 — `axes` instead of `axes[0]`
@@ -1024,21 +1045,39 @@ Not "it was hard". Something like:
 
 ## 💬 Talk About It
 
+These three questions are for talking through with a partner or a grown-up. Each has a hint to get you started.
+
 **1. Isn't it fine to truncate an axis if the real numbers are printed on the chart?**
 
-*Hint:* it is **better**, and it is not enough, and the reason is about how reading works rather than about honesty. People read charts with their eyes before their brain: the shape lands in about a quarter of a second, the numbers take two or three seconds, and most people never get to the numbers at all. So a truncated bar chart with correct numbers on it will still leave nearly every reader believing the wrong thing. Then be precise about what the printed numbers *are* good for: they are your defence in an argument **afterwards**, not a defence against the impression the chart already made. Now the harder half — if printing the numbers is not enough, what would be? *(Try: printing the numbers **and** starting at zero **and** saying in the title how big the gap really is.)*
+*Hint:* it is **better**, and it is not enough, and the reason is about how reading works rather than about honesty.
+
+People read charts with their eyes before their brain: the shape lands in about a quarter of a second, the numbers take two or three seconds, and most people never get to the numbers at all. So a truncated bar chart with correct numbers on it will still leave nearly every reader believing the wrong thing.
+
+Then be precise about what the printed numbers *are* good for: they are your defence in an argument **afterwards**, not a defence against the impression the chart already made. Now the harder half — if printing the numbers is not enough, what would be? *(Try: printing the numbers **and** starting at zero **and** saying in the title how big the gap really is.)*
 
 **2. Who decides what counts as misleading? Isn't it just an opinion?**
 
-*Hint:* split it deliberately into the part that is arithmetic and the part that is judgement. The arithmetic part is not an opinion at all: a truncated bar chart deletes length that the reader's eye is being asked to measure, and you can compute the exaggeration factor as an actual number — 5.76, in this case. Nobody can argue with 5.76. The judgement part genuinely is contested: whether *this* chart, for *this* audience, making *this* decision, hides something that would change the decision. Two careful people can disagree. But now find the bit that is **not** contested, because it is the useful bit: **state where your axis starts, and say what your chart hides.** Do those two things and nobody can accuse you of hiding anything, whatever they think of your choices.
+*Hint:* split it deliberately into the part that is arithmetic and the part that is judgement. The arithmetic part is not an opinion at all: a truncated bar chart deletes length that the reader's eye is being asked to measure, and you can compute the exaggeration factor as an actual number — 5.76, in this case. Nobody can argue with 5.76.
+
+The judgement part genuinely is contested: whether *this* chart, for *this* audience, making *this* decision, hides something that would change the decision. Two careful people can disagree.
+
+But now find the bit that is **not** contested, because it is the useful bit: **state where your axis starts, and say what your chart hides.** Do those two things and nobody can accuse you of hiding anything, whatever they think of your choices.
 
 **3. If the correlation were exactly 1.0 — perfect — would that prove cause?**
 
-*Hint:* no, and working out why is the best thinking available this week. Start with a case that is obviously not causal: measure the same thing twice with two different rulers. Perfect correlation, and neither measurement causes the other. Now a second case: one hidden thing causing both perfectly — a thermometer in Fahrenheit and one in Celsius correlate at exactly 1.0 and neither causes the other; the weather causes both. So **strength tells you how tightly two columns move together, and nothing at all about which way the arrow points, or whether there is an arrow.** Then check it against your own numbers: which of the three seaside correlations was strongest, and which was nonsense? Finally, the practical question — if a chart can never show cause, what *can* show it, and why does it need the word "randomly" in it?
+*Hint:* no, and working out why is the best thinking available this week. Start with a case that is obviously not causal: measure the same thing twice with two different rulers. Perfect correlation, and neither measurement causes the other.
+
+Now a second case: one hidden thing causing both perfectly — a thermometer in Fahrenheit and one in Celsius correlate at exactly 1.0 and neither causes the other; the weather causes both.
+
+So **strength tells you how tightly two columns move together, and nothing at all about which way the arrow points, or whether there is an arrow.**
+
+Then check it against your own numbers: which of the three seaside correlations was strongest, and which was nonsense? Finally, the practical question — if a chart can never show cause, what *can* show it, and why does it need the word "randomly" in it?
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four wrong ideas that sound sensible, and shows the right idea beside each one.
 
 ### Trick 1 — "a stronger correlation is better evidence of cause"
 
@@ -1081,6 +1120,8 @@ The way to stop making this mistake: draw a rectangle on paper, rule it down the
 
 ## 🌍 Where You've Seen This
 
+This section shows where these tricks and traps turn up outside the classroom.
+
 1. **"Our broadband vs theirs" adverts.** Almost always two bars with a truncated axis. Look for the bottom tick number — if it is missing entirely, that is its own answer.
 2. **Your phone's battery graph.** Usually a line, usually truncated, usually without saying so. Defensible for a line, and worth noticing.
 3. **Election-night bar charts on television.** Watch for the axis floor when two parties are close. A one-point lead can be drawn as a landslide, and it is drawn that way on purpose.
@@ -1092,6 +1133,8 @@ The way to stop making this mistake: draw a rectangle on paper, rule it down the
 ---
 
 ## 🧭 Where This Fits
+
+This section shows where this week sits on the course map.
 
 Same gold tile as last week, and this is the second and last week inside it. Term 3 ends here, and it
 ends with you doing something slightly wicked on purpose: drawing a chart that tells a lie, measuring
@@ -1118,6 +1161,8 @@ now; only `PREDICT & CHECK` is still dashed.*
 ---
 
 ## 🔑 Remember This
+
+These are the main points of the week, followed by a card of the syntax in one place.
 
 - **A truncated axis deletes length from the bottom of every bar, and the reader cannot put it back.** That is where the lie lives.
 - **Exaggeration factor** = the ratio your eye sees ÷ the ratio that is true. For 49 vs 51 with a floor of 48.6, that is 6.00 ÷ 1.0408 = **5.76**.
@@ -1186,6 +1231,8 @@ print(df["age"].corr(df["hours"]))      # -0.572  -- a DIRECTION, not a grade
 
 ## 📓 New Words
 
+These are this week's new words, with an example of each.
+
 ![This week's five words as pictures](../figures/fig-w27-6-vocab-icons.svg)
 *Figure 27.7 — This week's five words, drawn.*
 
@@ -1203,6 +1250,8 @@ print(df["age"].corr(df["hours"]))      # -0.572  -- a DIRECTION, not a grade
 
 ## 📤 Your Homework
 
+This section tells you what to do after class and how long it should take.
+
 Go to **[the Week 27 workbook](../workbook/week-27.md)**. About **70 minutes** — slightly over, because it is the end of the term.
 
 | Section | What to do | Time |
@@ -1214,13 +1263,11 @@ Go to **[the Week 27 workbook](../workbook/week-27.md)**. About **70 minutes** �
 | **Build It — the lie, the fix, and the ruler** | Sabotage one of your own Week 26 charts, repair it beside it, and **measure both bars in millimetres** | 17 min |
 | **Term 3 reflection** | Eight weeks, ticks and question marks, and two weeks named with a reason | 10 min |
 
-**Three things are being marked.**
+**Three things are being marked:**
 
-**Is the measuring real?** Two millimetre readings, in pen, from a printed page, with the division written out. **Not measured on a screen** — on a screen you can zoom, both bars change together, and the number stops being yours. If your printer shrank the page, that is fine; the ratio survives.
-
-**Does your sentence about `r` contain no causal verb?** Strike out *causes, makes, leads to, improves, boosts, results in, so you should.* And name a plausible third thing that could be causing both.
-
-**Does the reflection sheet name two weeks, with a specific reason each?** "It was hard" and "all fine" are both non-answers. **Everybody has two.**
+- **Is the measuring real?** Two millimetre readings, in pen, from a printed page, with the division written out. **Not measured on a screen** — on a screen you can zoom, both bars change together, and the number stops being yours. If your printer shrank the page, that is fine; the ratio survives.
+- **Does your sentence about `r` contain no causal verb?** Strike out *causes, makes, leads to, improves, boosts, results in, so you should.* And name a plausible third thing that could be causing both.
+- **Does the reflection sheet name two weeks, with a specific reason each?** "It was hard" and "all fine" are both non-answers. **Everybody has two.**
 
 > **⚠️ Watch out:** the two silent bugs from this week — `set_ylim` with one argument, and `set_ylim` with the numbers backwards — will not tell you anything is wrong. **Open every PNG you make and ask: is that the chart I meant?**
 

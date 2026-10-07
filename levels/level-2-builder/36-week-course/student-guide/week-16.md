@@ -73,6 +73,8 @@ Count your lines. **Thirteen.** One header, twelve players.
 
 ## 🧠 The Big Idea
 
+In this section you meet the ideas behind this week, one at a time, each with a plain explanation, an analogy and an example.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. A CSV is a table written down as plain text
@@ -84,7 +86,7 @@ Count your lines. **Thirteen.** One header, twelve players.
 
 **The analogy.** It is the postcard from the hook, thirteen times over. A stack of thirteen postcards, in order, with the first one saying what the other twelve mean.
 
-**A concrete example.** Here is the entire file this week produces. Not a picture of it, not a summary of it — **this is the file**:
+**A concrete example.** Here is the entire file this week produces. Not a picture of it, not a summary of it. **This is the file**:
 
 ```text
 name,team,runs,balls,out
@@ -308,6 +310,8 @@ That `True` means: every record, every key and every value matches what went out
 ---
 
 ## 💻 Type This
+
+In this section you build the save and load code step by step, and run it after each step.
 
 Everything today goes in the folder you have been using since Week 12, next to `records.py` and `squad_data.py`.
 
@@ -868,6 +872,8 @@ And `'007'` becoming `7`. That one is not a bug in the loader; it is a **decisio
 
 ## 🐞 When It Breaks
 
+In this section you meet the error messages this week's code can give you, and what each one means.
+
 Every message below came from really running a broken version of this week's code. **And this week, three of the things that go wrong produce no error message at all.**
 
 ### Break 1 — arithmetic on a value straight out of a file
@@ -982,7 +988,9 @@ One postcard, one card off the pile, and the question *"how would you write Asha
 
 Two shapes. **You cannot post a Lego brick.**
 
-Then all twelve, on a blank sheet, one line each, commas between the fields. Then somebody reading line three back and nobody being able to say what the `77` was — until the **header row** got added at the top. Thirteen lines. One header, twelve players.
+Then all twelve, on a blank sheet, one line each, commas between the fields.
+
+Then somebody read line three back, and nobody could say what the `77` was — until the **header row** got added at the top. Thirteen lines. One header, twelve players.
 
 ### The prediction that had to be written down first
 
@@ -1082,21 +1090,33 @@ The missing header, and the `90`. Neither produced an error message.
 
 ## 💬 Talk About It
 
+These three questions are for talking over with a parent, a friend or your teacher. Each hint gives you somewhere to start.
+
 **1. Python could have guessed that `48` was a number when it read the file. Would that have been better?**
 
-*Hint:* start by admitting it would be **more convenient** almost all of the time, which is why the tool you meet in Week 23 does exactly that. Then go hunting for the cases where the guess is wrong: a shirt number written `007`, a phone number starting with `0`, a column where somebody typed `N/A` in one cell, a date written `03/04` that could be March or April depending on which country typed it. Any guessing rule you invent is wrong somewhere. So the real question is not *guess or don't guess* — it is **who is responsible for checking?** If nobody guesses, you must convert and you cannot forget. If something guesses, the work is done for you and it is now your job to notice when it guessed wrong. Which of those two would *you* rather be in charge of, and does your answer change if the data is somebody's medical records?
+*Hint:* start by admitting it would be **more convenient** almost all of the time, which is why the tool you meet in Week 23 does exactly that. Then go hunting for the cases where the guess is wrong: a shirt number written `007`, a phone number starting with `0`, a column where somebody typed `N/A` in one cell, a date written `03/04` that could be March or April depending on which country typed it.
+
+Any guessing rule you invent is wrong somewhere. So the real question is not *guess or don't guess* — it is **who is responsible for checking?** If nobody guesses, you must convert and you cannot forget.
+
+If something guesses, the work is done for you and it is now your job to notice when it guessed wrong. Which of those two would *you* rather be in charge of, and does your answer change if the data is somebody's medical records?
 
 **2. `max()` said the best batter scored 90. Whose fault is that?**
 
-*Hint:* be careful, because there are three candidates and only one is really guilty. `max` did precisely what it is defined to do — compare things, in order, and hand back the biggest. Comparing two pieces of writing is a perfectly legal thing to do, and `'90'` really is later than `'104'` in an alphabetical list. The file did not lie either; it stored the characters it was given. So the gap is between **the question you asked out loud** ("who scored the most runs?") and **the question you typed** ("which of these pieces of writing comes last?"). Then the practical half: what would have caught it? Not a better `max`. Knowing the answer already, or printing `type()`, or converting at the door. **Which of those three still works in Week 34 when you have a hundred rows and no idea what the answer should be?**
+*Hint:* be careful, because there are three candidates and only one is really guilty. `max` did precisely what it is defined to do — compare things, in order, and hand back the biggest. Comparing two pieces of writing is a perfectly legal thing to do, and `'90'` really is later than `'104'` in an alphabetical list. The file did not lie either; it stored the characters it was given.
+
+So the gap is between **the question you asked out loud** ("who scored the most runs?") and **the question you typed** ("which of these pieces of writing comes last?"). Then the practical half: what would have caught it? Not a better `max`. Knowing the answer already, or printing `type()`, or converting at the door. **Which of those three still works in Week 34 when you have a hundred rows and no idea what the answer should be?**
 
 **3. Your program prints the wrong best player and never says it is unsure. Where else might that be happening right now?**
 
-*Hint:* think about what has to be true for a wrong answer to survive. It has to be **plausible** — `90` is a perfectly believable cricket score, so nobody blinks. And nothing has to be **checking**. Now think about where you have seen a confident number recently: a step count, a "top artist of the year", a price comparison, a leaderboard at school. Most of those numbers passed through a file at some point. **How would you know?** And the uncomfortable follow-up: what do you now think you should do before you believe a number that somebody's program printed for you?
+*Hint:* think about what has to be true for a wrong answer to survive. It has to be **plausible** — `90` is a perfectly believable cricket score, so nobody blinks. And nothing has to be **checking**.
+
+Now think about where you have seen a confident number recently: a step count, a "top artist of the year", a price comparison, a leaderboard at school. Most of those numbers passed through a file at some point. **How would you know?** And the uncomfortable follow-up: what do you now think you should do before you believe a number that somebody's program printed for you?
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four wrong ideas that sound sensible. Each one has a short test you can run to check it.
 
 ### Trick 1 — "`bool("False")` gives `False`"
 
@@ -1107,7 +1127,7 @@ The missing header, and the `90`. Neither produced an error message.
 |---|---|
 | `row["out"] = bool(row["out"])` — "`bool` turns text into a true-or-false, so this converts the column." | `bool()` asks *"is there anything here at all?"* And `"False"` has five characters in it, so there is definitely something there, so it is `True`. **Every single player gets marked out.** The conversion that works is a **comparison**: `row["out"] = (row["out"] == "True")` |
 
-This is the most reasonable wrong guess in the whole course. Prove it to yourself in three lines rather than believing me:
+This is the most reasonable wrong guess in the whole course. Run these three lines to check it yourself:
 
 ```python
 print("bool('True')  ->", bool("True"))
@@ -1189,6 +1209,8 @@ Look at that last line. **`1000` comes first and `9` comes third.** That is not 
 
 ## 🌍 Where You've Seen This
 
+This section shows where the same idea turns up outside the course.
+
 1. **Every "Export" or "Download" button on a website.** Your school report card, your bank statement, your step counts — tap *export* and what lands on your phone is very often a `.csv`. It is thirteen-lines-of-text simple, which is exactly why every site offers it.
 2. **The "import contacts" screen on a new phone.** It asks you for a CSV, and then it asks you which column is the phone number, because **the file does not say.** That screen exists precisely because a header row is not enough — somebody has to say what kind of thing each column is. You have now done that job by hand.
 3. **A spreadsheet asking "keep as text?" when you paste in something like `007`.** That dialog box is this entire chapter, wearing a suit. Someone at Microsoft or Google knew that guessing would destroy leading zeros and decided to ask you instead.
@@ -1200,6 +1222,8 @@ Look at that last line. **`1000` comes first and `9` comes third.** That is not 
 ---
 
 ## 🧭 Where This Fits
+
+This section shows where this week sits on the course map.
 
 Same gold box, fourth week running — and look at the third word written in it. Everything you have
 built so far has quietly vanished the moment you closed the program. This is the week that stops, and
@@ -1226,6 +1250,8 @@ learning to open one.*
 ---
 
 ## 🔑 Remember This
+
+These are the points to keep from this week. The code card at the end is for copying into your notes.
 
 - **A CSV is plain text and nothing else.** One header line, then one line per record, commas between the fields. No colours, no boxes, and **no note anywhere saying which columns are numbers**.
 - **Lines in the file = records + 1.** If you saved 30 records and the file has 30 lines, you forgot `writeheader()` and something is already broken.
@@ -1282,6 +1308,8 @@ print("round trip identical?", records == squad)    # must be True
 
 ## 📓 New Words
 
+The five words from this week, with an example of each.
+
 ![This week's five words as pictures](../figures/fig-w16-5-vocab-icons.svg)
 *Figure 16.6 — This week's five words, drawn.*
 
@@ -1307,13 +1335,11 @@ Go to **[the Week 16 workbook](../workbook/week-16.md)**. About **60 minutes** i
 | **Fix the Broken Program** | A stock report with three planted bugs — one syntax, one crash, one silent | 10 min |
 | **Build It — The Record Store** | 30 records, out to a CSV, back in, round trip proved field by field | 20 min |
 
-**Three things I am marking hardest.**
+**Three things I am marking hardest:**
 
-**Does `loaded == records` print `True`?** That is the objective and it is binary. If it says `False`, do not guess — use the mismatch finder from this chapter and it will tell you exactly which row and which field went wrong.
-
-**Is your file 31 lines?** Thirty records plus the header. If it is 30 lines, `writeheader()` is missing, and I want you to be the person who noticed rather than me.
-
-**Is the proof sheet field by field?** For row 1 of your own data: every field, its value and its `type()`, **before** you convert and **after**. Five fields, two states each, ten lines. A student who only checked one column has done a fifth of the work.
+1. **Does `loaded == records` print `True`?** That is the objective and it is binary. If it says `False`, do not guess — use the mismatch finder from this chapter and it will tell you exactly which row and which field went wrong.
+2. **Is your file 31 lines?** Thirty records plus the header. If it is 30 lines, `writeheader()` is missing, and I want you to be the person who noticed rather than me.
+3. **Is the proof sheet field by field?** For row 1 of your own data: every field, its value and its `type()`, **before** you convert and **after**. Five fields, two states each, ten lines. A student who only checked one column has done a fifth of the work.
 
 **And one sentence at the bottom:** which of your five columns needed converting, which did not, and **why**. Full marks needs all three parts, and the *why* is that a text file can only store characters.
 

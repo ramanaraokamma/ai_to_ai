@@ -8,7 +8,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week**.
+This warm-up is for bringing back what you learned **last week**. Answer all five questions in the spaces.
 
 **W1.** I run `age = input("Age? ")` and type `12`. What exactly is in the box called `age`? Use the right word.
 
@@ -32,7 +32,7 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
-**Write your prediction before you run anything.** Then run it and record the truth. A prediction you got wrong is worth three you got right.
+**Write your prediction before you run anything.** Then run it and record what it printed. A prediction you got wrong is worth three you got right.
 
 ### P1
 
@@ -108,6 +108,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading code and working out what it does, without running it first.
 
 **A1. Trace the values.** For each age, say `True` or `False` for the condition, then which branch runs, then what gets printed.
 
@@ -200,6 +202,8 @@ D ____________________  E ____________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing your own `if`/`else` programs from a short description. Write the lines in the boxes, then run them.
 
 **B1. One line.** Write the condition (just the condition, no `if`) that is `True` for a 13-year-old and `False` for a 12-year-old.
 
@@ -340,6 +344,8 @@ ________________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
+This page is for practising how to find and fix bugs one at a time, using the real messages.
+
 Here is `sleep_check.py`. It has **three** bugs: one that stops Python reading the file, one that stops it partway through, and one that produces no error at all.
 
 ```python
@@ -432,6 +438,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for working out what a program can print, by reading it carefully.
+
 ### Four outputs, and one of them is impossible
 
 Here is `mystery.py`. It has **two** decisions in it, one after the other.
@@ -492,6 +500,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for writing down your own opinion and giving reasons for it.
+
 **T1.** Python uses **indentation** where most other languages use curly brackets. **Is that a good idea?**
 
 Write a paragraph. Take a side, and name the cost of your side honestly — you produced a real example of that cost this week.
@@ -527,6 +537,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+This section is for building and testing `ticket_price.py` and your own two-way decision, and for recording what you found.
 
 ### Part 1 — `ticket_price.py` and the test table
 
@@ -626,6 +638,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing a decision as a picture.
+
 Draw **your own fork**: the condition on a signpost, the two branches, and — the bit everybody forgets — **where the two paths join again.**
 
 ![Draw It frame for Week 5](../figures/fig-w05-9-draw-frame.svg)
@@ -644,6 +658,8 @@ Draw **your own fork**: the condition on a signpost, the two branches, and — t
 ---
 
 ## 📊 Self-Check
+
+Use this page to tick how sure you feel about each skill from this week.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -675,6 +691,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished the pages above. Open it only when you are done.
 
 <details>
 <summary>Check your answers</summary>
@@ -731,7 +749,11 @@ False
 True
 ```
 
-The third one is the interesting one. **`"10" > "9"` is `False`** — but `10 > 9` is `True`. As *text*, Python compares character by character, and the very first characters are `1` and `9`. `1` comes before `9`, so `"10"` sorts *before* `"9"` and nothing after the first character is even looked at. **This is what a forgotten `int()` can do to a comparison** — no error, plausible-looking, completely wrong.
+The third one is the interesting one. **`"10" > "9"` is `False`** — but `10 > 9` is `True`.
+
+As *text*, Python compares character by character, and the very first characters are `1` and `9`. `1` comes before `9`, so `"10"` sorts *before* `"9"` and nothing after the first character is even looked at.
+
+**This is what a forgotten `int()` can do to a comparison** — no error, plausible-looking, completely wrong.
 
 ---
 
@@ -786,7 +808,9 @@ False
 SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
 ```
 
-You cannot put a value *into* the number 5. One equals sign is a delivery, and there is nothing there to deliver to. Notice that Python's wording is slightly different from the message you got inside an `if` — *"expression cannot contain assignment"* rather than *"invalid syntax"* — but the suggestion at the end is the same one, and it is the one to believe.
+You cannot put a value *into* the number 5. One equals sign is a delivery, and there is nothing there to deliver to.
+
+Notice that Python's wording is slightly different from the message you got inside an `if` — *"expression cannot contain assignment"* rather than *"invalid syntax"* — but the suggestion at the end is the same one, and it is the one to believe.
 
 **A4.** **A** = the keyword `if` · **B** = the condition, `age >= 13` — the part that produces `True` or `False` · **C** = the colon, which means "a block starts on the next line" · **D** = the `else`, which takes no condition of its own and sits at exactly the same indentation as its `if` · **E** = the line at the margin, which runs whichever branch was taken.
 
@@ -803,7 +827,9 @@ You cannot put a value *into* the number 5. One equals sign is a delivery, and t
 | is the total no more than 500? | `total <= 500` |
 | is the number even? | `number % 2 == 0` |
 
-That last one is worth knowing by heart. **`number % 2 == 0` is how everybody in the world checks whether a number is even** — the remainder after dividing by 2 is 0. It is a genuinely famous line of code.
+That last one is worth knowing by heart. **`number % 2 == 0` is how everybody in the world checks whether a number is even** — the remainder after dividing by 2 is 0.
+
+It is a genuinely famous line of code.
 
 **A6.**
 
@@ -895,7 +921,9 @@ It is 12.0 degrees.
 Take a jumper.
 ```
 
-**Notice something awkward about a `float` boundary.** With whole numbers, "the value below the boundary" is obvious — 12 is below 13. With decimals there is no such thing as "the next number down": 25.0, 25.01, 25.0001 are all below 25.1. So for a decimal, **test the boundary itself and a value just above it**, and be clear in your own head whether 25 exactly should count.
+**Notice something awkward about a `float` boundary.** With whole numbers, "the value below the boundary" is obvious — 12 is below 13.
+
+With decimals there is no such thing as "the next number down": 25.0, 25.01, 25.0001 are all below 25.1. So for a decimal, **test the boundary itself and a value just above it**, and be clear in your own head whether 25 exactly should count.
 
 **B4.**
 
@@ -1010,7 +1038,10 @@ And two more:
 
 Check on paper: 6 × 5 = 30 ✔ and 20 × 5 = 100 ✔.
 
-**Two things worth noticing.** The `if` branch does **arithmetic**, not just an assignment — a branch is allowed to compute. And `grace_days = 0` looks pointless right now, because `days_late > 0` would do. It is not pointless: it means "this library has no grace period" is written down as a **decision** rather than hidden inside a comparison, and if the library ever allows three free days it is a one-line change.
+**Two things worth noticing.**
+
+1. The `if` branch does **arithmetic**, not just an assignment — a branch is allowed to compute.
+2. `grace_days = 0` looks pointless right now, because `days_late > 0` would do. It is not pointless: it means "this library has no grace period" is written down as a **decision** rather than hidden inside a comparison, and if the library ever allows three free days it is a one-line change.
 
 ---
 

@@ -38,6 +38,8 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
+This page is for guessing before you run. Each guess is a small test of what you think matplotlib does.
+
 **Write your prediction before you run anything.** Every snippet starts with `import matplotlib.pyplot as plt`.
 
 ### P1 — the quiet one
@@ -152,6 +154,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading matplotlib code closely. You trace, sort and label; you do not write a whole program yet.
 
 **A1. Which name, `fig` or `ax`?** Write one in each row.
 
@@ -272,6 +276,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing your own chart code, from one line up to a small function.
+
 ### B1 — one line
 
 You have a figure in a variable called `fig`. Write the **single line** that saves it as `week.png`, sharp enough for a screen, with the labels not cut off.
@@ -349,6 +355,8 @@ saved money.png
 ---
 
 ## 🐞 Fix the Broken Program
+
+This page is for practising how to find and fix bugs one at a time.
 
 Here is `steps.py`, which is supposed to chart one week of step counts and save it. It has **three** bugs: one that stops Python reading the file at all, one that stops it partway through, and one that produces **no error whatsoever**.
 
@@ -448,6 +456,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for thinking about what labels do and checking a chart's title against its numbers.
+
 ### Part 1 — One line, five worlds
 
 Here is a line. It starts low on the left, dips once in the middle, and finishes high on the right. There are **eight markers** on it.
@@ -492,7 +502,7 @@ ________________________________________________________________
 
 **(g)** Now the interesting one. The full list of twelve values is:
 
-```
+```text
 118, 126, 131, 140, 152, 149, 158, 171, 166, 158, 174, 189
 ```
 
@@ -514,9 +524,13 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for longer written answers. Take your time and write full paragraphs.
+
 **T1.** A matplotlib program can run perfectly, print nothing unusual, exit with no error, and produce **no chart anywhere**.
 
-Write a paragraph. Explain what has actually happened inside the computer when that occurs — where is the chart, if it is not on the screen and not on disk? Then argue about whose fault it is: should matplotlib warn you that you built a figure and never asked for it? Say honestly what such a warning would cost. *(Think about a program that builds fifty figures deliberately and only saves the best one.)* Finish with the practical half: **if the tool is not going to warn you, what habit has to do that job instead?**
+Write a paragraph.
+
+Explain what has actually happened inside the computer when that occurs — where is the chart, if it is not on the screen and not on disk? Then argue about whose fault it is: should matplotlib warn you that you built a figure and never asked for it? Say honestly what such a warning would cost. *(Think about a program that builds fifty figures deliberately and only saves the best one.)* Finish with the practical half: **if the tool is not going to warn you, what habit has to do that job instead?**
 
 ________________________________________________________________
 
@@ -549,6 +563,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It — Three Labelled Charts From Your Own Table
+
+This section is for building the main assignment from your own table.
 
 **This is the main assignment. Three charts, three files, six sentences.**
 
@@ -663,6 +679,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing a labelled chart by hand.
+
 Draw **one chart of your own, by hand**, with all four words you type written into the dashed boxes.
 
 ![Draw It frame for Week 25](../figures/fig-w25-9-draw-frame.svg)
@@ -685,6 +703,8 @@ Draw **one chart of your own, by hand**, with all four words you type written in
 ---
 
 ## 📊 Self-Check
+
+This page is for checking honestly what you can do now. Tick one face on each row.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -721,6 +741,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have tried every page. Do not open it before then.
 
 <details>
 <summary>Check your answers</summary>

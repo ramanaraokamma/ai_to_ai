@@ -40,6 +40,8 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
+This page is for guessing before you run, so you can compare your guess with what Python really does.
+
 **Write your prediction before you run anything.** Two of these four give you a **wrong answer with no error message at all**, so "what do you expect" is not the same as "will it crash".
 
 ### P1
@@ -133,6 +135,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading code and tables carefully. You do not need to write a program here.
 
 **A1. Filter or group?** For each question, say which it is and what **shape** the answer has.
 
@@ -245,7 +249,7 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
-Use the twelve-record `squad` for B1 to B4.
+This set is for writing your own functions and programs. Use the twelve-record `squad` for B1 to B4.
 
 **B1. Two lines.** Print the names of everybody who faced **more than 40 balls**, and how many of them there are out of how many.
 
@@ -368,7 +372,7 @@ ________________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
-Here is `canteen.py`, which is supposed to say how much each form spends at the canteen. It has **three** bugs: one that stops Python reading the file at all, one that stops it partway through, and one that produces **no error whatsoever**.
+This page is for practising how to find bugs, one at a time. Here is `canteen.py`, which is supposed to say how much each form spends at the canteen. It has **three** bugs: one that stops Python reading the file at all, one that stops it partway through, and one that produces **no error whatsoever**.
 
 ```python
 # canteen.py - what each form spends at the canteen. Three bugs.
@@ -493,6 +497,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This page is for solving a puzzle in four parts, using only what you know about counting dictionaries.
+
 ### The Tally Detective
 
 **Part A — work backwards.** Somebody hands you only this:
@@ -578,6 +584,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for thinking and writing in your own words.
+
 **T1.** **How many rows do you need before an average means anything?**
 
 There is no single number, and anybody who gives you one without asking questions first is guessing. Write a paragraph. Say what everybody **does** agree on, then name the three things it depends on, and finish with the one thing you can **always** do regardless.
@@ -613,6 +621,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+This page is for building your own tools and using them on your own twelve records, in five parts.
 
 ### Part 1 — Your two tools
 
@@ -672,7 +682,7 @@ ________________________________________________________________
 
 Pick **one** average and work it out on paper with a calculator. Show the working.
 
-```
+```text
 ________________________________________________________________
 
 ________________________________________________________________
@@ -725,6 +735,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for showing your answers as a picture.
+
 Draw **your six answers, with the denominator beside every single one.** Three columns: the question, the answer, and how many rows it came from.
 
 ![Draw It frame for Week 15](../figures/fig-w15-9-draw-frame.svg)
@@ -741,6 +753,8 @@ Draw **your six answers, with the denominator beside every single one.** Three c
 ---
 
 ## 📊 Self-Check
+
+This page is for checking what you can do now. Tick one box in each row, then circle the true-or-false answers.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -775,6 +789,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished every page above.
 
 <details>
 <summary>Check your answers</summary>
@@ -1084,7 +1100,7 @@ minimum group size agreed first: 3
 
 **Hand checks:**
 
-```
+```text
 pop:    120 + 300 = 420 · +95 = 515 · +180 = 695 · +220 = 915 · 915 / 5 = 183.0   ✔
 rock:   45 + 210 = 255 · +130 = 385 · 385 / 3 = 128.333... = 128.33               ✔
 folk:   60 + 75 = 135 · +40 = 175 · 175 / 3 = 58.333... = 58.33                   ✔
@@ -1293,7 +1309,7 @@ The second check: **does `group_count` use `.get(bucket, 0)`?** A four-line `if`
 
 **Part 3.** A model hand-check, on the pop songs:
 
-```
+```text
 120 + 300 = 420
 420 + 95  = 515
 515 + 180 = 695

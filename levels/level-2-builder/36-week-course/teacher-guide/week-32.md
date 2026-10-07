@@ -98,7 +98,7 @@ Six classmates. `x` = hours of revision per week. `y` = marks out of 100.
 
 **Step 1 — the two means.**
 
-```
+```text
 x̄ = (1 + 2 + 3 + 4 + 5 + 6) ÷ 6 = 21 ÷ 6 = 3.5
 ȳ = (48 + 60 + 63 + 65 + 68 + 68) ÷ 6 = 372 ÷ 6 = 62
 ```
@@ -119,7 +119,7 @@ Both come out clean on purpose. Do not skip checking them with the student; a wr
 
 **Step 3 — slope and intercept.**
 
-```
+```text
 slope     = 63.0 ÷ 17.5 = 3.6
 intercept = ȳ − slope × x̄ = 62 − 3.6 × 3.5 = 62 − 12.6 = 49.4
 ```
@@ -161,7 +161,7 @@ The misses summing to zero is not luck — the least-squares line always passes 
 
 > **Mean absolute error (MAE)** — the average size of your misses, ignoring whether they were over or under. Same units as the thing you are predicting.
 
-```
+```text
 MAE = 16.0 ÷ 6 = 2.6666... = 2.67 marks
 ```
 
@@ -172,7 +172,7 @@ Read it out loud: *"On average, my prediction is off by about two and a half to 
 
 > **R-squared (R²)** — the fraction of the up-and-down variation in the answer that your model explains, compared with a model that just guesses the average every time. 1.0 is perfect, 0.0 is no better than guessing the average, and **negative is worse than guessing the average.**
 
-```
+```text
 R² = 1 − (sum of squared misses) ÷ (sum of squared distances from the mean)
 ```
 
@@ -188,7 +188,7 @@ The bottom half needs one more column — how much the marks vary around ȳ = 62
 | 68 | 6 | 36 |
 | | | **Σ = 282** |
 
-```
+```text
 R² = 1 − (55.20 ÷ 282) = 1 − 0.19574 = 0.80426  →  0.804
 ```
 
@@ -388,6 +388,8 @@ there is nothing dashed left anywhere on the picture. Two threads lit: learning 
 
 ## 🧰 Prep Checklist
 
+This section lists what to print, find and test before the lesson, and what to do if something fails.
+
 ### 20 minutes the night before
 
 - [ ] **Print the workbook** (`workbook/week-32.md`). Its sections are Warm-Up, Predict the Output, Practice Set A and B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It, Draw It and Self-Check. For class you need **Build It Parts 1–2** (the hand fit and the deviation table) and **Practice Set A, A1**; the rest is homework or extra practice. Have **two sheets of graph paper** per student for Build It Part 1 — the first attempt at eyeballing a line is usually scrapped, and that is fine.
@@ -395,7 +397,7 @@ there is nothing dashed left anywhere on the picture. Two threads lit: learning 
 - [ ] **Do the hand fit yourself, on graph paper.** Twelve minutes, and it is the most valuable prep in the week. Axes: hours 0–7 across, marks 40–80 up. Plot the six points from section 3. Lay the ruler through them by eye. Draw. Then count squares to get the slope. **You should land somewhere between 3.0 and 4.2.** Write your number down; you will compare it with scikit-learn's 3.6 in class and it is much better if you have already felt how close eyeballing gets.
 - [ ] **Run the code yourself.**
 
-  ```
+  ```bash
   cd ~/ai-academy/level2
   source .venv/bin/activate        # macOS / Linux
   .venv\Scripts\activate           # Windows PowerShell
@@ -441,6 +443,8 @@ there is nothing dashed left anywhere on the picture. Two threads lit: learning 
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson. The table shows the timings; the steps below it give the words and the things to watch for.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -531,7 +535,7 @@ Read the six pairs aloud together. Then:
 
 Write both versions on the paper and cross one out:
 
-```
+```text
    ✗  "the slope is 3.6"
    ✗  "one hour of revision causes 3.6 marks"
    ✓  "one extra hour a week goes with about 3.6 more marks"
@@ -805,6 +809,8 @@ Every message below came from running a broken version of this week's actual cod
 
 ## 🎲 The Activity, In Full
 
+This section is the graph-paper fit, step by step, so you can run it without the workbook open beside you.
+
 ### Setup
 
 **On the table:** graph paper (5 mm squares), a millimetre ruler, a sharp pencil, an eraser, a calculator, and the workbook's **Build It** section, Parts 1 and 2. **The laptop is closed.**
@@ -851,7 +857,7 @@ A good hand fit through these six points lands the slope somewhere between **3.0
 
 Have them write, in words, on the paper:
 
-```
+```text
    my slope:  about ____ marks per extra hour of revision
 ```
 
@@ -859,7 +865,7 @@ Have them write, in words, on the paper:
 
 Now the deviation table from section 3. They fill in `dx`, `dy`, `dx × dy` and `dx²`, total the last two columns, and divide:
 
-```
+```text
 slope     = 63.0 ÷ 17.5 = 3.6
 intercept = 62 − 3.6 × 3.5 = 49.4
 ```
@@ -880,7 +886,7 @@ Then the comparison, all three on one line of the page:
 
 Measure each of the six vertical gaps with the ruler, in marks, using the drawn line. Write the six sizes, no signs. Add. Divide by 6. Then the sentence:
 
-```
+```text
    my MAE:  about ____ marks.
    Which means: "on average my line is off by about ____ marks."
 ```
@@ -917,6 +923,8 @@ Against the exact line, the six sizes are 5.0, 3.4, 2.8, 1.2, 0.6 and 3.0, total
 ---
 
 ## ❓ Questions Students Ask This Week
+
+These are the questions you are most likely to hear, with an answer you can say out loud.
 
 **"Why doesn't the line go through the dots?"**
 
@@ -969,6 +977,8 @@ Yes. A tree can predict a number too — the leaves hold an average instead of a
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut, keep or add if the student is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1064,6 +1074,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to say when you set the homework.
 
 **Say this:**
 
@@ -1863,7 +1875,13 @@ petal width (cm)         0.159   0.927           0.708
 
 ## 🔮 Next Week Preview
 
-Week 33 is the most important lesson in Level 2, and it is a lab. The student takes one dataset, cuts it into train and test **once**, and then runs three completely different models across that one split — last week's tree, this week's line, and Week 29's nearest-neighbours — changing one line each time, and scoring all three into a single table. One row of that table is the punchline: a tree with no depth limit gets a **perfect** score on the rows it learned from and does **worse than guessing the average** on the rows it has never seen. Then comes the picture that explains it: turn the depth dial from 1 to 15, plot the training score and the test score on the same axes, and watch one line climb to near-perfection while the other peaks early and sags. The student draws a vertical line at the peak, labels it, and says the sentence out loud — *"after here it is memorising."* Everything in the term has been building to that sentence.
+This section tells you what next week does and what to have ready for it.
+
+Week 33 is the most important lesson in Level 2, and it is a lab.
+
+The student takes one dataset, cuts it into train and test **once**, and then runs three completely different models across that one split — last week's tree, this week's line, and Week 29's nearest-neighbours — changing one line each time, and scoring all three into a single table. One row of that table is the punchline: a tree with no depth limit gets a **perfect** score on the rows it learned from and does **worse than guessing the average** on the rows it has never seen.
+
+Then comes the picture that explains it: turn the depth dial from 1 to 15, plot the training score and the test score on the same axes, and watch one line climb to near-perfection while the other peaks early and sags. The student draws a vertical line at the peak, labels it, and says the sentence out loud — *"after here it is memorising."* Everything in the term has been building to that sentence.
 
 **Prep early:** two things. First, keep this week's `week32_study_line.py` and last week's `week31_tree_iris.py` where you can find them — Week 33 reuses both models and it is much better if the student can see that a bake-off is just three files they already have, stitched together. Second, and this matters: **go and find whatever the student wrote up in Week 29** about the gap between their training score and their test score. Week 33 ends by sending them back to it. If it was on a whiteboard that has since been wiped, write the numbers on a card now, before you forget them.
 

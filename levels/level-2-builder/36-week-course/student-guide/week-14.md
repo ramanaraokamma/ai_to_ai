@@ -27,7 +27,7 @@ Get out the five index cards you wrote last week. Square them up into a neat **s
 
 Now, without touching it: **how many runs did Nita score?**
 
-You can't tell. And the information has not gone anywhere — it is all right there, six millimetres down. It is that **a stack shows you one thing at a time.** To answer any question about all five players you would have to pick the pile up and go through it.
+You can't tell. And the information has not gone anywhere — it is all right there, six millimetres down. The catch is that **a stack shows you one thing at a time.** To answer any question about all five players you would have to pick the pile up and go through it.
 
 So now fan the cards out into a **column**, each one shifted down a couple of centimetres, so that all five sets of labels are visible one under another. Take your time. Line them up properly.
 
@@ -50,11 +50,15 @@ So here is today. You already have the rows — you wrote them last week. What y
 
 ## 🧠 The Big Idea
 
-> **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
+This section explains the five ideas of the week, one at a time. You will type the full program in the next section.
+
+> **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above it. The data is typed once, in the first block that needs it.
+>
+> **The complete, runnable file is in 💻 Type This.** If you copy one block on its own and Python says `NameError`, that is why. Nothing is broken.
 
 ### 1. A list of dictionaries is a table, and there is no header row
 
-**The plain explanation.** Last week you wrote five dictionaries with five separate names: `asha`, `ravi`, `nita`, `kabir`, `meera`. This week they all go **inside one list**. That is the entire change.
+**The plain explanation.** Last week you wrote five dictionaries with five separate names: `asha`, `ravi`, `nita`, `kabir`, `meera`. This week they all go **inside one list**. That is the entire change. Here is the squad with three players, and four lines that measure it.
 
 ```python
 # squad.py - cricketers, one dictionary per player
@@ -78,35 +82,37 @@ row 0  : {'name': 'Asha', 'team': 'Falcons', 'runs': 48, 'balls': 32, 'out': Tru
 one cell: 48
 ```
 
-**The outer `[` and `]` make a list** — the same brackets from Week 11. Nothing new about them. What is inside the list is three dictionaries, separated by commas, each one exactly what you typed last week. The comma after the **last** one is legal and it is a good habit: it means you can add a fourth row without editing the third line.
+**The outer `[` and `]` make a list** — the same brackets from Week 11. Inside the list are three dictionaries, separated by commas. Each one is exactly what you typed last week.
+
+The comma after the **last** one is legal, and it is a good habit. It means you can add a fourth row without editing the third line.
 
 > **record** — one dictionary describing one thing. Same as one row of a table.
 > **list-of-dicts** — a list whose items are all records using the same keys. Same as a table.
 > **field** — one labelled piece of a record. Same as one cell. `"runs": 48` is a field.
 
-**A note that will relieve you.** Python normally cares enormously about indentation — but **not inside brackets.** Once you have opened that `[`, you can spread the contents over as many lines as you like and line them up however you please. That is the only reason this reads like a table on screen.
+**A note that will relieve you.** Python normally cares a lot about indentation, but **not inside brackets.** Once you have opened that `[`, you can spread the contents over as many lines as you like. That is the only reason this reads like a table on screen.
 
-**Two `len` calls, two different meanings.** This is worth being slow about.
+**Two `len` calls, two different meanings.**
 
 - `len(squad)` → `3`. The number of **rows**.
 - `len(squad[0])` → `5`. The number of **fields in the first record** — which, *if every record has the same keys*, is the number of **columns**.
 
 Notice that "if". Three times five is fifteen facts, and `len` can only ever look at **one** record. Making sure all of them match is your job, not Python's.
 
-**And now the question with the surprising answer: where is the header row?**
+**Where is the header row?**
 
-There isn't one. **There is no header row anywhere.** Every single record carries its own labels, so the column names are not stored once at the top — they are stored **once per row**.
+There isn't one. Every record carries its own labels, so the column names are not stored once at the top. They are stored **once per row**.
 
-Which is brilliant, because a row can never get separated from its labels. And it is also dangerous, because if one card says `Team` with a capital T, there is **no single header to go and correct.** That wrong label is stuck to that row and it travels with it.
+That is good, because a row can never get separated from its labels. It is also risky. If one card says `Team` with a capital T, there is **no single header to go and correct.** That wrong label is stuck to that row and travels with it.
 
 ![The keys are the column names](../figures/fig-w14-2-keys-are-column-names.svg)
 *Figure 14.2 — There is no separate header row. The keys of every record are the column names, stored once per row.*
 
 ### 2. Two lookups, and the order matters
 
-**The plain explanation.** To reach one cell you need **two** lookups, and this is the line everybody gets wrong once. Read it strictly left to right, like a sentence.
+**The plain explanation.** To reach one cell you need **two** lookups. Everybody gets this wrong once. Read it strictly left to right, like a sentence.
 
-```
+```text
 squad                 ->  the whole list  (the table)
 squad[0]              ->  one record      (a dict)      {'name': 'Asha', ...}
 squad[0]["runs"]      ->  one field       (a value)     48
@@ -118,7 +124,7 @@ Say it out loud as English: ***"the whole table — then row zero — then, in t
 
 **The analogy.** A filing cabinet full of forms. You open the **drawer** first and pull out **one form**; only then can you read the box marked *runs*. Asking the cabinet for "the runs" gets you a blank look, because the cabinet has drawers, not boxes.
 
-**So what happens if you do it the other way round?** Try it, and read the message:
+**What happens if you do it the other way round?** Add this line and read the message:
 
 ```python
 print(squad["runs"])
@@ -132,18 +138,24 @@ Traceback (most recent call last):
 TypeError: list indices must be integers or slices, not str
 ```
 
-Take it apart. `list indices` — the things you put in brackets after a list. `must be integers` — must be whole numbers. `not str` — and you gave me text. So Python is saying: **you asked the list for a label, and lists don't do labels. Lists count.**
+Take the message apart.
 
-And notice **which** container it is complaining about. Not the dictionary — the **list**. `squad` is a list. Its items happen to be dictionaries, but `squad` itself has never heard of `runs`.
+- `list indices` — the things you put in brackets after a list.
+- `must be integers` — must be whole numbers.
+- `not str` — and you gave it text.
 
-> **💡 Try this:** your idea was a good one. `squad["runs"]` is *exactly* what you want — give me the whole runs column. It does not work today. In Week 21 you will meet a container called a DataFrame where that line works perfectly, and **the reason DataFrames exist is that everybody wanted what you just tried to type.**
+So Python is saying: **you asked the list for a label, and lists don't do labels. Lists count.**
+
+Notice **which** container it is complaining about. Not the dictionary — the **list**. `squad` is a list. Its items happen to be dictionaries, but `squad` itself has never heard of `runs`.
+
+> **💡 Try this:** your idea was a good one. `squad["runs"]` is *exactly* what you want: the whole runs column. It does not work today. In Week 21 you will meet a container called a DataFrame where that line works, and **the reason DataFrames exist is that everybody wanted what you just tried to type.**
 
 ![Two lookups, and the order matters](../figures/fig-w14-5-two-lookups-in-order.svg)
 *Figure 14.3 — Each step narrows what you are holding: the table, then one record, then one value.*
 
 ### 3. Two loops, and they go round different numbers of times
 
-**The plain explanation.** There are two completely different loops this week and mixing them up is the most disorienting bug you will write this month. They differ in **what you point them at**.
+**The plain explanation.** There are two different loops this week. Mixing them up is a confusing bug to find. They differ in **what you point them at**.
 
 **Loop one — over the rows.** Point it at the list.
 
@@ -158,7 +170,9 @@ Ravi     12 runs
 Nita     77 runs
 ```
 
-That is Week 12's `for` loop, unchanged: it hands you one item at a time. What is new is that the item is a **whole dictionary**, so `player` is a card, and `player["runs"]` reads one field off whichever card is in your hand right now. **Three records, three turns.**
+That is Week 12's `for` loop, unchanged: it hands you one item at a time. What is new is that the item is a **whole dictionary**, so `player` is a card.
+
+`player["runs"]` reads one field off whichever card is in your hand right now. **Three records, three turns.**
 
 **Loop two — over the fields of one record.** Point it at `.items()` on one record.
 
@@ -177,7 +191,7 @@ for field, value in squad[0].items():        # field is the key, value is the va
 
 `.items()` hands you **both** the key and the value on each turn, which is why there are **two** names on the `for` line. **One record, five fields, five turns.**
 
-**Say the difference out loud, because it is the whole of this section:**
+**Say the difference out loud:**
 
 - `for player in squad:` → once per **row**. Twelve turns on the full squad.
 - `for field, value in squad[0].items():` → once per **field of one row**. Five turns.
@@ -187,7 +201,7 @@ for field, value in squad[0].items():        # field is the key, value is the va
 ![Two loops, and they go round different numbers of times](../figures/fig-w14-10-two-loops-rows-vs-fields.svg)
 *Figure 14.4 — Same word, two loops. What you get each turn depends on what you pointed it at.*
 
-**And a small tool that goes with all this: `in` asks whether a key exists.**
+**One more small tool: `in` asks whether a key exists.** Run these three questions:
 
 ```python
 print("runs in row 0?   ", "runs" in squad[0])
@@ -201,15 +215,15 @@ catches in row 0? False
 Asha in row 0?    False
 ```
 
-**Look at the third one.** `False` for Asha — even though Asha is right there in the record. Because **`in` checks the KEYS, not the values.** `Asha` is a *value*, stored under the label `name`; there is no *label* called `Asha`.
+**Look at the third one.** `False` for Asha, even though Asha is right there in the record. **`in` checks the KEYS, not the values.** `Asha` is a *value*, stored under the label `name`. There is no *label* called `Asha`.
 
-That surprises almost everybody, and it is worth saying twice. If you want to know whether Asha is in there, you have to go and look at the values, and that is not what `in` does.
+That surprises almost everybody. To find out whether Asha is in there, you would have to look at the values, and that is not what `in` does.
 
-> **⚠️ Watch out:** `in` on a dictionary and `in` on a `for` line are two different uses of the same word. `for player in squad` is **not a question** — it is a loop. `"runs" in player` **is** a question, and it hands back `True` or `False`. English does the same thing: *"put it in the box"* versus *"is it in the box?"*, and nobody minds.
+> **⚠️ Watch out:** `in` on a dictionary and `in` on a `for` line are two different uses of the same word. `for player in squad` is **not a question**; it is a loop. `"runs" in player` **is** a question, and it hands back `True` or `False`. English does the same: *"put it in the box"* versus *"is it in the box?"*
 
 ### 4. One column out, in one line
 
-**The plain explanation.** You wanted a whole column half an hour ago and got a `TypeError`. Here it is, in one line.
+**The plain explanation.** You wanted a whole column half an hour ago and got a `TypeError`. Here it is, in one line. Type it under the squad list.
 
 ```python
 all_runs = [r["runs"] for r in squad]        # a list comprehension
@@ -230,7 +244,7 @@ highest   : 104
 
 **Read it in this order:**
 
-```
+```text
 [ r["runs"]        for r in squad ]
   └──── 3 ────┘    └───── 1,2 ────┘
 
@@ -243,9 +257,9 @@ You saw this shape in Week 12 for numbers. All that is new is that the thing bei
 
 **The analogy.** A production line with one worker on it. Every card comes past; the worker copies one number off it onto a new sheet and lets the card go by. At the end you have a sheet of numbers — and no cards.
 
-**And now the trade-off, which is a real idea and not a warning label.** The comprehension gives you back the whole of Week 12: `sum`, `max`, `min`, `sorted`, your entire stats toolkit, because it is a plain list of numbers again. But it **throws away every label.**
+**The trade-off.** The comprehension gives you back the whole of Week 12: `sum`, `max`, `min`, `sorted`, your entire stats toolkit, because it is a plain list of numbers again. But it **throws away every label.**
 
-Look at `[48, 12, 77, 5, 63, 30, 0, 41, 55, 22, 90, 104]`. **Which one is Priya's 104?** You can tell because it happens to be last, but nothing in that list *says* so, and if it were sorted you would have no idea at all.
+Look at `[48, 12, 77, 5, 63, 30, 0, 41, 55, 22, 90, 104]`. **Which one is Priya's 104?** You can tell because it happens to be last. Nothing in that list *says* so, and if it were sorted you would have no idea at all.
 
 > **So pull a column out *late* — immediately before you do arithmetic on it, and not one line earlier.**
 
@@ -254,7 +268,7 @@ Look at `[48, 12, 77, 5, 63, 30, 0, 41, 55, 22, 90, 104]`. **Which one is Priya'
 
 ### 5. `enumerate()` — a position and a record, together
 
-**The plain explanation.** You want a row number down the left of your table. You could keep a counter yourself. Don't — there is a tool whose entire job is to keep the number and the row in step.
+**The plain explanation.** You want a row number down the left of your table. You could keep a counter yourself. Don't. There is a tool whose whole job is to keep the number and the row in step.
 
 ```python
 for position, player in enumerate(squad):
@@ -271,11 +285,13 @@ for position, player in enumerate(squad):
 
 **Three facts to have ready.**
 
-**1. It starts at 0**, because that is where list positions start. `squad[0]` is Asha, and `enumerate` calls Asha position 0. **They always agree** — and that agreement is the whole reason to use `enumerate` instead of counting yourself. The moment you count by hand, the number and the row can drift apart, and then you have a bug that only shows up on row seven.
+**1. It starts at 0**, because that is where list positions start. `squad[0]` is Asha, and `enumerate` calls Asha position 0. **They always agree.**
 
-**2. Two names on the `for` line**, in that order: **position first, item second.** One name gets you a bundle you cannot index by key — you will see that error in a moment.
+That agreement is the reason to use `enumerate` instead of counting yourself. If you count by hand, the number and the row can drift apart, and you get a bug that only shows up on row seven.
 
-**3. If you want the printed numbers to start at 1** for a human reader, write `enumerate(squad, start=1)`. That is a keyword argument from Week 10. But be clear what it does: it changes **the number printed**, not the position in the list. Row `1` is still `squad[0]`.
+**2. Two names on the `for` line**, in that order: **position first, item second.** One name gets you a bundle you cannot index by key. You will see that error in a moment.
+
+**3. If you want the printed numbers to start at 1** for a human reader, write `enumerate(squad, start=1)`. That is a keyword argument from Week 10. It changes **the number printed**, not the position in the list. Row `1` is still `squad[0]`.
 
 **The analogy.** A friend walking down the queue with you, calling out the position while you look at each person. They cannot get out of step with you, because they are walking beside you.
 
@@ -286,7 +302,7 @@ for position, player in enumerate(squad):
 
 ## 💻 Type This
 
-`squad.py`, in six passes. Two of them are mistakes made on purpose, and they turn out to be the **same** mistake in two different costumes.
+You will build `squad.py` in six steps. Two of them are mistakes made on purpose, and they turn out to be the **same** mistake in two different costumes.
 
 ### Step 1 — three records
 
@@ -307,7 +323,7 @@ print("row 0  :", squad[0])
 print("one cell:", squad[0]["runs"])
 ```
 
-Open square bracket, then Enter, then Tab. **Python usually goes mad about indentation, but not inside brackets** — you can line the records up however you like and it will not complain.
+Open square bracket, then Enter, then Tab. **Python usually cares about indentation, but not inside brackets.** You can line the records up however you like and it will not complain.
 
 **Predict all four lines of output before you run.**
 
@@ -336,9 +352,9 @@ TypeError: list indices must be integers or slices, not str
 
 **Oh good, an error.** Last line first: *"list indices must be integers or slices, not str"*.
 
-You asked a **list** for a label. Lists count; they do not label. And your idea was right — hold on to it, because in about ten minutes you will get that column in one line.
+You asked a **list** for a label. Lists count; they do not label. Your idea was right, so hold on to it. In about ten minutes you will get that column in one line.
 
-Delete that line. Put in the version that works:
+Delete that line. Type this version, which works:
 
 ```python
 print(squad[0]["runs"])
@@ -352,9 +368,11 @@ print(squad[2]["runs"])
 77
 ```
 
-That works, and it is **horrible.** Three lines for three players. Twelve players is twelve lines, and if you add a thirteenth you have to remember to add a line. What did you learn in Week 12 for exactly this feeling?
+That works, but it is **horrible.** Three lines for three players. Twelve players is twelve lines, and a thirteenth means remembering to add another. What did you learn in Week 12 for exactly this feeling?
 
 ### Step 3 — the loop, with widths
+
+Replace those three lines with a loop. Each `print` uses width codes inside the f-string.
 
 ```python
 for player in squad:
@@ -367,11 +385,13 @@ Ravi     12 runs
 Nita     77 runs
 ```
 
-`:<7` means *put this in a space seven characters wide, pushed left*. `:>4` means *four wide, pushed right*. **Left for words, right for numbers** — which is why the `48` and the `12` have their units sitting under each other. It is the same colon you used in Week 3 for `:.2f`; you are just using a different part of it.
+`:<7` means *put this in a space seven characters wide, pushed left*. `:>4` means *four wide, pushed right*. **Left for words, right for numbers.** That is why the `48` and the `12` line up with their units. It is the same colon you used in Week 3 for `:.2f`; you are just using a different part of it.
 
-> **⚠️ Watch out:** the f-string uses **double** quotes, so inside the curly braces the key must use **single** quotes: `player['name']`. Get it the wrong way round and older Pythons stop dead. Newer ones let it through, which is worse — your file will then break on somebody else's computer.
+> **⚠️ Watch out:** the f-string uses **double** quotes, so inside the curly braces the key must use **single** quotes: `player['name']`. Get it the wrong way round and older Pythons stop dead. Newer ones let it through, which is worse, because your file will then break on somebody else's computer.
 
 ### Step 4 — `.items()` and `in`
+
+Add the `.items()` loop and the three `in` questions below the first loop.
 
 ```python
 for field, value in squad[0].items():
@@ -397,7 +417,7 @@ Asha in row 0?    False
 
 `False` for Asha, because **`in` checks the labels, not the facts.**
 
-And look at the `for` line for `.items()`: **two** names, `field` and `value`, because `.items()` hands you both. Notice also **what it is looping over** — the five fields of **one** card, not the three rows.
+Look at the `for` line for `.items()`. It has **two** names, `field` and `value`, because `.items()` hands you both. It loops over the five fields of **one** card, not the three rows.
 
 ### Step 5 — ⚠️ mistake number two, on purpose
 
@@ -416,13 +436,13 @@ Traceback (most recent call last):
 TypeError: tuple indices must be integers or slices, not str
 ```
 
-*"tuple indices must be integers."* **What is a tuple?** It is a little bundle of things — here, a bundle of two: the position, and the record. **`enumerate` does not hand you the record. It hands you a pair.**
+*"tuple indices must be integers."* **What is a tuple?** It is a little bundle of things. Here it is a bundle of two: the position and the record. **`enumerate` does not hand you the record. It hands you a pair.**
 
-And a pair, like a list, is **counted, not labelled.** So `row["name"]` fails for exactly the same reason `squad["runs"]` failed ten minutes ago.
+A pair, like a list, is **counted, not labelled.** So `row["name"]` fails for the same reason `squad["runs"]` failed ten minutes ago.
 
-> **Say it once and it will save you an hour this year:** `list indices must be integers` and `tuple indices must be integers` are **the same complaint.** You asked a counted thing for a label. Lists and pairs count. Only dictionaries label.
+> **📌 Remember:** `list indices must be integers` and `tuple indices must be integers` are **the same complaint.** You asked a counted thing for a label. Lists and pairs count. Only dictionaries label.
 
-The fix is to catch the two things separately. **Two names on the `for` line:**
+The fix is to catch the two things separately. Use **two names on the `for` line**:
 
 ```python
 for position, player in enumerate(squad):
@@ -437,11 +457,11 @@ for position, player in enumerate(squad):
 
 **Zero, one, two.** Not one, two, three. `enumerate` starts at 0 because `squad[0]` is Asha, and the number it gives you and the slot in the list **always agree.**
 
-**Bug Log both errors now, while they are warm.** And log the *shape* they share as a third entry — noticing that two error messages are the same complaint is worth more than either fix.
+**Bug Log both errors now, while they are fresh.** Log the *shape* they share as a third entry. Noticing that two error messages are the same complaint is worth more than either fix.
 
 ### Step 6 — twelve records, and the aligned table
 
-Now type the other nine records. Same five labels, same spelling, same order.
+Replace the three-record list with all twelve. Type the other nine records with the same five labels, the same spelling and the same order.
 
 ```python
 # squad.py - twelve cricketers, one dictionary per player
@@ -471,11 +491,13 @@ rows   : 12
 columns: 5
 ```
 
-> **💡 Try this:** line the values up in columns **in the source code**, using extra spaces, exactly as above. Python does not care. But it makes a wrong entry visible from across the room, and it takes ten seconds. This is a real professional habit.
+> **💡 Try this:** line the values up in columns **in the source code**, using extra spaces, as above. Python does not care. It makes a wrong entry easy to spot, and it takes ten seconds. Real programmers do this.
 
-> **⚠️ Watch out:** print `len(squad)` **every single time you add rows.** It should say 12. If it says 11, two records got merged when a comma and a brace went missing during typing, and you will never spot that by reading. This one habit catches most silent data damage.
+> **⚠️ Watch out:** print `len(squad)` **every time you add rows.** It should say 12. If it says 11, two records got merged when a comma and a brace went missing. You will not spot that by reading. This one habit catches most silent data damage.
 
 ### The complete finished program
+
+Add this below the twelve records. It prints the aligned table, then pulls out the runs column.
 
 ```python
 FIELDS = ["name", "team", "runs", "balls", "out"]   # the column order we chose
@@ -520,17 +542,19 @@ total runs: 547
 highest   : 104
 ```
 
-**Three things to look at, because this is the moment the week pays off.**
+**Three things to look at in the finished program.**
 
-**1. The header uses the same width numbers as the rows.** `:<7` above and `:<7` below. That is the whole trick, and it is the only reason the columns are straight. Change one of them and the table skews from that column rightwards.
+**1. The header uses the same width numbers as the rows.** `:<7` above and `:<7` below. That is the only reason the columns are straight. Change one of them and the table skews from that column rightwards.
 
-**2. The `print` inside the loop is split over two lines.** Two f-strings written next to each other inside the same brackets get **glued together** into one string before printing. There is no comma between them — a comma would print a space and turn one column into two.
+**2. The `print` inside the loop is split over two lines.** Two f-strings written next to each other inside the same brackets get **glued together** into one string before printing. There is no comma between them. A comma would print a space and turn one column into two.
 
 **3. The row numbers run 0 to 11, not 1 to 12.** Which row is Priya? **Row 11.** And `squad[11]` is? **Priya.** They agree. That agreement is the point of `enumerate`.
 
 ---
 
 ## 🔍 Worked Examples
+
+These three programs use the same table idea on food, sport and school data. Read each program, then its output.
 
 ### Worked Example 1 — Six dinners (food)
 
@@ -594,13 +618,14 @@ average     : 70.83  (from 6 dinners)
 
 **Check the arithmetic:** 60 + 80 = 140 · +40 = 180 · +150 = 330 · +95 = 425 · +0 = **425** ✔. And 425 ÷ 6 = 70.833… → `70.83`. ✔
 
-**Two things to notice.** `DISH` needed `:<15`, not `:<7`, because *"Chole bhature"* is thirteen characters — **the width has to fit your longest value**, and picking it is a judgement you make by looking at your own data.
+**Two things to notice.**
 
-And the average was printed **with its row count**: `from 6 dinners`. That is not decoration. Hold on to it; next week the whole lab is built on it.
+- `DISH` needed `:<15`, not `:<7`, because *"Chole bhature"* is thirteen characters. **The width has to fit your longest value.** You pick it by looking at your own data.
+- The average was printed **with its row count**: `from 6 dinners`. That is not decoration. Hold on to it; next week the whole lab is built on it.
 
 ### Worked Example 2 — Six races (sport)
 
-A decimal column, `.items()` on one record, and the `in` trap on real data.
+This one has a decimal column, `.items()` on one record, and the `in` trap on real data.
 
 ```python
 # races.py - six 100 metre races, one dictionary per race.
@@ -676,15 +701,13 @@ slowest   : 14.9
 
 **Three things worth pausing on.**
 
-**`:>7.1f` on the times, not `:>7`.** A plain `:>7` would print `13.0` as `13.0` but a value like `13` as `13`, and the column would go ragged the moment somebody's time is a whole number. **The `.1f` forces every value to show one decimal place**, which is what makes a decimal column line up.
-
-**`"Anika" in races[3]` is `False`** — and Anika is the runner in row 3. `in` checks labels. `Anika` is a value.
-
-**And notice something about this table that is not about Python at all.** Anika appears twice, and that is **correct**, because one row is one **race**, not one runner. If you tried to make one row per runner you would need two `seconds` fields on one card, and there is nowhere to put them. Level 1's *one row is one thing* is doing real work here, and the "thing" is a race.
+- **`:>7.1f` on the times, not `:>7`.** A plain `:>7` would print `13.0` as `13.0` but a value like `13` as `13`, and the column would go ragged the moment somebody's time is a whole number. **The `.1f` forces every value to show one decimal place**, which is what makes a decimal column line up.
+- **`"Anika" in races[3]` is `False`**, and Anika is the runner in row 3. `in` checks labels. `Anika` is a value.
+- **Anika appears twice, and that is correct.** One row is one **race**, not one runner. If you made one row per runner you would need two `seconds` fields on one card, and there is nowhere to put them. Level 1's *one row is one thing* is doing real work here, and the "thing" is a race.
 
 ### Worked Example 3 — Six pieces of homework (school)
 
-A **sixth field added to every record**, which is Week 13's *add a key* applied twelve times over.
+This one adds a **sixth field to every record**. That is Week 13's *add a key* applied twelve times over.
 
 ```python
 # homework.py - six homework records, one dictionary per piece of work.
@@ -744,17 +767,17 @@ rows counted   : 6 of 6
 
 **Three things to notice.**
 
-**`len(work[0])` went from 5 to 6.** The loop added a key to every record, so the table grew a **column**. One `=` inside a loop, one new column. That is how a computed column gets made, and it is exactly what Week 24 will do with pandas in one line.
-
-**`enumerate(work, start=1)` numbers the rows 1 to 6** for a human reader. Row `1` is still `work[0]` — the printed number changed, the position did not.
-
-**And the honest bit.** *"Average percent 78.0%, rows counted 6 of 6."* Those six pieces of work are not the same size — one is out of 15 and one is out of 25 — so averaging the percentages treats them as equally important, which is a **choice** somebody made and not a fact about the data. Printing `6 of 6` at least tells the reader how much is behind that number.
+- **`len(work[0])` went from 5 to 6.** The loop added a key to every record, so the table grew a **column**. One `=` inside a loop, one new column. That is how a computed column gets made, and it is what Week 24 will do with pandas in one line.
+- **`enumerate(work, start=1)` numbers the rows 1 to 6** for a human reader. Row `1` is still `work[0]`. The printed number changed; the position did not.
+- **The honest bit.** *"Average percent 78.0%, rows counted 6 of 6."* Those six pieces of work are not the same size: one is out of 15 and one is out of 25. Averaging the percentages treats them as equally important. That is a **choice** somebody made, not a fact about the data. Printing `6 of 6` at least tells the reader how much is behind that number.
 
 ---
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code. **Two of this week's three errors are the same complaint in different clothes**, and spotting that is worth more than either fix.
+Every message below came from really running a broken version of this week's code. Use this section when you see a red error and need to know what it means.
+
+**Two of this week's three errors are the same complaint in different clothes.** Spotting that is worth more than either fix.
 
 ### Break 1 — you asked a list for a label
 
@@ -772,9 +795,9 @@ TypeError: list indices must be integers or slices, not str
 
 **What Python is telling you.** *"The things you put in brackets after a list have to be whole numbers, and you gave me text."*
 
-**The fix.** Two lookups, in order: `squad[0]["runs"]`. The **list index first**, because the list is the outer container.
+**The fix.** Use two lookups, in order: `squad[0]["runs"]`. The **list index comes first**, because the list is the outer container.
 
-**And it is a good mistake.** The column version arrives in Week 21.
+**It is a good mistake.** The column version arrives in Week 21.
 
 ### Break 2 — you asked a pair for a label
 
@@ -793,9 +816,9 @@ TypeError: tuple indices must be integers or slices, not str
 
 **What Python is telling you.** *"You asked a bundle-of-two for a label."* `enumerate` hands you a **pair** — the position and the record — not the record.
 
-**The fix.** **Two names on the `for` line:** `for position, player in enumerate(squad):`
+**The fix.** Put **two names on the `for` line:** `for position, player in enumerate(squad):`
 
-**And here is the useful bit.** Curious what a pair actually looks like? Print it instead of indexing it:
+**Print the pair to see it.** To see what a pair looks like, print it instead of indexing it:
 
 ```python
 for row in enumerate(squad):
@@ -811,7 +834,7 @@ Twelve lines come out. Here are the first three:
 …nine more, one per record…
 ```
 
-No error at all — and now you can **see** the bundle: round brackets, a number, a comma, a record. **When you do not understand what something is, print it.**
+No error this time, and now you can **see** the bundle: round brackets, a number, a comma, a record. **When you do not understand what something is, print it.**
 
 ### Break 3 — you looped over one record instead of the list
 
@@ -828,16 +851,18 @@ Traceback (most recent call last):
 TypeError: string indices must be integers, not 'str'
 ```
 
-**What Python is telling you.** *"You asked a piece of text for a label."* And the mention of a string seems to come from nowhere, so walk it slowly:
+**What Python is telling you.** *"You asked a piece of text for a label."* The mention of a string seems to come from nowhere, so walk through it slowly:
 
 - `squad[0]` is **one record**.
 - Looping over a dictionary hands you its **keys**, one at a time.
 - So on the first turn, `player` is the word `"name"` — a piece of text.
 - And `"name"["name"]` is nonsense.
 
-**The fix.** `for player in squad:` — **no index.** The mistake is one character, and the message is three steps away from it. **Always check what you are looping over.**
+**The fix.** Write `for player in squad:` with **no index.** The mistake is one character, and the message is three steps away from it. **Always check what you are looping over.**
 
 ### The whole clinic, for reference
+
+This table lists every error and symptom from this week, with its meaning and fix.
 
 | What you see | What it means | The fix |
 |---|---|---|
@@ -853,23 +878,25 @@ TypeError: string indices must be integers, not 'str'
 | **No error, but the columns are crooked** | Nothing is wrong as far as Python is concerned | Header widths do not match row widths. Put the two f-strings one above the other and compare the numbers character by character |
 | **No error, but the table has 11 rows** | Nothing is wrong as far as Python is concerned | Two records merged when a comma and a brace went missing. **Print `len(squad)` every time you add rows** |
 
-> **🐞 If a `KeyError` stops a loop halfway:** ask *"how many lines printed before it stopped?"* Four rows printed means **row 4** is the broken one (counting from 0). The half-finished output is not wreckage — **it is a clue**, and almost no beginner discovers that on their own.
+> **🐞 If a `KeyError` stops a loop halfway:** ask *"how many lines printed before it stopped?"* Four rows printed means **row 4** is the broken one (counting from 0). The half-finished output is not wreckage. **It is a clue.**
 
 ---
 
 ## 🎲 What We Did In Class
 
+This section is a record of the lesson, in order. Use it to catch up if you missed a part.
+
 ### The stack, then the fan
 
-Five cards from last week, squared into a stack, and the question *"how many runs did Nita score?"* with no touching allowed. Nobody could say. Then the cards fanned into a column, in silence, and the labels lined up down the page.
+Five cards from last week were squared into a stack. The question was *"how many runs did Nita score?"*, with no touching allowed. Nobody could say.
 
-**Nothing was written. Some cardboard moved. The columns appeared.**
+Then the cards fanned into a column, in silence, and the labels lined up down the page. **Nothing was written. Some cardboard moved. The columns appeared.**
 
 Then the Level 1 rule, said out loud: **one row is one thing.** Every card describes exactly one player, and that is why the fan works.
 
 ### Three words, written up and left up
 
-```
+```text
 record          one dictionary describing one thing. One row.
 field           one labelled piece of a record. One cell.
 list-of-dicts   a list whose items are all records with the same keys. A table.
@@ -877,23 +904,23 @@ list-of-dicts   a list whose items are all records with the same keys. A table.
 
 ### Where is the header row?
 
-There isn't one. **Every record carries its own labels**, so the column names are stored twelve times, once per row. Which means a row can never lose its labels — and also that one card with a capital `Team` cannot be corrected in a single place.
+There isn't one. **Every record carries its own labels**, so the column names are stored twelve times, once per row. A row can never lose its labels. But one card with a capital `Team` cannot be corrected in a single place.
 
 ### Two brackets, in order
 
 Written on the board and left there all lesson:
 
-```
+```text
 squad                 ->  the whole list  (the table)
 squad[0]              ->  one record      (a dict)
 squad[0]["runs"]      ->  one field       (48)
 ```
 
-Then two `len` calls compared: `len(squad)` is rows, `len(squad[0])` is columns — *if* every record matches, which `len` cannot check.
+Then two `len` calls were compared: `len(squad)` is rows, `len(squad[0])` is columns, *if* every record matches, which `len` cannot check.
 
 ### `squad.py`, and two mistakes made on purpose
 
-`squad["runs"]` first:
+First `squad["runs"]`:
 
 ```text
 TypeError: list indices must be integers or slices, not str
@@ -919,7 +946,7 @@ Everyone predicted `True` for Asha. `in` checks **labels**, not facts.
 
 ### Twelve rows, numbered
 
-The other nine records typed, `len(squad)` checked after each batch, and then the header row and the aligned table:
+The other nine records were typed, `len(squad)` was checked after each batch, and then came the header row and the aligned table:
 
 ```text
  #  NAME   TEAM      RUNS BALLS  OUT  
@@ -940,9 +967,11 @@ The other nine records typed, `len(squad)` checked after each batch, and then th
 12 rows x 5 columns
 ```
 
-Then: *"which row is Priya?"* Row 11. *"And `squad[11]` is?"* Priya. **They agree.**
+Then the class asked: *"which row is Priya?"* Row 11. *"And `squad[11]` is?"* Priya. **They agree.**
 
 ### One column out, in one line
+
+The runs column came out as a plain list:
 
 ```text
 [48, 12, 77, 5, 63, 30, 0, 41, 55, 22, 90, 104]
@@ -950,9 +979,11 @@ total runs: 547
 highest   : 104
 ```
 
-And the question that followed: **which of those numbers is Priya's 104?** You cannot tell from the list. That is what pulling a column out costs.
+Then came the question: **which of those numbers is Priya's 104?** You cannot tell from the list. That is what pulling a column out costs.
 
 ### The three Bug Log entries
+
+Each entry says what happened and what fixed it.
 
 1. `TypeError: list indices must be integers` — I asked the list for a label. Used `squad[0]["runs"]`.
 2. `TypeError: tuple indices must be integers` — `enumerate` gave me a pair, not a record. Put two names on the `for` line.
@@ -962,21 +993,40 @@ And the question that followed: **which of those numbers is Priya's 104?** You c
 
 ## 💬 Talk About It
 
+Talk these over with a partner or a parent. Each has a hint; try the question before you read the hint.
+
 **1. There is no header row. Is that a good design or a bad one?**
 
-*Hint:* list what it buys you first. A row can never get separated from its column names, you can shuffle the rows and lose nothing, and you can hand one record to somebody and it still makes sense on its own. Then list what it costs: the five labels are stored twelve times instead of once, so a typo in one of them cannot be fixed in a single place, and there is nothing anywhere that says *"these are the five columns"* — only twelve records that happen to agree. Then the sharpest question: **who is supposed to notice when they stop agreeing?**
+*Hint:* list what it buys you first.
+
+- A row can never get separated from its column names.
+- You can shuffle the rows and lose nothing.
+- You can hand one record to somebody and it still makes sense on its own.
+
+Then list what it costs.
+
+- The five labels are stored twelve times instead of once, so a typo in one of them cannot be fixed in a single place.
+- Nothing anywhere says *"these are the five columns"*; there are only twelve records that happen to agree.
+
+So here is the sharpest question: **who is supposed to notice when they stop agreeing?**
 
 **2. `squad["runs"]` is the thing you actually wanted, and it does not work. Why is that interesting rather than annoying?**
 
-*Hint:* it is not a gap somebody forgot to fill. A plain list genuinely does not know anything about columns — only the dictionaries inside it know about labels, and the list has never looked inside them. So getting a column has to mean *going through the rows and taking one field from each*, which is exactly what the comprehension does. Then: pandas, in Week 21, makes `df["runs"]` work. **What must a DataFrame be storing that a list-of-dicts is not?** (Have a guess before Week 21. Guessing and being wrong is how the answer sticks.)
+*Hint:* it is not a gap somebody forgot to fill. A plain list does not know anything about columns. Only the dictionaries inside it know about labels, and the list has never looked inside them. So getting a column has to mean *going through the rows and taking one field from each*, which is what the comprehension does.
+
+Then: pandas, in Week 21, makes `df["runs"]` work. **What must a DataFrame be storing that a list-of-dicts is not?** (Have a guess before Week 21. Guessing and being wrong is how the answer sticks.)
 
 **3. One row is one thing. So what is "one thing" in your own dataset?**
 
-*Hint:* try the *"and" test* on your sentence. If what one row represents needs the word **and** in it — *"a song and how many times I played it"* — you probably have two things in one row. Then try the harder version: in the races table, Anika appears twice. Is that a mistake? (No — one row is one **race**, and she ran two.) Now say what would have to change if you wanted one row per **runner** instead. **Where would the second time go?**
+*Hint:* try the *"and" test* on your sentence. If what one row represents needs the word **and** in it, such as *"a song and how many times I played it"*, you probably have two things in one row.
+
+Then try the harder version. In the races table, Anika appears twice. Is that a mistake? (No. One row is one **race**, and she ran two.) Now say what would have to change if you wanted one row per **runner** instead. **Where would the second time go?**
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four wrong ideas that sound right. Each one shows the wrong idea next to the right one.
 
 ### Trick 1 — "`enumerate` numbers my rows, so row 1 is the first row"
 
@@ -1007,7 +1057,7 @@ Every off-by-one bug in the next twenty weeks lives here. If you want the *print
 |---|---|
 | "It ran and the columns are straight, so my twelve records are correct." | The table only shows what you **asked** it to show. One record with `Team` instead of `team` will print perfectly if you never print the team column — and `len(squad[0])` still says 5, because the count is right and only the **label** is wrong. |
 
-Two lines find it. Put this in a loop for one run and read the output:
+Two lines find it. Put this loop in for one run and read the output:
 
 ```python
 for position, player in enumerate(squad):
@@ -1029,6 +1079,8 @@ On a squad where row 2 has `Team` and row 3 is missing `balls`:
 
 ## 🌍 Where You've Seen This
 
+This section shows where the same shape, a table with one thing per row, turns up outside this course.
+
 1. **Every spreadsheet you have ever opened.** A header row and then one thing per row. What you built today is the same object with the labels written twelve times instead of once.
 2. **Your music app's library.** One record per song: title, artist, album, length, play count. Sorting by artist moves **whole rows**, which is why the lengths do not get scrambled.
 3. **A class register.** One row per pupil, one column per thing you record about them. And the rule that makes it work is Level 1's: one row is one pupil, and a pupil who moves class is a change to a row, not a new row.
@@ -1040,7 +1092,9 @@ On a squad where row 2 has `Team` and row 3 is missing `balls`:
 
 ## 🧭 Where This Fits
 
-The gold box has not moved this week, and that is the point — you are still inside
+This section shows where this week sits on the course map, and what it connects to.
+
+The gold box has not moved this week. You are still inside
 `dicts · rows · files`. Last week you built one labelled card. This week twelve of them line up in a
 list and turn into something that has a name: a **table**.
 
@@ -1065,6 +1119,8 @@ is still dashed, and read the line in the middle of the picture: you cannot clea
 
 ## 🔑 Remember This
 
+These are the key points of the week. Read them once before you start the homework.
+
 - **A list of dictionaries is a table.** One dict is a row; the keys are the column names. Nothing was converted — it just *is* one.
 - **There is no header row.** Every record carries its own labels, once per row. That is why a row never loses its column names, and why one wrong label cannot be fixed in one place.
 - **Two lookups, in order.** `squad[0]["runs"]` — list index first, dictionary key second. Read it as *"the table, then row 0, then the runs."*
@@ -1076,6 +1132,8 @@ is still dashed, and read the line in the middle of the picture: you cannot clea
 - **The header must use the same widths as the rows**, or nothing lines up.
 
 ### Syntax reminder card
+
+Keep this block open while you work. It shows every new piece of syntax from the week.
 
 ```python
 # A TABLE: one dict per row, all with the same keys
@@ -1118,6 +1176,8 @@ for position, player in enumerate(squad, start=1):
 
 ## 📓 New Words
 
+These are the five words of the week. Look words up here when you forget them.
+
 ![This week's five words as pictures](../figures/fig-w14-6-vocab-icons.svg)
 *Figure 14.8 — This week's five words, drawn.*
 
@@ -1145,13 +1205,11 @@ Go to **[the Week 14 workbook](../workbook/week-14.md)**. About **60 minutes** i
 
 **Three things I am marking hardest.**
 
-**Twelve records, five keys, every key spelled identically.** And two of the rules matter more than they look: **at least two of your five keys must hold numbers**, and **one must be a repeating category** — something like genre, or team, or day-of-the-week, where the same handful of values come round again. Three to five different values in that column, **and make one of them appear only once.** I am not telling you why yet.
+1. **Twelve records, five keys, every key spelled identically.** Two rules matter more than they look. **At least two of your five keys must hold numbers**, and **one must be a repeating category**, such as genre, team or day of the week, where the same handful of values come round again. Use three to five different values in that column, **and make one of them appear only once.** I am not telling you why yet.
+2. **The table has to line up.** Use the same widths in the header as in the rows. If it comes out crooked, **leave it crooked and bring it in**, because how you found the mismatch is more interesting than a straight table.
+3. **One sentence: what does one row of your table represent?** Not "songs". Something like *"one song in my playlist"* or *"one journey to school on one day"*. **If your sentence has the word "and" in it, you have probably got two things in one row.** That is the mistake I want you to catch tonight, rather than in Week 34 with a deadline.
 
-**The table has to line up.** Same widths in the header as in the rows. And if it comes out crooked — **leave it crooked and bring it in**, because how you found the mismatch is more interesting than a straight table.
-
-**One sentence: what does one row of your table represent?** Not "songs". Something like *"one song in my playlist"* or *"one journey to school on one day"*. **If your sentence has the word "and" in it, you have probably got two things in one row** — and that is exactly the mistake I want you to catch tonight, rather than in Week 34 with a deadline.
-
-> **💡 Try this:** print your table twice — once with the names on the **left** (`:<12`) and once with them on the **right** (`:>12`). Look at both. Then write one sentence on which is easier to read and why. There is a real answer, and it is about where your eye goes to find the start of a word.
+> **💡 Try this:** print your table twice, once with the names on the **left** (`:<12`) and once with them on the **right** (`:>12`). Look at both. Then write one sentence on which is easier to read and why. There is a real answer, and it is about where your eye goes to find the start of a word.
 
 ---
 

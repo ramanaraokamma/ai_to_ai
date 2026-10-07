@@ -113,7 +113,7 @@ Here are the two words Level 1 used, sitting next to this week's:
 
 **The concrete version.** Our playlist:
 
-```
+```text
 X.shape  =  (10, 2)     ten songs, two measurements each
 y.shape  =  (10,)       ten answers, in a single line
 ```
@@ -191,7 +191,7 @@ And that maps exactly onto what we need:
 
 **The concrete version.** Two real iris flowers, using **petal length** and **petal width** only:
 
-```
+```text
 flower A  =  (1.4, 0.2)        a setosa
 flower B  =  (4.4, 1.4)        a versicolor
 ```
@@ -224,7 +224,7 @@ Here are the four steps, and they never change:
 
 **The concrete version.** Our two flowers:
 
-```
+```text
 flower A = (1.4, 0.2)        flower B = (4.4, 1.4)
 
 step 1  subtract :   1.4 − 4.4 = −3.0      0.2 − 1.4 = −1.2
@@ -570,6 +570,8 @@ step 4  square root: 3.23
 
 ## 🔍 Worked Examples
 
+Three more tables, each split into `X` and `y`, with one distance worked out in the same four steps.
+
 ### Worked Example 1 — Did the pizza arrive hot? (food)
 
 Eight takeaway orders. Somebody wrote down the price, how far away the shop is, and whether it turned up hot or cold.
@@ -854,7 +856,7 @@ If that annoys you, good. It should. It is a real and serious problem, it has a 
 
 ## 🐞 When It Breaks
 
-Errors are not you failing. They are Python telling you, in an unhelpful accent, exactly what went wrong. Every message below came out of a real run.
+In this section you meet three errors, so you can recognise them later. Errors are not you failing. Every message below came out of a real run.
 
 The rule never changes: **read the last line first.**
 
@@ -961,11 +963,11 @@ iris = load_iris()
 
 ## 🎲 What We Did In Class
 
+This is the class activity in full, for anyone who missed it. You need graph paper, a ruler with millimetres, a pencil and a calculator.
+
 ### Two flowers, three ways to the same number
 
 The point of this was never the arithmetic. It was the **agreement**. You measured a length with a ruler, you worked it out with a pencil, and you got numpy to work it out — and all three came back with 3.23. When the same number arrives by three completely different routes, it stops being a formula somebody told you and becomes a fact about the world.
-
-If you missed the lesson, here it is in full. You need graph paper, a ruler with millimetres, a pencil and a calculator.
 
 **Step 1 — plot them.**
 
@@ -983,7 +985,7 @@ Write that down and put a box round it, **before** you do any arithmetic. It is 
 
 Then the four steps, with a pencil. Write all four lines out; do not do it in your head.
 
-```
+```text
 step 1   subtract      1.4 − 4.4 = −3.0        0.2 − 1.4 = −1.2
 step 2   square        (−3.0)² = 9.00          (−1.2)² = 1.44
 step 3   add up        9.00 + 1.44 = 10.44
@@ -997,7 +999,7 @@ step 4   square root   √10.44 = 3.2310988...
 
 **Step 4 — the agreement.** Write all three next to each other:
 
-```
+```text
 ruler        ≈  3.25       (a measurement, allowed to be a bit off)
 pencil          3.23       (exact arithmetic, rounded)
 numpy           3.23       (exact arithmetic, rounded)
@@ -1019,6 +1021,8 @@ The closest pair is **B–C at 1.94** — and they are **different** species, ve
 
 ## 💬 Talk About It
 
+Three questions to talk through out loud.
+
 **1. Why do you think the whole world agreed on two single letters, when this course has spent twenty-seven weeks telling you to use names like `pizza_price`?**
 
 *Hint:* how many different problems is it the same two things in? Count: fruit, flowers, songs, pizzas, cricketers, pupils. Does anything change apart from what the columns are called?
@@ -1034,6 +1038,8 @@ The closest pair is **B–C at 1.94** — and they are **different** species, ve
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that look reasonable, each shown next to the right one.
 
 ### Trick 1 — "`X` is the answer, because x is what you solve for in maths"
 
@@ -1062,14 +1068,14 @@ Nothing in pandas stops you building this. (Scikit-learn will refuse a column of
 
 **Wrong:**
 
-```
+```text
 step 1   subtract    3 and 4
 step 3   add up      3 + 4 = 7
 ```
 
 **Right:**
 
-```
+```text
 step 1   subtract    3 and 4
 step 2   square      9 and 16
 step 3   add up      9 + 16 = 25
@@ -1083,6 +1089,8 @@ The other half of this trick is skipping step 2. **You cannot leave the squaring
 ---
 
 ## 🌍 Where You've Seen This
+
+Six places where this week's idea turns up outside the course.
 
 - **"Similar songs" on any music app.** Every song is a row of measurements — tempo, loudness, how much of it is singing. Your song is a point, and the app hands you the nearest other points. Literally this week's arithmetic, done a few million times a second.
 - **Photo apps grouping faces.** Your photo library turns each face into a long row of numbers, then puts faces that sit close together into the same pile. It never learns your cousin's *name* — it just notices that thirty faces are all near each other.
@@ -1119,6 +1127,8 @@ tile, on the `X, y` word of it. Four whole stages behind you, one dashed box ahe
 ---
 
 ## 🔑 Remember This
+
+The week in short, then a card of the code you typed.
 
 - **`X` is what you measured. `y` is what you want back.** Capital X because it is a table; small y because it is one column. They are the only two single-letter names allowed in this course.
 - **Rows first, columns second.** `(10, 2)` is ten rows of two columns. Say it that way round every single time, out loud, and you will never read a shape backwards.
@@ -1164,6 +1174,8 @@ distance = np.sqrt(((row_a - row_b) ** 2).sum())
 
 ## 📓 New Words
 
+The words this week added, with an example of each.
+
 ![Five new words for Week 28](../figures/fig-w28-7-words-x-y-target.svg)
 *Figure 28.7 — Five words, and two of them are the same idea in different clothes.*
 
@@ -1181,7 +1193,7 @@ distance = np.sqrt(((row_a - row_b) ** 2).sum())
 
 Open the **[Week 28 workbook](../workbook/week-28.md)**. There are two things that matter and the second one matters more.
 
-**First — build `X` and `y` from your own table** (pages 28.5). Use the table you have been carrying since Week 21. Write `X.shape` and `y.shape` down in ink, and next to each one write, **in words**, what the numbers mean: *"ten rows, meaning ten songs"* — not just the digits. If your own table has gone walkabout, the playlist is printed in the workbook and you can use that.
+**First — build `X` and `y` from your own table** (page 28.5). Use the table you have been carrying since Week 21. Write `X.shape` and `y.shape` down in ink, and next to each one write, **in words**, what the numbers mean: *"ten rows, meaning ten songs"* — not just the digits. If your own table has gone walkabout, the playlist is printed in the workbook and you can use that.
 
 **Second — one distance, twice, and they must match** (page 28.6). Pick any two rows of your table. Work out the distance between them **on paper**, all four steps, each on its own line. Then work out the same distance in numpy. Write both numbers next to each other, rounded to two decimal places. They had better be the same.
 

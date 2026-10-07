@@ -23,6 +23,8 @@
 
 ## 🎯 Lesson Objectives
 
+This section lists what the student should be able to do when the lesson ends, and the evidence you can collect to check it.
+
 By the end of the lesson the student can:
 
 1. **Import a library under a short alias** and explain what the alias is for.
@@ -39,7 +41,9 @@ Observable evidence: `arrays.py`, which builds a 1-D array, a 2-D array and a de
 
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
-**You do not need to know any numpy to teach this.** There are two facts in this lesson and they are both things you can print. Read this section once and you will be ahead of the student all lesson.
+This section gives you the background, the traps and the limits of the lesson, so you can teach it without knowing any numpy.
+
+**You do not need to know any numpy to teach this.** There are two facts in this lesson, and you can print both. Read this section once and you will be ahead of the student all lesson.
 
 ### 1. What numpy is, and why it exists at all
 
@@ -49,20 +53,33 @@ Everything the student has built so far is made of Python **lists** and **dictio
 
 That flexibility is not free. To hold four different kinds of thing, a list cannot hold the things themselves; it holds a row of **references** — little notes saying "the thing you want is over there." Every single value in the list is a separate object sitting somewhere else in memory, and each one carries its own label saying what kind of thing it is.
 
-So when you write a loop that doubles every number in a list, the computer does this, per number: follow the note, find the object, ask it what kind of thing it is, work out what doubling means for that kind, do it, make a *new* object to hold the answer, put a note about it in the new list. Six steps, a million times.
+So when you write a loop that doubles every number in a list, the computer does this, for each number:
+
+1. Follow the note.
+2. Find the object.
+3. Ask it what kind of thing it is.
+4. Work out what doubling means for that kind, and do it.
+5. Make a *new* object to hold the answer.
+6. Put a note about it in the new list.
+
+Six steps, a million times.
 
 An **array** does not work that way.
 
 > **array** — a block of memory holding many values of **one single kind**, laid out end to end with nothing in between.
 
-Because every value is the same kind and therefore the same size, numpy knows exactly where value number 40,000 is without hunting: it is 40,000 slots along from the start. And because they are all the same kind, it does not have to ask about the kind even once — it asks once, at the top, and then does the arithmetic in fast compiled code that Python never touches.
+Every value is the same kind and therefore the same size. So numpy knows exactly where value number 40,000 is without hunting: it is 40,000 slots along from the start.
+
+Because they are all the same kind, numpy does not have to ask about the kind for each one. It asks once, at the top, and then does the arithmetic in fast compiled code that Python never touches.
 
 ![A list is a cloakroom. An array is an egg box.](../figures/fig-w17-1-list-vs-array.svg)
 *Figure 17.1 — The list is more flexible. The array knows more about itself, and that is what buys the speed.*
 
 **The analogy to use in the room, and it is exact.** A Python list is a **cloakroom**: numbered hooks, and on each hook a *ticket*, and the ticket tells you which locker downstairs your coat is in. To count the red coats you take every ticket, walk down, open a locker, look, walk back. A numpy array is an **egg box**: twelve identical slots, twelve eggs, all touching. Counting is glancing.
 
-**How much faster, honestly?** For a million numbers, roughly twenty times. But here is the thing to tell the student, and it is true: **the speed is not why we are learning this.** The speed matters when you have a million numbers, and they have twelve. The reason we are learning it is that next week `celsius * 9 / 5 + 32` will replace four lines of loop with one line that says what it means — and that every model in this course, and every model in Level 3, and the giant language models in Level 4, all do their arithmetic exactly this way. **Learn to think in arrays now and everything after it is easier.**
+**How much faster, honestly?** For a million numbers, roughly twenty times. But tell the student this, because it is true: **the speed is not why we are learning this.** Speed matters when you have a million numbers, and they have twelve.
+
+The reason we are learning it is that next week `celsius * 9 / 5 + 32` will replace four lines of loop with one line that says what it means. Also, every model in this course, and every model in Level 3, and the giant language models in Level 4, do their arithmetic exactly this way. **Learn to think in arrays now and everything after it is easier.**
 
 ### 2. The alias, and why everybody uses the same one
 
@@ -72,9 +89,9 @@ import numpy as np
 
 > **alias** — a shorter name you give something so you can type it more often.
 
-That is the whole of it. `import numpy` on its own works perfectly, and then you write `numpy.array(...)` every time. `as np` means "and from now on, in this file, `np` means numpy."
+That is all there is to it. `import numpy` on its own works perfectly, and then you write `numpy.array(...)` every time. `as np` means "and from now on, in this file, `np` means numpy."
 
-**Two things worth saying out loud:**
+Two things are worth saying out loud:
 
 - It is a *nickname within this file only*. It changes nothing about numpy itself, and another file can call it something else. It is exactly Week 12's `from stats import mean` idea — a naming decision, made by you, at the top of the file.
 - **Everybody writes `np`.** Not `numpy`, not `numby`, not `n`. This is a convention, not a rule, and it is worth following anyway, because it means every numpy example on the internet reads like your code and yours reads like theirs. Conventions are how strangers cooperate.
@@ -96,12 +113,12 @@ print(runs)
 [48 12 77  5]
 ```
 
-Two things to notice about that output, and the student will spot both:
+The student will spot two things about that output:
 
 - **There are no commas.** A printed array uses spaces, not commas. A printed list uses commas. That is the fastest way to tell at a glance which one you are looking at, and it is worth pointing out.
 - **The columns are lined up.** `5` is printed as ` 5` with a space in front, so it lines up with `48`. numpy does that on purpose, because arrays are for looking at in rows and columns.
 
-**The mistake everyone makes once**, and you are going to plant it: forgetting the brackets.
+**The mistake everyone makes once** is forgetting the brackets, and you are going to plant it.
 
 ```python
 runs = np.array(48, 12, 77, 5)
@@ -135,7 +152,7 @@ print(table)
  [ 5  9]]
 ```
 
-Laying it out one row per line, as above, is not required by Python — but it makes the shape visible in the source code, and a 12-year-old who does this will make far fewer mistakes. Insist on it.
+Python does not require one row per line. But it makes the shape visible in the source code, and a 12-year-old who does this will make far fewer mistakes. Insist on it.
 
 ### 4. `.shape` — the first of the two facts
 
@@ -151,7 +168,7 @@ print(table.shape)     # (4, 2)
 (4, 2)
 ```
 
-Three things you must be able to explain, because all three get asked:
+You must be able to explain three things, because all three get asked.
 
 **"Why is there a comma in `(4,)` with nothing after it?"** Because `(4,)` is a *pair-like thing with one item in it* — Python's way of writing a one-item tuple. Without the comma, `(4)` would just be the number 4 in brackets. The comma is Python saying "this is a collection, and it happens to have one thing in it". Tell the student to read `(4,)` out loud as **"four, and that's the only direction there is."**
 
@@ -355,15 +372,19 @@ the box is unchanged and what sits inside it is not. One thread lit: representat
 
 ## 🧰 Prep Checklist
 
+This section lists everything to do before the lesson, with the full runnable `arrays.py` and a paper fallback if the install fails.
+
 ### 20 minutes the night before
 
 - [ ] **Install numpy. This is the one thing that can ruin the lesson, so do it now, on the machine the student will use.**
+
+Run this in a terminal:
 
 ```bash
 pip install numpy
 ```
 
-If that errors, try these in order — one of them will work:
+If that errors, try these in order. One of them will work.
 
 ```bash
 pip3 install numpy
@@ -376,19 +397,19 @@ Then prove it, in a terminal:
 python3 -c "import numpy; print(numpy.__version__)"
 ```
 
-You must see a version number. Anything recent is fine:
+You must see a version number. Anything recent is fine, for example:
 
 ```text
 1.26.4
 ```
 
-If you see `ModuleNotFoundError: No module named 'numpy'`, the install did not take. The usual cause is that `pip` installed into a different Python than `python3` runs — which is exactly what `python3 -m pip install numpy` fixes, because it uses the same Python either way. **Solve this tonight.**
+If you see `ModuleNotFoundError: No module named 'numpy'`, the install did not take. The usual cause is that `pip` installed into a different Python than `python3` runs. `python3 -m pip install numpy` fixes that, because it uses the same Python either way. **Solve this tonight.**
 
 - [ ] **Print the Week 17 workbook.** In class you use Practice Set A (A1–A3); Build It is the homework.
 - [ ] **Find graph paper**, or draw a grid of squares on a blank sheet: 12 rows, 5 columns, big enough to write in. The Hook needs it.
 - [ ] **Find a pencil with a rubber on the end.** You are going to rub things out in front of them, and it matters that it is a rubbing-out and not a crossing-out.
 - [ ] **Check `squad_data.py` and `records.py` from last week still run.** Week 17 imports them once.
-- [ ] **Type and run the code yourself.** One file, `arrays.py`, in the same folder:
+- [ ] **Type and run the code yourself.** One file, `arrays.py`, in the same folder. This is the complete file:
 
 ```python
 """arrays.py - my first numpy arrays."""
@@ -428,7 +449,7 @@ print("shape     :", mixed.shape)
 print("dtype     :", mixed.dtype)
 ```
 
-Run `python3 arrays.py`. You must see **exactly** this (with your own version number on line 1):
+Run `python3 arrays.py`. You must see **exactly** this output, with your own version number on line 1:
 
 ```text
 numpy version: 1.26.4
@@ -487,6 +508,8 @@ dtype     : <U21
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the lesson: five segments, each with what to say, what to ask and what to expect.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Rub Out the Words | 7 | 7 | Draw the table on graph paper, then rub out the header and the names |
@@ -498,6 +521,8 @@ dtype     : <U21
 ---
 
 ### 🪝 Hook — Rub Out the Words (7 minutes)
+
+This segment makes the student feel what an array costs before they see one.
 
 **Do this:** Graph paper on the table. Twelve index cards beside it. The pencil-with-rubber in your hand. Nothing on the screen.
 
@@ -567,6 +592,8 @@ Let them struggle. Prompts if needed: *"look at the shape of it. Look at what's 
 
 ### 🧠 Concept — Two Things You Can Print (16 minutes)
 
+This segment gives the two definitions, the alias, the two things to print, and the six written predictions.
+
 **Do this:** Leave the rubbed-out grid on the table. Board work.
 
 **Say this — part 1, the two definitions:**
@@ -610,7 +637,7 @@ import numpy as np
 
 Write on the board:
 
-```
+```text
 arr.shape   ->  how big, in each direction.  Rows first.
 arr.dtype   ->  what ONE kind of thing every cell holds.
 ```
@@ -652,9 +679,11 @@ Let them think. Someone will get to "you'd have to say words".
 
 ### 💻 Live-Code Together — `arrays.py` (18 minutes)
 
+This segment builds `arrays.py` step by step, with a prediction before every run and two deliberate mistakes.
+
 **You never touch the keyboard.** Predictions before every run.
 
-**Step 1 (2 min).** New file, `arrays.py`. Two lines:
+**Step 1 (2 min).** New file, `arrays.py`. Type the import and the version line:
 
 ```python
 """arrays.py - my first numpy arrays."""
@@ -842,7 +871,7 @@ Let them find it. It is last week.
 
 ### 🎲 Their Turn — Predict Six, Check Six (20 minutes)
 
-Full instructions in the next section. In the lesson flow:
+Full instructions are in the next section. In the lesson flow:
 
 - **Minutes 0–3:** re-read the six predictions they wrote in the Concept segment. **No changing them.**
 - **Minutes 3–12:** build all six, print shape and dtype for each, tick or cross every prediction.
@@ -853,6 +882,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section is the complete script for the prediction game and the ragged block, with the scoring and the model sentences.
+
 ### Setup
 
 **On the table:** the rubbed-out graph paper, workbook Practice Set A with **six predictions already written in pen** in A2 and A3, Build It blank, the Bug Log.
@@ -862,6 +893,8 @@ Full instructions in the next section. In the lesson flow:
 **The one rule that makes this work:** the predictions were written before any code ran and they may not be edited. If a student wants to change one, have them write the new guess *next to* the old one and mark which came first.
 
 ### The six arrays
+
+Give the student this file, with the six predictions already written down.
 
 ```python
 """six.py - predict the shape and the dtype of all six BEFORE you run this."""
@@ -902,13 +935,17 @@ six     (3,)      bool
 
 Two of the six are designed to be missed. Do not tip them off.
 
-**`four = np.array([1, 2, 3.0])` → `float64`.** Almost every student predicts `int64`, because two out of the three numbers are whole. But an array holds **one** kind, and it has to be a kind that can hold `3.0` without losing anything. A whole-number box cannot hold `3.0`'s decimal point; a decimal box can hold `1` perfectly well as `1.0`. So numpy picks the one that loses nothing: `float64`. **The rule to draw out of it: numpy picks the kind that can hold everything, not the kind most of the values already are.** This is exactly the same reasoning as `[1, 2, "three"]` becoming text, and a student who sees that connection has had a very good lesson.
+**`four = np.array([1, 2, 3.0])` → `float64`.** Almost every student predicts `int64`, because two out of the three numbers are whole. But an array holds **one** kind, and it has to be a kind that can hold `3.0` without losing anything. A whole-number box cannot hold `3.0`'s decimal point; a decimal box can hold `1` perfectly well as `1.0`. So numpy picks the one that loses nothing: `float64`. **The rule to draw out of it: numpy picks the kind that can hold everything, not the kind most of the values already are.**
 
-**`five = np.array([[7], [8], [9]])` → `(3, 1)`.** Most students predict `(3,)`, because it is three numbers. But every `7` is inside its own inner list, and an inner list is a **row**. So it is three rows of one column each — a column, standing up. This is the single most important shape in the whole of numpy, because next week `(3,)` and `(3, 1)` added together will produce nine numbers instead of three, and nothing will complain. **Do not explain that today.** Just make sure they have written `(3, 1)` down and can say what the `1` is.
+This is the same reasoning as `[1, 2, "three"]` becoming text. A student who sees that connection has had a very good lesson.
+
+**`five = np.array([[7], [8], [9]])` → `(3, 1)`.** Most students predict `(3,)`, because it is three numbers. But every `7` is inside its own inner list, and an inner list is a **row**. So it is three rows of one column each — a column, standing up.
+
+This is the single most important shape in the whole of numpy, because next week `(3,)` and `(3, 1)` added together will produce nine numbers instead of three, and nothing will complain. **Do not explain that today.** Just make sure they have written `(3, 1)` down and can say what the `1` is.
 
 ### The scoring, and the sentences
 
-For each of the six, in A2 (shape) and A3 (dtype) of Practice Set A (those tables have no tick columns, so have them add a ✔/✘ beside each answer; the layout below is what the record should look like):
+Score each of the six in A2 (shape) and A3 (dtype) of Practice Set A. Those tables have no tick columns, so have the student add a ✔/✘ beside each answer. The layout below is what the record should look like:
 
 | # | Predicted shape | Actual shape | ✔/✘ | Predicted dtype | Actual dtype | ✔/✘ |
 |---|---|---|---|---|---|---|
@@ -926,6 +963,8 @@ Model sentences, for the two designed misses:
 **This is the assessable output of the week.** A student who predicted six out of six correctly has learned less than a student who missed two and wrote those two sentences. Say that out loud, before they start.
 
 ### The ragged block (3 minutes)
+
+This is the one error the student will meet for real, so they translate it into their own words.
 
 **Do this:** After the six are checked, one more, at the bottom of the file.
 
@@ -960,6 +999,8 @@ Let them argue. Steer to the answer:
 
 ### What "finished" looks like
 
+The student has finished when all of these are true:
+
 - `arrays.py` builds a 1-D array, a 2-D array and a decimal array, and prints `.shape` and `.dtype` for all three.
 - Six predictions, written in pen **before** the code ran, all six checked against real output.
 - **One written sentence per miss**, saying what they thought and what is true.
@@ -967,6 +1008,8 @@ Let them argue. Steer to the answer:
 - The student can point at the rubbed-out graph paper and say what an array costs you.
 
 ### Variation — easier
+
+Use these if the student is finding the lesson hard.
 
 - **Four arrays, not six.** Keep `one` (the easy one, to build confidence), `two` (the 2-D one), `four` (the float surprise) and `five` (the `(3, 1)` surprise). The two surprises are the lesson; the easy ones are the warm-up.
 - **Predict shape only, not dtype.** Shape is the more useful of the two and it is much more intuitive. Do dtype as a whole-class demonstration instead of a prediction.
@@ -976,7 +1019,7 @@ Let them argue. Steer to the answer:
 
 ### Variation — harder
 
-None of these need syntax from a later week.
+Use these if the student finishes early. None of them need syntax from a later week.
 
 1. **`.ndim` and `.size`.** Add them to the prediction table. `.ndim` is how many directions there are (1 for a row, 2 for a block); `.size` is how many numbers there are altogether. Then the good question: *"which of shape, ndim and size could you work out from the others?"* (`ndim` is how many numbers are in the shape. `size` is them multiplied together. **Shape is the only one that is really new information** — and that is why it is the one we print.)
 2. **Make numpy pick each of the four dtypes on purpose.** Write four arrays, one each for `int64`, `float64`, `bool` and text, and for each one write *why* numpy had no other choice.
@@ -988,6 +1031,8 @@ None of these need syntax from a later week.
 ---
 
 ## 🐞 The Debugging Clinic
+
+This section lists the errors the student is likely to meet this week, what each one means, and how to fix it.
 
 Every message below came from running a broken version of this week's actual code.
 
@@ -1022,15 +1067,19 @@ And the sentence for this week:
 
 ## ❓ Questions Students Ask This Week
 
+This section gives you short, honest answers to the questions this lesson reliably produces.
+
 **"Why is there a comma in `(4,)`?"**
 
 Because `(4,)` is a **tuple with one item in it**, and Python needs a way to write that down. Without the comma, `(4)` is just the number four with brackets round it, exactly like `(2 + 3)` is five. The comma is what makes it a collection.
 
-Why does the shape have to be a collection at all, even for one direction? So that `.shape` always answers the same *kind* of question. `(4,)` and `(4, 2)` and `(4, 2, 3)` are all "here is a size for each direction" — one number, two numbers, three numbers. If a 1-D array's shape were just `4`, then code that reads shapes would have to handle two different sorts of answer. Read it out loud as *"four, and that's the only direction there is."*
+Why does the shape have to be a collection at all, even for one direction? So that `.shape` always answers the same *kind* of question.
+
+`(4,)`, `(4, 2)` and `(4, 2, 3)` are all "here is a size for each direction" — one number, two numbers, three numbers. If a 1-D array's shape were just `4`, code that reads shapes would have to handle two different sorts of answer. Read it out loud as *"four, and that's the only direction there is."*
 
 **"Is an array just a faster list?"**
 
-It is faster, and calling it "a faster list" will get a student into trouble, because the differences that bite are not about speed:
+It is faster. But calling it "a faster list" will get a student into trouble, because the differences that bite are not about speed:
 
 - An array holds **one kind of thing.** A list holds anything.
 - An array knows its **shape.** A list only knows its length.
@@ -1049,9 +1098,14 @@ And here is the honest bit, which is worth saying to a 12-year-old: **for twelve
 
 Because an array gets **one** kind for all of it, and numpy picks the kind that can hold every value **without losing anything.**
 
-Think about the two options. Make it whole numbers: `3.0` would have to become `3`, and the decimal point is thrown away — information lost. Make it decimals: `1` becomes `1.0`, which is the same number written differently — nothing lost. So numpy picks decimals.
+Think about the two options:
 
-Exactly the same reasoning makes `[1, 2, "three"]` into text: text can hold `1` (as the character `1`), and numbers cannot hold `three`. **numpy always picks the kind that can hold everything.** Once you have that sentence, both surprises stop being surprises.
+- Make it whole numbers: `3.0` would have to become `3`, and the decimal point is thrown away. Information is lost.
+- Make it decimals: `1` becomes `1.0`, which is the same number written differently. Nothing is lost.
+
+So numpy picks decimals.
+
+The same reasoning makes `[1, 2, "three"]` into text: text can hold `1` (as the character `1`), and numbers cannot hold `three`. **numpy always picks the kind that can hold everything.** Once you have that sentence, both surprises stop being surprises.
 
 **"What does the 64 in `int64` mean?"**
 
@@ -1067,7 +1121,7 @@ It is also almost always a sign that something went wrong, because the reason to
 
 **"Which is better — a list of dictionaries, or an array?"** *(Nobody fully agrees, and here is why.)*
 
-**Neither, and people who work with data argue about the boundary every day.** It is worth being straight about this rather than pretending there is a right answer.
+**Neither, and people who work with data argue about the boundary every day.** Be straight about this rather than pretending there is a right answer.
 
 The array wins whenever the answer is a number computed from many numbers. Averages, totals, distances, every model in this course. One line instead of a loop, twenty times faster, and — the part that matters more — **a line you can read and check.** `celsius * 9 / 5 + 32` is the formula. A four-line loop is the formula *plus* the machinery of visiting each item, and the machinery is where the mistakes live.
 
@@ -1080,6 +1134,8 @@ What everybody agrees on is the thing that resolves it, and it arrives in Week 2
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This section is a quick lookup of the ways this lesson usually goes off course, and what to do right now.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1097,6 +1153,8 @@ What everybody agrees on is the thing that resolves it, and it arrives in Week 2
 ---
 
 ## 🧭 Differentiation
+
+This section tells you what to cut, add or change for a student who is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1150,7 +1208,7 @@ None of these need syntax from a later week.
 3. **`dtype=float` up front** (Variation-harder 3), and when you would want it before you have any decimals.
 4. **Five shapes, same twelve numbers** (Variation-harder 5). `(12,)`, `(2, 6)`, `(6, 2)`, `(1, 12)`, `(12, 1)`. Then: which of these *means* anything?
 5. **The honest cost** (Variation-harder 6). Could you do `group_count` on an array? No — you rubbed out the names. So which would you keep?
-6. **Measure the speed themselves.** This needs `import time`, which is nothing new, and one loop, which they have had since Week 7:
+6. **Measure the speed themselves.** This needs `import time`, which is nothing new, and one loop, which they have had since Week 7. Give them this code:
 
 ```python
 import time
@@ -1189,6 +1247,8 @@ That is the entire lesson. It takes ten minutes, it delivers objectives 2, 3 and
 ---
 
 ## ✅ Assessing Understanding
+
+This section gives three short checks and a mastery scale, so you can tell whether the lesson landed.
 
 Three checks, five minutes, exact wording.
 
@@ -1231,6 +1291,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section is the homework script, the workbook sections to use, and what to look for when you mark it.
+
 **Say this:**
 
 > "Short one this week, and the marking is all in one column. About forty-five minutes.
@@ -1264,6 +1326,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 🔑 Answer Key
+
+This section is the marking key for the whole workbook, so you can mark from this page alone.
 
 Every workbook section and item is restated below, **in workbook order and with the workbook's own labels** (W1, P1, A1, B1, Bug 1, T1, Part 1 …), so you can mark from this page alone. The values are the ones in the workbook's own Answers section at the end of the workbook; the notes marked for the teacher are extra.
 
@@ -1643,9 +1707,19 @@ The "I can…" ladder is the student's own; glance at the two or three rows mark
 
 ## 🔮 Next Week Preview
 
-Next week is the Term 2 checkpoint, and it has a party in it. **The Loop Retirement Party.** Eight loops from Weeks 7 to 15 go on eight cards, laid out on the table, and one at a time the student rewrites each as a single line of array maths — `scores * 2`, `runs + balls`, `celsius * 9 / 5 + 32` — runs *both* versions, and checks that the outputs are identical, character for character. Any card whose two versions disagree goes in a "revisit" pile, and that pile is the term's honest report on itself. The new syntax is tiny: arithmetic straight onto an array, and two functions that build arrays without typing the numbers, `np.arange` and `np.zeros`. And at the end there is a sting that is the exact mirror of this week's `<U21`: two arrays of three numbers are added together, nothing crashes, and **nine numbers come out.** The student has to catch it by printing the answer's shape — which is precisely the habit this week was building.
+This section tells you what next week is and what to prepare for it.
 
-**Prep early:** three things. **Write the eight loop cards tonight** — index cards, one loop per card, copied out of the student's own Week 7 to Week 15 files if you still have them, because a loop they wrote themselves retires far more satisfyingly than one from a book. **Make sure numpy really is working**, because Week 18 is a numpy lab and there is no paper version of it; if this week ran on graph paper, the install is now the most urgent thing on your list. And **have the Bug Log to hand with the `<U21` entry findable**, because next week's silent bug is the same shape and the best thing you can do is have the student find their own note about it and say "this again".
+Next week is the Term 2 checkpoint, and it has a party in it: **The Loop Retirement Party.** Eight loops from Weeks 7 to 15 go on eight cards, laid out on the table. One at a time, the student rewrites each as a single line of array maths — `scores * 2`, `runs + balls`, `celsius * 9 / 5 + 32` — runs *both* versions, and checks that the outputs are identical, character for character.
+
+Any card whose two versions disagree goes in a "revisit" pile, and that pile is the term's honest report on itself. The new syntax is tiny: arithmetic straight onto an array, and two functions that build arrays without typing the numbers, `np.arange` and `np.zeros`.
+
+At the end there is a sting that is the exact mirror of this week's `<U21`. Two arrays of three numbers are added together, nothing crashes, and **nine numbers come out.** The student has to catch it by printing the answer's shape — which is precisely the habit this week was building.
+
+**Prep early** — three things:
+
+1. **Write the eight loop cards tonight** — index cards, one loop per card, copied out of the student's own Week 7 to Week 15 files if you still have them, because a loop they wrote themselves retires far more satisfyingly than one from a book.
+2. **Make sure numpy really is working**, because Week 18 is a numpy lab and there is no paper version of it; if this week ran on graph paper, the install is now the most urgent thing on your list.
+3. **Have the Bug Log to hand with the `<U21` entry findable**, because next week's silent bug is the same shape and the best thing you can do is have the student find their own note about it and say "this again".
 
 ---
 

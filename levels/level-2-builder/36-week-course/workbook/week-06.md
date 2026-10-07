@@ -43,6 +43,8 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
+In this section you predict what four short programs print, then run them to check.
+
 **Write your prediction before you run anything.** This week, some snippets produce **no error at all** — so "what do you expect" means "what will it print", not just "which error".
 
 ### P1
@@ -121,6 +123,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+In this set you read chains and conditions and say what Python does with them. Write your answers before you run anything.
 
 **A1. Trace it with your finger.** Say `yes`, `no`, or a **dash** for "Python never even asked".
 
@@ -208,6 +212,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+In this set you write your own chains and conditions, then test them at the boundaries. Fill in each table before you run the program.
 
 **B1. One line.** Write the condition for *"old enough to play (13 or over), has played at least 5 matches, and is not injured."*
 
@@ -373,6 +379,8 @@ ________________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
+In this section you find and fix bugs in a program that was broken on purpose.
+
 Here is `fine.py`, a library fine calculator. It has **three** bugs: one that stops Python reading the file, one that stops it partway through, and one that produces **no error at all**.
 
 ```python
@@ -486,11 +494,13 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+A puzzle with four condition cards and one `else` card.
+
 ### Bouncer Roulette
 
 You have **four condition cards** and one `else` card. The four cards are:
 
-```
+```text
    [ 90 or more?  -> A ]     [ 75 or more?  -> B ]
    [ 60 or more?  -> C ]     [ 35 or more?  -> D ]     [ else -> F ]
 ```
@@ -537,6 +547,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+Two questions with no single right answer. Take a side and give your reasons.
+
 **T1.** Your chain had two branches that no possible input could ever reach. **Should Python warn you about that?**
 
 Write a paragraph. Take a side, name the cost of your side, and — if you can — find the argument that cuts *against* the thing you would personally prefer.
@@ -574,6 +586,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+Five parts that use `grade_broken.py` and your fixed chain. Work through them in order, with the tables filled in by hand.
 
 ### Part 1 — Trace the broken chain on paper
 
@@ -691,6 +705,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+In this section you show the week's idea as a picture instead of in words.
+
 Draw **the same four questions in two different orders**: one order that works, and one order that lies quietly.
 
 ![Draw It frame for Week 6](../figures/fig-w06-9-draw-frame.svg)
@@ -709,6 +725,8 @@ Draw **the same four questions in two different orders**: one order that works, 
 ---
 
 ## 📊 Self-Check
+
+Tick the face that matches how you feel about each skill. Then answer the true-or-false rows.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -741,6 +759,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Finish the whole workbook first. Then open the box below and mark your work.
 
 <details>
 <summary>Check your answers</summary>
@@ -794,7 +814,9 @@ child
 yes branch
 ```
 
-The branch runs even though the answer was `no`. `answer == "yes"` is `False`, so Python works out `False or "y"` — and `or` hands back **the first side that counts as a yes**, which is the text `"y"`. Any non-empty text counts as a yes inside an `if`. **So the condition is always the letter y, and the branch always runs, for every possible input.** The fix is `answer == "yes" or answer == "y"`.
+The branch runs even though the answer was `no`. `answer == "yes"` is `False`, so Python works out `False or "y"` — and `or` hands back **the first side that counts as a yes**, which is the text `"y"`. Any non-empty text counts as a yes inside an `if`.
+
+**So the condition is always the letter y, and the branch always runs, for every possible input.** The fix is `answer == "yes" or answer == "y"`.
 
 ---
 
@@ -826,7 +848,9 @@ Real runs:
 0  -> Fail
 ```
 
-**The sting.** The dead `else` is the safety net — the branch that is supposed to catch anything you didn't think of. So this chain **looks** as if it has a safety net and actually has none. If you later changed `mark < 50` to `mark < 40`, marks of 40 to 49 would fall through, and the `else` you thought would catch them is only reachable *because* of that change. Dead code is not just useless; it is misleading.
+**The sting.** The dead `else` is the safety net — the branch that is supposed to catch anything you didn't think of. So this chain **looks** as if it has a safety net and actually has none. If you later changed `mark < 50` to `mark < 40`, marks of 40 to 49 would fall through, and the `else` you thought would catch them is only reachable *because* of that change.
+
+Dead code is not just useless; it is misleading.
 
 **A3.** a→**2** · b→**1** · c→**2** · d→**1**
 
@@ -860,7 +884,9 @@ Grade : C
 
 **Branch taken:** C · **Should have been:** B · **Lines Python read:** **one.**
 
-**A5.** Because you can only *reach* that line if the two tests above it both said no. By the time Python asks `mark >= 60`, it already knows the mark is under 75 and under 90 — otherwise it would have stopped higher up. **Every `elif` silently carries "and nothing above me was true", and Python adds it for free.** So the upper bound is a boundary you never have to write, which means it is a boundary you cannot get wrong.
+**A5.** Because you can only *reach* that line if the two tests above it both said no. By the time Python asks `mark >= 60`, it already knows the mark is under 75 and under 90 — otherwise it would have stopped higher up.
+
+**Every `elif` silently carries "and nothing above me was true", and Python adds it for free.** So the upper bound is a boundary you never have to write, which means it is a boundary you cannot get wrong.
 
 **A6.**
 
@@ -1031,6 +1057,7 @@ Both sides of two boundaries, plus the last band:
   Result : gold
 ========================================
 ```
+
 ```text
 ========================================
   Runner : Anika
@@ -1038,6 +1065,7 @@ Both sides of two boundaries, plus the last band:
   Result : silver
 ========================================
 ```
+
 ```text
 ========================================
   Runner : Rohit
@@ -1045,6 +1073,7 @@ Both sides of two boundaries, plus the last band:
   Result : silver
 ========================================
 ```
+
 ```text
 ========================================
   Runner : Rohit
@@ -1052,6 +1081,7 @@ Both sides of two boundaries, plus the last band:
   Result : bronze
 ========================================
 ```
+
 ```text
 ========================================
   Runner : Meera
@@ -1127,6 +1157,7 @@ How many days late? 7
 Days late : 7
 Fine      : 40 rupees
 ```
+
 ```text
 How many days late? 14
 The book is now counted as lost.
@@ -1304,7 +1335,9 @@ Also excellent, and arguably better:
 3. Say the answer, then move the finger: down one if it was no, **out of the chain entirely** if it was yes.
 4. Whatever line the finger lands on, that is the answer, whether you like it or not.
 
-Reading fails because there is nothing wrong with any single line. Tracing works because the bug is in the **route**, not in the lines.
+Reading fails because there is nothing wrong with any single line.
+
+Tracing works because the bug is in the **route**, not in the lines.
 
 **(h)** Because *"if mark is 60 or more"* is vague enough to nod at and move past. **"Is 95 sixty or more?"** has an answer, and you cannot skip it. Saying it out loud stops your brain jumping to the result it expected — which is exactly what happens when you trace silently.
 

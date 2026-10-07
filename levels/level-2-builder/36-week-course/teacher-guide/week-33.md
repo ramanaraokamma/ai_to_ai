@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the lesson on one screen: how long it takes, what it teaches, and what you need on the table.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -22,6 +24,8 @@
 ---
 
 ## 🎯 Lesson Objectives
+
+These five objectives are what you are teaching towards, and the evidence line says how you will know.
 
 By the end of the lesson the student can:
 
@@ -81,9 +85,9 @@ Compute two scores — one on the rows the model learned from, one on rows it ha
 
 Note that kNN's dial runs **backwards**: `k = 1` is the *most* complex setting, because a single nearest neighbour can carve any shape at all, and a huge `k` is the simplest. If the student remembers `k = 1` scoring a perfect 1.0000 on training data back in Week 30, that was the overfitting end of the dial all along, and nobody said so at the time.
 
-`max_depth` is the dial you will turn today, because a tree's is the easiest to see. Crank it up and the tree gets to ask more questions, cut the training rows into more and more leaves, and eventually give nearly every single row its own private leaf.
+`max_depth` is the dial you will turn today, because a tree's is the easiest to see. Crank it up and the tree gets to ask more questions, cut the training rows into more and more leaves, and eventually give nearly every single row its own private leaf. Here is what that looks like at four settings of the dial.
 
-```
+```text
  depth 1  →    2 leaves     one question, two answers
  depth 4  →   16 leaves     sixteen sensible bands
  depth 8  →  128 leaves     each leaf holds two or three patients
@@ -97,17 +101,22 @@ Note that kNN's dial runs **backwards**: `k = 1` is the *most* complex setting, 
 
 ### 3. RMSE — and be honest about what it does
 
-Last week gave you MAE: add up the sizes of the misses, divide by how many. This week adds a second one.
+This part explains the one new score and the one sentence about it that you must not overstate. Last week gave you MAE: add up the sizes of the misses, divide by how many. This week adds a second score.
 
 > **RMSE (root mean squared error)** — square every miss, average the squares, then take the square root. Also in the units of the thing you are predicting, but it punishes big misses much harder than small ones.
 
-```
+As a formula:
+
+```text
 RMSE = √( (miss₁² + miss₂² + ... + missₙ²) ÷ n )
 ```
 
-**RMSE is always greater than or equal to MAE.** The gap between them tells you about the *shape* of your errors: if RMSE is barely above MAE, your misses are all much the same size. If RMSE is a lot bigger, a few large ones are dominating.
+**RMSE is always greater than or equal to MAE.** The gap between them tells you about the *shape* of your errors.
 
-**The two-model demonstration that makes it obvious.** Ten true values. Two models.
+- RMSE barely above MAE: the misses are all much the same size.
+- RMSE a lot bigger: a few large misses are dominating.
+
+**The two-model demonstration.** Ten true values. Two models.
 
 - **Model A** is off by exactly 1 on every single prediction.
 - **Model B** is *perfect* on nine of them and off by 10 on the tenth.
@@ -215,9 +224,9 @@ linear regression        42.79   53.85     0.453      0.528
 
 ### 6. How to read that table — the four things to point at
 
-**Point 1 — the row that is the whole lesson.**
+**Point 1 — the row that is the whole lesson.** Put your finger on this one:
 
-```
+```text
 tree, no limit           56.57   72.90    -0.003      1.000
 ```
 
@@ -433,21 +442,23 @@ has moved. Two threads lit: learning signal and evaluation.*
 
 ## 🧰 Prep Checklist
 
+This section lists what to prepare, so the lesson runs without surprises. Tick each box before class.
+
 ### 25 minutes the night before
 
 - [ ] **Print the whole workbook.** The **Draw It** page (the blank depth-curve grid) should be printed **twice**, so there is a spare.
 - [ ] **Go and find the Week 29 numbers.** Whatever the student wrote down four weeks ago about their training score and their held-back score. A photo, a notebook page, a wiped whiteboard you have to reconstruct — get it now. The lesson ends there and it is much weaker without it.
-- [ ] **Run the bake-off yourself.**
+- [ ] **Run the bake-off yourself.** Open a terminal and activate the environment:
 
-  ```
+  ```bash
   cd ~/ai-academy/level2
   source .venv/bin/activate        # macOS / Linux
   .venv\Scripts\activate           # Windows PowerShell
   ```
 
-  Type `week33_bakeoff.py` from section 5 and run it. **Check one row above all others:**
+  Type `week33_bakeoff.py` from section 5 and run it. **Check one row above all others.** It should read:
 
-  ```
+  ```text
   tree, no limit           56.57   72.90    -0.003      1.000
   ```
 
@@ -496,6 +507,8 @@ has moved. Two threads lit: learning signal and evaluation.*
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This is the plan for the whole lesson, one segment at a time. The table gives the timings; the scripts below it give the words.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -558,9 +571,9 @@ Let them answer. Then:
 >
 > Four possibilities, and that's all there are."
 
-Write it as you go:
+Write it as you go. This is what goes on the big sheet:
 
-```
+```text
    train    test     what it is
    ------   ------   -------------------------------------
    low      low      UNDERFITTING   - too simple  (Ravi)
@@ -596,9 +609,9 @@ Write it as you go:
 >
 > Work out MAE for both."
 
-Do it out loud together.
+Do it out loud together. Write the working under the two models:
 
-```
+```text
    Model A:  (1+1+1+1+1+1+1+1+1+1) ÷ 10 = 10 ÷ 10 = 1.0
    Model B:  (0+0+0+0+0+0+0+0+0+10) ÷ 10 = 10 ÷ 10 = 1.0
 ```
@@ -609,7 +622,7 @@ Let them object. Then:
 
 > "So here's the other way. **Square every miss first**, then average, then square-root at the end to get back into the right units. It's called **RMSE** — root mean squared error, and you read it backwards: square the errors, take the mean, take the root."
 
-```
+```text
    Model A:  squares are 1,1,1,1,1,1,1,1,1,1  → mean 1   → √1  = 1.000
    Model B:  squares are 0,0,0,0,0,0,0,0,0,100 → mean 10 → √10 = 3.162
 ```
@@ -895,6 +908,8 @@ Real numbers from this week's tree: **0.504** the wrong way round, **0.669** the
 
 ## 🎲 The Activity, In Full
 
+This section is the student's depth-curve activity, step by step. Use it with the workbook open at **Build It** and **Draw It**.
+
 ### Setup
 
 **On the table:** graph paper, a ruler, **four coloured pens**, the workbook open at **Build It** (Parts 1 to 4) and **Draw It**, a calculator. Laptop open with `week33_bakeoff.py` already working.
@@ -991,9 +1006,9 @@ Week 25's rules hold in full: title, both axis labels, a legend because there ar
 
 **Do this on paper as well as on screen.** Hand them the graph paper.
 
-Two colours, fifteen points each, plotted from the printed table. Then the ruler, straight down at depth 4, and next to it, in their own handwriting:
+Give them these instructions: two colours, fifteen points each, plotted from the printed table. Then the ruler, straight down at depth 4. Next to the line, in their own handwriting, they write:
 
-```
+```text
    after here it is memorising
 ```
 
@@ -1033,6 +1048,8 @@ This is not a decoration. It is the single sentence this whole term has been bui
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions you are most likely to hear, with an answer ready for each.
+
 **"How can a score be negative? I thought 0 was the worst."**
 
 R² is not a percentage, so 0 is not a floor. R² of 0 means "exactly as good as ignoring every measurement and guessing the average". You can absolutely be *worse* than that: predict wildly, and your squared errors come out bigger than the average-guesser's, and R² goes below zero. The unlimited tree lands right at that level (−0.003 against the baseline's −0.012). Negative R² is not a bug; it is a model telling you it has actively hurt you.
@@ -1051,7 +1068,9 @@ No, and there is no such number. It depends on how many rows you have, how noisy
 
 **"Our tree's test score jumped back up at depth 9. Doesn't that break the story?"**
 
-It is a genuinely sharp observation and the honest answer is: the curve is bumpy because 89 test patients is not very many. One patient is worth about 0.01 of R², so a jump of 0.1 is about ten patients changing sides. Look at the trend across all fifteen steps rather than step to step — and look at the `gap` column, which grows almost monotonically from 0.17 to 0.96 and never recovers. If you want to test it properly, re-run with a different `random_state` on the split and watch whether the bump survives. With `random_state=1` it does not, and the whole curve shifts too: the test peak moves to depth 2 (0.232) and R² goes negative from depth 5, so the peak depth is split-dependent.
+It is a genuinely sharp observation and the honest answer is: the curve is bumpy because 89 test patients is not very many. One patient is worth about 0.01 of R², so a jump of 0.1 is about ten patients changing sides. Look at the trend across all fifteen steps rather than step to step — and look at the `gap` column, which grows almost monotonically from 0.17 to 0.96 and never recovers.
+
+If you want to test it properly, re-run with a different `random_state` on the split and watch whether the bump survives. With `random_state=1` it does not, and the whole curve shifts too: the test peak moves to depth 2 (0.232) and R² goes negative from depth 5, so the peak depth is split-dependent.
 
 **"If the training score is useless, why compute it at all?"**
 
@@ -1059,7 +1078,15 @@ Because it is useless *on its own* and essential as half of the gap. Test score 
 
 **"Should I report MAE or RMSE?"** *(Answer this one honestly: nobody fully agrees.)*
 
-**People genuinely disagree about this, and it is not a gap in your knowledge — it is a real argument with two defensible sides.** MAE asks *"how wrong am I on a typical day?"* RMSE asks *"how bad does it get?"* Our Model A and Model B have **identical** MAE and RMSE values three times apart, so the choice of metric decides which model wins — and that means choosing the metric is really choosing which question your project is about. One camp says report MAE, because it is the honest description of the typical case and it is the one you can say out loud to a non-technical person; RMSE, they argue, lets a single freak outlier dominate a headline number and makes models look worse than they are in daily use. The other camp says report RMSE, because in most real deployments the disasters are what hurt you, and a metric that treats one enormous mistake the same as ten small ones is hiding the thing you should be afraid of. There is also a third, less romantic reason RMSE is everywhere: it is the thing most models are actually *fitted* to minimise, so reporting it is consistent with how the model was built. The practical position that most working people land on is: **report both, plus the worst single error.** Three numbers cost nothing to compute and make it impossible for a reader — or for you — to be fooled by an average that looks fine because the disasters are rare.
+**People genuinely disagree about this, and it is not a gap in your knowledge — it is a real argument with two defensible sides.** MAE asks *"how wrong am I on a typical day?"* RMSE asks *"how bad does it get?"* Our Model A and Model B have **identical** MAE and RMSE values three times apart, so the choice of metric decides which model wins — and that means choosing the metric is really choosing which question your project is about.
+
+One camp says report MAE, because it is the honest description of the typical case and it is the one you can say out loud to a non-technical person; RMSE, they argue, lets a single freak outlier dominate a headline number and makes models look worse than they are in daily use.
+
+The other camp says report RMSE, because in most real deployments the disasters are what hurt you, and a metric that treats one enormous mistake the same as ten small ones is hiding the thing you should be afraid of.
+
+There is also a third, less romantic reason RMSE is everywhere: it is the thing most models are actually *fitted* to minimise, so reporting it is consistent with how the model was built.
+
+The practical position that most working people land on is: **report both, plus the worst single error.** Three numbers cost nothing to compute and make it impossible for a reader — or for you — to be fooled by an average that looks fine because the disasters are rare.
 
 **"We picked depth 4 by looking at the test scores. Isn't that cheating?"**
 
@@ -1072,6 +1099,8 @@ No — and the way to see that is to ask what each model can *give* you. The lin
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This table lists the usual ways the lesson slips, why each happens, and what to do on the spot.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1089,6 +1118,8 @@ No — and the way to see that is to ask what each model can *give* you. The lin
 ---
 
 ## 🧭 Differentiation
+
+This section gives you three routes through the lesson: for a student who is struggling, one who is flying, and one who will not engage today.
 
 ### If the student is struggling
 
@@ -1195,6 +1226,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section is the homework script and the time estimate. Say it as written, then check the workbook sections against the list after it.
 
 **Say this:**
 
@@ -1917,9 +1950,20 @@ The best answers treat the depth-9 bump honestly rather than ignoring it or pani
 
 ## 🔮 Next Week Preview
 
-Week 34 is the start of the capstone, and it is the week the training wheels come off. There is no new syntax — that is deliberate and it is the point. Instead the student picks **their own question**, one they could genuinely turn out to be wrong about, writes it down in a single sentence, and then goes and collects **at least 100 rows of their own data** to answer it. Step counts, bus arrival times, how long homework actually took against how long it was supposed to take, pocket money against what got spent — anything real, measured by them, over enough days to be worth analysing. Then the raw file gets saved once and never touched again, a copy gets cleaned, and every repair goes into a numbered cleaning log with a *reason* beside it. Everything from Weeks 21 to 33 gets used, in their own hands, on data nobody has tidied for them.
+This section says what next week needs from you before it starts.
 
-**Prep early, and start now rather than next week.** Two things. **First: the data collection has to begin immediately** — if the student needs a week of step counts, that week starts the day you set Week 34, not the day they sit down to analyse. Have the conversation about what they might measure *before* Week 34 begins, and get them writing numbers down. **Second: dig out the two poster sheets** from the year-0 box; Weeks 34 to 36 build towards Showcase Day and the poster is easier to plan from the start than to retro-fit. Also worth doing now, while today is fresh: get them to write today's depth curve conclusion onto a card and pin it above the desk. Every model in the capstone gets scored on one fixed split, with both numbers reported, and the honesty sentence written underneath. That is not a rule you will have to enforce if the card is on the wall.
+Week 34 is the start of the capstone, and it is the week the training wheels come off. There is no new syntax — that is deliberate and it is the point.
+
+The student picks **their own question**, one they could genuinely turn out to be wrong about, writes it down in a single sentence, and then goes and collects **at least 100 rows of their own data** to answer it. Step counts, bus arrival times, how long homework actually took against how long it was supposed to take, pocket money against what got spent — anything real, measured by them, over enough days to be worth analysing.
+
+Then the raw file gets saved once and never touched again, a copy gets cleaned, and every repair goes into a numbered cleaning log with a *reason* beside it. Everything from Weeks 21 to 33 gets used, in their own hands, on data nobody has tidied for them.
+
+**Prep early, and start now rather than next week.** There are two things to do.
+
+1. **The data collection has to begin immediately.** If the student needs a week of step counts, that week starts the day you set Week 34, not the day they sit down to analyse. Have the conversation about what they might measure *before* Week 34 begins, and get them writing numbers down.
+2. **Dig out the two poster sheets** from the year-0 box. Weeks 34 to 36 build towards Showcase Day and the poster is easier to plan from the start than to retro-fit.
+
+Also worth doing now, while today is fresh: get them to write today's depth curve conclusion onto a card and pin it above the desk. Every model in the capstone gets scored on one fixed split, with both numbers reported, and the honesty sentence written underneath. That is not a rule you will have to enforce if the card is on the wall.
 
 ---
 

@@ -124,6 +124,8 @@ Anything from 5 to 10 is exactly where you should be after one lesson. **Twelve 
 
 ## ✍️ Practice Set A — Read It
 
+These questions check that you can read code and name its parts. You do not need the laptop yet.
+
 **A1. Fill in the blanks.**
 
 A **program** is a list of ____________________ in a ____________________, done from the ____________________ to the ____________________.
@@ -177,7 +179,7 @@ print("Main")
 print("Pudding")
 ```
 
-```
+```text
 ________________________
 ________________________
 ________________________
@@ -185,7 +187,7 @@ ________________________
 
 Now **swap line 2 and line 4** (the `Starter` line and the `Pudding` line). What does it print now?
 
-```
+```text
 ________________________
 ________________________
 ________________________
@@ -226,7 +228,7 @@ What's wrong: ____________________________________________________
 
 Error type I expect: ____________________  Fix: ____________________
 
-Two of those three give the **same** error type from **completely different** causes. Which two, and what is the one complaint Python is making in both? 
+Two of those three give the **same** error type from **completely different** causes. Which two, and what is the one complaint Python is making in both?
 
 ________________________________________________________________
 
@@ -253,7 +255,7 @@ The curved arrow means: __________________________________________
 
 ## ✍️ Practice Set B — Write It
 
-Now you write the code. Every file starts with a comment on line 1 saying what the file is for.
+This set is for writing code of your own. Every file starts with a comment on line 1 saying what the file is for.
 
 ---
 
@@ -389,7 +391,13 @@ ________________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
-Here is `party_bill.py`. It has **three** things wrong with it: one that stops Python reading the file at all, one that stops it halfway through, and one that does not produce an error message of any kind and is therefore the nastiest of the three.
+This section is for practising how to find and fix bugs, one at a time. Here is `party_bill.py`.
+
+It has **three** things wrong with it:
+
+1. One stops Python reading the file at all.
+2. One stops it halfway through.
+3. One gives no error message of any kind, which makes it the nastiest of the three.
 
 ```python
  1  # party_bill.py - what my party costs. THREE THINGS ARE WRONG.
@@ -482,6 +490,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle gives you only an output and asks you to work backwards to the file.
+
 ### The Four-Line Mystery
 
 A student ran a file and got exactly this on the screen:
@@ -540,6 +550,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+Two questions with no single right answer. Write full sentences.
 
 **T1.** In the chapter there is a claim that sounds backwards: *"an error message is the most helpful thing on the screen."*
 
@@ -635,6 +647,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing what a literal machine does with an instruction.
+
 Invent **your own** literal robot — not the sandwich one. Pick any everyday job (feeding a cat, brushing teeth, packing a bag), write **one** instruction for it, and draw what a completely literal machine would do.
 
 ![An empty framed drawing area split into two halves, for what you told the robot and what the robot actually did, with three reminder boxes underneath](../figures/fig-w01-8-draw-frame.svg)
@@ -656,6 +670,8 @@ Fill in the three boxes underneath: **the instruction** · **what went wrong** �
 
 ## 📊 Self-Check
 
+Tick one face for each row to show where you are after this week.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Type, save and run a `.py` file and read the output underneath | ☐ | ☐ | ☐ |
@@ -672,6 +688,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Check your work here only after you have finished the pages above. Each answer is in the same order as the questions.
 
 <details>
 <summary>Check your answers</summary>
@@ -941,7 +959,9 @@ Cost per guest: 4.791666666666667
 Candles on the cake: |||||||||||||
 ```
 
-**(a) `4.5` pizzas.** You cannot order half a pizza, so you round up to 5 — and the honest thing to do is what this file does: print **both** numbers, so a reader can see the real figure and the decision you made about it. What is **not** honest is quietly printing `5` and letting the reader think the sum came out at 5. Right now you have to type the 5 yourself, which means the computer is not doing that rounding — you are. There is a proper tool for it and it arrives in Week 3.
+**(a) `4.5` pizzas.** You cannot order half a pizza, so you round up to 5 — and the honest thing to do is what this file does: print **both** numbers, so a reader can see the real figure and the decision you made about it. What is **not** honest is quietly printing `5` and letting the reader think the sum came out at 5. Right now you have to type the 5 yourself, which means the computer is not doing that rounding — you are.
+
+There is a proper tool for it and it arrives in Week 3.
 
 **(b) The number `12` is typed seven times, on six lines** (guests, slices needed, pizzas needed, drinks cost, everything, cost per guest, which uses it twice — count them on your own file).
 

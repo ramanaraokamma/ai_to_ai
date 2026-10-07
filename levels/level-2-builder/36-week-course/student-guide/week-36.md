@@ -23,7 +23,9 @@
 
 ## 🪝 Start Here
 
-Eight words and phrases. From now until the end of today, none of them is allowed out of your mouth.
+This section sets the one rule for today: say the number, not a feeling about the number.
+
+Here are eight words and phrases. From now until the end of today, none of them is allowed out of your mouth.
 
 ```text
 magic  ·  the AI figured it out  ·  pretty accurate  ·  it's smart
@@ -32,7 +34,7 @@ basically perfect  ·  the data speaks for itself  ·  obviously  ·  just
 
 Seven of those are banned for the same reason: **they are ways of saying a number without saying a number.**
 
-"Pretty accurate" — how accurate? Compared to what? On how many rows? Every one of those phrases is a place where you *had* a real number and chose a feeling instead.
+Take "pretty accurate". How accurate? Compared to what? On how many rows? Every one of those phrases is a place where you *had* a real number and chose a feeling instead.
 
 ![Eight words with a number hiding behind them](../figures/fig-w36-5-banned-words-tally.svg)
 *Figure 36.1 — Behind every one of those phrases there was a number you already knew.*
@@ -45,13 +47,15 @@ Why is "just" banned?
 
 Because of sentences like this one: *"I just dropped the weird rows."*
 
-Listen to what that sentence does. There were rows. You made a decision about them. You had a reason — or you did not, which is worse. And the word **just** takes all of that and hides it, so nobody asks.
+Listen to what that sentence does. There were rows, and you made a decision about them. You had a reason, or you did not, which is worse. The word **just** hides all of that, so nobody asks.
 
 > **Every "just" is a decision you skipped explaining.**
 
 Same with **obviously**. If it were obvious you would not need to say it. "Obviously" means *please do not ask me about this bit*.
 
-So here is what is actually being asked of you today, and it is harder than it sounds. Somebody who does not code is going to sit next to you while you read your notebook out loud. They are allowed to interrupt. And **every single time a number leaves your mouth, you say its units and what you are comparing it to.**
+Here is what is asked of you today, and it is harder than it sounds. Somebody who does not code will sit next to you while you read your notebook out loud. They are allowed to interrupt.
+
+**Every single time a number leaves your mouth, you say its units and what you are comparing it to.**
 
 > *"Off by 2.35 minutes, against a baseline of 7.98 minutes, on 26 rows the model had never seen."*
 
@@ -60,6 +64,8 @@ That sentence takes six seconds. It is the difference between being **believed**
 ---
 
 ## 🧠 The Big Idea
+
+This section explains the five ideas behind showcase day: the running order, the question bank, silent bugs, the syntax ladder and the gate to the next level.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
@@ -71,7 +77,7 @@ That sentence takes six seconds. It is the difference between being **believed**
 
 **The analogy.** You are not selling the project. You are giving somebody a guided tour of a building you built, including the corner where the floor creaks.
 
-**The running order, and the proportions matter more than they look:**
+**The running order.** The proportions matter more than they look.
 
 ![Eight minutes, seven stops](../figures/fig-w36-1-showcase-running-order.svg)
 *Figure 36.2 — The charts get two whole minutes and the cleaning gets seventy-five seconds. That is deliberate.*
@@ -86,11 +92,10 @@ That sentence takes six seconds. It is the difference between being **believed**
 | 6:30 | What I got wrong (60 s) | Three admissions with numbers. Show the worst-five table and explain the pattern. |
 | 7:30 | Whose data, what it costs (30 s) | Who is in it, who would pay for a wrong answer — by role, not "users" — and whether you would let anyone decide with it yet. |
 
-**Two things in there that surprise everybody.**
+**Two things in there surprise everybody.**
 
-**The charts get a quarter of the whole showcase.** Not because charts take long to explain — you are not explaining them, you are reading five sentences. **Those five sentences are your argument.**
-
-**And you start with being wrong.** Stop number one includes reading your dated prediction from Week 34, including the part that turned out to be wrong. Leading with a mistake you found yourself buys you trust for the remaining seven and a half minutes, and it costs you nothing, because you were going to be wrong about something anyway.
+1. **The charts get a quarter of the whole showcase.** Charts do not take long to explain, because you are not explaining them. You are reading five sentences, and **those five sentences are your argument.**
+2. **You start with being wrong.** Stop number one includes reading your dated prediction from Week 34, including the part that turned out to be wrong. Leading with a mistake you found yourself buys you trust for the remaining seven and a half minutes. It costs you nothing, because you were going to be wrong about something anyway.
 
 ### 2. The question bank, and why two of them are hard
 
@@ -110,9 +115,8 @@ That sentence takes six seconds. It is the difference between being **believed**
 
 **Why those two are the hard ones.** Both of them invite a defensive answer, and the defensive answer is the wrong one.
 
-"No, 126 is loads actually" **fails.** You have just told the person asking that you have not thought about it.
-
-"Yes — and here is exactly how small" **passes.**
+- "No, 126 is loads actually" **fails.** You have just told the person asking that you have not thought about it.
+- "Yes — and here is exactly how small" **passes.**
 
 ![Agree, then be more precise than they were](../figures/fig-w36-6-yes-and-here-is-how-small.svg)
 *Figure 36.4 — Agree with the criticism, then be more precise about it than the person criticising you.*
@@ -129,7 +133,9 @@ Look at what happens in the right-hand panel. You **agreed with the criticism**,
 
 > **💡 Try this:** say all three out loud, three times, until they come without thinking. They will, because they are short.
 
-**And one more thing, because everybody gets this wrong:** *"I don't know"* **is allowed**, and it is one of the strongest answers there is — as long as you follow it with what you *do* know. *"I don't know whether it would work for other people. Every row in my table is one of three people in one family, so I genuinely cannot tell you."* That answer will be believed. A confident guess will not.
+**One more thing, because everybody gets this wrong.** *"I don't know"* **is allowed**. It is one of the strongest answers there is, as long as you follow it with what you *do* know.
+
+*"I don't know whether it would work for other people. Every row in my table is one of three people in one family, so I genuinely cannot tell you."* That answer will be believed. A confident guess will not.
 
 ### 3. All four bugs are silent — and that is the last idea of the year
 
@@ -143,7 +149,7 @@ Look at what happens in the right-hand panel. You **agreed with the criticism**,
 
 **The analogy.** A doctor asks what hurts before reaching for anything. A student who types first and thinks second turns a twenty-second bug into a twenty-minute one.
 
-**And here is the thing about the four you will be given:**
+**Here is the thing about the four you will be given.**
 
 ![All four of them ran perfectly](../figures/fig-w36-7-all-four-bugs-are-silent.svg)
 *Figure 36.5 — Four wrong answers. Four empty traceback slots. Not one of them raised an error.*
@@ -168,9 +174,9 @@ A traceback is the computer on your side. It names the error type, it gives you 
 ![Every rung of the ladder, ticked](../figures/fig-w36-3-year-syntax-ladder-complete.svg)
 *Figure 36.6 — Twelve rungs, thirty-six weeks, and nothing skipped.*
 
-**How to use it, and it is not what you expect.** Do not tick a rung and say what it was called. Tick a rung and say **one thing you can do with it**, out loud.
+**How to use it.** Do not tick a rung and say what it was called. Tick a rung and say **one thing you can do with it**, out loud.
 
-Not "I did for loops." Instead:
+Not "I did for loops." Instead, say things like these:
 
 > ✅ W1–3 — *"I can make the computer print a sentence with a number worked out inside it."*
 > ✅ W7–9 — *"I can add up a hundred numbers without typing a hundred lines."*
@@ -180,7 +186,7 @@ Not "I did for loops." Instead:
 
 It takes about six minutes, and it is the only time all year you see the whole thing at once.
 
-**Thirty-six weeks ago you could not print "hello".** That is not a joke and it is not anybody being nice. Look at that ladder. Every rung on it is something you can do **from a blank file**, and almost nobody your age can do any of it.
+**Thirty-six weeks ago you could not print "hello".** That is not a joke and it is not anybody being nice. Look at the ladder. Every rung on it is something you can do **from a blank file**, and almost nobody your age can do any of it.
 
 ### 5. The Level 3 gate — and why an honest blank beats a tick
 
@@ -200,7 +206,7 @@ It takes about six minutes, and it is the only time all year you see the whole t
 | 5 | Explain leakage using `StandardScaler`, in under a minute, and say which direction it moves the score | The idea Level 3 assumes you have |
 | 6 | Draw the overfitting graph on a napkin — both lines, both axes labelled — and say what the gap means | The picture behind everything |
 
-**And now the part that matters.**
+**Now the part that matters.**
 
 > **The blank is the point.** A tick you talked yourself into is worse than a blank, because Level 3 will not slow down for a tick that is not true, and **you are the only person who can possibly know which ones are.**
 
@@ -223,13 +229,13 @@ A student who leaves gate 3 blank and writes *"I need ten days of fifteen-minute
 
 ## 💻 Type This
 
-Four broken programs. There is no new syntax — the point is that you can now read all four of these, which you could not have done in September.
+In this section you type, run and fix four broken programs. There is no new syntax. You can now read all four of these, which you could not have done in September.
 
-For each one: **answer the three questions before you touch the keyboard.**
+For each one, **answer the three questions before you touch the keyboard.**
 
 ### Step 1 — `d1.py`, the average that isn't
 
-Type it exactly as it is, then run it.
+Type this file exactly as it is, then run it.
 
 ```python
 # d1.py - this should print the average of the five scores.
@@ -248,17 +254,19 @@ Average: 17.8
 
 **Question 1 — what kind?** It ran. No traceback. **Silent.**
 
-**Now hand-check it.** Add those five numbers up: 45 + 0 + 112 + 67 + 89 = **313**. Divided by 5 is **62.6**. The program said 17.8.
+**Now hand-check it.** Add the five numbers up: 45 + 0 + 112 + 67 + 89 = **313**. Divided by 5 is **62.6**. The program said 17.8.
 
 **Question 2 — which thing?** `total`.
 
-**Question 3 — which line?** Look at the loop body: `total = scores[i]`. Not `+=`. Plain **`=`**. So every time round the loop it *throws away* what it had and keeps the newest one. At the end, `total` is simply the last score — **89**. And 89 ÷ 5 = 17.8.
+**Question 3 — which line?** Look at the loop body: `total = scores[i]`. It is not `+=`. It is plain **`=`**.
+
+So every time round the loop it *throws away* what it had and keeps the newest one. At the end, `total` is the last score, **89**. And 89 ÷ 5 = 17.8.
 
 **There is a second bug.** Where does the loop start? `range(1, len(scores))` — so index 0, the 45, is **never visited**.
 
 ### Step 2 — fix only one bug, on purpose
 
-Change `total =` to `total +=` and leave the range alone.
+Change `total =` to `total +=` and leave the range alone. Type this file and run it.
 
 ```python
 # d1_half.py - one bug fixed, one left. Watch what happens.
@@ -281,6 +289,8 @@ Average: 53.6
 
 ### Step 3 — the real fix
 
+Type this version and run it.
+
 ```python
 # d1_fixed.py - both bugs gone, and one whole class of bug deleted.
 scores = [45, 0, 112, 67, 89]
@@ -296,11 +306,16 @@ print("Average:", total / len(scores))
 Average: 62.6
 ```
 
-**Two habits worth stealing.** Loop over the **items**, not the indices, whenever you do not need the position — that deletes the whole off-by-one family of bugs at once. And use `+=` for anything you have called `total`.
+**Two habits worth stealing.**
+
+1. Loop over the **items**, not the indices, whenever you do not need the position. That deletes the whole off-by-one family of bugs at once.
+2. Use `+=` for anything you have called `total`.
 
 *(Once you trust it: `print("Average:", sum(scores) / len(scores))`. Write the loop first, though. Week 12's point was that you should be able to build the tool before you use the built-in.)*
 
 ### Step 4 — `d2.py`, the top scorer who isn't
+
+Type this file and run it.
 
 ```python
 # d2.py - this should find the highest score and the average score.
@@ -330,13 +345,13 @@ Average:   227144525.0
 
 **Last.**
 
-**One root cause, three wrong answers.** Look at the DataFrame. `"90"`, `"85"`, `"78"`, `"100"` — **quotes.** That column is text.
+**One root cause, three wrong answers.** Look at the DataFrame. `"90"`, `"85"`, `"78"` and `"100"` all have **quotes.** That column is text.
 
 - `.max()` compares them **alphabetically**, character by character. `'9'` comes after `'1'`, so `"90"` beats `"100"` and the comparison stops at the first character.
 - `.sort_values()` does the same, which is why Divya sinks to the bottom.
 - `.mean()` on a text column **glues the strings together** — `"90"+"85"+"78"+"100"` = `"908578100"` — and divides that by 4. Hence 227144525.0.
 
-**The one line to run after every single `read_csv`, for the rest of your life:**
+Run this one line after every single `read_csv`, for the rest of your life.
 
 ```python
 print(df.dtypes)
@@ -380,7 +395,7 @@ Hand-check: 90 + 85 + 78 + 100 = 353, over 4 = **88.25**. ✅
 
 ### Step 5 — `d3.py`, the score that lies
 
-This is the one that matters most. It reads the `data/clean.csv` you built last week.
+This is the one that matters most. It reads the `data/clean.csv` you built last week. Type this file next.
 
 ```python
 # d3.py - the score that lies. Three separate bugs, no error message.
@@ -419,7 +434,7 @@ R2: 0.9386630917616082
 
 **No `random_state`.** That is bug three, and it is the only one you can *see* without reading anything carefully.
 
-**Three problems, ranked worst first:**
+Here are the three problems, ranked worst first.
 
 | Rank | Line | Problem | Effect |
 |:--:|:--:|---|---|
@@ -427,7 +442,7 @@ R2: 0.9386630917616082
 | **2** | 13 | **Leakage.** `fit_transform(X)` runs *before* the split, so the column averages were computed using the test rows too. | Even after fixing problem 1, the test score is inflated. |
 | **3** | 16 | **No `random_state`.** Every run gives a different split and a different number. | Not reproducible. Nothing can be compared to anything. |
 
-**The fix — three repairs, and notice that the order of the lines is most of it:**
+**The fix.** Three repairs, and the order of the lines is most of it. Type this file and run it.
 
 ```python
 # d3_fixed.py - the honest version. Same model, same data, three repairs.
@@ -471,7 +486,7 @@ test rows: 26  ·  one row is worth 3.8%
 
 ### Step 6 — `d4.py`, the chart that argues dishonestly
 
-Run it, then look at the picture before you look at the code.
+Type this file and run it. Look at the picture before you look at the code.
 
 ```python
 # d4.py - this is meant to show mean scores by house so a reader can compare them.
@@ -490,25 +505,25 @@ plt.savefig("houses.png")
 
 It looks like *loads*. Green looks like a stump.
 
-**Now the arithmetic.** Green scored 65.1. Red scored 72.4. Out of a hundred. The real gap is **7.3 points**, which is about a tenth.
+**Now the arithmetic.** Green scored 65.1 and Red scored 72.4, out of a hundred. The real gap is **7.3 points**, which is about a tenth.
 
-But on an axis that starts at 64:
+On an axis that starts at 64, the visible bars are:
 
 ```text
 Red's visible bar   = 72.4 - 64 = 8.4 units
 Green's visible bar = 65.1 - 64 = 1.1 units
 ```
 
-So Green *looks* about **87% smaller** when it is really about 10% smaller. **An eight-times exaggeration, and not one number was faked.** The lie lives entirely in `plt.ylim(64, 73)`.
+So Green *looks* about **87% smaller** when it is really about 10% smaller. That is an eight-times exaggeration, and not one number was faked. The lie lives entirely in `plt.ylim(64, 73)`.
 
-**Four things wrong:**
+There are four things wrong:
 
 1. **The truncated y-axis** — the whole exaggeration.
 2. **No axis labels at all**, so nobody knows whether these are marks, percentages or points.
 3. **A title that is a topic** — `"Chart"` — instead of a finding.
 4. **No group sizes**, so Green might be forty students or two.
 
-**The fix, with all four repaired:**
+**The fix.** Type this file to repair all four problems.
 
 ```python
 # d4_fixed.py - identical data. Honest picture.
@@ -540,7 +555,7 @@ print("saved houses_fixed.png")
 saved houses_fixed.png
 ```
 
-Open it. **Three bars of almost the same height — because that is the truth.** Same data. Same numbers.
+Open `houses_fixed.png`. It uses the same data and the same numbers. **Three bars of almost the same height — because that is the truth.**
 
 > **The most effective visual lies never touch the numbers at all.**
 
@@ -548,15 +563,15 @@ Open it. **Three bars of almost the same height — because that is the truth.**
 
 Look back at all four programs. **How many of them printed an error message?**
 
-**None.** All four ran perfectly and handed you a wrong answer with a straight face.
+**None.** All four ran and handed you a wrong answer with a straight face.
 
-That is the last thing to say about programming this year, and it is why you hand-check a value, print your dtypes, and ask which split your number came from.
+That is the last thing to say about programming this year. It is why you hand-check a value, print your dtypes, and ask which split your number came from.
 
 ---
 
 ## 🔍 Worked Examples
 
-Three more silent bugs, in three different places. For each one, the three questions first, then the hand-check, then the fix.
+This section works through three more silent bugs, in three different places. For each one, you ask the three questions first, then do the hand-check, then read the fix.
 
 ### Worked Example 1 — Late pizzas (food): the percentage that is always zero
 
@@ -592,7 +607,7 @@ Percent late: 0 %
 
 **The bug is one character.** `//` is **floor division** — Week 3. `6 // 12` is **0**, because 12 goes into 6 zero times and the remainder is thrown away. Then `0 * 100` is 0.
 
-**The fix:**
+**The fix.** Change `//` to `/`, then run it again.
 
 ```python
 # we36_1_late_pizzas.py - FIXED. One character.
@@ -614,11 +629,13 @@ Late   : 6
 Percent late: 50.0 %
 ```
 
-**Why this one is nasty.** `//` and `/` differ by one keystroke, both are legal, and the broken version prints a perfectly plausible **0%** — which somebody might read as good news. **And notice how well it hides.** `//` only gives the right answer when every single order is late (`12 // 12` is 1, so 100%). With 11 late orders out of 12 it still prints 0% — the worst news in the building reported as the best. The bug hides itself best in exactly the cases you care about.
+**Why this one is nasty.** `//` and `/` differ by one keystroke, and both are legal. The broken version prints a plausible **0%**, which somebody might read as good news.
+
+It also hides well. `//` only gives the right answer when every single order is late (`12 // 12` is 1, so 100%). With 11 late orders out of 12 it still prints 0%, which is the worst news in the building reported as the best. The bug hides itself best in exactly the cases you care about.
 
 ### Worked Example 2 — Innings labels (sport): everybody gets "decent"
 
-**What it should do:** label eight innings — a fifty, a good score, a decent one, or a duck-ish one.
+**What it should do:** label eight innings — a fifty, a good score, a decent one, or a duck-ish one. Type this file and run it.
 
 ```python
 # we36_2_innings_grades.py - label every innings.
@@ -657,7 +674,7 @@ for runs in scores:
 
 **Why.** An `if / elif / else` chain checks **top to bottom and stops at the first true condition** — Week 6. Every score of 10 or more satisfies `runs >= 10`, so Python assigns `"decent"` and never looks at the two `elif` lines below. Two conditions being true at once is perfectly legal; Python just takes the first.
 
-**The fix — put the narrowest condition first:**
+**The fix.** Put the narrowest condition first, then run it again.
 
 ```python
 # we36_2_innings_grades.py - FIXED. Narrowest condition first.
@@ -690,7 +707,7 @@ for runs in scores:
 
 ### Worked Example 3 — The gradebook (school): four pupils, five averages
 
-**What it should do:** print each of four pupils' average across five tests.
+**What it should do:** print each of four pupils' average across five tests. Type this file and run it.
 
 ```python
 # we36_3_gradebook.py - each pupil's average across five tests.
@@ -719,7 +736,7 @@ how many numbers came back: 5
 
 **Hand-check, and this one you can do with your eyes.** **There are four pupils. Five numbers came back.** That alone is the whole diagnosis, and it needs no arithmetic at all.
 
-And look at Ben's row: `4, 5, 3, 6, 4`. His average is about 4.4. **Not one of the five printed numbers is anywhere near 4.4.** They all sit around 7, because they are the averages of the *tests*, not of the *pupils*.
+Now look at Ben's row: `4, 5, 3, 6, 4`. His average is about 4.4. **Not one of the five printed numbers is anywhere near 4.4.** They all sit around 7, because they are the averages of the *tests*, not of the *pupils*.
 
 **Question 2 — which thing?** `axis`.
 
@@ -727,7 +744,7 @@ And look at Ben's row: `4, 5, 3, 6, 4`. His average is about 4.4. **Not one of t
 
 **Why.** **`axis` names the direction you collapse** — Week 19. `axis=0` collapses down the 4 rows and leaves one number per **column**, so 5 numbers, one per test. To get one number per pupil you collapse across the 5 columns: `axis=1`.
 
-**The fix, printing both so the shapes are visible:**
+**The fix.** This version prints both averages so the shapes are visible.
 
 ```python
 # we36_3_gradebook.py - FIXED. axis names the direction you COLLAPSE.
@@ -776,7 +793,7 @@ test averages: [7.   7.   6.75 7.25 7.25]
 
 ## 🐞 When It Breaks
 
-Showcase day produces its own errors, because code that has not been run from a clean start for a week always breaks. Every message below came from a real run.
+This section shows the errors that showcase day tends to produce, and how to read each one. Code that has not been run from a clean start for a week often breaks. Every message below came from a real run.
 
 ### Error 1 — the showcase-day error
 
@@ -791,7 +808,7 @@ NameError: name 'df' is not defined
 
 **What Python is telling you:** *"I have never heard of `df`."*
 
-Not "the file is missing", not "the table is empty" — **the name does not exist.** Either the cell that created it never ran, or it ran in a session you have since restarted.
+It does not say "the file is missing" or "the table is empty". **The name does not exist.** Either the cell that created it never ran, or it ran in a session you have since restarted.
 
 **The fix:** run the file from the top. In a notebook: **Restart, then Run All.**
 
@@ -820,6 +837,8 @@ Different error, and the difference is informative. `ModuleNotFoundError` means 
 
 ### Error 3 — presenting from the wrong folder
 
+You run a file that reads `data/clean.csv`:
+
 ```text
   File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pandas/io/common.py", line 856, in get_handle
     handle = open(
@@ -830,7 +849,7 @@ FileNotFoundError: [Errno 2] No such file or directory: 'data/clean.csv'
 
 The file almost certainly exists. **You are not in the folder you think you are in** — you opened the terminal somewhere else, and `data/clean.csv` is relative to wherever you are standing.
 
-**The fix, and check it with your eyes before you present:**
+**The fix.** Run these commands and check the output with your eyes before you present.
 
 ```bash
 ls data
@@ -842,28 +861,28 @@ ls data
 
 ### And the fourth kind — the one with no message
 
-All four of today's debug problems, and all three worked examples above. **No traceback, no warning, a plausible number, and it is wrong.**
+This kind covers all four of today's debug problems and all three worked examples above. **There is no traceback and no warning. You get a plausible number, and it is wrong.**
 
-There is no error message for these and there never will be. What catches them is four habits, and you now have all four:
+These bugs have no error message. What catches them is four habits, and you now have all four:
 
 1. **Hand-check one value.** Add the five numbers up yourself.
 2. **Count what came back.** Four pupils should give four numbers.
 3. **Print `df.dtypes`** after every `read_csv`, before trusting anything.
 4. **Ask which split the number came from.**
 
-**Errors are not you failing.** Thirty-six weeks ago a traceback was frightening. Read that first one again — `NameError: name 'df' is not defined` — and notice that you now know exactly what it means, exactly what caused it, and exactly what to do. **That is what changed this year.**
+**Errors are not you failing.** Thirty-six weeks ago a traceback was frightening. Read that first one again: `NameError: name 'df' is not defined`. You now know what it means, what caused it, and what to do. **That is what changed this year.**
 
 ---
 
 ## 🎲 What We Did In Class
 
-If you missed it, all of this works at home. You need a laptop, your notebook, a pen, a red pen, and **one real adult who does not code.**
+This section lists the five parts of the class, so you can run the same session at home if you missed it. You need a laptop, your notebook, a pen, a red pen, and **one real adult who does not code.**
 
 ### Part 1 — the banned words (7 minutes)
 
-Write the eight banned words up where you can see them, with a tally sheet underneath. Somebody makes a mark every time one escapes. Nobody stops you; you just see the marks at the end.
+Write the eight banned words up where you can see them, with a tally sheet underneath. Somebody makes a mark every time one escapes. Nobody stops you. You just see the marks at the end.
 
-Then practise the frame out loud, on your own project:
+Then practise this frame out loud, on your own project.
 
 ```text
 "Off by ______ [units], against a baseline of ______, on ______ unseen rows."
@@ -871,7 +890,7 @@ Then practise the frame out loud, on your own project:
 
 ### Part 2 — what you are being judged on (16 minutes)
 
-The eight rubric rows, told to you **before** you present, because a rubric you find out about afterwards is a trap:
+These are the eight rubric rows. You are told them **before** you present, because a rubric you find out about afterwards is a trap.
 
 1. Your question and how you designed the columns
 2. Your collection — 100+ rows, with real variety
@@ -882,13 +901,15 @@ The eight rubric rows, told to you **before** you present, because a rubric you 
 7. Your "what I got wrong"
 8. Whose data it is and what a wrong answer would cost a real person
 
-**Notice what is not on that list.** Nowhere does it say *"the model scored well."* You can get top marks with a model barely better than guessing, as long as you say so with a number. And you can **lose** marks with a model that scores 0.99, because 0.99 on data you collected yourself is a warning light.
+**Notice what is not on that list.** Nowhere does it say *"the model scored well."*
+
+You can get top marks with a model barely better than guessing, as long as you say so with a number. You can **lose** marks with a model that scores 0.99, because 0.99 on data you collected yourself is a warning light.
 
 Then the two hard questions, practised until "yes" comes out first.
 
 ### Part 3 — the debug round (18 minutes)
 
-Four files on the laptop, and for each one the three questions answered **out loud, before a single key is pressed**:
+You get four files on the laptop. For each one, answer the three questions **out loud, before a single key is pressed**.
 
 ```text
 1. WHAT KIND?   a crash with a traceback, or a silent wrong answer?
@@ -900,7 +921,7 @@ All four are in the **Type This** section above, complete, with the real outputs
 
 ### Part 4 — the eight-minute showcase (20 minutes)
 
-**The audience's instructions**, read out before you start:
+The audience's instructions are read out before you start.
 
 ```text
 1. You may interrupt at any time.
@@ -911,7 +932,13 @@ All four are in the **Type This** section above, complete, with the real outputs
 4. At the end you get to ask three questions.
 ```
 
-**Your rules:** eight minutes, timer visible. One notebook, top to bottom, no slides, no jumping about. Every number gets its units and a comparison. **Baseline first**, before any model score leaves your mouth. No banned words.
+**Your rules:**
+
+- Eight minutes, timer visible.
+- One notebook, top to bottom, no slides, no jumping about.
+- Every number gets its units and a comparison.
+- **Baseline first**, before any model score leaves your mouth.
+- No banned words.
 
 Then the six questions from the bank, including both hard ones. Every answer contains a number.
 
@@ -937,21 +964,40 @@ Ask your audience this, afterwards:
 
 ## 💬 Talk About It
 
+These are three questions to discuss with a partner or your teacher. Each has a hint to start you off.
+
 **1. "What if the audience asks something I can't answer?"**
 
-*Hint:* say **"I don't know"**, and then say what you *do* know. That is not failure; it is the correct answer to most hard questions about data. *"I don't know whether it would work for other people — every row in my table is one of three people in one family, so I genuinely cannot tell you."* Any adult worth presenting to will recognise that immediately, and it will make everything else you said **more** believable, not less.
+*Hint:* say **"I don't know"**, and then say what you *do* know. That is not failure. It is the correct answer to most hard questions about data.
+
+*"I don't know whether it would work for other people — every row in my table is one of three people in one family, so I genuinely cannot tell you."* Any adult worth presenting to will recognise that immediately. It will make everything else you said **more** believable, not less.
 
 **2. "Do I really have to say the bit I got wrong out loud? To an actual person?"**
 
-*Hint:* think about who you trust. Adults are so used to being sold things that somebody voluntarily saying *"here is the weakness in my own work"* is genuinely startling. It makes the rest of what you said credible, because they now know you would have told them. That is not a trick — it is the reason honesty is the professional standard rather than just a nice idea.
+*Hint:* think about who you trust. Adults are so used to being sold things that somebody voluntarily saying *"here is the weakness in my own work"* is genuinely startling. It makes the rest of what you said credible, because they now know you would have told them. That is not a trick. It is the reason honesty is the professional standard rather than just a nice idea.
 
 **3. "When am I allowed to say a model 'works'?"** *(Nobody agrees, and this is one of the genuinely unsettled questions in the field.)*
 
-*Hint:* everybody agrees on the **floor** — a model that cannot beat the baseline does not work, full stop. Past that, people disagree, and they disagree because **"works" is not a property of the model at all.** It is a property of the model *plus what you are going to do with it*. A model that suggests which song to play next can be barely better than guessing and still be useful, because the cost of a bad suggestion is that you press skip. A model that helps decide whether somebody gets a loan needs to be far better than the baseline before anyone switches it on — and "far better" still does not tell you how much better, because the real question is what it costs the person who is refused unfairly. So the honest position is: **"works" is a judgement about consequences, not a fact about mathematics.** What you can *always* do is state the number, its units, the baseline, how many rows it was measured on, and who would pay if it were wrong. Do those five things and you have said everything that is actually knowable.
+*Hint:* everybody agrees on the **floor**. A model that cannot beat the baseline does not work, full stop. Past that, people disagree, because **"works" is not a property of the model at all.** It is a property of the model *plus what you are going to do with it*.
+
+- A model that suggests which song to play next can be barely better than guessing and still be useful, because the cost of a bad suggestion is that you press skip.
+- A model that helps decide whether somebody gets a loan needs to be far better than the baseline before anyone switches it on. "Far better" still does not tell you how much better, because the real question is what it costs the person who is refused unfairly.
+
+So the honest position is: **"works" is a judgement about consequences, not a fact about mathematics.** What you can *always* do is state five things:
+
+1. the number
+2. its units
+3. the baseline
+4. how many rows it was measured on
+5. who would pay if it were wrong
+
+Do those five things and you have said everything that is actually knowable.
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section shows four wrong ideas people hold about showcase day, each next to the better answer.
 
 ### Trick 1 — "the right answer to a criticism is a defence"
 
@@ -992,6 +1038,8 @@ Every one of today's four debug problems ran perfectly. **A crash is help; a pla
 
 ## 🌍 Where You've Seen This
 
+This section shows where the same habits of honest, checkable answers turn up outside this course.
+
 1. **A courtroom.** A witness who says "I don't recall" is believed more than one who is certain about everything. Certainty about small details is what makes a story sound rehearsed.
 2. **A doctor's appointment.** *"How likely is it?"* — a good doctor gives you a number and the size of the group it came from. A bad one says "very unlikely", which is the medical version of "pretty accurate".
 3. **Product recalls.** Somebody found a limitation, wrote it down with a number, and said it out loud before anybody asked. That is a "what I got wrong" page with lawyers attached.
@@ -1003,8 +1051,10 @@ Every one of today's four debug problems ran perfectly. **A crash is help; a pla
 
 ## 🧭 Where This Fits
 
-Last week. Look at the map properly: there is not one dashed box left on it anywhere. Five solid
-stages, ten solid tiles, and the gold one is the tile you are standing in right now. Thirty-six weeks
+This section shows where this week sits on the course map. It is the last week.
+
+Look at the map properly. There is not one dashed box left on it anywhere. There are five solid
+stages and ten solid tiles, and the gold one is the tile you are standing in right now. Thirty-six weeks
 ago almost the whole picture was dotted lines and week numbers.
 
 ![The Level 2 pipeline in Week 36: the last tile closes and every box on the map is solid](../figures/fig-w36-0-where-this-fits.svg)
@@ -1029,6 +1079,8 @@ left to right, are the running order of your showcase. This is the picture you f
 
 ## 🔑 Remember This
 
+These are the things to keep from this week and from the year.
+
 - **Eight minutes, seven stops, one notebook, out loud.** Start with the bit you got wrong; it buys trust and costs nothing.
 - **Every number gets its units and a comparison.** "Off by 2.35 minutes, against a baseline of 7.98, on 26 unseen rows" — six seconds, and it is the difference between being believed and being nodded at.
 - **Agree, then be more precise than the person criticising you.** "Yes. 26 test rows, so one row is 3.8%."
@@ -1039,6 +1091,8 @@ left to right, are the running order of your showcase. This is the picture you f
 - **Thirty-six weeks ago you could not print "hello".**
 
 ### The four habits that catch a silent bug
+
+These four checks are illustrations. They need the variables from the earlier programs, so they are not a file to run on their own.
 
 ```python
 # 1. hand-check one value
@@ -1056,6 +1110,8 @@ print(f"test  R2: {model.score(X_test, y_test):.3f}   on {len(y_test)} unseen ro
 
 ### And the three sentences to have ready
 
+Fill in the blanks for your own project.
+
 ```text
 "Off by ______ [units], against a baseline of ______, on ______ unseen rows."
 "Yes - and here is exactly how small: ______ test rows, so one row is ______%."
@@ -1065,6 +1121,8 @@ print(f"test  R2: {model.score(X_test, y_test):.3f}   on {len(y_test)} unseen ro
 ---
 
 ## 📓 New Words
+
+These are the four words from this week.
 
 ![Week 36 words, drawn](../figures/fig-w36-8-vocab-icons.svg)
 *Figure 36.9 — This week's four words, drawn.*
@@ -1080,7 +1138,7 @@ print(f"test  R2: {model.score(X_test, y_test):.3f}   on {len(y_test)} unseen ro
 
 ## 📤 Your Homework
 
-Go to **[the Week 36 workbook](../workbook/week-36.md)**. There is no new work. Two things, and neither of them is for your teacher.
+This section lists the homework pages and how long each takes. Go to **[the Week 36 workbook](../workbook/week-36.md)**. There is no new work. Two things are for you, and neither of them is for your teacher.
 
 | Page | What to do | Time |
 |---|---|---|
@@ -1093,13 +1151,11 @@ Go to **[the Week 36 workbook](../workbook/week-36.md)**. There is no new work. 
 
 ### About that letter
 
-Three things in it.
+Put three things in it.
 
-**One:** the hardest **moment** of this year, and what you did about it. Not the hardest topic — the hardest *moment*. The evening something would not run.
-
-**Two:** one thing you can do now that you genuinely could not do in September. Be specific enough that September-you would not believe it.
-
-**Three:** what you want to **build** next, and why. Not what you want to learn. What you want to **build** — something that does not exist yet and that you would like to exist.
+1. **The hardest moment of this year**, and what you did about it. Not the hardest topic. The hardest *moment*, such as the evening something would not run.
+2. **One thing you can do now** that you could not do in September. Be specific enough that September-you would not believe it.
+3. **What you want to build next, and why.** Not what you want to learn. Something that does not exist yet and that you would like to exist.
 
 Then put a date on it and put it somewhere you will find it at the end of Level 3.
 
@@ -1107,7 +1163,7 @@ Then put a date on it and put it somewhere you will find it at the end of Level 
 
 > **⚠️ Watch out:** the gate check is the one piece of work this year where being generous to yourself costs you something real. **Six ticks on a day when three are not true teaches you nothing**, and Level 3 arrives regardless. Pick the gate you least believe and test it, right now, with a timer.
 
-**That letter is the only piece of work this year that is entirely for you, and it is the one you are most likely to still have in ten years.**
+**That letter is the only piece of work this year that is entirely for you.** It is the one you are most likely to still have in ten years.
 
 ---
 

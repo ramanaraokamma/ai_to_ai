@@ -134,6 +134,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+These questions are for reading code and working out what it does, using only your head and a pencil. Check with the computer afterwards.
+
 **A1. How many values, and what is the last one?** Two separate questions with two different answers. Fill in every cell **without running anything**, then check.
 
 | `range(...)` | Values it hands out | How many | Last one | Working |
@@ -183,6 +185,7 @@ for n in range(2, 11, 2):
 **A4. Spot the bug — three programs, and each one is broken in a different way.** For each: does it produce an error message, and what is actually wrong?
 
 **(i)**
+
 ```python
 total = 0
 for n in range(1, 6):
@@ -190,17 +193,21 @@ for n in range(1, 6):
     total += n
 print(total)
 ```
+
 Error message? ______  What's wrong: ______________________________
 
 **(ii)**
+
 ```python
 for n in range(1, 6):
     total += n
 print(total)
 ```
+
 Error message? ______  What's wrong: ______________________________
 
 **(iii)**
+
 ```python
 total = 0
 for n in range(1, 6):
@@ -208,6 +215,7 @@ for n in range(1, 6):
     average = total / 5
     print(average)
 ```
+
 Error message? ______  What's wrong: ______________________________
 
 **A5. Label the diagram.** The loop is `for n in range(1, 6):` with an accumulator inside it. Fill in **every** blank box, including the three rule boxes along the bottom.
@@ -245,7 +253,9 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
-**B1. One line.** Print exactly twenty dashes, using text multiplication.
+These tasks are for writing short loop programs yourself. Each one shows the expected output to check against.
+
+**B1. One line.** Print exactly twenty dashes, using text multiplication. Write your line in the box.
 
 ```python
 ________________________________________________________________
@@ -405,7 +415,7 @@ print("-" * 26)
 
 **Test it with these seven days:** 8200 · 9100 · 7400 · 10500 · 6800 · 9500 · 11500
 
-**Bug 1.** Run it as it is. The real message:
+**Bug 1.** Run it as it is. This is the real message:
 
 ```text
   File "steps.py", line 9
@@ -487,7 +497,7 @@ ________________________________________________________________
 
 (e) Run it again with all seven. What are the total and the average now? ______________ and ______________
 
-(f) **Hand-check the new average on paper. Show the division, not the answer.**
+(f) **Hand-check the new average on paper. Show the division, not the answer.** Use this box for your working:
 
 ```text
 
@@ -501,6 +511,8 @@ ________________________________________________________________
 ---
 
 ## 🧩 Puzzle of the Week
+
+This puzzle is for practising `range` until you can read it at a glance.
 
 ### The Range Detective
 
@@ -562,6 +574,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for explaining loops in your own words. Write full sentences.
+
 **T1.** A loop is **not** faster to run than typing the lines out. Ten `print` lines and a loop that prints ten lines finish in about the same fraction of a second.
 
 **So what is a loop actually for?** Write a paragraph. Name at least two things it gives you that have nothing to do with speed, and describe one moment from this week's work where you actually felt the benefit.
@@ -598,6 +612,8 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+This section is for building, checking and deliberately breaking this week's programs, then recording what you saw.
+
 ### Part 1 — the stepped grid
 
 Print the **even** times tables — 2, 4, 6, 8 and 10 — times 1 to 12, using a `range` with a **step** for the rows. The columns must line up.
@@ -630,7 +646,7 @@ ________________________________________________________________
 
 Run `scores.py` with the twelve numbers off your card, **ticking each one off with a pencil as you type it**: 88 92 70 65 100 54 78 81 47 90 62 73
 
-Fill in the running total column from the screen:
+Run the program and fill in the running total column from the screen:
 
 | Pass | Score in | Running total |
 |---|---|---|
@@ -651,7 +667,7 @@ Total: ______________  Average: ______________
 
 ### Part 3 — the hand-check, laptop shut
 
-**Full credit needs the working, not the answer.** I want to see the multiplication, the remainder, and where the last digit comes from.
+**Full credit needs the working, not the answer.** Show the multiplication, the remainder, and where the last digit comes from. Use the box below for your working.
 
 ```text
 
@@ -712,6 +728,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing the loop and its one accumulator box as a picture.
+
 Draw **a loop that totals five numbers** — the counter going round on the left, and the one box that fills up on the right. Use your own subject: overs bowled, days of screen time, pages read, anything you actually count.
 
 ![Draw It frame for Week 7](../figures/fig-w07-8-draw-frame.svg)
@@ -730,6 +748,8 @@ Draw **a loop that totals five numbers** — the counter going round on the left
 ---
 
 ## 📊 Self-Check
+
+This section is for rating yourself honestly on this week's skills. Tick one box per row.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -765,6 +785,8 @@ ________________________________________________________________
 
 ## ✅ Answers
 
+This is the answer section. Open it only after you have finished every page above.
+
 <details>
 <summary>Check your answers</summary>
 
@@ -791,7 +813,9 @@ ________________________________________________________________
 1 2 
 ```
 
-`range(3)` hands out **three** values starting at 0. `range(1, 3)` hands out `3 - 1 =` **two** values, 1 and 2. Note the trailing space on each line — `end=" "` puts a space after *every* number, including the last one.
+`range(3)` hands out **three** values starting at 0. `range(1, 3)` hands out `3 - 1 =` **two** values, 1 and 2.
+
+Note the trailing space on each line — `end=" "` puts a space after *every* number, including the last one.
 
 **P2.**
 
@@ -800,7 +824,11 @@ ________________________________________________________________
 3
 ```
 
-The first line is the accumulator: 1 + 2 + 3 = 6 ✔ The second line is the surprising one. **After a loop finishes, the counter still holds whatever went in last** — `range(1, 4)` handed out 1, 2, 3, so `n` is 3. The box was never emptied; the loop simply stopped refilling it. This is occasionally useful and often confusing, and it is a good reason not to use `n` for anything else afterwards.
+The first line is the accumulator: 1 + 2 + 3 = 6 ✔
+
+The second line is the surprising one. **After a loop finishes, the counter still holds whatever went in last** — `range(1, 4)` handed out 1, 2, 3, so `n` is 3. The box was never emptied; the loop simply stopped refilling it.
+
+This is occasionally useful and often confusing, and it is a good reason not to use `n` for anything else afterwards.
 
 **P3.**
 
@@ -843,7 +871,9 @@ The line says `total = n`, not `total += n`. So instead of *adding* each value i
 
 The `range(0, 101, 10)` row is the interesting one: **eleven numbers, not ten.** When there is a step, count the numbers rather than trusting the plain subtraction.
 
-**The two that hand out nothing** are `range(5, 5)` and `range(10, 1)`. What they have in common: **the count `stop - start` is zero or negative.** You can know that without running anything — do the subtraction first. A loop with zero passes runs its body zero times, which is not an error, just silence.
+**The two that hand out nothing** are `range(5, 5)` and `range(10, 1)`. What they have in common: **the count `stop - start` is zero or negative.**
+
+You can know that without running anything — do the subtraction first. A loop with zero passes runs its body zero times, which is not an error, just silence.
 
 **A2.** `range(2, 11, 2)` hands out 2, 4, 6, 8, 10 — five values.
 
@@ -994,7 +1024,9 @@ print(f"1 to 20 adds up to {total}")   # use it AFTER the loop, at the margin
 1 to 20 adds up to 210
 ```
 
-Check it two ways: the loop says 210, and the formula a mathematician would use — 20 × 21 ÷ 2 — also says 210 ✔ **Two completely different methods, same answer. That is what a correct program feels like.**
+Check it two ways: the loop says 210, and the formula a mathematician would use — 20 × 21 ÷ 2 — also says 210 ✔
+
+**Two completely different methods, same answer. That is what a correct program feels like.**
 
 **B4.**
 
@@ -1068,11 +1100,15 @@ Day 5 of 5: rupees spent? 30
 
 **Bug 1 — family 1, it never started.** No output at all, so nothing ran. The colon is missing from the end of the `for` line, and the `^` points at the exact character position where Python wanted it. Python read the whole line, reached the end, and found no colon.
 
+The corrected line:
+
 ```python
 for day in range(1, DAYS):
 ```
 
-**Bug 2 — family 2, it started then stopped.** The error is reported on line 11, but **the mistake is not on line 11.** Line 11 is `total += steps`, which is a perfectly good line — the problem is that nothing above it ever made the box. `+=` means "add to what is already there", and there was nothing there.
+**Bug 2 — family 2, it started then stopped.** The error is reported on line 11, but **the mistake is not on line 11.** Line 11 is `total += steps`, which is a perfectly good line — the problem is that nothing above it ever made the box.
+
+`+=` means "add to what is already there", and there was nothing there.
 
 The missing line goes **above the `for`, at the margin**:
 
@@ -1139,7 +1175,14 @@ Day 7 of 7: steps? 11500
   51500 + 11500 = 63000  ✔
 ```
 
-(g) **The only test that catches it is counting the prompts against the list.** Six prompts for seven numbers. Nothing else works: the total is a plausible number, the average is a plausible number, the program does not crash, and if you had not written down the seven days beforehand you would have no way to know. **A test that only checks "did it produce a number" would have missed this completely.**
+(g) **The only test that catches it is counting the prompts against the list.** Six prompts for seven numbers. Nothing else works:
+
+- The total is a plausible number.
+- The average is a plausible number.
+- The program does not crash.
+- If you had not written down the seven days beforehand, you would have no way to know.
+
+**A test that only checks "did it produce a number" would have missed this completely.**
 
 ---
 
@@ -1189,7 +1232,9 @@ Day 7 of 7: steps? 11500
 
 **P6.** **It cannot be done.** `range` only makes **evenly spaced** numbers — a start, a stop and a fixed step. The gaps between 3, 7, 8 and 100 are 4, 1 and 92, which is not one fixed step, so no single `range` can produce them.
 
-**And you have spotted a real limitation, not a trick question.** What you want is a **list**, and it arrives in Week 11 — you will write `for score in [3, 7, 8, 100]:` and it will do exactly what you expect. Everything you have built this week with an accumulator will still work; it will just have better data going into it.
+**And you have spotted a real limitation, not a trick question.** What you want is a **list**, and it arrives in Week 11 — you will write `for score in [3, 7, 8, 100]:` and it will do exactly what you expect.
+
+Everything you have built this week with an accumulator will still work; it will just have better data going into it.
 
 ---
 

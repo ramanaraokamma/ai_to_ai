@@ -65,6 +65,8 @@ And the reason it happened is one single fact about that middle line.
 
 ## 🧠 The Big Idea
 
+This section explains why `input()` gives you text, how to convert it, and how to read the errors you get when you forget. Read it once, then type the code in the next section.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. What `input()` actually does
@@ -138,13 +140,19 @@ Look at line 3 of the output. **`1212`.** Not 24. Because `age` holds the *text*
 | a number, `12` | multiply | `24` |
 | text, `"12"` | repeat it, twice over | `"1212"` |
 
-That is not a bug in Python. `"ha" * 3` giving `"hahaha"` is genuinely useful, and in Week 7 you will use it to draw divider lines in one character instead of forty. But it means **a forgotten conversion does not always crash. Sometimes it quietly lies to you** — and that is the hardest kind of bug there is.
+That is not a bug in Python. `"ha" * 3` giving `"hahaha"` is genuinely useful, and in Week 7 you will use it to draw divider lines in one character instead of forty.
+
+But it means **a forgotten conversion does not always crash. Sometimes it quietly lies to you** — and that is the hardest kind of bug there is.
 
 **Now the fair question: why doesn't `input()` just notice that `12` looks like a number?**
 
-Because sometimes it isn't one. Imagine a program that asks for a postcode and somebody types `0121`. If Python helpfully turned that into a number, the zero at the front would vanish — and for a postcode that zero is the whole point. Same for a phone number, a bank card, a house number written `07`.
+Because sometimes it isn't one.
 
-Python cannot tell "digits that are a quantity" from "digits that are a name". **You can.** So it hands you the characters exactly as typed and lets you say what they mean.
+Imagine a program that asks for a postcode and somebody types `0121`. If Python helpfully turned that into a number, the zero at the front would vanish — and for a postcode that zero is the whole point. Same for a phone number, a bank card, a house number written `07`.
+
+Python cannot tell "digits that are a quantity" from "digits that are a name". **You can.**
+
+So it hands you the characters exactly as typed and lets you say what they mean.
 
 > **💡 Try this:** some languages *do* guess. You may have heard people complain that JavaScript adds `"5"` and `5` and gets `"55"`. That is what guessing looks like from the inside. Python's answer is: I would rather stop and ask.
 
@@ -180,13 +188,15 @@ age = int(age_text)           # and now it is a number
 age = int(input("Age? "))     # ask, and convert, in the same breath
 ```
 
-Both work. **The one-line version is the one to learn**, and here is the reason: in the two-line version there is a moment — exactly one line long — where a box called `age` is sitting there holding text. That moment is where everybody forgets.
+Both work. **The one-line version is the one to learn.**
+
+Here is the reason. In the two-line version there is a moment, exactly one line long, where a box called `age` is holding text. That moment is where everybody forgets.
 
 **The analogy.** Convert at the *door*. The second you take the value off the human, change it into what you actually want. Then for the whole rest of the program it is a number and you never think about it again. Carry text around in your program and you have to remember, on every single line, that it isn't a number yet.
 
-Read the one-liner from the inside out, which is the order Python does it in:
+Read the one-liner from the inside out, which is the order Python does it in. The numbers show the order:
 
-```
+```text
         age = int( input("Age? ") )
                         └──────┘      1. ask the human, get back the text "12"
                    └──────────────┘   2. hand that text to int(), get back the number 12
@@ -322,9 +332,9 @@ Note the difference between the middle two, because it trips up adults as well:
 
 Hard-coding is usually a criticism. Today it is a technique.
 
-You will change today's program and re-run it about thirty times. Every run with `input()` in place costs you six typed answers — about forty seconds of typing, and forty seconds of nothing to think about. Thirty runs is twenty minutes of your life spent typing your own name.
+You will change today's program and re-run it about thirty times. Every run with `input()` in place costs you six typed answers — about forty seconds of typing, and forty seconds of nothing to think about.
 
-So: **write the six answers straight into the program first. Swap in `input()` at the very end, once the arithmetic and the card already work.** This isn't a shortcut. It is what people who do this for a living actually do — you shrink the loop.
+Thirty runs is twenty minutes of your life spent typing your own name. So: **write the six answers straight into the program first. Swap in `input()` at the very end, once the arithmetic and the card already work.** This isn't a shortcut. It is what people who do this for a living actually do — you shrink the loop.
 
 ![Why we hard-code the answers first](../figures/fig-w04-5-edit-run-loop.svg)
 *Figure 4.7 — The loop is the job. Anything you can do to make one lap faster, do.*
@@ -332,6 +342,8 @@ So: **write the six answers straight into the program first. Swap in `input()` a
 ---
 
 ## 💻 Type This
+
+In this section you build the whole bot, one small step at a time, and run it after every step. Some of the steps contain a mistake on purpose, and each one says so.
 
 One file, `about_me.py`, built in five steps. **Type it. No pasting, all year.**
 
@@ -403,7 +415,9 @@ NameError: name 'Round' is not defined. Did you mean: 'round'?
 
 `NameError` — "you used a name I have never heard of." And it even says which one: `Round`. And then, because Python is being genuinely kind here, it says *"Did you mean: round?"*
 
-Capital R. That's the entire problem. Python is **case-sensitive**, which means `Round` and `round` are two different words to it, as different as `dog` and `cat`.
+Capital R. That is the entire problem.
+
+Python is **case-sensitive**, which means `Round` and `round` are two different words to it, as different as `dog` and `cat`.
 
 Fix the R. Run again:
 
@@ -460,7 +474,9 @@ Run it:
 
 Compare the Name line with the City line. What is different? … Yes. There is no `f` before the quote.
 
-That little `f` is the switch that turns the curly braces on. Without it, `{name}` is just six characters — a curly bracket, n, a, m, e, a curly bracket — and `print` printed exactly those characters, faithfully.
+That little `f` is the switch that turns the curly braces on.
+
+Without it, `{name}` is just six characters — a curly bracket, n, a, m, e, a curly bracket — and `print` printed exactly those characters, faithfully.
 
 Add the `f`. Run again. Now the line reads `  Name    : Ramana`.
 
@@ -530,9 +546,11 @@ Run again. Somewhere in the middle of the output:
 <class 'str'>
 ```
 
-**There it is. `str`.** Python is telling you in three letters that the thing it is about to multiply by 365 is text. That is not a guess and it is not a feeling — it is the answer.
+**There it is. `str`.** Python is telling you in three letters that the thing it is about to multiply by 365 is text.
 
-> **🐞 If you see this error:** — or rather, if you see a *number* behaving oddly and **no** error — the first move is always `print(type(x))`. It is one line long and it is the most useful debugging trick you will learn this year.
+That is not a guess and it is not a feeling — it is the answer.
+
+> **🐞 If you see this error:** or rather, if a *number* behaves oddly and there is **no** error, the first move is always `print(type(x))`. It is one line long and it is the most useful debugging trick you will learn this year.
 
 Put the `int()` back, run it, check the number against 43,800. Then **delete the `print(type(...))` line.** Diagnostic lines come out when the diagnosis is done.
 
@@ -636,6 +654,8 @@ Check it by hand, because that is the habit: 15 × 365 = 5,475 ✔ · 200 × 365
 ---
 
 ## 🔍 Worked Examples
+
+These are finished programs that use the same ideas in new places: food, sport and school. Read each one, then check its numbers on paper.
 
 ### Worked Example 1 — The pizza order slip (food)
 
@@ -954,6 +974,8 @@ Six questions of your own, at least one taking a decimal (so at least one `float
 
 ## 💬 Talk About It
 
+These questions are for talking through with a parent, a friend or your teacher. There is no single right answer, and the hints only start you off.
+
 **1. "Why doesn't `input()` just work out that `12` is a number? It's obviously a number."**
 
 *Hint:* it looks obvious because you already know what the question was. Python doesn't. Think about a program that asks for a postcode and somebody types `0121`. What happens to that zero if Python "helpfully" makes it a number? Then find two more things that look like numbers and must not be treated as ones.
@@ -969,6 +991,8 @@ Six questions of your own, at least one taking a decimal (so at least one `float
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are mistakes that catch many learners. Each table shows the wrong belief next to the right one.
 
 ### Trick 1 — "I converted it, so it's fine"
 
@@ -1005,6 +1029,8 @@ The student who gets caught by this converts `age` correctly on line 11 and then
 
 ## 🌍 Where You've Seen This
 
+The ideas from this week are hiding in things you already use. Here are six places to spot them.
+
 1. **Every form you have ever filled in on a website.** Your age goes in as characters. Somewhere behind the page, a programmer had to convert `"12"` into `12` before anything could be added to it — and if they forgot, something on that page is quietly wrong.
 2. **A fitness app telling you "you walked 1,200,000 steps this year".** Nobody typed that. It is a derived value: today's steps, multiplied. Every number in every summary screen you have ever seen was worked out from smaller ones.
 3. **A phone number stored as text on purpose.** It looks like a number and must never be treated as one — the leading zero matters and you'd never add two together. This is the postcode argument, in your pocket.
@@ -1015,6 +1041,8 @@ The student who gets caught by this converts `age` correctly on line 11 and then
 ---
 
 ## 🧭 Where This Fits
+
+This section shows where this week sits in the whole course and what it connects to.
 
 Same pipeline, same five stages, and the gold tile has not moved for four weeks. That is because this
 week is the one that **finishes** it. Weeks 1, 2 and 3 each handed you one tool; today all three turn
@@ -1040,6 +1068,8 @@ bottom is the seven threads this course keeps returning to.*
 ---
 
 ## 🔑 Remember This
+
+These are the ideas to keep from this week, followed by a card of the syntax you used.
 
 - **`input()` always hands back text.** Always. Even when the human types `12`.
 - **Convert at the door.** `age = int(input("Age? "))`, on one line, so no box ever holds text that should be a number.
@@ -1076,6 +1106,8 @@ print(f"Alive about {age_days} days") # the f is what turns the braces on
 ---
 
 ## 📓 New Words
+
+These are the five words you met this week. Each one has a picture and an example.
 
 ![This week's five words as pictures](../figures/fig-w04-6-vocab-icons.svg)
 *Figure 4.9 — This week's five words, drawn.*

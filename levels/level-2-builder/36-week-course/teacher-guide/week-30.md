@@ -325,6 +325,8 @@ Nothing moves; the lab happens inside the box. Two threads lit: representation a
 
 ## 🧰 Prep Checklist
 
+This section lists what to do before class so that every number on the shared screen is one you have already seen.
+
 ### 20 minutes the night before
 
 - [ ] **Run the whole lab yourself, once, end to end.** This is not optional this week — the lab trains fifty models and saves a chart, and you want to have seen every number before it appears on a shared screen. The complete file is in the Answer Key under **Build It — The Classifier Lab**; type or paste it and run it. It takes a couple of seconds.
@@ -433,6 +435,8 @@ Nothing moves; the lab happens inside the box. Two threads lit: representation a
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the whole class: five segments, with the words to say and the questions to ask in each.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Two Numbers That Should Not Be in the Same Sum | 7 | 7 | 0.0001 against 225. On paper. |
@@ -456,9 +460,9 @@ Nothing moves; the lab happens inside the box. Two threads lit: representation a
 >
 > Now you're going to do exactly what you did in Week 28. Subtract, square, add up. Two columns, so two subtractions. Go on."
 
-Let them do it with a pencil.
+Let them do it with a pencil. The working should look like this:
 
-```
+```text
 hue gap     :  1.04 − 1.05 = −0.01      squared:   0.0001
 proline gap : 1065  − 1050  =  15       squared: 225.0000
 total       :                            225.0001
@@ -511,7 +515,7 @@ Write on the board:
 
 Do it on the board with the real numbers:
 
-```
+```text
 hue     : gap 0.01  ÷  spread 0.2279   =  0.0439    squared: 0.0019
 proline : gap 15    ÷  spread 314.02   =  0.0478    squared: 0.0023
 
@@ -559,7 +563,7 @@ Draw it on paper as you talk:
 >
 > Here's the one our model is about to produce. Read it with me."
 
-```
+```text
 [[12  0  0]
  [ 0 13  1]
  [ 2  5  3]]
@@ -629,7 +633,7 @@ print("confusion matrix (rows = truth, columns = guess):")
 print(confusion_matrix(y_test, predictions))
 ```
 
-Run it:
+Run it and compare with this output:
 
 ```text
 train accuracy: 0.7817
@@ -680,7 +684,7 @@ sklearn.exceptions.NotFittedError: This StandardScaler instance is not fitted ye
 >
 > And what would it even do without fitting? Subtract *what* mean? It doesn't know any means yet."
 
-Fix it, and complete the file:
+Fix it, and complete the file. This version fits the scaler on the training rows and uses the same scaler on the test rows:
 
 ```python
 # wine_scaled.py
@@ -753,7 +757,7 @@ proline column AFTER  scaling, first 5: [-0.21 -0.96 -0.42 -1.07  1.75]
 
 **Do this:** write on the board, under THE GAP from last week:
 
-```
+```text
   WINE, k = 5      raw columns      0.7778   on 36 rows
                    scaled columns   0.9444   on 36 rows
                    ----------------------------------
@@ -850,6 +854,8 @@ Then the usual ladder:
 
 ## 🎲 The Activity, In Full
 
+This section is the lab itself, in three parts: sweep `k` and plot it, choose a `k` in writing, then find the planted bug.
+
 ### The Classifier Lab, and the Bug That Improves Your Score
 
 ### Setup
@@ -860,7 +866,7 @@ Then the usual ladder:
 
 ### Part 1 — Sweep `k` and plot it (10 minutes)
 
-**Do this:** The student adds to `wine_scaled.py`, or starts `wine_choose_k.py`. Dictate:
+**Do this:** The student adds to `wine_scaled.py`, or starts `wine_choose_k.py`. Dictate this file, which tries every `k` in turn and saves the chart:
 
 ```python
 # wine_choose_k.py
@@ -974,7 +980,7 @@ saved wine_accuracy_vs_k.png
 
 **Do this:** have the student write these on the **Build It, Piece 3** lines (and the honesty sentence on Piece 4), in ink:
 
-```
+```text
 chosen k          : 9
 test accuracy     : 0.9722, on 36 held-back wines
 baseline          : 0.3989
@@ -1104,6 +1110,8 @@ difference: 2.72
 
 ## ❓ Questions Students Ask This Week
 
+This section gives honest answers to the questions this lesson tends to raise, so you are not inventing them live.
+
 **"If scaling is always better, why doesn't the library just do it automatically?"**
 
 Because it is not always better, and a library that silently changed your data would be a nightmare to debug. Two real cases where you should not scale. **Iris:** all four columns are centimetres on similar ranges, and standardising it actually makes kNN slightly *worse*, because petal measurements naturally vary more than sepal ones and that extra variation is genuine information — forcing every column to spread 1 throws it away. **Decision trees** (Week 31) do not measure distance at all; they ask "is this column above 2.5?", and scaling changes the threshold but never the answer, so it is pure waste. **The rule that survives both cases:** scale when your columns live on wildly different scales or in different units, and check rather than assume.
@@ -1142,6 +1150,8 @@ Because a machine that quietly rewrites your data is a machine you cannot debug.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the places this lesson most often slips, and what to do the moment each one happens.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The 0.3333 bug (test rows not scaled) goes unnoticed | There is no error message, and 0.3333 looks like a number | **The baseline is the defence.** Insist it is written down before any model is trained. Then the rule: any accuracy below the baseline means something is broken, regardless of whether Python complained. |
@@ -1159,6 +1169,8 @@ Because a machine that quietly rewrites your data is a machine you cannot debug.
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut, add or swap if the student is struggling, flying, or not engaging today.
 
 ### If the student is struggling
 
@@ -1268,6 +1280,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to use when you set the homework, and which workbook pages it maps to.
 
 **Say this:**
 

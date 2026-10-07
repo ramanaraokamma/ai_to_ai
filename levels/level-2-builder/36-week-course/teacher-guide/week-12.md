@@ -386,6 +386,8 @@ every week with one more piece filled in, and it is the only place either book s
 
 ## 🧰 Prep Checklist
 
+Use this list to get everything ready before class: the props, the folder and the two finished files.
+
 ### 20 minutes the night before
 
 - [ ] **Print the whole workbook** (Warm-Up through Self-Check). Build It Part 3 (the median proof) needs room for handwritten arithmetic — print it single-sided.
@@ -393,7 +395,7 @@ every week with one more piece filled in, and it is the only place either book s
 - [ ] **Find Week 11's four index cards and the pink number strip**, and put a pencil with them. You will lay the pencil *between* two cards to show what a slice's stop number is.
 - [ ] **Make the folder and check where you are.** In a terminal:
 
-```
+```bash
 cd ~/ai-academy/level2
 ls
 ```
@@ -588,6 +590,8 @@ AttributeError: module 'stats' has no attribute 'median'. Did you mean: 'mean'?
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the lesson plan. The table shows the timings, and each segment below it gives what to say, ask and watch for.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — You Don't Carve a New Ruler | 7 | 7 | A tin of tools, and four programs that each carved their own |
@@ -764,7 +768,7 @@ def mean(scores):
 
 Point at three things as they type: the guard on line 3 (`None` from Week 10, used on purpose), `for score in scores:` (this week's new loop, in its first real job), and the fact that **nothing in here prints.**
 
-Now: "Save it. Run it. `python3 stats.py`. What do you predict?"
+Now ask: "Save it. Run it. `python3 stats.py`. What do you predict?"
 
 They will predict something. **Run.**
 
@@ -871,7 +875,7 @@ ModuleNotFoundError: No module named 'stats.py'; 'stats' is not a package
 >
 > Take the `.py` off and run it again."
 
-Then, while you are there, show the other shape once:
+Then show the other way to import, once:
 
 ```python
 from stats import mean, median         # take just these two, by name
@@ -889,7 +893,7 @@ Say: "Right. I said I'd reach into your tin. Add this line to `main.py` first."
 print("  Median    :", stats.median(SCORES))
 ```
 
-Run it. It fails — because `median` does not exist yet:
+Run it. It fails, because `median` does not exist yet. The error should look like this:
 
 ```text
 AttributeError: module 'stats' has no attribute 'median'. Did you mean: 'mean'?
@@ -911,7 +915,7 @@ Bug Log entry: **"`AttributeError: module 'stats' has no attribute 'median'` →
 
 ### 🎲 Their Turn — Median, Odd Then Even (20 minutes)
 
-Full instructions in the next section. In the lesson flow:
+The full instructions are in the next section. In the lesson flow:
 
 - **Minutes 0–5:** workbook Build It Part 3 (the median proof), **on paper, before any code.** Five scores: sort them by hand, ring the middle, write it down. Then six scores: sort them, discover there are *two* in the middle, average them by hand.
 - **Minutes 5–13:** write `median` into `stats.py`. Then run `main.py` — which starts working with no changes at all.
@@ -923,7 +927,7 @@ Be nearly silent. Do not type.
 
 ## 🐞 The Debugging Clinic
 
-Every traceback below came from actually running a broken version of this week's code.
+Use this table when a student's program fails. Every traceback below came from actually running a broken version of this week's code.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
 |---|---|---|---|
@@ -966,6 +970,8 @@ This week the errors cluster into two families, and the diagnostic question is d
 
 ## 🎲 The Activity, In Full
 
+This section gives the full median activity, step by step, with the variations for easier and harder versions.
+
 ### Setup
 
 ![Two files, one import, same folder](../figures/fig-w12-3-two-files-one-import.svg)
@@ -979,9 +985,9 @@ This week the errors cluster into two families, and the diagnostic question is d
 
 ### Step 1 — The odd case, on paper (3 minutes)
 
-Five scores: `45, 0, 112, 67, 8`.
+Five scores: `45, 0, 112, 67, 8`. The student sorts them and marks the middle slot like this:
 
-```
+```text
 As typed :  45   0   112   67   8
 Sorted   :   0   8    45   67  112
 Slots    :   0   1     2    3    4
@@ -996,9 +1002,9 @@ Sanity check out loud: 0 and 8 are below it, 67 and 112 are above it. Two each s
 
 ### Step 2 — The even case, on paper (3 minutes)
 
-Now add one more innings: `45, 0, 112, 67, 8, 89`.
+Now add one more innings: `45, 0, 112, 67, 8, 89`. The sorted row looks like this:
 
-```
+```text
 Sorted   :   0   8    45   67   89  112
 Slots    :   0   1     2    3    4    5
                        ^    ^
@@ -1152,7 +1158,7 @@ Hand-check it: first half sums to 535, ÷ 10 = 53.5 ✔ · the whole season is 9
    Then the question: **"Why did `a` change when you never mentioned `a`?"** *(Because `b = a` never made a second list. There was only ever one list, with two labels on it. `a[:]` is the cheapest possible copy and it is a slice, which is why this belongs in this week and not another.)*
 3. **`mode`, without any library.** The most common value, and if several tie, the smallest of them. It needs a counting loop and `sorted()` for the tie rule, and no new syntax. Then the honest follow-up: "Your version looks at the whole list once per value. For twenty scores that's four hundred tiny steps and you'll never notice. For a million values it would be unusable. There is a fast way and it needs next week's lesson."
 4. **A text histogram in `main.py`**, using `"#" * n` from Week 7:
-   ```
+   ```text
      0 |
      4 | #
      8 | ##
@@ -1166,6 +1172,8 @@ Hand-check it: first half sums to 535, ÷ 10 = 53.5 ✔ · the whole season is 9
 ---
 
 ## ❓ Questions Students Ask This Week
+
+Use this section to prepare answers to the questions this week tends to raise.
 
 **"Why isn't the stop number included in a slice? That's just confusing."**
 
@@ -1211,6 +1219,8 @@ Yes, and that is exactly how real libraries are built — modules importing modu
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual trouble spots, why each one happens, and what to do on the spot.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | Twenty minutes are lost to `ModuleNotFoundError` | The two files are not in the same folder, or the terminal is somewhere else | **Prevent it, do not debug it.** Before a single line of `main.py` is typed, run `ls` and read the folder contents out loud together. If `stats.py` is not in that listing, stop and fix it. This one check is worth more than any amount of troubleshooting later. |
@@ -1227,6 +1237,8 @@ Yes, and that is exactly how real libraries are built — modules importing modu
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson for a student who is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1310,6 +1322,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to say when you assign the homework, and what it contains.
 
 **Say this:**
 
@@ -1975,7 +1989,7 @@ Complete file in the Prep Checklist; real output:
 
 **Every number checked by hand.** Sorted, the twenty scores are:
 
-```
+```text
 0, 4, 8, 15, 19, 23, 26, 34, 38, 45, 50, 56, 63, 67, 72, 77, 89, 90, 101, 112
 ```
 
@@ -2008,7 +2022,7 @@ The `for score in SCORES:` loop with a counter. A slice could not do it: a slice
 
 On paper first:
 
-```
+```text
 In order :  0   4   8  15  19  23  26  34  38  45  50  56  63  67  72  77  89  90 101 112
 Slots    :  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19
                                                 ^   ^
@@ -2025,7 +2039,7 @@ MEDIAN   = 47.5
 
 **Part 2 — the odd case: the same list with the last innings (26) dropped, leaving 19.**
 
-```
+```text
 In order :  0   4   8  15  19  23  34  38  45  50  56  63  67  72  77  89  90 101 112
 Slots    :  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
                                                 ^

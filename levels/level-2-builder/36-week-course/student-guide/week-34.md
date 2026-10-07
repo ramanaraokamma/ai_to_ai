@@ -365,7 +365,13 @@ python3 make_raw.py
 26 rows written to data/raw.csv
 ```
 
-**Look at what you just typed and do not correct it.** Row 3 says `Walk` with a capital W. Row 7 says `walk ` with a space after it. Row 15 says `about 20` instead of a number. Row 18 says zero minutes, which is not a journey, it is a teleport. Row 20 has no distance at all.
+**Look at what you just typed and do not correct it.**
+
+- Row 3 says `Walk` with a capital W.
+- Row 7 says `walk ` with a space after it.
+- Row 15 says `about 20` instead of a number.
+- Row 18 says zero minutes, which is not a journey, it is a teleport.
+- Row 20 has no distance at all.
 
 Every one of those was in the paper log. So every one of those goes in the file.
 
@@ -379,7 +385,7 @@ chmod 444 data/raw.csv
 
 That means: everyone can read this, nobody can write to it. Including you, at eleven o'clock at night, when you notice a typo.
 
-Watch what happens if you try to write to it now:
+Now run `make_raw.py` again. It tries to write to the locked file:
 
 ```bash
 python3 make_raw.py
@@ -414,6 +420,8 @@ df.info()                             # what type is every column?
 print()
 print(df.describe())                  # the numbers, summarised
 ```
+
+Run it:
 
 ```bash
 python3 look.py
@@ -629,6 +637,8 @@ Name: mode, dtype: int64
 ---
 
 ## 🔍 Worked Examples
+
+This section shows three small projects, each with its own question, its own `describe()` and its own cleaning log.
 
 ### Worked Example 1 — Pizza delivery (food)
 
@@ -889,6 +899,8 @@ That `ls` is not decoration. Look at the folder with your own eyes before you ru
 
 ### Error 2 — a capital letter you cannot see
 
+This line causes the error:
+
 ```python
 df["Minutes"] = pd.to_numeric(df["Minutes"], errors="coerce")
 ```
@@ -916,6 +928,8 @@ Index(['day', 'distance_km', 'mode', 'rain', 'minutes'], dtype='object')
 Then copy the name character for character. `minutes`, lower case.
 
 ### Error 3 — a whole column is not a single piece of text
+
+This line causes the error:
 
 ```python
 df["mode"] = df["mode"].strip()          # missing .str
@@ -986,12 +1000,14 @@ Then sign it and date it. Properly. This is a ritual and rituals work.
 
 ### Part 2 — the folders (5 minutes)
 
+In the terminal:
+
 ```bash
 mkdir -p data-detective/data data-detective/notes
 cd data-detective
 ```
 
-You are building exactly this:
+You are building exactly this folder layout:
 
 ```text
 data-detective/
@@ -1042,6 +1058,8 @@ That is not them being annoying. That is the whole week.
 
 ## 💬 Talk About It
 
+These are three questions to argue about with a friend, a parent or your teacher. Try your own answer first, then read the hint.
+
 **1. "The person in the basketball story did not fake a single number. So what exactly did they do wrong?"**
 
 *Hint:* think about **order**, not honesty. Which came first — the question or the looking? And what question does "what looks interesting in this data?" always get a yes to?
@@ -1052,11 +1070,15 @@ That is not them being annoying. That is the whole week.
 
 **3. "How much cleaning is too much cleaning?"** *(Nobody fully agrees on this one, and that is the honest answer.)*
 
-*Hint:* every cleaning decision trades two risks against each other. Leave a strange value in, and it might be a real measurement your model needs to see — the day it poured, the journey that genuinely took an hour. Take it out, and you might have removed a typo that would have wrecked everything. There is no rule that tells you which, because the answer depends on knowing your own data, which is exactly what a rule cannot do for you. What *everybody* agrees on is narrower: rows with no answer cannot be used, exact duplicates are not extra evidence, the same word spelled three ways is one thing, and **every decision must be written down with its reason so somebody else can disagree with it.** The disagreement is allowed. The silence is not.
+*Hint:* every cleaning decision trades two risks against each other. Leave a strange value in, and it might be a real measurement your model needs to see — the day it poured, the journey that genuinely took an hour. Take it out, and you might have removed a typo that would have wrecked everything.
+
+There is no rule that tells you which, because the answer depends on knowing your own data, which is exactly what a rule cannot do for you. What *everybody* agrees on is narrower: rows with no answer cannot be used, exact duplicates are not extra evidence, and the same word spelled three ways is one thing. Also, **every decision must be written down with its reason so somebody else can disagree with it.** The disagreement is allowed. The silence is not.
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four wrong ideas that sound sensible. Each one shows the wrong sentence next to the right one.
 
 ### Trick 1 — "cleaning means deleting the weird rows"
 
@@ -1099,6 +1121,8 @@ If `mode` is always `walk`, no model can learn anything about mode. If every dis
 
 ## 🌍 Where You've Seen This
 
+The ideas from this week turn up outside the classroom too. Here are six places.
+
 1. **The "ingredients" list on a packet.** That is a data card: what is in it, who made it, when, and — in the small print — what it might contain traces of. Somebody had to decide what counted as a column.
 2. **A cricket or football scorecard.** One row per innings or per match, every column with a unit, filled in *at the time*. It is a raw file, and nobody is allowed to go back and improve it afterwards.
 3. **"Track changes" in a document, or the history of a shared file.** That is a cleaning log with the reasons stripped out. Notice how frustrating it is when somebody edits your work and does not say why.
@@ -1137,6 +1161,8 @@ not.*
 
 ## 🔑 Remember This
 
+These are the seven things to keep from the week, plus a card of the syntax you used.
+
 - **A research question ends in a question mark and could turn out to be wrong.** If no result could prove you wrong, it is a topic, and topics quietly become whatever the data says.
 - **Four gates: care · 100 rows · one named target · every feature known before the target.** Gate 4 is leakage, and it is the one that sinks projects.
 - **Write your prediction down, with a number and units, and sign and date it before you collect.** A prediction made afterwards is not a prediction.
@@ -1146,6 +1172,8 @@ not.*
 - **Write down one thing your data cannot show, before you know the answer.** Afterwards you will not want to.
 
 ### Syntax reminder card
+
+This card collects the pandas and shell lines from the week in one place.
 
 ```python
 import pandas as pd
@@ -1169,6 +1197,8 @@ chmod 644 data/raw.csv     # writable again, if you must rebuild it
 ---
 
 ## 📓 New Words
+
+These are the five words from this week, with an example of each.
 
 ![Week 34 words, drawn](../figures/fig-w34-9-vocab-icons.svg)
 *Figure 34.9 — This week's five words, drawn.*

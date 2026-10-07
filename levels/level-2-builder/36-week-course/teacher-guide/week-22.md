@@ -415,11 +415,13 @@ Along the bottom, only **data** is lit.*
 
 ## 🧰 Prep Checklist
 
+This section lists what to prepare before the lesson, and holds the complete runnable files.
+
 ### 15 minutes the night before
 
 **1. Make the register card (2 minutes).** One index card, written by hand, big enough to read across a table:
 
-```
+```text
         REGISTER
    4  Arjun
    2  Kabir
@@ -536,7 +538,7 @@ Name: 5, dtype: object
 - Register card face down beside the laptop.
 - Write on the board, before they arrive, and leave it up all lesson:
 
-```
+```text
 loc  = by NAME      (labels on the edges)
 iloc = by COUNTING  (starts at 0)
 filter = by QUESTION
@@ -553,6 +555,8 @@ Do the typing next lesson as a fifteen-minute warm-up. Nothing later in the cour
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the lesson: the timings first, then each segment in order.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -586,7 +590,7 @@ Let them work it out. You want them to reach: *it depends what you meant.*
 
 **Do this:** Turn the register card over. Put it where they can read it. Point at it while you talk.
 
-```
+```text
         REGISTER
    4  Arjun
    2  Kabir
@@ -647,7 +651,7 @@ Let them work it out. You want them to reach: *it depends what you meant.*
 
 Write on the board:
 
-```
+```text
 week.loc[ row label , "column label" ]
 ```
 
@@ -691,7 +695,7 @@ Name: 0, dtype: object
 
 > "Tool number two. Same shape, one extra letter."
 
-```
+```text
 week.iloc[ row number , column number ]
 ```
 
@@ -979,7 +983,7 @@ Full instructions in the next section. In outline: ten English questions, the st
 
 Write it on the board:
 
-```
+```text
 Use loc unless you really mean "the first" or "the last".
 Names survive sorting and filtering. Positions do not.
 ```
@@ -1193,6 +1197,8 @@ There is a command that renumbers them, `reset_index(drop=True)`, and experience
 ---
 
 ## 🧭 Differentiation
+
+This section says what to change if the student is struggling, flying or not engaging.
 
 ### If the student is struggling
 

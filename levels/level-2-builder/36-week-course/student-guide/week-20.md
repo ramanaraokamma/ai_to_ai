@@ -73,6 +73,8 @@ Some people do. Some people don't. Some people hesitate and guess. Whichever you
 
 ## 🧠 The Big Idea
 
+This section explains the idea of the week in parts, using the grid you just marked with a highlighter. Read it with your marked paper beside you.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. A mask is a thing you can look at
@@ -432,6 +434,8 @@ Those two print lines are not decoration, they are a **check**. Ten in the first
 
 ### Step 2 — the mask, and looking at it
 
+Add these lines to the end of the file and run it.
+
 ```python
 above_50 = scores > 50                    # one True or False per cell
 print()
@@ -461,6 +465,8 @@ mask shape: (10, 5)  dtype: bool
 Hold your highlighted paper up beside the screen. Row 7's last cell is `False`, because Hugo's 50 is not above 50.
 
 ### Step 3 — using it, and the shape change
+
+Add these lines and run it.
 
 ```python
 print()
@@ -541,6 +547,8 @@ Last week the wrong axis was **silent**, because it just printed some numbers. T
 Put `axis=1` back.
 
 ### Step 5 — biggest, smallest, and the name of the hardest test
+
+Add these lines and run it.
 
 ```python
 print()
@@ -628,7 +636,7 @@ Also: the `0.` in that grid is **Hugo's Midterm** and the `1.` is **Farah's Proj
 
 ### Step 7 — the 950
 
-One character. Put this in just above the `low = scores.min()` line.
+This step adds one wrong value on purpose. Put this line just above the `low = scores.min()` line.
 
 ```python
 scores[5, 0] = 950                        # Farah's Quiz1: 95 typed as 950
@@ -658,6 +666,8 @@ And read the last line. `scaled min: 0.0  scaled max: 1.0`. **Both checks passed
 
 ### Step 8 — the range check, and put it at the top
 
+Add these lines and run it.
+
 ```python
 print()
 print("--- the range check ---")
@@ -681,6 +691,8 @@ above 100? []  below 0? []
 Two empty answers. Two passed checks. **This is the only check on the page that could actually have failed**, because it is the only one carrying knowledge that is not already in the formula.
 
 ### The complete finished program
+
+This is the whole of `gradebook.py` in one piece. Check your file against it.
 
 ```python
 """gradebook.py - the Vectorized Gradebook. No loops anywhere in this file."""
@@ -1098,6 +1110,8 @@ Every message below came from really running a broken version of this week's cod
 
 ### Break 1 — a grid-shaped mask on a row-shaped list
 
+This line produces the error below.
+
 ```python
 print("passed everything :", names[passed])
 ```
@@ -1119,6 +1133,8 @@ IndexError: too many indices for array: array is 1-dimensional, but 2 were index
 
 ### Break 2 — `and` does not work on arrays with more than one element
 
+This line produces the error below.
+
 ```python
 print(scores[scores > 50 and scores < 90])
 ```
@@ -1137,6 +1153,8 @@ ValueError: The truth value of an array with more than one element is ambiguous.
 **The fix, for now.** Use one condition. If you genuinely need two, do it in two steps with two named masks and use them one at a time. There **is** a proper way to combine masks, and it is not `and`, and you have not met it yet. Feeling that gap now is useful; it makes the syntax stop seeming arbitrary when it arrives.
 
 ### Break 3 — a verb without its brackets
+
+This line produces the output below.
 
 ```python
 print("lowest:", scores.min)
@@ -1157,6 +1175,8 @@ lowest: <built-in method min of numpy.ndarray object at 0x101a0d8f0>
 Get it the other way round and you get the matching mistake: `scores.shape()` gives `TypeError: 'tuple' object is not callable`.
 
 ### Break 4 — the one with no message at all
+
+These lines run without any error message.
 
 ```python
 scores[5, 0] = 950
@@ -1297,21 +1317,31 @@ Then the range check, one line, and `[950]` came out. Then the typo went back to
 
 ## 💬 Talk About It
 
+These questions are for discussing with a parent, a friend or your teacher. Each one has a hint, and there is no need to rush to an answer.
+
 **1. Both of the checks built into the normalization passed while the answer was ruined. So what makes a check worth having?**
 
-*Hint:* start by asking what `scaled.min() == 0.0` could ever have told you. Work through the formula: you subtract the smallest value from everything, so the smallest becomes zero — **by construction**, not by luck. There is no data on Earth for which that check fails. Now compare it with *"no test score is above 100."* Where does that knowledge come from? Not from the formula, not from the array — from you knowing what the numbers **are**. So the question underneath: can a check that only uses information already inside your code ever catch anything? And what does that tell you about the difference between a check and a comment?
+*Hint:* start by asking what `scaled.min() == 0.0` could ever have told you. Work through the formula: you subtract the smallest value from everything, so the smallest becomes zero — **by construction**, not by luck. There is no data on Earth for which that check fails.
+
+Now compare it with *"no test score is above 100."* Where does that knowledge come from? Not from the formula, not from the array — from you knowing what the numbers **are**. So the question underneath: can a check that only uses information already inside your code ever catch anything? And what does that tell you about the difference between a check and a comment?
 
 **2. `mask.sum()` counts things because `True` is 1. Is that good design, or a trick you should be suspicious of?**
 
-*Hint:* there is a real argument here and neither side is silly. Start with the pay-off, because it is large: you got counting, per-row counting and per-column counting for free, with no new function to learn, using a verb you already had. Now the case against: `True` and the number `1` are not really the same kind of thing — one is an answer to a question, one is a quantity. Some languages refuse to let you add yes and no together, on the grounds that it invites nonsense. Ask yourself what nonsense it invites. *(What is the average of a mask? Python will tell you. Does that number mean anything? Actually — yes, it does, and working out what would be a very good five minutes.)*
+*Hint:* there is a real argument here and neither side is silly. Start with the pay-off, because it is large: you got counting, per-row counting and per-column counting for free, with no new function to learn, using a verb you already had.
+
+Now the case against: `True` and the number `1` are not really the same kind of thing — one is an answer to a question, one is a quantity. Some languages refuse to let you add yes and no together, on the grounds that it invites nonsense. Ask yourself what nonsense it invites. *(What is the average of a mask? Python will tell you. Does that number mean anything? Actually — yes, it does, and working out what would be a very good five minutes.)*
 
 **3. The 950 wrecked the spacing between students but not the order. When would that matter, and when would it not?**
 
-*Hint:* work out first *why* the order survived. Min-max normalization does exactly two things — it subtracts the same number from everything, and it divides everything by the same number. A slide and a stretch. Neither of those can make one number overtake another, so the ranking is completely safe. **Order survived; distance died.** Now the useful half: imagine two different jobs. One of them only needs to know who came first, second and third. The other measures *how far apart* two students are, and decides they are similar if the distance is small. Which one shrugs at the 950, and which one is destroyed by it? *(Week 29's model is the second kind. That is why Week 30 spends a whole lesson on scaling.)*
+*Hint:* work out first *why* the order survived. Min-max normalization does exactly two things — it subtracts the same number from everything, and it divides everything by the same number. A slide and a stretch. Neither of those can make one number overtake another, so the ranking is completely safe. **Order survived; distance died.**
+
+Now the useful half: imagine two different jobs. One of them only needs to know who came first, second and third. The other measures *how far apart* two students are, and decides they are similar if the distance is small. Which one shrugs at the 950, and which one is destroyed by it? *(Week 29's model is the second kind. That is why Week 30 spends a whole lesson on scaling.)*
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are the wrong ideas that people most often hold about masks. Each box shows the wrong idea on the left and the right idea on the right.
 
 ### Trick 1 — "a mask is a filter"
 
@@ -1352,6 +1382,8 @@ Last week the wrong answer was **plausible**. This week the wrong answer is **be
 
 ## 🌍 Where You've Seen This
 
+Masks and normalizing are not only for gradebooks. This section lists places you already meet them.
+
 1. **The search box in any photo app.** Type "beach" and you get a shorter list of photos. Underneath, every single photo in your library got a yes/no decision — a mask over ten thousand pictures — and only then were the yeses collected. The app shows you the selection; the mask never appears on screen.
 2. **Conditional formatting in a spreadsheet.** "Colour every cell red if it's below 40." That is `arr < 40` and it is drawn as a mask on purpose — the same shape as the data, sitting on top of it, data still readable. It is the highlighter, built into the software.
 3. **Every filter on a shopping site.** "Under ₹500", "in stock", "4 stars and up". Each one is a mask over the whole catalogue. Notice that the site tells you *how many* results match **before** it shows you any of them — that number is `mask.sum()`.
@@ -1364,8 +1396,9 @@ Last week the wrong answer was **plausible**. This week the wrong answer is **be
 
 ## 🧭 Where This Fits
 
-Same gold tile as last week, and nothing on the map moves — but what you can do inside that tile got
-noticeably sharper. Last week you asked a grid for a **summary**: one number per row, or one per column.
+This section shows where this week sits on the course map.
+
+The gold tile is the same as last week, and nothing on the map moves. What you can do inside that tile has changed. Last week you asked a grid for a **summary**: one number per row, or one per column.
 This week you ask it a **question** — *which of these are above fifty?* — and it answers with a grid of
 yes and no exactly the same shape as the data.
 
@@ -1390,6 +1423,8 @@ yes and no exactly the same shape as the data.
 ---
 
 ## 🔑 Remember This
+
+This section collects what to keep from the week, followed by a card of the syntax you used.
 
 - **A mask is a thing you can look at.** It is an array of `True` and `False`, **the same shape as your data**, made by comparing your data with something. Print it before you use it.
 - **`True` counts as 1**, so `mask.sum()` counts the yeses — and `mask.sum(axis=...)` counts them in either direction, with last week's rule unchanged. Both directions must add to the same total.
@@ -1452,6 +1487,8 @@ print(scores[scores < 0])                   # []  - a passed check
 ---
 
 ## 📓 New Words
+
+These are the words this week introduced, with a picture and an example for each.
 
 ![This week's five words as pictures](../figures/fig-w20-7-vocab-icons.svg)
 *Figure 20.8 — This week's five words, drawn.*

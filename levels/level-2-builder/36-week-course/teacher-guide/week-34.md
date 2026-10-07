@@ -263,6 +263,8 @@ sits in the last tile but re-walks every earlier stage. Two threads lit: data an
 
 ## 🧰 Prep Checklist
 
+This section lists what to do before the lesson, and what to do if the technology fails.
+
 **20 minutes the night before**
 
 - [ ] Print the whole week 34 workbook. The **Build It** page (the "Fill this in as you go" table, which is the plan) will be written on, signed, and kept — print it on the nicest paper you have. That matters more than it sounds.
@@ -332,6 +334,8 @@ That is the computer enforcing the rule. Undo it afterwards with `chmod 644 data
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the lesson: the timings first, then each segment with what to say and ask.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — The Question That Moved | 7 | 7 | A project that "found" exactly what its author already believed |
@@ -387,7 +391,7 @@ Let them work. They usually get to "they changed the question" within a minute. 
 
 > "A **research question** is one sentence, it ends in a question mark, and — this is the bit everyone misses — **you could turn out to be wrong about it.**
 >
-> That last part is the test. 'Something about my journey to school' is not a question. It cannot be wrong. So nothing you collect can ever settle it, and it will quietly become whatever the data says. 'Does how I travel change my journey time more than how far I go?' ��� that one can be wrong. I can imagine the answer being no. That makes it a question."
+> That last part is the test. 'Something about my journey to school' is not a question. It cannot be wrong. So nothing you collect can ever settle it, and it will quietly become whatever the data says. 'Does how I travel change my journey time more than how far I go?' — that one can be wrong. I can imagine the answer being no. That makes it a question."
 
 Write both on the page, side by side, and put a tick and a cross next to them.
 
@@ -817,6 +821,8 @@ Model answers are in the Answer Key, under Build It, Milestone 1 (in class).
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions students tend to ask this week, with an answer you can give for each.
+
 **"Why 100 rows? Why not 50?"**
 
 Do the arithmetic with them, because it is the honest answer. With 100 rows and a 20% test set you keep 20 rows back. One row is then worth 5 percentage points of an accuracy score. With 50 rows you keep 10, and one row is worth 10 points — so a gap of 5 points is just one row going the other way, indistinguishable from luck, and almost every interesting comparison becomes unsayable. 100 is not a magic number; it is the smallest number where the sentences you want to write in Week 35 are allowed to be true.
@@ -841,7 +847,7 @@ Yes, and the obvious ones are where it matters most, because "obvious" is a feel
 
 **This is a genuine open argument among people who do this for a living, and here is why.** Every cleaning decision trades two risks against each other. Leave a strange value in, and it may be a real measurement that your model needs to see — the day it poured, the journey that genuinely took an hour. Take it out, and you may have removed a typo that would have wrecked everything. There is no rule that tells you which, because the answer depends on knowing your own data, which is exactly what a rule cannot do for you.
 
-What people *do* agree on is much narrower, and you should hold onto it: rows with no answer cannot be used; exact duplicates are not extra evidence; the same word spelled three ways is one thing; and **every decision must be written down with its reason so somebody else can disagree with it.** The disagreement is allowed. The silence is not. Some very serious researchers argue for cleaning almost nothing and reporting everything; others clean hard and document it. Both are defensible. Neither is allowed to be quiet about it.
+What people *do* agree on is much narrower, and you should hold onto it. These are the points of agreement: rows with no answer cannot be used; exact duplicates are not extra evidence; the same word spelled three ways is one thing; and **every decision must be written down with its reason so somebody else can disagree with it.** The disagreement is allowed. The silence is not. Some very serious researchers argue for cleaning almost nothing and reporting everything; others clean hard and document it. Both are defensible. Neither is allowed to be quiet about it.
 
 **"Can I change my question later if it turns out to be boring?"**
 
@@ -850,6 +856,8 @@ You can start a new project with a new signed question, dated. What you cannot d
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+Use this table when the lesson stalls. Each row gives the symptom, the reason and what to do right now.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -866,6 +874,8 @@ You can start a new project with a new signed question, dated. What you cannot d
 ---
 
 ## 🧭 Differentiation
+
+This section gives ways to adjust the week for a student who is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1075,7 +1085,6 @@ Because one row said `about 20` instead of a number, so pandas typed the whole c
 **Extra (j) What is the one check you must run after every `describe()`?**
 That the **target column is in the output.** If it is not, stop and run `df.info()` to find out which type it got.
 
-
 **A6 — The silent one.**
 **A6(a)** `minutes`, the target.
 **A6(b)** `print(reading.dtypes)` (or `reading.info()`); `minutes` is `object` because one value says `"about 40"`.
@@ -1125,7 +1134,6 @@ The workbook's Build It section is a step checklist plus fill-in tables ("Fill t
 
 Use this against the Milestone 1 checklist and the "Fill this in as you go" table.
 
-
 ```text
 1. THE QUESTION
    Does how I travel change my journey time more than how far I go?
@@ -1171,11 +1179,9 @@ Signed  R. Kamma        Date  12 May
 
 **Marking:** boxes 1, 5, 6 and 8 are the ones that carry the marks. A plan with a beautiful column table and no prediction is a 2. A plan with a scruffy table, a real prediction with a number in it, and a specific "cannot show" line is a 3.
 
-
 #### Milestone 1 (in class) — three log lines written in advance
 
 These go in "My cleaning log, copied out" (lines 1–3) during the Activity.
-
 
 Full marks requires three lines, each with an **action** and a **reason that could be disagreed with**. Model answers:
 
@@ -1192,11 +1198,9 @@ Full marks requires three lines, each with an **action** and a **reason that cou
 
 **Common wrong answer:** "1. I will clean the data — because it will be messy." Action and reason are the same sentence twice. Ask: *"Clean what? And what will you do to it?"*
 
-
 #### Milestone 2 — their own collection (marking guidance)
 
 Mark it from the collection tally and the variety check tables.
-
 
 There is no single right answer; mark the structure and the honesty.
 
@@ -1209,11 +1213,9 @@ There is no single right answer; mark the structure and the honesty.
 
 > **Teacher note, important.** If a student proudly reports that nothing went wrong while collecting, the diary is empty and *that is the finding*. Say this out loud: **"Nothing going wrong means either you got lucky or you were not looking. Which do you think it was?"** Then go through their table with them and find the two rows they rounded. There always are two.
 
-
 #### Milestone 3 — the cleaning log (model answer, demo data)
 
 Check against the Milestone 3 checklist and the cleaning results table. Note that the demo is 26 rows in, 21 out, 5 lost, 6 log lines.
-
 
 This is the complete, actually-run demo. Their version has their own reasons.
 
@@ -1315,7 +1317,6 @@ Second: 26 rows went in and 21 came out. Five rows were lost, every one of them 
 
 > **🧑‍🏫 If a student does the arithmetic and objects:** they are right to. Merging the five raw groups by hand gives 13 bus and 8 walk, totalling 26. The printed numbers are 12 and 7, totalling 24. Nothing is wrong — **step 1 ran before step 2.** Dropping the two duplicate rows removed one bus journey and one walk journey, so both counts arrive at step 2 already one lower. This is worth thirty seconds out loud, because it is the first time they see that **the order of the cleaning steps changes the numbers**, which is exactly why the log is numbered.
 
-
 ### Draw It
 
 Marking guide: five boxes joined by arrows that all point right (paper sheet → `data/raw.csv` → padlock labelled `chmod 444` → `clean.py` → `data/clean.csv`), with a crossed-out backwards arrow from `clean.py` to `raw.csv` labelled *"PermissionError, and that is the point"*, sticky notes each carrying a number **and a reason**, and the student's own row counts (the workbook's example is 126 in, 121 out, 5 lost). **Weak answer:** only one file box, so nothing could point backwards; or notes that say what happened but not why.
@@ -1361,7 +1362,13 @@ Ask them to tick the nine "I can" rows honestly; a 😕 on "Check that my target
 
 ## 🔮 Next Week Preview
 
-Week 35 is the other half of the capstone, and it introduces **no new Python at all** — which is deliberate, because everything in it is something they can already do. They will build five charts and put them in the order that tells one story, then read the five captions aloud as a single paragraph. They will make **one** train/test split, run three models plus a baseline through **one** scoring function, and put the results in one table where every number carries its metric, its units and its row count. Then comes the Score Audit, which is the most important twenty minutes of the whole capstone: for every number in that table, the student traces it back to the exact line that produced it and says which split it came from. Anything computed from the training rows gets crossed out in red and recomputed. Finally they write the page called "what I got wrong", which is the page an adult will take most seriously.
+This section says what next week covers and what to prepare for it.
+
+Week 35 is the other half of the capstone, and it introduces **no new Python at all** — which is deliberate, because everything in it is something they can already do. They will build five charts and put them in the order that tells one story, then read the five captions aloud as a single paragraph. They will make **one** train/test split, run three models plus a baseline through **one** scoring function, and put the results in one table where every number carries its metric, its units and its row count.
+
+Then comes the Score Audit, which is the most important twenty minutes of the whole capstone: for every number in that table, the student traces it back to the exact line that produced it and says which split it came from. Anything computed from the training rows gets crossed out in red and recomputed.
+
+Finally they write the page called "what I got wrong", which is the page an adult will take most seriously.
 
 **Prep early:** the student must arrive next week with a working `data/clean.csv`. Check in mid-week — a quick message asking "how many rows so far?" is worth twenty minutes of rescue on the day. If a student is clearly not going to make 100 rows, tell them **before** the weekend to coarsen the row or widen the window, because there is no fixing it on Tuesday. Also have the demo `clean.csv` from this week to hand: next week's live-code needs a table with 100+ rows in it, and any student without one will need to borrow the demo to follow along.
 

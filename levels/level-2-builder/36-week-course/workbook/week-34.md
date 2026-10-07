@@ -42,6 +42,8 @@ ________________________________________________________________
 
 ### P1 — how many columns comes back?
 
+Read this code and fill in your prediction before you run it.
+
 ```python
 import pandas as pd
 
@@ -71,6 +73,8 @@ ________________________________________________________________
 ________________________________________________________________
 
 ### P2 — duplicates that were not duplicates yet
+
+Read this code and fill in your prediction before you run it.
 
 ```python
 import pandas as pd
@@ -106,6 +110,8 @@ ________________________________________________________________
 
 ### P3 — what `errors="coerce"` actually does
 
+Read this code and fill in your prediction before you run it.
+
 ```python
 import pandas as pd
 
@@ -134,6 +140,8 @@ ________________________________________________________________
 ________________________________________________________________
 
 ### P4 — mean, median and one enormous innings
+
+Read this code and fill in your prediction before you run it.
 
 ```python
 import pandas as pd
@@ -174,6 +182,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading questions, code and output that are already written. Answer in the space under each item.
 
 **A1. Question or topic?** Tick one column, then write the reason.
 
@@ -311,6 +321,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short programs yourself. Each task says how its output should start and what "done" looks like.
 
 ### B1 — one line
 
@@ -503,6 +515,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for practising how to read a `describe()` table. Work through the four parts in order.
+
 ### The Quartile Detective
 
 A sports club prints only this, for nine matches:
@@ -543,6 +557,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions need a full paragraph each. Use the lines under each one.
 
 **1.** The basketball project in the chapter did not fake a single number, and its write-up was still dishonest. Write a paragraph explaining exactly what was dishonest about it, and then describe one thing you will do this week that would have stopped it happening to you.
 
@@ -700,6 +716,8 @@ Draw your own project as a **pipeline you cannot run backwards** — paper log, 
 
 ## 📊 Self-Check
 
+Use this page to rate yourself on this week's skills. Tick one box on each row, then circle TRUE or FALSE.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Write a question that data could answer and that I could be wrong about | ☐ | ☐ | ☐ |
@@ -738,6 +756,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Check your work here after you have finished every page above.
 
 <details>
 <summary>Check your answers</summary>

@@ -6,7 +6,9 @@
 
 ---
 
-### The clean starting point
+## The clean starting point
+
+This page shows the code that every later page builds on.
 
 `house_raw.csv` is the 40-row file you wrote in class with `make_house_data.py`. Every page from the Build It section onwards assumes these seven lines have run:
 
@@ -337,6 +339,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+In this set you write short pandas lines yourself, one at a time.
+
 ### B1 — one line
 
 Write the **single line** that prints how many different house spellings are left after cleaning.
@@ -640,6 +644,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These questions ask you to explain your thinking in sentences.
+
 **T1.** Both duplicate rows had the same **name** AND the same **score**.
 
 Write a paragraph. Why does that make you confident it is a mistake rather than two pupils who happen to share a name? List the fields that matched and say what the chance of all of them agreeing by accident really is. Then find the case where you would be **wrong** to delete: **what if one row of this table meant one test attempt rather than one pupil?** Finish with the question that actually decides it, and say who is the only person who can answer it.
@@ -684,6 +690,8 @@ ________________________________________________________________
 
 ## 🛠️ Build It — Six Answers, Each With Its `n`
 
+In this section you answer six questions about the house data and write down how many rows each answer used.
+
 **This is the main assignment. Three things are being marked, and the third one is the real one.**
 
 ### Part 1 — the shape, accounted for
@@ -714,7 +722,7 @@ ________________________________________________________________
 
 **Your first entry this week is number 8.** Do not start a new sheet.
 
-```
+```text
  8  ________________________________    ____________________________________
 
     ________________________________    ____________________________________
@@ -1392,7 +1400,7 @@ print(clean.sort_values("score_minus_slacking", ascending=False).head(3)[["name"
 
 **Part 2 — the model log entries, continuing last week's numbering:**
 
-```
+```text
  8  drop_duplicates(): 40 rows -> 38     Bela Roy and Farah Aziz each appeared
                                         twice with EVERY field identical, incl.
                                         the exact score. A typing slip, not two

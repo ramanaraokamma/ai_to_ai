@@ -115,9 +115,15 @@ That is not a bug in Python. `"ha" * 3` giving `"hahaha"` is genuinely useful, a
 ![The bug that does not crash](../figures/fig-w04-3-silent-1212-bug.svg)
 *Figure 4.2 — Same symbol, two jobs. Neither of these produced an error message.*
 
-**Why does Python not just guess?** Because it cannot. Consider a program that collects postcodes. Somebody types `0121`. Is that the number one hundred and twenty-one? Is it text that happens to look numeric, where the leading zero matters enormously? Python has no way to know, so it refuses to decide and hands you the characters exactly as typed. **The design choice is: the human who wrote the program knows what the answer means, so the human converts it.** Some other languages guess. They are wrong more often than they are convenient, which is why `"5" + 5` returning `"55"` is one of the most famous complaints about JavaScript.
+**Why does Python not just guess?** Because it cannot. Consider a program that collects postcodes. Somebody types `0121`. Is that the number one hundred and twenty-one? Is it text that happens to look numeric, where the leading zero matters enormously?
 
-There is a second reason, and it is worth saying to a student who thinks the rule is arbitrary. `input()` cannot know what you *want*. `int()` and `float()` and `str()` are all reasonable things to want from the characters `12`. If `input()` guessed `int`, the day someone types `1.52` your program would break and it would be `input()`'s fault, not yours.
+Python has no way to know, so it refuses to decide and hands you the characters exactly as typed. **The design choice is: the human who wrote the program knows what the answer means, so the human converts it.**
+
+Some other languages guess. They are wrong more often than they are convenient, which is why `"5" + 5` returning `"55"` is one of the most famous complaints about JavaScript.
+
+There is a second reason, and it is worth saying to a student who thinks the rule is arbitrary.
+
+`input()` cannot know what you *want*. `int()` and `float()` and `str()` are all reasonable things to want from the characters `12`. If `input()` guessed `int`, the day someone types `1.52` your program would break and it would be `input()`'s fault, not yours.
 
 ![Convert at the door, or pay for it later](../figures/fig-w04-2-convert-at-the-door.svg)
 *Figure 4.3 — Convert at the door, or spend the rest of the program remembering that you didn't.*
@@ -142,7 +148,7 @@ Two of those rows deserve a sentence each, because they catch everybody.
 
 **`int()` on a number that already exists chops; `round()` rounds.** `int(3.9)` is `3`. `round(3.9)` is `4`. You will want `round()` far more often than you expect. `round(x, 2)` gives you two decimal places, which is what money and heights and averages look like on a page.
 
-**Where the conversion goes.** This is the habit to install today and it is worth being firm about it. You can write it in two lines:
+**Where the conversion goes.** This is the habit to install today, so be firm about it. You can write it in two lines:
 
 ```python
 age_text = input("Age? ")     # this is text
@@ -155,9 +161,11 @@ age = int(age_text)           # and now it is a number
 age = int(input("Age? "))     # ask, and convert, in the same breath
 ```
 
-Both work. **The one-line version is the one to teach**, because the two-line version means there is a moment in the program where a variable called `age` holds text, and that moment is exactly when someone forgets. Read the one-liner from the inside out, which is the order Python does it in:
+Both work. **The one-line version is the one to teach**, because the two-line version means there is a moment in the program where a variable called `age` holds text, and that moment is exactly when someone forgets.
 
-```
+Read the one-liner from the inside out, which is the order Python does it in:
+
+```text
         age = int( input("Age? ") )
                         └──────┘      1. ask the human, get back the text "12"
                    └──────────────┘   2. hand that text to int(), get back the number 12
@@ -373,6 +381,8 @@ plain white and the one below it turns gold.*
 
 ## 🧰 Prep Checklist
 
+This section lists what to do before the lesson, and what to do if the laptop fails.
+
 ### 20 minutes the night before
 
 - [ ] **Print the workbook.** Also print the **Build It** section twice (its Part 2 is the Bug Log and it fills up fast). Keep the Answers section at the end back from the student; the Answer Key below follows the workbook's sections.
@@ -435,6 +445,8 @@ The whole lesson works on paper. It is less fun and it delivers four of the five
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the lesson plan: the five segments in order, then a script for each one.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -555,7 +567,7 @@ Age? 12
 
 Draw this on paper, or show Figure 4.2:
 
-```
+```text
    12  * 2   →  24        the thing on the left is a NUMBER  → multiply
   "12" * 2   →  "1212"    the thing on the left is TEXT      → repeat it
 ```
@@ -586,7 +598,7 @@ Draw this on paper, or show Figure 4.2:
 
 Show them side by side on paper:
 
-```
+```text
   age_text = input("Age? ")      #  a box called age_text that holds TEXT
   age = int(age_text)            #  and now a box called age that holds a NUMBER
 
@@ -824,6 +836,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the Their Turn segment, in three parts, plus what "finished" looks like and two variations.
+
 ### Setup
 
 **On the table:** the laptop with `about_me.py` open · workbook **Build It** (Part 1 and Part 2, the Bug Log) · the notebook open at the Bug Log · a pencil.
@@ -995,41 +1009,69 @@ One extra rule for this week specifically: **when a number looks wrong and nothi
 
 ## ❓ Questions Students Ask This Week
 
+Use this section to prepare answers to the questions this lesson tends to raise.
+
 **"Why doesn't `input()` just work out that `12` is a number? It's obviously a number."**
 
-It looks obvious because you already know what the question was. Python doesn't. Try this: a program asks for a postcode and someone types `0121`. If Python helpfully turned that into a number, the leading zero would vanish — and for a postcode, that zero is the whole point. Same for a phone number, a bank account, a house number like `07`. Python genuinely cannot tell "digits that are a quantity" from "digits that are a name", and rather than guess wrong half the time it hands you exactly what was typed and lets you decide. You know what your question meant; it doesn't.
+It looks obvious because you already know what the question was. Python doesn't.
+
+Try this: a program asks for a postcode and someone types `0121`. If Python helpfully turned that into a number, the leading zero would vanish — and for a postcode, that zero is the whole point. Same for a phone number, a bank account, a house number like `07`.
+
+Python genuinely cannot tell "digits that are a quantity" from "digits that are a name", and rather than guess wrong half the time it hands you exactly what was typed and lets you decide. You know what your question meant; it doesn't.
 
 **"Why is `"12" * 2` allowed at all? It's a stupid thing to do."**
 
-It isn't, though — it is genuinely useful, and you will use it in three weeks. `"=" * 40` gives you a forty-character divider line in one go, instead of the forty equals signs you typed by hand today. `"-" * 20`, `"* " * 5`. Once you have loops and lists it becomes something you reach for constantly. The awkwardness isn't that repeating text is allowed; it's that `*` has two jobs and the *type* on its left decides which one, silently. That is a real design trade-off and Python chose convenience.
+It isn't, though — it is genuinely useful, and you will use it in three weeks. `"=" * 40` gives you a forty-character divider line in one go, instead of the forty equals signs you typed by hand today. `"-" * 20`, `"* " * 5`. Once you have loops and lists it becomes something you reach for constantly.
+
+The awkwardness isn't that repeating text is allowed; it's that `*` has two jobs and the *type* on its left decides which one, silently. That is a real design trade-off and Python chose convenience.
 
 **"Do I have to convert every single time? Can't I just tell Python once?"**
 
-No, and there is no setting for it. Conversion happens to one value, on one line. This is annoying for about a week and then it becomes the thing that saves you: because conversion is explicit, you can always look at a line and know what type it produces without having to remember what happened earlier in the file. The habit that makes it painless is to read your input lines as a column and check each one has the right wrapper.
+No, and there is no setting for it. Conversion happens to one value, on one line.
+
+This is annoying for about a week and then it becomes the thing that saves you: because conversion is explicit, you can always look at a line and know what type it produces without having to remember what happened earlier in the file. The habit that makes it painless is to read your input lines as a column and check each one has the right wrapper.
 
 **"My program crashed. Does that mean I'm bad at this?"**
 
-No — and honestly, closer to the opposite. The number of errors you hit is mostly a measure of how much code you wrote. Somebody who got no errors this week wrote nothing this week. Professional programmers see tracebacks all day, every day; the difference is that they read the last line, fix one thing, and run again, and the whole cycle takes eleven seconds. That is what today is training. The bugs that should worry you are the ones like the `120120120…` — the ones that don't crash.
+No — and honestly, closer to the opposite. The number of errors you hit is mostly a measure of how much code you wrote. Somebody who got no errors this week wrote nothing this week. Professional programmers see tracebacks all day, every day; the difference is that they read the last line, fix one thing, and run again, and the whole cycle takes eleven seconds.
+
+That is what today is training. The bugs that should worry you are the ones like the `120120120…` — the ones that don't crash.
 
 **"Why do we work the answer out on paper if the computer can do it?"**
 
-So that you can tell when the computer is wrong. You predicted 43,800 before the program ran, and that prediction is the *only* reason you knew the answer was rubbish. Without it, `120120120…` is just a number you don't understand. Do this forever: predict, then run. It is the single habit that separates people who debug in ten seconds from people who stare at the screen for an hour.
+So that you can tell when the computer is wrong. You predicted 43,800 before the program ran, and that prediction is the *only* reason you knew the answer was rubbish. Without it, `120120120…` is just a number you don't understand.
+
+Do this forever: predict, then run. It is the single habit that separates people who debug in ten seconds from people who stare at the screen for an hour.
 
 **"Is my program allowed to break if someone types something silly?"**
 
-Today, yes, and it is worth being clear about it rather than apologetic. If someone types `twelve` your program stops with a `ValueError`, and that is honest — it did not pretend, it did not invent an answer, it said exactly what went wrong and where. Next week you get `if`, and Week 8 gives you a loop that keeps asking until the answer is usable. Real programs do check. But "crash loudly" is a much better behaviour than "carry on with nonsense", which is exactly what our screen-time bug did.
+Today, yes, and it is worth being clear about it rather than apologetic. If someone types `twelve` your program stops with a `ValueError`, and that is honest — it did not pretend, it did not invent an answer, it said exactly what went wrong and where.
+
+Next week you get `if`, and Week 8 gives you a loop that keeps asking until the answer is usable. Real programs do check.
+
+But "crash loudly" is a much better behaviour than "carry on with nonsense", which is exactly what our screen-time bug did.
 
 **"Why is `round(2.5)` equal to 2? Everyone taught me 2.5 rounds up to 3."** *(This one is genuinely contested — say so.)*
 
-You are not wrong, and neither is Python; **people who do this for a living disagree about it**, and it is worth knowing why. Try it: `round(2.5)` is `2`, `round(3.5)` is `4`, `round(4.5)` is `4`. Python is using a rule called *round half to even* — when a number sits exactly on the boundary, go to the nearest even number. The argument for it is that "always round .5 up" quietly pushes every total in your data slightly upwards, so if you round a million measurements and add them up you get an answer that is reliably too big. Rounding half up and half down cancels out. The argument against it is that it surprises absolutely everybody, which for a beginner language is a real cost. School maths teaches "always up" because it is easy to remember and because you are usually rounding one number, not a million. Both rules are defensible; the important thing is knowing which one your tool uses. And there is a second, sharper trap underneath: `round(2.675, 2)` gives `2.67`, not `2.68`, because `2.675` cannot be stored exactly in a computer and what is actually in there is a hair *below* 2.675. That has nothing to do with which rounding rule you picked — it is about how decimals are stored — and it is Week 3's `f"{x:.2f}"` all over again.
+You are not wrong, and neither is Python; **people who do this for a living disagree about it**, and it is worth knowing why. Try it: `round(2.5)` is `2`, `round(3.5)` is `4`, `round(4.5)` is `4`. Python is using a rule called *round half to even* — when a number sits exactly on the boundary, go to the nearest even number.
+
+The argument for it is that "always round .5 up" quietly pushes every total in your data slightly upwards. If you round a million measurements and add them up, you get an answer that is reliably too big. Rounding half up and half down cancels out. The argument against it is that it surprises absolutely everybody, which for a beginner language is a real cost.
+
+School maths teaches "always up" because it is easy to remember and because you are usually rounding one number, not a million. Both rules are defensible; the important thing is knowing which one your tool uses.
+
+There is a second, sharper trap underneath: `round(2.675, 2)` gives `2.67`, not `2.68`, because `2.675` cannot be stored exactly in a computer and what is actually in there is a hair *below* 2.675. That has nothing to do with which rounding rule you picked. It is about how decimals are stored, and it is Week 3's `f"{x:.2f}"` all over again.
 
 **"Can I make the bot ask my friend's name and then say something rude?"**
 
-Yes, and it is a good instinct — you want the program to *react*, not just report. What you're reaching for is a decision: *if* the name is this, print that. That is next week's entire lesson and it is the biggest single jump in the course. Write the idea down in your notebook now so you can build it on the day.
+Yes, and it is a good instinct — you want the program to *react*, not just report. What you're reaching for is a decision: *if* the name is this, print that. That is next week's entire lesson and it is the biggest single jump in the course.
+
+Write the idea down in your notebook now so you can build it on the day.
 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+Use this table to spot a lesson drifting off course and to decide what to do right away.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1047,6 +1089,8 @@ Yes, and it is a good instinct — you want the program to *react*, not just rep
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut, add or change when the student is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1172,6 +1216,8 @@ TypeError: can only concatenate str (not "int") to str
 ---
 
 ## 📤 Homework to Assign
+
+This section is a script for handing out the workbook, section by section, with the time it should take.
 
 **Say this:**
 
@@ -1446,7 +1492,12 @@ Actually run: `print("2" * 3)`, `print(2 * 3)`, `print("ab" * 3)`, `print(1.5 * 
 >
 > What tips it for me is the **direction** of the mistakes. Strict rules produce mistakes you find. Guessing produces mistakes you ship.
 
-**T2. How wrong is "about 4,380 days", and should the bot say how unsure it is?** Two sources of error, very different sizes. **Leap years:** `age * 365` ignores them, so a 12-year-old has had about three leap days and the true figure is nearer 4,383. That is about 0.07%, negligible. **The birthday:** the bot only knows the age in whole years, so someone who is "12" might be 12 years and 1 day or 12 years and 364 days. That is up to 365 days out, about **8%**. **The second problem is more than a hundred times bigger than the first**, and it is the one nobody thinks about. Should the bot say how unsure it is? Yes, and it already does, quietly, with the word "about". A stronger version would print a range ("between about 4,380 and 4,745 days"). This is the same idea as Level 1's work on how confidently a system should state things.
+**T2. How wrong is "about 4,380 days", and should the bot say how unsure it is?** There are two sources of error, and they are very different sizes.
+
+1. **Leap years.** `age * 365` ignores them, so a 12-year-old has had about three leap days and the true figure is nearer 4,383. That is about 0.07%, negligible.
+2. **The birthday.** The bot only knows the age in whole years, so someone who is "12" might be 12 years and 1 day or 12 years and 364 days. That is up to 365 days out, about **8%**.
+
+**The second problem is more than a hundred times bigger than the first**, and it is the one nobody thinks about. Should the bot say how unsure it is? Yes, and it already does, quietly, with the word "about". A stronger version would print a range ("between about 4,380 and 4,745 days"). This is the same idea as Level 1's work on how confidently a system should state things.
 
 *Full marks for T2 needs:* both sources of error, a rough size for each, the observation that the birthday one is far larger, and a view on hedging.
 
@@ -1652,9 +1703,21 @@ The "I can…" ticks are the student's own; use them to pick what to reteach nex
 
 ## 🔮 Next Week Preview
 
-Week 5 is the biggest single jump in the course so far, and it is the week your bot stops reporting and starts **deciding**. Up to now every program has run every line, top to bottom, in order, every single time — a straight road with no turnings. Next week you get a fork in the road. A **comparison** is a question with a `True` or `False` answer — is this age at least 13, is this mark below the pass mark — and an `if` runs a block of code *only when* the answer is `True`. Which means, for the first time, two people can run the same program and see different things happen, and that is what makes a program feel alive. Along the way there is a piece of punctuation that will catch everybody at least once: in Python the **indentation is not decoration**, it is the thing that decides which lines belong inside the `if` and which ones always run.
+This section says what next week is about and what to prepare for it.
 
-**Prep early:** three practical things. First, get some **masking tape or two sheets of paper** for the Human if/else activity — you will tape a fork on the floor and the student physically walks the True branch or the False branch. Second, **keep `about_me.py`** — it does not get replaced, and a student who finished early can spend Week 5 making their bot react to the answers instead of just printing them. Third, and most useful: **run `if age = 12:` on your own machine before the lesson** (one equals sign, deliberately) and read the `SyntaxError` it produces. Python names the fix in the message itself, and next week's planted bug is exactly that line. Knowing what it looks like cold will save you four minutes and a wobble.
+Week 5 is the biggest single jump in the course so far. It is the week your bot stops reporting and starts **deciding**.
+
+Up to now every program has run every line, top to bottom, in order, every single time: a straight road with no turnings. Next week you get a fork in the road. A **comparison** is a question with a `True` or `False` answer, such as "is this age at least 13?" or "is this mark below the pass mark?". An `if` runs a block of code *only when* the answer is `True`.
+
+For the first time, two people can run the same program and see different things happen. That is what makes a program feel alive.
+
+One piece of punctuation will catch everybody at least once: in Python the **indentation is not decoration**. It decides which lines belong inside the `if` and which ones always run.
+
+**Prep early.** Three practical things:
+
+1. Get some **masking tape or two sheets of paper** for the Human if/else activity. You will tape a fork on the floor and the student physically walks the True branch or the False branch.
+2. **Keep `about_me.py`.** It does not get replaced, and a student who finished early can spend Week 5 making their bot react to the answers instead of just printing them.
+3. **Run `if age = 12:` on your own machine before the lesson** (one equals sign, deliberately) and read the `SyntaxError` it produces. Python names the fix in the message itself, and next week's planted bug is exactly that line. Knowing what it looks like cold will save you four minutes and a wobble.
 
 ---
 

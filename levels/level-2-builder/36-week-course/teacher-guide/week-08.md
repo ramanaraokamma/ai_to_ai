@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the lesson on one screen: how long it runs, what is new, and what to have ready.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -17,7 +19,9 @@
 | **Tech needed** | One laptop, Python 3, terminal in `~/ai-academy/level2`, editor with 4-space indent. `random` is in the standard library — **nothing to install**. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
-> **⚠️ Watch out:** you are going to write an **infinite loop on purpose** and stop it with Ctrl+C. Do this yourself, alone, the night before. It is completely safe — the loop prints text and nothing else — but the screen fills at forty thousand lines a second and it is genuinely startling the first time. **The whole point is that the student's first runaway loop happens while you are sitting next to them and nothing is at stake**, rather than at eleven o'clock at night the week their project is due. On a Mac it is **Ctrl**+C, not Command+C. Check that on their actual keyboard before the lesson.
+> **⚠️ Watch out:** you are going to write an **infinite loop on purpose** and stop it with Ctrl+C. Do this yourself, alone, the night before. It is completely safe — the loop prints text and nothing else — but the screen fills at forty thousand lines a second and it is genuinely startling the first time.
+>
+> **The student's first runaway loop should happen while you are sitting next to them and nothing is at stake**, not at eleven o'clock at night the week their project is due. On a Mac it is **Ctrl**+C, not Command+C. Check that on their actual keyboard before the lesson.
 
 ---
 
@@ -37,9 +41,13 @@ Observable evidence: a working `guess.py` with higher/lower hints, a seven-try l
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This is the teacher's background reading. It covers each idea in the order the lesson meets it, so you can teach it without surprises.
+
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
-**You do not need to have programmed before to teach this.** Read this once with the laptop open and type every program in it. About 30 minutes. This is a project week, which means less new material and more building — but the one new idea is a big one, and it is the first idea in this course that can make the computer misbehave.
+**You do not need to have programmed before to teach this.** Read this once with the laptop open and type every program in it. It takes about 30 minutes.
+
+This is a project week, which means less new material and more building. But the one new idea is a big one, and it is the first idea in this course that can make the computer misbehave.
 
 ### 1. Last week's loop counted. This week's loop waits.
 
@@ -89,6 +97,8 @@ Two things to notice, and both matter:
 
 ### 2. Every `while` loop needs three things, and missing one is a bug
 
+This diagram shows the three parts and what happens when one is missing.
+
 ```text
    ┌──────────────────────────────────────────────┐
    │  1. SET UP    countdown = 3                  │   before the loop
@@ -118,7 +128,7 @@ Everything in `guess.py` that waits for a human is a `while`. Everything that co
 
 ### 4. The infinite loop, and how to stop it
 
-This is the section to read twice.
+This is the section to read twice. Here is the file that runs forever:
 
 ```python
 # runaway.py - ON PURPOSE. The CHANGE line is missing, so this never stops.
@@ -130,7 +140,9 @@ while countdown > 0:
     # the line that changes countdown is missing
 ```
 
-`countdown` is 3 before the loop and it is still 3 after every pass, so `countdown > 0` is `True` forever. It prints `3` and then `3` and then `3`, as fast as the computer can manage. Measured on the machine this was written on, **redirected to a file it produced 40,960 lines in a quarter of a second.** On screen it is slower, because scrolling takes time, but it is still far too fast to read.
+`countdown` is 3 before the loop and it is still 3 after every pass, so `countdown > 0` is `True` forever. It prints `3` and then `3` and then `3`, as fast as the computer can manage.
+
+Measured on the machine this was written on, **redirected to a file it produced 40,960 lines in a quarter of a second.** On screen it is slower, because scrolling takes time. It is still far too fast to read.
 
 > **infinite loop** — a loop whose condition never becomes `False`, so it never ends on its own.
 
@@ -162,7 +174,7 @@ KeyboardInterrupt
 2. **It is not rare.** Every programmer alive does this, and most of them still do it occasionally after twenty years.
 3. **The fix is always the same question: what in the body was supposed to move the condition, and why didn't it?**
 
-And one honest caution for you: if the terminal has scrolled thousands of lines, the useful output from *before* the loop is now far above. `Ctrl+L` clears the screen, or just close the terminal tab and open a new one. That is not a defeat; it is housekeeping.
+And one honest caution for you: if the terminal has scrolled thousands of lines, the useful output from *before* the loop is now far above. `Ctrl+L` clears the screen, or close the terminal tab and open a new one. That is housekeeping, not defeat.
 
 ### 5. `break` and `continue` — two words that change the flow
 
@@ -221,7 +233,9 @@ print(random.randint(1, 6))
 
 > **`random.randint(a, b)`** — hands back a whole number between `a` and `b`. **Both ends are included**, unlike `range`, which excludes the stop.
 
-That inconsistency is genuinely annoying and worth saying out loud rather than hoping nobody notices: `range(1, 6)` gives 1–5, and `random.randint(1, 6)` gives 1–6. They are different tools written by different people at different times. **`randint` includes both ends. Say it, write it in the vocabulary box, move on.**
+That inconsistency is genuinely annoying and worth saying out loud rather than hoping nobody notices. `range(1, 6)` gives 1–5, and `random.randint(1, 6)` gives 1–6.
+
+They are different tools written by different people at different times. **`randint` includes both ends. Say it, write it in the vocabulary box, move on.**
 
 One real run of five dice rolls (yours will be different — that is the entire point of the tool):
 
@@ -238,7 +252,7 @@ Two things to know before a student trips you:
 - `random.randint(100, 1)` — the arguments backwards — is an error, and an ugly one. The real message ends `ValueError: empty range for randrange() (100, 2, -98)`. Explain it as "you asked for a number between 100 and 1, and there aren't any, because 100 is bigger."
 - `import random` must be at the **top** of the file, and without it you get `NameError: name 'random' is not defined`. That is not the computer being fussy: `random` is not part of the language you have been using; it is a toolbox you have to ask for.
 
-**Why seven tries?** Because if you always guess the middle of what is left, seven guesses always cover 1–100:
+**Why seven tries?** Because if you always guess the middle of what is left, seven guesses always cover 1–100. Each number below is how many are still possible:
 
 ```text
    100 numbers → 50 → 25 → 12 → 6 → 3 → 1
@@ -298,11 +312,15 @@ Two supporting details, both one line each:
 
 - **The pattern is always: keep it as text, check it, and only then convert.** `int()` goes *after* the check, never before. For anything typed on an ordinary keyboard, once `.isdigit()` has said `True`, `int()` will not fail. (Teacher only: a few exotic characters such as `²` are "digits" to `.isdigit()` but crash `int()`. A student will not meet them by accident.)
 
-**And now the honest limitation, which you must not hide.** `.isdigit()` is `False` for `-5`, and `False` for `85.5`, because the minus sign and the dot are not digits. So a student typing `-5` gets the message "whole numbers only", which is slightly wrong and mildly confusing. **Tell them this is a real flaw in their program, not a mystery.** The proper fix needs tools this course meets later. What matters today is that the program **does not crash**, and a wrong-but-clear message beats a traceback every time.
+**And now the honest limitation, which you must not hide.** `.isdigit()` is `False` for `-5`, and `False` for `85.5`, because the minus sign and the dot are not digits. So a student typing `-5` gets the message "whole numbers only", which is slightly wrong and mildly confusing.
+
+**Tell them this is a real flaw in their program, not a mystery.** The proper fix needs tools this course meets later.
+
+What matters today is that the program **does not crash**, and a wrong-but-clear message beats a traceback every time.
 
 ### 8. Flags — a variable whose whole job is `True` or `False`
 
-`guess.py` needs two of these and they will look strange the first time.
+`guess.py` needs two of these and they will look strange the first time. Here is a small file that uses one:
 
 ```python
 # flag.py - a flag is a variable that holds True or False and steers a loop.
@@ -327,9 +345,15 @@ finished after 2 tries, won = True
 
 The loop had three tries available and used two, because setting `won = True` made the check fail. **A flag is a change step made of a decision instead of arithmetic.** In `guess.py`, `won` ends the current game and `playing` ends the whole session.
 
-Say this to a student who asks why not just use `break`: **you could, and `break` would be fine here.** The flag has one advantage — the condition at the top of the loop tells you *both* reasons the loop can end, in one readable line: `while tries_used < MAX_TRIES and not won:`. With a `break` in the middle, one of the two reasons is hidden ten lines down. Both are correct; this course uses the flag for the game and `break` for the "stop as soon as you find it" jobs.
+Say this to a student who asks why not just use `break`: **you could, and `break` would be fine here.**
+
+The flag has one advantage — the condition at the top of the loop tells you *both* reasons the loop can end, in one readable line: `while tries_used < MAX_TRIES and not won:`. With a `break` in the middle, one of the two reasons is hidden ten lines down.
+
+Both are correct; this course uses the flag for the game and `break` for the "stop as soon as you find it" jobs.
 
 ### 9. The three misconceptions you will actually meet
+
+Each one is a wrong picture a student may hold, followed by the fix.
 
 **Misconception 1 — "the loop checks the condition all the time."** A student believes that the moment `won` becomes `True`, the loop stops instantly, mid-body. It does not. **The check happens at the top, between passes, and nowhere else.** The fix: put a `print` after the line that flips the flag and watch it still run.
 
@@ -338,6 +362,8 @@ Say this to a student who asks why not just use `break`: **you could, and `break
 **Misconception 3 — "an infinite loop means the computer is broken."** It means one variable is not changing. The fix is to cause one on purpose, stop it with Ctrl+C, then find the missing line together — which is exactly what minute 24 of this lesson is for.
 
 ### 10. How deep to go, and where to stop
+
+Use this to keep the lesson small. The first list is in scope; the second is not.
 
 **Go this far:** `while` with its three parts · the trace table · `for` versus `while` as one question · causing and stopping an infinite loop · `break` versus `continue` in one sentence each · `random.randint` including both ends · `.isdigit()` and `.strip()` as tools · a flag as a change step · a nested loop where the outer one is the replay and the inner one is the game.
 
@@ -377,6 +403,8 @@ Stage one's first tile stays white; everything from stage two onwards is still d
 ---
 
 ## 🧰 Prep Checklist
+
+This is what to do before the lesson so that nothing surprises you in front of the student. The runaway loop is the one item you must not skip.
 
 ### 20 minutes the night before
 
@@ -437,6 +465,8 @@ Stage one's first tile stays white; everything from stage two onwards is still d
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the lesson plan: the timings first, then each segment with the words to say and the questions to ask.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — I'm Thinking of a Number | 7 | 7 | The game played by hand, and the seven counted |
@@ -471,7 +501,7 @@ When they get it, unfold the paper and show them.
 
 > "Right. Now the question I actually care about. **What is the largest number of guesses this game could ever need, if you play as well as it is possible to play?**"
 
-Let them think. Push a little:
+Let them think. If they stall, push a little:
 
 > "Start again. Suppose I said 'higher' to your fifty. How many numbers are still possible?"
 
@@ -483,7 +513,7 @@ Let them think. Push a little:
 
 > "So every good guess **halves** what's left. Watch."
 
-Write this up:
+Write this up on paper as you say it:
 
 ```text
    100 numbers → 50 → 25 → 12 → 6 → 3 → 1
@@ -949,6 +979,8 @@ Then the homework, using the script in **📤 Homework to Assign**. Frame it in 
 
 ## 🎲 The Activity, In Full
 
+This section covers the student's hands-on work: the finished `guess.py`, the banana test and the start of `grade.py`, plus easier and harder variations.
+
 ### Setup
 
 **On the table:** the laptop · the workbook open at **Build It** (Parts 2 to 4) and **Part 5, the Bug Log** · **last week's twelve-score index card** · a pencil.
@@ -965,7 +997,7 @@ Two things are missing: a proper ending, and a replay loop.
 >
 > The replay is the interesting one. **A whole game is going to sit inside another loop.** The outer loop's condition is 'are we still playing?', and the inner loop's condition is 'does this game still have life in it?' Two loops, one inside the other, exactly like last week's grid — except these two wait instead of counting."
 
-The complete file. This is what "finished" looks like:
+Here is the complete file. This is what "finished" looks like:
 
 ```python
 # guess.py - guess the secret number in 7 tries, then play again if you like.
@@ -1098,7 +1130,9 @@ Final record: 1 of 1. Thanks for playing.
 
 > "If someone types `banana` a thousand times, your program will ask a thousand and one times. Is that a bug?"
 
-There is no single right answer and the student should feel the tension. It is not a *crash*, and the rule "bad input is free" is one you chose deliberately. But it does mean the loop's ending depends entirely on the human eventually cooperating. **A professional answer would put a cap on rejected inputs too** — say, ten bad inputs and the program gives up politely. If a student wants to build that, it is three lines and another accumulator, and it is the best extension available this week.
+There is no single right answer and the student should feel the tension. It is not a *crash*, and the rule "bad input is free" is one you chose deliberately. But it does mean the loop's ending depends entirely on the human eventually cooperating.
+
+**A professional answer would put a cap on rejected inputs too** — say, ten bad inputs and the program gives up politely. If a student wants to build that, it is three lines and another accumulator, and it is the best extension available this week.
 
 ### Part 3 — Start `grade.py` (5 minutes)
 
@@ -1183,23 +1217,38 @@ Ctrl+C first. Think second. A screen filling with output is not an emergency, an
 
 ## ❓ Questions Students Ask This Week
 
+Use these answers when the student asks. Each one is short enough to say out loud.
+
 **"Why not just use a `for` loop with `range(7)` for the seven tries?"**
 
-You can, and for the tries alone it works. But watch what happens when they guess right on try three: a `for` loop is going to keep going to seven unless you `break`, and now you have a `for` loop with a `break` in it — which is fine, but the condition "still has tries **and** hasn't won" is no longer visible in one line at the top. The `while` version puts both reasons for stopping in the same place, where you can read them. **Both are correct; the `while` is more honest about what the loop is really for.** In real code you will see both constantly.
+You can, and for the tries alone it works. But watch what happens when they guess right on try three: a `for` loop is going to keep going to seven unless you `break`.
+
+Now you have a `for` loop with a `break` in it. That is fine, but the condition "still has tries **and** hasn't won" is no longer visible in one line at the top. The `while` version puts both reasons for stopping in the same place, where you can read them. **Both are correct; the `while` is more honest about what the loop is really for.** In real code you will see both constantly.
 
 **"Should Python refuse to run a loop it can tell will never end?"** *(Nobody fully agrees, and here is why.)*
 
 This is a genuinely famous question and the answer is that **it is provably impossible in general.** Not hard — impossible. In 1936 Alan Turing proved that no program can look at all programs and reliably decide whether they stop; the problem is called the halting problem, and it is one of the foundational results of computer science. So Python cannot do it, and neither can anything else, ever.
 
-What Python *could* do is catch the easy cases — a loop whose condition mentions only variables that nothing in the body touches would be catchable, and today's `runaway.py` is exactly that shape. Some tools for some languages do warn about a few patterns like this. **The argument against is the one that always comes up with warnings: a checker that catches the easy cases and misses the hard ones teaches you to trust it, and then the hard one bites you.** And there is a second argument that matters more here: an infinite loop is sometimes exactly what you want. A program that runs a website waits forever on purpose. Python cannot tell your mistake from your intention, and it should not guess.
+What Python *could* do is catch the easy cases — a loop whose condition mentions only variables that nothing in the body touches would be catchable, and today's `runaway.py` is exactly that shape. Some tools for some languages do warn about a few patterns like this.
+
+**The argument against is the one that always comes up with warnings: a checker that catches the easy cases and misses the hard ones teaches you to trust it, and then the hard one bites you.**
+
+There is a second argument that matters more here: an infinite loop is sometimes exactly what you want. A program that runs a website waits forever on purpose. Python cannot tell your mistake from your intention, and it should not guess.
 
 **"Is `break` bad style? Someone said I shouldn't use it."** *(Also genuinely contested.)*
 
-This is a real argument among real programmers and it has been going for fifty years. The case against `break`: a loop whose exit conditions are all in the `while` line can be understood by reading one line; scatter three `break`s through a forty-line body and you have to read the whole thing to know when it stops. The case for: forcing every exit into the condition sometimes means inventing flag variables that exist only to please the rule, and that is *harder* to read, not easier. **The position most people land on, and the one this course takes: use `break` for "stop as soon as you find it", keep it near the top of the body where it is visible, and if you find yourself writing a third one in the same loop, that is a signal the loop is doing too much.** Do not let anyone tell you it is forbidden, and do not use it as a way to avoid thinking about your condition.
+This is a real argument among real programmers and it has been going for fifty years.
+
+- **The case against `break`:** a loop whose exit conditions are all in the `while` line can be understood by reading one line. Scatter three `break`s through a forty-line body and you have to read the whole thing to know when it stops.
+- **The case for:** forcing every exit into the condition sometimes means inventing flag variables that exist only to please the rule, and that is *harder* to read, not easier.
+
+**The position most people land on, and the one this course takes: use `break` for "stop as soon as you find it", keep it near the top of the body where it is visible, and if you find yourself writing a third one in the same loop, that is a signal the loop is doing too much.** Do not let anyone tell you it is forbidden, and do not use it as a way to avoid thinking about your condition.
 
 **"Is the computer's random number really random?"**
 
-No, and this is worth knowing rather than glossing. `random.randint` calculates its numbers from a starting value, using a formula. Same starting value, same sequence of "random" numbers — every time, forever. It is called *pseudo*-random for exactly that reason. For a guessing game it is completely fine, because you do not know the starting value and could not usefully compute the sequence anyway. For things where it matters — passwords, keys, money — programmers use different tools built on genuinely unpredictable physical measurements. And here is the useful part: **that predictability is a feature you will use on purpose in Week 29**, when you need a program to make the same "random" split of data every time so that you can compare two runs fairly.
+No, and this is worth knowing rather than glossing. `random.randint` calculates its numbers from a starting value, using a formula. Same starting value, same sequence of "random" numbers — every time, forever. It is called *pseudo*-random for exactly that reason. For a guessing game it is completely fine, because you do not know the starting value and could not usefully compute the sequence anyway. For things where it matters — passwords, keys, money — programmers use different tools built on genuinely unpredictable physical measurements.
+
+Here is the useful part: **that predictability is a feature you will use on purpose in Week 29**, when you need a program to make the same "random" split of data every time so that you can compare two runs fairly.
 
 **"What if the player just types `banana` forever?"**
 
@@ -1221,6 +1270,8 @@ Yes, and `guess.py` has almost exactly that — the replay loop contains the gam
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+These are the moments that usually go badly in this lesson, and what to do about each one straight away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The runaway loop frightens them and the lesson stalls | The screen goes berserk and nothing in their experience says "this is fine" | **Your calm is the entire intervention.** Say, flatly: "that's an infinite loop, nothing is broken, watch." Stop it. Then do it again *together*, then a third time where they choose the moment. Control cures fear. |
@@ -1239,6 +1290,8 @@ Yes, and `guess.py` has almost exactly that — the replay loop contains the gam
 ---
 
 ## 🧭 Differentiation
+
+Use this section to make the lesson smaller or bigger for the student in front of you.
 
 ### If the student is struggling
 
@@ -1295,7 +1348,9 @@ None of these need syntax they have not met.
 3. **Warmer/colder** (item 3). The first-guess problem is the real lesson.
 4. **The histogram** (item 5). The first chart in the course, made of `#` characters and Week 7's text multiplication.
 5. **Collatz** (item 6), with the safety valve, and a conversation about why professionals put safety valves in loops they believe will terminate.
-6. **The fairness question, with numbers.** `guess.py` gives seven tries because six halvings plus a final guess cover 1–100. Ask: *"a player who has never heard of halving guesses more or less at random. How likely are they to win in seven?"* Seven random guesses out of a hundred numbers is roughly a 7% chance — against a well-played 100%. **The same game is trivial for one player and nearly impossible for another, and nothing in the code changed.** That is a real conversation about what "fair" means, it is the same shape as Level 1's work on rules meeting people they were not designed for, and it returns in Week 30 when a model's accuracy turns out to depend enormously on who is being measured.
+6. **The fairness question, with numbers.** `guess.py` gives seven tries because six halvings plus a final guess cover 1–100. Ask: *"a player who has never heard of halving guesses more or less at random. How likely are they to win in seven?"* Seven random guesses out of a hundred numbers is roughly a 7% chance — against a well-played 100%.
+
+**The same game is trivial for one player and nearly impossible for another, and nothing in the code changed.** That is a real conversation about what "fair" means, it is the same shape as Level 1's work on rules meeting people they were not designed for, and it returns in Week 30 when a model's accuracy turns out to depend enormously on who is being measured.
 
 ### If the student won't engage today
 
@@ -1351,6 +1406,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This is the script for setting the homework, followed by which workbook sections go home and how long they should take.
+
 **Say this:**
 
 > "About an hour and a half, in two evenings. This is a project week, so the heart of it is building — but the workbook has a page for everything we did, and I will mark from it section by section.
@@ -1367,7 +1424,13 @@ Three checks, five minutes, exact wording.
 >
 > **Think Deeper, T1 and T2.** Pick a side and name a cost, in four or more sentences.
 >
-> **Build It.** Part 1: cause the runaway loop and stop it, three times. Part 2: finish `guess.py` — hints, the seven-try limit, the replay loop; it must give the number away when you lose, and it must never crash. Part 3: `grade.py`, **tested on the twelve numbers off your card first** — if it doesn't say 900 and 75.00, it's wrong, and you'll know straight away. Part 4: the banana record. Type `banana` at **every single prompt in both programs** and write down what each one actually printed. Not 'it was fine' — the words on the screen. And where the message is not quite honest, say so. Part 5: the Bug Log — two entries, and **one of them must be your `KeyboardInterrupt`** — copy the real traceback in, with the line number.
+> **Build It.** Five parts:
+>
+> 1. Cause the runaway loop and stop it, three times.
+> 2. Finish `guess.py` — hints, the seven-try limit, the replay loop. It must give the number away when you lose, and it must never crash.
+> 3. `grade.py`, **tested on the twelve numbers off your card first** — if it doesn't say 900 and 75.00, it's wrong, and you'll know straight away.
+> 4. The banana record. Type `banana` at **every single prompt in both programs** and write down what each one actually printed. Not 'it was fine' — the words on the screen. And where the message is not quite honest, say so.
+> 5. The Bug Log — two entries, and **one of them must be your `KeyboardInterrupt`** — copy the real traceback in, with the line number.
 >
 > **Draw It, and the Self-Check** at the very end.
 >
@@ -1375,13 +1438,17 @@ Three checks, five minutes, exact wording.
 
 **Workbook sections:** the **Warm-Up** and **Practice Set A, A1** (the trace tables) in class if there is time; everything else — Predict the Output, the rest of Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It (Parts 1–5), Draw It and Self-Check — at home. The Build It tables are also where the in-class `guess.py` and banana work gets written up.
 
-**Expected time:** 15 min Warm-Up, Predict and trace tables · 15 min rest of Practice Set A · 15 min Practice Set B · 10 min Fix the Broken Program · 10 min Puzzle and Think Deeper · 20 min `guess.py` · 15 min `grade.py` · 5 min the banana record · 10 min Bug Log, Draw It and Self-Check. Roughly 115 minutes in all, so split it across two evenings; this is the longest homework of the term. If time is short, the sections to drop first are Draw It and the Puzzle; never drop Build It.
+**Expected time:** 15 min Warm-Up, Predict and trace tables · 15 min rest of Practice Set A · 15 min Practice Set B · 10 min Fix the Broken Program · 10 min Puzzle and Think Deeper · 20 min `guess.py` · 15 min `grade.py` · 5 min the banana record · 10 min Bug Log, Draw It and Self-Check. Roughly 115 minutes in all, so split it across two evenings; this is the longest homework of the term.
+
+If time is short, the sections to drop first are Draw It and the Puzzle; never drop Build It.
 
 ---
 
 ## 🔑 Answer Key
 
-Organised by the **workbook's own sections and item labels** (W1, P1, A1, B1, Bug 1, T1, Part 1 …), so you can mark with the workbook open beside it. The values are the ones in the workbook's own Answers section, re-checked by running the code. Teacher-only material (the complete `grade.py`, extra diagnostics, marking tips) follows after Self-Check, under **Teacher extras**.
+This section is for marking. It is organised by the **workbook's own sections and item labels** (W1, P1, A1, B1, Bug 1, T1, Part 1 …), so you can mark with the workbook open beside it.
+
+The values are the ones in the workbook's own Answers section, re-checked by running the code. Teacher-only material (the complete `grade.py`, extra diagnostics, marking tips) follows after Self-Check, under **Teacher extras**.
 
 ### Warm-Up
 
@@ -1485,7 +1552,7 @@ count is 2
 
 **The numbers printed are 0, 1 and 2 — not 1, 2, 3.** Because the counter *starts* at 0 and the printing happens **before** the `+= 1`. Starting a counter at 0 and testing `<` gives you exactly the same values `range(3)` would.
 
-**A1(iii). Infinite.** Every check asks `5 > 0`, which is `True` forever, because **nothing in the body changes `fuel`.** The missing part is the **change**. Stop it with Ctrl+C:
+**A1(iii). Infinite.** Every check asks `5 > 0`, which is `True` forever, because **nothing in the body changes `fuel`.** The missing part is the **change**. Stop it with Ctrl+C. The real output:
 
 ```text
 still flying
@@ -1497,6 +1564,8 @@ Traceback (most recent call last):
     print("still flying")
 KeyboardInterrupt
 ```
+
+The fix is one line, inside the loop:
 
 ```python
     fuel -= 1                  # inside the loop, in the indent
@@ -1731,7 +1800,7 @@ while tries <= 3:
 
 **Why an `if` after the `int(...)` cannot work:** `int()` is the line that crashes. By the time the `if` would run, the program is already over. **There is nothing left to check.**
 
-The three lines:
+The replacement lines:
 
 ```python
     text = input(f"PIN (try {tries + 1} of 3)? ").strip()   # keep it as TEXT
@@ -1838,6 +1907,8 @@ That is worth sitting with, because it is exactly what happens with real systems
 | Which of the three parts is missing? | **The change** |
 | Was your heart rate different on the third go? | It should have been. That is the whole reason for doing it three times |
 
+The missing line is:
+
 ```python
     countdown -= 1              # inside the loop, in the indent
 ```
@@ -1941,6 +2012,8 @@ Two other things to check. **Is there a line in the body of the good version tha
 
 ### Self-Check answers
 
+Each row is a Self-Check statement from the workbook with its answer.
+
 | Statement | Answer |
 |---|---|
 | A `while` loop knows how many passes it will do before it starts | **False.** That is a `for` loop |
@@ -1959,24 +2032,28 @@ Two other things to check. **Is there a line in the body of the good version tha
 | `typed.isdigit` and `typed.isdigit()` do the same thing | **False.** Without brackets you never ask the question, and the answer counts as a yes |
 | On a Mac you stop a runaway loop with Command+C | **False.** Ctrl+C, everywhere |
 
-
 ### Teacher extras (not asked in the workbook)
 
 These answer things the **lesson** raises that the workbook does not ask. Use them if the student brings the question or the marking turns up a wrong answer.
 
 **Trace tables — a variation.** Change the `count` loop in A1(ii) to `count <= 3`. How many passes now, and which numbers print?
+
 Four passes: 0, 1, 2, 3. That extra pass is exactly the off-by-one from the lesson — `<=` lets the boundary value through one more time.
 
 **A loop is set up for five passes. On pass two it hits `continue`; on pass four it hits `break`. How many passes run?**
+
 Four. Pass two runs but is cut short; pass four runs as far as the `break`; pass five never happens.
 
 **What does `.strip()` do, and why does it matter for `.isdigit()`?**
+
 It removes spaces from both ends of the text. It matters because `"  42  ".isdigit()` is `False` — a space is not a digit — so a user who types a space before their number would be rejected for no visible reason. Real proof: `'  42  '` → `False`; `'42'` → `True`.
 
 **What is a flag?**
+
 A variable whose only job is to hold `True` or `False` and steer a loop. In `guess.py`, `won` ends one game and `playing` ends the whole session. Flipping a flag is a change step made out of a decision instead of arithmetic.
 
 **Why not keep a separate variable for the `(n left)` number?** It is computed as `MAX_TRIES - tries_used`.
+
 You could, but then there would be two numbers that have to agree, and every place you changed one you would have to remember the other. **Working it out from the counter means it cannot get out of step.** This is the same principle as Week 6's "a boundary you do not write is a boundary you cannot get wrong."
 
 #### More broken programs, if the student wants them
@@ -1989,6 +2066,7 @@ Each has its real message. None is in the workbook.
 score = int(input("Score? "))
 print(score)
 ```
+
 …and the user types `banana`.
 
 *The real message:*
@@ -2236,7 +2314,10 @@ Total 900 and average 75.00 — **the same answers last week's `scores.py` gave*
 | `Score n of m:` | `85.5` | `    Whole numbers 0 to 100 only.` | Works; the message is accurate here |
 
 **Is `break` bad style?**
-There is a real fifty-year argument here and no settled answer. Against: a loop whose exits are all in the `while` line can be understood by reading one line, whereas three scattered `break`s mean reading the whole body to know when it stops. For: forcing every exit into the condition sometimes means inventing flag variables that exist only to satisfy the rule, and that is harder to read, not easier. **The workable position: use `break` for "stop as soon as you find it", keep it near the top of the body where it is visible, and treat a third `break` in one loop as a sign the loop is doing too much.**
+
+There is a real fifty-year argument here and no settled answer. Against: a loop whose exits are all in the `while` line can be understood by reading one line, whereas three scattered `break`s mean reading the whole body to know when it stops.
+
+For: forcing every exit into the condition sometimes means inventing flag variables that exist only to satisfy the rule, and that is harder to read, not easier. **The workable position: use `break` for "stop as soon as you find it", keep it near the top of the body where it is visible, and treat a third `break` in one loop as a sign the loop is doing too much.**
 
 **One more Bug Log entry that is acceptable.**
 
@@ -2246,8 +2327,9 @@ There is a real fifty-year argument here and no settled answer. Against: a loop 
 
 **One more Self-Check row.** `"42".isdigit()` is `True` → **True.**
 
-
 ### Lesson questions posed in the Say-this scripts
+
+These are the questions asked aloud during the lesson, each with its answer.
 
 - *"Why did you start at 50?"* → Because it halves the range whatever the answer is.
 - *"How many numbers are left after 'higher than 50'?"* → Fifty: 51 to 100.
@@ -2272,9 +2354,17 @@ There is a real fifty-year argument here and no settled answer. Against: a loop 
 
 ## 🔮 Next Week Preview
 
-Week 9 is the Term 1 checkpoint, and it starts from something the student will already have noticed if they have been paying attention: **they keep typing the same five lines.** The banner at the top of `guess.py` is nearly the banner at the top of `grade.py`, which is nearly the one in `about_me.py` from Week 4. Next week they open their own files from weeks 1 to 8 side by side, find a block that has been pasted in three places, circle all three in the same colour, and then lift it out into a **function** — a named block you can run whenever you like. `def print_banner():` writes the recipe once; `print_banner()` cooks it. Then `return`, which is how a function hands an answer *back* instead of just printing it. The second half of the lesson is a timed repair round: **ten broken programs drawn from weeks 1 to 8**, with the Bug Log open, and no help. The output of the week is not a grade — it is a list of which weeks need revisiting, written by the student.
+Week 9 is the Term 1 checkpoint. It starts from something the student will already have noticed: **they keep typing the same five lines.** The banner at the top of `guess.py` is nearly the banner at the top of `grade.py`, which is nearly the one in `about_me.py` from Week 4.
 
-**Prep early:** three things, and the first one matters more than it sounds. **Make sure the student's weeks 1 to 8 files still exist**, in one folder, with the names they gave them. Next week's opening activity is opening three of their own files at once and finding the repetition, and it does not work with files that have been deleted or renamed to `test3.py`. If the folder is a mess, tidying it up is a legitimate and useful ten minutes this week. Second, **keep the Bug Log** — next week every entry in it gets read back and sorted into families, and a student with fifteen entries has a much better lesson than one with three. Third, if `guess.py` is unfinished, **finish it before next week rather than during it**; Week 9 uses it as source material for the repetition hunt, and a broken file is a distraction from a completely different lesson.
+Next week they open their own files from weeks 1 to 8 side by side, find a block that has been pasted in three places, and circle all three in the same colour. Then they lift it out into a **function** — a named block you can run whenever you like. `def print_banner():` writes the recipe once; `print_banner()` cooks it. Then `return`, which is how a function hands an answer *back* instead of just printing it.
+
+The second half of the lesson is a timed repair round: **ten broken programs drawn from weeks 1 to 8**, with the Bug Log open, and no help. The output of the week is not a grade — it is a list of which weeks need revisiting, written by the student.
+
+**Prep early:** three things, and the first one matters more than it sounds.
+
+1. **Make sure the student's weeks 1 to 8 files still exist**, in one folder, with the names they gave them. Next week's opening activity is opening three of their own files at once and finding the repetition, and it does not work with files that have been deleted or renamed to `test3.py`. If the folder is a mess, tidying it up is a legitimate and useful ten minutes this week.
+2. **Keep the Bug Log** — next week every entry in it gets read back and sorted into families, and a student with fifteen entries has a much better lesson than one with three.
+3. **If `guess.py` is unfinished, finish it before next week rather than during it.** Week 9 uses it as source material for the repetition hunt, and a broken file is a distraction from a completely different lesson.
 
 ---
 

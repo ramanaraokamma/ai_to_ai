@@ -12,7 +12,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week**.
+This warm-up brings back last week's loops before the checkpoint. Answer the five questions about **last week**.
 
 **W1.** Name the three parts of a `while` loop, and say what goes wrong if each one is missing.
 
@@ -38,7 +38,9 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
-**Write your prediction before you run anything.** **One of these four prints nothing at all, and one crashes before it can print anything**, and saying *why* is the whole question.
+This section is for predicting what Python will do before you run it. **Write your prediction before you run anything.**
+
+One of these four prints nothing at all, and one crashes before it can print anything. Saying *why* is the whole question.
 
 ### P1
 
@@ -134,6 +136,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading error messages and programs without running them. Each question says what to write.
+
 **A1. Name the family from the message alone.** Write **1** (never started), **2** (started then stopped) or **3** (finished and lied), and then say **what you would look at first.** Do not look at any code — the message is all you get.
 
 | # | The message | Family | What I'd look at first |
@@ -166,6 +170,7 @@ ________________________________________________________________
 **A2. Trace it.** For each program, say what appears on the screen. **Three of them show nothing.**
 
 **(i)**
+
 ```python
 def print_line():
     print("-" * 6)
@@ -174,31 +179,38 @@ print_line()
 print_line()
 print("end")
 ```
+
 Output: ______________________________________________
 
 **(ii)**
+
 ```python
 def print_line():
     print("-" * 6)
 ```
+
 Output: ______________________________________________
 
 **(iii)**
+
 ```python
 def print_line():
     print("-" * 6)
 
 print_line
 ```
+
 Output: ______________________________________________
 
 **(iv)**
+
 ```python
 def six():
     return 6
 
 six()
 ```
+
 Output: ______________________________________________
 
 **In (ii), (iii) and (iv), is anything wrong with the definition itself?** ______  So what is wrong?
@@ -221,6 +233,7 @@ ________________________________________________________________
 **A4. Spot the bug — four programs, and three of them have no error message.**
 
 **(i)**
+
 ```python
 def print_header():
     print("=" * 20)
@@ -228,9 +241,11 @@ def print_header():
 print_header
 print("body")
 ```
+
 Error message? ______  What's wrong: ______________________________
 
 **(ii)**
+
 ```python
 def average():
     print(75.0)
@@ -238,9 +253,11 @@ def average():
 result = average()
 print(f"{result:.2f}")
 ```
+
 Error message? ______  What's wrong: ______________________________
 
 **(iii)**
+
 ```python
 def give_ten():
     return 10
@@ -248,9 +265,11 @@ def give_ten():
 
 print(give_ten())
 ```
+
 Error message? ______  What's wrong: ______________________________
 
 **(iv)**
+
 ```python
 def banner():
     print("*" * 10)
@@ -259,6 +278,7 @@ banner()
 print("welcome")
 banner()
 ```
+
 Error message? ______  What's wrong: ______________________________
 
 **A5. Label the diagram.** Fill in every blank box, including the four caption boxes along the bottom.
@@ -315,6 +335,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing functions of your own. Write each answer on the lines, then run it and compare it with the expected output.
 
 **B1. Three lines.** Define a function called `print_line` that prints twenty dashes, then call it once.
 
@@ -478,6 +500,8 @@ Runs per over   : 9.00
 
 ## 🐞 Fix the Broken Program
 
+This section is for finding and fixing bugs in one program, one at a time.
+
 Here is `card.py`, which is supposed to print a name card and work out an age in months. It has **three** bugs: one that stops Python reading the file, one that crashes it partway through, and one that produces **no error message at all**.
 
 ```python
@@ -500,7 +524,7 @@ print(f"  That is {months} months,")
 print(f"  which is {months / 12:.1f} years.")
 ```
 
-**Bug 1.** Run it as it is. The real message:
+**Bug 1.** Run it as it is. This is the real message:
 
 ```text
   File "card.py", line 3
@@ -521,7 +545,7 @@ The fix — write the whole corrected line:
 ________________________________________________________________
 ```
 
-**Bug 2.** Now run it and type `12`. The real output and message:
+**Bug 2.** Now run it and type `12`. This is the real output and message:
 
 ```text
 **************************
@@ -550,7 +574,7 @@ ________________________________________________________________
 ________________________________________________________________
 ```
 
-**Bug 3.** Now it runs all the way through. The real output, typing `12`:
+**Bug 3.** Now it runs all the way through. This is the real output when you type `12`:
 
 ```text
 **************************
@@ -586,6 +610,8 @@ ________________________________________________________________
 ---
 
 ## 🧩 Puzzle of the Week
+
+This section has two puzzles: sorting messages into families, and counting the lines a function saves.
 
 ### Part A — Name That Family, against the clock
 
@@ -647,6 +673,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions ask for a written paragraph each, in your own words.
+
 **T1.** Should every repeated block become a function?
 
 Write a paragraph. There are two real camps — *never write the same thing twice* and *wait until the third copy* — and neither is silly. Set out both, then name the thing **neither camp can know**, then give the rule you are personally going to use.
@@ -683,60 +711,79 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+This section is the checkpoint itself. You repair ten old bugs, build functions from your own files, and finish with a list of weeks to revisit.
+
 ### Part 1 — the ten repairs
 
-Ten broken programs, all from weeks 1–8. For each one write **the family**, **what's wrong in one sentence**, and **the fix**. If you are stuck for more than ninety seconds, **write down which week it came from and move on.** Getting stuck is information.
+Ten broken programs, all from weeks 1–8. For each one write **the family**, **what's wrong in one sentence**, and **the fix**.
+
+If you are stuck for more than ninety seconds, **write down which week it came from and move on.** Getting stuck is information.
 
 **Bug 1** — from Week 1
+
 ```python
 print("Hello, world!)
 ```
+
 Family: ______  Wrong: ______________________________  Fix: ______________________
 
 **Bug 2** — from Week 1
+
 ```python
 print(Hello)
 ```
+
 Family: ______  Wrong: ______________________________  Fix: ______________________
 
 **Bug 3** — from Week 2
+
 ```python
 age = "12"
 print(age + 1)
 ```
+
 Family: ______  Wrong: ______________________________  Fix: ______________________
 
 **Bug 4** — from Week 3
+
 ```python
 total = 900
 print("The total is {total}")
 ```
+
 Family: ______  Wrong: ______________________________  Fix: ______________________
 
 **Bug 5** — from Week 4 (the user types `twelve`)
+
 ```python
 age = int(input("How old are you? "))
 print(age)
 ```
+
 Family: ______  Wrong: ______________________________  Fix: ______________________
 
 **Bug 6** — from Week 5
+
 ```python
 score = 90
 if score = 90:
     print("Full marks")
 ```
+
 Family: ______  Wrong: ______________________________  Fix: ______________________
 
 **Bug 7** — from Week 5
+
 ```python
 score = 90
 if score >= 50:
 print("Pass")
 ```
+
 Family: ______  Wrong: ______________________________  Fix: ______________________
 
 **Bug 8** — from Week 6
+
 ```python
 mark = 95
 
@@ -751,18 +798,22 @@ else:
 
 print(f"Mark {mark} gets grade {grade}")
 ```
+
 Family: ______  Wrong: ______________________________  Fix: ______________________
 
 **Bug 9** — from Week 7
+
 ```python
 # Goal: print the numbers 1 to 10.
 for n in range(1, 10):
     print(n, end=" ")
 print()
 ```
+
 Family: ______  Wrong: ______________________________  Fix: ______________________
 
 **Bug 10** — from Week 8
+
 ```python
 # Goal: count down from 3 and then say Liftoff.
 countdown = 3
@@ -772,6 +823,7 @@ while countdown > 0:
 
 print("Liftoff!")
 ```
+
 Family: ______  Wrong: ______________________________  Fix: ______________________
 
 **(a) How many of the ten had no error message at all?** ______ Which ones? ______________
@@ -788,7 +840,9 @@ ________________________________________________________________
 
 Go through your **own** weeks 1–8 files and find **three** blocks that appear more than once. Turn each one into a function.
 
-**The requirement I am marking hardest: the output has to be byte-identical to what it was before.** Not nearly. Identical. **Copy the blocks; do not retype them.**
+**The requirement I am marking hardest: the output has to be byte-identical to what it was before.** Not nearly. Identical.
+
+Copy the blocks; do not retype them.
 
 **Checklist:**
 
@@ -832,7 +886,7 @@ ________________________________________________________________
 
 ### Part 3 — Week 7's average, as a returning function
 
-Rewrite last week's totaller so the accumulator lives **inside** a function that **returns** the average. Test it on the twelve card scores: 88 92 70 65 100 54 78 81 47 90 62 73
+Rewrite last week's totaller so the accumulator lives **inside** a function that **returns** the average. Test it on the twelve card scores: 88 92 70 65 100 54 78 81 47 90 62 73.
 
 | Check | Wanted | Got |
 |---|---|---|
@@ -891,7 +945,7 @@ ________________________________________________________________
 
 ### Part 6 — the revision list
 
-**Weeks, specifics, and how you will know.** The third column is the one that makes this useful. *"Revise Week 6"* is a wish. *"Write a five-branch chain and test both sides of every boundary"* is a plan.
+Fill in the table with weeks, specifics, and how you will know. The third column is the one that makes this useful. *"Revise Week 6"* is a wish. *"Write a five-branch chain and test both sides of every boundary"* is a plan.
 
 | Week | What specifically | How I'll know I've got it |
 |---|---|---|
@@ -920,6 +974,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This section is for drawing the idea of a function instead of writing it.
+
 Draw **the same program twice** — once with a block pasted three times, once with it named and called three times. Use your own subject: a scoreboard, a menu, a report card, a games night scoresheet.
 
 ![Draw It frame for Week 9](../figures/fig-w09-8-draw-frame.svg)
@@ -938,6 +994,8 @@ Draw **the same program twice** — once with a block pasted three times, once w
 ---
 
 ## 📊 Self-Check
+
+This section is for ticking how sure you are about each skill, then testing yourself on true or false.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -976,6 +1034,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished every page. Open it only when you are done.
 
 <details>
 <summary>Check your answers</summary>
@@ -1070,6 +1130,7 @@ NameError: name 'greet' is not defined
 **A2.**
 
 **(i)**
+
 ```text
 ------
 ------
@@ -1092,13 +1153,16 @@ The real outputs:
 A
 A
 ```
+
 ```text
 A
 ```
+
 ```text
 A
 None
 ```
+
 ```text
 ```
 

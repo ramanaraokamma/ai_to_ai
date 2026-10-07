@@ -439,7 +439,7 @@ If you see `ModuleNotFoundError: No module named 'pandas'`, run **`python3 -m pi
 
 ### Step 1 — prove the install from inside a file
 
-New file, `table.py`.
+Make a new file called `table.py` and type this.
 
 ```python
 """table.py - the twelve records, handed to pandas."""
@@ -461,6 +461,8 @@ how many records: 12
 The second line is a **check**, not decoration. **Twelve records.** Remember that number — in about four minutes something else is going to tell you twelve, and you want the two to agree.
 
 ### Step 2 — one call
+
+Add these lines to the end of `table.py`. They build the DataFrame and print it.
 
 ```python
 squad_df = pd.DataFrame(squad)             # a list of dicts, straight in
@@ -493,6 +495,8 @@ And notice `out` — a `True`/`False` column sitting happily next to columns of 
 
 ### Step 3 — `head()`
 
+Add these lines to `table.py`. They print only the first rows of the table.
+
 ```python
 print()
 print(squad_df.head())
@@ -523,7 +527,7 @@ Five. `head()` always gives you the first five unless you say otherwise — `hea
 
 ### Step 4 — `info()`, and read every line
 
-Do not rush this. It is the objective of the whole chapter.
+Do not rush this. It is the objective of the whole chapter. Add these lines to `table.py`.
 
 ```python
 print()
@@ -611,7 +615,7 @@ Is there a column called `Runs`? No. It is `runs`, lower case. **One letter.**
 
 And look for the `File` line that names **your** file: `File "table.py", line 20`. **That is the only line in nineteen that you can do anything about.**
 
-Fix it:
+Fix it by using the lower-case name. Replace the broken lines with these.
 
 ```python
 print()
@@ -801,7 +805,7 @@ Also, look at `day`. **`Mon` appears twice**, rows 0 and 7. Not a problem. Two r
 
 Go to your `steps` column and change **one** value to `None`. Pretend your phone was flat that day.
 
-**Before you run it, write down three things you think will change.**
+**Before you run it, write down three things you think will change.** Then run this version.
 
 ```python
 my_week = pd.DataFrame({
@@ -885,7 +889,7 @@ print()
 print(canteen["price"])
 ```
 
-Real output:
+This is the output from a real run.
 
 ```text
       dish  price    veg  sold
@@ -960,7 +964,7 @@ print()
 print(squad["goals"])
 ```
 
-Real output:
+This is the output from a real run.
 
 ```text
 how many records: 8
@@ -997,7 +1001,11 @@ Name: goals, dtype: int64
 
 **`minutes  8 non-null  object`.** Nothing is missing — eight out of eight — and yet the column is `object`, which means it is holding something that is not a number.
 
-**Why?** Look at Hira's record: `"minutes": "1100"`, with quote marks round it. **One quote mark, and the whole column is now `object`.** Week 17's rule for the fourth time: a container picks the one kind that can hold everything, and the only kind that can hold both `1520` and `"1100"` is "general stuff". Notice that pandas did not turn the other numbers into text: each value keeps its own kind (`1520` is still a number, `"1100"` is still text), which is why `+ 10` fails only when it reaches the text one. The `NaN` case was different, because there the values really were changed into decimals.
+**Why?** Look at Hira's record: `"minutes": "1100"`, with quote marks round it. **One quote mark, and the whole column is now `object`.** Week 17's rule for the fourth time: a container picks the one kind that can hold everything, and the only kind that can hold both `1520` and `"1100"` is "general stuff".
+
+Notice that pandas did not turn the other numbers into text: each value keeps its own kind (`1520` is still a number, `"1100"` is still text), which is why `+ 10` fails only when it reaches the text one.
+
+The `NaN` case was different, because there the values really were changed into decimals.
 
 **And here is what makes it nasty.** `head()` prints five rows — Hira is row **7**, so she does not even appear. The printed values look like perfectly ordinary numbers. **The only clue in the whole output is the word `object` on line 3 of the little table.** Not the count, which says 8. Not the values, which look fine. One word.
 
@@ -1041,7 +1049,7 @@ print("the whole table is a:", type(library))
 print("one column is a    :", type(library["rating"]))
 ```
 
-Real output:
+This is the output from a real run.
 
 ```text
       title  pages  rating  borrowed
@@ -1220,6 +1228,8 @@ my_week.info()
 
 ### The whole clinic, for reference
 
+Every message and every silent symptom from this week, with what it means and the fix.
+
 | What you see | What it means | The fix |
 |---|---|---|
 | `ModuleNotFoundError: No module named 'pandas'` | "There is no pandas on the Python I am using." | `python3 -m pip install pandas` — the `-m` makes it the *same* Python. Prove it with `python3 -c "import pandas; print(pandas.__version__)"` |
@@ -1323,6 +1333,8 @@ And the extra one nobody predicted: **the `int64` vanished from the tally line e
 
 ## 💬 Talk About It
 
+Three questions to argue about with a partner or a grown-up. Each one has a hint to start you off.
+
 **1. `12` and `12.0` are the same number. So why does the change matter at all?**
 
 *Hint:* start by agreeing — the **value** genuinely is identical, and no arithmetic you do will come out differently because of it. So the argument cannot be about the value. Then ask what else changed at the same moment, in the same output. *(The non-null count went from 4 to 3.)* Now the useful framing: **which of those two is the symptom and which is the disease?** The `12.0` is what you can see; the missing value is what is actually wrong. So a person who shrugs at `12.0` will cheerfully average a column with three holes in it and never know. Then push once more: is there a case where a `float64` column is *not* a warning? *(Yes — if you typed `7.5`. Which is why the count matters more than the dtype.)*
@@ -1338,6 +1350,8 @@ And the extra one nobody predicted: **the `int64` vanished from the tally line e
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four ideas that sound right and are not. Each one is shown as a wrong sentence next to a right one.
 
 ### Trick 1 — "the index is the first column"
 
@@ -1378,6 +1392,8 @@ And there are still jobs where you want the plain array: a photo, a big grid of 
 
 ## 🌍 Where You've Seen This
 
+This section shows where tables with names, an index and empty cells already appear outside the course.
+
 1. **Every spreadsheet you have ever opened.** Column headings across the top, row numbers down the side, and each column allowed to hold a different kind of thing. A DataFrame is a spreadsheet you can type at instead of click at — and the row numbers down the side of a spreadsheet are its index, and they are not a column there either.
 2. **The "sort by" menu on any table on the web.** It says *"sort by price"*, not *"sort by column 3"*. That menu exists because the columns have names. Every one of those names is a `df["..."]` waiting to happen.
 3. **A blank cell in an online form.** Leave your middle name empty and somewhere in a database there is a `NaN` — or its cousin, `NULL` — and somebody's code has to decide what to do about it. That decision is Week 23, and getting it wrong is why you occasionally get an email addressed to "Dear None".
@@ -1414,6 +1430,8 @@ second word arrives. Every dashed box to the right of it is built on this one co
 
 ## 🔑 Remember This
 
+The key points of the week in one list, and a code card to keep beside you.
+
 - **A DataFrame is a numpy array with the labels put back on** — and each column is allowed to be a different kind of thing. That last part is what no array can do.
 - **Two containers, and only two.** A **DataFrame** is the whole table. A **Series** is one column, and it carries the values, the index they sit on, **and its own name**.
 - **The index is the row's name, not a column.** `info()` counts five columns, not six. `df[0]` is a `KeyError`. Two rows may share a value; an index is meant to be different for every row.
@@ -1423,6 +1441,8 @@ second word arrives. Every dashed box to the right of it is built on this one co
 - **If you typed whole numbers and pandas shows you decimals, you have a hole.** `NaN` is a decimal, and a column holds one kind of thing — Week 17's rule for the third time.
 
 ### Syntax reminder card
+
+Every new line of syntax from this week, with the errors it can raise, in one block to copy from.
 
 ```python
 import pandas as pd                        # top of the file. Everybody writes pd.
@@ -1465,6 +1485,8 @@ print(type(ages["age"]))                   # <class '...Series'>
 ---
 
 ## 📓 New Words
+
+The five words from this week, each with its meaning and an example.
 
 ![This week's five words as pictures](../figures/fig-w21-7-vocab-icons.svg)
 *Figure 21.8 — This week's five words, drawn.*

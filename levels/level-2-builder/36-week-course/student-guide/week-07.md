@@ -75,6 +75,8 @@ This is the week programs stop being the same length as the job they do. Everyth
 
 ## 🧠 The Big Idea
 
+This section explains loops, `range`, the accumulator and off-by-one, one idea at a time.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. `i` is a box **Python** fills in, not one you fill in
@@ -83,7 +85,12 @@ This is the week programs stop being the same length as the job they do. Everyth
 
 > **You do not put anything in this box. Python does. Once per pass.**
 
-First pass, Python puts 1 in it and runs the indented line. Comes back. Puts 2 in it. Runs the indented line. Comes back. Puts 3 in. And on, until it runs out of values — and then it stops **on its own** and carries on with whatever comes after the loop.
+Here is what Python does:
+
+1. It puts 1 in the box and runs the indented line.
+2. It comes back, puts 2 in the box, and runs the indented line.
+3. It puts 3 in, and so on, until it runs out of values.
+4. Then it stops **on its own** and carries on with whatever comes after the loop.
 
 You never write `n = 1`. You never write `n = n + 1`. If you catch yourself typing either of those, something has gone wrong in your head about what the `for` line is *for*.
 
@@ -102,7 +109,7 @@ You never write `n = 1`. You never write `n = n + 1`. If you catch yourself typi
 | `:` | The colon. "The indented block below belongs to me" | Leave it out and you get `SyntaxError: expected ':'` |
 | the indent | Four spaces. **Indentation is how Python knows what to repeat** | Get it wrong and either nothing repeats, or the wrong thing does |
 
-**And the indent is not decoration.** In Python it is the actual grammar. Here is the proof. Two programs; the only difference between them is four spaces:
+**The indent is not decoration.** In Python it is the actual grammar. Type this program and run it. One `print` is indented and one is not:
 
 ```python
 total = 0
@@ -127,7 +134,7 @@ outside: total is 6
 
 > **range** — a value factory. You tell it where to start, where to stop, and how big a step to take, and it hands out one whole number per pass.
 
-And now the thing that catches every single person who learns to program. Type this and count what comes out:
+This catches almost everyone who learns to program. Type this and count what comes out:
 
 ```python
 for n in range(4):
@@ -147,9 +154,9 @@ Both of those are true at the same time, and that is exactly what makes it hard.
 
 Say it out loud: **"range stops before the number you give it."** Say it again, and this time say it like you are annoyed about it. It is worth the theatre — this one sentence saves you an hour of confusion in about three weeks.
 
-**Now — why?** Because it is not random, and knowing the reason is what makes it stick.
+**Now, why?** It is not random, and knowing the reason makes it stick.
 
-**Because it makes counting a subtraction.** When `b` is bigger than `a`, `range(a, b)` hands out exactly `b - a` values. Every time. (If `b` is not bigger than `a` you get zero values, never a negative number, and a step changes the count — both are coming up below.)
+**It makes counting a subtraction.** When `b` is bigger than `a`, `range(a, b)` hands out exactly `b - a` values. Every time. (If `b` is not bigger than `a` you get zero values, never a negative number, and a step changes the count — both are coming up below.)
 
 - `range(1, 11)` → 11 − 1 = **ten** values
 - `range(0, 4)` → 4 − 0 = **four** values
@@ -197,7 +204,7 @@ Two new tools appeared there, and they are tools rather than ideas, so here they
 - **`end=" "`** — normally `print` finishes by moving to a new line. `end=" "` tells it to finish with a space instead, so the next `print` carries on the same line.
 - **A bare `print()`** with nothing in it just ends the line. That is how you build one line out of many prints.
 
-**Two special cases that look like bugs and are not:**
+**Two special cases that look like bugs and are not.** Type this and run it:
 
 ```python
 for n in range(3, 3):      # start equals stop
@@ -259,7 +266,7 @@ Check it by hand: 1 + 2 + 3 + 4 + 5 = 15 ✔
 ![The running total fills up](../figures/fig-w07-3-accumulator-filling-up.svg)
 *Figure 7.3 — One box, twelve additions, one division at the very end. The box is not twelve boxes; it is one box whose contents change.*
 
-**Here are the two ways to break it, and neither one gives you an error message.**
+There are two ways to break an accumulator, and neither one gives you an error message. Type each one and run it.
 
 **Break 1 — the set-up goes inside the loop.**
 
@@ -301,7 +308,7 @@ Neither of those is an error as far as Python is concerned. They are Week 6's si
 
 ### 4. `"=" * 20`, and a loop inside a loop
 
-**`"=" * 20` is a gift and it takes twenty seconds.**
+**`"=" * 20` is a gift and it takes twenty seconds.** Type this and run it:
 
 ```python
 print("=" * 20)
@@ -320,7 +327,7 @@ Two things to watch, and both are `TypeError`s:
 - `"=" * "20"` — you cannot repeat text a *text* number of times. The count has to be a number.
 - `"=" + 20` — `+` glues text to text. It will not glue a number on.
 
-**And now a loop inside a loop.** There is no new syntax at all — it is two `for` loops, the second one indented inside the first. The only thing you need is the arithmetic:
+**A loop inside a loop** has no new syntax at all. It is two `for` loops, the second one indented inside the first. Type this and run it:
 
 ```python
 lines = 0
@@ -346,7 +353,7 @@ For a 9 × 9 grid that is 81 numbers, printed by **one** `print`.
 
 > **off-by-one** — a loop that runs one time too many or one time too few. Almost always a `range` boundary, and **almost always silent**.
 
-Here is the shape you will meet today. Somebody wants to print the numbers 1 to 10:
+Here is the shape you will meet today. Somebody wants to print the numbers 1 to 10. Type this and run it:
 
 ```python
 # Goal: print the numbers 1 to 10.
@@ -363,7 +370,7 @@ print()
 
 Here is the nastier shape. You have twelve scores on a card and you want to label them 1 to 12, so you very reasonably write `range(1, 12)`. That hands out 1 through 11. **Eleven prompts appear for twelve scores, and the program divides by twelve anyway.**
 
-**And here is what makes it so good a bug: the version that reads better in English is the wrong one.** The sentence in your head is "score 1 of 12", and 1 and 12 are the two numbers in that sentence, and `range(1, 12)` is the thing your fingers want to type. `range(1, 13)` will feel wrong for the first fifty times.
+**The version that reads better in English is the wrong one.** The sentence in your head is "score 1 of 12", and 1 and 12 are the two numbers in that sentence. So `range(1, 12)` is what your fingers want to type. `range(1, 13)` will feel wrong for the first fifty times.
 
 ![Twelve scores in, eleven scores counted](../figures/fig-w07-4-off-by-one-missing-row.svg)
 *Figure 7.4 — Nothing crashed. The card still has a number on it, and the average is quietly wrong. The only tool that finds this is counting.*
@@ -376,7 +383,7 @@ Here is the nastier shape. You have twelve scores on a card and you want to labe
 
 ## 💻 Type This
 
-Two programs, built up in small steps. Save everything in your `level2` folder.
+Two programs, built up in small steps. Save everything in your `level2` folder. Type each block yourself, run it, and compare your screen with the output shown.
 
 ### Step 1 — the border, before anything else
 
@@ -396,7 +403,7 @@ print("=" * 20)                    # 20 equals signs, made by multiplying text
 
 ### Step 2 — the title and the table
 
-*Add these lines under what you already have.*
+*Add these lines under what you already have.* The file should now look like this:
 
 ```python
 # seven_times.py - the 7 times table, printed by a loop.
@@ -437,7 +444,7 @@ print("=" * 20)
 
 One table is ten rows. A whole grid is nine tables side by side — **eighty-one numbers, printed by one `print`.**
 
-New file, `tables.py`:
+New file, `tables.py`. Type this program and run it:
 
 ```python
 # tables.py - a 9 x 9 times-table grid, printed with a loop inside a loop.
@@ -470,7 +477,7 @@ for row in range(1, 10):                    # OUTER loop: one pass per row
  9 |   9  18  27  36  45  54  63  72  81
 ```
 
-**Three things to look at, in this order:**
+**Three things to look at, in this order.**
 
 1. **`end=""`.** Finish with *nothing*, so the next print carries on the same line. That is how nine numbers end up on one row.
 2. **The bare `print()` at the bottom.** That is what ends the row. Look at how far in it is: it lines up with the **inner** `for`, which means it belongs to the **outer** loop. It happens once per row, not once per number.
@@ -509,7 +516,7 @@ print("-" * 34)
 
 **Notice `HOW_MANY + 1`.** You want twelve passes labelled 1 to 12, and `range(a, b)` hands out `b - a` values, so you need `range(1, 13)` — which is `range(1, HOW_MANY + 1)`.
 
-Run it with these twelve scores, and **tick each one off with a pencil as you type it**: 88 92 70 65 100 54 78 81 47 90 62 73
+Run it with these twelve scores, and **tick each one off with a pencil as you type it**: 88 92 70 65 100 54 78 81 47 90 62 73. Compare your screen with this output:
 
 ```text
 ==================================
@@ -550,7 +557,7 @@ Score 12 of 12: 73
 
 **This is the part that matters, and it happens with a pencil.**
 
-The program says the average is seventy-five. **Prove it.** Nine hundred divided by twelve, on paper, showing your working. Not a number you remember — the division.
+The program says the average is seventy-five. **Prove it.** Work out nine hundred divided by twelve, on paper, showing your working. Not a number you remember — the division. Here is one way to lay it out:
 
 ```text
   900 ÷ 12
@@ -565,11 +572,11 @@ The program says the average is seventy-five. **Prove it.** Nine hundred divided
 
 Seventy-five. Same as the program.
 
-**Now — what have you actually proved?** You have proved that the program agrees with you **on this data**. That is not the same as proving the program is right. It is much better than nothing and much worse than a guarantee. Hold on to that, because in about a minute you are going to meet a version of this program that gets it wrong.
+**Now, what have you actually proved?** You have proved that the program agrees with you **on this data**. That is not the same as proving the program is right. It is much better than nothing and much worse than a guarantee. Hold on to that, because in about a minute you are going to meet a version of this program that gets it wrong.
 
 ### Step 6 — change one character on purpose
 
-*In `scores.py`, change `range(1, HOW_MANY + 1)` to `range(1, HOW_MANY)`.* Save it. Run it with the same twelve numbers off the card, ticking each one off as you type.
+*In `scores.py`, change `range(1, HOW_MANY + 1)` to `range(1, HOW_MANY)`.* Save it. Run it with the same twelve numbers off the card, ticking each one off as you type. Compare your screen with this output:
 
 ```text
 ==================================
@@ -621,6 +628,7 @@ Put the `+ 1` back. Run it once more and check **two** things: twelve prompts, a
 
 ### The complete finished program
 
+Check your `scores.py` against the finished version:
 ```python
 # scores.py - total and average twelve scores with an accumulator.
 
@@ -649,6 +657,8 @@ print("-" * 34)
 ---
 
 ## 🔍 Worked Examples
+
+These three programs use the same loop and accumulator on new jobs. Read each one, type it, and run it with the numbers given.
 
 ### Worked Example 1 — The samosa stall (food)
 
@@ -894,9 +904,11 @@ Day 10: pages read? 25
 
 ## 🐞 When It Breaks
 
+This section shows the error messages and silent bugs that loops produce, what each one means, and how to fix it.
+
 Every message below came from really running a broken version of this week's code. Only the folder in the `File` line will be different on your machine.
 
-**And something to say out loud before you read them: most of this week's bugs have no error message at all.** That is not bad luck. It is what loop bugs are like, because a loop that runs the wrong number of times is still a perfectly legal loop.
+**Say this out loud before you read them: most of this week's bugs have no error message at all.** That is what loop bugs are like, because a loop that runs the wrong number of times is still a perfectly legal loop.
 
 ### Break 1 — the colon fell off
 
@@ -989,6 +1001,8 @@ print()
 ---
 
 ## 🎲 What We Did In Class
+
+This section lists what happened in the lesson, in order, so you can follow it at home.
 
 *If you missed the lesson, you can do the whole of this at home in about forty minutes.*
 
@@ -1092,6 +1106,8 @@ Four questions did all the work: *did it crash?* (no) · *how many are on the ca
 
 ## 💬 Talk About It
 
+These three questions are for talking through with a parent, friend or teacher. Each one has a hint to think with.
+
 **1. "A loop isn't faster to run than typing the lines out. So what is it actually for?"**
 
 *Hint:* time both. Ten `print` lines and a loop that prints ten lines finish in about the same fraction of a second, so speed is genuinely not the answer. Now think about the moment you changed the 7 to a 13. How many edits was that? How many would it have been by hand, and what happens if you miss one? Then push further: how long is your loop when it prints ten rows, and how long when it prints ten *thousand*? A program whose length does not depend on how much work it does lets you **think** about ten thousand rows — which you could not do if you had to type them.
@@ -1107,6 +1123,8 @@ Four questions did all the work: *did it crash?* (no) · *how many are on the ca
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four wrong ideas about loops that feel right. Each one is shown next to the right idea.
 
 ### Trick 1 — "`range(10)` counts to ten"
 
@@ -1147,6 +1165,8 @@ The hand-check is not a proof; it is an **independent source of truth**, and tha
 
 ## 🌍 Where You've Seen This
 
+Loops and accumulators are everywhere. Here are six places you already meet them.
+
 1. **A scoreboard totalling up an innings.** One accumulator, one number added per ball, one total on the screen. Exactly `scores.py`, with better graphics.
 2. **Your step counter's weekly average.** Seven numbers in, one accumulator, one division at the very end. If it divided *inside* the loop you would see the average jump around all week, and it does not.
 3. **The loading bar on a game download.** A loop over a known number of chunks, with a running total of how much has arrived. `47 of 120` is a counter and a `HOW_MANY`.
@@ -1183,6 +1203,8 @@ means not yet. The strip along the bottom is the seven threads this course keeps
 
 ## 🔑 Remember This
 
+These are the ten things to keep from this week.
+
 - **A `for` loop repeats the indented block once per value.** The indent *is* the loop's body — move a line out of it and it stops repeating.
 - **The counter is a box Python refills.** You never set it, and you never add one to it.
 - **`range(a, b)` hands out exactly `b - a` values (or none, if `b` is not above `a`), and never the stop number.** `range(4)` gives four values ending at 3.
@@ -1195,6 +1217,8 @@ means not yet. The strip along the bottom is the seven threads this course keeps
 - **A hand-check on paper is not a proof, but it is an independent source of truth** — and it is the only reason you can ever catch a program that is confidently wrong.
 
 ### Syntax reminder card
+
+Use this card when you forget how a loop is written.
 
 ```python
 for n in range(4):                 # 0 1 2 3        - four values, last is 3
@@ -1236,6 +1260,8 @@ for row in range(1, 4):            # OUTER: 3 passes
 
 ## 📓 New Words
 
+These are this week's five words, with a picture and an example for each.
+
 ![This week's five words as pictures](../figures/fig-w07-6-vocab-icons.svg)
 *Figure 7.6 — This week's five words, drawn.*
 
@@ -1269,7 +1295,7 @@ Go to **[the Week 7 workbook](../workbook/week-07.md)**. About **60 minutes** in
 
 **At least one Bug Log entry must have no error message.** You have seen two of those this week.
 
-> **💡 Try this:** the habit that costs two seconds and saves an hour. **Every single time you write a `range`, say out loud how many values it hands out before you run it.** `range(1, 13)` — "twelve values, one to twelve". That's it. That's the whole habit, and it is the one that stops off-by-one bugs from ever reaching your program.
+> **💡 Try this:** the habit that costs two seconds and saves an hour. **Every time you write a `range`, say out loud how many values it hands out before you run it.** `range(1, 13)` — "twelve values, one to twelve". That is the whole habit, and it stops off-by-one bugs from reaching your program.
 
 ---
 

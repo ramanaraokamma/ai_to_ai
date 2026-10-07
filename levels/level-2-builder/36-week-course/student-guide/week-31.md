@@ -32,7 +32,9 @@ Pencil. Three questions.
 
 Now here is the thing I want you to notice, because it is the whole lesson.
 
-**Nobody taught you those questions.** Nobody handed you a list. You worked out, on the spot, that *"is it metal?"* was a good first question and *"is it the spoon?"* was a bad one — because "is it metal?" cuts the table roughly in half whatever the answer, and "is it the spoon?" only helps you if you happened to guess right.
+**Nobody taught you those questions.** Nobody handed you a list.
+
+You worked out, on the spot, that *"is it metal?"* was a good first question and *"is it the spoon?"* was a bad one — because "is it metal?" cuts the table roughly in half whatever the answer, and "is it the spoon?" only helps you if you happened to guess right.
 
 You did that in your head, in about a second, without being told how.
 
@@ -74,7 +76,9 @@ The only difference in our case is **who wrote the script.** Nobody wrote ours. 
 3. *"Otherwise, if the petal is 1.65 cm wide or narrower but longer than 4.95 cm — **virginica**."*
 4. *"If the petal is wider than 1.65 cm — **virginica**, whatever the length."*
 
-Copy those onto a card. Take a ruler into a garden. You now have a working flower identifier that agrees with the computer on **29 flowers out of 30** — and you never have to open a laptop again.
+Copy those onto a card. Take a ruler into a garden.
+
+You now have a working flower identifier that agrees with the computer on **29 flowers out of 30** — and you never have to open a laptop again.
 
 Try saying that about last week's kNN. You would have to carry 120 flowers around with you.
 
@@ -321,7 +325,7 @@ It is not there. `.fit()` found it.
 
 ### Step 3 — Turn the class numbers into names
 
-Add one line, so you never read `class: 0` as a quantity again:
+Add one line, so you never read `class: 0` as a quantity again.
 
 ```python
 # add to week31_tree_iris.py
@@ -387,9 +391,9 @@ ROWS THE TREE GOT WRONG
     truth was   : versicolor
 ```
 
-**Now do the thing you could not do last week.** Take the printed rules and walk 1.7 down them with your finger.
+**Now do the thing you could not do last week.** Take the printed rules and walk 1.7 down them with your finger. Here is the walk, written out:
 
-```
+```text
 petal width <= 0.80?   1.7 <= 0.80?   NO   -> go right
 petal width <= 1.65?   1.7 <= 1.65?   NO   -> go right
                                             -> rule 4: VIRGINICA
@@ -397,7 +401,9 @@ petal width <= 1.65?   1.7 <= 1.65?   NO   -> go right
 
 Rule four caught it: *"petal wider than 1.65 → virginica, whatever the length."* This flower's petal was **1.7 cm**. It was over the cut-off by **0.05 cm** — half a millimetre — and that sent it down the virginica side.
 
-The tree is not broken. There genuinely are versicolors with unusually wide petals, and no single cut-off can be right about all of them. But notice what you just did: **you found the exact reason for the exact mistake, and said it in one sentence.**
+The tree is not broken.
+
+There genuinely are versicolors with unusually wide petals, and no single cut-off can be right about all of them. But notice what you just did: **you found the exact reason for the exact mistake, and said it in one sentence.**
 
 ### Step 6 — Draw it (a separate, small file)
 
@@ -531,6 +537,8 @@ ROWS THE TREE GOT WRONG
 ---
 
 ## 🔍 Worked Examples
+
+This section shows three more trees on small tables, so you can practise reading rules out loud.
 
 ### Worked Example 1 — Did the pizza arrive hot? (food)
 
@@ -820,6 +828,8 @@ print(model.feature_importances_)
 
 ## 🎲 What We Did In Class
 
+This section records what we did in class, so you can catch up or repeat it at home.
+
 ### Part A — Twenty Questions with five objects
 
 Five ordinary objects on the table. One person thinks of one; the other asks yes/no questions only. **Every question gets written down as a box, and every branch gets labelled yes or no.**
@@ -856,7 +866,7 @@ With the `export_text` printout in front of you, we did three things.
 
 Here is flower B done in full, so you can see what "finished" looks like:
 
-```
+```text
 petal width  <= 0.80?  1.3 <= 0.80?   NO   -> go right
 petal width  <= 1.65?  1.3 <= 1.65?   YES  -> go left
 petal length <= 4.95?  4.2 <= 4.95?   YES  -> class 1
@@ -892,6 +902,8 @@ If that bothers you, good. Hold the feeling. **It is the biggest question of thi
 
 ## 💬 Talk About It
 
+These three questions are for talking over with a friend or somebody at home. There is no code in them.
+
 **1. Nobody typed the number `0.80`. So where did it come from, and what would have to change for it to be a different number?**
 
 *Hint:* what did `.fit()` actually have in its hands? What if the deck had been cut differently — a different `random_state`, a different 120 flowers?
@@ -907,6 +919,8 @@ If that bothers you, good. Hold the feeling. **It is the biggest question of thi
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that are easy to pick up, each with the right idea beside it.
 
 ### Trick 1 — "every line in the printout is a question"
 
@@ -949,6 +963,8 @@ No single number can separate two things that overlap. That is not a flaw in the
 
 ## 🌍 Where You've Seen This
 
+Decision trees show up in many places outside this course.
+
 - **A hospital triage screen.** *"Is the temperature above 38?" "Is there chest pain?" "Are they over 65?"* Nurses follow printed decision trees, on paper, because they can be checked, argued with and signed off by a committee. Accuracy is not the only thing a hospital needs from a model.
 - **Whether your bank lets a payment through.** Fraud systems have to be *explainable* by law in many countries — if a decision goes against you, somebody has to be able to say why. A model you can read is worth a lot when the alternative is "the computer said no".
 - **Plant and mushroom identification apps.** The good ones will show you the key: *"gills white? stem ringed? cap under 5 cm?"* That is a tree, and it is printed in field guides that are older than computers.
@@ -986,6 +1002,8 @@ week's file changed, and the map does not move at all — which is precisely the
 
 ## 🔑 Remember This
 
+The main points of the week, then a card of the syntax you used.
+
 - **A decision tree is a stack of yes/no questions the computer wrote itself.** It is the only model this year that you can print out and read to somebody who has never seen a computer.
 - **A split is a question. A leaf is an answer.** In the printout, questions have a `<=` and a number; answers say `class:` and nothing else. Sort the lines before you read them.
 - **Depth is a limit, not an order.** `max_depth=3` means "up to three". A branch stops the moment its pile is all one kind — which is why our depth-3 tree has 5 leaves and not 8.
@@ -995,6 +1013,8 @@ week's file changed, and the map does not move at all — which is precisely the
 - **Trees never need `StandardScaler`.** A split compares one column with one number, so rescaling the column just rescales the cut-off.
 
 ### Syntax reminder card
+
+Keep this card next to you when you write your own tree file.
 
 ```python
 # ---- the one line that swaps the model ---------------------------------
@@ -1033,6 +1053,8 @@ iris.target_names[2]                 # 'virginica'
 ---
 
 ## 📓 New Words
+
+The five words from this week, with an example of each.
 
 ![Five new words for Week 31](../figures/fig-w31-7-words-tree-split-leaf.svg)
 *Figure 31.7 — Five words, and you built all five before you heard any of them.*

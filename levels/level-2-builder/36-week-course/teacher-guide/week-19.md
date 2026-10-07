@@ -37,6 +37,8 @@ Observable evidence: `rainfall.py`, which prints the shape, one cell, one whole 
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is your background reading. It gives you everything you need to teach the lesson, so read it once before the night-before prep.
+
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
 **You do not need to know any numpy to teach this.** There is exactly one new idea today and it is a direction. Read this section once — it takes about fifteen minutes — and you will be ahead of the student for the whole lesson.
@@ -342,6 +344,8 @@ tile — `numpy · DataFrames`, weeks 19 to 22 — is this week's box. One threa
 
 ## 🧰 Prep Checklist
 
+This section lists what to prepare, what to check, and what to do if the laptop fails.
+
 ### 20 minutes the night before
 
 - [ ] **Prove numpy still works.** Four seconds:
@@ -481,6 +485,8 @@ Kochi      1002 167.0
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan you follow in the room. The table shows the five segments and the minutes each one gets. Each segment below it says what to do, what to say and what to ask.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -937,6 +943,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the student's turn: the setup, four parts, what finished looks like, and variations.
+
 ### Setup
 
 **On the table:** graph paper with the four-by-six grid drawn and filled in; a pencil; **a calculator**; the workbook's Build It pen-work section (the hand-check) and A1 (the counts, already written in pen); the Bug Log.
@@ -1069,7 +1077,7 @@ None of these need syntax from a later week.
 
 ## 🐞 The Debugging Clinic
 
-Every message below came from running a broken version of this week's actual code.
+Use this section when something goes wrong in the room. Every message below came from running a broken version of this week's actual code.
 
 > **🧑‍🏫 If a student asks:** numpy's own errors sometimes print several `File` lines from inside numpy itself before the useful one. **Read the last line first, always.** Then look for the `File` line that names *your* file — that is the one you can do something about.
 
@@ -1103,6 +1111,8 @@ And the sentence for this week:
 ---
 
 ## ❓ Questions Students Ask This Week
+
+This section has short answers to the questions students are likely to ask, so you are not caught out in the lesson.
 
 **"Why is it called axis 0 and axis 1 and not rows and columns?"**
 
@@ -1161,6 +1171,8 @@ What you should tell a 12-year-old, out loud: **"one hand-check, always, before 
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the ways the lesson tends to go wrong, why each one happens, and what to do right then.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **"axis=0 means rows, so it gives me the rows"** — said confidently, all lesson | The name of the axis and the shape of the answer point in opposite directions, and the name is the thing they hear | Never let "axis 0 means rows" stand as a whole sentence. Insist on the full one, out loud, from them: *"axis 0 names the rows, so the rows get eaten, so I get one answer per column."* Then make them draw the six arrows. Words are losing this fight; arrows win it. |
@@ -1178,6 +1190,8 @@ What you should tell a 12-year-old, out loud: **"one hand-check, always, before 
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to adjust the lesson for a student who is struggling, flying, or not engaging today.
 
 ### If the student is struggling
 
@@ -1252,7 +1266,7 @@ Because there are three players and four matches. That is the entire lesson, del
 
 ## ✅ Assessing Understanding
 
-Three checks, five minutes, exact wording.
+This section gives you spoken checks and a mastery scale, so you can tell where the student is. Three checks, five minutes, exact wording.
 
 **Check 1 — the count (spoken, 45 seconds)**
 
@@ -1291,6 +1305,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the homework, the time it should take, and what to look for when you mark it.
 
 **Say this:**
 
@@ -1708,9 +1724,17 @@ No right answers; it is a record of where the student is. Two lines deserve extr
 
 ## 🔮 Next Week Preview
 
-Next week is a lab, and it is the one where the student builds something that looks like a real tool. **The Vectorized Gradebook:** ten students down, five tests across, and eight questions answered with **zero `for` loops doing any arithmetic anywhere in the file.** The new idea is the **boolean mask** — write `scores > 50` and you get back an array of `True` and `False`, exactly the same shape as the scores, one answer per cell. The important move is to *look at the mask before using it*: print it, put a highlighter over the printed grid, and see that it is a thing in its own right rather than a step on the way to a filter. Then `scores[mask]` pulls out only the values you want — and the answer comes back **shorter than the question**, which is the first surprise. This week's axis work does all the heavy lifting: `mask.sum(axis=1)` counts passes per student and `mask.sum(axis=0)` counts passes per test, and both add up to `mask.sum()` whichever way you go, so the check that catches a wrong axis is still the count against the labels.
+This section tells you what next week covers and what to prepare for it.
 
-And there is a sting, and it is the exact sibling of this week's silent bug. One score gets typed as **950** instead of 95. Nothing crashes. The per-student mean for that one student goes daft in a way you might notice — but the **0-to-1 normalization silently squashes everybody else into the bottom twelfth of the scale**, so every other student's score becomes a number between 0.01 and 0.08 and the whole thing still looks like a tidy grid of decimals. The check that catches it is a range check — *no test score can be above 100* — and it is one line with a mask in it.
+Next week is a lab, and it is the one where the student builds something that looks like a real tool. **The Vectorized Gradebook:** ten students down, five tests across, and eight questions answered with **zero `for` loops doing any arithmetic anywhere in the file.** The new idea is the **boolean mask** — write `scores > 50` and you get back an array of `True` and `False`, exactly the same shape as the scores, one answer per cell. The important move is to *look at the mask before using it*: print it, put a highlighter over the printed grid, and see that it is a thing in its own right rather than a step on the way to a filter. Then `scores[mask]` pulls out only the values you want — and the answer comes back **shorter than the question**, which is the first surprise.
+
+This week's axis work does all the heavy lifting: `mask.sum(axis=1)` counts passes per student and `mask.sum(axis=0)` counts passes per test, and both add up to `mask.sum()` whichever way you go, so the check that catches a wrong axis is still the count against the labels.
+
+And there is a sting, and it is the exact sibling of this week's silent bug. One score gets typed as **950** instead of 95. Nothing crashes. The per-student mean for that one student goes daft in a way you might notice.
+
+But the **0-to-1 normalization silently squashes everybody else into the bottom twelfth of the scale**, so every other student's score becomes a number between 0.01 and 0.08 and the whole thing still looks like a tidy grid of decimals.
+
+The check that catches it is a range check — *no test score can be above 100* — and it is one line with a mask in it.
 
 **Prep early:** three things. **Print the ten-by-five score grid on paper** and find a highlighter, because the mask lands twice as hard when it is drawn on top of the numbers by hand. **Keep this week's rainfall grid on the table**, because next week opens by asking for one mean per student and one mean per test on a bigger grid, and the student should recognise it as the same question with different labels. And **read the hand-check pages from tonight's homework before the lesson**, because next week asks for a normalization done by hand for one row, and a student who cut corners on this week's pencil work will cut them again — better to know that in advance than to discover it at minute fifty.
 

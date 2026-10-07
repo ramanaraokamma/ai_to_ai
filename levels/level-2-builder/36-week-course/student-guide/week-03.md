@@ -79,6 +79,8 @@ Today you get two things that fix that, and then two more that answer the questi
 
 ## 🧠 The Big Idea
 
+This section explains the five new tools of the week, one at a time: f-strings, the missing `f`, the format dial, `//` and `%`, and `**`.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. An f-string is a fill-in-the-blanks form
@@ -94,7 +96,10 @@ print("Total:", total)
 Total: 17.0
 ```
 
-That works, and it has two annoyances that get worse fast. You cannot control the spacing — the comma always puts exactly one space, whether you wanted one or not. And you cannot control how the number *looks*.
+That works, and it has two annoyances that get worse fast:
+
+- You cannot control the spacing. The comma always puts exactly one space, whether you wanted one or not.
+- You cannot control how the number *looks*.
 
 Here is the better way, and it turns on **one letter**.
 
@@ -312,7 +317,9 @@ print(10 ** 0)
 1
 ```
 
-**The analogy.** One star is "times". Two stars is "times itself, that many times". `2 * 10` is twenty. `2 ** 10` is 2, 4, 8, 16, 32, 64, 128, 256, 512, **1024** — and that number will keep turning up all year, because computers count in twos, which is why memory sizes come in lumps of 1024 (people often still call 1024 bytes a "kilobyte", though strictly a kilobyte is 1000 bytes and 1024 is a *kibibyte*).
+**The analogy.** One star is "times". Two stars is "times itself, that many times". `2 * 10` is twenty. `2 ** 10` is 2, 4, 8, 16, 32, 64, 128, 256, 512, **1024**.
+
+That number will keep turning up all year, because computers count in twos. That is why memory sizes come in lumps of 1024. (People often still call 1024 bytes a "kilobyte", though strictly a kilobyte is 1000 bytes and 1024 is a *kibibyte*.)
 
 **The concrete version — why a pizza lesson needs it.** A pizza is a **circle**, and the area of a circle is π times the radius **squared**. Which means two stars and a `:.2f` settle the "is the big one better value?" argument with arithmetic instead of opinions.
 
@@ -348,7 +355,9 @@ Big  : 96.66 sq cm per pound
 
 ## 💻 Type This
 
-One file, `receipt.py`, built in four steps. **Predict the output of every step before you run it.** Type it — no pasting, all year.
+This section builds one file, `receipt.py`, in four steps. You need it because the homework finishes this same file.
+
+**Predict the output of every step before you run it.** Type it — no pasting, all year.
 
 ### Step 1 — the total
 
@@ -553,6 +562,8 @@ One edit. Three numbers. **That** is what naming things is for, and now you can 
 
 ## 🔍 Worked Examples
 
+This section shows three complete programs from food, sport and school. Each one uses the format dial, `//` and `%` on a different job.
+
 ### Worked Example 1 — Packing samosas for the school fair (food)
 
 The kitchen made a hundred samosas. Trays hold twelve. How many full trays, and what does one samosa cost to make?
@@ -683,15 +694,17 @@ Raw figure   : 10.079787234042554
 
 **`Minibuses : 180.00`.** `coach_hire` is `180.00` in the file and would print as `180.0` without the dial. On a bill sent to forty-seven families, `180.0` looks like a typing mistake. `:.2f` on a whole number is not pointless — it is what makes a column of money look like money.
 
-**And `Each family : 10.08` from a raw `10.079787234042554`.** Ten pounds and eight pence is an amount a parent can hand over. The raw figure is honest and unusable. Notice, though, that 47 × £10.08 is £473.76 — a **penny more** than the real total, because everybody rounded up by a fraction. That is a genuine and very common problem in real billing systems, it is not a bug in your code, and nobody at this school will care about one penny. But you should know it is there.
+**And `Each family : 10.08` from a raw `10.079787234042554`.** Ten pounds and eight pence is an amount a parent can hand over. The raw figure is honest and unusable.
+
+Notice, though, that 47 × £10.08 is £473.76 — a **penny more** than the real total, because everybody rounded up by a fraction. That is a genuine and very common problem in real billing systems, and it is not a bug in your code. Nobody at this school will care about one penny, but you should know it is there.
 
 ---
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code.
+This section lists the bugs you are most likely to meet this week and how to fix each one. Every message below came from really running a broken version of this week's code.
 
-**This week is different from the last two**, and here is the difference: the first two breaks produce **no error message at all**. So the debugging routine gains a new step at the very top.
+**This week is different from the last two.** The first two breaks produce **no error message at all**, so the debugging routine gains a new step at the very top.
 
 > **Step 0, new this week: read your output. Does it make sense?** Ask that before you ask whether there is red text.
 
@@ -776,6 +789,8 @@ NameError: name 'nme' is not defined. Did you mean: 'name'?
 
 ## 🎲 What We Did In Class
 
+This section is a record of the class, so you can redo the activities at home with counters and a real receipt.
+
 ### The receipt on the table
 
 A real till receipt, face up, and the job of reading the last two digits of every price. They were all two digits. Then the reason: **a price is a whole number of pennies**, and `3.00` says three hundred pennies while `3.0` stops at tenths of a pound and cannot show pennies.
@@ -817,9 +832,13 @@ Rounds worth redoing at home with counters, because the last two are the ones th
 
 ## 💬 Talk About It
 
+These are three questions to talk through with a parent, a friend or your teacher. Each one has a hint to think with.
+
 **1. "Why not just use commas? They worked last week."**
 
-*Hint:* they still work, and you may keep using them. They have exactly two limits and both bite quickly. A comma always puts exactly one space, so you cannot write `Total:£17.00` with no gap and you cannot line a column up. And — much more important — with a comma there is **nowhere to put `:.2f`**. `print("Total:", 17.0)` will always give you `17.0` and there is no room in that line to ask for anything else. Think about what that means: the f-string exists mostly so that there is *somewhere to put the instruction*.
+*Hint:* they still work, and you may keep using them. They have exactly two limits and both bite quickly. A comma always puts exactly one space, so you cannot write `Total:£17.00` with no gap and you cannot line a column up. And — much more important — with a comma there is **nowhere to put `:.2f`**. `print("Total:", 17.0)` will always give you `17.0` and there is no room in that line to ask for anything else.
+
+Think about what that means: the f-string exists mostly so that there is *somewhere to put the instruction*.
 
 **2. "So `:.2f` can be used to hide things?"**
 
@@ -827,11 +846,19 @@ Rounds worth redoing at home with counters, because the last two are the ones th
 
 **3. "How many decimal places *should* a number have?"** *(Nobody fully agrees, and that's the point.)*
 
-*Hint:* for pounds and pence it is settled — two, because that is how many pennies there are (other currencies differ: the yen has no decimals at all). Everywhere else it is a judgement, and the principle is *"show as many digits as your measurement actually justifies, and not one more."* If you measured a room with a tape marked in centimetres, writing `4.2735 m` is a lie dressed up as precision — you never knew that. The genuinely contentious case is percentages: a survey of 500 people reporting `48.6%` support is claiming a precision it does not have. Some statisticians will tell you flatly that the extra decimal is misleading; others say it is harmless because the reader can see the sample size. **Both camps contain serious people.** What everyone agrees on: never invent precision you did not measure.
+*Hint:* for pounds and pence it is settled — two, because that is how many pennies there are (other currencies differ: the yen has no decimals at all).
+
+Everywhere else it is a judgement, and the principle is *"show as many digits as your measurement actually justifies, and not one more."* If you measured a room with a tape marked in centimetres, writing `4.2735 m` is a lie dressed up as precision — you never knew that.
+
+The genuinely contentious case is percentages: a survey of 500 people reporting `48.6%` support is claiming a precision it does not have.
+
+Some statisticians will tell you flatly that the extra decimal is misleading. Others say it is harmless because the reader can see the sample size. **Both camps contain serious people.** What everyone agrees on: never invent precision you did not measure.
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section names four wrong ideas that sound reasonable. Each one is shown next to the right idea.
 
 ### Trick 1 — "`:.2f` rounds the number"
 
@@ -858,7 +885,9 @@ The cure is not understanding, it is a ritual: **say "eff" out loud as you type 
 |---|---|
 | "`16 // 5` is `3` because `3.2` loses the `.2`. Same sum, tidier." | "They answer **different questions about the world.** `/` asks *share it out perfectly, even if you have to cut things up.* `//` asks *how many whole ones can each person actually be handed?*" |
 
-For positive numbers the arithmetic does line up, so this one feels harmless. It isn't, because it makes you reach for the wrong one. An average of runs per match genuinely should be `38.56`; a number of slices genuinely should not be `3.2`. And the two operators come apart completely once negatives are involved — `-7 // 2` is `-4`, not `-3`, because `//` rounds *down* rather than towards zero. Check it with the rule: `-4 × 2 + 1 = -7`, and `-7 % 2` really is `1`.
+For positive numbers the arithmetic does line up, so this one feels harmless. It isn't, because it makes you reach for the wrong one.
+
+An average of runs per match genuinely should be `38.56`; a number of slices genuinely should not be `3.2`. And the two operators come apart completely once negatives are involved — `-7 // 2` is `-4`, not `-3`, because `//` rounds *down* rather than towards zero. Check it with the rule: `-4 × 2 + 1 = -7`, and `-7 % 2` really is `1`.
 
 ### Trick 4 — "one star, two stars, near enough"
 
@@ -871,6 +900,8 @@ Neither version errors. Both run happily. The only thing that catches it is look
 ---
 
 ## 🌍 Where You've Seen This
+
+These are places outside the computer where f-strings, format dials, `//` and `%` are already at work.
 
 1. **Every price you have ever seen.** `£3.00`, `£12.50`, `₹450.00`. Two decimals, in pounds, dollars and rupees alike, including on whole amounts. That is a `:.2f` somewhere in somebody's code, and it is why the column lines up.
 2. **A petrol pump.** Fuel is priced to *three* decimals — `1.489` a litre — because a tenth of a penny per litre matters when you're selling millions of litres. Different job, different dial setting, same idea.
@@ -908,6 +939,10 @@ bottom is the seven threads this course keeps returning to.*
 
 ## 🔑 Remember This
 
+This section is the week on one page. Keep it beside you while you do the homework.
+
+**Key takeaways**
+
 - **An f-string is a fill-in-the-blanks form.** Write the sentence once with gaps; Python drops the values in.
 - **The `f` is not optional, and forgetting it produces NO error.** The braces just print. This is the first bug of the year the computer will not find for you.
 - **New first question, from now on: read your output. Does it make sense?** Ask it *before* you ask about red text.
@@ -918,6 +953,8 @@ bottom is the seven threads this course keeps returning to.*
 - **Count the stars.** `*` and `**` are different and neither one errors.
 
 ### Syntax reminder card
+
+This card lists every new line of syntax from the week, with a comment showing what each prints.
 
 ```python
 runs = 347
@@ -946,6 +983,8 @@ print(5 * 2)                        # 10    five times two (ONE star)
 
 ## 📓 New Words
 
+These are the five words you met this week, with an example of each.
+
 ![This week's five words as pictures](../figures/fig-w03-6-vocab-icons.svg)
 *Figure 3.8 — This week's five words, drawn.*
 
@@ -971,7 +1010,10 @@ Go to **[the Week 3 workbook](../workbook/week-03.md)**. About **60 minutes** in
 | **Fix the Broken Program** | A café bill with three planted bugs, and **only one of them produces an error** | 10 min |
 | **Build It** | `receipt.py`, finished properly, with **your own** number of friends | 15 min |
 
-**Two rules on `receipt.py` that I will actually check.** **Every printed line that shows a value uses an f-string** — if there is a comma inside a `print`, it comes back. And **every line has a comment that says *why*, not *what*.** `# 8.50 times 2` is a waste of ink; `# what two pizzas cost altogether` is worth having.
+Two rules on `receipt.py` that I will actually check:
+
+- **Every printed line that shows a value uses an f-string.** If there is a comma inside a `print`, it comes back.
+- **Every line has a comment that says *why*, not *what*.** `# 8.50 times 2` is a waste of ink; `# what two pizzas cost altogether` is worth having.
 
 **Then the last thing, and it is the real test: read your receipt out loud.** Not to me — to yourself, or to whoever is in the room. Does it sound like a real receipt? If any line sounds odd, that is a bug, and it is a bug nothing on the screen is going to tell you about.
 

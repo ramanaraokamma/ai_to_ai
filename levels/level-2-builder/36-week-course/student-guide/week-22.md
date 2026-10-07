@@ -34,9 +34,9 @@ Your teacher says the exact same four words. **"Row two, come here."**
 
 Now who walks forward? The second person along? Or the person whose number is 2?
 
-Here is a real register. Read it and try to answer:
+This hook is a puzzle about names and counting. Here is a real register. Read it and try to answer:
 
-```
+```text
         REGISTER
    4  Arjun
    2  Kabir
@@ -52,7 +52,7 @@ If "row two" means **the second one along**, it is... hold on. Counting from one
 
 Python has this exact problem, and Python solved it by having **two different commands**. One asks by name. One asks by counting. They are one letter apart on the keyboard.
 
-And here is the part that matters, so read it twice:
+Here is the part that matters, so read it twice:
 
 > **When you pick the wrong one, Python does not tell you.** It gives you an answer. A completely sensible-looking answer, about the wrong person. No red text. No warning. Nothing.
 
@@ -81,7 +81,7 @@ Along the **top** there are four words: `name`, `age`, `house`, `steps`. Those a
 
 Down the **left** there are five numbers: `0 1 2 3 4`. Those are the row names — the **index**.
 
-Both of those are the same kind of thing, and there is one word for both:
+Both are the same kind of thing, and there is one word for both:
 
 > **label** — a name printed on the edge of a table. The words along the top are labels. The numbers down the left are labels too.
 
@@ -91,7 +91,7 @@ Both of those are the same kind of thing, and there is one word for both:
 
 > **⚠️ Watch out:** those `0 1 2 3 4` are labels that *happen to be* numbers, the way a bus route called 42 is not the forty-second bus. Hold on to that. In about four minutes it becomes the whole lesson.
 
-**The first tool.** If you can read a thing off an edge, `loc` will find it.
+**The first tool.** If you can read a thing off an edge, `loc` will find it. Type this line to see it work:
 
 > **`loc`** — pick by label. Say the row's name and the column's name, in that order.
 
@@ -103,7 +103,7 @@ print(week.loc[1, "steps"])
 11050
 ```
 
-Every character of that line:
+Here is that line, part by part:
 
 - `week` — the table.
 - `.loc` — "I am about to give you **names**, not counts."
@@ -126,7 +126,7 @@ steps    11050
 Name: 1, dtype: object
 ```
 
-**That printout confuses everybody the first time, adults included.** It is **one row printed sideways** — one column per line, because that fits a screen better than one very long line.
+That printout confuses everybody the first time, adults included. It is **one row printed sideways**: one column per line, because that fits a screen better than one very long line.
 
 Two things at the bottom you must be able to read:
 
@@ -161,7 +161,7 @@ Count the columns yourself: `name` is 0, `age` is 1, `house` is 2, `steps` is 3.
 
 **The analogy.** `loc` is you walking down the left-hand edge of a printed table, hunting for the number 2 wherever it happens to be. `iloc` is you starting at the top and stepping down: zero, one, two. **Hunting versus stepping.** Two completely different physical actions, and if you do them with your finger on a printed table you can feel the difference.
 
-**A concrete example of something `iloc` can do that `loc` cannot:**
+**A concrete example of something `iloc` can do that `loc` cannot.** Type this line:
 
 ```python
 print(week.iloc[-1])
@@ -187,7 +187,7 @@ Which means you can use the wrong tool all lesson and never find out.
 
 **Then the table gets re-numbered — and every real table eventually does.** It gets loaded from a file with register numbers in it. It gets filtered. It gets sorted. The instant the labels stop matching the positions, the two tools come apart, and **nothing warns you**.
 
-**Here is the same five children, in alphabetical order, with their register numbers as row labels.**
+Here are the same five children, in alphabetical order, with their register numbers as row labels. Type this block:
 
 ```python
 import pandas as pd
@@ -212,12 +212,12 @@ print(register)
 
 `index=[4, 2, 5, 1, 3]` is the only new thing on that line. It tells `pd.DataFrame`: *do not invent row labels, use these.*
 
-**Before you read on, predict.** Write both answers down, in pen, actually do it:
+**Before you read on, predict.** Write both answers down, in pen:
 
 - `register.loc[2]` will print the row for __________
 - `register.iloc[2]` will print the row for __________
 
-Now the two lines:
+Now run the two lines, one at a time:
 
 ```python
 print(register.loc[2])
@@ -265,7 +265,7 @@ Now look at the last line of each printout. One says `Name: 2`. The other says `
 
 > **boolean** — a value that is only ever `True` or `False`. You met these in Week 5.
 
-**Start with the question on its own, before you use it to pick anything.** This intermediate step is the one everybody skips, and skipping it is exactly why filtering feels like magic.
+Start with the question on its own, before you use it to pick anything. Everybody skips this step, and skipping it is why filtering feels like magic. Type this line:
 
 ```python
 print(week["steps"] > 9000)
@@ -321,7 +321,7 @@ Two more facts worth having:
 
 ### 5. Sorting hands you a copy, and throws it away if you don't catch it
 
-**The plain explanation.**
+**The plain explanation.** Type this line to sort the table by the `steps` column:
 
 ```python
 print(week.sort_values("steps"))
@@ -340,7 +340,7 @@ print(week.sort_values("steps"))
 - `ascending=False` gets you biggest first: `week.sort_values("steps", ascending=False)`.
 - The labels down the left are now `2, 0, 3, 1, 4`. **The rows moved, and every row took its label with it.** Label 2 is now sitting at position 0. Labels and positions have come apart again.
 
-**Now run this immediately afterwards.** Predict first.
+Now run this straight afterwards. Predict the output first.
 
 ```python
 print(week)
@@ -361,7 +361,7 @@ print(week)
 
 **The analogy.** You ask the office for a sorted copy of the register. They photocopy it, sort the photocopy, hand it to you, and you read it out and drop it in the bin. The register in the office never moved.
 
-To keep it, give it a name:
+To keep the sorted copy, give it a name. Type this block:
 
 ```python
 by_steps = week.sort_values("steps", ascending=False)
@@ -385,7 +385,7 @@ Name: 4, dtype: object
 
 ## 💻 Type This
 
-Everything goes in your `level2` folder, alongside last week's work. Make a file called `steps.py`.
+In this section you build one program, step by step, and run it as you go. Everything goes in your `level2` folder, alongside last week's work. Make a file called `steps.py`.
 
 ### Step 1 — the table
 
@@ -581,7 +581,7 @@ print(by_steps.iloc[0])                                  # honest iloc: THE FIRS
 
 ## 🔍 Worked Examples
 
-Three complete programs. **Predict every output before you run it**, then check.
+This section gives you three complete programs to read and run. **Predict every output before you run it**, then check.
 
 ### Worked Example 1 — One evening of pizza orders (food)
 
@@ -946,13 +946,13 @@ This is exactly the `IndexError` from Week 11, on a table instead of a list. **`
 
 ## 🎲 What We Did In Class
 
-If you missed it, here is the whole lesson. The first half needs a finger and a printed table more than a laptop.
+This section is the whole lesson, for anyone who missed it. The first half needs a finger and a printed table more than a laptop.
 
 ### The register card
 
 An index card, hand-written, held up so everybody could read it:
 
-```
+```text
         REGISTER
    4  Arjun
    2  Kabir
@@ -965,7 +965,7 @@ Then one question, asked twice: *"row two, come here — who comes?"* Once about
 
 ### Three tools on the board, and they stayed up all lesson
 
-```
+```text
 loc    = by NAME      (labels on the edges)
 iloc   = by COUNTING  (starts at 0)
 filter = by QUESTION
@@ -1014,6 +1014,8 @@ A full answer has **both halves**: `loc` went looking for the row *labelled* 2, 
 
 ## 💬 Talk About It
 
+These three questions are for talking through with a partner or a grown-up. Each hint is there to help you start.
+
 **1. Why does `iloc` even exist, if `loc` is safer?**
 
 *Hint:* start by finding a question that `loc` genuinely cannot answer. *"Who walked the most?"* is one — you sort the table and take the top row, and **you do not know that person's name in advance**, which is the entire reason you were asking. So positions are the right tool when your question is about **order**. Now push it the other way: name a question where using a position would be a disaster. *(Reporting one particular pupil's mark. Looking up order number 1002. A hospital reading off patient 4's dose.)* What do all of your disaster examples have in common? Probably this: **the row means a specific person or record, and somebody might reorder the table.**
@@ -1029,6 +1031,8 @@ A full answer has **both halves**: `loc` went looking for the row *labelled* 2, 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that are easy to believe. Each one is shown next to the right idea.
 
 ### Trick 1 — "they gave the same answer, so I used the right one"
 
@@ -1069,6 +1073,8 @@ This is the single most-missed prediction of the week. **Print the inner part on
 
 ## 🌍 Where You've Seen This
 
+You already use these ideas outside the computer. Here are six places.
+
 1. **A school register.** Register numbers down the left, names beside them, and nobody's number matches their place in the alphabet. **That register is `loc` and `iloc` in physical form** — and it is why the hook works.
 2. **A spreadsheet.** Column A, row 7 — that is `loc` by two labels, exactly the same idea. And when you sort a spreadsheet, the row numbers 1, 2, 3 *do* get renumbered, which is why spreadsheet users are so often confused by pandas. Pandas keeps the labels; spreadsheets throw them away.
 3. **Search filters on a shopping site.** "Under ₹500", "in stock", "4 stars and up" — every one of those is a boolean filter. The site is asking every product the same question and keeping the Trues, and the count at the top of the page is `len()` of the result.
@@ -1104,6 +1110,8 @@ Dashed is not yet. Two stages still to open.*
 ---
 
 ## 🔑 Remember This
+
+These are the points to keep from the week, followed by a card of the syntax.
 
 - **`loc` reads. `iloc` counts.** `loc` takes **l**abels; `iloc` takes **i**ntegers. The single letter is the whole difference.
 - **Row first, column second** — in `loc`, in `iloc`, in everything this week. `df.loc[row, "column"]`.
@@ -1157,6 +1165,8 @@ print(week)                              # ...and the original never moved
 ---
 
 ## 📓 New Words
+
+The five words from this week, with an example of each.
 
 ![This week's five words as pictures](../figures/fig-w22-6-vocab-icons.svg)
 *Figure 22.7 — This week's five words, drawn.*

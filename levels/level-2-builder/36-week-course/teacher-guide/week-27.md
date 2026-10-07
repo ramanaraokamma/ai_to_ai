@@ -658,6 +658,8 @@ Student on the keyboard. Full instructions in the next section.
 
 ## 🎲 The Activity, In Full
 
+This section is the Their Turn segment written out: the setup, then each part step by step.
+
 ### Setup
 
 **On the table:** the workbook open at Predict the Output P3 (legend), P4 and Practice Set B, B1 (correlation), Think Deeper T2 (the ethics question) and Build It Part 6 (Term 3 reflection). Ruler, pencil, calculator.
@@ -869,6 +871,8 @@ And the other rule, four times over in the table above: **four of the ten rows p
 
 ## ❓ Questions Students Ask This Week
 
+Use this section to prepare answers to the questions this lesson tends to raise.
+
 **"Isn't it fine if the numbers are printed on the chart? Then nobody's lying."**
 
 It is better, and it is not enough, and the reason is worth understanding. People read charts with their eyes before they read them with their brain — the shape lands in about a quarter of a second, the numbers take two or three seconds, and most people never get to the numbers at all. A truncated bar chart with correct numbers printed on it will still leave nearly every reader believing the wrong thing. The numbers are your defence in an argument afterwards. They are not a defence against the impression the chart made.
@@ -907,6 +911,8 @@ And the half everybody agrees on: **if you truncate, say so in the label, loudly
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual ways the lesson slips, why each happens, and what to do on the spot.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student sees the y-axis numbers before measuring | The chart is right there and the numbers are printed on it | **Cover them physically** before the lesson. Fold the paper or tape over them. Once "49" and "51" have been read, the ruler moment is gone and cannot be got back. |
@@ -923,6 +929,8 @@ And the half everybody agrees on: **if you truncate, say so in the label, loudly
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson for a student who is struggling and for one who is racing ahead.
 
 ### If the student is struggling
 
@@ -1027,6 +1035,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives you the words to assign the homework, piece by piece.
 
 **Say this:**
 
@@ -1827,7 +1837,13 @@ The hook and the Activity ask a few questions that have no line in the workbook.
 
 ## 🔮 Next Week Preview
 
-Term 4 starts, and it is the term the whole year has been walking towards: the student trains models. Week 28 does the piece of translation that makes it possible — taking a table with names on the columns and splitting it into **`X`**, everything you measured, and **`y`**, the one thing you want the machine to give back. Those two letters are Level 1's *features* and *label*, finally written down in code. It is a quiet week with only one big idea in it, and the big idea is a shape: `X` is a grid with one row per example, `y` is a single column with one answer per row, and they must have the same number of rows or nothing works. The week finishes with the student computing the distance between two flowers by hand on paper, then in numpy, and getting the same number to two decimal places — which is the last thing they will ever have to trust on faith, because from Week 29 the computer does it a thousand times a second.
+This section says what next week covers and what to prepare for it.
+
+Term 4 starts, and it is the term the whole year has been walking towards: the student trains models.
+
+Week 28 does the piece of translation that makes it possible — taking a table with names on the columns and splitting it into **`X`**, everything you measured, and **`y`**, the one thing you want the machine to give back. Those two letters are Level 1's *features* and *label*, finally written down in code.
+
+It is a quiet week with only one big idea in it, and the big idea is a shape: `X` is a grid with one row per example, `y` is a single column with one answer per row, and they must have the same number of rows or nothing works. The week finishes with the student computing the distance between two flowers by hand on paper, then in numpy, and getting the same number to two decimal places — which is the last thing they will ever have to trust on faith, because from Week 29 the computer does it a thousand times a second.
 
 **Prep early:** three things. **Keep every chart from Term 3** — the capstone in Week 34 reuses them, and the student will want to see how much better their charts got. **Check `scikit-learn` still imports** tonight, because Week 28 is the first week that needs it and you do not want to discover an install problem in a lesson: `python -c "from sklearn.datasets import load_iris; print(load_iris().data.shape)"` should print `(150, 4)`. And if you have five spare minutes, go and look at a real iris flower, or a picture of one, and find the petal and the sepal — Week 28 measures both, and a student who has never noticed that a flower has two different kinds of leaf spends the whole lesson quietly confused about what a "sepal" is.
 

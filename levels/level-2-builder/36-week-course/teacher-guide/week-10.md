@@ -23,6 +23,8 @@
 
 ## 🎯 Lesson Objectives
 
+This section lists what the student should be able to do when the lesson ends, and the evidence you can collect.
+
 By the end of the lesson the student can:
 
 1. **Write a function with two parameters** and call it with two arguments, in the right order.
@@ -31,7 +33,7 @@ By the end of the lesson the student can:
 4. **Explain why a variable created inside a function does not exist outside it**, using the word *scope*.
 5. **Find a function that prints the right answer but returns `None`**, diagnose it by printing what came back, and fix it.
 
-Observable evidence: a file with five working functions, a test line for each showing three inputs, and a Bug Log entry containing a real `TypeError` traceback with the one-word fix written next to it.
+**Observable evidence:** a file with five working functions, a test line for each showing three inputs, and a Bug Log entry containing a real `TypeError` traceback with the one-word fix written next to it.
 
 ---
 
@@ -43,9 +45,9 @@ Observable evidence: a file with five working functions, a test line for each sh
 
 ### 1. What Week 9 gave them, and the one hole in it
 
-In Week 9 the student learned to name a block of code. `def print_banner():` writes the recipe; `print_banner()` cooks it. Two separate acts, and telling them apart is most of Week 9:
+In Week 9 the student learned to name a block of code. `def print_banner():` writes the recipe; `print_banner()` cooks it. Two separate acts, and telling them apart is most of Week 9. Here they are side by side:
 
-```
+```text
    DEFINING                            CALLING
    def print_banner():                 print_banner()
    "Here is a recipe."                 "Cook it, now."
@@ -60,7 +62,7 @@ Week 9 also introduced `return value`. But every Week 9 function did the *same t
 
 ### 2. Parameter and argument — two words for the two halves
 
-Here is the whole idea in six lines:
+Here is the whole idea in six lines. Run it and compare each printed line with its call:
 
 ```python
 def double(number):                 # `number` is the PARAMETER
@@ -107,7 +109,7 @@ print(change_left(65, 100))         # the SAME two numbers, swapped over
 -35
 ```
 
-Line by line, for somebody who has never programmed:
+Line by line, for somebody who has never programmed, this is what Python does:
 
 | Line | What Python does |
 |---|---|
@@ -145,7 +147,7 @@ Traceback (most recent call last):
 TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
 ```
 
-Read that output carefully, because it is the shape of the whole lesson.
+Read that output carefully, because it is the shape of the whole lesson. Take it one line at a time:
 
 - The first `5` came from `add_scores(2, 3)` on its own. **It worked.**
 - The second `5` came from the same call on the `total = ...` line — the printing still happened.
@@ -183,7 +185,7 @@ The rule that follows: **you can always print a returned value; you can never ge
 
 `None` is not zero and it is not an empty piece of text. Zero is a number you can add to. `None` is the absence of a value, and almost anything you try to do with it fails immediately — which, once you know the word, is extremely helpful, because the crash happens near the mistake instead of miles away.
 
-The three tracebacks `None` produces, which you will see this week:
+These are the three tracebacks `None` produces, which you will see this week:
 
 ```text
 TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
@@ -216,7 +218,7 @@ print(slice_cost(pizza_price=400))        # you may name the first one too
 50.0
 ```
 
-Check the arithmetic by hand: 400 ÷ 8 = 50 ✔ · 400 ÷ 4 = 100 ✔ · 400 ÷ 1 = 400 ✔ · 400 ÷ 16 = 25 ✔
+Check the arithmetic by hand. 400 ÷ 8 = 50 ✔ · 400 ÷ 4 = 100 ✔ · 400 ÷ 1 = 400 ✔ · 400 ÷ 16 = 25 ✔
 
 > **Default value** — a value a parameter takes when the caller does not supply one.
 
@@ -352,6 +354,8 @@ gold badge has crossed into `HOLD THE DATA`, and the thread strip has two pills 
 
 ## 🧰 Prep Checklist
 
+This section is for you, before the lesson. Work through it in order so you have seen every output before the student does.
+
 ### 15 minutes the night before
 
 - [ ] **Print the workbook (`workbook/week-10.md`).** **Build It** (Part 1, the spec sheet, and Part 2, the test table) is the section that gets written on most — print it single-sided so there is room in the margin.
@@ -450,6 +454,8 @@ TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the lesson plan. The table shows the five segments and their timings; each segment is then set out step by step below it.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -749,6 +755,8 @@ You should be almost silent for these twenty minutes. When they get stuck, use t
 
 ## 🐞 The Debugging Clinic
 
+Use this section when the student hits an error. It lists the messages this week's code produces, what each one means and how to fix it.
+
 Every one of these tracebacks came from actually running a broken version of this week's code. Your student will produce most of them today.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
@@ -802,6 +810,8 @@ Two extra lines and the invisible becomes visible. **This is the most transferab
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full activity for the Their Turn block: the setup, the two parts, what finished looks like, and two variations.
 
 ### Setup
 
@@ -968,6 +978,8 @@ Check by hand: 200 − 145 = 55 ✔ · 55 × 52 = 2,860 ✔
 
 ## ❓ Questions Students Ask This Week
 
+Use this section when the student asks a question. Each entry has an answer you can say nearly word for word.
+
 **"Why can't I just print inside the function? It's fewer lines and it works."**
 
 It does work, right up until you want to *do* anything with the answer — add it to something, compare it, save it, put it in a sentence. The printed value is gone the instant it hits the screen; there is no way to get it back. And you lose nothing by returning, because the caller can always print it. The honest summary is: printing inside a function is not wrong, it is just a dead end, and you cannot tell it is a dead end from inside the function.
@@ -1008,6 +1020,8 @@ The second one wins, silently, and the first one is gone — no error, no warnin
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the things that most often go wrong, why they happen and what to do right away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The lesson becomes "write five functions" and the `return` point never lands | The functions are fun and the bug is at the end | Move the bug forward. Do the second deliberate mistake (`print` instead of `return` in `double`) at minute 15 as written, not at minute 25. If you are behind, cut the fifth function, never the bug. |
@@ -1023,6 +1037,8 @@ The second one wins, silently, and the first one is gone — no error, no warnin
 ---
 
 ## 🧭 Differentiation
+
+This section gives you ways to make the lesson easier or harder without losing the main idea.
 
 ### If the student is struggling
 
@@ -1072,7 +1088,7 @@ Ten minutes, no keyboard, and both hard words used correctly a dozen times. The 
 
 ## ✅ Assessing Understanding
 
-Three checks, five minutes, exact wording.
+This section gives you three checks to run at the end of the lesson. They take five minutes in total, and the wording is exact.
 
 **Check 1 — the two words (spoken)**
 
@@ -1105,6 +1121,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives you the words to assign the workbook, then the split between class and home and the time it takes.
 
 **Say this:**
 
@@ -1734,6 +1752,8 @@ The "I can…" faces are self-assessed; no answer. Where a student marks 😕 on
 ---
 
 ## 🔮 Next Week Preview
+
+This section tells you what next week covers and what to prepare for it.
 
 Week 11 answers a question that has been quietly building since Week 7: **where do you put twenty numbers?** So far every value has had its own box with its own name, which is fine for two and unbearable for twenty. Next week the student meets the **list** — many values under one name, laid out in a row of numbered slots — and immediately runs into the thing that trips up every programmer alive: *the first slot is number 0, not 1.* The lesson is built around index cards on the table with slot numbers written underneath in pink, because reaching for a card that isn't there is a much better way to meet `IndexError` than reading about it. By the end they can build a list, open any slot, reach the last item with `-1`, count with `len()`, add one more with `append()`, and produce an `IndexError` on purpose and explain it.
 

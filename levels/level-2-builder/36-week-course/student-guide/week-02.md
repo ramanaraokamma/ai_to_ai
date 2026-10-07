@@ -21,11 +21,15 @@
 
 ## 🪝 Start Here
 
-Last week, every number you used you had to type out fresh every single time you wanted it.
+This section shows the problem that variables solve, so you know why they are worth learning.
 
-Suppose you had written a pizza bill. Four lines, and `8.50` appeared in all four of them. Now the shop puts the price up to `9.75`. You go hunting through the file changing `8.50` to `9.75` in four different places — and you miss one.
+Last week, you had to type out every number fresh each time you wanted it.
 
-Everyone misses one. That is not a personal failing; it is what happens to human beings who have to keep four copies of a fact in step.
+Suppose you had written a pizza bill. Four lines, and `8.50` appeared in all four of them.
+
+Now the shop puts the price up to `9.75`. You go hunting through the file changing `8.50` to `9.75` in four different places — and you miss one.
+
+Everyone misses one. That is not a personal failing. It is what happens when people have to keep four copies of a fact in step.
 
 ---
 
@@ -35,7 +39,7 @@ Picture three tubs on a table. The first has a sticky note on the outside readin
 
 **That's it. That's a variable.** A name, stuck on the outside of a place where one value lives.
 
-When somebody asks *"what's `pizza_price`?"* you don't guess. You find the box with that label on it, open it, and read what's inside.
+When somebody asks *"what's `pizza_price`?"* you don't guess. You find the box with that label, open it, and read what's inside.
 
 Now the shop puts the price up. So I take out the `8.50` slip, **screw it up, and drop it on the floor**, and put a new slip in reading `9.75`.
 
@@ -48,7 +52,9 @@ It's on the floor. Gone. Nothing anywhere remembers it. **There is no undo.**
 ![Assign again and the old value is gone](../figures/fig-w02-2-reassignment-swap.svg)
 *Figure 2.1 — Put a new value in a box and the old one is simply not there any more. This catches absolutely everybody at least once.*
 
-That's half of today. The other half is stranger, and it is about the *slip of paper* rather than the box. Because it turns out that **what kind of thing is written on the slip** changes what the computer is allowed to do with it — and you already met that last week without having a word for it.
+That's half of today. The other half is about the *slip of paper* rather than the box.
+
+**What kind of thing is written on the slip** changes what the computer is allowed to do with it. You already met that last week without having a word for it.
 
 `7 * 6` was `42`. `"7" * 6` was `777777`. Today you learn why.
 
@@ -56,7 +62,9 @@ That's half of today. The other half is stranger, and it is about the *slip of p
 
 ## 🧠 The Big Idea
 
-> **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
+This section explains the two ideas of the week, variables and types, one small step at a time.
+
+> **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it. The `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. A variable is a name stuck on a value
 
@@ -70,7 +78,7 @@ In Python, making that box looks like this:
 pizza_price = 8.50
 ```
 
-**The analogy.** Look at the picture below very carefully, because which part is which matters:
+**The analogy.** Look at the picture below, because which part is which matters:
 
 - The **box** is a place in the computer's memory where one value sits.
 - The **name** is a label stuck on the outside so you can find that box again.
@@ -79,7 +87,7 @@ pizza_price = 8.50
 ![A variable is a label stuck on a box](../figures/fig-w02-1-variable-as-box.svg)
 *Figure 2.2 — The name is a label on the outside. The value is what's inside. They are two different things.*
 
-**The concrete version.** Here is a whole file, and it shows both halves — putting a value in, and then putting a different one in.
+**The concrete version.** Here is a whole file. It puts a value in, and then puts a different one in. Type it and run it.
 
 ```python
 # boxes.py - one box, two different values in it.
@@ -96,17 +104,15 @@ print(pizza_price)            # same label, different contents
 9.75
 ```
 
-**And this is the whole reason variables are worth a lesson: you write the number once.** Change one line, and everything that used the name is instantly right. Last week you'd have changed four lines and missed one.
+**The whole reason variables are worth a lesson: you write the number once.** Change one line, and everything that used the name is instantly right. Last week you'd have changed four lines and missed one.
 
-> **💡 Try this:** notice `8.50` printed as `8.5`. Python did not remember that you typed a trailing zero — it stored the *number*, and the number eight-point-five has no trailing zero. That looks wrong on a price, and it is next week's entire opening problem. It takes one character to fix.
+> **💡 Try this:** notice `8.50` printed as `8.5`. Python did not remember that you typed a trailing zero. It stored the *number*, and the number eight-point-five has no trailing zero. That looks wrong on a price, and it is next week's opening problem. It takes one character to fix.
 
 ### 2. `=` is not "equals". It is "gets".
 
-**The plain explanation.** Read every assignment out loud, always, as **"pizza_price *gets* 8.50."**
+**The plain explanation.** Read every assignment out loud as **"pizza_price *gets* 8.50."** Never say "pizza_price equals 8.50".
 
-Never "pizza_price equals 8.50".
-
-That habit matters far more than it sounds, because `=` in Python is **not** the equals sign from maths class.
+The habit matters because `=` in Python is **not** the equals sign from maths class.
 
 | | In maths | In Python |
 |---|---|---|
@@ -117,7 +123,7 @@ That habit matters far more than it sounds, because `=` in Python is **not** the
 
 **The analogy.** `=` is not a pair of scales balancing. It is an arrow pointing left: *fetch the thing on the right, drop it in the box named on the left.*
 
-**The concrete version.** Write it the other way round and Python refuses, in words:
+**The concrete version.** Write it the other way round and Python refuses, in words. Try this one line and read the error:
 
 ![The name goes on the left. Always.](../figures/fig-w02-6-name-goes-on-the-left.svg)
 *Figure 2.3 — You cannot put something *into* the number 8.50. That isn't a box, it's a value.*
@@ -135,7 +141,7 @@ SyntaxError: cannot assign to literal here. Maybe you meant '==' instead of '='?
 
 Read the last line: *"you can't put something into the number 8.50."*
 
-**Naming.** There are rules Python enforces, and rules only humans care about. Both matter.
+**Naming.** Some rules Python enforces. Other rules only humans care about. Both matter.
 
 | Python enforces this | Good | Bad, and what happens |
 |---|---|---|
@@ -144,9 +150,13 @@ Read the last line: *"you can't put something into the number 8.50."*
 | Capitals matter | `score` and `Score` are two **different boxes** | assuming they're the same → `NameError` |
 | Not one of Python's own words | `class_size` | `class = 30` → `SyntaxError: invalid syntax` |
 
-Only humans care about these three, and they matter enormously anyway: **`snake_case`** (all lowercase, words joined with underscores — `pizza_price`, not `PizzaPrice` and definitely not `pp`); **say what the thing *is***, not what type it is (`slice_count`, never `num1`); and **a name is a promise** — if you call something `total`, it had better be a total.
+Only humans care about these three rules, but they matter a lot:
 
-> **⚠️ Watch out:** `x`, `data2` and `thing` are all perfectly legal names and all three are bad. **In two weeks you will be a stranger reading your own file. Name things for that stranger.**
+- **`snake_case`**: all lowercase, words joined with underscores. Write `pizza_price`, not `PizzaPrice` and definitely not `pp`.
+- **Say what the thing *is***, not what type it is. Write `slice_count`, never `num1`.
+- **A name is a promise.** If you call something `total`, it had better be a total.
+
+> **⚠️ Watch out:** `x`, `data2` and `thing` are all legal names and all three are bad. **In two weeks you will be a stranger reading your own file. Name things for that stranger.**
 
 ### 3. Four kinds of value, and `type()` is the torch
 
@@ -172,7 +182,7 @@ Four kinds is all you need. Plain English first, Python's abbreviation second.
 
 **The analogy.** Imagine four differently-shaped holes in a toy: a square, a circle, a triangle, a slot. The *shape* of the block decides which hole it fits and what happens when you push it. Python's types are the shapes.
 
-**The concrete version.** You never have to guess which kind you're holding, because there is an instruction that tells you. It's called `type` and you use it exactly like `print`.
+**The concrete version.** You never have to guess which kind you're holding, because there is an instruction that tells you. It's called `type` and you use it exactly like `print`. This file shows all four kinds:
 
 ```python
 # types_tour.py - what kind of thing is each value?
@@ -197,9 +207,9 @@ Rohit <class 'str'>
 False <class 'bool'>
 ```
 
-**Read `<class 'str'>` as "this is a string."** The word `class` is Python's general word for "kind of thing" and it is completely safe to ignore this year.
+**Read `<class 'str'>` as "this is a string."** The word `class` is Python's general word for "kind of thing". You can ignore it this year.
 
-Now the pair to look at hardest. Two lines, almost identical:
+Now a pair of lines that look almost identical. Run both and compare the output:
 
 ```python
 print(8.50, type(8.50))
@@ -211,13 +221,13 @@ print("8.50", type("8.50"))
 8.50 <class 'str'>
 ```
 
-**Same four characters in the file. Completely different kinds of thing.** And look what else happened: the float **lost** its trailing zero and the string **kept** it. That is the single best illustration of the week.
+**Same four characters in the file. Completely different kinds of thing.** The float **lost** its trailing zero and the string **kept** it. That is the single best illustration of the week.
 
-> **⚠️ Watch out:** you cannot tell types apart by looking at the screen. Two things can print identically and behave completely differently. **`type()` is the only torch you have.** Don't argue with Python about what type something is — ask it.
+> **⚠️ Watch out:** you cannot tell types apart by looking at the screen. Two things can print identically and behave differently. **`type()` is the only torch you have.** Don't argue with Python about what type something is. Ask it.
 
 ### 4. What `+` actually does depends on both sides
 
-**The plain explanation.** `+` does two entirely different jobs depending on what is on either side of it.
+**The plain explanation.** `+` does two entirely different jobs depending on what is on either side of it. Run these two lines:
 
 ```python
 print(5 + 5)          # two numbers  -> arithmetic
@@ -229,12 +239,12 @@ print("5" + "5")      # two strings  -> glue them together
 55
 ```
 
-**The analogy.** `+` between two numbers is a calculator. `+` between two pieces of text is a glue stick. It's the same symbol wearing two different hats, and what decides the hat is the **type** of what's on each side.
+**The analogy.** `+` between two numbers is a calculator. `+` between two pieces of text is a glue stick. It is the same symbol wearing two different hats. The **type** of what's on each side decides the hat.
 
 ![One plus sign, three different outcomes](../figures/fig-w02-4-plus-two-jobs.svg)
 *Figure 2.5 — Two numbers: it adds. Two texts: it glues. One of each: it stops.*
 
-**The concrete version — and this is the centre of the whole week.** What happens if you mix them?
+**The concrete version — the centre of the week.** What happens if you mix them? Run this file:
 
 ```python
 # collision.py
@@ -250,21 +260,23 @@ TypeError: can only concatenate str (not "int") to str
 
 > **TypeError** — "the things on either side don't go together." Right names, wrong kinds of thing.
 
-**Translate that message before you do anything else.** "Concatenate" is a big word for "glue end to end". So it is saying: *"the glue job only works on text, and you handed me a number."*
+**Translate that message first.** "Concatenate" is a big word for "glue end to end". So it is saying: *"the glue job only works on text, and you handed me a number."*
 
-**Now the question that matters. Why didn't Python just sort it out?** It's obviously five and five.
+**Why didn't Python just sort it out?** It looks like five and five.
 
-Because there are **two** obvious answers and they are miles apart:
+There are **two** obvious answers and they are far apart:
 
 - Did you want `10`? Treat the text `"5"` as a number and add.
 - Did you want `"55"`? Treat the number `5` as text and glue.
 
-Both are completely reasonable. Python has no way to know which you meant. So instead of picking one and being wrong half the time, **it stops and makes you say.**
+Both are reasonable. Python has no way to know which you meant. So instead of picking one and being wrong half the time, **it stops and makes you say.**
 
 ![Python refuses to guess, and tells you so](../figures/fig-w02-5-typeerror-pinned.svg)
 *Figure 2.6 — Both answers were available. That is exactly why Python would not choose for you.*
 
-Some other languages *do* guess. Here is what that costs. A shop's website stores a jumper's price as text, `"100"`, and the delivery charge as a number, `50`. The language quietly glues them, and the customer's total comes out as **10050** instead of **150**. Nothing crashes. No red text. The page looks completely normal, and the first person to find out is somebody's parent staring at a bank statement three weeks later.
+Some other languages *do* guess. Here is what that costs.
+
+A shop's website stores a jumper's price as text, `"100"`, and the delivery charge as a number, `50`. The language quietly glues them, and the customer's total comes out as **10050** instead of **150**. Nothing crashes. There is no red text. The first person to find out is somebody's parent, looking at a bank statement three weeks later.
 
 > **A crash is a bug you find in four seconds. A guess is a bug you find in four weeks.**
 
@@ -272,7 +284,7 @@ That sentence is the real lesson of Week 2. The error message is **good news**.
 
 ### 5. Converting on purpose: `int()` and `float()`
 
-**The plain explanation.** You mend the collision by saying which of the two answers you meant.
+**The plain explanation.** You mend the collision by saying which of the two answers you meant. Run this file:
 
 ```python
 # two_fixes.py - the same collision, mended two different ways.
@@ -286,13 +298,13 @@ print("5" + "5")         # make both sides text, THEN glue
 55
 ```
 
-**Two fixes. Two different right answers. And *you* chose which.** Python didn't take a decision away from you — it handed one to you.
+**Two fixes. Two different right answers. And *you* chose which.** Python didn't take a decision away from you. It handed one to you.
 
 > **Converting** — turning a value of one kind into an equivalent value of another kind, deliberately.
 
 **The analogy.** `int()` and `float()` are doorways, not disguises. Something walks through and comes out genuinely changed.
 
-**The concrete version.**
+**The concrete version.** This file converts five values on purpose. Type it and run it:
 
 ```python
 # convert.py - swapping a value from one type into another on purpose.
@@ -312,11 +324,13 @@ print(type(int("12")))   # proof it really is an int now
 <class 'int'>
 ```
 
-**Three things to hold on to, all of which will trip you up once.**
+**Three things to hold on to. Each one trips people up once.**
 
-**`int(3.9)` is `3`, not `4`.** `int()` **chops off** everything after the point; it does not round. If you expected `4`, that is a completely reasonable expectation — but `int()` does "take the whole-number part", not "find the nearest whole number". The proper rounding tool arrives in Week 4.
+**`int(3.9)` is `3`, not `4`.** `int()` **chops off** everything after the point. It does not round. If you expected `4`, that is a reasonable thing to expect.
 
-**`int("3.5")` fails**, and so does **`int("twelve")`**, both with the same error type:
+But `int()` means "take the whole-number part", not "find the nearest whole number". The proper rounding tool arrives in Week 4.
+
+**`int("3.5")` fails**, and so does **`int("twelve")`**. Both give the same error type:
 
 ```text
 ValueError: invalid literal for int() with base 10: '3.5'
@@ -337,7 +351,7 @@ ValueError: invalid literal for int() with base 10: 'twelve'
 
 ## 💻 Type This
 
-One file, built in five steps. Type it — no pasting, all year.
+In this section you build one file in five steps. Type it yourself, with no pasting, all year.
 
 ### Step 1 — make the file and put one value in a box
 
@@ -355,7 +369,7 @@ print(player, type(player))             # print the value, then its type
 | 3 | `player` **gets** the text `"Rohit"`. Say it out loud as "gets". |
 | 4 | Prints **two** things with a comma between them: what's in the box, then what kind of thing that is. |
 
-Save. Run.
+Save the file, then run it:
 
 ```bash
 python3 types_tour.py
@@ -367,7 +381,7 @@ Rohit <class 'str'>
 
 ### Step 2 — add a whole number
 
-*Add this to the file you started in Step 1:*
+*Add this to the file you started in Step 1. It stores a whole number and prints its type:*
 
 ```python
 runs = 264                              # a whole number, no quotes, no dot
@@ -383,7 +397,7 @@ Rohit <class 'str'>
 
 ### Step 3 — add a decimal, and a yes-or-no
 
-*Add this to the same file:*
+*Add this to the same file. It stores a decimal and a yes-or-no value:*
 
 ```python
 strike_rate = 152.75                    # a number with a decimal point
@@ -400,13 +414,13 @@ Rohit <class 'str'>
 False <class 'bool'>
 ```
 
-Four values. Four kinds. Python told you each one without you having to guess.
+Four values. Four kinds. Python told you each one, so you did not have to guess.
 
-> **⚠️ Watch out:** `False` has a **capital F**. Lowercase `false` gives `NameError: name 'false' is not defined. Did you mean: 'False'?` — because to Python, `false` is just a name it has never heard of.
+> **⚠️ Watch out:** `False` has a **capital F**. Lowercase `false` gives `NameError: name 'false' is not defined. Did you mean: 'False'?` To Python, `false` is just a name it has never heard of.
 
 ### Step 4 — break it with a capital letter
 
-*Change line 4 only,* from `print(player, type(player))` to `print(Player, type(player))` — capital P on the first one.
+*Change line 4 only,* from `print(player, type(player))` to `print(Player, type(player))`. Put a capital P on the first one. This bug is deliberate. Run it and you get:
 
 ```text
 Traceback (most recent call last):
@@ -415,19 +429,19 @@ Traceback (most recent call last):
 NameError: name 'Player' is not defined. Did you mean: 'player'?
 ```
 
-**Read the last line. Now: is that a spelling mistake?**
+**Read the last line. Is that a spelling mistake?**
 
-Every letter is correct. The only thing wrong is that one of them is a **capital**. To Python, `Player` and `player` are two completely different names — two completely different boxes, and only one of them exists.
+Every letter is correct. One of them is a **capital**. To Python, `Player` and `player` are two different names, so they are two different boxes, and only one of them exists.
 
 This is the single most annoying error in programming, because **your eyes read the word, not the letters**, and a capital P is basically invisible when you're hunting for a typo.
 
-> **💡 Try this:** the only reliable way to find it is to read the name out loud **one character at a time**, saying "capital" where there is one. *"Capital-P, l, a, y, e, r."* Saying "capital" out loud is what makes you see it.
+> **💡 Try this:** read the name out loud **one character at a time**, saying "capital" where there is one. *"Capital-P, l, a, y, e, r."* Saying "capital" out loud is what makes you see it.
 
-Fix it. Run. Bug Log row.
+Fix it, run it again, and add a row to your Bug Log.
 
 ### Step 5 — the collision, and both fixes
 
-*Add these two lines at the bottom of the same file:*
+*Add these two lines at the bottom of the same file. The second one is deliberate, so expect it to stop the program:*
 
 ```python
 print("5" + "5")
@@ -444,9 +458,9 @@ Traceback (most recent call last):
 TypeError: can only concatenate str (not "int") to str
 ```
 
-**Two things happened.** `"5" + "5"` printed `55` — right there above the red. Two texts, glued. Then `"5" + 5` stopped the program.
+**Two things happened.** `"5" + "5"` printed `55`, right above the red text. Two texts, glued. Then `"5" + 5` stopped the program.
 
-Now mend it, **both ways**:
+Now mend it, **both ways**. Replace those two lines with these two:
 
 ```python
 print(int("5") + 5)      # make the text into a number, THEN add
@@ -458,9 +472,11 @@ print("5" + "5")         # make both sides text, THEN glue
 55
 ```
 
-Bug Log row — and this one gets **both** fixes written in the third column, because both are correct and choosing between them was your job.
+Add a Bug Log row. Write **both** fixes in the third column, because both are correct and choosing between them was your job.
 
 ### The finished file
+
+Compare your file with this one:
 
 ```python
 # types_tour.py - what kind of thing is each value?
@@ -494,9 +510,11 @@ False <class 'bool'>
 
 ## 🔍 Worked Examples
 
+This section shows three finished programs that use named boxes. Read each one, then run it.
+
 ### Worked Example 1 — One lunch, in named boxes (food)
 
-Every number appears exactly once. That is the discipline of the week.
+Every number appears exactly once. That is the discipline of the week. The file stores four values, then works out one day and one week:
 
 ```python
 # lunchbox.py - one lunch, in named boxes.
@@ -522,7 +540,10 @@ Type of daily_cost: <class 'float'>
 Type of days      : <class 'int'>
 ```
 
-**Two things worth stopping on.** `daily_cost` came out as `3.0` — a **float** — even though three pounds is a whole number of pounds. Because one of the things in the sum was a float, and **whenever a float touches an int in arithmetic, the answer is a float.** And `apple_price * apples` happened **before** the `+`, exactly as in maths class.
+**Two things worth stopping on.**
+
+- `daily_cost` came out as `3.0`, a **float**, even though three pounds is a whole number of pounds. One of the things in the sum was a float, and **whenever a float touches an int in arithmetic, the answer is a float.**
+- `apple_price * apples` happened **before** the `+`, exactly as in maths class.
 
 **The payoff test.** Change `days` from 5 to 4. How many lines did you edit? **One.** Two printed figures changed:
 
@@ -533,7 +554,7 @@ One week: 12.0
 
 ### Worked Example 2 — One player's season (sport)
 
-This one shows all four kinds in one file.
+This file holds all four kinds in one place. It also divides two whole numbers:
 
 ```python
 # batting.py - one player's season, in named boxes.
@@ -561,11 +582,11 @@ Types  : <class 'str'> <class 'int'> <class 'float'> <class 'bool'>
 Type of average: <class 'float'>
 ```
 
-**`264 / 8` is exactly 33, and it still came out as `33.0`, a float** — because **`/` always gives a float**, whether the answer needed one or not. That is last week's "the slash leaves a dot", and now it has a name.
+**`264 / 8` is exactly 33, and it still came out as `33.0`, a float.** That is because **`/` always gives a float**, whether the answer needed one or not. It is last week's "the slash leaves a dot", and now it has a name.
 
 ### Worked Example 3 — Three marks that arrived as text (school)
 
-This is the real-world shape of the whole lesson. Numbers typed into a form arrive as **text**, and you have to convert them at the door.
+This is the real-world shape of the whole lesson. Numbers typed into a form arrive as **text**, and you have to convert them at the door. This file converts three marks, then adds them:
 
 ```python
 # marks.py - three marks that arrived as text, turned into numbers.
@@ -598,19 +619,21 @@ Average: 77.66666666666667
 Glued instead of added: 788471
 ```
 
-**Look at the first two lines of output.** They print the *same characters*, `78`. Only the type differs. The screen cannot tell you which is which; `type()` can.
+**The first two lines of output.** They print the *same characters*, `78`. Only the type differs. The screen cannot tell you which is which, but `type()` can.
 
-**And look at the last line.** `"78" + "84" + "71"` is `788471`. Not a total, not close to one — and **nothing crashed**, because three strings glue together perfectly happily. Python refuses the *mixed* case because it is guessable, and lets three strings through because you might genuinely have meant to glue text.
+**The last line.** `"78" + "84" + "71"` is `788471`. That is not a total, and **nothing crashed**, because three strings glue together without complaint. Python refuses the *mixed* case because it is guessable. It lets three strings through because you might really have meant to glue text.
 
-> **💡 Try this:** the ugly `77.66666666666667` will bother you. It should. Making that print as `77.67` is next week, and it takes three characters.
+> **💡 Try this:** the long `77.66666666666667` looks untidy. Making it print as `77.67` is next week, and it takes three characters.
 
 ---
 
 ## 🐞 When It Breaks
 
-Every message came from really running a broken version of this week's code.
+This section shows the three errors you are most likely to meet this week, so you can read them calmly. Every message came from really running a broken version of this week's code.
 
 ### Break 1 — the mixed `+`
+
+Run this one line:
 
 ```python
 print("5" + 5)
@@ -625,11 +648,13 @@ TypeError: can only concatenate str (not "int") to str
 
 **What Python is telling you.** *"The glue-things-together job only works on text, and you gave me a number."*
 
-**The fix — and there are two, and you must choose.** `int("5") + 5` gives `10`. `"5" + "5"` gives `55`. Which one is right depends entirely on what you were trying to do, and Python cannot know that.
+**The fix.** There are two, and you must choose. `int("5") + 5` gives `10`. `"5" + "5"` gives `55`. Which one is right depends on what you were trying to do, and Python cannot know that.
 
 > **🐞 If you see this error:** put `print(type(...))` on the line *above* the broken one, with each side inside it. This is the single most useful debugging move in the whole language. If a `TypeError` says something is a `str` and you are certain it's a number, `type()` settles the argument in four seconds.
 
 ### Break 2 — the invisible capital letter
+
+Run these two lines:
 
 ```python
 pizza_price = 8.50
@@ -643,11 +668,13 @@ Traceback (most recent call last):
 NameError: name 'Pizza_price' is not defined. Did you mean: 'pizza_price'?
 ```
 
-**What Python is telling you.** *"I've never heard of that name."* Which is true — `Pizza_price` and `pizza_price` are different boxes, and only one of them was ever filled.
+**What Python is telling you.** *"I've never heard of that name."* That is true. `Pizza_price` and `pizza_price` are different boxes, and only one of them was ever filled.
 
 **The fix.** Match the case exactly. Read the name aloud one character at a time to spot it.
 
 ### Break 3 — used before it exists
+
+Run these two lines:
 
 ```python
 print(total)
@@ -661,11 +688,15 @@ Traceback (most recent call last):
 NameError: name 'total' is not defined
 ```
 
-**What Python is telling you.** Same complaint, completely different cause. **Python runs top to bottom**, so on line 1 the box called `total` genuinely does not exist yet — it gets made on line 2, one instant too late. And there's no `Did you mean:` this time, because there was nothing close enough to guess.
+**What Python is telling you.** Same complaint, different cause. **Python runs top to bottom**, so on line 1 the box called `total` does not exist yet. It gets made on line 2, one line too late.
+
+There is no `Did you mean:` this time, because there was no close name to suggest.
 
 **The fix.** Swap the lines. Assign it *above* the line that uses it.
 
 ### The whole clinic, for reference
+
+Look up any error message from this week in the first column.
 
 | What you see | What it means | The fix |
 |---|---|---|
@@ -684,15 +715,17 @@ NameError: name 'total' is not defined
 
 ## 🎲 What We Did In Class
 
+This section is a record of the class, so you can repeat the games at home or catch up if you missed it.
+
 ### The three tubs
 
 Three tubs on a table, a pad of sticky notes, and slips of paper.
 
 1. A note reading `pizza_price` on tub one, a slip reading `8.50` inside. The note is the **name**; the slip is the **value**.
 2. The `8.50` slip taken out, screwed up, dropped; `9.75` put in. *Where's the 8.50?* **Gone. Nothing remembers it.**
-3. The note **peeled off** tub one and pressed onto empty tub two. The name isn't the box — it's a label, and labels move.
+3. The note **peeled off** tub one and pressed onto empty tub two. The name isn't the box. It's a label, and labels move.
 
-Then the game, **"What's In The Box?"** — a sequence of moves narrated as lines of Python:
+Then the game, **"What's In The Box?"**, a sequence of moves narrated as lines of Python:
 
 | The move, said out loud | What's in each box afterwards |
 |---|---|
@@ -701,7 +734,9 @@ Then the game, **"What's In The Box?"** — a sequence of moves narrated as line
 | "a gets b" | `a` = **3**, `b` = 3 — *and where's the 5?* Gone. |
 | "b gets 10" | `a` = **3**, `b` = 10 — *did `a` change? Why not?* |
 
-**That last row is the subtle one and it catches adults.** `a gets b` means `a` now holds the same number `b` held at that moment. It did **not** tie the two names together, so re-pointing `b` afterwards leaves `a` alone. (Lists, in Week 11, behave differently.) (There is a runnable proof of this in Trick 4 below.)
+**That last row is the subtle one, and it catches adults.** `a gets b` means `a` now holds the same number `b` held at that moment. It did **not** tie the two names together, so re-pointing `b` afterwards leaves `a` alone.
+
+(Lists, in Week 11, behave differently.) There is a runnable proof of this in Trick 4 below.
 
 ### At the keyboard
 
@@ -749,11 +784,18 @@ Type of weeks_saved: <class 'int'>
 | `4 + 2` | `int` | `6` | | `""` | `str` | *(nothing)* |
 | `4 / 2` | **`float`** | `2.0` | | `"4" * 2` | **`str`** | `44` |
 
-**The four that catch almost everyone.** `42.0` is a **float** — the `.0` is not decoration, it changes the kind. `4 / 2` is `2.0`, a **float**, because division always leaves a decimal point. `"4" * 2` is `"44"`, a **string** — last week's `"7" * 6` all over again. And `8.50` prints as `8.5` while `"8.50"` prints as `8.50`: **the string keeps the trailing zero and the number doesn't.**
+**The four that catch almost everyone:**
+
+- `42.0` is a **float**. The `.0` is not decoration, it changes the kind.
+- `4 / 2` is `2.0`, a **float**, because division always leaves a decimal point.
+- `"4" * 2` is `"44"`, a **string**. It is last week's `"7" * 6` all over again.
+- `8.50` prints as `8.5` while `"8.50"` prints as `8.50`. **The string keeps the trailing zero and the number doesn't.**
 
 ---
 
 ## 💬 Talk About It
+
+These are three questions to discuss with a partner or a parent. Try your own answer before you read the hint.
 
 **1. "Why can't Python just work out that `"5" + 5` means ten?"**
 
@@ -765,11 +807,21 @@ Type of weeks_saved: <class 'int'>
 
 **3. "Which is the right kind for money — `int` or `float`?"** *(Nobody fully agrees, and that's the point.)*
 
-*Hint:* three camps, all used by real professionals. **Float** — 8.50 is obviously a decimal, and for a pizza order it's fine. **Whole pence** — store `850`, not `8.50`, and divide by 100 only when printing, because tiny inexactnesses add up and being three pence out is a very serious problem in a bank. **A special decimal type** built exactly for this, slower and fiddlier. What is *not* in dispute: pick one, write down which, and never let one half of a program think in pounds while the other half thinks in pence. We use floats this year because our sums are small — and now you know what we're choosing not to worry about.
+*Hint:* three camps, all used by real professionals.
+
+- **Float.** 8.50 is obviously a decimal, and for a pizza order it's fine.
+- **Whole pence.** Store `850`, not `8.50`, and divide by 100 only when printing. Tiny inexactnesses add up, and being three pence out is a very serious problem in a bank.
+- **A special decimal type** built exactly for this, slower and fiddlier.
+
+What is *not* in dispute: pick one, write down which, and never let one half of a program think in pounds while the other half thinks in pence.
+
+We use floats this year because our sums are small. Now you know what we're choosing not to worry about.
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four wrong ideas that catch people out, each next to the right one.
 
 ### Trick 1 — "`=` means equals"
 
@@ -780,7 +832,7 @@ Type of weeks_saved: <class 'int'>
 |---|---|
 | `8.50 = pizza_price` — "these two are equal, so either order is fine." | `pizza_price = 8.50` — "pizza_price **gets** 8.50. The name goes on the left." |
 
-The cure is not an explanation, it's a habit: **read every `=` out loud as "gets"**, every time, for about four repetitions. Then it sticks for good.
+The cure is a habit, not an explanation: **read every `=` out loud as "gets"**, every time, for about four repetitions. Then it sticks for good.
 
 ### Trick 2 — "the quotes are just tidiness"
 
@@ -797,13 +849,15 @@ The cure is not an explanation, it's a habit: **read every `=` out loud as "gets
 |---|---|
 | `int(3.9)` is `4`, because 3.9 is nearly 4. | `int(3.9)` is `3`. It **chops off** everything after the point. Proper rounding is `round()`, and that's Week 4. |
 
-`int(-3.9)` is `-3`, by the way — chopping, not rounding, in both directions.
+`int(-3.9)` is `-3`, by the way. It chops in both directions and does not round.
 
 ### Trick 4 — "assigning one box to another ties them together"
 
 | ❌ Wrong | ✅ Right |
 |---|---|
 | After `b = a`, changing `a` changes `b` too, because they're linked. | `b` now holds the same number `a` held at that instant. For numbers like these, re-pointing `a` later does not move `b`. (Lists, in Week 11, behave differently.) |
+
+Run this short file to see it:
 
 ```python
 a = 5
@@ -820,9 +874,11 @@ print(a, b)
 
 ## 🌍 Where You've Seen This
 
+This section points to six places outside the course where the same ideas are at work.
+
 1. **Every form you have ever filled in on a website.** Your age goes into a box, typed as characters. Somewhere behind the page, a programmer had to turn `"12"` into `12` before anything could be added to it. That conversion is exactly `int(input(...))` — which is Week 4.
 2. **A spreadsheet cell showing `#VALUE!`.** That is a `TypeError` in a suit. You put text where a formula wanted a number, and the spreadsheet could not make a number out of the text. (Spreadsheets do sometimes guess when the text looks like a number; Python never does.)
-3. **Phone numbers stored as text on purpose.** A phone number looks like a number and must never be treated as one — the leading zero matters, and you'd never add two together. `"0771..."` keeps the zero; `0771...` as a number would not even be allowed in Python, and other programs would drop the zero.
+3. **Phone numbers stored as text on purpose.** A phone number looks like a number but must never be treated as one. The leading zero matters, and you'd never add two together. `"0771..."` keeps the zero. `0771...` as a number would not even be allowed in Python, and other programs would drop the zero.
 4. **A shopping site showing `£8.5`.** Somebody stored a float and printed it raw. Next week you'll know how to fix that in three characters.
 5. **Autocorrect changing a name.** A box got the wrong value put in it and the old one is gone with no undo. Same box, new slip.
 6. **The settings screen on any app.** Every switch is a `bool`, every text field a `str`, every "how many minutes?" an `int` — and somebody had to name all those boxes.
@@ -831,9 +887,11 @@ print(a, b)
 
 ## 🧭 Where This Fits
 
+This section shows where this week sits in the year-long pipeline.
+
 The whole year is one pipeline: a question goes in at the left, and an answer you can **defend** comes
-out at the right. You are still standing in the very first box — Week 2 does not move you along it.
-What it does is give that box a **memory**, and nothing else in the pipeline works without one.
+out at the right. You are still standing in the very first box. Week 2 does not move you along it.
+It gives that box a **memory**, and nothing else in the pipeline works without one.
 
 ![The Level 2 pipeline in Week 2: still inside the first tile, now with names on the boxes](../figures/fig-w02-0-where-this-fits.svg)
 
@@ -856,6 +914,8 @@ bottom is the seven threads this course keeps returning to.*
 
 ## 🔑 Remember This
 
+These are the eight things to keep from this week, followed by a card of the syntax you used.
+
 - **A variable is a name stuck on a value.** The name is the label; the value is what's inside. Two different things.
 - **Read `=` as "gets", never "equals".** It's an instruction, and it only works one way round: name on the left.
 - **Assign again and the old value is gone.** No undo. Nothing anywhere remembers it.
@@ -866,6 +926,8 @@ bottom is the seven threads this course keeps returning to.*
 - **`/` always gives a float**, and a float touching an int in a sum always gives a float.
 
 ### Syntax reminder card
+
+Keep this card beside you while you work:
 
 ```python
 pizza_price = 8.50          # pizza_price GETS 8.50   (name on the LEFT)
@@ -888,6 +950,8 @@ print(int(3.9))             # 3     CHOPS. Does not round.
 ---
 
 ## 📓 New Words
+
+These are this week's five words. Each one is defined above and gathered here for quick lookup.
 
 ![This week's five words as pictures](../figures/fig-w02-7-vocab-icons.svg)
 *Figure 2.9 — This week's five words, drawn.*
@@ -914,11 +978,17 @@ Go to **[the Week 2 workbook](../workbook/week-02.md)**. About **60 minutes** in
 | **Fix the Broken Program** | A tuck-shop bill with three planted bugs and their real error messages | 10 min |
 | **Build It** | The `"5" + 5` write-up, plus `my_kit.py` with no number typed twice | 15 min |
 
-**The write-up is the part I actually care about.** Three things have to be in it. **What Python refused to do**, with the exact last line of the error copied character for character. **Why refusing is safer than guessing** — and for that one I want a *consequence*, something that goes wrong in the world, not just "it might be wrong". And **both correct answers**, with the line of code that produces each, plus one sentence on which you'd want if this were a real shopping bill.
+**The write-up is the part I care about most.** Three things have to be in it:
 
-Five or six sentences. Worth more than all the exercises put together, because if you can explain why an error message is good news you will never be frightened of one again.
+1. **What Python refused to do**, with the exact last line of the error copied character for character.
+2. **Why refusing is safer than guessing.** For this one I want a *consequence*, something that goes wrong in the world, not just "it might be wrong".
+3. **Both correct answers**, with the line of code that produces each, plus one sentence on which you'd want if this were a real shopping bill.
 
-> **💡 Try this:** before you start the exercises, go back to your Week 1 files and **rename every value into a well-named variable**, so no number is typed twice. Then change one price and count how many lines you had to edit. It should be one. That ten-minute job is the most convincing argument for variables there is, and no amount of reading replaces it.
+Write five or six sentences. It is worth more than all the exercises put together.
+
+If you can explain why an error message is good news, you will never be frightened of one again.
+
+> **💡 Try this:** before you start the exercises, go back to your Week 1 files and **rename every value into a well-named variable**, so no number is typed twice. Then change one price and count how many lines you had to edit. It should be one. This ten-minute job is the most convincing argument for variables there is.
 
 ---
 

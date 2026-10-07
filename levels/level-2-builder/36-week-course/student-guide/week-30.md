@@ -22,16 +22,20 @@
 
 ## 🪝 Start Here
 
-Two wines. Somebody in a laboratory in Italy measured thirteen chemical things about each of 178 bottles. Here are two of the thirteen, for the first two wines.
+This section starts with a pencil-and-paper problem about two wines, before any code.
+
+Somebody in a laboratory in Italy measured thirteen chemical things about each of 178 bottles. Here are two of the thirteen, for the first two wines.
 
 |  | hue | proline |
 |---|---|---|
 | wine 0 | 1.04 | 1065.0 |
 | wine 1 | 1.05 | 1050.0 |
 
-Now do exactly what you did in Week 28. Two columns, so two subtractions. Subtract, square, add up. **Do it with a pencil before you read on.**
+Now do exactly what you did in Week 28. Two columns, so two subtractions. Subtract, square, add up.
 
-```
+**Do it with a pencil before you read on.** Then compare with this:
+
+```text
 hue gap     :  1.04 − 1.05 = −0.01      squared:   0.0001
 proline gap : 1065  − 1050  =  15       squared: 225.0000
 total       :                            225.0001
@@ -58,6 +62,8 @@ Your model's opinion about wine should not depend on which unit somebody happene
 ---
 
 ## 🧠 The Big Idea
+
+This section explains the ideas behind the lab, one at a time: accuracy and the baseline, units, scaling, the confusion matrix, and choosing `k`.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
@@ -112,13 +118,15 @@ Use it every single time you are predicting a category. It costs nothing.
 
 ### 2. One column can drown out twelve
 
-**The plain explanation.** kNN measures distance. Distance is **squares added up.** So a column whose numbers are large contributes large squares, and large squares swamp small ones. Squaring is what turns a lean into a wipe-out.
+**The plain explanation.** kNN measures distance. Distance is **squares added up.**
+
+So a column whose numbers are large contributes large squares, and large squares swamp small ones. Squaring is what turns a lean into a wipe-out.
 
 **The analogy.** 🍕 Compare two people by height in **millimetres** and age in **years**.
 
 Person A is 1700 mm and 12 years old. Person B is 1750 mm and 40 years old.
 
-```
+```text
 height gap : 50 mm      squared: 2500
 age gap    : 28 years   squared:  784
 distance   : √3284 = 57.3
@@ -158,7 +166,7 @@ Meanwhile a gap of 0.01 in hue: is that small **for the hue column**? Hue only r
 
 So: **divide every gap by how much that column normally varies.** Then a gap counts as big when it is big for its own column.
 
-```
+```text
 hue     : gap 0.01  ÷  spread 0.2279   =  0.0439    squared: 0.0019
 proline : gap 15    ÷  spread 314.02   =  0.0478    squared: 0.0023
 
@@ -173,7 +181,7 @@ proline's share: 54.24 %
 
 **The analogy.** Marks out of 100 and marks out of 20, in the same table. Nobody would compare 62 and 14 directly — you would turn both into percentages first, so they speak the same language. Standardisation is that, done automatically, with "how many spreads from typical" as the shared language.
 
-**The code, and notice there are TWO steps** — `fit`, then `transform`, exactly like a model:
+**The code.** There are two steps, `fit` and then `transform`, exactly like a model:
 
 ```python
 scaler = StandardScaler()                    # make the machine
@@ -182,7 +190,7 @@ X_train_scaled = scaler.transform(X_train)   # apply them to the training rows
 X_test_scaled = scaler.transform(X_test)     # apply the SAME ones to the test rows
 ```
 
-Here is what it actually learns, on the real wine training rows:
+Here is what the scaler learns on the real wine training rows:
 
 ```text
 proline mean learned  : 744.17
@@ -244,7 +252,7 @@ Seventy-eight percent sounds like a working model. The grid says: this model is 
 
 **That is why you always print the grid.** One number tells you *how much* you got wrong. The grid tells you *what* you got wrong — and that is the thing you can act on.
 
-Two things to be careful about:
+Two things to be careful about.
 
 **One — truth first.** `confusion_matrix(y_test, pred)`. Swap the two arguments and you get the grid flipped along the diagonal, so rows become guesses and columns become truths. Every mistake then reads backwards — and **the accuracy looks identical either way**, so nothing warns you.
 
@@ -324,7 +332,7 @@ The habit is the protection. Not the checking.
 
 ## 💻 Type This
 
-Five files, and one of them takes a couple of seconds to run because it trains fifty models.
+In this section you type the lab as a set of files, one step at a time. Five files, and one of them takes a couple of seconds to run because it trains fifty models.
 
 ### Step 1 — kNN on wine, with the raw numbers
 
@@ -369,7 +377,7 @@ New lines:
 - `accuracy_score(y_test, predictions)` — truth first, guesses second.
 - `confusion_matrix(y_test, predictions)` — truth first again.
 
-Run it.
+Run it. Here is what it prints.
 
 ```text
 train accuracy: 0.7817
@@ -395,7 +403,7 @@ scaler = StandardScaler()
 X_train_scaled = scaler.transform(X_train)
 ```
 
-Run it.
+Run it. Python stops with a traceback.
 
 ```text
 Traceback (most recent call last):
@@ -456,7 +464,7 @@ print("proline column AFTER  scaling, first 5:", np.round(X_train_scaled[:5, 12]
 
 `from sklearn.preprocessing import StandardScaler` — a second new room. `preprocessing` holds tools that prepare data before a model sees it.
 
-**Before you run it: write down what accuracy you think you will get.** Then run.
+**Before you run it, write down what accuracy you think you will get.** Then run it.
 
 ```text
 train accuracy: 0.9859
@@ -488,7 +496,7 @@ Change one line. Predict using the **unscaled** test rows.
 predictions = model.predict(X_test)          # forgot to scale the test rows
 ```
 
-Run it. **No error at all:**
+Run it. Python prints no error at all:
 
 ```text
 train accuracy: 0.9859
@@ -578,7 +586,7 @@ print("saved wine_accuracy_vs_k.png")
 
 > **⚠️ Watch out:** `matplotlib.use("Agg")` has to come **before** `import matplotlib.pyplot as plt`. It tells matplotlib to draw straight to a file instead of trying to open a window — which is what you want on a machine where a window may never appear.
 
-Run it. All twenty-five lines:
+Run it. It prints twenty-five lines:
 
 ```text
 k =  1   raw = 0.7500   scaled = 0.9167
@@ -610,7 +618,7 @@ k = 25   raw = 0.7500   scaled = 0.9722
 saved wine_accuracy_vs_k.png
 ```
 
-**Open the PNG and look at it.** Two things:
+**Open the PNG and look at it.** Two things to read from it.
 
 **One — the round line is above the square line at every single `k`.** Not most. All twenty-five. Scaling is not a tweak on this table; it is the difference between a model you would use and one you would not.
 
@@ -663,7 +671,7 @@ print("proline mean learned from the 142 train:", round(clean_scaler.mean_[12], 
 print("difference:", round(scaler.mean_[12] - clean_scaler.mean_[12], 2))
 ```
 
-**Before you run it, commit out loud: will the score go up, down, or stay the same?**
+**Before you run it, say out loud whether the score will go up, go down, or stay the same.** Then run it.
 
 ```text
 LEAKY test accuracy: 0.9722
@@ -692,7 +700,7 @@ And look at the size of it. The proline mean shifted by 2.72, out of 744. That i
 
 ### The complete finished program
 
-Everything from this week, in one file.
+Here is everything from this week in one file. Type it as `classifier_lab.py` and run it.
 
 ```python
 # classifier_lab.py
@@ -821,6 +829,8 @@ confusion matrix:
 
 ## 🔍 Worked Examples
 
+These three examples use the same ideas on other tables: food, sport and school.
+
 ### Worked Example 1 — Scaling the pizza table (food)
 
 The same eight orders from Week 28 and Week 29. Watch the shares change, and watch one answer flip.
@@ -917,9 +927,7 @@ k = 3   raw -> cold    scaled -> cold
 k = 5   raw -> cold    scaled -> cold
 ```
 
-**What to notice.**
-
-`price`'s share of the distance went from **99.324% to 26.16%.** And notice the order of importance actually **reversed** — after scaling, distance is doing most of the work, which is what you would expect for a question about whether food arrives hot.
+**What to notice.** `price`'s share of the distance went from **99.324% to 26.16%.** And notice the order of importance actually **reversed** — after scaling, distance is doing most of the work, which is what you would expect for a question about whether food arrives hot.
 
 And at `k = 1` the answer **flips**, from hot to cold. Same eight orders. Same mystery order. Same `k`. The only thing that changed is that both columns now get a vote.
 
@@ -1087,6 +1095,8 @@ A model that was 55% accurate with its errors spread evenly would be **safer** t
 
 ## 🐞 When It Breaks
 
+This section shows the errors you may meet this week, and the bugs that give no error at all.
+
 This week the debugging ladder gets a new rung, and it goes at the **bottom**:
 
 > **−1. "Is there an error at all?"**
@@ -1192,11 +1202,13 @@ These are the important ones this week, and there is nothing to read because Pyt
 
 ## 🎲 What We Did In Class
 
+This section lists what we did in class, so you can follow along or catch up.
+
 ### Part 1 — The arithmetic, on paper, before any code
 
 Two wines, two columns, four steps. `hue` 1.04 and 1.05; `proline` 1065 and 1050.
 
-```
+```text
 hue gap     :  1.04 − 1.05 = −0.01      squared:   0.0001
 proline gap : 1065  − 1050  =  15       squared: 225.0000
 total       :                            225.0001
@@ -1213,9 +1225,9 @@ Then redo it with each gap divided by its column's spread — `hue` 0.2279, `pro
 
 Type `wine_unscaled.py`, run it, read row 2 of the grid out loud, and highlight it. Then type `wine_scaled.py`, predict the new accuracy in writing **before** running, and run it.
 
-Then write these two numbers up, underneath THE GAP from Week 29:
+Then write these two numbers up, underneath THE GAP from Week 29. Write it like this:
 
-```
+```text
   WINE, k = 5      raw columns      0.7778   on 36 rows
                    scaled columns   0.9444   on 36 rows
                    ----------------------------------
@@ -1228,9 +1240,9 @@ Then the silent bug: change `X_test_scaled` back to `X_test` and watch 0.9444 be
 
 `wine_choose_k.py`, all twenty-five values of `k`, the chart saved and opened.
 
-Then choose your `k`, and write these five things in **ink**:
+Then choose your `k`, and write these five things in **ink**. Write it like this:
 
-```
+```text
 chosen k          : 9
 test accuracy     : 0.9722, on 36 held-back wines
 baseline          : 0.3989
@@ -1252,7 +1264,7 @@ Do all three parts in order. **Part 1 needs nothing but a calculator**, and it i
 
 ### The extension we ran out of time for
 
-**Does the leak matter on other splits?** Run the clean version and the leaky version for `random_state` 0 to 9 and count how often they differ.
+**Does the leak matter on other splits?** Run the clean version and the leaky version for `random_state` 0 to 9 and count how often they differ. Here is what the class got.
 
 ```text
 seed 0: clean 0.9444  leaky 0.9444  SAME
@@ -1277,6 +1289,8 @@ So the leak is invisible eight times out of ten, and when it does show up it can
 
 ## 💬 Talk About It
 
+These questions have no single right answer. Talk them over with someone and write down your reasons.
+
 **1. Same confusion matrix, different job. Class 0 is "healthy", class 1 is "mild condition", class 2 is "serious condition". Our unscaled model was perfect on healthy people and got 3 out of 10 serious cases. It is 78% accurate. Would you use it?**
 
 *Hint:* start by working out where all eight errors landed. Then ask whether a **90%** model with its errors spread evenly would be safer than a 78% model with them all in one place — and then whether "safer" is even the same question as "more accurate". Finish with the hard one: who gets to decide which mistakes are acceptable, and is that person ever the one the mistake lands on?
@@ -1292,6 +1306,8 @@ So the leak is invisible eight times out of ten, and when it does show up it can
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four sayings that sound sensible. Each one is shown with the wrong way and the right way.
 
 ### Trick 1 — "scale everything first, then split. It's tidier."
 
@@ -1323,7 +1339,7 @@ The wrong version is one line shorter and it **scores higher** — 0.9722 instea
 
 **Right:** `confusion_matrix(y_test, predictions)`. **Truth first.**
 
-Here is the same wine model, both ways:
+Here is the same wine model, printed both ways. Compare the two grids:
 
 ```text
 truth first:            swapped:
@@ -1352,9 +1368,9 @@ And the accompanying honest fact: **0.9722 versus 0.9444 is one wine out of thir
 
 **Right:** `-0.21` means *"a fifth of a spread below typical"*. Half of anything is below average, so about half your scaled numbers will be negative, in every column, always.
 
-Do one by hand and it stops feeling strange:
+Do one by hand and it stops feeling strange. The sum is:
 
-```
+```text
 (680 − 744.17) ÷ 307.03 = −0.21
 ```
 
@@ -1363,6 +1379,8 @@ And notice how much more useful that is than 680. `−0.21` says *slightly below
 ---
 
 ## 🌍 Where You've Seen This
+
+These are places outside the classroom where the same ideas turn up.
 
 - **Any app that compares you to other people.** Steps per day are in the thousands, hours of sleep are in single figures, resting heart rate is in the sixties. Without scaling, "people like you" means "people with a similar step count", full stop.
 - **House-price and second-hand-car sites.** Price in lakhs, mileage in thousands, number of bedrooms in single digits, age in years. Four columns, four wildly different sizes, one distance calculation. Scaling is not optional there; it is the product.
@@ -1400,6 +1418,8 @@ twenty-five times, one habit fixed for life, and one grid read out loud instead 
 ---
 
 ## 🔑 Remember This
+
+These are the key points of the week, followed by a card of the new code.
 
 - **Distance is squares added up, so a column with big numbers wins.** `proline` was 99.999956% of one distance and `hue` was 0.000044%. That is squaring, not importance.
 - **Scaling means dividing each gap by how much its own column normally varies.** Then a gap counts as big when it is big *for that column*. On wine it was worth **+16.7 accuracy points** for free.
@@ -1447,6 +1467,8 @@ baseline = np.bincount(y).max() / len(y)     # always shout the commonest class
 
 ## 📓 New Words
 
+This table lists the new words of the week, with what each one means.
+
 ![Five new words for Week 30](../figures/fig-w30-7-words-accuracy-confusion.svg)
 *Figure 30.7 — Five words. The middle one is a grid you will read out loud for the rest of your life.*
 
@@ -1461,6 +1483,8 @@ baseline = np.bincount(y).max() / len(y)     # always shout the commonest class
 ---
 
 ## 📤 Your Homework
+
+This section says what to hand in and how long each part should take.
 
 Open the **[Week 30 workbook](../workbook/week-30.md)**. Finish the lab, and hand in **five** things. About an hour.
 

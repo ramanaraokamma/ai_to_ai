@@ -6,9 +6,11 @@
 
 ---
 
-### The file every page below uses
+**The file every page below uses**
 
-Real data has to come from somewhere, so first you write it. Make a file called `make_reading_data.py` and run it **once**.
+Every page below works on one data file. You write it first, then run it **once**.
+
+Make a file called `make_reading_data.py` and type this in.
 
 ```python
 # make_reading_data.py - run this ONCE. It writes the broken reading log.
@@ -61,7 +63,7 @@ Loaded with `raw = pd.read_csv("reading_raw.csv")`, it looks like this:
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week** — pointing at part of a table.
+This warm-up reviews **last week**. Answer each question in a line or two.
 
 **W1.** `df.loc[2, "pages"]` and `df.iloc[2, 3]` gave the same answer. Name the **one** thing that would have to change for them to disagree.
 
@@ -89,7 +91,7 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
-**Write your prediction before you run anything.** Every snippet assumes these two lines have already run:
+This section is for guessing first and checking second. **Write your prediction before you run anything.** Every snippet assumes these two lines have already run:
 
 ```python
 import pandas as pd
@@ -222,6 +224,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set practises reading tables and reports without writing code.
+
 **A1. Name the four kinds of broken, from memory.** Cover the chapter first.
 
 | # | The problem | How you spot it | The named fix |
@@ -349,6 +353,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing the lines of code yourself.
+
 ### B1 — one line
 
 Write the **single line** that prints how many holes there are in every column of `raw`.
@@ -471,6 +477,8 @@ dtype: object
 
 ## 🐞 Fix the Broken Program
 
+This section is for finding and repairing bugs in a program you did not write.
+
 Here is `repair_reading.py`. It has **four** bugs: three that crash, and one that produces **no error at all**.
 
 ```python
@@ -587,6 +595,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is one question answered in two ways.
+
 ### The fill that changes the answer
 
 > Fill the three missing ages with 12. Then answer: **what is the average number of pages read by the 12-year-olds?** Now do it again, dropping those three rows instead.
@@ -629,6 +639,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These questions ask for written reasoning in your own words.
 
 **T1.** `isna()` reported **zero** missing ages when three ages were unknown.
 
@@ -731,7 +743,9 @@ ________________________________________________________________
 
 **Numbered lines. One per repair. Every line needs a REASON, and the reason must be a reason, not a restatement.**
 
-```
+Use this layout for your log:
+
+```text
 CLEANING LOG - reading_raw.csv, ______ rows, ______ columns
 --------------------------------------------------------------------------
  #  WHAT I DID                          WHY I DID IT
@@ -794,6 +808,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for sketching the idea instead of writing it.
+
 Draw **one column, twice** — before the repair and after it.
 
 ![Draw It frame for Week 23](../figures/fig-w23-9-draw-frame.svg)
@@ -814,6 +830,8 @@ Draw **one column, twice** — before the repair and after it.
 ---
 
 ## 📊 Self-Check
+
+Tick one box per row to show how sure you feel.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -850,6 +868,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Check your work here only after you have finished the pages above.
 
 <details>
 <summary>Check your answers</summary>

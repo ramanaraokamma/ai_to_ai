@@ -421,6 +421,8 @@ the week its second word finally arrives. One thread lit: representation.*
 
 ## 🧰 Prep Checklist
 
+This section lists everything to set up before class, so the lesson itself runs without surprises.
+
 ### 25 minutes the night before
 
 - [ ] **Install pandas. This is the one thing that can ruin the lesson, so do it now, on the machine the student will use.**
@@ -645,6 +647,8 @@ Name: age, dtype: float64
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson. The table is the overview; each step below it gives the words and the things to watch for.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -1259,6 +1263,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section is the full script for the activity, including the setup and two variations.
+
 ### Setup
 
 **On the table:** the printed **blank ten-row grid** (Figure 21.6, left panel); a pencil; the workbook open at Practice Set A, question A2, with the snack predictions already in pen; the Bug Log with the Week 17 and Week 18 entries findable.
@@ -1508,6 +1514,8 @@ And the sentence for this week:
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions students tend to ask this week, each with a short answer you can say aloud.
+
 **"Why isn't the index a column? It looks exactly like one."**
 
 Because it has a different job. Columns hold **what you measured**. The index holds **which row this is**.
@@ -1572,6 +1580,8 @@ What to tell a 12-year-old, out loud: **"`head()` and `info()` tell you what's i
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists what usually goes wrong, why, and what to do at once.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **pandas is not installed and the lesson dies at minute three** | It was installed by a different Python, or on a different machine, or the download stalled | This is why it is first on the Prep list. If it happens anyway: **do not debug for more than three minutes.** Switch to the paper version, which delivers all five objectives, set the install as homework with the three commands written down, and fix it yourself before Week 22 — which cannot be done on paper. |
@@ -1590,6 +1600,8 @@ What to tell a 12-year-old, out loud: **"`head()` and `info()` tell you what's i
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut, add or change if the student is struggling, flying, or not engaging today.
 
 ### If the student is struggling
 
@@ -1718,6 +1730,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to say when you set the homework.
 
 **Say this:**
 

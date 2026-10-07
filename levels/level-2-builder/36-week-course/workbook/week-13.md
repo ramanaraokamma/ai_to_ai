@@ -109,6 +109,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading dictionary code and saying what it does. Write your answers in the spaces.
+
 **A1. Trace the card.** Here is one song's card. Work down the eight lines in order, writing what each one prints, and what the card holds afterwards.
 
 ```python
@@ -206,6 +208,8 @@ How many key-value pairs are on that card? ______  So what does `len()` say? ___
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing dictionary code of your own. Type each answer and run it.
+
 **B1. One line, then one more.** Build a dictionary called `pizza` with three keys — `size`, `toppings` and `price` — then print just the price.
 
 ```python
@@ -277,7 +281,11 @@ ________________________________________________________________
 
 **B5. About fifteen lines — five cards of your own.** Five dictionaries, five keys each, **the same five keys on all five cards** — same words, same capitals, same order. Not cricketers: pick your own thing. Songs, bus journeys, dinners, matches, books.
 
-Rules: **at least two of your five keys must hold numbers** · every card has all five keys · then print three specific facts, one `len()`, and one `.get()` with a fallback you can defend.
+Rules:
+
+- **At least two of your five keys must hold numbers.**
+- Every card has all five keys.
+- Then print three specific facts, one `len()`, and one `.get()` with a fallback you can defend.
 
 ```python
 ________________________________________________________________
@@ -432,6 +440,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for practising how to read cards, labels and lookups. Work through Parts A to D in order.
+
 ### Card Detective
 
 **Part A — guess the thing from its labels.** For each set of five keys, write down what one card describes. There is a sensible answer to each.
@@ -499,6 +509,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions have no single right answer. Write a paragraph for each.
+
 **T1.** `asha["Runs"] = 51` gives you a wrong answer with **no error message**, because it makes a new field instead of changing an old one. **Should Python warn you when you create a key that differs from an existing one only by a capital letter?**
 
 Write a paragraph. Take a side, name the cost of your side, and — if you can — find the argument that cuts *against* the thing you would personally prefer.
@@ -535,9 +547,13 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+This is the homework page. Work through the five parts and tick each box as you finish it.
+
 ### Part 1 — Five cards in code
 
-Five dictionaries. **Every card gets exactly the same five keys.** Type them, do not copy-paste and edit — the typing is where the punctuation gets into your fingers.
+This part is for writing your five cards as code. **Every card gets exactly the same five keys.**
+
+Type them, do not copy-paste and edit — the typing is where the punctuation gets into your fingers. Tick each box as you finish it.
 
 - [ ] File saved as `hw13.py` in the course folder
 - [ ] Five dictionaries, five keys each
@@ -678,6 +694,8 @@ Draw **a card for something that is not a cricketer**. Five labels down the left
 
 ## 📊 Self-Check
 
+Use this page to see what you know and what you want explained again. Tick one box in each row.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Build a dictionary with five keys and read a value back out by its key | ☐ | ☐ | ☐ |
@@ -709,6 +727,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished. Open it only when you have tried every page above.
 
 <details>
 <summary>Check your answers</summary>
@@ -776,7 +796,9 @@ import stats        # then call it as stats.mean(...)
 None
 ```
 
-The first one is the trap, and it is the best question on this page. `card.get("runs", 5)` gives **`0`, not `5`** — because the key `runs` **is** there, and its value happens to be zero. The fallback is only used when the **key** is missing, never when the value merely looks empty. `catches` is genuinely missing, so the second line gives the fallback `5` and the third, with no fallback, gives `None`.
+The first one is the trap, and it is the best question on this page. `card.get("runs", 5)` gives **`0`, not `5`** — because the key `runs` **is** there, and its value happens to be zero.
+
+The fallback is only used when the **key** is missing, never when the value merely looks empty. `catches` is genuinely missing, so the second line gives the fallback `5` and the third, with no fallback, gives `None`.
 
 **P3** — real output:
 
@@ -916,7 +938,9 @@ print(f"{player['name']} of the {player['team']} made {player['runs']} off {play
 Zara of the Tigers made 41 off 39
 ```
 
-**Mark:** the f-string is in **double** quotes and the keys inside the braces are in **single** quotes. Getting that the wrong way round is the number one typo of the month. And note there is no `+` anywhere — `+` would have given you `TypeError: can only concatenate str (not "int") to str` the moment it met the 41.
+**Mark:** the f-string is in **double** quotes and the keys inside the braces are in **single** quotes. Getting that the wrong way round is the number one typo of the month.
+
+Note there is no `+` anywhere — `+` would have given you `TypeError: can only concatenate str (not "int") to str` the moment it met the 41.
 
 **B3.**
 
@@ -1106,7 +1130,9 @@ Real output:
 6
 ```
 
-Printing the whole card shows you **every label you actually have** — and there they are, `minutes` and `Minutes`, sitting side by side. Printing the length tells you **how many**: it went from 5 to 6 when it should have stayed at 5. A count that went up when you expected it to stay put is a new field you did not mean to make. Those two lines find nearly every silent dictionary bug there is.
+Printing the whole card shows you **every label you actually have** — and there they are, `minutes` and `Minutes`, sitting side by side. Printing the length tells you **how many**: it went from 5 to 6 when it should have stayed at 5.
+
+A count that went up when you expected it to stay put is a new field you did not mean to make. Those two lines find nearly every silent dictionary bug there is.
 
 **Part D. No. You cannot tell, ever, from the cards alone.**
 

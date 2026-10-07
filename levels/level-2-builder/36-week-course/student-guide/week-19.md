@@ -273,9 +273,13 @@ print(rain.sum())               # add up the whole grid
 1710
 ```
 
-Three routes, one number. That is not magic — it is the same twenty-four numbers, added in three different orders. **All three of those must agree — always.** They are the same numbers added in different orders, so numpy can never make them disagree. That makes this line a check on your *understanding* and on any totals you add up by hand, not a detector for a wrong axis or a mistyped number: a wrong `axis` still gives three matching totals. (A row with the wrong length is caught earlier, when numpy refuses to build the array.)
+Three routes, one number. That is not magic — it is the same twenty-four numbers, added in three different orders. **All three of those must agree — always.**
 
-Call it the **corner check**, because on paper it lands in the bottom-right corner where the two margins meet. Accountants have been cross-footing tables like this for centuries, and in Python it is one line. On paper it is a real check, because your own adding-up can slip; in numpy it will always agree, so use it to confirm you understand the two directions.
+Because they are the same numbers added in different orders, numpy can never make them disagree. So this line checks your *understanding* and any totals you add up by hand. It is not a detector for a wrong axis or a mistyped number: a wrong `axis` still gives three matching totals. (A row with the wrong length is caught earlier, when numpy refuses to build the array.)
+
+Call it the **corner check**, because on paper it lands in the bottom-right corner where the two margins meet. Accountants have been cross-footing tables like this for centuries, and in Python it is one line.
+
+On paper it is a real check, because your own adding-up can slip. In numpy it will always agree, so use it to confirm you understand the two directions.
 
 > **🤔 Think about it:** what should you do if the pencil and the code disagree? **Not "trust the code."** The code is not automatically right, and neither is the pencil. Something is wrong and now you have to find out which one — and that is not a bad afternoon. That is the job.
 
@@ -943,6 +947,8 @@ One number, reached two ways. If your two ways disagree, you have made a slip in
 
 ## 💬 Talk About It
 
+Three questions to argue about with a friend or a grown-up. Each one has a hint underneath.
+
 **1. `25.0` and `28.5` are both believable amounts of rain for January. Which of the two would be easier to catch if it were wrong — and what does that tell you about which wrong answers are dangerous?**
 
 *Hint:* start by imagining the wrong answer had been 25000 instead of 25.0. You would spot that in a heartbeat, because twenty-five metres of rain in one month is absurd — and notice *why* you would spot it: not from the code, but from knowing what rainfall is like. Now notice that 25.0 gives you nothing to push against. So the wrong answers you catch are the ones that clash with something you already know, and the dangerous ones are the ones that sit politely inside the range you expected. Then the harder half: **if plausibility cannot save you, what can?** Count the answers — because four can never be six, however plausible four numbers are. What else in this course works like that, giving you a check that does not depend on your judgement?
@@ -958,6 +964,8 @@ One number, reached two ways. If your two ways disagree, you have made a slip in
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four ideas that sound right and are not. Each one shows the wrong thought next to the right one.
 
 ### Trick 1 — "axis=0 means rows, so my answers are about rows"
 
@@ -1000,6 +1008,8 @@ If it helps: the grid is a chocolate bar and `rain[:, 0]` snaps off one strip. O
 
 ## 🌍 Where You've Seen This
 
+Rows and columns turn up outside Python too. Here are six places.
+
 1. **Every spreadsheet you have ever seen.** The `AVERAGE` you drag across the bottom of a spreadsheet is `axis=0`, and the one you drag down the right-hand side is `axis=1`. Spreadsheets make you point at the direction with a mouse; numpy makes you name it with a number. Same two directions, since 1979.
 2. **Your school report.** One row per subject, one column per term. Your average *per subject* and the class average *per term* come out of the same grid and answer different questions — and somebody had to decide which one goes on the front page.
 3. **A phone's battery-by-app screen.** Apps down, hours across. "Which app drained the most?" is one direction. "Which hour was worst?" is the other. Notice which one the app chooses to show you.
@@ -1036,6 +1046,8 @@ weeks 19 to 22 — is where you now stand. Stage two is plain white and finished
 ---
 
 ## 🔑 Remember This
+
+The key points of the week, then a card of the syntax to keep next to you.
 
 - **An axis is a direction.** `axis=0` runs **down** the rows. `axis=1` runs **across** the columns. The number is the position in the shape, so you can always read it off the screen.
 - **The axis you name is the axis that gets eaten.** Name the rows and the rows disappear; what is left is one answer per column.
@@ -1084,6 +1096,8 @@ print(rain.sum(axis=0).sum(), rain.sum(axis=1).sum(), rain.sum())   # 56 56 56
 ---
 
 ## 📓 New Words
+
+The five words from this week, in one place.
 
 ![This week's five words as pictures](../figures/fig-w19-7-vocab-icons.svg)
 *Figure 19.8 — This week's five words, drawn.*

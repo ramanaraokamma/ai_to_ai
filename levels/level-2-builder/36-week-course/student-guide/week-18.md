@@ -349,9 +349,11 @@ And even for numbers, you will still write a loop when you are **collecting** va
 
 ## 💻 Type This
 
-New file, `retire.py`, in the same folder as everything else.
+In this section you build `retire.py` one card at a time. Make a new file with that name in the same folder as everything else.
 
 ### Step 1 — the data
+
+Type the data first.
 
 ```python
 """retire.py - eight loops from weeks 7-15, retired."""
@@ -365,6 +367,8 @@ balls = [32, 20, 55, 9, 41, 28]          # balls faced by the same six
 Nothing new. Two plain lists, six numbers each.
 
 ### Step 2 — Card 1, the loop half
+
+Type the loop version of the first card.
 
 ```python
 doubled_loop = []                        # start with an empty list
@@ -412,7 +416,7 @@ Python asks the thing on the **left** what `*` should mean. A list's answer is *
 
 **And that is what makes this bug hard to see: there is nothing wrong with the line you are looking at.** The mistake is on the line above.
 
-One missing step. Make it an array first:
+One step is missing. Make it an array first:
 
 ```python
 score_arr = np.array(scores)             # the same six numbers, as an array
@@ -471,7 +475,7 @@ Now look at **what disappeared** from the loop version. `range(len(scores))`. `s
 
 ### Step 5 — `np.zeros`, and an error that makes no sense
 
-Card 8 needs a blank three-by-four grid. Type this:
+Card 8 needs a blank three-by-four grid. Type this line:
 
 ```python
 print(np.zeros(3, 4))
@@ -510,7 +514,7 @@ That is a Week 10 idea — parameters, in order — and it will happen to you al
 
 ### The complete finished program
 
-Here is `retire.py` with all eight cards.
+Here is `retire.py` with all eight cards. Type it as one file and run it.
 
 ```python
 """retire.py - eight loops from weeks 7-15, retired. Both versions, then the proof."""
@@ -685,9 +689,11 @@ The loop's answer is shown rounded to two places so it fits; the array is rounde
 
 ## 🔍 Worked Examples
 
-Three complete programs, in three subjects. Every one runs both versions and prints `identical?`.
+This section shows three complete programs, in three subjects. Every one runs both versions and prints `identical?`.
 
 ### Worked Example 1 — A pizza menu (food)
+
+This program applies five loop-free lines to six pizza prices.
 
 ```python
 """pizza18.py - a pizza menu, and five loops that will not be missed."""
@@ -783,6 +789,8 @@ total of all six, loop-free: 1524
 And notice the last line: `sum(price_arr)` — Python's own `sum` from Week 12, working perfectly on an array. **One number out, not a list**, so there is no `identical?` to check.
 
 ### Worked Example 2 — A week of step counts (sport)
+
+This program works on a week of step counts and a goal for each day.
 
 ```python
 """steps18.py - a week of step counts, and the loops that retire."""
@@ -881,6 +889,8 @@ total goal this week  : 66000
 
 ### Worked Example 3 — Marks out of 40, and the sting on your own data (school)
 
+This program scales five marks, then repeats the bracket mistake on school data.
+
 ```python
 """marks18.py - five marks out of 40, scaled to percent - and the sting, on school data."""
 
@@ -974,7 +984,7 @@ And find the five you wanted: **35, 23, 41, 21, 34** — they are on the diagona
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code, on numpy 1.26.
+This section shows each error or silent failure from this week, what it means, and how to fix it. Every message below came from really running a broken version of this week's code, on numpy 1.26.
 
 ### Break 1 — `* 2` on a list, which does not crash
 
@@ -1080,6 +1090,8 @@ You never said the words "data type". numpy did, because that is what it thought
 
 ## 🎲 What We Did In Class
 
+This section records how the lesson ran in the room, so you can follow along or catch up.
+
 ### The Loop Retirement Party
 
 Eight index cards face down on the table, one loop written on each — taken out of the student's own Week 7 to Week 15 files wherever possible, because a loop you wrote yourself retires far more satisfyingly than one out of a book.
@@ -1182,21 +1194,35 @@ Everybody has an answer to that, including the teacher.
 
 ## 💬 Talk About It
 
+These are questions to argue about with a friend or a teacher. There is no single right answer to any of them.
+
 **1. Is broadcasting a good feature or a bad one?**
 
-*Hint:* this one is genuinely argued about by people who write numerical software for a living, so you are not settling it — you are joining it. The case **for** is overwhelming and you felt it today: without broadcasting, `scores * 2` would be an error, you would have to build an array of six 2s first, and `celsius * 9 / 5 + 32` would need three of them. Almost every formula you will ever write would triple in length. And it costs nothing. The case **against** is the last five minutes of the lesson: broadcasting makes some mistakes **impossible to detect.** Nobody deliberately adds a row of three to a column of three, and numpy cheerfully produced nine numbers and said nothing. Experienced people lose real hours to this, and it can put wrong numbers into real work. So the question is not *is it good* — it is **what does a careful person do about it?** And notice that the answer is not "avoid it".
+*Hint:* this one is genuinely argued about by people who write numerical software for a living, so you are not settling it — you are joining it.
+
+The case **for** is overwhelming and you felt it today: without broadcasting, `scores * 2` would be an error, you would have to build an array of six 2s first, and `celsius * 9 / 5 + 32` would need three of them. Almost every formula you will ever write would triple in length. And it costs nothing.
+
+The case **against** is the last five minutes of the lesson: broadcasting makes some mistakes **impossible to detect.** Nobody deliberately adds a row of three to a column of three, and numpy cheerfully produced nine numbers and said nothing. Experienced people lose real hours to this, and it can put wrong numbers into real work.
+
+So the question is not *is it good* — it is **what does a careful person do about it?** And notice that the answer is not "avoid it".
 
 **2. `scores * 2` on a list gave twelve numbers and nothing complained. `scores + 5` on a list crashed. Which behaviour do you prefer, and why?**
 
-*Hint:* start with why they differ at all. Python asks the thing on the **left** what the symbol means. A list has an answer for `* 2` — *repeat me* — and no answer at all for `+ 5`, so one goes quietly wrong and the other stops you. Now the interesting part: **the crash was more useful to you.** Would you want `* 2` on a list to be an error too? Think about what would break: `"=" * 20` from Week 3, and `[0] * 10`, and every line anyone has ever written to repeat something. Python cannot make `*` an error on lists without breaking a great deal of working code, so it will not. **So where does that leave the safety?** With you, and with a count.
+*Hint:* start with why they differ at all. Python asks the thing on the **left** what the symbol means. A list has an answer for `* 2` — *repeat me* — and no answer at all for `+ 5`, so one goes quietly wrong and the other stops you.
+
+Now the interesting part: **the crash was more useful to you.** Would you want `* 2` on a list to be an error too? Think about what would break: `"=" * 20` from Week 3, and `[0] * 10`, and every line anyone has ever written to repeat something. Python cannot make `*` an error on lists without breaking a great deal of working code, so it will not. **So where does that leave the safety?** With you, and with a count.
 
 **3. The one-liner is shorter. Is shorter always better?**
 
-*Hint:* be careful, because "shorter is better" is a bad rule and this chapter is not arguing for it. Make the real argument: the one-liner is better because **the plumbing is gone**, and the plumbing was four of the five places you could go wrong. That is not the same as being short. Then find a counter-example — code that is short and *worse*. What about a single line that does five things at once, with no comment, and a variable called `x`? Or `arr * 9 / 5 + 32` with no note anywhere saying what unit anything is in? So what is the real rule you would write down? Something about which *parts* deserve to be short, and which parts deserve to be spelled out.
+*Hint:* be careful, because "shorter is better" is a bad rule and this chapter is not arguing for it. Make the real argument: the one-liner is better because **the plumbing is gone**, and the plumbing was four of the five places you could go wrong. That is not the same as being short.
+
+Then find a counter-example — code that is short and *worse*. What about a single line that does five things at once, with no comment, and a variable called `x`? Or `arr * 9 / 5 + 32` with no note anywhere saying what unit anything is in? So what is the real rule you would write down? Something about which *parts* deserve to be short, and which parts deserve to be spelled out.
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists wrong beliefs about this week's code. Each one has the wrong idea, the right idea, and a short check.
 
 ### Trick 1 — "`* 2` doubles a list"
 
@@ -1284,6 +1310,8 @@ total of the right answer: 143
 
 ## 🌍 Where You've Seen This
 
+Array maths is not only a classroom idea. Here are seven places it shows up.
+
 1. **The volume slider on your phone.** A sound is a very long array of numbers. Halving the volume is `arr * 0.5` — one instruction, forty-four thousand numbers a second, no loop anywhere.
 2. **Brightness and contrast on a photo.** Brightness is `pixels + 30`. Contrast is `pixels * 1.2`. That is genuinely most of it, running on a `(3024, 4032, 3)` array, and the reason the slider moves instantly is that no loop is being typed by hand.
 3. **The "10% off everything" banner on a shop's website.** Nobody edited four hundred price tags. One number, broadcast across the whole price column. You have now written the same thing.
@@ -1324,6 +1352,8 @@ the first time since Week 13.*
 
 ## 🔑 Remember This
 
+These are the points to keep from this week, followed by a card of the syntax.
+
 - **`arr * 2` replaces a four-line loop**, and the reason is not mainly that it is shorter: the loop has **five** places to go wrong and the one-liner has **one**.
 - **`scores * 2` on a plain LIST repeats it.** Six in, twelve out, and no error. The mistake is on the line above, where `np.array()` is missing.
 - **Elementwise means position by position.** Cell 0 only ever meets cell 0, and the two shapes have to line up.
@@ -1337,6 +1367,8 @@ the first time since Week 13.*
 - **Loops are for people and words; arrays are for numbers.** Some loops never retire *to array arithmetic*, and that is not a failing of numpy.
 
 ### Syntax reminder card
+
+Keep this card next to you when you write array maths.
 
 ```python
 import numpy as np
@@ -1382,6 +1414,8 @@ print("identical?", list(line_answer) == loop_answer)      # True
 ---
 
 ## 📓 New Words
+
+These are the five words from this week. Each one has a picture and an example.
 
 ![This week's five words as pictures](../figures/fig-w18-5-vocab-icons.svg)
 *Figure 18.6 — This week's five words, drawn.*

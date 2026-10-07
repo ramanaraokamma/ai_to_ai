@@ -185,7 +185,7 @@ Number 3 is the one nobody checks and the one that bites, which is the next sect
 
 **The plain explanation.** Twenty students sat quiz 3. Here are all twenty marks:
 
-```
+```text
 33, 35, 37, 38, 39, 39, 40, 41, 42, 44, 81, 83, 84, 85, 85, 86, 86, 87, 87, 88
 ```
 
@@ -291,6 +291,8 @@ Everything goes in your `level2` folder, alongside `students.py` — the cleaned
 
 Make a file called `week26_counts.py`:
 
+Type this in. It counts the rows for each club.
+
 ```python
 # week26_counts.py -- "Which club has the most members?" -> a BAR chart.
 import matplotlib.pyplot as plt
@@ -317,7 +319,7 @@ Notice the print came *before* any drawing. Always. If those numbers are wrong t
 
 ### Step 2 — pull out the names and the heights
 
-Add:
+Add these lines to the end of the file. They print the names, the heights and the total.
 
 ```python
 print()
@@ -345,7 +347,7 @@ total : 38
 
 ### Step 3 — the bar chart
 
-Add:
+Add these lines to draw and save the bar chart.
 
 ```python
 fig, ax = plt.subplots(figsize=(6, 4))
@@ -408,7 +410,7 @@ Mean 72.1 and median 72.5, only 0.4 apart. **Hold on to that**, because in ninet
 
 ### Step 5 — get it wrong on purpose: a histogram of words
 
-Type this deliberately:
+Type this deliberately. It gives the histogram a column of words instead of numbers.
 
 ```python
 fig, ax = plt.subplots(figsize=(6, 4))
@@ -436,6 +438,8 @@ matplotlib quietly turned the three club names into 0, 1 and 2 and chopped the r
 **This is worse than a crash.** A crash stops you. This hands you a chart you can print. Delete those four lines.
 
 ### Step 6 — the histogram, done properly
+
+Add these lines after the code in `week26_spread.py`. They draw the histogram with eight bins and save it.
 
 ```python
 fig, ax = plt.subplots(figsize=(6, 4))
@@ -527,6 +531,8 @@ saved marks_sting.png
 
 ### Step 8 — why the hole was there
 
+Make `week26_split.py`. It splits the marks into two halves and finds the mean of each.
+
 ```python
 # week26_split.py -- WHY the histogram had a hole in the middle.
 marks = [33, 35, 37, 38, 39, 39, 40, 41, 42, 44,
@@ -556,7 +562,7 @@ everyone   : mean 62.0
 
 ### Step 9 — the scatter, and a bar of averages
 
-Two more files, one for each of the remaining shapes.
+Make two more files, one for each of the remaining shapes. The first draws the scatter.
 
 ```python
 # week26_together.py -- "Do study hours and scores go together?" -> a SCATTER plot.
@@ -584,6 +590,8 @@ saved hours_vs_score.png
 ```
 
 Note the title: *"tended to score higher"*. Not "studying raised their scores". **Police the verb.**
+
+The second file draws a bar chart of average score for each house.
 
 ```python
 # week26_house_means.py -- "Which house has the highest average score?" -> BAR.
@@ -632,7 +640,7 @@ saved house_means.png
 
 ## 🔍 Worked Examples
 
-Three complete programs. **Write down which shape each question needs before you look at the code.**
+Three complete programs, each with a different kind of data. **Write down which shape each question needs before you look at the code.**
 
 ### Worked Example 1 — Twenty pizza orders (food)
 
@@ -838,6 +846,8 @@ Every message below came from really running a broken version of this week's cod
 
 ### Break 1 — `.value` instead of `.values`
 
+This line is deliberately wrong. Run it to see the message.
+
 ```python
 print("values:", list(club_counts.value))
 ```
@@ -988,6 +998,8 @@ For each chart: what it shows, and **what it hides — specifically.**
 
 ## 💬 Talk About It
 
+Three questions to argue about with a friend or a grown-up. Each has a hint that shows how to start thinking about it.
+
 **1. Cards 5 and 8 both landed on NEITHER. Which of the two is more dangerous to answer with a chart anyway?**
 
 *Hint:* work out what actually goes wrong in each case. Draw card 5 anyway and you get a single bar with nothing beside it — useless, but honestly useless; anybody looking at it can see it says nothing. Draw card 8 anyway and you have to *choose* a definition of "better", and your chart will look completely convincing while having smuggled that choice past the reader without mentioning it. So one produces a bad chart and the other produces a **persuasive** one. Which is worse? Then the harder half: if somebody asks you card 8 and needs an answer today, what is the honest thing to hand back — nothing, or one chart per definition of "better", clearly labelled?
@@ -1003,6 +1015,8 @@ For each chart: what it shows, and **what it hides — specifically.**
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four things that sound sensible and are wrong. Each one shows the wrong idea next to the right one.
 
 ### Trick 1 — "a bar chart just needs a column of names and a column of numbers"
 
@@ -1045,6 +1059,8 @@ There is no error. The tell is that **you cannot describe your own chart.** A sc
 
 ## 🌍 Where You've Seen This
 
+These charts are all around you. Here are six places to spot them.
+
 1. **Your music app's "top artists this year."** That is a bar chart of `value_counts()` on a play-history column. What it hides: whether you listened to one album fifty times or fifty songs once.
 2. **A phone's storage screen.** Bars for Photos, Apps, Messages, Other. Categories, gaps, one number each. Notice "Other" — that is a real analyst's move when there are too many categories to show.
 3. **Every "average house price" headline.** House prices are famously not one hump: a few enormous numbers drag the mean up, so newspapers that quote the mean and newspapers that quote the median print different-sounding stories from the same data.
@@ -1082,6 +1098,8 @@ tile, which covers two weeks — you are in it this week and next.*
 
 ## 🔑 Remember This
 
+The ten ideas to keep from this week, then a card of the syntax in one place.
+
 - **The question picks the chart.** Over time → line. Which category is biggest → bar. How are the values spread → histogram. Do two numbers go together → scatter.
 - **Sometimes the answer is no chart.** Either the answer is one number (print it) or the question is not measurable yet (hand it back).
 - **A bar chart needs one number per category.** Summarise first: `value_counts()` for counts, `groupby(...).mean()` for averages. Raw rows give you one bar per row and no error.
@@ -1094,6 +1112,8 @@ tile, which covers two weeks — you are in it this week and next.*
 - **Name one thing every chart hides.** Something you could point at, not "some information".
 
 ### Syntax reminder card
+
+Use this card to look up a command. It is a reference, so you do not need to type it all in.
 
 ```python
 import matplotlib.pyplot as plt
@@ -1139,6 +1159,8 @@ fig.savefig("club_counts.png", dpi=120, bbox_inches="tight")
 ---
 
 ## 📓 New Words
+
+The five words from this week, with a picture and an example for each.
 
 ![This week's five words as pictures](../figures/fig-w26-6-vocab-icons.svg)
 *Figure 26.8 — This week's five words, drawn.*

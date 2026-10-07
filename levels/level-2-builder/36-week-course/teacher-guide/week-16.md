@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the lesson on one page: length, type, vocabulary, syntax, materials and tech.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -37,19 +39,21 @@ Observable evidence: a `players.csv` file with 13 lines, opened and read in a te
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is your background reading before class. It explains the CSV format, the two silent bugs, and where to stop.
+
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
 **No Python needed to start.** This week has one idea in it, and it is a physical idea about writing things down.
 
 ### 1. What a CSV file actually is
 
-Your student has built a twelve-record dataset. It lives inside a running program. Close the program and it is gone. Every morning they would have to type it again. That is not a dataset, that is a chore.
+Your student has built a twelve-record dataset. It lives inside a running program. Close the program and it is gone.
 
-So we write it to a file. And the format we use is the one every table in the world uses.
+Every morning they would have to type it again. That is not a dataset, that is a chore. So we write it to a file, in the format every table in the world uses.
 
 > **CSV** — *comma-separated values*. A plain text file where the first line names the columns and every line after it is one row, with commas between the fields.
 
-Here is the entire file this week produces. Not a picture of it — this is the file:
+This is the entire file this week produces. It is not a picture of the file; it is the file:
 
 ```text
 name,team,runs,balls,out
@@ -86,7 +90,9 @@ In the file, `48` is the character `4` followed by the character `8`. That is al
 
 So when you read the file back, Python has to hand you something — and the only honest thing it can hand you is the characters it found. It gives you the text `'48'`.
 
-**It does not guess.** And it is right not to guess, because guessing would be worse. Consider a column of house numbers where one house is `007`. Guess it into a number and you have destroyed the leading zeros. Consider a column of phone numbers. Consider a column where somebody typed `N/A`. Any rule Python invented would be wrong somewhere, so Python invents nothing and hands the job to you.
+**It does not guess.** And it is right not to guess, because guessing would be worse.
+
+Consider a column of house numbers where one house is `007`. Guess it into a number and you have destroyed the leading zeros. Consider a column of phone numbers. Consider a column where somebody typed `N/A`. Any rule Python invented would be wrong somewhere, so Python invents nothing and hands the job to you.
 
 ![Five fields go out, five come back, three of them changed](../figures/fig-w16-3-everything-returns-as-text.svg)
 *Figure 16.2 — The five values look identical on the page. Three of them are a different kind of thing on the way back.*
@@ -95,7 +101,7 @@ Notice `out` in that figure. It went out as `True`, a genuine true-or-false. It 
 
 ### 3. Writing the file, line by line
 
-Here is the function the student writes. Every line explained for somebody who has never programmed.
+This is the function the student writes. The table after it explains each line for somebody who has never programmed.
 
 ```python
 import csv
@@ -135,7 +141,9 @@ f = open("players.csv", "w")
 f.close()          # and you had better not forget this
 ```
 
-The problem is not forgetfulness. The problem is **crashes**. If something goes wrong between the `open` and the `close`, the `close` never runs. The file is left open, and — this is the part that matters — a file that is open for writing may be **half written**. Python holds some of your text in a buffer and only flushes it to the disk when the file is closed. An unclosed file can be a truncated file if the program is killed or the power goes (after an ordinary error, Python usually flushes on the way out, so do not promise the student an empty file after a plain crash).
+The problem is not forgetfulness. The problem is **crashes**. If something goes wrong between the `open` and the `close`, the `close` never runs.
+
+The file is left open, and a file that is open for writing may be **half written**. Python holds some of your text in a buffer and only flushes it to the disk when the file is closed. An unclosed file can be a truncated file if the program is killed or the power goes (after an ordinary error, Python usually flushes on the way out, so do not promise the student an empty file after a plain crash).
 
 `with` fixes this by making the closing automatic and unskippable:
 
@@ -153,6 +161,8 @@ with open("players.csv", "w", newline="", encoding="utf-8") as f:
 One practical consequence the student will hit: **the file is only usable inside the block.** Outside it, `f` is closed, and touching the reader gives `ValueError: I/O operation on closed file.` That error is in the Debugging Clinic and it is a good one, because the fix teaches the shape: do the work inside the block, or turn the reader into a real list before you leave.
 
 ### 5. Reading the file back, line by line
+
+This is the function that reads the file back in:
 
 ```python
 def load_csv(path):
@@ -182,9 +192,9 @@ row 0       : {'Asha': 'Ravi', 'Falcons': 'Falcons', '48': '12', '32': '20', 'Tr
 
 ### 6. Where it goes silently wrong — and this is the point of the lesson
 
-Two demonstrations. Run both yourself before class.
+There are two demonstrations. Run both yourself before class.
 
-**The crash.** This one is loud and honest:
+**The crash.** This one is loud and honest. Run this line:
 
 ```python
 print("from file:", loaded[0]["runs"] + 1)
@@ -200,7 +210,7 @@ TypeError: can only concatenate str (not "int") to str
 
 Python is saying: *you gave me text on the left and a number on the right, and `+` cannot join those two things.* It is the exact `"5" + 5` error from Week 2, arriving by post. Fine. A crash is a gift.
 
-**The silent one.** This is the one that matters:
+**The silent one.** This is the one that matters. Run these two lines:
 
 ```python
 print("highest score in memory:", max(column(squad, "runs")))
@@ -214,9 +224,13 @@ highest score from file: 90
 
 **No error. No warning. A confident wrong answer.**
 
-Why 90? Because `max` on text compares **character by character**, the way a dictionary orders words. It looks at `'90'` and `'104'` and compares the first characters: `9` against `1`. `9` is later than `1`, so `'90'` wins and nothing else is even looked at. Priya's 104 is invisible.
+Why 90? Because `max` on text compares **character by character**, the way a dictionary orders words.
 
-Say the consequence out loud, because a 12-year-old will feel it: **a program that reports the wrong best player, and never once says it is unsure.** That is not a bug you find by running the code. It is a bug you find by knowing what the right answer is.
+It looks at `'90'` and `'104'` and compares the first characters: `9` against `1`. `9` is later than `1`, so `'90'` wins and nothing else is even looked at. Priya's 104 is invisible.
+
+Say the consequence out loud, because a 12-year-old will feel it:
+
+**a program that reports the wrong best player, and never once says it is unsure.** That is not a bug you find by running the code. It is a bug you find by knowing what the right answer is.
 
 And there is a second silent one hiding in the `out` column, which you should keep in your pocket:
 
@@ -321,7 +335,7 @@ and this is the week that earns its third word. Two threads lit: data and toolcr
 3. **Have them add the round trip to their own copy**: a small arrow out of the gold tile and straight
    back in, labelled *out as text, back as text.* It is the only annotation this term that is a loop.
 
-> **🧑‍🏫 Why this is worth two minutes.** From Week 23 every dataset in this course arrives as a file
+> **💡 Why this is worth two minutes:** From Week 23 every dataset in this course arrives as a file
 > somebody else wrote, and the learners who cope with that are the ones who already know what is
 > physically in a file. The map makes today feel like a small step inside a familiar box rather than a
 > new topic — which is honest, and it is also why the `90 > 104` surprise lands as a rule about files
@@ -330,6 +344,8 @@ and this is the week that earns its third word. Two threads lit: data and toolcr
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to do before the lesson, so nothing surprises you in front of the student. It ends with a paper fallback if the laptop fails.
 
 ### 15 minutes the night before
 
@@ -435,6 +451,8 @@ round trip identical? True
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the lesson plan. The table shows the five segments and their timings; each segment below it gives what to do, say, ask and expect.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -813,6 +831,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section gives the whole "Their Turn" activity in one place: setup, rules, the complete file, the `bool` surprise, and what finished looks like.
+
 ### Setup
 
 **On the table:** the twelve index cards, their handwritten CSV sheet from the Hook, workbook Practice Set A, question A4 (the round-trip diagram, Figure W16.1), the Bug Log with its *errors with no error message* heading.
@@ -1029,7 +1049,7 @@ bool('')      -> False
 
 Every message below came from running a broken version of this week's actual code.
 
-> **🧑‍🏫 If a student asks:** Python 3.11 and newer draw little `~~~^^^` arrows under the exact part of the line that failed. Older Pythons don't. Both are saying the same thing; the arrows are just a newer Python being helpful.
+> **💡 Why:** if a student asks about the arrows, Python 3.11 and newer draw little `~~~^^^` arrows under the exact part of the line that failed. Older Pythons don't. Both are saying the same thing; the arrows are just a newer Python being helpful.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
 |---|---|---|---|
@@ -1055,7 +1075,7 @@ The four moves stand — read the last line, find the line number, say the compl
 7. **"How many went out, and how many came back?"** Two numbers on adjacent lines. It caught the missing header in three seconds and it will catch a hundred things over the rest of the year.
 8. **"What does `type()` say?"** Not "what does it look like". `48` and `'48'` are identical on the screen and different in every way that matters. This is the single most useful question in the whole of Level 2 and it is one word.
 
-And the sentence for this week:
+And here is the sentence for this week:
 
 > **"Three of the four things that went wrong today produced no error message at all. Two of them printed a number that was simply false. The check is not 'did it run?' — it is 'do the counts match, and does `type()` say what I think it says?'"**
 
@@ -1063,19 +1083,25 @@ And the sentence for this week:
 
 ## ❓ Questions Students Ask This Week
 
+This section gives you plain answers to the questions this lesson usually raises, so you are not working them out on the spot.
+
 **"Why doesn't Python just remember that runs was a number?"**
 
 Because the *file* cannot remember, and Python only has the file. A text file holds characters. There is no room in it for a note saying "column three is whole numbers" — that would be a different, more complicated format. When Python reads `48`, the only completely honest thing it can hand you is the characters it found, and that is what it does.
 
-It could have guessed. It deliberately does not, and it is right not to. Consider a column of shirt numbers where one player wears `007`. Guess it into a number and the zeros are gone forever. Consider a phone number starting with `0`. Consider a column where somebody typed `N/A` in one cell. Any guessing rule is wrong somewhere, so Python makes no rule and hands the decision to the only person who knows: you. **In Week 23 you will meet `pandas`, which does guess, and being the person who checks the guess is a real job.**
+It could have guessed. It deliberately does not, and it is right not to.
+
+Consider a column of shirt numbers where one player wears `007`. Guess it into a number and the zeros are gone forever. Consider a phone number starting with `0`. Consider a column where somebody typed `N/A` in one cell.
+
+Any guessing rule is wrong somewhere, so Python makes no rule and hands the decision to the only person who knows: you. **In Week 23 you will meet `pandas`, which does guess, and being the person who checks the guess is a real job.**
 
 **"Can I open a CSV in Excel and edit it there?"**
 
 Yes, and it is genuinely useful. Two warnings, and the second one is serious.
 
-First, a spreadsheet will *offer* to save your file as a spreadsheet (`.xlsx`) and you must say no. That is a completely different, much more complicated file that Python's `csv` module cannot read.
+1. A spreadsheet will *offer* to save your file as a spreadsheet (`.xlsx`) and you must say no. That is a completely different, much more complicated file that Python's `csv` module cannot read.
 
-Second — and this has caused real damage in real science — **spreadsheets silently reformat things they think they recognise.** Excel has famously turned gene names like `SEPT2` into the date `2-Sep`, and it has done it to published research. It will turn `007` into `7`. If your CSV is data you care about, either open it read-only, or open it in a text editor. A text editor changes nothing, ever, which is exactly its virtue.
+2. And this has caused real damage in real science: **spreadsheets silently reformat things they think they recognise.** Excel has famously turned gene names like `SEPT2` into the date `2-Sep`, and it has done it to published research. It will turn `007` into `7`. If your CSV is data you care about, either open it read-only, or open it in a text editor. A text editor changes nothing, ever, which is exactly its virtue.
 
 **"What if one of my values has a comma in it?"**
 
@@ -1101,15 +1127,21 @@ No — that is exactly right, and it is worth checking every time. Line 1 is the
 
 *CSV.* Any human can read it, any program can read it, it will still open in fifty years. It cannot store types, it cannot store anything nested, and there is no such thing as a truly standard CSV — programs disagree about quoting, about line endings, and about what to do with an empty field. Half the world's data lives in CSV anyway, because the readability is worth more than the precision.
 
-*JSON.* Keeps types — a number stays a number, a true stays a true — and can hold nested things like Week 14's dictionaries-inside-dictionaries. It is also readable by a human, just less pleasantly. But it is not a table, so a spreadsheet cannot open it, and a file of 30 records is about three times the size. This is what web programs mostly use.
+*JSON.* Keeps types — a number stays a number, a true stays a true — and can hold nested things like Week 14's dictionaries-inside-dictionaries. It is also readable by a human, just less pleasantly.
+
+But it is not a table, so a spreadsheet cannot open it, and a file of 30 records is about three times the size. This is what web programs mostly use.
 
 *A database, or a binary format like Parquet.* Fast, exact, keeps every type perfectly, handles millions of rows. And you cannot read one with your eyes, ever. You need the right program installed, and if that program stops existing your data becomes a puzzle.
 
-The honest professional answer is *"CSV for anything a human might need to read or a spreadsheet might need to open; something stricter for anything a program needs to read exactly."* And people argue about the boundary constantly, because most files turn out to be both. What is **not** arguable is the discipline this week teaches: whatever format you pick, **save it, load it back, and check that what came back is what went out.** That check is free and it is what tells you the file is really your data.
+The honest professional answer is *"CSV for anything a human might need to read or a spreadsheet might need to open; something stricter for anything a program needs to read exactly."* People argue about the boundary constantly, because most files turn out to be both.
+
+What is **not** arguable is the discipline this week teaches: whatever format you pick, **save it, load it back, and check that what came back is what went out.** That check is free and it is what tells you the file is really your data.
 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This section lists the ways the lesson tends to go off course, why each happens, and what to do straight away.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1128,6 +1160,8 @@ The honest professional answer is *"CSV for anything a human might need to read 
 
 ## 🧭 Differentiation
 
+This section gives ways to adjust the lesson for a student who is struggling, a student who is flying, and a student who will not engage.
+
 ### If the student is struggling
 
 **Cut:** the `bool` surprise, the mismatch finder, and the spreadsheet. Three ideas is already a lot.
@@ -1136,7 +1170,11 @@ The honest professional answer is *"CSV for anything a human might need to read 
 
 **Give them `save_csv` and `load_csv` finished.** The understanding this week is not in the typing; it is in the type table and the `90`. Hand them working functions, and spend the whole lesson on what comes back out.
 
-**Reteach — with the postcard and the pen.** The Hook is the entire lesson and it needs no computer. Write the twelve cards out as thirteen lines of text. Take the cards away. Hand the sheet to a second reader and ask them for the highest score, **comparing letter by letter the way an alphabetical list works.** They will reach 90. Then ask: *"what would you have to write at the top of this sheet so the reader knows to turn column three back into a number?"* They invent the typed loader in their own words. That is objectives 1, 3 and 4 done, on paper, in fifteen minutes.
+**Reteach — with the postcard and the pen.** The Hook is the entire lesson and it needs no computer.
+
+1. Write the twelve cards out as thirteen lines of text.
+2. Take the cards away. Hand the sheet to a second reader and ask them for the highest score, **comparing letter by letter the way an alphabetical list works.** They will reach 90.
+3. Then ask: *"what would you have to write at the top of this sheet so the reader knows to turn column three back into a number?"* They invent the typed loader in their own words. That is objectives 1, 3 and 4 done, on paper, in fifteen minutes.
 
 **The copy-this-exactly scaffold.** Two files. This runs:
 
@@ -1263,6 +1301,8 @@ print(loaded == squad)
 
 ## 📤 Homework to Assign
 
+This section gives the words to hand out the homework, how the workbook splits between class and home, and what to check when you mark it.
+
 **Say this:**
 
 > "This is a project, not an exercise. **The Record Store.** Thirty records of your own, written to a file, loaded back, and proved. About an hour, and most of that is typing the data.
@@ -1285,14 +1325,13 @@ print(loaded == squad)
 
 **Expected time:** 30 min typing the thirty records (Part 1) · 10 min saving and counting the lines (Part 2) · 15 min on the proof sheet and the round trip (Parts 3–4) · 5 min on the sentence (Part 5) · a few minutes on the Bug Log (Part 6). **About 60 minutes**, plus about 10 for Draw It and Self-Check.
 
-> **🧑‍🏫 What to look for when you mark it:** three things, in this order. **One — does `loaded == records` print `True`?** That is the objective and it is binary. **Two — is the proof sheet field by field, with `type()` for all five, before and after?** A student who only checked `runs` has done a fifth of the work. **Three — is the file 31 lines?** (Part 2 asks the student to write the count down, so you can check it on the page.) If it is 30, the header is missing and something is quietly broken; that is worth catching now rather than in Week 21, when pandas will read the file and put one of their records in the column headings.
+> **📌 Remember (marking):** look for three things, in this order. **One — does `loaded == records` print `True`?** That is the objective and it is binary. **Two — is the proof sheet field by field, with `type()` for all five, before and after?** A student who only checked `runs` has done a fifth of the work. **Three — is the file 31 lines?** (Part 2 asks the student to write the count down, so you can check it on the page.) If it is 30, the header is missing and something is quietly broken; that is worth catching now rather than in Week 21, when pandas will read the file and put one of their records in the column headings.
 
 ---
 
-
 ## 🔑 Answer Key
 
-Organised by the sections of the student workbook, in workbook order, with every item (W1–W5, P1–P4, A1–A6, B1–B5, the three bugs, the Puzzle parts, T1–T2, Build It Parts 1–6, Draw It, Self-Check) answered. The values are those in the workbook's own Answers section, and the runnable ones were re-run while this key was being aligned. Teacher-only notes (wrong-answer maps, marking tips) are marked in blockquotes.
+This section is the marking key, for you only. It is organised by the sections of the student workbook, in workbook order, with every item (W1–W5, P1–P4, A1–A6, B1–B5, the three bugs, the Puzzle parts, T1–T2, Build It Parts 1–6, Draw It, Self-Check) answered. The values are those in the workbook's own Answers section, and the runnable ones were re-run while this key was being aligned. Teacher-only notes (wrong-answer maps, marking tips) are marked in blockquotes.
 
 ### Warm-Up
 
@@ -1304,7 +1343,7 @@ Organised by the sections of the student workbook, in workbook order, with every
 | **W4** | **Twelve.** `filter_by` builds a **new** list and hands it back; it never touches the original. |
 | **W5** | It came from **one row**: it is Priya's own score, not a summary of anything. An average of one thing is just that thing wearing a hat. Print the **row count** beside every average: `104.00 from 1 player`. |
 
-> **🧑‍🏫 Marking note:** W3 is a tie (Falcons and Tigers both have 4), so the line prints `Falcons`, the first one it meets. Do not mark a student wrong for noticing the tie and asking which to print. W2 is the common wrong answer: "`4`". That is `max(counts.values())`, a different line.
+> **📌 Remember (marking):** W3 is a tie (Falcons and Tigers both have 4), so the line prints `Falcons`, the first one it meets. Do not mark a student wrong for noticing the tie and asking which to print. W2 is the common wrong answer: "`4`". That is `max(counts.values())`, a different line.
 
 ### Predict the Output
 
@@ -1352,7 +1391,7 @@ ValueError: invalid literal for int() with base 10: '3.5'
 
 **Two lines print and the third crashes.** `int(" 48 ")` works because `int` ignores spaces at the ends; `float("3.5")` works; `int("3.5")` refuses rather than throw away the `.5` quietly. Use `float()` for a decimal column.
 
-> **🧑‍🏫 Marking note:** the sheet asks "how many of the fourteen answers did you get right?" and I count 4 + 3 + 5 + 3 = 15 predictions across P1–P4, not 14. Do not mark a student down for a tally that does not reach 14; what matters is that they wrote a prediction before running anything and can say which one surprised them. The commonest surprises are P1 line 3 (`True`) and P3 (`True True False True`).
+> **📌 Remember (marking):** the sheet asks "how many of the fourteen answers did you get right?" and I count 4 + 3 + 5 + 3 = 15 predictions across P1–P4, not 14. Do not mark a student down for a tally that does not reach 14; what matters is that they wrote a prediction before running anything and can say which one surprised them. The commonest surprises are P1 line 3 (`True`) and P3 (`True True False True`).
 
 ### Practice Set A
 
@@ -1369,7 +1408,7 @@ ValueError: invalid literal for int() with base 10: '3.5'
 | g | `raw[0]["runs"] + "1"` | `'481'` | `str`, glued not added |
 | h | `list(raw[0].keys())` | `['name', 'team', 'runs', 'balls', 'out']` | `list` |
 
-> **🧑‍🏫 Watch for:** (b) and (e) answered as `int` / `bool` is the week's central misconception. (g) answered `49` means `+` is still read as arithmetic whatever the kind.
+> **⚠️ Watch out:** (b) and (e) answered as `int` / `bool` is the week's central misconception. (g) answered `49` means `+` is still read as arithmetic whatever the kind.
 
 **A2** The missing line is `writer.writeheader()`. It goes **above `writerows`**, inside the `with` block at the same indent as the other writer lines. Without it the first record **becomes the header row**: `DictReader` has no way to know it is data, so Asha's five values become the five column names. You get eleven records back instead of twelve, with keys like `'Asha'` and `'48'`, and nothing complains.
 
@@ -1394,7 +1433,7 @@ ValueError: invalid literal for int() with base 10: '3.5'
 
 **Point of E:** what was lost between stages 1 and 2 is **not the value**, since the characters `4` and `8` are still there. It is **the kind of thing it was**. The file remembers what it says and forgets what it means.
 
-> **🧑‍🏫 Teacher-only, for the discussion around A4.** *Which stage do people forget?* **Stage 4.** Skip it and everything still runs; arithmetic crashes with a `TypeError` if you are lucky and gives a wrong answer with no message if not, like `max()` reporting 90. *The one line that proves stage 4 worked:*
+> **💡 Why (teacher-only, for the discussion around A4):** *Which stage do people forget?* **Stage 4.** Skip it and everything still runs; arithmetic crashes with a `TypeError` if you are lucky and gives a wrong answer with no message if not, like `max()` reporting 90. *The one line that proves stage 4 worked:*
 >
 > ```python
 > print(load_players("players.csv") == squad)
@@ -1428,7 +1467,7 @@ ValueError: invalid literal for int() with base 10: '3.5'
 
 **A5(i)** One of two things. Either **there is no header row**, so the first record is about to be eaten and used as the column names, or there really are only **29** records. Either way **lines should be records + 1**, and a mismatch means something is wrong before you have read a single value.
 
-> **🧑‍🏫 Watch for:** (f) answered `32` or `20`: they counted the header as a record, or counted a line number as a record number. (a) answered `3`: same slip.
+> **⚠️ Watch out:** (f) answered `32` or `20`: they counted the header as a record, or counted a line number as a record number. (a) answered `3`: same slip.
 
 **A6** Go to **line 8**. In your own words: "You asked me to turn the word Asha into a whole number, and I can't." The column is **`name`**, because the error quotes the offending value `'Asha'` straight back. The fix: **delete that line**. `name` was text going out and text coming back, so there is nothing to convert. You only convert the columns that were not text.
 
@@ -1643,7 +1682,7 @@ the dearest item costs: 120
 
 **The three-second check:** `print(type(loaded[0]["price"]).__name__)` prints `str`. Not "does it look plausible?", because 95 does. `item` and `shelf` are left alone: `shelf` is a category, not a quantity.
 
-> **🧑‍🏫 Watch for:** a student who fixes Bug 3 with `max(..., key=int)` has the right answer and the wrong habit (the data is still text everywhere else). Accept it, then ask about `in_stock`.
+> **⚠️ Watch out:** a student who fixes Bug 3 with `max(..., key=int)` has the right answer and the wrong habit (the data is still text everywhere else). Accept it, then ask about `in_stock`.
 
 ### Puzzle of the Week
 
@@ -1712,7 +1751,6 @@ The data is the student's own, so there is no single right answer; mark the shap
 
 #### Part 1 — Thirty records of your own
 
-
 The student's dataset is theirs. Model answer — a thirty-song playlist, five keys, four genres:
 
 ```python
@@ -1761,8 +1799,6 @@ The small table in Part 1 (key / number or text / conversion) for the model play
 The workbook's Part 2 table for the model data: records typed **30**, lines in the file **31**, records + 1 = lines **yes**, line 1 `title,artist,genre,minutes,plays`, line 2 `Blue Lights,Nova,pop,3.5,120`. If a student has 30 lines, the missing thing is **`writeheader()`**.
 
 The whole model program follows. It also produces the output used for Parts 3 and 4.
-
-
 
 ```python
 """store.py - the Record Store: 30 records out to CSV, back in, round trip proved."""
@@ -1889,8 +1925,6 @@ Anything that only *counts* rows or compares text works fine on `raw` — `group
 
 #### Part 3 — The proof sheet
 
-
-
 Model answer for the playlist above:
 
 | Field | Before: value | Before: type | Needs converting? | After: value | After: type |
@@ -1906,7 +1940,6 @@ Model answer for the playlist above:
 For the model data: rows out / rows in **30 / 30**; wrong answer from the raw data **95** (`highest plays (raw)`); right answer converted **300**; why the wrong one is wrong: the plays were still text, compared character by character, and `9` beats every other first character; `round trip identical?` **`True`**. If a student's prints `False`, the named row / field / change comes from the mismatch finder (see the example under A4).
 
 #### Part 5 — The sentence
-
 
 **Which of your columns needed converting, which didn't, and why?**
 
@@ -1957,7 +1990,6 @@ The "I can..." grid is the student's own rating; do not mark it, read it for �
 | A shirt number written `007` should be stored as a number | **FALSE** | It is an identifier. You would never add two of them, and `int("007")` is `7` forever |
 | If `DictReader` gives back 11 rows from a 12-record file, Python will warn you | **FALSE** | It cannot tell. That is why you print both counts yourself |
 
-
 ### Answers to every question posed in the lesson
 
 - *"Is the 48 on the postcard a number?"* → No. It is two characters that you read as a number. A postcard can only carry writing.
@@ -1984,9 +2016,19 @@ The "I can..." grid is the student's own rating; do not mark it, read it for �
 
 ## 🔮 Next Week Preview
 
-Next week the data stops being words. Your student has spent six weeks building tables where every row carries its labels — `{"name": "Asha", "runs": 48}` — and that has been exactly right, because a row without labels is a row you can misread. Week 17 takes the labels away on purpose. If you rub out the names and keep only the numbers, you get a **numpy array**: a block of numbers that knows its own shape and its own kind, and can do arithmetic to all of its numbers at once. It is the first thing all year that has to be installed, it is the shape every model in this course will eat, and the whole lesson is two things you can print — `.shape` and `.dtype`. The activity is a prediction game: write down what shape and what kind six arrays will be **before** running anything, then check all six, and write one sentence about every one you got wrong. There is a planted surprise waiting in `np.array([1, 2, "three"])`, and it is the same lesson as this week's `'104'` wearing different clothes.
+This section says what the next lesson is about and what to do before it.
 
-**Prep early:** three things, and the first one is the one that can eat a lesson. **Install numpy tonight, on the machine the student will actually use**, and check it with `python3 -c "import numpy; print(numpy.__version__)"`. If you get a version number, you are done; if you get `ModuleNotFoundError`, you have a whole evening to solve it instead of fifteen minutes of a lesson — try `pip3 install numpy`, then `python3 -m pip install numpy`. **Keep this week's folder exactly as it is**, because Week 17 imports `records.py` and `squad_data.py` to turn a column of the squad into its first array. And **find a sheet of graph paper**, or draw a grid: the Hook is drawing the twelve-record table by hand and then rubbing out the names, and it works far better on squared paper where the rows and columns are already there.
+Next week the data stops being words. Your student has spent six weeks building tables where every row carries its labels — `{"name": "Asha", "runs": 48}` — and that has been exactly right, because a row without labels is a row you can misread.
+
+Week 17 takes the labels away on purpose. If you rub out the names and keep only the numbers, you get a **numpy array**: a block of numbers that knows its own shape and its own kind, and can do arithmetic to all of its numbers at once. It is the first thing all year that has to be installed, it is the shape every model in this course will eat, and the whole lesson is two things you can print — `.shape` and `.dtype`.
+
+The activity is a prediction game: write down what shape and what kind six arrays will be **before** running anything, then check all six, and write one sentence about every one you got wrong. There is a planted surprise waiting in `np.array([1, 2, "three"])`, and it is the same lesson as this week's `'104'` wearing different clothes.
+
+**Prep early:** three things, and the first one is the one that can eat a lesson.
+
+1. **Install numpy tonight, on the machine the student will actually use**, and check it with `python3 -c "import numpy; print(numpy.__version__)"`. If you get a version number, you are done; if you get `ModuleNotFoundError`, you have a whole evening to solve it instead of fifteen minutes of a lesson — try `pip3 install numpy`, then `python3 -m pip install numpy`.
+2. **Keep this week's folder exactly as it is**, because Week 17 imports `records.py` and `squad_data.py` to turn a column of the squad into its first array.
+3. **Find a sheet of graph paper**, or draw a grid: the Hook is drawing the twelve-record table by hand and then rubbing out the names, and it works far better on squared paper where the rows and columns are already there.
 
 ---
 

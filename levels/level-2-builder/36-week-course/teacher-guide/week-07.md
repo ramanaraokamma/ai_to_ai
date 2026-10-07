@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the lesson on one page. Check it the night before.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -17,11 +19,15 @@
 | **Tech needed** | One laptop, Python 3, terminal in `~/ai-academy/level2`, editor with 4-space indent. Standard library only — **nothing to install**. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
-> **⚠️ Watch out:** the planted bug at the end of this lesson has **no error message**. The program asks for eleven scores instead of twelve, and the only way to catch it is to **count the lines on the screen and compare them to the numbers on the card**. If you say "you're missing one" you have taken away the only thing this lesson is really teaching. Hand them the card, ask them to tick each number off as it goes in, and let them notice that they still have a number left over.
+> **⚠️ Watch out:** the planted bug at the end of this lesson has **no error message**. The program asks for eleven scores instead of twelve. The only way to catch it is to **count the lines on the screen and compare them to the numbers on the card**.
+>
+> If you say "you're missing one" you have taken away the only thing this lesson is really teaching. Hand them the card, ask them to tick each number off as it goes in, and let them notice that they still have a number left over.
 
 ---
 
 ## 🎯 Lesson Objectives
+
+These are the five things the student should be able to do when the lesson ends. The Assessing Understanding checks test them.
 
 By the end of the lesson the student can:
 
@@ -36,6 +42,8 @@ Observable evidence: a 9 × 9 times-table grid printed by two loops with aligned
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+This section is your own background reading, so you can teach loops without having programmed before. It comes before the lesson plan.
 
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
@@ -67,6 +75,7 @@ done
 ```
 
 > **loop** — a block of code that Python runs more than once.
+>
 > **iteration** — one single run through the block. Four numbers came out, so there were four iterations. Out loud, "iteration" and "pass" mean the same thing, and "pass" is the word to use with a 12-year-old.
 
 **Four lines came out of one `print`.** That is the whole week. Look at the file again and count the `print(i)` lines: there is one. Look at the output and count the numbers: there are four.
@@ -89,7 +98,7 @@ The two sentences worth saying out loud, both of which the student needs by minu
 - **"`i` is not a number you set. It is a box Python refills for you, once per pass."**
 - **"The indent is not decoration. It is the loop's body. Move a line out of the indent and it stops being part of the loop."**
 
-That second one is not a style rule in Python the way it is in most languages — it is the actual grammar. Here is the proof, and it is worth typing both versions:
+That second one is not a style rule in Python the way it is in most languages. It is the actual grammar. Type this to see the proof:
 
 ```python
 total = 0
@@ -112,7 +121,7 @@ Three lines from the indented `print`, one line from the one at the margin. **Sa
 
 > **range** — a value factory. You tell it where to start, where to stop, and how big a step to take, and it hands out one whole number per pass.
 
-Three forms, and the real output of each:
+Here are the forms you will use, with what each one hands out:
 
 | You write | You get | Read it as |
 |---|---|---|
@@ -121,9 +130,9 @@ Three forms, and the real output of each:
 | `range(0, 101, 10)` | 0, 10, 20 … 100 | "start at 0, stop before 101, in steps of 10" |
 | `range(10, 0, -1)` | 10, 9, 8 … 1 | "count down" |
 
-**`range(4)` gives you four values, and the last one is 3.** This catches every beginner alive, exactly once, and it is worth spending three minutes on rather than thirty seconds.
+**`range(4)` gives you four values, and the last one is 3.** This catches every beginner alive, exactly once. It is worth spending three minutes on rather than thirty seconds.
 
-Here is the real output of all four forms, from a file called `steps.py`:
+Type this file, `steps.py`, to see the real output of the step forms:
 
 ```python
 # steps.py - range with a third number: the step.
@@ -155,14 +164,16 @@ Counting backwards:
 
 **Why does it stop early? Give the student the honest reason, because there is one.** It is not a quirk and it is not an accident.
 
-**Because then the count is a subtraction.** When the stop is above the start, `range(a, b)` hands out exactly `b - a` values. `range(1, 5)` → 5 − 1 = 4 values. With a step the count changes: `range(0, 101, 10)` → eleven values (0, 10 … 100), so count those rather than subtracting. If `range` included the stop number, every count would be "the difference, plus one", and *that* plus-one would be the thing everybody got wrong instead.
+**Because then the count is a subtraction.** When the stop is above the start, `range(a, b)` hands out exactly `b - a` values. `range(1, 5)` → 5 − 1 = 4 values.
+
+With a step the count changes: `range(0, 101, 10)` → eleven values (0, 10 … 100), so count those rather than subtracting. If `range` included the stop number, every count would be "the difference, plus one", and *that* plus-one would be the thing everybody got wrong instead.
 
 ![The stop number is a fence post, not a value](../figures/fig-w07-2-range-starts-at-zero.svg)
 *Figure 7.1 — The stop number is a fence post you count up to, not a value you get handed. That is what makes the count a clean subtraction.*
 
 The sentence to say, and to make them repeat: **"range stops *before* the number you give it."**
 
-Two special cases you should know about before a student finds them, because they look like bugs and are not:
+Two special cases look like bugs and are not. Know them before a student finds them:
 
 ```python
 for n in range(3, 3):      # start equals stop
@@ -171,7 +182,9 @@ for n in range(10, 1):     # stop is BELOW start, with no negative step
     print(n)
 ```
 
-Both print **nothing at all**. Zero passes, no error. `3 - 3 = 0` values, and `1 - 10` is below zero, which also means none (you cannot hand out fewer than nothing). If a student's loop produces no output whatsoever, this is the first thing to check.
+Both print **nothing at all**. Zero passes, no error.
+
+`3 - 3 = 0` values, and `1 - 10` is below zero, which also means none (you cannot hand out fewer than nothing). If a student's loop produces no output whatsoever, check this first.
 
 ### 4. The counter is a box Python refills
 
@@ -180,7 +193,7 @@ Both print **nothing at all**. Zero passes, no error. `3 - 3 = 0` values, and `1
 
 **This is the figure to teach the concept from, and it is aimed at you as much as at the student.** Point at the hub and say "this is `n`". Point at the ring and say "this is one pass". Point at the shaded values and say "these already happened". Point at the blank ones and say "these have not happened yet, and nothing in them exists".
 
-One thing worth knowing so it does not surprise you: after the loop finishes, the counter still holds its **last** value.
+One thing is worth knowing so it does not surprise you. After the loop finishes, the counter still holds its **last** value.
 
 ```python
 for n in range(1, 6):
@@ -192,11 +205,11 @@ print(f"after the loop, n is still {n}")
 after the loop, n is still 5
 ```
 
-That is genuinely useful sometimes and a source of confusion often. **Do not teach it today.** If a student finds it, tell them the truth in one sentence — "the box keeps whatever went in last" — and move on.
+That is useful sometimes and confusing often. **Do not teach it today.** If a student finds it, tell them the truth in one sentence, "the box keeps whatever went in last", and move on.
 
 ### 5. The accumulator: the most reused shape in all of programming
 
-Now the second half of the week, and the more important half.
+This is the second half of the week, and the more important half.
 
 > **accumulator** — a variable created **before** a loop and updated **inside** it, so that after the loop it holds a result built from every single pass.
 
@@ -223,7 +236,9 @@ final total = 15
 
 Check it by hand: 1 + 2 + 3 + 4 + 5 = 15 ✔
 
-**`total += n` is new syntax and it needs its own sentence.** It means, exactly: *take what is in `total`, add `n` to it, and put the answer back in `total`.* It is a shortcut for `total = total + n`, and for numbers the two are identical — the shortcut is just shorter and harder to typo. There are three more in the same family that you will see: `-=`, `*=`, and `/=`.
+**`total += n` is new syntax and it needs its own sentence.** It means, exactly: *take what is in `total`, add `n` to it, and put the answer back in `total`.*
+
+It is a shortcut for `total = total + n`, and for numbers the two are identical. The shortcut is just shorter and harder to typo. There are three more in the same family that you will see: `-=`, `*=`, and `/=`.
 
 **Three rules for an accumulator, and every accumulator bug is one of these three:**
 
@@ -234,7 +249,7 @@ Check it by hand: 1 + 2 + 3 + 4 + 5 = 15 ✔
 ![The running total fills up](../figures/fig-w07-3-accumulator-filling-up.svg)
 *Figure 7.3 — One box, twelve additions, one division at the very end. The box is not twelve boxes; it is one box whose contents change.*
 
-Here are the two ways to break it, both of which you will meet today. **Type both.**
+There are two ways to break an accumulator, and you will meet both today. **Type both.**
 
 **Break 1 — the set-up goes inside.** No error message. The answer is the last number, every time.
 
@@ -272,7 +287,7 @@ Neither of these is an error as far as Python is concerned. They are last week's
 
 ### 6. `"=" * 20` — multiplying text
 
-This one is a gift and it takes twenty seconds.
+This one is a gift and it takes twenty seconds. Type these two lines:
 
 ```python
 print("=" * 20)
@@ -287,6 +302,7 @@ print("=" * 40)
 `*` with two numbers means multiply. **`*` with a piece of text and a number means "repeat that text that many times."** In Week 4 the student typed forty equals signs by hand to draw a border. That is now one character and a number, and if they want the border longer they change the number.
 
 Watch for two things:
+
 - `"=" * "20"` is a `TypeError`. You cannot repeat text *text* times. The number must be a number.
 - `"=" + 20` is a different `TypeError`. `+` glues text to text; it will not glue a number on.
 
@@ -296,13 +312,15 @@ The grid activity needs two things that are not on this week's syntax list. They
 
 **`end=""`** — normally `print` finishes by moving to a new line. `end=""` tells it to finish with *nothing*, so the next `print` carries on the same line. A bare `print()` with nothing in it then ends the line. That is how you build one line out of many prints.
 
-**`f"{value:>4}"`** — the student met `:.2f` in Week 3 as "an instruction about how to show this value". `:>4` is another instruction from the same family: *"right-align this in four characters' worth of space."* It is what makes columns line up. `7` becomes three spaces and a 7; `70` becomes two spaces and a 70. Both are four characters wide, so they stack.
+**`f"{value:>4}"`** — the student met `:.2f` in Week 3 as "an instruction about how to show this value". `:>4` is another instruction from the same family: *"right-align this in four characters' worth of space."*
+
+It is what makes columns line up. `7` becomes three spaces and a 7; `70` becomes two spaces and a 70. Both are four characters wide, so they stack.
 
 That is all either of them does. **Do not open the whole formatting system.** If a student asks what else goes after the colon, the honest answer is "a lot, and we'll meet the useful ones when we need them."
 
 ### 8. A loop inside a loop, in one paragraph
 
-For the grid you need one loop inside another. There is no new syntax — it is two `for` loops, the second one indented inside the first. The rule you need is the arithmetic:
+For the grid you need one loop inside another. There is no new syntax. It is two `for` loops, the second one indented inside the first. The rule you need is the arithmetic. Type this:
 
 ```python
 lines = 0
@@ -318,13 +336,17 @@ print(f"3 rows x 4 columns = {lines} passes of the inner block")
 
 **The inner loop runs all the way through, every single time the outer loop takes one step.** Three outer passes × four inner passes = twelve passes of the innermost line. For the 9 × 9 grid that is 81 numbers printed by one `print`.
 
-The one thing that goes wrong: the bare `print()` that ends each row must be indented to the **outer** loop, not the inner one. Put it in the inner loop and every number gets its own line.
+The one thing that goes wrong is this: the bare `print()` that ends each row must be indented to the **outer** loop, not the inner one. Put it in the inner loop and every number gets its own line.
 
 ### 9. Off-by-one: the bug this lesson is built on
 
 > **off-by-one** — a loop that runs one time too many or one time too few. Almost always a `range` boundary, and almost always silent.
 
-Three shapes, and you will meet all three this year:
+There are three shapes, and you will meet all three this year:
+
+- **Shape A** — forgetting that `range` stops early.
+- **Shape B** — the fence-post problem.
+- **Shape C** — the planted bug in today's activity.
 
 **Shape A — forgot that `range` stops early.**
 
@@ -358,30 +380,52 @@ item 3
 -----
 ```
 
-Three items, three dividers, and the last one is dangling. Five fence panels need six posts; three items have only two gaps. Naming it out loud helps, because once it has a name it is findable.
+Three items, three dividers, and the last one is dangling. Five fence panels need six posts; three items have only two gaps. Say the name out loud, because once it has a name it is easy to find.
 
-**Shape C — the planted bug in today's activity.** The student wants to label their twelve scores 1 to 12, so they very reasonably write `range(1, 12)`. That hands out 1 through 11. **Eleven prompts appear for twelve scores, and then the program divides by twelve anyway.** Total 827 instead of 900; average 68.92 instead of 75.
+**Shape C — the planted bug in today's activity.** The student wants to label their twelve scores 1 to 12, so they very reasonably write `range(1, 12)`. That hands out 1 through 11.
+
+**Eleven prompts appear for twelve scores, and then the program divides by twelve anyway.** Total 827 instead of 900; average 68.92 instead of 75.
 
 ![Twelve scores in, eleven scores counted](../figures/fig-w07-4-off-by-one-missing-row.svg)
 *Figure 7.4 — Nothing crashed. The card still has a number on it, and the average is quietly wrong. The only tool that finds this is counting.*
 
-**The cure, and it is a habit rather than a rule: count the output lines and compare them with the number of things that went in.** Twelve numbers on the card, eleven prompts on the screen. That comparison takes four seconds and it is the single most valuable reflex in this lesson.
+**The cure is a habit rather than a rule: count the output lines and compare them with the number of things that went in.** Twelve numbers on the card, eleven prompts on the screen. That comparison takes four seconds, and it is the most valuable reflex in this lesson.
 
 ### 10. The three misconceptions you will actually meet
 
 **Misconception 1 — "`i` is something I have to set."** A student writes `i = 0` above the loop, or tries `i = i + 1` inside it. Both are harmless and both mean the mental model is wrong. **The fix:** cover the loop body and ask "who puts a value in `i`?" The answer is `range`, through the `for` line. Then Figure 7.2, hand on the hub.
 
-**Misconception 2 — "`range(10)` counts to 10."** This is not stupidity; it is what the word "range" means in English. **The fix is a number, not an explanation.** Have them run `for n in range(10): print(n, end=" ")` and count the numbers out loud with a finger. Ten numbers, last one 9. Then ask "how many values does `range(10)` hand out?" — ten. "What is the last one?" — nine. Both true at once, and that is the whole difficulty.
+**Misconception 2 — "`range(10)` counts to 10."** This is not stupidity; it is what the word "range" means in English.
 
-**Misconception 3 — "the total prints six times, so there are six totals."** A student sees the running total printed on every pass and concludes there are twelve totals. There is one box; it changes twelve times. **The fix:** an actual box. Put a coin in a cup, then another, then another, counting out loud. There is one cup. Figure 7.3 is the same picture.
+**The fix is a number, not an explanation.** Have them run `for n in range(10): print(n, end=" ")` and count the numbers out loud with a finger. Ten numbers, last one 9. Then ask "how many values does `range(10)` hand out?" — ten. "What is the last one?" — nine. Both true at once, and that is the whole difficulty.
+
+**Misconception 3 — "the total prints six times, so there are six totals."** A student sees the running total printed on every pass and concludes there are twelve totals. There is one box; it changes twelve times.
+
+**The fix:** an actual box. Put a coin in a cup, then another, then another, counting out loud. There is one cup. Figure 7.3 is the same picture.
 
 ### 11. How deep to go, and where to stop
 
-**Go this far:** `for` with `range` in all three forms · predicting the number of passes before running · the indent deciding what repeats · `total += x` and the three accumulator rules · dividing after the loop · `"=" * 20` · `end=""` and `:>4` as tools · one loop inside another for the grid · counting output lines to find an off-by-one.
+**Go this far:**
 
-**Stop before:** `while` (that is next week, and mixing the two today halves what lands) · looping over a list of things instead of a range of numbers (Week 12) · `break` and `continue` (next week) · `enumerate` (Week 14) · anything about "why not use a list here" — the honest answer is that lists arrive in Week 11 and this week is deliberately doing it the long way so that the short way means something.
+- `for` with `range` in all three forms
+- predicting the number of passes before running
+- the indent deciding what repeats
+- `total += x` and the three accumulator rules
+- dividing after the loop
+- `"=" * 20`
+- `end=""` and `:>4` as tools
+- one loop inside another for the grid
+- counting output lines to find an off-by-one
 
-**If a fast student asks for the sum 1 to 100**, give it to them, because it is glorious:
+**Stop before:**
+
+- `while` (that is next week, and mixing the two today halves what lands)
+- looping over a list of things instead of a range of numbers (Week 12)
+- `break` and `continue` (next week)
+- `enumerate` (Week 14)
+- anything about "why not use a list here" — the honest answer is that lists arrive in Week 11 and this week is deliberately doing it the long way so that the short way means something.
+
+**If a fast student asks for the sum 1 to 100**, give it to them, because it is glorious. Type this:
 
 ```python
 total = 0
@@ -394,7 +438,7 @@ print(f"1 + 2 + ... + 100 = {total}")
 1 + 2 + ... + 100 = 5050
 ```
 
-Then check it against the formula a mathematician would use: 100 × 101 ÷ 2 = 5050 ✔. Two completely different methods, same answer. That is what a correct program feels like.
+Then check it against the formula a mathematician would use: 100 × 101 ÷ 2 = 5050 ✔. Two different methods, same answer. That is what a correct program feels like.
 
 ---
 
@@ -430,6 +474,8 @@ tinted again — and the gold badge has moved down to `choices · loops`, where 
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to prepare the night before and on the day, and what to do if something fails. The complete runnable files live here.
 
 ### 15 minutes the night before
 
@@ -514,6 +560,8 @@ tinted again — and the gold badge has moved down to `choices · loops`, where 
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the script for the whole lesson. The table shows the five segments and their timings; each segment follows below.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Type It Out By Hand | 7 | 7 | A timed race they lose, then three lines that win |
@@ -525,6 +573,8 @@ tinted again — and the gold badge has moved down to `choices · loops`, where 
 ---
 
 ### 🪝 Hook — Type It Out By Hand (7 minutes)
+
+This segment lets the student feel the cost of repeating work by hand, so the loop has a reason to exist.
 
 **Do this:** An empty editor window on the student's screen. Nothing else. You have the timer.
 
@@ -603,6 +653,8 @@ Let it sit for a second. Then change both 7s to 13s and run it again. Then chang
 ---
 
 ### 🧠 Concept — The Box Python Refills (16 minutes)
+
+This segment teaches the counter, `range` and the accumulator, using the loop from the Hook as the worked example.
 
 **Do this:** the loop from the Hook is still on the screen. Leave it there. It is the worked example.
 
@@ -719,6 +771,8 @@ Show Figure 7.3.
 ---
 
 ### 💻 Live-Code Together — The Table and the Total (18 minutes)
+
+This segment has the student type the table and the total with you, and shows two mistakes being made and fixed in front of them.
 
 **Do this:** The student types every character. You type on the shared screen at the same pace. Three passes, and **two deliberate mistakes that you make and fix in front of them.**
 
@@ -893,6 +947,8 @@ Full instructions in the next section. In the lesson flow:
 
 ### 🔑 Wrap & Assign (9 minutes)
 
+This segment closes the lesson: the Bug Log, the three checks, and the homework.
+
 **Do this:** laptops shut. Notebook open at the Bug Log. Workbook on the table.
 
 **Say this:**
@@ -918,6 +974,8 @@ Then the homework, using the script in **📤 Homework to Assign**. Two sentence
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full instructions for the student's turn: the grid, the twelve scores, and the planted off-by-one.
 
 ### Setup
 
@@ -1221,6 +1279,8 @@ Then the fix, and the proof:
 
 ## 🐞 The Debugging Clinic
 
+This section is for when a student's program breaks: what each message or silent symptom means, and how to teach finding it without giving the answer.
+
 Every message below came from running a real broken version of this week's code. Only the folder path in the `File` line will differ on your machine.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
@@ -1246,7 +1306,7 @@ The four habits from earlier weeks still stand: **hands off the keyboard · last
 
 **5. Count. Do not read — count.**
 
-Reading a loop does not find an off-by-one, because there is nothing wrong with any individual line. `for i in range(1, 12):` is a perfectly good line of Python. What finds it is a **count**, and counting needs two numbers:
+Reading a loop does not find an off-by-one, because there is nothing wrong with any individual line. `for i in range(1, 12):` is a good line of Python. What finds it is a **count**, and counting needs two numbers:
 
 1. **How many things went in?** Twelve numbers on the card. Get them to say the number.
 2. **How many lines came out?** Count them on the screen with a finger. Out loud.
@@ -1259,19 +1319,27 @@ Three questions that do the work without giving anything away:
 - *"Count them. Out loud. Point at each one."*
 - *"Which is bigger — what went in, or what came out?"*
 
-And the habit to name explicitly, because it will save them for the rest of the year: **every time you write a `range`, say out loud how many values it hands out, and check that against how many you wanted.** Two seconds, every time. `range(1, 13)` — "twelve values, one to twelve" — right.
+Then name this habit explicitly, because it will save them for the rest of the year: **every time you write a `range`, say out loud how many values it hands out, and check that against how many you wanted.** Two seconds, every time. `range(1, 13)` — "twelve values, one to twelve" — right.
 
 ---
 
 ## ❓ Questions Students Ask This Week
 
+This section gives honest answers to the questions students are likely to ask, so you are not caught out.
+
 **"Why does `range` start at zero? Nobody counts from zero."**
 
-You will, in about five weeks, and then it will feel obvious — but the honest answer today is about the *count*. `range(a, b)` hands out exactly `b - a` values (when `b` is above `a` and there is no step), and `range(n)` hands out exactly `n`. That works because the stop is excluded and the start is included. If both ends were included, every count would be "the difference, plus one", and you would spend your life adding and subtracting ones. There is a second reason that lands in Week 11: when you meet lists, the first slot is numbered 0, so `range(len(scores))` gives you exactly the right slot numbers with no arithmetic at all. Today, zero looks like a wart. In Week 12 it looks like a plan.
+You will, in about five weeks, and then it will feel obvious. The honest answer today is about the *count*.
+
+`range(a, b)` hands out exactly `b - a` values (when `b` is above `a` and there is no step), and `range(n)` hands out exactly `n`. That works because the stop is excluded and the start is included. If both ends were included, every count would be "the difference, plus one", and you would spend your life adding and subtracting ones.
+
+There is a second reason that lands in Week 11: when you meet lists, the first slot is numbered 0, so `range(len(scores))` gives you exactly the right slot numbers with no arithmetic at all. Today, zero looks like a wart. In Week 12 it looks like a plan.
 
 **"Can I call the counter something other than `i`?"**
 
-Yes, and you usually should. `i` is short for "index" and it is a habit from mathematics, not a rule. `for row in range(1, 10)` reads better than `for i in range(1, 10)` and it makes the bug easier to see when there are two loops. Use `i` when the number genuinely has no meaning beyond "which pass is this"; use a real word the moment it means anything.
+Yes, and you usually should. `i` is short for "index" and it is a habit from mathematics, not a rule.
+
+`for row in range(1, 10)` reads better than `for i in range(1, 10)`, and it makes the bug easier to see when there are two loops. Use `i` when the number has no meaning beyond "which pass is this"; use a real word the moment it means anything.
 
 **"What if I want to go through 3, 7, 8, 100 — numbers that aren't a pattern?"**
 
@@ -1283,23 +1351,38 @@ As many as you like. `range(1000000)` is fine and takes about a second. The limi
 
 **"Is a loop faster than typing the lines out?"**
 
-Not for the computer, no — and this is worth being precise about, because the intuition is wrong. Ten `print` lines and a loop that prints ten lines take essentially the same time to *run*. The loop is faster to **write**, faster to **change**, and — the one that actually matters — **impossible to get wrong in ten different places.** When you changed 7 to 13, you edited one character. The by-hand version needs ten edits, and any one of them can be missed. **Loops save mistakes, not milliseconds.**
+Not for the computer, no. Be precise about this, because the intuition is wrong. Ten `print` lines and a loop that prints ten lines take essentially the same time to *run*.
+
+The loop is faster to **write**, faster to **change**, and **impossible to get wrong in ten different places.** That last one is the one that matters. When you changed 7 to 13, you edited one character. The by-hand version needs ten edits, and any one of them can be missed. **Loops save mistakes, not milliseconds.**
 
 **"What happens if I change `n` inside the loop?"**
 
-You can, and it will not do what you hope. Say you write `n = n + 5` inside the body: `n` will hold the bigger number for the rest of *that* pass, and then the next pass Python refills it from `range` anyway and your change is gone. So it looks like it works and then does nothing. **Do not do it, and if you want to know why, that is exactly why:** the counter belongs to the `for` line, and the `for` line reclaims it every pass.
+You can, and it will not do what you hope. Say you write `n = n + 5` inside the body. `n` will hold the bigger number for the rest of *that* pass. On the next pass Python refills it from `range` anyway and your change is gone.
+
+So it looks like it works and then does nothing. **Do not do it.** The counter belongs to the `for` line, and the `for` line reclaims it every pass.
 
 **"Which is better — `total = total + n` or `total += n`?"** *(Nobody fully agrees, and here is why.)*
 
-They do exactly the same thing, so the question is entirely about people reading it, which is why there is no settled answer. The case for `+=`: it is shorter, and the variable's name appears once instead of twice, so you cannot write `total = totl + n` and spend ten minutes on it. The case for the long form: it says out loud what is happening — "the new total is the old total plus n" — and a beginner reading `+=` often has no idea whether it means "add" or "set to". There is a real argument in professional code too, and it goes beyond taste: with big data structures the two forms can behave *differently* in ways that are outside this course. **Honest position: use `+=` because everyone else does and you will read it constantly, but never let anyone tell you the long form is wrong.** Write whichever one you can still understand at eleven o'clock at night.
+They do exactly the same thing, so the question is entirely about people reading it, which is why there is no settled answer.
+
+- **The case for `+=`:** it is shorter, and the variable's name appears once instead of twice, so you cannot write `total = totl + n` and spend ten minutes on it.
+- **The case for the long form:** it says out loud what is happening, "the new total is the old total plus n", and a beginner reading `+=` often has no idea whether it means "add" or "set to".
+
+There is a real argument in professional code too, and it goes beyond taste: with big data structures the two forms can behave *differently* in ways that are outside this course.
+
+**Honest position: use `+=` because everyone else does and you will read it constantly, but never let anyone tell you the long form is wrong.** Write whichever one you can still understand at eleven o'clock at night.
 
 **"Could Python warn me that my loop runs eleven times instead of twelve?"**
 
-No, and this one is not a limitation that will be fixed. Python has no way to know that you wanted twelve. `range(1, 12)` is a completely ordinary, correct, useful thing to write — there are thousands of programs that mean exactly that. The number twelve exists only in your head and on your index card. **This is the same shape as last week's ordering bug:** the file is a perfectly good program, it simply is not the program you meant, and no tool can tell the difference because the difference is your intention. That is precisely why the count is your job.
+No, and this one is not a limitation that will be fixed. Python has no way to know that you wanted twelve. `range(1, 12)` is an ordinary, correct, useful thing to write, and thousands of programs mean exactly that. The number twelve exists only in your head and on your index card.
+
+**This is the same shape as last week's ordering bug:** the file is a good program, it simply is not the program you meant, and no tool can tell the difference because the difference is your intention. That is why the count is your job.
 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This section lists the ways the lesson tends to go off course, and what to do right now when it does.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1318,6 +1401,8 @@ No, and this one is not a limitation that will be fixed. Python has no way to kn
 ---
 
 ## 🧭 Differentiation
+
+This section covers what to cut, reteach or add when the student is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1464,6 +1549,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section is the script for handing over the workbook, with its timings.
 
 **Say this:**
 
@@ -1626,7 +1713,7 @@ print(f"  Average : {average:.2f} rupees a day")
 print("-" * 28)
 ```
 
-With 40, 25, 60, 15, 30 the running totals are 40, 65, 125, 140, 170 and the report is `Total   : 170 rupees` and `Average : 34.00 rupees a day`, matching the workbook's expected output. Hand-check: 5 × 34 = 170. Mark: five prompts, a running total on every pass, **one** average after the loop, and the paper check of 170 ÷ 5 = 34. Why `DAYS + 1`: five passes labelled 1 to 5 needs `range(1, 6)`.
+With 40, 25, 60, 15, 30 the running totals are 40, 65, 125, 140, 170 and the report is `Total   : 170 rupees` and `Average : 34.00 rupees a day`, matching the workbook's expected output. Hand-check: 5 × 34 = 170. Mark these: five prompts, a running total on every pass, **one** average after the loop, and the paper check of 170 ÷ 5 = 34. Why `DAYS + 1`: five passes labelled 1 to 5 needs `range(1, 6)`.
 
 ### Fix the Broken Program
 
@@ -1691,9 +1778,18 @@ Every stop is one past the last value wanted.
 >
 > So loops save mistakes, not milliseconds, and they let me write down a pattern instead of a list.
 
-**T2.** Model answer. *Whose fault:* the programmer's, not Python's. That line prints `HOW_MANY`, a number *I* typed, so it reports what I intended, not what happened. *How to stop it:* a second accumulator, a counter that goes up by one every pass, and a report that prints the counter. With the bug left in and the twelve card scores typed, the counter version ends with `asked for : 12`, `read      : 11`, `average   : 75.18` (827 ÷ 11 = 75.18), two numbers that disagree, side by side. **The principle: make the program report what it actually did, not what it was told to do.**
+**T2.** Model answer.
 
-*Could a computer have caught it?* Accept either side if it names its cost. The strong "no" answer: `range(1, 12)` is a completely ordinary line that thousands of programs mean, and the number twelve existed only in my head and on the card; for Python to warn me it would need my intention, and my intention is not in the file. It is the same shape as last week's ordering bug. What *can* be automated is the check I did by hand (compare "how many I read" with "how many were in the file"), **but somebody has to decide to write that check, and that somebody is me.** A strong "yes" answer must say how the computer learns the intended count, and that is a check somebody wrote.
+- *Whose fault:* the programmer's, not Python's. That line prints `HOW_MANY`, a number *I* typed, so it reports what I intended, not what happened.
+- *How to stop it:* a second accumulator, a counter that goes up by one every pass, and a report that prints the counter. With the bug left in and the twelve card scores typed, the counter version ends with `asked for : 12`, `read      : 11`, `average   : 75.18` (827 ÷ 11 = 75.18), two numbers that disagree, side by side.
+
+**The principle: make the program report what it actually did, not what it was told to do.**
+
+*Could a computer have caught it?* Accept either side if it names its cost.
+
+- The strong "no" answer: `range(1, 12)` is a completely ordinary line that thousands of programs mean, and the number twelve existed only in my head and on the card. For Python to warn me it would need my intention, and my intention is not in the file. It is the same shape as last week's ordering bug.
+- What *can* be automated is the check I did by hand (compare "how many I read" with "how many were in the file"), **but somebody has to decide to write that check, and that somebody is me.**
+- A strong "yes" answer must say how the computer learns the intended count, and that is a check somebody wrote.
 
 ### Build It
 
@@ -1874,9 +1970,23 @@ The "I can…" rows are self-rated: no answers. If a row is marked 😕, point a
 
 ## 🔮 Next Week Preview
 
-Week 8 is the project week, and it introduces the loop you cannot count in advance. A `for` loop knows how many passes it will do before it starts the first one — that is why it can never run forever. Next week's **`while` loop** knows nothing of the kind: it checks a condition, runs the block, checks again, and keeps going for exactly as long as the answer stays `True`. That is what you need in order to write a program that waits for a human to get something right, because you have no idea how many tries a human will take. They will build **`guess.py`** — a secret number, higher/lower hints, a seven-try limit, and a replay loop — and they will write an infinite loop **on purpose**, watch it print forty thousand lines a second, and stop it with Ctrl+C in a controlled setting rather than in a panic at eleven at night. Then they will harden it so that typing `banana` at every prompt cannot crash it.
+This section tells you what comes next week and what to prepare before it.
 
-**Prep early:** three things. First, **keep this week's twelve-score index card** — next week's `grade.py` uses the same twelve numbers, and the fact that the answer is still 900 and 75 is worth a lot when the program around it has changed shape. Second, **find out where Ctrl+C is on the student's keyboard, and confirm it works** — on a Mac it is Ctrl, not Command, and a student who reaches for Command-C during a runaway loop will only copy something. Try it on this week's `seven_times.py` with `range(1, 1000000)` so you have both done it once when nothing was at stake. Third, if the off-by-one landed hard and the accumulator did not, **spend the first five minutes of next week re-running `scores.py`** rather than pressing on; `grade.py` is built directly on top of it and there is no point building on sand.
+Week 8 is the project week, and it introduces the loop you cannot count in advance.
+
+A `for` loop knows how many passes it will do before it starts the first one. That is why it can never run forever. Next week's **`while` loop** knows nothing of the kind: it checks a condition, runs the block, checks again, and keeps going for exactly as long as the answer stays `True`. That is what you need in order to write a program that waits for a human to get something right, because you have no idea how many tries a human will take.
+
+Next week the student will:
+
+- build **`guess.py`** — a secret number, higher/lower hints, a seven-try limit, and a replay loop
+- write an infinite loop **on purpose**, watch it print forty thousand lines a second, and stop it with Ctrl+C in a controlled setting rather than in a panic at eleven at night
+- harden it so that typing `banana` at every prompt cannot crash it
+
+**Prep early:** three things.
+
+1. **Keep this week's twelve-score index card.** Next week's `grade.py` uses the same twelve numbers, and the fact that the answer is still 900 and 75 is worth a lot when the program around it has changed shape.
+2. **Find out where Ctrl+C is on the student's keyboard, and confirm it works.** On a Mac it is Ctrl, not Command, and a student who reaches for Command-C during a runaway loop will only copy something. Try it on this week's `seven_times.py` with `range(1, 1000000)` so you have both done it once when nothing was at stake.
+3. **If the off-by-one landed hard and the accumulator did not, spend the first five minutes of next week re-running `scores.py`** rather than pressing on. `grade.py` is built directly on top of it and there is no point building on sand.
 
 ---
 

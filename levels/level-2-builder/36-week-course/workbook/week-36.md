@@ -177,6 +177,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for practising how to read code and output before you run anything.
+
 **A1. What kind of problem is it?** For each symptom, write **crash** or **silent**, and name the thing you would look at first.
 
 | # | The symptom | crash / silent | Look at first |
@@ -272,6 +274,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for practising writing short programs from a blank file.
 
 ### B1 — one line
 
@@ -469,7 +473,7 @@ ________________________________________________________________
 
 ---
 
-# 📝 The Written Assessment
+## 📝 The Written Assessment
 
 > **Pages 36.1, 36.2 and 36.3. Closed book. Separate sitting. About 90 minutes.**
 
@@ -819,6 +823,8 @@ plt.savefig("houses.png")
 
 ## 📊 Score Yourself
 
+Use this section to add up your marks for the written assessment.
+
 | Part | Your score | Out of |
 |---|:--:|:--:|
 | A — Multiple choice | ______ | 20 |
@@ -858,6 +864,8 @@ Put a tick in the row for **every** item you got wrong.
 ---
 
 ## 🧩 Puzzle of the Week
+
+This puzzle is for checking what you remember about this year's ladder.
 
 ### The Ladder Scramble
 
@@ -920,6 +928,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These questions are for thinking about the whole year in your own words.
+
 **1.** All four debug problems in Part C are silent — none of them raises an error. Write a paragraph on why that is not a coincidence, and then name the **one** habit from this year you would keep if you could only keep one. Say what it costs you per number and what it buys you.
 
 ________________________________________________________________
@@ -943,6 +953,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It — Pages 36.4, 36.5 and 36.6
+
+These three pages are for recording how the showcase went and for writing to your future self.
 
 ### Page 36.4 — The showcase self-record
 
@@ -1093,6 +1105,8 @@ Draw your year in one picture. Not a timeline of topics — a picture of what yo
 
 ## 📊 Self-Check
 
+Use this table to tick how sure you feel about each skill.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Read my notebook aloud in eight minutes without saying a banned word | ☐ | ☐ | ☐ |
@@ -1132,6 +1146,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Open this section only after you have written something for every item.
 
 <details>
 <summary>Check your answers</summary>

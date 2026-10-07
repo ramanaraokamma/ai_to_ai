@@ -10,7 +10,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week**.
+This warm-up is five quick questions about **last week**. Answer each one on the lines below it.
 
 **W1.** "How spread out are the 38 scores?" — which chart shape, and why in one sentence?
 
@@ -315,6 +315,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+In this set you write the code yourself. Use the lines and boxes under each task.
+
 ### B1 — one line
 
 You have `df` loaded from `students.py`. Write the **single line** that prints the correlation between `hours` and `score`, rounded to three decimal places.
@@ -598,6 +600,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These questions ask for written answers in your own words.
 
 **T1.** Ice creams and drownings correlate at **0.997**. Temperature correlates with ice creams at **0.987** and with drownings at **0.989**.
 
@@ -1315,7 +1319,7 @@ axes[1].set_ylim(0, 100)
 
 **(b)** The working:
 
-```
+```text
 51 - b = F(49 - b)
 51 - b = 49F - Fb
 51 - b + Fb = 49F

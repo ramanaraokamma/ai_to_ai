@@ -22,9 +22,11 @@
 
 ## 🪝 Start Here
 
-Here is a real club sign-up sheet. Not a tidy one made up for a lesson — the sort you actually get when a class of twelve-year-olds fills one in at lunchtime on a Tuesday.
+This section shows you messy data on paper, before any code, so you can see what the rest of the week is for.
 
-```
+Here is a real club sign-up sheet. It is not a tidy one made up for a lesson. It is the sort you get when a class of twelve-year-olds fills one in at lunchtime on a Tuesday.
+
+```text
         CHESS CLUB SIGN-UP
    Name          Age     House
    Aarav          13     red
@@ -36,21 +38,26 @@ Here is a real club sign-up sheet. Not a tidy one made up for a lesson — the s
    Kira        not sure   Red
 ```
 
-Be the computer for a minute. Here is the simplest question anybody could ask about that sheet:
+Be the computer for a minute. Here is the simplest question anybody could ask about that sheet.
 
 > **What is the average age of the chess club?**
 
-Go on, start adding. 13 plus 14 plus... and then you stop, because three of them have no age.
+Start adding. 13 plus 14 plus... and then you stop, because three of them have no age.
 
-So what do you do? And be specific, because "work it out" is not an instruction a computer can follow.
+So what do you do? Be specific, because "work it out" is not an instruction a computer can follow.
 
-Most people suggest four things, roughly in this order: *put 13 in* · *leave them out* · *go and ask them* · *put 0*.
+Most people suggest four things, roughly in this order:
 
-**Try `put 0`.** If Chen, Emeka and Kira are all zero years old, the club's average age is (13 + 14 + 0 + 13 + 0 + 14 + 0) ÷ 7 = **7.7 years old.** A club of seven-year-olds. Nobody in the room is seven.
+- *put 13 in*
+- *leave them out*
+- *go and ask them*
+- *put 0*
+
+Try `put 0`. If Chen, Emeka and Kira are all zero years old, the club's average age is (13 + 14 + 0 + 13 + 0 + 14 + 0) ÷ 7 = **7.7 years old.** That is a club of seven-year-olds, and nobody in the room is seven.
 
 > **Zero is not "I don't know". Zero is a number, and it is a wrong one.** "I don't know" is not a number at all, and that turns out to matter enormously.
 
-Now look at the sheet again and find everything *else* that is wrong with it. Take your time. There are four things, and once you have found them you have found the whole list:
+Now look at the sheet again and find everything *else* that is wrong with it. Take your time. There are four things, and once you have found them you have found the whole list.
 
 1. **Three ages are missing** — and written three different ways: `dunno`, `---`, `not sure`.
 2. **Bela is on there twice.**
@@ -60,17 +67,19 @@ Now look at the sheet again and find everything *else* that is wrong with it. Ta
 ![Real data arrives broken in four ways](../figures/fig-w23-1-four-kinds-of-broken.svg)
 *Figure 23.1 — This week fixes the first two. Week 24 fixes the last two. Naming all four is this week's job.*
 
-**Four things. And here is the good news: that is basically it.** Real data breaks in about four ways, they are the four on that sheet, and every one of them has a name and a fix.
+Four things. Here is the good news: real data breaks in about four ways, they are the four on that sheet, and every one has a name and a fix.
 
-**The fixes are the easy part.** Here is the hard part, and it is the actual lesson:
+The fixes are the easy part. Here is the hard part, and it is the actual lesson.
 
-> **Every fix changes the answer.** If you write 13 in for Chen, you have invented a fact. Not a lie exactly — but an invention. And in six weeks, when somebody looks at your average and asks *"is that real?"*, you need to be able to say what you did and why.
+> **Every fix changes the answer.** If you write 13 in for Chen, you have invented a fact. Not a lie exactly, but an invention. In six weeks, when somebody looks at your average and asks *"is that real?"*, you need to be able to say what you did and why.
 
 So this week you get a second sheet of paper, and it is the more important one. It has two columns: **WHAT I DID** and **WHY I DID IT**. The WHY column is deliberately wider.
 
 ---
 
 ## 🧠 The Big Idea
+
+This section explains the five ideas behind the week, one at a time, with small pieces of code to look at.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
@@ -80,16 +89,16 @@ So this week you get a second sheet of paper, and it is the more important one. 
 
 That is not what data is like. Real data is collected by tired people on paper forms, typed in by somebody else, and exported by a program that made its own decisions along the way.
 
-**Here is the fact that surprises everybody first.** A column in pandas has to be **one kind of thing all the way down**. Nine perfectly good numbers and one word is not "a column of numbers with one word in it" — it is a column of **writing**, all twelve cells of it.
+Here is the fact that surprises everybody first. A column in pandas has to be **one kind of thing all the way down**. Nine perfectly good numbers and one word is not "a column of numbers with one word in it". It is a column of **writing**, all twelve cells of it.
 
 > **`object`** — pandas's word for *writing*, or *a mixture I have given up describing*.
 
-**The analogy, and it lands every time.** It is a queue at a shop till marked **BASKET ONLY**. One person turns up with a trolley, and now the whole queue has to be handled as a trolley queue. Not just that person. Everybody.
+**The analogy.** Think of a shop till marked **BASKET ONLY**. One person turns up with a trolley, and now the whole queue has to be handled as a trolley queue. Not just that person. Everybody.
 
 ![One word makes the whole column writing](../figures/fig-w23-10-basket-only-queue.svg)
 *Figure 23.2 — One trolley, and the whole queue changes. One word, and the whole column becomes writing.*
 
-**A concrete example.** Here is the club register, loaded from a file. Twelve rows, six columns.
+**An example.** Here is the club register, loaded from a file. It has twelve rows and six columns.
 
 ```text
           name      age  house   club  hours  score
@@ -107,7 +116,7 @@ That is not what data is like. Real data is collected by tired people on paper f
 11    Kira Das  unknown    Red  chess    3.0     74
 ```
 
-**All four problems from the sign-up sheet are visible in that printout, if you know where to look.** Point at each one with your finger before you read on:
+All four problems from the sign-up sheet are in that printout. Point at each one with your finger before you read on.
 
 - `NaN` in row 3's `hours` — **a hole**. That is pandas's way of printing "nothing was recorded here".
 - `unknown` three times in `age` — **text pretending to be numbers**.
@@ -116,7 +125,9 @@ That is not what data is like. Real data is collected by tired people on paper f
 
 ### 2. The health report, and the hole count that tells the truth without helping
 
-**The plain explanation.** One command tells you the state of every column, and there is a right way to read it: four steps, in order, out loud, every single time.
+**The plain explanation.** One command tells you the state of every column. There is a right way to read it: four steps, in order, out loud, every time.
+
+Run this line on the `raw` table:
 
 ```python
 raw.info()
@@ -138,24 +149,26 @@ dtypes: float64(1), int64(1), object(4)
 memory usage: 704.0+ bytes
 ```
 
-Note there is **no `print`** on that line. `info` prints for itself. And note the round brackets: `info()`, not `info`.
+There is **no `print`** on that line, because `info` prints for itself. Keep the round brackets: `info()`, not `info`.
 
-**The four steps:**
+Read the report in four steps.
 
 1. **`12 entries`** — twelve rows. *Is that what I expected?* Here, yes.
 2. **The `Non-Null Count` column.** *Non-null* means "has something in it". `hours` says **11 non-null out of 12** — one hole. Everything else says 12.
 3. **The `Dtype` column.** `score` is `int64`, whole numbers — fine. `hours` is `float64`, decimals — fine. And **`age` is `object`.**
 4. **`object` means writing.** So say the whole sentence: *"pandas thinks the ages are writing, not numbers."*
 
-Which is mad, isn't it? **Nine of the twelve ages are perfectly good numbers.** But three of them say `unknown`, `unknown` is a word, and §1 explains the rest. One trolley, whole queue.
+That seems unfair, because **nine of the twelve ages are perfectly good numbers.** But three of them say `unknown`, and `unknown` is a word. §1 explains the rest: one trolley, whole queue.
 
 > **⚠️ Watch out:** `object` is only a problem when you **expected numbers**. `name` is `object` too, and that is exactly right — names *are* writing. A student who has learnt "object is bad" has learnt the wrong thing.
 
-**Now count the holes.**
+**Now count the holes.** Two new words first.
 
 > **missing value** — a cell where nobody put anything. Pandas prints it as `NaN`.
 
 > **`NaN`** — short for *Not a Number*. It is pandas's marker for *nothing was recorded here*.
+
+This line counts the holes in every column:
 
 ```python
 print(raw.isna().sum())
@@ -171,19 +184,21 @@ score    0
 dtype: int64
 ```
 
-Read it inside out. `raw.isna()` goes through **every single cell** and asks *"is this one missing?"*, handing back a table the same shape as the original, full of `True` and `False`. Then `.sum()` adds up each column — and because `True` counts as 1 and `False` counts as 0, the sum is **how many holes are in that column**.
+Read it inside out. `raw.isna()` goes through **every single cell** and asks *"is this one missing?"*. It hands back a table the same shape as the original, full of `True` and `False`.
 
-**And now the trap, which is the whole reason you run this before repairing anything. Read the `age` line.**
+Then `.sum()` adds up each column. Because `True` counts as 1 and `False` counts as 0, the sum is **how many holes are in that column**.
 
-**Zero missing.** But three rows say `unknown`! Are those ages not missing?
+Now the trap, which is the whole reason you run this before repairing anything. Read the `age` line.
 
-They are missing **in real life** and not missing **to pandas** — because there genuinely *is* something in those cells. The word `unknown` is a perfectly good piece of writing. **Pandas is not lying to you. It answered exactly the question you asked.**
+It says **zero missing.** But three rows say `unknown`! Are those ages not missing?
+
+They are missing **in real life** and not missing **to pandas**, because there really *is* something in those cells. The word `unknown` is a perfectly good piece of writing. Pandas is not lying to you. It answered exactly the question you asked.
 
 > **The rule, and write it somewhere you will see it again: `isna()` finds *empty* cells. It does not find cells that contain a word meaning "empty".**
 
 That is why you run `info()` **and** `isna()`. `info()` catches the disguised holes by showing you `object` where you wanted a number. `isna()` catches the honest ones.
 
-**So how do you turn the disguised ones into countable ones?**
+So how do you turn the disguised ones into countable ones? Type this, which repairs a copy of the table:
 
 ```python
 clean = raw.copy()                                              # repairs go on a copy
@@ -203,7 +218,7 @@ dtype: int64
 
 **`age` went from 0 missing to 3 missing.** Did we just break the file?
 
-**No.** There were always three ages nobody knew. They were **hiding inside a word**, where nothing could count them. All `to_numeric` did was make them countable — and therefore arguable, out loud.
+No. There were always three ages nobody knew. They were hiding inside a word, where nothing could count them. All `to_numeric` did was make them countable, and so something you can talk about out loud.
 
 > **The sentence of the week: the repair did not make the holes. It made them visible.**
 
@@ -212,7 +227,9 @@ dtype: int64
 
 ### 3. `NaN` is not zero — and holes come before types
 
-**The plain explanation.** Get this one wrong and every average you compute for the rest of the course is wrong. It takes four numbers to prove.
+**The plain explanation.** Get this one wrong and every average you compute for the rest of the course is wrong. Four numbers are enough to show why.
+
+Type this small example. It makes a column of four numbers with one hole in it:
 
 ```python
 import pandas as pd
@@ -231,9 +248,9 @@ dtype: float64
 mean: 4.333333333333333
 ```
 
-**3.5 + 5.0 + 4.5 = 13.0, and 13.0 ÷ 3 = 4.333.** Pandas **stepped over the hole**: it added the three real numbers and divided by **three**, not four. Quietly. It did not ask, and it did not warn you.
+**3.5 + 5.0 + 4.5 = 13.0, and 13.0 ÷ 3 = 4.333.** Pandas **stepped over the hole**: it added the three real numbers and divided by **three**, not four. It did not ask, and it did not warn you.
 
-Now what if the hole were a zero?
+Now what if the hole were a zero? This line fills the hole with a zero before taking the mean:
 
 ```python
 print("if the hole were 0:", hours.fillna(0).mean())
@@ -252,7 +269,7 @@ if the hole were 0: 3.25
 ![A hole is a void, not a zero](../figures/fig-w23-2-nan-hole-in-the-grid.svg)
 *Figure 23.4 — pandas will average around a hole quietly. It will not pretend a hole is a whole number.*
 
-**And now the other half of the story, which is a gift.** Pandas will happily average around a hole. Watch what it does if you ask for whole numbers:
+Pandas will happily average around a hole. Now ask it for whole numbers instead:
 
 ```python
 print(hours.astype(int))
@@ -262,11 +279,11 @@ print(hours.astype(int))
 IntCastingNaNError: Cannot convert non-finite values (NA or inf) to integer
 ```
 
-**It refuses.** It will average round a hole, but it will **not pretend a hole is a whole number**. That refusal tells you the order to do everything in:
+It refuses. It will average round a hole, but it will **not pretend a hole is a whole number**. That refusal tells you the order to do everything in.
 
 > **Deal with the hole FIRST. Then change the type. Never the other way round.**
 
-**A concrete example of the order mattering.** Try `astype(int)` on the `age` column while the word is still in it:
+**An example of the order mattering.** Try `astype(int)` on the `age` column while the word is still in it. This is a deliberate mistake:
 
 ```python
 clean = raw.copy()
@@ -277,9 +294,11 @@ clean["age"] = clean["age"].astype(int)
 ValueError: invalid literal for int() with base 10: 'unknown'
 ```
 
-**Read that message; it is unusually helpful.** *"Invalid literal for int()"* means *"I tried to turn a piece of writing into a whole number, and this particular piece of writing is not one."* And then it tells you **exactly which one**, in quotes: `'unknown'`. Python has handed you the culprit.
+Read that message. It is unusually helpful. *"Invalid literal for int()"* means *"I tried to turn a piece of writing into a whole number, and this particular piece of writing is not one."*
 
-So the full repair is three steps, in this order:
+Then it tells you **exactly which one**, in quotes: `'unknown'`. Python has handed you the culprit.
+
+So the full repair is three steps, in this order. Type them on a fresh copy:
 
 ```python
 clean = raw.copy()
@@ -298,19 +317,21 @@ print(clean["age"].head(5))
 Name: age, dtype: int64
 ```
 
-- `pd.to_numeric(column, errors="coerce")` — turn everything you can into a number, and **anything you cannot, turn into a hole instead of crashing**. "Coerce" just means "force it". Without that word, `to_numeric` stops dead at `unknown` exactly like `astype` did.
+- `pd.to_numeric(column, errors="coerce")` — turn everything you can into a number, and **turn anything you cannot into a hole instead of crashing**. "Coerce" means "force it". Without that word, `to_numeric` stops dead at `unknown` exactly like `astype` did.
 - `fillna(13)` — put 13 wherever there is a hole in this column, and leave everything else alone.
 - `astype(int)` — whole numbers. **This only works now**, because the holes have gone. Run the same line one step earlier and you get `IntCastingNaNError`.
 
 > **⚠️ Watch out:** the `clean["age"] = ` on the **left** of every one of those three lines is not optional. `fillna`, `to_numeric` and `astype` all hand you back a **repaired copy**, exactly the way `sort_values` did last week. Without the assignment, nothing changes and **nothing warns you**. That is this week's silent bug, and it is the third week running for the same shape of mistake.
 
-**One more thing that surprises people.** After step 1 the column's dtype is `float64` — decimals, not whole numbers. Why? **Because a column with any `NaN` in it cannot be whole numbers.** An ordinary whole-number column (`int64`) has no value that means "missing", so pandas has to use decimals, where `NaN` is allowed. It is not a mistake to fix; it is a stage you pass through.
+One more thing surprises people. After step 1 the column's dtype is `float64`, which means decimals, not whole numbers. Why? **Because a column with any `NaN` in it cannot be whole numbers.**
+
+An ordinary whole-number column (`int64`) has no value that means "missing". So pandas has to use decimals, where `NaN` is allowed. It is not a mistake to fix. It is a stage you pass through.
 
 ### 4. Fill or drop? Two honest answers, five marks apart
 
-**The plain explanation.** Three ages are unknown. There are two honest things you can do, and **there is no right answer.** That is not a cop-out; it is the actual content of this week.
+**The plain explanation.** Three ages are unknown. There are two honest things you can do, and **there is no right answer.** That is not a cop-out. It is the actual content of this week.
 
-**Option A — fill them in with a stand-in.**
+**Option A — fill them in with a stand-in.** These two lines print the median and the mean of the ages we know:
 
 ```python
 print(clean["age"].median())      # the middle of the nine we know
@@ -322,9 +343,12 @@ print(clean["age"].mean())        # the average of the nine we know
 13.11111111111111
 ```
 
-**Median or mean?** The **median**, and there are two reasons. The first is Week 3's argument doing real work: if somebody's finger slipped and typed 130, the *mean* would run off to nearly 25 and the *median* would not move at all. The second you can see on the screen: **the mean is 13.111…, and nobody is 13.111 years old.** The median is an age somebody actually is.
+**Median or mean?** Use the **median**, for two reasons.
 
-**Option B — throw those three rows away.**
+1. This is Week 3's argument doing real work. If somebody's finger slipped and typed 130, the *mean* would run off to nearly 25 and the *median* would not move at all.
+2. You can see the second reason on the screen. **The mean is 13.111…, and nobody is 13.111 years old.** The median is an age somebody actually is.
+
+**Option B — throw those three rows away.** This block drops the rows whose age is a hole, then prints the labels that are left:
 
 ```python
 dropped = raw.copy()                                              # a fresh copy
@@ -341,7 +365,7 @@ print(dropped.index.tolist())
 - `dropna(subset=["age"])` — delete any row whose `age` is a hole. **`subset=["age"]` means "only look at that column"** — without it, a hole *anywhere* in a row would cost you the whole row.
 - Nine rows survive, and they keep their original labels: `0, 1, 3, 5, 6, 7, 8, 9, 10`. Rows 2, 4 and 11 are gone. **That is Week 22's fact again — dropping keeps the labels.**
 
-**Now the part that makes the argument real.** Ask **one** question of both versions: *"what is the average score of the 13-year-olds?"*
+Now ask **one** question of both versions: *"what is the average score of the 13-year-olds?"* This program builds both versions from the raw file and prints each answer:
 
 ```python
 import pandas as pd
@@ -368,9 +392,9 @@ filled : 7 pupils, 70.0
 dropped: 4 pupils, 75.0
 ```
 
-**Seventy against seventy-five.** Same file. Same tools. Same question. **Five whole marks apart, and both numbers are honest.**
+**Seventy against seventy-five.** Same file, same tools, same question. Five whole marks apart, and both numbers are honest.
 
-Check the arithmetic yourself, on paper, because it turns this from a screen event into a fact:
+Check the arithmetic yourself, on paper:
 
 - **Option B:** 72 + 83 + 78 + 67 = **300**, and 300 ÷ 4 = **75.0** ✔
 - **Option A:** 300 + 55 + 61 + 74 = **490**, and 490 ÷ 7 = **70.0** ✔
@@ -385,25 +409,27 @@ Check the arithmetic yourself, on paper, because it turns this from a screen eve
 ![Two honest answers. You must say which one you gave.](../figures/fig-w23-5-fill-or-drop-two-answers.svg)
 *Figure 23.5 — Neither answer is wrong. An answer with no cleaning log beside it is.*
 
-> **The general rule, and it will save you in Week 24 and again in the capstone: never fill a column with a guess and then make that column the subject of your question.** Here we filled `age` and then asked a question **about age**. That is exactly the wrong order, and it moved the answer by five marks.
+> **📌 Remember: never fill a column with a guess and then make that column the subject of your question.** This rule will help you in Week 24 and again in the capstone. Here we filled `age` and then asked a question **about age**. That is the wrong order, and it moved the answer by five marks.
 
 ### 5. The cleaning log, and why an entry with no reason is worthless
 
-**The plain explanation.**
+**The plain explanation.** One new word.
 
 > **cleaning log** — a written, numbered record of every change you made to the raw data, and **the reason for each one**.
 
-Here is why it is not optional. When you report *"the 13-year-olds average 70"*, three completely different things could be behind that number:
+Here is why it is not optional. When you report *"the 13-year-olds average 70"*, three different things could be behind that number:
 
 - The 13-year-olds really average 70.
 - They average 70 **because three unknown ages were filled with 13**, and those three children happen to score badly.
 - They average 70 **because the two top scorers were dropped** for having no recorded age.
 
-**The number is identical in all three cases.** Only the log tells them apart.
+The number is identical in all three cases. Only the log tells them apart.
 
-**The analogy.** It is the working-out in a maths exam. The answer alone earns you almost nothing, because nobody can tell whether you understood it or guessed it. And this is not a school rule invented to make you write more — **real scientific papers have a methods section for exactly this reason**, so that somebody else can see what was done to the data before a conclusion was drawn from it.
+**The analogy.** A log is the working-out in a maths exam. The answer alone earns you almost nothing, because nobody can tell whether you understood it or guessed it.
 
-**A good entry has three parts: what you did, how many cells it touched, and why.** Here is the log for the club register:
+This is not a school rule invented to make you write more. **Real scientific papers have a methods section for exactly this reason.** It lets somebody else see what was done to the data before a conclusion was drawn from it.
+
+A good entry has three parts: what you did, how many cells it touched, and why. Here is the log for the club register:
 
 ```text
 CLEANING LOG - club_raw.csv, 12 rows
@@ -430,17 +456,17 @@ CLEANING LOG - club_raw.csv, 12 rows
 ![A log entry without a reason is not a log entry](../figures/fig-w23-4-cleaning-log-numbered.svg)
 *Figure 23.6 — Every repair is a decision. The log is where the decision is written down.*
 
-**The failure to watch for in your own log, from the very first entry: a WHAT with no WHY.** *"Filled 1 blank hours with 3.5."* Filled with **what**, and **why 3.5**? In six weeks nobody — you least of all — will be able to say. **Fill in the WHY before you write the next line.**
+> **⚠️ Watch out:** a WHAT with no WHY, from the very first entry. *"Filled 1 blank hours with 3.5."* Filled with what, and why 3.5? In six weeks nobody, you least of all, will be able to say. **Fill in the WHY before you write the next line.**
 
 ---
 
 ## 💻 Type This
 
-Everything goes in your `level2` folder. This week you need a **data file** before you need a program.
+This section walks you through writing the broken file, then repairing it step by step with a log. Everything goes in your `level2` folder. This week you need a **data file** before you need a program.
 
 ### Step 0 — make the broken file
 
-You cannot practise repairing data without broken data, so the first job is to write some. Make a file called `make_club_data.py` and run it **once**:
+You cannot practise repairing data without broken data, so the first job is to write some. Make a file called `make_club_data.py` and run it **once**.
 
 ```python
 # make_club_data.py - run this ONCE. It writes the broken file for Week 23.
@@ -471,14 +497,14 @@ club_raw.csv written
 
 `with open(path, "w") as f:` is Week 16's file writing, and `"""triple quotes"""` let a string run over many lines.
 
-**Now open `club_raw.csv` in a plain text editor and look at it with your own eyes.** It is worth doing exactly once.
+Now open `club_raw.csv` in a plain text editor and look at it with your own eyes. It is worth doing exactly once.
 
-- Divya Nair's line ends `art,,83` — **two commas in a row.** That is what an empty cell looks like in a CSV: nothing between the commas.
-- Divya's house is `blue ` with a space **after** it, and Gita Menon's is ` Blue` with a space **before** it. **You will not be able to see those.** Neither can I. Remember they are there; they become next week's whole lesson.
+- Divya Nair's line ends `art,,83`, with **two commas in a row.** That is what an empty cell looks like in a CSV: nothing between the commas.
+- Divya's house is `blue ` with a space **after** it, and Gita Menon's is ` Blue` with a space **before** it. You will not be able to see those. Remember they are there, because they become next week's whole lesson.
 
 ### Step 1 — read it in and look at it
 
-Make a new file called `clean_club.py`:
+Make a new file called `clean_club.py` and type this first part:
 
 ```python
 # clean_club.py - Week 23. Find the breaks, repair two of them, log everything.
@@ -522,15 +548,15 @@ dtypes: float64(1), int64(1), object(4)
 memory usage: 704.0+ bytes
 ```
 
-**Two lines to say out loud about what you just typed.**
+Two lines to say out loud about what you just typed.
 
-`pd.read_csv("club_raw.csv")` — open that file, read the **first line as the column names**, and read every line after it as a row. CSV means *comma-separated values*: a plain text file where commas mark the edges of the cells. **The file has to be in the same folder as the Python file**, or `read_csv` will not find it, and that is the single most common way this lesson goes wrong.
+`pd.read_csv("club_raw.csv")` opens that file, reads the **first line as the column names**, and reads every line after it as a row. CSV means *comma-separated values*: a plain text file where commas mark the edges of the cells. The file has to be in the same folder as the Python file, or `read_csv` will not find it. That is the most common way this lesson goes wrong.
 
-`raw = ...` is a **promise to yourself**: *this is the untouched original and I will not modify it.* Every clean-up happens on `clean`. That habit costs one line and saves whole afternoons — if a repair turns out to be wrong, you can start again.
+`raw = ...` is a **promise to yourself**: *this is the untouched original and I will not modify it.* Every clean-up happens on `clean`. That habit costs one line and saves whole afternoons, because if a repair turns out to be wrong you can start again.
 
 ### Step 2 — count the holes, and be suspicious of the answer
 
-Add:
+Add this to the end of `clean_club.py`:
 
 ```python
 print("--- STEP 2: how many holes?")
@@ -548,11 +574,11 @@ score    0
 dtype: int64
 ```
 
-**`hours` says 1. Good — we saw that `NaN`.** And **`age` says 0**, which is not good at all, because three rows say `unknown` and we can see them. Hold both facts at once: **pandas is right, and the ages are missing.**
+`hours` says 1: we saw that `NaN`. `age` says 0, even though three rows say `unknown` and we can see them. Hold both facts at once: **pandas is right, and the ages are missing.**
 
 ### Step 3 — make the hidden holes visible
 
-Add:
+Add this to the end of the file:
 
 ```python
 print("--- STEP 3: make the hidden holes visible")
@@ -571,11 +597,11 @@ score    0
 dtype: int64
 ```
 
-**Zero became three.** Nothing broke. Three ages were always unknown; now they are countable.
+**Zero became three.** Nothing broke. Three ages were always unknown, and now they are countable.
 
-**Write log entry 1 before you type the next line.** Not afterwards — before. On paper.
+Write log entry 1 before you type the next line. Not afterwards, before, and on paper. Here is what a finished entry looks like:
 
-```
+```text
 1 | Turned age from writing into  | three rows said "unknown", and that one
   | numbers with to_numeric       | word made the whole column object, which
   | (errors="coerce")             | blocked astype(int). This made 3 hidden
@@ -584,7 +610,7 @@ dtype: int64
 
 ### Step 4 — the middle age of the ones you know
 
-Add:
+Add this to the end of the file:
 
 ```python
 print("--- STEP 4: the middle age of the ones we know")
@@ -596,11 +622,11 @@ print(clean["age"].median())
 13.0
 ```
 
-**Nine ages, and 13 sits in the middle of them.** That is the number you are about to put into three cells, and putting it there is a decision, so it needs a line on the log.
+There are nine known ages, and 13 sits in the middle of them. That is the number you are about to put into three cells. Putting it there is a decision, so it needs a line on the log.
 
 ### Step 5 — fill, then convert. In that order.
 
-Add:
+Add this to the end of the file:
 
 ```python
 print("--- STEP 5: fill, then convert. In that order.")
@@ -623,11 +649,11 @@ dtype: int64
 
 **Zeros all the way down.** `astype(int)` worked here, and the exact same line would have crashed one step earlier.
 
-> **💡 Try this:** delete the `fillna` line, run it, and read the `IntCastingNaNError`. Then put it back. Ten seconds, and the boxed rule stops being something you were told and becomes something you saw.
+> **💡 Try this:** delete the `fillna` line, run it, and read the `IntCastingNaNError`. Then put it back. It takes ten seconds, and the boxed rule stops being something you were told and becomes something you saw.
 
-**Two more log lines, and entry 2 needs a warning in it:**
+Two more log lines. Entry 2 needs a warning in it.
 
-```
+```text
 2 | Filled 3 missing ages with 13 | 13 is the median of the 9 we know, and the
   |                              | median isn't dragged about by one silly value.
   |                              | WARNING: those 3 ages are GUESSES now.
@@ -638,7 +664,7 @@ dtype: int64
 
 ### Step 6 — look at what you repaired
 
-Add:
+Add this to the end of the file:
 
 ```python
 print("--- STEP 6: the repaired table")
@@ -662,11 +688,11 @@ print(clean)
 11    Kira Das   13    Red  chess    3.0     74
 ```
 
-**Look at rows 2, 4 and 11.** They say `13` now, and they look exactly as solid and factual as row 0's 13. **That is why the log exists.** Nothing on the screen distinguishes a measurement from a repair.
+Look at rows 2, 4 and 11. They say `13` now, and they look as solid and factual as row 0's 13. **That is why the log exists:** nothing on the screen tells a measurement from a repair.
 
-**And two problems are still sitting there in plain sight** — Bela Roy is on rows 1 and 10, and the houses are still spelled nine ways. You have no tools for either until next week, so they get log entries saying **found, not fixed**:
+Two problems are still sitting there in plain sight. Bela Roy is on rows 1 and 10, and the houses are still spelled nine ways. You have no tools for either until next week, so they get log entries saying **found, not fixed**:
 
-```
+```text
 5 | Found 1 duplicate row (Bela   | no tool for it until next week, so it is
   | Roy, twice, identical)        | flagged here so it isn't forgotten. Every
   | - NOT removed                 | field matching means a typing slip.
@@ -676,7 +702,7 @@ print(clean)
 
 ### Step 7 — save it out under a NEW name
 
-Add:
+Add this to the end of the file:
 
 ```python
 print("--- STEP 7: save it under a NEW name")
@@ -699,10 +725,11 @@ dtype: object
 - **`index=False` matters and is easy to forget.** Without it, pandas writes the row labels out as an extra unnamed first column, and when you read the file back you get a mystery column called `Unnamed: 0`. Nine times out of ten your row labels are just `0, 1, 2, …` and worth nothing.
 - **Write to a NEW filename.** `club_raw.csv` must survive untouched, because if your log turns out to be wrong you need to be able to start again.
 
-**And look at the result: `age` is `int64` on the way back in.** That is the **proof** the repair was real and not just something that looked right on the screen for a minute.
+Look at the result: `age` is `int64` on the way back in. That is the **proof** the repair was real and not just something that looked right on the screen.
 
 ### The complete finished program
 
+Here is the whole of `clean_club.py` in one piece, to check your file against.
 ```python
 # clean_club.py - Week 23. Find the breaks, repair two of them, log everything.
 import pandas as pd
@@ -742,7 +769,7 @@ print(pd.read_csv("club_clean.csv").dtypes)
 
 ## 🔍 Worked Examples
 
-Three complete programs. Each one **writes its own broken file first**, so you can run them from nothing. **Predict every output before you run it.**
+Three complete programs. Each one **writes its own broken file first**, so you can run them from nothing. Predict every output before you run it.
 
 ### Worked Example 1 — A canteen order sheet (food)
 
@@ -840,19 +867,19 @@ quantity     int64
 dtype: object
 ```
 
-**Three things worth noticing, and the third is a real trap.**
+**Three things are worth noticing, and the third is a real trap.**
 
-The `quantity` column arrived as **`float64` with one hole already visible** — because the cell was genuinely empty, `Sandwich,35,` with nothing after the last comma. **`price` arrived as `object` with zero holes**, because those cells contain a word. Same table, two different kinds of broken, and `info()` shows you both at once.
+1. The `quantity` column arrived as **`float64` with one hole already visible**, because the cell was empty: `Sandwich,35,` with nothing after the last comma.
+2. `price` arrived as **`object` with zero holes**, because those cells contain a word. Same table, two kinds of broken, and `info()` shows you both at once.
+3. The Sandwich's missing quantity was filled with **8, the median, not 0**. Filling it with 0 would have claimed that nobody ordered a sandwich, when somebody just forgot to write the number down. That reason goes on the log.
 
-The Sandwich's missing quantity was filled with **8, the median — not 0**. Filling it with 0 would have claimed that nobody ordered a sandwich, when in fact somebody just forgot to write the number down. That reason goes on the log.
+The trap: the median price is 17.5, but the table says 17. `astype(int)` **chopped the decimal off, silently.** It did not round, so 17.9 would also become 17. Nothing errored, nothing warned you, and a price is now half a rupee lower than the number you chose. **That belongs on the log too**, and the honest fix is `round()` first if you care.
 
-**And the trap: the median price is 17.5, but the table says 17.** `astype(int)` **chopped the decimal off, silently.** It did not round — 17.9 would also become 17. Nothing errored, nothing warned you, and a price is now half a rupee lower than the number you chose. **That belongs on the log too**, and the honest fix is `round()` first if you care.
-
-> **⚠️ Watch out:** pandas *does* recognise a short standard list of words as missing — an empty cell, and the literal `NA`, `N/A`, `n/a`, `NaN`, `nan`, `null`, `NULL`. Had the canteen written `n/a` instead of `unpriced`, the column would have arrived as `float64` with two holes already counted. **It refuses to guess about anything else**, because guessing on your behalf is how data gets silently corrupted.
+> **⚠️ Watch out:** pandas *does* recognise a short standard list of words as missing: an empty cell, and the literal `NA`, `N/A`, `n/a`, `NaN`, `nan`, `null`, `NULL`. Had the canteen written `n/a` instead of `unpriced`, the column would have arrived as `float64` with two holes already counted. It does not guess about anything else, because guessing on your behalf is how data gets silently corrupted.
 
 ### Worked Example 2 — A football team sheet (sport)
 
-This one has the best distinction of the week in it: **one fill is a fact, and one fill is a guess.**
+This one has the best distinction of the week in it: **one fill is a fact, and one fill is a guess.** Type and run this program:
 
 ```python
 """match23.py - a football team sheet. One fill is a fact. One is a guess."""
@@ -962,13 +989,12 @@ average minutes    : 75.0
 average goals      : 1.2 from 5 players with a recorded goal count
 ```
 
-**This is the most important distinction in the whole chapter, so read it slowly.**
+This is the most important distinction in the chapter, so read it slowly.
 
-**`DNP` → 0 minutes is a FACT.** DNP means *did not play*. Somebody who did not play was on the pitch for exactly zero minutes. Filling that hole with 0 invents nothing at all, and it needs one calm log line: *"DNP means did not play, so 0 minutes is a measurement, not a guess."*
+- **`DNP` → 0 minutes is a FACT.** DNP means *did not play*. Somebody who did not play was on the pitch for exactly zero minutes. Filling that hole with 0 invents nothing, and it needs one calm log line: *"DNP means did not play, so 0 minutes is a measurement, not a guess."*
+- **Fatima's blank goals is a GUESS.** Nobody wrote her goal count down. Filling it with 0 **claims she scored none**, and that claim might be false: she played sixty minutes and had two shots. The squad's average goals goes from **0.857** to **0.75**, and the second number was invented by us, not by the match.
 
-**Fatima's blank goals is a GUESS.** Nobody wrote her goal count down. Filling it with 0 **claims she scored none**, and that claim might be false — she played sixty minutes and had two shots. Look at what the claim costs: the squad's average goals goes from **0.857** to **0.75**, and the second number was invented by us, not by the match.
-
-**And notice the last line: `from 5 players`.** Fatima's hole survived into the filtered table, so `played["goals"].mean()` is 1.2 from **five** goal counts, not six. Pandas stepped over the hole silently, exactly as it did in §3. **Print the count beside the average and you can see it happen.**
+Look at the last line: `from 5 players`. Fatima's hole survived into the filtered table, so `played["goals"].mean()` is 1.2 from **five** goal counts, not six. Pandas stepped over the hole silently, exactly as it did in §3. Print the count beside the average and you can see it happen.
 
 ### Worked Example 3 — One spelling test (school)
 
@@ -1088,21 +1114,21 @@ A - filled : 3 pupils practised under 20 words, average mark 15.33
 B - dropped: 1 pupils practised under 20 words, average mark 12.0
 ```
 
-**Look at the two class averages: 16.75 and 16.6.** Almost identical. If you stopped there you might conclude that fill-versus-drop does not matter much. **Keep reading, because that conclusion is wrong.**
+Look at the two class averages: 16.75 and 16.6. They are almost identical. If you stopped there you might conclude that fill-versus-drop does not matter much. **Keep reading, because that conclusion is wrong.**
 
-**The line that matters is `WHO is missing?`, and you must run it before you decide anything.** Gopal practised **10** words, Manav practised **5**, Jyoti practised **45**. Two of the three absent pupils are among the least-prepared in the class. **The missing data is not spread evenly.**
+The line that matters is `WHO is missing?`, and you must run it before you decide anything. Gopal practised **10** words, Manav practised **5**, Jyoti practised **45**. Two of the three absent pupils are among the least-prepared in the class. **The missing data is not spread evenly.**
 
-**So ask a question that touches that pattern**, and the two versions come apart hard: *"what do the pupils who practised fewer than 20 words average?"* Version A says **15.33 from three pupils.** Version B says **12.0 from one pupil.** Three and a bit marks apart, from the same file.
+So ask a question that touches that pattern: *"what do the pupils who practised fewer than 20 words average?"* Version A says **15.33 from three pupils.** Version B says **12.0 from one pupil.** Those are three and a bit marks apart, from the same file.
 
-Why? Because filling dropped Gopal (17, invented) and Manav (17, invented) into the under-20-words group, and both of those 17s are **ours, not theirs**.
+Why? Filling put Gopal (17, invented) and Manav (17, invented) into the under-20-words group, and both of those 17s are **ours, not theirs**.
 
-> **Missing data is often not random. Look at *whose* data is missing before you decide what to do about it.** If you fill the gaps without looking at whose gaps they are, you can invent a pattern that was never there.
+> **📌 Remember: missing data is often not random. Look at *whose* data is missing before you decide what to do about it.** If you fill the gaps without looking at whose gaps they are, you can invent a pattern that was never there.
 
 ---
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code. Your line numbers will differ. The last line will not.
+This section shows three errors you are likely to meet this week, what each message means, and how to fix it. Every message below came from really running a broken version of this week's code. Your line numbers will differ. The last line will not.
 
 ### Break 1 — the file is not where you are standing
 
@@ -1118,7 +1144,7 @@ FileNotFoundError: [Errno 2] No such file or directory: 'reading.csv'
 
 **What Python is telling you.** *"There is no file by that name where I am standing."*
 
-**The fix, and do this rather than guessing.** In the terminal, run `ls` (macOS and Linux) or `dir` (Windows) and **read the real filename.** The file is `reading_raw.csv`, not `reading.csv`. Filenames are case-sensitive and underscores count.
+**The fix.** In the terminal, run `ls` (macOS and Linux) or `dir` (Windows) and read the real filename. Do this rather than guessing. The file is `reading_raw.csv`, not `reading.csv`. Filenames are case-sensitive and underscores count.
 
 > **🐞 If you see this error:** it is almost always one of two things — a typo in the string, or the Python file sitting in a different folder from the CSV. Neither one is worth ten minutes of staring. `ls` settles it in four seconds.
 
@@ -1134,13 +1160,13 @@ Traceback (most recent call last):
 ValueError: invalid literal for int() with base 10: 'unknown'
 ```
 
-**What Python is telling you.** Take it in two halves. *"Invalid literal for int()"* means **"I tried to turn a piece of writing into a whole number, and that piece of writing is not one."** And then — this is the kind bit — it tells you **exactly which** piece of writing broke it, in quotes: `'unknown'`.
+**What Python is telling you.** Take it in two halves. *"Invalid literal for int()"* means **"I tried to turn a piece of writing into a whole number, and that piece of writing is not one."** Then it tells you **exactly which** piece of writing broke it, in quotes: `'unknown'`.
 
-**Python has handed you the culprit's name.** Most errors do not.
+Python has handed you the culprit's name. Most errors do not.
 
-**The fix.** `pd.to_numeric(col, errors="coerce")` first, then fill the holes, **then** `astype(int)`.
+**The fix.** Use `pd.to_numeric(col, errors="coerce")` first, then fill the holes, **then** `astype(int)`.
 
-**And the near-miss version of the same bug**, which catches people who remember `to_numeric` but not `coerce`:
+The near-miss version of the same bug catches people who remember `to_numeric` but not `coerce`:
 
 ```python
 clean["age"] = pd.to_numeric(clean["age"])
@@ -1150,9 +1176,11 @@ clean["age"] = pd.to_numeric(clean["age"])
 ValueError: Unable to parse string "unknown" at position 2
 ```
 
-Without `errors="coerce"`, `to_numeric` stops dead at the first word exactly like `astype` did — and it even tells you which row (`position 2`).
+Without `errors="coerce"`, `to_numeric` stops dead at the first word, exactly like `astype` did. It even tells you which row (`position 2`).
 
 ### Break 3 — the repair that never happened
+
+This code looks right. Run it:
 
 ```python
 clean["hours"].fillna(3.5)
@@ -1163,11 +1191,11 @@ print(clean["hours"].isna().sum())
 1
 ```
 
-**There is no error here at all.** Nothing red. And the hole is still there.
+There is no error here at all. Nothing red. And the hole is still there.
 
-**What happened.** `fillna` does not repair your column. It **hands you back a repaired copy**, and you threw it away the instant the line finished. This is the same shape of bug as `sort_values` last week and it will not be the last time.
+**What happened.** `fillna` does not repair your column. It **hands you back a repaired copy**, and you threw it away the instant the line finished. This is the same shape of bug as `sort_values` last week.
 
-**The fix is one `=`:**
+The fix is one `=`:
 
 ```python
 clean["hours"] = clean["hours"].fillna(3.5)
@@ -1178,10 +1206,11 @@ print(clean["hours"].isna().sum())
 0
 ```
 
-> **🐞 If there is no error message at all:** ask two questions, and they take four seconds each. **"Is there an `=` on the left?"** — almost every silent failure this week is one missing assignment. And **"run the count again"** — after every `fillna`, `to_numeric` or `astype`, re-run `df.isna().sum()` or `df.info()`. Not *does it look right*. **The count.**
+> **🐞 If there is no error message at all:** ask two questions. Each takes four seconds. **"Is there an `=` on the left?"** Almost every silent failure this week is one missing assignment. **"Run the count again."** After every `fillna`, `to_numeric` or `astype`, re-run `df.isna().sum()` or `df.info()`. Check the count, not whether it looks right.
 
 ### The whole clinic, for reference
 
+Use this table to look up any message from the week.
 | What you see | What it means | The fix |
 |---|---|---|
 | `FileNotFoundError: [Errno 2] No such file or directory: 'clubraw.csv'` | "No file by that name where I am standing." | `ls` in the terminal and read the real name. Case and underscores count |
@@ -1200,27 +1229,26 @@ print(clean["hours"].isna().sum())
 | **No error, my average is different from a friend's** | Nothing is wrong with either program. | One of you filled and one dropped. **Compare cleaning logs, not code.** Whoever has no log cannot defend their number |
 | `SettingWithCopyWarning: A value is trying to be set on a copy of a slice from a DataFrame` | "I'm not sure whether you meant to change the copy or the original." | Start with `clean = raw.copy()` and repair `clean`. That is why the copy line exists |
 
-**The sentence for this week:**
-
-> **Half the bugs in data work are not errors. They are repairs you thought you made and didn't, and answers that quietly changed because of a repair you forgot you made. The count and the log are how you catch both.**
+> **📌 Remember: half the bugs in data work are not errors.** They are repairs you thought you made and didn't, and answers that quietly changed because of a repair you forgot you made. The count and the log are how you catch both.
 
 ---
 
 ## 🎲 What We Did In Class
 
-If you missed it, here is the whole lesson. The first part needs a pencil, and the last part needs a sheet of paper more than a laptop.
+If you missed class, this section is the whole lesson in order. The first part needs a pencil, and the last part needs a sheet of paper more than a laptop.
 
 ### The sign-up sheet, on paper
 
 A hand-written club sign-up sheet, deliberately awful, and one question: **"what is the average age of the chess club?"**
 
-Then `put 0` was tried out loud, and the average fell off a cliff. **Zero is a number, and it is a wrong one.** Then the whole class hunted for everything else wrong with the sheet, and found four things — which is the whole list.
+Then `put 0` was tried out loud, and the average fell off a cliff. **Zero is a number, and it is a wrong one.**
 
-Then the second sheet of paper came out: the **cleaning log**, two columns, WHY deliberately wider than WHAT.
+Then the whole class hunted for everything else wrong with the sheet, and found four things, which is the whole list. Then the second sheet of paper came out: the **cleaning log**, two columns, WHY deliberately wider than WHAT.
 
 ### Four lines on the board, up all lesson
 
-```
+These four lines stayed on the board for the whole lesson.
+```text
 1. a hole            ->  isna().sum()          ->  fillna
 2. text pretending   ->  info() says object    ->  to_numeric, astype
 3. the same row twice->  duplicated().sum()    ->  next week
@@ -1246,17 +1274,17 @@ mean: 4.333333333333333
 if the hole were 0: 3.25
 ```
 
-Then `astype(int)` on the same four numbers, and the `IntCastingNaNError` — pandas will average round a hole but will not pretend a hole is a whole number. Which gave the boxed rule: **deal with the hole first, then change the type.**
+Then `astype(int)` on the same four numbers gave the `IntCastingNaNError`. Pandas will average round a hole but will not pretend a hole is a whole number. That gave the boxed rule: **deal with the hole first, then change the type.**
 
 ### Two deliberate mistakes
 
-**Mistake one** was `astype(int)` while the word was still there — a `ValueError` that names the culprit `'unknown'` in quotes.
+**Mistake one** was `astype(int)` while the word was still there: a `ValueError` that names the culprit `'unknown'` in quotes.
 
-**Mistake two** was the silent one: `clean["hours"].fillna(3.5)` with nothing on the left of an `=`. **No error, and the hole count still said 1.** Third week running for the same shape of bug.
+**Mistake two** was the silent one: `clean["hours"].fillna(3.5)` with nothing on the left of an `=`. **No error, and the hole count still said 1.** It was the third week running for the same shape of bug.
 
 ### The argument: fill or drop, both computed
 
-One question on the board — **"what is the average score of the 13-year-olds?"** — answered twice.
+One question on the board, **"what is the average score of the 13-year-olds?"**, answered twice.
 
 ```text
 A - filled : 12 rows total, 7 pupils aged 13, average score 70.0
@@ -1274,7 +1302,7 @@ Then six questions, in this order, with a pause after each:
 
 Then the hand-check: 72 + 83 + 78 + 67 = 300, ÷ 4 = **75.0**. Plus 55 + 61 + 74 = 490, ÷ 7 = **70.0**. **Five marks apart, in your own handwriting.**
 
-Then the graded item: **choose one, in pen, with a reason** — and a log line naming the other answer.
+Then the graded item: choose one, in pen, with a reason, and a log line naming the other answer.
 
 ### Naming all four from memory, board covered
 
@@ -1284,22 +1312,35 @@ A four-row grid to fill in from memory: *the problem · how you spot it · the n
 
 ## 💬 Talk About It
 
+These three questions have no single right answer. Talk them through with a partner or a parent. Each has a hint to start you off.
+
 **1. Why doesn't pandas just work out that `unknown` means missing?**
 
-*Hint:* start by listing all the things people actually write in a cell they cannot fill in. You have already seen `unknown`, `dunno`, `not sure`, `---`, `not given`, `DNP`, `absent`. Add `?`, `TBD`, `999`, `no idea mate`. Now imagine you had to write the rule that catches all of those and never catches a real answer. **Could `999` be a real answer?** (Of a step count, absolutely.) So the honest question is not "why doesn't pandas guess" but "what would go wrong if it did" — and the answer is that data would get silently corrupted in a way nobody could ever find. Pandas *does* recognise a short standard list (an empty cell, `NA`, `n/a`, `null`, `NaN`). **Why is having a short list better than having a clever one?**
+*Hint:* start by listing all the things people actually write in a cell they cannot fill in. You have already seen `unknown`, `dunno`, `not sure`, `---`, `not given`, `DNP`, `absent`. Add `?`, `TBD`, `999`, `no idea mate`.
+
+Now imagine you had to write the rule that catches all of those and never catches a real answer. **Could `999` be a real answer?** (Of a step count, absolutely.) So the honest question is not "why doesn't pandas guess" but "what would go wrong if it did". The answer is that data would get silently corrupted in a way nobody could ever find.
+
+Pandas *does* recognise a short standard list (an empty cell, `NA`, `n/a`, `null`, `NaN`). **Why is having a short list better than having a clever one?**
 
 **2. Which is better, fill or drop?**
 
-*Hint:* do not look for a rule, because there isn't one and pretending otherwise is the mistake. Start from a different question: **what is the missing column *for*?** If you are asking about scores and a few ages are missing, filling the ages costs you almost nothing — the ages are just along for the ride. If you are asking a question **about age**, filling is close to fatal, because you are inventing the very thing you are measuring. That is exactly the trap in this chapter, and it moved the answer five marks. Now go one level up: professional statisticians have argued about this for a century, and they have built much cleverer answers than either of ours. **All of those answers still require you to write down what you did.** So what is the actually professional part — the choice, or the written reason?
+*Hint:* do not look for a rule, because there isn't one, and pretending otherwise is the mistake. Start from a different question: **what is the missing column *for*?**
+
+If you are asking about scores and a few ages are missing, filling the ages costs you almost nothing. If you are asking a question **about age**, filling is close to fatal, because you are inventing the very thing you are measuring. That is the trap in this chapter, and it moved the answer five marks.
+
+Now go one level up. Professional statisticians have argued about this for a century, and they have built much cleverer answers than either of ours. **All of those answers still require you to write down what you did.** So what is the actually professional part: the choice, or the written reason?
 
 **3. Does the log have to be on paper? Couldn't it be comments in the code?**
 
-*Hint:* be honest about both. In professional work it usually **is** in the code — a list of strings built up as the program runs, or a block comment at the top of the file. So paper is not the grown-up version. But think about what paper physically does: the WHY column is **there**, and **empty**, and staring at you. In code it is far too easy to type `# filled the ages` and move on, because nothing is looking at you. So the real question is: **what is the paper for?** (Building the habit.) And: how would you know when you were ready to move the log into the code? *(This course moves it in Week 34.)*
+*Hint:* be honest about both. In professional work it usually **is** in the code, as a list of strings built up as the program runs or a block comment at the top of the file. So paper is not the grown-up version.
+
+But think about what paper physically does: the WHY column is **there**, and **empty**, and staring at you. In code it is far too easy to type `# filled the ages` and move on, because nothing is looking at you. So the real question is: **what is the paper for?** (Building the habit.) And how would you know when you were ready to move the log into the code? *(This course moves it in Week 34.)*
 
 ---
 
 ## ⚠️ Don't Get Tricked
 
+Four wrong ideas that sound sensible. Each one is shown beside the right idea.
 ### Trick 1 — "zero missing means nothing is missing"
 
 ![Zero missing does not mean nothing is missing](../figures/fig-w23-7-tricked-zero-missing-means-clean.svg)
@@ -1339,6 +1380,8 @@ Look at the numbers again: filling gave 70.0 from seven pupils, three of whom ar
 
 ## 🌍 Where You've Seen This
 
+Messy data is not only a school problem. Here are seven places where somebody has to make the same fill-or-drop decision.
+
 1. **Any online form you have ever half-filled-in.** Every blank box you skipped becomes a `NaN` in somebody's table, and somebody has to decide what to do about it. If the form let you type in a free-text box, you have personally created "text pretending to be numbers".
 2. **A school register with a pupil marked absent.** The mark for that test is not zero — the pupil did not sit it. Any school system has to make exactly the fill-or-drop decision, and it changes reported class averages.
 3. **Weather station data.** Instruments break. A station that recorded nothing for three days is not a station that recorded 0 mm of rain, and getting that wrong turns a working sensor into a drought.
@@ -1376,6 +1419,8 @@ one, and its label is literally this week's lesson.*
 
 ## 🔑 Remember This
 
+These are the points to keep from the week. Read them again before you start the workbook.
+
 - **Four kinds of broken: a hole · text pretending to be numbers · the same row twice · several spellings of one thing.** Know all four from memory. This week fixes the first two.
 - **Read `info()` in four steps, out loud, every time:** how many rows · how many non-null · what dtype · and `object` means writing.
 - **`object` is only a problem where you expected numbers.** A column of names *should* be `object`.
@@ -1389,6 +1434,8 @@ one, and its label is literally this week's lesson.*
 - **Look at *whose* data is missing before deciding what to do about it.** Missing data is often not random.
 
 ### Syntax reminder card
+
+Keep this block beside you while you work. It collects every command from the week in the order you use them.
 
 ```python
 import pandas as pd
@@ -1428,6 +1475,8 @@ print(pd.read_csv("club_clean.csv").dtypes)   # int64 on the way back = proof
 
 ## 📓 New Words
 
+This table lists the five words from this week, with an example of each.
+
 ![This week's five words as pictures](../figures/fig-w23-6-vocab-icons.svg)
 *Figure 23.8 — This week's five words, drawn.*
 
@@ -1454,13 +1503,12 @@ Go to **[the Week 23 workbook](../workbook/week-23.md)**. About **60 minutes** i
 | **Build It — the cleaning log** | Repair a 12-row reading log and write the numbered log | 12 min |
 | **Puzzle, Think Deeper, Draw It, Self-Check** | | 5 min |
 
-**Two things are being marked, and the second one is the real one.**
+Two things are being marked, and the second one is the real one.
 
-**Does every line of your cleaning log have a REASON?** Not just what you did. Why that value, why that choice, and what somebody reading your report should be careful about. **The WHY column gets read first and the code gets read second.** Four honest lines beat eight lazy ones.
+1. **Does every line of your cleaning log have a REASON?** Not just what you did. Why that value, why that choice, and what somebody reading your report should be careful about. The WHY column gets read first and the code gets read second. Four honest lines beat eight lazy ones.
+2. **Whose ages were missing, and why might that matter?** Look at those three rows. Look at what *else* is in them. Then say what filling their ages with 12 does to any question you might want to ask about age. That one sentence is worth more than the rest of the page.
 
-**Whose ages were missing, and why might that matter?** Look at those three rows. Look at what *else* is in them. Then say what filling their ages with 12 does to any question you might want to ask about age. That one sentence is worth more than the rest of the page.
-
-> **⚠️ Watch out:** after every single `fillna`, `to_numeric` or `astype`, **run the count again.** `print(df.isna().sum())`. Not "does it look right" — the count. It catches the missing-`=` bug in four seconds, and that bug is going to try to get you at least once.
+> **⚠️ Watch out:** after every `fillna`, `to_numeric` or `astype`, **run the count again.** `print(df.isna().sum())`. Check the count, not whether it looks right. It catches the missing-`=` bug in four seconds, and that bug is going to try to get you at least once.
 
 > **💡 Try this:** when you have finished, swap logs with somebody — a friend, a parent, anybody. **Read only their log, not their code**, and name one number in their report you would not fully trust, and why. That is called peer review, and it is exactly what the log is for.
 

@@ -143,6 +143,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading code and output closely. Write by hand; the laptop is for checking.
+
 **A1. Fill in the blanks.**
 
 An **f-string** is a piece of text with an ______ in front of the opening quote, where anything inside ____________________ gets replaced by its value.
@@ -292,6 +294,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing your own f-strings and `//` and `%` lines. Work on paper first, then run each one.
 
 ---
 
@@ -454,6 +458,8 @@ ________________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
+This page is for practising how to read three different kinds of failure, one run at a time.
+
 Here is `cafe_bill.py`. **Three** things are wrong: one stops Python reading the file at all, one stops it partway through, and one produces **no error whatsoever**.
 
 ```python
@@ -575,6 +581,8 @@ ________________________________________________________________
 
 ### The Receipt That Lies
 
+This puzzle is for looking hard at a printed receipt.
+
 A shop's till prints this:
 
 ```text
@@ -649,6 +657,8 @@ Output: ____________________  Check: ______ × 4 + ______ = ______
 
 ## 🤔 Think Deeper
 
+These two questions are for explaining your thinking in your own words. Write full sentences.
+
 **T1.** `:.2f` shows a number to two places without changing it. **When is hiding digits a kindness, and when is it a lie?**
 
 Write a paragraph. Give one clear example of each, and end with a rule you would actually follow.
@@ -688,6 +698,8 @@ ________________________________________________________________
 ## 🛠️ Build It
 
 ### `receipt.py`, finished properly
+
+This section is for finishing `receipt.py` and checking it against a list.
 
 The four inputs stay at the top. **You choose the number of friends, and it has to be your own real number** — how many people you would actually share a pizza with.
 
@@ -748,6 +760,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for showing sharing and leftovers as a picture.
+
 Draw a **pile of something shared out**, and what is left over. Not pizza — pick your own: sweets, cards, seats on a coach, eggs into boxes.
 
 ![An empty framed drawing area split by a dashed line into the whole pile before sharing and the piles each person gets plus a spare plate, with three reminder boxes underneath](../figures/fig-w03-8-draw-frame.svg)
@@ -771,6 +785,8 @@ Fill in the three boxes underneath: **how many altogether** · **how many each (
 
 ## 📊 Self-Check
 
+This table is for rating yourself honestly. Tick one box in each row.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Build a sentence with an f-string instead of gluing pieces together | ☐ | ☐ | ☐ |
@@ -788,6 +804,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished the pages above.
 
 <details>
 <summary>Check your answers</summary>

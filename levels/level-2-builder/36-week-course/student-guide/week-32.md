@@ -22,6 +22,8 @@
 
 ## 🪝 Start Here
 
+This section starts with a small guessing game. It shows why a new kind of question needs a new kind of score.
+
 **How many minutes did you spend looking at a screen yesterday?**
 
 Don't answer yet. Write it down on a scrap of paper and turn it over.
@@ -48,6 +50,8 @@ And that is the problem, because **I am never going to guess your screen time to
 ---
 
 ## 🧠 The Big Idea
+
+This section explains the five ideas of the week: regression, the line, the miss, MAE and R². Each one has a plain explanation, an analogy and a concrete example.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
@@ -111,9 +115,9 @@ That is the whole model. **Two numbers.** Where the tree gave you four sentences
 | E | 5 | 68 |
 | F | 6 | 68 |
 
-The line that fits those six best is:
+The line that fits those six best is written like this:
 
-```
+```text
 marks = 3.6 × hours + 49.4
 ```
 
@@ -128,13 +132,15 @@ You say:
 
 > *"Each extra hour of revision a week goes with about **3.6 more marks**."*
 
-Three things about that sentence and all three matter:
+That sentence has three parts, and all three matter:
 
 - **Unit on the number, unit on the "per".** Marks, per one hour a week.
 - **"goes with", not "causes".** This is Week 27 again. The six people who revised more happened to score more. That is not proof that revising *makes* you score more — maybe the confident ones both revised more *and* scored more anyway. *"Goes with"* is a claim you can defend. *"Causes"* is one you cannot.
 - **"per one".** A slope is always per **one** unit of x. If the "per one" is missing, the sentence is not finished.
 
-```
+Here are two wrong ways and one right way to say it:
+
+```text
    ✗  "the slope is 3.6"
    ✗  "one hour of revision causes 3.6 marks"
    ✓  "one extra hour a week goes with about 3.6 more marks"
@@ -183,9 +189,9 @@ So: **throw the signs away.** Keep only the sizes. That is the next idea.
 
 And notice: two strips, one "over" and one "under", do **not** cancel out on the table. Being 5 marks over and 5 marks under is **two** mistakes, not zero mistakes.
 
-**The concrete version.**
+**The concrete version.** Here is the sum for our six classmates:
 
-```
+```text
 sizes:  5.0  3.4  2.8  1.2  0.6  3.0
 total:  16.0
 MAE  =  16.0 ÷ 6  =  2.6666...  =  2.67 marks
@@ -214,7 +220,9 @@ So there is a second score, and it answers a completely different question: **ho
 
 **The concrete version.** For our six classmates: guessing the average of 62 every single time would be off by **5.33 marks** on average. Our line is off by **2.67 marks**. So the line is about **half as wrong as not bothering at all**, and R² puts a number on that:
 
-```
+For these six, the score is:
+
+```text
 R² = 0.804
 ```
 
@@ -222,7 +230,7 @@ Read it: *"the line explains about 80% of the up-and-down in these marks."*
 
 **And here is the trap, which is the hardest idea in the week.** R² is **not** a measure of how good you are. It is a measure of how much better you are than guessing the average. Watch what that does.
 
-Take the iris flowers. Hide one measurement, try to predict it from the other three, and do that four times:
+Take the iris flowers. Hide one measurement and try to predict it from the other three. Do that four times, once for each measurement:
 
 ```text
 measurement we hid    MAE (cm)      R2  mean-guess MAE
@@ -252,7 +260,7 @@ And a third, which is why that table is here at all: **lines do not fit everythi
 
 ## 💻 Type This
 
-New file: `week32_study_line.py`.
+In this section you build the program for the week, one step at a time. Make a new file called `week32_study_line.py`. The complete finished program is at the end.
 
 ### Step 1 — The data, and the shape check
 
@@ -462,6 +470,8 @@ somebody who revises 20 hours      : [121.4]
 
 ## 🔍 Worked Examples
 
+These three examples use the same recipe on new data: a food stall, a cricketer and a school. For each one, say the slope and the MAE as a sentence with units.
+
 ### Worked Example 1 — The juice stall (food)
 
 Seven days at a lemonade stall. `x` = the day's temperature in °C, `y` = cups sold.
@@ -631,7 +641,7 @@ Missed 25 lessons → **−20.2 marks.**
 
 ## 🐞 When It Breaks
 
-Every message below came out of a real run. **Read the last line first.**
+This section shows three errors you may meet this week, with what each one means and how to fix it. Every message below came out of a real run. **Read the last line first.**
 
 ### Error 1 — one flat list where a table was wanted
 
@@ -723,6 +733,8 @@ print("slope:", model.coef_)
 
 ## 🎲 What We Did In Class
 
+This section records what we did in class: fitting a line by hand, checking it with arithmetic, and measuring the MAE off the paper.
+
 **The laptop stayed shut for the first twenty minutes. That was on purpose.**
 
 ### Part A — Fit the line by hand, with a ruler
@@ -741,7 +753,7 @@ You need graph paper (5 mm squares), a ruler with millimetres, a sharp pencil an
 
 Then write it on the paper, in words:
 
-```
+```text
    my slope:  about ______ marks per extra hour of revision
 ```
 
@@ -753,7 +765,7 @@ Then we did the same job with a pencil, to prove the computer is not doing anyth
 
 **Step 1 — the two means.**
 
-```
+```text
 x̄ = (1 + 2 + 3 + 4 + 5 + 6) ÷ 6 = 21 ÷ 6 = 3.5
 ȳ = (48 + 60 + 63 + 65 + 68 + 68) ÷ 6 = 372 ÷ 6 = 62
 ```
@@ -774,7 +786,7 @@ x̄ = (1 + 2 + 3 + 4 + 5 + 6) ÷ 6 = 21 ÷ 6 = 3.5
 
 **Step 3 — slope and intercept.**
 
-```
+```text
 slope     = 63.0 ÷ 17.5 = 3.6
 intercept = ȳ − slope × x̄ = 62 − 3.6 × 3.5 = 62 − 12.6 = 49.4
 ```
@@ -793,7 +805,7 @@ Your **eye** got within a few tenths of the answer that took a page of arithmeti
 
 Measure each of the six vertical gaps with the ruler, in marks, against your drawn line. Write the six sizes with **no signs**. Add them. Divide by 6. Then finish the sentence:
 
-```
+```text
    my MAE:  about ______ marks.
    Which means: "on average my line is off by about ______ marks."
 ```
@@ -804,7 +816,7 @@ Against the exact line the six sizes are 5.0, 3.4, 2.8, 1.2, 0.6 and 3.0, totall
 
 **Solve for the impossible.** Our line is `marks = 3.6 × hours + 49.4`. Solve `3.6h + 49.4 = 100` for `h`.
 
-```
+```text
 3.6h = 100 − 49.4 = 50.6
 h    = 50.6 ÷ 3.6 = 14.06
 ```
@@ -814,6 +826,8 @@ h    = 50.6 ÷ 3.6 = 14.06
 ---
 
 ## 💬 Talk About It
+
+Talk through these three questions with a friend or a grown-up. The hints are there to help you start.
 
 **1. The line does not pass through a single one of the six dots. A friend says that proves it is a bad line. What is the strongest answer you can give?**
 
@@ -830,6 +844,8 @@ h    = 50.6 ÷ 3.6 = 14.06
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four wrong ideas that sound reasonable. Each one is shown next to the right idea.
 
 ### Trick 1 — "R² of 0.804 means 80% accurate"
 
@@ -874,6 +890,8 @@ A straight line has no concept of a maximum, a minimum, or reality. The professi
 
 ## 🌍 Where You've Seen This
 
+Lines and misses are not only for school. Here are six places you meet them already.
+
 - **"Arrives in about 22 minutes."** Every food-delivery and taxi app is predicting a number — minutes — from distance, time of day, how busy the kitchen is. And it is scored in minutes, because that is the only unit the person waiting cares about.
 - **A house-price estimate on a property website.** Slope per square metre, slope per bedroom, slope per kilometre from the station. Note that you cannot rank those features by the size of their slopes: a slope depends on its units, and square metres range over hundreds while bedrooms range over three.
 - **The battery percentage estimate on your phone.** "3 hours 20 minutes remaining" is a number fitted from how fast the charge has been dropping. Watch what happens when you open a game: the line was built from evidence that no longer applies.
@@ -884,6 +902,8 @@ A straight line has no concept of a maximum, a minimum, or reality. The professi
 ---
 
 ## 🧭 Where This Fits
+
+This section shows where this week sits on the course map and what it connects to.
 
 For four weeks the gold tile did not move. Today it drops one box down, into the very last tile on the
 map — and look at what is *not* in the picture any more. No dashes. Nowhere. Every box is solid, and
@@ -911,6 +931,8 @@ last dashed box on the map has gone. The tile opens with a line drawn through si
 
 ## 🔑 Remember This
 
+Keep these eight points, plus the syntax card below them.
+
 - **Look at the answer column first.** Short fixed list → classification. Any number → regression. It is the first question to ask about any table from now until Week 36.
 - **`Classifier` picks from a list. `Regressor` gives you a number.** Same tools, swapped ending.
 - **A line is exactly two numbers**: a slope and an intercept. `slope × x + intercept = y`.
@@ -921,6 +943,8 @@ last dashed box on the map has gone. The tile opens with a line drawn through si
 - **A straight line does not know where the world stops.** 121 marks out of 100, −20 marks, −55 cups: extrapolation is a limit you state, not a bug you fix.
 
 ### Syntax reminder card
+
+Use this card when you write your own line-fitting code.
 
 ```python
 # ---- X is a TABLE, y is a flat column ----------------------------------
@@ -957,6 +981,8 @@ model.predict([[7]])              # TWO brackets: outer table, inner row
 ---
 
 ## 📓 New Words
+
+These are the five words from this week.
 
 ![Five new words for Week 32](../figures/fig-w32-7-words-slope-intercept-mae.svg)
 *Figure 32.7 — Five words. Two of them are the model, two of them are the score, and one is the name of the whole game.*

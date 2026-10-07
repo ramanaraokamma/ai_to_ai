@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the lesson on one screen. Check it before you start.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -17,11 +19,15 @@
 | **Tech needed** | One laptop, Python 3, terminal open in `~/ai-academy/level2`, editor. Standard library only — **nothing to install**. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day (plus 2 minutes taping the floor) |
 
-> **⚠️ Watch out:** this is the first week where **whitespace changes what the program does**. A student who indents by three spaces on one line and four on the next will get an error that says nothing about spaces. Before the lesson, check that the editor is set to insert **4 spaces** when you press Tab. In VS Code the bottom bar says `Spaces: 4` — click it if it says `Tab Size: 4` with tabs. Two minutes now saves ten minutes of a genuinely baffling `IndentationError`.
+> **⚠️ Watch out:** this is the first week where **whitespace changes what the program does**. Three spaces on one line and four on the next gives an error that says nothing about spaces.
+> Before the lesson, set the editor to insert **4 spaces** when you press Tab. In VS Code the bottom bar says `Spaces: 4` — click it if it says `Tab Size: 4` with tabs.
+> Two minutes now saves ten minutes of a baffling `IndentationError`.
 
 ---
 
 ## 🎯 Lesson Objectives
+
+These are the five things the student should be able to do when the lesson ends.
 
 By the end of the lesson the student can:
 
@@ -39,7 +45,9 @@ Observable evidence: eight predicted booleans on paper, marked against a real ru
 
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
-Everything below assumes you have not programmed. Read it twice and type the code. This week has one genuinely new mental model in it — the fork in the road — and one piece of Python that is unlike most other languages, which is that the *spaces at the front of a line are part of the language*.
+Everything below assumes you have not programmed. Read it twice and type the code.
+
+This week has one new mental model, the fork in the road. It also has one piece of Python that is unlike most other languages: the *spaces at the front of a line are part of the language*.
 
 ### 1. A boolean is a value with exactly two possibilities
 
@@ -98,15 +106,15 @@ True
 False
 ```
 
-Three of those are worth a sentence.
+Three of those are worth a sentence each.
 
-**Line 2, `12 > 12` is `False`.** "Greater than" does not include equal. This is where nearly every off-by-one bug in the course will come from, and it is why `>=` exists.
+- **Line 2, `12 > 12` is `False`.** "Greater than" does not include equal. Nearly every off-by-one bug in the course comes from here, and it is why `>=` exists.
+- **Line 7, `"apple" < "banana"` is `True`.** Comparisons work on text too, and they compare alphabetically — near enough.
+- **Line 8, `"cat" == "Cat"` is `False`.** Case matters, always. This will bite in Week 6, when the student compares a typed day of the week against `"tuesday"` and the human typed `"Tuesday"`. Tools for fixing that (`.lower()`) arrive in Week 6; today, note the flaw and move on.
 
-**Line 7, `"apple" < "banana"` is `True`.** Comparisons work on text too, and they compare alphabetically — near enough. Strictly, Python compares character by character using each character's number in a big standard table, which means **all capital letters sort before all small letters**. So `"Zebra" < "apple"` is also `True`, which surprises people. Do not go into the table today; know the rule in case a student stumbles on it.
+For the `"apple"` line, the strict rule is that Python compares character by character, using each character's number in a big standard table. That means **all capital letters sort before all small letters**, so `"Zebra" < "apple"` is also `True`. Do not go into the table today; know the rule in case a student stumbles on it.
 
-**Line 8, `"cat" == "Cat"` is `False`.** Case matters, always. This will bite in Week 6 when the student compares a typed day of the week against `"tuesday"` and the human typed `"Tuesday"`. Tools for fixing that (`.lower()`) arrive in Week 6; today, note the flaw and move on.
-
-One more, which is a genuinely useful piece of trivia: `7 == 7.0` is `True`. A whole number and a decimal that mean the same amount compare equal, because Python compares the *value*, not the type. But `7 == "7"` is `False`, because a number and text are never equal, however similar they look on screen.
+One more useful piece of trivia: `7 == 7.0` is `True`. A whole number and a decimal that mean the same amount compare equal, because Python compares the *value*, not the type. But `7 == "7"` is `False`, because a number and text are never equal, however similar they look on screen.
 
 ### 2. `=` and `==` are completely different, and this is the week to be firm about it
 
@@ -118,7 +126,9 @@ This is the single most common confusion in the whole of programming, and the re
 ![One is a delivery. One is a verdict.](../figures/fig-w05-3-one-equals-two-equals.svg)
 *Figure 5.1 — One van, one judge. Only one of them belongs inside an `if`.*
 
-If you write `if age = 12:` — one equals sign — Python stops you. And it is worth telling the student that this is a **kindness**, not a rule for the sake of it. In some older languages that exact line is legal: it quietly sets `age` to 12 and then, because 12 counts as "yes", runs the branch every single time. That bug is famous, it has cost real money, and Python's designers decided to make it impossible.
+If you write `if age = 12:` — one equals sign — Python stops you. Tell the student this is a **kindness**, not a rule for the sake of it.
+
+In some older languages that exact line is legal: it quietly sets `age` to 12 and then, because 12 counts as "yes", runs the branch every single time. That bug is famous, it has cost real money, and Python's designers decided to make it impossible.
 
 Here is the real message, on Python 3.10 and later:
 
@@ -165,9 +175,9 @@ Report finished.
 
 Two lines vanished. Nothing else changed.
 
-The anatomy:
+The anatomy of an `if`, line by line:
 
-```
+```text
         if temperature > 37.5:
         ▲        ▲          ▲
         │        │          └── the COLON. It means "the block starts on the next line."
@@ -360,6 +370,8 @@ finished, dotted for not yet.*
 
 ## 🧰 Prep Checklist
 
+This section lists what to do the night before, what to do on the day, and what to do if the equipment fails.
+
 ### 20 minutes the night before
 
 - [ ] **Print the whole workbook.** Its sections run Warm-Up, Predict the Output, Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It, Draw It, Self-Check. The Build It test table (Part 1) prints better in landscape.
@@ -428,6 +440,8 @@ The Hook and the entire Concept segment need no computer at all. This is the mos
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the full lesson plan. Each segment says what to do, what to say and what to ask.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -509,7 +523,7 @@ Yes, for a 12-year-old.
 
 Write them up, big:
 
-```
+```text
    ==   is equal to                 !=   is NOT equal to
    <    is less than                >    is greater than
    <=   is less than or equal to    >=   is greater than or equal to
@@ -800,6 +814,8 @@ Full instructions below. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full set-up and steps for the Their Turn activity, so you can run it without guessing.
+
 ### Setup
 
 **On the table:** the laptop with `ticket_price.py` open · workbook **Build It** (Part 1, the five-row test table, landscape; Part 4, the Bug Log) · a pencil.
@@ -959,6 +975,8 @@ Note the tests chosen: **34 and 35** — the boundary — then 100 and 0 as reas
 
 ## 🐞 The Debugging Clinic
 
+Use this table to look up an error message the student sees, what it means and how to guide them to the fix.
+
 Every message below came from running a real broken version of this week's code. Only the folder path in the `File` line will differ on your machine.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
@@ -992,9 +1010,16 @@ One more thing, specific to `SyntaxError`: **ask "did anything print?"** If noth
 
 ## ❓ Questions Students Ask This Week
 
+This section lists questions students tend to ask this week, with an answer you can say aloud.
+
 **"Why does Python use spaces instead of brackets? Every other language uses brackets."**
 
-Two honest halves. The argument for it: in a language with brackets, you can indent your code to say one thing and have the brackets say another, and then the code lies to you. Python makes that impossible — what you see is what runs, so a badly-laid-out Python program cannot pretend to be a well-laid-out one. The argument against it: whitespace is invisible, so an error can be caused by something you literally cannot see, and copying code off a web page sometimes breaks it in ways no other language suffers from. **Programmers argue about this genuinely and permanently.** Most people who use Python for a while stop minding, and quite a lot of them come to prefer it. Either way, it is the deal, and it is why your editor's indent setting matters.
+Two honest halves.
+
+- **For:** in a language with brackets, you can indent your code to say one thing and have the brackets say another, and then the code lies to you. Python makes that impossible — what you see is what runs, so a badly-laid-out Python program cannot pretend to be a well-laid-out one.
+- **Against:** whitespace is invisible, so an error can be caused by something you literally cannot see. Copying code off a web page sometimes breaks it in ways no other language suffers from.
+
+**Programmers argue about this genuinely and permanently.** Most people who use Python for a while stop minding, and quite a lot of them come to prefer it. Either way, it is the deal, and it is why your editor's indent setting matters.
 
 **"How many spaces do I have to use? Is it always four?"**
 
@@ -1022,11 +1047,19 @@ Because "it works" is a statement about the runs you did, and nothing else. You 
 
 **"Which is worse — a program that crashes or one that prints nothing?"** *(This one has no settled answer.)*
 
-**Nobody fully agrees, and here is why it is a real disagreement rather than a dodge.** A crash is loud: you cannot miss it, it names a line, and it tells you a category of mistake. Printing nothing is silent, and silence is indistinguishable from "there was nothing to say" — which is sometimes a perfectly valid answer. So on the face of it, crashing wins. But it depends entirely on **who is on the other end.** If it is you, five seconds after typing the code, crashing is obviously better. If it is a stranger using your program, a crash may lose their work, while printing nothing at least leaves them able to try again. Real systems make different choices for different layers: the bit you are developing crashes loudly on purpose, and the bit the public touches is wrapped in something that refuses to crash and writes the problem down somewhere instead. The uncomfortable part, and the reason this is contested, is that "refuses to crash" is exactly how a system ends up quietly wrong for six months. There is no rule that gets you out of the trade-off; you have to decide what failure should look like, and that is a design decision, not a fact about Python.
+**Nobody fully agrees, and here is why it is a real disagreement rather than a dodge.** A crash is loud: you cannot miss it, it names a line, and it tells you a category of mistake. Printing nothing is silent, and silence is indistinguishable from "there was nothing to say" — which is sometimes a perfectly valid answer. So on the face of it, crashing wins.
+
+But it depends entirely on **who is on the other end.** If it is you, five seconds after typing the code, crashing is obviously better. If it is a stranger using your program, a crash may lose their work, while printing nothing at least leaves them able to try again.
+
+Real systems make different choices for different layers. The bit you are developing crashes loudly on purpose. The bit the public touches is wrapped in something that refuses to crash and writes the problem down somewhere instead.
+
+The uncomfortable part, and the reason this is contested, is that "refuses to crash" is exactly how a system ends up quietly wrong for six months. There is no rule that gets you out of the trade-off; you have to decide what failure should look like, and that is a design decision, not a fact about Python.
 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This section lists the problems that usually come up, why they happen, and what to do on the spot.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1044,6 +1077,8 @@ Because "it works" is a statement about the runs you did, and nothing else. You 
 ---
 
 ## 🧭 Differentiation
+
+This section says what to change when a student is struggling, on track or racing ahead.
 
 ### If the student is struggling
 
@@ -1149,6 +1184,8 @@ Then one question to finish: *"give me a sentence that genuinely has no True-or-
 
 ## ✅ Assessing Understanding
 
+This section helps you decide whether the lesson worked, using three short checks and a mastery scale.
+
 Three checks, five minutes, exact wording.
 
 **Check 1 — comparisons (spoken, fast)**
@@ -1193,6 +1230,8 @@ print("C")
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to assign the homework and the time it should take.
 
 **Say this:**
 
@@ -1436,7 +1475,13 @@ The impossible row swaps places. Same shape, same branches, different reachable 
 
 Either side scores if the cost is named. "It's easier" with no cost caps at half marks.
 
-**T2. Who does `ticket_price.py` treat badly?** Full marks needs a **specific** person, the recognition that the rule is not thereby "wrong", and the insight that moving the boundary only changes who stands on it. Good examples: someone whose 13th birthday is today (child yesterday, adult today, nothing else changed); a 12-year-old taller than the ticket seller; a 30-year-old with no money beside a 12-year-old with plenty. A cinema has to draw a line somewhere, so no version with two prices avoids this. What a program can do is make the rule clear so a human can see the choice and argue with it. This echoes Level 1's work on fair-looking rules meeting people they were not designed for, and returns in Week 30. "Some people" with no specifics gets no more than half marks.
+**T2. Who does `ticket_price.py` treat badly?** Full marks needs a **specific** person, the recognition that the rule is not thereby "wrong", and the insight that moving the boundary only changes who stands on it.
+
+Good examples: someone whose 13th birthday is today (child yesterday, adult today, nothing else changed); a 12-year-old taller than the ticket seller; a 30-year-old with no money beside a 12-year-old with plenty.
+
+A cinema has to draw a line somewhere, so no version with two prices avoids this. What a program can do is make the rule clear so a human can see the choice and argue with it. This echoes Level 1's work on fair-looking rules meeting people they were not designed for, and returns in Week 30.
+
+"Some people" with no specifics gets no more than half marks.
 
 ### Build It
 
@@ -1464,7 +1509,18 @@ The "predicted" column must have been filled **before** Enter; ask. A predicted 
 
 **(a)** No. 8 is a child and 40 an adult either way, so they would have shipped the bug. **(b) The rule:** whenever you write a number in a condition, test that number and the one just below it; a test that gives the same answer on the broken and the correct version tells you nothing. **(c)** The price appears exactly once, so a price rise is a one-line change with no chance of fixing one of two copies; it also gives the number a name, so the block reads `price = child_price` rather than an unexplained 120. Accept "changing it in one place" plus one of the other two benefits.
 
-**Part 3, their own two-way decision.** Marked on structure, not subject, using the workbook's checklist, one mark each: runs with no traceback; exactly one `if` and one `else`, each with a colon; every line in each block indented the same amount; `int()` or `float()` on numeric input; at least one line at the margin that runs either way; tested on the boundary value **and** the one below it; every line commented with *why*. Check that "My boundary value is ___, so the two values I must test are ___ and ___" names a pair that really straddles the condition (for `>= 35`, that is 35 and 34). Model answer:
+
+**Part 3, their own two-way decision.** Marked on structure, not subject, using the workbook's checklist, one mark each:
+
+- runs with no traceback
+- exactly one `if` and one `else`, each with a colon
+- every line in each block indented the same amount
+- `int()` or `float()` on numeric input
+- at least one line at the margin that runs either way
+- tested on the boundary value **and** the one below it
+- every line commented with *why*
+
+Check that "My boundary value is ___, so the two values I must test are ___ and ___" names a pair that really straddles the condition (for `>= 35`, that is 35 and 34). Model answer:
 
 ```python
 # pass_fail.py - one mark in, one verdict out.

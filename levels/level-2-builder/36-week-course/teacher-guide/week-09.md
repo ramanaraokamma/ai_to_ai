@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the whole lesson on one screen. Check it before you start.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -17,13 +19,15 @@
 | **Tech needed** | Python 3, an editor that can show two files side by side (or two windows), one terminal. **No libraries at all** — nothing to install. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
-> **⚠️ Watch out:** this week's material is **the student's own code**, and that is the entire design. Do not substitute the examples in this file for their files. The moment that makes a function feel necessary is the moment they see *their own* five lines, in *their own* handwriting, sitting in three different files — and that moment cannot be manufactured with somebody else's program. **Check the night before that those files still exist and still run.** If they have been deleted, spend the first ten minutes retyping one of them together; that is a better lesson than a substitute.
+> **⚠️ Watch out:** this week's material is **the student's own code**, and that is the entire design. Do not substitute the examples in this file for their files. A function feels necessary when the student sees *their own* five lines, in *their own* handwriting, in three different files, and somebody else's program cannot do that. **Check the night before that those files still exist and still run.** If they have been deleted, spend the first ten minutes retyping one of them together; that is a better lesson than a substitute.
 
 > **⚠️ Also watch out:** the second half is a timed repair round over ten broken programs, and the output of this lesson is **a list of weeks to revisit, not a mark.** If the student produces a number and treats it as a grade, the checkpoint has failed. Say so out loud before you start the timer.
 
 ---
 
 ## 🎯 Lesson Objectives
+
+This section says what the student should be able to do when the lesson ends.
 
 By the end of the lesson the student can:
 
@@ -39,13 +43,17 @@ Observable evidence: ten repaired programs that run; a Bug Log where every entry
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is your own preparation. It walks through the ideas and traps of the week in the order you will meet them.
+
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
-**You do not need to have programmed before to teach this.** Read this once with the laptop open and type every program in it. About 25 minutes. This week has one new idea, and it is the idea that separates "someone who can write ten lines" from "someone who can write a program".
+**You do not need to have programmed before to teach this.** Read this once with the laptop open and type every program in it. It takes about 25 minutes.
+
+This week has one new idea. It is the idea that separates "someone who can write ten lines" from "someone who can write a program".
 
 ### 1. The problem functions solve, in one concrete example
 
-Here is a file that repeats itself. It is not a made-up example — it is exactly the shape of what your student has been writing for eight weeks. Save it as `report_long.py` and run it.
+Here is a file that repeats itself. It has the same shape as what your student has been writing for eight weeks. Save it as `report_long.py` and run it.
 
 ```python
 # report_long.py - the version with the same five lines pasted three times.
@@ -134,7 +142,7 @@ print("Highest      : 100")
 print_header()                                   # and again
 ```
 
-**Run both files and compare their output.** Here is the check, and it is the check the student must do too:
+Run both files and compare their output. This is the check the student must do too:
 
 ```text
 $ python3 report_long.py > long.txt
@@ -149,7 +157,7 @@ $
 > **define** — writing the block down and giving it a name. `def print_header():`. Nothing runs.
 > **call** — running it. `print_header()`. The block runs, top to bottom.
 
-**The two-column table below is the single most useful thing on this page. Draw it on paper for the student.**
+Draw this two-column table on paper for the student. It is the most useful picture on this page:
 
 ```text
    DEFINING                            CALLING
@@ -160,7 +168,7 @@ $
    The colon and the indent matter.    The brackets matter.
 ```
 
-**A function you define and never call does absolutely nothing.** That is not a bug; it is the entire point of separating the two acts. Run this and see:
+**A function you define and never call does nothing.** That is not a bug; it is the point of separating the two acts. Run this file:
 
 ```python
 def print_header():
@@ -170,9 +178,11 @@ def print_header():
 ```text
 ```
 
-No output. No error. Exit code 0. Python read the recipe, filed it under `print_header`, and reached the end of the file with nothing to do. **If a student runs a file and gets no output whatsoever, the first question is always "did you call it?"**
+No output. No error. Exit code 0. Python read the recipe, filed it under `print_header`, and reached the end of the file with nothing to do.
 
-And here is the near-miss version, which is worse because it looks right:
+**If a student runs a file and gets no output at all, the first question is always "did you call it?"**
+
+Here is a near-miss version. It is worse because it looks right:
 
 ```python
 def print_header():
@@ -184,19 +194,19 @@ print_header
 ```text
 ```
 
-Also nothing. `print_header` without brackets is the *name* of the function — it refers to the recipe rather than cooking it. **The brackets are what mean "do it".** This one has no error message at all and it catches people for years.
+Also nothing. `print_header` without brackets is the *name* of the function. It points at the recipe and does not cook it. **The brackets are what mean "do it".** There is no error message, and it catches people for years.
 
 ![Define it once, call it as often as you like](../figures/fig-w09-2-function-machine-named.svg)
 *Figure 9.2 — The machine is defined once and sits there. Each call is a press of the button. A machine nobody presses does nothing, and that is not a fault.*
 
 ### 3. Why the indent and the colon are the same rules as before
 
-Good news for you: there is **no new punctuation this week.** `def name():` uses exactly the two rules the student already knows from `if` and `for`:
+This section shows that `def` brings **no new punctuation this week.** `def name():` uses the two rules the student already knows from `if` and `for`:
 
 - **A colon at the end** means "the indented block below belongs to me."
 - **The indent is the block.** Everything indented under the `def` is inside the function; the first line back at the margin is outside it again.
 
-So the three errors they already know how to read all show up here in a new place:
+So two errors they already know how to read show up here in a new place. Here is the first:
 
 ```python
 def print_header()
@@ -224,15 +234,17 @@ print("=" * 20)
 IndentationError: expected an indented block after function definition on line 1
 ```
 
-Same shape as `for` with no indented body — and notice Python names the construct precisely: *"after function definition"*. **Python's error messages tell you which kind of block you failed to fill in.** That is worth pointing out; it turns a scary message into a useful one.
+This has the same shape as a `for` with no indented body. Python names the construct: *"after function definition"*.
+
+**Python's error messages tell you which kind of block you failed to fill in.** Point this out; it turns a scary message into a useful one.
 
 ### 4. `return` — the thing that makes functions worth having
 
-So far every function has printed. `print` puts characters on the screen where a human can read them. **`return` hands a value back to the line that called the function**, so the program can use it.
+This section separates two things that look alike: printing and returning. `print` puts characters on the screen where a human can read them. **`return` hands a value back to the line that called the function**, so the program can use it.
 
 > **return** — immediately ends the function and hands one value back to whoever called it.
 
-This is the distinction that matters most, and the fastest way to see it is side by side. Type this file:
+This is the distinction that matters most. The fastest way to see it is side by side. Type this file:
 
 ```python
 # show_vs_give.py - one shouts the answer, the other hands it over.
@@ -269,7 +281,7 @@ Walk those four lines with a finger:
 | `75.0` | `print(handed)`. The returned value, printed by *us*, not by the function. |
 | `100.0` | `handed + 25`. It is a real number, so it can be used. |
 
-**And here is what happens if you try to do maths with a shouted answer:**
+Now try maths with a shouted answer. Type this file:
 
 ```python
 def show_average():
@@ -286,19 +298,23 @@ Traceback (most recent call last):
 TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
 ```
 
-The `75.0` was printed — you can see it — and then the program crashed trying to add 25 to nothing. **`NoneType` in a `TypeError` almost always means "a function you called forgot to return something."** That is one of the most useful sentences in this whole course and it will save the student an hour in Week 10.
+The `75.0` was printed, and then the program crashed trying to add 25 to nothing. **`NoneType` in a `TypeError` almost always means "a function you called forgot to return something."**
+
+That is one of the most useful sentences in this course. It will save the student an hour in Week 10.
 
 ![Shouting it across the room, or handing over the plate](../figures/fig-w09-3-return-hands-it-back.svg)
 *Figure 9.3 — Printing sends the answer to the screen and leaves the caller's hands empty. Returning puts it in the caller's hands, where it can be stored, added to, or printed later.*
 
-**The analogy to use out loud:**
+Use this analogy out loud:
 
 - **A function that prints is a waiter who shouts your order across the restaurant.** Everyone hears it. Nobody can eat it.
 - **A function that returns is a waiter who brings the plate to your table.** Now you can eat it, share it, weigh it, or take a photo.
 
-You can always print a returned value — `print(give_average())` works fine. You can **never** recover a printed one. So the rule, which the student should write down: **return by default; print only at the very edge of the program, where a human is actually reading.**
+You can always print a returned value: `print(give_average())` works fine. You can **never** recover a printed one.
 
-Here is `return` doing real work, using Week 7's accumulator:
+The student should write down this rule: **return by default; print only at the very edge of the program, where a human is actually reading.**
+
+Here is `return` doing real work, using Week 7's accumulator. Type it and run it:
 
 ```python
 # average_fn.py - a function that hands a number back.
@@ -321,11 +337,11 @@ Average : 75.00
 Doubled : 150.00
 ```
 
-Same 75 as Week 7 and Week 8, from a program with a completely different shape. **That agreement across three weeks is the checkpoint doing its job.**
+This is the same 75 as Week 7 and Week 8, from a program with a different shape. **That agreement across three weeks is the checkpoint doing its job.**
 
 ### 5. What `return` does to the rest of the function
 
-One more fact, and it is short: **`return` ends the function immediately.** Nothing after it runs.
+This section covers one more short fact: **`return` ends the function immediately.** Nothing after it runs.
 
 ```python
 def give_average():
@@ -333,19 +349,25 @@ def give_average():
     print("this line never runs")
 ```
 
-Call it and nothing is printed. That is not a bug and there is no warning. Say it once, plainly, and move on — a student who puts a `print` after a `return` and cannot see why it is silent has met one of the classic five-minute mysteries.
+Call it and nothing is printed. That is not a bug, and there is no warning. Say it once, plainly, and move on. A student who puts a `print` after a `return` and cannot see why it is silent has met one of the classic five-minute mysteries.
 
 ### 6. What this week deliberately does **not** cover
 
-Week 9 gives functions with **no inputs**. `print_header()` prints the same banner every time and there is nowhere to tell it "make it forty wide instead of thirty-four". That hole is obvious, students notice it, and **it is Week 10's entire lesson.**
+Week 9 gives functions with **no inputs**. `print_header()` prints the same banner every time, and there is nowhere to tell it "make it forty wide instead of thirty-four". Students notice this hole, and **it is Week 10's entire lesson.**
 
-When they notice — and a good student will, within about four minutes — say exactly this: *"You've found next week. That's a real limitation and the answer is one line of new syntax. Write the question down."* Do not teach parameters today. Two new ideas in a checkpoint week is one too many, and the checkpoint half of the lesson is the half that matters more.
+A good student will notice within about four minutes. When they do, say exactly this: *"You've found next week. That's a real limitation and the answer is one line of new syntax. Write the question down."* Do not teach parameters today. Two new ideas in a checkpoint week is one too many, and the checkpoint half of the lesson is the half that matters more.
 
-Also not today: `None` as a vocabulary word (show the output, name it next week) · scope, and why a variable inside a function is invisible outside it (Week 10) · docstrings · returning more than one value · functions calling themselves.
+Also not today:
+
+- `None` as a vocabulary word (show the output, name it next week)
+- scope, and why a variable inside a function is invisible outside it (Week 10)
+- docstrings
+- returning more than one value
+- functions calling themselves
 
 ### 7. The three error families — the backbone of the second half
 
-The repair round works because of a sorting idea, and it is worth having in your own head before you teach it. **Every mistake in Term 1 falls into one of three families, and you can tell which from the message alone.**
+The repair round works because of a sorting idea. Have it clear in your own head before you teach it. **Every mistake in Term 1 falls into one of three families, and you can tell which from the message alone.**
 
 | Family | What you see | What it means | Members met so far |
 |---|---|---|---|
@@ -356,7 +378,7 @@ The repair round works because of a sorting idea, and it is worth having in your
 ![Three families of trouble](../figures/fig-w09-4-term1-error-family-tree.svg)
 *Figure 9.4 — Read the last line first: it names the family. Then read the line number: it names the place. The third family has neither, which is what makes it the expensive one.*
 
-**Two things to be able to say confidently, because a student will ask both:**
+A student will ask both of these questions, so have an answer ready:
 
 - **Why is "it never started" the friendliest?** Because you find out instantly and nothing wrong has happened yet. No file was written, no answer was reported, nobody was told anything untrue.
 - **Why is the third family the expensive one?** Because it survives. It goes into the homework, into the marks the program printed, into next term. The grade program from Week 6 would have handed thirty students a wrong grade and nobody would ever have known.
@@ -371,9 +393,27 @@ The repair round works because of a sorting idea, and it is worth having in your
 
 ### 9. How deep to go, and where to stop
 
-**Go this far:** `def name():` with a colon and an indented body · `name()` with brackets to run it · define-once-call-many · defining is not running · `return value` hands one value back · a function with no `return` hands back `None` · `return` ends the function · sorting a traceback into one of three families from the last line alone · repairing broken programs from weeks 1–8 unaided.
+**Go this far:**
 
-**Stop before:** parameters and arguments (Week 10) · default values (Week 10) · scope (Week 10) · returning two things · `None` as vocabulary · lists (Week 11) · anything about whether functions should be "pure".
+- `def name():` with a colon and an indented body
+- `name()` with brackets to run it
+- define-once-call-many
+- defining is not running
+- `return value` hands one value back
+- a function with no `return` hands back `None`
+- `return` ends the function
+- sorting a traceback into one of three families from the last line alone
+- repairing broken programs from weeks 1–8 unaided
+
+**Stop before:**
+
+- parameters and arguments (Week 10)
+- default values (Week 10)
+- scope (Week 10)
+- returning two things
+- `None` as vocabulary
+- lists (Week 11)
+- anything about whether functions should be "pure"
 
 **And one thing to stop yourself doing:** do not turn the repair round into a lecture. Ten programs in twelve minutes means about seventy seconds each, and your job during those twelve minutes is to say almost nothing. If they are stuck for more than ninety seconds on one, tell them to write down which week it came from and move to the next. **The list of weeks is the product of this lesson. The repairs are just how the list gets written.**
 
@@ -400,7 +440,7 @@ of stage one is plain white and the badge crosses the first arrow into stage two
 3. **Have them ink in stage one on their own pencil copy.** Nine weeks, one stage, in pen. Term 1's
    product is not a program; it is a learner who can read their own file and fix it.
 
-> **🧑‍🏫 Why this is worth two minutes.** This is a checkpoint week and some of the class will arrive
+> **🧑‍🏫 Why this is worth two minutes.** This is a checkpoint week and some students will arrive
 > at it feeling like they have learned an assortment of unrelated tricks. The map is the argument that
 > they have not: printing, variables, decisions, loops and functions are one stage of one pipeline.
 
@@ -410,6 +450,8 @@ of stage one is plain white and the badge crosses the first arrow into stage two
 ---
 
 ## 🧰 Prep Checklist
+
+Use this section to get ready. Do the night-before list first, then the short day-of list. The fallback table covers what to do if something fails.
 
 ### 20 minutes the night before
 
@@ -463,6 +505,8 @@ of stage one is plain white and the badge crosses the first arrow into stage two
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the script for the whole lesson. Each step gives you words to say, questions to ask and answers to expect.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — The Repetition Hunt | 7 | 7 | Their own files, three colours, one uncomfortable count |
@@ -489,7 +533,7 @@ Wait. They will find the banner within about thirty seconds — the `print("=" *
 
 > "Good. Take a pencil and circle it. Both copies, same colour."
 
-Then:
+Then say:
 
 > "Now open `about_me.py` from Week 4."
 
@@ -922,6 +966,8 @@ Then the homework, using the script in **📤 Homework to Assign**:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the timed repair round and what comes after it. The lesson plan above only summarises it.
+
 ### Setup
 
 **On the table:** the ten broken programs — either as ten files `bug01.py` … `bug10.py` or as ten printed slips · the Bug Log, open · the workbook's Build It, Part 1 (the ten repairs) · Build It, Parts 5 and 6 (the reflection sheet and the revision list) · **the blank sheet headed "Weeks to revisit"** · a pencil · a timer.
@@ -944,7 +990,7 @@ Then the homework, using the script in **📤 Homework to Assign**:
 
 Start the timer. **Then be quiet.** Your job for twelve minutes is to hand over slips and say almost nothing. If they ask, answer with a question from the list at the end of the Clinic.
 
-The ten programs, their real messages, and their fixes are in the Answer Key (Build It, Part 1). Here they are as a marking grid so you can see the coverage at a glance:
+The ten programs, their real messages and their fixes are in the Answer Key (Build It, Part 1). This marking grid shows the coverage at a glance:
 
 | # | From | Family | What it is |
 |---|---|---|---|
@@ -959,7 +1005,7 @@ The ten programs, their real messages, and their fixes are in the Answer Key (Bu
 | 9 | Week 7 | **finished and lied** | off-by-one — nine numbers where ten were wanted |
 | 10 | Week 8 | started, stopped | infinite loop, `KeyboardInterrupt` — no change step |
 
-**Three of the ten have no error message at all.** That is deliberate and it is the proportion that matters: if a student gets seven of the seven noisy ones and none of the three silent ones, you have learnt something very specific about what to teach next.
+**Three of the ten have no error message at all.** That is deliberate, and the proportion matters. If a student gets seven of the seven noisy ones and none of the three silent ones, you know what to teach next.
 
 ### Part 2 — Sort the Bug Log into families (4 minutes)
 
@@ -967,7 +1013,7 @@ The ten programs, their real messages, and their fixes are in the Answer Key (Bu
 
 > "Bug Log, page one. Every entry. Put a 1, a 2 or a 3 next to it — never started, started then stopped, or finished and lied. Do them all, fast, and then count the threes."
 
-This takes three minutes for a term's worth of entries and it produces two numbers worth having:
+This takes three minutes for a term's worth of entries. It produces two numbers worth having:
 
 - **The total number of entries.** A student with fifteen has been logging honestly. A student with three has not been logging, and that goes on the revision list as a habit rather than a topic.
 - **How many are family three.** Silent bugs are the ones that will hurt them in the capstone, and knowing their own count changes how carefully they test.
@@ -986,7 +1032,7 @@ Weeks 6 and 7 usually. That is not a coincidence — `elif` chains and `range` b
 
 > "No marks. A list. Three columns: **which week**, **what specifically**, and **how you'll know you've fixed it.** That third column is the one that makes this useful — 'revise Week 6' is a wish, 'write a four-branch chain and test both sides of every boundary' is a plan."
 
-A realistic, good example of a completed sheet:
+Here is a realistic example of a good completed sheet:
 
 | Week | What specifically | How I'll know I've got it |
 |---|---|---|
@@ -997,9 +1043,11 @@ A realistic, good example of a completed sheet:
 
 **Notice the last row has no week in it.** A habit is a legitimate finding and it belongs on the list.
 
-> **🧑‍🏫 If a student asks "so how did I do?"** — answer honestly and specifically, and do not give a number. Something like: *"You got seven of the ten, and the three you missed were all the silent ones, which tells us exactly what to work on. You're solid on reading tracebacks and you're not yet in the habit of checking output that looks plausible. That's a very normal place to be in week nine and it's completely fixable."* **A number would tell them less than that sentence does.**
+> **🧑‍🏫 If a student asks "so how did I do?"** Answer honestly and specifically, and do not give a number. Something like: *"You got seven of the ten, and the three you missed were all the silent ones, which tells us exactly what to work on. You're solid on reading tracebacks and you're not yet in the habit of checking output that looks plausible. That's a very normal place to be in week nine and it's completely fixable."* **A number would tell them less than that sentence does.**
 
 ### What "finished" looks like
+
+The lesson is done when all of these are true:
 
 - One of their own files has a repeated block replaced by a function, and the output is provably unchanged (`diff` silent, or the two outputs read aloud in unison).
 - The student can state the difference between defining and calling, and can say what a function with no `return` hands back.
@@ -1010,6 +1058,8 @@ A realistic, good example of a completed sheet:
 
 ### Variation — easier
 
+Use any of these if the student is finding the lesson hard:
+
 - **Six programs instead of ten.** Use 1, 2, 3, 5, 7 and 9. That keeps one from each family and drops the fiddliest ones.
 - **Tell them the family before they start** on each slip. Diagnosing *within* a known family is much easier and still valuable.
 - **Do the repairs on paper**, with no running. Reading a traceback and saying the fix out loud is the skill; typing it is not.
@@ -1019,7 +1069,7 @@ A realistic, good example of a completed sheet:
 
 ### Variation — harder
 
-None of these need syntax they have not met.
+Use these for a student who finishes early. None of them need syntax the student has not met.
 
 1. **Three functions, not one.** Extract the banner, the divider and the goodbye block. Then have one function call another:
 
@@ -1078,7 +1128,7 @@ None of these need syntax they have not met.
 
 ## 🐞 The Debugging Clinic
 
-Every message below came from running a real broken version of this week's code. Only the folder path in the `File` line will differ on your machine.
+Use this table to diagnose a student's broken program quickly. Every message below came from running a real broken version of this week's code. Only the folder path in the `File` line will differ on your machine.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
 |---|---|---|---|
@@ -1098,35 +1148,45 @@ Every message below came from running a real broken version of this week's code.
 
 ### How to teach debugging without giving the answer
 
-By Week 9 the six habits are established: **hands off the keyboard · last line first · ask, do not tell · log it · count, do not read · Ctrl+C first, think second.** This week adds the last one of Term 1, and it is the one that makes the other six usable.
+By Week 9 the six habits are established: **hands off the keyboard · last line first · ask, do not tell · log it · count, do not read · Ctrl+C first, think second.**
+
+This week adds the last habit of Term 1. It is the one that makes the other six usable.
 
 **7. Name the family before you look for the bug.**
 
-Before reading a single line of the program, read the *message* and say which of the three families it is in. That one decision narrows everything:
+Before reading a single line of the program, read the *message* and say which of the three families it is in. That one decision narrows everything.
 
 - **Never started?** Then no output on the screen means anything, and the `^` is pointing at the exact character. Look *at that character*, not at the logic.
 - **Started, then stopped?** Then there is a line number and it is trustworthy. Go to that line. And read the message's nouns — `str`, `int`, `NoneType` — because they tell you what kind of thing surprised Python.
 - **Finished and lied?** Then reading will not help you, because every line is legal. **Count something.** Compare it with a hand-worked answer. Predict and check.
 
-Teaching this during the repair round takes three questions and nothing else:
+Teaching this during the repair round takes three questions and nothing else. Ask them in this order:
 
 1. *"Which family?"* — from the message alone, before looking at the code.
 2. *"What's the last line of the message, word for word?"*
 3. *"What did you expect, and what did you get?"* — the only question that works on family three.
 
-And one thing to resist: **do not confirm a correct diagnosis immediately.** Ask "how would you prove it?" first. In family three, being sure without proof is exactly the habit that caused the bug.
+One thing to resist: **do not confirm a correct diagnosis immediately.** Ask "how would you prove it?" first. In family three, being sure without proof is exactly the habit that caused the bug.
 
 ---
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions students tend to ask, each with an answer you can use.
+
 **"Why do I need a function? Copy and paste works."**
 
-It does work, and it keeps working right up until the day you change your mind. Then you have three copies and you have to change all three, and nothing on earth will tell you that you missed one. But the deeper answer is the one from the Hook: **you cannot check that three copies are identical.** You can look at them, and they will look the same, and one of them will have thirty-four equals signs where the others have forty. With a function there is one copy, so the question cannot be asked. **Functions do not save typing so much as they remove a thing you would otherwise have to remember.**
+It does work, and it keeps working right up until the day you change your mind. Then you have three copies and you have to change all three, and nothing will tell you that you missed one.
+
+The deeper answer is the one from the Hook: **you cannot check that three copies are identical.** They will look the same, and one of them will have thirty-four equals signs where the others have forty. With a function there is one copy, so the question cannot be asked.
+
+**Functions do not save typing so much as they remove a thing you would otherwise have to remember.**
 
 **"Can I have a function that both prints and returns?"**
 
-Yes, and it is legal, and it is usually a sign of a fuzzy plan. The clean version is: functions work things out and hand them back; the main part of the program decides what a human sees. That way you can use the function's answer in a calculation without a stray line of text appearing in the middle of your report. There is one honest exception — a function whose *whole job* is displaying something, like `print_header`, has nothing to return and should just print. **The test is: could I use this function twice, once to show something and once to work something out? If yes, split it.**
+Yes, and it is legal, and it is usually a sign of a fuzzy plan. The clean version is: functions work things out and hand them back; the main part of the program decides what a human sees. That way you can use the function's answer in a calculation without a stray line of text appearing in the middle of your report.
+
+There is one exception. A function whose *whole job* is displaying something, like `print_header`, has nothing to return and should just print. **The test is: could I use this function twice, once to show something and once to work something out? If yes, split it.**
 
 **"What's the difference between `print_header` and `print_header()`?"**
 
@@ -1138,7 +1198,10 @@ There is no rule, but there is a good test: **can you say what it does in one sh
 
 **"Should every repeated block become a function?"** *(Nobody fully agrees, and here is why.)*
 
-This is a genuinely live argument among working programmers and it has slogans on both sides. One camp says **never write the same thing twice** — every duplication is a future inconsistency, so extract it the first time you copy it. The other camp says **wait until the third time**, because two similar-looking blocks quite often turn out to be two different ideas that happen to look alike today, and if you merge them early you end up with one function that has to serve two masters and grows flags and options to cope. That is arguably worse than the duplication was.
+Working programmers argue about this, and each side has a slogan.
+
+- One camp says **never write the same thing twice**. Every duplication is a future inconsistency, so extract it the first time you copy it.
+- The other camp says **wait until the third time**. Two similar-looking blocks often turn out to be two different ideas that look alike today. If you merge them early, you get one function that has to serve two masters and grows flags and options to cope. That is arguably worse than the duplication was.
 
 There is no settled answer, and the honest reason is that it depends on something you cannot know yet: whether those two blocks will change *together* or *separately* in future. **The rule of thumb this course uses: two copies, notice it; three copies, extract it.** And the rule that everyone agrees on: **if you have already changed the same thing in two places on the same day, extract it now.**
 
@@ -1148,15 +1211,21 @@ Yes, and it is completely ordinary — `print_goodbye()` calling `print_divider(
 
 **"Can a function call itself?"**
 
-It can, and it has a name — recursion — and it is genuinely one of the most beautiful ideas in programming. It is also a very good way to make a program run forever, which is why it is not today's lesson. If you try it now with no way to stop, you will get a wall of red ending in `RecursionError`, which is Python's version of Ctrl+C for a function that will not stop calling itself. **Write the question down.**
+It can, and it has a name: recursion. It is one of the most beautiful ideas in programming. It is also a very good way to make a program run forever, which is why it is not today's lesson.
+
+If you try it now with no way to stop, you will get a wall of red ending in `RecursionError`, which is Python's version of Ctrl+C for a function that will not stop calling itself. **Write the question down.**
 
 **"Why does Python need `def` at all? Couldn't it work out which lines belong together?"**
 
-No, and the reason is the same as always: it would have to guess your intention. Look at any five consecutive lines in your program — there is nothing in them that says whether they are a group with a purpose or five unrelated things that happen to be next to each other. **`def` is you telling Python something it has no way to know: that these lines are one idea, and that the idea has a name.** That is why naming the function well matters more than almost anything else about it. The name is the only place where your intention is written down.
+No, and the reason is the same as always: it would have to guess your intention. Look at any five consecutive lines in your program. Nothing in them says whether they are a group with a purpose or five unrelated things that happen to be next to each other.
+
+**`def` is you telling Python something it has no way to know: that these lines are one idea, and that the idea has a name.** That is why naming the function well matters more than almost anything else about it. The name is the only place where your intention is written down.
 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This table lists the usual ways this lesson goes off course, with the quick fix for each.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1176,15 +1245,17 @@ No, and the reason is the same as always: it would have to guess your intention.
 
 ## 🧭 Differentiation
 
+This section gives you three paths: one for a student who is struggling, one for a student who is flying, and one for a student who will not engage today.
+
 ### If the student is struggling
 
 **Cut, in this order:** `return` entirely · four of the ten repair programs · the Bug Log sorting · the third column of the revision list.
 
 **What you must not cut:** the Hook, and one function extracted from one of their own files. Those two deliver objectives 3 and 5, and neither needs `return` or the timer.
 
-**Reteach `def` physically — the recipe card.** Four minutes, works on essentially everybody.
+**Reteach `def` physically with a recipe card.** It takes four minutes and works on almost everybody.
 
-Write the five banner lines on an index card. Write `print_header` on the back, big.
+Write the five banner lines on an index card. Write `print_header` on the back, big. Then say:
 
 > "This card is the function. The back is its name; the front is what it does."
 
@@ -1208,7 +1279,7 @@ Then lay three separate cards with the same five lines written out longhand, and
 
 Write one of them with a different number of equals signs on purpose. Let them find it. **That is the lesson, and it happened with card and pencil.**
 
-**The copy-this-exactly scaffold.** Complete, working, and short:
+**The copy-this-exactly scaffold.** Have the student type this complete, working file:
 
 ```python
 # report.py - type this exactly. One function, defined once, called three times.
@@ -1227,7 +1298,7 @@ print("Average : 75.00")
 print_header()                           # and again
 ```
 
-Real output:
+The real output:
 
 ```text
 ==============================
@@ -1243,7 +1314,12 @@ Average : 75.00
 ==============================
 ```
 
-Then two experiments, in this order: **delete one call** and run it (one fewer banner, no error). **Delete the brackets from a call** and run it (that banner vanishes, no error). Two silent failures, both understood, in ninety seconds.
+Then run two experiments, in this order:
+
+1. **Delete one call** and run it (one fewer banner, no error).
+2. **Delete the brackets from a call** and run it (that banner vanishes, no error).
+
+That gives two silent failures, both understood, in ninety seconds.
 
 **Reduce the writing.** For the repair round, a diagnosis of `family 2 — no int() — add int()` is full credit. Sentences are not the skill this week.
 
@@ -1258,7 +1334,7 @@ Then two experiments, in this order: **delete one call** and run it (one fewer b
 
 ### If the student won't engage today
 
-Do the Hook — it is their own code and it usually lands even on a bad day — and then play **Name That Family**, which needs no computer.
+Do the Hook first. It is their own code, and it usually lands even on a bad day. Then play **Name That Family**, which needs no computer.
 
 Read them the last line of a traceback, out loud, with no code and no context. They say 1, 2 or 3. Score a point each. Twenty of them, fast, in three minutes. Use the ones from their own Bug Log first, then these:
 
@@ -1277,7 +1353,7 @@ Read them the last line of a traceback, out loud, with no code and no context. T
 | "It printed `{total}` with the curly brackets still there" | 3 |
 | `TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'` | 2 |
 
-Then swap: **they** read one out and **you** answer, and you get some wrong on purpose so they have to correct you.
+Then swap. **They** read one out and **you** answer, and you get some wrong on purpose so they have to correct you.
 
 Finish with one question, which is the whole checkpoint in a sentence:
 
@@ -1289,7 +1365,7 @@ The answer — family one, because it cannot possibly have told anyone anything 
 
 ## ✅ Assessing Understanding
 
-Three checks, five minutes, exact wording.
+This section gives three spoken checks and a scale for judging the answers. The three checks take five minutes. Use the exact wording.
 
 **Check 1 — define versus call (spoken)**
 
@@ -1311,6 +1387,8 @@ Three checks, five minutes, exact wording.
 
 ### Mastery scale for this week
 
+The target for this week is the Secure row.
+
 | Level | What it looks like |
 |---|---|
 | **1 — Not yet** | Thinks defining a function runs it. Cannot repair a `SyntaxError` from its message. Cannot say what a traceback's line number is for. Produces "revise everything" as a revision plan. |
@@ -1322,6 +1400,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to say when you set homework, then the workbook sections and the time each should take.
 
 **Say this:**
 
@@ -1343,17 +1423,43 @@ Three checks, five minutes, exact wording.
 >
 > Every line commented, saying *why*."
 
-**Workbook sections:** **In class** — Build It Part 1 (the ten repairs, timed), Part 4 (sort the Bug Log) and Part 6 (the revision list), as set out in the activity. **At home, required** — Warm-Up, Predict the Output, Build It Parts 2, 3, 5 and 7, Self-Check, plus whatever of Parts 1, 4 and 6 was not finished. **At home, as time allows** — Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Draw It. The key below answers every section either way.
+**Workbook sections:**
 
-**Expected time:** 5 min Warm-Up · 10 min Predict the Output · 20 min the three extractions and the diff (Part 2) · 10 min the returning average (Part 3) · 8 min reflection sheet (Part 5) · 5 min Bug Log (Part 7) · 5 min Self-Check. About 60 minutes for the required sections; the optional sections add roughly another hour and are better spread over several evenings.
+- **In class:** Build It Part 1 (the ten repairs, timed), Part 4 (sort the Bug Log) and Part 6 (the revision list), as set out in the activity.
+- **At home, required:** Warm-Up, Predict the Output, Build It Parts 2, 3, 5 and 7, Self-Check, plus whatever of Parts 1, 4 and 6 was not finished.
+- **At home, as time allows:** Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Draw It.
+
+The key below answers every section either way.
+
+**Expected time:**
+
+| Section | Minutes |
+|---|---|
+| Warm-Up | 5 |
+| Predict the Output | 10 |
+| The three extractions and the diff (Part 2) | 20 |
+| The returning average (Part 3) | 10 |
+| Reflection sheet (Part 5) | 8 |
+| Bug Log (Part 7) | 5 |
+| Self-Check | 5 |
+
+That is about 60 minutes for the required sections; the optional sections add roughly another hour and are better spread over several evenings.
 
 ---
 
 ## 🔑 Answer Key
 
+This section is for you only. It gives the answers to every workbook section, with notes on what to watch for when you mark. Never hand it to the student.
+
 ### Reading this key against the workbook
 
-The key follows the workbook **in the order it is printed**: Warm-Up, Predict the Output, Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It (Parts 1–7), Draw It, Self-Check. The item labels (W1, P1, A1, B1, T1, Build It (a)–(n)) are the ones printed in the student's workbook, and every value below agrees with the workbook's own Answers section. The workbook has **no page numbers**; find a section by its heading. Each section ends with a teacher-only note where there is something to watch for.
+The key follows the workbook **in the order it is printed**:
+
+Warm-Up, Predict the Output, Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It (Parts 1–7), Draw It, Self-Check.
+
+The item labels (W1, P1, A1, B1, T1, Build It (a)–(n)) are the ones printed in the student's workbook, and every value below agrees with the workbook's own Answers section.
+
+The workbook has **no page numbers**; find a section by its heading. Each section ends with a teacher-only note where there is something to watch for.
 
 ### Warm-Up — five questions about last week
 
@@ -1429,6 +1535,7 @@ NameError: name 'greet' is not defined
 
 ### Practice Set A — Read It
 
+Answers to the three-family sorting table and the read-the-program items.
 
 **A1. Name the family from the message alone.**
 
@@ -1456,6 +1563,7 @@ NameError: name 'greet' is not defined
 **A2.**
 
 **(i)**
+
 ```text
 ------
 ------
@@ -1472,19 +1580,22 @@ end
 
 **A3.** a → **2** · b → **1** · c → **4** · d → **3**
 
-The real outputs:
+The real outputs, one block per program:
 
 ```text
 A
 A
 ```
+
 ```text
 A
 ```
+
 ```text
 A
 None
 ```
+
 ```text
 ```
 
@@ -1554,6 +1665,7 @@ The brackets mean **"actually do it"** · No `return` hands back **`None`**.
 
 ### Practice Set B — Write It
 
+Model programs for the write-it items, each with its real output.
 
 **B1.**
 
@@ -1691,6 +1803,7 @@ Runs per over   : 9.00
 
 ### Fix the Broken Program — `card.py`
 
+Answers for the three bugs in `card.py`, one from each family.
 
 **Bug 1 — family 1, it never started.** No output at all, so nothing ran.
 
@@ -1738,6 +1851,7 @@ Bug 3 is a close second, for the opposite reason: **nothing at all appeared.** A
 
 ### Puzzle of the Week
 
+Answers for the family-sorting table (Part A) and the line-count table (Part B).
 
 **Part A.**
 
@@ -1797,6 +1911,7 @@ Bug 3 is a close second, for the opposite reason: **nothing at all appeared.** A
 
 ### Think Deeper
 
+Model answers for the two open questions. Judge them by shape, not by agreement.
 
 **T1.** A full-credit answer (4+ sentences) argues a side and names the cost of being wrong. Model answer:
 
@@ -1822,7 +1937,7 @@ Bug 3 is a close second, for the opposite reason: **nothing at all appeared.** A
 
 #### Part 1 — the ten repairs
 
-Every message below came from a real run.
+Each bug below is shown with its program, its real message or output, and its diagnosis. Every message came from a real run.
 
 ---
 
@@ -1907,6 +2022,7 @@ The total is {total}
 age = int(input("How old are you? "))
 print(age)
 ```
+
 …and the user types `twelve`.
 
 *The real message:*
@@ -2053,6 +2169,7 @@ Almost always one of the family-one errors, because the `^` points straight at t
 
 A model answer. Three blocks that genuinely repeat across weeks 1–8 — a banner, a divider, and a sign-off. The student's own blocks will differ; mark against the checklist below, not against these names.
 
+Here is the model program:
 
 ```python
 # three_functions.py - three blocks that were pasted more than once, each given a name.
@@ -2095,7 +2212,7 @@ Average : 75.00
 ==================================
 ```
 
-**How to mark it, in this order:**
+Mark it in this order:
 
 1. **Is the output identical to the original?** This is the requirement. The proof:
 
@@ -2141,7 +2258,7 @@ In the model answer, `print_divider()` inside `print_goodbye()` shows that **a f
 
 #### Part 3 — Week 7's average, as a returning function
 
-
+Here is the model program:
 
 ```python
 # average_fn.py - a function that hands a number back.
@@ -2181,6 +2298,8 @@ That function both **fetches** the data *and* **works it out**, which means **yo
 
 #### Part 4 — sort the whole Bug Log
 
+This part has no key. It checks that the student is being honest.
+
 There is no right answer here, only an honest one. What a healthy Term 1 looks like: **around fifteen entries, of which four or five are family 3.**
 
 **(i) Is your total number of entries honest?** Three entries for eight weeks does **not** mean the student had only three bugs. It means the log is not being kept, and **that goes on the revision list as a habit rather than a topic.** If that is the student, build ten entries now from the ten repair programs — the habit can start this week.
@@ -2188,6 +2307,8 @@ There is no right answer here, only an honest one. What a healthy Term 1 looks l
 **Where family 3 clusters: weeks 6 and 7**, nearly always. That is not a coincidence — `elif` chains and `range` boundaries are exactly where silence lives, because every individual line in both is a correct line.
 
 #### Parts 5 and 6 — the reflection sheet and the revision list
+
+These parts have model answers only as examples.
 
 **There are no right answers and there is no mark.** What follows is what a good, honest sheet looks like — use it to judge whether the student is being **specific**, not whether they agree.
 
@@ -2209,7 +2330,6 @@ There is no right answer here, only an honest one. What a healthy Term 1 looks l
 
 **The revision list** (Part 6):
 
-
 | Week | What specifically | How I'll know I've got it |
 |---|---|---|
 | 3 | I keep forgetting the `f`, so my braces print | Write five f-strings from memory with no example in front of me; check all five print values, not braces |
@@ -2224,8 +2344,7 @@ There is no right answer here, only an honest one. What a healthy Term 1 looks l
 
 #### Part 7 — the Bug Log
 
-Two entries, at least one a function bug.
-
+Each student writes two entries, at least one a function bug. Here are model entries.
 
 | # | What I saw (real text) | What it meant, in my words | What I changed |
 |---|---|---|---|
@@ -2246,6 +2365,8 @@ The **`print`-instead-of-`return`** one was worse, and the reason is counter-int
 
 ### Draw It
 
+This answer is a checklist for the student's drawing.
+
 There is no single right drawing. A strong answer has **exactly one recipe card** on the right-hand side, with all three call arrows pointing **back to it**. If the picture shows three cards, the misunderstanding is drawn: three calls do not make three copies of the block.
 
 Two other things to check. **Is the pasted side's pencil drawn with three arrows and the named side's with one?** That contrast is the actual lesson, and it is about certainty rather than length. And **does the drawing say how the two outputs were compared?** "It looked the same" is not the answer; `diff` printing nothing is.
@@ -2254,8 +2375,9 @@ Two other things to check. **Is the pasted side's pencil drawn with three arrows
 
 ### Self-Check
 
-The six "I can…" rows are the student's own rating (got it / nearly / not yet); there is no key. Read them beside the Build It results: a 😀 on "Repair broken programs" with three silent bugs missed is worth a conversation. The true-or-false rows:
+This answer covers the student's self-rating and the true-or-false rows.
 
+The six "I can…" rows are the student's own rating (got it / nearly / not yet); there is no key. Read them beside the Build It results: a 😀 on "Repair broken programs" with three silent bugs missed is worth a conversation. The true-or-false rows are:
 
 | Statement | Answer |
 |---|---|
@@ -2280,6 +2402,8 @@ The six "I can…" rows are the student's own rating (got it / nearly / not yet)
 
 ### Lesson questions posed in the Say-this scripts
 
+These are the questions you ask in the lesson, with the answer to expect for each.
+
 - *"Find something identical in both files."* → The banner block, in `guess.py`, `grade.py` and `about_me.py`.
 - *"How many lines have you typed to say one thing?"* → Five lines × three copies = fifteen.
 - *"If the wording changes, how many places?"* → Three. And Python will not tell you if you miss one.
@@ -2301,9 +2425,23 @@ The six "I can…" rows are the student's own rating (got it / nearly / not yet)
 
 ## 🔮 Next Week Preview
 
-Week 10 fills the hole the student has almost certainly already noticed. Every function this week does exactly the same thing every time it is called: `print_header()` prints one banner, thirty-four characters wide, and there is nowhere to tell it "make it forty" or "say LEVEL 3 instead". Next week that changes with one line of new syntax — `def f(a, b):` — and functions become genuinely useful. They will meet **parameters** (the names inside the definition), **arguments** (the values you hand over at the call), **default values** for the ones you usually do not need to specify, and **scope**, which is the reason a variable created inside a function does not exist outside it. The week ends with a planted bug the student will remember in June: a function that prints the right answer, returns `None`, and crashes three lines later — which is exactly the bug they met today, met again with parameters attached, and by then they will recognise the word `NoneType` on sight.
+This section says where the next week goes and what to do now to be ready for it.
 
-**Prep early:** two things. First, **keep this week's shortened file** — the one with `print_header()` in it. Week 10 opens by giving that same function a parameter so the banner can be any width, and the contrast is far stronger on a file the student wrote themselves than on a fresh example. Second, and more important: **look at the revision list before next week's lesson.** If Week 6's ordering rule or Week 7's `range` boundary is on it, spend five minutes at the start of Week 10 on that rather than pressing on. Functions with parameters are built on top of everything in Term 1, and the whole reason this checkpoint exists is so that you know what is underneath before you build on it.
+Week 10 fills the hole the student has almost certainly already noticed. Every function this week does exactly the same thing every time it is called: `print_header()` prints one banner, thirty-four characters wide, and there is nowhere to tell it "make it forty" or "say LEVEL 3 instead". Next week that changes with one line of new syntax, `def f(a, b):`, and functions become useful.
+
+They will meet four new things:
+
+- **Parameters:** the names inside the definition.
+- **Arguments:** the values you hand over at the call.
+- **Default values:** for the ones you usually do not need to specify.
+- **Scope:** the reason a variable created inside a function does not exist outside it.
+
+The week ends with a planted bug the student will remember in June: a function that prints the right answer, returns `None`, and crashes three lines later — which is exactly the bug they met today, met again with parameters attached, and by then they will recognise the word `NoneType` on sight.
+
+**Prep early, in two steps.**
+
+1. **Keep this week's shortened file** — the one with `print_header()` in it. Week 10 opens by giving that same function a parameter so the banner can be any width, and the contrast is far stronger on a file the student wrote themselves than on a fresh example.
+2. **Look at the revision list before next week's lesson.** If Week 6's ordering rule or Week 7's `range` boundary is on it, spend five minutes at the start of Week 10 on that rather than pressing on. Functions with parameters are built on top of everything in Term 1, and the whole reason this checkpoint exists is so that you know what is underneath before you build on it.
 
 ---
 

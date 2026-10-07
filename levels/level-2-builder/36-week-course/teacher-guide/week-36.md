@@ -687,6 +687,8 @@ Today, hand the four sentences to the *student* and make them run the process on
 
 ## 🎲 The Activity, In Full
 
+This section gives the full protocol for the three sittings: the showcase, the written assessment, and the ladder and gate. Use it alongside the minute-by-minute plan.
+
 ### Sitting 1 — The Showcase (inside the 70-minute lesson)
 
 **Setup.** Notebook or scripts open, scrolled to the top. Charts saved as PNGs so nothing has to render live. Audience seated where they can see. Timer at 8:00. Banned-words list and tally in view.
@@ -774,6 +776,8 @@ They fill it in. For every blank, they write the cheapest fix next to it, from t
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions students tend to ask on showcase day, each with an answer you can say aloud.
+
 **"What if the audience asks something I can't answer?"**
 
 Say "I don't know" and then say what you *do* know. That is not a failure; it is the correct answer to most hard questions about data. "I don't know whether it would work for other people — every row in my table is one of three people in one family, so I genuinely cannot tell you." That answer is better than a confident guess, and any adult worth presenting to will recognise it immediately.
@@ -810,6 +814,8 @@ So the honest position is: *"works" is a judgement about consequences, not a fac
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table when the lesson drifts. Each row gives what happens, why, and what to do right now.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | No audience, so the showcase becomes a chat with you | It was not arranged in advance | Play the role properly: sit somewhere different, say "I don't understand" three times, ask for units. If you can get someone on a video call in five minutes, do that instead. |
@@ -825,6 +831,8 @@ So the honest position is: *"works" is a judgement about consequences, not a fac
 ---
 
 ## 🧭 Differentiation
+
+This section adjusts the day for three kinds of student: one who is struggling, one who is flying, and one who will not engage.
 
 ### If the student is struggling
 
@@ -918,6 +926,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to say when you set the homework. The scripted homework is two tasks, and neither is for you.
 
 **Say this:**
 
@@ -1957,7 +1967,9 @@ The ten can-do rows are self-rated (😀 / 🙂 / 😕); do not correct them, bu
 
 There is no next week. This is the last one.
 
-What happens next is **[Level 3 — Engineer](../../../level-3-engineer/)**, and it goes downwards rather than sideways: instead of adding a tenth tool, it opens the boxes already in use. `LinearRegression()` stops being a black box and becomes **gradient descent**, written by hand and watched converging on a plot, step by step. `fit()` becomes a loop over a **loss function** you can differentiate. `X` of shape `(n, d)` becomes the design matrix, and matrix maths becomes something with a picture attached. The train/test gap becomes **regularisation and cross-validation** — the proper answer to "26 test rows is not many". And a tree of if-then questions becomes **layers of neurons doing the same job with numbers instead of questions**: first in raw numpy so every multiplication is visible, then in PyTorch so it can be made big. None of it will feel like magic, because the floor it stands on is the floor built over these thirty-six weeks.
+What happens next is **[Level 3 — Engineer](../../../level-3-engineer/)**, and it goes downwards rather than sideways: instead of adding a tenth tool, it opens the boxes already in use. `LinearRegression()` stops being a black box and becomes **gradient descent**, written by hand and watched converging on a plot, step by step.
+
+`fit()` becomes a loop over a **loss function** you can differentiate. `X` of shape `(n, d)` becomes the design matrix, and matrix maths becomes something with a picture attached. The train/test gap becomes **regularisation and cross-validation** — the proper answer to "26 test rows is not many". And a tree of if-then questions becomes **layers of neurons doing the same job with numbers instead of questions**: first in raw numpy so every multiplication is visible, then in PyTorch so it can be made big. None of it will feel like magic, because the floor it stands on is the floor built over these thirty-six weeks.
 
 **Prep early, and this is the last checklist of the year.** Do not delete the course folder — Level 3 Module 1 rebuilds this year's capstone as a reusable pipeline object, and it is far more satisfying with the original notebook open beside it. Keep `data/raw.csv`, `data/clean.csv`, the cleaning log, the five charts and the results table. Keep the letter somewhere findable. And before starting Level 3, close every gate that is still blank — the fixes in section 6 are all half a day or less, and Level 3 genuinely will not slow down for a missing one.
 

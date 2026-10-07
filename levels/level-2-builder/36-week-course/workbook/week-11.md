@@ -12,7 +12,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week**.
+This warm-up gets last week's ideas ready before you start on lists. Answer the five questions about last week.
 
 **W1.** What is the difference between a **parameter** and an **argument**? One sentence.
 
@@ -37,6 +37,8 @@ ________________________________________________________________
 ---
 
 ## 🔎 Predict the Output
+
+This page is for practising prediction. For each program, write what you think it prints, then run it and compare.
 
 **Write your prediction before you run anything.** **One of these four crashes**, and two of them catch nearly everybody.
 
@@ -135,6 +137,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading lists. You will find items by index and trace short programs by hand.
+
 **A1. Read the row.** Given `players = ["Meera", "Kabir", "Nova", "Asha"]`:
 
 | # | Question | Answer |
@@ -158,15 +162,18 @@ ________________________________________________________________
 **A2. Trace it.** Say exactly what appears on the screen. **One of these crashes.**
 
 **(i)**
+
 ```python
 fruit = ["fig", "plum", "apple"]
 print(fruit[0])
 print(fruit[-1])
 print(len(fruit))
 ```
+
 Output: ______________________________________________
 
 **(ii)**
+
 ```python
 nums = [10, 20, 30]
 nums.append(40)
@@ -175,6 +182,7 @@ print(nums)
 print(len(nums))
 print(nums[len(nums) - 1])
 ```
+
 Output: ______________________________________________
 
 **The last line looks clumsy. Write a shorter line that does the same job.**
@@ -184,12 +192,14 @@ ________________________________________________________________
 ```
 
 **(iii)**
+
 ```python
 nums = [7, 7, 7]
 print(len(nums))
 print(nums[0], nums[1], nums[2])
 print(nums[-3])
 ```
+
 Output: ______________________________________________
 
 **Three equal values. Are they three elements or one?** ______________ Why?
@@ -197,6 +207,7 @@ Output: ______________________________________________
 ________________________________________________________________
 
 **(iv)**
+
 ```python
 nums = [5]
 print(len(nums))
@@ -204,6 +215,7 @@ print(nums[0])
 print(nums[-1])
 print(nums[1])
 ```
+
 Output: ______________________________________________
 
 **A one-item list has how many valid indexes, counting both directions?** ______
@@ -280,6 +292,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing your own list code. You then check it against the real output.
 
 **B1.** *(one line each)* Build a list called `snacks` holding five things you would actually buy. Then print the **first** one and the **last** one, using `-1` for the last.
 
@@ -381,7 +395,15 @@ ________________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
-Here is `steps_report.py`, which is supposed to report on one week of step counts. It has **three** bugs: one that stops Python reading the file, one that crashes it partway through, and one that produces **no error message at all**.
+This section is for practising bug-hunting on a program that has mistakes in it.
+
+Here is `steps_report.py`, which is supposed to report on one week of step counts. It has **three** bugs:
+
+- one that stops Python reading the file
+- one that crashes it partway through
+- one that produces **no error message at all**
+
+Read the program, then work through the bugs in order:
 
 ```python
 # steps_report.py - report on one week of step counts. It has three bugs.
@@ -465,7 +487,7 @@ total steps   : 58890
 average       : 8412.9
 ```
 
-Wait — that is the output **after** bug 3 is fixed. **Before** the fix, the third line read:
+That output is what you get **after** bug 3 is fixed. **Before** the fix, the third line read:
 
 ```text
 the third day : 12040
@@ -504,9 +526,11 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for using indexes on a row of letters.
+
 ### Part A — The Secret Word
 
-Here is a row of seven letters:
+Here is a row of seven letters. Type it into a file or read it from the page:
 
 ```python
 row = ["A", "C", "D", "E", "I", "N", "X"]
@@ -574,6 +598,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These questions are for thinking and writing in full sentences.
+
 **T1. `scores[3]` and `scores[-1]` open the same slot today.** Write a paragraph about which one you would put in a program that somebody else is going to keep using for a year, and why.
 
 Say what happens to **each** of them when a fifth score is appended. Then say the important bit: **does either of them produce an error when it starts being wrong?** Which family of trouble is that, and why does that make your answer matter more, not less?
@@ -606,9 +632,11 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+This section is for building and running your own list programs, one step at a time.
+
 ### Part 1 — the twelve drills
 
-New file, `week11_drills.py`. The data is typed straight into it — nothing is loaded from anywhere:
+Create a new file called `week11_drills.py`. Type this data straight into it; nothing is loaded from anywhere:
 
 ```python
 steps = [4200, 9100, 6350, 12040, 3300, 8700, 15200]   # Mon..Sun, slots 0..6
@@ -729,6 +757,8 @@ One entry, and it needs all three parts.
 
 ## 🎨 Draw It
 
+This page is for showing a list as a picture.
+
 Draw **six things of your own as a row of numbered slots.** Anything: six songs, six snacks, six players, six days of weather.
 
 Show the **name of the whole row** once, on the left. Show the **values in the slots**. Show the **forward indexes underneath in one colour** and the **backward indexes in another**. And somewhere on the page, show what happens when somebody appends a seventh thing.
@@ -755,6 +785,8 @@ Show the **name of the whole row** once, on the left. Show the **values in the s
 ---
 
 ## 📊 Self-Check
+
+This section is for checking what you can do now and what needs another look. Tick one box on each row.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -836,7 +868,7 @@ ________________________________________________________________
 
 **`scores[3]` is still 67.** `append` did **not** push anything along — it put 89 in a brand-new slot 4 and left slots 0 to 3 exactly as they were.
 
-`scores[-1]` is 89, because −1 always means "the last one", and the last one has changed. **`len(scores) - 1)` is 4**: five items, biggest name four.
+`scores[-1]` is 89, because −1 always means "the last one", and the last one has changed. **`len(scores) - 1` is 4**: five items, biggest name four.
 
 **This is the pair to remember: `[3]` used to be "the last one" and quietly stopped being it. `[-1]` never stopped.**
 

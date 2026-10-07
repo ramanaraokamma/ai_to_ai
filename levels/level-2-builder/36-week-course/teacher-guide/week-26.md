@@ -23,6 +23,8 @@
 
 ## 🎯 Lesson Objectives
 
+This section lists what the student should be able to do by the end of the lesson, and how you will see it.
+
 By the end of the lesson the student can:
 
 1. **Choose a chart shape from the question being asked**, not from what looks nice — and say the reason in one sentence.
@@ -36,6 +38,8 @@ Observable evidence: eight question cards correctly matched to shapes with a wri
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+This section is the background for you, the teacher. Read it before the lesson so the ideas are yours.
 
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
@@ -160,7 +164,7 @@ This is the emotional centre of the lesson and the reason the histogram matters.
 
 Twenty students sat quiz 3. The marks:
 
-```
+```text
 33, 35, 37, 38, 39, 39, 40, 41, 42, 44, 81, 83, 84, 85, 85, 86, 86, 87, 87, 88
 ```
 
@@ -282,6 +286,8 @@ week. There are three dashed boxes left on it. In Week 1 there were thirteen.
 
 ## 🧰 Prep Checklist
 
+This section lists what to make, print and test before the lesson, with a fallback if a laptop fails.
+
 ### 15 minutes the night before
 
 - [ ] **Print the workbook** (Warm-Up through Self-Check). It carries section names and item labels, not page numbers.
@@ -333,6 +339,8 @@ week. There are three dashed boxes left on it. In Week 1 there were thirteen.
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson. The table shows the five segments. Each segment below has its own script.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -751,6 +759,8 @@ Full instructions in the next section.
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the card game, the two charts and the "what it hides" sentences.
+
 ### Setup
 
 **On the table:** the eight question cards, **face down** in a pile. The five shape cards, face up in a row. The workbook open at Practice Set A, A1 (the matching grid with a "reason" column). A pencil.
@@ -893,6 +903,8 @@ One sentence per chart, on scrap paper (the house-means sentence can be copied s
 
 ## 🐞 The Debugging Clinic
 
+Use this table when a student's chart or error message does not match what you expect.
+
 Every message below came from running a genuinely broken version of this week's code.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
@@ -922,6 +934,8 @@ A student cannot describe 38 bars in three columns. They cannot describe a scrib
 ---
 
 ## ❓ Questions Students Ask This Week
+
+This section gives honest answers to the questions students are most likely to ask.
 
 **"What's the actual difference between a bar chart and a histogram? They look the same."**
 
@@ -959,6 +973,8 @@ Yes, easily, and that is next week's entire lesson. It is the best one of the te
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the common ways the lesson slips, and what to do right away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | A chart gets chosen because it "looks better" | Every 12-year-old prefers the one that looks like a proper graph, and scatter plots look sparse | Enforce the ritual physically: **the card goes on a shape card, out loud, before the laptop is touched.** Then ask for the reason. The reason is the objective; the match is not. |
@@ -974,6 +990,8 @@ Yes, easily, and that is next week's entire lesson. It is the best one of the te
 ---
 
 ## 🧭 Differentiation
+
+This section gives versions of the lesson for a student who is struggling, flying, or not engaging.
 
 ### If the student is struggling
 
@@ -1043,6 +1061,8 @@ That game delivers objective 1 completely, needs no computer, and takes ten minu
 
 ## ✅ Assessing Understanding
 
+This section gives three short spoken checks and a mastery scale for marking the week.
+
 Three checks, five minutes, exact wording.
 
 **Check 1 — the question picks the chart (spoken)**
@@ -1076,6 +1096,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the script for setting homework, and a table of how long each workbook section takes.
 
 **Say this:**
 
@@ -1114,6 +1136,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 🔑 Answer Key
+
+This section is teacher-only. It holds the answers to the workbook and the full code files.
 
 The answers follow the workbook's own **Answers** section, section by section and item by item; the wrong-answer maps and marking notes are the teacher-only part. Where to find each section:
 
@@ -1299,7 +1323,7 @@ saved club_counts.png
 
 **The scatter** and **the bar of house means** — full files and output in The Activity, Part B.
 
-### Build It, Part 2 and Practice Set B, B5 ��� the four-chart program (homework)
+### Build It, Part 2 and Practice Set B, B5 — the four-chart program (homework)
 
 One file, four charts. Three separate files would also be fine. This is the workbook's B5 program and the code behind Build It, Part 2.
 
@@ -1663,6 +1687,8 @@ The "I can" ticks are the student's own; compare them against your Mastery scale
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week is about and what to prepare for it.
 
 Week 27 is the Term 3 checkpoint, and it is the most enjoyable lesson of the term because the student spends it **lying on purpose**. Two bars, 49% and 51% — a two-point difference, about as small as a difference gets. Then one argument to one function, and the second bar becomes six times taller than the first, and the student measures both bars with an actual ruler in millimetres to prove it. Not one number changes. Nothing is faked. Then they build the honest version beside it in the same figure, learn the one call that names two lines on a chart, and finish with the hardest question of the term: study hours and marks have a correlation of 0.93, so **who gets hurt if a school acts on that chart?**
 

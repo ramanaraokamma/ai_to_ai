@@ -36,9 +36,13 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
+This section is for guessing first and checking second. There are four short programs.
+
 **Write your prediction before you run anything.**
 
 ### P1 — three numbers from four misses
+
+This program measures four misses in three ways. Read it, then predict.
 
 ```python
 import numpy as np
@@ -81,6 +85,8 @@ ________________________________________________________________
 ________________________________________________________________
 
 ### P2 — a ceiling nobody reaches
+
+This program fits a decision tree with a large depth limit and prints five facts about it.
 
 ```python
 from sklearn.datasets import load_diabetes
@@ -128,6 +134,8 @@ ________________________________________________________________
 
 ### P3 — truth first, guess second
 
+This program scores the same lists four ways with one scoring function.
+
 ```python
 import numpy as np
 from sklearn.metrics import r2_score
@@ -164,6 +172,8 @@ ________________________________________________________________
 ________________________________________________________________
 
 ### P4 — the flattest curve you will ever draw
+
+This program loops over four depths and prints a score and a leaf count for each.
 
 ```python
 from sklearn.datasets import load_diabetes
@@ -217,6 +227,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading tables, code and a diagram. Write your answers in the spaces.
 
 **A1. Diagnose from two numbers.** Write **underfitting**, **just right**, **overfitting** or **something's broken** in each row, and give the reason.
 
@@ -384,9 +396,13 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing short programs. Each task shows the output to match.
+
 ### B1 — one line
 
 You have `y_test` and `guesses` from a fitted `LinearRegression` on the diabetes split. Write the **single line** that prints the RMSE to two decimal places, using the version that will always work.
+
+Type your line in the box below.
 
 ```python
 # your line here:
@@ -403,6 +419,8 @@ RMSE: 53.85
 ### B2 — the laziest model, scored three ways
 
 Write **four lines** that build the always-guess-the-training-mean baseline and print its MAE, its RMSE and its R².
+
+Type your four lines in the box below.
 
 ```python
 # your four lines here:
@@ -477,7 +495,11 @@ linear regression        42.79   53.85  154.49         5     0.453
 
 ## 🐞 Fix the Broken Program
 
+This section is for finding bugs in a program, one error message at a time.
+
 Here is `curve.py`. It is supposed to plot the depth curve from 1 to 8. It has **three** bugs: one that stops Python reading the file at all, one that stops it partway through, and one that produces **no error whatsoever** and a completely misleading chart.
+
+Type or copy the program below into a file called `curve.py`.
 
 ```python
 # curve.py - the depth curve from 1 to 8. Three bugs.
@@ -620,6 +642,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle has two parts. The first needs a calculator and the second needs a pencil.
+
 ### Part 1 — Five misses, one MAE, many RMSEs
 
 Five predictions. The sizes of the five misses must **average to exactly 4**, so they must add to 20. Your job is to find out how much the RMSE can move while the MAE stays pinned at 4.
@@ -698,6 +722,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions ask for a paragraph in your own words.
+
 **T1. Write a paragraph explaining to a friend who has not done this course why "my model scored 1.000" is not good news — and then explain what number you would ask them for instead, and why.**
 
 ________________________________________________________________
@@ -725,6 +751,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It — The Bake-Off and the Cliff
+
+This section takes you through two programs and the write-up that goes with them, one part at a time.
 
 ### Part 1 — The bake-off (page 33.4)
 
@@ -919,6 +947,8 @@ Draw the depth curve **by hand**, from your own printed table.
 
 ## 📊 Self-Check
 
+Use the first table to rate yourself and the second to test what you remember.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Run three models on one fixed split, changing one line each time | ☐ | ☐ | ☐ |
@@ -961,6 +991,8 @@ ________________________________________________________________
 
 ## ✅ Answers
 
+Check your work here only after you have finished every other page.
+
 <details>
 <summary>Check your answers</summary>
 
@@ -982,6 +1014,8 @@ ________________________________________________________________
 
 ### P1
 
+The real output:
+
 ```text
 [2 2 0 0]
 1.0
@@ -999,6 +1033,8 @@ ________________________________________________________________
 
 ### P2
 
+The real output:
+
 ```text
 19
 346
@@ -1014,6 +1050,8 @@ ________________________________________________________________
 **Which row of the diagnosis table?** **Overfitting.** Train perfect (1.000), test no better than guessing the average (−0.003, level with the baseline's −0.012), gap **1.003**. This is Sam.
 
 ### P3
+
+The real output:
 
 ```text
 0.944
@@ -1031,6 +1069,8 @@ ________________________________________________________________
 **Line 4 — the four true values in exactly the wrong order — scores −3.0.** Every value present, every value in the wrong place, and R² says *"four times the squared error of not bothering"* (R² = 1 − 4 = −3). Getting the *set* of answers right counts for nothing; R² only cares whether the right answer went to the right row.
 
 ### P4
+
+The real output:
 
 ```text
 1 0.295 4
@@ -1141,6 +1181,8 @@ The gap ranking tells you **how much of each model's apparent skill is memorisin
 
 **B1.**
 
+One way to write it:
+
 ```python
 print("RMSE:", round(np.sqrt(mean_squared_error(y_test, guesses)), 2))
 ```
@@ -1152,6 +1194,8 @@ RMSE: 53.85
 **Why no `squared=False`:** it was removed from scikit-learn. Roughly a thousand tutorials still show it and they are all out of date. **The error message is more current than the tutorial.**
 
 **B2.**
+
+One way to write it:
 
 ```python
 lazy = np.zeros(len(y_test)) + y_train.mean()
@@ -1172,6 +1216,8 @@ baseline R2  : -0.012
 
 **B3.**
 
+One way to write it:
+
 ```python
 for name, model in [("kNN, k = 5", KNeighborsRegressor(n_neighbors=5)),
                     ("linear regression", LinearRegression())]:
@@ -1188,6 +1234,8 @@ linear regression    worst  154.49   over 100: 5
 **How the line manages a worse worst miss and a better RMSE:** because RMSE averages **all** the squared misses, not just the biggest one. The line has one spectacular failure at 154.49 and then only four more over 100. kNN's biggest is smaller, but it has **nine** over 100. Nine large squares outweigh five slightly larger ones. **RMSE is about the whole tail, not the champion.**
 
 **B4.**
+
+One way to write it:
 
 ```python
 # wb4_k_dial.py  -  turn kNN's dial. It runs BACKWARDS.
@@ -1234,6 +1282,8 @@ best test R2 0.439 at k = 8
 **And notice the dial runs backwards.** For a tree, small `max_depth` is simple. For kNN, **large `k` is simple** and `k = 1` is the most complex setting there is. The gap column shrinks steadily as `k` grows, which is exactly what "less room to bend" looks like.
 
 **B5.**
+
+One way to write it:
 
 ```python
 # wb5_bakeoff_plus.py  -  the bake-off with the worst single miss added
@@ -1467,7 +1517,13 @@ tree, no limit           56.57   72.90    -0.003      1.000
 linear regression        42.79   53.85     0.453      0.528
 ```
 
-Gaps: baseline 0.012 · kNN 0.154 · depth-5 tree 0.409 · unlimited tree **1.003** · linear **0.075**.
+The gaps:
+
+- baseline 0.012
+- kNN 0.154
+- depth-5 tree 0.409
+- unlimited tree **1.003**
+- linear **0.075**
 
 > **train R² 1.000** means: on the 353 patients it learned from, this tree is **never wrong. Not once.**
 >

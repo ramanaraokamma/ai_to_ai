@@ -125,6 +125,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+These questions practise reading arrays: their shape, their dtype and their errors. You do not need a computer.
+
 **A1. List or array?** For each statement, tick which it is true of. Some are true of both.
 
 | # | Statement | List | Array |
@@ -256,6 +258,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+These tasks practise writing array code yourself. Run each one and compare it with the expected output.
+
 ### B1 — one line
 
 You have `steps = [8421, 10233, 6890, 12004, 9317]`, a plain list. Write the **single line** that prints its shape as an array.
@@ -358,6 +362,8 @@ f       (3,)      <U21
 
 ## 🐞 Fix the Broken Program
 
+This section is for practising how to read three different kinds of failure, one at a time.
+
 Here is `grid.py`, which is supposed to hold four cities' rainfall for three months and print the shape and the dtype. It has **three** bugs: one that stops Python reading the file at all, one that stops it partway through, and one that produces **no error whatsoever**.
 
 ```python
@@ -459,6 +465,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+Two puzzles about shape: building arrays from the same twelve numbers, and writing the brackets for a printed array.
+
 ### Part 1 — Five shapes, twelve numbers
 
 Here are the twelve squad scores: `48, 12, 77, 5, 63, 30, 0, 41, 55, 22, 90, 104`.
@@ -542,6 +550,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+Two questions for longer written answers. Take your time and give reasons.
 
 **T1.** numpy converts `[1, 2, 3.0]` to decimals, and it converts `[1, 2, "three"]` to text. It is following **one rule** — *pick the kind that can hold everything* — and the rule has a harmless result the first time and a damaging result the second time.
 
@@ -714,6 +724,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page asks you to draw one of your own tables in two forms, with labels and without.
+
 Draw **your own table, twice** — once with its labels, once with the words rubbed out.
 
 ![Draw It frame for Week 17](../figures/fig-w17-8-draw-frame.svg)
@@ -734,6 +746,8 @@ Draw **your own table, twice** — once with its labels, once with the words rub
 ---
 
 ## 📊 Self-Check
+
+Use this page to see which ideas from the week feel solid and which need another look.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|

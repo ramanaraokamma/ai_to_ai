@@ -38,6 +38,8 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
+Four short programs. Guess what each one prints, then run it and compare.
+
 **Write your prediction before you run anything.**
 
 ### P1 — a baseline in three lines
@@ -199,6 +201,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+These six tasks are for reading code, tables and captions. You do not need a computer.
+
 **A1. Which split did it come from, and is it a result?** Fill in both columns.
 
 | # | The line | Split | Is it a result? |
@@ -311,6 +315,8 @@ The three questions:
 
 ## ✍️ Practice Set B — Write It
 
+These five tasks are for writing code of your own. Each one shows the output you are aiming for.
+
 ### B1 — one line
 
 Your test set has 18 rows. Print what one row is worth, to one decimal place.
@@ -321,7 +327,7 @@ Your test set has 18 rows. Print what one row is worth, to one decimal place.
 one test row is worth 5.6% of an accuracy score
 ```
 
-**Done looks like:** an f-string with `:.1f` in it, and no calculator involved.
+> **✅ Done looks like:** an f-string with `:.1f` in it, and no calculator involved.
 
 ### B2 — the baseline, from memory
 
@@ -343,7 +349,7 @@ the baseline always guesses 26.9 minutes
 baseline MAE: 5.25 minutes on 4 held-out rows
 ```
 
-**Done looks like:** the mean comes from `y_train`, not from `y_test` and not from all twelve. If you used `y_test.mean()`, you have written a cheat, not a baseline.
+> **✅ Done looks like:** the mean comes from `y_train`, not from `y_test` and not from all twelve. If you used `y_test.mean()`, you have written a cheat, not a baseline.
 
 ### B3 — the `report()` function, from memory
 
@@ -358,7 +364,7 @@ test_guess  = np.array([26, 33, 22, 28])
 
 **Expected output:** one dictionary on one line, starting `{'model': 'my only model', 'MAE (min)': 2.0, ...`
 
-**Done looks like:** every metric column header carries its units, `train R2` reads from `y_train`, `test R2` reads from `y_test`, and `test rows` is computed rather than typed.
+> **✅ Done looks like:** every metric column header carries its units, `train R2` reads from `y_train`, `test R2` reads from `y_test`, and `test rows` is computed rather than typed.
 
 ### B4 — one chart whose title states a finding
 
@@ -381,7 +387,7 @@ packed       1.5
 sandwich     4.4
 ```
 
-**Done looks like:** you open the PNG and the title tells you the finding without you having to look at the bars.
+> **✅ Done looks like:** you open the PNG and the title tells you the finding without you having to look at the bars.
 
 ### B5 — one split, a baseline and a tree, about 25 lines
 
@@ -408,13 +414,15 @@ train rows: 24   test rows: 6
 one test row is worth 16.7% of an accuracy score
 ```
 
-**Done looks like:** exactly one `train_test_split` in the file, the baseline row present, and you can say out loud why a 6-row test set means you would not rank two close models — even though this table only has two rows in it.
+> **✅ Done looks like:** exactly one `train_test_split` in the file, the baseline row present, and you can say out loud why a 6-row test set means you would not rank two close models — even though this table only has two rows in it.
 
 ---
 
 ## 🐞 Fix the Broken Program
 
-This is meant to run two models on one split and print an honest results table. It has **three** bugs: one syntax, one runtime, one logic — plus one bonus problem for extra marks.
+This section is for practising how to find bugs, one error message at a time.
+
+The program below is meant to run two models on one split and print an honest results table. It has **three** bugs: one syntax, one runtime, one logic — plus one bonus problem for extra marks.
 
 ```python
 # bakeoff.py - two models on one split, with a results table.
@@ -524,6 +532,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for checking a claim with arithmetic, using only the numbers given.
+
 ### The Split Detective
 
 Somebody hands you this and says *"all three models were scored on the same split of my 126 rows, 20% held out."*
@@ -572,6 +582,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for writing a full paragraph in your own words.
+
 **1.** The broken score in the chapter printed `MAE: 1.71 minutes` and nothing warned anybody. Write a paragraph on why silent bugs are worse than crashes, then describe the one habit you are going to keep for the rest of your life to catch them.
 
 ________________________________________________________________
@@ -596,9 +608,11 @@ ________________________________________________________________
 
 ## 🛠️ Build It — Milestones 4, 5 and 6
 
-About three hours, across the week. Do not do it in one sitting.
+This section is where you record your own project work. It takes about three hours, across the week. Do not do it in one sitting.
 
 ### Step checklist
+
+Tick each box when it is done.
 
 **Milestone 4 — five charts in narrative order (60 min)**
 
@@ -767,6 +781,8 @@ Draw your own split, and everything that drinks from it — with your own row co
 
 ## 📊 Self-Check
 
+This section is for rating yourself honestly. Tick one face on each row.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Put five captioned charts in narrative order and read them as a paragraph | ☐ | ☐ | ☐ |
@@ -806,6 +822,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished every page above.
 
 <details>
 <summary>Check your answers</summary>

@@ -39,7 +39,7 @@ Observable evidence: a signed, sealed envelope on the table; a terminal showing 
 
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
-This is the most important section in the file. Read all of it. There is one genuinely hard idea in this week and it is not the code.
+This is the most important section in the file, so read all of it. There is one genuinely hard idea this week, and it is not the code.
 
 ### 1. What kNN actually is — the whole algorithm, in four lines
 
@@ -53,7 +53,7 @@ That is the entire algorithm. It has a name and a three-line implementation and 
 ![The three nearest get a vote](../figures/fig-w29-1-knn-three-nearest-vote.svg)
 *Figure 29.1 — Three neighbours inside the ring get a vote. The six outside get nothing. The tally always adds up to `k`.*
 
-There is no equation to solve and nothing to work out. Here is the part that surprises people, and it is worth knowing before a student asks:
+There is no equation to solve. One part surprises people, and it is worth knowing before a student asks.
 
 **kNN does not really "learn" anything.** When you call `fit`, it writes the training table down and stops. All the actual work happens later, at `predict` time, when it measures the distance from the new row to *every single row it wrote down*, sorts them, and counts the votes.
 
@@ -75,7 +75,7 @@ This has three consequences you should be able to state:
 
 Here is a real example the student built last week: six known flowers, using petal length and petal width, and one mystery flower at `(3.0, 1.0)`. The six distances, sorted nearest-first, are:
 
-```
+```text
 1.58  versicolor      <- closest
 1.75  versicolor
 1.79  setosa
@@ -132,7 +132,7 @@ This is the one thing in the week that matters more than everything else, and it
 
 Did you learn the subject, or did you learn the answer sheet? **Nobody can tell. Including you.**
 
-That is exactly what happens when you score a model on the rows it trained on. Here is the demonstration, and it is worth running in front of the student because the number is absurd:
+That is exactly what happens when you score a model on the rows it trained on. Run this demonstration in front of the student, because the number is absurd.
 
 ```python
 model = KNeighborsClassifier(n_neighbors=1)
@@ -175,15 +175,17 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 **`random_state=42`** — this is the one worth understanding properly, because it looks like noise and it is not.
 
-`train_test_split` **shuffles the rows before it cuts**, which it must do — the iris file is sorted by species, so cutting the last 20% without shuffling would hand you a test set of nothing but virginica. Shuffling needs randomness. And randomness means that **without** `random_state`, every single run gives you a different split and therefore a different score.
+`train_test_split` **shuffles the rows before it cuts**, which it must do. The iris file is sorted by species, so cutting the last 20% without shuffling would hand you a test set of nothing but virginica.
 
-That is a disaster for learning anything. You change one thing, the score goes up, and you have no idea whether your change helped or whether you just got a friendlier shuffle. Setting `random_state` to any fixed whole number nails the shuffle down.
+Shuffling needs randomness. So **without** `random_state`, every run gives a different split and therefore a different score.
+
+That is a disaster for learning anything. You change one thing, the score goes up, and you cannot tell whether your change helped or you just got a friendlier shuffle. Setting `random_state` to any fixed whole number nails the shuffle down.
 
 > **Reproducible** — running the same code again gives the same answer, so any difference you see was caused by your change and nothing else.
 
 42 is traditional (it is a joke from a book). 0 and 7 and 31 are equally fine. **The number does not matter. Fixing it does.**
 
-Here is how much it matters, measured. Same data, same model, only the seed changing — this is iris using just the two sepal columns:
+Here is how much it matters, measured. This is iris using just the two sepal columns, with the same data and the same model. Only the seed changes.
 
 ```text
 random_state=0   test score = 0.6667
@@ -290,6 +292,8 @@ inside it, and this is the one that earns the middle word. Two threads lit: mode
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to get ready, before the lesson and on the day. It also holds the two complete runnable files.
 
 ### 15 minutes the night before
 
@@ -415,6 +419,8 @@ inside it, and this is the one that earns the middle word. Two threads lit: mode
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the lesson. Each segment below gives what to say, what to ask and what to do.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — I Can Teach You a Real Model in One Sentence | 7 | 7 | The canteen, and then the 100% catch |
@@ -484,7 +490,7 @@ Wait for it. **It's itself.**
 
 > "These are the six flowers you measured last week, and the mystery flower at (3.0, 1.0). And these are the six distances you worked out. I've sorted them, nearest at the top."
 
-```
+```text
 1.58  versicolor      <- closest
 1.75  versicolor
 1.79  setosa
@@ -529,7 +535,7 @@ No, no, no.
 
 **Do this:** Write on the SHAPES sheet, under the shapes:
 
-```
+```text
 fit(X_train, y_train)     learn from these
 predict(X_test)           guess these.  NO answers given
 score(X_test, y_test)     mark the guesses
@@ -910,7 +916,7 @@ that is 20.83 percentage points
 
 **Do this:** Write on the board, big, and **leave it there for the rest of the term**:
 
-```
+```text
   THE GAP        0.9417  on the rows it studied
                  0.7333  on the rows it had never seen
                  --------
@@ -1034,6 +1040,8 @@ All of these use only syntax they already have.
 
 ## ❓ Questions Students Ask This Week
 
+This section gives short answers to the questions this lesson usually raises.
+
 **"Where is the model? What does it actually look like inside?"**
 
 For kNN, genuinely: it is the training table. That is all. There are no rules and no learned numbers — `fit` copies `X_train` and `y_train` into the object and stops. That makes kNN unusual and a bit disappointing to look inside, and it also makes it the easiest model in the world to explain, which is why it is first. In Week 31 you will meet a decision tree, which throws the data away and keeps only a short list of yes/no questions, and you will be able to print those questions out and read them aloud.
@@ -1070,6 +1078,8 @@ Only the test score is a *score*. The training score is not really a measure of 
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the trouble spots that come up in class and what to do about each one.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student trains on the test set by mistake, and nothing crashes | The four names came back in the wrong order, or `fit(X_train, y_test)` slipped through | This is the silent bug of the week. Build the habit now: **after every `train_test_split`, print all four shapes and read them out loud.** A wrong order shows up instantly as a shape that makes no sense. |
@@ -1086,6 +1096,8 @@ Only the test score is a *score*. The training score is not really a measure of 
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut for a student who is struggling and what to add for one who is flying.
 
 ### If the student is struggling
 
@@ -1181,6 +1193,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section is the wording to use when you set the homework at the end of the lesson.
 
 **Say this:**
 
@@ -1412,7 +1426,7 @@ The answer comes back in square brackets because `predict` gives one answer per 
 
 *Teacher-only, the lesson's hand vote on the same six flowers.* The distances from `(3.0, 1.0)`, nearest first, which is the list to hand over if the arithmetic is the blocker (see Differentiation):
 
-```
+```text
 1.58  versicolor
 1.75  versicolor
 1.79  setosa

@@ -10,7 +10,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week**.
+This warm-up checks what you kept from last week. Answer from memory first, then look back if you need to.
 
 **W1.** `X = playlist[["bpm", "minutes"]]` and `y = playlist["mood"]`. Why does one of those need two sets of brackets?
 
@@ -36,9 +36,13 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
+This section is for guessing before you run. Write your prediction in the space first, then run the code and write what really printed.
+
 **Write your prediction before you run anything.**
 
 ### P1 — the same six songs, three committee sizes
+
+This program fits one model three times with a different `k` each time. Read it, predict, then run it.
 
 ```python
 import numpy as np
@@ -86,6 +90,8 @@ ________________________________________________________________
 
 ### P2 — what does `train_test_split` actually hand back?
 
+This program splits iris and prints how many things come back and the shape of each. Read it, predict, then run it.
+
 ```python
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -124,6 +130,8 @@ ________________________________________________________________
 ________________________________________________________________
 
 ### P3 — two scores, one model
+
+This program fits a one-neighbour model and scores it on two different piles of rows. Read it, predict, then run it.
 
 ```python
 from sklearn.datasets import load_iris
@@ -165,6 +173,8 @@ ________________________________________________________________
 ________________________________________________________________
 
 ### P4 — four names, in the order most brains want
+
+This program catches the four pieces of the split under four names. Read it, predict, then run it.
 
 ```python
 from sklearn.datasets import load_iris
@@ -216,6 +226,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading code, tables and errors and saying what they mean. Write your answers in the tables and on the lines.
 
 **A1. The vote, on paper.** For each list of nearest neighbours (nearest first), give the prediction for `k = 1`, `k = 3` and `k = 5`. Write the tally, not just the answer.
 
@@ -365,9 +377,13 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing short programs yourself. Each task gives the expected output and a "Done looks like" check.
+
 ### B1 — one line
 
-Write the **single line** that makes a kNN model with a committee of seven. Do not fit it.
+**Write the single line that makes a kNN model with a committee of seven. Do not fit it.**
+
+Type your line in the block below.
 
 ```python
 # your line here:
@@ -457,7 +473,9 @@ ________________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
-Here is `broken29.py`. It is supposed to run the full cycle on the two sepal columns and report both scores. It has **three** bugs: one that stops Python reading the file, one that stops it partway through, and one that produces **no error whatsoever**.
+This section is for finding bugs one at a time, from the loudest to the quietest. Run the file, read each message, and fix one bug before moving on.
+
+Here is `broken29.py`. It is supposed to run the full cycle on the two sepal columns and report both scores. It has **three** bugs. One stops Python reading the file. One stops it partway through. One produces **no error whatsoever**.
 
 ```python
 # iris_sepals.py - the full cycle, using only the two sepal columns. THREE BUGS.
@@ -569,6 +587,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for doing a whole kNN vote by hand, then checking it in code. The second part is about ties.
+
 ### Part 1 — Twelve flowers and one mystery, all by hand
 
 Twelve real iris rows, petal length and petal width only. One mystery flower: **petal length 5.2, petal width 1.7.**
@@ -668,6 +688,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for slow thinking, in a paragraph each. There is no code to run.
+
 **T1.** A kNN model has no rules inside it. When you call `fit`, it copies your training rows and stops. So the trained model **is** your data.
 
 Write a paragraph. Start with the literal consequence: describe exactly what you have handed over if you train a kNN model on 5,000 patients' medical records and email the trained model to a hospital. Then go a step further — somebody who can only *ask questions* of the model, without opening it, can still learn things about the training rows. Describe **how** they would go about it, concretely. Then the hard part: a patient asks you to delete their data. You delete their row from your table. **Is that enough?** Consider that you have already sent the trained model to fifty hospitals. Finish by naming one thing a **decision tree** (Week 31) would do differently, and whether that makes it safer.
@@ -710,6 +732,8 @@ ________________________________________________________________
 
 ## 🛠️ Build It — The Envelope, the Cycle, and the Gap
 
+This section is for doing the split with real cards first, then in code, then writing about it. Tick each box as you finish it.
+
 ### Part 1 — The physical split (do this first, before any code)
 
 - [ ] I counted the deck and wrote the number down: ______ cards
@@ -734,7 +758,7 @@ ________________________________________________________________
 
 ### Part 2 — The full cycle in code (page 29.5)
 
-From a **blank file**. Load iris, split it, fit a `k = 5` model, print both scores.
+Start from a **blank file**. Load iris, split it, fit a `k = 5` model, and print both scores.
 
 - [ ] `random_state=42` is in my `train_test_split`
 - [ ] I printed all four shapes and checked the row counts add up
@@ -753,7 +777,7 @@ From a **blank file**. Load iris, split it, fit a `k = 5` model, print both scor
 
 ### Part 3 — The two sentences (page 29.6)
 
-**Two sentences. Not four.** One about what the gap means, one about which number you would tell somebody. Rewrite it at least once; the first version is always too long.
+**Write two sentences, not four.** One about what the gap means, one about which number you would tell somebody. Rewrite it at least once; the first version is always too long.
 
 **Draft:**
 
@@ -817,6 +841,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for turning the week into one picture.
+
 Draw one deck being cut into two piles that add back up — and show which pile each of the three verbs is allowed to touch.
 
 ![Draw It frame for Week 29](../figures/fig-w29-9-draw-your-own-frame.svg)
@@ -835,6 +861,8 @@ Draw one deck being cut into two piles that add back up — and show which pile 
 ---
 
 ## 📊 Self-Check
+
+This section is for rating yourself honestly and spotting what to ask about. Tick one box on each row.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -873,6 +901,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for marking your own work, after you have finished every page above. Open it only when you are done.
 
 <details>
 <summary>Check your answers</summary>
@@ -922,7 +952,7 @@ Sorted nearest first: **chill (36.00), hype (36.01), hype (40.00), chill (40.02)
 
 **The pattern:** the mystery song sits almost exactly in the middle, so the chill songs and the hype songs are interleaved at nearly identical distances — 36.00 against 36.01, and 40.00 against 40.02. **Every one of those votes is one hundredth of a beat from flipping.** The right answer here is not "chill" or "hype": it is **"this song is between the two and the model cannot tell."**
 
-Confirmed:
+This script checks the six distances by code:
 
 ```python
 # check_p1.py
@@ -981,7 +1011,7 @@ for distance, mood in sorted(pairs):     # sorted() puts the nearest first
 
 **Why is line 1 not exactly 1.0?** Because we threw away two columns. **Sixteen of the 120 training flowers share their exact sepal measurements with a flower of a different species** — `(6.3, 2.5)` is both a versicolor and a virginica in this table. For seven of them the nearest neighbour at distance zero that the model picks is the look-alike with a *different* answer, and the model gets those seven wrong. On the full four-column iris, `k = 1` does score exactly 1.0.
 
-Confirmed:
+This script counts the clashing pairs:
 
 ```python
 # clashing_sepals.py

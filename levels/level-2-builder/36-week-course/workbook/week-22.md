@@ -6,9 +6,7 @@
 
 ---
 
-### The table every page below uses
-
-Type this once, at the top of a file called `playlist_drills.py`. Every question from here on is about it.
+**The table every page below uses.** Type this once, at the top of a file called `playlist_drills.py`. Every question from here on is about it.
 
 ```python
 import pandas as pd
@@ -65,6 +63,8 @@ ________________________________________________________________
 ---
 
 ## 🔎 Predict the Output
+
+This section is for guessing first and running second. Four small snippets, four predictions.
 
 **Write your prediction before you run anything.** Every snippet assumes `songs` has already been built exactly as printed above.
 
@@ -177,6 +177,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+These questions are for reading and tracing code. You do not write a program in this set.
 
 **A1. Name the tool.** For each English question, write **loc**, **iloc**, **filter**, **sort**, or **none needed**. Do not write any code yet.
 
@@ -297,6 +299,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+These questions are for writing your own lines of pandas, from one line up to a small report.
 
 ### B1 — one line
 
@@ -735,6 +739,8 @@ Draw **your own five-row table, by hand**, and mark on it what each of the three
 ---
 
 ## 📊 Self-Check
+
+Tick one face in each row to show how sure you are of each skill.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|

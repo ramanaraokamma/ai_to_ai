@@ -34,6 +34,8 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
+This section is for predicting first and running second. Read each snippet and commit to an answer before you check it.
+
 **Write your prediction in pen before you run anything.** Every snippet starts with `import pandas as pd`. **Two of these four run cleanly and are not what you typed.**
 
 ### P1 — which way round is a column?
@@ -161,6 +163,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading tables, `info()` reports and short lines of code. You write answers in the spaces; you do not need to run anything unless a question says so.
 
 **A1. Match the word to the thing.** Draw a line, or write the letter.
 
@@ -338,6 +342,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing your own pandas code. Each task gives the output to match; fill in the code blanks and run it.
+
 ### B1 — one line, plus a print
 
 **Task:** build a DataFrame of three books with a title and a page count, and print it.
@@ -511,6 +517,8 @@ ________________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
+This page is for finding bugs by reading real error messages and real `info()` output. Type the program below into `snacks21.py` to follow along.
+
 This program has **three** bugs: one **syntax**, one **runtime**, one **logic**. The real error messages are below, in the order you meet them.
 
 ```python
@@ -635,6 +643,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for reading `info()` reports closely. You predict a whole report first, then diagnose some reports.
+
 ### Part 1 — Predict the whole report
 
 Here is a table you have never seen. **Write out the entire `info()` report in pen before you type a single character.** There is one `None` hidden in it and one number wearing quote marks.
@@ -737,6 +747,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for thinking about the course so far, in a paragraph each. There is no single right answer.
+
 **T1.** Week 17 made you rub the labels off a table. Week 21 gave them back. **Write a paragraph** about whether the four weeks in between were worth it. What did you learn from *not* having named columns that you could not have learned from having them? And is there anything you would now use a plain numpy array for, given the choice?
 
 ________________________________________________________________
@@ -765,7 +777,9 @@ ________________________________________________________________
 
 ## 🛠️ Build It — Your Own Week, In Ten Rows
 
-**The paper goes first. In pencil. It is the only reason the entry count is a check rather than a number.**
+This section is for building a DataFrame from your own ten days, then reading its `info()` report line by line. Follow the checklist in order.
+
+**The paper goes first, in pencil.** It is the only reason the entry count is a check rather than a number.
 
 ### Step checklist
 
@@ -906,7 +920,13 @@ Draw your **own** table — anything with rows, columns and a couple of numbers.
 ![Draw It frame for Week 21](../figures/fig-w21-10-draw-frame.svg)
 *Figure W21.2 — Your table, with the index outside the frame, and one `NaN` added on purpose.*
 
-**What a good answer looks like:** a heavy outline round **the columns only**, with a header rule under the column names; the index strip drawn **outside** that outline, in grey, labelled *"row names — not a column"*; **four column names**, one of them words; ten rows numbered from **zero**; each column labelled with the dtype you would expect and its non-null count. Then the thing that earns the marks: **one cell replaced by `NaN`**, and **every other value in that column marked** with a small note — because they all changed even though nobody touched them.
+**What a good answer looks like:**
+
+- A heavy outline round **the columns only**, with a header rule under the column names.
+- The index strip drawn **outside** that outline, in grey, labelled *"row names — not a column"*.
+- **Four column names**, one of them words, and ten rows numbered from **zero**.
+- Each column labelled with the dtype you would expect and its non-null count.
+- The part that earns the marks: **one cell replaced by `NaN`**, and **every other value in that column marked** with a small note — because they all changed even though nobody touched them.
 
 **How many entries?** ______  **How many columns?** ______
 
@@ -925,6 +945,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+This table is for recording where you are. Tick one face for each line.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
@@ -946,6 +968,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished every page above. Do not open it before then.
 
 <details>
 <summary>Check your answers</summary>

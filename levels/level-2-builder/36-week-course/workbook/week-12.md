@@ -148,6 +148,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading slices, loops and `sorted()` without running anything first.
+
 **A1. Slice drills.** Given `scores = [45, 0, 112, 67, 8]` — slots 0, 1, 2, 3, 4. **Write the arithmetic in the last column every single time.**
 
 | # | Slice | Result | How many, and why |
@@ -176,7 +178,8 @@ ________________________________________________________________
 
 **A2. Trace it.** Say exactly what appears on the screen. **One of these crashes.**
 
-**(i)**
+**(i)** Read this program:
+
 ```python
 temps = [31, 34, 29, 36, 30, 28, 33]
 print(temps[2:5])
@@ -185,6 +188,7 @@ print(temps[5:])
 print(temps[-1:])
 print(temps[0:0])
 ```
+
 Output:
 
 ```text
@@ -197,20 +201,23 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**(ii)**
+**(ii)** Read this program:
+
 ```python
 words = ["one", "two", "three", "four"]
 for word in words:
     print(word)
 print(len(words))
 ```
+
 Output: ______________________________________________
 
 **How many times did the loop go round, and how do you know without counting the output?**
 
 ________________________________________________________________
 
-**(iii)**
+**(iii)** Read this program:
+
 ```python
 nums = [9, 2, 7]
 best = sorted(nums)
@@ -218,18 +225,21 @@ print(best)
 print(nums)
 print(best[-1], nums[-1])
 ```
+
 Output: ______________________________________________
 
 **The last line prints two different numbers. Explain why in one sentence.**
 
 ________________________________________________________________
 
-**(iv)**
+**(iv)** Read this program:
+
 ```python
 scores = [45, 0, 112, 67, 8]
 for score in scores:
     print(scores[score])
 ```
+
 Output: ______________________________________________
 
 **What is `score` holding on the very first trip round?** ______  **So which slot was asked for?** ______
@@ -238,7 +248,7 @@ Output: ______________________________________________
 
 ________________________________________________________________
 
-**A3. Spot the bug.** Somebody wrote a `median` that only handles one case.
+**A3. Spot the bug.** Somebody wrote a `median` that only handles one case. Read it, then fill in the lines below.
 
 ```python
 def median(scores):
@@ -259,7 +269,7 @@ It should have printed: ______________ and ______________
 
 ________________________________________________________________
 
-**Write the missing part:**
+**Write the missing part** (fill in the blanks):
 
 ```python
     if ________________________:
@@ -342,6 +352,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing your own slices, loops and a sixth tool for `stats.py`.
 
 **Your two files must be in the same folder. Check with `ls` before you start.**
 
@@ -450,7 +462,15 @@ ________________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
-Here is `report.py`, which is supposed to report on six scores using your own toolkit. It has **three** bugs: one that stops Python reading the file, one that crashes it partway through, and one that produces **no error message at all**.
+This section is for finding and fixing bugs one at a time, using the real messages.
+
+`report.py` is supposed to report on six scores using your own toolkit. It has **three** bugs:
+
+1. One stops Python reading the file.
+2. One crashes it partway through.
+3. One produces **no error message at all**.
+
+Here is the file:
 
 ```python
 # report.py - a report on six scores, built from my own toolkit. It has three bugs.
@@ -572,6 +592,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+Two short puzzles about slices and copies.
+
 ### Part A — The Shortest Slice
 
 Here is a row:
@@ -614,7 +636,7 @@ ________________________________________________________________
 
 ### Part B — The Copy Trap
 
-Predict all three lines **before** you run this. It is short and it catches nearly everybody.
+Predict all three lines **before** you run this short program.
 
 ```python
 a = [1, 2, 3]
@@ -660,6 +682,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions have no single right answer. Write a paragraph for each.
+
 **T1. Should `median([])` return `None`, or should it crash?**
 
 Write a paragraph. **Argue both sides properly before you pick one.**
@@ -697,6 +721,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+This section is for finishing `stats.py` and `main.py`, then proving `median()` on paper and in code.
 
 ### Part 1 — finish `stats.py`
 
@@ -884,6 +910,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for turning the week's idea into a picture of your own.
+
 Draw **your own toolbox, and the program that opens it.** Pick a subject: a weather kit, a marks kit, a money kit, a cricket kit.
 
 Show the **tin on one side** with named tools inside it, the **job file on the other side**, and the `import` as the thing that joins them. And show — somehow — that the tin does not print and the job file does.
@@ -910,6 +938,8 @@ Show the **tin on one side** with named tools inside it, the **job file on the o
 ---
 
 ## 📊 Self-Check
+
+Tick how sure you feel about each skill, then answer the true-or-false rows.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -952,6 +982,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Answers are below. Try every question first, then open the box to check.
 
 <details>
 <summary>Check your answers</summary>

@@ -123,7 +123,7 @@ Say it as a four-step recipe and never as a formula:
 
 Two flowers, using petal length and petal width:
 
-```
+```text
 flower A = (1.4, 0.2)        flower B = (4.4, 1.4)
 
 step 1  subtract :   1.4 − 4.4 = −3.0      0.2 − 1.4 = −1.2
@@ -258,6 +258,8 @@ representation and model.*
 
 ## 🧰 Prep Checklist
 
+This section gets the laptop, the files and the paper ready, so nothing stalls during the lesson.
+
 ### 20 minutes the night before
 
 - [ ] **Install scikit-learn, and do it tonight.** In the terminal, inside the project folder and with the virtual environment active:
@@ -377,6 +379,8 @@ representation and model.*
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the script for the whole lesson: a timing table first, then each segment in order.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Read Your Own Handwriting From Six Months Ago | 7 | 7 | The Week 1 sheet comes back out |
@@ -415,7 +419,7 @@ Let them read it. Let it be a bit awkward or a bit funny or a bit wrong. Do not 
 
 **Do this:** Write on the SHAPES sheet, big:
 
-```
+```text
 X  =  what you measured        (a TABLE)
 y  =  what you want back       (one COLUMN)
 ```
@@ -484,7 +488,7 @@ Have them say it. It sounds ridiculous, which is why it sticks.
 
 **Do this:** Write on the SHAPES sheet:
 
-```
+```text
 X.shape  =  (10, 2)     rows, then columns
 y.shape  =  (10,)       ten comma nothing
 ```
@@ -497,7 +501,7 @@ y.shape  =  (10,)       ten comma nothing
 >
 > For `X` we need **two** columns, and Python does something that looks like a mistake:
 
-```
+```python
 playlist[["bpm", "minutes"]]
 ```
 
@@ -753,7 +757,7 @@ The point of this activity is not the arithmetic. It is the **agreement**. The s
 
 **On the board or SHAPES sheet, written before you start:**
 
-```
+```text
 flower A  =  (1.4, 0.2)
 flower B  =  (4.4, 1.4)
 ```
@@ -781,7 +785,7 @@ Tell them where those numbers came from: they are rows 0 and 65 of the real iris
 
 **Now the four steps, with a pencil.** Have them write all four lines out; do not let them do it in their head.
 
-```
+```text
 step 1   subtract      1.4 − 4.4 = −3.0        0.2 − 1.4 = −1.2
 step 2   square        (−3.0)² = 9.00          (−1.2)² = 1.44
 step 3   add up        9.00 + 1.44 = 10.44
@@ -883,7 +887,7 @@ all four steps in one line: 3.2310988842807027
 
 **Now the agreement.** Write all three on the SHAPES sheet, side by side:
 
-```
+```text
 ruler        ≈  3.25       (a measurement, allowed to be a bit off)
 pencil          3.23       (exact arithmetic, rounded)
 numpy           3.23       (exact arithmetic, rounded)
@@ -921,6 +925,8 @@ numpy           3.23       (exact arithmetic, rounded)
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions you are likely to hear, with an answer you can say aloud.
+
 **"Why capital X and small y? Is that just to be annoying?"**
 
 There is an actual reason. A capital letter is the convention for a *table* — many rows, many columns. A small letter is the convention for a single line of values. So `X` is capital because it is a rectangle and `y` is small because it is a line. It comes from maths notation that is older than computers, and the whole world now agrees on it, so you will see the same two letters in every book, every tutorial and every library. It is one of the very few things in this field that nobody argues about.
@@ -953,6 +959,8 @@ You can put it in, and something worse than an error will happen: it will appear
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual ways the lesson goes off course, and what to do right then.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | scikit-learn is not installed and the lesson stalls in minute 2 | The install was left to the day | Switch to the paper version immediately — the activity needs only two iris rows (A and B), and the Puzzle of the Week prints four more. Do not spend lesson time on pip. Fix the install afterwards, alone. |
@@ -969,6 +977,8 @@ You can put it in, and something worse than an error will happen: it will appear
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut, add or change for a student who is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1091,6 +1101,8 @@ Six of those are 5, which is a nice trap and provokes the right question. That g
 
 ## ✅ Assessing Understanding
 
+This section gives three short checks and a mastery scale for judging whether the lesson landed.
+
 Three checks, five minutes, exact wording.
 
 **Check 1 — the split (spoken, with a table in front of them)**
@@ -1111,7 +1123,7 @@ Three checks, five minutes, exact wording.
 
 *Good answer:*
 
-```
+```text
 step 1   2 − 5 = −3        1 − 5 = −4
 step 2   (−3)² = 9         (−4)² = 16
 step 3   9 + 16 = 25
@@ -1133,6 +1145,8 @@ Full marks needs all four lines written down, not just the 5. **What to catch:**
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to introduce the homework and what the student should hand in.
 
 **Say this:**
 

@@ -217,6 +217,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading baselines, distances, grids and error messages. Use a pencil and a calculator.
+
 **A1. Baselines.** Work out each baseline, then say whether the accuracy is any good.
 
 | # | Class counts | Baseline | An accuracy of… | Any good? Why? |
@@ -419,6 +421,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing short programs. Each task shows the output your program should print.
+
 ### B1 — one line
 
 Write the **single line** that prints the wine table's baseline, rounded to four decimal places. `wine` is already loaded.
@@ -437,9 +441,9 @@ Write the **single line** that prints the wine table's baseline, rounded to four
 
 ### B2 — mark twelve guesses
 
-Twelve guesses have already been made. Write a program that prints the accuracy and the confusion matrix.
+Twelve guesses have already been made. Write a program that prints the accuracy and the confusion matrix. Start from these two lists.
 
-```
+```python
 truth = [0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2]
 guess = [0, 0, 0, 1, 1, 1, 1, 2, 0, 1, 1, 2]
 ```
@@ -663,6 +667,8 @@ confusion matrix:
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for exploring how units change which column dominates a distance.
+
 ### Part 1 — Choose your own shouty column
 
 Two people. Person A is **1700 mm** tall and **12** years old. Person B is **1750 mm** tall and **40** years old.
@@ -758,6 +764,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+This section is for longer written answers. Take your time and write full sentences.
 
 **T1.** You have introduced a bug and your accuracy went **up**, from 0.9444 to 0.9722.
 
@@ -876,7 +884,7 @@ ________________________________________________________________
 
 **My best model's grid:**
 
-```
+```text
 [[ ___  ___  ___ ]
  [ ___  ___  ___ ]
  [ ___  ___  ___ ]]
@@ -940,6 +948,8 @@ Draw two columns of very different sizes, the gaps before and after scaling, and
 
 ## 📊 Self-Check
 
+Use this table to rate yourself honestly on each skill from this week.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Compute an accuracy and say the baseline next to it | ☐ | ☐ | ☐ |
@@ -980,6 +990,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Open this only after you have finished the whole workbook. Use it to check your work.
 
 <details>
 <summary>Check your answers</summary>

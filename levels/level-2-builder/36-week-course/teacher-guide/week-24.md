@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the whole lesson on one page: what it is, what you need, and the trap to protect.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -116,6 +118,8 @@ print(raw[raw.duplicated(keep=False)])
 - `keep=False` — "show me **both** copies, not just the second one". Without it you only see rows 34 and 37 and you cannot compare them with anything.
 - **Four rows, two people.** Two pupils genuinely called Bela Roy would be a coincidence. Two rows where the name, the age, the house, the club, the hours **and** the score all match is a typing slip — somebody scrolled and lost their place. **Every single field matching is the giveaway**, and it is the reason you can delete with a clear conscience.
 
+Now remove the duplicates, on a copy of the table:
+
 ```python
 clean = raw.copy()
 print("before:", clean.shape)
@@ -139,6 +143,8 @@ after : (38, 6)
 *Figure 24.1 — Print the shape before and after. If you cannot account for the difference, stop and look again.*
 
 ### 4. `value_counts()` — the count that beats your eyes
+
+This section counts the house spellings, because a count shows what eyes cannot.
 
 ```python
 print(raw["house"].value_counts())
@@ -198,7 +204,9 @@ nunique: 4
 3. `.str.title()` — capital first letter, everything else lower case. `"blue"`, `"BLUE"` and `"Blue"` all become `"Blue"`.
 4. `clean["house"] = ` — put the repaired column back. **Again, no assignment means nothing happened.**
 
-**Fourteen became four.** And the arithmetic checks out: Blue was `Blue` 5 + `blue` 4 + `BLUE` 3 + `blue ` 1 + ` Blue` 1 = **14**. Nothing was lost, nothing was invented. Make the student do that sum; it is thirty seconds and it turns a magic trick into arithmetic.
+**Fourteen became four.**
+
+The arithmetic checks out: Blue was `Blue` 5 + `blue` 4 + `BLUE` 3 + `blue ` 1 + ` Blue` 1 = **14**. Nothing was lost, nothing was invented. Make the student do that sum; it is thirty seconds and it turns a magic trick into arithmetic.
 
 **Now a real trap, worth staging.** What if you do `title` without `strip`? Here it is on a fresh, still-messy copy, so you can see it for yourself:
 
@@ -221,7 +229,9 @@ Name: house, dtype: int64
 nunique: 8
 ```
 
-**Eight, not four** — and the printout looks like it worked. `Blue` appears three times (one with a trailing space, one with a leading space). `Green` appears twice. `Gold` appears twice. The spaces are still there, and **a space prints as nothing**, so the output looks like pandas has lost its mind.
+**Eight, not four** — and the printout looks like it worked.
+
+`Blue` appears three times (one with a trailing space, one with a leading space). `Green` appears twice. `Gold` appears twice. The spaces are still there. **A space prints as nothing**, so the output looks like pandas has lost its mind.
 
 > **You need `strip` AND `title`. `title` on its own leaves the spaces, and the spaces print as nothing, so the bug is invisible in the output and visible only in the count.** (Teacher note: `.str.strip().str.title()` and `.str.title().str.strip()` give identical results, so the order is a habit, not a rule. Do not tell the student that reversing them breaks anything; it does not. Leaving `strip` out is the bug.)
 
@@ -299,7 +309,9 @@ print(clean.sort_values("points_per_hour", ascending=False).head(5)[["name", "ho
 14  Omar Haddad   Blue     52    1.0             52.0
 ```
 
-**The top three by points-per-hour are three of the lowest scorers in the school** — 48, 45 and 42. They all worked half an hour. **A new column made a new ranking, and neither ranking is a lie.** Which one you report is a choice, and it is the same kind of choice as fill-versus-drop last week: defensible either way, indefensible unaccounted for.
+**The top three by points-per-hour are three of the lowest scorers in the school** — 48, 45 and 42. They all worked half an hour.
+
+**A new column made a new ranking, and neither ranking is a lie.** Which one you report is a choice, and it is the same kind of choice as fill-versus-drop last week: defensible either way, indefensible unaccounted for.
 
 This is also a good place to be honest with a sharp student: dividing by 0.5 doubles a number, so `points_per_hour` mostly measures *who did the least work*, not who is best. That is a real weakness of the measure and worth saying so.
 
@@ -362,7 +374,9 @@ Name: score, dtype: int64
 
 **Two.** Gold is two people. One of them being off school that day would leave Gold's average resting on a single pupil's score (97 or 93), and one ordinary pupil joining would cut its lead over Blue by about a third.
 
-**Nothing in the `.mean()` output told you that.** Four numbers, four house names, and no hint that one of them came from two rows and another from fourteen. The printout was completely honest and completely misleading, and the student read "Gold is the best house" straight off it.
+**Nothing in the `.mean()` output told you that.**
+
+Four numbers, four house names, and no hint that one of them came from two rows and another from fourteen. The printout was completely honest and completely misleading, and the student read "Gold is the best house" straight off it.
 
 The fix is one command, and it must become automatic:
 
@@ -422,9 +436,13 @@ Name: score, dtype: int64
 sums to 32 but the table has 38 rows
 ```
 
-**Thirty-two, not thirty-eight. Six rows are simply not in the answer, and nothing said so.** They are the six pupils whose ages nobody recorded — there is no pile for them, so they were left out.
+**Thirty-two, not thirty-eight. Six rows are simply not in the answer, and nothing said so.**
 
-That is exactly why the sum check exists, and it is why the lab fills the ages before asking anything about age. It is also the same lesson as last week from a different angle: **repairs change answers, and so do repairs you forgot to make.**
+They are the six pupils whose ages nobody recorded — there is no pile for them, so they were left out.
+
+That is exactly why the sum check exists, and it is why the lab fills the ages before asking anything about age.
+
+It is also the same lesson as last week from a different angle: **repairs change answers, and so do repairs you forgot to make.**
 
 **One more thing about `groupby` that surprises people.** Group by two columns and you get only the combinations that **actually happen**:
 
@@ -462,19 +480,28 @@ age
 14   10  61.00
 ```
 
-**The fill added six people to one group and moved its average.** That is not a bug — it is what filling means. But it means the log must say so, and it means the general rule from last week applies with force: *never fill a column with a guess and then make that column the subject of your question.* Question 4 of the lab is a question about age, and the age column contains six guesses.
+**The fill added six people to one group and moved its average.**
+
+That is not a bug — it is what filling means. But it means the log must say so, and it means the general rule from last week applies with force: *never fill a column with a guess and then make that column the subject of your question.* Question 4 of the lab is a question about age, and the age column contains six guesses.
 
 ### 11. The three misconceptions you will actually meet
 
-**Misconception 1: "the computer is being stupid about `Blue` and `Blue `."** It is being exact. Two pieces of writing are the same only if every character matches, and a space is a character. Reframe it as a *feature*: if the computer quietly decided that `Blue ` and `Blue` were the same, it would also have to decide about `Blu` and `Bleu`, and then you could never trust it about anything.
+**Misconception 1: "the computer is being stupid about `Blue` and `Blue `."**
 
-**Misconception 2: "Gold is the best house."** They will say it, out loud, from a perfectly honest printout. **Do not correct it with information.** Ask one question — *"how many people is Gold?"* — and let them go and find out. The self-correction is the lesson; a correction from you is just a fact.
+It is being exact. Two pieces of writing are the same only if every character matches, and a space is a character. Reframe it as a *feature*: if the computer quietly decided that `Blue ` and `Blue` were the same, it would also have to decide about `Blu` and `Bleu`, and then you could never trust it about anything.
 
-**Misconception 3: "`groupby` gives you the answer."** `groupby` gives you *a* number. Which number depends on what you cleaned, what you filled, what you grouped by, and what you chose to aggregate. Five defensible pipelines give five different tables. The result of `groupby` is the *start* of a claim, not the end of one.
+**Misconception 2: "Gold is the best house."**
+
+They will say it, out loud, from a perfectly honest printout. **Do not correct it with information.** Ask one question — *"how many people is Gold?"* — and let them go and find out. The self-correction is the lesson; a correction from you is just a fact.
+
+**Misconception 3: "`groupby` gives you the answer."**
+
+`groupby` gives you *a* number. Which number depends on what you cleaned, what you filled, what you grouped by, and what you chose to aggregate. Five defensible pipelines give five different tables. The result of `groupby` is the *start* of a claim, not the end of one.
 
 ### 12. How deep to go, and where to stop
 
 **Go this deep:**
+
 - Look at duplicates before deleting them, and be able to name which rows went.
 - Shape before, shape after, account for the difference out loud.
 - `strip` before `title`, and the count — not the printout — is the evidence.
@@ -483,6 +510,7 @@ age
 - Group sizes must sum to the number of rows.
 
 **Stop before all of this:**
+
 - **`drop_duplicates(subset=[...])`** — dropping on *some* columns rather than all. Real and useful; a much bigger judgement call ("is one pupil allowed two rows?"). Mention it exists if asked.
 - **`.str.replace()`, `.str.contains()`, regular expressions.** A whole world. Not today.
 - **`pivot_table`, `unstack`, multi-index gymnastics.** The two-column `groupby` printout above is as far as this course goes with nested groups.
@@ -526,6 +554,8 @@ and it is the last box in stage three. **Data** and **evaluation** are lit.*
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to make and print before class, and a paper plan if the laptop fails.
 
 ### 20 minutes the night before
 
@@ -740,9 +770,9 @@ sizes sum to 38 and the table has 38 rows
 - `ls` in the terminal. Confirm `house_raw.csv` is there.
 - `house_raw.csv` open in a text editor on a second tab.
 - Last week's cleaning log on the table, with the next free line ready.
-- Write on the board and leave up all lesson:
+- Write this on the board and leave it up all lesson:
 
-```
+```text
 SHAPE BEFORE   ->   SHAPE AFTER   ->   ACCOUNT FOR THE DIFFERENCE
 
   never print   .mean()   without   .size()   beside it
@@ -765,6 +795,8 @@ Do the typing next lesson as a warm-up. Week 25 is matplotlib and needs a clean 
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the lesson script. The table shows the five segments; each segment below says what to do, say and ask.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Four Houses, Fourteen Names | 7 | 7 | value_counts on the raw column. Count the houses. |
@@ -777,7 +809,9 @@ Do the typing next lesson as a warm-up. Week 25 is matplotlib and needs a clean 
 
 ### 🪝 Hook — Four Houses, Fourteen Names (7 minutes)
 
-**Do this:** Terminal open, `house_raw.csv` loaded, nothing else on screen. **Do not show the table.** Type exactly this and nothing more.
+**Do this:** Terminal open, `house_raw.csv` loaded, nothing else on screen. **Do not show the table.**
+
+Type exactly this and nothing more:
 
 ```python
 import pandas as pd
@@ -902,7 +936,7 @@ Let them find it.
 
 Write the chain on the board and read it left to right:
 
-```
+```text
 clean["house"].str.strip().str.title()
                     |          |
               take spaces   Capitalise
@@ -923,7 +957,7 @@ clean["house"].str.strip().str.title()
 
 > "We've got scores and we've got hours. So we can ask a question nobody put in the table: **how many marks did each pupil get per hour of work?**"
 
-```
+```text
 clean["points_per_hour"] = clean["score"] / clean["hours"]
        |                        |
    a name that doesn't      divide the whole column
@@ -951,7 +985,7 @@ clean["points_per_hour"] = clean["score"] / clean["hours"]
 
 Write it up:
 
-```
+```text
 clean.groupby("house")["score"].mean()
         |         |        |       |
     make the   pile by  only care  one number
@@ -1057,7 +1091,7 @@ after : (38, 6)
 
 **Do this:** Log line, on last week's sheet.
 
-```
+```text
  8 | drop_duplicates(): 40 rows -> 38 | Bela Roy and Farah Aziz each appeared
    |                                  | twice with EVERY field identical, incl.
    |                                  | the exact score. A typing slip, not two
@@ -1147,7 +1181,7 @@ Name: club, dtype: int64
 
 **Do this:** Two log lines, both with the reason.
 
-```
+```text
  9 | house: .str.strip().str.title() | value_counts() showed 14 spellings of 4
    | 14 spellings -> 4 houses        | houses, two with spaces I could not see.
    |                                 | strip AND title: title alone leaves the
@@ -1197,7 +1231,7 @@ dtype: int64
 
 Let that hang. Do not resolve it. Log line:
 
-```
+```text
 11 | Filled 6 missing ages with 13,  | 13 is the median of the 32 ages we know.
    | then astype(int)                | WARNING: 6 of the 18 "13-year-olds" are
    |                                 | 13 only because I said so. Do NOT trust
@@ -1320,7 +1354,7 @@ Let them work it out. One member: 97 or 93 — still top. But with one row the n
 
 Write it on the board:
 
-```
+```text
 NEVER print .mean() without .size() beside it.
   agg(n=("score","size"), avg=("score","mean"))
 
@@ -1338,6 +1372,8 @@ And check: the group sizes must add up to len(df).
 ---
 
 ## 🐞 The Debugging Clinic
+
+Use this table when a message or a strange result appears. Find the row that matches, then read the cause and the fix.
 
 Every message below came from running a broken version of **this week's actual code**, on Python 3.10 and pandas 1.5.3. Tracebacks are trimmed to the first and last lines, which are the ones that matter, and those are exact.
 
@@ -1375,6 +1411,8 @@ And the sentence for this week, which is the sentence for the whole term:
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full script for the two parts of the activity: the six questions, then the Gold conversation.
 
 ### Part A — Six Questions, Hand-Checked (14 minutes)
 
@@ -1422,6 +1460,7 @@ Red    12  74.25
 ```
 
 **Hand-check Gold:** 97 + 93 = 190, 190 ÷ 2 = **95.00** ✔
+
 **Hand-check Green if they want a harder one:** the ten Green scores are 48, 50, 54, 59, 61, 63, 67, 70, 85, 95 → sum **652**, and 652 ÷ 10 = **65.20** ✔
 
 ---
@@ -1541,7 +1580,7 @@ Let them go and find out, even though it was on screen four minutes ago in Quest
 
 **Step 5 — the rule, in their handwriting, in the Bug Log.**
 
-```
+```text
 Never print .mean() without .size() beside it.
 And check that the group sizes add up to len(df).
 ```
@@ -1598,6 +1637,8 @@ print(messy["house"].nunique())        # 4 - now the capitals have gone
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions this lab tends to raise, each with an answer you can give.
+
 **"Why doesn't pandas ignore spaces automatically?"**
 
 Because it cannot know which spaces you meant. Sometimes a space is real data — a name like `de Souza`, an address, a sentence. If pandas silently trimmed everything, it would eventually destroy something you needed, and you would have no way to find out. **It is more useful to have a tool that is exact and a `strip` command than a tool that quietly tidies up behind you.** Exactness is what makes it trustworthy.
@@ -1638,6 +1679,8 @@ You have to work it out yourself, and that is a real weakness of the tool. Four 
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual ways the lesson slips, why each happens, and what to do right now.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student reads "Gold is the best house" and you correct them. | The instinct to teach is to supply the fact. | **Don't.** Ask one question — *"how many people is Gold?"* — and let them go and look. The correction has to be theirs or it is not learnt. |
@@ -1653,6 +1696,8 @@ You have to work it out yourself, and that is a real weakness of the tool. Four 
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to change the lesson for a student who is struggling, flying, or not engaging.
 
 ### If the student is struggling
 
@@ -1743,6 +1788,8 @@ Run all three in the last five minutes. Say them exactly as written.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to announce the homework and a map of the workbook sections.
 
 **Say this:**
 
@@ -2023,7 +2070,9 @@ chess  14  76.07    97
 music  12  71.83    93
 ```
 
-The pattern read aloud: `n=("score", "size")` means "make me a column called `n`, from the `score` column, by counting how many rows are in the pile." The new name goes on the left of the `=`. All three clubs have twelve or more members, so chess winning by four to five marks is a far stronger claim than Gold's twenty-mark lead over two.
+The pattern read aloud: `n=("score", "size")` means "make me a column called `n`, from the `score` column, by counting how many rows are in the pile." The new name goes on the left of the `=`.
+
+All three clubs have twelve or more members, so chess winning by four to five marks is a far stronger claim than Gold's twenty-mark lead over two.
 
 **B5.** The full program and its real output. The six answers have the same values as under Build It Part 3.
 
@@ -2218,7 +2267,9 @@ Any number is acceptable (the model answer says five). What is markable: (1) a r
 | after `drop_duplicates()` | **38** | **6** |
 | after adding `points_per_hour` | **38** | **7** |
 
-The two rows that went were the **second Bela Roy** and the **second Farah Aziz**; they were duplicates and not two people because every field matched, including the exact score. The column count went up by one because `points_per_hour` was added; nothing came from outside. The reference file below produces every number in Parts 1 and 2:
+The two rows that went were the **second Bela Roy** and the **second Farah Aziz**; they were duplicates and not two people because every field matched, including the exact score.
+
+The column count went up by one because `points_per_hour` was added; nothing came from outside. The reference file below produces every number in Parts 1 and 2:
 
 ```python
 # detective.py - Week 24 homework. Four repairs, accounted for.
@@ -2415,6 +2466,12 @@ The eight can-do rows are self-rated; ask the student to point at the evidence f
 
 ## 🔮 Next Week Preview
 
-Next week the table stops being a table. **Week 25 is the first chart** — `matplotlib`, one line plotted, axes labelled, title on, saved to a PNG file the student can actually show somebody. And it arrives at exactly the right moment, because this week ended with a printout that was completely correct and completely misleading, and **a chart can do that ten times faster than a table can.** The lesson is deliberately strict about labels: a chart with no title and no axis names is not a chart, it is a decoration, and it will be marked as one. The student will also meet a new flavour of silent failure — code that runs, prints nothing, produces no error, and writes no file, because nobody called `savefig`.
+Next week the table stops being a table. **Week 25 is the first chart** — `matplotlib`, one line plotted, axes labelled, title on, saved to a PNG file the student can actually show somebody.
+
+It arrives at exactly the right moment, because this week ended with a printout that was completely correct and completely misleading, and **a chart can do that ten times faster than a table can.**
+
+The lesson is deliberately strict about labels: a chart with no title and no axis names is not a chart, it is a decoration, and it will be marked as one.
+
+The student will also meet a new flavour of silent failure — code that runs, prints nothing, produces no error, and writes no file, because nobody called `savefig`.
 
 **Prep early:** check `python3 -c "import matplotlib"` prints nothing on the student's machine, **today, not next week** — if matplotlib needs installing, that is a twenty-minute job you do not want to discover at minute three of a lesson. Keep the clean forty-row table and the cleaning log: Week 25 charts this data, and the very first chart the student draws will be the four house averages — at which point the question *"where are the group sizes?"* comes straight back, in a new form.

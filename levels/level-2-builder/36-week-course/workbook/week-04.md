@@ -8,7 +8,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week**.
+This page is for warming up with five quick questions about **last week**. Write each answer on the line.
 
 **W1.** What does the little `f` immediately before an opening quote actually do?
 
@@ -98,6 +98,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading code and tracebacks closely, the way Python does.
 
 **A1. Trace the value.** Write what is in each box after each line runs, and write the **type** as well as the value. Use quotes where the value is text.
 
@@ -196,6 +198,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing your own short programs, from one line up to a whole bot.
 
 **B1. One line.** Write the line that asks for a price in rupees and paise and stores it as a number in a box called `price`.
 
@@ -301,7 +305,15 @@ ________________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
-Here is `screen_report.py`. It has **three** bugs in it: one that stops Python reading the file at all, one that stops it partway through, and one that produces no error whatsoever.
+This page is for practising debugging on a program that was broken on purpose.
+
+Here is `screen_report.py`. It has **three** bugs in it:
+
+- one that stops Python reading the file at all,
+- one that stops it partway through,
+- and one that produces no error whatsoever.
+
+Read the program below, then work through the bugs one at a time.
 
 ```python
 # screen_report.py - it has three bugs in it. Find them one at a time.
@@ -398,6 +410,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for thinking about what the screen does and does not tell you.
+
 ### Six outputs, and a detective job
 
 Somebody ran six lines that all looked like `print(mystery * 3)`. Here is what came out. Your job: for each one, say whether the thing on the left of the `*` was **text** or a **number**, and what it was.
@@ -441,6 +455,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for forming and defending your own opinion in writing.
+
 **T1.** Python refuses to guess what `"5" + 5` means and stops. Some other languages happily hand back `"55"`. **Which behaviour is better?**
 
 Write a paragraph. Take a side, and be honest about what your side costs. A full answer names a **consequence in the world**, not just "it might be wrong".
@@ -476,6 +492,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+This page is for finishing your `about_me.py` and keeping a log of the bugs you meet on the way.
 
 ### Part 1 — Finish `about_me.py`
 
@@ -548,7 +566,7 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
-Draw **your own bot** as a picture: what went in on the left, what came out on the right — and the right-hand side must only contain things **nobody typed**.
+This page is for drawing **your own bot** as a picture. Put what went in on the left and what came out on the right. The right-hand side must only contain things **nobody typed**.
 
 ![Draw It frame for Week 4](../figures/fig-w04-9-draw-frame.svg)
 *Figure W4.2 — Your page.*
@@ -564,6 +582,8 @@ Draw **your own bot** as a picture: what went in on the left, what came out on t
 ---
 
 ## 📊 Self-Check
+
+This page is for checking honestly what you can do now and what needs another look.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -594,6 +614,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for marking your own work. Finish every page before you open it.
 
 <details>
 <summary>Check your answers</summary>
@@ -631,7 +653,11 @@ ________________________________________________________________
 8.5
 ```
 
-Three surprises in three lines. `int(8.5)` is `8` because `int()` **chops** at the dot. `round(8.5)` is **also 8** — Python rounds a value sitting exactly on the boundary to the nearest **even** number, which is why `round(2.5)` is 2 and `round(3.5)` is 4. And `round(8.4999, 2)` is `8.5`, not `8.50`: rounding gives you the *number* 8.5, and the number eight-and-a-half has no trailing zero. Only `f"{x:.2f}"` puts one on the screen.
+Three surprises in three lines.
+
+1. `int(8.5)` is `8` because `int()` **chops** at the dot.
+2. `round(8.5)` is **also 8**. Python rounds a value sitting exactly on the boundary to the nearest **even** number, which is why `round(2.5)` is 2 and `round(3.5)` is 4.
+3. `round(8.4999, 2)` is `8.5`, not `8.50`. Rounding gives you the *number* 8.5, and the number eight-and-a-half has no trailing zero. Only `f"{x:.2f}"` puts one on the screen.
 
 **P3** — real output:
 
@@ -659,7 +685,7 @@ Three surprises in three lines. `int(8.5)` is `8` because `int()` **chops** at t
 
 ### Practice Set A
 
-**A1.** Real run, typing `20`:
+**A1.** This is the program with a `print` added at the end, run for real, typing `20`:
 
 ```python
 answer = input("How many? ")      # the human types 20
@@ -730,8 +756,11 @@ Real outputs:
 **The phone number row.** It looks exactly like a number and must never be treated as one. Two reasons: a leading zero would vanish the moment it became a number, and **you never do arithmetic on a phone number** — adding two together is meaningless. If you never need to add it, it does not need to be a number.
 
 **A6.**
+
 (a) A **`TypeError`** — "right names, wrong kinds of thing". The word **concatenate** is a long word for "glue end to end", which is what `+` does to text. So Python is saying: *the thing on the left of the `+` is text, so `+` means glue, and I cannot glue a number onto text.* Which tells you something important — `minutes` is text, so a conversion is missing somewhere above.
+
 (b) Python gave up on **line 10**. **No, the mistake is not on line 10.** Line 10 is only where it *noticed*.
+
 (c) Put `int()` round the `input()` on the line that filled `minutes` — probably near the top of the file. Then read the other input lines as a column and check each one.
 
 Real traceback from a real run, typing `120`:

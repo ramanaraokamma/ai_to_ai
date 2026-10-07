@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the whole lesson on one screen: what it is, how long it takes, and what you need.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -36,6 +38,8 @@ Observable evidence: `records.py` containing `filter_by()` and `group_count()` t
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+This section is your background reading. It covers each idea in the order the lesson meets it, with the traps to expect.
 
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
@@ -70,7 +74,7 @@ def filter_by(rows, key, value):
 
 That is a Week 14 comprehension with three extra words on the end. Read it in order:
 
-```
+```text
 [ r          for r in rows        if r[key] == value ]
   └── 3 ──┘  └──── 1 ────┘        └────── 2 ───────┘
 
@@ -79,7 +83,7 @@ That is a Week 14 comprehension with three extra words on the end. Read it in or
 3. r                       ->  ...and for those, put the WHOLE RECORD in the new list
 ```
 
-Two things to be clear about, because they are the two things students get wrong:
+Be clear about two things. Students often get both wrong:
 
 - **What goes in the new list is `r` — the whole record**, not one field. Last week the comprehension said `r["runs"]` and gave you a list of numbers. This week it says `r` and gives you a list of records. **Filtering does not change what a row is; it changes how many rows there are.**
 - **`==`, not `=`.** One equals sign assigns; two ask a question. The student has known this since Week 5. Getting it wrong here gives `SyntaxError: invalid syntax` with the caret sitting on the `=`.
@@ -95,6 +99,8 @@ big_scores = [r for r in squad if r["runs"] > 50]
 ### 3. The counting dictionary — the one pattern to memorise
 
 This is the most reused four lines in this entire course. Learn it well enough to write it from memory, because you will.
+
+Here is the whole function. Each line has a comment saying what it does.
 
 ```python
 def group_count(rows, key):
@@ -158,7 +164,7 @@ The student learned `total += x` in Week 7. It is the natural thing to write her
 counts[bucket] += 1
 ```
 
-And it fails, immediately, on the very first row:
+And it fails, immediately, on the very first row. This is the traceback you get:
 
 ```text
 Traceback (most recent call last):
@@ -216,17 +222,21 @@ biggest team (wrong): Tigers
 biggest team (right): Falcons
 ```
 
-**Neither of those crashed.** That is the whole point. `max(counts)` looks at the *keys* — the team names — and returns the one that comes last alphabetically. `Tigers` beats `Owls` beats `Hawks` beats `Falcons` as words, and the counts are never consulted. It is a confident, wrong, silent answer.
+**Neither of those crashed.** That is the whole point.
+
+`max(counts)` looks at the *keys* — the team names — and returns the one that comes last alphabetically. `Tigers` beats `Owls` beats `Hawks` beats `Falcons` as words, and the counts are never consulted. It is a confident, wrong, silent answer.
 
 `max(counts, key=counts.get)` says: *go through the keys, and for each one, judge it by what `counts.get` says about it.* Now the numbers decide.
 
-**And there is a second thing hiding here that you should plan to discuss.** Falcons and Tigers both have 4. It is a **tie**, and `max` does not tell you — it just returns the first one it met, which is Falcons because Falcons was typed first. So the honest answer to "which is the biggest team?" is *"Falcons and Tigers, four each"*, and the code as written cannot say that. Do not fix it in code today. **Just make the student notice that the program gave a single answer to a question with two answers.** That is a better lesson than a fix.
+**A second thing is hiding here, and you should plan to discuss it.** Falcons and Tigers both have 4. It is a **tie**, and `max` does not tell you. It just returns the first one it met, which is Falcons because Falcons was typed first.
+
+So the honest answer to "which is the biggest team?" is *"Falcons and Tigers, four each"*, and the code as written cannot say that. Do not fix it in code today. **Just make the student notice that the program gave a single answer to a question with two answers.** That is a better lesson than a fix.
 
 (A student who remembers Level 1 may recognise this: it is the same "slippery thing" as a tie in a baseline. Say so if they get there.)
 
 ### 7. The sting: an average hides how many rows it came from
 
-Here is the output the whole lab is built to produce:
+Here is the output the whole lab is built to produce. It is the average-per-team output from the six questions in The Activity, In Full:
 
 ```text
 Q5  average runs per team
@@ -319,6 +329,8 @@ One thread lit: data.*
 ---
 
 ## 🧰 Prep Checklist
+
+This checklist gets the room, the files and your own run-through ready before the lesson.
 
 ### 15 minutes the night before
 
@@ -423,6 +435,8 @@ Run `python3 check.py`. You must see **exactly**:
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is your script for the whole lesson. The table is the overview. The segments below it give the words to say and the steps to follow.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -615,7 +629,7 @@ def column(rows, key):
     return [r[key] for r in rows]
 ```
 
-New file `lab15.py`:
+Then make a new file, `lab15.py`, that uses the tools:
 
 ```python
 """lab15.py - asking the twelve records six questions."""
@@ -630,7 +644,7 @@ print("Tigers     :", column(tigers, "name"))
 
 **Ask before running:** "Two lines out. How many Tigers, and who?"
 
-Run it. Real output:
+Run it. Here is the real output:
 
 ```text
 Tigers rows: 4 of 12
@@ -792,6 +806,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full setup, the rules and the code for the six-question lab.
+
 ### Setup
 
 **On the table:** the four card piles from the Hook, still in their piles. The four bucket labels. A calculator. Workbook Practice Set A, A5 (the trace), for reference. The blank landscape answers sheet.
@@ -807,7 +823,7 @@ Full instructions in the next section. In the lesson flow:
 
 ### The six questions
 
-The complete file. Add to `lab15.py`.
+Here is the complete `lab15.py`. Add the new code to the file you already have.
 
 ```python
 """lab15.py - six questions about twelve players, every answer with its row count."""
@@ -898,7 +914,7 @@ Q6  top three scorers
 
 **Hand-check one answer with the calculator, on paper, in front of them.** Q4 is the right one:
 
-```
+```text
 48 + 12 = 60
 60 + 77 = 137
 137 + 5 = 142
@@ -947,7 +963,7 @@ Most students say the Owls. Let them.
 
 ### The guard (3 minutes)
 
-Add to the bottom of `lab15.py` — or make it a separate `honest.py`:
+Add the guard to the bottom of `lab15.py`, or make it a separate `honest.py`. This version is the separate file:
 
 ```python
 """honest.py - the same averages, but the small groups say so out loud."""
@@ -973,7 +989,7 @@ print("-" * 52)
 print(f"minimum group size we agreed on: {MIN_GROUP}")
 ```
 
-Real output:
+Run it. Here is the real output:
 
 ```text
 average runs per team
@@ -1050,6 +1066,8 @@ And the sentence for this week, which is the harder half of debugging:
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions students usually ask, with answers you can give in your own words.
+
 **"Does filtering delete the rows from the original table?"**
 
 No. `filter_by` builds a **new** list and hands it back; `squad` still has all twelve records afterwards. Prove it in one line — print `len(squad)` after the filter and watch it stay at 12. This matters more than it sounds: students who think filtering is destructive become afraid to run things twice, and a student who is afraid to experiment stops learning.
@@ -1076,9 +1094,14 @@ It helps with a different problem, not this one. The median (the middle value, f
 
 **"How many rows do you need before an average means anything?"** *(Nobody fully agrees, and here is why.)*
 
-**There is no number, and anybody who gives you one without asking questions first is guessing.** It is worth being straight with a 12-year-old about this, because the temptation is to invent a rule and pretend it is a fact.
+**There is no number, and anybody who gives you one without asking questions first is guessing.**
 
-What everyone agrees on: **one row is not an average**, and it should never be printed next to real averages without a warning. Two is barely better. Beyond that, the honest answer is *it depends*, on three things:
+It is worth being straight with a 12-year-old about this. The temptation is to invent a rule and pretend it is a fact.
+
+What everyone agrees on: **one row is not an average**, and it should never be printed next to real averages without a warning. Two is barely better.
+
+Beyond that, the honest answer is *it depends*, on three things:
+
 
 *How spread out the values are.* If every Falcon scores between 34 and 36, then three of them tell you a great deal. If they score 5, 12, 48 and 77, then four of them barely tell you anything, because the next Falcon could be anywhere. **Spread matters as much as count in deciding how much you know** — and measuring spread properly is Week 26 and 27.
 
@@ -1091,6 +1114,8 @@ People who do statistics for a living argue about thresholds constantly, and the
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+Use this table when the lesson stalls. Find what you see in the left column, then do what the right column says.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1109,6 +1134,8 @@ People who do statistics for a living argue about thresholds constantly, and the
 
 ## 🧭 Differentiation
 
+This section shows how to change the lesson for a student who is struggling, flying, or not engaged today.
+
 ### If the student is struggling
 
 **Cut:** `sorted` and the key function completely. Q6 can be answered by looking at the printed table.
@@ -1123,7 +1150,7 @@ People who do statistics for a living argue about thresholds constantly, and the
 
 **The copy-this-exactly scaffold.** Two files. This runs:
 
-`records.py`:
+`records.py`, the two tools with the docstrings removed:
 
 ```python
 def filter_by(rows, key, value):
@@ -1137,7 +1164,7 @@ def group_count(rows, key):
     return counts
 ```
 
-`lab15.py`:
+`lab15.py`, which uses them:
 
 ```python
 from records import filter_by, group_count
@@ -1148,6 +1175,8 @@ print(group_count(squad, "team"))
 tigers = filter_by(squad, "team", "Tigers")
 print(len(tigers), "Tigers of", len(squad))
 ```
+
+Run `lab15.py`. This is the real output:
 
 ```text
 {'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1}
@@ -1173,7 +1202,7 @@ None of these need new syntax.
 
 Deal the twelve cards into four team piles. Count each. Write the four numbers, add them, check twelve. Then total each pile's runs on the calculator and divide by the pile size. Write each answer on paper in this exact shape, and nothing else:
 
-```
+```text
 Falcons   35.50  from 4 players
 Tigers    33.50  from 4 players
 Hawks     55.67  from 3 players
@@ -1233,6 +1262,8 @@ for r in squad:
 
 ## 📤 Homework to Assign
 
+This section gives you the words to assign the homework, the workbook sections it uses, and what to look for when you mark it.
+
 **Say this:**
 
 > "Your own twelve records, your own two tools, six answers — and one sentence that I care about more than the other six things put together. About an hour.
@@ -1281,6 +1312,8 @@ Organised in the same order as the workbook, section by section and item by item
 | P2 | `cherry`, `banana`, `9` | `max(counts)` is the biggest **key**, judged as text (cherry is last alphabetically; the numbers are never looked at). `max(counts, key=counts.get)` is the key with the biggest **count**. `max(counts.values())` is the biggest **count itself**, with no idea which key it belonged to |
 | P3 | `2`, `3`, `['Asha', 'Omar']` | Two rows pass `> 40`; `len(rows)` is still 3 because filtering builds a new list; Dev's `0` is not more than 40 |
 | P4 | A traceback ending `TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'` | The `0` is missing from `.get`; `counts.get(team)` returns `None` the first time and `None + 1` is meaningless. Fix: `counts.get(team, 0) + 1` |
+
+Here is the real traceback for the last prediction:
 
 ```text
 Traceback (most recent call last):
@@ -1608,7 +1641,16 @@ winners: ['Falcons', 'Tigers']
 
 **Part 1 — Your two tools.** Check the six boxes: `records.py` exists next to the data file; `filter_by(rows, key, value)` and `group_count(rows, key)` take the **key as an argument**; `group_count` uses `.get(bucket, 0)`; neither function names any column or the topic. The deciding question is **is the key an argument?** — `def group_count(rows, key):` is a tool, `def group_count(rows):` is an answer. The reference tools are in **Practice Set B, B3** above. The "could I point them at somebody else's table tomorrow?" box should be **yes**; if "no", the "what is stopping them" line should name the hard-coded column. Troubleshooting: `ModuleNotFoundError: No module named 'records'` means the terminal is in a different folder or the file name is misspelled (Week 12's lesson).
 
-**Part 2 — Six questions, six row counts.** The student's dataset is theirs; mark in this order: **(1)** does every answer carry a row count (a bare number gets sent back); **(2)** does the sum check pass (`sum(counts.values())` equals `len(rows)`); **(3)** are there the number of buckets expected (the check the sum test cannot do — five where four were expected means a stray space or capital); and **(4)** if two categories are tied for Q2, does the student write the honest "X and Y, tied on N each" that the program cannot say. Q3 should use a condition comprehension, not `filter_by` (an exact-match function cannot do "greater than"; noticing that is worth a tick). Model answer on the twelve-song playlist from Week 14:
+**Part 2 — Six questions, six row counts.** The student's dataset is theirs. Mark in this order:
+
+- **(1)** Does every answer carry a row count? A bare number gets sent back.
+- **(2)** Does the sum check pass? `sum(counts.values())` equals `len(rows)`.
+- **(3)** Are there the number of buckets expected? This is the check the sum test cannot do. Five where four were expected means a stray space or capital.
+- **(4)** If two categories are tied for Q2, does the student write the honest "X and Y, tied on N each" that the program cannot say?
+
+Q3 should use a condition comprehension, not `filter_by`. An exact-match function cannot do "greater than", and noticing that is worth a tick.
+
+Here is a model answer on the twelve-song playlist from Week 14:
 
 ```python
 """hw15.py - Week 15 homework: six questions, every answer with its row count."""
@@ -1694,7 +1736,9 @@ An answer that says only "the indie one because it's small" has two of the three
 
 > *"All of these come from 12 songs, and every average below has the number of songs it came from printed next to it — the indie figure comes from a single song and should not be compared with the others."*
 
-**This sentence is the whole point of the week.** Mark it properly. A student who can write it will produce an honest capstone in Week 35.
+**This sentence is the whole point of the week.** Mark it properly.
+
+A student who can write it will produce an honest capstone in Week 35.
 
 **Part 5 — The Bug Log.** Two entries, and at least one must have **no error message** at all. Model entries: (1) `KeyError: 'Falcons'` with two `File` lines (`lab15.py` line 10 and `records.py` line 19) — `+=` means "take what is there and add one" and there is nothing there the first time; fix `counts[bucket] = counts.get(bucket, 0) + 1`. (2) **No error message:** `max(counts)` printed `Tigers` while the counts were Falcons 4, Tigers 4, Hawks 3, Owls 1 — `max` compared the names as words; fix `max(counts, key=counts.get)` and read the answer against the printed counts. **The two-`File`-line rule:** the **last** `File` line is where the program broke; the ones above are the trail of who called who, read from the bottom up.
 

@@ -14,7 +14,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **Week 1**. No laptop.
+This warm-up brings back last week before you start something new. Five quick questions about **Week 1**. No laptop.
 
 **W1.** What is a **program**?
 
@@ -39,6 +39,8 @@ ________________________________________________________________
 ---
 
 ## 🔎 Predict the Output
+
+This section is for comparing your guesses with what Python really does.
 
 **Four snippets. Fill in the prediction column BEFORE you run anything.** Then type each one into a scratch file, run it, and write down the truth.
 
@@ -133,6 +135,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading code and naming what you see. Answer each question before you check it on the laptop.
 
 **A1. Will Python accept this name?** Answer yes or no. If no, say what happens.
 
@@ -241,7 +245,7 @@ Also: how would you read **D** out loud? ________________________
 | (g) | `""` | ____________ | ____________________ |
 | (h) | `True` | ____________ | ____________________ |
 
-The checking line looks like this — one per value:
+Run a checking line like this, one per value:
 
 ```python
 print(42, type(42))
@@ -253,7 +257,7 @@ Which two surprised you most? ______ and ______
 
 ## ✍️ Practice Set B — Write It
 
-Every file starts with a comment on line 1. Read every `=` out loud as "gets".
+This set is for writing short programs of your own. Every file starts with a comment on line 1. Read every `=` out loud as "gets".
 
 ---
 
@@ -322,7 +326,7 @@ ________________________________________________________________
 
 ---
 
-**B4. Rewrite it so no number is typed twice.** Here is a working file with a problem:
+**B4. Rewrite it so no number is typed twice.** Here is a working file with a problem. Type it and run it first.
 
 ```python
 print("Total:", 8.50 * 3)
@@ -396,7 +400,7 @@ Why: ____________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
-Here is `tuck_shop.py`. **Three** things are wrong: one stops Python reading the file at all, one stops it partway through, and one produces no error whatsoever and simply tells you something untrue.
+This section is for finding bugs one at a time and reading each error message. Here is `tuck_shop.py`. **Three** things are wrong: one stops Python reading the file at all, one stops it partway through, and one produces no error whatsoever and simply tells you something untrue.
 
 ```python
  1  # tuck_shop.py - what the tuck shop took today. THREE THINGS ARE WRONG.
@@ -502,7 +506,7 @@ ________________________________________________________________
 
 ### The Same Characters, Different Kinds
 
-Here are five things. Every one of them shows only the characters `8`, `5`, and possibly a `.` and a `0`.
+This puzzle is for looking closely at values that seem alike. Here are five things. Every one of them shows only the characters `8`, `5`, and possibly a `.` and a `0`.
 
 ```python
 a = 85
@@ -570,6 +574,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for explaining your thinking in your own words. Write a full paragraph for each.
+
 **T1.** Python refuses to guess what `"5" + 5` means and stops. Some other languages happily answer `"55"` and carry on.
 
 **Which behaviour is better?** Write a paragraph. Do not just pick a side — say what it *depends on*, and give two examples with genuinely different stakes.
@@ -607,6 +613,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+This section is for making two things of your own: a short write-up and a program. It also adds rows to your Bug Log.
 
 ### Part 1 — The `"5" + 5` write-up
 
@@ -700,6 +708,8 @@ Write it out: ____________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing what a variable is, in your own picture.
+
 Draw **three boxes** holding **three different kinds of value**, then show what happens when one of them is given something new.
 
 ![An empty framed drawing area split into a before half and an after half by a dashed line, with three reminder boxes underneath for the names, the kinds and where the old value went](../figures/fig-w02-9-draw-frame.svg)
@@ -723,6 +733,8 @@ Fill in the three boxes underneath: **the three names** · **the three kinds** �
 
 ## 📊 Self-Check
 
+This table is for checking honestly what you can do now. Tick one box in each row.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Store a value in a well-named variable and reuse it without retyping it | ☐ | ☐ | ☐ |
@@ -739,6 +751,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Use this section only after you have written your own answers.
 
 <details>
 <summary>Check your answers</summary>

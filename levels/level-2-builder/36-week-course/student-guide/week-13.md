@@ -22,13 +22,15 @@
 
 ## 🪝 Start Here
 
+This section shows a problem a list cannot solve, and the idea that solves it.
+
 Last week you built a stats toolkit. Here is some of what you pointed it at:
 
 ```python
 scores = [45, 12, 88, 0, 103, 7, 61, 34, 90, 22]
 ```
 
-Your toolkit is genuinely good. It will tell you the total, the average, the biggest, the smallest, the middle. That was real work and it works.
+Your toolkit is good. It will tell you the total, the average, the biggest, the smallest and the middle.
 
 So here is one more question for it. Look at the `103`.
 
@@ -36,13 +38,18 @@ Somebody scored a hundred and three. **Who?**
 
 Look as long as you like. There is nothing to find.
 
-And it is not because you have forgotten. It is because **the list never knew.** When you typed `103`, the number went in, and everything else about it fell on the floor. Who it was. What day. Which ground. Whether they were out. Gone, at the moment of typing.
+You have not forgotten anything. **The list never knew.** When you typed `103`, the number went in, and everything else about it fell on the floor:
+
+- Who it was.
+- What day.
+- Which ground.
+- Whether they were out.
 
 Ask a list of numbers anything about **numbers** and it is brilliant. Ask it anything about the **person** and it has nothing at all.
 
-So take a blank index card and write one cricketer on it. Five facts, label on the left, fact on the right, like a form:
+Take a blank index card and write one cricketer on it. Write five facts, with the label on the left and the fact on the right, like a form:
 
-```
+```text
 name   Asha
 runs   48
 balls  32
@@ -52,11 +59,11 @@ out    yes
 
 Now — **what are Asha's runs?**
 
-You said 48 instantly. And notice what you did **not** do. You did not count to the second thing on the card. You looked for the word `runs` and read what was sitting next to it.
+You said 48 instantly. You did **not** count to the second thing on the card. You looked for the word `runs` and read what was sitting next to it.
 
 That is the whole lesson. Today you teach Python to do that.
 
-The container that does it has a slightly annoying name, because it has nothing to do with spelling. It is called a **dictionary**.
+The container that does it has an annoying name, because it has nothing to do with spelling. It is called a **dictionary**.
 
 ![One card, five labelled fields](../figures/fig-w13-1-dict-labelled-card.svg)
 *Figure 13.1 — Five labelled fields on one card. The pink boxes are the labels you chose. The blue boxes are the data.*
@@ -65,7 +72,9 @@ The container that does it has a slightly annoying name, because it has nothing 
 
 ## 🧠 The Big Idea
 
-> **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
+This section explains what a dictionary is and why it beats a list when a thing has fields.
+
+> **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. Numbered boxes last week. Labelled boxes this week.
 
@@ -80,9 +89,11 @@ A dictionary is a set of **labelled** boxes. There is no box 0. There is a box c
 
 **The analogy.** A paper dictionary. When you look up *volcano* you do not count to word 4,912 — you go straight to the word. That is the only resemblance, and it is the important one: **you fetch by name.**
 
-**How you write it.** Python uses **curly braces** — `{` and `}`. On most keyboards, hold Shift and press the two keys just to the right of the `P`. Find them now, before you need them; hunting for a bracket in the middle of typing is miserable.
+**How you write it.** Python uses **curly braces** — `{` and `}`. On most keyboards, hold Shift and press the two keys just to the right of the `P`. Find them now, before you need them.
 
-Inside the braces you write the pairs. A label in quotes, then a **colon**, then the fact, then a **comma** before the next pair.
+Inside the braces you write the pairs: a label in quotes, then a **colon**, then the fact, then a **comma** before the next pair.
+
+Type this into `cards.py` and run it. It builds one card and looks things up on it.
 
 ```python
 # cards.py - one cricketer, stored as a dictionary
@@ -105,39 +116,45 @@ Asha
 
 Read line 4 out loud the way a person would: *"Asha's card. Under `name` is Asha, under `runs` is 48, under `balls` is 32, under `team` is Falcons, and under `out` is yes."*
 
-**Four things to notice in that output, because students ask about all four.**
+**Four things to know about that output.**
 
 1. **Python printed single quotes** even though you typed double ones. The two are interchangeable, and Python prefers singles when it talks back to you. Nothing has changed.
 2. **The pairs came out in the order you typed them.** That is guaranteed and you can rely on it. A dictionary is **not** sorted alphabetically, despite the name.
 3. **`asha["name"]` is a lookup.** Say it as English — *"in Asha, the name"* — not "Asha bracket name".
 4. **`len(asha)` is 5, not 10.** `len` counts **pairs**, and a pair counts once, not twice.
 
-**The quotes rule, which catches everybody once.** In this course the **keys always have quotes**, because keys are words being used as labels. A **value** only has quotes when the value is itself text. `48` and `32` are numbers, so no quotes. `Falcons` is a word, so quotes. `True` is Python's own word for yes, so no quotes and a capital T.
+**The quotes rule, which catches everybody once.** In this course the **keys always have quotes**, because keys are words used as labels. A **value** only has quotes when the value is itself text.
+
+- `48` and `32` are numbers, so no quotes.
+- `Falcons` is a word, so quotes.
+- `True` is Python's own word for yes, so no quotes and a capital T.
 
 ![The same brackets, two different questions](../figures/fig-w13-6-brackets-two-jobs.svg)
 *Figure 13.2 — Same square brackets. A number inside means count. A word in quotes means read the label.*
 
-**And now the one thing that confuses everybody.** Look at these two lines:
+**One thing confuses everybody.** Compare these two lines:
 
 ```python
 scores[2]        # give me slot number 2 of this LIST
 asha["runs"]     # give me the value under the label "runs" in this DICTIONARY
 ```
 
-**Same brackets. Completely different question.** Here is the sentence that sorts it out, and it is worth memorising:
+**Same brackets, different question.** This sentence sorts it out:
 
 > **The brackets mean "look inside this thing". What you put in the brackets says *how* you are looking — a number means count, a word in quotes means read the label.**
 
-Two consequences you should try for yourself:
+Two things to try for yourself:
 
 - `scores["two"]` is meaningless. A list has no labels, so you get `TypeError: list indices must be integers or slices, not str`.
 - `asha[0]` is meaningless *for this dictionary*. There is no label called `0`, so you get `KeyError: 0`.
 
-And if you ask "how do I know which kind of container I've got?" — **look at how it was built.** Square brackets when it was made → list. Curly braces with colons → dictionary. That is the only tell, and it is enough.
+How do you know which kind of container you have? **Look at how it was built.** Square brackets when it was made means a list. Curly braces with colons means a dictionary.
 
 ### 2. Why a name beats a position
 
-**The plain explanation.** You might reasonably think: *why bother? I'll just remember that runs is the second thing.* Here is why that stops working, and it stops working **silently**, which is the worst way for anything to stop working.
+**The plain explanation.** You might think: *why bother? I'll just remember that runs is the second thing.* That stops working, and it stops working **silently**.
+
+Run this and compare the four lines it prints. It stores the same facts as a list and as a dictionary, then inserts a new field.
 
 ```python
 # position.py - the same four facts, two ways.
@@ -167,11 +184,13 @@ by name, after the insert    : 48 runs
 
 **Read the third line of output.** The program cheerfully reports **"Pune runs"**.
 
-Nothing crashed. Nobody was warned. Somebody added a field at the front, every position after it shifted by one, and the program that counts to slot 1 will now answer the wrong question, confidently, forever.
+Nothing crashed. Nobody was warned.
 
-**The analogy.** *"Third house on the left"* versus *"the house with the blue door"*. Both work — until somebody builds a new house at the end of the street. Then one of those directions is wrong and nobody rings you up to tell you.
+Somebody added a field near the front. Every position after it shifted by one, so the program that counts to slot 1 now answers the wrong question.
 
-> **Counting shifts when the data changes shape. Labels do not.** That is the entire reason dictionaries exist, and you can stop wondering.
+**The analogy.** *"Third house on the left"* versus *"the house with the blue door"*. Both work — until somebody builds a new house at the end of the street. Then one of those directions is wrong and nobody tells you.
+
+> **Counting shifts when the data changes shape. Labels do not.** That is the reason dictionaries exist.
 
 ![Counting shifts, names do not](../figures/fig-w13-2-lookup-by-name-not-position.svg)
 *Figure 13.3 — The same five values and the same insert. On the left the answer changed and no error message appeared.*
@@ -179,6 +198,8 @@ Nothing crashed. Nobody was warned. Somebody added a field at the front, every p
 ### 3. Adding a key and changing a key are the same keystroke
 
 **The plain explanation.** There is no `add` command and no `change` command. There is one thing you write, and Python decides which happened **by looking to see whether that key was already there.**
+
+Run this block. It changes one field and adds another.
 
 ```python
 asha = {"name": "Asha", "runs": 48, "balls": 32, "team": "Falcons", "out": True}
@@ -200,7 +221,7 @@ If the key was there, the old value is **replaced and gone** — 48 is not hidin
 
 **The analogy.** Writing on a card in pen. If the line already says `runs`, you cross out the number and write a new one. If there is no such line, you write a whole new line at the bottom. Same pen, same movement — the card decides which of the two happened.
 
-**And here is the sting, and it is the reason capital letters matter so much this week.**
+**Here is the trap, and it is why capital letters matter so much this week.** Run this block too.
 
 ```python
 asha = {"name": "Asha", "runs": 48, "balls": 32, "team": "Falcons", "out": True}
@@ -217,7 +238,7 @@ print(len(asha))
 6
 ```
 
-**It did not fix Asha's runs.** It quietly gave her a **sixth** field called `Runs`, while `runs` still says 48. No error. No warning. Two nearly-identical labels on one card, and the only clue you get is that `len` went from 5 to 6.
+**It did not fix Asha's runs.** It quietly gave her a **sixth** field called `Runs`, while `runs` still says 48. There is no error and no warning. The only clue is that `len` went from 5 to 6.
 
 > **⚠️ Watch out:** a crash tells you where to look. This does not. Get in the habit of printing `len(card)` after you change a card — if the count went up when you expected it to stay put, you have just made a new field instead of changing an old one.
 
@@ -228,7 +249,7 @@ This is also why every card in a set has to use **exactly the same labels** — 
 
 ### 4. `KeyError` — the crash of the week, and its three causes
 
-**The plain explanation.** Ask a dictionary for a key it does not have and Python stops the program.
+**The plain explanation.** Ask a dictionary for a key it does not have and Python stops the program. This line, run on the card above, shows what that looks like.
 
 ```python
 print(asha["Runs"])
@@ -250,7 +271,7 @@ KeyError: 'Runs'
 2. **Then the line number.** `line 8` — that is where you asked.
 3. **Then the `~~~^^^` marks.** The `^` marks sit under the exact part of the line that failed. (If your Python is 3.10 or older those marks are missing. Nothing important is missing with them.)
 
-**There are three causes, and between them they account for most of the `KeyError`s you will see while you are learning.** (The other cause is a key that was genuinely never on the card, like `catches` in the homework.) Say all three out loud:
+**Three causes account for most of the `KeyError`s you will see while you are learning.** (The other cause is a key that was never on the card, like `catches` in the homework.) Say all three out loud:
 
 | Cause | What it looks like | The real key |
 |---|---|---|
@@ -267,7 +288,9 @@ KeyError: 'Runs'
 
 ### 5. `.get()` — asking politely, and the quiet lie
 
-**The plain explanation.** Sometimes a missing key means your data is broken and you **want** the program to stop. Sometimes a missing key is completely normal and you already have a sensible answer ready. For the second case there is `.get()`.
+**The plain explanation.** Sometimes a missing key means your data is broken and you **want** the program to stop. Sometimes a missing key is normal and you already have a sensible answer ready. For the second case there is `.get()`.
+
+Run this block. It asks for a missing key and a real key in four ways.
 
 ```python
 # the card, fresh again, so this block runs on its own
@@ -298,11 +321,13 @@ None
 
 **The analogy.** `["runs"]` is asking a question that has to be answered. `.get("runs", 0)` is asking a question and saying *"and if you don't know, write nought"*. Sometimes that is polite. Sometimes it is putting words in somebody's mouth.
 
-**Now the part that is not about Python at all, and it is the part that matters most.**
+**Now the part that is not about Python, and matters most.**
 
 Sam batted. The scorer's pen died. Nobody wrote his runs down. So Sam's card has no `runs` field, and a program that says `sam.get("runs", 0)` will report that **Sam scored zero**.
 
-Sam did not score zero. **Nobody knows what Sam scored.** Those are two different facts, and the fallback has quietly turned one into the other. Here is what it costs:
+Sam did not score zero. **Nobody knows what Sam scored.** Those are two different facts, and the fallback has quietly turned one into the other.
+
+Run this block to see what that costs.
 
 ```python
 # quiet_lie.py - what one invented zero costs.
@@ -337,7 +362,7 @@ The 0 we made up moved the answer by 11.42 runs
 
 ## 💻 Type This
 
-`cards.py`, then `scorecard.py`, in six passes. Two of the six are mistakes made **on purpose**, and they are the two you will remember in a month.
+This section has you build the program yourself, one step at a time. You write `cards.py`, then `scorecard.py`, in six steps. Two of the six are mistakes made **on purpose**.
 
 ### Step 1 — one card
 
@@ -352,7 +377,7 @@ asha = {"name": "Asha", "runs": 48, "balls": 32, "team": "Falcons", "out": True}
 print(asha)
 ```
 
-Say the punctuation to yourself as you go: *"curly brace… quote name quote… colon… quote Asha quote… comma…"* This takes about ninety seconds the first time. That is normal and it gets much faster.
+Say the punctuation to yourself as you go: *"curly brace… quote name quote… colon… quote Asha quote… comma…"* This takes about ninety seconds the first time. It gets faster.
 
 **Predict before you run.** What comes out?
 
@@ -364,7 +389,7 @@ Single quotes, and the pairs in the order you typed them.
 
 ### Step 2 — three lookups
 
-Add three lines:
+Add these three lines under `print(asha)`:
 
 ```python
 print(asha["name"])      # look up ONE field by its label
@@ -403,19 +428,19 @@ Traceback (most recent call last):
 KeyError: 'Runs'
 ```
 
-**Oh good, an error.** Read the last line: `KeyError: 'Runs'`.
+**An error, on purpose.** Read the last line: `KeyError: 'Runs'`.
 
 Python is not saying "something went wrong". It is saying: **you asked me for a key called `Runs`, and there is no key called `Runs`.** And it is completely correct — look at your own line 4. You called it `runs`, small r.
 
 Put the small r back. It prints `48`.
 
-**Now do the Bug Log entry, while it is warm.** Three columns: the message, what it meant in your own words, what one thing you changed. Something like: *`KeyError: 'Runs'` · I asked for a label that isn't on the card · changed R to r.*
+**Write the Bug Log entry now.** Use three columns: the message, what it meant in your own words, what one thing you changed. Something like: *`KeyError: 'Runs'` · I asked for a label that isn't on the card · changed R to r.*
 
 Then answer the question out loud: **which of the three causes was that — a typo, a plural, or a capital letter?**
 
 ### Step 4 — ⚠️ mistake number two, on purpose
 
-Now take the quotes off — `asha[runs]`, nothing else. It looks tidier, doesn't it.
+Now take the quotes off the label, so it reads `asha[runs]`.
 
 ```python
 print(asha[runs])
@@ -429,17 +454,19 @@ Traceback (most recent call last):
 NameError: name 'runs' is not defined. Did you mean: 'round'?
 ```
 
-**A completely different complaint.** `KeyError` meant *"that label isn't on the card"*. `NameError` means *"I have never heard of that word at all"*.
+**A different complaint.** `KeyError` meant *"that label isn't on the card"*. `NameError` means *"I have never heard of that word at all"*.
 
 Without the quotes, Python did not think `runs` was a label. It thought it was a **variable** — a box with a name on it, like the boxes you made in Week 2 — and there is no box called `runs`. So it said so.
 
 **The quotes are what turn a word into a label.** Take them off and Python goes looking for a box instead.
 
-And look what it guessed: *Did you mean 'round'?* It is trying to help and it is completely wrong. **Python's suggestions are guesses. Read them; don't obey them.**
+Python also guessed: *Did you mean 'round'?* It is trying to help and it is wrong. **Python's suggestions are guesses. Read them; don't obey them.**
 
 Put the quotes back. `48`.
 
 ### Step 5 — add a key, change a key
+
+Replace the lookups with these five lines.
 
 ```python
 asha["runs"] = 51
@@ -461,6 +488,8 @@ print(len(asha))
 
 ### Step 6 — `.get()`
 
+Add these two lines.
+
 ```python
 print(asha.get("catches", 0))
 print(asha.get("catches"))
@@ -475,11 +504,11 @@ None
 
 With a fallback you get the fallback. Without one you get `None`.
 
-> **⚠️ Watch out:** `.get` did **not** fix anything. It decided what to say when the answer was missing. If the reason `catches` is missing is that you typed it wrong, `.get` will cheerfully tell you zero catches for the rest of your life and never mention it. **`.get` is a decision, not a repair.**
+> **⚠️ Watch out:** `.get` did **not** fix anything. It decided what to say when the answer was missing. If the reason `catches` is missing is that you typed it wrong, `.get` will report zero catches every time and never mention it. **`.get` is a decision, not a repair.**
 
 ### The complete finished program
 
-Five cards, one function that turns any card into a tidy line, and two `.get` calls. Save this as `scorecard.py`.
+This program has five cards, one function that turns any card into a tidy line, and two `.get` calls. Save it as `scorecard.py` and run it.
 
 ```python
 # scorecard.py - five cricketers, five labelled fields each
@@ -523,21 +552,25 @@ Asha's catches: 0
 Asha's runs   : 48
 ```
 
-**Three things to notice about that file.**
+**Three things to know about that file.**
 
 **1. `card_line` is a Week 10 function.** Nothing about it is new. What *is* new is that the thing you pass in is a **whole card, not one number** — one argument, five facts. That is the payoff of the week.
 
 **2. The widths are Week 3's colon, used more fully.** `:<6` means *six characters wide, pushed left*. `:>4` means *four wide, pushed right*. **Left for words, right for numbers**, which is why the `48` and the `12` have their units sitting under each other. `:6.1f` means six wide with one decimal place — the same mini-language as `:.2f`.
 
-**3. ⚠️ The quote juggling, which is the number one typo of the month.** The f-string is wrapped in **double** quotes, so inside the braces the key must use **single** quotes: `{player['name']}`. Get it the wrong way round and older Pythons stop dead with `SyntaxError: f-string: unmatched '['`. Newer ones let it through — which is worse, because your file will then break the day you run it on a different machine. **Single quotes inside, always.**
+**3. ⚠️ The quote juggling, which is the number one typo of the month.** The f-string is wrapped in **double** quotes, so inside the braces the key must use **single** quotes: `{player['name']}`. Get it the wrong way round and older Pythons stop with `SyntaxError: f-string: unmatched '['`.
+
+Newer ones let it through, which is worse, because your file will then break on a different machine. **Single quotes inside, always.**
 
 ---
 
 ## 🔍 Worked Examples
 
+This section shows the same ideas on three other things: a pizza order, a swimmer and a library loan.
+
 ### Worked Example 1 — One pizza order (food)
 
-A card does not have to be a person. Anything with **fields** wants to be a dictionary.
+A card does not have to be a person. Anything with **fields** can be a dictionary. Run this block and read the output line by line.
 
 ```python
 # pizza.py - one pizza order, on one card.
@@ -574,15 +607,19 @@ Dips ordered: 0
 Price       : 9.75
 ```
 
-**Two things worth pausing on.**
+**Two things to pause on.**
 
-**Look at the first line of output: `'price': 8.5`.** You typed `8.50` and Python printed `8.5`. Nothing is wrong — those are the same number, and a number does not remember how many zeros you typed after it. If you want two decimal places on the screen, that is a *printing* job: `f"{order['price']:.2f}"`.
+**Look at the first line of output: `'price': 8.5`.** You typed `8.50` and Python printed `8.5`. Nothing is wrong, because those are the same number.
 
-**And the honest bit.** `order.get("dips", 0)` says *zero dips*. Is that a fact or a guess? Here it is defendable: nobody ticked the dip box, and a dip is a thing you order on purpose. But it is still **an inference, not a measurement**, and if the till printed "0 dips" next to a real count from another order, you would not be able to tell the two apart.
+A number does not remember how many zeros you typed after it. If you want two decimal places on the screen, that is a *printing* job: `f"{order['price']:.2f}"`.
+
+**And the honest bit.** `order.get("dips", 0)` says *zero dips*. Is that a fact or a guess? Here it is defendable: nobody ticked the dip box, and a dip is a thing you order on purpose.
+
+But it is still **an inference, not a measurement**, and if the till printed "0 dips" next to a real count from another order, you would not be able to tell the two apart.
 
 ### Worked Example 2 — One swimmer's race (sport)
 
-Two fields going into a number that nobody typed, and a missing field that is genuinely dangerous to fill in.
+This example works out a number from two fields, and has a missing field that is risky to fill in. Run it.
 
 ```python
 # swim.py - one swimmer, one race, on one card.
@@ -623,7 +660,7 @@ Best with no fallback : None
 
 ### Worked Example 3 — One library loan (school)
 
-A dictionary whose fields feed a Week 6 chain, and then a field **added back onto the card** so that the answer travels with the row.
+This example feeds a card's fields into a Week 6 chain, then **adds the answer back onto the card** so it travels with the row. Run it.
 
 ```python
 # loan.py - one library loan, on one card.
@@ -667,7 +704,7 @@ Fields now    : 6
 {'book': 'Wolf Hollow', 'borrower': 'Iqbal', 'days_out': 16, 'renewed': True, 'class': '7B', 'fine': 100}
 ```
 
-**Three things to notice.**
+**Three things to know.**
 
 **The chain reads fields, not variables.** `loan["days_out"] >= 14` is exactly the Week 6 condition with a lookup where the variable used to be. Nothing about `if`/`elif` changed.
 
@@ -679,9 +716,11 @@ Fields now    : 6
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code. **Errors are how you learn to read, not evidence that you cannot.**
+This section shows the errors you are most likely to meet this week, what each one means and how to fix it. Every message below came from really running a broken version of this week's code. **Errors are how you learn to read, not evidence that you cannot.**
 
 ### Break 1 — a capital letter
+
+Here is the broken version, and the message it gives.
 
 ```python
 asha = {"name": "Asha", "runs": 48, "balls": 32, "team": "Falcons", "out": True}
@@ -704,6 +743,8 @@ KeyError: 'Runs'
 
 ### Break 2 — the quotes came off
 
+Here is the broken line, and the message it gives.
+
 ```python
 print(asha[runs])
 ```
@@ -724,6 +765,8 @@ NameError: name 'runs' is not defined. Did you mean: 'round'?
 
 ### Break 3 — a missing comma
 
+Here is a file with one comma missing, and the message it gives.
+
 ```python
 # cards.py - one cricketer, stored as a dictionary
 
@@ -743,9 +786,11 @@ SyntaxError: invalid syntax. Perhaps you forgot a comma?
 
 **The fix.** One comma between every pair. **Five pairs needs four commas**, so count them.
 
-Notice that Python's carets land on `48 "balls"` — **not** where the comma should have gone, but at the point where it realised something was wrong. That is normal for a `SyntaxError`, and it gives you a rule worth keeping: **when a `SyntaxError` points at something that looks fine, look at the character just before it.**
+Python's carets land on `48 "balls"`, not where the comma should have gone. They mark the point where Python realised something was wrong. That is normal for a `SyntaxError`, and it gives you a rule: **when a `SyntaxError` points at something that looks fine, look at the character just before it.**
 
 ### The whole clinic, for reference
+
+Use this table to look up any message you see.
 
 | What you see | What it means | The fix |
 |---|---|---|
@@ -768,13 +813,15 @@ Notice that Python's carets land on `48 "balls"` — **not** where the comma sho
 
 ## 🎲 What We Did In Class
 
+This section is a record of the class, so you can follow it again or catch up.
+
 ### The hook, with one card
 
 Ten cricket scores on the board and one question: **who scored the 103?** Nobody could say, and not because they had forgotten — the list never knew. Then one blank index card, five facts written on it as labels and facts, and the question *"what are Asha's runs?"* answered instantly, by reading a label rather than counting to a position.
 
 ### Three words, written up and left up
 
-```
+```text
 key             the label you look something up by. Always a word in quotes.
 value           the thing stored under that label.
 key-value pair  one label-and-fact couple. "runs": 48 is one pair.
@@ -859,6 +906,8 @@ The Falcons average, worked out twice — 34.25 with an invented zero for Sam, 4
 
 ## 💬 Talk About It
 
+These questions are for talking over with someone. Each has a hint to get you started.
+
 **1. Why is it called a dictionary if it isn't in alphabetical order?**
 
 *Hint:* think about what you **do** with a paper dictionary rather than how it is arranged. When you look up *volcano*, do you count? The alphabetical ordering is just how paper solves the problem of finding things; Python solves it another way and keeps your pairs in the order you typed them. Then the harder half: other languages call this same container a *map*, a *hash* or an *associative array*. All three are better names. Why do you think none of them caught on — and does a bad name make a thing harder to learn, or only harder to talk about?
@@ -874,6 +923,8 @@ The Falcons average, worked out twice — 34.25 with an invented zero for Sam, 4
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four ideas that sound right and are wrong, each with the correct version beside it.
 
 ### Trick 1 — "`.get()` fixed the bug"
 
@@ -906,6 +957,8 @@ This is a completely reasonable mistake, because lists worked that way six days 
 |---|---|
 | `{"runs": 48, "runs": 51}` holds two pairs, so `len` is 2. | The later one wins and the earlier one **silently vanishes**. You get `{'runs': 51}`, one pair, and `len()` says `1`. No error. |
 
+Run this block to see a card with a repeated key.
+
 ```python
 card = {"runs": 48, "balls": 32, "runs": 51}
 print(card)
@@ -923,6 +976,8 @@ Three pairs typed, two pairs stored. **A dictionary cannot hold the same label t
 
 ## 🌍 Where You've Seen This
 
+This section shows where dictionaries already appear in things you use.
+
 1. **Every online form you have ever filled in.** Name, date of birth, class, email. The labels are the keys; what you type is the value. The form is a dictionary before it is anything else.
 2. **A contact in your phone.** You do not ask for "the third field of Ravi". You ask for **Ravi's mobile number**, and if he has no work number the app shows a blank instead of falling over — which is `.get` with a fallback, done politely.
 3. **Every settings screen on every device.** `brightness`, `volume`, `dark_mode`, `language`. Change one and the others are untouched, because you assigned to one key.
@@ -933,6 +988,8 @@ Three pairs typed, two pairs stored. **A dictionary cannot hold the same label t
 ---
 
 ## 🧭 Where This Fits
+
+This section shows where this week sits on the course map and what it connects to.
 
 Same pipeline, and the gold box has moved one step down: `dicts · rows · files`, weeks 13 to 18. It is
 the longest tile in the whole map, because holding data properly takes six weeks — and this is the
@@ -959,6 +1016,8 @@ opened, and you will be standing in it until Week 18. Dashed still means not yet
 
 ## 🔑 Remember This
 
+These are the points to keep from this week, followed by a syntax card to copy.
+
 - **A dictionary looks things up by name, not by position.** Curly braces, a colon in every pair, a comma between pairs.
 - **Keys always have quotes. Values have quotes only when the value is itself text.** `48` no, `Falcons` yes, `True` no.
 - **`len(card)` counts pairs**, not labels-and-facts separately. Five pairs is 5.
@@ -969,6 +1028,8 @@ opened, and you will be standing in it until Week 18. Dashed still means not yet
 - **A fallback is fine when it is a fact and a lie when it is a guess.** An invented zero moved the Falcons' average by 11.42 runs, with no warning at all.
 
 ### Syntax reminder card
+
+Keep this card next to you while you type.
 
 ```python
 # BUILD one - curly braces, colons, commas
@@ -1000,6 +1061,8 @@ print(asha["catches"])         # KeyError: 'catches'
 
 ## 📓 New Words
 
+These are the five words this week introduced.
+
 ![This week's five words as pictures](../figures/fig-w13-7-vocab-icons.svg)
 *Figure 13.8 — This week's five words, drawn.*
 
@@ -1015,7 +1078,7 @@ print(asha["catches"])         # KeyError: 'catches'
 
 ## 📤 Your Homework
 
-Go to **[the Week 13 workbook](../workbook/week-13.md)**. About **60 minutes** in total.
+This section tells you what to do after class. Go to **[the Week 13 workbook](../workbook/week-13.md)**. It takes about **60 minutes** in total.
 
 | Section | What to do | Time |
 |---|---|---|
@@ -1027,11 +1090,16 @@ Go to **[the Week 13 workbook](../workbook/week-13.md)**. About **60 minutes** i
 
 **Three things I am marking hardest.**
 
-**All five cards must use exactly the same five keys** — same words, same capitals, same order. Not four keys on one card and five on the rest. **Identical.** That rule is going to matter enormously next week and I am not telling you why yet.
+**All five cards must use exactly the same five keys** — same words, same capitals, same order. Not four keys on one card and five on the rest. That rule matters next week.
 
-**You have to cause a `KeyError` on purpose** and copy the **whole traceback** into your Bug Log by hand — all of it, not just the last line — and then write, in your own words, what Python was telling you and which of the three usual causes you used.
+**Cause a `KeyError` on purpose** and copy the **whole traceback** into your Bug Log by hand — all of it, not just the last line — and then write, in your own words, what Python was telling you and which of the three usual causes you used.
 
-**Then fix it two different ways.** Once with `.get()` and a fallback. Once by asking first, with a tool called `in` that you have not met yet — it is printed on the page, copy it exactly and it will work, and it gets its full explanation next Monday. Then write **one sentence** on which of the two you would actually use, and why. There is no correct answer to that. There is a correct *reason*, and it has to be about what somebody **reading your output** would think happened.
+**Fix it two different ways.**
+
+- Once with `.get()` and a fallback.
+- Once by asking first, with a tool called `in` that you have not met yet. It is printed on the page, so copy it exactly. It gets its full explanation next Monday.
+
+Then write **one sentence** on which of the two you would actually use, and why. There is no correct answer to that. There is a correct *reason*, and it has to be about what somebody **reading your output** would think happened.
 
 > **💡 Try this:** make a dictionary with five keys for something that is **not** a cricketer, and do not tell anyone what it is. A pizza order. A bus route. A phone. Then hand them only the five labels and see whether they can guess. If they can, your keys are good ones.
 

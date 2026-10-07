@@ -38,6 +38,8 @@ Observable evidence: five captions that read as a paragraph; exactly one `train_
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is the background you need before you teach. Read it once, then use it as a reference during the lesson.
+
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
 There is no new Python this week. There are three ideas, and the third one is the one that matters.
@@ -276,6 +278,8 @@ learning signal.*
 
 ## 🧰 Prep Checklist
 
+This section lists what to do before the lesson, plus a fallback table for when something fails.
+
 **25 minutes the night before**
 
 - [ ] Print the whole Week 35 workbook. The Score Audit (Practice Set A6, and the **My Score Audit** table under Build It) needs to be printed on its own sheet — it gets written on in red.
@@ -314,6 +318,8 @@ python3 audit_after.py       ->  MAE: 2.35 minutes on 26 held-out rows
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the running order of the whole lesson. The table gives the overview; each segment below it has its own script.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -635,6 +641,8 @@ The four sentences, in order — and this week there is a fifth for the silent b
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the student's turn: Part A (read it aloud), Part B (the Score Audit), and two variations.
+
 ### Part A — Read it out loud (8 minutes)
 
 **Setup:** the student's notebook or scripts on screen, arranged into the seven sections:
@@ -714,9 +722,13 @@ The workbook's Score Audit (A6 for practice, **My Score Audit** under Build It) 
 
 ## ❓ Questions Students Ask This Week
 
+This section gives you answers to the questions this lesson tends to raise, in the student's own words.
+
 **"Why is the honest score always worse? That feels like a punishment for being careful."**
 
-It is not always worse, but it usually is, and there is a reason. A model that has seen a row can lean on the details of that specific row — including the parts that are just noise. On rows it has never seen, that leaning does not help. So the test score measures the part of what the model learned that actually transfers, which is always less than everything it learned. The honest score being lower is evidence the split is doing its job. If yours goes *up*, look for a bug.
+It is not always worse, but it usually is, and there is a reason. A model that has seen a row can lean on the details of that specific row — including the parts that are just noise. On rows it has never seen, that leaning does not help.
+
+So the test score measures the part of what the model learned that actually transfers, which is always less than everything it learned. The honest score being lower is evidence the split is doing its job. If yours goes *up*, look for a bug.
 
 **"Can I run the split again if I don't like the twenty-six rows I got?"**
 
@@ -740,7 +752,13 @@ It gets the most marks of any section, and here is the honest reason: anyone can
 
 True: with 26 test rows, one row moves an accuracy score by 3.8 points (and an MAE by that journey's error ÷ 26), so two models within about one row of each other are indistinguishable — you can compute that yourself and nobody disputes it.
 
-Argued about: everything past that. Some people would say you need a proper statistical test before claiming any difference at all. Some would say you need cross-validation, so that every row gets to be a test row in turn — that is the right answer and it is the first thing Level 3 teaches. Some would say that for a decision with real money attached you need a fresh dataset collected after you finished choosing. All three are defensible; they answer slightly different questions, and which one you need depends on what the answer will be used for.
+Argued about: everything past that. People suggest three things:
+
+- A proper statistical test before claiming any difference at all.
+- Cross-validation, so that every row gets to be a test row in turn. That is the right answer and it is the first thing Level 3 teaches.
+- For a decision with real money attached, a fresh dataset collected after you finished choosing.
+
+All three are defensible. They answer slightly different questions, and which one you need depends on what the answer will be used for.
 
 What everybody agrees on is the bit you must do: **state your test-set size, state what one row is worth, and do not rank models whose gap is smaller than that.** Do those three things and no reasonable adult can accuse you of overclaiming.
 
@@ -751,6 +769,8 @@ Only after everything else is finished. Every year somebody spends five hours on
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This section lists the common ways the lesson stalls, with a fix you can use on the spot.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -767,6 +787,8 @@ Only after everything else is finished. Every year somebody spends five hours on
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to change the lesson for a student who is struggling, flying, or not engaged today.
 
 ### If the student is struggling
 
@@ -849,6 +871,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to say when you set the homework, and which workbook sections go where.
 
 **Say this:**
 
@@ -934,7 +958,12 @@ Both compute a *statistic* from all the rows — a mean, a standard deviation, a
 
 ### A3 — Trace the table
 
-(a) **3.8%** (1 ÷ 26 = 0.0385). (b) **5.63 minutes** (7.98 − 2.35). (c) The **linear regression**: 0.884 − 0.487 = **0.397** (tree 0.095, kNN 0.169). The biggest gap belongs to the *worst* model: the line is the wrong shape for this data and is bad on both halves. (d) **No.** The 0.35-minute gap on 26 rows is exactly what one journey 9 minutes out would cause (0.35 × 26 = 9.1); say "indistinguishable, and I would pick the tree because I can read its rules aloud". (e) The **baseline row** (7.98). (f) The kNN's RMSE is 1.21 above its MAE against the tree's 0.47, so the kNN's mistakes are **more uneven**: fine most of the time, occasionally badly wrong.
+- **(a)** **3.8%** (1 ÷ 26 = 0.0385).
+- **(b)** **5.63 minutes** (7.98 − 2.35).
+- **(c)** The **linear regression**: 0.884 − 0.487 = **0.397** (tree 0.095, kNN 0.169). The biggest gap belongs to the *worst* model: the line is the wrong shape for this data and is bad on both halves.
+- **(d)** **No.** The 0.35-minute gap on 26 rows is exactly what one journey 9 minutes out would cause (0.35 × 26 = 9.1). Say "indistinguishable, and I would pick the tree because I can read its rules aloud".
+- **(e)** The **baseline row** (7.98).
+- **(f)** The kNN's RMSE is 1.21 above its MAE against the tree's 0.47, so the kNN's mistakes are **more uneven**: fine most of the time, occasionally badly wrong.
 
 ### A4 — Spot the bug
 
@@ -971,7 +1000,12 @@ Headings: **the number | the line that made it | which split? | honest? | correc
 
 ## Puzzle of the Week — The Split Detective
 
-Part 1: **26** test rows (126 × 0.2 = 25.2, rounded up). Part 2 ladder: 21 → 0.8077, 22 → 0.8462, 23 → 0.8846, 24 → 0.9231, 25 → 0.9615, 26 → 1.0000. Part 3: **0.885 = 23/26** (the tree, 23 right); **0.923 = 24/26** (the kNN, 24 right). Part 4: **0.900** is impossible, because 0.900 × 26 = 23.4 and nobody gets 0.4 of a row right; the neighbours are 0.8846 and 0.9231. Part 5: **20 test rows** (18 ÷ 20 = 0.900), so the person ran a second split or changed `test_size`, and that model sat a different exam (10 or 30 rows also work). Part 6: the two possible scores are **one row** apart (3.85 points, one row is 3.8), so you may not say the kNN is better.
+- **Part 1:** **26** test rows (126 × 0.2 = 25.2, rounded up).
+- **Part 2 ladder:** 21 → 0.8077, 22 → 0.8462, 23 → 0.8846, 24 → 0.9231, 25 → 0.9615, 26 → 1.0000.
+- **Part 3:** **0.885 = 23/26** (the tree, 23 right); **0.923 = 24/26** (the kNN, 24 right).
+- **Part 4:** **0.900** is impossible, because 0.900 × 26 = 23.4 and nobody gets 0.4 of a row right. The neighbours are 0.8846 and 0.9231.
+- **Part 5:** **20 test rows** (18 ÷ 20 = 0.900), so the person ran a second split or changed `test_size`, and that model sat a different exam (10 or 30 rows also work).
+- **Part 6:** the two possible scores are **one row** apart (3.85 points, one row is 3.8), so you may not say the kNN is better.
 
 ## Think Deeper
 
@@ -1384,9 +1418,22 @@ The confidence grid is self-rated, not marked. True or false answers:
 
 ## 🔮 Next Week Preview
 
-Week 36 is Showcase Day, and it is the only week of the year with an audience. The student reads their notebook out loud, top to bottom, in eight minutes, to a real adult who is allowed to interrupt — and the word "magic" is banned, along with "pretty accurate" and "just". Then six questions from the question bank, including the two hard ones: *isn't 126 rows really quite small?* and *should anyone actually decide anything with this?* After that comes the written assessment, closed book: twenty multiple choice, eight short answers and four debug problems, covering the whole year. Then the debug round, laptops open, four broken programs diagnosed out loud. The lesson finishes with the year's syntax ladder printed out and every rung ticked off, and the Level 3 gate — six honest self-checks that decide whether they are ready.
+This section tells you what next week holds and what to prepare early.
 
-**Prep early:** find the audience. A grandparent, a neighbour, an older sibling, anyone who does not code. Ask them now, not on the day, and tell them two things: they may interrupt, and they should say "I don't understand" out loud whenever it is true. Print the assessment (workbook pages 36.1–36.3) and the syntax ladder before the day, and have the student's four debug files ready on the laptop so the debug round starts instantly. And read the rubric with the student **before** the showcase, not after — they should know exactly what they are being judged on while they are still able to change it.
+Week 36 is Showcase Day, and it is the only week of the year with an audience. The lesson runs in this order:
+
+1. The student reads their notebook out loud, top to bottom, in eight minutes, to a real adult who is allowed to interrupt. The word "magic" is banned, along with "pretty accurate" and "just".
+2. Six questions from the question bank, including the two hard ones: *isn't 126 rows really quite small?* and *should anyone actually decide anything with this?*
+3. The written assessment, closed book: twenty multiple choice, eight short answers and four debug problems, covering the whole year.
+4. The debug round, laptops open, four broken programs diagnosed out loud.
+5. The year's syntax ladder printed out and every rung ticked off, and the Level 3 gate: six honest self-checks that decide whether they are ready.
+
+**Prep early:**
+
+- **Find the audience.** A grandparent, a neighbour, an older sibling, anyone who does not code. Ask them now, not on the day, and tell them two things: they may interrupt, and they should say "I don't understand" out loud whenever it is true.
+- **Print the paper.** Print the assessment (workbook pages 36.1–36.3) and the syntax ladder before the day.
+- **Ready the debug files.** Have the student's four debug files open on the laptop so the debug round starts instantly.
+- **Share the rubric.** Read it with the student **before** the showcase, not after. They should know exactly what they are being judged on while they are still able to change it.
 
 ---
 

@@ -205,7 +205,9 @@ Two rules, and they are the whole point of the week.
 
 The student guide carries a figure called **Where This Fits**: the same picture every week with one
 more piece filled in. It is the only page that shows the learner the *shape* of the year rather than
-this week's content — and this week it moves further than it has moved since Week 19.
+this week's content.
+
+This week it moves further than it has moved since Week 19.
 
 ![The Level 2 pipeline in Week 25: stage three is finished and stage four opens with your first chart](../figures/fig-w25-0-where-this-fits.svg)
 
@@ -236,6 +238,8 @@ Stage four is solid for the first time and its first tile is gold. Only **repres
 ---
 
 ## 🧰 Prep Checklist
+
+Use this list to get the room, the printouts and the laptop ready before the lesson. The night-before items matter most.
 
 ### 15 minutes the night before
 
@@ -288,6 +292,8 @@ Stage four is solid for the first time and its first tile is gold. Only **repres
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This is the plan for the whole lesson: a summary table first, then each segment with what to say and ask.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -621,6 +627,8 @@ Student on the keyboard. You do not touch it. Full instructions in the next sect
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the Their Turn segment: setup, rules, the four steps, and what finished looks like.
+
 ### Setup
 
 **On the table:** the workbook open at **Build It** (Parts 1–3), a pencil.
@@ -786,6 +794,8 @@ And the one rule that matters more than the ladder: **do not touch the keyboard.
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions this lesson tends to raise, each with an answer you can give in your own words.
+
 **"Why is it called `axes` if it's a box?"**
 
 Because in 2003 somebody named it after the thing you can see — the two axis lines — rather than the thing it actually is. It stuck, and now millions of lines of code depend on the name, so it will never be changed. It is a genuine wart. The useful mental move is to hear "axes" and think "**one drawing frame**", and to notice that the frame *contains* an x axis and a y axis. The word will stop bothering them in about a fortnight.
@@ -822,6 +832,8 @@ Three reasons and they are all practical. A file can be opened again tomorrow; a
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table when something stalls mid-lesson. Find the row that matches what you see, then do the last column.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The program runs, no error, no picture — and the student concludes Python is broken | This is the single most likely failure of the week, and it *feels* like a crash even though it is a success | Do not explain. Ask: **"Where is the file?"** Then run `ls` (or `dir`) together and look. The absence of the file is the lesson. Then ask: "What did you not tell it to do?" |
@@ -837,6 +849,8 @@ Three reasons and they are all practical. A file can be opened again tomorrow; a
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to adjust the lesson for a student who is struggling, flying, or not engaging today.
 
 ### If the student is struggling
 
@@ -928,6 +942,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section gives the words to say when you set homework, then which workbook sections are core and which are optional.
+
 **Say this:**
 
 > "The workbook has a lot in it, so here is the order. About an hour, and I've marked what's core.
@@ -1000,7 +1016,6 @@ This key follows the workbook's own sections and item labels (W1–W5, P1–P4, 
 
 **25.3(e) Which line of a traceback do you read first, and why?**
 The **last** line. It names the kind of error and what went wrong. Everything above it is the route Python took to get there, which matters only once you know what broke.
-
 
 ### Practice Set A — Read It
 
@@ -1357,7 +1372,9 @@ steps.png
 
 **Why can't `day_name` go on the x axis?** Two reasons, and the second is better: (1) it is **text, not a number**, so "halfway between Mon and Tue" is meaningless, and a line chart's promise is that the space between points is real; (2) **`Mon`, `Tue` and `Wed` each appear twice in ten days**, so day 1 and day 8 would land in the same place. A line chart's x axis has to be **ordered and unique**, and `day` is both. Full marks for either; reason 2 can only be found by looking at the data, which is the habit.
 
-**Part 2, build them.** Each chart should have **ten** markers, one per row of a 10-row table. If a count is nine, a number is missing from a list or a row got lost, and the seatbelt catches it: `print(len(df["day"]), len(df["homework_min"]))`. The checklist items and the table (filename, file exists, markers counted, opened) are self-reported: check the folder yourself and ask "show me your three files." Planted bug to watch for: three programs saving to the same filename, leaving one file where there should be three.
+**Part 2, build them.** Each chart should have **ten** markers, one per row of a 10-row table. If a count is nine, a number is missing from a list or a row got lost, and the seatbelt catches it: `print(len(df["day"]), len(df["homework_min"]))`.
+
+The checklist items and the table (filename, file exists, markers counted, opened) are self-reported: check the folder yourself and ask "show me your three files." Planted bug to watch for: three programs saving to the same filename, leaving one file where there should be three.
 
 Marked on structure, not on whose week it is. If the student's Week 21 table is lost, this is the fallback used throughout:
 
@@ -1530,7 +1547,11 @@ Self-rated grid: not marked. For the ticks, ask the student to **show** two of t
 
 Week 26 stops asking *how* to draw and starts asking *which shape to draw*. There are only a handful of question shapes in the world — how did something change over time, which category is biggest, how spread out are the values, do two numbers move together — and each one has exactly one chart that answers it well and several that answer it badly. The week opens with eight question cards face down on the table, and the student has to pick the chart shape from the question *before* touching a keyboard, which turns out to be the hard part. Then the sting: a column whose average is 62 turns out to be two separate clumps, one at 39 and one at 85, with not one single person anywhere near 62 — and the average, which is a perfectly correct number, was hiding it in plain sight. The histogram is what catches that, and it catches it in half a second.
 
-**Prep early:** three things. First, **keep this week's `visits.png` and the three `myweek` PNGs** — Week 26 puts them next to the new shapes and asks which questions each one can and cannot answer. Second, **find the student's cleaned table from Week 24** (the 38-row Mess Detective result); if it has gone missing, the full typed-out version is in the Week 26 Answer Key and takes two minutes to drop into the folder. Third, **cut out the eight question cards** from workbook page 26.1 the night before — the activity depends on them being face down and genuinely unknown, and cutting them up in front of the student wastes four good minutes.
+**Prep early:** three things.
+
+1. **Keep this week's `visits.png` and the three `myweek` PNGs.** Week 26 puts them next to the new shapes and asks which questions each one can and cannot answer.
+2. **Find the student's cleaned table from Week 24** (the 38-row Mess Detective result). If it has gone missing, the full typed-out version is in the Week 26 Answer Key and takes two minutes to drop into the folder.
+3. **Cut out the eight question cards** from workbook page 26.1 the night before. The activity depends on them being face down and genuinely unknown, and cutting them up in front of the student wastes four good minutes.
 
 ---
 

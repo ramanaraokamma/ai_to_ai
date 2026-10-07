@@ -83,6 +83,8 @@ So this week, in the last twenty minutes of the lesson, you are going to take ev
 
 ## 🧠 The Big Idea
 
+This section explains the five habits behind the week: chart order, one split, the results table, the Score Audit and the "what I got wrong" page.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. Narrative order — five charts that argue
@@ -769,6 +771,8 @@ baseline (always guess the mean)       7.98        9.53     0.000   -0.375      
 
 ## 🔍 Worked Examples
 
+Three small projects, each on a different topic, so you can see the same habits on data that is not journeys.
+
 ### Worked Example 1 — Pizza waits (food): when the straight line wins
 
 **The question:** *Does the number of toppings change how long a pizza takes to arrive more than the distance does?* Target: `wait_min`, a number.
@@ -879,7 +883,7 @@ baseline (always guess the mean)       5.27     0.000   -0.010         12
 
 **Two — read the coefficients and check them against the recipe.** `toppings +1.375` against the 1.4 minutes per topping that built the table. `distance_km +2.780` against 2.6. `busy_night +7.473` against 7.0. **The line reconstructed the rules that made the data, from 48 rows, and it never saw the recipe.** That is worth sitting with for a moment.
 
-**Three — and this is the honest problem.** Twelve test rows. **One row is worth 8.3%**, so here is the arithmetic you have to do before claiming anything. An MAE is a mean over 12 numbers, so for the MAE to shift by 1 minute, one single row's error has to shift by 12 minutes. The gap between the line at 1.42 and the tree at 2.92 is **1.50 minutes**, which would need one row to move by **18 minutes** — far more than any single delivery in this table could account for. **So this gap you are allowed to claim.**
+**Three — and this is the honest problem.** Twelve test rows. **One row is worth 8.3%**, so here is the arithmetic you have to do before claiming anything. An MAE is a mean over 12 numbers, so for the MAE to shift by 1 minute, one single row's error has to shift by 12 minutes. The gap between the line at 1.42 and the tree at 2.92 is **1.50 minutes**, which would need one row to move by **18 minutes**. That is far more than any single delivery in this table could account for. **So this gap you are allowed to claim.**
 
 But if the two had come out at 1.42 and 1.60, the gap of 0.18 minutes would need only one row to differ by about 2 minutes, and any one delivery could easily do that. Then you would not be allowed to rank them. **This is exactly why the capstone asks for 100 rows and not 60.** With 60 rows, half of the comparisons you actually want to make become unsayable.
 
@@ -1177,7 +1181,9 @@ It ran. It printed. Nothing is red. And it is meaningless.
 
 ## 🎲 What We Did In Class
 
-If you missed the lesson, here is the whole thing. You need a laptop, your `clean.csv`, and **a red pen**. The red pen is not a joke — the audit does not work in pencil.
+This section is the lesson in three parts, for anyone who missed it.
+
+Here is the whole thing. You need a laptop, your `clean.csv`, and **a red pen**. The red pen is not a joke — the audit does not work in pencil.
 
 ### Part 1 — put five charts in order (6 minutes)
 
@@ -1239,6 +1245,8 @@ That is the whole week.
 
 ## 💬 Talk About It
 
+Three questions to talk through with a partner or an adult. Each one has a hint.
+
 **1. "Why is the honest score always worse? That feels like a punishment for being careful."**
 
 *Hint:* it is not *always* worse, but it usually is. A model that has seen a row can lean on the details of that specific row — including the parts that are pure noise. On a row it has never seen, that leaning does not help. So the test score measures the part of what the model learned that actually **transfers**, and that is always less than everything it learned. If your test score comes out *higher*, that is the surprising case, and it is worth a second look.
@@ -1249,11 +1257,17 @@ That is the whole week.
 
 **3. "How many rows do I need before I'm allowed to say one model is better?"** *(Nobody agrees on a number, and that is the honest answer.)*
 
-*Hint:* here is what is genuinely settled and what is genuinely argued about. **Settled:** with 26 test rows, one row moves an accuracy (percentage) score by 3.8 points, so two models within about one row of each other are indistinguishable. You can compute that yourself and nobody disputes it. **Argued about:** everything past that. Some people say you need a proper statistical test before claiming any difference at all. Some say you need **cross-validation**, where every row gets a turn at being a test row — that is the right answer and it is the first thing Level 3 teaches you. Some say that for a decision with real money attached you need a fresh dataset collected *after* you finished choosing. All three are defensible; they answer slightly different questions. What everybody agrees on is the bit you must do: **state your test-set size, state what one row is worth (for an MAE, that journey's error ÷ 26), and do not rank models whose gap is smaller than that.**
+*Hint:* here is what is genuinely settled and what is genuinely argued about. **Settled:** with 26 test rows, one row moves an accuracy (percentage) score by 3.8 points, so two models within about one row of each other are indistinguishable. You can compute that yourself and nobody disputes it. **Argued about:** everything past that. Some people say you need a proper statistical test before claiming any difference at all.
+
+Some say you need **cross-validation**, where every row gets a turn at being a test row — that is the right answer and it is the first thing Level 3 teaches you.
+
+Some say that for a decision with real money attached you need a fresh dataset collected *after* you finished choosing. All three are defensible; they answer slightly different questions. What everybody agrees on is the bit you must do: **state your test-set size, state what one row is worth (for an MAE, that journey's error ÷ 26), and do not rank models whose gap is smaller than that.**
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four sentences that sound sensible, each shown next to a better version.
 
 ### Trick 1 — "a caption describes the chart"
 
@@ -1294,6 +1308,8 @@ The second one is longer, more uncomfortable, and worth about ten times as much.
 
 ## 🌍 Where You've Seen This
 
+The same habits turn up well outside a classroom. Here are six places.
+
 1. **A medicine leaflet.** Look at the side-effects section — it lists how many people in how many thousands, and it names the ones the trial could not rule out. That is a "what I got wrong" page written by lawyers.
 2. **Football statistics on TV.** "He's scored 4 from 5 shots this season" — 5 shots. One shot is worth 20 percentage points. The number is real and it cannot support the sentence they are about to say with it.
 3. **App store ratings.** "4.8 stars" next to "(12 reviews)" versus "(40,000 reviews)". Every app store puts the count next to the score, for exactly the reason your results table has a `test rows` column.
@@ -1305,9 +1321,9 @@ The second one is longer, more uncomfortable, and worth about ten times as much.
 
 ## 🧭 Where This Fits
 
-Fourth week in the last tile, and this is the week every box on the map does something at once. Your
-own rows get held, cleaned, charted, modelled and scored, in that order. And there is no new syntax
-anywhere in it — which is not a gap in the lesson, it *is* the lesson.
+This section shows where this week sits on the course map.
+
+It is the fourth week in the last tile, and every box on the map does something at once. Your own rows get held, cleaned, charted, modelled and scored, in that order. There is no new syntax anywhere in it. That is not a gap in the lesson. It *is* the lesson.
 
 ![The Level 2 pipeline in Week 35: still the bake-off and capstone tile, now the whole pipeline run on rows you collected](../figures/fig-w35-0-where-this-fits.svg)
 
@@ -1331,6 +1347,8 @@ collected yourself.*
 ---
 
 ## 🔑 Remember This
+
+The takeaways from the week, then a reminder card of the code you have already typed.
 
 - **Five charts in narrative order are one paragraph.** Copy the five captions into a plain text file, read it aloud, and if it is not a paragraph, reorder the charts.
 - **A caption states a finding, not a topic.** The axis labels already describe the chart.
@@ -1378,6 +1396,8 @@ r2_score(y_test, model.predict(X_test))                       # test R2
 
 ## 📓 New Words
 
+Five words from this week, with what each one means.
+
 ![Week 35 words, drawn](../figures/fig-w35-9-vocab-icons.svg)
 *Figure 35.9 — This week's five words, drawn.*
 
@@ -1392,6 +1412,8 @@ r2_score(y_test, model.predict(X_test))                       # test R2
 ---
 
 ## 📤 Your Homework
+
+This section tells you what to do before next week, and how long each part should take.
 
 Go to **[the Week 35 workbook](../workbook/week-35.md)**. Milestones 4, 5 and 6 — about three hours, and it does not go in one sitting.
 

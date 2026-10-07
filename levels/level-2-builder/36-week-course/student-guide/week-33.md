@@ -51,6 +51,8 @@ Today you are going to build Sam. In code. On purpose. You will watch a model sc
 
 ## 🧠 The Big Idea
 
+This section explains the ideas behind the week: how two scores diagnose a model, what the complexity dial is, what RMSE adds, and why every model must share one split.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. Two scores, four situations, one diagnosis
@@ -100,11 +102,15 @@ There are exactly four possibilities.
 | kNN | `n_neighbors` | large `k` | **`k = 1`** |
 | Linear regression | number of features | 1 feature | many features |
 
-**Notice that kNN's dial runs backwards.** `k = 1` is the *most* complex setting, because trusting a single nearest neighbour lets the model carve any shape at all. A huge `k` is the simplest. If you remember `k = 1` scoring a perfect 1.0000 on training data back in Week 30 — **that was the overfitting end of the dial all along**, and nobody said so at the time.
+**Notice that kNN's dial runs backwards.** `k = 1` is the *most* complex setting, because trusting a single nearest neighbour lets the model carve any shape at all. A huge `k` is the simplest.
+
+Remember `k = 1` scoring a perfect 1.0000 on training data back in Week 30? **That was the overfitting end of the dial all along**, and nobody said so at the time.
 
 `max_depth` is the dial you will turn today, because a tree's is the easiest to see:
 
-```
+Here is how the number of leaves grows as the dial turns:
+
+```text
  depth 1  →    2 leaves     one question, two answers
  depth 4  →   16 leaves     sixteen sensible bands
  depth 8  →  128 leaves     each leaf holds two or three patients
@@ -124,7 +130,7 @@ There are exactly four possibilities.
 
 Read the name backwards, and it is a recipe: **root** of the **mean** of the **squared errors**.
 
-```
+```text
 RMSE = √( (miss₁² + miss₂² + ... + missₙ²) ÷ n )
 ```
 
@@ -137,7 +143,7 @@ RMSE = √( (miss₁² + miss₂² + ... + missₙ²) ÷ n )
 
 Do the MAE by hand for both:
 
-```
+```text
    Model A:  (1+1+1+1+1+1+1+1+1+1) ÷ 10 = 10 ÷ 10 = 1.0
    Model B:  (0+0+0+0+0+0+0+0+0+10) ÷ 10 = 10 ÷ 10 = 1.0
 ```
@@ -146,7 +152,7 @@ Do the MAE by hand for both:
 
 Now square first:
 
-```
+```text
    Model A:  squares are 1,1,1,1,1,1,1,1,1,1   → mean 1  → √1  = 1.000
    Model B:  squares are 0,0,0,0,0,0,0,0,0,100 → mean 10 → √10 = 3.162
 ```
@@ -167,7 +173,11 @@ Model B: errors [ 0  0  0  0  0  0  0  0  0 10]  MAE 1.0000  RMSE 3.1623
 
 > **The metric encodes what you think "bad" means, so choose it on purpose.** You do not pick a metric because it is the nice one. You pick it because of what you are afraid of.
 
-> **⚠️ Watch out — do not overclaim.** It is tempting to say "RMSE tells you the worst miss". **It does not**, and this week's own numbers will catch you out. On our data, linear regression has a **worse** single worst miss than kNN (154.49 against 138.80) and yet a **lower** RMSE (53.85 against 54.95) — because kNN has **nine** misses over 100 and linear has only **five**. RMSE is about the whole *tail* of big misses, not one champion. The honest sentence is: **"RMSE goes up faster than MAE when there are big misses."** Say that and nothing more.
+> **⚠️ Watch out — do not overclaim.** It is tempting to say "RMSE tells you the worst miss". **It does not**, and this week's own numbers will catch you out.
+>
+> On our data, linear regression has a **worse** single worst miss than kNN (154.49 against 138.80) and yet a **lower** RMSE (53.85 against 54.95). That is because kNN has **nine** misses over 100 and linear has only **five**.
+>
+> RMSE is about the whole *tail* of big misses, not one champion. The honest sentence is: **"RMSE goes up faster than MAE when there are big misses."** Say that and nothing more.
 
 **The habit, and it costs nothing: print MAE, RMSE and the worst single miss.** Three numbers, and it becomes very hard for anybody — including you — to be fooled.
 
@@ -184,8 +194,8 @@ Model B: errors [ 0  0  0  0  0  0  0  0  0 10]  MAE 1.0000  RMSE 3.1623
 Three things to know before you meet it:
 
 - **It is real, and real data is much noisier than flowers.** The best R² anybody gets today is about **0.45**. Iris gave you 0.9667 accuracy. That drop is the point, not a disappointment.
-- **The measurements arrived already scaled**, by whoever prepared the dataset. So there is no `StandardScaler` in today's file even though we use kNN — and that is not an oversight. **If you remembered Week 30 and wondered about it, that is an excellent catch**, and you were right to check.
-- **The answer has no everyday unit.** It is "progression points". So an MAE of 42.77 cannot be turned into anything a person feels, which is honestly a bit of a shame after last week's "off by three marks". What saves it is the **lazy baseline**: guessing the average is off by 64.01, so 42.77 is *a third better than not bothering*.
+- **The measurements arrived already scaled**, by whoever prepared the dataset. So there is no `StandardScaler` in today's file even though we use kNN. That is not an oversight. If you remembered Week 30 and wondered about it, that is an excellent catch.
+- **The answer has no everyday unit.** It is "progression points". So an MAE of 42.77 cannot be turned into anything a person feels. What saves it is the **lazy baseline**: guessing the average is off by 64.01, so 42.77 is *a third better than not bothering*.
 
 ![One split. Three models. One table.](../figures/fig-w33-3-same-split-three-models.svg)
 *Figure 33.3 — One split. Three models. One table. Fairness is one sentence: every model saw the same 353 rows.*
@@ -238,7 +248,9 @@ depth  leaves  train R2  test R2     gap
 
 **The `leaves` column is the mechanism.** 2 leaves at depth 1. **329 leaves for 353 training patients** at depth 15. Almost every patient with their own private leaf and their own private answer.
 
-> **⚠️ Watch out — the wobbles are real and you must not over-read them.** The test line does not fall smoothly. It goes 0.352, 0.260, 0.221, 0.188, 0.186, then jumps back **up** to 0.283 at depth 9, then drops to 0.117. With 89 test patients, **one patient is worth roughly 0.01 of R²**, so a jump of 0.1 is about ten patients changing sides. Look at the **trend across fifteen steps**, not the step-to-step wobble — and look at the `gap` column, which grows from 0.174 to 0.955 and never recovers.
+> **⚠️ Watch out — the wobbles are real and you must not over-read them.** The test line does not fall smoothly. It goes 0.352, 0.260, 0.221, 0.188, 0.186, then jumps back **up** to 0.283 at depth 9, then drops to 0.117.
+>
+> With 89 test patients, **one patient is worth roughly 0.01 of R²**, so a jump of 0.1 is about ten patients changing sides. Look at the **trend across fifteen steps**, not the step-to-step wobble. Also look at the `gap` column, which grows from 0.174 to 0.955 and never recovers.
 
 ![Mark the peak. Say the sentence.](../figures/fig-w33-4-overfitting-point-marked.svg)
 *Figure 33.5 — Mark the peak. Then say it out loud: after here it is memorising.*
@@ -255,7 +267,7 @@ The professional fix is called **cross-validation** and it is waiting for you in
 
 ## 💻 Type This
 
-Two files today. `week33_bakeoff.py` first, then `week33_depth_curve.py`.
+In this section you type two programs, one step at a time. `week33_bakeoff.py` comes first, then `week33_depth_curve.py`.
 
 ### Step 1 — One split, and the comment that makes it fair
 
@@ -343,6 +355,12 @@ RMSE: 53.85
 
 We could copy-paste that scoring block for each model. **Do not.** Here is why.
 
+If you write the scoring out four separate times, sooner or later you will type `y_train` where you meant `y_test` in **exactly one** of them, and **it will not error**. It will print a nicer number for that one model and you will believe it.
+
+**One function makes it impossible to score two models differently by accident.** That is not tidiness. That is fairness.
+
+Add this function to `week33_bakeoff.py`:
+
 ```python
 # add to week33_bakeoff.py
 def report(name, model):
@@ -355,15 +373,13 @@ def report(name, model):
           f"{r2_score(y_test, guesses):9.3f} {model.score(X_train, y_train):10.3f}")
 ```
 
-If you write the scoring out four separate times, sooner or later you will type `y_train` where you meant `y_test` in **exactly one** of them — and **it will not error**. It will print a nicer number for that one model and you will believe it.
-
-**One function makes it impossible to score two models differently by accident.** That is not tidiness. That is fairness.
-
 - `def report(name, model):` — a function from Weeks 9 and 10. It takes a label and an unfitted model.
 - `f"{mae:7.2f}"` — an f-string from Week 3, with a width of 7 and 2 decimals so the columns line up.
 - `model.score(X_train, y_train)` — for a regressor, `.score()` gives R². Same call as Week 29, different meaning behind it.
 
 ### Step 4 — The lazy baseline, and the four entries
+
+Add the two imports at the top of the file and the baseline plus four model lines at the bottom.
 
 ```python
 # add to the top of week33_bakeoff.py
@@ -403,9 +419,11 @@ linear regression        42.79   53.85     0.453      0.528
 
 ### Step 5 — Read the table. Slow down. This is the summit of the term
 
+In this step you read the results table row by row. Run the previous step first and compare your table with the one above.
+
 **Put your finger on the row that says `tree, no limit` and read the last two numbers.**
 
-```
+```text
 tree, no limit           56.57   72.90    -0.003      1.000
 ```
 
@@ -432,18 +450,20 @@ Now look at the **two trees together.**
 
 **Three more things in that table.**
 
-**One — the baseline row is what makes every other number mean something.** MAE 64.01 by guessing the average. So kNN's 42.77 is not "off by 42.77", it is **"a third less wrong than not bothering"**. Without the baseline, 42.77 is a number with nothing to stand on. That is Level 1's Week 12 lesson — compute the ruler before you measure with it — arriving in code.
+1. **The baseline row is what makes every other number mean something.** MAE 64.01 by guessing the average. So kNN's 42.77 is not "off by 42.77", it is **"a third less wrong than not bothering"**. Without the baseline, 42.77 is a number with nothing to stand on. That is Level 1's Week 12 lesson, computing the ruler before you measure with it, arriving in code.
+2. **MAE and RMSE disagree, and that is the interesting bit.** See the small table below.
+3. **The tree lost, and that is honest.** Test R² 0.260 against the line's 0.453. **Trees are not the best tool for everything.** A likely reason (we did not test it) is that this dataset is smooth medical measurements with no obvious sudden thresholds in it. That is the shape a straight line handles well and a staircase handles badly.
 
-**Two — MAE and RMSE disagree, and that is the interesting bit.**
+Here is the MAE and RMSE comparison:
 
 | | MAE | RMSE |
 |---|---|---|
 | kNN, k = 5 | **42.77** | 54.95 |
 | linear regression | 42.79 | **53.85** |
 
-On MAE they are a dead heat: two hundredths apart, on a scale running to 346. On RMSE, the line wins. Why? Because **kNN has nine misses over 100 and the line has only five.** RMSE squares the misses, so the extra big ones weigh heavily. Typical performance: identical. Big-miss behaviour: the line is better. **MAE could not see that. RMSE could.** That is why you print both.
+On MAE they are a dead heat: two hundredths apart, on a scale running to 346. On RMSE, the line wins. Why? Because **kNN has nine misses over 100 and the line has only five.** RMSE squares the misses, so the extra big ones weigh heavily.
 
-**Three — the tree lost, and that is honest.** Test R² 0.260 against the line's 0.453. **Trees are not the best tool for everything.** A likely reason (we did not test it) is that this dataset is smooth medical measurements with no obvious sudden thresholds in it, which is exactly the shape a straight line handles well and a staircase handles badly.
+Typical performance: identical. Big-miss behaviour: the line is better. **MAE could not see that. RMSE could.** That is why you print both.
 
 The tree still wins on one thing: **you can read it.** And this is the week you find out what that costs.
 
@@ -506,6 +526,8 @@ Add the fit and the rest of the loop:
 
 ### Step 7 — Print the table and find the peak
 
+Add this to the end of `week33_depth_curve.py` and run it.
+
 ```python
 # add to week33_depth_curve.py
 print(f"{'depth':>5} {'leaves':>7} {'train R2':>9} {'test R2':>8} {'gap':>7}")
@@ -556,6 +578,8 @@ training rows: 353  leaves at depth 15: 329
 
 ### Step 8 — The chart, and the vertical line
 
+Add this to the end of `week33_depth_curve.py` and run it.
+
 ```python
 # add to week33_depth_curve.py
 fig, ax = plt.subplots(figsize=(8, 5))
@@ -584,13 +608,15 @@ Open the PNG. One line climbs to almost 1.0 and stays there. One rises to depth 
 
 **Now do it again on paper.** Two colours, fifteen points each, plotted by hand from the printed table. Then a ruler, straight down at depth 4, and next to it, **in your own handwriting**:
 
-```
+```text
    after here it is memorising
 ```
 
 Then say it out loud, pointing at the line. That is not a decoration. It is the sentence this whole term has been building towards, and writing it in your own hand next to a line you drew yourself is what makes it stick.
 
 ### The complete finished programs
+
+Use these to check your own files line by line. Each program is followed by the output it printed.
 
 **File 1 — `week33_bakeoff.py`:**
 
@@ -740,6 +766,7 @@ saved week33_depth_curve.png
 
 ## 🔍 Worked Examples
 
+Three small examples that use the same ideas on new data: a pizza shop, a cricket side and a class of pupils.
 ### Worked Example 1 — Two delivery rules (food)
 
 Eight pizza orders, with the real delivery times. Two rules for guessing them.
@@ -1026,11 +1053,12 @@ Real numbers from this week's depth-5 tree: **0.504** the wrong way round, **0.6
 
 ## 🎲 What We Did In Class
 
+This section records what we did in class, so you can repeat it at home or check what you missed.
 ### Part A — Sam, and the four-row table
 
 We told the Sam story with the laptop shut, then wrote the diagnosis table out on a big sheet in four colours:
 
-```
+```text
    train    test     what it is
    ------   ------   -------------------------------------
    low      low      UNDERFITTING   - too simple  (Ravi)
@@ -1054,7 +1082,7 @@ Then we practised reading pairs of numbers off it, fast, out loud:
 
 Model A and Model B from the Big Idea, both worked out with a pencil before any code was run. Ten misses each.
 
-```
+```text
 Model A   sizes:   1 1 1 1 1 1 1 1 1 1     MAE = 10 ÷ 10 = 1.0
           squares: 1 1 1 1 1 1 1 1 1 1     MSE = 10 ÷ 10 = 1.0    RMSE = √1  = 1.000
 
@@ -1103,6 +1131,7 @@ Which also tells you what to expect at depth 20, 30 or 100: **nothing at all.**
 
 ## 💬 Talk About It
 
+Use this section to answer these questions out loud with a partner or a parent before you read the hint.
 **1. Why *must* the training score go up as you give a model more room? Not "why does it usually" — why can it never go down?**
 
 *Hint:* what options does a depth-6 tree have that a depth-5 tree does not? Could it choose to behave exactly like the depth-5 tree if it wanted to? *(It could — it has every question the shallower tree had, plus more. So its training score can never be lower. And a number that can only go up cannot be evidence.)*
@@ -1119,6 +1148,7 @@ Which also tells you what to expect at depth 20, 30 or 100: **nothing at all.**
 
 ## ⚠️ Don't Get Tricked
 
+Wrong ideas that sound sensible. Each one is shown as **Wrong**, then **Right**.
 ### Trick 1 — "1.000 is a perfect score, so it's a perfect model"
 
 ![A perfect training score is not good news](../figures/fig-w33-6-tricked-perfect-is-not-good.svg)
@@ -1163,6 +1193,7 @@ Two things to do rather than despair:
 
 ## 🌍 Where You've Seen This
 
+Overfitting is not only a model problem. Here are places you may already have met the same shape.
 - **A phone keyboard that predicts your next word beautifully — until you text somebody new.** It fitted itself to how you talk to *the people you already talk to*. Same shape as Sam.
 - **A recommendation feed that gets narrower and narrower.** The more it learns your exact past, the less it can imagine anything else you might like. Overfitting has a feel as well as a number.
 - **Exam-technique coaching that teaches last year's paper.** Sometimes it works brilliantly. Sometimes the paper changes and everybody who learned the questions rather than the subject falls over.
@@ -1174,7 +1205,9 @@ Two things to do rather than despair:
 
 ## 🧭 Where This Fits
 
-The gold tile has not moved, and the map looks identical to last week's — but this is the week the
+This section shows where this week sits on the course map and what it connects to.
+
+The gold tile has not moved, and the map looks identical to last week's. But this is the week the
 picture at the heart of the whole level finally gets drawn. Two lines on one chart: one that climbs
 forever, and one that turns round and heads down. Thirty-three weeks of work were needed before you
 could read it.
@@ -1201,6 +1234,7 @@ name: four models, one split, one table — and one curve with a peak in it.*
 
 ## 🔑 Remember This
 
+These are the things to keep from this week, followed by a card of the code you used.
 - **The training score always goes up when you give a model more room.** Always, with mathematical certainty. So it is **arithmetic, not evidence.**
 - **One score tells you nothing. Two scores are a diagnosis.** Both low: underfitting, turn the dial **up**. Train high, test low: overfitting, turn it **down**.
 - **Both ends of the dial are wrong, for opposite reasons.** Depth 1 has not learned enough; depth 15 learned things that were never true.
@@ -1255,6 +1289,7 @@ ax.set_ylim(-0.2, 1.05)                                # or the gap disappears
 
 ## 📓 New Words
 
+The new words this week introduced, with an example of each.
 ![Five new words for Week 33](../figures/fig-w33-7-words-overfit-underfit-rmse.svg)
 *Figure 33.7 — Five words. Three of them describe a model, one is a score, and one is the dial you turn.*
 

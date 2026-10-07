@@ -322,13 +322,15 @@ to 31 — this is the week that earns its last word. Two threads lit: model and 
 
 ## 🧰 Prep Checklist
 
+Use this section to get the room, the files and your own confidence ready before class.
+
 ### 20 minutes the night before
 
 - [ ] **Print the workbook.** Practice Set A, question A2 (the rule-tracing grid for flowers P, Q and R), is worth printing twice.
 - [ ] **Find last week's file.** Open `~/ai-academy/level2/` and confirm `week29_knn_iris.py` (or whatever the student named it) is there and still runs. If it has vanished, the Fallback table below tells you what to do — do not discover this in class.
 - [ ] **Run the code yourself. This is the step that buys your confidence.** In a terminal:
 
-  ```
+  ```bash
   cd ~/ai-academy/level2
   source .venv/bin/activate        # macOS / Linux
   .venv\Scripts\activate           # Windows PowerShell
@@ -336,7 +338,7 @@ to 31 — this is the week that earns its last word. Two threads lit: model and 
 
   Create `week31_tree_iris.py`, type in the file from section 4 above, and run it:
 
-  ```
+  ```bash
   python3 week31_tree_iris.py
   ```
 
@@ -375,6 +377,8 @@ to 31 — this is the week that earns its last word. Two threads lit: model and 
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section gives the plan for the whole lesson, one segment at a time.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -451,7 +455,7 @@ When they get it, do it again with a different object. The second run is where t
 
 Draw the depth ladder on the sheet, or point at Figure 31.4 if you have it printed:
 
-```
+```text
  depth 1  →  at most 2 leaves      2 possible answers
  depth 2  →  at most 4 leaves      4 possible answers
  depth 3  →  at most 8 leaves      8 possible answers
@@ -505,7 +509,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 Delete the old `from sklearn.neighbors import ...` line. Run it:
 
-```
+```bash
 python3 week31_tree_iris.py
 ```
 
@@ -788,6 +792,8 @@ Only after all three have been tried do you point. And when you point, point at 
 
 ## 🎲 The Activity, In Full
 
+This section gives the full setup for the Hook activity, so you can run it without improvising.
+
 ### Part A — Twenty Questions with five objects (the Hook, 7 minutes)
 
 **Setup.** Five ordinary objects from the room, on the table, visible. Choose things that differ in obvious yes/no ways. A set that works well:
@@ -874,6 +880,8 @@ None of these three is the computer's mistake. For Step 3, add one more flower o
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions this lesson tends to prompt, each with an answer you can say aloud.
+
 **"Who decided 0.80? Did you type that number somewhere?"**
 
 No, and this is the best question of the week. Search the file — the number is not in it. `.fit()` found it. The tree tried lots of cut-offs on petal width (and on the other three measurements), scored each one by how tidy the two resulting piles were, and kept 0.80 because it was the tidiest available. Change the training flowers and you get a different number.
@@ -910,6 +918,8 @@ Yes — the leaves hold an average instead of a name. That is next week's territ
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table when the lesson stalls: find what you see, then do the action in the last column.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student starts a brand-new empty file | It feels tidier, and new lessons usually mean new files | Stop and go back. **Save As** from last week's file. The "one line changed" realisation is the whole point of the week, and it cannot be recovered by explaining it. |
@@ -925,6 +935,8 @@ Yes — the leaves hold an average instead of a name. That is next week's territ
 ---
 
 ## 🧭 Differentiation
+
+This section covers how to adjust the lesson for a student who is struggling and for one who is flying.
 
 ### If the student is struggling
 
@@ -1038,6 +1050,8 @@ Hand them this printout, which they have not seen:
 
 ## 📤 Homework to Assign
 
+Use this section to set the homework: what to say, which workbook sections to use, and how long they take.
+
 **Say this:**
 
 > "The workbook is called *Trees You Can Read Out Loud*, and the part that matters most is the **Build It** section at the back. That is tonight's hour. Three parts of it are the heart.
@@ -1064,6 +1078,8 @@ Hand them this printout, which they have not seen:
 ---
 
 ## 🔑 Answer Key
+
+This section is teacher-only. Do not hand it to the student.
 
 Every section of the workbook has an entry below, in workbook order. Item labels (W1, P1, A3, B2, T1) are the workbook's own. All values were taken from the workbook's Answers section and re-checked by running the code (seeds `random_state=42` in the split, `random_state=0` in the tree).
 

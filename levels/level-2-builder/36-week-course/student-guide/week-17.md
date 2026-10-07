@@ -22,6 +22,8 @@
 
 ## 🪝 Start Here
 
+In this section you draw your twelve-record table on paper and change it, one step at a time. You need a pencil, a rubber and some graph paper.
+
 Get a sheet of graph paper, or draw a grid on a blank sheet. And find a pencil **with a rubber on the end** — you are going to need the rubber more than the pencil.
 
 Draw out your twelve-record table. Header row across the top — `name`, `team`, `runs`, `balls`, `out` — then one row per player. One thing per square. It takes four or five minutes.
@@ -72,6 +74,8 @@ Twelve comma three. **Rows first, always.** That pair of numbers is called the *
 ---
 
 ## 🧠 The Big Idea
+
+This section explains what an array is and how it differs from a list. It also covers the alias, `.shape`, `.dtype` and what numpy does with a ragged block.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
@@ -156,13 +160,15 @@ print(table.shape)
 
 Three things get asked about that output every single year.
 
-**"Why is there a comma in `(4,)` with nothing after it?"** Because `(4,)` is Python's way of writing *a pair-like thing with one item in it*. Without the comma, `(4)` would just be the number 4 in brackets, the same way `(2 + 3)` is five. The comma is Python saying "this is a collection, and it happens to have one thing in it."
+1. **"Why is there a comma in `(4,)` with nothing after it?"** Because `(4,)` is Python's way of writing *a pair-like thing with one item in it*.
 
-Read `(4,)` out loud as **"four, and that's the only direction there is."** It is not a typo.
+   Without the comma, `(4)` would just be the number 4 in brackets, the same way `(2 + 3)` is five. The comma is Python saying "this is a collection, and it happens to have one thing in it."
 
-**"Which number is rows?"** The first one. **Always.** `(4, 2)` is four rows, two columns. Rows first, then columns, exactly like reading a sentence: you go along a row, then down to the next one.
+   Read `(4,)` out loud as **"four, and that's the only direction there is."** It is not a typo.
 
-**"Is `(4, 2)` the same as `(2, 4)`?"** No. Same eight numbers, different arrangement, **different array.** And that matters enormously — next week, doing arithmetic between the wrong pair of shapes will sometimes fail and sometimes *succeed* and give you nonsense.
+2. **"Which number is rows?"** The first one. **Always.** `(4, 2)` is four rows, two columns. Rows first, then columns, exactly like reading a sentence: you go along a row, then down to the next one.
+
+3. **"Is `(4, 2)` the same as `(2, 4)`?"** No. Same eight numbers, different arrangement, **different array.** And that matters enormously — next week, doing arithmetic between the wrong pair of shapes will sometimes fail and sometimes *succeed* and give you nonsense.
 
 ![Shape is rows first, then columns](../figures/fig-w17-2-shape-rows-by-columns.svg)
 *Figure 17.2 — The first number in the shape is always how many rows. Swap them and you have a different array.*
@@ -242,7 +248,7 @@ That is also why `np.array([1, 2, 3.0])` comes out as **`float64`** and not `int
 
 **The analogy.** You cannot say how wide a rectangle is if the top edge is three squares and the bottom edge is two. It is not a rectangle.
 
-**A concrete example.**
+**A concrete example.** Here is a block whose two rows have different lengths, and the error numpy gives for it:
 
 ```python
 ragged = np.array([[1, 2, 3],
@@ -263,9 +269,9 @@ That message is a mouthful, so translate it rather than reading it:
 
 So numpy is saying: *"I got as far as counting the rows. There are two, so the first number is 2. Then I tried to count the columns, and I found three in one row and two in the other, and there is no number that is both three and two."*
 
-**Is that good news or bad news?**
+**Is that good news or bad news?** It is **good news.**
 
-It is **good news.** Look at what numpy could have done instead. It could have stuck a zero on the end of the short row and carried on — and then you would have a made-up zero sitting in your data forever, with nothing to tell you. **It refused instead, and refusing is kinder.**
+Look at what numpy could have done instead. It could have stuck a zero on the end of the short row and carried on — and then you would have a made-up zero sitting in your data forever, with nothing to tell you. **It refused instead, and refusing is kinder.**
 
 ![A ragged block is not a shape, so numpy refuses](../figures/fig-w17-4-shape-mismatch-error.svg)
 *Figure 17.4 — Count the numbers in every row before you blame numpy.*
@@ -301,11 +307,13 @@ So why do it? Because arrays can do maths to everything at once, and dictionarie
 
 ## 💻 Type This
 
+In this section you build `arrays.py` one step at a time, then run a short program on your own data.
+
 Everything goes in the same folder as `records.py` and `squad_data.py`.
 
 ### Step 0 — prove numpy is actually there
 
-Before any of this, in a terminal:
+Before any of this, run this one line in a terminal:
 
 ```bash
 python3 -c "import numpy; print(numpy.__version__)"
@@ -320,6 +328,8 @@ You want a version number. Anything recent is fine:
 If you get `ModuleNotFoundError: No module named 'numpy'`, stop and fix that first — try `pip3 install numpy`, then `python3 -m pip install numpy`. **This is the first thing all year that has to be installed, and it is the only thing this week that can waste an hour.**
 
 ### Step 1 — a new file, `arrays.py`, and two lines
+
+Create a new file called `arrays.py` and type this.
 
 ```python
 """arrays.py - my first numpy arrays."""
@@ -382,11 +392,9 @@ dtype     : int64
 
 **Three things to notice, and the third is the important one.**
 
-**One: there are no commas.** `[48 12 77 5]` with spaces. A **list** prints with commas. An **array** prints with spaces. That is the fastest way there is to tell at a glance which one you are holding, and you will use it all year.
-
-**Two: look at the `5`.** There is an extra space in front of it, so it lines up under the `77`. numpy did that on purpose, because arrays are for looking at in rows and columns.
-
-**Three: the shape is `(4,)`.** Four, comma, nothing. One direction only. Say it out loud: *four, and that's the only direction there is.*
+1. **There are no commas.** `[48 12 77 5]` with spaces. A **list** prints with commas. An **array** prints with spaces. That is the fastest way there is to tell at a glance which one you are holding, and you will use it all year.
+2. **Look at the `5`.** There is an extra space in front of it, so it lines up under the `77`. numpy did that on purpose, because arrays are for looking at in rows and columns.
+3. **The shape is `(4,)`.** Four, comma, nothing. One direction only. Say it out loud: *four, and that's the only direction there is.*
 
 ### Step 3 — a 2-D array, one row per line
 
@@ -429,6 +437,8 @@ Now the question from the hook. **Which column is balls?** The second one. And h
 
 ### Step 4 — decimals, and a second dtype
 
+Type this block and run it.
+
 ```python
 overs = np.array([3.2, 4.0, 5.5])
 print("overs     :", overs)
@@ -450,7 +460,7 @@ dtype     : float64
 
 ### Step 5 — one word in the list, and nothing complains
 
-Somebody typing a list of numbers gets distracted and writes one of them as a word. It happens constantly. Type this:
+Somebody typing a list of numbers gets distracted and writes one of them as a word. It happens constantly. Type this block and run it:
 
 ```python
 mixed = np.array([1, 2, "three"])
@@ -608,6 +618,8 @@ That `(12, 2)` is your rubbed-out graph paper, in code. **Twelve rows because th
 Three complete programs. Type each one, **write down your predicted shape and dtype for every array before you run it**, and then check.
 
 ### Worked Example 1 — Six pizzas (food)
+
+This program builds five arrays from pizza data. Type it, predict each shape and dtype, then run it.
 
 ```python
 """pizza17.py - six pizza prices as arrays. Predict every shape and dtype first."""
@@ -768,6 +780,8 @@ Today that difference does nothing. **Next week it will produce nine numbers whe
 
 ### Worked Example 3 — A marks table, and one typo (school)
 
+This program builds a marks table twice, once with a typo in one mark. Type it, predict, then run it.
+
 ```python
 """marks17.py - a marks table as an array, and the one typo that ruins it."""
 
@@ -852,9 +866,13 @@ That is why the habit is *print both*.
 
 ## 🐞 When It Breaks
 
+This section shows the errors you can meet this week, what each one means and how to fix it.
+
 Every message below came from really running a broken version of this week's code, on numpy 1.26.
 
 ### Break 1 — the missing list brackets
+
+The line that causes it:
 
 ```python
 runs = np.array(48, 12, 77, 5)
@@ -876,6 +894,8 @@ TypeError: array() takes from 1 to 2 positional arguments but 4 were given
 **Where you have met this before.** Week 10, when you called a function with too many arguments. Same error family, new function.
 
 ### Break 2 — `.shape()` with brackets
+
+The line that causes it:
 
 ```python
 print("shape:", runs.shape())
@@ -899,6 +919,8 @@ TypeError: 'tuple' object is not callable
 It is something it **is**, like your height. You do not call your height.
 
 ### Break 3 — the ragged block
+
+The lines that cause it:
 
 ```python
 ragged = np.array([[1, 2, 3],
@@ -1031,21 +1053,33 @@ The `TypeError` from the missing brackets, with the fix written as *"put the num
 
 ## 💬 Talk About It
 
+These three questions are for talking through with a parent, a teacher or a friend. Each has a hint to get you started.
+
 **1. numpy could have refused to build `np.array([1, 2, "three"])` instead of turning everything into text. Which would have been better?**
 
-*Hint:* start by noticing that numpy makes the *opposite* choice in two situations that look very similar. Given `[1, 2, 3.0]` it converts, and converting loses nothing — `1` stored as `1.0` is the same number written differently. Given `[1, 2, "three"]` it also converts, and this time converting **does** lose something: you can no longer add one to the `1`. So numpy is following a single rule ("pick the kind that can hold everything") and the rule has a good outcome once and a bad outcome once. **Would a rule that refused whenever the values are not already the same kind be better?** It would have caught the typo, and it would also have made `[1, 2, 3.0]` an error, which would be maddening. There is no third option that catches one and allows the other, because from the outside those two lists look identical. So: whose job is it, and what does that job actually consist of?
+*Hint:* start by noticing that numpy makes the *opposite* choice in two situations that look very similar. Given `[1, 2, 3.0]` it converts, and converting loses nothing — `1` stored as `1.0` is the same number written differently. Given `[1, 2, "three"]` it also converts, and this time converting **does** lose something: you can no longer add one to the `1`. So numpy is following a single rule ("pick the kind that can hold everything") and the rule has a good outcome once and a bad outcome once.
+
+**Would a rule that refused whenever the values are not already the same kind be better?** It would have caught the typo, and it would also have made `[1, 2, 3.0]` an error, which would be maddening.
+
+There is no third option that catches one and allows the other, because from the outside those two lists look identical. So: whose job is it, and what does that job actually consist of?
 
 **2. You rubbed out real work to make the array. Was that a fair trade?**
 
-*Hint:* be specific about both sides, because "it's faster" is not the interesting half. What you got: a shape, one single kind, and — from next week — arithmetic on everything in one line. What you gave up: every label, and with it the ability to *ask* a question like "how many players per team?", because that question is about names and there are no names left. Then the sharp bit: **which kind of mistake would you rather make?** With a dictionary, asking for the wrong field gives you a loud `KeyError`. With an array, asking for the wrong column gives you **a number**, and the number is wrong, and nobody tells you. Does that change your answer? And does it change again if you know that Week 21 gives you a thing that does both?
+*Hint:* be specific about both sides, because "it's faster" is not the interesting half. What you got: a shape, one single kind, and — from next week — arithmetic on everything in one line. What you gave up: every label, and with it the ability to *ask* a question like "how many players per team?", because that question is about names and there are no names left.
+
+Then the sharp bit: **which kind of mistake would you rather make?** With a dictionary, asking for the wrong field gives you a loud `KeyError`. With an array, asking for the wrong column gives you **a number**, and the number is wrong, and nobody tells you. Does that change your answer? And does it change again if you know that Week 21 gives you a thing that does both?
 
 **3. `.shape` and `.dtype` take four seconds to print. Why do people skip them?**
 
-*Hint:* think about what "it looked right" actually means. When `marks` and `typo` printed side by side, the shapes were identical and the numbers were all present — the only difference was some quote marks and one word of output. So the honest answer is that skipping the check almost always costs you nothing, which is exactly what makes it a bad habit: **you get away with it ninety-nine times and the hundredth time you cannot even tell that you did not.** Then the practical question: what other four-second checks have you already been given this term? *(Count what went in and what came out. Print `type()`. Add the buckets up.)* What do all of them have in common, and why are all of them boring?
+*Hint:* think about what "it looked right" actually means. When `marks` and `typo` printed side by side, the shapes were identical and the numbers were all present — the only difference was some quote marks and one word of output. So the honest answer is that skipping the check almost always costs you nothing, which is exactly what makes it a bad habit: **you get away with it ninety-nine times and the hundredth time you cannot even tell that you did not.**
+
+Then the practical question: what other four-second checks have you already been given this term? *(Count what went in and what came out. Print `type()`. Add the buckets up.)* What do all of them have in common, and why are all of them boring?
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four wrong ideas about arrays. Each one is shown next to the right idea.
 
 ### Trick 1 — "three numbers means the shape is `(3,)`"
 
@@ -1113,6 +1147,8 @@ typo  shape: (5, 3)  dtype: <U21   <-- TEXT
 
 ## 🌍 Where You've Seen This
 
+Arrays are not only in this course. This section lists places you already meet them.
+
 1. **Every photo on your phone is an array.** A 12-megapixel picture is a block of numbers with a shape like `(3024, 4032, 3)` — height, width, and three colour channels. When an app says a photo is "4032 by 3024", it is reading you a shape.
 2. **A crop, a rotate or a resize is a shape change.** Crop a photo and the first two numbers of its shape get smaller. That is genuinely all that is happening, and it is why cropping is instant and a filter is not.
 3. **Every sound file.** A song is a very long 1-D array of numbers — about 44,100 of them per second, per channel. Stereo is a `(2, n)` shape, which is a two-row block: one row per ear.
@@ -1125,10 +1161,13 @@ typo  shape: (5, 3)  dtype: <U21   <-- TEXT
 
 ## 🧭 Where This Fits
 
-Fifth week in the same gold box — and it is still the right box, because an array is a way of
-**holding** data. What changed today is not the job, it is the container. A list will hold your twelve
-scores; an array holds them, knows it is shaped `(12,)`, knows they are all whole numbers, and doubles
-every one of them in a single line.
+This section shows where arrays sit on the course map, and what this week connects to.
+
+This is the fifth week in the same gold box, and it is still the right box, because an array is a way of
+**holding** data. What changed today is not the job, it is the container.
+
+A list will hold your twelve scores. An array holds them, knows it is shaped `(12,)`, knows they are all
+whole numbers, and doubles every one of them in a single line.
 
 ![The Level 2 pipeline in Week 17: still the dicts, rows and files tile, now holding every score in one array that knows its shape](../figures/fig-w17-0-where-this-fits.svg)
 
@@ -1152,6 +1191,8 @@ arrays were built for, and that starts in two weeks.*
 
 ## 🔑 Remember This
 
+This is the short list to keep, followed by a syntax card you can copy.
+
 - **An array is a block of values, all the same kind, laid out end to end.** A list is a row of tickets pointing at things somewhere else.
 - **`import numpy as np`.** Everybody writes `np`. It is a convention, not a rule, and following it means every example on the internet reads like your code.
 - **`np.array` takes ONE list.** `np.array(1, 2, 3)` is a `TypeError`. `np.array([1, 2, 3])` is an array.
@@ -1164,6 +1205,8 @@ arrays were built for, and that starts in two weeks.*
 - **Print `.shape` and `.dtype` before you believe anything.** They are two different facts and one of them will not catch the other's mistakes.
 
 ### Syntax reminder card
+
+Copy this card into your notes. It collects every line of syntax from this week.
 
 ```python
 import numpy as np                       # top of the file. Everybody writes np.
@@ -1212,6 +1255,8 @@ final = np.array(scores)                 # convert ONCE, at the end
 ---
 
 ## 📓 New Words
+
+This table lists the five new words of the week, with a meaning and an example for each.
 
 ![This week's five words as pictures](../figures/fig-w17-5-vocab-icons.svg)
 *Figure 17.6 — This week's five words, drawn.*

@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table gives the facts of the lesson on one screen: how long it is, what is new, and what to have ready.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -17,11 +19,13 @@
 | **Tech needed** | The laptop, with `~/ai-academy/level2` open in the editor and a terminal in that folder |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
-> **⚠️ Watch out:** this week contains the first bug of the year that produces **no error message at all**. Forget one letter and the program prints `{runs / matches}` on the screen instead of a number, cheerfully, with no traceback. A teacher who does not know that in advance will lose ten minutes hunting a traceback that does not exist. It is in the Debugging Clinic, first row. Read it before class.
+> **⚠️ Watch out:** this week contains the first bug of the year that produces **no error message at all**. Forget one letter and the program prints `{runs / matches}` on the screen instead of a number, cheerfully, with no traceback. If you do not know that in advance, you will lose ten minutes hunting a traceback that does not exist. It is in the Debugging Clinic, first row. Read it before class.
 
 ---
 
 ## 🎯 Lesson Objectives
+
+These are the five things the student should be able to do when the lesson ends.
 
 By the end of the lesson the student can:
 
@@ -54,7 +58,10 @@ print("Total:", total)
 Total: 17.0
 ```
 
-That works, and it has two annoyances that get worse fast. You cannot control the spacing — the comma always puts exactly one space, whether you wanted one or not. And you cannot control how the number *looks*: `17.0` is a perfectly good number and a terrible price.
+That works, and it has two annoyances that get worse fast:
+
+- You cannot control the spacing. The comma always puts exactly one space, whether you wanted one or not.
+- You cannot control how the number *looks*. `17.0` is a perfectly good number and a terrible price.
 
 > **f-string** — a piece of text with an `f` in front of the opening quote, where anything inside `{curly braces}` gets replaced by the value of whatever is in the braces.
 
@@ -86,7 +93,9 @@ print("Average: {runs / matches}")
 Average: {runs / matches}
 ```
 
-**No error. No traceback. No red text.** Without the `f`, the braces are just two ordinary characters and the whole thing is plain text, so Python does exactly what you asked and prints it. This is worth being genuinely alert to: it is the first bug this year where the computer does not help you at all. The only way to catch it is to *look at the output and ask whether it makes sense* — which is a habit, not a tool, and this is the week to start building it.
+**No error. No traceback. No red text.** Without the `f`, the braces are just two ordinary characters and the whole thing is plain text, so Python does exactly what you asked and prints it.
+
+It is the first bug this year where the computer does not help you at all. The only way to catch it is to *look at the output and ask whether it makes sense*. That is a habit, not a tool, and this is the week to start building it.
 
 ### 2. Format specifiers — controlling what the reader sees
 
@@ -127,7 +136,9 @@ Three facts that will come up:
   ```
   Translated: *"you asked me to show this as a decimal number, and it's text."*
 
-**Why money must be exactly two decimals**, since it is an objective: a price is not really a decimal number, it is a whole number of pennies. £17 is 1700 pennies, and 1700 pennies written in pounds is `17.00`. Printing `17.0` is not a rounding choice, it is a *wrong number of pennies* — it stops at tenths of a pound, so it cannot show pennies at all. Every pound-and-pence till receipt uses two places and it is not decoration. Have the student find a real receipt if you have one; every single money figure on it has two decimals, including the whole-pound ones.
+**Why money must be exactly two decimals**, since it is an objective: a price is not really a decimal number, it is a whole number of pennies. £17 is 1700 pennies, and 1700 pennies written in pounds is `17.00`. Printing `17.0` is not a rounding choice, it is a *wrong number of pennies* — it stops at tenths of a pound, so it cannot show pennies at all. Every pound-and-pence till receipt uses two places and it is not decoration.
+
+Have the student find a real receipt if you have one; every single money figure on it has two decimals, including the whole-pound ones.
 
 ### 3. `//` and `%` — whole ones, and what's left over
 
@@ -157,7 +168,7 @@ print(slices % friends)      # left over on the plate
 
 **The check that makes it click, and do it out loud:** `3 × 5 + 1 = 16`. The whole ones times the number of people, plus the leftovers, gets you back to where you started. Always. If it doesn't, one of the two numbers is wrong.
 
-`%` is called **modulo** if you meet the word elsewhere, but "remainder" is the word to teach, because it is what it means. It is genuinely one of the most useful operators there is and the reason is that it answers a family of questions:
+`%` is called **modulo** if you meet the word elsewhere, but "remainder" is the word to teach, because it is what it means. It is one of the most useful operators there is, because it answers a family of questions:
 
 | Question | The sum |
 |---|---|
@@ -166,7 +177,7 @@ print(slices % friends)      # left over on the plate
 | How many whole tens in 47? | `47 // 10` → `4` |
 | What's the units digit of 47? | `47 % 10` → `7` |
 
-A worked one, in full, because it is the hardest sum in the week:
+This worked example is the hardest sum in the week, so it is given in full. It turns a number of seconds into hours, minutes and seconds:
 
 ```python
 total_seconds = 7325
@@ -203,7 +214,9 @@ print(10 ** 0)
 1
 ```
 
-The reason it earns a place in a pizza lesson is area. A pizza is a circle, and the area of a circle is π times the radius squared — which is a genuinely useful thing to be able to compute, because it settles the "is the big one better value?" argument with arithmetic instead of opinion.
+It earns a place in a pizza lesson because of area. A pizza is a circle, and the area of a circle is π times the radius squared. Computing it settles the "is the big one better value?" argument with arithmetic instead of opinion.
+
+This block finds the area of a pizza from its radius:
 
 ```python
 radius_cm = 15
@@ -222,7 +235,7 @@ print(f"{area:.2f}")
 
 ### 5. The lab itself: `receipt.py` in four steps
 
-This is what the lesson builds, and the numbers are chosen so that step 3 produces an ugly, obviously-dishonest figure. Here is the whole thing, run, so you can check the student's screen at any point.
+This is what the lesson builds. The numbers are chosen so that step 3 produces an ugly, obviously dishonest figure. Here is the whole thing, run, so you can check the student's screen at any point.
 
 **Step 1 — the total.**
 
@@ -331,7 +344,7 @@ Left over    : 1 slice
 
 **Misconception 1 — "`:.2f` rounds the number."**
 
-It does not. It changes what is *displayed*. `cost_per_slice` is still `1.0625` in the box afterwards, and if you multiply it by 16 you get 17.0 back exactly, not 16.96. The distinction matters because next term the student will look at a chart and have to ask *"is this the number, or a picture of the number?"* — and this is where that question starts.
+It does not. It changes what is *displayed*. `cost_per_slice` is still `1.0625` in the box afterwards, and if you multiply it by 16 you get 17.0 back exactly, not 16.96. The distinction matters because next term the student will look at a chart and have to ask *"is this the number, or a picture of the number?"* This is where that question starts.
 
 The demonstration that settles it, and it takes ten seconds:
 
@@ -350,11 +363,13 @@ If `:.2f` had really rounded it, `1.06 × 16` would be `16.96`. It's `17.0`. The
 
 **Misconception 2 — "`//` is just `/` with the decimals cut off, so it's the same thing."**
 
-Nearly true and worth being precise about. For positive numbers, yes — `16 // 5` is `3`, which is `3.2` with the `.2` thrown away. But they mean different things and answer different questions, and the honest framing is: `/` answers *"share it out perfectly, even if that means cutting things up"*, and `//` answers *"how many whole ones can each person actually be handed?"* Those are different questions about the world, not two spellings of one sum. (For negative numbers they genuinely diverge — `-7 // 2` is `-4`, not `-3` — but do not open that today; it is in the "flying" extensions.)
+Nearly true, and worth being precise about. For positive numbers, yes — `16 // 5` is `3`, which is `3.2` with the `.2` thrown away. But they mean different things and answer different questions. The honest framing: `/` answers *"share it out perfectly, even if that means cutting things up"*, and `//` answers *"how many whole ones can each person actually be handed?"* Those are different questions about the world, not two spellings of one sum.
+
+(For negative numbers they genuinely diverge — `-7 // 2` is `-4`, not `-3` — but do not open that today; it is in the "flying" extensions.)
 
 **Misconception 3 — "the braces are part of the text."**
 
-Produces exactly the missing-`f` bug. The cure is not explanation, it is the ritual: **every time an f-string is typed, the student says "eff" out loud as they type the `f`.** It sounds silly and it works. Three lessons of it and they never forget the letter again.
+This produces exactly the missing-`f` bug. The cure is not explanation, it is a ritual: **every time an f-string is typed, the student says "eff" out loud as they type the `f`.** It sounds silly and it works. Three lessons of it and they never forget the letter again.
 
 ### 7. How deep to go, and where to stop
 
@@ -405,6 +420,8 @@ pill lit along the bottom.*
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to do before class so nothing surprises you on the day.
 
 ### 20 minutes the night before
 
@@ -467,6 +484,8 @@ pill lit along the bottom.*
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section gives the timed plan for the lesson and the words to say at each step.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -552,7 +571,7 @@ print(17.0 / 16)
 
 Write on the board, big, with the `f` in a different colour:
 
-```
+```text
 print(f"Total: {total}")
  ▲▲▲▲▲ ▲
    |   this f is the whole trick
@@ -568,7 +587,7 @@ print(f"Total: {total}")
 
 Write both, side by side, and make them predict:
 
-```
+```text
 print(f"Total: {total}")     ->  Total: 17.0
 print("Total: {total}")      ->  Total: {total}
 ```
@@ -585,7 +604,7 @@ print("Total: {total}")      ->  Total: {total}
 
 Write:
 
-```
+```text
 {cost_per_slice:.2f}
                 ▲▲▲
                 colon: "here comes an instruction"
@@ -623,7 +642,7 @@ Let them deal. They will end up with three on each plate and one slice in their 
 
 Write:
 
-```
+```text
 16 / 5   = 3.2    <- share it out perfectly, cutting slices up
 16 // 5  = 3      <- how many WHOLE ones each
 16 % 5   = 1      <- how many LEFT OVER
@@ -780,6 +799,8 @@ Full instructions below. In the lesson flow:
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full instructions for the Their Turn segment: the setup, the three parts, and what finished looks like.
 
 ### Setup
 
@@ -1014,7 +1035,9 @@ Left over    : 1 slice
 
 ## 🐞 The Debugging Clinic
 
-Every line below came from really running a broken version of this week's code. **Note the first three rows: none of them produce an error at all.** That is new this week and it is the point.
+This section lists the errors this week's code produces, what each one means, and how to fix it.
+
+Every line below came from really running a broken version of this week's code. **The first three rows produce no error at all.** That is new this week and it is the point.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
 |---|---|---|---|
@@ -1046,6 +1069,8 @@ The sentence for this week: **"Not every bug shouts. Some of them just sit there
 
 ## ❓ Questions Students Ask This Week
 
+This section gives honest answers to the questions this lesson tends to raise.
+
 **"Why not just use commas? It worked last week."**
 
 Commas still work and you can keep using them. They have two limits, and both bite quickly. First, a comma always puts exactly one space, so you can't write `Total:£17.00` with no gap, and you can't line a column up. Second, and much more important: with a comma you have no way to say *how* you want the number shown. `print("Total:", 17.0)` will always give you `17.0`. There is no place to put `:.2f`. The f-string exists precisely so that there is somewhere to put it.
@@ -1064,7 +1089,7 @@ Because it gives you back an integer — a whole number, the word from Week 2. `
 
 **"When would I ever actually use `%`?"**
 
-Constantly, and the reason is that "how many left over?" turns out to be the same question as several others. Is a number even? `n % 2` is `0` if it is. What's the units digit of 47? `47 % 10` is `7`. It's second 7325 of the day — what minute are we in, and how many seconds past? `7325 % 60`. How do you make something happen every fifth time round a loop? `count % 5 == 0`. You will use `%` in Week 7, Week 8 and Week 20, and by the end of the year it will feel as ordinary as a plus sign.
+Constantly, because "how many left over?" turns out to be the same question as several others. Is a number even? `n % 2` is `0` if it is. What's the units digit of 47? `47 % 10` is `7`. It's second 7325 of the day — what minute are we in, and how many seconds past? `7325 % 60`. How do you make something happen every fifth time round a loop? `count % 5 == 0`. You will use `%` in Week 7, Week 8 and Week 20, and by the end of the year it will feel as ordinary as a plus sign.
 
 **"Why does `2 ** 10` give 1024 and not 20?"**
 
@@ -1072,7 +1097,7 @@ Because two stars is not "times". `2 * 10` is twenty. `2 ** 10` is two multiplie
 
 **"`f"{2.5:.0f}"` gives `2`. Shouldn't it be `3`?"** *(Genuinely surprising, and there is a real reason.)*
 
-It really does give `2`, and so does `f"{1.5:.0f}"` give... `2` as well. That looks broken and it isn't. Python uses a rule called **round-half-to-even**: when a number is *exactly* halfway, it rounds to whichever neighbour is even. So 0.5 → 0, 1.5 → 2, 2.5 → 2, 3.5 → 4. The reason is that always rounding halves *up* introduces a tiny upward bias, and if you add up a million rounded numbers that bias becomes a real error. Rounding half to even cancels out over many numbers. It is the international standard for exactly this reason, and it is also why `f"{1.005:.2f}"` gives `1.00` rather than `1.01` — though that one is a different problem again, to do with `1.005` not being stored quite exactly in the first place. **None of this will affect anything you build this year.** But if a student tests edge cases and finds it, they have found something real, and the honest answer is better than "don't worry about it."
+It really does give `2`, and `f"{1.5:.0f}"` gives `2` as well. That looks broken and it isn't. Python uses a rule called **round-half-to-even**: when a number is *exactly* halfway, it rounds to whichever neighbour is even. So 0.5 → 0, 1.5 → 2, 2.5 → 2, 3.5 → 4. The reason is that always rounding halves *up* introduces a tiny upward bias, and if you add up a million rounded numbers that bias becomes a real error. Rounding half to even cancels out over many numbers. It is the international standard for exactly this reason, and it is also why `f"{1.005:.2f}"` gives `1.00` rather than `1.01` — though that one is a different problem again, to do with `1.005` not being stored quite exactly in the first place. **None of this will affect anything you build this year.** But if a student tests edge cases and finds it, they have found something real, and the honest answer is better than "don't worry about it."
 
 **"How many decimal places should a number have?"** *(Nobody fully agrees, and here's why.)*
 
@@ -1081,6 +1106,8 @@ It really does give `2`, and so does `f"{1.5:.0f}"` give... `2` as well. That lo
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This table lists the ways the lesson tends to stall, and what to do about each one.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1097,6 +1124,8 @@ It really does give `2`, and so does `f"{1.5:.0f}"` give... `2` as well. That lo
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to adjust the lesson for a student who is struggling, flying, or not engaging today.
 
 ### If the student is struggling
 
@@ -1208,7 +1237,7 @@ The `7 and 10` round is the one worth doing, because `0` whole ones each with `7
 
 ## ✅ Assessing Understanding
 
-Three checks, five minutes, exact wording.
+This section gives three spoken checks, about five minutes in all, with the exact wording to use.
 
 **Check 1 — the missing letter (spoken)**
 
@@ -1242,6 +1271,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section gives the words to say when you set the homework, and the expected time.
+
 **Say this:**
 
 > "One file and two workbook sections, about an hour. Type everything.
@@ -1264,7 +1295,9 @@ Three checks, five minutes, exact wording.
 
 ## 🔑 Answer Key
 
-Follows the workbook's own sections in order. The values are those in the workbook's Answers section; every program was re-run to confirm. Teacher notes are marked **Teacher:**.
+This section gives the answers to the workbook, in the workbook's own order.
+
+The key follows the workbook's own sections. The values are those in the workbook's Answers section; every program was re-run to confirm. Teacher notes are marked **Teacher:**.
 
 ### Warm-Up (5 min — recall from Week 2)
 
@@ -1802,7 +1835,11 @@ The workbook has no vocabulary page; the five terms are in At a Glance and the s
 
 ## 🔮 Next Week Preview
 
-Week 4 is the term's first project and it turns the programs round the other way. So far every number has been typed **into** the file — change the pizza price and you edit line 3. Next week the program asks the *person at the keyboard*, using a new instruction called `input()`, and that changes everything, because `input()` has one trap in it and it is exactly the trap Week 2 spent an hour on: **whatever the human types, `input()` hands back text.** Type `12` and you get the two characters `"12"`, not the number twelve — so `age + 1` becomes a `TypeError`, and the fix is `int(input(...))`, converting the moment the value comes through the door. The build is the **About-Me Bot**: six questions, two numbers the user never typed that the program works out for itself, and a formatted card with borders, every line commented. It is the first thing the student will have built that another person can sit down and use.
+This section says what next week brings and what to prepare before it.
+
+Week 4 is the term's first project and it turns the programs round the other way. So far every number has been typed **into** the file — change the pizza price and you edit line 3. Next week the program asks the *person at the keyboard*, using a new instruction called `input()`, and that changes everything, because `input()` has one trap in it and it is exactly the trap Week 2 spent an hour on: **whatever the human types, `input()` hands back text.** Type `12` and you get the two characters `"12"`, not the number twelve — so `age + 1` becomes a `TypeError`, and the fix is `int(input(...))`, converting the moment the value comes through the door.
+
+The build is the **About-Me Bot**: six questions, two numbers the user never typed that the program works out for itself, and a formatted card with borders, every line commented. It is the first thing the student will have built that another person can sit down and use.
 
 **Prep early:** three things. Make sure `receipt.py` survives the week — Week 4 opens by adding `input()` to a file the student already trusts, which is much less frightening than a blank page. Read Week 4's "What YOU Need to Know First" a day early rather than an hour early, because there is one genuinely counter-intuitive thing in it (`input()` returning text even when the human types digits) and it is the single most common place a beginner's program breaks all year. And have a plan for what happens when a student types `banana` into a question that wanted a number: it produces `ValueError: invalid literal for int() with base 10: 'banana'`, it cannot be *fixed* until Week 5 gives us `if`, and saying so honestly — *"you've found something we can't fix for two weeks, and it's a real problem"* — is much better than pretending it away.
 

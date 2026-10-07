@@ -38,7 +38,7 @@ Observable evidence: a file in which every number appears exactly once and is us
 
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
-Read this with the laptop open and type the examples. There are two ideas this week — one easy, one deceptive — and it is worth knowing which is which before you walk in.
+This section is the background you need before you teach. Read it with the laptop open and type the examples. There are two ideas this week, one easy and one deceptive, and you should know which is which before you walk in.
 
 ### 1. The easy idea: a variable is a name stuck on a value
 
@@ -83,7 +83,7 @@ print(pizza_price)            # same label, different contents
 ![Assign again and the old value is gone](../figures/fig-w02-2-reassignment-swap.svg)
 *Figure 2.2 — There is no undo. After line 5, nothing anywhere still remembers 8.50.*
 
-> **💡 Try this:** notice that `8.50` printed as `8.5`. Python does not remember that you typed a trailing zero — it stored the *number*, and the number eight-point-five has no trailing zero. That looks wrong on a price and it is Week 3's entire opening problem. Today, just say: *"Yes, that's the number. Making it look like money is next week, and it takes one character."*
+> **💡 Why:** `8.50` printed as `8.5`. Python does not remember that you typed a trailing zero — it stored the *number*, and the number eight-point-five has no trailing zero. That looks wrong on a price, and it is Week 3's entire opening problem. Today, say: *"Yes, that's the number. Making it look like money is next week, and it takes one character."*
 
 **Naming.** There are rules Python enforces and rules only humans care about, and it is worth knowing both because you will be asked.
 
@@ -200,7 +200,9 @@ Translate the message for yourself before you translate it for a student. *"Can 
 - Did you want `10` — treat the text `"5"` as a number and add?
 - Did you want `"55"` — treat the number `5` as text and glue?
 
-Both are perfectly reasonable and they give completely different answers. So Python does the honest thing: **it stops and makes you say which.** Some other languages guess. Guessing is how a system ends up quietly charging someone `"100" + 50` = `10050` rupees and nobody notices for a month, because nothing crashed.
+Both are reasonable, and they give different answers. So Python does the honest thing: **it stops and makes you say which.**
+
+Some other languages guess. Guessing is how a system ends up quietly charging someone `"100" + 50` = `10050` rupees and nobody notices for a month, because nothing crashed.
 
 **A crash is a bug you find in four seconds. A guess is a bug you find in four weeks.** That sentence is the real lesson of Week 2.
 
@@ -332,6 +334,8 @@ sameness is the message, not a mistake.*
 
 ## 🧰 Prep Checklist
 
+This checklist is for the night before and the day itself. Work through it so that nothing in the lesson is a surprise.
+
 ### 20 minutes the night before
 
 - [ ] **Find three boxes or tubs** and a pad of sticky notes. Write nothing on them yet.
@@ -392,6 +396,8 @@ sameness is the message, not a mistake.*
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This is the lesson plan for the whole lesson. Each step shows what to do, what to say, what to ask, and what answer you want.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -469,7 +475,7 @@ Let them look at the screwed-up paper on the floor.
 
 Write it on the board, big:
 
-```
+```python
 pizza_price = 8.50
 ```
 
@@ -485,7 +491,7 @@ pizza_price = 8.50
 
 Write, and have them read each as "gets":
 
-```
+```python
 runs = 264
 player = "Rohit"
 total = runs + 100
@@ -719,6 +725,8 @@ Full instructions in the next section. In the lesson flow:
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full instructions for the "Their Turn" segment: the brief, a finished example, and the checks for each part.
 
 ### Setup
 
@@ -957,6 +965,8 @@ Both go in the Bug Log.
 
 ## 🐞 The Debugging Clinic
 
+Use this table to look up an error message and find its meaning, cause and fix.
+
 Every message below came from really running a broken version of this week's code.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
@@ -991,9 +1001,13 @@ The sentence for this week: **"Don't argue with it about what type something is.
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions this lesson tends to raise, each with an answer you can say aloud.
+
 **"Why can't Python just work out that `"5" + 5` means ten?"**
 
-Because it doesn't mean ten, necessarily. It might mean `"55"`. Both readings are completely reasonable, they give different answers, and Python has no way to know which you had in mind. So it does the honest thing: it stops and asks. Languages that guess are not being helpful — they are moving the mistake from a place where you'd notice it (a crash, now) to a place where you wouldn't (a wrong total, next month). A crash is a bug you find in four seconds; a guess is a bug you find in four weeks.
+Because it doesn't mean ten, necessarily. It might mean `"55"`. Both readings are completely reasonable, they give different answers, and Python has no way to know which you had in mind. So it does the honest thing: it stops and asks.
+
+Languages that guess are not being helpful — they are moving the mistake from a place where you'd notice it (a crash, now) to a place where you wouldn't (a wrong total, next month). A crash is a bug you find in four seconds; a guess is a bug you find in four weeks.
 
 **"What's the difference between `8.5` and `"8.5"` if they look the same on screen?"**
 
@@ -1005,27 +1019,47 @@ Because `/` always hands back a float, whether the answer needed one or not. Pyt
 
 **"Is `int(3.9)` a bug? Shouldn't it be 4?"**
 
-Not a bug, but a genuinely reasonable expectation. `int()` **truncates**: it throws away everything after the decimal point, so `int(3.9)` is `3` and `int(-3.9)` is `-3`. It is doing "take the whole-number part", not "find the nearest whole number". Rounding is a different job and it has its own tool, `round()`, which arrives in Week 4. Until then, if you write `int()` on something with a fraction, expect it to chop.
+Not a bug, but a genuinely reasonable expectation. `int()` **truncates**: it throws away everything after the decimal point, so `int(3.9)` is `3` and `int(-3.9)` is `-3`. It is doing "take the whole-number part", not "find the nearest whole number". Rounding is a different job and it has its own tool, `round()`, which arrives in Week 4.
+
+Until then, if you write `int()` on something with a fraction, expect it to chop.
 
 **"Can I name a variable anything?"**
 
-Nearly. Python enforces four rules: start with a letter or underscore, use only letters/digits/underscores, capitals matter, and you can't use one of Python's own thirty-odd reserved words like `class` or `if`. Everything else is legal — including `x`, `data2`, and `thing`, all of which are legal and all of which are bad. The rule that actually matters isn't Python's, it's this: in two weeks you will be a stranger reading your own file, so name things for that stranger.
+Nearly. Python enforces four rules: start with a letter or underscore, use only letters/digits/underscores, capitals matter, and you can't use one of Python's own thirty-odd reserved words like `class` or `if`. Everything else is legal. That includes `x`, `data2`, and `thing`, which are legal and all bad names.
+
+The rule that actually matters isn't Python's, it's this: in two weeks you will be a stranger reading your own file, so name things for that stranger.
 
 **"What happens if I name a variable `print`?"**
 
-Something genuinely instructive: it works, and then printing stops working. `print = 5` puts the number five in the box labelled `print`, and the printing machine that used to live there is gone. The very next `print("hi")` gives `TypeError: 'int' object is not callable` — "you asked me to run something that isn't a machine." Try it once, on purpose, then never do it again. It is the clearest possible demonstration of why "don't reuse Python's own names" is a rule rather than a suggestion.
+Something genuinely instructive: it works, and then printing stops working. `print = 5` puts the number five in the box labelled `print`, and the printing machine that used to live there is gone. The very next `print("hi")` gives `TypeError: 'int' object is not callable` — "you asked me to run something that isn't a machine." Try it once, on purpose, then never do it again.
+
+It is the clearest possible demonstration of why "don't reuse Python's own names" is a rule rather than a suggestion.
 
 **"How does the computer store a decimal number?"** *(Answer this honestly; the full answer is genuinely hard.)*
 
-In binary, and not always exactly. This has a real and famous consequence: in Python, `0.1 + 0.2` does not equal `0.3` — it comes out as `0.30000000000000004`. That is not a Python bug; every language that stores decimals the standard way behaves the same. The reason is the same reason you cannot write one third exactly in decimal: `0.3333...` never ends, so if you have limited room you have to stop somewhere and be slightly wrong. Computers work in base 2 rather than base 10, and it turns out one tenth is one of the fractions that doesn't fit. **You will not meet this problem this year and you do not need to worry about it**, because when we print money we will always say how many decimals we want, which hides it completely. But if you go looking, you will find it, and it is real.
+In binary, and not always exactly. This has a real and famous consequence: in Python, `0.1 + 0.2` does not equal `0.3` — it comes out as `0.30000000000000004`. That is not a Python bug; every language that stores decimals the standard way behaves the same.
+
+The reason is the same reason you cannot write one third exactly in decimal: `0.3333...` never ends, so if you have limited room you have to stop somewhere and be slightly wrong. Computers work in base 2 rather than base 10, and it turns out one tenth is one of the fractions that doesn't fit.
+
+**You will not meet this problem this year and you do not need to worry about it**, because when we print money we will always say how many decimals we want, which hides it completely. But if you go looking, you will find it, and it is real.
 
 **"Which is the 'right' kind for money — int or float?"** *(Nobody fully agrees, and here's why.)*
 
-**This is a genuine, live disagreement among professionals, and there are three camps.** Camp one says use a `float`: 8.50 is obviously a decimal number, floats are easy, and for anything at the scale of a pizza order the tiny inexactness above never shows up. Camp two says never use a float for money, ever — because those tiny inexactnesses *do* accumulate, and if you add up ten million transactions you can end up a few pence out, and being a few pence out is a very serious problem in a bank. Camp two's answer is to store money as an **integer number of pence** (850, not 8.50) and divide by 100 only at the moment of printing. Camp three says use a special decimal type built exactly for this, which Python has, and accept that it is slower and fiddlier. Real systems use all three. Banks and accounting software use camps two and three almost exclusively; a shop's website often uses camp one and gets away with it. What is not in dispute: **whichever you pick, pick it once and write it down**, because the actual disaster is a system where some parts think in pounds and other parts think in pence. This year we will use floats, because our sums are small and our purpose is learning — and now you know what we are choosing not to worry about.
+**This is a genuine, live disagreement among professionals, and there are three camps.** The three camps are:
+
+- **Camp one** says use a `float`. 8.50 is obviously a decimal number, floats are easy, and for anything at the scale of a pizza order the tiny inexactness above never shows up.
+- **Camp two** says never use a float for money, ever — because those tiny inexactnesses *do* accumulate, and if you add up ten million transactions you can end up a few pence out, and being a few pence out is a very serious problem in a bank. Camp two's answer is to store money as an **integer number of pence** (850, not 8.50) and divide by 100 only at the moment of printing.
+- **Camp three** says use a special decimal type built exactly for this, which Python has, and accept that it is slower and fiddlier.
+
+Real systems use all three. Banks and accounting software use camps two and three almost exclusively; a shop's website often uses camp one and gets away with it.
+
+What is not in dispute: **whichever you pick, pick it once and write it down**, because the actual disaster is a system where some parts think in pounds and other parts think in pence. This year we will use floats, because our sums are small and our purpose is learning — and now you know what we are choosing not to worry about.
 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+Use this table when the lesson stalls. Each row gives the symptom, the reason, and what to do right now.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1042,6 +1076,8 @@ In binary, and not always exactly. This has a real and famous consequence: in Py
 ---
 
 ## 🧭 Differentiation
+
+This section gives routes through the same lesson for a student who is struggling, one who is flying, and one who will not engage.
 
 ### If the student is struggling
 
@@ -1119,7 +1155,9 @@ That last sequence is genuinely subtle and it is the thing that trips up adults,
 
 ## ✅ Assessing Understanding
 
-Three checks, five minutes, exact wording.
+Use this section to check what the student has taken in. It has short checks with exact wording, and a mastery scale.
+
+Three checks, five minutes.
 
 **Check 1 — assignment (spoken)**
 
@@ -1163,6 +1201,8 @@ TypeError: can only concatenate str (not "float") to str
 ---
 
 ## 📤 Homework to Assign
+
+This section gives you the words to assign the homework, the list of workbook sections, and the time estimate.
 
 **Say this:**
 
@@ -1401,7 +1441,9 @@ Average: 77.66666666666667
 Glued instead of added: 788471
 ```
 
-**`int()`, not `float()`**, because marks are whole numbers; `float()` would also work but prints `233.0`. Choosing the type that matches the thing is part of the job. The `3` in `total / 3` is typed once and is not a repeat of anything, so do not penalise it. **Why three strings add without a crash:** `"78" + "84" + "71"` has one obvious meaning (glue); `"5" + 5` has two (`10` or `55`), and that is what Python refuses — it is refusing to *choose*, not refusing text. A wrong number that does not crash (`788471`) is exactly the danger of the week.
+**`int()`, not `float()`**, because marks are whole numbers; `float()` would also work but prints `233.0`. Choosing the type that matches the thing is part of the job. The `3` in `total / 3` is typed once and is not a repeat of anything, so do not penalise it.
+
+**Why three strings add without a crash:** `"78" + "84" + "71"` has one obvious meaning (glue); `"5" + 5` has two (`10` or `55`), and that is what Python refuses — it is refusing to *choose*, not refusing text. A wrong number that does not crash (`788471`) is exactly the danger of the week.
 
 **B4 — `bill.py`.** Before:
 
@@ -1431,7 +1473,12 @@ Total: 25.5
 Each of 5 pays: 5.1
 ```
 
-Mark for: does `8.50` appear exactly once? Does `5` appear exactly once, as a variable rather than inside the printed text? The second `print` using `friends` rather than a typed `5` is the harder half and is worth pointing out. Changing friends to 4 is **one edit**, and the output becomes `Total: 25.5` / `Each of 4 pays: 6.375` — the wording and the figure both update. A typed `5` in the text would now say "Each of 5 pays: 6.375", a sentence that lies about itself.
+Mark for these two things:
+
+- Does `8.50` appear exactly once?
+- Does `5` appear exactly once, as a variable rather than inside the printed text? The second `print` using `friends` rather than a typed `5` is the harder half and is worth pointing out.
+
+Changing friends to 4 is **one edit**, and the output becomes `Total: 25.5` / `Each of 4 pays: 6.375` — the wording and the figure both update. A typed `5` in the text would now say "Each of 5 pays: 6.375", a sentence that lies about itself.
 
 **B5 — The type chain.** Model answer:
 
@@ -1471,7 +1518,9 @@ Traceback (most recent call last):
 TypeError: can't multiply sequence by non-int of type 'float'
 ```
 
-Plain English: "you gave me a row of things and a decimal number and asked me to multiply them; I can repeat a row a whole number of times, but not 0.75 times." The text is `bars_sold`, visible from line 3 because of the quotes round `"25"`. Nothing printed because line 8 is above lines 11 and 12 and Python stopped the instant it got stuck. Fix (either is correct, and the reason given matters): `bar_money = int(bars_sold) * bar_price`, or take the quotes off line 3 (`bars_sold = 25`), which fixes the cause rather than the symptom.
+Plain English: "you gave me a row of things and a decimal number and asked me to multiply them; I can repeat a row a whole number of times, but not 0.75 times." The text is `bars_sold`, visible from line 3 because of the quotes round `"25"`. Nothing printed because line 8 is above lines 11 and 12 and Python stopped the instant it got stuck.
+
+Fix (either is correct, and the reason given matters): `bar_money = int(bars_sold) * bar_price`, or take the quotes off line 3 (`bars_sold = 25`), which fixes the cause rather than the symptom.
 
 **Bug 3 — line 14, `int()` chops.** Run 3 (verified):
 
@@ -1772,9 +1821,15 @@ The workbook has no vocabulary page. Use these as oral questions on the five New
 
 ## 🔮 Next Week Preview
 
-Week 3 is a lab, which means less talking and more building, and it opens with the thing that has been irritating everybody since about halfway through today: `8.50` prints as `8.5`, and no receipt in the world says `8.5`. The fix is a piece of syntax called an **f-string**, which lets you write a sentence once with blanks in it and have Python drop the values straight into the gaps — no more commas, no more gluing. Attached to that is a tiny instruction, `:.2f`, that says "show me exactly two decimal places", and it turns `1.0625` into `1.06` without changing the stored number at all. Then two new operators that answer the question a pizza actually raises: `//` for "how many whole ones each?" and `%` for "how many left over on the plate?". By the end of the hour the student will have built `receipt.py` from a blank file in four steps and read it out loud to check it sounds like a real receipt.
+This section says what the next lesson covers and what to prepare for it.
 
-**Prep early:** nothing to buy, but there is something to do. **Run the four steps of `receipt.py` yourself before the lesson** — they are laid out in Week 3's Prep Checklist with the exact expected output at every stage, and the third step produces `1.0625`, which is the number the whole lab turns on. Keep today's `types_tour.py` and `pocket_money.py`; Week 3 opens by adding f-strings to a file the student already has, which is much faster than starting fresh. And keep the Bug Log within reach: Week 3 has a genuinely sneaky bug in it, where forgetting one single letter makes the program print `{runs / matches}` instead of an actual number — and it does not produce an error at all, which makes it the first bug of the year that a traceback will not find for you.
+Week 3 is a lab, which means less talking and more building, and it opens with the thing that has been irritating everybody since about halfway through today: `8.50` prints as `8.5`, and no receipt in the world says `8.5`. The fix is a piece of syntax called an **f-string**, which lets you write a sentence once with blanks in it and have Python drop the values straight into the gaps — no more commas, no more gluing. Attached to that is a tiny instruction, `:.2f`, that says "show me exactly two decimal places", and it turns `1.0625` into `1.06` without changing the stored number at all.
+
+Then two new operators that answer the question a pizza actually raises: `//` for "how many whole ones each?" and `%` for "how many left over on the plate?". By the end of the hour the student will have built `receipt.py` from a blank file in four steps and read it out loud to check it sounds like a real receipt.
+
+**Prep early:** nothing to buy, but there is something to do. **Run the four steps of `receipt.py` yourself before the lesson** — they are laid out in Week 3's Prep Checklist with the exact expected output at every stage, and the third step produces `1.0625`, which is the number the whole lab turns on. Keep today's `types_tour.py` and `pocket_money.py`. Week 3 opens by adding f-strings to a file the student already has, which is much faster than starting fresh.
+
+Keep the Bug Log within reach: Week 3 has a genuinely sneaky bug in it, where forgetting one single letter makes the program print `{runs / matches}` instead of an actual number — and it does not produce an error at all, which makes it the first bug of the year that a traceback will not find for you.
 
 ---
 

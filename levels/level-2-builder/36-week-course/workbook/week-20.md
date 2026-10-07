@@ -301,7 +301,7 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
-Every one of these uses the gradebook:
+This set is for writing code of your own. Every task uses the same gradebook, set up here:
 
 ```python
 import numpy as np
@@ -572,6 +572,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for working backwards from an output to the input that made it.
+
 ### Part 1 — The squashed row
 
 Somebody normalized a row of five numbers and threw the original row away. All you have is this:
@@ -650,6 +652,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+This section is for longer written answers. Take your time and use full sentences.
 
 **T1.** With the 950 typo in it, the gradebook's normalized grid was fifty tidy numbers, all legally between 0 and 1, correctly ordered, minimum exactly 0 and maximum exactly 1. **Both built-in checks passed and the answer was ruined.** Write a paragraph about what makes a check worth having. Where does a useful check get its information from? And what is wrong with a check that can never fail?
 
@@ -843,6 +847,8 @@ ________________________________________________________________
 ---
 
 ## 📊 Self-Check
+
+This table is for you to rate how sure you feel about each skill. Tick one face per row.
 
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|

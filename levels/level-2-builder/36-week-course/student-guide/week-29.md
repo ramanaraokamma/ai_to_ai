@@ -80,7 +80,7 @@ All the real work happens later, when you ask it a question. At that moment it m
 
 Measure the distance from the mystery flower to all six, then sort them nearest-first:
 
-```
+```text
 1.58  versicolor      <- closest
 1.75  versicolor
 1.79  setosa
@@ -646,6 +646,8 @@ THE GAP    : 0.2083
 
 ## 🔍 Worked Examples
 
+These examples use the same three verbs on new data: pizza orders, cricket players and exam revision.
+
 ### Worked Example 1 — Will the pizza arrive hot? (food)
 
 Eight past orders. We know the price, the distance, and whether it turned up hot. Now three new orders come in.
@@ -1011,6 +1013,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 ## 🎲 What We Did In Class
 
+This section is for anyone who missed the lesson, or wants to repeat it at home. It lists the three parts we did.
+
 ### Part 1 — The deck, the envelope, and your own signature
 
 You need a real deck of cards, an envelope, and a pen. **Not a pencil.**
@@ -1047,7 +1051,7 @@ If your numbers are different, the first thing to check — before anything else
 
 Type `the_gap.py` and run it. Then write this up somewhere it will stay all term:
 
-```
+```text
   THE GAP        0.9417  on the rows it studied
                  0.7333  on the rows it had never seen
                  --------
@@ -1100,6 +1104,8 @@ k = 120   train = 0.3417   test = 0.3000
 
 ## 💬 Talk About It
 
+These questions are for talking through with a parent, friend or classmate. They have no single right answer.
+
 **1. A kNN model has no rules inside it — it is a copy of your training rows. If you train one on medical records and then send the trained model to a hospital, what have you actually sent them?**
 
 *Hint:* start with the literal answer, which is uncomfortable enough. Then go one step further: somebody who can only *ask questions* of the model, without seeing inside it, can feed it carefully chosen inputs and work backwards. And then the hard part — if a person asks you to delete their data, is deleting the row enough, when their row is baked into a model you have already given to fifty people? *(Nobody agrees on the answer, and the law in most countries has not caught up.)*
@@ -1115,6 +1121,8 @@ k = 120   train = 0.3417   test = 0.3000
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section is for spotting claims about scores that sound fine but are not.
 
 ### Trick 1 — "the higher of my two scores is the better one"
 
@@ -1171,6 +1179,8 @@ And if the score *does* change between runs, that is not improvement — that is
 ---
 
 ## 🌍 Where You've Seen This
+
+This section shows where nearest-neighbour ideas already appear in things you use.
 
 - **"Similar songs" and "Discover Weekly".** Every song is a row of measurements. Yours is a point. The app hands you the nearest other points. Literally this week's arithmetic, a few million times a second.
 - **Photo apps grouping faces.** Each face becomes a long row of numbers. Faces near each other go in the same pile. The app never learns your cousin's *name* — it notices that thirty faces sit close together.
@@ -1250,6 +1260,8 @@ print("test :", round(model.score(X_test, y_test), 4), "on", len(X_test), "rows"
 ---
 
 ## 📓 New Words
+
+These are the words from this week, for you to check against.
 
 ![Five new words for Week 29](../figures/fig-w29-7-words-knn-fit-predict.svg)
 *Figure 29.7 — Five words. Three of them are verbs you will use every week for the rest of the course.*

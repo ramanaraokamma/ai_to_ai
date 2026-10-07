@@ -138,6 +138,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading loops, shapes and tracebacks. You do not write code here.
+
 **A1. Loop or one-liner?** For each loop, say whether it **retires today**, **needs something you have not learned yet**, or **will never retire to array arithmetic** (`*` `+` `/`) — and give the one line, or the reason.
 
 | # | The loop does this | Verdict | The one line, or why not |
@@ -285,6 +287,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing one-line array code and checking it against the loop.
+
 ### B1 — one line
 
 Retire this loop in a single line. `scores` is a plain Python list.
@@ -403,6 +407,8 @@ block + row  -> (2, 3)
 ---
 
 ## 🐞 Fix the Broken Program
+
+This section is for finding bugs in a program by reading it.
 
 Here is `report.py`, which is supposed to retire three loops on six scores. It has **three** bugs: one that stops Python reading the file at all, one that stops it partway through, and one that produces **no error whatsoever**.
 
@@ -786,6 +792,8 @@ Draw **the Term 2 ladder**, one rung per week, and ring the rungs that wobble.
 ---
 
 ## 📊 Self-Check
+
+Use this table to mark how sure you are about each skill from this week.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|

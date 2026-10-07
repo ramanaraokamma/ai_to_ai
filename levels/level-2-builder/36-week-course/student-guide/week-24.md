@@ -82,13 +82,17 @@ Which gives you the sentence this whole lab runs on:
 
 ## 🧠 The Big Idea
 
-> **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
+In this section you will meet the ideas behind the lab: duplicates, `.str` methods, derived columns, `groupby`, group sizes, and the cost of a fill.
+
+> **📌 About the code in this section.** The blocks below are **illustrations, not files**. Each one carries on from the one above it, and the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy one block on its own and Python says `NameError`, that is why. Nothing is broken.
 
 ### 1. Duplicates: look at them before you delete them
 
 **The plain explanation.** Somebody typed this list in, scrolled, lost their place, and typed two rows again.
 
 > **duplicate** — a row that is identical to another row in **every single column**.
+
+Count the duplicate rows:
 
 ```python
 print(raw.duplicated().sum())
@@ -122,6 +126,8 @@ print(raw[raw.duplicated(keep=False)])
 
 **The analogy.** Two people in your class could easily share a first name. Two people sharing a first name, a surname, a birthday, a phone number and a shoe size is one person written down twice.
 
+Make a copy, drop the duplicates, and print the shape on each side:
+
 ```python
 clean = raw.copy()
 print("before:", clean.shape)
@@ -151,6 +157,8 @@ after : (38, 6)
 > **string method** — a command that works on writing. `strip` removes spaces from the ends; `title` makes the first letter a capital and the rest lower case.
 
 > **`.str`** — the doorway that lets a string method work on **a whole column at once** instead of one value at a time. Without `.str`, pandas has no idea you meant to do it to every cell.
+
+Tidy the house column, then count the values:
 
 ```python
 clean["house"] = clean["house"].str.strip().str.title()
@@ -257,6 +265,8 @@ Now the new thing.
 
 > **derived column** — a new column worked out from columns you already have. Nothing arrives from outside; the table does arithmetic on itself.
 
+Make the new column, then look at the first five rows:
+
 ```python
 clean["points_per_hour"] = (clean["score"] / clean["hours"]).round(2)
 print(clean.head())
@@ -315,6 +325,8 @@ And be honest about the measure itself: **dividing by 0.5 doubles a number**, so
 2. You add up each pile and divide by its size. That is the **apply**.
 3. You write the four averages on one sheet. That is the **combine**.
 
+Average score per house:
+
 ```python
 print(clean.groupby("house")["score"].mean().round(2))
 ```
@@ -365,7 +377,7 @@ Name: score, dtype: int64
 
 **Two.** Gold is two people.
 
-Here are they are in full:
+Here they are in full:
 
 ```python
 print(clean[clean["house"] == "Gold"])
@@ -377,7 +389,11 @@ print(clean[clean["house"] == "Gold"])
 33   Hana Sato   12  Gold  art    5.5     93            16.91
 ```
 
-**If one of them had been off school that day, "Gold's average" would be one person's score** — 97 or 93, from a single row. And one ordinary pupil scoring 73 joining Gold takes it to (97 + 93 + 73) ÷ 3 = **87.67**: the lead over Blue shrinks from 20.6 marks to 13.3 (about a third) because **one person arrived**. Now ask the same question of Blue. **How many pupils would have to join Blue to move its average seven marks?** **Six** new pupils, every single one of them scoring 100 out of 100 — (1041 + 600) ÷ 20 = 82.05, which is 7.69 up. Gold moved 7.33 because **one** person turned up with an ordinary score. *That* is the difference between fourteen rows and two.
+**If one of them had been off school that day, "Gold's average" would be one person's score** — 97 or 93, from a single row.
+
+One ordinary pupil scoring 73 joining Gold takes it to (97 + 93 + 73) ÷ 3 = **87.67**. The lead over Blue shrinks from 20.6 marks to 13.3 (about a third) because **one person arrived**.
+
+Now ask the same question of Blue. **How many pupils would have to join Blue to move its average seven marks?** **Six** new pupils, every single one of them scoring 100 out of 100 — (1041 + 600) ÷ 20 = 82.05, which is 7.69 up. Gold moved 7.33 because **one** person turned up with an ordinary score. *That* is the difference between fourteen rows and two.
 
 **And nothing in the `.mean()` output told you any of that.** Four numbers, four house names, no hint that one came from two rows and another from fourteen. **The printout was completely honest and completely misleading**, and you read "Gold is the best house" straight off it.
 
@@ -465,7 +481,7 @@ Four houses times three clubs is **twelve** possible combinations. **Nine appear
 
 ### 6. What the age fill cost
 
-**The plain explanation.** The fill back in §3 looked routine. It was not.
+**The plain explanation.** The fill back in §3 looked routine. It was not. Here is the age table after the fill, with the group size `n` beside each average:
 
 ```text
       n    avg
@@ -489,7 +505,7 @@ That is not a bug — **it is what filling means.** But it means the log must sa
 
 ## 💻 Type This
 
-Everything goes in your `level2` folder. As last week, the data comes first.
+In this section you build the lab, one step at a time, in your `level2` folder. As last week, the data comes first.
 
 ### Step 0 — make the broken file
 
@@ -598,7 +614,7 @@ dtype: int64
 
 ### Step 2 — look at the duplicates before deleting them
 
-Add:
+Add this to `detect.py`:
 
 ```python
 print("--- both copies of every duplicate")
@@ -646,7 +662,7 @@ after : (38, 6)
 
 ### Step 4 — fourteen spellings become four
 
-Add:
+Add this to `mess_detective.py`:
 
 ```python
 print("=== STEP 2: fourteen house spellings become four")
@@ -669,7 +685,7 @@ Name: house, dtype: int64
 
 ### Step 5 — the clubs, in lower case
 
-Add:
+Add this to `mess_detective.py`:
 
 ```python
 print("=== STEP 3: eight club spellings become three")
@@ -689,7 +705,7 @@ Name: club, dtype: int64
 
 ### Step 6 — the six missing ages
 
-Add:
+Add this to `mess_detective.py`:
 
 ```python
 print("=== STEP 4: the six missing ages")
@@ -716,7 +732,7 @@ That is last week's skill with six holes instead of three. `fillna(13).astype(in
 
 ### Step 7 — a column that was not there
 
-Add:
+Add this to `mess_detective.py`:
 
 ```python
 print("=== STEP 5: a column that was not there")
@@ -738,7 +754,7 @@ print(clean.head())
 
 ### Step 8 — the groupby, with the size beside it
 
-Add:
+Add this to `mess_detective.py`:
 
 ```python
 print("=== STEP 6: average score per house, WITH the group size")
@@ -761,7 +777,7 @@ Red    12  74.25
 
 ### Step 9 — the check that must always pass
 
-Add:
+Add this to `mess_detective.py`:
 
 ```python
 print("=== STEP 7: the check that must always pass")
@@ -1367,7 +1383,7 @@ Red    12  74.25
 
 ## 🎲 What We Did In Class
 
-If you missed it, here is the whole lab.
+This section is for anyone who missed the lesson. It retells the lab in the order it happened.
 
 ### The hook: fourteen names, four houses
 
@@ -1379,7 +1395,9 @@ And the reframe, said slowly: **the computer is not being stupid, it is being ex
 
 ### Two things on the board, up all lesson
 
-```
+This is what stayed on the board:
+
+```text
 SHAPE BEFORE   ->   SHAPE AFTER   ->   ACCOUNT FOR THE DIFFERENCE
 
   never print   .mean()   without   .size()   beside it
@@ -1391,7 +1409,7 @@ SHAPE BEFORE   ->   SHAPE AFTER   ->   ACCOUNT FOR THE DIFFERENCE
 
 **The string chain**, on the board, read left to right:
 
-```
+```text
 clean["house"].str.strip().str.title()
                     |          |
               take spaces   Capitalise
@@ -1400,7 +1418,7 @@ clean["house"].str.strip().str.title()
 
 **The derived column**, also on the board:
 
-```
+```text
 clean["points_per_hour"] = clean["score"] / clean["hours"]
        |                        |
    a name that doesn't      divide the whole column
@@ -1446,7 +1464,7 @@ Then, in order:
 
 ### The rule, in your own handwriting
 
-```
+```text
 Never print .mean() without .size() beside it.
   agg(n=("score","size"), avg=("score","mean"))
 
@@ -1459,21 +1477,37 @@ And the term in a sentence: **two weeks ago, two commands one letter apart gave 
 
 ## 💬 Talk About It
 
+These are questions to argue about with a partner or at home. Each one has a hint to start you off.
+
 **1. How many people does a group need before its average means anything?**
 
-*Hint:* this is the honest "nobody agrees" question of the week, and there is no number that is correct. Start by collecting the rules of thumb people actually use: never report a group smaller than 5; never one smaller than 30 (that comes from a real statistics result and is widely misapplied); report any size you like as long as you print it. Then notice how the answer depends on the field — **medical researchers work with groups of 12 when 12 is all the patients there are**, and opinion polls want a thousand. So what *does* everybody agree on? Probably two things: **print the size, always, so the reader can decide** — and **two is not enough, for anything.** Is "print it and let the reader decide" a dodge, or is it the actual professional answer?
+*Hint:* this is the honest "nobody agrees" question of the week, and there is no number that is correct. Start by collecting the rules of thumb people actually use: never report a group smaller than 5; never one smaller than 30 (that comes from a real statistics result and is widely misapplied); report any size you like as long as you print it.
+
+Then notice how the answer depends on the field — **medical researchers work with groups of 12 when 12 is all the patients there are**, and opinion polls want a thousand.
+
+So what *does* everybody agree on? Probably two things: **print the size, always, so the reader can decide** — and **two is not enough, for anything.** Is "print it and let the reader decide" a dodge, or is it the actual professional answer?
 
 **2. `groupby(...).mean()` gave a correct answer that led you to a wrong conclusion. Is that pandas's fault?**
 
-*Hint:* start by being precise about what pandas was asked and what it did. It computed the mean score per house. It computed it correctly. **It has no idea what you intend to claim.** So the gap is between *a correct number* and *a supported conclusion*, and only a person can close that. Then argue the other side properly, because it is a reasonable position: **should pandas warn you about tiny groups?** What would it have to know to do that? (What counts as tiny — for your question, which it cannot see.) And finish with the practical point: if the tool cannot do it, the **habit** has to. `.size()` beside `.mean()` does not make pandas smarter. What does it make?
+*Hint:* start by being precise about what pandas was asked and what it did. It computed the mean score per house. It computed it correctly. **It has no idea what you intend to claim.** So the gap is between *a correct number* and *a supported conclusion*, and only a person can close that.
+
+Then argue the other side properly, because it is a reasonable position: **should pandas warn you about tiny groups?** What would it have to know to do that? (What counts as tiny — for your question, which it cannot see.)
+
+And finish with the practical point: if the tool cannot do it, the **habit** has to. `.size()` beside `.mean()` does not make pandas smarter. What does it make?
 
 **3. Is it wrong to delete the duplicate rows?**
 
-*Hint:* not if you looked at them first and can say why — every field matched, including the exact score after the exact hours, so it is a typing slip. So what *would* be wrong? Deleting them **without looking**, and deleting them **without a log line**. Then find the case where you should keep both: **what if the table were one row per test *attempt* rather than one row per pupil?** Two identical rows might be two genuine attempts that happened to score the same, and deleting one would destroy a real fact. So the deciding question is not about the command at all — it is **what does one row of this table mean?** Who is the only person who can answer that?
+*Hint:* not if you looked at them first and can say why — every field matched, including the exact score after the exact hours, so it is a typing slip. So what *would* be wrong? Deleting them **without looking**, and deleting them **without a log line**.
+
+Then find the case where you should keep both: **what if the table were one row per test *attempt* rather than one row per pupil?** Two identical rows might be two genuine attempts that happened to score the same, and deleting one would destroy a real fact.
+
+So the deciding question is not about the command at all — it is **what does one row of this table mean?** Who is the only person who can answer that?
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists wrong beliefs that look sensible, each next to the right way to think about it.
 
 ### Trick 1 — "the computer is being stupid about `Blue` and `Blue `"
 
@@ -1518,6 +1552,8 @@ And the term in a sentence: **two weeks ago, two commands one letter apart gave 
 
 ## 🌍 Where You've Seen This
 
+This week's ideas are not only for school tables. Here are places you will meet them.
+
 1. **Any "top rated" list on a shop or a food app.** A restaurant with 5.0 stars from **3** reviews sits above one with 4.6 from **2,000**. The good apps print the review count next to the stars — which is `agg(n=..., avg=...)`, on your phone.
 2. **A football league's "goals per game" table** in early season. After two matches somebody always has an absurd rate. By March they do not. **That is a group size growing.**
 3. **A school's exam-results table by subject.** A subject taken by four pupils will always look either wonderful or terrible, and comparing it with a subject taken by two hundred is exactly the Gold problem.
@@ -1556,6 +1592,8 @@ stage three to turn solid.*
 
 ## 🔑 Remember This
 
+These are the ideas to keep from the week, followed by a card of the syntax in one place.
+
 - **Your eyes are not the evidence. The count is the evidence.** Forty rows is past the point where looking works.
 - **Look at duplicates before you delete them**, and be able to name which rows went. Every field matching is what makes it a typing slip rather than two people.
 - **`duplicated().sum()` counts the later copies only.** Two repeated rows give **2**, not 4.
@@ -1571,6 +1609,8 @@ stage three to turn solid.*
 - **An average with no count beside it is not an answer.**
 
 ### Syntax reminder card
+
+Keep this file open next to you when you write your own cleaning script:
 
 ```python
 import pandas as pd
@@ -1624,6 +1664,8 @@ print("sizes sum to", sizes.sum(), "and the table has", len(clean), "rows")
 ---
 
 ## 📓 New Words
+
+Here are the words from this week, each with an example.
 
 ![This week's five words as pictures](../figures/fig-w24-6-vocab-icons.svg)
 *Figure 24.7 — This week's five words, drawn.*

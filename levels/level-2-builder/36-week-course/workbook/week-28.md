@@ -177,6 +177,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading tables, shapes, code and tracebacks. Write in the spaces; you do not need to run anything.
+
 **A1. Which column is which?** For each table, write `X`, write `y`, and write the column that goes in **neither** — with the reason.
 
 | # | The table (the answer column is in bold) | `X` | `y` | In neither, and why |
@@ -320,6 +322,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing short programs of your own. Each one gives the output it should print.
+
 ### B1 — one line
 
 You have `X` and `y` already built. Write the **single line** that prints both shapes on one line, with a label on each.
@@ -423,6 +427,8 @@ nearest is Lantern -> chill
 ---
 
 ## 🐞 Fix the Broken Program
+
+This page is for practising finding bugs in a program that is already written.
 
 Here is `broken28.py`. It is supposed to split a table into `X` and `y` and then measure one distance. It has **three** bugs: one that stops Python reading the file at all, one that stops it partway through, and one that produces **no error whatsoever**.
 
@@ -544,6 +550,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This page is for working with distances by hand on real numbers.
+
 ### Part 1 — Two flowers, wrong species, wrong distance
 
 Here are four real iris rows, petal length and petal width only.
@@ -624,6 +632,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for longer written answers. Write full sentences.
+
 **T1.** Somebody hands you a table of 500 hospital patients with twelve columns, and asks you to predict the column called `needed_surgery`. One of the other eleven columns is called `days_in_recovery_ward`.
 
 Write a paragraph. Explain, using the three-second test from the chapter, whether `days_in_recovery_ward` belongs in `X`. Then say what would happen if you left it in — be specific about the score, and specific about what would happen the first time somebody used your model on a **new** patient. Then go further: `days_in_recovery_ward` is not a name and not a row number, so none of the chapter's rules ban it. **So what rule does it break?** Finish by naming one other column heading you would be suspicious of in a table like this, and say why.
@@ -659,6 +669,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It — Your Own `X`, Your Own `y`, One Distance Twice
+
+This section is for building `X` and `y` from your own table and measuring one distance two ways. Tick each box as you go.
 
 ### Part 1 — `X` and `y` from your own table (page 28.5)
 
@@ -702,7 +714,7 @@ Pick **any two rows** of your own table. Do the distance on paper, then in numpy
 
 Row A = ( ______ , ______ )     Row B = ( ______ , ______ )
 
-```
+```text
 step 1   subtract      ______ − ______ = ______        ______ − ______ = ______
 
 step 2   square        ______              ______
@@ -793,6 +805,8 @@ Draw one row of numbers as **one point**, and the distance as the slanted line. 
 ---
 
 ## 📊 Self-Check
+
+This page is for checking what you can do now. Tick one face on each row.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -1427,7 +1441,7 @@ Name: mood, dtype: object
 
 **On paper:**
 
-```
+```text
 Monsoon = (68, 4.2)        Lantern = (80, 3.8)
 
 step 1   subtract      68 − 80 = −12          4.2 − 3.8 = 0.4

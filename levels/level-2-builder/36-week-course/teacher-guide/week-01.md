@@ -23,6 +23,8 @@
 
 ## 🎯 Lesson Objectives
 
+This section lists what the student should be able to do when the lesson ends, and what you can see to check it.
+
 By the end of the lesson the student can:
 
 1. **Run a `.py` file from the terminal** and read the output that appears underneath.
@@ -36,9 +38,11 @@ Observable evidence: two `.py` files that the student typed by hand and ran succ
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section teaches you, the teacher, the ideas behind the lesson, so you can run it without knowing Python already.
+
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
-**You do not need to know Python to teach this lesson.** You need to know four things, and this section teaches you all four from scratch. Read it once, slowly, with the laptop open, and type the examples yourself. That is the whole prep.
+**You do not need to know Python to teach this lesson.** This section teaches you everything you need, from scratch. Read it once, slowly, with the laptop open, and type the examples yourself. That is the whole prep.
 
 ### 1. What a program actually is
 
@@ -139,7 +143,7 @@ The same `*` did two completely different jobs.
 
 **Why this is worth twenty minutes and not two:** the student's instinct is that the quotes are just tidiness, like a hat on a word. This one example proves the quotes change what the whole line *means*. Once they have felt that, Week 2's types lesson is a formality instead of a fight.
 
-Here is a comparison table you can put on the board. Have them predict the middle column before you reveal it.
+Here is a table you can put on the board. Have them predict the middle column before you reveal it.
 
 | You type | It prints | Why |
 |---|---|---|
@@ -162,7 +166,7 @@ print(3 * 450)        # 3 pizzas at 450 rupees each
 print(1350 / 5)       # that total split between 5 friends
 ```
 
-Two things to enforce from week one, because they are habits and habits are cheap now and expensive later:
+Enforce two habits from week one. Habits are cheap now and expensive later:
 
 - **Every file starts with a comment saying what the file is for.** One line. Filename, then a dash, then the purpose.
 - **A good comment says *why*, not *what*.** `print(1350 / 5)  # divide 1350 by 5` is useless — anyone can read that off the line. `# that total split between 5 friends` is worth having.
@@ -188,7 +192,7 @@ NameError: name 'prnt' is not defined. Did you mean: 'print'?
 
 Four lines, and they must be read **from the bottom up**. Teach it as a fixed three-step ritual:
 
-```
+```text
    ┌──────────────────────────────────────────────────────────────┐
    │  HOW TO READ A TRACEBACK                                     │
    │                                                              │
@@ -274,6 +278,8 @@ restart.
 
 ## 🧰 Prep Checklist
 
+This section lists what to do the night before and on the day, and what to do if the laptop fails.
+
 ### 20 minutes the night before
 
 - [ ] **Open a terminal and type `python3 --version`.** You want to see `Python 3.9` or higher. **The exact error wording printed in this guide (`Did you mean`, `'(' was never closed`, `unterminated string literal`) is Python 3.10 and newer; on 3.9 the same mistakes give older messages such as `invalid syntax`, `unexpected EOF while parsing` or `EOL while scanning string literal`, so prefer 3.10+ for this week.** If it errors, go to [Orientation §4](00-orientation.md) and fix it tonight, not tomorrow.
@@ -347,6 +353,8 @@ restart.
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson. The table shows the timing. Each segment below it says what to do and say.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -448,7 +456,7 @@ Write on the board:
 
 > **Interpreter** — the program that reads your Python file and actually does what it says. On this laptop it's called `python3`.
 
-Point at Figure 1.1 in this file if you want the picture. Then, importantly:
+Point at Figure 1.1 in this file if you want the picture. Then say:
 
 > "One warning about step two, and it will bite you today. **Saving is not automatic.** If you change the file and don't save it, then run it, you'll see the *old* answer and you'll think the computer is broken. Look at the tab up here — see this little dot next to the filename? That dot means 'not saved'. When the dot goes away, you're saved. Get in the habit of glancing at the dot."
 
@@ -460,7 +468,7 @@ Point at Figure 1.1 in this file if you want the picture. Then, importantly:
 
 Write it on the board by hand, big, and label the parts as you say them:
 
-```
+```text
 print("Hello, world.")
  ^^^^^ ^             ^ ^
    |   |             | |
@@ -687,6 +695,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the Their Turn segment, with a finished example and variations.
+
 ### Setup
 
 **On the table:** the laptop, the workbook open at Build It, a pencil, and the BUG LOG sheet.
@@ -830,6 +840,8 @@ ababab
 
 ## 🐞 The Debugging Clinic
 
+Use this section to look up an error message and to help the student without giving the answer.
+
 Every message below was produced by running a genuinely broken version of this week's code. Yours will show a longer file path; everything after the path is identical.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
@@ -863,9 +875,13 @@ The sentence to have ready when they are frustrated: **"You are not stuck. You a
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions this week tends to bring up, with answers you can say aloud.
+
 **"Why do I have to type it? Can't I just copy it?"**
 
-Because your fingers are learning something your eyes can't. Where the brackets go, where the colon goes, that a quote has a partner — that knowledge lives in your hands after a few hundred lines, and it never arrives at all if you paste. It costs you about fifteen extra minutes a week and it is the reason you'll be able to write a file from a blank page in nine weeks instead of nine months. Also, honestly: pasting means you never make the typo, which means you never read the traceback, which means you never learn to debug.
+Because your fingers are learning something your eyes can't. Where the brackets go, where the colon goes, that a quote has a partner — that knowledge lives in your hands after a few hundred lines, and it never arrives at all if you paste.
+
+It costs you about fifteen extra minutes a week and it is the reason you'll be able to write a file from a blank page in nine weeks instead of nine months. Also, honestly: pasting means you never make the typo, which means you never read the traceback, which means you never learn to debug.
 
 **"Is `print` printing on paper?"**
 
@@ -877,27 +893,41 @@ They come out in a different order. That's not a trick answer — it is the whol
 
 **"Why is `1350 / 5` two hundred and seventy point zero, and not just two hundred and seventy?"**
 
-Because `/` always hands you back a number with a decimal point on it, whether or not the answer needed one. The reason is that sharing things out usually *does* make a fraction — `10 / 4` really is `2.5` — and Python would rather always leave room for a fraction than sometimes surprise you. Next week we learn the two names for these two kinds of number, and in Week 3 we learn how to control how many decimals actually get shown, so `270.0` can be printed as `270` when you want it to be.
+Because `/` always hands you back a number with a decimal point on it, whether or not the answer needed one. The reason is that sharing things out usually *does* make a fraction — `10 / 4` really is `2.5` — and Python would rather always leave room for a fraction than sometimes surprise you.
+
+Next week we learn the two names for these two kinds of number, and in Week 3 we learn how to control how many decimals actually get shown, so `270.0` can be printed as `270` when you want it to be.
 
 **"Why is `"7" * 6` not 42? Isn't that just wrong?"**
 
-It isn't wrong, it's a different question. `"7"` in quotes isn't the number seven, it's the *character* seven — one symbol, like a letter. And multiplying a letter by six can't mean "do arithmetic", so Python does the only sensible thing you can do to a piece of text six times: it repeats it. Compare `"ab" * 3` giving `ababab` and it stops looking strange. The real lesson is that `*` decides what to do based on the *kinds of thing* on either side of it, which is Week 2's whole topic.
+It isn't wrong, it's a different question. `"7"` in quotes isn't the number seven, it's the *character* seven — one symbol, like a letter. And multiplying a letter by six can't mean "do arithmetic", so Python does the only sensible thing you can do to a piece of text six times: it repeats it.
+
+Compare `"ab" * 3` giving `ababab` and it stops looking strange. The real lesson is that `*` decides what to do based on the *kinds of thing* on either side of it, which is Week 2's whole topic.
 
 **"The computer told me off. Did I break it?"**
 
-You cannot break anything with the kind of lines we type this week. Not once, not by trying. (Later code can delete files, and we will treat that with care when it arrives.) Python reads your file, decides it doesn't understand line 3, prints a message, and stops. Your file is fine, the laptop is fine, Python is fine. An error message costs nothing at all except the four seconds it takes to read it. This is genuinely one of the safest places in the world to be wrong, and you should take advantage of that shamelessly.
+You cannot break anything with the kind of lines we type this week. Not once, not by trying. (Later code can delete files, and we will treat that with care when it arrives.)
+
+Python reads your file, decides it doesn't understand line 3, prints a message, and stops. Your file is fine, the laptop is fine, Python is fine. An error message costs nothing at all except the four seconds it takes to read it. This is genuinely one of the safest places in the world to be wrong, and you should take advantage of that shamelessly.
 
 **"How does the computer actually understand English words like `print`?"**
 
-It doesn't, and this is a good question with a longer answer than you'd think. The interpreter is itself a program, written by people, and inside it there is effectively an enormous list: *if you see the letters p-r-i-n-t followed by a bracket, do this specific thing.* There is no understanding anywhere. It is pattern-matching all the way down. Which is exactly why the spelling has to be perfect — `prnt` doesn't match the pattern, so nothing happens except a complaint.
+It doesn't, and this is a good question with a longer answer than you'd think. The interpreter is itself a program, written by people, and inside it there is effectively an enormous list: *if you see the letters p-r-i-n-t followed by a bracket, do this specific thing.*
+
+There is no understanding anywhere. It is pattern-matching all the way down. Which is exactly why the spelling has to be perfect — `prnt` doesn't match the pattern, so nothing happens except a complaint.
 
 **"Is Python the best programming language?"** *(Answer this one honestly: nobody agrees.)*
 
-**Nobody agrees, and the disagreement is real rather than a matter of taste.** Python is unusually easy to read, it has the best free tools in the world for data and machine learning, and it is what most people doing this job actually use — those are facts, and they are why this course uses it. It is also genuinely slow compared with languages like C or Rust, which matters enormously if you're writing the software inside a car's brakes and matters not at all for what we're doing. Some people think that teaching Python first is a mistake, because it hides things — you never have to think about memory, and they argue that hiding makes for worse programmers later. Others think hiding is the entire point, because you get to the interesting ideas in week one instead of week thirty. Both camps contain people who are extremely good at this. What is *not* in dispute: the ideas you learn this year — instructions in order, decisions, repetition, tables of data, testing on data the model has not seen — are the same in every language there is. The spelling changes. The thinking does not.
+**Nobody agrees, and the disagreement is real rather than a matter of taste.** Python is unusually easy to read, it has the best free tools in the world for data and machine learning, and it is what most people doing this job actually use — those are facts, and they are why this course uses it. It is also genuinely slow compared with languages like C or Rust, which matters enormously if you're writing the software inside a car's brakes and matters not at all for what we're doing.
+
+Some people think that teaching Python first is a mistake, because it hides things — you never have to think about memory, and they argue that hiding makes for worse programmers later. Others think hiding is the entire point, because you get to the interesting ideas in week one instead of week thirty. Both camps contain people who are extremely good at this.
+
+What is *not* in dispute: the ideas you learn this year — instructions in order, decisions, repetition, tables of data, testing on data the model has not seen — are the same in every language there is. The spelling changes. The thinking does not.
 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This table lists the ways the lesson can go off track and what to do right away.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -914,6 +944,8 @@ It doesn't, and this is a good question with a longer answer than you'd think. T
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut, reteach or add when the student is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -1034,6 +1066,8 @@ NameError: name 'prit' is not defined
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to set the homework and a way to split the workbook between class and home.
 
 **Say this:**
 
@@ -1471,9 +1505,18 @@ These match Practice Set A, questions A1 and A3.
 
 ## 🔮 Next Week Preview
 
-Week 2 fixes the thing that will already be annoying by the end of the homework: today, every number had to be typed out fresh every single time it was used, and if you wanted to change the price of a pizza you had to hunt through the file changing it in four places. Next week you get **variables** — a name stuck on a value, like a label on a box, so you write the number once and use the name forever after. And then the week takes a hard turn into the idea that today's `"7" * 6` was hiding: every value in Python has a **kind**, and the kind decides what `+` even means. Two numbers added is arithmetic; two pieces of text added is glue; one of each is a refusal, and we will read that refusal's traceback out loud and mend it two different ways.
+This section says what next week covers and what to prepare before it.
 
-**Prep early:** keep every file from today, in `~/ai-academy/level2` — the year's habit is that nothing gets deleted, because in Week 12 you will `import` a file you wrote in Week 11. Keep the Bug Log at the front of the folder; it grows all year and by Week 36 it is about forty entries long and is genuinely the most valuable thing the student owns. For next week you need **a real cardboard box, sticky notes, and slips of paper** — the sticky-note activity is the whole lesson and it does not work as well drawn on a whiteboard. And read Week 2's "What YOU Need to Know First" section a day early rather than an hour early: the `"5" + 5` collision at the end of it is the first place where a teacher who has never programmed can get genuinely caught out, and twenty minutes of quiet reading fixes that completely.
+Week 2 fixes the thing that will already be annoying by the end of the homework: today, every number had to be typed out fresh every single time it was used, and if you wanted to change the price of a pizza you had to hunt through the file changing it in four places. Next week you get **variables** — a name stuck on a value, like a label on a box, so you write the number once and use the name forever after.
+
+Then the week takes a hard turn into the idea that today's `"7" * 6` was hiding: every value in Python has a **kind**, and the kind decides what `+` even means. Two numbers added is arithmetic; two pieces of text added is glue; one of each is a refusal, and we will read that refusal's traceback out loud and mend it two different ways.
+
+**Prep early:**
+
+- **Keep every file from today**, in `~/ai-academy/level2`. The year's habit is that nothing gets deleted, because in Week 12 you will `import` a file you wrote in Week 11.
+- **Keep the Bug Log at the front of the folder.** It grows all year and by Week 36 it is about forty entries long and is genuinely the most valuable thing the student owns.
+- **Materials:** for next week you need **a real cardboard box, sticky notes, and slips of paper** — the sticky-note activity is the whole lesson and it does not work as well drawn on a whiteboard.
+- **Reading:** read Week 2's "What YOU Need to Know First" section a day early rather than an hour early: the `"5" + 5` collision at the end of it is the first place where a teacher who has never programmed can get genuinely caught out, and twenty minutes of quiet reading fixes that completely.
 
 ---
 

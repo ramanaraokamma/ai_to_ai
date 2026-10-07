@@ -8,7 +8,9 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week**.
+This warm-up brings back last week's ideas before the new work starts. Answer each question in a line or two.
+
+These are five quick questions about **last week**.
 
 **W1.** `fig, ax = plt.subplots(figsize=(6, 4))`. Which of the two names would you call `savefig` on, and why?
 
@@ -34,9 +36,13 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
+This page is for making a prediction first and comparing it with the real result second. Each task shows a short piece of code and gives you space to write.
+
 **Write your prediction before you run anything.** Snippets that use `df` start with `from students import build_students` and `df = build_students()`.
 
 ### P1 — what does `value_counts()` hand back?
+
+Read this code, then write your four predictions below it.
 
 ```python
 counts = df["club"].value_counts()
@@ -63,6 +69,8 @@ ________________________________________________________________
 ________________________________________________________________
 
 ### P2 — do the bins add up?
+
+Read this code, then predict what it prints.
 
 ```python
 scores = [50, 51, 52, 53, 54, 60, 61, 62, 70, 71]
@@ -93,6 +101,8 @@ ________________________________________________________________
 
 ### P3 — the brackets matter
 
+Read this code, then predict what it prints.
+
 ```python
 clubs = pd.Series(["art", "chess", "chess"])
 print(clubs.value_counts)
@@ -111,6 +121,8 @@ ________________________________________________________________
 **Was this an error?** ____________  **What is the fix?** ____________
 
 ### P4 — the one with no error
+
+Read this code, then predict what it prints. After you run it, open `oops.png`.
 
 ```python
 fig, ax = plt.subplots(figsize=(6, 4))
@@ -148,6 +160,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading charts, code and tracebacks. Write your answers in the spaces and the tables.
 
 **A1. Match the question to the shape.** Write LINE, BAR, HISTOGRAM, SCATTER or NEITHER — and then the reason, because the reason is what is being marked.
 
@@ -263,6 +277,8 @@ ________________________________________________________________
 
 **A6. Read the traceback.** Translate it, then fix it.
 
+Here is the traceback to read.
+
 ```text
 Traceback (most recent call last):
   File "week26_counts.py", line 10, in <module>
@@ -292,9 +308,13 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing your own code. Each task shows the output your program should print.
+
 ### B1 — one line
 
 You have `df` loaded. Write the **single line** that prints how many rows are in each `house`.
+
+Type your line in this box.
 
 ```python
 # your line here:
@@ -382,7 +402,9 @@ saved four PNGs
 
 ## 🐞 Fix the Broken Program
 
-Here is `clubroom.py`, which is supposed to draw a bar chart of club sizes and a histogram of the scores. It has **three** bugs: one that stops Python reading the file at all, one that stops it partway through, and one that produces **no error whatsoever**.
+This page is for finding and fixing bugs one at a time, reading each message Python gives you. Here is `clubroom.py`, which is supposed to draw a bar chart of club sizes and a histogram of the scores. It has **three** bugs. One stops Python reading the file at all, one stops it partway through, and one produces **no error whatsoever**.
+
+Save this program as `clubroom.py`.
 
 ```python
 # clubroom.py - which club is biggest, and how are the scores spread? Three bugs.
@@ -499,9 +521,11 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+These two puzzles are about histogram bins. The first gives you only counts and edges; the second changes the bin edges.
+
 ### Part 1 — Bin detective
 
-Somebody hands you these bin counts and edges, and nothing else. The raw values are gone.
+Somebody hands you these bin counts and edges, and nothing else. The raw values are gone. Here are the counts and edges.
 
 ```text
 counts: [3. 4. 5. 3. 3.]
@@ -565,6 +589,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions ask for a paragraph each. Write in full sentences on the lines below each question.
 
 **T1.** The mean of the 20 quiz marks was 62.0. The median was 62.5. **Both** were misleading, and neither number was wrong.
 
@@ -665,9 +691,9 @@ ________________________________________________________________
 
 **Now read your sentences back. Circle any word that means "caused". How many did you find?** ______
 
-### Part 5 — Four things they hide. **This is the bit being marked.**
+### Part 5 — Four things they hide
 
-Not "some information". Something a reader could point at.
+**This is the bit being marked.** Not "some information". Something a reader could point at.
 
 **Chart 1 hides:**
 
@@ -727,6 +753,8 @@ Take **one question of your own**, decide its shape, sketch the chart by hand, a
 
 ## 📊 Self-Check
 
+This section is for checking how sure you feel about this week. Tick one box on each row, then answer the true-or-false rows.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Pick a chart shape from a question, and say why | ☐ | ☐ | ☐ |
@@ -763,6 +791,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have tried every page. Open the box to see the answers.
 
 <details>
 <summary>Check your answers</summary>
@@ -940,7 +970,7 @@ saved oops.png
 
 ### Practice Set B
 
-**B1.**
+**B1.** One way to write it:
 
 ```python
 print(df["house"].value_counts())
@@ -955,7 +985,7 @@ Name: house, dtype: int64
 
 14 + 12 + 12 = 38. ✓
 
-**B2.**
+**B2.** One way to write it:
 
 ```python
 """b2.py - a bar chart of club counts, checked before it is drawn."""
@@ -993,7 +1023,7 @@ saved my_club_counts.png
 
 **Note the title says "two ahead of the others".** That is the honest version of "chess wins" — the gap is two students, which is small, and saying so stops the chart overclaiming on your behalf.
 
-**B3.**
+**B3.** One way to write it:
 
 ```python
 """b3.py - a histogram with round bin edges I chose myself."""
@@ -1032,7 +1062,7 @@ saved my_score_hist.png
 
 **Now say the shape out loud:** three in the forties, six in the fifties, seven in the sixties, eight in the seventies, eight in the eighties, six in the nineties. **One broad flat pile.** You can only say that sentence because the edges are round.
 
-**B4.**
+**B4.** One way to write it:
 
 ```python
 """b4.py - a scatter of hours against score, and three honest sentences."""
@@ -1069,7 +1099,7 @@ saved my_scatter.png
 
 **And check the verbs.** "Tended to go with", "tended to score higher". Not one word meaning "caused". *(Next week is entirely about why.)*
 
-**B5.**
+**B5.** One way to write it:
 
 ```python
 # week26_homework.py -- four charts, four shapes, from the cleaned Week 24 table.

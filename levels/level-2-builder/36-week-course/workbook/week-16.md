@@ -40,6 +40,8 @@ ________________________________________________________________
 
 ### P1
 
+Read this code, then write your prediction for each of the four lines.
+
 ```python
 print("48" + "1")
 print(48 + 1)
@@ -51,11 +53,13 @@ print(48 < 9)
 
 **It really printed:** ________  ________  ________  ________
 
-**And the interesting bit:** lines 3 and 4 ask the same question about the same two values and give **different answers**. Why?
+**Question:** lines 3 and 4 ask the same question about the same two values and give **different answers**. Why?
 
 ________________________________________________________________
 
 ### P2
+
+Read this code, then write your prediction for each of the three lines.
 
 ```python
 scores = ["104", "90", "9", "1000"]
@@ -76,6 +80,8 @@ ________________________________________________________________
 
 ### P3
 
+Read this code, then write your prediction for each value.
+
 ```python
 print(bool("False"), bool("0"), bool(""), bool("no"))
 print("False" == "True")
@@ -90,6 +96,8 @@ print("False" == "True")
 ________________________________________________________________
 
 ### P4
+
+Read this code, then write your prediction for each of the three lines.
 
 ```python
 print(int(" 48 "))
@@ -116,6 +124,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Read It
+
+This set is for reading code, files and error messages. You do not need to write a program.
 
 **A1. For each expression, say what it gives you and what *kind* of thing it is.** `raw` came from `load_csv("players.csv")`; `squad` is the twelve records in memory.
 
@@ -230,6 +240,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing your own short programs. Each one has an expected output shape to compare with.
 
 ### B1 — one line
 
@@ -415,6 +427,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+Two puzzles to work out on paper first, then check by running code.
+
 ### Part 1 — The alphabetical number line
 
 Six shirt numbers, written down as text: `"7"`, `"10"`, `"9"`, `"100"`, `"70"`, `"1"`.
@@ -429,7 +443,7 @@ ________________________________________________________________
 
 **(c)** Which number is **biggest as text**? ____________  **Biggest as a number**? ____________
 
-**(d)** Here is the hard one. Sort the numbers **1 to 30** as text. Which is the only one that ends up in the same position it would have had in number order?
+**(d)** This one is harder. Sort the numbers **1 to 30** as text. Which is the only one that ends up in the same position it would have had in number order?
 
 ________________________________________________________________
 
@@ -480,6 +494,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for slow thinking and a written paragraph each. There is no code to run.
+
 **T1.** Python's `csv` module deliberately does **not** guess that `48` is a number. The tool you meet in Week 23 deliberately **does**.
 
 Write a paragraph. Name at least two situations where guessing would destroy real information, and at least one situation where not guessing is genuinely annoying. Then answer the hard part: **when a tool guesses for you, whose job is it to notice that the guess was wrong — and how would that person even find out?**
@@ -498,7 +514,9 @@ ________________________________________________________________
 
 **T2.** Your program reported that the best batter in the squad scored 90. It did not crash. It did not warn. It printed a perfectly believable number.
 
-Write a paragraph about **what makes a wrong answer survive.** Start with the two things that had to be true here (the answer was plausible, and nothing was checking). Then: think of one place in your own life where a number was printed for you by somebody's program — a step count, a mark, a "top song of the year", a price. **What would you have to be given, alongside the number, to be able to check it?** And the uncomfortable question: is it reasonable to expect that of every number, or does that make software impossible to use?
+Write a paragraph about **what makes a wrong answer survive.** Start with the two things that had to be true here (the answer was plausible, and nothing was checking).
+
+Then think of one place in your own life where a number was printed for you by somebody's program — a step count, a mark, a "top song of the year", a price. **What would you have to be given, alongside the number, to be able to check it?** And the uncomfortable question: is it reasonable to expect that of every number, or does that make software impossible to use?
 
 ________________________________________________________________
 
@@ -516,7 +534,7 @@ ________________________________________________________________
 
 ## 🛠️ Build It — The Record Store
 
-This is the project. Most of the hour is typing your own data, and that is normal.
+This section is the project: you build a record store of your own and prove it saves and loads correctly. Most of the hour is typing your own data, and that is normal.
 
 ### Part 1 — Thirty records of your own
 
@@ -637,6 +655,8 @@ Draw **your own round trip**, one row per column of your data.
 
 ## 📊 Self-Check
 
+Use this page to tell yourself honestly what you can do and what needs another look.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Write a list of dictionaries out to a CSV with a header row | ☐ | ☐ | ☐ |
@@ -671,6 +691,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Only open this after you have tried every page. Click the arrow to check your work.
 
 <details>
 <summary>Check your answers</summary>

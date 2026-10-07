@@ -38,6 +38,8 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
+This section is for guessing what code will print before you run it. Then you compare the real output with your guess.
+
 **Write your prediction before you run anything.**
 
 ### P1 — four shapes, one array
@@ -200,6 +202,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading code, numbers and a diagram. You do not write a program here.
+
 **A1. Classification or regression?** Tick one, then give the reason in the last column.
 
 | # | The question | Classify | Regress | Why — describe the answer column |
@@ -345,6 +349,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
+This set is for writing code yourself, from one line up to a whole file. Compare your output with the expected output in each box.
+
 ### B1 — one line
 
 `model` is fitted to the six classmates. Write the **single line** that prints the slope to two decimal places **with its unit written out.**
@@ -433,6 +439,8 @@ the line is 2.0 times less wrong than not bothering
 ---
 
 ## 🐞 Fix the Broken Program
+
+This page is for practising how to read an error message and how to check a result that Python does not complain about.
 
 Here is `study.py`. It is supposed to fit a line through the six classmates and report the slope, the MAE, and how wrong it is on average. It has **three** bugs: one that stops Python reading the file, one that stops it partway through, and one that produces **no error whatsoever**.
 
@@ -531,6 +539,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for testing our fitted line on some awkward numbers, then for building your own set of marks.
+
 ### Part 1 — Solve for the impossible
 
 Our line is `marks = 3.6 × hours + 49.4`.
@@ -604,6 +614,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for explaining the week's ideas in your own words. Write full sentences.
+
 **T1. Write a paragraph explaining, to somebody who has never coded, what "my model's MAE is 2.67 marks" means — and then what "my model's R² is 0.804" means. Two different explanations, no jargon in either.**
 
 ________________________________________________________________
@@ -632,6 +644,8 @@ ________________________________________________________________
 
 ## 🛠️ Build It — Hand Versus Machine
 
+This section is for finding the same line three ways: by ruler, by arithmetic and by scikit-learn. Work through the parts in order.
+
 ### Part 1 — The hand fit (page 32.4). Laptop closed.
 
 Step checklist:
@@ -653,7 +667,7 @@ Step checklist:
 
 **The two means:**
 
-```
+```text
 x̄ = (1 + 2 + 3 + 4 + 5 + 6) ÷ 6 = ______ ÷ 6 = ______
 ȳ = (48 + 60 + 63 + 65 + 68 + 68) ÷ 6 = ______ ÷ 6 = ______
 ```
@@ -672,7 +686,7 @@ x̄ = (1 + 2 + 3 + 4 + 5 + 6) ÷ 6 = ______ ÷ 6 = ______
 
 **The check:** the `dx` and `dy` columns must each total ______. If they do not, go back — your ______ is wrong.
 
-```
+```text
 slope     = ______ ÷ ______ = ______
 intercept = ______ − ______ × ______ = ______
 ```
@@ -710,7 +724,7 @@ ________________________________________________________________
 | 6 | 68 | | | |
 | | | | **Σ =** | **Σ =** |
 
-```
+```text
 MAE = ______ ÷ 6 = ______ marks
 ```
 
@@ -727,7 +741,7 @@ MAE = ______ ÷ 6 = ______ marks
 - [ ] Do the deviation table by hand
 - [ ] Then run the same code with these numbers
 
-```
+```text
 x̄ = ______     ȳ = ______
 Σ(dx × dy) = ______     Σ(dx²) = ______
 slope = ______     intercept = ______
@@ -788,6 +802,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for fitting a line by hand to data you choose yourself.
+
 Plot **six pairs of your own numbers** and fit a line by hand. Anything you can measure: minutes of homework against number of questions, steps walked against minutes out, money spent against days of the week.
 
 ![Draw it yourself: Week 32](../figures/fig-w32-9-draw-your-own-frame.svg)
@@ -810,6 +826,8 @@ Plot **six pairs of your own numbers** and fit a line by hand. Anything you can 
 ---
 
 ## 📊 Self-Check
+
+This section is for checking honestly what you can do and what you need explained again.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -850,6 +868,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Finish the workbook before you open this. Open the box below to check your work.
 
 <details>
 <summary>Check your answers</summary>
@@ -1199,7 +1219,7 @@ how wrong am I on average: 2.67 marks
 
 **(a)**
 
-```
+```text
 3.6h + 49.4 = 100
 3.6h        = 100 − 49.4 = 50.6
 h           = 50.6 ÷ 3.6 = 14.06
@@ -1209,7 +1229,7 @@ h           = 50.6 ÷ 3.6 = 14.06
 
 **(c)**
 
-```
+```text
 3.6h + 49.4 = 0
 3.6h        = −49.4
 h           = −49.4 ÷ 3.6 = −13.72
@@ -1316,7 +1336,7 @@ C  nearly flat         1   0.425    0.444    0.043
 
 **Part 2 — the arithmetic.**
 
-```
+```text
 x̄ = (1 + 2 + 3 + 4 + 5 + 6) ÷ 6 = 21 ÷ 6 = 3.5
 ȳ = (48 + 60 + 63 + 65 + 68 + 68) ÷ 6 = 372 ÷ 6 = 62
 ```
@@ -1333,7 +1353,7 @@ x̄ = (1 + 2 + 3 + 4 + 5 + 6) ÷ 6 = 21 ÷ 6 = 3.5
 
 **The check:** both must total **zero**. If either does not, your **mean** is wrong — a mean is the balance point, so the amounts above and below it are equal by definition. Go back before doing anything else.
 
-```
+```text
 slope     = 63.0 ÷ 17.5 = 3.6
 intercept = 62 − 3.6 × 3.5 = 62 − 12.6 = 49.4
 ```
@@ -1368,7 +1388,7 @@ intercept = 62 − 3.6 × 3.5 = 62 − 12.6 = 49.4
 | 6 | 68 | **71.0** | −3.0 | 3.0 |
 | | | | **Σ = 0.0** | **Σ = 16.0** |
 
-```
+```text
 MAE = 16.0 ÷ 6 = 2.6666... = 2.67 marks
 ```
 
@@ -1390,7 +1410,7 @@ MAE = 16.0 ÷ 6 = 2.6666... = 2.67 marks
 
 **Part 5 — the pizza numbers.**
 
-```
+```text
 x̄ = 6     ȳ = 26
 ```
 
@@ -1403,7 +1423,7 @@ x̄ = 6     ȳ = 26
 | 10 | 36 | 4 | 10 | 40 | 16 |
 | | | | | **Σ = 102** | **Σ = 40** |
 
-```
+```text
 slope     = 102 ÷ 40 = 2.55
 intercept = 26 − 2.55 × 6 = 26 − 15.3 = 10.7
 ```

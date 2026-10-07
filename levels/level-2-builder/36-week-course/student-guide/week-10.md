@@ -24,6 +24,8 @@
 
 ## 🪝 Start Here
 
+This short paper game gets you ready for the two new words of the week. You need two pieces of paper and a pen.
+
 Get two pieces of paper. On the first one write, big:
 
 ```text
@@ -389,7 +391,9 @@ after the function   : 200
 
 **The outer 200 was never touched.** Assigning to `pocket_money` inside the function made a brand-new local box that happened to share a word with the outer one.
 
-**That is not Python being awkward. It is the single feature that makes it safe to use a function somebody else wrote.** If a function could quietly rewrite your variables, you would have to read every line of every function before you dared call it. In Week 12 you will import a file of your own; in Week 29 you will call `model.fit(...)`, which is thousands of lines written by strangers. Both are only survivable because a function takes what it needs in and cannot quietly rewrite your other variables by name.
+**That is not Python being awkward. It is the single feature that makes it safe to use a function somebody else wrote.**
+
+If a function could quietly rewrite your variables, you would have to read every line of every function before you dared call it. In Week 12 you will import a file of your own; in Week 29 you will call `model.fit(...)`, which is thousands of lines written by strangers. Both are only survivable because a function takes what it needs in and cannot quietly rewrite your other variables by name.
 
 ---
 
@@ -614,6 +618,8 @@ bus_fare      : 0 15 10
 
 ## 🔍 Worked Examples
 
+This section walks through three complete programs, one each from food, sport and school. Read the code, then read the output line by line.
+
 ### Worked Example 1 — The snack stall (food)
 
 Two functions. One takes two parameters. The other has a default that is right most of the time.
@@ -781,7 +787,7 @@ A returned number, stored in a box, formatted by an f-string, and **passed strai
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code.
+This section is for the moments when the code fails. Every message below came from really running a broken version of this week's code, so you can match it to what you see on your own screen.
 
 ### Break 1 — `NoneType` in an f-string
 
@@ -852,6 +858,8 @@ Hand-check: 200 − 145 = 55 ✔ · 55 × 52 = 2,860 ✔ · two decimal places b
 
 ### Break 2 — you gave it fewer values than it has boxes
 
+This program calls `change_left` with one value instead of two.
+
 ```python
 def change_left(paid, cost):
     return paid - cost
@@ -891,6 +899,8 @@ TypeError: double() takes 1 positional argument but 2 were given
 *"There is one box and you brought two things."* Count the names in the definition, count the values at the call. **They must match** — unless a default is covering one.
 
 ### Break 3 — a name that only exists inside
+
+This program asks for `fare` outside the function that made it.
 
 ```python
 def bus_fare(age):
@@ -1027,21 +1037,35 @@ Fix: one word. Output: `Rs 55.00` and `Rs 2860.00`.
 
 ## 💬 Talk About It
 
+These are three questions to argue about with someone. Each one has a hint you can read after you have tried it yourself.
+
 **1. "Is it ever all right for a function to print instead of returning?"** *(There is no settled answer, and people who do this for a living genuinely disagree.)*
 
-*Hint:* start with the case for the rule, because it is strong: a function should work something out and hand it back, and printing should happen in exactly one place, at the edge, where a human is reading. Every function in this course follows that. Then go and find the exceptions, because there are respectable ones. What does a function whose *entire job* is to draw a chart have to return? What about a long program that prints how far it has got so far — professionals call that **logging**, and there are whole libraries for doing it well, and people argue about those too. Now find the half that nobody disagrees about: **if the function has an answer, it must return the answer.** The whole argument is only about functions whose job is *showing*, not *working out*.
+*Hint:* start with the case for the rule, because it is strong: a function should work something out and hand it back, and printing should happen in exactly one place, at the edge, where a human is reading. Every function in this course follows that.
+
+Then go and find the exceptions, because there are respectable ones. What does a function whose *entire job* is to draw a chart have to return?
+
+What about a long program that prints how far it has got so far? Professionals call that **logging**. There are whole libraries for doing it well, and people argue about those too.
+
+Now find the half that nobody disagrees about: **if the function has an answer, it must return the answer.** The whole argument is only about functions whose job is *showing*, not *working out*.
 
 **2. "Should `bus_fare()` with no age at all give you the adult fare?"**
 
-*Hint:* it is one character of work — `def bus_fare(age=30):` — so ask instead whether it is a *good* idea. What does "the fare for nobody" even mean? Then the sharper question: if a program somewhere loses the age and calls `bus_fare()` by accident, would you rather get ₹30 back, or a loud crash? Now think about which one you would find out about. **A default that quietly covers up a missing value is one of the main ways bad data gets into real systems** — and once it is in, the number looks exactly as trustworthy as a real one.
+*Hint:* it is one character of work — `def bus_fare(age=30):` — so ask instead whether it is a *good* idea. What does "the fare for nobody" even mean? Then the sharper question: if a program somewhere loses the age and calls `bus_fare()` by accident, would you rather get ₹30 back, or a loud crash? Now think about which one you would find out about.
+
+**A default that quietly covers up a missing value is one of the main ways bad data gets into real systems** — and once it is in, the number looks exactly as trustworthy as a real one.
 
 **3. "If a function can read variables from outside itself, why do we bother passing things in?"**
 
-*Hint:* write a function that reads a variable from outside instead of taking it as a parameter, then ask yourself one question: *what is its input?* You cannot answer, because it depends on whatever ran before. Which means you cannot test it — there is no such thing as "the input". A function that takes what it needs through its brackets gives the same answer for the same values, forever, no matter what else is going on in the program. That property has a boring name — being **pure** — and it will save you more debugging hours than anything else you learn this year.
+*Hint:* write a function that reads a variable from outside instead of taking it as a parameter, then ask yourself one question: *what is its input?* You cannot answer, because it depends on whatever ran before. Which means you cannot test it — there is no such thing as "the input".
+
+A function that takes what it needs through its brackets gives the same answer for the same values, forever, no matter what else is going on in the program. That property has a boring name — being **pure** — and it will save you more debugging hours than anything else you learn this year.
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four wrong beliefs about functions. Each one is shown next to the right version.
 
 ### Trick 1 — "the argument must have the same name as the parameter"
 
@@ -1093,6 +1117,8 @@ And its evil twin: **the same word inside and outside is two different boxes.** 
 
 ## 🌍 Where You've Seen This
 
+Functions are not only in Python. Here are seven everyday things that work the same way.
+
 1. **Every search box you have ever typed into.** `search(what_you_typed)` — the parameter is the same every time, the argument is different every time. One function, a billion arguments.
 2. **The volume slider on a phone.** It is a function with one parameter. Slide it and you are passing a different argument to exactly the same code.
 3. **Every "settings" screen in every app.** Almost all of it is default values. The app already put a sensible number in each box, and you may overrule any of them — which is exactly `slices=8`.
@@ -1129,6 +1155,8 @@ first tile of stage two, and the thread strip now has two pills lit instead of o
 ---
 
 ## 🔑 Remember This
+
+These are the points to keep from this week. The card at the end shows the syntax in one place.
 
 - **A parameter is a name in the definition — an empty box with a label.** An argument is a value at the call — what goes in the box. Same box, two moments.
 - **The parameter name is private to the function.** `double(7)` and `double(pizza_price)` both work; inside, both are `number`.
@@ -1185,6 +1213,8 @@ def add_scores(first, second):
 
 ## 📓 New Words
 
+These are the five words from this week, with a picture and a short table.
+
 ![This week's five words as pictures](../figures/fig-w10-6-vocab-icons.svg)
 *Figure 10.7 — This week's five words, drawn.*
 
@@ -1216,7 +1246,9 @@ Go to **[the Week 10 workbook](../workbook/week-10.md)**. About **60 minutes** i
 
 **Every function gets three tests, including the awkward one.** Write your prediction in the table **before** you run it. Getting a prediction wrong is more interesting than getting it right, so do not cheat by running first — and `is_even(0)` and `bus_fare(60)` catch nearly everybody.
 
-**The bug hunt needs the sentence.** Copy the **real traceback**, character for character, into your Bug Log. Then the fix, which is one word. Then — and this is where the marks are — **one sentence saying why the bug looked correct.** Not "because I made a mistake". Something like: *"it printed 55, and 55 was the right answer, so nothing looked wrong until the answer had to be used."*
+**The bug hunt needs the sentence.** Copy the **real traceback**, character for character, into your Bug Log. Then write the fix, which is one word.
+
+Then — and this is where the marks are — **one sentence saying why the bug looked correct.** Not "because I made a mistake". Something like: *"it printed 55, and 55 was the right answer, so nothing looked wrong until the answer had to be used."*
 
 > **💡 Try this:** the habit of the week, and it takes two lines. Whenever a function surprises you, do not read the code — **catch what it handed back and print it, along with its type.** `came_back = f(...)` then `print(came_back, type(came_back))`. If you see `None` and `<class 'NoneType'>`, you have found your bug without reading a single line of the function.
 

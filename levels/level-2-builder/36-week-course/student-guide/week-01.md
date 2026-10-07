@@ -29,7 +29,9 @@ That changes in about ten minutes. But first, a sandwich.
 
 ---
 
-Imagine I am a robot standing in your kitchen. I am a **brilliant** robot in exactly one way: I will do precisely what you tell me, instantly, without complaining or getting bored. And I am a **terrible** robot in exactly one way: I know nothing at all. I have never seen bread. I do not know what a sandwich is. I have no common sense whatsoever.
+Imagine I am a robot standing in your kitchen. I am a **brilliant** robot in exactly one way: I will do precisely what you tell me, instantly, without complaining or getting bored.
+
+And I am a **terrible** robot in exactly one way: I know nothing at all. I have never seen bread. I do not know what a sandwich is. I have no common sense whatsoever.
 
 You write me six instructions. Number one says:
 
@@ -50,11 +52,15 @@ Here is the part that matters, and I want to be really clear about it because it
 
 Every single thing I did was allowed by what you wrote. That is what a computer is like. Not clever. Not stupid. **Literal.**
 
-And here is the genuinely good news buried inside that. Because it is literal, it is completely **predictable**. If you can work out what you actually said, you can always work out what it will do. There is no luck in this. Nothing here is magic, and nothing here is unfair.
+Here is the good news buried inside that. Because it is literal, it is completely **predictable**. If you can work out what you actually said, you can always work out what it will do.
+
+There is no luck in this. Nothing here is magic, and nothing here is unfair.
 
 ---
 
 ## 🧠 The Big Idea
+
+This section explains five ideas: what a program is, the two windows you work in, `print()`, arithmetic, and comments with error messages.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
@@ -68,15 +74,17 @@ That is the whole definition. Nothing is hidden behind it.
 
 **The analogy.** A recipe is a program. So is a knitting pattern, or the instructions on a flat-pack wardrobe. The only difference is that a human following a recipe *fills in the gaps* — "add the eggs" quietly means "crack them first" — and a computer fills in nothing at all.
 
-**The concrete version.** A Python file is a plain text file whose name ends in `.py`. That's it. That's the whole of what makes it a Python file.
+**The concrete version.** A Python file is a plain text file whose name ends in `.py`. That is the whole of what makes it a Python file. Here are three file names:
 
-```
+```text
 hello.py       ← a Python file
 pizza_maths.py ← another one
 hello.txt      ← not a Python file
 ```
 
-A file full of Python is just text sitting on a disk. It doesn't *do* anything by existing. Something has to read it and carry out the instructions, the way I read your sandwich list and carried it out. That something is a program already living on your laptop.
+A file full of Python is just text sitting on a disk. It doesn't *do* anything by existing.
+
+Something has to read it and carry out the instructions, the way I read your sandwich list and carried it out. That something is a program already living on your laptop.
 
 > **Interpreter** — the program that reads your Python file and actually does what it says. On your laptop it is called `python3`.
 
@@ -168,7 +176,9 @@ print(8 - 3)
 5
 ```
 
-Stop on that middle line. **`270.0`, not `270`.** Every time you use `/`, Python hands back a number with a decimal point on it, even when the answer comes out exactly. That is deliberate: `/` means "share it out", and sharing often makes a fraction, so Python always leaves room for one.
+Stop on that middle line. **`270.0`, not `270`.** Every time you use `/`, Python hands back a number with a decimal point on it, even when the answer comes out exactly.
+
+That is deliberate: `/` means "share it out", and sharing often makes a fraction, so Python always leaves room for one.
 
 For today: **"the slash leaves a dot."** Next week it gets a proper name.
 
@@ -229,7 +239,7 @@ print(3 * 450)        # 3 pizzas at 450 rupees each
 print(1350 / 5)       # that total split between 5 friends
 ```
 
-That sounds useless. It's the opposite. It's how you leave notes for the human who reads this later — and the human who reads this later is **you**, in two weeks, having forgotten everything.
+That sounds useless. It's the opposite. A comment is a note for the human who reads the file later, and that human is **you**, in two weeks, having forgotten everything.
 
 Two habits to start today, because habits are cheap now and expensive later:
 
@@ -242,11 +252,11 @@ Two habits to start today, because habits are cheap now and expensive later:
 
 *"Dog the ate ."* is not a strange sentence in English. It is not a sentence. Python is far stricter about this than English, because it cannot guess.
 
-So you will get things wrong. Constantly. Today. And when you do, Python prints a block of text called a **traceback**.
+So you will get things wrong. Constantly. Today. When you do, Python prints a block of text called a **traceback**.
 
 > **Traceback** — the block of text Python prints when it gives up, saying where it stopped and why.
 
-Here is a real one. I misspelled `print` as `prnt` on line 3:
+Here is a real traceback. I misspelled `print` as `prnt` on line 3:
 
 ```text
 Traceback (most recent call last):
@@ -255,9 +265,9 @@ Traceback (most recent call last):
 NameError: name 'prnt' is not defined. Did you mean: 'print'?
 ```
 
-**Read it from the bottom up.** Always. Every time. Three steps:
+**Read it from the bottom up.** Always. Every time. Here are the three steps:
 
-```
+```text
 ┌──────────────────────────────────────────────────────────────┐
 │  HOW TO READ A TRACEBACK                                     │
 │                                                              │
@@ -291,6 +301,8 @@ Two files. **Type them. Do not paste them.** Your fingers are learning something
 In your editor: **File → New File**, then **File → Save As**, and name it `hello.py`. Make sure it lands in your `ai-academy/level2` folder.
 
 ### Step 2 — type two lines and a comment
+
+Type this into `hello.py`:
 
 ```python
 # hello.py - my first Python program.
@@ -327,7 +339,7 @@ You just gave a computer an instruction and it obeyed. Two instructions, two lin
 
 ### Step 4 — break it on purpose
 
-Change `print` on line 3 to `prnt`. Save. Run.
+Change `print` on line 3 to `prnt`. Save. Run. You should see this:
 
 ```text
 Traceback (most recent call last):
@@ -357,7 +369,7 @@ print(8 - 3)          # slices left after I eat 3
 print("7" * 6)        # NOT seven times six
 ```
 
-Save. Run.
+Save. Run it from the terminal:
 
 ```bash
 python3 pizza_maths.py
@@ -378,7 +390,7 @@ Two lines to stop on.
 
 ### Step 6 — the finished second file, with the comma trick added
 
-Add one last line and run the whole thing:
+Add the last line and run the whole file:
 
 ```python
 # pizza_maths.py - four sums I am not going to do in my head.
@@ -403,6 +415,8 @@ That last line is the shape you will use for the next three weeks: a bit of text
 ---
 
 ## 🔍 Worked Examples
+
+Three complete programs, each with its real output. Read the code first, then the output.
 
 ### Worked Example 1 — Friday snacks (food)
 
@@ -438,6 +452,8 @@ The last line shows a **space** after the colon in every printed line, and I nev
 
 ### Worked Example 2 — One over of cricket (sport)
 
+This program prints facts about one over, which is six balls.
+
 ```python
 # cricket_over.py - one over of cricket, printed by a computer.
 
@@ -464,6 +480,8 @@ And `90 / 6` printed `15.0`, not `15`. Fifteen overs exactly, with a decimal poi
 
 ### Worked Example 3 — How much school there actually is (school)
 
+This program adds up a school week in lessons, minutes and hours.
+
 ```python
 # school_week.py - how much school there actually is.
 
@@ -488,7 +506,9 @@ Lessons left after today: 28
 
 **That fourth number is horrible, and that's the honest answer.** `1750 / 60` is not a neat number, so Python shows every digit it has room for — seventeen of them. It looks absurd and it is completely correct.
 
-You may badly want to make it stop. That is **Week 3**, and it takes one extra character. For now, notice that a computer will happily hand you a number that is right and unreadable at the same time, and that "unreadable" is a real problem even when "wrong" isn't.
+You may badly want to make it stop. That is **Week 3**, and it takes one extra character.
+
+For now, notice that a computer will happily hand you a number that is right and unreadable at the same time. "Unreadable" is a real problem even when "wrong" isn't.
 
 ---
 
@@ -522,6 +542,8 @@ NameError: name 'prnt' is not defined. Did you mean: 'print'?
 
 ### Break 2 — a bracket that never closed
 
+This two-line file is saved as `oops.py`:
+
 ```python
 print("Hello, world."
 print("Second line")
@@ -534,11 +556,15 @@ print("Second line")
 SyntaxError: '(' was never closed
 ```
 
-**What Python is telling you.** *"I couldn't even read this file."* Notice what is **missing** from the top: there is no `Traceback (most recent call last):`. That is a real and useful difference. A `SyntaxError` is found *before the program runs at all* — Python couldn't understand the file, so it never started. A `NameError` happens *while* it is running, which is why lines above it had already printed.
+**What Python is telling you.** *"I couldn't even read this file."* Notice what is **missing** from the top: there is no `Traceback (most recent call last):`.
+
+That is a real and useful difference. A `SyntaxError` is found *before the program runs at all* — Python couldn't understand the file, so it never started. A `NameError` happens *while* it is running, which is why lines above it had already printed.
 
 **The fix.** Add the `)` at the end of line 1. Then count: every `(` needs exactly one `)`.
 
 ### Break 3 — a quote with no partner
+
+This one-line file is also `oops.py`:
 
 ```python
 print("Hello, world.)
@@ -575,6 +601,8 @@ SyntaxError: unterminated string literal (detected at line 1)
 ---
 
 ## 🎲 What We Did In Class
+
+This section is a record of the class, so you can repeat it at home or catch up if you missed it.
 
 ### The Literal Robot
 
@@ -628,7 +656,7 @@ Hours of sleep this week: 56
 
 ### Break it on purpose, three ways
 
-Then three deliberate breaks, one at a time, each one run, read aloud and logged:
+Then three deliberate breaks, one at a time, each one run, read aloud and logged. These are the last lines of the three messages:
 
 ```text
 NameError: name 'prnt' is not defined. Did you mean: 'print'?
@@ -637,6 +665,8 @@ SyntaxError: unterminated string literal (detected at line 3)
 ```
 
 ### The prediction game
+
+The class predicted each line, then ran it. The table lists the lines, and the block after it is the real output.
 
 | Line | Real output |
 |---|---|
@@ -658,21 +688,34 @@ ababab
 
 ## 💬 Talk About It
 
+Three questions to discuss with a parent, a friend or your teacher. Each has a hint to start you off.
+
 **1. "The computer told me off. Did I break it?"**
 
-*Hint:* you cannot break anything with the kind of lines you type this week. Not once, not on purpose. (Later in the year you will meet code that can delete files, and we will treat that with respect when it arrives.) Python reads your file, decides it doesn't understand line 3, prints a message, and stops. Your file is fine, the laptop is fine, Python is fine. Think about what that means for how much you should be willing to experiment.
+*Hint:* you cannot break anything with the kind of lines you type this week. Not once, not on purpose. (Later in the year you will meet code that can delete files, and we will treat that with respect when it arrives.) Python reads your file, decides it doesn't understand line 3, prints a message, and stops. Your file is fine, the laptop is fine, Python is fine.
+
+Think about what that means for how much you should be willing to experiment.
 
 **2. "Why do I have to type it? Why can't I paste it?"**
 
-*Hint:* there are two answers and the second is the real one. The first is that your fingers are learning where the punctuation lives. The second is sneakier: if you paste, you never make the typo — which means you never read the traceback, which means **you never learn to debug.** Ask yourself which of those two skills matters more in Week 30.
+*Hint:* there are two answers and the second is the real one.
+
+- The first is that your fingers are learning where the punctuation lives.
+- The second is sneakier: if you paste, you never make the typo — which means you never read the traceback, which means **you never learn to debug.**
+
+Ask yourself which of those two skills matters more in Week 30.
 
 **3. "`print` is a terrible name. Why is it called that?"**
 
-*Hint:* it is a genuinely bad name and we are stuck with it for historical reasons. In the 1960s and 70s, a computer's output really did come out on a roll of paper, on a machine called a teletype, and the instruction that sent text to it was called `print`. The paper went. The name stayed. Can you think of another word in a device you use that's a leftover from hardware that no longer exists? (Try: the "floppy disk" save icon. Or "dialling" a number.)
+*Hint:* it is a genuinely bad name and we are stuck with it for historical reasons. In the 1960s and 70s, a computer's output really did come out on a roll of paper, on a machine called a teletype, and the instruction that sent text to it was called `print`. The paper went. The name stayed.
+
+Can you think of another word in a device you use that's a leftover from hardware that no longer exists? (Try: the "floppy disk" save icon. Or "dialling" a number.)
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that beginners often hold, each next to the right one.
 
 ### Trick 1 — "the quotes are just tidiness"
 
@@ -713,6 +756,8 @@ Editing and saving are two different actions, and only one of them the computer 
 
 ## 🌍 Where You've Seen This
 
+The same idea turns up outside the terminal. Here are six places.
+
 1. **Every app you have ever used** is a file of instructions run top to bottom by something. Yours is four lines long; the ones on your phone are millions. The idea does not change.
 2. **A microwave's "add 30 seconds" button** is a tiny literal program. It adds thirty seconds. It does not check whether your food is hot. It cannot.
 3. **The autocomplete that annoys you** — when your phone changes a name to a word — is a computer being literal about a rule somebody wrote. It isn't understanding what you meant. It's matching what you typed against its rules and word lists.
@@ -749,6 +794,8 @@ bottom is the seven threads this course keeps returning to.*
 
 ## 🔑 Remember This
 
+The seven things to keep from this week, and a card of this week's syntax.
+
 - **A program is a list of instructions in a file, done top to bottom.** No exceptions until Week 5.
 - **The computer is not clever and not stupid. It is literal** — and therefore completely predictable, which is genuinely good news.
 - **Two windows.** You *write* in the editor. You *run* in the terminal. Knowing which one you're in solves a third of all confusion.
@@ -777,6 +824,8 @@ print(6 * 7)                   # a comment can also sit on the end of a line
 ---
 
 ## 📓 New Words
+
+The five words from this week, each with an example.
 
 ![This week's five words as pictures](../figures/fig-w01-6-vocab-icons.svg)
 *Figure 1.9 — This week's five words, drawn.*

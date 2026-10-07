@@ -12,7 +12,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week**.
+Five quick questions to bring last week back before you start. Answer each in your own words.
 
 **W1.** What is the difference between **defining** a function and **calling** it?
 
@@ -36,7 +36,7 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
-**Write your prediction before you run anything.** **One of these four hands back `None`**, and saying *why* is the whole question.
+Each program below is short. Write your prediction before you run anything. **One of these four hands back `None`**, and saying *why* is the whole question.
 
 ### P1
 
@@ -136,6 +136,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading function code and saying what each part is and what it does.
+
 **A1. Parameter or argument?** For each line, name what is **underlined**. Two of these are neither, so read carefully.
 
 | # | The line | Underlined | Parameter / argument / something else |
@@ -158,7 +160,8 @@ ________________________________________________________________
 
 **A2. Trace it.** Say exactly what appears on the screen. **One of these prints `None`.**
 
-**(i)**
+**(i)** Trace this code.
+
 ```python
 def triple(number):
     return number * 3
@@ -166,13 +169,15 @@ def triple(number):
 print(triple(4))
 print(triple(triple(1)))
 ```
+
 Output: ______________________________________________
 
 **How did the second line get its answer? Write the two steps.**
 
 ________________________________________________________________
 
-**(ii)**
+**(ii)** Trace this code.
+
 ```python
 def shout(word):
     print(word)
@@ -180,9 +185,11 @@ def shout(word):
 box = shout("hi")
 print(box)
 ```
+
 Output: ______________________________________________
 
-**(iii)**
+**(iii)** Trace this code.
+
 ```python
 def fare(km, rate=8):
     return km * rate
@@ -191,13 +198,15 @@ print(fare(3))
 print(fare(3, 10))
 print(fare(rate=10, km=3))
 ```
+
 Output: ______________________________________________
 
 **Two of those three lines give the same answer. Which two, and why?**
 
 ________________________________________________________________
 
-**(iv)**
+**(iv)** Trace this code.
+
 ```python
 def best(a, b):
     if a > b:
@@ -208,6 +217,7 @@ print(best(4, 9))
 print(best(9, 4))
 print(best(5, 5))
 ```
+
 Output: ______________________________________________
 
 **There is no `else` in that function. Why does it still work?**
@@ -295,6 +305,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing your own functions and testing them.
 
 **Every one of these must `return`. Test each on three inputs, and make one of the three awkward.**
 
@@ -395,7 +407,9 @@ ________________________________________________________________
 
 ## 🐞 Fix the Broken Program
 
-Here is `pocket.py`, which is supposed to work out weekly pocket money, what is left after spending, and a bus fare. It has **three** bugs: one that stops Python reading the file, one that crashes it partway through, and one that produces **no error message at all**.
+Here is `pocket.py`. It is supposed to work out weekly pocket money, what is left after spending, and a bus fare.
+
+It has **three** bugs. One stops Python reading the file. One crashes it partway through. One produces **no error message at all**.
 
 ```python
 # pocket.py - work out weekly pocket money and what is left. It has three bugs.
@@ -426,7 +440,7 @@ print("fare at 12:", bus_fare(12))
 print("fare at 40:", bus_fare(40))
 ```
 
-**Bug 1.** Run it as it is. The real message:
+**Bug 1.** Run it as it is. This is the real message:
 
 ```text
   File "pocket.py", line 3
@@ -441,7 +455,7 @@ Which family? ______  **Did any of it run?** ______
 
 ________________________________________________________________
 
-The fix — write the whole corrected line:
+Write the whole corrected line:
 
 ```python
 ________________________________________________________________
@@ -472,7 +486,7 @@ ________________________________________________________________
 ________________________________________________________________
 ```
 
-**Bug 3.** Now it runs all the way through. The real output:
+**Bug 3.** Now it runs all the way through. This is the real output:
 
 ```text
 each week : 100.0
@@ -515,6 +529,8 @@ ________________________________________________________________
 ---
 
 ## 🧩 Puzzle of the Week
+
+Two puzzles that use parameters, defaults and `return`. Use a pencil for both.
 
 ### Part A — The Black Box
 
@@ -602,6 +618,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+Two questions that need a written paragraph each. Give your reasons.
+
 **T1. A default value can hide a missing number.** Somebody adds `def bus_fare(age=30):` so that `bus_fare()` gives the adult fare. Later, a program loses somebody's age by accident and calls `bus_fare()` with nothing.
 
 **What happens? Would anybody find out? And would you rather have had a crash?** Write a paragraph. Say what you would decide and *why* — there is a real argument on both sides, and the marks are for the reasoning, not the side.
@@ -633,6 +651,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+In this section you build a five-function toolkit and test it. You then run a program with a bug in it, try four scope cases, and write a Bug Log entry.
 
 ### Part 1 — the spec sheet
 
@@ -773,7 +793,8 @@ ________________________________________________________________
 
 **Write your answer down first. Then run each one.** Three of the four surprise somebody.
 
-**(a)**
+**(a)** Predict, then run this code.
+
 ```python
 def bus_fare(age):
     fare = 15
@@ -782,9 +803,11 @@ def bus_fare(age):
 print(bus_fare(12))
 print(fare)
 ```
+
 **I predict:** ____________________  **Really:** ____________________
 
-**(b)**
+**(b)** Predict, then run this code.
+
 ```python
 pocket_money = 200
 
@@ -795,9 +818,11 @@ def spend_it_all():
 spend_it_all()
 print("after the function   :", pocket_money)
 ```
+
 **I predict:** ____________________  **Really:** ____________________
 
-**(c)**
+**(c)** Predict, then run this code.
+
 ```python
 PASS_MARK = 35
 
@@ -807,9 +832,11 @@ def has_passed(mark):
 print(has_passed(40))
 print(has_passed(30))
 ```
+
 **I predict:** ____________________  **Really:** ____________________
 
-**(d)**
+**(d)** Predict, then run this code.
+
 ```python
 score_total = 0
 
@@ -819,6 +846,7 @@ def add_one():
 
 print(add_one())
 ```
+
 **I predict:** ____________________  **Really:** ____________________
 
 **(e) Which of the four surprised you, and what did you believe before?**
@@ -874,6 +902,8 @@ Show the boxes going **in** on top, with the parameter **names** on them and the
 
 ## 📊 Self-Check
 
+Tick the face that fits each row, then answer the true-or-false table.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Write a function with two parameters and call it with two arguments, in order | ☐ | ☐ | ☐ |
@@ -911,6 +941,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Open this only after you have finished the whole page. Check your own work against it.
 
 <details>
 <summary>Check your answers</summary>

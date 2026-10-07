@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the whole lesson on one screen: how long it runs, what is new, and what to have ready.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -17,11 +19,15 @@
 | **Tech needed** | Laptop with Python 3 and numpy working. Nothing new to install. `gradebook.py` is typed from scratch. |
 | **Prep time** | 20 minutes the night before (5 of them are printing and finding a highlighter) · 5 minutes on the day |
 
-> **⚠️ Watch out:** the planted problem this week is one score typed as **950** instead of 95. It does not crash. The per-student average for that one student goes obviously silly — but the **0-to-1 normalization silently squashes every other student into the bottom twelfth of the scale**, and the output still looks like a tidy grid of decimals. Do not warn them. The check that catches it is a range check, and they will build it themselves in the last three minutes.
+> **⚠️ Watch out:** the planted problem this week is one score typed as **950** instead of 95. It does not crash. One student's average goes obviously silly, but the **0-to-1 normalization silently squashes every other student into the bottom twelfth of the scale**, and the output still looks like a tidy grid of decimals.
+>
+> Do not warn them. The check that catches it is a range check, and they will build it themselves in the last three minutes.
 
 ---
 
 ## 🎯 Lesson Objectives
+
+These are the five things the student should be able to do by the end of the lesson, and the evidence you can collect for them.
 
 By the end of the lesson the student can:
 
@@ -31,11 +37,17 @@ By the end of the lesson the student can:
 4. **Normalize a row to 0–1 by hand** and match it, digit for digit, to what the code says.
 5. **Build a complete gradebook** in which no `for` loop does any arithmetic — the loops, if any, only print.
 
-Observable evidence: `gradebook.py`, which prints per-student means, per-test means, the hardest test looked up by name, a pass/fail mask, pass counts in both directions that agree, and a 0-to-1 normalized grid; a workbook page with one row normalized in pen before the code ran; and one written sentence about what the 950 typo did to everybody else.
+**Observable evidence:**
+
+- `gradebook.py`, which prints per-student means, per-test means, the hardest test looked up by name, a pass/fail mask, pass counts in both directions that agree, and a 0-to-1 normalized grid.
+- A workbook page with one row normalized in pen before the code ran.
+- One written sentence about what the 950 typo did to everybody else.
 
 ---
 
 ## 🧑‍🏫 What YOU Need to Know First
+
+This section is your background reading. It covers each idea in the order you will meet it, so you are ahead of the student all lesson.
 
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
@@ -49,7 +61,9 @@ Here is the whole idea with no computer in it. Print the score grid on paper. Ta
 
 **The pattern of highlighter marks on the page is the mask.**
 
-That is not an analogy — it is exactly what it is. One mark or no mark, per cell. The marks are not the scores and they are not a shorter list of scores; they are a *second grid the same size as the first*, made of yes and no.
+That is not an analogy. It is exactly what a mask is: one mark or no mark, per cell.
+
+The marks are not the scores, and they are not a shorter list of scores. They are a *second grid the same size as the first*, made of yes and no.
 
 In Python:
 
@@ -62,7 +76,9 @@ above_50 = scores > 50
 ![Two same-sized grids side by side: scores on the left, True and False on the right](../figures/fig-w20-1-mask-true-false-overlay.svg)
 *Figure 20.1 — A mask is a yes/no array, cell for cell. Same shape as the data; a different kind in every cell.*
 
-**Why this matters more than it looks.** Most beginners are taught masks as *a step inside filtering* — as something that happens on the way to getting a shorter list. That framing makes them invisible, and then everything built on them is mysterious. Masks are their own thing, and once a student can see them, five separate ideas collapse into one:
+**Why this matters more than it looks.** Most beginners are taught masks as *a step inside filtering*, something that happens on the way to a shorter list. That framing makes masks invisible, and then everything built on them is mysterious.
+
+Masks are their own thing. Once a student can see them, five separate ideas collapse into one:
 
 | What you want | What you write |
 |---|---|
@@ -147,7 +163,9 @@ There are four comparisons and the student has had all of them since Week 5:
 | `< 50` | strictly less than 50 | `False` |
 | `<= 50` | 50 or less | `True` |
 
-**The teaching move:** do not explain the boundary. Let the highlighter find it. In the Hook, some students will highlight Hugo's 50 and some will not, and *that disagreement is the lesson.* Then ask: "which of you is right?" — and the honest answer is "whoever said what the rule said, and the rule is a decision somebody has to make on purpose."
+**The teaching move:** do not explain the boundary. Let the highlighter find it. In the Hook, some students will highlight Hugo's 50 and some will not, and *that disagreement is the lesson.*
+
+Then ask: "which of you is right?" — and the honest answer is "whoever said what the rule said, and the rule is a decision somebody has to make on purpose."
 
 This is why the pass mask in the gradebook uses `>=`:
 
@@ -155,7 +173,7 @@ This is why the pass mask in the gradebook uses `>=`:
 passed = scores >= 60      # "sixty or more is a pass"
 ```
 
-Because a school that says "60 is a pass" means 60 passes. If you write `> 60`, everyone on exactly 60 fails, and nobody will notice until a parent phones.
+A school that says "60 is a pass" means 60 passes. If you write `> 60`, everyone on exactly 60 fails, and nobody will notice until a parent phones.
 
 ### 5. `.min()` and `.max()` — with and without an axis
 
@@ -296,7 +314,9 @@ The normalization is the one that hurts. The gap between smallest and largest wa
 ![Two rulers: one with dots spread across 0 to 1, one with all dots crushed at the left and one alone at the right](../figures/fig-w20-4-outlier-breaks-normalization.svg)
 *Figure 20.4 — The scale is set by the biggest and smallest value, so one wrong value sets it for everybody.*
 
-Look at it as a teacher for a second. **It is still a perfectly tidy grid of two-decimal numbers.** Every value is between 0 and 1, exactly as promised. Nothing is out of range. Bela is still ahead of Chen. The *ordering* survives completely — which is precisely why nobody notices.
+Look at it as a teacher for a second. **It is still a perfectly tidy grid of two-decimal numbers.** Every value is between 0 and 1, exactly as promised, and nothing is out of range.
+
+Bela is still ahead of Chen. The *ordering* survives completely, which is precisely why nobody notices.
 
 What has died is the **spread**. Every genuine difference between students has been compressed into a range of about 0.07, and if you fed this to a model it would conclude that all ten students are essentially identical, apart from one.
 
@@ -316,9 +336,14 @@ anything above 100? [950]
 
 The rule for this file is: **no `for` loop does any arithmetic on the scores.** Every number in the report comes out of an array operation.
 
-Are printing loops allowed? Take this position, and say it out loud: **printing is not computing.** A loop that walks along `names` and prints a line each is fine — it is doing the job the array cannot do, which is putting the labels back on. A loop that adds scores up is not fine, because one axis does it better.
+Are printing loops allowed? Take this position, and say it out loud: **printing is not computing.**
 
-For this week's homework the honest strictest version is best, and it is achievable: **print the arrays whole.** `print(student_mean)` gives all ten averages at once, and `print(names)` gives all ten names. Lined up, they read fine, and the file then genuinely contains no `for` at all. If a student wants a prettier report with a printing loop, that is a good instinct and you should allow it — but ask them to say which of their loops compute and which only print. The ones that compute have to go.
+- A loop that walks along `names` and prints a line each is fine. It does the job the array cannot do, which is putting the labels back on.
+- A loop that adds scores up is not fine, because one axis does it better.
+
+For this week's homework the strictest version is best, and it is achievable: **print the arrays whole.** `print(student_mean)` gives all ten averages at once, and `print(names)` gives all ten names. Lined up, they read fine, and the file then contains no `for` at all.
+
+If a student wants a prettier report with a printing loop, that is a good instinct and you should allow it. Ask them to say which of their loops compute and which only print. The ones that compute have to go.
 
 **Why bother with the rule at all?** Two honest reasons and only one of them is speed:
 
@@ -395,6 +420,8 @@ threads lit: representation and data.*
 
 ## 🧰 Prep Checklist
 
+This section lists what to print, type and test before class, and what to do if the laptop fails.
+
 ### 20 minutes the night before
 
 - [ ] **Print the score grid on paper, one copy for the student and one for you.** Ten names down, five test names across, fifty numbers. Figure 20.5 is exactly this. **The Hook does not work without it.**
@@ -402,6 +429,8 @@ threads lit: representation and data.*
 - [ ] **Print the workbook** (`workbook/week-20.md`). In class: Warm-Up, Predict the Output, Practice Set A. At home: Build It (the core), then the rest of Practice Set A/B, Fix the Broken Program, Puzzle, Think Deeper, Draw It and Self-Check.
 - [ ] **Prove numpy still works:** `python3 -c "import numpy; print(numpy.__version__)"` → a version number.
 - [ ] **Type and run the code yourself.** One file, `gradebook.py`. Type it out; do not paste.
+
+The file below is the complete `gradebook.py` for this lesson.
 
 ```python
 """gradebook.py - a whole gradebook with no for loop doing any arithmetic."""
@@ -461,7 +490,7 @@ print(np.round(scaled, 2))
 print("scaled min:", scaled.min(), " scaled max:", scaled.max())
 ```
 
-Run `python3 gradebook.py`. You must see **exactly** this:
+Run `python3 gradebook.py`. Your output must match this **exactly**:
 
 ```text
 scores : (10, 5) int64
@@ -512,7 +541,7 @@ scaled min: 0.0  scaled max: 1.0
 - [ ] **Break it on purpose, twice.**
   1. Change `names[passed.sum(axis=1) == 5]` to `names[passed]`. You must get `IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed`. This is the loud mistake you will do in front of them.
   2. Add `scores[5, 0] = 950` just before the normalization block and run again. **Nothing will crash.** Look at the scaled grid. That is the lesson.
-- [ ] **Highlight your own paper grid.** Every score above 50. It takes ninety seconds and you should feel how it feels, because the thing you are about to ask a 12-year-old to do only works if you can see the pattern of marks *as a pattern* rather than as a chore.
+- [ ] **Highlight your own paper grid.** Every score above 50. It takes ninety seconds. Do it so you know how it feels. The task you set a 12-year-old only works if you can see the marks *as a pattern* rather than as a chore.
 - [ ] **Look hard at Hugo's row.** `45, 38, 30, 62, 50`. Did you highlight the 50? Whichever you did, know why. This is the boundary and it is the best question in the Hook.
 - [ ] **Do the Aarav hand-normalization yourself, in pen.** `58` and `88`, gap `30`, then `0.47, 0.23, 0.00, 1.00, 0.40`. You will be marking this and it takes about two minutes with a calculator.
 
@@ -527,7 +556,7 @@ scaled min: 0.0  scaled max: 1.0
 
 ### Fallback if the laptop or the install fails
 
-**The mask half of this lesson is genuinely better on paper.** The gradebook half is not, and there is no honest paper version of it — so if there is no computer, do the mask work properly and move the gradebook to next week's warm-up.
+If there is no computer, run the paper version below. **The mask half of this lesson is genuinely better on paper.** The gradebook half has no honest paper version, so do the mask work properly and move the gradebook to next week's warm-up.
 
 1. **The highlighter mask** (the Hook, extended to fifteen minutes). Highlight every score above 50. Then, on a *second* copy, highlight every score of 60 or more. Two masks, same grid. Ask what changed and where.
 2. **Count the marks two ways.** Along each row: how many highlights per student? Write the ten numbers down the right margin. Down each column: how many per test? Write the five numbers along the bottom. **Add both margins.** They must agree — 39 both ways. That is `mask.sum(axis=1)` and `mask.sum(axis=0)` and the corner check, all on paper, and it is objectives 1 and 3.
@@ -546,6 +575,8 @@ scaled min: 0.0  scaled max: 1.0
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the script for the whole lesson: five segments, with what to do, say, ask and watch for in each.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -768,7 +799,7 @@ scaled = (value - smallest) / (largest - smallest)
 
 ### 💻 Live-Code Together — `gradebook.py` (18 minutes)
 
-**You never touch the keyboard.** Predictions before every run — *what shape, and how many?*
+**You never touch the keyboard.** Ask for a prediction before every run: *what shape, and how many?*
 
 **Step 1 (4 min).** New file, `gradebook.py`. The data and the labels.
 
@@ -886,7 +917,7 @@ print("passed everything :", names[passed])
 
 **Ask before running:** "Will that work?" *(Most say yes.)*
 
-Run it. Real output:
+Run it. Real output (this error is deliberate):
 
 ```text
 Traceback (most recent call last):
@@ -899,9 +930,9 @@ IndexError: too many indices for array: array is 1-dimensional, but 2 were index
 
 *names is one-dimensional but I gave it a two-dimensional thing.*
 
-> "Exactly right, and this is a really good error. `names` is a **row** — ten names, one direction. `passed` is a **grid** — ten by five, two directions. numpy is saying: *you've handed me a two-directional mask to index a one-directional list, and I can't line those up.*
+> "Exactly right, and this is a really good error. `names` is a **row**: ten names, one direction. `passed` is a **grid**: ten by five, two directions.
 >
-> Which makes sense if you think about what you asked. `passed` has fifty answers in it. There are only ten names. **Fifty into ten doesn't go.**
+> numpy is saying: *you've handed me a two-directional mask to index a one-directional list, and I can't line those up.* `passed` has fifty answers in it. There are only ten names. **Fifty into ten doesn't go.**
 >
 > So — how do I get from fifty answers down to ten? One per student?"
 
@@ -1001,6 +1032,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the student's turn: setup, three parts, and what finished looks like.
+
 ### Setup
 
 **On the table:** the printed 10×5 grid, already highlighted from the Hook; a **second, clean copy** of the grid; a highlighter; a **calculator**; a clean sheet with Aarav's row normalized **in pen**; the Bug Log.
@@ -1027,7 +1060,7 @@ smallest 58, largest 88, gap 30
 (70 - 58) / 30 = 12 / 30 = 0.4        -> 0.40
 ```
 
-Now the code, added to the file:
+Now add this block to the file. It normalizes Aarav's row using that row's own smallest and largest values.
 
 ```python
 row = scores[0, :]                        # Aarav's row
@@ -1051,7 +1084,7 @@ scaled by ITS own low and high: [0.47 0.23 0.   1.   0.4 ]
 
 ### Part 2 — normalize the whole grid (7 minutes)
 
-The important thing here is that **the whole grid uses one pair of numbers**, not one pair per row.
+The important thing here is that **the whole grid uses one pair of numbers**, not one pair per row. Add this block to `gradebook.py`.
 
 ```python
 low = scores.min()
@@ -1142,13 +1175,15 @@ Let them look. Push if needed: *"is Bela still ahead of Chen? Is the min still 0
 
 > "Everything is still in the right order. The smallest is still exactly 0. The largest is still exactly 1. Every value is between 0 and 1, exactly as promised. **All fifty numbers still have two decimal places and the grid is still beautifully lined up.**
 >
-> So both of the checks we built — 'does it come out 0 and 1' — **passed.** They passed and the answer is ruined. That's why one check is never enough.
+> So both of the checks we built, 'does it come out 0 and 1', **passed.** They passed and the answer is ruined. That's why one check is never enough.
 >
 > What has died is the **spread**. Every real difference between these ten students has been squashed into about seven-hundredths. If you handed this to a model — and in Week 30 you will hand exactly this sort of thing to a model — it would decide that all ten students are basically identical, apart from one weird one."
 
 > **Say this:** "So. What single check would have caught it? Not a clever one. Something you already know about test scores."
 
 *They can't be over 100.*
+
+Type the range check below the normalization block.
 
 ```python
 print()
@@ -1181,6 +1216,8 @@ print("anything above 100?", scores[scores > 100])
 anything above 100? []
 ```
 
+Now run it again and read the result.
+
 > "Empty brackets. Nothing above 100. **An empty answer is a passed check**, and you should get used to being pleased to see it."
 
 **Bug Log this**, under *errors with no error message*. In the "what the student sees" column: *"every scaled score between 0.00 and 0.08."*
@@ -1190,7 +1227,15 @@ anything above 100? []
 
 ### What "finished" looks like
 
-- `gradebook.py` prints: the shape and the label counts; the mask, in full, with its shape and dtype; the selected values and their new shape; pass counts in both directions **that add to the same number**; the names of students who passed everything; the min and max of the whole grid and of one axis; the hardest test **by name**; and the 0-to-1 grid rounded to 2 decimals.
+- `gradebook.py` prints:
+  - the shape and the label counts;
+  - the mask, in full, with its shape and dtype;
+  - the selected values and their new shape;
+  - pass counts in both directions **that add to the same number**;
+  - the names of students who passed everything;
+  - the min and max of the whole grid and of one axis;
+  - the hardest test **by name**;
+  - the 0-to-1 grid rounded to 2 decimals.
 - **No `for` loop does any arithmetic.** Ideally there is no `for` at all.
 - Aarav's row is normalized **in pen on paper** and matches `[0.47 0.23 0. 1. 0.4]`.
 - The 950 has been put in, looked at, discussed, caught with a range check, and taken out.
@@ -1198,6 +1243,8 @@ anything above 100? []
 - The student can say what a mask is without using the word "filter".
 
 ### Variation — easier
+
+Use these cuts if the student is struggling. Each one keeps the central idea.
 
 - **Cut the grid to four students.** Aarav, Chen, Hugo, Jai — those four give a nicely mixed mask, including Hugo's 50. Every idea survives; the printout fits on one screen.
 - **Do the mask and stop.** Objectives 1 and 2 are the lesson. Normalization is genuinely a second idea and it can be next week's warm-up without any loss.
@@ -1208,7 +1255,7 @@ anything above 100? []
 
 ### Variation — harder
 
-None of these need syntax from a later week.
+Use these extensions for a fast student. None of them need syntax from a later week.
 
 1. **Normalize per test instead of per grid.** `(scores - scores.min(axis=0)) / (scores.max(axis=0) - scores.min(axis=0))` — the `axis=0` aggregates are five numbers, and they broadcast back across the ten rows, which is Week 18's idea meeting Week 19's. Then prove it: `.min(axis=0)` on the result is `[0. 0. 0. 0. 0.]` and `.max(axis=0)` is `[1. 1. 1. 1. 1.]`. Then the real question: *"when would you want this instead of the whole-grid version?"* (When you want "how did this student do **relative to everyone else on this test**", which is a fairer question when one test was much harder.)
 2. **Which test had the widest spread?** `scores.max(axis=0) - scores.min(axis=0)` gives `[50 54 58 37 47]`, so Midterm, with 58. Then look it up by name with a mask, exactly as with the hardest test. Then: *"is the hardest test the same as the most spread-out test?"* (Here, yes — both Midterm. That is not always true, and asking why is a good five minutes.)
@@ -1221,7 +1268,7 @@ None of these need syntax from a later week.
 
 ## 🐞 The Debugging Clinic
 
-Every message below came from running a broken version of this week's actual code.
+This section is a lookup table of the errors this week's code produces, and how to coach the student through each without giving the answer. Every message below came from running a broken version of this week's actual code.
 
 > **🧑‍🏫 If a student asks:** several of this week's errors are about *shapes not lining up.* The fastest route to all of them is the same: print the shape of both things. `print(names.shape, passed.shape)` answers most of this table before you have finished reading the traceback.
 
@@ -1256,6 +1303,8 @@ And the sentence for this week:
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions this lesson reliably produces, each with an answer you can say out loud.
+
 **"Why does the mask have to be the same shape? Why not just give me the good ones?"**
 
 Because "just give me the good ones" throws away *where they were*, and where they were is often the thing you want.
@@ -1268,7 +1317,9 @@ So the mask keeps the shape, and *then* you choose: count it along a direction, 
 
 For arithmetic, yes. `True + True` is `2` in Python and always has been. It is not a numpy thing.
 
-Whether that is *good design* is genuinely debated — some languages refuse to let you add yes and no together, on the grounds that it invites confusion. Python allows it, and the pay-off is exactly what you used today: `mask.sum()` counts things, with no extra function to learn. Take the pay-off; just know that `True` and `1` are not quite the same kind of thing even though they add up like it.
+Whether that is *good design* is genuinely debated. Some languages refuse to let you add yes and no together, on the grounds that it invites confusion.
+
+Python allows it, and the pay-off is what you used today: `mask.sum()` counts things, with no extra function to learn. Take the pay-off, and know that `True` and `1` are not quite the same kind of thing even though they add up like it.
 
 **"Why is it `['Midterm']` with brackets, and not just `Midterm`?"**
 
@@ -1306,17 +1357,31 @@ That distinction is worth flagging as a preview: a model that only cares about r
 
 **There is no agreed answer and people argue about it professionally, in meetings, at length.** It is worth being straight about that rather than pretending there is a checklist.
 
-**What everybody agrees on:** range checks are cheap and you should always do them. Every column has limits you already know — a test score is 0 to 100, a step count is 0 to maybe 50,000, an age is 0 to about 110. Writing those down as one line of mask each is nearly free and catches a real share of genuine mistakes. Nobody argues against this.
+**What everybody agrees on:** range checks are cheap and you should always do them.
 
-**Where it splits.** One camp says: **hunt for outliers and investigate every one**, because a value that looks odd usually *is* odd, and the odd ones are where the interesting errors live. The other camp says: **that way lies madness and, worse, cheating** — because "this value looks wrong to me" is uncomfortably close to "this value disagrees with what I expected", and a person who removes surprising data until the answer looks nice has stopped doing measurement and started doing decoration. Both camps have watched the other camp get it badly wrong.
+- Every column has limits you already know. A test score is 0 to 100, a step count is 0 to maybe 50,000, an age is 0 to about 110.
+- Writing those down as one line of mask each is nearly free and catches a real share of genuine mistakes.
+- Nobody argues against this.
 
-**And there is a third position that is harder and probably the most honest:** the question is not "is the data clean" but "**would I be able to tell?**" A range check that runs every time the file runs is worth more than an afternoon of eyeballing done once in March, because it is still checking in June when you have forgotten the file exists. And a **written record of every change you made** matters more than the changes themselves — because the next person (which is usually you, later) needs to know that the 950 became 95 and who decided that.
+**Where it splits.** There are two camps:
+
+- **Hunt for outliers and investigate every one.** A value that looks odd usually *is* odd, and the odd ones are where the interesting errors live.
+- **That way lies madness and, worse, cheating.** "This value looks wrong to me" is uncomfortably close to "this value disagrees with what I expected". A person who removes surprising data until the answer looks nice has stopped doing measurement and started doing decoration.
+
+Both camps have watched the other camp get it badly wrong.
+
+**A third position is harder and probably the most honest:** the question is not "is the data clean" but "**would I be able to tell?**"
+
+- A range check that runs every time the file runs is worth more than an afternoon of eyeballing done once in March. It is still checking in June when you have forgotten the file exists.
+- A **written record of every change you made** matters more than the changes themselves. The next person (usually you, later) needs to know that the 950 became 95 and who decided that.
 
 What to tell a 12-year-old, out loud: **"Check the things you already know. Write down every change you make and why. And be suspicious of yourself when a value you didn't like turns out to be easy to delete."** Week 24 is entirely about this, and it has a name for the written record: a cleaning log.
 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This table lists the usual ways the lesson slips, why each happens, and what to do on the spot.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1336,6 +1401,8 @@ What to tell a 12-year-old, out loud: **"Check the things you already know. Writ
 ---
 
 ## 🧭 Differentiation
+
+This section gives you three routes through the lesson: one for a student who is struggling, one for a student who is flying, and one for a student who will not engage today.
 
 ### If the student is struggling
 
@@ -1416,7 +1483,7 @@ That is objectives 1 and 3, delivered in ten minutes with a highlighter, and it 
 
 ## ✅ Assessing Understanding
 
-Three checks, five minutes, exact wording.
+This section gives three spoken checks to run at the end, with the wording to use, a good answer, and what to listen for. Three checks, five minutes.
 
 **Check 1 — what a mask is (spoken, 45 seconds)**
 
@@ -1456,6 +1523,8 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
+This section is what to say when you hand out the homework, how long it should take, and what to look for when you mark it.
+
 **Say this:**
 
 > "About an hour, and it's a build. You're finishing the gradebook.
@@ -1472,15 +1541,32 @@ Three checks, five minutes, exact wording.
 
 **Workbook split** *(chosen to match the lesson flow; the old page numbers no longer exist)*: **in class** — Warm-Up, Predict the Output (P1–P4), Practice Set A (A1–A2 are the Hook and Concept on paper; A3–A6 if there is time). **At home, the hour** — Build It. **At home, over the week, as time allows** — Practice Set B (B1–B5), the rest of Set A, Fix the Broken Program, Puzzle of the Week, Think Deeper, Draw It, Self-Check. Everything is marked from the Answer Key below, in workbook order.
 
-**Expected time** for the Build It hour: 25 min on the gradebook · 10 min on Chen's pen work · 15 min on the 950 experiment and its sentence · 10 min on the two range checks and the three things. **About 60 minutes.** The other sections are extra to that hour.
+**Expected time** for the Build It hour:
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — search the file for `for`.** There should be none. If there is one, ask whether it computes or prints. **Two — is the hand-normalization in pen, with the divisions shown?** `0.27` on its own is not evidence; `8 / 30 = 0.2666 -> 0.27` is. **Three — does the 950 sentence talk about somebody other than Farah?** The good sentence is something like *"it made the gap between smallest and largest thirteen times bigger, so everyone else's score got squashed into the bottom twelfth of the scale even though nobody else's score changed."* A sentence about Farah's average has spotted the loud damage and missed the quiet damage, which is the whole point of the week.
+| Part | Minutes |
+|---|---|
+| The gradebook | 25 |
+| Chen's pen work | 10 |
+| The 950 experiment and its sentence | 15 |
+| The two range checks and the three things | 10 |
+
+**About 60 minutes.** The other sections are extra to that hour.
+
+**What to look for when you mark it:** three things, and the third is the real one.
+
+1. **Search the file for `for`.** There should be none. If there is one, ask whether it computes or prints.
+2. **Is the hand-normalization in pen, with the divisions shown?** `0.27` on its own is not evidence; `8 / 30 = 0.2666 -> 0.27` is.
+3. **Does the 950 sentence talk about somebody other than Farah?** A good sentence is something like *"it made the gap between smallest and largest thirteen times bigger, so everyone else's score got squashed into the bottom twelfth of the scale even though nobody else's score changed."*
+
+A sentence about Farah's average has spotted the loud damage and missed the quiet damage, which is the whole point of the week.
 
 ---
 
 ## 🔑 Answer Key
 
-Organised by the **sections and item labels of the workbook** (`workbook/week-20.md`), in the order the student meets them, so you can mark from this page alone. Every value below matches the workbook's own Answers section and was re-run.
+This section is for marking. It follows the **sections and item labels of the workbook** (`workbook/week-20.md`), in the order the student meets them, so you can mark from this page alone.
+
+Every value below matches the workbook's own Answers section and was re-run.
 
 ### ✅ Warm-Up (five questions about last week)
 
@@ -1644,7 +1730,7 @@ Mask row: `T F F T T`. Selection row: `55 70 61`, two boxes blank.
 
 **B1.** `passed = scores >= 60` and `print(passed.shape, passed.dtype)` → `(10, 5) bool`. The comparison must be `>=`: Jai's Quiz2 is exactly 60, so `>` is not hypothetical.
 
-**B2.**
+**B2.** Expected output, then the code that produces it.
 
 ```text
 passes per student: [4 5 2 5 3 5 5 1 5 4]
@@ -1660,7 +1746,7 @@ print("both ways add to  :", passed.sum(axis=1).sum(), passed.sum(axis=0).sum())
 
 Both count the same 39 `True`s. If they disagree, one `.sum()` has the wrong axis.
 
-**B3.**
+**B3.** The code, then its output.
 
 ```python
 print("passed nothing :  ", names[passed.sum(axis=1) == 0])
@@ -1674,7 +1760,7 @@ passed just one: ['Hugo']
 
 - **B3(a)** **Not a bug.** Nobody failed everything, so the mask picked no names; an empty answer is a real answer, and good news here. *(Hugo's one pass is the Project, 62 — the fourth column, the only `True` in his row.)*
 
-**B4.**
+**B4.** The code, then its output.
 
 ```python
 print("above 100?", scores[scores > 100], " below 0?", scores[scores < 0])
@@ -1788,6 +1874,8 @@ low: 20  high: 210  gap: 190
 - **Bug 3, the two cells:** **Cleo's Friday** (8000) and **Dara's Friday** (8000), both exactly on target and both marked `False`. Cleo's count of 0 looks like someone who never hit the target; `hit it every day` printed `[]` when Dara actually hit it all five days.
 - **Fixed output:**
 
+The output after all three fixes:
+
 ```text
 days on target per friend: [1 2 1 5]
 friends on target per day : [2 3 1 1 2]
@@ -1853,7 +1941,7 @@ The workbook gives no model text for these, so these are marking points built fr
 
 ### 🛠️ Build It — The Vectorized Gradebook
 
-This is the homework core. Steps 1–12 of the checklist map to the numbered sections of the program below.
+This is the homework core, and this part of the key is for marking it. Steps 1–12 of the checklist map to the numbered sections of the program below.
 
 **The pen work — Chen's row** *(homework; Aarav's row is the in-class version, see the Note below)*
 
@@ -1869,6 +1957,8 @@ Smallest **40**, largest **70**, gap **30**.
 
 **The two known in advance:** `0.00` and `1.00` — the smallest minus itself is 0; for the largest the top of the fraction equals the bottom.
 
+The code that checks the pen work:
+
 ```python
 chen = scores[2, :]
 print(chen, chen.min(), chen.max())
@@ -1883,10 +1973,15 @@ print(np.round((chen - chen.min()) / (chen.max() - chen.min()), 2))
 **The hand-check comparison table:** pen row `0.50 0.27 0.00 1.00 0.70`, code row `[0.5 0.27 0. 1. 0.7]`, **agree: yes** (`0.5` prints without the trailing zero; same number).
 
 > **Note — Aarav's row, the in-class version** (not a workbook item; done on a clean sheet in the Concept segment and checked in Their Turn minutes 0–3). Smallest 58, largest 88, gap 30: 72 → 14/30 = 0.4666… → **0.47**; 65 → 7/30 → **0.23**; 58 → **0.00**; 88 → **1.00**; 70 → 12/30 → **0.40**. Code: `[0.47 0.23 0.   1.   0.4 ]`.
->
-> **Two questions worth asking after the in-class check.** *"Aarav's 72 scaled to 0.47 here, but to 0.61 when the whole grid was normalized. Both correct?"* **Yes, different questions:** 0.47 uses Aarav's own smallest and largest ("a bit under halfway between his worst and best"); 0.61 uses the class's 30 and 99 ("about three-fifths of the way up the class's scale"). Same score, two rulers. *"What if every score in a row were the same?"* The gap is 0, so you divide by zero: `RuntimeWarning: invalid value encountered in divide` and `[nan nan nan]`. Not a bug in the formula; a row with no spread has no sensible answer. And normalizing never changes who did best: the order is safe, only the spacing changes.
 
-**The complete gradebook** (checklist steps 1–9, 11; zero `for` loops):
+**Two questions worth asking after the in-class check.**
+
+1. *"Aarav's 72 scaled to 0.47 here, but to 0.61 when the whole grid was normalized. Both correct?"* **Yes, different questions.** 0.47 uses Aarav's own smallest and largest ("a bit under halfway between his worst and best"). 0.61 uses the class's 30 and 99 ("about three-fifths of the way up the class's scale"). Same score, two rulers.
+2. *"What if every score in a row were the same?"* The gap is 0, so you divide by zero: `RuntimeWarning: invalid value encountered in divide` and `[nan nan nan]`. This is not a bug in the formula. A row with no spread has no sensible answer.
+
+Normalizing never changes who did best: the order is safe, only the spacing changes.
+
+**The complete gradebook** (checklist steps 1–9, 11; zero `for` loops). This is the reference file to compare the student's against:
 
 ```python
 """gradebook.py - the Vectorized Gradebook. No loops anywhere in this file."""
@@ -2052,7 +2147,7 @@ its low and high : 40 70
 scaled by ITS own low and high: [0.5  0.27 0.   1.   0.7 ]
 ```
 
-**The cross-check table. Every value must match:**
+**The cross-check table.** Every value must match:
 
 | Quantity | Value |
 |---|---|
@@ -2071,7 +2166,7 @@ scaled by ITS own low and high: [0.5  0.27 0.   1.   0.7 ]
 | mean of just the passes | `78.9` |
 | `for` loops in the file | **0** |
 
-**The results table** (the "How many answers / Should be" columns):
+**The results table** (the "How many answers / Should be" columns), for checking the count of each answer:
 
 | # | What you asked for | How many answers |
 |---|---|---|
@@ -2087,9 +2182,14 @@ scaled by ITS own low and high: [0.5  0.27 0.   1.   0.7 ]
 | 8 | how many passing scores | 1 shape, `(39,)` |
 | 9 | `scaled.min()` / `scaled.max()` | 1 each (0.0 / 1.0) |
 
-**`for` loops in the file: 0.** Every number came out of an array operation, and the labels were printed as whole arrays beside the numbers. If there is a `for`, ask whether it computes or prints. **Two things to say when they ask why the two means differ:** the passing mean (78.9) is higher than everybody's (72.1) because the failing, low scores were thrown away. And `passed nothing` printing `[]` is not a bug — nobody failed everything.
+**`for` loops in the file: 0.** Every number came out of an array operation, and the labels were printed as whole arrays beside the numbers. If there is a `for`, ask whether it computes or prints.
 
-**The 950 experiment, both columns filled:**
+**Two things to say when they ask why the two means differ:**
+
+- The passing mean (78.9) is higher than everybody's (72.1) because the failing, low scores were thrown away.
+- `passed nothing` printing `[]` is not a bug. Nobody failed everything.
+
+**The 950 experiment, both columns filled.** This is the before-and-after table the student completes:
 
 | Quantity | Before | After |
 |---|---|---|
@@ -2138,7 +2238,7 @@ above 100?       : [950]
 
 **Why a range check differs in kind from the min/max check:** it uses knowledge that is not in the data. `scaled.min() == 0` is guaranteed by the formula, so it can never disagree with it; "a score cannot be above 100" comes from outside, and only a check carrying outside knowledge can catch data that is wrong.
 
-**Two more range checks** (not about test scores). Any pair carrying outside knowledge, for example:
+**Two more range checks** (not about test scores). Any pair carrying outside knowledge will do. For example:
 
 ```python
 print("negative steps?", steps[steps < 0])
@@ -2175,7 +2275,7 @@ Each student draws their own grid, so there is no single answer. Look for six th
 5. **Both margins added up in the corner, and agreeing.**
 6. **One boundary cell circled**, with a note saying whether the rule includes it and why.
 
-Worked example (four juices by five days, rule `> 30`; Mango's Tuesday, exactly 30, is the circled boundary cell and is not shaded):
+Here is a worked example (four juices by five days, rule `> 30`; Mango's Tuesday, exactly 30, is the circled boundary cell and is not shaded):
 
 ```text
               Mon  Tue  Wed  Thu  Fri  | shaded per row (axis=1)
@@ -2188,13 +2288,21 @@ shaded per     1    1    1    2    2   |    7 = 7
 column (axis=0)
 ```
 
-Rows with a count of zero are real answers, not mistakes. If the rule were `>= 30`, Mango's count would be 3. **"What would break my grid?"** — one value typed ten times too big: the **mask survives** (770 is still above 30) but the **normalization does not** (the gap jumps from 71 to 764 and everything real is squashed into the bottom tenth). A good answer notices the same typo hurts the two differently.
+Rows with a count of zero are real answers, not mistakes. If the rule were `>= 30`, Mango's count would be 3.
+
+**"What would break my grid?"** One value typed ten times too big. The **mask survives** (770 is still above 30) but the **normalization does not** (the gap jumps from 71 to 764 and everything real is squashed into the bottom tenth). A good answer notices the same typo hurts the two differently.
 
 ### 📊 Self-Check
 
-There are no right answers; it is a record of where the student thinks they are. Read it for three lines that carry the rest of the course: *say what shape a mask is* (a 😕 is fixed by the highlighter and the fifty-cell page), *normalize a row by hand and match it to the code* (do one row with a calculator and the screen turned away), and *say why a check that cannot fail is not a check* (the 😀 that matters most; it is still in use in Week 35).
+There are no right answers. It is a record of where the student thinks they are. Read it for three lines that carry the rest of the course:
+
+- *Say what shape a mask is.* A 😕 is fixed by the highlighter and the fifty-cell page.
+- *Normalize a row by hand and match it to the code.* Do one row with a calculator and the screen turned away.
+- *Say why a check that cannot fail is not a check.* This is the 😀 that matters most. It is still in use in Week 35.
 
 ### Answers to every question posed in the lesson
+
+This list collects every question the script asks, in lesson order, with the answer.
 
 - *"How many marks could there be, at most?"* → Fifty. One per cell.
 - *"Is your highlighted page a list of good scores?"* → No — a yes/no for every cell, the same shape as the grid.
@@ -2225,11 +2333,26 @@ There are no right answers; it is a record of where the student thinks they are.
 
 ## 🔮 Next Week Preview
 
-Next week the labels come back, and it is the best moment of Term 3. For four weeks the student has been paying a price on purpose: an array is fast and shapely and it has **no idea what its columns are called.** They have had to keep a separate `names` array and a separate `tests` array and hope the lengths stayed in step, and this week they saw what happens when they don't — a loud `IndexError` if you are lucky, a silent wrong column if you are not. Week 21 introduces the **DataFrame**: a grid where the columns have names and the rows have an **index**, so `df["runs"]` replaces "column 2, I think". The opening move is deliberately anticlimactic and very satisfying — take Week 14's list of twelve dictionaries, hand it to `pd.DataFrame()`, and watch the neatly aligned table they spent a whole lesson formatting by hand appear for free, in one call.
+This section tells you what next week brings and what to prepare before it.
 
-Then the two things to read on every new table: `df.head()`, which shows the first five rows, and `df.info()`, which is a twelve-line health report — how many rows, what every column is called, what kind of thing is in it, and **how many of its cells actually have something in them.** That last number is the new idea. Put a single `None` into a column of whole numbers and watch `12` turn into `12.0`, the dtype turn from `int64` into `float64`, and the count drop from twelve to eleven — one hole, and the whole column changes kind. That is `NaN`, and it is the beginning of everything Week 23 does.
+Next week the labels come back, and it is the best moment of Term 3. For four weeks the student has been paying a price on purpose: an array is fast and shapely and it has **no idea what its columns are called.**
 
-**Prep early:** three things, and the first one is the only thing that can eat the lesson. **Install pandas the night before, on the machine the student will actually use** — `pip install pandas`, then prove it with `python3 -c "import pandas; print(pandas.__version__)"`. It is a bigger install than numpy and it is the second and last thing this course asks you to install, so get it done and do not discover it at minute three. **Find `squad_data.py` from Week 14 or 15** — the twelve cricketers — because next week opens by handing exactly that list to pandas, and the "I wrote thirty lines to do that" moment is much stronger with their own file than with a fresh one. And **have Week 14's hand-formatted table printout to hand**, on paper if you still have it, because putting it beside pandas's output is the whole Hook and it takes ten seconds if you prepared and four minutes if you did not.
+They have had to keep a separate `names` array and a separate `tests` array and hope the lengths stayed in step. This week they saw what happens when they don't: a loud `IndexError` if you are lucky, a silent wrong column if you are not.
+
+Week 21 introduces the **DataFrame**: a grid where the columns have names and the rows have an **index**, so `df["runs"]` replaces "column 2, I think". The opening move is deliberately anticlimactic and very satisfying. Take Week 14's list of twelve dictionaries, hand it to `pd.DataFrame()`, and watch the neatly aligned table they spent a whole lesson formatting by hand appear for free, in one call.
+
+Then read two things on every new table:
+
+- `df.head()` shows the first five rows.
+- `df.info()` is a twelve-line health report: how many rows, what every column is called, what kind of thing is in it, and **how many of its cells actually have something in them.**
+
+That last number is the new idea. Put a single `None` into a column of whole numbers and watch `12` turn into `12.0`, the dtype turn from `int64` into `float64`, and the count drop from twelve to eleven. One hole, and the whole column changes kind. That is `NaN`, and it is the beginning of everything Week 23 does.
+
+**Prep early:** three things, and the first one is the only thing that can eat the lesson.
+
+1. **Install pandas the night before, on the machine the student will actually use.** Run `pip install pandas`, then prove it with `python3 -c "import pandas; print(pandas.__version__)"`. It is a bigger install than numpy and it is the second and last thing this course asks you to install, so get it done and do not discover it at minute three.
+2. **Find `squad_data.py` from Week 14 or 15** (the twelve cricketers). Next week opens by handing exactly that list to pandas, and the "I wrote thirty lines to do that" moment is much stronger with their own file than with a fresh one.
+3. **Have Week 14's hand-formatted table printout to hand**, on paper if you still have it. Putting it beside pandas's output is the whole Hook. It takes ten seconds if you prepared and four minutes if you did not.
 
 ---
 

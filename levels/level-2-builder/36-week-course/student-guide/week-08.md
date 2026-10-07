@@ -37,11 +37,13 @@ Say you guessed 50 and I said *higher*. **How many numbers are still possible?**
      guess 1     2    3    4    5   6   7
 ```
 
-**Seven.** Six halvings take a hundred down to one possible number, and guess 7 names it, so a hundred numbers can *always* be caught in seven guesses. Never eight. Which is why the game you are about to write gives the player exactly seven — **enough if you are clever, not enough if you are careless.** That is what makes a game fair.
+**Seven.** Six halvings take a hundred down to one possible number, and guess 7 names it. So a hundred numbers can *always* be caught in seven guesses. Never eight.
 
-Now here is the bit that stops you just using last week's loop.
+That is why the game you are about to write gives the player exactly seven — **enough if you are clever, not enough if you are careless.** That is what makes a game fair.
 
-Last week every loop was `for something in range(...)`, and **every one of those knew how many times it would go round before it started.** Twelve scores: twelve passes. Nine rows: nine passes. That is why a `for` over a `range` can never run forever by accident — the number of passes is decided before the first one happens.
+Now here is the bit that stops you using last week's loop.
+
+Last week every loop was `for something in range(...)`, and **every one of those knew how many times it would go round before it started.** Twelve scores: twelve passes. Nine rows: nine passes. A `for` over a `range` can never run forever by accident, because the number of passes is decided before the first one happens.
 
 **So how many passes does this guessing game need?**
 
@@ -56,6 +58,8 @@ So you need a different kind of loop. One that does not count, but **waits.**
 
 ## 🧠 The Big Idea
 
+This section explains the new ideas one at a time, with a small example for each. You need it before you type the project, because the project uses all of them.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. Last week's loop counted. This week's loop waits.
@@ -63,6 +67,8 @@ So you need a different kind of loop. One that does not count, but **waits.**
 **The plain explanation.**
 
 > **while loop** — repeats a block for as long as a condition stays `True`, checking the condition **before** every pass.
+
+Here is a small countdown. Read it first; the comments name the three parts.
 
 ```python
 # countdown.py - a while loop, and the three parts every one of them needs.
@@ -85,7 +91,9 @@ Liftoff!
 
 Read the `while` line out loud as English. *"While countdown is greater than zero, do this."* There is no trick in the word.
 
-But be much more precise than English is, because English is vague and this is not. Python does **exactly** this: **check the condition. If it is `True`, run the whole indented block. Then come back and check again.** Check, run, check, run, check — and the first time the check says `False`, it stops and carries on below.
+English is vague, and Python is not. Python does **exactly** this: **check the condition. If it is `True`, run the whole indented block. Then come back and check again.**
+
+Check, run, check, run, check. The first time the check says `False`, Python stops and carries on below the loop.
 
 **The concrete version — trace it, and count two different things.**
 
@@ -100,7 +108,7 @@ But be much more precise than English is, because English is vague and this is n
 
 > **A `while` loop always checks one more time than it runs.** The last check is the one that ends it.
 
-**And one more thing, which matters more than it looks.** The condition is asked **before** the pass, never during it. If `countdown` becomes 0 halfway through the body, **the rest of the body still runs.** Python does not interrupt a pass in the middle to re-check.
+**One more thing matters more than it looks.** The condition is asked **before** the pass, never during it. If `countdown` becomes 0 halfway through the body, **the rest of the body still runs.** Python does not interrupt a pass in the middle to re-check.
 
 **The analogy.** A **staircase**. The rule is: *"while there are steps left, go up one."* You say the rule out loud, look, decide, climb. Then you say the rule again. Four steps means five sayings of the rule — and the fifth one is where you say "no" and stop.
 
@@ -120,7 +128,7 @@ But be much more precise than English is, because English is vague and this is n
 
 **The change step is entirely your job.** Python will not do it for you and it will not warn you. Look at the file: what is moving `countdown` towards zero? The `countdown -= 1` line, **and nothing else.**
 
-**And the change does not have to be arithmetic.** In `guess.py` the change is *a new guess arriving from the keyboard*. In the replay loop it is *a flag being flipped from `True` to `False`*. What matters is that **something inside the body can move the condition towards `False`.**
+The change does not have to be arithmetic. In `guess.py` the change is *a new guess arriving from the keyboard*. In the replay loop it is *a flag being flipped from `True` to `False`*. What matters is that **something inside the body can move the condition towards `False`.**
 
 > **💡 Try this:** the two-second habit that prevents most of this week's trouble. Every time you finish typing a `while` line, say out loud *"and the thing that ends this loop is…"* and **point at the line.** If your finger hovers, you have just written an infinite loop and you know it **before** you press Enter.
 
@@ -140,7 +148,7 @@ Everything in this week's project that **waits for a human** is a `while`. Every
 
 ### 4. The infinite loop, and how to stop it
 
-**This is the section to read twice.**
+**This is the section to read twice.** Here is a loop with the change step left out on purpose.
 
 ```python
 # runaway.py - ON PURPOSE. The CHANGE line is missing, so this never stops.
@@ -158,7 +166,7 @@ while countdown > 0:
 
 **To stop it: hold `Ctrl` and press `C` in the terminal window.**
 
-On a Mac it is **Ctrl**, not Command. This is one of the very few places where a Mac uses Ctrl, and it catches people — in a panic, Command+C just copies something and it feels like the machine has stopped responding.
+On a Mac it is **Ctrl**, not Command. This is one of the very few places where a Mac uses Ctrl. In a panic, Command+C just copies something, and it feels like the machine has stopped responding.
 
 Here is what you see (this is a real traceback, from a real interrupted run):
 
@@ -210,7 +218,9 @@ for n in range(1, 100):
 the first square over 500 is 23 x 23 = 529
 ```
 
-Check it: 22 × 22 = 484, which is not over 500; 23 × 23 = 529, which is ✔ That loop was set up to do ninety-nine passes and it did twenty-three, because as soon as it had the answer there was no reason to carry on. Without the `break` it would print seventy-six more lines, all of them useless.
+Check it: 22 × 22 = 484, which is not over 500; 23 × 23 = 529, which is ✔
+
+That loop was set up to do ninety-nine passes and it did twenty-three. As soon as it had the answer there was no reason to carry on. Without the `break` it would print seventy-six more lines, all of them useless.
 
 **`continue` — skip the ones you do not care about:**
 
@@ -240,7 +250,7 @@ Two facts you will need:
 
 ### 6. `random.randint` — and why seven tries is exactly fair
 
-The computer needs to pick the secret number, and it has to be a number neither of you knows. That needs a tool that is not part of the language you have been using, so you have to ask for it.
+The computer needs to pick the secret number, and it has to be a number neither of you knows. For that you need a tool that is not built in, so you have to ask for it with `import`.
 
 ```python
 import random                     # the toolbox with the dice in it
@@ -249,14 +259,18 @@ print(random.randint(1, 6))
 
 > **`random.randint(a, b)`** — hands back a whole number between `a` and `b`. **Both ends are included**, unlike `range`, which excludes the stop.
 
-**That inconsistency is genuinely annoying and you are allowed to be annoyed about it.** `range(1, 6)` gives 1–5. `random.randint(1, 6)` gives 1–6. They are different tools written by different people at different times, and there is no clever reason. **`randint` includes both ends.** Write it in your vocabulary box and move on.
+**That inconsistency is annoying, and you are allowed to be annoyed about it.** `range(1, 6)` gives 1–5. `random.randint(1, 6)` gives 1–6. They are different tools written by different people at different times, and there is no clever reason.
+
+**`randint` includes both ends.** Write it in your vocabulary box and move on.
 
 Two things to know before they trip you:
 
 - **`import random` must be at the top of the file.** Forget it and you get `NameError: name 'random' is not defined` — the same message you get for a misspelled variable, because as far as Python is concerned that is exactly what `random` is until you import it.
 - **`random.randint(100, 1)` is an error.** You asked for a number between 100 and 1, and there aren't any, because 100 is bigger. Small number first.
 
-**And why seven tries?** Because each good guess halves what is left, and six halvings take 100 down to 1 possible number and a seventh guess names it. It is not a random choice of limit — it is **exactly enough for a player who plays well, and not enough for a player who guesses randomly.** That makes the game fair *and* teachable.
+**And why seven tries?** Each good guess halves what is left. Six halvings take 100 down to 1 possible number, and a seventh guess names it.
+
+The limit is not a random choice. It is **exactly enough for a player who plays well, and not enough for a player who guesses randomly.** That makes the game fair *and* teachable.
 
 ![Every hint halves what is left](../figures/fig-w08-4-guess-game-transcript.svg)
 *Figure 8.4 — Each hint does not just say higher or lower; it deletes half the remaining numbers. The window closes in.*
@@ -265,7 +279,7 @@ Two things to know before they trip you:
 
 > **input validation** — checking what the user typed *before* using it, and refusing it politely if it is not usable.
 
-Here is why it matters. This program is one line long and it crashes:
+Here is why it matters. This two-line program crashes on the wrong input:
 
 ```python
 score = int(input("Score? "))
@@ -345,7 +359,7 @@ The loop had three tries available and used two, because setting `won = True` ma
 
 ## 💻 Type This
 
-`guess.py`, built in four passes, and **the first pass is wrong on purpose** — because what happens next is something you need to have seen while somebody is sitting next to you.
+In this section you build `guess.py` and then `grade.py`, one step at a time. **The first version of `guess.py` is wrong on purpose**, because you need to see a runaway loop while somebody is sitting next to you.
 
 ### Step 1 — the runaway loop, and Ctrl+C on purpose
 
@@ -835,6 +849,8 @@ How many scores? 4
 
 ## 🔍 Worked Examples
 
+These three finished programs show `while` loops in food, sport and school settings. Run each one, then read the hand-check under it.
+
 ### Worked Example 1 — The tuck-shop till (food)
 
 A `while` loop that does not know how many things are going in the bag, plus `continue` doing two different jobs.
@@ -1054,9 +1070,11 @@ Minutes this session (25 to go)? 30
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code.
+This section shows the messages you may meet this week, and what each one means. Every message below came from really running a broken version of this week's code.
 
 ### Break 1 — nothing but the same line, forever
+
+Run this `while` loop. It has no line that changes `countdown`:
 
 ```python
 countdown = 3
@@ -1092,6 +1110,8 @@ Here it is `countdown -= 1`, missing from inside the loop.
 
 ### Break 2 — `banana`, and the crash before the check
 
+Run this two-line program and type `banana`:
+
 ```python
 score = int(input("Score? "))
 print(score)
@@ -1112,6 +1132,8 @@ ValueError: invalid literal for int() with base 10: 'banana'
 **The fix.** Keep it as text, `.strip()` it, ask `.isdigit()`, and convert **only after** the check passes.
 
 ### Break 3 — no error at all, and `banana` gets accepted
+
+Run this check for a number and type `banana`:
 
 ```python
 typed = input("Guess? ")
@@ -1183,6 +1205,8 @@ Then the three parts, said back from memory: **set up · check · change.** And 
 
 ### `break`, `continue`, and a dice
 
+First the `break` loop:
+
 ```python
 for n in range(1, 100):
     if n * n > 500:
@@ -1194,7 +1218,7 @@ for n in range(1, 100):
 the first square over 500 is 23 x 23 = 529
 ```
 
-Ninety-nine passes available, twenty-three used.
+Ninety-nine passes available, twenty-three used. Then the `continue` loop:
 
 ```python
 for n in range(1, 11):
@@ -1216,6 +1240,8 @@ Then `import random` and `random.randint(1, 6)`, run five times, giving five dif
 
 `guess.py` version 1, with no line inside the loop to change `guess`. Run. The screen filled with `  Higher.` at thousands of lines a second. **Ctrl+C — not Command+C.**
 
+The traceback after Ctrl+C:
+
 ```text
 ^C
 Traceback (most recent call last):
@@ -1236,7 +1262,7 @@ Changed to `<`. Seven prompts. **Found by counting, not by reading.**
 
 ### The banana
 
-`banana` typed at a guess prompt:
+`banana` typed at a guess prompt gave this error:
 
 ```text
 ValueError: invalid literal for int() with base 10: 'banana'
@@ -1271,21 +1297,39 @@ And the honest confession about `-5`: the message says "whole numbers only" and 
 
 ## 💬 Talk About It
 
+These three questions have no single right answer. Talk them over with someone, and each hint gives you a place to start.
+
 **1. "Should Python refuse to run a loop it can tell will never end?"**
 
-*Hint:* start with the surprising fact — **it is provably impossible in general.** Not hard: impossible. In 1936 Alan Turing proved that no program can look at all programs and reliably decide whether they stop; it is called the halting problem, and it is one of the founding results of computer science. So nothing will ever do this perfectly. But Python *could* catch the easy cases, and today's runaway was an easy case: the condition mentioned `guess`, and nothing in the body touched `guess`. So argue it properly. What is the cost of a checker that catches the easy ones and misses the hard ones? And here is the second argument, which matters more: **an infinite loop is sometimes exactly what somebody wants** — a program running a website waits forever on purpose. Can Python tell your mistake from their intention?
+*Hint:* start with the surprising fact — **it is provably impossible in general.** Not hard: impossible. In 1936 Alan Turing proved that no program can look at all programs and reliably decide whether they stop. It is called the halting problem, and it is one of the founding results of computer science.
+
+So nothing will ever do this perfectly. But Python *could* catch the easy cases, and today's runaway was an easy case: the condition mentioned `guess`, and nothing in the body touched `guess`.
+
+What is the cost of a checker that catches the easy ones and misses the hard ones?
+
+Here is a second argument, which matters more: **an infinite loop is sometimes exactly what somebody wants.** A program running a website waits forever on purpose. Can Python tell your mistake from their intention?
 
 **2. "Is your game fair?"**
 
-*Hint:* answer "fair to whom?" first. A player who halves the range wins **every single time**, in at most seven. A player who has never met that idea and guesses more or less at random has roughly a 7% chance. **Nothing in the code is different for those two people.** The difficulty lives entirely in what they already know. Now connect it to Level 1: a rule applied identically to everyone can still be easy for one group and nearly impossible for another. Then ask what you would change — the number of tries? the range? a hint about halving? — and what each change costs.
+*Hint:* answer "fair to whom?" first. A player who halves the range wins **every single time**, in at most seven. A player who has never met that idea and guesses more or less at random has roughly a 7% chance.
+
+**Nothing in the code is different for those two people.** The difficulty lives entirely in what they already know.
+
+Now connect it to Level 1: a rule applied identically to everyone can still be easy for one group and nearly impossible for another. Then ask what you would change — the number of tries? the range? a hint about halving? — and what each change costs.
 
 **3. "Typing `banana` forever means the program asks forever. Is that a bug?"**
 
-*Hint:* it is not a crash, and it follows exactly from a rule you chose on purpose — bad input is free. So the honest question is whether that rule is right. Notice what it means: the program can only end if the human eventually **cooperates**, and "the program ends when the user decides to be reasonable" is not a guarantee. The professional answer is to cap attempts of **every** kind, not just good ones — count rejected inputs and give up politely after ten. Then the part that has no universal answer: **should** you? A game can afford to be patient. A cash machine cannot. What is yours?
+*Hint:* it is not a crash, and it follows exactly from a rule you chose on purpose — bad input is free. So the honest question is whether that rule is right.
+
+The program can only end if the human eventually **cooperates**, and "the program ends when the user decides to be reasonable" is not a guarantee. The professional answer is to cap attempts of **every** kind, not just good ones — count rejected inputs and give up politely after ten.
+
+Then the part that has no universal answer: **should** you? A game can afford to be patient. A cash machine cannot. What is yours?
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four wrong ideas that sound reasonable. Each one is paired with what really happens.
 
 ### Trick 1 — "`continue` skips the next pass"
 
@@ -1326,6 +1370,8 @@ Take your own keyboard and type `banana` at your own prompt. The traceback makes
 
 ## 🌍 Where You've Seen This
 
+The loops from this week are hiding in things you use every day. Here are six places to spot them.
+
 1. **A login screen that says "wrong password, 2 attempts remaining".** A `while` loop with a counter, a cap, and a `break` on success. Exactly `guess.py` with the hints removed.
 2. **Any form that says "please enter a valid phone number" and asks again.** That is `.isdigit()`'s big sibling. Notice it does not crash and it does not give up — it keeps asking, which is a `while` loop waiting for a human.
 3. **A game asking "play again? (Y/N)"** and refusing to accept `k`. That is the yes/no loop, the third `while` in your file.
@@ -1361,6 +1407,8 @@ White is finished, dashed is not yet, and the pills along the bottom are the cou
 
 ## 🔑 Remember This
 
+These are the ideas to keep from this week. The reminder card at the end shows the syntax in one place.
+
 - **A `for` loop counts; a `while` loop waits.** One question decides which: can you say the number of repeats out loud before you start?
 - **Three parts, every time: set up · check · change.** Miss the set up and you get `NameError`. Miss the change and you get an infinite loop with **no message at all**.
 - **A `while` loop checks one more time than it runs.** Three passes, four checks.
@@ -1374,6 +1422,8 @@ White is finished, dashed is not yet, and the pills along the bottom are the cou
 - **Say "and the thing that ends this loop is…" and point at the line.** If your finger hovers, you have written an infinite loop.
 
 ### Syntax reminder card
+
+This card gathers the week's syntax in one block. It is for looking things up, not for running as one file.
 
 ```python
 countdown = 3                      # 1. SET UP   - before the loop
@@ -1415,6 +1465,8 @@ while tries < 7 and not won:       # both reasons to stop, in one readable line
 
 ## 📓 New Words
 
+These are the five words from this week. Add them to your vocabulary box.
+
 ![This week's five words as pictures](../figures/fig-w08-6-vocab-icons.svg)
 *Figure 8.6 — This week's five words, drawn.*
 
@@ -1430,7 +1482,7 @@ while tries < 7 and not won:       # both reasons to stop, in one readable line
 
 ## 📤 Your Homework
 
-Go to **[the Week 8 workbook](../workbook/week-08.md)**. About **70 minutes** — this is the longest homework of the term, because it is a project week and most of it is building.
+Go to **[the Week 8 workbook](../workbook/week-08.md)**. It takes about **70 minutes**. This is the longest homework of the term, because it is a project week and most of it is building.
 
 | Section | What to do | Time |
 |---|---|---|
@@ -1441,13 +1493,13 @@ Go to **[the Week 8 workbook](../workbook/week-08.md)**. About **70 minutes** �
 | **Build It** | Finish `guess.py` and `grade.py`, then attack them both with `banana` | 20 min |
 | **Bug Log & Think Deeper** | Two entries — **one must be the `KeyboardInterrupt`** | 5 min |
 
-**Three things I am marking hardest.**
+**Three things I am marking hardest:**
 
-**`grade.py` gets tested on the twelve numbers off your card first**, before any numbers of your own — because you already know the answer is 900 and 75, which means **you cannot fool yourself.**
+1. **`grade.py` gets tested on the twelve numbers off your card first**, before any numbers of your own. You already know the answer is 900 and 75, so **you cannot fool yourself.**
 
-**The banana record has to say what actually printed**, not "it worked". Including the `-5` row and its honest verdict.
+2. **The banana record has to say what actually printed**, not "it worked". Including the `-5` row and its honest verdict.
 
-**One Bug Log entry must be the `KeyboardInterrupt`**, with the real traceback copied in and the line number. Write next to it that the traceback was **not** a bug in your code — it was where the program happened to be when you stopped it. That distinction is the reason you will not panic next time.
+3. **One Bug Log entry must be the `KeyboardInterrupt`**, with the real traceback copied in and the line number. Write next to it that the traceback was **not** a bug in your code; it was where the program happened to be when you stopped it. That distinction is the reason you will not panic next time.
 
 > **💡 Try this:** if you want the hard version, add a `bad_inputs` counter and give up politely after ten rejections. It is three lines and another accumulator, and it answers the best question in this week's lesson — *what if they type `banana` forever?* — properly rather than by hoping.
 

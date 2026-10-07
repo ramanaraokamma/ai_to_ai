@@ -22,13 +22,13 @@
 
 ## 🪝 Start Here
 
+This section is a warm-up with cards, before any code. You will meet today's two big ideas with your hands.
+
 Twelve cards on the table. Twelve players. Here is a question somebody actually asks about a cricket squad: **which team has the most players in it?**
 
-Don't look through the pile and count in your head. **Do it with your hands.**
+Don't look through the pile and count in your head. Do it with your hands.
 
-You will almost certainly start dealing the cards into piles — one pile per team. Stop for a second and say what you are doing out loud: *"I'm making a pile for each team."*
-
-That is the entire idea of today, and you invented it without being told.
+You will almost certainly start dealing the cards into piles, one pile per team. Say what you are doing out loud: *"I'm making a pile for each team."* That is the entire idea of today, and you invented it without being told.
 
 Deal them all out. Count each pile.
 
@@ -36,7 +36,7 @@ Deal them all out. Count each pile.
 
 Now add them up. `4 + 4 + 3 + 1 = 12`. And how many cards did you start with? **Twelve.**
 
-> **Hold on to that check.** It is the cheapest way there is of knowing you have not made a mistake. If the piles add up to twelve, no card fell on the floor. If they add up to eleven, one did — and nothing else would ever have told you.
+> **📌 Remember:** hold on to that check. It is the cheapest way to know you have not made a mistake. If the piles add up to twelve, no card fell on the floor. If they add up to eleven, one did, and nothing else would ever have told you.
 
 Now the other kind of question. **Show me only the players who scored more than fifty.** Hands again.
 
@@ -44,11 +44,11 @@ You deal the twelve into two piles: yes and no. **Five and seven.** Five plus se
 
 Now look at the five cards that came out. **Are they still cards?** Yes. **Do they still have all five labels on them?** Yes.
 
-That matters. **The sieve did not turn them into anything else.** It did not rub the names off. Five cards came out, exactly the same shape as the twelve that went in, just fewer of them.
+The sieve did not turn them into anything else. It did not rub the names off. Five cards came out, the same shape as the twelve that went in, just fewer of them.
 
-Those two things you just did with your hands have names. Making piles by team is **grouping**. Tipping the pack through a test is **filtering**. Today you write both of them as functions that work on *any* table, and then you use them to answer six questions.
+Those two things you just did with your hands have names. Making piles by team is **grouping**. Tipping the pack through a test is **filtering**. Today you write both as functions that work on *any* table, and then you use them to answer six questions.
 
-**And there is a trap in one of the six that I am not going to warn you about.**
+**There is a trap in one of the six that I am not going to warn you about.**
 
 ![Grouping: one bucket per value](../figures/fig-w15-2-grouping-tally-buckets.svg)
 *Figure 15.1 — Nothing is thrown away. The counts must sum to the number of rows.*
@@ -57,7 +57,9 @@ Those two things you just did with your hands have names. Making piles by team i
 
 ## 🧠 The Big Idea
 
-> **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
+This section explains filtering, grouping, `max`, `sorted` and row counts in five short parts. Each part has a small piece of code to read.
+
+> **📌 About the code in this section:** the blocks below are illustrations, not files. Each one carries on from the one above it, and the `import` lines and the data are typed once, in the first block that needs them. The complete, runnable file is in 💻 Type This. If you copy a block on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. Two shapes of question, and that is nearly all of them
 
@@ -69,11 +71,11 @@ Those two things you just did with your hands have names. Making piles by team i
 > **filter** — keep only the records that pass a test, and throw the rest away. What comes out is still records, with all their labels, just fewer of them.
 > **group** — put every record into a bucket according to the value of one field. **Nothing is thrown away**; you are only deciding which pile each row belongs to.
 
-**The analogies, and they are worth keeping.** A filter is a **sieve** — you tip the whole pack through and only the ones that pass fall out the bottom. Grouping is **sorting laundry** — you do not throw any socks away, you make a pile per colour and then count each pile.
+**Two pictures to keep.** A filter is a **sieve**: you tip the whole pack through and only the ones that pass fall out the bottom. Grouping is **sorting laundry**: you do not throw any socks away, you make a pile per colour and then count each pile.
 
-**And here is the difference that matters most:** a filter **throws rows away**, so the two piles add back up to what you started with. Grouping throws **nothing** away, so the buckets add up to what you started with. **Either way, the check is the same: add them up.**
+**The difference that matters most:** a filter sets rows aside, and the two piles add back up to what you started with. Grouping throws nothing away, so the buckets add up to what you started with. Either way, the check is the same: add them up.
 
-**The code.** The filter is Week 14's one-liner with three words bolted on.
+**The code.** The filter is Week 14's one-liner with three words bolted on. Read this function first:
 
 ```python
 def filter_by(rows, key, value):
@@ -81,9 +83,9 @@ def filter_by(rows, key, value):
     return [r for r in rows if r[key] == value]
 ```
 
-Read it in order:
+The picture below shows the order to read it in. The numbers show which part to read first, second and third.
 
-```
+```text
 [ r          for r in rows        if r[key] == value ]
   └── 3 ──┘  └──── 1 ────┘        └────── 2 ───────┘
 
@@ -92,15 +94,13 @@ Read it in order:
 3. r                       ->  ...and for those, put the WHOLE RECORD in the new list
 ```
 
-**Two things to be very clear about.**
+Three things to be clear about.
 
-**What goes in the new list is `r` — the whole record**, not one field. Last week the front of the comprehension said `r["runs"]` and gave you a list of *numbers*. This week the front says `r` and gives you a list of *records*. **Filtering does not change what a row is. It changes how many rows there are.**
+1. **The new list holds `r`, the whole record**, not one field. Last week the front of the comprehension said `r["runs"]` and gave you a list of *numbers*. This week the front says `r` and gives you a list of *records*. Filtering does not change what a row is. It changes how many rows there are.
+2. **`==`, not `=`.** One equals sign assigns; two ask a question. You have known that since Week 5, and you will still get it wrong once today. It gives you `SyntaxError: invalid syntax` with the caret sitting on the `=`.
+3. **The key is passed in as an argument, not written inside.** Then the *same function* works on every table you will ever build. `filter_by(squad, "team", "Tigers")` and `filter_by(playlist, "genre", "pop")` are the same function. That is Week 12's lesson, write the tool and not the one-off answer, arriving one level up.
 
-**`==`, not `=`.** One equals sign assigns; two ask a question. You have known that since Week 5, and you will still get it wrong once today. It gives you `SyntaxError: invalid syntax` with the caret sitting on the `=`.
-
-**And why is the key passed in as an argument rather than written inside?** Because then the *same function* works on every table you will ever build. `filter_by(squad, "team", "Tigers")` and `filter_by(playlist, "genre", "pop")` are the same function. That is Week 12's lesson — **write the tool, not the one-off answer** — arriving one level up.
-
-For a filter that is not an exact match — greater than, less than — write the comprehension directly, because there is no single value to pass in:
+For a filter that is not an exact match (greater than, less than), write the comprehension directly, because there is no single value to pass in:
 
 ```python
 big_scores = [r for r in squad if r["runs"] > 50]
@@ -111,7 +111,7 @@ big_scores = [r for r in squad if r["runs"] > 50]
 
 ### 2. The counting dictionary — the one pattern to memorise
 
-**The plain explanation.** This is the most reused four lines in this entire course. Learn it well enough to write from memory, because you will.
+**The plain explanation.** This is the most reused four lines in this entire course. Learn it well enough to write from memory, because you will. Here is the function:
 
 ```python
 def group_count(rows, key):
@@ -123,7 +123,7 @@ def group_count(rows, key):
     return counts
 ```
 
-On the twelve records:
+Running it on the twelve records prints this:
 
 ```text
 {'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1}
@@ -131,7 +131,7 @@ On the twelve records:
 
 > **counting dictionary** — a dictionary used as a set of tally marks: one key per bucket, one number per bucket, built with `counts[b] = counts.get(b, 0) + 1`.
 
-**The fourth line does two jobs in one go, and it is the only clever thing this week.** So trace it by hand. Get a pencil; do the first five for real.
+The fourth line does two jobs in one go, and it is the only clever thing this week. Trace it by hand with a pencil. Do the first five turns for real.
 
 | Turn | record | `bucket` | `counts.get(bucket, 0)` | `counts` afterwards |
 |---|---|---|---|---|
@@ -143,7 +143,7 @@ On the twelve records:
 | … | … | … | … | … |
 | 12 | Priya | `Owls` | `0` — never seen it | `{'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1}` |
 
-**See what `.get` is for.** The **first** time you meet a bucket there is nothing there, so `.get` hands you a **zero** and you write one. **Every time after that** it hands you the count so far and you write one more. One expression, both cases, no `if` needed anywhere.
+**What `.get` is for.** The first time you meet a bucket there is nothing there, so `.get` hands you a zero and you write one. Every time after that it hands you the count so far and you write one more. One expression, both cases, no `if` needed anywhere.
 
 That is last week's polite-asking tool doing the one job it was made for. Without it you would need four lines:
 
@@ -154,18 +154,18 @@ else:
     counts[bucket] = 1
 ```
 
-**Identical result.** That version is completely correct and there is nothing wrong with writing it. **But now you know why `.get()` exists.**
+The result is identical. That version is completely correct and there is nothing wrong with writing it. But now you know why `.get()` exists.
 
-**And then the check that matters:** 4 + 4 + 3 + 1 = 12 = `len(squad)`.
+Then do the check that matters: 4 + 4 + 3 + 1 = 12 = `len(squad)`.
 
-> **If the bucket counts do not add up to the row count, you dropped a row.** Do this every single time you group anything. It costs one line and it catches the worst kind of mistake there is — the one where the answer looks fine.
+> **📌 Remember:** if the bucket counts do not add up to the row count, you dropped a row. Do this every single time you group anything. It costs one line and it catches the worst kind of mistake there is, the one where the answer looks fine.
 
 ![The one clever line, in its two cases](../figures/fig-w15-5-get-zero-first-time.svg)
 *Figure 15.3 — First time: nothing there, so `.get` hands back 0. Every time after: the count so far, plus one.*
 
 ### 3. `max` looks at the labels unless you tell it otherwise
 
-**The plain explanation.** You have `{'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1}` and you want the biggest team. The obvious thing is **wrong**, and it does not complain.
+**The plain explanation.** You have `{'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1}` and you want the biggest team. The obvious thing is **wrong**, and it does not complain. Type these two lines and compare them:
 
 ```python
 print("biggest team (wrong):", max(counts))
@@ -177,26 +177,26 @@ biggest team (wrong): Tigers
 biggest team (right): Falcons
 ```
 
-**Neither of those crashed.** That is the whole point.
+Neither of those crashed. That is the whole point.
 
-`max(counts)` looks at the **keys** — the team names — and hands back the one that comes **last alphabetically**. F, then H, then O, then T: `Tigers` wins as a *word*. **The counts are never consulted at all.** It is a confident, wrong, silent answer.
+`max(counts)` looks at the **keys**, the team names, and hands back the one that comes **last alphabetically**. F, then H, then O, then T: `Tigers` wins as a *word*. The counts are never consulted at all. It is a confident, wrong, silent answer.
 
 `max(counts, key=counts.get)` says: *go through the keys, and for each one, judge it by what `counts.get` says about it.* Now the numbers decide.
 
-**The analogy.** Asking a class *"who is tallest?"* and getting back *"Zoya"* — because you asked somebody who was reading the register alphabetically and never looked up. The answer is not a lie. It is an answer to a different question.
+**The analogy.** Ask a class *"who is tallest?"* and get back *"Zoya"*, because you asked somebody who was reading the register alphabetically and never looked up. The answer is not a lie. It is an answer to a different question.
 
-**And there is a second thing hiding in there.** Falcons and Tigers **both have 4**. It is a **tie**, and `max` does not tell you — it just hands back the first one it met, which is Falcons because Falcons was typed first.
+There is a second thing hiding in there. Falcons and Tigers both have 4. It is a **tie**, and `max` does not tell you. It hands back the first one it met, which is Falcons because Falcons was typed first.
 
-So the honest answer to *"which team is biggest?"* is ***"Falcons and Tigers, four each"***, and the code as written **cannot say that.** It gave one answer to a question with two answers. It did not lie to you; you never asked it about ties.
+So the honest answer to *"which team is biggest?"* is *"Falcons and Tigers, four each"*, and the code as written cannot say that. It gave one answer to a question with two answers. It did not lie to you; you never asked it about ties.
 
-> **You** can say the true thing, which is why a human writes the sentence at the end.
+> **📌 Remember:** you can say the true thing, which is why a human writes the sentence at the end.
 
 ![The biggest label is not the biggest count](../figures/fig-w15-7-max-judges-the-word.svg)
 *Figure 15.4 — Neither of these crashed. One of them answered a question nobody asked.*
 
 ### 4. `sorted` with a key function — and it moves whole rows
 
-**The plain explanation.** `sorted()` came in Week 12 and worked on numbers. It cannot sort records on its own, because **one dictionary is not bigger or smaller than another dictionary** — so you have to tell it *which field to look at*. You do that by handing it a function.
+**The plain explanation.** `sorted()` came in Week 12 and worked on numbers. It cannot sort records on its own, because one dictionary is not bigger or smaller than another dictionary. So you have to tell it *which field to look at*, and you do that by handing it a function. Read this block and its output:
 
 ```python
 def runs_of(player):
@@ -220,22 +220,20 @@ original row 0 is still Asha
 
 > **key function** — a small function you hand to `sorted` (or to `max`) that takes one item and returns the one value you want it judged on.
 
-**Three things to know.**
+Three things to know.
 
-**1. `key=runs_of`, with no brackets after `runs_of`.** You are handing over the **function itself**, not the result of running it. `key=runs_of()` tries to run it with no arguments and gives you `TypeError: runs_of() missing 1 required positional argument: 'player'`.
-
-The mental model: you are handing `sorted` a **tool**, and `sorted` will use it twelve times. If you use it yourself first, you have nothing left to hand over.
+**1. `key=runs_of`, with no brackets after `runs_of`.** You are handing over the function itself, not the result of running it. `key=runs_of()` tries to run it with no arguments and gives you `TypeError: runs_of() missing 1 required positional argument: 'player'`. Think of it as handing `sorted` a tool that it will use twelve times. If you use it yourself first, you have nothing left to hand over.
 
 **2. `reverse=True` means biggest first.** Without it you get smallest first. Both are keyword arguments from Week 10.
 
-**3. `sorted` moves whole records.** Priya's name, her team, her balls and her 104 all travelled together. **Nothing got separated from its labels** — which is exactly what you *do* lose when you pull a column out with a comprehension. And the original `squad` is untouched: row 0 is still Asha.
+**3. `sorted` moves whole records.** Priya's name, her team, her balls and her 104 all travelled together. Nothing got separated from its labels, which is exactly what you *do* lose when you pull a column out with a comprehension. The original `squad` is untouched: row 0 is still Asha.
 
 ![Sorting moves whole rows, not values](../figures/fig-w15-4-sort-by-one-field.svg)
 *Figure 15.5 — The key function is how you tell `sorted` which one of the five fields to look at.*
 
 ### 5. An average hides how many rows it came from
 
-**The plain explanation.** Here is the output this whole lesson is built to produce.
+**The plain explanation.** This is the output the whole lesson is built to produce. Read it line by line.
 
 ```text
 Q5  average runs per team
@@ -247,23 +245,23 @@ Q5  average runs per team
 
 Read the Owls line. **104.00 runs.** It is the highest average on the board by a mile.
 
-It is also just **Priya's score**, because Priya is the only Owl. **Dividing one number by one does not make it an average.** It makes it the same number wearing a hat.
+It is also just Priya's score, because Priya is the only Owl. Dividing one number by one does not make it an average. It makes it the same number wearing a hat.
 
 > **row count** — how many records an answer was computed from. **An answer without its row count is not an answer.**
 
-This is Level 1's ***"out of how many?"*** arriving with a keyboard attached. Back then you learned that "60% accurate" means nothing until you know whether that was 6 out of 10 or 600 out of 1000. **Same idea. Same fix: print the denominator.**
+This is Level 1's *"out of how many?"* arriving with a keyboard attached. Back then you learned that "60% accurate" means nothing until you know whether that was 6 out of 10 or 600 out of 1000. Same idea, same fix: print the denominator.
 
-**And notice what the decision actually is.** It is *not* "is this number right?" — it is right, 104 divided by 1 is 104, the arithmetic is perfect. The decision is: **should I report it at all?**
+Notice what the decision actually is. It is *not* "is this number right?" The number is right: 104 divided by 1 is 104, and the arithmetic is perfect. The decision is whether to report it at all.
 
-There are three defensible answers and grown-ups get paid to choose between them:
+There are three defensible answers, and grown-ups get paid to choose between them:
 
 1. **Report it with the count printed loudly.** *"Owls: 104.00 from 1 player."* Honest, and it lets the reader decide.
 2. **Report it with a warning.** *"Owls: 104.00 from 1 player — too few rows to call this an average."*
 3. **Do not report the average at all.** *"Owls: 1 player, not enough to average."*
 
-**All three are professional.** What is **not** acceptable is printing `Owls 104.00` next to `Falcons 35.50` with no counts — because a reader will conclude the Owls are three times the batting side, and **they will be reasoning perfectly correctly from what you showed them.** You would have misled them without writing a single false number.
+All three are professional. What is not acceptable is printing `Owls 104.00` next to `Falcons 35.50` with no counts. A reader will conclude the Owls are three times the batting side, and they will be reasoning perfectly correctly from what you showed them. You would have misled them without writing a single false number.
 
-**One more rule, and it matters more than it looks.** Decide the minimum group size **before** you look at the answers. If you decide afterwards, you are choosing a rule that happens to exclude the number you did not like — and you will not even notice you are doing it. Write it in the code as a named value so it is visible:
+One more rule matters more than it looks. Decide the minimum group size **before** you look at the answers. If you decide afterwards, you are choosing a rule that happens to exclude the number you did not like, and you will not even notice. Write it in the code as a named value so it is visible:
 
 ```python
 MIN_GROUP = 3        # decided BEFORE looking at the answers
@@ -276,11 +274,13 @@ MIN_GROUP = 3        # decided BEFORE looking at the answers
 
 ## 💻 Type This
 
-**Three files this week**, which is Week 12's idea again: the **data** lives in one, the **tools** live in another, and the **questions** live in a third. That way when your tools are right, they stay right — and you can point them at somebody else's data tomorrow.
+In this section you build the program, one step at a time, and break it twice on purpose.
+
+There are **three files this week**, which is Week 12's idea again: the data lives in one, the tools live in another, and the questions live in a third. That way when your tools are right, they stay right, and you can point them at somebody else's data tomorrow.
 
 ### Step 1 — the data, in its own file
 
-New file, **Save As** `squad_data.py`. Copy last week's twelve records into it. **A copy-paste is entirely fine here** — the typing was last week's lesson.
+New file, **Save As** `squad_data.py`. Copy last week's twelve records into it. A copy-paste is fine here, because the typing was last week's lesson.
 
 ```python
 """squad_data.py - the twelve records from Week 14, kept in their own file."""
@@ -303,7 +303,7 @@ squad = [
 
 ### Step 2 — the tools
 
-New file, **Save As** `records.py`, in the **same folder**.
+New file, **Save As** `records.py`, in the **same folder**. Type these two functions:
 
 ```python
 """records.py - tools that work on ANY list of dictionaries, not just cricketers."""
@@ -319,11 +319,11 @@ def column(rows, key):
     return [r[key] for r in rows]
 ```
 
-> **💡 Try this:** read those two functions and notice that **neither of them contains the word "cricket", "team" or "runs".** `filter_by(playlist, "genre", "pop")` works. `filter_by(dinners, "day", "Tuesday")` works. **You have written a tool, not an answer.**
+> **💡 Try this:** read those two functions. Neither of them contains the word "cricket", "team" or "runs". `filter_by(playlist, "genre", "pop")` works. `filter_by(dinners, "day", "Tuesday")` works. You have written a tool, not an answer.
 
 ### Step 3 — the questions
 
-New file, **Save As** `lab15.py`, same folder.
+New file, **Save As** `lab15.py`, same folder. Type this first question:
 
 ```python
 """lab15.py - asking the twelve records six questions."""
@@ -336,18 +336,18 @@ print("Tigers rows:", len(tigers), "of", len(squad))
 print("Tigers     :", column(tigers, "name"))
 ```
 
-**Predict both lines before you run.** How many Tigers, and who?
+**Predict both lines before you run.** How many Tigers, and who? Then run it and compare:
 
 ```text
 Tigers rows: 4 of 12
 Tigers     : ['Kabir', 'Meera', 'Dev', 'Zara']
 ```
 
-Look carefully at what got printed. Not just `4` — **`4 of 12`**. Get into that habit **now**, on the easy one, and you will still have it in Week 34 when it matters.
+Look at what got printed. Not just `4`, but `4 of 12`. Get into that habit now, on the easy one, and you will still have it in Week 34 when it matters.
 
 ### Step 4 — ⚠️ mistake number one, on purpose
 
-Now the buckets. Add `group_count` to `records.py`. You want to add one to a bucket each time, and you already know how to add one to something — from Week 7. Use that.
+Now the buckets. Add `group_count` to `records.py`. You want to add one to a bucket each time, and you already know how to add one to something from Week 7. Use that.
 
 ```python
 def group_count(rows, key):
@@ -359,13 +359,13 @@ def group_count(rows, key):
     return counts
 ```
 
-**Two edits in `lab15.py`, and the first one is easy to forget.** Put `group_count` on the import line, or you get `NameError: name 'group_count' is not defined` instead of the error we are here for.
+Make two edits in `lab15.py`. The first is easy to forget: put `group_count` on the import line, or you get `NameError: name 'group_count' is not defined` instead of the error we are here for.
 
 ```python
 from records import filter_by, column, group_count      # <-- group_count added
 ```
 
-Then at the bottom of `lab15.py`:
+Then add this at the bottom of `lab15.py`:
 
 ```python
 print(group_count(squad, "team"))
@@ -386,21 +386,23 @@ Traceback (most recent call last):
 KeyError: 'Falcons'
 ```
 
-**Oh good — and this one is new. Look at it. There are TWO `File` lines.** You have only ever had one before.
+This traceback is new. It has **two** `File` lines, and you have only ever had one before.
 
-**Read them from the bottom.** `records.py, line 19` — that is **where it actually broke.** The one above it, `lab15.py, line 10`, tells you **who called it.** So the trail reads: *"line 10 of lab15 called `group_count`, and inside `group_count`, line 19 of records blew up."*
+Read them from the bottom. `records.py, line 19` is where it actually broke. The line above it, `lab15.py, line 10`, tells you who called it. So the trail reads: *"line 10 of lab15 called `group_count`, and inside `group_count`, line 19 of records blew up."*
 
-> **The rule for the rest of the year: the LAST `File` line is where it broke.** Everything above it is the trail of who called who. This is the first two-file traceback you have seen and **every remaining week will produce them.**
+> **📌 Remember:** the LAST `File` line is where it broke. Everything above it is the trail of who called who. This is the first two-file traceback you have seen, and every remaining week will produce them.
 
-Now the last line. `KeyError: 'Falcons'`. **What does `+=` actually mean?** *Take what is there and add one.* And on the very first Falcon, **what is there?**
+Now the last line, `KeyError: 'Falcons'`. What does `+=` actually mean? *Take what is there and add one.* On the very first Falcon, what is there?
 
-Nothing. There is no key called `Falcons` yet. So Python cannot take what is there, and it says so.
+Nothing. There is no key called `Falcons` yet, so Python cannot take what is there, and it says so.
 
-Which is exactly why the line is written the way it is. Change it:
+That is why the real line is written the way it is. Change the line to this:
 
 ```python
         counts[bucket] = counts.get(bucket, 0) + 1  # count so far (0 if new) plus one
 ```
+
+Run it again and compare the output:
 
 ```text
 Tigers rows: 4 of 12
@@ -408,11 +410,11 @@ Tigers     : ['Kabir', 'Meera', 'Dev', 'Zara']
 {'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1}
 ```
 
-**Bug Log it now — and log the two-`File`-line rule as a separate entry.** That rule is worth more than the fix.
+**Bug Log it now, and log the two-`File`-line rule as a separate entry.** That rule is worth more than the fix.
 
 ### Step 5 — ⚠️ mistake number two, on purpose. This one does not crash.
 
-Which team is biggest? There is a thing called `max` that gives you the biggest of something. **Type only the first of these two lines and run it.**
+Which team is biggest? Python has a function called `max` that gives you the biggest of something. Type only the first of these two lines and run it.
 
 ```python
 counts = group_count(squad, "team")
@@ -427,9 +429,9 @@ biggest team (wrong): Tigers
 
 Sit with it for twenty seconds. Then look back at the counts: **Falcons 4, Tigers 4, Hawks 3, Owls 1.**
 
-**Tigers is not the biggest.** It is tied at the top, but it is not the biggest — and something worse than that is going on. **There was no error. Nothing complained.** Python did exactly what you asked, which was not what you meant.
+Tigers is tied at the top, but it is not the biggest, and something worse is going on. There was no error. Nothing complained. Python did exactly what you asked, which was not what you meant.
 
-`max` looked at the **team names** — the keys — and handed back the one that comes **last in the alphabet**. F, then H, then O, then T. **It never looked at the numbers at all.**
+`max` looked at the **team names**, the keys, and handed back the one that comes last in the alphabet. F, then H, then O, then T. It never looked at the numbers at all.
 
 Now add the second line:
 
@@ -437,20 +439,24 @@ Now add the second line:
 print("biggest team (right):", max(counts, key=counts.get))
 ```
 
+Run it again and compare the two lines:
+
 ```text
 biggest team (wrong): Tigers
 biggest team (right): Falcons
 ```
 
-`key=counts.get` says: *go through the team names, and judge each one by what `counts.get` says about it.* **Now the numbers decide.**
+`key=counts.get` says: *go through the team names, and judge each one by what `counts.get` says about it.* Now the numbers decide.
 
-**And look what it did with the tie.** Falcons and Tigers both have four. `max` gave **one** answer to a question with **two** answers, and it gave the one that happened to be typed first. What is the honest answer to *"which team is biggest?"*
+Look at what it did with the tie. Falcons and Tigers both have four. `max` gave **one** answer to a question with **two** answers, and it gave the one that happened to be typed first. What is the honest answer to *"which team is biggest?"*
 
-*Falcons and Tigers, four each.* Which your program cannot say. **That is fine — you can say it, and that is why a human writes the sentence at the end.**
+*Falcons and Tigers, four each.* Your program cannot say that. That is fine: you can say it, and that is why a human writes the sentence at the end.
 
 **Bug Log this one too, under a heading of its own: *a wrong answer with no error message.***
 
 ### Step 6 — the key function and the ranking
+
+Add a key function and a ranking to `lab15.py`. Type this block and run it.
 
 ```python
 def runs_of(player):
@@ -469,11 +475,11 @@ for position, player in enumerate(ranked[:3], start=1):
 3. Nita     77 runs
 ```
 
-**`key=runs_of`, with no brackets.** You are handing `sorted` the tool, not the result of using it.
+`key=runs_of`, with no brackets. You are handing `sorted` the tool, not the result of using it.
 
 ### The complete finished program
 
-This is `lab15.py` in full — six questions, and **every single answer with its row count.**
+This is `lab15.py` in full: six questions, and every answer with its row count. Type or paste it, then run it.
 
 ```python
 """lab15.py - six questions about twelve players, every answer with its row count."""
@@ -530,6 +536,8 @@ for position, player in enumerate(ranked[:3], start=1):
     print(f"    {position}. {player['name']:<7}{player['runs']:>4} runs")
 ```
 
+Compare your output with this:
+
 ```text
 ==============================================
 12 rows, 5 columns
@@ -562,20 +570,20 @@ Q6  top three scorers
     3. Nita     77 runs
 ```
 
-**Now check one answer by hand, on paper.** Q4 is the right one:
+**Now check one answer by hand, on paper.** Q4 is the right one. Here is the sum, step by step:
 
-```
+```text
 48 + 12 = 60
 60 + 77 = 137
 137 + 5 = 142
 142 / 4 = 35.5
 ```
 
-**Matched.** ✔ And the reason to bother: *now you know what the right answer looks like, so if the code ever disagrees with you, one of you is wrong and you will know to go and check.*
+**Matched.** ✔ The reason to bother is that now you know what the right answer looks like. If the code ever disagrees with you, one of you is wrong, and you will know to go and check.
 
 ### Step 7 — the guard, so the program tells the truth about itself
 
-Make one more file, `honest.py`.
+Make one more file, `honest.py`. It prints the same averages, but small groups say so out loud.
 
 ```python
 """honest.py - the same averages, but the small groups say so out loud."""
@@ -601,6 +609,8 @@ print("-" * 52)
 print(f"minimum group size we agreed on: {MIN_GROUP}")
 ```
 
+Run it and compare:
+
 ```text
 average runs per team
 ----------------------------------------------------
@@ -612,13 +622,15 @@ Owls      104.00   from 1 row(s)  <-- too few rows to call this an average
 minimum group size we agreed on: 3
 ```
 
-**That is a program that tells the truth about itself.** Notice it still prints the number — it hides nothing. It just refuses to let you read it without knowing what it is.
+That is a program that tells the truth about itself. It still prints the number and hides nothing. It just refuses to let you read it without knowing what it is.
 
 ---
 
 ## 🔍 Worked Examples
 
-**All three of these sit next to the `records.py` you wrote in Step 2**, in the same folder, and import from it. If you get `ModuleNotFoundError: No module named 'records'`, your terminal is in a different folder from the files.
+This section runs the same moves on three new tables. Each example prints its row counts, so you can check the buckets add up.
+
+All three sit next to the `records.py` you wrote in Step 2, in the same folder, and import from it. If you get `ModuleNotFoundError: No module named 'records'`, your terminal is in a different folder from the files.
 
 ### Worked Example 1 — Ten lunch orders (food)
 
@@ -702,13 +714,11 @@ biggest day (right): Mon
 
 **Check the arithmetic:** Monday is 40 + 25 + 60 = 125, and 125 ÷ 3 = 41.666… → `41.67` ✔. Tuesday is 15 + 30 + 35 = 80, and 80 ÷ 3 = 26.666… → `26.67` ✔.
 
-**Three things worth pausing on.**
+Three things worth pausing on.
 
-**`max(day_counts)` says `Wed`.** Alphabetically: Mon, Thu, Tue, Wed — and `Wed` is last. Three days are tied on 3 and Thursday has 1, so the honest answer is *"Mon, Tue and Wed, three each"*. The `key=` version says `Mon` — the first of the tied three.
-
-**Thursday's 120.00 is Omar's lunch.** One row. Sitting next to Monday's 41.67, it makes Thursday look like the day everybody splashes out. It is one person buying fish.
-
-**And `4 of 10` for the big spenders is a real answer, not decoration.** Four people spent more than 40. Out of ten. If somebody quoted "four pupils spend over 40 rupees" without the ten, you would have no idea whether that is a lot.
+1. **`max(day_counts)` says `Wed`.** Alphabetically: Mon, Thu, Tue, Wed, and `Wed` is last. Three days are tied on 3 and Thursday has 1, so the honest answer is *"Mon, Tue and Wed, three each"*. The `key=` version says `Mon`, the first of the tied three.
+2. **Thursday's 120.00 is Omar's lunch.** One row. Sitting next to Monday's 41.67, it makes Thursday look like the day everybody splashes out. It is one person buying fish.
+3. **`4 of 10` for the big spenders is a real answer, not decoration.** Four people spent more than 40, out of ten. If somebody quoted "four pupils spend over 40 rupees" without the ten, you would have no idea whether that is a lot.
 
 ### Worked Example 2 — Ten race results (sport)
 
@@ -786,15 +796,12 @@ original row 0 is still Anika heat 1
 
 **Check one:** Anika's 13.4 + 13.1 + 13.6 = 40.1, and 40.1 ÷ 3 = 13.3666… → `13.37` ✔
 
-**Four things worth pausing on.**
+Four things worth pausing on.
 
-**You can group by a `True`/`False` field.** `group_count(results, "pb")` gives `{True: 5, False: 5}` — two buckets, and they add to 10. **The keys of a counting dictionary are whatever values were in that column**, and `True` is a perfectly good bucket name.
-
-**Priya's 11.90 is the fastest average on the board and she ran one race.** Sitting next to Rohit's 12.90 from three, it says she is the best runner. What it actually says is that she ran once, on one day, and was quick.
-
-**No `reverse=True` this time, on purpose.** For times, **smaller is better** — so smallest first is the ranking you want. Reversing it would have put the slowest race at the top and looked like a leaderboard. **Which way "best" points depends on the column**, and only you know which.
-
-**And `sorted` left the original alone.** Row 0 is still Anika, heat 1, exactly as typed. `sorted` builds a **new** list; it does not rearrange yours.
+1. **You can group by a `True`/`False` field.** `group_count(results, "pb")` gives `{True: 5, False: 5}`: two buckets, and they add to 10. The keys of a counting dictionary are whatever values were in that column, and `True` is a perfectly good bucket name.
+2. **Priya's 11.90 is the fastest average on the board and she ran one race.** Sitting next to Rohit's 12.90 from three, it says she is the best runner. What it actually says is that she ran once, on one day, and was quick.
+3. **There is no `reverse=True` this time, on purpose.** For times, smaller is better, so smallest first is the ranking you want. Reversing it would have put the slowest race at the top and looked like a leaderboard. Which way "best" points depends on the column, and only you know which.
+4. **`sorted` left the original alone.** Row 0 is still Anika, heat 1, exactly as typed. `sorted` builds a **new** list; it does not rearrange yours.
 
 ### Worked Example 3 — Eleven pieces of homework (school)
 
@@ -867,21 +874,18 @@ most pieces (right): Maths
 
 **Check one:** Maths is 85 + 45 + 72 = 202, and 202 ÷ 3 = 67.333… → `67.3` ✔
 
-**Four things worth pausing on, and the last one is uncomfortable.**
+Four things worth pausing on, and the last one is uncomfortable.
 
-**Three of the five groups got flagged.** `MIN_GROUP = 3` is doing genuine work here, not decorating. **On real data most groups are small** — that is normal, and it is exactly why the flag has to be in the code rather than in your head.
-
-**Art's 98.0% is the best average on the sheet and it is one painting.** If this went in a report card as *"strongest subject: Art"*, it would be a sentence built on one row.
-
-**`max(subject_counts)` says `Science` and `max(..., key=...)` says `Maths`** — and Maths and Science are **tied on 3**, so even the right version is only telling you half the truth. Two silent problems in one line, and neither of them raises anything.
-
-**And the thing that is not about Python.** `column(good, "subject")` printed `['Maths', 'Science', 'Science', 'English', 'English', 'Art']` — six subject names, and **`Science` appears twice.** That is not a bug: two *different pieces* of Science work scored 80 or more. But a reader glancing at that list would see six items and might read it as six subjects. **A list of one column, pulled out of the rows, has lost the thing that made each row different.** Print `6 of 11` beside it and at least the reader knows how many rows are behind those six names.
+1. **Three of the five groups got flagged.** `MIN_GROUP = 3` is doing genuine work here, not decorating. On real data most groups are small. That is normal, and it is why the flag has to be in the code rather than in your head.
+2. **Art's 98.0% is the best average on the sheet and it is one painting.** If this went in a report card as *"strongest subject: Art"*, it would be a sentence built on one row.
+3. **`max(subject_counts)` says `Science` and `max(..., key=...)` says `Maths`.** Maths and Science are tied on 3, so even the right version is only telling you half the truth. Two silent problems in one line, and neither of them raises anything.
+4. **This one is not about Python.** `column(good, "subject")` printed `['Maths', 'Science', 'Science', 'English', 'English', 'Art']`: six subject names, and `Science` appears twice. That is not a bug, because two *different pieces* of Science work scored 80 or more. But a reader glancing at that list might read it as six subjects. A list of one column, pulled out of the rows, has lost the thing that made each row different. Print `6 of 11` beside it and at least the reader knows how many rows are behind those six names.
 
 ---
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code. **And this week something changes: half of these bugs produce no error message at all.**
+This section lists the errors you will meet this week, with the message, what it means and the fix. Every message below came from really running a broken version of this week's code. Half of these bugs produce no error message at all.
 
 ### Break 1 — `+=` on a bucket that does not exist yet
 
@@ -900,20 +904,22 @@ Traceback (most recent call last):
 KeyError: 'Falcons'
 ```
 
-**What Python is telling you.** `+=` means *take what is there and add one.* On the first Falcon there is **nothing there** — no key called `Falcons` yet — so there is nothing to take.
+**What Python is telling you.** `+=` means *take what is there and add one.* On the first Falcon there is nothing there, because there is no key called `Falcons` yet, so there is nothing to take.
 
 **The fix.** `counts[bucket] = counts.get(bucket, 0) + 1`. The `.get` supplies the zero the first time.
 
-**And the thing to learn from this traceback rather than from the fix: there are TWO `File` lines.**
+The thing to learn from this traceback, more than the fix, is that there are **two** `File` lines:
 
 | `File` line | What it is |
 |---|---|
-| `lab15.py, line 10` | **who called** the function |
-| `records.py, line 19` | **where it actually broke** |
+| `lab15.py, line 10` | who called the function |
+| `records.py, line 19` | where it actually broke |
 
-> **Read the last `File` line.** The ones above it are the trail of who called who. Students read the *first* one, go to `lab15.py`, find nothing wrong with line 10 — because there **is** nothing wrong with line 10 — and lose five minutes. One question fixes it forever: **"which `File` line is the last one?"**
+> **📌 Remember:** read the last `File` line. The ones above it are the trail of who called who. Students often read the *first* one, go to `lab15.py`, find nothing wrong with line 10 (because there is nothing wrong with line 10), and lose five minutes. One question fixes it forever: "which `File` line is the last one?"
 
 ### Break 2 — brackets after a key function
+
+This line puts brackets after the key function:
 
 ```python
 ranked = sorted(squad, key=runs_of(), reverse=True)
@@ -929,7 +935,7 @@ TypeError: runs_of() missing 1 required positional argument: 'player'
 
 **What Python is telling you.** *"You tried to run `runs_of` yourself, and you gave it nothing to run on."*
 
-**The fix.** `key=runs_of`, **no brackets.** You are handing `sorted` the **tool**, and `sorted` will use it twelve times. Use it yourself first and you have nothing left to hand over.
+**The fix.** `key=runs_of`, with no brackets. You are handing `sorted` the tool, and `sorted` will use it twelve times. Use it yourself first and you have nothing left to hand over.
 
 The same mistake on `max` gives a different message for the same reason:
 
@@ -941,6 +947,7 @@ That is `key=counts.get()` instead of `key=counts.get`.
 
 ### Break 3 — dividing by an empty group
 
+This code filters for a team that does not exist, then divides:
 ```python
 owls = filter_by(squad, "team", "Kites")     # there are no Kites
 runs = column(owls, "runs")
@@ -957,9 +964,9 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 ```
 
-**What Python is telling you.** *"You divided by nought."* The filter matched **no rows**, so `len(runs)` is 0.
+**What Python is telling you.** *"You divided by nought."* The filter matched no rows, so `len(runs)` is 0.
 
-**The fix, and it is the whole point of the week.** **Print the row count before you divide, and do not divide if it is zero.**
+**The fix, and it is the whole point of the week:** print the row count before you divide, and do not divide if it is zero.
 
 ```python
 if len(runs) == 0:
@@ -968,10 +975,11 @@ else:
     print(f"average {sum(runs) / len(runs):.2f} from {len(runs)} rows")
 ```
 
-Notice that this is **the same discipline as printing the denominator.** If you were already printing the row count, you would have seen the `0` before you crashed.
+This is the same discipline as printing the denominator. If you were already printing the row count, you would have seen the `0` before you crashed.
 
 ### The whole clinic, for reference
 
+Use this table to look up an error message or a silent wrong answer.
 | What you see | What it means | The fix |
 |---|---|---|
 | `KeyError: 'Falcons'` with **two** `File` lines | "There is nothing in the Falcons bucket yet, so I can't add one to it." | `counts[bucket] = counts.get(bucket, 0) + 1`. And read the **last** `File` line |
@@ -991,29 +999,33 @@ Notice that this is **the same discipline as printing the denominator.** If you 
 > **🐞 If there is no error message at all:** you need two checks, and neither of them is "did it run?"
 >
 > 1. **Do the buckets add up?** `print(sum(counts.values()), "of", len(rows))` on the same line as the counts, every single time.
-> 2. **Does this answer make sense next to its row count?** An average of 104 from one row is arithmetically perfect and completely useless. `max(counts)` gives a wrong answer politely. **Neither of those is a bug Python can find for you.**
+> 2. **Does this answer make sense next to its row count?** An average of 104 from one row is arithmetically perfect and completely useless. `max(counts)` gives a wrong answer politely. Neither of those is a bug Python can find for you.
 
 ---
 
 ## 🎲 What We Did In Class
 
+This section is a record of the lesson, in order. Use it to catch up if you missed a part or want to retrace the steps.
+
 ### The pile, sorted by hand
 
-Twelve cards, and the question *"which team has the most players in it?"* — with the instruction to do it **with your hands**, not in your head. Everybody started dealing the cards into piles.
+Twelve cards, and the question *"which team has the most players in it?"* The instruction was to do it with your hands, not in your head. Everybody started dealing the cards into piles.
 
-Four piles. **Falcons 4, Tigers 4, Hawks 3, Owls 1.** Written on the board:
+Four piles: **Falcons 4, Tigers 4, Hawks 3, Owls 1.** Written on the board:
 
-```
+```text
 4 + 4 + 3 + 1 = 12
 ```
 
-And the reason to bother: **if the piles add up to twelve, no card fell on the floor. If they add up to eleven, one did, and nothing else would ever have told you.**
+The reason to bother: if the piles add up to twelve, no card fell on the floor. If they add up to eleven, one did, and nothing else would ever have told you.
 
-Then the sieve: *"show me only the players who scored more than fifty."* Five out, seven behind, five plus seven is twelve. And the two questions about the five that came out: **are they still cards?** Yes. **Do they still have all five labels?** Yes.
+Then the sieve: *"show me only the players who scored more than fifty."* Five out, seven behind, five plus seven is twelve. Then two questions about the five that came out: are they still cards? Yes. Do they still have all five labels? Yes.
 
 ### Two words, written up and left up
 
-```
+These two definitions stayed on the board all lesson.
+
+```text
 filter   keep only the rows that pass a test. Fewer rows, same shape.
 group    put every row in a bucket by the value of one field. Same rows, sorted into piles.
 ```
@@ -1034,7 +1046,7 @@ Traced out loud with a pencil, the first five cards, writing the dictionary out 
 | 4 | Sam | Falcons | 3 | `{'Falcons': 4}` |
 | 5 | Kabir | Tigers | 0 — never seen it | `{'Falcons': 4, 'Tigers': 1}` |
 
-**The first time you meet a bucket, there is nothing there, so `.get` hands you a zero and you write one.** That is the whole trick, and it is last week's tool doing the one job it was made for.
+The first time you meet a bucket, there is nothing there, so `.get` hands you a zero and you write one. That is the whole trick, and it is last week's tool doing the one job it was made for.
 
 ### Three files, and the first two-`File` traceback of the year
 
@@ -1046,7 +1058,7 @@ Traced out loud with a pencil, the first five cards, writing the dictionary out 
 KeyError: 'Falcons'
 ```
 
-And the rule, said and repeated: **the LAST `File` line is where it broke. The ones above are the trail of who called who.**
+And the rule, said and repeated: the LAST `File` line is where it broke. The ones above are the trail of who called who.
 
 ### The wrong answer that did not complain
 
@@ -1055,54 +1067,65 @@ biggest team (wrong): Tigers
 biggest team (right): Falcons
 ```
 
-Twenty seconds of believing `Tigers`, then reading the counts out loud — Falcons 4, Tigers 4, Hawks 3, Owls 1 — and sitting in the gap. `max` compared the **team names as words** and handed back the last one alphabetically. **It never looked at the numbers, and it never said so.**
+Twenty seconds of believing `Tigers`, then reading the counts out loud (Falcons 4, Tigers 4, Hawks 3, Owls 1) and sitting in the gap. `max` compared the team names as words and handed back the last one alphabetically. It never looked at the numbers, and it never said so.
 
 Then the tie: Falcons and Tigers both on 4. `max` gave one answer to a question with two answers.
 
 ### Six questions, six row counts
 
-Every answer written on the board **with its denominator**. `5 of 12`, never `5`. Q4 hand-checked with a calculator on paper — 48 + 12 + 77 + 5 = 142, ÷ 4 = 35.5 — and matched against the code.
+Every answer was written on the board with its denominator: `5 of 12`, never `5`. Q4 was hand-checked with a calculator on paper (48 + 12 + 77 + 5 = 142, ÷ 4 = 35.5) and matched against the code.
 
 ### The argument
 
-The four averages read out: 35.5, 33.5, 55.67, **104**. *"So which team is best at batting?"* — the Owls.
+The four averages were read out: 35.5, 33.5, 55.67, **104**. *"So which team is best at batting?"* The answer was the Owls.
 
-Then the row counts read out: 4, 4, 3, and **one**. Then the Owls line said again, **whole**: *"the Owls average 104 runs, from one player."*
+Then the row counts were read out: 4, 4, 3, and **one**. Then the Owls line was said again, whole: *"the Owls average 104 runs, from one player."*
 
-**Dividing a number by one does not turn it into an average. It turns it into the same number with a hat on.**
+Dividing a number by one does not turn it into an average. It turns it into the same number with a hat on.
 
-And the decision, which is a real one: **do you report it?** Print it with the count and let the reader judge · print it with a warning · or do not print it at all. All three are professional. What is not allowed is `Owls 104.00` next to `Falcons 35.50` with no counts.
+Then came the decision, which is a real one: do you report it? You can print it with the count and let the reader judge, print it with a warning, or not print it at all. All three are professional. What is not allowed is `Owls 104.00` next to `Falcons 35.50` with no counts.
 
 ### The box that was written first
 
-`MIN_GROUP = 3`, chosen and written on the answers sheet **before any answer appeared.** And the reason: *"if we'd picked it afterwards, we'd have been choosing a rule that happens to get rid of the number we didn't like."*
+`MIN_GROUP = 3` was chosen and written on the answers sheet before any answer appeared. The reason: *"if we'd picked it afterwards, we'd have been choosing a rule that happens to get rid of the number we didn't like."*
 
 ### The three Bug Log entries
 
-1. `KeyError: 'Falcons'` from `+=` — there was nothing in the bucket to add one to. Used `.get(bucket, 0) + 1`.
-2. **The two-`File`-line rule** — read the last one; the rest is the trail.
+1. `KeyError: 'Falcons'` from `+=`: there was nothing in the bucket to add one to. Used `.get(bucket, 0) + 1`.
+2. **The two-`File`-line rule:** read the last one; the rest is the trail.
 3. **A wrong answer with no error message.** `max(counts)` said Tigers. It compared words.
 
 ---
 
 ## 💬 Talk About It
 
+These are three questions to think about, or to argue about with a friend. Each has a hint underneath.
+
 **1. How many rows do you need before an average means anything?**
 
-*Hint:* there is no number, and anybody who gives you one without asking questions first is guessing. Start with what everybody **does** agree on: one row is not an average, and two is barely better. Then work out what it depends on. **How spread out the values are** — if every Falcon scored between 34 and 36, three of them tell you a great deal; if they scored 5, 12, 48 and 77, four of them barely tell you anything. **What the answer is used for** — an average deciding which snack to buy can rest on very little; one deciding who gets extra help in maths cannot, not because the maths changes but because **the cost of being wrong lands on a person.** And **whether the rows were picked fairly** — a hundred rows chosen badly are worse than five chosen well.
+*Hint:* there is no number, and anybody who gives you one without asking questions first is guessing. Start with what everybody agrees on: one row is not an average, and two is barely better. Then work out what it depends on.
+
+- **How spread out the values are.** If every Falcon scored between 34 and 36, three of them tell you a great deal. If they scored 5, 12, 48 and 77, four of them barely tell you anything.
+- **What the answer is used for.** An average deciding which snack to buy can rest on very little. One deciding who gets extra help in maths cannot, because the cost of being wrong lands on a person.
+- **Whether the rows were picked fairly.** A hundred rows chosen badly are worse than five chosen well.
 
 **2. `max` gave one answer to a question with two answers. Is that a bug?**
 
-*Hint:* be careful. `max` did exactly what it is defined to do, and it never claimed to be able to report a tie. So the bug is not in `max` — it is in the gap between the question you asked out loud (*"which team is biggest?"*) and the question you typed. Then the interesting half: **whose job is it to notice?** You could fix it in code — find the biggest count, then keep every key whose count equals it, which is two lines and no new syntax. Or you could look at the printed counts with your eyes, every time, which is what most people actually do. **Which of those two would still work in Week 34 with a hundred rows and a deadline?**
+*Hint:* be careful. `max` did exactly what it is defined to do, and it never claimed to be able to report a tie. So the bug is not in `max`. It is in the gap between the question you asked out loud (*"which team is biggest?"*) and the question you typed.
+
+Then the interesting half: whose job is it to notice? You could fix it in code: find the biggest count, then keep every key whose count equals it, which is two lines and no new syntax. Or you could look at the printed counts with your eyes, every time, which is what most people actually do. Which of those two would still work in Week 34 with a hundred rows and a deadline?
 
 **3. Dev scored 0 runs off 3 balls. Somebody else's card had no `runs` field and got filled in with `.get("runs", 0)`. Can you tell them apart afterwards?**
 
-*Hint:* look at what is in the column. Two zeros, side by side, and nothing anywhere records where either of them came from. Dev's is a **measurement** — somebody watched, he was out without scoring. The other is a **hole with a number in it**. Once the fallback is written down, the difference is gone and no amount of clever code recovers it. Then the practical question: **what could you have done instead?** (Leave it missing and count how many are missing. Or use a value that means "not known". Or keep a second field saying whether each value was measured or filled in.) And the uncomfortable one: **how many of the numbers you have ever seen in a chart were holes filled in by somebody?**
+*Hint:* look at what is in the column. Two zeros, side by side, and nothing anywhere records where either of them came from. Dev's is a **measurement**: somebody watched, and he was out without scoring. The other is a **hole with a number in it**. Once the fallback is written down, the difference is gone, and no amount of clever code recovers it.
+
+Then the practical question: what could you have done instead? (Leave it missing and count how many are missing. Or use a value that means "not known". Or keep a second field saying whether each value was measured or filled in.) And the uncomfortable one: how many of the numbers you have ever seen in a chart were holes filled in by somebody?
 
 ---
 
 ## ⚠️ Don't Get Tricked
 
+This section lists four wrong ideas that sound sensible. Each one shows what people say, and what is actually true.
 ### Trick 1 — "filtering deletes the rows"
 
 ![A filter builds a new list. The table it came from is untouched.](../figures/fig-w15-10-tricked-filter-does-not-delete.svg)
@@ -1112,7 +1135,7 @@ And the decision, which is a real one: **do you report it?** Print it with the c
 |---|---|
 | "I filtered for Tigers, so the other eight rows are gone — I'd better not run it twice." | `filter_by` **builds a new list** and hands it back. `squad` still has all twelve records afterwards. Run it as many times as you like. |
 
-Prove it in one line, and it is worth doing rather than believing:
+Prove it with this block. It is worth doing rather than just believing:
 
 ```python
 tigers = filter_by(squad, "team", "Tigers")
@@ -1124,6 +1147,8 @@ print("above 50:", len(big), " 50 or under:", len(small), " total:", len(big) + 
 print("squad rows still:", len(squad))
 ```
 
+Run it and compare the four lines:
+
 ```text
 tigers rows: 4
 squad rows : 12
@@ -1131,7 +1156,7 @@ above 50: 5  50 or under: 7  total: 12
 squad rows still: 12
 ```
 
-**Twelve, before and after, every time.** This matters more than it sounds: people who think filtering is destructive become **afraid to run things twice**, and somebody who is afraid to experiment has stopped learning.
+Twelve, before and after, every time. This matters more than it sounds. People who think filtering is destructive become afraid to run things twice, and somebody who is afraid to experiment has stopped learning.
 
 ### Trick 2 — "`max(counts)` gives me the biggest count"
 
@@ -1139,9 +1164,9 @@ squad rows still: 12
 |---|---|
 | `max({'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1})` → `4`, or `Falcons`. | It gives **`Tigers`** — the biggest **key**, judged as text, last in the alphabet. **The counts are never looked at.** You need `max(counts, key=counts.get)`. |
 
-It is the most dangerous line in this week's code **precisely because it never complains.**
+It is the most dangerous line in this week's code because it never complains.
 
-And if you want the biggest **number** rather than the biggest key, that is a third thing again: `max(counts.values())` → `4`. **Three similar-looking lines, three different answers.** Say which one you want out loud before you type it.
+If you want the biggest **number** rather than the biggest key, that is a third thing again: `max(counts.values())` → `4`. Three similar-looking lines, three different answers. Say which one you want out loud before you type it.
 
 ### Trick 3 — "the group with the biggest average is the best group"
 
@@ -1157,7 +1182,7 @@ The reframe that works: *your class averaged 62% on a test. Another class has on
 |---|---|
 | "The buckets added up to twelve, so the grouping is correct." | The sum check catches **dropped rows**. It does **not** catch a row that went into the *wrong* bucket — because that row is still counted, just somewhere else. |
 
-Here is a real one. One record was typed with a trailing space: `"Tigers "` instead of `"Tigers"`.
+Here is a real one. One record was typed with a trailing space: `"Tigers "` instead of `"Tigers"`. The grouping printed this:
 
 ```text
 {'Falcons': 4, 'Tigers': 3, 'Tigers ': 1, 'Hawks': 3, 'Owls': 1}
@@ -1165,14 +1190,15 @@ rows accounted for: 12 of 12
 Tigers bucket says: 3
 ```
 
-**The sum check passes.** 4 + 3 + 1 + 3 + 1 = 12. Every row is accounted for. And the Tigers have quietly lost a player, because there are now **five buckets where you expected four**, and the extra one is invisible unless you read the keys.
+The sum check passes: 4 + 3 + 1 + 3 + 1 = 12. Every row is accounted for. And the Tigers have quietly lost a player, because there are now five buckets where you expected four, and the extra one is invisible unless you read the keys.
 
-**So the check is really two checks:** do the buckets add up, **and** are there the number of buckets you expected? (Cleaning up stray spaces and capitals properly is Week 24. Noticing them is this week.)
+So the check is really two checks. Do the buckets add up, **and** are there the number of buckets you expected? (Cleaning up stray spaces and capitals properly is Week 24. Noticing them is this week.)
 
 ---
 
 ## 🌍 Where You've Seen This
 
+Filtering, grouping and row counts show up in everyday apps and news. Here are seven places.
 1. **Every "filter" panel on a shopping site.** Tick *under ₹500* and *in stock* and the page says **"37 results"** — a filter and its row count, side by side, exactly as you have been made to write them.
 2. **A playlist's "sort by" button.** Click *most played* and the whole row moves — title, artist and length all travel together. That is `sorted` with a key function, and the reason nothing gets scrambled is that it moves records, not values.
 3. **The bar chart on any election night.** Seats grouped by party and counted. And the thing the good broadcasters always print underneath: **how many results are in so far.** That is the row count, and a party leading on 3 declared seats is the Owls.
@@ -1185,7 +1211,9 @@ Tigers bucket says: 3
 
 ## 🧭 Where This Fits
 
-Still the same gold box — third week inside it. You already have a table; this week you learn the two
+This section shows where this week sits on the course map.
+
+Still the same gold box, third week inside it. You already have a table; this week you learn the two
 moves that get answers out of one, and the rule that comes with them: say how many rows every answer is
 built on, every single time.
 
@@ -1210,6 +1238,7 @@ still dashed, and the line across the middle says why: each stage feeds the next
 
 ## 🔑 Remember This
 
+These are the nine things to keep from this week. The syntax card after them is a quick reference to copy from.
 - **A filter keeps rows that pass a test.** What comes out is still records with all their labels — **fewer rows, same shape.** And it never touches the original.
 - **Grouping throws nothing away.** One bucket per value, and **the buckets must add up to the row count.** If they do not, you dropped a row.
 - **The one line to memorise:** `counts[bucket] = counts.get(bucket, 0) + 1`. The `.get` supplies the zero the first time you meet a bucket. `+=` cannot, and gives you a `KeyError`.
@@ -1221,6 +1250,8 @@ still dashed, and the line across the middle says why: each stage feeds the next
 - **Decide the minimum group size before you look at the answers.** A rule chosen afterwards is a rule chosen to get the answer you already wanted.
 
 ### Syntax reminder card
+
+All of this week's syntax in one block:
 
 ```python
 # FILTER, exact match - as a reusable tool
@@ -1267,6 +1298,8 @@ if len(rows) < MIN_GROUP:
 
 ## 📓 New Words
 
+These are the five words from this week, drawn and defined.
+
 ![This week's five words as pictures](../figures/fig-w15-6-vocab-icons.svg)
 *Figure 15.8 — This week's five words, drawn.*
 
@@ -1282,7 +1315,7 @@ if len(rows) < MIN_GROUP:
 
 ## 📤 Your Homework
 
-Go to **[the Week 15 workbook](../workbook/week-15.md)**. About **60 minutes** in total.
+This section says what to do next and how long it should take. Go to **[the Week 15 workbook](../workbook/week-15.md)**. About **60 minutes** in total.
 
 | Section | What to do | Time |
 |---|---|---|
@@ -1292,13 +1325,11 @@ Go to **[the Week 15 workbook](../workbook/week-15.md)**. About **60 minutes** i
 | **Fix the Broken Program** | A canteen report with three planted bugs — one syntax, one crash, one silent | 10 min |
 | **Build It** | `filter_by()` and `group_count()` in your own `records.py`, then six questions | 15 min |
 
-**Three things I am marking hardest.**
+Three things I am marking hardest:
 
-**Is the key an *argument*?** `def group_count(rows):` with `"genre"` written **inside** the function is the defect that matters. If your function only works on your own table, you have written an answer. **I want a tool.** Next week points these same functions at a file on disk, and a hard-coded key will break it.
-
-**Does every single answer carry its row count?** Not `183 plays`. **`183 plays, from 5 songs`.** Every one, including the ones where it feels silly and obvious. **I will hand back a page that is missing one.** Also print the sum check: after you group, add the buckets up and print that they come to the number of rows you started with.
-
-**One sentence: which of your six answers do you trust least, and why?** Not *"they're all fine"* — pick one. If one of your categories has only one or two rows in it, that is almost certainly your answer, and I want you to say so **in your own words** — and then tell me what you would do about it. Full marks needs three things: **which answer**, **its row count**, and **what a reader would wrongly conclude.**
+1. **Is the key an *argument*?** `def group_count(rows):` with `"genre"` written inside the function is the defect that matters. If your function only works on your own table, you have written an answer. I want a tool. Next week points these same functions at a file on disk, and a hard-coded key will break it.
+2. **Does every single answer carry its row count?** Not `183 plays`, but `183 plays, from 5 songs`. Every one, including the ones where it feels silly and obvious. I will hand back a page that is missing one. Also print the sum check: after you group, add the buckets up and print that they come to the number of rows you started with.
+3. **One sentence: which of your six answers do you trust least, and why?** Not *"they're all fine"*; pick one. If one of your categories has only one or two rows in it, that is almost certainly your answer. Say so in your own words, and then say what you would do about it. Full marks needs three things: which answer, its row count, and what a reader would wrongly conclude.
 
 > **💡 Try this:** get to your six answers, then change one number in one record — one you know is a lie — and run the whole thing again. **Which of your six answers moved the most?** That is your most fragile answer, and finding it this way takes ninety seconds and tells you something no amount of staring at code will.
 

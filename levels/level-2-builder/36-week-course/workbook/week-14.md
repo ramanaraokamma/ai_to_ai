@@ -121,6 +121,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for practising how to read a list of dictionaries: what each expression gives, and how a loop walks through it.
+
 For A1 to A5, use the twelve-record `squad` from the chapter.
 
 **A1. What does each expression give you, and what *kind* of thing is it?** The kinds are: **the whole table**, **one record**, **one value**, **a plain list**.
@@ -208,6 +210,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing your own code: pulling out a column, printing tables, and building a dataset of your own.
 
 Use the twelve-record `squad` for B1 to B4.
 
@@ -325,6 +329,8 @@ ________________________________________________________________
 ---
 
 ## 🐞 Fix the Broken Program
+
+This page is for practising how to find bugs by reading the evidence Python gives you.
 
 Here is `roster.py`, which is supposed to print a numbered table of five club members. It has **three** bugs: one that stops Python reading the file at all, one that stops it partway through, and one that produces **no error whatsoever**.
 
@@ -448,6 +454,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This page is for practising how to reach one cell in a table, and how to say what Python does with each lookup.
+
 ### Coordinates
 
 Here is the twelve-row table, printed:
@@ -502,7 +510,7 @@ Here is the twelve-row table, printed:
 
 **Part D — the ragged record hunt.** Somebody hands you a **four**-record table. One record has `Team` with a capital T. One record is missing `balls` altogether. You are not allowed to read all twenty values.
 
-Here is the one loop you are allowed to run:
+Here is the one loop you are allowed to run. Run it on the four-record table:
 
 ```python
 for position, player in enumerate(squad):
@@ -535,6 +543,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions are for thinking about how a table is designed. Write full sentences.
 
 **T1.** There is **no header row.** Every record carries its own five labels, so the column names are stored twelve times instead of once. **Is that a good design or a bad one?**
 
@@ -581,6 +591,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+This page is for building your own dataset in code, step by step, and printing it as a table.
 
 ### Part 1 — Twelve records of your own
 
@@ -701,6 +713,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing the table you built, so you can name its parts.
+
 Draw **your own twelve-row table**. Rule five columns, write your column names in the top row, and number the rows down the left — **starting at 0**.
 
 ![Draw It frame for Week 14](../figures/fig-w14-9-draw-frame.svg)
@@ -719,6 +733,8 @@ Draw **your own twelve-row table**. Rule five columns, write your column names i
 ---
 
 ## 📊 Self-Check
+
+This page is for checking what you can do now. Tick one box on each row.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -752,6 +768,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished the pages above. Do not open it first.
 
 <details>
 <summary>Check your answers</summary>

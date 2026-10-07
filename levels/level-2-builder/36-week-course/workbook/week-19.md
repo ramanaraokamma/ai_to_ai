@@ -157,6 +157,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading grids and axis lines on paper, without running anything.
+
 **A1. Fill in the whole table without running anything.** The grid is:
 
 ```python
@@ -284,7 +286,9 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Write It
 
-Every one of these uses the rainfall grid:
+This set is for writing short numpy lines and one whole program yourself. Most tasks use the rainfall grid below.
+
+Type this at the top of your file:
 
 ```python
 import numpy as np
@@ -524,6 +528,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+Two puzzles about the margins of a grid: the row means and the column means.
+
 ### Part 1 — The margin detective
 
 Somebody has thrown away a 2-row, 3-column grid and left only its margins and two cells. Rebuild the grid.
@@ -598,6 +604,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions are for writing in full sentences. There is no single right answer.
+
 **T1.** Last week, almost every mistake you made stopped the program and printed a traceback. This week's headline mistake prints a tidy answer and says nothing at all. **Write a paragraph about what changes for you now.** What does "my code ran" prove, and what does it not prove? What do you have to do differently from today?
 
 ________________________________________________________________
@@ -625,6 +633,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It — The Rainfall Grid, Properly
+
+This page walks you through `rainfall.py` in a fixed order: pen first, code second, then compare.
 
 **Order matters. The pen work comes first, and it is a third of the marks.**
 
@@ -721,7 +731,15 @@ Draw your **own** grid — anything with rows, columns and numbers in it. Goals 
 ![Draw It frame for Week 19](../figures/fig-w19-10-draw-frame.svg)
 *Figure W19.2 — Your grid, your two margins, and one hand-check in pen.*
 
-**What a good answer looks like:** a grid with a name at the top of every column and down the side of every row; a **margin column** on the right with the **right number of boxes in it** — one per row — labelled `axis=1`; a **margin row** underneath with one box per column, labelled `axis=0`; a corner box; and **one** of the margin boxes filled in **in pen**, with the addition and the division written out beside it. The label that earns the marks is not "axis 0 = rows". It is *"axis=0 eats the rows, so these answers are one per column."*
+**What a good answer looks like:**
+
+- a grid with a name at the top of every column and down the side of every row
+- a **margin column** on the right with the **right number of boxes in it** — one per row — labelled `axis=1`
+- a **margin row** underneath with one box per column, labelled `axis=0`
+- a corner box
+- **one** of the margin boxes filled in **in pen**, with the addition and the division written out beside it
+
+The label that earns the marks is not "axis 0 = rows". It is *"axis=0 eats the rows, so these answers are one per column."*
 
 **How many rows has your grid got?** ______  **How many columns?** ______
 

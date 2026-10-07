@@ -24,6 +24,8 @@
 
 ## 🪝 Start Here
 
+This section lets you meet a list with paper cards before you meet it in code.
+
 You need four cards. Bits of paper will do. Write one number on each, big and dark:
 
 ```text
@@ -84,6 +86,8 @@ So what should a computer do? Guess? Hand you the last one? Hand you zero? **Mak
 ---
 
 ## 🧠 The Big Idea
+
+This section builds up lists one idea at a time: making one, opening a slot, counting, adding, and the error.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
@@ -372,6 +376,8 @@ There is a much nicer way to walk a list, and it is **next week's** syntax, on p
 
 ## 💻 Type This
 
+You will build one program and run it after every step.
+
 One file, `week11_list_surgery.py`, built in five steps, with two mistakes made on purpose.
 
 ### Step 1 — make a list
@@ -605,6 +611,8 @@ IndexError: list index out of range
 ---
 
 ## 🔍 Worked Examples
+
+These three programs use lists on food, sport and school marks. Read each program, then its output.
 
 ### Worked Example 1 — The snack menu (food)
 
@@ -911,6 +919,8 @@ AttributeError: 'list' object has no attribute 'add'
 
 ## 🎲 What We Did In Class
 
+This section replays the class, step by step, so you can follow it if you were away.
+
 *If you missed it, all of this works at home with four bits of paper.*
 
 ### Pick up card number two
@@ -1006,13 +1016,23 @@ steps = [4200, 9100, 6350, 12040, 3300, 8700, 15200]   # Mon..Sun, slots 0..6
 
 ## 💬 Talk About It
 
+These are three questions to talk through with a partner or a parent. Each has a hint.
+
 **1. "Why does counting start at 0? It's stupid."** *(Answer this honestly: people who do this for a living have argued about it for fifty years.)*
 
-*Hint:* start with the good reason, because it is real — the index is the **distance** from the start, so the first item is zero steps along, and all the arithmetic comes out cleaner: the last index is `len - 1`, and you never need a stray `+1` sprinkled through your loops. A computer scientist called Edsger Dijkstra wrote a short and slightly grumpy note in 1982 arguing exactly this, and most languages since have agreed with him. **Now go and find the other side**, because it exists: in MATLAB, in R, in Lua, in Fortran and in Julia — all used by professionals doing real work — the first item is number **1**, because those languages were designed for people who think in ordinary counting, and their users find zero-based indexing baffling for exactly as long as you will. There are real bugs that only exist because of zero, and real bugs that only exist because of one, and nobody honest can tell you which pile is bigger. **The truthful answer: Python chose zero, the choice has a good reason behind it, and reasonable people picked differently. What you cannot do is argue with the language you are typing into.**
+*Hint:* start with the good reason, because it is real. The index is the **distance** from the start, so the first item is zero steps along, and all the arithmetic comes out cleaner: the last index is `len - 1`, and you never need a stray `+1` sprinkled through your loops.
+
+A computer scientist called Edsger Dijkstra wrote a short and slightly grumpy note in 1982 arguing exactly this, and most languages since have agreed with him.
+
+**Now go and find the other side**, because it exists. In MATLAB, in R, in Lua, in Fortran and in Julia, the first item is number **1**. Professionals use all of them for real work. Those languages were designed for people who think in ordinary counting, and their users find zero-based indexing baffling for exactly as long as you will.
+
+There are real bugs that only exist because of zero, and real bugs that only exist because of one, and nobody honest can tell you which pile is bigger. **The truthful answer: Python chose zero, the choice has a good reason behind it, and reasonable people picked differently. What you cannot do is argue with the language you are typing into.**
 
 **2. "Is `scores[-1]` slower, because it has to count backwards?"**
 
-*Hint:* guess first, then think about what a list must know about itself. It knows how long it is **at all times** — that is how `len` is instant. So what does the computer have to do to find `scores[-1]`? Now push it: reading any slot of a list takes the same time whether it is the first, the last, or the middle of a list with a million things in it. **What would have to be true about how a list is stored for that to be possible?** *(It has to be able to jump straight to a position, rather than walking along. Which is also why adding on the end is cheap and adding at the front is not.)*
+*Hint:* guess first, then think about what a list must know about itself. It knows how long it is **at all times** — that is how `len` is instant. So what does the computer have to do to find `scores[-1]`?
+
+Now push it: reading any slot of a list takes the same time whether it is the first, the last, or the middle of a list with a million things in it. **What would have to be true about how a list is stored for that to be possible?** *(It has to be able to jump straight to a position, rather than walking along. Which is also why adding on the end is cheap and adding at the front is not.)*
 
 **3. "What would break if somebody appended an eighth day to `steps`?"**
 
@@ -1021,6 +1041,8 @@ steps = [4200, 9100, 6350, 12040, 3300, 8700, 15200]   # Mon..Sun, slots 0..6
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four wrong ideas about lists, each with the right version beside it.
 
 ### Trick 1 — "`len(scores)` gives me the last slot number"
 
@@ -1061,6 +1083,8 @@ Test it on your cards. Put the fifth card on the end and look at the first four:
 
 ## 🌍 Where You've Seen This
 
+You meet lists outside Python all the time. Here are seven places.
+
 1. **Any playlist.** One name, many songs, in order — and "skip to track 4" is exactly `songs[3]`, which is why the numbering on the screen and the numbering inside the code are almost never the same.
 2. **The photo roll on a phone.** One list. Take a photo and it gets **appended** to the end. Nothing already in there moves.
 3. **A shopping basket.** Add an item and it goes on the end. The basket keeps one name and grows.
@@ -1073,9 +1097,9 @@ Test it on your cards. Put the fifth card on the end and look at the first four:
 
 ## 🧭 Where This Fits
 
-Same gold tile as last week — stage two, first tile — but the thread strip along the bottom has
-changed, and it is worth noticing. Toolcraft has gone quiet. This week is not really about craft at
-all: it is about **how you represent many things at once**, which is an idea, not a technique.
+This section shows where this week sits in the whole course.
+
+It is the same gold tile as last week (stage two, first tile), but the thread strip along the bottom has changed. Toolcraft has gone quiet. This week is not really about craft at all: it is about **how you represent many things at once**, which is an idea, not a technique.
 
 ![The Level 2 pipeline in Week 11: still in stage two's first tile, now holding many values under one name](../figures/fig-w11-0-where-this-fits.svg)
 
@@ -1097,6 +1121,8 @@ is gold, and the one lit pill at the bottom is representation.*
 ---
 
 ## 🔑 Remember This
+
+These are the ideas to keep from this week, followed by a card of this week's syntax.
 
 - **A list is many values under one name, in order, in square brackets.** `[45, 0, 112, 67]`
 - **An index is how far from the start, not which one.** The first item is zero steps along, so it is `scores[0]`.
@@ -1153,6 +1179,8 @@ for i in range(len(scores)):      # i counts 0, 1, 2, 3, 4 -- exactly the valid 
 
 ## 📓 New Words
 
+These are the five words from this week.
+
 ![This week's five words as pictures](../figures/fig-w11-6-vocab-icons.svg)
 *Figure 11.7 — This week's five words, drawn.*
 
@@ -1182,7 +1210,13 @@ Go to **[the Week 11 workbook](../workbook/week-11.md)**. About **60 minutes** i
 
 **Predictions go in the box *before* you run.** If you run first you have turned a thinking exercise into a typing exercise and wasted your own evening. And it will be obvious, because drills 4, 5, 6 and 7 are the interesting ones and **nobody gets all four right first time.**
 
-**Drill 12 is the one that gets read first.** Cause an `IndexError` on purpose. Then three things in the Bug Log: the **real traceback**, copied character for character — not "it said index error" — then the **one-line fix**, and then, where the marks are, **one sentence saying why counting from zero caused it.** Something like: *"there are eight items, so the slot numbers go 0 to 7, and I asked for 8, which is one past the end."*
+**Drill 12 is the one that gets read first.** Cause an `IndexError` on purpose. Then put three things in the Bug Log:
+
+1. The **real traceback**, copied character for character — not "it said index error".
+2. The **one-line fix**.
+3. Where the marks are: **one sentence saying why counting from zero caused it.**
+
+Something like: *"there are eight items, so the slot numbers go 0 to 7, and I asked for 8, which is one past the end."*
 
 **Drill 9 must not contain the number 7.** It says "print the new last item without using the number 7", and the whole point is that `steps[-1]` is the answer that keeps working. `steps[7]` is right today and misses the lesson.
 

@@ -59,6 +59,8 @@ That is a bigger deal than it sounds. It is the difference between a machine tha
 
 ## 🧠 The Big Idea
 
+This section explains the five ideas behind the week, one at a time. Each idea has a plain explanation, an analogy and a concrete version.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. A question with only two answers
@@ -118,11 +120,17 @@ True
 False
 ```
 
-**Getting all eight right means the exercise was too easy.** Three are worth stopping on.
+**Getting all eight right means the exercise was too easy.** Three lines are worth stopping on.
 
-**Line 2. `12 > 12` is `False`.** "Greater than" does not include equal. If you got that wrong you are in extremely good company, because that one mistake sits behind more bugs than almost anything else in programming. If you want "greater than or the same as", you have to say `>=`.
+**Line 2. `12 > 12` is `False`.** "Greater than" does not include equal. If you got that wrong you are in good company, because that one mistake sits behind more bugs than almost anything else in programming.
 
-**Line 7. `"apple" < "banana"` is `True`.** Comparisons work on text too, and they compare alphabetically — near enough. Strictly, Python compares character by character using each character's number in a big standard table, which means **all capital letters sort before all small letters**. So `"Zebra" < "apple"` is *also* `True`, which surprises everybody.
+If you want "greater than or the same as", you have to say `>=`.
+
+**Line 7. `"apple" < "banana"` is `True`.** Comparisons work on text too, and they compare alphabetically — near enough.
+
+Strictly, Python compares character by character using each character's number in a big standard table, which means **all capital letters sort before all small letters**.
+
+So `"Zebra" < "apple"` is *also* `True`, which surprises everybody.
 
 **Line 8. `"cat" == "Cat"` is `False`.** Case matters, always. This will bite you the first time you compare something a human typed: they will type `Yes` and your program will be looking for `yes`.
 
@@ -194,9 +202,9 @@ Report finished.
 
 **One line.** Two of them vanished, and nothing was deleted.
 
-The anatomy, named piece by piece:
+Here is the anatomy of an `if`, named piece by piece:
 
-```
+```text
         if temperature > 37.5:
         ▲        ▲          ▲
         │        │          └── the COLON. It means "the block starts on the next line."
@@ -239,9 +247,12 @@ That is why indentation is not decoration. Put it back.
 ![Indentation decides what the if owns](../figures/fig-w05-2-indentation-owns-the-block.svg)
 *Figure 5.4 — Same four instructions, both times. Only the fence moved — and the right-hand version prints nothing at all for an eight-year-old.*
 
-**How many spaces?** Python only requires that every line in one block uses **the same** amount. One would work. Eleven would work. **Four is the convention that essentially all Python in the world uses**, and your editor will do it for you when you press Enter after a colon — let it. The rule to learn is not "count four spaces", it is **"press Enter after the colon and start typing."**
+**How many spaces?** Python only requires that every line in one block uses **the same** amount. One would work. Eleven would work. **Four is the convention that essentially all Python in the world uses.** Your editor will do it for you when you press Enter after a colon — let it.
 
-> **⚠️ Watch out:** three spaces on one line and four on the next is an error, and **the error message will not use the word "spaces".** When an indentation error appears, stop reading the words and look at the **left edge** of the file. Cover the code with a sheet of paper so only the first four characters of each line show. The problem becomes visible in about a second.
+The rule to learn is not "count four spaces", it is **"press Enter after the colon and start typing."**
+
+> **⚠️ Watch out:** three spaces on one line and four on the next is an error, and **the error message will not use the word "spaces".** When an indentation error appears, stop reading the words and look at the **left edge** of the file.
+> Cover the code with a sheet of paper so only the first four characters of each line show. The problem becomes visible in about a second.
 
 ### 4. `else`, and why both branches always exist
 
@@ -320,7 +331,7 @@ print(f"Band  : {band}")      # runs every time - it is not indented
 print(f"Price : {price} rupees")
 ```
 
-Five real runs:
+Here are five real runs of this program. Each row shows what to type and what came back.
 
 | Type this | Real output |
 |---|---|
@@ -418,7 +429,9 @@ SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?
 
 **Three things, in this order.**
 
-**One: where is the "How old are you?" question?** It didn't ask. It didn't run at all. **Not one single line of that program executed.** That is what a `SyntaxError` means — Python couldn't even *read* the file, so it never got as far as doing anything. Every other error you have seen happened partway through a running program. This one happens before the start.
+**One: where is the "How old are you?" question?** It didn't ask. It didn't run at all. **Not one single line of that program executed.**
+
+That is what a `SyntaxError` means. Python couldn't even *read* the file, so it never got as far as doing anything. Every other error you have seen happened partway through a running program. This one happens before the start.
 
 **Two: read me the last line.** `SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?`
 
@@ -449,7 +462,7 @@ Band  : child
 Price : 120 rupees
 ```
 
-Bug Log row.
+Add a row to your Bug Log.
 
 ![Python points at the exact spot](../figures/fig-w05-4-syntaxerror-pinned.svg)
 *Figure 5.7 — A `SyntaxError` means nothing ran at all. The carets mark the spot; the last line names the fix.*
@@ -480,7 +493,7 @@ Why? Because the two print lines are inside the `else` block now, and `14 >= 13`
 
 **That is the second time in two weeks that the worst bug was the one that didn't crash.** Move them back to the margin.
 
-Bug Log row — and this one says **"no error message"** in the left-hand column.
+Add a Bug Log row — and this one says **"no error message"** in the left-hand column.
 
 ### Step 4 — the five-row test table
 
@@ -548,6 +561,8 @@ Price : 250 rupees
 ---
 
 ## 🔍 Worked Examples
+
+Here are three more programs with the same shape as `ticket_price.py`, each from a different part of life. Read each one, then look at the real runs under it.
 
 ### Worked Example 1 — Free delivery (food)
 
@@ -726,6 +741,8 @@ This is the first week where **the spaces at the front of a line can break your 
 
 ### Break 1 — one equals sign
 
+This program has one `=` where a question belongs. Type it and run it.
+
 ```python
 age = 12
 
@@ -752,6 +769,8 @@ SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?
 
 ### Break 2 — the block that never arrived
 
+This program has a colon but no indented line after it. Type it and run it.
+
 ```python
 age = 12
 
@@ -773,6 +792,8 @@ IndentationError: expected an indented block after 'if' statement on line 3
 Notice that the message names **line 3** as the cause while pointing at **line 4**. That is Python being helpful, not confusing: the promise was made on one line and broken on the next.
 
 ### Break 3 — comparing text with a number
+
+This program compares the answer to `input()` with a number. Type it and run it.
 
 ```python
 age = input("How old are you? ")     # BUG: no int()
@@ -821,6 +842,8 @@ TypeError: '>=' not supported between instances of 'str' and 'int'
 ---
 
 ## 🎲 What We Did In Class
+
+This section is a record of the class, so you can check your own notes against it.
 
 ### The Human if/else
 
@@ -880,6 +903,8 @@ Then `>=` became `>`, and **only the age-13 row changed** — 250 became 120. Fo
 
 ## 💬 Talk About It
 
+These are questions to argue about with a friend or a grown-up. Each one has a hint underneath.
+
 **1. "Python uses spaces where most languages use curly brackets. Is that a good idea?"**
 
 *Hint:* two honest halves. For it: in a bracket language you can lay code out so it *looks* like three lines are inside the `if` while the brackets say only one is — so the shape on the page can lie to you. Python makes that impossible. Against it: whitespace is invisible, and today you produced a bug with no error and no output that you could only find by covering the code with paper. Which invisible problem would you rather have? Programmers argue about this genuinely and permanently.
@@ -895,6 +920,8 @@ Then `>=` became `>`, and **only the age-13 row changed** — 250 became 120. Fo
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Each trick below is a belief that sounds right. Each table puts the wrong belief next to the right one.
 
 ### Trick 1 — "`>` and `>=` are basically the same"
 
@@ -930,6 +957,8 @@ Here is the real argument for it: if you *had* to write a condition on the `else
 ---
 
 ## 🌍 Where You've Seen This
+
+The `if` you learned this week is not only for classroom programs. Here are seven places it already works around you.
 
 1. **The "are you 13 or over?" box on every sign-up page.** One condition, two outcomes. Somebody wrote `age >= 13` and somebody else had to decide whether it was `>` or `>=`.
 2. **Free delivery over ₹500.** Exactly Worked Example 1, on a site you have used, including the slightly cruel *"spend ₹1 more"* message.
@@ -968,6 +997,8 @@ yet. The strip along the bottom is the seven threads this course keeps returning
 
 ## 🔑 Remember This
 
+These are the things to keep from this week, followed by a card you can copy into your notebook.
+
 - **A boolean is a value with only two possibilities:** `True` or `False`, capitalised.
 - **A comparison is a judge.** It looks at two values, reports a verdict, and changes nothing.
 - **`12 > 12` is `False`.** "Greater than" does not include equal. That's what `>=` is for.
@@ -979,6 +1010,8 @@ yet. The strip along the bottom is the seven threads this course keeps returning
 - **When nothing prints and there is no error, look at the left edge of the file, not at the words.**
 
 ### Syntax reminder card
+
+Every comparison and the full `if`/`else` shape, on one page:
 
 ```python
 print(12 >= 12)      # True     "or equal to" INCLUDES equal
@@ -1006,6 +1039,8 @@ print(f"{band}: {price}")     # at the margin = runs whichever way you went
 
 ![This week's five words as pictures](../figures/fig-w05-6-vocab-icons.svg)
 *Figure 5.9 — This week's five words, drawn.*
+
+These are the five words from this week. Use them in your own sentences when you talk about your code.
 
 | Word | What it means | Example |
 |---|---|---|

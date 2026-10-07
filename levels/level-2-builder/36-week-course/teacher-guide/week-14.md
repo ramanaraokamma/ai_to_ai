@@ -96,7 +96,7 @@ print("one cell:", squad[0]["runs"])  # list index FIRST, then dict key
 
 **`squad[0]["runs"]`** → `48`. **This is the line that trips everybody**, so read it strictly left to right, like a sentence:
 
-```
+```text
 squad                 →  the whole list (the table)
 squad[0]              →  one record  (a dict)          {'name': 'Asha', ...}
 squad[0]["runs"]      →  one field   (a value)         48
@@ -207,7 +207,7 @@ highest   : 104
 
 Read it **right to left, then left**:
 
-```
+```text
 [ r["runs"]        for r in squad ]
   └──── 3 ────┘    └───── 1,2 ────┘
 
@@ -375,6 +375,8 @@ The card version of this lesson is genuinely excellent, because the whole idea *
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the plan for the lesson: four segments, each with what to say and what to watch for.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Fan the Cards Out | 7 | 7 | Five cards stacked, then fanned into a column. That is a table. |
@@ -469,7 +471,7 @@ Let them think. It is a genuinely good question and the answer is surprising.
 
 Write this on the board and leave it up all lesson:
 
-```
+```text
 squad                 ->  the whole list  (the table)
 squad[0]              ->  one record      (a dict)
 squad[0]["runs"]      ->  one field       (48)
@@ -690,6 +692,8 @@ Full instructions in the next section. In the lesson flow:
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the student's turn step by step, so you can run it without improvising.
 
 ### Setup
 
@@ -945,6 +949,8 @@ The honest summary: **the shape you choose should match the question you ask mos
 
 ## 🧭 Differentiation
 
+Use this section to adjust the lesson for a student who is struggling, flying or not engaging.
+
 ### If the student is struggling
 
 **Cut:** `.items()`. It is the least load-bearing of this week's four tools; nothing in Week 15 needs it.
@@ -1040,6 +1046,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This is what to say when you set the homework at the end of the lesson.
 
 **Say this:**
 
@@ -1590,7 +1598,15 @@ These were in the earlier key and are still correct; use them aloud, not for mar
 
 ## 🔮 Next Week Preview
 
-Next week is a lab, and it is the week the table starts answering questions. Two moves, and between them they cover most of what anybody ever does with data. **Filtering** keeps only the rows that pass a test — *show me the players who scored more than fifty* — and what comes out is still rows, with all their labels, just fewer of them. **Grouping** puts every row into a bucket by the value of one field and counts the buckets — *how many players per team* — and the counts must add up to the number of rows or you have dropped something. The student will write both as reusable functions, `filter_by()` and `group_count()`, that work on any table and not just this one, which is Week 12's lesson arriving one level up. And then the sting: the Owls have exactly one member, so "the Owls average 104 runs" is really "Priya scored 104" wearing a statistician's hat. The student has to decide, out loud, whether to report it at all — which is Level 1's *"out of how many?"* coming back with a keyboard attached.
+This section tells you what next week builds on, so you can prepare today.
+
+Next week is a lab, and it is the week the table starts answering questions. Two moves, and between them they cover most of what anybody ever does with data.
+
+**Filtering** keeps only the rows that pass a test — *show me the players who scored more than fifty* — and what comes out is still rows, with all their labels, just fewer of them.
+
+**Grouping** puts every row into a bucket by the value of one field and counts the buckets — *how many players per team* — and the counts must add up to the number of rows or you have dropped something.
+
+The student will write both as reusable functions, `filter_by()` and `group_count()`, that work on any table and not just this one, which is Week 12's lesson arriving one level up. And then the sting: the Owls have exactly one member, so "the Owls average 104 runs" is really "Priya scored 104" wearing a statistician's hat. The student has to decide, out loud, whether to report it at all — which is Level 1's *"out of how many?"* coming back with a keyboard attached.
 
 **Prep early:** three things. **Keep `squad.py` exactly as it is** — next week starts by importing those twelve records into a new file, so if it runs today it will save fifteen minutes on Monday. **Check the homework's category column tonight**, not next week: if all twelve of the student's values in that column are different, grouping will produce twelve buckets of one and there will be nothing to discuss. One minute of editing now fixes it. And **keep the twelve cards**, because next week's activity starts by physically sorting them into piles by team and counting each pile — grouping done with hands before it is done with code.
 

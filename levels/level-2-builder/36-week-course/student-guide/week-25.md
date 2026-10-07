@@ -53,6 +53,8 @@ The line is the easy part. It is about eleven characters of typing. The words ar
 
 ## 🧠 The Big Idea
 
+This section explains the five ideas behind this week's chart, one at a time.
+
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
 ### 1. A figure is a sheet of paper. An axes is one frame ruled onto it.
@@ -95,7 +97,9 @@ fig, ax = plt.subplots(figsize=(6, 4))
 
 Every assignment you have written since Week 2 has looked like `name = value`. **This one has two names on the left of one equals sign, with a comma between them.**
 
-It works because `plt.subplots()` hands back **two things at once** — a sheet and a frame — and Python lets you catch two things in two boxes in one go. Read it out loud as: *"make a sheet and a frame; put the sheet in a box called `fig`, put the frame in a box called `ax`."*
+It works because `plt.subplots()` hands back **two things at once** — a sheet and a frame — and Python lets you catch two things in two boxes in one go.
+
+Read it out loud as: *"make a sheet and a frame; put the sheet in a box called `fig`, put the frame in a box called `ax`."*
 
 **The analogy.** Somebody hands you a clipboard and a pen at the same time, one in each of your hands. You do not need two trips.
 
@@ -117,7 +121,9 @@ AttributeError: 'tuple' object has no attribute 'plot'
 
 One name caught **both** things stuck together, so `ax` is now holding the pair, not the frame — and a pair cannot draw. That error is in "When It Breaks", and you will meet it for real.
 
-**The other new bit on that line.** `figsize=(6, 4)` is a **keyword argument**, met in Week 10. It says: make the sheet six inches wide and four inches tall. **Inches, not pixels** — matplotlib was built by people printing on paper. The round brackets with a comma are a **pair**, like a coordinate: width first, then height. It is not a list, and this year the difference does not matter to you at all. "A pair you are not going to change" is a complete explanation.
+**The other new bit on that line.** `figsize=(6, 4)` is a **keyword argument**, met in Week 10. It says: make the sheet six inches wide and four inches tall. **Inches, not pixels** — matplotlib was built by people printing on paper.
+
+The round brackets with a comma are a **pair**, like a coordinate: width first, then height. It is not a list, and this year the difference does not matter to you at all. "A pair you are not going to change" is a complete explanation.
 
 ### 3. Markers, and why an unmarked line is a small dishonesty
 
@@ -130,7 +136,9 @@ One name caught **both** things stuck together, so `ax` is now holding the pair,
 ![Markers show how much you really measured](../figures/fig-w25-3-markers-show-real-points.svg)
 *Figure 25.3 — The drawn line is identical in all three panels. Only the markers say whether it came from 4 measurements or 13.*
 
-**A concrete example.** A smooth line drawn through 4 points and a smooth line drawn through 400 points can be **pixel-for-pixel identical**. Look at Figure 25.3: the line is the same in all three panels. The middle panel came from four measurements. The right-hand one came from thirteen.
+**A concrete example.** A smooth line drawn through 4 points and a smooth line drawn through 400 points can be **pixel-for-pixel identical**. Look at Figure 25.3: the line is the same in all three panels.
+
+The middle panel came from four measurements. The right-hand one came from thirteen.
 
 Would you trust those two charts the same amount? Of course not. Four points and thirteen points are not the same evidence.
 
@@ -167,7 +175,9 @@ non-GUI backend, so cannot show the figure.
 
 The program finished. Nothing is broken. And no picture appeared anywhere.
 
-**The rule for this whole course: every chart calls `fig.savefig(...)`.** If a window also pops up, lovely. But the file on disk is the deliverable, and it works on every machine, including the ones with no screen at all — which is most of the computers in the world and all of the ones that run real data jobs overnight.
+**The rule for this whole course: every chart calls `fig.savefig(...)`.** If a window also pops up, lovely.
+
+But the file on disk is the deliverable, and it works on every machine, including the ones with no screen at all — which is most of the computers in the world and all of the ones that run real data jobs overnight.
 
 > **⚠️ Watch out:** this is where the biggest misunderstanding of the week lives. **A program that ran with no error is not the same as a chart that exists.** The question is never "did it error?" The question is **"where is the file?"**
 
@@ -181,7 +191,9 @@ The program finished. Nothing is broken. And no picture appeared anywhere.
 
 **The test:** if your title would sit equally happily on top of *any* chart of that data, it is doing no work and it goes back.
 
-**Axis label.** `"Score"` could be out of 10, out of 100, or a percentage. `"Score (points out of 100)"` cannot be misread. `"Distance"` could be metres or kilometres. **Units, in brackets, every time.** It costs four seconds and removes an entire species of misunderstanding.
+**Axis label.** `"Score"` could be out of 10, out of 100, or a percentage. `"Score (points out of 100)"` cannot be misread.
+
+`"Distance"` could be metres or kilometres. **Units, in brackets, every time.** It costs four seconds and removes an entire species of misunderstanding.
 
 **The analogy.** A title is the headline of a newspaper story. The axis labels are the small print that lets you check it.
 
@@ -202,7 +214,7 @@ The program finished. Nothing is broken. And no picture appeared anywhere.
 
 ## 💻 Type This
 
-Everything goes in your `level2` folder, alongside `myweek.py` from Week 21.
+In this section you build one chart step by step, then draw three charts from your own table. Everything goes in your `level2` folder, alongside `myweek.py` from Week 21.
 
 ### Step 0 — prove matplotlib is actually there
 
@@ -248,7 +260,9 @@ visits: 12
 
 **What the new lines do.**
 
-`import matplotlib.pyplot as plt` — fetch somebody else's code and give it a short nickname. Exactly the same trick as `import numpy as np` from Week 17 and `import pandas as pd` from Week 21. Read it as *"go into the matplotlib library, find the part called `pyplot`, and from now on let me call it `plt`."* **Everybody on Earth writes `plt`**, so when you search the internet in a panic, the code you find will match the code on your screen.
+`import matplotlib.pyplot as plt` — fetch somebody else's code and give it a short nickname. Exactly the same trick as `import numpy as np` from Week 17 and `import pandas as pd` from Week 21.
+
+Read it as *"go into the matplotlib library, find the part called `pyplot`, and from now on let me call it `plt`."* **Everybody on Earth writes `plt`**, so when you search the internet in a panic, the code you find will match the code on your screen.
 
 `visits = [...]` **runs over two lines**, and that is allowed. Once you open a square bracket, Python keeps reading until it finds the matching one. Use this. Twelve numbers on one 90-character line is unreadable, including by you, tomorrow.
 
@@ -331,11 +345,14 @@ saved visits.png
 
 **Now go and look in the folder.** There is a new file called `visits.png`. Open it. Actually open it — a chart you have not looked at is not finished.
 
-**What the new line does**, argument by argument:
+**What the new line does**, argument by argument.
 
 - **`fig.savefig`** — note it is `fig`, the sheet, not `ax`. You save the whole sheet, not one drawing on it.
 - **`"visits.png"`** — the filename. The `.png` matters, because matplotlib picks the file format from the extension. Leave it off and you get `visits.png` anyway, silently, which works and teaches you nothing.
-- **`dpi=120`** — **dots per inch**. Your sheet is 6 inches wide, so at 120 dpi the figure is 720 pixels across before cropping (`bbox_inches="tight"`, below, trims the white border, so your file comes out a little narrower, about 650). Bigger number, sharper picture, bigger file. `dpi=300` is print quality and gives about six times as many pixels (2.5 times as many across and 2.5 times as many down). Try `dpi=40` once, just to see what "too low" looks like.
+- **`dpi=120`** — **dots per inch**. Your sheet is 6 inches wide, so at 120 dpi the figure is 720 pixels across before cropping.
+  - `bbox_inches="tight"`, below, trims the white border, so your file comes out a little narrower, about 650.
+  - Bigger number, sharper picture, bigger file. `dpi=300` is print quality and gives about six times as many pixels (2.5 times as many across and 2.5 times as many down).
+  - Try `dpi=40` once, just to see what "too low" looks like.
 - **`bbox_inches="tight"`** — "crop off the empty white border, but do not cut off my labels". Without it, matplotlib saves a fixed 6 × 4 inch rectangle and a long axis label can run off the bottom and simply be **missing from the file**. Since the whole point of this week is that the labels *are* the chart, losing half of one is not a small problem. **Type it every single time.**
 
 ### The complete finished program
@@ -429,7 +446,9 @@ screen  max  : 180
 steps   max  : 11200
 ```
 
-Three files. **Three different names** — and that is the bit people get wrong. If you copy the first chart and edit it, the one string that does not *look* like it needs changing is the filename in `savefig`, so all three charts quietly write to the same file, each one flattening the last. The terminal says `saved` three times. Nothing is wrong. There is one file where there should be three.
+Three files. **Three different names** — and that is the bit people get wrong.
+
+If you copy the first chart and edit it, the one string that does not *look* like it needs changing is the filename in `savefig`. Then all three charts quietly write to the same file, each one flattening the last. The terminal says `saved` three times. Nothing is wrong. There is one file where there should be three.
 
 **Check the folder, not the terminal.**
 
@@ -477,7 +496,9 @@ quietest day: 29 pizzas
 saved pizza_week.png
 ```
 
-**Check the title against the numbers.** Wednesday is day 3, at 31 pizzas. Saturday is day 6, at 96. And 96 ÷ 31 = 3.1, so "tripled" is honest. **That is what a title being checkable looks like** — the reader can hold your claim against your own axis and it survives.
+**Check the title against the numbers.** Wednesday is day 3, at 31 pizzas. Saturday is day 6, at 96. And 96 ÷ 31 = 3.1, so "tripled" is honest.
+
+**That is what a title being checkable looks like** — the reader can hold your claim against your own axis and it survives.
 
 **And what it does not tell you.** How many pizzas the shop *could* have made. Whether Saturday was a one-off or every Saturday. Whether the price changed. Seven days is a week, not a pattern.
 
@@ -517,7 +538,7 @@ best over : 19 runs
 saved cricket_overs.png
 ```
 
-**Count the markers.** There should be twelve. If you can only count eleven, one number fell out of one of the two lists — and you would have found that out from the seatbelt prints, because one would say 12 and the other 11.
+**Count the markers.** There should be twelve. If you can only count eleven, one number fell out of one of the two lists. The seatbelt prints would have caught it, because one would say 12 and the other 11.
 
 **And notice why a line is honest here.** The overs are in order, and the space *between* two overs is real time in a real match. That is what earns you the right to join the dots. Next week you will meet a chart where the x axis is **not** in order, and joining the dots turns out to be nonsense.
 
@@ -647,7 +668,7 @@ ValueError: x and y must have same first dimension, but have shapes (4,) and (3,
 
 ## 🎲 What We Did In Class
 
-If you missed it, here is the whole lesson. Most of the first half needs a pencil rather than a laptop.
+This section is the whole lesson, in case you missed it. Most of the first half needs a pencil rather than a laptop.
 
 ### The naked chart
 
@@ -655,7 +676,7 @@ A printed chart, face up on the table: a rising line with a small dip, two bare 
 
 Everybody writes "it went up", and then stops, because nothing else is available. Then the follow-up: *"what went up?"*
 
-Then three note cards, revealed one at a time — **pizzas sold**, **rainfall in mm**, **flu cases** — each of them fitting that identical line, and one of them an emergency.
+Then three note cards were revealed one at a time — **pizzas sold**, **rainfall in mm**, **flu cases** — each of them fitting that identical line, and one of them an emergency.
 
 Four questions were asked of that chart, and all four have the same shape of answer:
 
@@ -688,7 +709,9 @@ Then `fig.savefig(...)`, and watching `visits.png` appear in the folder window. 
 
 Three line charts from the Week 21 DataFrame — `homework_min`, `screen_min`, `steps` — each fully labelled, each saved.
 
-The planted bug: about half of everybody copies the first file, edits the plot line and the labels, and **forgets to change the filename in `savefig`**. So all three write to `myweek_homework.png`. The terminal says `saved` three times and there is one file.
+The planted bug: about half of everybody copies the first file, edits the plot line and the labels, and **forgets to change the filename in `savefig`**.
+
+So all three write to `myweek_homework.png`. The terminal says `saved` three times and there is one file.
 
 The instruction was not "check line 12". It was: **"show me your three files."** Obedient is not the same as correct.
 
@@ -706,21 +729,37 @@ One "what it shows" and one "what it does **not** tell you", per chart. The seco
 
 ## 💬 Talk About It
 
+Three questions to talk through with someone at home or in class. Each has a hint underneath to get you started.
+
 **1. A chart with a perfect title and perfect axis labels can still be misleading. How?**
 
-*Hint:* start by listing what the labels actually promise. A title says what you found; an axis label says what was measured and in what units. **Neither of them says anything about what was left out.** Suppose your library chart covered weeks 1 to 12 and the visits then collapsed in week 13 — the chart is still perfectly labelled and perfectly true, and the impression it gives is wrong. Now go further: who chose the twelve weeks? Who chose to chart *visits* rather than *books borrowed*? Every chart is somebody's argument, and labels tell you what is in the argument, not what was quietly left out of it. So: what could you add to a chart to make the leaving-out visible?
+*Hint:* start by listing what the labels actually promise. A title says what you found; an axis label says what was measured and in what units. **Neither of them says anything about what was left out.** Suppose your library chart covered weeks 1 to 12 and the visits then collapsed in week 13 — the chart is still perfectly labelled and perfectly true, and the impression it gives is wrong.
+
+Now go further: who chose the twelve weeks? Who chose to chart *visits* rather than *books borrowed*? Every chart is somebody's argument, and labels tell you what is in the argument, not what was quietly left out of it.
+
+So: what could you add to a chart to make the leaving-out visible?
 
 **2. Why does the course insist on `savefig` rather than `plt.show()`, when a window is obviously nicer to look at?**
 
-*Hint:* think about the three problems in §4, and then think about which of them is the *dangerous* one rather than the *annoying* one. Blocking is annoying. Not being handed in is annoying. **Silently producing nothing, with no error, on some computers** is dangerous, because it teaches you to distrust your own correct code. Then push on it from the other side: is there any situation where a window really is better? (Yes — when you are fiddling and want to see forty versions in a minute.) So what is the honest rule? Probably not "never show a window" but "**the file is the work; the window is a convenience**". Say why the order matters.
+*Hint:* think about the three problems in §4, and then think about which of them is the *dangerous* one rather than the *annoying* one. Blocking is annoying. Not being handed in is annoying. **Silently producing nothing, with no error, on some computers** is dangerous, because it teaches you to distrust your own correct code.
+
+Then push on it from the other side: is there any situation where a window really is better? (Yes — when you are fiddling and want to see forty versions in a minute.)
+
+So what is the honest rule? Probably not "never show a window" but "**the file is the work; the window is a convenience**". Say why the order matters.
 
 **3. `marker="o"` is eleven characters. Why does anybody leave it out?**
 
-*Hint:* be honest about what it looks like. With twelve close-together points, the dots genuinely do look like decoration, and a plain line looks cleaner and more "professional". So the reason people leave it out is that **the cost of leaving it out is invisible.** Nothing breaks. Nobody complains. The chart looks better. Now name what has actually been lost, precisely: the reader can no longer tell four measurements from four hundred, and neither can you, in a month. What other four-second checks have you already been given this year that are boring for exactly the same reason? *(Count what went in and what came out. Print the type. Print the shape.)* What do all of them have in common?
+*Hint:* be honest about what it looks like. With twelve close-together points, the dots genuinely do look like decoration, and a plain line looks cleaner and more "professional".
+
+So the reason people leave it out is that **the cost of leaving it out is invisible.** Nothing breaks. Nobody complains. The chart looks better.
+
+Now name what has actually been lost, precisely: the reader can no longer tell four measurements from four hundred, and neither can you, in a month. What other four-second checks have you already been given this year that are boring for exactly the same reason? *(Count what went in and what came out. Print the type. Print the shape.)* What do all of them have in common?
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that feel right. Each one is shown next to the version that is right.
 
 ### Trick 1 — "no error means it worked"
 
@@ -761,6 +800,8 @@ And the practical version of the same point: an unlabelled chart is not "80% fin
 
 ## 🌍 Where You've Seen This
 
+Charts with and without labels are all around you. Here are six places to spot them.
+
 1. **Your phone's battery screen.** A line over 24 hours, with the y axis in percent. Notice what it does *not* label: which apps, or what you were doing. The shape is there; the reason is not.
 2. **Every weather app.** Temperature over the next twelve hours, almost always with markers on the real forecast points and a smooth line between them — because the in-between values were never measured, they were guessed.
 3. **The graph in a news story about prices.** Look for the axis label. If it says "Price" with no units and no currency, somebody has saved themselves four seconds and cost you the ability to check.
@@ -796,6 +837,8 @@ gold has jumped a whole stage to the right for the first time since Week 19.*
 ---
 
 ## 🔑 Remember This
+
+The nine ideas to keep from this week, then a card with the whole syntax on it.
 
 - **A chart with no labels is a decoration.** The title and the two axis labels are what turn it into evidence.
 - **The figure is the sheet of paper; the axes is one frame ruled onto it.** Titles and labels belong to the frame. Saving belongs to the sheet.
@@ -845,6 +888,8 @@ print("saved twice, and there is ONE file")               # flattens chart 1
 
 ## 📓 New Words
 
+The five words you met this week, with an example of each.
+
 ![This week's five words as pictures](../figures/fig-w25-6-vocab-icons.svg)
 *Figure 25.7 — This week's five words, drawn.*
 
@@ -872,9 +917,8 @@ Go to **[the Week 25 workbook](../workbook/week-25.md)**. About **60 minutes** i
 
 **Two things are being marked, and the second one is the real one.**
 
-**Do three separate PNG files exist, with three different names?** Not "did it say saved". Open the folder. Count the files. Then **open all three pictures and look at them** — a chart you have not looked at is not finished.
-
-**Does every chart have a "what it does NOT tell you" sentence?** Not "it hides some stuff". Something specific enough that somebody could point at the missing thing. That sentence is the one that will be read first.
+1. **Do three separate PNG files exist, with three different names?** Not "did it say saved". Open the folder. Count the files. Then **open all three pictures and look at them** — a chart you have not looked at is not finished.
+2. **Does every chart have a "what it does NOT tell you" sentence?** Not "it hides some stuff". Something specific enough that somebody could point at the missing thing. That sentence is the one that will be read first.
 
 > **⚠️ Watch out:** if all three of your charts wrote to the same filename, you will not find out from the terminal. It will happily print `saved` three times. **Look in the folder.**
 

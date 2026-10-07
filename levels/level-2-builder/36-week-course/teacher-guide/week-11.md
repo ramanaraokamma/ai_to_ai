@@ -37,6 +37,8 @@ Observable evidence: a file that prints the same list eight different ways; a Bu
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is the background you need before you teach: the ideas, the traps and where to stop. Each idea comes with a short example and its printed output.
+
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
 **You do not need to have programmed before to teach this.** Read this once — about 20 minutes — then do the Prep Checklist.
@@ -52,9 +54,13 @@ score3 = 112
 # ... eighteen more lines ...
 ```
 
-And then, to add them up, twenty more lines. And when a twenty-first innings happens, you edit the program. This is not a small inconvenience — it is a wall. Every interesting thing in this course, from a table of pizza orders to the 150 iris flowers in Week 29, needs *many values under one name*.
+And then, to add them up, twenty more lines. And when a twenty-first innings happens, you edit the program.
+
+This is not a small inconvenience — it is a wall. Every interesting thing in this course, from a table of pizza orders to the 150 iris flowers in Week 29, needs *many values under one name*.
 
 > **List** — an ordered collection of values stored in a single variable, written in square brackets with commas between the items.
+
+Here are some lists to type and run:
 
 ```python
 scores = [45, 0, 112, 67]              # four values, one name
@@ -64,7 +70,7 @@ empty = []                             # a list with nothing in it yet
 
 > **Element** — one of the values inside a list. `scores` has four elements.
 
-**Two things the student should notice immediately.** First, the whole list has *one* name. Second, printing it shows the brackets and commas, which is Python showing you the container and not just the contents:
+**Two things the student should notice immediately.** First, the whole list has *one* name. Second, printing it shows the brackets and commas, which is Python showing you the container and not just the contents. Run this to see both:
 
 ```python
 scores = [45, 0, 112, 67]
@@ -80,6 +86,8 @@ print(type(scores))
 ### 2. Indexing — and why on earth it starts at 0
 
 > **Index** — a value's position in a list. The first position is 0.
+
+This file opens each slot in turn:
 
 ```python
 scores = [45, 0, 112, 67]
@@ -110,6 +118,8 @@ Say it out loud with your hand on the table. Put your finger on the first card a
 
 ### 3. Negative indexes — counting from the other end
 
+This file reads slots from the end:
+
 ```python
 scores = [45, 0, 112, 67]
 
@@ -124,14 +134,18 @@ print(scores[-4])       # 45   <- the first one, reached the long way round
 45
 ```
 
-Notice the asymmetry: forward counting starts at **0**, backward counting starts at **-1**. That is not Python being inconsistent — there is no "minus zero", so the last item has to be −1.
+Forward counting starts at **0**, backward counting starts at **-1**. That is not Python being inconsistent — there is no "minus zero", so the last item has to be −1.
 
-**Why `-1` is genuinely useful and not just a shortcut:** `scores[-1]` means "the last one" *no matter how long the list is*. `scores[3]` means "the last one" only while the list happens to have exactly four items in it. The moment somebody appends a fifth score, `scores[3]` quietly starts pointing at the middle of the list and your program is wrong with no error message. **`scores[-1]` is the version that survives the list changing.**
+**Why `-1` is genuinely useful and not just a shortcut:** `scores[-1]` means "the last one" *no matter how long the list is*. `scores[3]` means "the last one" only while the list happens to have exactly four items in it. The moment somebody appends a fifth score, `scores[3]` quietly starts pointing at the middle of the list and your program is wrong with no error message.
+
+**`scores[-1]` is the version that survives the list changing.**
 
 ![Minus one means the last one](../figures/fig-w11-2-negative-index-from-the-end.svg)
 *Figure 11.2 — `scores[3]` and `scores[-1]` open the same slot today. Only one of them still means "last" tomorrow.*
 
 ### 4. `len()` versus the last index — the fencepost
+
+This file prints the count, then the highest slot number:
 
 ```python
 scores = [45, 0, 112, 67]
@@ -202,6 +216,8 @@ Three elements, and the third one is itself a list. Worth showing once if it com
 ### 6. `IndexError`, which is this week's whole point
 
 > **`IndexError`** — the error Python gives when you ask for a slot that does not exist.
+
+This file reads the last slot, then asks for a slot that is not there:
 
 ```python
 scores = [45, 0, 112, 67]              # four items, so slots 0, 1, 2 and 3
@@ -275,6 +291,8 @@ Read `range(len(scores))` out loud as **"the numbers 0 up to but not including 4
 
 **Misconception 2 — "`len(scores)` gives me the last slot number."** This produces the single most common bug in the course: `scores[len(scores)]`, which is always, in every list, one past the end.
 
+This file asks for the slot named by `len`:
+
 ```python
 scores = [45, 0, 112, 67]
 print(scores[len(scores)])
@@ -288,6 +306,8 @@ IndexError: list index out of range
 ```
 
 **Misconception 3 — "`append` gives me back the new list."** It does not. It changes the list and hands back `None` — which is last week's word, arriving right on cue.
+
+This file puts `append` on the right of an equals sign:
 
 ```python
 scores = [45, 0, 112, 67]
@@ -352,6 +372,8 @@ lit pill at the bottom is **representation** — toolcraft has gone dark.*
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to make, run and set out before the lesson. Do the night-before list first, then the day-of list.
 
 ### 15 minutes the night before
 
@@ -451,6 +473,8 @@ IndexError: list index out of range
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the full plan for the lesson. The table gives the timings. Each segment below it says what to do, what to say and what to ask.
+
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
 | 🪝 Hook — Pick Up Card Number Two | 7 | 7 | Cards on the table, pink numbers underneath, and a card that isn't there |
@@ -540,7 +564,7 @@ They hand you `67` — most students get this one right immediately, which is wo
 
 > "One step along. Index one. Two steps along, index two. Three steps, index three.
 >
-> Once you say it as *distance* instead of *position*, zero is the only answer that makes sense. And it isn't just a Python quirk — it's how most of the languages you'll meet - Python, C, Java, JavaScript - count, for exactly this reason. A few others start at 1, and we'll meet them later."
+> Once you say it as *distance* instead of *position*, zero is the only answer that makes sense. And it isn't just a Python quirk — it's how most of the languages you'll meet — Python, C, Java, JavaScript — count, for exactly this reason. A few others start at 1, and we'll meet them later."
 
 Write into the notebook:
 
@@ -823,6 +847,8 @@ You can see that they wrote `scores[4]`. Do not point at it. Work down this ladd
 
 ## 🎲 The Activity, In Full
 
+This section gives the setup, the twelve drills and the two variations for the Their Turn segment.
+
 ### Setup
 
 ![A list is a row of numbered slots](../figures/fig-w11-1-list-numbered-slots.svg)
@@ -976,17 +1002,27 @@ None of these needs any syntax beyond this week's four items.
 
 ## ❓ Questions Students Ask This Week
 
+This section gives you short, honest answers to the questions students tend to ask about lists. Each answer is written so you can say it aloud.
+
 **"Why does counting start at 0? It's stupid."** *(Answer this one honestly: people who do this for a living have argued about it for fifty years.)*
 
-**Nobody fully agrees, and here is why it is not a dodge.** The good reason, the one we teach, is real: the index is the *distance* from the start, so the first item is zero steps along, and all the arithmetic comes out cleaner — the last index is `len - 1`, a slice of `a[0:3]` has exactly 3 items, and you never need a `+1` or a `−1` sprinkled through your loops. A famous computer scientist called Edsger Dijkstra wrote a short, slightly grumpy note in 1982 arguing exactly this, and most languages since have agreed with him.
+**Nobody fully agrees, and here is why it is not a dodge.** The good reason, the one we teach, is real: the index is the *distance* from the start, so the first item is zero steps along, and all the arithmetic comes out cleaner — the last index is `len - 1`, a slice of `a[0:3]` has exactly 3 items, and you never need a `+1` or a `−1` sprinkled through your loops.
 
-But it is genuinely a *choice*, not a law, and serious languages have chosen otherwise. In MATLAB, in R, in Lua, in Fortran, in Julia — all of them used by professionals doing real work — the first item is number 1, because those languages were designed for people who think in ordinary counting. Their users find zero-based indexing baffling for exactly as long as our students do. And there are real bugs that only exist because of zero-based counting, and real bugs that only exist because of one-based counting, and no honest person can tell you which pile is bigger.
+A famous computer scientist called Edsger Dijkstra wrote a short, slightly grumpy note in 1982 arguing exactly this, and most languages since have agreed with him.
 
-So the truthful answer is: **Python chose zero, the choice has a good reason behind it, and reasonable people picked differently.** What you cannot do is argue with the language you are typing into.
+But it is genuinely a *choice*, not a law, and serious languages have chosen otherwise. In MATLAB, in R, in Lua, in Fortran, in Julia — all of them used by professionals doing real work — the first item is number 1, because those languages were designed for people who think in ordinary counting. Their users find zero-based indexing baffling for exactly as long as our students do.
+
+And there are real bugs that only exist because of zero-based counting, and real bugs that only exist because of one-based counting, and no honest person can tell you which pile is bigger.
+
+So the truthful answer is: **Python chose zero, the choice has a good reason behind it, and reasonable people picked differently.**
+
+What you cannot do is argue with the language you are typing into.
 
 **"Is `scores[-1]` slower, because it has to count backwards?"**
 
-No — and this is a nice question because the answer is not obvious. A list knows how long it is at all times, so `scores[-1]` is worked out instantly as "length minus one" and jumps straight there. Nothing walks along the row. Reading any slot of a list takes the same amount of time, whether it is the first, the last, or the middle of a list with a million things in it.
+No — and this is a nice question because the answer is not obvious. A list knows how long it is at all times, so `scores[-1]` is worked out instantly as "length minus one" and jumps straight there. Nothing walks along the row.
+
+Reading any slot of a list takes the same amount of time, whether it is the first, the last, or the middle of a list with a million things in it.
 
 **"What if I want to add something at the *front*?"**
 
@@ -1002,11 +1038,21 @@ Nothing special. `[7, 7, 7]` is a list of three elements that happen to be equal
 
 **"Why is it `len(scores)` but `scores.append(89)`? Why does one go in front and one behind a dot?"**
 
-Because they are two different kinds of thing, and noticing the difference is a real observation. `len` is a general-purpose tool that works on all sorts of containers, so you hand the container to it. `append` is a command that a *list itself* knows how to carry out, so you name the list, then a dot, then what you want it to do. You will see both shapes constantly from now on — `len(df)` and `df.head()` in Week 21 are exactly the same pair — and by then this will feel obvious.
+Because they are two different kinds of thing, and noticing the difference is a real observation. `len` is a general-purpose tool that works on all sorts of containers, so you hand the container to it.
+
+`append` is a command that a *list itself* knows how to carry out, so you name the list, then a dot, then what you want it to do. You will see both shapes constantly from now on.
+
+`len(df)` and `df.head()` in Week 21 are exactly the same pair, and by then this will feel obvious.
 
 **"If `append` changes the list, does that mean a list is different from a number?"**
 
-Yes, and you have spotted something genuinely important about three weeks early. A number cannot be changed — you can only put a *different* number in the box. A list can be changed while staying the same list, which is what `append` does. The consequences of that are not small, and they are the whole first half of next week's lesson about copies. Write your name and today's date next to that question.
+Yes, and you have spotted something genuinely important about three weeks early. A number cannot be changed; you can only put a *different* number in the box.
+
+A list can be changed while staying the same list, which is what `append` does.
+
+The consequences of that are not small, and they are the whole first half of next week's lesson about copies.
+
+Write your name and today's date next to that question.
 
 **"Can I have a list inside a list?"**
 
@@ -1015,6 +1061,8 @@ You can, and you already made one by accident if you typed `scores.append([112, 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This section lists the usual trouble spots, why each one happens and what to do right then.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -1031,6 +1079,8 @@ You can, and you already made one by accident if you typed `scores.append([112, 
 ---
 
 ## 🧭 Differentiation
+
+This section gives you ways to change the lesson for a student who is struggling, flying or not engaged today.
 
 ### If the student is struggling
 
@@ -1079,6 +1129,8 @@ Ten minutes, no screen, five words used correctly a dozen times each. The drills
 
 ## ✅ Assessing Understanding
 
+This section gives you three quick checks and a mastery scale, so you can tell whether the week has landed.
+
 Three checks, five minutes, exact wording.
 
 **Check 1 — the fencepost (spoken)**
@@ -1112,6 +1164,8 @@ Three checks, five minutes, exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to say when you set homework, and which workbook sections to assign.
 
 **Say this:**
 
@@ -1575,7 +1629,13 @@ I X D I Y
 
 These are paragraphs, so mark the reasoning, not the wording.
 
-**T1 — model answer.** `scores[3]` and `scores[-1]` give the same answer today and mean two different things: `scores[3]` means "the fourth slot", `scores[-1]` means "the last one". Append a fifth score and they part company: `scores[-1]` gives the new score, still "the last one", while `scores[3]` still gives 67, now the fourth of five. **Neither produces an error.** No traceback, no warning; the program just quietly reports the wrong innings as "the latest". That is **family three, finished and lied**, which is the expensive family because the wrong answer survives. So for a program somebody else will keep using, `scores[-1]` — not because it is shorter, but because it says what is actually meant. *Full marks needs:* what happens to each after the append, **no error**, and the family. **What to catch:** "`[-1]` because it is shorter" with no mention of the list growing.
+**T1 — model answer.** `scores[3]` and `scores[-1]` give the same answer today and mean two different things: `scores[3]` means "the fourth slot", `scores[-1]` means "the last one". Append a fifth score and they part company: `scores[-1]` gives the new score, still "the last one", while `scores[3]` still gives 67, now the fourth of five. **Neither produces an error.**
+
+No traceback, no warning; the program just quietly reports the wrong innings as "the latest". That is **family three, finished and lied**, which is the expensive family because the wrong answer survives.
+
+So for a program somebody else will keep using, `scores[-1]` — not because it is shorter, but because it says what is actually meant.
+
+*Full marks needs:* what happens to each after the append, **no error**, and the family. **What to catch:** "`[-1]` because it is shorter" with no mention of the list growing.
 
 **T2 — model answer.**
 
@@ -1790,7 +1850,9 @@ The commonest weak drawing puts the index inside the slot next to the value. If 
 
 ### 📊 Self-Check
 
-The "I can…" grid is the student's own rating; mark honesty, not the ticks. Look at the "One thing I'd like explained again" line and use it to choose what to reteach. **True or false:**
+The "I can…" grid is the student's own rating; mark honesty, not the ticks. Look at the "One thing I'd like explained again" line and use it to choose what to reteach.
+
+The true-or-false answers are:
 
 | Statement | Answer |
 |---|---|
@@ -1851,9 +1913,19 @@ The workbook has no separate vocabulary page, so use this as the oral check when
 
 ## 🔮 Next Week Preview
 
-Week 12 is a lab, and it is the week the student's own library is born. They will take five functions — mean, median, minimum, maximum and range — put them in a file called `stats.py`, and then write a *completely separate* file, `main.py`, that says `import stats` and reports on twenty cricket scores. The moment the import works, we delete a function out of `stats.py` and watch `main.py` fall over, because that is the only convincing proof that the two files are genuinely joined together. Along the way they get slicing (where the stop number is *not* included — a second off-by-one, met deliberately a week after the first), `sorted()` (which builds a new list and leaves yours alone), and `for score in scores:`, which finally lets them walk the items instead of the numbers. Median is written last and tested on five scores and then six, because the even case has no single middle and has to average the two in the middle — and doing that arithmetic by hand, on paper, before trusting the code, is the homework.
+This section says what comes next week and what to have ready for it.
 
-**Prep early:** keep this week's four index cards and the pink strip — the slot numbers get used again for slicing, where you will need to lay a pencil *between* two cards to show that the stop number is a fence and not a card. Have the notebook's hand-arithmetic section ready, because Week 12 asks for the median of six numbers worked out by hand twice. And check now that the student's Week 10 file `week10_toolkit.py` still exists in `~/ai-academy/level2`: `stats.py` is a straight sequel to that spec sheet, and in Week 33 they will import Week 12's `stats.py` to sanity-check pandas. Files that get deleted in November cost real time in June.
+Week 12 is a lab, and it is the week the student's own library is born. They will take five functions — mean, median, minimum, maximum and range — put them in a file called `stats.py`, and then write a *completely separate* file, `main.py`, that says `import stats` and reports on twenty cricket scores. The moment the import works, we delete a function out of `stats.py` and watch `main.py` fall over, because that is the only convincing proof that the two files are genuinely joined together.
+
+Along the way they get slicing (where the stop number is *not* included — a second off-by-one, met deliberately a week after the first), `sorted()` (which builds a new list and leaves yours alone), and `for score in scores:`, which finally lets them walk the items instead of the numbers.
+
+Median is written last and tested on five scores and then six, because the even case has no single middle and has to average the two in the middle — and doing that arithmetic by hand, on paper, before trusting the code, is the homework.
+
+**Prep early:**
+
+- Keep this week's four index cards and the pink strip. The slot numbers get used again for slicing, where you will need to lay a pencil *between* two cards to show that the stop number is a fence and not a card.
+- Have the notebook's hand-arithmetic section ready, because Week 12 asks for the median of six numbers worked out by hand twice.
+- Check now that the student's Week 10 file `week10_toolkit.py` still exists in `~/ai-academy/level2`. `stats.py` is a straight sequel to that spec sheet, and in Week 33 they will import Week 12's `stats.py` to sanity-check pandas. Files that get deleted in November cost real time in June.
 
 ---
 

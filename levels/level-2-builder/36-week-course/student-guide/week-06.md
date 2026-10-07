@@ -22,6 +22,8 @@
 
 ## 🪝 Start Here
 
+This section shows a grading program that runs with no error, and asks you to look closely at what it prints.
+
 I wrote you a grading program. You give it a mark out of a hundred and it gives you a letter grade. A is 90 and up, B is 75, C is 60, D is 35, and below that is an F.
 
 Take a card. It says **95**.
@@ -44,7 +46,7 @@ Run it again. Same answer: `C`.
 
 Try 80. `C`. Try 62. `C`. Try 50 — `D`. Try 20 — `F`.
 
-Now let's be precise about what we've got, because "it's broken" isn't precise enough to fix anything.
+Let's be precise about what we've got. "It's broken" isn't precise enough to fix anything.
 
 **Did it crash?** No. There is no red text anywhere. It ran five times, cleanly, and gave five answers.
 
@@ -56,9 +58,11 @@ And here is the thing to say out loud, because it has a name and you will meet i
 
 > **silent bug** — a mistake that produces a wrong answer without producing any error message.
 
-Python isn't confused. It isn't complaining. It isn't hiding anything. **It did exactly what the file said. The file says the wrong thing, and only a human can tell.**
+Python isn't confused. It isn't complaining. It isn't hiding anything.
 
-Nobody is going to tell you what's wrong with this program. You are going to find it. And the tool you are going to use is your finger.
+**It did exactly what the file said. The file says the wrong thing, and only a human can tell.**
+
+Nobody is going to tell you what's wrong with this program. You are going to find it. The tool you will use is your finger.
 
 ![A chain of gates, checked top to bottom](../figures/fig-w06-1-elif-column-of-forks.svg)
 *Figure 6.1 — One mark walks in at the top and stops at the first gate that says yes. It never sees the gates below.*
@@ -66,6 +70,8 @@ Nobody is going to tell you what's wrong with this program. You are going to fin
 ---
 
 ## 🧠 The Big Idea
+
+This section explains how `elif` chains work, how `and`, `or` and `not` combine conditions, and how to check a chain for gaps and overlaps.
 
 > **📌 About the code in this section.** The blocks below are **illustrations, not files**. They show you the shape of one idea, and each one carries on from the one above it — the `import` lines and the data are typed once, in the first block that needs them. **The complete, runnable file is in 💻 Type This.** If you copy a block from this section on its own and Python says `NameError`, that is why, and nothing is broken.
 
@@ -97,11 +103,15 @@ else:
 2. **The moment one is `True`, that branch runs and the whole rest of the chain is skipped.** Not "the best match" — the **first** match.
 3. **Exactly one branch runs.** Never two. Never zero, if there is an `else` on the end.
 
-Rule two is the one that matters, and the wording has to be exact. **Python does not pick the condition that fits best. Python has no idea what "best" means.** It picks the first one that says `True`, and then it stops looking. Full stop.
+Rule two is the one that matters, and the wording has to be exact.
+
+**Python does not pick the condition that fits best. Python has no idea what "best" means.** It picks the first one that says `True`, and then it stops looking.
 
 **The analogy.** A **queue of bouncers at one door.** Everybody who arrives walks up to bouncer number one. If bouncer one says yes, in you go — and bouncers two, three and four **never see you at all.** They don't get a vote. They don't know you existed.
 
-Compare that with writing four separate `if` statements. Four separate `if`s are four separate doors with four separate bouncers, and **one person can walk through all four of them.** That is a genuinely different program:
+Compare that with writing four separate `if` statements. Four separate `if`s are four separate doors with four separate bouncers, and **one person can walk through all four of them.**
+
+That is a different program. Here is one with three separate `if`s and no chain:
 
 ```python
 # four_doors.py - four separate ifs, not a chain.
@@ -126,7 +136,7 @@ A 95 walked through all three doors, and each one set `grade`, so you end up wit
 
 ### 2. Every `elif` carries a condition you never typed
 
-**The plain explanation.** This is the piece that makes the whole thing click, and it is worth being slow about.
+**The plain explanation.** This is the piece that makes the whole thing click, so go slowly.
 
 Trace `mark = 62` through the chain in section 1:
 
@@ -149,7 +159,9 @@ This is the single best argument for a chain over four separate `if`s, and it is
 
 ### 3. The order trap — the bug this whole week is built on
 
-**The plain explanation.** Here is the program from the hook, in full. There is nothing wrong with it as far as Python is concerned. It runs perfectly. It is also wrong for everybody who passed.
+**The plain explanation.** Here is the program from the hook, in full. As far as Python is concerned, it runs perfectly. It is also wrong for everybody who passed.
+
+Type nothing yet. Read this program and the five runs below it:
 
 ```python
 # grade.py - version 1. It runs without an error. It is also wrong.
@@ -207,9 +219,11 @@ So: does Python ever look at the line that says `>= 90`?
 
 **No. Never. Not once. Not for any mark at all.** Think about that. Is there **any** number you could type that would reach that line?
 
-There isn't. Any mark of 90 or more is also 60 or more, so bouncer one always catches it first. Those two branches — B and A — are code that can never, ever run. There is a name for that: **dead code.** It sits right there in the file, looking completely reasonable, and it is decoration.
+There isn't. Any mark of 90 or more is also 60 or more, so bouncer one always catches it first. Those two branches — B and A — are code that can never run.
 
-**That is why this bug is so good. Nothing is wrong with the A line. The A line is perfect. The problem is entirely in what order the lines are in** — and no amount of staring at any single line will show you that.
+There is a name for that: **dead code.** It sits in the file, looking reasonable, and does nothing.
+
+Nothing is wrong with the A line. The problem is entirely in the order of the lines, and staring at any single line will not show you that.
 
 **The fix, said as a rule rather than as a change:**
 
@@ -235,7 +249,7 @@ print(f"Mark  : {mark}")
 print(f"Grade : {grade}")
 ```
 
-The same five marks, run again, side by side with the broken version:
+The same five marks, run again. This table puts the broken version and the fixed version side by side:
 
 | Mark typed | Broken chain says | Fixed chain says | Different? |
 |---|---|---|---|
@@ -247,14 +261,16 @@ The same five marks, run again, side by side with the broken version:
 
 **Look at the 62 row.** The broken and the fixed program agree. If you had tested only 62 and 50, you would have concluded the program was fine.
 
-**Only 95 and 80 prove anything.** The other three answer identically on both versions, so running them tells you nothing at all about whether the fix worked. **A test that passes on both the broken and the correct version has told you nothing** — and that sentence is worth carrying for the rest of the year.
+**Only 95 and 80 prove anything.** The other three answer identically on both versions, so running them tells you nothing about whether the fix worked.
+
+> **📌 Remember:** a test that passes on both the broken and the correct version has told you nothing.
 
 ![Same four tests. One order is wrong.](../figures/fig-w06-2-order-trap-everyone-gets-c.svg)
 *Figure 6.3 — Nothing changed but the order of the questions. The three below the first one are never looked at.*
 
 ### 4. Coverage: no gaps, no overlaps
 
-**The plain explanation.** Whenever you write a chain, check two things. It takes a minute and it catches nearly everything.
+**The plain explanation.** Whenever you write a chain, check two things. It takes a minute.
 
 1. **No gaps.** Is every possible input handled? An `else` at the end guarantees this. Without one, some input falls off the end and **no branch runs at all** — and if that branch was the only place a variable got set, you get a `NameError` on a later, innocent-looking line.
 2. **No wrong overlaps.** For each input, is the **first** matching branch the one you want?
@@ -274,7 +290,7 @@ The same five marks, run again, side by side with the broken version:
 | 34 | ✗ | ✗ | ✗ | ✗ | F | ✔ |
 | 0 | ✗ | ✗ | ✗ | ✗ | F | ✔ |
 
-Writing the **dashes** rather than a tick or a cross is worth doing, because it is the moment you see that most of the chain is skipped most of the time. For a mark of 100, Python read **one** condition out of four.
+Writing **dashes** rather than a tick or a cross shows how much of the chain is skipped. For a mark of 100, Python read **one** condition out of four.
 
 **The analogy.** Five bands and four boundaries, like a ruler with four marks on it. Every number from 0 to 100 lands in exactly one band. The values worth testing are the **pairs either side of each mark** — 89 and 90, 74 and 75, 59 and 60, 34 and 35. That is last week's rule, four times over.
 
@@ -315,7 +331,7 @@ These never change and are worth memorising. There are only six rows in the worl
 | `True` | `False` |
 | `False` | `True` |
 
-**The concrete version.** Three one-line programs settle all six rows. **Predict each before you run it.**
+**The concrete version.** Three one-line programs settle all six rows. Predict each one, then run it and compare.
 
 ```python
 print(True and True, True and False, False and True, False and False)
@@ -340,7 +356,9 @@ False True
 
 **`and` says yes once out of four.** It is strict. **`or` says yes three times out of four.** It is generous. That pair of counts — one and three — is the fastest way to check you have written the tables the right way round.
 
-**One warning about `or` that catches everybody.** Look at the first answer on the `or` line: **`True or True` is `True`.** In English, "you can have tea or coffee" means one, not both. In Python, `or` means *at least one, **and both is absolutely fine.*** Say that out loud; it is not obvious.
+**One warning about `or` that catches everybody.** Look at the first answer on the `or` line: **`True or True` is `True`.**
+
+In English, "you can have tea or coffee" means one, not both. In Python, `or` means *at least one, and both is fine.* Say that out loud.
 
 ![The three tables you have to know](../figures/fig-w06-3-and-or-not-truth-tables.svg)
 *Figure 6.5 — `and` says yes once out of four. `or` says yes three times out of four. `not` just flips.*
@@ -348,6 +366,8 @@ False True
 ### 6. Real conditions, brackets, and the `or` trap
 
 **The plain explanation.** Now with real comparisons instead of bare `True`s. Cricket team eligibility: a player must be **at least 13**, have played **at least 5 matches**, and **not** be injured.
+
+Type this file and run it:
 
 ```python
 # team_check.py - three conditions joined into one answer.
@@ -377,7 +397,7 @@ False
 
 **One `False` anywhere in an `and` chain sinks the whole thing.** That is the strict one.
 
-**Which happens first?** When you mix them, Python works in this order: **comparisons, then `not`, then `and`, then `or`.**
+**Which happens first?** When you mix them, Python works in this order: **comparisons, then `not`, then `and`, then `or`.** Predict this line, then run it:
 
 ```python
 print(True or False and False)
@@ -399,7 +419,7 @@ False
 
 > **The rule for your own sanity: whenever you mix `and` with `or`, put brackets in — even when you do not need them.** Not because Python needs them, but because a person reading your program should not have to know the precedence table.
 
-**And now the trap that catches everybody exactly once.** This one produces a `True`-looking answer that has nothing to do with your question:
+**Now the trap that catches everybody once.** It gives an answer that has nothing to do with your question. Type this and run it:
 
 ```python
 # or_trap.py - a bug that prints something instead of crashing.
@@ -416,7 +436,11 @@ False
 
 **The first line printed the letter `y`.** You asked a yes/no question and got a letter back.
 
-Here is why. `answer == "yes"` is `False`. Then Python works out `False or "y"`. Python's `or` does not hand back `True` or `False` — **it hands back the first side that counts as a yes**, and any non-empty piece of text counts as a yes. So the whole expression *is* `"y"`.
+Here is why. `answer == "yes"` is `False`, so Python works out `False or "y"`.
+
+Python's `or` does not hand back `True` or `False`. **It hands back the first side that counts as a yes.**
+
+Any non-empty piece of text counts as a yes. So the whole expression *is* `"y"`.
 
 And inside an `if`, `"y"` counts as a yes:
 
@@ -441,7 +465,9 @@ You said yes!
 
 ## 💻 Type This
 
-`grade.py`, in four passes. **Save the broken version separately as `grade_broken.py` before you fix it** — you will want to run them side by side, and comparing them is the point.
+In this section you build `grade.py` in four passes.
+
+> **⚠️ Watch out:** save the broken version separately as `grade_broken.py` before you fix it. You will want to run the two side by side.
 
 ### Step 1 — the broken chain, traced by finger before it is touched
 
@@ -467,9 +493,9 @@ And: **look at the 62 row. It says "right" — but is it right for the right rea
 
 *Save the file again as `grade.py`. Now move the whole `>= 90` branch to the top, then `>= 75`, then `>= 60`, then `>= 35`.* **Two lines move together each time** — the condition and the line under it.
 
-**Move them; don't retype them.** Cut and paste, so you can be certain nothing has changed except the order. If you retype five branches and it still fails, you won't know which bug you are looking at.
+**Move them; don't retype them.** Cut and paste, so nothing changes except the order. If you retype five branches and it still fails, you won't know which bug you are looking at.
 
-The result:
+The result should look like this:
 
 ```python
 # grade.py - version 2. Highest threshold first, so each mark meets the right bouncer.
@@ -554,7 +580,9 @@ SyntaxError: invalid syntax
 
 **Read the last line.** `SyntaxError` — Python couldn't even read it. And look where the carets are: **under the `<=`.**
 
-Here is the rule. **Each side of an `and` has to be a complete comparison, with both of its ends.** `<= 100` is only half a question — less than or equal to a hundred, but **what** is? Python has no idea. In English you are allowed to leave the subject out and everyone follows along. Python is not a person.
+Here is the rule. **Each side of an `and` has to be a complete comparison, with both of its ends.**
+
+`<= 100` is only half a question — less than or equal to a hundred, but **what** is? Python has no idea. In English you can leave the subject out and everyone follows along. Python is not a person.
 
 Fix it to what we actually meant:
 
@@ -597,6 +625,8 @@ Bug Log row.
 ---
 
 ## 🔍 Worked Examples
+
+These three complete programs use chains and `and` on everyday things: food, sport and school. Read each one, then read its runs.
 
 ### Worked Example 1 — The tuck-shop discount (food)
 
@@ -743,11 +773,12 @@ Verdict     : half century
 Strike rate : 113.64
 ```
 
-**Two things to notice.**
+Two things about this program.
 
-**The `and` earns its keep.** Take away the `out == "no"` half and a batter who was bowled for 112 gets a "NOT OUT" banner. Take away the `runs >= 50` half and every 3-run innings that ended not out gets one too. Both halves are doing work.
+- **The `and` earns its keep.** Take away the `out == "no"` half and a batter who was bowled for 112 gets a "NOT OUT" banner. Take away the `runs >= 50` half and every 3-run innings that ended not out gets one too. Both halves are doing work.
+- **It has an honest flaw.** Type `No` with a capital N and the banner does not appear, because `"No" == "no"` is `False`.
 
-**And there is an honest flaw.** Type `No` with a capital N and the banner does not appear, because `"No" == "no"` is `False`. The tool for that is `.lower()`, which flattens text to small letters before comparing — `out.lower() == "no"`. Use it if you like; what a *method* actually is comes later. **The program has this flaw. Saying so is better than pretending the prompt solves it.**
+The tool for that flaw is `.lower()`, which flattens text to small letters before comparing: `out.lower() == "no"`. Use it if you like; what a *method* actually is comes later. The program keeps this flaw. Saying so is better than pretending the prompt solves it.
 
 ### Worked Example 3 — The attendance report (school)
 
@@ -820,17 +851,17 @@ Band    : serious concern
 A meeting is arranged.
 ```
 
-**The interesting bit is finding the boundary at all.** The thresholds are 95, 90 and 80 — but you type *days*, not percentages. So the boundary pairs are 57/56 and 54/53, and you have to work them out: 95% of 60 is 57, and 90% of 60 is 54.
+**Finding the boundary is the interesting part.** The thresholds are 95, 90 and 80, but you type *days*, not percentages. So the boundary pairs are 57/56 and 54/53, and you have to work them out: 95% of 60 is 57, and 90% of 60 is 54.
 
-**That is a real testing skill.** The number in your condition is not always the number the human types, and the values worth testing are the ones either side of the boundary **in the units the human uses.**
+> **📌 Remember:** the number in your condition is not always the number the human types. Test either side of the boundary **in the units the human uses.**
 
 ---
 
 ## 🐞 When It Breaks
 
-Every message below came from really running a broken version of this week's code.
+This section shows the mistakes this week's code can make, so you can recognise each one. Every message below came from really running a broken version of this week's code.
 
-Something different about this week: **most of its bugs have no error message at all.** Five of the twelve rows in the clinic table below are silent. That is not bad luck — it is what `elif` bugs are like, because every individual line in a broken chain is a correct line.
+This week is different: **most of its bugs have no error message at all.** Five of the twelve rows in the clinic table below are silent. That is what `elif` bugs are like, because every individual line in a broken chain is a correct line.
 
 ### Break 1 — an `elif` after the `else`
 
@@ -906,7 +937,9 @@ NameError: name 'grade' is not defined
 
 **The fix.** Add an `else` on the end. Always.
 
-**The error is on line 8 and the mistake is the missing `else`.** A chain without an `else` has a gap in it **by definition** — some input matches nothing, no branch runs, and nothing gets set. Even `else: grade = "???"` is better than nothing, because `???` in the output is a message from you to future-you.
+**The error is on line 8 and the mistake is the missing `else`.** A chain without an `else` has a gap in it **by definition** — some input matches nothing, no branch runs, and nothing gets set.
+
+Even `else: grade = "???"` is better than nothing, because `???` in the output is a message from you to future-you.
 
 ### The whole clinic, for reference
 
@@ -938,6 +971,8 @@ NameError: name 'grade' is not defined
 
 ## 🎲 What We Did In Class
 
+This section is a record of the class, step by step. Use it to catch up if you missed a part, or to check your notes.
+
 ### The hook, in silence
 
 The broken `grade.py`, five index cards — 95, 80, 62, 50, 20 — handed over one at a time. Every mark of 60 or more came out as a `C`. No error. No warning. 50 got a `D` and 20 got an `F`, which is what proved the program wasn't simply broken all over.
@@ -948,7 +983,7 @@ Then four questions: did it crash (no) · is it C for everything (no) · which m
 
 Three rules, written up and said back:
 
-```
+```text
    1.  Python checks the conditions from TOP to BOTTOM.
    2.  The FIRST one that is True wins. Everything below it is skipped completely.
    3.  Exactly ONE branch runs. Never two. Never none, if there's an else.
@@ -1004,9 +1039,21 @@ with the carets under the `<=`. Each side of an `and` needs to be a whole questi
 
 ## 💬 Talk About It
 
+These three questions are for talking over with a friend or a grown-up. Each has a hint underneath.
+
 **1. "Why doesn't Python just work out which branch I meant?"**
 
-*Hint:* look at the broken chain from Python's point of view. It is a perfectly sensible program that says "anyone with sixty or more gets a C". Nothing in the file says the A branch was *supposed* to be reachable. To spot the bug, Python would have to know that grades are meant to be ordered, that higher marks should get better letters, and that you didn't intend two branches to be unreachable — and all three of those live in your head, not in the file. Then the harder question: could a tool warn you that a branch can **never** run? (Some tools for other languages do exactly that. Why might that be difficult, and what would you lose if it did?)
+*Hint:* look at the broken chain from Python's point of view. It is a perfectly sensible program that says "anyone with sixty or more gets a C". Nothing in the file says the A branch was *supposed* to be reachable.
+
+To spot the bug, Python would have to know three things:
+
+- grades are meant to be ordered
+- higher marks should get better letters
+- you didn't intend two branches to be unreachable
+
+All three live in your head, not in the file.
+
+Then the harder question: could a tool warn you that a branch can **never** run? (Some tools for other languages do exactly that. Why might that be difficult, and what would you lose if it did?)
 
 **2. "The grade chain draws four lines. One student got 89, another got 90."**
 
@@ -1014,11 +1061,15 @@ with the carets under the `<=`. Each side of an `and` needs to be a whole questi
 
 **3. "Is a silent bug worse than a crash?"** *(Say yes, and then say why that answer is too easy.)*
 
-*Hint:* a crash tells you it happened. A silent bug survives — into your homework, into the grades that got printed, into next term. Run the broken chain on a real class of thirty and thirty wrong grades go out and nobody finds out. But push on the "almost": name a machine where **stopping** is the dangerous outcome. Then find the thing that is true without any qualification at all: a silent bug is worse **for the person who has to find it**, and while you are testing, that person is you.
+*Hint:* a crash tells you it happened. A silent bug survives — into your homework, into the grades that got printed, into next term. Run the broken chain on a real class of thirty and thirty wrong grades go out and nobody finds out.
+
+But push on the "almost": name a machine where **stopping** is the dangerous outcome. Then find the thing that is true without any qualification at all: a silent bug is worse **for the person who has to find it**, and while you are testing, that person is you.
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four ideas that sound right and are wrong. Each one has the wrong version next to the right version.
 
 ### Trick 1 — "Python picks the branch that fits best"
 
@@ -1057,6 +1108,8 @@ A test that passes on both the broken and the correct version has told you nothi
 
 ## 🌍 Where You've Seen This
 
+Chains of conditions are all around you. Here are seven places to spot one.
+
 1. **Every report card you have ever been given.** A number turned into a letter by a chain of thresholds — and the boundary problem is right there in the paper: somebody got 89.
 2. **Your phone's battery icon.** Full, fine, charge soon, charge **now** — four bands off one number, and somebody had to choose the boundaries and put them in the right order.
 3. **Discount tiers on a shopping site.** Spend 300 and get 15% off, spend 199 and get 5%. Worked Example 1 is a real screen you have seen, including the one-rupee cliff.
@@ -1094,6 +1147,8 @@ yet. The strip along the bottom is the seven threads this course keeps returning
 
 ## 🔑 Remember This
 
+This section is the short list to keep. Read it again before the workbook.
+
 - **`elif` is short for "else, if".** One word, no space, its own condition, its own colon.
 - **A chain checks top to bottom and stops at the first `True`.** Not the best match. The **first** match.
 - **Exactly one branch of a chain runs** — never two, and never zero if there is an `else`.
@@ -1106,6 +1161,8 @@ yet. The strip along the bottom is the seven threads this course keeps returning
 - **A test that passes on both the broken and the fixed version has told you nothing.**
 
 ### Syntax reminder card
+
+Every new piece of syntax from this week in one block, for looking things up:
 
 ```python
 if mark >= 90:            # strictest test FIRST
@@ -1138,6 +1195,8 @@ if answer == "yes" or answer == "y":  # RIGHT - both sides spelled out
 
 ## 📓 New Words
 
+These are the five words this week added. Check that you can say each one in your own words.
+
 ![This week's five words as pictures](../figures/fig-w06-6-vocab-icons.svg)
 *Figure 6.7 — This week's five words, drawn.*
 
@@ -1163,13 +1222,11 @@ Go to **[the Week 6 workbook](../workbook/week-06.md)**. About **60 minutes** in
 | **Fix the Broken Program** | A library fine calculator with three planted bugs | 10 min |
 | **Build It** | Trace the broken grade chain, fix it, and **prove** the fix | 15 min |
 
-**Three things I am marking hardest.**
+**Three things I am marking hardest:**
 
-**The truth tables get written from memory with the laptop shut**, and then checked by running four one-line programs. If you get the `True or True` row wrong you are in extremely normal company — it is the one everybody misses.
-
-**In the trace table, put a dash — not a cross — wherever Python never even asked the question.** The dashes are the lesson.
-
-**And then put the broken answers and the fixed answers side by side and circle the rows that prove the fix.** Not all five of them do. Tell me which ones told you nothing, and why.
+1. **Truth tables from memory.** Write them with the laptop shut, then check them by running four one-line programs. If you get the `True or True` row wrong, you are in extremely normal company: it is the one everybody misses.
+2. **Dashes in the trace table.** Put a dash, not a cross, wherever Python never even asked the question. The dashes are the lesson.
+3. **Broken against fixed.** Put the broken answers and the fixed answers side by side and circle the rows that prove the fix. Not all five of them do. Tell me which ones told you nothing, and why.
 
 > **💡 Try this:** lay four condition cards out on a table in an order you choose in secret, then get somebody else to work out what grade a mark of 80 comes out as. Building a chain where everybody gets a D on purpose is a better test of whether you understand this than fixing mine.
 

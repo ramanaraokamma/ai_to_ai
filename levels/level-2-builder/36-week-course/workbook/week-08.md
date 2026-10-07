@@ -8,7 +8,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week**.
+This section warms you up with five quick questions about **last week**.
 
 **W1.** How many values does each of these hand out? `range(4)` ______ · `range(1, 11)` ______ · `range(3, 20)` ______ · `range(5, 5)` ______
 
@@ -40,7 +40,9 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
-**Write your prediction before you run anything.** **P2 is the one almost everybody gets wrong** — read the question at the end of it before you commit.
+This section is for predicting what four short programs print, then running them to compare.
+
+**Write your prediction before you run anything.** For P2, read the question at the end of it before you commit.
 
 ### P1
 
@@ -126,9 +128,12 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Read It
 
+This set is for reading code and working out what it does, without running it.
+
 **A1. Trace three `while` loops.** Fill in every cell. **Remember: a `while` loop checks one more time than it runs.**
 
 **(i)**
+
 ```python
 lives = 3
 while lives > 0:
@@ -147,6 +152,7 @@ print("game over")
 Passes: ______  Checks: ______
 
 **(ii)**
+
 ```python
 count = 0
 while count < 3:
@@ -166,6 +172,7 @@ Which numbers get printed? ____________________ **Not** 1, 2, 3 — why not?
 ________________________________________________________________
 
 **(iii)**
+
 ```python
 fuel = 5
 while fuel > 0:
@@ -276,6 +283,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Write It
+
+This set is for writing short programs of your own on the lines provided.
 
 **B1. Two lines.** Roll one dice — a random whole number from 1 to 6 — and print it.
 
@@ -433,7 +442,15 @@ Unlocked in 2 of 3 tries.
 
 ## 🐞 Fix the Broken Program
 
-Here is `lock.py`, which is supposed to give you three tries at a PIN. It has **three** bugs: one that stops Python reading the file, one that crashes it partway through, and one that produces **no error message at all**.
+This section is for finding and fixing bugs one at a time, and for telling the kinds of trouble apart.
+
+Here is `lock.py`, which is supposed to give you three tries at a PIN. It has **three** bugs.
+
+- One stops Python reading the file.
+- One crashes it partway through.
+- One produces **no error message at all**.
+
+Read the program first, then work through the bugs below.
 
 ```python
 # lock.py - three tries to type the right PIN. It has three bugs in it.
@@ -551,6 +568,8 @@ ________________________________________________________________
 
 ### The Loop That Won't Stop
 
+This puzzle is for working out whether loops end, and for counting guesses.
+
 **P1.** Five loops. For each one: does it end, and if not, **write the one line that would fix it** (and say where it goes).
 
 **(i)**
@@ -597,7 +616,7 @@ while answer != "yes":
 ```
 Ends? ______  Fix if needed: ____________________
 
-**P2.** Loop (iv) has a **change step** and still never ends. **Why?** This is the cleverest trap on the page.
+**P2.** Loop (iv) has a **change step** and still never ends. **Why?**
 
 ________________________________________________________________
 
@@ -631,6 +650,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions are for arguing a side in your own words. There is no single right answer.
 
 **T1.** Should Python refuse to run a loop it can tell will never end?
 
@@ -668,11 +689,13 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+This section is for building and testing this week's programs, and for keeping a record of the bugs you meet.
+
 ### Part 1 — cause an infinite loop, and stop it
 
 **Do this first, on purpose, while you are calm.**
 
-Type `runaway.py` exactly:
+Type `runaway.py` exactly as written:
 
 ```python
 # runaway.py - ON PURPOSE. The CHANGE line is missing, so this never stops.
@@ -814,6 +837,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This section is for showing the idea of a loop as a picture.
+
 Draw **the same loop twice** — one version that ends, and one that runs away. Use your own subject: a bus you are waiting for, lives in a game, minutes of practice, anything with a countdown or a target.
 
 ![Draw It frame for Week 8](../figures/fig-w08-8-draw-frame.svg)
@@ -832,6 +857,8 @@ Draw **the same loop twice** — one version that ends, and one that runs away. 
 ---
 
 ## 📊 Self-Check
+
+This section is for checking how sure you feel about the week. Tick one box on each row.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -869,6 +896,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished. Open it only when you are done.
 
 <details>
 <summary>Check your answers</summary>

@@ -37,6 +37,8 @@ Observable evidence: a file on screen that prints five player cards; a `KeyError
 
 ## 🧑‍🏫 What YOU Need to Know First
 
+This section is the background for you, the teacher. Read it once before the lesson; it assumes no Python.
+
 > **📌 About the code blocks in this guide.** Outside the **🧰 Prep Checklist** and the **🔑 Answer Key**, the blocks are **illustrations, not files** — each one carries on from the one above it, so the `import` lines and the data are typed once, in the first block that needs them. **The complete runnable files are in the Prep Checklist and the Answer Key.** If you paste an illustration on its own and get `NameError`, that is why, and nothing is broken.
 
 **You do not need to know any Python to teach this lesson.** Everything below is written for somebody who has never programmed. Read it once, type the code in the Prep Checklist once, and you will be ahead of the student.
@@ -359,6 +361,8 @@ moved down to `dicts · rows · files`, weeks 13 to 18. One thread lit: represen
 
 ## 🧰 Prep Checklist
 
+This section lists what to do and set out before the lesson, and what to do if the laptop fails.
+
 ### 15 minutes the night before
 
 - [ ] **Print the whole workbook** (Warm-Up through Self-Check).
@@ -416,6 +420,8 @@ Asha
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson: a timetable first, then what to say and do in each segment.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -732,6 +738,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the "Their Turn" segment: the cards, the file, the planted error and the variations.
+
 ### Setup
 
 **On the table:** five blank index cards, a pen, the laptop, the workbook open at Practice Set A, the Bug Log open.
@@ -867,7 +875,7 @@ Fix it. Log it. Then do it once more, their choice of cause, and have them predi
 
 ## 🐞 The Debugging Clinic
 
-Every message below was produced by running a broken version of this week's actual code. The tracebacks are copied verbatim.
+This section is a lookup table for the errors this week's code can produce: what the student sees, what it means and how to fix it. Every message below was produced by running a broken version of this week's actual code, and the tracebacks are copied verbatim.
 
 | What the student sees (real message) | What it means | Most likely cause | The fix |
 |---|---|---|---|
@@ -902,13 +910,19 @@ Two things to say every single week, until they say them for you:
 
 ## ❓ Questions Students Ask This Week
 
+This section has short answers to the questions students are likely to ask, so you are not caught out.
+
 **"Why is it called a dictionary if it isn't in alphabetical order?"**
 
-Because of what you *do* with a paper dictionary, not how it is arranged. When you look up "volcano" you do not count to word 4,912 — you go straight to the word. That is the resemblance: you fetch by name. The alphabetical ordering of a paper dictionary is just how paper solves the finding problem; Python solves it a different way, and keeps your pairs in the order you typed them. Other languages call the same thing a map, a hash or an associative array, which are all better names and none of which caught on in Python.
+Because of what you *do* with a paper dictionary, not how it is arranged. When you look up "volcano" you do not count to word 4,912 — you go straight to the word. That is the resemblance: you fetch by name.
+
+The alphabetical ordering of a paper dictionary is just how paper solves the finding problem. Python solves it a different way, and keeps your pairs in the order you typed them. Other languages call the same thing a map, a hash or an associative array, which are all better names and none of which caught on in Python.
 
 **"Can the value be another dictionary?"**
 
-Yes, and it is very useful, and we are not doing it in this course. A value can be a number, some text, a `True`/`False`, a list, or another dictionary. Once you nest them you need two lookups to reach a value and the errors get much harder to read, so it waits until you have a real reason. If a student asks because they *have* a real reason, let them try it and be ready for a `KeyError` that names the inner key rather than the outer one.
+Yes, and it is very useful, and we are not doing it in this course. A value can be a number, some text, a `True`/`False`, a list, or another dictionary.
+
+Once you nest them you need two lookups to reach a value and the errors get much harder to read, so it waits until you have a real reason. If a student asks because they *have* a real reason, let them try it and be ready for a `KeyError` that names the inner key rather than the outer one.
 
 **"What if two keys are the same?"**
 
@@ -916,7 +930,9 @@ The later one wins and the earlier one silently vanishes. `{"runs": 48, "runs": 
 
 **"Is `asha["runs"]` faster than `scores[2]`?"**
 
-Practically, no, and for anything you will write this year the difference is invisible. Looking up a key does a little arithmetic on the text of the key to work out where to look, so it is not "searching" the way you would search a shelf — it goes more or less straight there, however many pairs there are. Counting to slot 2 in a list is a shade quicker still. Neither will ever be the reason your program is slow.
+Practically, no, and for anything you will write this year the difference is invisible.
+
+Looking up a key does a little arithmetic on the text of the key to work out where to look. So it is not "searching" the way you would search a shelf — it goes more or less straight there, however many pairs there are. Counting to slot 2 in a list is a shade quicker still. Neither will ever be the reason your program is slow.
 
 **"Can I use a number as a key?"**
 
@@ -924,7 +940,9 @@ Yes: `{1: "Asha", 2: "Ravi"}` is a legal dictionary and `d[1]` gives `"Asha"`. W
 
 **"Why not just use variables? `asha_runs = 48`, `asha_balls = 32`…"**
 
-You can, for one player. Try it for thirty and the problem becomes obvious: you cannot write one piece of code that works for all of them, because every variable has a different name and your program has to mention each one by hand. With a dictionary you write `player["runs"]` once and it works for whoever you hand it. That is the whole argument, and next week it becomes overwhelming.
+You can, for one player. Try it for thirty and the problem becomes obvious: you cannot write one piece of code that works for all of them.
+
+Every variable has a different name, and your program has to mention each one by hand. With a dictionary you write `player["runs"]` once and it works for whoever you hand it. That is the whole argument, and next week it becomes overwhelming.
 
 **"What should a missing number be filled with?"** *(Nobody fully agrees, and here is why.)*
 
@@ -936,13 +954,17 @@ You can, for one player. Try it for thirty and the problem becomes obvious: you 
 
 *Refuse to run at all until somebody fixes the data.* The purest option. The cost is that real data always has holes, so a program that refuses to run on imperfect data refuses to run.
 
-Which one is right depends entirely on **what the number is and what happens if you are wrong**. A missing "number of catches" filled with zero is probably harmless. A missing rainfall reading filled with zero says "it did not rain", which you do not know, and could end up in a flood model. A missing test score filled with zero says a child failed. Same keystroke, wildly different consequences.
+Which one is right depends entirely on **what the number is and what happens if you are wrong**.
+
+A missing "number of catches" filled with zero is probably harmless. A missing rainfall reading filled with zero says "it did not rain", which you do not know, and could end up in a flood model. A missing test score filled with zero says a child failed. Same keystroke, wildly different consequences.
 
 What everybody *does* agree on, and what you should insist on all year: **whatever you fill in, write down that you filled it in, and how many.** An answer that says "average 45.67 runs, from 3 of the 4 players — Sam's card was blank" is honest. The same number with no note is not. That habit is the whole of Week 23 and 24, and it starts today.
 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This section lists the usual trouble spots, why each happens, and what to do right then.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -959,6 +981,8 @@ What everybody *does* agree on, and what you should insist on all year: **whatev
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to adjust the lesson for a student who is struggling, flying, or not engaging today.
 
 ### If the student is struggling
 
@@ -1003,7 +1027,7 @@ That game delivers objectives 1 and 4 completely, takes twelve minutes, needs no
 
 ## ✅ Assessing Understanding
 
-Three checks, five minutes, exact wording.
+This section gives three short checks to run at the end of the lesson, with the exact wording to use and what a good answer sounds like. It takes about five minutes.
 
 **Check 1 — build and read (on paper, 90 seconds)**
 
@@ -1043,6 +1067,8 @@ print(pizza["price"])
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words for setting tonight's homework, which workbook sections it covers, and how long it takes.
 
 **Say this:**
 
@@ -1492,9 +1518,26 @@ The six "I can…" rows are the student's own ticks; do not mark them, but look 
 
 ## 🔮 Next Week Preview
 
-Next week the five cards get stacked. That is genuinely the whole idea: put the five player dictionaries into one list and you have not built something new — **you have built a table**, where one dictionary is one row and the five keys are the five column names. Everything Level 1 taught about tables, rows and columns arrives back in code, and it arrives for free, because the student already typed the hard part today. The new tools are small: `.items()` to walk through one card field by field, `"runs" in player` to ask whether a field exists before reaching for it, a one-line comprehension to pull a whole column out, and `enumerate()` to put a row number beside every row while printing. By the end of next week the student will print a twelve-row table with a numbered header, out of nothing but dictionaries and f-strings, and it will look like something a computer produced.
+This section says what next week builds on, and what to keep and check tonight.
 
-**Prep early:** three things. **Keep the five index cards** — next week opens by stacking them and fanning them out into a column, and buying new cards is a waste. **Keep `scorecard.py`** on disk; next week's file starts by copying those five dictionaries into a list. And **check the five keys are spelled identically on all five cards**, tonight, before the student's homework hardens the mistake. One card with `Team` instead of `team` will produce a `KeyError` halfway through next week's loop, which is a fine teaching moment if you planned it and a twenty-minute derailment if you did not.
+Next week the five cards get stacked. That is genuinely the whole idea: put the five player dictionaries into one list and you have not built something new — **you have built a table**, where one dictionary is one row and the five keys are the five column names. Everything Level 1 taught about tables, rows and columns arrives back in code, and it arrives for free, because the student already typed the hard part today.
+
+The new tools are small:
+
+- `.items()` to walk through one card field by field.
+- `"runs" in player` to ask whether a field exists before reaching for it.
+- A one-line comprehension to pull a whole column out.
+- `enumerate()` to put a row number beside every row while printing.
+
+By the end of next week the student will print a twelve-row table with a numbered header, out of nothing but dictionaries and f-strings, and it will look like something a computer produced.
+
+**Prep early:** three things.
+
+1. **Keep the five index cards** — next week opens by stacking them and fanning them out into a column, and buying new cards is a waste.
+2. **Keep `scorecard.py`** on disk; next week's file starts by copying those five dictionaries into a list.
+3. **Check the five keys are spelled identically on all five cards**, tonight, before the student's homework hardens the mistake.
+
+One card with `Team` instead of `team` will produce a `KeyError` halfway through next week's loop. That is a fine teaching moment if you planned it and a twenty-minute derailment if you did not.
 
 ---
 
