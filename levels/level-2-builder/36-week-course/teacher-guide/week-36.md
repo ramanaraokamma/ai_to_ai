@@ -100,7 +100,7 @@ Three parts, 60 points, about ninety minutes. It goes in its own sitting, closed
 
 **Rules of engagement, read out before they start:**
 
-- �� Paper and pen for working out. The glossary, if a word blanks on them.
+- 📝 Paper and pen for working out. The glossary, if a word blanks on them.
 - ❌ **No running the code.** Predicting the output in their head is the actual skill being tested.
 - ❌ No looking at the answers until they have written something for **every** item, including the guesses. A wrong written answer teaches more than a blank.
 - Afterwards, they run the four debug problems. Watching your own fix work is half the point.

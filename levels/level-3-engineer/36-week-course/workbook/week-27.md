@@ -1211,7 +1211,7 @@ train 0.5938   test 0.8889
 
 **Part 1. Safe for digits: shifting one pixel, and changing the brightness.** *(Small random pixel swaps are also broadly safe on a digit — they are just noise — but they do not teach the model anything useful either.)*
 
-**Unsafe for cats: flipping top-to-bottom, and turning a quarter turn.** The label survives in all three (a flipped or rotated cat is still a cat); they are unsafe because they are unrealistic, not because they are mislabelled. A cat rotated 90° is a thing you will essentially never photograph, so training on it teaches the model about pictures that do not exist. *(The wrapping row is the interesting exception: on a big photo with a dark border, wrapping usually does nothing visible at all.)*
+**Unsafe for cats: flipping top-to-bottom, turning a quarter turn, and turning upside down.** The label survives in all three (a flipped or rotated cat is still a cat); they are unsafe because they are unrealistic, not because they are mislabelled. A cat rotated 90° is a thing you will essentially never photograph, so training on it teaches the model about pictures that do not exist. *(The wrapping row is the interesting exception: on a big photo with a dark border, wrapping usually does nothing visible at all.)*
 
 **Part 2. The pair is 6 and 9.** Turn a 6 upside down and you have a 9. **The change did not just make the picture odd — it turned it into a picture of a different, real class, with the old label attached.** That is the worst possible kind of augmentation error, because the model is being actively taught that 9s are 6s. *(2 and 5 are a milder version of the same thing.)*
 

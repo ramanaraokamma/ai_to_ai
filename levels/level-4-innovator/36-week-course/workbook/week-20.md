@@ -14,7 +14,7 @@
 >
 > **Everything is real. There is no stand-in and no scripted backend anywhere in this workbook.** The tokenizer is your own `bpe.py`, trained on your CPU on text that is already on your computer. The `tokenizers` library appears **only** on pages 20.4 and 20.5, **only** as a trainer run locally on local text, and **only** through the given `make_theirs` and `their_tokenizer` functions from class. What a tokenizer trained on a 6,972-character corpus does says something about *that tokenizer* and nothing about any product's.
 >
-> **Keep your class files.** You need `bpe.py`, `samples.py`, `test_bpe.py`, `text_merges.py`, `compare.py`, `grow.py` and `cost.py` from class. The practice pages add **four** small files you type yourself (`check201.py`, `check203.py`, `check204.py`, `check205.py`, all in the answers section, for checking only) and three deliberate bugs on page 20.7. Run everything from the folder that contains `l4lib/`. The longest run is `grow.py` (about 20 to 25 seconds); everything else finishes in a few seconds. Nothing downloads anything.
+> **Keep your class files.** You need `bpe.py`, `samples.py`, `test_bpe.py`, `text_merges.py`, `compare.py`, `grow.py` and `cost.py` from class. The practice pages add **five** small files you type yourself (`check201.py`, `check202.py`, `check203.py`, `check204.py`, `check205.py`, all in the answers section, for checking only) and three deliberate bugs on page 20.7. Run everything from the folder that contains `l4lib/`. The longest run is `grow.py` (about 20 to 25 seconds); everything else finishes in a few seconds. Nothing downloads anything.
 >
 > Use a **calculator** and carry **two decimals** unless a page says otherwise.
 

@@ -1083,7 +1083,7 @@ This section tells you what to do after class. Go to **[the Week 13 workbook](..
 | Section | What to do | Time |
 |---|---|---|
 | **Warm-Up** | Five quick questions from Week 12 | 5 min |
-| **Predict the Output** | Four snippets. Two of them produce **no error at all** | 10 min |
+| **Predict the Output** | Four snippets. Three of them produce **no error at all** | 10 min |
 | **Practice A & B** | Six reading questions, then five you write yourself | 20 min |
 | **Fix the Broken Program** | A snack order with three planted bugs — one syntax, one crash, one silent | 10 min |
 | **Build It** | Five cards in code, one `KeyError` on purpose, two different fixes | 15 min |

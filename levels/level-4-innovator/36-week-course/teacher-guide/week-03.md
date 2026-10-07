@@ -772,7 +772,7 @@ print("0.999 :", round(math.log(0.5) / math.log(0.999), 1))
 
 - Open the terminal in the right folder; run `python3 -c "import torch; print(torch.__version__)"`.
 - Put `0.693  vs  0.007` **face down** on the board. It is the hook.
-- Have the Bug Log open and the two Week 2 cards (SGD 0.03, momentum 0.3) out.
+- Have the Bug Log open and the two Week 2 cards (SGD 0.3, momentum 0.03) out.
 
 ---
 

@@ -1077,7 +1077,7 @@ Open the **[Week 31 workbook](../workbook/week-31.md)**. Three things, and the s
 
 **Second — the one it gets wrong.** Find the hidden flower the tree fails on. Write down its number, its petal length and its petal width. Then — and this is the part that gets the marks — **name the rule that caught it** and say why. Not "the tree was wrong". Something like: *"rule four says wider than 1.65 means virginica, and this flower's petal was 1.7, so it lost by half a millimetre."*
 
-**Third — the Bug Log and the importances.** Both of this week's errors go in the Bug Log, with the real message copied out and the fix in your own words. Then write down the four importance numbers, add them up, and answer this in two sentences: two of them are `0.000` — does that mean those two measurements are useless?
+**Third — the Bug Log and the importances.** The first two of this week's errors (`depth` and `export_text`) go in the Bug Log, with the real message copied out and the fix in your own words. Then write down the four importance numbers, add them up, and answer this in two sentences: two of them are `0.000` — does that mean those two measurements are useless?
 
 And one more thing. **Before you run anything, write down which of the four measurements you think the tree will lean on most.** Then find out. **I would quite like you to be wrong** — being wrong there and noticing it is worth more than happening to be right.
 

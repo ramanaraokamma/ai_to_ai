@@ -1018,7 +1018,7 @@ The activity is "Their Turn" above. **Materials:** the printed workbook pages 2.
 
 Use this section to practise reading errors: nine mistakes the week reliably produces, each with its real output and fix.
 
-Each error below is **deliberate**: a mistake this week reliably produces. The block in each is a **separate file** (called `week02_mistakeN.py`) and is meant to fail (or, in two cases, to run quietly and be wrong). The tracebacks are the real ones from torch 2.2.1 on the machine named above; file paths in them have been shortened, and where the traceback runs through PyTorch's own files those middle frames are replaced by one line saying so (the last line is the real, untouched one). **Teach the student to read the last line first.**
+Each error below is **deliberate**: a mistake this week reliably produces. The block in each is a **separate file** (called `week02_mistakeN.py`) and is meant to fail (or, in four cases, to run quietly and be wrong). The tracebacks are the real ones from torch 2.2.1 on the machine named above; file paths in them have been shortened, and where the traceback runs through PyTorch's own files those middle frames are replaced by one line saying so (the last line is the real, untouched one). **Teach the student to read the last line first.**
 
 ### Error 1 — Reading the length of a gradient that was removed
 
@@ -1312,7 +1312,7 @@ Four quick checks, none of which is a test.
 
 This section lists the homework pages and what each one checks.
 
-**Workbook Week 2** (about 60–75 minutes). The workbook file is authored in a later stage; the pages it must carry, so that it matches today, are:
+**Workbook Week 2** (about 60–75 minutes). The workbook file is `workbook/week-02.md`; the pages it carries, matching today, are:
 
 | Page | Task | What it checks |
 |:--:|---|---|

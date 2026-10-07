@@ -671,8 +671,8 @@ This section is the minute-by-minute plan for the class: the timetable first, th
 | 0:05-0:17 | 🧠 Teach | The seven headings (P8 on the board); **Page 34.1** with a pencil (severity vs likelihood); the rule *the test comes first* |
 | 0:17-0:30 | 🎲 Their turn 1 | A named person, two components, §1-§4 of `DESIGN.md` |
 | 0:30-0:52 | 🎲 Their turn 2 | The Case Card; **ten cases** typed; `check_cases` on them (📌 handed); `refuse_all` and `echo` on the ten |
-| 0:52-0:63 | 🎲 Their turn 3 | The scorer test (P5 📌) and **Page 34.3**; the budget (P7 📌); §5-§7; the freeze demonstration (D1 live) |
-| 0:63-0:70 | 🔑 Wrap | What they hold, what is due, the hash on your paper |
+| 0:52-1:03 | 🎲 Their turn 3 | The scorer test (P5 📌) and **Page 34.3**; the budget (P7 📌); §5-§7; the freeze demonstration (D1 live) |
+| 1:03-1:10 | 🔑 Wrap | What they hold, what is due, the hash on your paper |
 
 ### 🪝 Hook — Three Out of Three (5 minutes)
 

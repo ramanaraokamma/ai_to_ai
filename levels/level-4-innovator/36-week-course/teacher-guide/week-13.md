@@ -1152,7 +1152,7 @@ This table maps the symptoms you are likely to see to their cause and a response
 | The student says "temperature makes it smarter / dumber" | Temperature changes the odds, not the model | Run `T = 0.3` and `T = 2` on the same trained model |
 | Top-p writes `cumsum < p` and everything fails | The off-by-one | Clinic 6 and the "letters *above*" sentence |
 | Greedy output is different on each run | The model is in train mode | Clinic 5 |
-| The exposure-bias number is quoted as proof | The gap has three ingredients | Section 7, limit 3; say "consistent with" |
+| The exposure-bias number is quoted as proof | The gap has four ingredients | Section 7, limit 3; say "consistent with" |
 | The copy sweep seems "broken" because the RNN is at 0.127 | 0.125 is chance for 8 symbols; the RNN is guessing | Say "chance is 1 in 8"; the cliff is the finding |
 | The lesson overruns | The Tasting is the longest piece | Cut the second half of the live-code table narration, never the exposure measurement |
 
@@ -1168,7 +1168,7 @@ Stay with five letters and one idea per pass: softmax, then temperature, then on
 
 ### If the student is flying
 
-Give them the `e^(gap / T)` ratio (it is in `key.py`) and ask them to predict the `T = 2` ratio for a gap of 3 before computing (4.5). Then the challenge: *"write a sampler `top_p_k` that applies top-k first and then top-p to what is left, and tell me when it differs from either alone."* Then: *"the exposure-bias gap has three ingredients. Design one measurement that separates two of them"* (for instance, scoring names generated at `T = 1` after each letter is replaced with the model's top letter, or comparing the model's next-letter loss on a true prefix and on its own prefix at the *same* position). You do not have to have an answer; the point is a design.
+Give them the `e^(gap / T)` ratio (it is in `key.py`) and ask them to predict the `T = 2` ratio for a gap of 3 before computing (4.5). Then the challenge: *"write a sampler `top_p_k` that applies top-k first and then top-p to what is left, and tell me when it differs from either alone."* Then: *"the exposure-bias gap has four ingredients. Design one measurement that separates two of them"* (for instance, scoring names generated at `T = 1` after each letter is replaced with the model's top letter, or comparing the model's next-letter loss on a true prefix and on its own prefix at the *same* position). You do not have to have an answer; the point is a design.
 
 ### If the student won't engage today
 
@@ -1198,7 +1198,7 @@ This section gives questions to ask aloud near the end, with what a good and a s
 | 🟥 Not yet | Cannot say what the model outputs; cannot predict the direction of T. |
 | 🟨 Emerging | Predicts T correctly; runs `five.py`; cannot write top-p without help. |
 | 🟩 Secure | Types top-k and top-p; predicts the table's direction; says why "new" is not "good"; quotes 0.954 vs 1.122 with "consistent with". |
-| 🟦 Strong | Also explains the three ingredients in the exposure gap, or designs a cleaner test, or explains the `e^(gap / T)` ratio. |
+| 🟦 Strong | Also explains the four ingredients in the exposure gap, or designs a cleaner test, or explains the `e^(gap / T)` ratio. |
 
 ---
 

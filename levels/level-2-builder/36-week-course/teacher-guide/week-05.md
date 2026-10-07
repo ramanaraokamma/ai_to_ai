@@ -887,7 +887,7 @@ Options in workbook **Build It**, Part 3, if they need one:
 
 That last one is worth pointing out to a student who is flying: `%` is Week 3's remainder, and `number % 2 == 0` is how everybody in the world checks whether a number is even. It is a genuinely famous line of code.
 
-Here is `pass_or_fail.py` complete, actually run:
+Here is `pass_fail.py` complete, actually run:
 
 ```python
 # pass_fail.py - one mark in, one verdict out.
@@ -1284,7 +1284,7 @@ Run all four yourself if you have not; these are the real outputs.
 | P3 | `Not hot` / `Done` | **The trap is the `>`.** `30 > 30` is `False`, so exactly 30 is "not hot". `Done` is at the margin, so it prints on both paths. |
 | P4 | `True` / `False` / `False` / `True` | `7 == 7.0` is `True` (value, not type). `"7" == 7` is `False` (text and number are never equal). **`"10" > "9"` is `False`**: as text, the first characters `1` and `9` are compared and `1` comes first. `10 > 9` is `True`. |
 
-**Marking the score line.** The workbook asks "how many of the thirteen did you get right?" but the four programs contain only ten things to predict (3 + 1 + 2 + 4). **Do not mark anyone down for a total other than 13.** Have them count their own predictions and write the real total. Flag it to the student kindly; the slip is in the printed page, not in them.
+**Marking the score line.** The workbook asks "how many of the ten did you get right?" but the four programs contain only ten things to predict (3 + 1 + 2 + 4). **Do not mark anyone down for a total other than 10.** Have them count their own predictions and write the real total. Flag it to the student kindly; the slip is in the printed page, not in them.
 
 **Wrong-answer map.** `True` for `"10" > "9"` means the student compared by size, the Week 4 text-versus-number confusion. `A B C` for P2 means they ignored the condition. `Hot` for P3 means they read `>` as "at least".
 

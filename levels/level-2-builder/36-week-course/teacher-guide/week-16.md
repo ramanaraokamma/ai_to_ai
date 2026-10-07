@@ -1391,7 +1391,7 @@ ValueError: invalid literal for int() with base 10: '3.5'
 
 **Two lines print and the third crashes.** `int(" 48 ")` works because `int` ignores spaces at the ends; `float("3.5")` works; `int("3.5")` refuses rather than throw away the `.5` quietly. Use `float()` for a decimal column.
 
-> **📌 Remember (marking):** the sheet asks "how many of the fourteen answers did you get right?" and I count 4 + 3 + 5 + 3 = 15 predictions across P1–P4, not 14. Do not mark a student down for a tally that does not reach 14; what matters is that they wrote a prediction before running anything and can say which one surprised them. The commonest surprises are P1 line 3 (`True`) and P3 (`True True False True`).
+> **📌 Remember (marking):** the sheet asks "how many of the fifteen answers did you get right?" and the predictions count 4 + 3 + 5 + 3 = 15 across P1–P4. Do not mark a student down for a tally that is off by one; what matters is that they wrote a prediction before running anything and can say which one surprised them. The commonest surprises are P1 line 3 (`True`) and P3 (`True True False True`).
 
 ### Practice Set A
 

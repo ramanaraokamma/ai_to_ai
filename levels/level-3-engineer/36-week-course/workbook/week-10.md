@@ -36,7 +36,7 @@ This section is for practising one division, rise ÷ run, first on twenty clean 
 
 **This week's new maths is one division: steepness = rise ÷ run.** Use a calculator. No code on this page. **And after every division, write the sentence** — *"I bought ___ units of recall per unit of false alarm."* The sentence is the answer; the decimal is just the arithmetic.
 
-**M1 — the twenty index cards, where the numbers are clean.** Ten fraud, ten legit, so both denominators are **10**. Here are five dots off that curve:
+**M1 — the twenty index cards, where the numbers are clean.** Ten fraud, ten legit, so both denominators are **10**. Here are seven dots off that curve:
 
 | threshold | dot (fpr, tpr) |
 |---|---|

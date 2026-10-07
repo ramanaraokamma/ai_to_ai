@@ -12,7 +12,7 @@
 
 | | |
 |---|---|
-| **Duration** | 70 minutes in class (one 3.5-minute run of five models sits inside it), then the workbook (~60-75 min) |
+| **Duration** | 70 minutes in class (one 3.6-minute run of five models sits inside it), then the workbook (~60-75 min) |
 | **Type** | 🟩 Lab — the student **takes the Week 17 TinyGPT apart**: deletes the mask, the positions, the residual road and the layer norm one at a time, retrains each, and fills a table; then trains tiny models on three made-up tasks (copy, reverse, lookup) and **names a head from its attention picture** |
 | **Big idea** | "Every part of the GPT is needed" is a claim, and a claim can be tested: delete one part, retrain with everything else the same, and compare the **validation** loss. Today's table says four different things. Taking out the **residual road** wrecks the model (validation 2.68 against 1.67). Taking out the **positions** costs a little (1.74). Taking out the **layer norm** makes this small model *better* (1.48). Taking out the **mask** gives the best number of all (0.077) and is the one that proves nothing: the model is reading the answer. Then, on tasks small enough to see inside, the heads turn out to have simple jobs ("look six back", "look at the mirror place", "read the key just before me"), and a head's name is worth something only if a test could have shown it wrong. |
 | **New vocabulary** | ablation · leak · synthetic task · attention weights (as a picture) · head card · redundant |

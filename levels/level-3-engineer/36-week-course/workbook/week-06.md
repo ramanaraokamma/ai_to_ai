@@ -910,7 +910,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**T2.** Nobody in the hospital story cheated. Somebody joined two tables, the join was correct, every value in the column was true, and every single step was reasonable. Sixty women with malignant tumours were then told they were fine. **Write a paragraph:** if nobody made a mistake, whose job was it to catch this? What would you put in a checklist that a person who has never heard the word "leakage" could still run? And is *"good news gets audited harder than bad news"* a rule you can actually make people follow, or does it need to be built into the tools?
+**T2.** Nobody in the hospital story cheated. Somebody joined two tables, the join was correct, every value in the column was true, and every single step was reasonable. Sixty patients with malignant tumours were then told they were fine. **Write a paragraph:** if nobody made a mistake, whose job was it to catch this? What would you put in a checklist that a person who has never heard the word "leakage" could still run? And is *"good news gets audited harder than bad news"* a rule you can actually make people follow, or does it need to be built into the tools?
 
 ________________________________________________________________
 
@@ -1359,7 +1359,7 @@ len(get_feature_names_out()), + leaky column    21
 
 **A5(a).** **The question is: *"At the moment I need the prediction, does this value exist?"*** For `distance_km` → **yes**, you have the address the instant somebody clicks ORDER. For `biopsy_booked` → **no**, it only gets filled in after a radiologist has read the scan. **That single question separates them, and it needs no data, no code and no maths.**
 
-**A5(b).** That keeping one number can hide a catastrophe. **AUC fell 0.15 and looked survivable; recall fell from 87.5% to 6.25% and is a disaster** — 60 women with malignant tumours told they were fine. **A leaky column can go on looking respectable in one metric while being ruinous in another**, which is exactly why next week is about four numbers instead of one.
+**A5(b).** That keeping one number can hide a catastrophe. **AUC fell 0.15 and looked survivable; recall fell from 87.5% to 6.25% and is a disaster** — 60 patients with malignant tumours told they were fine. **A leaky column can go on looking respectable in one metric while being ruinous in another**, which is exactly why next week is about four numbers instead of one.
 
 **A6.** Reading the blanks:
 

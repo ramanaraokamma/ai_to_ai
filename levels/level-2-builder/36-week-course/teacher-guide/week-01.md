@@ -1140,7 +1140,7 @@ Four snippets, twelve lines of output. All real:
 
 **A1. Fill in the blanks.** **instructions · file · top · bottom**; **interpreter** (on the laptop, **`python3`**); **`#`** (hash); **text**; **syntax**.
 
-**A2. (a)** **(b) `2 + 2`.** The quotes make it text, so Python shows the five characters and never treats it as a sum.
+**A2. (a)** **Choice (b), `2 + 2`.** The quotes make it text, so Python shows the five characters and never treats it as a sum.
 **(b)** **FALSE.** Python reads the file, finds a line it cannot understand, prints a message saying where and why, and stops. Nothing is damaged: not the file, not Python, not the laptop. An error message costs four seconds. It is a signpost, not a punishment.
 
 **A3. Match the pairs.**

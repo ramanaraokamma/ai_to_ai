@@ -1060,7 +1060,7 @@ Use this section to set the homework: what to say, which workbook sections to us
 >
 > **Second, Build It Part 4 — the one it gets wrong.** Find the hidden flower the tree fails on. Write down its number, its petal length and its petal width. Then — and this is the part that gets the marks — **name the rule that caught it** and say why. Not 'the tree was wrong'. Something like: 'rule four says wider than 1.65 means virginica, and this flower was 1.7, so it lost by half a millimetre.' Then try to fix it by moving the cut-off, and tell me whether you removed the mistake or moved it.
 >
-> **Third, Build It Parts 5 and 6 — the importances and the Bug Log.** Write down the four importance numbers and answer this: two of them are 0.000. Does that mean those two measurements are useless? Answer in two sentences, then test it. Both of today's errors go in the Bug Log, with the real message copied out and the fix in your own words.
+> **Third, Build It Parts 5 and 6 — the importances and the Bug Log.** Write down the four importance numbers and answer this: two of them are 0.000. Does that mean those two measurements are useless? Answer in two sentences, then test it. The two errors from today (`depth` and `export_text`) go in the Bug Log, with the real message copied out and the fix in your own words.
 >
 > One more thing. Part 1 is written **before** you run anything. **I would quite like you to be wrong** — being wrong there is worth more than being right."
 

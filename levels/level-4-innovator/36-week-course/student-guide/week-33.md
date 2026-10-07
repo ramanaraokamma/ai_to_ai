@@ -104,7 +104,7 @@ That answers the Start Here question. 7 and 9 differ by 2, and one wobble of thi
 
 and we call a gap **more than noise** only if it is bigger than **twice** that. "More than noise" is not the same as "important", and it is not the same as "fixed".
 
-**What the formula needs.** It needs `p`, and on a real system **nobody knows `p`**. We plug in the share we measured, `count / n`. That plug-in breaks at 0 and at `n`: at `0 of 50` the formula says the wobble is exactly `0.00`, whatever the truth. You will see why that is a trap in section 9. This week does not teach where the formula comes from, the bell curve, or confidence intervals; use it as a rule of thumb and say "about".
+**What the formula needs.** It needs `p`, and on a real system **nobody knows `p`**. We plug in the share we measured, `count / n`. That plug-in breaks at 0 and at `n`: at `0 of 50` the formula says the wobble is exactly `0.00`, whatever the truth. You will see why that is a trap in sections 8 and 13. This week does not teach where the formula comes from, the bell curve, or confidence intervals; use it as a rule of thumb and say "about".
 
 **Pencil now (Page 33.1).** For each of `n = 20, p = 0.3`, `n = 50, p = 0.3` and `n = 50, p = 0.5`, write:
 
@@ -538,7 +538,7 @@ the Hook: 7 vs 9 of 20   : before 7/20 (0.35), after 9/20 (0.45); gap -2 counts 
 
 The Hook's `7 → 9` is now a number: a gap of 2 against a bound of 6.2. The patch's `15 → 0` is a gap of 15 against 6.5.
 
-**Watch what the first two lines hide.** With `0` landings after the patch, the formula gives the "after" side a wobble of exactly zero, so the bound `6.5` is slightly too small. And `0 of 50` is still only "I did not see it". Section 11 is about that.
+**Watch what the first two lines hide.** With `0` landings after the patch, the formula gives the "after" side a wobble of exactly zero, so the bound `6.5` is slightly too small. And `0 of 50` is still only "I did not see it". Section 13 is about that.
 
 ---
 

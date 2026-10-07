@@ -361,8 +361,8 @@ gap at best: 0.046  gap at end: 0.75
 
 **R7.** Complete: *"The best epoch is only known __________, so the thing to keep is the __________."*
 
-![Line chart of loss against epoch: a solid training line falling to zero, a dashed validation line that bottoms out at epoch 59 then climbs to 0.906, and a bracket marking the final gap](../figures/fig-w05-1-memorising-train-val-gap.svg)
-*Figure W5.1 — Training loss reaching 0.000 does not mean the model is good: validation loss turned upward after epoch 59.*
+![Line chart of the seed-0 run from the lesson (not the seed-10 table above): a solid training line falling to zero, a dashed validation line that bottoms out at epoch 59 then climbs to 0.906, and a bracket marking the final gap](../figures/fig-w05-1-memorising-train-val-gap.svg)
+*Figure W5.1 — The seed-0 run from the lesson (the table above is seed 10): training loss reaching 0.000 does not mean the model is good; validation loss turned upward after epoch 59.*
 
 ---
 

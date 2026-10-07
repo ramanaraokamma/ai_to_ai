@@ -1822,7 +1822,7 @@ Twenty epochs, not forty, so the fixed numbers are below the chapter's 0.9926. A
 | make it 20% brighter | **yes** | **yes** |
 | swap two pixels at random | **yes** (usually) | **yes** (usually) |
 
-**Part 1.** Safe for digits: **shifting one pixel, and changing the brightness** (small random swaps are also broadly safe, just useless). Unsafe for cats: **flipping top-to-bottom and turning a quarter turn** (the label survives; they are unrealistic, not mislabelled). **Part 2.** The pair is **6 and 9**: an upside-down 6 is a real 9 carrying the old label. **Part 3.** Ink per row:
+**Part 1.** Safe for digits: **shifting one pixel, and changing the brightness** (small random swaps are also broadly safe, just useless). Unsafe for cats: **flipping top-to-bottom, turning a quarter turn, and turning upside down** (the label survives; they are unrealistic, not mislabelled). **Part 2.** The pair is **6 and 9**: an upside-down 6 is a real 9 carrying the old label. **Part 3.** Ink per row:
 
 ```text
 ink per row, the upside-down 6: [39 57 61 36 27 32 29 25]

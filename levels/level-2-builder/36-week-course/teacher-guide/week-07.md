@@ -399,7 +399,7 @@ Three items, three dividers, and the last one is dangling. Five fence panels nee
 
 **The fix is a number, not an explanation.** Have them run `for n in range(10): print(n, end=" ")` and count the numbers out loud with a finger. Ten numbers, last one 9. Then ask "how many values does `range(10)` hand out?" — ten. "What is the last one?" — nine. Both true at once, and that is the whole difficulty.
 
-**Misconception 3 — "the total prints six times, so there are six totals."** A student sees the running total printed on every pass and concludes there are twelve totals. There is one box; it changes twelve times.
+**Misconception 3 — "the total prints twelve times, so there are twelve totals."** A student sees the running total printed on every pass and concludes there are twelve totals. There is one box; it changes twelve times.
 
 **The fix:** an actual box. Put a coin in a cup, then another, then another, counting out loud. There is one cup. Figure 7.3 is the same picture.
 

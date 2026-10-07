@@ -30,7 +30,7 @@
 > - Nothing needs the internet, and the whole file runs in about one second; **if a block takes more than a minute, something is wrong.**
 > - This week creates a folder `capstone34/` with three empty folders in it, plus a few small files.
 
-> **⚠️ Nothing today is a model.** `refuse_all`, `oracle` and `echo` (Section 6) are three-line **stand-ins, not models**: they exist to test the scorer. The dollars and milliseconds in Section 8 are measured on the scripted **stand-ins** of Weeks 25 to 29, so they are **stand-in dollars** and **stand-in milliseconds**: they say nothing about any real model's bill or speed. What is real today is the design, the cases, the checks, the scorer and the fingerprint. The eight example cases are examples of the *shape* of a case, not your 25.
+> **⚠️ Nothing today is a model.** `refuse_all`, `oracle` and `echo` (Section 4) are three-line **stand-ins, not models**: they exist to test the scorer. The dollars and milliseconds in Section 6 are measured on the scripted **stand-ins** of Weeks 25 to 29, so they are **stand-in dollars** and **stand-in milliseconds**: they say nothing about any real model's bill or speed. What is real today is the design, the cases, the checks, the scorer and the fingerprint. The eight example cases are examples of the *shape* of a case, not your 25.
 
 ---
 
@@ -545,7 +545,7 @@ check_design on your fresh DESIGN.md:
 
 The fresh template fails five ways, as it should. You fill the blanks in a text editor, until `check_design(open("capstone34/DESIGN.md").read())` prints `[]`.
 
-**Here is a finished one for the example project**, to read beside your draft. Every name and number is invented or measured in Section 8. **Asha is not your user**: pick a real person.
+**Here is a finished one for the example project**, to read beside your draft. Every name and number is invented or measured in Section 6. **Asha is not your user**: pick a real person.
 
 ```python
 # s10_worked.py - Week 34 block S10: a WORKED design for the example project. Every name, person and number is invented or measured in Block S8.

@@ -988,7 +988,7 @@ That is one paragraph, it has a beginning, it raises a suspicion in the middle, 
 
 **The question:** *Does the subject change how long homework takes more than the number of questions does?* Target: `minutes`, a number.
 
-This one exists to show you the same model scored three ways, side by side, so you can see exactly what an audit is for.
+This one exists to show you the same model scored two ways, side by side, so you can see exactly what an audit is for.
 
 ```python
 # we35_3_homework.py - the same model, scored two ways. Only two names change.

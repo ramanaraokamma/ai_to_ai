@@ -1018,7 +1018,7 @@ in production:     recall 0.0625
 malignant tumours: 64        flagged: 4
 ```
 
-**In the lab it flags 87.5% of the malignant tumours. On the day it is switched on it flags 4 out of 64.** Sixty women with a malignant tumour walk out of the clinic having been told, by a model with a validation AUC of 0.9537, that they are fine.
+**In the lab it flags 87.5% of the malignant tumours. On the day it is switched on it flags 4 out of 64.** Sixty patients with a malignant tumour walk out of the clinic having been told, by a model with a validation AUC of 0.9537, that they are fine.
 
 **That is what the 0.9537 was worth.** And notice which number told you the truth: not the AUC, which only fell to 0.8064, but the **recall**, which collapsed from 0.8750 to 0.0625.
 

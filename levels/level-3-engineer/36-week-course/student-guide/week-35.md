@@ -806,7 +806,7 @@ np.percentile([3.27, 0.38, 0.31, 0.27, 0.27], 95)  ->  2.6919999999999993
 np.percentile([3.27, 0.38, 0.31, 0.27, 0.27], 50)  ->  0.31
 ```
 
-**Now the question that makes this worth doing.** The p95 of all 111 requests was **0.27** on that laptop. The p95 of these five is **2.692** — **ten times bigger, on fewer numbers.** How?
+**Now the question that makes this worth doing.** The p95 of all 111 requests was **0.28** on that laptop. The p95 of these five is **2.692** — **ten times bigger, on fewer numbers.** How?
 
 Because **95 percent of five numbers is 4.75 numbers**, so the one slow request is a *fifth* of the data and dominates completely. With 111 numbers it is one part in 111, and the p95 never reaches it. **A percentile is a claim about a proportion. Change how many numbers you have and you change what the claim means.**
 

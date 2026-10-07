@@ -38,7 +38,7 @@ ________________________________________________________________
 
 ## 🔎 Predict the Output
 
-**Write your prediction before you run anything.** Two of these four produce **no error at all**, so "what do you expect" means "what will it print".
+**Write your prediction before you run anything.** Three of these four produce **no error at all**, so "what do you expect" means "what will it print".
 
 ### P1
 
@@ -135,7 +135,7 @@ print(card)
 | `card["album"] = "Corner Shop"` | *(prints nothing)* | |
 | `print(len(card))` | | |
 
-**Two of those six lines changed the card. Which two, and which one of them *added* rather than *changed*?**
+**Two of those seven lines changed the card. Which two, and which one of them *added* rather than *changed*?**
 
 ________________________________________________________________
 

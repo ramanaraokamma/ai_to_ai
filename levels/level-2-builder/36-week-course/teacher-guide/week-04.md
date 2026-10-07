@@ -172,7 +172,7 @@ Read the one-liner from the inside out, which is the order Python does it in:
         └────────────────────────┘    3. put the number 12 in the box called age
 ```
 
-**Brackets close in the reverse order they opened.** `int(input("Age? "))` — the string's quotes close, then `input`'s bracket, then `int`'s bracket. Two closing brackets at the end, and a beginner will forget one. That is Debugging Clinic row 5.
+**Brackets close in the reverse order they opened.** `int(input("Age? "))` — the string's quotes close, then `input`'s bracket, then `int`'s bracket. Two closing brackets at the end, and a beginner will forget one. That is Debugging Clinic row 9.
 
 ### 4. Every line of this week's program, explained
 
@@ -226,7 +226,7 @@ Line by line:
 | `height_m = float(input(...))` | Same shape, but `float()` because a height has a decimal point. `float` is Python's word for a number with a decimal point. |
 | `age_days = age * 365` | Multiplies. Works only because `age` is a number. If `int()` were missing, this line would silently produce 730 characters of nonsense (`"12"` repeated 365 times). |
 | `height_ft = round(height_m * 3.28084, 2)` | One metre is 3.28084 feet. `round(…, 2)` trims the answer to two decimal places. |
-| `print(f"  Name    : {name}")` | The `f` immediately before the opening quote is what makes `{name}` get replaced by the value. **Without the `f`, Python prints the literal characters `{name}`** — see Debugging Clinic row 8. |
+| `print(f"  Name    : {name}")` | The `f` immediately before the opening quote is what makes `{name}` get replaced by the value. **Without the `f`, Python prints the literal characters `{name}`** — see Debugging Clinic row 13. |
 | `{height_m:.2f}` | The `:` starts a formatting instruction. `.2f` means "show two digits after the point". |
 | `{fav_number ** 3}` | `**` is "to the power of". You can do arithmetic *inside* the braces. |
 

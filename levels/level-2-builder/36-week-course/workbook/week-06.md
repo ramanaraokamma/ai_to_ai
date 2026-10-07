@@ -114,7 +114,7 @@ else:
 
 **It really printed:** ________________________
 
-**How many of the nine did you get right?** ______ / 9
+**How many of your predictions did you get right?** ______ out of ______
 
 **Which one surprised you most, and why?**
 

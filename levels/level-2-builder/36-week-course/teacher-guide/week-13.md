@@ -1115,7 +1115,7 @@ This key follows the workbook's own sections and item labels (W1, P1, A1, B1, Fi
 
 ### Predict the Output
 
-*Two of the four produce no error. "Predict" means "what will it print".*
+*Three of the four produce no error. "Predict" means "what will it print".*
 
 **P1.** `card = {"runs": 48, "balls": 32, "runs": 51}`, then `print(card)` and `print(len(card))`.
 
@@ -1159,7 +1159,7 @@ KeyError: 0
 
 The first line prints fine; a crash does not undo what already ran. Then `KeyError: 0` because a dictionary has labels, not positions. (Python 3.10 or older: no `~~~^^^` line; do not mark that as a mistake.)
 
-**Score line, "how many of the nine answers":** the student's own count out of 9 (P1 has two answers, P2 three, P3 is one entry, P4 one). Do not mark it; ask which one surprised them. P2's first line is the usual answer.
+**Score line, "how many of the nine answers":** the student's own count out of 9 (P1 has two answers, P2 three, P3 three, P4 one). Do not mark it; ask which one surprised them. P2's first line is the usual answer.
 
 ### Practice Set A — Read It
 

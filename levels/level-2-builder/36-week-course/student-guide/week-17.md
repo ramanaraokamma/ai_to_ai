@@ -58,7 +58,7 @@ It is a **perfect rectangle** — no gaps, nothing ragged, every row the same le
 
 That is the whole trade of this week, and both halves are real: **you give up the labels, and what you get back is a shape and a single kind.**
 
-Now count the rows out loud. **Twelve.** Count the columns. **Three.**
+Now count the rows out loud. **Twelve.** Count the columns. **Two.**
 
 Write this underneath the block:
 
@@ -66,7 +66,7 @@ Write this underneath the block:
 (12, 2)
 ```
 
-Twelve comma three. **Rows first, always.** That pair of numbers is called the **shape**, and printing it is going to be the most useful thing you do all term.
+Twelve comma two. **Rows first, always.** That pair of numbers is called the **shape**, and printing it is going to be the most useful thing you do all term.
 
 ![A list is a cloakroom. An array is an egg box.](../figures/fig-w17-1-list-vs-array.svg)
 *Figure 17.1 — The list is more flexible. The array knows more about itself, and that is what buys the speed.*

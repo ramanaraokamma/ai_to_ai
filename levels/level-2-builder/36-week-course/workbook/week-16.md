@@ -115,7 +115,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**How many of the fourteen answers on this page did you get right?** ______ / 14
+**How many of the fifteen answers on this page did you get right?** ______ / 15
 
 **Which one surprised you most, and why?**
 

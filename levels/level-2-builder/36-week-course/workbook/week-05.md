@@ -99,7 +99,7 @@ print(10 > 9)
 
 **It really printed:** ______  ______  ______  ______
 
-**How many of the thirteen did you get right?** ______ / 13
+**How many of the ten did you get right?** ______ / 10
 
 **Which one surprised you most, and why?**
 

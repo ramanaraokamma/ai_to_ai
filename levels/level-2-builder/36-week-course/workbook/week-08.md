@@ -512,7 +512,7 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-Write the three lines that replace that one line. Remember the order: **keep it as text · check it · convert it.**
+Write the five lines that replace that one line. Remember the order: **keep it as text · check it · convert it.**
 
 ```python
 ________________________________________________________________
@@ -1250,7 +1250,7 @@ while tries <= 3:
 
 **Why an `if` after the `int(...)` cannot work:** `int()` is the line that crashes. By the time the `if` would run, the program is already over. **There is nothing left to check.**
 
-The three lines:
+The five lines:
 
 ```python
     text = input(f"PIN (try {tries + 1} of 3)? ").strip()   # keep it as TEXT
@@ -1260,7 +1260,7 @@ The three lines:
     typed = int(text)                                       # CONVERT, safely
 ```
 
-(That is four lines including the `continue`, and four is the right answer — the check needs somewhere to go when it fails.)
+(That is five lines including the `continue`, and five is the right answer — the check needs somewhere to go when it fails.)
 
 **Bug 3 — family 3, it finished and lied.**
 
@@ -1424,7 +1424,7 @@ The real output:
 | `How many scores?` | `0` | `  I need at least one score.` then asks again | Yes |
 | `Score n of m:` | `120` | `    The most anyone can score is 100.` and the **same** score number repeats | Yes — the `continue` means it was not counted |
 
-**(h)** The `-5` and `-4` rows. The program says "whole numbers only" when the rule it is actually applying is **"digits only — no minus signs, no decimal points."** An honest message would be `Digits only please - no minus signs or decimal points.` **Naming the limitation precisely is worth more than pretending it does not exist**, and it is exactly what a Bug Log is for.
+**(h)** The `-5` row. The program says "whole numbers only" when the rule it is actually applying is **"digits only — no minus signs, no decimal points."** An honest message would be `Digits only please - no minus signs or decimal points.` **Naming the limitation precisely is worth more than pretending it does not exist**, and it is exactly what a Bug Log is for.
 
 **(i)** It asks **a hundred and one** times. **Not a crash.** And whether it is a bug is a genuine design question with no single answer — see T2. It is not a *crash*, and it follows from a rule you chose; but it does mean the loop's ending depends on the human eventually cooperating.
 

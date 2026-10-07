@@ -453,7 +453,7 @@ print("5" + 5)
 False <class 'bool'>
 55
 Traceback (most recent call last):
-  File "/Users/you/ai-academy/level2/types_tour.py", line 15, in <module>
+  File "/Users/you/ai-academy/level2/types_tour.py", line 16, in <module>
     print("5" + 5)
 TypeError: can only concatenate str (not "int") to str
 ```

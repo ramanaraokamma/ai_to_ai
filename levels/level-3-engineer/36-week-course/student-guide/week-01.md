@@ -813,7 +813,7 @@ Name: late, Length: 2020, dtype: int64>
 
 **Nothing crashed.** Missing brackets again — but this time Python could print the recipe, so it did, and you get a wall of nonsense ending in a stray `>`. It is the same bug as Break 1 wearing a friendlier face, and it is scarier precisely because there is no traceback to read.
 
-And the fourth silent one you already met:
+And three more you already met (two silent, one loud):
 
 | What happened | Why nothing complained | The fix |
 |---|---|---|

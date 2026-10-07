@@ -1365,7 +1365,7 @@ The row sum is **3** because there are three one-hot blocks side by side and eac
 | e | `ValueError: Shape mismatch: if categories is an array, it has to be of shape (n_features,).` | list **inside** a list: `categories=[["clear", "rain", "storm"]]` |
 | f | `ValueError: could not convert string to float: 'clear'` | send word columns down the categorical branch |
 
-- **A3(g).** **(d).** It returns a *sparse* matrix, which stores only the non-zero cells and prints as coordinates: `(0, 0)	1.0`, `(1, 1)	1.0`, `(2, 1)	1.0`. Not a bug, and what you want inside a pipeline, but useless while you are learning.
+- **A3(g).** **(d).** It returns a *sparse* matrix, which stores only the non-zero cells and prints as coordinates: `(0, 0)  1.0`, `(1, 1)  1.0`, `(2, 1)  1.0`. Not a bug, and what you want inside a pipeline, but useless while you are learning.
 - **A3(h).** **(a) and (b).** Both hand a **flat row** to something that wants a **table**: `reshape(-1, 1)` for numpy, double brackets for a DataFrame.
 - 🧑‍🏫 Related, worth knowing: `categories=[["clear", "rain"]]` on a column that also contains `storm` gives `Found unknown categories ['storm'] in column 0 during fit` — **during fit**, because the list was incomplete from the start.
 

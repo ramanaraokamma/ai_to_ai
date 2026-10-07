@@ -237,7 +237,7 @@ Price: 1.00 per million tokens in, 5.00 per million out. A task calls the calcul
 
 **(h) In one sentence:** why do three 5-step tasks cost less than one 15-step task? ____________________________________________________________
 
-**Computer, part 1: check your hand sums.** Run the block below and compare its `hand` columns with your (b) and (c). The hand sums use growth `32`; the kit's growth is `32.5` (the steps alternate `32` and `33`), so expect a difference of a few tokens.
+**Computer, part 2: check your hand sums.** Run the block below and compare its `hand` columns with your (b) and (c). The hand sums use growth `32`; the kit's growth is `32.5` (the steps alternate `32` and `33`), so expect a difference of a few tokens.
 
 ```python
 # bill_two_more.py - Page 29.3 Part 2: check your hand sums. The hand sums use 223 and 32; the kit's growth is 32.5 (steps alternate 32 and 33).
@@ -260,7 +260,7 @@ print("15 steps vs 5 steps: dollars x", round(measured[15]["spend"] / measured[5
 
 Your (b) and (c) should match the `hand` columns. (i) How far is each hand input total from the measured one? ______ ______ Why? ____________________
 
-**Computer, part 2: a bigger step.** Now each calculator call has a long expression (117 characters), so each step adds more to the history. **Predict before running:** will the growth per step be bigger or smaller than 32.5? ______ Will the `k x k` part start to dominate earlier or later? ______
+**Computer, part 3: a bigger step.** Now each calculator call has a long expression (117 characters), so each step adds more to the history. **Predict before running:** will the growth per step be bigger or smaller than 32.5? ______ Will the `k x k` part start to dominate earlier or later? ______
 
 ```python
 # bigger_step.py - Page 29.3 Part 3: a longer expression, so each step adds more to the history. Fit from k = 4, 8, 12; predict k = 25; run it.

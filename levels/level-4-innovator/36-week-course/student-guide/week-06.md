@@ -22,7 +22,7 @@
 > **Reading time:** about 45 minutes. **Homework:** about 60–75 minutes.
 
 > **📌 About the code blocks.**
-> - Each block is its own file. The ones that say `from lab6 import *` need the `lab6.py` you build in Step 3, in the same folder. If you paste a block on its own and get `NameError` or `ModuleNotFoundError: No module named 'lab6'`, that is why; nothing is broken.
+> - Each block is its own file. The ones that say `from lab6 import *` need the `lab6.py` you build in Step 2, in the same folder. If you paste a block on its own and get `NameError` or `ModuleNotFoundError: No module named 'lab6'`, that is why; nothing is broken.
 > - The blocks marked **DELIBERATE ERROR** are broken on purpose.
 > - Every output shown was printed by a real run on a CPU, one thread, with a seed set (torch 2.2.1, numpy 1.26.4). Your numbers should match to every digit shown, except that file paths inside an error message will be your own. For a loss or accuracy that differs in the last digit, compare to two significant figures.
 > - Every network and training run this week is **real**. The small grids of numbers in `slope.py`, `norm_hand.py` and `batch_dep.py` are **made up on purpose** so you can check the arithmetic by hand.
@@ -509,7 +509,7 @@ first_block_grad(32, residual=True)
 
 Look at the third call for longer than the others.
 
-### Step 4 — the hook table, and two deliberate errors
+### Step 4 — the hook table, and four deliberate errors
 
 **The hook.** Run this to fill in the hidden rows of the Start Here table. It takes about 8 seconds; read your Bug Log guesses while it runs.
 

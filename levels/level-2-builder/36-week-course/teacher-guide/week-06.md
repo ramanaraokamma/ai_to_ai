@@ -1509,7 +1509,7 @@ The branch runs even though the answer was `no`. `answer == "yes"` is `False`, s
 
 **Watch for (teacher only).** The point of the section is that P1 looks like a maths question and is a route question. Students who write `B` have *done the grading in their head*, which is what Python does not do. P2: `False` for `True or True` is the standard miss. P3: `teen` on its own is the chain misreading in reverse — ask which keyword would make that true. P4: "no branch" means they read `or "y"` as `or answer == "y"`, which is exactly the misreading the bug depends on.
 
-**Scoring note.** The workbook's "How many of the nine did you get right? ___ / 9" does not match the items as printed: P1 is 1 prediction, P2 is 3, P3 is 2 (or 3 counting the `elif` question) and P4 is 1, which is 7 or 8, not 9. Accept whatever denominator the student uses and mark the predictions, not the fraction.
+**Scoring note.** The workbook asks "How many of your predictions did you get right? ___ out of ___", and the student fills in the total. The items are: P1 is 1 prediction, P2 is 3, P3 is 2 (or 3 counting the `elif` question) and P4 is 1, which is 7 or 8. Accept whatever total the student uses and mark the predictions, not the fraction.
 
 ---
 

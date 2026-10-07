@@ -295,7 +295,7 @@ in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 
 **"My mean latency is 0.26 ms, so it's fast."** The mean is fine and the *tail* is the user experience. Our max was `3.27 ms` — twelve times the p95 — and it was request number one. **If you only report a mean you have hidden the only request that anybody would have noticed.**
 
-**"0.8125 accuracy, so it works."** It scores 0.800 on the 15 rows with no negation word, and on the 13 rows that have one it finds none of the positives among the 13 rows that have one. **"Works" is not a property of a model; it is a property of a model on a group of rows.**
+**"0.8125 accuracy, so it works."** It scores 0.800 on the 15 rows with no negation word, and on the 13 rows that have one it finds none of the positives. **"Works" is not a property of a model; it is a property of a model on a group of rows.**
 
 ### 8. How deep to go, and where to stop
 

@@ -294,7 +294,7 @@ ________________________________________________________________
 | e | `f1 = 2 * p * r / p + r` | | |
 | f | `print("F1 %.4f beats last week's %.4f" % (0.4976, 0.2500))` | | |
 
-**A3(g).** Four of those six produce **no error at all**. Which three, and which is the hardest to catch?
+**A3(g).** Four of those six produce **no error at all**. Which four, and which is the hardest to catch?
 
 ________________________________________________________________
 

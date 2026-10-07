@@ -1471,7 +1471,7 @@ len(get_feature_names_out()), + leaky column    21
 | 4 — `biopsy_booked` | **TARGET LEAKAGE — drop it.** | A biopsy gets booked *because* somebody read the scan and was worried. |
 
 - **A5(a)** The question: **"At the moment I need the prediction, does this value exist?"** `distance_km` → **yes** (the address exists the instant somebody clicks ORDER). `biopsy_booked` → **no** (only after a radiologist has read the scan). It needs no data, no code and no maths.
-- **A5(b)** Keeping one number can hide a catastrophe: AUC fell 0.15 and looked survivable; recall fell from 87.5% to 6.25% (60 women with malignant tumours told they were fine). A leaky column can look respectable in one metric while ruinous in another — which is why next week is about four numbers instead of one.
+- **A5(b)** Keeping one number can hide a catastrophe: AUC fell 0.15 and looked survivable; recall fell from 87.5% to 6.25% (60 patients with malignant tumours told they were fine). A leaky column can look respectable in one metric while ruinous in another — which is why next week is about four numbers instead of one.
 
 **A6 — fill in the three flavours** (Figure W6.1, the blank diagram).
 

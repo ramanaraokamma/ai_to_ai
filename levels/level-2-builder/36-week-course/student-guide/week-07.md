@@ -1145,7 +1145,7 @@ This is not stupidity; it is what the word "range" means in English. The cure is
 
 Both of those lines are harmless — nothing crashes — and that is what makes them worth mentioning, because a harmless line can still mean your mental model is wrong. The test: cover the loop body with your hand and find the line where `i` gets its value. **There isn't one.** It comes from the `for` line.
 
-### Trick 3 — "the total printed six times, so there are six totals"
+### Trick 3 — "the total printed twelve times, so there are twelve totals"
 
 | ❌ Wrong | ✅ Right |
 |---|---|

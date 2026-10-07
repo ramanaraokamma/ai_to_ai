@@ -63,7 +63,7 @@ This section defines the four ideas the labs use: in-context learning, the ceili
 
 In Week 22 you changed a model's knobs: that is training. Today the knobs are **frozen** and all that changes is the text you put in front of the model. When a model uses what is on the page to answer, that is **in-context learning**. A prompt with no worked examples is **zero-shot**; with a few, **few-shot**. A "shot" is one worked example.
 
-There is small print, and it is the honest frame of the whole week: **a model can only do this if its training taught it to.** Ours will train on thousands of different random codes and then be tested on prompts it has never seen: a fresh code, a fresh choice of shown pairs and a fresh key each time. (There are only 720 possible codes, so it has very likely met every code during training; what it cannot have met is this exact prompt.) Last week's lookup task (Week 19) was easier: the key was always on the page. Today it may or may not be.
+There is small print, and it is the honest frame of the whole week: **a model can only do this if its training taught it to.** Ours will train on thousands of different random codes and then be tested on prompts it has never seen: a fresh code, a fresh choice of shown pairs and a fresh key each time. (There are only 720 possible codes, so it has very likely met every code during training; what it cannot have met is this exact prompt.) The lookup task in Week 19 was easier: the key was always on the page. Today it may or may not be.
 
 ### The ceiling
 

@@ -234,7 +234,7 @@ Use this section to get the files typed, run and checked before class, and to kn
 ### 25 minutes the night before
 
 - [ ] **Have Week 14's `attention.py` and the student's Pen Pass sheet** ready (the student is asked to bring them). Today's files are new and stand alone.
-- [ ] **Type the four files below into one working folder.** `scale.py`, `dials.py` (with `hw.py` typed at its bottom) and `heads.py` each run on their own. Compare each output with what is printed here.
+- [ ] **Type the three files below into one working folder.** `scale.py`, `dials.py` (with `hw.py` typed at its bottom) and `heads.py` each run on their own. Compare each output with what is printed here.
 - [ ] **Confirm the environment.** `python3 -c "import torch, numpy; print(torch.__version__, numpy.__version__)"` prints two version numbers. Nothing new to install.
 
 **File 1 — `scale.py`** (numpy only; why real scores shout, and what the divide does)

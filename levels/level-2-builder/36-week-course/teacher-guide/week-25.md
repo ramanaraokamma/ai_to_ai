@@ -641,7 +641,7 @@ This section gives the full instructions for the Their Turn segment: setup, rule
 
 1. **One chart per file is fine, and three files is fine too.** Do not make them write a function unless they want to. If they *do* want to, they have had functions since Week 10 and it is a lovely extension.
 2. **A chart is not finished until the PNG exists and has been opened and looked at.** "It ran" is not finished.
-3. **Every chart needs all four words-you-type:** title, x label, y label — and the units inside both axis labels.
+3. **Every chart needs all three labels you type:** title, x label, y label — and the units inside both axis labels.
 4. **The title must state a finding.** If it could sit on any chart of that data, it goes back.
 5. **Markers on. Every time.**
 
@@ -671,7 +671,7 @@ print(df)
 
 > **🧑‍🏫 If a student asks:** *"Which columns should I chart?"* — Answer: "Any three number columns. But `day` has to be on the bottom of all three, because a line only earns the right to join points up when the x axis is in order. Days are in order. `day_name` is not a number, so it can't go on either axis yet."
 
-### Step 2 — The first chart, all four labels (5 minutes)
+### Step 2 — The first chart, all three labels (5 minutes)
 
 ```python
 # week25_chart_homework.py
