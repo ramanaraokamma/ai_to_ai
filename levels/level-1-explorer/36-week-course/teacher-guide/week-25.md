@@ -1072,8 +1072,7 @@ and column 12. The answers grid is **10 × 10** (rows 2–11, columns 2–11).
 
 **B3.**
 
-(i) The workbook's own answer text contradicts itself on this one (see the note below). Following
-Maya's steps exactly: clipping only pins the top end and −900 is not above 255, so it stays **−900**;
+(i) Following Maya's steps exactly: clipping only pins the top end and −900 is not above 255, so it stays **−900**;
 the absolute value then gives **900**, which is outside 0–255, so she ends up with **900** and a number
 she cannot shade.
 
@@ -1082,9 +1081,8 @@ she cannot shade.
 (iii) Clipping only fixes numbers that are too big, not negative ones. If you clipped both ends first
 you would turn −900 into 0 and delete a strong edge. Absolute value first, always.
 
-> **Teacher note on B3(i):** the workbook's Answers section opens with "She ends up with 255…" and then
-> works through to 900. The reasoning gives 900; mark 900 (and accept a student who says "still −900
-> after the clip, 900 after the absolute value"). Do not mark 255 for (i), that is the correct answer
+> **Teacher note on B3(i):** the answer is 900, not 255. Accept a student who says "still −900
+> after the clip, 900 after the absolute value". Do not mark 255 for (i); that is the correct answer
 > to (ii).
 
 **B4.**

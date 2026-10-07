@@ -382,7 +382,7 @@ ________________________________________________________________
 
 ### Page 1.6 — Be the computer
 
-Run the vending machine rulebook from the chapter on all eight requests. **Rule number first, then
+Run the vending machine rulebook from the chapter on all nine requests. **Rule number first, then
 what the machine does.** No being sensible.
 
 | # | Request | Rule that fires | What the machine does |
@@ -548,8 +548,8 @@ this exact feeling.
 is under 16, so the machine stops there and never reaches the free rule. **Same child, same rules,
 different order, £5 worse off.** Notice that *nobody edited a rule* — the wording is identical.
 
-**(c)** **No rule fires** for a group deal — well, R2 and R4 fire one pupil at a time, and each
-person just pays the normal price. There is no group anywhere in the rulebook. Deciding it properly
+**(c)** **No rule fires** for a group deal — well, the pupils are priced one at a time (R2, child price), and each
+teacher is priced by their own age (R4 for an adult under 60, R3 if 60 or over). There is no group anywhere in the rulebook. Deciding it properly
 needs somebody to judge whether this counts as a school group and whether the promise applies, and
 two sensible people could disagree about a "group" of three cousins. **That is judgement.**
 

@@ -712,11 +712,11 @@ Draw one digit turning into ten scores, with all the numbers on it.
 ![Draw it: one digit becoming ten scores](../figures/fig-w26-8-draw-frame.svg)
 *Figure W26.2 — One digit, every block of the stack with its shape, and the ten scores at the end.*
 
-**What a good answer looks like:** the 8×8 picture on the left with `(1, 1, 8, 8)` written on it, then **five blocks** across the page — conv, pool, conv, pool, flatten — each with its shape written **on** it and its weight count written **under** it, and the three that hold `0` marked clearly. Then the `Linear` block with `650` under it, and then **ten little bars** at the end, one per digit, with the tallest one ringed and the number `4.46` beside it and an arrow to the word *one*.
+**What a good answer looks like:** the 8×8 picture on the left with `(1, 1, 8, 8)` written on it, then **five blocks** across the page — conv, pool, conv, pool, flatten, with each `ReLU` drawn as a small tick on its conv block — each with its shape written **on** it and its weight count written **under** it, and the three kinds of layer that hold `0` (`ReLU`, `MaxPool2d`, `Flatten`) marked clearly. Then the `Linear` block with `650` under it, and then **ten little bars** at the end, one per digit, with the tallest one ringed and the number `4.46` beside it and an arrow to the word *one*.
 
 **And the thing that earns the marks:** somewhere on the drawing, `80 + 1168 + 650 = 1898`, and somewhere else a note saying **which single number in the whole drawing would change if the picture were 200 × 200** — and which would not.
 
-**My three zero-weight blocks:** ____________ , ____________ , ____________
+**My three zero-weight kinds of layer:** ____________ , ____________ , ____________
 
 **The number that would change on a 200 × 200 picture:** ____________
 
@@ -1262,7 +1262,7 @@ filter   answer to a bright-LEFT edge   answer to a bright-TOP edge
 
 ### Draw It
 
-**The three zero-weight blocks:** `ReLU`, `MaxPool2d`, `Flatten`.
+**The three zero-weight kinds of layer:** `ReLU`, `MaxPool2d`, `Flatten`.
 
 **The number that would change on a 200 × 200 picture:** the **`Linear` layer's 650**. After two pools a 200 becomes 50, so the flatten is `16 × 50 × 50 = 40,000` and the layer becomes `40,000 × 10 + 10 = 400,010`.
 

@@ -1104,7 +1104,7 @@ the workbook.
 | **85** | 3 (#1-3) | 2 | 2/3 = **66.7%** | **1** (#3) | 3 (#4, 5, 7) |
 | **90** | 2 (#1-2) | 2 | 2/2 = **100%** | **0** | 3 (#4, 5, 7) |
 
-- **(a)** The workbook answer: anything **above 88**, so **89 or 90**, because photo #3 (88%, wrong) has to be cut off. Marking note: under the strict "above the threshold" rule a threshold of exactly **88** also refuses #3 and lets zero wrong through, so a student who writes 88 has a defensible answer; accept it if they say why.
+- **(a)** **88.** Photo #3 (88%, wrong) must be cut off, and under the strict "above the threshold" rule a threshold of exactly 88 refuses it (88 is not above 88), so 88 is the lowest threshold that lets zero wrong through. Any higher value (89, 90) also works; a student who writes 89 or 90 has a safe but not lowest answer, so point out that 88 itself already works.
 - **(b)** It costs almost the whole booth. At 90 the app answers only **2 of 10** photos (eight "not sure"), and refuses **3 answers it would have got right** (#4, #5, #7). Higher threshold = more right when it speaks, speaks less often.
 - **(c)** Accept: "Photo 3 was 88% confident and wrong. That one row proves confidence is guess *strength*, not a hit rate; nothing inside the model checks the answer against reality, only I did, with a pencil." That is why the highest-confidence-while-wrong number goes on the poster, large.
 

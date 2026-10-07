@@ -1740,7 +1740,7 @@ memory usage: 293.0+ bytes
 
 - **A** is easiest: `NaN` is printed in the table in capital letters, and every other value in the column has visibly changed. **Two signals.**
 - **C** is next: it is completely invisible *in the report*, but the moment you compare `9 entries` with the ten rows on your paper it is obvious. **One signal, and it is loud once you look.**
-- **B** is hardest: the count is perfect, the values print looking exactly like numbers, and **no error is ever raised.** One signal, one word, in the middle of a twelve-line report.
+- **B** is hardest: the count is perfect, the values print looking exactly like numbers, and **no error is ever raised.** One signal, one word, in the middle of an eleven-line report.
 
 **Part 2(b).** **Report C.** Nothing inside the table says how many rows there *should* be. `9 entries` and `9 non-null` are perfectly consistent with each other — **the table is internally flawless.** You have to know that you meant ten, and that fact lives outside the data entirely.
 
@@ -1776,7 +1776,7 @@ That is the whole reason it is on the checklist. It is not busywork and it is no
 | `dtypes: float64(2), int64(1), object(1)` | The tally: two decimal columns, one whole-number, one text. **Adds to four**, matching the column count. |
 | `memory usage: 448.0+ bytes` | How much space the table takes. Not interesting. The `+` means it is an estimate, because text is stored elsewhere. |
 
-**What loses the marks here:** *"it tells you about the DataFrame"* for line one, and then skipping to the dtypes. **Twelve lines, twelve sentences.** And the sentence for line two has to mention the paper, or the check did not happen.
+**What loses the marks here:** *"it tells you about the DataFrame"* for line one, and then skipping to the dtypes. **Eleven lines, eleven sentences.** And the sentence for line two has to mention the paper, or the check did not happen.
 
 **The hole experiment, both columns filled:**
 
@@ -1863,7 +1863,7 @@ There are no right answers on the Self-Check — it is a record of where you are
 
 Three of those lines matter more than the rest:
 
-**"read every line of `df.info()` out loud in my own words."** This is the week's objective, and if it is not a 😀 the fix is not more reading — it is doing it, out loud, on a table you built, once. Twelve lines, three minutes. **A skimmed `info()` is the same as no `info()`.**
+**"read every line of `df.info()` out loud in my own words."** This is the week's objective, and if it is not a 😀 the fix is not more reading — it is doing it, out loud, on a table you built, once. Eleven lines, three minutes. **A skimmed `info()` is the same as no `info()`.**
 
 **"explain what the index is, and why it is not a column."** If that is a 😕, next week will be genuinely confusing rather than merely new. Go back and do the three proofs: count the names, read "total 5 columns", and try `df[0]`. Then say the coat peg out loud.
 

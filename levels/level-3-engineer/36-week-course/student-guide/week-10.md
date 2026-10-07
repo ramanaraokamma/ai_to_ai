@@ -1183,7 +1183,7 @@ Go to **[the Week 10 workbook](../workbook/week-10.md)**. About **60 minutes** i
 |---|---|---|
 | **Warm-Up** | Five quick questions from Week 9 on precision, recall and F1 | 5 min |
 | **The ten-threshold sweep, by hand** | The twenty cards, ten thresholds, four counts at each, every division written out | 20 min |
-| **The nine-row sweep in code** | Run `dial.py` and check your four key numbers against the real output | 10 min |
+| **The nine-row sweep in code** | Run `dial.py` and check your six key numbers against the real output | 10 min |
 | **Two rise-over-run divisions** | One steep pair, one flat pair, each read out as a sentence | 10 min |
 | **Both curves, plotted** | `dial.png`, two panels, saved to a file | 5 min |
 | **Three thresholds you would defend** | Three numbers, three people, one sentence each | 10 min |

@@ -483,7 +483,7 @@ ________________________________________________________________
 
 ### B4 — the two averages, printed side by side
 
-**Task:** write `two_averages.py`, which prints all six of the numbers behind the silent bug.
+**Task:** write `two_averages.py`, which prints all seven of the numbers behind the silent bug.
 
 **Expected output:**
 

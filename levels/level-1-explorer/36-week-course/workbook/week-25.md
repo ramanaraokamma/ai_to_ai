@@ -409,7 +409,7 @@ He gets stuck immediately, at cell (1,1), and again on the whole of row 1, colum
 
 **B3.**
 
-(i) She ends up with **255**… but only by luck of the wording. Clipping only pins the **top** end, and −900 is not above 255, so clipping does nothing at all: she still has **−900**. Then the absolute value gives **900**, which is still outside the range, so her grid now contains a number she cannot shade.
+(i) She ends up with **900**. Clipping only pins the **top** end, and −900 is not above 255, so clipping does nothing at all: she still has **−900**. Then the absolute value gives **900**, which is still outside the range, so her grid now contains a number she cannot shade.
 
 (ii) She should have **255**: `|−900| = 900`, then `900 → 255`.
 

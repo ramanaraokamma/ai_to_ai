@@ -1589,7 +1589,7 @@ Runtime about 1 second. Check: the `StratifiedKFold` is created **once outside t
 
 `broken06.py` has **three** bugs: one runtime, one attribute, one silent logic.
 
-> **Line numbers.** Counting the listing exactly as printed in the workbook (docstring = line 1), the three offending lines are **28** (`("num", StandardScaler(), NUM)`), **37** (the `statistics_` print) and **14** (the `NUM = [...]` list, with `"customer_called_support"` on line 15). The workbook's own *Answers* say "line 30" and "line 40" for the first two, taken from the file the author ran, which had a few extra lines. **Accept either**; mark the *kind* of bug and the fix, not the line number.
+> **Line numbers.** Counting the listing exactly as printed in the workbook (docstring = line 1), the three offending lines are **28** (`("num", StandardScaler(), NUM)`), **37** (the `statistics_` print) and **14** (the `NUM = [...]` list, with `"customer_called_support"` on line 15). The workbook's *Answers* now say the same (28 and 37). The printed tracebacks say line 34 and line 40 because they were pasted from the file the author ran, which had a few extra lines; **accept 28/34 and 37/40**, and mark the *kind* of bug and the fix, not the line number.
 
 **Bug 1 — a runtime bug.** No imputer in the numeric branch, and `driver_experience_months` has holes. Error: `ValueError: Input X contains NaN.` The seven words that are the fix: **"by using an imputer transformer in a pipeline"**. The error message contains the answer; most people stop at the red word. Fix:
 

@@ -1473,7 +1473,7 @@ Every cell is twice the matching cell of `W`: the loss is the sum of squares and
 | 4 | `torch.sigmoid(Z2)` | **0.90024951** | `SigmoidBackward0` |
 | 5 | `−ln(A2)` | **0.10508332** | `NegBackward0` |
 
-The four gradients: `dZ2 = 0.90024951 − 1 =` **`−0.09975049`** · `dW2[0] = 2.20 × dZ2 =` **`−0.21945108`** · `dW1[1,1] = 2.0 × (+0.19950098) =` **`+0.39900196`**.
+The three gradients: `dZ2 = 0.90024951 − 1 =` **`−0.09975049`** · `dW2[0] = 2.20 × dZ2 =` **`−0.21945108`** · `dW1[1,1] = 2.0 × (+0.19950098) =` **`+0.39900196`**.
 
 - **A5(a).** **No.** Box 1's `2.20` is `0.5 + 1.6 + 0.1`. Box 2's `2.20` is the same number carried through, because ReLU left a positive value alone. Box 3's `2.20` is a **different sum that happens to land on the same value**: `2.20 − 0.30 + 0.30`; the `−0.30` and `+0.30` cancel.
 - **A5(b).** **Box 2.**
@@ -1684,7 +1684,7 @@ Run 4 (all three fixed) prints `w.grad = tensor([[-0.5473], [-0.1824]], dtype=to
 | **E** | **middle** | `grad_fn=<SigmoidBackward0>` |
 
 - **Part 2(a).** **D is `E.item()`.** Same value, but D is a plain `float` with nothing attached, while E is a tensor still carrying its whole recording. D shows more digits because E prints to four decimals by default.
-- **Part 2(b).** **Only B.** `.grad` is filled in for tensors created with `requires_grad=True`. Asking C or E gives `None` plus a long `UserWarning` about non-leaf tensors. *(The workbook question says "which two", but its own Answers section names only B, and B is the only knob among the five. Mark B as correct and do not penalise a student who stops at one.)*
+- **Part 2(b).** **Only B.** `.grad` is filled in for tensors created with `requires_grad=True`. Asking C or E gives `None` plus a long `UserWarning` about non-leaf tensors.
 - **Part 2(c).** It is **the name of the operation that produced that value**: `Mm` for matrix multiply, `Sigmoid` for the squash. It is the entry on the receipt that knows how to hand a slope back through itself.
 - **Part 2(d).** Any order that works:
 

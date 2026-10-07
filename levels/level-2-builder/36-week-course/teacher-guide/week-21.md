@@ -629,7 +629,7 @@ Name: age, dtype: float64
 
 1. **The reveal.** Week 14's hand-formatted table and pandas's output, side by side. Ask what is different. *(Answer: nothing much — and one of them took thirty lines and the other took one.)* That is the Hook, on paper, complete.
 2. **Label the printout.** Hand them the pandas output and four coloured pens. Circle and label: the **column names**, the **index**, one **value**, and one whole **column**. Then the hard question: *"how many columns are there?"* Five. *"Is the index one of them?"* No. **That is objectives 2 and 4, on paper.**
-3. **Read `info()` out loud, line by line, from the printed page.** Twelve lines. For each, they say in their own words what it tells you. This is *literally* the homework and it needs no computer at all. **Objective 3, complete.**
+3. **Read `info()` out loud, line by line, from the printed page.** Eleven lines. For each, they say in their own words what it tells you. This is *literally* the homework and it needs no computer at all. **Objective 3, complete.**
 4. **The hole, on paper.** Show them the two `age` columns printed side by side — `12, 13, 12, 11` and `12.0, NaN, 12.0, 11.0`. Ask three questions: *"what's different about Ravi? What's different about everybody else? And why should everybody else change when only Ravi's is missing?"* Then have them find the Week 17 and Week 18 Bug Log entries and say what the three have in common. **Objective 5, and it lands harder on paper than on screen** because the two columns are next to each other instead of forty lines apart.
 5. **Build a DataFrame on paper.** Blank ten-row grid, four column names of their choosing, ten rows of their own week. Then write out, by hand, what `info()` *would* say about it: how many entries, how many columns, and for each column its name, its non-null count and its dtype. **That is genuinely the whole homework**, done in pencil, and it is a harder and better exercise than typing it.
 
@@ -1576,7 +1576,7 @@ What to tell a 12-year-old, out loud: **"`head()` and `info()` tell you what's i
 |---|---|---|
 | **pandas is not installed and the lesson dies at minute three** | It was installed by a different Python, or on a different machine, or the download stalled | This is why it is first on the Prep list. If it happens anyway: **do not debug for more than three minutes.** Switch to the paper version, which delivers all five objectives, set the install as homework with the three commands written down, and fix it yourself before Week 22 — which cannot be done on paper. |
 | The index is read as the first column, repeatedly | It prints exactly like one | Do not just assert it. Count the column names in `head()`, then read "total 5 columns" from `info()`. Then ask what the sixth column would be *called*. The silence is the argument. |
-| `info()` gets skimmed and declared "fine" | It is twelve lines of dense text and it looks like boilerplate | Make them read it **out loud, line by line, in their own words.** All twelve. It takes three minutes and it is the objective. A skimmed `info()` is the same as no `info()`. |
+| `info()` gets skimmed and declared "fine" | It is eleven lines of dense text and it looks like boilerplate | Make them read it **out loud, line by line, in their own words.** All eleven. It takes three minutes and it is the objective. A skimmed `info()` is the same as no `info()`. |
 | `memory usage` becomes the most interesting line | It has a number in it and it sounds technical | One sentence: "how much space it takes; ignore it." Then move on and do not return to it. |
 | `12.0` is shrugged off — "same number, who cares" | It *is* the same number | Point at the non-null count in the same output: `3 non-null`, not 4. The `12.0` is the *symptom*; the missing value is the *disease*. Then have them find the Week 17 and Week 18 Bug Log entries and say what all three have in common. |
 | The nineteen-line traceback causes genuine panic | It is genuinely alarming after four weeks of four-line numpy errors | Say the length out loud before you read it: *"that's nineteen lines for one wrong letter."* Then read only the last line. Then find the `File` line with their filename. **Naming the length defuses it.** |
@@ -1608,7 +1608,7 @@ What to tell a 12-year-old, out loud: **"`head()` and `info()` tell you what's i
 3. *"Circle the numbers down the left."* **That's the index.** Label it "row names".
 4. *"How many columns are there?"* Five. *"Is the index one of them?"* No. *"What would it be called?"* It hasn't got a name.
 5. *"Circle one value. Now circle one whole column."*
-6. Then hand them the printed `info()` and go line by line. For each line, they say what it tells you. Twelve lines, three minutes.
+6. Then hand them the printed `info()` and go line by line. For each line, they say what it tells you. Eleven lines, three minutes.
 
 A student who leaves the room able to point at a printed table and say *"those are the column names, those down the side are the row names, and there are five columns not six"* has succeeded, whether or not any Python ran.
 
@@ -2290,7 +2290,7 @@ The three write-in questions: **How many entries?** 10. **How many columns?** 4.
 
 ### 📊 Self-Check
 
-No right answers; it is a record of where the student is, most useful when honest. Three rows matter most. **"Read every line of `df.info()` out loud in my own words"** is the week's objective — if it is not a 😀, the fix is not more reading but doing it out loud, once, on a table they built (twelve lines, three minutes). **"Explain what the index is, and why it is not a column"** — if 😕, next week will be genuinely confusing; redo the three proofs from A1(f). **"Notice a whole-number column printing as decimals and say what caused it"** — if 😀, they have the most useful habit in pandas.
+No right answers; it is a record of where the student is, most useful when honest. Three rows matter most. **"Read every line of `df.info()` out loud in my own words"** is the week's objective — if it is not a 😀, the fix is not more reading but doing it out loud, once, on a table they built (eleven lines, three minutes). **"Explain what the index is, and why it is not a column"** — if 😕, next week will be genuinely confusing; redo the three proofs from A1(f). **"Notice a whole-number column printing as decimals and say what caused it"** — if 😀, they have the most useful habit in pandas.
 
 ### Answers to every question posed in the lesson
 

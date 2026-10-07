@@ -1479,7 +1479,7 @@ columns   fake    honest   invented
 
 ### Fix the Broken Program
 
-**Bug 1 — line 30 (`("num", StandardScaler(), NUM)`), a runtime bug.** There is no imputer in the numeric branch, and `driver_experience_months` has holes in it.
+**Bug 1 — line 28 of the listing as printed (`("num", StandardScaler(), NUM)`), a runtime bug.** (The traceback says line 34, the `pipe.fit` call that trips over it; the file that was run had a few extra lines.) There is no imputer in the numeric branch, and `driver_experience_months` has holes in it.
 
 **The seven words in the message that are the fix:** *"by using an imputer transformer in a pipeline"*. **The error message contains the answer**, and most people stop at the red word and never read that far.
 
@@ -1492,7 +1492,7 @@ columns   fake    honest   invented
 
 **106** blanks in the column, **60** of them in the training pile.
 
-**Bug 2 — line 40, an attribute bug.** `prep` is a **`ColumnTransformer`** — the box that *contains* the imputer — so it has no `statistics_` of its own.
+**Bug 2 — line 37 of the listing as printed (the `statistics_` print; the traceback says 40 because of the same extra lines), an attribute bug.** `prep` is a **`ColumnTransformer`** — the box that *contains* the imputer — so it has no `statistics_` of its own.
 
 **The fix:**
 

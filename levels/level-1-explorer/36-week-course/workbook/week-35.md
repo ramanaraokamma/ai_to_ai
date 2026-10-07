@@ -708,7 +708,7 @@ This is the same bug you debugged on paper in Week 30, wearing a different costu
 
 *How to read the table off the list:* "above the threshold" means strictly greater, so threshold 70 answers #1–6 (confidences 96, 91, 88, 84, 79, 72) and refuses #7–10 (68, 61, 55, 41). The five ticks overall are #1, 2, 4, 5, 7.
 
-**(a)** Anything **above 88** — so a threshold of **89 or 90**. Photo #3 was 88% confident and wrong, so it's the one that has to be cut off.
+**(a)** **88.** Photo #3 was 88% confident and wrong, and "above the threshold" means strictly greater, so a threshold of exactly 88 already cuts it off (88 is not above 88). Any higher threshold, such as 89 or 90, also lets zero wrong through, but 88 is the lowest.
 
 **(b)** It costs you **almost your whole booth.** At threshold 90 the app answers only **2 of the 10 photos** — it says "not sure" eight times out of ten. And it refuses **3 answers it would have got right** (#4, #5 and #7). You bought perfection by refusing to be useful.
 

@@ -1271,7 +1271,7 @@ biggest gap between z and ln(odds): 0.000000000000
 
 ### Fix the Broken Program
 
-**Bug 1 — line 7 (`km`). A shape bug.** `km` has only **seven** numbers and `oven` has **eight**. The `8` counts the orders in `oven`; the `7` counts the orders in `km`. numpy has no way to pair them up, so it refuses rather than guessing.
+**Bug 1 — the Traceback points at line 16 (`z = ...`), where the mismatch is hit; the cause is line 7 (`km`). A shape bug.** `km` has only **seven** numbers and `oven` has **eight**. The `8` counts the orders in `oven`; the `7` counts the orders in `km`. numpy has no way to pair them up, so it refuses rather than guessing.
 
 **The fix:** `km = np.array([0, 1, 2, 3, 2, 5, 6, 8])` — the eighth order drives 8 km.
 

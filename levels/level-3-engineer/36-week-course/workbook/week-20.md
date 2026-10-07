@@ -316,10 +316,10 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-**A5. Label the recording.** Fill in every empty box in the figure — the value, the `grad_fn`, and the four gradients underneath.
+**A5. Label the recording.** Fill in every empty box in the figure — the value, the `grad_fn`, and the three gradients underneath.
 
 ![Label the recording](../figures/fig-w20-7-label-the-recording-blank.svg)
-*Figure W20.1 — The five forward lines with their grad_fn names removed, and four of the nine gradients to fill in.*
+*Figure W20.1 — The five forward lines with their grad_fn names removed, and three of the nine gradients to fill in.*
 
 **A5(a).** Two of the five boxes hold the value **2.20**. Are they the same number for the same reason?
 
@@ -645,7 +645,7 @@ E: tensor([[0.8909]], grad_fn=<SigmoidBackward0>)
 
 ________________________________________________________________
 
-**Part 2(b).** Which two of the five would have a `.grad` filled in by `backward()`? ____________
+**Part 2(b).** Which one of the five would have a `.grad` filled in by `backward()`? ____________
 
 **Part 2(c).** `C` says `MmBackward0` and `E` says `SigmoidBackward0`. **In one sentence, what is that word telling you?**
 
@@ -1037,7 +1037,7 @@ torch.Size([2, 2])
 | 4 | `torch.sigmoid(Z2)` | **0.90024951** | `SigmoidBackward0` |
 | 5 | `−ln(A2)` | **0.10508332** | `NegBackward0` |
 
-And the four gradients: `dZ2 = 0.90024951 − 1 = **−0.09975049**` · `dW2[0] = 2.20 × dZ2 = **−0.21945108**` · `dW1[1,1] = 2.0 × (+0.19950098) = **+0.39900196**`.
+And the three gradients: `dZ2 = 0.90024951 − 1 = **−0.09975049**` · `dW2[0] = 2.20 × dZ2 = **−0.21945108**` · `dW1[1,1] = 2.0 × (+0.19950098) = **+0.39900196**`.
 
 **A5(a).** **No, and this is a nice coincidence to notice.** Box 1's `2.20` is `0.5 + 1.6 + 0.1`. Box 2's `2.20` is the *same* number, because ReLU left a positive value alone. Box 3's `2.20` is a **different sum that happens to land on the same value**: `2.20 − 0.30 + 0.30`. The `−0.30` and `+0.30` cancel.
 

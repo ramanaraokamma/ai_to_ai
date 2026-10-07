@@ -449,7 +449,7 @@ for c in range(3):
 ```text
 warm-up on the six points: (6,)
 Traceback (most recent call last):
-  File "broken28.py", line 15, in <module>
+  File "broken28.py", line 14, in <module>
     warm = KMeans(n_clusters=2, n_init=10, random_state=0).fit(across)
 ValueError: Expected 2D array, got 1D array instead:
 array=[1. 2. 2. 8. 9. 7.].
@@ -468,7 +468,7 @@ ________________________________________________________________
 warm-up on the six points: (6,)
 warm-up labels: [1 1 1 0 0 0]
 Traceback (most recent call last):
-  File "broken28.py", line 23, in <module>
+  File "broken28.py", line 21, in <module>
     print("cluster sizes:", np.bincount(km.labels_))
 AttributeError: 'KMeans' object has no attribute 'labels_'
 ```
@@ -1164,7 +1164,7 @@ SCALED   sizes [65 51 62]  inertia 1277.9
 
 ### Fix the Broken Program
 
-**Bug 1 — line 15, the shape bug.** `pts[:, 0]` takes one column out of a table, and a single column comes back **flat**: shape `(6,)`, printed on the line above the traceback. **k-means needs a table — rows by columns — because it measures distance across columns, and a flat list has none.** The message even tells you which reshape it wants.
+**Bug 1 — line 14, the shape bug.** `pts[:, 0]` takes one column out of a table, and a single column comes back **flat**: shape `(6,)`, printed on the line above the traceback. **k-means needs a table — rows by columns — because it measures distance across columns, and a flat list has none.** The message even tells you which reshape it wants.
 
 ```python
 warm = KMeans(n_clusters=2, n_init=10, random_state=0).fit(across.reshape(-1, 1))
@@ -1172,13 +1172,13 @@ warm = KMeans(n_clusters=2, n_init=10, random_state=0).fit(across.reshape(-1, 1)
 
 `reshape(-1, 1)` means *"one column, and work the row count out for yourself"*: `(6,)` becomes `(6, 1)`. **And the Week 16 habit that prevents this entirely: print `.shape` before you fit.** This program did, which is why the fix took ten seconds.
 
-**Bug 2 — line 22, the missing `.fit`.** `km` was built and never run.
+**Bug 2 — line 21, the missing `.fit`.** `km` was built and never run.
 
 ```python
 km = KMeans(n_clusters=3, n_init=10, random_state=0).fit(Xs)
 ```
 
-**Bug 3 — line 25, and it is the expensive one.** `Xs` is built on line 21 and never used again: `km3` is fitted on **`X_raw`**.
+**Bug 3 — line 23, and it is the expensive one.** `Xs` is built on line 19 and never used again: `km3` is fitted on **`X_raw`**.
 
 **The contradiction in the output:** `cluster sizes: [65 51 62]` on one line and `cluster 0: n= 69` three lines later. **Both cannot be true of the same clustering** — and they are not, because the sizes came from `km` (on the scaled table) and the bands came from `km3` (on the raw table). **Two different clusterings, printed as if they were one.** That is what a silent bug looks like: nothing crashes, and the report is internally impossible.
 

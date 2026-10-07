@@ -1154,7 +1154,7 @@ There is no single correct answer, because it is the student's own data. Here is
 
 **Score: 4 out of 5 = 4 ÷ 5 = 0.8 = 80%.**
 
-> **⚠️ Check before you mark "Does it beat my bar?"** The workbook's own Answers section says the bar on these five rows is 3 ÷ 5 = 60% (3 not tired, 2 tired) and that the rule beats it by 20 points. The table says otherwise: in rows 11–15 only row 12 is tired, so 4 not tired and 1 tired, and "always not tired" scores 4 ÷ 5 = **80%**, a **tie** with the rule, not a win. Mark the student's own table against its own rows. If a student borrowing this fallback table writes 60% / 20 points, they have copied the workbook's printed answer; it is a nice, true thing to show them that the "good" 80% only ties the lazy guess on five rows, and it feeds straight into the honesty question below and Week 9.
+> **Does it beat my bar?** On rows 11–15 only row 12 is tired, so 4 not tired and 1 tired, and "always not tired" scores 4 ÷ 5 = **80%**, a **tie** with the rule, not a win. Mark the student's own table against its own rows. It is a nice, true thing to show them that the "good" 80% only ties the lazy guess on five rows, and it feeds straight into the honesty question below and Week 9.
 
 **Marking criteria for Build It, Step 1 to 4** (all six):
 

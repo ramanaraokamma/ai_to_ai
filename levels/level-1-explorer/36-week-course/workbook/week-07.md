@@ -757,7 +757,7 @@ DEFAULT: OTHERWISE        THEN predict "not tired"
 | 14 | 9.0 | no → DEFAULT | not tired | no | ✅ |
 | 15 | 6.5 | RULE 1 | tired | **no** | ❌ |
 
-**4 out of 5 = 4 ÷ 5 = 0.8 = 80%.** The bar on those five rows: 3 not tired, 2 tired, so always saying "not tired" scores 3 ÷ 5 = 60%. So 80% beats the bar by 20 points.
+**4 out of 5 = 4 ÷ 5 = 0.8 = 80%.** The bar on those five rows: 4 not tired, 1 tired (only row 12), so always saying "not tired" scores 4 ÷ 5 = 80%. So 80% only **ties** the bar on these five rows — it does not beat it.
 
 **Marking criteria — tick all six:**
 

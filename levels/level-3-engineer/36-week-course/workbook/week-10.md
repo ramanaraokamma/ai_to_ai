@@ -768,7 +768,7 @@ This section is for building the week's hand-made sweep and then choosing three 
 - [ ] **3.** Ten thresholds swept by hand. Four counts each. **Every row added up to 20.**
 - [ ] **4.** Ten dots plotted, joined with a ruler, dashed diagonal drawn.
 - [ ] **5.** Two rise-over-run divisions off your own graph paper — one steep, one flat — **each with its sentence.**
-- [ ] **6.** `dial.py` typed and run. Four key numbers checked against your handwriting.
+- [ ] **6.** `dial.py` typed and run. Six key numbers checked against your handwriting.
 - [ ] **7.** `dial.png` saved and looked at. Say which panel falls off a cliff.
 - [ ] **8.** Three thresholds chosen, **each with a person on it**, and one sentence each.
 - [ ] **9.** One line saying what you would need to know to choose between the three.
@@ -815,7 +815,7 @@ the flattest pair I could find:  t = ________ to t = ________
      the sentence: __________________________________________________
 ```
 
-### Four numbers from `dial.py`, checked
+### Six numbers from `dial.py`, checked
 
 | What | My prediction | What it printed | Same? |
 |---|---|---|---|
@@ -1404,7 +1404,7 @@ the flattest pair:  t = 0.30 to t = 0.05
 
 **A page with three correct decimals and no sentences has done the sums and missed the week.**
 
-**The four numbers from `dial.py`:**
+**The six numbers from `dial.py`:**
 
 | What | What it printed |
 |---|---|

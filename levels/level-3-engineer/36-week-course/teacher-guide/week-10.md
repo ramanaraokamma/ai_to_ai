@@ -1282,7 +1282,7 @@ The workbook (`workbook/week-10.md`) has eleven sections, and no student does al
 >
 > **Part two — the code.** Predict the Output: write your guess in pen *before* you run anything, all four. Then Practice Set B, B1 to B5. If your `highest probability` is not `0.1774`, stop and find the missing `random_state=0` before you go any further. Then Fix the Broken Program: three bugs, one of which never says a word.
 >
-> **Part three — Build It.** Finish the hand sweep of the twenty cards, **every row adding to 20**, plot the ten dots, and do two rise-over-run divisions off your own graph paper. Check four numbers from `dial.py`. Then the one I care about: **three thresholds you would defend, and beside each one, a person.** Not 'this is the best' — *who is this right for, and what do they care about that the other two do not.* One sentence each. I want to be able to argue with you. Finish with the Bug Log and the Self-Check."
+> **Part three — Build It.** Finish the hand sweep of the twenty cards, **every row adding to 20**, plot the ten dots, and do two rise-over-run divisions off your own graph paper. Check six numbers from `dial.py`. Then the one I care about: **three thresholds you would defend, and beside each one, a person.** Not 'this is the best' — *who is this right for, and what do they care about that the other two do not.* One sentence each. I want to be able to argue with you. Finish with the Bug Log and the Self-Check."
 
 | Workbook section | Items | What it checks | Status | Rough time |
 |---|---|---|---|---|

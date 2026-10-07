@@ -1701,9 +1701,9 @@ Run each program from the workbook's Answers section; these are the outputs to c
 
 | | Where | What | Fix |
 |---|---|---|---|
-| **Bug 1** | the `warm = KMeans(...).fit(across)` line (workbook prints 15; counted in the listing it is line 14), `ValueError: Expected 2D array` | `pts[:, 0]` is flat, shape `(6,)`; k-means needs rows by columns | `.fit(across.reshape(-1, 1))`, giving `(6, 1)`; and print `.shape` before fitting |
-| **Bug 2** | the `print("cluster sizes:", np.bincount(km.labels_))` line (workbook says 22 in its answer and 23 in its traceback; counted in the listing it is line 21), `AttributeError ... 'labels_'` | `km` was built and never fitted | `KMeans(...).fit(Xs)` |
-| **Bug 3** | the `km3 = KMeans(...).fit(X_raw)` line (workbook says 25; counted in the listing it is line 23), silent | `Xs` is built and never used; `km3` fits `X_raw` | `km3 = KMeans(...).fit(Xs)` |
+| **Bug 1** | the `warm = KMeans(...).fit(across)` line (line 14), `ValueError: Expected 2D array` | `pts[:, 0]` is flat, shape `(6,)`; k-means needs rows by columns | `.fit(across.reshape(-1, 1))`, giving `(6, 1)`; and print `.shape` before fitting |
+| **Bug 2** | the `print("cluster sizes:", np.bincount(km.labels_))` line (line 21), `AttributeError ... 'labels_'` | `km` was built and never fitted | `KMeans(...).fit(Xs)` |
+| **Bug 3** | the `km3 = KMeans(...).fit(X_raw)` line (line 23), silent | `Xs` is built and never used; `km3` fits `X_raw` | `km3 = KMeans(...).fit(Xs)` |
 
 **The contradiction:** `cluster sizes: [65 51 62]` (from `km`, scaled) sits above `cluster 0: n= 69` (from `km3`, raw); two different clusterings printed as one.
 
@@ -1719,7 +1719,7 @@ cluster 2: n= 62  proline  465 to 1680
 
 The bands now overlap heavily, which is the fingerprint of a clustering that used all thirteen columns.
 
-**Marking notes.** Bug 3 is the one that matters: credit it only if the student finds the contradiction *in the output* and not by reading the code line by line. **The line numbers printed in the workbook do not agree with each other or with the listing** (it prints 15, 23 and 25; the lines count as 14, 21 and 23), so mark the *line identified by its code*, not the number, and do not let a student lose a mark over an off-by-one that the workbook itself makes. For Bug 2 the unfitted `km = ...` is the cause and the `print` is where it fires; accept either.
+**Marking notes.** Bug 3 is the one that matters: credit it only if the student finds the contradiction *in the output* and not by reading the code line by line. The line numbers are 14, 21 and 23 in the workbook listing, traceback and answers alike; still mark the *line identified by its code* first. For Bug 2 the unfitted `km = ...` is the cause and the `print` is where it fires; accept either.
 
 ### Puzzle of the Week
 

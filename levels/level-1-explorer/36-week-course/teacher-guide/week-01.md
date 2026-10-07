@@ -1368,8 +1368,7 @@ also ticks three self-checks in the workbook (what actually happens, none of the
 true of a wizard); check the ticks are honest, and that a second go is written if fewer than three
 are ticked.
 
-**Page 1.6 — Be the computer.** All nine requests (the workbook's intro says "eight", but the table
-has nine rows, request 9 included):
+**Page 1.6 — Be the computer.** All nine requests (request 9 included):
 
 | # | Request | Rule that fires | Machine does | Common wrong answer |
 |:--:|---|:--:|---|---|

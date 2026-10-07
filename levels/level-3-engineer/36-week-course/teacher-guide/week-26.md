@@ -1972,7 +1972,7 @@ row 2:  0.761 + 0.348 + 0.550  =  +1.659
 
 ### Draw It
 
-**The three zero-weight blocks:** `ReLU`, `MaxPool2d`, `Flatten`. **The number that would change on a 200 × 200 picture:** the **`Linear` layer's 650** (it becomes 400,010, since the flatten is `16 × 50 × 50 = 40,000`). **The numbers that would not:** the two conv layers' **80** and **1,168**. A good drawing has the 8×8 picture labelled `(1, 1, 8, 8)`, five blocks (conv, pool, conv, pool, flatten) each with its shape **on** it and weight count **under** it, the `Linear` block with 650, ten bars with the tallest ringed at **4.46** and an arrow to *one*, and `80 + 1168 + 650 = 1898` written out. A great one shows the spatial numbers shrinking while the channel numbers grow.
+**The three zero-weight blocks:** `ReLU`, `MaxPool2d`, `Flatten`. **The number that would change on a 200 × 200 picture:** the **`Linear` layer's 650** (it becomes 400,010, since the flatten is `16 × 50 × 50 = 40,000`). **The numbers that would not:** the two conv layers' **80** and **1,168**. A good drawing has the 8×8 picture labelled `(1, 1, 8, 8)`, five blocks (conv, pool, conv, pool, flatten, with each `ReLU` drawn as a tick on its conv block) each with its shape **on** it and weight count **under** it, the `Linear` block with 650, ten bars with the tallest ringed at **4.46** and an arrow to *one*, and `80 + 1168 + 650 = 1898` written out. A great one shows the spatial numbers shrinking while the channel numbers grow.
 
 ### Self-Check
 
