@@ -15,7 +15,7 @@
 | **New maths** | **None new.** This week practises Week 28's squared distances, Week 29's projection, and the "compared to what?" discipline from Weeks 9, 11 and 27. The silhouette is **two averages and a subtraction**, using distances they already compute. |
 | **New syntax** | `silhouette_score(X, labels)` · `silhouette_samples(X, labels)` · `adjusted_rand_score(a, b)` · `km.transform(X)` |
 | **Dataset** | `load_wine()` — 178 wines, 13 columns, **scaled inside the code** — plus 178 rows of pure numpy noise as a negative control. **Nothing downloads. No internet needed.** |
-| **Materials** | Printed workbook pages 30.1–30.7 · **six blank index cards and a thick marker pen** (the names get written on card, and a name nobody can defend gets torn up) · the SIX POINTS sheet from Week 28, **with its final centres still written on it** · the Bug Log |
+| **Materials** | Printed workbook (all sections, Warm-Up to Self-Check) · **six blank index cards and a thick marker pen** (the names get written on card, and a name nobody can defend gets torn up) · the SIX POINTS sheet from Week 28, **with its final centres still written on it** · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, matplotlib, scikit-learn. **No torch this week. No new installs.** |
 | **Prep time** | 30 minutes the night before · 10 minutes on the day |
 | **Expected runtime of the code** | `cartography.py` runs in **about 2 seconds** end to end, including two saved PNGs. It fits 20-odd k-means models and nobody notices. **Time yours anyway.** |
@@ -33,7 +33,7 @@ By the end of the lesson the student can:
 3. **Give every cluster a human name and defend each one out loud from a feature-means table in the original units** — pointing at specific numbers against the overall mean, not at the cluster number.
 4. **Turn cluster IDs and principal components into columns for a supervised model** and report whether they helped, **with the before and after number and the held-out pile named.**
 
-Observable evidence: page 30.3 with `381.1 ÷ 97.2 = 3.9` and `0.2849 at k = 3` written side by side as two independent votes; three index cards each carrying a name and three numbers that justify it; a feature-means table in the original units with an overall column; and a sentence of the form *"13 raw columns got 141 of 148 held-out wines, 18 columns got 145 of 148, so the five new columns bought 4 wines, and both were fitted on the 30 training rows only."*
+Observable evidence: the Build It sweep table with `381.1 ÷ 97.2 = 3.9` and `0.2849 at k = 3` written side by side as two independent votes; three index cards each carrying a name and three numbers that justify it; a feature-means table in the original units with an overall column; and a sentence of the form *"13 raw columns got 141 of 148 held-out wines, 18 columns got 145 of 148, so the five new columns bought 4 wines, and both were fitted on the 30 training rows only."*
 
 ---
 
@@ -739,7 +739,7 @@ ARI against the real grape variety, scaled : 0.8975
 
 **Read those four numbers together, because this is the sharpest thing in the whole lesson. The unscaled clustering scores 0.5711 — twice the scaled one, and squarely in the "strong structure" band — and it is far worse.** ARI 0.3711 against 0.8975. **A higher silhouette does not mean a better clustering.** The unscaled clusters are beautifully separated, because they are three bands of proline and nothing on earth is tidier than three bands of one column. **That is deliberate mistake two.**
 
-- [ ] **Print workbook pages 30.1–30.7.**
+- [ ] **Print the whole workbook** (Warm-Up through Self-Check, including the Build It pages).
 - [ ] **Get six blank index cards and a thick marker.** **The tearing-up matters and it does not work on a sheet of A4.**
 - [ ] **Check the SIX POINTS sheet is still up**, with the final centres `(1.6667, 2.0)` and `(8, 8)` on it. **Its last job is today's silhouette-by-hand, and then it comes down.**
 - [ ] **Have the student's Week 28 and Week 29 files on disk.** Today's lab starts from `no_answer_key.py` and `new_axes.py`, and a broken file turns a five-minute recap into twenty.
@@ -749,7 +749,7 @@ ARI against the real grape variety, scaled : 0.8975
 - [ ] Six index cards and the marker on the front desk, visible.
 - [ ] SIX POINTS sheet up, final centres written on it.
 - [ ] Editor open, `cartography.py` **partly given** — hand them the imports, the data load, the scaler and the `run()` helper complete, because they wrote all of those in Weeks 28 and 29. **They type the silhouette sweep, the profile table and the negative control themselves** — those are the new lines.
-- [ ] Workbook 30.1 out. **The prediction — which `k`, and will the two methods agree — filled in, in pen, before anything runs.**
+- [ ] Workbook open at Build It, "Predictions, in pen". **The prediction — which `k`, and will the two methods agree — filled in, in pen, before anything runs.**
 - [ ] Bug Log out.
 - [ ] Last week's `wine_2d.png` open in a window, ready to put next to today's map.
 
@@ -1325,7 +1325,7 @@ cluster 1:  n = 51    own silhouette 0.3506    0 points below zero
 cluster 2:  n = 62    own silhouette 0.3434    0 points below zero
 ```
 
-- **Workbook page 30.4** — three name boxes, each with three blank "the number that proves it" lines under it.
+- **Workbook, Build It "The profile table and the three names"** — the three-row name table, each row with room for "my three numbers, each with its overall".
 
 ### Step 1 — find the standouts (4 minutes)
 
@@ -1457,7 +1457,7 @@ better / equal / worse over ten splits: 8 2 0
 
 - Three index cards, each with a name and three numbers that survived being challenged out loud.
 - **At least one card has been torn up.** If none were, the defences were not being challenged hard enough.
-- Page 30.4 with three names and nine numbers, every one compared against the overall column.
+- The Build It three-names table filled in with three names and nine numbers, every one compared against the overall column.
 - The two accuracy rows written down **with the pile named**: `141 of 148` and `145 of 148`, 30 training rows.
 - A student can say, unprompted: **"there was no room to improve."**
 - A student has asked whether four wines is real. **That is the best outcome available.**
@@ -1730,17 +1730,17 @@ This section gives the wording for setting the homework.
 
 > "About an hour, and it is one document with five pieces in it. **This is the first thing you have handed me all year that is an argument rather than a score**, and next term's capstone is the same shape, so treat it as a rehearsal.
 >
-> **Piece one, page 30.5 — the elbow plot and the silhouette plot, side by side, and both numbers written under them.** The drop ratio, as a division. The silhouette peak, as a value. **Two independent votes and I want to see both as numbers, not as arrows pointing at bends.**
+> **Piece one, Build It "The sweep" — the elbow plot and the silhouette plot, side by side, and both numbers written under them.** The drop ratio, as a division. The silhouette peak, as a value. **Two independent votes and I want to see both as numbers, not as arrows pointing at bends.**
 >
-> **Piece two, page 30.6 — the PCA scatter coloured by cluster, and the feature-means table in the original units with an overall column.** Percentages in both axis labels. **A plot with bare 'PC1' on it comes back to you.** And the table must be in real units — if I see `alcohol = 0.83` anywhere, the page comes back.
+> **Piece two, Build It "The map" and the profile table — the PCA scatter coloured by cluster, and the feature-means table in the original units with an overall column.** Percentages in both axis labels. **A plot with bare 'PC1' on it comes back to you.** And the table must be in real units — if I see `alcohol = 0.83` anywhere, the page comes back.
 >
-> **Piece three, still on 30.6 — three defended names.** Each one gets three numbers, each number compared to the overall. **And one sentence naming which of your three names is the weakest and why.** That sentence is worth as much as the other three names put together, because anybody can write down their good news.
+> **Piece three, still in Build It ("The profile table and the three names") — three defended names.** Each one gets three numbers, each number compared to the overall. **And one sentence naming which of your three names is the weakest and why.** That sentence is worth as much as the other three names put together, because anybody can write down their good news.
 >
-> **Piece four, page 30.7 — add cluster distances and two principal components to a supervised model, and report whether it helped.** The before number, the after number, **the held-out pile named on both**, and the count of rows as well as the percentage. And a sentence on whether you think the difference is real.
+> **Piece four, Build It "Do the new columns earn their keep?" — add cluster distances and two principal components to a supervised model, and report whether it helped.** The before number, the after number, **the held-out pile named on both**, and the count of rows as well as the percentage. And a sentence on whether you think the difference is real.
 >
 > **And piece five, which I am marking hardest: the noise floor.** Run your entire pipeline, unchanged, on 178 rows of pure random numbers, and put its silhouette and its seed-to-seed ARI next to your real ones. **Four numbers in a little two-by-two table.** A write-up without that table is a write-up I cannot check, and neither can you."
 
-**Workbook pages:** 30.1, 30.2, 30.3, 30.4 in class · **30.5, 30.6, 30.7** at home.
+**Workbook split:** in class, Build It "Predictions, in pen", Do the Maths M1 (the silhouette by hand, alongside the lesson's worked point), the sweep table with both votes, and the three-names table from the Naming Ceremony. **At home, the one-hour document above is the rest of Build It** (the plots and two votes written out, the map, the profile table, the weakest-cluster sentence, the supervised experiment at 124 and 30, and the noise floor). The other workbook sections (Warm-Up, remaining Do the Maths items, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Draw It, Self-Check) are practice around that document; set the ones you have time to mark, and the Answer Key below covers all of them.
 
 **Expected time:** 15 min on the two plots and their numbers · 20 min on the map and the profile table · 10 min on the three names and the weak one · 15 min on the supervised experiment · **about 60 minutes**, plus 15 for the noise floor.
 
@@ -1750,86 +1750,133 @@ This section gives the wording for setting the homework.
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every workbook section restated in the order the student's workbook prints it, with the item labels the student sees (W1, M1, P1, A1, B1, T1 and so on), so you can mark from this page alone. The values are the ones in the workbook's own Answers section, re-run for this guide; the wrong-answer maps and marking notes are the teacher-only additions.
 
-### Page 30.1 — Predictions, in pen, before running
+### ✅ Warm-Up (W1–W5, last week's PCA)
 
-*Four predictions. (a) Which `k` will the elbow choose? (b) Which `k` will the silhouette choose? (c) Will adding cluster and PCA columns improve a supervised model on the wine? (d) What silhouette will 178 rows of pure noise get?*
+*Five quick questions about Week 29.*
 
-| | Most students predict | The truth |
-|---|---|---|
-| (a) elbow's `k` | 3 or 4 | **3**, with `381.1 ÷ 97.2 = 3.9` |
-| (b) silhouette's `k` | 3, or "the same" | **3**, at 0.2849 — **and the two agreeing is the point** |
-| (c) will the extra columns help | yes | **not at 124 training rows (54 of 54 either way); yes at 30 (141 → 145)** |
-| (d) noise silhouette | 0, or negative, or "it will refuse" | **0.0776 — positive, with three tidy clusters** |
+| Item | Question | Answer | The wrong answer you will see |
+|---|---|---|---|
+| **W1** | Variance of 4, 6, 8, 10, 12, four steps | distances `−4, −2, 0, +2, +4` · squared `16, 4, 0, 4, 16` · sum **40** · `40 ÷ 4 = 10.0` | `40 ÷ 5 = 8.0`. sklearn's `PCA` divides by one less than the count. |
+| **W2** | `transform` or `inverse_transform` takes the squashed table? Rule? | **`inverse_transform`.** `transform` narrows, `inverse_transform` widens, so whatever came out of one goes into the other. | Swapping them. |
+| **W3** | Components for 80%, as one integer; why is "five or six" not an answer? | **5.** Four gives `0.7360`, under 80%; five gives `0.8016`, over. The table has no ambiguity to be vague about. | "5 or 6", or 4 (rounding `0.7360` up). |
+| **W4** | What did PCA on the unscaled wine actually find? | *"It found the `proline` column."* A loading of `0.9998` means PC1 **is** proline renamed, and `0.9981` of the spread just reflects proline being in the hundreds while everything else is around 1. | "The most important feature in wine." Same failure as unscaled k-means. |
+| **W5** | The second number to put beside 55.4% | **Reconstruction error, `2.2550`**, and `2.2550 ÷ 3.5180 = 0.6410`: a rebuilt wine is wrong by 64% of a typical wine's distance from the middle. | Quoting only 55.4%. |
 
-**Marking notes.** **Present or absent, not right or wrong.** (c) and (d) are designed to be got wrong. **What earns credit is a reason attached** — *"the extra columns will help because more information is better"* is a genuine hypothesis and finding out it depends on the row count is the whole of objective 4. **Nearly everybody predicts (d) as zero or negative, and the fact that noise scores a comfortably positive 0.0776 is the single most important surprise of Term 4.**
+**Marking notes.** W3 and W5 are the two that carry forward. A student who writes a percentage without its partner here will do it again on the map in Build It.
 
-### Page 30.2 — Silhouette by hand for point C (in class)
+### 🔢 Do the Maths by Hand (M1–M4)
 
-*Using Week 28's converged clusters `{A, B, C}` and `{D, E, F}`, compute `s(C)` by hand. Then check it against `silhouette_samples`.*
+*Six points from Week 28: cluster 0 = {A(1,2), B(2,1), C(2,3)}, cluster 1 = {D(8,8), E(9,7), F(7,9)}. Real distances, square roots taken. Calculator only.*
 
-**These are real distances, not squared ones**, so there are square roots.
-
-```text
-a(C) — my average distance to the OTHERS in my own cluster:
-   C(2,3) to A(1,2):  √((2−1)² + (3−2)²) = √(1 + 1) = √2  = 1.4142
-   C(2,3) to B(2,1):  √((2−2)² + (3−1)²) = √(0 + 4) = √4  = 2.0000
-   a = (1.4142 + 2.0000) ÷ 2                              = 1.7071
-
-b(C) — my average distance to EVERYONE in the nearest other cluster:
-   C(2,3) to D(8,8):  √((2−8)² + (3−8)²) = √(36 + 25) = √61 = 7.8102
-   C(2,3) to E(9,7):  √((2−9)² + (3−7)²) = √(49 + 16) = √65 = 8.0623
-   C(2,3) to F(7,9):  √((2−7)² + (3−9)²) = √(25 + 36) = √61 = 7.8102
-   b = (7.8102 + 8.0623 + 7.8102) ÷ 3                       = 7.8943
-
-s(C) = (b − a) ÷ whichever is bigger
-     = (7.8943 − 1.7071) ÷ 7.8943
-     = 6.1872 ÷ 7.8943
-     = 0.7838
-```
-
-And the check:
-
-```python
-import numpy as np
-from sklearn.metrics import silhouette_samples, silhouette_score
-
-X = np.array([[1., 2.], [2., 1.], [2., 3.], [8., 8.], [9., 7.], [7., 9.]])
-labels = np.array([0, 0, 0, 1, 1, 1])
-print("per point :", np.round(silhouette_samples(X, labels), 4))
-print("overall   :", round(silhouette_score(X, labels), 4))
-print("the mean of the per-point scores:", round(silhouette_samples(X, labels).mean(), 4))
-```
+**M1 — `s(A)` all the way through.**
 
 ```text
-per point : [0.8478 0.8163 0.7838 0.8384 0.7618 0.7595]
-overall   : 0.8012
-the mean of the per-point scores: 0.8012
+a(A):  A to B = √(1+1) = √2 = 1.4142      A to C = √(1+1) = √2 = 1.4142
+       a(A) = (1.4142 + 1.4142) ÷ 2 = 1.4142          <- TWO distances
+
+b(A):  A to D = √(49+36) = √85 = 9.2195
+       A to E = √(64+25) = √89 = 9.4340
+       A to F = √(36+49) = √85 = 9.2195
+       b(A) = 27.8730 ÷ 3 = 9.2910                    <- THREE distances
+
+s(A) = (9.2910 − 1.4142) ÷ 9.2910 = 7.8768 ÷ 9.2910 = 0.8478
 ```
 
-**C is the third: 0.7838. Matches to four decimal places.** ✅ And note the last two lines: `silhouette_score` is exactly the mean of `silhouette_samples`, which is worth printing once so nobody wonders.
+**(d)** *"A very good place. A sits 1.4142 from its own clustermates and 9.2910 from the other cluster, about six and a half times further, and 0.8478 says so."* Full marks needs both numbers in the sentence.
 
-**And the silly grouping**, with B moved in with D, E and F:
-
-```python
-silly = np.array([0, 1, 0, 1, 1, 1])
-print("overall   :", round(silhouette_score(X, silly), 4))
-print("per point :", np.round(silhouette_samples(X, silly), 4))
-```
+**M2 — point D.**
 
 ```text
-overall   : 0.3751
-per point : [ 0.8068 -0.8163  0.7797  0.5284  0.487   0.4646]
+a(D):  D to E = √2 = 1.4142    D to F = √2 = 1.4142      a(D) = 1.4142
+b(D):  D to A = √85 = 9.2195   D to B = √85 = 9.2195   D to C = √61 = 7.8102
+       b(D) = 26.2492 ÷ 3 = 8.7497
+s(D) = (8.7497 − 1.4142) ÷ 8.7497 = 7.3355 ÷ 8.7497 = 0.8384
 ```
 
-**B scores −0.8163, and a negative score means "I am closer to a different cluster than to my own."** Nothing in that calculation ever saw a right answer.
+**The shorter distance is D to C (7.8102 against 9.2195).** C is the point of the left-hand bunch that reaches out towards D, so D's `b` is smaller than A's and D scores a little lower. The silhouette is sensitive to which points face each other across the gap, not only to how far apart the groups are on average.
 
-**Marking notes.** **Two checks.** **One — are they real distances?** A student who used squared distances for C gets `a = (2 + 4) ÷ 2 = 3.0`, `b = (61 + 65 + 61) ÷ 3 = 62.3333` and `s = 0.9519` — wrong, and worth explaining: **the silhouette divides one distance by another, and the ratio of two squares is not the ratio of the two numbers.** Squaring is a shortcut you may take when you are only comparing, never when you are dividing. **Two — is `a` an average over two distances and `b` over three?** Getting `a` over three by including C itself is the other common slip; **`a` is "the OTHERS in my cluster", so C is not one of them.**
+**M3 — the wrong way on purpose (squared distances).**
 
-### Page 30.3 — The two votes (in class)
+```text
+a(A) = (2 + 2) ÷ 2 = 2.0
+b(A) = (85 + 89 + 85) ÷ 3 = 259 ÷ 3 = 86.3333
+s(A) = (86.3333 − 2.0) ÷ 86.3333 = 84.3333 ÷ 86.3333 = 0.9768
+```
 
-*Fill in the sweep table for `k = 2` to `10`, then write both votes as numbers.*
+**(a)** right **0.8478**, wrong **0.9768**. **(b)** *"Squaring keeps the order of two distances, so it is safe when you only ask 'which is nearer?'. The silhouette divides one distance by another, and the ratio of two squares is not the ratio of the two numbers: `4 ÷ 9` is not `2 ÷ 3`. Squaring is a shortcut for comparing, never for dividing."*
+
+**Marking notes.** **Four slips, in order of how often you will see them.** **One — `a` averaged over three by counting A itself**, which gives `(0 + 1.4142 + 1.4142) ÷ 3 = 0.9428`. `a` is "the OTHERS in my cluster". **Two — squared distances** (M3 is this slip, done deliberately, and `0.9768` is plausible, on the right scale and between −1 and +1, which is exactly why it survives into reports). **Three — dividing by `a` instead of by the bigger of the two.** **Four — `b` taken from the farthest point rather than the average of all three.** For the lesson's own worked point, C, the key values are `a = 1.7071`, `b = 7.8943`, `s(C) = 0.7838`, the third number in `[0.8478 0.8163 0.7838 0.8384 0.7618 0.7595]` from `silhouette_samples`, and squaring gives the wrong `0.9519`.
+
+**M4 — a standout from a coincidence.**
+
+| cluster 1 | its value | minus overall | ÷ overall |
+|---|---:|---:|---:|
+| alcohol | 13.13 | **+0.13** | **1.01** |
+| flavanoids | 0.82 | **−1.21** | **0.40** |
+| proline | 619.06 | **−127.83** | **0.83** |
+
+**(b)** Defend with **flavanoids** (40% of typical, a gap anybody can see); cross out **alcohol** (0.13 apart, 1.01 times typical, defends nothing). Proline at 0.83 is in between: real but not the strongest card. Because a number is only evidence if it is far from the overall. **(c)** cluster 2: alcohol `13.68 ÷ 13.00 = 1.05` · flavanoids `3.00 ÷ 2.03 = 1.48` · proline `1100.23 ÷ 746.89 = 1.47`. **(d)** e.g. **"Bold Reserve"**: proline `1100.23 vs 746.89` · flavanoids `3.00 vs 2.03` · total phenols `2.85 vs 2.30`, all pointing the same way. Any name passes if the numbers support it.
+
+**Marking notes.** `alcohol 13.13 vs 13.00` is the standard false positive, and M4(b) is the first place the student meets it. Mark the same mistake again in Build It.
+
+### 🔎 Predict the Output (P1–P4)
+
+*Present or absent, not right or wrong: a prediction in pen with a reason attached earns the credit.*
+
+**P1 — one cluster.**
+
+```text
+inertia at k=1: 2314.0
+ValueError: Number of labels is 1. Valid values are 2 to n_samples - 1 (inclusive)
+```
+
+Inertia exists at `k = 1` (total squared distance from every wine to the one middle). The silhouette cannot: **`b` is the average distance to the nearest *other* cluster, and with one cluster there is no other.** It is undefined, not merely awkward. Full marks uses the letters `a` and `b`.
+
+**P2 — three shapes and an agreement.**
+
+```text
+X          (178, 13)
+d          (178, 3)
+labels_    (178,)
+agree? True
+[[4.9629 6.2931 2.0634]
+ [3.8452 5.6853 2.74  ]]
+```
+
+The `3` in `d` is **your decision** (`n_clusters`), the `13` is the data. The smallest distance in each row is that row's label, which `agree? True` proves. First wine: smallest is the third, so cluster 2.
+
+**P3 — one number per point.**
+
+```text
+sil.shape          : (178,)
+sil.mean()         : 0.2848589192
+silhouette_score   : 0.2848589192
+how many below 0   : 7
+the worst point    : -0.0228  in cluster 0
+```
+
+Ten decimals prove that `silhouette_score` is exactly the plain mean of `silhouette_samples`, which is the licence to average the per-point scores inside one cluster and find the weak one.
+
+**P4 — a metric that does not care about names.**
+
+```text
+a vs b : 1.0
+b vs a : 1.0
+a vs c : 0.3243
+a vs a : 1.0
+```
+
+What is compared is the **partition** (who is grouped with whom), not the labels: `b` is the same grouping as `a` under the names 2 and 7. It is also symmetric, unusual among the two-argument metrics in this course. This is the tool Week 28 said was missing.
+
+**Marking notes.** Most students predict P1 line 2 as `0.0`; the surprise is that it raises. P3's "below 0" and P4's third value are the two most worth discussing afterwards.
+
+### ✍️ Practice Set A — Read It (A1–A6)
+
+**A1.** silhouette score **(iii)** · adjusted Rand index **(vi)** · cluster profile **(v)** · elbow **(i)** · negative control **(iv)** · cluster ID as a feature **(ii)**
+
+**A2.** The sweep:
 
 ```text
    k    inertia      drop   silhouette
@@ -1845,164 +1892,115 @@ per point : [ 0.8068 -0.8163  0.7797  0.5284  0.487   0.4646]
   10      864.6      48.6       0.1338
 ```
 
-**Vote 1 — the elbow.** `381.1 ÷ 97.2 = 3.9`. The third cluster bought nearly four times what the fourth did, and after that every extra cluster buys roughly the same as the last (70, 66, 48, 51, 31, 49), which is what "no more structure" looks like. **`k = 3`.**
+**(a)** `381.1 ÷ 97.2 = 3.9` → **k = 3**. After that every extra cluster buys roughly the same as the last (70, 66, 48, 51, 31, 49), which is what "no more structure" looks like. **(b)** peak **0.2849** at **k = 3**. **(c)** **No.** 0.1581 beats its neighbour 0.1386 and is barely half the peak; a local rise that does not beat the maximum is noise. **(d)** **k = 10**, inertia 864.6 (and it will always be the last row); the lowest possible is **inertia 0 at k = 178**, one cluster per wine. That one fact is why inertia cannot choose `k`. Full marks on (d) needs `178` and `0`.
 
-**Vote 2 — the silhouette.** It peaks at **0.2849 at `k = 3`**, above 0.2683 at k=2 and 0.2457 at k=4, and then falls steadily. **`k = 3`.**
+**A3.** `(1)` clustered in the standardised space and scored in the raw space: no crash, and `0.1943` describes nothing anybody built. `(2)` `ref` was not indexed, so 178 labels meet 142; **this is the only one that crashes**, `ValueError: Found input variables with inconsistent numbers of samples: [178, 142]`, and the fix is `ref[idx]`. `(3)` the word "good" with nothing beside it: 0.2849 is neither good nor bad without the noise floor (0.0776) or another number from the same space. No crash, and the sentence is the bug.
 
-**Both votes say 3, and that agreement is the evidence.**
-
-**The two follow-up questions.** *Why can you never pick the `k` with the smallest inertia?* Because inertia only ever falls. **At `k = 178` every wine is its own centre, every distance is 0, and inertia is exactly 0** — a perfect score carrying no information. *And the bump at `k = 8`?* The silhouette goes 0.1386 at k=7 then back up to 0.1581 at k=8. **That is noise: it beats its neighbour and is nowhere near the peak. A local rise that does not beat the maximum is not a finding.**
-
-**Marking notes.** **Both votes must be numbers.** "The elbow is at 3" without the ratio is half an answer, and the reason to insist is that the ratio is checkable and a bend is not. **Full marks on the second question needs `k = 178` and `inertia = 0`** — the number is the proof.
-
-### Page 30.4 — Three defended names (in class)
-
-*One card per cluster: a name, and three numbers each compared against the overall column. Then one sentence on which name is weakest.*
-
-| cluster | n | its own silhouette | the three numbers | the name |
-|---|---:|---:|---|---|
-| **2** | 62 | 0.3434 | proline **1100 vs 747** · flavanoids **3.00 vs 2.03** · total phenols **2.85 vs 2.30** | **Bold Reserve** |
-| **1** | 51 | 0.3506 | flavanoids **0.82 vs 2.03** · colour intensity **7.23 vs 5.06** · hue **0.69 vs 0.96** | **Dark & Tannic** |
-| **0** | 65 | 0.1774 | colour intensity **2.97 vs 5.06** · proline **510 vs 747** · alcohol **12.25 vs 13.00** | **Light & Pale** |
-
-**The weakest-name sentence, and here is what full marks looks like:**
-
-> **Cluster 0 is the weakest, and there are two reasons.** Its own mean silhouette is **0.1774**, about half of cluster 1's 0.3506 and cluster 2's 0.3434, and **seven of its sixty-five bottles score below zero**, which means they sit closer to a different cluster than to their own. And the profile table shows why: **cluster 0 is the lowest of the three on almost every column and the highest on nothing.** "Low on things" is a much weaker basis for a group than "high on a specific thing" — **a cluster defined mainly by absence is often a sign that `k` is too small, or that the real structure is two strong groups plus a continuum of leftovers.**
-
-**Marking notes.** **Any name passes if the numbers support it.** "Rich & Full", "High-Phenol", "Big Wines" are all fine for cluster 2. **What fails is three things, and mark all three explicitly.** **One: a bare number** — `proline 510` with nothing beside it. **Two: a number that is not a standout** — `alcohol 13.13 vs 13.00` for cluster 1 is the classic, it is 0.13 apart, and **telling a standout from a coincidence is the skill on this page.** **Three: a claim not in the table** — "Expensive", "Award-Winning", "Old"; nothing in thirteen chemical measurements says any of those. **And the weakest-name sentence is worth as much as the three names together; a student who identified cluster 0 from its silhouette *and* from its all-low profile has done the whole objective.**
-
-### Page 30.5 — The elbow and silhouette plots (homework)
-
-```python
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-from sklearn.cluster import KMeans
-from sklearn.datasets import load_wine
-from sklearn.metrics import silhouette_score
-from sklearn.preprocessing import StandardScaler
-
-wine = load_wine()
-X_raw = pd.DataFrame(wine.data, columns=wine.feature_names)
-X = StandardScaler().fit_transform(X_raw)
-
-ks, inertias, sils = list(range(2, 11)), [], []
-for k in ks:
-    km = KMeans(n_clusters=k, n_init=10, random_state=0).fit(X)
-    inertias.append(km.inertia_)
-    sils.append(silhouette_score(X, km.labels_))
-
-fig, ax = plt.subplots(1, 2, figsize=(11, 4))
-ax[0].plot([1] + ks, [2314.0] + inertias, "o-")
-ax[0].set_xlabel("k"); ax[0].set_ylabel("inertia"); ax[0].set_title("Elbow")
-ax[1].plot(ks, sils, "o-", color="darkorange")
-ax[1].set_xlabel("k"); ax[1].set_ylabel("mean silhouette"); ax[1].set_title("Silhouette")
-plt.tight_layout(); plt.savefig("choose_k.png", dpi=110); plt.close()
-print("saved choose_k.png")
-print("drop ratio 3 -> 4 :", round(381.1 / 97.2, 1))
-print("silhouette peak   :", round(max(sils), 4), "at k =", ks[int(np.argmax(sils))])
-```
+**A4 — the labelled diagram.**
 
 ```text
-saved choose_k.png
-drop ratio 3 -> 4 : 3.9
-silhouette peak   : 0.2849 at k = 3
+drop into k=3 = 381.1        drop into k=4 = 97.2
+the ratio between them = 3.9        so vote 1 says k = 3
+peak value = 0.2849   at k = 3   bump wins? no
+both votes agree on k = 3   and THAT is the evidence
 ```
 
-**What the plots show.** The elbow plot falls steeply from 2314.0 to 1277.9 and then flattens into a nearly straight gentle slope from k=4 onwards — **the bend is visible but it is not dramatic, which is normal and worth saying.** The silhouette plot has a clear single peak at k=3 and a small meaningless bump at k=8.
+**A5 — grade three names.**
 
-**Marking notes.** **Both numbers must be written down, as numbers.** `3.9` and `0.2849 at k = 3`. **A page with two plots and no numbers has drawn pictures rather than gathered evidence**, and the reason it matters is that the capstone report in Week 36 is judged on exactly this distinction.
+| The name | Verdict |
+|---|---|
+| cluster 2 = "Bold Reserve" | **Pass.** Three numbers, all well clear of overall, all one way (proline 1.47 times typical, flavanoids 1.48, total phenols up). |
+| cluster 1 = "Expensive" | **Fail.** The numbers are real standouts, but nothing in thirteen chemical measurements is a price. Rename it after what was measured. |
+| cluster 1 = "Dark & Tannic" | **Pass, with one number struck out.** `alcohol 13.13 vs 13.00` must go; replace with `hue 0.69 vs 0.96`. |
 
-### Page 30.6 — The map, the profile table, and three names (homework)
+**Weakest: cluster 0.** Reason 1: its own silhouette `0.1774`, about half of 0.3506 and 0.3434. Reason 2: **7 of its 65 bottles score below zero**, the only cluster with any. (A third, from the profile: lowest of the three on almost every column and highest on nothing.) **Marking notes.** Two reasons, both from the printout, is the ask; a student who says "it is the biggest" has not read the printout.
 
-```python
-from sklearn.decomposition import PCA
+**A6.** **(a)** *"Our clustering scores 0.2849, the identical pipeline on 178 rows of pure noise scores 0.0776, so ours is 3.7 times the floor."* **(b)** `1.0000` means the grouping is **identical, wine for wine**, across five seeds. **(c)** Not zero because there is a tightest three-way split of a formless cloud and k-means finds roughly the same one each time; noise is evenly structured, not structureless. 0.5791 looks reassuring if you have nothing to compare it with, which is the trap.
 
-km = KMeans(n_clusters=3, n_init=10, random_state=0).fit(X)
-labels = km.labels_
-pca = PCA(n_components=2).fit(X)
-Z = pca.transform(X)
-evr = pca.explained_variance_ratio_
+### ✍️ Practice Set B — Write It (B1–B5)
 
-names = {0: "Light & Pale", 1: "Dark & Tannic", 2: "Bold Reserve"}
-marks = {0: "o", 1: "^", 2: "s"}
-plt.figure(figsize=(7, 5.5))
-for c in range(3):
-    m = labels == c
-    plt.scatter(Z[m, 0], Z[m, 1], s=34, alpha=0.85, marker=marks[c],
-                label="%d: %s (n=%d)" % (c, names[c], m.sum()))
-cen = pca.transform(km.cluster_centers_)
-plt.scatter(cen[:, 0], cen[:, 1], marker="X", s=240, c="black", label="centres")
-plt.xlabel("PC1 (%.1f%% of the spread)" % (evr[0] * 100))
-plt.ylabel("PC2 (%.1f%% of the spread)" % (evr[1] * 100))
-plt.title("178 wines, coloured by cluster")
-plt.legend(); plt.tight_layout(); plt.savefig("wine_map.png", dpi=110); plt.close()
-print("saved wine_map.png")
+Expected results, so you can check a submission without running it. The full programs are in the workbook's own Answers section.
 
-prof = X_raw.copy()
-prof["cluster"] = labels
-means = prof.groupby("cluster").mean().T
-means["overall"] = X_raw.mean()
-print(means.round(2).to_string())
-```
+| Item | Done looks like | Marking tip |
+|---|---|---|
+| **B1** | prints `0.2849`, one line | Must be on the **scaled** table; `0.1943` means they scored in raw space (Fix the Broken Program, Bug 3). |
+| **B2** | the sweep table in A2 above, then `vote 1, the drop ratio : 381.1 / 97.2 = 3.9  -> k = 3` and `vote 2, the silhouette : peak 0.2849 at k = 3` | Loop must start at `k = 2`; the `k = 1` row is printed with inertia and a dash. |
+| **B3** | `cluster sizes : [65 51 62]`; cluster 0: `0.1774`, worst `-0.0228`, below 0: `7`; cluster 1: `0.3506`, `0.0611`, `0`; cluster 2: `0.3434`, `0.0352`, `0`; whole set and mean of parts both `0.2849` | Exactly one cluster has rows below zero. |
+| **B4** | the 13-row feature-means table with an `overall` column (proline `510.17 / 619.06 / 1100.23 / 746.89`, hue around 1) | A `0.83` anywhere means they profiled the scaled table. No `overall` column means every number is unfalsifiable. |
+| **B5** | four accuracy rows each naming the pile, and the two-by-two noise table (values under Build It below) | Point at `sc`, `k3` and `pc` and ask which rows each `.fit` saw; the answer must be "the training rows" three times. |
 
-```text
-saved wine_map.png
-cluster                            0       1        2  overall
-alcohol                        12.25   13.13    13.68    13.00
-malic_acid                      1.90    3.31     2.00     2.34
-ash                             2.23    2.42     2.47     2.37
-alcalinity_of_ash              20.06   21.24    17.46    19.49
-magnesium                      92.74   98.67   107.97    99.74
-total_phenols                   2.25    1.68     2.85     2.30
-flavanoids                      2.05    0.82     3.00     2.03
-nonflavanoid_phenols            0.36    0.45     0.29     0.36
-proanthocyanins                 1.62    1.15     1.92     1.59
-color_intensity                 2.97    7.23     5.45     5.06
-hue                             1.06    0.69     1.07     0.96
-od280/od315_of_diluted_wines    2.80    1.70     3.16     2.61
-proline                       510.17  619.06  1100.23   746.89
-```
+### 🐞 Fix the Broken Program
 
-**The map:** three groups, clearly separated left to right along PC1, with the cluster-1 triangles top-left, the cluster-2 squares to the right and the cluster-0 circles low and central. **`36.2 + 19.2 = 55.4`, so 44.6% of the spread in these wines is not on the page** — and the honest comparison is with last week's uncoloured version of the same plot, which looked like a single blob.
+*Three bugs: a shape error, a runtime error, and a sensible number in the wrong space.*
 
-Names and defences: as on page 30.4.
+**Bug 1 (line 21).** `15` came from `np.c_[X, pca.transform(X)]` (13 columns plus 2 principal components); `13` came from the `km` fitted on `X`. **Fix: `d = km.transform(X)`.** Rule: a fitted `KMeans` remembers exactly how many columns it was fitted on and refuses anything else; the same is true of a scaler, a PCA and a logistic regression.
 
-**Marking notes.** **Three hard checks.** **One — percentages in both axis labels.** `36.2%` and `19.2%`. **Two — original units in the table, and an overall column.** A `0.83` anywhere means they profiled the scaled table. **Three — shapes as well as colours in the plot**, so it survives a photocopier. And **a student who compared this map with Week 29's uncoloured one and noticed that the structure was invisible until it was coloured has made the connection the whole fortnight was built for.**
+**Bug 2 (line 24).** **Fix: `range(2, 6)`.** It is unfixable rather than awkward because **`b` does not exist** with one cluster: there is no other cluster to measure to.
 
-### Page 30.7 — Do the new columns earn their keep, and the noise floor (homework)
+**Bug 3 (line 29).** **(a)** The sweep says `3  0.2849` and the last line says `0.1943` for the same `k = 3` clustering of the same 178 wines; one clustering cannot have two silhouettes. **(b)** `silhouette_score(X_raw, labels)` becomes `silhouette_score(X, labels)`. **(c)** The last line then prints **`0.2849`**, matching the table.
 
-```python
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import adjusted_rand_score
+**Marking notes.** Bug 3 is the one that counts. A student who "fixes" the two crashes and hands in `0.1943` has fixed what the computer complained about and nothing else; the teaching point is "when the same quantity appears twice in one output, read both".
 
-y = wine.target
+### 🧩 Puzzle of the Week — Higher Score, Worse Answer
 
+| | silhouette (own space) | ARI vs grape variety |
+|---|---:|---:|
+| raw 13 columns | **0.5711** | **0.3711** |
+| standardised 13 columns | **0.2849** | **0.8975** |
 
-def run(n_train, state=0):
-    a, b, ya, yb = train_test_split(X_raw, y, train_size=n_train,
-                                    random_state=state, stratify=y)
-    sc = StandardScaler().fit(a)                      # TRAIN rows only
-    Za, Zb = sc.transform(a), sc.transform(b)
-    k3 = KMeans(n_clusters=3, n_init=10, random_state=0).fit(Za)
-    pc = PCA(n_components=2).fit(Za)
-    Aa = np.c_[Za, k3.transform(Za), pc.transform(Za)]
-    Ab = np.c_[Zb, k3.transform(Zb), pc.transform(Zb)]
-    for tag, p, q in [("13 raw columns      ", Za, Zb),
-                      ("13 + 3 dists + 2 PCs", Aa, Ab)]:
-        acc = LogisticRegression(max_iter=5000).fit(p, ya).score(q, yb)
-        print("  %s  %.4f  (%d of %d held-out wines)"
-              % (tag, acc, round(acc * len(yb)), len(yb)))
+**(a)** the raw clustering (0.5711). **(b)** the standardised one (ARI 0.8975 against 0.3711). **(c)** The silhouette measures *the shape of your grouping in the space you measured it in* (how tight and separated), and does **not** measure *whether the grouping is the right one*. **(d)** In raw space distance is essentially proline distance, so for a point mid-band `a` is small (its band-mates are within about 170 proline) and `b` is large (the bands do not touch); three non-overlapping segments of one line is the tidiest arrangement there is, but they are bands of the wrong thing. **(e)** Score in the space you clustered in, and compare two silhouettes only if they were measured in the same space; `0.1943` (standardised labels scored on the raw table) describes nothing anybody built. **(f)** Still good for three comparisons inside one space: choosing `k`, finding the weak cluster with `silhouette_samples`, and the noise floor ("3.7 times the floor"). It cannot rank clusterings built in different spaces or say a grouping is correct.
 
+**Marking notes.** Full marks on (c) needs the "does NOT measure" half. (f) is the half students skip; "the silhouette is useless" is the wrong lesson.
 
-print("--- 124 training rows ---")
-run(124)
-print("--- 30 training rows ---")
-run(30)
-```
+### 🤔 Think Deeper (T1–T2)
+
+**T1.** The control and the floor are the same move, "compared to what?". Week 27's frozen backbone scored 0.9257 and meant nothing until the from-scratch network scored 0.9814; this week 0.2849 meant nothing until noise scored 0.0776. In both, the second number comes from deliberately removing the thing being tested and running everything else unchanged; a noise floor is a control where the thing removed is the structure itself. **Capstone example (any sound one passes):** a `DummyClassifier(strategy="most_frequent")` beside the digits CNN (about 10%), or a function that returns a constant beside the latency number, in the report and not in a footnote. **Marking notes.** Requires a concrete capstone control with its exact value or construction; "I will compare it to something" earns half.
+
+**T2.** A small leak is worse than a big one because a big leak warns you and a small one does not: fitting on all 178 rows gives `0.9797` both ways, so "that looks too good" detects nothing. The size of a leak is a property of the dataset, not of the mistake. You check by reading, pointing at every `.fit` and saying which rows it saw, which is also the argument for a `Pipeline`. **Catastrophic shape:** far more columns than rows, e.g. 300 rows by 20,000 columns (genetics), where PCA fitted on everything finds noise directions specific to the rows, test rows included. **Marking notes.** Needs all three parts: why small is worse, how to check, and a dataset shape.
+
+### 🛠️ Build It — Cluster Cartography
+
+*One document, five pieces: the sweep and two votes, the map, the profile table with three names and the weak one, the supervised experiment, the noise floor. The ten-item step checklist in the workbook maps onto the sections below.*
+
+**Predictions.** Present or absent, not right or wrong. **(a)** k = 3, with `381.1 ÷ 97.2 = 3.9`. **(b)** k = 3 at 0.2849, and the two agreeing is the point. **(c)** Not at 124 training rows (54 of 54 either way); yes at 30 (141 → 145). **(d)** 0.0776, positive, with three tidy clusters.
+
+| | Most students predict | The truth |
+|---|---|---|
+| (a) elbow's `k` | 3 or 4 | **3** |
+| (b) silhouette's `k` | 3, or "the same" | **3** |
+| (c) extra columns help? | yes | **not at 124 rows; yes at 30** |
+| (d) noise silhouette | 0, negative, or "it will refuse" | **0.0776** |
+
+Credit comes from a reason attached. "More information is better" is a real hypothesis, and finding out it depends on the row count is objective 4. Nearly everybody predicts (d) as zero or negative; noise scoring a comfortably positive 0.0776 is the most important surprise of Term 4.
+
+**The sweep.** Exactly the A2 / B2 table above. **Vote 1: `381.1 ÷ 97.2 = 3.9` → k = 3. Vote 2: peak `0.2849` at k = 3. They agree.** *Why agreement is the evidence:* the two methods fail in different directions (the elbow tends to over-count, because splitting a loose cluster always buys inertia; the silhouette tends to under-count when clusters touch), so two tools with different weaknesses landing on the same `k` is hard to explain away.
+
+**The map.** Filename `wine_map.png`. Axis labels in full: `PC1 (36.2% of the spread)` and `PC2 (19.2% of the spread)`. The two percentages add to **55.4**, so **44.6%** is NOT on the page. Against Week 29's uncoloured plot: identical points, axes and percentages, but one blob then and three groups now; the structure was always there and the picture could not show it. The expected picture: three groups separated left to right along PC1, cluster-1 triangles top-left, cluster-2 squares to the right, cluster-0 circles low and central.
+
+**The profile table (six requested rows, original units):**
+
+| | cluster 0 | cluster 1 | cluster 2 | overall |
+|---|---:|---:|---:|---:|
+| alcohol | 12.25 | 13.13 | 13.68 | 13.00 |
+| flavanoids | 2.05 | 0.82 | 3.00 | 2.03 |
+| color_intensity | 2.97 | 7.23 | 5.45 | 5.06 |
+| hue | 1.06 | 0.69 | 1.07 | 0.96 |
+| proline | 510.17 | 619.06 | 1100.23 | 746.89 |
+| total_phenols | 2.25 | 1.68 | 2.85 | 2.30 |
+
+**Three defended names:**
+
+| cluster | n | own silhouette | below 0 | name | the three numbers |
+|---|---:|---:|---:|---|---|
+| **2** | 62 | 0.3434 | 0 | **Bold Reserve** | proline **1100 vs 747** · flavanoids **3.00 vs 2.03** · total phenols **2.85 vs 2.30** |
+| **1** | 51 | 0.3506 | 0 | **Dark & Tannic** | flavanoids **0.82 vs 2.03** · colour intensity **7.23 vs 5.06** · hue **0.69 vs 0.96** |
+| **0** | 65 | 0.1774 | 7 | **Light & Pale** | colour intensity **2.97 vs 5.06** · proline **510 vs 747** · alcohol **12.25 vs 13.00** |
+
+**The weakest cluster: 0.** Reason 1: own silhouette `0.1774`, about half of the other two. Reason 2: seven of its 65 bottles score below zero, the only cluster with any. Full marks also notes that "low on things" is a weaker basis for a group than "high on a specific thing", and a cluster defined mainly by absence is often a sign that `k` is too small, or that the real structure is two strong groups plus a continuum of leftovers.
+
+**Marking notes on the names.** Any name passes if the numbers support it ("Rich & Full", "High-Phenol", "Big Wines" are all fine for cluster 2). Three things fail, and mark all three explicitly. **One: a bare number** (`proline 510` with nothing beside it). **Two: a number that is not a standout** (`alcohol 13.13 vs 13.00`); telling a standout from a coincidence is the skill. **Three: a claim not in the table** ("Expensive", "Award-Winning", "Old"). The weakest-cluster sentence is worth as much as the three names together; a student who found cluster 0 from its silhouette *and* from its all-low profile has done the whole objective.
+
+**Do the new columns earn their keep?**
 
 ```text
 --- 124 training rows ---
@@ -2013,28 +2011,18 @@ run(30)
   13 + 3 dists + 2 PCs  0.9797  (145 of 148 held-out wines)
 ```
 
-**The sentence being marked, and here is full marks:**
+| training rows | held-out rows | 13 columns | 18 columns | gain, in wines |
+|---:|---:|---|---|---:|
+| 124 | 54 | 1.0000 (54 of 54) | 1.0000 (54 of 54) | **0** |
+| 30 | 148 | 0.9527 (141 of 148) | 0.9797 (145 of 148) | **4** |
 
-> **With 124 labelled training rows the five new columns bought nothing: 54 of 54 held-out wines either way.** That is not evidence against them — **it is a ceiling.** The problem was already completely solved, so nothing could improve it, and the experiment cannot answer the question.
->
-> **With only 30 labelled training rows, on the other 148 held-out wines, 13 raw columns got 141 of 148 (0.9527) and the 18-column version got 145 of 148 (0.9797) — a gain of 4 wines, or +2.70 accuracy points.** All five new columns were fitted on the 30 training rows only, so no held-out wine touched any fitting.
->
-> **Is it real?** Over ten different 30-row splits the mean gain is **+1.15 points**, which is smaller than this split suggested and about the same size as the baseline's own split-to-split standard deviation of **0.0125**. **So the size of the gain is not convincing on its own — but the 18-column version won 8 times, tied twice and never lost, and that consistency is the evidence.**
+**The 124-row result is a ceiling, not evidence against the new columns:** the problem was already solved, so nothing could improve it and the experiment cannot answer the question. **Is the 30-row gain real?** Full marks:
 
-**And piece five, the noise floor:**
+> Over ten different 30-row splits the mean gain is **+1.15 points**, smaller than this split suggested and about the size of the baseline's own split-to-split standard deviation of **0.0125**. So the size of the gain is not convincing on its own, but the 18-column version won 8 times, tied twice and never lost, and that consistency is the evidence. More splits would convince further, as would a third row with the five new columns alone, which on this split score 146 of 148.
 
-```python
-noise = np.random.default_rng(0).normal(size=(178, 13))
-kmn = KMeans(n_clusters=3, n_init=10, random_state=0).fit(noise)
-real = KMeans(n_clusters=3, n_init=10, random_state=0).fit(X)
-print("               silhouette   seed-to-seed ARI")
-for tag, data, km0 in [("real wine ", X, real), ("pure noise", noise, kmn)]:
-    aris = [adjusted_rand_score(km0.labels_,
-            KMeans(n_clusters=3, n_init=10, random_state=s).fit(data).labels_)
-            for s in (1, 2, 3, 4, 5)]
-    print("%s       %.4f            %.4f"
-          % (tag, silhouette_score(data, km0.labels_), np.mean(aris)))
-```
+**Marking notes.** **One: is the pile named on every row?** `54 of 54` and `141 of 148`, with training-row counts. **Two: is the count there as well as the percentage?** "4 more wines" is checkable; "+2.70%" alone is not. **Three: is 124 named as a ceiling?** A student who concludes "the features do not help" from 54 of 54 has drawn the wrong inference, which is the mistake that kills real experiments. Also check that `sc`, `k3` and `pc` were all fitted on the training rows.
+
+**The noise floor:**
 
 ```text
                silhouette   seed-to-seed ARI
@@ -2042,11 +2030,21 @@ real wine        0.2849            1.0000
 pure noise       0.0776            0.5791
 ```
 
-**And the reading, which is the whole page:**
+`0.2849 ÷ 0.0776 = 3.7` times the floor. Two-sentence argument, full marks:
 
-> **0.2849 on its own is meaningless.** Against the field guide it is "real, but the clusters touch". **Against a floor of 0.0776 from a dataset with no structure in it at all, it is 3.7 times the floor.** And the stability numbers make the same point harder: our grouping is **identical across five different seeds** (ARI 1.0000) where the noise grouping agrees with itself only **0.5791** of the time. **Those two comparisons together are the argument that the wine structure is real, and neither number means anything without its partner.**
+> 0.2849 on its own is meaningless; against a floor of 0.0776 from a dataset with no structure at all, it is 3.7 times the floor. The stability numbers make the same point harder: our grouping is identical across five seeds (ARI 1.0000) where the noise grouping agrees with itself only 0.5791 of the time, and neither comparison means anything without its partner.
 
-**Marking notes.** **Four bars, and the last two are what separate a report from a brochure.** **One — is the pile named on both accuracy rows?** `54 of 54` and `141 of 148` with the training-row count stated. **Two — is the count there as well as the percentage?** "4 more wines" is checkable; "+2.70%" alone is not. **Three — is the 124-row result named as a ceiling?** A student who concludes "the features don't help" from 54-of-54 has drawn the wrong inference and it is worth writing out in your feedback, because it is exactly the mistake that kills real experiments. **Four — is the noise-floor two-by-two there, with all four numbers?** `0.2849 / 0.0776` and `1.0000 / 0.5791`. **Mark this hardest and praise it loudest.** Almost no published clustering write-up includes a negative control; a 14-year-old who has one has done more trustworthy work than most of the field, and they should be told that in those words.
+**Marking notes.** Four numbers in the two-by-two or it does not count. Mark this hardest and praise it loudest: almost no published clustering write-up includes a negative control, and a 14-year-old who has one has done more trustworthy work than most of the field, and should be told so in those words.
+
+### 🎨 Draw It
+
+Good answer: the **map** with three different shapes (circles, triangles, squares), three big-cross centres and `PC1 (36.2% of the spread)` / `PC2 (19.2% of the spread)` in full, with `36.2 + 19.2 = 55.4` and `44.6% is not on this page`; **one cluster's profile row as three pairs of bars** in real units (`flavanoids 0.82 against 2.03`); the **two-by-two noise box** with `0.2849 / 0.0776` and `1.0000 / 0.5791` and `3.7 times the floor`; and **the weak cluster labelled weak** with `0.1774` and `7 below zero`. The three fill-in lines: shapes **circles, triangles, squares**; numbers **0.2849 / 0.0776 and 1.0000 / 0.5791**; weak cluster **0**, **0.1774**, **7 below zero**.
+
+**Marking notes.** The drawing that shows only three confident blobs is a sales brochure; one that draws cluster 0 differently (a dashed outline, or the seven negative bottles as hollow dots between two clouds) is a report.
+
+### 📊 Self-Check
+
+No right answers. Four rows predict the capstone in Weeks 34 to 36; if any is a 😕, send the student back to the section named. **"why the silhouette needs square roots"** (M3: `0.8478` against `0.9768`). **"run a negative control and put the floor beside my result"** (the noise floor; four lines of code). **"read a ceiling (54 of 54)"** (cover the 30-row block and read only the 124-row block). **"why a higher silhouette can mean a worse clustering"** (the Puzzle: `0.5711` with ARI `0.3711` against `0.2849` with ARI `0.8975`).
 
 ### Answers to every question posed in the lesson
 

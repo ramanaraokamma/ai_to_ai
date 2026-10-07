@@ -764,27 +764,39 @@ Point at the biggest off-diagonal number and ask: *"What is this box telling us?
 **Say this:**
 
 > "No new thinking tonight — this is assembly. Everything we made today goes into the booth folder,
-> laid out so a stranger who has never met you could pick it up and understand the project. Six
-> things. About forty-five minutes.
+> laid out so a stranger who has never met you could pick it up and understand the project. Eight
+> pages, W34-1 to W34-8. About fifty minutes. The short question sets at the front of the workbook
+> are for you to check your head; they don't go in the folder.
 >
 > The one to take seriously is the data card, and inside the data card, box six: *what's NOT in it*.
 > That's the box adults actually read. 'No photos taken after dark. No photos of squashed cans. All
 > photos taken by me, on the kitchen table.' Uncomfortable and specific beats comfortable and vague."
 
-**Workbook pages:** `../workbook/week-34.md`, pages **W34-1 to W34-8**.
+**Workbook:** `../workbook/week-34.md`. It has nine sections, in this order. Everything in it is
+homework; the only split the workbook itself makes is that **Build It (W34-1 to W34-8) is the folder
+assembly and is the timed part (about 50 minutes)**, while the question sections are short,
+untimed check-ups (apart from the 5-minute Warm-Up). If the evening is tight, do Build It first and
+leave Think Deeper for the weekend.
 
-| Page | What it is | Time |
+| Workbook section | What it is | Time |
 |---|---|---|
-| W34-1 | The brief (finish it neatly if it was scribbled in class) | 5 min |
+| ✅ Warm-Up | Five recall questions on the Week 33 bias audit (the four test batches, "percentage points", bias is not a bug, a named group, what makes "collect more data" a plan) | 5 min |
+| ✍️ Practice Set A, A1–A6 | Held-out set (fill the blanks), guessing baseline, "I promise not to look", match the five score forms, label the blank confusion matrix, spot the wrong word in "50% better" | not timed |
+| ✍️ Practice Set B, B1–B5 | The two questions for "95% accurate", three divisions shown, Maya's unbalanced classes, Tom's 100%, reading one matrix row and writing the finding | not timed |
+| 🧩 Puzzle of the Week | The Missing Matrix: recover four boxes from row totals of 5 and the column totals, then accuracy, baseline and gain | not timed |
+| 🤔 Think Deeper, T1–T2 | Two paragraphs: training versus held-out photos, and why a same-day test is weak | not timed |
+| 🛠️ Build It, W34-1 | The brief (finish it neatly if it was scribbled in class) | 5 min |
 | W34-2 | The counts table + the balance check | 5 min |
 | W34-3 | Model file record card: filename, folder, date, size | 3 min |
 | W34-4 | The 40-row scoring sheet (copy up neatly if needed) | 5 min |
 | W34-5 | Accuracy three ways + baseline + gain, division shown | 7 min |
-| W34-6 | The 4×4 confusion matrix, drawn by hand, plus the one-sentence finding | 10 min |
-| W34-7 | Data card draft — all 8 boxes, especially attribution and permission | 12 min |
+| W34-6 | The 4×4 confusion matrix, drawn by hand, plus per-class accuracy and the one-sentence finding | 10 min |
+| W34-7 | Data card draft, all 8 boxes, especially attribution and permission | 12 min |
 | W34-8 | Two reflection questions | 3 min |
+| 🎨 Draw It | Draw the split: 200 photos, the sealed envelope, the model, an arrow of time | not timed |
+| 📊 Self-Check | Seven "I can..." rows, 😀 / 🙂 / 😕. For the student, not for a mark | not timed |
 
-**Total: about 50 minutes.**
+**Build It total: about 50 minutes.**
 
 > **⚠️ Watch out:** if the folder ends up as a loose pile of paper on a bedroom floor, next week's
 > lesson loses its first fifteen minutes to a search party. Put the folder somewhere specific and
@@ -833,6 +845,97 @@ thing that makes the score a measurement rather than a memory test.
 
 ### Workbook answers
 
+The workbook has its own Answers section at the end, which the student may be told to check against
+after marking. These are the same answers, in workbook order, with the teacher-only parts added:
+wrong-answer maps and what to watch for. Where the student's answer varies (the Build It pages),
+mark against the checklists.
+
+#### ✅ Warm-Up
+
+| Q | Answer | What to watch for |
+|---|---|---|
+| **1** | Any two of `control`, `new-lighting`, `new-hands`, `new-background` | Accept the plain-English versions ("a lamp, after dark"). All four are *new photos taken after training, on purpose*. |
+| **2** | **percentage points** (90 − 40 = 50) | "percent" or "%" is the usual slip. Subtracting two percentages always gives points. |
+| **3** | **False.** Nothing broke; the model learned exactly what it was shown, and what it was shown was skewed | "True" means the student thinks bias is a bug someone could have avoided. |
+| **4** | **(b)** "Rubbish photographed under a lamp after dark" | The test is whether a stranger could break the model using only that sentence. |
+| **5** | (i) **a number**: how many photos, worked out, not guessed. (ii) **how you'll check the fix worked**: retrain, then rerun the *identical* batch | "More data" alone earns nothing. |
+
+#### ✍️ Practice Set A
+
+| Item | Answer | Wrong-answer map |
+|---|---|---|
+| **A1** | hide **before** training · the model **never** sees them · **measure** the model honestly · **un-see** it | "after" in the first blank is the misconception from the concept section. |
+| **A2** | **(b) 25%**; four classes, 1/4 = 0.25 | (c) 50% means two classes were in the student's head. Three classes would be 33.3%. |
+| **A3** | **False.** One sentence must name *who*: the **model** must not have seen them, not the student. The ten photos were in the upload, so they trained the model | The commonest version of the week's misconception. It feels careful, which is what makes it dangerous. |
+| **A4** | 1 → **(c)** · 2 → **(d)** · 3 → **(a)** · 4 → **(e)** · 5 → **(b)** | Swapping 1 and 3 is understandable; ask which one tells you the *size* of the test. |
+| **A5** | Down the side = what the photo **actually was** (true label); across the top = what the model **said**. The four shaded boxes are the **diagonal**, top-left to bottom-right | A swapped direction is the common error, and it matters: "three landfill photos were called recycling" and "three recycling photos were called landfill" are different statements. |
+| **A6** | The wrong word is **"better"**. Correct sentence: "So my model is **50 percentage points** above guessing." | "50% better" would need a division (75 ÷ 25 = 3, "three times as good"), which is a shakier claim. Stick to points. |
+
+#### ✍️ Practice Set B
+
+| Item | Answer |
+|---|---|
+| **B1** | (i) **"Out of how many?"** (19/20 and 950/1000 are different claims.) (ii) **"What's the baseline?"** (95% is impressive against 25%, worthless against 94%.) |
+| **B2** | 18/24: 24 × 0.7 = 16.8 ; 18 − 16.8 = 1.2 ; 1.2 ÷ 24 = 0.05 ; 0.7 + 0.05 = **0.75 = 75%** (check: ÷ 6 → 3/4).<br>33/60: 60 × 0.5 = 30 ; 33 − 30 = 3 ; 3 ÷ 60 = 0.05 ; **0.55 = 55%** (check: ÷ 3 → 11/20).<br>7/8: 8 × 0.8 = 6.4 ; 7 − 6.4 = 0.6 ; 0.6 ÷ 8 = 0.075 ; **0.875 = 87.5%** |
+| **B3** | (a) (60 − 8) ÷ 60 = 52 ÷ 60 = **0.867 = 86.7%**. (b) **No**; the target is under 20%. (c) The model barely saw `other` (8 photos, about 6 left to train on), so it learns not to bet on it. A visitor holds up car keys and the booth confidently says `lunchbox`. The held-out `other` score rests on 2 photos. Fix: about 50 more `other` photos, retrain, and write the failed check on the data card. |
+| **B4** | (a) Most likely: he tested on photos the model trained on (second: the test was tiny). (b) **"Were any of those test photos in the training pile?"** (or "out of how many?"). (c) 100% from 4 photos is 4 out of 4, and one lucky photo swings it 25 points; 30 out of 40 has forty written-down attempts behind it. The fraction shows the size of the test. |
+| **B5** | (a) 3 + 1 + 6 + 0 = **10**. (b) **6/10 · 0.6 · 60%**. (c) "My model is worst at **landfill** — 6 out of 10 — and when it gets landfill wrong it usually says **recycling** (3 of its 4 mistakes)." |
+
+**Marking B5(c):** both class names, in that order. "Recycling gets called landfill" is the
+reversed direction and describes a different row of the matrix.
+
+**Marking B2:** the division must be written out. A bare 0.75 with no working is a half mark; any
+decimal above 1 means it was divided upside down.
+
+#### 🧩 Puzzle of the Week — The Missing Matrix
+
+Forced order: row apple 4 + ? + 0 = 5, so apple→pear = **1**; column pear 1 + 3 + ? = 4, so
+plum→pear = **0**; row pear ? + 3 + 1 = 5, so pear→apple = **1**; row plum 1 + 0 + ? = 5, so
+plum→plum = **4**.
+
+|  | said apple | said pear | said plum | row total |
+|---|---|---|---|---|
+| **was apple** | 4 | **1** | 0 | 5 |
+| **was pear** | **1** | 3 | 1 | 5 |
+| **was plum** | 1 | **0** | **4** | 5 |
+| **column total** | 6 | 4 | 5 | **15** |
+
+The four blanks the student fills: apple→pear **1**, pear→apple **1**, plum→pear **0**, plum→plum **4**.
+Checks: column apple 4 + 1 + 1 = 6 ✓ · column plum 0 + 1 + 4 = 5 ✓ · all nine boxes add to 15 ✓.
+
+```text
+   Diagonal = 4 + 3 + 4 = 11
+   ACCURACY   11 / 15 ;  15 × 0.7 = 10.5 ; 11 − 10.5 = 0.5 ; 0.5 ÷ 15 = 0.0333 ; 0.7 + 0.0333 = 0.7333
+              0.7333 × 100 = 73.3 %
+   BASELINE   1/3 = 33.3 %
+   GAIN       73.3 − 33.3 = 40.0 percentage points
+```
+
+**Bonus:** worst class is **pear**, 3/5 = 60%, and its two mistakes split one each way (1 apple, 1 plum),
+so there is no pattern to name. The honest answer says so and says what would settle it (more pear
+photos). Also accept a note that with 5 photos per class, one photo moves a class by 20 points.
+*Watch for:* a student who has filled plum→plum as 5 (forgetting the row already holds a 1), which
+makes the column total 6, not 5.
+
+#### 🤔 Think Deeper
+
+Both are paragraphs; mark the defence, not a verdict.
+
+- **T1 (more training or more held-out photos).** No right answer. A strong answer picks a side and
+  prices it. *For held-out:* with 40 photos one photo is 2.5 points, so 75% could really be about
+  72–78%; more held-out gives a more reliable measurement of a possibly worse model. *For training:*
+  40 per class is thin and a better model may be worth more than a sharper measurement. The best
+  answers state the trade. A weak answer says "more training, obviously" with no number.
+- **T2 (same-day held-out photos).** Same table, tablecloth, lamp, hands and camera, so the model can
+  succeed by recognising the *situation*, not the object. A week later in another room is a harder,
+  more honest exam; a collapse would show it learned the kitchen, not the rubbish. Next time: shoot
+  the held-out batch on a different day, in a different room, with somebody else holding the items,
+  and say so on the data card. (This is most of the way to next week's bias test.)
+
+#### 🛠️ Build It — the booth folder
+
+Items W34-1 to W34-8 follow. The page names are the workbook's own.
+
 #### W34-1 — The brief
 
 Answers vary by student. A brief is **complete** when all seven of these are present:
@@ -866,15 +969,20 @@ that it happened, which is itself honest, and pre-register properly next time).
 #### W34-3 — Model file record card
 
 ```
-   filename: booth-v1.tm     folder: Downloads/     saved: <today>
-   trained on:     160 photos, 40 per class, 50 epochs, default settings
+   filename: booth-v1.tm     folder: Downloads/     saved: <today>     size: <as shown in the file browser>
+   trained on:     160 photos, 40 per class, default settings
    NOT trained on: the 40 photos in the sealed envelope        ← the line that matters
 ```
 
+If the folder box is blank, the student has not actually found the file. Teachable Machine has no
+autosave, so send them to find it now.
+
 #### W34-4 / W34-5 — The scoring sheet and accuracy three ways
 
-The sheet has 40 rows of `# · true label · predicted · top % · ✓/✗`, e.g.
-`2  recycling  landfill  61  ✗`. Ticks counted: **30**.
+The sheet has 40 rows of `# · true label · predicted · top % · ✓/✗ · notes`, e.g.
+`2  recycling  landfill  61  ✗`. Ticks counted: **30**. The sheet also asks for the highest confidence
+while wrong, which is the student's own number from the sheet. W34-5 also asks "Did I beat my bar?"
+(here 75% against a bar of 50%: YES; the "if NO" sentence stays blank).
 
 ```
    FRACTION     30 / 40
@@ -883,6 +991,9 @@ The sheet has 40 rows of `# · true label · predicted · top % · ✓/✗`, e.g
    PERCENTAGE   0.75 × 100 = 75%
    BASELINE     25%          GAIN  75 − 25 = 50 percentage points
 ```
+
+Marking points, in order: the division **written out** · the simplify check · the baseline present
+at all · the word **"points"** for the gain, not "%".
 
 **Per-class accuracy** (the harder variation):
 
@@ -947,6 +1058,22 @@ kitchen, or glass — I have no glass photos at all."*
 > Four parts — fraction, percentage, baseline, failure: *"It got 30 out of 40 photos right that it
 > had never seen — 75%, against 25% for blind guessing. It's worst at landfill, six out of ten, and
 > it usually calls those recycling."* Percentage only is incomplete; send them back for the rest.
+
+#### 🎨 Draw It
+
+No single right drawing. A good one is a left-to-right timeline: a pile of `200 photos` splits into
+`160` going into a box `MODEL — training` and `40` going down into a dated, sealed envelope marked
+"the model never sees these"; later the envelope reopens, its 40 photos go into the finished model,
+and an arrow comes out to `30/40 = 75%`. It must contain the 200 photos, the envelope, the model and
+an arrow of time. **The one wrong drawing:** the envelope arrow leaving from the *end* of the training
+box. That draws the mistake, not the method; the envelope must branch off *before* the photos reach
+the model. Bonus: the date on the envelope.
+
+#### 📊 Self-Check
+
+Not marked. Read it for the 😕 ticks: the student writes the week number to revisit. Pay particular
+attention to the rows about finding the actual model file, using the word **points**, and saying the
+finding in the right direction.
 
 ---
 

@@ -17,7 +17,7 @@ The lesson in one table, so you can see what it needs before you plan.
 | **New maths** | **Cosine similarity** — the dot product of two lists divided by both their lengths. Worked by hand on two three-number lists, and **read as an angle**: `4 ÷ 5 = 0.8`, which is `36.87` degrees. Also the natural logarithm, reused from Week 14, now as a rarity meter. |
 | **New syntax** | `TfidfVectorizer()` · `cosine_similarity(A, B)` · `X.toarray()` · `normalize(v)` |
 | **Dataset** | **The same four whiteboard reviews as Week 31**, then the student's own **60-review corpus**. Nothing downloads. Every number in this lesson can be checked on a phone calculator. |
-| **Materials** | Printed workbook pages 32.1–32.7 · **a second wall sheet headed IDF, with the eight words down the side and three blank columns: `df`, `ln(...)`, `idf`** · THE VOCABULARY sheet from Week 31, still up · **a calculator per student that does natural logarithms** · graph paper for the cosine drawing · two colours of pen · the Bug Log |
+| **Materials** | Printed workbook (all of it; the hand-worked homework is its 🛠️ Build It pages 32.4–32.7) · **three activity sheets you rule up yourself for the in-class activity: the IDF table, one word all the way, the ranking failure** · **a second wall sheet headed IDF, with the eight words down the side and three blank columns: `df`, `ln(...)`, `idf`** · THE VOCABULARY sheet from Week 31, still up · **a calculator per student that does natural logarithms** · graph paper for the cosine drawing · two colours of pen · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, scikit-learn. **No new installs. No torch this week.** |
 | **Prep time** | 30 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `tfidf.py` runs in **under 1 second**. No training. **The time in this lesson goes on arithmetic done by hand, and that is the design.** |
@@ -35,7 +35,7 @@ By the end of the lesson the student can:
 3. **Show with one example pair that raw counts rank the wrong document first**, and that cosine similarity fixes it — `2` against `4` by counts, `1.0000` against `0.4216` by cosine.
 4. **Explain why a rare word gets a bigger IDF**, using document frequencies they counted themselves — `pizza` is in 3 of 4 reviews and scores `1.2231`; `and` is in 1 of 4 and scores `1.9163`.
 
-Observable evidence: page 32.2 with the four-stage arithmetic in pen and `0.841002` written twice — once by hand and once copied off the screen; the IDF wall sheet with all eight `df` values and all eight `idf` values on it; a hand-drawn pair of arrows on graph paper with `36.87 degrees` written between them; and a written sentence naming **length** as the property of raw counts that caused the mis-ranking.
+Observable evidence: activity sheet 2 with the four-stage arithmetic in pen and `0.841002` written twice — once by hand and once copied off the screen; the IDF wall sheet with all eight `df` values and all eight `idf` values on it; a hand-drawn pair of arrows on graph paper with `36.87 degrees` written between them; and a written sentence naming **length** as the property of raw counts that caused the mis-ranking.
 
 ---
 
@@ -483,7 +483,7 @@ dashed. The ↻ on stage three is black, as it has been since Week 12.*
    `and`, 55 times. What is `and` worth now?"* Point at the IDF wall sheet: `and` is in every review, so
    its idf is the smallest one up there, and a word in one review of four scores `1.9163`. **The box did
    not change; the arithmetic inside it did.**
-2. **Anchor it on `0.841002` and on `36.87 degrees`.** Hold up a completed page 32.2 with the number
+2. **Anchor it on `0.841002` and on `36.87 degrees`.** Hold up a completed activity sheet 2 with the number
    written twice — once by hand and once copied off the screen. *"This box now produces that, and you
    produced it with a calculator before the library did."* Then the graph paper: two arrows, and a
    measured angle between them. **The angle is the new object of the week; make them say the word.**
@@ -781,7 +781,7 @@ Reshape your data either using array.reshape(-1, 1) if your data has a single fe
 
 **Read that last sentence carefully yourself, because it offers you two fixes and one of them is wrong for us.** We have one *sample* with three *features*, so it is `reshape(1, -1)` — or, much more simply, square brackets: `cosine_similarity([a], [b])`. This is deliberate mistake two.
 
-- [ ] **Print workbook pages 32.1–32.7.**
+- [ ] **Print the workbook** (every section; Build It pages 32.4–32.7 are the homework) **and rule up three activity sheets for the in-class activity:** sheet 1 the IDF table (the `df` column first), sheet 2 one word all the way with four blank boxes, sheet 3 the ranking failure. **These sheets are not in the workbook**; the workbook's M2, M3 and M4 are the same three procedures on the five-review corpus.
 - [ ] **Rule up the IDF wall sheet:** the eight words down the side, and three columns headed `df`, `ln(5 ÷ (1 + df))`, `idf`. **It gets filled in live in the concept segment and it stays up for Week 33.**
 - [ ] **Test every calculator you are going to hand out.** `ln(5 ÷ 3)` must read `0.510826...`. A calculator reading `0.221849` is on `log` base 10 and will ruin the lesson for whoever gets it. **Two minutes, and it is the highest-value two minutes in this checklist.**
 - [ ] **Check the student's own sixty reviews still run.** The last ten minutes of the lesson is the closest-pair result on **their** corpus, and it is the best moment of the week.
@@ -792,7 +792,7 @@ Reshape your data either using array.reshape(-1, 1) if your data has a single fe
 - [ ] THE VOCABULARY sheet from Week 31 still up; the new IDF sheet up beside it, blank.
 - [ ] Graph paper out. **The cosine drawing is done by hand and the angle is measured with a protractor if you have one — it should come out at about 37 degrees and measuring it is worth more than being told it.**
 - [ ] Calculators out and tested.
-- [ ] Workbook 32.1 out, with the `df` column ready to fill in first.
+- [ ] Activity sheet 1 out, with the `df` column ready to fill in first.
 - [ ] Bug Log out.
 
 ### Fallback if the laptops fail
@@ -1368,7 +1368,7 @@ The main hands-on activity, written out in full.
 
 ### Setup
 
-- Workbook page 32.2, which has the four stages ruled out with blank boxes.
+- Activity sheet 2 (ruled up by you; it is not a workbook page), which has the four stages ruled out with blank boxes.
 - A calculator, **tested for `ln`**.
 - The IDF wall sheet with all eight values on it.
 - The four reviews on the board. **d3 is the one: `"Great pizza, great service."`**
@@ -1459,7 +1459,7 @@ sklearn's number for it    = 0.841002
 
 **What "finished" looks like:**
 
-- Page 32.2 with four boxes filled in in pen: `2`, `1.510826`, `3.021651`, `0.841002`.
+- Activity sheet 2 with four boxes filled in in pen: `2`, `1.510826`, `3.021651`, `0.841002`.
 - The three squares and the square root written out, not just the answer.
 - `0.841002` written **twice** on the page — once by hand and once copied off the screen.
 - The student can say, unprompted: *"the library is doing `tf` times `idf`, divided by the length of the row."*
@@ -1496,7 +1496,7 @@ doc B:  the pizza was hot and the pizza was fresh and the pizza
         was lovely but the chips were cold
 ```
 
-> **Say this:** "Page 32.3. **In pen. Which document should come first?**"
+> **Say this:** "Activity sheet 3. **In pen. Which document should come first?**"
 
 *A. Obviously, unanimously. A **is** the query.*
 
@@ -1556,7 +1556,7 @@ length of A's row = 1.4142, length of B's row = 6.7082
 
 > **Say this:** "**Length.** Not relevance, not topic, not vocabulary — length. A longer document has bigger numbers in more columns, so it scores more on any query, whether or not it is a better answer. **Cosine similarity divides that back out, and after dividing, doc A is a perfect match at zero degrees and doc B is 65 degrees away.**"
 
-**What "finished" looks like:** page 32.3 with a prediction in pen, both rankings, the `4 ÷ (1.4142 × 6.7082)` division written out, and **one sentence naming length as the culprit.** That sentence is the homework's marking bar.
+**What "finished" looks like:** activity sheet 3 with a prediction in pen, both rankings, the `4 ÷ (1.4142 × 6.7082)` division written out, and **one sentence naming length as the culprit.** That sentence is the homework's marking bar.
 
 ---
 
@@ -1673,7 +1673,7 @@ Adjusting the lesson for a student who is struggling or finding it easy.
 
 **Cut:** the four-review cosine matrix down to the single number `cos(d1, d2) = 0.7264`. **One number, read as 43.4 degrees, with both reviews read out.** That carries the wrap completely.
 
-**Give them box 2 pre-filled** on page 32.2 — `idf = 1.510826` already written in — so the logarithm is out of the picture and the activity is a multiply, three squares, a square root and a divide. **Objective 1 survives; only the logarithm goes.**
+**Give them box 2 pre-filled** on activity sheet 2 — `idf = 1.510826` already written in — so the logarithm is out of the picture and the activity is a multiply, three squares, a square root and a divide. **Objective 1 survives; only the logarithm goes.**
 
 **The version that skips everything hard.** No logarithms and no code. **One table, already computed, and three questions:**
 
@@ -1798,154 +1798,285 @@ The homework to set at the end of class.
 
 **Say this:**
 
-> "About an hour, three pages, and the third one is the one I mark hardest.
+> "About an hour, three pieces from the Build It page of your workbook, and the third one is the one I mark hardest.
 >
-> **First, page 32.4 — four TF-IDF weights by hand, matched to four decimal places.** Use the five reviews from last week's homework. **All four non-zero weights of `e2`**, which is `"Cold pizza and cold chips."` — so that is `and`, `chips`, `cold` and `pizza`. **I want the working, not the answers:** the `df` of each word, the `idf` of each word to six decimals, the four raw products, the four squares, the sum, the square root, and then four divisions. **Then print sklearn's matrix and compare digit by digit.** If a single one of your four disagrees at the fourth decimal place, say which and say why — and 'I rounded early' is a completely acceptable answer if it is the true one.
+> **First, Build It page 32.4 — four TF-IDF weights by hand, matched to four decimal places.** Use the five reviews from last week's homework. **All four non-zero weights of `e2`**, which is `"Cold pizza and cold chips."` — so that is `and`, `chips`, `cold` and `pizza`. **I want the working, not the answers:** the `df` of each word, the `idf` of each word to six decimals, the four raw products, the four squares, the sum, the square root, and then four divisions. **Then print sklearn's matrix and compare digit by digit.** If a single one of your four disagrees at the fourth decimal place, say which and say why — and 'I rounded early' is a completely acceptable answer if it is the true one.
 >
-> **Second, page 32.5 — three cosine similarities by hand.** `cos(e1, e2)`, `cos(e2, e3)` and `cos(e1, e4)`. **These are quicker than they look, because every TF-IDF row already has length 1, so cosine is just multiply-and-add** — and only the shared words contribute anything, so most columns are nothing to do. **And give me each answer as an angle as well as a number.**
+> **Second, Build It page 32.5 — three cosine similarities by hand.** `cos(e1, e2)`, `cos(e2, e3)` and `cos(e1, e4)`. **These are quicker than they look, because every TF-IDF row already has length 1, so cosine is just multiply-and-add** — and only the shared words contribute anything, so most columns are nothing to do. **And give me each answer as an angle as well as a number.**
 >
-> **Third, page 32.6 — and this is the page I care about.** Find one query and two documents where **raw counts rank the wrong document first and cosine fixes it.** You may invent the documents, or take them out of your own sixty reviews. Show both rankings, show the two row lengths, show the division. **And then one sentence: which property of raw counts caused the mistake?** Not 'because cosine is better'. **Name the property.** A page without that sentence scores nothing, and I will hand it back once.
+> **Third, Build It page 32.6 — and this is the page I care about.** Find one query and two documents where **raw counts rank the wrong document first and cosine fixes it.** You may invent the documents, or take them out of your own sixty reviews. Show both rankings, show the two row lengths, show the division. **And then one sentence: which property of raw counts caused the mistake?** Not 'because cosine is better'. **Name the property.** A page without that sentence scores nothing, and I will hand it back once.
 >
-> Page 32.7 is a stretch: it asks you to find the closest pair in your **own** sixty reviews and say what they share. **Mine turned out to be one happy review and one furious one. I want to know whether yours does too.**"
+> Page 32.7 of Build It is a stretch: it asks you to find the closest pair in your **own** sixty reviews and say what they share. **Mine turned out to be one happy review and one furious one. I want to know whether yours does too.**"
 
-**Workbook pages:** 32.1, 32.2, 32.3 in class · **32.4, 32.5, 32.6** at home · 32.7 optional.
+**Workbook pages:** the in-class activity is on teacher-ruled activity sheets, not workbook pages · **🛠️ Build It pages 32.4, 32.5, 32.6** at home · 32.7 optional. The other workbook sections (Warm-Up, Do the Maths M1–M4, Predict the Output, Practice Set A and B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Draw It, Self-Check) are practice and extension, not required: offer Warm-Up, M1–M4 and Predict the Output to anybody who wants rehearsal before Build It, and mark whatever is handed in from the Answer Key below, which follows the workbook's own order.
 
 **Expected time:** 25 min on the four weights · 15 min on the three cosines · 20 min on the ranking failure · **about 60 minutes**, plus 15 more for the stretch.
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is the working there on page 32.4, or only the answers?** Four `df`s, four `idf`s, four products, four squares, a sum, a square root, four divisions. **A page with four correct numbers and no arithmetic has been copied off a screen and should be handed back**, because the whole objective is *matching sklearn*, and you cannot match something you did not compute. **Two — are the cosines given as angles as well as numbers?** `0.4611` and `62.5 degrees`. The angle is where the misconception lives and asking for it every time is how you kill it. **Three — does page 32.6 name the property?** The bar is one sentence containing the idea *"a longer document has bigger numbers, so it collects more points just for being long"*. **"Cosine is better" scores nothing. "Cosine divides by the length" is half marks — it says what the fix does, not what the disease was.** And praise loudly anybody who builds their example out of their **own** reviews rather than inventing one; it is harder, because you have to go looking for a long review that happens to repeat a query word.
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is the working there on Build It page 32.4, or only the answers?** Four `df`s, four `idf`s, four products, four squares, a sum, a square root, four divisions. **A page with four correct numbers and no arithmetic has been copied off a screen and should be handed back**, because the whole objective is *matching sklearn*, and you cannot match something you did not compute. **Two — are the cosines given as angles as well as numbers?** `0.4611` and `62.5 degrees`. The angle is where the misconception lives and asking for it every time is how you kill it. **Three — does Build It page 32.6 name the property?** The bar is one sentence containing the idea *"a longer document has bigger numbers, so it collects more points just for being long"*. **"Cosine is better" scores nothing. "Cosine divides by the length" is half marks — it says what the fix does, not what the disease was.** And praise loudly anybody who builds their example out of their **own** reviews rather than inventing one; it is harder, because you have to go looking for a long review that happens to repeat a query word.
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every question restated, so you can mark from this page alone. **This key follows the shipped workbook, section by section, in the workbook's own order and with its own labels** (Warm-Up W1–W5, Do the Maths M1–M4, Predict the Output P1–P4, Practice Set A A1–A6, Practice Set B B1–B5, Fix the Broken Program, Puzzle of the Week, Think Deeper T1–T2, Build It pages 32.4–32.7, Draw It, Self-Check). The workbook has **no pages 32.1–32.3**: the in-class activity sheets that used to carry those numbers are teacher-ruled and their answers sit at the end of this key under *In-class activity sheets*.
 
-### Page 32.1 — The IDF table, by hand (in class)
+**What is set when:** the in-class activity (Parts A and B of the lesson) is done on the teacher-ruled sheets. **Build It (pages 32.4, 32.5, 32.6; 32.7 optional) is the homework and is the only part that is marked hard.** Every other workbook section is practice: use Warm-Up, Predict the Output and M1–M4 as the easier route, and the rest as extension, and mark whatever is handed in from the entries below.
 
-*Count `df` for all eight words, then compute `idf = ln(5 ÷ (1 + df)) + 1` to six decimal places.*
+### ✅ Warm-Up
 
-| term | df | which documents | (1 + 4) ÷ (1 + df) | ln(that) | **idf** |
-|---|---:|---|---|---:|---:|
-| and | 1 | d4 | 5 ÷ 2 = 2.5000 | 0.916291 | **1.916291** |
-| cold | 2 | d2, d4 | 5 ÷ 3 = 1.6667 | 0.510826 | **1.510826** |
-| food | 1 | d4 | 5 ÷ 2 = 2.5000 | 0.916291 | **1.916291** |
-| great | 2 | d1, d3 | 5 ÷ 3 = 1.6667 | 0.510826 | **1.510826** |
-| pizza | 3 | d1, d2, d3 | 5 ÷ 4 = 1.2500 | 0.223144 | **1.223144** |
-| service | 2 | d3, d4 | 5 ÷ 3 = 1.6667 | 0.510826 | **1.510826** |
-| the | 2 | d1, d2 | 5 ÷ 3 = 1.6667 | 0.510826 | **1.510826** |
-| was | 2 | d1, d2 | 5 ÷ 3 = 1.6667 | 0.510826 | **1.510826** |
+**W1.** `['it', 'wasn', 'great']`. **The non-word is `wasn`**, and it was carrying **the negation**: `wasn't` says the opposite of `was`, and the only trace left after tokenizing is a nonsense token. *(The `t` was dropped for being one character long.)*
 
-**The reading, which is objective 4:** `pizza` is in three of the four reviews and gets the **smallest** weight. `and` and `food` are in one each and get the **biggest**. **Common means discounted; rare means boosted.**
+**W2.** cells **32** · empty **17** · `17 ÷ 32 = 53%`. *(4 reviews × 8 words = 32 cells, `nnz` 15.)*
 
-**The two traps on this page:**
+**W3.** **Nowhere.** It is not stored anywhere; subtract the two rows and every column gives 0. **It was thrown away on purpose the moment we decided to count words.**
 
-- **`cold` has `df = 2`, not 3.** It appears three times (once in d2, twice in d4) but only two documents contain it.
-- **`ln`, not `log`.** `ln(5 ÷ 3) = 0.510826`; `log₁₀(5 ÷ 3) = 0.221849`. A page where `and` reads `1.3979`, `cold` reads `1.2218` and `pizza` reads `1.0969` has used base ten. **Check the button, not the arithmetic.**
+**W4.** **`CountVectorizer`'s default pattern wants runs of two or more word characters**, so every one-letter token (`i`, `a`) is deleted whatever the corpus contains.
 
-**Marking notes.** **Eight `df` values and eight `idf` values, six decimal places.** The `which documents` column is worth insisting on because it is the proof they counted documents and not occurrences. **A page where the logarithm part of all eight idf values is out by the same factor of 2.303 is a log-base problem and should be marked as correct arithmetic with the wrong button** — say so, because the student has done the work.
+**W5.** `cold` has a column and this review put a zero in it, which is real information (this review did not say `cold`). `chips` has no column at all, so it was deleted before the arithmetic started and the model cannot represent it. **Both contribute `+0.0000` and they are not the same thing.** Week 33 turns on this.
 
-### Page 32.2 — One word, all the way (in class)
+**Marking notes.** W3 is the one to press on: "the word order is in the second row" is the misconception, and it survives from Week 31 if nobody challenges it.
 
-*`great` in d3. Four boxes.*
+### 🔢 Do the Maths by Hand
 
-**Box 1 — term frequency.** `great` appears in `"Great pizza, great service."` **twice**, so `tf = 2`.
+**M1 (a).** dot `3×4 + 4×3 + 0×0 = 12 + 12 + 0 = 24`; length Ama `sqrt(9 + 16) = sqrt 25 = 5`; length Ben `sqrt(16 + 9) = 5`; cosine `24 ÷ (5 × 5) = 24 ÷ 25 = 0.960000`; **angle `cos⁻¹(0.96) = 16.26` degrees.**
 
-**Box 2 — inverse document frequency.** `great` is in 2 of the 4 documents.
+**M1 (b).** dot `3×6 + 4×8 = 18 + 32 = 50`; length Cleo `sqrt(36 + 64) = sqrt 100 = 10`; cosine `50 ÷ (5 × 10) = 1.000000`; **angle 0.00 degrees.**
 
-```text
-idf = ln( 5 / (1 + 2) ) + 1
-    = ln( 5 / 3 ) + 1
-    = ln( 1.666667 ) + 1
-    = 0.510826 + 1
-    = 1.510826
-```
+**M1 (c).** dot = 0, so **cosine `0.0000`, angle `90.00` degrees.**
 
-**Box 3 — multiply.**
+**M1 (d).** Ama–Cleo `1.0000` > Ama–Ben `0.9600` > Ama–Dev `0.0000`. Cosine measures the **direction** the lists point (the proportions between their numbers) and refuses to measure **how big** they are. **Full marks needs both halves of that sentence.**
 
-```text
-tf x idf = 2 x 1.510826 = 3.021651
-```
+*Wrong-answer map:* an angle of `0.6435` or `1.5708` is a calculator in radians (the workbook's opening box warns about this; check the DEG setting before marking anything else). Cosine `1.9200` means the lengths were left out of the division.
 
-**Box 4 — the L2 divide.** d3 contains three different words, so its row has three numbers in it:
+**M2 (a).**
 
-```text
-great   : 2 x 1.510826 = 3.021651
-pizza   : 1 x 1.223144 = 1.223144
-service : 1 x 1.510826 = 1.510826
+| df | 6 ÷ (1 + df) | ln(that) | **idf** |
+|---:|---:|---:|---:|
+| 1 | 3.0000 | 1.098612 | **2.098612** |
+| 2 | 2.0000 | 0.693147 | **1.693147** |
+| 3 | 1.5000 | 0.405465 | **1.405465** |
+| 4 | 1.2000 | 0.182322 | **1.182322** |
+| 5 | 1.0000 | 0.000000 | **1.000000** |
 
-squares:   3.021651² = 9.130376
-           1.223144² = 1.496080
-           1.510826² = 2.282594
-                       ---------
-               total = 12.909050
+**M2 (b).** **Exactly 1.** Without the trailing `+ 1`, a word in every document would get `ln(1) = 0` and every one of its cells would become zero, which is deleting the word rather than quietening it. *(The `+1`s inside the fraction stop a division by zero when `df = 0`.)*
 
-row length = sqrt(12.909050) = 3.592917
+**M2 (c).** `log₁₀(1.5) = 0.176091`, so the wrong idf is **1.176091**.
 
-great = 3.021651 / 3.592917 = 0.841002
-```
+**M2 (d).** `0.405465 ÷ 0.176091 = 2.302585`.
 
-**And sklearn's number, real output:**
+**M2 (e).** *"If every logarithm is out by the same factor, and 2.302585 is the one to memorise, it is the log base. If one value is out, you miscounted that word's documents."*
+
+**M3.** `great` in e3. **(a)** twice, `tf = 2`. **(b)** in **1** review, e3 only, `df = 1`. **(c)** `idf = ln(6 ÷ (1 + 1)) + 1 = ln(3.000000) + 1 = 1.098612 + 1 = 2.098612`. **(d)** `2 × 2.098612 = 4.197225`. **(e)**
 
 ```text
-great, normalized          = 3.021651 / 3.592917 = 0.841002
-sklearn's number for it    = 0.841002
+chips : 1 x 1.405465 = 1.405465      squared =  1.975332
+great : 2 x 2.098612 = 4.197225      squared = 17.616694
+pizza : 1 x 1.405465 = 1.405465      squared =  1.975332
+                                               ---------
+                                 sum of squares 21.567358
+
+row length = sqrt( 21.567358 ) = 4.644067
+
+great, finished = 4.197225 ÷ 4.644067 = 0.903782
 ```
 
-**Six digits, matched.** ✅
+**(f)** **Yes**: `0.903782` against sklearn's `0.903782`, all six digits. **(g)** The **L2 divide** was skipped, and the answer is out by a factor of **4.644067**, the row length (`4.197225 ÷ 0.903782 = 4.6441`).
 
-**The other two cells of d3's row, for anybody who did the whole row:**
+*Marking note:* a student who writes `great` as `0.903782` in (e) without the three squares has copied it from the screen. Hand it back; the squares are the mark.
+
+**M4.** **(a)** doc A `1 + 1 = 2`, doc B `3 + 1 = 4`; **raw counts put doc B first, and that is the wrong answer**, because doc A *is* the query. **(b)** `16 + 9 + 9 + 4 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 45`, `sqrt(45) = 6.7082`. **(c)** `sqrt(1 + 1) = 1.4142`. **(d)**
 
 ```text
-pizza   = 1.223144 / 3.592917 = 0.340432
-service = 1.510826 / 3.592917 = 0.420501
+doc A: 2 ÷ ( 1.4142 × 1.4142 ) = 2 ÷ 2.0000 = 1.0000   ->   0.0 degrees
+
+doc B: 4 ÷ ( 1.4142 × 6.7082 ) = 4 ÷ 9.4868 = 0.4216   ->  65.1 degrees
 ```
 
-**And the proof the row has length 1:** `0.841002² + 0.340432² + 0.420501² = 0.707284 + 0.115894 + 0.176821 = 0.999999`, which is 1 once you allow for the rounding. ✅
+**(e)** *"A longer document has bigger numbers in more columns, so it collects more points on any query simply by being longer, regardless of whether it is a better answer."* **"Cosine divides by the length" is the cure and scores half; the disease is length.**
 
-**Marking notes.** **Four boxes and the three squares written out.** A page with `3.021651` in box 3 and box 4 empty is the commonest failure and it is the whole reason the activity is called *All The Way*. **`0.841002` must appear twice — once computed and once copied from the screen** — because "matching sklearn" is the objective and a single number cannot demonstrate a match.
+### 🔎 Predict the Output
 
-### Page 32.3 — The ranking failure (in class)
-
-*(a) Prediction, in pen. Which document should come first?* **Doc A** — it *is* the query.
-
-*(b) Raw count scores.*
+**P1.**
 
 ```text
-doc A: 1 shared pizza + 1 shared cold = 2
-doc B: 3 shared pizza + 1 shared cold = 4
+X.shape           : (5, 10)
+type(X).__name__  : csr_matrix
+X.toarray().shape : (5, 10)
+row lengths       : [1. 1. 1. 1. 1.]
+cosine_similarity(X).shape: (5, 5)
 ```
 
-**Raw counts put B first, with twice the score, and B is wrong.**
+**The `5` comes from the reviews**, not the vocabulary: `cosine_similarity(X)` compares every row against every other row, so the answer is documents × documents.
 
-*(c) Cosine scores.* Real output:
+**P2.** `ValueError: Expected 2D array, got 1D array instead: array=[3. 4. 0.].` **`reshape(1, -1)` is right** (one sample with three features); `reshape(-1, 1)` would mean three samples with one feature each. The brackets version is `print(cosine_similarity([a], [b]))`, which prints `[[0.96]]`, a 1 × 1 grid.
+
+**P3.**
 
 ```text
-raw count dot product   A: 2   B: 4
-cosine similarity       A: 1.0000   B: 0.4216
-length of A's row = 1.4142, length of B's row = 6.7082
+ln   : 1.405465
+log10: 1.176091
+sklearn's idf for chips: 1.405465
+ratio: 2.302585
 ```
 
-**The divisions, written out:**
+**`2.302585` is `ln(10)`**, the fixed conversion factor between the two logarithms. Nothing was raised and nothing was warned about; only comparing with `tv.idf_` catches it. *(The finished idfs, with their `+ 1`, are out by different ratios; the logarithm parts are out by the same one.)*
+
+**P4.**
 
 ```text
-doc A:   2 / (1.4142 x 1.4142) = 2 / 2.0000 = 1.0000     ->  0 degrees
-doc B:   4 / (1.4142 x 6.7082) = 4 / 9.4868 = 0.4216     -> 65.1 degrees
+count rows: [1. 1.] [2. 2.]
+dot(short, short) = 2.0
+dot(short, long ) = 4.0
+normalized rows: [0.7071 0.7071] [0.7071 0.7071]
+dot of normalized = 1.0000
+cosine_similarity = 1.0000
 ```
 
-**Where 6.7082 comes from.** Doc B's counts are `the` 4, `pizza` 3, `was` 3, `and` 2, and `but`, `chips`, `cold`, `fresh`, `hot`, `lovely`, `were` once each:
+**Impossible because nothing can be more like you than you are**: the doubled document has every number twice as big, so every product and the total double. Length is drowning out content. **`0.7071 = 1 ÷ 1.4142`**, each 1 divided by `sqrt(1 + 1)`; check `0.7071² + 0.7071² = 0.5 + 0.5 = 1`.
+
+### ✍️ Practice Set A — Read It
+
+**A1.** term frequency **(iii)** · document frequency **(i)** · inverse document frequency **(v)** · TF-IDF **(vii)** · L2 normalization **(iv)** · cosine similarity **(ii)** · n-gram **(vi)**
+
+**A2 (a).** **The `tf` stage.** `cold` is in e2 twice and `chips` once; their idfs are identical (`1.405465`, both in 3 documents) and they share a row, so they are divided by the same length. `0.732681 = 2 × 0.366340` exactly.
+
+**(b)** Identical evidence behind them: same `df` across the corpus and same `tf` in this document. Identical weights are a fingerprint, and Week 33 uses it.
+
+**(c)** `great` appears in e3 **twice** (`tf = 2`) **and in only one review of five** (`df = 1`, the top idf here, `2.098612`). Frequent here and rare everywhere else is what TF-IDF rewards.
+
+**(d)** `0.903782² + 0.302637² + 0.302637² = 0.816822 + 0.091589 + 0.091589 = 1.000000`.
+
+**(e)** **`were`, at `0.626477`**, bigger than `the` (`0.505438`) and both meaning-carrying words. It is in only one review of five, so it has the top idf, and it means nothing. **IDF measures rarity and has no idea which rare words are interesting** (this leads into T2).
+
+**A3.** `(1)` `rows[0]` and `rows[1]` are flat 1-D lists; raises `ValueError: Expected 2D array, got 1D array instead`; fix `cosine_similarity([rows[0]], [rows[1]])`. `(2)` Two vectorizers mean two vocabularies and two column orders; raises `ValueError: Incompatible dimension for X and Y matrices: X.shape[1] == 2 while Y.shape[1] == 92`; fix `tv.transform(["cold pizza"])`, never fit. `(3)` `np.log10` instead of `np.log`. **(3) is the one that raises nothing**, and **the fingerprint is a ratio of `2.302585` for every word.**
+
+**A4. Label the four stages (`cold` in e2).** 1. `tf = 2`. 2. `df = 3` (e1, e2, e5; four appearances, three documents). 3. `idf = ln(6 ÷ 4) + 1 = 0.405465 + 1 = 1.405465`. 4. `tf × idf = 2 × 1.405465 = 2.810930`. 5. Whole row `and 1.693147`, `chips 1.405465`, `cold 2.810930`, `pizza 1.405465`; squares `2.866747 + 1.975332 + 7.901329 + 1.975332 = 14.718740`; `sqrt = 3.836501`; **`cold` finished `2.810930 ÷ 3.836501 = 0.732681`**. 6. sklearn says `0.732681`, same to 4 dp; a result `3.84` times too big means step 5 was skipped.
+
+**A5.** `1.0000` **(ii)** · `0.8000` **(iv)** · `0.5000` **(iii)** · `0.0000` **(i)**. The sentence: the cosine scale does not have equal steps (0.9 to 0.5 costs 34 degrees, 0.5 to 0.1 costs 24), so "0.8 is 80% similar" cannot be true; it is the cosine of an angle, and angles do not divide up like shares.
+
+**A6 (a).** It turned `and`'s volume almost all the way down: `and` is in 55 of 60 reviews, `idf = ln(61 ÷ 56) + 1 = 0.0855 + 1 = 1.0855`, and **the floor is exactly 1.** **(b)** **No, not a failure.** In a corpus where half the reviews are complaints, `cold` and `rude` are simply not rare, and IDF only measures rarity. **(c)** `4.4177 = ln(61 ÷ 2) + 1`, so `1 + df = 2` and **`df = 1`**. **(d)** The model's most confident weights each rest on a single review, which is not evidence; fifteen of 92 words, one in six, all maximally trusted and unverifiable.
+
+### ✍️ Practice Set B — Write It
+
+**B1.** Output: `idf('chips') = 1.405465`. The program is a `TfidfVectorizer().fit(e)` and `tv.idf_[w.index("chips")]` printed with `%.6f`.
+
+**B2.** The last two columns must match digit for digit on all ten rows:
 
 ```text
-16 + 9 + 9 + 4 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 45
-sqrt(45) = 6.7082
+term      df  6/(1+df)   ln(that)   mine       sklearn
+again      1  3.0000     1.098612   2.098612   2.098612
+and        2  2.0000     0.693147   1.693147   1.693147
+chips      3  1.5000     0.405465   1.405465   1.405465
+cold       3  1.5000     0.405465   1.405465   1.405465
+great      1  3.0000     1.098612   2.098612   2.098612
+late       2  2.0000     0.693147   1.693147   1.693147
+pizza      3  1.5000     0.405465   1.405465   1.405465
+the        2  2.0000     0.693147   1.693147   1.693147
+was        1  3.0000     1.098612   2.098612   2.098612
+were       1  3.0000     1.098612   2.098612   2.098612
 ```
 
-*(d) The sentence.* **Full marks:**
+**`cold` has `df = 3`, not 4.** The trap is a `df` computed without `(C > 0)`.
 
-> *"Raw counts rank B first because a longer document has bigger numbers in more columns, so it collects more points on any query just by being longer — regardless of whether it is a better answer. Doc B mentions `pizza` three times, so it scores three for `pizza` alone. Cosine similarity divides by the length of each row, which takes that advantage away: doc B's row is 6.7082 long against doc A's 1.4142, so dividing puts A first at 1.0000 — zero degrees, a perfect match — and drops B to 0.4216, which is 65 degrees away."*
+**B3.** Row lengths `[1. 1. 1. 1. 1.]`, then the cosine matrix and the angle matrix (the same two tables as the full matrix under page 32.5 below):
 
-**Marking notes.** **The prediction in pen, both rankings, and the sentence.** The sentence is the objective. **"Cosine is better" is zero. "Cosine divides by the length" is half — it names the cure, not the disease. Full marks needs the disease: length.**
+```text
+      e1    e2    e3    e4    e5
+e1   0.0  62.5  82.7  75.8  83.3
+e2  62.5   0.0  77.2  81.5  69.3
+e3  82.7  77.2   0.0  83.0  90.0
+e4  75.8  81.5  83.0   0.0  80.6
+e5  83.3  69.3  90.0  80.6   0.0
+```
 
-### Page 32.4 — Four TF-IDF weights, matched to four decimals
+The single `90.0` is `cos(e3, e5) = 0.0000`. `np.clip(S, -1, 1)` before `arccos` is needed because a diagonal entry can come back as `1.0000000000000002`, and `arccos` of anything above 1 is `nan`.
+
+**B4.** Real output on the student's sixty reviews:
+
+```text
+--- top 5 by RAW COUNT dot product ---
+  2  len 3.317  the pizza arrived cold and the base was soggy
+  2  len 2.449  rude driver and a cold, greasy pizza
+  2  len 2.449  an awful pizza, cold and soggy
+  1  len 3.317  the pizza arrived hot and the base was perfect
+  1  len 2.449  polite driver and a warm, tasty pizza
+--- top 5 by COSINE ---
+  0.5774  rude driver and a cold, greasy pizza
+  0.5774  an awful pizza, cold and soggy
+  0.4264  the pizza arrived cold and the base was soggy
+  0.3162  a delicious pizza, hot and perfect
+  0.3162  late again and a cold bag
+```
+
+Raw counts cannot separate the top three (all score 2) and eleven more reviews are tied on 1, so positions 4 and 5 are decided by the sort, not the data. Cosine separates them and promotes the two shorter reviews (`0.5774` against `0.4264`). **Marking:** two different top-fives and a tie that cosine breaks. The query and the sixty must go through **one** vectorizer (bug 2 of the Fix page); the order of tied rows may differ with a different sort, the scores may not.
+
+**B5.** The program is the one given under page 32.7 below. Real output: pair `[18]` and `[48]`, cosine `0.7981`, 37.1 degrees; contributions `and 0.0135`, `cake 0.1842`, `coffee 0.1842`, `the 0.1786`, `was 0.2375`, total `0.7981`; only in the first `['fresh', 'hot']`, only in the second `['cold', 'stale']`. Missing `np.fill_diagonal(S, 0.0)` reports a review against itself (see Fix the Broken Program, bug 3).
+
+### 🐞 Fix the Broken Program
+
+**Bug 1 (shape error).** `rows[0]` is **one sample with 92 features.** Fix two ways: `cosine_similarity([rows[0]], [rows[1]])[0, 0]` and `cosine_similarity(rows[0].reshape(1, -1), rows[1].reshape(1, -1))[0, 0]`. `reshape(-1, 1)` would mean 92 samples of one feature each.
+
+**Bug 2 (dimension error).** The **2** is the vocabulary `qv` learned from the query `"cold pizza"` (two words, two columns); the **92** is the corpus vocabulary. Fix: delete the `qv` line and change the next one to `Q = tv.transform(["cold pizza"])`, transforming, never fitting. **The rule:** never, in general; a matrix's columns only mean something relative to the vocabulary that made them, so everything compared must go through one fitted vectorizer.
+
+**Bug 3 (the silent one).** **(a)** Both indices are **45**: the program found review 45 to be extremely similar to review 45, the diagonal. *(Index 45 rather than 0 because of floating point: `S[45, 45]` is a hair above 1, and 27 of the 60 diagonal entries are.)* **(b)** Add `np.fill_diagonal(S, 0.0)` immediately after `S = cosine_similarity(X)`. **(c)** Corrected output:
+
+```text
+the two most similar reviews, cosine 0.7981:
+   [18] the coffee was hot and the cake was fresh
+   [48] the coffee was cold and the cake was stale
+```
+
+**(d)** **`hot` and `fresh` contribute exactly `0.0000`**: each has a weight in review 18 and a zero in review 48, so each contributes `something × 0`.
+
+*Marking note:* bugs 1 and 2 announce themselves; bug 3 prints a perfect score. A student who fixed 1 and 2 and submitted the `1.0000` output has not read what was printed, which is the lesson of the page.
+
+### 🧩 Puzzle of the Week
+
+**(a)** For example `cold pizza` / `pizza cold` / `cold pizza cold pizza`. **They share the same words in the same proportions**: reordering is invisible (word order is not in the row) and doubling is divided back out by the L2 step. Any three documents with equal word proportions earn the mark.
+
+```text
+[[1. 1. 1. 0.]
+ [1. 1. 1. 0.]
+ [1. 1. 1. 0.]
+ [0. 0. 0. 1.]]
+```
+
+**(b)** `chips`, or any document sharing **no word** with the other three. The cosine is exactly zero, not approximately, because every product in the dot product is `something × 0`.
+
+**(c)** `n = 2`, top of the fraction 3; `cold` is in both documents, `pizza` and `chips` in one each.
+
+```text
+idf(cold)  = ln( 3 ÷ 3 ) + 1 = ln(1) + 1 = 1.000000
+idf(pizza) = ln( 3 ÷ 2 ) + 1 = 0.405465 + 1 = 1.405465
+idf(chips) = 1.405465          (same df, same answer)
+
+d1 raw: cold 1.000000  pizza 1.405465
+        squares 1.000000 + 1.975332 = 2.975332
+        row length = sqrt(2.975332) = 1.724916
+
+d1 finished: cold 1.000000 ÷ 1.724916 = 0.579739   pizza 1.405465 ÷ 1.724916 = 0.814802
+d2 finished: cold 0.579739                          chips 0.814802
+
+cosine = 0.579739 × 0.579739 = 0.336097            angle = 70.4 degrees
+```
+
+**(d)** The shared word `cold` is in both documents, so it has the lowest possible idf (exactly 1), while the two words that differ get the highest; TF-IDF gives most of each row's length to the words the documents do not share, so the one thing they agree on is the cheapest thing in the row. **Half the words in common, a third of the similarity, on purpose.**
+
+### 🤔 Think Deeper
+
+**T1.** A strong answer makes three moves. **They are the same move:** a per-column rescaling learned from the data so that a raw number's size stops standing in for its importance (`proline` at 750 versus `alcohol` at 13 in Week 4; `and` at 55 appearances versus `rude` here). **The difference that matters:** a z-score is reversible (`inverse_transform` gives the original back, which Week 29 relied on) and a stopword list is not; **`idf` is on the reversible side**, since it is a multiplication and dividing by the same idf returns the count. **Why that matters for explaining a prediction:** a reversible transform lets you say which words drove a decision in units of real words, which is exactly what Week 33 does and which deleting `not` would have made impossible. *Marking:* two of three moves is a 3; all three with the reversibility point tied to explanation is a 5.
+
+**T2.** The conflict is real: **`idf` measures rarity, the task needs usefulness, and rarity was only ever a proxy.** A word in one review of sixty is maximally rare and carries no evidence. **Three options, with costs:**
+
+| What you do | What it costs |
+|---|---|
+| **`min_df=3`**: no column until three documents contain the word | Deletes the rare words wholesale, including informative ones; perhaps a third of a 60-review vocabulary. |
+| **Collect more reviews** | The only fix that resolves it rather than sidestepping it, and the most expensive. |
+| **Report `df` beside every weight you quote** | Nearly free and fixes nothing, but stops *you* being fooled. Week 33 does this. |
+
+**Why the formula cannot settle it:** `ln((1 + n) ÷ (1 + df)) + 1` has no input for "is this word meaningful?"; that is a fact about the task and the corpus. **You have to look at the words.** *(A strong answer also notes `min_df=3` is a chosen number, the same act as choosing a stopword list in better disguise.)*
+
+### 🛠️ Build It — Page 32.4 — Four TF-IDF weights, matched to four decimals
 
 *The five reviews from Week 31's homework:*
 
@@ -2026,7 +2157,7 @@ e5  0.834033  0.336446  0.000000  0.279281  0.000000  0.336446  0.000000  0.0000
 
 **Marking notes.** **The working, not the answers.** Ten `df`s, ten `idf`s, four products, four squares, a sum, a square root, four divisions. **A student who is out by 1 in the fourth decimal place and correctly identifies early rounding as the cause has done better work than one who is exactly right and cannot explain any of it** — say so on the page.
 
-### Page 32.5 — Three cosine similarities by hand
+### 🛠️ Build It — Page 32.5 — Three cosine similarities by hand
 
 **Because every TF-IDF row has length 1, cosine similarity is just the dot product** — multiply matching positions and add up. **And only the words the two reviews share contribute anything at all.**
 
@@ -2077,7 +2208,7 @@ e5  0.1172  0.3531  0.0000  0.1637  1.0000
 
 **Marking notes.** **Angles as well as numbers, all three.** And the shared-word list for each pair: **a student who writes out ten columns of multiplications, eight of which are zero, has not understood that only shared terms contribute.** Full marks lists the shared words first and multiplies only those.
 
-### Page 32.6 — Counts rank the wrong document first
+### 🛠️ Build It — Page 32.6 — Counts rank the wrong document first
 
 *Find one query and two documents where raw counts rank wrongly and cosine fixes it.*
 
@@ -2103,19 +2234,28 @@ length of A's row = 1.4142, length of B's row = 6.7082
 ```text
 --- top 5 by RAW COUNT dot product ---
    2  len 3.317  the pizza arrived cold and the base was soggy
-   2  len 2.449  an awful pizza, cold and soggy
    2  len 2.449  rude driver and a cold, greasy pizza
-   1  len 2.236  a delicious pizza, hot and perfect
-   1  len 2.449  poor value and a cold, rude welcome
+   2  len 2.449  an awful pizza, cold and soggy
+   1  len 3.317  the pizza arrived hot and the base was perfect
+   1  len 2.449  polite driver and a warm, tasty pizza
 --- top 5 by COSINE ---
-   0.5774  an awful pizza, cold and soggy
    0.5774  rude driver and a cold, greasy pizza
+   0.5774  an awful pizza, cold and soggy
    0.4264  the pizza arrived cold and the base was soggy
    0.3162  a delicious pizza, hot and perfect
    0.3162  late again and a cold bag
 ```
 
-**The verdict, and this version is genuinely instructive:** **raw counts cannot separate the top three at all** — all three score exactly 2, and which one comes first is decided by whichever happened to be earliest in the list. **Cosine can separate them**, and it promotes the two shorter reviews above the longer one: `0.5774` against `0.4264`, because in the shorter reviews `cold pizza` is a bigger share of what was said.
+**The verdict, and this version is genuinely instructive:** **raw counts cannot separate the top three at all** — all three score exactly 2, and eleven more reviews are tied on 1, so positions 4 and 5 are decided by the sort and not by the data. **Cosine can separate them**, and it promotes the two shorter reviews above the longer one: `0.5774` against `0.4264`, because in the shorter reviews `cold pizza` is a bigger share of what was said.
+
+**What the workbook table should hold for version one:**
+
+| | raw count score | row length | cosine | angle |
+|---|---:|---:|---:|---:|
+| doc A | 2 | 1.4142 | 1.0000 | 0.0° |
+| doc B | 4 | 6.7082 | 0.4216 | 65.1° |
+
+Counts rank **B** first, cosine ranks **A** first, the right answer is **A**. The division for the document counts got wrong: `4 ÷ (1.4142 × 6.7082) = 0.4216`.
 
 **The sentence, full marks:**
 
@@ -2123,7 +2263,7 @@ length of A's row = 1.4142, length of B's row = 6.7082
 
 **Marking notes.** **Both rankings, both row lengths, the division written out, and the sentence.** The sentence is the whole page. **A student who uses their own corpus and discovers the three-way tie in the raw counts has found something better than the assignment asked for** — the tie is a sharper failure than the mis-ranking, because a tie means the measure has no opinion at all. Say so.
 
-### Page 32.7 — Stretch: the closest pair in your own corpus
+### 🛠️ Build It — Page 32.7 — Stretch: the closest pair in your own sixty
 
 ```python
 import numpy as np
@@ -2178,6 +2318,143 @@ only in the second: ['cold', 'stale']
 **`np.fill_diagonal(S, 0.0)` is worth a note:** without it, the biggest number in the matrix is `1.0000` on the diagonal, and `argmax` proudly reports that review 0 is extremely similar to review 0. **Blanking the diagonal is how you ask the question you meant.**
 
 **Marking notes.** Full marks is the pair, the shared-word sum, **and** the observation that the meaning-carrying words contribute zero. **A student whose corpus produces a pair that is *not* one happy and one sad should report exactly that** — it depends on what they typed, and *"mine came out as two complaints about the same dish"* is a correct and interesting result. **What earns level 5 is saying why the shared words are the only ones that count, without being told.**
+
+### 🎨 Draw It
+
+A full-marks drawing has **two panels**: Ama `(3, 4)` and Ben `(4, 3)` with a real arc labelled `16.26°` and `(0.96)`, and beside it Ama and Cleo `(6, 8)` with a **longer** arrow on the same line, arc labelled `0.00°`, and the words *"twice as far, same direction, cosine 1.0000"*. The second panel is the argument. Then the landmark ladder written as a real scale (`1.0 → 0°`, `0.8 → 36.87°`, `0.5 → 60°`, `0.0 → 90°`) **drawn to size**, so 0.9 to 0.5 is visibly wider than 0.5 to 0.1. And the pair `"the coffee was hot and the cake was fresh"` / `"the coffee was cold and the cake was stale"` at `0.7981` / `37.1°` with `hot`, `fresh`, `cold`, `stale` written under `contributed 0.0000`. **If a reader can point at the drawing and say "so 0.5 is not half of 1.0", it worked.** The "words that contributed nothing" line of the page is `hot`, `fresh`, `cold`, `stale` for the default pair; a student whose closest pair differs should name their own.
+
+### 📊 Self-Check
+
+Not marked. A 😕 on a row sends the student back to the workbook item in the workbook's own table (for example: the four stages to M3 and page 32.4; cosine by hand to M1 and page 32.5; length and the ranking failure to M4 and page 32.6). **Any 😕 on "name the property of raw counts that causes it" should be followed up in person, because it is the homework's marking bar.**
+
+### In-class activity sheets (teacher-ruled; not pages of the workbook)
+
+The lesson's Part A and Part B use the four whiteboard reviews, which the workbook does not contain. **Rule up three sheets yourself** (IDF table, one word all the way, the ranking failure); the workbook's M2, M3 and M4 are the same three procedures on the five-review corpus and make good follow-up practice. Answers for the sheets:
+
+#### Activity sheet 1 — The IDF table, by hand (in class)
+
+*Count `df` for all eight words, then compute `idf = ln(5 ÷ (1 + df)) + 1` to six decimal places.*
+
+| term | df | which documents | (1 + 4) ÷ (1 + df) | ln(that) | **idf** |
+|---|---:|---|---|---:|---:|
+| and | 1 | d4 | 5 ÷ 2 = 2.5000 | 0.916291 | **1.916291** |
+| cold | 2 | d2, d4 | 5 ÷ 3 = 1.6667 | 0.510826 | **1.510826** |
+| food | 1 | d4 | 5 ÷ 2 = 2.5000 | 0.916291 | **1.916291** |
+| great | 2 | d1, d3 | 5 ÷ 3 = 1.6667 | 0.510826 | **1.510826** |
+| pizza | 3 | d1, d2, d3 | 5 ÷ 4 = 1.2500 | 0.223144 | **1.223144** |
+| service | 2 | d3, d4 | 5 ÷ 3 = 1.6667 | 0.510826 | **1.510826** |
+| the | 2 | d1, d2 | 5 ÷ 3 = 1.6667 | 0.510826 | **1.510826** |
+| was | 2 | d1, d2 | 5 ÷ 3 = 1.6667 | 0.510826 | **1.510826** |
+
+**The reading, which is objective 4:** `pizza` is in three of the four reviews and gets the **smallest** weight. `and` and `food` are in one each and get the **biggest**. **Common means discounted; rare means boosted.**
+
+**The two traps on this page:**
+
+- **`cold` has `df = 2`, not 3.** It appears three times (once in d2, twice in d4) but only two documents contain it.
+- **`ln`, not `log`.** `ln(5 ÷ 3) = 0.510826`; `log₁₀(5 ÷ 3) = 0.221849`. A page where `and` reads `1.3979`, `cold` reads `1.2218` and `pizza` reads `1.0969` has used base ten. **Check the button, not the arithmetic.**
+
+**Marking notes.** **Eight `df` values and eight `idf` values, six decimal places.** The `which documents` column is worth insisting on because it is the proof they counted documents and not occurrences. **A page where the logarithm part of all eight idf values is out by the same factor of 2.303 is a log-base problem and should be marked as correct arithmetic with the wrong button** — say so, because the student has done the work.
+
+#### Activity sheet 2 — One word, all the way (in class)
+
+*`great` in d3. Four boxes.*
+
+**Box 1 — term frequency.** `great` appears in `"Great pizza, great service."` **twice**, so `tf = 2`.
+
+**Box 2 — inverse document frequency.** `great` is in 2 of the 4 documents.
+
+```text
+idf = ln( 5 / (1 + 2) ) + 1
+    = ln( 5 / 3 ) + 1
+    = ln( 1.666667 ) + 1
+    = 0.510826 + 1
+    = 1.510826
+```
+
+**Box 3 — multiply.**
+
+```text
+tf x idf = 2 x 1.510826 = 3.021651
+```
+
+**Box 4 — the L2 divide.** d3 contains three different words, so its row has three numbers in it:
+
+```text
+great   : 2 x 1.510826 = 3.021651
+pizza   : 1 x 1.223144 = 1.223144
+service : 1 x 1.510826 = 1.510826
+
+squares:   3.021651² = 9.130376
+           1.223144² = 1.496080
+           1.510826² = 2.282594
+                       ---------
+               total = 12.909050
+
+row length = sqrt(12.909050) = 3.592917
+
+great = 3.021651 / 3.592917 = 0.841002
+```
+
+**And sklearn's number, real output:**
+
+```text
+great, normalized          = 3.021651 / 3.592917 = 0.841002
+sklearn's number for it    = 0.841002
+```
+
+**Six digits, matched.** ✅
+
+**The other two cells of d3's row, for anybody who did the whole row:**
+
+```text
+pizza   = 1.223144 / 3.592917 = 0.340432
+service = 1.510826 / 3.592917 = 0.420501
+```
+
+**And the proof the row has length 1:** `0.841002² + 0.340432² + 0.420501² = 0.707284 + 0.115894 + 0.176821 = 0.999999`, which is 1 once you allow for the rounding. ✅
+
+**Marking notes.** **Four boxes and the three squares written out.** A page with `3.021651` in box 3 and box 4 empty is the commonest failure and it is the whole reason the activity is called *All The Way*. **`0.841002` must appear twice — once computed and once copied from the screen** — because "matching sklearn" is the objective and a single number cannot demonstrate a match.
+
+#### Activity sheet 3 — The ranking failure (in class)
+
+*(a) Prediction, in pen. Which document should come first?* **Doc A** — it *is* the query.
+
+*(b) Raw count scores.*
+
+```text
+doc A: 1 shared pizza + 1 shared cold = 2
+doc B: 3 shared pizza + 1 shared cold = 4
+```
+
+**Raw counts put B first, with twice the score, and B is wrong.**
+
+*(c) Cosine scores.* Real output:
+
+```text
+raw count dot product   A: 2   B: 4
+cosine similarity       A: 1.0000   B: 0.4216
+length of A's row = 1.4142, length of B's row = 6.7082
+```
+
+**The divisions, written out:**
+
+```text
+doc A:   2 / (1.4142 x 1.4142) = 2 / 2.0000 = 1.0000     ->  0 degrees
+doc B:   4 / (1.4142 x 6.7082) = 4 / 9.4868 = 0.4216     -> 65.1 degrees
+```
+
+**Where 6.7082 comes from.** Doc B's counts are `the` 4, `pizza` 3, `was` 3, `and` 2, and `but`, `chips`, `cold`, `fresh`, `hot`, `lovely`, `were` once each:
+
+```text
+16 + 9 + 9 + 4 + 1 + 1 + 1 + 1 + 1 + 1 + 1 = 45
+sqrt(45) = 6.7082
+```
+
+*(d) The sentence.* **Full marks:**
+
+> *"Raw counts rank B first because a longer document has bigger numbers in more columns, so it collects more points on any query just by being longer — regardless of whether it is a better answer. Doc B mentions `pizza` three times, so it scores three for `pizza` alone. Cosine similarity divides by the length of each row, which takes that advantage away: doc B's row is 6.7082 long against doc A's 1.4142, so dividing puts A first at 1.0000 — zero degrees, a perfect match — and drops B to 0.4216, which is 65 degrees away."*
+
+**Marking notes.** **The prediction in pen, both rankings, and the sentence.** The sentence is the objective. **"Cosine is better" is zero. "Cosine divides by the length" is half — it names the cure, not the disease. Full marks needs the disease: length.**
 
 ### Answers to every question posed in the lesson
 

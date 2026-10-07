@@ -13,7 +13,7 @@
 | **Big idea** | A program is a list of instructions in a file, run top to bottom, and the computer does exactly what you typed — including the part you didn't mean. |
 | **New vocabulary** | program · interpreter · print · comment · syntax |
 | **New syntax** | `print("text")` · `# comment` · `+ - * /` · `print(a, b, c)` |
-| **Materials** | Printed workbook pages 1.1–1.6 · pencil · **a loaf of bread, a plate and a knife** (or paper stand-ins) for the Hook · a blank sheet headed **BUG LOG** · sticky notes |
+| **Materials** | Printed workbook (all of it, including the Answers section torn off or folded away) · pencil · **a loaf of bread, a plate and a knife** (or paper stand-ins) for the Hook · a blank sheet headed **BUG LOG** · sticky notes |
 | **Tech needed** | One laptop with Python 3 installed and an editor open. **Do the install before today** — see [Orientation §4](00-orientation.md). |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
@@ -323,7 +323,7 @@ restart.
       777777
       ```
       **The `270.0` and the `777777` are the two lines you will be asked about.** Make sure you are not surprised by them in the room.
-- [ ] Print workbook pages 1.1–1.6.
+- [ ] Print the whole workbook, and fold the Answers section at the end out of sight (or print it without that last section).
 - [ ] Read section 8 above (the two misconceptions) once more. It is where the lesson is won or lost.
 
 ### 5 minutes on the day
@@ -338,7 +338,7 @@ restart.
 
 | If this fails | Do this instead |
 |---|---|
-| `python3` not found, or the install is half-done | **Run the paper lesson.** The Hook is already paper. Then hand them the workbook and do pages 1.1 and 1.2 as "predict what this prints" on paper — that is a genuinely good 40-minute lesson and it is the *predicting* that carries most of the learning anyway. Fix the install afterwards, and do the typing at the start of Week 2. |
+| `python3` not found, or the install is half-done | **Run the paper lesson.** The Hook is already paper. Then hand them the workbook and do the **Predict the Output** snippets and **Practice Set A** as "predict what this prints" on paper — that is a genuinely good 40-minute lesson and it is the *predicting* that carries most of the learning anyway. Fix the install afterwards, and do the typing at the start of Week 2. |
 | Editor won't install | Use **TextEdit** (Mac: Format → Make Plain Text) or **Notepad** (Windows). Save as `hello.py`. Ugly, works fine. |
 | The file saves as `hello.py.txt` | Run `ls` in the terminal to see the real name. In TextEdit, untick "If no extension is provided, use .txt" in Preferences. |
 | No terminal access at all | [python.org/shell](https://www.python.org/shell/) runs Python in a browser. You lose the file-and-folder idea, which is a real loss, but you keep `print` and the traceback. |
@@ -360,7 +360,7 @@ restart.
 
 ### 🪝 Hook — The Literal Robot (7 minutes)
 
-**Do this:** Loaf of bread on the table, still wrapped. Plate. Knife. Sit down and hand them a pencil and workbook page 1.1.
+**Do this:** Loaf of bread on the table, still wrapped. Plate. Knife. Sit down and hand them a pencil and a blank sheet of paper (the sandwich instructions are written on this, not in the workbook).
 
 **Say this:**
 
@@ -689,7 +689,7 @@ Full instructions in the next section. In the lesson flow:
 
 ### Setup
 
-**On the table:** the laptop, workbook page 1.2, a pencil, and the BUG LOG sheet.
+**On the table:** the laptop, the workbook open at Build It, a pencil, and the BUG LOG sheet.
 
 **On screen:** the editor with `~/ai-academy/level2` open, and the terminal in the same folder. Nothing else. Close the browser.
 
@@ -1037,103 +1037,89 @@ NameError: name 'prit' is not defined
 
 **Say this:**
 
-> "Three files and one page, about an hour. And one rule that matters more than the work: **type everything by hand. Nothing gets pasted, all year.**
+> "Three files and a few pages, about an hour. And one rule that matters more than the work: **type everything by hand. Nothing gets pasted, all year.**
 >
-> **First, the three files.** They're specified on workbook page 1.4. `hello_you.py` — three facts about you. `sums.py` — five sums you'd rather not do in your head, one of them using a divide. `literal.py` — three lines that prove the computer is literal, and one of those three has to use quotes round a number so it repeats instead of multiplying. Every file starts with a comment saying what it's for.
+> **First, the three files.** They're in the **Build It** section of the workbook. `hello_you.py` — three facts about you. `sums.py` — five sums you'd rather not do in your head, one of them using a divide (that's the same file as Practice Set B, question B3, so if you've done it, tick it and move on). `literal.py` — three lines that prove the computer is literal, and one of those three has to use quotes round a number so it repeats instead of multiplying. Every file starts with a comment saying what it's for.
 >
-> **Second — and this is the part I actually care about — the Bug Log.** Page 1.5. I want your first **three real error messages**. Not made up, not copied from this book: three errors that you personally caused, on your laptop, this week. Two of them are already in there from today, so you only need one more, and I'd like you to go and cause it deliberately.
+> **Second — and this is the part I actually care about — the Bug Log.** It's at the bottom of Build It. I want your first **three real error messages**. Not made up, not copied from this book: three errors that you personally caused, on your laptop, this week. Two of them are already in there from today, so you only need one more, and I'd like you to go and cause it deliberately.
 >
 > For each one: copy out the **last line, exactly, character for character.** Then write what it meant **in your own words** — not the words on the screen, yours. Then what you changed.
 >
-> **Third, page 1.6.** Predict-the-output. Eight lines. Write your guess down *before* you type any of them, then type them and write what really happened. And here's the thing: **I want you to get some of them wrong.** A wrong guess that you then corrected is worth more to me than eight right ones, because it means you found out something you didn't know. If you get eight out of eight, the questions were too easy and I'll make them harder."
+> **Third, Predict the Output.** Four snippets, twelve lines of output altogether. Write your guess down *before* you type any of them, then type them and write what really happened. And here's the thing: **I want you to get some of them wrong.** A wrong guess that you then corrected is worth more to me than twelve right ones, because it means you found out something you didn't know. If you get twelve out of twelve, the questions were too easy and I'll make them harder.
+>
+> **Fourth, Fix the Broken Program.** `party_bill.py` has three things wrong with it. Fix one at a time, run after each, and tell me which of the three was hardest to find."
 
-**Workbook pages:** 1.1, 1.2 and 1.3 in class; **1.4, 1.5, 1.6** at home.
+**What the workbook contains, and how to split it.** The workbook has ten sections: ✅ Warm-Up · 🔎 Predict the Output · ✍️ Practice Set A (A1–A6) · ✍️ Practice Set B (B1–B5) · 🐞 Fix the Broken Program · 🧩 Puzzle of the Week (P1–P5) · 🤔 Think Deeper (T1–T2) · 🛠️ Build It (with its Results table and Bug Log) · 🎨 Draw It · 📊 Self-Check. There is far more here than one lesson and one evening can hold, so:
 
-**Expected time:** 20 min for the three files · 15 min for the Bug Log · 15 min for predict-the-output · 10 min for the vocabulary and self-check. About 60 minutes.
+- **In class:** the **Warm-Up** only, as the first five minutes (it needs no laptop and it reminds them of Level 1 vocabulary). If you ran the paper fallback, add **Practice Set A** and **Predict the Output**, which need no laptop either.
+- **At home, this week's core (about 60 minutes):** **Build It** (the three files, the Results table and the Bug Log) · **Predict the Output** · **Fix the Broken Program**.
+- **Across the week, or as you choose:** **Practice Set A**, **Practice Set B**, the **Puzzle of the Week**, **Think Deeper**, **Draw It** and the **Self-Check**. B3 doubles as `sums.py`, and B5 (`party_planner.py`) is what sets up Week 2, so if you can only pick one extra, pick **B5** and its question (b).
+
+**Expected time:** 35 min for Build It (three files and the Bug Log) · 10 min for Predict the Output · 15 min for Fix the Broken Program. About 60 minutes. Roughly 10 minutes each for Practice Set A, Practice Set B (B5 alone is 15), the Puzzle and Draw It; Think Deeper is 10 minutes a question.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 1.1 — Warm-Up (the sandwich)
+Section order follows the workbook. Values are taken from the workbook's own Answers section, and every code block and output below was re-run on Python 3.10.
 
-**W1. Write six numbered instructions for making a sandwich.**
-Any six instructions. Mark nothing here — the point is what happens next.
+### ✅ Warm-Up
 
-**W2. Which of your instructions did the robot get wrong?**
-Full credit for: **none of them were wrong — they were incomplete.** The robot did what each one said. Partial credit for naming a specific instruction, provided the reason given is "it left something out" rather than "it was wrong".
+These five look back at Level 1, so the *idea* is what gets marked, not the wording.
 
-**W3. Rewrite instruction 1 so a literal robot cannot get it wrong.**
-Model answer: *"Open the bread bag. Take out two slices. Put them flat on the plate, not touching each other."* Mark for: does it say what to open, how many, and where they end up? Three clauses is typical. Two is usually not enough.
+**W1. Feature and label.** A **feature** is one measured description of one example (one column in the table). A **label** is the answer you are trying to predict (the column you cover up).
 
-**W4. In one sentence: why is a computer literal rather than clever?**
-Model answer: *"Because it only has the instructions I typed — it has no idea what I meant, so it cannot fill in anything I left out."*
+**W2. The banana.** It said **apple** or **orange**, confidently, and it was **the student's fault, not the machine's**: they gave it two classes and there is no banana box. A model can only answer with a class that was built into it.
 
-**W5. Name the two windows you will use, and what each is for.**
-The **editor** — where you write and save the file. The **terminal** — where you run the file and read what came out.
+**W3. Why hide some data and test on it?** A model can memorise the rows it trained on and look brilliant while learning nothing that transfers. Testing on rows it has never seen is the only way to find out whether it works on new cases, which is the only thing that matters.
 
-### Page 1.2 — Practice Set A (understand it)
+**W4. Row and column.** A **row** is one example (one apple, one pupil, one match). A **column** is one thing measured about every example.
 
-**A1. Fill in the blanks.**
+**W5. Wrong with nobody making a mistake.** Any one of: two examples genuinely overlap (a heavy apple weighs the same as a light orange); the measurement is imprecise; the training data had nothing like this new case; the world is not perfectly predictable. A hard job should produce some wrong answers.
 
-- A **program** is a list of ____ in a ____, done from the ____ to the ____.
-  → **instructions · file · top · bottom**
-- The ____ is the thing that reads your file and does what it says.
-  → **interpreter**
-- Anything after a ____ on a line is ignored by Python.
-  → **`#`** (hash)
-- Quote marks mean "the stuff between us is ____".
-  → **text**
-- The spelling and punctuation rules of a language are called its ____.
-  → **syntax**
+### 🔎 Predict the Output
 
-**A2. Circle the right answer.** *What does `print("2 + 2")` show?*
-(a) `4` &nbsp; (b) `2 + 2` &nbsp; (c) an error &nbsp; (d) `22`
-→ **(b) `2 + 2`.** The quotes make it text, so Python shows the five characters and never treats it as a sum.
+Four snippets, twelve lines of output. All real:
 
-**A3. True or false — and explain.** *"Errors mean you have broken the computer."*
-→ **FALSE.** Python reads the file, finds a line it cannot understand, prints a message saying where and why, and stops. Nothing is damaged — not the file, not Python, not the laptop. An error message costs four seconds. It is a signpost, not a punishment.
+| Snippet | Real output | Why |
+|---|---|---|
+| **1** `print(6 * 7)` | `42` | Two numbers, so `*` multiplies. |
+| `print("6" * 7)` | `6666666` | Quotes make the six *text*, so `*` repeats it seven times. **The line that surprises everybody.** |
+| **2** `print(15 / 4)` | `3.75` | A genuine fraction. |
+| `print(15 - 20)` | `-5` | Negative numbers are completely ordinary. |
+| `print(15 / 5)` | `3.0` | Divides exactly and **still gets a dot**. `/` always leaves a decimal point. (Answer to "did the answer still get a dot?": **yes**.) |
+| **3** `print("15 - 20")` | `15 - 20` | In quotes, so it is seven characters of text and never treated as a sum. |
+| `print(3 * "ab")` | `ababab` | Works either way round: same as `"ab" * 3`. |
+| `print("ab" * 3 + "!")` | `ababab!` | Repeat first, then `+` glues the `!` on the end. |
+| **4** `print("Total:", 5 * 20)` | `Total: 100` | The comma prints a **space**; `5 * 20` is worked out. |
+| `print("Total: 5 * 20")` | `Total: 5 * 20` | All inside quotes, so just characters. |
+| `print()` | *(a completely blank line)* | Nothing in the brackets still produces a line. |
+| `print("Total:", "5" * 2)` | `Total: 55` | `"5" * 2` is the text `55`, not `10`. |
 
-**A4. Match the pairs.**
+**Questions in this section.** "Which line surprised you?" Mark honesty, not accuracy; `"6" * 7` is the usual answer and the right lesson is *"the quotes changed what the six was."* "How many lines came out altogether?" **Four** for snippet 4, one of which is blank. A student who says three forgot that `print()` makes a line.
+
+**Score out of twelve.** 5 to 10 is exactly where a student should be after one lesson. **12 out of 12 means next week's set needs to be harder**, and you should say so out loud rather than praising the score. Otherwise they learn that the aim is to be right rather than to find out.
+
+**Likely wrong answers.** `15 / 5` predicted as `3` (the dot). `"6" * 7` predicted as `42` (quotes ignored). Snippet 4 line 3 predicted as nothing, giving a count of three lines.
+
+### ✍️ Practice Set A — Read It
+
+**A1. Fill in the blanks.** **instructions · file · top · bottom**; **interpreter** (on the laptop, **`python3`**); **`#`** (hash); **text**; **syntax**.
+
+**A2. (a)** **(b) `2 + 2`.** The quotes make it text, so Python shows the five characters and never treats it as a sum.
+**(b)** **FALSE.** Python reads the file, finds a line it cannot understand, prints a message saying where and why, and stops. Nothing is damaged: not the file, not Python, not the laptop. An error message costs four seconds. It is a signpost, not a punishment.
+
+**A3. Match the pairs.**
 
 | Word | Letter | | | Meaning |
 |---|---|---|---|---|
-| program | **C** | | **A** | A note in your file that Python ignores |
+| program | **C** | | **A** | A note in your file that Python ignores completely |
 | interpreter | **E** | | **B** | The instruction that puts something on the screen |
 | print | **B** | | **C** | A list of instructions in a file, done top to bottom |
 | comment | **A** | | **D** | The spelling and punctuation rules of a language |
 | syntax | **D** | | **E** | The program that reads your file and does what it says |
 
-**A5. Label the diagram.** *(Three boxes and a loop-back arrow.)*
-Box 1 = **Type it** (in the editor) · Box 2 = **Save it** (the dot in the tab disappears) · Box 3 = **Run it** (`python3 hello.py`, in the terminal). The arrow curving back from 3 to 1 = **it broke, or it wasn't what you wanted — change one thing and go round again.**
-
-**A6. Predict the output.** Every line below was run to produce the right-hand column.
-
-| # | Line | Output |
-|---|---|---|
-| (a) | `print("Hello")` | `Hello` |
-| (b) | `print(7 * 6)` | `42` |
-| (c) | `print("7" * 6)` | `777777` |
-| (d) | `print(10 / 4)` | `2.5` |
-| (e) | `print(9 - 12)` | `-3` |
-| (f) | `print("9 - 12")` | `9 - 12` |
-| (g) | `print(4 + 3 * 2)` | `10` |
-| (h) | `print((4 + 3) * 2)` | `14` |
-| (i) | `print(2 + 2, "2 + 2")` | `4 2 + 2` |
-| (j) | `print()` | *(a completely blank line)* |
-
-Notes for marking: (c) is the one that matters — quotes make it text, so `*` repeats instead of multiplying. (d) is `2.5` and (g) is `10` because times happens before plus. (i) prints `4`, then a space where the comma was, then the five characters `2 + 2`.
-
-### Page 1.3 — Practice Set B (use it)
-
-**B1. Here is a file. What does it print?**
-
-```python
-# order.py
-print("Starter")
-print("Main")
-print("Pudding")
-```
+**A4. Trace it.**
 
 ```text
 Starter
@@ -1141,25 +1127,41 @@ Main
 Pudding
 ```
 
-**B2. Now swap lines 2 and 4. What does it print?**
-`Pudding`, then `Main`, then `Starter`. Python does the lines in the order they appear, always. Nothing else changed.
+After swapping the `Starter` and `Pudding` lines:
 
-**B3. Find the mistake without running it.**
-
-```python
-print("Hello)
+```text
+Pudding
+Main
+Starter
 ```
-→ The closing quote is missing. Python will report `SyntaxError: unterminated string literal (detected at line 1)`. Fix: `print("Hello")`.
 
-**B4. Find the mistake without running it.**
+**The rule:** Python does the lines in the order they appear, from top to bottom, always. Nothing else changed, only the order.
 
-```python
-Print("Hello")
-```
-→ Capital `P`. Python is case-sensitive, so `Print` is a name it has never heard of: `NameError: name 'Print' is not defined. Did you mean: 'print'?` Fix: lowercase `print`.
+**A5. Spot the bug.**
 
-**B5. Write one line that prints your age in days, without typing the answer.**
-Model answer, run for real:
+| | What is wrong | Error type | Fix |
+|---|---|---|---|
+| **(a)** `print("Hello)` | The closing quote is missing. | `SyntaxError: unterminated string literal (detected at line 1)` | `print("Hello")` |
+| **(b)** `Print("Hello")` | Capital `P`. Python is case-sensitive, so `Print` is a name it has never heard of. | `NameError: name 'Print' is not defined. Did you mean: 'print'?` | lowercase `print` |
+| **(c)** `print(Cricket)` | The quotes are missing, so `Cricket` is read as a *name*, not text. | `NameError: name 'Cricket' is not defined` | `print("Cricket")` |
+
+**The two that share a type: (b) and (c), both `NameError`.** One is a misspelling and one is missing quotes, but Python's single complaint is the same: *"you used a name and I have never heard of it."* (b) got a `Did you mean:` hint and (c) did not, because there was nothing close enough to guess.
+
+**A6. Label the diagram.**
+
+| Box | Label | Window |
+|---|---|---|
+| **A** | **Type it** | the **editor** |
+| **B** | **Save it** (the dot in the tab disappears) | the **editor** |
+| **C** | **Run it** (`python3 hello.py`) | the **terminal** |
+
+**The curved arrow:** it broke, or it wasn't what you wanted, so change one thing and go round again. It is the normal path, not a failure arrow. **What to watch for:** A and B are both in the editor. Saving is a separate action from typing, and students often put B in the terminal.
+
+### ✍️ Practice Set B — Write It
+
+Mark every question here for **"was the answer computed or typed?"**
+
+**B1.** Model answer:
 
 ```python
 print("Age in days:", 12 * 365)
@@ -1169,83 +1171,25 @@ print("Age in days:", 12 * 365)
 Age in days: 4380
 ```
 
-Mark for: is the number computed rather than typed? `print("Age in days: 4380")` scores zero on this question, however correct the arithmetic is. The whole point is making the computer do the sum.
+**Marking:** is `4380` anywhere in the file? It must not be. `print("Age in days: 4380")` gives identical output and scores zero, because the computer did no work. Their own age will give a different number; recompute it with `age * 365`.
 
-### Page 1.3 — Puzzle of the Week: the four-line mystery
-
-A student ran a file and got this:
-
-```text
-Cricket
-Cricket
-Cricket
-5
-```
-
-**P1. How many lines were in the file (not counting comments)?**
-**Four.** Each `print` produces exactly one line of output.
-
-**P2. Write a file that produces exactly that output, using four `print` lines.**
+**B2.** Model answer:
 
 ```python
-# mystery.py - four prints, four lines out.
-print("Cricket")
-print("Cricket")
-print("Cricket")
-print(2 + 3)
+# border.py - a heading with a line under it.
+
+print("MY TOP SCORES")          # a heading, just text
+print("-" * 20)                 # twenty dashes, made by repeating one character
 ```
 
 ```text
-Cricket
-Cricket
-Cricket
-5
+MY TOP SCORES
+--------------------
 ```
 
-**P3. Now write a file that produces the same output using only *two* `print` lines.**
-The first three lines are the same text repeated, and `*` repeats text — but a repeated string comes out all on one line (`CricketCricketCricket`), which is *not* the same output. The trick is the newline character `\n`, which we have not met. So the honest answer at this point in the course is:
+**Marking:** exactly one `-` between the quotes. With `"-" * 20`, changing to thirty is one character and you can never miscount; typed by hand, students end up with nineteen or twenty-one and never notice.
 
-> **You cannot, with what we know today.** `"Cricket" * 3` gives `CricketCricketCricket` on one line, which is a different output. Getting three separate lines from one `print` needs something we meet later.
-
-Full credit for a student who tries `print("Cricket" * 3)`, runs it, sees `CricketCricketCricket`, and writes *"that's not the same, it's all on one line"*. That is exactly the right kind of thinking and the fact that the answer is "not yet" is not a failure. Real output, for confirmation:
-
-```python
-print("Cricket" * 3)
-print(2 + 3)
-```
-
-```text
-CricketCricketCricket
-5
-```
-
-**P4. Could the last line have been `print(5)`?**
-Yes. `print(5)` and `print(2 + 3)` produce identical output. **You cannot tell from the output which one was typed** — and that is a genuinely important idea: output hides how it was made. It comes back in Week 27 when we look at charts that hide their arithmetic.
-
-**P5. Could the last line have been `print("5")`?**
-Yes, and this is the sting. The output is the single character `5` either way. **The screen cannot show you the difference between the number 5 and the text "5".** They behave completely differently — as `"7" * 6` proved — but they *print* the same. That is Week 2's whole problem, and if a student gets here on their own, write their name and today's date in the margin.
-
-### Page 1.4 — Build It: the three files
-
-**File 1 — `hello_you.py`.** Three facts about you. Run for real:
-
-```python
-# hello_you.py - three facts about me, printed.
-
-print("My name is Ramana.")             # a line of text
-print("I am in Year 7.")                # another line of text
-print("My favourite number is", 7)      # text and a number, comma-separated
-```
-
-```text
-My name is Ramana.
-I am in Year 7.
-My favourite number is 7
-```
-
-Mark for: a comment on line 1 · three `print` lines · no traceback · filename exactly `hello_you.py`.
-
-**File 2 — `sums.py`.** Five sums, one of them a divide:
+**B3.** Model answer (this is also `sums.py` in Build It):
 
 ```python
 # sums.py - five sums I did not do in my head.
@@ -1265,9 +1209,185 @@ print(12 + 12 + 12)    # three twelves, the long way
 36
 ```
 
-**The third line is the teaching moment and you should expect a question about it.** `100 / 7` is not a neat number, so Python shows every digit it has room for — seventeen of them. It looks absurd and it is honest. Controlling that is Week 3's `:.2f`, and if the student asks "how do I make it stop", the answer is: *"two weeks, and it takes one character."*
+**Marking:** five lines, five numbers, at least one `/`, a comment per line saying *why*. **The ugliest answer is `14.285714285714286`.** It is honest: `100 / 7` is not a neat number, so Python shows every digit it has room for (seventeen). **Expect "how do I make it stop?"** The answer is Week 3, and it takes one extra piece of punctuation (`:.2f`). Being irritated now is the correct reaction.
 
-**File 3 — `literal.py`.** Three lines proving the computer is literal, one using quotes round a number:
+**B4.** Model answer:
+
+```python
+# snack_stall.py - what the snack stall took on Friday.
+
+print("--- FRIDAY SNACK STALL ---")        # a heading
+print("Samosas sold at 25 each:", 18 * 25) # 18 samosas
+print("Juices sold at 40 each:", 11 * 40)  # 11 juices
+print("Everything:", 18 * 25 + 11 * 40)    # both lots added
+print("Split between 3 helpers:", (18 * 25 + 11 * 40) / 3)  # brackets first
+```
+
+```text
+--- FRIDAY SNACK STALL ---
+Samosas sold at 25 each: 450
+Juices sold at 40 each: 440
+Everything: 890
+Split between 3 helpers: 296.6666666666667
+```
+
+**The line that needs brackets is the last one.** Without them, `18 * 25 + 11 * 40 / 3` divides only the juice money (times and divide come before plus):
+
+```python
+print(18 * 25 + 11 * 40 / 3)
+```
+
+```text
+596.6666666666666
+```
+
+`596.67` instead of `296.67`, with **no error message**, just a plausible wrong answer. It is the same kind of bug as bug 3 in Fix the Broken Program, and it is caught only by reading your own output and asking whether it makes sense.
+
+**B5.** Model answer, fifteen lines including the comment and the blank line:
+
+```python
+# party_planner.py - everything my party needs, worked out by the computer.
+
+print("=" * 28)                              # a border made of 28 equals signs
+print("      PARTY PLANNER")                 # the title, pushed across a bit
+print("=" * 28)                              # the same border again
+print("Guests:", 12)                         # how many people are coming
+print("Slices each:", 3)                     # how much pizza one person eats
+print("Slices needed:", 12 * 3)              # guests times slices each
+print("Pizzas needed:", 12 * 3 / 8)          # 8 slices in a pizza
+print("Pizzas to order:", 5)                 # 4.5 is not orderable, so round up
+print("Pizza cost:", 5 * 8.50)               # 5 pizzas at 8.50 each
+print("Drinks cost:", 12 * 1.25)             # one drink per guest at 1.25
+print("Everything:", 5 * 8.50 + 12 * 1.25)   # both lots added
+print("Cost per guest:", (5 * 8.50 + 12 * 1.25) / 12)   # split it 12 ways
+print("Candles on the cake:", "|" * 13)      # 13 candles, drawn with text
+```
+
+```text
+============================
+      PARTY PLANNER
+============================
+Guests: 12
+Slices each: 3
+Slices needed: 36
+Pizzas needed: 4.5
+Pizzas to order: 5
+Pizza cost: 42.5
+Drinks cost: 15.0
+Everything: 57.5
+Cost per guest: 4.791666666666667
+Candles on the cake: |||||||||||||
+```
+
+**Checklist marking:** comment on line 1 · border by repetition top and bottom · title · at least six lines of text plus a computed number · one `/` · one bracketed sum before a divide · candles drawn with repeated text · a *why* comment on every sum line.
+
+**(a) 4.5 pizzas.** You cannot order half a pizza, so round up to 5. The honest version prints **both** numbers so the reader sees the real figure and the decision. What is not honest is quietly printing `5`. Note that the `5` is typed, so the student, not the computer, did that rounding; the proper tool arrives in Week 3.
+
+**(b) The number `12` is typed seven times, on six lines** (guests, slices needed, pizzas needed, drinks cost, everything, cost per guest, which uses it twice). A student's own count may differ with their own file; check it against *their* file. **One more guest means editing every one of those lines**, and everybody misses one. That is exactly the problem Week 2 fixes: give the number a name, write it once, and one more guest becomes a one-line edit.
+
+### 🐞 Fix the Broken Program
+
+| Bug | Line | Error | What is wrong | Fix |
+|---|---|---|---|---|
+| **1** | 3 | `SyntaxError: unterminated string literal (detected at line 3)` | closing quote missing | `print("=== PARTY BILL ===")` |
+| **2** | 6 | `NameError: name 'prnt' is not defined. Did you mean: 'print'?` | `prnt` misspelled; the word as it appears on screen is **`prnt`** | put the `i` back |
+| **3** | 9 | *(none)* | `"14" * 2` is text repeated, giving `1414` instead of **28** | `14 * 2` |
+
+**Why nothing printed on Run 1:** a `SyntaxError` is found **before the program runs**. Python could not read the file, so it never started. Clue: there is no `Traceback (most recent call last):` heading.
+
+**Run 2 (three lines printed first):** a `NameError` happens **while** the program is running, so everything above it had already happened. Compare: a `SyntaxError` happens before it starts, so nothing happens.
+
+**Bug 3.** The wrong output line is `Party bags needed: 1414`; it should say `28`. The quotes made `"14"` text, so `*` repeated it. Python did exactly what it was told, so it did not complain.
+
+Fully mended output:
+
+```text
+=== PARTY BILL ===
+Guests: 14
+Pizzas: 5
+Pizza cost: 42.5
+Drinks cost: 17.5
+Everything: 60.0
+Party bags needed: 28
+==================
+```
+
+**The ranking:** easiest **bug 1** → **bug 2** → hardest **bug 3**. Bugs 1 and 2 gave a line number (and bug 2 the word and a guess at the fix). Bug 3 told nothing, because from Python's point of view nothing went wrong. **Only a human reading the output and asking "does that make sense?" catches a bug 3.** Accept a different order if the reason is sound, but a student who ranks bug 3 as easy has not understood the exercise.
+
+**Common slip:** students type the line numbers on the left into the file. The file then fails with a `SyntaxError` on the first numbered line that has code on it; point at the Watch-out box.
+
+### 🧩 Puzzle of the Week
+
+**P1. Four.** Each `print` produces exactly one line, so four lines out means four `print` lines.
+
+**P2.** Model answer:
+
+```python
+# mystery.py - four prints, four lines out.
+print("Cricket")
+print("Cricket")
+print("Cricket")
+print(2 + 3)
+```
+
+```text
+Cricket
+Cricket
+Cricket
+5
+```
+
+**P3. Two `print` lines.** The natural idea is `"Cricket" * 3`, but a repeated string comes out on **one line**, which is not the same output:
+
+```python
+print("Cricket" * 3)
+print(2 + 3)
+```
+
+```text
+CricketCricketCricket
+5
+```
+
+**You cannot do it with what we know today.** (The missing tool is the newline character `\n`, which we have not met.) Full credit for a student who tries it, runs it, sees `CricketCricketCricket` and writes *"that's not the same, it's all on one line."* Finding out that the answer is "not yet" is a real result, not a failure.
+
+**P4. Yes**, `print(5)` gives identical output to `print(2 + 3)`, and **you cannot tell from the output alone**. Output hides how it was made; this returns in Week 27 with charts that hide their arithmetic.
+
+**P5. Yes**, `print("5")` also gives a bare `5`. **The screen cannot show the difference between the number 5 and the text "5"**, yet they behave completely differently (`7 * 6` is `42`, `"7" * 6` is `777777`). That is Week 2's whole problem. If a student gets here on their own, write their name and today's date in the margin.
+
+### 🤔 Think Deeper
+
+Open-ended. Mark against the criteria, not against a wording.
+
+**T1. Why is an error message the most helpful thing on the screen?** *Full marks needs:* a **specific** error the student actually caused, and at least two things the message told them that they could not have worked out alone. The model answer uses `NameError: name 'prnt' is not defined. Did you mean: 'print'?`: it told them **what kind** of problem (a name, not punctuation), **where** (the line number, worth twenty minutes on a 200-line file), and **what it probably should say**. Closing idea: the message is the computer handing you what you need; the only mistake available is not reading it.
+
+**T2. How much should a computer be allowed to guess?** *Full marks needs:* two situations with genuinely different stakes, and the recognition that what decides it is **how bad it is to be wrong and how quickly you would find out**, not which behaviour is cleverer. Model pair: autocorrect on a text message (cheap, instantly visible, so guess) against medicine dosage software (costly, invisible, so never guess). A bonus point for *"a machine that guesses should tell you it guessed."* Do not mark down a student who comes down firmly on either side; the workbook says nobody agrees.
+
+### 🛠️ Build It
+
+**Steps table.** Every box should be ticked. The two checks that matter: `ls` shows the Week 1 files in `ai-academy/level2`, and the three deliberate breaks were each logged.
+
+**File 1: `hello_you.py`.** Model answer:
+
+```python
+# hello_you.py - three facts about me, printed.
+
+print("My name is Ramana.")             # a line of text
+print("I am in Year 7.")                # another line of text
+print("My favourite number is", 7)      # text and a number, comma-separated
+```
+
+```text
+My name is Ramana.
+I am in Year 7.
+My favourite number is 7
+```
+
+Mark for: a comment on line 1 · three `print` lines · at least one with text **and** a number with a comma · no traceback · filename exactly `hello_you.py` (lowercase, one underscore, no spaces).
+
+**File 2: `sums.py`.** The same file as B3 above (five sums, one a divide); expect the `100 / 7` question described there.
+
+**File 3: `literal.py`.** Model answer:
 
 ```python
 # literal.py - three lines that prove the computer is literal, not clever.
@@ -1283,64 +1403,45 @@ print("2" * 4)        # text repeated four times, NOT eight
 2222
 ```
 
-Mark for: does line 3 (or one of them) put quotes round a number and get repetition rather than multiplication? That is the objective. `print("2" * 4)` giving `2222` is the evidence.
+Mark for the third line specifically: does one line put quotes round a number and get repetition instead of multiplication? `print("2" * 4)` giving `2222` rather than `8` is the evidence, and it is the whole objective.
 
-### Page 1.5 — The Bug Log: first three entries
+**Results table.** Lines of output expected: `hello_you.py` 3 · `sums.py` 5 · `literal.py` 3 · `party_planner.py` 13 (counting the border and title lines) · `party_bill.py` (fixed) 8. All should be "ran with no error". The "surprised me" column is theirs; `14.285714285714286` and `1414` are the common answers.
 
-The student's three errors are their own; mark the **structure**, not the choice. A full-credit row has all three columns, the last line copied **exactly**, and the middle column in the student's own words rather than the screen's.
+**The Bug Log.** The student's three errors are their own; mark the **structure**. A full-credit row has all three columns, the last line copied **exactly**, and the middle column in the student's own words rather than the screen's. Model rows, using the three errors this week's work really produces:
 
-Model rows, using the three errors this week's work actually produces:
-
-| What I saw (last line, copied exactly) | What it meant (my words) | What I changed |
-|---|---|---|
-| `NameError: name 'prnt' is not defined. Did you mean: 'print'?` | It doesn't know a word called prnt. I spelled print wrong. It even guessed what I meant. | Put the i back in print, on line 3. |
-| `SyntaxError: '(' was never closed` | I opened a bracket and never closed it, so Python couldn't finish reading the line. | Added `)` at the end of line 4. |
-| `SyntaxError: unterminated string literal (detected at line 5)` | I opened a quote and never closed it. Python kept reading, looking for the other quote, and ran out of line. | Added the closing `"` before the `)` on line 5. |
-
-**1.5(a) Which of your three errors was found *before* the program ran at all? How can you tell?**
-The two `SyntaxError`s. You can tell because there is **no** `Traceback (most recent call last):` heading above them, and because no output at all appeared — not even from lines 1 and 2, which were perfectly fine. Python could not read the file, so it never started running it. A `NameError`, by contrast, appears *while* the program is running, so any `print` lines above it have already printed.
-
-**1.5(b) Why copy the last line out by hand instead of describing it?**
-Because next time you see it you need to recognise it **instantly**, and you only recognise the exact wording if you have written the exact wording. Also, "it said something about a name" is not searchable and `NameError: name 'prnt' is not defined` is.
-
-**1.5(c) Which error was easiest to fix, and which took longest? Why?**
-Any honest answer. The pattern worth pointing out when you mark it: the **misspelling** is usually fastest, because Python names the word and often guesses the fix. The **missing quote** is usually easy once they look at the `^`, which sits under the quote that was opened and never closed (the editor also colours the rest of the line as text, which is a clue). A string cannot run over onto the next line, so Python reports it on the same line.
-
-### Page 1.6 — Predict the output
-
-Every output below was produced by running the line.
-
-| # | Line | Real output | Why |
+| # | What I saw (last line, copied exactly) | What it meant (my words) | What I changed |
 |---|---|---|---|
-| 1 | `print("Cricket")` | `Cricket` | Text in quotes. Shown exactly. |
-| 2 | `print(6 * 7)` | `42` | Two numbers. Multiply. |
-| 3 | `print("6" * 7)` | `6666666` | Quotes, so it's text. `*` repeats it seven times. |
-| 4 | `print(15 / 4)` | `3.75` | `/` shares out and leaves a decimal. |
-| 5 | `print(15 - 20)` | `-5` | Negative numbers are completely normal. |
-| 6 | `print("15 - 20")` | `15 - 20` | Quotes. Just characters. |
-| 7 | `print(3 * "ab")` | `ababab` | Same as `"ab" * 3` — the order doesn't matter. |
-| 8 | `print("Total:", 5 * 20)` | `Total: 100` | Two things, one `print`. The comma prints as a space. |
+| 1 | `NameError: name 'prnt' is not defined. Did you mean: 'print'?` | It doesn't know a word called prnt. I spelled print wrong. It even guessed what I meant. | Put the `i` back in `print`, on line 3. |
+| 2 | `SyntaxError: '(' was never closed` | I opened a bracket and never closed it, so Python couldn't finish reading the line. | Added `)` at the end of line 4. |
+| 3 | `SyntaxError: unterminated string literal (detected at line 5)` | I opened a quote and never closed it. Python kept reading looking for the other one and ran out of line. | Added the closing `"` before the `)` on line 5. |
 
-Run all eight together for the full listing:
+**(a) Which was found before the program ran?** The two `SyntaxError`s. You can tell because there is **no** `Traceback (most recent call last):` heading above them, and because no output appeared at all, not even from the good lines above the broken one. A `NameError`, by contrast, appears *while* the program runs, so earlier `print` lines have already printed.
 
-```text
-Cricket
-42
-6666666
-3.75
--5
-15 - 20
-ababab
-Total: 100
-```
+**(b) Why copy it by hand?** So you recognise the exact wording instantly next time, and because "it said something about a name" is not searchable while `NameError: name 'prnt' is not defined` is.
 
-**1.6(a) Which one surprised you most, and what did you learn from it?**
-Mark the honesty, not the accuracy. Number 3 is the usual answer and the correct lesson is *"the quotes changed what the star did."* Number 8 is the second-most-common and the lesson is *"the comma made a space."*
+**(c) Which took longest?** Any honest answer. The **misspelling** is usually fastest, because Python names the word and often guesses the fix. The **missing quote** is usually easy once they look at the `^`, which sits under the quote that was opened and never closed (the editor also colours the rest of the line as text, which is a clue). A string cannot run onto the next line, so Python reports it on the same line.
 
-**1.6(b) How many did you get right out of eight? Was that too easy or too hard?**
-Anything from 4 to 7 is exactly where a student should be after one lesson. **8 out of 8 means the next set needs to be harder**, and you should say so out loud rather than praising the score — otherwise a student learns that the aim is to be right rather than to find out.
+### 🎨 Draw It
 
-### Page 1.6 — Vocabulary check
+There is no single right drawing. A strong answer has three things: **(1)** the instruction on the left is a real, ordinary sentence a person would actually say; **(2)** everything the robot does on the right is genuinely allowed by that sentence (random behaviour such as putting the bowl on its head is a *broken* robot, not a *literal* one, and loses the point); **(3)** the third box actually fixes it with *more words* (what to open, how many, where it ends up), not with "be more careful". The workbook's own example is "fill the cat's bowl", which ends up full of water or a cone of biscuits, with the fix *"with dry cat food, up to the line marked inside, then stop"*. Test: could a person read the left-hand sentence and honestly do the right-hand thing?
+
+### 📊 Self-Check
+
+No right answers. Read it for the two rows most often marked 😕: *"Say which window I write in and which window I run in"* and *"Read a `NameError` and name the misspelled word from the message alone"*. Whatever they write under "One thing I'd like explained again" is your opening question for Week 2.
+
+### The Hook (sandwich, on paper, in class)
+
+The sandwich activity is in the lesson plan, not in the workbook, so these answers are not workbook items. The student writes on plain paper.
+
+**Which of your six instructions was wrong?** Full credit for: **none of them were wrong, they were incomplete.** The robot did what each one said. Partial credit for naming a specific instruction, provided the reason given is "it left something out" rather than "it was wrong".
+
+**Rewrite instruction 1 so a literal robot cannot get it wrong.** Model: *"Open the bread bag. Take out two slices. Put them flat on the plate, not touching each other."* Mark for: what to open, how many, where they end up. Three clauses is typical; two is usually not enough.
+
+**Why is a computer literal rather than clever?** Model: *"Because it only has the instructions I typed. It has no idea what I meant, so it cannot fill in anything I left out."*
+
+### Vocabulary reference
+
+These match Practice Set A, questions A1 and A3.
 
 | Term | Answer |
 |---|---|

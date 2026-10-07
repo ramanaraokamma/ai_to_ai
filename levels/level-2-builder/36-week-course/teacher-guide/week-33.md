@@ -13,7 +13,7 @@
 | **Big idea** | A training score that climbs while the test score falls is memorising, not learning — and it has a picture. |
 | **New vocabulary** | overfitting · underfitting · train/test gap · RMSE · model complexity |
 | **New syntax** | `DecisionTreeRegressor(max_depth=d)` · `np.sqrt(mean_squared_error(y_true, y_pred))` · `ax.axvline(x, linestyle="--")` · `load_diabetes()` |
-| **Materials** | Printed workbook pages 33.1–33.6 · graph paper · a ruler · **4 coloured pens or highlighters** · a calculator · **whatever the student wrote in Week 29 about the gap between their train and test scores** · `week31_tree_iris.py` and `week32_study_line.py` · the Bug Log |
+| **Materials** | The printed workbook (Warm-Up, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Build It, Draw It, Self-Check) · graph paper · a ruler · **4 coloured pens or highlighters** · a calculator · **whatever the student wrote in Week 29 about the gap between their train and test scores** · `week31_tree_iris.py` and `week32_study_line.py` · the Bug Log |
 | **Tech needed** | Python 3 with scikit-learn, numpy and matplotlib. No new install. No internet. |
 | **Prep time** | 25 minutes the night before, 5 minutes on the day |
 
@@ -355,7 +355,7 @@ training rows: 353  leaves at depth 15: 329
 ![Mark the peak. Say the sentence.](../figures/fig-w33-4-overfitting-point-marked.svg)
 *Figure 33.4 — Mark the peak. Then say it out loud: after here it is memorising.*
 
-**The paragraph the student should be able to write by the end** — this is the target for workbook page 33.5, and it is worth reading once yourself:
+**The paragraph the student should be able to write by the end** — this is the target for workbook Build It, Part 5, and it is worth reading once yourself:
 
 > *As `max_depth` grows the tree may ask more questions, so it cuts the 353 training patients into more and more leaves. Early on each new question captures something real, so both scores rise together. Past depth 4 the questions stop describing patients in general and start describing the particular quirks of these 353. Those quirks are different in the 89 test patients, so memorising them actively hurts: train R² climbs to 0.999 while test R² sinks from 0.352 to 0.044. The gap grows from 0.152 to 0.955, and by depth 15 the tree has 329 leaves for 353 patients. Depth 4 is where it stopped learning and started memorising.*
 
@@ -435,7 +435,7 @@ has moved. Two threads lit: learning signal and evaluation.*
 
 ### 25 minutes the night before
 
-- [ ] **Print workbook pages 33.1–33.6.** Page 33.4 (the blank depth-curve grid) should be printed **twice**.
+- [ ] **Print the whole workbook.** The **Draw It** page (the blank depth-curve grid) should be printed **twice**, so there is a spare.
 - [ ] **Go and find the Week 29 numbers.** Whatever the student wrote down four weeks ago about their training score and their held-back score. A photo, a notebook page, a wiped whiteboard you have to reconstruct — get it now. The lesson ends there and it is much weaker without it.
 - [ ] **Run the bake-off yourself.**
 
@@ -897,7 +897,7 @@ Real numbers from this week's tree: **0.504** the wrong way round, **0.669** the
 
 ### Setup
 
-**On the table:** graph paper, a ruler, **four coloured pens**, workbook pages 33.3 and 33.4, a calculator. Laptop open with `week33_bakeoff.py` already working.
+**On the table:** graph paper, a ruler, **four coloured pens**, the workbook open at **Build It** (Parts 1 to 4) and **Draw It**, a calculator. Laptop open with `week33_bakeoff.py` already working.
 
 ### Step 1 — type the loop, and 🐞 STAGED BUG TWO (7 minutes)
 
@@ -1198,87 +1198,176 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "Three pages, about an hour, and this is the write-up I care most about all year.
+> "Today's workbook is the one I care most about all year. Open it and we'll go through what's done in class and what's yours to take home.
 >
-> **First, page 33.4 — finish the bake-off.** Three models on **one** split, plus the lazy baseline. A results table with MAE, RMSE, test R² and train R² for every single row, and — this is a marked item — **the row counts written at the top**: 353 training, 89 test. A table of bare numbers with no row counts and no metric names in the headers is not a result, it's a pile of digits.
+> **In class we've done:** the **Warm-Up**, **Predict the Output** (P1 to P4) and **Practice Set A** (A1 to A6), plus **Build It, Part 1**: the bake-off. That Part 1 table needs MAE, RMSE, test R² and train R² for every single row, and — this is a marked item — **the row counts written at the top**: 353 training, 89 test. A table of bare numbers with no row counts and no metric names in the headers is not a result, it's a pile of digits.
 >
-> **Second, page 33.5 — the depth curve.** The loop from 1 to 15, the full table with the gap column, the chart with both lines, and the vertical line at the peak. Mark it, **name it**, and then write me **three sentences**: what the train line does and why it can only go up; where the test line peaks and how many leaves the tree has there; and what the gap is measuring, in plain words. Three sentences. Not one, not eight.
+> **At home, first, finish Build It.** **Part 2** is the depth curve: the loop from 1 to 15, the full table with the gap column. **Part 3** is the four coloured pens. **Part 4** is the chart, twice, once with `set_ylim` and once without. **Part 5** is the **three sentences**: what the train line does and why it can only go up; where the test line peaks and how many leaves the tree has there; and what the gap is measuring, in plain words. Three sentences. Not one, not eight.
 >
-> **Third, page 33.6 — the decision and the honesty.** Name the model you'd actually ship and defend it with **at least two numbers from your table**. Then the honesty section, three bullets: how big your test set is and what one patient is worth in R²; the sentence 'I chose the depth by looking at the test curve, so this estimate is optimistic'; and one thing about this dataset that makes it easier than real life. Then the Bug Log — both of today's errors, real message, fix in your own words.
+> **Part 6** is the decision and the honesty. Name the model you'd actually ship and defend it with **at least two numbers from your table**. Then the honesty section, three bullets: how big your test set is and what one row is worth in R²; the sentence 'I chose the depth by looking at the test curve, so this estimate is optimistic'; and one thing about this dataset that makes it easier than real life. **Part 7** is back to Week 29. **Part 8** is the Bug Log: both of today's errors, real message, fix in your own words.
+>
+> Then **Draw It**, by hand, on the printed grid, and fill in the **Self-Check**.
+>
+> **Practice Set B**, **Fix the Broken Program**, the **Puzzle of the Week** and **Think Deeper** are the rest of the workbook. Do them across the week as you get to them and bring them next time.
 >
 > And one last thing. Go and find what you wrote in Week 29 about the gap between your two scores. Write today's date next to it and one sentence saying what you now know that you didn't then. That's not busywork. **That's the whole term, in one line.**"
 
-**Workbook pages:** 33.1, 33.2 and 33.3 in class; **33.4, 33.5, 33.6** at home.
+**Workbook sections:** Warm-Up, Predict the Output, Practice Set A and Build It Part 1 in class; **Build It Parts 2 to 8, Draw It and Self-Check** at home. **Practice Set B, Fix the Broken Program, Puzzle of the Week and Think Deeper** over the week. Build It Part 7 is the Week 29 reflection.
 
-**Expected time:** 20 min for the bake-off table · 25 min for the curve and the three sentences · 15 min for the decision, the honesty bullets and the Bug Log. About 60 minutes.
+**Expected time:** about 60 minutes for the core at-home work: 20 min for Parts 2 to 4 (the curve table and chart), 15 min for Part 5 (the three sentences) and Draw It, 15 min for Parts 6 to 8 (the decision, honesty bullets and Bug Log), 10 min for Self-Check and the Week 29 line. Practice Set B, the broken program, the puzzle and Think Deeper are extra, roughly another 60 to 75 minutes spread over the week.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 33.1 — Predict before you run, and sort the three fits
+This key follows the workbook section by section and item by item, using the workbook's own Answers section for every value. The teacher notes in the shaded quotes are for you only: what the student is likely to get wrong, and what to mark. **Never hand this file to the student.**
 
-**(a) `print(load_diabetes().data.shape)`**
+### Warm-Up
+
+**W1.** **Look at the answer column.** A short fixed list → classification. Any number → regression. And scikit-learn names its tools after it: `Classifier` versus `Regressor`.
+
+**W2.** *"Each extra hour of revision a week **goes with** about **3.6 more marks** out of 100."* The banned word is **"causes"**.
+
+**W3.** Because a best-fit line always **balances** — as much above as below — so the signed misses add to zero. Averaging them would say the model was perfect no matter how bad it was. Dropping the signs is what makes MAE mean something.
+
+**W4.** **MAE (2.67 marks) is the one for a person**, because it is in the units of the thing itself. **R² (0.804) is for comparing models**, because it has no units at all.
+
+**W5.** **Not a bug.** It is **extrapolation** — predicting outside the range of x you have data for. Nobody in the six revised more than 6 hours, and a straight line has never heard of a maximum mark.
+
+---
+
+### Predict the Output
+
+#### P1
 
 ```text
-(442, 10)
+[2 2 0 0]
+1.0
+2.0
+1.4142
 ```
-442 patients, 10 measurements each.
 
-**(b) With `test_size=0.2`, how many rows in each pile?**
-`442 × 0.2 = 88.4`, and scikit-learn rounds the test pile up: **353 train, 89 test.** Always print it rather than working it out — `print(len(X_train), len(X_test))`.
+**MAE by hand:** `(2 + 2 + 0 + 0) ÷ 4 = 4 ÷ 4 = 1.0`
 
-**(c) A tree with no depth limit, on 353 training rows. What will its train R² be?**
-**1.000.** With no limit it splits until every leaf is pure, which on 353 distinct rows means near enough one leaf per row. Real value: `1.000`, from 346 leaves at a real depth of 19.
+**MSE by hand:** squares are 4, 4, 0, 0. `(4 + 4 + 0 + 0) ÷ 4 = 8 ÷ 4 = 2.0`. Then `RMSE = √2 = 1.4142`.
 
-**(d) Sort these three into underfitting, just right and overfitting.**
+**When would lines 2 and 4 have been equal?** **When every miss is exactly the same size.** Squaring only pulls the average up when the sizes differ, so RMSE equals MAE only for perfectly even errors — like Model A in the chapter, off by exactly 1 every time.
 
-| Train | Test | Gap | Diagnosis |
-|---|---|---|---|
-| 0.304 | 0.131 | 0.174 | **Underfitting** — both low |
-| 0.585 | 0.352 | 0.233 | **Just right** *(the best available here)* |
-| 0.999 | 0.044 | 0.955 | **Overfitting** — train near-perfect, test near-zero |
+**The unit problem.** If truth and guess are in **minutes**, then MSE is in **minutes squared**, which is not a thing anybody can picture. **That is exactly why RMSE takes the square root** — to get back into minutes. Never report an MSE to a person.
 
-Worth saying out loud: even the "just right" row has a gap of 0.233 and a test R² of only 0.352. On real data, "just right" is often not very good. That is honest and it is not a failure of the method.
+#### P2
 
-**(e) Can a test R² be negative? What would it mean?**
-Yes. R² = 0 means "exactly as good as ignoring every measurement and guessing the average". Negative means **worse than that**. The unlimited tree scores −0.003, essentially level with the baseline's −0.012.
+```text
+19
+346
+353
+1.0
+-0.003
+```
 
-**(f) Which of the two scores is evidence that a model is good?**
-Only the **test** score. The train score can only rise as you give the model more room, so it cannot distinguish a good model from a memoriser. The train score's job is to be half of the **gap**.
+**We asked for 25 and got 19.** Because **`max_depth` is a ceiling, not a target.** By depth 19 there was nothing impure left to split — every remaining leaf already held rows that agreed with each other — so the tree stopped on its own and the ceiling was never touched.
 
-### Page 33.2 — MAE and RMSE by hand
+**Lines 2 and 3 compared:** **346 leaves for 353 training rows.** Nearly every patient has their own private leaf with their own private answer. **The tree has not learned anything about the illness; it has written down a lookup table of these 353 people.**
 
-Ten true values, two models. Model A is off by exactly +1 every time; Model B is exact nine times and off by +10 once.
+**Which row of the diagnosis table?** **Overfitting.** Train perfect (1.000), test no better than guessing the average (−0.003, level with the baseline's −0.012), gap **1.003**. This is Sam.
 
-**Model A**
+#### P3
 
-| miss | \|miss\| | miss² |
+```text
+0.944
+0.9276
+0.0
+-3.0
+```
+
+**Lines 1 and 2 differ because R² is not symmetrical.** It divides by *"how much the first argument varies around its own mean"*, and the two lists do not vary by the same amount. So which one you call "the truth" changes the denominator, and therefore the answer.
+
+**Would `mean_absolute_error` have changed if you swapped its arguments?** **No** — it averages the sizes of the differences, and `|a − b|` is the same as `|b − a|`.
+
+**The habit, and why build it where it is free.** **Truth first, guess second, in every metric, every time.** MAE forgives you and `r2_score` does not, so you build the habit on the forgiving one — because you will not remember to be careful only on the days it matters.
+
+**Line 4 — the four true values in exactly the wrong order — scores −3.0.** Every value present, every value in the wrong place, and R² says *"four times the squared error of not bothering"* (R² = 1 − 4 = −3). Getting the *set* of answers right counts for nothing; R² only cares whether the right answer went to the right row.
+
+#### P4
+
+```text
+1 0.295 4
+2 0.295 4
+3 0.295 4
+4 0.295 4
+```
+
+**Did Python raise an error?** **No.** This is a silent bug.
+
+**Why only the first column changes.** Because the tree was built **once, above the loop**, with `max_depth=2` baked into it. The loop variable `depth` is printed, and it is never used for anything else — so all four rows are the *same depth-2 tree*, refitted four times to the same data.
+
+**What has to move, and where:** the whole `tree = DecisionTreeRegressor(...)` line must move **inside** the loop, and `max_depth=2` must become `max_depth=depth`.
+
+**What shape would the curve be?** **Perfectly flat** — a horizontal line at 0.295, with a confident-looking title on it. Which is the danger: nothing errored, and the chart looks respectable.
+
+---
+
+### Practice Set A
+
+**A1.**
+
+| # | train | test | gap | Diagnosis | Reason |
+|---|---|---|---|---|---|
+| a | 0.98 | 0.61 | 0.37 | **Overfitting** | Train high, test much lower — a big gap |
+| b | 0.30 | 0.28 | 0.02 | **Underfitting** | **Nothing is high**, and the gap is tiny |
+| c | 0.55 | 0.52 | 0.03 | **Just right** | Both reasonable, gap small |
+| d | 1.000 | −0.003 | 1.003 | **Overfitting** | Perfect on studied rows, no better than the average-guesser on new ones |
+| e | 0.48 | 0.61 | −0.13 | **Something's broken** | Better on rows it never saw than on rows it studied |
+| f | 0.304 | 0.131 | 0.174 | **Underfitting** | Depth 1 — both low |
+| g | 0.585 | 0.352 | 0.233 | **Just right** *(the best available on this data)* | Highest test score; the gap is real but not runaway |
+
+**A1(h).** Row **(b)**, and people call it **overfitting**. The question that fixes it: **"which number is high?"** Neither. Underfitting is the only row where *nothing* is high.
+
+**A1(i).** Two things that produce row (e): **a bug** — most often the arguments swapped somewhere, or the two scores computed on the wrong piles — or **a tiny test set** where a handful of easy rows happened to land. Our own Worked Example 2 produced a negative gap on a five-row test set, and nothing was broken; the test pile was simply too small to trust.
+
+> **Teacher note — what to watch for.** The usual wrong answer to A1(b) is "overfitting", because the student sees a low test score and stops there. Do not tell them; ask *"which number is high?"* until they say "neither". Row (g) is "just right" only in the sense of best available: its gap is 0.233 and its test R² is only 0.352, and on real data "just right" is often not very good. That is honest, not a failure of the method.
+
+**A2(a).** `tree, no limit`. Train R² **1.000**, test R² **−0.003** — perfect on the 353 it learned from, no better than guessing the average on the 89 it had not seen.
+
+**A2(b).** Because **without it, no other number means anything.** MAE 42.77 sounds like nothing until you know that ignoring all ten measurements and guessing the average is off by **64.01**. Then 42.77 becomes *"a third less wrong than not bothering"*. It is the ruler you measure the other numbers against.
+
+**A2(c).** **The line.** MAE is a dead heat — 42.77 against 42.79, two hundredths apart on a scale running to 346 — and the column that separates them is **RMSE**: 53.85 against 54.95. A lower RMSE at equal MAE means fewer or smaller **big** misses. Counting confirms it: kNN has nine misses over 100, the line has five.
+
+> **Teacher note — the surprise to expect on A2(c).** Students pick kNN because its MAE is two hundredths lower, or call it a tie. A tie on MAE is exactly why the second column exists. Counting the misses over 100 (nine against five) is the evidence that settles it, and it is what B3 asks them to compute.
+
+> **Teacher note — the missing `StandardScaler`.** A good student asks where it is, since Week 30 said kNN needs one. This dataset arrives already centred and scaled, so kNN does not need one here. With raw columns (blood sugar in the hundreds, a body-mass index near 25) kNN would need scaling and the tree would not.
+
+**A2(d).**
+
+| model | gap |
+|---|---|
+| always guess the mean | 0.000 − (−0.012) = **0.012** |
+| kNN, k = 5 | 0.584 − 0.430 = **0.154** |
+| tree, max_depth=5 | 0.669 − 0.260 = **0.409** |
+| tree, no limit | 1.000 − (−0.003) = **1.003** |
+| linear regression | 0.528 − 0.453 = **0.075** |
+
+**A2(e).** Ranked smallest gap first: baseline (0.012), linear (0.075), kNN (0.154), depth-5 tree (0.409), unlimited tree (1.003).
+
+The gap ranking tells you **how much of each model's apparent skill is memorising**, which the test-R² ranking does not. Linear regression wins on *both* — best test score **and** almost no gap — which is a much stronger case than winning on the score alone. And notice the baseline has the smallest gap of all: it memorises nothing, because it does not look at anything. **A small gap on its own is not a virtue.** You need a good test score *and* a small gap.
+
+**A2(f).** Turning `max_depth` from 5 to unlimited pushed **train** from 0.669 up to **1.000** — an apparent triumph — and pushed **test** from 0.260 down to **−0.003** — an actual disaster. **We made the training score better and the model worse**, which is the single clearest reason a training score is not evidence.
+
+**A3.**
+
+| # | Metric that separates them | Which model, and why |
 |---|---|---|
-| +1 (× 10) | 1 each | 1 each |
-| | **Σ = 10** | **Σ = 10** |
+| a | **RMSE** | Whichever you prefer — but only RMSE can *see* the difference, so compute it. |
+| b | **RMSE** | Model A, small consistent errors. One huge dose error can be dangerous; ten small ones get noticed and corrected. |
+| c | **MAE** | Model B. Nine right weeks out of ten feels trustworthy; the birthday-party week explains itself. |
+| d | **RMSE** | Model A. A single 30-minute failure costs you the exam; being three minutes out every day does not. |
+| e | **MAE** | It is in the units of the thing itself — minutes, marks, rupees — so you can say it out loud. |
 
-```
-MAE  = 10 ÷ 10 = 1.0
-MSE  = 10 ÷ 10 = 1.0
-RMSE = √1.0     = 1.0
-```
+**A3(f).** *"RMSE goes up faster than MAE when **there are big misses**."*
 
-**Model B**
+**A3(g).** **Must not say:** *"RMSE tells you the worst miss."*
 
-| miss | \|miss\| | miss² |
-|---|---|---|
-| 0 (× 9) | 0 each | 0 each |
-| +10 | 10 | 100 |
-| | **Σ = 10** | **Σ = 100** |
-
-```
-MAE  = 10 ÷ 10  = 1.0     ← identical to Model A
-MSE  = 100 ÷ 10 = 10.0
-RMSE = √10      = 3.1623  ← more than 3× Model A
-```
-
-Confirmed in code:
+> **Teacher note — Model A and Model B from the chapter.** Ten true values, two models: A is off by exactly +1 every time, B is exact nine times and off by +10 once. Both have MAE 1.0000; A has RMSE 1.0000 and B has RMSE 3.1623 (MSE 10.0, root of 10). That is the cleanest demonstration that equal MAE does not mean equal models, and it is the example behind the Self-Check row "MAE and RMSE are two names for the same thing". Confirmed by running:
 
 ```python
 import numpy as np
@@ -1301,27 +1390,372 @@ Model A: errors [1 1 1 1 1 1 1 1 1 1]  MAE 1.0000  RMSE 1.0000
 Model B: errors [ 0  0  0  0  0  0  0  0  0 10]  MAE 1.0000  RMSE 3.1623
 ```
 
-**33.2(a) Why is RMSE always ≥ MAE?**
-Because squaring stretches anything bigger than 1 and shrinks anything smaller, so the average of the squares is pulled up by the large misses. Taking the root afterwards does not undo that pull. The two are only equal when every miss is exactly the same size — which is precisely Model A.
+> **Teacher note — A3(f)/(g) in the lesson.** If the student offers a scenario of their own for A3(b)-(c), accept it when the metric they pick matches what they are afraid of: RMSE when the worry is a catastrophe, MAE when the worry is the typical case. The strongest habit to leave them with is to report both, plus the worst single error.
 
-**33.2(b) A scenario where Model A is clearly better.**
-A calculator that works out a medicine dose. Model A is one unit out every time — annoying, correctable, survivable, and a nurse notices and adjusts. Model B is perfect nine times and then recommends ten units too many once. That single event can be dangerous and it is worse than ten small errors put together. **Report RMSE here**, because RMSE is the metric that can tell these two apart, and what you are afraid of is the catastrophe, not the typical case.
+**Disproved by:** linear regression has a **worse** single worst miss than kNN — **154.49 against 138.80** — and yet a **lower** RMSE, **53.85 against 54.95**. RMSE is about the whole **tail** of big misses (kNN nine over 100, the line five), not one champion.
 
-**33.2(c) A scenario where Model B is clearly better.**
-Estimating a household's weekly grocery bill in a budgeting app. Model A is wrong every single week, so the user never once sees a number they would call right and the app feels permanently untrustworthy. Model B nails it nine weeks out of ten and is badly wrong in the week of the birthday party — which the user can immediately explain to themselves. **Report MAE here** (and maybe "how often was I within ₹2"), because the typical week is what matters and a rare, explicable outlier should not dominate the headline number.
+**A4.**
 
-**33.2(d) So which should you report?**
-Both, plus the worst single error. Three numbers, no extra work, and it becomes very hard for a reader to be misled by an average that looks fine because the disasters are rare.
+| # | The fix |
+|---|---|
+| a | `np.sqrt(mean_squared_error(y_test, guesses))`. `squared=False` was removed from modern scikit-learn. |
+| b | `max_depth=depth` — match the loop variable. Otherwise `NameError: name 'd' is not defined`. |
+| c | `fig, ax = plt.subplots(...)`. `subplots` always hands back **two** things. |
+| d | `linestyle="--"` **or** `linestyle="dashed"`. Not both spellings mashed together. |
+| e | Move it **above** the loop, and give it `random_state=42`. |
+| f | `r2_score(y_train, guesses)` — **truth first**. |
+| g | `y_train.mean()`. Using the test mean is peeking at the answers. |
+| h | `from sklearn.tree import DecisionTreeRegressor` — or list both, comma-separated. |
+| i | Add `ax.set_ylim(-0.2, 1.05)`, or matplotlib zooms to fit and the gap between the two lines stops being visible. |
 
-### Page 33.3 — The bake-off table
+**A4(j).** **(e), (f), (g) and (i)** produce no error at all. (e) gives a shapeless curve, (f) gives a plausible wrong number — 0.504 instead of 0.669 on our depth-5 tree — (g) quietly peeks at the test answers, and (i) gives a chart that hides the very thing it was drawn to show. **All four are worse than the ones that crash.**
 
-The complete working file is in section 5. Real output:
+**A4(k).** **Count the `train_test_split` lines in the file.** There must be exactly **one**, and it must be **above** the `for`.
+
+**A4(l).** **Leakage** — letting information from the test rows into something that was supposed to be built from the training rows only. Same family as Week 30's scaler fitted on everything.
+
+**A5.** 1 → **E** · 2 → **A** · 3 → **C** · 4 → **G** · 5 → **B** · 6 → **F** · 7 → **D**
+
+**A5(a).** `argmax` gives you the **position** of the biggest number in a list, not the number itself. The biggest test score sits at **position 3**, and `depths[3]` is **4**, because positions start at 0 and our depths start at 1. If you print `np.argmax(test_scores)` you get 3; if you print `depths[3]` you get 4. **Never quote the position as if it were the depth.**
+
+> **Teacher note.** A5 has one correct pairing per item and the answer line above is the whole key. The common slip is quoting the argmax position (3) as the depth; A5(a) is there to catch it.
+
+**A6.** **A** = train R² (rows it studied) · **B** = test R² (rows it never saw) · **C** = 4 · **D** = underfitting · **E** = overfitting
+
+**A6(f).** **The round-marker line never once goes down.** That is the give-away, and it is not a coincidence — a training score *cannot* fall as you give the model more room, because a more complex model has every option the simpler one had plus more. **Any line that rises monotonically for fifteen steps is the training score.**
+
+**A6(g).** *"After here it is memorising."*
+
+> **Teacher note — depth 9.** Students often circle the test bump at depth 9 (0.283 against 0.221 at depth 6) as a discovery. With 89 test patients one patient is worth about 0.01 of R², so a 0.06 difference is roughly six patients changing sides, which is real but inside the wobble. Read the trend over fifteen steps and the gap column, which grows from 0.174 to 0.955 and never recovers. To check properly, re-run with a different `random_state` on the split; the bump does not survive. (The Differentiation section has the real numbers for `random_state=1`.)
+
+---
+
+### Practice Set B
+
+**B1.**
+
+```python
+print("RMSE:", round(np.sqrt(mean_squared_error(y_test, guesses)), 2))
+```
 
 ```text
-rows and columns: (442, 10)
-the answer runs from 25.0 to 346.0
+RMSE: 53.85
+```
+
+**Why no `squared=False`:** it was removed from scikit-learn. Roughly a thousand tutorials still show it and they are all out of date. **The error message is more current than the tutorial.**
+
+**B2.**
+
+```python
+lazy = np.zeros(len(y_test)) + y_train.mean()
+print("baseline MAE :", round(mean_absolute_error(y_test, lazy), 2))
+print("baseline RMSE:", round(np.sqrt(mean_squared_error(y_test, lazy)), 2))
+print("baseline R2  :", round(r2_score(y_test, lazy), 3))
+```
+
+```text
+baseline MAE : 64.01
+baseline RMSE: 73.22
+baseline R2  : -0.012
+```
+
+**Why `y_train.mean()` and not `y_test.mean()`:** using the test mean would mean the baseline had **looked at the answers it was about to be tested on**. That is leakage, and it would make the baseline unfairly good.
+
+**Why R² is −0.012 and not exactly 0.000:** because R² is defined against the **test set's own** mean, and we guessed the **training** mean instead. The two means are close but not identical, so our honest baseline lands a whisker below zero. If you had cheated and used `y_test.mean()`, you would get exactly 0.000 — **and that exact zero would be the tell-tale sign of the cheat.**
+
+**B3.**
+
+```python
+for name, model in [("kNN, k = 5", KNeighborsRegressor(n_neighbors=5)),
+                    ("linear regression", LinearRegression())]:
+    model.fit(X_train, y_train)
+    errors = np.abs(y_test - model.predict(X_test))
+    print(f"{name:20s} worst {errors.max():7.2f}   over 100: {(errors > 100).sum()}")
+```
+
+```text
+kNN, k = 5           worst  138.80   over 100: 9
+linear regression    worst  154.49   over 100: 5
+```
+
+**How the line manages a worse worst miss and a better RMSE:** because RMSE averages **all** the squared misses, not just the biggest one. The line has one spectacular failure at 154.49 and then only four more over 100. kNN's biggest is smaller, but it has **nine** over 100. Nine large squares outweigh five slightly larger ones. **RMSE is about the whole tail, not the champion.**
+
+**B4.**
+
+```python
+# wb4_k_dial.py  -  turn kNN's dial. It runs BACKWARDS.
+import numpy as np
+from sklearn.datasets import load_diabetes
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsRegressor
+
+data = load_diabetes()
+X_train, X_test, y_train, y_test = train_test_split(
+    data.data, data.target, test_size=0.2, random_state=42)
+
+print(f"{'k':>3} {'train R2':>9} {'test R2':>8} {'gap':>7}")
+best_k, best_score = 0, -99
+for k in [1, 2, 3, 5, 8, 12, 20, 30, 50]:
+    knn = KNeighborsRegressor(n_neighbors=k)
+    knn.fit(X_train, y_train)
+    train_r2 = knn.score(X_train, y_train)
+    test_r2 = knn.score(X_test, y_test)
+    print(f"{k:3d} {train_r2:9.3f} {test_r2:8.3f} {train_r2 - test_r2:7.3f}")
+    if test_r2 > best_score:
+        best_k, best_score = k, test_r2
+print()
+print("best test R2", round(best_score, 3), "at k =", best_k)
+```
+
+```text
+  k  train R2  test R2     gap
+  1     1.000    0.020   0.980
+  2     0.744    0.332   0.411
+  3     0.636    0.365   0.271
+  5     0.584    0.430   0.154
+  8     0.540    0.439   0.101
+ 12     0.516    0.427   0.089
+ 20     0.489    0.424   0.065
+ 30     0.470    0.411   0.059
+ 50     0.447    0.430   0.017
+
+best test R2 0.439 at k = 8
+```
+
+**The sentence about `k = 1`:** *"With `k = 1` the train R² is a perfect 1.000 and the test R² is 0.020 — a gap of 0.980 — because every training patient is **its own nearest neighbour**, so asked about a row it has already seen the model finds that exact row at distance zero and reports its answer back. It is a lookup table with extra steps. **That is Sam, in a completely different model.**"*
+
+**And notice the dial runs backwards.** For a tree, small `max_depth` is simple. For kNN, **large `k` is simple** and `k = 1` is the most complex setting there is. The gap column shrinks steadily as `k` grows, which is exactly what "less room to bend" looks like.
+
+**B5.**
+
+```python
+# wb5_bakeoff_plus.py  -  the bake-off with the worst single miss added
+import numpy as np
+from sklearn.datasets import load_diabetes
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+data = load_diabetes()
+X_train, X_test, y_train, y_test = train_test_split(
+    data.data, data.target, test_size=0.2, random_state=42)
+print("train rows:", len(X_train), " test rows:", len(X_test))
+print()
+
+
+def report(name, model):
+    model.fit(X_train, y_train)
+    guesses = model.predict(X_test)
+    errors = np.abs(y_test - guesses)
+    print(f"{name:22s} {mean_absolute_error(y_test, guesses):7.2f} "
+          f"{np.sqrt(mean_squared_error(y_test, guesses)):7.2f} "
+          f"{errors.max():7.2f} {(errors > 100).sum():9d} "
+          f"{r2_score(y_test, guesses):9.3f}")
+
+
+print(f"{'model':22s} {'MAE':>7s} {'RMSE':>7s} {'worst':>7s} {'over 100':>9s} {'test R2':>9s}")
+lazy = np.zeros(len(y_test)) + y_train.mean()
+lazy_err = np.abs(y_test - lazy)
+print(f"{'always guess the mean':22s} {mean_absolute_error(y_test, lazy):7.2f} "
+      f"{np.sqrt(mean_squared_error(y_test, lazy)):7.2f} {lazy_err.max():7.2f} "
+      f"{(lazy_err > 100).sum():9d} {r2_score(y_test, lazy):9.3f}")
+report("kNN, k = 5", KNeighborsRegressor(n_neighbors=5))
+report("tree, max_depth=4", DecisionTreeRegressor(max_depth=4, random_state=0))
+report("tree, no limit", DecisionTreeRegressor(random_state=0))
+report("linear regression", LinearRegression())
+```
+
+```text
 train rows: 353  test rows: 89
 
+model                      MAE    RMSE   worst  over 100   test R2
+always guess the mean    64.01   73.22  156.26        15    -0.012
+kNN, k = 5               42.77   54.95  138.80         9     0.430
+tree, max_depth=4        46.44   58.60  147.50         8     0.352
+tree, no limit           56.57   72.90  201.00        14    -0.003
+linear regression        42.79   53.85  154.49         5     0.453
+```
+
+**Which model I would ship, with two numbers:**
+
+> **Linear regression.** Best test R² in the table (**0.453**, against 0.430 for kNN and 0.352 for the best tree), best RMSE (**53.85**), and only **five** misses over 100 where kNN has nine and the unlimited tree has fourteen. Its train R² is 0.528 against a test of 0.453, so the gap is only **0.075** and it is clearly not memorising.
+
+*(Note the depth-4 tree has fewer misses over 100 than kNN — eight against nine — even though its MAE and RMSE are worse, a point in its favour that MAE and RMSE both hide. Real tables have arguments in them, and pointing that out is worth marks.)*
+
+---
+
+### Fix the Broken Program
+
+**Bug 1 — the missing colon.**
+
+**Why it is the friendliest error in the year:** because it says **exactly what is missing** — `expected ':'` — and points a caret at **exactly where it goes.** Most errors describe a symptom; this one names the character. There is nothing to work out.
+
+**The fix:**
+
+```python
+for depth in range(1, 9):
+```
+
+**Bug 2 — the tuple.**
+
+**What a tuple is, in plain words:** **several things wrapped up as one**, and it cannot be changed afterwards. You have printed one every time you printed a `.shape` — `(6, 1)` is a tuple of two numbers. The round brackets and comma are the give-away.
+
+**How many things `plt.subplots(...)` hands back:** **two.** The **figure** (the whole sheet of paper you save) and the **axes** (the frame you draw inside). Assigning both of them to a single name gives you the pair, and a pair has no `.plot`.
+
+**The fix:**
+
+```python
+fig, ax = plt.subplots(figsize=(8, 5))
+```
+
+**Bug 3 — the silent one.**
+
+**The bug:** `train_test_split` is **inside** the loop, with no `random_state`. So every depth is trained and tested on a **different random split** of the patients.
+
+**Which line, and where it should be:** line 15. It must move **above** the `for`, and it needs `random_state=42` so it is repeatable.
+
+**What the chart is actually measuring, as it stands:** **how lucky each shuffle happened to be.** The depth is changing at the same time as the split is changing, so you cannot tell which of the two caused any difference — and the biggest changes are coming from the shuffle. Nothing errors, and the chart looks perfectly respectable.
+
+**The fix — both changed lines:**
+
+```python
+# ONE split, made BEFORE the loop, with a fixed random_state.
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42)
+
+for depth in range(1, 9):
+    tree = DecisionTreeRegressor(max_depth=depth, random_state=0)
+```
+
+**The fixed output, and it is identical every run:**
+
+| depth | train R² | test R² |
+|---|---|---|
+| 1 | 0.304 | 0.131 |
+| 2 | 0.447 | 0.295 |
+| 3 | 0.517 | 0.329 |
+| 4 | 0.585 | 0.352 |
+| 5 | 0.669 | 0.26 |
+| 6 | 0.747 | 0.221 |
+| 7 | 0.813 | 0.188 |
+| 8 | 0.873 | 0.186 |
+
+**Did the two runs match?** **Yes.** The word that guarantees it is **`random_state`** — a fixed seed makes the shuffle identical every time. Without it, `train_test_split` uses a fresh random shuffle on every run.
+
+**The counting check:** **there must be exactly one `train_test_split` in the whole file, and it must be above the loop.** Count them with your finger. For silent bugs, counting beats reading.
+
+> **Teacher note — why `linestyle="--"` on the vertical line.** So nobody mistakes it for data: every solid line on the chart is a series of measurements, and the dashed one is an annotation the author added. Keeping those visually different is part of not lying with a chart (Week 27). Bug 1 is the friendliest error of the year (it names the missing character); Bug 2's `AttributeError` on a tuple is the one students need a hint for.
+
+---
+
+### Puzzle of the Week
+
+**Part 1.**
+
+**(a)**
+
+| the five misses | MAE | MSE | RMSE |
+|---|---|---|---|
+| 4, 4, 4, 4, 4 | 4.00 | 16.00 | **4.000** |
+| 2, 3, 4, 5, 6 | 4.00 | 18.00 | **4.243** |
+| 0, 2, 4, 6, 8 | 4.00 | 24.00 | **4.899** |
+| 0, 0, 5, 5, 10 | 4.00 | 30.00 | **5.477** |
+| 0, 0, 0, 5, 15 | 4.00 | 50.00 | **7.071** |
+| 0, 0, 0, 0, 20 | 4.00 | 80.00 | **8.944** |
+
+Confirmed in code:
+
+```python
+import numpy as np
+arrangements = {
+    "4 4 4 4 4":  [4, 4, 4, 4, 4],
+    "2 3 4 5 6":  [2, 3, 4, 5, 6],
+    "0 2 4 6 8":  [0, 2, 4, 6, 8],
+    "0 0 5 5 10": [0, 0, 5, 5, 10],
+    "0 0 0 5 15": [0, 0, 0, 5, 15],
+    "0 0 0 0 20": [0, 0, 0, 0, 20],
+}
+print(f"{'misses':14s} {'MAE':>6s} {'MSE':>8s} {'RMSE':>7s}")
+for name, m in arrangements.items():
+    m = np.array(m, dtype=float)
+    print(f"{name:14s} {m.mean():6.2f} {(m ** 2).mean():8.2f} "
+          f"{np.sqrt((m ** 2).mean()):7.3f}")
+```
+
+```text
+misses            MAE      MSE    RMSE
+4 4 4 4 4        4.00    16.00   4.000
+2 3 4 5 6        4.00    18.00   4.243
+0 2 4 6 8        4.00    24.00   4.899
+0 0 5 5 10       4.00    30.00   5.477
+0 0 0 5 15       4.00    50.00   7.071
+0 0 0 0 20       4.00    80.00   8.944
+```
+
+**(b)** Every MAE is 4.00. **The RMSE more than doubles**, from 4.000 to 8.944.
+
+**(c)** **4, 4, 4, 4, 4** gives the smallest RMSE — exactly **4.000**, equal to the MAE. What is special: **every miss is the same size**, so squaring cannot favour any of them.
+
+**(d)** **0, 0, 0, 0, 20** gives the largest, **8.944**. What is special: **the entire error is concentrated in one prediction.** 20 squared is 400, and 400 dwarfs anything you could get by spreading the same total across five slots.
+
+**(e)** *"For a fixed MAE, RMSE is smallest when the misses are all **the same size**, and largest when the misses are all **piled up** in one place."*
+
+**(f)** **No — RMSE can never be smaller than MAE.** The best you can do is make them equal, which happens exactly when every miss is identical. Squaring stretches anything above the average size more than it shrinks anything below it, so the average of the squares is always pulled up, and taking the root afterwards never quite undoes that pull. **RMSE ≥ MAE, always.** That is why "RMSE is bigger than MAE" tells you nothing on its own — the useful question is **how much** bigger.
+
+**(g)** **Order from firm A** — every delivery is four minutes out, which is annoying and completely predictable, and you can plan round it. **Never let firm B deliver a birthday cake** — four times out of five it is exactly on time, and the fifth time it is **twenty minutes late**, which is the one occasion where the timing was the entire point.
+
+**Part 2.**
+
+**(h)**
+
+| depth | most leaves possible |
+|---|---|
+| 1 | 2 |
+| 2 | 4 |
+| 4 | 16 |
+| 8 | 256 |
+| 9 | 512 |
+| 10 | 1024 |
+
+**(i)** **Depth 9.** Depth 8 gives at most 256 leaves and we have 353 patients, so 8 is not enough. Depth 9 gives 512, which is more than enough.
+
+**(j)** Because **most branches run out of work long before they run out of depth.** A branch stops the moment its pile of patients all agree closely enough, and there is nothing left to split. The maximum assumes every branch splits every time, all the way down, which never happens on real data. 176 out of a possible 512 is normal.
+
+**(k)** Because a branch stops as soon as every patient in it has the **same answer**, not only when they have the same measurements. All 353 training patients have different measurements, but some pairs happen to share the same progression number (for example two patients both at 178), so they can sit together in one pure leaf and there is nothing left to split. *(That is different from Ines and Jai in Week 31, who looked identical to the model but had different answers.)*
+
+**(l)** **"`max_depth` is a ceiling, not a target — once a tree has run out of impure leaves to split, raising the ceiling changes nothing at all."**
+
+> **Teacher note — Puzzle Part 2.** Real values to have to hand: the unlimited tree reaches a real depth of 19 with 346 leaves on 353 training rows, and the depth-15 tree has 329 leaves. Setting `max_depth` to 20, 25 or 100 changes nothing, because there is nothing impure left to split.
+
+---
+
+### Think Deeper
+
+**T1 — why 1.000 is not good news.**
+
+> Imagine somebody hands you a booklet of 200 practice questions with the answers printed in the back, and you memorise all 200 question-answer pairs word for word. On the practice booklet you score 200 out of 200. That number is completely true — you did not cheat, you really did get every one right. But it tells nobody anything about Friday's test, because Friday's test has different numbers in it.
+>
+> A model that scores 1.000 on the rows it was trained on has done exactly that. Our unlimited tree grew **346 leaves for 353 training patients**, which means it gave nearly every patient a private answer. It did not learn anything about the illness; it wrote down a phone book. And when we showed it 89 patients it had never seen, it scored **−0.003** — which is no better than a machine that ignores all ten measurements and says the average every single time.
+>
+> So the number I would ask for is **the score on rows the model has never seen**, and I would want to know **how many rows that was**. Then I would ask for both numbers together, because train and test *together* are a diagnosis and neither alone is anything. If both are low, it is too simple. If train is high and test is low, it memorised. The difference between the two has a name — the **train/test gap** — and it is the size of the memorising.
+
+**T2 — what choosing depth 4 cost us.**
+
+> We ran the loop fifteen times, looked at the test score each time, and picked the best-looking one. That means **the 89 test patients influenced a decision**, and once they have influenced a decision they are no longer completely fresh. Some of the 0.352 at depth 4 is real signal, and some of it is us having got lucky on those particular 89 people. So the number is a little **optimistic** — if we found another 89 patients tomorrow, we would probably score slightly worse.
+>
+> We did it anyway because with 442 rows it is the best method available. We cannot afford to carve off a third pile of patients to make the choice with and still have a test set worth having, and choosing a depth *without* looking at any unseen score would be pure guesswork. The proper fix is called **cross-validation**, which reuses the training rows cleverly instead of spending fresh ones, and that is next year.
+>
+> So the fix this year is writing it down. Next to the number I will write, word for word: **"I chose the depth by looking at the test curve, so this estimate is slightly optimistic."** And I will add the size of the test set — **89 rows, so one row is worth about 0.01 of R²** — because that tells the reader that any difference smaller than about 0.03 between two models is inside the noise and should not be claimed as a win. That sentence is a **finding**, not an apology.
+
+---
+
+### Build It
+
+**Part 1 — the bake-off.** Training rows **353**, test rows **89**.
+
+```text
 model                      MAE    RMSE   test R2   train R2
 always guess the mean    64.01   73.22    -0.012      0.000
 kNN, k = 5               42.77   54.95     0.430      0.584
@@ -1330,40 +1764,16 @@ tree, no limit           56.57   72.90    -0.003      1.000
 linear regression        42.79   53.85     0.453      0.528
 ```
 
-**33.3(a) Which row shows a perfect training score? What is its test score?**
-`tree, no limit`. Train R² **1.000**, test R² **−0.003**. Perfect on the 353 it learned from; no better than guessing the average on the 89 it had not seen.
+Gaps: baseline 0.012 · kNN 0.154 · depth-5 tree 0.409 · unlimited tree **1.003** · linear **0.075**.
 
-**33.3(b) Why is the baseline row in the table at all?**
-Because without it, no other number means anything. MAE 42.77 sounds like nothing until you know that ignoring all ten measurements and guessing the average is off by 64.01. Then 42.77 becomes "a third less wrong than not bothering". Same lesson as Level 1's Week 12: compute the ruler before you measure with it.
+> **train R² 1.000** means: on the 353 patients it learned from, this tree is **never wrong. Not once.**
+>
+> **test R² −0.003** means: on the 89 patients it had never seen, it is **no better than a machine that ignores all ten measurements and guesses the average** (that machine scores −0.012).
 
-**33.3(c) kNN and the line have almost the same MAE. Which is better, and how do you know?**
-The line. MAE is a dead heat — 42.77 against 42.79, two hundredths apart on a scale that runs to 346 — but the line's RMSE is lower, 53.85 against 54.95. RMSE squares the misses, so a lower RMSE at equal MAE means fewer or smaller *big* misses. Counting them confirms it: **kNN has nine misses over 100, the line has five.** Typical performance identical; big-miss behaviour better for the line.
+> **Teacher note — worst single miss, depth-5 tree version.** If the student adds the worst-miss column to this five-row table, the real values are: baseline 156.26, kNN 138.80, tree max_depth=5 201.00, tree no limit 201.00, linear 154.49. The line has a worse worst miss than kNN and still a lower RMSE, which is why "RMSE tells you the worst error" is a tempting sentence that is not true. (Practice Set B5 gives the same column for the max_depth=4 tree.)
+> **Marking Part 1 as a marked item:** the row counts (353 training, 89 test) and the metric names in the column headers must be written on the page. A table of bare numbers is not a result.
 
-**33.3(d) Add the worst single miss and explain the surprise.**
-
-```python
-worst = np.abs(y_test - guesses).max()
-```
-
-Real values: kNN **138.80**, tree depth 5 **201.00**, tree no limit **201.00**, linear **154.49**, baseline 156.26.
-
-The surprise: the line has a **worse** single worst miss than kNN (154.49 against 138.80) and still a **lower** RMSE. So RMSE is not "the worst miss" — it is about the whole tail of large misses, and the line has fewer of them. **This is why "RMSE tells you the worst error" is a tempting sentence that is not true.**
-
-**33.3(e) The two trees, side by side. What did turning the dial up do?**
-
-| | train R² | test R² | gap |
-|---|---|---|---|
-| tree, max_depth=5 | 0.669 | 0.260 | 0.409 |
-| tree, no limit | 1.000 | −0.003 | 1.003 |
-
-It made the training score better and the model worse. Train went 0.669 → 1.000, an apparent triumph. Test went 0.260 → −0.003, an actual disaster. **That single comparison is why a training score is not evidence.**
-
-**33.3(f) Where is the `StandardScaler`? Week 30 said kNN needs one.**
-A very good thing to notice. This dataset arrives already scaled — whoever prepared it centred and scaled every column. So kNN does not need one here. If the columns had been raw (blood sugar in the hundreds, a body-mass index around 25), kNN would need scaling and the tree would not.
-
-### Page 33.4 — The depth curve (homework)
-
-The complete working file is in section 7. Real output:
+**Part 2 — the depth curve.**
 
 ```text
 depth  leaves  train R2  test R2     gap
@@ -1385,86 +1795,107 @@ depth  leaves  train R2  test R2     gap
 
 best test R2 was 0.352 at max_depth = 4
 training rows: 353  leaves at depth 15: 329
-saved week33_depth_curve.png
 ```
 
-**33.4(a) At which depth is the test score highest?**
-**Depth 4**, test R² **0.352**. The tree has **16** leaves there.
+**Part 3 — the four pens.**
 
-**33.4(b) Does the train score ever go down?**
-No. Not once in fifteen steps: 0.304 → 0.999, rising every single time.
+- **Pen 1:** *"It never goes down. Not once, in fifteen steps — 0.304 up to 0.999."*
+- **Pen 2:** *"0.352, at depth 4."*
+- **Pen 3:** *"0.174 at depth 1, up to 0.955 at depth 15."*
+- **Pen 4:** *"329 leaves for 353 patients."*
 
-**33.4(c) What is the gap at depth 2, and at depth 15?**
-0.152 at depth 2. **0.955** at depth 15. Growing by more than six times.
+**Part 4 — taking `set_ylim` out.** Matplotlib zooms to fit whatever it is given. Without the fixed limits, the axis shrinks to roughly the range of the data, the test line fills the frame and looks dramatic, and **the vertical distance between the two lines stops being visible.** The gap is the entire story of the chart, so hiding it is not a cosmetic problem — **it is the chart failing to say the thing it was drawn to say.** Week 27's lesson, in a new costume.
 
-**33.4(d) How many leaves at depth 15, and how many training rows?**
-**329 leaves for 353 training patients.** Nearly one private leaf per patient. That is a lookup table, not a rule about diabetes.
+**Part 5 — the three sentences.**
 
-**33.4(e) Why must the split be made before the loop?**
-Because if you re-split inside the loop, each depth is tested on a different set of 89 patients, so the differences between depths would be measuring which shuffle happened to be lucky rather than what depth does. The curve comes out shapeless — **and nothing errors**, which is what makes it dangerous. There must be exactly one `train_test_split` in the file, above the `for`.
-
-**33.4(f) Why is `linestyle="--"` used for the vertical line?**
-So nobody mistakes it for data. Every solid line on that chart is a series of measurements; the dashed one is an annotation the author added. Keeping those visually different is part of not lying with a chart, which was Week 27.
-
-**33.4(g) Test R² at depth 9 (0.283) is higher than at depth 6 (0.221). Does that break the story?**
-No, and it is a sharp thing to notice. With 89 test patients, one patient is worth roughly 0.01 of R², so a difference of 0.06 is about six patients changing sides — real, but well inside the wobble you would expect. Read the trend over all fifteen steps rather than step to step, and look at the `gap` column, which grows almost without interruption from 0.174 to 0.955 and never recovers. To check it properly, re-run with a different `random_state` on the split and see whether the bump survives. It generally does not.
-
-### Page 33.5 — The three sentences (homework)
-
-**Full-credit answer:**
-
-> **Sentence one — the train line.** The train R² rises at every single depth, from 0.304 to 0.999, and it can only go up: a deeper tree has every question a shallower one had plus more, so it can never do worse on the rows it learned from. That means the train column is arithmetic, not evidence.
+> **Sentence one — the train line.** The train R² rises at every single depth, from 0.304 to 0.999, and it **can only** go up: a deeper tree has every question a shallower one had plus more, so it can never do worse on the rows it learned from. That makes the train column arithmetic, not evidence.
 >
-> **Sentence two — the test peak.** The test R² peaks at 0.352 at max_depth 4, where the tree has 16 leaves, and then falls all the way to 0.044 by depth 15, where it has 329 leaves for 353 training patients — almost one private leaf per person.
+> **Sentence two — the test peak.** The test R² peaks at **0.352 at max_depth 4**, where the tree has **16 leaves**, and then falls all the way to 0.044 by depth 15, where it has **329 leaves for 353 training patients** — almost one private leaf per person.
 >
-> **Sentence three — the gap.** The gap is train minus test, and it measures how much of the model's apparent skill is really just memorising these particular 353 patients; it grows from 0.174 at depth 1 to 0.955 at depth 15, which means by the end almost all of that perfect-looking training score is memorisation and none of it carries over.
+> **Sentence three — the gap.** The gap is train minus test, and it measures **how much of the model's apparent skill is really just memorising these particular 353 patients**; it grows from 0.174 at depth 1 to 0.955 at depth 15, which means that by the end almost all of that perfect-looking training score is memorisation and none of it carries over.
 
-**Marking:** one mark each for the direction of the train line, the reason it cannot fall, the peak depth, the leaf count at the peak, the leaf count at the end against the row count, and a plain-words definition of the gap. Six marks. A student who says "the gap is the difference between the scores" without saying what it *measures* gets five.
+**Marking, one mark each:** the direction of the train line · the reason it cannot fall · the peak depth · the leaf count at the peak · the leaf count at the end against the row count · a plain-words definition of the gap. **Six marks.** Saying "the gap is the difference between the scores" without saying what it *measures* scores five.
 
-**33.5(a) Why are depth 1 and depth 15 wrong for different reasons?**
-Depth 1 is **underfitting**: with one question it can only give two answers, so it cannot describe 442 patients — train 0.304 and test 0.131, both low, tiny gap. Depth 15 is **overfitting**: it describes these 353 patients in enormous detail, including the parts that were random, so train 0.999 and test 0.044, with a gap of 0.955. One has not learned enough. The other has learned things that were never true in general. **Turning the dial the wrong way fixes one and worsens the other**, which is exactly why you plot the curve instead of guessing.
+> **Teacher note — Part 5 in class.** This three-sentence paragraph is the target set out in section 8 of this guide. Make the student write it rather than say it; "the gap is the difference between the scores" is the usual five-out-of-six answer.
 
-**33.5(b) What would you expect to happen at depth 20?**
-Almost nothing. The tree with no limit reaches a real depth of 19 with 346 leaves, so by depth 19 there is nothing impure left to split. Setting `max_depth` to 20, 25 or 100 changes nothing — the real depth stays 19, the leaves stay 346, and every score is identical. `max_depth` is a **ceiling, not a target**.
-
-### Page 33.6 — The decision, the honesty, and the Bug Log (homework)
-
-**33.6(a) Which model would you ship, and why?**
+**Part 6 — the decision and the honesty.**
 
 A full-credit answer names one model and cites at least two numbers. The strongest case:
 
-> I would ship **linear regression**. It has the best test R² of anything in the table (0.453 against 0.430 for kNN and 0.352 for the best tree), the best RMSE (53.85), and an MAE of 42.79 — a third better than the 64.01 you get from ignoring every measurement and guessing the average. Its train R² is 0.528 against a test of 0.453, so the gap is only 0.075 and it is clearly not memorising. It also has the fewest surprises: only five misses over 100 points, where kNN has nine.
+> I would ship **linear regression**. It has the best test R² in the table (**0.453**, against 0.430 for kNN and 0.352 for the best tree), the best RMSE (**53.85**), and an MAE of 42.79 — a third better than the **64.01** you get from ignoring every measurement and guessing the average. Its train R² is 0.528 against a test of 0.453, so the gap is only **0.075** and it is clearly not memorising. It also has the fewest big surprises: **five** misses over 100 points where kNN has nine.
 
-An equally creditable answer argues the other way, and should be marked just as highly if the numbers are there:
+An answer arguing the other way is worth **just as much** if the numbers are there:
 
-> I would ship the **depth-4 tree**, even though it scores lower (0.352 against 0.453), because its answer is 16 rules I can print on one page and read out to a doctor, and a prediction about somebody's illness that nobody can explain is not much use however accurate it is. I would report both scores side by side so the cost of that choice is written down: I am giving up about 0.1 of R² to get an explanation.
+> I would ship the **depth-4 tree**, even though it scores lower (0.352 against 0.453), because its answer is **16 rules** I can print on one page and read out to a doctor, and a prediction about somebody's illness that nobody can explain is not much use however accurate it is. I am giving up about **0.1 of R²** to get an explanation, and I would report both scores side by side so that cost is written down.
 
-**Not** creditable: naming a model with no numbers, or naming the unlimited tree because it scored 1.000.
+**Not creditable:** naming a model with no numbers, or naming the unlimited tree because it scored 1.000.
 
-**33.6(b) The honesty section — three bullets.**
+**The three honesty bullets:**
 
-> - **My test set is 89 patients.** One patient moving is worth roughly 0.01 of R², so any difference smaller than about 0.03 between two models is inside the noise and I should not claim it. The 0.023 between kNN (0.430) and the line (0.453) is right on that boundary, so "the line is better" is a weak claim on test R² alone — it is the RMSE and the big-miss count that make it stronger.
-> - **I chose the depth by looking at the test curve, so this estimate is optimistic.** I looked at those 89 patients fifteen times and picked the best-looking answer, so some of that 0.352 is luck on these particular 89. The proper fix is cross-validation, which is next year.
-> - **One thing that makes this easier than real life:** the dataset arrived clean, complete and already scaled. Nothing was missing, nothing was misspelled, no duplicates, no units to reconcile. Real data would have cost me most of a week before any of this started — as Weeks 23 and 24 showed.
+> - **My test set is 89 rows**, so one row is worth roughly **0.01** of R², which means any difference smaller than about **0.03** between two models is inside the noise and I should not claim it. The 0.023 between kNN (0.430) and the line (0.453) sits right on that boundary — so *"the line is better"* is a weak claim on test R² alone, and it is the RMSE and the big-miss count that make it strong.
+> - **"I chose the depth by looking at the test curve, so this estimate is optimistic."** I looked at those 89 patients fifteen times and picked the best-looking answer. The proper fix is cross-validation, next year.
+> - **One thing that makes this easier than real life:** the dataset arrived clean, complete and already scaled. Nothing missing, nothing misspelled, no duplicates, no units to reconcile. Real data would have cost me most of a week before any of this started — as Weeks 23 and 24 showed.
 
-**33.6(c) Look back at what you wrote in Week 29.**
+**Part 7 — back to Week 29.** This is your own record, so what is marked is the **reflection**, not the numbers. A full-credit sentence names the phenomenon and the fix:
 
-This is the student's own record, so mark the reflection rather than the numbers. A full-credit sentence names the phenomenon and the fix:
+> In Week 29 I wrote down that my model got more right on the flowers it had learned from than on the flowers I hid, and I did not know why. Now I know that difference is called the **train/test gap**, that it measures how much the model is memorising rather than learning, and that the way to shrink it is to give the model **less room** — a smaller `max_depth`, or a bigger `k`.
 
-> In Week 29 I wrote down that my model got more right on the flowers it had learned from than on the flowers I hid, and I didn't know why. Now I know that difference is called the **train/test gap**, that it measures how much the model is memorising rather than learning, and that the way to shrink it is to give the model less room — a smaller `max_depth`, or a bigger `k`.
+**Part 8 — the Bug Log.**
 
-**The two Bug Log entries.**
+| What happened | The real message | What fixed it | What I will check next time |
+|---|---|---|---|
+| Copied `squared=False` from a tutorial | `TypeError: got an unexpected keyword argument 'squared'` | Did the root myself: `np.sqrt(mean_squared_error(y_true, y_pred))`. That setting has been removed. **The error is more up to date than the tutorial.** | Trust the error over the web page. |
+| Left `fit` out of the loop | `sklearn.exceptions.NotFittedError: This DecisionTreeRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.` | Put `tree.fit(X_train, y_train)` inside the loop, above both `.score()` calls. A fresh model each time round needs a fresh fit each time round. | If I build a model inside a loop, the fit goes inside too. |
 
-| Message | What it means | The fix |
+**The silent bug:**
+
+| What it looked like | Why nothing errored | How I would catch it |
 |---|---|---|
-| `TypeError: got an unexpected keyword argument 'squared'` | I passed `squared=False` to `mean_squared_error`, and that setting has been removed from modern scikit-learn. Most tutorials online still show it. | Do it myself: `np.sqrt(mean_squared_error(y_true, y_pred))`. Lesson: **the error message is more up to date than the tutorial.** |
-| `sklearn.exceptions.NotFittedError: This DecisionTreeRegressor instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.` | I asked a brand-new tree for its score before it had learned anything, because I left `fit` out of the loop. | Put `tree.fit(X_train, y_train)` inside the loop, above both `.score()` calls. A fresh model each time round the loop needs a fresh `fit` each time round. |
+| `train_test_split` inside the loop, with no `random_state`. The curve came out as a jagged mess with no shape, and two runs of the same file gave completely different numbers. | It is perfectly valid Python and perfectly valid scikit-learn. Every line does exactly what it says. It just measures **shuffle luck** instead of depth. | **Count the `train_test_split` lines.** There must be exactly **one**, and it must be **above** the loop. And run the file twice: if the numbers change, something is unseeded. |
 
-**33.6(d) Bonus — the silent bug.** Write down one bug from this week that produces **no error at all** and say how you would catch it.
+*(A second silent bug worth logging: swapping the arguments in `r2_score`. The right way round our depth-5 tree scores **0.669** on its training rows; the wrong way round it prints **0.504**. Both look believable. Truth first, guesses second, always.)*
 
-> Re-splitting inside the loop. `train_test_split` inside the `for` gives every depth a different test set, so the curve measures shuffle luck instead of complexity — and nothing errors, so the chart looks perfectly respectable. I catch it by counting: there must be exactly **one** `train_test_split` in the whole file, and it must be **above** the loop.
->
-> (A second one: swapping the arguments in `r2_score`. The right way round my depth-5 tree scores 0.669 on its training rows; the wrong way round it prints 0.504. Both look believable. Truth first, guesses second, always.)
+> **Teacher note — Part 8 and the silent bug.** Both of today's Bug Log entries are real messages the student will have met on the day; mark that they copied the real text and wrote the fix in their own words. For the bonus silent bug, the two to accept are re-splitting inside the loop and swapping the arguments to `r2_score`.
+
+---
+
+### Draw It
+
+Marked on five things:
+
+1. **Two colours or two clearly different marker shapes**, so the series can be told apart.
+2. **A y axis running from about −0.2 to 1.05**, so the vertical distance between the lines is visible. This is the one that separates a good answer from a weak one.
+3. **A dashed vertical line at the peak of the unseen-rows line** — dashed, so it does not read as data.
+4. **The sentence in the student's own handwriting**, next to the line.
+5. **At least one annotation of their own**: the gap arrowed and labelled, the underfitting region bracketed, or the depth-9 bump circled with a note that it is probably noise.
+
+The best answers treat the depth-9 bump honestly rather than ignoring it or panicking about it: *"about ten patients, not a discovery — I'd re-run with a different split to check."*
+
+---
+
+### Self-Check answers
+
+**True or false:**
+
+| Statement | Answer | Why |
+|---|---|---|
+| A train R² of 1.000 is good news | **FALSE** | It is not news at all. Ask what it scored on unseen rows. |
+| The train score can go down when you increase `max_depth` | **FALSE** | It cannot. A deeper tree has every option the shallower one had, plus more. |
+| A test R² below zero is impossible | **FALSE** | −0.003 for the unlimited tree. Zero is not a floor. |
+| RMSE tells you your single worst miss | **FALSE** | The line has a worse worst miss (154.49 vs 138.80) and a **lower** RMSE. |
+| RMSE is always greater than or equal to MAE | **TRUE** | Equal only when every miss is exactly the same size. |
+| MAE and RMSE are two names for the same thing | **FALSE** | Model A and Model B: identical MAE, RMSE three times apart. |
+| `mean_squared_error(..., squared=False)` still works | **FALSE** | Removed. Use `np.sqrt(...)`. |
+| Both ends of the complexity dial are wrong | **TRUE** | Depth 1 test 0.131; depth 15 test 0.044. Opposite reasons. |
+| For kNN, `k = 1` is the simplest setting | **FALSE** | It is the **most complex**. kNN's dial runs backwards. |
+| Re-splitting inside the loop raises an error | **FALSE** | It runs cleanly and produces a confident, meaningless chart. |
+| The baseline should use `y_train.mean()`, not `y_test.mean()` | **TRUE** | Using the test mean is peeking at the answers. |
+| Depth 4 is the right answer for every tree on every dataset | **FALSE** | It is the answer for *this* dataset on *this* split. The transferable thing is the method. |
+| The highest-scoring model is always the one you ship | **FALSE** | Readability, speed and who has to explain it all count too. |
+| `max_depth` is a target the tree tries to reach | **FALSE** | A ceiling. `max_depth=25` still gave depth 19. |
+| Choosing the depth from the test curve costs you nothing | **FALSE** | It makes the score slightly optimistic. Write the sentence. |
+
+---
 
 ### Lesson questions posed in the Say-this scripts
 

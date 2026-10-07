@@ -15,7 +15,7 @@
 | **New maths** | **None.** Every number today is a multiply, an add and a count. There is nothing new to teach the teacher mathematically — this week practises Weeks 12–21. |
 | **New syntax** | `nn.Linear(n_in, n_out)` · `nn.ReLU()` · `nn.Sequential(...)` · `nn.BCEWithLogitsLoss()` |
 | **Dataset** | `make_moons(n_samples=400, noise=0.25, random_state=0)` — 400 rows generated inside scikit-learn. **Nothing downloads. No internet needed.** |
-| **Materials** | Printed workbook pages 22.1–22.6 · a big sheet on the wall headed **PARAMETER COUNT** with two columns, `by hand` and `PyTorch` · the Bug Log · Week 19's NumPy Brain still on disk · a ruler for the dashed line |
+| **Materials** | Printed workbook (all sections) · a hand-drawn Parameter Count Race sheet (four networks, blank boxes) · a big sheet on the wall headed **PARAMETER COUNT** with two columns, `by hand` and `PyTorch` · the Bug Log · Week 19's NumPy Brain still on disk · a ruler for the dashed line |
 | **Tech needed** | Laptop with Python 3, numpy, scikit-learn, matplotlib, **torch**. Torch has been installed since Week 20. **No new installs. No torchvision.** |
 | **Prep time** | 25 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `layers.py` **instant**. `overfit.py` trains two 4,417-parameter networks for 1,500 epochs each and writes two PNGs in **1.3 seconds**. |
@@ -534,14 +534,14 @@ wrote overfit.png and dropout.png
 - [ ] **Break it on purpose, twice.** These are the two deliberate mistakes in the live-code and you should have seen both:
   1. Add `nn.Sigmoid()` as a fourth part of the model and train for 600 epochs. **No error.** Train loss stops at **0.5423** instead of 0.1538.
   2. Drop the `.reshape(-1, 1)` from `y_tr_t`. You get `ValueError: Target size (torch.Size([300])) must be the same as input size (torch.Size([300, 1]))`.
-- [ ] **Print workbook pages 22.1–22.6.**
-- [ ] **Check Week 19's `numpy_brain.py` still runs on the student's machine.** Homework 22.4 prints its four shapes beside PyTorch's, and a broken file turns a 20-minute task into an hour.
+- [ ] **Print the workbook (`workbook/week-22.md`, all sections).** Also prepare the one-page Parameter Count Race sheet for class: four networks (2 → 16 → 1, 2 → 12 → 1, 2 → 64 → 1, 64 → 64 → 10) with blank boxes for the four block counts and a total; it is not a workbook section.
+- [ ] **Check Week 19's `numpy_brain.py` still runs on the student's machine.** Homework Build It prints its four shapes beside PyTorch's, and a broken file turns a 20-minute task into an hour.
 
 ### 5 minutes on the day
 
 - [ ] Editor open, terminal ready. `layers.py` and `overfit.py` **deleted or renamed** — they type them.
 - [ ] Wall sheet up, both columns blank.
-- [ ] Workbook 22.1 out and face down. **22.1 gets filled in pen, before any code runs.**
+- [ ] Parameter Count Race sheet out and face down. **It gets filled in pen, before any code runs.**
 - [ ] Bug Log out.
 - [ ] A ruler on the desk. Objective 4 ends with a hand-drawn dashed line.
 
@@ -784,7 +784,7 @@ raw score     fed in raw     squashed twice
 
 > "Six units of range against 0.378. Sixteen times smaller. **Squash twice and a disaster scores nearly the same as a triumph** — so the training loop gets a much weaker signal, and the loss sits at about 0.54 for ever (the model can still learn to classify, as its accuracy shows, but its loss cannot get low). We are going to do this on purpose in a minute so you know what it looks like."
 
-**Do this:** Hand out workbook 22.1 — the Parameter Count Race sheet — and give them three minutes on the first two rows, **in pen**, before any code runs.
+**Do this:** Hand out the Parameter Count Race sheet (your own one-pager, see the Activity) — and give them three minutes on the first two rows, **in pen**, before any code runs.
 
 ---
 
@@ -1086,7 +1086,7 @@ This section gives the full instructions for this week's activity.
 
 ### Setup
 
-- Workbook page 22.1: four networks with blank boxes for the four block counts and a total.
+- The Parameter Count Race sheet (your own one-pager, not a workbook section): four networks with blank boxes for the four block counts and a total.
 - The wall sheet, headed **PARAMETER COUNT**, two columns, four rows.
 - A pen. **Pen, not pencil.** The point is committing to an answer.
 - Laptops closed for part 1.
@@ -1165,7 +1165,7 @@ Three questions, in this order, and do not give any of the answers:
 
 ### What "finished" looks like
 
-- Four totals in pen on page 22.1, and four matching numbers on the wall.
+- Four totals in pen on the race sheet, and four matching numbers on the wall.
 - `dropout.png` open, with both curves visible and the student able to point at the place each one turns upward.
 - The student can say, unprompted: *"dropout made it worse more slowly. It didn't stop it."*
 
@@ -1450,29 +1450,31 @@ Three checks, five minutes, exact wording.
 
 This section gives the wording for setting the homework.
 
+The workbook (`workbook/week-22.md`) is one document with named sections, not numbered pages: **Warm-Up, Do the Maths by Hand, Predict the Output, Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It, Draw It, Self-Check.** Items inside them are labelled W1–W5, M1–M4, P1–P4, A1–A7, B1–B5, T1–T2. The Parameter Count Race you run in class is **not** a workbook section: it is a sheet you hand out yourself (networks and answers are in the Activity). Workbook M4 is the same skill on four different networks, so it makes a good at-home repeat.
+
 **Say this:**
 
-> "About an hour, three pages, and part two is the one I'm marking hardest.
+> "About an hour for the part I mark hardest, and the rest of the workbook across the week, in the order it is printed.
 >
-> **First, page 22.4 — rebuild Week 19's brain in `nn.Sequential` and prove every parameter shape matches.** Open your numpy brain, print the shape of `W1`, `b1`, `W2` and `b2`. Then build the same network in `nn.Sequential` and print all four of its shapes. **Both lists, pasted, one above the other.** Then write four lines: which PyTorch block is which numpy array — and for the pair that is transposed, say so and say why that is not a problem.
+> **The part I mark hardest is Build It — rebuild Week 19's brain in `nn.Sequential` and prove every parameter shape matches.** Open your numpy brain, print the shape of `W1`, `b1`, `W2` and `b2`. Then build the same network in `nn.Sequential` and print all four of its shapes. **Both lists, pasted on the page, one above the other.** Then write four matching lines: which PyTorch block is which numpy array — and for the pair that is transposed, say so and say why that is not a problem.
 >
-> **Second, page 22.5 — the plot, and the two sentences.** Produce `overfit.png` with both curves on one axis, and **mark the epoch where validation stopped improving with a dashed vertical line.** Then two sentences: what would have happened if you had kept training past that epoch, and what number you would report if somebody asked how good this model is.
+> **Build It, part two — the plot, and the two sentences.** Produce `overfit.png` with both curves on one axis, and **mark the epoch where validation stopped improving with a dashed vertical line.** Fill in the little table of your own numbers. Then two sentences: what would have happened if you had kept training past that epoch, and what number you would report if somebody asked how good this model is.
 >
-> **Third, page 22.6 — six short questions about logits, the double squash and the vocabulary.** Ten minutes. One of them asks you to do a four-row loss by hand and I want the arithmetic, not the answer."
+> **Everything else in the workbook is the practice for those two.** Warm-Up first, then Do the Maths by Hand — I want the arithmetic written out, not just the answers — then Predict the Output, both practice sets, Fix the Broken Program, the Puzzle, Think Deeper, Draw It, and the Self-Check last. In Predict the Output, write the answer *before* you run anything."
 
-**Workbook pages:** 22.1, 22.2, 22.3 in class · **22.4, 22.5, 22.6** at home.
+**Workbook split:** the Parameter Count Race is done **in class** (teacher's sheet, see the Activity). **At home:** the whole workbook, with **Build It** marked hardest. If the week is short, the sections to protect are Do the Maths by Hand (M4 is the counting skill), Predict the Output, Fix the Broken Program and Build It; Puzzle of the Week, Think Deeper and Draw It are the ones that can slip to the following weekend.
 
-**Expected time:** 25 min on the two shape lists and the four matching lines · 25 min on the plot and the two sentences · 10 min on the six questions. **About 60 minutes.**
+**Expected time:** 25 min on the two shape lists and four matching lines · 25 min on the plot and the two sentences · about 10 min on the Bug Log and Self-Check. **About 60 minutes for Build It**; the other sections are the student's own pace across the week.
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the second is the real one. **One — are both shape lists actually pasted?** A page that says "they match" without the two lists has not done the task; the whole point is the comparison. **Two — does the dashed line land at the right epoch, and is it justified?** The good answer says *"epoch 39, because that is the lowest the validation loss ever gets"*; the weak answer puts the line where the curves cross, which is a different place and a different idea. **Three — for the transposed pair, is the explanation right?** *"PyTorch stores it outputs-first and multiplies by the transpose, so it holds the same 32 numbers"* is full marks. *"PyTorch is backwards"* is not, and the difference matters: one of those students will spend an hour next week trying to fix it.
+> **🧑‍🏫 What to look for when you mark Build It:** three things, and the second is the real one. **One — are both shape lists actually pasted?** A page that says "they match" without the two lists has not done the task; the whole point is the comparison. **Two — does the dashed line land at the right epoch, and is it justified?** The good answer says *"epoch 39, because that is the lowest the validation loss ever gets"*; the weak answer puts the line where the curves cross, which is a different place and a different idea. **Three — for the transposed pair, is the explanation right?** *"PyTorch stores it outputs-first and multiplies by the transpose, so it holds the same 32 numbers"* is full marks. *"PyTorch is backwards"* is not, and the difference matters: one of those students will spend an hour next week trying to fix it.
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every workbook section and item is restated below in workbook order, so you can mark from this page alone. The values match the workbook's own Answers section. The first part is the in-class race, which is not a workbook section.
 
-### Page 22.1 — Parameter Count Race (in pen, in class)
+### In class — Parameter Count Race (teacher's sheet, in pen)
 
 *For each network, the four block counts and the total.*
 
@@ -1494,58 +1496,184 @@ Every question restated, so you can mark from this page alone.
 
 **Marking notes.** A total that is short by exactly the sum of the hidden and output widths (48, 36, 192, 4736) is the missing-biases error and it is worth one line of feedback every week until it stops. The fourth row is next week's network, so getting 4,810 today is worth pointing out loud.
 
-### Page 22.2 — Predict the shape (in pen, before running)
+### Workbook — ✅ Warm-Up
 
-*For each layer, the shape PyTorch will print for `weight` and for `bias`, and the total count.*
+**W1.** In order: `optimizer.zero_grad()` (wipe last step's slopes) · the forward pass `pred = model(X)` · the loss `loss = loss_fn(pred, y)` · `loss.backward()` (work out every slope) · `optimizer.step()` (nudge every knob).
 
-| Layer | `weight` shape | `bias` shape | total |
+**W2.** `optimizer.zero_grad()`. **No error at all.** The gradients from every previous step stay on the tensors and the new ones are added to them, so the steps get bigger and bigger and the run falls apart. Week 21's run went down at step 1 and was a wreck by step 399.
+
+**W3.** **No.** It resets the **slopes** (the `.grad` on each tensor) to zero. The weights keep everything they have learned; printing `w` before and after shows it does not change.
+
+**W4.** The hidden line was **`marks = 8 × hours + 12`**. Nobody told the loop either number: it started at `w = 0`, `b = 0` and found 8.0014 and 11.9939 by rolling downhill 400 times.
+
+**W5.** It stops PyTorch recording the receipt, which makes measuring faster and uses less memory. A tensor made inside the block has `requires_grad` printing **`False`**.
+
+### Workbook — 🔢 Do the Maths by Hand
+
+**M1.** `−ln(chance)`:
+
+| chance | surprise |
+|---|---|
+| 0.90 | **0.105361** |
+| 0.50 | **0.693147** |
+| 0.10 | **2.302585** |
+| 0.02 | **3.912023** |
+
+**M1(a).** 3.912023 ÷ 0.105361 = 37.13, so **about 37 times bigger**, though the chance only went 45 times smaller.
+**M1(b).** The surprise climbs slowly and then very steeply: **being a bit wrong is cheap, being confidently wrong is not.** (`−ln(0)` has no value, which is why real code clips the probability away from 0, as in Week 14's `np.clip`.)
+
+**M2.**
+
+| p | happened | chance given to what happened | surprise |
 |---|---|---|---|
-| `nn.Linear(2, 16)` | **(16, 2)** | **(16,)** | 48 |
-| `nn.Linear(16, 1)` | **(1, 16)** | **(1,)** | 17 |
-| `nn.Linear(3, 5)` | **(5, 3)** | **(5,)** | 20 |
-| `nn.Linear(64, 64)` | **(64, 64)** | **(64,)** | 4160 |
-| `nn.Linear(64, 10)` | **(10, 64)** | **(10,)** | 650 |
-| `nn.Linear(4096, 256)` | **(256, 4096)** | **(256,)** | 1048832 |
-| `nn.ReLU()` | **none** | **none** | 0 |
-| `nn.Dropout(0.3)` | **none** | **none** | 0 |
+| 0.95 | 1 | **0.95** | **0.051293** |
+| 0.60 | 0 | **0.40** | **0.916291** |
+| 0.30 | 1 | **0.30** | **1.203973** |
+| 0.05 | 0 | **0.95** | **0.051293** |
 
-**Every `weight` is (outputs, inputs).** A student who wrote all eight the other way round has one misconception, not eight mistakes — say so, and give the marks for the counts.
+Sum 2.222850, average **0.555713**.
 
-**Row 6 is the one to talk about.** 1,048,832 numbers in a single layer, for one 64 × 64 greyscale picture. Hold that number; it is Week 24's hook.
+**M2(a).** Rows 1 and 4, both 0.051293: row 4 said 0.05 and the answer was 0, so the chance on what happened is 1 − 0.05 = 0.95, the same as row 1. The loss cares how much chance you put on what actually happened, not which way round the answer was.
+**M2(b).** Row 3, 1.203973 ÷ 2.222850 = 0.5416, **about 54% of the total from one row of four.**
 
-### Page 22.3 — The four-row loss, by hand (in class)
+**Marking notes (M2).** Row 2 is the one that goes wrong: the true answer is 0, so the surprise uses `1 − p`, not `p`. A student who wrote `−ln(0.60) = 0.510826` has made exactly the Week 14 slip and should be sent back to that page rather than told.
 
-*Four raw scores with their sigmoid values given. Compute the surprise of each row and the average.*
+**M3.** Step 1 `−ln(0.880797) =` **0.126928**. Step 2 `−ln(0.706987) =` **0.346742**. Step 3 0.346742 ÷ 0.126928 = 2.73, **about 2.7 times bigger**.
+**M3(a).** **Worse.** A very good answer now costs 0.346742 instead of 0.126928; squashing twice punishes good answers.
+**M3(b).** `−ln(0.500618) =` **0.691912**.
+**M3(c).** The disaster (0.691912) is only about **twice** as expensive as the triumph (0.346742). Fed in raw, the same two answers cost 0.126928 and 6.002476, about forty-seven times apart. A weaker signal, so the loss parks near 0.54 (with two squashes no answer can cost less than 0.31 if it should be 1, or 0.69 if it should be 0).
+
+**M4.**
+
+| Network | first grid | first bias | second grid | second bias | total |
+|---|---|---|---|---|---|
+| 3 → 8 → 1 | 8 × 3 = **24** | **8** | 1 × 8 = **8** | **1** | **41** |
+| 30 → 16 → 1 | 16 × 30 = **480** | **16** | 1 × 16 = **16** | **1** | **513** |
+| 64 → 64 → 10 | 64 × 64 = **4096** | **64** | 10 × 64 = **640** | **10** | **4810** |
+| 4096 → 256 → 1 | 256 × 4096 = **1048576** | **256** | 1 × 256 = **256** | **1** | **1049089** |
+
+Confirmed against PyTorch: 41, 513, 4810, 1049089.
+
+**M4(a).** The last row; 64 × 64 = **4096** pixels, flattened. Hold that number: a single layer over one 64 × 64 greyscale picture is Week 24's hook.
+**M4(b).** One layer costs (numbers in × numbers out) **plus one more for every number that goes out**. The second part is the bias, and it is the part people drop. The missing-biases marking note above applies here too.
+
+### Workbook — 🔎 Predict the Output
+
+**P1.** Prints `(5, 3)`, `(5,)`, `20`. Outputs come first: five rows of three weights, 15 + 5 biases = 20.
+
+**P2.** Four lines: `0.weight (4, 2)`, `0.bias (4,)`, `3.weight (1, 4)`, `3.bias (1,)`. Slots 1 (`nn.ReLU()`) and 2 (`nn.Dropout(0.5)`) have no learnable numbers, so they never appear, but they keep their slots, which is why the second `nn.Linear` is called `3`.
+
+**P3.** `(4, 1)`, `(4,)`, `(4, 1)`. Shapes 1 and 3 can go into the loss together; shape 2, the flat `(4,)`, gives `ValueError: Target size (torch.Size([4])) must be the same as input size (torch.Size([4, 1]))`. The layer changed the second number and left the first alone.
+
+**P4.** Prints `0.0181  0.3181`. The first is smaller and is the right one: +4.0 with a true answer of 1 is confident and correct, `sigmoid(4.0) = 0.982014`, `−ln = 0.018150`. The squashed-twice version gives `sigmoid(0.982014) = 0.727508`, `−ln = 0.318131`. The wrong number is *bigger* on one very good prediction, but over a run it flattens the average (the chapter's six-row set gave 0.5869 wrong against 0.9141 right): a bug that sometimes makes the headline number look better is one nobody goes looking for.
+
+**Marking notes (P1, A4, B).** A student who wrote every weight shape the other way round has one misconception, not many mistakes. Say so, and give the marks for the counts.
+
+### Workbook — ✍️ Practice Set A
+
+**A1.** `nn.Linear` → (iii) · `nn.Sequential` → (iv) · logit → (v) · `BCEWithLogitsLoss` → (ii) · dropout → (i).
+**A1(a).** **Dropout and `BCEWithLogitsLoss`** hold no learnable numbers (`nn.ReLU()` holds none either).
+
+**A2.** Shapes after each part: batch **(8, 3)** · `Linear(3, 6)` **(8, 6)** · `ReLU` **(8, 6)** · `Linear(6, 2)` **(8, 2)** · `ReLU` **(8, 2)** · `Linear(2, 1)` **(8, 1)**.
+**A2(a).** The first number, **8**, the batch size.
+**A2(b).** The three `nn.Linear` parts change the shape; both `nn.ReLU()` parts change nothing.
+**A2(c).** Grids (6, 3) = 18, (2, 6) = 12, (1, 2) = 2; biases 6, 2, 1; **total 41**.
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `TypeError: list is not a Module subclass` | Drop the square brackets |
+| b | `RuntimeError: mat1 and mat2 shapes cannot be multiplied (300x16 and 8x1)` | `nn.Linear(16, 1)` |
+| c | `ValueError: Target size (torch.Size([300])) must be the same as input size (torch.Size([300, 1]))` | `.reshape(-1, 1)` on the answers |
+| d | `RuntimeError: mat1 and mat2 must have the same dtype, but got Double and Float` | `.float()` after `torch.from_numpy(...)` |
+| e | **No error.** Loss stops falling at about 0.54 | Delete the `nn.Sigmoid()`; the last part is a bare `nn.Linear` |
+| f | `TypeError: cannot assign 'torch.FloatTensor' as parameter 'weight' ...` | `layer.weight.data = torch.zeros(16, 2)` (with `.data`) |
+
+**A3(g).** **(e)**: the only symptom is a training loss that stops falling at about 0.54; nothing is printed and nothing goes red.
+**A3(h).** **(b) and (c)**: the answer is inside the message, so you just read both numbers instead of one.
+
+**A4.** i → **R** · ii → **P** · iii → **S** · iv → **T** · v → **Q**. The run prints `44`, `(10, 64)`, `2`, `(7, 1)`, `0.6931471824645996`. Item iii is the interesting one: a `Linear` plus a `ReLU` gives two named parameters because the ReLU contributes none.
+**A4(f).** `0.6931…` is `−ln(0.5)`: a raw score of 0.0 squashes to exactly 0.5, "I have no idea". It is the number every loss curve starts near, and any loss stuck above it means something is wrong.
+
+**A5.**
+a) **Epoch 39**, because 0.1568 is the lowest the validation loss ever gets.
+b) 0.4347 − 0.0165 = **0.4182**.
+c) A trap. Epoch 0 validation is 0.5314 and epoch 1499 is 0.4347, so the fully-trained model is still *slightly* better than the untrained one, but nearly three times worse than its best (0.1568). 1,460 epochs dragged a good model most of the way back to where it started.
+d) **0.1568**, saying "the validation loss at epoch 39, out of 100 held-out rows". Reporting 0.4347 reports the accidental model; 0.0165 is a score on memorised rows.
+e) **1,460 epochs** (40 to 1499).
+
+**A6.** First grid **(16, 2)**, 32 · first bias **(16,)**, 16 · second grid **(1, 16)**, 16 · second bias **(1,)**, 1 · **total 65**.
+**A6(a).** A weight glyph has cells in two directions (it joins every input to every output); a bias glyph is one line of cells.
+**A6(b).** The two **bias** rows; forgetting them costs 16 + 1 = 17, hence the classic wrong answer of 48.
+
+**A7.** a) the grid multiply plus the bias, and nothing else. b) (**outputs**, **inputs**), so `nn.Linear(2, 16)` prints (16, 2). c) A logit is the raw score out of the last layer, before any squash, and can be any number; `WithLogits` means the loss does the sigmoid itself, so hand it raw scores. d) a bare `nn.Linear`, because the loss does the squash and squashing twice collapses its range from 6.0000 to 0.3780 with no error. e) **No error at all**; a training loss that stops falling at about 0.54. f) the **lowest point** of the **validation** curve, not where the two curves cross.
+
+### Workbook — ✍️ Practice Set B
+
+**B1.** `print(sum(p.numel() for p in nn.Linear(10, 4).parameters()))` prints **44** (4 × 10 = 40 weights plus 4 biases).
+
+**B2.** `nn.Sequential(nn.Linear(4, 12), nn.ReLU(), nn.Linear(12, 1))`:
 
 ```text
-score   answer   sigmoid(score)   surprise
- 2.0      1        0.880797       −ln(0.880797) = 0.126928
-−1.0      0        0.268941       −ln(1 − 0.268941) = −ln(0.731059) = 0.313262
- 0.5      1        0.622459       −ln(0.622459) = 0.474077
-−3.0      1        0.047426       −ln(0.047426) = 3.048587
+0.weight   (12, 4)    48 numbers
+0.bias     (12,)      12 numbers
+2.weight   (1, 12)    12 numbers
+2.bias     (1,)       1 numbers
+total: 73
+by hand: 12 x 4 + 12 + 1 x 12 + 1 = 73
 ```
+
+**B3.** A `Linear(2, 2)` with weights `[[3, -1], [0.5, 0.5]]`, biases `[2, -1]`, input `[4, 6]` prints `out: [8.0, 4.0]`. Row 0: 12 − 6 + 2 = 8.0. Row 1: 2 + 3 − 1 = 4.0. The assignment needs `.data`; without it you get `TypeError: cannot assign 'torch.FloatTensor' as parameter 'weight'`.
+
+**B4.** Scores 1.5, −0.5, −2.0, answers 1, 1, 0. Chances `[0.817574, 0.377541, 0.119203]`, surprises `[0.201413, 0.974077, 0.126928]`, sum 1.302418, average **0.434139**. The library prints `0.4341394901275635` and the by-hand version `0.4341394007205963`.
+
+**B4(a).** They agree to seven decimal places and differ in the eighth. Trust the library: the two-step version squashes then takes a log, and limited decimal storage lets tiny errors creep in. On a very confident wrong answer the two-step version can hit `log(0)` and turn every weight to `nan`; one combined part cannot make that mistake.
+
+**B5.** The whole program is `hit.py` (make_classification, 6 → 32 → 32 → 1, 600 epochs, Adam lr 0.01). Real output:
 
 ```text
-0.126928 + 0.313262 + 0.474077 + 3.048587  =  3.962854
-3.962854 ÷ 4  =  0.9907135
+by hand: (32x6+32) + (32x32+32) + (1x32+1) = 1313
+PyTorch : 1313
+best validation loss 0.0985 at epoch 84, ended at 0.1676
+train loss at the end: 0.0062, so the gap is 0.1614
+wrote hit.png
 ```
 
-**Confirmed against PyTorch:**
+**B5(a).** The **training** curve keeps falling: 1,313 numbers against 450 rows is room to memorise every row.
+**B5(b).** **Epoch 84**, and it carried on for another **515** epochs without beating it.
+**B5(c).** The gap measures how much of the performance is memorising: train 0.0062, validation 0.1676, 27 times worse. Close together means learning the pattern; far apart means learning the rows.
 
-```text
-BCEWithLogitsLoss : 0.9907134771347046
-probabilities     : [0.8807970285415649, 0.2689414322376251, 0.622459352016449, 0.04742587357759476]
-surprise per row  : [0.126928, 0.313262, 0.474077, 3.048587]
-their average     : 0.9907134771347046
-```
+### Workbook — 🐞 Fix the Broken Program
 
-**Marking notes.** Row 2 is the only one that can go wrong: the true answer is 0, so the surprise uses `1 − p`, not `p`. A student who wrote `−ln(0.268941) = 1.313262` has made exactly the Week 14 slip and should be sent back to that page rather than told.
+**Bug 1** (line 13, `X_tr_t = torch.from_numpy(scaler.transform(X_tr))`): a **dtype** bug. numpy gives 64-bit Double, torch layers want 32-bit Float. `X_va_t` already has `.float()`, which is the clue. Fix: add `.float()`.
 
-**And the question underneath:** *"which row contributes most, and by how much?"* Row 4, with 3.048587 — **more than the other three added together** (0.126928 + 0.313262 + 0.474077 = 0.914267). One confident wrong answer dominates the loss.
+**Bug 2** (line 15, `y_tr_t`): a **shape** bug. The model gives `torch.Size([450, 1])`, the answers are `torch.Size([450])`. Fix: `.float().reshape(-1, 1)`.
 
-### Page 22.4 — Rebuild Week 19's brain and prove the shapes match
+**Bug 3**: the missing line is **`opt.zero_grad()`**, the first line inside the `for` loop, before the forward pass. A training loss of 2.1637 is far worse than knowing nothing (0.693147): gradients pile up and fling the weights. With the fix the run prints `train loss 0.2316` and `val   loss 0.2140`. The only clue was a number, a training loss *above* 0.693147 after 400 epochs; the student very likely would not have spotted 0.71, which is the argument for knowing 0.693147 by heart.
 
-**The numpy side.** Week 19's brain, with its four arrays:
+**Ranking.** Easiest are bugs 1 and 2 (they stop dead and name the problem; bug 2 prints both shapes). Hardest by far is bug 3: the program runs and never says anything is wrong. Loudness is not seriousness.
+
+### Workbook — 🧩 Puzzle of the Week
+
+**Puzzle 1.** `2 → h → 1`: 4h + 1 = 257, so **h = 64**.
+**Puzzle 2.** `n → 8 → 1`: 8n + 17 = 105, so 8n = 88, **n = 11**.
+**Puzzle 3.** `4 → h → 3`: 8h + 3 = 83, so **h = 10**.
+**Puzzle 4.** 8h + 3 = 90 gives h = 10.875.
+(a) **No answer**: you cannot have 10.875 units, so 90 is not a possible count for this network.
+(b) The total is always 3 more than a multiple of 8: h = 1, 2, 3 give **11, 19, 27**. Impossible: 90 (and 12, 20, 88, ...).
+(c) 4000 − 3 = 3997, and 3997 ÷ 8 = 499.625, so **no whole number of units gives 4,000**; the nearest totals are 3995 and 4003.
+PyTorch confirms 257, 105, 83, and 91 for h = 11, so there is nothing between 83 and 91.
+
+### Workbook — 🤔 Think Deeper
+
+**T1.** A full answer says: (1) what was gained — the parameters are looked after (`model.parameters()` hands the optimizer every block, `nn.Linear` picks sensible starting numbers); (2) what is understood because the numpy version was written — `nn.Linear` is one grid multiply and one add, not a spell; (3) the difficulty did not disappear, it **moved into the error messages**, which print both shapes and can be read.
+
+**T2.** A full answer says: a traceback is a bug already found for you, whereas the double squash is silent and only shows as an unimpressive 0.54 that looks like "needs more layers". The concrete check is **a floor and a ceiling on the loss**: a model that knows nothing scores `−ln(0.5) = 0.693147`, so ask whether the loss gets meaningfully below it and keeps going; and look at the last part of the model, which should be a bare `nn.Linear`. The Term 1 parallel is leakage, where the check was "is this score too good?". Same idea: know what an impossible number looks like before celebrating.
+
+### Workbook — 🛠️ Build It (the marked part)
+
+**Part 1 — the numpy side.** Week 19's brain, with its four arrays:
 
 ```python
 """numpy_side.py - Week 19's brain, and its four grids."""
@@ -1569,7 +1697,7 @@ b2  (1, 1)    1 numbers
 total: 65
 ```
 
-**The PyTorch side.** Already run, in the Prep Checklist:
+**The PyTorch side.** `nn.Sequential(nn.Linear(2, 16), nn.ReLU(), nn.Linear(16, 1))`, already run in the Prep Checklist:
 
 ```text
 0.weight   (16, 2)    32 numbers
@@ -1595,15 +1723,9 @@ total learnable numbers: 65
 
 > "PyTorch stores a layer's weights as (outputs, inputs) and then multiplies by the transpose, so `0.weight` holds exactly the 32 numbers that were in my `W1`, written the other way up. `numel()` is 32 on both sides and the parameter total is unaffected, so nothing needs fixing."
 
-**Marking notes.** *"PyTorch is backwards"* or *"they don't match"* is not full marks, and it is worth correcting carefully: a student who believes the shape is wrong will try to transpose something next week and break a working model.
+**Marking notes.** *"PyTorch is backwards"* or *"they don't match"* is not full marks, and it is worth correcting carefully: a student who believes the shape is wrong will try to transpose something next week and break a working model. **A very good extra, if you see it:** the biases match in *count* but not in *rank* (numpy's `b1` is 1 × 16, PyTorch's is a flat 16). A student who notices that broadcasting made the numpy version work has understood Week 17 properly.
 
-**A very good extra, if you see it:** the biases match in *count* but not in *rank* — numpy's `b1` is a 1 × 16 grid, PyTorch's is a flat 16. Both hold 16 numbers. A student who notices that broadcasting is what made the numpy version work has understood Week 17 properly.
-
-### Page 22.5 — The plot, the dashed line, and the two sentences
-
-**The plot.** `overfit.png` from the Prep Checklist file: train loss and validation loss on one axis, x from 0 to 1,500, a dashed vertical line at **epoch 39** with the annotation *"validation stopped improving at epoch 39"*.
-
-**The numbers behind it:**
+**Part 2 — the plot, the dashed line, and the two sentences.** `overfit.png` from the Prep Checklist file: train and validation loss on one axis, x from 0 to 1,500, a dashed vertical line at **epoch 39**. The workbook's table asks for epochs 0, the best epoch, 400 and 1499; the numbers behind it:
 
 ```text
  epoch    train     val
@@ -1616,53 +1738,34 @@ total learnable numbers: 65
   1499   0.0165   0.4347
 ```
 
+**The gap at the end:** 0.4347 − 0.0165 = **0.4182**. **Dashed line: at the minimum of the validation curve (epoch 39), not where the curves cross.**
+
 **Sentence one — what would have happened if you had kept training?** Full marks:
 
-> "It did keep training, for another 1,460 epochs, and not one of them beat epoch 39 on rows it had never seen: validation loss drifted up, with wobbles, from 0.1568 to 0.4347, most of the way back to its epoch-0 value of 0.5314. The training loss fell to 0.0165, so the model was getting better and better at the 300 rows it had already seen and worse and worse at everything else."
+> "It did keep training, for another 1,460 epochs, and not one of them beat epoch 39 on rows it had never seen: the validation loss drifted up, with wobbles, from 0.1568 to 0.4347. The training loss fell to 0.0165, so the model was getting better and better at the 300 rows it had already seen and worse and worse at everything else."
 
 **Sentence two — what number would you report?** Full marks:
 
-> "The validation loss at epoch 39, 0.1568, and I would say which epoch it came from — because reporting 0.4347 would be reporting the model I accidentally ended up with rather than the best one I trained, and reporting 0.0165 would be reporting a score on rows the model had memorised."
+> "The validation loss at epoch 39, 0.1568, and I would say which epoch it came from and how many rows it was measured on — because reporting 0.4347 would be reporting the model I accidentally ended up with rather than the best one I trained, and reporting 0.0165 would be reporting a score on rows the model had memorised."
 
-**Marking notes.** Two things. **The line must be at the minimum of the validation curve, not at the crossing point of the two curves** — they are different epochs and only one of them is the answer. And any answer that reports 0.0165 as the model's quality has missed the entire week; send them back to Figure 22.4 rather than writing the correction out.
+**Marking notes.** The line must be at the minimum of the validation curve, not the crossing point. Any answer that reports 0.0165 as the model's quality has missed the entire week; send them back to Figure 22.4 rather than writing the correction out.
 
-### Page 22.6 — Six short questions
+**Bug Log, filled in:**
 
-**1. What is a logit?**
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `ValueError: Target size (torch.Size([300])) must be the same as input size (torch.Size([300, 1]))` | Answers and scores are different shapes | `y` was a flat list of 300; the model makes a 300 × 1 grid | `.reshape(-1, 1)` on the answers |
+| **No message at all**: the loss stopped falling around 0.54 | The model squashed and the loss squashed again | `nn.Sigmoid()` was the last part of the model | End the model with a bare `nn.Linear` |
 
-The raw score coming out of the last layer, before any squash. It can be any number at all. (Same idea as Week 13's "a weighted sum can be anything, a probability has to sit between 0 and 1".)
+### Workbook — 🎨 Draw It
 
-**2. Your model ends `nn.Linear(16, 1)` and you use `BCEWithLogitsLoss`. Should you add `nn.Sigmoid()`? What happens if you do?**
+Wires between input and hidden layers: 2 × 16 = **32**. Biases altogether: 16 + 1 = **17**. The tempting total 32 + 17 = 49 is **wrong**: 32 is only the first grid, and there are another 16 × 1 = 16 wires to the output, so 32 + 16 = 48 weights plus 17 biases = **65**. The two blocks people forget are the **biases** (16 and 1, together 17 of the 65), which is why the classic wrong answer is 48.
 
-No. The loss applies the sigmoid itself — that is what `WithLogits` means. Add one and the numbers get squashed twice: **no error appears**, and the loss can barely separate a terrible answer from a perfect one. On our moons run it stuck at **0.5423** instead of falling to **0.1538**.
+**A drawing at full marks has:** two input circles, sixteen hidden circles (or five and a "…" with "16 units" beside it), one output circle, every wire drawn, a chip reading `(16, 2)` on the first bundle and `(1, 16)` on the second, a bias tag reading 16 beside the hidden column and 1 beside the output, and a box in the corner reading `32 + 16 + 16 + 1 = 65`.
 
-**3. `nn.Linear(10, 4)`. How many learnable numbers, and what shape does `weight` have?**
+### Workbook — 📊 Self-Check
 
-`weight` is **(4, 10)** — outputs first — so 40 weights, plus 4 biases. **44 numbers.**
-
-**4. Two networks are trained on the same data. A has train loss 0.02 and validation loss 0.41. B has train loss 0.16 and validation loss 0.17. Which would you ship, and why?**
-
-**B.** A has memorised its training rows: a tiny training loss with a validation loss twenty times bigger is the signature of memorising, and 0.41 is what A will actually do on new data. B is worse at the rows it has seen and much better at the rows it hasn't, and the second is the only one that matters. (These are our real numbers, rounded: A is the plain net at epoch 1499, B is the plain net at epoch 39.)
-
-**5. `nn.Dropout(0.3)` sits after a 64-unit layer. About how many units are switched off in one training step, and are they the same ones next step?**
-
-About `0.3 × 64 ≈ 19`. **No** — a different random set every step. That is the whole mechanism: the network cannot come to rely on any particular unit being there.
-
-**6. Compute the loss by hand for these four scores, true answers all 1: `−6.0, 0.0, +2.0, +6.0`. The sigmoid values are 0.002473, 0.5, 0.880797, 0.997527.**
-
-```text
-−ln(0.002473) = 6.002476
-−ln(0.5)      = 0.693147
-−ln(0.880797) = 0.126928
-−ln(0.997527) = 0.002476
-```
-
-```text
-6.002476 + 0.693147 + 0.126928 + 0.002476  =  6.825027
-6.825027 ÷ 4  =  1.706257
-```
-
-**Marking notes.** The single number worth commenting on is `6.002476` — one confidently wrong row out of four drags the average from about 0.27 to 1.71. That is Week 14's lesson and it is why the loss column in Figure 22.3 has six units of range in it.
+There are no right answers. If the student ticked 😕 for "say what happens if you squash twice", send them back to §3 of the chapter and have them run the two-column table themselves; that silent bug otherwise follows into Weeks 23, 26 and 33. If they ticked 😕 for "count the learnable numbers unaided", have them do it five more times on networks they invent.
 
 ### Answers to every question posed in the lesson
 

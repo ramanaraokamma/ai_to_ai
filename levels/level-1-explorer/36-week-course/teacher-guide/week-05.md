@@ -12,7 +12,7 @@
 | **Type** | Teach |
 | **Big idea** | Every column has a type, and the four kinds of mess — missing, duplicate, impossible and inconsistent — are all findable if you actually look. |
 | **New vocabulary** | data type · missing value · duplicate · impossible value · controlled vocabulary |
-| **Materials** | **Four coloured pens or highlighters, four different colours** · the printed Crime Scene Table (Workbook Week 5, page 2) · the student's own homework table from Week 4 · a board or big sheet of paper · a calculator or a phone calculator |
+| **Materials** | **Four coloured pens or highlighters, four different colours** · the printed Crime Scene Table (student copy, made from "The table they get" below; it is not in the workbook) · the student's own homework table from Week 4 · a board or big sheet of paper · a calculator or a phone calculator |
 | **Tech needed** | **None.** Paper and pens only. A calculator is convenient but mental arithmetic works. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
@@ -197,7 +197,7 @@ If they cannot remember which thread it was, that costs nothing.
 
 ### 15 minutes the night before
 
-- [ ] **Print Workbook Week 5, pages 1–4.** Page 2 is the Crime Scene Table — the student's copy has **no shading and no numbered pins**. Check that before you hand it over; handing them the teacher copy ends the lesson instantly.
+- [ ] **Print the Crime Scene Table and the Workbook.** The Crime Scene Table is *not* in the workbook: copy it from "The table they get" in the activity section below (or print it plain). The student's copy has **no shading and no numbered pins**; Figure 5.6 is the teacher copy. Check that before you hand it over; handing them the teacher copy ends the lesson instantly. Then print the whole of `workbook/week-05.md` for homework, with the **✅ Answers** section at the bottom removed or folded under, so the student does the page before looking.
 - [ ] **Find four coloured pens or highlighters in four clearly different colours.** This is the one unusual material. If you only have two, see the fallback table.
 - [ ] **Write the colour legend** on a scrap of paper or the board:
 
@@ -504,7 +504,7 @@ Then assign the homework as written below.
 
 ### Materials
 
-- Workbook Week 5, page 2: the Crime Scene Table, **student version** (no pins, no shading)
+- The Crime Scene Table, **student version** (no pins, no shading), printed from "The table they get" below. It is an in-class sheet and is not in the workbook
 - Four coloured pens or highlighters
 - The colour legend, visible
 - This teacher guide's Answer Key, in your hand, not theirs
@@ -737,8 +737,10 @@ Read these four aloud, one at a time. For each: **what kind of fault, and what d
 
 ## 📤 Homework to Assign
 
-**Workbook Week 5, pages 3 and 4 — the Fault Log, run on their own table.**
+**Workbook Week 5, the whole workbook: Warm-Up (W1–W5), Practice Set A (A1–A6), Practice Set B (B1–B5), Puzzle of the Week (the Pizza Order Pad), Think Deeper (T1–T2), Build It (the fault log, run on their own table), Draw It, and Self-Check.**
 **Time: 45–60 minutes across the week, including continued data collection.**
+
+**In class versus homework.** The Crime Scene Table was the in-class activity and is not in the workbook, so every workbook page is homework. If time is short, the order of priority is: **Build It first** (it is the real work, on their own table), then Practice Set B, then the Puzzle; Warm-Up, Practice Set A, Think Deeper and Draw It can be split across the week or done aloud. The workbook's own Answers section sits at the bottom of the file, so tell the student to do each page before they look.
 
 **Say this:**
 
@@ -748,15 +750,15 @@ Read these four aloud, one at a time. For each: **what kind of fault, and what d
 >
 > **Two. Run all four checks on the rows you already have** — the same four you did today. Blanks. Duplicates. Impossible values. Inconsistent spellings. Do it as four separate passes, one check at a time, one column at a time. It's faster and it finds more.
 >
-> Every fault you find goes in the fault log table on page 4, with four things: which row, which column, what kind of fault, and what you did about it. **Every single change gets logged.** If you change a value and don't log it, you've destroyed your own record of what actually happened — and you will not remember in three weeks. I promise you that.
+> Every fault you find goes in the fault log table in the Build It section, with four things: which row, which column, what kind of fault, and what you did about it. **Every single change gets logged.** If you change a value and don't log it, you've destroyed your own record of what actually happened — and you will not remember in three weeks. I promise you that.
 >
 > Before you start, write your legal ranges at the top: what's the smallest and biggest each of your number columns is allowed to be. You can't spot an impossible value if you never said what's possible.
 >
-> **Three. The last question on page 4, and it's the one I'll be reading first.** Of all the faults you found, which one would have been the most *dangerous* if a machine had trained on your table — and why? Two or three sentences. There's more than one good answer; I want the reasoning, not the answer.
+> **Three. The last question in Build It, and it's the one I'll be reading first.** Of all the faults you found, which one would have been the most *dangerous* if a machine had trained on your table — and why? Two or three sentences. There's more than one good answer; I want the reasoning, not the answer.
 >
 > And a warning, because it will happen: **you might find zero faults.** If so, don't invent one. Write 'no faults found' and then write down what checks you ran, so I can see you actually looked. Finding nothing after four real checks is a completely respectable result."
 
-**What to check when it comes in:** the legal ranges are written down; the log has a row per change (not a summary); no blanks were filled with 0; and the "most dangerous" answer gives a *reason*, not just a fault.
+**What to check when it comes in** (mark each part against its section in the Answer Key, which follows workbook order): the Build It legal ranges are written down; the log has a row per change (not a summary); no blanks were filled with 0; and the "most dangerous" answer gives a *reason*, not just a fault.
 
 ---
 
@@ -878,56 +880,170 @@ Nothing else may be typed in this column.
 
 Also full credit with `Monday · Wednesday · Friday`, as long as it is an explicit closed list. **Not** full credit: "be consistent", "use three letters", "write it the same each time" — none of those is a list, and none can be checked.
 
-### Workbook Week 5, page 1 — Type the column
+### Workbook Week 5 — Warm-Up (W1–W5)
 
-*Label each as number, category, text or time, and say whether averaging makes sense.*
+*Five recall questions from Week 4. If more than one is shaky, spend two minutes on the Week 4 golden rules before the homework starts.*
+
+- **W1.** Rows go **across**. Columns **stand up**. *(Common slip: the two swapped. Ask: "which one is a whole pizza order — across or down?")*
+- **W2.** **3 rows** and **9 boxes** holding data (3 × 3). The header line is not a row of data. *(Common slip: 4 rows and 12 boxes, from counting the header.)*
+- **W3.** One row = one **pocket**. The question is about pockets, so the row has to be a pocket. Columns: `pocket`, `total_grams`, `how_many_objects`.
+- **W4.** **Rule 1:** every row is the same kind of thing: never a mix, and never a TOTAL row. **Rule 2:** every column is measured the same way, in every single row.
+- **W5.** **FALSE.** The pocket table only recorded totals; the pencil's weight was added in and is gone. You would have to go back to the actual bag. *You can always add rows up; you can never split them apart.*
+
+### Workbook Week 5 — Practice Set A, Understand It (A1–A6)
+
+**A1. Fill in the blanks.**
+
+| Kind of mess | The fix |
+|---|---|
+| **Missing** value, an empty box | Leave it **blank** and write a note. **Never a 0** |
+| **Duplicate**, the same example twice | **Check** it is really the same, then delete one |
+| **Impossible** value, reality does not allow it | **Blank** it and note what it was. **Never guess** |
+| **Inconsistent** category, the same thing spelled several ways | Standardise, then write a **controlled vocabulary** |
+
+The test: *if I **add** two of these values together, does the answer **mean anything**?*
+
+**A2. Number-looking categories.** Tick **(a) `bus_route_number`**, **(c) `student_id`** and **(e) `house_number`**. Any one proof is full credit: bus route 7 + route 12 = route 19, which is a different bus or no bus; ID 1001 + ID 1002 = student 2003, a different person or nobody; house 12 + house 40 = house 52, a different house down the road.
+*Wrong ticks to expect:* `temperature_celsius`, `race_finish_seconds` and `weight_g` are real measurements on real scales (200 g + 340 g = 540 g means exactly that), so they are **not** ticked. A student who argues for `shoe_size` has a good point (sizes are a manufacturing scale, and UK, US and EU numbering mix badly); give credit for the argument.
+
+**A3. FALSE**, the most important false of the week. A **blank** says "I don't know." A **0** says "I know, and it was zero." Those are opposite sentences. A 0 in a sleep column claims the person did not sleep at all, the average drops, and nothing on the page records that it was made up; three weeks later it looks as measured as the 7.5 beside it. Second half, for the strong answer: **no data is not the same as no event.** A shop closed on Sunday genuinely sold 0; a Sunday nobody checked is blank. Only a note tells them apart.
+
+**A4. Match the fault to the fix.** 1 → **C** · 2 → **E** · 3 → **D** · 4 → **A** · 5 → **B**
+
+**A5. Name the fault at each pin** (Figure W5.1). The table is a library borrowing log; one row = one borrowed book.
+
+| Pin | Kind of fault | What to do |
+|---|---|---|
+| **1** | **Duplicate**: the `atlas` row appears twice, identical in every column including id `2` | Check it is really one borrowing, then delete one. The repeated `id` is the giveaway, because ids are supposed to be unique |
+| **2** | **Impossible**: `days_out = -3`, outside the range 1 to 120 | Blank it, note `was -3, impossible`. Do **not** guess 3 |
+| **3** | **Missing**: the `pages` box for `space` is empty | Leave blank, add a note. **Not 0**: a 0-page book would wreck any average |
+| **4** | **Inconsistent**: `shelf` has both `Reference` and `reference` | Standardise to `reference`, then write the allowed list |
+| **5** | **NOT A FAULT**: `days_out = 90` is inside 1 to 120, so it is legal | It is an **outlier**. Keep it and annotate: *"kept over the summer holiday, check, then keep"* |
+
+Different `shelf` values a computer sees: **4** (`fiction`, `Reference`, `poetry`, `reference`). After fixing: **3**.
+*Most common mistake: crossing out pin 5. Make them look at the range before the number. Same trap as the 480 in class.*
+
+**A6. Type the column.**
 
 | Column | Type | Average it? | Why |
 |---|---|---|---|
-| `shoe_size` | Number (ordered) | ⚠️ Sort of | Evenly spaced and ordered, so "average 7.4" is usable — but mixing UK, US and EU scales ruins it |
+| `shoe_size` | Number (ordered) | ⚠️ Sort of | Evenly spaced and ordered, so "average 7.4" is usable, but mixing UK, US and EU scales ruins it |
 | `favourite_colour` | Category | ❌ No | Red + blue isn't a colour, and blue isn't "more" than green |
 | `bus_route_number` | **Category** | ❌ No | A name printed with digits |
 | `temperature_celsius` | Number | ✅ Yes | Real measurement on a real scale |
-| `text_message_body` | Text | ❌ No | You can't average sentences. You *can* count the characters — but that's a new number column you created |
+| `text_message_body` | Text | ❌ No | You can't average sentences. You *can* count the characters, but that's a new number column you created |
 | `date_of_birth` | Time | ⚠️ Technically | The average of two birthdays is a real date. Usually convert to `age_years` first |
 | `student_id` | **Category** | ❌ No | The classic trap: ID 1001 + ID 1002 means nothing |
 | `race_finish_seconds` | Number | ✅ Yes | Real measurement; the average is a real time |
 | `house_number` | **Category** | ❌ No | Number 12 plus number 40 is not number 52 |
-| `mood_1to5` | Ordered category | ⚠️ Commonly done | 5 is genuinely happier than 4. Averaging is standard and slightly fake |
+| `mood_1to5` | Ordered category | ⚠️ Commonly done | 5 is genuinely happier than 4, so it sorts. Averaging is standard and slightly fake |
 
-**The three number-looking categories are `bus_route_number`, `student_id` and `house_number`.** Accept `shoe_size` as a fourth if argued well — sizes are a manufacturing scale, not a physical measurement.
+**The three number-looking categories are `bus_route_number`, `student_id` and `house_number`.** Accept `shoe_size` as a fourth if argued well. Where a student's ✅/❌/⚠️ differs on the three ⚠️ rows, mark the reason, not the symbol.
 
-### Workbook Week 5, page 2 — the Crime Scene Table
+### Workbook Week 5 — Practice Set B, Use It (B1–B5)
 
-See the nine-fault table above, plus the outlier at Aug 7, plus the arithmetic.
+**B1. Legal ranges.** No single correct set; mark whether each is *defensible*.
 
-**Extra question on the page: "How many faults are there really — nine or six?"**
-Both answers are defensible and both get full credit if reasoned. **Nine broken cells** (or, more precisely, eight broken cells plus one duplicated row). **Four kinds of problem.** **Six distinct incidents** if you treat the four Mondays as a single inconsistency. The best answer says all of that and notes that the count depends on whether you're counting *cells to fix* or *problems to prevent* — and that the two counts lead to different actions: nine corrections, but only four rules needed to stop it happening again.
+| Column | A defensible range | The reasoning |
+|---|---|---|
+| `sleep_hours` | 0 to 16 | You cannot sleep negative hours. Sixteen is generous but reachable when ill |
+| `homework_minutes` | 0 to 300 | Zero is a real value (no homework set). Five hours is already extraordinary |
+| `height_cm` (11-year-olds) | 120 to 180 | Both ends are possible in the world but not in a Year 6 class |
+| `bag_kg` | 0.1 to 12 | An empty bag still weighs something, so not 0. Twelve kg is more than a child should carry |
 
-### Workbook Week 5, page 3 — Write the controlled vocabulary
+*"Which was hardest?"* The good answer is `height_cm`: too tight flags real children as impossible, too loose lets a typo through. There is no perfect answer, only a written-down one, so for anything just outside the range the honest note is "flagged for checking" rather than "impossible".
 
-*Three columns are given; write the allowed list for each.*
+**B2. Four spellings of Monday.** The machine thinks there are **4** different days. It learns **almost nothing about Mondays**: instead of one group of four it has four groups of one, and a group of one shows no pattern. **Nobody notices**, because there is no blank, no red cell, no absurd number. It is the most dangerous kind of fault because it is **silent**.
 
-1. **`day`** (from the Crime Scene Table) → `Mon · Wed · Fri`
-2. **`meal_type`** (for a food tracker) → `breakfast · lunch · dinner · snack`. Marking point: it must be closed. "Anything I eat" fails.
-3. **`weather`** (for a weather tracker) → `sunny · cloudy · rain · storm`. Any short closed list is correct. The extra credit is noticing the hard case — what do you write on a day that is sunny *then* rains? A full-credit answer either adds a rule ("whatever it was at 8am") or adds a value (`mixed`). Naming the ambiguity is worth more than the list.
+```text
+ALLOWED VALUES for day:  Mon · Tue · Wed · Thu · Fri
+Nothing else may be typed in this column.
+```
 
-**General marking rule for this page:** a controlled vocabulary must be (a) a list, (b) short, (c) closed — with an explicit statement that nothing else is allowed, and (d) accompanied by a rule for the awkward case.
+`Monday · Tuesday · …` is equally good if it is an explicit closed list. **Not** full credit: "be consistent", "use three letters", "write it the same each time". None of those is a list, and none can be checked.
 
-### Workbook Week 5, page 4 — the Fault Log, on their own table
+**B3. Three blanks versus three zeros.** The seven real values: 7.5, 8.0, 6.5, 8.5, 9.0, 7.0, 8.0.
+
+- **(a)** Sum = **54.5**. 54.5 ÷ 7 = 7.7857… = **7.79 hours**.
+- **(b)** The sum is unchanged (adding zero adds nothing) but the **count** goes from 7 to 10. 54.5 ÷ 10 = **5.45 hours**. Sum = **54.5**.
+- **(c)** 7.79 → 5.45, a drop of **2.34 hours**, nearly two and a half hours a night invented out of nothing.
+- **(d)** **NO.** Once a 0 is typed in, it looks exactly as measured and as trustworthy as every other number in the column: no mark, no colour, no footnote, and the student will not remember either. *A visible hole keeps you honest; an invented number does not.*
+
+*Slips to expect:* dividing the seven real values by 10 or the ten by 7 (check which count goes with which); rounding 7.7857 down to 7.78; or writing the sum in (b) as 54.5 + 0 + 0 + 0 and then dividing by 7.
+
+**B4. Three controlled vocabularies.** A good vocabulary is (a) a list, (b) short, (c) closed and (d) comes with a rule for the awkward case, which is worth as much as the list.
+
+| Column | ALLOWED VALUES | Rule for the awkward case |
+|---|---|---|
+| `weather` | `sunny · cloudy · rain · storm` | "whatever it was at 8 a.m.", or add a fifth value, `mixed` |
+| `meal_type` | `breakfast · lunch · dinner · snack` | "write `dinner`, because the slot is what I am tracking, not the size", or write `snack` and add a `note` column |
+| `how_i_travelled` | `walk · bus · car · cycle · train` | "whichever took MORE MINUTES", or add `walk_and_bus` as its own value |
+
+Either solution is right for each. **Naming the ambiguity earns the credit**, not which fix is picked. What fails: "Anything I eat" (not closed), "Be consistent" (not a list), and **no rule at all** (Tuesday's `bus` and Thursday's `walk` for the identical journey is an inconsistency made by their own hand).
+
+**B5. Impossible, or outlier?**
+
+| # | Value | Answer | What to do |
+|---|---|---|---|
+| 1 | `sleep_h` = 19 | **IMPOSSIBLE** | Outside 0–16. Blank it, note `was 19, impossible`. Do not guess 9 or 1.9 |
+| 2 | `screen_min` = 600 | **OUTLIER** | Inside 0–1440, so legal: ten hours is possible. **Keep it** and note why that day was different |
+| 3 | `bag_kg` = 0 | **IMPOSSIBLE** | Outside 0.1–12. An empty bag still weighs something. Blank it, **and strongly suspect somebody filled a blank with 0** |
+| 4 | `age_years` = 19 | **OUTLIER** | Inside 5–19, so legal. Unusual among 11-year-olds, so **keep it and check it**: a real repeated year, or a typo for 9 |
+| 5 | `jump_cm` = 892 | **OUTLIER** | Inside 50–900, so legal by our own rule, but the world record is about 895 cm, so at a primary school it is almost certainly wrong. **Keep it, flag it hard, and go and ask.** Our range was too loose |
+| 6 | `temp_c` = 51 | **IMPOSSIBLE** | Outside −10 to 50. Blank it and note it |
+
+**The one needing a different note is #3, `bag_kg` = 0.** Every other note is about *the value*; this one is about *the person who typed it*: `was 0, suspect a blank was filled with a zero, original measurement may never have been taken`. It may be a second, hidden fault: a missing value in disguise. **#5 is the second-best answer** and deserves credit: the honest note is about *our range*, not the value. Wrong-answer map: students who call #4 or #5 "impossible" are judging by how odd the number looks, not by the range; send them back to the printed ranges.
+
+### Workbook Week 5 — Puzzle of the Week, The Pizza Order Pad (A–E)
+
+- **A.** A person sees **3** toppings: margherita, paneer, veggie.
+- **B.** The computer sees **7**: `Margherita` (orders 1, 8), `margherita` (2), `MARGHERITA` (3), `Paneer` (4), `paneer` (5), `Veggie` (6), `veggie` (7). *Rushing gives 6; make them list all seven.* With seven "products", "which topping is most popular?" becomes unanswerable and nothing looks broken.
+- **C.** The exact duplicate is **orders 1 and 8**: `Margherita · 12 · 1` twice, identical in every column, spelling included.
+- **D.** Orders **6 and 7** look like a duplicate and are not: `Veggie · 12 · 3` and `veggie · 12 · 3` have the same size and quantity but **different spellings**, and two different tables could both have ordered three 12-inch veggies. It cuts both ways: a program that compares text misses them as duplicates, and a person may delete one and destroy a real order. The honest answer is that you cannot be sure, because nobody gave the rows unique IDs at collection time.
+- **E.**
+
+```text
+ALLOWED VALUES for topping:  margherita · paneer · veggie
+Nothing else may be written in this column. All lowercase.
+Every order also gets its own order_id, so two identical orders
+are two orders and not one mistake.
+```
+
+The `order_id` is the extra credit, and the part a professional would insist on.
+
+### Workbook Week 5 — Think Deeper (T1–T2)
+
+**T1. Why you cannot always tell.** Full credit needs this idea: **480 is legal, so the table cannot rule it out, and 48 is also legal, so the table cannot rule that out either.** Both sit inside 0–1440, and the number carries no evidence about which was intended.
+
+> *"480 minutes is 8 hours, which is completely possible if I was home sick. But 48 minutes is also completely possible, and 480 is what you get if your finger slips on the 0. Nothing in the table can tell those apart, because both numbers are legal. The information about what really happened only ever existed in the head of the person typing, for about four seconds."*
+
+What they could have done at the moment: written a **note** (`home sick, watched films all day`), six words. Also correct: recording start and stop times instead of just the total, so the number can be checked against a clock. The rule: notes get written at the moment of collection, because they answer a question you will not be able to answer later.
+
+**T2. A sheet that prevents the faults.** Many correct answers; full credit needs the *physical* mechanism, not good intentions.
+
+| Fault | What to print | How it physically stops it |
+|---|---|---|
+| Missing value | A tick box beside every number box labelled **"not measured, why?"** with a line to write on | The row cannot look finished without a tick, so a blank becomes a *deliberate* blank with a reason |
+| Duplicate | A **pre-printed row ID** on every line, 1 to 30 | Two rows can never carry the same ID, so a copy-paste is visible instantly. Coincidences stay safe |
+| Impossible value | The **legal range printed in small grey text inside each number box**, e.g. `(0–16)` | You read the range with your pen in the box. You cannot write 88 without seeing "0–16" under your hand |
+| Inconsistent category | A row of **tick boxes** instead of a writing line: `☐ Mon ☐ Wed ☐ Fri` | There is no space to write anything else |
+
+The strongest is the tick-box vocabulary, because it makes the fault **impossible** rather than merely *visible*. *(In a spreadsheet the same four ideas are a required-field rule, an auto-numbered ID column, a data-validation range and a dropdown list. The dropdown arrives in Week 6.)* Any other idea is acceptable if the student defends it with the same visible-versus-impossible distinction.
+
+### Workbook Week 5 — Build It (the Fault Log, run on their own table)
 
 No single answer; the marking criteria are:
 
-- [ ] Legal ranges written for every number column *before* the checks
-- [ ] All four checks visibly run (four passes, not one glance)
-- [ ] One log line per change: `row | column | kind of fault | what I did`
+- [ ] Legal ranges written for every number column *before* the checks ("My legal ranges")
+- [ ] A controlled vocabulary written for every category column ("My controlled vocabularies")
+- [ ] All four checks visibly run (four separate passes, not one glance)
+- [ ] One log line per change in "My fault log": `row | column | kind of fault | what I did`, all four boxes filled
+- [ ] Row count recorded before and after
 - [ ] Zero blanks filled with 0
-- [ ] Any outlier is kept and annotated, not deleted
+- [ ] Any outlier is kept and annotated, not deleted (the "not a fault" line)
 - [ ] "No faults found" is accepted **only** if the four checks are listed
 
-**The final question — "which fault would have been most dangerous if a model had trained on it?"**
-
-There is no single right answer. Three answers that earn full credit:
+**The final question, "which fault would have been most dangerous if a machine had trained on it?"** There is no single right answer. Three answers that earn full credit:
 
 > **The inconsistent spellings.** "The impossible values are loud — 88 hours makes you stop and look. The four Mondays are silent. Nothing warns you, the table looks perfectly fine, and the machine quietly thinks there are four different days that each happened once. It would never learn anything about Mondays, and I'd never find out why."
 
@@ -936,6 +1052,20 @@ There is no single right answer. Three answers that earn full credit:
 > **The duplicate.** "It's the only fault that doesn't look like a fault at all. Every value in it is legal and sensible. It just makes one day count twice, and none of the checks except a specific duplicate check would ever see it."
 
 **What does not earn full credit:** "the 88, because it's the biggest." Size isn't danger. Push back with: *which fault is hardest to notice?* Danger lives in silence, not size.
+
+### Workbook Week 5 — Draw It
+
+Marked on five things, not artistic skill: four panels, one per kind of mess, each recognisably that kind · the **fix** on the dotted line under each, and all four fixes **different** · the missing-value panel says **not a zero** · the impossible-value panel says **do not guess** · the fifth drawing shows the outlier **inside a drawn fence** labelled with the legal range, and says *keep it*.
+
+**The single most common mistake:** drawing the outlier like the impossible value, far off to one side with a cross through it. If there is no fence in the fifth drawing, it has not said what it needed to say. **The fence is the answer.**
+
+### Workbook Week 5 — Self-Check
+
+No right answers; it is the student's own rating. Read it for patterns. A 😕 on the first row (data type) means redo A6 with the adding test; a 😕 on the third (impossible versus outlier) means redo B5 and the Draw It fence; a 😕 on the last (blank versus 0) means redo A3 and B3 aloud. Whatever they write under "One thing I still want to ask about" is the best opening for next lesson, so answer it.
+
+### In-class Crime Scene Table: follow-up question
+
+*"How many faults are there really, nine or six?"* (Not on the workbook; use it in the discussion.) Both answers are defensible if reasoned. **Nine broken cells** (more precisely eight broken cells plus one duplicated row). **Four kinds of problem.** **Six distinct incidents** if the four Mondays count as one inconsistency. The best answer says all of that and notes that the count depends on whether you count *cells to fix* or *problems to prevent*: nine corrections, but only four rules needed to stop it happening again.
 
 ---
 

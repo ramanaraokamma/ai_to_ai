@@ -13,7 +13,7 @@
 | **Big idea** | Every model needs the table split into `X` (what you measured) and `y` (what you want back) — Level 1's *features* and *label*, finally spelled out in code. |
 | **New vocabulary** | `X` · `y` · feature matrix · target · Euclidean distance |
 | **New syntax** | `from sklearn.datasets import load_iris` · `X = df[["a", "b"]]` (two brackets) · `np.sqrt(x)` · `((row_a - row_b) ** 2).sum()` |
-| **Materials** | Printed workbook pages 28.1–28.6 · **squared / graph paper, two sheets** · a ruler with millimetres · a pencil · a calculator · **the sheet from Week 1 of Level 1** where the student wrote what a feature and a label are |
+| **Materials** | Printed workbook (`workbook/week-28.md`), especially the Build It pages (the ten-song playlist is in Part 1) and the Draw It page · **squared / graph paper, two sheets** · a ruler with millimetres · a pencil · a calculator · **the sheet from Week 1 of Level 1** where the student wrote what a feature and a label are |
 | **Tech needed** | One laptop with Python 3, numpy, pandas, matplotlib **and scikit-learn**. Scikit-learn is new this term — install it *before* the lesson (see Prep). |
 | **Prep time** | 20 minutes the night before (15 of which is running the code yourself), 5 minutes on the day |
 
@@ -31,7 +31,7 @@ By the end of the lesson the student can:
 4. **Compute the distance between two feature rows by hand on paper**, showing all four steps.
 5. **Match the hand-computed distance to numpy's answer to two decimal places.**
 
-Observable evidence: a workbook page with `X.shape` and `y.shape` written in ink, a sheet of graph paper with two points, a right-angled triangle and a ruler measurement on it, and a terminal showing `3.23` next to a hand-written `3.23`.
+Observable evidence: a workbook Build It page with `X.shape` and `y.shape` written in ink, a sheet of graph paper with two points, a right-angled triangle and a ruler measurement on it, and a terminal showing `3.23` next to a hand-written `3.23`.
 
 ---
 
@@ -351,7 +351,7 @@ representation and model.*
   ```
 
 - [ ] **Do the distance by hand yourself, with a pencil.** √10.44 = 3.23. Two minutes. It buys you fifteen minutes of confidence.
-- [ ] Print workbook pages 28.1–28.6.
+- [ ] Print the workbook (`workbook/week-28.md`), or at least the Build It and Draw It pages.
 - [ ] **Find the Level 1 Week 1 sheet** where the student wrote, in their own words, what a feature is and what a label is. This is the emotional centre of the lesson. If it is genuinely lost, the fallback is below.
 - [ ] Read section 4 (the brackets) twice. It is the thing you will be asked about most.
 
@@ -367,10 +367,10 @@ representation and model.*
 
 | If this fails | Do this instead |
 |---|---|
-| **scikit-learn will not install** | The whole lesson runs on paper and one graph. The iris numbers you need are printed on workbook page 28.3 — twelve real rows, copied out. Do the split, the shapes and the distance by hand; type the code next week when the install is fixed. **You lose nothing today except the printout of `(150, 4)`.** |
+| **scikit-learn will not install** | The whole lesson runs on paper and one graph. The iris numbers you need for the activity are just two rows, flower A and flower B, which you write on the board; the workbook's Puzzle of the Week prints four more real rows and Build It Part 4 adds flower C. Do the split, the shapes and the distance by hand; type the code next week when the install is fixed. **You lose nothing today except the printout of `(150, 4)`.** |
 | **No laptop at all** | Same as above. This is the most paper-friendly week of Term 4, deliberately, because the term's install lands here. |
 | **The student cannot find their Week 1 sheet** | Ask them to write the two definitions again, right now, from memory, before you say anything else about the lesson. Then keep that sheet. It works nearly as well and it is a fair test. |
-| **No graph paper** | Any lined paper turned sideways, or draw a 10×10 grid with a ruler. Or use the pre-drawn grid on workbook page 28.4. |
+| **No graph paper** | Any lined paper turned sideways, or draw a 10×10 grid with a ruler. Or use the pre-drawn frame on the workbook's Draw It page. |
 | **The student read ahead and already knows about kNN** | Excellent. Hand them the keyboard and make *them* explain to you why `X` needs two brackets. Then give them the harder distance question from Differentiation → flying. Do **not** let them train a model today; hold that line, because next week's lesson is built on the anticipation. |
 
 ---
@@ -433,7 +433,7 @@ y  =  what you want back       (one COLUMN)
 
 ### 🧠 Concept — Two Pieces, Two Shapes, Two Brackets (16 minutes)
 
-**Do this:** Put workbook page 28.2 between you — the ten-song playlist table. Nothing on the laptop yet.
+**Do this:** Put the workbook's Build It page between you — the ten-song playlist table printed in Part 1. Nothing on the laptop yet.
 
 | song | bpm | minutes | **mood** |
 |---|---|---|---|
@@ -749,7 +749,7 @@ The point of this activity is not the arithmetic. It is the **agreement**. The s
 
 ### Setup
 
-**On the table:** graph paper, a millimetre ruler, a pencil, a calculator, workbook page 28.4 (the pre-drawn grid, as backup), the laptop with the editor open.
+**On the table:** graph paper, a millimetre ruler, a pencil, a calculator, the workbook's Draw It page (the pre-drawn frame, as backup), the laptop with the editor open.
 
 **On the board or SHAPES sheet, written before you start:**
 
@@ -955,7 +955,7 @@ You can put it in, and something worse than an error will happen: it will appear
 
 | What happens | Why | What to do right now |
 |---|---|---|
-| scikit-learn is not installed and the lesson stalls in minute 2 | The install was left to the day | Switch to the paper version immediately — page 28.3 has twelve real iris rows printed. Do not spend lesson time on pip. Fix the install afterwards, alone. |
+| scikit-learn is not installed and the lesson stalls in minute 2 | The install was left to the day | Switch to the paper version immediately — the activity needs only two iris rows (A and B), and the Puzzle of the Week prints four more. Do not spend lesson time on pip. Fix the install afterwards, alone. |
 | The student writes `X` as one bracket every single time | Two brackets look like a typo, and the brain corrects typos | Do not just correct it. Make them say the sentence out loud each time: **"a list of names, so a table comes back."** Three or four repetitions and it lands. |
 | Shapes get read backwards — `(150, 4)` as four flowers | Nothing in the notation says which is which | Enforce the phrase **"rows, then columns"** every single time a shape is spoken, all term. Write it on the SHAPES sheet and point at it rather than saying it. |
 | The `(10,)` trailing comma is dismissed as a typo | It looks exactly like a typo | Show them `(10, 1)` next to `(10,)` and ask which is the skinny table. The comma is doing a job: it says "there is no second number". |
@@ -1138,160 +1138,564 @@ Full marks needs all four lines written down, not just the 5. **What to catch:**
 
 > "Two things, about an hour altogether, and the second one is the one that matters.
 >
-> **First, pages 28.5 and 28.6 — build `X` and `y` from your own table.** Use the table you have been carrying since Week 21. Write down `X.shape` and `y.shape` in ink, and next to each one write, in words, what the numbers mean: 'ten rows, meaning ten songs' — not just the digits. If your own table has gone walkabout, page 28.5 has the ten-song playlist printed on it and you can use that.
+> **First, Build It, Parts 1 and 2 — build `X` and `y` from your own table.** Use the table you have been carrying since Week 21. Write down `X.shape` and `y.shape` in ink, and next to each one write, in words, what the numbers mean: 'ten rows, meaning ten songs' — not just the digits. If your own table has gone walkabout, the ten-song playlist is printed in Part 1 and you can use that.
 >
 > **Second, one distance, twice, and they must match.** Pick any two rows of your table. Compute the distance between them **on paper**, all four steps, each on its own line — subtract, square, add, root. Then compute the same distance in numpy. Then write both numbers next to each other, rounded to two decimal places, and they had better be the same.
 >
-> And one thing I want you to notice while you do it, and write one sentence about: **look at which column made the biggest contribution at step 2.** Not step 4. Step 2, where the squares are. One of your columns is going to be doing nearly all the work, and I want you to notice which and say how much. That sentence is worth more marks than the distance is."
+> And one thing I want you to notice while you do it, and write one sentence about, which is **Part 3: look at which column made the biggest contribution at step 2.** Not step 4. Step 2, where the squares are. One of your columns is going to be doing nearly all the work, and I want you to notice which and say how much. That sentence is worth more marks than the distance is."
 
-**Workbook pages:** 28.1, 28.2, 28.3 and 28.4 in class; **28.5 and 28.6** at home.
+**Workbook sections** (`workbook/week-28.md`): the **Draw It** page is used **in class**, during the activity. **Build It, Parts 1–3** are the core **homework**. The workbook's older "page 28.5 / 28.6" labels inside Build It are just Parts 1 and 2.
 
-**Expected time:** 20 min for `X` and `y` and the shapes · 25 min for the distance done twice · 15 min for page 28.6. About 60 minutes.
+**The rest of the workbook** is for the week around the lesson, in this order of priority: **Warm-Up** and **Predict the Output** (short; good to open the next sitting), **Practice Set A** and **Fix the Broken Program** (the two that catch misunderstandings), then **Practice Set B**, **Puzzle of the Week**, **Think Deeper**, **Build It Part 4** (the extension, optional) and **Part 5** (Bug Log), and **Self-Check** last. Nothing in the workbook has to be finished before Week 29 except Build It Parts 1–3.
+
+**Expected time:** 20 min for Build It Part 1 (`X` and `y` and the shapes) · 25 min for Part 2 (the distance done twice) · 15 min for Part 3 (shares and the sentence). About 60 minutes for the core. Allow roughly another 90 minutes across the week if the rest is set.
 
 ---
 
 ## 🔑 Answer Key
 
-Every code block below was run before it was pasted here, and the outputs are real.
+This key follows the workbook section by section, with every item answered, in the same order the student meets them. The values are the ones in the workbook's own Answers section, which has been checked; the distances, shares and shapes were recomputed for this guide and agree. Every code block below was run before it was pasted here, and the outputs are real.
 
-### Page 28.1 — Which column is which?
+### Warm-Up — W1 to W5
 
-| # | The table | `X` | `y` | Column excluded, and why |
+*Teacher note: these five are Week 27 recall and worth two minutes, not ten. Accept any wording that carries the idea. The usual wrong answer to W3 is "error" — the test is that there is no `Traceback` and the program carries on.*
+
+**W1.** **No error.** It sets the **bottom** of the axis to 48.6 and leaves the top exactly where matplotlib had already put it. One of Week 27's silent bugs: it invents half of what you did not say.
+
+**W2.** `axes[0]` and `axes[1]`. **Not** `axes[1]` and `axes[2]` — `axes` is a numpy array with two slots, numbered from zero.
+
+**W3.** A **warning**, not an error: *"No artists with labels found to put in legend."* The program carries on, the file gets saved, and there is no legend on it. You can tell it is a warning because there is no `Traceback` and the next `print` still runs.
+
+**W4.** Any of: it is **not a percentage** · not a slope · not a proof of cause · not "93% of the score comes from studying". It is a position on a scale from −1 through 0 to +1.
+
+**W5.** **Hot weather.** The word is **confounder** — a hidden third thing causing both of the things you measured.
+
+### Predict the Output — P1 to P4
+
+*Teacher note: mark the written prediction, not whether it was right. A wrong prediction that was committed to in ink is worth more than a right one made after running the code.*
+
+**P1** — real output:
+
+```text
+Series (3,)
+DataFrame (3, 1)
+False
+```
+
+**What is different?** Both asked for `bpm`. One bracket gave a **Series** — a single column, one direction, shape `(3,)`. Two brackets gave a **DataFrame** — a table, two directions, shape `(3, 1)`. **Same numbers inside; different kind of container.**
+
+The inner brackets in `playlist[["bpm"]]` are a **list**, and asking a table for a *list of names* gets you a *table* back — even when the list has only one name in it.
+
+**Which for `X`, which for `y`?** `X` wants the **DataFrame** (two brackets). `y` wants the **Series** (one bracket).
+
+**P2** — real output:
+
+```text
+-4.2
+10.44
+3.2310988842807022
+3.23
+```
+
+**Line 1 skipped step 2, the squaring.** `-3.0 + -1.2 = -4.2`. And notice it came out **negative**, which no distance ever can — that is the clearest possible sign a step is missing. Squaring exists partly to make the minus signs go away.
+
+**Which would you write in a report?** **3.23.** Seventeen digits of precision on a flower somebody measured with a ruler in the 1930s is not honesty, it is noise. **Round when you report; never round in the middle of the arithmetic.**
+
+**P3** — real output:
+
+```text
+[-3. -4.]
+[3. 4.]
+5.0
+5.0
+```
+
+**Which step made lines 3 and 4 the same?** **Step 2, squaring.** `(-3)² = 9` and `3² = 9`. The minus signs disappear, so it stops mattering which way round you subtracted.
+
+**Does the order matter?** **No.** The distance from A to B is always the distance from B to A. Which is a good sanity check: if swapping your two rows changes your answer, you have made an arithmetic slip.
+
+*(And notice the answer is 5.0, not 7. Three across and four up gets you five away. It is the Week 28 trick in miniature.)*
+
+**P4** — real output:
+
+```text
+4
+0 1 2
+versicolor
+(4,)
+```
+
+**Line 2 — what are those numbers?** They are **codes**, not names. scikit-learn stores the answers as `0`, `1` and `2`, and keeps the names in a separate list called `target_names`. So flower 0 is species 0, flower 75 is species 1, flower 149 is species 2 — and because the file is sorted by species, those three happen to give you one of each.
+
+**Line 3** is how you turn a code back into a name: `iris.target_names[1]` is `'versicolor'`.
+
+**Line 4 — what is `iris.data[0]`?** **One row**, on its own — a single line of four numbers, shape `(4,)`. Not a table with one row in it, which would be `(1, 4)`. That difference is going to matter next week when `predict` insists on a table.
+
+### Practice Set A — Read It (A1 to A6)
+
+*Teacher note: in A3 the usual wrong answer is to match (b) `playlist[["mood"]]` with the Series because "it is one column". Point at the inner brackets: a list of names comes in, so a table comes back. In A1 credit the student who argues about repeating dates or shops (see the notes under A1).*
+
+**A1.**
+
+| # | `X` | `y` | In neither, and why |
+|---|---|---|---|
+| a | bpm, minutes | mood | `song` — a name appears in exactly one row, so there is nothing in it that transfers to a new song |
+| b | the four measurements | species | `flower id` — a row number. It says nothing about the plant |
+| c | hours slept, minutes of exercise, screen hours | felt tired | `pupil name` — unique per row |
+| d | temperature, cloud cover, wind speed | rained today | `date` — every date appears once |
+| e | price, distance, rating | would order again | `shop` — a name |
+
+*(On (d): if you argued that a date could become `month` or `day_of_week`, which **do** repeat, you are right and those are perfectly good features. The **raw** date is not. On (e): if you argued that the same shop can appear twice, you have made a genuinely good point — but the moment a new shop appears you are stuck again, and you cannot tell in advance which shops will repeat. So the rule stays.)*
+
+**A1(f).** The model would score **100%** and be worthless. `mood` **is** the answer, so you would be handing over the answer and asking for it back. Level 1 called it a **leak**. The test: at the moment you actually need the prediction, do you have this value? For a brand-new song you do not — that is the whole reason you wanted a prediction.
+
+**A1(g).** Because a row number describes **where the row sits in your file**, not the thing the row is about. Sort the file differently and every row number changes while nothing about any song changes. **A feature has to be a property of the thing.**
+
+**A2.**
+
+| # | `X.shape` | `y.shape` |
+|---|---|---|
+| a | `(10, 2)` | `(10,)` |
+| b | `(150, 4)` | `(150,)` |
+| c | `(40, 3)` | `(40,)` |
+| d | `(178, 13)` | `(178,)` |
+| e | `(6, 2)` | `(6,)` |
+| f | `(1, 4)` | — there is no `y` |
+
+**A2(g).** It means **"there is no second number."** It marks the shape as a single line of ten values rather than a table. Without it, `(10)` would just be the number ten in brackets. Compare `(10, 1)`, which is ten rows of one column — a skinny table, not a line.
+
+**A2(h).** `X.shape` becomes `(40, 4)`. `y.shape` stays `(40,)`. **Adding a column never adds an answer.**
+
+**A2(i).** `X.shape` = `(35, 3)` and `y.shape` = `(35,)`. **Both change, together, always.** Which is exactly why you delete rows from the whole table *before* you pull `X` and `y` out — then it is impossible to get wrong.
+
+**A2(j).** Because you do not know it. That single flower is the thing you want the model to tell you about. **`y` is what you are asking for, so of course it is missing.**
+
+**A3.**
+
+| # | The code | Answer |
+|---|---|---|
+| a | `playlist["mood"]` | **ii** — a Series, `(10,)` |
+| b | `playlist[["mood"]]` | **iv** — a DataFrame, `(10, 1)` |
+| c | `playlist[["bpm", "minutes"]]` | **i** — a DataFrame, `(10, 2)` |
+| d | `playlist["bpm", "minutes"]` | **iii** — a `KeyError` |
+
+**A3(e).** **(c) and (d).** The difference is **one character**: the inner `[`. Without it, pandas thinks you are asking for a single column whose name is the pair `('bpm', 'minutes')`, and there is no such column.
+
+**A3(f).** *"A list of names, so a table comes back."* Say it every single time you type two brackets. Three or four repetitions and your fingers will do it without you.
+
+**A4.**
+
+| # | The fix |
+|---|---|
+| a | `X = playlist[["bpm", "minutes"]]` — add the inner brackets |
+| b | Take `"mood"` out of `X`. It is the answer; it cannot also be evidence |
+| c | `print(X.shape)` — `.shape` is a **fact**, not a machine. No brackets |
+| d | `total = squares.sum()` — `.sum()` **is** a machine, so it does need them |
+| e | Wrap both in `np.array(...)`. Plain lists do not subtract |
+| f | `iris = load_iris()` — the brackets are what **run** it |
+| g | Take `"song"` out. A name appears once, so there is nothing to learn |
+| h | `distance = np.sqrt(squares.sum())` — step 4 is a square **root**, not a square |
+
+**A4(i).** **(b).** *(Strictly, (b), (g) and (h) all run without an error at that line. (g) and the words-in-`X` version of (b) will be refused by scikit-learn later, because it cannot turn `chill` or a song title into a number. (h) runs but gives a wrong number, which an attentive student will catch. (b) is the answer the question wants because, once the answer column is stored as numbers such as 0 and 1, it never crashes and never looks wrong.)*
+
+**A4(j).** Because it produces a model that scores **100%**, which looks like the best possible outcome, so nobody goes looking. **A bug that lowers your score gets found. A bug that raises it gets shipped.**
+
+**A5.**
+
+| Slot | Answer |
+|---|---|
+| **Top box** | `X` — the measurements: `bpm` and `minutes` |
+| **Bottom box** | `y` — the answer: `mood` |
+| **Both shapes** | `X.shape = (10, 2)` and `y.shape = (10,)` |
+
+**A5(a).** `song`. It went **nowhere** — not into `X`, not into `y`. A song name appears in exactly one row.
+
+**A5(b).** Top: **two.** Bottom: **one.**
+
+**A6.**
+
+- **Which line first?** The **last** one, always: `KeyError: ('bpm', 'minutes')`.
+- **Which line is about you?** The one with **your own filename** in it: `File "/Users/you/project/x_and_y.py", line 15`.
+- **`KeyError` means** *"I went looking for a column with that name and there isn't one."*
+- **Why the pair?** Because with **one** bracket, `playlist["bpm", "minutes"]` asks for a single column whose name is the whole pair. That is a legitimate thing to ask a pandas table (some tables really do have paired column names) — so pandas took you at your word, looked for it, and did not find it.
+- **How many lines are yours?** **One.** Everything else is pandas showing you its own insides.
+
+*(Worth meeting the friendlier cousin on purpose: `playlist[["bpm", "minute"]]` — `minutes` misspelled — gives `KeyError: "['minute'] not in index"`, which **names the culprit**. And `print(playlist.columns)` shows you the exact spellings, including any stray spaces.)*
+
+### Practice Set B — Write It (B1 to B5)
+
+**B1.**
+
+```python
+print("X.shape:", X.shape, "  y.shape:", y.shape)
+```
+
+```text
+X.shape: (10, 2)   y.shape: (10,)
+```
+
+**The three numbers:** 10 songs · 2 measurements each · 10 answers.
+
+**B2.**
+
+```python
+# cricket_x_and_y.py
+# Six players, split into what we measured and what we want back.
+
+import pandas as pd
+
+team = pd.DataFrame({
+    "player":  ["Asha", "Ravi", "Meera", "Karan", "Divya", "Sanjay"],
+    "runs":    [312, 41, 288, 27, 350, 19],
+    "wickets": [1, 14, 0, 17, 2, 21],
+    "role":    ["batter", "bowler", "batter", "bowler", "batter", "bowler"],
+})
+
+X = team[["runs", "wickets"]]            # two brackets -> a table
+y = team["role"]                         # one bracket  -> a column
+
+print("X.shape:", X.shape, "-> 6 players, 2 measurements each")
+print("y.shape:", y.shape, "-> 6 answers, in one line")
+print("the column in neither:", "player")
+```
+
+```text
+X.shape: (6, 2) -> 6 players, 2 measurements each
+y.shape: (6,) -> 6 answers, in one line
+the column in neither: player
+```
+
+**B3.**
+
+```python
+# one_distance.py
+# Asha against Ravi, all four steps on four lines.
+
+import numpy as np
+
+asha = np.array([312.0, 1.0])            # runs, wickets
+ravi = np.array([41.0, 14.0])
+
+gaps = asha - ravi                       # step 1  subtract
+squares = gaps ** 2                      # step 2  square
+total = squares.sum()                    # step 3  add up
+distance = np.sqrt(total)                # step 4  square root
+
+print("step 1  subtract   :", gaps)
+print("step 2  square     :", squares)
+print("step 3  add up     :", total)
+print("step 4  square root:", distance)
+print("2 dp               :", round(float(distance), 2))
+```
+
+```text
+step 1  subtract   : [271. -13.]
+step 2  square     : [73441.   169.]
+step 3  add up     : 73610.0
+step 4  square root: 271.31162894354526
+2 dp               : 271.31
+```
+
+**And the thing worth noticing:** `runs` contributed 73441 of 73610 — **99.77%**. `wickets` contributed 0.23%. A model using this distance is sorting cricketers by run count and almost ignoring their wickets. Hold that thought; it is Week 30's whole lesson.
+
+**B4.**
+
+```python
+# iris_shapes.py
+# A real dataset that comes free inside scikit-learn.
+
+import numpy as np
+from sklearn.datasets import load_iris
+
+iris = load_iris()                       # the () is what RUNS it
+
+print("X shape:", iris.data.shape)
+print("y shape:", iris.target.shape)
+print("the four things measured:")
+for name in iris.feature_names:
+    print("   ", name)
+print("the three kinds of flower:", iris.target_names)
+print("how many of each:", np.bincount(iris.target))
+```
+
+```text
+X shape: (150, 4)
+y shape: (150,)
+the four things measured:
+    sepal length (cm)
+    sepal width (cm)
+    petal length (cm)
+    petal width (cm)
+the three kinds of flower: ['setosa' 'versicolor' 'virginica']
+how many of each: [50 50 50]
+```
+
+**Fifty of each**, which is unusually tidy and one of the reasons iris is the dataset everybody learns on. Real tables are almost never balanced like that.
+
+**B5.**
+
+```python
+# nearest_song.py
+# Which known song is the mystery song most like?
+
+import numpy as np
+
+known = np.array([[68.0, 4.2],
+                  [148.0, 3.1],
+                  [80.0, 3.8],
+                  [160.0, 2.8],
+                  [152.0, 3.4],
+                  [72.0, 5.1]])
+names = ["Monsoon", "Rocket", "Lantern", "Corridor", "Firecracker", "Slow Bus"]
+moods = ["chill", "hype", "chill", "hype", "hype", "chill"]
+
+mystery = np.array([100.0, 4.0])
+print("mystery song: bpm 100, 4.0 minutes")
+print()
+
+results = []                             # collect (distance, name, mood) tuples
+for i in range(len(known)):
+    gaps = known[i] - mystery            # step 1
+    squares = gaps ** 2                  # step 2
+    total = squares.sum()                # step 3
+    distance = np.sqrt(total)            # step 4
+    results.append((distance, names[i], moods[i]))
+
+for distance, name, mood in sorted(results):     # sorted by the FIRST item
+    print(f"{distance:7.2f}   {name:12s} {mood}")
+print()
+print("nearest is", sorted(results)[0][1], "->", sorted(results)[0][2])
+```
+
+```text
+mystery song: bpm 100, 4.0 minutes
+
+  20.00   Lantern      chill
+  28.02   Slow Bus     chill
+  32.00   Monsoon      chill
+  48.01   Rocket       hype
+  52.00   Firecracker  hype
+  60.01   Corridor     hype
+
+nearest is Lantern -> chill
+```
+
+**Two things worth noticing.** The three chill songs are all closer than all three hype songs — **the distances have sorted themselves into the two moods**, with no model involved at all. That is the whole reason next week's model works.
+
+And look at the decimals: `20.00`, `28.02`, `32.00`. The lengths are barely moving the numbers. **Nearly all of every one of those distances is bpm.**
+
+### Fix the Broken Program — Bugs 1 to 3
+
+*Teacher note: students nearly always find Bugs 1 and 2 and miss Bug 3, because it prints no error. If stuck, ask only: "How many columns should `X` have, and how many does it have?" Do not name the line.*
+
+**Bug 1 — the syntax error.**
+
+**Did any of it run?** **No.** Two tells, both instant: there is **no `Traceback`**, and nothing at all got printed. Python never started the program — it could not finish reading the file.
+
+**Why does the arrow point at the opening `(`?** Because an open bracket is a perfectly legal way to **continue onto the next line** — that is how the `train_test_split` calls get split across lines next week. So Python keeps reading, hoping for a `)`, until it runs out of file. Then it reports the place where the bracket was **opened**, because that is the last spot it was certain about.
+
+**The fix:**
+
+```python
+print("X.shape:", X.shape)
+```
+
+**Bug 2 — the runtime error.**
+
+**Which two lines are yours?** The line naming your own file (`line 18`) and the last line (`KeyError`). The rest is pandas.
+
+**What did pandas think you wanted?** A single column named `('hours_slept', 'revision_mins')` — both names joined into one. That is what one bracket around two names asks for.
+
+**The fix:**
+
+```python
+tara = np.array(pupils[["hours_slept", "revision_mins"]].iloc[0])
+```
+
+**Bug 3 — the silent one.**
+
+**`X.shape` should have been `(5, 2)`.** It came out `(5, 3)` because there are three names in the list.
+
+**Which line:**
+
+```python
+X = pupils[["hours_slept", "revision_mins", "passed"]]
+```
+
+`"passed"` is in `X` **and** it is `y`.
+
+**What would happen if you trained on it?** The model would score **100%**, or extremely close to it, on any test you gave it — because one of its input columns *is* the answer. (As written, `passed` holds the words `yes` and `no`, so scikit-learn would actually refuse it; the leak only stays silent once the words are stored as numbers such as 1 and 0.) It would look like the best model anybody had ever built. And the first time you handed it a real new pupil, you would have nothing to put in that column, because whether they passed is exactly what you were trying to find out.
+
+**What Level 1 called it:** a **leak**.
+
+**The fix:**
+
+```python
+X = pupils[["hours_slept", "revision_mins"]]
+```
+
+**The three-second test:** *at the moment I actually need the prediction, do I already have this value?* If yes, it does not belong in `X`.
+
+**The shares.** Total = 12.25 + 4900 = 4912.25.
+
+- `hours_slept`: 12.25 ÷ 4912.25 × 100 = **0.25 %**
+- `revision_mins`: 4900 ÷ 4912.25 × 100 = **99.75 %**
+
+Confirmed by a real run:
+
+```python
+import numpy as np
+squares = np.array([12.25, 4900.0])
+total = squares.sum()
+print("total:", total)
+print("hours_slept  :", round(float(100 * squares[0] / total), 2), "%")
+print("revision_mins:", round(float(100 * squares[1] / total), 2), "%")
+```
+
+```text
+total: 4912.25
+hours_slept  : 0.25 %
+revision_mins: 99.75 %
+```
+
+### Puzzle of the Week — Parts 1 and 2, (a) to (k)
+
+**Part 1 — Two flowers, wrong species, wrong distance**
+
+**(a)**
+
+| pair | step 1 (gaps) | step 2 (squares) | step 3 (total) | step 4 |
 |---|---|---|---|---|
-| (a) | song, bpm, minutes, **mood** | bpm, minutes | mood | `song` — a name appears in exactly one row, so there is nothing in it that transfers to a new song. |
-| (b) | flower id, petal length, petal width, sepal length, sepal width, **species** | the four measurements | species | `flower id` — a row number. It carries no information about the plant at all. |
-| (c) | pupil name, hours slept, minutes of exercise, screen time hours, **felt tired** | hours slept, minutes of exercise, screen time hours | felt tired | `pupil name` — unique per row. |
-| (d) | date, temperature at 9am, cloud cover, wind speed, **rained today** | temperature, cloud cover, wind speed | rained today | `date` — every date appears once. *(Worth a note if a student argues: you could turn a date into `month` or `day_of_week`, which do repeat, and those are perfectly good features. The raw date is not.)* |
-| (e) | shop, price, distance in km, rating out of 5, **would order again** | price, distance, rating | would order again | `shop` — a name. *(A student who says "but the same shop could appear twice" has made a genuinely good point. If shops repeat, the column carries something. Credit it, and note the honest reply: the moment a new shop appears you are stuck again.)* |
-
-**28.1(f) In (a), what would happen if you put `mood` inside `X` as well?**
-The model would score 100% and be worthless. `mood` *is* the answer, so you would be handing over the answer and then asking for it back. Level 1 called this a **leak**. The test is unchanged: at the moment you need the prediction, do you have this value? For a brand-new song you do not — that is the whole reason you wanted a prediction.
-
-**28.1(g) Why is a row number never a feature?**
-Because it describes where the row happens to sit in your file, not the thing the row is about. Sort the file differently and every row number changes while nothing about any song changes. A feature has to be a property of the thing.
-
-### Page 28.2 — Shapes
-
-| # | Table | `X.shape` | `y.shape` |
-|---|---|---|---|
-| (a) | 10 songs, 2 measurements | `(10, 2)` | `(10,)` |
-| (b) | 150 flowers, 4 measurements | `(150, 4)` | `(150,)` |
-| (c) | 40 pupils, 3 measurements | `(40, 3)` | `(40,)` |
-| (d) | 178 wines, 13 measurements | `(178, 13)` | `(178,)` |
-| (e) | 6 fruits, 2 measurements | `(6, 2)` | `(6,)` |
-| (f) | 1 new flower you want a guess for, 4 measurements | `(1, 4)` | — there is no `y`; that is the whole point |
-
-**28.2(g) What does the comma in `(10,)` mean?**
-It means "there is no second number". It marks the shape as a single line of ten values rather than a table. Without it, `(10)` would just be the number ten in brackets. Compare `(10, 1)`, which means ten rows of one column each — a skinny table, not a line.
-
-**28.2(h) You add a fourth measurement to a 40-row table. What changes?**
-`X.shape` becomes `(40, 4)`. `y.shape` stays `(40,)`. Adding a column never adds an answer.
-
-**28.2(i) You delete five rows from the table. What changes?**
-Both. `X.shape` becomes `(35, 3)` and `y.shape` becomes `(35,)`. **They must always change together** — and the reason to delete rows from the whole table, before pulling `X` and `y` out, is that then it is impossible to get this wrong.
-
-### Page 28.3 — Twelve iris rows, on paper
-
-The twelve printed rows (real rows from `load_iris`, petal columns only):
-
-| row | petal length | petal width | species |
-|---|---|---|---|
-| 0 | 1.4 | 0.2 | setosa |
-| 1 | 1.4 | 0.2 | setosa |
-| 2 | 1.3 | 0.2 | setosa |
-| 3 | 1.5 | 0.2 | setosa |
-| 50 | 4.7 | 1.4 | versicolor |
-| 51 | 4.5 | 1.5 | versicolor |
-| 52 | 4.9 | 1.5 | versicolor |
-| 65 | 4.4 | 1.4 | versicolor |
-| 100 | 6.0 | 2.5 | virginica |
-| 101 | 5.1 | 1.9 | virginica |
-| 102 | 5.9 | 2.1 | virginica |
-| 103 | 5.6 | 1.8 | virginica |
-
-**28.3(a) `X.shape` and `y.shape` for this printed table.**
-`X.shape` is `(12, 2)`. `y.shape` is `(12,)`.
-
-**28.3(b) Which two species overlap, just by looking?**
-Versicolor (4.4–4.9 long) and virginica (5.1–6.0 long) sit next to each other and nearly touch. Setosa (1.3–1.5) is miles away from both. **Prediction worth writing down now:** any model will find setosa easy and confuse the other two. It will turn out to be exactly right, in Week 30.
-
-**28.3(c) Distance between row 0 and row 3.**
-
-```
-step 1   1.4 − 1.5 = −0.1        0.2 − 0.2 = 0.0
-step 2   (−0.1)² = 0.01          0.0² = 0.00
-step 3   0.01 + 0.00 = 0.01
-step 4   √0.01 = 0.1
-```
-
-**0.10.** Two setosas, almost the same point.
-
-**28.3(d) Distance between row 50 and row 100.**
-
-```
-step 1   4.7 − 6.0 = −1.3        1.4 − 2.5 = −1.1
-step 2   (−1.3)² = 1.69          (−1.1)² = 1.21
-step 3   1.69 + 1.21 = 2.90
-step 4   √2.90 = 1.7029...  = 1.70
-```
-
-**1.70.**
-
-**28.3(e) Distance between row 0 and row 100.**
-
-```
-step 1   1.4 − 6.0 = −4.6        0.2 − 2.5 = −2.3
-step 2   (−4.6)² = 21.16         (−2.3)² = 5.29
-step 3   21.16 + 5.29 = 26.45
-step 4   √26.45 = 5.1430...  = 5.14
-```
-
-**5.14.**
-
-**28.3(f) Put those three distances in order and say what the order tells you.**
-0.10 < 1.70 < 5.14. Two setosas are almost on top of each other; a versicolor and a virginica are moderately apart; a setosa and a virginica are far apart. **Distance is behaving like similarity** — and that is the entire idea next week's model runs on.
+| 52 – 101 | −0.2, −0.4 | 0.04, 0.16 | 0.20 | √0.20 = **0.45** |
+| 100 – 101 | 0.9, 0.6 | 0.81, 0.36 | 1.17 | √1.17 = **1.08** |
+| 100 – 103 | 0.4, 0.7 | 0.16, 0.49 | 0.65 | √0.65 = **0.81** |
 
 Confirmed in code:
 
 ```python
-# check_page_283.py
+# puzzle_28.py
 import numpy as np
 from sklearn.datasets import load_iris
 
 iris = load_iris()
-
-for i, j in [(0, 3), (50, 100), (0, 100)]:
-    a = iris.data[i, 2:4]                 # petal length and width of row i
+for i, j in [(52, 101), (100, 101), (100, 103)]:
+    a = iris.data[i, 2:4]                 # petal length and width
     b = iris.data[j, 2:4]
     gaps = a - b
-    print(f"rows {i:3d} and {j:3d}:  gaps {gaps}  squares {gaps ** 2}"
-          f"  total {round((gaps ** 2).sum(), 4)}"
-          f"  distance {round(float(np.sqrt(((a - b) ** 2).sum())), 2)}")
+    squares = gaps ** 2
+    print(f"rows {i:3d} and {j:3d}:  gaps {np.round(gaps, 2)}"
+          f"  squares {np.round(squares, 2)}"
+          f"  total {round(float(squares.sum()), 2)}"
+          f"  distance {round(float(np.sqrt(squares.sum())), 2)}")
 ```
 
 ```text
-rows   0 and   3:  gaps [-0.1  0. ]  squares [0.01 0.  ]  total 0.01  distance 0.1
-rows  50 and 100:  gaps [-1.3 -1.1]  squares [1.69 1.21]  total 2.9  distance 1.7
-rows   0 and 100:  gaps [-4.6 -2.3]  squares [21.16  5.29]  total 26.45  distance 5.14
+rows  52 and 101:  gaps [-0.2 -0.4]  squares [0.04 0.16]  total 0.2  distance 0.45
+rows 100 and 101:  gaps [0.9 0.6]  squares [0.81 0.36]  total 1.17  distance 1.08
+rows 100 and 103:  gaps [0.4 0.7]  squares [0.16 0.49]  total 0.65  distance 0.81
 ```
 
-### Page 28.4 — The graph paper page
+**(b)** **The two flowers of different species are closer together than the two flowers of the same species.** Row 52 is a versicolor and row 101 is a virginica, and they sit **0.45** apart. Rows 100 and 101 are *both* virginica and they sit **1.08** apart — more than twice as far.
 
-**28.4(a) The plot.** Axes labelled `petal length (cm)` 0–6 across and `petal width (cm)` 0–2 up. Scale written on the sheet. Flower A `(1.4, 0.2)` as a circle, flower B `(4.4, 1.4)` as a triangle, joined, with the right-angled triangle completed.
+**(c)** **0.45 < 0.81 < 1.08.** And the smallest one is the cross-species pair.
 
-**28.4(b) Ruler measurement.** About **6.5 cm of paper**, which at 2 cm of paper per unit is **≈ 3.25**. Anything from 3.1 to 3.4 is a correct measurement. Mark the honesty of writing it down before doing the arithmetic, not the accuracy.
+**(d)** A model that decides species by finding the single nearest flower, and has only these four rows to go on, will get row 101 **wrong** — it will look around, find a versicolor closer than any of its own kind, and call it versicolor. **The species overlap, so "nearest" and "same kind" are not the same thing.**
 
-**28.4(c) The four steps.** `−3.0` and `−1.2` → `9.00` and `1.44` → `10.44` → **`3.23`**.
+**(e)** Several good answers, all of which are worth credit:
 
-**28.4(d) Why doesn't the ruler give exactly 3.23?**
-Because a ruler and a pencil are physical objects. The pencil line has width, the point is a blob a millimetre across, and reading a ruler to better than half a millimetre is not possible by eye. The arithmetic has none of those problems. **The right conclusion is not "the ruler is wrong" — it is that measurements carry uncertainty and calculations do not.**
+- **More columns.** We are only using two of the four measurements. The sepal columns might separate these two rows.
+- **More neighbours.** Ask the nearest *five* instead of the nearest one, so a single close-but-wrong flower cannot decide the answer on its own. **That is exactly what next week's `k` is for**, and if you wrote this, you have invented Week 29 a week early.
+- **Honesty.** Have the model say "I am not sure" when the nearest two disagree and are nearly tied.
 
-**28.4(e) Which step throws away the minus signs, and why is that fine?**
-Step 2, squaring. It is fine because a gap of −3 and a gap of +3 are the same size of gap — all we want to know is *how far apart*, not which one was bigger. And it is more than fine, it is necessary: without squaring, a gap of +3 in one column and −3 in another would cancel out and two very different rows would come out at distance 0.
+**Part 2 — The unit that flips the answer**
 
-### Page 28.5 — `X` and `y` from your own table
+**(f)** Length in **minutes**. Monsoon `(68, 4.2)`, Lantern `(80, 3.8)`.
 
-Mark the structure, not the choice of table. Model answer using the ten-song playlist:
+| | gap | squared | share |
+|---|---|---|---|
+| bpm | −12 | 144 | **99.89 %** |
+| minutes | 0.4 | 0.16 | **0.11 %** |
+| | | total: **144.16** | distance: **12.01** |
+
+**(g)** Length in **seconds**. Monsoon `(68, 252)`, Lantern `(80, 228)`.
+
+| | gap | squared | share |
+|---|---|---|---|
+| bpm | −12 | 144 | **20.00 %** |
+| seconds | 24 | 576 | **80.00 %** |
+| | | total: **720** | distance: **26.83** |
+
+Confirmed:
+
+```python
+# units_flip.py
+import numpy as np
+
+for unit, a, b in [("minutes", np.array([68.0, 4.2]), np.array([80.0, 3.8])),
+                   ("seconds", np.array([68.0, 252.0]), np.array([80.0, 228.0]))]:
+    squares = (a - b) ** 2
+    total = squares.sum()
+    print(f"length in {unit}:")
+    print(f"   bpm share    : {100 * squares[0] / total:.2f} %")
+    print(f"   length share : {100 * squares[1] / total:.2f} %")
+    print(f"   distance     : {np.sqrt(total):.2f}")
+```
+
+```text
+length in minutes:
+   bpm share    : 99.89 %
+   length share : 0.11 %
+   distance     : 12.01
+length in seconds:
+   bpm share    : 20.00 %
+   length share : 80.00 %
+   distance     : 26.83
+```
+
+**(h)**
+
+| length measured in… | bpm's share | length's share |
+|---|---|---|
+| minutes | 99.89 % | 0.11 % |
+| seconds | 20.00 % | 80.00 % |
+
+**(i)** **Zero songs changed. Zero notes were re-recorded.**
+
+**(j)** Something with this shape:
+
+> Nothing about the two songs changed — only the word at the top of a column — and yet which measurement did nearly all the work flipped completely over, from bpm doing 99.89% to length doing 80%. **So a distance is not a fact about the songs. It is a fact about the songs *and* the units somebody happened to choose.**
+
+**(k)** Write bpm in **beats per second** instead — divide by 60. Then the bpm gap becomes 12 ÷ 60 = 0.2, squared 0.04, against the minutes gap's 0.16. Length would now be doing about **80%** of the work with lengths in minutes. *(Any unit that shrinks the bpm numbers works: beats per second, or bpm as a fraction of the fastest song, or anything similar. The point is that you can put whichever column you like in charge, just by choosing units — which is precisely why nobody should be allowed to.)*
+
+### Think Deeper — T1 and T2
+
+**T1.** Model answer:
+
+> *`days_in_recovery_ward` must not go in `X`. Run the three-second test: at the moment I actually need the prediction — before the operation — do I have this value? No. Nobody has spent any days in a recovery ward yet, because the surgery has not happened. The column can only be filled in afterwards.*
+>
+> *If I leave it in, my model will score close to 100%, because almost everybody with a non-zero recovery-ward count had surgery and almost everybody with zero did not. It will look like the best model in the hospital. And the first time somebody uses it on a real new patient, they will have nothing to put in that column, so they will type a zero — and the model will confidently say "no surgery needed" for every single patient, including the ones who need it most urgently.*
+>
+> *The chapter's rules do not ban it, and that is the interesting part. It is not a name and not a row number. **The rule it breaks is about time.** A feature has to be something you would genuinely know *before* the answer exists. `days_in_recovery_ward` is a consequence of the answer, not evidence for it, and a column that is a consequence of the answer is the answer wearing a disguise.*
+>
+> *In a table like this I would also be suspicious of anything named like `discharge_date`, `anaesthetist_assigned`, `surgeon_name`, or `theatre_booked` — all of them describe things that only happen because the decision was already made.*
+
+**Marking note:** full marks needs (1) the three-second test applied explicitly, (2) a specific prediction about the score **and** about what happens on a new patient, (3) the timing rule named as something the chapter's rules do not cover, and (4) one plausible extra column.
+
+**T2.** Model answer:
+
+> *For thirteen columns the arithmetic is: **thirteen subtractions**, then **thirteen squarings**, then **one addition of thirteen numbers**, then **one square root**. Exactly the same four steps as two columns; only the middle two get longer. Nothing about the method cares how many columns there are, which is why numpy can do it in one line whether it is 2 columns or 200.*
+>
+> *But I cannot draw it, so I cannot look at it and see whether it is sensible — and that is a genuine loss. What I can do instead is **check it against something I already know.** I know the species of every iris flower. So a thirteen-column distance is behaving sensibly if flowers of the **same** species come out closer together, on average, than flowers of **different** species. I could compute the distance between every pair, split the pairs into "same species" and "different species", and compare the two averages. If the same-species average is smaller, the distance is measuring something real about the flowers. If they are about the same, my distance is measuring nothing at all — and I would never have found that out by staring at the formula.*
+>
+> *What I have given up is the ability to see **why** a particular answer came out. On a two-column plot I can point at the dot and say "it's near those two, look". With thirteen columns I can only report the number and trust the arithmetic — so I need checks like the one above to stand in for the eyes I no longer have.*
+
+**Marking note:** full marks needs (1) the correct counts — 13, 13, 1, 1 — (2) a **checkable** proposal using only same-species versus different-species distances, and (3) an honest statement of what is lost, not just a claim that everything is fine.
+
+### Build It — Parts 1 to 5
+
+*Teacher note: mark the structure, not the choice of table. A student who used their own Week 21 table will not match the model answer below, and should not. Part 5 (the Bug Log) has no model answer; it is full marks if at least one real error from the week is recorded with what fixed it.*
+
+**Part 1 — model answer**, using the ten-song playlist:
 
 ```python
 # my_x_and_y.py
@@ -1334,22 +1738,15 @@ y.shape: (10,) -> 10 answers, in one line
 Name: mood, dtype: object
 ```
 
-**28.5(a) In words, what does each number in `X.shape` mean?**
-The 10 is how many songs there are — one row per song. The 2 is how many things were measured about each song. Rows first, columns second.
+**In words:** the 10 is how many songs there are, one row per song. The 2 is how many things were measured about each song. **Rows first, columns second.** And `(10,)` is ten answers in a single line — *"ten comma nothing"*.
 
-**28.5(b) Which column did you leave out of both `X` and `y`, and why?**
-`song`. Every song name appears in exactly one row, so a model could only memorise it, and memorising a name tells you nothing about a song you have not heard.
+**The column in neither:** `song`. Every song name appears in exactly one row, so a model could only memorise it, and memorising a name tells you nothing about a song you have not heard.
 
-**28.5(c) What would you have to change to add a third measurement?**
-Add the column to the DataFrame, then add its name to the list inside the inner brackets: `playlist[["bpm", "minutes", "loudness"]]`. `X.shape` becomes `(10, 3)`. `y` does not change.
-
-### Page 28.6 — One distance, twice
-
-Model answer, Monsoon against Lantern (both chill songs):
+**Part 2 — model answer**, Monsoon against Lantern (both chill songs):
 
 **On paper:**
 
-```
+```text
 Monsoon = (68, 4.2)        Lantern = (80, 3.8)
 
 step 1   subtract      68 − 80 = −12          4.2 − 3.8 = 0.4
@@ -1391,44 +1788,85 @@ distance: 12.006664815842907
 
 **Paper: 12.01. numpy: 12.01. They match.** ✅
 
-**28.6(a) Which column contributed most at step 2, and by how much?**
-`bpm`, overwhelmingly. It contributed 144 out of 144.16 — that is **99.89%** of the total. `minutes` contributed 0.16, or **0.11%**.
+**Part 3 — the shares, and the sentence.**
 
-**28.6(b) Write one sentence about what that means.**
-Full-credit answer, in the student's own words, containing this idea:
+| column | its square | its share |
+|---|---|---|
+| `bpm` | 144 | **99.89 %** |
+| `minutes` | 0.16 | **0.11 %** |
 
-> Nearly all of the distance came from the beats per minute, so if I used this distance to decide which songs are similar I would basically be sorting by bpm and ignoring the length completely — not because length does not matter, but because bpm happens to be measured in bigger numbers.
+Full-credit sentence:
 
-**28.6(c) What would happen if you measured length in *seconds* instead of minutes?**
-The lengths become 252 and 228 instead of 4.2 and 3.8, so the gap becomes 24 instead of 0.4, and squared, 576 instead of 0.16. Now **length** contributes 576 of 720, which is 80%, and bpm contributes 20%. **Nothing about the songs changed. Only the units changed, and the answer flipped.** That is Week 30 in one sentence, and a student who gets here has arrived early.
+> Nearly all of the distance — **99.89% of it** — came from the beats per minute, and only 0.11% from the length. So if I used this distance to decide which songs are similar, I would basically be sorting by bpm and ignoring the length completely. And it is not because length does not matter: it is because **bpm happens to be written in numbers in the hundreds while length is written in numbers under six**, and squaring makes that difference enormous.
 
-Confirmed:
+**Marking note:** full marks needs the number, the named column, **and** the words "because of the units" or an equivalent. A sentence that says only "bpm mattered most" is missing the point of the exercise.
+
+**And the prediction to date:** fixing it would have to make the two columns **comparable somehow** — divide each gap by something that describes how much that column normally varies, so a gap counts as big when it is big *for its own column*. *(That is standardisation, it is Week 30, and a student who writes anything like it here has arrived early.)*
+
+**Part 4 — the extension.**
+
+| pair | distance |
+|---|---|
+| A – B | **3.23** |
+| A – C | **5.14** |
+| B – C | **1.94** |
 
 ```python
-# units_flip.py
+# three_flowers.py
 import numpy as np
+from sklearn.datasets import load_iris
 
-# Same two songs, length measured in minutes, then in seconds.
-for unit, a, b in [("minutes", np.array([68.0, 4.2]), np.array([80.0, 3.8])),
-                   ("seconds", np.array([68.0, 252.0]), np.array([80.0, 228.0]))]:
-    squares = (a - b) ** 2
-    total = squares.sum()
-    print(f"length in {unit}:")
-    print(f"   bpm share    : {100 * squares[0] / total:.2f} %")
-    print(f"   length share : {100 * squares[1] / total:.2f} %")
-    print(f"   distance     : {np.sqrt(total):.2f}")
+iris = load_iris()
+a = iris.data[0, 2:4]                    # (1.4, 0.2) setosa
+b = iris.data[65, 2:4]                   # (4.4, 1.4) versicolor
+c = iris.data[100, 2:4]                  # (6.0, 2.5) virginica
+
+for name, p, q in [("A-B", a, b), ("A-C", a, c), ("B-C", b, c)]:
+    print(name, round(float(np.sqrt(((p - q) ** 2).sum())), 2))
 ```
 
 ```text
-length in minutes:
-   bpm share    : 99.89 %
-   length share : 0.11 %
-   distance     : 12.01
-length in seconds:
-   bpm share    : 20.00 %
-   length share : 80.00 %
-   distance     : 26.83
+A-B 3.23
+A-C 5.14
+B-C 1.94
 ```
+
+**Closest pair: B–C at 1.94.** And they are **different** species — versicolor and virginica.
+
+> That is interesting rather than a mistake because it tells me something true about the flowers: versicolor and virginica genuinely overlap, and setosa genuinely does not. So a model that trusts the single closest flower will be excellent at setosa and will make its mistakes between the other two — which is a prediction I can write down now and check in a fortnight.
+
+### Draw It
+
+*Teacher note: this is the drawing from the in-class activity ("Two Flowers, Three Ways to the Same Number"). The ruler and pencil checks below belong to that activity and are not workbook items.*
+
+**Ruler measurement.** About 6.5 cm of paper, which at 2 cm of paper per unit is roughly 3.25. Anything from 3.1 to 3.4 is a correct measurement. Mark the honesty of writing it down before doing the arithmetic, not the accuracy. The four steps are `−3.0` and `−1.2`, then `9.00` and `1.44`, then `10.44`, then **3.23**.
+
+**Why doesn't the ruler give exactly 3.23?** A pencil line has width, a point is a blob a millimetre across, and nobody reads a ruler to better than half a millimetre by eye. The right conclusion is not "the ruler is wrong" but that measurements carry uncertainty and calculations do not.
+
+**Which step throws away the minus signs, and why is that fine?** Step 2, squaring. A gap of −3 and a gap of +3 are the same size of gap. It is also necessary: without it, +3 in one column and −3 in another would cancel and two very different rows would come out at distance 0.
+
+There is no single right drawing. A good one has **the scale written on the sheet**, both short sides of the triangle labelled with their lengths, and the four steps written out beside the picture rather than done in somebody's head.
+
+The tell that it is right: the slanted side is labelled with a number **smaller than the two short sides added together** — 3.23 against 3.0 + 1.2 = 4.2. If the slanted side is labelled 4.2, step 2 got skipped.
+
+The tell that it is *good* rather than merely correct: an annotation about why the squaring is there. Anybody can do the arithmetic. Explaining what step 2 is *for* is the thing.
+
+### Self-Check — the true-or-false table
+
+| Statement | Answer | Why |
+|---|---|---|
+| `X` is the unknown you solve for | **FALSE** | The exact opposite. `X` is everything you already know; `y` is the unknown |
+| `(10,)` is a typo for `(10, 1)` | **FALSE** | The comma means "there is no second number". `(10, 1)` is a skinny table |
+| `playlist[["bpm"]]` and `playlist["bpm"]` give the same thing | **FALSE** | A DataFrame `(10, 1)` and a Series `(10,)`. Same numbers, different container |
+| A name column can safely go in `X` if some names repeat | **FALSE** | The moment a new name appears you are stuck, and you cannot tell in advance which will repeat |
+| Adding a column to `X` changes `y.shape` | **FALSE** | Adding a column never adds an answer |
+| `X.shape` needs brackets after it | **FALSE** | `.shape` is a fact. `X.shape()` gives `TypeError: 'tuple' object is not callable` |
+| `squares.sum` gives you the total | **FALSE** | That is the machine, not the answer. `.sum()` **does** need its brackets |
+| The distance from A to B equals the distance from B to A | **TRUE** | Squaring kills the minus signs, so the order stops mattering |
+| You can skip the squaring if all the gaps are positive | **FALSE** | You would get 3 + 4 = 7 instead of 5. Squaring is not only about the signs |
+| A distance of 271 is bigger than 3.23, so those rows are more different | **FALSE** | Different tables, different units. **A distance only means something next to other distances from the same table** |
+| `load_iris` and `load_iris()` are the same thing | **FALSE** | One is the machine, one is the machine having been run. `iris.data` on the first gives `AttributeError: 'function' object has no attribute 'data'` |
+| `10.440000000000003` means something went wrong | **FALSE** | Binary cannot store numbers like 1.4 and 4.4 exactly, the way decimal cannot store a third, so the gap comes out a hair off. Fifteen decimal places down, and it is why you round before you report |
 
 ### Lesson questions posed in the Say-this scripts
 

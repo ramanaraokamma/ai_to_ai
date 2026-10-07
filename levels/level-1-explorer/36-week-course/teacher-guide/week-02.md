@@ -460,7 +460,7 @@ you speak.
 - **If they can't produce a hard one:** offer *"is this text message sarcastic?"* and ask them to try a
   rule. Their first rule will be `if it says "yeah right" then sarcastic`. Then say *"Turn left at
   the lights, yeah right at the roundabout."* They'll see it.
-- **Write both answers in the notebook.** They are workbook item W2.4 and they'll want them.
+- **Write both answers in the notebook.** They are the workbook's Build It, Page 2.6 (and echo Practice Set B3), and they'll want them.
 
 ---
 
@@ -666,8 +666,8 @@ them dictate; you write.
 | **label** | the correct answer attached to an example — a person writes it, before training |
 | **model** | the guessing machine that comes out of training; new input in, a guess out |
 
-**Do this:** Read the homework together. Check step one only — that they can do the worked example
-sentence back to you.
+**Do this:** Read the homework together. Check step one only — that they can say the Build It Page 2.4 worked example
+back to you.
 
 **Say this:**
 
@@ -960,34 +960,58 @@ itself — there's nothing to point at."*
 
 ## 📤 Homework to Assign
 
-**Workbook pages: Week 2, sections W2.1 – W2.4.** About 45 minutes.
+**Workbook: Week 2** ([`../workbook/week-02.md`](../workbook/week-02.md)). Eight sections, in this order:
+**Warm-Up** (W1–W5) · **Practice Set A** (A1–A6) · **Practice Set B** (B1–B5) · **Puzzle of the Week**
+(P1–P6) · **Think Deeper** (T1–T2) · **Build It** (Page 2.4, 2.5, 2.6) · **Draw It** · **Self-Check**.
+The workbook has its own Answers section at the end, and the Answer Key below follows it section by
+section. There is no code in it.
+
+**Suggested split** (the workbook is more than one evening's work, so split it; my estimate is about
+75–90 minutes in total):
+
+| Sitting | Sections | Roughly |
+|---|---|---|
+| **Tonight** | Warm-Up (5 min) · Practice Set A · Practice Set B · Build It, Page 2.4 and the **first** attempt at Page 2.5 | 40–45 min |
+| **An hour or more later, same evening or next day** | Build It, Page 2.5 second attempt · then Page 2.6 · Puzzle of the Week · Think Deeper · Draw It · Self-Check | 40–45 min |
+
+The Puzzle and Think Deeper are the stretch sections. If time is short, set the Puzzle and drop Think
+Deeper to the Week 3 warm-up.
 
 **Say this:**
 
-> "Three things, and the last one has a weird instruction.
+> "The workbook has a few parts and I'll split it in two. The first part starts with five quick
+> questions about last week, then the practice sets, and there's one weird instruction in it.
 >
-> **One.** Five sentences about AI that use magic words. Rewrite each one honestly. The first one is
-> already done for you as a worked example — read that one first, then do the other five in the same
-> shape. The test for a good rewrite is simple: does your version say **what actually happens**? If
-> your sentence would still be true about a wizard, it's not done.
+> **One.** Warm-Up and the two practice sets. Do them without looking anything up. Some of them are
+> about the spam messages and the mango cards, so you have already done the hard thinking.
 >
-> **Two.** Write down the one-sentence definition of AI **from memory**. Don't look it up, don't check
-> your notebook. Get it wrong if you get it wrong.
+> **Two.** In Build It there are five sentences about AI that use magic words. Rewrite each one
+> honestly. The first one is already done for you as a worked example — read that one first, then do
+> the other five in the same shape. The test for a good rewrite is simple: does your version say
+> **what actually happens**? If your sentence would still be true about a wizard, it's not done.
 >
-> **Three, and this is the weird one.** Close the book. Go and do something else — anything, an hour
-> of it. Then come back and write the definition again on the second line, still without looking.
-> Two lines, an hour apart.
+> **Three, and this is the weird one.** Still in Build It, write the one-sentence definition of AI
+> **from memory**. Don't look it up, don't check your notebook. Then close the book. Go and do
+> something else — anything, an hour of it. Then come back and write the definition again on the
+> second line, still without looking. Two lines, an hour apart.
 >
-> I'm not marking whether they match. I want to see what your brain kept."
+> I'm not marking whether they match. I want to see what your brain kept.
+>
+> **Four.** Later on: the cricket puzzle, the two thinking questions, drawing the two pipelines from
+> memory, and the self-check at the end. Be honest on the self-check, because it tells me what to
+> teach again."
 
-**Step one, before they leave the table:** read them the worked-example rewrite (in the answer key
-below) and have them say back, in their own words, why the honest version is better. Then stop.
+**Step one, before they leave the table:** read them the Page 2.4 worked-example rewrite (it is
+reproduced in the answer key below) and have them say back, in their own words, why the honest version
+is better. Then stop.
 
-**Marking notes:** be strict about the banned words — *magic, it just knows, it's smart, it thinks,
-it understands, obviously*. Circle every one and ask for the sentence again. Be relaxed about
-everything else. On the two definitions an hour apart: if the second one is *shorter and rougher but
-still contains the decision idea*, that's a very good sign — it means the idea stuck rather than the
-wording.
+**Marking notes:** mark the workbook section by section against the Answer Key below. Be strict about
+the banned words in Build It — *magic, it just knows, it's smart, it thinks, it understands,
+obviously*. Circle every one and ask for the sentence again. Be relaxed about everything else. On the
+two definitions an hour apart: if the second one is *shorter and rougher but still contains the
+decision idea*, that's a very good sign — it means the idea stuck rather than the wording. In the
+Warm-Up, W3 and W4 are the ones that show whether Week 1 stuck. In Practice Set B, mark the **reason**,
+never just the choice.
 
 ---
 
@@ -1091,9 +1115,140 @@ answered examples and it works the rule out."*
 
 ### Workbook answers
 
-**W2.1 — Rewrite five magic sentences**
+These follow the workbook's own **Answers** section, section by section and item by item. Teacher-only
+notes (wrong-answer maps, marking tips) are added in *italic* or under **Watch for**.
 
-The worked example the student is given:
+#### Warm-Up (W1–W5)
+
+- **W1.** …a **job** that used to need a person's **judgement**.
+- **W2.** **"Could two sensible people disagree about the answer?"** If yes, it needs judgement. If no,
+  it doesn't.
+- **W3.** **Rule 2** — SOLD OUT. Rules are checked **in order** and you stop at the first one that
+  fires. Rule 2 sits above Rule 3, so the machine never looks at the money. The *sensible* answer is
+  ADD MORE; the *rulebook* answer is SOLD OUT; and the rulebook wins for ever.
+- **W4.** **FALSE.** It does not crash and it does not warn you. Either no rule fires and it does
+  nothing, or the wrong rule fires first and it gives a confident, useless answer. **Rulebooks fail
+  quietly.**
+- **W5.** Any of: a light switch, a kettle, a bicycle bell, a stapler, a microwave timer. What makes
+  them sure: the job has no judgement in it — one input, one fixed response, nobody could disagree
+  about the right answer.
+
+**Watch for:** *W3 answered "Rule 3, because the money is the sensible thing to check first".* That is
+the sensible answer, not the rulebook's. Ask *"which rule does the machine meet first?"* *W4 answered
+TRUE* means the Week 1 point about quiet failure has not landed; spend two minutes on it in Week 3.
+
+#### Practice Set A (A1–A6)
+
+- **A1.** Blanks in order: **rule** · **examples** · **correct answer** (accept *label*) · **person**
+  (or *human*) · **before** · **finishes** (accept *stops*) · **guess**.
+- **A2.** Circle **(b), (d) and (f)**. What is missing from the others: **(a)** a photo with no answer
+  attached is just a photo; **(c)** 1,000 unlabelled emails are a pile, not 1,000 examples; **(e)** that
+  is a **rule**, the *output* of learning, not an input to it.
+- **A3.** **(a) FALSE.** The examples are gone; what is left is a rule. The eight mango cards were in
+  your pocket when the student answered the test cards, so the answer cannot have come from the cards.
+  **(b) FALSE.** A **person** writes every label, by hand, **before** training. With no answers attached
+  the machine cannot score itself, so it cannot improve.
+- **A4.** 1 → **C** · 2 → **D** · 3 → **A** · 4 → **E** · 5 → **B**.
+- **A5.** **Row 1:** `a person` → `writes the IF-THEN rule` → `computer follows it` → `answer`.
+  **Row 2:** `a person collects labelled examples` → `training` → `model` → `answer`.
+  **(a)** Row 1: X on box 2 (*writes the IF-THEN rule*). Row 2: X on box 1 (*a person collects labelled
+  examples*). **(b)** **Nobody.** A person collected the examples and wrote the labels; a program found
+  the rule; no human typed it, and often no human can read it back.
+- **A6.**
+
+| Clue | In the 2 spam | In the 2 not-spam | Useful? |
+|---|:--:|:--:|---|
+| **prize** | 2 of 2 (msgs 1, 3) | 0 of 2 | ✅ perfect split |
+| **tomorrow** | 0 of 2 | 2 of 2 (msgs 2, 4) | ✅ perfect split, pointing the other way |
+| **you / your** | 2 of 2 (msgs 1, 3) | 1 of 2 (msg 2) | ❌ appears on both sides |
+
+  **(a)** **tomorrow.** A clue in none of the spam and all of the not-spam separates the piles just as
+  cleanly as the opposite. What matters is the **split**, not the direction. **(b)** **you / your** is
+  weakest: in every spam *and* half the not-spam, so it barely moves the guess.
+
+**Watch for:** *A2 circling (e) as well.* They have mistaken a rule for an example; ask *"is that the
+thing you show the machine, or the thing it finds?"* *A5 with the row 2 X on `model`* — the commonest
+error. Reteach with the pocket: no human stands at the model. *A6 counting "your" wrongly* — the
+workbook says to count *your* with *you*; message 4 contains neither.
+
+#### Practice Set B (B1–B5)
+
+- **B1.** **(a)** You cannot feel a photo, so the *feel* rule cannot be used at all. **(b)** Neither,
+  honestly — you cannot smell a photo either. They need a third rule based on something visible, and
+  colour scored only 4 out of 8, so eight cards with these three clues cannot build a photo app; they
+  need different examples. *(Half marks for "the smell rule, because it is more reliable": good
+  reasoning, wrong conclusion.)* **(c)** …**available** (accept *measurable*, *possible to collect*).
+- **B2.** **(a) No** — training counts labels, it does not check them. **(b)** It learns the mistake
+  and treats it as truth. **(c)** **She is wrong**; the model reproduced her mistake faithfully.
+  **(d)** *"Everything the model knows, and every mistake it makes, came from the examples it was
+  given."*
+- **B3.**
+
+| Job | Answer | The reason that matters |
+|---|---|---|
+| Ring a bell at 15:30 | **rules** | One number, one comparison. |
+| Decide if a photo shows your own dog | **learning** | Nobody can write if-then rules over two million coloured dots. |
+| 50p a day for a late library book | **rules** | Arithmetic; one exactly correct answer already decided by a person. |
+| Spot a scam text nobody has seen before | **learning** | You cannot write a rule for wording that does not exist yet. |
+
+  "Because it's easy" is not a reason. "Because there's one number and one comparison" is.
+- **B4.** **(a) No** — card 9 *gives a little* but is UNRIPE, so the feel rule gets **8 out of 9**.
+  **(b) Yes** — card 9 has no smell, so the smell rule is still **9 out of 9**. **(c)** The **smell**
+  rule survived. The eight cards could not tell the two rules apart (both 8 out of 8); one extra
+  example separated them. More examples sometimes change which rule was right all along.
+- **B5.** Model answer: make yourself harder to recognise (hood, glasses, low light), count successes
+  out of ten, then use the phone normally for two weeks and repeat the identical test. *Look for* the
+  score changing with no software update installed. *Proves me wrong:* a clear improvement. Full marks
+  for any test with a **before number**, an **after number**, and awareness that an update would spoil
+  the experiment (an update is a replacement model, not the old one growing).
+
+**Watch for:** *B1 answered "the colour rule" with no comment on its 4 out of 8 score.* *B2(c)
+answered "the model is wrong".* Ask *"what did the model do with the labels it was given?"* *B3 reasons
+of the "it's easy / it's hard" kind* — send back for a number and a comparison.
+
+#### Puzzle of the Week (P1–P6)
+
+- **P1.**
+
+| The rule | Gets right | Gets wrong | Score |
+|---|---|---|:--:|
+| **Sky:** sunny → ON | 1, 2, 6, 7 | 3, 4, 5, 8 | **4 / 8** |
+| **Ground:** dry → ON | 1, 2, 3, 4, 5, 6, 7, 8 | none | **8 / 8** |
+| **Kit:** kit brought → ON | 1, 4, 6, 8 | 2, 3, 5, 7 | **4 / 8** |
+
+  4 out of 8 is exactly a coin flip, so two of the three clues carry no information.
+- **P2.** **The ground.** Dry → ON, wet → OFF, all eight times.
+- **P3.** *"Rainy means off"* is killed by **card 4**; *"sunny means on"* is killed by **card 5**.
+- **P4.** **X** (rainy, dry, no) → **ON**. **Y** (sunny, wet, yes) → **OFF**. **Z** (cloudy, frozen
+  solid, yes) → **the eight cards do not tell you.**
+- **P5.** **Test Z.** Missing: an **example** — no card was ever frozen. By the rule "dry" it would say
+  ON, but frozen ground is arguably worse than wet. A real model would answer Z confidently anyway.
+- **P6.** The sky is the loudest, most visible clue, and there is a true story attached (rain makes
+  grounds wet), yet the ground decides, and it can be dry in the rain (card 4) or wet in the sun
+  (card 5). The most visible clue is very often not the deciding one.
+
+**Watch for:** *P1 scored by counting only the cards where the clue is present* (sky "4 of 8" arrived
+at by luck). Insist on going card by card, with the rule predicting OFF when its clue is absent. *P4 Z
+answered ON or OFF with confidence* is the same mistake as test card C in the mango game.
+
+#### Think Deeper (T1–T2)
+
+Both are paragraph answers (4+ sentences); mark against the workbook's checklists.
+
+- **T1.** The model would be good at that farm and much worse elsewhere (varieties ripen differently);
+  it would **not** warn you, because a model cannot notice that a mango is unlike anything it studied;
+  fix it by changing the **examples** (several varieties, countries, weeks, including awkward cases like
+  green-when-ripe), not the machine. *Mark on:* (1) naming what it would be bad at, (2) saying it would
+  not warn you, (3) changing the examples, not the machine.
+- **T2.** Four human jobs happened first: someone **chose which examples to collect**, someone **wrote
+  every label**, someone **decided what counted as the right answer**, someone **decided training was
+  good enough to stop**. Any reasoned answer on responsibility is fine (the workbook's model answer
+  holds the school responsible, as the one a parent can argue with, and wants to see the labels).
+  *Mark on:* at least **three** of the four jobs named, and who a person could complain to.
+
+#### Build It (Page 2.4, 2.5, 2.6)
+
+**Page 2.4 — rewrite five magic sentences.** The worked example the student is given:
 
 > **Magic version:** "YouTube magically knows what I want to watch."
 >
@@ -1103,7 +1258,7 @@ The worked example the student is given:
 > **Why it's better:** it says *where the ability came from* (examples), *what the machine actually
 > produces* (a guess), and *what it's guessing about* (a click, which is a thing you can measure).
 
-The five to rewrite, with model answers:
+The five to rewrite (items 2–6), with model answers:
 
 | # | Magic version | Model honest version |
 |:--:|---|---|
@@ -1113,20 +1268,18 @@ The five to rewrite, with model answers:
 | 5 | "The music app reads my mind and plays the right song." | "The music app was shown what millions of people played after each song, and it guesses which song I am least likely to skip in the first twenty seconds." |
 | 6 | "Alexa figured out what I said." | "Alexa was trained on huge numbers of recordings with the matching written words attached, and it produces its best guess at which words the sound matches." |
 
-**The three tests for a passing rewrite** — apply all three:
+**The three tests for a passing rewrite** (the workbook's checkboxes) — apply all three:
 
 1. **Does it say where the ability came from?** (examples / training / being shown things)
 2. **Does it say the output is a guess**, not a fact?
 3. **Would it still be true of a wizard?** If yes, it hasn't done its job.
 
-Answers to reject: anything containing *magic, smart, clever, knows, understands, thinks, figures
-out, obviously, it just does*. Also reject *"it uses AI"*, which explains nothing — ask *"which
-bit?"*
+Answers to reject: anything containing *magic, smart, clever, knows, understands, thinks, figures out,
+obviously, it just does*. Also reject *"it uses AI"*, which explains nothing — ask *"which bit?"*
 
-**W2.2 — Definition from memory, twice, an hour apart**
-
-There is no single right answer; you are marking whether the load-bearing idea survived. The target
-sentence is *"AI is a machine doing a job that used to need a person's judgement."*
+**Page 2.5 — the definition twice, an hour apart.** There is no single right answer; you are marking
+whether the load-bearing idea survived. The target is *"AI is a machine doing a job that used to need a
+person's judgement."* The student circles one of four outcomes in the workbook; check it against this:
 
 | What you see | What it means |
 |---|---|
@@ -1136,22 +1289,26 @@ sentence is *"AI is a machine doing a job that used to need a person's judgement
 | Attempt 2 contains a banned word that attempt 1 didn't | ⚠️ The scaffolding faded first. Normal. Re-run the wrap question in Week 3. |
 | Both attempts identical, word-perfect | Probably copied. Ask them to say it aloud with the book shut. |
 
-**W2.3 — Label the pipeline diagram**
+**Page 2.6 — one job for rules, one job for learning.** Answers vary. Use the B3 table above and the
+table under *"One job you could easily write rules for"* for the standard. Mark the **reason**, not the
+example. A passing reason for the easy job names a number and a comparison. A passing reason for the
+hard job says either *"the same input can have two different right answers"* or *"the machine only
+receives numbers and the thing that matters isn't one of them."*
 
-The workbook gives an empty two-row pipeline. Correct labels, left to right:
+#### Draw It
 
-- **Row 1:** `a person` → `writes the IF-THEN rule` → `computer` → `answer`. X on box 2.
-- **Row 2:** `a person collects labelled examples` → `training` → `model` → `answer`. X on box 1.
+A good page has **all four**: (1) **two rows** of four boxes; (2) both rows end at `answer`;
+(3) **one X per row**, on box 2 in row 1 and box 1 in row 2; (4) somewhere, in the student's own words,
+*nobody wrote the rule in row 2* (the workbook suggests *"same number of boxes — the person moved"*).
+The commonest error is the row 2 X on `model`. Test: *which box did a human physically do work in?*
+Reteach with the pocket.
 
-Common error: putting the X on `model` in row 2, because that's the clever-looking box. Reteach with
-the pocket.
+#### Self-Check
 
-**W2.4 — One job easy for rules, one job not**
-
-Answers will vary. See the table under *"One job you could easily write rules for"* above for the
-standard. Mark the **reason**, not the example. A passing reason for the easy job names a number and
-a comparison. A passing reason for the hard job says either *"the same input can have two different
-right answers"* or *"the machine only receives numbers and the thing that matters isn't one of them."*
+Not marked. Read the five 😀/🙂/😕 ticks and the "One thing I'd like explained again" line before
+Week 3. Each tick maps to a Week 2 objective: pipelines (Draw It, A5), labelled example (A1, A2),
+model and the gone examples (A3), finding a rule by counting (A6, Puzzle), rules vs learning (B3,
+Page 2.6). Any 😕 goes into the Week 3 warm-up.
 
 ---
 

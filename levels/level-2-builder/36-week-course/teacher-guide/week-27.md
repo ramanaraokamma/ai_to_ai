@@ -13,7 +13,7 @@
 | **Big idea** | You can make a 2% difference look enormous without changing a single number — just by starting the y-axis somewhere else. |
 | **New vocabulary** | truncated axis · exaggeration factor · legend · correlation · causation |
 | **New syntax** | `ax.set_ylim(bottom, top)` · `fig, axes = plt.subplots(1, 2)` · `ax.legend()` · `df["a"].corr(df["b"])` |
-| **Materials** | Printed workbook pages 27.1–27.6 · **a ruler with millimetres on it** (a real one — this is not a metaphor) · **one printed copy of `lie.png`** (see Prep) · a pencil · a calculator |
+| **Materials** | The printed workbook (all of it; it is sections, not numbered pages) · **a ruler with millimetres on it** (a real one — this is not a metaphor) · **one printed copy of `lie.png`** (see Prep) · a pencil · a calculator |
 | **Tech needed** | The `level2` folder, venv active, matplotlib and pandas. `students.py` and `myweek.py` from earlier weeks. **A working printer**, or a way to view the chart at a fixed size. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
@@ -56,7 +56,7 @@ Read all of this section. §2 is arithmetic you must be able to do at the whiteb
 | 25 | figure, axes, labels, markers, `savefig` | all of it |
 | 26 | bar, histogram, scatter, `value_counts` | all of it |
 
-The reflection sheet on page 27.6 walks the student through all eight. Your job in the lesson is the *build*; the reflection is homework.
+The reflection in Build It, Part 6 walks the student through all eight. Your job in the lesson is the *build*; the reflection is homework.
 
 ### 2. The truncated axis, with the arithmetic done in full
 
@@ -284,7 +284,7 @@ and stage four is now solid all the way across. Two threads lit: impact and eval
 
 ### 20 minutes the night before
 
-- [ ] **Print workbook pages 27.1–27.6.**
+- [ ] **Print the whole workbook** (`workbook/week-27.md`) — Warm-Up, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Build It, Draw It, Self-Check. Do **not** print the Answers section at the end for the student.
 - [ ] **Find a ruler with millimetres on it.** A real one. The whole hook depends on it. A second ruler is better, so you can measure alongside rather than over their shoulder.
 - [ ] **Build and print the lie.** In `~/ai-academy/level2`, create `week27_lie.py` with the code from the Answer Key, and run it:
 
@@ -318,7 +318,7 @@ and stage four is now solid all the way across. Two threads lit: impact and eval
 - [ ] Terminal in `~/ai-academy/level2`, venv active. Folder window visible.
 - [ ] The printed `lie.png` face down, **with the y-axis numbers covered**.
 - [ ] Two rulers on the table. Calculator on the table.
-- [ ] Workbook page 27.1 (the measuring sheet) on top of the pile.
+- [ ] The workbook open at the Warm-Up, with Predict the Output and Practice Set A (A1 and A5) flagged, on top of the pile. The hook's measuring has no workbook page; put a blank sheet beside the printed `lie.png` for the two millimetre readings.
 - [ ] If you found a misleading chart in the wild — a news site, an advert, a battery graph — have it ready for the wrap.
 
 ### Fallback if a laptop or the printer fails
@@ -326,7 +326,7 @@ and stage four is now solid all the way across. Two threads lit: impact and eval
 | If this fails | Do this instead |
 |---|---|
 | **The printer** | Draw the lie by hand on squared paper. Two bars, one 11 squares tall and one 67 squares tall, labelled 7A and 7B, with the y axis numbered 48.6 at the bottom and 51.4 at the top. It works exactly as well, and honestly the hand-drawn version is *more* convincing, because it obviously was not produced by a machine that might have made a mistake. |
-| **No laptop at all** | The entire lesson runs on squared paper. Draw both versions of the chart by hand — the truncated one and the zero-based one — measure both, do the division, and then have the correlation conversation using the printed ice-cream table on page 27.5. Objectives 1, 4 and 5 land in full; objectives 2 and 3 become "describe what the code would be", which is a fair substitute for a review week. |
+| **No laptop at all** | The entire lesson runs on squared paper. Draw both versions of the chart by hand — the truncated one and the zero-based one — measure both, do the division, and then have the correlation conversation using the ice-cream table from Activity Part B (or Think Deeper T1, which quotes the numbers). Objectives 1, 4 and 5 land in full; objectives 2 and 3 become "describe what the code would be", which is a fair substitute for a review week. |
 | **`students.py` is missing** | The full file is in the Week 26 Answer Key. Two minutes to drop in. Or run the whole lesson on the two typed-in numbers 49 and 51, which need no table at all. |
 | **A chart looks upside down** | `set_ylim` was given its two numbers backwards. No error is produced. See Clinic row 7. |
 | **The student measures 9 mm and 54 mm, not 11 and 67** | Nothing is wrong. The printer scaled the page. Both bars shrank together, so the ratio survived: 54 ÷ 9 = 6.0. **Say this before they measure.** |
@@ -354,7 +354,7 @@ and stage four is now solid all the way across. Two threads lit: impact and eval
 
 > "Two classes. 7A and 7B. This chart is about how much homework each class hands in on time. I didn't make up any numbers; every number on this chart is real.
 >
-> I want you to do something physical. Take the ruler. **Measure how tall each bar is, in millimetres.** Write both numbers on page 27.1."
+> I want you to do something physical. Take the ruler. **Measure how tall each bar is, in millimetres.** Write both numbers on the blank sheet beside you."
 
 Let them measure. It takes about forty seconds. They will get roughly 11 mm and 67 mm.
 
@@ -652,7 +652,7 @@ Student on the keyboard. Full instructions in the next section.
 
 - **Minutes 0–6:** two lines on one frame, with a legend.
 - **Minutes 6–12:** compute `r` for hours vs score, and the three ice-cream correlations.
-- **Minutes 12–20:** the ethics question, written down, and the start of the Term 3 reflection sheet.
+- **Minutes 12–20:** the ethics question, written down, and the start of the Term 3 reflection (Build It, Part 6).
 
 ---
 
@@ -660,7 +660,7 @@ Student on the keyboard. Full instructions in the next section.
 
 ### Setup
 
-**On the table:** workbook pages 27.2 (legend), 27.3 (correlation), 27.4 (the ethics page) and 27.6 (Term 3 reflection). Ruler, pencil, calculator.
+**On the table:** the workbook open at Predict the Output P3 (legend), P4 and Practice Set B, B1 (correlation), Think Deeper T2 (the ethics question) and Build It Part 6 (Term 3 reflection). Ruler, pencil, calculator.
 
 **On the machine:** `level2` folder, venv active, `students.py` and `myweek.py` present.
 
@@ -753,7 +753,7 @@ temperature vs drownings : r = 0.989
 
 ### Part C — Who gets hurt? (8 minutes)
 
-**Do this:** Put page 27.4 in front of them. Have `hours_vs_score.png` from Week 26 open on screen.
+**Do this:** Put Think Deeper T2 (and Build It Part 5) in front of them. Have `hours_vs_score.png` from Week 26 open on screen.
 
 **Say this:**
 
@@ -801,7 +801,7 @@ Take every answer they offer. The good ones: a job. A younger brother or sister 
 
 > "None of those are on the chart. Not one. And **none of them are fixed by being told to study more** — they're *punished* by it. Hugo gets a detention for a bus timetable.
 >
-> So write the honest sentence, on page 27.4. Here's mine, and yours can be better:
+> So write the honest sentence, in Build It, Part 5. Here's mine, and yours can be better:
 >
 > *'In this table, students who studied more hours tended to score higher (r = 0.93). I do not know whether studying caused the higher marks. A quiet room at home could be causing both, and that would mean the students at the bottom of this chart are being blamed for something the chart never measured.'*
 >
@@ -810,10 +810,10 @@ Take every answer they offer. The good ones: a job. A younger brother or sister 
 ### What "finished" looks like
 
 - `two_lines.png` saved, with a legend naming both series and two different marker shapes.
-- `r = 0.925` and the three ice-cream numbers printed and written on page 27.3.
-- A written sentence on page 27.4 about `r = 0.93` that contains **no causal verb**, plus a named plausible confounder.
+- `r = 0.925` and the three ice-cream numbers printed and written next to Predict the Output P4 and Practice Set B, B1.
+- A written sentence (Build It Part 5) about `r = 0.93` that contains **no causal verb**, plus a named plausible confounder.
 - At least three specific reasons a student might study very little, none of which are on the chart.
-- The Term 3 reflection sheet started, with at least two weeks named.
+- The Term 3 reflection (Build It, Part 6) started, with at least two weeks named.
 
 ### Variation — easier
 
@@ -1032,133 +1032,308 @@ Three checks, five minutes, exact wording.
 
 > "Three pieces, about an hour and a bit. This one is the end of the term, so it is worth doing properly.
 >
-> **First, page 27.5 — the lie and the fix, with the arithmetic.** Take **one** of your own charts from Week 26 — the house averages is the easiest one to sabotage — and build a two-panel figure: the lie on the left, the honest version on the right. Then print the arithmetic: what the ratio *looks like*, what it *really is*, and the exaggeration factor. And then, and this is the bit I want, **print the two panels and measure the bars with a ruler, in millimetres.** Write both measurements and the division on the page. If your printer shrinks the page, that's fine — the ratio survives.
+> **First, the lie and the fix, with the arithmetic — Build It, Parts 1 to 3.** Take **one** of your own charts from Week 26 — the house averages is the easiest one to sabotage — and build a two-panel figure: the lie on the left, the honest version on the right. Then print the arithmetic: what the ratio *looks like*, what it *really is*, and the exaggeration factor. And then, and this is the bit I want, **print the two panels and measure the bars with a ruler, in millimetres.** Write both measurements and the division in the Part 2 table. If your printer shrinks the page, that's fine — the ratio survives. Practice Set B, question B5, is the same job in miniature if you want to see what the finished program looks like first.
 >
-> **Second, page 27.6 — the Five-Chart Data Story.** Five charts from your cleaned table, arranged so they read **in order, like a story**: context, then the baseline, then the main finding, then a chart that *challenges* your finding, then the caveat. One captioned sentence under each. Read the five captions on their own, out loud — they should make sense as a paragraph with no charts at all. If they don't, the order is wrong.
+> **Second, the Five-Chart Data Story — Build It, Parts 4 and 5.** Five charts from your cleaned table, arranged so they read **in order, like a story**: context, then the baseline, then the main finding, then a chart that *challenges* your finding, then the caveat. One captioned sentence under each. Read the five captions on their own, out loud — they should make sense as a paragraph with no charts at all. If they don't, the order is wrong. Then Part 5: one correlation from your table, and the honest sentence about it.
 >
-> **Third, the Term 3 reflection sheet.** Eight weeks, nineteen to twenty-six. For each one: a tick if you could teach it to somebody else, a question mark if you'd want to look at it again. And then name **two** weeks you actually want to revisit, with a reason. Not 'it was hard'. Something like 'I still can't tell `loc` from `iloc` when the index isn't 0, 1, 2'. Everybody has two. I have two."
+> **Third, the Term 3 reflection — Build It, Part 6.** Eight weeks, nineteen to twenty-six. For each one: a tick if you could teach it to somebody else, a question mark if you'd want to look at it again. And then name **two** weeks you actually want to revisit, with a reason. Not 'it was hard'. Something like 'I still can't tell `loc` from `iloc` when the index isn't 0, 1, 2'. Everybody has two. I have two."
 
-**Workbook pages:** 27.1–27.4 in class; **27.5, 27.6** and the reflection sheet at home.
+**Workbook sections, and where they are done.** The workbook has no "Page 27.N" numbering; it is a run of named sections, so the split is by section:
 
-**Expected time:** 20 min for the lie-and-fix with the measuring · 40 min for the Five-Chart Data Story · 10 min for the reflection. About 70 minutes — slightly over, because it is the end of the term.
+| Section | Where |
+|---|---|
+| ✅ Warm-Up (W1–W5) | In class, first five minutes |
+| 🔎 Predict the Output (P1–P4) | In class — P1 and P2 go with the Live-Code steps, P3 and P4 with Activity Parts A and B |
+| ✍️ Practice Set A (A1–A6) | In class — A1 and A5 straight after the Hook and Concept (they are the measuring, done with numbers and on the diagram); A2–A4 and A6 as the student has time |
+| ✍️ Practice Set B, B1 | In class, Activity Part B (the `r = 0.925` line) |
+| ✍️ Practice Set B, B2–B4 | Home, as warm-up for the main pieces; skip B2 and B3 if the student goes straight to Build It, because Parts 1–2 repeat them |
+| ✍️ Practice Set B, B5 | Home, with Build It Parts 1–3 (it is the same program, with its expected output printed) |
+| 🛠️ Build It, Parts 1–3 (lie, arithmetic and ruler, confession) | **Home — piece one** |
+| 🛠️ Build It, Parts 4–5 (Five-Chart Story, honest `r` sentence) | **Home — piece two** |
+| 🛠️ Build It, Part 6 (Term 3 reflection) | **Home — piece three** |
+| 🛠️ Build It, Part 7 (Bug Log); 🐞 Fix the Broken Program; 🧩 Puzzle of the Week; 🤔 Think Deeper; 🎨 Draw It; 📊 Self-Check | Extension — assign as many as time allows over the week; Think Deeper T2 is the written version of Activity Part C |
+
+**Expected time:** 20 min for the lie-and-fix with the measuring · 40 min for the Five-Chart Data Story · 10 min for the reflection. About 70 minutes — slightly over, because it is the end of the term. The extension sections are on top of that and optional.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 27.1 — The measuring sheet (in class)
+This key follows the workbook **section by section, in workbook order**, and every item is answered with the workbook's own Answers section as the source. The workbook has no numbered pages. Sections marked *(teacher-only)* are extra notes for you. The hook and the Activity use a few questions that are not on any workbook section; they are kept at the end of the key, under **Prompts used in the lesson**.
 
-| # | Measurement | Answer |
-|---|---|---|
-| (a) | 7A's bar, in mm | **about 11 mm** (9–14 depending on printer scaling) |
-| (b) | 7B's bar, in mm | **about 67 mm** (54–85, scaled the same way) |
-| (c) | (b) ÷ (a) | **about 6.1** — this is what the chart makes you believe |
-| (d) | 7A's real value | **49%** |
-| (e) | 7B's real value | **51%** |
-| (f) | (e) ÷ (d) | 51 ÷ 49 = **1.0408** — 7B is about 4% better |
-| (g) | Exaggeration factor, (c) ÷ (f) | 6.1 ÷ 1.04 = **about 5.8 to 5.9** (depending on rounding; the exact figure with a 48.6 floor is 5.76) |
+### ✅ Warm-Up
 
-**27.1(h) Which number on the chart was faked?**
-**None of them.** Both bar heights are the true values and the tick numbers are correct. The only thing that changed was where the axis starts.
+**W1.** A **histogram**, because it is one column of numbers with no categories, and the question is about the shape of the whole pile.
 
-**27.1(i) If your millimetre readings were different from 11 and 67, were you wrong?**
-No. Your printer scaled the page, so **both** bars shrank or grew by the same amount and the ratio in (c) is unaffected. That is the reason the ratio is the answer and not the raw millimetres.
+**W2.** **Whether the bars touch.** Touching means one bar per number range (histogram); gaps mean one bar per category (bar chart). Also full marks: whether the x axis holds names or numbers, or whether you could reorder the bars.
 
-### Page 27.2 — Two lines, one legend (in class)
+**W3.** A **histogram**, looking for whether the pile has **one hump or two** — because an average can land in a gap where nobody actually is. The quiz marks averaged 62 and nobody scored between 44 and 81.
 
-Full file and output in The Activity, Part A. `saved two_lines.png`.
+**W4.** **38 rectangles**, one per row, crammed into three columns. There should be **3**. And there is no error.
 
-**27.2(a) What happens if you call `ax.legend()` but never pass any `label=`?**
-You get a **warning**, not an error, and the chart still saves — with no legend on it:
+**W5.** Any of: **how many rows each average came from** (Blue 14, Red 12, Green 12); the **spread** inside each house (Blue's scores run 42 to 93); or that Blue's lead over Red is **0.11 of a mark**.
+
+### 🔎 Predict the Output
+
+**P1** — real output:
+
+```text
+before: (0.0, 53.55)
+after : (48.6, 53.55)
+```
+
+- **Does `set_ylim(48.6)` raise an error?** **No.** It set the bottom and left the top exactly where matplotlib had already put it.
+- **Where did 53.55 come from?** **matplotlib chose it**, before the student touched anything — the top it picks automatically for a bar chart of 49 and 51, a little above the tallest bar.
+- **The "before" line:** for a **bar** chart matplotlib started the axis at **zero all by itself**. A line chart of the same two numbers gets `(48.9, 51.1)` — truncated by default. So the tool protects you on bars and not on lines.
+
+**P2** — real output:
+
+```text
+ndarray
+2
+(2,)
+True
+```
+
+- **`ndarray`** is numpy's word for a box of things — **Week 17's array**, holding drawing frames instead of numbers. So `len(axes)` is 2, `axes.shape` is `(2,)`, and `axes[-1]` is Week 11's "last slot", which for two slots **is** `axes[1]`. Hence `True`.
+- **`axes[2]`** gives `IndexError: index 2 is out of bounds for axis 0 with size 2`. Two slots, numbered 0 and 1.
+
+**P3** — real output:
 
 ```text
 No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+saved two.png
 ```
 
-"Artists" is matplotlib's word for anything drawn on a frame. The message means: *you asked me to name the lines, and none of them have names.*
+- **It does not crash. The file appears. There is no legend on it.**
+- **Error or warning?** A **warning**: there is **no `Traceback`**, and the program **carried on** and printed `saved two.png`. An error stops the program dead.
+- **"Artists"** is matplotlib's word for **anything drawn on a frame** — a line, a bar, a dot, a piece of text.
 
-**27.2(b) Why does one line use `marker="o"` and the other `marker="s"`?**
-So the two lines can be told apart when the colour is gone — photocopied, printed in black and white, or read by somebody who cannot distinguish those two colours. **Two cues instead of one**, and it costs nothing.
+**P4** — real output:
 
-**27.2(c) When do you NOT need a legend?**
-When there is exactly one series, because the title and the y-axis label already name it. Adding a legend to a one-line chart just uses up space.
+```text
+1.0
+1.0
+1.0
+nan
+```
 
-### Page 27.3 — Correlation (in class)
+- **Lines 1 and 2 are identical**: correlation is **symmetric**, so the order you write the two columns does not matter. A number that does not know which column came first cannot tell you which one causes the other.
+- **Line 3 is 1.0**: anything correlates perfectly with itself. A sanity check.
+- **Line 4 is `nan`** — "not a number". The `age` column is **12 for everybody**, so it never varies, and the question "when this goes up, does that go up?" has no answer.
+- **Does `r = 1.0` prove studying causes the score?** **No.** The five rows were made up by writing 50, 60, 70, 80, 90 next to 1, 2, 3, 4, 5. A perfect correlation is still consistent with all four worlds — including "I invented both columns".
 
-Full file and output in The Activity, Part B.
+### ✍️ Practice Set A
 
-| Pair | `r` |
+**A1.**
+
+| bottom | 7A's bar | 7B's bar | The eye sees | Factor |
+|---|---|---|---|---|
+| 0 | 49 | 51 | 51 ÷ 49 = **1.04** | **1.00** |
+| 45 | 4 | 6 | 6 ÷ 4 = **1.50** | 1.50 ÷ 1.0408 = **1.44** |
+| 48 | 1 | 3 | 3 ÷ 1 = **3.00** | **2.88** |
+| 48.6 | 0.4 | 2.4 | 2.4 ÷ 0.4 = **6.00** | **5.76** |
+| 48.9 | 0.1 | 2.1 | 2.1 ÷ 0.1 = **21.00** | **20.18** |
+
+- **A1(a).** Step 1: subtract the floor from both numbers to get the two visible bar lengths. Step 2: divide the big one by the small one, then divide that by the honest ratio (51 ÷ 49 = 1.0408).
+- **A1(b).** It **grows without limit.** The smaller visible bar heads towards zero, so the ratio heads towards infinity. A floor of 48.99 gives 201×; 48.999 gives 2001×. Each extra 9 is one keystroke.
+- **A1(c).** **None of them.** Both bar heights and every tick number are true. The only thing that changed was where the axis starts.
+- *(teacher-only)* The 48.6 row is the one the hook ruler-measures: the student's 11 mm and 67 mm from the printed `lie.png` should give about 6.1, against the exact 6.00. See **Prompts used in the lesson** below.
+
+**A2.**
+
+| # | The call | Answer |
+|---|---|---|
+| a | `plt.subplots(1, 2, ...)` gives back… | **`fig, axes`** — a sheet and a box of two frames |
+| b | `savefig(...)` | **`fig`** — you save the whole sheet |
+| c | `suptitle(...)` | **`fig`** — a headline across the whole sheet |
+| d | `bar(...)` on the left panel | **`axes[0]`** |
+| e | `set_ylim(0, 100)` on the right panel | **`axes[1]`** |
+| f | `print(len(...))` prints `2` | **`axes`** |
+| g | `legend()` on a single-frame chart | **`ax`** |
+
+**A2(h).** Because **it holds more than one frame.** `plt.subplots()` with no numbers hands back one frame, called `ax`; `plt.subplots(1, 2)` hands back two, called `axes`. The plural is a reminder that you have to index it.
+
+**A3.**
+
+| # | The chart | Answer | The reason |
+|---|---|---|---|
+| a | bar of 49% and 51% | **must start at 0** | Bars ask the eye to compare lengths, and zero means something for a percentage |
+| b | line of body temperature | **need not** | A line asks you to follow a shape, and 0 °C is not a meaningful floor for a person |
+| c | bar of club sizes 12, 12, 14 | **must start at 0** | Bars, and a count of zero members is perfectly meaningful |
+| d | line of a share price over ten years | **need not** — the contested one | A line, so a shape; but a truncated share-price chart is the classic dishonest chart, so **say so in the label** |
+| e | bar of house means 67, 74, 74 | **must start at 0** | Bars again — and exactly the one people truncate, because the values are close |
+| f | line of runs per over | **must start at 0** *(arguably)* | Strictly a line need not, but zero runs in an over is a real and common thing, so starting at zero is the honest choice |
+
+- **A3(g).** A bar asks your eye to compare **lengths**, and deleted length cannot be put back; a line asks you to follow a **shape**, and a shape survives a moved floor.
+- **A3(h).** **Say so, loudly, in the label** — e.g. `"Temperature (°C) — note: axis starts at 35"`. Hiding it is the dishonest part; the choosing can be perfectly defensible.
+- *(teacher-only)* Row f is the one to accept either way if the reason given is sound; row d is the one to push on.
+
+**A4.**
+
+| # | The line | The fix |
+|---|---|---|
+| a | `axes.bar(...)` | `axes[0].bar(...)` — say which frame |
+| b | `axes[2]` | `axes[1]` — two frames, numbered 0 and 1 |
+| c | `ax.set_ylim(48.6)` | `ax.set_ylim(48.6, 51.4)` — **two** numbers |
+| d | `ax.set_ylim(51.4, 48.6)` | Smaller first: `ax.set_ylim(48.6, 51.4)` |
+| e | `df["club"].corr(df["score"])` | Correlation needs two **number** columns |
+| f | `df["hours"].corr()` | `df["hours"].corr(df["score"])` — it takes two |
+| g | `ax.legend()` with no labels | Add `label="..."` to each `plot` call |
+| h | bar chart with no `set_ylim` | `ax.set_ylim(0, 100)`. matplotlib will start at zero here anyway, **but write it so the decision is visible in your own file** |
+
+- **A4(i).** **c, d, g and h** produce no error. c silently invents a top; d silently draws the chart upside down; g gives a *warning* and saves a legend-less chart; h is a perfectly good chart that nobody decided (as a line it would have been truncated for you). a, b, e and f all raise real tracebacks.
+- **A4(j).** **"Is that the chart I meant to make?"** Open the PNG and look. The terminal has nothing useful to say about any of the four.
+
+**A5.**
+
+| Box | Phrase |
 |---|---|
-| study hours vs score | **0.925** |
-| age vs study hours | **−0.572** |
-| ice creams vs drownings | **0.997** |
-| temperature vs ice creams | **0.987** |
-| temperature vs drownings | **0.989** |
+| **A** | the floor of the axis, set by `set_ylim` |
+| **B** | the 48.6 units deleted from both bars |
+| **C** | 7A's visible bar, 0.4 units |
+| **D** | 7B's visible bar, 2.4 units |
+| **E** | the two ratios, and the factor between them |
 
-**27.3(a) Which of the five is the strongest, and which is the most ridiculous?**
-They are the same one: **ice creams vs drownings, 0.997.** That is the whole point. **Strength tells you nothing about whether there is a cause.**
+- **A5(f).** D ÷ C = 2.4 ÷ 0.4 = **6.00**.  51 ÷ 49 = **1.0408**.  Factor = 6.00 ÷ 1.0408 = **5.76**.
+- **A5(g).** **`ax.set_ylim(48.6, 51.4)`** — one line (one argument, really: the 48.6).
 
-**27.3(b) What is the confounder in the ice-cream case, and how do you know?**
-**Temperature.** The numbers alone cannot prove it (all three correlations are strong, and a correlation never says which way an arrow points). It is consistent with them, since temperature correlates strongly with *both* of the other columns (0.987 and 0.989), and what makes it convincing is a mechanism you can say out loud: hot weather makes people buy ice cream, and hot weather makes people swim, and swimming is what creates the drowning risk.
+**A6.**
 
-**27.3(c) What does the minus sign in −0.572 mean?**
-That the two move in **opposite** directions: as age goes up, reported study hours go down. It is a direction, not a grade. A correlation of −0.9 is *stronger* than one of +0.3.
+- **Which line first?** The **last** one, always.
+- **`'numpy.ndarray'`** is numpy's word for a box of things — a row of slots you index with a number (Week 17). Here the slots hold drawing frames.
+- **In their own words:** "The thing I called `axes` is a box of frames, not a frame, and a box has no `bar` method. Which frame did I mean?"
+- **Should you use `var`?** **No.** `var` is a numpy function about **variance**, nothing to do with drawing a bar. Python matched the **letters** (`bar` / `var` differ by one), not the meaning.
+- **The rule:** Python's "Did you mean…?" suggestions are hints, not answers. Read them, then decide.
 
-**27.3(d) Why does `df["club"].corr(df["score"])` fail?**
-Because correlation is arithmetic and you cannot do arithmetic on the word "chess". The last line is `TypeError: unsupported operand type(s) for /: 'str' and 'int'` — Python got as far as trying to divide a string by a number. *(pandas 2.x says `ValueError: could not convert string to float: 'chess'` instead. Same cause.)*
+### ✍️ Practice Set B
 
-### Page 27.4 — Who gets hurt? (in class)
+**B1.**
 
 ```python
-# week27_who.py -- who is at the bottom of the scatter?
-from students import build_students
-
-df = build_students()
-
-print("studying an hour or less:")
-print(df[df["hours"] <= 1.0][["name", "age", "house", "club", "hours", "score"]].to_string(index=False))
-print()
-print("studying five hours or more:")
-print(df[df["hours"] >= 5.0][["name", "age", "club", "hours", "score"]].to_string(index=False))
+print(round(df["hours"].corr(df["score"]), 3))
 ```
 
 ```text
-studying an hour or less:
-       name  age house  club  hours  score
- Hugo Silva   14   Red music    0.5     45
-Omar Haddad   14  Blue music    1.0     52
-  Sami Aden   14 Green   art    0.5     48
-Bruno Costa   13 Green   art    1.0     50
- Greta Hahn   14  Blue music    0.5     42
-
-studying five hours or more:
-       name  age  club  hours  score
-   Bela Roy   14 music    5.0     90
- Farah Aziz   12 chess    6.0     95
- Liam Byrne   13 music    5.5     81
- Tara Joshi   12 chess    5.0     97
-Anika Verma   12 music    5.0     93
-  Hana Sato   12   art    5.5     91
+0.925
 ```
 
-**27.4(a) What do the five students at the bottom have in common?**
-Every one of them is **13 or 14** — four are 14. Four of the six at the top are **12**. So "hours" and "age" are tangled together in this table, and the chart of hours-vs-score never mentions age at all.
+What it is **not**: a percentage. It does not mean "92.5% of the score comes from studying"; it is a position on a scale from −1 through 0 to +1.
 
-**27.4(b) Give three reasons a 14-year-old might study half an hour a week that the chart cannot see.**
-A part-time job. A younger sibling to look after. No quiet room or desk at home. A long journey to and from school. Illness, their own or somebody else's. Something difficult going on at home. **None of them appear anywhere in the table, and none of them are fixed by being told to study more.**
+**B2.**
 
-**27.4(c) The honest sentence about `r = 0.93`.** A full-credit answer contains four things: the description, the refusal, a named alternative cause, and who it lands on.
+```python
+"""b2.py - one truncated bar chart, and the arithmetic that convicts it."""
 
-> In this table, students who studied more hours tended to score higher (r = 0.93). I do **not** know whether studying caused the higher marks. A quiet room with a desk could be causing both — it would give somebody more hours *and* better conditions to learn in — and if the school acts on this chart by making everybody do two extra hours, the five students at the bottom get blamed for something the chart never measured. Four of those five are fourteen, and I do not know why they study so little.
+import matplotlib.pyplot as plt
 
-**Marking note:** the single thing to check is that **no word in it means "caused"**, other than in a sentence explicitly denying it. Words to strike out: *causes, makes, leads to, improves, boosts, results in, so you should*.
+teams = ["Falcons", "Kites"]
+wins = [11, 12]                          # matches won. Both TRUE.
+bottom, top = 10.8, 12.2                 # the dishonest floor
 
-**27.4(d) What would you need in order to actually test whether studying raises marks?**
-An **experiment**, not a chart: take a large group, split it **randomly** in half, ask one half to study two extra hours, leave the other half alone, and compare afterwards. The randomness is the point — it makes the two halves similar in everything you did not measure, including the quiet room. And note that running that experiment on real children raises fairness questions of its own, which is why this is genuinely hard.
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.bar(teams, wins)
+ax.set_ylim(bottom, top)
+ax.set_title("LIE: the Kites look unbeatable")
+ax.set_xlabel("Team")
+ax.set_ylabel("Matches won (count)")
+fig.savefig("teams_lie.png", dpi=120, bbox_inches="tight")
+print("saved teams_lie.png")
 
-### Page 27.5 — The lie and the fix, with the arithmetic (homework)
+looks = (wins[1] - bottom) / (wins[0] - bottom)
+honest = wins[1] / wins[0]
+print(f"visible bars      : {wins[0] - bottom:.1f} and {wins[1] - bottom:.1f} units")
+print(f"looks-like ratio  : {looks:.2f} times taller")
+print(f"honest ratio      : {honest:.4f} times taller")
+print(f"exaggeration factor: {looks / honest:.2f}")
+```
 
-Sabotaging the Week 26 house-averages chart is the easy route; this model answer sabotages the club averages, which has a bigger gap and so a slightly less dramatic factor. Either is full marks.
+```text
+saved teams_lie.png
+visible bars      : 0.2 and 1.2 units
+looks-like ratio  : 6.00 times taller
+honest ratio      : 1.0909 times taller
+exaggeration factor: 5.50
+```
+
+- **Why the floor is a named variable:** the arithmetic uses it three lines later; typed in two places, one will eventually change without the other and the printed factor becomes a lie about your own lie.
+- **The factor is 5.50, not 6.00:** the eye sees 6×, but the honest ratio is already 1.09 (11 and 12 are a bit further apart than 49 and 51). The exaggeration factor divides out the real difference, which is what makes it the honest measure.
+
+**B3.**
+
+```python
+"""b3.py - the lie and the fix, side by side."""
+
+import matplotlib.pyplot as plt
+
+teams = ["Falcons", "Kites"]
+wins = [11, 12]
+bottom, top = 10.8, 12.2
+
+fig, axes = plt.subplots(1, 2, figsize=(10, 4))
+print("how many frames?", len(axes))
+
+axes[0].bar(teams, wins)
+axes[0].set_ylim(bottom, top)
+axes[0].set_title(f"LIE: y-axis starts at {bottom}")
+axes[0].set_xlabel("Team")
+axes[0].set_ylabel("Matches won (count)")
+
+axes[1].bar(teams, wins)
+axes[1].set_ylim(0, 14)
+axes[1].set_title("HONEST: y-axis starts at 0")
+axes[1].set_xlabel("Team")
+axes[1].set_ylabel("Matches won (count)")
+
+fig.suptitle("The same two numbers: 11 wins and 12 wins")
+fig.savefig("teams_lie_and_fix.png", dpi=120, bbox_inches="tight")
+print("saved teams_lie_and_fix.png")
+```
+
+```text
+how many frames? 2
+saved teams_lie_and_fix.png
+```
+
+The f-string in the left title means the title cannot drift out of step with the floor — change `bottom` and the title fixes itself.
+
+**B4.**
+
+```python
+"""b4.py - two series on one frame, with a legend and two marker shapes."""
+
+import matplotlib.pyplot as plt
+from myweek import build_my_week
+
+df = build_my_week()
+
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.plot(df["day"], df["homework_min"], marker="o", label="Homework")
+ax.plot(df["day"], df["screen_min"], marker="s", label="Screen time")
+
+ax.set_title("Screen time beat homework on 5 of the 10 days")
+ax.set_xlabel("Day of the fortnight (day 1 = first Monday)")
+ax.set_ylabel("Minutes")
+ax.set_ylim(0, 200)
+ax.legend()
+
+fig.savefig("my_two_lines.png", dpi=120, bbox_inches="tight")
+print("saved my_two_lines.png")
+
+crossings = [df["day"][i] for i in range(len(df))
+             if df["screen_min"][i] > df["homework_min"][i]]
+print("days screen time was higher:", crossings)
+```
+
+```text
+saved my_two_lines.png
+days screen time was higher: [1, 3, 5, 6, 10]
+```
+
+Five days out of ten, so the title says "5 of the 10 days" — a checkable number. Write the title after you have printed the fact. The two markers `"o"` and `"s"` survive a black-and-white photocopy: two cues for free. *(The days list depends on the student's own Week 21 table; this is the model table's answer, so check the title against what **their** program prints.)*
+
+**B5.** The full model answer, which is also the model for Build It Parts 1–3:
+
 
 ```python
 # story_lie.py -- sabotage chart 3, then repair it, side by side.
@@ -1220,22 +1395,187 @@ lie panel: 6.5 mm per point
   chess bar should measure 66 mm
 ```
 
-**The written confession, which is what earns the marks:**
+**Which of the two tricks is worse?** The **truncated axis**, because it works on the reader **before** they read anything — the shape lands in about a quarter of a second and the labels take two or three. The missing units are worse in a different way: they remove the reader's ability to **check**. The two together are much worse than either alone, because the first misleads and the second disarms.
 
-> Chess averages 76.07 and art averages 67.83 — a real gap of 8.24 points, which makes chess about 12% higher. Drawn honestly from zero, the chess bar is **1.12×** the art bar: visible, modest, and about right. Truncating the axis at 66 makes the chess bar **5.49×** the art bar, an exaggeration of roughly **4.9×**. I measured them on the printout: 12 mm and 66 mm, and 66 ÷ 12 = 5.5, which matches. I also used a second trick — I removed the units from the y-axis label, so it just says "Score". Without "out of 100" the reader cannot tell whether 8 points is a landslide or a rounding error. **Neither trick changed a single number.**
+### 🐞 Fix the Broken Program
 
-**27.5(a) You used two tricks. Which is worse?**
-The truncated axis, because it works on the reader **before** they read anything — the shape lands in a quarter of a second. The missing units are worse in a different way: they remove the reader's ability to check, so the two together are much worse than either alone.
+**Bug 1 — the syntax error.**
 
-**27.5(b) Your measured ratio and your computed ratio probably differ slightly. Why?**
-Rounding, in three places: the ruler is only good to about half a millimetre, the printer may have scaled the page, and the bar tops are drawn with a line that has its own thickness. Measured 5.5 against computed 5.49 is agreement, not disagreement.
+- **Did any of it run?** **No.** Two tells, each a second's work: there is no `Traceback`, and `print(means.round(2))` on line 7 produced nothing. Python never started; it could not finish reading the file.
+- **Where is the fix?** On **line 15**, the line Python points at — add the missing `)`:
 
-### Page 27.6 — The Five-Chart Data Story (homework)
+```python
+axes[0].set_ylabel("Mean score (points out of 100)")
+```
 
-**The question:** *which club should the school buy equipment for next year?*
-**The decision behind it:** there is money for exactly one club. A question with no decision behind it produces charts with no point.
+- **Why not reported sooner?** An open bracket is a perfectly legal way to **continue onto the next line** (the twelve library visits split across two lines in Week 25), so Python keeps reading, hoping for a `)`, until it runs out of file. It then reports the place where the bracket was **opened**, the last spot it was certain about.
 
-**The story order, which is what is being marked:** context → baseline → the main finding → a challenge to the finding → the caveat. A story that only shows the flattering chart is an advertisement, not an analysis.
+**Bug 2 — the runtime error.**
+
+- `subplots(1, 2)` makes two frames, numbered 0 and 1. There is no frame 2.
+- **Which week?** **Week 11** — slots start at 0, so the last slot of a two-slot thing is number 1. (And `axis 0 with size 2` is Week 17's language for "the first direction has two slots in it".)
+- **The fix — five lines**, every `axes[2]` becoming `axes[1]` (the `bar`, `set_ylim`, `set_title`, `set_xlabel` and `set_ylabel`). "Change every `axes[2]` to `axes[1]`" is full marks:
+
+```python
+axes[1].bar(means.index, means.values)
+axes[1].set_ylim(100, 0)
+axes[1].set_title("HONEST: axis starts at 0")
+axes[1].set_xlabel("House")
+axes[1].set_ylabel("Mean score (points out of 100)")
+```
+
+**Bug 3 — the silent one.**
+
+```text
+panel 1 ylim: (100.0, 0.0)
+```
+
+- **Right-hand panel:** drawn **upside down**, with the three bars hanging down from the top of the frame and 100 at the bottom of the axis.
+- **Cause:** `axes[1].set_ylim(100, 0)` — the two numbers the wrong way round. `set_ylim` takes bottom first, then top, and does exactly what it is told. No error, no warning, and a PNG that looks like a matplotlib bug.
+- **The fix:**
+
+```python
+axes[1].set_ylim(0, 100)
+```
+
+- **The check that catches this family:** open the PNG and ask "is that the chart I meant?" All three of this week's silent bugs (one-argument ylim, backwards ylim, a bar chart nobody set a floor on) are invisible in the terminal and obvious in the picture.
+
+**The left panel's exaggeration factor** (chess 76.07, art 67.83, floor 67):
+
+- Visible bars: 67.83 − 67 = **0.83** and 76.07 − 67 = **9.07**
+- The eye sees: 9.07 ÷ 0.83 = **10.93**
+- Honest: 76.07 ÷ 67.83 = **1.1215**
+- Factor: 10.93 ÷ 1.1215 = **9.74**
+
+Nearly ten times: an 8-point gap out of 100 drawn as a bar nearly eleven times taller. Accept anything from 9.7 to 9.8. *(teacher-only: working from the unrounded means, 76.0714 and 67.8333, gives 10.89 and 9.71, which is inside the accepted range; the difference is only where the rounding happens.)*
+
+### 🧩 Puzzle of the Week
+
+**Part 1 — Solve for the lie**
+
+**(a)** (51 − b) ÷ (49 − b) = F
+
+**(b)** The working:
+
+```text
+51 - b = F(49 - b)
+51 - b = 49F - Fb
+51 - b + Fb = 49F
+51 + b(F - 1) = 49F
+b(F - 1) = 49F - 51
+b = (49F - 51) / (F - 1)
+```
+
+Equivalently `b = (51 - 49F) / (1 - F)` — the same expression with top and bottom negated.
+
+**(c)** Real output:
+
+```text
+F =    2  ->  bottom = 47.0000   check: 2.00
+F =    3  ->  bottom = 48.0000   check: 3.00
+F =    6  ->  bottom = 48.6000   check: 6.00
+F =   20  ->  bottom = 48.8947   check: 20.00
+F =   50  ->  bottom = 48.9592   check: 50.00
+F =  100  ->  bottom = 48.9798   check: 100.00
+```
+
+F = 3 giving exactly 48 is a satisfying check that the algebra is right: 3 ÷ 1 = 3.
+
+**(d)** With `b = 48.9592`, the visible bars are 51 − 48.9592 = **2.0408** and 49 − 48.9592 = **0.0408**, and 2.0408 ÷ 0.0408 = **50.02**. **Yes, it matches** — the 0.02 is rounding in the four decimal places.
+
+**(e)** Rounded to **48.96**: the visible bars become 2.04 and 0.04, and 2.04 ÷ 0.04 = **51.00**.
+
+**(f)** **Brutally sensitive.** Changing the floor by less than a thousandth of a percentage point (0.0008) changed the lie from 50× to 51×. As the floor creeps towards the smaller bar, the smaller *visible* bar heads towards zero and dividing by something near zero magnifies every tiny change. A number like 48.96 was not derived; it was nudged.
+
+**Part 2 — Spot the floor**
+
+- **(g)** Look for the **y-axis tick numbers**. There are none, so you cannot compute anything, so the chart is unfalsifiable. Suspect the worst: no numbers is a stronger warning sign than a bad floor, because a bad floor can at least be measured.
+- **(h)** Look at the **bottom tick number** — 95% of the maximum. Suspect a truncated line chart designed to make an ordinary month look like a crisis or boom. A line, so truncation is not automatically dishonest, but a share price or income has a meaningful zero and the reader is invited to read length rather than shape, and nothing on the chart says the axis was cut.
+- **(i)** Bottom tick 60%. **Probably fine**: a line, you are following a shape over the day, and a battery does not normally go near zero. But it should say so, and almost never does.
+- **(j)** Axis 0 to 100, numbers printed. **Nothing is wrong with the framing.**
+- **(k)** **(j) is the fine one.** Things that could *still* be wrong with it: which three schools were chosen and which left out; how many students each pass rate came from (95% of 20 and 95% of 2,000 are not the same evidence); whether "pass rate" is the right question (a school can raise it by entering fewer students); whether the intakes are comparable. **A correct axis is necessary and not sufficient.**
+
+### 🤔 Think Deeper
+
+**T1.** Model answer:
+
+> *The ice-cream number is biggest because ice cream and drowning are both almost perfectly driven by the same third thing, and a correlation measures how tightly two columns move together **regardless of why**. Hot weather pushes both up in lockstep, and in this made-up table the two happen to track each other even more tightly than either one tracks the temperature (0.997 against 0.987 and 0.989). That is a quirk of these six invented rows: with real, noisier data, two things driven by a third usually track each other *less* tightly than each tracks the third, so you cannot rely on the ice-cream number being the biggest. Either way, strength is not evidence of direction at all: the strongest of my three numbers is the one that is nonsense.*
+>
+> *The school data makes it worse. Sleep and marks are 0.994; screens and marks are −0.997; and sleep and screens are −0.987 with **each other**. The two candidate causes are so tangled that the students who sleep a lot are exactly the students who use screens a little. Correlation can tell me that all three move together and nothing whatsoever about which one is doing the work — because there is no arrangement of these three numbers that could distinguish "screens ruin sleep which ruins marks" from "a strict bedtime causes both" from "a quiet, organised home causes all three".*
+>
+> *The one thing that would settle it is an **experiment**: take a large group and split it **randomly** into two halves, change one thing for one half — say, no screens after nine o'clock — leave the other half alone, and compare the marks afterwards. The word "randomly" is doing all the work. It is what makes the two halves similar in every single thing I did not measure and did not think of, including the quiet house. Without randomness, whatever I find could just be the confounder again.*
+
+**Marking note:** full marks needs (1) why the strongest is the absurd one, (2) the tangling point about the school data, and (3) the word "randomly" explained rather than just used.
+
+**T2.** Model answer:
+
+> *At the bottom of that scatter are five real people: Hugo (14), Omar (14), Sami (14), Bruno (13) and Greta (14). Four of the five are fourteen.*
+>
+> *Three reasons a fourteen-year-old might study half an hour a week. **A part-time job** — "study two more hours" means either lose the money or lose the sleep, so it punishes. **A younger sibling to look after after school** — the two hours do not exist to be reallocated, so it punishes. **No quiet room or desk at home** — the two hours exist but are not usable, so ordering them produces two hours of failing to study, plus a detention when it does not work. **None of the three is helped. All three are punished.***
+>
+> *And the uncomfortable part is that nobody did anything obviously wrong. The chart was correct. r = 0.925 is real. The head teacher acted in good faith on the best evidence available. What went wrong is the step nobody wrote down: between "hours and marks move together" and "make everybody do more hours" there is a hidden assumption that **hours are a thing every student can freely choose**, and for the five students at the bottom that assumption is false — and the chart never measured it, so nobody had to defend it.*
+>
+> *One sentence under the chart would have stopped it: **"Every student in the bottom five is 13 or 14, and this chart does not measure whether they are able to study more."** That sentence does not argue with the correlation. It just makes the missing thing visible, which is enough.*
+
+**Marking note:** full marks needs three **specific** reasons with "helps or punishes" answered for each, **and** a named location for the failure — the unwritten assumption, not the arithmetic.
+
+*(teacher-only)* The five names and ages come from the Activity Part C listing (`week27_who.py`):
+
+
+```python
+# week27_who.py -- who is at the bottom of the scatter?
+from students import build_students
+
+df = build_students()
+
+print("studying an hour or less:")
+print(df[df["hours"] <= 1.0][["name", "age", "house", "club", "hours", "score"]].to_string(index=False))
+print()
+print("studying five hours or more:")
+print(df[df["hours"] >= 5.0][["name", "age", "club", "hours", "score"]].to_string(index=False))
+```
+
+```text
+studying an hour or less:
+       name  age house  club  hours  score
+ Hugo Silva   14   Red music    0.5     45
+Omar Haddad   14  Blue music    1.0     52
+  Sami Aden   14 Green   art    0.5     48
+Bruno Costa   13 Green   art    1.0     50
+ Greta Hahn   14  Blue music    0.5     42
+
+studying five hours or more:
+       name  age  club  hours  score
+   Bela Roy   14 music    5.0     90
+ Farah Aziz   12 chess    6.0     95
+ Liam Byrne   13 music    5.5     81
+ Tara Joshi   12 chess    5.0     97
+Anika Verma   12 music    5.0     93
+  Hana Sato   12   art    5.5     91
+```
+
+### 🛠️ Build It
+
+**Part 1 — Sabotage one of your own charts.** The checklist is a self-check; the table is filled from the student's own program. If they used the club averages, as in B5, it reads: bigger real number **76.07** (chess), smaller **67.83** (art), real gap **8.24**, dishonest floor **66**. If they used the house means, the real numbers are Blue 74.36, Red 74.25 and Green 67.42 (the Fix the Broken Program listing), and whichever floor they picked is right if the program uses it. Check that the floor was named in a variable and that the left panel really has **two** tricks (truncated axis, units removed).
+
+**Part 2 — The arithmetic, and then the ruler.** With the club model, the program column is: visible bars **1.83 and 10.07 units** (67.83 − 66 and 76.07 − 66), ratio **5.49**, honest ratio **1.12**, exaggeration factor **4.90**; the ruler column should read about 12 mm and 66 mm (ratio 5.5). The honest panel's ratio should come out close to the honest ratio, about 1.1, whatever the raw millimetres. Any printer scale is fine as long as the two ruler readings have the right ratio.
+
+**Three real reasons your ruler and your program disagree slightly:**
+
+1. **The ruler is only good to about half a millimetre**, and you are reading two of them, so the ratio carries two readings' worth of error.
+2. **Your printer may have scaled the page.** Both bars shrink together so the *ratio* survives, but the raw millimetres will not match the prediction.
+3. **The bar tops are drawn with a line that has its own thickness**, so "where the bar ends" is a decision of about half a millimetre, twice.
+
+**Measured 5.5 against computed 5.49 is agreement, not disagreement.** Being able to say why two nearly-identical numbers are not identical is worth more than getting them to match.
+
+**Part 3 — The written confession.** Full marks needs five things: both real numbers, the real gap, the honest ratio, the truncated ratio, and the fact that no number changed. A full-credit example, using the club averages:
+
+> Chess averages 76.07 and art averages 67.83 — a real gap of **8.24 points**, which makes chess about 12% higher. Drawn honestly from zero, the chess bar is **1.12×** the art bar: visible, modest, and about right. Truncating the axis at 66 makes the chess bar **5.49×** the art bar, an exaggeration of roughly **4.9×**. I measured them on the printout: 12 mm and 66 mm, and 66 ÷ 12 = 5.5, which matches. I also used a second trick — I removed the units from the y-axis label, so it just says "Score". Without "out of 100" the reader cannot tell whether 8 points is a landslide or a rounding error. **Neither trick changed a single number.**
+
+**"You used two tricks. Which is worse, and why?"** The truncated axis works on the reader before they read anything; the missing units remove the reader's ability to check; together they are much worse than either alone (the same answer as B5).
+
+**Part 4 — The Five-Chart Data Story.** The model version answers *which club should the school buy equipment for next year?* — with the decision named up front (there is money for exactly one club), because a question with no decision behind it produces charts with no point. **The story order is what is being marked:** context → baseline → the main finding → a challenge to the finding → the caveat. A story that shows only the flattering charts is an advertisement, not an analysis.
+
 
 ```python
 # story.py -- the Five-Chart Data Story.
@@ -1352,18 +1692,19 @@ Read together: *Chess is the biggest club. There is no normal student. Chess sco
 
 > On this data I would spend the money on **chess**, mainly because it affects 14 students rather than 12, and its 8-point score advantage is at least consistent with the club being good for people. **I am not confident that the club is causing the higher scores**, because chess students also study 0.85 hours a week more than art students on average, and study hours correlate with score at 0.93 — so the club may simply be where the students who already study a lot happen to go. All three clubs have fewer than 15 members, which is far too few to be sure of anything. If I could collect one more thing it would be scores from *before* students joined a club, because that would let me look at the change rather than the level.
 
-**27.6(a) Why is chart 5 in the story at all? It weakens your own argument.**
-Because leaving it out would make the story an advertisement. A five-chart story that only shows the flattering charts is not an analysis, and anybody who later found chart 5 would stop believing chart 3 as well. **Showing the caveat yourself is what makes the rest credible.**
+- **Why is chart 5 (or 4) in the story when it weakens the argument?** Because leaving it out would make the story an advertisement. Anybody who later found chart 5 would stop believing chart 3 as well. **Showing the caveat yourself is what makes the rest credible.**
+- *(teacher-only)* **Which of your five charts would you sabotage most easily?** Chart 3, the club means, by truncating its axis to `set_ylim(66, 78)` — that is exactly the left panel of B5. It is the easiest because the three values are close together, and truncation is most powerful exactly when the real difference is smallest.
+- *(teacher-only)* **Every bar chart here has `set_ylim(0, ...)`. Why, when matplotlib would have picked something?** Because once you touch `set_ylim` at all you own the decision, and writing the zero makes it visible in your file. (For bar values of 76.07, 71.83 and 67.83 matplotlib would start at zero by itself; it is **line** charts it zooms in on. Typing the zero means the choice does not depend on the tool's default or on which chart type you later switch to.)
+- **Checklist items** (five PNGs with five different filenames, bar charts with `set_ylim(0, ...)`, titles that state a finding): check against the file listing and the five `set_ylim` lines.
 
-**27.6(b) Which of your five charts would you sabotage most easily, and how?**
-Chart 3, the club means, by truncating its axis to `set_ylim(66, 78)` — see page 27.5. It is the easiest because the three values are close together, and truncation is most powerful exactly when the real difference is smallest.
+**Part 5 — The honest sentence about `r`.** Full credit needs four things: the description, the refusal, a named alternative cause, and who it lands on. The blanks are the student's own pair of columns; for the model table they are `hours` and `score`, r = 0.925 (0.93). A model answer:
 
-**27.6(c) Every bar chart here has `set_ylim(0, ...)`. Why, when matplotlib would have picked something?**
-Because once you touch `set_ylim` at all you own the decision, and writing the zero makes it visible in your file. (For a bar chart with values of 76.07, 71.83 and 67.83, matplotlib would in fact start at zero by itself; it is **line** charts it zooms in on by default. Typing the zero anyway means the choice does not depend on the tool's default or on which chart type you later switch to.)
+> In this table, students who studied more hours tended to score higher (r = 0.93). I do **not** know whether studying caused the higher marks. A quiet room with a desk could be causing both — it would give somebody more hours *and* better conditions to learn in — and if the school acts on this chart by making everybody do two extra hours, the five students at the bottom get blamed for something the chart never measured. Four of those five are fourteen, and I do not know why they study so little.
 
-### The Term 3 reflection sheet
+**Marking note:** the single thing to check is that **no word means "caused"**, except inside a sentence explicitly denying it. Words to strike out: *causes, makes, leads to, improves, boosts, results in, so you should*. The "how many did you find?" count can be zero; what matters is that the rewritten sentence has none.
 
-For each week: **✓** I could teach this to somebody else · **?** I want to look at this again.
+**Part 6 — Term 3 reflection.** For each week: **✓** I could teach this to somebody else · **?** I want to look at this again. The "check yourself" answers:
+
 
 | Week | The one thing it was about | Check yourself with this |
 |---|---|---|
@@ -1384,6 +1725,83 @@ Model answers, to show what "specific" means:
 - *"Week 19. I can type `axis=0` but I work out which one it is by trying both and seeing which shape comes back, and that means I don't actually know."*
 
 **Marking note:** *"it was hard"* and *"all fine"* are both non-answers. Everybody has two. Require two.
+
+**Part 7 — The Bug Log.** No fixed answer. A good entry names a real error from this term and the check that would have caught it, e.g. *"IndexError on `axes[2]` — yes, there was an error message — changed it to `axes[1]` — next time: count the frames, then number from 0"*, or *"the chart was upside down — no error message — put the ylim numbers the right way round — next time: open the PNG"*. An entry whose "what I will check next time" is just "be careful" is not yet an answer.
+
+### 🎨 Draw It
+
+There is no single right drawing. A good one has **two panels whose bars genuinely look different**, a floor box with a number that was *nudged* rather than derived, and an exaggeration factor computed from the **measured bars** rather than from the original two numbers.
+
+The tell that it is right: the third bottom box (tall ÷ short) is a big number like 12, and the fourth box (the factor) is that number divided by something close to 1. If the two bottom-right boxes are nearly the same, the truncation was written down but never drawn. *(The workbook's own example — Shop A 28 minutes, Shop B 27 minutes, floor 26.8 — has bottom boxes 4 mm · 48 mm · 12 · 11.5×.)*
+
+### 📊 Self-Check
+
+The "I can…" table is a self-rating, nothing to mark. The true-or-false rows:
+
+| Statement | Answer | Why |
+|---|---|---|
+| A bar chart's y axis must start at zero | **TRUE** | The eye compares lengths, and deleted length cannot be put back |
+| A line chart's y axis must start at zero | **FALSE** | A line asks you to follow a shape. But **say so in the label** if you truncate |
+| `ax.set_ylim(48.6)` raises an error | **FALSE** | No error. It sets the bottom and invents a top |
+| `ax.set_ylim(51.4, 48.6)` raises an error | **FALSE** | No error. It draws the chart upside down |
+| `subplots(1, 2)` gives you `axes[1]` and `axes[2]` | **FALSE** | `axes[0]` and `axes[1]`. Week 11's off-by-one |
+| `ax.legend()` invents names for your lines | **FALSE** | It reads the `label=` you already gave. With none, you get a warning and no legend |
+| `r = 0.93` means 93% | **FALSE** | It is a position on a scale from −1 to +1 |
+| A negative `r` is a weak `r` | **FALSE** | The minus sign is a **direction**. −0.9 is stronger than +0.3 |
+| `df["club"].corr(df["score"])` works fine | **FALSE** | `TypeError: unsupported operand type(s) for /: 'str' and 'int'`. You cannot average "chess" |
+| The strongest of three correlations is the most likely to be causal | **FALSE** | In the seaside table the strongest, 0.997, is the absurd one |
+| Printing the real numbers on a truncated chart makes it honest | **FALSE** | Better, and not enough. The shape lands in a quarter of a second; the numbers take three |
+| Python's "Did you mean…?" suggestions are always right | **FALSE** | It offered `var` for `bar`. It matched the letters, not the meaning |
+| A confounder is a hidden third thing causing both of the things you measured | **TRUE** | Hot weather, behind ice cream and drowning |
+| Every chart is a lie | **FALSE** | Look at the honest panel: same two numbers, axis from zero, ratio 1.04. **A chart is an argument, so check the framing** |
+
+### Prompts used in the lesson (not on a workbook section)
+
+The hook and the Activity ask a few questions that have no line in the workbook. They are answered here so you can mark the conversation. Students write their hook numbers on scrap paper or beside Practice Set A, question A1.
+
+**Hook — the measuring of the printed `lie.png`**
+
+| # | Measurement | Answer |
+|---|---|---|
+| (a) | 7A's bar, in mm | **about 11 mm** (9–14 depending on printer scaling) |
+| (b) | 7B's bar, in mm | **about 67 mm** (54–85, scaled the same way) |
+| (c) | (b) ÷ (a) | **about 6.1** — this is what the chart makes you believe |
+| (d) | 7A's real value | **49%** |
+| (e) | 7B's real value | **51%** |
+| (f) | (e) ÷ (d) | 51 ÷ 49 = **1.0408** — 7B is about 4% better |
+| (g) | Exaggeration factor, (c) ÷ (f) | 6.1 ÷ 1.04 = **about 5.8 to 5.9** (the exact figure with a 48.6 floor is 5.76) |
+
+- **Which number on the chart was faked?** **None of them.** Both bar heights are the true values and the tick numbers are correct. Only where the axis starts changed.
+- **If your millimetre readings were different from 11 and 67, were you wrong?** No. Your printer scaled the page, so **both** bars shrank or grew by the same amount and the ratio is unaffected. That is why the ratio is the answer and not the raw millimetres.
+
+**Activity Part A — two lines, one legend** (full file and output in The Activity, Part A; `saved two_lines.png`; the student-facing versions are Predict the Output P3 and Practice Set A, A2 and A4)
+
+- **What happens if you call `ax.legend()` but never pass any `label=`?** A **warning**, not an error, and the chart still saves with no legend on it (the exact message is in P3 above).
+- **Why does one line use `marker="o"` and the other `marker="s"`?** So the two lines can be told apart when the colour is gone — photocopied, printed in black and white, or read by somebody who cannot distinguish those two colours. **Two cues instead of one**, and it costs nothing.
+- **When do you NOT need a legend?** When there is exactly one series, because the title and the y-axis label already name it.
+
+**Activity Part B — correlation** (full file and output in The Activity, Part B; the student-facing versions are Predict the Output P4 and Practice Set B, B1)
+
+| Pair | `r` |
+|---|---|
+| study hours vs score | **0.925** |
+| age vs study hours | **−0.572** |
+| ice creams vs drownings | **0.997** |
+| temperature vs ice creams | **0.987** |
+| temperature vs drownings | **0.989** |
+
+- **Which of the five is the strongest, and which is the most ridiculous?** The same one: **ice creams vs drownings, 0.997.** Strength tells you nothing about whether there is a cause.
+- **What is the confounder in the ice-cream case, and how do you know?** **Temperature.** The numbers alone cannot prove it (a correlation never says which way an arrow points). It is consistent with them, since temperature correlates strongly with *both* other columns (0.987 and 0.989), and what makes it convincing is a mechanism you can say out loud: hot weather makes people buy ice cream, and makes people swim, and swimming is what creates the drowning risk.
+- **What does the minus sign in −0.572 mean?** That the two move in **opposite** directions: as age goes up, reported study hours go down. It is a direction, not a grade. −0.9 is *stronger* than +0.3.
+- **Why does `df["club"].corr(df["score"])` fail?** Correlation is arithmetic and you cannot do arithmetic on the word "chess". The last line is `TypeError: unsupported operand type(s) for /: 'str' and 'int'`. *(pandas 2.x says `ValueError: could not convert string to float: 'chess'` instead. Same cause.)*
+
+**Activity Part C — who gets hurt?** (the student-facing versions are Think Deeper T2 and Build It Part 5; the listing is reproduced under T2 above)
+
+- **What do the five students at the bottom have in common?** Every one of them is **13 or 14** — four are 14. Four of the six at the top are **12**. So "hours" and "age" are tangled together in this table, and the hours-vs-score chart never mentions age.
+- **Give three reasons a 14-year-old might study half an hour a week that the chart cannot see.** A part-time job. A younger sibling to look after. No quiet room or desk at home. A long journey to and from school. Illness, their own or somebody else's. Something difficult going on at home. **None of them appear in the table, and none are fixed by being told to study more.**
+- **The honest sentence about `r = 0.93`:** the model answer is the one under Build It Part 5, with the same marking note.
+- **What would you need in order to actually test whether studying raises marks?** An **experiment**: split a large group **randomly** in half, ask one half to study two extra hours, leave the other alone, and compare afterwards. The randomness makes the two halves similar in everything you did not measure, including the quiet room. Running that on real children raises fairness questions of its own, which is why this is genuinely hard.
+
 
 ### Lesson questions posed in the Say-this scripts
 

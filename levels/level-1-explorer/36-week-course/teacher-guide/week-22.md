@@ -1043,19 +1043,34 @@ Level 3 is a fully successful week. Level 5 is what you would hope to see by Wee
 > *It should take about forty-five minutes. If it's taking you ninety, stop and bring me the bit
 > that's stuck."*
 
-**Workbook pages:** W22.1 through W22.6.
+**Workbook section:** 🛠️ **Build It**, pages W22.1 through W22.6 (the student's own model), then W22.7
+(somebody else's data).
 
 | Page | Task | Time |
 |---|---|---|
-| **W22.1** | The completed 15-row scoring sheet — copied up neatly if today's is messy, with the original stapled behind it | 10 min |
-| **W22.2** | Accuracy three ways: fraction, decimal (4 places), percentage (1 dp), **with the division written out longhand**. Baseline stated. Improvement in percentage points. | 10 min |
-| **W22.3** | The per-class accuracy table, with the check that the parts add to the whole | 5 min |
-| **W22.4** | The hand-drawn confusion matrix, ruled, with row totals, column totals, and both checks shown | 10 min |
+| **W22.1** | The completed 15-row scoring sheet — copied up neatly if today's is messy, with the original stapled behind it. Includes the prediction made before opening | 10 min |
+| **W22.2** | Accuracy three ways: fraction, decimal (4 places), percentage (1 dp), **with the division written out longhand**. Baseline stated. Improvement in percentage points. "One photo is worth" line | 10 min |
+| **W22.3** | The per-class accuracy table, with the check that the parts add to the whole, and the worst class compared with the baseline | 5 min |
+| **W22.4** | The hand-drawn confusion matrix, ruled, with row totals, column totals, both checks shown, the biggest off-diagonal cell and the read-down-the-columns questions | 10 min |
 | **W22.5** | The gap: training accuracy, test accuracy, the subtraction, and two sentences on what it means **for their model specifically** | 5 min |
-| **W22.6** | The three-sentence verdict, plus the "I checked, and ____" line | 5 min |
+| **W22.6** | The three-sentence verdict, the "I checked, and ____" line, and the five-photo shot list | 5 min |
+| **W22.7** | Score somebody else's test: the fixed sock / glove / hat sheet, parts (a)–(i). This is the part with a fixed right answer to mark against | 20 min |
 
-**Plus one practice set on somebody else's data** (page W22.7), so you have something with a fixed
-right answer to mark against. Full answers are in the key below.
+**The rest of the workbook** (every section has its answers in the key below). These are not needed
+for the write-up; set them as the student's pace allows, or use them as the warm-up and extension work
+across the following days:
+
+| Workbook section | What it is | Marked against |
+|---|---|---|
+| ✅ **Warm-Up** W1–W5 | Five recall questions on last week (memorizing vs generalizing, the gap, rows vs columns, the diagonal) | Key: Warm-Up |
+| ✍️ **Practice Set A — Understand It** A1–A6 | Fill the blanks, baseline choices, confidence trap, matching, label a fruit matrix, honest vs over-claiming | Key: Practice Set A |
+| ✍️ **Practice Set B — Use It** B1–B5 | Score a bat / ball / stumps sheet, build its matrix, two "what goes wrong" cases (dropped photo, unbalanced cat / not-cat), mark a bad write-up | Key: Practice Set B |
+| 🧩 **Puzzle of the Week** P1–P7 | Fill in the four missing cells of a pizza / pasta / salad matrix | Key: Puzzle |
+| 🤔 **Think Deeper** T1–T2 | Two paragraphs: the size of the hidden set, and why scientists seal envelopes | Key: Think Deeper |
+| 🎨 **Draw It** | A report-card poster of their own model | Key: Draw It |
+| 📊 **Self-Check** | Six "I can…" rows, ticked by the student | Not marked; read it with them |
+
+Each key entry below carries the workbook's own item labels, so you can mark straight down the page.
 
 > **⚠️ Watch out:** the temptation tonight is to open Teachable Machine "just to look". Say
 > explicitly: *"Don't open the model tonight. The measuring is finished. Tonight is only writing."*
@@ -1145,6 +1160,210 @@ Once. (The `said rabbit` column totals 1.)
 
 ---
 
+### Workbook sections other than Build It — answers
+
+Everything below is marked against the workbook's own labels (W1, A1, B1, P1, T1 …). Fixed-answer
+items have one correct value; the teacher notes say where a student is likely to go wrong.
+
+**Where students usually go wrong on these:** W4 (circling TRUE because a small gap "sounds good") ·
+A2 second part (choosing 33.3% again, i.e. forgetting that the baseline follows the class counts) ·
+A3 (TRUE: confidence feels like a probability) · A5 (reading a row total as a column total) ·
+B1(c) (writing 41.7 as "41.7%" rather than points) · B3(a) (dividing by 13 instead of 14) ·
+B4(c) (answering 90 because they stop at the accuracy, not the subtraction) · P3 (using a row total
+instead of the column total).
+
+### Workbook — Warm-Up
+
+**W1.** **Memorizing** = getting the *old* examples right, because it has effectively learned them by heart. **Generalizing** = getting *new* examples right, because it learned something about the object itself. The whole reason we hide photos is that only the second one is useful.
+
+**W2.** **Memorizing.** The gap is 100 − 40 = **60 percentage points**, which is enormous. It learned the training photos — probably the table, the light and the background — rather than the objects.
+
+**W3.** **Rows = the truth** (what the photo actually was). **Columns = what the model said.** Getting these the wrong way round makes every reading of the grid backwards, which is why you write "true ___" and "said ___" on the labels every single time.
+
+**W4.** **FALSE.** A model scoring 55% on training and 52% on testing has a tiny 3-point gap and is useless — it barely learned anything at all. You read the **gap and the level together**, or you learn nothing from either.
+
+**W5.** The diagonal counts the photos where the truth and the prediction **matched** — i.e. the correct ones. It must equal your **correct count** from the scoring sheet. (And every cell added together must equal your photo count.)
+
+---
+
+### Workbook — Practice Set A
+
+**A1.** got **right** · number of **tries** · fraction **11/15** · decimal **0.7333** · percentage **73.3%** · the baseline **ignores** the input.
+
+**A2.** First: **(b) 33.3%** — three classes with equal numbers, so shouting a random name is right about one time in three.
+
+Second: **(b) 53.3%** — the best strategy that ignores the photo is *"always say pen"*, and 8 of the 15 photos are pens, so 8/15 = 53.3%.
+
+**What changed:** the test set stopped being **balanced**. The baseline is not always 1 ÷ number-of-classes. It is *the score of always naming the commonest class*, and that only equals 33.3% when the classes are even.
+
+**A3.** **FALSE.**
+
+A confidence score is **how strongly the model prefers that class over the others**. It is not a probability of being right. The model has no way of knowing what "wrong" even means — it can only tell you which of its options fits best. Show it something unlike anything it trained on and it will still pick one, and still pick it strongly. **Confident and wrong is completely normal**, and your own scoring sheet probably contains an example.
+
+**A4.** held-out test set = **B** · baseline = **D** · per-class accuracy = **E** · confusion matrix = **C** · the gap = **A**.
+
+**A5.**
+
+1. **A** (the shaded diagonal cell holding 5) — *"all 5 real bananas were correctly called banana."* This is a diagonal cell, so it counts successes.
+2. **B** (the cell holding 2) — *"2 real oranges were called apple."* It is the biggest number **off** the diagonal, so it is the model's single commonest mistake — and it is a mistake with **two names** attached, which is what makes it fixable.
+3. **C** (the 5 at the end of the apple row) — *"there were 5 apple photos in the test set."* A row total is how many of that class existed.
+4. **D** (the 3 at the foot of the orange column) — *"the model said the word 'orange' 3 times in 15 tries."* A column total is how often the model was **willing to use** that word — even though 5 oranges existed. That is reluctance, and it is a different diagnosis from simply being bad at oranges.
+
+(e) 4 + 5 + 3 = **12 correct**, so **12/15**. Decimal: 15 × 0.8 = 12, so it is exactly 0.8 → **80.0%**.
+
+(f) **orange**, at 3/5 = **60.0%**. (Apple is 4/5 = 80%, banana is 5/5 = 100%.)
+
+(g) 4 + 5 + 3 = **12** ✓ — matches the correct count. All nine cells: 4+1+0+0+5+0+2+0+3 = **15** ✓.
+
+**A6.**
+
+| Statement | Verdict | Why |
+|---|---|---|
+| "11 out of 15, which is 73.3%" | **honest** | Fraction first, so you know the sample size |
+| "73% accurate" | **over-claiming** | Out of how many? Against what baseline? |
+| "It beat the 33.3% baseline by 40 points" | **honest** | Baseline named, and *points* used correctly |
+| "It's 40% better than guessing" | **over-claiming** | Points, not percent. 33.3 → 73.3 is 40 **points** — but it is more than *double* |
+| "Worst class was comb, at 2/5" | **honest** | Names the weakness and gives its fraction |
+| "Basically perfect" | **over-claiming** | Not a measurement of anything |
+| "100% on training, 73.3% on 15 held-out photos" | **honest** | Both numbers, so the gap is checkable |
+| "State of the art" | **over-claiming** | Compared with what, measured how? |
+
+Model rewrite: *"73% accurate"* → **"11 out of 15 held-out photos, which is 73.3%, against a 33.3% baseline."**
+
+---
+
+### Workbook — Practice Set B
+
+**B1.**
+
+(a) Correct rows: 1, 2, 4, 5, 6, 7, 9, 10, 12 → **9 out of 12**.
+
+(b)
+```text
+   FRACTION    9 / 12          (simplifies to 3/4)
+
+   DECIMAL     12 x 0.7 = 8.4        remainder  9 − 8.4 = 0.6
+               0.6 ÷ 12 = 0.05
+               0.7 + 0.05 = 0.7500
+
+   PERCENTAGE  75.0 %
+```
+
+(c) Baseline **33.3%** (three classes, four photos each). Beats it by 75.0 − 33.3 = **41.7 percentage points**.
+
+(d)
+
+| class | correct | total | fraction | percentage |
+|---|---|---|---|---|
+| bat | 3 | 4 | 3/4 | 75.0% |
+| ball | 3 | 4 | 3/4 | 75.0% |
+| stumps | 3 | 4 | 3/4 | 75.0% |
+| **overall** | **9** | **12** | **9/12** | **75.0%** |
+
+Check: 3 + 3 + 3 = **9** ✓. *(Notice: all three classes are equally good here. That is unusual and worth saying — most models have a clear worst class. This one's mistakes are spread evenly.)*
+
+**B2.**
+
+| | said bat | said ball | said stumps | row total |
+|---|---|---|---|---|
+| **true bat** | **3** | 0 | 1 | 4 |
+| **true ball** | 0 | **3** | 1 | 4 |
+| **true stumps** | 1 | 0 | **3** | 4 |
+| **column total** | 4 | 3 | 5 | **12** |
+
+Diagonal 3 + 3 + 3 = **9** ✓ matches the correct count. All cells = **12** ✓.
+
+Biggest off-diagonal: there is a **three-way tie at 1** — "true bat → said stumps", "true ball → said stumps", and "true stumps → said bat". Say so; a tie is a real answer, and it means this model has no single dominant mistake.
+
+Reading the columns: the model said **"stumps" 5 times** when only **4** stumps photos existed. It is slightly **over-eager** about stumps — both of its non-stumps mistakes went that way. If you were fixing this model, that is the direction to look: something about stumps photos is attracting bats and balls. (And it said "ball" only 3 times for 4 real balls, so it is mildly reluctant there.)
+
+**B3.**
+
+(a) Counting the dropped photo as wrong: **10 / 14 = 71.4%**. *(14, because she did open 14 — she dropped one of them. If the envelope held 15 and she also lost one, use the real count and say so.)*
+
+(b) Her 76.9% is measuring **how many photos she was willing to remove**. She chose to drop that photo *because* the model failed on it — so the score is no longer a property of the model at all. If she dropped three more of the failures she would "score" 100%.
+
+(c) She may be completely right that it was a hard photo — and that is **real information that belongs in the notes column**. What she should have done: write **"very dark, lamp off"** in the notes, mark it **wrong**, and keep it. The photo was chosen before she knew which ones would fail, and that is exactly what made it fair. *(And if lots of her failures are dark photos, she has just diagnosed her model — that is a finding, not an excuse.)*
+
+**B4.**
+
+(a) Yes, the arithmetic is right: 18 correct ÷ 20 = **90%**. Honest arithmetic, useless machine.
+
+(b) Baseline = always say the commonest class = *"not cat"* = **18/20 = 90.0%**.
+
+(c) 90.0 − 90.0 = **0 percentage points.** His model achieved **exactly nothing**. A brick with a label on it would score the same.
+
+(d) Per-class on **cat**: 0 correct out of 2 = **0.0%**. It has never identified a cat in its life.
+
+(e) Model sentence: *"On 20 held-out photos my model scored 18/20 = 90.0%, but the baseline was also 90.0% because 18 of the 20 photos were not-cat — so it beat guessing by 0 points, and it scored 0/2 = 0% on cats. My test set was far too unbalanced to measure anything."*
+
+**B5.**
+
+| Fault | Why it's a fault | The fix |
+|---|---|---|
+| "87% accurate" | No fraction, so no sample size and no baseline. 87% could be 13 out of 15 or 87 out of 100, and those are very different claims | Write the fraction first: *"13/15 = 86.7%, against a 33.3% baseline"* |
+| "54% better than guessing" | Percent instead of **points**, and no baseline stated | *"It beat the 33.3% baseline by 53.4 percentage points"* |
+| "Everything right except a few" | Not a measurement. Which class, how many, confused with what? | *"Worst class was salad at 2/5 = 40%, most often called pasta"* |
+| "Training accuracy was 100% so it works" | Training accuracy shows nothing — every model gets ~100% on photos it studied. It is the **gap** that carries information | *"100% on training, 86.7% held out, so the gap is 13.3 points"* |
+
+**The most misleading line is the last one**, "training accuracy was 100% so it works". The others are vague or badly worded; that one is actively wrong reasoning, and it is the exact mistake that lets people ship broken models believing they are perfect.
+
+---
+
+### Workbook — Puzzle of the Week
+
+**P1.** **The pizza row** — 4 + ?₁ + 0 = 5, so **?₁ = 1**.
+
+**P2.** **The salad row** — 0 + ?₃ + 2 = 5, so **?₃ = 3**.
+
+**P3.** **The "said pasta" column** totals 8. It contains ?₁ (= 1), ?₄, and ?₃ (= 3):
+1 + ?₄ + 3 = 8, so **?₄ = 4**.
+
+**P4.** **The pasta row** — ?₂ + 4 + 0 = 5, so **?₂ = 1**.
+
+The finished grid:
+
+| | said pizza | said pasta | said salad | row total |
+|---|---|---|---|---|
+| **true pizza** | **4** | 1 | 0 | 5 |
+| **true pasta** | 1 | **4** | 0 | 5 |
+| **true salad** | 0 | 3 | **2** | 5 |
+| **column total** | 5 | 8 | 2 | **15** |
+
+**P5.** Diagonal: 4 + 4 + 2 = **10** ✓ — matches the clue. And all nine cells add to 15 ✓. Both checks pass, which is how you know you did not just invent numbers that happened to fit one row.
+
+**P6.** Worst class: **salad**, at **2/5 = 40.0%**. (Pizza 4/5 = 80%, pasta 4/5 = 80%.) Notice 40% is still above the 33.3% baseline — only just.
+
+**P7.** The biggest off-diagonal cell is the **3** in *"true salad → said pasta"*. **Three of the five salads were called pasta.**
+
+What to photograph tomorrow: not "more salad". Attack that specific confusion. Something like — *five photos of a salad with the leaves clearly separated and the bowl visible, so it cannot read as a heap of strands; and five photos of a salad and a plate of pasta side by side at the same distance and under the same lamp, so the only difference between them is the food.*
+
+And look at the reverse cell: *"true pasta → said salad"* is **0**. Not one pasta was ever called salad. **The confusion runs one way only**, which is the signature of a problem with the salad class itself — too few salad photos, or all of them too similar — rather than the two foods genuinely looking alike.
+
+---
+
+### Workbook — Think Deeper
+
+**T1. Model answer:**
+
+> Every photo I put in the envelope is a photo the model never gets to learn from, so hiding more makes my *measurement* more trustworthy and my *model* worse. With 15 test photos, one photo is worth 6.7 points, so I can only take differences bigger than about 7 points seriously. If I hid 30 instead, one photo would only be worth 3.3 points and I could trust smaller differences — but I would have 15 fewer training photos, and with only 60 to begin with that is a quarter of my data gone.
+>
+> There is no right answer, and that is the honest part. It is a trade, not a puzzle with a solution. What I *can* do is say out loud where I sat on it: "15 held-out photos, so one photo is 6.7 points, so do not read anything into a 5-point difference." A number reported with its sample size lets somebody else judge the trade for themselves. A bare percentage hides it.
+
+*Full marks needs:* that more test photos means a better measurement **and** a worse model · that there is no correct answer · and that the honest move is to **state** the choice and what one photo is worth.
+
+**T2. Model answer:**
+
+> It would go wrong slowly, which is what makes it dangerous. The first re-test would feel completely reasonable — the photo really was blurry. So would the second. But every re-test would happen for the same reason: the model got it wrong. I would never once re-test a photo the model got *right*, because I would have no reason to look twice at it. So the score would drift upwards, one small honest-feeling decision at a time.
+>
+> And I would not be able to tell. Each individual choice has a genuine excuse attached, so nothing ever feels like cheating. That is the whole point of the envelope: it is not there because I am dishonest, it is there because **being honest is not enough**. A sealed envelope removes the decision instead of asking me to make it well. Real scientists do not seal results because they distrust their own character — they do it because everybody's brain works like this, including theirs.
+
+*Full marks needs:* that the drift is **one-directional** (you only ever re-test failures) · that it feels reasonable each time · and that sealing removes the decision rather than relying on willpower.
+
+---
+
+---
+
 ### Homework W22.1–W22.6 — the student's own model
 
 These depend on the student's own results, so mark against the **checklist**, not against numbers:
@@ -1167,6 +1386,12 @@ These depend on the student's own results, so mark against the **checklist**, no
 - [ ] Verdict: three sentences containing the worst class, its confusion partner and a proposed
       cause — **plus** the "I checked, and ____" line, which may honestly report that the guess was
       wrong.
+- [ ] W22.1: the prediction made before opening is written on the page (it is compared with the result
+      in the wrap-up).
+- [ ] W22.2: the "one photo is worth 100 ÷ 15 = 6.7 points" line is filled in.
+- [ ] W22.3: the worst class is named and compared with the baseline (above or below).
+- [ ] W22.4: biggest off-diagonal cell named, and the three read-down-the-columns questions answered.
+- [ ] W22.6: five specific shots on the shot list. "More combs" is not a shot.
 
 **Model answer for W22.5 (the two gap sentences), to show the standard:**
 
@@ -1283,6 +1508,19 @@ probably not help, because the existing glove photos apparently already look soc
 A 33.3-point gap is large. Real learning happened (66.7% is 33.4 points above baseline) but a
 substantial amount of what the model "knows" is memory of its own training photos rather than
 knowledge of socks, gloves and hats.
+
+---
+
+### Workbook — Draw It and Self-Check
+
+**Draw It.** There is no single right poster. A strong one has **all four numbers** — the fraction,
+the percentage, the baseline (as a dashed line across the bars) and the gap — plus a worst-class
+marker and the worst matrix cell circled. The test is whether a stranger could use the poster to catch
+the student out. A poster with one big "73%" and nothing else is an advert, not a report; ask which
+baseline, out of how many, and where the worst class is.
+
+**Self-Check.** Not marked. Read the six rows with the student. Any "not yet" on *baseline when the
+classes are uneven* or *both matrix checks* points straight back to Practice Set A2 and Set B2.
 
 ---
 

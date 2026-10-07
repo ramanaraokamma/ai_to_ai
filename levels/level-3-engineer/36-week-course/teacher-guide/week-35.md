@@ -15,7 +15,7 @@
 | **New maths** | **None.** One percentile worked by hand on five numbers, and two divisions for the subgroup table. |
 | **New syntax** | `http.server.BaseHTTPRequestHandler` · `HTTPServer(("127.0.0.1", 8000), Handler)` · `logging.basicConfig(filename=...)` · `np.percentile(latencies, 95)` |
 | **Dataset** | **The student's own shipped artifact from Week 34**, plus 100+ requests they generate against it. The reference run below is 111 requests against `sentiment_v1`. **Nothing downloads.** |
-| **Materials** | Printed workbook pages 35.1–35.8 · **a fresh wall sheet headed FINDINGS with four blank rows** · the THE SIX BOXES sheet from Week 34, still up · the **laptop-swap pairing written on the board before they arrive** · the Bug Log · the model card template, printed, six headings |
+| **Materials** | Printed workbook (its opening note names the sections 35.1–35.8: 35.1 = Predict the Output P1, 35.3 = Do the Maths by Hand M1, 35.2 and 35.4–35.8 = the numbered steps of Build It) · **a fresh wall sheet headed FINDINGS with four blank rows** · the THE SIX BOXES sheet from Week 34, still up · the **laptop-swap pairing written on the board before they arrive** · the Bug Log · the model card template, printed, six headings |
 | **Tech needed** | Laptop with Python 3, numpy, scikit-learn, joblib — **and `curl` in the terminal.** `http.server`, `json` and `logging` all ship with Python. **No Flask. No FastAPI. No installs. That is deliberate.** |
 | **Prep time** | 35 minutes the night before · 10 minutes on the day |
 | **Expected runtime of the code** | The service starts in **about 0.8 seconds** and then sits there. One prediction is **about 0.23 ms**. Generating 110 requests with a shell loop takes **under half a second**. `read_logs.py` and `subgroup_report.py` are both instant. **Nothing here is slow.** |
@@ -358,7 +358,7 @@ This section is what to prepare before the lesson, and it holds the complete run
 - [ ] **Check `curl` exists** on the machines: `curl --version` in a terminal. It ships with macOS and most Linux. **Find out tonight, not at minute four.**
 - [ ] **Write the laptop-swap pairing on the board** before they arrive. Choosing partners live costs six minutes.
 - [ ] **Put up the FINDINGS wall sheet**, four blank rows, and write at the top: *every crash written here is a finding, not a failure.* **Ban the word "failure" from that sheet out loud.**
-- [ ] **Print** workbook pages 35.1–35.8, and the six-heading model card template.
+- [ ] **Print** the whole workbook (Warm-Up through Self-Check; 35.1–35.8 are P1, M1 and the Build It steps), and the six-heading model card template.
 - [ ] **Build and run the whole thing yourself.** Twenty minutes. You need to have seen a service refuse four things and then answer a fifth.
 
 **Add two files to last week's `ship-it/`:**
@@ -629,7 +629,7 @@ longer (6 words or more)    19    0.684      1.000     0.333
 - [ ] Pairing on the board. FINDINGS sheet up, blank, with the word "failure" crossed out at the top.
 - [ ] **Two terminal windows open on the shared screen, side by side.** One will run the service; the other will attack it. Set this up before they come in — rearranging windows live is dead air.
 - [ ] `service.py` **partly given**: hand them `send_json`, `log_message` and `main` complete, printed. **They type `do_GET` and the four checks themselves** — those are the new lines and the whole lesson.
-- [ ] Workbook 35.1 out. **The four predicted replies filled in, in pen, before anything runs.**
+- [ ] Workbook Predict the Output **P1** (page 35.1) out. **The four predicted replies filled in, in pen, before anything runs.**
 - [ ] `big.json` already made, so the oversized-body demo is instant.
 - [ ] Bug Log out. It will get three entries today.
 
@@ -651,7 +651,7 @@ longer (6 words or more)    19    0.684      1.000     0.333
 | `curl` is missing or behaves oddly on a Windows terminal | Use `predict.py` to generate log lines instead, and demo the malformed requests on the shared screen only. **Objective 2 becomes a group demonstration rather than an individual one; say so and move on.** |
 | The Break-Each-Other activity turns into chaos | Cap it: **four requests each, written on the card first, then sent.** Unwritten attacks become a competition to crash things; written ones stay a diagnosis. |
 | Somebody's service crashes and they are embarrassed | **This is the moment the FINDINGS sheet exists for.** Get them to write it on the wall, in their own handwriting, and thank them out loud. Do it for the first crash of the lesson and the tone is set for the rest. |
-| Everybody finishes in 12 minutes | Page 35.8: send the service 30 requests from a completely different domain and watch the out-of-vocabulary rate climb. **That plot is what drift actually looks like.** |
+| Everybody finishes in 12 minutes | Build It 35.8 (the stretch): send the service 30 requests from a completely different domain and watch the out-of-vocabulary rate climb. **That plot is what drift actually looks like.** |
 
 ---
 
@@ -1060,9 +1060,9 @@ This section describes the main activity step by step.
 
 - The pairing is on the board already. **A rotation of four is better than pairs if the class is big enough** — you get four attackers per service instead of one.
 - The FINDINGS sheet, four blank rows, with "failure" crossed out at the top.
-- Workbook page 35.2 — the findings card: four rows, `what I sent` / `status code` / `what came back` / `did it stay up`.
+- Workbook Build It **35.2** — the findings card: four rows, `what I sent` / `status code` / `what came back` / `did it stay up`.
 - **Every service running on a different port**, written on a sticky note stuck to the laptop. This saves five minutes of confusion and it is worth doing.
-- Page 35.1 already filled in, in pen, so they can compare what they predicted with what happened.
+- Workbook P1 (page 35.1) already filled in, in pen, so they can compare what they predicted with what happened.
 
 ### Step 1 — write the attacks before sending them (4 minutes)
 
@@ -1189,7 +1189,7 @@ This section says what to cut or add for students who need less or more.
 
 ### If the student is struggling
 
-**Cut:** the oversized-body check (`413`) · the `--version` and `--threshold` flags on the service · the `by version` line in `read_logs.py` · four of the seven subgroup rows · page 35.8.
+**Cut:** the oversized-body check (`413`) · the `--version` and `--threshold` flags on the service · the `by version` line in `read_logs.py` · four of the seven subgroup rows · Build It 35.8.
 
 **Give them the copy-this-exactly scaffold.** Hand them `service.py` complete and printed **except for the four checks**, which are replaced by four numbered blank lines with the error message already written in a comment beside each. They type four `if` statements. **Typing those four `if`s is the whole of objective 2.**
 
@@ -1210,7 +1210,7 @@ and the max is the 11th:       3.27
 
 ### If the student is flying
 
-1. **The drift simulator (page 35.8).** Send the service 30 requests from a completely different domain — slang, emoji, a different topic — and watch the out-of-vocabulary rate climb. The reference numbers: `0.1111` for a familiar review, `0.8667` for `the biryani was absolutely banging fam no cap`, `1.0000` for Latin. **Then the honest hard question: at what OOV rate did the accuracy actually start dropping? Label 20 of the drifted inputs by hand and find out.** Write the guess down first; it depends on whether the words left are sentiment-bearing or filler.
+1. **The drift simulator (Build It 35.8).** Send the service 30 requests from a completely different domain — slang, emoji, a different topic — and watch the out-of-vocabulary rate climb. The reference numbers: `0.1111` for a familiar review, `0.8667` for `the biryani was absolutely banging fam no cap`, `1.0000` for Latin. **Then the honest hard question: at what OOV rate did the accuracy actually start dropping? Label 20 of the drifted inputs by hand and find out.** Write the guess down first; it depends on whether the words left are sentiment-bearing or filler.
 2. **A fifth, sixth and seventh malformed case they invent themselves.** Three spaces, a list, a `GET` on `/predict`. Each one gets a status code and a justification.
 3. **Make `read_logs.py` refuse gracefully.** Instead of `IndexError: index -1 is out of bounds`, print `no log yet — start the service and send one request`. **Turning somebody else's ugly error into your own helpful one is a real engineering habit and it takes four lines.**
 4. **Two more subgroups of their own choosing, each justified in one sentence.** The good ones for this model: reviews containing a word outside the vocabulary; reviews of exactly one word. **The justification sentence is the marked part, not the number.**
@@ -1274,17 +1274,17 @@ This section is the homework, with the words to say when you set it.
 
 > "About an hour and a quarter — this is the biggest homework of the year and it is four of your seven capstone milestones.
 >
-> **First, page 35.4 — a hundred log lines and the four numbers.** Get your service to 100+ lines, then `read_logs.py`. Write down the count, the mean, the p50, the p95 and the max, **and one sentence saying which one a user would notice and why.**
+> **First, Build It 35.4 — a hundred log lines and the four numbers.** Get your service to 100+ lines, then `read_logs.py`. Write down the count, the mean, the p50, the p95 and the max, **and one sentence saying which one a user would notice and why.**
 >
-> **Second, page 35.5 — the subgroup table, and this is the page I mark hardest.** At least two subgroups, **`n` on every single row**, and any group under ten labelled 'too small to conclude from'. Then one sentence: **what was the overall number hiding?** And if a group is adversarial, say so.
+> **Second, Build It 35.5 — the subgroup table, and this is the section I mark hardest.** At least two subgroups, **`n` on every single row**, and any group under ten labelled 'too small to conclude from'. Then one sentence: **what was the overall number hiding?** And if a group is adversarial, say so.
 >
-> **Third, page 35.6 — the full model card, six headings, plus a seventh paragraph on what you log.** Intended use · training data · metrics · metrics by subgroup · known failure modes · out-of-scope uses. **Three failure modes, each with a real example input and the wrong output it gives.** 'It struggles with negation' is not a failure mode. *'It scores "not fresh and not hot" at p = 0.7992, so it calls it positive, because `fresh` and `hot` are strong positive features and `not` is not in its vocabulary at all'* — **that** is a failure mode.
+> **Third, Build It 35.6 — the full model card, six headings, plus a seventh paragraph on what you log.** Intended use · training data · metrics · metrics by subgroup · known failure modes · out-of-scope uses. **Three failure modes, each with a real example input and the wrong output it gives.** 'It struggles with negation' is not a failure mode. *'It scores "not fresh and not hot" at p = 0.7992, so it calls it positive, because `fresh` and `hot` are strong positive features and `not` is not in its vocabulary at all'* — **that** is a failure mode.
 >
-> **Fourth, page 35.7 — the monitoring plan. One page, no more.** One number. How you measure it **with no labels at all**. Its measured baseline from your own log. The level that sets off the alarm. What you actually do. And one thing you would deliberately **not** do.
+> **Fourth, Build It 35.7 — the monitoring plan. One page, no more.** One number. How you measure it **with no labels at all**. Its measured baseline from your own log. The level that sets off the alarm. What you actually do. And one thing you would deliberately **not** do.
 >
-> Page 35.8 is a stretch: send your service thirty requests from a completely different world and watch the out-of-vocabulary rate climb. **That climb is what drift looks like, and having made one yourself means you will recognise it when it happens for real.**"
+> Build It 35.8 is a stretch: send your service thirty requests from a completely different world and watch the out-of-vocabulary rate climb. **That climb is what drift looks like, and having made one yourself means you will recognise it when it happens for real.**"
 
-**Workbook pages:** 35.1, 35.2, 35.3 in class · **35.4, 35.5, 35.6, 35.7** at home · 35.8 optional.
+**Workbook sections.** In class, as before: **P1** (Predict the Output, page 35.1), **Build It 35.2** (the findings card) and **M1** (Do the Maths by Hand, page 35.3). At home: **Build It 35.4, 35.5, 35.6, 35.7**, the four milestones above. **Build It 35.8** is optional. The workbook has more sections than the old page list named, so here is a suggested split for them (my choice, not something the lesson plan fixes): **Warm-Up** at the start of class; the rest is a bank to assign selectively, not a second homework: **M2, M3, M4** and **Fix the Broken Program** are the most useful (M3 and M4 are the hand version of the 35.5 table, so do them before it if the student is shaky), then **P2, P3, P4**, **Practice Set A** (reading) and **B** (writing), **Puzzle of the Week**, **Think Deeper**, **Draw It**, and **Self-Check** as a last five minutes. The answer key below follows the workbook order, section by section.
 
 **Expected time:** 15 min generating and reading the log · 20 min on the subgroup table · 25 min on the model card · 15 min on the monitoring plan · **about 75 minutes**, plus 30 more for the stretch.
 
@@ -1294,28 +1294,27 @@ This section is the homework, with the words to say when you set it.
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every section and every item of the student workbook, **in the workbook's own order and with the workbook's own labels** (W1, M1, P1, A1, B1 and so on), so you can mark from this page alone. The workbook's opening note tells the student that your mark scheme calls some sections "pages 35.1 to 35.8": **35.1 is P1 (Predict the Output)**, **35.3 is M1 (Do the Maths by Hand)**, and **35.2, 35.4, 35.5, 35.6, 35.7 and 35.8 are the numbered steps of 🛠️ Build It**. Those names are kept below in brackets. Every value in this key agrees with the workbook's own Answers section; the arithmetic was recomputed for this key (percentiles with numpy, the subgroup table with scikit-learn).
 
-### Page 35.1 — Predict the four replies, in pen
+### Warm-Up
 
-| # | what you send | most students predict | what actually comes back |
-|---|---|---|---|
-| 1 | empty body | "an error" / 500 | `400` · `{"error": "empty body; expected {\"text\": \"...\"}"}` |
-| 2 | `{"text": ` | "it crashes" | `400` · `{"error": "invalid JSON: Expecting value: line 1 column 10 (char 9)"}` |
-| 3 | `{"review": "great pizza"}` | 400, or "it ignores it" | `400` · `{"error": "expected a JSON object with a 'text' field", "example": {"text": "the pizza was hot"}}` |
-| 4 | `{"text": 42}` | "it predicts something" | `400` · `{"error": "'text' must be a non-empty string", "got_type": "int"}` |
+*Five questions about last week; five minutes.*
 
-**And the fifth row, which is the actual test:** `GET /health` afterwards → `200`, and the log is **unchanged**, because none of the four produced a prediction.
+| # | answer |
+|---|---|
+| W1 | `12 + 1 = 13` (twelve characters plus one newline). Roll back with `echo "sentiment_v2" > model/artifacts/LATEST`. |
+| W2 | Last line `TypeError: Object of type TextIOWrapper is not JSON serializable`; fix `json.dump(meta, f)`, **data first, file second**. |
+| W3 | It sits `0.0002` above the threshold, so a retrain, a library upgrade or a rounding difference between machines flips it. An alarm that cries wolf is not a test. |
+| W4 | **Never add them, and never report only one of them.** The cold start is paid once; the latency is paid every prediction. |
+| W5 | "That blank line is **evidence**, not **a promise**." |
 
-**Marking notes.** **Present or absent for the predictions.** The marked part is the *message* they wanted, not the code: a student who wrote "tell them the field should be called text and show them an example" has understood the lesson better than one who wrote "400" and nothing else.
+**Marking notes.** Mark W1 and W2 as a pair: a student who writes the sum but not the command has half of W1. W4 is the one that comes back next week in the cross-examination.
 
-### Page 35.2 — The findings card
+### Do the Maths by Hand
 
-*Four rows: what I sent · status code · what came back · did it stay up.*
+*Calculator only, no code. There is no new maths this week; the p95 is the one piece of arithmetic.*
 
-**Marking notes.** **All four rows, and the "did it stay up" column filled in every time** — that column is the objective. A card with four status codes and a blank last column is a card from somebody who forgot the point. **Then check the signature: every finding raised against somebody else's service must be signed off by the finder after the fix.**
-
-### Page 35.3 — A p95 by hand, on five latencies
+### M1 — a p95 by hand, on five latencies (page 35.3)
 
 *The five numbers are given, unsorted: 3.27, 0.38, 0.31, 0.27, 0.27.*
 
@@ -1347,7 +1346,295 @@ Because with five numbers, 95 percent of them is 4.75 numbers — the one slow r
 
 **Marking notes.** The multiplication, the "between two positions" step, and the final addition. **The commonest error is dividing by 5 instead of 4** — the positions run 0 to 4, so the span is 4. Second commonest is sorting descending.
 
-### Page 35.4 — A hundred log lines, and the four numbers
+**M1 (d) and (e).** (d) is the p50 above: `0.50 × 4 = 2.0`, position 2, **0.31**. (e) The mean: `(0.27 + 0.27 + 0.31 + 0.38 + 3.27) ÷ 5 = 4.50 ÷ 5 = 0.90`. **Four of the five requests came in at 0.38 or less, so the mean describes a request that never happened.**
+
+### M2 — the same method on eight latencies
+
+*Given: 0.24, 0.31, 1.88, 0.22, 0.27, 0.26, 0.29, 0.25.*
+
+```text
+(a) sorted      0.22  0.24  0.25  0.26  0.27  0.29  0.31  1.88
+(b) 0.95 × (8 − 1) = 0.95 × 7 = 6.65        between positions 6 and 7
+(c) gap = 1.88 − 0.31 = 1.57
+    p95 = 0.31 + 0.65 × 1.57 = 0.31 + 1.0205 = 1.3305      numpy: 1.3304999999999991
+(d) 0.50 × 7 = 3.5                          between positions 3 and 4
+    p50 = (0.26 + 0.27) ÷ 2 = 0.265
+(e) mean = 3.72 ÷ 8 = 0.465                 max = 1.88
+(f) without the 1.88: seven values, 0.95 × 6 = 5.7, between 0.29 and 0.31
+    p95 = 0.29 + 0.7 × 0.02 = 0.304
+```
+
+**(g)** 95 percent of eight numbers is 7.6 numbers, so the one slow request is an eighth of the data and the p95 reaches most of the way up to it. Removing it took the p95 from 1.3305 to 0.304, a factor of more than four. **A percentile is a claim about a proportion, so what it means depends on how many numbers you have; print the count beside the p95, always.**
+
+**Marking notes.** Same two errors as M1 (dividing by 8 instead of 7, sorting downwards). For (g) the mark is the word *proportion* or "one in eight"; "because it is an outlier" alone is half.
+
+### M3 — precision, recall and accuracy for three subgroups by hand
+
+*Given the 28-row truth / model / negation strip. Rows 1–16 are the test reviews, 17–28 the traps; row 12 is the one non-trap row with a negation word.*
+
+```text
+(a) the 16 test reviews (model differs from truth at rows 2, 10, 15: all truth 1, all called 0)
+    TP = 5   FP = 0   FN = 3   TN = 8          check: 5 + 0 + 3 + 8 = 16
+    accuracy  = (5 + 8) ÷ 16 = 13 ÷ 16 = 0.8125 → 0.812
+    precision = 5 ÷ (5 + 0) = 1.000
+    recall    = 5 ÷ (5 + 3) = 5 ÷ 8 = 0.625
+
+(b) the 12 traps (row 18 is the one false positive; rows 23-28 are six missed positives)
+    TP = 0   FP = 1   FN = 6   TN = 5
+    accuracy  = 5 ÷ 12 = 0.4167 → 0.417
+    precision = 0 ÷ (0 + 1) = 0.000
+    recall    = 0 ÷ (0 + 6) = 0.000
+
+(c) the 13 negation rows = the 12 traps + row 12 (truth 0, called 0)
+    accuracy = 6 ÷ 13 = 0.4615 → 0.462          recall = 0 ÷ 6 = 0.000
+
+(d) the 15 rows with no negation word = the 16 test rows minus row 12
+    accuracy  = 12 ÷ 15 = 0.800
+    precision = 5 ÷ 5 = 1.000
+    recall    = 5 ÷ 8 = 0.625
+```
+
+**Marking notes.** The commonest slip is putting row 12 in both negation and non-negation, which makes the group sizes add to 29 (M4a catches it). Full marks for (a) need the check line `5 + 0 + 3 + 8 = 16`. In (b) a student who writes precision as `0 ÷ 0` has miscounted FP: row 18 is a false positive.
+
+### M4 — the two checks that stop a subgroup table lying
+
+| part | answer |
+|---|---|
+| (a) | `13 + 15 = 28` and `6 + 12 = 18` correct out of 28. |
+| (b) | `18 ÷ 28 = 0.6429 → 0.643`, **which equals the ALL row.** Yes. If it did not, a group has a row twice or not at all. |
+| (c) | From `6 ÷ 13 = 0.462` to `7 ÷ 13 = 0.5385 → 0.538`. |
+| (d) | *"Both the 13-row and the 15-row groups are only just above the ten-row line, and one row flipping moves the negation group from 0.462 to 0.538, so these numbers show that the mechanism exists; they do not estimate how often it bites."* |
+
+**Marking notes.** For (d) look for the words *one row* and *mechanism exists* (or equivalent) and a number. "The sample is small" with no number is half.
+
+### Predict the Output
+
+*In pen, before anything runs.*
+
+### P1 — predict the four replies (page 35.1)
+
+| # | what you send | most students predict | what actually comes back |
+|---|---|---|---|
+| 1 | empty body | "an error" / 500 | `400` · `{"error": "empty body; expected {\"text\": \"...\"}"}` |
+| 2 | `{"text": ` | "it crashes" | `400` · `{"error": "invalid JSON: Expecting value: line 1 column 10 (char 9)"}` |
+| 3 | `{"review": "great pizza"}` | 400, or "it ignores it" | `400` · `{"error": "expected a JSON object with a 'text' field", "example": {"text": "the pizza was hot"}}` |
+| 4 | `{"text": 42}` | "it predicts something" | `400` · `{"error": "'text' must be a non-empty string", "got_type": "int"}` |
+
+**And the fifth row, which is the actual test:** `GET /health` afterwards → `200`, and the log is **unchanged**, because none of the four produced a prediction.
+
+**The real `/health` reply, and three more real replies the workbook shows:**
+
+```text
+$ curl -s http://127.0.0.1:8017/health
+{"status": "ok", "model_version": "tiny_v1", "threshold": 0.55, "classes": ["negative", "positive"]}
+
+$ curl -s -X POST http://127.0.0.1:8017/predict -d '{"text": "   "}'
+{"error": "'text' must be a non-empty string", "got_type": "str"}
+
+$ curl -s -X POST http://127.0.0.1:8017/predict -d '["text"]'
+{"error": "expected a JSON object with a 'text' field", "example": {"text": "the pizza was hot"}}
+
+$ curl -s http://127.0.0.1:8017/predikt
+{"error": "not found", "routes": ["GET /health", "POST /predict"]}
+```
+
+**The blanks at the bottom of P1:** the health prediction is `200`; `wc -l` is the same before and after; **crashes: zero; log lines produced by the four: zero**, because nothing was *predicted*. **The log counts predictions, not requests.** The thing to notice about reply 2 is that the service forwarded the JSON parser's own words (`line 1 column 10 (char 9)`): the student wrote `%s` and let the exception describe itself.
+
+**Marking notes.** **Present or absent for the predictions.** The marked part is the *message* they wanted, not the code: a student who wrote "tell them the field should be called text and show them an example" has understood the lesson better than one who wrote "400" and nothing else.
+
+### P2 — three percentiles and one typo
+
+```text
+sorted        : [0.2, 0.3, 0.4, 2.0]
+p95 position  : 2.8499999999999996
+np p95        : 1.7599999999999993
+np p50        : 0.35
+np p75        : 0.8
+np 0.95 (!)   : 0.20285
+np p100       : 2.0  max: 2.0
+```
+
+By hand: position `0.95 × 3 = 2.85`, between `0.4` and `2.0`, so `0.4 + 0.85 × 1.6 = 1.76`. **The `(!)` line:** `np.percentile` takes the percentile out of 100, so `0.95` asks for the *0.95th* percentile, position `0.0095 × 3 = 0.0285`, a whisker above the smallest value. It looks like a plausible fast latency, so nothing raises and nothing looks wrong. **The tell: a p95 must sit between the p50 and the max.**
+
+**Marking notes.** The answers to the "my ..." boxes are compared to the truth boxes; the marked part is the one-sentence explanation of the `(!)` line (the argument is out of 100, not out of 1).
+
+### P3 — the log that silently is not there
+
+```text
+(a) lines in the file: 0
+(b) lines in the file: 1
+    {"label": "positive", "probability": 0.6857}
+(c) the line as written: INFO:root:{"label": "positive"}
+    JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+```
+
+**(a)** The word is **`level=logging.INFO`**. The default level is `WARNING`, `INFO` is below it, so the call is discarded with no error; that is what a level is for, which is exactly why it is dangerous. The defence: predict a number you can check (one request sent, so one line expected, so `wc -l` first). **(c)** `char 0` means it failed on the very first character, so the line does not start with `{`; the default prefix `INFO:root:` is still on it.
+
+### P4 — one digit arrives as 64 numbers in a JSON body
+
+```text
+1. from JSON      : list of 64
+2. as an 8x8 grid : (8, 8) float64
+3. as a tensor    : (8, 8) torch.float32
+4. batch of one   : (1, 1, 8, 8)
+5. logits         : (1, 10)
+6. the answer     : 9
+7. one unsqueeze short -> RuntimeError
+   mat1 and mat2 shapes cannot be multiplied (16x4 and 64x10)
+```
+
+**Line 6 is the one line allowed to differ:** it is a prediction on a ramp, so it depends on the student's own Week 26 weights. Lines 1-5 and 7 are shapes, dtypes and an error message and are the same everywhere. **(a)** The final **`Linear`** layer raises it; every earlier layer was happy. **(b)** A `(1, 8, 8)` input is one unbatched image, flowing to `(16, 2, 2)` after the second pool; `Flatten` keeps dimension 0 as the batch and gives `(16, 4)`, sixteen "rows" of four, while `Linear(64, 10)` wants rows of 64. So `16` and `4` come from the channels being mistaken for the batch. **Dropping `.float()`:** `Conv2d`, the first layer, complains: `RuntimeError: Input type (double) and bias type (float) should be the same` (`from_numpy` keeps `float64`).
+
+**Marking notes.** A student whose line 6 differs from 9 and whose other lines match is right; do not mark it down. The best answer to (b) says the batch dimension went missing.
+
+### Practice Set A — Read It
+
+*Everything uses the 12-line `logs/demo.jsonl` (toy models `tiny_v1` / `tiny_v2`, threshold `0.55`).*
+
+**A1.** endpoint **(iii)** · request / response **(v)** · prediction log **(vi)** · p95 latency **(ii)** · subgroup metrics **(iv)** · drift **(i)**.
+
+**A2.** (a) `tiny_v1`. (b) The threshold, `0.55`. (c) `0.6331 − 0.55 = 0.0831`. (d) **No, the label is wrong:** `the pizza was not delicious` is negative and the model said positive. What it tells you that no accuracy number would: accuracy is an average over rows you chose, and this row is evidence about a *mechanism*; the model has no word order and `not` is not in its vocabulary, so what reached the classifier was effectively `pizza delicious`. One log line with its input in it is a post-mortem; a number without inputs is not. (e) They differ **when the input was longer than the logging limit (300 characters) and was truncated**; both are logged so a truncated input is never pretended to be short, and `input_chars` is the number that would show somebody sending 100-kilobyte bodies.
+
+**A3.**
+
+| item | what happens | fix |
+|---|---|---|
+| (1) | **The traceback:** `split("\n")` on a file ending in a newline leaves a final empty string; last line `json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)` | `.splitlines()`, or skip lines where `line.strip() == ""` |
+| (2) | Silent, and a lie: the divisor is hard-coded `115` (requests) but `rows` holds predictions. Honest `16 ÷ 111 = 14.4%`; it prints `16 ÷ 115 = 13.9%` | divide by `len(rows)` |
+| (3) | Silent, prints `n = 0`: `"Not"` with a capital never matches the lowercase log. A subgroup of zero is a filter bug, not a finding | `r["input"].lower().split()` |
+
+**A4.** (a) `the 16 test reviews`, measured on **16** rows. (b) `contains a negation word`; recall `0.000`, found **0** of the **6** positive ones. (c) `13 + 15 = 28`, and `0.643 × 28 = 18.0`; yes, both agree. (d) FP must be **at least 1** (it is 1); with TP = 0 and FP = 0 precision is `0 ÷ 0`, and `zero_division=0` tells scikit-learn to **report 0 instead of raising**, a presentation choice and not a calculation. `0.000` could mean "every positive call was wrong" or "it never predicted positive", very different models, so print the counts beside the metric. (e) *"Twelve of those twelve trap rows were written by me on purpose to be hard, so 0.417 shows the mechanism exists; it does not estimate how often this happens on real traffic."*
+
+**A5.**
+
+| code | what it means | whose fault | a request that gets it |
+|---:|---|---|---|
+| `200` | here is your answer | nobody | `{"text": "hot pizza"}` |
+| `400` | you sent it wrong, and here is what to send instead | the sender's | any of the four malformed bodies |
+| `404` | that door does not exist; here are the ones that do | the sender's | `GET /predikt` |
+| `500` | **I broke** | **mine** | an unhandled exception in my own code |
+
+Today's goal is never to send a **`500`**. A 150,000-byte body gets **`413`** (limit 100,000, caught by check 1 before anything is read).
+
+**A6.** Check 1 *is there a body at all, and is it a sane size* (`400`, or `413` if too big) · check 2 *is it actually JSON* · check 3 *has it the field the contract promised* · check 4 *is that field a non-empty string*. The bodies map: empty body to check 1, unfinished object to check 2, `{"review": ...}` to check 3, `{"text": 42}` to check 4. **(a)** You cannot look for a field inside something that is not an object yet; at that point it is raw bytes. **(b)** You cannot ask a field's type before knowing it exists; `payload["text"]` would raise `KeyError: 'text'`.
+
+**Marking notes.** A1 is all-or-nothing per row. In A3 the mark is for saying *which two are silent* (2 and 3); a student who "fixes" (2) by changing 115 to 111 has swapped one hard-coded number for another and should be sent back. In A5 the common slip is saying `404` is the server's fault.
+
+### Practice Set B — Write It
+
+*Reference programs are in the workbook's own Answers section; the expected outputs and what to check are here.*
+
+**B1.** `print("%.4f" % np.percentile([json.loads(l)["latency_ms"] for l in open("logs/demo.jsonl")], 95))` prints `1.6970`.
+
+**B2 — `my_p95`.** Sort, position `(q/100) × (n − 1)`, take the whole part and the fraction, interpolate; guard the last index. Expected:
+
+```text
+twelve  mine p95 1.697000   numpy 1.697000   mine p50 0.265000   numpy 0.265000
+five    mine p95 2.692000   numpy 2.692000   mine p50 0.310000   numpy 0.310000
+```
+
+They are not identical strings because raw `np.percentile(five, 95)` prints `2.6919999999999993` against `2.692`: the two programs multiply in a different order and differ in the sixteenth decimal place. "Same" means `np.allclose`, not `==` (Week 17). If the p50 disagrees but the p95 agrees, the "fraction of the gap" step is wrong, not the sorting.
+
+**B3 — `check(raw)`.** Four checks in order: empty, JSON, dict with `text`, non-empty string using `.strip()`. Expected: six `400`s and one `200`.
+
+```text
+''                             -> 400  empty body
+'{"text": '                    -> 400  invalid JSON: Expecting value: line 1 column 10 (char 9)
+'{"review": "great pizza"}'    -> 400  expected a JSON object with a 'text' field
+'{"text": 42}'                 -> 400  'text' must be a non-empty string, got_type=int
+'{"text": "   "}'              -> 400  'text' must be a non-empty string, got_type=str
+'["text"]'                     -> 400  expected a JSON object with a 'text' field
+'{"text": "hot delicious pizza"}' -> 200  predicted on 19 characters
+```
+
+`'["text"]'` is valid JSON, so check 2 lets it through and check 3 must catch it with `isinstance(payload, dict)`. Without that, `"text" not in payload` is `False` for a list containing the string `"text"`, and `payload["text"]` raises `TypeError`: a `500` for a mistake that should be a `400`. The sneaky body is `'{"text": "   "}'`; only `.strip()` catches it.
+
+**B4 — the subgroup report.** Expected (five rows, `n` on every row, three decimals):
+
+```text
+subgroup                     n   accuracy  precision  recall
+ALL 28 labelled rows        28    0.643      0.833     0.357
+the 16 test reviews         16    0.812      1.000     0.625
+the 12 negation traps       12    0.417      0.000     0.000
+contains a negation word    13    0.462      0.000     0.000
+no negation word            15    0.800      1.000     0.625
+```
+
+Everything matches M3 and M4. The caveat is printed by the `if len(yt) == 0: return` guard, the `note = ...` line and the `%s` at the end of the format string; with `n = 4` and accuracy `1.000` it would otherwise look like the best result in the table.
+
+**B5 — `monitor.py`.** Band rate `k of n = xx.x%`, mean OOV, two drifted inputs, and whether `not` is in the vocabulary. Against the 29-word vocabulary of the toy model that produced the demo log, the real output is:
+
+```text
+vocabulary size  : 29
+band rate        : 4 of 12 = 33.3%
+mean OOV over the 12 logged requests: 0.1278
+the biryani was absolutely banging fam no cap   8 of  8  OOV=1.0000
+lorem ipsum dolor sit amet                      5 of  5  OOV=1.0000
+'not' in vocabulary: False
+```
+
+(The full program prints one OOV line per logged input first; `the pizza was not delicious` is `3 of 5`, OOV `0.6000`, unknown `the`, `was`, `not`.) **`'not' in vocabulary: False` because not one training review contained the word**, so three of five tokens are silently dropped and the classifier sees `pizza delicious`. `crisp` is unknown because its review landed in the test half. Students' numbers differ because their vocabulary is theirs; **the shape does not: near zero for their own traffic, near one for language they never typed.** Note these are toy-model numbers (29 words, mean `0.1278`); the reference project's numbers in 35.7 and 35.8 come from a 287-item vocabulary, so do not mix the two sets.
+
+**Marking notes.** B1 to B3: run them. B4: `n` on every row or it does not pass. B5: two numbers, no labels anywhere in the program; a program that reads a truth column has missed the point.
+
+### Fix the Broken Program
+
+*`broken35.py`, three bugs.*
+
+| bug | what it is | fix |
+|---|---|---|
+| **1 (stops dead)** | `read_text().split("\n")` on a file ending in a newline leaves a final empty string; `json.loads("")` fails with `char 0` (the line does not start with `{`, the emptiest way being to be empty) | `.splitlines()`; belt and braces, skip lines where `line.strip() == ""` |
+| **2 (shape)** | `lat` is **`(12,)`** and `band` is **`(12, 1)`** (from `.reshape(-1, 1)`); a boolean mask must match the shape of what it selects from. `IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed` | delete the 15 characters **`.reshape(-1, 1)`** |
+| **3 (silent)** | `np.percentile(lat, 0.95)` prints a p95 of `0.2210` below the p50 of `0.2650` | `np.percentile(lat, 95)` |
+
+**Bug 2 extra.** `band.sum()` printed `4 of 12`, the right answer, because summing a `(12, 1)` boolean array gives the same total; the error surfaced one line later when the mask was used. The wrong shape gave a right-looking number first.
+
+**Bug 3 (a)** `0.2210 < 0.2650`, and **a p95 can never be smaller than a p50**; it is arithmetically impossible. **(b)** It asked for the 0.95th percentile: position `0.0095 × 11 = 0.1045`, essentially the fastest request. **(d)** With twelve requests `0.95 × 11 = 10.45` lands between the 11th value (`0.41`) and the 12th (`3.27`), 45 percent of the way up to the outlier, so the p95 is `1.6970`, a time no request took. Report the count, report the max beside it, and do not present a p95 of twelve requests as describing the service.
+
+```text
+requests            : 12
+latency mean        : 0.5225 ms
+latency p50         : 0.2650 ms
+latency p95         : 1.6970 ms
+latency max         : 3.2700 ms
+in the 0.45-0.65 band: 4 of 12
+their latencies      : [0.24 0.25 0.26 0.24]
+```
+
+**Marking notes.** Bug 3 is the one that matters; a student who fixes 1 and 2 and does not notice the p95 is below the p50 has missed it, and it is the error most likely to ship.
+
+### Puzzle of the Week — The Check That Can Never Fire
+
+| shuffle | what happens | the real error |
+|---|---|---|
+| **(a) 1, 3, 2, 4** | Check 3 runs on raw **bytes**; it crashes on good requests as well as rubbish, which is how a `500` gets sent | `TypeError: a bytes-like object is required, not 'str'` (or `TypeError: byte indices must be integers or slices, not str` with `raw["text"]`) |
+| **(b) 1, 2, 4, 3** | `payload["text"]` runs before anyone checked it exists, so `{"review": "great pizza"}` crashes instead of getting its helpful `400`. Check 3 is not unreachable; it is *too late* | `KeyError: 'text'` |
+| **(c) 2, 1, 3, 4** | Empty body fails `json.loads("")`, so the reply is **still a `400`** but **not a useful one**: `invalid JSON: Expecting value: line 1 column 1 (char 0)` instead of `empty body; expected {"text": "..."}`. The order of the checks is the quality of the messages | none raised |
+| **(d) `text == ""` instead of `.strip()`** | `{"text": "   "}` gets through; the model scores it confidently and no error ever appears | none raised |
+
+**Part 2.** *"Each check is only safe because **the one above it already passed**, which is why the order is **cheapest and most structural first: does it exist, is it parseable, has it the field, is the field usable**, and not **whichever order you thought of them in**."*
+
+**Marking notes.** For (c) the two words to look for are "still 400" and "not useful"; a student who writes "it crashes" has not run it.
+
+### Think Deeper
+
+**T1.** Full marks: logging the refusals would not make 115 match 111, it would make the numbers *mean something different*. A refusal has no probability, threshold, label or meaningful latency, so a merged file blends two populations, and the first casualty is the p95 (empty latencies counted as zero flatter it; skipped ones mean the line count is no longer the divisor). If recording refusals, add a **`kind`** field (`prediction` or `refusal`) and a **`status`** field, and then compute every number twice, **115 for traffic and 111 for predictions**, saying which each time. Do not quietly merge them.
+
+**T2.** The question that ends it: **who tells you the right answer in production?** Nobody; no truth arrives, so accuracy cannot be computed on live traffic. Labelling 100 lines a week is **building a test set from production traffic**, a good idea that real teams do, costing about an hour a week forever (and it stops in week three). The thing that goes wrong that is not effort: **they would be labelling the model's own outputs in the order it chose to show them**, so the sample is biased toward the cases it flags; the fix is a *random* sample including confident and ignored rows, and at 1 percent positives a hundred rows a week takes months to say anything. The monitoring number comes from inputs and outputs; hand-labelling is a separate, slower project.
+
+**Marking notes.** T1: the two marks are the `kind` field and the "two counts" sentence. T2: the mark is for the *sampling bias* point; "it is boring" or "it takes time" is the effort answer the question explicitly rules out.
+
+### Build It — the service, the log, the card and the plan
+
+*The workbook’s step checklist names these 35.2, 35.4, 35.5, 35.6, 35.7 and the stretch 35.8.*
+
+### 35.2 — The findings card
+
+*Four rows: what I sent · status code · what came back · did it stay up.*
+
+**Marking notes.** **All four rows, and the "did it stay up" column filled in every time** — that column is the objective. A card with four status codes and a blank last column is a card from somebody who forgot the point. **The banned word on this card is "failure"; they are *findings*.** **Then check the signature: every finding raised against somebody else's service must be signed off by the finder after the fix.**
+
+### 35.4 — A hundred log lines, and the four numbers
 
 ```text
 $ wc -l logs/predictions.jsonl
@@ -1367,11 +1654,13 @@ in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 
 **The sentence:** *"A user would notice the 3.27 ms — it was request number one, before anything was warm, and it is twelve times the p95. I would report the p95 of 0.27 ms as the headline, with the max beside it, because with only 111 requests a single slow one sits above the 95th percentile and the p95 cannot see it."*
 
+**"Lines" against "requests I actually sent":** 111 lines against 115 sent. The difference is the four malformed requests, which produced no prediction and so no line. A student whose two numbers differ with no explanation has not met the first idea of the week. **The max request to quote:** the first one, latency `3.27`, logged before anything was warm.
+
 **And the check that the counts are honest:** `76 + 35 = 111` ✅.
 
 **Marking notes.** **Their numbers will not match these and must not be expected to** — latency is the one measurement in this course that does not reproduce. What must be there: four numbers, the count, and a sentence that names which one a user feels. **A student who reports only a mean has not met objective 3.**
 
-### Page 35.5 — The subgroup metrics table
+### 35.5 — The subgroup metrics table
 
 ```text
 subgroup                     n   accuracy  precision  recall
@@ -1495,7 +1784,7 @@ report("longer (6 words or more)", longer)
 
 **Marking notes.** **`n` on every row, or the page does not pass.** Then the sentence, then the caveat. **Praise loudly anybody who volunteers that the traps are adversarial** — it is the single most grown-up thing in the homework.
 
-### Page 35.6 — The full model card, six headings (plus the privacy paragraph)
+### 35.6 — The model card: six headings plus a seventh paragraph on what you log
 
 Model answer for the reference project. **Mark for specificity, not for matching this wording.**
 
@@ -1518,7 +1807,7 @@ Model answer for the reference project. **Mark for specificity, not for matching
 
 **Marking notes.** **Section 5 is the whole card.** Three failure modes, each with a real input, the real output, and a *why*. A card whose section 5 says "struggles with negation and sarcasm" scores nothing on section 5. **Section 6's "tempting" use is the second-hardest mark** and the one that distinguishes somebody who has thought about their model being used.
 
-### Page 35.7 — The one-page monitoring plan
+### 35.7 — The one-page monitoring plan
 
 > **The number: the uncertainty-band rate.** The share of predictions whose probability falls between 0.45 and 0.65.
 >
@@ -1530,7 +1819,7 @@ Model answer for the reference project. **Mark for specificity, not for matching
 >
 > **Why this number degrades for *this* model:** it is TF-IDF. A word the vectorizer has never seen contributes exactly nothing — it is silently dropped. So an input made only of unfamiliar language becomes a vector of all zeros and gets the same answer every time, `0.4887`, which falls inside the band. (An input that is only *partly* unfamiliar is not pulled to the middle: the unknown words are ignored and the known ones decide alone.) A rising band rate can therefore mean a rising share of inputs that my model cannot see at all, and my accuracy is falling in a way that no number computed on my training data would ever show me.
 >
-> **Action if it trips:** (1) pull the 30 requests whose probability is closest to the 0.65 fence out of the log; (2) read them — fifteen minutes, and it usually explains everything; (3) if they are a genuine new subject, hand-label 40 of them and train a `v3`, keeping `v1` live until the new model beats it **on the same test set**; (4) if they are rubbish or an attack, add input validation instead of retraining.
+> **Action if it trips:** (1) pull the requests that fell inside the band (16 of them in the reference log) out of the log; (2) read them — fifteen minutes, and it usually explains everything; (3) if they are a genuine new subject, hand-label 40 of them and train a `v3`, keeping `v1` live until the new model beats it **on the same test set**; (4) if they are rubbish or an attack, add input validation instead of retraining.
 >
 > **What I would deliberately NOT do:** retrain on my own predictions. Those 111 log lines are not labelled data, they are the model's own opinions — and a model trained on its own opinions learns its own mistakes and gets *more* confident about them, which looks exactly like improvement.
 >
@@ -1542,7 +1831,7 @@ Model answer for the reference project. **Mark for specificity, not for matching
 
 **Marking notes.** **Three things, and the first is a pass/fail.** **One — can the number be computed without labels?** If not, hand it back. **Two — is the baseline measured, or guessed?** A plan with an alarm level but no baseline is a plan nobody can run. **Three — is there something they say they would not do?** Almost nobody writes this unprompted, and it is the clearest signal in the whole homework that somebody has thought about it rather than read about it.
 
-### Page 35.8 — Stretch: watch the drift
+### 35.8 — Stretch: watch the drift
 
 Send 30 requests from a different world and watch the OOV rate climb. Real measured numbers from the reference model, whose vocabulary is 287 items (single words and adjacent pairs together):
 
@@ -1555,7 +1844,21 @@ Send 30 requests from a different world and watch the OOV rate climb. Real measu
 
 **The honest hard question, and the answer most people get wrong:** *at what OOV rate does accuracy actually start dropping?* You cannot know without labels, so **label 20 of the drifted inputs by hand and find out.** It depends on what is left: if the few words it *can* see are sentiment-bearing (`delicious`) it may do fine at a high OOV rate; if they are filler (`the` and `was` are all that remains of the biryani sentence, which scores `0.6058`) it is guessing. Note that the OOV rate here counts word pairs as well as words, so it runs higher than the share of words missing. **Guessing first and then being surprised, one way or the other, is the whole value of the page.**
 
-**Marking notes.** The four OOV numbers, and the hand-labelled experiment. **Full marks needs the sentence "I guessed X and it was actually Y".**
+**Workbook table:** one row for a normal request from the student’s own log, two drifted inputs, and the mean over the whole log. **Marking notes.** The four OOV numbers, and the hand-labelled experiment. **Full marks needs the sentence "I guessed X and it was actually Y".**
+
+### Draw It
+
+*Sketch the figure from memory: the tail, and what one number hid.* A full-mark drawing has three things.
+
+1. **The twelve latencies as dots on one axis, to scale**: eleven huddled between 0.22 and 0.41, one at 3.27. Four named positions: the mean `0.5225` (which lands in the empty space **where no request was**), the p50 `0.2650`, the p95 `1.6970` and the max `3.2700`. The answer to "which of the four lands where no real request was" is the **mean** (the p95 also lands in empty space, which is worth praising if volunteered).
+2. **Two bars with `n` written inside each**: `0.800` tall on `n = 15` and `0.462` short on `n = 13`, and **`recall 0 of 6`** in large figures under the short bar.
+3. **One handwritten sentence** containing both numbers and saying what the overall figure was hiding.
+
+**The commonest mistake** is spacing the twelve dots evenly. That is a drawing of a different log, and it makes the p95 look sensible, which is the misunderstanding the figure exists to prevent. A mean drawn inside the huddle is a drawing of the wrong data.
+
+### Self-Check
+
+There are no right answers; it is a confidence grid. Three rows are worth checking honestly. **"Say why a p95 on twelve requests is nearly meaningless"**: if the student cannot say *95% of twelve is 11.4 numbers*, that is a 😕. **"Name a monitoring number that needs no labels"**: if the answer is accuracy, send them back to 35.7. **"Say one thing I would deliberately not do"**: almost nobody writes this unprompted, and it is the clearest sign someone has thought rather than read. A student who ticks 😀 on the p95 row but could not do M2 has not earned the tick.
 
 ### Answers to every question posed in the lesson
 
@@ -1591,4 +1894,4 @@ Send 30 requests from a different world and watch the OOV rate climb. Real measu
 
 Next week is the last one, and there is nothing new to learn — which is exactly what makes it hard. It is **Showcase Day**. Every student gives a **ten-minute live demo starting from a cold terminal**, in this order: the contract in sixty seconds, a cold start in a brand-new window, the service with its two separate timing numbers, four malformed requests sent live, the log with its p95 and its max, the subgroup row where the model finds nothing, and the monitoring number. Then the **cross-examination**: eight questions, the same eight for everybody, with the **banned-words list on display** — `production-ready`, `scalable`, `it just works`, `robust`, `real-time`, `seamless`, `99% accurate` — and every answer has to contain a number. Then, after a break, the **75-minute written paper**: twenty multiple choice, eight short answers and four debug problems, no computer, no notes, covering the whole year from Week 1's unit of prediction to last week's p95.
 
-**To prep early:** five things. **One — mark pages 35.5 and 35.6 this week, not next.** A student with no subgroup table cannot answer three of the eight questions, and you want to know that on Monday. **Two — print the eight questions and the banned-words list, big, and put them on the wall now**, so everybody rehearses against them all week. **Three — print the paper, and print it double-sided with the four debug problems on their own sheet**, because students will want to spread those out. **Four — book the room for the full session and work out the running order**, allowing ten minutes of demo plus five of cross-examination per student; if you have more than six students you need two sessions and you should say so this week, not next. **Five — and this is the one that matters most: tell them tonight that the demo must start from a terminal they open in front of the room.** Not a terminal that is already warm, not a notebook, not a screenshot. **Every year somebody rehearses in a warm terminal and discovers on the day that their artifact only loads from one folder.** Ten seconds of warning this week prevents it.
+**To prep early:** five things. **One — mark Build It 35.5 (the subgroup table) and 35.6 (the model card) this week, not next.** A student with no subgroup table cannot answer three of the eight questions, and you want to know that on Monday. **Two — print the eight questions and the banned-words list, big, and put them on the wall now**, so everybody rehearses against them all week. **Three — print the paper, and print it double-sided with the four debug problems on their own sheet**, because students will want to spread those out. **Four — book the room for the full session and work out the running order**, allowing ten minutes of demo plus five of cross-examination per student; if you have more than six students you need two sessions and you should say so this week, not next. **Five — and this is the one that matters most: tell them tonight that the demo must start from a terminal they open in front of the room.** Not a terminal that is already warm, not a notebook, not a screenshot. **Every year somebody rehearses in a warm terminal and discovers on the day that their artifact only loads from one folder.** Ten seconds of warning this week prevents it.

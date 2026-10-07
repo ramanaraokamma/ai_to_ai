@@ -924,40 +924,75 @@ the week.
 
 ## 📤 Homework to Assign
 
-**Workbook:** Week 20, pages 1–3. **Time: about 50 minutes.**
+**Workbook:** Week 20 — the whole workbook, in its printed order: ✅ Warm-Up (W1–W5) · ✍️ Practice Set A
+(A1–A6) · ✍️ Practice Set B (B1–B5) · 🧩 Puzzle of the Week · 🤔 Think Deeper (T1–T2) · 🛠️ Build It
+(Page 20.1, Page 20.2, Page 20.3) · 🎨 Draw It · 📊 Self-Check. **Time: about 50 minutes for the three
+Build It pages, which are the core; about 90 minutes for everything.** Spread it over the week. If time is
+short, Build It comes first and Draw It and the Puzzle come next.
 
 **Say this, word for word:**
 
-> "Three pages, and there's one rule that covers all of them: **if a number appears with no division
+> "There's one rule that covers the whole workbook: **if a number appears with no division
 > written above it, it doesn't count.** I'd rather see messy working and a wrong answer than a right
 > answer that arrived by magic."
 >
-> "Page one: five accuracy problems. Each one three ways — fraction, decimal to four places,
-> percentage to one place — with the division shown. Then, for each, how many percentage points it
-> beats a 33.3% baseline by. Say 'points'. Write 'points'."
+> "Start with the Warm-Up: five quick questions about last week. Then Practice Sets A and B — fill in the
+> blanks, match the pairs, label the bars, and a few situations where you say what would go wrong."
 >
-> "Page two is the interesting one: **the number that lies.** You get one overall score and three
+> "The Build It section has three pages. Page 20.1: five accuracy problems. Each one three ways —
+> fraction, decimal to four places, percentage to one place — with the division shown. Then, for each,
+> how many percentage points it beats a 33.3% baseline by. Say 'points'. Write 'points'."
+>
+> "Page 20.2 is the interesting one: **the number that lies.** You get one overall score and three
 > per-class scores for a bike / scooter / skateboard model. Find the class the average was hiding, say
 > how it compares to blind guessing, and write one sentence on what you'd go and look at first. Not
 > 'more photos' — what exactly."
 >
-> "Page three: the drill. Five subtractions, each written out with the unit. And two sentences: one
+> "Page 20.3: the drill. Five subtractions, each written out with the unit. And two sentences: one
 > defining a percentage point, one saying why we write the fraction first."
+>
+> "Then the Puzzle of the Week with the three adverts, Think Deeper, and Draw It: one overall bar with
+> three per-class bars underneath, and the baseline line through all of them. Tick the Self-Check last."
 >
 > "Also — the envelope stays shut. Two more weeks."
 
-**Check before they leave:** ask them to do 6 ÷ 10 out loud. If that comes instantly, page 1 will be
+**Check before they leave:** ask them to do 6 ÷ 10 out loud. If that comes instantly, Page 20.1 will be
 fine.
 
-| Page | Task | Approx. time |
+| Workbook section | Task | Approx. time |
 |---|---|---|
-| 1 | Five accuracy problems, three ways each, division shown, points against baseline | 25 min |
-| 2 | The number that lies: per-class hunt, the hidden class, what to investigate first | 15 min |
-| 3 | The percentage-point drill written up, plus two definition sentences | 10 min |
+| ✅ Warm-Up | W1–W5: five questions on last week's test set, 80/20 split, the signature, a fair test, cheating | 5 min |
+| ✍️ Practice Set A | A1–A6: blanks, multiple choice, true/false, matching, label the bars, 27/36 by hand | 15 min |
+| ✍️ Practice Set B | B1–B5: 21/30 with baseline, the maths-help model, Ali vs Bea, percentage-point sentences, a lopsided test set | 20 min |
+| 🧩 Puzzle of the Week | Three bird-app adverts: rank them, work out the baselines | 8 min |
+| 🤔 Think Deeper | T1 advert versus notebook entry; T2 70% versus 99.9% | 10 min |
+| 🛠️ Build It, Page 20.1 | Five accuracy problems, three ways each, division shown, points against baseline | 25 min |
+| 🛠️ Build It, Page 20.2 | The number that lies: per-class hunt, the hidden class, what to investigate first | 15 min |
+| 🛠️ Build It, Page 20.3 | The percentage-point drill written up, plus two definition sentences | 10 min |
+| 🎨 Draw It | Overall bar, three per-class bars, baseline line | 7 min |
+| 📊 Self-Check | Six "I can..." ticks | 2 min |
 
 ---
 
 ## 🔑 Answer Key
+
+Every section of the workbook has an answer below. The values come from the workbook's own Answers
+section. Mark in the workbook's printed order:
+
+| Workbook section | Items | Answer Key |
+|---|---|---|
+| ✅ Warm-Up | W1–W5 | K7 |
+| ✍️ Practice Set A | A1–A6 | K8 |
+| ✍️ Practice Set B | B1–B5 | K9 |
+| 🧩 Puzzle of the Week | ranking table, baselines, buy/ask | K10 |
+| 🤔 Think Deeper | T1, T2 | K11 |
+| 🛠️ Build It, Page 20.1 | (a)–(e) and the side-by-side note | K2 |
+| 🛠️ Build It, Page 20.2 | (a)–(e) | K4 |
+| 🛠️ Build It, Page 20.3 | drill 1–5 and two sentences | K3 |
+| 🎨 Draw It | five things a good drawing has | K12 |
+| 📊 Self-Check | six self-ratings | K12 |
+
+K1, K5 and K6 are for the lesson itself (the handout, the questions asked in class, the easier sheet).
 
 ### K1 — Handout 20A: the completed scoring sheet (the data to print)
 
@@ -1011,7 +1046,7 @@ Checks: 5 + 4 + 2 = 11 ✓ · 5 + 5 + 5 = 15 ✓
 > *"On 15 held-out photos this model scored 11/15 = 73.3% against a 33.3% baseline; it was worst at
 > comb, at 2/5 = 40%."*
 
-### K2 — Workbook page 1: five accuracy problems
+### K2 — Workbook Build It, Page 20.1: five accuracy problems
 
 **(a) 9 out of 12**
 ```
@@ -1061,14 +1096,14 @@ different evidence — 12 photos versus 60. On 12 photos one photo is worth 8.3 
 1.7. Same number, one of them far more trustworthy. **That is why you write the fraction.** If the
 student spots this without being asked, it is the best answer on the page.
 
-### K3 — Workbook page 3: the percentage-point drill
+### K3 — Workbook Build It, Page 20.3: the percentage-point drill
 
 | # | Subtraction | Answer |
 |:--:|---|---|
 | 1 | 73.3% − 33.3% | **40 percentage points** |
 | 2 | 80% − 40% | **40 percentage points** |
 | 3 | 100% − 73.3% | **26.7 percentage points** |
-| 4 | 75% − 50% | **25 percentage points** — and also "50% more than 50%", which is a different sentence about the same pair |
+| 4 | 75% − 50% | **25 percentage points**, and *also* "half as much again", i.e. 50% more. Two true sentences about the same pair |
 | 5 | 12% − 9% | **3 percentage points** — and also "a third more", since 3 ÷ 9 = 0.333 |
 
 **Two definition sentences, model answers:**
@@ -1085,9 +1120,9 @@ student spots this without being asked, it is the best answer on the page.
 
 **Marking note:** on items 4 and 5, a student who writes *only* the percentage-point answer gets full
 marks. The second sentence is a bonus. A student who writes only the "50% more" version has the
-misconception the drill exists to catch — go back to Figure 20.3.
+misconception the drill exists to catch — go back to Figure 20.4 in the student chapter (percent versus percentage point).
 
-### K4 — Workbook page 2: the number that lies
+### K4 — Workbook Build It, Page 20.2: the number that lies
 
 **The data given to the student:** a bike / scooter / skateboard classifier, tested on 24 held-out
 photos, 8 per class. Overall: 16 correct. Per class: bike 8 correct, scooter 6 correct, skateboard 2
@@ -1196,6 +1231,173 @@ question: *"look at where, exactly?"*
 
 The comb class landing *exactly* on the baseline is a gift — it makes "no better than guessing"
 literally true rather than approximately true.
+
+### K7 — Workbook Warm-Up (W1–W5)
+
+Last week's material (Week 19). Marking is on the idea, not the wording, except W1.
+
+**W1.** A test set is examples you hide **before** training and look at once, at the end. The word
+*before* must be in the answer. Photos set aside after training are "just a subfolder".
+*Watch for:* "a set to test it on" with no *before*. Send it back.
+
+**W2.**
+```
+   test  = 0.20 x 50 = 10
+   train = 50 - 10   = 40
+   check: 40 + 10 = 50     ✓
+```
+
+**W3.** A signature across the flap makes reopening an event. In the corner, the flap could be lifted
+and pressed back down and nobody would ever know, including the owner ten minutes later.
+
+**W4.** **No, it is not a fair test.** It is cheat 4. What it does measure is "can it recognise this
+particular blue bottle?", a much smaller question than "can it recognise bottles". The fix is a
+different bottle, not better photos.
+
+**W5.** All four came out **too high**. Not a coincidence: each let the model see, or effectively see,
+something it should not have, and extra information can only help a score. A surprisingly high score is
+always worth investigating.
+
+### K8 — Workbook Practice Set A (A1–A6)
+
+**A1.** **correct** · **total** · **fraction** · **percentage points**
+
+**A2.** **(b) the baseline, and how many test examples there were.** Why: 95% on a test set that is 95%
+spoons is exactly the baseline, so the model achieved nothing; and 95% out of 20 photos is one wrong
+answer from 90%.
+
+**A3.** **FALSE** (or at best "nearly, and misleadingly"). It got 11 out of 15. One photo is worth
+1 ÷ 15 = 6.7 percentage points; if one comb had gone the other way the headline would read 80%.
+
+**A4.** **1 → (b)** · **2 → (d)** · **3 → (a)** · **4 → (c)**
+
+**A5.** Top to bottom: 73.3% **overall**, 100% **spoon**, 80% **toothbrush**, 40% **comb**. The dashed
+line at 33.3% is the **baseline**. The thing to notice: no class scored 73.3%, and the comb bar only just
+clears the baseline, visible only because the line is drawn.
+
+**A6.**
+```
+   FRACTION:     27 / 36
+
+   DECIMAL:      36 x 0.7 = 25.2          →  at least 0.7?  yes
+                 27 - 25.2 = 1.8 left over
+                 1.8 ÷ 36 = 0.05
+                 0.7 + 0.05 = 0.7500
+
+   PERCENTAGE:   0.75 x 100 = 75.0%
+```
+Bonus: 27/36 simplifies to 3/4. Good instinct, but the division still has to be on the page.
+
+### K9 — Workbook Practice Set B (B1–B5)
+
+**B1.**
+```
+   FRACTION:   21 / 30
+   DECIMAL:    30 x 0.7 = 21;   21 - 21 = 0;   0 ÷ 30 = 0
+               0.7 + 0 = 0.7000
+   PERCENTAGE: 70.0%
+   BASELINE (3 roughly equal classes) = 33.3%
+   It beats the baseline by 36.7 percentage points.
+```
+Both words, "percentage points". "36.7 percent better" means something different.
+
+**B2.**
+```
+   accuracy = 190 ÷ 200 = 0.95 = 95%
+   pupils who did NOT need help:  190 / 190 = 100%
+   pupils who DID need help:        0 / 10  =   0%
+   baseline = "always say no help" = 190 ÷ 200 = 95%
+   beats the baseline by  95 - 95 = 0 percentage points
+```
+What goes wrong: the model never identifies a pupil who needs help. The school would believe it had a
+working system, stop looking, and those ten pupils would get no help. The 95% replaces "we don't know"
+with a false "we've checked". It is the spam filter again, with real children in it.
+
+**B3.** Ali 11/15 = 73.3%, Bea 12/15 = 80.0%. The difference is **1 photo = 6.7 percentage points**.
+Bea's announcement: a one-photo lead on fifteen photos is well inside the wobble, not evidence of a better
+model. To settle it: a much bigger test set (one photo is 6.7 points on 15, 1 point on 100, 0.1 on 1,000)
+and a per-class comparison.
+
+**B4.**
+
+| What somebody said | What they should have said |
+|---|---|
+| "40% to 65%, so 25 percent better." | "25 **percentage points** better." |
+| "20% off to 30% off, 10 percent more off." | "10 **percentage points** more off." (It is also 50% more discount, a different true sentence.) |
+| "Guessing 25%, mine 60%, so 35 percent better." | "35 **percentage points** better than guessing." |
+
+**B5.**
+```
+   spoon 12,  toothbrush 2,  comb 1
+   check: 12 + 2 + 1 = 15     ✓
+   the useless model's score: 12 ÷ 15 = 0.8 = 80%
+```
+Any split with 12 spoons works; 12/3/0 also gives 80% but a class with zero test photos cannot be
+measured. **The baseline for this test set is also 80%.** An "80% accurate" report on it says nothing: the
+model may as well be a sticky note reading "spoon".
+
+### K10 — Workbook Puzzle of the Week
+
+**Ranking, best evidence first: B, then A, then C.** A reasonable case can also be made for A above B;
+C is last on any reading. Accept either order of B and A if the reasoning is given.
+
+| App | What it dodges | Rank |
+|:--:|---|:--:|
+| **A** | "Compared to what?" and "which class does it fail on?": its test set was 98% pigeons | 2 |
+| **B** | "Out of how many?": no total. But 10 roughly equal kinds, so a 10% baseline | 1 |
+| **C** | "Out of how many?": the answer is four. One photo is worth 25 points | 3 |
+
+```
+   App A baseline: "always say pigeon" = 98 ÷ 100 = 98%
+   A beats its own baseline by 99 - 98 = 1 percentage point.
+
+   Baseline for B and C (10 roughly equal classes): 1 ÷ 10 = 10%
+   B beats it by 65 percentage points (unknown number of photos)
+   C beats it by 90 percentage points (four photos)
+```
+
+Buy/ask sentence, model answer: "B, because it is the only one tested on a spread of birds, but I'd ask
+*out of how many photos?* first. If the answer is twelve, it drops behind A." The lesson: big number,
+small evidence (C); big number, meaningless test (A); big number, unknown total (B).
+
+### K11 — Workbook Think Deeper (T1–T2)
+
+**T1.** No single right answer. A full-credit pair:
+
+> **Advert:** "Our AI identifies household objects with 73% accuracy, more than double the accuracy of
+> random guessing!"
+>
+> **Notebook entry:** "On 15 held-out photos taken on a different day in a different room, the model
+> scored 11/15 = 73.3%, against a 33.3% baseline for three roughly equal classes. Per-class: spoon 5/5 =
+> 100%, toothbrush 4/5 = 80%, comb 2/5 = 40%. Training accuracy 60/60 = 100%, so the gap is 26.7
+> percentage points. One test photo is worth 6.7 percentage points."
+
+The advert left out the sample size, the broken class, the gap, and the 6.7-point photo. **Was that
+lying? No.** Every word of the advert is true (73.3 ÷ 33.3 = 2.2, so "more than double" holds). It
+*selects* which true things to say, which is how most real AI adverts work.
+
+**T2.** What a mistake costs is different. A bad film recommendation costs two minutes; 70% is plenty. A
+missed brake light can cost a life; 99.9% is one failure in a thousand, and a car sees thousands of brake
+lights a week. The question to answer first: **what does a mistake cost, and who pays it?** It is a
+question about the world, not the data. A stronger answer also separates missing a brake light from
+imagining one, and asks for per-class numbers.
+
+### K12 — Workbook Draw It and Self-Check
+
+**Draw It.** A good drawing has five things:
+
+1. A top bar at about 73% labelled with the fraction as well as the percentage: `11/15 = 73.3%`.
+2. Three bars underneath at 100%, 80% and 40%, each labelled with class name and fraction (`spoon 5/5`,
+   `toothbrush 4/5`, `comb 2/5`).
+3. The 40% bar circled in red.
+4. A dotted baseline at 33.3% crossing all four bars, labelled `baseline`.
+5. The gap written somewhere: `100 − 73.3 = 26.7 percentage points`.
+
+**What most students leave out is number 4**, the baseline line. Without it the 40% bar just looks short;
+with it, it looks alarming, which is the truth. A nice extra: `one photo = 6.7 points` by the top bar.
+
+**Self-Check.** Six self-ratings; there is no right answer. Read them, and use any 😕 to decide what to
+revisit: a 😕 on the first two means redo Page 20.1 with you watching; on the fourth, redo Page 20.3.
 
 ---
 

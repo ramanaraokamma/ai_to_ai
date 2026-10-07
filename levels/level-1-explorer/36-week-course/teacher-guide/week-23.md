@@ -717,7 +717,7 @@ that they are clever. It is that they are fast and they never get bored.
 | They **skip squares** and the row has 11 numbers, so everything after that point is shifted and the reconstruction comes out as garbage. | 144 squares is genuinely boring and blank squares feel skippable. | Prevention beats cure: insist on numbered rows and columns, and on saying the numbers out loud. Cure: count each row as they finish it. Twelve or start again. It is cheaper to recount row 4 now than to rebuild 100 squares later. |
 | The drawing is **carefully aligned to the grid lines**, so every square is 0 or 255 and there are no greys. | Students naturally tidy. It feels like doing it properly. | This kills the best part of the lesson, so head it off before they start: *"let the line fall wherever it falls — I actively want some awkward squares."* If it has already happened, ask them to add a diagonal stroke or a curve to their letter. |
 | **The reconstruction fails** — you shade the numbers and it does not look like any letter. | Almost always a skipped square, or a row copied out of order between the drawing and the clean sheet. Occasionally a letter drawn only one square thick. | Do not treat this as a failure — treat it as a bug hunt, out loud, and it becomes the best five minutes of the lesson. Count each row: which row has 11 or 13? That is where the picture broke. Fix it and re-shade. The lesson learned ("one missing number wrecked everything after it") is *more* valuable than a clean success. |
-| It takes **twice as long as planned** and there is no time for the resolution arithmetic. | 144 squares at a considered pace is 10–12 minutes for an 11-year-old, not 7. | Plan for it. If you are past minute 58 and still numbering, stop the activity, do the reconstruction with the rows they have finished (a partial letter still reads), and move the resolution sums into homework Part 3, which is where they already live. |
+| It takes **twice as long as planned** and there is no time for the resolution arithmetic. | 144 squares at a considered pace is 10–12 minutes for an 11-year-old, not 7. | Plan for it. If you are past minute 58 and still numbering, stop the activity, do the reconstruction with the rows they have finished (a partial letter still reads), and move the resolution sums into homework (Build It Part 3), which is where they already live. |
 | They ask **"but where's the actual picture?"** after the whole activity. | Misconception 2 — the belief that the numbers describe a picture stored somewhere else. It survives the activity surprisingly often. | Answer with the activity itself: *"I have never seen your drawing. Not once. The only thing that came across the table was your numbers. So if the picture is somewhere else — where?"* Let them chase it. There is nowhere for it to be. |
 | They get **bored halfway through numbering** and start guessing whole rows. | Rows 6 to 9 of a letter are often identical and it feels pointless to write them out. | Name it honestly: *"rows 6, 7, 8 and 9 are identical and writing them out is dull. That dullness is exactly why computers do this and people don't. Four more rows."* Then let them write "same as above" **nowhere** — but do let them copy quickly. Identical rows are a legitimate speed-up to *notice*, and a note on their page saying "rows 6–9 identical" is a genuine observation, not a shortcut. |
 
@@ -817,32 +817,55 @@ worth telling them about.
 
 **Say this:**
 
-> "Three parts, and it should take you about fifty minutes. Workbook pages for Week 23.
+> "The workbook for Week 23 has a few sections. The main one, the one I want done first, is called
+> **Build It**, and it has three parts. It should take you about fifty minutes.
 >
-> **Part 1 — do it again, better.** A second 12 × 12 drawing, converted to numbers. Different letter
+> **Build It Part 1 — do it again, better.** A second 12 × 12 drawing, converted to numbers. Different letter
 > from the one you did today, and this time make it one with a diagonal or a curve in it, because
 > those are the ones that produce interesting grey squares. Key at the top of the page, rows and
 > columns numbered, all 144 squares filled in, none skipped. About 15 minutes.
 >
-> **Part 2 — read the grid.** This is the interesting half. There's a number grid printed in your
-> workbook and I am not going to show you the picture. Six questions about it. You have to work out
+> **Build It Part 2 — read the grid.** This is the interesting half. There's a number grid printed in your
+> workbook and I am not going to show you the picture. Six questions, Q1 to Q6, and a bonus. You have to work out
 > what the picture is from nothing but the numbers — which is exactly the job a computer has, every
 > time, for every photo. About 20 minutes. Do not guess and move on; point at the numbers that made
 > you say it.
 >
-> **Part 3 — three sums.** Resolution arithmetic. Show the multiplication, not just the answer.
-> About 10 minutes."
+> **Build It Part 3 — three sums.** Resolution arithmetic. Show the multiplication, not just the answer.
+> About 10 minutes.
+>
+> The other sections, **Warm-Up, Practice Set A, Practice Set B, Puzzle of the Week, Think Deeper,
+> Draw It and Self-Check**, are there too. Do Build It first; then work through the rest over the
+> week, in the order they appear, and tick the Self-Check last."
 
-**Workbook pages:** Week 23, Part 1 (blank 12 × 12 grid with key), Part 2 (the printed number grid
-and six questions), Part 3 (three resolution sums).
+**Workbook sections, in the order they appear in `workbook/week-23.md`:**
 
-**Expected time:** 45–50 minutes. If Part 1 alone is taking more than 25 minutes, they should stop
-Part 1 and do Parts 2 and 3 — reading a grid is the harder and more valuable skill, and it is what
-Week 24 builds on.
+| Section | Items | What it covers | Suggested use |
+|---|---|---|---|
+| ✅ Warm-Up (5 min) | W1–W5 | Last week (Week 22): fractions and percentages, baseline, confusion-matrix columns, "40 percent better", training accuracy | Start of the next sitting, before anything new |
+| ✍️ Practice Set A — Understand It | A1–A6 | Pixel, 0 to 255, byte, grayscale, match the words, label the brightness ramp (Figure W23.1), the five-step key | Second sitting |
+| ✍️ Practice Set B — Use It | B1–B5 | Read a 6 × 6 grid, resolution arithmetic, a missing-number situation, a too-neat-grid situation, mark another student's grid | Second sitting |
+| 🧩 Puzzle of the Week | P1–P6 | Three 4 × 4 grids with one average (Figure W23.2); shrinking each to 2 × 2 | Optional stretch |
+| 🤔 Think Deeper | T1–T2 | Two written paragraphs | Optional stretch |
+| 🛠️ Build It, Part 1 (15 min) | — | A second 12 × 12 drawing turned into numbers, value counts, one sentence on the greys | **Core homework, first** |
+| 🛠️ Build It, Part 2 (20 min) | Q1–Q6, Bonus | Read the printed 12 × 12 grid | **Core homework** |
+| 🛠️ Build It, Part 3 (10 min) | S1–S3 | Three resolution sums | **Core homework** |
+| 🎨 Draw It | — | Three panels from photo to numbers (Figure W23.3) | Last |
+| 📊 Self-Check | — | Six "I can" ticks and one question for you | Last; read it before Week 24 |
+
+**Expected time:** Build It is 45–50 minutes. The rest of the workbook is the week's independent
+practice and is not timed on the page, so treat the split above as a suggestion and do not expect it
+all in one evening. If Build It Part 1 alone is taking more than 25 minutes, they should stop Part 1
+and do Parts 2 and 3 — reading a grid is the harder and more valuable skill, and it is what Week 24
+builds on. If time is short, the sections to protect are Build It, then Practice Set B1 and the Puzzle.
 
 ---
 
 ## 🔑 Answer Key
+
+This key follows the workbook's own sections in the order they appear there. Lesson answers come
+first, then every workbook section. Values are taken from the workbook's Answers section
+(`workbook/week-23.md`), with the teacher notes added.
 
 ### Lesson · the 6 × 6 letter L (Segment 3)
 
@@ -885,7 +908,99 @@ extra facts: the order they are read in, and that the grid is 6 wide.
 is 1 pixel in 243. *How many numbers in a colour photo of the same size?* Three times as many —
 50,176 × 3 = **150,528** — and that is next week's lesson.
 
-### Homework · Part 1 — a second 12 × 12 drawing
+### Workbook · Warm-Up (W1–W5, last week's material)
+
+**W1.** Fraction **9/12** (or 3/4); decimal **0.7500**; percentage **75.0%**.
+
+**W2.** Four equal classes: **25.0%**. Ten cats and two dogs: always say "cat", 10/12 = **83.3%**. The baseline is the score of always naming the commonest class, which equals 1 ÷ classes only when the classes are even.
+
+**W3.** A row total says how many of that class **existed**; a column total says how many times the model was **willing to say** that word.
+
+**W4.** **FALSE.** It is **40 percentage points**.
+
+**W5.** The model was allowed to study those exact photos; the useful number is the **gap** between that 100% and the held-out score.
+
+*Watch for:* 83.3% written as 83% is fine, but 50% for the cats-and-dogs baseline (1 ÷ 2 classes) is the usual slip. If W1 to W5 go badly, that is a Week 22 problem and not a Week 23 one, so note it and move on.
+
+### Workbook · Practice Set A — Understand It (A1–A6)
+
+**A1.** square · store · picture element · 0 to 255 · light · 0 = black (no light), 255 = white (most light) · byte, 256 values.
+
+**A2.** (i) **(c) almost black**. (ii) **(c) 600** (30 × 20). (iii) **(b) 600** — one number per pixel in grayscale. *Wrong-answer map:* (a) 50 means they added; (c) 1800 is the colour answer and is next week; (d) means they have not yet taken in that the count depends only on the size.
+
+**A3.** **FALSE.** Grayscale means one number per pixel instead of three: it is missing colour, not detail. X-rays, most of photographic history and every fax are grayscale.
+
+**A4.** pixel = **C** · grayscale = **E** · resolution = **A** · megapixel = **B** · byte = **D**.
+
+**A5.** Left to right: **0 · 32 · 64 · 128 · 192 · 255**; the arrow reads darker on the left, brighter on the right. (g) the **0** swatch; (h) the **255** swatch.
+
+**A6.** Solid = **0** · not touched = **255** · half-and-half = **128** · light touch = **192** · nearly filled = **64**. The middle three live on the **boundary** of the letter and essentially nowhere else, because doubt only exists where the drawn line cuts through a square.
+
+*Watch for:* 64 and 192 swapped. "Light touch" is a light pencil, so a high number (192); "nearly filled" is dark, so a low one (64).
+
+### Workbook · Practice Set B — Use It (B1–B5)
+
+**B1.** (a) 6 × 6 = **36** pixels and **36** numbers. (b) **Row 4**, all six squares 0, a six-way tie. (c) **Yes, row 4**: a whole row of one identical value with different rows above and below. (Rows 3 and 5 are also straight lines of 128.) (d) A thick horizontal black stripe across the middle: a shelf, a bar, a horizon. (e) The 128s are in **rows 3 and 5**, just above and below the black row, because the stripe's real edge falls partway through those squares, so they are half covered. (f)
+
+```text
+    6 x   0  =      0
+   12 x 128  =  1,536
+   18 x 255  =  4,590
+                ──────
+                6,126
+
+   average = 6,126 ÷ 36 = 170.2
+```
+
+(g) Every row is the same all the way across, so there is **no vertical detail**: the picture is made of horizontal bands.
+
+**B2.** (a) 2048 × 1536 = **3,145,728** pixels, about **3.1** megapixels. (b) 64 × 64 = **4,096** pixels, **4,096** numbers. (c) 3,145,728 ÷ 4,096 = **768** times. (d) **4,096** seconds = 68.3 minutes = about **1 hour 8 minutes**.
+
+**B3.** (a) **143**. (b) Perfect down to the end of row 4; from the missing square on, everything is one place early, the shift carries into every later row, and the picture slides diagonally and dissolves. (c) Count each row on the original and find the one with 11. (d) A number carries no record of where it belongs; a list of 143 numbers cut into twelves looks perfectly reasonable.
+
+**B4.** (a) **0** greys. (b) He lost the interesting part of the exercise: he never sees the boundary squares or what a camera does at an edge, and the picture is unlike any real photo. (c) **No, it is not wrong**; it is valid but unrealistic, since real shapes essentially never line up with the pixel grid. (d) Add a diagonal or a curve, or shift the letter half a square sideways.
+
+**B5.** Three faults (any three, in any order):
+
+| Fault | Why it's a fault | The fix |
+|---|---|---|
+| No key at the top | The numbers are meaningless without it | Write the five-step key on the page |
+| The grid is inverted (row 1 is all 0s while the top of the drawing is blank paper) | 255 was written where the pencil was; the number counts light | Pencil becomes small numbers, blank paper 255; row 1 should be twelve 255s |
+| "(same as above)" instead of writing the row out | A missing row is 12 missing numbers and the picture below collapses | Write all twelve numbers for every row |
+| *(also acceptable)* rows and columns not numbered | Easy to lose your place | Number rows 1 to 12 and columns 1 to 12 |
+
+The fault that makes the grid **completely unusable** is **no key**: the inversion can be flipped back and "same as above" can be fixed by asking the author, but with no key you do not know which end is dark.
+
+### Workbook · Puzzle of the Week (P1–P6)
+
+**P1.** All three grids hold twelve 255s and four 0s: sum (12 × 255) + (4 × 0) = **3,060**, average 3,060 ÷ 16 = **191.25**, for A, B and C.
+
+**P2.** The three averages are **identical** to the last decimal place.
+
+**P3.** **A** a diagonal line, top-left to bottom-right. **B** four scattered dots (noise). **C** a solid 2 × 2 dark block in the top-left corner.
+
+**P4.** An average can never tell you the **arrangement**, and the arrangement is where the picture lives.
+
+**P5.**
+
+| Grid | top-left | top-right | bottom-left | bottom-right |
+|---|---:|---:|---:|---:|
+| A | 510 ÷ 4 = 127.5 → **128** | **255** | **255** | **128** |
+| B | 765 ÷ 4 = 191.25 → **191** | **191** | **191** | **191** |
+| C | **0** | **255** | **255** | **255** |
+
+**P6.** **Grid B** is destroyed: all four blocks come out 191. Each of B's four dark squares falls in a *different* 2 × 2 block, so every block holds exactly one 0 and three 255s. A keeps its diagonal because its dark squares are paired inside two blocks; C keeps its corner because all four dark squares sit in one block. Rule: shrinking destroys fine, spread-out detail and keeps big, clumped detail.
+
+*Watch for:* 127.5 left as 127.5 (the workbook says round .5 up, so 128).
+
+### Workbook · Think Deeper (T1–T2)
+
+Marked on reasoning, not on wording. Full marks:
+
+- **T1** needs: the order is **not stored** anywhere; it is an agreement between sender and receiver (row by row, left to right, with a known width); and the numbers alone are genuinely not enough. The workbook's model answer makes the point that sending the numbers without saying the grid is 12 wide leaves you with all the data and no picture.
+- **T2** needs: a real gain named (memory or speed); a **specific** cost tied to *their own* model and one of *their* classes (the workbook's model answer uses "comb" and its thin teeth; a shrink factor of 13.5 from 3024 to 224 means anything thinner than about 14 original pixels stops existing as a separate thing); and an honest trade rather than "keep everything". Do not mark down a student whose worst class was different from comb.
+
+### Workbook · Build It, Part 1 — a second 12 × 12 drawing
 
 There is no single correct grid, because it is the student's own drawing. Mark it against five
 things, and mark them in this order:
@@ -919,7 +1034,7 @@ the crossbar), 20 squares of 192 (the faint outer edge of each upright, ten rows
 144 − 48 − 20 = 76 squares of 255. Sum = (20 × 192) + (76 × 255) = 3840 + 19,380 = **23,220**;
 average = 23,220 ÷ 144 = **161.25**.
 
-### Homework · Part 2 — read the grid
+### Workbook · Build It, Part 2 — read the grid (Q1–Q6 and Bonus)
 
 This is the grid printed in the workbook. **Do not show the student this section until they have
 answered.**
@@ -955,7 +1070,7 @@ perfectly straight horizontal line looks like in numbers. (Accept also: the top 
 the picture are straight, being rows of identical 255s — but row 10 is the intended answer, because
 it is the only straight *dark* line.)
 
-**Q4. What shape is the dark region? Give your reason from the numbers.**
+**Q4. What shape is the dark region? Give your reason from the numbers.** (The workbook has a small table to fill in: row, columns holding 0, width.)
 It is round — a **circle, disc or ball**. The reason is in the widths. Count the run of 0s in each
 row:
 
@@ -970,7 +1085,9 @@ row:
 
 2, 4, 6, 6, 4, 2 — narrow at the top, widest in the middle, narrow again at the bottom, and
 symmetrical left to right about the gap between columns 6 and 7. A square would give 6, 6, 6, 6, 6,
-6. A triangle would give 2, 3, 4, 5, 6, 7. Only a round shape gives that pattern.
+6. A triangle would give 2, 3, 4, 5, 6, 7. A diamond would give 2, 4, 6, 6, 4, 2 as well, so accept
+a diamond **if** the student says why they prefer it or a circle; the 128s at the diagonal corners are
+what round the shape off, so a circle is the intended answer.
 
 **Q5. How many squares are pure white (255)?**
 **100.** Working: 144 squares altogether. 24 hold 0, 8 hold 128 (the corner squares of the circle at
@@ -983,12 +1100,12 @@ ground, a dot over a line, a full moon above the horizon. Any of those is a corr
 makes the answer good is the reasoning: a round dark blob (from Q4) with a straight horizontal line
 below it and a clear gap of white between them (row 9).
 
-**Bonus, if the workbook asks it: why are the 128s only found around the edge of the circle?**
+**Bonus. Why are the 128s only found around the edge of the circle?**
 Because a circle's boundary is curved and the squares are square, so along the outline the curve
 cuts some squares roughly in half — those get 128. Squares fully inside are 0 and squares fully
 outside are 255. Doubt only exists on the boundary, which is exactly what happened in class.
 
-### Homework · Part 3 — three resolution sums
+### Workbook · Build It, Part 3 — three resolution sums (S1–S3)
 
 **S1. A picture is 12 pixels across and 12 down. How many pixels? How long to write the numbers out at one per second?**
 
@@ -1019,6 +1136,12 @@ hand at one per second would take 12,192,768 ÷ 60 ÷ 60 ÷ 24 = **141.1 days**,
 *Common wrong answers to watch for:* adding instead of multiplying (12 + 12 = 24; 224 + 224 = 448);
 and giving 12,000,000 for S3 instead of 12,192,768. "12 megapixels" is the rounded marketing number,
 so accept 12,000,000 **if** the multiplication 4032 × 3024 is shown correctly somewhere.
+
+### Workbook · Draw It and Self-Check
+
+**Draw It.** There is no single right drawing. A strong answer has **three panels with arrows**, a real number written in at least four squares, and at least **one grey number on a boundary** with a note saying why it is neither 0 nor 255. The test: could someone who had never met the idea explain to a third person what a computer receives when it "looks at" a photo? If there is no number on the page, it is a poster and not a diagram.
+
+**Self-Check.** Nothing to mark. Read the six ticks and the "one thing I'd like explained again" line before Week 24. Any 😕 on "Rebuild a picture from numbers alone" or "Explain why the order of the numbers matters" is worth five minutes at the start of next week, since Week 24 opens by shrinking this same grid.
 
 ### Extension answers (for the "flying" path)
 

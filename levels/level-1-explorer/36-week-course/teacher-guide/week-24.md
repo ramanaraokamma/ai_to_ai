@@ -542,8 +542,7 @@ Then a second one where the answer is not whole:
 
 Full instructions in the next section. In the lesson flow:
 
-**Part A — Colour By Numbers, both directions (8 min).** Hand over the workbook page or write the
-eight triples on the board. They name each colour and write one short reason. Then six colour names
+**Part A — Colour By Numbers, both directions (8 min).** Write the eight triples on the board (they are in the Answer Key below; the workbook's Build It Part 1 uses a different set of triples and is homework). They name each colour and write one short reason. Then six colour names
 going the other way, where the yellow one is the checkpoint: if they write (255, 255, 0) without
 prompting, the argument from Segment 2 has landed.
 
@@ -656,7 +655,7 @@ Then assign homework and stop.
 **The point:** to make RGB *readable* rather than memorised, and to force the light-not-paint idea to
 be used rather than recited.
 
-**Time:** 8 minutes. **Materials:** the workbook page (or the triples written on the board), a pencil,
+**Time:** 8 minutes. **Materials:** the triples written on the board (the workbook's Build It Part 1 is a different set, kept for homework), a pencil,
 coloured pencils if you have them.
 
 **Direction 1 — triples to names (4 min).** Eight triples. For each: write the colour name **and** one
@@ -898,30 +897,44 @@ whole point of Term 3 and does not usually arrive until Week 26.
 
 **Say this:**
 
-> "Three parts, about fifty minutes, workbook pages for Week 24.
+> "The workbook for Week 24 has a few sections, and the big one is **Build It** — about fifty minutes,
+> three parts. That is the one I'll mark closely.
 >
-> **Part 1 — colour by numbers, both directions.** Eight triples where you name the colour, and eight
-> colour names where you give a triple. For the triples you name, write one short reason each — which
-> lamps are on. For the ones you invent, remember there's often no single right answer, so I'm
-> looking at whether the three numbers make sense together, not whether you matched some exact code.
-> About 15 minutes.
+> **Build It, Part 1 — colour by numbers, both directions.** Eight triples where you name the colour,
+> and eight colour names where you give a triple. For the triples you name, write one short reason
+> each — which lamps are on. For the ones you invent, remember there's often no single right answer,
+> so I'm looking at whether the three numbers make sense together, not whether you matched some exact
+> code. There are two rules printed under the tables; check yourself against them before you hand it
+> in. About 15 minutes.
 >
-> **Part 2 — shrink a grid.** There's a 12 × 12 grid in the workbook. Shrink it to 6 × 6, then to
-> 3 × 3. You must show the full arithmetic — the sum and the division — for **at least four** blocks,
-> and I'll be picking which four when I mark it, so choose interesting ones. Draw the block borders
-> before you start. About 25 minutes.
+> **Build It, Part 2 — shrink a grid.** There's a 12 × 12 grid printed in the workbook — the letter T.
+> Draw the block borders first, then shrink it to 6 × 6, then to 3 × 3. You must show the full
+> arithmetic — the sum and the division — for **four** blocks, and you choose which four, so choose
+> interesting ones from the edge of the letter. Tick the step checklist as you go. About 25 minutes.
 >
-> **Part 3 — what was lost.** Underneath, write two short lists: what stopped being visible going
-> from 12 × 12 to 6 × 6, and what stopped being visible going from 6 × 6 to 3 × 3. Be specific — 'it
-> got blurrier' earns nothing, 'the crossbar went from solid black to grey' earns everything. Then
-> one sentence: can you get the 12 × 12 back from the 3 × 3, and why? About 10 minutes."
+> **Build It, Part 3 — what was lost.** Write three specific things that stopped being visible going
+> from 12 × 12 to 6 × 6, and two going from 6 × 6 to 3 × 3. Be specific — 'it got blurrier' earns
+> nothing, 'the crossbar went from solid black to grey' earns everything. Then one sentence: can you
+> get the 12 × 12 back from the 3 × 3, and why? About 10 minutes.
+>
+> The rest of the workbook is there to help you check that the ideas have stuck: the **Warm-Up**
+> (five questions about last week), **Practice Set A** (understand it) and **Practice Set B** (use it,
+> including marking somebody else's work), the **Puzzle of the Week**, **Think Deeper**, **Draw It**,
+> and a **Self-Check** to tick at the end."
 
-**Workbook pages:** Week 24, Part 1 (two colour tables), Part 2 (the printed 12 × 12 grid, an empty
-6 × 6, an empty 3 × 3, and space for the block working), Part 3 (two lists and one sentence).
+**Workbook sections for Week 24, in the order they appear:** Warm-Up (W1–W5) · Practice Set A
+(A1–A6: fill the blanks, multiple choice, true/false on "red and green make brown", match the pairs,
+label the three channels of a four-pixel picture, sort greys from colours) · Practice Set B (B1–B5:
+average four blocks, shrink a 4 × 4 twice, Maya's mistake, the CCTV face app, mark another student's
+colour homework) · Puzzle of the Week (four clues, then P5 and P6) · Think Deeper (T1, T2) · Build It
+(Parts 1–3, as above) · Draw It · Self-Check. Every one has an answer in the Answer Key below, and the
+workbook also carries its own Answers section at the end.
 
-**Expected time:** 45–55 minutes. If Part 2 runs long, they may write "255" straight into any block
-whose four numbers are identical, with no working — that is legitimate and it should be said out loud
-when you assign it.
+**Expected time:** Build It alone is 45–55 minutes. If Part 2 runs long, they may write "255" straight
+into any block whose four numbers are identical, with no working — that is legitimate and it should be
+said out loud when you assign it. The other sections are extra; use the Warm-Up and Practice Sets as
+you see fit, and if you have to choose, Practice Set B (B2, B3 and B5 especially) is the best
+second priority because it uses exactly the skills Build It tests.
 
 ---
 
@@ -1098,7 +1111,99 @@ block-column 3, covering image rows 3–4 and columns 5–6.
                       255   88  255
 ```
 
-### Homework · Part 1 — colour by numbers, both directions
+### Workbook · Warm-Up (W1–W5, about last week)
+
+| Item | Answer | What to watch for |
+|---|---|---|
+| W1 | 32 is **dark** (near black); 240 is **bright** (nearly white) | A student who says 32 is "bright because it is a bigger number than 3" has it backwards; the number counts light |
+| W2 | One **byte** holds exactly 256 values, 0 to 255; a result of 300 is squashed back to 255 | "Because that's the rule" is a half mark; the byte is the reason |
+| W3 | 40 × 25 = **1,000 pixels**, **1,000 numbers** (grayscale is one per pixel) | Someone who answers 3,000 has jumped ahead to colour |
+| W4 | **FALSE** — you also need the **order** and the **width of the grid** | A pile of numbers is not a picture |
+| W5 | On the **boundary** of the letter, where the drawn line cuts a square partly covered, so neither 0 nor 255 is honest | Note this is the anti-aliasing idea before it gets its name |
+
+### Workbook · Practice Set A (A1–A6)
+
+**A1.** **Red, Green, Blue** · **three** numbers per pixel · each from **0** to **255** · one grid is a **channel** · it looks like a **grayscale** picture. 224 × 224 = **50,176** pixels; 50,176 × 3 = **150,528** numbers; 256 × 256 × 256 = **16,777,216** colours. All three equal = **grey**, which is not really a colour, it is a **tie**.
+
+**A2.** (i) **b** cyan / sky blue. (ii) **c** 300 (10 × 10 × 3; a student who picks **a**, 100, forgot the channels). (iii) **a** 6 × 6 (**c** 3 × 3 is what you get after doing it twice). (iv) **c** yellow.
+
+**A3.** **FALSE**, but the best answer is "both are right, about different things". Paint takes light away, so red paint plus green paint absorbs nearly everything and gives dark muddy brown. A screen adds light, so red light plus green light arriving together is seen as yellow. Credit the two-machines explanation; an answer that only says "no, it's yellow" has the fact and not the argument.
+
+**A4.** RGB = **C** · channel = **E** · downsampling = **A** · anti-aliasing = **B** · grey = **D**.
+
+**A5.** Grid **A** (0, 0 / 255, 255) = **blue** channel. Grid **B** (255, 255 / 0, 255) = **red** channel. Grid **C** (0, 255 / 0, 255) = **green** channel. The yellow pixel is **(255, 255, 0)**. The method is to write the four colours as triples, then read the first numbers (255, 255, 0, 255 = grid B, red), the second (0, 255, 0, 255 = grid C, green) and the third (0, 0, 255, 255 = grid A, blue).
+(e) The giveaway for grid A is the **blue pixel** (bottom-left): the only channel where the bottom-left is 255 while the top-left is 0.
+(f) The **green channel (grid C)**: 0 for the **red** pixel and the **blue** pixel, which use no green. Grid A (blue channel) also has exactly two 0s (the red and yellow pixels), so that answer is correct if the two pixels are named; the red channel has only one 0.
+
+**A6.**
+
+| Triple | Verdict |
+|---|---|
+| (128, 128, 128) | grey |
+| (255, 255, 0) | has a colour (yellow) |
+| (30, 30, 30) | grey |
+| (200, 80, 40) | has a colour (warm brown-orange) |
+| (200, 200, 200) | grey |
+| (0, 128, 128) | has a colour (teal) |
+| (99, 99, 99) | grey |
+| (100, 100, 101) | has a colour, *technically* |
+
+The trick: (100, 100, 101) is not a tie, so strictly it is not grey, but nobody could see the difference from (100, 100, 100). **Both verdicts earn the mark if the explanation is given.** The lesson is that "all three equal = grey" is a rule about numbers, and the eye's version is much rougher.
+
+### Workbook · Practice Set B (B1–B5)
+
+**B1.**
+
+| Block | Sum | ÷ 4 | Rounded |
+|---|---:|---:|---:|
+| (a) 255, 255, 255, 255 | 1,020 | 255 | **255** |
+| (b) 0, 0, 128, 128 | 256 | 64 | **64** |
+| (c) 192, 64, 255, 0 | 511 | 127.75 | **128** |
+| (d) 255, 128, 192, 64 | 639 | 159.75 | **160** |
+
+**(a)** needs no arithmetic: four identical numbers average to that number. That is correct reasoning, not laziness, and noticing it earns credit.
+
+**B2.** (a) **4** blocks. (b)
+
+```text
+   top-left:        0 +   0 +   0 +   0 =    0  ; ÷ 4 =   0     ->    0
+   top-right:     255 + 255 + 255 + 255 = 1020  ; ÷ 4 = 255     ->  255
+   bottom-left:     0 + 128 + 128 + 255 =  511  ; ÷ 4 = 127.75  ->  128
+   bottom-right:  255 + 255 + 255 + 255 = 1020  ; ÷ 4 = 255     ->  255
+```
+
+The 2 × 2 result is **0, 255 / 128, 255**. (c) 0 + 255 + 128 + 255 = **638**; ÷ 4 = 159.5 → **160**. (d) 4 × 4 → 2 × 2: the **staircase** on the diagonal edge is gone (one 128 is left in one corner). 2 × 2 → 1: **the edge itself** is gone; 160 is a plain mid-grey with no dark side and no light side. (e) **No.** The four numbers must add to 4 × 160 = **640**; any two different blocks of numbers from 0 to 255 that add to 640 are correct, for example (160, 160, 160, 160) and (0, 130, 255, 255). Check the sums yourself when marking.
+
+**B3.** (a) She averaged only the top pair: two numbers, ÷ 2, forgetting the block is 2 across **and** 2 down, so it holds four numbers. (b) 255 + 255 + 0 + 0 = **510**; ÷ 4 = 127.5 → **128**. (c) She wrote 255 instead of 128, which is **127 too bright**, half the whole range; a half-black, half-white edge was recorded as pure white, so done to every block the picture is deleted. (d) Draw the heavy block borders **before any arithmetic**, and circle the four numbers before adding.
+
+**B4.** (a) **No**, the app really is showing a sharp picture. (b) It is **inventing** plausible detail from what faces usually look like. (c) One shrunk number could have come from an enormous number of different blocks (for a pixel holding exactly 100, **8,752,741** different sets of four numbers between 0 and 255), and the app has no evidence for choosing between them. (d) Something like "this is a computer's guess at what a face like that might have looked like; it is not a photograph of anyone and must not be used to identify a person". (e) **No**; a faster computer faces the same options. The information was deleted, not hidden. The exact 8,752,741 only needs to be quoted if the student quotes it; "millions" is enough.
+
+**B5.**
+
+| # | Fault | Fix |
+|---|---|---|
+| 1 | (255, 255, 0) is yellow, not white; blue is 0, so "all high" is false | **yellow** — red and green on, blue off; white is (255, 255, 255) |
+| 2 | Right shape, but every lamp is turned down (nothing near 255), so it is brown | **brown**, a dark orange; orange is about (255, 140, 0) |
+| 3 | (255, 140, 60) is far too bright for brown | about **(150, 75, 0)** |
+| 4 | (0, 0, 100) is a dark blue, not a pale one | about **(180, 220, 255)**, pushing R and G up |
+
+**Deepest misunderstanding: number 4.** It assumes "paler" means "less", when on a screen paler means more light in the other two channels. Fault 2 is a close second and worth being kind about: (150, 75, 0) really is orange-shaped.
+
+### Workbook · Puzzle of the Week
+
+**Clue 1.** 384 ÷ 3 = 128, so **(128, 128, 128)**, middle grey. **Clue 2.** **(255, 255, 0)**, yellow; the lemon rules out cyan (0, 255, 255) and magenta (255, 0, 255). **Clue 3.** One lamp on and the sum is 255, so that lamp is 255: **(255, 0, 0)**, **(0, 255, 0)** or **(0, 0, 255)**, and all three are correct. **Clue 4.** The three numbers add up to **300**; any two different triples that do, for example (100, 100, 100) and (255, 45, 0), or (0, 150, 150). Check the sum of each.
+
+**P5.** **Clue 3** has more than one answer without saying so. That is the point of the puzzle: the clue does not contain enough information, and noticing that is a real skill. (Clue 4 also has many answers, but it says so.) **P6.** Clue 4 is the **one-way door** in one pixel: three numbers go in, one comes out, and a grey of 100 could have come from a grey, an orange-red or a teal. Same argument as "you cannot get the 12 × 12 back from the 3 × 3".
+
+### Workbook · Think Deeper (T1, T2)
+
+Both are paragraphs, so mark against the ingredients rather than the wording.
+
+**T1 — full marks needs:** a definition of both words (recovering = getting back what was there; generating = producing something that could plausibly have been there) · the arithmetic reason (many originals, one number, so nothing can pick the true one) · and a **named** situation with real consequences, such as a sharpened CCTV face used to accuse someone or an invented number plate used for a fine. Best answers notice the errors are not evenly spread: the app is least reliable for whoever is least typical of its training photos.
+
+**T2 — full marks needs:** that the eye detects **steps or joins** between nearly identical shades rather than absolute values · that 32 levels per channel would show visible **banding** (stripes in a smooth sunset) · and that 256 was chosen as "comfortably more than enough", helped by the fact that one byte holds exactly 256 values.
+
+### Workbook · Build It, Part 1 — colour by numbers, both directions
 
 **Direction 1 — eight triples to name.** One reason each; the reason is half the mark.
 
@@ -1131,9 +1236,9 @@ requires them to know it is a *dimmed* orange (nothing near 255). Pale blue requ
 that "pale" means *push the other two channels up*, not "turn blue down". A student who gets those two
 right has understood additive colour; the rest can be got from the table.
 
-### Homework · Part 2 — shrink the grid
+### Workbook · Build It, Part 2 — shrink the grid
 
-The workbook prints the same letter-T grid as above, so the answers are the 36 block averages, the
+The workbook's Build It Part 2 prints the same letter-T grid as above, so the answers are the 36 block averages, the
 6 × 6 grid and the 3 × 3 grid in the tables above.
 
 **The four blocks worth demanding full working for** (they are the only interesting ones — everything
@@ -1146,11 +1251,11 @@ else is either four 255s or a straightforward repeat):
    B33 (middle of the stem):      64 +   0 +  64 +   0 = 128   ;  128 ÷ 4 = 32
 ```
 
-*Marking note:* the twenty blocks that are four identical 255s may be written straight down with no
+*Marking note:* the sixteen blocks that are four identical 255s (B31, B32, B35, B36, B41, B42, B45, B46, B51, B52, B55, B56, B61, B62, B65, B66; count them in the 6 × 6 grid above) may be written straight down with no
 working. That is not a shortcut being tolerated; it is correct reasoning, and a student who *notices*
-it and says why should be credited for it.
+it and says why should be credited for it. *(The workbook's own Answers section says "20 of the 36"; counting the grid gives 16, so accept 16. A student who writes 20 has probably counted the 128 and 223 blocks as 255s.)*
 
-### Homework · Part 3 — what was lost
+### Workbook · Build It, Part 3 — what was lost
 
 **Going from 12 × 12 to 6 × 6 — accept any three of these, and insist on this level of specificity:**
 
@@ -1177,6 +1282,12 @@ were thrown away.
 An excellent answer adds the honest complication: *a computer could invent a plausible 12 × 12 that
 would shrink to this 3 × 3, and it might look convincing, but it would be a guess, not the original —
 and you must never treat it as evidence.*
+
+### Workbook · Draw It and Self-Check
+
+**Draw It.** There is no single right drawing. A strong answer has **one pixel with three labelled numbers** and **one block-average with the sum and the division written out**. The test: is there at least one number between 0 and 255 on the page, and at least one division? A rainbow with the letters R, G, B and no numbers is the weak answer; RGB is three lamps, not a spectrum.
+
+**Self-Check.** Not marked. Read the "not yet" ticks and the "One thing I'd like explained again" line, and start next week's first five minutes with whatever they name.
 
 ### Extension answers (for the "flying" path)
 

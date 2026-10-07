@@ -13,7 +13,7 @@
 | **Big idea** | A CSV is your dataset written out as plain text — and **everything read back from one is text** until you convert it. |
 | **New vocabulary** | CSV · header row · DictWriter · DictReader · round trip |
 | **New syntax** | `import csv` · `with open(path, "w", newline="") as f:` · `csv.DictWriter(f, fieldnames=...)` · `csv.DictReader(f)` |
-| **Materials** | The twelve index cards from Week 14 · a postcard (a real one, or a rectangle of card) · a pen · printed workbook pages 16.1–16.6 · the Bug Log |
+| **Materials** | The twelve index cards from Week 14 · a postcard (a real one, or a rectangle of card) · a pen · the printed Week 16 workbook (Warm-Up through Self-Check) · the Bug Log |
 | **Tech needed** | Laptop with Python 3 and the editor. `records.py` and `squad_data.py` from Week 15 must exist and run. **A text editor that can open a `.csv` file** — the same editor they write Python in is perfect. A spreadsheet (Sheets, Excel, Numbers) if you have one; nice, not required. Still nothing to install. |
 | **Prep time** | 15 minutes the night before · 5 minutes on the day |
 
@@ -333,7 +333,7 @@ and this is the week that earns its third word. Two threads lit: data and toolcr
 
 ### 15 minutes the night before
 
-- [ ] **Print workbook pages 16.1–16.6.**
+- [ ] **Print the Week 16 workbook**, all sections (Warm-Up through Self-Check), and the Build It pages separately so they can be held back.
 - [ ] **Find `records.py` and `squad_data.py` from Week 15** and run last week's file once to be sure the folder still works. If `squad_data.py` is missing, you will lose fifteen minutes today.
 - [ ] **Find a postcard.** A real one is better. A rectangle of card with "POSTCARD" written on it is fine. You will use it in the Hook.
 - [ ] **Work out how to open a `.csv` file as text on your machine.** In VS Code: right-click the file → *Open With* → *Text Editor*, or just click it (VS Code shows CSVs as text by default). On a Mac without VS Code: right-click → *Open With* → *TextEdit*. **Do not let it open in a spreadsheet the first time** — the whole point is to see the commas.
@@ -410,7 +410,7 @@ round trip identical? True
 - [ ] Editor open with `records.py` and `squad_data.py`. Terminal in the same folder.
 - [ ] `players.csv` **deleted**, so it appears in front of them.
 - [ ] The twelve index cards in a pile. The postcard beside them.
-- [ ] Workbook 16.1–16.3 out; 16.4–16.6 held back.
+- [ ] Workbook out: Warm-Up, Predict the Output and Practice Set A. Build It (the project) held back for the homework hand-out; Practice Set B, Fix the Broken Program, Puzzle and Think Deeper held back as optional.
 - [ ] A blank sheet for the Bug Log, headed **"errors with no error message"**. There are two of those today.
 
 ### Fallback if the laptop or the install fails
@@ -532,7 +532,7 @@ Most students say number. Let them.
 
 > "Write your prediction down. All five fields. `name`, `team`, `runs`, `balls`, `out` — number, text, or true/false. I'll wait."
 
-**Do this:** Have them fill in workbook page 16.2, the prediction column only. Do not comment. This prediction is the reason the reveal works.
+**Do this:** Have them write the five predictions on a scrap of paper (the workbook has no five-field prediction grid; its Predict the Output section, P1–P4, is a separate exercise for after the reveal). Do not comment. This prediction is the reason the reveal works.
 
 > "Keep that. We'll check it against the screen, and I want you to be able to see whether you were right."
 
@@ -815,7 +815,7 @@ Full instructions in the next section. In the lesson flow:
 
 ### Setup
 
-**On the table:** the twelve index cards, their handwritten CSV sheet from the Hook, workbook page 16.3, the Bug Log with its *errors with no error message* heading.
+**On the table:** the twelve index cards, their handwritten CSV sheet from the Hook, workbook Practice Set A, question A4 (the round-trip diagram, Figure W16.1), the Bug Log with its *errors with no error message* heading.
 
 **On the screen:** `records.py` with the three new functions, and `store16.py` open.
 
@@ -1267,134 +1267,451 @@ print(loaded == squad)
 
 > "This is a project, not an exercise. **The Record Store.** Thirty records of your own, written to a file, loaded back, and proved. About an hour, and most of that is typing the data.
 >
-> **First, the data.** Page 16.4. **Thirty records, five keys each.** Pick one theme and stick to it — songs, students, matches, bus journeys, whatever you like. The rules that make the rest of it work: every record has all five keys spelled *identically*; at least **two** of your keys hold numbers; at least **one** holds a category with three to five repeating values, like genre or house, because that's what you'll group by later. Copy-paste your first record as a template for the other twenty-nine, and change the values. That is not cheating, that is what everybody does.
+> **First, the data.** Build It, Part 1 in the workbook. **Thirty records, five keys each.** Pick one theme and stick to it — songs, students, matches, bus journeys, whatever you like. The rules that make the rest of it work: every record has all five keys spelled *identically*; at least **two** of your keys hold numbers; at least **one** holds a category with three to five repeating values, like genre or house, because that's what you'll group by later. Copy-paste your first record as a template for the other twenty-nine, and change the values. That is not cheating, that is what everybody does.
 >
-> **Second, save it.** Page 16.5. Use the same `save_csv` you wrote today — **don't write a new one.** Then open the file in a text editor and count the lines. **You should have 31.** Thirty records plus the header. If you have 30, you forgot `writeheader()` and I want you to notice that yourself.
+> **Second, save it.** Build It, Part 2. Use the same `save_csv` you wrote today — **don't write a new one.** Then open the file in a text editor and count the lines. **You should have 31.** Thirty records plus the header. If you have 30, you forgot `writeheader()` and I want you to notice that yourself.
 >
-> **Third — and this is the bit I'm marking — prove the round trip.** Page 16.6. Load the file back and print, **for row 1, field by field**: what the value is, and what `type()` says it is, **before** you convert and **after**. Five fields, two states each, ten lines. Then convert your number columns and print `loaded == records`.
+> **Third — and this is the bit I'm marking — prove the round trip.** Parts 3 and 4. Load the file back and print, **for row 1, field by field**: what the value is, and what `type()` says it is, **before** you convert and **after**. Five fields, two states each, ten lines. Then convert your number columns and print `loaded == records`.
 >
 > **I want to see `True` on that line.** If it says `False`, don't guess — use the mismatch finder from today and it will tell you exactly which row and which field went wrong.
 >
-> **And one sentence at the bottom.** Which of your five columns needed converting, which didn't, and why? If you can write that sentence you have understood this week completely."
+> **And one sentence at the bottom.** Part 5. Which of your five columns needed converting, which didn't, and why? If you can write that sentence you have understood this week completely."
 
-**Workbook pages:** 16.1, 16.2, 16.3 in class · **16.4, 16.5, 16.6** at home.
+**Workbook split.** The workbook has no numbered pages; it runs in sections: Warm-Up · Predict the Output (P1–P4) · Practice Set A (A1–A6) · Practice Set B (B1–B5) · Fix the Broken Program · Puzzle of the Week · Think Deeper (T1–T2) · Build It (Parts 1–6) · Draw It · Self-Check.
 
-**Expected time:** 30 min typing the thirty records · 10 min saving and counting the lines · 15 min on the proof sheet · 5 min on the sentence. **About 60 minutes.**
+- **In class:** Warm-Up (the five questions are about last week, so it works as the opener), **Predict the Output** after the reveal, and **Practice Set A**, with A4 (the round-trip diagram) and A5 (read the file, not the table) done at the table during the lesson.
+- **At home, required:** **Build It, Parts 1–6**, the project described above. Then **Draw It** and **Self-Check**, about 10 minutes between them.
+- **Optional, for a fast student or next week's warm-up:** Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper. Do not add them to the required homework; the Build It project is already an hour.
 
-> **🧑‍🏫 What to look for when you mark it:** three things, in this order. **One — does `loaded == records` print `True`?** That is the objective and it is binary. **Two — is the proof sheet field by field, with `type()` for all five, before and after?** A student who only checked `runs` has done a fifth of the work. **Three — is the file 31 lines?** If it is 30, the header is missing and something is quietly broken; that is worth catching now rather than in Week 21, when pandas will read the file and put one of their records in the column headings.
+**Expected time:** 30 min typing the thirty records (Part 1) · 10 min saving and counting the lines (Part 2) · 15 min on the proof sheet and the round trip (Parts 3–4) · 5 min on the sentence (Part 5) · a few minutes on the Bug Log (Part 6). **About 60 minutes**, plus about 10 for Draw It and Self-Check.
+
+> **🧑‍🏫 What to look for when you mark it:** three things, in this order. **One — does `loaded == records` print `True`?** That is the objective and it is binary. **Two — is the proof sheet field by field, with `type()` for all five, before and after?** A student who only checked `runs` has done a fifth of the work. **Three — is the file 31 lines?** (Part 2 asks the student to write the count down, so you can check it on the page.) If it is 30, the header is missing and something is quietly broken; that is worth catching now rather than in Week 21, when pandas will read the file and put one of their records in the column headings.
 
 ---
 
+
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Organised by the sections of the student workbook, in workbook order, with every item (W1–W5, P1–P4, A1–A6, B1–B5, the three bugs, the Puzzle parts, T1–T2, Build It Parts 1–6, Draw It, Self-Check) answered. The values are those in the workbook's own Answers section, and the runnable ones were re-run while this key was being aligned. Teacher-only notes (wrong-answer maps, marking tips) are marked in blockquotes.
 
-### Page 16.1 — Read the file, not the table
+### Warm-Up
 
-*Here is a CSV file. Answer the questions from the file alone.*
+| # | Answer |
+|---|---|
+| **W1** | Add the buckets up: `print(sum(counts.values()), "of", len(squad))`. It must come to **12**: 4 + 4 + 3 + 1 = 12. If it comes to 11, a row went missing and nothing else would ever have told you. |
+| **W2** | `max(counts)` gives **`'Tigers'`**, the biggest **key** judged as text, last in the alphabet of those four words. It never looks at the counts at all. It is dangerous because it returns something plausible and never complains. |
+| **W3** | `print(max(counts, key=counts.get))` |
+| **W4** | **Twelve.** `filter_by` builds a **new** list and hands it back; it never touches the original. |
+| **W5** | It came from **one row**: it is Priya's own score, not a summary of anything. An average of one thing is just that thing wearing a hat. Print the **row count** beside every average: `104.00 from 1 player`. |
 
-```text
-name,team,runs,balls,out
-Asha,Falcons,48,32,True
-Ravi,Falcons,12,20,True
-Nita,Falcons,77,55,False
-```
+> **🧑‍🏫 Marking note:** W3 is a tie (Falcons and Tigers both have 4), so the line prints `Falcons`, the first one it meets. Do not mark a student wrong for noticing the tie and asking which to print. W2 is the common wrong answer: "`4`". That is `max(counts.values())`, a different line.
 
-| # | Question | Answer |
-|---|---|---|
-| (a) | How many lines are in this file? | **4** |
-| (b) | How many records? | **3.** Line 1 is the header row and is not a record. |
-| (c) | How many columns? | **5** — `name`, `team`, `runs`, `balls`, `out`. |
-| (d) | How many commas are on line 2? | **4.** Five fields need four separators, always one fewer than the number of fields. |
-| (e) | Which line tells you the third field is `runs`? | **Line 1**, the header row. Nothing else in the file says so. |
-| (f) | What is the *fourth* field of the third record? | Record 3 is Nita, so it is `55`. Careful: record 3 is **line 4**. |
-| (g) | Is the `48` on line 2 a number? | **No.** It is two characters, `4` and `8`. You read it as a number; the file cannot store one. |
-| (h) | If this file had 30 records, how many lines would it have? | **31.** Records plus one for the header. |
+### Predict the Output
 
-**16.1(i) Somebody sends you a CSV with 30 lines and says it has 30 records. What is wrong?**
-One of two things. Either there is no header row — in which case the first record is about to be eaten and used as the column names — or there really are only 29 records. Either way, **lines should be records + 1**, and a mismatch means something is wrong before you have read a single value.
-
-### Page 16.2 — Predict the type
-
-*Fill in the prediction column BEFORE you run anything. Then run `store16.py` and fill in the rest.*
-
-| Field | Went out as | Your prediction | Came back as |
-|---|---|---|---|
-| `name` | `str` | *(their guess)* | `str` |
-| `team` | `str` | *(their guess)* | `str` |
-| `runs` | `int` | *(usually "int" — wrong)* | `str` |
-| `balls` | `int` | *(usually "int" — wrong)* | `str` |
-| `out` | `bool` | *(usually "bool" — wrong)* | `str` |
-
-Real output to check against:
+**P1**
 
 ```text
-field      in memory        from the file
-----------------------------------------------
-name       Asha     str     Asha     str
-team       Falcons  str     Falcons  str
-runs       48       int     48       str
-balls      32       int     32       str
-out        True     bool    True     str
+481
+49
+True
+False
 ```
 
-**16.2(a) How many of the five changed?**
-**Three** — `runs`, `balls` and `out`. The two that were already text came back unchanged, because there was nothing to lose.
+`+` on two pieces of text **glues them end to end**; `+` on two numbers adds. `"48" < "9"` compares `4` against `9` character by character, so it is `True`; `48 < 9` compares numbers, so it is `False`. Same two values, two different questions. The kind of thing decides which question is asked, and nothing on the screen says which happened.
 
-**16.2(b) Why did `name` survive and `runs` not?**
-`name` was text going out and text is exactly what a file can store, so nothing had to be given up. `runs` was a number, and a text file has no way to hold a number, so it was written down as characters — and characters are all that came back.
+**P2**
 
-**16.2(c) `48` and `'48'` look identical when printed. How do you tell them apart?**
-`print(type(x))`. Or watch what `+` does: `48 + 1` gives `49`, and `'48' + '1'` gives `'481'`.
+```text
+90
+1000
+['1000', '104', '9', '90']
+```
 
-**16.2(d) Which of the five columns need converting on load, and to what?**
+As text, `'90'` wins because `9` beats every other first character. As numbers, `1000` wins. In the sorted list `'1000'` comes first and `'9'` third: that is alphabetical order applied to digits, not a bug. A longer text does not win for being longer; length only breaks a tie when one text is the start of the other (`'1'` before `'10'`). **Only line 2 belongs in a newsletter.**
 
-| Column | Convert to | How |
-|---|---|---|
-| `name` | nothing | it was text all along |
-| `team` | nothing | it was text all along |
-| `runs` | whole number | `int(row["runs"])` |
-| `balls` | whole number | `int(row["balls"])` |
-| `out` | true/false | `row["out"] == "True"` — **not** `bool(row["out"])` |
+**P3**
 
-### Page 16.3 — The round trip, traced by hand
+```text
+True True False True
+False
+```
 
-*Follow one value all the way round. Fill in the table.*
+`bool()` is asking **"is there anything here at all?"**, not "does this say true?". Only empty text is `False`. `"False" == "True"` is `False`, which is why `row["out"] == "True"` is the conversion that works.
 
-| Stage | Where it is | What `runs` holds | What kind of thing |
+**P4**
+
+```text
+48
+3.5
+Traceback (most recent call last):
+  File "p4.py", line 3, in <module>
+    print(int("3.5"))
+          ~~~^^^^^^^
+ValueError: invalid literal for int() with base 10: '3.5'
+```
+
+**Two lines print and the third crashes.** `int(" 48 ")` works because `int` ignores spaces at the ends; `float("3.5")` works; `int("3.5")` refuses rather than throw away the `.5` quietly. Use `float()` for a decimal column.
+
+> **🧑‍🏫 Marking note:** the sheet asks "how many of the fourteen answers did you get right?" and I count 4 + 3 + 5 + 3 = 15 predictions across P1–P4, not 14. Do not mark a student down for a tally that does not reach 14; what matters is that they wrote a prediction before running anything and can say which one surprised them. The commonest surprises are P1 line 3 (`True`) and P3 (`True True False True`).
+
+### Practice Set A
+
+**A1**
+
+| # | Expression | What it gives | Kind |
 |---|---|---|---|
-| 1 | in `squad`, in memory | `48` | whole number (`int`) |
-| 2 | in `players.csv`, on the disk | the characters `4` `8` | writing, and nothing else |
-| 3 | in `raw`, straight after `DictReader` | `'48'` | text (`str`) |
-| 4 | in `fixed`, after `int()` | `48` | whole number (`int`) |
+| a | `squad[0]["runs"]` | `48` | `int` |
+| b | `raw[0]["runs"]` | `'48'` | `str`, it came from a file |
+| c | `raw[0]` | `{'name': 'Asha', 'team': 'Falcons', 'runs': '48', 'balls': '32', 'out': 'True'}` | `dict`, one record |
+| d | `len(raw)` | `12` | `int`, the number of records |
+| e | `raw[0]["out"]` | `'True'` | `str`, **not** `bool` |
+| f | `int(raw[0]["runs"]) + 1` | `49` | `int` |
+| g | `raw[0]["runs"] + "1"` | `'481'` | `str`, glued not added |
+| h | `list(raw[0].keys())` | `['name', 'team', 'runs', 'balls', 'out']` | `list` |
 
-**16.3(a) At which stage did the information get lost, and what exactly was lost?**
-**Stage 1 to stage 2.** What was lost is not the value — the characters `4` and `8` are still there — it is the *kind of thing it was*. The file remembers what it says and forgets what it means.
+> **🧑‍🏫 Watch for:** (b) and (e) answered as `int` / `bool` is the week's central misconception. (g) answered `49` means `+` is still read as arithmetic whatever the kind.
 
-**16.3(b) Which stage is the one people forget, and what happens if they do?**
-**Stage 4.** If you skip it, everything still runs. Your arithmetic crashes with a `TypeError` if you are lucky, and gives a wrong answer with no message if you are not — like `max()` reporting 90.
+**A2** The missing line is `writer.writeheader()`. It goes **above `writerows`**, inside the `with` block at the same indent as the other writer lines. Without it the first record **becomes the header row**: `DictReader` has no way to know it is data, so Asha's five values become the five column names. You get eleven records back instead of twelve, with keys like `'Asha'` and `'48'`, and nothing complains.
 
-**16.3(c) Write the one line that proves stage 4 worked.**
+**A3** **i → R** (`9`) · **ii → Q** (`100`) · **iii → S** (`['10', '100', '9']`) · **iv → P** (`910`)
+
+```text
+9
+100
+['10', '100', '9']
+910
+```
+
+**A4** (Figure W16.1, the round-trip diagram)
+
+| Box | Phrase |
+|---|---|
+| **A** | whole number (stage 1, in memory, an `int`) |
+| **B** | characters on a disk (stage 2, writing and nothing else) |
+| **C** | text (stage 3, straight out of `DictReader`, a `str`) |
+| **D** | whole number again (stage 4, after `int()`) |
+| **E** | between stages 1 and 2 |
+
+**Point of E:** what was lost between stages 1 and 2 is **not the value**, since the characters `4` and `8` are still there. It is **the kind of thing it was**. The file remembers what it says and forgets what it means.
+
+> **🧑‍🏫 Teacher-only, for the discussion around A4.** *Which stage do people forget?* **Stage 4.** Skip it and everything still runs; arithmetic crashes with a `TypeError` if you are lucky and gives a wrong answer with no message if not, like `max()` reporting 90. *The one line that proves stage 4 worked:*
+>
+> ```python
+> print(load_players("players.csv") == squad)
+> ```
+>
+> ```text
+> True
+> ```
+>
+> *If it prints `False`:* run the mismatch finder, which prints the first differing row, both versions and the field. Do **not** start changing converters at random. Example of what it prints:
+>
+> ```text
+> first mismatch at row 2
+>   original: {'name': 'Nita', 'team': 'Falcons', 'runs': 77, 'balls': 55, 'out': False}
+>   loaded  : {'name': 'Nita', 'team': 'Falcons', 'runs': 77, 'balls': 55, 'out': True}
+>   field 'out': False became True
+> ```
+
+**A5** (Read the file, not the table)
+
+| # | Answer |
+|---|---|
+| a | **4** lines |
+| b | **3** records. Line 1 is the header and is not a record |
+| c | **5** columns: `name`, `team`, `runs`, `balls`, `out` |
+| d | **4** commas. Five fields need four separators, always one fewer |
+| e | **Line 1**, the header row. Nothing else in the file says so |
+| f | Record 3 is Nita, so the fourth field is **`55`**. Careful: record 3 is **line 4** |
+| g | **No.** It is two characters, `4` and `8`. You read it as a number; the file cannot store one |
+| h | **31.** Records plus one for the header |
+
+**A5(i)** One of two things. Either **there is no header row**, so the first record is about to be eaten and used as the column names, or there really are only **29** records. Either way **lines should be records + 1**, and a mismatch means something is wrong before you have read a single value.
+
+> **🧑‍🏫 Watch for:** (f) answered `32` or `20`: they counted the header as a record, or counted a line number as a record number. (a) answered `3`: same slip.
+
+**A6** Go to **line 8**. In your own words: "You asked me to turn the word Asha into a whole number, and I can't." The column is **`name`**, because the error quotes the offending value `'Asha'` straight back. The fix: **delete that line**. `name` was text going out and text coming back, so there is nothing to convert. You only convert the columns that were not text.
+
+### Practice Set B
+
+**B1**
 
 ```python
-print(load_players("players.csv") == squad)
+raw = load_csv("players.csv")
+print(type(raw[0]["runs"]).__name__)
 ```
 
 ```text
-True
+str
 ```
 
-**16.3(d) It prints `False`. What do you do next — and what do you not do?**
-**Do:** run the mismatch finder, which prints the first row that differs, both versions of it, and the exact field. **Do not** start changing converters at random to see what happens. A `False` tells you nothing; eight lines of code tell you everything:
+`type(x)` gives the kind and `.__name__` pulls out the short name. Without it you get `<class 'str'>`.
+
+**B2**
+
+```python
+"""b2.py - three snacks, saved, with the line count checked."""
+
+import csv
+
+FIELDS = ["snack", "price", "spicy"]
+snacks = [
+    {"snack": "Samosa",   "price": 15, "spicy": True},
+    {"snack": "Cupcake",  "price": 60, "spicy": False},
+    {"snack": "Chips",    "price": 20, "spicy": True},
+]
+
+with open("snacks.csv", "w", newline="", encoding="utf-8") as f:
+    writer = csv.DictWriter(f, fieldnames=FIELDS)
+    writer.writeheader()
+    writer.writerows(snacks)
+
+with open("snacks.csv", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+print("records:", len(snacks))
+print("lines  :", len(lines))
+print("records + 1 == lines?", len(snacks) + 1 == len(lines))
+for line in lines:
+    print("  ", line.strip())
+```
 
 ```text
-first mismatch at row 2
-  original: {'name': 'Nita', 'team': 'Falcons', 'runs': 77, 'balls': 55, 'out': False}
-  loaded  : {'name': 'Nita', 'team': 'Falcons', 'runs': 77, 'balls': 55, 'out': True}
-  field 'out': False became True
+records: 3
+lines  : 4
+records + 1 == lines? True
+   snack,price,spicy
+   Samosa,15,True
+   Cupcake,60,False
+   Chips,20,True
 ```
 
-### Page 16.4 — Your thirty records
+`.readlines()` gives a list of lines, so its `len()` is the line count; `.strip()` removes the newline so the printing does not double-space. Their snacks will differ; mark the shape.
+
+**B3**
+
+```python
+"""b3.py - a typed loader for a table with an int, a float and a bool column."""
+
+import csv
+
+
+def load_snacks(path):
+    """Read snacks.csv and put every column back to the type it went in as."""
+    records = []
+    with open(path, "r", newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            row["price"] = int(row["price"])              # whole number
+            row["spicy"] = (row["spicy"] == "True")       # true or false
+            records.append(row)
+    return records
+
+
+loaded = load_snacks("snacks.csv")
+print(loaded[0])
+for field in ["snack", "price", "spicy"]:
+    print(f"  {field:<7}{str(loaded[0][field]):<9}{type(loaded[0][field]).__name__}")
+```
+
+```text
+{'snack': 'Samosa', 'price': 15, 'spicy': True}
+  snack  Samosa   str
+  price  15       int
+  spicy  True     bool
+```
+
+`snack` still says `str` because it was text all along. **Wrong-answer map:** `bool(row["spicy"])` makes every snack spicy (see P3); `int(row["snack"])` crashes as in A6.
+
+**B4**
+
+```python
+"""b4.py - one tool that answers 'is my file the right length?'"""
+
+
+def lines_in(path):
+    """How many lines are in the file at path?"""
+    with open(path, "r", encoding="utf-8") as f:
+        return len(f.readlines())
+
+
+def check_length(path, record_count):
+    """A CSV should have one more line than it has records."""
+    found = lines_in(path)
+    expected = record_count + 1
+    print(f"{path}: {found} lines, expected {expected}")
+    if found == expected:
+        print("  looks right - 1 header +", record_count, "records")
+    else:
+        print("  PROBLEM - is writeheader() missing?")
+    return found == expected
+
+
+check_length("snacks.csv", 3)
+check_length("snacks.csv", 4)
+```
+
+```text
+snacks.csv: 4 lines, expected 4
+  looks right - 1 header + 3 records
+snacks.csv: 4 lines, expected 5
+  PROBLEM - is writeheader() missing?
+```
+
+`return len(f.readlines())` must be **inside** the `with` block; outside it gives `ValueError: I/O operation on closed file.`
+
+**B5**
+
+```python
+"""b5.py - five bus journeys: out to a CSV, back in, and the round trip proved."""
+
+import csv
+
+FIELDS = ["route", "stop", "minutes", "on_time"]
+PATH = "buses.csv"
+
+journeys = [
+    {"route": "12A", "stop": "Market",   "minutes": 14.5, "on_time": True},
+    {"route": "12A", "stop": "Hospital", "minutes": 9.0,  "on_time": False},
+    {"route": "7",   "stop": "Market",   "minutes": 22.5, "on_time": True},
+    {"route": "7",   "stop": "School",   "minutes": 6.5,  "on_time": True},
+    {"route": "103", "stop": "Station",  "minutes": 31.0, "on_time": False},
+]
+
+with open(PATH, "w", newline="", encoding="utf-8") as f:                 # save
+    writer = csv.DictWriter(f, fieldnames=FIELDS)
+    writer.writeheader()
+    writer.writerows(journeys)
+
+with open(PATH, "r", newline="", encoding="utf-8") as f:                 # load raw
+    raw = list(csv.DictReader(f))
+
+print("rows out:", len(journeys), " rows in:", len(raw))                 # the count check
+print("longest journey, from the file:", max([r["minutes"] for r in raw]), "<-- WRONG")
+
+loaded = []
+with open(PATH, "r", newline="", encoding="utf-8") as f:                 # load typed
+    for row in csv.DictReader(f):
+        row["minutes"] = float(row["minutes"])                           # a decimal
+        row["on_time"] = (row["on_time"] == "True")                      # true or false
+        loaded.append(row)                        # route and stop stay as text
+
+print("longest journey, converted   :", max([r["minutes"] for r in loaded]))
+print("round trip identical?", loaded == journeys)
+```
+
+```text
+rows out: 5  rows in: 5
+longest journey, from the file: 9.0 <-- WRONG
+longest journey, converted   : 31.0
+round trip identical? True
+```
+
+The raw answer is `9.0` because, as text, `'9.0'` beats `'31.0'`, `'22.5'`, `'14.5'` and `'6.5'`: `9` is the highest first character in the column. **`route` is not converted**: `int("12A")` would crash, and `103` is an identifier, not a quantity. Converting `route` would make the round trip print `False`.
+
+### Fix the Broken Program
+
+**Bug 1, the syntax error.** A **`SyntaxError`**, and **none of the program ran**: Python could not finish reading the file, which is why there is no `Traceback`. Fix: a **comma** at the end of line 8 after the closing `}`.
+
+```python
+    {"item": "Notebook", "shelf": "A", "price": 45,  "in_stock": True},
+```
+
+**Bug 2, the runtime error.** Python is saying "you didn't tell me what the columns are". Fix:
+
+```python
+    writer = csv.DictWriter(f, fieldnames=FIELDS)
+```
+
+It cannot work the names out from the first record because the file also needs an **order**, the same for every row, and different records could have their keys in different orders. `fieldnames` fixes the order and the allowed keys.
+
+**Bug 3, the silent one.** The prices are 45, 10, 120, 5 and 95, so the dearest is the **Backpack at 120**. The program said 95 because everything out of the file is **text** and `max` compares text character by character; `'95'` beats `'120'` because `9` beats `1`. Fix: convert on load, straight after reading.
+
+```python
+with open("shop.csv", "r", newline="", encoding="utf-8") as f:
+    loaded = list(csv.DictReader(f))
+
+for row in loaded:                                   # <- add these three lines
+    row["price"] = int(row["price"])
+    row["in_stock"] = (row["in_stock"] == "True")
+```
+
+```text
+rows written: 5
+rows loaded : 5
+the dearest item costs: 120
+```
+
+**The three-second check:** `print(type(loaded[0]["price"]).__name__)` prints `str`. Not "does it look plausible?", because 95 does. `item` and `shelf` are left alone: `shelf` is a category, not a quantity.
+
+> **🧑‍🏫 Watch for:** a student who fixes Bug 3 with `max(..., key=int)` has the right answer and the wrong habit (the data is still text everywhere else). Accept it, then ask about `in_stock`.
+
+### Puzzle of the Week
+
+**Part 1**
+
+- **(a)** Number order: `1, 7, 9, 10, 70, 100`
+- **(b)** Text order: `'1', '10', '100', '7', '70', '9'`
+- **(c)** Biggest as text: `'9'`. Biggest as a number: `100`.
+- **(d)** Sorted as text, 1 to 30 begins `1, 10, 11, 12, ...`. Only **1** ends up where it started.
+
+```text
+text order  : ['1', '10', '100', '7', '70', '9']
+number order: [1, 7, 9, 10, 70, 100]
+```
+
+```python
+numbers = list(range(1, 31))
+by_text = sorted(numbers, key=str)
+print(by_text[:10])
+same = [n for i, n in enumerate(numbers) if by_text[i] == n]
+print("stay in place:", same)
+```
+
+```text
+[1, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+stay in place: [1]
+```
+
+- **(e)** A text comparison stops at the **first character that differs** and never compares lengths. `'9'` against `'100'`: `9` against `1`, decided, stop. Length only breaks a tie when one text is the start of the other (`'1'` before `'10'`).
+
+**Part 2**
+
+- **(a)** Accept any prediction. Most say **three**, then are surprised.
+- **(b)** The `csv` module **put quote marks round the name**, `"Ali, Jr"`, unasked, so the comma inside the name is not mistaken for one between fields. On reading it strips them and returns `'Ali, Jr'` in one piece.
+
+```text
+name,team,runs
+"Ali, Jr",Hawks,55
+Asha,Falcons,48
+```
+
+```text
+csv module gives 3 fields: {'name': 'Ali, Jr', 'team': 'Hawks', 'runs': '55'}
+```
+
+- **(c)**
+
+```text
+naive split gives 4 fields: ['"Ali', ' Jr"', 'Hawks', '55']
+```
+
+- **(d)** **Four** fields where there are three. Every column after the name shifts along by one: `team` becomes `' Jr"'` and `runs` becomes `'Hawks'`.
+- **(e)** Splitting on commas works for weeks, then one name has a comma and the table silently shifts sideways. The `csv` module already handles quoting, escaping and line endings correctly.
+
+### Think Deeper
+
+Open-ended, so there is no single key. Mark against these.
+
+**T1 (full marks needs all four).** Two situations where guessing destroys information, for example a shirt number `007` guessed as the number `7` (gone for good), or a phone number / postcode with a leading zero. One situation where not guessing is genuinely annoying, for example every numeric column of a big file needing its own conversion line. And the hard part answered: **the person who used the tool has to notice**, and would find out only by checking something independent of the tool, such as a count, a `type()` or a known value. Weak answer: "the computer should be more careful", with no one named.
+
+**T2 (full marks needs all four).** The two things that had to be true: the answer was **plausible** (90 is a believable score) and **nothing was checking**. A real example from their own life. What they would need alongside the number: a count, a range, or how it was worked out. A view on the uncomfortable question: a good answer says you cannot audit every number, but you can expect a check wherever a wrong number costs something, and a program that prints the row count beside the average is cheap to trust. Either side of the argument earns the mark if it is reasoned.
+
+### Build It — The Record Store
+
+The data is the student's own, so there is no single right answer; mark the shape. Model project below.
+
+#### Part 1 — Thirty records of your own
+
 
 The student's dataset is theirs. Model answer — a thirty-song playlist, five keys, four genres:
 
@@ -1435,9 +1752,17 @@ playlist = [
 ]
 ```
 
-**Mark:** exactly 30 records; identical five keys on every one; at least two numeric columns (`minutes` and `plays`); one categorical column with 3–5 repeating values (`genre`, with four). The `validate` function below is worth writing before anything else, because finding a typo now costs a minute and finding it in the CSV costs an hour.
+**Mark:** exactly 30 records; identical five keys on every one; at least two numeric columns (`minutes` and `plays`); one categorical column with 3–5 repeating values (`genre`, with four). The `validate` function in Part 2's program below is worth writing before anything else, because finding a typo now costs a minute and finding it in the CSV costs an hour.
 
-### Page 16.5 — Save it, and count the lines
+The small table in Part 1 (key / number or text / conversion) for the model playlist: `title`, `artist`, `genre` are text and need nothing; `minutes` is a number and needs `float()`; `plays` is a number and needs `int()`.
+
+#### Part 2 — Save it, and count the lines
+
+The workbook's Part 2 table for the model data: records typed **30**, lines in the file **31**, records + 1 = lines **yes**, line 1 `title,artist,genre,minutes,plays`, line 2 `Blue Lights,Nova,pop,3.5,120`. If a student has 30 lines, the missing thing is **`writeheader()`**.
+
+The whole model program follows. It also produces the output used for Parts 3 and 4.
+
+
 
 ```python
 """store.py - the Record Store: 30 records out to CSV, back in, round trip proved."""
@@ -1556,15 +1881,15 @@ rows accounted for: 30 of 30
 2. **`store.csv has 31 lines`.** Thirty records plus the header. A 30-line file means `writeheader()` is missing.
 3. **`highest plays (raw): 95`.** Ninety-five, on a playlist whose top song has 300 plays. This is the same bug as the class's `90`, on their own data, and a student who prints it and can explain it has understood the week. *(Why 95? Because text is compared character by character, and `9` is the highest first character in the whole column — no value starting with `1`, `2`, `3`, `4`, `6`, `7` or `8` can beat it, and a `5` followed by anything is at most `59`, however many digits it has.)*
 
-**16.5(a) Why does `sum(counts.values())` come to 30?**
+**Extra (not a workbook item), why does `sum(counts.values())` come to 30?**
 Because grouping puts every row in exactly one bucket and throws nothing away. 9 + 7 + 7 + 7 = 30 = `len(loaded)`. If it came to 29, one row went into a bucket you did not notice — most likely a genre with a stray space or a different capital letter.
 
-**16.5(b) Which questions could you answer from `raw`, and which need `loaded`?**
+**Extra (not a workbook item), which questions could you answer from `raw`, and which need `loaded`?**
 Anything that only *counts* rows or compares text works fine on `raw` — `group_count(raw, "genre")` gives exactly the same answer. Anything involving **arithmetic or ordering of numbers** needs `loaded`: averages, totals, maximums, "how many songs are over 4 minutes". The rule of thumb: **if a number is going to be added, divided or compared, it must be a number first.**
 
-### Page 16.6 — The proof sheet
+#### Part 3 — The proof sheet
 
-*For row 1 of your own data: every field, its value and its type, before and after conversion.*
+
 
 Model answer for the playlist above:
 
@@ -1576,7 +1901,14 @@ Model answer for the playlist above:
 | `minutes` | `'3.5'` | `str` | **yes** — `float()`, it has a decimal point | `3.5` | `float` |
 | `plays` | `'120'` | `str` | **yes** — `int()`, it is a whole number | `120` | `int` |
 
-**16.6(a) Which of your columns needed converting, which didn't, and why?**
+#### Part 4 — The round trip, and one wrong answer
+
+For the model data: rows out / rows in **30 / 30**; wrong answer from the raw data **95** (`highest plays (raw)`); right answer converted **300**; why the wrong one is wrong: the plays were still text, compared character by character, and `9` beats every other first character; `round trip identical?` **`True`**. If a student's prints `False`, the named row / field / change comes from the mismatch finder (see the example under A4).
+
+#### Part 5 — The sentence
+
+
+**Which of your columns needed converting, which didn't, and why?**
 
 Model answer:
 
@@ -1584,11 +1916,47 @@ Model answer:
 
 **Full marks needs three things:** which columns, which conversion, and **the reason** — that a text file can only store characters. An answer that lists the columns correctly but explains nothing has two of the three; ask for the third out loud.
 
-**16.6(b) What would happen if you used `int()` on `minutes`?**
+**Extra (not a workbook item), what would happen if you used `int()` on `minutes`?**
 `int("3.5")` gives `ValueError: invalid literal for int() with base 10: '3.5'`. `int()` will convert `"3"` but not `"3.5"` — it refuses to throw away the half rather than doing it quietly, which is the right behaviour. Use `float()`.
 
-**16.6(c) Your file is 30 lines, not 31. What did you forget, and what will go wrong?**
+**Extra (not a workbook item), your file is 30 lines, not 31. What did you forget, and what will go wrong?**
 `writer.writeheader()`. What goes wrong: `DictReader` will take your **first song** and use its values as the column names, so you will get 29 records back instead of 30, with keys like `'Blue Lights'` and `'120'`. The tell is that the two counts disagree — 30 out, 29 back.
+
+#### Part 6 — The Bug Log
+
+Two entries minimum, at least one containing the word **silent**. Model entries from this week:
+
+| What happened | Was there an error message? | What fixed it | What I will check next time |
+|---|---|---|---|
+| `max` on the plays said 95 when the top song had 300 (**silent**) | No | Converted `plays` with `int()` on load | Print `type()` of a number column straight after loading |
+| The loaded file had 29 records back from 30, or 30 lines instead of 31 (**silent**) | No | Added `writer.writeheader()` | Print records out and records in, and check lines = records + 1 |
+
+Accept any two honest entries. An entry with no "what I will check next time" has described the bug but not learned from it.
+
+### Draw It
+
+There is no single right drawing. A good one has **five rows**, one per column of the student's data: the "convert with" box says *nothing* for the text columns and names a real function for the number ones, and the bottom three boxes hold the line count, whether it is records + 1, and `True`. Model for the playlist: `title`, `artist`, `genre`: text, text, nothing. `minutes`: decimal, text, `float()`. `plays`: whole number, text, `int()`. Bottom boxes: **31** · **yes, 30 records + 1 header** · **True**.
+
+**The tell:** the "convert with" column is **not** the same on every row. A weak answer has `int()` on all five, which means "convert on load" was remembered as "convert everything" (and `int(row["title"])` would give a `ValueError`). Ask of each column: *would I ever add two of these together?*
+
+### Self-Check
+
+The "I can..." grid is the student's own rating; do not mark it, read it for 😕 ticks and pick one to re-teach.
+
+| Statement | Answer | Why |
+|---|---|---|
+| A CSV file stores which columns are numbers | **FALSE** | There is nowhere in a text file to keep that. It is the whole lesson |
+| A CSV with 12 records has 12 lines | **FALSE** | **13.** Lines = records + 1, because of the header |
+| `raw[0]["runs"]` is an `int` | **FALSE** | It is a `str`. Everything out of a CSV is text |
+| `"48" + "1"` is `49` | **FALSE** | `'481'`. `+` glues writing end to end |
+| `bool("False")` is `False` | **FALSE** | It is `True`. `bool()` asks "is there anything here?" |
+| `"w"` wipes an existing file with no warning | **TRUE** | Instantly, and it does not go to the bin |
+| `with` closes the file even if the code inside crashes | **TRUE** | That is the entire reason it exists |
+| You should convert every column on load | **FALSE** | Only the ones that were not text. `int(row["name"])` crashes |
+| `int("3.5")` gives `3` | **FALSE** | It raises `ValueError`. It refuses to throw the half away quietly |
+| A shirt number written `007` should be stored as a number | **FALSE** | It is an identifier. You would never add two of them, and `int("007")` is `7` forever |
+| If `DictReader` gives back 11 rows from a 12-record file, Python will warn you | **FALSE** | It cannot tell. That is why you print both counts yourself |
+
 
 ### Answers to every question posed in the lesson
 

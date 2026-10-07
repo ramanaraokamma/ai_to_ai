@@ -261,7 +261,7 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
 |---|---|
 | **No index cards** | Tear a sheet of A4 into 30 rough rectangles and number them. Scruffy is fine — the point is that they are countable and shuffleable. |
 | **No envelope** | Fold one sheet of paper around the six cards, tape it shut on all three open edges, and sign across every piece of tape. It works identically. |
-| **You have no printer** | Handout 19A is five lines you can write on paper in two minutes (the five problems are in §Answer Key K1). Handout 19B is four sentences — write each on a card by hand, which is arguably better. |
+| **You have no printer** | Handout 19A is five lines you can write on paper in two minutes (the five problems are in §Answer Key K1, which is the same five as Workbook Page 19.1). Handout 19B is four sentences — write each on a card by hand, which is arguably better. |
 | **The student has already lost their Week 17 photos** | Today does not need them. Today's homework starts a fresh collection anyway. Say so and move on; nothing is lost. |
 | **No calendar, no diary** | Write the two dates on the envelope and on the top of Handout 19A. The envelope is the calendar. |
 
@@ -429,7 +429,7 @@ thing in the student's head:
 ### 🔍 Worked Example Together — 14 minutes
 
 **Three splits on paper.** You hold the pen for the first, they hold it for the second and third.
-Handout 19A has all three plus two more for homework.
+Handout 19A has all three plus two more for homework (the same five problems as Workbook Page 19.1).
 
 **Split A — 30 cards, 80/20 (4 min).** You write, saying each line out loud.
 
@@ -883,18 +883,27 @@ Let them catch you.
 
 ## 📤 Homework to Assign
 
-**Workbook:** Week 19, pages 1–3. **Time: about 55 minutes**, plus the two photo sessions (about 15
-minutes each, on two different days).
+**Workbook:** Week 19 — the whole workbook, in its own order: Warm-Up, Practice Set A, Practice Set B,
+Puzzle of the Week, Think Deeper, Build It (Pages 19.1, 19.2 and 19.3), Draw It, Self-Check. **The
+three Build It pages are the heart of the homework and are what the script below is about.** The
+other sections are quicker and can be done in the days around them. **Time: about 55 minutes for the
+three Build It pages** (as below), plus about 60 minutes for the rest (Warm-Up 5, Set A 15, Set B 20,
+Puzzle 10, Think Deeper 10 — Think Deeper, and Draw It at about 10, are the stretch sections and may
+be skipped if time is short), plus the two photo sessions (about 15 minutes each, on two different
+days). Suggested spread: Warm-Up, Set A and the Puzzle after the lesson; Set B and Page 19.1 the next
+day; Page 19.2 and Session 1 before Session 2; Page 19.3, Draw It and Self-Check once the envelope is
+sealed.
 
 **Say this, word for word:**
 
-> "Three things, and the third one is the real one."
+> "There are several sections in the workbook, and I'll go through them with you. But three things on
+> the Build It pages matter most, and the third one is the real one."
 >
-> "First: page 1, five splitting problems. Show the multiplication and show the check every time. If
+> "First: Build It, Page 19.1 — five splitting problems. Show the multiplication and show the check every time. If
 > the answer isn't a whole number, tell me which way you rounded **and why** — that's the bit I'm
 > marking, not the number."
 >
-> "Second: page 2. Write up the four cheats — what leaked, too high or too low, and the fix in one
+> "Second: Page 19.2. Write up the four cheats — what leaked, too high or too low, and the fix in one
 > sentence. Then invent a fifth one of your own and try to make it sound completely reasonable."
 >
 > "Third, and this is the one that actually matters: **photos, on two different days.** Session one,
@@ -910,11 +919,18 @@ minutes each, on two different days).
 **Check before they leave:** ask them to say the two dates out loud, and point at where the envelope
 is taped.
 
-| Page | Task | Approx. time |
+| Workbook section | Task | Approx. time |
 |---|---|---|
-| 1 | Five splitting problems, multiplication + check shown | 20 min |
-| 2 | The four cheats written up, plus a fifth of your own | 20 min |
-| 3 | The photo plan and the envelope log: two dates, counts, ticked change-list, signature | 15 min |
+| ✅ Warm-Up (W1–W5) | Five questions about last week: controlled experiment, ink predictions, husky/wolf, the 95% table score | 5 min |
+| ✍️ Practice Set A (A1–A6) | Vocabulary blanks, when to split, true/false, match the four cheats, label the six-step timeline, 40-photo arithmetic | 15 min |
+| ✍️ Practice Set B (B1–B5) | 90/10 on 60 photos, the unshuffled deal, the Bruno trap, choosing a ratio for 8 photos a class, direction of error | 20 min |
+| 🧩 Puzzle of the Week | Five sealed envelopes, A to E: which one is honest | 10 min |
+| 🤔 Think Deeper (T1–T2) | The 12-patient illness; is your own test set honest? (stretch) | 10 min |
+| 🛠️ Build It, Page 19.1 | Five splitting problems (a)–(e), multiplication + check shown | 20 min |
+| 🛠️ Build It, Page 19.2 | The four cheats written up, plus a fifth of your own | 20 min |
+| 🛠️ Build It, Page 19.3 | The photo plan and the envelope log: two dates, counts, ticked change-list, signature, two sentences | 15 min |
+| 🎨 Draw It | Your own split, from photos to sealed envelope, piles at real relative sizes | 10 min |
+| 📊 Self-Check | Six tick-rows, for the student, not for marking | 3 min |
 
 > **🧑‍🏫 If a student asks** whether they can put the Session 1 photos into Teachable Machine and
 > retrain their Week 17 model: yes, that is allowed and it is a good instinct. Two conditions. They
@@ -931,7 +947,116 @@ the commitment is what does the work.
 
 ## 🔑 Answer Key
 
-### K1 — Workbook page 1: the five splitting problems
+The workbook ends with its own Answers section, which the student may open; this key agrees with it
+and adds the marking notes it does not have. It runs in workbook order: Warm-Up, Practice Sets A and B,
+Puzzle, Think Deeper, then Build It (K1–K3), then Draw It and Self-Check, then the in-lesson questions
+(K4–K6).
+
+### Warm-Up (W1–W5) — last week, five quick ones
+
+- **W1.** A controlled experiment changes **exactly one thing** and keeps everything else the same, so
+  anything that changes must have been caused by that one thing. *Marking:* the clause after "one
+  thing" is the idea. Half marks without it.
+- **W2.** So the result can surprise you. If you decide afterwards what you "expected", you always
+  expected whatever happened. Being wrong on the record beats being vaguely right afterwards.
+- **W3.** It learned "white fuzzy stuff at the bottom of the picture means wolf". Every wolf photo had
+  snow, no husky photo did. It learned nothing about wolves.
+- **W4.** **You cannot say.** Three things changed at once, so the information was never collected.
+  *Wrong answers to expect:* "the room" or "the fewer photos" — any single pick is a guess. Push for
+  "I can't tell", and then "so what should you have done?" (one knob at a time).
+- **W5.** Almost nothing useful: it works on the wooden table, where it was trained. It is a
+  training-conditions score. The 40% at the sink carries the information.
+
+### Practice Set A (A1–A6) — Understand It
+
+- **A1.** training set · test set · hold out · split ratio. (In that order of the four blanks.)
+- **A2.** **(b) before training.** *Why:* after training the model has studied every example, so
+  nothing is hidden; choosing six afterwards only changes what you call them. You cannot un-train a
+  photo. *Tempting wrong answer:* (d), "as long as the two piles are separate". Separate is a
+  consequence; **never seen** is the point.
+- **A3.** **FALSE.** More hidden photos give a better measurement of a worse model, because every test
+  photo is one the model cannot learn from. The ratio is a trade-off, not a dial marked "better".
+- **A4.** **1 → (b), 2 → (c), 3 → (d), 4 → (a).**
+- **A5.** Order: `collect → split → seal → train → open the envelope → score`. The decoy word is
+  **delete**. Circle **step 3, seal**: steps 4, 5 and 6 are honest only because it happened.
+- **A6.**
+```text
+   test  = 0.20 × 40 = 8
+   train = 40 − 8    = 32
+   check: 32 + 8 = 40  ✓
+```
+  *Marking:* 8 and 32 without the check line is a lost habit, not a wrong answer. Ask for it.
+
+### Practice Set B (B1–B5) — Use It
+
+- **B1.**
+```text
+   per class:   test  = 0.10 × 20 = 2
+                train = 20 − 2    = 18
+   × 3 classes: test = 6      train = 54
+   check: 6 + 54 = 60  ✓
+```
+  **Is 90/10 a good idea? No.** With 2 test photos per class, one photo is worth 1 ÷ 2 = 50 percentage
+  points, so a class can only score 0%, 50% or 100%. 80/20 gives 4 per class (25 points each), or
+  better, take more photos: 20 per class is thin whatever the split.
+- **B2.** He could get something like 12 knives, 5 forks and 1 spoon; his "test" is mostly a knife test.
+  Random does not mean even. *Fix:* split each class separately (0.20 × 30 = 6 of each, 18 in all) and
+  shuffle within each class so he does not get six photos from the same minute.
+- **B3.** This is **cheat 4**. *What is wrong with her sentence:* she says "dogs" but has only ever
+  tested Bruno. *What 10/10 measures:* can it recognise **Bruno**. *Fix:* a different dog (a
+  neighbour's, a cousin's); if only Bruno is available, report "new photos of the same dog, so this
+  does not say how it behaves on a dog it has never seen". *Not a fix:* "take the test photos from
+  further away" changes the photo, not the dog, and the brief forbids "better photos" anyway.
+- **B4.** No single right ratio; the **reason** is what you mark. Two strong answers: **70/30** (20% of
+  8 is 1.6, rounded up to 2 would make one photo worth 50 points; 30% gives 3 per class, one photo
+  about 33 points) or **80/20 rounded up to 2 per class** with a note that one photo is worth 50
+  points, plus "and honestly I should take 20 more photos first". *Weak:* "80/20 because that's the
+  rule".
+- **B5.**
+
+| Situation | Direction | What leaked |
+|---|---|---|
+| Trained on all 30, then picked 6 as the test set | too high | all six |
+| Photo of a training photo used as a test photo | too high | the photo / the object |
+| Held out 6, all from its best class | too high | the choice of which to hide |
+| Opened envelope, changed things, retested, reported the second score | too high | the decision |
+
+  **Why the same direction:** each one lets the model see, or effectively see, something it should not,
+  and extra information can only help a score. Cheating never accidentally lowers your mark, so a
+  surprisingly high score is always worth investigating and a disappointing one almost never is.
+
+### Puzzle of the Week — the five envelopes
+
+**The honest one is A** (sealed on the 14th, four days before training on the 18th, signature across
+the flap).
+
+| Envelope | Verdict | Why |
+|:--:|---|---|
+| **A** | honest | Sealed before training, signature across the flap. Both conditions met. |
+| **B** | no | Signature only in the corner: the flap could be lifted and pressed back and nobody would know. |
+| **C** | no | Flap torn and re-taped: it has been opened, and you cannot un-see. |
+| **D** | no | Sealed on the **21st, three days after training on the 18th**: the photos were unsealed during training. Cheat 1 with a beautiful signature. |
+| **E** | no | No signature means no evidence either way, so nobody can rely on the score. |
+
+**Bonus (why the date ruins D):** a seal only proves nobody looked after it was closed; it cannot
+undo training that already happened. The seal must come earlier than the training, or it is theatre.
+*Watch for:* students who reject D only because "it looks too perfect". Make them find the two dates.
+
+### Think Deeper (T1–T2) — stretch
+
+- **T1.** No clean answer, and that is the answer. Full credit for arguing one option and naming its
+  cost. (1) Train several times holding out a different one or two patients each time and average (a
+  real technique, met at Level 2); cost, fiddly and still only 12 patients of evidence. (2) Report a very
+  wide range of uncertainty ("based on 12 cases, true accuracy anywhere between 30% and 90%"); cost,
+  nobody reads the small print. (3) Refuse to deploy and collect more cases first; cost, time, and
+  people go untreated. **The one wrong move:** test on 2 patients, report a lovely percentage, and let
+  people assume it was properly measured. That is a reporting error, not a maths error.
+- **T2.** Partly honest. The score predicts well how the model behaves **in your house** (your light,
+  hands, table, three objects) and not at all how it behaves in someone else's kitchen. A good answer
+  says the test set is honest about one house and silent about everyone else's. Weeks 31 and 33
+  measure exactly this; do not resolve it now.
+
+### K1 — Build It, Page 19.1: the five splitting problems
 
 **(a) 3 classes, 30 photos each (90 total), 80/20.**
 ```
@@ -997,7 +1122,7 @@ what you set out to do. A student who spots this gets full marks even if the res
 that class's score. That is a warning label, not a disaster — you just have to say it when you report
 the number.
 
-### K2 — Workbook page 2: the four cheats
+### K2 — Build It, Page 19.2: the four cheats
 
 Every one of the four reports a score that is **too high**. If the student noticed that pattern
 themselves, say so out loud — it is the most valuable single observation of the week.
@@ -1039,7 +1164,7 @@ themselves, say so out loud — it is the most valuable single observation of th
   photos of the same object, so this number does not tell you how it behaves on a bottle it has never
   seen."*
 
-**The thread through all four, and the sentence to look for on page 2:** a test set is only honest if
+**The thread through all four, and the sentence to look for on Page 19.2:** a test set is only honest if
 it differs from the training set **in the same ways the real world will differ.** Frames, sessions,
 tweaking rounds and single objects are four different ways that quietly fails.
 
@@ -1056,7 +1181,7 @@ scenario that sounds plausible, a named leak, and a fix. Strong examples student
 - *"I held out 6 photos but they were all of the class I knew it was good at."* Leak: the choice of
   which to hide. Fix: shuffle, and split each class separately.
 
-### K3 — Workbook page 3: the photo plan and the envelope log
+### K3 — Build It, Page 19.3: the photo plan and the envelope log
 
 Model answer:
 
@@ -1091,6 +1216,22 @@ Model answer:
 
 **Marking note:** accept any answer that gets *"it has already seen them"* into the first one. Refuse
 "because that's cheating" as a complete answer — push for what specifically goes wrong.
+
+### Draw It and Self-Check
+
+**Draw It.** No single right drawing. Check for five things: (1) two piles at visibly different sizes,
+training bigger; (2) the student's own real numbers on both (e.g. `TRAIN 60`, `TEST 15`); (3) an
+envelope round the small pile with a signature **crossing the flap**; (4) the check line (`15 + 60 = 75
+✓`); (5) arrows left to right, collect → split → seal → train, with the **seal before train**. The one
+thing that must be right is the seal-before-train order; a drawing with training first and sealing
+second has drawn cheat 1, which is a useful mistake to make on paper. A nice extra is the opening date
+written on the envelope.
+
+**Self-Check.** Six tick-rows (splitting at a stated ratio with the check; why the split comes before
+training; spotting all four cheats; why the same object in both sets cannot be fixed by care; sealing
+and signing and who may open it; using the four vocabulary words). It is **not marked**. Glance at the
+row for cheat 4: a 😀 there usually means the student has not yet met the Bruno question (B3), so ask
+one.
 
 ### K4 — Every question posed in the lesson
 
@@ -1146,7 +1287,7 @@ fifteen-row test sheet, by hand, one row at a time, with the long division writt
 
 **Prep early:**
 
-- **Print the fifteen-row scoring sheet** (Workbook page W20.1) or rule it by hand. You need it filled
+- **Print the fifteen-row scoring sheet** (Handout 20A; it is a handout, not a workbook page) or rule it by hand. You need it filled
   in already, with the results in the Week 20 answer key — the student's job is to *score* it, not to
   collect it.
 - **A coloured pen or highlighter** for splitting the sheet by class. It is on the Week 0 list for

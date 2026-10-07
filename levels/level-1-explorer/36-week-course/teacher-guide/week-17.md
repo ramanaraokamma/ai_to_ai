@@ -756,7 +756,13 @@ something else.
 
 ## 📤 Homework to Assign
 
-**Workbook:** Week 17, pages 1–2. **Time: about 45 minutes.**
+**Workbook:** Week 17 (`workbook/week-17.md`). It has nine sections: ✅ Warm-Up (W1–W5), ✍️ Practice Set A
+(A1–A6), ✍️ Practice Set B (B1–B5), 🧩 Puzzle of the Week, 🤔 Think Deeper (T1–T2), 🛠️ Build It (Parts 1
+and 2), 🎨 Draw It, 📊 Self-Check, and a closed ✅ Answers section at the end. **Time: about 45
+minutes for 🛠️ Build It, which is the part that needs the laptop and `baseline-v1.tm`.** The paper
+sections (Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Draw It, Self-Check) need no laptop;
+set them as a second sitting before Week 18, Warm-Up first. Do the Build It first — it is the one the
+script below describes, and everything in the lesson has been leading to it.
 
 **Say this, word for word:**
 
@@ -776,10 +782,17 @@ something else.
 **Check before they leave:** ask them to name one of the five objects they're going to use. That's
 step one. Nothing more.
 
-| Page | Task | Approx. time |
+| Workbook section | Task | Approx. time |
 |---|---|---|
-| 1 | Five unseen objects: prediction, three scores, sum, margin | 25 min |
-| 2 | The surprise paragraph: expected / actual / best guess at why | 20 min |
+| 🛠️ Build It, Part 1 | Five unseen objects: prediction first, then three scores, sum, winner, margin, the counts and the summary sentence | 25 min |
+| 🛠️ Build It, Part 2 | The surprise paragraph: expected / actual / best guess at why | 20 min |
+| ✅ Warm-Up | W1–W5, five quick questions on last week's confidence (notebook closed) | 5 min |
+| ✍️ Practice Set A | A1–A6: blanks, multiple choice, true/false, matching, label the five clicks, balance checks | paper, second sitting |
+| ✍️ Practice Set B | B1–B5: what would go wrong, the mug/plate/bowl table, the 33/33/34 model, the lost model | paper, second sitting |
+| 🧩 Puzzle of the Week | Whose bar is whose (slots 1–3) | paper, second sitting |
+| 🤔 Think Deeper | T1 (how 40 photos is enough), T2 (faces and consent), a paragraph each | paper, second sitting |
+| 🎨 Draw It | Draw the journey from photos to a number; label the one thing that is gone | paper, second sitting |
+| 📊 Self-Check | Tick the six "I can…" rows; one question for next lesson | 2 min |
 
 > **⚠️ Watch out:** they must **not** delete or overwrite `baseline-v1.tm`. Week 18 loads it four
 > times. Say this out loud as they leave.
@@ -789,8 +802,23 @@ step one. Nothing more.
 ## 🔑 Answer Key
 
 *This is a lab, so most answers are the student's own measurements. What follows is (a) the answers
-to every question posed in the lesson, (b) a model baseline table so you know what a good one looks
-like, and (c) fully worked model answers for the homework.*
+to every question posed in the lesson (K1), (b) a model baseline table so you know what a good one
+looks like (K2), (c) fully worked model answers for the two Build It parts (K3, K4), and (d) an
+answer for every other item in the workbook (K7–K13), with the values taken from the workbook's own
+Answers section. Each section is labelled with the workbook item numbers, so you can mark straight
+down the printed workbook.*
+
+| Workbook section | Key section |
+|---|---|
+| ✅ Warm-Up W1–W5 | K7 |
+| ✍️ Practice Set A, A1–A6 | K8 |
+| ✍️ Practice Set B, B1–B5 | K9 |
+| 🧩 Puzzle of the Week | K10 |
+| 🤔 Think Deeper T1–T2 | K11 |
+| 🛠️ Build It, Part 1 | K3 |
+| 🛠️ Build It, Part 2 | K4 |
+| 🎨 Draw It | K12 |
+| 📊 Self-Check | K13 |
 
 ### K1 — Lesson questions
 
@@ -843,18 +871,25 @@ object wrong: nothing. Log it honestly and carry on. A weak baseline works perfe
 18, and it usually produces a *more* interesting set of sabotage results. Do **not** retake photos to
 make the table look nicer.
 
-### K3 — Homework page 1: five unseen objects
+### K3 — 🛠️ Build It, Part 1: five unseen objects
 
 Model answer. The student's five objects will differ; these are typical and the *reasoning* is the
 part to mark.
 
-| # | object held up | spoon % | tbrush % | comb % | sum | winner | margin | in a class? |
-|:--:|---|:--:|:--:|:--:|:--:|---|:--:|---|
-| 1 | a pencil | 14 | **72** | 14 | 100 | toothbrush | 58 | no |
-| 2 | a door key | **63** | 22 | 15 | 100 | spoon | 41 | no |
-| 3 | an empty hand | 31 | 26 | **43** | 100 | comb | 12 | no |
-| 4 | a sock | **48** | 30 | 22 | 100 | spoon | 18 | no |
-| 5 | a fork | **81** | 12 | 7 | 100 | spoon | 69 | no |
+| # | object held up | predicted | spoon % | tbrush % | comb % | sum | winner | margin | in a class? |
+|:--:|---|---|:--:|:--:|:--:|:--:|---|:--:|---|
+| 1 | a pencil | toothbrush | 14 | **72** | 14 | 100 | toothbrush | 58 | no |
+| 2 | a door key | spoon | **63** | 22 | 15 | 100 | spoon | 41 | no |
+| 3 | an empty hand | no idea | 31 | 26 | **43** | 100 | comb | 12 | no |
+| 4 | a sock | comb | **48** | 30 | 22 | 100 | spoon | 18 | no |
+| 5 | a fork | spoon | **81** | 12 | 7 | 100 | spoon | 69 | no |
+
+**The three counts the workbook asks for:** objects that were in one of the classes: **0 of 5**. Right
+answers: **0 of 5**. Margins over 40: **3 of 5** (58, 41 and 69).
+
+The **"I predict it will say…"** column must be filled in **before** each object is held up; the
+"predicted" column above is a sample. The prediction is not marked right or wrong, only marked
+present.
 
 **What every row has in common, and what the student should notice:** none of the five objects is in
 any class, so **every single answer is wrong**, and yet three of the five have margins over 40. The
@@ -875,11 +910,11 @@ wrong five times out of five."*
 - **Fork → spoon, 69.** The worst row, because it is the most confident. A fork is genuinely
   spoon-shaped and the model commits.
 
-**Marking guide:** full credit needs all three numbers per row, the sum checked, the margin computed,
-and the observation that all five were wrong. A student who wrote only the winner has done a third of
+**Marking guide:** full credit needs the prediction written first, all three numbers per row, the sum
+checked, the margin computed, the three counts, and the observation that all five were wrong. A student who wrote only the winner has done a third of
 the work.
 
-### K4 — Homework page 2: the surprise paragraph
+### K4 — 🛠️ Build It, Part 2: the surprise paragraph
 
 **Model answer:**
 
@@ -928,6 +963,99 @@ If the internet failed or the photos didn't exist, run the lesson on paper using
 and the table in §K2 as the "results", then schedule a 30-minute build before Week 18. Week 18
 **cannot** run without a real trained model and a real `.tm` file — it is entirely built on
 retraining that model four times.
+
+### K7 — ✅ Warm-Up (W1–W5)
+
+Five questions about last week's confidence idea. Notebook closed.
+
+| Item | Answer | Marking note |
+|---|---|---|
+| **W1** | `68 − 30 = 38`. A margin of 38 is in the 30–59 band: fairly clear, act on it but log it. | Wrong-answer map: **66** means they subtracted the *last* place (68 − 2). Second place, not last place. |
+| **W2** | They always add to **100**. The model has exactly 100 points of belief and must give every point to one of the boxes it has; it cannot hold any back or put points in a box that does not exist. If the three do not make 100, a bar was misread. | Accept any wording that says "100" and "all the points are shared out". |
+| **W3** | The object is in **none** of its classes. A spoon/toothbrush/comb model shown a stapler might say 99 / 1 / 0: 100 points, three boxes, no way to say "none of these". Nothing is broken. Also acceptable: testing on a photo it was trained on, so the 99% says nothing about new objects. | "The AI is wrong/broken" is the misconception from §Where This Lesson Goes Wrong. |
+| **W4** | It will mostly stop saying "comb", because combs are only 8 of 408 photos and giving up on them barely changes the total mistakes. `400 ÷ 408 = 0.98039… ≈ 98.0%` overall, and **0% right on every comb**. | Both halves are needed: the behaviour *and* the 98%. |
+| **W5** | An extra class for "none of the above". Three things: an empty hand, a bare table, a fork. Also fine: a wall, a pen, the floor, a book. | Any three things the camera will realistically see that are not a real class. |
+
+### K8 — ✍️ Practice Set A (A1–A6)
+
+- **A1.** (a) `(biggest − smallest) ÷ biggest`, answer under **20**%. (b) An **epoch**; Teachable Machine does **50** by default. (c) **Download project as file**. (d) The **photos**.
+- **A2.** **C** — gone completely, and nothing warned you. There is no autosave; refreshing the page loses it too, and on some machines a long sleep does. Rebuild time: about **15 minutes**, if the photos are already sorted. (Which is why "I'll save it later" is an expensive sentence.)
+- **A3.** **FALSE.** The two numbers: the model file is about **3 megabytes**, the 120 photos that made it about **40 megabytes**. The model is much smaller than the data, so it cannot be storing it. Training squeezed the photos into a pattern and let them go, like a cake: you cannot get the eggs back out. Full credit needs both numbers.
+- **A4.** pencil beside a class name = **S**; + Add a class = **T**; Webcam / Upload = **Q**; Train Model = **R**; ☰ → Download project as file = **P**.
+- **A5.** The five clicks on Figure W17.1, in the order the workbook's answer gives them: (1) the **☰ menu**, top-left, needed at the very end for *Download project as file* and next week for *Open project from file*; (2) the **pencil beside a class name**, renaming `Class 1` to `spoon`, the step everybody skips and regrets; (3) **Webcam / Upload**, loading photos into that class; (4) **+ Add a class**, the third box, also named properly; (5) **Train Model**, the twenty seconds, touch nothing while it runs. Full credit needs the five things named. A slightly different order is fine as long as **Train Model is last of the building steps** and the **save** is identified as its own separate step that nothing else does for you.
+- **A6.**
+
+| | counts | working | % | verdict |
+|---|---|---|:--:|---|
+| (a) | 41 / 40 / 39 | `(41 − 39) ÷ 41 = 2 ÷ 41 = 0.0487…` | **4.9%** | **PASS** |
+| (b) | 52 / 40 / 33 | `(52 − 33) ÷ 52 = 19 ÷ 52 = 0.3653…` | **36.5%** | **FIX** |
+| (c) | 8 / 8 / 8 | `(8 − 8) ÷ 8 = 0 ÷ 8 = 0` | **0%** | PASS |
+
+  Why (c) is still a bad idea: **8 photos is far too few for any class.** Perfectly balanced and useless, so the model sees almost no variety and every margin collapses. Balance is necessary, not sufficient; you need balance *and* enough examples, about 40 each. A student who subtracts from the *smallest* instead of the biggest gets `19 ÷ 33 = 57.6%` in (b): same verdict, wrong number.
+
+### K9 — ✍️ Practice Set B (B1–B5)
+
+- **B1.** (a) **One**, possibly two if her hand drifted. 214 samples, one situation. (b) 214 near-identical frames teach what one frame teaches, and her spoon class now has 214 against about 40 in the others: `(214 − 40) ÷ 214 = 81%`, badly imbalanced, so the model leans towards spoon on everything. (c) Delete the batch. Then record for **two seconds, stop, move the object** (new angle, distance, background, hand in or out of shot), two seconds, stop, move again. About twenty bursts gives roughly 40 samples over 20 genuinely different situations.
+- **B2.** (a) He may claim "my model scores 96% on cats, dogs and rabbits photographed on my blue bedspread." That is the only claim he has evidence for. (b) He may **not** claim a cat/dog/rabbit classifier: he has no evidence anywhere else, and the blue bedspread is in every training photo, so "blue fuzzy background" may have become part of what all three animals look like. (c) Carry the same rabbit to the kitchen floor and hold it up the same way. Change **one** thing, the background, and nothing else. If the score collapses, the bedspread was doing the work. (This is next week's experiment 2; a student who wrote this has invented the lesson, so say so.)
+- **B3.** (a) Every sum is **100**. Margins in order: **91, 84, 71, 79, 65, 16, 61, 41, 4**.
+
+| object | position | working | margin |
+|---|---|---|:--:|
+| mug | flat on | `94 − 3` | 91 |
+| mug | tilted | `90 − 6` | 84 |
+| mug | far away | `82 − 11` | 71 |
+| plate | flat on | `87 − 8` | 79 |
+| plate | tilted | `79 − 14` | 65 |
+| plate | far away | `52 − 36` | 16 |
+| bowl | flat on | `76 − 15` | 61 |
+| bowl | tilted | `65 − 24` | 41 |
+| bowl | far away | `45 − 41` | 4 |
+
+  Wrong-answer map: plate flat on is `87 − 8 = 79`, because second place is bowl on 8, not mug on 5. Students who subtract the mug column (5) get 82. (b) Smallest margin: **bowl, far away, 4**. (c) The worst pair is **plate and bowl**: in every small-margin row the runner-up is the other of the two (plate far away has bowl second on 36; bowl far away has plate second on 41), while mug is never the runner-up in a close row. From a distance a plate and a bowl are both round and flat-ish; a mug has a handle. (d) The score column says nothing: nine of nine correct. But two margins (16 and 4) sit in the "do not act on it" band, so those answers are right by a hair and a centimetre of movement could flip them. The margin found the weak spot before anything went wrong, which is why the margin column exists.
+- **B4.** (a) **No**, the software is not broken. (b) Almost certainly the three classes look identical to the model: same background, light and distance in every photo of all three, so nothing separates the classes except a small object on a dominant background. Second most likely: one class has almost no samples, or the same photos were loaded into all three. (c) A data fix, not a software fix: retake about **10 photos per class in three genuinely different places** (surface, light, distance), reload, retrain. Do not press Train again on the same photos. (d) Blind guessing with three classes scores **33.3%**, so a model sitting at 33% has learned nothing usable. That is not "a weak model", it is "no model".
+- **B5.** (a) There is **no autosave** and nothing on the page warns you; reloading the tab, which some machines do by themselves after sleeping, throws the model away. (b) **☰ menu → Download project as file** the moment training finished and the model worked, before testing anything and before dinner. Save first, admire later. (c) No. Train again builds a **new** model. With the photos still sorted it takes about fifteen minutes and gives an almost identical model, but training has some randomness, so his baseline numbers would shift slightly and any comparison with the old table would be worthless. Only the saved `.tm` file gets back **the same model**.
+
+### K10 — 🧩 Puzzle of the Week
+
+Check the three steps, then the answer.
+
+- **Step 1.** A comb was held up and slot 3 scored 83, margin `83 − 9 = 74`, a clear win. So **slot 3 is the comb class.**
+- **Step 2.** A spoon was held up and slot 2 scored 80, margin `80 − 12 = 68`. So **slot 2 is the spoon class.**
+- **Step 3.** Three classes, two slots pinned down, so by elimination **slot 1 is toothbrush**. No third clue needed.
+- **The answer:** slot 1 = **toothbrush**, slot 2 = **spoon**, slot 3 = **comb**.
+- **Step 4.** In row 3 slot 1 has the top score (74), so the model said **toothbrush**. Margin: `74 − 15 = 59`.
+- **The hard part — should you believe row 3?** **No.** A margin of 59 looks trustworthy, but the row says "held up: something else". We do not know what the object was and there is a good chance it was not one of the three classes, in which case 74% is a confidently wrong answer with a healthy-looking margin, like the fork. The rule: you cannot judge a readout from the numbers alone; you must also know what was in front of the camera. Rows 1 and 2 are trustworthy because the object was a real class. Row 3 is *unjudgeable*, and unjudgeable is not the same as fine. Give full credit for "no" plus that reason; a bare "yes, 59 is big" is the misconception the whole term is about.
+
+### K11 — 🤔 Think Deeper (T1–T2)
+
+Paragraph answers. Mark for the ideas, not the wording.
+
+**T1 — must contain:** the phrase *starts from a model that was already trained*; that the million photos and the week of work were spent once, by someone else (Google), on everyday photographs, so the base model already knows edges, curves, shine, fur, wood grain and fabric texture; that the student's 40 photos per class only teach the last small step, which of those known patterns go with which of their three names; so the two facts are not in competition. Model answer, in short: *"The million photos are still there, they are just in somebody else's twenty seconds, not mine."*
+
+**T2 — must contain all three cases, and a reason for where it stops being fine:**
+
+| Case | Expected verdict |
+|---|---|
+| Your own face, stays on your laptop | Completely fine: your face, your laptop, your decision, and nothing is uploaded because training happens in the browser tab. |
+| A friend's face, with permission | Mostly fine, but permission must be real and specific: what the photos are for, where they are stored, for how long, and that she can ask for them to be deleted. Permission for a school project is not permission to put the model on the internet. |
+| Photos of people taken off the internet | This is where it stops being fine. Those people agreed to nothing; a public photo was not offered for training a face model, and they cannot ask for removal because they do not know the dataset exists. |
+
+What changed along that line is **who gets to decide**: you about you, then your friend about herself for one stated purpose, then nobody, because you just took it. It is an ethics question, not a technical one. Do not mark down an answer that draws the line slightly elsewhere if the reason is about consent.
+
+### K12 — 🎨 Draw It
+
+There is no single right drawing. The figure is a blank frame (Figure W17.3) for the student to draw in. Full credit needs four things:
+
+- [ ] **Four stages, left to right, in order:** photographing, three named class boxes, training, live prediction (a screen with three bars and a number).
+- [ ] **Real class names** on the boxes (`spoon`, `toothbrush`, `comb`, not `Class 1`), with a **sample count under each**, ideally the balance sum beside them, e.g. `(41−39)÷41 = 4.9%`.
+- [ ] **Training shown as repeated:** "50 passes", a loop arrow round the machine, or `50 passes × 120 photos = 6,000`. One arrow through the machine misses the idea of an epoch.
+- [ ] **The photos marked as gone after training:** a dashed outline, a crossed-out arrow from the model back to the photos, or "40 MB in, 3 MB out". This is the part that earns the marks.
+
+Test to give the student: *could somebody who missed the lesson build a model using only this picture?* If they would end up with classes called `Class 1`, or would not know when to save, add those bits.
+
+### K13 — 📊 Self-Check
+
+Six "I can…" rows and one open question ("One thing I want to ask about next lesson"). Nothing is marked right or wrong. Read the ticks in the 😕 column and the open question: any "not yet" on *explain why the photos are not inside the model* or *save the project as a file and find it on the disk* is worth five minutes at the start of Week 18, because Week 18 loads `baseline-v1.tm` four times.
 
 ---
 

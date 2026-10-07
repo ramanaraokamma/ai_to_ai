@@ -15,7 +15,7 @@
 | **New maths** | **None.** Not one new idea. Today's job is to check numbers you already have. |
 | **New syntax** | `torch.tensor([...], requires_grad=True)` · `loss.backward()` · `w.grad` · `t.item()` |
 | **Dataset** | **No dataset.** Hand-typed tensors, plus the exact 2 → 2 → 1 network numbers from Week 18. Everything today fits on the board. |
-| **Materials** | Week 18's four gradient arrays **still on the wall — this is essential** · printed workbook pages 20.1–20.6 · the Bug Log · a wide space on the board for the two-column match test |
+| **Materials** | Week 18's four gradient arrays **still on the wall — this is essential** · the printed workbook (its **Build It** section is the homework) · the Bug Log · a wide space on the board for the two-column match test |
 | **Tech needed** | Laptop with Python 3, numpy, matplotlib and **PyTorch** (`torch`). **Check `import torch` works on every machine before the lesson** — the proxy blocks `pip`, so a missing install means pairing students, not installing. **torchvision is not needed and is not available.** |
 | **Prep time** | 25 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | Every file today runs in **under 2 seconds**. `match_test.py` is instant. Nothing trains. |
@@ -551,13 +551,13 @@ print("biggest disagreement anywhere: %.8f" % worst)
 
 Run `python3 match_test.py`. You must see **exactly** the output printed in §6 above, ending in `biggest disagreement anywhere: 0.00000000`. **Runtime: instant, well under a second.**
 
-- [ ] **Run `break_three_ways.py`** (full file in the Answer Key, page 20.4) so all three tracebacks are familiar. **Runtime under 2 seconds.**
-- [ ] **Run `item_experiment.py`** (full file in the Answer Key, page 20.6). **Runtime under 2 seconds.**
+- [ ] **Run `break_three_ways.py`** (full file in the Answer Key, under *Class-activity files*) so all three tracebacks are familiar. **Runtime under 2 seconds.**
+- [ ] **Run `item_experiment.py`** (full file in the Answer Key, under *Class-activity files*). **Runtime under 2 seconds.**
 - [ ] **Do this one thing on a calculator yourself:** `sigmoid(2.2)`. Type `2.2`, make it negative, `e^x` → `0.110803`; add 1 → `1.110803`; press `1/x` → **`0.90024951`**. Then `ln(0.90024951)` → `−0.10508332`, so the loss is `0.10508332`. **If you have not done that on a real calculator you will not be able to answer "where did 0.9002 come from?", and somebody will ask.**
 - [ ] **Break it on purpose, twice**, so both deliberate mistakes in the live-code are muscle memory:
   1. Leave `requires_grad=True` off `W1`. Real message: `RuntimeError: element 0 of tensors does not require grad and does not have a grad_fn`.
   2. Leave off `dtype=torch.float64`. **No error appears.** The differences in the match table become about `1e-8` instead of `0.00000000` — a beautiful, harmless, teachable disagreement.
-- [ ] **Print workbook pages 20.1–20.6.**
+- [ ] **Print the workbook** (every section from Warm-Up to Self-Check; **Build It** is the homework).
 - [ ] **Clear a wide space on the board** — you need two columns of nine numbers side by side, with room for a third column of zeros.
 
 ### 5 minutes on the day
@@ -565,7 +565,7 @@ Run `python3 match_test.py`. You must see **exactly** the output printed in §6 
 - [ ] Editor open, terminal ready. **`match_test.py` deleted or renamed** — they type it.
 - [ ] Week 18's nine numbers on the board, left-hand column, **before anybody sits down.**
 - [ ] A calculator on the desk. You will use it in the hook.
-- [ ] Workbook 20.1 out — the ten slopes, **hand answers written in pen first**.
+- [ ] Workbook open at **Build It, Part A** — the ten slopes, **hand answers written in pen first**.
 - [ ] Bug Log out.
 - [ ] Last week's shape ladder still on the wall.
 
@@ -1006,8 +1006,8 @@ This section gives the whole student activity, part by part, with the setup and 
 ### Setup
 
 - `match_test.py`, in progress from the live-code (or handed out — see Differentiation).
-- Week 18's nine numbers **visible**, either on the wall or copied into workbook page 20.2.
-- Workbook page 20.2 (the nine-row table) and 20.4 (three breakage boxes).
+- Week 18's nine numbers **visible**, either on the wall or copied onto a sheet of paper.
+- Two sheets of plain paper: one ruled into the nine-row table, one into three breakage boxes. (The workbook has no printed page for these two tasks; the Answer Key lists both under *Class-activity files*.)
 - The Bug Log.
 
 ### Part 1 — the match test (10 minutes)
@@ -1034,7 +1034,7 @@ The nine numbers, so you can mark at a glance:
 
 ### Part 2 — break it three ways (10 minutes)
 
-Three sabotages, three real messages, three boxes on page 20.4. **Predict first, in one sentence, then run.**
+Three sabotages, three real messages, three boxes on the second sheet. **Predict first, in one sentence, then run.**
 
 > **Break 1: "Call `loss.backward()` twice in a row. Predict what happens."**
 >
@@ -1062,8 +1062,8 @@ Around the room, one sentence each, no writing:
 
 ### What "finished" looks like
 
-- Nine rows on page 20.2 with `0.00000000` in every difference cell (or `~3e-08` with an explanation of float32).
-- Three boxes on page 20.4 with a **prediction**, the **real message**, and a **one-sentence why**.
+- Nine rows on the table sheet with `0.00000000` in every difference cell (or `~3e-08` with an explanation of float32).
+- Three boxes on the breakage sheet with a **prediction**, the **real message**, and a **one-sentence why**.
 - Two Bug Log entries minimum.
 - The student can say, unprompted: **"`.grad` adds, so 6 plus 27 is 33."**
 
@@ -1094,7 +1094,7 @@ Three questions: **"what is 2 × 3?"** (6 — and that is the answer PyTorch gav
 
 1. **Predict then verify all ten of the homework slopes** without running them first — including `1/x` at `x = 2` (`−0.25`) and `torch.relu(x)` at `x = −2` (`0`). The relu one is the interesting argument: is the slope 0 or undefined at exactly 0? PyTorch says `0`. **Ask them whether that is a fact or a decision.** (A decision, and a documented one.)
 2. **The non-leaf warning.** `x = torch.tensor([3.0], requires_grad=True)`, `y = x * 2`, `z = (y * y).sum()`, `z.backward()`, then print `y.grad`. Real answer: `None` plus a long `UserWarning`, while `x.grad` is `24.0`. Then the arithmetic: `z = (2x)²= 4x²`, slope `8x`, `8 × 3 = 24`. **Verify it by nudging.**
-3. **Measure the memory cost** with `memcost.py` (Answer Key, page 20.6), two runs. Ours: **100.3 MB against 14.3 MB.** Their numbers will differ and the ratio will wobble a little, but it should stay several times.
+3. **Measure the memory cost** with `memcost.py` (Answer Key, *Class-activity files*), two runs. Ours: **100.3 MB against 14.3 MB.** Their numbers will differ and the ratio will wobble a little, but it should stay several times.
 4. **Batch the match test.** Feed four rows of input instead of one, `x = torch.tensor([[1.0, 2.0], [0.5, 1.0], [2.0, 0.0], [1.5, 1.5]])` with four labels, and confirm the gradient shapes are still `(2, 2)`, `(1, 2)`, `(2, 1)`, `(1, 1)` — **unchanged, because a gradient always has the shape of its knob, no matter how many rows went in.** That is Week 19's rule, restated in torch.
 5. **Break `backward()` on a non-scalar:** `loss = (pred - y)` without `.mean()`. Real message: `RuntimeError: grad can be implicitly created only for scalar outputs`. Ask why a slope needs one number to start from. (Because "how much does the loss change" only makes sense if there is one loss.)
 
@@ -1297,15 +1297,15 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, two pages, and both of them are about checking rather than building.
+> "About an hour, two parts, and both of them are about checking rather than building. Both are in the workbook section called **Build It**.
 >
-> **First, page 20.1 — ten slopes, and your hand answer beside each.** Ten tiny expressions. For every one: **write your own answer first, in pen** — from Week 12's nudge, or from the shortcut rules if you know them — then run the four lines of torch and put a **tick or a cross** beside your prediction. I want to see the crosses. A page of ten ticks and no working is a page I do not believe.
+> **First, Build It Part A — ten slopes, and your hand answer beside each.** Ten tiny expressions. For every one: **write your own answer first, in pen** — from Week 12's nudge, or from the shortcut rules if you know them — then run the four lines of torch and put a **tick or a cross** beside your prediction. I want to see the crosses. A page of ten ticks and no working is a page I do not believe.
 >
-> **Second, page 20.6 — the `.item()` experiment.** Build a list of 200 losses **the wrong way**, on purpose. Then: print two of them, print their type, try to plot them and paste whatever happens. Then fix it with **one method call**, print two of them again, print the type again, and write **one sentence** saying what you were storing before.
+> **Second, Build It Part B — the `.item()` experiment.** Build a list of 200 losses **the wrong way**, on purpose. Then: print two of them, print their type, try to plot them and paste whatever happens. Then fix it with **one method call**, print two of them again, print the type again, and write **one sentence** saying what you were storing before.
 >
 > That last sentence is the one I am marking. Not 'I was storing tensors' — **what is inside a tensor that a number does not have?**"
 
-**Workbook pages:** 20.2, 20.3 and 20.4 in class · **20.1 and 20.6** at home · **20.5** stretch, for anyone who wants the memory measurement.
+**Workbook sections:** the match test and the three breakages are done **in class**, on paper, from the lesson (they have no workbook page). **Build It, Part A and Part B** at home (the core, about an hour). **Build It, Stretch** for anyone who wants the memory measurement. The rest of the workbook (Warm-Up, Do the Maths by Hand, Predict the Output, Practice Set A and B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Draw It, Self-Check) is further practice: assign as time and need allow, and mark every section from the Answer Key below, which follows the workbook's order and labels.
 
 **Expected time:** 30 min on the ten slopes with hand answers · 25 min on the `.item()` experiment and the sentence. **About 55 minutes.**
 
@@ -1315,11 +1315,401 @@ Three checks, five minutes, exact wording.
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every workbook section and every item label (W1, M1, P1, A1, B1, Fix, Puzzle, T1, Build It, Draw It, Self-Check) is answered below, **in the order the printed workbook asks them**, so you can mark from this page alone. The values are the ones in the workbook's own Answers section. The complete class-activity files (`match_test.py` results, `break_three_ways.py`, `memcost.py`, `item_experiment.py`) come after the workbook sections, because the workbook has no page for them; they are lesson activities, not workbook pages.
 
-### Page 20.1 — Ten slopes, with your hand answer beside each
+### Warm-Up (W1–W5)
 
-*For each expression, write your own answer first, then check it with four lines of torch. The pattern for every one:*
+*Five questions about last week.*
+
+| Item | Answer | Marking note |
+|---|---|---|
+| **W1** `W1` is `(2, 16)`: shape of `dW1`? | **`(2, 16)`**, because every gradient has the same shape as the thing it is the gradient of. | Full marks needs the *because*. |
+| **W2** loss stuck on 0.6931 for 500 epochs | The network is answering **0.5 to every row**. `0.6931` is `−ln(0.5)`, the loss of a model that shrugs. It happens when every weight starts at zero (or all equal): every gradient into layer 1 is exactly zero, so there is no downhill. | |
+| **W3** knobs in 2 → 16 → 1 | `2 × 16 + 16 + 16 + 1 = 32 + 16 + 16 + 1 =` **65** | The four terms are `W1`, `b1`, `W2`, `b2`. |
+| **W4** 13 of 16 dead after `lr = 20`: can 2000 gentle epochs revive them? | **No.** A dead unit outputs zero for every row, so ReLU's slope there is zero, so its gradient is zero, and zero times any learning rate is zero. (Tested: 2000 more epochs at `lr = 0.5` and all thirteen stayed dead.) | |
+| **W5** gradient check prints `4.792e-08` | **Tiny**: `0.00000004792`, well below the `1e-6` threshold. It licenses you to **train**. Above `1e-6` you go and find the transpose instead. | |
+
+### Do the Maths by Hand (M1–M4)
+
+*No new maths. Week 18's chain and Week 12's nudge, on a calculator.*
+
+**M1** (forward pass, `x = [1.0, 2.0]`):
+
+```text
+z1 = 1.0 × 0.5 + 2.0 × 0.8 + 0.1      = 0.5 + 1.6 + 0.1   = 2.20
+z2 = 1.0 × (−0.3) + 2.0 × 0.2 + 0.05  = −0.3 + 0.4 + 0.05 = 0.15
+
+both positive, so A1 = [2.20, 0.15]
+
+Z2 = 2.20 × 1.0 + 0.15 × (−2.0) + 0.3 = 2.20 − 0.30 + 0.30 = 2.20
+```
+
+- **M1(a).** `e^(−2.20) = 0.110803` · `1 + that = 1.110803` · `1 ÷ that =` **`0.90024951`** (this is A2).
+- **M1(b).** `loss = −ln(0.90024951) =` **`0.10508332`**.
+- **M1(c).** **Small.** Being 90% confident and right costs about a tenth of a nat; shrugging at 0.5 costs 0.6931, nearly seven times as much. Log loss rewards confident correctness.
+
+**M2** (nine gradients from one number): `dZ2 = 0.90024951 − 1 =` **`−0.09975049`**.
+
+| entry | answer to 8 d.p. |
+|---|---|
+| `dW2[0]` = 2.20 × dZ2 | **−0.21945108** |
+| `dW2[1]` = 0.15 × dZ2 | **−0.01496257** |
+| `dA1[0]` = dZ2 × 1.0 | **−0.09975049** |
+| `dA1[1]` = dZ2 × (−2.0) | **+0.19950098** |
+
+- **M2(a).** Unit 2's weight into the output is **negative** (−2.0), so turning unit 2 up pushes the score down. We want the score up, so unit 2's slope points the opposite way to unit 1's. A negative weight flips the direction of the blame.
+- **M2(b).** `dW1[1][1] = 2.0 × 0.19950098 =` **`0.39900196`** and `dW1[0][1] = 1.0 × 0.19950098 =` **`0.19950098`**.
+- **M2(c).** **`dW1[1][1]`, by exactly a factor of two**, because input 2 was `2.0` and input 1 was `1.0`. The slope is *input × blame*, so a bigger input means a bigger correction. Loud inputs get blamed most.
+
+**M3** (the nudge, `h = 0.001`):
+
+| function | at | nudged slope | shortcut |
+|---|---|---|---|
+| `x²` | 3 | **6.0000** | `2x =` **6** |
+| `1/x` | 2 | **−0.2500** | — |
+| `ln x` | 2 | **0.5000** | — |
+
+- **M3(a).** `1 ÷ 2.001 = 0.49975012` and `1 ÷ 1.999 = 0.50025013`. Subtract: `−0.00050001`. Divide by `0.002`: `−0.2500`.
+- **M3(b).** **No, it did not stop you.** The nudge needs no rules, only the ability to evaluate the function twice. The shortcut rules are faster but exist only for functions somebody has already worked out. **The nudge is more general; the rules are more convenient.** Autograd is the third option: as general as the nudge and as fast as the rules.
+
+**M4** (accumulation): slope of `x³` at 3 is `3 × 9 =` **27**.
+
+```text
+after the first  backward():  x.grad = 6
+after the second backward():  x.grad = 33      (6 + 27)
+```
+
+- **M4(a).** `5 × 6 =` **30**.
+- **M4(b).** `42 ÷ 6 =` **7** calls.
+- **M4(c).** Because `.grad` adds, every trip round a training loop would step with today's slope plus yesterday's plus the day before's, so the steps grow for no reason. The loop's first line exists to wipe it.
+
+### Predict the Output (P1–P4)
+
+*Prediction in pen first. The score line is "out of 14".*
+
+**P1**
+
+```text
+torch.Size([2, 3])
+torch.int64
+torch.float32
+```
+
+Line 1 says `torch.Size([2, 3])`, not `(2, 3)`; wrap it, `tuple(a.shape)`, to get `(2, 3)`. Lines 2 and 3 differ because of the decimal points: whole numbers give `int64`, decimals give `float32`. The `.0` is not decoration; `requires_grad=True` on an `int64` tensor is refused.
+
+**P2**
+
+```text
+tensor([16.], grad_fn=<MulBackward0>)
+None
+tensor([8.])
+```
+
+Line 1's extra piece is `grad_fn=<MulBackward0>`, the receipt, there because `x` was created with `requires_grad=True`. Line 2 is **not a number**: `None` means nothing has been written into that box yet (`backward()` has not run). It is not zero. Line 3 is `2 × 4 = 8`.
+
+**P3** The slope of `w × w` at `w = 5` is `2 × 5 =` **10**, so the prediction is 10, 10, 10. What really prints:
+
+```text
+10.0
+20.0
+30.0
+```
+
+The arithmetic for the third line: `10 + 10 + 10 = 30`. Three `backward()` calls piled into the same box with nothing wiping it in between. **Wrong-answer map:** a student who predicted `10 10 10` has not yet absorbed that `.grad` adds; that is exactly the M4 / `6 + 27 = 33` idea.
+
+**P4**
+
+```text
+tensor([[2., 4.],
+        [6., 8.]])
+torch.Size([2, 2])
+4.0
+<class 'float'>
+```
+
+Every cell is twice the matching cell of `W`: the loss is the sum of squares and the slope of `c²` is `2c`, so cell `[0,1]`, holding `2.0`, has gradient `4.0`. The shape is `(2, 2)`, the same as `W` (Week 19's rule, unchanged in torch). On line 4, `.item()` changed the type from `torch.Tensor` to `float`, and threw away the receipt: the `grad_fn` and the whole graph behind it.
+
+### Practice Set A — Read It (A1–A6)
+
+**A1.** tensor → **(iii)** · dtype → **(v)** · device → **(vi)** · `requires_grad` → **(vii)** · computation graph → **(iv)** · autograd → **(ii)** · `.grad` → **(i)**
+
+**A2.** *Read the printout.* The printout is in the workbook; it shows a `(2, 2)` float32 tensor, `z = tensor([[2.1000]], grad_fn=<MmBackward0>)`, `w.grad` as `None`, and `z.item() = 2.0999999046325684`.
+
+| Question | Answer |
+|---|---|
+| a. How many numbers in the first tensor, what shape? | **Four**, shape `(2, 2)`: two rows, two columns. |
+| b. `torch.float32`: how many digits can you trust? | **About seven.** `float64` would give about sixteen. |
+| c. What is `grad_fn=<MmBackward0>` and why is it there? | The recording: `z` remembers that a matrix multiply produced it, and which tensors went in. It is there because one of the inputs (`w`) had `requires_grad=True`. |
+| d. `w.grad` is `None`. An error? | **No.** Nothing has been written there yet; `backward()` has not run. `None` and `0.0` mean completely different things. |
+| e. Why `2.0999999046325684` and not `2.1`? | 2.1 cannot be stored exactly in binary in 32 bits, the way a third cannot be written exactly in decimal. It is right to seven digits. On paper, `1.0 × 0.5 + 2.0 × 0.8 = 2.10`. |
+| f. Which of the two bottom lines shows `.item()` changed something? | The last two lines: `type(z)` is `torch.Tensor`, `type(z.item())` is `float`. **The type changed, so something was thrown away.** |
+
+**A2(g).** *`z` has a `grad_fn` because* **one of the tensors that went into making it had `requires_grad=True`, so PyTorch started recording.** Full marks needs that causal link: the flag on the **input** gives the **output** a receipt.
+
+**A3.** *Spot the bug.*
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `RuntimeError: Only Tensors of floating point and complex dtype can require gradients` | `[[0.0]]`, or `dtype=torch.float32` |
+| b | `RuntimeError: a Tensor with 4 elements cannot be converted to Scalar` | `W1.grad[0, 0].item()`, or print `W1.grad` without `.item()` |
+| c | `RuntimeError: Trying to backward through the graph a second time ...` | Do the forward pass again. **Not** `retain_graph=True` |
+| d | **No error.** You keep 200 tensors, each carrying its whole graph. Plotting them raises `Can't call numpy() on Tensor that requires grad` | `losses.append(loss.item())` |
+| e | `RuntimeError: expected m1 and m2 to have the same dtype, but got: double != float` | Give both the same dtype |
+| f | `RuntimeError: grad can be implicitly created only for scalar outputs` | `.mean()` or `.sum()`; `backward()` needs one number |
+
+**A3(g).** **d.** You would notice it from the **type** (`type(losses[0])` says `torch.Tensor`), from the printout carrying a `grad_fn`, from the program using far more memory than it should, or from matplotlib refusing to plot it. Nothing crashes until you try to use the list.
+
+**A4.** i → **Q** · ii → **S** · iii → **P** · iv → **T** · v → **R**
+
+**A4(f).** **ii, which prints `0.0`.** `torch.relu(x)` at `x = −2` did not fire, so nothing gets through and the slope is exactly zero. That is a dead ReLU in one line, and why no learning rate can revive one.
+
+**A5.** *Label the recording* (Figure W20.1). The five boxes:
+
+| # | line | value | `grad_fn` |
+|---|---|---|---|
+| 1 | `x @ W1 + b1` | 2.20 | `AddBackward0` |
+| 2 | `torch.relu(Z1)` | 2.20 | `ReluBackward0` |
+| 3 | `A1 @ W2 + b2` | 2.20 | `AddBackward0` |
+| 4 | `torch.sigmoid(Z2)` | **0.90024951** | `SigmoidBackward0` |
+| 5 | `−ln(A2)` | **0.10508332** | `NegBackward0` |
+
+The four gradients: `dZ2 = 0.90024951 − 1 =` **`−0.09975049`** · `dW2[0] = 2.20 × dZ2 =` **`−0.21945108`** · `dW1[1,1] = 2.0 × (+0.19950098) =` **`+0.39900196`**.
+
+- **A5(a).** **No.** Box 1's `2.20` is `0.5 + 1.6 + 0.1`. Box 2's `2.20` is the same number carried through, because ReLU left a positive value alone. Box 3's `2.20` is a **different sum that happens to land on the same value**: `2.20 − 0.30 + 0.30`; the `−0.30` and `+0.30` cancel.
+- **A5(b).** **Box 2.**
+
+**A6.** *Say the sentence.*
+
+- **a)** **a device** (where the numbers live) and **a computation graph** (a receipt of everything done to it).
+- **b)** "this is a knob I want the slope of, so start recording", and the results grow a **`grad_fn`**.
+- **c)** when **`backward()` has not been called yet**, or when **`requires_grad=True` is missing on that tensor**.
+- **d)** **6 + 27 = 33.**
+- **e)** `float32` for **training** (faster, half the memory, seven digits is plenty for a noisy gradient) and `float64` for **checking** against arithmetic done by hand.
+- **f)** `.item()` gives you **an ordinary Python number** and throws away **the recording: the `grad_fn` and the whole graph behind it**.
+
+### Practice Set B — Write It (B1–B5)
+
+Accept any working code that gives the expected output. The reference versions:
+
+**B1**
+
+```python
+import torch
+
+t = torch.tensor([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
+print("shape", tuple(t.shape), " dtype", t.dtype, " device", t.device)
+```
+
+```text
+shape (2, 3)  dtype torch.float32  device cpu
+```
+
+Watch for `t.shape` without `tuple(...)`, which prints `torch.Size([2, 3])`; and for whole numbers in the list, which give `int64`.
+
+**B2**
+
+```python
+import torch
+
+x = torch.tensor([2.0], requires_grad=True)
+y = x ** 3
+y.backward()
+print("slope of x**3 at x = 2 is", x.grad.item())
+```
+
+```text
+slope of x**3 at x = 2 is 12.0
+```
+
+`3x²` at `x = 2` is `3 × 4 = 12`. If they wrote 12 before running, they tick it.
+
+**B3**
+
+```python
+import torch
+
+x = torch.tensor([4.0], requires_grad=True)
+for i in range(3):
+    y = x * x
+    y.backward()
+    print("backward %d: x.grad = %.1f" % (i + 1, x.grad.item()))
+
+x.grad.zero_()
+y = x * x
+y.backward()
+print("after zero_() and one more: x.grad = %.1f" % x.grad.item())
+```
+
+```text
+backward 1: x.grad = 8.0
+backward 2: x.grad = 16.0
+backward 3: x.grad = 24.0
+after zero_() and one more: x.grad = 8.0
+```
+
+`8, 16, 24` is `1, 2, 3` times `2 × 4`.
+
+- **B3(a).** Because **the graph is freed when `backward()` reads it.** A single `y` built before the loop could be read once, and the second `backward()` would raise *"Trying to backward through the graph a second time"*. Every backward pass needs a fresh forward pass, which is why line 2 of next week's loop is inside the loop.
+
+**B4**
+
+```python
+import torch
+
+x = torch.tensor([[1.0, 2.0]])
+w = torch.tensor([[0.5], [0.8]], requires_grad=True)
+
+wrong, right = [], []
+for step in range(5):
+    loss = ((x @ w) ** 2).mean()
+    wrong.append(loss)
+    right.append(loss.item())
+
+print("wrong[0] :", wrong[0], " type", type(wrong[0]))
+print("right[0] :", right[0], " type", type(right[0]))
+```
+
+```text
+wrong[0] : tensor(4.4100, grad_fn=<MeanBackward0>)  type <class 'torch.Tensor'>
+right[0] : 4.409999370574951  type <class 'float'>
+```
+
+- **B4(a).** Because it is **`float32`**: `1 × 0.5 + 2 × 0.8 = 2.1` cannot be stored exactly in binary, so `2.1²` comes out as `4.409999370574951`. Seven digits, then it stops. `wrong[0]` holds the same value; it just prints itself to four decimals.
+
+**B5**
+
+```python
+"""b5w20.py - a three-row match test on one neuron."""
+import torch
+
+torch.manual_seed(0)
+
+x = torch.tensor([[2.0, 5.0]], dtype=torch.float64)
+y = torch.tensor([[0.0]], dtype=torch.float64)
+w = torch.tensor([[0.3], [0.1]], dtype=torch.float64, requires_grad=True)
+b = torch.tensor([-0.6], dtype=torch.float64, requires_grad=True)
+
+z = x @ w + b
+p = torch.sigmoid(z)
+loss = -torch.log(1 - p)
+print("z    = %.8f" % z.item())
+print("p    = %.8f" % p.item())
+print("loss = %.8f" % loss.item())
+
+loss.backward()
+
+blame = p.item() - 0.0
+rows = [
+    ("dw[0]", 2.0 * blame, w.grad[0, 0].item()),
+    ("dw[1]", 5.0 * blame, w.grad[1, 0].item()),
+    ("db   ", 1.0 * blame, b.grad[0].item()),
+]
+print()
+print("%-6s %13s %13s %12s" % ("entry", "by hand", "autograd", "difference"))
+worst = 0.0
+for name, hand, auto in rows:
+    gap = abs(hand - auto)
+    worst = max(worst, gap)
+    print("%-6s %13.8f %13.8f %12.8f" % (name, hand, auto, gap))
+print()
+print("biggest disagreement: %.8f" % worst)
+```
+
+```text
+z    = 0.50000000
+p    = 0.62245933
+loss = 0.97407698
+
+entry        by hand      autograd   difference
+dw[0]     1.24491866    1.24491866   0.00000000
+dw[1]     3.11229666    3.11229666   0.00000000
+db        0.62245933    0.62245933   0.00000000
+
+biggest disagreement: 0.00000000
+```
+
+Every number is checkable on a calculator:
+
+```text
+z    = 2 × 0.3 + 5 × 0.1 − 0.6 = 0.6 + 0.5 − 0.6 = 0.50
+p    = sigmoid(0.50) = 0.62245933
+loss = −ln(1 − 0.62245933) = −ln(0.37754067) = 0.97407698
+
+blame = p − y = 0.62245933 − 0 = 0.62245933
+  × 2.0  →  1.24491866
+  × 5.0  →  3.11229666
+  × 1.0  →  0.62245933   (the bias multiplies 1 on every row)
+```
+
+The signs: here `y = 0` and the model said 0.62, so the blame is **positive** (the score needs to come down). In the chapter's example `y = 1` and the blame was negative. The 💡 Try this (delete `dtype=torch.float64` and re-run) makes the differences about `1e-8`; neither column is wrong.
+
+### Fix the Broken Program
+
+*Three bugs: one dtype, one runtime, one silent logic bug.*
+
+- **Bug 1 — line 9, `w = torch.tensor([[0.4], [-0.2]], requires_grad=True)`. A dtype bug.** `double` is `float64`, `float` is `float32`. So **`x` is the `double`** (given `dtype=torch.float64`) and **`w` is the `float`** (left at the default). PyTorch will not silently promote one to match the other in a matrix multiply. **The fix:** `w = torch.tensor([[0.4], [-0.2]], dtype=torch.float64, requires_grad=True)`.
+- **Bug 2 — line 20, `print("w.grad =", w.grad.item())`. A runtime bug.** `.item()` wants **exactly one** number. `w.grad` holds **two**, because `w` holds two (one weight per input feature); a gradient always has the shape of its knob. **Two fixes:** `print("w.grad =", w.grad)`, or `print(w.grad[0, 0].item())`.
+- **Bug 3 — line 10, `b = torch.tensor([0.5], dtype=torch.float64)`. A silent logic bug: `requires_grad=True` is missing.** `b.grad` printing **`None`** means nobody ever wrote a slope into that box; `b` was never on the recording, so `backward()` walked straight past it. **Consequence in a real training loop:** the optimizer has no gradient for `b`, so that knob never learns. The model still trains, still improves, and ends up mediocre, and nothing tells you: no error, no warning, an ordinary loss curve. **The fix:** add `requires_grad=True` to `b`.
+
+Run 4 (all three fixed) prints `w.grad = tensor([[-0.5473], [-0.1824]], dtype=torch.float64)`, `b.grad = tensor([-0.1824], dtype=torch.float64)` and `log[0] = 0.2014132779827524  type <class 'float'>`, as the workbook shows.
+
+**Ranking by time cost: bug 3 ≫ bug 2 ≈ bug 1.** Bugs 1 and 2 crash immediately and name the exact problem (the message gives both dtypes, or the element count). Bug 3 is expensive precisely because it produces a working program. The only thing that catches it is the habit of printing `requires_grad` and looking for `None`.
+
+**Without `.item()` on the log line**, `log[0]` would have printed `tensor([[0.2014]], dtype=torch.float64, grad_fn=<NegBackward0>)` and the type would have been `<class 'torch.Tensor'>`. The **`grad_fn` field** gives it away: that value is still attached to the graph that made it.
+
+### Puzzle of the Week
+
+**Part 1 — how many backwards?**
+
+| # | how many calls | working |
+|---|---|---|
+| 1 | **7** | `42 ÷ 6 = 7` |
+| 2 | **5** | `60 ÷ 12 = 5` |
+| 3 | **3** | `−0.75 ÷ −0.25 = 3` |
+| 4 | **1** | `5 ÷ 5 = 1` |
+| 5 | **impossible to say** | — |
+
+- **Part 1(a).** Because the true slope is **zero**, and any number of zeros still add up to zero: `0`, `2 × 0`, `900 × 0` all print `0.0`. `0 ÷ 0` has no answer.
+- **Part 1(b).** *…by dividing — **unless the true slope is zero**, in which case the pile is invisible.*
+- **Part 1(c).** **Wiping `.grad` before every backward pass**: `x.grad.zero_()`, or from next week `optimizer.zero_grad()`.
+
+**Part 2 — the Receipt Detective.**
+
+| | verdict | evidence |
+|---|---|---|
+| **A** | **data** | no `requires_grad=True`, no `grad_fn`; it was used, not tuned |
+| **B** | **a knob** | says `requires_grad=True` and has **no** `grad_fn`: nothing made it, you typed it |
+| **C** | **middle** | has a `grad_fn` (`MmBackward0`), which only appears on values something *produced* |
+| **D** | **middle, after `.item()`** | a bare Python number with no `tensor(...)` wrapper and no `grad_fn` |
+| **E** | **middle** | `grad_fn=<SigmoidBackward0>` |
+
+- **Part 2(a).** **D is `E.item()`.** Same value, but D is a plain `float` with nothing attached, while E is a tensor still carrying its whole recording. D shows more digits because E prints to four decimals by default.
+- **Part 2(b).** **Only B.** `.grad` is filled in for tensors created with `requires_grad=True`. Asking C or E gives `None` plus a long `UserWarning` about non-leaf tensors. *(The workbook question says "which two", but its own Answers section names only B, and B is the only knob among the five. Mark B as correct and do not penalise a student who stops at one.)*
+- **Part 2(c).** It is **the name of the operation that produced that value**: `Mm` for matrix multiply, `Sigmoid` for the squash. It is the entry on the receipt that knows how to hand a slope back through itself.
+- **Part 2(d).** Any order that works:
+
+```python
+w = torch.tensor([[0.5], [0.8]], requires_grad=True)
+x = torch.tensor([[1.0, 2.0]])
+z = x @ w
+p = torch.sigmoid(z)
+```
+
+(`1 × 0.5 + 2 × 0.8 = 2.1`, and `sigmoid(2.1) = 0.8909`.)
+
+### Think Deeper (T1–T2)
+
+Paragraph answers; mark against these model answers.
+
+**T1 — model answer.** Three concrete things. **One:** I can read a shape error, because `dW1` must have the same shape as `W1`, so a misplaced transpose takes twenty seconds to find instead of guessing. **Two:** I know what a dead ReLU is and why training longer cannot fix it; `backward()` will never explain that, it will quietly hand me a zero. **Three:** when a loss sits on 0.6931 I know the network is answering 0.5 to everything, because I have computed `−ln(0.5)` myself. And a fourth: I have marked the library's homework and it agreed to eight decimal places, so my trust is a measurement rather than a hope. **Being fair to the other side:** somebody who started at `loss.backward()` spent those two lessons on something else, and there is a real cost to two weeks of arithmetic a computer does faster. The honest defence is not "the arithmetic is useful" but "the judgement built by doing the arithmetic once is useful, and there is no other way to get it." *(Needs at least two specific things and one fair concession.)*
+
+**T2 — model answer.** Autograd can only differentiate what is **on the receipt**, and only torch operations get written on it. Two kinds of thing defeat it, and one that people expect to does not. **An `if` on a tensor's value does not defeat it**: autograd differentiates the branch that ran, which is right for that input, though the slope can jump where the input crosses the `if`'s boundary. **A rounding or flooring step** defeats it, because its slope is zero almost everywhere and undefined at the steps. **Anything that leaves torch and comes back** (to numpy, arithmetic, back) makes the middle section invisible to the recording. **A bug or a boundary?** A boundary, and an honest one: autograd is a bookkeeping system for a specific list of operations, and "how does this output respond to that input?" has no answer for a function with a jump in it. That is a fact about the maths, not the library.
+
+### Build It — Ten Slopes, and the `.item()` Experiment
+
+This is the **homework** (see Homework to Assign).
+
+**Part A — ten slopes, hand answer first.** The pattern for every one:
 
 ```python
 x = torch.tensor([VALUE], requires_grad=True)
@@ -1356,7 +1746,10 @@ Real output of the whole page, run in one file:
 10. relu(x) at x=-2     autograd 0.000000   by hand 0 (it did not)
 ```
 
-**The bonus, two knobs at once**, which is worth asking for from anybody who finished early:
+- **How many crosses? / Which two caught you out?** No fixed answer. Expect **items 5 and 10** (a negative slope, and a slope of exactly zero). Zero crosses is a flag that the predictions came after the run.
+- **Item 10 is a whole idea from last week:** **the dead ReLU** (Week 19). It did not fire, so nothing gets through, so the slope is exactly 0, and no learning rate can revive it.
+
+**The bonus, two knobs at once**, worth asking for from anybody who finished early:
 
 ```python
 w = torch.tensor([3.0], requires_grad=True)
@@ -1364,6 +1757,8 @@ b = torch.tensor([1.0], requires_grad=True)
 L = (2 * w + b - 10) ** 2
 L.backward()
 ```
+
+By hand: `2 × 3 + 1 − 10 =` **−3**, so `L = (−3)² =` **9**. `dL/dw = 2 × (−3) × 2 =` **−12** (the extra `× 2` is because `w` is multiplied by 2 inside the bracket) and `dL/db = 2 × (−3) × 1 =` **−6**. `dL/dw` is exactly twice `dL/db`, for exactly that reason. Autograd says:
 
 ```text
 bonus: L = (2w + b - 10)^2 at w=3, b=1
@@ -1374,7 +1769,70 @@ bonus: L = (2w + b - 10)^2 at w=3, b=1
 
 **Marking:** items 1–5, 9 and 10 must have a hand answer; 6, 7 and 8 may be nudged or looked up. **At least one cross somewhere on the page** is evidence the predictions came first. Items 5 and 10 are the two that catch people: a negative slope, and a slope of exactly zero.
 
-### Page 20.2 — The nine-row match test
+**Part B — the `.item()` experiment.** The complete file is `item_experiment.py`, below in the class-activity files. The two tables the student fills in should read:
+
+**The wrong way**
+
+| | what it printed |
+|---|---|
+| `len(wrong)` | `200` |
+| `wrong[0]` | `tensor(0.1155, grad_fn=<NegBackward0>)` |
+| `wrong[199]` | `tensor(0.1155, grad_fn=<NegBackward0>)` |
+| `type(wrong[0])` | `<class 'torch.Tensor'>` |
+| plotting it | fails: `Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.` |
+
+**The right way**
+
+| | what it printed |
+|---|---|
+| `len(right)` | `200` |
+| `right[0]` | `0.11551953107118607` |
+| `right[199]` | `0.11551953107118607` |
+| `type(right[0])` | `<class 'float'>` |
+| plotting it | works; wrote `item_experiment.png` |
+
+**The one method call that fixed it:** `.item()`, as in `right.append(loss.item())`.
+
+**Why `wrong[0]` and `wrong[199]` are identical:** nothing is being trained. The weights never change, so the loss is the same 200 times. Somebody will ask, and it is the perfect setup for next week: we have the slopes and we are not yet taking the step.
+
+**The sentence being marked.** The model closing sentence:
+
+> *"Before the fix I was storing 200 tensors, and every one of them was still carrying the recording of the operations that made it — the `grad_fn` in the printout is that recording — so I was keeping 200 graphs alive instead of 200 numbers, and matplotlib would not even plot them."*
+
+**Accept:** any sentence naming the graph, the recording, or the `grad_fn`. **Do not accept:** *"they were tensors, not floats"*, which is the type, not the cost. Push once: **"and what is a tensor carrying that a float is not?"**
+
+**The loss is checkable by hand, and it is worth asking for:**
+
+```text
+1.0 × 0.5 + 2.0 × 0.8 = 2.10
+sigmoid(2.10) = 1 / (1 + e^(−2.10)) = 1 / 1.122456 = 0.890903
+−ln(0.890903) = 0.115520
+```
+
+**Stretch — measure what it costs.** The file is `memcost.py` (below). Our run: `259.6 − 159.3 = 100.3 MB` for tensors against `172.7 − 158.4 = 14.3 MB` for numbers, about seven times. The workbook's own run gave `98.9 MB` against `16.5 MB`, about six times. Both are right; **the ratio should stay several times, not a few per cent.** Should the ratio match between machines? Roughly yes; the absolute numbers will not. A page with two "after" numbers and no subtraction has not made the point.
+
+**The Bug Log.** Two entries today, and one is a new category: *no error, small disagreement, and here is why.* A good pair:
+
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `Can't call numpy() on Tensor that requires grad` when plotting a list of losses | The list holds tensors still attached to their graphs | `append(loss)` without `.item()` | `append(loss.item())` |
+| Match-table differences of about `1e-8`, not `0.00000000` | Not a bug: float32 keeps about seven digits, and both columns are right | The tensors were left at the default `float32` | `dtype=torch.float64` when *checking*; float32 for training |
+
+### Draw It
+
+**A good drawing has:** one block per value, each with its shape written on it; forward arrows in one colour along the top; **backward arrows dashed and reversed** along the bottom; the `grad_fn` name on each arrow (`MmBackward0`, `AddBackward0`, `ReluBackward0`, `SigmoidBackward0`, `NegBackward0`); **at least one real number on the backward path**, `−0.09975049` being the natural one; `.item()` drawn as a door out of the diagram with the receipt left behind on the inside; and a note saying **`.grad` ADDS: 6 + 27 = 33**.
+
+**The four questions.** Blocks: five is the natural number (`Z1`, `A1`, `Z2`, `A2`, `loss`), with shapes `(1, 2)`, `(1, 2)`, `(1, 1)`, `(1, 1)`, and one number. Backward arrows carry the `grad_fn` names. The real number on the backward path is the blame, `−0.09975049`. Through the `.item()` door, **the number goes out and the whole graph stays behind**, which is why the number is cheap to keep and the tensor is not.
+
+### Self-Check
+
+There are no right answers. The honest bar: 😀 means you could do it now on a blank file with nothing open; 🙂 means with the chapter beside you; 😕 is the one to ask about first. Make sure **"explain the difference between `w.grad` being `None` and being `0.0`"** is not a 😕, because next week has three silent failures and that distinction is how you tell two of them apart.
+
+### Class-activity files (not workbook sections)
+
+These belong to the lesson's activity and the prep checklist. The workbook has no printed page for them.
+
+#### The nine-row match test
 
 *The complete `match_test.py` is in the Prep Checklist.* The nine rows:
 
@@ -1394,30 +1852,7 @@ bonus: L = (2w + b - 10)^2 at w=3, b=1
 
 **Accept differences up to about `1e-7`** if the student left the dtype at `float32` — and then ask them to say why, because that is the better answer.
 
-### Page 20.3 — Read the printout
-
-*Given this real printout, answer five questions.*
-
-```text
-tensor([[1., 2.],
-        [3., 4.]])
-shape: (2, 2)  dtype: torch.float32  device: cpu
-z = tensor([[2.1000]], grad_fn=<MmBackward0>)
-w.grad before backward: None
-z.item()      = 2.0999999046325684
-type(z)       = <class 'torch.Tensor'>
-type(z.item())= <class 'float'>
-```
-
-| Question | Answer |
-|---|---|
-| How many numbers are in the first tensor, and what shape? | Four, shape `(2, 2)` — two rows, two columns. |
-| What does `dtype: torch.float32` tell you about how many digits you can trust? | About seven. `float64` would give about sixteen. |
-| What is `grad_fn=<MmBackward0>` and why is it there? | The recording: `z` remembers a matrix multiply produced it. It is there because one of the inputs (`w`) had `requires_grad=True`. |
-| `w.grad` is `None`. Is that an error? | No. It means nothing has been written there yet — `backward()` has not been called. `None` and `0.0` are completely different. |
-| Why is `z.item()` `2.0999999046325684` and not `2.1`? | 2.1 cannot be stored exactly in binary in 32 bits, the way a third cannot be written exactly in decimal. It is right to seven digits. `1.0 × 0.5 + 2.0 × 0.8 = 2.10` on paper. |
-
-### Page 20.4 — Break it three ways
+#### `break_three_ways.py`
 
 The complete file:
 
@@ -1484,7 +1919,7 @@ type(losses[0]) : <class 'torch.Tensor'>
 2. **`requires_grad` forgotten:** nothing was recorded — `requires_grad: False`, `grad_fn: None` — so there is nothing to walk backwards through, and `.grad` stays `None`.
 3. **No `.item()`:** each element is a tensor still attached to its graph, as `grad_fn=<SumBackward0>` shows, so you have stored 200 recordings rather than 200 numbers.
 
-### Page 20.5 — What it costs, measured (stretch)
+#### `memcost.py`
 
 ```python
 """memcost.py - what 300 kept losses actually cost. Run it twice, one MODE each."""
@@ -1521,9 +1956,9 @@ mode item     after :  172.7 MB   kept 300 items
 
 **The arithmetic:** `259.6 − 159.3 = 100.3 MB` for the tensors. `172.7 − 158.4 = 14.3 MB` for the numbers. **About seven times as much memory, for the same 300 answers.**
 
-**Marking:** the absolute numbers depend on the machine and will not match. **What must be there is the subtraction and the comparison** — a page with two "after" numbers and no difference computed has not made the point.
+**Marking:** the absolute numbers depend on the machine and will not match. **What must be there is the subtraction and the comparison.**
 
-### Page 20.6 — The `.item()` experiment
+#### `item_experiment.py`
 
 The complete file:
 
@@ -1598,22 +2033,6 @@ right[199] : 0.11551953107118607
 type       : <class 'float'>
 plotting them: wrote item_experiment.png
 ```
-
-**The loss is checkable by hand, and it is worth asking for:**
-
-```text
-1.0 × 0.5 + 2.0 × 0.8 = 2.10
-sigmoid(2.10) = 1 / (1 + e^(−2.10)) = 1 / 1.122456 = 0.890903
-−ln(0.890903) = 0.115520
-```
-
-**The model closing sentence:**
-
-> *"Before the fix I was storing 200 tensors, and every one of them was still carrying the recording of the operations that made it — the `grad_fn` in the printout is that recording — so I was keeping 200 graphs alive instead of 200 numbers, and matplotlib would not even plot them."*
-
-**Accept:** any sentence naming the graph, the recording, or the `grad_fn`. **Do not accept:** *"they were tensors, not floats"* — that is the type, not the cost. Push once: **"and what is a tensor carrying that a float is not?"**
-
-**Why both losses are identical (`0.1155` at step 0 and at step 199):** nothing is being trained today. The weights never change, so the loss is the same 200 times. **Somebody will ask, and it is the perfect setup for next week:** we have the slopes and we are not yet taking the step.
 
 ### Answers to every question posed in the lesson
 

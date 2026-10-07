@@ -13,7 +13,7 @@
 | **Big idea** | Array maths replaces a whole `for` loop with one line, and the one line is easier to read **and** harder to get wrong. |
 | **New vocabulary** | vectorized · elementwise · broadcasting · arange · silent success |
 | **New syntax** | `arr * 2` · `arr1 + arr2` · `np.arange(n)` · `np.zeros((r, c))` |
-| **Materials** | **Eight index cards, one loop written on each** (see Prep — write these the night before) · a "revisit" tray or just a marked-out space on the table · printed workbook pages 18.1–18.6 · the Bug Log from all of Term 2 · the student's Week 7–15 Python files, open |
+| **Materials** | **Eight index cards, one loop written on each** (see Prep — write these the night before) · a "revisit" tray or just a marked-out space on the table · the printed workbook (`workbook/week-18.md`) · the Bug Log from all of Term 2 · the student's Week 7–15 Python files, open |
 | **Tech needed** | Laptop with Python 3 **and numpy working**. There is no paper version of this lesson — if numpy is not installed, stop and fix that instead, and do this lesson next week. |
 | **Prep time** | 25 minutes the night before (15 of them are writing the eight cards) · 5 minutes on the day |
 
@@ -365,7 +365,7 @@ to 18. Two threads lit: toolcraft and representation.*
 ### 25 minutes the night before
 
 - [ ] **Check numpy still works.** Four seconds: `python3 -c "import numpy; print(numpy.__version__)"`. If it fails, **do not run this lesson** — fix the install and do a Week 17 consolidation instead. There is no paper version of a numpy lab.
-- [ ] **Print workbook pages 18.1–18.6.**
+- [ ] **Print the whole workbook (`workbook/week-18.md`).** Its sections are Warm-Up, Predict the Output, Practice Set A and B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It, Draw It and Self-Check. Keep its Answers section off the printout.
 - [ ] **Write the eight loop cards. This is the lesson and it takes fifteen minutes.** Eight index cards, one loop per card, in the student's own handwriting if possible — and **wherever you can, copy the loop out of their actual Week 7 to Week 15 files.** A loop they wrote themselves retires far more satisfyingly than one from a book.
 
 If their files are gone, these eight work:
@@ -600,14 +600,14 @@ we put in 3 and 3. How many came out?
 - [ ] **The eight cards face down in a stack** in the middle of the table. The REVISIT space marked out beside them.
 - [ ] The student's Week 7–15 files open in the editor, in tabs. They will want to look.
 - [ ] The Term 2 Bug Log on the table, open.
-- [ ] Workbook 18.1 (reflection) and 18.2 out; 18.3–18.6 held back.
+- [ ] Workbook *Build It* Half 2, Part 1 (the reflection table) and *Practice Set A* (A1 and A2) out; everything else held back.
 - [ ] Figure 18.4 printed or on screen — the ladder. You will point at it in the Wrap.
 
 ### Fallback if the laptop or the install fails
 
 **Be straight about this: there is no good paper version of this lesson.** The whole point is running both versions and diffing the output, and you cannot run anything on paper. If numpy is broken, do this instead and move the party to next week:
 
-1. **Do the reflection half properly, and give it the whole hour.** Page 18.1, the Term 2 reflection sheet, plus the Bug Log review. Read every entry from Weeks 10 to 17 out loud. Ask for their three most valuable. That is genuinely worth an hour and it is the half of this week that matters most for Term 3.
+1. **Do the reflection half properly, and give it the whole hour.** The Term 2 reflection table (workbook *Build It*, Half 2, Part 1), plus the Bug Log review. Read every entry from Weeks 10 to 17 out loud. Ask for their three most valuable. That is genuinely worth an hour and it is the half of this week that matters most for Term 3.
 2. **Do the eight cards as a *paper* exercise:** for each card, write the one-liner *next to it* without running it. Do not mark them right or wrong — collect them, check them yourself, and hand them back next week with the party. A prediction written down is worth a great deal even unrun.
 3. **Sort the cards into three piles by hand:** *retires with `arr * 2`-style maths*, *needs something we haven't learned yet* (cards about keeping only the big ones — that is Week 20), and *will never retire to array arithmetic* (anything about names, text or waiting for a person). That is §7 of this file, done with hands, and it is a real idea.
 4. **Fix the install before Week 19**, which is `axis=0` versus `axis=1` and is even less doable on paper.
@@ -1018,7 +1018,7 @@ Full instructions in the next section. In the lesson flow:
 
 ### Setup
 
-**On the table:** the eight cards (two already in the retired pile from the live-code), the REVISIT space, the Term 2 Bug Log, workbook page 18.3.
+**On the table:** the eight cards (two already in the retired pile from the live-code), the REVISIT space, the Term 2 Bug Log, workbook *Practice Set A*, A2 (shapes that work and shapes that don't).
 
 **On the screen:** `retire.py`, with cards 1 and 5 done.
 
@@ -1171,7 +1171,7 @@ print(scores + bonus)
 
 > **Say this:** "Right. What's in the pile?"
 
-For each card, one question: **"what would you need to go back over to retire this?"** Then write it on page 18.6 as a specific line, not a vague one.
+For each card, one question: **"what would you need to go back over to retire this?"** Then write it in the workbook's revisit list (*Build It*, Half 2, Part 2) as a specific line, not a vague one.
 
 Use this to translate:
 
@@ -1194,7 +1194,7 @@ Use this to translate:
 - Eight one-liners written, run, and each with `identical? True` printed beside it. *(Five is a completely acceptable version of this.)*
 - `np.arange` and `np.zeros` both used, and the double brackets on `zeros` understood.
 - The `(3, 3)` spotted, explained, and fixed by retyping the brackets.
-- Page 18.1, the Term 2 reflection sheet, filled in.
+- The Term 2 reflection table (workbook *Build It*, Half 2, Part 1) filled in.
 - **A written revisit list with at least one specific line on it**, naming a week and a thing.
 
 ### Variation — easier
@@ -1452,25 +1452,32 @@ for score in scores:
 
 > "Two halves, and I care about both. About an hour.
 >
-> **First half — retire eight of your own loops.** Page 18.4. **Your own**, out of your own files from Weeks 7 to 15. Go and find them. Eight is not many — you have written dozens.
+> **First half — retire eight of your own loops.** It is the *Build It* section, Half 1, Parts 1 and 2. **Your own**, out of your own files from Weeks 7 to 15. Go and find them. Eight is not many — you have written dozens.
 >
-> For each one: write the loop version, run it, **write down the answer.** Then write the one line, run it, and print `identical?` with the `list(...) == ...` check. **Eight `True`s** on the page.
+> For each one: write the loop version, run it, **write down the answer.** Then write the one line, run it, and print `identical?` with the `list(...) == ...` check. **Eight `True`s** in the table.
 >
 > If a loop won't retire, **don't force it.** Write down which one and *why you think it won't* — and if the reason is 'it only does something to some of the numbers', you have found Week 20 two weeks early and I want to know about it.
 >
-> **Second half — the reflection.** Pages 18.5 and 18.6, and this is the half I read most carefully.
+> **Second half — the reflection.** Still in *Build It*, Half 2, Parts 1 to 4, and this is the half I read most carefully.
 >
-> **One:** for each week from 10 to 17, one word — *solid*, *shaky*, or *lost*. Eight words. Be honest; nobody is marking the words.
+> **One:** for each week from 10 to 17, one word — *solid*, *shaky*, or *lost*. Eight words. Be honest; nobody is marking the words. (We started this one aloud today, so finish it.)
 >
 > **Two:** your revisit list. **At least two lines, and each line names a week and a thing.** 'Week 15, the comprehension with the `if` in it' is a line I can do something with. 'Loops' is not.
 >
 > **Three:** read your Bug Log from Week 10 all the way to today and pick **the three entries that were worth the most.** One sentence each on why. And I'll tell you now what I expect at least one of them to be: **an error with no error message.** There are four of those in Term 2 and they are the most valuable things in the book.
 >
-> **Four:** one sentence. **What is the one check that would have caught three of Term 2's silent bugs?** Six words will do."
+> **Four:** two sentences. **What is the one check that would have caught three of Term 2's silent bugs?** Six words will do. And: **what is the difference between 'it ran' and 'it's right'?**"
 
-**Workbook pages:** 18.1, 18.2, 18.3 in class · **18.4, 18.5, 18.6** at home.
+**Workbook sections, and where each is done.** The old text here named pages that do not exist in the workbook. The workbook's real layout, and a sensible split:
 
-**Expected time:** 10 min finding their own eight loops · 25 min retiring and proving them · 10 min on the eight solid/shaky/lost words · 10 min on the revisit list · 10 min on the Bug Log three. **About 65 minutes.**
+| Workbook section | Where |
+|---|---|
+| 🛠️ **Build It** — Half 2, Part 1 (the Term 2 reflection table) | **Started in class** in the Wrap, aloud; finished at home |
+| ✍️ **Practice Set A** — A1 (loop or one-liner?) and A2 (shapes that work and shapes that don't) | **In class**, with the eight cards and the sting |
+| 🛠️ **Build It** — Half 1, Parts 1–2 (eight of your own loops) and Half 2, Parts 2–4 (revisit list, Bug Log three, two sentences) | **Homework — the marked core** |
+| ✅ Warm-Up · 🔎 Predict the Output · Practice Set A, A3–A6 · ✍️ Practice Set B · 🐞 Fix the Broken Program · 🧩 Puzzle of the Week · 🤔 Think Deeper · 🎨 Draw It · 📊 Self-Check | **Extra practice, assigned as time allows** over the following days (Warm-Up and Predict the Output first — they are short). Nothing in Week 19 depends on them. |
+
+**Expected time (the marked core):** 10 min finding their own eight loops · 25 min retiring and proving them · 10 min on the eight solid/shaky/lost words · 10 min on the revisit list · 10 min on the Bug Log three · 5 min on the two sentences. **About 70 minutes.** The extra-practice sections are additional: roughly 10 min for Warm-Up plus Predict, 25 for Practice Set B, 15 for Fix the Broken Program, 15 for the Puzzle.
 
 > **🧑‍🏫 What to look for when you mark it:** two things. **One — is the revisit list specific?** A week number and a thing. This list is what you teach from in the first ten minutes of Weeks 19, 20 and 21, so a vague one costs you three lessons. **Two — did they pick a silent bug as one of their Bug Log three?** If they did, they have learned the actual lesson of Term 2: the check is never "did it run". If they picked three crashes, that is worth a conversation — ask them which of Term 2's bugs *didn't* crash, and watch them find four.
 
@@ -1478,92 +1485,438 @@ for score in scores:
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every workbook section and item, in the workbook's own order and with its own labels (W1, P1, A1, B1, T1 …), so you can mark from this page alone. Values are those in the workbook's own Answers section. The *Watch for* lines and the marking notes are teacher-only.
 
-### Page 18.1 — Term 2 reflection sheet
+### ✅ Warm-Up
 
-*One word for each week: solid, shaky, or lost. Then the questions.*
+*Five quick questions about last week (Week 17).*
 
-| Week | What it was | Their word |
+**W1. Shape `(5, 3)` — rows, columns, how many numbers?**
+**Five rows, three columns, fifteen numbers.** Rows first, always. *Watch for:* "three rows and five columns" — that goes on the revisit list before Week 19.
+
+**W2. Why does one `3.0` make `np.array([1, 2, 3.0])` `float64`?**
+An array gets **one** kind for all of it, and numpy picks the kind that can hold **every** value without losing anything. A whole-number box has nowhere to put `3.0`'s decimal point; a decimal box holds `1` perfectly well, as `1.0`.
+
+**W3. Shape and dtype of `np.array([[7], [8], [9]])`?**
+**`(3, 1)`, `int64`.** Each number is inside its own inner list, and an inner list is a row — three rows of one column.
+
+**W4. What is wrong with `print(runs.shape())`, and what question fixes it permanently?**
+`.shape` is not a function, so there is nothing to call: `TypeError: 'tuple' object is not callable`. The question: **is the shape something the array *does*, or something the array *is*?** It *is* — like your height. You do not call your height.
+
+**W5. Shape is what you expected — what could still be badly wrong?**
+The **dtype.** One typo can turn every number into text and the shape does not move. Two facts, two prints.
+
+### 🔎 Predict the Output
+
+*Predict before running. Two of the four are silent. The page ends by asking how many of the sixteen answers they got right and which one surprised them most — self-scored, no right answer.*
+
+**P1 — real output:**
+
+```text
+[48, 12, 77, 48, 12, 77]
+[ 96  24 154]
+6
+3
+```
+
+**Nothing crashed** — that is the whole problem. Line 1 is `* 2` on a plain **list**: the list, repeated (same rule as `"=" * 20`, Week 3). Line 2 is an **array**, so every number is multiplied. The two disagreeing lines are 3 and 4: **six versus three.** That count is the check, and it is the same question that caught the missing CSV header in Week 16. There is nothing wrong with the line they are looking at; the mistake is where `np.array()` is missing.
+
+**P2 — real output:**
+
+```text
+[96, 24, 154]
+[ 96  24 154]
+[ True  True  True]
+True
+```
+
+Line 3 is `[ True  True  True]` — `==` on an array is **elementwise**, one answer per position. Line 4 converts the array to a list first, so Python compares two lists and gives **one** yes-or-no. Lines 1 and 2 are the printing trap: commas for a list, spaces and padding for an array, same numbers. *Watch for:* a prediction of plain `True` for line 3.
+
+**P3 — real output:**
+
+```text
+[0 1 2 3 4 5]
+6
+5
+[0. 0. 0.]
+```
+
+**Six numbers, and the last one is 5** (`arange` stops before the number given, like Week 7's `range`). `[-1]` is Week 11's negative index. The dots: `np.zeros` gives `float64` by default; for whole numbers, `np.zeros(3, dtype=int)`. *Watch for:* "7" or "6" for the last number.
+
+**P4 — real output:**
+
+```text
+(3, 3)
+[[11 12 13]
+ [21 22 23]
+ [31 32 33]]
+[63 66 69]
+```
+
+**Nine numbers come out** from three plus three, with no error or warning. The three they wanted are `11`, `22`, `33` — **on the diagonal.** `sum(a + b)` gives three numbers, `[63 66 69]`, where the right total would have been `11 + 22 + 33 = 66`: the wrong total is not even the same kind of thing as the right one.
+
+### ✍️ Practice Set A — Read It
+
+**A1. Loop or one-liner?**
+
+| # | Verdict | The one line, or why not |
 |---|---|---|
-| 10 | Functions with parameters, `return`, defaults | |
-| 11 | Lists, index from 0, `append` | |
-| 12 | Slicing, `sorted`, importing your own file | |
-| 13 | Dictionaries, `.get()` with a fallback | |
-| 14 | A list of dicts is a table | |
-| 15 | Filter, group, and the row count | |
-| 16 | CSV out, CSV back, convert on load | |
-| 17 | Arrays, `.shape`, `.dtype` | |
+| a | **retires** | `arr * 2` |
+| b | **retires** | `arr1 + arr2` |
+| c | **retires** | `np.arange(20)` |
+| d | **retires** | `sum(arr)` — Python's own `sum`, from Week 12 |
+| e | **retires** | `np.zeros((5, 3))` |
+| f | **retires** | `arr ** 2` |
+| g | **not yet** | needs a **boolean mask** — Week 20 |
+| h | **never** | needs the team **names**, and array arithmetic has none. This belongs to a dictionary for now |
+| i | **never** | a `while` loop waiting on a person. Arrays have nothing to say about people |
+| j | **never** | that is output, not arithmetic |
 
-There are no right answers to the words. **What you are marking is whether the following four have real content in them.**
-
-**18.1(a) Which week of Term 2 made the most sense, and why?**
-Any answer with a *reason* is a good answer. The most common are Week 11 (lists feel concrete) and Week 14 (a table is a familiar thing). Watch for Week 16 — a student who says the CSV week made the most sense usually means *"I finally saw why any of this was for anything"*, which is worth writing down.
-
-**18.1(b) Which one would you least like to be tested on tomorrow?**
-The most common honest answers are Week 15 (comprehensions with conditions) and Week 17 (`(3, 1)` versus `(3,)`). Both are correct diagnoses of genuinely hard things. **Whatever they say goes straight onto the revisit list.**
-
-**18.1(c) Name one thing you can do now that you could not do in Week 9.**
-Model answers, in rough order of depth: *"put my data in a file and get it back"*; *"answer a question about a table without counting by hand"*; *"look at an error and know which line to go to"*; *"tell whether something is text or a number, and check rather than assume."* That last one is the best available answer and it is worth saying so.
-
-**18.1(d) In Week 9 you turned repeated blocks into functions. What did Term 2 turn repeated *work* into?**
-Two good answers, and both are right. **Tools** — `records.py`, `filter_by`, `group_count`, `save_csv`: written once, pointed at anything. And **one-liners** — array maths, which retires the loop entirely. The pattern across the whole term is the same: *stop typing the machinery; name it once and reuse it.*
-
-### Page 18.2 — Loop or one-liner?
-
-*For each loop, say whether it retires today, needs something you haven't learned, or will never retire.*
-
-| # | The loop does this | Verdict | The one line, or why not |
-|---|---|---|---|
-| (a) | doubles every score | **retires** | `arr * 2` |
-| (b) | adds two columns pair by pair | **retires** | `arr1 + arr2` |
-| (c) | builds the numbers 0 to 19 | **retires** | `np.arange(20)` |
-| (d) | totals a column | **retires** | `sum(arr)` — Python's own `sum`, from Week 12 |
-| (e) | makes a blank 5 by 3 grid | **retires** | `np.zeros((5, 3))` |
-| (f) | squares every score | **retires** | `arr ** 2` |
-| (g) | keeps only the scores above 50 | **not yet** | needs a boolean mask — **Week 20** |
-| (h) | counts how many players per team | **never** | needs the team *names*, and array arithmetic has none. This belongs to a dictionary for now. |
-| (i) | asks for a guess until the user gets it right | **never** | a `while` loop waiting on a person. Arrays have nothing to say about people. |
-| (j) | prints one formatted table row per record | **never** | that is output, not arithmetic. |
-
-**18.2(k) State the rule in one sentence.**
+**A1(k). State the rule in one sentence.**
 **Array maths retires loops that do the same arithmetic to every number.** It cannot help with loops that make decisions about text, wait for a person, or produce printed output.
 
-**18.2(l) What is different about (g)?**
-It does something to **some** of the numbers and not others, and array maths does the same thing to all of them. That is not a permanent limit — a **boolean mask** in Week 20 is precisely the tool for "only the ones where…", and it is one line as well.
+**A1(l). What is different about (g)?**
+It does something to **some** of the numbers and not others; array maths does the same thing to **all** of them. Not a permanent limit — a boolean mask in Week 20 is the tool, and it is one line as well.
 
-**18.2(m) Is (h) numpy's failure, or the wrong tool?**
-The wrong tool, and it is worth being clear about it. Counting per team needs the team names, and an array cannot hold names alongside numbers — that was Week 17's whole trade. This is not something numpy should be better at; it is something a dictionary already does perfectly. **From Week 21, `pandas` does both at once, which is exactly what it is for.**
+**A1(m). Is (h) numpy's failure, or the wrong tool?**
+**The wrong tool.** Counting per team needs the team names, and an array cannot hold names alongside numbers — that was Week 17's whole trade. A dictionary already does it perfectly; from Week 21, `pandas` does both at once.
 
-### Page 18.3 — Shapes that work and shapes that don't
-
-*For each pair, will it work? If so, what shape comes out?*
+**A2. Shapes that work and shapes that do not.**
 
 | # | Shapes | Works? | Result shape | Why |
 |---|---|---|---|---|
-| (a) | `(6,)` and `(6,)` | yes | `(6,)` | they line up exactly — six pairs, six answers |
-| (b) | `(6,)` and one number | yes | `(6,)` | broadcasting reuses the single number six times |
-| (c) | `(6,)` and `(4,)` | **no** | — | `ValueError` — six and four cannot pair up, and numpy will not guess |
-| (d) | `(3,)` and `(3, 1)` | yes — **and this is the trap** | `(3, 3)` | one is a row and one is a column; both get stretched into a grid |
-| (e) | `(2, 3)` and `(3,)` | yes | `(2, 3)` | the row of three is reused for each of the two rows |
-| (f) | `(3, 1)` and `(3, 1)` | yes | `(3, 1)` | identical shapes, three pairs |
-| (g) | `(2, 3)` and `(2,)` | **no** | — | line them up from the right: 3 against 2. Not equal, neither is 1. Refused. |
+| a | `(6,)` and `(6,)` | yes | `(6,)` | they line up exactly — six pairs, six answers |
+| b | `(6,)` and one number | yes | `(6,)` | broadcasting reuses the single number six times |
+| c | `(6,)` and `(4,)` | **no** | — | `ValueError`. Six and four cannot pair up, and numpy will not guess |
+| d | `(3,)` and `(3, 1)` | yes — **the trap** | `(3, 3)` | one is a row and one is a column; both get stretched into a grid |
+| e | `(2, 3)` and `(3,)` | yes | `(2, 3)` | the row of three is reused for each of the two rows |
+| f | `(3, 1)` and `(3, 1)` | yes | `(3, 1)` | identical shapes, three pairs |
+| g | `(2, 3)` and `(2,)` | **no** | — | line them up from the right: 3 against 2. Not equal, neither is 1. Refused |
 
-**18.3(h) Which of these seven is the dangerous one, and why?**
-**(d).** It is the only one that *works* while almost certainly being a mistake. Nobody deliberately adds a row of three to a column of three. It produces nine numbers instead of three, does not complain, and hides the three answers you wanted on the diagonal.
+**A2(h). The dangerous one?** **(d).** The only one that *works* while almost certainly being a mistake. Nine numbers instead of three, no complaint, and the three wanted answers hidden on the diagonal.
 
-**18.3(i) Which are good news, and why?**
-**(c) and (g).** They stop you. numpy could have paired up as many as it could and given you a short answer, or padded with zeros — and then you would have had made-up numbers in your data with nothing to tell you. **An error you can read beats a wrong answer you cannot see.**
+**A2(i). Which are good news?** **(c) and (g).** They stop you. numpy could have paired up what it could and given a short answer, or padded with zeros, leaving made-up numbers in the data with nothing to tell you. **An error you can read beats a wrong answer you cannot see.**
 
-**18.3(j) In (d), how do you fix it?**
-Retype the brackets so the column becomes a row: `np.array([1, 2, 3])` instead of `np.array([[1], [2], [3]])`. One set of brackets, not two.
+**A2(j). Fix for (d)?** Retype the brackets so the column becomes a row: `np.array([1, 2, 3])` instead of `np.array([[1], [2], [3]])`. One set of brackets, not two.
 
-**18.3(k) What is the one check that would have caught (d)?**
-Printing the shape of the answer. `(3, 3)` where you expected `(3,)`. **There is no other signal — no error, no warning, and the numbers you wanted are all present.**
+**A2(k). The one check?** **Print the shape of the answer.** `(3, 3)` where `(3,)` was expected. There is no other signal.
 
-### Page 18.4 — Retire eight of your own loops
+**A3. Trace the loop.**
 
-The student's loops are their own. Model answer, using the eight-song playlist from Week 16:
+| After pass | `s` is | `total` is |
+|---|---|---|
+| start | — | `0` |
+| 1 | `48` | `48` |
+| 2 | `12` | `60` |
+| 3 | `77` | `137` |
+
+`print(total)` gives **`137`.** The one line: `sum(np.array(scores))`, or simply `sum(scores)` since Python's `sum` works on a plain list too. **Why this loop is different:** it is an **accumulator** — it gives **one number**, not a list, so the one-liner is `sum(...)` and there is no list-style `identical?` check, just one number against one number.
+
+**A4. Match code to output.** **i → R · ii → P · iii ��� T · iv → Q · v → S.**
+
+```text
+[2, 4, 2, 4]
+[4 8]
+[0 1 2 3]
+[0. 0.]
+[[0. 0.]
+ [0. 0.]]
+```
+
+Staring point: **i and ii** — same numbers, same `* 2`; one repeats, one doubles. The only difference is `np.array`. *Watch for:* i and ii swapped.
+
+**A5. Fill in the worksheet.**
+
+| The loop did this | The one line | `identical?` |
+|---|---|---|
+| double every score | `score_arr * 2` | `True` |
+| add 5 to every score | `score_arr + 5` | `True` |
+| runs + balls, pair by pair | `score_arr + balls_arr` | `True` |
+| the numbers 0 to 9 | `np.arange(10)` | `True` |
+| a blank 3 by 4 grid | `np.zeros((3, 4))` | `True` |
+| keep only the scores above 50 | **does not retire today** | — |
+
+The one that does not retire: *keep only the scores above 50* — it does something to **some** of the numbers and not others. **Week 20** brings a boolean mask, one line too.
+
+**A6. Read the traceback.**
+numpy is refusing to **add two arrays whose shapes do not line up** — six numbers and four. **Why both shapes are helpful:** it tells you exactly what to go and count; usually one list has a value missing or an extra one. **Good news** — the two things it could have done instead: **stop at the fourth pair** and give a four-number answer that looks fine, or **pad the missing two with zeros** and give two made-up numbers. Either way: wrong data, no warning.
+
+### ✍️ Practice Set B — Write It
+
+**B1.**
+
+```python
+import numpy as np
+
+scores = [48, 12, 77, 5, 63, 30]
+print(np.array(scores) + 10)
+```
+
+```text
+[58 22 87 15 73 40]
+```
+
+The `np.array(...)` is not optional: `scores + 10` on a plain list gives `TypeError: can only concatenate list (not "int") to list`.
+
+**B2.** Their prices are their own; model with `[45, 10, 120, 5, 95]`:
+
+```python
+"""b2.py - two loops retired, and both proved identical."""
+
+import numpy as np
+
+prices = [45, 10, 120, 5, 95]
+price_arr = np.array(prices)
+
+# loop A: halve every price
+loop_a = []
+for p in prices:
+    loop_a.append(p / 2)
+line_a = price_arr / 2
+print("A loop:", loop_a)
+print("A line:", line_a)
+print("A identical?", list(line_a) == loop_a)
+
+# loop B: square every price
+loop_b = []
+for p in prices:
+    loop_b.append(p ** 2)
+line_b = price_arr ** 2
+print("B loop:", loop_b)
+print("B line:", line_b)
+print("B identical?", list(line_b) == loop_b)
+```
+
+```text
+A loop: [22.5, 5.0, 60.0, 2.5, 47.5]
+A line: [22.5  5.  60.   2.5 47.5]
+A identical? True
+B loop: [2025, 100, 14400, 25, 9025]
+B line: [ 2025   100 14400    25  9025]
+B identical? True
+```
+
+Mark: two `True`s **from `list(...) == ...`**, not from looking. Note `5.0` in the list and `5.` in the array — same number.
+
+**B3.**
+
+```python
+"""b3.py - two arrays built without typing any numbers."""
+
+import numpy as np
+
+counting = np.arange(20)
+print("counting:", counting)
+print("how many numbers:", len(counting))
+print("the last one    :", counting[-1])
+print("shape           :", counting.shape)
+print("dtype           :", counting.dtype)
+
+blank = np.zeros((5, 3))
+print("blank:")
+print(blank)
+print("shape:", blank.shape)
+print("dtype:", blank.dtype)
+```
+
+```text
+counting: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19]
+how many numbers: 20
+the last one    : 19
+shape           : (20,)
+dtype           : int64
+blank:
+[[0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]]
+shape: (5, 3)
+dtype: float64
+```
+
+Twenty numbers, last one 19 (`arange` stops before 20); `float64` because `np.zeros` gives decimals by default. *Watch for:* `np.zeros(5, 3)` — that is the Fix the Broken Program bug 2 again.
+
+**B4.**
+
+```python
+"""b4.py - one formula, four operations, one line."""
+
+import numpy as np
+
+prices = [250, 180, 320, 199, 425, 150]
+price_arr = np.array(prices)
+
+loop = []
+for p in prices:
+    loop.append((p * 0.9 + 20) * 1.05)
+
+line = (price_arr * 0.9 + 20) * 1.05
+
+print("loop:", [round(x, 2) for x in loop])
+print("line:", np.round(line, 2))
+print("identical?", list(line) == loop)
+```
+
+```text
+loop: [257.25, 191.1, 323.4, 209.06, 422.62, 162.75]
+line: [257.25 191.1  323.4  209.06 422.62 162.75]
+identical? True
+```
+
+The brackets matter, as in ordinary arithmetic: `(price * 0.9 + 20) * 1.05` discounts, adds delivery, then taxes the whole lot. Without them — `price * 0.9 + 20 * 1.05` — only the delivery is taxed: a wrong answer with no error. *Watch for:* a missing-brackets version whose first number is 246.0 instead of 257.25.
+
+**B5.**
+
+```python
+"""b5.py - five broadcasts. Predict each one BEFORE you run it."""
+
+import numpy as np
+
+six = np.array([1, 2, 3, 4, 5, 6])               # shape (6,)
+four = np.array([1, 2, 3, 4])                    # shape (4,)
+row = np.array([1, 2, 3])                        # shape (3,)
+column = np.array([[10], [20], [30]])            # shape (3, 1)
+block = np.array([[1, 2, 3],
+                  [4, 5, 6]])                    # shape (2, 3)
+
+print("the shapes we are working with:")
+for name, arr in [("six", six), ("four", four), ("row", row),
+                  ("column", column), ("block", block)]:
+    print(f"  {name:<8}{arr.shape}")
+
+print()
+print("six + six    ->", (six + six).shape, (six + six))
+print("six + 5      ->", (six + 5).shape, (six + 5))
+print("row + column ->", (row + column).shape)
+print(row + column)
+print("block + row  ->", (block + row).shape)
+print(block + row)
+
+# print("six + four   ->", six + four)     # <-- uncomment this one LAST
+```
+
+```text
+the shapes we are working with:
+  six     (6,)
+  four    (4,)
+  row     (3,)
+  column  (3, 1)
+  block   (2, 3)
+
+six + six    -> (6,) [ 2  4  6  8 10 12]
+six + 5      -> (6,) [ 6  7  8  9 10 11]
+row + column -> (3, 3)
+[[11 12 13]
+ [21 22 23]
+ [31 32 33]]
+block + row  -> (2, 3)
+[[2 4 6]
+ [5 7 9]]
+```
+
+Prediction table: `six + six` → `(6,)`; `six + 5` → `(6,)`; `row + column` → `(3, 3)`; `block + row` → `(2, 3)`; `six + four` → **error**, uncommented last:
+
+```text
+Traceback (most recent call last):
+  File "b5err.py", line 5, in <module>
+    print("six + four   ->", six + four)
+ValueError: operands could not be broadcast together with shapes (6,) (4,)
+```
+
+`row + column` is the trap (three plus three, nine out); `block + row` is the everyday useful case. Mark the five ticks and crosses, not just the code.
+
+### 🐞 Fix the Broken Program
+
+**Bug 1 — the syntax error.** It is a **`SyntaxError`**, and **none of the program ran at all** — no `Traceback` above the message, because there was no running program to trace. What Python wants is very specific: `expected ':'`, with the caret at the exact character where the colon belongs. The fix is a colon at the end of the `for` line:
+
+```python
+for i in range(len(scores)):
+```
+
+**Bug 2 — the runtime error.** `np.zeros` has **two slots**: the **shape**, then the **dtype**. `np.zeros(2, 3)` puts `2` in the shape slot and `3` in the dtype slot, and there is no kind of number called three. The `3` went into the dtype slot; the number in the message is always the second one typed. The fix gives the shape its own brackets (the shape is *one thing*, a pair of numbers):
+
+```python
+print(np.zeros((2, 3)))
+```
+
+*(`np.zeros([2, 3])` also works; accept it.)* **The general lesson: when a message mentions something you never typed, you have probably put a value in the wrong slot** — a Week 10 idea, parameters in order.
+
+**Bug 3 — the silent one.** **Six numbers went in, twelve came out, and not a single one is doubled.** `scores` is a plain list and `* 2` on a list means *the list, repeated*. The mistake is **not** on the `print("doubled:", scores * 2)` line in itself — the program built `score_arr` and never used it. The fix:
+
+```python
+print("doubled:", score_arr * 2)
+```
+
+First line of output after the fix: `doubled: [ 96  24 154  10 126  60]`. Full output after all three fixes:
+
+```text
+doubled: [ 96  24 154  10 126  60]
+loop   : [80, 32, 132, 14, 104, 58]
+line   : [ 80  32 132  14 104  58]
+blank  :
+[[0. 0. 0.]
+ [0. 0. 0.]]
+```
+
+The check that catches the whole family: **"How many numbers went in, and how many came out?"** Six and twelve — a count, not "does it look right". It caught the missing CSV header in Week 16, this bug, and nine-instead-of-three. *Watch for:* a fix that edits the `doubled` line to `np.array(scores) * 2` — that is also correct.
+
+### 🧩 Puzzle of the Week
+
+**Part 1 — the three piles.**
+
+**Retires today: 1, 2, 5, 7, 9.**
+
+- 1 (celsius to fahrenheit) → `celsius_arr * 9 / 5 + 32`
+- 2 (the numbers 0 to 99) → `np.arange(100)`
+- 5 (strike rate from two columns) → `runs_arr / balls_arr * 100`
+- 7 (an empty 10 by 4 sheet) → `np.zeros((10, 4))`
+- 9 (add up every play count) → `sum(plays_arr)`
+
+**Needs something coming later: 3.** **Will never retire: 4, 6, 8.**
+
+**(a)** They all do **the same arithmetic to every number** — no decisions, no text, no waiting, no printing. *(9 is slightly different: one number out rather than a list, so its one-liner is `sum(...)`. It still retires.)*
+
+**(b)** None of them is arithmetic. **4** waits for a person; **6** needs the genre **names**, which an array does not have; **8** produces printed output. **Loops are for people and words; arrays are for numbers.**
+
+**(c)** **3** — *keep only the songs longer than four minutes.* It does something to **some** of the numbers and not others. **Week 20** brings a boolean mask, one line as well.
+
+**Part 2 — how wrong is wrong?**
+
+**(a)** Real output:
+
+```text
+total of the wrong answer: [150  42 237]
+total of the right answer: 143
+```
+
+**(b)** The wrong total is **three numbers, not one** — an array of column totals, not even the same kind of thing as the right answer (143 = 49 + 14 + 80).
+
+**(c)** Honestly, possibly not. Printed inside a sentence, a chart or another calculation, three numbers where one was expected can travel a long way before anything breaks; and with different shapes, the wrong total could have been a single plausible number.
+
+**(d)** **Print the shape of the answer, at the moment the answer is made**, not at the end: `(3, 3)` where `(3,)` was expected.
+
+**(e)** The three wanted numbers are on the **diagonal**: `49` at row 0 column 0, `14` at row 1 column 1, `80` at row 2 column 2. Broadcasting built a grid where every row is the three scores plus one of the bonuses, so "first score plus first bonus" is in row 0, column 0; the second pair is in row 1, column 1; and so on. **The other six are meaningless** because each is one player's score plus a *different* player's bonus — `13` in row 0 is the second player's 12 plus the first player's bonus of 1.
+
+### 🤔 Think Deeper
+
+*The workbook's own Answers section gives no model for T1 and T2; these are marking guides written from the prompts. These are paragraphs: mark for the moves below, not for wording.*
+
+**T1. Broadcasting: for and against.** A strong paragraph has four moves, in order:
+1. **Without broadcasting** the student writes out what `celsius * 9 / 5 + 32` would have to become — every operation needs its own array of matching length (`celsius * [9, 9, 9, 9] / [5, 5, 5, 5] + [32, 32, 32, 32]`, or a loop) — and sees that the one-sign-in-the-window idea is what makes the formula readable.
+2. **The case against**, using `(3,)` + `(3, 1)`: three plus three gave nine, with no error, and the right answers hiding on the diagonal.
+3. **A habit, not a verdict:** e.g. *"print the shape of every answer the moment it is made"*, or *"check how many went in and how many came out."*
+4. **Why newer libraries tightened the edges but kept it:** the convenience is too valuable — the code stays short and reads like the formula — and the danger is cured by the habit rather than by removing the feature.
+*Watch for:* "broadcasting is good" / "bad" with no habit; that is the weak answer the prompt rules out.
+
+**T2. The four silent bugs.** The four: `max()` reporting 90 (Week 16), `<U21` from one typo (Week 17), the list repeated instead of doubled (Week 18), three plus three giving nine (Week 18). A strong paragraph:
+1. **What they share and why each survived:** each produced a *plausible-looking* result, and the thing that was wrong was never looked at (text compared as text; a dtype never printed; a count never taken; a shape never printed).
+2. **"It ran" versus "it's right":** "it ran" means Python understood; "it's right" means it is what you asked for — and **that difference is the programmer's job**, since Python cannot know what was meant.
+3. **Are the four checks boring by coincidence?** No. The checks are boring *because* they are cheap and mechanical — a count, a `type()`, a `.shape`, a comparison with something known — and that is what makes them habits you can afford to run every time.
+
+### 🛠️ Build It
+
+**Half 1 — the eight loops.** The student's loops are their own. Model answer, using the eight-song playlist from Week 16:
 
 ```python
 """hw18.py - eight loops from my own weeks 7-15 files, retired. Both versions, then the proof."""
@@ -1699,14 +2052,14 @@ all eight identical? True
 
 **Hand-check two, with the student, on paper:**
 
-```
+```text
 card 1:  120 x 2 = 240   ✔      45 x 2 = 90    ✔
 card 4:  120 / 3.5 = 34.2857... = 34.29  ✔
 card 5:  120+45=165 · +300=465 · +60=525 · +210=735 · +95=830 · +180=1010 · +220=1230  ✔
 card 6:  120 / 1230 x 100 = 9.756... = 9.76  ✔   and all eight shares add to 100
 ```
 
-That last line is a free cross-check worth pointing out: **the eight percentages must add up to 100.** If they do not, the total is wrong.
+That last line is a free cross-check: **the eight percentages must add up to 100.** If they do not, the total is wrong.
 
 **Three things to mark, in this order:**
 
@@ -1714,48 +2067,46 @@ That last line is a free cross-check worth pointing out: **the eight percentages
 2. **Did they use `list(...) == ...`?** A student who compared by eye and wrote "same" has not done the check, and will believe a wrong answer one day.
 3. **Card 5 is different from the others and it is worth a tick if they noticed.** It is an *accumulator* loop — one number out, not a list — so the one-liner is `sum(arr)`, not `arr` something. Python's own `sum` from Week 12, working perfectly on an array.
 
-**18.4(a) Which of your eight loops was the most satisfying to retire, and why?**
-Usually card 4 or 6 — anything with `range(len(...))` and indexes in it, because all the index-juggling disappears. Model answer: *"the plays-per-minute one, because the loop version had `plays[i]` and `minutes[i]` in it and I always have to check I've got the `i`s in the right places. The one line just says plays divided by minutes."*
+**Most satisfying to retire?** Usually card 4 or 6 — anything with `range(len(...))` and indexes in it, because the index-juggling disappears. Model answer: *"the plays-per-minute one, because the loop version had `plays[i]` and `minutes[i]` in it and I always have to check I've got the `i`s in the right places. The one line just says plays divided by minutes."*
 
-**18.4(b) Did any refuse to retire? Which, and why?**
-Any honest answer is good. The two expected ones: a loop with an `if` in it (needs Week 20's mask) and a loop building a counting dictionary (needs names, so array arithmetic cannot retire it). **A student who correctly identifies the `if` loop as "not yet, and I think there's a tool coming" has done something genuinely impressive.**
+**Did any refuse to retire?** Any honest answer is good. The two expected: a loop with an `if` in it (needs Week 20's mask) and a loop building a counting dictionary (needs names). **A student who correctly identifies the `if` loop as "not yet, and I think there's a tool coming" has done something genuinely impressive.**
 
-### Page 18.5 — The identical-output proof
+**Half 2, Part 1 — the Term 2 reflection table.**
 
-**18.5(a) Why do the loop's answer and the one-liner's answer print differently?**
-Because they are different **containers**. A list prints with commas between the values; an array prints with spaces, and pads the numbers so the columns line up, because arrays are meant to be read in rows and columns. Same numbers, two ways of showing them.
+| Week | What it was | Their word |
+|---|---|---|
+| 10 | Functions with parameters, `return`, defaults | |
+| 11 | Lists, index from 0, `append` | |
+| 12 | Slicing, `sorted`, importing your own file | |
+| 13 | Dictionaries, `.get()` with a fallback | |
+| 14 | A list of dicts is a table | |
+| 15 | Filter, group, and the row count | |
+| 16 | CSV out, CSV back, convert on load | |
+| 17 | Arrays, `.shape`, `.dtype` | |
 
-**18.5(b) Write the line that settles it properly.**
+There are no right answers to the words. **What you are marking is whether the four questions have real content in them.**
 
-```python
-print("identical?", list(line_answer) == loop_answer)
-```
+**(a) Which week of Term 2 made the most sense, and why?**
+Any answer with a *reason* is good. The most common are Week 11 (lists feel concrete) and Week 14 (a table is a familiar thing). Watch for Week 16 — a student who says the CSV week usually means *"I finally saw why any of this was for anything"*, which is worth writing down.
 
-`list(...)` turns the array back into a plain list so like is compared with like, and then Python compares every value.
+**(b) Which one would you least like to be tested on tomorrow?**
+The most common honest answers are Week 15 (comprehensions with conditions) and Week 17 (`(3, 1)` versus `(3,)`). Both are correct diagnoses of genuinely hard things. **Whatever they say goes straight onto the revisit list.**
 
-**18.5(c) Why not just read the numbers and check by eye?**
-Two reasons, and the second is the real one. With six numbers you *can* — but with sixty you cannot, and with six hundred you certainly cannot. And more importantly: **checking by eye is exactly the habit that let `90` through in Week 16.** A number that looks plausible is not a check. `True` is a check.
+**(c) One thing you can do now that you could not do in Week 9.**
+Model answers, in rough order of depth: *"put my data in a file and get it back"*; *"answer a question about a table without counting by hand"*; *"look at an error and know which line to go to"*; *"tell whether something is text or a number, and check rather than assume."* The last is the best available answer and it is worth saying so.
 
-**18.5(d) `identical?` printed `False`. What do you do first?**
-Print both answers, in full, and find the **first** position where they differ. Not the second — the first, because everything after it may just be a knock-on. Then ask what is different about that position. (This is exactly the mismatch-finder move from Week 16, applied to arrays.)
+**(d) In Week 9 you turned repeated blocks into functions. What did Term 2 turn repeated work into?**
+Two good answers, both right. **Tools** — `records.py`, `filter_by`, `group_count`, `save_csv`: written once, pointed at anything. And **one-liners** — array maths, which retires the loop entirely. The pattern: *stop typing the machinery; name it once and reuse it.*
 
-### Page 18.6 — The revisit pile
-
-**18.6(a) Your revisit list. At least two lines, each naming a week and a thing.**
-
-What a **good** list looks like:
+**Half 2, Part 2 — the revisit list.** At least two lines, each naming a week and a thing. A **good** list:
 
 > *"Week 7 — `range(6)` stops at 5, and I keep thinking it stops at 6."*
 > *"Week 15 — the comprehension with the `if` in the middle. I can read it but I can't write it."*
 > *"Week 17 — telling `(3,)` from `(3, 1)`. I got that one wrong today and I got it wrong in the homework too."*
 
-What an **unusable** list looks like: *"loops"*, *"numpy"*, *"most of it"*, *"nothing"*.
+An **unusable** list: *"loops"*, *"numpy"*, *"most of it"*, *"nothing"*. **Send a vague one back.** This list is what you teach from in the first ten minutes of Weeks 19, 20 and 21.
 
-**Send a vague one back.** This list is what you teach from in the first ten minutes of Weeks 19, 20 and 21 — a vague list costs you three lessons.
-
-**18.6(b) Your three best Bug Log entries from Term 2, one sentence each on why.**
-
-The four silent bugs of Term 2, which is what you are hoping they pick from:
+**Half 2, Part 3 — the three best Bug Log entries.** The four silent bugs of Term 2, which is what you are hoping they pick from (the sheet also asks whether at least one of the three had no error message; the answer should be yes):
 
 | The bug | Week | Why it is the best kind of entry |
 |---|---|---|
@@ -1764,25 +2115,45 @@ The four silent bugs of Term 2, which is what you are hoping they pick from:
 | `scores * 2` gave twelve numbers | 18 | The line you are looking at is fine. The mistake is the line above. |
 | three plus three gave nine | 18 | The right answers were *present*, on the diagonal, surrounded by nonsense. |
 
-And the loud ones worth keeping: the two-`File` `KeyError` from Week 15 (read the **last** `File` line); `TypeError: can only concatenate str (not "int") to str` from Week 16; the ragged-block `ValueError` from Week 17.
+And the loud ones worth keeping: the two-`File` `KeyError` from Week 15 (read the **last** `File` line); `TypeError: can only concatenate str (not "int") to str` from Week 16; the ragged-block `ValueError` from Week 17. **If all three of their picks are crashes**, ask one question: *"which of this term's bugs didn't crash?"* and watch them find four. That conversation is worth more than the page.
 
-**If all three of their picks are crashes**, ask one question: *"which of this term's bugs didn't crash?"* and watch them find four. That conversation is worth more than the page.
+**Half 2, Part 4 — two sentences.**
 
-**18.6(c) One sentence: what check would have caught three of Term 2's silent bugs?**
-
-Model answer:
+**(a) The one check that would have caught three of Term 2's silent bugs** (six words will do). Model answer:
 
 > *"Count how many things went in and how many came out."*
 
-Twelve rows written, eleven loaded — Week 16. Six numbers in, twelve out — today. Three plus three, nine out — today. **One question, three bugs, three different weeks.** And its close relative, which catches the other one: *print the shape and the dtype.*
+Twelve rows written, eleven loaded — Week 16. Six numbers in, twelve out — this week. Three plus three, nine out — this week. **One question, three bugs, three different weeks.** Its close relative, which catches the fourth: *print the shape and the dtype.*
 
-**18.6(d) One sentence: what is the difference between "it ran" and "it's right"?**
-
-Model answer:
+**(b) The difference between "it ran" and "it's right".** Model answer:
 
 > *"'It ran' means Python understood me. 'It's right' means I asked for the thing I actually wanted — and Python has no way of knowing the difference, so that part is my job."*
 
 **That sentence is the whole of Term 2.** Mark it properly. A student who can write it will produce an honest capstone in Week 35.
+
+### 🎨 Draw It
+
+No single right drawing. A good ladder has **nine rungs** (Week 10 at the bottom, Week 18 at the top), each with a short phrase rather than a single word, and **at least one ring**. The tell that it is a real diagnosis: the ringed rung has a **reason** that names a specific thing — *"Week 15 — the comprehension with the `if` in it"* is a diagnosis, *"Week 15 — hard"* is not. A strong extra is an arrow from the Week 17 rung up to the Week 18 rung (*17 gave me the habit, 18 gave me the reason*). A weak answer labels every rung with a bare word like "numpy" and rings nothing. If they honestly retired all eight loops and nothing wobbles, they ring the week they would least like to be tested on tomorrow.
+
+### 📊 Self-Check
+
+The "I can…" grid is self-rated; read it alongside the revisit list and ask about any 😕. True or false:
+
+| Statement | Answer | Why |
+|---|---|---|
+| `scores * 2` doubles a plain Python list | **FALSE** | It repeats it. Six in, twelve out, no error |
+| `[48, 12] * 2` raises an error | **FALSE** | It works, and that is the danger: `[48, 12, 48, 12]` |
+| `[48, 12] + 5` raises an error | **TRUE** | `TypeError: can only concatenate list (not "int") to list`. A small mercy |
+| `[96, 24, 154]` and `[ 96  24 154]` are different answers | **FALSE** | Same numbers. A list prints with commas, an array with spaces |
+| `arr == my_list` gives you `True` or `False` | **FALSE** | One answer **per position** — `[ True True True ]`. Use `list(arr) == my_list` |
+| Two arrays being added must have shapes that line up | **TRUE** | And when they cannot, numpy refuses rather than guessing |
+| `(3,)` + `(3, 1)` raises an error | **FALSE** | Nine numbers and no warning. The worst outcome available |
+| `np.arange(6)` includes 6 | **FALSE** | Six numbers, 0 to 5. Same off-by-one as Week 7's `range` |
+| `np.zeros(2, 3)` makes a 2 by 3 grid | **FALSE** | `TypeError: Cannot interpret '3' as a data type`. The shape needs its own brackets |
+| `np.zeros((2, 3))` gives whole numbers | **FALSE** | `float64`. Every zero has a dot after it |
+| `sum(arr)` works on a numpy array | **TRUE** | Python's own `sum` from Week 12; it hands back one number |
+| Array maths can retire a loop that counts players per team | **FALSE** | That needs the team **names**, and array arithmetic has none. It belongs to a dictionary for now |
+| If code runs with no error, the shapes must have been right | **FALSE** | The whole point of this week. Print the shape of the answer |
 
 ### Answers to every question posed in the lesson
 

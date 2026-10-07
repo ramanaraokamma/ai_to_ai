@@ -1054,7 +1054,13 @@ photographed.
 > words. Three limits. A number on each one."
 
 **Workbook pages:** W33.5 (finish the fix, if unfinished in class), **W33.6** (the poster: data map,
-attribution and assembly), **W33.7** (warning sign, final version), **W33.8** (vocabulary).
+attribution and assembly), **W33.7** (warning sign, final version), and **A6** in Practice Set A
+(vocabulary, which the workbook labels "page W33.8"; there is no separate page by that name).
+
+**Also in the workbook, not part of the script above:** Warm-Up, Practice Set A (A1–A5), Practice Set B
+(B1–B5), Puzzle of the Week, Think Deeper, Draw It and Self-Check. Assign any of them as extra practice
+if you wish; every item has its answer in the Answer Key below, in workbook order. Do not hand the
+student this guide, which holds the answers.
 
 **How long it should take:** 45–60 minutes. The data map is about 15 minutes, attribution 5, copying
 the results across 20, and the warning sign 10. If it is running past an hour, the copying is being
@@ -1071,6 +1077,152 @@ done too beautifully — say so, and tell them a poster is evidence, not art.
 plus a description of what a good answer of any shape must contain. Use the first to check arithmetic
 and the second to mark.*
 
+**Where to find things.** The workbook (`workbook/week-33.md`) runs in this order: Warm-Up · Practice
+Set A (A1–A6) · Practice Set B (B1–B5) · Puzzle of the Week · Think Deeper · Build It (pages W33.1 to
+W33.7) · Draw It · Self-Check. **There is no separate page W33.8:** the "page W33.8" label sits on
+**A6, Vocabulary**. This key follows the workbook order, so every section and item has an answer here.
+The student's own Answers section at the end of the workbook agrees with everything below.
+
+### Warm-Up (last week's ideas, five items)
+
+| Item | Answer | What to watch for |
+|---|---|---|
+| 1 | **Yes**, personal data. Year 7 + postcode area 3 + left-handed identifies somebody *in combination*, with no name | "No, there is no name." The name is not what makes data personal |
+| 2 | Any three of: date and time · device make and model · camera settings · exact location · whether it was edited | Only "the picture" or "the file name" |
+| 3 | Who posted it **first** · **when**, and how fast it spread · **who else** has it · **what was around it** (reverse-search a frame). Fifth, if offered: who benefits if I pass it on? | Listing "does it look real?" The four checks are about provenance, not looks |
+| 4 | Automation bias: trusting a machine's answer more than your own judgement, especially when tired or rushed. **The flaw lives in the person**, not the machine | Saying the flaw is in the machine |
+| 5 | **No.** No other source is strong evidence, not proof. **Do not share it, and wait** | "Yes, so it is fake", or "share it, to ask if it is real" |
+
+### Practice Set A — Understand It
+
+**A1 (fill in the blanks).** *came from* … *made it*. Misinformation: *whether*. Disinformation:
+*deliberately* (or *on purpose*). Last sentence: **true** sentences, saying which one **loudest**.
+
+**A2 (multiple choice).** The answer is **(c)**: two conditions, the gap with its unit
+(91.7 − 33.3 = 58.4 points), and how many unseen photos. Reasons for the other three:
+
+- **(a)** true but misleading: the best of four numbers, quoted as if it were all of them. Misinformation
+  made from a true sentence.
+- **(b)** true, but the weaker number, because it moves just by choosing how many photos of each
+  condition to test. A fact about the test, not the model.
+- **(d)** contains no numbers, so it tells a reader nothing. "Not perfect" is true of everything.
+
+**A3 (true or false).**
+
+| Item | Answer | Why |
+|---|---|---|
+| (i) | **FALSE** | 8 out of 8 means the mistake has not been found yet, with only eight photos. Write "8 out of 8, but that is only 8 photos" |
+| (ii) | **FALSE** (the one most students get wrong) | Re-run the **identical** 48 photos and publish both columns. A new test set swaps a measured number for a hopeful one, and you cannot tell whether the model improved or the new photos were easier |
+| (iii) | **FALSE** | "Nearly right" is not a category. A prediction you can change after the results is a summary of the results. Circle one, in pen |
+
+**A4 (match).** **1 → C · 2 → E · 3 → A · 4 → B · 5 → D**
+
+**A5 (label the diagram).** 1 **COUNT** the training photos by condition · 2 **PREDICT** the worst group
+and seal it · 3 **TEST** twelve photos in each of four conditions · 4 **TRACE** the worst group back to
+a count · 5 **PRICE** the fix in actual photos, with the algebra. **Pink box:** *compare* the sealed
+prediction with the measured result, and *report it either way, right or wrong.* **Which two before
+any testing?** Steps **1 and 2**, the count and the sealed prediction.
+
+**A6 (vocabulary, the workbook's "page W33.8").** See **W33.8 (A6) — Vocabulary** later in this key.
+
+### Practice Set B — Use It (Aisha's audit)
+
+**B1.**
+
+```text
+(a)  A:  11 ÷ 12 = 0.916666...  →  91.7%      B:  6 ÷ 12 = 0.5  →  50.0%
+     C:   8 ÷ 12 = 0.666666...  →  66.7%      D:  3 ÷ 12 = 0.25 →  25.0%
+
+(b)  11 + 6 + 8 + 3 = 28        12 × 4 = 48
+     28 ÷ 48 = 0.583333...  →  58.3%
+
+(c)  best  = A, bright daylight at 91.7%
+     worst = D, odd background  at 25.0%
+     ACCURACY GAP = 91.7 − 25.0 = 66.7 percentage points
+```
+
+**(d)** She predicted lamplight, which came third at 50.0%. The worst was odd background at 25.0%.
+Poster wording: **"My prediction was WRONG. I said lamplight; the worst group was odd background, at
+25.0%."** What she got wrong about her own data: she had 12 lamplight photos but **zero** patterned
+backgrounds. *Watch for:* "nearly right" (reject), or putting the gap as "66.7%" without "points".
+
+**B2.** Shares and accuracies, in table order:
+
+| Condition | Training photos | Share of 140 | Test accuracy |
+|---|---:|---:|---:|
+| Bright daylight | 96 | 96 ÷ 140 = 68.6% | 91.7% |
+| Lamplight | 12 | 12 ÷ 140 = 8.6% | 50.0% |
+| Held in a hand | 32 | 32 ÷ 140 = 22.9% | 66.7% |
+| Odd background | **0** | 0.0% | 25.0% |
+
+The shares sum to 100.1% through rounding; say so. The accuracy follows the count down the table.
+
+- **(a)** *"Odd background scored 25.0% because 0 of my 140 training photos had a patterned background."*
+- **(b)** `x / (140 + x) = 0.20` → `x = 28 + 0.20x` → `0.80x = 28` → `x = 28 ÷ 0.80 = 35 photos`.
+  Check: 35 out of 175 = 0.20 = 20%.
+- **(c)** 35 does not divide by 3: **12 hair clip, 12 pencil, 11 rubber** (any split within one of each
+  other, as long as the student says which).
+- **(d)** Re-run the **identical** 48 photos and publish both columns. Target: odd background above
+  58.3%, gap below 30 points, daylight no worse than 91.7%.
+
+**B3.** **(a)** She changed two things at once, the model and the test, so the jump from 58.3% to 71%
+could be a better model or an easier set of photos. She should have re-run the identical 48 photos and
+published both columns. **(b)** Daylight (or any strong condition) might have got worse. That is a
+trade-off, and a brand-new test set hides it.
+
+**B4.** **(a)** The student's fault: they chose the layout, and a flattering number in the biggest
+letters with the limits missing designs the misunderstanding. **(b)** **Misinformation.** It becomes
+**disinformation** when the student does it *knowing* the lamplight number, because the poster looks
+better.
+
+**B5.** Full-marks rewrites (any wording with a specific use and a measured number):
+
+| What they wrote | A full-marks rewrite |
+|---|---|
+| "Don't use it in bad light" | "…naming anything in lamplight. It was right **4 times out of 12**, which is **33.3%**." |
+| "It's not perfect" | "…anything where a wrong answer costs something. Overall it was right **30 times out of 48**, which is **62.5%**." |
+| "Don't use it for important things" | "…deciding on your own. In the two worst conditions it was wrong more often than right: **33.3%** and **58.3%**." |
+
+"Be careful" with no use and no number scores zero.
+
+### Puzzle of the Week — The snowball
+
+```text
+(a)  0.80x = 24  →  x = 30 photos.   NEW TOTAL = 120 + 30 = 150
+(b)  (14 + y) / (150 + y) = 0.20  →  14 + y = 30 + 0.20y
+     0.80y = 16  →  y = 20 photos.   NEW TOTAL = 150 + 20 = 170
+(c)  (22 + z) / (170 + z) = 0.20  →  22 + z = 34 + 0.20z
+     0.80z = 12  →  z = 15 photos.   NEW TOTAL = 170 + 15 = 185
+(d)  30 + 20 + 15 = 65 new photographs
+(f)  lamplight = 30 out of 185 = 0.1622 = 16.2%
+```
+
+**(e)** **Nothing extra.** Shooting the original 120 across all four conditions would have cost the same
+120 photographs; the 65 are the price of a shortcut that saved no time. **(f)** No, lamplight has
+slipped to 16.2%: every fix dilutes the one before it, so plan all the fixes together. (Harder version:
+with 84 daylight fixed, the final total for three conditions at 20% each is 84 ÷ 0.4 = 210, so 42 of
+each: 42 lamplight, 28 more odd background, 20 more held in a hand, 90 photos in all.) This is the same
+arithmetic as the Extension under W33.5.
+
+### Think Deeper
+
+**1. Publish with a warning, or not at all?** No clean answer; full marks needs both sides plus a
+commitment and who is helped and who is risked. Publish with a warning helps the people it works for
+(9 in 10 in daylight) but risks people who do not read warnings, often those in a hurry, when automation
+bias bites hardest. Not publishing misleads nobody but helps nobody. Most professionals land on
+*publish, with the limit built into the product* (the app refuses to answer in low light).
+
+**2. How many photos is enough?** Honest answer: nobody knows for sure; it depends on how varied the
+group is and how big a difference you want to detect, and in practice it is a loop (test, look at the
+gap, add data, retest). One photo changing side moves a group by 1/12 = **8.3 points**, so a gap under
+about 9 points might be luck; a **58-point** gap is far too big to be luck; a **3-point** gap claims
+nothing. The sentence for the poster: *"Twelve photos per group, so this is a strong hint rather than a
+final number."*
+
+### Build It
+
+The seven pages below are the workbook's **Build It** section.
+
 ### W33.1 — Count your own training data
 
 Four buckets, every photo in exactly one, total must equal their training-set size.
@@ -1080,9 +1232,9 @@ Four buckets, every photo in exactly one, total must equal their training-set si
 | Condition | Tally | Count | Share (count ÷ 120 × 100) |
 |---|---|---:|---:|
 | Bright daylight, plain table | ‖‖‖ … | 84 | 84 ÷ 120 = 0.700 → **70.0%** |
+| Lamplight / after dark | — | **0** | 0 ÷ 120 = 0 → **0.0%** |
 | Held in a hand | ‖‖ … | 22 | 22 ÷ 120 = 0.1833 → **18.3%** |
 | Odd, patterned background | ‖ … | 14 | 14 ÷ 120 = 0.1167 → **11.7%** |
-| Lamplight / after dark | — | **0** | 0 ÷ 120 = 0 → **0.0%** |
 | **Total** | | **120** | 100.0% |
 
 **Marking:** the four counts must sum to the training-set total. The shares must sum to 100% (±0.1
@@ -1306,17 +1458,17 @@ photographs is the price of a shortcut that saved zero time.
 
 **Six blocks and a red strip.** Marked on completeness, not beauty.
 
-**Block 1 — the data map of a real product.** Four stages, drawn as a downward flow, guesses marked
+**Block 1 — the data map of a real product.** Six rows in the workbook's table, guesses marked
 `?`. A good example, for a video recommender:
 
 | Stage | A good answer |
 |---|---|
 | What data goes in | What I watched, how long before I stopped, what I skipped, what I searched, time of day, my device `?`, what people similar to me watched `?` |
-| What it predicts | Input: everything above. Output: an ordered list of what I am most likely to keep watching |
-| Who is affected — helped most | People with common taste, who get good suggestions immediately |
-| Who is affected — helped least | People with unusual taste, who get pushed toward the popular thing |
-| Who is affected — **but never asked** | Every creator whose video was or was not recommended. They did not agree to be ranked and cannot see why they were |
-| What goes wrong | Small harm: a boring evening. Big harm: hours vanish, or it keeps feeding something that is making me feel worse. Who finds out? Usually nobody — there is no one to complain to |
+| What it predicts (input → output) | Input: everything above. Output: an ordered list of what I am most likely to keep watching |
+| Who is helped **most** | People with common taste, who get good suggestions immediately |
+| Who is helped **least** | People with unusual taste, who get pushed toward the popular thing |
+| Who is affected **but was never asked** | Every creator whose video was or was not recommended. They did not agree to be ranked and cannot see why they were |
+| What goes wrong (small harm, big harm, **who finds out**) | Small harm: a boring evening. Big harm: hours vanish, or it keeps feeding something that is making me feel worse. Who finds out? Usually nobody — there is no one to complain to |
 
 The **"affected but never asked"** row is the one that earns the marks. Most AI systems affect far
 more people than use them.
@@ -1400,7 +1552,7 @@ publishing helps nobody at all. Most professionals land on *publish, with the li
 the product itself* — a refusal to answer rather than a note in the instructions. A student who gets
 as far as "the warning should be in the app, not on the poster" has arrived somewhere real.
 
-### W33.8 — Vocabulary
+### W33.8 (A6) — Vocabulary
 
 | Word | Answer | A good example from their own work |
 |---|---|---|
@@ -1410,6 +1562,21 @@ as far as "the warning should be in the app, not on the poster" has arrived some
 
 **The sentence to look for in the "why does it matter" box:** something equivalent to *"you can
 create misinformation using only true sentences, by choosing which true sentence to say loudest."*
+
+### Draw It
+
+Marked on four things: four bars against a ruled baseline in a sensible order; every bar labelled with
+its **percentage above** and its **training count below** (Rohan's counts are 84, 22, 14 and 0); the
+worst bar **circled** and the gap arrowed in **percentage points** (58.4); and a **dashed** fifth bar
+for the hoped-for result, labelled "hoped for, not measured yet" (the workbook's model answer: 66.7%
+after 30 more lamplight photos). A dashed bar drawn solid publishes a hope as a result, which is the
+mistake the whole week exists to prevent. A weak answer has no counts under the bars.
+
+### Self-Check
+
+Nine "I can…" rows, each ticked easy, with help, or not yet. Not marked. Read the "not yet" column: any
+tick against *report my prediction honestly* or *name the retest* is the thing to revisit, because those
+two carry the week.
 
 ### Answers to the questions posed during the lesson
 

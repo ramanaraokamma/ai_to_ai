@@ -15,7 +15,7 @@
 | **New maths** | **None.** This week practises division and reading a fraction as a percentage — the same arithmetic as Week 1, on new numbers. |
 | **New syntax** | `train_test_split` called **twice** to make three piles · `DummyClassifier(strategy="most_frequent")` · `model.predict_proba(X)[:, 1]` · `roc_auc_score(y_val, prob)` |
 | **Dataset** | The same numpy-generated pizza-delivery table from Week 1, `make_data.py`, seed 0. **Do not edit that file.** Nothing downloads. |
-| **Materials** | A deck of playing cards with **20 cards counted out, exactly 5 of them red** · the five index cards from Week 1 (card four is blank — that is deliberate) · printed workbook pages 2.1–2.3 · the Bug Log · a highlighter |
+| **Materials** | A deck of playing cards with **20 cards counted out, exactly 5 of them red** · the five index cards from Week 1 (card four is blank — that is deliberate) · the printed workbook, with its 🛠️ Build It section (card deal, three-way split, baseline box, best-of-twenty table, Bug Log) and 🎨 Draw It page out · the Bug Log · a highlighter |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, **scikit-learn** (first use this year). No internet, ever. |
 | **Prep time** | 25 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `split_three.py` about 1 second · `baselines.py` about 1 second · `best_of_twenty.py` about 1 second. Nothing trains. Nothing waits. |
@@ -33,7 +33,7 @@ By the end of the lesson the student can:
 3. **Prove a stratified split kept the class proportions** by printing them for all three piles to three decimal places and showing they agree.
 4. **Build two dummy baselines** and state, as a number, what a real model has to beat before it is worth keeping.
 
-Observable evidence: a run of `split_three.py` printing `1200 / 400 / 400` with the late rate `0.287` in every pile; index card four filled in; a run of `baselines.py` printing `0.7125` and `0.5000` for the same model; and a number written in a box on workbook page 2.5 that the student can point at in Week 7.
+Observable evidence: a run of `split_three.py` printing `1200 / 400 / 400` with the late rate `0.287` in every pile; index card four filled in; a run of `baselines.py` printing `0.7125` and `0.5000` for the same model; and a number written in the baseline box in the workbook's 🛠️ Build It section that the student can point at in Week 7.
 
 ---
 
@@ -569,7 +569,7 @@ above the true zero: 0.0853
   1. Delete the `[:, 1]` from `prob = dummy.predict_proba(X_val)[:, 1]`. You get a long traceback ending in `ValueError: y should be a 1d array, got an array of shape (400, 2) instead.`
   2. Delete `stratify=y_rest` from **cut two only**. **Nothing crashes.** The rates come out 0.2958 / 0.2625 / 0.2875 — the test pile is still fine, and validation has quietly drifted. This is the silent one and it is the more important of the two.
 - [ ] **Count out twenty playing cards with exactly five red ones.** Do it now, tonight, and put an elastic band round them. Counting cards in front of a class costs three minutes you do not have.
-- [ ] **Print workbook pages 2.1–2.3.**
+- [ ] **Print the workbook's 🛠️ Build It (card deal and three-way split) and 🎨 Draw It sections.**
 - [ ] **Find the five index cards from Week 1.** Card four is blank. You are going to hand it back blank and say nothing.
 - [ ] **Draw an empty box on the board, about a hand-span wide, and leave it empty.** It gets filled in at minute 63 and it stays on the wall until Week 7.
 
@@ -579,7 +579,7 @@ above the true zero: 0.0853
 - [ ] `split_three.py`, `baselines.py`, `best_of_twenty.py`, `unstratified.py` **deleted or renamed** — they type them.
 - [ ] Twenty cards, banded, on the table. Five red.
 - [ ] The five Week 1 index cards on the table, card four face up and blank.
-- [ ] Workbook 2.1–2.3 out. **2.3's prediction column filled in pen before any cards are dealt.**
+- [ ] Workbook Build It section out, at "The card deal". **The "Predictions, in pen, before dealing" line filled in before any cards are dealt.**
 - [ ] The empty box on the board.
 
 ### Fallback if the laptop fails
@@ -1113,8 +1113,8 @@ it said 'late' this many times: 109
 
 Full instructions in the next section. In the lesson flow:
 
-- **Minutes 0–8:** the **twenty cards**, dealt twice, counted, with all six divisions written down on workbook page 2.3.
-- **Minutes 8–16:** their own `split_three.py` on their own machine, and the three rates copied onto page 2.4.
+- **Minutes 0–8:** the **twenty cards**, dealt twice, counted, with all six divisions written down in the workbook's Build It "card deal" tables.
+- **Minutes 8–16:** their own `split_three.py` on their own machine, and the three rates copied into the Build It "three-way split, proved" table.
 - **Minutes 16–20:** the hard question, in writing: **you have already run twenty models this term. What is your validation score worth now?**
 
 ---
@@ -1125,20 +1125,20 @@ This section gives the full card activity: setup, three parts, what finished loo
 
 ### Setup
 
-**On the table:** twenty playing cards, exactly five red · the five Week 1 index cards, with card four now filled in · a pen · workbook pages 2.3–2.4 · the Bug Log.
+**On the table:** twenty playing cards, exactly five red · the five Week 1 index cards, with card four now filled in · a pen · the workbook's Build It section (card deal and three-way split) · the Bug Log.
 
 **On the screen:** `split_three.py`, working, printing all three rates.
 
 ![The same two cuts, without and with stratify](../figures/fig-w02-3-stratified-vs-unstratified-deal.svg)
 *Figure 2.7 — What "finished" looks like for the card deal, in the numbers it is standing in for. Both sides share out exactly 575 late orders.*
 
-**The one rule that makes this work:** *deal before you compute, and predict before you deal.* Page 2.3 has a prediction column. It gets filled in, in pen, before a single card moves.
+**The one rule that makes this work:** *deal before you compute, and predict before you deal.* The Build It card deal has a "Predictions, in pen, before dealing" line. It gets filled in, in pen, before a single card moves.
 
 ### Part 1 — the cards, dealt twice (8 minutes)
 
 > **Say this:** "Twenty cards. Five red. Three piles: twelve, four, four — those are our 1200, 400, 400, shrunk by a hundred.
 >
-> **Before you deal: page 2.3, in pen.** How many red cards do you predict in each pile? Write three numbers."
+> **Before you deal: the predictions line in Build It, in pen.** How many red cards do you predict in each pile? Write three numbers."
 
 Most students write 3 / 1 / 1, which is the *stratified* answer. Do not correct them.
 
@@ -1167,13 +1167,13 @@ Six divisions, all doable in the head or with two lines of long division:
 
 *(5 ÷ 12 = 0.41666… — round to 0.4167. If a student's shuffled deal comes out kinder than ours, use their real counts and their real divisions. **The argument does not need all five reds in one pile — it only needs the two small piles to disagree with each other.** If by some luck they deal 3/1/1 first time, say so honestly: "you got lucky, and 'lucky' is the whole problem — deal it four more times and watch it stop being lucky.")*
 
-**Then, in writing on page 2.3, one sentence:** *which deal was fair, and how did you know?*
+**Then, in writing in Build It, one sentence:** *which deal was fair, and how did you know?*
 
 The answer must contain a **number**, not a feeling. "The second one, because every pile came out 0.25 and the whole deck is 0.25" is the answer. "The second one, because it looked more even" is not.
 
 ### Part 2 — their own split (8 minutes)
 
-They run their own `split_three.py` and copy three things onto page 2.4: the three pile sizes, the three late counts, and the three rates to four decimal places.
+They run their own `split_three.py` and copy three things into Build It's "three-way split, proved" table: the three pile sizes, the three late counts, and the three rates to four decimal places.
 
 **Then the check that makes it real:**
 
@@ -1201,7 +1201,7 @@ validation is 0.2 of the whole table
 
 ### Part 3 — the hard question, in writing (4 minutes)
 
-> **Say this:** "Last thing, and this is the bit I'm marking. **Two sentences, on page 2.4.**
+> **Say this:** "Last thing, and this is the bit I'm marking. **Two sentences, in Build It under "Best of twenty" — the "last four minutes" box.**
 >
 > You've now seen twenty models get scored on a validation pile, and the best of them scored 0.5853 while being worth exactly nothing. **So what is a validation score actually worth? And what would you have to do to get a number you could report?**"
 
@@ -1215,9 +1215,9 @@ A student who only says "validation scores are wrong" has missed it — they are
 ### What "finished" looks like
 
 - Card four has **1200 / 400 / 400** on the back and the three rules on the front.
-- Page 2.3 has six divisions worked out, plus the whole-deck 5 ÷ 20 = 0.25, plus one sentence naming a number.
+- The Build It card deal has six divisions worked out, plus the whole-deck 5 ÷ 20 = 0.25, plus one sentence naming a number.
 - `split_three.py` runs and prints `0.287` three times.
-- Page 2.4 has three sizes, three counts, three rates, and 345 + 115 + 115 = 575 checked.
+- Build It's "three-way split, proved" has three sizes, three counts, three rates, and 345 + 115 + 115 = 575 checked.
 - `baselines.py` runs and prints **0.7125** and **0.5000** for the same model.
 - The box on the board is filled in, and the student can say what is in it without looking.
 - Both of today's bugs are in the Bug Log — the `(400, 2)` shape error and the silent missing `stratify`.
@@ -1596,77 +1596,224 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
-This section gives the words to use when assigning homework.
+This section gives the words to use when assigning homework. **The workbook has no page numbers.** It is one file with named sections, in this order: ✅ Warm-Up · 🔢 Do the Maths by Hand (M1–M4) · 🔎 Predict the Output (P1–P4) · ✍️ Practice Set A — Read It (A1–A6) · ✍️ Practice Set B — Write It (B1–B5) · 🐞 Fix the Broken Program · 🧩 Puzzle of the Week · 🤔 Think Deeper (T1–T2) · 🛠️ Build It · 🎨 Draw It · 📊 Self-Check. Its own ✅ Answers section sits at the very end, folded away, and this key agrees with it.
+
+**The in-class / homework split.** The lesson's activity fills in the first three parts of **🛠️ Build It** (the card deal, the three-way split proved, and the split with `stratify` deleted from cut two) plus the "last four minutes" written answer. Everything else goes home.
 
 **Say this:**
 
-> "About an hour, and it's mostly one script and one box.
+> "About an hour of the must-dos, and the rest is practice you spread across the week.
 >
-> **First, page 2.4 — split the table three ways and prove it.** Three sizes, three late counts, three rates to four decimal places, and the three rates have to match. Then add up your three late counts and check you get 575.
+> **First, the rest of Build It, and this is what I'm marking.** You have already filled in the card deal and the three-way split in class. Now do **the baseline box**: both baselines in the table, accuracy and AUC and 'times it said late' for each, then draw the box — a real box, with lines — and write in it the number a real model has to beat. **You will point at that box in Week 7**, so draw it properly.
 >
-> **Second, page 2.5, and this is what I'm marking. Both baselines, and the number in a box.** Build `most_frequent` and `stratified`. Report accuracy and AUC for both. Then draw an actual box — a real box, with lines — and write in it the number a real model has to beat. **You will point at that box in Week 7**, so draw it properly.
+> **Second, Build It's best-of-twenty table.** Run it. Write down what the winner scored on validation, what it scored on test, do the two subtractions, and then tell me where the 0.0853 came from. Don't use the word 'overfitting'. Say what actually happened.
 >
-> **Third, page 2.6 — the best-of-twenty experiment, in your own words.** Run it. Write down what the winner scored on validation, what it scored on test, and then two sentences explaining to somebody who wasn't here why the second number is lower. Don't use the word 'overfitting'. Say what actually happened.
+> **Third, the Bug Log at the bottom of Build It — two entries:** the shape error with `(400, 2)` in it, and the silent one where the stratify went missing and nothing complained.
 >
-> And **two Bug Log entries** from today: the shape error with `(400, 2)` in it, and the silent one where the stratify went missing and nothing complained."
+> **Then, over the week, in this order:** the **Warm-Up**, **Do the Maths by Hand**, **Predict the Output** (prediction in pen before you run anything), **Practice Set A**, **Practice Set B**, **Fix the Broken Program**. **The Puzzle, Think Deeper, Draw It and the Self-Check** are the last ones to do, and the Self-Check is for you, not for me."
 
-**Workbook pages:** 2.1, 2.2, 2.3 in class · **2.4, 2.5, 2.6** at home.
+**Workbook sections:** the card deal, the three-way split proved and the deleted-`stratify` table in class · **the baseline box, Best of twenty, the Bug Log** (all in 🛠️ Build It) at home, marked · **Warm-Up, Do the Maths, Predict the Output, Practice Sets A and B, Fix the Broken Program** across the week · **Puzzle, Think Deeper, Draw It, Self-Check** as the stretch.
 
-**Expected time:** 10 min on the split · 20 min on the two baselines and the box · 20 min on the best-of-twenty write-up · 10 min on the Bug Log and vocabulary. **About 60 minutes.**
+**Expected time:** 20 min on the baseline box · 20 min on the best-of-twenty write-up · 10 min on the Bug Log and the Warm-Up. **About 50–60 minutes for the marked core;** the practice sets are the rest of the week's work, not one sitting.
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are all three rates actually printed, and do they match?** A single rate is not a proof. **Two — is the box a box, with a number in it?** "The model should be good" earns nothing; **0.5000** earns everything. **Three — does the best-of-twenty explanation say what *caused* the drop?** The good answer contains "I picked the best of twenty" or "the winner was chosen using that pile". An answer that says "the test data was different" or "it overfitted" has named a category and missed the mechanism, and should be pushed with: *"the two piles are both 400 rows and both 28.75% late. So what was actually different about them?"* (One of them had a say in which model got picked.)
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are all three rates actually printed in the Build It split table, and do they match?** A single rate is not a proof. **Two — is the baseline box a box, with a number in it?** "The model should be good" earns nothing; **0.5000** earns everything. **Three — does the Best of twenty explanation say what *caused* the drop?** The good answer contains "I picked the best of twenty" or "the winner was chosen using that pile". An answer that says "the test data was different" or "it overfitted" has named a category and missed the mechanism, and should be pushed with: *"the two piles are both 400 rows and both 28.75% late. So what was actually different about them?"* (One of them had a say in which model got picked.)
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every section and item of the workbook, in workbook order, so you can mark from this page alone. The values are the workbook's own ✅ Answers, re-derived by running the code. Your student has a copy of those answers, so the teacher-only parts here are the **wrong-answer maps and marking tips**.
 
-### Page 2.1 — Match the word to the thing
+### ✅ Warm-Up
 
-| Word | Description |
-|---|---|
-| **train** | The pile the model learns from. Look at it as often as you like; its score means almost nothing. |
-| **validation** | The pile you choose with — between models, columns, settings. You may look many times, and it gets a little less honest each time. |
-| **test** | The pile you open exactly once, at the very end, to find out the truth. Then you stop. |
-| **stratified split** | A split that shares out each answer class in the same proportion as the whole table, on purpose, instead of leaving it to chance. |
-| **baseline** | The score of a model so stupid it cannot have learned anything. The zero on your ruler. |
-| **DummyClassifier** | A scikit-learn model that ignores the features completely and answers by a fixed rule you choose. |
-| **ROC-AUC** | A score from 0 to 1. 0.5 = a coin flip, 1.0 = perfect. The chance the model ranks a random late order above a random on-time one. |
-| **predicted probability** | The model's number between 0 and 1 saying how sure it is the answer is 1. |
+| Item | Question | Answer |
+|---|---|---|
+| **W1** | The four audit numbers | **20** duplicate rows · **0.9901** ID-ness of `order_id` · **108** empty cells · **0.7119** fraction not late |
+| **W2** | Which of 29.6512 and 28.0658 is wrong, and what is the bug? | **Neither is wrong.** 29.6512 is the average of the values that exist (56693 ÷ 1912); 28.0658 is the average per order (56693 ÷ 2020). **The bug is that nobody chose**, and a library made the choice silently. |
+| **W3** | `nunique()` is 2000, 2020 rows: write the division | 2000 ÷ 2020 = **0.9901**, above 0.95, so `order_id` is an **ID column** — it names the row, does not describe it, and must never be a feature. |
+| **W4** | `df.shape` or `df.duplicated()` needs brackets? Rule in five words | `df.duplicated()` needs them; `df.shape` does not. **A verb takes brackets, a fact doesn't.** |
+| **W5** | What goes on the blank card 4, and why could it not be filled in yet? | **The split** — 1200 / 400 / 400. It could not be filled in last week because it had not been decided yet: last week was the contract, this week is the cut. |
 
-*Label the printed diagram below.*
+**Marking tip:** a student who writes 0.7119 for W1's last box and 0.2875 elsewhere has mixed up "not late" and "late". Both are right numbers; make them say which is which.
+
+### 🔢 Do the Maths by Hand
+
+**M1 — two cuts, three piles.**
 
 ```text
-   2000 rows
-       |
-  CUT ONE  <- (a) test_size=0.2, stratify=y
-       |
-   +---+--------------------+
-   |                        |
-  1600                    400   <- (c) opened exactly ONCE
-   |
-  CUT TWO  <- (b) test_size=0.25, stratify=y_rest
-   |
-   +----------+
-   |          |
-  1200      400   <- (d) may be looked at many times, and it wears out
-   ^
-   (e) may be fitted on
+rows after the 20 copies go                      = 2000
+
+CUT ONE   2000 × 0.2                             = 400
+          2000 − 400                             = 1600
+
+CUT TWO   1600 × 0.75                            = 1200
+          1600 × 0.25                            = 400
+
+CHECK     1200 + 400 + 400                       = 2000   ✓
 ```
 
-**2.1(f) Why is the second `test_size` 0.25 and not 0.2?**
-Because it is a fraction **of the 1600 rows left**, not of the original 2000. You want 400 of them, and **400 ÷ 1600 = 0.25.** With 0.2 you would get 1600 × 0.2 = 320 rows, and piles of 1280 / 320 / 400.
+- **M1(a).** 1600 × 0.2 = **320**, so the piles are **1280 / 320 / 400.** No error, no warning — three piles that are not the ones the model card says.
+- **M1(b).** **400 ÷ 1600 = 0.25.** You want 400 rows and you are cutting a 1600-row pile, so the fraction is a quarter.
+- **M1(c).** **400 ÷ 2000 = 0.20.** **The difference:** the top of the fraction is the same 400 rows both times; only the bottom changed. 0.25 is *a quarter of the leftovers*; 0.20 is *a fifth of the whole table*. Week 1's two-averages lesson in a new costume — **the bottom of the fraction is where the mistakes live.**
 
-**2.1(g) Why does the second cut use `stratify=y_rest` and not `stratify=y`?**
-Because `stratify` needs exactly one label per row of the thing being cut, and the second cut is cutting the 1600-row pile. Passing `y` (2000 labels) gives `ValueError: Found input variables with inconsistent numbers of samples: [1600, 2000]`.
+**M2 — the late rates, with and without `stratify`.**
 
-**2.1(h) One sentence: what does "validation wears out" mean?**
-Every time you look at the validation score and change a decision because of it, that score becomes a little more optimistic — so after many looks it is still useful for **comparing** options but no longer honest as a **reported** number.
+| pile | WITH `stratify` | WITHOUT |
+|---|---|---|
+| train | 345 ÷ 1200 = **0.2875** | 337 ÷ 1200 = **0.2808** |
+| validation | 115 ÷ 400 = **0.2875** | 130 ÷ 400 = **0.3250** |
+| test | 115 ÷ 400 = **0.2875** | 108 ÷ 400 = **0.2700** |
 
-### Page 2.2 — Which pile? (legal or not)
+- **M2(a).** With: 345 + 115 + 115 = **575.** Without: 337 + 130 + 108 = **575.** **Identical.** Nothing was created and nothing was destroyed; only the sharing-out changed. That sentence is the whole of `stratify`.
+- **M2(b).** With: 0.2875 − 0.2875 = **0.0000.** Without: 0.3250 − 0.2700 = **0.0550** — five and a half percentage points between the pile you would choose with and the pile you would report from.
+- **M2(c).** 115 ÷ 4 = **28.75**, then move the decimal point **two** places left = **0.2875.**
 
-*For each action, say which pile it may use, and whether it is legal.*
+**M3 — the baseline, in three divisions.**
+
+```text
+orders that are NOT late  =  400 − 115  =  285
+times it was right        =  285
+accuracy                  =  285 ÷ 400  =  0.7125
+
+times it said "late"      =  0
+late orders it caught     =  0 ÷ 115    =  0.0000
+```
+
+- **M3(a).** **Accuracy 0.7125** asks *"how often were you right?"* — on a pile that is 71% one answer you can score 71% without a thought. **ROC-AUC 0.5000** asks *"can you tell the two kinds apart?"* — no, because it hands every order the identical score.
+- **M3(b).** **Zero warnings**, all evening. "71% accurate" is arithmetically true and, as a description of a working system, a lie: it describes the sums and hides the behaviour.
+
+**M4 — what looking twenty times bought.**
+
+```text
+above the true zero      =  0.5853 − 0.5000  =  0.0853
+the drop                 =  0.5853 − 0.5125  =  0.0728
+sealed score above zero  =  0.5125 − 0.5000  =  0.0125
+```
+
+- **M4(a).** 0.0853 ÷ 0.5000 = **0.1706** — the winner's validation score claimed about **17%** of the whole distance from useless to perfect, on the strength of nothing.
+- **M4(b).** 0.7198 − 0.5000 = **0.2198.** 0.2198 ÷ 0.0853 = about **2.6** — the prize is about two and a half times bigger on a pile a tenth the size. *(This is the answer to "if your validation pile were 40 rows, would the prize be bigger or smaller?" — **bigger**: fewer rows, more luck.)*
+- **M4(c).** *The smaller the validation pile, the bigger the best-of-N prize — on 400 rows it was **0.0853**, on 40 rows it was **0.2198**.*
+
+### 🔎 Predict the Output
+
+**P1.**
+
+```text
+(400, 2)
+(400,)
+[[1. 0.]
+ [1. 0.]]
+0.0
+```
+
+Line 4 is **0.0** because **column 1 is the chance of "late"**, and this model gives every order a 0.0 chance of being late; 400 zeros sum to zero. Which is exactly why its AUC is 0.5000: 400 identical scores cannot rank anything above anything. *(Columns: column 0 is the chance of "not late", column 1 the chance of "late".)*
+
+**P2.**
+
+```text
+1280 320 1280 320
+1600
+```
+
+**a** = X of the first pile · **b** = X of the second pile · **c** = labels of the first pile · **d** = labels of the second pile. **X first, X second, y first, y second — always that order.** Get it wrong and nothing errors; your labels are attached to the wrong rows. **1280 and 320** because `test_size=0.2` on a 1600-row pile gives 1600 × 0.2 = 320, not 400; **400 ÷ 1600 = 0.25** is the number wanted.
+
+**P3.**
+
+```text
+(400,)
+0
+[0]
+0.7125
+```
+
+Lines 2 and 3 together: the *only* value the model ever produced is `0`, and it never once said 1. **It is not a model that is bad at spotting late orders — it is a model that has one opinion and repeats it 400 times.** Accuracy alone would have hidden that.
+
+**P4.**
+
+```text
+0.5
+0.5
+0.5
+```
+
+then the program stops:
+
+```text
+ValueError: y should be a 1d array, got an array of shape (400, 2) instead.
+```
+
+**Line 3 flipped every probability and the score did not move**, because all 400 probabilities were identical to begin with. The deeper lesson: **AUC only looks at the ranking of the scores, not at how big the numbers are.** (Flipping scores that differ would turn an AUC of 0.8 into 0.2.) **Line 4:** it wanted **a 1d array** (shape `(400,)`); you gave it **shape `(400, 2)`**. Both shapes are in the message — the habit to build is *what shape did it want, and what shape did I give it?*
+
+**Score line ("how many right, out of 15") and "which one surprised you most":** self-reports; do not mark them.
+
+### ✍️ Practice Set A — Read It
+
+**A1.** train/validation/test → **iv** · stratified split → **v** · baseline → **i** · DummyClassifier → **ii** · ROC-AUC → **vi** · predicted probability → **iii**
+
+*(If a student wants the words in full: baseline = the zero on your ruler; DummyClassifier = ignores the features completely; ROC-AUC = 0.5 a coin flip, 1.0 perfect.)*
+
+**A2.**
+
+| Table | rows in | cut 1 → rest / test | cut 2 → train / val |
+|---|---|---|---|
+| the delivery table | 2000 | **1600 / 400** | **1200 / 400** |
+| a 1000-row delivery table | 1000 | **800 / 200** | **600 / 200** |
+| 569 cell measurements | 569 | **455 / 114** | **341 / 114** |
+
+- **A2(a).** 569 × 0.2 = **113.8**, and you cannot put 113.8 rows in a pile. scikit-learn rounds up to 114 and the rest gets 455; then 455 × 0.25 = 113.75 becomes 114 again, leaving 341. 341 + 114 + 114 = 569 ✓.
+- **A2(b).** **No, `stratify` did exactly its job.** With 200-row piles the finest adjustment is **one row**, and one row out of 200 is 0.0050. The rates 0.2967 / 0.2950 / 0.2950 sit within 0.0017 of each other — closer than one row. `stratify=y` promises **the closest sharing-out that whole rows allow**, not identical rates. On 2000 rows that happened to be exact.
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `ValueError: y should be a 1d array, got an array of shape (400, 2) instead` — two columns handed over, it can only rank one | `dummy.predict_proba(X_val)[:, 1]` |
+| b | `ValueError: Found input variables with inconsistent numbers of samples: [1600, 2000]` — 1600 rows of X, 2000 labels | `train_test_split(X_rest, y_rest, ...)` |
+| c | `InvalidParameterError: The 'stratify' parameter ... Got 'y' instead` — the **word** y, in quotes | `stratify=y`, no quotes. Quotes make it writing; no quotes make it the thing |
+| d | `ValueError: too many values to unpack (expected 3)` — four things came back, three names given | four names, always, in order |
+| e | **No error.** Piles of **1280 / 320 / 400** instead of 1200 / 400 / 400 | `test_size=0.25`, because 400 ÷ 1600 = 0.25 |
+| f | **No error.** `stratify` missing, so the rates come out 0.2958 / 0.2625 / 0.2875 | add `stratify=y_rest` |
+
+**A3(g).** **e and f.** In **e** the clue is the printed pile sizes — 1280 and 320 where the card says 1200 and 400. In **f** the clue is the printed *rates* — 0.2625 where the table says 0.2875. Both clues exist only if you print them, which is why the proof loop is not optional.
+
+**A4.** i → **Q** · ii → **T** · iii → **S** · iv → **P** · v → **R**
+
+**A4(a).**
+
+```text
+    accuracy   0.7125
+    ROC-AUC    0.5000
+```
+
+**One model, two rulers.** Accuracy asks *"how often were you right"*, and saying "not late" 400 times is right 285 of them. AUC asks *"can you tell the two apart"*, and giving all 400 orders the identical score cannot separate anything, so it scores a coin flip. **Nothing about the model changed — only which ruler you picked up.**
+
+**A5.**
+
+| Report | What was done | The giveaway |
+|---|---|---|
+| **A** | Nothing — **this is the correct split** | **All three 4-dp rates identical and equal to the whole table's 0.2875** |
+| **B** | **`stratify` left off cut two only** | **Train and validation are wrong (0.2958, 0.2625) but test is still exactly 0.2875**, so the damage came *after* the test pile was sealed |
+| **C** | **`test_size=0.2` used on cut two instead of 0.25** | **The sizes, not the rates** — 1280 / 320 / 400. The rates are all perfect because `stratify` was present throughout |
+| **D** | **`stratify` left off both cuts** | **All three rates are wrong**; the widest gap is 0.3250 − 0.2700 = 0.0550 |
+
+- **A5(a).** Because cut one still had `stratify=y`. It ran first, sealed 400 correctly-proportioned rows into the test pile, and finished. Cut two then chopped up the other 1600 badly. **One broken line, one damaged pile, quietly.**
+- **A5(b).** What breaks is **the size of the validation pile, and so how much a validation score wobbles.** 320 rows means a noisier number and a bigger best-of-N prize, and the model card's "1200 / 400 / 400" is a false statement. **You would never notice from the rates alone**; you notice from the printed counts.
+- **A5(c).** **A → C → B → D.** A is correct. C is wrong in large print — the sizes are not what you asked for. B is worse because two piles quietly ask a different question and only one number betrays it. D is worst: all three piles are wrong at once and there is no clean pile to compare against. What makes it dangerous is not the size of the error — 0.0550 is small — but that **nothing anywhere raised a hand.**
+
+**A6.** The fifteen boxes:
+
+```text
+train        1200 rows,   345 late,   0.2875
+validation    400 rows,   115 late,   0.2875
+test          400 rows,   115 late,   0.2875
+cut one  test_size = 0.2       (of 2000)
+cut two  test_size = 0.25      (of 1600)
+```
+
+- **A6(a).** 1200 + 400 + 400 = **2000** ✓. **A6(b).** 345 + 115 + 115 = **575** ✓.
+- **A6(c).** **Validation and test** are the same width — 400 rows each. **No, that does not make them the same kind of thing.** Validation may be looked at many times, and it wears out; test is opened **once**, at the very end. *"Which of these should I pick?"* versus *"what will this actually do?"*
+
+**Teacher reference — what each pile may be used for.** The workbook asks this in A6(c) and Think Deeper T1, and the class discussion uses these ten actions. Not a workbook item; do not mark against it.
 
 | # | The action | Legal? | Which pile, and why |
 |---|---|---|---|
@@ -1676,36 +1823,224 @@ Every time you look at the validation score and change a decision because of it,
 | (d) | Deciding how to fill in the missing driver experience | ✅ | Compute the filling value **from train only**, then apply it everywhere. (Week 3 makes this structural, Week 6 does it properly.) |
 | (e) | Printing how many rows the test pile has, and how many are late | ✅ | Legal, and we did it in class. It tells you about the *data*, not about your model, so it cannot contaminate anything. |
 | (f) | Reporting the final number in your model card | ✅ | **Test.** Once. This is the only thing it is for. |
-| (g) | Running the model on test, seeing 0.68, and adding one more feature | ❌ | Illegal — and the sneakiest one on the page, because nothing stops you. That number just chose a feature. |
-| (h) | Looking at the validation score forty times over five weeks | ✅ | Legal but **costly.** Legal because that is its purpose; costly because the winner of forty comparisons is optimistic by an unknown amount. |
-| (i) | Fitting on train **and** validation once you have finished choosing | ⚠️ | **Defensible, and it must be written down.** It usually gives a slightly better model, but the AUC you reported came from the model fitted on train alone, so the thing you shipped is not quite the thing you measured. *(Full marks for saying "only if the card says so".)* |
-| (j) | Using the test pile because validation is "too small" | ❌ | Illegal, and the reasoning is upside down: if 400 rows is too small to trust, that is an argument for a different split, not for spending your one look. |
+| (g) | Running the model on test, seeing 0.68, and adding one more feature | ❌ | Illegal — and the sneakiest, because nothing stops you. That number just chose a feature. |
+| (h) | Looking at the validation score forty times over five weeks | ✅ | Legal but **costly.** The winner of forty comparisons is optimistic by an unknown amount. |
+| (i) | Fitting on train **and** validation once you have finished choosing | ⚠️ | **Defensible, and it must be written down.** The AUC reported came from the model fitted on train alone, so what you shipped is not quite what you measured. *(Full marks for "only if the card says so".)* |
+| (j) | Using the test pile because validation is "too small" | ❌ | Illegal, and upside down: if 400 rows is too small to trust, that is an argument for a different split, not for spending your one look. |
 
-**2.2(k) Which of the illegal ones would nobody ever find out about?**
-**All three.** (c), (g) and the test-pile version of anything. There is no lock, no log and no referee — which is exactly why the model card in Week 3 has a line saying whether the test pile was opened, and why it has to be written before you are tempted.
+**Which illegal ones would nobody ever find out about?** All three — (c), (g), (j). No lock, no log, no referee; which is why the Week 3 model card has a line saying whether the test pile was opened.
 
-### Page 2.3 — Deal twenty cards (predict first, in pen)
+### ✍️ Practice Set B — Write It
 
-| # | Question | The real answer |
-|---|---|---|
-| (a) | What fraction of the twenty cards is red? | **5 ÷ 20 = 0.25** |
-| (b) | Predict the reds in each pile of 12 / 4 / 4 | Most students write 3 / 1 / 1 — the *stratified* answer |
-| (c) | Reds in each pile, dealt straight off a shuffled deck | Ours: **5 / 0 / 0.** Yours will vary — record what you got |
-| (d) | The three divisions for that deal | **5 ÷ 12 = 0.4167 · 0 ÷ 4 = 0.0000 · 0 ÷ 4 = 0.0000** |
-| (e) | What can the test pile tell you about red? | **Nothing at all.** It contains no red cards, so there is nothing there to measure |
-| (f) | Reds in each pile, dealt red-by-red on purpose | **3 / 1 / 1** |
-| (g) | The three divisions for that deal | **3 ÷ 12 = 0.2500 · 1 ÷ 4 = 0.2500 · 1 ÷ 4 = 0.2500** |
-| (h) | Which deal was fair, and how did you know? | The second — **every pile came out 0.2500 and the whole deck is 0.2500** |
+**B1.**
 
-**2.3(i) How many red cards were there in each deal?**
-**Five, both times.** Nothing was created or destroyed; only the sharing-out changed. *(This is the same fact as 345 + 115 + 115 = 575 in the real table, and a student who says so has spotted the point.)*
+```python
+for name, yy in [("train", y_train), ("validation", y_val), ("test", y_test)]:
+    print(f"{name:11s} {len(yy):5d} {int(yy.sum()):6d} {yy.mean():.4f}")
+```
 
-**2.3(j) Your answer to (h) has to contain a number. Which one?**
-**0.2500** — or the pair "0.25 in every pile, 0.25 in the whole deck". "It looked more even" is not an answer. **Mark for the number, not the adjective.**
+```text
+train        1200    345 0.2875
+validation    400    115 0.2875
+test          400    115 0.2875
+```
 
-### Page 2.4 — Split the delivery table three ways
+**B2.**
 
-Model answer, actually run:
+```python
+def rates(y_train, y_val, y_test):
+    print("pile         rows   late     rate")
+    for name, yy in [("train", y_train), ("validation", y_val), ("test", y_test)]:
+        print(f"{name:11s} {len(yy):5d} {int(yy.sum()):6d}   {yy.mean():.4f}")
+    widest = (max(y_train.mean(), y_val.mean(), y_test.mean())
+              - min(y_train.mean(), y_val.mean(), y_test.mean()))
+    print("widest gap:", round(widest, 4))
+```
+
+```text
+pile         rows   late     rate
+train        1200    345   0.2875
+validation    400    115   0.2875
+test          400    115   0.2875
+widest gap: 0.0
+pile         rows   late     rate
+train        1200    355   0.2958
+validation    400    105   0.2625
+test          400    115   0.2875
+widest gap: 0.0333
+```
+
+- **B2(a).** Because `round(0.0, 4)` **is** `0.0` — `round` removes decimals, it does not pad zeros. The `:.4f` in an f-string is what pads, which is why the rate column shows `0.2875`.
+- **B2(b).** 0.2958 − 0.2625 = **0.0333** — train against validation, the two piles cut two touched.
+
+**B3.**
+
+```python
+print("second test_size   train   val   test")
+for ts in [0.2, 0.25, 0.3, 0.5]:
+    Xt2, Xv2, yt2, yv2 = train_test_split(
+        X_rest, y_rest, test_size=ts, stratify=y_rest, random_state=0)
+    print(f"{ts:15.2f} {len(yt2):7d} {len(yv2):5d} {len(y_test):5d}")
+```
+
+```text
+second test_size   train   val   test
+           0.20    1280   320   400
+           0.25    1200   400   400
+           0.30    1120   480   400
+           0.50     800   800   400
+```
+
+- **B3(a).** **The test column — 400 every time.** Cut one is never touched by the loop, so the test pile was sealed before any of it happened.
+- **B3(b).** **Better:** an 800-row validation pile wobbles far less, so a comparison is more trustworthy and the best-of-N prize shrinks. **Worse:** the model learns from 800 rows instead of 1200. **There is no right answer, which is why there has to be a written answer.**
+
+**B4.**
+
+```python
+from sklearn.datasets import load_wine
+from sklearn.dummy import DummyClassifier
+from sklearn.metrics import accuracy_score, roc_auc_score
+from sklearn.model_selection import train_test_split
+
+data = load_wine(as_frame=True)
+X = data.data
+y = (data.target == 1).astype(int)
+print("class 1 rate:", round(y.mean(), 4))
+
+X_rest, X_test, y_rest, y_test = train_test_split(
+    X, y, test_size=0.2, stratify=y, random_state=0)
+X_train, X_val, y_train, y_val = train_test_split(
+    X_rest, y_rest, test_size=0.25, stratify=y_rest, random_state=0)
+print("piles:", len(y_train), len(y_val), len(y_test))
+
+print("baseline        accuracy   ROC-AUC   times it said 1")
+for strategy in ["most_frequent", "stratified"]:
+    dummy = DummyClassifier(strategy=strategy, random_state=0)
+    dummy.fit(X_train, y_train)
+    pred = dummy.predict(X_val)
+    prob = dummy.predict_proba(X_val)[:, 1]
+    print(f"{strategy:14s}   {accuracy_score(y_val, pred):.4f}    "
+          f"{roc_auc_score(y_val, prob):.4f}    {int((pred == 1).sum())}")
+```
+
+```text
+class 1 rate: 0.3989
+piles: 106 36 36
+baseline        accuracy   ROC-AUC   times it said 1
+most_frequent    0.6111    0.5000    0
+stratified       0.7500    0.7565    17
+```
+
+- **B4(a).** The validation pile has 36 rows, 14 of them class 1, so 22 are not. **22 ÷ 36 = 0.6111.**
+- **B4(b).** **The validation pile has 36 rows.** Thirty-six coin flips can fall into a pattern that looks like knowledge — rarely (this seed landed in about the luckiest 1 draw in 500; the usual wobble on 36 rows is about 0.08 either way), but a seed fixed in advance can hit it, and here it did: a model that looked at none of the thirteen measurements scored **0.7565**. **What you would tell them:** *"How many rows is that measured on, and how many things did you try before you got it?"* Compare the delivery table, where the same strategy on 400 rows scored 0.4857. **Small piles do not just make scores noisier. They make nonsense look like a result.**
+
+**B5.**
+
+```python
+"""best_of_n.py - what does trying N things buy you?"""
+import numpy as np
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import train_test_split
+from make_data import make_deliveries
+
+df = make_deliveries(n=2000, seed=0).drop_duplicates().reset_index(drop=True)
+y = df["late"]
+X = df.drop(columns=["late", "order_id"])
+X_rest, X_test, y_rest, y_test = train_test_split(
+    X, y, test_size=0.2, stratify=y, random_state=0)
+X_train, X_val, y_train, y_val = train_test_split(
+    X_rest, y_rest, test_size=0.25, stratify=y_rest, random_state=0)
+
+
+def best_of(n_tries):
+    rng = np.random.default_rng(0)
+    best_auc = -1
+    best_test_auc = None
+    for i in range(n_tries):
+        guess_val = rng.random(len(y_val))
+        guess_test = rng.random(len(y_test))
+        auc = roc_auc_score(y_val, guess_val)
+        if auc > best_auc:
+            best_auc = auc
+            best_test_auc = roc_auc_score(y_test, guess_test)
+    return best_auc, best_test_auc
+
+
+print("how many tried   best validation AUC   above 0.5000   its TEST AUC")
+for n_tries in [1, 5, 20, 100]:
+    best, best_test = best_of(n_tries)
+    print(f"{n_tries:14d}   {best:.4f}                {best - 0.5:.4f}"
+          f"         {best_test:.4f}")
+```
+
+```text
+how many tried   best validation AUC   above 0.5000   its TEST AUC
+             1   0.5026                0.0026         0.5314
+             5   0.5032                0.0032         0.4577
+            20   0.5853                0.0853         0.5125
+           100   0.5853                0.0853         0.5125
+```
+
+- **B5(a).** **None of draws 21 to 100 happened to beat the lucky one from the first twenty.** Each extra bit of fake score needs a rarer fluke, so the prize grows fast and then slowly. For row 100 to be bigger, one of those 80 extra draws would have to score above 0.5853. The best of 100 can never be **worse** than the best of 20, because the first 20 draws are among the 100.
+- **B5(b).** **No pattern, and there should not be one.** The test AUCs 0.5314, 0.4577, 0.5125, 0.5125 scatter around 0.5000 because the test pile had no say in which model won. **The validation column climbs; the test column does not** — the entire argument for a third pile.
+- **The ⚠️ Watch out note (Worked Example 2's 0.5257 against 0.5032):** neither is wrong; one draw per turn against two. Same seed, different number of draws, different place in the queue. It should be in the student's Bug Log.
+
+### 🐞 Fix the Broken Program
+
+**Bug 1.** Line **14** (`X_rest, y, ...` in cut two). Kind: **runtime** (`ValueError`). **1600 comes from** `X_rest` — the pile actually being cut. **2000 comes from** `y` — the labels for the *whole* table, handed over by mistake. **The fix:** `train_test_split(X_rest, y_rest, test_size=0.25, random_state=0)`.
+
+**Bug 2.** Line **24** (`prob = dummy.predict_proba(X_val)`). Kind: **shape**. **Column 0** is the chance the order is **not** late; **column 1** is the chance it **is** late. You want column 1, the thing you are trying to rank. **The fix:** `prob = dummy.predict_proba(X_val)[:, 1]`.
+
+**Bug 3.** The whole table is 0.2875 late. **Train is 0.2958** and **validation is 0.2625** — both wrong. Test is still 0.2875 because cut one was fine. **Validation against test:** 0.2875 − 0.2625 = **0.0250.** **The missing line is `stratify=y_rest` on cut two.** The corrected two lines:
+
+```python
+X_train, X_val, y_train, y_val = train_test_split(
+    X_rest, y_rest, test_size=0.25, stratify=y_rest, random_state=0)
+```
+
+**The two accuracies:** **0.7375 = 295 ÷ 400** — the damaged validation pile holds only 105 late orders, so 400 − 105 = 295 are not late. **0.7125 = 285 ÷ 400** — the correct pile holds 115 late orders, so 285 are not. Bug 3 did not break the program, raised no warning, and **changed the baseline number you were about to hang on your wall for five weeks.** **The only thing that catches it** is printing all three rates to four decimal places, every time, and knowing what they are supposed to be.
+
+**Why the AUC did not move:** `most_frequent` gives every order the identical probability, and identical scores cannot rank anything, so its AUC is 0.5000 on any pile of any size with any class balance. **The metric immune to the class balance is also immune to this bug** — a good reason to report both, not a reason to relax.
+
+**Marking tip:** Bug 1 is on the second line of the cut-two call (the one with `X_rest, y,`), which is line 14 of the listing counting the docstring as line 1. Bug 2 is the `prob =` line.
+
+### 🧩 Puzzle of the Week
+
+- **Part 1(a).** 5 ÷ 20 = **0.25.**
+- **Part 1(b).** Smallest: **0.** Largest: **4.** It cannot be 5 because **the test pile only holds 4 cards.**
+- **Part 1(c).** **19.** Splitting 5 reds into three piles with all three at least 0 gives 21 patterns; two of them need val = 5 or test = 5, and neither pile is big enough, so 21 − 2 = **19.** (Train holds up to 12, so it never blocks anything.)
+- **Part 1(d).** **3 / 1 / 1** — 3 ÷ 12 = 0.25, 1 ÷ 4 = 0.25, 1 ÷ 4 = 0.25. Exactly **one** of the nineteen patterns.
+- **Part 1(e).**
+
+```text
+15/20 = 0.7500
+14/19 = 0.7368
+13/18 = 0.7222
+12/17 = 0.7059
+
+0.7500 × 0.7368 × 0.7222 × 0.7059 = 0.2817
+```
+
+- **Part 1(f).** About **one shuffle in 3.5** — more than a quarter of all honest deals. A test pile with no red cards can tell you **nothing whatsoever** about red: **you have not built a bad measurement; you have built no measurement.** The disaster is not rare, and `stratify=y` makes it happen never.
+- **Part 2(a).** **None of draws 21 to 500 scored above 0.5853.** Four hundred and eighty extra tries bought nothing, because beating a fluke requires a bigger fluke.
+- **Part 2(b).** **No, never.** "The best of 100" includes the first 20 draws, so it cannot be lower than the best of 20. A best-of-N prize can stay flat forever; it can never go down. That one-way property is why trying more things is dangerous rather than merely noisy.
+- **Part 2(c).** The two questions: **1. How many rows is the validation pile?** (Forty rows can produce 0.7747 from pure dice.) **2. How many things did you try before this one, and did you pick this one because it scored best?** A third, if offered: **"what does the baseline score on the same pile?"** — 0.77 above 0.50 and 0.77 above 0.74 are different results.
+
+### 🤔 Think Deeper
+
+**T1.** Good answers refuse to settle for "be honest". They notice the line is worth something *because it is specific and dated*: "the test pile was not opened" is checkable against your own files, commit history and memory, and embarrassing to write falsely. Then they get practical, because willpower in Week 7 is not a plan: put the test split in a separate file you do not open; never write a line that scores on it until the last day; have somebody else hold the number; write the metric down in pen in Week 1 (done) so there is no room to swap it later. The strongest answers notice who the rule protects: not the reader, who cannot check, but **you**, from the version of you who will be disappointed and looking for a way out.
+
+**T2.** The first half is arithmetic now measured: every "keep the better one" spends a little of the validation pile's honesty, and after a hundred and forty the score is optimistic by an unknown amount — bigger on small piles, bigger the more you tried. The honest answer to the second half is *not* "stop trying things", because trying things is the job. Good answers arrive at some of: **write down how many things you tried**; **keep the test pile genuinely sealed** so one number had no say; **prefer a difference you can see over one you cannot** (two options 0.002 apart on 400 rows: the gap is smaller than the noise); and **cross-validation**, Week 11. "AUC 0.79 on validation, chosen from 140 attempts, 0.76 on a test pile opened once" beats "AUC 0.79".
+
+### 🛠️ Build It — Three Piles and the Zero on Your Ruler
+
+Your own numbers, but here is what they should be measured against.
+
+**The card deal.** Deal 2 is the fair one, and the way you know is that **all three piles read 0.25 and so does the whole deck.** In deal 1, whatever you got, at least one pile will be a long way off — and there is about a **28%** chance one of your 4-card piles got no reds at all. Our own real-shuffle deal was **5 / 0 / 0**: 5 ÷ 12 = 0.4167 · 0 ÷ 4 = 0.0000 · 0 ÷ 4 = 0.0000, and a test pile with no red cards tells you **nothing at all** about red. Deal 2 is **3 / 1 / 1**: 3 ÷ 12 = 0.2500 · 1 ÷ 4 = 0.2500 · 1 ÷ 4 = 0.2500. Yours will vary in deal 1 — record what you got. There were **five** reds both times: nothing created or destroyed, only the sharing-out changed (the same fact as 345 + 115 + 115 = 575).
+
+Most people predict **3 / 1 / 1**, the *stratified* answer, because it is the one that feels tidy. Finding out that a real shuffle does not do that is the point of the exercise. **Mark the "which deal was fair" sentence for the number:** **0.2500** — or "0.25 in every pile, 0.25 in the whole deck". "It looked more even" is not an answer. **Mark for the number, not the adjective.**
+
+**The three-way split, proved.** Model answer, actually run:
 
 ```python
 """hw02_split.py - three piles, and the proof they match."""
@@ -1755,40 +2090,28 @@ late: 345 + 115 + 115 = 575
 whole table: 575 late out of 2000 = 0.2875
 ```
 
-*(This script leaves out `split_three.py`'s `X shape:` line, so a student whose output has an extra `X shape: (2000, 8)` in it has simply kept that line, and is correct.)*
-
-**2.4(a) Write out the three rates as divisions.**
-**345 ÷ 1200 = 0.2875 · 115 ÷ 400 = 0.2875 · 115 ÷ 400 = 0.2875.**
-*(Worth showing the easy route: 115 ÷ 4 = 28.75, so 115 ÷ 400 = 0.2875. And 345 ÷ 12 = 28.75, so 345 ÷ 1200 = 0.2875.)*
-
-**2.4(b) Add your three late counts. What do you get, and what does it prove?**
-**345 + 115 + 115 = 575**, and the whole table has 575 late orders. It proves the split **shared out** the late orders rather than creating or losing any.
-
-**2.4(c) 60 / 20 / 20 of 2000. Show the three multiplications.**
-**2000 × 0.6 = 1200 · 2000 × 0.2 = 400 · 2000 × 0.2 = 400.** And within the code it is done as two cuts: 2000 × 0.2 = 400 (test), then 1600 × 0.25 = 400 (validation), leaving 1200.
-
-**2.4(d) Now remove `stratify` from both cuts and paste what you get.**
+*(This script leaves out `split_three.py`'s `X shape:` line. The workbook's four-line header wants `X shape : (2000, 8)` and `y shape : (2000,)` as well, so a student who has kept `split_three.py`'s shape lines is correct.)*
 
 ```text
-WITHOUT stratify
-pile         rows   late   late rate
-train        1200    337   0.2808
-validation    400    130   0.3250
-test          400    108   0.2700
-widest gap: 0.055
+rows as generated              : 2020
+rows after dropping the copies : 2000
+X shape                        : (2000, 8)
+y shape                        : (2000,)
 ```
 
-The sizes are unchanged and **337 + 130 + 108 = 575** still. Only the rates moved. **0.3250 − 0.2700 = 0.0550** — the validation and test piles are five and a half percentage points apart.
+| pile | rows | late | rate (3 dp) | rate (4 dp) |
+|---|---|---|---|---|
+| train | 1200 | 345 | 0.287 | 0.2875 |
+| validation | 400 | 115 | 0.287 | 0.2875 |
+| test | 400 | 115 | 0.287 | 0.2875 |
 
-**2.4(e) Why is that gap a problem, in one sentence?**
-Because you would spend all term choosing on a pile that is 32.5% late and then report from a pile that is 27% late, so when the number moves at the end you cannot tell whether your model changed or your piles did.
+1200 + 400 + 400 = **2000** ✓ · 345 + 115 + 115 = **575** ✓ · the three rates are **identical**, and **no, it was not luck** — you asked for it with `stratify`. *(Three rates as divisions: 345 ÷ 1200 = 0.2875 · 115 ÷ 400 = 0.2875 · 115 ÷ 400 = 0.2875; the easy route is 115 ÷ 4 = 28.75, and 345 ÷ 12 = 28.75.)*
 
-**2.4(f) Your validation pile is 400 rows. Is that 20% or 25% of something?**
-**Both.** 400 ÷ 2000 = 0.20 of the whole table, and 400 ÷ 1600 = 0.25 of what was left after the test pile came off. *(Same shape as Week 1's two averages: two correct divisions, and the bug is not choosing which one you meant.)*
+*A student who asks "is 400 20% or 25% of something?":* **both.** 400 ÷ 2000 = 0.20 of the whole table, and 400 ÷ 1600 = 0.25 of what was left. Two correct divisions; the bug is not choosing which you meant.
 
-### Page 2.5 — The two baselines, and the number in a box
+**With `stratify` deleted from cut two:** 1200 / 355 / 0.2958, 400 / 105 / 0.2625, 400 / 115 / 0.2875. Validation − test = 0.2875 − 0.2625 = **0.0250.** **Test is still perfect** because cut one still had `stratify` and ran first. **No error. No warning.** *(The harder version, `stratify` removed from both cuts, gives 337 / 0.2808, 130 / 0.3250, 108 / 0.2700 — see Report D above; still 337 + 130 + 108 = 575.)* **Why the gap matters:** you would spend all term choosing on a pile that is 32.5% late and then report from one that is 27% late, so when the number moves at the end you cannot tell whether your model changed or your piles did.
 
-Model answer, actually run:
+**The baseline box.** Model answer, actually run:
 
 ```python
 """hw02_baselines.py - two useless models, and the zero on the ruler."""
@@ -1832,39 +2155,28 @@ stratified       0.5850    0.4857    109
 A model that never says 'late' catches 0 of 115: 0.0
 ```
 
-**2.5(a) Show the arithmetic behind 0.7125.**
-115 of the 400 validation rows are late, so **400 − 115 = 285** are not. The model says "not late" 400 times, so it is right 285 times. **285 ÷ 400 = 0.7125.**
+| baseline | accuracy | ROC-AUC | times it said "late" |
+|---|---|---|---|
+| `most_frequent` | 0.7125 | 0.5000 | 0 |
+| `stratified` | 0.5850 | 0.4857 | 109 |
 
-**2.5(b) The same model scores 0.5000 on AUC. Explain how both are true.**
-Accuracy asks *"how often were you right?"* — and on a pile that is 71% one answer you can be right 71% of the time by never thinking. AUC asks *"can you tell the two apart?"* — and this model gives every single order the identical score of 0.0, so it can rank nothing above anything. Zero ability is 0.5. **Same model, same pile, two different questions.**
+```text
+   +------------------------------------------+
+   |  BASELINE, validation pile, 400 rows     |
+   |                                          |
+   |     accuracy   0.7125                    |
+   |     ROC-AUC    0.5000   <- the real zero |
+   |                                          |
+   |  Anything at or below 0.5000 AUC has     |
+   |  learned nothing.                        |
+   +------------------------------------------+
+```
 
-**2.5(c) Why is the `stratified` dummy's accuracy *worse* — 0.5850 instead of 0.7125?**
-Because it says "late" sometimes — 109 times out of 400 — and most of those are wrong. Guessing costs you the free 71% you get from always saying the commonest answer. **Being less lazy made it less accurate and no more useful**, which is a nice thing to notice.
+The `most_frequent` model caught **0** of the 115 late orders: **0 ÷ 115 = 0.0000.** The `stratified` dummy said "late" **109** times, and its accuracy is **worse** (0.5850 against 0.7125) because guessing "late" sometimes means being **wrong** sometimes; always saying "not late" is the safest way to be right on a pile that is 71% not-late, and the most useless. **Being less lazy made it less accurate and no more useful.** Its AUC is 0.4857 rather than exactly 0.5 because it is 400 random guesses and 400 is not many: **it is not "worse than useless" — it is useless, measured with noise.**
 
-**2.5(d) Why is its AUC 0.4857 rather than exactly 0.5?**
-Because it is 400 random guesses, and 400 is not very many. 0.4857 is 0.5 plus the wobble you get from that many coin flips; it would land just above 0.5 about as often as just below. **It is not "worse than useless" — it is useless, measured with noise.**
+**Mark against three things:** is there a box; is the number in the AUC line **0.5000** rather than 0.7125; and does it name the pile and the number of rows (400). A box whose headline is "0.7125" is the misconception of the week written down, and it is worth a conversation rather than a cross. The one-above-the-other explanation to listen for is the Practice Set A4(a) one: **one model, two rulers.**
 
-**2.5(e) The box.**
-
-> ```
-> +--------------------------------------------------+
-> |  BASELINE — validation pile, 400 rows            |
-> |                                                  |
-> |     accuracy   0.7125                            |
-> |     ROC-AUC    0.5000    <- the real zero        |
-> |                                                  |
-> |  Committed metric: ROC-AUC (card five, Week 1).  |
-> |  A model at or below 0.5000 has learned nothing. |
-> |  Anything I report gets reported as a distance   |
-> |  from 0.5000.                                    |
-> +--------------------------------------------------+
-> ```
-
-**Mark against three things:** is there a box; is the number **0.5000** rather than 0.7125; and does it name the pile and the number of rows. A box saying "0.7125" is the misconception of the week written down, and it is worth a conversation rather than a cross.
-
-### Page 2.6 — The best-of-twenty experiment
-
-Model answer, actually run — the script is in the Prep Checklist. The tail of the real output:
+**Best of twenty.** Model answer, actually run — the script is in the Prep Checklist. The tail of the real output:
 
 ```text
 random model  8   validation AUC 0.5853
@@ -1876,35 +2188,50 @@ difference         : 0.0728 of pure luck
 above the true zero: 0.0853
 ```
 
-**2.6(a) What did the winner score on validation, and on test?**
-**0.5853** on validation, **0.5125** on test.
+| | Number |
+|---|---|
+| the winner's model number | 8 |
+| its validation AUC | 0.5853 |
+| its TEST AUC | 0.5125 |
+| the difference (pure luck) | 0.0728 |
+| how far the validation score is above 0.5000 | 0.0853 |
 
-**2.6(b) Do the two subtractions.**
-**0.5853 − 0.5125 = 0.0728** — the amount that evaporated when it met a pile that had no say in choosing it.
-**0.5853 − 0.5000 = 0.0853** — the amount above a coin flip, bought entirely by picking the best of twenty.
+0.5853 − 0.5125 = **0.0728** evaporated when the winner met a pile that had no say in choosing it; 0.5853 − 0.5000 = **0.0853** is the amount above a coin flip, bought by picking the best of twenty. **Where did the 0.0853 come from?** From **looking at twenty numbers and keeping the biggest one.** None of the twenty learned anything — there is no `fit` call in the script — so the score was bought by the act of choosing.
 
-**2.6(c) Two sentences, for somebody who wasn't here, and you may not use the word "overfitting".**
+**What is a validation score worth — both halves:**
 
-Model answer:
+1. It is the **right** tool for **comparing** two options, and it is **optimistic** — the more things you tried, the more optimistic.
+2. To **report** a number you need a pile that had **no say** in which model you picked, opened **once**.
+
+*"Validation scores are wrong"* misses it. They are the right tool for the wrong job.
+
+Model two-sentence explanation of the drop, for somebody who wasn't here (the word "overfitting" is banned):
 
 > *"None of the twenty models learned anything — each one was just four hundred random numbers, so all twenty were really the same coin flip repeated. But because I looked at all twenty validation scores and kept the biggest, the winner's 0.5853 measures how lucky it got on that particular pile, not how good it is; scored on the pile that had no say in choosing it, the same numbers gave 0.5125, which is the coin flip it always was."*
 
-**Mark for the mechanism, not the vocabulary.** The good answer contains *"I kept the biggest of twenty"* or *"the winner was chosen using that pile"*. Answers to push back on: "the test data was different" (both piles are 400 rows and 28.75% late), and "it overfitted" (which names a category and skips the cause — and was banned for exactly that reason).
+**Mark for the mechanism, not the vocabulary.** The good answer contains *"I kept the biggest of twenty"* or *"the winner was chosen using that pile"*. Push back on "the test data was different" (both piles are 400 rows and 28.75% late) and "it overfitted" (a category, not the cause).
 
-**2.6(d) How many of the twenty learned something?**
-**None.** Not one of them looked at a single feature. There is no `fit` call anywhere in the script.
+**Stretch — seed 1.** The winner will be a different model with a different score and a different-sized gap. What stays the same is **the shape of the story**: the pile you chose with flatters the winner, and the pile that had no say does not. *(Run it on your own machine before class if you want the actual seed-1 numbers; they are not reprinted here.)*
 
-**2.6(e) If your validation pile were 40 rows instead of 400, would the best-of-twenty prize be bigger or smaller?**
-**Bigger.** Fewer rows means more luck, so the twenty scores scatter further from 0.5 and the winner is further out. *(This is the deepest available answer today: the size of the fake improvement depends mostly on the size of the pile, and on how many things you tried.)*
-
-**2.6(f) Your two Bug Log entries for today.**
-
-Model, two rows:
+**Bug Log — the two entries:**
 
 | What I saw | What it means | Cause | Fix |
 |---|---|---|---|
-| `ValueError: y should be a 1d array, got an array of shape (400, 2) instead.` | It wanted one column of numbers and I gave it two. | `predict_proba(X_val)` with no `[:, 1]`. | `predict_proba(X_val)[:, 1]`. **Both shapes are in the message — compare them.** |
-| No error. Piles 1200/400/400, but rates 0.2958 / 0.2625 / 0.2875. | My three piles are asking slightly different questions. | `stratify=y_rest` missing from cut two. | Add it back — and print the rate of all three piles every single time, because nothing else would have told me. |
+| `ValueError: y should be a 1d array, got an array of shape (400, 2) instead.` | it can only rank one column of numbers; I handed it two | the `[:, 1]` left off `predict_proba` | `dummy.predict_proba(X_val)[:, 1]` — and always look for the two shapes in the message |
+| rates came out 0.2958 / 0.2625 / 0.2875. **No error at all** | my validation and test piles are asking slightly different questions | `stratify=y_rest` missing from cut two | add it, then print all three rates to 4 dp every single time |
+
+### 🎨 Draw It
+
+**In deal 1** the pile furthest from 0.25 is whichever one the dice punished — most often a 4-card pile, because 4 cards cannot land on 0.25 unless they get exactly one red. **If a pile got zero reds, it can measure nothing about red** — there is nothing in it to be right or wrong about. **In deal 2 all three piles read 0.25 and they are *not* the same size** — 12, 4 and 4. **So `stratify=y` promises the same *fraction*, not the same *number*:** the train pile got 3 reds and the test pile got 1, and both are a quarter — just as the delivery table gets 345 late orders in train and 115 in validation, both 0.2875. Mark for the word *fraction*.
+
+### 📊 Self-Check
+
+Self-rated; nothing to mark, but everything should be a 😀 once Build It is finished. Two rows are worth being strict about in conversation:
+
+- *"explain how one model scores 0.7125 and 0.5000 at the same time"* — only if the student can say **both divisions** (285 ÷ 400 and 0 ÷ 115) and the sentence *"one model, two rulers."*
+- *"spot a missing `stratify` from the printed rates alone"* — the test is whether they know the number the rates are **supposed** to be, without looking it up: 0.2875, three times.
+
+The closing "one thing I would ask about" is a free question for you to answer at the start of Week 3.
 
 ### Answers to every question posed in the lesson
 

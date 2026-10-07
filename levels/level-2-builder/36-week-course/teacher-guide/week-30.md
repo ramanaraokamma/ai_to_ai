@@ -13,7 +13,7 @@
 | **Big idea** | If one feature is measured in thousands it drowns out the others — so you scale, and you fit the scaler on the training rows only. |
 | **New vocabulary** | accuracy · confusion matrix · feature scaling · leakage · stratify |
 | **New syntax** | `accuracy_score(y_test, pred)` · `confusion_matrix(y_test, pred)` · `StandardScaler().fit(X_train)` then `.transform(X_test)` · `stratify=y` |
-| **Materials** | Printed workbook pages 30.1–30.6 · a calculator · **THE GAP still on the board from Week 29** · last week's `full_cycle.py` · a highlighter |
+| **Materials** | The printed workbook (its Warm-Up, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Build It, Draw It and Self-Check sections) · a calculator · **THE GAP still on the board from Week 29** · last week's `full_cycle.py` · a highlighter |
 | **Tech needed** | The Week 28 setup. Nothing new to install. **The lab saves a PNG**, so check `fig.savefig(...)` still works before class. |
 | **Prep time** | 20 minutes the night before (most of it running the lab yourself), 5 minutes on the day |
 
@@ -327,7 +327,7 @@ Nothing moves; the lab happens inside the box. Two threads lit: representation a
 
 ### 20 minutes the night before
 
-- [ ] **Run the whole lab yourself, once, end to end.** This is not optional this week — the lab trains fifty models and saves a chart, and you want to have seen every number before it appears on a shared screen. The complete file is in the Answer Key under **Page 30.5**; type or paste it and run it. It takes a couple of seconds.
+- [ ] **Run the whole lab yourself, once, end to end.** This is not optional this week — the lab trains fifty models and saves a chart, and you want to have seen every number before it appears on a shared screen. The complete file is in the Answer Key under **Build It — The Classifier Lab**; type or paste it and run it. It takes a couple of seconds.
 - [ ] **Check the chart actually saved.** After running, look in the folder for `wine_accuracy_vs_k.png` and open it. If it is missing or empty, that is a Week 25 problem and you want to find it tonight.
 - [ ] **Run the "why scaling" arithmetic yourself.** Create `why_scaling.py`:
 
@@ -408,7 +408,7 @@ Nothing moves; the lab happens inside the box. Two threads lit: representation a
   ```
 
 - [ ] **Practise reading the raw confusion matrix out loud, once**, from the notes in section 3. It sounds simple and it is surprisingly easy to fumble the first time in front of somebody. Twelve, thirteen-and-one, two-five-three.
-- [ ] Print workbook pages 30.1–30.6.
+- [ ] Print the whole Week 30 workbook. It has no page numbers, so a sticky note on **Practice Set A** (A2 and A3 are used in class) and on **Build It** (the homework) saves hunting.
 - [ ] Read section 5 (leakage) twice. It is the part of the lesson most likely to go sideways, because the *symptom of the bug is a better result*.
 - [ ] Check **THE GAP** is still on the board from Week 29. If it has been rubbed off, write it back: `0.9417 / 0.7333 / gap 0.2083`.
 
@@ -423,7 +423,7 @@ Nothing moves; the lab happens inside the box. Two threads lit: representation a
 
 | If this fails | Do this instead |
 |---|---|
-| **No laptop today** | This week is more paper-friendly than it looks. Page 30.2 prints the two-column arithmetic (0.0001 vs 225.0000) — the most convincing thing in the lesson, and it is division. Page 30.3 prints both confusion matrices, and reading them aloud plus circling the worst row is objective 1 in full. Page 30.4 prints the full 25-row accuracy-vs-`k` table, and the student can plot it **by hand on graph paper** — which is arguably better than `ax.plot`, because they have to think about the y-axis starting at zero. **Objectives 1, 2 and 4 are fully deliverable with no computer.** |
+| **No laptop today** | This week is more paper-friendly than it looks. Practice Set A, item A2 prints the two-column arithmetic (0.0001 vs 225.0000) — the most convincing thing in the lesson, and it is division. Practice Set A, item A3 prints both confusion matrices, and reading them aloud plus circling the worst row is objective 1 in full. The 25-row accuracy-vs-`k` table is printed in the Answer Key (Practice Set B, B5) and in the Activity section below, so you can hand it over, and the student can plot it **by hand on graph paper** — which is arguably better than `ax.plot`, because they have to think about the y-axis starting at zero. **Objectives 1, 2 and 4 are fully deliverable with no computer.** |
 | **The chart will not save** | Print the numbers with the loop and plot them by hand on graph paper. Do not lose the lab to a matplotlib problem. |
 | **The lab is too long for the time available** | Cut the `k` sweep from 1–25 to `[1, 5, 9, 15, 25]`. Five points still shows the shape and takes a fifth of the typing. |
 | **Numbers don't match this guide** | Check `random_state=31` and `stratify=y`. Those two are what every printed number here depends on. |
@@ -445,7 +445,7 @@ Nothing moves; the lab happens inside the box. Two threads lit: representation a
 
 ### 🪝 Hook — Two Numbers That Should Not Be in the Same Sum (7 minutes)
 
-**Do this:** Laptop closed. Workbook page 30.2 in front of you both — it prints the first five wines, `hue` and `proline` only.
+**Do this:** Laptop closed. Workbook **Practice Set A, item A2** in front of you both — it gives the `hue` and `proline` of the first two wines, and only those two columns.
 
 **Say this:**
 
@@ -648,7 +648,7 @@ confusion matrix (rows = truth, columns = guess):
 >
 > But now read me row 2."
 
-Have them read it. **Then hand them the highlighter and have them circle row 2 on the screen printout or on page 30.3.**
+Have them read it. **Then hand them the highlighter and have them circle row 2 on the screen printout or on the raw grid in **Practice Set A, item A3**.**
 
 > "Circle it. That row is the model's confession."
 
@@ -854,7 +854,7 @@ Then the usual ladder:
 
 ### Setup
 
-**On the table:** workbook pages 30.4, 30.5 and 30.6, a calculator, a highlighter, graph paper as backup, the laptop with the editor open.
+**On the table:** workbook **Practice Set B (B5)** and **Build It** (Pieces 1 to 6), a calculator, a highlighter, graph paper as backup, the laptop with the editor open.
 
 **On the board:** THE GAP from Week 29, and this week's `0.7778 → 0.9444` written under it.
 
@@ -972,7 +972,7 @@ saved wine_accuracy_vs_k.png
 >
 > So: **nine.**"
 
-**Do this:** have the student write these four things on page 30.6, in ink:
+**Do this:** have the student write these on the **Build It, Piece 3** lines (and the honesty sentence on Piece 4), in ink:
 
 ```
 chosen k          : 9
@@ -1077,7 +1077,7 @@ difference: 2.72
 ### What "finished" looks like
 
 - `wine_accuracy_vs_k.png` saved, opened, with two labelled lines, a legend, both axis labels and a y-axis starting at 0.
-- A comparison table on page 30.5 with **train and test** accuracy for both models.
+- A comparison table in **Build It, Piece 2** with **train and test** accuracy for both models.
 - The baseline `0.3989` written down, and both test accuracies compared to it.
 - A chosen `k`, with three sentences of reason and the honesty sentence, in ink.
 - Both confusion matrices written out, with the worst row of each highlighted.
@@ -1283,11 +1283,11 @@ Three checks, five minutes, exact wording.
 >
 > **Five — the confusion matrix for your best model, with its worst row named in a full sentence.** Not 'row 1 is worst'. Something like: 'one wine that was really class 1 got called class 0, and one got called class 2.' Which way round matters.
 >
-> And page 30.6 has short questions — do those last, when you're tired, because they're quick."
+> And Build It has a Piece 6 of short questions — do those last, when you're tired, because they're quick."
 
-**Workbook pages:** 30.1, 30.2 and 30.3 in class; **30.4, 30.5 and 30.6** at home.
+**Workbook sections:** in class, the **Warm-Up**, **Predict the Output** and **Practice Set A** (A1 to A3 feed the Hook and Concept; A4 to A6 if time allows). At home, **Practice Set B (B5, the sweep and chart) and Build It, Pieces 1 to 6** are the five hand-in items above (Piece 1 = the chart, Piece 2 = the comparison table, Piece 3 = the chosen `k`, Piece 4 = the honesty sentence, Piece 5 = the confusion matrix, Piece 6 = the short questions). B1 to B4, the **Fix the Broken Program**, the **Puzzle**, **Think Deeper**, **Piece 7 (Bug Log)**, **Draw It** and **Self-Check** are not in the one-hour estimate: set them as the following week's extra work or use them as the easier and harder options. Every answer is in the Answer Key below, in the workbook's order.
 
-**Expected time:** 15 min to finish the sweep and save the chart · 15 min for the comparison table with the baseline · 15 min for the chosen `k` and the sentences (they should rewrite these) · 15 min for page 30.6. About 60 minutes.
+**Expected time:** 15 min to finish the sweep and save the chart · 15 min for the comparison table with the baseline · 15 min for the chosen `k` and the sentences (they should rewrite these) · 15 min for Build It Piece 6. About 60 minutes.
 
 ---
 
@@ -1295,7 +1295,79 @@ Three checks, five minutes, exact wording.
 
 Every code block was run before it was pasted, and every number is real. All of it assumes `test_size=0.2, random_state=31, stratify=y`.
 
-### Page 30.1 — Baselines and accuracy
+**How this key is laid out.** It follows the student workbook section by section, in the workbook's own order, using the workbook's own item labels (W1–W5, P1–P4, A1–A6, B1–B5, the Fix the Broken Program bugs, the Puzzle parts (a)–(n), T1–T2, Build It Pieces 1–7, Draw It, Self-Check). The values are those in the **✅ Answers** section at the end of the workbook, which were checked independently; the wrong-answer maps, marking tips and what-to-watch-for notes are additions for you. The workbook has no page numbers, so find things by section name and item label.
+
+### Warm-Up (W1–W5)
+
+| # | Answer | Marking note |
+|---|---|---|
+| W1 | `X_train, X_test, y_train, y_test` — both X's first, then both y's. | The usual slip is `X_train, y_train, X_test, y_test`, which silently puts labels into the test-features slot. |
+| W2 | It **fixes the shuffle**, so the same cut happens every run and any change seen was caused by the student's change. **The number does not matter** — 0, 7, 31 and 42 are equally good. | Full marks need both halves: what it does, and that 42 is not special. |
+| W3 | **`predict`.** If it could see the answers there would be nothing to predict. `fit` sees them to learn; `score` sees them to mark. | |
+| W4 | Report **0.7333, on 30 rows.** The gap is **0.2083**, about 21 percentage points — a lot of the 0.9417 was memory rather than skill. | This is THE GAP from Week 29; it should match the board. |
+| W5 | `ValueError: Expected 2D array, got 1D array instead`. `predict` wants a **table**, and one row is still a table: `model.predict([[3.0, 1.0]])`. | Accept "it errors because it needs double brackets" as a pass. |
+
+### Predict the Output (P1–P4)
+
+**P1 — swapped arguments.**
+
+```text
+0.625
+0.625
+[[2 1 0]
+ [0 2 1]
+ [0 1 1]]
+[[2 0 0]
+ [1 2 1]
+ [0 1 1]]
+```
+
+- Are the two accuracies the same? **Yes**, 0.625 both ways. Are the two grids the same? **No** — the second is the first flipped along the diagonal (its transpose). The diagonal is unchanged, which is why the accuracy is unchanged and why nothing warns you.
+- Row 1 totals: Grid A = 0 + 2 + 1 = **3**; Grid B = 1 + 2 + 1 = **4**; real class-1 count in `truth` = **3**. **Grid A** is right (`confusion_matrix(truth, guess)`), and the student can know it by adding up a row and comparing with the real class counts.
+- Teacher note: for `accuracy_score` nothing changes if you swap the arguments; for `confusion_matrix` every mistake reads backwards while the accuracy looks identical. Both functions take truth-first, so learn the one rule and it covers both.
+
+**P2 — marks and money.**
+
+```text
+[  60. 3000.]
+[-1.41 -0.71  0.    0.71  1.41]
+[-1.41 -0.71  0.    0.71  1.41]
+[  40. 2000.]
+```
+
+- Lines 2 and 3 are **identical**: a column running 40–80 and one running 2000–4000 become the same five numbers. Both now say "how many spreads from typical am I?".
+- Negative numbers are **not** a bug: half of anything is below average, and the middle value is exactly 0 because it is the mean.
+- Line 4: `transform` did **nothing** to `marks` — `marks[0]` is still `[40, 2000]`. It hands back a **new** array. A machine that quietly rewrites your data cannot be debugged, and a double-scaled array gives no error and a silently broken model (same design idea as `sorted()` in Week 12).
+
+**P3 — `stratify`.**
+
+```text
+[59 71 48]
+[ 9 18  9]
+[12 14 10]
+36 36
+```
+
+- `stratify` did not change the **size** (both piles are 36). It changed **which** wines: each class keeps the same share in both halves.
+- Class 1's share of the un-stratified test pile: 18 ÷ 36 = **50%**; of the whole table: 71 ÷ 178 = **39.9%**.
+- Why it matters: the un-stratified pile is 25% / 50% / 25% when the real world is 33% / 40% / 27%, so the class-0 estimate rests on **nine** wines, each worth eleven percentage points.
+
+**P4 — scientific notation.**
+
+```text
+[1.00e-04 2.25e+02]
+225.0001
+4.4e-05
+15.0
+```
+
+- Notation: **scientific notation**. `1.00e-04` = 0.0001, `2.25e+02` = 225. Numpy switches to it when numbers in one array are very far apart in size; the notation itself is a warning that the two numbers do not belong in the same sum.
+- Line 3 written out: `4.4e-05` = **0.000044**.
+- Line 4 is **15.0**, exactly the proline gap, so hue contributed nothing measurable to the distance.
+
+### Practice Set A — Read It (A1–A6)
+
+#### A1 — Baselines
 
 | # | Class counts | Baseline | An accuracy of… | Any good? |
 |---|---|---|---|---|
@@ -1305,31 +1377,31 @@ Every code block was run before it was pasted, and every number is real. All of 
 | (d) | breast cancer: 212 / 357 | 357/569 = **0.6274** | 0.9561 | Yes. |
 | (e) | 10 pass, 10 fail | 10/20 = **0.5000** | 0.5000 | No. That is exactly a coin. |
 
-**30.1(f) Why compute the baseline before you train anything, rather than after?**
+**A1(f) Why compute the baseline before you train anything, rather than after?**
 Because once you have seen 94% you will feel good about it, and the feeling arrives before the comparison. The baseline is the ruler, and you build a ruler before you measure with it. Compute it after and you will be quietly grading your own homework.
 
-**30.1(g) `accuracy_score(y_test, pred)` — what happens if you swap the two arguments?**
-For accuracy, nothing: the number of matching pairs is the same either way. For `confusion_matrix` it matters enormously — you get the grid flipped along the diagonal, so every mistake reads backwards while the accuracy looks identical. **Since both functions take truth-first, learn the one rule and it covers both.**
+**A1(g) Row (c) has the highest baseline of the five. Which is the hardest problem to look good at, and which is the easiest to look good at dishonestly?**
+Row (c), the spam one, is both: you have to beat 95% before you have done anything at all, and "94% accurate!" sounds excellent to anybody who has not asked what the baseline is. The more lopsided the classes, the more a bare accuracy flatters you.
 
-### Page 30.2 — The arithmetic that proves scaling matters
+#### A2 — The arithmetic that proves scaling matters
 
-The two printed wines: wine 0 is `hue 1.04, proline 1065.0`; wine 1 is `hue 1.05, proline 1050.0`.
+The two wines in the workbook: wine 0 is `hue 1.04, proline 1065.0`; wine 1 is `hue 1.05, proline 1050.0`.
 
-**30.2(a) The four steps, raw.**
+**A2(a) The four steps, raw.**
 
-```
+```text
 hue gap     :  1.04 − 1.05  =  −0.01     squared:    0.0001
 proline gap : 1065  − 1050   =   15.00    squared:  225.0000
 total       :                              225.0001
 distance    :                               15.0000
 ```
 
-**30.2(b) Each column's share of the total.**
+**A2(b) Each column's share of the total.**
 hue: 0.0001 ÷ 225.0001 × 100 = **0.000044%**. proline: **99.999956%**.
 
-**30.2(c) Divide each gap by its column's spread (hue 0.2279, proline 314.0217), then redo it.**
+**A2(c) Divide each gap by its column's spread (hue 0.2279, proline 314.0217), then redo it.**
 
-```
+```text
 hue     : 0.01 ÷ 0.2279   = 0.0439    squared: 0.0019
 proline : 15   ÷ 314.0217  = 0.0478    squared: 0.0023
 total   :                              0.0042
@@ -1338,23 +1410,23 @@ hue's share    : 45.76 %
 proline's share: 54.24 %
 ```
 
-**30.2(d) One sentence on what changed.**
+**A2(d) One sentence on what changed.**
 
 > Nothing about the wines changed and nothing about the model changed; dividing each gap by how much its own column normally varies took hue from contributing forty-four millionths of a percent to contributing nearly half.
 
-**30.2(e) `proline` runs 278 to 1680 and `hue` runs 0.48 to 1.71. Which column will dominate every distance in the raw table, and how do you know without doing the arithmetic?**
+**A2(e) `proline` runs 278 to 1680 and `hue` runs 0.48 to 1.71. Which column will dominate every distance in the raw table, and how do you know without doing the arithmetic?**
 `proline`, because its gaps are measured in hundreds while hue's are in hundredths — that is a factor of about ten thousand *before* squaring, and squaring makes it a hundred million. You do not need the arithmetic; you need to look at the ranges. **Looking at min, max and spread for every column before you model is a habit worth having.**
 
-**30.2(f) Would scaling help a model that never measures distance?**
+**A2(f) Would scaling help a model that never measures distance?**
 No. A decision tree (next week) asks "is proline above 755?" and scaling just changes the number in the question, never the answer. Scaling matters for models that add up squared differences.
 
 Confirmed by `why_scaling.py` — full output in the Prep Checklist above.
 
-### Page 30.3 — Read both grids out loud
+#### A3 — Read both grids out loud
 
 **The raw model, k = 5:**
 
-```
+```text
 [[12  0  0]
  [ 0 13  1]
  [ 2  5  3]]
@@ -1366,15 +1438,15 @@ Confirmed by `why_scaling.py` — full output in the Prep Checklist above.
 | 1 | Fourteen really were class 1: thirteen called class 1, one called class 2. |
 | 2 | **Ten really were class 2: only three were called class 2. Five were called class 1 and two were called class 0.** |
 
-**30.3(a) Which is the worst row, and why?** Row 2. It gets 3 out of 10 right — worse than a coin — and it is where seven of the eight total errors live.
+**A3(a) Which is the worst row, and why?** Row 2. It gets 3 out of 10 right — worse than a coin — and it is where seven of the eight total errors live.
 
-**30.3(b) Accuracy from the grid, by hand.** Diagonal: 12 + 13 + 3 = 28. Total: 36. **28 ÷ 36 = 0.7778.** Eight wrong.
+**A3(b) Accuracy from the grid, by hand.** Diagonal: 12 + 13 + 3 = 28. Total: 36. **28 ÷ 36 = 0.7778.** Eight wrong.
 
-**30.3(c) What does column 1 add up to, and what is that number?** 0 + 13 + 5 = **18.** It is the number of times the model *said* "class 1" — eighteen guesses, of which thirteen were right. Compare that with the fourteen wines that really were class 1. **Rows are truths; columns are guesses.**
+**A3(c) What does column 1 add up to, and what is that number?** 0 + 13 + 5 = **18.** It is the number of times the model *said* "class 1" — eighteen guesses, of which thirteen were right. Compare that with the fourteen wines that really were class 1. **Rows are truths; columns are guesses.**
 
 **The scaled model, k = 5:**
 
-```
+```text
 [[12  0  0]
  [ 1 12  1]
  [ 0  0 10]]
@@ -1386,44 +1458,238 @@ Confirmed by `why_scaling.py` — full output in the Prep Checklist above.
 | 1 | Fourteen really were class 1: twelve correct, one called class 0, one called class 2. |
 | 2 | All ten class-2 wines correct. |
 
-**30.3(d) What happened to row 2?** It went from 3 out of 10 to **10 out of 10.** The grape the raw model was nearly blind to, the scaled model gets perfectly. Not one new measurement was taken.
+**A3(d) What happened to row 2?** It went from 3 out of 10 to **10 out of 10.** The grape the raw model was nearly blind to, the scaled model gets perfectly. Not one new measurement was taken.
 
-**30.3(e) Accuracy from the grid.** 12 + 12 + 10 = 34, of 36. **0.9444.** Two wrong.
+**A3(e) Accuracy from the grid.** 12 + 12 + 10 = 34, of 36. **0.9444.** Two wrong.
 
-**30.3(f) Which kind of mistake is left, and is it a forgivable one?** Both remaining errors are in row 1 — one class-1 wine called class 0 and one called class 2. They are boundary mistakes, one in each direction, which is the shape of an honest model working on a genuinely hard edge. That is a much more comfortable pattern than "all my errors are in one class".
+**A3(f) Which kind of mistake is left, and is it a forgivable one?** Both remaining errors are in row 1 — one class-1 wine called class 0 and one called class 2. They are boundary mistakes, one in each direction, which is the shape of an honest model working on a genuinely hard edge. That is a much more comfortable pattern than "all my errors are in one class".
 
-### Page 30.4 — The accuracy-vs-`k` table and the plot
 
-The full 25-row table is printed in the Activity section above and is reproduced from a real run. Key rows:
+#### A4 — Spot the bug
 
-| k | raw | scaled |
+| # | The fix |
+|---|---|
+| a | `StandardScaler` — a *scaler* scales; a *scalar* is a single number |
+| b | Add `scaler.fit(X_train)` above the `transform` |
+| c | Split first, then `scaler.fit(X_train)`. Never `fit(X)` |
+| d | `model.predict(X_test_scaled)` — whatever you did to `X_train`, do to `X_test` |
+| e | `accuracy_score(y_test, model.predict(X_test))` — pass the guesses, not the model |
+| f | `confusion_matrix(y_test, predictions)` — **truth first** |
+| g | `stratify=y` — you balance the answers, not the measurements |
+| h | `ax.set_ylim(0, 1.05)` — the axis starts at zero |
+
+**A4(i).** The three with no error message: **(c), (d) and (h).** (The other five, (a), (b), (e), (f) and (g), raise real tracebacks.)
+
+**A4(j).** The symptom to catch each:
+
+1. **(c)**, the leak: the score goes **up**, 0.9444 to 0.9722. Nothing warns you; only the habit protects you.
+2. **(d)**, unscaled `X_test`: accuracy **0.3333, below the baseline of 0.3989.** Anything below the baseline means something is broken.
+3. **(h)**, the truncated axis: no error and a saved PNG, but a 5-point wiggle looks as dramatic as the 17-point finding. You catch it by opening the picture and asking "is that the chart I meant?".
+
+**A4(k).** **(c), the leak.** A bug that lowers your score gets found, because you go looking. A bug that raises it gets kept; nobody investigates good news. And the number it produces is no longer an estimate of unseen-data performance, which is the only thing it was for.
+
+*Wrong-answer map:* students often name (e) or (f) as "silent" because the fix looks small; ask them whether Python printed a traceback.
+
+#### A5 — Label the grid
+
+| Slot | Answer |
+|---|---|
+| Rows | **the truth** — what the thing really was |
+| Columns | **the guess** — what the model said |
+| Worst row | **Row 2.** Ten wines really were class 2; only three were called class 2, five were called class 1 and two were called class 0 |
+| Row totals | row 0: **12** · row 1: **14** · row 2: **10** |
+
+- **A5(a).** **Yes** — 12, 14, 10, exactly the real class counts. That confirms rows are truths.
+- **A5(b).** Add up a row and compare it to the real class counts. If they match, rows are truth. It takes four seconds and needs no memory.
+- **A5(c).** Column 1 = 0 + 13 + 5 = **18**: the number of times the model **said** "class 1", four more than the number of wines that actually were class 1.
+
+#### A6 — Read the traceback (the `stratify=X` error)
+
+- Which line first? The **last** one, always.
+- How many classes does wine have? **Three.**
+- Why is it complaining about a class with one member? Because `stratify=X` made sklearn treat **each whole row of thirteen measurements as a class label**; every "class" occurred exactly once, so it refused.
+- How many "classes" did it think there were? **178**, one per wine.
+- The fix: `stratify=y`.
+- The sentence: *"You stratified on the measurements instead of the answers. Sklearn treated every unique row as its own class, so it found 178 classes with one member each. Change `stratify=X` to `stratify=y`."*
+
+### Practice Set B — Write It (B1–B5)
+
+**B1 — the baseline in one line.**
+
+```python
+print(round(np.bincount(wine.target).max() / len(wine.target), 4))
+```
+
+```text
+0.3989
+```
+
+What the laziest model does: shouts "class 1" at every wine without looking and is right 71 times out of 178.
+
+**B2 — mark twelve guesses.** `truth = [0,0,0,0,1,1,1,1,1,2,2,2]`, `guess = [0,0,0,1,1,1,1,2,0,1,1,2]`.
+
+```text
+accuracy: 0.5833
+[[3 1 0]
+ [1 3 1]
+ [0 2 1]]
+```
+
+- Row 2 out loud: *"Three things really were class 2. Only one was called class 2, and **two were called class 1**."* Row 2 is the worst row, one out of three.
+- Check: the rows add to 4, 5 and 3, the number of 0s, 1s and 2s in `truth`, so rows are truths.
+
+**B3 — what the scaler learned.** Expected output (seed `random_state=31`, `stratify`, scaler fitted on the training rows only):
+
+```text
+hue
+   mean learned  : 0.9553
+   spread learned: 0.2153
+   before, first 4: [0.96 1.05 0.7  0.94]
+   after , first 4: [ 0.022  0.44  -1.186 -0.071]
+proline
+   mean learned  : 744.169
+   spread learned: 307.0284
+   before, first 4: [680. 450. 615. 415.]
+   after , first 4: [-0.209 -0.958 -0.421 -1.072]
+
+X_train is untouched, first row: [  0.96 680.  ]
+```
+
+By hand: (680 − 744.169) ÷ 307.0284 = **−0.209**. Hue 0.96 became 0.022, almost exactly typical. Marking tip: the student should notice the learned spread for hue (0.2153) differs slightly from the 0.2279 used in A2, because the scaler sees training rows only while A2 used all 178.
+
+**B4 — the comparison table.**
+
+```text
+baseline: 0.3989
+
+model            train     test    errors of 36
+k=5 raw          0.7817   0.7778   8
+k=5 scaled       0.9859   0.9444   2
+```
+
+Why count errors with a mask, `(pred != y_test).sum()`, rather than arithmetic? It is exact; `36 × 0.7778` gives 28.0008, which you then have to round and hope. (Week 20's boolean mask doing real work.)
+
+#### B5 — the sweep and the chart
+
+The student's program is the one in the workbook's B5 answer; the same sweep is inside the complete lab under **Build It** below. The 25-row table from a real run:
+
+
+```text
+k =  1   raw = 0.7500   scaled = 0.9167
+k =  2   raw = 0.7778   scaled = 0.9167
+...
+k = 24   raw = 0.7500   scaled = 0.9722
+k = 25   raw = 0.7500   scaled = 0.9722
+```
+
+Key rows to look at, read from the table above: k = 1 is 0.7500 raw and 0.9167 scaled; k = 5 is 0.7778 and 0.9444; **k = 7, 8, 9, 10 are all 0.9722 scaled**; k = 25 is 0.7500 and 0.9722.
+
+- **Is the scaled line ever below the raw line?** No, not at any of the twenty-five values. That is unusually clear-cut, and it is why wine is the dataset for this lesson.
+- **How many percentage points is one wine worth?** 1 ÷ 36 = **2.8**. So 0.9167 is 33 right, 0.9444 is 34 and 0.9722 is 35: **the entire wiggle in the scaled line is two wines changing their minds.** With a small test set, do not read meaning into small differences.
+- **Why fit the scaler once, before the loop?** The scaling has nothing to do with `k`. Fitting it inside the loop gives the same answer twenty-five times, takes twenty-five times as long, and makes it easier to fit it on the wrong pile by accident.
+
+### Fix the Broken Program (`wine_lab.py`, three bugs)
+
+**Bug 1 — the syntax error.** Did any of it run? **No**: no `Traceback`, nothing printed, because Python could not finish reading the file. The unclosed `(` is the one after **`print`** (the `round(baseline, 4)` bracket is closed); Python points at the outer one because it was the last it was still waiting on. Fix:
+
+```python
+print("baseline:", round(baseline, 4))
+```
+
+**Bug 2 — the runtime error.** `baseline: 0.3989` printed **before** the traceback, so Python read the whole file and failed at run time; a syntax error prints nothing. The message is last week's "not fitted yet" with one word changed: everything in this library follows make, fit, use. `transform` could not subtract a mean it does not know, because the scaler has never been shown any data. Fix, a new line **above** the transform:
+
+```python
+scaler = StandardScaler()
+scaler.fit(X_train)                      # <-- the missing line
+X_train_scaled = scaler.transform(X_train)
+```
+
+**Bug 3 — the silent one.** Accuracy 0.3333 is **below** the baseline 0.3989, so the model is worse than shouting one word at every bottle. The model said **class 0** for all thirty-six wines. From the grid alone: columns 1 and 2 are entirely zero and column 0 holds all 36 guesses.
+
+```text
+[[12  0  0]
+ [14  0  0]
+ [10  0  0]]
+```
+
+The line is `predictions = model.predict(X_test)`, which should be `X_test_scaled`. No complaint, because 680 is a perfectly valid number and Python does not understand units. Fix:
+
+```python
+predictions = model.predict(X_test_scaled)
+```
+
+The habit: whatever you do to `X_train`, do to `X_test`, on the very next line.
+
+### Puzzle of the Week (Parts 1–3)
+
+**Part 1 — Choose your own shouty column**
+
+**(a)**
+
+| height in… | height gap | squared | age gap | squared | total | distance | height's share |
+|---|---|---|---|---|---|---|---|
+| millimetres | 50 | 2500 | 28 | 784 | 3284 | **57.31** | **76.13 %** |
+| centimetres | 5 | 25 | 28 | 784 | 809 | **28.44** | **3.09 %** |
+| metres | 0.05 | 0.0025 | 28 | 784 | 784.0025 | **28.00** | **0.0003 %** |
+
+- **(b)** Zero people changed; zero were re-measured.
+- **(c)** In millimetres height runs the show (76% of the distance); in metres age runs it completely.
+- **(d)** The squared height gap would need to be about 784, so the height gap about **28**; the real gap is 5 cm, so the unit would be about **1.8 mm**, which nobody uses. There is no natural unit that balances two different kinds of measurement, which is why you rescale rather than hunt for the right unit.
+- **(e)** *"Nothing about the two people changed, only the word at the top of a column, and the model's opinion of which of them is 'more different' flipped from height to age. So a distance is never a fact about the things you measured alone; it is a fact about them and the units somebody happened to choose."*
+
+**Part 2 — Spot the Shouty Column**
+
+| # | Which shouts | Roughly how badly |
 |---|---|---|
-| 1 | 0.7500 | 0.9167 |
-| 5 | 0.7778 | 0.9444 |
-| **7** | 0.7222 | **0.9722** |
-| **8** | 0.7222 | **0.9722** |
-| **9** | 0.7778 | **0.9722** |
-| **10** | 0.7500 | **0.9722** |
-| 11 | 0.7500 | 0.9444 |
-| 25 | 0.7500 | 0.9722 |
+| a | **height in mm** | By a mile; squared, about 3× the age contribution |
+| b | **age in years** | Enormously; height is a rounding error in metres |
+| c | **salary in rupees** | Overwhelmingly: tens of thousands against single digits, then squared |
+| d | **exam mark out of 100** | About 10× before squaring, 100× after |
+| e | **revision minutes** | Now the other way: 600 minutes beats 60 marks |
+| f | **steps per day** | By thousands (20,000 against about 10) |
+| g | **price in pence** | 100× the pounds column, about 10,000× after squaring |
+| h | **it depends** | The arguable one |
 
-**30.4(a) Is the scaled line ever below the raw line?**
-No. Not at any of the twenty-five values. That is unusually clear-cut and it is why wine is the dataset for this lesson.
+- **(i)** **(h)**, km against a rating out of 5. A few kilometres and the columns are comparable; hundreds and distance wins easily. The honest answer is "measure it, do not guess": print min, max and spread of both.
+- **(j)** Row (g) is also a **duplicated feature**: the same information twice, one column 100 times the other. Scaling does not fix that; **delete one of the two columns.**
 
-**30.4(b) Where is the plateau, and what is a plateau?**
-`k = 7, 8, 9, 10` — four consecutive values all at 0.9722. A plateau is a flat, high run, and it is trustworthy because the score does not depend on getting `k` exactly right. A lonely peak with dips either side is usually one wine's worth of luck.
+**Part 3 — The column that stopped shouting**
 
-**30.4(c) Why is the scaled line so jumpy between 0.9167 and 0.9722?**
-Because there are only 36 test wines, so one wine is 2.8 percentage points. 0.9167 is 33 right, 0.9444 is 34, 0.9722 is 35. **The whole wiggle in that line is two wines changing their minds.** Which is the real lesson of the chart: with a small test set, do not read meaning into small differences.
+- **(k)** **`hue`, on this one split.** Removing `hue` costs 5.6 percentage points (two wines); removing `proline` costs 2.8 (one wine). The column that was 0.000044% of the raw distance looks at least as useful as the one that was 99.999956% of it. Hold that loosely: see (n).
+- **(l)** *The raw model was spending almost all its attention on one column (proline) and almost none on another (hue) that, when scaled, is at least as useful, not because proline was more informative but because it was written in bigger numbers. Scaling did not add information; it stopped the model throwing information away.*
+- **(m)** **Not necessarily.** Zero cost usually means another column carries the same information (`total_phenols` and `flavanoids` move together). "Costs nothing to remove" and "contains nothing" are different claims, and only the first was tested.
+- **(n)** **Almost none of it.** One wine is 2.8 points, so the whole spread of the table, 0.9722 down to 0.9167, is **two wines.** Only the general shape is worth saying: no single column is critical and the columns are fairly interchangeable.
 
-**30.4(d) Why must the y-axis start at zero?**
-Because the difference between the two lines is about 17 points and the wiggle within each line is 5, and starting the axis at 0.7 makes the wiggle look as dramatic as the real finding. Week 27 taught exactly this: an axis that does not start at zero can make a 2% difference look enormous without changing a single number.
+### Think Deeper (T1–T2)
 
-**30.4(e) The plot checklist.** Title stating the finding · both axis labels including what the units are · legend, because there are two lines · `set_ylim(0, 1.05)` · saved with `savefig`.
+**T1 — the leak.** Model answer, in the student's voice:
 
-### Page 30.5 — The complete lab
+> *0.9722 is supposed to be an estimate of how the model will do on wines nobody has ever seen. Fitting the scaler on all 178 wines broke that, and it did not take much: the proline mean moved from 744.17 to 746.89, a shift of 2.72. But the 36 test wines contributed to that 2.72, so they had a hand in preparing the 142 training wines; they were not unseen. A brand-new bottle tomorrow cannot possibly have helped work out my mean, so I should expect it to do worse than 0.9722, by an amount I do not know. The number went up and got less true.*
+>
+> *I cannot catch it by experiment either. On eight of ten seeds the leak makes no difference, and on one it makes the score worse, so an identical pair of scores is what "got away with it" looks like, not "safe". The only defence is the habit: split first, fit the scaler on the training rows, every time.*
+>
+> *That is why an upward bug is worse than a downward one. A bug that lowers your score is found by you, because you go looking. A bug that raises it is found by somebody else, later, in public. Nobody investigates good news.*
 
-This is the whole thing in one file, run end to end.
+Marking: full marks needs (1) "an estimate of performance on unseen rows" stated precisely, (2) the 2.72 as evidence that a tiny leak is enough, (3) the "habit, not vigilance" conclusion from the eight-of-ten result, and (4) the who-finds-it observation.
+
+**T2 — the 78% model against the 90% model.** Model answer:
+
+> *There are eight errors and **seven are in row 2**: ten people really had the serious condition, three were identified, five were called "mild" and two "healthy". Row 0 is perfect and row 1 has one error. Every error in row 2 is in the direction of saying somebody is less ill than they are.*
+>
+> *So the 78% model is worse than the 90% one, by a long way: it misses **seven out of ten** serious cases. The 90% model with errors spread evenly would misclassify about four people in both directions, and the healthy ones get told to come back for a second test, an inconvenience rather than a catastrophe. A higher accuracy bought by getting the easy group perfect is a model that has learnt to look good.*
+>
+> *Who decides which mistakes are acceptable? By default the builder, often without noticing; then the organisation buying it, on cost and the same single number; and the person the mistake lands on has almost no say, because they were not in the room and may never be told a model was involved.*
+>
+> *I would insist on the full confusion matrix being printed next to the accuracy, with each row's success written as a fraction: "class 2: 3 of 10".*
+
+Marking: full marks needs (1) the error distribution with the **direction** named, (2) a clear verdict on 78 versus 90 with who is harmed, (3) all three decision-makers considered and the last identified as having least say, and (4) a specific, concrete disclosure requirement.
+
+### Build It — The Classifier Lab (Pieces 1–7)
+
+The complete lab below assembles Pieces 1 to 5 (chart, comparison table, chosen `k`, confusion matrix) in one file, run end to end; its layout matches what the student is asked to produce. Pieces 1, 4, 6 and 7 are marked underneath it.
+
+
+This is the whole thing in one file, run end to end. It is teacher reference material: the student builds it in pieces across Practice Set B (B4, B5) and Build It.
 
 ```python
 # classifier_lab.py
@@ -1549,7 +1815,7 @@ confusion matrix:
  [ 0  0 10]]
 ```
 
-**The comparison table, as it should be handed in:**
+**The comparison table, as it should be handed in (Piece 2):**
 
 > **Baseline: 0.3989** — always shout "class 1" and you get 71 of 178 right.
 
@@ -1559,15 +1825,15 @@ confusion matrix:
 | kNN k=5, scaled columns | 0.9859 | 0.9444 | 2 |
 | kNN k=9, scaled columns *(chosen)* | 0.9789 | **0.9722** | **1** |
 
-**The chosen `k` write-up, full marks:**
+**The chosen `k` write-up, full marks (Piece 3):**
 
 > I chose **k = 9**, which scores **0.9722 on 36 held-back wines**, against a baseline of 0.3989. I chose it because k = 7, 8, 9 and 10 all give the same 0.9722 — four consecutive values, which is a plateau rather than a lonely spike, so the answer does not depend on me getting k exactly right. Within that plateau I took the largest odd value: larger k is less sensitive to one strange neighbour, and an odd k produces fewer tied votes. **I chose this k by looking at test scores, which makes this estimate slightly optimistic.** I should also say that 0.9722 is 35 wines out of 36, so the difference between this and k = 5's 0.9444 is exactly one wine, and I would not claim k = 9 is definitely better than k = 5 on the strength of one wine.
 
 *(That last sentence is not required. A student who writes it unprompted is at mastery level 5.)*
 
-**The confusion matrix for k = 9, with its worst row named:**
+**The confusion matrix for k = 9, with its worst row named (Piece 5):**
 
-```
+```text
 [[12  0  0]
  [ 0 13  1]
  [ 0  0 10]]
@@ -1575,7 +1841,26 @@ confusion matrix:
 
 > Row 1 is the worst row: fourteen wines really were class 1, thirteen were called class 1, and **one was called class 2**. Rows 0 and 2 are perfect. One error out of thirty-six.
 
-### Page 30.6 — Short questions
+
+**Piece 1 — the chart.** Model title: *"Scaling is worth about 17 accuracy points on the wine table"* (it states the finding, not the topic).
+
+- **Why the y-axis must start at zero:** the gap **between** the two lines is about 17 points and the wiggle **within** each line is about 5. Start the axis at 0.7 and the wiggle looks as dramatic as the real finding, so a reader glancing for a quarter of a second gets the wrong story. Week 27 taught exactly this: an axis that does not start at zero can make a small difference look enormous without changing a single number.
+- **The plot checklist:** title stating the finding · different markers as well as colours · both axis labels including what is measured (and the 36-row count on y) · legend, because there are two lines · `set_ylim(0, 1.05)` · saved with `savefig`, then opened and looked at.
+
+**Piece 2 — the comparison table.** Points scaling bought: 0.9444 − 0.7778 = **16.7 percentage points.** What was added to get them: **nothing** — no new measurements, no new wines, `k` unchanged at 5, same model. Only `proline` stopped shouting over the other twelve.
+
+**Piece 3 — my chosen `k`.** The three sentences, mapped to the workbook's prompts:
+
+- **Sentence 1 (ties):** nine values of `k` reach 0.9722: 7, 8, 9, 10, 18, 22, 23, 24 and 25, so "the highest score" does not pick a single answer.
+- **Sentence 2 (plateau):** `k = 7, 8, 9, 10` are four consecutive values all at 0.9722, a plateau rather than a lonely spike; a plateau is more trustworthy because the score does not depend on getting `k` exactly right.
+- **Sentence 3 (why this one):** inside the plateau take the largest odd value, since a larger `k` is less sensitive to one strange neighbour and an odd `k` gives fewer tied votes.
+- Marking: "it scored highest" earns no credit for Sentence 1 or 3; the Homework script tells the student this in advance.
+
+**Piece 4 — the honesty sentence.** Word for word: *"I chose this k by looking at test scores, which makes this estimate slightly optimistic."* The student's own-words reason should be something like: *"I looked at the sealed envelope twenty-five times to decide something; something that helps you choose has taught you, so 0.9722 is a bit flattering, by an amount I cannot measure. The proper fix is a third pile of data I never tune against, and I do not have enough wines, so the honest thing left is to say so."*
+
+**Piece 5 — the confusion matrix.** For `k = 9`, scaled, as printed in the complete lab above. Row totals **12, 14, 10** match the real class counts, so rows are truths. The worst row, named with a direction: *row 1, fourteen wines really were class 1, thirteen were called class 1 and **one was called class 2**.* Total errors **1** of 36; accuracy (12 + 13 + 10) ÷ 36 = 35 ÷ 36 = **0.9722**. Rows 0 and 2 are perfect. If a student uses the `k = 5` scaled model instead, the grid is the A3 scaled grid, with 2 errors, 0.9444, and row 1 named as worst.
+
+**Piece 6 — short questions.**
 
 | # | Question | Answer |
 |---|---|---|
@@ -1591,6 +1876,37 @@ confusion matrix:
 | x | Why does `transform` hand back a new array instead of changing `X_train`? | So you can print before and after, re-run a line safely, and never accidentally scale the same data twice — which produces no error and a broken model. |
 | xi | Name one situation where you should **not** scale. | Iris (all four columns are already comparable centimetres, and scaling makes kNN slightly worse), or any decision tree (it never measures distance, so scaling only changes the threshold in the question, never the answer). |
 | xii | The sentence you write next to every `k` you chose from test scores. | "I chose this k by looking at test scores, which makes this estimate slightly optimistic." |
+
+**Piece 7 — the Bug Log.** No single right answer; each row should record what happened, whether there was an error message (bug 1 and bug 2 of the Fix yes, bug 3 and the leak no), what fixed it, and a check for next time. A good last column reads like "compare accuracy to the baseline" or "transform `X_test` on the very next line".
+
+### Draw It
+
+There is no single right drawing. A good one has the RAW pair drawn to a **true** scale, one bar visible and the other genuinely unmeasurable (`hue gap² = 0.0001` as a pencil line against `proline gap² = 225.0000` at about 60 mm), and the SCALED pair nearly equal (0.0019 and 0.0023) with the shares 45.76% and 54.24% written underneath and the two spreads, `hue 0.2279` and `proline 314.02`, on the arrow between them.
+
+- The tell that it is right: on the left, one of the two bars cannot be drawn. If both are bars of comparable height, the ratio was written down but never illustrated.
+- The tell that it is good: an annotation saying **nothing about the wine changed.**
+
+### Self-Check
+
+The ten "I can…" rows are self-rated; ask the student to point at one they marked 😀 and show you. True or false:
+
+| Statement | Answer | Why |
+|---|---|---|
+| A higher accuracy always means a better model | **FALSE** | The leaky version scored higher and was the only one that was a lie |
+| Scaling adds information to your data | **FALSE** | It stops one column throwing the others' information away |
+| The scaler learns from the training rows only | **TRUE** | And only after the split |
+| `transform` changes `X_train` in place | **FALSE** | It hands back a new array; `marks[0]` was still `[40, 2000]` |
+| Half the scaled numbers being negative means something broke | **FALSE** | Below average is a negative number of spreads |
+| `confusion_matrix` gives the same grid whichever way round | **FALSE** | You get the transpose, and every mistake reads backwards |
+| Accuracy gives the same number whichever way round | **TRUE** | 0.625 either way, which is why the grid catches what accuracy cannot |
+| Rows of a confusion matrix add up to the real class counts | **TRUE** | 12, 14, 10 |
+| Columns add up to the real class counts | **FALSE** | They add up to the **guessed** counts; column 1 was 18 against 14 real |
+| `stratify=X` balances your features | **FALSE** | It treats every unique row as its own class and errors out |
+| You should always scale, on every dataset | **FALSE** | On iris it makes kNN slightly worse |
+| A decision tree needs its columns scaled | **FALSE** | "Is proline above 755?" gives the same answer in any unit |
+| Forgetting to scale `X_test` raises an error | **FALSE** | No error, and 0.3333, below the baseline |
+| A leak that leaves the score unchanged on your split was harmless | **FALSE** | It means you got away with it; you cannot tell in advance |
+| Choosing `k` from test scores costs you nothing | **FALSE** | Twenty-five peeks at the envelope; hence the honesty sentence |
 
 ### Lesson questions posed in the Say-this scripts
 

@@ -12,7 +12,7 @@
 | **Type** | 🟦 teach |
 | **Big idea** | Bias is not the machine being mean. It is a gap in who was in the training data, showing up later as a gap in accuracy. |
 | **New vocabulary** | bias · accuracy gap · fairness audit · false reject |
-| **Materials** | Printed audit sheet (Workbook W31.1), a calculator, a pen, one envelope, sticky tape or a stapler, the student's Week 17 model notes |
+| **Materials** | Printed audit sheet (Workbook, Build It, Page W31.1), a calculator, a pen, one envelope, sticky tape or a stapler, the student's Week 17 model notes |
 | **Tech needed** | **None.** Everything this week is on paper. A calculator app is fine. |
 | **Prep time** | 20 minutes: read §"What YOU Need to Know First", print two pages, find an envelope |
 
@@ -248,8 +248,8 @@ map is orientation, never assessment.
 **10 minutes, the night before**
 
 - [ ] Read the section above. Once is enough.
-- [ ] Print **Workbook page W31.1** (the 48-photo audit sheet) — the student writes on this in class.
-- [ ] Print **Workbook page W31.4** (the sealed prediction slip) — or copy it onto plain paper by hand,
+- [ ] Print **Workbook, Build It, Page W31.1** (the 48-photo audit sheet) — the student writes on this in class.
+- [ ] Print **Workbook, Build It, Page W31.4** (the sealed prediction slip) — or copy it onto plain paper by hand,
       it is only six lines.
 - [ ] Find one envelope. Any envelope. A folded sheet of paper with tape on it works.
 - [ ] Do the four divisions yourself on a calculator so the numbers are in your hand:
@@ -435,7 +435,7 @@ Show Figure 31.1 (or draw the four boxes — they are just four boxes and three 
 
 ### 🔍 Worked Example Together — 14 minutes
 
-**Do this:** hand over Workbook page W31.1. Read the setup aloud.
+**Do this:** hand over Workbook Build It Page W31.1. Read the setup aloud.
 
 **Say this:**
 
@@ -565,9 +565,9 @@ photos were blurry' a problem?"*
 
 | Item | Notes |
 |---|---|
-| Workbook page W31.1 | The 48-photo audit table, with space to show each division |
-| Workbook page W31.2 | The training-count table — **keep this face down until part 2** |
-| Workbook page W31.4 | The prediction slip |
+| Workbook, Build It, Page W31.1 | The 48-photo audit table, with space to show each division |
+| Workbook, Build It, Page W31.2 | The training-count table — **keep this face down until part 2** |
+| Workbook, Build It, Page W31.4 | The prediction slip |
 | Calculator | Or long division, if you are feeling strong |
 | One envelope | Plus tape or a stapler |
 
@@ -706,9 +706,9 @@ perform. Everything essential survives: a division, a gap, a unit, a sealed gues
 
 ### Variation — harder
 
-Hand over the class-by-class grid as well (it is printed in **Answer Key W31.7**, and each batch of
+Hand over the class-by-class grid as well (it is printed in the workbook as **B4** (W31.7), and each batch of
 12 was 4 mugs, 4 spoons and 4 forks). Ask for the three column totals as percentages, then the
-question: *"what does the grid show that the condition table could not?"* Fully worked in W31.7.
+question: *"what does the grid show that the condition table could not?"* Fully worked in the Answer Key under B4 (W31.7).
 
 ### If you have 2–6 students
 
@@ -821,11 +821,11 @@ thinking. The thinking is what is being taught this week.
 
 Extension questions, in increasing order of nastiness:
 
-1. Compute the class-by-class grid (the "harder" variation) and name the surprise. → W31.7
+1. Compute the class-by-class grid (the "harder" variation) and name the surprise. → workbook B4 (W31.7)
 2. "The WhatIsIt team want one number for their website. Write a two-sentence reply explaining why
    you will not give them one."
 3. **Price the fix.** How many held-in-a-hand photos must be added to the 200 so that held-in-hand
-   is 25% of the training set? → W31.6, the answer is 67 and the algebra is worth doing.
+   is 25% of the training set? → workbook B5 (W31.6), the answer is 67 and the algebra is worth doing.
 4. "Suppose they fix the held-in-hand gap perfectly and every group now scores 91.7%. Name one
    thing that could still be wrong with this app." *(It may be hopeless on objects that are not
    mugs, spoons or forks; the user may not be able to see the screen to know it even answered; the
@@ -901,27 +901,327 @@ Three checks, five minutes, in this order.
 > is the deal, and it works both ways: if you are right, I will say so, and if you are wrong, we
 > write that down too and it counts just as much."
 
-**Workbook pages: W31.1 – W31.5.**
+**Workbook sections:** Warm-Up, Practice Set A (A1–A6), Practice Set B (B1–B5), Puzzle of the Week,
+Think Deeper, Build It (pages W31.1, W31.2, W31.4), Draw It, Self-Check. The workbook labels a few
+items with page tags, and this guide uses the same tags: **W31.3 = B1**, **W31.5 = A6**,
+**W31.6 = B5**, **W31.7 = B4**.
 
-| Page | Task | Time |
-|---|---|---|
-| **W31.1** | The 48-photo audit: four per-group accuracies, each with the division shown; the overall accuracy; the gap in percentage points | 15 min |
-| **W31.2** | The trace: match each accuracy to its training count and write one sentence per row | 10 min |
-| **W31.3** | The school gate: false-reject arithmetic, 180 days, two groups, four years | 15 min |
-| **W31.4** | Your own group list and your dated prediction — copied neatly from the sealed slip, so there is a record outside the envelope of *the groups* (but **not** the predicted worst group, which stays sealed) | 5 min |
-| **W31.5** | Vocabulary: four words, one sentence each, in the student's own words | 5 min |
+**Split.** In class you already use Build It **W31.1**, **W31.2** and **W31.4** (see the activity).
+Everything else is homework, and the workbook is built for about fifty minutes of it:
 
-Total: about 50 minutes. If they run out of steam, W31.3 is the one to cut.
+| Workbook section | Task | Time | Core or cut? |
+|---|---|---|---|
+| **Warm-Up** | Five recall questions from Week 30 (word-pair counts, no database, confident invention) | 5 min | Core |
+| **A1–A4** | Fill in the blanks on bias, percentage points (A2), three true/false (A3), match the four terms (A4) | 8 min | Core |
+| **A5** | Label the four-link bias chain and name the link where the repair happens | 3 min | Core |
+| **A6 (W31.5)** | Vocabulary: four words, one sentence each, in the student's own words | 5 min | Core |
+| **B1 (W31.3)** | The school gate: false-reject arithmetic, 180 days, two groups, four years, staff time, harms | 15 min | **Cut this first** if time is short |
+| **B2, B3** | Two "what would go wrong?" questions (X-ray trained on adults; company picks its own test set) | 5 min | Core |
+| **B4 (W31.7), B5 (W31.6)** | The class-by-class grid; price the fix (67 photos) | 10 min | Extensions, for the "flying" path |
+| **Puzzle of the Week** | Move the photos, move the headline (48 photos, four groups) | 10 min | Optional, a strong stretch |
+| **Think Deeper 1–2** | Is anyone to blame? How much can twelve photos prove? | 10 min | Optional, one paragraph each |
+| **Build It W31.1** | The 48-photo audit: four per-group accuracies with the division shown; overall accuracy; the gap in percentage points | 15 min | Core. Started in class, finished at home if needed |
+| **Build It W31.2** | The trace: match each accuracy to its training count, one sentence per row | 10 min | Core. Done in class part 2, tidy at home |
+| **Build It W31.4** | Your own group list and dated prediction, copied neatly from the sealed slip, so there is a record outside the envelope of *the groups* (but **not** the predicted worst group, which stays sealed) | 5 min | Core |
+| **Draw It** | The bias chain for something in the student's own life | 5 min | Core |
+| **Self-Check** | Seven tick-boxes, for the student, not for marking | 2 min | Core |
+
+The sections add up to more than the fifty minutes the workbook advertises, because the in-class
+pages and the optional rows overlap it. Assign the Core rows; offer Puzzle and Think Deeper to a
+student who is flying. If they run out of steam, B1 (W31.3) is the one to cut.
 
 ---
 
 ## 🔑 Answer Key
 
-### W31.1 — The 48-photo audit
+Sections follow the order of the workbook. Where the workbook tags an item with a page label, that
+label is kept in brackets. The values are the workbook's own Answers section, re-checked.
+
+---
+
+### Warm-Up (five recall questions)
+
+Mark for the idea, not the wording.
+
+| # | Answer |
+|---|---|
+| 1 | By **counting** which words followed each other. A word-pair model stores counts from its training text and picks a likely next word from them. |
+| 2 | **FALSE.** It has no database of facts and looks nothing up; it continues text using counts of what usually follows what. That is why it can produce a fluent sentence that is completely made up. |
+| 3 | Both come out of **the same machinery**. There is no separate "how sure am I?" channel, so an invented page number looks exactly as likely as a real one. |
+| 4 | The **patterns to look for** and the **list of replies**: every clever-sounding answer was a reply the student typed. That is why it felt smart where they had covered and fell over outside it. |
+| 5 | **Zero counts.** It has to fall back on something else (a shorter pattern, a common word, a default), and it will not tell you it is stuck. |
+
+**What to watch for:** in 2, the wrong answer "TRUE" usually comes from the student's experience of
+search engines. In 3, "because it is clever" is a miss; the point is that confidence is not a
+separate signal.
+
+---
+
+### A1 — Fill in the blanks
+
+- bias: works noticeably **worse** for some group of inputs than for others, in a way that **matters**.
+- What a model has is **counts**.
+
+```text
+   WHAT IT SAW A LOT OF   →   it gets good at
+   WHAT IT SAW A LITTLE   →   it stays shaky
+   WHAT IT NEVER SAW      →   it has no idea
+```
+
+### A2 — Multiple choice
+
+**(b)**, 25 percentage points. What is wrong with (a) "25%": someone can ask "25% of what?" and
+there is no answer. You subtracted two percentages, and that difference is measured in **points**.
+(c) is wrong arithmetic and (d) is not a unit at all. Accept the explanation in any words that say
+"25% of what?" or "it is points, not a fraction of something".
+
+### A3 — True or false
+
+- **(i) FALSE.** Bias is a count, not an intention. A cheerful person in a hurry photographing 183
+  things on a sunny afternoon is enough. And "nobody meant it" does not make the harm smaller:
+  intent and impact are different questions, and we measure impact.
+- **(ii) FALSE.** The model has seen zero lamplight photos, and processing zero examples faster still
+  gives zero. The fix is at link 1: take lamplight photos.
+- **(iii) TRUE**, and the important one. Change how many photos of each condition you test and the
+  overall figure moves (60.4% became 76.0%) with the model untouched. The per-group table is a
+  property of the model; the overall number is a property of the test.
+
+### A4 — Match the pairs
+
+**1 → C · 2 → D · 3 → A · 4 → B**
+
+### A5 — Label the diagram
+
+1. **Who got photographed**: someone decided what to collect, usually by convenience.
+2. **The training data is lopsided**: 183 daylight, 17 lamplight, 0 and 0. Nobody noticed, because nobody counted.
+3. **The model learns what it saw**: brilliant in daylight, lost by lamplight. Not a malfunction.
+4. **Somebody gets bad answers**: a real person, always the one who was missing from link 1.
+
+**Pink box: the fix happens at link 1.** You do not repair a biased model by making it cleverer; you
+go back and take the photographs nobody took. **Wrong-answer map:** "link 3" means the student has
+drawn "make the model cleverer", the misconception this week exists to remove.
+
+### A6 (W31.5) — Vocabulary
+
+| Term | A correct student answer looks like |
+|---|---|
+| **bias** | When a model is much worse for one group than another, because it saw far fewer examples of that group. Not the model being mean. |
+| **accuracy gap** | The best group's accuracy minus the worst group's, written in percentage points. Here: 91.7 − 41.7 = 50.0 points. |
+| **fairness audit** | Deliberately testing a model group by group, with the groups chosen first, to find out who it fails. |
+| **false reject** | When a system fails to recognise someone who really is there — like a student marked absent while standing at the gate. |
+
+---
+
+### B1 (W31.3) — The school gate
+
+A face scanner at the school gate marks attendance. The company advertises **"98% accurate"**. An
+independent test finds it wrongly marks a present student absent — a **false reject** — at these
+rates: overall 2%, students wearing a headscarf 8%.
+
+**(a) Wrongly marked absent in one 180-day school year.**
+
+```text
+   average student:    0.02 × 180 = 3.6 days
+   headscarf student:  0.08 × 180 = 14.4 days
+```
+
+**(b) The difference, and four years of school.**
+
+```text
+   difference in one year:  14.4 − 3.6 = 10.8 days
+
+   over four years:
+      average student:    3.6 × 4  = 14.4 days
+      headscarf student: 14.4 × 4  = 57.6 days
+      difference:        57.6 − 14.4 = 43.2 days
+```
+
+Say it in human units before moving on: **57.6 days is more than eleven school weeks** of being
+marked absent while sitting in the classroom.
+
+**(c) The school has 600 students. How much work does this create?**
+
+```text
+   600 × 0.02 = 12 wrong marks every day
+   12 × 4 minutes = 48 minutes of staff time every day
+
+   48 × 180 = 8,640 minutes per year
+   8,640 ÷ 60 = 144 hours  →  about 18 full working days
+```
+
+The system was sold as saving administrative time. On its own numbers it creates 144 hours a year
+of new administrative work — and only if every single error is noticed and corrected, which it will
+not be.
+
+**(d) Three harms that are not the number itself.** Any three of:
+
+1. **An automatic message goes to a parent.** The child says they were there. The parent has to
+   choose between believing their child and believing the school's computer, and that argument
+   happens at home, repeatedly, with no way to settle it.
+2. **The record follows the student** into reports and references, and in some places attendance
+   figures have legal consequences for families.
+3. **The burden of proof flips.** The child now has to prove they were present, to a busy adult,
+   against a machine that has been right many times. Most children lose that argument, and a child
+   who loses it every week stops trying.
+4. **It lands on one identifiable group**, so the same students carry it again and again, which
+   from the inside looks a lot like being singled out.
+
+**(e) The company says the gap is "only 6 percentage points". Reply in two sentences.**
+
+> Six percentage points means a student who wears a headscarf is wrongly marked absent 14.4 days a
+> year against 3.6 — four times as often, and 57.6 days across four years of school. A difference
+> that lands on one identifiable group, generates a letter to their parents every time, and follows
+> them into their record is not "only" anything.
+
+**(f) Where does the phrase "98% accurate" come from, and what does it hide?**
+
+It is the overall average. It hides that the errors are not spread evenly: one identifiable group
+carries four times the load. It is the voice-assistant problem again, with a person in it.
+
+---
+
+### B2 — The X-ray
+
+- **(a)** It will be noticeably worse on children, possibly much worse. Children's bones are
+  different (softer, still growing, growth plates that can look like cracks). The model saw **zero**
+  children's X-rays. Chain: who got X-rayed, so the data is all adults, so the model learns adults,
+  so children get bad answers.
+- **(b)** **The accuracy on children's X-rays it has never seen**, reported separately, with the
+  count tested. The 96% overall is a fact about a test made entirely of adults.
+- **(c)** The hospital's: whoever decided to switch it on for a group it was never tested on.
+  "Nobody meant it" is true and does not help the child. If it is somebody's responsibility,
+  somebody can fix it, by measuring first.
+
+### B3 — Choosing your own test set
+
+- **(a)** They will stack the test set with daylight photos and publish something like **76%**
+  instead of 60.4%. Same app, same weaknesses, bigger number.
+- **(b)** **No, they will not have lied**, which is what makes it hard. Every number is correct;
+  they chose *which true number to publish* and let the reader assume it applies everywhere.
+- **(c)** Strongest: **publish the per-group table, not one number**. Also acceptable: "the groups
+  and the number of photos in each must be decided and written down before any testing", or "an
+  independent person chooses the test set".
+
+---
+
+### B4 (W31.7) — The class grid (extension, the "harder" variation)
+
+| | mug | spoon | fork | batch total |
+|---|---:|---:|---:|---:|
+| A — daylight | 4/4 | 4/4 | 3/4 | 11/12 |
+| B — lamplight | 3/4 | 2/4 | 2/4 | 7/12 |
+| C — in a hand | 3/4 | 1/4 | 1/4 | 5/12 |
+| D — patterned | 3/4 | 2/4 | 1/4 | 6/12 |
+| **class total** | **13/16** | **9/16** | **7/16** | 29/48 |
+
+```text
+   mug:    13 ÷ 16 = 0.8125  →  81.3%
+   spoon:   9 ÷ 16 = 0.5625  →  56.3%
+   fork:    7 ÷ 16 = 0.4375  →  43.8%
+
+   check:  13 + 9 + 7 = 29 ✓      16 × 3 = 48 ✓
+```
+
+**What the grid shows that the condition table could not:** mug holds up everywhere (81.3%) while
+spoon and fork both collapse. That is not about the lighting at all — it is that a mug is a chunky
+round shape with a handle, whereas a spoon and a fork are both thin shiny metal objects of roughly
+the same length and outline. As soon as conditions get hard the model falls back on "long thin
+shiny thing" and cannot separate the two.
+
+The condition table blamed the lighting. The grid says the app also has a spoon-versus-fork problem
+that exists in *every* condition, including bright daylight. **That is why an audit uses a grid, not
+a list.**
+
+---
+
+### B5 (W31.6) — Price the fix (extension, the "flying" path)
+
+*How many held-in-a-hand photos must WhatIsIt add so that held-in-a-hand is 25% of the training set?*
+
+```text
+   Currently: 200 photos, 0 of them held-in-hand.
+   Let x = the number of held-in-hand photos to add.
+
+        x / (200 + x) = 0.25
+                    x = 0.25 × (200 + x)
+                    x = 50 + 0.25x
+            x − 0.25x = 50
+                0.75x = 50
+                    x = 50 ÷ 0.75
+                    x = 66.67  →  round up to 67
+```
+
+**Add 67 photos.** Check: 267 total, 67 held-in-hand, 67 ÷ 267 = 0.251, so just over 25%. ✓
+
+Worth saying out loud: sixty-seven extra photographs to close **one** of the three holes in a
+200-photo set. That is the honest price of the shortcut taken at collection time — and taking the
+original 200 across varied conditions would have cost nothing extra at all.
+
+---
+
+### Puzzle of the Week — Move the photos
+
+Rule: exactly 48 photos, at least 6 in every group. Put the minimum 6 in every group, then dump the
+24 spare photos into one group.
+
+**(a) Highest headline:** spare photos into the **best** group.
+
+```text
+   g1: 30 × 0.90 = 27.0   g2: 6 × 0.60 = 3.6
+   g3:  6 × 0.40 =  2.4   g4: 6 × 0.20 = 1.2
+   48 photos, 34.2 correct  →  34.2 ÷ 48 = 0.7125  →  71.3%
+```
+
+**(b) Lowest headline:** spare photos into the **worst** group.
+
+```text
+   g1:  6 × 0.90 =  5.4   g2: 6 × 0.60 = 3.6
+   g3:  6 × 0.40 =  2.4   g4: 30 × 0.20 = 6.0
+   48 photos, 17.4 correct  →  17.4 ÷ 48 = 0.3625  →  36.3%
+```
+
+**(c)** 71.3 − 36.3 = **35.0 percentage points** (the unit must be written).
+
+**(d)** The model never changed, so a number the tester can move 35 points by hand is describing
+the tester, not the model. The per-group table has to sit beside any overall figure.
+
+*Bonus:* the only honest report is 90 / 60 / 40 / 20, a gap of 70.0 percentage points.
+
+**Marking tip:** 71.25 and 36.25 are exact halves; accept 71.2 or 71.3 and 36.2 or 36.3 as long as the
+student shows the division and the gap comes out at 35 points.
+
+### Think Deeper 1 — Is anyone to blame?
+
+No single right answer. Full marks: the strongest version of **both** sides, intent and impact kept
+separate, then a commitment.
+
+- **Nobody is to blame:** there is no unkindness in 183, 17, 0, 0. Someone photographed what was in
+  front of them when they were free.
+- **Somebody is:** the harm is real whether or not anyone meant it, and there was a moment of
+  choice: they tested it and reported one average. Splitting the number costs an afternoon.
+- **A strong landing:** *"Nobody is to blame for the gap appearing. Somebody is responsible for not
+  measuring it, and for what happens next. The fix is not an apology, it is 67 photographs."*
+
+### Think Deeper 2 — How much can twelve photos prove?
+
+One photo changing side moves a group by 1/12, which is 8.3 points, so a gap under about eight or
+nine points could be pure luck. A 50-point gap is not luck (six photos would all have fallen the
+wrong way in one batch). **Rule: small samples can spot big gaps but not small ones.** A 50-point gap
+on twelve photos each: believe it and say "twelve photos" out loud. A 3-point gap: claim nothing, take
+more photos.
+
+---
+
+### Build It — the three pages
+
+Page W31.1, W31.2 and W31.4 are the pages used in class; their keys follow.
+
+
+#### Page W31.1 — The 48-photo audit
 
 **(a) Per-group accuracy.**
 
-```
+```text
    Batch A  (daylight)      11 ÷ 12 = 0.916666...  × 100 = 91.666...  →  91.7%
    Batch B  (lamplight)      7 ÷ 12 = 0.583333...  × 100 = 58.333...  →  58.3%
    Batch C  (held in hand)   5 ÷ 12 = 0.416666...  × 100 = 41.666...  →  41.7%
@@ -937,7 +1237,7 @@ Total: about 50 minutes. If they run out of steam, W31.3 is the one to cut.
 
 **(b) Overall accuracy.**
 
-```
+```text
    correct = 11 + 7 + 5 + 6 = 29
    total   = 12 × 4 = 48
 
@@ -946,7 +1246,7 @@ Total: about 50 minutes. If they run out of steam, W31.3 is the one to cut.
 
 **(c) The accuracy gap.**
 
-```
+```text
    best  = Batch A, bright daylight   = 91.7%
    worst = Batch C, held in a hand    = 41.7%
 
@@ -964,7 +1264,7 @@ No. Two reasons, and the student needs at least the first:
 2. It is not even a stable number. Change how many photos you take of each kind and it moves.
    Thirty daylight photos and six of each other condition gives:
 
-```
+```text
    30 × 0.9167 = 27.5        6 × 0.5833 = 3.5
     6 × 0.4167 =  2.5        6 × 0.5000 = 3.0
    ─────────────────────────────────────────────
@@ -985,7 +1285,7 @@ Marks are for **specificity and a number**, not for style. "Be careful using thi
 
 ---
 
-### W31.2 — The trace
+#### Page W31.2 — The trace
 
 | Condition | Training photos | Share of 200 | Test accuracy | Verdict |
 |---|---:|---:|---:|---|
@@ -1003,12 +1303,12 @@ Marks are for **specificity and a number**, not for style. "Be careful using thi
 - *Patterned background scored 50.0% because there were zero patterned backgrounds, so all those
   extra edges in the background are new to it.*
 
-**"Describe the relationship in one sentence."**
+**(a) "Describe the relationship in one sentence."**
 
 > Accuracy goes up and down with the training count almost exactly: 183 photos gives 91.7%, 17
 > photos gives 58.3%, and zero photos gives 41.7% and 50.0%.
 
-**"Why is held-in-a-hand worse than patterned, when both had zero photos?"**
+**(b) "Why is held-in-a-hand worse than patterned, when both had zero photos?"**
 
 This one is a genuine judgement question and any reasoned answer earns full marks. The best answer:
 a hand does two things at once — it adds a large new region of skin-coloured pixels with strong
@@ -1016,80 +1316,14 @@ edges, *and* it hides part of the object. A patterned background only adds distr
 cover the object up. Also fair: with twelve photos, a one-photo difference is within luck, so we
 should not make too much of 41.7 versus 50.0.
 
-**"Whose fault is this?"**
+**Related (Think Deeper 1), "Whose fault is this?"**
 
 Full marks for refusing the question and re-framing it: nobody was unkind; somebody took the photos
 that were convenient. The fix is not an apology, it is 67 more photographs.
 
 ---
 
-### W31.3 — The school gate
-
-A face scanner at the school gate marks attendance. The company advertises **"98% accurate"**. An
-independent test finds it wrongly marks a present student absent — a **false reject** — at these
-rates: overall 2%, students wearing a headscarf 8%.
-
-**(a) Wrongly marked absent in one 180-day school year.**
-
-```
-   average student:    0.02 × 180 = 3.6 days
-   headscarf student:  0.08 × 180 = 14.4 days
-```
-
-**(b) The difference, and four years of school.**
-
-```
-   difference in one year:  14.4 − 3.6 = 10.8 days
-
-   over four years:
-      average student:    3.6 × 4  = 14.4 days
-      headscarf student: 14.4 × 4  = 57.6 days
-      difference:        57.6 − 14.4 = 43.2 days
-```
-
-Say it in human units before moving on: **57.6 days is more than eleven school weeks** of being
-marked absent while sitting in the classroom.
-
-**(c) The school has 600 students. How much work does this create?**
-
-```
-   600 × 0.02 = 12 wrong marks every day
-   12 × 4 minutes = 48 minutes of staff time every day
-
-   48 × 180 = 8,640 minutes per year
-   8,640 ÷ 60 = 144 hours  →  about 18 full working days
-```
-
-The system was sold as saving administrative time. On its own numbers it creates 144 hours a year
-of new administrative work — and only if every single error is noticed and corrected, which it will
-not be.
-
-**(d) Three harms that are not the number itself.**
-
-1. **An automatic message goes to a parent.** The child says they were there. The parent has to
-   choose between believing their child and believing the school's computer, and that argument
-   happens at home, repeatedly, with no way to settle it.
-2. **The record follows the student** into reports and references, and in some places attendance
-   figures have legal consequences for families.
-3. **The burden of proof flips.** The child now has to prove they were present, to a busy adult,
-   against a machine that has been right many times. Most children lose that argument, and a child
-   who loses it every week stops trying.
-
-**(e) The company says the gap is "only 6 percentage points". Reply in two sentences.**
-
-> Six percentage points means a student who wears a headscarf is wrongly marked absent 14.4 days a
-> year against 3.6 — four times as often, and 57.6 days across four years of school. A difference
-> that lands on one identifiable group, generates a letter to their parents every time, and follows
-> them into their record is not "only" anything.
-
-**(f) Where does the phrase "98% accurate" come from, and what does it hide?**
-
-It is the overall average. It hides that the errors are not spread evenly: one identifiable group
-carries four times the load. It is the voice-assistant problem again, with a person in it.
-
----
-
-### W31.4 — Your own groups and prediction
+#### Page W31.4 — Your own groups and prediction
 
 There is no single right answer; this is the student's own model. Mark the **shape**, using this
 worked example as the standard:
@@ -1117,69 +1351,18 @@ be about 80%" (that is not a group).
 
 ---
 
-### W31.5 — Vocabulary
+### Draw It
 
-| Term | A correct student answer looks like |
-|---|---|
-| **bias** | When a model is much worse for one group than another, because it saw far fewer examples of that group. Not the model being mean. |
-| **accuracy gap** | The best group's accuracy minus the worst group's, written in percentage points. Here: 91.7 − 41.7 = 50.0 points. |
-| **fairness audit** | Deliberately testing a model group by group, with the groups chosen first, to find out who it fails. |
-| **false reject** | When a system fails to recognise someone who really is there — like a student marked absent while standing at the gate. |
+Marked on four things, not neatness: four boxes in the right order with an arrow between each; box 2
+contains a **count** (a guessed one is fine, marked `?`); box 4 names **a real person**, not
+"users"; the dashed arrow goes back to **box 1** and says what the student would go and collect.
+If the dashed arrow points at box 3, they have drawn "make the model cleverer"; move it to box 1.
 
----
+### Self-Check
 
-### W31.6 — Extension: price the fix (for the "flying" path)
-
-*How many held-in-a-hand photos must WhatIsIt add so that held-in-a-hand is 25% of the training set?*
-
-```
-   Currently: 200 photos, 0 of them held-in-hand.
-   Let x = the number of held-in-hand photos to add.
-
-        x / (200 + x) = 0.25
-                    x = 0.25 × (200 + x)
-                    x = 50 + 0.25x
-            x − 0.25x = 50
-                0.75x = 50
-                    x = 50 ÷ 0.75
-                    x = 66.67  →  round up to 67
-```
-
-**Add 67 photos.** Check: 267 total, 67 held-in-hand, 67 ÷ 267 = 0.251, so just over 25%. ✓
-
-Worth saying out loud: sixty-seven extra photographs to close **one** of the three holes in a
-200-photo set. That is the honest price of the shortcut taken at collection time — and taking the
-original 200 across varied conditions would have cost nothing extra at all.
-
----
-
-### W31.7 — Extension: the class-by-class grid (the "harder" variation)
-
-| | mug | spoon | fork | batch total |
-|---|---:|---:|---:|---:|
-| A — daylight | 4/4 | 4/4 | 3/4 | 11/12 |
-| B — lamplight | 3/4 | 2/4 | 2/4 | 7/12 |
-| C — in a hand | 3/4 | 1/4 | 1/4 | 5/12 |
-| D — patterned | 3/4 | 2/4 | 1/4 | 6/12 |
-| **class total** | **13/16** | **9/16** | **7/16** | 29/48 |
-
-```
-   mug:    13 ÷ 16 = 0.8125  →  81.3%
-   spoon:   9 ÷ 16 = 0.5625  →  56.3%
-   fork:    7 ÷ 16 = 0.4375  →  43.8%
-
-   check:  13 + 9 + 7 = 29 ✓      16 × 3 = 48 ✓
-```
-
-**What the grid shows that the condition table could not:** mug holds up everywhere (81.3%) while
-spoon and fork both collapse. That is not about the lighting at all — it is that a mug is a chunky
-round shape with a handle, whereas a spoon and a fork are both thin shiny metal objects of roughly
-the same length and outline. As soon as conditions get hard the model falls back on "long thin
-shiny thing" and cannot separate the two.
-
-The condition table blamed the lighting. The grid says the app also has a spoon-versus-fork problem
-that exists in *every* condition, including bright daylight. **That is why an audit uses a grid, not
-a list.**
+Not marked. Read it for honesty: a row ticked "easily" next to a blank or wrong workbook item is the
+one to talk about. The rows most worth a chat are "percentage points, and why not percent" and
+"explain why bias is a count and not an attitude".
 
 ---
 

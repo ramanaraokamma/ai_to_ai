@@ -13,7 +13,7 @@
 | **Big idea** | An `if`/`elif`/`else` chain checks in order and stops at the first `True` — which is exactly how a correct-looking chain hides a wrong answer. |
 | **New vocabulary** | elif · chain · logical operator · truth table · silent bug |
 | **New syntax** | `elif condition:` · `and` · `or` · `not` |
-| **Materials** | Printed workbook pages 6.1–6.6 · pencil · notebook open at the **Bug Log** · **five index cards** with 95, 80, 62, 50 and 20 written large · a printed copy of the broken `grade.py` (the paper fallback) |
+| **Materials** | The printed workbook (`workbook/week-06.md`: Warm-Up through Self-Check) · pencil · notebook open at the **Bug Log** · **five index cards** with 95, 80, 62, 50 and 20 written large · a printed copy of the broken `grade.py` (the paper fallback) |
 | **Tech needed** | One laptop, Python 3, terminal in `~/ai-academy/level2`, editor with 4-space indent. Standard library only — **nothing to install**. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
@@ -199,7 +199,7 @@ Whenever you write a chain, check two things. It takes a minute and it catches n
 1. **No gaps.** Is every possible input handled? An `else` at the end guarantees this. Without one, some input falls off the end and no branch runs at all — and if that branch was the only place a variable got set, you get a `NameError` on a later line. (This is last week's trap, and it is Clinic row 7.)
 2. **No wrong overlaps.** For each input, is the **first** matching branch the one you want?
 
-Here is the coverage check for the fixed chain, done as a table. This is exactly the table on workbook page 6.4.
+Here is the coverage check for the fixed chain, done as a table. It is the same idea as the boundary work in the workbook's Build It, Part 3.
 
 | Mark | `>=90`? | `>=75`? | `>=60`? | `>=35`? | Branch taken | Right? |
 |---|---|---|---|---|---|---|
@@ -438,7 +438,7 @@ it. This week the map earns its keep by pointing at one specific box a long way 
 
 ### 20 minutes the night before
 
-- [ ] **Print workbook pages 6.1–6.6.** Page 6.4 (the coverage table) prints better in landscape.
+- [ ] **Print the whole workbook** (Warm-Up through Self-Check). The Build It Part 1 and Part 2 trace tables (eight and five columns) print better in landscape.
 - [ ] **Write five index cards**: 95, 80, 62, 50, 20. Big numbers, one per card. These are the test marks and they get physically handed to the student one at a time.
 - [ ] **Type the broken `grade.py` yourself and run it with 95.** This is the most important two minutes of prep this term.
 
@@ -482,7 +482,7 @@ it. This week the map earns its keep by pointing at one specific box a long way 
 - [ ] Editor open, 4-space indent confirmed.
 - [ ] **The broken `grade.py` already saved and on screen, but not run.** You want it there at minute zero, not typed during the lesson.
 - [ ] The five index cards face down in a pile.
-- [ ] Notebook open at the Bug Log. Workbook pages on the table.
+- [ ] Notebook open at the Bug Log. The workbook on the table, open at Build It.
 - [ ] **Your hands off the keyboard, and your face neutral.** You are about to watch someone disbelieve a screen for four minutes and you must not rescue them.
 
 ### Fallback if the laptop or the install fails
@@ -886,7 +886,7 @@ Full instructions below. In the lesson flow:
 
 ### Setup
 
-**On the table:** the laptop · workbook page 6.4 (the coverage table, landscape) · page 6.5 (Bug Log) · the five index cards · a pencil.
+**On the table:** the laptop · workbook Build It, Part 1 (the trace table, landscape) and Part 5 (the Bug Log) · the five index cards · a pencil.
 
 **On the screen:** save **both** versions — `grade_broken.py` and `grade.py`. The student will want to run them side by side, and keeping the broken one is the point of the whole activity. Do not delete it.
 
@@ -906,7 +906,7 @@ Then the **50** card:
 
 > "`50 >= 60`? No. `50 >= 75`? No. `50 >= 90`? No. `50 >= 35`? Yes. So grade equals D. Stop."
 
-**Make them do all five out loud.** It takes three minutes and it is the single most valuable thing in the lesson. Then fill in the table on page 6.4:
+**Make them do all five out loud.** It takes three minutes and it is the single most valuable thing in the lesson. Then fill in the table in Build It, Part 1 of the workbook:
 
 | Mark | `>=60`? | `>=75`? | `>=90`? | `>=35`? | Branch taken | Should be | Right? |
 |---|---|---|---|---|---|---|---|
@@ -930,7 +930,7 @@ Then the two questions that make it land:
 
 **Say this:**
 
-> "Close the laptop. Page 6.1. Fill in both tables from memory — `and` and `or`, four rows each. Don't guess: think about the pizza and the selectors."
+> "Close the laptop. Build It, Part 4. Fill in both tables from memory — `and` and `or`, four rows each. Don't guess: think about the pizza and the selectors."
 
 Give them ninety seconds. Then:
 
@@ -981,7 +981,7 @@ False
 
 > "Now yours. Four branches at least, plus an `else`, and it has to be about something you actually care about. Then — and this is the marks — **prove it works with a test table that includes both sides of every boundary.**"
 
-Options on page 6.4 if they need one:
+Options if they need one (the workbook's Practice Set B, item B5, lists more):
 
 | Program | The bands |
 |---|---|
@@ -1065,7 +1065,7 @@ One honest limitation to point out, because a student will find it: type `Tuesda
 ### What "finished" looks like
 
 - Both `grade_broken.py` and `grade.py` exist, and the student can say in one sentence what the difference is.
-- The five-row trace table on page 6.4 is filled in, **with dashes** where Python never asked.
+- The five-row trace table in Build It, Part 1 is filled in, **with dashes** where Python never asked.
 - The student can say why the 62 row is right *by accident*.
 - Both truth tables written from memory, then marked against a real run.
 - One four-branch chain of their own, tested on both sides of every boundary.
@@ -1351,93 +1351,180 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, and the first page is done with the laptop shut.
+> "The workbook has ten sections this week, so I'll tell you where the marks are and what order to do them in.
 >
-> **Page 6.1 — both truth tables, from memory, laptop closed.** `and` and `or`, four rows each, and `not`, two rows. Write them, *then* open the laptop and check yourself by running four one-line programs. Write your score at the top. **If you get the `True or True` row wrong you are in extremely normal company** — it's the one everybody misses, because English 'or' means something slightly different.
+> **Warm-Up and Predict the Output — laptop shut.** Five quick questions about last week, then four snippets. **Write your prediction before you run anything** — and this week, some of them produce no error at all, so 'what do you expect' means 'what will it print', not just 'which error'. Write your score at the top of Predict.
 >
-> **Pages 6.2 and 6.3 — the practice.** Page 6.3 has four broken chains. Same rule as always: **write down what you expect to happen before you run it** — and this week, some of them produce no error at all, so 'what do you expect to happen' means 'what will it print', not just 'which error'.
+> **Practice Set A and Practice Set B.** A is reading: trace, find the dead code, match the output, label the diagram. B is writing: five programs, and every one has a test table. **Test both sides of every boundary** and predict before you run.
 >
-> **Page 6.4 — the big one. The grade chain.** Three jobs.
-> **One:** trace all five marks through the *broken* version with your finger and fill in the table — and put a dash, not a cross, wherever Python never even asked the question.
-> **Two:** reorder it, and run all five again.
-> **Three, and this is the part I'm marking hardest:** put the two sets of answers side by side and **circle the rows that prove the fix.** Not all five of them do. Tell me which ones told you nothing, and why.
+> **Fix the Broken Program — `fine.py`.** Three bugs, three different kinds, and the last one has no error message at all. Fix them in the order you find them, and answer (a) to (f).
 >
-> **Page 6.5 — the Bug Log.** Two entries, and this week **both of them can be bugs with no error message.** One of them should be a silent one. You've seen two today.
+> **Puzzle of the Week — Bouncer Roulette**, and **Think Deeper.** Take a side in T1 and name what it costs you.
 >
-> Every line commented, saying *why*."
+> **Build It — the big one. The grade chain.** Part 1: trace all five marks through the *broken* version with your finger, and put a dash, not a cross, wherever Python never even asked the question. Part 2: reorder it, run all five again, and **circle the rows that prove the fix.** That is the part I'm marking hardest: not all five rows prove it. Tell me which ones told you nothing, and why. Part 3: the boundaries. Part 4: both truth tables, from memory, laptop closed, then check yourself by running the three lines. Part 5: the Bug Log, two entries, and this week **both of them can be bugs with no error message.** One of them should be a silent one.
+>
+> **Draw It and Self-Check** last. Every line of your own programs commented, saying *why*."
 
-**Workbook pages:** 6.1 in class if there is time; **6.2, 6.3, 6.4, 6.5 and 6.6** at home.
+**Workbook sections:** Build It Part 1 and Part 4 are done in class (they are the lesson's activity, Parts 1 and 2), so the student only finishes them if there was no time. At home: **Warm-Up, Predict the Output, Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It Parts 2, 3 and 5, Draw It and Self-Check.**
 
-**Expected time:** 10 min truth tables · 15 min practice · 20 min the grade chain and the two tables · 10 min Bug Log · 5 min self-check. About 60 minutes.
+**Expected time:** 5 min Warm-Up · 5 min Predict · 15 min Practice Set A · 30 min Practice Set B · 15 min Fix the Broken Program · 10 min Puzzle · 10 min Think Deeper · 25 min Build It (Parts 2, 3, 5) · 5 min Draw It · 5 min Self-Check. About two hours, so spread it over two or three sittings. If time is short, the sections to protect are **Predict the Output, Fix the Broken Program and Build It**; Practice Set B items B4 and B5 and the Puzzle can shrink or wait.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 6.1 — Warm-Up: the truth tables
+The sections below follow the workbook (`workbook/week-06.md`) in the order the student meets them, with the item labels the student sees (W1, P1, A3, B2, and so on). Answers are the workbook's own Answers section, re-run for this guide; the "Watch for" and "Marking tips" paragraphs are teacher-only.
 
-**The two tables, from memory:**
+---
 
-| A | B | `A and B` | `A or B` |
-|---|---|---|---|
-| `True` | `True` | **`True`** | **`True`** |
-| `True` | `False` | `False` | **`True`** |
-| `False` | `True` | `False` | **`True`** |
-| `False` | `False` | `False` | `False` |
+### Warm-Up
 
-| A | `not A` |
-|---|---|
-| `True` | `False` |
-| `False` | `True` |
+**W1.** `12 > 12` is **False** · `12 >= 12` is **True** · `"cat" == "Cat"` is **False**.
 
-`and` is True in **one** row out of four. `or` is True in **three**. That pair of counts is the fastest way to check you have written them the right way round.
+**W2.** `=` puts a value into a name — it **changes** something and answers nothing. `==` compares two values and hands back `True` or `False` — it **answers** something and changes nothing.
 
-**Then check by running these:**
+**W3.** "The block starts on the next line." Leave it out and Python stops with `SyntaxError: expected ':'`.
 
-```python
-# wb_6_1.py - predict each one on paper FIRST, then run this.
-print(True and False)          # a
-print(False or True)           # b
-print(not True)                # c
-print(7 > 3 and 2 > 5)         # d
-print(7 > 3 or 2 > 5)          # e
-print(not 7 > 3)               # f
-print(True or False and False) # g
-print((True or False) and False) # h
+**W4.** Only **`C`**. `20 >= 35` is `False`, so the whole block belonging to the `if` — both `A` and `B` — is skipped. `C` is at the margin, so it belongs to nobody and runs regardless.
+
+**W5.** **12 and 13** — the boundary and the value just below it. 8 is a child and 40 is an adult under *both* `>` and `>=`, so neither of them can tell a correct program from a broken one.
+
+**Watch for (teacher only).** W1: `"cat" == "Cat"` is the one students call `True`, because the words "look the same" — capitals count. W4: students who print `A`, `B` and `C` have read the indentation as decoration; point at the margin, not at the numbers. W5: "13" alone is the common answer — ask what a program with `>` instead of `>=` would do at 13.
+
+---
+
+### Predict the Output
+
+**P1** — real output:
+
+```text
+C
 ```
 
-The real output:
+`88 >= 60` is `True`, so the first branch runs and **everything below is skipped**. The `>= 75` line, which is the one that should have caught 88, is never even looked at. This is the whole week in five lines.
+
+**P2** — real output:
+
+```text
+True
+True
+False
+```
+
+`True or True` is **`True`** — the row everybody gets wrong, because English "or" usually means one-not-both. `not False or False` is `not False` first (comparisons and `not` before `or`), so `True or False` = `True`. And `True and not True` is `True and False` = `False`.
+
+**P3** — real output:
+
+```text
+teen
+child
+```
+
+**Both lines print.** These are two **separate** `if` statements, not a chain — two doors, and 15 walks through both. If the second `if` were an `elif`, it would become one chain, `age >= 13` would win, and only `teen` would print. **That one keyword is the difference between "check everything" and "stop at the first yes".**
+
+**P4** — real output:
+
+```text
+yes branch
+```
+
+The branch runs even though the answer was `no`. `answer == "yes"` is `False`, so Python works out `False or "y"` — and `or` hands back **the first side that counts as a yes**, which is the text `"y"`. Any non-empty text counts as a yes inside an `if`. **So the condition is always the letter y, and the branch always runs, for every possible input.** The fix is `answer == "yes" or answer == "y"`.
+
+**Watch for (teacher only).** The point of the section is that P1 looks like a maths question and is a route question. Students who write `B` have *done the grading in their head*, which is what Python does not do. P2: `False` for `True or True` is the standard miss. P3: `teen` on its own is the chain misreading in reverse — ask which keyword would make that true. P4: "no branch" means they read `or "y"` as `or answer == "y"`, which is exactly the misreading the bug depends on.
+
+**Scoring note.** The workbook's "How many of the nine did you get right? ___ / 9" does not match the items as printed: P1 is 1 prediction, P2 is 3, P3 is 2 (or 3 counting the `elif` question) and P4 is 1, which is 7 or 8, not 9. Accept whatever denominator the student uses and mark the predictions, not the fraction.
+
+---
+
+### Practice Set A
+
+**A1.**
+
+| Mark | `>=90`? | `>=75`? | `>=60`? | `>=35`? | Branch taken | Lines Python read |
+|---|---|---|---|---|---|---|
+| 100 | yes | — | — | — | A | 1 |
+| 75 | no | yes | — | — | B | 2 |
+| 62 | no | no | yes | — | C | 3 |
+| 34 | no | no | no | no | F (the `else`) | 4, plus the `else` |
+
+**The dashes are the point.** For a mark of 100, Python read **one** condition out of four and then left the chain entirely.
+
+**A2.** **Two branches are dead.**
+
+- **Distinction is dead:** anything 80 or more is *also* 50 or more, so the first test always catches it. Real proof — typing `95` gives `Pass`, and typing `80` gives `Pass`.
+- **The `else` is also dead:** `mark >= 50` and `mark < 50` between them cover **every possible number**, so nothing can ever fall through to the `else`.
+
+Real runs:
+
+```text
+95 -> Pass
+80 -> Pass
+50 -> Pass
+49 -> Fail
+0  -> Fail
+```
+
+**The sting.** The dead `else` is the safety net — the branch that is supposed to catch anything you didn't think of. So this chain **looks** as if it has a safety net and actually has none. If you later changed `mark < 50` to `mark < 40`, marks of 40 to 49 would fall through, and the `else` you thought would catch them is only reachable *because* of that change. Dead code is not just useless; it is misleading.
+
+**A3.** a→**2** · b→**1** · c→**2** · d→**1**
+
+Real output:
 
 ```text
 False
 True
 False
-False
 True
-False
-True
-False
 ```
 
-| # | Expression | Answer | Why |
-|---|---|---|---|
-| a | `True and False` | `False` | `and` needs both. |
-| b | `False or True` | `True` | `or` needs one. |
-| c | `not True` | `False` | It flips. |
-| d | `7 > 3 and 2 > 5` | `False` | `True and False`. The second half sinks it. |
-| e | `7 > 3 or 2 > 5` | `True` | `True or False`. The first half carries it. |
-| f | `not 7 > 3` | `False` | Comparisons happen **before** `not`, so this is `not (7 > 3)` = `not True` = `False`. Not `(not 7) > 3`. |
-| g | `True or False and False` | `True` | `and` binds tighter: `True or (False and False)` = `True or False` = `True`. |
-| h | `(True or False) and False` | `False` | The brackets change it: `True and False` = `False`. |
+(c) is worth a sentence: **comparisons happen before `not`**, so `not 7 > 3` means `not (7 > 3)` = `not True` = `False`. It does **not** mean `(not 7) > 3`.
 
-**6.1(i) Which row of the `or` table did you get wrong, if any?**
-Almost always `True or True`. English "or" is usually exclusive — "tea or coffee" means one. Python's `or` is inclusive: at least one, and both is fine.
+**Which changes with brackets? (d).** `True or False and False` is `True or (False and False)` = `True`. Put the brackets round the `or` instead — `(True or False) and False` — and it becomes `True and False` = **`False`**. Same words, same order, opposite answer. **That is why you write the brackets whenever you mix `and` with `or`.**
 
-**6.1(j) (g) and (h) have the same words in the same order and different answers. What is the difference?**
-Only the brackets. Without them, Python works out `and` before `or`, so the expression is `True or (False and False)`. With the brackets round the `or`, it becomes `(True or False) and False`. **The rule: whenever you mix `and` with `or`, put the brackets in even when you do not need to** — not because Python needs them, but because a human reading your program should not have to know the precedence table.
+**A4.** The mark is 80. Real run of the broken chain:
 
-**6.1(k) Write the condition for "old enough to play (13 or over) and has played at least 5 matches and is not injured."**
-`age >= 13 and matches >= 5 and not injured`
+```text
+Mark out of 100? 80
+Mark  : 80
+Grade : C
+```
+
+| Question | What goes in the box |
+|---|---|
+| is it 60 or more? | **yes** |
+| is it 75 or more? | **dash** — never asked |
+| is it 90 or more? | **dash** — never asked |
+| is it 35 or more? | **dash** — never asked |
+
+**Branch taken:** C · **Should have been:** B · **Lines Python read:** **one.**
+
+**A5.** Because you can only *reach* that line if the two tests above it both said no. By the time Python asks `mark >= 60`, it already knows the mark is under 75 and under 90 — otherwise it would have stopped higher up. **Every `elif` silently carries "and nothing above me was true", and Python adds it for free.** So the upper bound is a boundary you never have to write, which means it is a boundary you cannot get wrong.
+
+**A6.**
+
+| In words | Python |
+|---|---|
+| 13 or over **and** not injured | `age >= 13 and not injured` |
+| it is Tuesday **and** the price is more than zero | `day == "tuesday" and price > 0` |
+| the mark is between 60 and 74 inclusive | `60 <= mark <= 74` (or `mark >= 60 and mark <= 74`) |
+| it is raining **or** you are late | `raining or late` |
+| the number divides by both 2 and 3 | `number % 2 == 0 and number % 3 == 0` |
+| the number divides by 2 **or** by 3 | `number % 2 == 0 or number % 3 == 0` |
+| it is **not** the weekend | `not weekend` |
+
+Notice the last three: **every side of an `and` or an `or` is a complete comparison.** `number % 2 == 0 or % 3 == 0` is a `SyntaxError`.
+
+**Marking tips (teacher only).** A1: the 34 row is the only one with four `no`s and no dashes; a student who dashes the last column there has not understood that the `else` is reached by elimination. A2: full marks need *both* dead branches and the sting — the common answer names only Distinction. A4: the three left-hand boxes are the real test, because "Should have been: B" is the only place the student has to say what the right answer was. A6: accept `60 <= mark <= 74` or the long form; a bare `<= 74` on the right of an `and` is the recurring `SyntaxError` of the week.
+
+---
+
+### Practice Set B
+
+**B1.**
+
+```python
+age >= 13 and matches >= 5 and not injured
+```
 
 Checked, with `age = 14`, `matches = 7`, `injured = False`:
 
@@ -1451,254 +1538,323 @@ And with `injured = True`:
 False
 ```
 
-One `False` anywhere in an `and` chain sinks the whole thing.
+**If the player is injured, the whole condition becomes `False`** — even though the age and the matches are both fine. **One `False` anywhere in an `and` chain sinks the whole thing.** That is what "strict" means.
 
-### Page 6.2 — Practice Set A: understand it
-
-**6.2(a) What is `elif` short for, and where does it go?**
-"Else, if". It goes between the `if` and the `else`, and you may have as many as you like. Each one gets its own condition and its own colon.
-
-**6.2(b) State the three rules of a chain.**
-1. Python checks the conditions from top to bottom.
-2. The first one that is `True` wins, and everything below it is skipped completely.
-3. Exactly one branch runs — never two, and never zero if there is an `else`.
-
-**6.2(c) What is a silent bug?**
-A mistake that produces a wrong answer without producing any error message. Python is entirely happy; only a human can tell that the answer is wrong.
-
-**6.2(d) Trace `mark = 62` through this chain and say which branch runs.**
+**B2.**
 
 ```python
-if mark >= 90:
+mark = int(input("Mark out of 100? "))   # a number, so int() at the door
+
+if mark >= 90:            # strictest test FIRST
     grade = "A"
-elif mark >= 75:
-    grade = "B"
-elif mark >= 60:
-    grade = "C"
-elif mark >= 35:
-    grade = "D"
-else:
-    grade = "F"
-```
-
-`62 >= 90`? No. `62 >= 75`? No. `62 >= 60`? **Yes** → `grade = "C"` → stop. The `>= 35` test and the `else` are never asked.
-
-**6.2(e) The C branch says only `mark >= 60`. Why does it not need "and less than 75"?**
-Because you can only reach that line if the two tests above it both said no. So by the time Python asks `mark >= 60`, it already knows the mark is under 75 and under 90. **Every `elif` silently carries "and nothing above me was true."** You get the upper bound for free.
-
-**6.2(f) Which branches in this chain can never run?**
-
-```python
-if mark >= 50:
+elif mark >= 35:          # only sees marks under 90
     grade = "Pass"
-elif mark >= 80:
-    grade = "Distinction"
-elif mark < 50:
-    grade = "Fail"
-else:
-    grade = "???"
-```
-
-**Two of them.** The Distinction branch is dead: anything 80 or more is also 50 or more, so the first test always catches it. And the **`else` is also dead**: `mark >= 50` and `mark < 50` between them cover every possible number, so nothing can ever fall through to the `else`. Two pieces of dead code, and one of them is the safety net — which means this chain has no safety net at all, and looks like it has one.
-
-**6.2(g) Complete the coverage table for the correctly ordered chain.** A dash means Python never asked.
-
-| Mark | `>=90`? | `>=75`? | `>=60`? | `>=35`? | Branch | Right? |
-|---|---|---|---|---|---|---|
-| 100 | ✓ | — | — | — | A | ✔ |
-| 90 | ✓ | — | — | — | A | ✔ boundary |
-| 89 | ✗ | ✓ | — | — | B | ✔ |
-| 75 | ✗ | ✓ | — | — | B | ✔ boundary |
-| 74 | ✗ | ✗ | ✓ | — | C | ✔ |
-| 60 | ✗ | ✗ | ✓ | — | C | ✔ boundary |
-| 59 | ✗ | ✗ | ✗ | ✓ | D | ✔ |
-| 35 | ✗ | ✗ | ✗ | ✓ | D | ✔ boundary |
-| 34 | ✗ | ✗ | ✗ | ✗ | F | ✔ |
-| 0 | ✗ | ✗ | ✗ | ✗ | F | ✔ |
-
-**6.2(h) Why is `and` called strict and `or` called generous?**
-`and` is `True` in only one of its four rows — everything has to pass. `or` is `True` in three of four — one is enough.
-
-### Page 6.3 — Practice Set B: use it
-
-**6.3(a)** What happens, and why?
-
-```python
-mark = 62
-
-if mark >= 90:
-    grade = "A"
-else:
+else:                     # everybody under 35
     grade = "F"
-elif mark >= 75:
-    grade = "B"
-print(grade)
-```
 
-*Expected:* a `SyntaxError`.
-*The real message:*
-
-```text
-  File "a.py", line 7
-    elif mark >= 75:
-    ^^^^
-SyntaxError: invalid syntax
-```
-
-*The fix:* move the `elif` **above** the `else`. Nothing comes after an `else` — it is always last. Then `62` gives `F`… which is a second bug, and worth noticing: with only a 90 test and an `else`, a 62 genuinely does get an F. Adding the `elif mark >= 75:` back in the right place still gives `F` for 62, because there is no C branch at all. **This chain has a gap in its design, not just in its punctuation.**
-
-**6.3(b)**
-
-```python
-age = 14
-matches = 7
-
-if age >= 13 && matches >= 5:
-    print("in")
-```
-
-*Expected:* a `SyntaxError`.
-*The real message:*
-
-```text
-  File "b.py", line 4
-    if age >= 13 && matches >= 5:
-                  ^
-SyntaxError: invalid syntax
-```
-
-*The fix:* `and`, not `&&`. Output: `in`.
-*Why:* `&&` is how several other languages spell it, and it is not a Python word. Likewise `or` not `||`, and `not` not `!`.
-
-**6.3(c)**
-
-```python
-mark = 62
-
-if mark >= 60 and <= 74:
-    print("C")
-```
-
-*Expected:* a `SyntaxError`.
-*The real message:*
-
-```text
-  File "c.py", line 3
-    if mark >= 60 and <= 74:
-                      ^^
-SyntaxError: invalid syntax
-```
-
-*The fix:* `if mark >= 60 and mark <= 74:`. Output: `C`. Or, more neatly, `if 60 <= mark <= 74:`.
-*Why:* each side of an `and` has to be a complete comparison with both of its ends. `<= 74` is missing its subject. English lets you drop it; Python does not.
-
-**6.3(d)**
-
-```python
-mark = int(input("Mark out of 100? "))
-
-if mark >= 90:
-    grade = "A"
-elif mark >= 75:
-    grade = "B"
-
+print(f"Mark  : {mark}")  # at the margin, so it always runs
 print(f"Grade : {grade}")
 ```
 
-*Expected:* works for high marks, fails for low ones.
-*Typing `62`, the real traceback:*
+Four real runs — two boundary pairs and nothing else:
 
 ```text
-Mark out of 100? 62
-Traceback (most recent call last):
-  File "d.py", line 8, in <module>
-    print(f"Grade : {grade}")
-NameError: name 'grade' is not defined
+90 -> Grade : A
+89 -> Grade : Pass
+35 -> Grade : Pass
+34 -> Grade : F
 ```
 
-*The fix:* add an `else` on the end. Output for 62 becomes whatever the `else` sets.
-*Why:* 62 matched neither condition, so no branch ran, so `grade` was never created. **The error is on line 8 and the mistake is the missing `else` — a chain without an `else` has a gap by definition.**
+**Two boundaries, four tests, complete coverage.** Adding 100 and 0 would feel thorough and prove nothing new.
 
-**6.3(e)** This one produces no error at all. What does it print, and why?
+**B3.** One model answer:
 
 ```python
-mark = 62
+raining = True             # is it raining right now?
+late = False               # am I running late?
 
-if mark >= 60:
-    grade = "C"
-elif mark >= 60:      # a copy-paste of the line above
-    grade = "B"
-else:
-    grade = "F"
-print(grade)
+print(raining or late)                  # generous: one is enough
+print(raining and late)                 # strict: both must be true
+print(not raining)                      # a mirror
+print((raining or late) and not late)   # brackets, because and is mixed with or
 ```
-
-*The real output:*
 
 ```text
-C
+True
+False
+False
+True
 ```
 
-*Why:* the two conditions are identical, so the first one always wins and the second is dead code. **No error, no warning.** Python has no objection to a branch that can never run. The fix depends on what you meant — probably `elif mark >= 75:` above the 60 test.
+The last line, worked through: `(True or False)` is `True`; `not late` is `not False` = `True`; `True and True` = `True`. **The brackets are not needed here** — `and` binds tighter than `or` anyway — and they are still the right thing to write, because a reader shouldn't have to know that to follow your program.
 
-**6.3(f)** And this one. What does it print for `answer = "maybe"`?
+**B4.**
 
 ```python
-answer = "maybe"
+# battery.py - one percentage in, one warning out.
 
-if answer == "yes" or "y":
-    print("You said yes!")
-else:
-    print("Not a yes.")
+percent = int(input("Battery percent? "))    # a whole number -> int()
+
+if percent >= 80:             # strictest test first
+    state = "full"
+    advice = "Nothing to do."
+elif percent >= 40:           # only sees under 80
+    state = "fine"
+    advice = "Carry on."
+elif percent >= 15:           # only sees under 40
+    state = "low"
+    advice = "Charge it soon."
+else:                         # everybody under 15
+    state = "critical"
+    advice = "Charge it NOW."
+
+print(f"Battery : {percent}%")
+print(f"State   : {state}")
+print(advice)
 ```
 
-*The real output:*
+All eight real runs, `state` only:
 
-```text
-You said yes!
-```
-
-*Why:* `answer == "yes"` is `False`, so Python works out `False or "y"`. Python's `or` hands back the first side that counts as a yes, and any non-empty piece of text counts as a yes — so the whole expression is the letter `"y"`, which the `if` treats as a yes. **The branch runs for every possible input.**
-*The fix:* `if answer == "yes" or answer == "y":`. Output becomes `Not a yes.`
-*The rule:* every side of an `or` must be a complete comparison.
-
-**6.3(g) Write the condition for each.**
-
-| In words | Python |
+| Percent | State |
 |---|---|
-| 13 or over **and** not injured | `age >= 13 and not injured` |
-| Tuesday **and** the price is more than zero | `day == "tuesday" and price > 0` |
-| the mark is between 60 and 74 inclusive | `60 <= mark <= 74` (or `mark >= 60 and mark <= 74`) |
-| it is raining **or** you are late | `raining or late` |
-| the number divides by both 2 and 3 | `number % 2 == 0 and number % 3 == 0` |
-| the number divides by 2 **or** by 3 | `number % 2 == 0 or number % 3 == 0` |
-| it is **not** the weekend | `not weekend` |
+| 100 | `full` |
+| 80 | `full` |
+| 79 | `fine` |
+| 40 | `fine` |
+| 39 | `low` |
+| 15 | `low` |
+| 14 | `critical` |
+| 0 | `critical` |
 
-### Page 6.4 — Build It: the grade chain
+**Three boundaries, six values worth testing** — 80/79, 40/39, 15/14. The 100 and the 0 are reassurance.
 
-**Job 1 — trace all five marks through the broken chain.**
+**B5.** One complete model answer, actually run. **Note the `<` tests — so the rule flips and the *lowest* threshold goes first.**
 
 ```python
-# grade.py - version 1. It runs without an error. It is also wrong.
+# medal.py - one race time in, one medal out. Note the < tests: LOWEST threshold first.
 
-mark = int(input("Mark out of 100? "))   # text in, whole number out
+gold_under = 13.0                                  # seconds. Under this is gold.
+silver_under = 14.0                                # under this is silver
+bronze_under = 15.0                                # under this is bronze
 
-if mark >= 60:            # bouncer 1
-    grade = "C"
-elif mark >= 75:          # bouncer 2
-    grade = "B"
-elif mark >= 90:          # bouncer 3
-    grade = "A"
-elif mark >= 35:          # bouncer 4
-    grade = "D"
-else:                     # everybody else
-    grade = "F"
+runner = input("Runner's name?           ")        # text, no conversion needed
+seconds = float(input("Time in seconds?         "))  # 13.4 is a real time -> float()
+personal_best = input("A personal best? (yes/no) ")  # text, exactly as typed
 
-print(f"Mark  : {mark}")
-print(f"Grade : {grade}")
+if seconds < gold_under:            # bouncer 1 - the strictest test comes FIRST
+    medal = "gold"
+elif seconds < silver_under:        # only sees times of 13.0 and over
+    medal = "silver"
+elif seconds < bronze_under:        # only sees times of 14.0 and over
+    medal = "bronze"
+else:                               # everybody 15.0 and over
+    medal = "no medal"
+
+# A gold that is also a personal best is worth saying out loud - both halves must be true.
+if medal == "gold" and personal_best == "yes":
+    print("*** GOLD AND A PERSONAL BEST ***")
+
+print("========================================")
+print(f"  Runner : {runner}")
+print(f"  Time   : {seconds:.2f} seconds")
+print(f"  Result : {medal}")
+print("========================================")
 ```
 
-The completed trace table. **A dash means Python never asked.**
+Both sides of two boundaries, plus the last band:
+
+```text
+*** GOLD AND A PERSONAL BEST ***
+========================================
+  Runner : Anika
+  Time   : 12.80 seconds
+  Result : gold
+========================================
+```
+```text
+========================================
+  Runner : Anika
+  Time   : 13.00 seconds
+  Result : silver
+========================================
+```
+```text
+========================================
+  Runner : Rohit
+  Time   : 13.90 seconds
+  Result : silver
+========================================
+```
+```text
+========================================
+  Runner : Rohit
+  Time   : 14.00 seconds
+  Result : bronze
+========================================
+```
+```text
+========================================
+  Runner : Meera
+  Time   : 15.00 seconds
+  Result : no medal
+========================================
+```
+
+**Two things worth marks.**
+
+**The rule is not "highest number at the top".** It is **"most restrictive first"** — and with `<` tests, the most restrictive test is the *smallest* number. Getting this right shows you understood the rule rather than memorising the shape.
+
+**What the `and` protects against:** without the `medal == "gold"` half, every personal best of any speed gets a "GOLD" banner. Without the `personal_best == "yes"` half, every gold gets one whether it was a best or not. Both halves are doing real work — and the boundary run at exactly 13.00 shows the gold branch correctly *not* firing.
+
+**Marking tips (teacher only).** B2 and B4: count the test values. Four for B2 and six for B4 is correct; ten or twelve is a student who has not understood boundaries, however many pass. Check that the strictest test is first and that there is an `else`. B3: the "mixed" line must have brackets to earn the mark even where they are not needed. B5: the model answer is a `<` chain, so the rule flips; a student who writes a `>=` chain of their own is equally right. The marking checklist for the student's own chain is under "In-class activity, Part 3" at the end of this key. Its criteria (both sides of every boundary, no dead branches, every line commented) apply here too.
+
+---
+
+### Fix the Broken Program
+
+**Bug 1 — half a comparison.** `<= 30` does not say *what* is less than or equal to 30. In English you are allowed to drop the subject and everybody follows along; Python is not a person. **Each side of an `and` has to be a whole question with both of its ends.**
+
+```python
+if days_late >= 14 and days_late <= 30:          # a warning for very late books
+```
+
+(Or, more neatly, `if 14 <= days_late <= 30:`.)
+
+**Bug 2 — the missing conversion.** The mistake is on **line 3**, the line that filled `days_late`, even though the traceback names line 5.
+
+```python
+days_late = int(input("How many days late? "))   # how late the book is
+```
+
+**Bug 3 — the order trap.**
+
+(a) A 20-day fine should be **100** rupees. It said **5**.
+
+(b) **Every late book, however late, gets a 5-rupee fine.** 3 days → 5. 8 days → 5. 30 days → 5.
+
+(c) The **40-rupee** and **100-rupee** branches are both dead. Anything 7 or more is also 1 or more, and anything 14 or more is also 1 or more, so the first bouncer catches every late book.
+
+(d) **Because nothing is wrong.** The file says "anything one day or more late costs 5 rupees", and that is exactly what Python did. Every individual line in the chain is a correct line. Only a human knows the fines were meant to be ordered.
+
+(e) The fixed chain — **highest threshold first:**
+
+```python
+if days_late >= 14:                              # strictest test first
+    fine = 100
+elif days_late >= 7:                             # only sees under 14 days
+    fine = 40
+elif days_late >= 1:                             # only sees under 7 days
+    fine = 5
+else:                                            # not late at all
+    fine = 0
+```
+
+The whole fixed program, run on both sides of all three boundaries:
+
+| Days late | Fine | |
+|---|---|---|
+| 0 | 0 | |
+| 1 | 5 | boundary |
+| 6 | 5 | |
+| 7 | 40 | boundary |
+| 13 | 40 | |
+| 14 | 100 | boundary, and the "lost" warning appears |
+| 20 | 100 | |
+| 31 | 100 | |
+
+Two of those exactly as they appear:
+
+```text
+How many days late? 7
+Days late : 7
+Fine      : 40 rupees
+```
+```text
+How many days late? 14
+The book is now counted as lost.
+Days late : 14
+Fine      : 100 rupees
+```
+
+(f) **Any value of 7 or more proves the fix** — 7, 8, 14, 20, 30 all change from 5 to something else. **Values of 0 to 6 prove nothing**, because they give exactly the same answer on the broken and the fixed version. So if you had tested 0 and 3 you would have shipped it.
+
+**And notice the order you had to fix them in.** The `SyntaxError` first, because nothing runs at all until it is gone. Then the `TypeError`. Then the silent one — which you could only find by knowing what a 20-day fine *should* be.
+
+**Watch for (teacher only).** The order of discovery is the lesson: syntax error, then type error, then the silent one. A student who skips straight to (c) has read the chain instead of running it. For Bug 2, the traceback names line 5 and the mistake is on line 3; students who edit line 5 produce a second `TypeError`. For (d), "Python is broken" or "Python didn't notice" are both wrong in an instructive way: nothing is wrong *for Python*. For (f), full marks name a value from 7 upwards and say why 0 to 6 would have passed on the broken version too.
+
+---
+
+### Puzzle of the Week
+
+**P1.** **90, 75, 60, 35.** Highest threshold first. Real runs: 95 → `A`, 80 → `B`, 62 → `C`, 50 → `D`, 20 → `F`.
+
+**P2.** Put the **35** card first: **35, 60, 75, 90.** Real runs:
+
+```text
+95 -> Grade : D
+62 -> Grade : D
+34 -> Grade : F
+```
+
+95 → **D** and 34 → **F**. **Three branches are dead:** C, B and A. Anything 35 or more is caught by the first bouncer, so the only reachable branches are D and the `else`.
+
+**P3.** The **90** card. Every mark of 90 or more is also 75 or more, 60 or more and 35 or more — so **whichever of the other three cards you put above it will catch every A candidate first.** The A branch is reachable only when nothing is above it.
+
+**P4.** **It is impossible, and here is the proof.**
+
+The D branch catches any mark of 35 or more that nothing above it caught. Whatever you put above D, it can only be some of the cards `>= 60`, `>= 75`, `>= 90` — and the **most** those three can catch between them is every mark of 60 or more.
+
+So marks of **35 to 59** are caught by none of them. Those marks reach D. **Therefore D always runs for some input, in every possible order.**
+
+That is worth noticing as a general fact: **the card with the lowest threshold can never be made dead.** It is the branch that is safe from this bug — and it is exactly the branch nobody worries about.
+
+**P5.** All predicted, then run:
+
+| Order (top to bottom) | 95 gets | 80 gets | 62 gets | 50 gets | 20 gets | dead branches |
+|---|---|---|---|---|---|---|
+| 90, 75, 60, 35 | `A` | `B` | `C` | `D` | `F` | **none** |
+| 60, 75, 90, 35 | `C` | `C` | `C` | `D` | `F` | **2** — B and A |
+| 35, 60, 75, 90 | `D` | `D` | `D` | `D` | `F` | **3** — C, B and A |
+
+**P6.** Every order gives `F` for 20, because **20 is below every threshold on every card**, so it always falls off the end into the `else` no matter what order the cards are in.
+
+Which means: **a mark of 20 can never tell one order from another.** It is a test that cannot fail, and a test that cannot fail proves nothing. The values that discriminate between these three programs are the **high** ones — 95 and 80 — because those are the ones whose answer depends on which bouncer they meet first.
+
+**Choose test values that could come out differently.** If you cannot imagine a version of your program where a test gives a different answer, that test is not testing anything.
+
+**Marking tips (teacher only).** P4 is the stretch item: credit any argument that the lowest-threshold card always sees marks 35 to 59 whatever is above it, even if the wording is rough. A student who answers "yes" with a specific order has usually forgotten that the `else` is not a card. P6 connects to the Build It question "which rows prove the fix": a value that every version answers identically cannot discriminate.
+
+---
+
+### Think Deeper
+
+**T1. Model answer:**
+
+> I think it should, and this week is the evidence. My chain had two branches that no possible input could ever reach, and that is not a matter of taste — it is a **fact about the program** that a tool could check without knowing anything at all about grades. A warning would have taken me straight to the bug instead of leaving me to disbelieve the screen for four minutes.
+>
+> The argument against it is that the check is harder than it looks. `mark >= 60` and `mark >= 90` are simple enough to compare, but real conditions can call functions, read variables that change while the program runs, and depend on things Python cannot know until it gets there. A tool that warns only about the easy cases teaches you to **trust** it — and then misses a hard one, which might be worse than no warning at all.
+>
+> And there is a cost I noticed in myself, which cuts against what I would prefer. If a tool had simply told me, **I would not have learnt to trace.** The four uncomfortable minutes are where the skill came from. That is a real argument for *some* silence — though not, I think, for silence forever.
+
+*Full marks needs:* a side taken · the "it's a checkable fact" argument or the "conditions can be complicated" argument · and an honest cost.
+
+**T2. Model answer:**
+
+> The two students know almost exactly the same amount — one mark apart out of a hundred, which is well inside the range that a different marker, or a different day, would have changed. But the report card says something **categorically** different about them: a B and an A.
+>
+> That is not a bug in the program. It is what happens whenever you turn a number into a category. **Every boundary you draw has real people standing on it**, and moving the boundary from 90 to 88 does not fix anything — it only changes who is standing there. As long as the output is a single letter, there is no version of this program that avoids the problem. The problem is the letter, not the code.
+>
+> There are two honest things a program could do instead. It could **report the number as well as the letter**, so the reader can see for themselves how close it was — which costs one line. Or it could say out loud that the boundary is a **choice** rather than a discovery, so that a human can argue with it. What it should not do is print a bare `A` and let it read like a fact about a person.
+
+*Full marks needs:* the observation that they know nearly the same amount · the insight that moving the boundary only moves *who* · and at least one honest alternative.
+
+**Teacher-only note on T2.** This is the same idea as Level 1's work on rules meeting people they were not designed for, and it returns in Week 30 with numbers attached.
+
+---
+
+### Build It
+
+**Part 1 — the completed trace table.** A dash means Python never asked.
 
 | Mark | `>=60`? | `>=75`? | `>=90`? | `>=35`? | Branch | Should be | Right? |
 |---|---|---|---|---|---|---|---|
@@ -1707,6 +1863,100 @@ The completed trace table. **A dash means Python never asked.**
 | 62 | ✓ | — | — | — | C | C | ✔ **by luck** |
 | 50 | ✗ | ✗ | ✗ | ✓ | D | D | ✔ |
 | 20 | ✗ | ✗ | ✗ | ✗ | F | F | ✔ |
+
+**(a)** **Three** dashes in the 95 row, so Python read **one line** of a five-branch chain.
+
+**(b)** It is right for the **wrong reason**. In the broken chain, a C is what *everyone* 60-and-over gets, so 62 landing on C is a coincidence, not a correct decision. **Proof: the broken chain gives 100 a C too.** A right answer for the wrong reason is not a working program; it is a program that has not been caught yet.
+
+**Part 2 — which rows prove the fix:**
+
+| Mark | Broken says | Fixed says | Different? | Proves the fix? |
+|---|---|---|---|---|
+| **95** | C | **A** | **yes** | **✔ yes** |
+| **80** | C | **B** | **yes** | **✔ yes** |
+| 62 | C | C | no | ✘ no |
+| 50 | D | D | no | ✘ no |
+| 20 | F | F | no | ✘ no |
+
+**(c) Two.**
+
+**(d)** 62, 50 and 20 give **identical** answers on the broken and the fixed program, so running them tells you nothing at all about whether the fix worked. **A test that passes on both the broken and the correct version has told you nothing.**
+
+**(e)** In a chain where the conditions overlap, put the **most restrictive** test first. For a chain of "greater than or equal to" tests, that means the **highest number at the top**. (And for a chain of "less than" tests it flips: the lowest number at the top.)
+
+**Part 3 — the boundaries.** The four boundaries are 90, 75, 60 and 35, so the eight values worth testing are **89, 90, 74, 75, 59, 60, 34, 35.**
+
+| Mark | It printed |
+|---|---|
+| 90 | `A` |
+| 89 | `B` |
+| 35 | `D` |
+| 34 | `F` |
+
+With `>= 90` changed to `> 90`, **only the mark 90 changes** — it becomes a `B`:
+
+```text
+Mark out of 100? 90
+Mark  : 90
+Grade : B
+```
+
+Every other test you could possibly run still passes. **One value out of a hundred and one reveals the bug.**
+
+**Part 4 — the truth tables:**
+
+| A | B | `A and B` | `A or B` |
+|---|---|---|---|
+| `True` | `True` | **`True`** | **`True`** |
+| `True` | `False` | `False` | **`True`** |
+| `False` | `True` | `False` | **`True`** |
+| `False` | `False` | `False` | `False` |
+
+| A | `not A` |
+|---|---|
+| `True` | `False` |
+| `False` | `True` |
+
+Checked by running:
+
+```text
+True False False False
+True True True False
+False True
+```
+
+**`and` is `True` in one row out of four. `or` is `True` in three.** That pair of counts — one and three — is the fastest way to check you have written them the right way round.
+
+**The row nearly everybody gets wrong is `True or True`.** In English, "tea or coffee" means one. In Python, `or` means at least one — **and both is fine.**
+
+**Part 5 — two model Bug Log entries:**
+
+| # | What I saw (real text) | What it meant, in my words | What I changed |
+|---|---|---|---|
+| 1 | **No error message.** A mark of 90 came out as a `B`. | I'd written `> 90` instead of `>= 90`, so a mark of exactly ninety fell through to the next bouncer. Every other test I ran still passed — only the number 90 itself showed it. | Put the `=` back: `>= 90` |
+| 2 | `SyntaxError: invalid syntax` with `^^` under the `<=` in `if mark >= 90 and <= 100:` | Each side of an `and` has to be a whole question. `<= 100` doesn't say what is less than 100. English lets you leave it out; Python doesn't. | Wrote it out in full |
+
+Also excellent, and arguably better:
+
+| # | What I saw | What it meant | What I changed |
+|---|---|---|---|
+| 3 | **No error message.** Everybody who passed got a C, including a 95. | The chain checks top to bottom and stops at the first yes, and I'd put the loosest test — 60 or more — at the top. So it caught everybody, and the A and B branches were dead code. | Moved the branches so the highest threshold is first |
+| 4 | **No error message.** `if answer == "yes" or "y":` ran for every input, including "maybe". | `or` doesn't hand back True or False — it hands back the first side that counts as a yes, and the letter `"y"` always counts. So the condition was always the letter y. | Spelled the second comparison out in full |
+
+**(f)** Probably **both**, and this is the first week where that is true. `elif` bugs are almost always silent, because every individual line in a broken chain is a correct line.
+
+**(g) Tracing.** Four steps:
+
+1. **Finger** on the first condition. Not the second. The first.
+2. Say the condition **out loud with the real number substituted in** — "is 95 sixty or more?"
+3. Say the answer, then move the finger: down one if it was no, **out of the chain entirely** if it was yes.
+4. Whatever line the finger lands on, that is the answer, whether you like it or not.
+
+Reading fails because there is nothing wrong with any single line. Tracing works because the bug is in the **route**, not in the lines.
+
+**(h)** Because *"if mark is 60 or more"* is vague enough to nod at and move past. **"Is 95 sixty or more?"** has an answer, and you cannot skip it. Saying it out loud stops your brain jumping to the result it expected — which is exactly what happens when you trace silently.
+
+**Real runs for Parts 1 and 2 (teacher only).**
 
 The five real runs of the broken version, confirming the table:
 
@@ -1795,28 +2045,49 @@ And the boundary values, all real runs, last line only:
 | 89 | `B` | | 34 | `F` |
 | 75 | `B` | | 0 | `F` |
 
-**Job 3 — which rows prove the fix?**
+**Mark hardest (teacher only): Part 2, items (c) and (d).** Only 95 and 80 prove anything. **A test that passes on both the broken and the correct version has told you nothing** — and that sentence is the one to carry forward. It comes back in Week 29 in a much bigger form. Part 1 (b): the student must say *why* 62 is right by luck, not just that it is; the proof is that the broken chain also gives 100 a C. Part 3: the student lists eight values and tests only four, so the untested four (74, 75, 59, 60) are a good oral check; only 90 changes when `>= 90` becomes `> 90`, which is the reason to test it.
 
-| Mark | Broken says | Fixed says | Different? | Proves the fix? |
-|---|---|---|---|---|
-| **95** | C | **A** | **yes** | **✔ yes** |
-| **80** | C | **B** | **yes** | **✔ yes** |
-| 62 | C | C | no | ✘ no |
-| 50 | D | D | no | ✘ no |
-| 20 | F | F | no | ✘ no |
+**Part 5 (teacher only).** Both entries can be silent this week; name it: `elif` bugs are almost always silent, because every individual line in a broken chain is a correct line. Accept any of the four model entries above, or the student's own if it has a real "what I saw" and a one-change fix.
 
-**Only 95 and 80 prove anything.** The other three give identical answers on the broken and the fixed program, so running them tells you nothing at all about whether the fix worked. **A test that passes on both the broken and the correct version has told you nothing** — and that sentence is the one to carry forward. It comes back in Week 29 in a much bigger form.
+---
 
-**6.4(a) Why is the 62 row "right by luck"?**
-Because it got a C for the wrong reason. In the broken chain, a C is what *everyone* 60-and-over gets, so 62 landing on C is a coincidence, not a correct decision. Proof: the broken chain gives 100 a C too.
+### Draw It
 
-**6.4(b) How much of the chain did Python read for a mark of 95?**
-One line. `95 >= 60` was `True`, so it took that branch and skipped everything below — three conditions and the `else`, never looked at.
+There is no single right drawing. A strong answer does three things:
 
-**6.4(c) State the ordering rule in your own words.**
-In a chain where the conditions overlap, put the strictest test first. For a chain of "greater than or equal to" tests, that means the highest number at the top.
+1. **The arrow stops at the first yes.** If the arrow visits every gate, the picture is of four separate `if`s, not a chain — and that misunderstanding is the whole week.
+2. **The unreachable branches are marked as unreachable**, with a reason. "Greyed out" is not enough; a brace labelled *no input can reach these* is.
+3. **The third box names one specific value that tells the two orders apart**, and one that doesn't. A drawing that says "test it" hasn't finished the thinking.
 
-**6.4(d) Your own four-branch chain.** Marked on structure. Model answer, actually run:
+Test your own drawing with one question: **cover the left-hand version. Can somebody looking only at the right-hand one see that it is wrong?** If not, add the thing that makes it visible — usually a value dropping in and coming out with the wrong label on it.
+
+---
+
+### Self-Check answers
+
+| Statement | Answer |
+|---|---|
+| Python picks the branch that fits best | **FALSE.** It picks the first one that is `True`. |
+| A chain can run two branches | **FALSE.** Exactly one. |
+| A chain without an `else` always works | **FALSE.** An input that matches nothing runs no branch at all. |
+| `elif` is spelled `else if` | **FALSE.** One word: `elif`. |
+| `True or True` is `False` | **FALSE.** It is `True`. `or` means at least one. |
+| `and` is `True` in one row out of four | **TRUE.** |
+| `not 7 > 3` is `True` | **FALSE.** Comparisons happen first, so it is `not True` = `False`. |
+| `&&` works in Python | **FALSE.** It is `and`. |
+| Five passing tests prove a fix | **FALSE.** Three of this week's five passed the broken version too. |
+| A silent bug is one with a confusing error message | **FALSE.** It has **no** error message. |
+
+The "I can..." grid above the true-or-false table is self-assessed and has no key. Compare it with the marks: a student who ticks "got it" for the truth tables but missed `True or True` is the useful conversation.
+
+
+---
+
+### In-class activity, Part 3, and extra discussion questions (teacher only, not in the workbook)
+
+These belong to the lesson plan, not the workbook. The workbook equivalent of the student's own chain is Practice Set B, item B5.
+
+This is the teacher model for the in-class activity, Part 3 (the student's own four-branch chain). Marked on structure. Model answer, actually run:
 
 ```python
 # ticket_price.py - version 2. Four age bands instead of two, plus a discount day.
@@ -1898,66 +2169,12 @@ Arithmetic checked: 30% of 120 = 36, 120 − 36 = 84 ✔. 30% of 250 = 75, 250 �
 | ☐ | The test table names which rows would have passed on a broken version |
 | ☐ | Every line commented, saying *why* |
 
-### Page 6.5 — Build It: the Bug Log
-
-Two entries, and both may be silent this week.
-
-| # | What I saw (real text) | What it meant, in my words | What I changed |
-|---|---|---|---|
-| 1 | **No error message.** A mark of 90 came out as a `B`. | I'd written `> 90` instead of `>= 90`, so a mark of exactly ninety fell through to the next bouncer. Every other test I ran still passed — only the number 90 itself showed it. | Put the `=` back: `>= 90` |
-| 2 | `SyntaxError: invalid syntax` with `^^` under the `<=` in `if mark >= 90 and <= 100:` | Each side of an `and` has to be a whole question. `<= 100` doesn't say what is less than 100. English lets you leave it out; Python doesn't. | Wrote it out in full |
-
-Also acceptable, and arguably better:
-
-| # | What I saw | What it meant | What I changed |
-|---|---|---|---|
-| 3 | **No error message.** Everybody who passed got a C, including a 95. | The chain checks top to bottom and stops at the first yes, and I'd put the loosest test — 60 or more — at the top. So it caught everybody, and the A and B branches were dead code. | Moved the branches so the highest threshold is first |
-| 4 | **No error message.** `if answer == "yes" or "y":` ran for every input, including "maybe". | `or` doesn't hand back True or False — it hands back the first side that counts as a yes, and the letter `"y"` always counts as a yes. So the condition was always the letter y, which an `if` treats as yes. | Spelled the second comparison out in full |
-
-**6.5(a) How many of your bugs this week had no error message?**
-Probably both, and this is the first week where that is true. Name it: `elif` bugs are almost always silent, because every individual line in a broken chain is a correct line.
-
-**6.5(b) If reading the code does not find an ordering bug, what does?**
-**Tracing.** Finger on the first condition, say it out loud with the real number substituted in — "is 95 sixty or more?" — say the answer, move the finger. Reading fails because there is nothing wrong with any line; tracing works because the bug is in the *route*, not in the lines.
-
-**6.5(c) Why does substituting the number matter when you trace?**
-Because "if mark is 60 or more" is vague enough to nod at and move past. "**Is 95 sixty or more?**" has an answer, and you cannot skip past it. Saying it out loud stops the brain from jumping to the result it expected.
-
-### Page 6.6 — Think Deeper and Self-Check
-
-**6.6(a) Should Python warn you that a branch can never run?**
-
-A full-credit answer (4+ sentences) argues a side and names the cost. Model answer:
-
-> I think it should, and today is the evidence. My chain had two branches that no possible input could ever reach, and that is not a matter of taste — it is a fact about the program that a tool could check without knowing anything about grades. A warning would have taken me straight to the bug instead of leaving me to disbelieve the screen for four minutes.
->
-> The argument against it is that the check is harder than it looks. `mark >= 60` and `mark >= 90` are simple enough to compare, but conditions can call functions, read variables that change, and depend on things Python cannot see until the program runs. A tool that warns only about the easy cases teaches you to trust it, and then misses the hard ones — which might be worse than no warning at all.
->
-> There is also a cost I noticed in myself. If a tool had told me, I would not have learnt to trace. The four uncomfortable minutes are where the skill came from. That is a real argument for *some* silence, though I do not think it is a good enough argument for silence forever.
-
-**6.6(b) The grade chain draws four lines. A student got 89, another got 90. Comment.**
-They know almost exactly the same amount — one mark apart out of a hundred — and the report card says something categorically different about them: a B and an A. That is not a bug in the program; it is what happens whenever you turn a number into a category. **Every boundary you draw has real people standing on it**, and moving the boundary does not fix it, it only changes who is standing there. There are only two honest responses: report the number as well as the letter, so the reader can see how close it was, or accept the boundary and say out loud that it is a choice rather than a discovery. This is the same idea as Level 1's work on rules meeting people they were not designed for, and it returns in Week 30 with numbers attached.
-
-**6.6(c) Is a silent bug worse than a crash?**
+**Extra discussion: is a silent bug worse than a crash?**
 Usually yes, and the reason is short: a crash announces itself, and a silent bug survives — into your homework, into the grades the program printed, into next term. If the broken grade chain had been used on a real class, thirty wrong grades would have gone out and nobody would have known. But the "usually" is honest: a crash halfway through writing a file can destroy the file, and there are systems where stopping is the dangerous outcome. What is true without qualification is that a silent bug is worse **for the person who has to find it**, and while you are testing, that person is you. So make your own programs fail loudly and early.
 
-**6.6(d) You wrote `if mark >= 60 and mark < 75:` on every branch. It works. Why is the chain version better?**
+**Extra discussion: you wrote `if mark >= 60 and mark < 75:` on every branch. It works. Why is the chain version better?**
 Three reasons, in increasing order of importance. It is shorter. It cannot get out of step — with two bounds per branch there are eight numbers to keep consistent instead of four, and if you move the B boundary from 75 to 78 you have to change it in two places. And it cannot leave a gap: with the chain, the boundary between two branches is a single number that is either in one band or the other, whereas with two bounds per branch you can write `mark >= 60 and mark < 75` and `mark >= 76` and lose the number 75 entirely, silently. **A number you do not write is a number you cannot get wrong.**
 
-**Self-check.**
-
-| Statement | Answer |
-|---|---|
-| Python picks the branch that fits best | **False.** It picks the first one that is `True`. |
-| A chain can run two branches | **False.** Exactly one. |
-| A chain without an `else` always works | **False.** An input that matches nothing runs no branch at all. |
-| `elif` is spelled `else if` | **False.** One word: `elif`. |
-| `True or True` is `False` | **False.** It is `True`. `or` means at least one. |
-| `and` is True in one row out of four | **True.** |
-| `not 7 > 3` is `True` | **False.** Comparisons happen first, so it is `not True` = `False`. |
-| `&&` works in Python | **False.** It is `and`. |
-| Five passing tests prove a fix | **False.** Three of this week's five passed the broken version too. |
-| A silent bug is one with a confusing error message | **False.** It has **no** error message. |
 
 ### Lesson questions posed in the Say-this scripts
 

@@ -12,7 +12,7 @@
 | **Type** | 🟦 Review + pivot |
 | **Big idea** | Everything a machine handles — a photo, a message, a week of your life — first becomes numbers in a table, and text is no different. |
 | **New vocabulary** | corpus · token · tokenize |
-| **Materials** | The printed 16-question checkpoint quiz (in this file), the printed Chop the Sentence sheet (in this file), two coloured pens, the student's Week 25 and Week 26 work, a book the student likes with a ~60-word paragraph flagged |
+| **Materials** | The printed 16-question checkpoint quiz (in this file), the printed Chop the Sentence sheet (in this file), two coloured pens, the student's Week 25 and Week 26 work, a book the student likes with a ~60-word paragraph flagged, the student's Week 27 workbook (homework — answers in Part G of the Answer Key) |
 | **Tech needed** | **None.** This week is pencil and paper start to finish. |
 | **Prep time** | 20 minutes the night before + 5 minutes on the day |
 
@@ -940,17 +940,26 @@ a genuinely strong day; do not chase it.
 > Keep that paragraph. Next week we use the same one, and you will be glad you picked one you
 > actually like."
 
-**Workbook pages:** Week 27, pages 1–4.
+**Workbook:** Week 27 (`workbook/week-27.md`). It has no numbered pages — it is a run of named
+sections. The two parts you read out loud above are **Build It, Part 1** and **Build It, Parts 2–3**;
+the sections before them are the rest of the homework. Answers for every section are in **Part G**
+of the Answer Key.
 
-| Page | What is on it | Expected time |
-|---|---|---|
-| **1** | Term 3 reflection sheet — three boxes, plus the "weeks to go back to" list copied over | 8 min |
-| **2** | Chop the Sentence, sentences 5–7 (the harder set) — optional, for a score of 14+ | 10 min |
-| **3** | Your paragraph: rules box, then the full tokenization with numbered tokens | 20 min |
-| **4** | Frequency table + total tokens + unique tokens + two written questions | 17 min |
+| Workbook section | Items | What is on it | Rough time |
+|---|---|---|---|
+| **✅ Warm-Up** | W1–W5 | Recall from Week 26 (Pixel Lab): edge map, cell addresses, the lamp, clipping, checking one cell by hand | 5 min |
+| **✍️ Practice Set A — Understand It** | A1–A6 | Vocabulary blanks, which thing is never a token, "one correct way?", match rules to decisions, chop one sentence into boxes, count tokens and unique tokens | 10 min |
+| **✍️ Practice Set B — Use It** | B1–B5 | Tokenize three sentences and count; what goes wrong with no written rules, with no lowercasing, with punctuation glued on, with no spaces in the text | 15 min |
+| **🧩 Puzzle of the Week** | P1–P5 | Three people, one sentence, three token counts — find each one's rules | 5 min |
+| **🤔 Think Deeper** | T1–T2 | Write R4 for a machine and break it; token count versus unique count for a whole book | optional |
+| **🛠️ Build It** | Parts 1–3, vocabulary boxes | Term 3 reflection sheet; tokenize your own paragraph (rules first, numbered tokens, two counts, frequency table, arithmetic check); two written questions; corpus / token / tokenize | the main job |
+| **🎨 Draw It** | one drawing | A 5 × 5 grid of numbers beside a strip of numbered token boxes, with a banner | 5 min |
+| **📊 Self-Check** | 5 rows | Yes / Nearly / Not yet ticks | 2 min |
 
-**Total: 45–55 minutes.** If it is running past an hour, cut page 2 — it is the optional harder set
-and it exists for students who scored 14 or more.
+**Total: about 50 minutes** (the workbook's own estimate). The fill-in sections are quick; the time
+goes on Build It, Part 2. If it is running past an hour, cut **Think Deeper** first and then the
+**Puzzle** — they are the stretch items, and Think Deeper is the one to set for students who scored
+14 or more. Never cut Build It: Week 28 is built on the tokenized paragraph.
 
 ---
 
@@ -1210,7 +1219,7 @@ like. It is exactly 60 words.
    you. Not to the machine, because different letters means a different token. Real systems have
    tricks for this and none of them fully work.
 
-**The two written questions on workbook page 4:**
+**The two written questions in workbook Build It, Part 3 (Q1 and Q2):**
 
 *Which word is most common, and does it mean anything on its own?* — `the`, nine times. On its own it
 means almost nothing. The words that carry the meaning of the paragraph — `dog`, `gate`, `green` —
@@ -1220,6 +1229,79 @@ appear two, four and two times.
 punctuation tokens vanish as separate pieces, so the total drops from 69 to 60. But you gain new
 look-alike words: `gate.` and `gate,` and plain `gate` become three separate entries instead of one
 with a count of 4. Fewer tokens, and less useful ones.
+
+### Part G — the student workbook, section by section (mark the homework from this)
+
+Every section and item of `workbook/week-27.md`, in workbook order, under the six rules used in class
+(R1 lowercase · R2 `. , ! ?` their own tokens · R3 contractions whole · R4 a dot between two digits
+stays · R5 hyphenated words whole · R6 an emoji is a token). **Build It** is answered in Parts E and F
+above; Part G adds what those parts do not cover. The student's own workbook also has an Answers
+section at the end — do not let them open it before you have marked.
+
+**✅ Warm-Up (Week 26 recall)**
+
+| Item | Answer | Marking tip |
+|---|---|---|
+| **W1** | An edge map shows how strong the edge is at every place in the picture — an outline made of numbers. The middles come out as 0 because they never change. | "An outline / where the edges are" is enough. |
+| **W2** | It remembers **directions** — which cells are its neighbours, relative to where the formula sits. | This is why one formula dragged over a hundred cells does a hundred different sums. "Relative" is the word to listen for. |
+| **W3** | Brightness numbers all go **up by 50**. Edge numbers stay the **same**. | Both halves. "Edges change much less" is acceptable. Same item as quiz Q16 — if they missed one, they missed both; write W26. |
+| **W4** | **255**; the step is **clipping**. | Both. Same idea as quiz Q15. |
+| **W5** | A wrong formula is still valid arithmetic: no error message, just a wrong picture computed a hundred times. Checking one cell by hand is the only way to catch it. | Any wording of "it would not tell you it was wrong". |
+
+**✍️ Practice Set A — Understand It**
+
+| Item | Answer | Wrong answers to expect |
+|---|---|---|
+| **A1** | **corpus · token · tokenize.** A machine can only handle **numbers** in a **table**. | Swapping token and tokenize; "words" for "numbers". Send them back to the three vocabulary words on the board. |
+| **A2** | **(c) `3`** (out of `3.14`). R4 keeps `3.14` whole, so `3` never appears alone. | Picking (b) the emoji — they think only words count. Being a word was never the test. |
+| **A3** | **FALSE.** Real systems disagree about `don't`, hyphens and lowercasing. The thing that is really wrong is **being inconsistent**. | "True" with a reason like "the rules are the rules" — ask who wrote them. Mark correct any answer that says inconsistency is the error. |
+| **A4** | 1 → **(c)** · 2 → **(e)** · 3 → **(f)** · 4 → **(a)** · 5 → **(d)** · 6 → **(b)** | Confusing R3 and R5 (both "stay whole") — contractions versus hyphens. |
+| **A5** | Sentence in the figure: `Pi is about 3.14, isn't it?` → `pi / is / about / 3.14 / , / isn't / it / ?` — **8 tokens, 8 unique.** Rule questions: `Pi` → **R1**, 1 token · `3.14` → **R4** (beats R2), 1 token · `,` → **R2**, 1 token · `isn't` → **R3**, 1 token. | 10 tokens means `3.14` was split into `3` / `.` / `14` — R2 applied without R4. 7 means the comma was dropped. Any consistent rules at the bottom are acceptable. |
+| **A6** | `A pizza is a pizza.` → `a / pizza / is / a / pizza / .` — **6 tokens, 4 unique.** `a` appears twice and `pizza` appears twice. | 5 tokens means the full stop was dropped; 6 unique means they did not notice the repeats of `a` and `pizza`. Recount together, listing the repeats first. |
+
+**✍️ Practice Set B — Use It**
+
+| Item | Answer |
+|---|---|
+| **B1** | S1 `don't / panic / ! / it's / only / 2.5 / km / .` — **8**. S2 `our / ai-powered / oven / cooks / pizza / in / 3.5 / minutes / !` — **9**. S3 `yes / ! / yes / ! / pizza / again / ?` — **7**. **Total 24.** Repeats: `!` four times (S1 once, S2 once, S3 twice → 3 extra), `pizza` twice (1 extra), `yes` twice (1 extra) = 5 extra. **Unique: 24 − 5 = 19.** |
+| **B2** | (i) His table is nonsense for that word and he cannot tell how much: `don't` has only page 1's count, `do` and `n't` only half of page 2's, and it all looks tidy. (ii) Not really — he does not know exactly where he switched. Re-tokenize everything under one rule. This is why rules are written first. |
+| **B3** | (i) `the` splits into two rows, `The` and `the`, each with a fraction of the real count. (ii) Every sentence starts with a capital, so the commonest words (`the`, `it`, `a`, `and`, `I`) keep appearing in two forms, and more sentences make it worse. |
+| **B4** | Glued on: S1 `don't / panic! / it's / only / 2.5 / km.` — **6**. S2 `our / ai-powered / oven / cooks / pizza / in / 3.5 / minutes!` — **8**. S3 `yes! / yes! / pizza / again?` — **4**. Table: split off **24 tokens / 19 unique**; glued on **18 tokens / 16 unique** (`yes!` and `pizza` each twice). **Glued is smaller; split off is more useful**, because `panic`, `minutes` etc. can be counted whenever they turn up (glued forms like `panic!` never recur), and the `.` token keeps the information that a sentence ended. Smaller is not the goal; useful is. |
+| **B5** | (i) No spaces, so nothing to split on: he gets one enormous token, the whole sentence. (ii) No use: one row with a count of 1 for a "word" that will never appear again. |
+
+Marking B1: the two usual slips are forgetting that `2.5` and `3.5` are *different* tokens, and
+missing that `!` is the commonest token in the set. If their total is 24 but unique is not 19, they
+have miscounted the repeats — have them list the repeats first, as the sheet says.
+
+**🧩 Puzzle of the Week** (`Don't stop, it's fine!`)
+
+| Item | Answer |
+|---|---|
+| **P1** | **Ana (6):** `don't / stop / , / it's / fine / !` — punctuation split off, contractions whole (our R2 + R3). **Ben (4):** `don't / stop, / it's / fine!` — punctuation glued on, contractions whole. **Cleo (8):** `do / n't / stop / , / it / 's / fine / !` — punctuation split off *and* contractions split. |
+| **P2** | **None — zero are wrong.** Each followed a consistent rule all the way through. Only chopping `don't` one way and `it's` the other in the same text would be wrong. |
+| **P3** | `stop,` and `fine!` will hardly ever recur in that form, so their counts are stuck at 1; and he has lost the punctuation as information (where the sentence ended). One of the two is enough. |
+| **P4** | `n't` means *not*, which reverses a sentence; as its own piece, `don't`, `isn't`, `wasn't`, `can't` all share one "negative" piece and a machine learns from all four at once. |
+| **P5** | **Ana 6 · Ben 4 · Cleo 8.** Nothing repeats, so tokens and unique tokens are equal for all three. The two counts only come apart when something appears twice. |
+
+**🤔 Think Deeper**
+
+- **T1.** Accept any version of *"a `.` stays inside the token if and only if there is a digit immediately before it and a digit immediately after it, with no space either side; otherwise it is its own token."* The second half matters more: good breaking strings are `Mr. Smith`, `etc.`, `U.K.`, `12.3.2026`, `£4.50` (currency symbol covered by no rule), a web address. The lesson: every rule precise enough for a machine has cases where it is wrong, and real tokenizers are long lists of such special cases.
+- **T2.** The **token count** grows faster. Every word adds 1 to the token count, but adds to the unique count only if it is new — and new words run out while `the` never does. (Model figures: about 80,000 tokens and 6,000 unique for a whole book, versus 9 and 7 for a sentence; these are illustrative, not measured.) For a machine: the table stops growing much wider but the evidence in each row keeps piling up, so more text makes the counts more trustworthy; common words get huge counts and most words are seen once or twice. Accept "token count" plus any correct version of "new words run out"; the consequence is a Level 5 answer.
+
+**🛠️ Build It**
+
+- **Part 1 — reflection sheet:** Part E above. The "weeks to go back to" line is copied from the sheet on the table, or **"nothing to go back to"** for a score of 16.
+- **Part 2 — their paragraph:** no fixed answer; mark the **method** against Part F. Rules written before chopping; tokens numbered as they go; the frequency table's "how many times" column must add up to the total tokens (**Step 5**) and the number of rows must equal the unique tokens. If the student used the fallback paragraph the answers are **69 tokens, 38 unique**, with the full table in Part F.
+- **Part 3 — Q1 and Q2:** the model answers are in Part F ("The two written questions"). For the fallback paragraph the most common token is `the` (9). In Q2 the strong point is that glued punctuation makes look-alike entries (`gate.` and `gate,` and `gate` instead of one `gate`) and throws away the sentence-end information. (Check the fallback paragraph by hand before you quote counts for the glued entries: `gate` appears four times, twice before a full stop and twice before a comma.)
+- **Vocabulary boxes:** **corpus** — the pile of text you are learning from (a body of text); **token** — one piece of text after chopping, usually a word but punctuation and emoji count too; **tokenize** — to chop text into tokens following written rules. Any paraphrase that is in their own words is correct.
+
+**🎨 Draw It**
+
+A good answer has all three: (1) **real numbers** in the left-hand 5 × 5 grid, not just a nice picture (typically a few cells of 255 and the rest 0, with a shape you can just about see); (2) **numbered token boxes** in the right-hand strip, including a box for any punctuation (for example `[i]` `[love]` `[pizza]` `[.]` numbered 1–4); (3) a **banner** saying what the two have in common — both are just numbers in a table, and the machine cannot tell which one used to be a picture. A lovely photo and a lovely sentence with no numbers is the *before* without the *after*; send it back.
+
+**📊 Self-Check**
+
+Not marked. Read the ticks against the quiz: a 😕 on "define corpus, token and tokenize" means ask for the three definitions aloud; a 😕 on "why text and images are the same kind of problem" is the week's assessment question (Check 3) — do not let it pass.
 
 ### Answers to every question posed in the lesson
 

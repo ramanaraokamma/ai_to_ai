@@ -12,7 +12,7 @@
 | **Type** | 🟦 Teach |
 | **Big idea** | Training is a one-time process that reads labelled examples and produces a model — after that the examples are gone and only the model remains. |
 | **New vocabulary** | training · epoch · baseline model · variety |
-| **Materials** | 18 index cards you draw yourself the night before (recipe below) · an envelope or a drawer · a black pen · the blank shot-list sheet · the tally sheet · a whiteboard or big sheet of paper · a timer or phone clock |
+| **Materials** | 18 index cards you draw yourself the night before (recipe below) · an envelope or a drawer · a black pen · the student's workbook open at **Build It** (Step 2 checklist, Step 3 shot list, Step 5 tally sheet) · a whiteboard or big sheet of paper · a timer or phone clock |
 | **Tech needed** | **None in class.** The student needs a phone or tablet camera *for the homework*, not today. |
 | **Prep time** | 15 minutes the night before, and 12 of those are drawing the cards |
 | **⚠️ The one thing that ruins this lesson** | Drawing the eighteen cards freehand instead of following the recipe. The size trap is the lesson, and it only works if you follow it exactly. |
@@ -280,7 +280,7 @@ Card 6 has no right answer. Do not tell them that.
 - [ ] Test cards 1–6 in order, face down, in a **separate** stack. Keep them well apart from the training stack.
 - [ ] An **envelope or a drawer** you can physically put the training cards into, in sight of the student.
 - [ ] Timer or phone clock, ready to time twenty seconds.
-- [ ] Blank shot-list sheet and tally sheet on the table.
+- [ ] Workbook open at **Build It** on the table: Steps 1–3 (objects, variety checklist, shot list) are for today; Steps 4–7 (shoot, tally, shortfall line, arithmetic) are the homework.
 - [ ] Whiteboard or big sheet, clear.
 - [ ] One question you must have asked before today: **which three similar objects will they photograph?** Three toothbrushes. Three spoons. Three socks. Three pens. Not an elephant and a spoon.
 
@@ -579,7 +579,7 @@ Full instructions are in the next section. In the lesson flow:
 - An envelope, a drawer, or another room
 - A timer
 - A scoring sheet: 6 rows — `card · you said · truth · ✓/✗`
-- The blank variety checklist and shot-list sheet
+- The workbook open at Build It: Step 1 (objects), Step 2 (variety checklist), Step 3 (shot list)
 - A pen
 
 ### Phase 1 — Be trained (6 minutes)
@@ -650,7 +650,7 @@ Then ask the questions, in this order — the order matters:
 
 ### Phase 5 — Plan the shoot (6 minutes, and the rest is homework)
 
-Now the paper half. The student has three chosen objects — three similar ones.
+Now the paper half, which is workbook **Build It, Steps 1–3**. The student has three chosen objects — three similar ones.
 
 **Step 1 — write the objects and the class names.**
 
@@ -850,15 +850,26 @@ Aim for 3. A student who genuinely gets cards 4 and 5 is at 4 already, whatever 
 >
 > Second: **sort them into three folders**, named with your class names. Not `A`, `B`, `C` — the real words. If your photos aren't sorted, next week's lab doesn't happen.
 >
-> Third: **fill in the tally sheet.** Count how many photos you actually ended up with for each background and for each lighting kind. Then write one line: **which condition did you end up short on, and why?**
+> Third: **fill in the tally sheet** (Build It, Step 5 in the workbook). Count how many photos you actually ended up with for each background and for each lighting kind. Then write one line: **which condition did you end up short on, and why?**
 >
 > That last line is the one I'll read first. Everybody comes up short somewhere. The people who know where they're short can fix it. The people who don't will get a mystery failure next month and never find out why."
 
-**Workbook pages:** Week 15, pages 1–5.
+**Workbook sections (Week 15 workbook):**
 
-**Expected time:** 45–60 minutes. Taking the photos is about 30 of it; the tally and the write-up are 15.
+| Where | What | When |
+|---|---|---|
+| **Build It, Steps 1–3** | Objects and class names · variety checklist · numbered shot list adding to 40, checked three ways, plus "predict your own laziness" | Done **in class** (minutes 54–60) |
+| **Build It, Steps 4–7** | Shoot it · tally sheet (background, lighting, class) · shortfall line · your own arithmetic | **Homework, the big one** |
+| ✅ **Warm-Up** (W1–W5) | Five questions from Week 14 | Homework, at a table, before the shoot |
+| ✍️ **Practice Set A** (A1–A6) and **Practice Set B** (B1–B5) | Understand it, then use it | Homework, at a table; B5 is worth doing before shooting, because it is a shot list to check |
+| 🧩 **Puzzle of the Week** (Parts 1–5) | Six photos, one thing in common (wolves and huskies) | Homework |
+| 🤔 **Think Deeper** (T1, T2) | Why cards 4 and 5 went wrong; does a machine learn as you do | Homework, or talk through at the start of Week 16 if time is short |
+| 🎨 **Draw It** | Draw a trap of your own, with one test card that breaks it | Homework; optional for a student who is short of time, and the natural "flying" task |
+| 📊 **Self-Check** | Six "I can…" rows and one confusing thing | Last thing, after everything else |
 
-**The one thing not to skip:** the tally sheet. Photos with no tally are just photos. The tally is what makes them a *measured* collection, and it's what Week 17 needs.
+**Expected time:** the shoot and the tally are 45–60 minutes (about 30 of it taking photos; the tally and the write-up are 15). The paper sections (Warm-Up, Practice Sets, Puzzle, Think Deeper, Draw It) add roughly another 40–50 minutes; spread them over the week rather than one sitting. If time is tight, the order of priority is: Build It Steps 4–7, then Practice Set A and B, then Puzzle, then Warm-Up, then Think Deeper, Draw It.
+
+**The one thing not to skip:** the tally sheet (Build It, Step 5) and the shortfall line under it (Step 6). Photos with no tally are just photos. The tally is what makes them a *measured* collection, and it's what Week 17 needs.
 
 > **🧑‍🏫 If they have no camera:** the plan is still the homework. Write the full 40-shot list, shoot whatever is possible — even ten photos — and mark the rest as not taken. Write the tally for what exists. Week 17 has a fallback that works with a small set.
 
@@ -866,7 +877,7 @@ Aim for 3. A student who genuinely gets cards 4 and 5 is at 4 already, whatever 
 
 ## 🔑 Answer Key
 
-*Complete worked answers to every question posed in the lesson and every workbook item.*
+*Complete worked answers to every question posed in the lesson and every item in the Week 15 workbook (Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Build It, Draw It, Self-Check). The workbook's own Answers section gives the student the same values; this key adds what to watch for when marking.*
 
 ### Hook questions
 
@@ -970,21 +981,75 @@ Note the desk appears twice (rows 1 and 2) and so carries 12 photos against 7 fo
 
 The second model is better. Same 60 shutter clicks, about thirty times the coverage. The first will work beautifully on that sofa in the evening and may well fail in the kitchen at breakfast — and, worse, it will score *higher* than the good model if you only ever test it on the sofa. (That trap is Week 19.)
 
-### Homework — model answers and marking
+### Workbook — Warm-Up (from Week 14)
 
-**Task 1 — the 120 photos.**
+| Item | Answer | Marking note |
+|---|---|---|
+| **W1** | **Five** features on the front, in the same order every time; on the back **one word, the name of the object**, and nothing else | Accept "five" plus "the label". "Six" or "the answer and a picture" means Week 14 did not stick |
+| **W2** | "Could a **stranger** name the object from **that one line** alone? Then it's banned." | Accept any close wording of "someone who's never seen it" |
+| **W3** | `score = 7 ÷ 10 = 70%`  ·  `baseline = 1 / 10 = 10%`  ·  `gap = 60 percentage points` | Common slip: writing the gap as 60% rather than 60 points, or 7% for the score. Correct gently, the unit matters |
+| **W4** | **No, they were not using colour.** The colour line said `red`; a tester reading it could not have named a blue object. The suspect is whichever *other* feature would have produced the blue object they named | Full credit needs the reasoning, not just "no" |
+| **W5** | **`can_you_eat_it: yes`** is banned. It is measurable, which is what makes it tempting, but for any food object the one line hands over the whole category. The test is "could a stranger name it from this one line?", not "is it measurable?" | `weight_g`, `is_hollow` and `number_of_holes` are all fine. A student who circles `is_hollow` has used "sounds odd" instead of the leak test |
 
-Marking criteria:
-- Roughly 40 per object (accept 30–45), and the three counts within about 20% of each other. Note it if one object is far behind — an unbalanced pile is a real problem in Week 17.
+### Workbook — Practice Set A
+
+| Item | Answer |
+|---|---|
+| **A1** | Training is the **one**-off process where a machine looks at **labelled** examples over and over and adjusts itself; what comes out is a **model**. An epoch is one complete **pass** through **every** training example |
+| **A2** | **(b)**. Arithmetic: **120 phone photos ≈ 40 MB, the model ≈ 3 MB**, so the photos cannot be inside it. The model is about a thirteenth of the size of the data that made it; what it kept is the pattern, not the pictures |
+| **A3** | **FALSE.** The question: "how many **photos** did that add?" Answer: **none**. She needs **more *different* photos** (new backgrounds, lights, angles, distances). Extra credit: too many epochs eventually memorises those ten (Week 21) |
+| **A4** | 1 → **(c)** · 2 → **(a)** · 3 → **(e)** · 4 → **(b)** · 5 → **(d)** |
+| **A5** | Boxes: **1 labelled examples** (120 photos with names attached) · **2 training** (about 20 seconds, happens once) · **3 the model** (about 3 MB, the bit you keep) · **4 guesses** (new photos, as often as you like). The box put away is **Box 1**; the box that takes longest in real life is also **Box 1** (an afternoon of human work against twenty seconds of machine work) |
+| **A6** | A = 1×1×2×1 = **2** · B = 5×3×8×2 = **240** · C = 1×1×2×1 = **2** · D = 3×2×5×1 = **30**. Rows A and C: ten times as many photos bought **nothing**; still two situations, now photographed 200 times each instead of 20 |
+
+**Watch for:** choosing (d) in A2. It is a good guess and earns reasoning credit, but the pictures are unrecoverable once squashed; what survives is what they had in common. In A6 a student who adds across the row (1+1+2+1 = 5) instead of multiplying has missed the idea that variety *combines*. Do one row on the board with real objects.
+
+### Workbook — Practice Set B
+
+| Item | Answer |
+|---|---|
+| **B1** | **YES**, it still works, unchanged. Evidence 1 (arithmetic): 500 photos are far bigger than the model they made, so they are not in there. Evidence 2 (class): the twelve cards were sealed in the envelope and the student still classified six new cards, about four right |
+| **B2** | Easiest pattern: the **floor or surface** (kitchen table against bathroom floor). Spoon on the bathroom floor → says **comb** or **toothbrush**. Comb on the kitchen table → says **spoon**. The 100% is worthless because the test photos came from the same places as the training photos, so the shortcut worked; they measured a floor classifier. Fix: **8 spoons on the bathroom floor, 8 combs on the kitchen table, 8 toothbrushes on the kitchen table = 24 photos**. Note that comb and toothbrush share a floor, so the model is honest about that pair and cheating on the other |
+| **B3** | glue sticks right **40**, markers right **40**, erasers right **0**; correct = **80 out of 88**, 80 ÷ 88 = **90.9%**; erasers alone **0%**. A good deal because training minimises *total* mistakes and abandoning the eraser costs only **8 of 88**. Fix: **32 more eraser photos**, so 40 / 40 / 40 (keep classes within about 20% of each other) |
+| **B4** | Ravi: 1 × 1 × about 2 = **about 2** situations. Meera: 4 × 3 × 5 = **60** situations. Meera's is better, about **thirty times** the variety. If both are tested only on the sofa in the evening, **Ravi's scores higher**, because the test is the exact scene he trained on. The worse model can produce the better number if the test is chosen badly (Week 19) |
+| **B5** | Total column: 6 + 6 + 7 + 7 + 5 = **31**, so **9 short**. Backgrounds **4** (desk, carpet, tiles, wood table) · lighting kinds **3** · distances **2**. The broken rule is **five backgrounds**. Row 6: **bed sheet | low lamp | far | 9** (any fifth, genuinely different, named background with 9 shots works; two rows of 4 and 5 with different lights is even better) |
+
+**Watch for:** in B3 a student who divides by 80 or by 48 instead of 88, or who writes 0% as the overall score. In B5 a student who says lighting is broken (it has three kinds, which is correct) or who adds a row that repeats an existing background (that fixes the total but not the rule). In B2 a student who proposes "take 400 more photos": ask which of the 400 would break the surface pattern.
+
+### Workbook — Puzzle of the Week
+
+| Part | Answer |
+|---|---|
+| **1** | **Snow**, in 100% of the wolf photos and 0% of the husky photos. (Equally correct: **grass**, in 100% of huskies and 0% of wolves) |
+| **2** | "If **there is white stuff at the bottom of the picture** then say **wolf**." Any wording that names snow or the ground and not the animal is right |
+| **3** | A husky in snow → **wolf** (snow present). A wolf on grass → **husky** (no snow). A wolf in snow → **wolf**. The one that is **right for the wrong reason** is the third, the wolf in snow |
+| **4** | Photo 1: **a husky standing in snow, labelled HUSKY**, breaks "snow → wolf". Photo 2: **a wolf standing on grass, labelled WOLF**, breaks "grass → husky". With both, the ground no longer separates the piles. Two photos do not teach a wolf, but they destroy the shortcut, which is what was asked |
+| **5** | Because **the model got the right answers.** The professionals saw predictions, not reasoning, and every photo they tried came from the same collection. A shortcut shows only on the one case it gets wrong (a husky in snow), and nobody took that photo |
+
+**Watch for:** Part 3's "why" column. "Because it is a wolf" for the wolf-in-snow row is the exact misunderstanding the puzzle exists to catch.
+
+### Workbook — Think Deeper
+
+**T1.** Full credit needs four things: (1) rejecting the blame, since they did what training does; (2) naming **size** specifically as a perfect separator in the twelve training cards; (3) the fix being the **cards**, not the learner (Blorbs and Zunks at mixed sizes); (4) connecting to the wolves and using the phrase **easiest pattern** (Blorbs were size, wolves were snow). Bonus for noticing card 3: Fip was drawn at mixed sizes and was fine, which shows the trap was about size and not general confusion.
+
+**T2.** One genuine similarity: neither you nor the machine was given a rule for recognising things, both learned from thousands of examples with names attached, and neither can read out what it ended up with. Two genuine differences from: you need far fewer examples (about five dogs against tens of thousands); you can learn from one event (a hot stove once) and a model cannot; you can explain some of your reasoning and the machine none; you keep learning while in use and a trained model is frozen. Why it cannot be settled: **we cannot read either one**. "Nobody knows" is a real answer, not a dodge. Do not accept "the machine is just maths" as a difference without a reason, and do not accept "it learns exactly like us" without one.
+
+### Workbook — Build It (Steps 1–7)
+
+**Step 1 — objects and class names.** Three genuinely similar things (three toothbrushes, not a toothbrush, a chair and a dog), with real-word class names, not `A`, `B`, `C`. If the student has picked wildly different objects, send them to fetch three of the same kind now.
+
+**Step 2 — variety checklist.** Five **named places**, three **named** lighting conditions. "The blue rug in the hall" is a plan; "carpet" is a wish. Angles (8) and distances (2) are given.
+
+**Step 3 — the shot list and the "predict your own laziness" line.** The model list is the six-row one from the worked example: 6 + 6 + 7 + 7 + 7 + 7 = 40, across 5 backgrounds, 3 lighting kinds and 2 distances (checked three ways in the Worked example section above). The desk appears twice and carries 12 against 7; acceptable at 30% of the set, and evening it out to 8/8/8/8/8 is better. The "Identical list for all three objects" box must be ticked, in their own handwriting. The predicted row is usually a low-lamp row. **Do not let a wrong total go home.**
+
+**Step 4 — shoot it.** Marking criteria (the workbook ticks are a checklist, so check them against the photos):
+- Roughly 40 per object (accept 30–45), and the three counts within about 20% of each other. Note it if one object is far behind, because an unbalanced pile is a real problem in Week 17.
 - Photos actually differ from each other. Scroll through twenty of them: if fifteen look identical, the shot list was not followed, however good the sheet looks.
-- All five backgrounds and all three lighting kinds appear **for every object**, not just for the first one they got bored on.
-- Objects are genuinely similar to each other. Three toothbrushes, not a toothbrush, a chair and a dog.
+- All five backgrounds and all three lighting kinds appear **for every object**, not just the first one they got bored on.
+- Objects are genuinely similar to each other.
+- Sorted into three folders named with the real class names, not `A/B/C` or `Class 1`. This costs nothing today and saves a confused lab next week.
 
-**Task 2 — three named folders.** Named with the real class names, not `A/B/C` or `Class 1`. This costs nothing today and saves a confused lab next week.
-
-**Task 3 — the tally sheet and the shortfall line.**
-
-A model completed tally, for a real student who was short in a predictable place:
+**Step 5 — the tally sheet (by background, by lighting, by class).** A model completed tally, for a real student who was short in a predictable place:
 
 | background | planned | actual |
 |---|---|---|
@@ -1002,18 +1067,35 @@ A model completed tally, for a real student who was short in a predictable place
 | low lamp | 13 | 5 |
 | **total** | **40** | **40** |
 
-**The shortfall line, written well:**
+The "By class" table (class name and photos) should show three counts within about 20% of each other. Marking: planned and actual side by side (actual alone cannot show a shortfall); totals still add to 40, or to whatever they really shot, honestly stated.
+
+**Step 6 — the shortfall line, written well:**
 
 > *"I came up short on low lamp light — I planned 13 and got 5. The lamp photos looked dark and blurry so I kept redoing them under the ceiling light instead. That means most of my photos are bright, so I think my model will be bad at guessing anything photographed in a dim room in the evening. Also tiles: 3 instead of 7, because the bathroom floor is cold and I gave up."*
 
 Marking criteria:
-- Both tallies filled in, with **planned and actual side by side** — actual alone doesn't show a shortfall.
-- The totals still add to 40 (or to whatever they really shot, honestly stated).
-- One named short condition, with the real numbers.
+- One named short condition, with the real numbers ("Planned ___, got ___").
 - A **reason**, and an honest one. "I got bored" is a perfectly good reason and should be praised, not marked down.
-- Full credit needs the consequence: *what will my model now be bad at?* This is the sentence that turns a tally into a prediction, and it's the one thing to insist on.
+- Full credit needs the consequence: *what will my model now be bad at?* This is the sentence that turns a tally into a prediction, and it is the one thing to insist on.
+- The YES / NO "Did you predict this row back in Step 3?" is answered honestly. If they predicted the low-lamp row in class and it *was* the low-lamp row, say so loudly. Predicting your own future laziness correctly is the same skill as predicting a model's failure before you test it.
 
-**Comparing against their predicted shortfall.** If they predicted the low-lamp row in class and it *was* the low-lamp row, say so loudly. Predicting your own future laziness correctly is a genuine skill and it's the same skill as predicting a model's failure before you test it.
+**Step 7 — the arithmetic, for a full 40-per-object set:**
+
+```text
+my photos per object  = 40     × 3 objects  = 120 labelled examples
+my examples × 50 epochs                     = 6,000 looks
+my distinct situations: 5 × 3 × 8 × 2       = 240
+```
+
+A student who shot fewer photos should use their real count (for example 31 × 3 = 93 examples, × 50 = 4,650 looks). Their situations figure is the product of the backgrounds, lighting kinds, angles and distances they *actually* covered, not the planned 240.
+
+### Workbook — Draw It
+
+No single right drawing. A good trap has three properties: (1) the hidden thing is a feature the **rules never mention** (size, paper, background, which pen); (2) it is present in **100%** of one class and **0%** of the others, because a trap in half the cards is noise; (3) the student can say **in advance** which test card will break it, and the three boxes under the drawing agree: what is hidden, which test card breaks it, and the fix (mix the feature across both classes). The model example in the workbook is Nub on lined paper, Gorp on plain. If they ran the trap on someone, ask what the person said; if it did not work, ask why not, which is the better result.
+
+### Workbook — Self-Check
+
+No right answer; it is the learner's own rating of six "I can…" rows and one confusing thing. Read the "one thing I still find confusing" line and the 😕 rows: they are your Week 16 opening. Two rows deserve a follow-up question whatever is ticked: "Describe training as examples in, model out — and say where the examples go" (ask "where are the twelve cards?") and "Say why cards 4 and 5 went wrong, and whose fault it was" (the cards' fault, not theirs).
 
 ### Extension answers (for the "flying" path)
 

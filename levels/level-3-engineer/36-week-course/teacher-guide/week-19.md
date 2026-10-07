@@ -15,7 +15,7 @@
 | **New maths** | **None.** Not one new idea. Everything today was taught in Weeks 12–18; today it gets assembled and run. |
 | **New syntax** | `make_moons(n_samples=400, noise=0.25, random_state=0)` · `np.meshgrid(xx, yy)` · `np.c_[a.ravel(), b.ravel()]` · `ax.contourf(XX, YY, Z)` |
 | **Dataset** | `sklearn.datasets.make_moons(n_samples=400, noise=0.25, random_state=0)` — 400 points in two interleaving crescents, generated inside scikit-learn. **Nothing downloads. No internet needed.** |
-| **Materials** | Printed workbook pages 19.1–19.6 · **three index cards per student** for the Break It predictions · the Bug Log · Week 17's shape table and Week 18's four gradient arrays still on the wall · a big sheet for the class boundary sketch |
+| **Materials** | The printed workbook (all sections; **Build It** and **Draw It** are the marked ones) · **three index cards per student** for the Break It predictions · the Bug Log · Week 17's shape table and Week 18's four gradient arrays still on the wall · a big sheet for the class boundary sketch |
 | **Tech needed** | Laptop with Python 3, numpy, scikit-learn, matplotlib. **No PyTorch this week** — that is next week, on purpose. **No new installs.** |
 | **Prep time** | 30 minutes the night before (20 of them running the code) · 5 minutes on the day |
 | **Expected runtime of the code** | `numpy_brain.py` **under 1 second**. `plot_boundary.py` **about 1.5 seconds**. `break_it.py` **about 2 seconds**. Nothing today takes longer than a kettle. |
@@ -396,7 +396,7 @@ Nothing is broken. Nothing dies. The network simply **cannot bend**. One ReLU un
 ### 8. The three misconceptions you will actually meet
 
 **Misconception 1 — "more hidden units is always better."**
-Not always, and we have the measurement. Sixteen units score 0.9350 on test; **sixty-four units score 0.9550 on train and only 0.9150 on test.** The big one has a larger train-test gap, which is the shape of Week 2's overfitting reappearing with a new dial to turn (the cause is a hypothesis: one seed and 200 test rows, and across seeds 0-4 the 16- and 64-unit test scores overlap, 0.920-0.935 against 0.915-0.930, while the gap is mildly larger at 64 units). The cure is the sweep in workbook page 19.6, done with their own hands.
+Not always, and we have the measurement. Sixteen units score 0.9350 on test; **sixty-four units score 0.9550 on train and only 0.9150 on test.** The big one has a larger train-test gap, which is the shape of Week 2's overfitting reappearing with a new dial to turn (the cause is a hypothesis: one seed and 200 test rows, and across seeds 0-4 the 16- and 64-unit test scores overlap, 0.920-0.935 against 0.915-0.930, while the gap is mildly larger at 64 units). The cure is the sweep in the workbook's **Build It › Stretch — the capacity sweep**, done with their own hands.
 
 **Misconception 2 — "the network is drawing a curve."**
 It is drawing up to sixteen straight lines and joining them. Zoom into the boundary plot and the corners are visible. This matters because it explains everything about capacity in one sentence: **you get one hinge per unit, so the number of units is a rough guide to how many bends you can afford (one unit alone gives no bend at all, and a hinge can bend the boundary in more than one place).**
@@ -416,7 +416,7 @@ It is the opposite: it is the only reason to believe the file. A network with a 
 | Momentum, Adam, learning-rate schedules | **Week 26** brings `Adam`. Today the learning rate is a number you type. |
 | Leaky ReLU, ELU, "just use a different activation" | Name it if asked — *"there is a version of ReLU with a small slope on the left, and it exists exactly because of dead units"* — then stop. It is not in this level. |
 | Dropout, weight decay, any regularisation | Not in this level as a lesson. The 64-unit overfit is diagnosed, not fixed. |
-| More than one hidden layer | Stretch task only (page 19.6 variation), never required. |
+| More than one hidden layer | Stretch task only (see *If the student is flying*), never required. |
 | Softmax and more than two classes | **Week 26**, with `nn.CrossEntropyLoss`. |
 | Mini-batches | **Week 23**, with `DataLoader`. Today every epoch uses all 200 rows at once. |
 | Why deep networks generalise at all | Nobody fully knows. See the Questions section — it is the honest answer and it is a good one. |
@@ -608,7 +608,7 @@ final test  acc 0.9350
 
 **Expected runtime: under 1 second.** If your gradient check is not `4.792e-08`, a seed is missing: check `random_state=0` in `make_moons`, `random_state=0` in `train_test_split`, and `seed=0` in `init_params`.
 
-- [ ] **Run `plot_boundary.py`** (full file in the Answer Key, page 19.4) and **look at the PNG**. Three panels. Panel 1 is a V-shaped boundary in a poor place, panel 3 has the most bends. Expected runtime about **1.5 seconds**. Its printed output is:
+- [ ] **Run `plot_boundary.py`** (full file in the Answer Key, under **Build It › The three boundary panels**) and **look at the PNG**. Three panels. Panel 1 is a V-shaped boundary in a poor place, panel 3 has the most bends. Expected runtime about **1.5 seconds**. Its printed output is:
 
 ```text
 XX shape (200, 200)  grid shape (40000, 2)
@@ -618,12 +618,12 @@ epoch  50  loss 0.3104  test acc 0.9150
 epoch 500  loss 0.1542  test acc 0.9350
 ```
 
-- [ ] **Run `break_it.py`** (full file in the Answer Key, page 19.5) so the three failures are not a surprise in the room. Expected runtime about **2 seconds**. You will see a `RuntimeWarning: overflow encountered in exp` if you include the `lr = 100` row — that is expected and it is a Clinic entry.
+- [ ] **Run `break_it.py`** (full file in the Answer Key, under **Build It › Break It Three Ways**) so the three failures are not a surprise in the room. Expected runtime about **2 seconds**. You will see a `RuntimeWarning: overflow encountered in exp` if you include the `lr = 100` row — that is expected and it is a Clinic entry.
 - [ ] **Do this one thing by hand, on paper, before you teach it:** `−ln(0.5)`. Any calculator: `ln(0.5) = −0.693147`, so the answer is `0.693147`. **If you have not done that division yourself you will not sound convincing when 0.6931 appears on the screen and you say "that is the loss of a model that shrugs".**
 - [ ] **Break it on purpose, twice**, so both deliberate mistakes are muscle memory:
   1. Delete `.reshape(-1, 1)` from `y` in `get_data()`. **No error appears.** The loss prints `0.9534` instead of `0.8095`, because `A2 - y` quietly became a `(200, 200)` grid. This is deliberate mistake one.
   2. Write `dW1 = X @ dZ1` instead of `dW1 = X.T @ dZ1`. Real message: `ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0 ... (size 200 is different from 2)`. This is deliberate mistake two.
-- [ ] **Print workbook pages 19.1–19.6.**
+- [ ] **Print the whole workbook** (Warm-Up through Self-Check). Build It has the prediction, results and panel tables; Draw It has the three empty frames.
 - [ ] **Three index cards per student**, blank, for the Break It predictions.
 - [ ] **Leave Week 17's shape table and Week 18's four gradient arrays on the wall.** You will point at both today.
 
@@ -631,7 +631,7 @@ epoch 500  loss 0.1542  test acc 0.9350
 
 - [ ] Editor open, terminal ready. **`numpy_brain.py` deleted or renamed** — they type it, or they extend last week's file if they have one.
 - [ ] `boundary.png` from your own run open in a window you can show at the end of the hook — **and then closed**, so they build their own.
-- [ ] Workbook 19.1 out, with the three predictions **written in pen before any breaking happens**.
+- [ ] Workbook open at **Build It › Break It Three Ways**, with the three predictions **written in pen before any breaking happens**.
 - [ ] Bug Log out.
 - [ ] Big sheet on the wall with two empty axes drawn, ready for the class boundary sketch.
 
@@ -642,7 +642,7 @@ epoch 500  loss 0.1542  test acc 0.9350
 1. **The hinge activity, unplugged.** Give them graph paper and this rule: *"draw a straight line. Now you are allowed one bend. Now two. Now sixteen."* Ask: *"how many bends do you need to separate two interlocking crescents?"* Two or three is usually enough. **That is capacity, and it lands harder with a pencil than with a plot.**
 2. **The zero-weights arithmetic, by hand.** Every weight zero, so every hidden output is 0, so the final sum is 0, so the answer is `sigmoid(0) = 0.5`, so the loss is `−ln(0.5) = 0.6931`. Then the killer question: *"what is the slope of a knob that has no effect on the answer?"* Zero. **Breakage 1, complete, with no computer.**
 3. **The dead-unit arithmetic, by hand.** `bias = −14.113`. Weighted sum for a typical row, say `0.6 × 1.2 + (−2.9) × 0.4 = 0.72 − 1.16 = −0.44`. Add the bias: `−14.55`. `max(0, −14.55) = 0`. Slope of ReLU below zero: `0`. Then: `0 × 0.5 = 0`. **Breakage 2, complete, and this is the best paper item of the week.**
-4. **Sketch the three boundary panels on the wall sheet** from your own printout of `boundary.png` while they copy them into 19.4, and write the loss and test accuracy under each.
+4. **Sketch the three boundary panels on the wall sheet** from your own printout of `boundary.png` while they copy them into the **Build It** boundary-panel table, and write the loss and test accuracy under each.
 
 | If this fails | Do this instead |
 |---|---|
@@ -1012,7 +1012,7 @@ This section is the full script for the Break It Three Ways activity.
 
 - A working `numpy_brain.py` (theirs, or yours handed out).
 - **Three index cards per student**, blank.
-- Workbook page 19.1, which has three prediction boxes and three result boxes.
+- The workbook's **Build It › Break It Three Ways** tables, which have three prediction boxes and three result boxes.
 - A pen. **Pen, not pencil** — the point is that a wrong prediction stays visible.
 
 ### Part 1 — predict, in pen (5 minutes)
@@ -1076,7 +1076,7 @@ Good answers look like:
 ### What "finished" looks like
 
 - Three cards with a prediction in pen on one side and a one-sentence explanation on the other.
-- Page 19.1 filled in with the real numbers: `0.6931 / 0.5000`, `0.8100 / 13`, `0.9000`.
+- The Break It results table in Build It filled in with the real numbers: `0.6931 / 0.5000`, `0.8100 / 13`, `0.9000`.
 - At least one prediction marked **wrong**, out loud, without embarrassment. (If a student got all three right, ask them to explain card 1's zero gradient in arithmetic. That is the level-5 question.)
 - The student can say the sentence: **"a dead unit has slope zero, so it can never come back."**
 
@@ -1098,7 +1098,7 @@ Then run it and watch `0.6931` appear on the screen five times in a row. **One b
 1. **Find the learning rate where the units start dying.** Sweep 0.5, 5, 20, 50. Real numbers: `0/16`, `0/16`, `13/16`, and at 100 the loss is `nan`. Ask what `nan` does to the dead-unit count. (It breaks it: `nan <= 0` is `False`, so `nan` units are counted as alive. **A broken measurement is worse than no measurement.**)
 2. **Try to revive the dead.** Take the lr = 20 model and train it 2000 more epochs at lr = 0.5. Real answer: still 13 dead, test accuracy drifts to 0.8050. Then the question: *"what would you have to change by hand to bring unit 0 back?"* (Its bias, from −14.113 to something small. Nothing in the training loop can do that.)
 3. **All weights equal to 0.5** instead of zero. It reaches 0.9000, and all sixteen hidden columns end up identical to six decimal places. Ask: *"how many hidden units does this network really have?"* **One.** This is the cleanest demonstration of symmetry available.
-4. **The capacity sweep** (page 19.6): 1, 2, 4, 8, 16, 64 units. The interesting row is 64: train accuracy 0.9550, test accuracy 0.9150. **More capacity, a bigger train-test gap, and (with this seed) a slightly lower test score.** Say plainly that four test rows is within noise. Ask them to name what that looks like. (Overfitting, from Week 2, with a new dial.)
+4. **The capacity sweep** (workbook **Build It › Stretch — the capacity sweep**): 1, 2, 4, 8, 16, 64 units. The interesting row is 64: train accuracy 0.9550, test accuracy 0.9150. **More capacity, a bigger train-test gap, and (with this seed) a slightly lower test score.** Say plainly that four test rows is within noise. Ask them to name what that looks like. (Overfitting, from Week 2, with a new dial.)
 5. **Zoom into the boundary.** Re-plot with the axes limited to a small window around one bend. The "curve" is visibly made of straight segments. Ask how many bends they can count and compare with 16.
 
 ---
@@ -1137,7 +1137,7 @@ With `tanh` (Week 16) you do get genuinely curved pieces. It is also slower to t
 
 **"What happens if I add a second hidden layer?"**
 
-It works, and it is stretch task 5 in the workbook. Two things to expect. First, the code grows: you need `W3`, `b3`, another line in forward, three more lines in backward. Second, **the gradient check earns its keep** — a two-layer backward pass is where most people's first bug lives, and the check finds it in one second.
+It works, and it is a harder variation (see *If the student is flying*), not a workbook item. Two things to expect. First, the code grows: you need `W3`, `b3`, another line in forward, three more lines in backward. Second, **the gradient check earns its keep** — a two-layer backward pass is where most people's first bug lives, and the check finds it in one second.
 
 Whether the *score* improves on this dataset: probably not much. Two interlocking crescents are not a hard shape. Depth pays off on data with structure in it — parts made of parts, like edges making shapes making objects. That is Week 24.
 
@@ -1228,7 +1228,7 @@ Then three questions and nothing else: **"which line is the learning? which line
 
 None of these need syntax from a later week.
 
-1. **The capacity sweep** (page 19.6) with the 64-unit row and the sentence about what it shows. The gap between train 0.9550 and test 0.9150 is overfitting, arrived at by their own measurement.
+1. **The capacity sweep** (workbook **Build It › Stretch**) with the 64-unit row and the sentence about what it shows. The gap between train 0.9550 and test 0.9150 is overfitting, arrived at by their own measurement.
 2. **The revival experiment** (harder variation 2): 2000 gentle epochs cannot resurrect a dead unit. Then: *"what single number would you have to edit by hand?"*
 3. **All-weights-equal initialization** (harder variation 3), ending with *"how many hidden units does this network really have?"* **This is the cleanest symmetry demonstration in the level.**
 4. **A second hidden layer**, with the gradient check as the referee. Warn them: the check is what makes this a two-hour job instead of a two-day one.
@@ -1303,17 +1303,31 @@ This section is for setting the homework: what to say, and what the student take
 
 **Say this:**
 
-> "About an hour, three pages, and one of them is a file that has to run.
+> "About an hour for the three things I mark hardest, and one of them is a file that has to run. They are all in **Build It** in your workbook.
 >
-> **First, page 19.3 — finish NumPy Brain.** Two things have to be true and I want both pasted: **the gradient check below `1e-6`**, and **test accuracy above 0.90**. Paste the whole log, including the epoch lines. If your gradient check is bigger than `1e-6`, do not train it — find the transpose. Training a wrong backward pass is how you get a mediocre model and no idea why.
+> **First, finish NumPy Brain.** Two things have to be true and I want both pasted: **the gradient check below `1e-6`**, and **test accuracy above 0.90**. Paste the whole log, including the epoch lines, into the training-log table. If your gradient check is bigger than `1e-6`, do not train it — find the transpose. Training a wrong backward pass is how you get a mediocre model and no idea why.
 >
-> **Second, page 19.4 — the boundary at three epochs.** Three panels: epoch 0, epoch 50, epoch 500. Under each one write the training loss and the test accuracy. Then draw an arrow on the third panel pointing at **the exact place it stops being a straight line.**
+> **Second, the boundary at three epochs.** Fill in the three-panel table: epoch 0, epoch 50, epoch 500, with the training loss and the test accuracy for each. Then draw them by hand in **Draw It**, and put an arrow on the third panel pointing at **the exact place it stops being a straight line.**
 >
-> **Third, page 19.5 — and this is the page I am marking hardest. Count the dead ReLUs in the `lr = 20` run**, and write **one sentence** on why a dead unit can never come back. One sentence. The word 'slope' had better be in it."
+> **Third, the dead-unit sentence — this is what I am marking hardest. Count the dead ReLUs in the `lr = 20` run**, and write **one sentence** on why a dead unit can never come back. One sentence. The word 'slope' had better be in it.
+>
+> The rest of the workbook is practice, and I will tell you which parts I want by next week."
 
-**Workbook pages:** 19.1 and 19.2 in class · **19.3, 19.4, 19.5** at home · **19.6** stretch, for anyone who wants it.
+**Workbook sections, and when:**
 
-**Expected time:** 25 min getting the file to pass the check and train · 20 min on the three panels · 15 min on the dead-unit count and the sentence. **About 60 minutes.**
+| Workbook section | When |
+|---|---|
+| ✅ Warm-Up (W1–W5) | In class, first five minutes |
+| 🛠️ Build It › Break It Three Ways (predictions in pen, results, card sentences) | In class, during the activity |
+| ✍️ Practice Set A › A6 (label the shape ladder) | In class, with the ladder on the board |
+| 🛠️ Build It › gradient check and training log · three boundary panels · dead-unit sentence · Bug Log | **At home, required: the marked work** |
+| 🎨 Draw It | **At home, required** (it is the panels, drawn) |
+| 🔢 Do the Maths by Hand (M1–M4) · 🔎 Predict the Output (P1–P4) | At home, recommended; M1 and M4 are the paper versions of the two breakages |
+| ✍️ Practice Set A (A1–A5) · Practice Set B (B1–B5) · 🐞 Fix the Broken Program | Across the week, as practice; B5 is the longest |
+| 🧩 Puzzle of the Week · 🤔 Think Deeper · 📊 Self-Check | Across the week; Think Deeper is a paragraph each |
+| 🛠️ Build It › Stretch — the capacity sweep | Stretch, for anyone who wants it |
+
+**Expected time:** 25 min getting the file to pass the check and train · 20 min on the three panels and Draw It · 15 min on the dead-unit count and the sentence. **About 60 minutes for the required work;** the practice sections are extra and are set across the week.
 
 > **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is the gradient check pasted, and is it below `1e-6`?** A page with a training log and no check has skipped the only hard evidence in the week. **Two — do the three panels have their numbers under them?** Three pictures with no numbers is an art project. **Three — does the dead-unit sentence contain the word 'slope', and does it say 'zero'?** The whole idea is that a dead unit is not sleeping — it is disconnected from the loss, and multiplying zero by any learning rate you like gives zero. A student who writes *"it stops learning because it got too big"* has the story and not the mechanism, and that is worth one line of feedback: **"what is the slope of a unit that outputs zero for every row?"**
 
@@ -1321,66 +1335,378 @@ This section is for setting the homework: what to say, and what the student take
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+This key follows the **workbook, section by section, in the workbook's own order and under its own headings**, using the workbook's item labels (W1, M1, P1, A1–A6, B1–B5, Bug 1–3, T1–T2). The values are the ones in the workbook's own **✅ Answers** section, which earlier reviewers verified; the teacher-only material (wrong-answer maps, marking tips, the two complete files) sits inside **Build It**, where the marked homework lives. The workbook has no "page 19.N" numbering; find things by section name.
 
-### Page 19.1 — Break It Three Ways: predictions and results
+**Marking priority for the week:** Build It first (gradient check, boundary panels, Break It, dead-unit sentence), then Draw It, then everything else as practice.
 
-*Three predictions in pen, then the three real runs. Marks are for **making** the prediction, not for being right.*
+### Warm-Up
 
-| Card | What was changed | Real result | The one-sentence why |
-|---|---|---|---|
-| 1 | every weight in `W1` and `W2` set to zero | **loss 0.6931 at epoch 0, 250 and 500. Test accuracy 0.5000. 16/16 units dead.** | Every hidden output is 0, so the answer is `sigmoid(0) = 0.5` for every row, and `−ln(0.5) = 0.6931`; since `W2` is zero, every gradient into layer 1 is exactly zero, so there is no downhill. |
-| 2 | `lr = 20.0` instead of 0.5 | **final loss 0.4493. Test accuracy 0.8100. 13/16 units dead.** | Giant steps drove thirteen biases far negative (unit 0 ended at `−14.113`), and a unit that outputs zero for every row has slope zero, so it can never move again. |
-| 3 | `init_params(2, 1)` — one hidden unit | **final loss 0.3693. Test accuracy 0.9000. 0/1 dead.** | One ReLU unit gives one hinge, so the boundary is one straight line — it has the capacity to draw the wrong shape only. |
+**W1.** **42.** You **multiply** them: `3 × 14 = 42`. Slopes along a chain multiply — that is the whole of last week in five words.
 
-**The arithmetic for card 1, which is the part to insist on:**
+**W2.** It is **ReLU's own slope**, used as a valve on the way back. Its only two values are **`1.0`** (the unit fired, so blame passes straight through) and **`0.0`** (the unit did not fire, so nothing gets through). It is `(Z1 > 0)`, a grid of `True`/`False`, turned into `1.0`/`0.0`.
 
-```text
-hidden pre-activation:  0 × x1 + 0 × x2 + 0  =  0        (for every row)
-after ReLU:             max(0, 0)            =  0
-output pre-activation:  0 × 0 + ... + 0      =  0
-after sigmoid:          1 / (1 + e^0) = 1/2  =  0.5
-loss:                   −ln(0.5)             =  0.693147
-```
+**W3.** **To make the shapes meet.** `X` is `(200, 2)` and `dZ1` is `(200, 16)`; without the transpose the inner numbers are 2 and 200 and nothing happens. With it, `(2, 200) @ (200, 16)` gives `(2, 16)` — exactly `W1`'s shape.
 
-And measured, to confirm the gradients really are zero, not merely small:
+**W4.** **Hidden unit 1's weight**, because it was **loud** (2.20 against 0.15). The slope is *blame × the value that fed the weight*, so `2.20 × (−0.09975049) = −0.21945108` against `0.15 × (−0.09975049) = −0.01496257`. **Loud units get blamed most** — about fifteen times as much here.
 
-```text
-A2 first three: [0.5 0.5 0.5]   loss 0.6931
--ln(0.5) = 0.6931
-dW1 all zero? True   dW2 all zero? True
-db2 = [[6.07153217e-18]]
-```
+**W5.** **`(16, 1)`** — the same shape as `W2`. **Every gradient has the same shape as the thing it is the gradient of.**
 
-`db2` is `0.00000000000000000607` — floating-point dust. It is not exactly zero because the average of `0.5 − y` over 100 zeros and 100 ones is a subtraction of two equal numbers, which in floating point leaves a speck behind.
+### Do the Maths by Hand
 
-### Page 19.2 — The shape ladder, filled in
+**M1.**
 
-*A batch of 200 rows through 2 → 16 → 1. Give the shape after every line.*
-
-| Line | Answer |
+| p | `−ln(p)` |
 |---|---|
-| `X` | `(200, 2)` |
-| `W1` | `(2, 16)` |
-| `Z1 = X @ W1 + b1` | `(200, 16)` |
-| `A1 = relu(Z1)` | `(200, 16)` |
-| `W2` | `(16, 1)` |
-| `Z2 = A1 @ W2 + b2` | `(200, 1)` |
-| `A2 = sigmoid(Z2)` | `(200, 1)` |
-| `y` | `(200, 1)` |
-| `dZ2 = (A2 - y) / n` | `(200, 1)` |
-| `dW2 = A1.T @ dZ2` | `(16, 1)` — matches `W2` ✅ |
-| `db2` | `(1, 1)` — matches `b2` ✅ |
-| `dA1 = dZ2 @ W2.T` | `(200, 16)` |
-| `dZ1 = dA1 * (Z1 > 0)` | `(200, 16)` |
-| `dW1 = X.T @ dZ1` | `(2, 16)` — matches `W1` ✅ |
-| `db1` | `(1, 16)` — matches `b1` ✅ |
+| 0.9 | **0.1054** |
+| **0.5** | **0.6931** |
+| 0.1 | **2.3026** |
+| 0.02 | **3.9120** |
 
-**And the knob count:** `2 × 16 + 16 + 16 × 1 + 1 = 32 + 16 + 16 + 1 = 65`.
+**M1(a).** **0.5**, giving **0.6931**.
 
-### Page 19.3 — Finish NumPy Brain
+**M1(b).** *All weights zero → the hidden outputs are **0**, so the score is **0**, so `sigmoid` gives **0.5**, so the loss is **−ln(0.5) = 0.6931**.*
 
-*The complete file is in the Prep Checklist.* Running `python3 numpy_brain.py` gives exactly:
+Notice the shape of that column, too: being 90% confident and right costs you 0.1054; being 2% confident and wrong costs you 3.9120. **Log loss punishes confident mistakes hardest.** That is Week 14.
+
+**M2.**
+
+```text
+f(5.001) = 5.001 × 5.001 = 25.010001
+f(4.999) = 4.999 × 4.999 = 24.990001
+
+difference               =  0.020000
+divide by 0.002          = 10.0000
+```
+
+**M2(a).** `2 × 5 = 10`. **They agree exactly**, to four decimal places.
+
+**M2(b).** All **65** knobs. Two forward passes per knob, so 130 extra forward passes — which is why the check is slow and why you run it once, before training, rather than every epoch.
+
+**M3.**
+
+```text
+(a)  (−0.09975049) × (−2.0)  =  +0.19950098
+(b)  2.0 × (+0.19950098)     =  +0.39900196
+(c)  0.15 × (−0.09975049)    =  −0.01496257
+```
+
+**M3(a).** **A negative weight flips the direction of the blame.** Turning unit 2 up would push the score *down*; the score needs to go up, so the slope for unit 2 points the opposite way to unit 1's.
+
+**M3(b).** **Unit 1's weight moves far more**: `−0.21945108` against `−0.01496257`, about fifteen times as much. The rule is **blame × the value that fed the weight** — a loud unit (2.20) collects a big correction, a quiet one (0.15) barely moves.
+
+**M4.**
+
+```text
+weighted sum   =  0.6 × 1.2 + (−2.9) × 0.4  =  0.72 − 1.16  =  −0.44
+plus the bias  =  −0.44 + (−14.113)         =  −14.553
+after ReLU     =  max(0, −14.553)           =  0
+ReLU's slope below zero                     =  0
+the update     =  0 × 0.5                   =  0
+```
+
+**M4(a).** `0 × 1000 = ` **0.** Still nothing. **That is the whole point.**
+
+**M4(b).** *A dead unit can never come back because it outputs zero for every row, so **ReLU's slope there is zero**, so its gradient is zero, and **zero times any learning rate is zero** — no update of any size can move it.*
+
+### Predict the Output
+
+**P1.**
+
+```text
+(5, 3)
+0.0
+```
+
+**Why not 15?** Because every value in `Z1` is exactly `0.0`, and the test is `Z1 > 0` — **strictly greater than.** `0 > 0` is `False`. So all fifteen cells are `False`, all fifteen become `0.0`, and the sum is `0.0`.
+
+*Watch for:* **15**, from a student who read `>` as "is a number". This is not a curiosity. It is exactly what happens in the all-zero-weights sabotage: **every unit's mask is zero, so no blame gets through to layer 1, so `dW1` is exactly zero.**
+
+**P2.**
+
+```text
+(4, 1)
+(4, 4)
+0.0
+```
+
+No error anywhere. **Where did the other 12 numbers come from?** `A2` is a **column** of 4 and `y_flat` is a **row** of 4, so numpy broadcast them into a 4 × 4 grid: every prediction compared with **every** answer, including the three that belong to other rows. The mean of that grid happens to be `0.0` here, which makes it look even more innocent.
+
+*Watch for:* "an error", because the shapes do not match. That is the whole point: they do not match, and numpy carries on. **The question those 12 numbers answer is one nobody asked.** This is the `y.reshape(-1, 1)` bug, in three lines.
+
+**P3.**
+
+```text
+0.5
+0.6931471805599453
+[0.  0.  2.2]
+```
+
+**Was the `0.0` changed?** No — `max(0, 0.0)` is `0.0`. And that is the honest answer to *"what is ReLU's slope at exactly zero?"*: **there isn't one.** The function has a corner there, and `np.maximum` simply returns 0. It is a decision, not a discovery, and it is why the gradient check can fail on data that sits exactly on the corner (see the chapter's Break 3).
+
+**P4.**
+
+```text
+[ True False False]
+1
+[False False False]
+```
+
+**`axis=0` asks:** *"going **down** each column, was every value ≤ 0?"* — one answer per **column**, so three answers for three hidden units.
+
+**`axis=1` asks:** *"going **across** each row, was every value ≤ 0?"* — one answer per **row**, so three answers for three data rows.
+
+**`axis=0` counts dead units**, because a hidden unit *is* a column: column 0 is unit 0's output for all three rows. `axis=1` would tell you which *data rows* got nothing out of any unit, which is a different and much less useful question.
+
+### Practice Set A
+
+**A1.** capacity → **(iii)** · piecewise-linear → **(vi)** · dead ReLU → **(v)** · vanishing gradient → **(i)** · decision boundary → **(ii)** · symmetry → **(iv)**
+
+**A2.**
+
+| Line | Result shape |
+|---|---|
+| `Z1 = X @ W1 + b1` | `(50, 8)` |
+| `A1 = relu(Z1)` | `(50, 8)` |
+| `Z2 = A1 @ W2 + b2` | `(50, 1)` |
+| `A2 = sigmoid(Z2)` | `(50, 1)` |
+| `dZ2 = (A2 - y) / n` | `(50, 1)` |
+| `dW2 = A1.T @ dZ2` | `(8, 1)` |
+| `dA1 = dZ2 @ W2.T` | `(50, 8)` |
+| `dZ1 = dA1 * (Z1 > 0)` | `(50, 8)` |
+| `dW1 = X.T @ dZ1` | `(2, 8)` |
+
+**A2(a).** `2 × 8 + **8** + **8** + **1** = 16 + 8 + 8 + 1 = **33**`.
+
+**A2(b).** **`dW2` and `dW1`**, and you compare them against **`W2` and `W1`**. `dW2` must be `(8, 1)` and `dW1` must be `(2, 8)`. If either disagrees, a transpose is in the wrong place — and you know that without doing any calculus.
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `ValueError: matmul ... (size 16 is different from 2)` on the very first line of `forward` | `size=(n_in, n_hidden)` — **inputs first, units second**: `(2, 16)` |
+| b | `ValueError: matmul ... (size 200 is different from 2)` | `dW1 = X.T @ dZ1` |
+| c | `grid` is `(200, 400)`, then `ValueError: matmul ... (size 2 is different from 400)` | `np.c_[XX.ravel(), YY.ravel()]`, then print `grid.shape` and check `(40000, 2)` |
+| d | `TypeError: Input z must be at least a (2, 2) shaped array, but has shape (40000, 1)` | `.reshape(XX.shape)` |
+| e | **No error.** The loss prints `0.9534` instead of `0.8095`, because `A2 - y` broadcast into `(200, 200)` | `y = y.reshape(-1, 1)`, and **print `y.shape`** |
+| f | **No error.** `db1` comes out flat, `(16,)` instead of `(1, 16)`. `b1 -= lr * db1` still runs, because `(1, 16)` and `(16,)` broadcast — and on this network the final numbers are **identical** (`loss 0.1542`, `test acc 0.9350`). Nothing complains and nothing is visibly wrong; the **shape rule** has quietly been broken and you got lucky | `dZ1.sum(axis=0, keepdims=True)` |
+
+**A3(g).** **e and f.** For **e** the clue is the loss being `0.9534` rather than `0.8095`, and `y.shape` printing `(200,)`. For **f** the clue is `db1.shape` printing `(16,)` when `b1` is `(1, 16)` — **the gradient no longer has the shape of its knob**, which is the one rule you check first. And **f** is the more frightening of the two, because here it does no damage at all: the same rule broken on a differently-shaped bias would broadcast into the wrong grid and be wrong with no warning.
+
+**A4.** i → **Q** · ii → **T** · iii → **S** · iv → **P** · v → **R**
+
+`np.sqrt(2/16) = 0.3535533905932738` is the He spread for the second layer, and `−ln(0.5) = 0.6931471805599453` is the loss of a shrug.
+
+**A5.**
+
+**Log A — one hidden unit.** Giveaway: **`dead units 0/1`** — the denominator says how many hidden units there are. Also the starting loss is `0.6628`, not `0.8095`, because a different-sized network gets different random weights.
+
+**Log B — all weights started at zero.** Giveaway: **the loss is `0.6931` three times and never moves**, and `0.6931 = −ln(0.5)`. Plus `test acc 0.5000` exactly, and `16/16` dead.
+
+**Log C — learning rate 20.** Giveaway: it starts at the normal `0.8095` and does learn a bit (0.8095 → 0.4493), but **13 of 16 units are dead** and the test accuracy is stuck at 0.8100. A too-large learning rate is the only thing on the list that kills most of a layer while still improving.
+
+**Log D — 64 hidden units, and it is a healthy network.** Giveaway: **`0/64`** in the dead count, the lowest loss of the four (`0.1412`), and the gap between **train 0.9550 and test 0.9150**.
+
+**A5(a).** **Log D**, and the problem is **overfitting.** It fits the training crescents better than any other run, and with this seed scores lower on test than the 16-unit network — 0.9150 against 0.9350 (four rows; the gap, not the test score, is the clue). **The tell is the gap between the two accuracy columns, not either number on its own.**
+
+**A6.** The six answers, in order: `(200, 16)` · `(200, 16)` · `(200, 1)` · `(200, 1)` · `(16, 1)` · `(2, 16)`.
+
+**A6(a).** *"Every gradient has exactly the same shape as the thing it is the gradient of."*
+
+**A6(b).** Row 5, `dW2 = A1.T @ dZ2` → `(16, 1)`, which matches **`W2`**. Row 6, `dW1 = X.T @ dZ1` → `(2, 16)`, which matches **`W1`**.
+
+### Practice Set B
+
+**B1.**
+
+```python
+import numpy as np
+
+gx = np.linspace(-2.0, 2.0, 50)
+gy = np.linspace(-1.5, 1.5, 50)
+XX, YY = np.meshgrid(gx, gy)
+grid = np.c_[XX.ravel(), YY.ravel()]
+print("XX", XX.shape, " grid", grid.shape)
+```
+
+```text
+XX (50, 50)  grid (2500, 2)
+```
+
+`2500` is `50 × 50` — one row per point on the page. **If yours says `(50, 100)` you left out `.ravel()`.**
+
+**B2.**
+
+```python
+import numpy as np
+
+
+def dead_units(A1):
+    return int(np.sum(np.all(A1 <= 0, axis=0)))
+
+
+A1 = np.array([[0.0, 2.0, 0.0, 1.0],
+               [0.0, 1.0, 3.0, 0.0],
+               [0.0, 0.5, 0.0, 4.0]])
+print("dead units", dead_units(A1), "/ 4")
+print("which ones:", list(np.flatnonzero(np.all(A1 <= 0, axis=0))))
+```
+
+```text
+dead units 1 / 4
+which ones: [0]
+```
+
+**B2(a).** Because `np.all` means **every single one**, and column 2 has a `3.0` in it. The unit fired on row 1, so it is alive: it contributed something forward, so it will receive some blame backward, so its slope is not zero. **A unit that fires even once for one row is not dead.**
+
+**B3.**
+
+```python
+for h in (1, 4, 16, 64):
+    knobs = 2 * h + h + h + 1
+    print("%2d hidden units -> %3d knobs" % (h, knobs))
+```
+
+```text
+ 1 hidden units ->   5 knobs
+ 4 hidden units ->  17 knobs
+16 hidden units ->  65 knobs
+64 hidden units -> 257 knobs
+```
+
+*(Your `%3d` may line the numbers up slightly differently; the four counts are what matters.)*
+
+**B4.**
+
+```python
+import numpy as np
+from numpy_brain import accuracy, forward, get_data, init_params, train
+
+Xtr, Xte, ytr, yte = get_data()
+P = init_params(2, 8, seed=0)
+hist = train(P, Xtr, ytr, lr=0.5, epochs=500, log_every=0)
+A1 = forward(P, Xtr)["A1"]
+print("8 units: train loss %.4f  train acc %.4f  test acc %.4f  dead %d/8"
+      % (hist[-1], accuracy(P, Xtr, ytr), accuracy(P, Xte, yte),
+         int(np.sum(np.all(A1 <= 0, axis=0)))))
+```
+
+```text
+8 units: train loss 0.2126  train acc 0.9150  test acc 0.9100  dead 0/8
+```
+
+**B4(a).** **The train loss.** `0.2126` against `0.1542` is a clear, un-lumpy difference. The test accuracies are `0.9100` and `0.9350` — five test points apart out of 200, which is not a difference you should trust on its own.
+
+**B5.**
+
+```python
+"""b5.py - break NumPy Brain two ways and report a table."""
+import numpy as np
+from numpy_brain import (accuracy, forward, get_data, init_params, loss_fn,
+                         train)
+
+Xtr, Xte, ytr, yte = get_data()
+
+
+def dead_units(P, X):
+    A1 = forward(P, X)["A1"]
+    return int(np.sum(np.all(A1 <= 0, axis=0)))
+
+
+def run(label, hidden, lr, zero_weights=False):
+    P = init_params(2, hidden, seed=0)
+    if zero_weights:
+        P["W1"] = np.zeros((2, hidden))
+        P["W2"] = np.zeros((hidden, 1))
+    hist = train(P, Xtr, ytr, lr=lr, epochs=500, log_every=0)
+    print("%-18s %10.4f %10.4f %8d/%d"
+          % (label, hist[-1], accuracy(P, Xte, yte), dead_units(P, Xtr), hidden))
+
+
+print("%-18s %10s %10s %10s" % ("run", "loss", "test acc", "dead"))
+run("working (16, 0.5)", 16, 0.5)
+run("all weights zero", 16, 0.5, zero_weights=True)
+run("lr = 20", 16, 20.0)
+```
+
+```text
+run                      loss   test acc       dead
+working (16, 0.5)      0.1542     0.9350        0/16
+all weights zero       0.6931     0.5000       16/16
+lr = 20                0.4493     0.8100       13/16
+```
+
+Runtime about 3 seconds, and the `lr = 20` row also prints `RuntimeWarning: overflow encountered in exp` to the error stream. **That warning is information, not a failure**: `e` to the power of a huge number is bigger than a computer can hold.
+
+### Fix the Broken Program
+
+**Bug 1 — line 15, `W1 = rng.normal(0, 1.0, size=(4, 2))`. A shape bug.**
+
+`Xtr` is `(100, 2)` and `W1` was built `(4, 2)`. The inner numbers of `(100, 2) @ (4, 2)` are **2 and 4**, and they must match. **4 comes from** `W1`'s first dimension (the number of hidden units, put in the wrong slot). **2 comes from** `Xtr`'s second dimension (the number of features).
+
+**The fix:** `size=(2, 4)`. **Inputs first, units second**, always.
+
+**Bug 2 — line 32, `dW1 = Xtr @ dZ1`. A runtime bug: a missing transpose.**
+
+`dW1` must come out **`(2, 4)`**, because `W1` is `(2, 4)` and every gradient has the shape of its own knob. `Xtr` is `(100, 2)` and `dZ1` is `(100, 4)`, so the inner numbers are 2 and 100 — no fit. Turning `Xtr` round gives `(2, 100) @ (100, 4) = (2, 4)`. ✅
+
+**The fix:** `dW1 = Xtr.T @ dZ1`.
+
+**Bug 3 — lines 9–12. The scaler is fitted before the split. A silent logic bug: leakage.**
+
+**Scaling happens first, on all 200 rows, and the split happens afterwards.** That means `StandardScaler` computed its mean and its spread using the 100 rows that were about to become the test set. **The test rows helped decide how the training data was transformed**, so the test score is no longer a measurement of "how does this model do on data it has never seen".
+
+**The fix:**
+
+```python
+Xtr, Xte, ytr, yte = train_test_split(X, y, test_size=0.50,
+                                      stratify=y, random_state=0)
+sc = StandardScaler().fit(Xtr)
+Xtr, Xte = sc.transform(Xtr), sc.transform(Xte)
+```
+
+**Split first. Fit on the training rows only. Then transform both.** That is Week 6's rule, and it holds even when there is no pipeline object to hide behind.
+
+**"Leakage made the score worse, so it did not matter"** — no, and this is the important half of the page. Leakage does not promise to flatter you; it promises to make the number **meaningless**. `0.8700` is not a pessimistic estimate of anything. It is a number produced by a procedure that cannot be repeated on genuinely new data, because genuinely new data does not get to influence the scaler. **A measurement you cannot repeat is not a measurement, whichever direction it happens to point.**
+
+**Ranking, easiest to hardest: bug 1, bug 2, bug 3.** Bug 1 crashes on the first line of the loop and names both numbers. Bug 2 crashes too, but eleven lines further in, and you need the shape ladder to know which of the two operands to turn round. **Bug 3 never says anything at all**, and the only thing that catches it is reading the order of your own first ten lines — or a checklist that says *"where is the scaler fitted?"*
+
+### Puzzle of the Week
+
+**Part 1 — the hinge budget.**
+
+| # | The boundary | Best estimate of smallest number of hidden units |
+|---|---|---|
+| 1 | one straight line | **1** |
+| 2 | a wide V — one kink | **2** |
+| 3 | a Z shape — two kinks | **3** |
+| 4 | a closed triangle | **3** |
+| 5 | a closed square | **4** |
+
+**Part 1(a).** **3 and 4 are both 3.** A Z has two corners and three straight pieces; a triangle has three sides. In both cases the rule of thumb gives about three hinges. Treat the column as *budgets from a rule of thumb, not proven minimums*: the count is roughly *the number of direction changes to make, at least*, and the real minimum can differ (two units already give a three-piece boundary, and a Z with parallel ends needs extra units for a sloping middle). Accept any answer that gives a reason for its count.
+
+**Part 1(b).** **Because the network is not trying to use its hinges. It is trying to make the loss smaller.** A hinge only earns its keep if bending there moves points to the right side of the boundary. Be careful: it is not true that more bends could not help, because 16 units reach a train loss of 0.1542 against 0.3565 for 4. With seed 0 the 4-unit run simply settled in a poor spot (one unit dead, the rest not bending usefully), and other seeds of the 4-unit network reach about 0.93 train accuracy. Accept anything that says *"training did not find the useful bends"*, and do not accept *"the data did not need them"*.
+
+**Part 1(c).** *Capacity is **permission** to bend, not **an instruction** to.*
+
+**Part 2 — two crescents.** Answers will vary, and that is fine. Typical: one straight line leaves about **20 to 30** points wrong out of 200; one bend leaves about **10 to 15**; two bends leaves a handful; and **two or three bends is usually enough** to get as close as the noise allows.
+
+**Part 2(a).** Because **you do not know in advance how many bends the data needs**, and there is no formula. Sixteen is a cheap, safe over-estimate: it costs 65 numbers and under a second, and it lets the network find out for itself. **This is also honest about a real limitation** — nobody has a rule for choosing this number, and what professionals actually do is try a few and look at the validation score.
+
+**Part 2(b).** **On the noise.** A likely answer: the extra 48 hinges bent themselves around individual training points that happened to sit on the wrong side because of `noise=0.25`. Train accuracy rose to 0.9550 while test accuracy was 0.9150, so those bends may describe the training set more than the crescents. (That is a hypothesis: this is one seed, 0.9150 against 0.9350 is only four test rows, and across five seeds the 16- and 64-unit test scores overlap. The train-test gap is the clue.)
+
+### Think Deeper
+
+**T1 — a model answer.** On a big network you cannot check every knob, and *"so I won't check anything"* is the worst possible response — it is exactly the position that lets a wrong backward pass live for months. What people actually do is **check a random sample**: pick twenty knobs, nudge those, compare those twenty. If all twenty agree to eight decimals, the odds that the whole backward pass is wrong are very small, because a bug in a transpose or a mask affects whole arrays, not individual cells. You can also check **on a tiny version of the same architecture** — 3 rows, 2 hidden units — where checking everything takes a second and the code is identical. And there is a third trick: **check the shapes**, which is free and catches most of what the gradient check would have caught. The general principle worth writing down: *when a complete check is impossible, a sampled check is enormously better than none.*
+
+**T2 — a model answer.** A hidden unit is a **slot**, not a thing. Nothing in the code says what unit 7 is for; it has no name and no job description. What it becomes is decided entirely by where it happened to start and which direction the gradients then pushed it. That is why identical starting weights are fatal: with nothing to distinguish the slots, the gradients cannot distinguish them either, and sixteen slots collapse into one repeated unit — our own run had all sixteen columns at `0.20411` to six decimal places. So **the randomness is not noise to be tolerated; it is the thing that makes specialisation possible.** A good answer might add that this is uncomfortable: it means the units of a trained network have no fixed meaning, two runs with different seeds produce completely different-looking hidden layers that score the same, and "what does unit 7 detect?" is a much harder question than it sounds. That is a real open area, not a gap in this course.
+
+### Build It
+
+*Finish NumPy Brain. This is the section to mark hardest: everything a student pastes here can be checked against the real output below.*
+
+#### The gradient check and the training log
+
+*The complete `numpy_brain.py` is in the Prep Checklist.* Running `python3 numpy_brain.py` gives exactly:
 
 ```text
 Xtr (200, 2)  ytr (200, 1)  Xte (200, 2)
@@ -1397,9 +1723,21 @@ final train acc 0.9350
 final test  acc 0.9350
 ```
 
-**Marking:** gradient check `4.792e-08` (accept anything below `1e-6`), final test accuracy `0.9350` (accept anything above 0.90 if all three seeds are set). **Runtime under 1 second.**
+`y.shape` is `(200, 1)`. The check `4.792e-08` is well below `1e-6`. **Marking:** accept any gradient check below `1e-6` and any final test accuracy above 0.90 if all three seeds are set (`make_moons`, `train_test_split`, `init_params`). The straight-line wall was **0.8950**. Runtime under 1 second. A log with no gradient check pasted has skipped the only hard evidence in the week.
 
-### Page 19.4 — The boundary at epochs 0, 50 and 500
+#### The three boundary panels
+
+*The workbook table asks for epoch, train loss, test accuracy and "straight or bent?" for each panel, then which two panels the accuracy arrived between and what the last 450 epochs bought.*
+
+| panel | epoch | train loss | test acc | straight or bent? |
+|---|---|---|---|---|
+| 1 | 0 | 0.8095 | 0.6450 | **a V** — one sharp corner, in a poor place |
+| 2 | 50 | 0.3104 | 0.9150 | **a few bends**, and it has moved into the gap |
+| 3 | 500 | 0.1542 | 0.9350 | **more bends**, following the gap and turning at both ends |
+
+**Most of the accuracy arrived between panels 1 and 2** — 0.6450 to 0.9150 in fifty epochs.
+
+The last 450 epochs bought **`0.9350 − 0.9150 = 0.0200`** of accuracy, and a much lower loss (0.3104 → 0.1542). **They were mostly making the network more confident about points it already had right**, which improves log loss and does nothing to accuracy.
 
 The complete file:
 
@@ -1476,7 +1814,45 @@ epoch 500  loss 0.1542  test acc 0.9350
 
 **The arrow on panel 3** should point anywhere along the section where the boundary changes direction — typically the sweep near the upper-left crescent tip. Accept any location on the curved section; the answer being marked is *"it is not straight here"*, not a coordinate.
 
-### Page 19.5 — Dead ReLUs in the `lr = 20` run
+#### Break It Three Ways
+
+*Three predictions in pen, then the three real runs. Marks are for **making** the prediction, not for being right.*
+
+| card | final loss | test accuracy | dead units |
+|---|---|---|---|
+| 1 — all weights zero | **0.6931** | **0.5000** | 16/16 |
+| 2 — `lr = 20` | 0.4493 | **0.8100** | **13/16** |
+| 3 — one hidden unit | 0.3693 | **0.9000** | 0/1 |
+| *(working)* | 0.1542 | 0.9350 | 0/16 |
+
+**Typical wrong predictions**, so you can mark your own honestly: card 1 usually gets *"it learns more slowly"* (wrong — it does not learn at all); card 2 usually gets *"chaos"* or *"`nan`"* (half right); card 3 usually gets *"much worse, maybe 60%"* (wrong, and this is the one that surprises people).
+
+**Card 1:** *"Every weight was zero so every hidden unit output zero, so the answer was always `sigmoid(0) = 0.5` and the loss was `−ln(0.5) = 0.6931`; and since `W2` was zero, every gradient into layer 1 was exactly zero, so there was no downhill to walk."*
+
+**Card 2:** *"One giant step drove thirteen biases far negative, and a unit that never fires has slope zero, so no learning rate can wake it up again."*
+
+**Card 3:** *"One ReLU unit gives one hinge, so the boundary can only be one straight line, and the crescents need bends."*
+
+**The arithmetic for card 1, which is the part to insist on:**
+
+```text
+hidden pre-activation:  0 × x1 + 0 × x2 + 0  =  0        (for every row)
+after ReLU:             max(0, 0)            =  0
+output pre-activation:  0 × 0 + ... + 0      =  0
+after sigmoid:          1 / (1 + e^0) = 1/2  =  0.5
+loss:                   −ln(0.5)             =  0.693147
+```
+
+And measured, to confirm the gradients really are zero, not merely small:
+
+```text
+A2 first three: [0.5 0.5 0.5]   loss 0.6931
+-ln(0.5) = 0.6931
+dW1 all zero? True   dW2 all zero? True
+db2 = [[6.07153217e-18]]
+```
+
+`db2` is `0.00000000000000000607` — floating-point dust. It is not exactly zero because the average of `0.5 − y` over 100 zeros and 100 ones is a subtraction of two equal numbers, which in floating point leaves a speck behind.
 
 The complete file:
 
@@ -1557,22 +1933,24 @@ first loss 0.8095   last loss 0.1542
 test acc 0.9350   dead units 0/16
 ```
 
+#### The dead-unit sentence (marked hardest)
+
+**The dead-unit answers.** **13 of 16.** The dead ones are units 0, 1, 2, 3, 6, 7, 8, 9, 10, 11, 13, 14 and 15; the three survivors are 4, 5 and 12. **Unit 0's final bias is `−14.113`.**
+
+**The model sentence:** *"Unit 0 ended with a bias of −14.113, so its weighted sum is below zero for every one of the 200 rows; ReLU's output is 0 and ReLU's **slope** is **zero**, and zero slope times any learning rate is zero change — so it can never move again."*
+
 **The count: 13 out of 16.** The dead units are numbers 0, 1, 2, 3, 6, 7, 8, 9, 10, 11, 13, 14 and 15. The three survivors are 4, 5 and 12.
-
-**The model sentence:**
-
-> *"Unit 0 ended with a bias of −14.113, so its weighted sum is below zero for every one of the 200 rows; ReLU's output is 0 and ReLU's slope is 0, and zero slope times any learning rate is zero change — so it can never move again."*
 
 **Accept:** any sentence containing (a) output zero for every row, and (b) therefore slope zero, and (c) therefore no update. **Do not accept:** "it got stuck", "the weights got too big", "it stopped learning" — those are the symptom, not the mechanism.
 
-**And the evidence that it is permanent**, which is worth showing a student who doubts it:
+**And the evidence that it is permanent**, which is worth showing a student who doubts it. The workbook asks how many were still dead after 2000 more epochs at `lr = 0.5`: **13**.
 
 ```text
 after 2000 more epochs at lr 0.5, dead count: 13 /16
 test acc now 0.8050
 ```
 
-### Page 19.6 — Capacity sweep (stretch)
+#### Stretch — the capacity sweep
 
 *Train 1, 2, 4, 8, 16 and 64 hidden units for 500 epochs at `lr = 0.5`. Record train loss, train accuracy, test accuracy and the knob count. Then two sentences.*
 
@@ -1603,6 +1981,22 @@ Real output:
 2. *"With this seed, test accuracy peaks at 16 units and is lower at 64 (0.9350 against 0.9150, four test rows out of 200). The 64-unit network fits the training crescents more tightly than it carries over to new data: train 0.9550, test 0.9150. That looks like overfitting, and the gap between the two columns is the clue; one seed cannot show it is more than noise."*
 
 **The interesting extra observation, worth full credit if unprompted:** 1, 2 and 4 units all score the same 0.8350 on train. Four hinges are available but, with seed 0, training only finds a use for one or two. It is not that the data does not need more (16 units reach train loss 0.1542 against 0.3565 for 4); gradient descent settled in a poor spot, and other seeds of the 4-unit network reach about 0.93 train accuracy. **Capacity is permission to bend, not an instruction to.**
+
+#### The Bug Log
+
+The workbook leaves this table for the student's own entries ("one loud, one silent"), so there is no single right answer. The two entries from today's lesson are the ones to expect: **loud** — `ValueError: matmul ... (size 200 is different from 2)`, meaning the arrangement is wrong, cause `dW1 = X @ dZ1`, fix `X.T @ dZ1`; **silent** — the starting loss prints `0.9534` instead of `0.8095` with no error, meaning `A2 - y` broadcast into `(200, 200)`, cause `y` not reshaped, fix `y.reshape(-1, 1)` and print `y.shape`. Any genuine entry with all four columns filled in is full marks.
+
+### Draw It
+
+**A good drawing has:** three panels; panel 1 a V (one sharp corner) lying somewhere unhelpful; panel 2 a line with **a few** visible bends, sitting in the gap between the crescents; panel 3 a line that follows the gap and **turns at both ends**; the two numbers written under each panel (0.8095 / 0.6450, 0.3104 / 0.9150, 0.1542 / 0.9350); and an arrow on panel 3 pointing at any part of the curved section. **Accept any location on the curved section** — the answer being marked is *"it is not straight here"*, not a coordinate.
+
+**Which panel is a V with one sharp corner?** Panel 1. **A few bends in the gap?** Panel 2.
+
+**Segments countable on panel 3:** typically **three to six** by eye. That is **fewer than 16**, and it is not a problem: sixteen units give you *up to* sixteen hinges, and the network only uses the ones that lower the loss. Several of them end up nearly in line with each other, so you cannot see the join. **Permission, not instruction — for the third time this week.**
+
+### Self-Check answers
+
+There are no right answers to a self-check, but here is the honest bar for the middle box on each line: 😀 means you could do it now, on a blank file, without looking anything up. 🙂 means you could do it with your chapter open. 😕 means it is the thing to ask about first — and **"say why a dead unit can never come back, in terms of slope"** is the one to make sure is not a 😕, because Weeks 20 to 27 all lean on it.
 
 ### Answers to every question posed in the lesson
 

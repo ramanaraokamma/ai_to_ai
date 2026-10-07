@@ -15,7 +15,7 @@
 | **New maths** | **None.** Everything this week is arithmetic they already own: a multiply, a sum, and Week 13's `1 ÷ (1 + e^−z)`. **This is deliberate — the week's difficulty is honesty, not algebra.** |
 | **New syntax** | `TfidfVectorizer(ngram_range=(1, 2))` · `make_pipeline(vec, clf)` · `clf.coef_[0]` · `np.argsort(coefs)[:15]` |
 | **Dataset** | **80 reviews typed by the student** — 40 positive, 40 negative — plus **12 hand-written negation traps** held out and never trained on. Nothing downloads. `reviews80.py` is the whole dataset and it is 110 lines of typing. |
-| **Materials** | Printed workbook pages 33.1–33.8 · **a big wall sheet headed THE TWELVE TRAPS**, twelve numbered rows, three columns: `my prediction`, `single words`, `glued negators` · **pens, not pencils** — predictions go in and cannot be edited · THE VOCABULARY sheet from Week 31, still up · the Bug Log |
+| **Materials** | Printed workbook (all of it; the marked homework is 🛠️ Build It, pages 33.3–33.8 — there is no page 33.1 or 33.2) · **a big wall sheet headed THE TWELVE TRAPS**, twelve numbered rows, three columns: `my prediction`, `single words`, `glued negators` · **pens, not pencils** — predictions go in and cannot be edited · THE VOCABULARY sheet from Week 31, still up · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, matplotlib, scikit-learn. **No new installs. No torch this week.** |
 | **Prep time** | 35 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `sentiment.py` **1 second**. `five_tries.py` **under 1 second** — it fits five models. `picture.py` **1 second**. **Nothing in this week takes longer than a breath, which means there is no excuse for not running it four times.** |
@@ -793,9 +793,9 @@ print("   is 'not' in the vocabulary?", "not" in set(words))
    is 'not' in the vocabulary? False
 ```
 
-- [ ] **Type and run `five_tries.py`.** This one fits five models and still finishes in under a second. **The complete file is in the Answer Key, page 33.7.** Check you get `0, 0, 0, 6, 7`.
+- [ ] **Type and run `five_tries.py`.** This one fits five models and still finishes in under a second. **The complete file is in the Answer Key, under Build It page 33.5.** Check you get `0, 0, 0, 6, 7`.
 
-- [ ] **Type and run `picture.py`.** Look at `reviews_pca.png` before the lesson so you are not surprised by how mixed it looks. **The full file is in the Answer Key, page 33.6.** Check the two percentages come out `10.58` and `4.49`.
+- [ ] **Type and run `picture.py`.** Look at `reviews_pca.png` before the lesson so you are not surprised by how mixed it looks. **The full file is in the Answer Key, under Build It page 33.6.** Check the two percentages come out `10.58` and `4.49`.
 
 - [ ] **Make THE TWELVE TRAPS wall sheet.** Twelve numbered rows, the review text written out, then three empty columns: `my prediction`, `single words`, `glued negators`. **Write the twelve reviews out by hand — it takes eight minutes and it means the sheet is up and readable before the lesson starts.**
 
@@ -807,7 +807,7 @@ print("   is 'not' in the vocabulary?", "not" in set(words))
 - [ ] `python3 reviews80.py` once, so the folder is proven before the class is watching.
 - [ ] THE TWELVE TRAPS sheet up, blank. **Pens out, not pencils.**
 - [ ] THE VOCABULARY sheet from Week 31 still up; add a blank line for the five new words.
-- [ ] Workbook 33.1 out, which is the prediction sheet.
+- [ ] The prediction sheet is the wall sheet, not a workbook page; the workbook itself stays closed until the homework is set.
 - [ ] Bug Log out.
 
 ### Fallback if the laptops fail
@@ -1316,7 +1316,7 @@ And the sentence for this week:
 ### Setup
 
 - `reviews80.py`, `sentiment.py`, `gauntlet.py` already in the folder and already run.
-- Workbook page 33.1 with the twelve predictions already in pen.
+- The `my prediction` column of the wall sheet with the twelve predictions already in pen (there is no workbook page for this).
 - THE TWELVE TRAPS wall sheet, `single words` column filled in with twelve crosses.
 - **One new file: `five_tries.py`.** They type it once and change two arguments.
 
@@ -1448,7 +1448,7 @@ mark_negation('not fresh and not hot') -> 'not_fresh and not_hot'
 mark_negation('hardly a delicious meal') -> 'hardly_delicious meal'
 ```
 
-**Do this:** Then all five configurations. **The complete `five_tries.py` is in the Answer Key, page 33.7.**
+**Do this:** Then all five configurations. **The complete `five_tries.py` is in the Answer Key, under Build It page 33.5.**
 
 ```text
 1 single words                   cols=97    held-out=1.0000  traps=0/12
@@ -1468,7 +1468,7 @@ mark_negation('hardly a delicious meal') -> 'hardly_delicious meal'
 >
 > Be pleased. **You have ninety seconds.**"
 
-**Finished looks like:** the wall sheet's `glued negators` column filled in — six ticks, six crosses — and the five-row table copied onto page 33.4.
+**Finished looks like:** the wall sheet's `glued negators` column filled in — six ticks, six crosses — and the five-row table copied onto Build It page 33.5.
 
 ---
 
@@ -1530,7 +1530,7 @@ bias: 0.0124
 >
 > So the honest report on round two is: **negation marking recovered six of twelve, but five of the six were decided by the bias rather than by evidence, so the real improvement is one trap, number five, where three real words survived.** That sentence is worth more than the number 6."
 
-**Finished looks like:** a written sentence on page 33.4 containing the words *abstain* or *deleted* or *bias*, and the number `0.5188` circled.
+**Finished looks like:** a written sentence on Build It page 33.5 containing the words *abstain* or *deleted* or *bias*, and the number `0.5188` circled.
 
 ### Variation — easier
 
@@ -1751,19 +1751,34 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, four pages, and the fourth one is the one I mark hardest.
+> "About an hour, four pages out of the Build It section at the back of your workbook, and the fourth one is the one I mark hardest.
 >
-> **First, page 33.3 — the report and the baseline.** Per-class precision and recall for your model **and** for `DummyClassifier(strategy="most_frequent")`, printed side by side, and then **one sentence saying why your model's score is not as impressive as it looks.** I want a reason, not modesty. **'Only twenty reviews' is a reason. 'I could do better' is not.**
+> **First, Build It page 33.3 — the report and the baseline.** Per-class precision and recall for your model **and** for `DummyClassifier(strategy="most_frequent")`, printed side by side, and then **one sentence saying why your model's score is not as impressive as it looks.** I want a reason, not modesty. **'Only twenty reviews' is a reason. 'I could do better' is not.**
 >
-> **Second, page 33.4 — the fifteen and the fifteen.** Both lists, with the document-frequency column, and then **ring every word that rests on one or two of the sixty reviews and count them.** In mine there are seven. **Then one sentence: what would you have to do to find out whether `fluffy` really is a positive word?** There is a correct answer and it involves typing.
+> **Second, Build It page 33.4 — the fifteen and the fifteen.** Both lists, with the document-frequency column, and then **ring every word that rests on one or two of the sixty reviews and count them.** In mine there are seven. **Then one sentence: what would you have to do to find out whether `fluffy` really is a positive word?** There is a correct answer and it involves typing.
 >
-> **Third, page 33.5 — the unigram-versus-bigram table.** Five rows: single words, plus pairs, plus pairs and eight negation reviews, glued negators, glued plus eight. Columns for the number of features, the held-out score and the trap score. **And then the thing I actually want: for the row that scored best on the traps, print which words still had a column, and say whether it was a fix or an abstention.**
+> **Third, Build It page 33.5 — the unigram-versus-bigram table.** Five rows: single words, plus pairs, plus pairs and eight negation reviews, glued negators, glued plus eight. Columns for the number of features, the held-out score and the trap score. **And then the thing I actually want: for the row that scored best on the traps, print which words still had a column, and say whether it was a fix or an abstention.**
 >
-> **Fourth, page 33.8 — the post-mortem, and this is the page I care about.** Pick **one** wrong prediction. Not a summary of all twelve — **one.** And write me four things: the review, what the model said and how confident it was, **the arithmetic** — every token, its tf-idf value, its coefficient and its contribution, adding up to the total — and then **the mechanism**. The mechanism has to name word order or the missing column. **'The model was wrong' is not a mechanism. 'The model does not understand English' is not a mechanism.** And then the last line: **the smallest change that would fix it.** Smallest. **'Use a neural network' is not the smallest change and it scores nothing.**
+> **Fourth, Build It page 33.8 — the post-mortem, and this is the page I care about.** Pick **one** wrong prediction. Not a summary of all twelve — **one.** And write me four things: the review, what the model said and how confident it was, **the arithmetic** — every token, its tf-idf value, its coefficient and its contribution, adding up to the total — and then **the mechanism**. The mechanism has to name word order or the missing column. **'The model was wrong' is not a mechanism. 'The model does not understand English' is not a mechanism.** And then the last line: **the smallest change that would fix it.** Smallest. **'Use a neural network' is not the smallest change and it scores nothing.**
 >
 > Page 33.6 is the PCA plot, which is quick. Page 33.7 is a stretch and it is the best question in the set: **what would have happened to the six `0.5188` rows if your training set had been forty negative reviews and twenty positive ones?**"
 
-**Workbook pages:** 33.1, 33.2 in class · **33.3, 33.4, 33.5, 33.8** at home · 33.6 quick · 33.7 optional.
+**Workbook sections:** the workbook has no page 33.1 or 33.2 — the in-class twelve predictions live on the wall sheet, not in the workbook. This is a lab week, so the marked homework is 🛠️ Build It: **pages 33.3, 33.4, 33.5, 33.8** at home · 33.6 quick · 33.7 optional. The rest of the workbook, in the order it is printed:
+
+| Workbook section | Items | Suggested use |
+|---|---|---|
+| ✅ Warm-Up | W1–W5 | Short; last week's maths. Set it before the lesson or as a starter. |
+| 🔢 Do the Maths by Hand | M1–M4 | Calculator only. M1 is the same arithmetic as the post-mortem on trap 2, so it is the best rehearsal for page 33.8. |
+| 🔎 Predict the Output | P1–P4 | In pen, before running anything. P1 and P2 match what they meet in live-code Step 2; P4 matches Round 1. |
+| ✍️ Practice Set A — Read It | A1–A6 | A2 matches page 33.3, A5 and A6 match page 33.5. |
+| ✍️ Practice Set B — Write It | B1–B5 | B2, B4 and B5 are the same code as pages 33.3, 33.5 and 33.6, so a student who has done the Build It pages has done them. |
+| 🐞 Fix the Broken Program | Bugs 1–3 | Pick-up work; Bug 3 is the week's finding. |
+| 🧩 Puzzle of the Week | (a)–(g) | Optional; the proof that no single weight for `not` works. |
+| 🤔 Think Deeper | T1, T2 | Paragraph answers; mark with the rubric in the Answer Key. |
+| 🎨 Draw It | one drawing | Optional; the picture of the mechanism. |
+| 📊 Self-Check | 15 rows | Last five minutes of the homework. |
+
+Only the Build It pages have a time estimate in the workbook (about 60 minutes in all). **The split above is a suggestion; nothing in the lesson plan depends on it.**
 
 **Expected time:** 10 min on the report · 15 min on the two lists · 20 min on the five-row table · 20 min on the post-mortem · **about 65 minutes**, plus 15 more for the stretch.
 
@@ -1775,7 +1790,9 @@ Three checks, five minutes, exact wording.
 
 Every question restated, so you can mark from this page alone. **Every output below was produced by running the code.**
 
-### Page 33.1 — The twelve predictions (in class)
+**The key follows the order the workbook is printed in:** Warm-Up, Do the Maths by Hand, Predict the Output, Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, 🛠️ Build It (pages 33.3–33.8), Draw It, Self-Check. The workbook's own ✅ Answers section agrees with everything here; this key adds the wrong-answer maps and marking advice. **Two in-class items come first and have no workbook page at all** — the wall sheet and the live-code Step 2.
+
+### The wall sheet — The twelve predictions (in class; not a workbook page)
 
 *Write down, in pen, what the model will say about each of the twelve traps.*
 
@@ -1808,7 +1825,7 @@ score on the twelve traps: 0 out of 12
 
 **Note for marking the class as a whole:** the six negative traps are all predicted positive and the six positive traps are all predicted negative. **Every single one is wrong in the direction you would predict if the model simply ignored the negators, which is exactly what it did.** That symmetry is worth pointing out — it is the fingerprint of the mechanism, not of bad luck.
 
-### Page 33.2 — Build the pipeline (in class)
+### Live-code Step 2 — Build the pipeline (in class; not a workbook page — P1 and P2 revisit it)
 
 *Build the pipeline, print the shapes, and answer three questions.*
 
@@ -1842,6 +1859,235 @@ Ninety-seven weights, one per column, **plus one bias**, which is the number add
 
 **Q3 — The held-out review `"i would not order from here again"` contains the word `not`. Does `not` have a column?**
 **No.** That review is in the held-out twenty, so it played no part in building the vocabulary. **The word is deleted when the review arrives.** `"not" in set(words)` → `False`. **And this is the entire cause of everything that happens later in the lesson.**
+
+### ✅ Warm-Up (W1–W5)
+
+*Five questions about last week. Mark each for the number and for the named step.*
+
+**W1.** `idf = ln( (1 + n) ÷ (1 + df) ) + 1 = ln( 6 ÷ 4 ) + 1 = ln(1.5) + 1 = 0.405465 + 1 = 1.405465`. **Wrong answer to expect:** `ln(5 ÷ 3) + 1 = 1.5108` — the textbook formula without sklearn's added ones. Fine to discuss, not the workbook's answer.
+
+**W2.** `df = 3`. **The discipline: say the word "documents" out loud every time you say "df".** `cold` has occurrences 4, documents 3; the repeat inside one review is already recorded in that review's `tf`. **Wrong answer to expect: `4`.**
+
+**W3.** **36.87 degrees.** It is **not 80 per cent** of anything. (`0.4` is 66.4 degrees, which is not twice 36.87.)
+
+**W4.** `4.197225 ÷ 0.903782 = 4.6441` · step skipped: **the L2 normalization** · it is: **`tf × idf` before the row was divided by its own length.** A correct number in the wrong units; `4.6441` is that row's length.
+
+**W5.** *"Cosine similarity multiplies matching positions, and each of those four words is present in one review and absent from the other, so each contributes `something × 0 = 0`."* The words that disagree are invisible to the measure.
+
+### 🔢 Do the Maths by Hand (M1–M4)
+
+*Calculator only. This is the post-mortem arithmetic, done on paper.*
+
+**M1 — trap 2, `"not tasty and not generous"`, true label negative.**
+
+| token | tf-idf value | × coefficient | = contribution |
+|---|---:|---:|---:|
+| `not` | — | **no column** | **+0.0000** |
+| `tasty` | 0.7049 | **+2.1873** | **+1.5418** |
+| `and` | 0.2268 | **+0.0629** | **+0.0143** |
+| `not` | — | **no column** | **+0.0000** |
+| `generous` | 0.6721 | **+2.4595** | **+1.6531** |
+| bias | — | — | **+0.0124** |
+| | | **total** | **+3.2216** |
+
+**(b)** `e^−3.2216 = 0.039891`; `1 ÷ ( 1 + 0.039891 ) = 1 ÷ 1.039891 = 0.961639`. **(c)** Yes, `0.9616`; sklearn says `0.9616`. **(d)** The mechanism: **`not` has no column, because no training review contains it, so both occurrences were deleted before the arithmetic began** and what reached the classifier was effectively `tasty and generous`. **"The model is bad at negation" is the symptom and earns half marks.** *This is the same table as the trap-2 reference at the end of Build It page 33.8.*
+
+**M2 — pricing out "give `not` a big negative weight".**
+
+**(a)** `total = 4.0222 + 0.8c`. **(b)** `c = −2.2`: `total = 4.0222 − 1.7600 = 2.2622`, `e^−2.2622 = 0.104121`, `p = 1 ÷ 1.104121 = 0.9057`, **still wrong**, and over 90% confident. **(c)** `c = −4.0222 ÷ 0.8 = −5.0278`. **(d)** *"`−5.03` is more than fifty per cent more negative than `cold` (`−3.2388`), the strongest opinion this model holds about anything, so it is a weight the model would never plausibly learn."* The Puzzle then proves something stronger: no `c` works at all.
+
+**M3 — where `0.5188` comes from.**
+
+**(a)** `e^−0.0124 = 0.987677`; `p = 1 ÷ 1.987677 = 0.503100`. **(b)** `total = 0.0124 + ( 1.0000 × 0.0629 ) = 0.0753`; `p = 1 ÷ (1 + e^−0.0753) = 0.518816`, so **`0.5188`**. **(c)** *"Nothing: a coin toss leaning by a hair. It had one meaningless word and its own bias."* **(d)** **Abstention** — the repair deleted the evidence, so the answer is the **bias** plus `and`'s tiny weight, squashed. **A score built on abstentions measures class balance, not the repair.** Needs the word "bias".
+
+**M4 — cosine pointed at trap 1.**
+
+**(a)** `and` `0.2461 × 0.1143 = 0.0281` · `fresh` `0.6716 × 0.3118 = 0.2094` · `hot` `0.6988 × 0.3244 = 0.2267` · total `0.4642`. **(b)** `cos⁻¹(0.4642) = 62.3 degrees`. **(c)** After tokenizing, trap 1's row is exactly `and`, `fresh`, `hot`, two of which make the training review positive, so the geometry and the classifier are reading the same row, and it is a positive row. **(d)** **`not`** — and it is nowhere, because it has no column, so it cannot appear in a shared-words list, a cosine or a contribution table. Real run, nearest four: `0.4642` (`the burger was hot and the salad was fresh`), `0.4578`, `0.3430`, `0.3183` — all four are positive reviews.
+
+### 🔎 Predict the Output (P1–P4)
+
+*In pen, before running. Mark on honesty of the prediction; mark the explanation on accuracy.*
+
+**P1 — the five shapes.**
+
+```text
+vec.transform(X_train).shape: (60, 97)
+clf.coef_.shape            : (1, 97)
+clf.coef_[0].shape         : (97,)
+clf.intercept_.shape       : (1,)
+predict_proba(TRAP).shape  : (12, 2)
+```
+
+**The `1` counts coefficient rows, and a two-class logistic regression needs exactly one** (positive above the line, negative below). **A five-class problem would give `(5, 97)`.** **The shape everybody gets wrong is `coef_`**: they predict `(97,)`. This is the same fact as live-code Step 4's `axis 0 with size 1`.
+
+**P2.** `KeyError: 'tfidf'`. The line that asks: `print(pipe.named_steps.keys())`, giving `dict_keys(['tfidfvectorizer', 'logisticregression'])`. **`make_pipeline` chose the names** (class name, lowercase). Same as Q1 of Live-code Step 2 above.
+
+**P3.** Line 1: `ValueError: Iterable over raw text documents expected, string object received.` Line 2: `[1]`. **A pipeline built on a vectorizer always wants a collection of documents, even for one review: square brackets, always.** Note the answer is `[1]`, an array, not a bare `1`.
+
+**P4.**
+
+```text
+columns: 318
+  not fresh    has a column? False
+  and not      has a column? False
+  was not      has a column? False
+  not hot      has a column? False
+  and the      has a column? True
+traps: 0 of 12
+p(pos) trap 1: 0.9167
+```
+
+**`not fresh` has no column because those two words were never adjacent in a training review, and they could not have been: `not` does not occur in the sixty training reviews at all.** 221 pair columns were added (97 → 318) and none contains a negator. Trap 1 drops from `0.9824` to `0.9167`: fractionally less sure, exactly as wrong. This is Round 1 of the activity.
+
+### ✍️ Practice Set A — Read It (A1–A6)
+
+**A1.** word embedding **(iv)** · distributional hypothesis **(v)** · co-occurrence matrix **(i)** · negation trap **(iii)** · learned coefficient **(ii)**.
+
+**A2.** The report is the one printed under Build It page 33.3. **(a)** It says negative to everything, so recall `1.000` is free; **the number that destroys the boast is the precision beside it, `0.500`.** **(b)** It called all 20 negative and 10 were: `10 ÷ 20 = 0.500`. **(c)** It never predicted positive, so there are no positive predictions to be right about (precision `0.000`) and it caught none of the ten (recall `0.000`). **(d)** One review is `0.05`, five percentage points; `1.000` and `0.950` are **one review apart**. **(e)** Any of the three acceptable sentences listed under Build It page 33.3 is full marks, and it must not contain "good". **Wrong answer to expect: "because 20 is a small number" with nothing after it.**
+
+**A3.** **(1)** `np.argsort(clf.coef_)` sorts inside a `(1, 97)` grid and `[:15]` takes the first fifteen *rows* of a one-row thing, so `top` is `(1, 97)` and **no error is raised**; fix `np.argsort(clf.coef_[0])[:15]`. **(2)** The vectorizer was fitted on all eighty reviews, so the vocabulary and every `idf` have seen the test rows; it prints `held out: 1.0` and the betraying number is **a vocabulary of 107 instead of 97** (ten words exist only in the held-out reviews, one of them `not`). **(3)** `get_feature_names_out()` before `fit` raises `NotFittedError: Vocabulary not fitted or provided`. **Raises: (3). Silent grid: (1). Most dangerous: (2)**, the only one that produces a believable number.
+
+**A4. Label the contribution table.** (Trap 1.)
+
+| token | tf-idf | coefficient | contribution |
+|---|---:|---:|---:|
+| `not` | — | **no column at all** | **+0.0000** |
+| `fresh` | 0.6716 | **+2.8648** | **+1.9241** |
+| `and` | 0.2461 | **+0.0629** | **+0.0155** |
+| `not` | — | **no column at all** | **+0.0000** |
+| `hot` | 0.6988 | **+2.9625** | **+2.0701** |
+| bias | — | — | **+0.0124** |
+| | | **total** | **+4.0222** |
+
+`p(positive) = 1 ÷ (1 + e^−4.0222) = 1 ÷ 1.017913 = 0.9824`: predicts positive, truth negative. **Smallest fix: roughly forty training reviews that use `not`, half positive and half negative.** **The mark is for a cross (not a zero) through both `not` rows.**
+
+**A5.** **(a)** Rows 2 and 3 added **221** and **240** columns and fixed **0** traps; row 4 added **0** columns and fixed **6**. **(b)** *"The lever is the tokens, not the number of features."* **(c)** **One** review out of twenty (`"i would not order from here again"`); **not** a reason to reject the repair, but the cost must be named. **(d)** learned: seven new glued tokens (`not_late`, `not_quick`, `no_soggy`, `no_fresh`, `never_wrong`, `never_generous`, `hardly_any`), none in any trap, so row 5's extra right answer (trap 11, `0.530`) is another weak-evidence call · did not learn: **that negation reverses meaning.** Five traps (1, 2, 3, 4, 6) survive every repair.
+
+**A6.** **(a)** Both had only `and` left with a column, so the rows are identical to the model and identical rows give identical probabilities: `0.0124 + 0.0629 = 0.0753`, squashed, `0.5188`. **(b)** *"Nothing about the model; the difference is the true label."* Scoring as a fix is luck. **(c)** **One: trap 5**, `no warm welcome and no friendly driver` (`welcome`, `and`, `driver` survived, `0.4461`). Trap 11 (`0.3724`) had surviving words but came out wrong. **(d)** *"Six of twelve, of which five were decided by the bias rather than by any surviving evidence, so this number measures class balance, not the negation repair."* The full printout is under Build It page 33.5.
+
+### ✍️ Practice Set B — Write It (B1–B5)
+
+*Every block continues from P1's pipeline (`pipe`, `vec`, `clf`, `X_train`, `y_train`, `X_test`, `y_test` in scope). Mark on the "Done looks like" line in the workbook.*
+
+**B1.** Done looks like: first line `-3.2388  cold`.
+
+```python
+import numpy as np
+words = vec.get_feature_names_out()
+coefs = clf.coef_[0]
+for i in np.argsort(coefs)[:5]:
+    print("   %+.4f  %s" % (coefs[i], words[i]))
+```
+
+```text
+   -3.2388  cold
+   -3.2033  rude
+   -2.3327  slow
+   -2.3024  mean
+   -2.2553  terrible
+```
+
+**Common wrong answer:** `np.argsort(clf.coef_)` with no `[0]` (A3 (1)) or sorting `words` rather than `coefs`.
+
+**B2.** The two reports, with `digits=3`, `target_names` and `zero_division=0`, are the code and output under Build It page 33.3. Dummy accuracy `0.500`. **The dummy is fitted on `X_train` (the raw text), not on the vectorized matrix**; it ignores `X` but needs the right number of rows.
+
+**B3.** `explain(text)` must print `no column at all` and `+0.0000` for a missing token, and finish with bias, total, the hand-squashed probability and `predict_proba`'s answer. Done looks like: the last two numbers agree to four decimals and two rows say `no column at all`. A reference, with the real output for trap 1:
+
+```python
+import re
+import numpy as np
+
+def explain(text):
+    row = vec.transform([text]).toarray()[0]
+    coefs, total = clf.coef_[0], clf.intercept_[0]
+    print("---", text)
+    for tok in re.findall(r"\b\w\w+\b", text.lower()):
+        if tok in set(words):
+            i = list(words).index(tok)
+            piece = row[i] * coefs[i]
+            total += piece
+            print("   %-10s tfidf %.4f x coef %+.4f = %+.4f" % (tok, row[i], coefs[i], piece))
+        else:
+            print("   %-10s no column at all             =  +0.0000" % tok)
+    print("   bias                                    = %+.4f" % clf.intercept_[0])
+    print("   TOTAL                                   = %+.4f" % total)
+    print("   p(positive) = %.4f   sklearn says %.4f"
+          % (1 / (1 + np.exp(-total)), pipe.predict_proba([text])[0, 1]))
+
+explain("not fresh and not hot")
+explain("hardly a delicious meal")
+```
+
+```text
+--- not fresh and not hot
+   not        no column at all             =  +0.0000
+   fresh      tfidf 0.6716 x coef +2.8648 = +1.9241
+   and        tfidf 0.2461 x coef +0.0629 = +0.0155
+   not        no column at all             =  +0.0000
+   hot        tfidf 0.6988 x coef +2.9625 = +2.0701
+   bias                                    = +0.0124
+   TOTAL                                   = +4.0222
+   p(positive) = 0.9824   sklearn says 0.9824
+--- hardly a delicious meal
+   hardly     no column at all             =  +0.0000
+   delicious  tfidf 0.6653 x coef +2.2796 = +1.5166
+   meal       tfidf 0.7466 x coef +0.3027 = +0.2260
+   bias                                    = +0.0124
+   TOTAL                                   = +1.7551
+   p(positive) = 0.8526   sklearn says 0.8526
+```
+
+In the second review the `a` is deleted for being one letter long, `hardly` has no column, and the whole prediction rests on `delicious`: `0.8526` and wrong.
+
+**B4.** The five-row table and the twelve-row grid are `five_tries.py` and its output under Build It page 33.5. Done looks like: `0`, `0`, `0`, `6`, `7` down the last column, and five traps (1, 2, 3, 4, 6) with a dot in every configuration.
+
+**B5.** `picture.py` and its output are under Build It page 33.6. Done looks like: `matplotlib.use("Agg")` before the `pyplot` import, a saved `.png`, and two percentages adding to about 15 (`10.58` and `4.49`, kept `15.07`). **The leak to watch for: `vec.fit(CORPUS_80)` instead of `vec.fit(X_train)` — the A3 (2) mistake in a nicer coat.**
+
+### 🐞 Fix the Broken Program (Bugs 1–3)
+
+**Bug 1 (the `KeyError`).** There is no step called `tfidf`. Ask: `print(pipe.named_steps.keys())`. Fix: `vec = pipe.named_steps["tfidfvectorizer"]`.
+
+**Bug 2 (the `IndexError`).** `clf.coef_` is `(1, 101)`: the `1` is the number of coefficient rows, and a two-class model needs one (a second row would be the first with every sign flipped). Fix: `coefs = clf.coef_[0]`.
+
+**Bug 3 (the silent one).** **(a)** `columns: 101` and `'not' has a column? True`; in class they proved the vocabulary has 97 columns and `not` is not one of them. The extra four columns (`hardly`, `never`, `no`, `not`) name the culprit: the twelve traps were fitted on. **(b)** `pipe.fit(X_train + TRAP_TEXTS, y_train + TRAP_LABELS)`; fix `pipe.fit(X_train, y_train)`. **(c)** columns **97** · held-out **1.0** · traps **0 of 12**.
+
+```text
+columns: 97   'not' has a column? False
+   -3.2388  cold
+   -3.2033  rude
+   -2.3327  slow
+   -2.3024  mean
+   -2.2553  terrible
+held-out 20: 1.0
+the twelve traps: 0 of 12
+```
+
+**(d)** held-out: *training on twelve contradictory sentences dragged the weights towards zero, so two ordinary held-out reviews became borderline and one fell over the line* (`"i would not order from here again"` and `"the chips were cold and soggy"`). traps: *the one trap it got right (number 10) it got right because it had been shown the answer.* **(e)** *"Even trained on the traps, so `not` had a column and was seen twelve times, it scored 1 of 12. The failure is not a shortage of data about `not`; it is the shape of the model: one weight per word cannot express 'reverse whatever comes next'."* The learned `not` coefficient was `−0.2660`. **Ranked by trouble caused, the tracebacks are the friendly ones.**
+
+### 🧩 Puzzle of the Week — One Weight Per Word
+
+**(a)** `c < −4.0222 ÷ 0.8 = −5.0278`. **(b)** `c > 2.8047 ÷ 0.8 = +3.5059`. **(c)** `c < −5.0278` **and** `c > +3.5059`. **(d)** **None.** No coefficient for `not` gets both traps right. **(e)** *"A linear bag-of-words model has one weight per word, added in the same direction every time, but `not` must push the total down before `fresh` and up before `cold`: two opposite jobs, one number."* A statement about the shape of the model, not the corpus. **(f)** *"Marking makes `not_fresh` and `not_cold` two different columns, so two different weights."* It escapes the proof by no longer being one weight per word; the escape is real only once training data contains the glued tokens, which is why the six "fixed" are the abstentions of A6. **(g)** `not` appears in three negative and three positive traps with one weight, so the least-wrong answer is roughly zero, and `−0.2660` is roughly zero: *the model learned the correct answer to the question it was able to ask.*
+
+### 🤔 Think Deeper (T1, T2)
+
+*Paragraph answers. Mark against the points below; a strong answer uses the numbers.*
+
+**T1.** A strong answer **refuses to choose**: both `20/20` and `0/12` go in the report with what each measures (`20/20`: ordinary reviews in the training style; `0/12`: sentences whose meaning rests on a negator). A designed-to-fail set **is** evidence, but of **a failure mode that exists and is reachable** (the mechanism: `not` has no column), **not** of how often it happens in the wild, because nobody sampled the twelve. To make `20/20` mean more: held-out reviews **somebody else wrote**, or a held-out set containing hard-but-ordinary cases (mixed opinions, sarcasm, typos). **Half marks** for "more reviews" alone.
+
+**T2.** Why convolution worked for images and failed for text: a 3×3 kernel has 9 neighbours and **the same kernel is reused at every position of every image** (64 positions in each of 1,797 digits feed the same nine weights), so it generalises across positions. 97 words make `97 × 97 = 9,409` possible pairs and training contained **221** (about 2%); `not fresh` is a specific pair of specific words, gets a column only if adjacent during `fit`, and teaches nothing about `not tasty`: **an n-gram does not generalise across words.** What would have to change: a representation where `fresh` and `tasty` are near each other before training, plus something that reads in order, which is a word embedding plus a sequence model, **next year**. The very strong answer names **weight sharing** as the convolution's real gift and an embedding as the same gift moved from positions to words.
+
+### 🛠️ Build It — Sentiment Engine (the marked homework)
+
+*The workbook's Build It has an eight-item step checklist over six pages. **There is no page 33.1 or 33.2; the pages are 33.3 to 33.8**, and each has its answer below.*
+
+| Checklist item | Workbook page | Answer below |
+|---|---|---|
+| 1, 2 — report and baseline; the "not as impressive" sentence | 33.3 | Page 33.3 |
+| 3, 4 — fifteen and fifteen with `df`; ring and count | 33.4 | Page 33.4 |
+| 5 — five-configuration table and fix-or-abstention | 33.5 | Page 33.5 |
+| 6 — PCA picture, both percentages in the axis labels | 33.6 | Page 33.6 |
+| 7 — stretch: unbalanced training set | 33.7 | Page 33.7 |
+| 8 — post-mortem | 33.8 | Page 33.8 |
 
 ### Page 33.3 — The report, and the baseline
 
@@ -1884,6 +2130,8 @@ weighted avg      1.000     1.000     1.000        20
    macro avg      0.250     0.500     0.333        20
 weighted avg      0.250     0.500     0.333        20
 ```
+
+**The workbook's table, filled in:** my model, negative `1.000 / 1.000 / 1.000 / 10`; positive `1.000 / 1.000 / 1.000 / 10`; accuracy `1.000` on `20`. Dummy, negative `0.500 / 1.000 / 0.667 / 10`; positive `0.000 / 0.000 / 0.000 / 10`; dummy accuracy `0.500` on `20`.
 
 **Reading the baseline, which is worth doing out loud.** The dummy always says *negative*. So its **recall on negative is `1.000`** — it caught every single negative review, because it says negative to everything. Its **precision on negative is `0.500`** — of the twenty things it called negative, ten actually were. And on positive it scored `0.000` on both, because it never predicted positive at all. **That is Week 8's four numbers doing exactly their job: `1.000` recall looks wonderful until you see the precision beside it.**
 
@@ -1939,7 +2187,7 @@ weighted avg      0.250     0.500     0.333        20
 intercept: +0.0124
 ```
 
-**The count of words resting on one or two reviews: seven.**
+**The count of words resting on one or two reviews: seven of the thirty.** *(The workbook also asks for `great`: coefficient `+1.0037`, df `2`.)*
 
 | word | coefficient | reviews |
 |---|---:|---:|
@@ -2165,6 +2413,8 @@ saved reviews_pca.png
 ![Eighty reviews, flattened onto two axes](../figures/fig-w33-4-reviews-projected-with-pca-by-label.svg)
 *Figure 33.5 — All eighty reviews on two axes. They are thoroughly mixed, and `84.93%` of the structure is not in this picture.*
 
+**Workbook blanks:** filename `reviews_pca.png`; x-axis label `axis 1  (10.58% of the spread)`; y-axis label `axis 2  (4.49% of the spread)`; kept `15.07%`, thrown away `84.93%`.
+
 **The answer to "why do they look mixed?"** Because `10.58 + 4.49 = 15.07`, so **`84.93%` of the structure is missing from the picture.** The classifier separates the same eighty reviews using **all ninety-seven columns** and gets them all right. **A two-dimensional plot of ninety-seven-dimensional data is a shadow, and things that do not touch can have overlapping shadows.**
 
 **Full marks needs the percentage.** A student who writes "because PCA loses information" without saying **how much** has given the right shape of answer with the evidence missing. **Week 29 established that `explained_variance_ratio_` is the number you quote, and this is the week it earns its keep.**
@@ -2174,6 +2424,8 @@ saved reviews_pca.png
 ### Page 33.7 — Stretch: what if the training set had been unbalanced?
 
 *Six of the twelve traps came out right at probabilities of `0.5188`, `0.5188`, `0.5188`, `0.5781`, `0.6112` and `0.4461`. What would have happened if the training set had been 40 negative and 20 positive?*
+
+**Workbook blanks:** (a) the bias is `+0.0124`, because the training set is **thirty** and **thirty**; (b) lean **negative**, because with no evidence the best guess is the commoner class; (c) traps **1, 2, 3, 7, 8, 9**; (d) right **1, 2, 3**, wrong **7, 8, 9**; (e) still **6** of 12.
 
 **The reasoning, which is the whole answer:**
 
@@ -2241,6 +2493,30 @@ tokens: ['not', 'tasty', 'and', 'not', 'generous']
 ```
 
 **Same shape, same story:** `0.0143 + 1.6531 + 1.5418 + 0.0124 = 3.2216`, then `1 ÷ (1 + e^−3.2216) = 0.9616`. **The two `not`s contribute nothing and the two positive words win.**
+
+### 🎨 Draw It
+
+*One drawing of the model's path from review to verdict.* **A full-marks drawing has a cross, not a zero, through both `not` boxes** (labelled *no column: deleted before the arithmetic*), the contributions written **on the arrows** (`+0.0155`, `+1.9241`, `+2.0701`, with the bias `+0.0124` from the side) so the total `+4.0222` is visibly a sum, an S-curve showing `0.9824` and the word `POSITIVE`, with `true label: NEGATIVE` in a box of its own. **The two things that earn the marks:** the four bars `0`, `0`, `6`, `7` out of 12, with `221 new columns → 0 fixed` beside the second and `0 new columns → 6 fixed` beside the third; and, at the bottom, the smallest change in one line containing the word *data*. The four blanks at the foot of the workbook page: review and label (`not fresh and not hot`, negative), deleted tokens (`not`, `not`), total and probability (`+4.0222`, `0.9824`), four bars (`0 0 6 7`). **A drawing that shows only the wrong answer is a diagram of a mistake; one that shows the two deleted boxes is a diagram of a cause.**
+
+### 📊 Self-Check
+
+*Fifteen "I can..." rows, self-rated. There is no right answer to mark, but read the 😕 rows: the fastest route back for each is in the table below.*
+
+| Row | Go to |
+|---|---|
+| `make_pipeline`, step names | live-code Step 2, then P2 |
+| the vocabulary and the training rows | A3 (2) |
+| precision, recall and a baseline | page 33.3, A2 |
+| `clf.coef_[0]`, shapes | P1 and Bug 2 |
+| document frequency beside a coefficient | page 33.4 |
+| the contribution table by hand | M1, A4, B3 |
+| a token with no column | M4 (d) and the Draw It cross |
+| bigrams, and why they fail | P4, A5, T2 |
+| fix versus abstention | M3, A6, page 33.5 |
+| the PCA plot and its percentage | page 33.6 |
+| one weight per word | the Puzzle, then T2 |
+
+**The last line** ("the one thing I would ask about") is the best diagnostic on the page: read it before the next lesson.
 
 ### Answers to every question posed in the lesson
 

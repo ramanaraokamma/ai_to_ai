@@ -13,7 +13,7 @@
 | **Big idea** | An f-string drops a value straight into a sentence, and `:.2f` decides how many decimals a reader gets to see. |
 | **New vocabulary** | f-string · format specifier · integer division · remainder · exponent |
 | **New syntax** | `f"..."` · `f"{x:.2f}"` · `//` and `%` · `**` |
-| **Materials** | Printed workbook pages 3.1–3.6 · pencil · **16 paper "slices"** (or counters, or coins) and **6 paper plates** · a real till receipt if you have one in a drawer · the BUG LOG |
+| **Materials** | The printed workbook (Warm-Up, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Build It, Draw It, Self-Check) · pencil · **16 paper "slices"** (or counters, or coins) and **6 paper plates** · a real till receipt if you have one in a drawer · the BUG LOG |
 | **Tech needed** | The laptop, with `~/ai-academy/level2` open in the editor and a terminal in that folder |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
@@ -442,7 +442,7 @@ pill lit along the bottom.*
       17.0
       ```
       If you can explain why that second line is `17.0` and not `16.96`, you can teach this week.
-- [ ] Print workbook pages 3.1–3.6.
+- [ ] Print the whole workbook (Warm-Up through Self-Check).
 - [ ] Cut out **16 paper slices** (any small squares) and find **6 plates or saucers**. Or use 16 coins and 6 pieces of paper.
 - [ ] Go and find a **real till receipt** — a drawer, a coat pocket, a shopping bag. Any one will do. You are going to point at it.
 
@@ -458,7 +458,7 @@ pill lit along the bottom.*
 
 | If this fails | Do this instead |
 |---|---|
-| No laptop | The whole of Concept, plus the 16-slices activity, plus workbook page 3.3 (`//` and `%` by hand) is a genuinely good 45-minute paper lesson. The f-string half needs the keyboard and moves to Week 4's opening. |
+| No laptop | The whole of Concept, plus the 16-slices activity, plus workbook Practice Set B, B2 (`//` and `%` by hand) is a genuinely good 45-minute paper lesson. The f-string half needs the keyboard and moves to Week 4's opening. |
 | No slices, no plates | Do it with fingers and hands: sixteen taps, dealt into five piles on the table. The physical dealing is what matters, not the props. |
 | No receipt | Any price you can find written down with two decimals — a menu, a website, a price label. Point at the `.00` on a whole-pound price and ask *"why did they bother?"* |
 | The student is still shaky on variables | Spend the first ten minutes re-running `pocket_money.py` and changing one number. Then cut this lesson to steps 1–3 of `receipt.py` and leave `//` and `%` for the top of Week 4. **f-strings are the priority; `//` and `%` can wait a week.** |
@@ -783,7 +783,7 @@ Full instructions below. In the lesson flow:
 
 ### Setup
 
-**On the table:** the 16 paper slices and 6 plates (leave them out — students go back to them), the real till receipt, workbook page 3.3, a pencil, the BUG LOG.
+**On the table:** the 16 paper slices and 6 plates (leave them out — students go back to them), the real till receipt, workbook Practice Set B (B2), a pencil, the BUG LOG.
 
 **On screen:** `receipt.py` as it stands after step 2, running, printing `1.0625`.
 
@@ -1244,83 +1244,177 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "One file and two pages, about an hour. Type everything.
+> "One file and two workbook sections, about an hour. Type everything.
 >
-> **The file is `receipt.py`, finished properly** — page 3.5. Same four inputs at the top, but this time **you** choose the number of friends, and it has to be your own real number. It must print: the total to two decimals, the number of slices, the cost per slice to **exactly** two decimals, how many whole slices each person gets, and how many are left on the plate.
+> **The file is `receipt.py`, finished properly** — it's the **Build It** section. Same four inputs at the top, but this time **you** choose the number of friends, and it has to be your own real number. It must print: the total to two decimals, the number of slices, the cost per slice to **exactly** two decimals, how many whole slices each person gets, and how many are left on the plate. Fill in the Results table from your own run, and answer (a), (b) and (c) underneath it.
 >
 > Two rules on top of that. **Every printed line uses an f-string** — if I see a comma in a `print`, it comes back. And **every line has a comment**, and the comment says *why*, not *what*. `# 8.50 times 2` is a waste of ink. `# what two pizzas cost altogether` is worth having.
 >
 > Then the last thing, and it's the actual test: **read your receipt out loud.** Not to me — to yourself, or to whoever's in the room. Does it sound like a real receipt? If any line sounds odd, that's a bug, and it's a bug nothing on screen is going to tell you about.
 >
-> **Then pages 3.2 and 3.3.** Page 3.2 is predict-the-output on f-strings — twelve lines, guess first, then run, then write what really happened. Page 3.3 is `//` and `%` by hand, ten of them, and for every single one you write the check: whole ones times the count, plus the leftovers, back to the total. If the check doesn't come back to the total, one of your two numbers is wrong and you find it yourself.
+> **Then Predict the Output and Practice Set B, question B2.** Predict the Output is four snippets, fourteen printed lines in all — guess first, write your guess in the left-hand column, then run it, then write what really happened. B2 is `//` and `%` by hand, ten pairs, and for every single one you write the check: whole ones times the count, plus the leftovers, back to the total. If the check doesn't come back to the total, one of your two numbers is wrong and you find it yourself.
 >
-> And one more Bug Log entry, minimum. If nothing breaks by accident, **break it on purpose** — take an `f` off and log a bug with no error message. That's the most interesting row on the page."
+> And one more Bug Log entry, minimum — it's at the bottom of Build It. If nothing breaks by accident, **break it on purpose** — take an `f` off and log a bug with no error message. That's the most interesting row on the page."
 
-**Workbook pages:** 3.1 and 3.4 in class; **3.2, 3.3, 3.5, 3.6** at home.
+**Workbook sections:** **Warm-Up** and **Puzzle of the Week** in class (the Puzzle can be finished at home if the lab runs long); **Build It**, **Predict the Output** and **Practice Set B** (B2 as the required part) at home. The rest of the workbook — **Practice Set A**, B1 and B3–B5, **Fix the Broken Program**, **Think Deeper**, **Draw It** and the **Self-Check** — is this week's further practice, to be done before Week 4 as time allows. The Answer Key below follows the workbook's own order, so you can mark whichever sections come back.
 
-**Expected time:** 20 min for `receipt.py` with full comments · 15 min for page 3.2 · 15 min for page 3.3 · 10 min for the Bug Log, vocabulary and self-check. About 60 minutes.
+**Expected time:** 20 min for `receipt.py` with full comments and the Results table · 15 min for Predict the Output · 15 min for B2 · 10 min for the Bug Log and the Self-Check. About 60 minutes. Practice Set A, the rest of Set B, Fix the Broken Program, Think Deeper and Draw It add roughly another hour in total.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 3.1 — Warm-Up (recall from Week 2)
+Follows the workbook's own sections in order. The values are those in the workbook's Answers section; every program was re-run to confirm. Teacher notes are marked **Teacher:**.
+
+### Warm-Up (5 min — recall from Week 2)
 
 **W1.** *Read `pizza_price = 8.50` out loud.* → "pizza_price **gets** 8.50." Not "equals".
 
 **W2.** *What type is `8.50`? What type is `"8.50"`?* → `float` and `str`. Same characters on screen, different kinds of thing.
 
-**W3.** *Why does `print(8.50)` show `8.5`?* → Because `8.50` and `8.5` are the same number, and the number has no trailing zero. The zero existed only in what you typed.
+**W3.** *Why does `print(8.50)` show `8.5`?* → Because `8.50` and `8.5` are the same number, and the number has no trailing zero. The zero existed only in what you typed; Python stored the number, not your typing.
 
 **W4.** *What is `"5" + 5`, and why?* → An error: `TypeError: can only concatenate str (not "int") to str`. The kinds don't go together, and Python refuses to guess whether you meant `10` or `55`.
 
 **W5.** *What does `type()` do, and when do you reach for it?* → Tells you what kind a value is. You reach for it whenever a `TypeError` appears and you are certain something is a number, because `type()` settles the argument in four seconds.
 
-### Page 3.2 — Practice Set A: predict the output
+### Predict the Output
 
-Every output below was produced by running the line. Assume `runs = 347`, `matches = 9`, `name = "Ramana"`.
+Four snippets, fourteen printed lines. Every output below was produced by running the snippet. **Teacher:** the left-hand "My prediction" column is what is being marked, not the right-hand one. A wrong prediction that is written down is worth more than a right one that was filled in after running.
 
-| # | Line | Real output | Why |
-|---|---|---|---|
-| (a) | `print(f"{name} scored {runs}")` | `Ramana scored 347` | Two blanks, two values dropped in. |
-| (b) | `print("{name} scored {runs}")` | `{name} scored {runs}` | **No `f`.** The braces are just characters. No error. |
-| (c) | `print(f"{runs / matches}")` | `38.55555555555556` | The raw division, every digit Python has room for. |
-| (d) | `print(f"{runs / matches:.2f}")` | `38.56` | Two places. Rounded for display. |
-| (e) | `print(f"{runs / matches:.1f}")` | `38.6` | One place. |
-| (f) | `print(f"{runs / matches:.0f}")` | `39` | No places. Note it rounded *up* here. |
-| (g) | `print(f"{runs // matches}")` | `38` | Whole runs per match. |
-| (h) | `print(f"{runs % matches}")` | `5` | Runs left over. |
-| (i) | `print(f"{2 ** 10}")` | `1024` | Two multiplied by itself ten times. |
-| (j) | `print(f"{7 // 2} and {7 % 2}")` | `3 and 1` | Three whole twos, one left over. |
-| (k) | `print(f"{8:.2f}")` | `8.00` | `:.2f` on a whole number is fine, and gives you money format. |
-| (l) | `print(f"{6 // 8} and {6 % 8}")` | `0 and 6` | **Zero whole eights fit into six, and all six are left over.** Correct and surprising. |
-
-Run together:
+**Snippet 1 — one letter** (`name = "Ramana"`, `runs = 347`, `matches = 9`)
 
 ```text
 Ramana scored 347
 {name} scored {runs}
+```
+
+Zero error messages, and there should not have been one. Without the `f`, `{name}` is six ordinary characters and Python printed them exactly as asked. This is the week's whole point: every bug in Weeks 1 and 2 shouted, and this one sits there looking wrong.
+
+**Snippet 2 — the dial**
+
+```text
 38.55555555555556
 38.56
 38.6
 39
+```
+
+`:.0f` gave `39` — it rounded **up**, because the digit after the point is a 5 followed by more. **Did `runs` change? No** — it is still `347`. But be careful what counts as proof: each line works out `runs / matches` afresh, so these four lines do not by themselves show that the dial leaves a *stored* number alone. The proof is the two-line experiment in Practice Set A, A2.
+
+**Snippet 3 — whole ones and leftovers**
+
+```text
 38
 5
-1024
 3 and 1
-8.00
 0 and 6
 ```
 
-**3.2(m) Which line produced a wrong-looking result with no error message?**
-**(b).** The `f` is missing, so Python printed the braces. Nothing warned you. The only way to catch it is to look at the output and ask whether it makes sense.
+Check: 38 × 9 + 5 = 347 ✓ and 3 × 2 + 1 = 7 ✓. **The last line, `0 and 6`:** six slices between eight friends. Nobody gets a whole one, so the whole-ones answer is `0` and all six are left over. Check: 0 × 8 + 6 = 6 ✓. It feels wrong because zero looks like a failure; it is the correct answer to "how many whole ones can each person be handed?" when the answer is none.
 
-**3.2(n) Do (g) and (h) agree with (c)?**
-Yes, and this is the check worth doing. `38 × 9 + 5 = 342 + 5 = 347` ✓ — the whole ones times the count, plus the leftovers, gets back to `runs`. And `347 / 9 = 38.555...`, whose whole part is 38. All three numbers are telling the same story in different words.
+**Snippet 4 — stars and dots**
 
-### Page 3.3 — Practice Set B: `//` and `%` by hand
+```text
+1024
+8.00
+8.000000
+10 and 25
+```
 
-For each row: the two answers, and the check.
+`2 ** 10` is 1024, **not 20**. `f"{8:.2f}"` is `8.00` — the dial works on a whole number, which is what you want for money. **`f"{8:2f}"` is `8.000000` — the dot is missing.** Without it the `2` means *width*, not "two places", and the decimals fall back to Python's default of **six**. Python did not complain. `5 * 2` is `10` and `5 ** 2` is `25` — count the stars.
+
+**Teacher:** the two silent bugs in this section are Snippet 1 line 2 and Snippet 4 line 3. If a student scores 14/14 on the "How many of the fourteen did you get right?" line, ask what they predicted for those two before they ran them.
+
+### Practice Set A — Read It
+
+**A1.** `f` · `{curly braces}` · **the braces themselves, as ordinary characters** · **no** (zero) error messages · "dot two eff" · "here comes an instruction about how to show this" · "two places" · "as a decimal number" · what you **see**, not what it **is** · "how many whole ones each?" · "how many are left over?" · **whole ones × how many people + leftovers = the total**.
+
+**A2.** **A** = the **`f`** in front of the opening quote. **B** = the **gap**, the `{braces}`. **C** = the **format specifier**, `:.2f`, the dial. **D** = the **variable** (the box), `cost_per_slice`, holding `1.0625`.
+
+After the sentence has been printed, **D still holds `1.0625` — all of it.** The dial is on the window, not on the number. The two-line experiment:
+
+```python
+cost_per_slice = 1.0625
+print(f"{cost_per_slice:.2f}")
+print(cost_per_slice * 16)
+```
+
+```text
+1.06
+17.0
+```
+
+If the number had really been changed to `1.06`, sixteen slices would come to `16.96`. It comes to exactly `17.0`.
+
+**A3.** With `total = 17.0` the five lines print:
+
+```text
+Total: 17.0
+Total: 17.00
+Total: {total}
+Total: 17
+Total: 17.000000
+```
+
+**1 → D · 2 → A · 3 → B · 4 → E · 5 → C.** **The two bugs are 3 and 5.** Number 3 is **missing the `f`**, so the braces printed as characters. Number 5 is **missing the dot** in the specifier, so it fell back to six decimals. **The only thing that catches them:** reading your own output and asking whether it makes sense — neither errors, and neither will ever appear in a traceback.
+
+**A4.**
+
+| | What is wrong | Errors? | Fix |
+|---|---|---|---|
+| (a) | `rns` instead of `runs`, inside the braces | **Y** — `NameError: name 'rns' is not defined. Did you mean: 'runs'?` | Fix the spelling; Python has guessed it. |
+| (b) | Missing closing `}` | **Y** — `SyntaxError: f-string: expecting '}'` | `print(f"Total: {total:.2f}")` |
+| (c) | One star where there should be two | **N** | `radius_cm ** 2` |
+| (d) | `:.2f` applied to text | **Y** — `ValueError: Unknown format code 'f' for object of type 'str'` | `float(total)` — or better, find out why it was text. |
+
+**The silent one is (c), and only (c).** `3.14159 * 15 * 2` is `94.2477`, shown as `94.25`. **Why `94.25` is enough to know something is wrong:** a pizza 15 cm in radius is 30 cm across — a school ruler. Ninety-four square centimetres is a coaster. The number is the wrong size for the thing it describes, and you can tell without knowing anything about the bug. **Teacher:** the strong answer says "could that possibly be true?"; the weak one says "it didn't turn red".
+
+**A5.** By hand: `hours` = **2** · `minutes` = **122** · `seconds` = **5**. It prints `2 h 122 m 5 s`. **`minutes` is badly wrong — 122 instead of 2, out by 120.** `total_seconds // 60` counts every minute in 7325 seconds, including the **120 already inside the two hours**. Those 120 minutes are the answer to "how many minutes are already inside the two hours?". The fix is to take the **remainder** before the second division:
+
+```python
+total_seconds = 7325
+hours = total_seconds // 3600
+rest = total_seconds % 3600
+minutes = rest // 60
+seconds = rest % 60
+print(f"{total_seconds} seconds = {hours} h {minutes} m {seconds} s")
+```
+
+```text
+7325 seconds = 2 h 2 m 5 s
+```
+
+(The workbook asks for the two corrected lines `rest = total_seconds % 3600` and `minutes = rest // 60`; `seconds` must then also use `rest`, as above.) **Teacher:** a student who writes `minutes = 122 - 120` has patched the number, not the idea; send them back to "take the remainder first".
+
+**A6.**
+
+| # | Operator | Why |
+|---|---|---|
+| (a) | `/` | An average is supposed to be a fraction. `38.56`. |
+| (b) | `//` | Whole buses: `5`. |
+| (c) | `%` | `2` left over. |
+| (d) | `/` | Money divides into pennies, so a fraction is real. `5.40`. |
+| (e) | `%` | `4718 % 2` is `0`, so yes, even. |
+| (f) | `%` | `4718 % 10` is `8`. |
+
+**Why (b) does not give the answer you want:** `47 // 9` is `5` — five buses go out completely full. But `47 % 9` is `2`, and **those two students are standing on the pavement**, so you must book six. `//` answered the question you asked; `%` tells you the question was not the whole story.
+
+### Practice Set B — Write It
+
+**B1.**
+
+```python
+print(f"{2 / 3:.2f}")
+```
+
+```text
+0.67
+```
+
+The arithmetic can go **inside** the braces — no variable needed. It rounded up from `0.666...`. "Done" means one `print`, one `f`, one `:.2f`, and only the 2 and the 3 typed.
+
+**B2.** The ten rows, with the checks:
 
 | # | Sum | `//` | `%` | Check |
 |---|---|---|---|---|
@@ -1363,20 +1457,21 @@ print(f"{125 // 60} {125 % 60}")
 2 5
 ```
 
-**3.3(k) Two of these have a remainder of 0. What does that tell you?**
-(c) and (g). A remainder of zero means it divided **exactly** — there is genuinely nothing left over. That is information, not a failure. "Is there anything left over?" is a question you will ask constantly, and `% == 0` is how you ask it.
+**(k) Rows (c) and (g)** have a remainder of `0`: the division came out **exactly**. That is information, not a failure — "is there anything left over?" is a question you will ask constantly, and `% == 0` is how you ask it.
 
-**3.3(l) One of them has a `//` answer of 0. Is that a mistake?**
-No. (h): six slices between eight friends. **Nobody gets a whole slice**, so the whole-ones answer is zero, and all six are left over. Both numbers are correct and the check confirms it: 0 × 8 + 6 = 6. This is the row that catches people, because "zero each" feels like an error and is exactly right.
+**(l) Row (h)** has a `//` of `0`, and **no, it is not a mistake.** Six items between eight people: nobody gets a whole one, so the whole-ones answer is zero and all six are left over. Check: 0 × 8 + 6 = 6 ✓. **Teacher:** this is the row that catches people, because "zero each" feels like an error. If the check does not come back to the total, the student is to find which number is wrong — do not tell them.
 
-**3.3(m) Use (i) and (j) together to turn 7325 seconds into hours, minutes and seconds.**
+**B3.** Model answer:
 
 ```python
-total_seconds = 7325
-hours = total_seconds // 3600        # 2
-rest = total_seconds % 3600          # 125
-minutes = rest // 60                 # 2
-seconds = rest % 60                  # 5
+# seconds.py - turn a number of seconds into hours, minutes and seconds.
+
+total_seconds = 7325                 # the number we were handed
+hours = total_seconds // 3600        # whole hours (3600 seconds in an hour)
+rest = total_seconds % 3600          # seconds still unaccounted for
+minutes = rest // 60                 # whole minutes out of what is LEFT
+seconds = rest % 60                  # and finally the odd seconds
+
 print(f"{total_seconds} seconds = {hours} h {minutes} m {seconds} s")
 ```
 
@@ -1384,29 +1479,118 @@ print(f"{total_seconds} seconds = {hours} h {minutes} m {seconds} s")
 7325 seconds = 2 h 2 m 5 s
 ```
 
-**Why you must use `rest` and not `total_seconds` for the minutes:** `7325 // 60` is `122`, which counts *every* minute in the 7325 seconds, including the 120 already inside the two hours. You have to remove the hours first, and `%` is what removes them.
+| `total_seconds` | Output |
+|---|---|
+| 59 | `59 seconds = 0 h 0 m 59 s` |
+| 3600 | `3600 seconds = 1 h 0 m 0 s` |
+| 86399 | `86399 seconds = 23 h 59 m 59 s` |
 
-### Page 3.4 — Puzzle of the Week: the receipt that lies
+`86399` is one second short of a day, so every figure is at its maximum; an off-by-one anywhere shows here. `59` proves that zero hours and zero minutes come out as zeros rather than nothing. **Teacher:** the common wrong answer is `minutes = total_seconds // 60` (the A5 bug again) — it fails on `3600`, printing `1 h 60 m 0 s`.
 
-A shop prints this receipt:
-
-```text
-Items        : 3
-Price each   : 4.3
-Total        : 13.0
-```
-
-**P1. Name three things wrong with how this is printed.**
-1. `4.3` should be `4.30` — money needs two decimals, because it is a whole number of pennies.
-2. `13.0` should be `13.00`, for the same reason.
-3. Nothing is aligned, and there is no currency shown at all. (Accept any two of these three plus any other reasonable point.)
-
-**P2. Write the three lines that would print it properly.**
+**B4.** Model answer:
 
 ```python
-items = 3
-price_each = 4.30
-total = price_each * items
+# area_compare.py - is the big pizza actually better value?
+
+small_radius = 15                # cm
+big_radius = 20                  # cm
+small_price = 8.50               # pounds
+big_price = 13.00                # pounds
+
+small_area = 3.14159 * small_radius ** 2
+big_area = 3.14159 * big_radius ** 2
+
+print(f"Small: {small_area:.2f} sq cm for {small_price:.2f}")
+print(f"Big  : {big_area:.2f} sq cm for {big_price:.2f}")
+print(f"Small: {small_area / small_price:.2f} sq cm per pound")
+print(f"Big  : {big_area / big_price:.2f} sq cm per pound")
+```
+
+```text
+Small: 706.86 sq cm for 8.50
+Big  : 1256.64 sq cm for 13.00
+Small: 83.16 sq cm per pound
+Big  : 96.66 sq cm per pound
+```
+
+**The big one is better value, by about 16%** (96.66 against 83.16). **Why a third bigger across is nearly twice the area:** area grows with the **square** of the radius — 20 ÷ 15 = 1.33, and 1.33 squared is about 1.78. **Breaking it on purpose:** with `3.14159 * small_radius * 2` the first line becomes `Small: 94.25 sq cm for 8.50` — **`94.25`, and Python did not complain.** Only asking whether 94 sq cm is plausible for a 30 cm pizza catches it.
+
+**B5.** Model answer:
+
+```python
+# change.py - what coins do I hand back?
+
+price_p = 1750               # price in whole pence
+paid_p = 2000                # what the customer handed over, in whole pence
+
+change_p = paid_p - price_p  # 250 pence to give back
+
+pounds = change_p // 100     # whole pound coins
+rest = change_p % 100        # pence still to hand over
+fifties = rest // 50         # fifty-pence pieces out of what is left
+rest = rest % 50             # and the loose pence after that
+
+print(f"Change: {change_p / 100:.2f}")
+print(f"{pounds} pound coins, {fifties} fifty-pence, {rest} pence left")
+```
+
+```text
+Change: 2.50
+2 pound coins, 1 fifty-pence, 0 pence left
+```
+
+With price `1235` and paid `2000`:
+
+```text
+Change: 7.65
+7 pound coins, 1 fifty-pence, 15 pence left
+```
+
+Check: 7 × 100 + 1 × 50 + 15 = 765 pence = £7.65 ✓. **Why store the price in pence:** pence are whole numbers and whole numbers never surprise you; `17.50` is a stored decimal that can be a hair off (see Puzzle P4), and a million of those hairs can leave an account a few pence out. Banks do exactly this. The pounds appear **only in the printing**, in `change_p / 100` with `:.2f`.
+
+### Fix the Broken Program
+
+`cafe_bill.py` has three bugs, found one at a time.
+
+**Bug 1 — line 16, the closing `}` is missing.** Run 1 is the `SyntaxError: f-string: expecting '}'` shown in the workbook. What Python could not finish reading: **the f-string's gap** — it found a `{`, reached the closing quote, and never found the `}`. **Nothing printed**, because a `SyntaxError` is found before the program runs. Fix: `{drinks_total:.2f}`.
+
+**Bug 2 — line 15, `:.2f` applied to text.** `ValueError: Unknown format code 'f' for object of type 'str'`. In plain English: the `f` means "show this as a decimal number", and a piece of text has no decimal places. **Line 3** shows the type without running anything: the quotes round `"2.40"` make it a `str`. `--- CAFE BILL ---` printed this time because a `ValueError` happens **while** the program runs (line 14 had already done its job), whereas a `SyntaxError` happens **before** it starts. Two good fixes:
+
+- **Fix 1:** `print(f"Price each : {float(drink_price):.2f}")`.
+- **Fix 2:** `drink_price = 2.40`, quotes gone — then line 9's `float(...)` is unnecessary too.
+
+**Fix 2 is the better choice:** fix 1 patches one symptom, and the problem returns the next time anyone uses `drink_price`; fix 2 removes the cause. (Fix 1 is still right when the text genuinely arrives from outside, as it does in Week 4.) Accept Fix 1 as the student's choice if the reason given is honest.
+
+**Bug 3 — line 18, the `f` is missing.** No error. Run 3's wrong line is `Bill       : {bill:.2f}`. Fix: add the `f` before the opening quote. **How you would have known without the arithmetic:** curly braces on the screen — no real receipt has ever had curly braces on it. Also, every other line shows a number and this one does not.
+
+Fully mended output:
+
+```text
+--- CAFE BILL ---
+Price each : 2.40
+Drinks     : 12.00
+Cake       : 15.00
+Bill       : 27.00
+Each owes  : 5.40
+```
+
+**The last question — what to change about line 3:** take the quotes off, `drink_price = 2.40`. Then line 9 needs no `float(...)` and line 15 needs no conversion. One character of quoting was causing two problems in two places.
+
+### Puzzle of the Week — the receipt that lies
+
+**P1.** Three things wrong (any three):
+
+1. `4.3` should be `4.30` — money needs two decimals.
+2. `13.0` should be `13.00`, for the same reason.
+3. Nothing is aligned and no currency is shown.
+4. The big one, found in P3: **the total is wrong.**
+
+**P2.** Model answer:
+
+```python
+items = 3                            # how many of the thing were bought
+price_each = 4.30                    # what one of them costs
+total = price_each * items           # what the customer actually owes
 
 print(f"Items        : {items}")
 print(f"Price each   : {price_each:.2f}")
@@ -1419,34 +1603,26 @@ Price each   : 4.30
 Total        : 12.90
 ```
 
-**Look at the total.** The shop printed `13.0`; this prints `12.90`. Computing the figure instead of copying it has just revealed that the shop's total was not merely badly formatted — it was **wrong**. That is P3, and it is the best thing on the page. If a student writes `total = 13.00` by hand instead of computing it, they will never find this; point that out.
+The student's `Total` line says `12.90`; the shop said `13.0`. **They are not the same.** **Teacher:** if a student writes `total = 13.00` by hand instead of computing it, they will never find this — point that out.
 
-**P3. Does `4.30 × 3` really come to `13.00`? Check it, and then check it in Python.**
-By hand: 4.30 × 3 = 12.90. **So the shop's total is wrong**, by 10p. Verified:
+**P3.** By hand: 4.30 × 3 = **12.90**. Python says `12.90` (formatted). The shop's total is not merely badly formatted — it is **wrong, by 10p**. This is the best thing on the page: computing the figure instead of copying it turned a formatting exercise into finding a real error.
 
-```python
-print(4.30 * 3)
-print(f"{4.30 * 3:.2f}")
-```
+**P4.** `print(4.30 * 3)` with no dial prints:
 
 ```text
 12.899999999999999
-12.90
 ```
 
-**Two separate discoveries here and both are worth having.** First, the shop's total of `13.00` is simply wrong; the correct total is `12.90`. Second — and this is the interesting one — the raw answer came out as `12.899999999999999`, not `12.9`. That is not a Python bug. Computers store decimals in base 2 and some fractions do not fit exactly, in the same way that one third does not fit exactly in base 10 (`0.3333...` never ends). The `:.2f` hides it here and gives the right answer, `12.90`. **You will rarely have to deal with this problem this year**, because every money figure we print will have a `:.2f` on it (and keeping money in whole pence, as B5 does, avoids it entirely). But if a student finds it, they have found something real, and the honest answer is better than a brush-off. Write their name and today's date next to it.
+Not a mistake in the code and not a bug in Python. Computers store decimals in base 2 and some fractions do not fit exactly, the way one third does not fit in base 10 (`0.3333...` never ends). `:.2f` hides it and gives `12.90`. You will rarely meet this problem this year, because every money figure printed has a `:.2f` (and keeping money in whole pence, as B5 does, avoids it). **Teacher:** if a student finds it themselves, they have found something real. The honest answer is better than a brush-off; write their name and today's date next to it.
 
-**P4. Why is a wrongly-printed number more dangerous than a program that crashes?**
-Because a crash announces itself and a wrong number does not. `13.00` looks completely normal. It goes on the receipt, into the till, into the day's takings, and the first person to notice is whoever counts the money at closing — if they notice at all. A crash costs four seconds. A wrong number that nobody spots costs whatever it costs, for as long as nobody spots it. This is the same idea as the missing `f`, and it is why *"read your output and ask whether it makes sense"* is the habit of the week.
+**P5.** Because a crash announces itself and a wrong number does not. `13.0` looks completely normal; it goes on the receipt, into the till, into the day's takings, and the first person to notice is whoever counts the money at closing, if they notice at all. A crash costs four seconds. This is the same idea as the missing `f`, and why *"read your output and ask whether it makes sense"* is the habit of the week.
 
-**P5. The shop wants to know how many whole boxes of 4 it can make from 15 items, and how many are left. Write it.**
+**P6.**
 
 ```python
 items = 15
 per_box = 4
-boxes = items // per_box
-loose = items % per_box
-print(f"{boxes} full boxes, {loose} loose")
+print(f"{items // per_box} full boxes, {items % per_box} loose")
 ```
 
 ```text
@@ -1455,7 +1631,37 @@ print(f"{boxes} full boxes, {loose} loose")
 
 Check: 3 × 4 + 3 = 15 ✓
 
-### Page 3.5 — Build It: `receipt.py`, finished
+### Think Deeper
+
+**T1. `:.2f` shows a number to two places without changing it. When is hiding digits a kindness, and when is it a lie?**
+
+Model answer:
+
+> It is a kindness when the hidden digits are not information. `1.0625` on a receipt is unreadable and it does not help anybody — nobody can pay a fraction of a penny, so `1.06` is the honest amount of money and the extra digits are noise. Every receipt does this and nobody objects.
+>
+> It becomes a lie in two situations. The first is when the hidden digits change the meaning: showing a test score as `71%` when it is really `70.6%` can move somebody from one side of a grade boundary to the other, and the person whose score it is would care very much about that digit. The second, and sneakier, is going the other way — showing **more** digits than you actually measured. If I measure a room with a tape marked in centimetres and write `4.2735 m`, I have invented two digits I never knew, and anybody reading it will believe I measured to a tenth of a millimetre.
+>
+> So the rule I would use is: **keep every digit in the box, decide what to show at the last possible moment, and never show more precision than you actually measured.** And if the choice could matter to somebody, say what you did.
+
+**Marking:** full marks needs one clear case of each and a usable rule at the end. The strongest answers notice that showing **too many** digits is also dishonest, not just too few — most people only think of one direction.
+
+**T2. Why does Python have three different division operators — `/`, `//` and `%`?**
+
+Model answer:
+
+> Because "divide" is three different questions, and the answers are not interchangeable.
+>
+> `16 / 5` answers *"if I could cut things up perfectly, how much each?"* — `3.2`. That is the right question for money, litres, distance, or an average like runs per match, where a fraction is a real thing. £27 between five friends genuinely is £5.40 each.
+>
+> `16 // 5` answers *"how many whole ones can I actually hand each person?"* — `3`. That is the right question for slices, seats, boxes, coins, eggs: things that do not survive being cut into fifths. Five minibuses of nine is five buses, not 5.2 buses.
+>
+> `16 % 5` answers *"what is still on the plate?"* — `1`. That is the right question when the leftovers matter, and they usually do: the spare slice, the two students standing on the pavement, the seconds that do not make a whole minute.
+>
+> `//` and `%` almost always come together because between them they account for the **whole** total, and one on its own is only half the story. `47 // 9` says five full buses, which is true and useless on its own — it does not tell you that two people are left behind. The check proves you have both right: whole ones times the count, plus the leftovers, equals what you started with.
+
+**Marking:** full marks needs a real-world example for each of the three and the point that `//` and `%` together account for the whole total. "They give different answers" has not explained anything.
+
+### Build It — `receipt.py`, finished properly
 
 Model answer, actually run. The student's `friends` will differ; the structure is what is marked.
 
@@ -1496,7 +1702,7 @@ Left over    : 1 slice
 -------------------------
 ```
 
-**Marking checklist:**
+**Marking checklist** (it mirrors the workbook's own checklist):
 
 - [ ] Runs with no traceback.
 - [ ] Line 1 is a comment naming the file and its purpose.
@@ -1504,8 +1710,11 @@ Left over    : 1 slice
 - [ ] Every `print` that shows a value uses an f-string. (The two divider lines are pure text and may use a plain string.)
 - [ ] `total` and `cost_per_slice` both shown with `:.2f`.
 - [ ] `each` comes from `//` and `left_over` comes from `%`.
-- [ ] **No number typed twice.** Check by eye: does `8` appear only in `slices_per_pizza`? Does `2` appear only in `pizzas`?
+- [ ] **No number typed twice.** Does `8` appear only in `slices_per_pizza`? Does `2` appear only in `pizzas`?
 - [ ] The check works: `each × friends + left_over` = `slices`. 3 × 5 + 1 = 16 ✓
+- [ ] They read the output out loud.
+
+**Results table** (for the model run above): Total `17.00`, from `pizza_price * pizzas` · Slices `16`, from `pizzas * slices_per_pizza` · Per slice `1.06`, from `total / slices` · Each gets `3`, from `//` · Left over `1`, from `%`. The check: 3 × 5 + 1 = 16, and `slices` is 16 ✓. **The raw per-slice figure**, printed without the dial, is `1.0625`.
 
 **A second set of numbers**, for marking a student who chose different inputs — three pizzas at £7.25, 8 slices each, 7 friends. Real output from the file above with those four values changed:
 
@@ -1521,10 +1730,9 @@ Left over    : 3 slice
 -------------------------
 ```
 
-Check: 3 × 7 + 3 = 24 ✓ And the raw per-slice figure is `0.90625`, which `:.2f` shows as `0.91` — rounded up, correctly.
+Check: 3 × 7 + 3 = 24 ✓ The raw per-slice figure is `0.90625`, which `:.2f` shows as `0.91` — rounded up, correctly.
 
-**3.5(b) Change one input and say how many lines you had to edit.**
-**One.** Setting `pizza_price = 9.50` changes three printed figures:
+**(a) Change one input.** **One** line edited. Setting `pizza_price = 9.50` changes **three** printed figures:
 
 ```text
 Pizzas       : 2 at 9.50 each
@@ -1534,36 +1742,37 @@ Per slice    : 1.19
 
 That is the entire argument for naming values instead of typing them, and it is much more convincing felt than explained.
 
-**3.5(c) Read your receipt out loud. Did anything sound wrong?**
-Mark the honesty. The two things students most often catch by ear: `Left over    : 1 slice` reads fine but `Left over    : 3 slice` does not — the word should be `slices`. (Fixing that properly needs an `if`, which is Week 5; noticing it now is the right answer and the honest reply is *"you've found next-to-next week."*) And a `Per slice` figure of `0.91` when the total is `21.75` sounds plausible, whereas `9.06` would not — which is the sanity check doing its job.
+**(b) Read it out loud.** The bug findable by ear: `Left over    : 1 slice` reads fine, but with `friends = 6` the file prints `Each gets    : 2 slices` and `Left over    : 4 slice` — **`4 slice` is wrong English**, and fixing it properly needs an `if`, which is Week 5. Noticing it now is the right answer; the honest reply is *"you've found next-to-next week."* The other thing students catch by ear: whether the per-slice figure is plausible. `0.91` for a `21.75` total over 24 slices sounds right; `9.06` would not. Mark the honesty.
 
-### Page 3.6 — Think Deeper
+**(c) A number that divides exactly.** With `friends = 4`: `Each gets    : 4 slices` and `Left over    : 0 slice`. **`0` is not a failure** — the pizza divided perfectly and `%` told you so. Check: 4 × 4 + 0 = 16 ✓
 
-**T1. `:.2f` shows a number to two places without changing it. When is hiding digits a kindness, and when is it a lie?**
+**The Bug Log.** Mark the structure, and be strict about the no-error row. Model rows:
 
-Model answer:
+| # | What I saw | What it meant | What I changed |
+|---|---|---|---|
+| 6 | `Per slice    : {cost_per_slice:.2f}` — **NO ERROR AT ALL** | I forgot the `f`, so the braces were just characters and Python printed them. | Put the `f` back. **How I noticed:** curly braces in the middle of a receipt, and no receipt has curly braces. |
+| 7 | `SyntaxError: f-string: expecting '}'` | I opened a brace and never closed it. | Added the `}` before the closing quote. |
 
-> It is a kindness when the hidden digits are not information. `1.0625` on a receipt is unreadable and it does not help anybody — nobody can pay a fraction of a penny, so `1.06` is the honest amount of money and the extra digits are noise. Every receipt does this and nobody objects.
->
-> It becomes a lie in two situations. The first is when the hidden digits change the meaning: showing a test score as `71%` when it is really `70.6%` moves somebody from one side of a grade boundary to the other, and the person whose score it is would care very much about that digit. The second, and sneakier, is going the other way — showing **more** digits than you actually measured. If I measure a room with a tape marked in centimetres and write `4.2735 m`, I have invented two digits I never knew, and anybody reading it will believe I measured to a tenth of a millimetre.
->
-> So the rule I'd use is: **keep every digit in the box, decide what to show at the last moment, and never show more precision than you actually measured.** And if the choice could matter to somebody, say what you did.
+The "how I noticed" sentence is the whole point of row 6: every earlier entry was found *for* the student by a traceback; this is the first they found themselves.
 
-**T2. Why does Python have three different division operators — `/`, `//` and `%`?**
+### Draw It
 
-Model answer:
+There is no single right drawing. A strong answer does four things:
 
-> Because "divide" is three different questions and the answers are not interchangeable.
->
-> `16 / 5` answers *"if I could cut things up perfectly, how much each?"* — 3.2. That is the right question for money, or litres, or distance, where a fraction is a real thing.
->
-> `16 // 5` answers *"how many whole ones can I actually hand each person?"* — 3. That is the right question for slices, seats, boxes, coins: things that don't survive being cut into fifths.
->
-> `16 % 5` answers *"what's still on the plate?"* — 1. That is the right question when the leftovers matter, and they usually do: the spare slice, the last few items that don't fill a box, the seconds that don't make a whole minute.
->
-> If Python only had `/`, you would have to work the other two out yourself every single time, and you would get it wrong. And they aren't just three ways of writing one sum — you nearly always need `//` and `%` **together**, because between them they account for the whole total: whole ones times the count, plus the leftovers, equals what you started with. Two answers to two different questions that add back up to one thing.
+1. **The left-hand side shows the pile as one undivided heap**, with the total written next to it.
+2. **The right-hand side shows equal groups, drawn as groups**, with the leftovers **separated by the dashed line**, not tucked into a group.
+3. **The check appears on the page.** The workbook's example: 23 eggs into boxes of 6 — `3 × 6 + 5 = 23` ✓, with "3 full boxes (`23 // 6`)" and "5 loose (`23 % 6`)" in the bottom boxes.
+4. **Nothing on the page is a fraction of a physical object.** `23 / 6 = 3.83` with three-and-a-bit boxes is the weak answer; there is no such thing as 0.83 of a box.
 
-### Page 3.6 — Vocabulary check
+The three bottom boxes — how many altogether · how many each (`//`) · how many left (`%`) — must agree with the drawing and with the check.
+
+### Self-Check
+
+Not marked. Read the ticks against the work: a student who ticks 😀 on "Spot a bug that produces no error message" but missed Snippet 1 line 2 and Snippet 4 line 3 in Predict the Output has told you where to start next week. The "one thing I'd like explained again" line is the best five seconds of the week; read it.
+
+### Teacher reference — vocabulary (not a workbook item)
+
+The workbook has no vocabulary page; the five terms are in At a Glance and the student guide. If you want to check them:
 
 | Term | Answer |
 |---|---|

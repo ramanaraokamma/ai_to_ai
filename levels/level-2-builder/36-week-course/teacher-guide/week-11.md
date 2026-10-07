@@ -13,7 +13,7 @@
 | **Big idea** | A list is a row of numbered slots — and the first slot is number 0, not 1. |
 | **New vocabulary** | list · index · element · append · `IndexError` |
 | **New syntax** | `[1, 2, 3]` · `scores[0]` / `scores[-1]` · `len(scores)` · `scores.append(x)` |
-| **Materials** | **Five index cards and a marker pen** · **a pink or red pen** (this matters — see the Hook) · printed workbook pages 11.1–11.6 · the notebook, open at the Bug Log · pencil |
+| **Materials** | **Five index cards and a marker pen** · **a pink or red pen** (this matters — see the Hook) · the printed workbook (all of it, double-sided if you like) · the notebook, open at the Bug Log · pencil |
 | **Tech needed** | Python 3, an editor, one terminal. **No libraries.** |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
@@ -355,7 +355,7 @@ lit pill at the bottom is **representation** — toolcraft has gone dark.*
 
 ### 15 minutes the night before
 
-- [ ] **Print workbook pages 11.1–11.6.** Page 11.2 (the twelve drills) is the one that gets written on.
+- [ ] **Print the Week 11 workbook.** The section that gets written on in class is 🛠️ Build It (the twelve drills table, with a prediction box beside each drill).
 - [ ] **Make the cards.** This is the most important five minutes of prep this week.
   - Take **five** index cards. On four of them, write one number each, big and dark, on the front: **45**, **0**, **112**, **67**.
   - Leave the fifth card **blank on both sides** and keep it in your pocket. It becomes the appended 89 at minute 5.
@@ -779,8 +779,8 @@ Bug Log entry, one line: **"`TypeError: object of type 'NoneType' has no len()` 
 
 Full instructions in the next section. In the lesson flow:
 
-- **Minutes 0–15:** workbook page 11.2. The twelve list-surgery drills, in a new file. They must **write their prediction on the page before running each one.**
-- **Minutes 15–20:** drill 12 — cause an `IndexError` on purpose, paste the real traceback into the Bug Log, and write the one-line fix plus one sentence on why counting from zero caused it.
+- **Minutes 0–15:** workbook 🛠️ Build It, Part 1. The twelve list-surgery drills, in a new file. They must **write their prediction on the page before running each one.**
+- **Minutes 15–20:** drill 12 (Build It Part 2) — cause an `IndexError` on purpose, paste the real traceback into the Bug Log, and write the one-line fix plus one sentence on why counting from zero caused it.
 
 You should be nearly silent. Use the escalation ladder; do not type.
 
@@ -828,7 +828,7 @@ You can see that they wrote `scores[4]`. Do not point at it. Work down this ladd
 ![A list is a row of numbered slots](../figures/fig-w11-1-list-numbered-slots.svg)
 *Figure 11.6 — The table at the start of the Hook: four cards in a row, slot numbers on a separate pink strip underneath.*
 
-**On the table:** the four cards, the pink `0 1 2 3` strip, the blank fifth card, workbook page 11.2 (twelve drills, with a prediction box beside each), the notebook open at the Bug Log, a pencil.
+**On the table:** the four cards, the pink `0 1 2 3` strip, the blank fifth card, workbook 🛠️ Build It Part 1 (twelve drills, with a prediction box beside each), the notebook open at the Bug Log, a pencil.
 
 **On the screen:** a new empty file, `week11_drills.py`.
 
@@ -1115,11 +1115,11 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "One main page, about an hour, and there's a written bit at the end that matters as much as the code.
+> "One main section, about an hour, and there's a written bit at the end that matters as much as the code.
 >
-> **The twelve drills.** Page 11.2. Same list of step counts. Same rule as in class: **write your prediction in the box first, then run it.** If you run it first you've turned a thinking exercise into a typing exercise and you've wasted your own evening. I will be able to tell, because the interesting ones are drills 4, 5, 6 and 7 and nobody gets all four right first time.
+> **Build It.** Same list of step counts as in class. **Part 1 is the twelve drills.** Same rule as in class: **write your prediction in the box first, then run it.** If you run it first you've turned a thinking exercise into a typing exercise and you've wasted your own evening. I will be able to tell, because the interesting ones are drills 4, 5, 6 and 7 and nobody gets all four right first time.
 >
-> **Drill 12 is the one I'll read first.** Cause an `IndexError` on purpose. Then three things in the Bug Log:
+> **Drill 12 is the one I'll read first.** That's Part 2: cause an `IndexError` on purpose. Then three things in the Bug Log, which is Part 4:
 >
 > One: the **real traceback**, copied character for character. Not 'it said index error'. The actual four lines.
 >
@@ -1127,33 +1127,97 @@ Three checks, five minutes, exact wording.
 >
 > Three — and this is the marks — **one sentence saying why counting from zero caused it.** Something like: 'there are eight items, so the slot numbers go 0 to 7, and I asked for 8, which is one past the end.'
 >
-> **Then page 11.5**, which is six predictions with no code to write. Answer them from your head, then check them. Two of the six are designed to catch you.
+> **Then Part 3 of Build It**, which is six predictions with no code to write. Answer them from your head, then check them. Two of the six are designed to catch you.
 >
-> Before you close the book: page 11.6, this week's five words and four bits of syntax, in your own words. And keep your four cards somewhere safe — you'll want them next week, and again in week 13, and again in week 29 when we cut a deck of cards to split a dataset."
+> Before you start, do the **Warm-Up**, five quick questions about last week. When you've finished, tick the **Self-Check** honestly. And keep your four cards somewhere safe — you'll want them next week, and again in week 13, and again in week 29 when we cut a deck of cards to split a dataset."
 
-**Workbook pages:** 11.1 and the start of 11.2 in class; **11.2 finished, 11.3, 11.4, 11.5, 11.6** at home.
+**Workbook sections.** The Week 11 workbook has these sections, in this order: ✅ Warm-Up (W1–W5) · 🔎 Predict the Output (P1–P4) · ✍️ Practice Set A — Read It (A1–A6) · ✍️ Practice Set B — Write It (B1–B5) · 🐞 Fix the Broken Program · 🧩 Puzzle of the Week (Parts A and B) · 🤔 Think Deeper (T1, T2) · 🛠️ Build It (Parts 1–4) · 🎨 Draw It · 📊 Self-Check. The student also has the workbook's own Answers section at the back, so tell them to check **after** they have written, not before.
 
-**Expected time:** 30 min for the twelve drills with predictions · 10 min for the `IndexError` write-up · 10 min for the predictions page · 5 min for `len` versus last index · 5 min vocabulary. **About 60 minutes.**
+**In class:** 🛠️ Build It **Part 1** (the twelve drills) and **Part 2** (the deliberate `IndexError`), in the "Their Turn" block.
+
+**Core homework (about an hour):** finish Build It Part 1 · Part 2 if it was not finished in class · **Part 3** (six predictions) · **Part 4** (the Bug Log) · ✅ Warm-Up · 📊 Self-Check.
+
+**The rest of the workbook** (🔎 Predict the Output, ✍️ Practice Sets A and B, 🐞 Fix the Broken Program, 🧩 Puzzle of the Week, 🤔 Think Deeper, 🎨 Draw It) is extra practice for the rest of the week. Pick what suits the student; Predict the Output, Practice Set A and the Fix the Broken Program are the three that most directly reinforce the fencepost. Everything is marked from the key below.
+
+**Expected time (core):** 5 min Warm-Up · 30 min for the twelve drills with predictions · 10 min for the `IndexError` write-up and Bug Log · 10 min for the six predictions · 5 min Self-Check. **About 60 minutes.** Predict the Output ~10 min, Practice Set A ~20, Practice Set B ~25, Fix the Broken Program ~15, Puzzle ~15, Think Deeper ~15 and Draw It ~10 are on top of that.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 11.1 — Read the row
+The key follows the workbook's own sections and item labels, in workbook order. The values are taken from the workbook's Answers section, which a student can read for themselves; **the wrong-answer maps and marking tips are for you only.**
 
-Given `players = ["Meera", "Kabir", "Nova", "Asha"]`:
+### ✅ Warm-Up (W1–W5) — last week, Week 10
 
-| # | Question | Answer | Note |
-|---|---|---|---|
-| a | `players[0]` | `Meera` | Zero steps from the start. |
-| b | `players[2]` | `Nova` | Two steps along. Not `Kabir`. |
-| c | `players[-1]` | `Asha` | The last one, whatever the length. |
-| d | `players[-3]` | `Kabir` | Three back from the end: Asha, Nova, Kabir. |
-| e | `len(players)` | `4` | A count. |
-| f | The biggest valid index | `3` | `len - 1`. |
-| g | `players[4]` | **`IndexError: list index out of range`** | There is no slot 4. |
-| h | `players[-5]` | **`IndexError: list index out of range`** | Negative indexes run out too. Valid ones are −1 to −4. |
-| i | Which slot holds `"Nova"`? | `2`, or `-2` | Both are correct and it is worth accepting both. |
+| # | Answer | Marking note |
+|---|---|---|
+| **W1** | The **parameter** is the name written in the definition; the **argument** is the value handed over at the call. Same box, two moments. | Wrong answer to watch for: using the two words as if they meant the same thing. |
+| **W2** | A **default value.** It sits inside the parameter `slices` and is used only when the caller supplies nothing. A definition contains no arguments at all. | The question warns "it is not an argument", so "an argument" is the one wrong answer. |
+| **W3** | The function **prints** its answer instead of **returning** it, so nothing comes back and `total` holds `None`. One-word fix: change `print` to `return` on its last line. | Both halves needed: what is wrong, and the fix. |
+| **W4** | *"Something handed back nothing, and then I tried to use it."* | Same sentence as in the lesson script. |
+| **W5** | **No** — a `NameError`. A name made inside a function exists only while the call is running. The **value** can get out through `return`; the **name** never does. | "Yes" is the wrong answer. Look for *why*, not just the no. |
+
+### 🔎 Predict the Output (P1–P4)
+
+Eleven answers in all (3 + 3 + 2 + 3). The "How many of the eleven did you get right?" box is the student's own score. The workbook says one of the four crashes (P3) and that two catch nearly everybody; the likely two are P2 (the 89 answer) and P3 (the −5 crash).
+
+**P1** — `scores = [45, 0, 112, 67]`:
+
+```text
+0
+45
+4
+```
+
+Line 1's answer is **not nothing — it is the number zero.** Slot 1 really does hold 0. `scores[-4]` is the first item reached the long way round (67 is −1, 112 is −2, 0 is −3, **45 is −4**).
+
+**P2** — after `scores.append(89)`:
+
+```text
+67
+89
+4
+```
+
+`scores[3]` is **still 67**: `append` put 89 in a brand-new slot 4 and moved nothing. `scores[-1]` is 89 because −1 always means "the last one". `len(scores) - 1` is 4: five items, biggest name four. **Wrong answer to watch for: 89 on the first line** — "Why is it not 89?" is answered by "append moves nothing". The pair to remember: `[3]` used to be "the last one" and quietly stopped being it; `[-1]` never stopped.
+
+**P3:**
+
+```text
+45
+Traceback (most recent call last):
+  File "/Users/you/ai-academy/level2/hw11_predict.py", line 3, in <module>
+    print(scores[-5])
+IndexError: list index out of range
+```
+
+**Negative indexes run out too.** On a four-item list the valid ones are −1 to −4. *How far back can they go?* → −4, which is `-len`.
+
+**P4** — `scores = [45, 0]`, then `scores.append([112, 67])`:
+
+```text
+[45, 0, [112, 67]]
+3
+[112, 67]
+```
+
+**Three elements, not four**, and the third is itself a whole list. The single character that caused `len` to be one less than expected is the **`[`** inside the brackets of `append`. `append` adds exactly **one** item. If `len` ever says one less than you expected, look for a bracket you did not mean to type.
+
+### ✍️ Practice Set A — Read It (A1–A6)
+
+**A1.** Given `players = ["Meera", "Kabir", "Nova", "Asha"]`:
+
+| # | Answer | Note |
+|---|---|---|
+| a | `Meera` | Zero steps from the start. |
+| b | `Nova` | Two steps along. **Not `Kabir`.** |
+| c | `Asha` | The last one, whatever the length. |
+| d | `Kabir` | Three back from the end: Asha, Nova, Kabir. |
+| e | `4` | A count. |
+| f | `3` | `len - 1`. |
+| g | **`IndexError: list index out of range`** | There is no slot 4. |
+| h | **`IndexError: list index out of range`** | Negative indexes run out too. Valid ones are −1 to −4. |
+| i | `2` or `-2` | Both correct — every slot has two names. Worth accepting both. |
 
 Verified:
 
@@ -1175,57 +1239,96 @@ Asha
 5
 ```
 
-**11.1(j) Nova is the third player. Why is her index 2?**
-Because the index counts how far from the start she is, not which one she is. She is two steps along from Meera. Numbering starts at 0, so the third thing is number 2.
+**A1(j)** Nova is the third player. Why is her index 2? Because the index counts **how far from the start** she is, not which one she is. She is two steps along from Meera. Numbering starts at 0, so the third thing is number 2.
 
-**11.1(k) After `players.append("Dev")`, what is `players[3]`?**
-Still `Asha`. `append` puts Dev in a brand-new slot 4 and moves nothing. `players[-1]` is now `Dev`; `players[3]` is unchanged.
+**A1(k)** After `players.append("Dev")`: `players[3]` is still **`Asha`**; `players[-1]` is now **`Dev`**. `append` put Dev in a brand-new slot 4 and moved nothing.
 
-### Page 11.2 — The twelve drills
+**A2 (i)**
 
-Complete working file, actually run, with its real output — the same file as in the Activity section above. The values, drill by drill:
-
-| # | Answer | The thing to check when marking |
-|---|---|---|
-| 1 | `[4200, 9100, 6350, 12040, 3300, 8700, 15200]` | The brackets and commas are part of the answer. |
-| 2 | `7` | A count. |
-| 3 | `4200` | `steps[0]`, not `steps[1]`. |
-| 4 | `6350` | **`steps[2]`.** If they wrote `steps[3]` and got `12040`, they read "third" as slot 3. This is the drill that catches most people. |
-| 5 | `15200 15200` | Both `steps[6]` and `steps[-1]`. If only one is there, the drill is not done. |
-| 6 | `8700` | `steps[-2]`. A common wrong answer is `9100` — counting back from the wrong end. |
-| 7 | `6` | `len(steps) - 1`. Writing the literal `6` is a miss: the point is to compute it. |
-| 8 | `[4200, 9100, 6350, 12040, 3300, 8700, 15200, 7700] len 8` | 7,700 on the **end**, and `len` up by exactly one. |
-| 9 | `7700` | Must be `steps[-1]`. `steps[7]` is right and misses the point of the drill. |
-| 10 | eight lines, `0 4200` through `7 7700` | Eight lines, not seven — the append already happened. Slot numbers run 0 to 7. |
-| 11 | `total 66590`, `average 8323.75`, `average to 1 dp 8323.8` | The average being a decimal is correct, not a bug. |
-| 12 | a real `IndexError` traceback | See below. |
-
-**Hand-check drill 11**, and make them do it in the back of the notebook:
-
-```
-4200 + 9100  = 13300
-     + 6350  = 19650
-     + 12040 = 31690
-     + 3300  = 34990
-     + 8700  = 43690
-     + 15200 = 58890
-     + 7700  = 66590   ✔
-66590 / 8 = 8323.75     ✔
-8323.75 to 1 dp = 8323.8  (the 5 rounds up)  ✔
+```text
+fig
+apple
+3
 ```
 
-**11.2(a) Drill 10 printed eight lines, but there were only seven days. Why?**
-Because drill 8 appended today's steps before drill 10 ran, and Python runs the file top to bottom. The list has eight elements by the time the loop starts. Any student who noticed this on their own should be told they noticed something real.
+**A2 (ii)**
 
-**11.2(b) In drill 10, why does `range(len(steps))` give exactly the right numbers?**
-Because `range(8)` produces 0, 1, 2, 3, 4, 5, 6, 7 — it stops *before* 8 — and those are precisely the valid slot numbers for an eight-item list. The stop-before rule and the count-from-zero rule fit together exactly, which is not a coincidence.
+```text
+[10, 20, 30, 40, 50]
+5
+50
+```
 
-**11.2(c) Which drill could you not answer without knowing the length of the list?**
-Drill 5's first half (`steps[6]`) and drill 7. Drills 5's second half, 6 and 9 all use negative indexes and need no knowledge of the length at all.
+The shorter line: **`print(nums[-1])`**. Same answer, fewer characters, and it cannot be got wrong by one.
 
-### Page 11.3 — `len` versus the last index
+**A2 (iii)**
 
-| A list with… | `len` is | First index | Last index | Most negative index | Number of valid indexes |
+```text
+3
+7 7 7
+7
+```
+
+**Three elements**, not one. A list is a row of **positions**, not a collection of distinct values. Slots 0, 1 and 2 each happen to hold 7, and `len` is 3.
+
+**A2 (iv)**
+
+```text
+1
+5
+5
+Traceback (most recent call last):
+  File "/Users/you/ai-academy/level2/a2iv.py", line 5, in <module>
+    print(nums[1])
+IndexError: list index out of range
+```
+
+A one-item list has **two** valid indexes, `0` and `-1`, and both open the same slot. `nums[1]` is one past the end.
+
+**A3** — `temps[len(temps)]`:
+
+```text
+Traceback (most recent call last):
+  File "/Users/you/ai-academy/level2/a3.py", line 2, in <module>
+    print("the last temperature was", temps[len(temps)])
+IndexError: list index out of range
+```
+
+**Why it is wrong for every list:** `len` is the **count** and the last index is one **less** than the count, so `len(temps)` is *always* exactly one past the end — for a list of five, of five hundred, or of zero (where it is `temps[0]`). The two fixes:
+
+```python
+print("the last temperature was", temps[len(temps) - 1])
+```
+
+```python
+print("the last temperature was", temps[-1])
+```
+
+**Keep `temps[-1]`.** It is shorter, it cannot be got wrong by one, and it keeps meaning "the last one" after somebody appends. Accept either as "two fixes"; the *reason* for the choice is what is marked.
+
+**A4** — `nums = [3, 8, 1, 9, 6]`:
+
+| Line | Answer |
+|---|---|
+| `print(nums[1])` | **D** 8 |
+| `print(nums[-2])` | **E** 9 |
+| `print(len(nums))` | **B** 5 |
+| `print(len(nums) - 1)` | **A** 4 |
+| `print(nums[len(nums) - 1])` | **C** 6 |
+
+The two lines whose numbers are not in the list are `len(nums)` → 5 and `len(nums) - 1` → 4. **Those are not values, they are facts about the row itself**: how many slots there are, and the biggest slot number.
+
+**A5** — the slots hold `4200`, `9100`, `6350`, `12040`, `3300`.
+
+- Forward indexes: **0  1  2  3  4**
+- `len(steps)` is **5** · the biggest valid index is **4** · `steps[-1]` is **3300**
+- Backward indexes: **-5  -4  -3  -2  -1**
+
+The two rows read in opposite directions: slot 0 is also −5, slot 4 is also −1.
+
+**A6**
+
+| A list with… | `len` is | First index | Last index | Most negative index | How many valid indexes |
 |---|---|---|---|---|---|
 | 1 item | 1 | 0 | 0 | −1 | 1 |
 | 4 items | 4 | 0 | 3 | −4 | 4 |
@@ -1235,11 +1338,7 @@ Drill 5's first half (`steps[6]`) and drill 7. Drills 5's second half, 6 and 9 a
 | 0 items | 0 | — | — | — | **0 — there are none** |
 | `n` items | `n` | 0 | `n - 1` | `-n` | `n` |
 
-**11.3(a) Fill in the general rule for a list of `n` items.**
-First index 0. Last index `n - 1`. Most negative valid index `-n`. There are `n` valid positive indexes and `n` valid negative ones, so `2n` ways to name `n` slots — every slot has exactly two names.
-
-**11.3(b) The empty list row is different. Why?**
-Because there are no slots at all, so there is no first and no last. `len([])` is 0 and *every* index is out of range, including 0. Verified:
+**(a)** The empty-list row is different because there are **no slots at all**, so there is no first and no last. `len([])` is 0 and **every** index is out of range, including 0. Verified:
 
 ```python
 scores = []
@@ -1255,15 +1354,355 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
-**11.3(c) Why is `scores[len(scores)]` always wrong, for every list?**
-Because `len` is the count and the last index is one less than the count. `len(scores)` is therefore *always* exactly one past the end, for every list of every length — including the empty list, where it is `scores[0]`. It is the most reliable way to produce an `IndexError` ever invented.
+**(b) `2n`.** There are `n` valid positive indexes and `n` valid negative ones, so there are `2n` ways to name `n` slots — every slot has exactly two names.
 
-**11.3(d) You want the last item. Give two ways and say which is better.**
-`scores[len(scores) - 1]` and `scores[-1]`. `scores[-1]` is better: it is shorter, it cannot be got wrong by one, and it keeps meaning "the last one" after somebody appends. Accept either as the answer to "give two ways"; the *reason* is what is being marked.
+### ✍️ Practice Set B — Write It (B1–B5)
 
-### Page 11.4 — The deliberate `IndexError`
+**B1–B3** — the student's snacks are their own. A worked version so you can check the *shape*:
 
-**(a) Paste the real traceback.**
+```python
+snacks = ["samosa", "vada pav", "chai", "lassi", "thali"]
+print(snacks[0], snacks[-1])
+print(len(snacks), len(snacks) - 1)
+
+snacks.append("ice cream")
+print(snacks)
+print(len(snacks))
+print(snacks[2])
+print(snacks[-1])
+```
+
+```text
+samosa thali
+5 4
+['samosa', 'vada pav', 'chai', 'lassi', 'thali', 'ice cream']
+6
+chai
+ice cream
+```
+
+**B2 — why is typing the literal number a miss?** Because `4` is only right while the list has exactly five items. `len(snacks) - 1` is right **for ever**, including after B3's append. A right answer that stops being right is a bug with a delay on it. **This is the same marking point as drill 7 in Build It.**
+
+**B3 — slot 2 before the append: `chai`. After: `chai`.** Identical, and `len` went from 5 to 6. `append` never pushes anything along.
+
+**B4 — the complete file:**
+
+```python
+# bus_stops.py - one list of how many people got on at each stop.
+
+boarded = [4, 0, 11, 7, 2, 9]          # six stops, slots 0 to 5
+
+print("stops         :", len(boarded))
+print("first stop    :", boarded[0])
+print("last stop     :", boarded[-1])
+print("biggest slot  :", len(boarded) - 1)
+print("empty stop    :", boarded[1])   # a real zero, not a missing value
+
+boarded.append(6)                      # one more stop was added to the route
+print("after append  :", boarded)
+print("stops now     :", len(boarded))
+
+# every slot with its value
+for i in range(len(boarded)):
+    print("  stop", i, "->", boarded[i], "people")
+
+total = 0                              # accumulator
+for i in range(len(boarded)):
+    total += boarded[i]
+print("total people  :", total)
+print("average/stop  :", f"{total / len(boarded):.1f}")
+```
+
+```text
+stops         : 6
+first stop    : 4
+last stop     : 9
+biggest slot  : 5
+empty stop    : 0
+after append  : [4, 0, 11, 7, 2, 9, 6]
+stops now     : 7
+  stop 0 -> 4 people
+  stop 1 -> 0 people
+  stop 2 -> 11 people
+  stop 3 -> 7 people
+  stop 4 -> 2 people
+  stop 5 -> 9 people
+  stop 6 -> 6 people
+total people  : 39
+average/stop  : 5.6
+```
+
+Hand-check:
+
+```text
+4 + 0  = 4
+  + 11 = 15
+  + 7  = 22
+  + 2  = 24
+  + 9  = 33
+  + 6  = 39     ✔
+39 / 7 = 5.571428...
+to 1 dp = 5.6   ✔
+```
+
+**Why seven lines from the loop?** The `append` happened **before** the loop, and Python runs a file top to bottom, so `len(boarded)` was 7 when the loop started. The loop is looking at the list as it is *at that moment*. And `boarded[1]` is `0`: nobody got on at stop 1. That is a **real measurement**, not a missing value; telling those apart comes back hard in Week 23.
+
+**B5 — three acceptable answers**, all verified. Run them one at a time, because the first crash ends the program:
+
+```python
+scores = []
+print(scores[0])                # an empty list has no slots at all
+```
+
+```python
+steps = [4200, 9100, 6350, 12040, 3300, 8700, 15200, 7700]
+print(steps[-9])                # only -1 to -8 exist on an 8-item list
+```
+
+```python
+steps = [4200, 9100, 6350, 12040, 3300, 8700, 15200, 7700]
+print(steps[len(steps)])        # len is always one past the end
+```
+
+All three give `IndexError: list index out of range`. Full marks for a cause that is genuinely different, not just a different number.
+
+### 🐞 Fix the Broken Program
+
+**Bug 1** — **Family 1, never started.** None of it ran: no output at all before the message. *Why does the arrow point at the opening bracket?* Python read to the end of the file still waiting for a `]`, gave up, and reported **where the waiting started.** The arrow shows where Python noticed, not where the student typed wrong. The fix:
+
+```python
+steps = [4200, 9100, 6350, 12040, 3300, 8700, 15200]  # bug 1 lives on this line
+```
+
+**Bug 2**
+
+- **(a)** Seven valid indexes: **0, 1, 2, 3, 4, 5 and 6.** Seven days, biggest name six.
+- **(b)** **Yes**, Sunday is in the list — it is the last item, **slot 6**. The list is fine; the request was wrong.
+- **(c)** The two fixes, and keep the second:
+
+```python
+print("Sunday        :", steps[6])
+```
+
+```python
+print("Sunday        :", steps[-1])
+```
+
+  If an eighth day is ever appended, `steps[6]` quietly starts meaning Saturday and nothing warns you; `steps[-1]` still means "the last day recorded".
+- **(d)** The same `IndexError`, further past the end. They are treating the error as a number to be tuned rather than a message to be read. The right question is never "what number stops the crash?" but **"which slot did I actually mean?"**
+
+**Bug 3**
+
+- **(e)** `steps[3]` gave **12040**, which is **Thursday**, the fourth day. Monday is slot 0, Tuesday 1, Wednesday 2, **Thursday 3.**
+- **(f)** The fix:
+
+```python
+print("the third day :", steps[2])                # bug 3 lives on this line
+```
+
+- **(g)** Because nothing impossible happened. `steps[3]` is a perfectly valid slot holding a perfectly plausible number; Python has no idea the label says "third". **Family 3, finished and lied.**
+- **(h)** Hand-check:
+
+```text
+4200 + 9100  = 13300
+     + 6350  = 19650
+     + 12040 = 31690
+     + 3300  = 34990
+     + 8700  = 43690
+     + 15200 = 58890   ✔
+
+58890 / 7 = 8412.857142...   which to 1 dp is 8412.9   ✔
+```
+
+  Full output after all three fixes:
+
+```text
+days recorded : 7
+Monday        : 4200
+the third day : 6350
+Sunday        : 15200
+total steps   : 58890
+average       : 8412.9
+```
+
+- **(i)** **Bug 3 was hardest**, and it is not a close contest. Bug 1 stopped the file dead; bug 2 crashed and printed a line number; bug 3 printed a real number from a real day, and only somebody who checked against the list would notice. Accept any answer that names the plausible number as the reason.
+
+### 🧩 Puzzle of the Week
+
+**Part A — the secret word.** `row = ["A", "C", "D", "E", "I", "N", "X"]`, seven letters, slots 0 to 6.
+
+| Clue | Which slot | Letter |
+|---|---|---|
+| `row[4]` | 4 | **I** |
+| `row[-2]` | 5 | **N** |
+| `row[2]` | 2 | **D** |
+| `row[-4]` | 3 | **E** |
+| `row[-1]` | 6 | **X** |
+
+**The secret word is INDEX.** After `row.append("Y")` the list has eight letters:
+
+| Clue | Which slot now | Letter |
+|---|---|---|
+| `row[4]` | 4 | **I** |
+| `row[-2]` | 6 | **X** |
+| `row[2]` | 2 | **D** |
+| `row[-4]` | 4 | **I** |
+| `row[-1]` | 7 | **Y** |
+
+The word now reads **I X D I Y**. Verified:
+
+```text
+I N D E X
+I X D I Y
+```
+
+- **(a) The rule:** the **positive** clues (`row[4]`, `row[2]`) still open the same slots. **Every negative clue moved**, because a negative index is measured from the **end**, and the end just moved one place to the right.
+- **(b)** **Positive indexes.** This is the opposite of the advice about "the last item", and it is not a contradiction: count from the end when you mean "the last one"; count from the start when you mean "that particular one". Say what you actually mean.
+- **(c)** The student's own clues. Anything that spells a real five-letter word from A, C, D, E, I, N, X (each letter once, because each sits in one slot) counts — `DANCE`, `INDEX`. At least one clue must be negative. **Check every clue by running it**, not by counting in your head.
+
+**Part B — three ways to break it.** Three genuinely different causes:
+
+| # | The line | Why it fails |
+|---|---|---|
+| 1 | `print(steps[8])` on an 8-item list | The index is past the **end**. Valid: 0 to 7. |
+| 2 | `print(steps[-9])` on an 8-item list | The index is past the **front**. Valid: −1 to −8. |
+| 3 | `print(steps[len(steps)])` | `len` is a **count**, so it is always exactly one past the end. |
+| also | `empty = []` then `print(empty[0])` | There are **no slots at all**, so even 0 is out of range. |
+
+**Which would still be an error with a hundred items?** **Number 3, always.** Numbers 1 and 2 would both be valid on a hundred-item list. Number 3 is not a wrong number, it is a wrong idea.
+
+### 🤔 Think Deeper
+
+These are paragraphs, so mark the reasoning, not the wording.
+
+**T1 — model answer.** `scores[3]` and `scores[-1]` give the same answer today and mean two different things: `scores[3]` means "the fourth slot", `scores[-1]` means "the last one". Append a fifth score and they part company: `scores[-1]` gives the new score, still "the last one", while `scores[3]` still gives 67, now the fourth of five. **Neither produces an error.** No traceback, no warning; the program just quietly reports the wrong innings as "the latest". That is **family three, finished and lied**, which is the expensive family because the wrong answer survives. So for a program somebody else will keep using, `scores[-1]` — not because it is shorter, but because it says what is actually meant. *Full marks needs:* what happens to each after the append, **no error**, and the family. **What to catch:** "`[-1]` because it is shorter" with no mention of the list growing.
+
+**T2 — model answer.**
+
+- **The best argument for zero:** the index is the *distance* from the start, so the arithmetic comes out clean. The last index is `len - 1`, `range(4)` gives exactly the four valid slots, and no stray `+1` or `−1` is scattered through loops. (Dijkstra wrote a short note on this in 1982.)
+- **The best argument for one:** humans count from one; nobody says "the zeroth day of the week". In MATLAB, R, Lua and Julia the first item really is number 1.
+- **A bug that only exists because of zero:** `scores[len(scores)]` — the natural-looking way to say "the last one" is exactly one past the end. (In a 1-based language `x[len(x)]` *is* the last item.)
+- **Bugs that would only exist with 1-based counting:** anything that translates between a position and a count of steps — "how many items between slot 3 and slot 7?" is `7 - 3` from zero and needs care from one; and a slice from 1 to 3 would hold two or three items depending on the convention, which is the argument next week.
+- **Honest conclusion:** neither pile is obviously bigger, and the only thing you cannot do is argue with the language you are typing into. The student is allowed to end up unsure; **being unsure with reasons is the answer.**
+
+### 🛠️ Build It
+
+**Part 1 — the twelve drills.** The complete working file, actually run, with its real output (the same file as in the Activity section above, which has the same values):
+
+```python
+# week11_drills.py — twelve list-surgery drills on one week of step counts.
+
+steps = [4200, 9100, 6350, 12040, 3300, 8700, 15200]   # Mon..Sun, slots 0..6
+
+# 1. the whole list
+print("1.", steps)
+
+# 2. how many
+print("2.", len(steps))
+
+# 3. the first day
+print("3.", steps[0])
+
+# 4. the THIRD day -- third means slot 2, because counting starts at 0
+print("4.", steps[2])
+
+# 5. the last day, two ways
+print("5.", steps[6], steps[-1])
+
+# 6. the second-from-last day
+print("6.", steps[-2])
+
+# 7. the highest slot number that exists
+print("7.", len(steps) - 1)
+
+# 8. add today's steps on the end
+steps.append(7700)
+print("8.", steps, "len", len(steps))
+
+# 9. the new last item
+print("9.", steps[-1])
+
+# 10. every slot number with its value
+for i in range(len(steps)):            # i counts 0, 1, 2 ... up to len-1
+    print("10.", i, steps[i])
+
+# 11. total and average, using an accumulator
+total = 0                              # start the running total at zero
+for i in range(len(steps)):
+    total += steps[i]                  # add this slot onto the total
+print("11. total", total)
+print("11. average", total / len(steps))
+print("11. average to 1 dp", f"{total / len(steps):.1f}")
+
+# 12. break it on purpose -- there is no slot 8
+print("12.", steps[8])
+```
+
+```text
+1. [4200, 9100, 6350, 12040, 3300, 8700, 15200]
+2. 7
+3. 4200
+4. 6350
+5. 15200 15200
+6. 8700
+7. 6
+8. [4200, 9100, 6350, 12040, 3300, 8700, 15200, 7700] len 8
+9. 7700
+10. 0 4200
+10. 1 9100
+10. 2 6350
+10. 3 12040
+10. 4 3300
+10. 5 8700
+10. 6 15200
+10. 7 7700
+11. total 66590
+11. average 8323.75
+11. average to 1 dp 8323.8
+Traceback (most recent call last):
+  File "/Users/you/ai-academy/level2/week11_drills.py", line 46, in <module>
+    print("12.", steps[8])
+IndexError: list index out of range
+```
+
+| # | Answer | The thing to check when marking |
+|---|---|---|
+| 1 | `[4200, 9100, 6350, 12040, 3300, 8700, 15200]` | The brackets and commas are part of the answer. |
+| 2 | `7` | A count. |
+| 3 | `4200` | `steps[0]`, not `steps[1]`. |
+| 4 | `6350` | **`steps[2]`.** If they wrote `steps[3]` and got `12040`, they read "third" as slot 3. This is the drill that catches most people. |
+| 5 | `15200 15200` | Both `steps[6]` **and** `steps[-1]`. If only one is there, the drill is not done. |
+| 6 | `8700` | `steps[-2]`. A common wrong answer is `9100` — counting back from the wrong end. |
+| 7 | `6` | `len(steps) - 1`. Typing the literal `6` is a miss: the point is to compute it. |
+| 8 | `[4200, 9100, 6350, 12040, 3300, 8700, 15200, 7700] len 8` | 7,700 on the **end**, and `len` up by exactly one. |
+| 9 | `7700` | Must be `steps[-1]`. `steps[7]` is right and misses the point of the drill (the workbook says "without using the number 7"). |
+| 10 | eight lines, `0 4200` through `7 7700` | Eight lines, not seven — the append already happened. Slot numbers run 0 to 7. |
+| 11 | `total 66590`, `average 8323.75`, `average to 1 dp 8323.8` | The average being a decimal is correct, not a bug. |
+| 12 | a real `IndexError` traceback | See Part 2. |
+
+- **(a)** Drill 10 printed eight lines because drill 8 appended today's steps **before** drill 10 ran, and Python runs the file top to bottom. The list has eight elements by the time the loop starts. A student who noticed this unprompted noticed something real.
+- **(b)** `range(8)` produces 0, 1, 2, 3, 4, 5, 6, 7 — it stops **before** 8 — and those are precisely the valid slot numbers for an eight-item list. The stop-before rule and the count-from-zero rule fit together exactly; that is not a coincidence.
+- **(c)** Drill 5's **first half** (`steps[6]`) and drill 7. Drill 5's second half, drill 6 and drill 9 use negative indexes and need no knowledge of the length at all.
+- **(d)** Hand-check, to be done in the back of the notebook:
+
+```text
+4200 + 9100  = 13300
+     + 6350  = 19650
+     + 12040 = 31690
+     + 3300  = 34990
+     + 8700  = 43690
+     + 15200 = 58890
+     + 7700  = 66590   ✔
+
+66590 / 8 = 8323.75      ✔
+to 1 dp   = 8323.8   (the 5 rounds up)   ✔
+```
+
+  The two lines the student copies into the workbook are `66590 / 8 = 8323.75` and `to 1 dp = 8323.8`.
+
+**Part 2 — the deliberate `IndexError`.**
+
+- **(a) The real traceback.**
 
 ```text
 Traceback (most recent call last):
@@ -1272,31 +1711,12 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
-Any deliberate out-of-range index is acceptable, as long as the traceback is real and copied exactly — including the `Traceback (most recent call last):` line and the `File` line. A summary is not a pass.
-
-**(b) Answer the three questions.**
-
-1. **What kind?** `IndexError`.
-2. **Which thing?** `list index out of range` — the index I asked for is past the end of the list.
-3. **Which line?** Line 46, the last `File` line.
-
-**(c) The one-line fix.**
-
-`print("12.", steps[7])` — or better, `print("12.", steps[-1])`, which cannot be got wrong when the list changes length again.
-
-**(d) One sentence: why did counting from zero cause it?**
-
-Model answer: *"The list has eight items, so the slot numbers run 0 to 7, and 8 is one past the end — the count is eight but the biggest name is seven."*
-
-Accept any sentence containing **both** halves: the numbering starts at 0, **and** the biggest index is one less than the count. Do not accept "because I typed the wrong number" — that says what happened, not why it was easy to do.
-
-**(e) A student "fixes" it by writing `steps[9]`. What happens, and what have they misunderstood?**
-
-The same `IndexError`, because 9 is even further past the end. They are treating the error as a number to be tuned rather than a message to be read. The right question is never "what number stops the crash?" but **"which slot did I actually mean?"**
-
-**(f) Make an `IndexError` happen a second time, in a completely different way.**
-
-Any of these, all verified. **Try them one at a time**, added to the end of `week11_drills.py` — the first one crashes, so the ones below it would never run:
+  Any deliberate out-of-range index is acceptable, as long as the traceback is real and copied exactly — including the `Traceback (most recent call last):` line and the `File` line. A summary is not a pass.
+- **(b) The three questions.** **What kind?** `IndexError`. **Which thing?** `list index out of range` — the index asked for is past the end of the list. **Which line?** Line 46, the last `File` line.
+- **(c) The one-line fix.** `print("12.", steps[7])` — or better, `print("12.", steps[-1])`, which cannot be got wrong when the list changes length again.
+- **(d) One sentence: why did counting from zero cause it?** Model answer: *"The list has eight items, so the slot numbers run 0 to 7, and 8 is one past the end — the count is eight but the biggest name is seven."* Accept any sentence containing **both** halves: the numbering starts at 0, **and** the biggest index is one less than the count. Do not accept "because I typed the wrong number" — that says what happened, not why it was easy to do.
+- **(e)** A classmate makes the number bigger (`steps[9]`): the same `IndexError`, because 9 is even further past the end. They are treating the error as a number to be tuned rather than a message to be read. The right question is **"which slot did I actually mean?"**
+- **(f)** A second `IndexError`, from a different cause. Any of these works (see also Puzzle Part B). **Try them one at a time**, added to the end of `week11_drills.py`; the first one crashes, so the ones below it would never run:
 
 ```python
 print(steps[len(steps)])        # len is always one past the end
@@ -1311,18 +1731,13 @@ empty = []
 print(empty[0])                 # an empty list has no slots at all
 ```
 
-All three give `IndexError: list index out of range`. Full marks for a second one that is genuinely a different *cause*, not just a different number.
+  All three give `IndexError: list index out of range`. Full marks for a second one that is genuinely a different *cause*, not just a different number.
 
-### Page 11.5 — Predict, then check
+**Part 3 — six predictions.** `scores = [45, 0, 112, 67]` throughout.
 
-**(a)** `scores = [45, 0, 112, 67]` — what does `print(scores[1])` give?
-**`0`.** The second slot really does hold zero. Students often assume they have got an error because the answer looks like nothing. Zero is a value.
-
-**(b)** What does `print(scores[-4])` give?
-**`45`.** The first item, reached the long way round. Valid negative indexes on a four-item list are −1, −2, −3, −4.
-
-**(c)** What does `print(scores[-5])` give?
-**`IndexError: list index out of range`.** Verified:
+- **(a) `0`.** The second slot really does hold zero. Students often assume they have got an error because the answer looks like nothing. Zero is a value.
+- **(b) `45`.** The first item, reached the long way round. Valid negatives on a four-item list are −1 to −4.
+- **(c) `IndexError: list index out of range`.** Verified:
 
 ```text
 Traceback (most recent call last):
@@ -1331,12 +1746,9 @@ Traceback (most recent call last):
 IndexError: list index out of range
 ```
 
-Negative indexes run out too. This is the first of the two designed to catch people.
-
-**(d)** `scores.append(89)` then `print(scores[3])` — what changed?
-**Nothing. Still `67`.** `append` adds a new slot 4 and moves nothing. This is the second designed catch: most students say 89.
-
-**(e)** `scores = scores.append(89)` then `print(len(scores))` — what happens?
+  Negative indexes run out too. This is the first of the two designed catches.
+- **(d) Nothing. Still `67`.** `append` adds a new slot 4 and moves nothing. This is the second designed catch: most students say 89.
+- **(e)** `scores = scores.append(89)` then `print(len(scores))`:
 
 ```text
 Traceback (most recent call last):
@@ -1345,23 +1757,64 @@ Traceback (most recent call last):
 TypeError: object of type 'NoneType' has no len()
 ```
 
-`append` changes the list in place and hands back `None`, so the assignment throws the list away and puts `None` in `scores`. The word `NoneType` is the clue, and it is last week's word. **Never put `.append` on the right of an equals sign.**
-
-**(f)** `scores = [45, 0]` then `scores.append([112, 67])` — what is `len(scores)`?
+  `append` changes the list in place and hands back `None`, so the assignment throws the list away and puts `None` in `scores`. The word `NoneType` is the clue, and it is last week's word. **Never put `.append` on the right of an equals sign.**
+- **(f) Three**, not four:
 
 ```text
 [45, 0, [112, 67]]
 3
 ```
 
-**Three**, not four. `append` adds exactly one element, and this time that element happens to be a whole list. If `len` ever says one less than you expected, look for a bracket you did not mean.
+  `append` adds exactly one element, and this time that element happens to be a whole list.
+- **(g) Which two surprised you?** Mark the honesty, not the accuracy. The two designed catches are **(c)**, because negative indexes feel unlimited, and **(d)**, because `append` feels like it should shuffle things along. A good answer names the belief: "I thought minus numbers could go on for ever" or "I thought appending pushed everything up one."
 
-**11.5(g) Which two surprised you, and what did you believe before?**
-Mark the honesty, not the accuracy. The two designed catches are (c) — because negative indexes feel unlimited — and (d), because `append` feels like it should shuffle things along. A good answer names the belief: "I thought minus numbers could go on forever" or "I thought appending pushed everything up one."
+**Part 4 — the Bug Log entry.** A complete entry has all three parts:
 
-### Page 11.6 — Vocabulary and syntax, in your own words
+| | |
+|---|---|
+| **The real message** | `IndexError: list index out of range`, from `print("12.", steps[8])` on line 46 |
+| **Why counting from zero caused it** | The list has eight items, so the slot numbers run 0 to 7. The count is eight but the biggest *name* is seven, and I asked for 8. |
+| **The fix** | `steps[7]`, or better `steps[-1]`, which still means "the last one" if the list grows again. |
 
-Accept any wording that is correct and theirs.
+### 🎨 Draw It
+
+There is no single right drawing: six things of the student's own, as a row of numbered slots. A strong one has all five of these:
+
+1. **One name for the whole row**, not a name per slot.
+2. **Values inside the slots, indexes underneath** — in two different colours, and never in the same box.
+3. **Both index rows**: forward 0…5 and backward −6…−1, reading in opposite directions.
+4. **A bracket above the row labelled `len = 6`**, so `len` looks like a length rather than a last index — plus a separate box saying **biggest index = 5**.
+5. **The after-append version**, with the first six slots traced identically and a note that nothing moved, and two arrows showing that `[5]` stopped meaning "last" while `[-1]` did not.
+
+The commonest weak drawing puts the index inside the slot next to the value. If the value and its index share a box, the two ideas of the week have merged back together.
+
+### 📊 Self-Check
+
+The "I can…" grid is the student's own rating; mark honesty, not the ticks. Look at the "One thing I'd like explained again" line and use it to choose what to reteach. **True or false:**
+
+| Statement | Answer |
+|---|---|
+| `scores[1]` is the first item | **FALSE** — it is the second. The first is `scores[0]`. |
+| An index is how far from the start, not which one | **TRUE** |
+| `scores[-1]` is the last item | **TRUE** |
+| Backward counting starts at −0 | **FALSE** — there is no minus zero, so it starts at −1. |
+| `len(scores)` is the last valid index | **FALSE** — it is the **count**. The last index is `len - 1`. |
+| A list of four things has a slot numbered 4 | **FALSE** — slots 0, 1, 2, 3. |
+| `scores[len(scores)]` works on long lists but not short ones | **FALSE** — it is wrong for **every** list, of every length. |
+| An empty list has a valid slot 0 | **FALSE** — it has no slots at all. |
+| Negative indexes can go back for ever | **FALSE** — they stop at `-n`. |
+| `append` puts the new item on the end | **TRUE** |
+| `append` pushes the other items along by one | **FALSE** — nothing moves. |
+| `scores = scores.append(89)` leaves `scores` as a list | **FALSE** — `scores` becomes `None`. |
+| `append` adds exactly one element, whatever it is | **TRUE** — even if that element is a whole list. |
+| Lists can hold text as well as numbers | **TRUE** |
+| `scores(2)` opens slot 2 | **FALSE** — `TypeError: 'list' object is not callable`. Square brackets. |
+| The fix for an `IndexError` is a bigger number | **FALSE** — the fix is to work out which slot you meant. |
+| `range(len(scores))` gives exactly the valid slot numbers | **TRUE** |
+
+### Teacher-only: the five words, in the student's own words
+
+The workbook has no separate vocabulary page, so use this as the oral check when you go over the work. Accept any wording that is correct and theirs.
 
 | Term | A good answer contains | A wrong answer to watch for |
 |---|---|---|

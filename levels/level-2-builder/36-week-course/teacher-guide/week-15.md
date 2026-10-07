@@ -13,7 +13,7 @@
 | **Big idea** | Filtering keeps the rows that pass a test; grouping counts how many rows share a value. And **every group answer must be reported with its row count.** |
 | **New vocabulary** | filter · group · counting dictionary · key function · row count |
 | **New syntax** | `[r for r in rows if r["age"] > 12]` · `sorted(rows, key=...)` · `max(counts, key=counts.get)` |
-| **Materials** | The twelve index cards from Week 14 · **four sheets of paper as bucket labels** · a pen · printed workbook pages 15.1–15.6 · the Bug Log · a calculator |
+| **Materials** | The twelve index cards from Week 14 · **four sheets of paper as bucket labels** · a pen · the printed Week 15 workbook (Build It and Draw It are the homework) · the Bug Log · a calculator |
 | **Tech needed** | Laptop with Python 3 and the editor. `squad.py` from Week 14 must exist and run. Still nothing installed. |
 | **Prep time** | 15 minutes the night before · 5 minutes on the day |
 
@@ -322,7 +322,7 @@ One thread lit: data.*
 
 ### 15 minutes the night before
 
-- [ ] **Print workbook pages 15.1–15.6.**
+- [ ] **Print the whole Week 15 workbook** (Warm-Up through Self-Check; keep the Answers page for yourself).
 - [ ] **Find the twelve index cards from Week 14** and check `squad.py` still runs. This lab imports those twelve records; if the file is broken you will lose fifteen minutes.
 - [ ] **Write four bucket labels** on four sheets of paper: `Falcons`, `Tigers`, `Hawks`, `Owls`. Lay them face down.
 - [ ] **Type and run the code yourself.** Three files this time. Make them in the course folder.
@@ -399,7 +399,7 @@ Run `python3 check.py`. You must see **exactly**:
 - [ ] Twelve cards squared up in a pile in the middle of the table. Four bucket labels face down beside them.
 - [ ] A calculator on the table. There is real arithmetic today.
 - [ ] `check.py` **deleted.** They write the tools.
-- [ ] Workbook 15.1–15.3 out, 15.4–15.6 held back.
+- [ ] Workbook out, open at Practice Set A (A1–A5 pair with today's lesson); Build It and Draw It held back for the homework.
 - [ ] A blank sheet, landscape, for the answers board. You will write six answers on it and every one gets a row count.
 
 ### Fallback if the laptop or the install fails
@@ -794,7 +794,7 @@ Full instructions in the next section. In the lesson flow:
 
 ### Setup
 
-**On the table:** the four card piles from the Hook, still in their piles. The four bucket labels. A calculator. Workbook page 15.3. The blank landscape answers sheet.
+**On the table:** the four card piles from the Hook, still in their piles. The four bucket labels. A calculator. Workbook Practice Set A, A5 (the trace), for reference. The blank landscape answers sheet.
 
 **On the answers sheet, before anything else:** write the minimum group size the student chose in the Concept segment, in a box, at the top. `MIN_GROUP = 3` or whatever they said. **It has to be up there before the answers appear.**
 
@@ -1237,19 +1237,19 @@ for r in squad:
 
 > "Your own twelve records, your own two tools, six answers — and one sentence that I care about more than the other six things put together. About an hour.
 >
-> **First, the tools.** Page 15.4. Write `filter_by()` and `group_count()` into your own `records.py`, and **the key goes in as an argument** — not hard-coded to `genre` or `team` or whatever your column is called. If your function only works on your own table, you have written an answer. I want a tool.
+> **First, the tools.** Workbook, **Build It, Part 1.** Write `filter_by()` and `group_count()` into your own `records.py`, and **the key goes in as an argument** — not hard-coded to `genre` or `team` or whatever your column is called. If your function only works on your own table, you have written an answer. I want a tool.
 >
-> **Second, six questions.** Page 15.5. Point them at the twelve records you built last week. Here they are: how many rows in each category; which category has the most; how many rows are above some number you choose; the average of one number column for one category; that same average for **every** category; and your top three rows sorted by one number.
+> **Second, six questions.** **Build It, Part 2.** Point them at the twelve records you built last week. Here they are: how many rows in each category; which category has the most; how many rows are above some number you choose; the average of one number column for one category; that same average for **every** category; and your top three rows sorted by one number.
 >
 > **And every single answer gets its row count.** Not '183 plays'. **'183 plays, from 5 songs.'** Every one, including the ones where it feels silly. I will hand back a page that is missing one.
 >
-> **Also print the sum check.** After you group, add the buckets up and print that they come to the number of rows you started with. One line. It is the cheapest way there is of knowing you have not lost anything.
+> **Also print the sum check.** After you group, add the buckets up and print that they come to the number of rows you started with. One line. It is the cheapest way there is of knowing you have not lost anything. Then **Part 3**: pick one average and check it by hand with a calculator.
 >
-> **Third, one sentence.** Page 15.6. **Which of your six answers do you trust least, and why?** Not 'they're all fine'. Pick one. If one of your categories has only one or two rows in it, that is almost certainly your answer, and I want you to say so in your own words — and then tell me what you would do about it."
+> **Third, one sentence.** **Build It, Part 4.** **Which of your six answers do you trust least, and why?** Not 'they're all fine'. Pick one. If one of your categories has only one or two rows in it, that is almost certainly your answer, and I want you to say so in your own words — and then tell me what you would do about it. Finish with **Part 5, the Bug Log** (at least one entry with no error message), and the **Draw It** page: your six answers with the denominator beside every one."
 
-**Workbook pages:** 15.1, 15.2, 15.3 in class · **15.4, 15.5, 15.6** at home.
+**Workbook sections:** the **core homework is Build It (Parts 1–5) and Draw It**. The rest of the workbook is practice that follows the lesson: **Warm-Up, Predict the Output, Practice Set A (A1–A6), Practice Set B (B1–B5), Fix the Broken Program, Puzzle of the Week, Think Deeper and Self-Check.** Suggested split: Warm-Up, Predict the Output and Practice Set A on a second sitting or in the first few minutes of next session, because they only need what was taught today; Practice Set B, Fix the Broken Program, Puzzle and Think Deeper as extra practice at your discretion (B1–B4 and the Fix are the best ones to pick if you pick two); Self-Check last. Practice Set B5 and Build It use the student's **own** twelve records, so there is no single right answer for those — mark against the checks below.
 
-**Expected time:** 15 min writing the two tools · 25 min on the six questions · 10 min on the sum check and tidying the output · 10 min on the trust sentence. **About 60 minutes.**
+**Expected time:** the core homework is about **60 minutes** — 15 min writing the two tools · 25 min on the six questions · 10 min on the sum check, the hand check and tidying the output · 10 min on the trust sentence. Warm-Up, Predict and Practice Set A add roughly 30 minutes more; Set B, Fix, Puzzle and Think Deeper another hour or so. Do not assign all of it in one week.
 
 > **🧑‍🏫 What to look for when you mark it:** two things, in this order. **One — is the key an argument?** A `group_count(rows)` with `"genre"` written inside the function is the defect that matters, because Week 16 imports these tools and points them at a CSV. **Two — does every answer carry its row count?** That is the habit this whole week exists to build, and it is much easier to insist on now than in Week 34 when there are a hundred rows and a deadline.
 
@@ -1257,30 +1257,80 @@ for r in squad:
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Organised in the same order as the workbook, section by section and item by item. Every question is restated briefly, so you can mark from this page alone. Values are the workbook's own Answers section, re-run and confirmed on the twelve-record `squad`, the twelve-song `playlist` from Week 14 and the `canteen.py` data. The workbook's squad is the one in `squad_data.py` (see the Prep Checklist). The in-class six-question activity is keyed at the end of this section.
 
-### Page 15.1 — Filter or group?
+### ✅ Warm-Up (5 min) — five questions about last week
 
-*For each question, say whether it is a filter or a group, and what the answer's shape is.*
+| # | Question | Answer |
+|---|---|---|
+| W1 | `len(squad)` and `len(squad[0])` | **12** (rows) and **5** (fields in the first record: name, team, runs, balls, out — the number of columns *if every record has the same keys*) |
+| W2 | Print the runs of the last row, without 11 | `print(squad[-1]["runs"])` → `104`. `-1` is the last slot (Week 11); better than `squad[11]` because it survives a thirteenth player |
+| W3 | Why is `"Asha" in squad[0]` `False`? | `in` checks the **keys**, not the values. `Asha` is a value stored under `name`; there is no *label* called `Asha` |
+| W4 | One-line comprehension for the `runs` column, and what it throws away | `all_runs = [r["runs"] for r in squad]` — throws away **every label**: twelve numbers with no idea which player each belongs to, and no way back |
+| W5 | `for row in enumerate(squad):` — what is `row`, and what is the error for `row["name"]`? | `row` is a **pair**, `(0, {...})` — position and record. `row["name"]` → `TypeError: tuple indices must be integers or slices, not str`, because a pair is counted, not labelled |
+
+**What to watch for:** W3 is the usual stumble (students say "because Asha isn't a key" without saying `in` looks at keys). W4's second half is the point — "it throws away the labels" is full marks; "nothing" is not.
+
+### 🔎 Predict the Output — P1 to P4
+
+*The prediction is the exercise: two of the four give a wrong answer with no error message, and the score line is out of 9 answers.*
+
+| # | Real output | Why |
+|---|---|---|
+| P1 | `{'pop': 3, 'rock': 2}` then `5 of 5` | Three pop, two rock; 3 + 2 = 5 = rows, so the sum check passes. Buckets appear in the order first met (`pop` first, because Blue Lights came first) |
+| P2 | `cherry`, `banana`, `9` | `max(counts)` is the biggest **key**, judged as text (cherry is last alphabetically; the numbers are never looked at). `max(counts, key=counts.get)` is the key with the biggest **count**. `max(counts.values())` is the biggest **count itself**, with no idea which key it belonged to |
+| P3 | `2`, `3`, `['Asha', 'Omar']` | Two rows pass `> 40`; `len(rows)` is still 3 because filtering builds a new list; Dev's `0` is not more than 40 |
+| P4 | A traceback ending `TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'` | The `0` is missing from `.get`; `counts.get(team)` returns `None` the first time and `None + 1` is meaningless. Fix: `counts.get(team, 0) + 1` |
+
+```text
+Traceback (most recent call last):
+  File "p4.py", line 3, in <module>
+    counts[team] = counts.get(team) + 1
+                   ~~~~~~~~~~~~~~~~~^~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+```
+
+**Where students go wrong:** P2 — most predict `banana` for the first line (they read it as "biggest count"); that is the Week 15 misconception in one line. P4 — most predict `{'Falcons': 2, 'Tigers': 1}` because the line *looks* right; it is one character from correct, and that is the best near-miss of the week. The "which one surprised you most" box has no wrong answer, but "none" after missing P2 deserves a conversation. The workbook's score line is out of 9: P1 has two printed lines (the counts and the `5 of 5`), P2 has three, P3 has three and P4 has one.
+
+### ✍️ Practice Set A — Read It
+
+**A1. Filter or group?**
 
 | # | Question | Filter or group? | What comes back |
 |---|---|---|---|
-| (a) | "Show me the Tigers." | filter | a smaller list of records — 4 of them |
-| (b) | "How many players per team?" | group | a dictionary, one key per team |
-| (c) | "Who scored more than 50?" | filter | a smaller list of records — 5 of them |
-| (d) | "How many players got out, and how many didn't?" | group | a dictionary with two keys, `True` and `False` |
-| (e) | "What's the Hawks' average?" | filter, then arithmetic | one number — and it needs its row count |
-| (f) | "Which team is biggest?" | group, then `max` | one key — and it cannot express a tie |
+| a | "Show me the Tigers." | filter | a smaller list of records — 4 of them |
+| b | "How many players per team?" | group | a dictionary, one key per team |
+| c | "Who scored more than 50?" | filter | a smaller list of records — 5 of them |
+| d | "How many got out, and how many didn't?" | group | a dictionary with two keys, `True` and `False` |
+| e | "What's the Hawks' average?" | filter, then arithmetic | one number — and it needs its row count |
+| f | "Which team is biggest?" | group, then `max` | one key — and it cannot express a tie |
 
-**15.1(g) What is the one thing a filter changes, and the one thing it never changes?**
+**A1(g) What is the one thing a filter changes, and the one thing it never changes?**
 It changes **how many rows** you have. It never changes **what a row is** — every record that comes out still has all of its labels and all of its fields. Five cards out of twelve are still cards.
 
-**15.1(h) After `tigers = filter_by(squad, "team", "Tigers")`, what does `len(squad)` say?**
-`12`. Still twelve. `filter_by` builds a **new** list; it does not touch the original. This is worth running rather than believing.
+**A1(h) After `tigers = filter_by(squad, "team", "Tigers")`, what does `len(squad)` say?**
+`12`. Still twelve. `filter_by` builds a **new** list; it does not touch the original. This is worth running rather than believing — a student who thinks filtering is destructive gets nervous about running things twice.
 
-### Page 15.2 — Trace the counting dictionary
+**A2. Spot the bug** (`counts[r["team"]] += 1` on an empty dictionary).
+The last line of the traceback is `KeyError: 'Falcons'`. It fails on the **first** row because `+=` means "take what is there and add one", and on the very first Falcon `counts` is empty, so there is nothing to take. The fix:
 
-*Trace `group_count(squad, "team")` by hand for the first six records. Fill in the table.*
+```python
+    counts[r["team"]] = counts.get(r["team"], 0) + 1
+```
+
+**A3. Match the code to the output.** a → **3** · b → **4** · c → **1** · d → **2**. Real output: a is `3` (Asha's 48, Omar's 90 **and** Zara's 41 are above 40; Dev's 0 is not), b is `179` (48 + 0 + 90 + 41), c is `{'Falcons': 1, 'Tigers': 2, 'Hawks': 1}`, d is `Tigers`. **Yes, the counts add up:** 1 + 2 + 1 = **4** = the number of rows. Dev's 0 is inside the 179, contributing nothing but still counted as a row, which is right for a measured zero.
+
+**A4. Label the diagram** (Figure W15.1, boxes A–E).
+
+- **A** — the **row count** for that bucket
+- **B** — the **bucket label** / the **key** of the counting dictionary
+- **C** — the **counting dictionary** (the whole set of buckets)
+- **D** — the **group you would not report an average for** (the one-row group)
+- **E** — the **sum check** — proof every row went into exactly one bucket and none was dropped
+
+The extra: the **Owls**, because there is only one row. An average summarises several things; with one thing there is nothing to summarise, and 104 ÷ 1 is Priya's score with a division applied. *(The workbook figure is the authority for letters A–E; check the student's labels against the figure, not just this list.)*
+
+**A5. Trace the counting dictionary** (`group_count(squad, "team")`, first six records).
 
 | Turn | record | `bucket` | `counts.get(bucket, 0)` | `counts` afterwards |
 |---|---|---|---|---|
@@ -1291,15 +1341,12 @@ It changes **how many rows** you have. It never changes **what a row is** — ev
 | 5 | Kabir | `Tigers` | `0` (never seen) | `{'Falcons': 4, 'Tigers': 1}` |
 | 6 | Meera | `Tigers` | `1` | `{'Falcons': 4, 'Tigers': 2}` |
 
-**Final result after all twelve:** `{'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1}`
+**After all twelve:** `{'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1}`. **4 + 4 + 3 + 1 = 12**, and `len(squad)` is **12**. It matters because grouping is supposed to put *every* row in exactly one bucket. If the total came to 11, a row was dropped and went into no bucket at all. (A stray space or a different capital does not change the total — it makes an extra bucket, and the total is still 12. Noticing that needs a different check: count the buckets.)
 
-**15.2(a) Add the four counts up. What should the total be, and why does it matter?**
-4 + 4 + 3 + 1 = **12**, which is `len(squad)`. It matters because grouping is supposed to put *every* row in exactly one bucket. If the total came to 11, a row was dropped and went into no bucket at all. (A stray space or a different capital does not change the total — it makes a fifth bucket, and the total is still 12. Noticing that needs a different check: count the buckets.)
+Teacher-only follow-ups to ask while they trace:
 
-**15.2(b) What does `counts.get(bucket, 0)` do the first time a bucket is seen, and every time after?**
-The first time, there is no such key, so it hands back the fallback `0` — and `0 + 1` is `1`. Every time after, the key exists, so it hands back the count so far, and one more gets added. One expression, both cases, no `if` needed.
-
-**15.2(c) Predict, then run: what happens with `counts[bucket] += 1` instead?**
+- **What does `counts.get(bucket, 0)` do the first time a bucket is seen, and every time after?** The first time there is no such key, so it hands back the fallback `0`, and `0 + 1` is `1`. Every time after, the key exists, so it hands back the count so far, and one more gets added. One expression, both cases, no `if`.
+- **What happens with `counts[bucket] += 1` instead?** This is the planted bug; see the traceback below. Because `+=` means "take what is there and add one", and on the first Falcon there is nothing there.
 
 ```text
 Traceback (most recent call last):
@@ -1312,49 +1359,53 @@ Traceback (most recent call last):
 KeyError: 'Falcons'
 ```
 
-Because `+=` means "take what is there and add one", and on the first Falcon there is nothing there.
+- **Two `File` lines — which is where it broke?** The **last** one, `records.py, line 19`. The one above, `lab15.py, line 10`, is where the function was *called from*. Together they are a trail of who called who, read from the bottom.
 
-**15.2(d) This traceback has two `File` lines. Which one is where the program broke, and what is the other one for?**
-The **last** one — `records.py, line 19` — is where it broke. The one above it, `lab15.py, line 10`, is where the function was *called from*. Together they are a trail of who called who, and you read it from the bottom.
+**A6. Every answer needs its denominator.**
 
-### Page 15.3 — The six questions
+| The sentence | Verdict | The fix |
+|---|---|---|
+| "The Owls average 104 runs." | **not honest enough** | "The Owls average 104 runs — from one player, so it is not really an average at all." |
+| "Five of the twelve players scored more than fifty." | **honest** | Nothing to fix; the number **and** the denominator are both there |
+| "Falcons are the biggest team." | **not honest enough** | "Falcons and Tigers are tied on four players each, out of twelve." The tie is the missing bit |
+| "The Hawks average 55.67 runs, from 3 players." | **honest** | Nothing to fix — though "and Omar's 90 pulls it up a long way" would be even better |
+| "Average spend is 41.67 rupees a day." | **not honest enough** | "Monday's average spend is 41.67 rupees, from 3 orders." Which day? How many orders? |
 
-Full working file and its real output are in *The Activity, In Full* above. The six answers:
+### ✍️ Practice Set B — Write It
 
-| Q | Question | Answer | Row count |
-|---|---|---|---|
-| 1 | players per team | `{'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1}` | 12 of 12 accounted for |
-| 2 | biggest team | `Falcons, with 4 players` — **but it is a tie with Tigers** | 4 of 12 |
-| 3 | scored more than 50 | `['Nita', 'Kabir', 'Iqbal', 'Omar', 'Priya']` | 5 of 12 |
-| 4 | Falcons average | `35.50 runs` | from 4 players |
-| 5 | average per team | Falcons 35.50 · Tigers 33.50 · Hawks 55.67 · **Owls 104.00** | 4 · 4 · 3 · **1** |
-| 6 | top three | Priya 104 · Omar 90 · Nita 77 | 3 of 12 |
+**B1. Two lines** — names of everybody who faced more than 40 balls, and how many out of how many.
 
-**Hand checks — do at least one of these with the student:**
-
-```
-Falcons:  48 + 12 = 60 · 60 + 77 = 137 · 137 + 5 = 142 · 142 / 4 = 35.5     ✔
-Tigers:   63 + 30 = 93 · 93 + 0 = 93 · 93 + 41 = 134 · 134 / 4 = 33.5       ✔
-Hawks:    55 + 22 = 77 · 77 + 90 = 167 · 167 / 3 = 55.666... = 55.67        ✔
-Owls:     104 / 1 = 104.0                                                    ✔
-Total:    142 + 134 + 167 + 104 = 547 = sum of the whole runs column         ✔
+```python
+big = [r for r in squad if r["balls"] > 40]
+print([r["name"] for r in big])
+print(len(big), "of", len(squad))
 ```
 
-That last line is a free cross-check worth pointing out: **the four group totals add back up to the whole-column total**, which means no row was counted twice or missed.
+```text
+['Nita', 'Kabir', 'Iqbal', 'Omar', 'Priya']
+5 of 12
+```
 
-**15.3(a) Q2 says Falcons. Is that the whole truth?**
-No. Falcons and Tigers both have four players, so the honest answer is *"Falcons and Tigers, four each"*. `max` returned Falcons because Falcons was typed first, and `max` has no way to report a tie. The number is not wrong; the answer is incomplete.
+Nita 55, Kabir 41, Iqbal 44, Omar 61, Priya 70. **Kabir's 41 counts** (41 is more than 40) — a boundary worth checking, Week 5 again. The second line must say `5 of 12`, not a bare `5`.
 
-**15.3(b) Which of the six answers do you trust least, and why?**
-**Q5's Owls line.** `104.00 runs from 1 player` is arithmetically perfect and useless as an average: it is Priya's individual score with a division by one applied to it. Printed beside the Falcons' 35.50 it invites the reader to conclude the Owls are three times the batting side, which is not something the data can support.
+**B2. `filter_by`, written by the student.**
 
-**15.3(c) What are the three defensible things to do about it?**
-Print it with the row count next to it and let the reader judge. Print it with an explicit warning. Or do not print the average at all and report "Owls: 1 player, too few to average". What is not defensible is printing `104.00` beside `35.50` with no counts.
+```python
+def filter_by(rows, key, value):
+    """Keep only the rows where rows[key] equals value."""
+    return [r for r in rows if r[key] == value]
+```
 
-**15.3(d) Why must the minimum group size be decided before you see the answers?**
-Because a rule chosen afterwards is a rule chosen to produce the answer you already wanted. If you look first and *then* decide that groups under three do not count, you have not applied a standard — you have removed a number you did not like, and you will not even notice you did it.
+Two calls on completely different tables, for example `print(len(filter_by(squad, "team", "Tigers")), "of", len(squad))` and `print(len(filter_by(playlist, "genre", "pop")), "of", len(playlist))`.
 
-### Page 15.4 — Your two tools
+**The two things to mark, in this order:**
+
+1. **Is `key` an argument?** `def group_count(rows):` with `"genre"` written inside the body is the defect that matters. Send it back — Week 16 imports these functions and points them at a CSV, and a hard-coded key will break it.
+2. **Does `group_count` use `.get(bucket, 0)`?** A four-line `if bucket in counts: ... else: ...` version is **completely correct** and gets full marks. Say so, then show the one-line version beside it as the reason `.get()` exists.
+
+Everything else — variable names, docstrings, whether `column` exists at all — is theirs.
+
+**B3. `group_count`, written by the student.** The reference `records.py` for the whole week (with `column`, which later sections use):
 
 ```python
 """records.py - tools that work on ANY list of dictionaries."""
@@ -1376,16 +1427,188 @@ def group_count(rows, key):
     return counts
 ```
 
-**The two things to mark, in this order:**
+The check line after calling it: `print(sum(counts.values()), "of", len(rows))`. The `if bucket in counts: ... else: ...` version (`counts[bucket] = counts[bucket] + 1` / `counts[bucket] = 1`) gets full marks. Done looks like: key is an argument, `.get(bucket, 0)` is there, and the sum check is printed without being asked twice.
 
-1. **Is `key` an argument?** `def group_count(rows):` with `"genre"` written inside the body is the defect that matters. Send it back — Week 16 imports these functions and points them at a CSV, and a hard-coded key will break it.
-2. **Does `group_count` use `.get(bucket, 0)`?** A four-line `if bucket in counts: ... else: ...` version is **completely correct** and should get full marks. Say so, and then show the one-line version beside it as the reason `.get()` exists.
+**B4. Key function and top three.**
 
-Everything else — variable names, docstrings, whether `column` exists at all — is theirs.
+```python
+def balls_of(player):
+    """Key function: given one player, hand back the number to sort on."""
+    return player["balls"]
 
-### Page 15.5 — Six answers, six row counts
 
-The student's dataset is theirs. Model answer on the twelve-song playlist from Week 14:
+ranked = sorted(squad, key=balls_of, reverse=True)
+for position, player in enumerate(ranked[:3], start=1):
+    print(f"{position}. {player['name']:<7}{player['balls']:>4} balls")
+print("rows in squad still:", len(squad))
+```
+
+```text
+1. Priya    70 balls
+2. Omar     61 balls
+3. Nita     55 balls
+rows in squad still: 12
+```
+
+**Mark three things:** `key=balls_of` with **no brackets** (the one everybody gets wrong once; with brackets the error is `missing 1 required positional argument: 'player'`), `reverse=True` because biggest first was asked for, and **the original is untouched** — `sorted` built a new list, so `squad` still has twelve records in typed order.
+
+**B5. Averages per group with the honest guard** (on the student's **own** twelve records). Model answer on the twelve-song playlist:
+
+```python
+"""hw15.py - averages per group, with the honest guard."""
+
+from records import filter_by, group_count, column
+from playlist_data import playlist
+
+MIN_GROUP = 3        # decided BEFORE looking at the answers
+
+genre_counts = group_count(playlist, "genre")
+print("songs per genre   :", genre_counts)
+print("rows accounted for:", sum(genre_counts.values()), "of", len(playlist))
+
+print()
+print("average plays per genre")
+print("-" * 56)
+for genre in genre_counts:
+    rows = filter_by(playlist, "genre", genre)
+    plays = column(rows, "plays")
+    average = sum(plays) / len(plays)
+    if len(rows) < MIN_GROUP:
+        print(f"{genre:<7}{average:8.2f} plays   from {len(rows)} song(s)  <-- too few to average")
+    else:
+        print(f"{genre:<7}{average:8.2f} plays   from {len(rows)} song(s)")
+print("-" * 56)
+print(f"minimum group size agreed first: {MIN_GROUP}")
+```
+
+```text
+songs per genre   : {'pop': 5, 'rock': 3, 'folk': 3, 'indie': 1}
+rows accounted for: 12 of 12
+
+average plays per genre
+--------------------------------------------------------
+pop      183.00 plays   from 5 song(s)
+rock     128.33 plays   from 3 song(s)
+folk      58.33 plays   from 3 song(s)
+indie     65.00 plays   from 1 song(s)  <-- too few to average
+--------------------------------------------------------
+minimum group size agreed first: 3
+```
+
+**Hand checks:**
+
+```text
+pop:    120 + 300 = 420 · +95 = 515 · +180 = 695 · +220 = 915 · 915 / 5 = 183.0   ✔
+rock:   45 + 210 = 255 · +130 = 385 · 385 / 3 = 128.333... = 128.33               ✔
+folk:   60 + 75 = 135 · +40 = 175 · 175 / 3 = 58.333... = 58.33                   ✔
+indie:  65 / 1 = 65.0                                                             ✔
+Counts: 5 + 3 + 3 + 1 = 12 = len(playlist)                                        ✔
+```
+
+**Mark:** `MIN_GROUP` is a **named value** at the top, not a `3` buried in the `if`; the workbook box "I chose it before I saw the answers" is ticked **honestly** (if they tick "no", praise that and move on). The sum check is printed. Every line carries its row count, and the one-row group says so out loud rather than being quietly dropped.
+
+### 🐞 Fix the Broken Program — `canteen.py`
+
+**Bug 1 — one equals sign.**
+
+- (a) `r["form"] = form` is an **assignment**, not a question. One `=` means "put this in that"; two mean "is this the same as that?". Inside an `if` you are asking a question, so it must be `==`. Week 5 again.
+- (b) `    rows = [r for r in orders if r["form"] == form]`
+- (c) Because a `SyntaxError` means Python could not read the file at all. It reads the whole thing before it runs a single line, so nothing above the mistake gets a chance to happen. The program is not "partly working"; it has not started.
+
+**Bug 2 — `+=` on an empty bucket.**
+
+- (a) "Take what is there and add one."
+- (b) **Nothing.** There is no key called `7A` yet; `counts` is empty.
+- (c) `    counts[bucket] = counts.get(bucket, 0) + 1`
+- (d) Only one `File` line because the counting loop is in the same file as the call. If `group_count` had lived in `records.py` and been called from `canteen.py` there would be two — one for the caller and one for the crash. **And you read the last one.**
+
+**Bug 3 — the silent one.**
+
+- (a) **7B**, with three orders. The program said **7C**.
+- (b) `max(counts)` compared the **form names as text** (`"7A"`, `"7B"`, `"7C"`) and handed back the last one alphabetically. It never looked at the counts.
+- (c) Nothing is wrong as far as Python is concerned: comparing text is legal and `"7C"` does come after `"7B"`. The program did exactly what was said, and what was said was not what was meant.
+- (d) `print("biggest form   :", max(counts, key=counts.get))`
+- (e) `7C 120.0` is from **one** order (Priya's). Three defensible options: print it with the count beside it; print it with a warning; or do not print the average and say "7C: 1 order, not enough to average". Not allowed: `7C 120.0` under `7A 32.5` with nothing else, because a reader will conclude 7C are the big spenders.
+- (f) The two changes:
+
+```python
+print("rows accounted:", sum(counts.values()), "of", len(orders))
+```
+
+```python
+    print(f"{form}  {sum(spends) / len(spends):7.2f}   from {len(rows)} order(s)")
+```
+
+The fully fixed program prints:
+
+```text
+orders per form: {'7A': 2, '7B': 3, '7C': 1}
+rows accounted: 6 of 6
+biggest form   : 7B
+7A    32.50   from 2 order(s)
+7B    35.00   from 3 order(s)
+7C   120.00   from 1 order(s)
+```
+
+Hand check: 7A is 40 + 25 = 65, ÷ 2 = 32.50; 7B is 60 + 15 + 30 = 105, ÷ 3 = 35.00.
+
+- (g) **Bug 3, and it is not close.** Bugs 1 and 2 stopped and pointed at the exact spot. Bug 3 printed a tidy, confident report with the wrong form named biggest. *The error message is not the enemy. The silent wrong answer is.* Accept a reasoned different choice, but a student who picks Bug 1 or 2 has not yet felt this.
+
+### 🧩 Puzzle of the Week — The Tally Detective
+
+**Part A** (`{'pop': 5, 'rock': 3, 'folk': 3, 'indie': 1}`):
+
+- (a) **12 rows**, because grouping puts every row in exactly one bucket: 5 + 3 + 3 + 1 = 12.
+- (b) **Four** different values — one bucket per distinct value.
+- (c) `max(counts)` → **`rock`**: it compares keys as words (folk, indie, pop, rock) and `rock` is last. The counts are never consulted.
+- (d) `max(counts, key=counts.get)` → **`pop`**; `max(counts.values())` → **`5`**.
+- (e) **`indie`**, with one row. One song is not an average — it is that song's play count with a division by one applied.
+
+**Part B** (the missing Tiger: `{'Falcons': 4, 'Tigers': 3, 'Tigers ': 1, 'Hawks': 3, 'Owls': 1}`):
+
+- (a) **Yes:** 4 + 3 + 1 + 3 + 1 = 12. **The sum check passed.**
+- (b) Expected **four** buckets; there are **five**.
+- (c) One record's team was typed `"Tigers "` with a **trailing space**, so it is a different piece of text and therefore a different bucket.
+- (d) **Catches:** dropped rows — the total comes out short. **Misses:** a row in the *wrong* bucket — it is still counted, just somewhere else, so the total is perfect and the answer is wrong. This is the important part of the whole puzzle.
+- (e) **Count the buckets and compare with how many you expected** — e.g. `print(len(counts), "buckets")` and read the keys. (Cleaning stray spaces and capitals properly is Week 24; *noticing* them is this week.)
+
+**Part C** (one wrong row among twelve):
+
+| The answer | How much could one wrong row move it? | Why |
+|---|---|---|
+| Owls average (1 row) | **completely** — any amount | The one row **is** 100% of the group. Change 104 to 14 and the answer changes by 90 |
+| Falcons average (4 rows) | by **one quarter** of the error | A 40-run typo moves the average by 10 |
+| "5 of 12 scored over 50" | by **at most 1** | A wrong runs value can push one player across the line or back: 5 becomes 4 or 6 |
+| Total runs (547) | by exactly the size of the error | A 40-run typo makes it 587 or 507, without changing the shape of any conclusion |
+
+**Most fragile: the Owls average.** Rule: *the smaller the group, the more one row can move its answer* — which is why the row count is the first thing to look at, not the last.
+
+**Part D** (own data; one-row group). Three allowed sentences, for the playlist's `indie`: (1) "Indie averages 65 plays, from 1 song." (2) "Indie averages 65 plays, from 1 song — too few to call this an average." (3) "Indie: 1 song, not enough to average." **Not allowed:** "Indie averages 65 plays." — arithmetically perfect and it misleads without a single false number. Full credit also for the fourth answer, *collect more indie songs*.
+
+### 🤔 Think Deeper
+
+Open-ended; mark against the model answers.
+
+**T1. How many rows do you need before an average means anything?** Full marks needs: "one row is not an average" (two is barely better) · at least **two of the three dependencies** — **how spread out the values are** (spread matters as much as count), **what the answer will be used for** (the cost of being wrong lands on a person), and **whether the rows were picked fairly** (a hundred badly chosen rows can be worse than five well chosen) · and the always-do-this rule at the end: **print the row count beside the number and decide the minimum before looking at results.**
+
+**T2. Is `max` giving one answer to a two-answer question a bug?** Full marks needs: a side taken · the observation that `max` is doing what it is defined to do and never claimed to report ties · and a real answer to the Week 34 question rather than "I'll be careful" (by eye works for four buckets; with a hundred rows and thirty buckets it will not, so the check belongs in the program). The two-line code fix, verified on the twelve records:
+
+```python
+best = max(counts.values())
+winners = [k for k in counts if counts[k] == best]
+```
+
+```text
+counts : {'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1}
+biggest count: 4
+winners: ['Falcons', 'Tigers']
+```
+
+### 🛠️ Build It — the core homework (own twelve records)
+
+**Part 1 — Your two tools.** Check the six boxes: `records.py` exists next to the data file; `filter_by(rows, key, value)` and `group_count(rows, key)` take the **key as an argument**; `group_count` uses `.get(bucket, 0)`; neither function names any column or the topic. The deciding question is **is the key an argument?** — `def group_count(rows, key):` is a tool, `def group_count(rows):` is an answer. The reference tools are in **Practice Set B, B3** above. The "could I point them at somebody else's table tomorrow?" box should be **yes**; if "no", the "what is stopping them" line should name the hard-coded column. Troubleshooting: `ModuleNotFoundError: No module named 'records'` means the terminal is in a different folder or the file name is misspelled (Week 12's lesson).
+
+**Part 2 — Six questions, six row counts.** The student's dataset is theirs; mark in this order: **(1)** does every answer carry a row count (a bare number gets sent back); **(2)** does the sum check pass (`sum(counts.values())` equals `len(rows)`); **(3)** are there the number of buckets expected (the check the sum test cannot do — five where four were expected means a stray space or capital); and **(4)** if two categories are tied for Q2, does the student write the honest "X and Y, tied on N each" that the program cannot say. Q3 should use a condition comprehension, not `filter_by` (an exact-match function cannot do "greater than"; noticing that is worth a tick). Model answer on the twelve-song playlist from Week 14:
 
 ```python
 """hw15.py - Week 15 homework: six questions, every answer with its row count."""
@@ -1461,35 +1684,74 @@ Q6  top three by plays
     3. Neon Streets    210 plays
 ```
 
-**Hand checks:**
+**Part 3 — Hand-check one answer.** Model, on the pop songs: 120 + 300 = 420 · +95 = 515 · +180 = 695 · +220 = 915 · 915 / 5 = 183.0, matching the code. Why it is worth doing even when the code is right: now the student knows what the right answer *looks like*, so if the code ever disagrees one of them is wrong and they will go and check, instead of believing the screen because it is a screen.
 
-```
-pop:    120 + 300 = 420 · +95 = 515 · +180 = 695 · +220 = 915 · 915 / 5 = 183.0   ✔
-rock:   45 + 210 = 255 · +130 = 385 · 385 / 3 = 128.333... = 128.33               ✔
-folk:   60 + 75 = 135 · +40 = 175 · 175 / 3 = 58.333... = 58.33                   ✔
-indie:  65 / 1 = 65.0                                                             ✔
-Counts: 5 + 3 + 3 + 1 = 12 = len(playlist)                                        ✔
-```
-
-**Mark:** every answer carries a row count; the sum check is printed and correct; `Q3` uses a condition comprehension rather than `filter_by` (an exact-match function cannot do "greater than", and noticing that is worth a tick).
-
-### Page 15.6 — The answer you trust least
-
-**15.6(a) Which of your six answers do you trust least, and why?**
-
-Model answer for the playlist above:
+**Part 4 — The answer you trust least.** Full marks needs three things: **which** answer, **its row count**, and **what a reader would wrongly conclude.** Model answer for the playlist:
 
 > *"Q5's indie line. It says indie songs average 65 plays, but there is only one indie song in my playlist, so that is just Kite Season's play count divided by one. Next to pop's 183 from five songs it makes indie look unpopular, and I have no idea whether indie songs are unpopular — I have one of them."*
 
-**Full marks needs three things:** which answer, **the row count**, and **what a reader would wrongly conclude**. An answer that says only "the indie one because it's small" has two of the three; ask for the third out loud.
+An answer that says only "the indie one because it's small" has two of the three; ask for the third out loud. **What would you do about it:** any of the three defensible options (print it with the count, print it with a warning, do not print it). **Extra credit for a fourth:** *collect more indie songs* — the problem is not the arithmetic, it is that there is not enough data yet, and no amount of clever code fixes that. **The sentence at the top of all six answers**, model answer:
 
-**15.6(b) What would you do about it?**
-Any of the three defensible options, stated clearly: print it with the count, print it with a warning, or do not print it. **Extra credit for a fourth answer that some students find:** *collect more indie songs.* That is often the genuinely right answer and it is worth saying so — the problem is not the arithmetic, it is that there is not enough data yet, and no amount of clever code fixes that.
-
-**15.6(c) Write the one sentence you would put at the top of your six answers.**
-Model answer: *"All of these come from 12 songs, and every average below has the number of songs it came from printed next to it — the indie figure comes from a single song and should not be compared with the others."*
+> *"All of these come from 12 songs, and every average below has the number of songs it came from printed next to it — the indie figure comes from a single song and should not be compared with the others."*
 
 **This sentence is the whole point of the week.** Mark it properly. A student who can write it will produce an honest capstone in Week 35.
+
+**Part 5 — The Bug Log.** Two entries, and at least one must have **no error message** at all. Model entries: (1) `KeyError: 'Falcons'` with two `File` lines (`lab15.py` line 10 and `records.py` line 19) — `+=` means "take what is there and add one" and there is nothing there the first time; fix `counts[bucket] = counts.get(bucket, 0) + 1`. (2) **No error message:** `max(counts)` printed `Tigers` while the counts were Falcons 4, Tigers 4, Hawks 3, Owls 1 — `max` compared the names as words; fix `max(counts, key=counts.get)` and read the answer against the printed counts. **The two-`File`-line rule:** the **last** `File` line is where the program broke; the ones above are the trail of who called who, read from the bottom up.
+
+### 🎨 Draw It
+
+No single right drawing. A strong one: **(1)** the third column (the denominator) is filled in for every row; **(2)** the one-row group is **ringed and explained**, not left out ("one song — Kite Season's play count with a division by one applied"); **(3)** `MIN_GROUP` appears with a note that it was chosen first; **(4)** one box says what a reader would wrongly conclude. Test: **cover the third column — does the second column now tell a lie?** If yes, the third column is not decoration. An empty third column is the mistake.
+
+### 📊 Self-Check
+
+The "I can…" grid is the student's own rating; ask about any 😕. **True or false:**
+
+| Statement | Answer |
+|---|---|
+| Filtering deletes rows from the original table | **FALSE** — it builds a new list |
+| What comes out of a filter is still records, with all their labels | **TRUE** |
+| Grouping throws some rows away | **FALSE** — that is why the buckets add up |
+| `counts[bucket] += 1` works the first time you meet a bucket | **FALSE** — `KeyError` |
+| `max(counts)` gives you the biggest count | **FALSE** — the biggest **key**, as text |
+| `max` tells you when there is a tie | **FALSE** — it hands back the first and says nothing |
+| `key=runs_of()` is the right way to pass a key function | **FALSE** — no brackets; hand over the tool, not the result |
+| `sorted` moves whole records, not just values | **TRUE** |
+| The first `File` line in a traceback is where the program broke | **FALSE** — the **last** one |
+| An average of 104 from one row is arithmetically wrong | **FALSE** — it is perfect; reporting it without its row count is what is wrong |
+| If the buckets add up, the grouping must be correct | **FALSE** — a row in the **wrong** bucket is still counted |
+
+### 🎲 In-class activity — the six questions on the squad (not in the workbook)
+
+This is the key for *The Activity, In Full* above (the squad, Falcons / Tigers / Hawks / Owls). The student's workbook does not contain these items; they are the in-class lab. Full working file and real output are in *The Activity, In Full*. The six answers:
+
+| Q | Question | Answer | Row count |
+|---|---|---|---|
+| 1 | players per team | `{'Falcons': 4, 'Tigers': 4, 'Hawks': 3, 'Owls': 1}` | 12 of 12 accounted for |
+| 2 | biggest team | `Falcons, with 4 players` — **but it is a tie with Tigers** | 4 of 12 |
+| 3 | scored more than 50 | `['Nita', 'Kabir', 'Iqbal', 'Omar', 'Priya']` | 5 of 12 |
+| 4 | Falcons average | `35.50 runs` | from 4 players |
+| 5 | average per team | Falcons 35.50 · Tigers 33.50 · Hawks 55.67 · **Owls 104.00** | 4 · 4 · 3 · **1** |
+| 6 | top three | Priya 104 · Omar 90 · Nita 77 | 3 of 12 |
+
+**Hand checks — do at least one of these with the student:**
+
+```text
+Falcons:  48 + 12 = 60 · 60 + 77 = 137 · 137 + 5 = 142 · 142 / 4 = 35.5     ✔
+Tigers:   63 + 30 = 93 · 93 + 0 = 93 · 93 + 41 = 134 · 134 / 4 = 33.5       ✔
+Hawks:    55 + 22 = 77 · 77 + 90 = 167 · 167 / 3 = 55.666... = 55.67        ✔
+Owls:     104 / 1 = 104.0                                                    ✔
+Total:    142 + 134 + 167 + 104 = 547 = sum of the whole runs column         ✔
+```
+
+That last line is a free cross-check: **the four group totals add back up to the whole-column total**, which means no row was counted twice or missed.
+
+**Is Q2's "Falcons" the whole truth?** No. Falcons and Tigers both have four players, so the honest answer is "Falcons and Tigers, four each". `max` returned Falcons because Falcons was typed first, and `max` has no way to report a tie. The number is not wrong; the answer is incomplete.
+
+**Which of the six do you trust least?** **Q5's Owls line.** `104.00 runs from 1 player` is arithmetically perfect and useless as an average: it is Priya's score with a division by one applied. Beside the Falcons' 35.50 it invites the reader to conclude the Owls are three times the batting side, which the data cannot support.
+
+**Three defensible things to do about it:** print it with the row count beside it; print it with an explicit warning; or do not print the average and report "Owls: 1 player, too few to average". Not defensible: `104.00` beside `35.50` with no counts.
+
+**Why must the minimum group size be decided before you see the answers?** Because a rule chosen afterwards is a rule chosen to produce the answer you already wanted. If you look first and *then* decide that groups under three do not count, you have not applied a standard — you have removed a number you did not like.
 
 ### Answers to every question posed in the lesson
 

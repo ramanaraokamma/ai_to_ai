@@ -286,7 +286,7 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 
 | Problem | Fallback |
 |---|---|
-| No graph paper | Draw a 12×12 grid on plain paper with a ruler, 1.5 cm squares. Five minutes. Or use the printed sheet in the workbook. |
+| No graph paper | Draw a 12×12 grid on plain paper with a ruler, 1.5 cm squares. Five minutes. Or copy the 12×12 picture from the workbook's Build It section. |
 | Your student drew a *different* letter in Week 23 and wants to use theirs | Let them, and switch to their grid — the method is identical. But **you** must then recompute the six cells live, so budget 5 extra minutes and check each one with them. If you are at all unsure, use the T in this file and promise them their own letter next week (which is true — Week 26 uses their own). |
 
 ---
@@ -945,20 +945,22 @@ finished edge map looks flat-black everywhere instead of showing degrees of stre
 
 ## 📤 Homework to Assign
 
-**Workbook pages: Week 25, pages 1–4.** Expect **45–55 minutes**.
+**Workbook: Week 25, all sections.** Expect **45–55 minutes**. Tell the student to do the **Build It**
+task last — it is the biggest piece and it needs graph paper.
 
 **Say this, word for word:**
 
 > "Same grid, same six cells, but a different filter. The new one is the **horizontal** filter — it
-> compares the **bottom row to the top row** instead of right column to left column. It's written on
-> page 1 of your workbook.
+> compares the **bottom row to the top row** instead of right column to left column. It's written at
+> the top of the **Build It** section of your workbook.
 >
-> Four things to do.
+> The workbook has a few warm-up and practice sections first — do those, then save Build It for last.
+> In Build It there are four things to do.
 >
 > One: compute the horizontal filter at those same six cells. Write the top-row sum and the
 > bottom-row sum every time, same as today.
 >
-> Two: take the absolute value of each, then clip at 255.
+> Two: take the absolute value of each. Don't clip yet.
 >
 > Three: **combine** them. For each cell, add your horizontal answer to today's vertical answer —
 > the absolute values, before clipping. Then clip the total. That combined grid is called an
@@ -970,17 +972,26 @@ finished edge map looks flat-black everywhere instead of showing degrees of stre
 > One warning: do the combining **before** you clip, not after. If you clip each one first you'll
 > throw away the very thing the question is asking about."
 
-**Which pages:**
+**What is in the workbook, in order:**
 
-| Page | What is on it |
+| Section | What is on it |
 |---|---|
-| 1 | The horizontal filter, the reprinted 12×12 grid, and the six cell positions |
-| 2 | Six working boxes — top-row sum, bottom-row sum, subtraction, absolute value |
-| 3 | The combining table (|V| + |H| → clip) and the blank 10×10 grid to shade |
-| 4 | The written question, the four vocabulary boxes, and one prediction question for Week 26 |
+| ✅ Warm-Up (W1–W5) | Five recall questions from the colour-image weeks: counting numbers in a colour photo, the three stacked grids, red + green, why averaging cannot be undone, what 0 and 255 mean |
+| ✍️ Practice Set A — Understand It (A1–A6) | Fill in the blanks about the filter, "why is the answer 0", true/false on −600 vs +300, match five patches to answers, label the diagram (Figure W25.1), one worked 3×3 sum |
+| ✍️ Practice Set B — Use It (B1–B5) | A new picture (two-pixel stripe) and its answers grid, Ravi's 12×12 answers grid, Maya's clip-then-absolute-value slip, white wall in a bright and a dim room, Sam's "more ink" claim |
+| 🧩 Puzzle of the Week (P1–P4) | Three mystery filters (Figure W25.2): add up the weights, spot the non-edge-finder, pick the top-edge filter, the lamp test |
+| 🤔 Think Deeper (T1–T2) | Two paragraph questions: was throwing away the sign a good trade, and an alternative to clipping |
+| 🛠️ Build It | The horizontal filter, the 12×12 picture reprinted, a 7-step checklist, the results table for the six cells, the written question, four vocabulary boxes, and one prediction for Week 26 |
+| 🎨 Draw It | Draw a shape on an 8×8 grid and mark where the vertical filter gives big answers and where it gives zero |
+| 📊 Self-Check | Five tick-the-box rows; the student's own confidence check, not marked |
 
-**If they are short of time:** pages 1–2 are the essential ones. Page 3's combining step can be done
-together in the first five minutes of Week 26.
+The workbook also has its own Answers section at the end, so warn the student that it is there and
+that the point is to try first.
+
+**If they are short of time:** Build It (steps 1–5 and the written question) and Practice Set A are the
+essential pieces. Warm-Up, Practice Set B, the Puzzle and Think Deeper can wait, and Build It's
+shading (step 6) can be done together in the first five minutes of Week 26. Draw It and the
+Self-Check take a few minutes each and are easy to finish in Week 26 too.
 
 ---
 
@@ -989,7 +1000,167 @@ together in the first five minutes of Week 26.
 *Everything below is worked in full. Column sums are given so you can find the exact point where a
 wrong answer went wrong.*
 
-### Part A — the six cells done in class (vertical filter)
+*The workbook sections come first, in workbook order (Warm-Up, Practice Set A, Practice Set B,
+Puzzle, Think Deeper). Build It follows as Parts A–F, then Draw It and Self-Check. The workbook's own
+Answers section at the end matches these values.*
+
+### Warm-Up (W1–W5)
+
+| Item | Answer | Teacher note |
+|---|---|---|
+| **W1** | **300.** 10 × 10 = 100 pixels × 3 numbers each | Wrong answer 100: forgot the three grids. |
+| **W2** | **Red, green, blue** (any order) | |
+| **W3** | **Yellow.** Red light + green light; this is light, not paint | Wrong answer "brown" or "orange": paint-mixing habit. |
+| **W4** | **No.** An average does not remember what made it: 100,100,100,100 and 0,200,100,100 both average to 100 | Accept any "the detail is gone" reason. |
+| **W5** | 0 = **black**, 255 = **white** | Watch for the two swapped. |
+
+### Practice Set A — Understand It (A1–A6)
+
+**A1.** nine · multiply · add · **right** column minus **left** column · zero · zero. The middle column
+is multiplied by 0, so it contributes exactly 0.
+
+**A2.** **(b)** — the picture is flat there. Wrong-answer map: **(a)** is the big misconception (solid ink
+also gives zero); **(c)** makes them "fix" a correct zero; **(d)** cannot matter, the middle column is
+multiplied by zero.
+
+**A3.** **FALSE.** The sign is a direction, not a size. −600 is 600 from zero, +300 only 300, so −600 is
+the stronger edge, by double. Accept any answer that says "size, not sign". This is why we take the
+absolute value before comparing.
+
+**A4.** 1 → **(c) 0** · 2 → **(a) +765** · 3 → **(b) −765** · 4 → **(c) 0** · 5 → **(d) +510**.
+Items 1 and 4 share the answer 0: all-ink and all-paper are opposite pictures but both flat.
+Watch for item 5: two ink pixels in the right column is 510, not 765.
+
+**A5.** **A** = the nine pixels under the window · **B** = the filter (kernel) · **C** = the column that
+gets subtracted (the left column, the one over the −1s) · **D** = the one output cell.
+
+**A6.**
+
+```text
+   right column (c5)  =  255 + 255 + 255  =  765
+   left  column (c3)  =  255 +   0 +   0  =  255
+   answer             =  765 − 255  =  +510
+   absolute value     =  510        clipped  =  255
+```
+
+This patch is cell (6,4) of the letter T, where the bar ends and the stem begins. The left column is
+half ink, so the answer is 510 rather than the maximum 765. Common slip: reading the left column as
+all zeros (765 − 0 = 765).
+
+### Practice Set B — Use It (B1–B5)
+
+**B1.**
+
+(i) **3 × 3** (5 − 2).
+
+(ii)
+
+| Cell | Right column sum | Left column sum | Answer | \|answer\| | Clipped |
+|---|---|---|---|---|---|
+| (3,2) | c3: 20+20+20 = **60** | c1: 220+220+220 = **660** | **−600** | 600 | **255** |
+| (3,3) | c4: 220+220+220 = **660** | c2: 20+20+20 = **60** | **+600** | 600 | **255** |
+| (3,4) | c5: 220+220+220 = **660** | c3: 20+20+20 = **60** | **+600** | 600 | **255** |
+
+(iii) The stripe is only two pixels wide, so it has no flat middle: wherever the window sits, one side
+is on the stripe and the other on the wall, so every cell finds a change. The T's bar is ten wide, so a
+window can sit wholly inside the ink and give zero. Teacher note: (3,3) sits on top of the stripe and
+still scores big, because it compares column 2 (stripe) with column 4 (wall).
+
+**B2.** The filter needs a full ring of neighbours. At cell **(1,1)** nothing is above or to the left, so
+the filter cannot sit there at all; he is stuck immediately, and again along row 1, column 1, row 12
+and column 12. The answers grid is **10 × 10** (rows 2–11, columns 2–11).
+
+**B3.**
+
+(i) The workbook's own answer text contradicts itself on this one (see the note below). Following
+Maya's steps exactly: clipping only pins the top end and −900 is not above 255, so it stays **−900**;
+the absolute value then gives **900**, which is outside 0–255, so she ends up with **900** and a number
+she cannot shade.
+
+(ii) **255** (|−900| = 900, then 900 → 255).
+
+(iii) Clipping only fixes numbers that are too big, not negative ones. If you clipped both ends first
+you would turn −900 into 0 and delete a strong edge. Absolute value first, always.
+
+> **Teacher note on B3(i):** the workbook's Answers section opens with "She ends up with 255…" and then
+> works through to 900. The reasoning gives 900; mark 900 (and accept a student who says "still −900
+> after the clip, 900 after the absolute value"). Do not mark 255 for (i), that is the correct answer
+> to (ii).
+
+**B4.**
+
+| | Pixel values | Filter answer |
+|---|---|---|
+| Bright room | all roughly the same **high** number, e.g. 230 | **0** everywhere |
+| Dim room | all roughly the same **low** number, e.g. 60 | **0** everywhere |
+
+Why: right side minus left side, and on a plain wall both sides are the same number (690 − 690 = 0 in
+the bright room, 180 − 180 = 0 in the dim one). The raw numbers moved enormously and the answer did not
+move at all; this is the whole idea of the week. Accept any sensible example values.
+
+**B5.**
+
+(i) There is **less** ink in a corner patch, not more: a corner window is half in and half out of the
+shape, often only four or six of nine pixels are ink, while the middle of the bar has all nine.
+
+(ii) The filter measures **change**, not quantity of ink: the middle of the bar is full of ink and scores
+zero. Corners are strongest because a corner is two edges in one place, so both filters fire and the
+answers add (the Build It task shows this).
+
+### Puzzle of the Week (P1–P4)
+
+**P1.** Filter A = **0** (−1+0+1 three times). Filter B = **0**. Filter C = **9** (nine ones).
+
+**P2.** **Filter C** is not an edge finder: its weights total 9, not 0, so it just adds up the patch and
+reports total brightness.
+
+**P3.** **Filter B** (bottom row minus top row), the only one that sees a change going downwards.
+Filter A is blind to it: at cell (2,6) the right column is 0+255+255 = 510 and the left column is
+0+255+255 = 510, so A gives exactly 0 sitting on the edge.
+
+**P4.** Same as before: **A and B.** Changes: **C.** Weights that total zero cancel the lamp: adding 40
+to every pixel changes A's and B's answers by 40 × 0 = nothing (+120 on each side cancels). C's answer
+goes up by 40 × 9 = 360. Wrong-answer map: a student who says "all three change" has not connected
+weights-sum-to-zero with ignoring the lamp; revisit the 40 and 200 example from class.
+
+### Think Deeper (T1–T2)
+
+**T1. Model answer.**
+
+> Throwing the minus sign away really does lose something: *which way round* the brightness jumped.
+> +765 means dark on the left and bright on the right; −765 means the opposite, and after the absolute
+> value both are just 765.
+>
+> What we gained is that we can compare and shade the answers. Sorted with their signs, −765 would look
+> smaller than 0 even though it is a very strong edge. After the absolute value, big means strong and
+> small means flat, which is all we want today.
+>
+> A question where I would keep the sign: "which side of this object am I on?" A robot following the
+> edge of a table needs `+` for table on the right and `−` for table on the left.
+
+**Accept:** any answer that names the loss (direction), names the gain (shade and compare; big = strong)
+and gives one sensible question where direction matters (which way a shadow falls, which way something
+is moving, the left or right side of a road).
+
+**T2. Model answer.**
+
+> Instead of clipping I would divide every answer by 6 and then shade. In this picture the biggest
+> combined answer is 1020, which becomes 170, and 765 becomes about 128, so both fit inside 0–255 with no
+> pinning, and 170 is visibly darker than 128: the corners come out stronger than the straight edges,
+> which is the truth.
+>
+> The cost: every small answer is squashed towards zero. A genuine weak edge of 30 becomes 5, nearly
+> white, and vanishes. Clipping keeps the bottom perfectly and destroys the top; this keeps the top and
+> loses the bottom. There are only 256 shades and more than 256 different answers, so I cannot have
+> both.
+
+**Accept:** scaling before shading, a wider scale, printing the number in the cell beside the shade, or
+two grids (one for |V|, one for |H|). The essential part is **naming what the new method costs**; an
+answer with no cost named is half done.
+
+### Build It — Parts A to F
+
+### Part A — the six cells done in class (vertical filter; these feed the |V| column of the workbook's Build It results table)
 
 Filter: `-1 0 +1` in all three rows → **right column minus left column**.
 
@@ -1095,7 +1266,7 @@ rows of the window. **765 is the largest number a single 3×3 filter can ever pr
 
 ---
 
-### Part B — homework, the horizontal filter
+### Part B — homework, the horizontal filter (workbook: Build It)
 
 Filter:
 
@@ -1155,7 +1326,7 @@ Filter:
 
 ---
 
-### Part C — combining into the edge map
+### Part C — combining into the edge map (workbook: Build It results table, and the shaded 10×10 grid)
 
 **Add the absolute values first. Clip afterwards.**
 
@@ -1170,7 +1341,7 @@ Filter:
 
 ---
 
-### Part D — the written question
+### Part D — the written question (workbook: Build It, "The written question")
 
 > **"Which parts of the letter came out strongest, and why does that make sense?"**
 
@@ -1202,7 +1373,7 @@ quantity.
 
 ---
 
-### Part E — the prediction question for Week 26 (workbook page 4)
+### Part E — the prediction question for Week 26 (workbook: Build It, "One prediction for next week")
 
 > **"Next week you'll do this in a spreadsheet, one hundred cells at once. Predict: will the finished
 > edge map look like a solid letter T, or a hollow outline of a T? Say why."**
@@ -1219,7 +1390,7 @@ middle. Does the middle change? No. So what does the filter give you there?"
 
 ---
 
-### Part F — the four vocabulary boxes (workbook page 4)
+### Part F — the four vocabulary boxes (workbook: Build It, "Vocabulary boxes")
 
 | Term | Model definition | Accept also |
 |---|---|---|
@@ -1227,6 +1398,32 @@ middle. Does the middle change? No. So what does the filter give you there?"
 | **Edge** | A place in the picture where the brightness suddenly changes. | "where a dark bit meets a light bit" · "where the numbers jump" |
 | **Absolute value** | A number with its minus sign removed. \|−765\| = 765. | "how far it is from zero" · "the size without the sign" |
 | **Clipping** | Forcing numbers back into the 0–255 range so they can be shaded. Anything 255 or above becomes 255. | "pinning big numbers down to 255" · "squashing it so it fits" |
+
+---
+
+### Draw It
+
+There is no single right drawing. A good one has all three of these:
+
+1. **Thick lines only down the left and right sides of each stroke**, never along a top or a bottom,
+   because the vertical filter cannot see up-and-down changes. (Capital L: thick down both sides of the
+   tall stroke and both ends of the foot, nothing along the top of the foot or of the stroke.)
+2. **A zero inside a thick stroke** (flat ink) **and a zero out in empty space** (flat paper): two zeros
+   for two different reasons is what is being tested. The workbook asks for three zeros in total, one
+   all ink and one all paper.
+3. **A thin stroke marked as having no zero in the middle**, if they drew one, because a 1- or
+   2-pixel stroke has no flat interior (see B1).
+
+If they put thick lines along the top of a letter, ask: what does the vertical filter compare? Only left
+to right. It never looks up or down.
+
+### Self-Check
+
+Not marked. Five tick-the-box rows the student fills in for themselves: compute one output cell,
+explain why minus-ones and plus-ones find a vertical edge, take the absolute value and say why, clip
+and say what it costs, and explain why the answers grid is 10×10 for a 12×12 picture. Use it to pick
+the first topic for Week 26: any "Not yet" on row 1 or row 5 means redo one cell together before the
+spreadsheet.
 
 ---
 

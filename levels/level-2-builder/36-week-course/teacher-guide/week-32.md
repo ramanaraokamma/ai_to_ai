@@ -13,7 +13,7 @@
 | **Big idea** | When the answer is a number instead of a category you fit a line — and you measure the error in the units of the thing itself. |
 | **New vocabulary** | regression · slope · intercept · mean absolute error · R-squared |
 | **New syntax** | `LinearRegression()` · `model.coef_` / `model.intercept_` · `mean_absolute_error(y_true, y_pred)` · `r2_score(y_true, y_pred)` |
-| **Materials** | Printed workbook pages 32.1–32.6 · **graph paper, 5 mm squares, 2 sheets** · **a ruler with millimetres** · a sharp pencil and an eraser · a calculator · last week's `export_text` printout · the Bug Log |
+| **Materials** | Printed workbook (Build It, Practice Set A1 and the sections you assign) · **graph paper, 5 mm squares, 2 sheets** · **a ruler with millimetres** · a sharp pencil and an eraser · a calculator · last week's `export_text` printout · the Bug Log |
 | **Tech needed** | Python 3 with scikit-learn. No new install. No internet. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
@@ -390,7 +390,7 @@ there is nothing dashed left anywhere on the picture. Two threads lit: learning 
 
 ### 20 minutes the night before
 
-- [ ] **Print workbook pages 32.1–32.6.** Page 32.2 (the blank grid for the hand fit) should be printed **twice** — the first attempt at eyeballing a line is usually scrapped, and that is fine.
+- [ ] **Print the workbook** (`workbook/week-32.md`). Its sections are Warm-Up, Predict the Output, Practice Set A and B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It, Draw It and Self-Check. For class you need **Build It Parts 1–2** (the hand fit and the deviation table) and **Practice Set A, A1**; the rest is homework or extra practice. Have **two sheets of graph paper** per student for Build It Part 1 — the first attempt at eyeballing a line is usually scrapped, and that is fine.
 - [ ] **Find the graph paper and the millimetre ruler.** Both are in the year-0 box list. If there is no graph paper, print two 10×10 grids from any spreadsheet; if there is no ruler, the straight edge of a book works for drawing but you cannot read millimetres off it, so beg or borrow.
 - [ ] **Do the hand fit yourself, on graph paper.** Twelve minutes, and it is the most valuable prep in the week. Axes: hours 0–7 across, marks 40–80 up. Plot the six points from section 3. Lay the ruler through them by eye. Draw. Then count squares to get the slope. **You should land somewhere between 3.0 and 4.2.** Write your number down; you will compare it with scikit-learn's 3.6 in class and it is much better if you have already felt how close eyeballing gets.
 - [ ] **Run the code yourself.**
@@ -418,7 +418,7 @@ there is nothing dashed left anywhere on the picture. Two threads lit: learning 
 
   Remove it. You will stage both of these live, and both are much calmer the second time you see them.
 
-- [ ] **Run the iris four-lines script** from section 4 (the full file is in the Answer Key, page 32.6). It takes one run and gives you the R²-can-mislead demonstration with real numbers on your own screen.
+- [ ] **Run the iris four-lines script** from section 4 (the full file is in the Answer Key, under "Teacher extra — the four iris lines"). It takes one run and gives you the R²-can-mislead demonstration with real numbers on your own screen.
 
 ### 5 minutes on the day
 
@@ -432,11 +432,11 @@ there is nothing dashed left anywhere on the picture. Two threads lit: learning 
 | If this fails | Do this instead |
 |---|---|
 | **No graph paper** | Draw a 7 × 8 grid on plain paper with the ruler. It takes three minutes and works completely. Do not skip the hand fit — it is the lesson. |
-| **No laptop today** | This is the most laptop-optional week in the term. Pages 32.2 and 32.3 are entirely by hand, and they deliver objectives 1, 3 and 4 in full. Print the output block from section 5 so the student can compare their hand slope with 3.6. Objectives 2 and 5 wait one session. |
+| **No laptop today** | This is the most laptop-optional week in the term. Build It Parts 1 and 2 are entirely by hand, and they deliver objectives 1, 3 and 4 in full. Print the output block from section 5 so the student can compare their hand slope with 3.6. Objectives 2 and 5 wait one session. |
 | **`ModuleNotFoundError: No module named 'sklearn'`** | Almost always the virtual environment. Look for `(.venv)` in the prompt; if it is missing, re-run the activate line. Section 4 of the orientation has the full table. |
 | **The student's slope is nowhere near 3.6** | Check three things, in order: are the axes the right way round (hours across, marks up)? Is the line drawn through the *middle* of the dots rather than through the first and last? Did they count squares, or estimate? A hand slope between 3.0 and 4.2 is a success; outside that, one of those three is wrong. |
 | **`49.400000000000006` derails the lesson** | Do not explain binary. Say: *"Computers store decimals slightly imperfectly — that's the crumb. Week 3's `round` fixes it."* Then use the tidied-up line and move on. |
-| **Everything is done and there are 20 minutes left** | Differentiation "flying" item 1: run the same code on the pizza-delivery numbers on page 32.5, and have them state that slope in minutes per pizza. Same skill, different units, ten minutes. |
+| **Everything is done and there are 20 minutes left** | Differentiation "flying" item 1: run the same code on the pizza-delivery numbers in Build It Part 5, and have them state that slope in minutes per pizza. Same skill, different units, ten minutes. |
 
 ---
 
@@ -754,9 +754,9 @@ Note the double brackets in `predict([[7]])` — outer for the table, inner for 
 
 Full instructions in the Activity section. In the lesson flow:
 
-- **Minutes 0–6:** page 32.2 — draw axes and plot the six points.
+- **Minutes 0–6:** Build It Part 1 — draw axes and plot the six points.
 - **Minutes 6–11:** lay the ruler, draw the line, count squares, write your own slope.
-- **Minutes 11–16:** page 32.3 — the deviation table by hand: means, the two sums, slope, intercept. Compare all three slopes: yours by eye, yours by arithmetic, scikit-learn's.
+- **Minutes 11–16:** Build It Part 2 — the deviation table by hand: means, the two sums, slope, intercept. Compare all three slopes: yours by eye, yours by arithmetic, scikit-learn's.
 - **Minutes 16–20:** measure the six misses off the paper with the ruler and compute MAE by hand. State it in marks.
 
 ---
@@ -807,9 +807,9 @@ Every message below came from running a broken version of this week's actual cod
 
 ### Setup
 
-**On the table:** graph paper (5 mm squares), a millimetre ruler, a sharp pencil, an eraser, a calculator, workbook pages 32.2 and 32.3. **The laptop is closed.**
+**On the table:** graph paper (5 mm squares), a millimetre ruler, a sharp pencil, an eraser, a calculator, and the workbook's **Build It** section, Parts 1 and 2. **The laptop is closed.**
 
-The six classmates, which the student copies onto page 32.2 themselves:
+The six classmates, which the student copies onto the graph paper themselves (Build It Part 1):
 
 | Classmate | hours revised per week | marks out of 100 |
 |---|---|---|
@@ -855,7 +855,7 @@ Have them write, in words, on the paper:
    my slope:  about ____ marks per extra hour of revision
 ```
 
-### Step 4 — the arithmetic version (5 minutes, page 32.3)
+### Step 4 — the arithmetic version (5 minutes, Build It Part 2)
 
 Now the deviation table from section 3. They fill in `dx`, `dy`, `dx × dy` and `dx²`, total the last two columns, and divide:
 
@@ -909,7 +909,7 @@ Against the exact line, the six sizes are 5.0, 3.4, 2.8, 1.2, 0.6 and 3.0, total
 
 ### Variation — harder
 
-1. **A second dataset, different units.** Page 32.5's pizza numbers: pizzas in an order against delivery minutes. Slope **2.55 minutes per extra pizza**, intercept 10.7 minutes, MAE 0.48 minutes, R² 0.9927. The whole point is stating a slope in *minutes per pizza* — the skill transfers, the units do not.
+1. **A second dataset, different units.** Build It Part 5's pizza numbers: pizzas in an order against delivery minutes. Slope **2.55 minutes per extra pizza**, intercept 10.7 minutes, MAE 0.48 minutes, R² 0.9927. The whole point is stating a slope in *minutes per pizza* — the skill transfers, the units do not.
 2. **Find where the line stops making sense.** *"Solve `3.6 × hours + 49.4 = 100`. What does your answer mean?"* It comes out at about 14.1 hours, and it means the line claims a perfect score at 14 hours a week — and then keeps going past 100, which is impossible. Extrapolation, found by algebra rather than by being told.
 3. **Break R² on purpose.** *"Invent six marks where the line has a small MAE and a terrible R²."* The trick is to make all six marks nearly identical (say 62, 62, 63, 62, 63, 62): there is almost nothing to explain, so however well the line does, R² is tiny. This is the deepest idea in the week and a student who finds it has genuinely understood R².
 4. **Argue with the slope.** *"The slope says more revision goes with more marks. Give me a reason that could be true even if revision does nothing at all."* (Confident students revise more *and* score more; students who find the subject easy enjoy revising it; the ones who revised 6 hours may have been the ones who cared most about the result.) This is Week 27, put to work.
@@ -972,7 +972,7 @@ Yes. A tree can predict a number too — the leaves hold an average instead of a
 
 ### If the student is struggling
 
-**Cut:** the deviation table (page 32.3), R², and the iris four-lines demonstration. Keep the graph paper, the drawn line, the slope in units, and MAE in marks. That is objectives 1, 3 and 4, and it is a complete, honest lesson.
+**Cut:** the deviation table (Build It Part 2), R², and the iris four-lines demonstration. Keep the graph paper, the drawn line, the slope in units, and MAE in marks. That is objectives 1, 3 and 4, and it is a complete, honest lesson.
 
 **Reteach — make the misses physical.** The sticking point is almost always *why we throw away the signs*. Do it with objects. Six paper strips, cut to the length of each miss (5 marks = 5 cm, 3.4 marks = 3.4 cm, and so on). Lay them end to end on the table: 16 cm of total wrongness. Divide the row into six equal parts. That is MAE, and it is now something you can point at. Then take two strips, one "above the line" and one "below", and ask whether they cancel out in real life. They do not — being 5 marks over and 5 marks under is *two* mistakes, not zero mistakes.
 
@@ -1009,9 +1009,9 @@ Twelve lines, three numbers, every one already carrying its unit in the printout
 
 None of these need syntax they do not already have.
 
-1. **Same code, different units** (Variation — harder, item 1). The pizza numbers on page 32.5. Slope 2.55 **minutes per pizza**, MAE 0.48 minutes, R² 0.9927. The transfer is the point.
-2. **The four iris lines.** Run the script from the Answer Key (page 32.6) and stare at the first two rows: identical MAE, R² of 0.852 and 0.393. Then the question: *"Same MAE. Why is one R² twice the other?"* A student who works out that R² compares you against guessing the average has understood the hardest idea in the week.
-3. **Break R² on purpose** (item 3). Invent six marks with a tiny MAE and a terrible R². This is the same insight as item 2, arrived at from the other side, and it is the best possible evidence that they own it.
+1. **Same code, different units** (Variation — harder, item 1). The pizza numbers in Build It Part 5. Slope 2.55 **minutes per pizza**, MAE 0.48 minutes, R² 0.9927. The transfer is the point.
+2. **The four iris lines.** Run the script from the Answer Key ("Teacher extra — the four iris lines") and stare at the first two rows: identical MAE, R² of 0.852 and 0.393. Then the question: *"Same MAE. Why is one R² twice the other?"* A student who works out that R² compares you against guessing the average has understood the hardest idea in the week.
+3. **Break R² on purpose** (item 3; workbook Puzzle of the Week, Part 2). Invent six marks with a tiny MAE and a terrible R². This is the same insight as item 2, arrived at from the other side, and it is the best possible evidence that they own it.
 4. **Solve for the impossible** (item 2). `3.6h + 49.4 = 100` gives h ≈ 14.1. Then: *"What does the line say about 20 hours? Is that a fact or a promise?"*
 5. **Predict before you fit.** *"Before you run anything: what do you think the slope will be? Draw your guess as a line first."* A written wrong guess is worth more than a right one, and this week the guess is usually close, which is itself the lesson.
 
@@ -1067,82 +1067,474 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "Three pages, about an hour.
+> "Three jobs, about an hour. They are all in the **Build It** section of your workbook.
 >
-> **First, page 32.4 — hand versus machine.** Fit the line by hand through the six points on fresh graph paper, exactly like in class, and write down your own slope by counting squares. Then run the code and write scikit-learn's slope next to it. Then — the marks are here — **state the slope as a proper sentence with both units**: something like 'each extra hour of revision a week goes with about 3.6 more marks.' Not 'the slope is 3.6'. Say what, per what.
+> **First, Build It Part 3 — hand versus machine.** You already drew the line and did the arithmetic in class. Now type `week32_study_line.py` from the chapter and run it, and fill in the three slopes: your ruler, your arithmetic, scikit-learn. Then — the marks are here — **state the slope as a proper sentence with both units**: something like 'each extra hour of revision a week goes with about 3.6 more marks.' Not 'the slope is 3.6'. Say what, per what.
 >
-> **Second, page 32.5 — MAE in real units.** Compute the six misses, drop the signs, average them, and finish this sentence: 'on average my line is off by about ______ marks.' Then do the whole thing again for the pizza numbers on that page — pizzas in an order against delivery minutes — and state *that* slope in minutes per pizza. Same skill, different units. If you can do it twice, you can do it anywhere.
+> **Second, Build It Parts 4 and 5 — MAE in real units.** Compute the six misses, drop the signs, average them, and finish this sentence: 'on average my line is off by about ______ marks.' Then do the whole thing again for the pizza numbers in Part 5 — pizzas in an order against delivery minutes — and state *that* slope in minutes per pizza. Same skill, different units. If you can do it twice, you can do it anywhere.
 >
-> **Third, page 32.6 — what the line can't explain.** Write down one thing that affects somebody's marks that is **not** on our chart, and say in one sentence why the line has no way to know about it. Then the Bug Log: both of today's errors, real message copied out, fix in your own words.
+> **Third, Build It Parts 6 and 7 — what the line can't explain.** Write down one thing that affects somebody's marks that is **not** on our chart, and say in one sentence why the line has no way to know about it. Then the Bug Log: both of today's errors, real message copied out, fix in your own words.
 >
-> One last thing, and I mean it. Before you run any code on page 32.4, **write down your hand slope and don't change it.** If the computer disagrees with you by a couple of tenths, that is a success, not a mistake, and I want to see the original number."
+> One last thing, and I mean it. Before you run any code in Part 3, **write down your hand slope and don't change it.** If the computer disagrees with you by a couple of tenths, that is a success, not a mistake, and I want to see the original number."
 
-**Workbook pages:** 32.1, 32.2 and 32.3 in class; **32.4, 32.5, 32.6** at home.
+**Workbook sections, and the split:** in class, **Build It Part 1** (the hand fit, laptop closed) and **Part 2** (the arithmetic version), plus **Practice Set A, A1** (classification or regression) in the Concept segment if you have the minutes. At home, **Build It Parts 3–7**. That is the hour described above, and it is the same core as before.
 
-**Expected time:** 20 min for the hand fit and the code · 25 min for MAE on both datasets · 15 min for the write-up and the Bug Log. About 60 minutes.
+The rest of the workbook is **extra practice, not part of the hour**: the **Warm-Up** (W1–W5, last week's tree, good as a five-minute opener next session), **Predict the Output** (P1–P4), **Practice Set A** (A2–A6), **Practice Set B** (B1–B5), **Fix the Broken Program**, **Puzzle of the Week**, **Think Deeper** (T1, T2), **Draw It** and the **Self-Check**. Pick from these by Differentiation: Predict P3 and P4 and the Puzzle for a flying student, Fix the Broken Program and B1–B3 for anyone who needs more typing, Draw It as a low-pressure repeat of the hand fit. Do not assign all of it in one week.
+
+**Expected time:** 20 min for Part 3 (the code and the slope sentence) · 25 min for Parts 4 and 5 (MAE on both datasets) · 15 min for Parts 6 and 7 (the write-up and the Bug Log). About 60 minutes. Each extra section you add is roughly 10–20 minutes on top.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 32.1 — Classification or regression?
+This key follows the workbook's own sections, in workbook order, and uses its item labels (W1, P1, A1, B1 …). The values are the ones in the workbook's **Answers** section (the student's copy), re-checked by running the code. The teacher-only additions (marking, what to watch for, likely wrong answers) are marked **Teacher note**. Build It comes last in this key as well as in the workbook, so the homework answers sit together.
+
+### ✅ Warm-Up (last week's tree)
+
+| # | Answer |
+|---|---|
+| **W1** | `max_depth` is a **ceiling, not an order**. Eight leaves is the most a depth-3 tree could have. Two branches reached a pile that was already all one kind in fewer than three questions, so they stopped, and the unspent budget stayed unspent. |
+| **W2** | A **question** has a `<=` or `>` and a number in it. An **answer** starts with `class:` and has nothing after it. `get_n_leaves()` counts the answers. |
+| **W3** | **Allowed:** "This tree, at depth 3, on these 120 training flowers, did not need sepal width." **Not allowed:** "Sepal width is useless." A tree given only the two sepal columns still scores 0.6667 on the hidden flowers, so the information is real; it just was not needed here. |
+| **W4** | **Rule four**, "petal wider than 1.65 cm → virginica". The petal was 1.7 cm, so it cleared the cut-off by **0.05 cm**, half a millimetre. |
+| **W5** | A split compares **one column against one number**, so multiplying that column by a thousand just moves the cut-off from 1.65 to 1650 and nothing about the model changes. kNN needs scaling because it measures distances across **all** the columns at once. |
+
+**Teacher note:** these are recall questions from Week 31, not new material. If W3 comes back as "sepal width is useless", that is the Week 31 misconception, and it is worth one minute before moving on.
+
+### 🔎 Predict the Output
+
+**P1 — four shapes, one array.**
+
+```text
+(6,)
+(6, 1)
+(1, 6)
+(3, 2)
+```
+
+- `fit` wants `X` as **`(6, 1)`**: six rows, one column, a table.
+- `-1` means "work this number out for yourself from how many items there are".
+- Line 4 is `(3, 2)` and 3 × 2 = **6**, the number of items you started with. `reshape` only rearranges; it never adds or removes a number. That is also why `reshape(-1, 4)` on six items fails.
+
+**P2 — the same number, printed twice.**
+
+```text
+[3.6]
+3.5999999999999996
+49.400000000000006
+49.4
+71.0
+```
+
+- Lines 1 and 2 are the same value printed by two different things. Line 1 is a numpy array, and numpy tidies its display. Line 2 is the plain Python float, dust and all. The value never changed, only who was doing the printing.
+- Line 5 is **not** reliably clean. `3.5999999999999996 × 6` is `21.599999999999998`, and adding `49.400000000000006` happens to land back on exactly `71.0`; the two crumbs cancelled. Always `round(...)` before printing a result somebody will read.
+
+**Teacher note:** this is the `49.400000000000006` question in another form. Use the fallback-table line ("Computers store decimals slightly imperfectly"); do not explain binary.
+
+**P3 — negative zero.**
+
+```text
+[-5.   3.4  2.8  1.2  0.6 -3. ]
+-0.0
+-0.0
+2.6667
+```
+
+- Line 2 is **negative zero**. The six misses add to about −0.0000000000000018 (floating-point dust), and rounding that to ten places leaves a zero that kept its minus sign.
+- Lines 3 and 4 differ by one thing: **`np.abs(...)`**. Line 3 averages the misses with their signs; line 4 drops the signs first.
+- **Line 4 (2.6667) is MAE and is the useful one.** Line 3 is useless whatever the model, because a best-fit line always balances with as much above as below, so the signed misses always cancel. A score that says "perfect" for every possible line is not a score.
+
+**P4 — four R² values.**
+
+```text
+0.0
+1.0
+-0.0213
+-61.2199
+```
+
+- Line 1 is exactly **0.0**: R² is measured **against always guessing the average**, and guessing the average scores zero by construction.
+- Line 3: adding 1 to every guess made the model slightly worse than guessing the average, so R² went just below zero.
+- Line 4 is **not a bug**. −61.2199 means this model's squared errors are about sixty-two times those of the average-guesser. Zero is not a floor for R².
+
+**Teacher note:** the "how many did you get right" and "which surprised you" lines are the student's own. Most students predict P4 line 4 as 0 or "something small"; a negative R² is the usual surprise.
+
+### ✍️ Practice Set A — Read It
+
+**A1 — Classification or regression?**
 
 | # | Question | Which | Why |
 |---|---|---|---|
-| (a) | Which species is this flower? | **Classification** | Three fixed choices. |
-| (b) | How many marks will she get out of 100? | **Regression** | Any number on a scale. |
-| (c) | Will this student pass? | **Classification** | Two choices, pass or fail. |
-| (d) | How many minutes will the delivery take? | **Regression** | A number of minutes. |
-| (e) | Which of my three friends sent this message? | **Classification** | A short fixed list of three. |
-| (f) | What will this house sell for? | **Regression** | A price, any number. |
-| (g) | How many runs will she score? | **Regression** | A count, any number. |
-| (h) | Did she get out or not? | **Classification** | Two choices. |
+| a | Which species is this flower? | **Classification** | Three fixed choices. |
+| b | How many marks will she get out of 100? | **Regression** | Any number on a scale. |
+| c | Will this pupil pass? | **Classification** | Two choices, pass or fail. |
+| d | How many minutes will the delivery take? | **Regression** | A number of minutes. |
+| e | Which of my three friends sent this? | **Classification** | A short fixed list of three. |
+| f | What will this house sell for? | **Regression** | A price, any number. |
+| g | How many runs will she score? | **Regression** | A count, any number. |
+| h | Did she get out or not? | **Classification** | Two choices. |
 
-**32.1(i) Two of the pairs above are the same situation asked two ways. Find them and say what changed.**
-(c) and (b) are the same students — pass/fail versus the actual mark. (g) and (h) are the same batter — how many runs versus out or not. **Nothing about the world or the measurements changed. Only the column you cover up.** That is the entire distinction.
+**A1(i).** **(b) and (c)** are the same pupils: the actual mark versus pass/fail. **(g) and (h)** are the same batter: how many runs versus out or not. Nothing about the world or the measurements changed. Only the column you cover up. That is the entire distinction.
 
-**32.1(j) Which scikit-learn tool would you reach for, for (b)?**
-Something ending in `Regressor`, or `LinearRegression`. Anything ending in `Classifier` is for (a), (c), (e) and (h).
+**A1(j).** (b) → something ending in `Regressor`, or `LinearRegression`. (a) → something ending in `Classifier`.
 
-**32.1(k) What goes wrong if you use `accuracy_score` on (b)?**
-It refuses to run:
+**A1(k).** It refuses to run:
 
 ```text
 ValueError: Classification metrics can't handle a mix of multiclass and continuous targets
 ```
 
-And that refusal is a kindness. If it *did* run, it would ask "is 63.9 exactly equal to 64?", answer no, and score an excellent prediction as a total failure.
+The refusal is a kindness. If it did run, it would ask "is 63.9 exactly equal to 64?", answer no, and score an excellent prediction as a total failure.
 
-### Page 32.2 — The hand fit
+**A2 — Say the slope.**
 
-There is no single right answer for the drawn line, and that is deliberate. Mark four things:
+| # | Sentence |
+|---|---|
+| a | "Each extra hour of revision a week **goes with** about **3.6 more marks** out of 100." |
+| b | "Each extra degree of temperature goes with about **3.3 more cups** sold." |
+| c | "Each extra ball faced goes with about **1.09 more runs**." |
+| d | "Each extra lesson missed goes with about **4.4 fewer marks**." |
+| e | "Each extra kilometre goes with about **18 more rupees** on the fare." |
+| f | "Each extra pizza in the order goes with about **2.55 more minutes** of delivery time." |
+
+**A2(g).** (d) is the negative one; "more" becomes **"fewer"** (or "less"). A negative slope is a downhill line, not a broken model.
+
+**A2(h).** **"causes."** The data shows these things went together in the rows collected; it cannot rule out a third thing causing both. "Goes with" is a claim you can defend.
+
+**Marking (teacher note):** the same four marks as the Build It slope sentence: the number, the unit of y, the unit of x, and "goes with". Rounding 3.34 to 3.3 and 1.094 to 1.09 are both fine; do not mark a student down for 3.34 or 1.094 as printed.
+
+**A3 — Trace the value.**
+
+| After this line | `model.coef_` | `guesses` |
+|---|---|---|
+| `model = LinearRegression()` | **Does not exist yet.** No line has been fitted. | Does not exist; the name has not been created. |
+| `model.fit(hours, marks)` | **`[3.6]`**, a one-item array because there is one feature. | Still does not exist. |
+| `guesses = model.predict(hours)` | Unchanged, `[3.6]`. `predict` does not alter the model. | `[53. 56.6 60.2 63.8 67.4 71.]`, six numbers. |
+
+**A3(a).**
+
+```text
+AttributeError: 'LinearRegression' object has no attribute 'coef_'
+```
+
+The trailing underscore is a promise that it appears after `fit`.
+
+**A4 — Spot the bug.**
+
+| # | The fix |
+|---|---|
+| a | `np.array([1, 2, 3, 4, 5, 6]).reshape(-1, 1)`; `X` must be a table. |
+| b | `model.coef_`; trailing underscore. |
+| c | `mean_absolute_error(marks, guesses)` and `r2_score(...)`. Accuracy is for categories only. |
+| d | `model.predict([[7]])`; two sets of brackets, outer table and inner row. |
+| e | `r2_score(marks, guesses)`; truth first, guesses second, both needed. |
+| f | `LinearRegression().fit(...)`; the `()` makes a thing from the recipe. |
+| g | Add the unit: `..., 2), "marks")`. An MAE without a unit is not a result. |
+| h | Delete it. R² is not a percentage of right answers; none of the six was exactly right. Quote the MAE, 2.67 marks, instead. |
+| i | `np.abs(marks - guesses).mean()`. The signed misses always cancel to zero. |
+
+**A4(j).** **(g), (h) and (i)** produce no error at all, and are worse than the ones that crash, because a crash stops you and a wrong number does not.
+
+**A4(k).** "What exactly did I put inside the brackets?" A print label is a promise you made; the arguments are what actually happened. Check the arguments before you celebrate.
+
+**A5 — Match the code to the output.** 1 → **D** · 2 → **F** · 3 → **G** · 4 → **A** · 5 → **C** · 6 → **E** · 7 → **B**
+
+**A5(a).** `model.coef_` (`[3.6]`) and `model.predict([[20]])` (`[121.4]`) have brackets because they are **arrays with one item in them**: `coef_` holds one slope per feature, `predict` returns one guess per row. Use `[0]` to pull the number out.
+
+**A5(b).** `2.67` and `0.804`. **`0.804` (R²) genuinely has no units and is the dangerous one to quote alone**, because it says nothing about whether the predictions are good enough. `2.67` has a unit, marks; the danger is only that somebody forgot to print it.
+
+**A6 — Label the diagram.** **A** = intercept · **B** = slope · **C** = the miss (residual) · **D** = MAE · **E** = marks per hour
+
+**A6(f).** Against the exact line the misses are −5.0, +3.4, +2.8, +1.2, +0.6, −3.0: **four above and two below**. A hand-drawn line should give something like 3-and-3 or 4-and-2.
+
+**A6(g).** The line is **in the wrong place**: too low if all six are above it, too high if all six are below. The tell-tale sign of joining the first and last point.
+
+### ✍️ Practice Set B — Write It
+
+**B1.**
+
+```python
+print("slope:", round(model.coef_[0], 2), "marks per extra hour of revision")
+```
+
+```text
+slope: 3.6 marks per extra hour of revision
+```
+
+**B2.**
+
+```python
+lazy = np.zeros(len(marks)) + marks.mean()
+print("always-guess-the-average MAE:",
+      round(mean_absolute_error(marks, lazy), 2), "marks")
+```
+
+```text
+always-guess-the-average MAE: 5.33 marks
+```
+
+Why it matters: 2.67 marks means nothing alone. Next to 5.33 it becomes "half as wrong as not bothering at all".
+
+**B3.**
+
+```python
+print("2.5 hours ->", np.round(model.predict([[2.5]]), 2), "marks")
+```
+
+```text
+2.5 hours -> [58.4] marks
+```
+
+The **outer** brackets are the table ("a set of rows to predict for"); the **inner** pair is one row with one measurement in it. Drop the inner pair and you get the scalar-array error.
+
+**B4.**
+
+```python
+# wb4_bus.py  -  seven journeys. Stops travelled -> minutes taken.
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, r2_score
+
+stops = np.array([2, 4, 6, 8, 10, 12, 14]).reshape(-1, 1)
+minutes = np.array([7, 11, 16, 19, 25, 28, 34])
+
+print("stops   shape:", stops.shape)
+print("minutes shape:", minutes.shape)
+
+model = LinearRegression()
+model.fit(stops, minutes)
+guesses = model.predict(stops)
+
+print("slope    :", round(model.coef_[0], 2), "minutes per extra stop")
+print("intercept:", round(model.intercept_, 2), "minutes")
+print("MAE      :", round(mean_absolute_error(minutes, guesses), 2), "minutes")
+print("R2       :", round(r2_score(minutes, guesses), 4))
+print("9 stops  :", np.round(model.predict([[9]]), 2), "minutes")
+```
+
+```text
+stops   shape: (7, 1)
+minutes shape: (7,)
+slope    : 2.21 minutes per extra stop
+intercept: 2.29 minutes
+MAE      : 0.57 minutes
+R2       : 0.9948
+9 stops  : [22.21] minutes
+```
+
+Slope as a sentence: "Each extra stop goes with about **2.2 more minutes** on the journey." The 2.29-minute intercept is believable: roughly the fixed part of any journey (doors, pulling away, finding a seat). It is still an extrapolation, since nobody travelled zero stops. Compare the lemonade stall's −54.93 cups, which is not plausible.
+
+**B5.**
+
+```python
+# wb5_full.py  -  the whole week in one file, with a baseline to compare against
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, r2_score
+
+hours = np.array([1, 2, 3, 4, 5, 6]).reshape(-1, 1)
+marks = np.array([48, 60, 63, 65, 68, 68])
+
+model = LinearRegression()
+model.fit(hours, marks)
+guesses = model.predict(hours)
+
+lazy = np.zeros(len(marks)) + marks.mean()
+
+line_mae = mean_absolute_error(marks, guesses)
+lazy_mae = mean_absolute_error(marks, lazy)
+
+print("the model : marks =", round(model.coef_[0], 2), "x hours +",
+      round(model.intercept_, 2))
+print("my line   : MAE", round(line_mae, 2), "marks   R2",
+      round(r2_score(marks, guesses), 3))
+print("guess mean: MAE", round(lazy_mae, 2), "marks   R2",
+      round(r2_score(marks, lazy), 3))
+print("the line is", round(lazy_mae / line_mae, 2),
+      "times less wrong than not bothering")
+```
+
+```text
+the model : marks = 3.6 x hours + 49.4
+my line   : MAE 2.67 marks   R2 0.804
+guess mean: MAE 5.33 marks   R2 0.0
+the line is 2.0 times less wrong than not bothering
+```
+
+The baseline's R² is exactly 0.0 because R² is defined as a comparison against guessing the average; asking it to score the average-guesser asks "how much better than itself?", and the answer is "not at all", on every dataset.
+
+**Marking (teacher note):** any correct program that produces the four printed lines is full credit; the variable names and the `print` layout may differ. Check the units are in the strings.
+
+### 🐞 Fix the Broken Program
+
+**Bug 1 — the unclosed bracket.**
+
+- **Was there any output?** **No.** Python never ran a line: a `SyntaxError` happens while Python is still reading the file. The missing word `Traceback` is the other tell.
+- **Fix:** `model = LinearRegression()`
+
+**Bug 2 — the 1-D array.**
+
+- **1-D vs 2-D:** 1-D is a single row of numbers; 2-D is a table of rows and columns. scikit-learn always wants `X` as a table, even with one measurement.
+- **Unusual and helpful:** the message **tells you the fix** (`array.reshape(-1, 1)`). Many readers skip it; finish the message.
+- **Fix, on a line Python did not name (line 6):**
+
+```python
+hours = np.array([1, 2, 3, 4, 5, 6]).reshape(-1, 1)
+```
+
+- **Two lines to add:**
+
+```python
+print("hours shape:", hours.shape)     # want (6, 1)
+print("marks shape:", marks.shape)     # want (6,)
+```
+
+**Bug 3 — the silent one.**
+
+- **The bug:** the last line averages `(marks - guesses)` with the signs still on, so plus and minus cancel and it prints `-0.0`.
+- **Why exactly zero:** a best-fit line always balances (it passes through the point (x̄, ȳ)), for every least-squares line, not just these six numbers.
+- **Fix:**
+
+```python
+print("how wrong am I on average:",
+      round(np.abs(marks - guesses).mean(), 2), "marks")
+```
+
+```text
+slope: 3.6 marks per hour
+MAE  : 2.67 marks
+how wrong am I on average: 2.67 marks
+```
+
+- **Which line was lying:** **line 3**, and Python would never have said so. It is valid code computing a correct average of the wrong quantity.
+
+**Teacher note:** this is the same pair of errors that go into the Bug Log in class (the reshape error and the `accuracy_score` error); the Fix section covers the first of them plus the silent `-0.0`.
+
+### 🧩 Puzzle of the Week
+
+**Part 1 — Solve for the impossible.**
+
+**(a)**
+
+```text
+3.6h + 49.4 = 100
+3.6h        = 100 − 49.4 = 50.6
+h           = 50.6 ÷ 3.6 = 14.06
+```
+
+**(b)** It claims "somebody who revised about 14.1 hours a week would score exactly 100". Not believable: the most anyone in the data revised was 6 hours, and past 14.06 the line climbs beyond 100, which is impossible.
+
+**(c)**
+
+```text
+3.6h + 49.4 = 0
+3.6h        = −49.4
+h           = −49.4 ÷ 3.6 = −13.72
+```
+
+**(d)** It claims "somebody who revised minus 13.7 hours a week would score zero". Wrong because you cannot revise a negative number of hours; the line has walked off the other edge of reality. A straight line has no idea where the world stops.
+
+**(e)**
+
+| hours | line says | inside our data (1–6)? | possible in real life? |
+|---|---|---|---|
+| 2 | 56.6 | **yes** | yes |
+| 6 | 71.0 | **yes** (just) | yes |
+| 7 | 74.6 | no | yes, a reasonable stretch |
+| 14.06 | 100.0 | no | just about, but no evidence for it |
+| 20 | 121.4 | no | **no, over 100** |
+| −13.72 | 0.0 | no | **no, negative hours** |
+
+**(f)** "A line is only entitled to answer inside the range of x it was fitted from, so write that range down and say so whenever you show somebody the model."
+
+**Teacher note (the 20-hour prediction):** 121.4 marks for 20 hours is not a bug. It is the line doing precisely what it was built to do, outside the evidence it was built from. The professional move is to state the range the model was fitted on and refuse to answer outside it.
+
+**Part 2 — Break R² on purpose.**
+
+**(g)**
+
+| marks | spread | MAE | lazy MAE | R² |
+|---|---|---|---|---|
+| A: 48, 60, 63, 65, 68, 68 | 20 | **2.667** | **5.333** | **0.804** |
+| B: 55, 61, 62, 64, 65, 65 | 10 | **1.333** | **2.667** | **0.813** |
+| C: 62, 62, 63, 62, 63, 62 | 1 | **0.425** | **0.444** | **0.043** |
+
+Confirmed in code:
+
+```python
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, r2_score
+
+hours = np.array([1, 2, 3, 4, 5, 6]).reshape(-1, 1)
+sets = {
+    "A  wide spread":  [48, 60, 63, 65, 68, 68],
+    "B  half spread":  [55, 61, 62, 64, 65, 65],
+    "C  nearly flat":  [62, 62, 63, 62, 63, 62],
+}
+print(f"{'marks':16s} {'spread':>7s} {'MAE':>7s} {'lazyMAE':>8s} {'R2':>8s}")
+for name, m in sets.items():
+    m = np.array(m)
+    model = LinearRegression().fit(hours, m)
+    g = model.predict(hours)
+    lazy = np.zeros(6) + m.mean()
+    print(f"{name:16s} {m.max()-m.min():7d} "
+          f"{mean_absolute_error(m, g):7.3f} {mean_absolute_error(m, lazy):8.3f} "
+          f"{r2_score(m, g):8.3f}")
+```
+
+```text
+marks             spread     MAE  lazyMAE       R2
+A  wide spread        20   2.667    5.333    0.804
+B  half spread        10   1.333    2.667    0.813
+C  nearly flat         1   0.425    0.444    0.043
+```
+
+**(h)** **No.** MAE improves every row (2.667 → 1.333 → 0.425) while R² goes 0.804 → 0.813 → 0.043 and falls off a cliff.
+
+**(i)** The lazy MAE shrinks too (5.333 → 2.667 → 0.444). From A to B both halved, so the ratio barely moved and R² stayed put. In C the lazy model is already almost perfect because the marks hardly vary, leaving nothing for the line to explain. R² is a ratio and both halves moved.
+
+**(j)** "…make the answers **barely vary at all**." If everybody scores about 62, guessing 62 is already an excellent model.
+
+**(k)** No. Set C has the smallest MAE, but the model is worth nothing: writing "62" six times would do almost as well. Its slope is 0.057 marks per hour, a rounding error rather than a relationship. A small MAE says the predictions are close; it does not say the model did any of the work.
+
+**Teacher note:** (j) and (k) are the same insight as the iris four-lines demonstration at the end of this key, arrived at from the other side. A student who writes (j) unprompted is at mastery level 5.
+
+### 🤔 Think Deeper
+
+**T1 — the two explanations.** Look for two different ideas in plain words. A model answer:
+
+> **MAE 2.67 marks.** "I built something that guesses your test mark from how many hours you revise. Checked against six people whose real marks I know, it is off by about two and a half marks on average, sometimes high, sometimes low. If it says 65, read that as somewhere around 62 to 68."
+>
+> **R² 0.804.** "How much better is my guessing than the laziest approach, ignoring revision and saying the class average every time? The lazy way is off by about five and a third marks; mine by two and two thirds. So I have explained roughly 80% of the variation between these six people. It is **not** a percentage of predictions I got right; I did not get any exactly right."
+
+**Marking:** the common slip is to write R² as "80% accurate". That is the most important thing to catch in this question.
+
+**T2 — the two intercepts.** The difference is **whether anybody in the data had x = 0**. The lemonade stall's coldest day was 22 °C, so its intercept is a prediction 22 degrees off the edge of the evidence and comes out as nonsense (−54.93 cups). In the lessons-missed data one of the nine pupils genuinely missed zero lessons, so 88.64 marks sits inside the evidence and can be checked. The intercept is the height of the line at x = 0; it is machinery for computing predictions, and only a fact when x = 0 is inside the range. The check for every future line: **what is the smallest x in my data?** An impossible intercept is useful evidence that x = 0 is far outside the range, not a bug.
+
+**Teacher note (the revision intercept):** the student should be able to say, for this week's line: "The line says somebody who revised zero hours would score about 49.4 marks. But nobody in our six revised zero, the least was one hour, so that is the formula talking, not evidence."
+
+### 🛠️ Build It — Hand Versus Machine (the homework core)
+
+**Part 1 — the hand fit (in class).** There is no single right answer for the drawn line, and that is deliberate. Mark four things:
 
 | What to look for | Full credit |
 |---|---|
 | Axes labelled with units | "hours of revision per week" and "marks out of 100" both written |
 | Points plotted | all six, as crosses, at (1,48) (2,60) (3,63) (4,65) (5,68) (6,68) |
-| Line placed sensibly | some points above and some below; **not** joining A to F |
-| Slope read by counting | a number between **3.0 and 4.2**, written with both units |
+| Line placed sensibly | some crosses above and some below; **not** joining A to F |
+| Slope read by counting squares | a number between **3.0 and 4.2**, written with both units |
 
-**32.2(a) How many of your points are above the line and how many below?**
-Against the exact line: two above and… let us be precise. The misses are −5.0, +3.4, +2.8, +1.2, +0.6, −3.0, so **four above and two below**. A hand line should give something like 3-and-3 or 4-and-2. All six on one side means the line is in the wrong place.
+"Crosses above / below my line": against the exact line it is four above and two below; a hand line of 3-and-3 or 4-and-2 is fine. All six on one side means the line is in the wrong place.
 
-**32.2(b) Why is joining the first and last point a bad way to fit a line?**
-Because it uses two of your six pieces of evidence and throws four away. Joining (1,48) to (6,68) gives a slope of exactly 4.0, and it puts every one of the four middle points **above** the line — so the line is systematically too low for most of the class. A best-fit line has to answer to all six points.
+Why joining the first and last point is a bad fit: it uses two of your six pieces of evidence and throws four away. (1, 48) to (6, 68) gives a slope of exactly 4.0 and puts all four middle points **above** the line, so the line is systematically too low for most of the class.
 
-**32.2(c) Your eye and the computer got nearly the same slope. What does that tell you about what the computer is doing?**
-That it is doing the same job, not a different and mysterious one. It defines "as close as possible to all of them" precisely and consistently, and it does it in a thousandth of a second — but the job is the job you just did with a ruler.
+**Part 2 — the arithmetic version (in class).**
 
-### Page 32.3 — The deviation table by hand
-
-**Step 1 — the means.**
-
-```
+```text
 x̄ = (1 + 2 + 3 + 4 + 5 + 6) ÷ 6 = 21 ÷ 6 = 3.5
 ȳ = (48 + 60 + 63 + 65 + 68 + 68) ÷ 6 = 372 ÷ 6 = 62
 ```
-
-**Step 2 — the table.**
 
 | x | y | dx = x − 3.5 | dy = y − 62 | dx × dy | dx² |
 |---|---|---|---|---|---|
@@ -1154,36 +1546,18 @@ x̄ = (1 + 2 + 3 + 4 + 5 + 6) ÷ 6 = 21 ÷ 6 = 3.5
 | 6 | 68 | 2.5 | 6 | 15.0 | 6.25 |
 | | | **Σ = 0** | **Σ = 0** | **Σ = 63.0** | **Σ = 17.5** |
 
-Both `dx` and `dy` columns must total zero — that is the built-in check, and it catches a wrong mean instantly.
+**The check:** the `dx` and `dy` columns must each total **zero**. If either does not, the **mean** is wrong: a mean is the balance point, so the amounts above and below it are equal by definition. Go back before doing anything else.
 
-**Step 3 — slope and intercept.**
-
-```
+```text
 slope     = 63.0 ÷ 17.5 = 3.6
 intercept = 62 − 3.6 × 3.5 = 62 − 12.6 = 49.4
 ```
 
-**The model: marks = 3.6 × hours + 49.4**
+**The model:** marks = **3.6** × hours + **49.4**
 
-**32.3(a) Why must the `dx` and `dy` columns each add to zero?**
-Because a mean is the balance point: the amounts above it and the amounts below it are equal by definition. If either column does not total zero, the mean is wrong — go back before doing anything else.
+**Teacher note:** exactly one row has a negative `dx × dy`: the 3-hour, 63-mark classmate (`dx` −0.5, `dy` +1, product −0.5). She is on the low side for hours and the high side for marks, so she pushes against the uphill trend. Every other row agrees with it.
 
-**32.3(b) One row contributes a negative number to the `dx × dy` column. Which, and what does it mean?**
-Row C (3 hours, 63 marks): `dx` is −0.5 and `dy` is +1, giving −0.5. It means that classmate is on the *low* side for hours but on the *high* side for marks — she pushes against the uphill trend. Every other row agrees with the trend, so every other product is positive.
-
-**32.3(c) Compare your three slopes.**
-
-| | slope |
-|---|---|
-| ruler, by eye | *their number, 3.0–4.2* |
-| arithmetic | **3.6** |
-| scikit-learn | **3.6** |
-
-The arithmetic and scikit-learn must match exactly — they are the same calculation. The eye should be within a few tenths.
-
-### Page 32.4 — Hand versus machine (homework)
-
-The complete working file, actually run:
+**Part 3 — now the machine (homework).** The complete working file, actually run:
 
 ```python
 # week32_study_line.py
@@ -1230,54 +1604,39 @@ R2       : 0.804
 20 hours : [121.4]
 ```
 
-**32.4(a) The slope, as a sentence.**
+| | slope |
+|---|---|
+| my ruler, by eye | *their number, 3.0–4.2* |
+| my arithmetic | **3.6** |
+| scikit-learn | **3.6** |
 
-> *"Each extra hour of revision per week goes with about **3.6 more marks** out of 100."*
+**Which two agree exactly, and why:** the **arithmetic** and **scikit-learn**. They are the same calculation, `Σ(dx × dy) ÷ Σ(dx²)`, done by a pencil and by a chip. The eye should be within a few tenths, and that is a success rather than a near miss. It also tells the student the computer is doing the same job they did with a ruler, not a different and mysterious one.
 
-**Marking:** one mark for the number, one for the unit of y (marks), one for the unit of x (per hour per week), one for "goes with" rather than "causes". A sentence reading "the slope is 3.6" scores one out of four, however confidently it is written.
+**The sentence:** "Each extra hour of revision per week goes with about **3.6 more marks** out of 100."
 
-**32.4(b) The intercept, as a sentence — and the health warning.**
+**Marking:** one mark for the number, one for the unit of y (marks), one for the unit of x (per hour per week), one for "goes with" rather than "causes". "The slope is 3.6" scores one out of four, however confidently it is written.
 
-> *"The line says somebody who revised zero hours would score about 49.4 marks. But nobody in our six revised zero — the least was one hour — so that is the formula talking, not evidence. It is a prediction off the edge of what we measured."*
+**Teacher note (if the student asks about the dust):** `49.400000000000006` is floating-point dust (binary cannot store 49.4 exactly), not an imprecise model; `round(model.intercept_, 2)` sweeps it up. And `hours` needs `.reshape(-1, 1)` while `marks` does not because `X` must be a table `(6, 1)` and `y` a flat column `(6,)`; leaving it out gives the `Expected 2D array` error.
 
-**32.4(c) Why is `intercept_` printed as `49.400000000000006`?**
-Floating-point dust. Computers store decimals in binary and 49.4 has no exact binary form, so a crumb survives at the fifteenth decimal place. It is not the model being imprecise. `round(model.intercept_, 2)` sweeps it up.
+**Part 4 — MAE in real units (homework).**
 
-**32.4(d) Why does `hours` need `.reshape(-1, 1)` when `marks` does not?**
-`X` must be a **table** — rows × columns — because in general there are several features. `y` is a single column of answers, so a flat list is right. Hence `(6, 1)` and `(6,)`. Leaving the reshape out gives:
-
-```text
-ValueError: Expected 2D array, got 1D array instead:
-array=[1 2 3 4 5 6].
-```
-
-**32.4(e) The line predicts 121.4 marks for 20 hours. Is this a bug?**
-No. It is the line doing precisely what it was built to do, outside the evidence it was built from. Our data covers 1 to 6 hours; at 20 the line is extrapolating, and a straight line has no idea the test is out of 100. The professional move is to state the range the model was fitted on and refuse to answer outside it.
-
-### Page 32.5 — MAE in real units (homework)
-
-**Part 1 — the six classmates.**
-
-| x | actual | predicted | miss | \|miss\| |
+| hours | actual | predicted | miss | \|miss\| |
 |---|---|---|---|---|
-| 1 | 48 | 53.0 | −5.0 | 5.0 |
-| 2 | 60 | 56.6 | +3.4 | 3.4 |
-| 3 | 63 | 60.2 | +2.8 | 2.8 |
-| 4 | 65 | 63.8 | +1.2 | 1.2 |
-| 5 | 68 | 67.4 | +0.6 | 0.6 |
-| 6 | 68 | 71.0 | −3.0 | 3.0 |
+| 1 | 48 | **53.0** | −5.0 | 5.0 |
+| 2 | 60 | **56.6** | +3.4 | 3.4 |
+| 3 | 63 | **60.2** | +2.8 | 2.8 |
+| 4 | 65 | **63.8** | +1.2 | 1.2 |
+| 5 | 68 | **67.4** | +0.6 | 0.6 |
+| 6 | 68 | **71.0** | −3.0 | 3.0 |
 | | | | **Σ = 0.0** | **Σ = 16.0** |
 
-```
+```text
 MAE = 16.0 ÷ 6 = 2.6666... = 2.67 marks
 ```
 
-> *"On average my line is off by about 2.67 marks — call it under 3 marks."*
+The sentence: "On average my line is off by about **2.67 marks** — call it under 3 marks."
 
-**32.5(a) Why can't you just average the misses as they are?**
-They add up to zero. A best-fit line always balances, with as much above as below, so averaging the signed misses would say the model is perfect no matter how bad it is. Dropping the signs is what makes the average mean something.
-
-**32.5(b) What would MAE be for the laziest model — always guessing the class average of 62?**
+The comparison, always guessing 62:
 
 | y | miss from 62 | \|miss\| |
 |---|---|---|
@@ -1289,15 +1648,15 @@ They add up to zero. A best-fit line always balances, with as much above as belo
 | 68 | +6 | 6 |
 | | | **Σ = 32** |
 
-`32 ÷ 6 = 5.33 marks`. Our line's 2.67 is **half** as wrong as not bothering at all. Without that comparison, "MAE 2.67" is a number with nothing to lean on.
+`32 ÷ 6 = 5.33 marks`, so the line is **2.0 times less wrong** than not bothering at all.
 
-**Part 2 — the pizza numbers.**
+**Teacher note (why not average the signed misses):** they add to zero. A best-fit line always balances, so the signed average would call every model perfect. Dropping the signs is what makes the average mean something. (Same point as P3 and Fix Bug 3.)
 
-| pizzas (x) | 2 | 4 | 6 | 8 | 10 |
-|---|---|---|---|---|---|
-| minutes (y) | 16 | 20 | 27 | 31 | 36 |
+**Part 5 — the pizza numbers (homework).**
 
-By hand: `x̄ = 6`, `ȳ = 26`.
+```text
+x̄ = 6     ȳ = 26
+```
 
 | x | y | dx | dy | dx·dy | dx² |
 |---|---|---|---|---|---|
@@ -1308,12 +1667,14 @@ By hand: `x̄ = 6`, `ȳ = 26`.
 | 10 | 36 | 4 | 10 | 40 | 16 |
 | | | | | **Σ = 102** | **Σ = 40** |
 
-```
+```text
 slope     = 102 ÷ 40 = 2.55
 intercept = 26 − 2.55 × 6 = 26 − 15.3 = 10.7
 ```
 
-**minutes = 2.55 × pizzas + 10.7**
+**The model:** minutes = **2.55** × pizzas + **10.7**
+
+Per-row working for the MAE (teacher reference):
 
 | x | actual | predicted | miss | \|miss\| |
 |---|---|---|---|---|
@@ -1324,7 +1685,7 @@ intercept = 26 − 2.55 × 6 = 26 − 15.3 = 10.7
 | 10 | 36 | 36.2 | −0.2 | 0.2 |
 | | | | **Σ = 0.0** | **Σ = 2.4** |
 
-```
+```text
 MAE = 2.4 ÷ 5 = 0.48 minutes
 R²  = 1 − (1.90 ÷ 262) = 0.992748
 ```
@@ -1344,6 +1705,7 @@ guesses = model.predict(pizzas)
 print("slope    :", round(model.coef_[0], 2), "minutes per pizza")
 print("intercept:", round(model.intercept_, 2), "minutes")
 print("guesses  :", np.round(guesses, 2))
+print("misses   :", np.round(minutes - guesses, 2))
 print("MAE      :", round(mean_absolute_error(minutes, guesses), 2), "minutes")
 print("R2       :", round(r2_score(minutes, guesses), 4))
 print("7 pizzas :", model.predict([[7]]))
@@ -1353,38 +1715,78 @@ print("7 pizzas :", model.predict([[7]]))
 slope    : 2.55 minutes per pizza
 intercept: 10.7 minutes
 guesses  : [15.8 20.9 26.  31.1 36.2]
+misses   : [ 0.2 -0.9  1.  -0.1 -0.2]
 MAE      : 0.48 minutes
 R2       : 0.9927
 7 pizzas : [28.55]
 ```
 
-**32.5(c) The pizza slope, as a sentence.**
+| | value |
+|---|---|
+| MAE | **0.48 minutes** |
+| R² | **0.9927** |
+| prediction for 7 pizzas | **28.55 minutes** |
 
-> *"Each extra pizza in the order goes with about **2.55 more minutes** of delivery time."*
+- **Slope sentence:** "Each extra pizza in the order goes with about **2.55 more minutes** of delivery time."
+- **The sensible intercept:** **10.7 minutes** is roughly the driving and waiting time before any pizza is loaded; the fixed part of the journey genuinely exists. Still an extrapolation (nobody ordered zero), so plausible rather than measured.
+- **Inside or outside?** **Inside.** 7 sits between 2 and 10, so this is interpolation (`2.55 × 7 + 10.7 = 28.55`), far more defensible than the 20-hour revision prediction of 121.4.
 
-**32.5(d) The pizza intercept means something sensible for once. What?**
-10.7 minutes is the time an order of *zero* pizzas would take — which is roughly the driving and waiting time before any pizza is loaded. Unlike the revision intercept, this one has a real-world reading, because "the fixed part of the journey" genuinely exists. It is still an extrapolation (nobody ordered zero), so treat it as plausible rather than measured.
+**Part 6 — what the line cannot explain (homework).**
 
-**32.5(e) A 7-pizza order?**
-`2.55 × 7 + 10.7 = 17.85 + 10.7 = 28.55 minutes`. And this one is safe, because 7 sits *inside* the range we have data for (2 to 10). Predicting inside your range is called interpolation and it is far more defensible than the 20-hour revision prediction.
-
-### Page 32.6 — What the line can't explain, and the Bug Log (homework)
-
-**32.6(a) Name one thing that affects marks and is not on our chart.**
-
-Any of these earns full credit provided the second sentence is there: how much sleep they had the night before · whether they revised the right chapter · whether they had a teacher who explained it well · how much they already knew before revising · whether they were ill on the day · how good they are at that particular subject · whether the questions happened to suit them.
+Any of these earns full credit **provided the second sentence is there**: how much sleep they had · whether they revised the right chapter · whether the teacher explained it well · how much they already knew before revising · whether they were ill on the day · how good they are at that subject · whether the questions happened to suit them.
 
 The required second sentence is the reason:
 
-> *"The line only has one column to look at — hours revised. It has no way even to represent sleep, because we never measured it. Anything we didn't put in the table simply does not exist as far as the model is concerned, and it turns up in the misses instead."*
+> "The line only has one column to look at — hours revised. It has no way even to represent sleep, because we never measured it. Anything I did not put in the table simply does not exist as far as the model is concerned, and it turns up in the misses instead."
 
-**32.6(b) Our MAE is 2.67 marks. Where does that 2.67 come from?**
-From everything about these six people that is not "hours revised". If revision were the only thing that mattered, all six would sit exactly on the line and the MAE would be zero. The size of the misses is a measure of how much else is going on — so the MAE is not just a score, it is a hint about the features you are missing.
+**Where does the 2.67 come from?** From everything about these six people that is not "hours revised". If revision were the only thing that mattered, all six would sit on the line and the MAE would be zero. The size of the misses is a hint about the features you are missing.
 
-**32.6(c) The R² is 0.804. Does that mean the model is good enough to use?**
-Not on its own, and this is the honest answer. R² 0.804 says the line explains about 80% of the up-and-down in these six marks — much better than guessing the average. It says nothing about whether being off by 2.67 marks is acceptable, and that depends entirely on the decision. For a rough guess, fine. For anything that mattered to somebody, no. **Always print the MAE next to the R², with its units.**
+**Is R² 0.804 good enough to use?** Not on its own. It says the line explains about 80% of the up-and-down in these six marks, much better than guessing the average. It says nothing about whether being off by 2.67 marks is acceptable, which depends on the decision. For a rough guess, fine; for anything that mattered to somebody, no. **Always print the MAE next to the R², with its units.**
 
-**32.6(d) The four iris lines.** The complete file, actually run:
+**Part 7 — the Bug Log (homework).** Both of today's errors:
+
+| What happened | The real message | What fixed it | What I will check next time |
+|---|---|---|---|
+| Forgot `.reshape(-1, 1)` on `hours` | `ValueError: Expected 2D array, got 1D array instead: array=[1 2 3 4 5 6].` | Added `.reshape(-1, 1)`. `X` must be a table with rows and columns; `y` stays flat. The message printed the fix. | Print `X.shape` and `y.shape` before `fit`. Want `(6, 1)` and `(6,)`. |
+| Used `accuracy_score` on number predictions | `ValueError: Classification metrics can't handle a mix of multiclass and continuous targets` | Used `mean_absolute_error` and `r2_score`. Accuracy asks "exactly equal?", the wrong question for a number. | Look at the answer column first: a short fixed list or any number? That decides the score. |
+
+### 🎨 Draw It
+
+Marked on four things:
+
+1. **Both axes labelled with units.** "questions" is not a unit; "number of questions set" is.
+2. **Six crosses, and a line through the middle of them**, with points above *and* below.
+3. **A step triangle drawn on the line**, both sides labelled. This is the evidence the slope was read, not guessed.
+4. **The slope written as a sentence with both units and "goes with".**
+
+The best answers add a note about the biggest miss, naming a real reason for it.
+
+### 📊 Self-Check
+
+**True or false:**
+
+| Statement | Answer | Why |
+|---|---|---|
+| `accuracy_score` works fine on number predictions | **FALSE** | It refuses, and the refusal is a kindness. |
+| `y` needs `.reshape(-1, 1)` just like `X` does | **FALSE** | `X` is a table `(6, 1)`; `y` is a flat column `(6,)`. |
+| `model.coef_` prints as a list even with one feature | **TRUE** | `[3.6]`, one slope per feature. |
+| R² of 0.804 means the model is 80% accurate | **FALSE** | None of the six was exactly right. R² is variation explained. |
+| MAE is in the same units as the thing you predict | **TRUE** | Marks, minutes, cups, rupees. |
+| R² has no units | **TRUE** | Which is why it is for comparing, not for reporting. |
+| A best-fit line's signed misses add to about zero | **TRUE** | Exactly zero, in fact; that is why MAE drops the signs. |
+| A negative R² is impossible | **FALSE** | −61.22 in P4: worse than guessing the average. |
+| A negative slope means the model is broken | **FALSE** | A downhill line; the sentence says "fewer". |
+| `49.400000000000006` means the model is imprecise | **FALSE** | Floating-point dust. |
+| The intercept is always a real, measured fact | **FALSE** | Only if x = 0 is inside your data. |
+| Predicting 121 marks out of 100 is a bug you should fix | **FALSE** | It is a limit you state: the model was built on 1–6 hours. |
+| A line that went through all six dots would be a better model | **FALSE** | It would not be a line, and a model that hits every training point exactly is a reason to worry (next week). |
+| "The slope is 3.6" is a finished answer | **FALSE** | 3.6 what, per what? |
+
+The ten "I can…" rows are self-rated; there is no key. Read them against the Mastery scale and ask about any 😕.
+
+### Teacher extra — the four iris lines (not in the workbook)
+
+This is the R²-can-mislead demonstration from section 4, used in the prep checklist and in the Differentiation "flying" list. It is **not** a workbook item; run it on your own screen or show it to a strong student. The complete file, actually run:
 
 ```python
 # week32_iris_lines.py
@@ -1442,13 +1844,6 @@ petal width (cm)         0.159   0.927           0.708
 > **R² is not a measure of how good you are. It is a measure of how much better you are than guessing the average.** So a low R² can mean "the thing hardly varies, there was little to explain", and a high R² can sit next to a large MAE if the thing varies enormously. Report both, and put the units on the MAE.
 >
 > And the wider point: three of these four are over 0.85 and one is under 0.4, from one dataset with one piece of code. A straight line is not a universal answer.
-
-**The two Bug Log entries:**
-
-| Message | What it means | The fix |
-|---|---|---|
-| `ValueError: Expected 2D array, got 1D array instead: array=[1 2 3 4 5 6].` | `fit` wants `X` as a table with rows and columns, and I gave it one flat row. | Add `.reshape(-1, 1)` to the `hours` line. The error message actually prints the fix. Print `X.shape` and check it says `(6, 1)`. |
-| `ValueError: Classification metrics can't handle a mix of multiclass and continuous targets` | I used `accuracy_score`, which is for categories, on predictions that are numbers with decimals. | Use `mean_absolute_error` and `r2_score` instead. Accuracy asks "exactly equal?", which is the wrong question for a number. |
 
 ### Lesson questions posed in the Say-this scripts
 

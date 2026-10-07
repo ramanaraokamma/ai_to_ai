@@ -15,7 +15,7 @@
 | **New maths** | **multiplying two grids**: `(3,2) @ (2,4) → (3,4)`, the inner numbers must match — computed cell by cell on real small numbers, with row 0 column 0 done as `1×10 + 2×50 = 110` |
 | **New syntax** | `A @ B` · `arr.sum(axis=1, keepdims=True)` · `np.allclose(a, b)` |
 | **Dataset** | Hand-typed 3×2 and 2×4 grids, then a hand-typed `(4, 2)` batch pushed through **2 → 3 → 1**. Every number small enough to check on paper. No files, no downloads. |
-| **Materials** | **Twelve index cards** with one shape pair each, blank on the back (see 🧰) · a **blue pen** for the board trace · printed workbook pages 17.1–17.6 · the Bug Log · Week 16's four-row table still on the wall |
+| **Materials** | **Twelve index cards** with one shape pair each, blank on the back (see 🧰) · a **blue pen** for the board trace · the printed workbook (every section down to Self-Check, **not** the ✅ Answers at the end; see 📤 Homework to Assign) · the Bug Log · Week 16's four-row table still on the wall |
 | **Tech needed** | Laptop with Python 3 and numpy. **No scikit-learn needed today, no PyTorch.** No internet. |
 | **Prep time** | 20 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | Every file today runs in **under a second**. Nothing trains. |
@@ -567,8 +567,8 @@ A2 = sigmoid(Z2) (4, 1)
 
 **Runtime: under a second.**
 
-- [ ] **Run `break_five_ways.py`** (all five files are in the Answer Key, page 17.4) so all five messages are familiar. Especially the **fifth**, which produces **no error at all**.
-- [ ] **Run `bcast.py`** and **`softmax.py`** (Answer Key, pages 17.5 and 17.6). **Under a second each.**
+- [ ] **Run `break_five_ways.py`** (all five files are in the Answer Key, under *Lesson script 4*) so all five messages are familiar. Especially the **fifth**, which produces **no error at all**.
+- [ ] **Run `bcast.py`** and **`softmax.py`** (Answer Key, *Lesson script 5* and *Lesson script 6*). **Under a second each.**
 - [ ] **Do these on a calculator yourself**, or you cannot answer *"where did 0.90025 come from?"*:
 
 | Keys | Result |
@@ -581,7 +581,7 @@ A2 = sigmoid(Z2) (4, 1)
 - [ ] **Break it on purpose, twice**, so both deliberate mistakes are muscle memory:
   1. Build `W1` as `(3, 2)` instead of `(2, 3)`. Real message ends `size 3 is different from 2`.
   2. Shape `b1` as `(4, 1)` instead of `(1, 3)`. **No error at all.** The numbers are simply wrong.
-- [ ] **Print workbook pages 17.1–17.6.**
+- [ ] **Print the workbook** (`workbook/week-17.md`), every section from Warm-Up down to Self-Check, and **stop before the ✅ Answers section** — it is the last thing in the file and it is open to anyone who reads on. The sections are listed under 📤 Homework to Assign.
 - [ ] **Find a blue pen.** The board trace of the forward pass is done in blue, and next week's backward pass goes over the same diagram in red. Two colours, two directions.
 
 ### 5 minutes on the day
@@ -1006,7 +1006,7 @@ This section gives the full set-up and steps for the Shape Dominoes activity and
 - **Twelve index cards**, shuffled, one shape pair each, blank backs. The deck is in the Prep Checklist.
 - Two labelled areas on a desk or the floor: **THESE MULTIPLY** and **THESE DO NOT**.
 - A blue pen, and a clear half-board.
-- Workbook pages 17.2 (the twelve pairs) and 17.3 (the forward pass).
+- Workbook *Do the Maths by Hand* **M2** (the twelve pairs on paper — the written twin of this deck, with a different twelve) and *Build It* **Part A** (the forward pass).
 
 ![Shape Dominoes: the card, and the two piles](../figures/fig-w17-6-shape-dominoes-card-setup.svg)
 *Figure 17.4 — Shape Dominoes: the card, and the two piles. The front reads `(3,2) × (2,4)` with the two 2s boxed; the back reads `(3, 4)`.*
@@ -1359,19 +1359,30 @@ This section gives the homework and the wording for assigning it.
 
 **Say this:**
 
-> "About an hour, two pages, and the second one asks you to break things on purpose.
+> "About an hour, and the part that is owed is the **Build It** page of your workbook. The second half of it asks you to break things on purpose.
 >
-> **First, page 17.3 — the full forward pass, by hand.** Four rows of two features, through three hidden units, to one output. Every intermediate grid written out: `X @ W1`, then `Z1`, then `A1`, then `Z2`, then `A2`. **And a shape written beside every single grid.** Then type it into numpy and check your paper answers with `np.allclose`. Three `True`s, or find your own slip.
+> **First, Build It, Part A — the full forward pass, by hand.** A brand-new network, so there is nothing to copy. Four rows of two features, through three hidden units, to one output. Write the shape ladder *before* any arithmetic. Then every intermediate grid written out: `X @ W1`, then `Z1`, then `A1` (and count the zeros), then `Z2`, then `A2`. **And a shape written beside every single grid.** Then type it into `fwd17.py` and check `Z1` and `Z2` against your paper with `np.allclose`: two `True`s, or find your own slip. Last, type `−3.55` where `−3.65` belongs, and print the biggest gap.
 >
-> **Second, page 17.4 — break it five ways.** Five deliberate shape mismatches. For each one: **predict what will happen in one sentence, then run it, then paste the real error message**, and **circle the two numbers in it that failed to match.**
+> **Second, Build It, Part B — break it five ways.** Five deliberate breakages. For each one: **predict what will happen in one sentence, in pen, then run it, then paste the real error message**, and on every message that has two numbers in it, **circle the two that failed to match.**
 >
-> And listen for this bit, because it is the one that matters: **one of the five does not produce an error at all.** It runs perfectly, the shape comes out exactly right, and most of the numbers are wrong. Your job on that one is to work out **which numbers are wrong and why**, and write two sentences about it."
+> And listen for this bit, because it is the one that matters: **one of the five does not produce an error at all.** It runs perfectly, the shape comes out exactly right, and most of the numbers are wrong. Your job on that one is to work out **which numbers are wrong and why**, and write two sentences about it, in the box called *The sentence being marked*."
 
-**Workbook pages:** 17.1, 17.2 and 17.5 in class · **17.3 and 17.4** at home · **17.6** stretch, for anybody who wants softmax on a batch of four rows.
+**Workbook sections, and when they happen** (this replaces the old six-page plan; the workbook has no numbered pages):
 
-**Expected time:** 30 min on the forward pass by hand plus the numpy check · 25 min on the five breakages and the two sentences. **About 55 minutes.**
+| Workbook section | Items | When |
+|---|---|---|
+| ✅ Warm-Up | W1–W5 | **In class**, the first five minutes (last week's neuron) |
+| 🔢 Do the Maths by Hand | M1, M2, M3 | **In class**: M1 after the concept block, M2 and M3 in the slack around the activity, or the first 20 minutes of the homework hour if the lesson ran long |
+| 🔎 Predict the Output | P1–P4 | **In class** for P3 and P4 (broadcasting and `keepdims`); P1 and P2 are a short extra |
+| 🛠️ Build It | Part A, Part B, *The sentence being marked*, *The Bug Log* | **At home. This is the homework.** |
+| 🔢 Do the Maths by Hand | M4 (softmax by hand) | **Stretch**, for anybody who wants softmax on three scores |
+| ✍️ Practice Set A, ✍️ Practice Set B | A1–A6, B1–B5 | **Optional menu.** A5 and A6 are the best revision of the shape rule; B5 is the one whole program |
+| 🐞 Fix the Broken Program | three bugs | **Optional, and the best next choice** after Build It: it is the same silent bias bug in a fresh program |
+| 🧩 Puzzle of the Week, 🤔 Think Deeper, 🎨 Draw It, 📊 Self-Check | Parts 1–2, T1–T2, four drawing questions, eleven ticks | **Optional.** Self-Check is worth five minutes for everyone |
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is there a shape written beside every intermediate grid on page 17.3?** A correct `A1` with no `(4, 3)` beside it is half a mark; the shapes are the point of the page. **Two — are the error messages pasted verbatim, with the two numbers circled?** *"Shape error"* is not a result; `size 3 is different from 2` with a ring round the 3 and the 2 is. **Three — do the two sentences about the silent breakage name the difference between a unit and a row?** The answer that earns full marks is some version of *"it gave every row its own bias instead of giving every unit its own bias, so column 2 got `+0.05` on one row and `−0.8` on another."* A student who writes *"the bias was the wrong shape"* has the diagnosis and not the understanding, and that is worth one line: **"which thing is a bias supposed to belong to?"**
+**Expected time:** 30 min on Part A (by hand, then the numpy check) · 25 min on Part B and the two sentences. **About 55 minutes** for the required part; the optional sections are on top of that.
+
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is there a shape written beside every intermediate grid in Build It Part A?** A correct `A1` with no `(4, 3)` beside it is half a mark; the shapes are the point of the page. **Two — are the error messages in Part B pasted verbatim, with the two numbers circled?** *"Shape error"* is not a result; `size 3 is different from 2` with a ring round the 3 and the 2 is. (Break 4, the plain lists, has no numbers to circle; break 3's message has no `gufunc`, and the student should say so.) **Three — do the two sentences about the silent breakage (break 5) name the difference between a unit and a row?** The answer that earns full marks is some version of *"it added one bias per row instead of one per unit, so all three units in row 1 got `−0.2` and all three in row 2 got `+0.3`."* A student who writes *"the bias was the wrong shape"* has the diagnosis and not the understanding, and that is worth one line: **"which thing is a bias supposed to belong to?"**
 
 ---
 
@@ -1379,7 +1390,709 @@ This section gives the homework and the wording for assigning it.
 
 Every question restated, so you can mark from this page alone.
 
-### Page 17.1 — `(3,2) @ (2,4)`, three cells in longhand
+**How this key is laid out.** **Part 1** follows the student workbook section by section, in the workbook's own order and with its own item labels (W1, M1(a), P3, A3, B4, Build It Part A, …). Every value in it was taken from the workbook's own Answers section and re-run (see the check at the end of Part 1). **Part 2** is the lesson's own set of scripts — the files you type live and the worked examples you show on the board. They use the lesson's numbers, **not** the workbook's, so do not mark a workbook page from Part 2.
+
+**Counting warning.** The workbook counts *rows* two ways. In the Build It table and in A2 the four rows are numbered **1 to 4**; in cell labels such as `(1,2)` and in the Fix-the-Broken-Program text they are counted **from 0**. The key keeps each section's own convention and says which when it matters.
+
+## Part 1 — the workbook, section by section
+
+### ✅ Warm-Up
+
+**W1.** **Multiply each input by its own weight** → **add the products plus a bias** → **squash the total**.
+
+**W2.** **No, they are not the same grid.** `G.T[0] = [1 3 5]` — it reads **down the columns**. `G.reshape(2, 3)[0] = [1 2 3]` — it reads **along the rows**. Same shape, different contents. **Shape is not identity.**
+
+**W3.** It prints **`(3,)`** — unchanged — and **no, that is not an error.** A flat array has no rows and columns to swap, so transposing it does nothing at all, silently. **That is the dangerous one**, and it is why this week keeps printing shapes.
+
+**W4.** **tanh**, and `tanh(−2.30) = −0.980`.
+
+**W5.** `0.25⁵` = **0.0009765625** and `1⁵` = **1**. One thousandth of the signal survives five sigmoid layers; all of it survives five ReLU layers. **That is an argument, not a fashion.**
+
+### 🔢 Do the Maths by Hand
+
+**M1.** The shape sentence: *"three by two, times two by four, gives three by four."* **Twelve cells.**
+
+**M1(a).**
+
+| cell | row of A | column of B | arithmetic | answer |
+|---|---|---|---|---|
+| (0,0) | 2, 1 | 1, 3 | `2×1 + 1×3 = 2 + 3` | **5** |
+| (1,2) | 0, 3 | 2, 4 | `0×2 + 3×4 = 0 + 12` | **12** |
+| (2,3) | 4, −1 | 0, 6 | `4×0 + (−1)×6 = 0 − 6` | **−6** |
+| (2,1) | 4, −1 | 5, −1 | `4×5 + (−1)×(−1) = 20 + 1` | **21** |
+
+**M1(b).** All twelve, real output from numpy:
+
+```text
+[[ 5   9   8   6]
+ [ 9  -3  12  18]
+ [ 1  21   4  -6]]
+```
+
+**M1(c).** `12 × 2` = **24** multiplications, because each cell pairs two numbers with two numbers. And **12 additions** — one per cell.
+
+**M1(d).** Grand total of the answer grid:
+
+```text
+row 0:  5 +  9 +  8 +  6 =  28
+row 1:  9 + (−3) + 12 + 18 =  36
+row 2:  1 + 21 +  4 + (−6) =  20
+                     total =  84
+```
+
+The other route: A's column totals are `2+0+4` = **6** and `1+3+(−1)` = **3**. B's row totals are `1+5+2+0 = **8**` and `3+(−1)+4+6 = **12**`.
+
+```text
+6 × 8  +  3 × 12  =  48 + 36  =  84   ✅
+```
+
+**Same number, two completely different routes.** If yours disagree, you have exactly one slip and now you know to look for it.
+
+**M2.**
+
+| # | pair | works? | result / failing pair |
+|:--:|---|:--:|---|
+| 1 | `(3,2) @ (2,4)` | ✅ | `(3, 4)` |
+| 2 | `(5,1) @ (1,5)` | ✅ | `(5, 5)` — twenty-five numbers |
+| 3 | `(1,5) @ (5,1)` | ✅ | `(1, 1)` — **one** number |
+| 4 | `(4,4) @ (4,4)` | ✅ | `(4, 4)` |
+| 5 | `(2,6) @ (6,3)` | ✅ | `(2, 3)` |
+| 6 | `(100,8) @ (8,1)` | ✅ | `(100, 1)` |
+| 7 | `(3,2) @ (3,2)` | ❌ | `2` against `3` |
+| 8 | `(2,5) @ (4,5)` | ❌ | `5` against `4` |
+| 9 | `(6,1) @ (2,1)` | ❌ | `1` against `2` |
+| 10 | `(1,1) @ (1,1)` | ✅ | `(1, 1)` |
+| 11 | `(7,3) @ (3,7)` | ✅ | `(7, 7)` — forty-nine numbers |
+| 12 | `(3,7) @ (7,3)` | ✅ | `(3, 3)` — nine numbers |
+
+**Nine work, three do not.**
+
+**M2(a).** **Twenty-five** and **one**. *"`A @ B` and `B @ A` are not the same operation — swapping the order can change not only the answer but the size of the answer."*
+
+**M2(b).** `(7, 7)` and `(3, 3)`. **No** — they are not even the same shape, let alone the same grid. Forty-nine numbers against nine.
+
+**M2(c).** Because **the rule does not care how big the numbers are.** `8 = 8`, so it works, and the answer is `(100, 1)`. Large numbers *feel* harder and are exactly as easy: you compare two numbers and copy two others.
+
+**M3.**
+
+| # | the sum | lined up from the right | result |
+|:--:|---|---|---|
+| a | `(4,3) + (1,3)` | `3 vs 3` ✓ , `4 vs 1` ✓ (the 1 stretches) | **(4, 3)** |
+| b | `(4,3) + (3,1)` | `3 vs 1` ✓ , `4 vs 3` ✗ | **no** — `ValueError` |
+| c | `(4,3) + (4,1)` | `3 vs 1` ✓ , `4 vs 4` ✓ | **(4, 3)** ⚠️ |
+| d | `(4,3) + (3,)` | `3 vs 3` ✓ , nothing left to compare | **(4, 3)** |
+| e | `(4,3) + (4,)` | `3 vs 4` ✗ | **no** — `ValueError` |
+| f | `(2,3) + (2,3)` | `3 vs 3` ✓ , `2 vs 2` ✓ | **(2, 3)** |
+
+**M3(a).** **c.** It has added **one bias per row** instead of one per unit. Every number in row 0 got `+` the same thing, then every number in row 1 got `+` something else — which is not what a bias is for.
+
+**Note row e**, because it is a nice surprise: `(4,3) + (4,)` **fails**, even though 4 matches 4, because lining up **from the right** puts the `4` against the `3`. Broadcasting never looks at the left-hand end first.
+
+**M3(b).** **`(1, 3)`.** The sentence: *"three biases, one per hidden unit, added to every row."* Say that before you type the line and you cannot type `(3, 1)`.
+
+**M4.**
+
+```text
+e^1.5    = 4.481689
+e^(−0.5) = 0.606531
+e^2.0    = 7.389056
+```
+
+**M4(a).** `−0.5` became **`0.606531` — small but positive.** Softmax needs that because **probabilities cannot be negative**, and a raw score is allowed to be. Exponentiating is the cheapest way to make everything positive without changing which score is biggest.
+
+```text
+total = 4.481689 + 0.606531 + 7.389056 = 12.477276
+
+4.481689 ÷ 12.477276 = 0.359188
+0.606531 ÷ 12.477276 = 0.048611
+7.389056 ÷ 12.477276 = 0.592201
+```
+
+**M4(b).** `0.359188 + 0.048611 + 0.592201 = **1.000000**` ✅
+
+**M4(c).** `0.592201 ÷ 0.359188 = **1.649**`. The raw scores differed by only `0.5`, and one probability is **1.65 times** the other. **`e^x` exaggerates:** a modest lead in the raw score becomes a clear lead in the probability, which is exactly what you want from an output layer that has to pick a winner. *(And `e^0.5 = 1.6487` — the ratio of the probabilities is just `e` to the power of the gap between the scores. Spotting that unprompted is a very good catch.)*
+
+**Marking tips for the maths.** M1(a): a student who takes `(1,2)` as the *first* row and *second* column gets `2×5 + 1×(−1) = 9`, which is a real cell of the grid (it is `(0,1)`); the cue is the sentence on the page, *row 1 is the second row*. M1(d): the cross-check only says a slip exists, not where; have the student recompute each row total. M3: the usual wrong answer is row **e** marked "works" because the 4 matches a 4 — remind them the shapes line up **from the right**. M4: six decimal places on `e^x` matters, because three rounded values will not add to `1.000000`.
+
+### 🔎 Predict the Output
+
+**P1.**
+
+```text
+[[ 1  4]
+ [ 9 16]]
+[[ 7 10]
+ [15 22]]
+(2, 2)
+```
+
+`A * A` top-left: **`1 × 1 = 1`** — matching cells, no adding. `A @ A` top-left: **`1 × 1 + 2 × 3 = 1 + 6 = 7`** — a row against a column, with the products added. **Both are `(2, 2)`, so only the numbers can tell you which ran.**
+
+**P2.**
+
+```text
+(1, 1)
+[[32]]
+(3, 3)
+```
+
+`1 × 4 + 2 × 5 + 3 × 6 = 4 + 10 + 18 = **32**`. And the other way round gives a `(3, 3)` grid of nine numbers. **Same two grids, opposite order, and not even the same size answer.**
+
+**P3.**
+
+```text
+(4, 3)
+(4, 3)
+[[1. 1. 1.]
+ [2. 2. 2.]
+ [3. 3. 3.]
+ [4. 4. 4.]]
+```
+
+**Look at the grid.** Every number in row 0 is `1.`, every number in row 1 is `2.` — **the "bias" was added one per *row* rather than one per *column***, so all three units in a row got the same thing. With the correct `(1, 3)` bias, the pattern would run down the **columns** instead. **Same shape, completely different meaning, no error at all.**
+
+**P4.**
+
+```text
+(2,)
+(2, 1)
+(1, 3)
+[1. 1.]
+```
+
+**Lines 1 and 2 add up exactly the same six numbers** — `6` and `15`. The only difference is whether the answer stays **2-D**. `(2,)` is flat; `(2, 1)` is a column. It matters because `(2,3) ÷ (2,1)` broadcasts correctly along the rows, while `(2,3) ÷ (2,)` lines `3` up against `2` and crashes — **or, on a square batch, does not crash and lies.**
+
+**Line 3 added down the rows** (`axis=0` goes down), producing the two column totals `1+4 = 5` and `2+5 = 7`… and `3+6 = 9`. **Three numbers, not two** — that is the catch: `axis=0` on a `(2, 3)` grid gives `(1, 3)`, because it collapses the **rows** and leaves the **columns**. The values are `[[5. 7. 9.]]`.
+
+**Marking tips for the predictions.** Score the thirteen output lines (P1 three, P2 three, P3 three — two shapes and the grid — and P4 four); the workbook asks for *"how many right, out of 13"*. **Two wording slips in the workbook to be ready for:** P4 asks for "the two numbers" that `axis=0` produced, but a `(2, 3)` grid has three column totals, so the answer is **three numbers, `[[5. 7. 9.]]`** — accept a student who says so and do not mark down one who writes all three. P3 line 3 is the lie to look for: a grid whose *rows* are constant (`1 1 1`, `2 2 2`, …) instead of whose columns are.
+
+### ✍️ Practice Set A — Read It
+
+**A1.** matrix multiply → **(iii)** · inner dimension → **(i)** · broadcasting → **(iv)** · forward pass → **(v)** · softmax → **(ii)**
+
+**A2.**
+
+| Question | Answer |
+|---|---|
+| a | **Four rows, two features each** — `X (4, 2)` |
+| b | **Three.** `W1` is `(2, 3)` so its second number is the unit count, and `b1` is `(1, 3)` — one bias per unit. `X @ W1` being `(4, 3)` is a third piece of evidence |
+| c | **`−0.2`.** `X @ W1` column 0 is `1.3, −0.2, 0.7, −0.55` and `Z1` column 0 is `1.1, −0.4, 0.5, −0.75` — every one is `0.2` lower |
+| d | **Seven of twelve** |
+| e | **Nothing** — both had a negative `z` (`−0.4` and `−0.5`) and ReLU silenced them. Only unit 3 had an opinion about row 2 |
+| f | **The `4`** — the batch size. Four rows in, four probabilities out, and every grid in between has four rows |
+
+**A2(g).** The difference is **`0.2`**, and it came from **`b1`'s first entry, `−0.2`, broadcast down all four rows.** `1.3 + (−0.2) = 1.1`.
+
+**A2(h).** **Unit 3 was loud — `2.5` — and its weight into the output is negative (`−1.5`).** So a large positive activation pushed the score a long way *down*: `2.5 × (−1.5) + 0.1 = −3.65`, and `sigmoid(−3.65) = 0.025333`. **A loud unit with a negative weight is the most confident "no" a network can produce.**
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `ValueError: matmul: ... (size 3 is different from 2)`. `W1` is `(3,2)`; its rows must equal `X`'s columns | `(2, 3)` — **inputs down the side, units across the top** |
+| b | **No error.** `(4,3) + (3,)` broadcasts happily and gives the *right* answer here — but `b1.shape` is `(3,)`, so it will not behave like a `(1,3)` everywhere else | use two sets of brackets: `np.array([[-0.2, 0.3, 0.5]])` |
+| c | `TypeError: unsupported operand type(s) for @: 'list' and 'list'`. Plain lists have no `@` | wrap both in `np.array(...)` |
+| d | `ValueError: operands could not be broadcast together with shapes (2,3) (2,)`. Lining up from the right: `3 vs 2` | `E.sum(axis=1, keepdims=True)` |
+| e | **No error**, because `3` happens to match `3` — and the row sums come out as things like `1.414565`. **A square batch turns a crash into a silent lie** | the same fix: `keepdims=True`, and then **check `P.sum(axis=1)`** |
+| f | **No error**, right shape, nine wrong numbers out of twelve: one bias per row instead of per unit | `np.array([[-0.2, 0.3, 0.5]])` |
+
+**A3(g).** **b, e and f** all run — so strictly three, and if you named **e and f** as "the dangerous two" that is the intended answer, because **b** is merely untidy while **e** and **f** are actually wrong. What e and f have in common: **the shapes happened to be compatible for the wrong reason.** Broadcasting did exactly what it was asked and what it was asked was not what was meant.
+
+**A4.** i → **R** · ii → **P** · iii → **T** · iv → **Q** · v → **S**
+
+**A4(f).** **`*` multiplies matching cells and stops; `@` pairs a row against a column, multiplies position by position, and adds the products.** `[[1,2]] * [[10,50]]` gives `[[10, 100]]` — two numbers, nothing added. `[[1,2]] @ [[10],[50]]` gives `[[110]]` — one number, because `10 + 100` got added up.
+
+**A5.** The six boxes, in order:
+
+| # | line | result shape |
+|---|---|---|
+| 1 | `X @ W1` | **(4, 3)** |
+| 2 | `Z1 = X @ W1 + b1` | **(4, 3)** |
+| 3 | `A1 = ReLU(Z1)` | **(4, 3)** |
+| 4 | `Z2 = A1 @ W2 + b2` | **(4, 1)** |
+| 5 | `A2 = sigmoid(Z2)` | **(4, 1)** |
+| 6 | `E / E.sum(1, keepdims=True)` | **(4, 3)** |
+
+And the panel: the batch size is **`4`**, and it appears in **all 6** of them.
+
+**A5(a).** **None of the six.** That is the answer, and it is the point: a matrix multiply changes the **second** number (the columns), a bias add changes nothing, a squash changes nothing, and a broadcast division changes nothing. **The batch size passes straight through a network untouched** — so if the first number of a shape has changed, something is the wrong way round.
+
+**A5(b).** **"A squash never changes a shape."** *(Or "same shape in, same shape out".)*
+
+**A6.**
+
+**a)** **Inner two must match, outer two survive.**
+
+**b)** `(2, 3)`, with **inputs down the side** and **units across the top**.
+
+**c)** **different operations**; `(1,3) @ (3,1)` gives **one** number and `(3,1) @ (1,3)` gives **nine**.
+
+**d)** A bias belongs to a **unit**, not to a **row**, so its shape is **`(1, units)`** — a row, broadcast down.
+
+**e)** **the last line**, then **the bracket at the end of it**, then **the two numbers inside the bracket**.
+
+**f)** `np.allclose` exists because **an exact `==` test on decimals fails on answers that are genuinely identical** — `0.1 + 0.2` is not exactly `0.3` in binary. When it says `False`, the next thing you print is **`np.abs(mine - theirs).max()`**, because the *size* of the gap tells you whether it is rounding (`~1e-16`) or a wrong number (`~0.05`).
+
+**Marking tips for Set A.** **A3(g) — the workbook asks for "two" but its own answer names three.** Lines **b**, **e** and **f** all run without an error; **e** and **f** are the two that are actually *wrong* (b is just untidy), and that pair is the intended answer. Give full marks to a student who lists all three and says why e and f are the dangerous ones. The `1.414565` in A3 row e is illustrative — the question gives no `E`, so there is no single number to check it against; mark the idea (the row sums are not 1), not the digits. A2(e) and A2(h) count rows from **1**: "row 2 of `A1`" is `[0, 0, 2.5]`, the second line of the printout.
+
+### ✍️ Practice Set B — Write It
+
+**B1.**
+
+```python
+import numpy as np
+
+A = np.zeros((3, 2))
+B = np.zeros((2, 4))
+
+print("(3,2) @ (2,4) ->", (A @ B).shape)
+```
+
+```text
+(3,2) @ (2,4) -> (3, 4)
+```
+
+**B2.**
+
+```python
+import numpy as np
+
+A = np.array([[2, 1], [0, 3], [4, -1]])
+B = np.array([[1, 5, 2, 0], [3, -1, 4, 6]])
+C = A @ B
+
+print("C.shape =", C.shape)
+print("row 0 col 1 by hand: 2*5 + 1*(-1) =", 2 * 5 + 1 * (-1), " numpy:", C[0, 1])
+print("row 2 col 0 by hand: 4*1 + (-1)*3 =", 4 * 1 + (-1) * 3, " numpy:", C[2, 0])
+```
+
+```text
+C.shape = (3, 4)
+row 0 col 1 by hand: 2*5 + 1*(-1) = 9  numpy: 9
+row 2 col 0 by hand: 4*1 + (-1)*3 = 1  numpy: 1
+```
+
+**B3.**
+
+```python
+import numpy as np
+
+pairs = [((3, 2), (2, 4)), ((5, 1), (1, 5)), ((1, 5), (5, 1)), ((4, 4), (4, 4)),
+         ((2, 6), (6, 3)), ((100, 8), (8, 1)), ((3, 2), (3, 2)), ((2, 5), (4, 5)),
+         ((6, 1), (2, 1)), ((1, 1), (1, 1)), ((7, 3), (3, 7)), ((3, 7), (7, 3))]
+
+for a, b in pairs:
+    if a[1] == b[0]:
+        got = (np.zeros(a) @ np.zeros(b)).shape
+        print("%-9s @ %-9s -> %-9s works" % (str(a), str(b), str(got)))
+    else:
+        print("%-9s @ %-9s -> NO        %d against %d" % (str(a), str(b), a[1], b[0]))
+```
+
+```text
+(3, 2)    @ (2, 4)    -> (3, 4)    works
+(5, 1)    @ (1, 5)    -> (5, 5)    works
+(1, 5)    @ (5, 1)    -> (1, 1)    works
+(4, 4)    @ (4, 4)    -> (4, 4)    works
+(2, 6)    @ (6, 3)    -> (2, 3)    works
+(100, 8)  @ (8, 1)    -> (100, 1)  works
+(3, 2)    @ (3, 2)    -> NO        2 against 3
+(2, 5)    @ (4, 5)    -> NO        5 against 4
+(6, 1)    @ (2, 1)    -> NO        1 against 2
+(1, 1)    @ (1, 1)    -> (1, 1)    works
+(7, 3)    @ (3, 7)    -> (7, 7)    works
+(3, 7)    @ (7, 3)    -> (3, 3)    works
+```
+
+**The `if a[1] == b[0]` line *is* the shape rule**, in one comparison. Nine work, three do not.
+
+**B4.**
+
+```python
+import numpy as np
+np.set_printoptions(precision=6, suppress=True)
+
+Z1 = np.array([[1.3, -0.6, -0.6], [-0.2, -0.8, 2.0],
+               [0.7, -0.1, -0.8], [-0.55, 0.7, -0.7]])
+right = np.array([[-0.2, 0.3, 0.5]])
+wrong = np.array([[-0.2], [0.3], [0.5], [0.0]])
+
+print("right", (Z1 + right).shape); print(Z1 + right)
+print("wrong", (Z1 + wrong).shape); print(Z1 + wrong)
+print("cells that differ:", int((np.abs((Z1 + right) - (Z1 + wrong)) > 1e-12).sum()), "of 12")
+```
+
+```text
+right (4, 3)
+[[ 1.1  -0.3  -0.1 ]
+ [-0.4  -0.5   2.5 ]
+ [ 0.5   0.2  -0.3 ]
+ [-0.75  1.   -0.2 ]]
+wrong (4, 3)
+[[ 1.1  -0.8  -0.8 ]
+ [ 0.1  -0.5   2.3 ]
+ [ 1.2   0.4  -0.3 ]
+ [-0.55  0.7  -0.7 ]]
+cells that differ: 9 of 12
+```
+
+**B4(a).** The three that agree, and why each one does:
+
+- **Cell (0,0):** row 0's wrong bias is `−0.2` and unit 0's right bias is also `−0.2`. **The same number by coincidence.** Both give `1.1`.
+- **Cell (1,1):** row 1's wrong bias is `0.3` and unit 1's right bias is also `0.3`. Both give `−0.5`.
+- **Cell (2,2):** row 2's wrong bias is `0.5` and unit 2's right bias is also `0.5`. Both give `−0.3`.
+
+**The agreements are exactly the diagonal**, because the wrong bias is the right bias written the other way round — so wherever the row index equals the unit index, the two numbers coincide. **Check one number, or worse, check the top-left number, and you will miss this entirely.**
+
+**B5.** The program and its real output:
+
+```python
+"""b5w17.py - a forward pass through 3 -> 2 -> 2 with a softmax output."""
+import numpy as np
+
+np.random.seed(0)
+np.set_printoptions(precision=6, suppress=True)
+
+X = np.array([[1.0, 0.0, 2.0],
+              [0.0, 3.0, 1.0],
+              [2.0, 1.0, 0.0]])
+W1 = np.array([[0.4, -0.5],
+               [0.1, 0.9],
+               [-0.7, 0.2]])
+b1 = np.array([[0.2, -0.6]])
+W2 = np.array([[1.5, -0.5],
+               [-1.0, 2.0]])
+b2 = np.array([[0.1, -0.1]])
+
+print("X ", X.shape, " W1", W1.shape, " b1", b1.shape, " W2", W2.shape, " b2", b2.shape)
+
+Z1 = X @ W1 + b1
+print("Z1", Z1.shape); print(Z1)
+A1 = np.maximum(0, Z1)
+print("A1", A1.shape); print(A1)
+Z2 = A1 @ W2 + b2
+print("Z2", Z2.shape); print(Z2)
+
+E = np.exp(Z2)
+print("E ", E.shape); print(E)
+total = E.sum(axis=1, keepdims=True)
+print("total", total.shape); print(total)
+P = E / total
+print("P ", P.shape); print(P)
+print("row sums:", P.sum(axis=1))
+print("argmax  :", P.argmax(axis=1))
+
+by_hand_P = np.array([[0.549834, 0.450166],
+                      [0.001229, 0.998771],
+                      [0.916827, 0.083173]])
+print("agrees with my paper?", np.allclose(P, by_hand_P, atol=1e-5))
+print("biggest gap:", np.abs(P - by_hand_P).max())
+```
+
+```text
+X  (3, 3)  W1 (3, 2)  b1 (1, 2)  W2 (2, 2)  b2 (1, 2)
+Z1 (3, 2)
+[[-0.8 -0.7]
+ [-0.2  2.3]
+ [ 1.1 -0.7]]
+A1 (3, 2)
+[[0.  0. ]
+ [0.  2.3]
+ [1.1 0. ]]
+Z2 (3, 2)
+[[ 0.1  -0.1 ]
+ [-2.2   4.5 ]
+ [ 1.75 -0.65]]
+E  (3, 2)
+[[ 1.105171  0.904837]
+ [ 0.110803 90.017131]
+ [ 5.754603  0.522046]]
+total (3, 1)
+[[ 2.010008]
+ [90.127934]
+ [ 6.276648]]
+P  (3, 2)
+[[0.549834 0.450166]
+ [0.001229 0.998771]
+ [0.916827 0.083173]]
+row sums: [1. 1. 1.]
+argmax  : [0 1 0]
+agrees with my paper? True
+biggest gap: 3.986212774192456e-07
+```
+
+**Row 0 is the interesting one, and it is worth a sentence.** `Z1` row 0 is `[−0.8, −0.7]`, both negative, so **ReLU silenced the whole hidden layer for that row** and `A1` row 0 is `[0, 0]`. That means `Z2` row 0 is just `b2` — `[0.1, −0.1]` — so the answer `[0.549834, 0.450166]` came **entirely from the output bias**. The hidden layer contributed nothing at all. **That is what it looks like when every hidden unit happens to be silent on one row** — here both pre-activations are negative — and it is more likely in a layer with only two units.
+
+**And the "Try this":** on this `(3, 2)` batch, dropping `keepdims` gives `total` as `(3,)`, and `(3,2) ÷ (3,)` lines `2` up against `3` — clean crash, `ValueError`. On a **square** batch the same mistake matches by accident, divides columns by rows, and hands you "probabilities" above 1 with no complaint.
+
+**Marking tips for Set B.** B3: the mark is for deciding from `a[1] == b[0]` and not from `try`/`except`; nine "works", three "NO". B4: the number to look for is **9, not 12**; a student who prints 12 has compared the wrong two grids. B5: `row sums: [1. 1. 1.]` is the check; a sum that is not 1 means `keepdims=True` is missing. Any hand answers that agree within `1e-5` earn the `True`.
+
+### 🐞 Fix the Broken Program
+
+**Bug 1 — lines 7 and 12: `X` and `W1` are plain Python lists.** A type bug.
+
+A `TypeError` is a different complaint from a `ValueError`. **`ValueError` means "I understand what you gave me but the numbers are wrong."** **`TypeError` means "I do not know how to do this to that kind of thing at all."** `@` is defined for numpy arrays; a Python list does not have it. Note that if only *one* of the two had been a list, numpy would have quietly coped — it takes two lists to produce this message.
+
+**The fix:** wrap both in `np.array(...)`.
+
+**Bug 2 — line 17, `W2 = np.array([[1.0, 0.5, -1.5]])`. A shape bug.**
+
+The last bracket says `(size 1 is different from 3)`. **The `1` is `W2`'s rows**; **the `3` is `A1`'s columns** — three hidden units. `W2` must be **`(3, 1)`**, and **you know that without guessing** because `W2` is `(inputs to this layer, units in this layer)` = `(3, 1)`, and because `A1 @ W2` has to give one probability per row, which is `(4, 1)`.
+
+**The fix:** `W2 = np.array([[1.0], [0.5], [-1.5]])`.
+
+**Bug 3 — line 15, `b1 = np.array([[-0.2], [0.3], [0.5], [0.0]])`. A silent logic bug.**
+
+It **is** `(4, 1)` and **should be** `(1, 3)`.
+
+Look down `Z1`'s column 1. With the correct bias, every one of those four numbers should have had **`+0.3`** added. What actually got added, row by row, was **`−0.2`, `0.3`, `0.5`, `0.0`** — the bias values handed out one per *row*.
+
+**The two sentences:**
+
+> *"It gave every row its own bias instead of giving every unit its own bias — row 0 got `−0.2` added to all three of its numbers, row 1 got `+0.3` added to all three, and so on down the batch."*
+
+> *"There was no error because `(4,3)` and `(4,1)` broadcast perfectly well — lining up from the right, `3` against `1` stretches, then `4` matches `4` — so numpy did exactly what I asked and what I asked was wrong."*
+
+**The fix:** `b1 = np.array([[-0.2, 0.3, 0.5]])`.
+
+**The identical number.** `A2` row 1 is **`0.768525` in both runs.** That happens because `A1` row 0 is `[1.1, 0, 0]` in both versions — row 0's wrong bias `−0.2` is the same number as unit 0's right bias `−0.2`, and the other two entries were negative either way so ReLU zeroed them both times. **It is more dangerous than no match at all**, because it is the *first* number you look at, and it agrees. If you spot-check the top of a printout you will conclude the program is fine.
+
+**Ranking by time cost: bug 3 ≫ bug 1 ≈ bug 2.** Bugs 1 and 2 crash immediately and the message names the exact problem — one tells you the two types, the other the two numbers. Bug 3 produces a complete, plausible, correctly-shaped answer with nine wrong numbers in it. **The only things that catch it are a hand-worked row, `np.allclose` against paper, or reading down a column and asking whether the same thing got added to every row.**
+
+**Marking tips for the fix.** The workbook lines are counted from 1: bug 1 is on lines **7** and **12** (`X` and `W1`), bug 2 on line **17** (`W2`), bug 3 on line **15** (`b1`). "A2 row 1" in the *identical number* paragraph is the first line of the `A2` printout. A student who answers *"ReLU"* or *"sigmoid"* to bug 3 has read the right column and blamed the wrong line; send them back to the `+0.3` question.
+
+### 🧩 Puzzle of the Week
+
+**Part 1 — the shape chain.**
+
+| thing | shape | numbers |
+|---|---|---|
+| `X` | `(100, 5)` | 500 |
+| `W1` | **(5, 8)** | **40** |
+| `b1` | **(1, 8)** | **8** |
+| `Z1` | **(100, 8)** | **800** |
+| `A1` | **(100, 8)** | **800** |
+| `W2` | **(8, 8)** | **64** |
+| `b2` | **(1, 8)** | **8** |
+| `Z2` | **(100, 8)** | **800** |
+| `A2` | **(100, 8)** | **800** |
+| `W3` | **(8, 3)** | **24** |
+| `b3` | **(1, 3)** | **3** |
+| `Z3` | **(100, 3)** | **300** |
+| `A3` | **(100, 3)** | **300** |
+
+**Part 1(a).** `40 + 8 + 64 + 8 + 24 + 3 = **147** knobs.`
+
+**Notice that the data grids are far bigger than the model.** `Z1` alone holds 800 numbers and the entire model is 147. **The knob count does not depend on the batch size at all** — which is the whole reason you can train on a million rows with the same model.
+
+**Part 1(b).** **Every shape with `100` in it changes** — `X`, `Z1`, `A1`, `Z2`, `A2`, `Z3`, `A3`, all becoming `(1000, ...)`. **The six weight and bias shapes do not change**: `W1`, `b1`, `W2`, `b2`, `W3`, `b3`. **The model does not know how much data it is about to see.**
+
+**Part 1(c).** They must add up to **exactly 1**, because the output squash is **softmax**, which divides every exponentiated score by the total of all three. Three classes, one row, all the certainty accounted for.
+
+**Part 2 — count the multiplications.**
+
+**Part 2(a).** `6 × 4 = **24**` cells, so `24 × k = 72`, so `k = **3**`.
+
+**Part 2(b).** `5 × 2 = 10` cells, so `10 × k = 40`, so `k = **4**`.
+
+**Part 2(c).** The answer grid is `(rows, 7)` and holds 84 numbers, so `rows × 7 = 84` and `rows = **12**`.
+
+**Part 2(d).**
+
+```text
+layer 1:  750 × 16 × 2  = 24,000
+layer 2:  750 ×  1 × 16 = 12,000
+                  total = 36,000
+```
+
+**Part 2(e).** `36,000 × 500 × 2 = **36,000,000**` — thirty-six million multiplications.
+
+**Part 2(f).** **No — `@` does exactly the same number of multiplications.** Twenty-four thousand is twenty-four thousand however you spell it.
+
+The speed-up comes from **everything around** the multiplications. A Python loop, for each of the 36,000 products, has to look up variables by name, check their types, build a new Python number object, and store it — dozens of machine operations of overhead per one useful multiply. **`@` hands the whole job to compiled code in one go:** the types are checked once instead of 36,000 times, the numbers sit next to each other in memory so the processor can fetch them in blocks, and the multiplications are done several at a time by a single instruction. **You did not buy fewer multiplications. You bought less bookkeeping.**
+
+### 🤔 Think Deeper
+
+**T1 — a model answer.** The obvious rule: *"when adding a smaller grid to a bigger one, only stretch a dimension of size 1 if the other dimensions match **exactly** and the smaller grid is a row."* That would refuse `(4,3) + (4,1)` and keep `(4,3) + (1,3)`, which is precisely what we want here.
+
+**And it would break real, useful code.** `(4,3) + (4,1)` is exactly right when you genuinely want *per-row* arithmetic — dividing each row of a softmax by its own total is that operation, and it is the line the chapter told us to write with `keepdims=True`. A rule that refused it would refuse the correct softmax as well as the incorrect bias. **numpy cannot tell a per-row divide from a per-row bias, because they are the same operation with different meanings**, and meaning is not something an array carries.
+
+Would I ship it? **No** — but I would ship a **warning**, and I think that is the honest middle. Something that fires the first time you broadcast a `(n,1)` against a `(n,m)` in the same expression as a `@`, saying *"did you mean a bias? biases are usually rows"*. It would be annoying and it would be right more often than it was wrong. **The real lesson is that the protection has to live in the human: say the shape sentence out loud before you type the line.**
+
+**T2 — a model answer.** What you give up is **visibility**. In a Python loop I can put a `print` inside it and watch one weighted sum being built up, number by number; I can stop at row 17, unit 3, and look. `@` is a single indivisible step: the twelve products for one output cell happen inside compiled code I cannot step into, and what I get back is the finished grid. If the answer is wrong I cannot inspect the middle of the calculation — **only the input, the output, and my own understanding of what should have happened.**
+
+That makes a particular class of mistake harder to notice: one where the arithmetic is fine and the *arrangement* is wrong. A loop that indexes the wrong weight usually crashes with an `IndexError` or produces obvious rubbish. `@` with a transposed grid either crashes with a clear message or **silently computes a different, well-formed answer** — and the `(4,1)` bias is the version of that which does not crash at all.
+
+**Is the shape rule a price or a gift?** A gift, and this is the honest conclusion. The rule is the *only* thing standing between you and silent nonsense. A world where `@` accepted any two grids and made something up would be faster to write and impossible to trust. **Most of the time the error message is doing you a favour: it is the compiled code telling you, for free, that the sentence you meant to say does not parse.** The dangerous cases are exactly the ones where the shapes happen to line up — which is why "it ran" is never the same as "it is right".
+
+**Marking tips for Think Deeper.** The two model answers are models, not the only answers. Full marks for T1 need a rule **and** an honest cost (what legitimate code it would also refuse); full marks for T2 need something named that you can no longer see and a stated verdict on the shape rule.
+
+### 🛠️ Build It — One Forward Pass, and Five Breakages
+
+**Part A — the forward pass.** The shape ladder:
+
+```text
+X       (4, 2)
+W1      (2, 3)   →   X @ W1    (4, 3)
+b1      (1, 3)   →   Z1        (4, 3)     [broadcast down all 4 rows]
+A1      (4, 3)
+W2      (3, 1)   →   A1 @ W2   (4, 1)
+b2      (1, 1)   →   Z2        (4, 1)
+A2      (4, 1)
+```
+
+*"Four by two, times two by three, gives four by three. Four by three, times three by one, gives four by one."*
+
+**`X @ W1`** `(4, 3)` — one column of `W1` per unit:
+
+```text
+row 0 [ 2.0,  1.0]:  2(0.6)+1(0.1) = 1.3   2(−0.5)+1(0.4) = −0.6   2(0.2)+1(−1.0) = −0.6
+row 1 [ 0.0, −2.0]:  0(0.6)−2(0.1) = −0.2  0(−0.5)−2(0.4) = −0.8   0(0.2)−2(−1.0) =  2.0
+row 2 [ 1.0,  1.0]:  0.6+0.1 = 0.7        −0.5+0.4 = −0.1          0.2−1.0 = −0.8
+row 3 [−1.0,  0.5]: −0.6+0.05 = −0.55      0.5+0.2 = 0.7          −0.2−0.5 = −0.7
+
+[[ 1.3  -0.6  -0.6 ]
+ [-0.2  -0.8   2.  ]
+ [ 0.7  -0.1  -0.8 ]
+ [-0.55  0.7  -0.7 ]]
+```
+
+**`Z1 = X @ W1 + b1`** `(4, 3)`, with `b1 = [−0.2, 0.3, 0.5]` added to **every** row:
+
+```text
+[[ 1.1  -0.3  -0.1 ]
+ [-0.4  -0.5   2.5 ]
+ [ 0.5   0.2  -0.3 ]
+ [-0.75  1.   -0.2 ]]
+```
+
+**`A1 = ReLU(Z1)`** `(4, 3)`, **7 zeros of 12**:
+
+```text
+[[1.1 0.  0. ]
+ [0.  0.  2.5]
+ [0.5 0.2 0. ]
+ [0.  1.  0. ]]
+```
+
+**`Z2` and `A2`:**
+
+```text
+row 0: 1.1(1.0) + 0(0.5) + 0(−1.5) + 0.1 =  1.2   →  sigmoid( 1.20) = 0.768525
+row 1: 0(1.0) + 0(0.5) + 2.5(−1.5) + 0.1 = −3.65  →  sigmoid(−3.65) = 0.025333
+row 2: 0.5(1.0) + 0.2(0.5) + 0(−1.5) + 0.1 = 0.7  →  sigmoid( 0.70) = 0.668188
+row 3: 0(1.0) + 1.0(0.5) + 0(−1.5) + 0.1 =  0.6   →  sigmoid( 0.60) = 0.645656
+```
+
+**The checks, real output:**
+
+```text
+Z1 agrees with my paper? True
+Z2 agrees with my paper? True
+biggest gap on Z1: 5.551115123125783e-17
+with -3.55 typed instead of -3.65: False
+biggest gap: 0.10000000000000009
+```
+
+**The rule:** a gap of about `1e-17` means **floating-point rounding — the same number as far as anything cares**; a gap of about `0.1` means **a wrong number: a typo, a dropped bias, or a sign.** *(And the `0.10000000000000009` is delightful: even the size of the mistake has rounding noise on it.)*
+
+**Row 2 of `A1` is `[0, 0, 2.5]`.** Only the **third** hidden unit had anything to say about that row of data; the other two were silenced by ReLU. And unit 3's weight into the output is `−1.5`, so that single loud unit dragged the score down to `−3.65` and produced the most confident **no** in the batch: `0.025333`. **One unit decided that row on its own.**
+
+**Part B — the five breakages.** All five, real output.
+
+**Break 1 — `W1` as `(3, 2)`:**
+
+```text
+X (4, 2)  W1 (3, 2)
+Traceback (most recent call last):
+  File "break1.py", line 6, in <module>
+    print(X @ W1)
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 3 is different from 2)
+```
+
+The two numbers: **`3` and `2`.** The `3` is **`W1`'s rows**; the `2` is **`X`'s columns — the feature count.**
+
+**Break 2 — `W2` as `(1, 3)`:**
+
+```text
+A1 (4, 3)  W2 (1, 3)
+Traceback (most recent call last):
+  File "break2.py", line 6, in <module>
+    print(A1 @ W2)
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1 is different from 3)
+```
+
+The two numbers: **`1`** (`W2`'s rows) and **`3`** (`A1`'s columns — the three hidden units).
+
+**Break 3 — `b1` as a column `(3, 1)`:**
+
+```text
+Z1 (4, 3)  b1 (3, 1)
+Traceback (most recent call last):
+  File "break3.py", line 6, in <module>
+    print(Z1 + b1)
+ValueError: operands could not be broadcast together with shapes (4,3) (3,1) 
+```
+
+**The failing operator is `+`, not `@`, and the message is called a broadcasting error.** It looks completely different from breaks 1 and 2 — no `gufunc`, no `core dimension`, just the two shapes. Lining up from the right: `3 vs 1` stretches fine, then `4 vs 3` does not.
+
+**Break 4 — plain Python lists:**
+
+```text
+Traceback (most recent call last):
+  File "break4.py", line 4, in <module>
+    print(X @ W1)
+TypeError: unsupported operand type(s) for @: 'list' and 'list'
+```
+
+**Break 5 — `b1` as `(4, 1)`. No error at all:**
+
+```text
+right b1 (1, 3)
+[[ 1.1  -0.3  -0.1 ]
+ [-0.4  -0.5   2.5 ]
+ [ 0.5   0.2  -0.3 ]
+ [-0.75  1.   -0.2 ]]
+wrong b1 (4, 1) - no error at all:
+[[ 1.1  -0.8  -0.8 ]
+ [ 0.1  -0.5   2.3 ]
+ [ 1.2   0.4  -0.3 ]
+ [-0.55  0.7  -0.7 ]]
+shape of the wrong answer: (4, 3)
+```
+
+**Three of the four error messages are different from each other**, and learning to tell them apart at a glance is worth more than any of the individual fixes: `matmul` + `core dimension` means a **grid multiply**, `operands could not be broadcast` means a **`+`, `*` or `/`**, and `TypeError: unsupported operand` means **you are not holding numpy arrays at all.**
+
+**The sentence being marked:**
+
+> *"Nine of the twelve numbers are wrong: it added one bias per **row** instead of one per **unit**, so all three units in row 0 got `−0.2` and all three in row 1 got `+0.3`, whereas the right bias gives every row the same `−0.2, +0.3, +0.5` across its three units. There was no error because `(4,3)` and `(4,1)` broadcast legally — from the right, `3` against `1` stretches and then `4` matches `4` — so numpy did exactly what it was asked."*
+
+**Accept** any answer that names **unit versus row**. **Do not accept** *"the bias was the wrong shape"* — that is the cause, not the effect, and it does not show you know what the wrong numbers actually are.
+
+**The Bug Log** (three entries, the third the important one). Expected: (1) `ValueError … size 3 is different from 2` — inner numbers disagree — `W1` built `(3, 2)` — rebuild `(2, 3)`; (2) `TypeError: unsupported operand` — not numpy arrays — plain lists — wrap in `np.array`; (3) *no error, wrong numbers* — a bias per row instead of per unit — `b1` `(4, 1)` — make it `(1, 3)`. Accept any three distinct entries with all four columns filled.
+
+**Marking tips for Build It.** The *Score* box is out of 5 predictions; most students get break 5 wrong, which is the point. In Part A the row-2 remark counts rows from 1 (the second line, `[0, 0, 2.5]`). **Why break 5 hides:** the three cells that agree are exactly the diagonal (`(0,0)`, `(1,1)`, `(2,2)`, see B4(a)), so a student who checks only the top-left number of `Z1` sees `1.1` in both grids and declares it fine.
+
+### 🎨 Draw It
+
+**A good drawing has:** two blocks with shapes written **on** them — `(3, 2)` and `(2, 4)`; the two inner `2`s **ringed**, with a line joining them and a note saying *"these must match"*; the answer block on the right labelled `(3, 4)` with the `3` traced back to the left block and the `4` traced back to the right one; **one row of the left grid shaded and one column of the right grid shaded**; the cell they produce ringed in the answer; and that cell written out in full — `1 × 10 = 10`, `2 × 50 = 100`, `10 + 100 = 110`. Plus the eight words somewhere: **inner two must match, outer two survive.**
+
+**The four questions.** **Every block needs its shape** — a drawing of three unlabelled rectangles is a drawing of nothing. **The two ringed numbers are the inner pair, and between them you should have drawn a joining line or an equals sign**, not an arrow: they are not flowing into each other, they are being *compared*. **The output cell should have its whole sum written out**, because a ringed empty cell proves nothing. And **the `3` and the `4` should be visibly travelling**: the `3` from the left block's rows to the answer's rows, the `4` from the right block's columns to the answer's columns. If a reader cannot see those two journeys, the figure has not explained "outer two survive".
+
+### 📊 Self-Check
+
+There are no right answers to mark. The bar is the one in the workbook: 😀 means on a blank sheet with nothing open, 🙂 with the chapter beside you, 😕 is the one to ask about first. Make sure *"read a `matmul` error, name the two numbers, and fix it"* is not a 😕, because next week goes backwards along the same wires.
+
+**Check on this part.** Every number above was taken from the workbook Answers section and re-run with numpy: the twelve cells and grand total (84) of M1, the softmax values of M4, the `X @ W1`, `Z1`, `A1`, `Z2`, `A2` grids and zero count (7 of 12) of Build It Part A, the wrong-bias grid of B4 (9 of 12 differ), the `Z1`…`P` grids of B5, the 36,000 and 36,000,000 of the Puzzle, and the broken-program outputs. No disagreement was found.
+
+
+## Part 2 — the lesson's own scripts and worked examples
+
+The files you type live, with their real output, and the board examples. They carry the lesson's numbers.
+
+### Lesson script 1 — `matmul.py`: `(3,2) @ (2,4)`, three cells in longhand
+
+*The in-class worked example, with the lesson's numbers (`1 … 6` times `10 … 80`). The workbook's M1 uses a different pair of grids and is answered in Part 1.*
 
 *Compute at least cells `(0,0)`, `(1,2)` and `(2,3)` by hand. Then check all twelve with numpy.*
 
@@ -1478,7 +2191,9 @@ ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with
 
 `(2,4) @ (3,2)`: the inner numbers are `4` and `3`. **Note the order in the message — it names B's rows (3) first, then A's columns (4).** Nobody guesses that; everybody notices it once.
 
-### Page 17.2 — Twelve shape pairs
+### Lesson script 2 — `dominoes.py`: the twelve cards
+
+*The card deck from the Prep Checklist. The workbook's M2 and B3 use a different twelve pairs, answered in Part 1.*
 
 | # | Pair | Works? | Answer / failing numbers |
 |:--:|---|:--:|---|
@@ -1535,7 +2250,9 @@ for sa, sb in pairs:
 
 **Note `np.zeros(sa)` builds a grid of that shape filled with zeros** — the *values* are irrelevant when you are only testing whether the shapes are compatible, and that is a genuinely useful trick to show.
 
-### Page 17.3 — The full forward pass, by hand and then in numpy
+### Lesson script 3 — `forward.py` and `check_by_hand.py`: the board-trace forward pass
+
+*Four rows, 2 → 3 → 1, the network you trace live and on the board in blue. It is **not** the network in Build It Part A, which has its own numbers and is answered in Part 1.*
 
 *Four rows, 2 → 3 → 1. Write out every intermediate grid with its shape.*
 
@@ -1662,7 +2379,9 @@ biggest gap: 0.04999999999999982
 
 **The last two lines are the teaching, not the first three.** A deliberate typo of `1.70` instead of `1.75` makes `allclose` say `False`, and `np.abs(a - b).max()` says the gap is about `0.05` — which is far too big to be rounding, so it is a mistake. **A gap of about `1e-16` would be rounding; a gap of `0.05` is a wrong number.** Teaching students to look at the *size* of the disagreement is what turns `allclose` from a pass/fail buzzer into a diagnostic.
 
-### Page 17.4 — Break it five ways
+### Lesson script 4 — `break_five_ways.py`: the teacher's demonstration set
+
+*The five breakages you run live. The first three are the same kinds of break as the workbook's Build It Part B, but the fourth here is one bias too many (the workbook's fourth is plain Python lists), and the fifth uses the lesson's network. Mark the student's Part B from Part 1.*
 
 *Predict, run, paste the real message, circle the two numbers.*
 
@@ -1778,7 +2497,9 @@ shape of the wrong answer: (4, 3)
 
 **Two extra details worth a tick in the margin.** Cell `(0, 0)` is `2.2` in **both** answers, which is why a student who checks only one number will miss this entirely — `2.1 + 0.1` happens to be right by coincidence, because the first row's wrong bias and the first unit's right bias are both `0.1`. And row 2 of the wrong answer is `[−0.4, −0.7, −1.15]`, which after ReLU would be **all zeros** — the wrong bias has silently killed an entire row.
 
-### Page 17.5 — Broadcasting and `keepdims`
+### Lesson script 5 — `bcast.py`: broadcasting and `keepdims`
+
+*Run live after the forward pass. The workbook questions on the same ideas are P3, P4 and M3, answered in Part 1.*
 
 ```python
 import numpy as np
@@ -1831,7 +2552,9 @@ Exactly what numpy behaves as if it did: **the same three biases, written out on
 **Q3 — "What does `keepdims=True` change?"**
 The shape only, never the numbers. `(4,)` becomes `(4, 1)`; `(3,)` becomes `(1, 3)`. **And that matters because a `(4,)` will broadcast along the wrong axis.** Try dividing a `(4, 3)` grid by a `(4,)` total and numpy either errors or, worse, lines the four up against the three columns and quietly does something absurd. `keepdims=True` is insurance against a silent bug.
 
-### Page 17.6 — Softmax (stretch)
+### Lesson script 6 — `softmax.py`: three scores become three probabilities
+
+*The softmax demonstration. The workbook asks for softmax by hand in M4 (new scores, `[1.5, −0.5, 2.0]`) and in B5, answered in Part 1.*
 
 ```python
 """softmax.py - three raw scores become three probabilities."""

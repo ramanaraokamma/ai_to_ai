@@ -15,7 +15,7 @@
 | **New maths** | **None.** Everything today is a multiply, an add, a count and one logarithm the student met in Week 14. This week practises Weeks 14, 21, 22, 23 and 25. |
 | **New syntax** | `nn.CrossEntropyLoss()` · `logits.argmax(dim=1)` · `torch.optim.Adam(model.parameters(), lr=1e-3)` · `sum(p.numel() for p in model.parameters())` |
 | **Dataset** | `load_digits()` reshaped to `(1797, 1, 8, 8)` and divided by 16. **It ships inside scikit-learn. Nothing downloads. No internet needed. No torchvision.** |
-| **Materials** | Printed workbook pages 26.1–26.7 · the **PARAMETER COUNT** sheet from Week 22, with one blank row left · **THE SHAPE LADDER** sheet from Week 25, still up · **a big blank sheet headed FILTER VOTE with eight numbered boxes** · the Bug Log · Week 23's dense-MLP numbers to hand |
+| **Materials** | Printed workbook (`workbook/week-26.md`: at minimum **Do the Maths by Hand**, **Build It** and **Draw It**) · the **PARAMETER COUNT** sheet from Week 22, with one blank row left · **THE SHAPE LADDER** sheet from Week 25, still up · **a big blank sheet headed FILTER VOTE with eight numbered boxes** · the Bug Log · Week 23's dense-MLP numbers to hand |
 | **Tech needed** | Laptop with Python 3, numpy, scikit-learn, matplotlib, **torch**. **No new installs.** |
 | **Prep time** | 25 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `digits_cnn.py` trains 40 epochs of 40 steps in **about 3 seconds** on this machine — up to about 12 on a slow laptop. `filters.py` trains both networks and writes a PNG in **about 4 seconds**. **Time it on your own machine before you say a number out loud.** |
@@ -33,7 +33,7 @@ By the end of the lesson the student can:
 3. **Render the eight learned first-layer filters as pictures** and describe what at least two of them appear to respond to, **with a number** — not "it looks edgy" but "it answers +2.830 to a bright-left edge and −1.219 to a bright-top one".
 4. **Compare the CNN against the Week 23 dense MLP** on parameters, seconds, train accuracy and test accuracy, and **say which of the four comparisons actually matters** and why.
 
-Observable evidence: `digits_cnn.py` printing `parameters: 1898` and `test accuracy : 0.9796 (529 of 540 test rows)`; workbook page 26.1 with the three per-layer parameter counts computed by hand **before** printing; `filters.png` saved to disk with two filters described numerically; and a four-row comparison table with one sentence naming the row they would put in a report.
+Observable evidence: `digits_cnn.py` printing `parameters: 1898` and `test accuracy : 0.9796 (529 of 540 test rows)`; workbook **Do the Maths by Hand M1** (the parameter-count table) filled in by hand **before** printing; `filters.png` saved to disk with two filters described numerically; and a four-row comparison table with one sentence naming the row they would put in a report.
 
 ---
 
@@ -50,7 +50,7 @@ The stack is the one they predicted the shapes for last week. Nothing about it i
 ![One digit becomes ten scores](../figures/fig-w26-1-cnn-stack-with-shapes-annotated.svg)
 *Figure 26.1 — One digit becomes ten scores. Spatial size goes down, channel count goes up, and 80 + 1,168 + 650 = 1,898 weights in the whole network.*
 
-**The weight counts, and do these three by hand right now** — page 26.1 asks the student to do exactly this before printing it, and you cannot mark it if you have not done it.
+**The weight counts, and do these three by hand right now** — workbook **M1** asks the student to do exactly this before printing it, and you cannot mark it if you have not done it.
 
 > **A conv layer's weight count:**
 > ```
@@ -343,7 +343,7 @@ puts *seconds* in their report, ask them who the report is for.
 
 ### 25 minutes the night before
 
-- [ ] **Do the three parameter counts by hand.** Three minutes. `1 × 3 × 3 × 8 + 8 = 80`. `8 × 3 × 3 × 16 + 16 = 1168`. `64 × 10 + 10 = 650`. Total `1898`. **Write them on a sticky note.** Page 26.1 is these three sums and you will be marking twelve of them.
+- [ ] **Do the three parameter counts by hand.** Three minutes. `1 × 3 × 3 × 8 + 8 = 80`. `8 × 3 × 3 × 16 + 16 = 1168`. `64 × 10 + 10 = 650`. Total `1898`. **Write them on a sticky note.** Workbook **M1** is these three sums (plus the zero rows) and you will be marking them.
 - [ ] **Type and run `digits_cnn.py` yourself, and time it.** The complete file:
 
 ```python
@@ -472,11 +472,11 @@ minus ln of the true chance : 0.0244
 
 **If your accuracy is not 0.9796, one of the seeds is missing.** `torch.manual_seed(0)` before the model is built, and `random_state=0, stratify=y` in the split. Both matter.
 
-- [ ] **Run `filters.py` too** — the complete file is in the Answer Key under page 26.5. It trains both networks and saves `filters.png`. **Open the PNG and look at it before the lesson.** You need to have seen the eight smudges so you are not surprised by how unimpressive they are at first glance. **They are unimpressive until you put a number on them, which is the point.**
+- [ ] **Run `filters.py` too** — the complete file is in the Answer Key under **Build It — the filter grid**. It trains both networks and saves `filters.png`. **Open the PNG and look at it before the lesson.** You need to have seen the eight smudges so you are not surprised by how unimpressive they are at first glance. **They are unimpressive until you put a number on them, which is the point.**
 - [ ] **Break it on purpose, twice.**
   1. `loss_fn(torch.softmax(logits, dim=1), yte[:1])` gives **1.4818**, no error, no warning. This is deliberate mistake one.
   2. `logits.argmax(dim=0)` on a batch of 540 gives ten numbers instead of 540, no error at all. This is deliberate mistake two.
-- [ ] **Print workbook pages 26.1–26.7.**
+- [ ] **Print the workbook** (`workbook/week-26.md`); it is the sheet you will mark against the Answer Key below.
 - [ ] **Put up the FILTER VOTE sheet:** one big sheet, eight numbered boxes, nothing else. The class writes their guesses in the boxes **before** you say anything.
 - [ ] **Check both wall sheets are still up:** THE SHAPE LADDER from Week 25 (you walk it in the first two minutes) and PARAMETER COUNT from Week 22 (you add one row to it). **Make sure PARAMETER COUNT has a blank row under `64 → 64 → 10 | 4810`.**
 
@@ -486,14 +486,14 @@ minus ln of the true chance : 0.0244
 - [ ] `matplotlib` set to write files, not windows. `matplotlib.use("Agg")` is in `filters.py` already; check it runs headless.
 - [ ] FILTER VOTE sheet on the wall, eight empty boxes.
 - [ ] THE SHAPE LADDER and PARAMETER COUNT both visible from every seat.
-- [ ] Workbook 26.1 out. **The three parameter sums done in pen before any code runs.**
+- [ ] Workbook **M1** (Do the Maths by Hand) out. **The three parameter sums done in pen before any code runs.**
 - [ ] Bug Log out.
 
 ### Fallback if the laptops fail
 
 **This week needs a computer for the training run, and there is no way round that.** But three of the four objectives survive on paper, and the fourth survives if you can print one thing.
 
-1. **The parameter count, by hand.** Page 26.1 is three multiplications. **Objective 4's most important row, complete, in ten minutes**, and it is the row that does not need a machine: 1,898 against 4,810.
+1. **The parameter count, by hand.** Workbook **M1** is three multiplications (and five zeros). **Objective 4's most important row, complete, in ten minutes**, and it is the row that does not need a machine: 1,898 against 4,810.
 2. **The ten logits and the argmax.** Write the real ten numbers on the board from §2 of this file. *"Which is biggest? Which slot is it in? What does the model think this digit is?"* **Objective 2's first half, on paper.**
 3. **The softmax by hand.** The three-step arithmetic in §2 — subtract the max, exponentiate, divide — needs a calculator with an `e^x` key and nothing else. Then `−ln(0.9760) = 0.0243`. **Objective 2, complete**, and honestly it lands *better* by hand than on a screen.
 4. **The filters, from Figure 26.3.** Print it, or project it from this file. The nine numbers of filter 6 are on it, and the vote works exactly as designed: *"left column all positive, right column all negative. What is it looking for?"* **Objective 3, complete, with the +2.830 as the evidence.**
@@ -718,7 +718,7 @@ loss on the SQUASHED ten numbers:  1.4818
 >
 > **How it does that is a level above this one and I am not going to pretend otherwise.** What you need to know is: it is the same five-line loop, the word `SGD` becomes `Adam`, `lr=1e-3` — which is just `0.001` written the way everybody writes it — and it gets there several times faster on this problem. That is the entire reason we are using it."
 
-**Do this:** Hand out page 26.1 — the three parameter sums, in pen — and give them four minutes. Then page 26.2, the FILTER VOTE prediction: *"before we train anything, sketch what you think a useful 3×3 filter would look like."*
+**Do this:** Hand out workbook **M1** — the parameter-count table, in pen — and give them four minutes. Then the FILTER VOTE prediction (on scrap paper; the workbook has no box for it): *"before we train anything, sketch what you think a useful 3×3 filter would look like."*
 
 ---
 
@@ -796,7 +796,7 @@ model = nn.Sequential(
 print("parameters:", sum(p.numel() for p in model.parameters()))
 ```
 
-**Ask before running:** "Page 26.1. What is it going to say?"
+**Ask before running:** "Workbook M1. What is it going to say?"
 
 *1,898.*
 
@@ -1054,8 +1054,8 @@ The point is not that they guess right. **The point is the order: look, guess, t
 ### Setup
 
 - The FILTER VOTE sheet on the wall: eight numbered boxes, nothing else in them.
-- Workbook page 26.2 (their pre-training sketch of what a useful filter might look like) already filled in from the concept segment.
-- Workbook page 26.3: eight boxes matching the wall, plus a column headed `and the number says`.
+- Their pre-training sketch of what a useful filter might look like (on scrap paper, from the concept segment) to hand.
+- Workbook **Build It → The filter grid**: eight rows matching the wall, with the bright-LEFT and bright-TOP columns left blank until after the vote (the last column is `what I think it responds to`).
 - `filters.py` typed and ready to run, or given out complete if time is tight.
 
 ### Part 1 — render the eight filters (5 minutes)
@@ -1103,7 +1103,7 @@ saved filters.png
 
 Open `filters.png`. Project it, or have everybody open their own.
 
-> **"Four minutes. Look at all eight. Do not say anything out loud. On page 26.3, for each one, write down in a few words what you think it is looking for — and if you have no idea, write 'no idea'. 'No idea' is a real answer and I want to see it where it is true."**
+> **"Four minutes. Look at all eight. Do not say anything out loud. In the filter-grid table in **Build It**, for each one, write down in a few words what you think it is looking for — and if you have no idea, write 'no idea'. 'No idea' is a real answer and I want to see it where it is true."**
 
 **Sit on your hands and say nothing.** The urge to help here is enormous and you must resist it.
 
@@ -1171,7 +1171,7 @@ row 2:  0.761 × 1  +    0.348  × 1  +  (−0.550) × (−1)  =  0.761 + 0.348 
 ### What "finished" looks like
 
 - `filters.png` saved to disk and looked at.
-- Page 26.3 with eight guesses, including at least one honest "no idea".
+- The filter-grid table (**Build It**) with eight guesses, including at least one honest "no idea".
 - The FILTER VOTE wall sheet filled in, in the class's words, with disagreements left in.
 - Two filters described **with a number**: "filter 6 answers +2.830 to a bright-left edge and −1.219 to a bright-top one, so it is a vertical edge detector."
 - One row of the `+2.830` arithmetic worked out by hand.
@@ -1202,7 +1202,7 @@ Left column positive, right column negative → adds the left, subtracts the rig
 2. **Score every filter against a plain all-ink patch** (`np.ones((3,3))`). The answer is just the sum of the filter's nine weights. Filter 2 gives **+3.463** and filter 1 gives **−1.707**, and neither is an edge detector at all. **The lesson: some filters measure "how much ink is here", which is useful and boring.**
 3. **Retrain with a different seed and render again.** `torch.manual_seed(1)`. Some of the eight filters will look similar and some completely different, and **the order will certainly change** — filter 6 will not be the vertical one any more. Then the real question: *"if the numbering changes, what is actually stable?"* **The set of things measured, roughly, but not which slot measures what. That is a level-5 insight and it is why people plot all the filters rather than picking one.**
 4. **Sixteen filters instead of eight.** `Conv2d(1, 16, 3, padding=1)` and update the second conv's input. Predict the new parameter count before printing it: conv1 becomes `1 × 3 × 3 × 16 + 16 = 160`, conv2 becomes `16 × 3 × 3 × 16 + 16 = 2320`, total `160 + 2320 + 650 = 3130`. **Then the honest measurement: does the test accuracy actually improve?** Usually barely, and finding that out is worth more than the improvement would have been.
-5. **The softmax by hand, on all ten.** The full three-step arithmetic is in the Answer Key under page 26.7. **Then the check: do the ten chances add to exactly 1.0000?** They must, and if they do not, the arithmetic is wrong somewhere.
+5. **The softmax by hand, on all ten.** The full three-step arithmetic is in the Answer Key under **Do the Maths by Hand M3** (the three-number version) and **Stretch — the whole softmax on all ten scores**. **Then the check: do the ten chances add to exactly 1.0000?** They must, and if they do not, the arithmetic is wrong somewhere.
 
 ---
 
@@ -1274,7 +1274,7 @@ This section lists the ways this lesson tends to slip, and what to do when it ha
 |---|---|---|
 | **The double-softmax is explained but never shown** | It is abstract and the lesson is running late | **Show the two numbers.** `0.0244` and `1.4818`, on the same screen, on the same picture. It is ninety seconds and it is the reason the week has a Watch-out box. Cut the `dim=0` demo before you cut this one. |
 | Softmax gets taught as "part of the model" | Every diagram on the internet draws it on the end of the network | Say the rule three times: **"the loss gets logits, humans get probabilities."** Then write it on the board and leave it there all lesson. |
-| The parameter count gets printed before anybody computes it | It is one line and it is right there | **Do page 26.1 in pen first.** The value of `parameters: 1898` is entirely that it agrees with a number the student already owns. Printed first, it is trivia. |
+| The parameter count gets printed before anybody computes it | It is one line and it is right there | **Do workbook M1 in pen first.** The value of `parameters: 1898` is entirely that it agrees with a number the student already owns. Printed first, it is trivia. |
 | The biases get forgotten in the count | 72 and 1,152 are the interesting products; the `+8` and `+16` feel like decoration | *"How many filters?"* Eight. *"How many biases?"* Eight. **A total short by exactly 8 + 16 + 10 = 34 is the missing-biases error**, and it is the same error Week 22 flagged. Same feedback, every week, until it stops. |
 | The training run is announced as "three seconds" and takes forty | You read this file's number instead of your own | **Time it on your machine the night before and say YOUR number.** A slow laptop is not a failure and the class does not care — but being wrong by a factor of ten in front of them costs you something. |
 | Somebody asks which digits it got wrong and the lesson becomes Week 27 | It is the obvious question and it is a good one | *"Eleven of them. Next week we find out exactly which, and why, and it is the whole first half of the lesson."* **Do not build a confusion matrix today.** It costs fifteen minutes and it steals next week's hook. |
@@ -1423,31 +1423,43 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, three pages, and the last one is the one I mark hardest.
+> "About an hour, three parts, and the last one is the one I mark hardest. All three are in the **Build It** section of your workbook.
 >
-> **First, page 26.4 — train it and report it properly.** Run the file. **Report train accuracy and test accuracy, and name the row counts on both.** Not '98%'. *'0.9881 on 1,257 training rows and 0.9796 on 540 held-out rows.'* **And write the seconds it took on your machine, not mine.** Then one sentence: is that gap between the two numbers big or small, and how do you know?
+> **First, the training report — train it and report it properly.** Run the file. **Report train accuracy and test accuracy, and name the row counts on both.** Not '98%'. *'0.9881 on 1,257 training rows and 0.9796 on 540 held-out rows.'* **And write the seconds it took on your machine, not mine.** Fill in the whole report table, including the parameter count against what your paper said, then one sentence: is that gap between the two numbers big or small, and how do you know?
 >
-> **Second, page 26.5 — save the filter grid and describe two of them with numbers.** Run the filter code, save `filters.png`, **put it in your workbook**. Then pick two filters and for each one write: the nine numbers, what you think it responds to, and **the number that supports you** — its answer to the bright-left patch and to the bright-top patch. **A description with no number in it does not count.** And if you want full marks, pick one filter you *cannot* describe and say so honestly.
+> **Second, the filter grid — save it and describe two of them with numbers.** Run the filter code, save `filters.png`, **put it in your workbook**. Then fill in the bright-left and bright-top numbers for all eight, pick two filters and write what you think each responds to and **the number that supports you**. **A description with no number in it does not count.** And if you want full marks, pick one filter you *cannot* describe and say so honestly.
 >
-> **Third, page 26.6 — the four-row comparison table, against Week 23's dense network.** Four rows: parameters, seconds, train accuracy, test accuracy. Two columns: your CNN, and Week 23's 64 → 64 → 10. **Then one sentence: which row would you put in a report, and why.** And I will tell you now that there is a wrong answer that looks right, so think about how big each difference actually is before you write it.
+> **Third, the four-row comparison — your CNN against Week 23's dense network.** Parameters, seconds, train accuracy, test accuracy, and the count out of 540. **Then one sentence: which row would you put in a report, and why.** And I will tell you now that there is a wrong answer that looks right, so think about how big each difference actually is before you write it.
 >
-> Page 26.7 is a stretch: the whole softmax on all ten numbers by hand. It has one satisfying check in it."
+> The softmax on all three of the song-genre numbers, **M3** on the Maths page, is a stretch if you did not finish it in class; it has one satisfying check in it."
 
-**Workbook pages:** 26.1, 26.2, 26.3 in class · **26.4, 26.5, 26.6** at home · 26.7 optional.
+**Workbook sections, and the split:** **Do the Maths by Hand → M1** (the parameter-count table, in pen) **in class**, before any code runs · **Build It → The training report, The filter grid, The four-row comparison** **at home** (the hour) · everything else is further practice, assigned as time allows: **Warm-Up**, **Do the Maths by Hand M2–M4**, **Predict the Output P1–P4**, **Practice Set A (A1–A6)**, **Practice Set B (B1–B5)**, **Fix the Broken Program**, **Puzzle of the Week**, **Think Deeper (T1, T2)**, **Draw It**, **Self-Check**. The old guide's split (first three pages in class, last three at home, last one optional) maps onto this as M1 in class, the three Build It tables at home, and M3 and the ten-score softmax as optional.
 
-**Expected time:** 15 min training and reporting with the counts named · 25 min on the filter grid and two numerical descriptions · 20 min on the comparison table and the sentence · **about 60 minutes**, plus 15 more for the stretch.
+**Expected time:** 15 min training and reporting with the counts named · 25 min on the filter grid and two numerical descriptions · 20 min on the comparison table and the sentence · **about 60 minutes**, plus 15 more for the stretch. The other sections run roughly 10 to 25 minutes each (Fix the Broken Program and Practice Set B are the longest).
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are the row counts named on both accuracies?** "98%" is not a result; "529 of 540 held-out, trained on 1,257" is. Same feedback as Week 8 and it should be nearly automatic by now. **Two — does each filter description have a number attached?** "It looks like an edge detector" is a guess. "It answers +2.830 to a bright-left edge and −1.219 to a bright-top one" is a measurement, and it is the difference between interpreting a model and telling a story about one. **Praise loudly anybody who admits they cannot describe one.** **Three — does the sentence on 26.6 pick the parameter count, or does it pick the accuracy?** The accuracy difference is four digits out of 540 and it is inside the run-to-run wobble. The parameter difference is 2,912 and it is exact. **A student who reports "the CNN is more accurate" has done the arithmetic and missed the lesson, and this is the single most useful line of feedback you will write this week: "how many digits is four, out of 540, and would it survive a different seed?"**
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are the row counts named on both accuracies?** "98%" is not a result; "529 of 540 held-out, trained on 1,257" is. Same feedback as Week 8 and it should be nearly automatic by now. **Two — does each filter description have a number attached?** "It looks like an edge detector" is a guess. "It answers +2.830 to a bright-left edge and −1.219 to a bright-top one" is a measurement, and it is the difference between interpreting a model and telling a story about one. **Praise loudly anybody who admits they cannot describe one.** **Three — does the sentence under *The four-row comparison* pick the parameter count, or does it pick the accuracy?** The accuracy difference is four digits out of 540 and it is inside the run-to-run wobble. The parameter difference is 2,912 and it is exact. **A student who reports "the CNN is more accurate" has done the arithmetic and missed the lesson, and this is the single most useful line of feedback you will write this week: "how many digits is four, out of 540, and would it survive a different seed?"**
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every workbook section and item restated in workbook order, so you can mark from this page alone. Values are the workbook's own **✅ Answers** section, re-checked where they can be recomputed. **Seconds are machine-dependent:** this guide's run printed 3.1 (CNN) and 0.4 (dense); the workbook's Answers show 2.3 and 0.3. Both are right for the machine that produced them; the student's must be their own.
 
-### Page 26.1 — The parameter count, by hand, in pen before running
+### Warm-Up — five questions about last week
 
-*For each layer, compute the number of learnable numbers. A conv layer is `(in × k × k × out) + out`. A linear layer is `(in × out) + out`.*
+| Item | Answer |
+|---|---|
+| **W1** | `(8 + 2 − 3) ÷ 1 + 1 = 7 + 1 =` **8**. One ring of zeros on a 3-wide window gives same size in, same size out. |
+| **W2** | The starts are counted **from zero**. The last legal start is `n − k`, so the starts `0, 1, … n − k` number `n − k + 1`. The eleventh fence post in a ten-metre fence. |
+| **W3** | `(4, 16, 2, 2)` flattens to **(4, 64)**, since `16 × 2 × 2 = 64`. `nn.Linear` starts at **64**. The 4 is the batch and never changes. |
+| **W4** | Change the **64 to 128**. The 128 is the flatten length (`channels × height × width`) and came out of the picture; the 64 is the number typed into `nn.Linear`. |
+| **W5** | **No.** ReLU is element by element: one number in, one number out. Shapes change only when numbers are combined or rearranged. |
+
+**Marking note.** W4 is the one that gets reversed: a student who changes the 128 has fixed the wrong end. Ask which number is in their file.
+
+### Do the Maths by Hand
+
+**M1 — price the network (the parameter-count table).**
 
 | Layer | Arithmetic | Weights | Biases | Total |
 |---|---|---:|---:|---:|
@@ -1460,6 +1472,8 @@ Every question restated, so you can mark from this page alone.
 | `Flatten()` | nothing to learn | 0 | 0 | **0** |
 | `Linear(64, 10)` | 64 × 10 = 640, plus 10 | 640 | 10 | **650** |
 | | | | | **1,898** |
+
+**Which layer holds the most:** `conv2`, **1,168 of the 1,898**. **Difference from Week 23:** 4,810 − 1,898 = **2,912 fewer**.
 
 **The verification file:**
 
@@ -1498,57 +1512,166 @@ dense 64 -> 64 -> 10: 4810
 
 **Marking notes.** **A total of 1,864 is the missing-biases error** — short by exactly 8 + 16 + 10 = 34 — and it is the same error Week 22 flagged. One line of feedback, every week, until it stops. **A total of 818 means they used 8 × 3 × 3 (plus 16 biases) for conv2 and forgot to multiply by the 16 filters.** And **anybody who writes 0 for the ReLU, the pools and the flatten without hesitating has understood something important**: three of the eight layers in this network contain nothing to learn at all.
 
-**The observation worth praising:** **conv2 is the biggest layer, with 1,168 of the 1,898.** Most people expect the `Linear` to dominate, because in Week 23's dense network it did. A student who notices that and says *"the big layer moved"* is at level 4.
+**The observation worth praising:** **conv2 is the biggest layer.** Most people expect the `Linear` to dominate, because in Week 23's dense network it did. A student who notices that and says *"the big layer moved"* is at level 4.
 
-### Page 26.2 — Before training: what would a useful 3×3 filter look like?
+**M2 — double the first layer's filters.** `conv1: 1 × 3 × 3 × 16 + 16 = 144 + 16 =` **160**. `conv2: 16 × 3 × 3 × 16 + 16 = 2,304 + 16 =` **2,320**. `linear:` **650**. **Total 3,130.** The flatten length did not change because it is `channels × height × width` and the *last* conv still has 16 filters, so it is still `16 × 2 × 2 = 64` and the `Linear` never notices. (Run it and the test accuracy goes from 529 of 540 to 527 of 540: the extra ~1,200 weights bought nothing.)
 
-*A sketch, in pen, before any code runs. There is no wrong answer and it is not marked for accuracy.*
+**M3 — the softmax on three song-genre scores (rock 1.20, pop 3.10, jazz −0.40; true answer pop).**
 
-**What to expect, and what to do with it.** Most students draw either a bullseye (bright centre, dark surround) or a half-and-half split. **Both are real things that real first layers learn**, and the split one is right — filters 4 and 6 are exactly that.
+| Step | rock | pop | jazz |
+|---|---:|---:|---:|
+| 1. subtract 3.10 | −1.90 | 0.00 | −3.50 |
+| 2. `e^` each | 0.149569 | 1.000000 | 0.030197 |
+| 3. divide by the total 1.179766 | 0.126778 | 0.847626 | 0.025596 |
 
-**The point of the page is that they committed to something before seeing the answer.** Mark it present or absent, not right or wrong, and **read two of them out loud during the vote** — including one that turned out to be wrong. It makes the wrong ones safe to have.
+The three chances add to **1.000000**, and they must, because each was divided by the same total; if a student's do not, the arithmetic is wrong somewhere and they can find it themselves. **Step 4:** `−ln(0.847626) =` **0.165316**, which is also what `nn.CrossEntropyLoss()` prints on the raw scores. (Recomputed independently: agrees.)
 
-### Page 26.3 — The filter vote
+**M4 — the surprise meter.**
 
-*Eight boxes, one per filter. What do you think it is looking for? Then, beside each, the number.*
+| p | `−ln(p)` |
+|---:|---:|
+| 0.9760 | **0.024293** |
+| 0.5000 | **0.693147** |
+| 0.2500 | **1.386294** |
+| 0.1000 | **2.302585** |
+| 0.0200 | **3.912023** |
 
-| filter | the nine numbers (rounded) | bright-LEFT | bright-TOP | honest description |
-|---:|---|---:|---:|---|
-| 0 | `+0.092 +0.307 −0.803` / `−0.526 +0.157 +0.704` / `+0.443 +0.657 +0.482` | +0.750 | −1.651 | weakly prefers bright-left; dislikes bright-top |
-| 1 | `−0.155 −0.515 −0.369` / `−0.783 −0.661 −0.084` / `−0.059 +0.377 +0.543` | −1.887 | −3.428 | **negative to everything — it fires on blank paper, not ink** |
-| 2 | mostly positive | −0.956 | −0.032 | likes ink in general; no left-right preference |
-| 3 | mixed | +0.543 | +0.158 | **weak. Cannot be described honestly.** |
-| **4** | `−0.185 +0.784 +0.742` / `+0.469 +0.383 −0.196` / `−0.105 −0.977 −0.681` | +0.503 | **+3.760** | **horizontal edge detector: bright above, dark below** |
-| 5 | mixed | −0.876 | +0.212 | **weak.** Six positive weights (sum +3.070) make it ink-like, with a mild dislike of bright-left; no clean story. |
-| **6** | `+0.509 −0.129 −0.149` / `+0.382 −0.507 −0.767` / `+0.761 +0.348 −0.550` | **+2.830** | −1.219 | **vertical edge detector: bright left, dark right** |
-| 7 | `+0.478 +0.491 +0.006` / `+0.656 +0.744 +0.563` / `+0.847 −0.340 −0.608` | +2.916 | +3.041 | likes both — positive except the bottom-right two cells, weights sum +2.837, so best read as an **ink-total** filter; two test patches cannot support "corner" |
+Guessing between **ten** options is the **0.1000** row (2.3026); between **four**, the **0.2500** row (1.3863). A ten-class network that has learned nothing should print a first loss near **2.30**; ours prints 2.2796. **The check as a sentence:** *"A fresh network's first loss should be −ln(1 ÷ number of classes). For ten classes that is 2.30. If it starts at 0.4 something has leaked; if it starts at 8 something is broken."*
 
-*(Note: the exact nine numbers for filters 2, 3 and 5 are printed by `filters.py`; the five reproduced here are the ones you will be asked about, because they are the ones that can be described — or, in filter 0's case, only weakly.)*
+### Predict the Output
 
-**Filter 6's arithmetic against the bright-left patch, in full**, so a student can check it:
+**P1.**
 
 ```text
-the patch:   1   1  −1        the filter:   0.509  −0.129  −0.149
-             1   1  −1                      0.382  −0.507  −0.767
-             1   1  −1                      0.761   0.348  −0.550
-
-row 0:  0.509 − 0.129 + 0.149  =  +0.529
-row 1:  0.382 − 0.507 + 0.767  =  +0.642
-row 2:  0.761 + 0.348 + 0.550  =  +1.659
-                                  -------
-                                   +2.830
+tensor([[0.2500, 0.2500, 0.2500, 0.2500]])
+1.3863
+1.3863
 ```
 
-**Marking notes.** **Two filters described with a number is full marks.** The two that can be described are 4 and 6, and either counts. **An honest "no idea" for filters 3 and 5 is worth marks and should be said so, out loud.** The thing to mark down is a confident story with no number attached — "filter 3 detects curves" is unsupported and the follow-up question is *"what number tells you that?"*
+Lines 2 and 3 agree because all four chances are 0.25, so the loss is `−ln(0.25)` whichever class is true. The logarithm: `−ln(0.25) = −ln(1 ÷ 4) = ln(4) =` **1.386294**.
 
-### Page 26.4 — Train it and report it properly
-
-*Run `digits_cnn.py`. Report both accuracies with their row counts, and the seconds on your machine.*
-
-**The real output, in full**, is in the Prep Checklist. The three numbers to mark:
+**P2.**
 
 ```text
-seconds        : 3.1              (theirs will differ; anything from 2 to 15 is normal)
+tensor([1, 0])
+tensor([1, 0, 1])
+tensor(3)
+```
+
+`dim=1` is the one that gives **one answer per row** (row 0's biggest is 5.0 in slot 1, row 1's is 7.0 in slot 0). Line 2's three numbers each answer "which ROW has the highest score in this column?" (column 0 → row 1, column 1 → row 0, column 2 → row 1). Line 3's `3` is a position in the flattened grid `1, 5, 2, 7, 0, 3`, so it is the 7.0. **None of the three errors.** The check that catches the wrong one: **count the answers** — two rows in, so two answers out.
+
+**P3.**
+
+```text
+4
+690
+```
+
+**Four blocks** (conv weight and bias, linear weight and bias); `conv: 1 × 3 × 3 × 4 + 4 =` **40**, `linear: 64 × 10 + 10 =` **650**, **total 690**. ReLU, MaxPool2d and Flatten contributed nothing: fixed arithmetic, no numbers of their own, so five layers made four blocks.
+
+**P4.** It does **not** run:
+
+```text
+RuntimeError: expected scalar type Long but found Float
+```
+
+`CrossEntropyLoss` wants a whole number that is the class index itself (for digits, 0 to 9), not a one-hot row and not a probability. The rule: **`X gets .float()` and `y gets .long()`.**
+
+**Score line.** The workbook's tally is out of 15; the "surprised me most" line is marked present or absent.
+
+### Practice Set A — Read It
+
+**A1.** logits **(iii)** · argmax **(v)** · softmax **(vi)** · Adam **(i)** · parameter count **(iv)** · learned filter **(ii)**
+
+**A2.**
+
+| Layer | Shape out | Learnable numbers |
+|---|---|---:|
+| input | **(32, 1, 8, 8)** | 0 |
+| `nn.Conv2d(1, 8, 3, padding=1)` | **(32, 8, 8, 8)** | **80** |
+| `nn.ReLU()` | **(32, 8, 8, 8)** | **0** |
+| `nn.MaxPool2d(2)` | **(32, 8, 4, 4)** | **0** |
+| `nn.Conv2d(8, 16, 3, padding=1)` | **(32, 16, 4, 4)** | **1,168** |
+| `nn.ReLU()` | **(32, 16, 4, 4)** | **0** |
+| `nn.MaxPool2d(2)` | **(32, 16, 2, 2)** | **0** |
+| `nn.Flatten()` | **(32, 64)** | **0** |
+| `nn.Linear(64, 10)` | **(32, 10)** | **650** |
+| | | **total 1,898** |
+
+The three with zero numbers are **ReLU, MaxPool2d and Flatten**: ReLU replaces negatives with zero, MaxPool2d keeps the biggest number in each 2×2 window, Flatten rearranges the same numbers into one row per picture. (Nine rows because the table includes the input; the three zero-number layers are the ReLU, pool and flatten, each appearing once or twice in the stack.)
+
+**A3.** The wrong line is **`nn.Softmax(dim=1)` at the end of the model**: `CrossEntropyLoss` already does the softmax inside, so this squashes twice. First printed loss **near 2.30** (about 2.3015 on the real run); without the bug it is **also near 2.30** (2.2768), which is why the bug hides from the usual check. After 20 epochs the broken one is at 1.6438 and the correct one at 0.4013. Test accuracy suffers by **about 2.5 points** (0.9370 against 0.9611). The sentence: *"If there is a softmax, a sigmoid or a `Softmax()` layer anywhere between my last Linear and my loss, that is the bug. The loss gets logits; humans get probabilities."*
+
+**A4.** `.float()` labels → **(iii)** · `Adam(model, …)` → **(v)** · `(pred == y).mean()` → **(i)** · `.numpy()` on a weight → **(ii)** · labels 1 to 10 → **(iv)**
+
+**A5.** Row sums: **top +1.341, middle +0.656, bottom −1.763.** Positive at the top, negative at the bottom, so a picture **bright at the top and dark at the bottom** gives a big positive number. Against the bright-top patch:
+
+```text
+row 0:  (−0.185 × 1) + (0.784 × 1) + (0.742 × 1)      = +1.341
+row 1:  ( 0.469 × 1) + (0.383 × 1) + (−0.196 × 1)     = +0.656
+row 2:  (−0.105 × −1) + (−0.977 × −1) + (−0.681 × −1) = +1.763
+                                                        -------
+                                                         +3.760
+```
+
+Total **+3.760**, the same as `filters.py` prints for filter 4. It is a **horizontal** edge detector. The bottom row flips sign because negative × negative is positive.
+
+**A6.** The eight boxes (in the diagram) read **80, 0, 0, 1,168, 0, 0, 0, 650**, total **1,898**. **Week 23's 4,810 is bigger**, by 2,912. **Neither conv row changes on a 200 × 200 picture** — their formulas contain the window size, input channels and filter count, and nothing about the picture. The **Linear** row changes: after two pools 200 becomes 50, so the flatten is `16 × 50 × 50 = 40,000` and the layer is `40,000 × 10 + 10 = 400,010`; the network goes from 1,898 to **401,258**.
+
+### Practice Set B — Write It
+
+**B1.** By hand `3 × 5 × 5 × 12 + 12 = 900 + 12 =` **912**; the line is `print(sum(p.numel() for p in nn.Conv2d(3, 12, 5).parameters()))` and it prints `912`.
+
+**B2.** The program is `params.py` under **M1** above (same code, same output): eight layer lines with three zeros, `total  : 1898`, `dense 64 -> 64 -> 10: 4810`. The single layer with the most is **conv2 (the second `Conv2d`), 1,168 of the 1,898** (about 62%).
+
+**B3.** The scorecard function is marked by its output. Reference run:
+
+```text
+scores  : [ 2.  0. -1.  5.]
+argmax  : 3    truth: 3
+chances : [0.047  0.0064 0.0023 0.9443]
+add to  : 1.0
+loss on raw      : 0.0573
+loss on squashed : 0.7834
+-ln(true chance) : 0.0573
+
+scores  : [0. 0. 0. 0.]
+argmax  : 0    truth: 3
+chances : [0.25 0.25 0.25 0.25]
+add to  : 1.0
+loss on raw      : 1.3863
+loss on squashed : 1.3863
+-ln(true chance) : 1.3863
+
+scores  : [ 2.  0. -1.  5.]
+argmax  : 3    truth: 0
+chances : [0.047  0.0064 0.0023 0.9443]
+add to  : 1.0
+loss on raw      : 3.0573
+loss on squashed : 1.6807
+-ln(true chance) : 3.0573
+```
+
+**Call 3 is the frightening one: the double-squashed loss is SMALLER (1.6807 against the correct 3.0573).** A confidently wrong model (94.4% sure of class 3, truth class 0) is punished less than half as hard, so catastrophic mistakes look mild and the gradients pushing away from them are too small. Call 2 hides the bug completely (both 1.3863).
+
+**B4.** Marked by: the shape line `first-layer weight shape: (8, 1, 3, 3)`, nine numbers, `saved filters.png`, eight rows of two numbers (the full file and output are under **Build It — the filter grid** below). The three things: **`matplotlib.use("Agg")`** above the pyplot import makes matplotlib write files instead of opening a window (below the import it is ignored and a window blocks the program); **`.detach()`** before `.numpy()` drops the gradient bookkeeping (without it: `Can't call numpy() on Tensor that requires grad`); **`interpolation="nearest"`** stops the nine pixels being smoothed into a blur. The two describable filters and the one to decline are the same as the filter-grid key below (4 and 6; decline 3, or 5).
+
+**B5.** Real output, except the seconds:
+
+```text
+pictures: (1797, 8, 8)   labels: (1797,)
+darkest pixel: 0.0   brightest pixel: 1.0
+train rows: 1257   test rows: 540
+train tensor: (1257, 1, 8, 8)   test tensor: (540, 1, 8, 8)
+parameters: 1898
+steps per epoch: 40
+epoch  1  train loss 2.2796
+epoch 10  train loss 0.3488
+epoch 20  train loss 0.1467
+epoch 30  train loss 0.0922
+epoch 40  train loss 0.0663
+
+seconds        : 2.3
 train accuracy : 0.9881  (1242 of 1257 train rows)
 test accuracy  : 0.9796  (529 of 540 test rows)
 ```
@@ -1557,13 +1680,89 @@ test accuracy  : 0.9796  (529 of 540 test rows)
 
 > *"Trained on 1,257 handwritten digits in 3.1 seconds. Train accuracy 0.9881 — 1,242 of 1,257. Test accuracy 0.9796 — 529 of 540 held-out digits it never saw. The gap between them is about one accuracy point, which is small: the model got 15 of its own training digits wrong and 11 of the held-out ones, so it has not memorised its homework. If the train number had been 1.0000 and the test number 0.93, that gap would be overfitting."*
 
-**Marking notes.** **The row counts must be there on both.** And **the seconds must be their own** — a student reporting 3.1 seconds on a machine that took 14 has copied the file's number, which is the same offence as copying an answer.
+**Marking notes.** **The row counts must be there on both.** And **the seconds must be their own** — anywhere from 2 to 15 is normal, and a student reporting the file's number on a machine that took 14 seconds has copied it, which is the same offence as copying an answer. **One thing to praise:** anybody who notes that `1257 + 540 = 1797`. That addition check is Week 8's habit applied to a new place.
 
-**One thing to praise:** anybody who notes that `1257 + 540 = 1797` and that all 1,797 digits are accounted for. That addition check is Week 8's habit applied to a new place.
+### Fix the Broken Program
 
-### Page 26.5 — The filter grid, and two filters with numbers
+**Bug 1 — the runtime one.** Line `opt = torch.optim.Adam(model, lr=1e-3)`; fix **`model.parameters()`**. The optimiser was handed the layers, not the blocks of numbers.
 
-**The complete file:**
+**Run it again** and the last line is `RuntimeError: expected scalar type Long but found Float`.
+
+**Bug 2 — the dtype one.** Line `ytr = torch.from_numpy(y_train).float()`; fix **`.long()`**. The rule: **`X gets .float()`, `y gets .long()`.**
+
+**Third run (it works, with bug 3 still in):**
+
+```text
+epoch  1  loss 2.3015
+epoch 10  loss 2.0198
+epoch 20  loss 1.6438
+test accuracy: 0.9370
+```
+
+**Bug 3 — the silent one.** Line `loss = loss_fn(torch.softmax(model(xb), dim=1), yb)`. The epoch-1 loss 2.3015 is a near-perfect match for 2.30, so **no, the "first loss near 2.30" check does not catch it.** What does: *"If there is a softmax between my last Linear and my loss, that is the bug. CrossEntropyLoss squashes for me. The loss gets logits; humans get probabilities."*
+
+| | bug 3 still in | all three fixed |
+|---|---:|---:|
+| epoch 1 loss | **2.3015** | **2.2768** |
+| epoch 10 loss | **2.0198** | **0.6186** |
+| epoch 20 loss | **1.6438** | **0.4013** |
+| test accuracy | **0.9370** | **0.9611** |
+
+(These are the last batch's loss in each epoch, not the epoch average, which is why they are noisier than the numbers in Type This.)
+
+**Why it is the most expensive kind of bug:** it does not crash, warn or look wrong. 0.9370 looks like a slightly worse architecture, so you would spend an afternoon adding layers and changing learning rates when the architecture was fine all along.
+
+**Marking note.** The bugs fire in a fixed order (runtime, dtype, silent); a student who finds bug 3 by *reading* before running has earned the praise.
+
+### Puzzle of the Week — The Softmax Shuffle
+
+Scores `2.0, 1.0, −1.0` (chances 0.7054, 0.2595, 0.0351, argmax 0).
+
+| What was done | chances change? | argmax change? | the three chances |
+|---|---|---|---|
+| add 100 to all three | **no** | **no** | 0.7054 0.2595 0.0351 |
+| subtract 2 from all three | **no** | **no** | 0.7054 0.2595 0.0351 |
+| double all three | **yes** | **no** (still 0) | 0.8789 0.1189 0.0022 |
+| multiply all three by −1 | **yes** | **yes** (now 2) | 0.0420 0.1142 0.8438 |
+
+**Part 2.** The two rows that leave the chances unchanged are **add 100** and **subtract 2**: both add the same amount to every score. That shifts every exponential by the same factor, which cancels in the division. A softmax cares about the *differences* between scores and nothing else.
+
+**Part 3.** **Double them all** keeps the argmax and changes the confidence; it went **up**, 0.7054 to 0.8789, because doubling doubles every gap. (Halving would lower it without changing the answer, which is what "temperature" means in a chat model's settings.)
+
+**Part 4.** Subtracting the biggest score is allowed for the Part 2 reason: it adds the same amount to every score, so the chances are identical. It is worth doing because it stops the arithmetic exploding: `e^100` is about 2.7 × 10⁴³, more than a 32-bit float holds (about 3.4 × 10³⁸), so it would become `inf` and the chances `nan`. After subtracting, the largest thing exponentiated is `e^0 = 1`.
+
+**Part 5.** It was **already decided before the softmax ran.** Multiplying by −1 changed which raw score is biggest. Softmax never reorders anything (it is `e^`, which always increases, then division by one common total). If the argmax changed, something changed the scores.
+
+(Independently recomputed the four chance rows above: all agree.)
+
+### Think Deeper
+
+**T1.** A strong answer covers three things. **The distinction:** "I do not know what filter 3 does" is a statement about *you*; "filter 3 does nothing" is a statement about the *model* and is false — its nine numbers are used at every position of every picture and the model reads 529 of 540 digits. Undescribable is not useless. **What goes in the report:** all eight filters, three explicitly unlabelled, with the two-patch numbers for every one; publishing only the two you can name is cherry-picking (it says first layers learn edge detectors when a quarter of them do). **The level-5 note:** filter 1 answers −1.887 and −3.428 — negative to both patches — so it fires on **blank paper**; the most interesting filter is the one that does not fit the story.
+
+**T2.** A strong answer covers three things. **Why the hiding is real engineering:** on a bigger network scores of ±100 happen; `e^100` becomes `inf`, a chance as small as `e^−110` rounds to zero, `ln(0)` is minus infinity and training fills with `nan`. "Softmax, then log" is the unsafe order; the fused log-softmax is safe. **Why the name is still a design mistake:** `BCEWithLogitsLoss` announces what it wants and Week 22's students got it right; `CrossEntropyLoss` announces nothing and fails silently. Something like `CrossEntropyWithLogitsLoss` would have cost a few characters. **The principle:** a library may hide arithmetic; it should not hide a *contract* ("give me raw scores, not probabilities"). Mark for the three ideas, not for agreeing.
+
+### Build It — Train It, Look Inside It, Compare It
+
+**Step checklist (the answers the student should have written).** Step 1 (M1 total in pen): **1,898**. Step 7, steps per epoch: **40**. Step 8, epoch-1 loss: about **2.30** (prints 2.2796). Steps 2–6, 9–13 are "done or not done"; the numbers they produce are in the three tables below.
+
+**The training report — the real numbers:**
+
+| | value |
+|---|---|
+| rows in the training pile | **1,257** |
+| rows in the held-out pile | **540** |
+| do they add to 1,797? | **yes: 1257 + 540 = 1797** |
+| `parameters:` printed | **1898**, and paper said 1,898 |
+| steps per epoch | **40**, because `1257 ÷ 32 = 39.28`, so 39 full batches of 32 and one of 9 |
+| epoch 1 loss | **2.2796**; a fresh ten-class net should print near **2.30** |
+| epoch 40 loss | **0.0663** |
+| seconds | **their own**; about 2 to 3 on a fast laptop, up to 15 on a slow one |
+| train accuracy | **0.9881** — 1,242 of 1,257 |
+| test accuracy | **0.9796** — 529 of 540 |
+
+**Big or small gap?** **Small**: about one accuracy point (15 wrong at home, 11 on the exam). A big gap looks like train 1.0000 and test 0.93. One point means it learned something real rather than memorising 1,257 pictures. The marking notes for this table (row counts on both, seconds their own, praise the 1257 + 540 check) are under **B5** above.
+
+**The filter grid.** The complete file:
 
 ```python
 """filters.py - look at the eight filters, and price the two networks."""
@@ -1700,38 +1899,88 @@ filter   answer to a bright-LEFT edge   answer to a bright-TOP edge
 
 **Expected runtime: about 4 seconds.**
 
+The filled-in table (workbook columns: bright-LEFT, bright-TOP, what it responds to):
+
+| filter | bright-LEFT | bright-TOP | honest description |
+|---:|---:|---:|---|
+| 0 | +0.750 | −1.651 | weakly prefers bright-left; dislikes bright-top |
+| 1 | −1.887 | −3.428 | **negative to everything — it fires on blank paper, not ink** |
+| 2 | −0.956 | −0.032 | likes ink in general (weights sum +3.463); no left-right preference |
+| 3 | +0.543 | +0.158 | **weak. Cannot be described honestly.** |
+| **4** | +0.503 | **+3.760** | **horizontal edge detector: bright above, dark below** |
+| 5 | −0.876 | +0.212 | **weak.** Six positive weights (sum +3.070) make it ink-like, with a mild dislike of bright-left; no clean story |
+| **6** | **+2.830** | −1.219 | **vertical edge detector: bright left, dark right** |
+| 7 | +2.916 | +3.041 | likes both patches; weights sum +2.837, best read as an **ink-total** filter (two test patches cannot support "corner") |
+
+**The nine numbers, for the filters a student is likely to write out:**
+
+| filter | the nine numbers (rounded) |
+|---:|---|
+| 0 | `+0.092 +0.307 −0.803` / `−0.526 +0.157 +0.704` / `+0.443 +0.657 +0.482` |
+| 1 | `−0.155 −0.515 −0.369` / `−0.783 −0.661 −0.084` / `−0.059 +0.377 +0.543` |
+| 4 | `−0.185 +0.784 +0.742` / `+0.469 +0.383 −0.196` / `−0.105 −0.977 −0.681` |
+| 6 | `+0.509 −0.129 −0.149` / `+0.382 −0.507 −0.767` / `+0.761 +0.348 −0.550` |
+| 7 | `+0.478 +0.491 +0.006` / `+0.656 +0.744 +0.563` / `+0.847 −0.340 −0.608` |
+
+*(Filters 2, 3 and 5: run `filters.py` and print `w[i]`; the printed file above only prints 4 and 6.)*
+
+**Filter 6's arithmetic against the bright-left patch, in full**, so a student can check it:
+
+```text
+the patch:   1   1  −1        the filter:   0.509  −0.129  −0.149
+             1   1  −1                      0.382  −0.507  −0.767
+             1   1  −1                      0.761   0.348  −0.550
+
+row 0:  0.509 − 0.129 + 0.149  =  +0.529
+row 1:  0.382 − 0.507 + 0.767  =  +0.642
+row 2:  0.761 + 0.348 + 0.550  =  +1.659
+                                  -------
+                                   +2.830
+```
+
+**Two describable: 4 and 6**; either counts. **Honestly undescribable: 3** (and 5, beyond a mild ink-like reading).
+
 **A full-marks pair of descriptions:**
 
-> **Filter 6.** `0.509 −0.129 −0.149 / 0.382 −0.507 −0.767 / 0.761 0.348 −0.550`. Its whole left column is positive and its whole right column is negative, so it adds up whatever is on the left and subtracts whatever is on the right. **It answers +2.830 to a bright-left edge and −1.219 to a bright-top one, so it is a vertical edge detector**, and it prefers bright-on-the-left specifically rather than any vertical edge.
+> **Filter 6.** `0.509 −0.129 −0.149 / 0.382 −0.507 −0.767 / 0.761 0.348 −0.550`. Its whole left column is positive and its whole right column is negative, so it adds up whatever is on the left and subtracts whatever is on the right. **It answers +2.830 to a bright-left edge and −1.219 to a bright-top one, so it is a vertical edge detector.**
 >
 > **Filter 4.** `−0.185 0.784 0.742 / 0.469 0.383 −0.196 / −0.105 −0.977 −0.681`. Top row mostly positive, bottom row all negative. **It answers +3.760 to a bright-top edge and only +0.503 to a bright-left one, so it is the same idea rotated: a horizontal edge detector.**
 >
 > **And one I cannot describe: filter 3.** It answers +0.543 and +0.158 — nearly nothing to both patches — and its nine numbers do not have a pattern I can name. I do not know what it does.
 
-**Marking notes.** **A number per description, or it does not count.** And **the honest "cannot describe" earns marks, explicitly.** The failure mode to mark down is a confident label with nothing behind it.
+**Marking notes.** **Two filters described with a number is full marks.** **A number per description, or it does not count.** **An honest "cannot describe" earns marks, and say so out loud.** The thing to mark down is a confident story with no number attached — "filter 3 detects curves" is unsupported and the follow-up is *"what number tells you that?"* **Also note:** the filter numbering depends on the seed; a student whose own run differs is not wrong, so mark the *method* (a number per description) rather than matching slot numbers. **Before training (the scrap-paper sketch).** Most students draw a bullseye or a half-and-half split; both are real things first layers learn, and the split one is right. Mark it present or absent, and read two aloud during the vote, including one that turned out wrong.
 
-### Page 26.6 — The four-row comparison table
+**The four-row comparison.**
 
-| Row | CNN | dense MLP (Week 23) | Difference |
+| Row | my CNN | Week 23's dense 64 → 64 → 10 | difference |
 |---|---:|---:|---|
 | parameters | **1,898** | **4,810** | CNN uses **2,912 fewer** |
-| seconds to train | 3.1 | 0.4 | dense is about **8× faster** |
+| seconds to train | 3.1 (2.3 in the workbook's run) | 0.4 (0.3) | dense is about **8× faster** |
 | train accuracy | 0.9881 (1,242 / 1,257) | 0.9889 (1,243 / 1,257) | dense by **1 digit** |
-| **test accuracy** | **0.9796 (529 / 540)** | **0.9722 (525 / 540)** | CNN by **4 digits** |
+| **test accuracy** | **0.9796** | **0.9722** | CNN by **4 digits** |
+| test correct out of 540 | **529** | **525** | **4** digits |
 
 **A full-marks sentence:**
 
 > *"I would put the **parameter count** in a report: 1,898 against 4,810, which is 2,912 fewer weights and is exactly reproducible. I would be careful with the test accuracy: 529 against 525 is only four digits out of 540, which is inside the run-to-run wobble, so the honest statement is that the two networks are level on accuracy while the CNN is less than half the size. And the reason the size matters more than four digits is that the conv layers' weight counts do not depend on the picture size at all — the same 80 first-layer weights would work on a 200×200 photograph, while the dense network's 4,160 are welded to 8×8."*
 
-**Marking notes.** **The wrong answer that looks right is "the CNN is more accurate, so I'd report the test row."** It is not wrong that test accuracy is the row you report in general — Week 8 through 11 drilled that, and it is right. What is wrong is treating a four-digit difference as a finding. **The distinction you are marking is between "which row is meaningful in principle" and "which difference is big enough to claim".** Both are correct answers to different questions, and a student who names both is at level 5:
+**Marking notes.** **The wrong answer that looks right is "the CNN is more accurate, so I'd report the test row."** It is not wrong that test accuracy is the row you report in general — Week 8 through 11 drilled that. What is wrong is treating a four-digit difference as a finding. **The distinction you are marking is between "which row is meaningful in principle" and "which difference is big enough to claim".** A student who names both is at level 5:
 
 > *"Test accuracy is the row that belongs in a report, because it is the only one measured on unseen data. But the test difference here is four digits out of 540 and I would report it as 'level'. The difference I would actually claim is the parameter count."*
 
 **And mark down, gently, any answer that picks train accuracy.** Both networks score about 0.988 on their own homework and it tells you nothing.
 
-### Page 26.7 — Stretch: the whole softmax, by hand
+### Draw It
 
-*Take the ten real scores. Do all three steps. Check the ten chances add to 1.*
+**The three zero-weight blocks:** `ReLU`, `MaxPool2d`, `Flatten`. **The number that would change on a 200 × 200 picture:** the **`Linear` layer's 650** (it becomes 400,010, since the flatten is `16 × 50 × 50 = 40,000`). **The numbers that would not:** the two conv layers' **80** and **1,168**. A good drawing has the 8×8 picture labelled `(1, 1, 8, 8)`, five blocks (conv, pool, conv, pool, flatten) each with its shape **on** it and weight count **under** it, the `Linear` block with 650, ten bars with the tallest ringed at **4.46** and an arrow to *one*, and `80 + 1168 + 650 = 1898` written out. A great one shows the spatial numbers shrinking while the channel numbers grow.
+
+### Self-Check
+
+There are no right answers, but three rows predict next week. If **"say where the softmax went, and quote the two loss numbers"** is a 😕, send them back to the fixed-versus-broken columns of **Fix the Broken Program**; the two numbers on the same picture are `0.0244` and `1.4818`. If **"convert 0.9796 and 0.9722 into counts"** is a 😕, do it once: `0.9796 × 540 = 529`, `0.9722 × 540 = 525`, four digits (Week 27 builds a table on this habit). If **"say honestly that I cannot describe some of them"** is a 😕, revisit filters 3 and 5 (`+0.543 / +0.158` and `−0.876 / +0.212`): nothing there to describe, and noticing that is a skill.
+
+### Stretch — the whole softmax on all ten scores
+
+*(This is the lesson's ten-score version of M3, not a separate workbook item.) Take the ten real scores. Do all three steps. Check the ten chances add to 1.*
 
 ```text
 the ten scores:

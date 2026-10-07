@@ -15,7 +15,7 @@
 | **New maths** | **The harmonic mean:** `2 × p × r ÷ (p + r)`, and why it drags a lopsided pair down towards the smaller of the two numbers. Computed by hand for **(0.9, 0.1)**, **(0.6, 0.6)** and **(0.667, 0.070)** before the symbols appear. |
 | **New syntax** | `f1_score(y, pred)` · `precision_recall_fscore_support(y, pred)` |
 | **Dataset** | Week 8's `make_classification(weights=[0.99, 0.01], random_state=0)` fraud table **plus the student's own Week 7 delivery pipeline** (`make_data.py`, seed 0). **Nothing downloads. No internet needed.** |
-| **Materials** | **Five station cards, printed and laid out before class** (full text below) · a timer that can do 8 minutes · a whiteboard divided **down the middle** for the Arithmetic Race · printed workbook pages 9.1–9.6 · **last week's 2×2 and Week 7's ablation table still on the wall** · the Bug Log |
+| **Materials** | **Five station cards, printed and laid out before class** (full text below) · a timer that can do 8 minutes · a whiteboard divided **down the middle** for the Arithmetic Race · the printed workbook (`workbook/week-09.md`; print the Warm-Up, Do the Maths by Hand, and the whole 🛠️ Build It section first) · **last week's 2×2 and Week 7's ablation table still on the wall** · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, scikit-learn, joblib. **No new installs.** `make_data.py` must still be in the delivery folder. |
 | **Prep time** | 30 minutes the night before (15 of them printing and laying out the five stations) · 10 minutes on the day |
 | **Expected runtime of the code** | `f1.py` **under 2 seconds**. Each relay station **under 3 seconds**. The whole relay, all five stations back to back, is under 10 seconds of actual computing — **the 40 minutes is thinking and typing, not waiting.** |
@@ -160,7 +160,7 @@ On our numbers, and do this arithmetic out loud in three separate lines, never i
 
 ### 4. The three pairs, computed by hand — this is the figure to teach from
 
-Here are the three pairs the lesson works through, with every division written out. **These are the numbers on the wall figure and on workbook page 9.1.**
+Here are the three pairs the lesson works through, with every division written out. **These are the numbers on the wall figure and on the workbook's Do the Maths by Hand M1 (the first two pairs and the third) and in the B3 answer.**
 
 ![The plain mean is too kind](../figures/fig-w09-1-harmonic-vs-plain-mean.svg)
 *Figure 9.1 — The plain mean is too kind. The harmonic mean always lands near the smaller of the two numbers, and that is the entire point of F1.*
@@ -602,14 +602,14 @@ flags everything  tn   0 fp 986 fn  0 tp 14   F1 = 28 / 1014 = 0.0276
 
 **Expected runtime: under 2 seconds.** If `tn` is not 979, a `random_state=0` is missing somewhere.
 
-- [ ] **Run all five relay stations yourself, in order, and time yourself.** The complete files are in the Answer Key under pages 9.3a–9.3e. **Do this properly — it is the single most valuable 15 minutes of prep this week**, because it is the only way to find out that station 4 takes you eleven minutes and needs its card rewritten. Expected outputs are in the Answer Key. **Total computing time: under 10 seconds. Total typing time for you: about 12 minutes. Budget the student at twice that.**
+- [ ] **Run all five relay stations yourself, in order, and time yourself.** The complete files are in the Answer Key, under Build It, as the five "Relay station file" entries. **Do this properly — it is the single most valuable 15 minutes of prep this week**, because it is the only way to find out that station 4 takes you eleven minutes and needs its card rewritten. Expected outputs are in the Answer Key. **Total computing time: under 10 seconds. Total typing time for you: about 12 minutes. Budget the student at twice that.**
 
 - [ ] **Break it on purpose, twice, so you have seen both live.**
   1. `prec, rec, f1 = precision_recall_fscore_support(y_val, pred)` — three names for four results. You get `ValueError: too many values to unpack (expected 3)`. **Loud, instant, unambiguous.** This is deliberate mistake one.
   2. `f1_score(y_val, pred, average="macro")` — you get **0.6204** instead of 0.2500, **no error and no warning.** This is deliberate mistake two and it is the important one.
 
 - [ ] **Print the five station cards, cut them out, and lay them on five separate desks or five separate corners of one table.** Full text in the Activity section. **Each card is a title, three bullet-point instructions, and one line beginning "You hand over:".** Nothing else — an eight-minute station has no time for a student to work out what is being asked.
-- [ ] **Print workbook pages 9.1–9.6.**
+- [ ] **Print the workbook** (`workbook/week-09.md`). In class you need Do the Maths by Hand M1 and the Build It relay handover record; the rest goes home or is spread through the week (see **📤 Homework to Assign**).
 - [ ] **Divide the whiteboard down the middle with a vertical line**, and write `PLAIN MEAN` on the left and `HARMONIC MEAN` on the right. That is the Arithmetic Race board and it should be waiting when they walk in.
 - [ ] **Check both wall artifacts are still up:** Week 8's 2×2 and Week 7's ablation table. **You will point at both.**
 - [ ] **Set a timer you can hear.** Eight minutes, five times. A phone on silent is useless.
@@ -620,7 +620,7 @@ flags everything  tn   0 fp 986 fn  0 tp 14   F1 = 28 / 1014 = 0.0276
 - [ ] The five station cards on the five stations, face up.
 - [ ] **A blank sheet at each station headed "HANDOVER"**, with one line for what gets passed on.
 - [ ] Whiteboard divided, `PLAIN MEAN` and `HARMONIC MEAN` written.
-- [ ] Workbook 9.1 out. **Nothing filled in.**
+- [ ] Workbook out at **Do the Maths by Hand M1** and at **Build It — the relay handover record**. **Nothing filled in.**
 - [ ] Week 8's 2×2 and Week 7's ablation table both visible.
 - [ ] Bug Log out at a fresh page.
 - [ ] Timer tested out loud.
@@ -630,7 +630,7 @@ flags everything  tn   0 fp 986 fn  0 tp 14   F1 = 28 / 1014 = 0.0276
 **Four of the five objectives survive with no computer at all**, and the maths half of this lesson is *better* on paper.
 
 1. **The drive to grandmother's house.** Ninety, ten, the clock, eighteen. Five minutes, no electricity, and it is the concept.
-2. **The Arithmetic Race, exactly as planned.** Two halves of the board, plain mean on the left, harmonic on the right, all three pairs. **Objective 1, complete.** Then the six-row check table from §5, which is pure division. (Answers: page 9.1.)
+2. **The Arithmetic Race, exactly as planned.** Two halves of the board, plain mean on the left, harmonic on the right, all three pairs. **Objective 1, complete.** Then the six-row check table from §5, which is pure division. (Answers: Do the Maths by Hand M1 and Practice Set B, B3, in the Answer Key.)
 3. **The relay, run entirely on paper.** This works and it is arguably a better test of objective 3. Print the station cards unchanged and hand each station a printed data summary instead of a laptop. Station 1: *"here are the four audit numbers — which is which, and which one worries you?"* Station 2: *"1,200 / 400 / 400 — write the two `train_test_split` calls out by hand and say what `stratify` is for."* Station 3: *"the dummy says 'on time' to all 400. What is its accuracy and what is its AUC?"* (0.7125 and 0.5000.) Station 4: *"list the pipeline's three steps in order and say what breaks if you swap two of them."* Station 5: *"here is the 2×2 — 246, 39, 64, 51. Give me precision, recall and F1."* **Eight minutes each, same clock, same handovers.**
 4. **The see-saw, on paper.** Three models, three sets of four counts, three F1s from the counts. **Objective 2, complete**, and it is nine divisions.
 5. **The report card.** Objective 4 is a writing task anyway. Hand them the four counts and require the words *"on the 400 validation rows"* beside every number.
@@ -658,7 +658,7 @@ Use this section to run the lesson; the table shows the timing and each segment 
 | 🎲 Their Turn — The Term 1 Relay | 40 | 65 | Five stations, eight minutes each, one artifact |
 | 🔑 Wrap & Assign | 5 | 70 | Three checks, the takeaway, homework |
 
-> **📌 Why this is not the standard 7 / 18 / 18 / 20 / 7 shape.** Week 9 is a **checkpoint**: the relay is the assessment and it needs its full 40 minutes, so everything else is compressed. The five segments are still the five segments and the total is still 70. **The one thing you must not do is borrow minutes from the relay to finish the maths.** If the maths runs over, cut the third pair (0.667 / 0.070) and set it as homework — it is already on workbook page 9.1.
+> **📌 Why this is not the standard 7 / 18 / 18 / 20 / 7 shape.** Week 9 is a **checkpoint**: the relay is the assessment and it needs its full 40 minutes, so everything else is compressed. The five segments are still the five segments and the total is still 70. **The one thing you must not do is borrow minutes from the relay to finish the maths.** If the maths runs over, cut the third pair (0.667 / 0.070) and set it as homework — it is already in the workbook as Do the Maths by Hand M1, pair 3.
 
 ---
 
@@ -822,7 +822,7 @@ Give them **0.9 and 0.1**, and write both sets of working simultaneously as they
 
 > **F1 score** — the harmonic mean of precision and recall. One number that respects both, and lands near the smaller of the two whenever they disagree.
 
-**Do this:** Hand out workbook page 9.1 and give them three minutes on the third pair — **0.667 and 0.070** — in pen. Walk round. **Do not help beyond re-reading the three lines of working from the board.**
+**Do this:** Hand out the workbook open at Do the Maths by Hand M1 and give them three minutes on the third pair — **0.667 and 0.070** — in pen. Walk round. **Do not help beyond re-reading the three lines of working from the board.**
 
 > "Pen. Three lines each side. And beside your harmonic answer, write down whether it is between 0.070 and 0.140."
 
@@ -1102,7 +1102,7 @@ And the sentence for this week:
 - **Five station cards, printed, one per station.** Full text below. Lay them out physically separated — five desks, or five corners of one big table — so that moving between them is a real move.
 - **Five HANDOVER sheets**, one per station, each with a single ruled line under the words `You hand over:`.
 - **A timer that makes a noise.** Eight minutes, five times.
-- Workbook page 9.3, which is the handover record with five rows.
+- The workbook's 🛠️ Build It — **The relay handover record**, the table with five rows.
 - The delivery folder, with `make_data.py` in it.
 
 ### The five station cards, word for word
@@ -1263,7 +1263,7 @@ The lesson is the one from Week 2 and it has now been said three ways: **the met
 
 | What happens | Why | What to do right now |
 |---|---|---|
-| **The maths half runs over and the relay loses two stations** | The harmonic mean is genuinely interesting and the conversation is good | **Set a physical timer for minute 27 and obey it.** If you are behind, cut pair three (0.667 / 0.070) — it is already on workbook page 9.1 as homework. **Never cut a station.** |
+| **The maths half runs over and the relay loses two stations** | The harmonic mean is genuinely interesting and the conversation is good | **Set a physical timer for minute 27 and obey it.** If you are behind, cut pair three (0.667 / 0.070) — it is already in the workbook as Do the Maths by Hand M1, pair 3, as homework. **Never cut a station.** |
 | The formula gets taught before the drive | It feels efficient: write `2pr/(p+r)`, then use it | **Do it the other way round.** Ninety, ten, the clock, eighteen. A room that has felt the 50-versus-18 gap accepts 0.18 without argument; a room that was handed the formula spends the rest of the term thinking F1 is arbitrary. |
 | Pair two (0.6, 0.6) gets skipped as "obvious" | It looks like it teaches nothing | **It is the pair that stops F1 feeling like a punishment.** Skip it and students believe the harmonic mean is always smaller, which is the week's commonest misconception. Two minutes. |
 | The harmonic mean gets computed as `2 ÷ (p + r)` or `p × r ÷ (p + r)` | Three symbols, easy to drop one | Do not correct the formula. Ask the range question: *"is your answer between the smaller and twice the smaller?"* **Let the check find the error.** |
@@ -1413,37 +1413,57 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
-Use this section for the words to say when you hand out the homework.
+Use this section to hand out the homework. The workbook for this week is long, so the split below says what is done in class, what is the marked homework, and what is left as practice.
 
 **Say this:**
 
-> "About an hour, three pages, and the middle one is the term's report card.
+> "About an hour, three pieces of work, and the middle one is the term's report card. They are all in the workbook under **🛠️ Build It — The Term 1 Report**.
 >
-> **First, page 9.4 — the Term 1 reflection sheet.** Nine weeks, nine short questions, and I want the numbers in your answers, not adjectives. 'The model got better' is worth nothing. 'From 0.7541 to 0.7599 on the 400 validation rows' is worth full marks.
+> **First, the Term 1 reflection sheet.** Nine weeks, nine short questions, and I want the numbers in your answers, not adjectives. 'The model got better' is worth nothing. 'From 0.7541 to 0.7599 on the 400 validation rows' is worth full marks.
 >
-> **Second, page 9.5 — the full metrics report for your own delivery model, and this is the one I'm marking hardest.** Five things: **the two-by-two with the four cells added up and checked; precision; recall; F1; and the ROC AUC.** Every single one of those five numbers gets the pile written next to it. Not '0.5667'. '*0.5667 on the 400 validation rows.*' If a number on that page does not say which rows it came from, it does not count, and that will be true in Week 36 too.
+> **Second, 'My own model's report' — the full metrics report for your own delivery model, and this is the one I'm marking hardest.** The two-by-two with the four cells added up and checked, then six numbers: **accuracy, precision, recall, specificity, F1 and the ROC AUC.** Every single one of those numbers gets the pile written next to it. Not '0.5667'. '*0.5667 on the 400 validation rows.*' If a number on that page does not say which rows it came from, it does not count, and that will be true in Week 36 too.
 >
-> **And show the fraction for each one.** Not 'precision 0.5667' — '*51 out of the 90 I flagged, so 51 ÷ 90 = 0.5667.*' The fraction is the answer; the decimal is arithmetic.
+> **And show the fraction for each one.** Not 'precision 0.5667' — '*51 out of the 90 I flagged, so 51 ÷ 90 = 0.5667.*' The fraction is the answer; the decimal is arithmetic. Then check F1 the other way, from precision and recall, and do the range check.
 >
-> **Third, page 9.6 — one paragraph.** For **your** application — late pizza deliveries — **which of the two errors should you fear more, and what would you change to reduce it?** A false alarm here is a driver sent early to an order that was never going to be late. A miss is a customer waiting forty minutes with no warning and no apology. **Pick one, say who it hurts, and then say one concrete thing you'd change.** And be honest if your one change would make the other error worse, because it will."
+> **Third, 'Which error should my application fear more?' — one paragraph.** For **your** application — late pizza deliveries — **which of the two errors should you fear more, and what would you change to reduce it?** A false alarm here is a driver sent early to an order that was never going to be late. A miss is a customer waiting forty minutes with no warning and no apology. **Pick one, say who it hurts, and then say one concrete thing you'd change.** And be honest if your one change would make the other error worse, because it will. Two Bug Log entries go in the back."
 
-**Workbook pages:** 9.1, 9.2, 9.3 in class · **9.4, 9.5, 9.6** at home.
+**Workbook sections, and where each is done:**
 
-**Expected time:** 20 min on the reflection sheet · 25 min on the metrics report with all five fractions written out · 15 min on the paragraph. **About 60 minutes.**
+| Workbook section | Where | Marked? |
+|---|---|---|
+| **🔢 Do the Maths by Hand — M1, third pair only** (0.667 / 0.070) | In class, in the Concept segment (three minutes, pen) | Glance only |
+| **🛠️ Build It — The relay handover record** (five rows) | In class, filled in during and after the relay | Yes — mark against the table in the key |
+| **🛠️ Build It — reflection sheet, "My own model's report", "Which error should my application fear more?", Bug Log** | **At home — the marked homework** | **Yes — mark hardest** |
+| **✅ Warm-Up · 🔢 Do the Maths by Hand (rest of M1, M2, M3, M4) · 🔎 Predict the Output P1–P4** | At home, before the Build It pieces | Spot-check |
+| **✍️ Practice Set A · ✍️ Practice Set B · 🐞 Fix the Broken Program · 🧩 Puzzle of the Week · 🤔 Think Deeper · 🎨 Draw It · 📊 Self-Check** | Through the week, as time allows; pick what suits the student. Fix the Broken Program, Puzzle and Draw It are the three worth asking for if you choose only three. | Mark from the key if handed in |
 
-> **🧑‍🏫 What to look for when you mark it:** four things, and the last two are the real ones. **One — do the four cells add to 400?** If there is no addition check on the page, write the same one-line note you wrote last week; it takes three weeks of nagging and then it is permanent. **Two — is there a fraction beside every ratio?** A page of five correct decimals has done the arithmetic and missed the point. **Three — does every number name its pile?** This is the single habit that separates a student who can be trusted with a model from one who cannot, and it is what Week 36's paper is graded on. **Four — does the paragraph name a person?** *"We should reduce false negatives"* is a sentence about a metric. *"A customer waited forty minutes with no message, and next time they order from somewhere else"* is a sentence about a consequence, and only the second one ever changes what somebody builds.
+**Expected time for the marked homework:** 20 min on the reflection sheet · 25 min on the metrics report with all six fractions written out · 15 min on the paragraph. **About 60 minutes.** The other sections are extra to that hour, which is why they are spread over the week rather than set as one evening.
+
+> **🧑‍🏫 What to look for when you mark it:** four things, and the last two are the real ones. **One — do the four cells add to 400?** If there is no addition check on the page, write the same one-line note you wrote last week; it takes three weeks of nagging and then it is permanent. **Two — is there a fraction beside every ratio?** A page of six correct decimals has done the arithmetic and missed the point. **Three — does every number name its pile?** This is the single habit that separates a student who can be trusted with a model from one who cannot, and it is what Week 36's paper is graded on. **Four — does the paragraph name a person?** *"We should reduce false negatives"* is a sentence about a metric. *"A customer waited forty minutes with no message, and next time they order from somewhere else"* is a sentence about a consequence, and only the second one ever changes what somebody builds.
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Follows the workbook section by section, in the workbook's own order and with its own item labels (W1, M1, P1, A1, B1, T1 ...), so you can mark from this page alone. Values are the ones in the workbook's Answers section; teacher-only material (worked-out alternatives, wrong-answer maps, marking notes, the five relay station files) is added under the section it belongs to.
 
-### Page 9.1 — The Arithmetic Race
+### Warm-Up
 
-*For each pair, compute the plain mean and the harmonic mean. Then check that your harmonic answer lies between the smaller number and twice the smaller number.*
+**W1.** Blocked tourist card → **false positive** (you said positive, and you were wrong). Stolen card let through → **false negative** (you said negative, and you were wrong). **Read the two words backwards: the second word is what you predicted, the first says whether you were right.**
 
-**Pair 1 — precision 0.900, recall 0.100.**
+**W2.** **precision = 3 ÷ 10** (TP + FP — everything you flagged, the predicted-fraud *column*). **recall = 3 ÷ 14** (TP + FN — everything that really was fraud, the actual-fraud *row*).
+
+**W3.** **Zero, out of 14.** Its whole predicted-fraud column is empty: FP = 0 and TP = 0.
+
+**W4.** **FP and FN swap** — the 7 and the 11 change places — and **Python does not complain at all.** No error, no warning. The two numbers that move are the two errors, which is why this is the worst silent bug of the term.
+
+**W5.** **Because there is no `specificity_score` in scikit-learn.** You compute it yourself: `tn / (tn + fp)`. People go looking for it and assume they have installed something wrong. They have not.
+
+**Marking note.** W4 is last week's silent-swap bug coming back. A student who says "Python will raise an error" has not yet met it; do not tell them, let P2 do it.
+
+### Do the Maths by Hand
+
+**M1 — pair 1 (0.900, 0.100).**
 
 ```text
 plain    :  0.9 + 0.1 = 1.000        1.000 ÷ 2 = 0.5000
@@ -1453,7 +1473,7 @@ harmonic :  2 × 0.9 × 0.1 = 0.180
 check    :  smaller 0.100,  twice it 0.200,  and 0.1800 is between them.  ✅
 ```
 
-**Pair 2 — precision 0.600, recall 0.600.**
+**Pair 2 (0.600, 0.600).**
 
 ```text
 plain    :  0.6 + 0.6 = 1.200        1.200 ÷ 2 = 0.6000
@@ -1463,9 +1483,9 @@ harmonic :  2 × 0.6 × 0.6 = 0.720
 check    :  smaller 0.600,  twice it 1.200,  and 0.6000 is between them.  ✅
 ```
 
-**The two are identical, and that is the point of this pair.** When precision and recall agree, both averages agree. **A student who writes "they're the same, so F1 isn't always a penalty" has answered the whole page.**
+**M1(a).** **They are identical — 0.6000 both ways.** So the harmonic mean is **not** permanently pessimistic and F1 is not a "stricter score that is always lower". **It only punishes lopsidedness.** When precision and recall agree, both averages agree exactly. **This is the most important pair in the week**, because it tells you what F1 is actually measuring.
 
-**Pair 3 — precision 0.667, recall 0.070.** *(A bank with 200 real frauds. The model flags 21 and 14 of them are fraud: 14 ÷ 21 = 0.6667 and 14 ÷ 200 = 0.0700.)*
+**Pair 3 (0.667, 0.070).**
 
 ```text
 plain    :  0.667 + 0.070 = 0.737    0.737 ÷ 2 = 0.3685
@@ -1474,6 +1494,398 @@ harmonic :  2 × 0.667 × 0.070 = 0.0934
             0.0934 ÷ 0.737      = 0.1267
 check    :  smaller 0.070,  twice it 0.140,  and 0.1267 is between them.  ✅
 ```
+
+**M1(b).** The two averages are **0.3685** and **0.1267**. A press release would much prefer **0.3685** — it is nearly three times bigger and it sounds like a system that half works. **The truth is 0.1267**, and the reason is the number the plain mean threw away: recall 0.070 means **186 of the 200 real frauds walked straight through.** The plain mean gave that catastrophe an equal vote with a respectable precision and split the difference. **The harmonic mean refuses.**
+
+**M2(a).** `60 ÷ 90 = **0.6667** hours` (40 minutes).
+
+**M2(b).** `60 ÷ 10 = **6** hours`.
+
+**M2(c).** Total time **6.6667 hours** (6 hours 40 minutes). Total distance **120 km**.
+
+**M2(d).** `120 ÷ 6.6667 = **18.0** km/h`.
+
+**M2(e).** `2 × 90 × 10 ÷ 100 = 1800 ÷ 100 = **18.0**` — **exactly the same number.**
+
+**M2(f).** At 50 km/h, 120 km takes `120 ÷ 50 = **2.4** hours` — two hours twenty-four minutes. **You were in the car for 6.6667 hours.**
+
+**M2(g).** *"The plain mean of two speeds is not a speed the journey ever had — the clock says 6 hours 40, and only 18 km/h reproduces that."* **You spent nearly all your time crawling, so the crawl should dominate the average**, and that is exactly what the harmonic mean does. It is the right average for **rates over the same fixed amount of work** — 60 km each leg, or "one model, judged on catching things and on not crying wolf".
+
+**M3.**
+
+| Model | 2 × TP | 2 × TP + FP + FN | F1 |
+|---|---|---|---|
+| never says yes | **0** | **14** | **0.0000** |
+| the decision tree | **6** | **24** | **0.2500** |
+| flags everything | **28** | **1014** | **0.0276** |
+
+All three divisions are paper arithmetic: `0 ÷ 14`, `6 ÷ 24`, `28 ÷ 1014`.
+
+**M3(a).** **"Flags everything" has the best recall — a perfect 1.0000** — and **its F1 is 0.0276**, barely above the model that does nothing at all. It blocked all 986 legitimate transactions to get that perfect score. **Recall on its own is a stunt, exactly as accuracy was last week.**
+
+**M3(b).** **No — its F1 is honestly 0.0000.** Precision is `0 ÷ 0`, which is not a number; but F1 from the counts is `2 × 0 ÷ (0 + 0 + 14) = 0 ÷ 14`, and **14 is not zero**, so the division is perfectly legal. **That is one genuinely good reason to report F1: it survives a model that never says yes, where precision cannot.**
+
+**M3(c).** **TN.** There is no TN anywhere in the formula. The 979 (or 986, or 999,979) correctly-left-alone rows do not appear at all — which is Think Deeper T1.
+
+**M3(d).** `2 × 6 ÷ (12 + 4 + 3) = **12** ÷ **19** = **0.6316**`.
+
+**M4(a).** `2 × 51 ÷ (102 + 39 + 64) = **102** ÷ **205** = **0.4976**`.
+
+**M4(b).**
+
+```text
+2 × 0.5667 × 0.4435  =  0.50266
+0.5667 + 0.4435      =  1.01020
+0.50266 ÷ 1.01020    =  0.4976
+```
+
+**M4(c).** **Yes — 0.4976 both ways.** Range check: smaller is **0.4435**, twice it is **0.8870**, and 0.4976 sits between them ✅.
+
+**M4(d).** `precision = 4 ÷ **11** = **0.3636**` · `recall = 4 ÷ **14** = **0.2857**` · `F1 = 8 ÷ **25** = **0.3200**`.
+
+**M4(e).** **Nobody can tell from one measurement**, and the reason is on the bottom of the recall fraction: **14.** One extra fraud caught out of fourteen moves F1 from 0.2500 to 0.3200 — a big-looking jump resting on a single row. **A four-decimal number standing on 14 rows should make you uneasy**, and the instrument that puts a `±` on it is Week 11. Being uneasy about it now is exactly the right instinct.
+
+**Teacher additions for Do the Maths by Hand.**
+
+- **Marking notes.** Full marks needs **three separate lines** for each harmonic mean — the multiply, the add, the divide — not one line with everything crammed in. The three-line habit is what stops the commonest error, which is dividing by 2 as well as by (p + r). **And the range check on every row.** A student who does the check and catches their own mistake has done better work than one who was right first time.
+- **M1(a).** A student who writes "they're the same, so F1 isn't always a penalty" has answered the whole item.
+
+**M3 and A2, the arithmetic in full** (precision and recall as well as F1, for the three fraud models):
+
+**The arithmetic, in full:**
+
+```text
+never says yes
+  precision  =  0 ÷ (0 + 0)   =  UNDEFINED   (it flagged nothing at all)
+  recall     =  0 ÷ (0 + 14)  =  0 ÷ 14  =  0.0000
+  F1         =  2 × 0 ÷ (0 + 0 + 14)  =  0 ÷ 14  =  0.0000
+
+the decision tree
+  precision  =  3 ÷ (3 + 7)   =  3 ÷ 10  =  0.3000
+  recall     =  3 ÷ (3 + 11)  =  3 ÷ 14  =  0.2143
+  F1         =  2 × 3 ÷ (6 + 7 + 11)  =  6 ÷ 24  =  0.2500
+
+flags everything
+  precision  =  14 ÷ (14 + 986)  =  14 ÷ 1000  =  0.0140
+  recall     =  14 ÷ (14 + 0)    =  14 ÷ 14    =  1.0000
+  F1         =  2 × 14 ÷ (28 + 986 + 0)  =  28 ÷ 1014  =  0.0276
+```
+
+**Confirmed against scikit-learn:**
+
+```text
+--- three models, same 1000 validation orders, same 14 frauds ---
+never says yes    tn 986 fp   0 fn 14 tp  0   F1 = 0 / 14 = 0.0000
+the tree          tn 979 fp   7 fn 11 tp  3   F1 = 6 / 24 = 0.2500
+flags everything  tn   0 fp 986 fn  0 tp 14   F1 = 28 / 1014 = 0.0276
+```
+
+**M3(a), M3(b) and A2(c), the longer forms a teacher may want:**
+
+**(a) "Which model has the best recall, and is it the best model?"** The "flags everything" model, with recall **1.0000** — a perfect score. **It is not the best model.** It blocked all 986 legitimate transactions and its F1 is 0.0276, barely above the model that does nothing. **Recall on its own is a stunt, exactly like accuracy was last week.**
+
+**(b) "Why is the first model's precision undefined rather than zero?"** Precision is TP ÷ (TP + FP). Both are zero, so the fraction is 0 ÷ 0, which is not a number. scikit-learn prints `0.0000` and raises `UndefinedMetricWarning` to tell you why. **"Undefined" is the better answer and should be marked as such.** Its F1, though, is honestly 0.0000, because `2 × 0 ÷ 14` involves no division by zero at all — **which is one good reason to report F1.**
+
+**(c) "Which model would you actually ship?"** The tree, and **with reservations you should state.** It is the only one that catches anything (3 of 14) without blocking a whole country. But it misses 11 of 14 and 7 of the 10 cards it blocked belonged to innocent people. **A full-marks answer says "the tree, and it isn't good enough yet."** An answer that says "none of them" and explains why is also full marks.
+
+### Predict the Output
+
+**P1.**
+
+```text
+(2,)
+[0.99089069 0.25      ]
+[986  14]
+0.25
+```
+
+**Line 1 is `(2,)` because there are two classes, not four things.** `precision_recall_fscore_support` hands back **four** arrays, and each array has **one entry per class**. So `prec`, `rec`, `f1` and `sup` are each two numbers long: index 0 is the legit class, index 1 is fraud.
+
+**Line 4 printed 0.25 — the fraud class, index 1.** With two classes and `average` left alone, `f1_score` reports the F1 of **the positive class**, which is class 1, which is the class you care about. **That is the number that goes on the card.**
+
+Two details worth noticing. `f1` printed as `[0.99089069 0.25]` — **numpy prints the full precision**, which is why the report uses `%.4f`. And `sup` is `[986  14]`: **not a score, a count.** It is the smallest number on the screen and the reason every other number is shaky.
+
+**P2.**
+
+```text
+0.2500
+0.2143
+0.3000
+```
+
+**F1 sat still.** Precision and recall traded places — 0.3000 and 0.2143 swapped — but F1 stayed at exactly 0.2500.
+
+**Why:** swapping truth and predictions swaps FP and FN, and **F1's denominator adds them**: `6 + 7 + 11` and `6 + 11 + 7` are both 24. So the swap is invisible to F1 and visible in precision and recall.
+
+**The better bug-detector is the four counts.** F1 *cannot* warn you about the swap; the counts can, because `fn 7` on a model that misses most frauds is the wrong shape of story. **That is a real reason to keep printing them.**
+
+**P3.**
+
+```text
+0.18000000000000002
+0.5
+0.30000000000000004
+```
+
+**Line 3, in the order Python did it:** `2 × 0.9 × 0.1 = 0.18`, then `÷ 0.9 = 0.2`, then `+ 0.1 = 0.3`. Division binds tighter than addition, so the `r` on the end was added instead of being part of the denominator.
+
+**0.3 is plausibly wrong, and that is much worse than wildly wrong.** It is between 0.1 and 0.9, it looks like a metric, and it would sail into a report. Compare that with a crash, which stops you.
+
+Note also `0.18000000000000002` — the harmonic mean of 0.9 and 0.1 is not stored exactly in binary. Print it with `%.4f` and it says `0.1800`. **Round for display; never compare with `==`.**
+
+**P4.**
+
+```text
+0.6204
+0.9909
+```
+
+**`average="macro"`** is the F1 of a model **that treats both classes as equally important**: `(0.9909 + 0.2500) ÷ 2 = 0.6204`, giving the 986 easy rows exactly the same vote as the 14 hard ones.
+
+**`pos_label=0`** is the F1 **of the class you do not care about** — how well the model recognises ordinary legitimate shopping. **0.9909**, and it is a true statement about something nobody asked.
+
+**The four-second check:** *is this number between precision and recall?* F1 must land between the smaller of the pair and twice the smaller — here between **0.2143 and 0.4286**. **0.6204 is not. 0.9909 is not.** Both fail the check instantly, and neither raised so much as a warning.
+
+### Practice Set A
+
+**A1.** F1 score → **(ii)** · harmonic mean → **(iii)** · macro average → **(iv)** · support → **(i)**
+
+**A1(a).** **Support and the harmonic mean.** Support is a **count** of rows — it says nothing about quality. The harmonic mean is a **kind of average**, a tool; F1 is what you get when you point it at precision and recall. Calling either of them "the score" is a category mistake.
+
+**A2.**
+
+| Model | precision | recall | F1 |
+|---|---|---|---|
+| never says yes | **undefined** (`0 ÷ 0`) | **0.0000** (`0 ÷ 14`) | **0.0000** (`0 ÷ 14`) |
+| the decision tree | **0.3000** (`3 ÷ 10`) | **0.2143** (`3 ÷ 14`) | **0.2500** (`6 ÷ 24`) |
+| flags everything | **0.0140** (`14 ÷ 1000`) | **1.0000** (`14 ÷ 14`) | **0.0276** (`28 ÷ 1014`) |
+
+**A2(a).** **"Flags everything", with a perfect 1.0000 — and no, it is not the best model.** It blocked every legitimate transaction in the pile. Its F1 of 0.0276 is barely above the model that does nothing.
+
+**A2(b).** Precision is `TP ÷ (TP + FP)` and both are zero, so it is `0 ÷ 0`, which is **not a number**. scikit-learn prints `0.0000` and raises `UndefinedMetricWarning` to tell you why. **"Undefined" is the better answer.** Zero would mean "I flagged things and none of them were fraud", which is a different and more informative failure.
+
+**A2(c).** **The tree — with a stated reservation.** It is the only one that catches anything (3 of 14) without blocking a whole country. **But it misses 11 of 14, and 7 of the 10 cards it blocked belonged to innocent people, so it is not good enough yet.** An answer of *"none of them, and here is why"* is equally full marks.
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `ValueError: too many values to unpack (expected 3)`. The function returns **four** things — its name says so. | `prec, rec, f1, sup = precision_recall_fscore_support(y_val, pred)` |
+| b | **No error, no warning, and 0.6204** — two and a half times the right answer, because it gives 986 easy rows the same vote as 14 hard ones. | leave `average` alone: `f1_score(y_val, pred)` |
+| c | **No error, and 0.9909** — the F1 of the class you do not care about. | drop `pos_label=0` |
+| d | `TypeError: only length-1 arrays can be converted to Python scalars`. `f1` is a **list of two**, one per class, not a single number, and `%.4f` can only format one number. | `f1[1]`, the fraud class |
+| e | **No error, and a plausible wrong number.** Missing brackets: Python computes `(2pr ÷ p) + r`. | `f1 = 2 * p * r / (p + r)` |
+| f | **No error, and a false statement.** Those two F1s come from **different datasets** — 28.75% late against 1.4% fraud. | never compare F1 across datasets; compare models on the same rows |
+
+**A3(g).** **b, c, e and f** produce no error — four of the six, in fact, which is the shape of this whole week. **The hardest to catch is (f)**, because it is not a coding mistake at all: every number in it is correct, the formatting is right, and the sentence is still nonsense. **Comparing F1 across datasets is comparing a maths mark with a history mark.** Of the coding ones, **(b)** is worst, because 0.6204 is exactly the kind of number that looks like a result.
+
+**A4.** i → **S** · ii → **T** · iii → **P** · iv → **Q** · v → **R**
+
+**A5(a).** **No, none of them is wrong.** Every number is correctly computed.
+
+**B is the macro-average F1** — the average of the two classes' F1 scores with an equal vote each: `(0.9909 + 0.2500) ÷ 2 = 0.6204`.
+
+**C is the weighted-average F1** — the same two numbers weighted by support: `(0.9909 × 986 + 0.2500 × 14) ÷ 1000 = 0.9805`. **That is 98.6% a statement about legitimate transactions.**
+
+**D is the F1 of the fraud class** — the one you asked about. **0.2500.**
+
+**A5(b).** **Report D**, and if you have room, report A. D gives the four counts **and** the number, so the manager can see that the model caught 3 frauds out of 14 and blocked 7 innocent people — **and from those four counts anybody can recompute every other number on this page.** From 0.6204 alone, nobody can get back.
+
+**A5(c).** **B is on the `macro avg` row. C is on the `weighted avg` row. D is on the row called `1`.**
+
+**A5(d).** **The row called `1` — support 14.** Every interesting number in the whole report rests on those 14 rows: precision has 10 on the bottom, recall has 14, F1 has 24. **Collect a different 1,000 transactions and 14 could easily have been 8 or 22, and every one of those decimals would move.** Being uneasy about that is correct, and Week 11 is where the uneasiness gets an instrument.
+
+**A6.** For (0.667, 0.070) the four boxes are: **0.0934** (the multiply), **0.737** (the add), **0.1267** (the divide) and **0.3685** (the plain mean). Range check: smaller **0.070**, twice it **0.140**, and 0.1267 is between them ✅.
+
+**A6(a).** *"Line 3 is not near 0.37 because the harmonic mean is dragged down towards the smaller of the two numbers — a recall of 0.070 means 186 of 200 frauds were missed, and no average that respects both numbers can call that a third of a success."*
+
+**A6(b).** **The fourth box — the plain mean, 0.3685.** It is nearly three times larger and it is the one that hides the missed frauds.
+
+### Practice Set B
+
+**B1.**
+
+```python
+print("F1 : %.4f" % f1_score(y_val, pred))
+```
+
+```text
+F1 : 0.2500
+```
+
+**B2.**
+
+```python
+def harmonic(a, b):
+    h = 2 * a * b / (a + b)
+    small = min(a, b)
+    print("2 x %.4f x %.4f = %.5f" % (a, b, 2 * a * b))
+    print("%.4f + %.4f      = %.5f" % (a, b, a + b))
+    print("%.5f / %.5f = %.4f" % (2 * a * b, a + b, h))
+    print("range check: %.4f <= %.4f <= %.4f  -> %s"
+          % (small, h, 2 * small, small <= h <= 2 * small))
+    return h
+
+
+harmonic(0.9, 0.1)
+harmonic(0.5667, 0.4435)
+```
+
+```text
+2 x 0.9000 x 0.1000 = 0.18000
+0.9000 + 0.1000      = 1.00000
+0.18000 / 1.00000 = 0.1800
+range check: 0.1000 <= 0.1800 <= 0.2000  -> True
+2 x 0.5667 x 0.4435 = 0.50266
+0.5667 + 0.4435      = 1.01020
+0.50266 / 1.01020 = 0.4976
+range check: 0.4435 <= 0.4976 <= 0.8870  -> True
+```
+
+**Why the three separate prints matter:** they are the three lines you do on paper, in the same order, so the function is a *check* on your hand arithmetic rather than a replacement for it. **The commonest error in this week is dividing by 2 as well as by (p + r)**, and the middle line makes that impossible to hide.
+
+**B3.** `race.py`:
+
+```python
+"""race.py - six pairs, two averages each, and the range check."""
+pairs = [("0.900 / 0.100", 0.9, 0.1),
+         ("0.600 / 0.600", 0.6, 0.6),
+         ("0.667 / 0.070", 0.667, 0.070),
+         ("0.300 / 0.2143", 0.3, 3 / 14),
+         ("1.000 / 0.010", 1.0, 0.01),
+         ("0.014 / 1.000", 0.014, 1.0)]
+
+print("pair             plain    harmonic   smaller  2x smaller  in range?")
+for label, p, r in pairs:
+    plain = (p + r) / 2
+    harm = 2 * p * r / (p + r)
+    small = min(p, r)
+    ok = small <= harm <= 2 * small
+    print("%-15s  %.4f   %.4f    %.4f   %.4f      %s"
+          % (label, plain, harm, small, 2 * small, ok))
+```
+
+```text
+pair             plain    harmonic   smaller  2x smaller  in range?
+0.900 / 0.100    0.5000   0.1800    0.1000   0.2000      True
+0.600 / 0.600    0.6000   0.6000    0.6000   1.2000      True
+0.667 / 0.070    0.3685   0.1267    0.0700   0.1400      True
+0.300 / 0.2143   0.2571   0.2500    0.2143   0.4286      True
+1.000 / 0.010    0.5050   0.0198    0.0100   0.0200      True
+0.014 / 1.000    0.5070   0.0276    0.0140   0.0280      True
+```
+
+**The biggest gap is `1.000 / 0.010`: plain 0.5050 against F1 0.0198, a gap of 0.4852.** That is the "flag one transaction and be right about it" stunt — a perfect precision and thirteen frauds still walking around. **The plain mean calls it half a success; F1 calls it 2%.** The gap shrinks as the pair gets closer together and hits exactly zero on `0.600 / 0.600`.
+
+**And the last column is the point of the file: `True` six times out of six.** The range check needs no formula at all, and it catches every arithmetic slip in this week.
+
+**B4.**
+
+```python
+def metrics_report(y_true, y_pred, pile):
+    tn, fp, fn, tp = confusion_matrix(y_true, y_pred, labels=[0, 1]).ravel()
+    print("tn %d  fp %d  fn %d  tp %d   sum %d" % (tn, fp, fn, tp, tn + fp + fn + tp))
+    print("precision = %d / %d = %.4f   on %s" % (tp, tp + fp, tp / (tp + fp), pile))
+    print("recall    = %d / %d = %.4f   on %s" % (tp, tp + fn, tp / (tp + fn), pile))
+    print("F1        = %d / %d = %.4f   on %s"
+          % (2 * tp, 2 * tp + fp + fn, 2 * tp / (2 * tp + fp + fn), pile))
+    print("check against sklearn      : %.4f" % f1_score(y_true, y_pred))
+
+
+metrics_report(y_val, pred, "the 1,000 validation rows")
+```
+
+```text
+tn 979  fp 7  fn 11  tp 3   sum 1000
+precision = 3 / 10 = 0.3000   on the 1,000 validation rows
+recall    = 3 / 14 = 0.2143   on the 1,000 validation rows
+F1        = 6 / 24 = 0.2500   on the 1,000 validation rows
+check against sklearn      : 0.2500
+```
+
+**Three design choices worth naming.** `pile` is a *parameter*, so it is impossible to print a number without also printing where it came from. Every fraction shows its top and bottom, so the report explains itself. And the last line checks your own F1 against scikit-learn's — **the computer is not the authority here; agreement between two independent routes is.**
+
+**B5.** `term1_report.py`:
+
+```python
+"""term1_report.py - the full metrics report for my own delivery model.  Week 9."""
+from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (accuracy_score, confusion_matrix, f1_score,
+                             precision_score, recall_score, roc_auc_score)
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import (FunctionTransformer, OneHotEncoder,
+                                   StandardScaler)
+
+from make_data import make_deliveries
+
+NUM = ["distance_km", "items", "prep_minutes", "driver_experience_months",
+       "is_rush"]
+CAT = ["restaurant", "day_of_week", "weather"]
+
+df = make_deliveries(n=2000, seed=0).drop_duplicates().reset_index(drop=True)
+y = df["late"]
+X = df.drop(columns=["late", "order_id"])
+X_tmp, X_test, y_tmp, y_test = train_test_split(
+    X, y, test_size=0.20, random_state=0, stratify=y)
+X_train, X_val, y_train, y_val = train_test_split(
+    X_tmp, y_tmp, test_size=0.25, random_state=0, stratify=y_tmp)
+
+
+def add_features(d):
+    d = d.copy()
+    d["is_rush"] = d["order_hour"].between(18, 20).astype(int)
+    return d
+
+
+prep = ColumnTransformer([
+    ("num", Pipeline([("imputer", SimpleImputer(strategy="median")),
+                      ("scaler", StandardScaler())]), NUM),
+    ("cat", OneHotEncoder(handle_unknown="ignore"), CAT),
+])
+pipe = Pipeline([("derive", FunctionTransformer(add_features)),
+                 ("prep", prep),
+                 ("model", LogisticRegression(max_iter=2000, random_state=0))])
+pipe.fit(X_train, y_train)
+prob = pipe.predict_proba(X_val)[:, 1]
+pred = pipe.predict(X_val)
+tn, fp, fn, tp = confusion_matrix(y_val, pred).ravel()
+print("late in the 400 validation rows :", int(y_val.sum()))
+print("tn %d  fp %d  fn %d  tp %d   sum %d" % (tn, fp, fn, tp, tn + fp + fn + tp))
+print("accuracy    = (%d + %d) / 400 = %.4f   on the 400 validation rows"
+      % (tp, tn, accuracy_score(y_val, pred)))
+print("precision   =  %d / %d       = %.4f   on the 400 validation rows"
+      % (tp, tp + fp, precision_score(y_val, pred)))
+print("recall      =  %d / %d      = %.4f   on the 400 validation rows"
+      % (tp, tp + fn, recall_score(y_val, pred)))
+print("specificity =  %d / %d     = %.4f   on the 400 validation rows"
+      % (tn, tn + fp, tn / (tn + fp)))
+print("F1          = %d / %d      = %.4f   on the 400 validation rows"
+      % (2 * tp, 2 * tp + fp + fn, f1_score(y_val, pred)))
+print("ROC AUC     = over all 400 probabilities = %.4f   on the 400 validation rows"
+      % roc_auc_score(y_val, prob))
+print("majority-class rate on val      : %.4f" % (1 - y_val.mean()))
+```
+
+**Real output. Runtime under 3 seconds.**
+
+```text
+late in the 400 validation rows : 115
+tn 246  fp 39  fn 64  tp 51   sum 400
+accuracy    = (51 + 246) / 400 = 0.7425   on the 400 validation rows
+precision   =  51 / 90       = 0.5667   on the 400 validation rows
+recall      =  51 / 115      = 0.4435   on the 400 validation rows
+specificity =  246 / 285     = 0.8632   on the 400 validation rows
+F1          = 102 / 205      = 0.4976   on the 400 validation rows
+ROC AUC     = over all 400 probabilities = 0.7599   on the 400 validation rows
+majority-class rate on val      : 0.7125
+```
+
+**Notice the AUC: 0.7599 — the exact number from Week 7.** Same pipeline, same rows, same seed. **That is what reproducibility looks like**, and it is why every `random_state` in this course is 0.
+
+**Teacher additions for B3 — the other three pairs worked by hand, in the same three-line layout** (they are the last three rows of the B3 output and the fifth and sixth are the two stunts):
 
 **Pair 4 — precision 0.300, recall 0.2143.** *(Last week's decision tree.)*
 
@@ -1505,7 +1917,7 @@ harmonic :  2 × 0.014 × 1.000 = 0.028
 check    :  smaller 0.014,  twice it 0.028,  and 0.0276 is between them.  ✅
 ```
 
-**The whole page in one table:**
+**The table B3 prints, as a check:**
 
 | Pair | Plain mean | Harmonic mean | Smaller | 2 × smaller | In range? |
 |---|---|---|---|---|---|
@@ -1516,90 +1928,95 @@ check    :  smaller 0.014,  twice it 0.028,  and 0.0276 is between them.  ✅
 | 1.000 / 0.010 | 0.5050 | **0.0198** | 0.0100 | 0.0200 | ✅ |
 | 0.014 / 1.000 | 0.5070 | **0.0276** | 0.0140 | 0.0280 | ✅ |
 
-**Confirmed against Python.** If you want to check the whole page in one go, this is the file — nine lines, and it prints the table above:
+**B3 is confirmed against Python** by the `race.py` printed above. **Do not show that file to the student until B3 is handed in** — the check is theirs to do.
+
+### Fix the Broken Program
+
+**Bug 1 — line `prec, rec, f1 = precision_recall_fscore_support(y_val, pred)`. An unpacking bug.** Count the words in the function's name: **precision, recall, fscore, support — four things.** You asked for three, so Python stopped. **This is one of the friendliest errors you will ever get: the answer is printed on the label.**
+
+**The fix:** `prec, rec, f1, sup = precision_recall_fscore_support(y_val, pred)`.
+
+**Bug 2 — the hand-written harmonic mean for the lazy model. A runtime bug.** For a model that never says yes, `p = 0.0` (with `zero_division=0`) and `r = 0.0`, so `p + r = 0.0`, and `2 × 0 × 0 ÷ 0` is a division by zero. `ZeroDivisionError: float division by zero`.
+
+**The version from the counts:**
 
 ```python
-"""race.py - the Arithmetic Race answer key: six pairs, two averages each."""
-pairs = [("0.900 / 0.100", 0.9, 0.1),
-         ("0.600 / 0.600", 0.6, 0.6),
-         ("0.667 / 0.070", 0.667, 0.070),
-         ("0.300 / 0.2143", 0.3, 3 / 14),
-         ("1.000 / 0.010", 1.0, 0.01),
-         ("0.014 / 1.000", 0.014, 1.0)]
-
-print("pair             plain    harmonic   smaller  2x smaller  in range?")
-for label, p, r in pairs:
-    plain = (p + r) / 2
-    harm = 2 * p * r / (p + r)
-    small = min(p, r)
-    ok = small <= harm <= 2 * small
-    print("%-15s  %.4f   %.4f    %.4f   %.4f      %s"
-          % (label, plain, harm, small, 2 * small, ok))
+print("lazy F1 from the counts : %d / %d = %.4f"
+      % (2 * tp, 2 * tp + fp + fn, 2 * tp / (2 * tp + fp + fn)))
 ```
 
-**Real output. Runtime instant.**
+**Why it cannot divide by zero here:** the bottom is `2 × TP + FP + FN = 0 + 0 + 14 = **14**`, and 14 is not zero. `0 ÷ 14 = 0.0000`. **So this model's F1 is honestly 0.0000 even though its precision is undefined** — the counts route survives where the fractions route dies, which is a real, practical reason to know both.
 
-```text
-pair             plain    harmonic   smaller  2x smaller  in range?
-0.900 / 0.100    0.5000   0.1800    0.1000   0.2000      True
-0.600 / 0.600    0.6000   0.6000    0.6000   1.2000      True
-0.667 / 0.070    0.3685   0.1267    0.0700   0.1400      True
-0.300 / 0.2143   0.2571   0.2500    0.2143   0.4286      True
-1.000 / 0.010    0.5050   0.0198    0.0100   0.0200      True
-0.014 / 1.000    0.5070   0.0276    0.0140   0.0280      True
-```
+**Bug 3 — `average="macro"`. A silent logic bug.** It averaged the two classes' F1s with an equal vote: `(0.9909 + 0.2500) ÷ 2 = 0.6204`. The two classes hold **986** and **14** rows.
 
-**The last column is the range check, done by the machine.** `True` six times out of six. **Do not show this file to the student until after page 9.1 is handed in** — the check is theirs to do.
+**What is wrong with an equal vote:** it gives the 986 easy rows the same say as the 14 hard ones, so a model that misses 11 frauds out of 14 comes back with a respectable-sounding 0.6204. **That is last week's accuracy paradox in a new costume** — 98.6% accurate and nothing caught, 0.6204 macro F1 and eleven frauds missed.
 
-**Marking notes.** Full marks needs **three separate lines** for each harmonic mean — the multiply, the add, the divide — not one line with everything crammed in. The three-line habit is what stops the commonest error, which is dividing by 2 as well as by (p + r). **And the range check on every row.** A student who does the check and catches their own mistake has done better work than one who was right first time.
+**The fix:** `f1_score(y_val, pred)` — leave `average` alone on a two-class problem and you get the F1 of the positive class, **0.2500**.
 
-### Page 9.2 — Three models, one score
+**The one-line check that catches it:** *is the reported F1 between precision and recall — between 0.2143 and 0.4286?* **0.6204 is not.** The check needs no library and takes four seconds, and it also catches `pos_label=0` (0.9909) and the missing brackets (0.3000).
 
-*Same 1,000 validation orders. Same 14 frauds. Compute F1 for each model straight from the four counts, using `2 × TP ÷ (2 × TP + FP + FN)`.*
+**Ranking, easiest → hardest: 1, 2, 3.** Bug 1 crashes and names the count it wanted. Bug 2 crashes with a message that is clear once you ask *"what are p and r for a model that never says yes?"*. **Bug 3 never complains at all, and 0.6204 is exactly the sort of number that ends up on a slide.**
 
-| Model | TN | FP | FN | TP |
-|---|---|---|---|---|
-| never says yes | 986 | 0 | 14 | 0 |
-| the decision tree | 979 | 7 | 11 | 3 |
-| flags everything | 0 | 986 | 0 | 14 |
+### Puzzle of the Week
 
-**The arithmetic, in full:**
+**Part 1(a).** `2 × TP + FP + FN = **4** × TP`, so `FP + FN = **2** × TP`.
 
-```text
-never says yes
-  precision  =  0 ÷ (0 + 0)   =  UNDEFINED   (it flagged nothing at all)
-  recall     =  0 ÷ (0 + 14)  =  0 ÷ 14  =  0.0000
-  F1         =  2 × 0 ÷ (0 + 0 + 14)  =  0 ÷ 14  =  0.0000
+**Part 1(b).** `FP + 12 − TP = 2 × TP`, so `FP = **3** × TP − **12**`.
 
-the decision tree
-  precision  =  3 ÷ (3 + 7)   =  3 ÷ 10  =  0.3000
-  recall     =  3 ÷ (3 + 11)  =  3 ÷ 14  =  0.2143
-  F1         =  2 × 3 ÷ (6 + 7 + 11)  =  6 ÷ 24  =  0.2500
+**Part 1(c).**
 
-flags everything
-  precision  =  14 ÷ (14 + 986)  =  14 ÷ 1000  =  0.0140
-  recall     =  14 ÷ (14 + 0)    =  14 ÷ 14    =  1.0000
-  F1         =  2 × 14 ÷ (28 + 986 + 0)  =  28 ÷ 1014  =  0.0276
-```
+| TP | FN | FP | 2 × TP | 2TP + FP + FN | F1 | possible? |
+|---|---|---|---|---|---|---|
+| 2 | 10 | **−6** | 4 | — | — | **impossible — FP cannot be negative** |
+| 4 | 8 | **0** | 8 | 16 | **0.5000** | ✅ |
+| 6 | 6 | **6** | 12 | 24 | **0.5000** | ✅ |
+| 8 | 4 | **12** | 16 | 32 | **0.5000** | ✅ |
+| 12 | 0 | **24** | 24 | 48 | **0.5000** | ✅ |
 
-**Confirmed against scikit-learn:**
+**Part 1(d).** The smallest possible TP is **4**, when FP is exactly 0. Its precision is `4 ÷ 4 = **1.0000**` — **a perfect precision, with eight frauds missed.**
 
-```text
---- three models, same 1000 validation orders, same 14 frauds ---
-never says yes    tn 986 fp   0 fn 14 tp  0   F1 = 0 / 14 = 0.0000
-the tree          tn 979 fp   7 fn 11 tp  3   F1 = 6 / 24 = 0.2500
-flags everything  tn   0 fp 986 fn  0 tp 14   F1 = 28 / 1014 = 0.0276
-```
+**Part 1(e).** `precision = 12 ÷ **36** = **0.3333**` (TP + FP = 12 + 24), and `recall = 12 ÷ 12 = **1.0000**`.
 
-**The three questions underneath:**
+**Part 1(f).**
 
-**(a) "Which model has the best recall, and is it the best model?"** The "flags everything" model, with recall **1.0000** — a perfect score. **It is not the best model.** It blocked all 986 legitimate transactions and its F1 is 0.0276, barely above the model that does nothing. **Recall on its own is a stunt, exactly like accuracy was last week.**
+| | precision | recall | F1 |
+|---|---|---|---|
+| the careful model (TP 4, FP 0, FN 8) | **1.0000** | **0.3333** | 0.5000 |
+| the enthusiastic model (TP 12, FP 24, FN 0) | **0.3333** | **1.0000** | 0.5000 |
 
-**(b) "Why is the first model's precision undefined rather than zero?"** Precision is TP ÷ (TP + FP). Both are zero, so the fraction is 0 ÷ 0, which is not a number. scikit-learn prints `0.0000` and raises `UndefinedMetricWarning` to tell you why. **"Undefined" is the better answer and should be marked as such.** Its F1, though, is honestly 0.0000, because `2 × 0 ÷ 14` involves no division by zero at all — **which is one good reason to report F1.**
+**They are not the same model and they are not remotely similar.** One never raises a false alarm and misses two thirds of the fraud; the other catches every fraud and wrongly blocks twenty-four people. **F1 has hidden which of the two errors you are making** — it only tells you *how much* wrongness there is, not *what kind*. Notice too that the two rows are **mirror images**: 1.0000/0.3333 and 0.3333/1.0000. **F1 cannot tell a mirror from the thing itself**, for the same reason it survived the swapped arguments in P2.
 
-**(c) "Which model would you actually ship?"** The tree, and **with reservations you should state.** It is the only one that catches anything (3 of 14) without blocking a whole country. But it misses 11 of 14 and 7 of the 10 cards it blocked belonged to innocent people. **A full-marks answer says "the tree, and it isn't good enough yet."** An answer that says "none of them" and explains why is also full marks.
+**Part 1(g).** **…you always print the four counts (TN, FP, FN, TP) underneath it**, because from those you can recompute every other number and from F1 alone you cannot get back.
 
-### Page 9.3 — The relay handover record
+**Part 2(a).** Going down the list, **precision falls** (1.0000 → 0.5000 → 0.4000 → 0.3333) and **recall rises** (0.3333 → 0.5000 → 0.6667 → 1.0000). **That is the see-saw, and every position on it has the same F1** — which is a rather beautiful way to see that F1 measures the *balance*, not the *tilt*.
+
+**Part 2(b).** The careful model tips **hard towards precision** (down at the precision end); the enthusiastic model tips **hard towards recall**. Both are far from level, and both score 0.5000, so **F1 is telling you how far the plank is from the ground, not which way it leans.**
+
+**Part 2(c).** **Bank: the careful model, probably** — 24 wrongly blocked cards is 24 people stranded at a checkout, and the bank has other defences; but say out loud that eight frauds got through. **Screening: the enthusiastic model, without hesitation** — a false positive is an anxious week and one extra scan, a false negative is an undetected tumour. **Same F1, opposite decisions, and the deciding argument is not in the data at all.**
+
+### Think Deeper
+
+**T1.** A good answer says **both**, and names the metric.
+
+**What it protects you from.** Because there is no TN in the formula, **F1 cannot be inflated by adding easy rows.** That is exactly the trick that broke accuracy: 98.6% of the fraud table was "leave it alone", so accuracy was 98.6% a statement about the easy work. Pad the legitimate class to a million and accuracy goes to 0.999982 while F1 sits still at 0.2500. **F1 survives imbalance because it simply refuses to look at the class that causes it.**
+
+**What it hides.** "7 false alarms out of 986 honest customers" and "7 out of a million" are wildly different businesses, and **F1 calls them both 0.2500.** If you need to know what fraction of honest customers get wrongly blocked, F1 will never tell you.
+
+**The metric to print beside it: specificity** — `TN ÷ (TN + FP)` — because it is the only one of the four fractions whose denominator is the honest customers. **Feature and bug at once, and the cure is to report both.**
+
+**T2.** A good answer separates *correct* from *appropriate*.
+
+0.6204 is a true statement about a model that treats "spot the fraud" and "leave ordinary shopping alone" as **equally important jobs**. Nobody thinks those two jobs are equally important: one is the reason the system exists and the other is what happens 98.6% of the time by default. **So the number is right and the framing is wrong** — and note that nothing in the data, and nothing in scikit-learn, made that choice. `average="macro"` is a *person's* decision about what matters, typed into a keyword argument, and once it is typed it looks exactly like a measurement.
+
+**That is why *"which rows was that measured on?"* is the most useful question in this course.** Every score is a fraction, every fraction has a denominator, and **the denominator is where somebody's judgement is hiding.** The strongest answers add the general rule: **when a number surprises you upwards, find out which rows it was measured on** — and then say who chose them.
+
+### Build It
+
+*The workbook's Build It has a step checklist, the relay handover record, "My own model's report", the reflection sheet, the error paragraph and the Bug Log. Each has its answer below, in that order.*
+
+**Step checklist (1–11).** Steps 1–2 are `f1.py` from the live-code segment: the four printed F1 routes agree in three (0.2500) and only the plain mean differs (0.2571). Steps 3 and the relay record are the next table. Steps 4–8 are "My own model's report". Step 9 is the reflection sheet, step 10 the paragraph, step 11 the Bug Log.
+
+#### The relay handover record
 
 *Five rows. What did you hand over at each station?*
 
@@ -1611,9 +2028,13 @@ flags everything  tn   0 fp 986 fn  0 tp 14   F1 = 28 / 1014 = 0.0276
 | **4 Pipeline** | one fitted pipe and its AUC | **`derive → prep → model`, validation ROC AUC 0.7599** |
 | **5 Metrics** | one artifact and six numbers | **`term1_model.joblib`**, and 246 / 39 / 64 / 51 giving accuracy 0.7425, precision 0.5667, recall 0.4435, specificity 0.8632, F1 0.4976, AUC 0.7599 — **all on the 400 validation rows** |
 
+*Which station took you longest, and why?* — no fixed answer; the usual honest answers are station 4 (the pipeline has the most parts) and station 1 (people forget `drop_duplicates()` is a separate decision from counting them). Mark for honesty and a reason.
+
+**Why the dummy scores accuracy 0.7125 and AUC 0.5000 at the same time:** accuracy asks *"how often were you right"*, and 71.25% of orders really are on time. AUC asks *"can you rank the late ones above the on-time ones"*, and every prediction has the identical probability, so it ranks nothing. **0.5 is the AUC of a coin.**
+
 Now the five complete station files, all actually run.
 
-#### Page 9.3a — STATION 1, AUDIT
+#### Relay station 1 file — station 1, AUDIT
 
 ```python
 """station1.py - STATION 1, AUDIT.  Four numbers, on paper, in eight minutes."""
@@ -1650,8 +2071,7 @@ late orders           : 575
 ```
 
 **The station's teaching moment:** the late rate **moves**, from 0.2881 to 0.2875, when the 20 duplicates come out. Tiny, and real. **A student who notices and says which one they will quote has done the station properly.**
-
-#### Page 9.3b — STATION 2, SPLIT
+#### Relay station 2 file — station 2, SPLIT
 
 ```python
 """station2.py - STATION 2, SPLIT.  Three piles, stratified, seeded."""
@@ -1689,8 +2109,7 @@ check : 1200 + 400 + 400 = 2000
 ```
 
 **The station's teaching moment:** all three rates are **exactly 0.2875**, and 345 + 115 + 115 = 575, every late order accounted for. **That is `stratify=` doing its job**, and without it the validation rate could easily have been 0.26 or 0.31 by luck, which would move every number downstream.
-
-#### Page 9.3c — STATION 3, BASELINE
+#### Relay station 3 file — station 3, BASELINE
 
 ```python
 """station3.py - STATION 3, BASELINE.  The number to beat."""
@@ -1728,8 +2147,7 @@ ROC AUC on val       : 0.5000
 ```
 
 **The station's teaching moment, and it is Variation-harder 3:** the accuracy is **0.7125** and the AUC is **0.5000**. Both about the same model. Accuracy is high because 71.25% of orders really are on time and the dummy says "on time" to everything. **AUC is 0.5 because every prediction has the identical probability, so the model cannot rank anything at all** — and AUC measures ranking. 0.5 is the AUC of a coin. **Notice also that accuracy exactly equals the majority-class rate, to four decimal places.** That is not a coincidence; it is what "most frequent" means.
-
-#### Page 9.3d — STATION 4, PIPELINE
+#### Relay station 4 file — station 4, PIPELINE
 
 Two files. `features.py` first, because station 5 needs it too and the saved artifact needs it forever:
 
@@ -1810,8 +2228,7 @@ weather, one-hot: clear, rain, storm                 =  3
 **And 0.7599 is Week 7's best honest score, reproduced from memory.** That is objective 3 landing.
 
 **Note the feature set.** `order_hour` is **not** in `NUM` — Week 7's row 7 showed that dropping it gains +0.0013 once `is_rush` exists. `is_rush` **is** in `NUM`, and it does not exist in the raw file: the `derive` step creates it. **That is why `derive` is first, and reversing the two steps produces `ValueError: A given column is not a column of the dataframe`.**
-
-#### Page 9.3e — STATION 5, METRICS
+#### Relay station 5 file — station 5, METRICS
 
 ```python
 """station5.py - STATION 5, METRICS.  The 2x2, four fractions, one saved file."""
@@ -1897,7 +2314,52 @@ saved: term1_model.joblib
 ![Every number wears its split](../figures/fig-w09-4-metrics-report-with-splits-named.svg)
 *Figure 9.4 — Every number wears its split. Nine weeks of work, and not one number on the card without the pile it came from.*
 
-### Page 9.4 — The Term 1 reflection sheet
+#### My own model's report
+
+**A full-marks answer.** The exact numbers depend on the student's final feature set from Week 7; **the shape must be this**, and these are the numbers for the Week 7 champion set (`distance_km`, `items`, `prep_minutes`, `driver_experience_months`, `is_rush`, plus `restaurant`, `day_of_week`, `weather` one-hot, with raw `order_hour` dropped).
+
+**The 2×2 — measured on the 400 validation rows, 115 of them late:**
+
+| | predicted on time | predicted late | row total |
+|---|---|---|---|
+| **actually on time** | **246** correctly left alone | **39** false alarm | 285 |
+| **actually late** | **64** missed | **51** caught | 115 |
+| column total | 310 | 90 | **400** |
+
+**The check: 246 + 39 + 64 + 51 = 400.** ✅
+
+**The six numbers, each with its fraction and its pile:**
+
+```text
+accuracy    =  (51 + 246) ÷ 400  =  297 ÷ 400  =  0.7425   on the 400 validation rows
+precision   =  51 ÷ (51 + 39)    =   51 ÷  90  =  0.5667   on the 400 validation rows
+recall      =  51 ÷ (51 + 64)    =   51 ÷ 115  =  0.4435   on the 400 validation rows
+specificity =  246 ÷ (246 + 39)  =  246 ÷ 285  =  0.8632   on the 400 validation rows
+F1          =  2 × 51 ÷ (102 + 39 + 64)  =  102 ÷ 205  =  0.4976   on the 400 validation rows
+ROC AUC     =  over all 400 predicted probabilities      =  0.7599   on the 400 validation rows
+```
+
+**And F1 the other way, to check:**
+
+```text
+2 × 0.5667 × 0.4435  =  0.50266
+0.5667 + 0.4435      =  1.01020
+0.50266 ÷ 1.01020    =  0.4976        ✅ same answer
+range check          :  smaller is 0.4435, twice it is 0.8870, and 0.4976 is between them.  ✅
+```
+
+**The majority-class rate on the validation pile is 0.7125** (1 − 115 ÷ 400), and accuracy 0.7425 beats it by **0.0300**. **Worse of recall and specificity:** recall (0.4435 against 0.8632), because 285 of the 400 rows are on time and only 115 are late, so the model has seen far more of the easy class.
+
+**Two things to praise if you see them.**
+
+**One — a student who notices accuracy 0.7425 against a majority-class rate of 0.7125.** That is last week's rule applied unprompted: the model beats "say on time to everything" by **0.0300**, which is real but not enormous. **Level 4.**
+
+**Two — a student who notices that recall 0.4435 is much worse than specificity 0.8632, and says why.** The model is far better at recognising an on-time order than a late one, because 285 of the 400 rows are on time and it has seen far more of them. **Level 4, and it is the same imbalance story at a gentler ratio than the fraud data.**
+
+**One thing to mark down without exception:** any of those six numbers appearing without the words *"on the 400 validation rows"*.
+
+
+#### The Term 1 reflection sheet
 
 *Nine questions, one per week. Numbers, not adjectives.*
 
@@ -1915,50 +2377,7 @@ saved: term1_model.joblib
 
 **Marking notes.** **Every answer needs at least one number in it.** "The audit found some problems" is worth nothing; "20 duplicates and 108 missing" is worth full marks. Question 6 is the one to mark hardest — a student who quotes the two AUCs **and** the "does this value exist yet?" question has the whole of Week 6 and Week 7. Question 9 with no pile named loses a mark, as it will every week until June.
 
-### Page 9.5 — The full metrics report for your own model
-
-*The five things, each with its fraction and its pile.*
-
-**A full-marks answer.** The exact numbers depend on the student's final feature set from Week 7; **the shape must be this**, and these are the numbers for the Week 7 champion set (`distance_km`, `items`, `prep_minutes`, `driver_experience_months`, `is_rush`, plus `restaurant`, `day_of_week`, `weather` one-hot, with raw `order_hour` dropped).
-
-**The 2×2 — measured on the 400 validation rows, 115 of them late:**
-
-| | predicted on time | predicted late | row total |
-|---|---|---|---|
-| **actually on time** | **246** correctly left alone | **39** false alarm | 285 |
-| **actually late** | **64** missed | **51** caught | 115 |
-| column total | 310 | 90 | **400** |
-
-**The check: 246 + 39 + 64 + 51 = 400.** ✅
-
-**The five numbers, each with its fraction and its pile:**
-
-```text
-accuracy    =  (51 + 246) ÷ 400  =  297 ÷ 400  =  0.7425   on the 400 validation rows
-precision   =  51 ÷ (51 + 39)    =   51 ÷  90  =  0.5667   on the 400 validation rows
-recall      =  51 ÷ (51 + 64)    =   51 ÷ 115  =  0.4435   on the 400 validation rows
-F1          =  2 × 51 ÷ (102 + 39 + 64)  =  102 ÷ 205  =  0.4976   on the 400 validation rows
-ROC AUC     =  over all 400 predicted probabilities      =  0.7599   on the 400 validation rows
-```
-
-**And F1 the other way, to check:**
-
-```text
-2 × 0.5667 × 0.4435  =  0.50266
-0.5667 + 0.4435      =  1.01020
-0.50266 ÷ 1.01020    =  0.4976        ✅ same answer
-range check          :  smaller is 0.4435, twice it is 0.8870, and 0.4976 is between them.  ✅
-```
-
-**Two things to praise if you see them.**
-
-**One — a student who notices accuracy 0.7425 against a majority-class rate of 0.7125.** That is last week's rule applied unprompted: the model beats "say on time to everything" by **0.0300**, which is real but not enormous. **Level 4.**
-
-**Two — a student who notices that recall 0.4435 is much worse than specificity 0.8632, and says why.** The model is far better at recognising an on-time order than a late one, because 285 of the 400 rows are on time and it has seen far more of them. **Level 4, and it is the same imbalance story at a gentler ratio than the fraud data.**
-
-**One thing to mark down without exception:** any of those five numbers appearing without the words *"on the 400 validation rows"*.
-
-### Page 9.6 — Which error should your application fear more
+#### Which error should my application fear more
 
 *One paragraph. A person, a consequence, and one concrete change.*
 
@@ -1978,6 +2397,30 @@ range check          :  smaller is 0.4435, twice it is 0.8870, and 0.4976 is bet
 - **The concrete change must be a change, not a wish.** "Improve the model" is not a change. "Lower the threshold" or "add a weather-times-restaurant feature" is.
 - **The best answers admit the trade.** Anything that says "and this would make the other error worse" has understood the see-saw. Anything that claims a change with no cost has not.
 - **The best answers of all notice that one error can cause the other** — a false alarm steals a driver and creates a real late delivery, exactly as too many smoke-alarm false alarms get the battery removed. **That is a level-5 observation** and it is the same structure as last week's best answer.
+
+**The honest-trade question in the workbook ("would your one change make the other error worse? How?")** — the answer is always yes: lowering the threshold raises recall and lowers precision, raising it does the opposite, and a feature change moves both. A student who answers "no" has not yet seen the see-saw; ask them to re-read P2 and Puzzle Part 2.
+
+#### The Bug Log
+
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `ValueError: too many values to unpack (expected 3)` | the function returns four things | `precision_recall_fscore_support` unpacked into three names | four names — the count is in the function's name |
+| `f1 : 0.6204` with no warning | the F1 of a model that thinks both classes matter equally | `average="macro"` on an imbalanced problem | leave `average` alone; then range-check against precision and recall |
+
+Those are the two entries to expect; any two real entries from the week with all four columns filled are full marks.
+
+### Draw It
+
+**The model that flags exactly one transaction and is right** sits at the far **precision** end: precision 1.0000, recall 0.0100, **F1 0.0198**. **The model that flags all thousand** sits at the far **recall** end: precision 0.0140, recall 1.0000, **F1 0.0276**. Both ends are *down*, and F1 under the pivot is **tiny at both** — which is the entire reason F1 is the number that cannot be gamed by either stunt.
+
+**Your delivery model** (0.5667, 0.4435) sits **near the middle, tipped slightly towards precision** — it is a little more careful than eager. The gap between the two is only 0.1232, which is why its F1 (0.4976) is close to their plain mean (0.5051): **F1 only bites when the pair disagrees badly.**
+
+A good drawing also has the tree marked on somewhere (0.3000 / 0.2143, F1 0.2500) and one arrow labelled **"the threshold"** — because that is the thing that actually tips the plank, and it is next week.
+
+### Self-Check answers
+
+There are no right answers to a self-check, but three of those ten lines carry the whole term. **"Do the range check"** — it is four seconds and it catches every arithmetic slip in this week, so if it is not a 😀 you are working without a safety net. **"Produce a full metrics report with the split named beside every number"** — this is the habit that is marked in Week 36 as well as this week. And **"re-run the whole Term 1 pipeline from memory"** — if that one is a 😕, the fix is not reading. Sit down with a blank file and do the five stations again, in order, without looking.
+
 
 ### Answers to every question posed in the lesson
 

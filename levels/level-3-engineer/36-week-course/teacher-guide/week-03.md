@@ -15,7 +15,7 @@
 | **New maths** | **None.** One piece of counting, done on paper before the code runs: 5 + 5 + 7 + 3 = 20. |
 | **New syntax** | `Pipeline(steps=[...])` · `ColumnTransformer([...])` · `joblib.dump(pipe, "m.joblib")` · `joblib.load("m.joblib")` |
 | **Dataset** | The same numpy-generated pizza-delivery table, `make_data.py`, seed 0. **Do not edit that file.** Nothing downloads. |
-| **Materials** | Two shoeboxes or two envelopes, one that fits inside the other · printed workbook pages 3.1–3.3 · the Bug Log · Week 2's baseline box, still on the wall · a printed copy of the seven model-card headings |
+| **Materials** | Two shoeboxes or two envelopes, one that fits inside the other · printed workbook (Do the Maths by Hand, and Build It) · the Bug Log · Week 2's baseline box, still on the wall · a printed copy of the seven model-card headings |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, scikit-learn. `joblib` arrives with scikit-learn — nothing extra to install. No internet, ever. |
 | **Prep time** | 30 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `train_pipeline.py` about **1 second** · `predict.py` about 0.7 seconds, most of which is importing scikit-learn. Nothing waits. |
@@ -704,7 +704,7 @@ no error, no warning, difference = 0.017
 - [ ] **Break it on purpose, twice**, so neither traceback is a surprise:
   1. Delete `"weather"` from the dictionary of an order in `predict.py`. You get a traceback ending in `ValueError: columns are missing: {'weather'}`.
   2. Put the model **first** in the outer `Pipeline`. It does not complain when you build it. It complains at `fit` with `TypeError: All intermediate steps should be transformers...`.
-- [ ] **Print workbook pages 3.1–3.3, and the seven card headings on their own sheet.**
+- [ ] **Print the workbook (at least Do the Maths by Hand and Build It), and the seven card headings on their own sheet.**
 - [ ] **Find two boxes or two envelopes, one that fits inside the other.** The nesting is the whole `Pipeline` idea and it takes four seconds to show.
 - [ ] **Check Week 2's baseline box is still on the wall.** Today's `0.7541` gets written directly underneath it, and the subtraction is the point.
 
@@ -714,7 +714,7 @@ no error, no warning, difference = 0.017
 - [ ] `train_pipeline.py`, `predict.py`, `clean_room_check.py`, `kept_apart.py`, `leak_demo.py`, `known_limits.py` **deleted or renamed** — they type them.
 - [ ] **`delivery_pipeline.joblib` deleted.** It has to appear in front of them.
 - [ ] The two nesting boxes on the table.
-- [ ] Workbook 3.1–3.3 out. **3.2's column count filled in pen before any code runs.**
+- [ ] Workbook out, open at Do the Maths by Hand and Build It. **M1's column count (and Build It's "The count, in pen") filled in before any code runs.**
 - [ ] Week 2's baseline box on the wall, with space under it.
 
 ### Fallback if the laptop fails
@@ -853,9 +853,9 @@ damage             = 0.291
 >
 > Two of those three are Week 4 and one is Week 6, properly, with the maths. **Today they're named parts you wire up**, and the wiring is what I'm teaching."
 
-**Say this — part 2, the count. This is workbook page 3.2 and it is in pen:**
+**Say this — part 2, the count. This is workbook M1 (and Build It's "The count, in pen") and it is in pen:**
 
-> "**Page 3.2, in pen, before we touch the keyboard.**
+> "**M1, in pen, before we touch the keyboard.**
 >
 > Eight columns go in. **How many come out?** Work it out on paper. You have everything you need."
 
@@ -1034,7 +1034,7 @@ print("restaurants:", X_train["restaurant"].nunique(),
 >
 > `max_iter=1000` is 'you may have up to a thousand goes at finding your numbers'; the default of a hundred isn't always enough and it warns you when it runs out.
 >
-> Now — **before we run it. Page 3.2. What number did you write in pen?**"
+> Now — **before we run it. M1 in your workbook. What number did you write in pen?**"
 
 Get the number out loud. Then run it.
 
@@ -1199,7 +1199,7 @@ Full instructions in the next section. In the lesson flow:
 
 ### Setup
 
-**On the table:** the two nesting envelopes · a pen · workbook pages 3.2–3.3 · the printed sheet of seven card headings · the Bug Log.
+**On the table:** the two nesting envelopes · a pen · workbook (Do the Maths by Hand M1, and Build It) · the printed sheet of seven card headings · the Bug Log.
 
 **On the screen:** `train_pipeline.py`, working, with `delivery_pipeline.joblib` on disk.
 
@@ -1320,7 +1320,7 @@ no error, no warning, difference = 0.017
 - `delivery_pipeline.joblib` exists on disk, about **5002 bytes**.
 - `predict.py` is a **new file**, contains **no** `fit(`, no `make_data`, no `train_test`, and prints three probabilities that tell a sensible story.
 - The count has been run, and all three counts are zero.
-- Page 3.2 has the paper arithmetic **5 + 5 + 7 + 3 = 20** written before the code ran.
+- The workbook (M1 and Build It's "The count, in pen") has the paper arithmetic **5 + 5 + 7 + 3 = 20** written before the code ran.
 - Heading 7 of the card has a real sentence in it, in the student's own words.
 - 0.7541 is written under Week 2's box, with 0.2541 as the subtraction.
 - Both of today's bugs are in the Bug Log — the wrong-order `TypeError` and the `columns are missing` one.
@@ -1694,29 +1694,255 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, and it's one file and one page of writing.
+> "About an hour, and it's one file and one page of writing. It's all on the **Build It** page of the workbook.
 >
-> **First, page 3.4 — finish `predict.py` so it runs from a cold start.** Cold start means: close everything, open a new terminal, and run only that one file. No training. Then run the count and paste all three zeros.
+> **First, Build It steps 7 to 10 — finish `predict.py` so it runs from a cold start.** Cold start means: close everything, open a new terminal, and run only that one file. No training. Then run the count and write the three zeros into **The clean room** box.
 >
-> **Second, page 3.5, and this is what I'm marking. `model_card.md`, seven headings.** A real markdown file, in the same folder as the artifact, and every heading gets a real answer for *this* model — with the real numbers. Heading 5 has to say whether the test pile was opened. Heading 6 has to give the number **and** the pile **and** the baseline. And heading 7 has to be **in your own words** — you found a real limitation in class, so write that one.
+> **Second, Build It step 12 — The model card, and this is what I'm marking. `model_card.md`, seven headings.** A real markdown file, in the same folder as the artifact, and every heading gets a real answer for *this* model — with the real numbers. Heading 5 has to say whether the test pile was opened. Heading 6 has to give the number **and** the pile **and** the baseline. And heading 7 has to be **in your own words** — you found a real limitation in class, so write that one.
 >
-> **Third, page 3.6 — break it on purpose.** Delete one required column from an order in `predict.py`. Run it. **Paste the real error message**, all of it, and then write one line: *what did that error protect you from?* One line, and 'it stopped my program' is not the answer. The answer is about what would have happened if it hadn't.
+> **Third, Build It step 13 — The error that protected you.** Delete one required column from an order in `predict.py`. Run it. **Paste the real last line of the error message**, and name the column it mentions. Then write what the error did *instead of guessing*. One line, and 'it stopped my program' is not the answer. The answer is about what it did instead of guessing. The **Stretch** underneath (delete the column from just one order) is a bonus.
 >
 > And **two Bug Log entries** from today: the wrong-order `TypeError`, and the missing-column one."
 
-**Workbook pages:** 3.1, 3.2, 3.3 in class · **3.4, 3.5, 3.6** at home.
+**Workbook sections:** in class, the lesson covers **Do the Maths by Hand** M1 (the count in pen) and M4(c) (the 0.709 to 1.000 demonstration), and **Build It** steps 1 to 11 (the live-code and the clean room activity). **At home:** **Build It** steps 7 to 10 (if not finished), 12, 13 and 14 are the marked core. The remaining sections — the **Warm-Up**, **Do the Maths by Hand** M2 to M4(b), **Predict the Output**, **Practice Set A** and **B**, **Fix the Broken Program**, **Puzzle of the Week**, **Think Deeper**, **Draw It** and **Self-Check** — are the week's independent practice; set them across the week and mark from the key below. Only Build It is timed below.
 
-**Expected time:** 15 min finishing and cold-starting `predict.py` · 30 min on the model card · 10 min on the deliberate break and its one line · 5 min on the Bug Log and vocabulary. **About 60 minutes.**
+**Expected time (Build It):** 15 min finishing and cold-starting `predict.py` · 30 min on the model card · 10 min on the deliberate break and its one line · 5 min on the Bug Log. **About 60 minutes.** The other sections are additional and are not part of that hour.
 
-> **🧑‍🏫 What to look for when you mark it:** four things, and the third is the real one. **One — does `predict.py` contain zero `fit(`?** Search the file. This is binary. **Two — does heading 6 name the pile and the baseline?** "AUC 0.7541" earns half; "validation AUC 0.7541 against a baseline of 0.5000" earns all of it. **Three — is heading 7 in their own words, about something they actually saw?** A copied "it may not generalise" earns nothing; "a restaurant it's never seen becomes five zeros and it answers anyway" earns everything, and it is the sentence that proves they were paying attention in the last five minutes. **Four — does the one-line answer on 3.6 say what the error did *instead of guessing*?** The good answer is "it named `weather` and stopped instead of answering" (not "it would have become three zeros": that happens only for a missing value, not a missing column).
+> **🧑‍🏫 What to look for when you mark it:** four things, and the third is the real one. **One — does `predict.py` contain zero `fit(`?** Search the file. This is binary. **Two — does heading 6 name the pile and the baseline?** "AUC 0.7541" earns half; "validation AUC 0.7541 against a baseline of 0.5000" earns all of it. **Three — is heading 7 in their own words, about something they actually saw?** A copied "it may not generalise" earns nothing; "a restaurant it's never seen becomes five zeros and it answers anyway" earns everything, and it is the sentence that proves they were paying attention in the last five minutes. **Four — does the one-line answer in "The error that protected you" say what the error did *instead of guessing*?** The good answer is "it named `weather` and stopped instead of answering" (not "it would have become three zeros": that happens only for a missing value, not a missing column).
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Set out in the order of the printed workbook, with the workbook's own item labels (W1, M1, P1, A1, B1, Bug 1, T1 and so on), so you can mark from this page alone. The values are those in the workbook's own Answers section; the teacher-only notes — marking tips, wrong-answer maps and the model files — are added after each section.
 
-### Page 3.1 — Match the word to the thing
+### Warm-Up
+
+**W1.** **400 ÷ 1600 = 0.25.** With 0.2 you get 1600 × 0.2 = 320, so the piles come out **1280 / 320 / 400** — and nothing errors.
+
+**W2.** **0.7125 is the accuracy.** **0.5000 is the number to beat**, because that is the AUC of a model that has learned nothing, and AUC is the metric you committed to in Week 1.
+
+**W3.** **Column 0** is the chance the order is **not** late; **column 1** is the chance it **is** late. You want **column 1** — hence `[:, 1]`.
+
+**W4.** **Keeping the biggest number.** (Or: "choosing is a kind of fitting.")
+
+**W5.** **The test pile.** The moment a score on it changes a decision, **it has become a validation pile** — and you no longer have a test pile at all.
+
+**🧑‍🏫 Marking tip:** W1 is the one with a trap: the second cut is taken from the **1600** rows left after the test pile is removed, so the divisor is 1600, not the 1200 train rows. For W3, if a student says only "column 1 is the prediction", ask *of what?* until they say "the chance it is late".
+
+### Do the Maths by Hand
+
+**M1.**
+
+```text
+ROUTE 1   5 columns in
+          fill the holes  -> still 5
+          one ruler       -> still 5
+                                                  route 1 gives 5 out
+
+ROUTE 2   restaurant   5   -> 5 columns
+          day_of_week  7   -> 7 columns
+          weather      3   -> 3 columns
+                                    5 + 7 + 3 = 15 out
+
+GLUED     5 + 15 = 20
+```
+
+**M1(a).** `(1200, 8)` → `(1200, 20)`
+
+**M1(b).** 20 − 15 = **5**, which had better be the number of number columns. **It is.** Checking backwards catches a miscount without redoing the whole sum.
+
+**M1(c).** **The 1200 did not move.** You are not adding or removing rows, only **re-describing** each one using more columns. If the row count ever changes inside a preparation step, something is badly wrong.
+
+**M2.**
+
+| The change | number cols | word cols out | total |
+|---|---|---|---|
+| a sixth restaurant opens | 5 | **6** + 7 + 3 = **16** | **21** |
+| `weather` dropped from X | 5 | **5 + 7 = 12** | **17** |
+| a fourth weather (`fog`) | 5 | 5 + 7 + **4** = **16** | **21** |
+| restaurants merge to 3 | 5 | **3** + 7 + 3 = **13** | **18** |
+
+**M2(a).** **The sixth restaurant and the fourth weather** — both give **21.** One new value anywhere in any word column adds exactly one output column, and the arithmetic cannot tell you *which* column grew. Which is a small lesson with a long tail: **a shape is a check, not a diagnosis.**
+
+**M2(b).** Check **`nunique()` on all three word columns**, and compare each against the 5, 7 and 3 you wrote down. One of them will have grown.
+
+**M3.**
+
+```text
+above the zero                =  0.7541 − 0.5000  =  0.2541
+room available                =  1.0000 − 0.5000  =  0.5000
+fraction of the room taken    =  0.2541 ÷ 0.5000  =  0.5082
+```
+
+**M3(a).** About **51%** of the distance from useless to perfect.
+
+**M3(b).** Because **"75% good" has no zero on it.** 0.7541 sounds like three quarters of the way there, and it is actually about half — and on a different problem with a different baseline the same 0.7541 could be excellent or worthless. A score reported as a distance from a measured baseline can be checked; a percentage on its own cannot.
+
+**M4.**
+
+```text
+median: 30.0 − 29.0                = 1.0
+ruler centre: 3.5193 − 3.4591      = 0.0602
+```
+
+**M4(a).** 0.754020 − 0.754111 = **−0.000092.**
+
+**M4(b).** Because a mistake that makes the score go **up** announces itself — you get suspicious of a number that is too good, and you go looking. A mistake that makes the score go slightly **down**, or moves it by nine hundredths of a thousandth, gives you **no signal in either direction**: it is not punished, it is not rewarded, it is simply not visible. And on the next dataset the same mistake might be worth 0.05 or more (nothing stops it, though we have not measured one), and there would be nothing to tell you which day that was.
+
+**M4(c).** 1.000 − 0.709 = **0.291** of pure damage, and **zero** error messages.
+
+**Teacher additions for M1 and M2.** The 5, the 7 and the 3 come from `nunique()` on the three word columns — the same tool that caught `order_id` in Week 1. Real output:
+
+```text
+restaurants: 5  days: 7  weathers: 3
+```
+
+If a sixth restaurant appeared in the training data the shape becomes **(1200, 21)**: 6 + 7 + 3 = 16, and 5 + 16 = 21. *(Full marks for also noticing that the old artifact would have to be rebuilt, and that it would silently give the new restaurant five zeros — which is heading 7 of the card.)*
+
+**Teacher addition for M4(c) — the in-lesson demonstration behind the 1.000.** One order: GreenLeaf, 7.4 km, 5 items, 22.0 minutes of prep, 19:00 Thursday, rain, driver 59 months.
+
+| Question | The real answer |
+|---|---|
+| What four numbers does the model receive if the order is prepared properly? | **1.793, 0.811, 2.008, 0.662** |
+| What is P(late)? | **0.709** |
+| Predict, in pen: what happens if the preparation is skipped? | Most students write "an error". **With these four raw numbers pasted in, it is not an error.** (On the whole raw table, with words and holes, it would be: `could not convert string to float`.) |
+| What is P(late) with the raw numbers instead? | **1.000** |
+| Do the subtraction | **1.000 − 0.709 = 0.291** |
+| What error message do you get? | **None at all**: no error, no warning. |
+| Why is the model *more* sure rather than just wrong? | The raw numbers are 4 to 30 times bigger than anything it trained on, so the answer is thrown off the end of its scale; these four all have positive weights, so it goes towards 1.000 (a negatively-weighted column such as driver experience would send it towards 0.000). |
+
+**Why M4 matters when you mark it:** the two-loose-objects version and the pipeline version scored the same validation AUC, **0.7541, both** — the pipeline is **not a better model**, it is the same model with no way to reach it wrongly. "I'll remember to prepare first" is not good enough because remembering is something you can fail at silently, six months later, in a different file, and the shape of a welded object is something you cannot fail at at all. A probability of 1.000 that came out with nothing crashing is an **alarm**: check what reached the model (full marks for "check the preparation ran").
+
+```text
+validation ROC-AUC: 0.7541
+```
+
+### Predict the Output
+
+**P1.** On paper: 1 number column stays **1**; `size` has **3** different values (small, large, medium); `day` has **2** (Sat, Sun). So 1 + 3 + 2 = **6** columns out.
+
+```text
+(4, 3)
+(4, 6)
+6.0
+```
+
+**The median came from 3.0, 9.0 and 6.0** — the hole is not a number, so it is not in the middle-finding. Sorted: 3, 6, 9 → the middle is **6.0.**
+
+Worth going one step further, because this whole table is small enough to check by hand. After the hole is filled the column is `3, 9, 6, 6`, whose mean is 6.0, and the printed grid is:
+
+```text
+[[-1.414  0.     0.     1.     1.     0.   ]
+ [ 1.414  1.     0.     0.     1.     0.   ]
+ [ 0.     0.     0.     1.     0.     1.   ]
+ [ 0.     0.     1.     0.     1.     0.   ]]
+```
+
+Row 3 had the hole, and its number column is **0.000** — exactly the same as row 4, which really was 6.0. **A filled hole is indistinguishable from a real value afterwards.** That is a limitation, and limitations go under heading 7. (Week 6 shows you how to keep a record of which was which.)
+
+**P2.**
+
+```text
+[[0. 0. 1.]
+ [1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+```
+
+Row 0 was `"red"` and the 1 is in **column 2**. Row 1 was `"blue"` and the 1 is in **column 0**.
+
+**The columns come out in alphabetical order — blue, green, red** — not in the order the words appeared in the data. `OneHotEncoder` sorts the values it finds, because it needs a rule that gives the same answer whatever order the rows arrive in. If it used first-appearance order, shuffling your training rows would silently rearrange your columns, and the artifact you saved on Tuesday would not match the one you saved on Wednesday.
+
+**P3.**
+
+```text
+built with no complaint: 2 steps
+```
+
+and then a `TypeError: All intermediate steps should be transformers...`.
+
+**A wrong pipeline is checked when you *fit* it, not when you *build* it.**
+
+**Why that is the more dangerous of the two:** because in a big program the building might happen in one file, at import time, and the fitting somewhere else entirely, minutes later, after an expensive data load. An error at build time would point straight at the line you typed; an error at fit time points at `pipe.fit(...)`, which is not where the mistake is.
+
+**P4.** **None of the four raises an error.**
+
+```text
+known       : 0.291
+PizzaNova   : 0.308
+day 'Zzz'   : 0.336
+exp missing : 0.36
+```
+
+**Line 4:** the pipeline filled the hole with the **training median, 30.0.** 42 is **above** 30, and more driver experience means less lateness, so replacing 42 with 30 made the order look riskier and the probability went **up**, from 0.291 to 0.360.
+
+*(`0.36` rather than `0.360` because `round(0.3599..., 3)` gives `0.36` and Python does not pad. The `:.3f` inside an f-string is the thing that pads.)*
+
+**The card sentence:** *"An unknown restaurant, an unknown day or a missing number is silently replaced — by zeros or by the training median — and the model answers anyway, with no warning of any kind."*
+
+### Practice Set A
+
+**A1.** pipeline → **ii** · ColumnTransformer → **v** · artifact → **i** · joblib → **vi** · model card → **iii** · clean room test → **iv**
+
+**A2.**
+
+| `NUMBER_COLUMNS` | `WORD_COLUMNS` | shape in | word cols out | shape out |
+|---|---|---|---|---|
+| all 5 | all 3 | `(1200, 8)` | **15** | **(1200, 20)** |
+| all 5 | `["restaurant"]` | `(1200, 6)` | **5** | **(1200, 10)** |
+| all 5 | `["restaurant", "weather"]` | `(1200, 7)` | **8** | **(1200, 13)** |
+| all 5 | `["day_of_week", "weather"]` | `(1200, 7)` | **10** | **(1200, 15)** |
+| first 4 only | all 3 | `(1200, 7)` | **15** | **(1200, 19)** |
+
+**A2(a).** Rows 3 and 4 both go in at `(1200, 7)` and come out at `(1200, 13)` and `(1200, 15)`. (Row 5 also goes in at 7 columns, and comes out at 19.) **So a shape tells you how many columns there are and nothing about which ones** — three completely different tables can share an input shape. A shape check catches miscounts; it does not tell you that you picked the right columns.
+
+**A2(b).** **Simpler:** with `driver_experience_months` gone, there are no holes left in X at all, so you no longer need the imputer. **Thrown away:** the one column that says something about the *driver* rather than the order — and 1912 rows really did have a value in it. You have solved the missing-data problem by deleting the data.
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `TypeError: All intermediate steps should be transformers...` **raised at `fit`, not at build** | model **last**: `[("prep", prep), ("model", ...)]` |
+| b | `ValueError: Cannot use median strategy with non-numeric data: could not convert string to float: 'rain'` | move `"weather"` into `WORD_COLUMNS` |
+| c | `ValueError: Input X contains NaN.` followed by several sentences of advice — those are Week 1's 108 holes arriving | put `SimpleImputer(strategy="median")` back, first in the route |
+| d | `FileNotFoundError: [Errno 2] No such file or directory: 'deliverypipeline.joblib'` — the underscore is missing | match the filename exactly, and `ls` to check which folder you are in |
+| e | `ValueError: columns are missing: {'weather'}` — **it names the column** | add the key. All eight are required |
+| f | **No error.** The piles come out **1212 / 404 / 404** and the AUC comes out **0.7680** instead of 0.7541 | `.drop_duplicates().reset_index(drop=True)` |
+
+**A3(g).** **f.** The clue is the printed pile sizes: **1212 / 404 / 404** where your Week 2 card says 1200 / 400 / 400. That is the only signal, and it appears on the first line of output, which is exactly why you print it.
+
+**A3(h).** **b and e.** **b** quotes the offending *value* back at you — `'rain'` — so you can search your file for the column that value lives in. **e** names the missing *column* — `{'weather'}` — so you can search for that exact word. That is what a name-based switchboard buys you: errors you can grep for.
+
+**A4.** i → **R** · ii → **T** · iii → **P** · iv → **S** · v → **Q**
+
+**A4(a).** **5 + 15 = 20.** The 15 is the word columns; the 5 is the number columns; the 20 is what the shape prints.
+
+**A5.**
+
+**p_a.py** — **yes, a clean room.** It prints `[0.02167288]`, which is the Napoli order from the chapter: 1.2 km, one item, lunchtime, clear weather, experienced driver. Nothing is against it, so 0.022.
+
+**p_b.py** — **no.** All three counts betray it: `fit( 1`, `make_data 1`, `train_test 2`. **It is a training script with the word "predict" in its name.** Hand it to somebody and they cannot use it without your data — and if they had your data they would not need your model.
+
+**p_c.py** — **it is not a clean room, and the counting missed it.** Two loose objects were saved instead of one welded pipeline, and then **`prep` is loaded and never used** — the raw order with `"Napoli"` and `"clear"` in it goes straight into `model.predict_proba`. That is the same mistake as the first seven minutes of the chapter — the preparation skipped — but here the words go in too, so instead of a wrong number it stops: `ValueError: could not convert string to float: 'Napoli'`. (Had the order been only numbers, it would have answered without complaint, like the 0.709-to-1.000 demonstration.) It scores three zeros because it contains no training code; it is broken because it contains no *preparation*.
+
+**p_d.py** — it stops:
+
+```text
+ValueError: columns are missing: {'weather'}
+```
+
+The order was typed with only seven of the eight keys.
+
+**A5(a).** p_a and p_d have identical counts (0, 0, 0) and identical line totals (7), and one works while the other stops. **So the count proves exactly one thing: there is no training code in the file.** It does not prove the file is correct, that the artifact is the right artifact, that the columns are all there, or that the preparation is inside the thing you loaded. It is a check on **what crossed the wall**, not on the code you wrote after it arrived.
+
+Which is the honest version of the rule: **counting cannot be fooled by good intentions, and it cannot read your program either.**
+
+**A6.** The boxes: route 1 is **5 in, 5 out**; `restaurant` **5**, `day_of_week` **7**, `weather` **3**, so route 2 gives **15**; glued, **20**; the shape becomes **(1200, 20)**. The three what-ifs: a sixth restaurant gives **21**; dropping weather gives **17**.
+
+**A6(b).** **`TypeError: All intermediate steps should be transformers and implement fit and transform...`** — and it is raised **when you fit the pipeline, not when you build it.** Building a wrong pipeline is silent.
+
+**Teacher additions for A1 — the definitions behind the letters.**
 
 | Word | Description |
 |---|---|
@@ -1727,88 +1953,383 @@ Every question restated, so you can mark from this page alone.
 | **model card** | A short document that travels with the artifact, under fixed headings, saying what it is for and where it breaks. |
 | **clean room test** | Closing the training file completely and predicting from a brand-new file that contains no training code at all — proved by counting. |
 
-*Label the printed diagram below.*
+**Teacher additions for A6 — why a model can only be the last step, and the artifact against the code.** Every step except the last has to **change data and pass it on** — the word scikit-learn uses is *transformer*. A model produces answers, not data, so nothing can follow it. Getting this wrong gives `TypeError: All intermediate steps should be transformers...`, **and only at `fit`, not when you build it.** The artifact **already contains the learned numbers**, so it works in a fresh program with no data and no training; the code only produces those numbers if you also have the data, the libraries and the time. Welding the two objects together prevents leakage as well as forgetfulness, because `pipe.fit(X_train, y_train)` fits the preparation on the training rows and **has no way to reach the other rows**; with two loose objects you can fit the preparation on all 2000 rows by accident, and it will not complain.
+
+The diagram the A6 boxes describe, filled in:
 
 ```text
     8 columns
         |
    +----+----+
    |         |
-  5 numbers  3 words        <- (a) the switchboard: routes chosen BY NAME
+  5 numbers  3 words        <- the switchboard: routes chosen BY NAME
    |         |
- fill holes  one column      <- (b) 5 in, 5 out       (c) 3 in, 15 out
+ fill holes  one column      <- 5 in, 5 out       3 in, 15 out
  one ruler   per value
    |         |
    +----+----+
         |
-   (1200, 20)                <- (d) 5 + 5 + 7 + 3 = 20
+   (1200, 20)                <- 5 + 5 + 7 + 3 = 20
         |
-     the model               <- (e) can only ever be the LAST step
+     the model               <- can only ever be the LAST step
         |
    P(late)
 ```
 
-**3.1(f) Why can a model only be the last step of a `Pipeline`?**
-Because every step except the last has to **change data and pass it on** — the word scikit-learn uses is *transformer*. A model produces answers, not data, so nothing can follow it. Getting this wrong gives `TypeError: All intermediate steps should be transformers...`, **and only at `fit`, not when you build it.**
+### Practice Set B
 
-**3.1(g) One sentence: what is the difference between the artifact and the code?**
-The artifact **already contains the learned numbers**, so it works in a fresh program with no data and no training; the code only produces those numbers if you also have the data, the libraries and the time.
+**B1.**
 
-**3.1(h) Why does welding the two objects together prevent leakage as well as forgetfulness?**
-Because `pipe.fit(X_train, y_train)` fits the preparation on the training rows and **has no way to reach the other rows.** With two loose objects you can fit the preparation on all 2000 rows by accident, and it will not complain.
-
-### Page 3.2 — Count the columns (in pen, before running)
-
-| # | Question | The real answer |
-|---|---|---|
-| (a) | How many columns go into the switchboard? | **8** |
-| (b) | How many are number columns? | **5** — `distance_km`, `items`, `prep_minutes`, `order_hour`, `driver_experience_months` |
-| (c) | How many are word columns? | **3** — `restaurant`, `day_of_week`, `weather` |
-| (d) | How many columns does route 1 produce? | **5.** Filling holes and rescaling never change the count |
-| (e) | How many different restaurants? days? weathers? | **5 · 7 · 3** |
-| (f) | How many columns does route 2 produce? | **5 + 7 + 3 = 15** |
-| (g) | How many columns come out altogether? | **5 + 15 = 20** |
-| (h) | How many **rows** come out? | **1200.** Unchanged — no rows were added or removed |
-| (i) | Write the shape before and after | **(1200, 8) → (1200, 20)** |
-
-**3.2(j) Where did the 5, the 7 and the 3 come from, and which Week 1 tool finds them?**
-They are the counts of different values in each word column, and the tool is **`nunique()`** — the same one that caught `order_id` in Week 1. Real output:
-
-```text
-restaurants: 5  days: 7  weathers: 3
+```python
+print("columns in :", X_train.shape)
+print("columns out:", prep.transform(X_train).shape)
 ```
 
-**3.2(k) Suppose a sixth restaurant opened and appeared in the training data. What would the shape become?**
-**(1200, 21).** One more restaurant means one more column out of route 2: 6 + 7 + 3 = 16, and 5 + 16 = 21. *(Full marks for also noticing that the artifact would have to be rebuilt, and that the old artifact would silently give the new restaurant five zeros — which is heading 7.)*
-
-### Page 3.3 — Which object gets dropped?
-
-*One order: GreenLeaf, 7.4 km, 5 items, 22.0 minutes of prep, 19:00 Thursday, rain, driver 59 months.*
-
-| # | Question | The real answer |
-|---|---|---|
-| (a) | What four numbers does the model receive if the order is prepared properly? | **1.793, 0.811, 2.008, 0.662** |
-| (b) | What is P(late)? | **0.709** |
-| (c) | Predict, in pen: what happens if the preparation is skipped? | Most students write "an error". **With these four raw numbers pasted in, it is not an error.** (On the whole raw table, with words and holes, it would be: `could not convert string to float`.) |
-| (d) | What is P(late) with the raw numbers instead? | **1.000** |
-| (e) | Do the subtraction | **1.000 − 0.709 = 0.291** |
-| (f) | What error message do you get? | **None at all** in this demonstration: no error, no warning. |
-| (g) | Why is the model *more* sure rather than just wrong? | The raw numbers are 4 to 30 times bigger than anything it trained on, so the answer is thrown off the end of its scale; these four all have positive weights, so it goes towards 1.000 (a negatively-weighted column such as driver experience would send it towards 0.000). Not "4 to 30 times" anything — the probability is not linear in the inputs. |
-
-**3.3(h) The two-loose-objects version and the pipeline version scored the same validation AUC. What number, and why does that matter?**
-**0.7541, both.** It matters because it proves the pipeline is **not a better model** — it is the same model with no way to reach it wrongly. Real output:
-
 ```text
-validation ROC-AUC: 0.7541
+columns in : (1200, 8)
+columns out: (1200, 20)
 ```
 
-**3.3(i) In one sentence: why is "I'll remember to prepare first" not good enough?**
-Because remembering is something you can fail at silently, six months later, in a different file — and the shape of a welded object is something you cannot fail at at all.
+**B2.**
 
-**3.3(j) A probability of 1.000 came out and nothing crashed. What should you do?**
-**Treat it as an alarm and check what reached the model.** Real data almost never justifies certainty about a pizza. *(Full marks for saying "check the preparation ran".)*
+```python
+def columns_out(df, number_columns, word_columns):
+    total = len(number_columns)
+    for col in word_columns:
+        total = total + df[col].nunique()
+    return total
 
-### Page 3.4 — Finish `predict.py` and cold-start it
+
+print("predicted on paper:", columns_out(X_train, NUMBER_COLUMNS, WORD_COLUMNS))
+print("predicted, no weather:",
+      columns_out(X_train, NUMBER_COLUMNS, ["restaurant", "day_of_week"]))
+print("predicted, 4 numbers only:",
+      columns_out(X_train, NUMBER_COLUMNS[:4], WORD_COLUMNS))
+```
+
+```text
+predicted on paper: 20
+predicted, no weather: 17
+predicted, 4 numbers only: 19
+```
+
+**B2(a).** **4 + 15 = 19.**
+
+**B2(b).** **Shape bugs** — the class where the number of columns going into the model is not the number you thought, so a mismatch shows up thirty lines later in a message about a matrix. Working the width out from `nunique()` **before** you build anything means you have a number to compare the printed shape against, and a disagreement is caught in seconds rather than in Week 17.
+
+**B3.**
+
+```python
+name = "predict.py"
+text = open(name).read()
+print(f"{name:16s} fit( {text.count('fit('):2d}  make_data {text.count('make_data'):2d}  "
+      f"train_test {text.count('train_test'):2d}  lines {len(text.splitlines()):3d}")
+```
+
+```text
+predict.py       fit(  0  make_data  0  train_test  0  lines  24
+```
+
+**B3(a).** Because the letters `fit` appear inside perfectly innocent words — `fitted`, `profit`, `benefit`, and in a comment like *"this artifact was fitted on 1200 rows"*. **`fit(` with the bracket only matches something being called**, which is the thing you actually care about. It is not perfect (`predict_proba(` contains no `fit(`, but `refit(` would match) and that is fine: a screen, not a verdict.
+
+**B3(b).** Several good answers. It would miss a file that **imports** a training module (`from train_pipeline import pipe`) — no `fit(` in *this* file, but the fitting happens the moment you import. It would miss `p_c.py` above, which has no training code and no preparation either. And it would miss a file that loads the wrong artifact, or a stale one from three weeks ago.
+
+**B4.**
+
+```python
+"""w3b4.py - the same shape of artifact, on wine."""
+import joblib
+from sklearn.compose import ColumnTransformer
+from sklearn.datasets import load_wine
+from sklearn.dummy import DummyClassifier
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+
+WINE_NUMBERS = ["alcohol", "malic_acid", "flavanoids", "color_intensity", "proline"]
+
+data = load_wine(as_frame=True)
+X = data.data[WINE_NUMBERS]
+y = (data.target == 1).astype(int)
+
+X_rest, X_test, y_rest, y_test = train_test_split(
+    X, y, test_size=0.2, stratify=y, random_state=0)
+X_train, X_val, y_train, y_val = train_test_split(
+    X_rest, y_rest, test_size=0.25, stratify=y_rest, random_state=0)
+print("piles:", len(y_train), len(y_val), len(y_test))
+
+number_route = Pipeline(steps=[
+    ("fill_holes", SimpleImputer(strategy="median")),
+    ("same_ruler", StandardScaler()),
+])
+prep = ColumnTransformer([("num", number_route, WINE_NUMBERS)])
+pipe = Pipeline(steps=[
+    ("prep", prep),
+    ("model", LogisticRegression(max_iter=1000, random_state=0)),
+])
+pipe.fit(X_train, y_train)
+
+print("columns in :", X_train.shape)
+print("columns out:", prep.transform(X_train).shape)
+
+auc = roc_auc_score(y_val, pipe.predict_proba(X_val)[:, 1])
+dummy = DummyClassifier(strategy="most_frequent").fit(X_train, y_train)
+base = roc_auc_score(y_val, dummy.predict_proba(X_val)[:, 1])
+print(f"validation ROC-AUC  : {auc:.4f}")
+print(f"baseline ROC-AUC    : {base:.4f}")
+print(f"beat the baseline by: {auc - base:.4f}")
+
+joblib.dump(pipe, "wine_pipeline.joblib")
+```
+
+```text
+piles: 106 36 36
+columns in : (106, 5)
+columns out: (106, 5)
+validation ROC-AUC  : 1.0000
+baseline ROC-AUC    : 0.5000
+beat the baseline by: 0.5000
+```
+
+**Runtime: about 1 second.** The artifact is **3146 bytes.**
+
+**B4(a).** **There are no word columns.** Filling holes does not change the number of columns and neither does a ruler, so 5 in gives 5 out. All of the widening in the delivery table came from turning three words into fifteen 0/1 columns.
+
+**B4(b).** The two checks:
+
+1. **How many rows is that measured on?** Thirty-six. A perfect score on 36 rows is not the same kind of claim as a perfect score on 3,600 — and last week you watched a model that looked at nothing score 0.7565 on this exact pile.
+2. **What does 1.0000 mean mechanically?** That every class-1 wine got a higher score than every non-class-1 wine, with no overlap at all. So look at the actual probabilities: if they are all 0.999 and 0.001, ask what column is doing that, and whether it could be reading the answer.
+
+Here it survives the check — these are real chemical measurements of three genuinely different grape varieties, and for class 1 against the rest, `color_intensity` alone already separates them well (AUC about 0.96 on all 178 wines). But **a perfect score is a thing you look into, not a thing you celebrate**, and what you found goes on the card.
+
+**B4(c).** **The fifteen category names.** The delivery artifact has to remember every restaurant, every day and every weather it saw, in alphabetical order, so it can build the same twenty columns tomorrow. The wine artifact has five column names, five medians, five ruler centres and widths, and six learned coefficients — and nothing to remember about words.
+
+**B5.**
+
+```python
+"""card_numbers.py - every number the model card needs. No scores in here."""
+from sklearn.model_selection import train_test_split
+from make_data import make_deliveries
+
+NUMBER_COLUMNS = ["distance_km", "items", "prep_minutes",
+                  "order_hour", "driver_experience_months"]
+WORD_COLUMNS = ["restaurant", "day_of_week", "weather"]
+
+df = make_deliveries(n=2000, seed=0).drop_duplicates().reset_index(drop=True)
+y = df["late"]
+X = df.drop(columns=["late", "order_id"])
+
+X_rest, X_test, y_rest, y_test = train_test_split(
+    X, y, test_size=0.2, stratify=y, random_state=0)
+X_train, X_val, y_train, y_val = train_test_split(
+    X_rest, y_rest, test_size=0.25, stratify=y_rest, random_state=0)
+
+word_out = 0
+for col in WORD_COLUMNS:
+    word_out = word_out + X_train[col].nunique()
+out = len(NUMBER_COLUMNS) + word_out
+
+print("MODEL CARD NUMBERS - delivery lateness")
+print("rows after de-duplication :", len(df))
+print("features                  :", X.shape[1])
+print("piles train/val/test      :", len(y_train), "/", len(y_val), "/", len(y_test))
+print("late rate in all three    :", round(y_train.mean(), 4),
+      round(y_val.mean(), 4), round(y_test.mean(), 4))
+print("columns in  -> out        :", X_train.shape, "->", (len(X_train), out))
+print("test pile opened          : no")
+```
+
+```text
+MODEL CARD NUMBERS - delivery lateness
+rows after de-duplication : 2000
+features                  : 8
+piles train/val/test      : 1200 / 400 / 400
+late rate in all three    : 0.2875 0.2875 0.2875
+columns in  -> out        : (1200, 8) -> (1200, 20)
+test pile opened          : no
+```
+
+**Runtime: about 0.7 seconds.** Nothing is fitted in this file at all — which is the point. The 20 comes from `nunique()`, exactly as in B2, so this program tells you the shape without ever building the switchboard.
+
+And the last line is typed by hand for a reason worth stating out loud: **no program can know whether you peeked.** That line is a person's claim, and the only thing that makes it worth anything is that you wrote it before you were disappointed.
+
+**🧑‍🏫 Marking tip for B3:** a student's own version may print the counts in a different layout. Mark the three zeros and the line count, not the formatting. Students' line counts will differ from 24; what matters is that `fit(`, `make_data` and `train_test` are each 0.
+
+### Fix the Broken Program
+
+**Bug 1.** Lines **36–39** (the outer `Pipeline`). Kind: **runtime** (`TypeError`).
+
+**`intermediate` means every step except the last.** An intermediate step has to **change data and pass it on** — that is what "transformer" means here. A model does not pass data on; it **ends** the line, producing answers instead of columns. So **a model can only ever be the last step.** A pipeline is a queue with a worker at the end.
+
+**`pipeline built` printed first**, so the check happens **when you fit**, not when you build. Building a wrong pipeline is completely silent.
+
+**The fix:** swap the two steps so `("prep", prep)` comes first and `("model", ...)` is last.
+
+**Bug 2.** Lines **14–16** (the two column lists). Kind: **dtype**.
+
+**Column:** `weather`. **Wrongly listed in:** `NUMBER_COLUMNS`. The imputer tried to find the median of a column full of the words `clear`, `rain` and `storm`, and quoted the first one it could not turn into a number.
+
+**The fix:**
+
+```python
+NUMBER_COLUMNS = ["distance_km", "items", "prep_minutes",
+                  "order_hour", "driver_experience_months"]
+WORD_COLUMNS = ["restaurant", "day_of_week", "weather"]
+```
+
+*(Worth working out what the broken version's width **would** have been, if it had got that far: 6 number columns, and word columns of 5 + 7 = 12, giving 6 + 12 = **18** — not 20. So your paper count would have caught this one too, if the program had survived long enough to print a shape. It did not, which is the nice thing about a dtype error: it is loud.)*
+
+**Bug 3.** It printed **1212 / 404 / 404**; the card says **1200 / 400 / 400.**
+
+1212 − 1200 = **12** · 404 − 400 = **4**, twice · 12 + 4 + 4 = **20.**
+
+**Where have you seen 20 before?** **The duplicate rows from Week 1.** `.drop_duplicates()` was left off, so all 20 copies are still in the table and got dealt out across the three piles.
+
+**The fix:**
+
+```python
+df = make_deliveries(n=2000, seed=0).drop_duplicates().reset_index(drop=True)
+```
+
+**0.7680 − 0.7541 = 0.0139.**
+
+**Why 0.7541 is the honest number.** With `.drop_duplicates()` left off, about four of the twenty copies landed in the validation pile while their twins sat in the training pile (we counted 4 of the 404), so the model was examined on a few rows whose answers it had already been shown — that is memory, not skill, and it makes the whole method untrustworthy. Be careful about the size of it, though: four rows cannot explain 0.0139 by themselves. The two runs also use different rows (1212 versus 1200 training rows, so different splits), and on validation piles this small, changing the split alone moves the AUC by several hundredths in either direction. So 0.7541 is the honest number because the procedure that produced it is sound, not because it is lower — had the leaky run come out lower, it would still have been the wrong one to report.
+
+**What would have caught bug 3?** **Reading the first line of output against a number you had written down** — `piles: 1212 404 404` against `1200 / 400 / 400`. Not the column count, which was right all along; not the AUC, which went *up*; not any error message, because there was none. Only the pile sizes, and only because Week 2 made you write them on a card.
+
+### Puzzle of the Week
+
+| # | shape out | number cols | word cols out | deduction |
+|---|---|---|---|---|
+| 1 | `(1200, 20)` | 5 | **15** | the known one |
+| 2 | `(1200, 21)` | 5 | **16** | **one word column gained a value** — a sixth restaurant, or a fourth weather, or an eighth day |
+| 3 | `(1200, 8)` | **8** | **0** | **there are no word columns at all** — all eight went down route 1 |
+| 4 | `(1200, 17)` | 5 | **12** | **three fewer word columns than before** — most likely `weather` was dropped from the word list |
+| 5 | `(1200, 20)` | 5 | **15** | **only one word column, and it has 15 different values** |
+
+**Part 1(a).** Two explanations for row 3, both consistent with the shape:
+
+**1.** All eight columns are numbers and every one went down route 1, so nothing widened.
+**2.** There **are** word columns, but they were left out of the switchboard entirely and quietly dropped — and something else made the count come back to 8. (For instance: 8 columns in, 5 numbers listed and 3 word columns each with exactly one value would give 5 + 3 = 8.)
+
+The point is that **a shape is not a diagnosis.** Two very different pipelines print the same thing, and one of them is silently ignoring three of your columns.
+
+**Part 1(b).** **Yes, perfectly possible.** It would have to be a word column with **15 different values** — a `postcode_district`, a `driver_name`, a `menu_item`. Which is worth pausing on: 15 different values in 1200 rows is 0.0125, nowhere near an ID, so Week 1's check would not flag it — and yet it is quietly adding fifteen columns to your model.
+
+**Part 1(c).** **Impossible — if every column goes down a route.** Every number column gives at least 1 column out and every word column gives at least 1 (a column with only one value still produces one), so **the output can never be narrower than the number of columns you fed in** — unless the switchboard is dropping columns you meant to keep — `ColumnTransformer` drops any column you do not list, silently, so listing only four columns and leaving four out would print exactly `(1200, 4)`. That is a different bug, and it is why a shape is a check and not a diagnosis. With every column routed: widening or staying the same, yes; shrinking, no.
+
+**Part 2.**
+
+| # | What happened | Answer |
+|---|---|---|
+| 1 | a sixth restaurant opens | **answers** — five zeros, 0.308, no warning |
+| 2 | columns in a different order | **answers**, and *correctly* — 0.291 either way, because columns are chosen by name |
+| 3 | an order with no `weather` key at all | **crashes** — `ValueError: columns are missing: {'weather'}` |
+| 4 | three orders, only one with a `weather` key | **silently wrong** — `pd.DataFrame` builds the column anyway and fills the gaps with `nan`, which becomes three zeros |
+
+**Part 2(a).** **Number 4 whispers.** The printed clue is the word **`nan`** sitting in the `weather` column when you print `orders` — and the probability quietly moving, from 0.022 to 0.039 for the Napoli order. Nothing else tells you.
+
+**Part 2(b).** *A missing **column** shouts. A missing **value** whispers.*
+
+**Part 2(c).** **Heading 7, known limitations.** Something like: *"A restaurant, day or weather the model has never seen becomes all zeros — as if the order came from no restaurant at all — and the model answers anyway with no warning. Measured: SliceHouse 0.291, the same order from an unseen PizzaNova 0.308."*
+
+The number is what makes it a limitation rather than a worry.
+
+### Think Deeper
+
+**T1.** Strong answers separate two different claims. First: *how would you measure it on their data?* — fit it both ways, on the same split, with the same seed, and print the difference to six decimal places, exactly as Worked Example 3 does. That is fifteen lines and half a minute, and everybody should be able to do it. Second, and this is the real question: **"I measured it and it was tiny" is a statement about today's data, and the artifact will outlive today's data.** The centre of a ruler learned from 2000 rows and from 1200 rows differed by 0.0602 here; on a table with one wild outlier in the held-out rows it could differ by ten times that. The best answers land on the distinction the chapter is built around: a **small** mistake is one you can see and decide to tolerate; an **invisible** mistake is one you cannot see and therefore cannot decide anything about. You do not weld the pipeline because doing it wrong is obviously bad. You weld it because doing it wrong is undetectable, and **the only defence against an undetectable mistake is a shape that cannot make it.**
+
+**T2.** The third option is *"answer, and also report that you had to guess"* — and thinking about what that means in practice is the useful part. In the artifact it would mean returning two things instead of one: the probability, and a flag or a list saying which inputs were unrecognised. That changes the shape of every program downstream, which is exactly why it is not free. Who reads it: not the customer, but a dispatcher's screen showing "0.31 (unknown restaurant)", or a log a person checks weekly, or an alert when the unknown-value rate crosses 1%. Why nothing here does it: because `predict_proba` returns numbers, full stop, and adding a second channel means designing an interface — which is Weeks 34 and 35, and is genuinely most of the work of shipping something. The honest closer is that `handle_unknown="ignore"` is simultaneously **the right default and a permanent liability**, and the only thing making it safe today is that a person wrote it down under heading 7.
+
+**🧑‍🏫 Marking tip:** T1 and T2 are paragraphs, not one-liners. For T1, the sentence to look for is the distinction between a mistake that is *small* and one that is *invisible*. For T2, look for a concrete picture of the third option (two things returned, a flag, who reads it) rather than a general "it should warn".
+
+### Build It
+
+Your own numbers, but here is what they must match.
+
+**The count:** 5 number columns → 5. `restaurant` 5, `day_of_week` 7, `weather` 3 → 5 + 7 + 3 = 15. 5 + 15 = **20.** `(1200, 8)` → `(1200, 20)`, and the program prints `columns out: (1200, 20)`. **They agree.**
+
+**The model first:** it did **not** complain when you built it; it complained when you **fitted** it, at the `pipe.fit(X_train, y_train)` line. The last line of the error is `TypeError: All intermediate steps should be transformers and implement fit and transform or be the string 'passthrough' ...`, and the word that explains the rule is **`intermediate`** — every step except the last.
+
+**The measurement:**
+
+```text
+validation ROC-AUC  : 0.7541
+baseline ROC-AUC    : 0.5000
+beat the baseline by: 0.2541
+```
+
+**Why the dummy is rebuilt in the same script:** because a score with no baseline beside it is a number somebody will quote on its own. If the two live in different files, sooner or later one of them travels without the other — and "0.7541" without "against 0.5000" is half an answer.
+
+**The artifact: 5002 bytes.** Inside it: the **median** it will use to fill holes (30.0), the **centre and width** of the ruler for all five number columns, the **list of every restaurant, day and weather** it knows about in alphabetical order, and the **twenty-one numbers** logistic regression learned. Not in it: **the data**, and **the training code**.
+
+**The clean room:** `fit(` → **0**, `make_data` → **0**, `train_test` → **0**, and **24** lines.
+
+| order | restaurant | km | weather | hour | P(late) |
+|---|---|---|---|---|---|
+| 1 | CrustyBros | 8.5 | storm | 19 | **0.968** |
+| 2 | Napoli | 1.2 | clear | 12 | **0.022** |
+| 3 | SliceHouse | 4.2 | rain | 18 | **0.291** |
+
+**Order 3 is closest to the base rate of 0.2875**, and that is reassuring rather than boring: an order with nothing remarkable about it *should* get the answer "about as likely as any other order". A middling order that came out 0.03 or 0.94 would mean something was wrong with what reached the model.
+
+**The two experiments:**
+
+**Scrambled column order:** P(late) = **0.291.** **Identical**, because the switchboard looks columns up **by name** and never counts from the left. A spreadsheet somebody emails you will have its columns in whatever order they felt like, and it will still work.
+
+```text
+SliceHouse (in the training data) P(late) = 0.291
+PizzaNova  (never seen before)    P(late) = 0.308
+difference                                = 0.017
+```
+
+**No error. No warning.** So the fact has to live **on the card, under heading 7** — the only place left for something that is true, important and not enforced by any code.
+
+**The model card — a full-marks version:**
+
+| # | Heading | Content |
+|---|---|---|
+| 1 | Intended use | Flag a risky order **at order time**, so a dispatcher can act |
+| 2 | Out-of-scope use | **Not** for driver pay, ratings, shift allocation or discipline decisions |
+| 3 | Unit of prediction | One order |
+| 4 | Training data | 2000 rows (after 20 duplicates removed), 8 features, `make_data.py` seed 0 |
+| 5 | Splits | 1200 / 400 / 400, stratified, 0.2875 late in all three. **Test pile not opened.** |
+| 6 | Metrics | **Validation** ROC-AUC **0.7541**, against a baseline of **0.5000**, on 400 rows |
+| 7 | Known limitations | An unseen restaurant becomes five zeros and it answers anyway (0.291 → 0.308, no warning). A missing driver-experience value is replaced by the training median of 30.0 and is indistinguishable from a real 30 afterwards. A missing *value* raises nothing; only a missing *column* does |
+
+**Headings 3, 4 (the feature list) and 6 (the metric)** were written two weeks ago on index cards; headings 1 and 2 are new this week. The cleanest answer: **heading 3 is card 1, heading 4's feature list is card 3, and heading 6's metric is card 5.** The card is not a report; it is the contract, updated.
+
+**Heading 6 in full:** *"Validation ROC-AUC 0.7541 on the 400-row validation pile, against a `most_frequent` baseline of 0.5000 on the same pile — 0.2541 above the zero. The test pile has not been opened."*
+
+**The error that protected you:** the last line is `ValueError: columns are missing: {'weather'}`, and it names **`weather`**.
+
+**What the error did instead of guessing:** it **stopped and named `weather`** instead of guessing or answering anyway. (A missing *column* cannot slip through as zeros — the switchboard looks it up by name. The silent case is a missing *value*, in the Stretch below.) *"It stopped my program"* alone is the wrong shape of answer; the right shape says what it did instead of guessing.
+
+**Stretch — a missing value instead of a missing column:**
+
+| order | weather | before | now |
+|---|---|---|---|
+| CrustyBros | storm | 0.968 | **0.968** |
+| Napoli | *(deleted)* | 0.022 | **0.039** |
+| SliceHouse | rain | 0.291 | **0.291** |
+
+**No error.** `pd.DataFrame` built the `weather` column anyway — two of the three orders had one — and put **`nan`** in the gap. `OneHotEncoder` turned that `nan` into three zeros, exactly as it does for a restaurant it has never seen.
+
+**Why a missing value is more dangerous:** **the switchboard checks that a column *exists*, not that it has anything *in* it** — so a missing column raises an error you cannot ignore, and a missing value produces a slightly different number you will never notice.
+
+**Bug Log — the two entries:**
+
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `TypeError: All intermediate steps should be transformers...` | every step but the last must change data and pass it on; a model ends the line | the model was first in the pipeline | model **last**, always. And note it is silent when built, loud when fitted |
+| `ValueError: columns are missing: {'weather'}` | the switchboard looks columns up by name and refused to guess | one of the eight keys left off a hand-typed order | add the key. **This error protected me** from a guess: it named `weather` and stopped |
+
+**Teacher model answers for Build It (these are the items you mark).** Students' three orders will differ from these, and that is correct.
+
+#### Steps 7-10 — `predict.py`, the clean room and the three orders
 
 Model answer, actually run:
 
@@ -1858,20 +2379,17 @@ lines in predict.py         : 24
 
 **Students' three orders will differ from these, and that is correct.** Mark the *shape* of the answer: three orders, three probabilities, and a story that makes sense.
 
-**3.4(a) Do your three probabilities tell a sensible story? Say why in one line each.**
-Model answer:
+**"Do they tell a sensible story?" (step 9).** Model answer:
 
 > *"0.968 — 8.5 km in a storm at seven in the evening from the slowest restaurant, with a driver who's been there twelve months. Everything is against it. 0.022 — 1.2 km, one item, lunchtime, clear, experienced driver. Nothing is against it. 0.291 — middling distance, rain, six in the evening. Genuinely could go either way, and 29% is close to the base rate of 28.75%, which is the honest answer for an order with nothing remarkable about it."*
 
 **Mark for the third one.** Anybody can explain the extremes. Noticing that the middling order lands near the **base rate of 0.2875** is the strong answer.
 
-**3.4(b) What do the three zeros prove?**
-That the artifact really is the deliverable: `predict.py` does no training, never touches the data, and never splits anything. **Anybody with the 5,002-byte file can run it.**
+**What do the three zeros prove?** That the artifact really is the deliverable: `predict.py` does no training, never touches the data, and never splits anything. **Anybody with the 5,002-byte file can run it.**
 
-**3.4(c) Why does the file have to be *new*, rather than a copy of `train_pipeline.py` with the top deleted?**
-Because deleting is how a `fit(` survives — and because typing the eight column names from your own card, rather than copying them, is what proves the artifact is self-contained. *(A copied file that happens to pass the count is still fine; the point is that most of them do not.)*
+**Why must the file be *new*, rather than a copy of `train_pipeline.py` with the top deleted?** Because deleting is how a `fit(` survives — and because typing the eight column names from your own card, rather than copying them, is what proves the artifact is self-contained. *(A copied file that happens to pass the count is still fine; the point is that most of them do not.)*
 
-**3.4(d) Retype one order with its eight keys in a completely different order. What happens?**
+**Retype one order with its eight keys in a completely different order (step 11).** What happens?
 
 ```text
 0.291 <- columns in a totally different order
@@ -1879,9 +2397,9 @@ Because deleting is how a `fit(` survives — and because typing the eight colum
 
 **Identical.** The switchboard looks columns up by name and never counts from the left.
 
-### Page 3.5 — `model_card.md`, seven headings
+#### Step 12 — `model_card.md`, seven headings
 
-This is the marked page. Model answer, as a real markdown file:
+This is the marked item. Model answer, as a real markdown file:
 
 > # Model card — late pizza deliveries, v1
 >
@@ -1918,13 +2436,11 @@ This is the marked page. Model answer, as a real markdown file:
 3. **Does heading 6 name the pile *and* the baseline?** "AUC 0.7541" is half an answer.
 4. **Is heading 7 in their own words and about something they actually saw?** The PizzaNova result, or the generated data, or the 108 filled holes. **Copied generalities earn nothing.**
 
-**3.5(a) Which three headings could you have written in Week 1?**
-**3 (unit of prediction, Week 1's card one), 4 (the feature list, card three) and 6 (the metric, committed on card five, though the number came later).** Headings 1 and 2 (intended use, out-of-scope use) are *new* this week — Week 1's cards do not contain them, so a student who claims them has not been checking.
+**Which three headings could you have written in Week 1?** **3 (unit of prediction, Week 1's card one), 4 (the feature list, card three) and 6 (the metric, committed on card five, though the number came later).** Headings 1 and 2 (intended use, out-of-scope use) are *new* this week — Week 1's cards do not contain them, so a student who claims them has not been checking.
 
-**3.5(b) Name something a real model card should have that our seven headings do not.**
-Any of: **a date**, **a version number**, **who to contact**, **when it should be retrained**, **who is accountable for it**, **what data it must never be run on**. All are real; all are Week 34's subject. **The best answer is "when should this file be thrown away?"**
+**Name something a real model card should have that our seven headings do not.** Any of: **a date**, **a version number**, **who to contact**, **when it should be retrained**, **who is accountable for it**, **what data it must never be run on**. All are real; all are Week 34's subject. **The best answer is "when should this file be thrown away?"**
 
-### Page 3.6 — Break it on purpose
+#### Step 13 — Break it on purpose
 
 *Delete a required column from **all** the orders in `predict.py` and run it.*
 
@@ -1955,19 +2471,15 @@ ValueError: columns are missing: {'weather'}
 >
 > **Napoli moved from 0.022 to 0.039 and nothing complained.** The column existed, so the switchboard was satisfied; only its *contents* were missing. **If this happens to a student, stop the class and show everybody** — it is the whole theme of the week arriving by accident, and it is better than anything you could have planned.
 
-**3.6(a) One line: what did that error protect you from?**
-
-Model answer:
+**One line: what did that error protect you from?** Model answer:
 
 > *"It stopped the program and named `weather`, instead of guessing or answering anyway. A column that is missing entirely can't slip through as zeros — it's a missing value inside a column that exists that does that."*
 
-**Mark for "named the column", "refused to guess" or "stopped instead of answering"; a student who contrasts it with the silent missing-value case (3.6(d)) has gone further.** "It stopped my program" alone is the wrong shape of answer: the error is the *good* outcome, and the answer has to say what it did *instead of* guessing. Do not reward a claim that the column would have become three zeros: that happens only for a missing value (3.6(d)), not a missing column.
+**Mark for "named the column", "refused to guess" or "stopped instead of answering"; a student who contrasts it with the silent missing-value case (the Stretch) has gone further.** "It stopped my program" alone is the wrong shape of answer: the error is the *good* outcome, and the answer has to say what it did *instead of* guessing. Do not reward a claim that the column would have become three zeros: that happens only for a missing value (the Stretch), not a missing column.
 
-**3.6(b) Why does the error name the column?**
-Because the `ColumnTransformer` selects columns **by name**, so it knows exactly which name it was looking for and could not find. *(Contrast with `ValueError: A given column is not a column of the dataframe`, which does not tell you which one — that is the same class of bug with a much worse message, and it is in the clinic.)*
+**Why does the error name the column?** Because the `ColumnTransformer` selects columns **by name**, so it knows exactly which name it was looking for and could not find. *(Contrast with `ValueError: A given column is not a column of the dataframe`, which does not tell you which one — that is the same class of bug with a much worse message, and it is in the clinic.)*
 
-**3.6(c) Now try it with a *number* column deleted instead. Same message?**
-Yes, same shape, different name. Deleting `driver_experience_months` from all three orders gives:
+**Now try it with a *number* column deleted instead. Same message?** Yes, same shape, different name. Deleting `driver_experience_months` from all three orders gives:
 
 ```text
 ValueError: columns are missing: {'driver_experience_months'}
@@ -1975,19 +2487,36 @@ ValueError: columns are missing: {'driver_experience_months'}
 
 **All eight are required, and the switchboard does not care which kind of column it is.**
 
-**3.6(d) Delete the column from just ONE order instead of all three. What happens, and why is it worse?**
-**Nothing happens** — no error, and the Napoli order's probability moves from **0.022 to 0.039**. `pd.DataFrame` still creates a `weather` column because two of the three orders have one; the missing entry becomes `nan`; and `OneHotEncoder` turns `nan` into three zeros, exactly as it does for a restaurant it has never seen. **The switchboard checks that the column *exists*, not that it has anything in it.**
+**The Stretch (one order only) — why it is worse.** **Nothing happens** — no error, and the Napoli order's probability moves from **0.022 to 0.039**. `pd.DataFrame` still creates a `weather` column because two of the three orders have one; the missing entry becomes `nan`; and `OneHotEncoder` turns `nan` into three zeros, exactly as it does for a restaurant it has never seen. **The switchboard checks that the column *exists*, not that it has anything in it.** It is worse because **it is silent**, and silent is this whole week's subject. *(Full marks for connecting it to the PizzaNova result: an unknown value and a missing value both become all zeros, and neither says so.)*
 
-It is worse because **it is silent**, and silent is this whole week's subject. *(Full marks for connecting it to the PizzaNova result: an unknown value and a missing value both become all zeros, and neither says so.)*
+#### Step 14 — Bug Log model rows
 
-**3.6(e) Your two Bug Log entries for today.**
-
-Model, two rows:
+The workbook's two rows above are the model; the longer wording the lesson used:
 
 | What I saw | What it means | Cause | Fix |
 |---|---|---|---|
 | `TypeError: All intermediate steps should be transformers and implement fit and transform...` | Every step but the last has to change data and pass it on; a model can only be last. | Prep and model swapped in the outer `Pipeline`. | Prep first, model last. **And note: it did not complain when I built it, only when I fitted it.** |
 | `ValueError: columns are missing: {'weather'}` | One of the eight columns the model was trained on wasn't in what I handed it. | A key left out of a hand-typed order. | Add it. **This error protected me — it named the column and stopped instead of guessing.** |
+
+### Draw It
+
+**One arrow crosses the wall**, and it is labelled `delivery_pipeline.joblib`, **5002 bytes**.
+
+**There is no `fit` anywhere on side 2** — no `fit`, no `make_data`, no `train_test`, no table. If your drawing has any of those on the right of the wall, you have drawn a training script with "predict" in its name.
+
+**The model is drawn as the last thing inside the sealed box**, with the preparation in front of it and **no arrow reaching it directly.** That is the whole diagram: not a tidier arrangement, a shape with no way in.
+
+**What the file must never be used for is written on the card**, drawn as a page travelling alongside the artifact — because a 5002-byte file is completely silent, and heading 2 is the sentence that stops somebody using a lateness model to decide who gets fewer shifts.
+
+**🧑‍🏫 Marking tip:** count the arrows that cross the wall first. More than one means the student has drawn the data or the code crossing too.
+
+### Self-Check answers
+
+Everything should be a 😀 once the Build It page is done. Three are worth being strict about:
+
+- *"say why the pipeline is a shape that cannot be got wrong"* — you can only claim this if you can quote **0.709 → 1.000** and **0.7541 either way** in the same breath. The pipeline is not a better model; it is the same model with no way to reach it wrongly.
+- *"explain what the preparation itself learns"* — name two: the **median** (30.0 from train, 29.0 from all 2000) and the **ruler's centre** (3.4591 against 3.5193). If you cannot name two numbers, you have the idea and not the evidence.
+- *"prove a file is a clean room by counting"* — and then remember A5: the count proves there is no training code, and **nothing else.** `p_c.py` scored three zeros and was broken.
 
 ### Answers to every question posed in the lesson
 

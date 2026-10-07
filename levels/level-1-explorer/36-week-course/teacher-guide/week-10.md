@@ -12,7 +12,7 @@
 | **Type** | 🟨 Project week — the concept is short, the build is long |
 | **Big idea** | Adding rules to cover exceptions grows faster than the exceptions do, and that wall is exactly why machine learning had to be invented. |
 | **New vocabulary** | check · rule explosion · exponential growth · the machine learning trade |
-| **Materials** | 4 sheets of ordinary A4 paper · a calculator (phone is fine) · the student's Rulebook vs Reality folder from Weeks 7–9 · the sealed envelope of 10 fresh messages · pencil · ruler |
+| **Materials** | 4 sheets of ordinary A4 paper · a calculator (phone is fine) · the student's Rulebook vs Reality folder from Weeks 7–9 · the sealed envelope of 10 fresh messages · pencil · ruler · the printed Week 10 workbook |
 | **Tech needed** | **None required.** A spreadsheet (Google Sheets or Excel) is a nice-to-have for the extension only. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
@@ -205,7 +205,7 @@ not teach or test the threads.
 **15 minutes the night before**
 
 - [ ] **Find the envelope.** Confirm with the student that the sealed envelope of 10 fresh messages from Week 9 exists and is unopened. Do not open it yourself.
-- [ ] **Print** workbook pages 10.1–10.6 (or have the workbook open at page 10.1).
+- [ ] **Print** the Week 10 workbook (Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Build It pages 10.3–10.6, Draw It, Self-Check) and have a plain sheet of paper ready for the 1-to-30 doubling table, which is done on paper, not in the workbook.
 - [ ] **Fold a sheet of A4 in half yourself, as many times as you can.** Do it now, in private. You will get 6 folds, possibly 7 with real effort, and you will not get 8. Knowing this in your hands makes the Hook work.
 - [ ] **Read Figure 10.1 and the "check 30" fact** in section 4 above until you can say it without notes.
 - [ ] **Write the two board panels** (Figure 10.5 below) if you have a whiteboard you can prepare in advance.
@@ -334,7 +334,7 @@ Pause here. This lands.
 
 This segment is arithmetic done out loud, together, with the student holding the pencil. **You do not write the numbers. They do.** The objective says "a number you calculated yourself" and that is not decoration.
 
-**Do this:** Open workbook page 10.1. It has a blank table, `checks` 1 to 30 down the left and `situations` blank on the right. Hand them the pencil.
+**Do this:** Give them a plain sheet of paper (the workbook has only a six-step version of this table, in Practice Set A, question A5). Have them rule two columns: `checks` 1 to 30 down the left and `situations` blank on the right. Hand them the pencil.
 
 **Say this:**
 
@@ -397,7 +397,7 @@ everything checks 1-29 ever added: 536,870,912 - 1 = 536,870,911
 
 Full instructions are in the next section. In the lesson flow it runs like this:
 
-**Minutes 0–5 — Write the trade down.** Workbook page 10.3. They write, in their own handwriting, what they give up and what they supply instead. You fill in the right-hand panel of the board (Figure 10.5) at the same time so they can check themselves against it.
+**Minutes 0–5 — Write the trade down.** Workbook page 10.3 (in Build It). They write, in their own handwriting, what they give up and what they supply instead. You fill in the right-hand panel of the board (Figure 10.5) at the same time so they can check themselves against it.
 
 **Say this:**
 
@@ -417,12 +417,12 @@ Full instructions are in the next section. In the lesson flow it runs like this:
 
 ### Part A — Count the Explosion (already done in the Worked Example)
 
-Kept here for reference: workbook page 10.1, the 1-to-30 doubling table, plus page 10.2, the paper-fold arithmetic.
+Kept here for reference: the 1-to-30 doubling table (on plain paper, with the small six-step version at workbook Practice Set A, A5), plus the paper-fold arithmetic (fold table on plain paper, continued to 10 folds at workbook A6).
 
 ![Seven folds of paper](../figures/fig-w10-4-paper-folds.svg)
 *Figure 10.6 — Seven folds. The same doubling as seven yes/no checks.*
 
-Page 10.2 asks the student to write the fold table and answer: *how thick would the paper be after 30 folds?* The answer is 2³⁰ × 0.1 mm = 107,374,182.4 mm = **107 kilometres**. It is worth doing this one out loud; it is the single most memorable number available to you.
+The fold table asks the student to write out the layers and answer: *how thick would the paper be after 30 folds?* The answer is 2³⁰ × 0.1 mm = 107,374,182.4 mm = **107 kilometres**. It is worth doing this one out loud; it is the single most memorable number available to you.
 
 ### Part B — Rulebook vs Reality: the reckoning
 
@@ -631,65 +631,58 @@ Three checks, five minutes, in the last segment. Use the exact wording.
 >
 > **Second, the unwritable rule.** That's page 10.6. Try to write if-then rules for 'is this a photo of a cat'. Take it seriously — write five real rules, not silly ones. Then, for each one, find a real thing it gets wrong. And write down which rule broke first. You are supposed to fail at this. Failing carefully is the homework."
 
-**Workbook pages:** 10.1 and 10.2 finished in class; **10.3, 10.4, 10.5, 10.6** at home.
+**Workbook sections:** the doubling table (plain paper) and the paper fold are done in class, and so is **Build It page 10.3** (Activity, minutes 0–5). At home, **required:** the **Warm-Up** (5 min, last week's ideas), **Build It pages 10.4, 10.5 and 10.6**, and the **Self-Check**. **Choose from, across the week (not all in one evening):** Practice Set A, Practice Set B, Puzzle of the Week, Think Deeper, Draw It. If you only have time for a few, Practice Set A (A2, A3, A6) and the Puzzle are the ones that most reinforce the doubling idea.
 
-**Expected time:** 15 min finishing page 10.4 · 20 min for page 10.5 · 20 min for page 10.6. About 55 minutes.
+**Expected time:** 5 min Warm-Up · 15 min finishing page 10.4 · 20 min for page 10.5 · 20 min for page 10.6 · 2 min Self-Check. About 60 minutes required; the choose-from sections are extra, roughly 15 to 25 minutes each.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 10.1 — The doubling table
+> The workbook has its own **Answers** section at the end (students can open it). The key below follows the workbook section by section, with the teacher-only wrong-answer maps and marking tips added. Values match the workbook's own answers.
 
-| checks | situations | | checks | situations | | checks | situations |
-|---|---|---|---|---|---|---|---|
-| 1 | 2 | | 11 | 2,048 | | 21 | 2,097,152 |
-| 2 | 4 | | 12 | 4,096 | | 22 | 4,194,304 |
-| 3 | 8 | | 13 | 8,192 | | 23 | 8,388,608 |
-| 4 | 16 | | 14 | 16,384 | | 24 | 16,777,216 |
-| 5 | 32 | | 15 | 32,768 | | 25 | 33,554,432 |
-| 6 | 64 | | 16 | 65,536 | | 26 | 67,108,864 |
-| 7 | 128 | | 17 | 131,072 | | 27 | 134,217,728 |
-| 8 | 256 | | 18 | 262,144 | | 28 | 268,435,456 |
-| 9 | 512 | | 19 | 524,288 | | 29 | 536,870,912 |
-| 10 | 1,024 | | 20 | 1,048,576 | | 30 | 1,073,741,824 |
+### Warm-Up (recall from Week 9)
 
-**10.1(a) How many situations does check 30 add on its own?**
-1,073,741,824 − 536,870,912 = **536,870,912**.
+- **W1. Training score.** How well the rules do on the same 20 messages the rules were written from; always the friendlier number.
+- **W2. Fresh score.** How well they do on messages never seen; usually lower because the rules were shaped by the training messages. Only this one says anything about tomorrow.
+- **W3. Why the envelope.** Once you have read the messages you cannot un-read them, and you would write rules that happen to fit them. Sealing it protects you from fooling yourself.
+- **W4.** A **false alarm** · a **miss**. (A false alarm is usually the worse one: a friend's real message hidden in a junk folder.)
+- **W5.** **Rule 2**, because first match wins, checked top to bottom. The order is part of the rulebook.
 
-**10.1(b) How many did checks 1 to 29 add between them?**
-You start with 1 situation before any checks. After 29 checks you have 536,870,912. So they added 536,870,912 − 1 = **536,870,911**.
+*Watch for:* "the one that is more important" in W5. The rule is about order, not importance.
 
-**10.1(c) Which is bigger?**
-Check 30 alone, by exactly **1**.
+### Practice Set A
 
-**10.1(d) At 2 minutes per rule, how long to write the rules for 20 checks?**
-1,048,576 × 2 = 2,097,152 minutes ÷ 60 = 34,952.5 hours ÷ 8 = 4,369 working days ÷ 250 = **17.5 working years**.
+- **A1.** yes/no · **2ⁿ** · 3 checks give **8** · 6 checks give **64**.
+- **A2.** **(d) 4,096**, by twelve doublings. *Wrong-answer map:* (c) 2,048 is 2¹¹, from counting the numbers instead of the doublings; (a) 24 and (b) 144 come from multiplying 12 by 2 or by itself, which is the "formula" habit the question asks them to avoid.
+- **A3.** **TRUE.** After 9 checks: 512 situations, so checks 1 to 9 created 512 − 1 = 511. Check 10 takes 512 to 1,024, so it created 512, which is one more than 511. True at every step, not just at 10.
+- **A4.** check = **C** · exponential growth = **D** · rule explosion = **E** · the machine learning trade = **A** · labelled example = **B**.
+- **A5.** The treads, left to right: **2, 4, 8, 16, 32, 64.** The shape is **exponential growth** (accept "doubling"). One more check **doubles** the number of situations, because every situation already there splits in two.
+- **A6.** 8 folds = **256** layers, **25.6 mm**; 9 folds = **512**, **51.2 mm**; 10 folds = **1,024**, **102.4 mm**. First fold over 100 mm: **fold 10**. (The in-class paper fold stops at 6 or 7; this table shows why.)
 
-**10.1(e) Why does the real rulebook need fewer than 2ⁿ rules? Does that save the rule-writer?**
-One rule can cover a whole block of situations at once — `IF contains "free" THEN spam` settles half of all situations involving that check in a single line, whatever the other checks say. So the real number is much smaller than 2ⁿ. It does **not** save the rule-writer: shortcuts move the wall from about five checks to about ten, and a real language task needs tens of thousands. The shortcut buys a bigger *n*; it does not change the shape of the curve.
+### Practice Set B
 
-### Page 10.2 — The paper fold
+- **B1.** (a) 2⁸ = **256** ice creams. (b) 256 × 2 = **512 minutes** = about **8.5 hours** (512 ÷ 60 = 8.53). (c) **256 extra**: the ninth topping doubles 256 to 512. That is more than toppings 1 to 8 created together (255).
+- **B2.** (a) 2¹⁵ = **32,768**. (b) 32,768 ÷ 100 = 327.68, so **328 days**. (c) One more setting gives 65,536, so **656 days** (655.36 rounded up). One checkbox doubles the testing job.
+- **B3.** Two problems, both needed. (1) Every rule mentioning the white shirt or the tie is now wrong and all 400 must be checked by hand; only a person who understands each rule can decide which. (2) The rules now contradict each other (some pass a pale blue shirt, others fail it), so the result depends on which rule fires first and you need rules about which rule wins. One-sentence version: a rulebook is frozen the moment you finish it, and the world is not.
+- **B4.** (a) 300 ÷ 5,000 = **0.06 = 6%**. (b) The machine learns the 300 wrong labels **perfectly and loyally**; it cannot know they were rushed. (c) In a rulebook you can read the rules and spot the bad one; in a learned system the mistake is spread through the whole thing, found only by testing on fresh examples, and nobody can point at which labels were bad.
+- **B5.** Income tax: **rules** (the bands are already written down; identical incomes must give identical bills). A friend's voice: **learning** (instant, but you cannot explain how). Chess move legal: **rules** (complete, finite, published). Photo of a cat: **learning** (nothing your rules can name is actually in the photo). Drug dose below maximum: **rules** (the limit is a published number; a comparison is right by construction). **In common:** for every rules answer, the correct answer already exists in written form. Any wording of "someone already wrote the answer down" earns the mark.
 
-| folds | layers | thickness (0.1 mm a sheet) |
-|---|---|---|
-| 0 | 1 | 0.1 mm |
-| 1 | 2 | 0.2 mm |
-| 2 | 4 | 0.4 mm |
-| 3 | 8 | 0.8 mm |
-| 4 | 16 | 1.6 mm |
-| 5 | 32 | 3.2 mm |
-| 6 | 64 | 6.4 mm |
-| 7 | 128 | 12.8 mm |
+### Puzzle of the Week
 
-**10.2(a) Why couldn't you fold it eight times?**
-Because 8 folds is 256 layers, about 25.6 mm of paper — you are trying to bend a block thicker than your thumb, and the outer layers have to travel further round the fold than the inner ones, so the paper has to stretch. It cannot.
+- **P1.** Plan A, day 20: **1,000 rupees**. Plan B, day 20: 2¹⁹ = **524,288 rupees** (day 1 is 2⁰).
+- **P2.** Plan A total: **20,000**. Plan B total: 2²⁰ − 1 = **1,048,575**. (A doubling run always sums to one less than the next number: 1 + 2 + 4 = 7 = 8 − 1.)
+- **P3.** Day 10: A 10,000, B 1,023, **A** ahead. Day 12: A 12,000, B 4,095, **A**. Day 13: A 13,000, B 8,191, **A**. Day 14: A 14,000, B 16,383, **B**. **Crossover: day 14.**
+- **P4.** Doubling looks harmless for a long time, then is not. A rulebook feels fine at five and ten rules, and the wall at twenty was coming all along. Accept any sentence linking "looks harmless, then explodes" to rule-writing.
 
-**10.2(b) How thick after 30 folds?**
-2³⁰ = 1,073,741,824 layers × 0.1 mm = 107,374,182.4 mm = 107,374.18 metres = **about 107 kilometres**. Higher than the edge of space (usually put at 100 km).
+*Watch for:* day 20 of Plan B written as 2²⁰ (off by one) or 20,000 × 2.
 
-**10.2(c) What does the fold have to do with rules?**
-Each fold doubles the layers; each check doubles the situations. Same arithmetic, and the same reason it beats you: it is not that each step is a bit harder than the last, it is that each step is as big as everything before it.
+### Think Deeper
+
+- **T1. Full marks needs** a number the student computed (for example 536,870,912 added by check 30, against 536,870,911 added by checks 1 to 29) and the idea that the work still ahead is always bigger than all the work behind. Model: "After 29 checks I had 536,870,912 situations, and check 30 added another 536,870,912 by itself, more than the 536,870,911 all earlier checks added. Whatever step I am on, the work ahead is bigger than the work behind, so 'I'm nearly done' is always false."
+- **T2. Full marks needs** one unacceptable case (for example a loan or treatment decision, where a person is harmed and cannot appeal), one harmless case (next song in a playlist), and a difference about **consequences and who pays**, not about difficulty.
+
+### Build It
 
 ### Page 10.3 — The trade
 
@@ -701,10 +694,10 @@ Accept any wording that carries these five points. Model answer:
 > **The price:** labelling is slow, boring human work, and any mistake I make gets learned perfectly by the machine.
 > **What I gain:** it can look at every word in the language instead of the ten things I could hold in my head, and when the world changes I add new examples instead of rewriting by hand.
 
-**10.3(a) Write the trade as one sentence.**
+**The whole trade in ONE sentence (last line of the page):**
 "You swap thinking for collecting — because thinking doesn't scale and collecting does."
 
-**10.3(b) Name one thing that is worse about the machine learning way.**
+**Oral extra (not in the workbook): name one thing that is worse about the machine learning way.**
 Any of: you cannot explain a decision · you need lots of data · it can surprise you · it learns your labelling mistakes exactly · it can be confidently wrong on something no human would get wrong.
 
 ### Page 10.4 — Rulebook vs Reality: the scored table
@@ -786,6 +779,66 @@ Model answer:
 > So more rules cannot help me. More rules can only look harder at what is already there. They cannot fetch what is not there. And what is not there is the enormous amount of recognising that my own eyes do in about a twentieth of a second without ever reporting to me how they did it.
 >
 > That is the sharpest test I know for when to stop writing rules: **if you can do the task instantly but cannot explain how, rules will fail and learning will work.** I know a cat when I see one. I cannot say how. So I should stop writing and start collecting.
+
+### Draw It
+
+There is no single right drawing. A strong one shows something **doubling** (staircase, folded paper, splitting boxes, a growing rulebook), shows the **human losing the race** rather than just working hard, and names the **trade** (rules going one way, labelled examples coming back). The three bottom boxes should read something like **1,073,741,824** (or any big number the student calculated) · writing the rules myself and being able to point at the reason · thousands of labelled examples. If the drawing shows only a pile of rules, ask what the other person is doing instead.
+
+### Self-Check
+
+No marks. Read it with the student: any "not yet" on the first or fourth line is your cue for next lesson's warm-up. The fifth line ("100 more rules buy almost no extra accuracy") is answered by page 10.5's "what the gap tells me".
+
+### In-class: the 1-to-30 doubling table (plain paper, not in the workbook)
+
+| checks | situations | | checks | situations | | checks | situations |
+|---|---|---|---|---|---|---|---|
+| 1 | 2 | | 11 | 2,048 | | 21 | 2,097,152 |
+| 2 | 4 | | 12 | 4,096 | | 22 | 4,194,304 |
+| 3 | 8 | | 13 | 8,192 | | 23 | 8,388,608 |
+| 4 | 16 | | 14 | 16,384 | | 24 | 16,777,216 |
+| 5 | 32 | | 15 | 32,768 | | 25 | 33,554,432 |
+| 6 | 64 | | 16 | 65,536 | | 26 | 67,108,864 |
+| 7 | 128 | | 17 | 131,072 | | 27 | 134,217,728 |
+| 8 | 256 | | 18 | 262,144 | | 28 | 268,435,456 |
+| 9 | 512 | | 19 | 524,288 | | 29 | 536,870,912 |
+| 10 | 1,024 | | 20 | 1,048,576 | | 30 | 1,073,741,824 |
+
+**In-class (a) How many situations does check 30 add on its own?**
+1,073,741,824 − 536,870,912 = **536,870,912**.
+
+**In-class (b) How many did checks 1 to 29 add between them?**
+You start with 1 situation before any checks. After 29 checks you have 536,870,912. So they added 536,870,912 − 1 = **536,870,911**.
+
+**In-class (c) Which is bigger?**
+Check 30 alone, by exactly **1**.
+
+**In-class (d) At 2 minutes per rule, how long to write the rules for 20 checks?**
+1,048,576 × 2 = 2,097,152 minutes ÷ 60 = 34,952.5 hours ÷ 8 = 4,369 working days ÷ 250 = **17.5 working years**.
+
+**In-class (e) Why does the real rulebook need fewer than 2ⁿ rules? Does that save the rule-writer?**
+One rule can cover a whole block of situations at once — `IF contains "free" THEN spam` settles half of all situations involving that check in a single line, whatever the other checks say. So the real number is much smaller than 2ⁿ. It does **not** save the rule-writer: shortcuts move the wall from about five checks to about ten, and a real language task needs tens of thousands. The shortcut buys a bigger *n*; it does not change the shape of the curve.
+
+### In-class: the paper fold (plain paper, continued at workbook A6)
+
+| folds | layers | thickness (0.1 mm a sheet) |
+|---|---|---|
+| 0 | 1 | 0.1 mm |
+| 1 | 2 | 0.2 mm |
+| 2 | 4 | 0.4 mm |
+| 3 | 8 | 0.8 mm |
+| 4 | 16 | 1.6 mm |
+| 5 | 32 | 3.2 mm |
+| 6 | 64 | 6.4 mm |
+| 7 | 128 | 12.8 mm |
+
+**In-class (a) Why couldn't you fold it eight times?**
+Because 8 folds is 256 layers, about 25.6 mm of paper — you are trying to bend a block thicker than your thumb, and the outer layers have to travel further round the fold than the inner ones, so the paper has to stretch. It cannot.
+
+**In-class (b) How thick after 30 folds?**
+2³⁰ = 1,073,741,824 layers × 0.1 mm = 107,374,182.4 mm = 107,374.18 metres = **about 107 kilometres**. Higher than the edge of space (usually put at 100 km).
+
+**In-class (c) What does the fold have to do with rules?**
+Each fold doubles the layers; each check doubles the situations. Same arithmetic, and the same reason it beats you: it is not that each step is a bit harder than the last, it is that each step is as big as everything before it.
 
 ### Extension answers (for the flying path)
 

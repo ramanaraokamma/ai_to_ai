@@ -13,7 +13,7 @@
 | **Big idea** | An **array** is a list that knows its shape and does maths to all of its numbers at once. |
 | **New vocabulary** | array · numpy · shape · dtype · alias |
 | **New syntax** | `import numpy as np` · `np.array([...])` · `arr.shape` · `arr.dtype` |
-| **Materials** | Graph paper, or a sheet with a grid drawn on it · a pencil **with a rubber on the end** · the twelve index cards from Week 14 · printed workbook pages 17.1–17.6 · the Bug Log |
+| **Materials** | Graph paper, or a sheet with a grid drawn on it · a pencil **with a rubber on the end** · the twelve index cards from Week 14 · the printed workbook (Practice Set A for class, Build It for home) · the Bug Log |
 | **Tech needed** | Laptop with Python 3 and the editor. **numpy must be installed** — this is the first week all year that needs something installed, and it is the only thing that can eat this lesson. `records.py` and `squad_data.py` from Week 15/16 must still exist. |
 | **Prep time** | 20 minutes the night before (15 of them are the install) · 5 minutes on the day |
 
@@ -384,7 +384,7 @@ You must see a version number. Anything recent is fine:
 
 If you see `ModuleNotFoundError: No module named 'numpy'`, the install did not take. The usual cause is that `pip` installed into a different Python than `python3` runs — which is exactly what `python3 -m pip install numpy` fixes, because it uses the same Python either way. **Solve this tonight.**
 
-- [ ] **Print workbook pages 17.1–17.6.**
+- [ ] **Print the Week 17 workbook.** In class you use Practice Set A (A1–A3); Build It is the homework.
 - [ ] **Find graph paper**, or draw a grid of squares on a blank sheet: 12 rows, 5 columns, big enough to write in. The Hook needs it.
 - [ ] **Find a pencil with a rubber on the end.** You are going to rub things out in front of them, and it matters that it is a rubbing-out and not a crossing-out.
 - [ ] **Check `squad_data.py` and `records.py` from last week still run.** Week 17 imports them once.
@@ -461,7 +461,7 @@ dtype     : <U21
 - [ ] Editor open, terminal in the same folder, `numpy` proven working (run the one-line check again — it takes four seconds and it buys peace of mind).
 - [ ] Graph paper and the pencil-with-rubber on the table. The twelve index cards beside them.
 - [ ] `arrays.py` **deleted**, or renamed. They type it.
-- [ ] Workbook 17.1–17.3 out; **17.4 held back until the predictions on 17.2 and 17.3 are written down and cannot be changed.** This is the whole design of the lesson.
+- [ ] Workbook out at Practice Set A (A1–A3); **Build It held back until the predictions in A2 and A3 are written down and cannot be changed.** This is the whole design of the lesson.
 - [ ] Bug Log out, with a fresh line under *errors with no error message* — there is one more today.
 
 ### Fallback if the laptop or the install fails
@@ -472,7 +472,7 @@ dtype     : <U21
 2. **The rubbing out.** Hand them the rubber. *"Rub out the header row. Now rub out the name column."* What is left is a block of numbers with no labels. **That is an array**, and they made it. Ask: "what have you lost?" *(You can't tell which column is which.)* Ask: "what have you got that you didn't have before?" *(A neat rectangle. Every cell the same kind of thing.)*
 3. **Shape.** Count the rows out loud. Count the columns out loud. Write `(12, 2)` under the block. Then have them draw a *different* block from the same numbers — two rows of twelve — and write `(2, 12)` under it. **Same numbers, different shape.** That is objective 3, done, on paper.
 4. **dtype.** Ask them to write a single word above the block saying what kind of thing every cell holds. `whole numbers`. Then: *"now write the word 'three' in one cell instead of a 3. What kind of thing does every cell hold now?"* They will realise the answer has to cover the word too. That is objective 4, and it lands harder on paper than on screen.
-5. **The predictions.** Workbook page 17.2 needs no computer at all. Do all six predictions on paper and check them next week, or check them on your own machine and read the answers out.
+5. **The predictions.** Workbook Practice Set A, items A2 and A3, needs no computer at all. Do all six predictions on paper and check them next week, or check them on your own machine and read the answers out.
 
 | If this fails | Do this instead |
 |---|---|
@@ -631,11 +631,11 @@ Let them think. Someone will get to "you'd have to say words".
 
 > "Before we type anything, you're going to make six predictions and write them down in pen where you can't quietly change them.
 >
-> Page 17.2. Six arrays. For each one, write **what shape you think it'll be** and **what kind of thing you think every cell will hold.** Guess. Being wrong is completely fine — what's not fine is deciding what you thought *after* you've seen the answer, because then you learn nothing.
+> Practice Set A, items A2 and A3. Six arrays. For each one, write **what shape you think it'll be** and **what kind of thing you think every cell will hold.** Guess. Being wrong is completely fine — what's not fine is deciding what you thought *after* you've seen the answer, because then you learn nothing.
 >
 > Take four minutes. Go."
 
-**Do this:** Have them fill in the prediction columns on page 17.2 and 17.3. Circulate but do not confirm or deny anything. Not a nod, not a face. This is hard and it matters.
+**Do this:** Have them fill in the answer columns in A2 (shape) and A3 (dtype) of Practice Set A. Circulate but do not confirm or deny anything. Not a nod, not a face. This is hard and it matters.
 
 **Ask this:**
 
@@ -855,7 +855,7 @@ Full instructions in the next section. In the lesson flow:
 
 ### Setup
 
-**On the table:** the rubbed-out graph paper, workbook page 17.2 with **six predictions already written in pen**, page 17.4 blank, the Bug Log.
+**On the table:** the rubbed-out graph paper, workbook Practice Set A with **six predictions already written in pen** in A2 and A3, Build It blank, the Bug Log.
 
 **On the screen:** `arrays.py` from the live-code, with a blank space at the bottom.
 
@@ -908,7 +908,7 @@ Two of the six are designed to be missed. Do not tip them off.
 
 ### The scoring, and the sentences
 
-For each of the six, on page 17.4:
+For each of the six, in A2 (shape) and A3 (dtype) of Practice Set A (those tables have no tick columns, so have them add a ✔/✘ beside each answer; the layout below is what the record should look like):
 
 | # | Predicted shape | Actual shape | ✔/✘ | Predicted dtype | Actual dtype | ✔/✘ |
 |---|---|---|---|---|---|---|
@@ -1235,19 +1235,29 @@ Three checks, five minutes, exact wording.
 
 > "Short one this week, and the marking is all in one column. About forty-five minutes.
 >
-> **First — and this is the whole assignment — predict.** Page 17.4. There are six arrays written out for you. **Before you touch a computer**, write down for each one what shape you think it will be and what dtype you think it will have. **In pen.** Twelve guesses, six arrays.
+> **First — and this is the whole assignment — predict.** Open the workbook at **Build It — Predict Six, Check Six**, Part 1. There are six arrays written out for you, `a` to `f`. **Before you touch a computer**, write down for each one what shape you think it will be and what dtype you think it will have. **In pen.** Twelve guesses, six arrays.
 >
-> **Second, check all six.** Page 17.5. Type them into a file, print `.shape` and `.dtype` for each one, and tick or cross every single guess against the real output.
+> **Second, check all six.** Part 2. Type them into a file called `hw17.py`, print `.shape` and `.dtype` for each one, and tick or cross every single guess against the real output.
 >
-> **Third — and this is the bit I'm actually marking — one sentence for every cross.** Not 'I got it wrong'. A sentence that says **what you thought** and **what is actually true.** Like this: *'I said it would be int64 because most of the numbers are whole. It's float64, because an array only gets one kind and the kind has to be able to hold 3.5 without throwing away the decimal.'*
+> **Third — and this is the bit I'm actually marking — one sentence for every cross.** Part 3. Not 'I got it wrong'. A sentence that says **what you thought** and **what is actually true.** Like this: *'I said it would be int64 because most of the numbers are whole. It's float64, because an array only gets one kind and the kind has to be able to hold 3.5 without throwing away the decimal.'*
 >
 > **If you got all twelve right, you have a problem**, and I mean that. It means you either guessed after you ran it, or these were too easy for you — and if it's the second one, come and tell me and I'll give you harder ones. **The sentences are worth more than the ticks.**
 >
-> **Fourth, one line at the bottom.** Look back at your Week 16 dataset. Which of your five columns *could* go into an array, and which could not, and why?"
+> **Fourth, three arrays of your own, and one line at the bottom.** Parts 4 and 5. Build a 1-D, a 2-D and a float array out of your own data, then look back at your Week 16 dataset: which of your five columns *could* go into an array, and which could not, and why? Keep the Bug Log (Part 6) as you go."
 
-**Workbook pages:** 17.1, 17.2, 17.3 in class · **17.4, 17.5, 17.6** at home.
+**Workbook sections:** **Practice Set A** items **A1, A2 and A3** in class (A2 and A3 are the six predictions from the Concept segment) · **Build It — Predict Six, Check Six**, Parts 1–6, at home. That is the homework that is marked. The other sections (Warm-Up, Predict the Output, A4–A6, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Draw It, Self-Check) are not part of the 45 minutes; use them as follows, or skip any of them:
 
-**Expected time:** 10 min on the twelve predictions · 15 min typing and checking · 15 min on the sentences · 5 min on the last line. **About 45 minutes.**
+| Workbook section | Suggested use |
+|---|---|
+| ✅ Warm-Up (W1–W5) | First five minutes of next lesson, or any time before it; it revises Week 16 |
+| 🔎 Predict the Output (P1–P4) | Extra prediction practice; P3 (the silent `99.9` → `99`) is worth doing with a student who is flying |
+| ✍️ Practice Set A, A4–A6 | Finish in class if there is time, otherwise optional at home |
+| ✍️ Practice Set B (B1–B5) | Optional at home, in order of difficulty; B5 is the same exercise as Build It with the student's own six arrays |
+| 🐞 Fix the Broken Program | Pair with the Debugging Clinic; the third bug is this week's silent bug |
+| 🧩 Puzzle, 🤔 Think Deeper, 🎨 Draw It | Extension for a student who finishes early or wants more |
+| 📊 Self-Check | Two minutes at the end of the lesson or at the start of next week |
+
+**Expected time:** 10 min on the twelve predictions · 15 min typing and checking · 15 min on the sentences · 5 min on Parts 4 and 5. **About 45 minutes.**
 
 > **🧑‍🏫 What to look for when you mark it:** two things, and the second one is the real one. **One — are the predictions in pen, and do some of them have crosses?** A page of twelve ticks in pencil is not evidence of anything. **Two — does every cross have a sentence that names what they thought?** That sentence is the entire objective of this week. A student who wrote "I said (3,) because there are three numbers in it — it's (3, 1) because each number is in its own inner list, and an inner list is a row" has understood something they will need badly in Week 18, and they have understood it because they were wrong first.
 
@@ -1255,87 +1265,219 @@ Three checks, five minutes, exact wording.
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every workbook section and item is restated below, **in workbook order and with the workbook's own labels** (W1, P1, A1, B1, Bug 1, T1, Part 1 …), so you can mark from this page alone. The values are the ones in the workbook's own Answers section at the end of the workbook; the notes marked for the teacher are extra.
 
-### Page 17.1 — List or array?
+### ✅ Warm-Up
 
-*For each statement, say whether it is true of a list, an array, or both.*
+*Five questions about last week (Week 16).*
+
+- **W1. A CSV with 30 records: how many lines, and why?** **31 lines** — records plus one, because line 1 is the header row. If the file has 30, `writeheader()` is missing and something is already quietly broken.
+- **W2. What kind of thing is `raw[0]["runs"]`, and how do you find out for certain?** Text — a **`str`** — even though it went out as a number. Check with `print(type(raw[0]["runs"]))`. **Full marks needs both halves:** the answer and the way to check.
+- **W3. `max()` said `90`, the real answer is `104`. What did `max` do?** It compared the scores **as writing, character by character**: `'90'` against `'104'`, `9` against `1`, and `9` comes later, so `'90'` won. No error, because comparing two pieces of writing is legal.
+- **W4. Why is `bool(row["out"])` wrong, and what is right?** `bool()` asks "is there anything here?", and `"False"` has five characters, so it is `True`: every player gets marked out. Right way: a comparison, `row["out"] == "True"`.
+- **W5. Which of `name`, `team`, `runs`, `balls`, `out` need converting?** `name` and `team` — nothing (text). `runs` and `balls` — `int()`. `out` — `row["out"] == "True"`. You only convert the columns that were not text.
+
+### 🔎 Predict the Output
+
+*Every snippet starts with `import numpy as np`. The page ends with a count of "how many of the fifteen answers did you get right", so students are predicting fifteen things across P1–P4.*
+
+**P1 — shapes.** Real output, one per line: `(3,)` · `(1, 3)` · `(3, 1)` · `(1,)`. "How many different arrays is that?" → **three**: one pair of brackets is one direction; brackets round the whole lot make one row of three; brackets round each number make three rows of one. `(1,)` is a perfectly ordinary shape — not `1`, and not `()`.
+
+**P2 — dtypes.** Real output: `int64` · `float64` · `bool` · `<U21`. The rule for lines 2 and 4: **numpy picks the one kind that can hold every value without losing anything.** Line 2 lost nothing (`1` as `1.0`); line 4 lost everything (you cannot add one to `'1'`).
+
+**P3 — the quiet one.** Nothing crashes. Real output:
+
+```text
+[48 12 77  5]
+[48, 12, 77, 5]
+[99 12 77  5]
+```
+
+"What happened to the `.9`?" → **it was thrown away, silently.** The array is `int64`, a whole-number box has nowhere to put a decimal. Fix: say so when building, `np.array([...], dtype=float)`. Note the spaces (array) against the commas (list) on lines 1 and 2.
+
+**P4 — list or array?** Real output: `3`, `3`, `(3,)`, then a traceback ending `AttributeError: 'list' object has no attribute 'shape'`. "How many of the five lines print something?" → **four** (three answers plus the traceback; the fifth line never runs, because the fourth one crashes). "Why is that error useful?" → it tells you which of the two things you are holding; if you write `.shape` and get an `AttributeError`, you forgot `np.array()` on the line above.
+
+> **🧑‍🏫 Marking tip:** the "fifteen answers" count is the student's own; do not check it line by line. Look instead at **which one surprised them** — almost always P3 or the `(3, 1)` in P1 — and whether the reason they give is a real reason.
+
+### ✍️ Practice Set A — Read It
+
+**A1. List or array?**
 
 | # | Statement | List | Array |
 |---|---|---|---|
-| (a) | Can hold `[1, "cat", 3.5, True]` all at once | ✔ | ✘ — one kind only |
-| (b) | Knows how many rows and columns it has | ✘ — only a length | ✔ |
-| (c) | Prints with commas between the values | ✔ | ✘ — spaces |
-| (d) | You can `.append` to it | ✔ | ✘ — a fixed size |
-| (e) | Has a `.dtype` | ✘ | ✔ |
-| (f) | Comes with Python; nothing to install | ✔ | ✘ — numpy is installed separately |
-| (g) | Holds its values end to end with nothing in between | ✘ | ✔ |
-| (h) | You build it from square brackets | ✔ | ✔ — but through `np.array([...])` |
+| a | Can hold `[1, "cat", 3.5, True]` all at once | ✔ | ✘ — one kind only |
+| b | Knows how many rows and columns it has | ✘ — only a length | ✔ |
+| c | Prints with commas between the values | ✔ | ✘ — spaces |
+| d | You can `.append` to it | ✔ | ✘ — a fixed size |
+| e | Has a `.dtype` | ✘ | ✔ |
+| f | Comes with Python; nothing to install | ✔ | ✘ — numpy is installed separately |
+| g | Holds its values end to end with nothing in between | ✘ | ✔ |
+| h | You build it with square brackets | ✔ | ✔ — but through `np.array([...])` |
 
-**17.1(i) In one sentence, what does an array cost you that a list of dictionaries does not?**
-**The labels.** An array is only numbers, so nothing in it says which column is which or whose row is whose — and if you get a column wrong, you get a wrong number rather than an error.
+**A1(i). What does an array cost you that a list of dictionaries does not?** **The labels.** An array is only numbers, so nothing in it says which column is which or whose row is whose — and if you take the wrong column, you get a wrong number rather than an error.
 
-**17.1(j) In one sentence, what does an array give you that a list cannot?**
-It knows its own **shape**, every value is the same **kind**, and (from next week) it can do arithmetic to all of its numbers in one line.
+**A1(j). What does an array give you that a list cannot?** It knows its own **shape**, every value is the same **kind**, and (from next week) it can do arithmetic to all of its numbers in one line.
 
-**17.1(k) You need to collect numbers one at a time as a program runs, then do maths to all of them. Which do you use, and when do you switch?**
-Collect into a **list**, because a list grows and an array does not. Then `np.array(...)` it **once**, at the end, when the collecting is finished. This is exactly what `np.array(column(squad, "runs"))` does.
+**A1(k). Collecting numbers one at a time, then doing maths on all of them: which, and when do you switch?** Collect into a **list**, because a list grows and an array does not. Then `np.array(...)` it **once**, at the end, when the collecting is finished. This is exactly what `np.array(column(squad, "runs"))` does.
 
-### Page 17.2 — Predict the shape
+**A2. Predict the shape** *(fill in the prediction in pen, before running anything)*
 
-*Fill in the prediction column in pen, before running anything.*
+| # | The array | Shape | Rows | Columns |
+|---|---|---|---|---|
+| a | `np.array([10, 20, 30])` | `(3,)` | — | one direction only |
+| b | `np.array([[1, 2, 3], [4, 5, 6]])` | `(2, 3)` | 2 | 3 |
+| c | `np.array([2.5, 3.5, 4.5, 5.5])` | `(4,)` | — | one direction only |
+| d | `np.array([1, 2, 3.0])` | `(3,)` | — | one direction only |
+| e | `np.array([[7], [8], [9]])` | `(3, 1)` ← **the miss** | 3 | 1 |
+| f | `np.array([True, False, True])` | `(3,)` | — | one direction only |
 
-| # | The array | Predicted shape | Actual shape |
-|---|---|---|---|
-| (a) | `np.array([10, 20, 30])` | | `(3,)` |
-| (b) | `np.array([[1, 2, 3], [4, 5, 6]])` | | `(2, 3)` |
-| (c) | `np.array([2.5, 3.5, 4.5, 5.5])` | | `(4,)` |
-| (d) | `np.array([1, 2, 3.0])` | | `(3,)` |
-| (e) | `np.array([[7], [8], [9]])` | | `(3, 1)` ← **the miss** |
-| (f) | `np.array([True, False, True])` | | `(3,)` |
+For a 1-D array, "how many rows" is not really a question. "One row of three" is acceptable as long as the student also knows the shape is `(3,)` and not `(1, 3)`.
 
-**17.2(g) Which of the six did you get wrong, and why?**
-Almost always **(e)**. The expected wrong answer is `(3,)`, on the grounds that there are three numbers. The truth: each number is inside **its own inner list**, and an inner list is a row. So it is three rows of one column each — `(3, 1)`. A column, standing up.
+**A2(g). Which did you find hardest, and why?** Almost always **(e)**. The expected wrong answer is `(3,)`, on the grounds that there are three numbers. The truth: each number is inside **its own inner list**, and an inner list is a row. So it is three rows of one column each — `(3, 1)`. A column, standing up.
 
-**17.2(h) How many numbers are in an array with shape `(3, 1)`? And in one with shape `(1, 3)`?**
-**Three, both times.** Same numbers, different arrangement. One is a column, the other is a row. They are not the same array, and next week that difference will produce nine numbers where you wanted three.
+**A2(h). How many numbers in shape `(3, 1)`? In `(1, 3)`?** **Three, both times.** Same numbers, different arrangement; one is a column, the other a row. They are not the same array, and next week that difference will produce nine numbers where you wanted three.
 
-**17.2(i) Write out, in brackets, the list-of-lists you would type to get shape `(2, 4)`.**
+**A2(i). The list-of-lists for shape `(2, 4)`.**
 
 ```python
 np.array([[1, 2, 3, 4],
           [5, 6, 7, 8]])
 ```
 
-Two inner lists (two rows), four numbers in each (four columns).
+Two inner lists (two rows), four numbers in each (four columns). Any eight numbers are fine.
 
-### Page 17.3 — Predict the dtype
+**A3. Predict the dtype**
 
-| # | The array | Predicted dtype | Actual dtype |
+| # | The array | Dtype |
+|---|---|---|
+| a | `np.array([10, 20, 30])` | `int64` |
+| b | `np.array([[1, 2, 3], [4, 5, 6]])` | `int64` |
+| c | `np.array([2.5, 3.5, 4.5, 5.5])` | `float64` |
+| d | `np.array([1, 2, 3.0])` | `float64` ← **the miss** |
+| e | `np.array([[7], [8], [9]])` | `int64` |
+| f | `np.array([True, False, True])` | `bool` |
+| g | `np.array([1, 2, "three"])` | `<U21` ← **the other miss** |
+
+**A3(h). The rule that explains both (d) and (g).** **numpy picks the one kind that can hold every value without losing anything.** A whole-number box cannot hold `3.0`'s decimal point, so (d) becomes decimals. Nothing numeric can hold the word `three`, and text can hold `1` as the character `1`, so (g) becomes text.
+
+**A3(i). What happened to the `1` and the `2` in (g)?** They became **text**: `'1'` and `'2'`. The printed output is `['1' '2' 'three']` — note the quote marks. Arithmetic on them will crash or glue characters together.
+
+**A3(j). Where have you seen this exact failure before?** **Week 16.** `48` was written to a CSV and came back as `'48'`. Same failure: a container that holds one kind turned numbers into writing and said nothing. Same check, too: read the type.
+
+**A3(k). Why is `float64` in (d) not a bug, when the text in (g) is?** Because **nothing was lost.** `1` stored as `1.0` is the same number written differently and you can still add one to it. In (g), `1` stored as `'1'` genuinely is a loss — `'1' + 1` will not even run.
+
+**A4. Spot the bug**
+
+| # | The line | The fix |
+|---|---|---|
+| a | `runs = np.array(48, 12, 77, 5)` | `np.array([48, 12, 77, 5])` — the numbers go in **one list** |
+| b | `print(runs.shape())` | `runs.shape` — no brackets. (`TypeError: 'tuple' object is not callable`) |
+| c | `print(runs.Shape)` | `runs.shape` — lower case. Python even says *"Did you mean: 'shape'?"* |
+| d | `print(np.Array([1, 2, 3]))` | `np.array([1, 2, 3])` — small a |
+| e | `print(scores.shape)` where `scores = [1, 2, 3]` | `np.array(scores).shape` — a list has no shape |
+| f | `np.array([[1, 2, 3], [4, 5]])` | Make the rows the same length — add the missing number or take one out |
+
+**A5. Label the diagram** *(figure W17.1; the five phrases were given in the wrong order)*
+
+| Box | Phrase |
+|---|---|
+| **A** | how many rows: 4 |
+| **B** | how many columns: 2 |
+| **C** | the whole shape: (4, 2) |
+| **D** | one cell, one value |
+| **E** | the dtype: int64 |
+
+A and B are the two numbers, C is them together, D is what one square holds, E is what **every** square holds. Nothing in the diagram answers "which column is balls?" — only a comment does.
+
+**A6. Read the traceback (the ragged block).** `inhomogeneous` = **not all the same**. `dimensions` = **directions** (rows and columns). In their own words, something like: *"I counted the rows, there are two, then I tried the columns and found three in one row and two in the other, and there is no number that is both. A ragged block has no shape, so I stopped."* What numpy got right before giving up: **the rows** — `The detected shape was (2,)`. **Good news:** numpy could have padded the short row with a made-up zero and carried on. An error you can read beats a wrong answer you cannot see.
+
+### ✍️ Practice Set B — Write It
+
+**B1.** One line: `print(np.array(steps).shape)` → `(5,)`. Note the comma.
+
+**B2.** A `(3, 4)` array of twelve whole numbers, one inner list per line. Expected output as printed in the workbook: the block, then `shape : (3, 4)`, `rows  : 3`, `columns: 4`, `dtype : int64`. **"Done" means the rows and columns are pulled out of the shape** with `block.shape[0]` and `block.shape[1]`, not typed in by hand. Any twelve whole numbers are acceptable.
+
+**B3.** Four arrays, one per dtype, with a comment each saying why numpy had no other choice. Workbook's model:
+
+```python
+whole = np.array([3, 6, 9])                     # nothing but whole numbers
+decimal = np.array([3.0, 6.5, 9.25])            # every one has a decimal point
+truth = np.array([True, False, True, True])     # nothing but true/false
+words = np.array(["Mon", "Tue", "Wednesday"])   # nothing but text
+```
+
+```text
+whole    (3,)    int64
+decimal  (3,)    float64
+truth    (4,)    bool
+words    (3,)    <U9
+```
+
+The number after `<U` is the length of the longest word (`"Wednesday"` is nine); their value may differ. **Mark the four comments**, not the table: each must say *why*.
+
+**B4.** `balls = np.array(column(squad, "balls"))`, printing the list, the array, `len` of the list, `.shape` and `.dtype`. Expected: list `[32, 20, 55, 9, 41, 28, 3, 39, 44, 18, 61, 70]` with commas; array `[32 20 55  9 41 28  3 39 44 18 61 70]` with spaces; `12`; `(12,)`; `int64`. The difference between the two printed lines is **commas against spaces** (and the padding). Tick for reusing their own `column()`.
+
+**B5.** Six arrays of their own choosing covering: a plain row of whole numbers, a `(1, 3)`, a `(3, 1)`, a `float64` from a single decimal, a `bool`, and a text array from a single typo. The workbook's model table:
+
+```text
+array   shape     dtype
+----------------------------
+a       (3,)      int64
+b       (1, 3)    int64
+c       (3, 1)    int64
+d       (3,)      float64
+e       (4,)      bool
+f       (3,)      <U21
+```
+
+Theirs will differ in values; check the **shape and dtype pattern**: 1-D int, `(1, 3)`, `(3, 1)`, float64, bool, text. **A sentence for every cross**, as in Build It Part 3. Count the square brackets at the start of a printed line: one is 1-D, two is 2-D.
+
+### 🐞 Fix the Broken Program
+
+`grid.py`, four cities by three months, three bugs.
+
+- **Bug 1 — the `SyntaxError`.** None of the program ran: there is no `Traceback`, because Python could not finish reading the file. **Is the mistake on line 7?** No. Line 7 is where the `[` was **opened**; the mistake is at the bottom of the list, where `])` is missing. Fix: add `])` on its own line after the last inner list (`[12, 9, 14],`).
+- **Bug 2 — the `TypeError`.** "Callable" means something you can put brackets after and run; `rain.shape` is not that, it is already the answer. Fix: `print("shape :", rain.shape)`. The shape is something the array **is**, like your height, not something it **does**. Same for `.dtype`.
+- **Bug 3 — the silent one.** Shape `(4, 3)` is correct and all twelve numbers are present. What is wrong is the last line of output: **`dtype : <U21`**; every number is now text (you can also see the quote marks). The typo is the pair of **quote marks** round `"31"` in `[65, 40, "31"]`. One value in text made numpy convert all twelve. Fix: `[65, 40, 31],`, after which the output is the array printed without quotes, `shape : (4, 3)` and `dtype : int64`. The check that catches the whole family: **print `.dtype` on every array you build and read it.** `.shape` and `.dtype` are two different facts; one cannot catch the other's mistakes.
+
+> **🧑‍🏫 What to look for:** the student who says Bug 1 is "on line 7" has not yet understood that Python reports where it was last certain. For Bug 3, accept any answer that names the quote marks and says *all twelve* changed, not just one.
+
+### 🧩 Puzzle of the Week
+
+**Part 1 — Five shapes, twelve numbers** (the squad scores `48, 12, 77, 5, 63, 30, 0, 41, 55, 22, 90, 104`).
+
+| Name | Shape typed for | Actual shape | `.size` |
 |---|---|---|---|
-| (a) | `np.array([10, 20, 30])` | | `int64` |
-| (b) | `np.array([[1, 2, 3], [4, 5, 6]])` | | `int64` |
-| (c) | `np.array([2.5, 3.5, 4.5, 5.5])` | | `float64` |
-| (d) | `np.array([1, 2, 3.0])` | | `float64` ← **the miss** |
-| (e) | `np.array([[7], [8], [9]])` | | `int64` |
-| (f) | `np.array([True, False, True])` | | `bool` |
-| (g) | `np.array([1, 2, "three"])` | | `<U21` ← **the other miss** |
+| `flat` | `(12,)` | `(12,)` | 12 |
+| `two_by_six` | `(2, 6)` | `(2, 6)` | 12 |
+| `six_by_two` | `(6, 2)` | `(6, 2)` | 12 |
+| `one_row` | `(1, 12)` | `(1, 12)` | 12 |
+| `one_col` | `(12, 1)` | `(12, 1)` | 12 |
 
-**17.3(h) State the rule that explains both (d) and (g) in one sentence.**
-**numpy picks the one kind that can hold every value without losing anything.** A whole-number box cannot hold `3.0`'s decimal point, so `(d)` becomes decimals. Nothing numeric can hold the word `three`, and text can hold `1` as the character `1`, so `(g)` becomes text.
+**(b)** Twelve, all five times. **(c)** `.size` says **how many**; the shape says **how they are arranged**, and the arrangement carries the meaning. **(d)** Only **`flat`**, `(12,)`, is "the twelve scores" — one score per slot, one direction. The other four are something else: `two_by_six` claims two groups of six (a made-up split); `six_by_two` claims pairs; `one_row` is a table with one row; `one_col` is a table with one column. **(e)** Accept any answer that uses two arrays to say the same numbers make a different claim, e.g. `flat` against `one_col`: *"`flat` is twelve scores; `one_col` is twelve rows with one fact each, arranged as a grid. Same numbers, different claim about what the data is."*
 
-**17.3(i) In (g), what happened to the `1` and the `2`?**
-They became **text**: `'1'` and `'2'`. Printed output is `['1' '2' 'three']` — note the quote marks. They are no longer numbers and arithmetic on them will either crash or glue characters together.
+**Part 2 — Bracket detective**
 
-**17.3(j) Where have you seen this exact failure before?**
-**Week 16.** `48` was written to a CSV and came back as `'48'`. Same failure: a container that can only hold one kind of thing turned the numbers into writing, and said nothing about it. Same check, too: read the type.
+| | Brackets | Shape |
+|---|---|---|
+| (i) | `np.array([1, 2, 3, 4])` | `(4,)` |
+| (ii) | `np.array([[1, 2], [3, 4]])` | `(2, 2)` |
+| (iii) | `np.array([[1], [2], [3], [4]])` | `(4, 1)` |
+| (iv) | `np.array([[1, 2, 3, 4]])` | `(1, 4)` |
 
-**17.3(k) Why is `float64` in (d) not a bug?**
-Because nothing was lost. `1` stored as `1.0` is the same number written differently. Compare it with `(g)`, where `1` stored as `'1'` genuinely **is** a loss — you cannot add one to it any more.
+**(v)** **(i) and (iv)**, which print as `[1 2 3 4]` and `[[1 2 3 4]]`. The tell is **the number of opening square brackets**: one is 1-D, two is 2-D. Or print the shape.
 
-### Page 17.4 — Build six, check six
+### 🤔 Think Deeper
 
-The six homework arrays and their real output:
+The workbook gives **no model answer** for T1 and T2; they are argued, not looked up. Mark against these points.
+
+**T1 — the one rule, two results.** A good paragraph says: numpy applies one rule, *pick the kind that can hold everything*, and from the outside `[1, 2, 3.0]` and `[1, 2, "three"]` look identical: a mixed list, so numpy cannot know which conversion you would call harmless. The first lost nothing; the second turned numbers into writing. It argues for (a) silent conversion (convenient, nothing to type, and the cost is this week's silent bug) **or** (b) refusing mixed kinds (loud, and the cost is that `[1, 2, 3.0]` would also be refused). Either is acceptable if the cost is stated honestly. The practical answer to "what has to change instead?" is **the programmer**: print `.dtype` every time, and convert and check at the boundary where data comes in.
+
+**T2 — what rubbing out costs.** A good paragraph names something the array cannot answer: anything that needs the words, e.g. runs by team, or whose score was 104. It makes the loud/silent contrast: a dictionary gives a loud `KeyError` for a missing field, an array gives a wrong number for the wrong column. "More dangerous or just differently dangerous?" has no single right answer; "differently dangerous, so I check the column by hand or name it in a comment" is a strong one. Whichever they would keep, they should say what they would do about the other (this is the gap pandas fills in Week 21).
+
+### 🛠️ Build It — Predict Six, Check Six
+
+*This is the marked homework. The arrays, in order:*
 
 ```python
 """hw17.py - the six homework arrays. Predict shape and dtype FIRST."""
@@ -1357,7 +1499,7 @@ for name, arr in [("a", a), ("b", b), ("c", c), ("d", d), ("e", e), ("f", f)]:
     print(f"{name:<8}{str(arr.shape):<10}{str(arr.dtype):<10}{arr.ndim}")
 ```
 
-Real output:
+**Parts 1 and 2 — predictions and checks.** Real output:
 
 ```text
 array   shape     dtype     ndim
@@ -1374,22 +1516,16 @@ f       (3,)      <U4       1
 
 | # | Shape | Dtype | What this one is teaching |
 |---|---|---|---|
-| `a` | `(6,)` | `int64` | The easy one. Six whole numbers, one direction. |
+| `a` | `(6,)` | `int64` | The easy one. Six whole numbers, one direction. Repeated values change nothing. |
 | `b` | `(3, 2)` | `float64` | Three inner lists, two numbers each. Rows first. Every value has a decimal point, so `float64` is no surprise. |
 | `c` | `(1,)` | `int64` | **A common miss.** One number in a list is still an array, and its shape is `(1,)` — not `1`, and not `()`. One slot, in one direction. |
 | `d` | `(1, 4)` | `int64` | **A common miss.** The double brackets make it *one row of four*, which is a different thing from `np.array([1, 2, 3, 4])` with shape `(4,)`. Same four numbers, different shape. |
-| `e` | `(4,)` | `float64` | **The designed miss.** Three whole numbers and one `300.0`, and the single decimal decides it for all four. Same rule as page 17.3(d). |
+| `e` | `(4,)` | `float64` | **The designed miss.** Three whole numbers and one `300.0`, and the single decimal decides it for all four. Same rule as A3(d). |
 | `f` | `(3,)` | `<U4` | Text on purpose, so it is not a mistake. `<U4` because `"rock"` and `"folk"` are the longest at four characters. |
 
-**17.4(a) Compare `c` and `a`. What is the same, and what is different?**
-Both are 1-D — both shapes have one number in them, so both are a single row. `a` has six slots, `c` has one. `(1,)` is a perfectly ordinary array that happens to have one number in it.
+The two totals ("Ticks out of 12", "Crosses out of 12") must add to twelve. A student with **zero** crosses is asked by the workbook to say honestly whether they predicted after running or found it too easy: follow that up in person.
 
-**17.4(b) Compare `d` with `np.array([1, 2, 3, 4])`. Same numbers?**
-**Yes — same four numbers, different shape.** `d` is `(1, 4)`: one row, four columns, and it is 2-D. The other is `(4,)`: four numbers in one direction, and it is 1-D. The extra pair of brackets is the whole difference. This distinction does nothing today and matters enormously in Week 19.
-
-**17.4(c) Which of your twelve predictions did you get wrong? Write a sentence for each.**
-
-Model sentences for the three designed misses:
+**Part 3 — one sentence for every cross.** The workbook has room for four. Model sentences for the three designed misses:
 
 > *"I said `c` would have shape `1`. It's `(1,)`, because a shape is always a collection of sizes, one per direction — even when there's only one direction and only one number in it."*
 
@@ -1397,13 +1533,9 @@ Model sentences for the three designed misses:
 
 > *"I said `e` would be int64 because three of the four numbers are whole. It's float64, because the array only gets one kind and it has to be able to hold `300.0` without throwing the decimal away."*
 
-**Mark the sentences, not the ticks.** Full marks needs *what I thought* and *what is true*, both present.
+**Mark the sentences, not the ticks.** Full marks needs *what I thought* and *what is true*, both present, in every one.
 
-### Page 17.5 — Your own three
-
-*Build three arrays of your own — one 1-D, one 2-D, and one that you expect to come out `float64`. Predict, then check.*
-
-Model answer, using the twelve records from Week 14:
+**Part 4 — three arrays of your own.** The checklist (1-D, 2-D with one inner list per line and a comment per row, a float one, shape and dtype printed, shape predicted first) and the comparison table. Model answer, using the twelve records from Week 14:
 
 ```python
 """mine17.py - three arrays of my own, from my own data."""
@@ -1440,35 +1572,52 @@ shape: (4,)  dtype: float64
 
 *(Their shapes will be their own numbers. Check the first number of the 2-D shape against how many records they have, not against this page.)*
 
-**Mark:** the 1-D shape has one number in it and matches the number of values; the 2-D shape has two numbers in it, rows first, and the first number matches the number of inner lists; the float array's dtype really is `float64`. Anyone who used `column()` from their own `records.py` gets a tick for reusing their own tool.
+**Mark:** the 1-D shape has one number in it and matches the number of values; the 2-D shape has two numbers in it, rows first, and the first matches the number of inner lists; the float array's dtype really is `float64`. Anyone who used `column()` from their own `records.py` gets a tick for reusing their own tool.
 
-**17.5(a) Your 2-D array — what does each of the two numbers in the shape mean, for your data?**
-Model: *"`(12, 2)` — twelve rows because there are twelve players, and two columns because I put runs and balls in each row."* The words *"because"* twice is what you are marking.
+**What does each number in your 2-D shape mean?** Model: *"`(12, 2)` — twelve rows because there are twelve players, and two columns because I put runs and balls in each row."* The word *"because"*, twice, is what you are marking.
 
-**17.5(b) What is not in your 2-D array that was in the original records?**
-The **names**, the **teams**, and the **out** column — everything that was words. And the column headings. Nothing in the array says the second column is balls; only a comment does.
+**What is NOT in your 2-D array that was in the original records?** The **names**, the **teams** and the **out** column — everything that was words — and all the column headings. Nothing in the array says the second column is balls; only a comment does.
 
-### Page 17.6 — Which of your columns could be an array?
-
-*Look at your Week 16 dataset. For each of your five columns, could it go into a numeric array on its own?*
-
-Model answer, for the thirty-song playlist:
+**Part 5 — Which of your Week 16 columns could be an array?** Model answer, for the thirty-song playlist:
 
 | Column | Into a numeric array? | Why |
 |---|---|---|
 | `title` | no | words — it would give a `<U` text array, and there is no arithmetic to do on it |
-| `artist` | no | words, and it is a category — this is what you group by, which arrays cannot do |
+| `artist` | no | words, and a category — this is what you group by, which arrays cannot do |
 | `genre` | no | words, and a category |
 | `minutes` | **yes** | decimal numbers — `float64` |
 | `plays` | **yes** | whole numbers — `int64` |
 
-**17.6(a) Write one sentence explaining the pattern.**
-Model answer:
+**One sentence explaining the pattern.** Model answer:
 
 > *"The columns that can go into a numeric array are the ones I would do arithmetic on — add up, average, compare. The ones that can't are words, and the words are exactly the ones I need for grouping and for knowing which row is which."*
 
-**17.6(b) Could you put all five columns into one array?**
-Only by turning everything into text, which would make `plays` unusable for arithmetic — the text-array problem (`<U32` here, because of the decimals), deliberately, across the whole table. **So no, not usefully.** Which is exactly the gap `pandas` fills in Week 21: a table where one column can be words and another can be numbers.
+*(Their own columns will differ; check that they have sorted them into numbers and words, not that they match the playlist.)* If they ask whether all five could go into **one** array: only by turning everything into text (`<U32` here, because of the decimals), which makes `plays` unusable for arithmetic. So no, not usefully — which is exactly the gap `pandas` fills in Week 21.
+
+**Part 6 — the Bug Log.** No fixed answer. Look for an entry for the `<U21` (or whichever silent bug they hit) with "no error message" in the second column.
+
+### 🎨 Draw It
+
+There is no single right drawing. A good one has a **left grid with a header row and words in it** and a **right grid with nothing but numbers** and **fewer columns than the left**, because the word columns could not come. The workbook's example is a playlist cut to eight rows: right-hand grid `(8, 2)`, `float64` (because `minutes` has decimals), and a "what I lost" box naming the titles, artists, genres **and all five column names**. **The tell that it is right:** the shape in the bottom box has two numbers, the first of which is how many rows they drew. **A weak answer** still has the header row on the right, or all five columns: the words cannot come with you.
+
+### 📊 Self-Check
+
+The "I can…" ladder is the student's own; glance at the two or three rows marked "not yet". **True or false — all twelve are FALSE:**
+
+| Statement | Answer | Why |
+|---|---|---|
+| `(4,)` is a typo | **FALSE** | A collection with one item in it. The comma is load-bearing. |
+| In `(12, 3)` the 12 is the number of columns | **FALSE** | Rows first, always. Twelve rows, three columns. |
+| `np.array(1, 2, 3)` builds an array of three numbers | **FALSE** | `TypeError`. It takes one list, not three numbers. |
+| `np.array([[7], [8], [9]])` has shape `(3,)` | **FALSE** | `(3, 1)`. Each number is in its own inner list, and an inner list is a row. |
+| `np.array([1, 2, 3.0])` has dtype `int64` | **FALSE** | `float64`. numpy picks the kind that can hold everything. |
+| `np.array([1, 2, "three"])` raises an error | **FALSE** | It gives `['1' '2' 'three']` with dtype `<U21`, silently. That is the danger. |
+| `.shape` needs brackets after it | **FALSE** | A fact about the array, not something it does. |
+| An array can hold a name and a number at the same time | **FALSE** | One kind only. Try it and the number becomes text. |
+| You can `.append` to an array | **FALSE** | Fixed size. Collect in a list, convert once at the end. |
+| A printed array has commas between the values | **FALSE** | Spaces. Commas mean you are looking at a list. |
+| `type()` and `.dtype` ask the same question | **FALSE** | `type()` asks about one value; `.dtype` asks about all of them at once. |
+| If the shape is right, the array must be right | **FALSE** | The shape says nothing about the kind. One typo turned twelve numbers into text and the shape never moved (Fix the Broken Program, Bug 3). |
 
 ### Answers to every question posed in the lesson
 

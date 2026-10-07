@@ -804,30 +804,153 @@ moves to Week 33's warm-up.
 
 **Say this:**
 
-> "Two jobs, about fifty minutes. First, pick one AI product you actually use — not one you've heard
-> of, one you use — and answer five questions about what it collects and whether you could say no.
-> Guess where you have to, but mark every guess with a question mark. **An honest guess clearly
-> labelled is worth far more than a confident invention.** That sentence is basically the whole
-> course.
+> "The workbook is about fifty minutes, and it starts with five quick questions from last week, no
+> notes. The big job is in Practice Set B. First, pick one AI product you actually use — not one
+> you've heard of, one you use — and answer five questions about what it collects and whether you
+> could say no. Guess where you have to, but mark every guess with a question mark. **An honest
+> guess clearly labelled is worth far more than a confident invention.** That sentence is basically
+> the whole course.
 >
 > Second, three more confident statements. Same rules as in class: check all three against a real
-> source, write down which source, and no guessing from tone."
+> source, write down which source, and no guessing from tone. Every verdict needs a named source —
+> 'I checked' scores zero.
+>
+> Then there is a puzzle, two big questions, and a photo investigation. Those are the stretch —
+> do as many as you like. And last: write the four checks on a real card and put it somewhere you
+> will see it."
 
-**Workbook pages: W32.1 – W32.5.**
+**What the student needs at home:** a pen, one real reference source that is **not** an AI (an atlas,
+an encyclopedia, a textbook or a reference site you trust) for B2, and three of their own photo files
+for Build It.
 
-| Page | Task | Time |
-|---|---|---|
-| **W32.1** | Data map of a real product you use: five questions | 15 min |
-| **W32.2** | Fact-check three confident answers; name the source for each | 15 min |
-| **W32.3** | Sort twelve school-app data items into three columns, then break the school's claim that removing names made it anonymous | 10 min |
-| **W32.4** | The athlete video: apply the four checks, and give two signals of a fake that need no pixels | 8 min |
-| **W32.5** | Vocabulary: five words, one sentence each | 5 min |
+**Workbook sections.** The workbook states about 50 minutes for the core; the per-section
+times below are my own estimates, so adjust them to your student.
+
+| Workbook section | Task | Core or stretch | Est. time |
+|---|---|---|---|
+| ✅ **Warm-Up** | Five recall questions from Week 31 (bias, the gap, the chain, the accuracy question, predicting first) | Core | 5 min |
+| ✍️ **A1** | Fill in the blanks: personal data, metadata, re-identification | Core | 3 min |
+| ✍️ **A2** | Multiple choice: the shocking video, then say what is wrong with the three not ticked | Core | 4 min |
+| ✍️ **A3** | Three true/false statements, each with a reason | Core | 4 min |
+| ✍️ **A4** | Match five terms to their meanings | Core | 2 min |
+| ✍️ **A5** | Label the photo-file diagram with five different hidden things (Figure W32.1) | Core | 3 min |
+| ✍️ **A6** | Vocabulary: five words, one sentence each | Core | 5 min |
+| ✍️ **B1** | Data map of a real product you use: five questions | Core | 15 min |
+| ✍️ **B2** | Fact-check three confident answers; name the source for each | Core | 15 min |
+| ✍️ **B3** | Sort twelve school-app data items into three columns, break the "names removed" claim, name three misuses, name two forbidden columns | Core | 10 min |
+| ✍️ **B4** | The athlete video: four checks as actions, two signals with no pixels, the "no other source" question, the message to a friend | Core | 8 min |
+| ✍️ **B5** | What would go wrong: the nurse's dose, and the "joke" deepfake of a teacher | Core | 5 min |
+| 🧩 **Puzzle of the Week** | Eight students, four harmless columns: who is identified by which pair (Figure W32.2) | Stretch | 10 min |
+| 🤔 **Think Deeper** | Two paragraph questions: genuinely anonymous data; which harm is worse | Stretch | 10 min |
+| 🛠️ **Build It** | Metadata investigation of three real photos, then the provenance card | Stretch, but the card is expected | 15 min |
+| 🎨 **Draw It** | One photo you might post, nine things given away (Figure W32.3) | Stretch | 10 min |
+| 📊 **Self-Check** | Tick seven "I can…" rows | Core | 2 min |
+
+B1 and B2 are the two heaviest pieces, so if time is short, protect those and the card.
 
 ---
 
 ## 🔑 Answer Key
 
-### W32.1 — Audit a real product's data map
+Answers follow the workbook's own order: Warm-Up, Practice Set A (A1–A6), Practice Set B (B1–B5),
+Puzzle of the Week, Think Deeper, Build It, Draw It, Self-Check. The student's workbook has its own
+Answers section at the end; **never hand over this teacher guide** — it also names the mistakes to
+expect.
+
+### Warm-Up
+
+**1.** A **count**. The model saw far fewer examples of one group; nobody had to be unkind.
+
+**2.** 74 − 41 = **33 percentage points.** Not 33%, because "33% of what?" has no answer.
+
+**3.** Who got photographed → the training data is lopsided → the model learns what it saw → somebody
+real gets bad answers. **The fix is at link 1.**
+
+**4.** **"93% — for whom?"** A single accuracy number is an average, and every average hides somebody.
+
+**5.** Because a guess made afterwards is worthless — you could pick whichever group made you look
+right, or quietly drop the batch that came out badly. Writing it first turns a demonstration into a
+test.
+
+*Watch for:* "33%" in item 2 (the percent versus percentage-points slip), and "the model is biased
+against them" in item 1 (an attitude, not a count). Any fuzzy answer here is a Week 31 gap, and
+Week 33 is built on it.
+
+---
+
+### A1 — Fill in the blanks
+
+Personal data: *identifiable* … *combined*. Metadata: *hidden* … *itself* … *device* … *where*. The
+word for working out who an "anonymous" record belongs to is **re-identification**.
+
+---
+
+### A2 — Multiple choice
+
+**(c)** is correct.
+
+- **(a)** fails because generators fix their visible flaws every few months and your eyes do not get an
+  upgrade. "I can tell" is exactly how people get fooled.
+- **(b)** fails because it will answer in the same confident voice using the same machinery. You need a
+  source that does not come from the thing you are checking.
+- **(d)** fails because sharing it *is* spreading it. Adding "is this real?" does not undo the reach —
+  plenty of people will only read the video.
+
+*Watch for:* a student who ticks (c) but writes "the others are just worse" — they need a reason for
+each, not a ranking.
+
+---
+
+### A3 — True or false, and explain
+
+**(i) FALSE.** Names are the easy part. Year group + postcode area + bus route took us from 600
+students to one, with no name anywhere. Combinations identify people.
+
+**(ii) FALSE.** It is stored **inside the file**. Which is exactly why it matters: send the file, send
+all of it. (Many chat apps strip it on the way through — which is good for you and is also why the demo
+photo has to be transferred by cable or as an email attachment.)
+
+**(iii) FALSE.** Automation bias is a fact about **people** — our habit of believing a screen over our
+own judgement, especially when tired or rushed. The machine's error rate is a completely separate
+thing. Which is why a *usually-right* machine is more dangerous than a useless one: the useless one
+gets ignored.
+
+---
+
+### A4 — Match the pairs
+
+**1 → C** · **2 → E** · **3 → B** · **4 → D** · **5 → A**
+
+---
+
+### A5 — Label the diagram
+
+Five different kinds of hidden thing: **(1)** the date and time, to the minute · **(2)** the device —
+make and model of the phone · **(3)** the camera settings — exposure, flash, which lens · **(4)** the
+location, latitude and longitude, often to about five metres · **(5)** the edit history — whether it was
+cropped, filtered or rotated.
+
+Also acceptable in place of one of those: the account the phone was signed in to, or the file's
+original filename.
+
+*Watch for:* "GPS", "address", "map place" and "city" as five lines — that is one kind of thing five
+times, which the workbook warns against.
+
+---
+
+### A6 — Vocabulary
+
+| Word | A correct student answer looks like |
+|---|---|
+| **personal data** | Information about a person you can identify — including facts that only identify them when several are put together. |
+| **metadata** | The hidden notes a file keeps about itself: when it was made, on what device, and often exactly where. |
+| **deepfake** | A photo, video or voice of a real person doing or saying something they never did, made by an AI. |
+| **over-trust** | Accepting an AI's answer without checking, because it sounded sure. |
+| **automation bias** | The human habit of believing the machine over your own judgement — like following the satnav into a river. |
+
+---
+
+### B1 — Audit a real product's data map
 
 Marked on **structure and honesty**, not on being right — the student cannot know most of this for
 certain, which is itself the finding. Worked example for a short-video app:
@@ -846,7 +969,7 @@ sure" has done better work than one who states it flatly. Question 4 is the one 
 
 ---
 
-### W32.2 — Fact-check three confident answers
+### B2 — Fact-check three confident answers
 
 The three statements, presented in the workbook in the same confident voice:
 
@@ -879,7 +1002,7 @@ come from the thing you are checking.
 
 ---
 
-### W32.3 — Sort the data, break the claim
+### B3 — Sort the data, then break the claim
 
 A school app collects: *full name · student ID · date of birth · home postcode · photo of face ·
 daily arrival time · lunch choice · test scores · medical allergies · parent phone number · bus
@@ -935,7 +1058,7 @@ and past arrival times are enough.
 
 ---
 
-### W32.4 — The athlete video
+### B4 — The athlete video
 
 **(a) The four checks, as actions rather than principles.**
 
@@ -986,15 +1109,152 @@ who feel corrected dig in. People who feel included in the investigation help yo
 
 ---
 
-### W32.5 — Vocabulary
+### B5 — What would go wrong
 
-| Term | A correct student answer looks like |
-|---|---|
-| **personal data** | Information about a person you can identify — including facts that only identify them when you put several together. |
-| **metadata** | The hidden notes a file keeps about itself: when it was made, on what device, and often exactly where. |
-| **deepfake** | A photo, video or voice of a real person doing or saying something they never did, made by an AI. |
-| **over-trust** | Accepting an AI's answer without checking, because it sounded sure. |
-| **automation bias** | The human habit of believing the machine over your own judgement — like following the satnav into a river. |
+**(a)** Two things at once. **Over-trust:** the answer is accepted because it sounded sure, and a
+specific number is exactly the kind of thing that gets invented most freely. **Automation bias:** she is
+busy and tired, which is precisely when a screen beats a person's own judgement. And the stakes are
+high and hard to undo — situation 1 on the card.
+
+The habit: **when it is a specific fact that matters, look it up somewhere that is not the thing that
+told you.** In a hospital that means the official dosing reference, every time, no exceptions for being
+in a hurry.
+
+**(b)** The joke is fine right up until the clip leaves the room — and clips always leave the room.
+After two forwards, nobody attached to it knows it was a joke; they just have a recording of a real
+person saying something. It is also the teacher's face and voice, being used without asking.
+
+**The rule that costs you nothing: do not make a fake of a real person without asking them**, even when
+you are certain nobody would find out.
+
+---
+
+### Puzzle of the Week — Eight students, four harmless columns
+
+**(a)** No single column works.
+
+```text
+   Year = 8        →  4 people left  (S4, S5, S6, S8)
+   Bus = B         →  3 people left  (S3, S5, S6)
+   Lunch = non-veg →  3 people left  (S2, S5, S7)
+   Hand = L        →  3 people left  (S4, S5, S7)
+```
+
+**(b) Two columns.**
+
+**(c)** Three pairs work:
+
+- **Year + Lunch** — Year 8 gives S4, S5, S6, S8; of those only S5 is non-veg.
+- **Bus + Lunch** — Bus B gives S3, S5, S6; of those only S5 is non-veg.
+- **Bus + Hand** — Bus B gives S3, S5, S6; of those only S5 is left-handed.
+
+**(d)** Any of these, with the leftovers named:
+
+- **Year + Bus** leaves S5 **and S6**.
+- **Year + Hand** leaves S5 **and S4**.
+- **Lunch + Hand** leaves S5 **and S7**.
+
+**(e)** Because **Year only has two possible values here** (7 or 8), so knowing it can at best halve the
+table. Bus has three values, and Lunch and Hand split the table unevenly, so each of those cuts harder.
+
+In the town of 800 there were *five* year groups plus adults, so "Year 7" removed 680 people. Same
+column, completely different power.
+
+> **The rule: how much a fact narrows things down depends on how many different values it can take, and
+> how unevenly they are spread.** Which is exactly why you cannot judge whether a column is "safe to
+> publish" just by looking at how private it *feels*.
+
+*Watch for:* a student who answers (b) with "one" because Year = 8 "feels" rare, or who lists only the
+pairs that include S5's Bus. Have them cross out the rows on the table rather than argue.
+
+---
+
+### Think Deeper
+
+**1. Genuinely anonymous.** There is no single right answer; a full-marks paragraph names a specific
+change **and** the specific question that is now unanswerable.
+
+A strong answer: *"I would replace exact dates of birth with just the year, replace the postcode with
+'north of the river / south of the river', delete handedness and lunch choice entirely, and round the
+lateness column to 'none / some / a lot'. Now the file cannot identify anybody. It also cannot answer
+the question it was collected for — 'how many vegetarian lunches do we need on Tuesdays in Year 7?' —
+because I deleted the lunch column. So the school has to choose: know the answer, or protect the
+students. I would keep the lunch column but publish only totals per year group, never row by row,
+because a total answers the question and a row identifies a person."*
+
+That last sentence is the professional move: **publish the answer, not the data.**
+
+**2. Which harm is worse.** Both answers can earn full marks. What is being marked is whether the
+student names a **specific person** in each case and offers something that could change their mind.
+
+- **"False things believable" is worse:** name somebody who loses their job, or is threatened, over a
+  video of something they never did. It reaches people who have no way to check.
+- **"True things deniable" is worse:** name somebody caught on genuine video doing real harm, who simply
+  says "deepfake" and walks away — and now every real recording of anything is arguable. This harm
+  **grows over time** and reaches people who never see a fake at all.
+
+**What would change your mind** is the important part. A good answer: *"if it turned out that most
+people, when shown proof a video was genuine, still believed the 'deepfake' claim, I'd switch to the
+second answer — because that means evidence has stopped working, and everything else depends on
+evidence working."*
+
+---
+
+### Build It — The metadata investigation and the card
+
+There is no fixed answer, but a correct investigation looks like this:
+
+- **Photo 1 (outdoors, from your own camera roll):** date and time to the minute, phone make and model,
+  camera settings, **and usually latitude and longitude**. The map will show a street, a park, or your
+  own house.
+- **Photo 2 (indoors):** the same, but the location may be less exact or missing — phones often struggle
+  for a fix indoors.
+- **Photo 3 (via a chat app):** usually **almost nothing.** Often the location is gone, sometimes the
+  device too, and the filename has been replaced.
+
+**Which carried the least, and why:** the one that came through the chat app. Most messaging apps strip
+metadata as the photo passes through. **Say the honest double-edged thing about that:** it is genuinely
+good for your privacy, and it is also why the photo for this lesson had to be moved by cable or as an
+email attachment. "None" written in a cell is a result, not a blank, and should be marked as one.
+
+**"One thing you now know about yourself that you did not put in the picture on purpose"** — full marks
+for anything specific: *"it says I was in the park at 16:42 on 14 March"*, *"it names my phone model"*,
+*"it shows I cropped it"*.
+
+**The card.** Full marks for four checks in your own words, plus the fifth question:
+
+1. Who posted it **first**? (Not who sent it to me.)
+2. **When**, and how fast did it spread?
+3. **Who else** has it — two sources that do not copy each other?
+4. **What was around it** — does this footage exist elsewhere, with different audio?
+5. **Who benefits if I believe this and pass it on** — and does it happen to be something I wanted to be
+   true?
+
+Check it is a real card somewhere real, not words copied into the workbook page.
+
+---
+
+### Draw It
+
+Marked on three things:
+
+- [ ] At least seven labels **inside** the picture, all of them specific things (a house number, a badge,
+  a number plate, a reflection, a shadow) rather than "background"
+- [ ] The metadata in a **separate** box with a dashed arrow, clearly marked as invisible and attached to
+  the file
+- [ ] At least one label naming **somebody else** who did not agree to be in it — a neighbour's car, a
+  passer-by, a window
+
+If everything is inside the picture, the student has drawn the hook and missed the twist: the most
+revealing part of that photo is the part you cannot see. Aim for nine labels in all.
+
+---
+
+### Self-Check
+
+Not marked. Read the "not yet" column: each one points back to a section above (re-identification to the
+Puzzle and B3, metadata to A5 and Build It, provenance checks to B4 and the card, automation bias to B5,
+fact-checking to B2, "when it is fine to trust" to B5(a) and the Concept 3 row below).
 
 ---
 

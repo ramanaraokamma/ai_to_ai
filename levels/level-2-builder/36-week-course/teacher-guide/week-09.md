@@ -13,7 +13,7 @@
 | **Big idea** | When the same block appears three times, give it a name. A function is a named block you can run whenever you want. |
 | **New vocabulary** | function · define · call · return |
 | **New syntax** | `def name():` · `name()` · `return value` |
-| **Materials** | Printed workbook pages 9.1–9.6 · **three coloured pencils or highlighters** · the student's notebook, open at the **Bug Log**, with every entry from weeks 1–8 · a timer · the **weeks 1–8 code folder, on screen, with the real filenames** |
+| **Materials** | The printed Week 9 workbook (Warm-Up, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Build It, Draw It, Self-Check) · **three coloured pencils or highlighters** · the student's notebook, open at the **Bug Log**, with every entry from weeks 1–8 · a timer · the **weeks 1–8 code folder, on screen, with the real filenames** |
 | **Tech needed** | Python 3, an editor that can show two files side by side (or two windows), one terminal. **No libraries at all** — nothing to install. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
@@ -435,7 +435,7 @@ of stage one is plain white and the badge crosses the first arrow into stage two
   ```
 
   **Sit with the `None` for a second.** That single word is the hardest thing in the lesson and you need to have met it calmly.
-- [ ] **Print the ten broken programs** from the Answer Key onto ten separate slips, or set up ten files named `bug01.py` … `bug10.py`. Ten files is better if the machine is reliable; slips are better if you want the student's hands off the keyboard while they diagnose.
+- [ ] **Print the ten broken programs** from the Answer Key (Build It, Part 1) onto ten separate slips, or set up ten files named `bug01.py` … `bug10.py`. Ten files is better if the machine is reliable; slips are better if you want the student's hands off the keyboard while they diagnose.
 - [ ] **Read the student's Bug Log from the start.** Count the entries and note which weeks they came from — that count is your best single piece of evidence about which weeks need revisiting, and it takes four minutes to read.
 - [ ] **Have three coloured pencils.** The repetition hunt uses one colour per repeated block, and colour is the whole mechanism.
 - [ ] Say the big idea out loud: *"three copies is not a length problem, it's a truth problem — you can't check three copies are the same."*
@@ -906,7 +906,7 @@ Give them the two minutes. Then the three checks from **✅ Assessing Understand
 
 Then the homework, using the script in **📤 Homework to Assign**:
 
-> "The big one is page 9.4 — three repeated blocks from your own weeks 1 to 8 files, each turned into a function, and the output has to come out **identical**. Not nearly. Identical, and you have to prove it.
+> "The big one is Build It, Part 2 — three repeated blocks from your own weeks 1 to 8 files, each turned into a function, and the output has to come out **identical**. Not nearly. Identical, and you have to prove it.
 >
 > And one habit to take away, which is the last one of the term and it makes all the others usable. **Before you look for a bug, name the family from the message alone.** Never started, started-then-stopped, or finished-and-lied. That one decision tells you whether to look at a character, at a line number, or at a count."
 
@@ -924,7 +924,7 @@ Then the homework, using the script in **📤 Homework to Assign**:
 
 ### Setup
 
-**On the table:** the ten broken programs — either as ten files `bug01.py` … `bug10.py` or as ten printed slips · the Bug Log, open · workbook page 9.3 (the repair table) · page 9.5 (the reflection sheet) · **the blank sheet headed "Weeks to revisit"** · a pencil · a timer.
+**On the table:** the ten broken programs — either as ten files `bug01.py` … `bug10.py` or as ten printed slips · the Bug Log, open · the workbook's Build It, Part 1 (the ten repairs) · Build It, Parts 5 and 6 (the reflection sheet and the revision list) · **the blank sheet headed "Weeks to revisit"** · a pencil · a timer.
 
 **On the screen:** their own newly-shortened file, working, with the function in it. Leave it there — it is the thing they will look at when the repair round gets frustrating.
 
@@ -944,7 +944,7 @@ Then the homework, using the script in **📤 Homework to Assign**:
 
 Start the timer. **Then be quiet.** Your job for twelve minutes is to hand over slips and say almost nothing. If they ask, answer with a question from the list at the end of the Clinic.
 
-The ten programs, their real messages, and their fixes are in the Answer Key (page 9.3). Here they are as a marking grid so you can see the coverage at a glance:
+The ten programs, their real messages, and their fixes are in the Answer Key (Build It, Part 1). Here they are as a marking grid so you can see the coverage at a glance:
 
 | # | From | Family | What it is |
 |---|---|---|---|
@@ -1325,93 +1325,502 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, and it is more looking-back than usual because that is what a checkpoint is for.
+> "About an hour, and it is more looking-back than usual because that is what a checkpoint is for. Open your workbook — the sections have headings, not page numbers.
 >
-> **Page 9.1 — name the family, laptop closed.** Twelve error messages, no code. For each one write 1, 2 or 3, and what you would do first. **You should be able to do this without any code in front of you at all** — that is the point of the exercise.
+> **Warm-Up and Predict the Output.** Five quick questions about last week, then four programs where you write down exactly what appears on the screen — including when the answer is *nothing*. Laptop closed for both.
 >
-> **Pages 9.2 and 9.3 — functions, and the ten repairs.** Page 9.2 asks you about `def`, calling and `return`. Page 9.3 is the ten programs from class — the ones you didn't finish, finished properly, with the family, the diagnosis and the fix for each.
+> **Build It, Part 2 — the big one. Three repeated blocks, three functions.** Go through your weeks 1 to 8 files and find **three** blocks that appear more than once. Turn each one into a function. And here is the requirement I'm marking hardest: **the output has to be byte-identical to what it was before.** Not nearly. Identical. Save the output before and after and compare them — if you can use `diff`, use it; if not, read the two side by side and check every line.
 >
-> **Page 9.4 — the big one. Three repeated blocks, three functions.** Go through your weeks 1 to 8 files and find **three** blocks that appear more than once. Turn each one into a function. And here is the requirement I'm marking hardest: **the output has to be byte-identical to what it was before.** Not nearly. Identical. Save the output before and after and compare them — if you can use `diff`, use it; if not, read the two side by side and check every line.
+> **Build It, Part 3 — last week's average as a function that returns.** The twelve card scores should give 75.00 and double that, 150.00.
 >
-> **Page 9.5 — the Term 1 reflection sheet, and the revision list.** Weeks, what specifically, and how you'll know you've got it. **No marks anywhere on that page.** If I see a score I'll cross it out.
+> **Build It, Part 5 — the Term 1 reflection sheet.** And if you did not finish the revision list in class, finish it. **No marks anywhere on those pages.** If I see a score I'll cross it out.
 >
-> **Page 9.6 — Bug Log, Think Deeper, self-check.** Two Bug Log entries, at least one of them a function bug — the one where you forgot to call it, or the `NoneType` one. And go back and label **every** entry in the log 1, 2 or 3, then count your 3s and write the number at the top.
+> **Build It, Part 7 — Bug Log.** Two entries, at least one of them a function bug — the one where you forgot to call it, or the `NoneType` one. And if you did not finish Part 4 in class, label **every** entry in the log 1, 2 or 3, then count your 3s and write the number at the top.
+>
+> **Self-Check** last, and the one thing you would like explained again.
+>
+> The rest of the workbook — Practice Sets A and B, Fix the Broken Program, the Puzzle, Think Deeper and Draw It — is for the days before next lesson. Do as many as you have time for; A1 and Fix the Broken Program first, because they are the quickest way to see which family of trouble you are weakest on.
 >
 > Every line commented, saying *why*."
 
-**Workbook pages:** 9.1 in class if there is time; **9.2, 9.3, 9.4, 9.5 and 9.6** at home.
+**Workbook sections:** **In class** — Build It Part 1 (the ten repairs, timed), Part 4 (sort the Bug Log) and Part 6 (the revision list), as set out in the activity. **At home, required** — Warm-Up, Predict the Output, Build It Parts 2, 3, 5 and 7, Self-Check, plus whatever of Parts 1, 4 and 6 was not finished. **At home, as time allows** — Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Draw It. The key below answers every section either way.
 
-**Expected time:** 5 min naming families · 10 min the function questions · 15 min finishing the repairs · 15 min the three extractions and the diff · 10 min the reflection sheet · 5 min Bug Log. About 60 minutes.
+**Expected time:** 5 min Warm-Up · 10 min Predict the Output · 20 min the three extractions and the diff (Part 2) · 10 min the returning average (Part 3) · 8 min reflection sheet (Part 5) · 5 min Bug Log (Part 7) · 5 min Self-Check. About 60 minutes for the required sections; the optional sections add roughly another hour and are better spread over several evenings.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 9.1 — Warm-Up: name the family from the message alone
+### Reading this key against the workbook
 
-| # | The message | Family | What you would do first |
+The key follows the workbook **in the order it is printed**: Warm-Up, Predict the Output, Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It (Parts 1–7), Draw It, Self-Check. The item labels (W1, P1, A1, B1, T1, Build It (a)–(n)) are the ones printed in the student's workbook, and every value below agrees with the workbook's own Answers section. The workbook has **no page numbers**; find a section by its heading. Each section ends with a teacher-only note where there is something to watch for.
+
+### Warm-Up — five questions about last week
+
+**W1. The three parts of a `while` loop, and what goes wrong if each is missing.**
+**Set up** (before the loop): missing it gives `NameError`, because the condition asks about a box that does not exist. **Check** (the condition): without it you have not written a `while` loop at all. **Change** (inside the body): missing it gives an **infinite loop**, with no error message until you press Ctrl+C.
+
+**W2. `break` and `continue`.**
+**`break`** ends the loop immediately, skipping every remaining pass. **`continue`** ends only the current pass and goes straight back to the check.
+
+**W3. Five passes, `continue` on pass two, `break` on pass four. How many passes run?**
+**Four.** Pass two runs but is cut short; pass three runs in full; pass four runs as far as the `break`; pass five never happens.
+
+**W4. Why must `.isdigit()` come before `int()`?**
+Because **`int()` is the thing that crashes.** Once it has raised `ValueError` the program is over and there is nothing left to check. `.isdigit()` can be asked of any text at all and never crashes, so it goes first.
+
+**W5. What does `KeyboardInterrupt` mean, and is it a bug?**
+It means **a human pressed Ctrl+C and stopped the program.** It is not a bug in your code. The bug is whatever made the loop refuse to end; the traceback's line number just tells you where the program was standing when you stopped it.
+
+> **🧑‍🏫 Marking tip:** W3 is the one students miss. "Three" (forgetting that pass four runs up to its `break`) and "five" (ignoring the `break`) are the usual wrong answers. If W1's "Change" part is missing, that is the Week 8 infinite loop coming back — it is bug 10 in Build It.
+
+---
+
+### Predict the Output — P1 to P4
+
+**P1.**
+
+```text
+(nothing is printed)
+```
+
+**Nothing at all, and no error.** `say_hi` without brackets is the function's **name** — a reference to the recipe. It is a completely legal thing to write, it does nothing, and Python does not complain.
+
+The missing character is a pair of them: **the brackets.** `say_hi()`.
+
+**P2.**
+
+```text
+5
+5
+None
+```
+
+`print(give_five())` prints **5** — the function handed the value back, and `print` displayed it. Then `print(show_five())` produces **two** lines: the function's own `print(5)` gives the `5`, and then `print(...)` displays what the function handed back, which is **`None`**.
+
+**Both functions "have a 5 in them", and that is exactly the trap.** One hands the 5 over; the other shouts it at the screen and hands over nothing.
+
+**P3.**
+
+```text
+6
+```
+
+**`done` does not appear**, and there is no warning about it. **`return` ends the function immediately** — the `print("done")` line is unreachable and simply never runs. Python does not mention it.
+
+Check the accumulator: 1 + 2 + 3 = 6 ✔
+
+**P4.**
+
+```text
+Traceback (most recent call last):
+  File "p4.py", line 1, in <module>
+    greet()
+NameError: name 'greet' is not defined
+```
+
+**Python reads a file from top to bottom.** At the moment it reached line 1, it had not read the `def` yet, so the name `greet` genuinely did not exist. The function being visible to *you*, three lines below, is irrelevant — Python was not there yet.
+
+**Fix: definitions first, calls after.** Put all your `def`s at the top and this never happens again.
+
+> **🧑‍🏫 What to watch for:** P2 is the one that matters. A student who writes `5` and `5` and stops has missed that `print(show_five())` prints twice: once inside the function, once for the `None` it handed back. P1 and P4 both test "the brackets" and "top to bottom" — if either is wrong, the uncalled-function and call-before-def rows of the Self-Check will be wrong too.
+
+---
+
+### Practice Set A — Read It
+
+
+**A1. Name the family from the message alone.**
+
+| # | The message | Family | What I'd look at first |
 |---|---|---|---|
-| a | `SyntaxError: expected ':'` | **1 — never started** | Look at the `^`. It points at the exact character where the colon should be. Nothing ran, so no output on screen means anything. |
-| b | `NameError: name 'total' is not defined` | **2 — started, then stopped** | Go to the line number. Either the name is misspelled, or the box was never made — and if it is `total`, it is probably an accumulator with no set-up line. |
-| c | `IndentationError: expected an indented block after 'for' statement on line 4` | **1 — never started** | Indent the line under the `for`. Python has even told you which construct you failed to fill in. |
-| d | `TypeError: can only concatenate str (not "int") to str` | **2** | Go to the line number and find the `+`. One side is text and one is a number. |
-| e | `ValueError: invalid literal for int() with base 10: 'banana'` | **2** | Find the `int(...)`. The value handed to it was not a number. Check before converting. |
-| f | "It printed `{total}` with the curly brackets still showing" | **3 — finished and lied** | Look for a missing `f` before the opening quote. No message will ever appear for this. |
-| g | `KeyboardInterrupt` | **2** | Nothing is wrong with the line it names — that is just where you stopped it. Find the variable in the loop's condition and ask what was supposed to change it. |
-| h | "A mark of 95 came out as a C, no error" | **3** | Count and compare. Trace one value through the chain with a finger. The order of the branches is wrong. |
-| i | `ZeroDivisionError: division by zero` | **2** | Go to the line and ask what the divisor was. Often a count that turned out to be 0 — a loop that ran no passes. |
-| j | "It asked for eleven scores when I had twelve" | **3** | Count what went in against what came out. Then look at the `range` boundary. |
-| k | `SyntaxError: 'break' outside loop` | **1** | Find the `break` and put it inside a loop, or delete it. An `if` is not a loop. |
-| l | `TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'` | **2** | The word `NoneType` is the clue: a function you called printed instead of returning. |
+| a | `SyntaxError: expected ':'` | **1** | The `^`. It points at the exact character. Nothing ran, so no output on screen means anything |
+| b | `NameError: name 'total' is not defined` | **2** | The line number. Either the name is misspelled, or the box was never made — and if it is `total`, probably an accumulator with no set-up line |
+| c | `IndentationError: expected an indented block after 'for' statement on line 4` | **1** | Indent the line under the `for`. Python has told you which construct you failed to fill in |
+| d | `TypeError: can only concatenate str (not "int") to str` | **2** | The line number, then the `+`. One side is text and one is a number |
+| e | `ValueError: invalid literal for int() with base 10: 'banana'` | **2** | The `int(...)`. The value handed to it was not a number. Check before converting |
+| f | Braces still showing | **3** | A missing `f` before the opening quote. **No message will ever appear for this** |
+| g | `KeyboardInterrupt` | **2** | Nothing is wrong with the line it names. Find the variable in the condition and ask what was supposed to change it |
+| h | 95 came out as a C | **3** | Count and compare. Trace one value down the chain with a finger. The branches are in the wrong order |
+| i | `ZeroDivisionError: division by zero` | **2** | The line, then ask what the divisor was. Often a count that turned out to be 0 |
+| j | Eleven scores for twelve | **3** | Count what went in against what came out. Then look at the `range` boundary |
+| k | `SyntaxError: 'break' outside loop` | **1** | Find the `break` and put it inside a loop, or delete it. An `if` is not a loop |
+| l | `NoneType` in a `TypeError` | **2** | The word `NoneType`: a function you called printed instead of returning |
 
-**9.1(m) Which family is the friendliest, and why?**
-Family one. You find out instantly, and nothing has happened yet — no file was written, no number was reported, nobody was told anything untrue. It is the cheapest possible kind of mistake.
+**(m) Family 1.** You find out **instantly**, and nothing has happened yet — no file was written, no number was reported, **nobody was told anything untrue.** It is the cheapest possible kind of mistake.
 
-**9.1(n) Which family is the most expensive, and why?**
-Family three. It survives, because nothing announces it. It goes into your homework, into the answers your program printed, into next term. The Week 6 grade chain would have handed thirty students a wrong grade and nobody would ever have found out.
+**(n) Family 3.** It **survives**, because nothing announces it. It goes into your homework, into the answers your program printed, into next term. The Week 6 grade chain would have handed thirty students a wrong grade and nobody would ever have found out.
 
-**9.1(o) Which family gives you the most help, and what is the help?**
-Family two. It gives you a **line number** you can trust, and the nouns in the message (`str`, `int`, `NoneType`) tell you what kind of thing surprised Python.
+**(o) Family 2.** It gives you a **line number you can trust**, and the nouns in the message — `str`, `int`, `NoneType` — tell you what *kind* of thing surprised Python.
 
-### Page 9.2 — Practice Set A: understand it
+**A2.**
 
-**9.2(a) What is a function?**
-A named block of code you write once and run whenever you like.
+**(i)**
+```text
+------
+------
+end
+```
 
-**9.2(b) What is the difference between defining and calling?**
-Defining (`def name():`) writes the block down under a name and **runs nothing.** Calling (`name()`) runs the block, top to bottom. You define once; you call as often as you like.
+**(ii)** Nothing at all, and no error. **The function was defined and never called.**
 
-**9.2(c) I define a function and never call it. What happens?**
-Nothing at all. No output, no error, and the program exits normally. Python read the recipe, filed it, and reached the end of the file with nothing to do.
+**(iii)** Nothing at all, and no error. **The brackets are missing**, so that line names the function instead of running it.
 
-**9.2(d) What is the difference between `print_header` and `print_header()`?**
-`print_header` is the function's **name** — a reference to the recipe. `print_header()` is an instruction to **run** it. Writing the name on its own is legal, does nothing, and produces no error. **The brackets mean "actually do it"** — exactly like `.isdigit()` versus `.isdigit` in Week 8.
+**(iv)** Nothing at all, and no error. This one is different from (ii) and (iii): the function **was** called and it **did** run — but it `return`s a value and nobody printed it. **Returning is not showing.** `print(six())` would give you `6`.
 
-**9.2(e) What punctuation does `def` need, and where have you seen those rules before?**
-Empty brackets and a colon on the `def` line, then an indented block. Both rules are the same as `if` and `for`: the colon means "the indented block below belongs to me", and the indent *is* the block. **There is no new punctuation this week.**
+**In all three, there is nothing wrong with the definition.** In (ii) nobody called it. In (iii) the call is missing its brackets. In (iv) the call is fine and the *caller* threw the answer away. **Three different causes, one identical silence** — which is why "did you call it?" is the first question and "did you print what came back?" is the second.
 
-**9.2(f) What does `return` do?**
-It immediately ends the function and hands one value back to the line that called it, so the program can store it, use it in a calculation, or print it.
+**A3.** a → **2** · b → **1** · c → **4** · d → **3**
 
-**9.2(g) What does a function with no `return` hand back?**
-`None` — Python's word for "no value at all". Printing it shows the word `None`.
+The real outputs:
 
-**9.2(h) Why can you not do maths with a printed answer?**
-Because printing sends the characters to the screen and keeps nothing. There is nothing left to add to. You can always print a returned value; you can never recover a printed one.
+```text
+A
+A
+```
+```text
+A
+```
+```text
+A
+None
+```
+```text
+```
 
-**9.2(i) What does `NoneType` in a `TypeError` almost always mean?**
-That a function you called **printed** instead of **returning**, so the value you are working with is `None`.
+**The `None` in output 4** comes from the second `print`. The function's own `print("A")` produced the `A`; then `x = f()` put the function's **return value** into `x`, and since the function has no `return`, that value is `None`. `print(x)` displays it.
 
-**9.2(j) What happens to a line placed after a `return`?**
-It never runs. `return` ends the function immediately. There is no error and no warning.
+**A4.**
 
-**9.2(k) Why does calling a function above its `def` fail?**
-Because Python reads the file from top to bottom, and at the moment it reaches the call it has not read the definition yet, so the name does not exist. The message is `NameError: name 'print_header' is not defined`. **Definitions first, calls after.**
+**(i) No error message.** Output is just `body` — **no stars.** The brackets are missing from `print_header`, so it names the function instead of running it. Fix: `print_header()`.
 
-**9.2(l) Name the three families of trouble and the one-line tell for each.**
-**1, it never started:** no output at all, and a `^` under one spot. **2, it started then stopped:** some output, then `Traceback`, a line number and a message. **3, it finished and lied:** no message anywhere, and a confident wrong answer.
+**(ii) There is an error message:**
 
-### Page 9.3 — Build It: the ten repairs
+```text
+75.0
+Traceback (most recent call last):
+  File "b.py", line 5, in <module>
+    print(f"{result:.2f}")
+TypeError: unsupported format string passed to NoneType.__format__
+```
+
+**And the right answer, `75.0`, is on the screen just above the crash** — which is what makes this one nasty. The function **printed** instead of **returning**, so `result` holds `None`, and you cannot format nothing to two decimal places. Fix: `return 75.0`.
+
+**(iii) No error message.** It prints **`10`**. The `print("about to return ten")` line is **after** the `return`, so it never runs — `return` ends the function immediately. Fix: move it above the `return`, or delete it. **Nothing warns you about unreachable code.**
+
+**(iv) No error message, and nothing is wrong.** This one is correct:
+
+```text
+**********
+welcome
+**********
+```
+
+**That is on the page deliberately.** Three of four programs being broken does not mean all four are — and a habit of finding a fault in every program you are shown is its own kind of bug.
+
+**A5.** Name plate: **`print_header`** (or whatever the function is called). How many times does the block run when you write it? **Zero.**
+
+The three things pointing at the card are **calls** — `print_header()`, three times.
+
+A block that RETURNS 75.0 hands over **the value 75.0**, so the box holds **75.0**.
+
+A block that PRINTS 75.0 hands over **nothing**, so the box holds **`None`**.
+
+Writing it is called **defining** · Running it is called **calling**.
+
+The brackets mean **"actually do it"** · No `return` hands back **`None`**.
+
+**A6.**
+
+(a) A **named block of code you write once and run whenever you like.**
+
+(b) **Defining** (`def name():`) writes the block down under a name and **runs nothing.** **Calling** (`name()`) runs it, top to bottom. You define once; you call as often as you like.
+
+(c) `print_header` is the function's **name** — a reference to the recipe. `print_header()` is an instruction to **run** it. Writing the name on its own is legal, does nothing, and produces no error. **The brackets mean "actually do it"** — exactly like `.isdigit()` versus `.isdigit` last week.
+
+(d) **Empty brackets and a colon** on the `def` line, then an **indented block.** Both rules are the same as `if` and `for`: the colon means "the indented block below belongs to me", and the indent *is* the block. **There is no new punctuation this week.**
+
+(e) **`None`** — Python's word for "no value at all". Printing it shows the word `None`.
+
+(f) Because printing **sends the characters to the screen and keeps nothing.** There is nothing left to add to. You can always print a returned value; you can never recover a printed one.
+
+(g) That a function you called **printed** instead of **returning**, so the value you are working with is `None`.
+
+(h) Because **Python reads the file from top to bottom**, and at the moment it reaches the call it has not read the definition yet, so the name does not exist. The message is `NameError`. **Definitions first, calls after.**
+
+> **🧑‍🏫 Marking tips:** **A1 (m)–(o)** take any answer with a *reason*; the model answers are the ones the Hook and Concept sections set up. **A2** — the lesson is the identical silence; a student who says (ii) is "an error" has not yet separated "nothing ran" from "something failed". **A3** has a single trap: output 3 ("nothing at all") belongs to **d**, the function that returns but is never printed. **A4 (iv)** is correct — do not mark down a student who says "no bug", and do ask the student who "found" a bug in it what they thought was wrong. **A6** is marked one sentence per item; accept any wording that keeps *define = write it down, call = run it* and *brackets = do it*.
+
+---
+
+### Practice Set B — Write It
+
+
+**B1.**
+
+```python
+def print_line():                  # DEFINE - nothing runs yet
+    print("-" * 20)                # the indent IS the block
+
+print_line()                       # CALL - the brackets mean "do it"
+```
+
+```text
+--------------------
+```
+
+**With the call deleted:**
+
+```text
+```
+
+Nothing, and **exit code 0** — no error. Python filed the recipe and reached the end of the file.
+
+**B2.**
+
+```python
+def print_banner():                # DEFINE once - the text lives in ONE place
+    print("*" * 24)
+    print("   MY PROGRAMS")
+    print("*" * 24)
+
+print_banner()                     # CALL
+print("week 7: loops")
+print_banner()                     # CALL again - no retyping
+```
+
+```text
+************************
+   MY PROGRAMS
+************************
+week 7: loops
+************************
+   MY PROGRAMS
+************************
+```
+
+**The words `MY PROGRAMS` appear exactly once in the file** and twice in the output. That is the whole point.
+
+**B3.**
+
+```python
+def twelve_squared():              # DEFINE
+    return 12 * 12                 # RETURN, not print
+
+print(twelve_squared())            # CALL and print what comes back
+print(twelve_squared() + 6)        # and you can do maths with it
+```
+
+```text
+144
+150
+```
+
+**The second line is the proof.** If the function had used `print(12 * 12)` instead, that line would be `TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'`.
+
+**B4.**
+
+```python
+def average_of_three():                     # DEFINE - no input, one number out
+    total = 0                               # the accumulator
+    for i in range(1, 4):                   # 1, 2, 3
+        total += int(input(f"Number {i} of 3: "))
+    return total / 3                        # RETURN, do not print
+
+average = average_of_three()                # CALL and catch it
+print(f"Average : {average:.2f}")
+print(f"Doubled : {average * 2:.2f}")
+```
+
+```text
+Number 1 of 3: 12
+Number 2 of 3: 15
+Number 3 of 3: 18
+Average : 15.00
+Doubled : 30.00
+```
+
+**Hand-check:** 12 + 15 + 18 = 45 ✔ 45 ÷ 3 = 15 ✔ 15 × 2 = 30 ✔
+
+**Why `range(1, 4)`?** Three passes labelled 1, 2, 3 — and `range(a, b)` hands out `b - a` values, so 4 − 1 = 3.
+
+**B5.**
+
+```python
+# two_sections.py - one banner function, one returning function, two sections.
+
+def print_banner():                          # the block that was pasted twice
+    print("=" * 30)
+    print("   MATCH REPORT")
+    print("=" * 30)
+
+def total_runs():                            # this one hands a number back
+    total = 0                                # accumulator, before the loop
+    for over in range(1, 5):                 # four overs
+        total += int(input(f"Over {over} of 4: runs? "))
+    return total                             # RETURN
+
+print_banner()                               # CALL
+runs = total_runs()                          # CALL and catch
+print(f"Runs in 4 overs : {runs}")
+print(f"Runs per over   : {runs / 4:.2f}")
+print_banner()                               # CALL again
+```
+
+```text
+==============================
+   MATCH REPORT
+==============================
+Over 1 of 4: runs? 8
+Over 2 of 4: runs? 12
+Over 3 of 4: runs? 6
+Over 4 of 4: runs? 10
+Runs in 4 overs : 36
+Runs per over   : 9.00
+==============================
+   MATCH REPORT
+==============================
+```
+
+**Hand-check:** 8 + 12 = 20, + 6 = 26, + 10 = 36 ✔ 36 ÷ 4 = 9 ✔
+
+**And notice the division happens in the main program, not in the function.** The function's job is "give me the total"; deciding to show runs-per-over is a separate decision. That separation is what returning buys you.
+
+> **🧑‍🏫 Marking tips:** For B1 to B5 the grid is the same: **is there one `def`, at the top? Is it called? Does the function `return` where it should (B3, B4, B5) rather than `print`?** B3's second line (`150`) is the proof that it returns — if a student's version prints `144` and then crashes on the second line, the function printed. In B4 and B5, do not insist on the exact prompt text; insist on the accumulator being set up before the loop and the arithmetic being right (45 ÷ 3 = 15, 36 ÷ 4 = 9). Hand-check the numbers against the ones printed.
+
+---
+
+### Fix the Broken Program — `card.py`
+
+
+**Bug 1 — family 1, it never started.** No output at all, so nothing ran.
+
+**Why are the carets under the comment?** Because Python read the whole line looking for a colon, ran off the end of the code and into the comment, and marked the region where it gave up. **The `^^^^` shows you where Python's patience ran out, not where the missing character belongs** — and in this case they are on the same line, which is all you need. The colon goes right after the `()`.
+
+```python
+def print_edge():                             # bug 1 FIXED
+```
+
+**Bug 2 — family 2, it started then stopped.**
+
+(a) It says **`  That is None months,`**. That line is **already wrong before the crash** — and it did not crash, because an f-string is perfectly happy to display the word `None`. **A silent wrong answer, printed one line before a loud one.** If the program had ended there, you would have shipped `None` to a human.
+
+(b) `NoneType` tells you the value is **`None`**, and `None` is what a function hands back when it has **no `return`.** So a function you called printed instead of returning.
+
+(c) **No.** Line 17 is a perfectly correct line — it is the *victim*, not the culprit. The mistake is on **line 8**, inside `months_old`:
+
+```python
+    return years * 12                         # bug 2 FIXED
+```
+
+**Bug 3 — family 3, it finished and lied.**
+
+(d) There is **one** row of stars. There should be **two** — one above the name and one below it.
+
+(e) Because `print_edge` on line 13 has **no brackets.** It is the function's *name*, not an instruction to run it. Python looked at the name, found it, thought about it, and moved on.
+
+(f) The fix:
+
+```python
+print_edge()                                  # bug 3 FIXED
+```
+
+(g) Because `print_edge` on its own is a **completely legal thing to write.** It is a reference to a real object that really exists. Python has no reason to think you meant to call it — you might be about to hand it to something else. **There is nothing for Python to complain about.**
+
+(h) **Bug 2 was hardest**, and the reason is the `That is` line. It printed `That is None months,` — a wrong answer, in a full sentence, with no error — and *then* crashed on the following line. So the traceback points at line 17 while the mistake is on line 8, and the first wrong thing on screen is not the traceback at all.
+
+Bug 3 is a close second, for the opposite reason: **nothing at all appeared.** A missing row of stars is very easy to skim past.
+
+**The general lesson: the loudest message is rarely nearest the mistake.**
+
+> **🧑‍🏫 What to watch for:** The three bugs are deliberately one of each family: bug 1 is family 1, bug 2 is family 2, bug 3 is family 3. The student who fixes bug 2 by changing line 17 has repaired the victim, not the culprit — ask "where does `months` get its value?". And the student who answers (g) with "Python should have warned me" is one step from the right answer; the next step is that `print_edge` *is* a legal statement.
+
+---
+
+### Puzzle of the Week
+
+
+**Part A.**
+
+| You read | Family |
+|---|---|
+| `SyntaxError: unterminated string literal` | **1** |
+| `NameError: name 'Hello' is not defined` | **2** |
+| Nine numbers where ten were wanted | **3** |
+| `IndentationError: unindent does not match any outer indentation level` | **1** |
+| `TypeError: unsupported format string passed to NoneType.__format__` | **2** |
+| No output at all, and no error either | **3** — see below |
+| `ValueError: empty range for randrange() (100, 2, -98)` | **2** |
+| Everybody who passed got a C | **3** |
+| `SyntaxError: 'return' outside function` | **1** |
+| `AttributeError: module 'random' has no attribute 'randInt'` | **2** |
+| It accepted `banana` as a number | **3** |
+| `ZeroDivisionError: division by zero` | **2** |
+
+**The one that does not fit cleanly is "no output at all, and no error either."** It has family 1's *symptom* — no output — and family 3's *nature*: the program ran to the end, perfectly happily, and did the wrong thing without saying so.
+
+**It is family 3**, and the tell is that the program **exited normally**. A family 1 error never runs; this one ran completely and produced nothing, which is a confident wrong answer whose content happens to be empty. **This is the uncalled function, and it is why "did you call it?" is a reflex rather than a deduction.**
+
+(An acceptable second answer: `KeyboardInterrupt` is a bit of an odd one too, since left alone the runaway loop reports nothing at all and belongs to no family — it only becomes family 2 because *you* interrupted it.)
+
+**Part B.**
+
+| Banners | Pasted (5n) | Named (6 + n) | Lines saved |
+|---|---|---|---|
+| 1 | 5 | 7 | **−2** |
+| 2 | 10 | 8 | **2** |
+| 3 | 15 | 9 | **6** |
+| 5 | 25 | 11 | **14** |
+| 10 | 50 | 16 | **34** |
+| 14 | 70 | 20 | **50** |
+
+**(a) At two banners.** One banner is the only case where the function version is longer.
+
+**(b) With one banner the pasted version is shorter — by two lines.**
+
+**(c)** Model answer:
+
+> Yes, and the reason has nothing to do with the two lines. Even with one banner, the function gives it a **name**, and the name says what the block is *for* — `print_header` tells the next reader in one word what five lines of `print` statements do not. It also means that when the second banner arrives — and it will — I do not have to notice, remember and copy anything. **I am paying two lines now to avoid a decision later.**
+>
+> The honest counter-argument is real, though: if there is genuinely only ever going to be one banner, the `def` is a layer of indirection for no benefit, and somebody reading it has to jump up the file to find out what happens. **That is why the rule of thumb is "two copies, notice it; three copies, extract it"** rather than "always extract everything".
+
+**(d) Fourteen banners** to save fifty lines. Each extra banner costs 5 lines pasted versus 1 line called, so you gain 4 lines per extra banner after the definition has paid for itself.
+
+**(e)** Model answer:
+
+> Yes, and it was never really about the seven lines. It was about the fact that **the heading is now written down in exactly one place.** Before, changing `AI ACADEMY` to `LEVEL 2` meant three edits and no way to be certain I had got them all — and I genuinely could not tell whether my three copies were identical without reading every character. Now there is one line to change and **nothing left to miss.**
+>
+> The seven lines are a nice side effect of a change that was really about **certainty**.
+
+> **🧑‍🏫 Marking tip:** Part A is against the clock; count it as a success at 10 of 12 and ask what the two misses had in common. The expected trouble spots are the uncalled-function row and `ValueError: empty range for randrange()`, which students put in family 1 because it *sounds* like a mistake in how the line was written. Part B's table is arithmetic you can check from the formulas in the header: pasted = 5n, named = 6 + n, saved = 4n − 6.
+
+---
+
+### Think Deeper
+
+
+**T1.** A full-credit answer (4+ sentences) argues a side and names the cost of being wrong. Model answer:
+
+> There are two real camps and I do not think either one is silly. One says **never write the same thing twice**, because every duplicate is a future inconsistency waiting to happen — and today proved that, because I could not tell whether my three banners were identical without reading every character.
+>
+> The other camp says **wait until the third copy**, and their argument is better than it first sounds. Two blocks that look identical today are sometimes two different ideas that happen to coincide, and if I merge them and then one of them needs to change, I end up with a single function trying to serve two masters. That usually grows extra options and flags, and ends up harder to read than the duplication was.
+>
+> What I notice is that the disagreement is really about something **neither side can know**: whether those two blocks will change *together* or *separately* in future. So the rule I am going to use is: **two copies, notice it and leave it; three copies, extract it.** And one thing that settles it either way — **if I have already had to change the same thing in two places on the same day, extract it now**, because that is no longer a prediction, it is evidence.
+
+**T2.** Model answer:
+
+> No, because there is nothing **in** five consecutive lines that says whether they are one idea or five unrelated things that happen to be next to each other. I looked at five lines in the middle of my `grade.py` and they were three prints and two `if`s — a person can see they belong together, but only because a person knows what a grade *is*. Python does not.
+>
+> Grouping is a fact about my **intention**, and my intention is not in the file until I put it there. `def` is exactly how I put it there: it says *these lines are one idea, and the idea has a name.*
+>
+> Which is why the name matters more than almost anything else about a function. **The name is the only place my intention gets written down.** And that makes a *wrong* name worse than no name at all — duplicated code merely repeats itself, but a function called `do_stuff` that prints a banner actively misleads the next person who reads it. The next person is usually me, in March.
+
+> **🧑‍🏫 Marking tip:** T1 and T2 are judged by shape, not by agreement. For T1 look for four things: both camps stated fairly, the thing neither camp can know (will the blocks change together or separately?), a personal rule, and a cost of being wrong. A one-sided answer caps out at partial credit. For T2, the sentence that matters is "the name is the only place my intention gets written down".
+
+---
+
+### Build It
+
+#### Part 1 — the ten repairs
 
 Every message below came from a real run.
 
@@ -1629,20 +2038,21 @@ KeyboardInterrupt
 
 **Family 2**, but only because you interrupted it — left alone it never ends and never reports anything, which makes it the one bug that belongs to two families at once. **The missing part is the CHANGE step:** nothing in the body moves `countdown` towards 0. **Fix:** add `countdown -= 1` inside the loop. Then the output is `3 2 1 Liftoff!`.
 
----
+**(a) How many of the ten had no error message at all? Which ones?**
+**Three** — bugs **4, 8 and 9.** All three printed a complete, confident, wrong answer.
 
-**9.3(k) How many of the ten had no error message?**
-**Three** — bugs 4, 8 and 9. All three printed a complete, confident, wrong answer.
+**(b) Sort the ten by family and count each.**
+Family 1: bugs **1, 6, 7** — **three.** Family 2: bugs **2, 3, 5, 10** — **four.** Family 3: bugs **4, 8, 9** — **three.**
 
-**9.3(l) Which of the ten did you find fastest, and what does that tell you?**
-Almost always one of the family-one errors, because the `^` points straight at the character. **What it tells you: the errors that feel worst are the easiest, and the ones that feel like nothing are the expensive ones.**
+**(c) Which one did you find fastest, and what does that tell you?**
+Almost always one of the family-one errors, because the `^` points straight at the character. **What it tells you: the errors that feel worst are the easiest, and the ones that feel like nothing are the expensive ones.** If a student got all seven noisy ones and none of the three silent ones, that is the finding — and exactly what the revision list is for.
 
-**9.3(m) Sort the ten by family and count each.**
-Family 1: bugs 1, 6, 7 — **three**. Family 2: bugs 2, 3, 5, 10 — **four**. Family 3: bugs 4, 8, 9 — **three**.
+> **🧑‍🏫 Marking tip:** this part is done in class as the timed repair round, so mark it as a **diagnosis**, not a score: a family, a sentence and a fix per bug. Accept any fix that works (bug 3 has two; bug 5 has the `.isdigit()` route and the "keep it as text until checked" route). A student who gives the right family but the wrong fix has still diagnosed it.
 
-### Page 9.4 — Build It: three repeated blocks, three functions
+#### Part 2 — three repeated blocks, three functions
 
-A model answer. Three blocks that genuinely repeat across weeks 1–8 — a banner, a divider, and a sign-off:
+A model answer. Three blocks that genuinely repeat across weeks 1–8 — a banner, a divider, and a sign-off. The student's own blocks will differ; mark against the checklist below, not against these names.
+
 
 ```python
 # three_functions.py - three blocks that were pasted more than once, each given a name.
@@ -1699,18 +2109,39 @@ Average : 75.00
    `diff` printing nothing means the two are identical. If it prints anything at all, the block was retyped rather than copied — usually a different number of equals signs, or a lost blank line.
 2. **Are all three functions actually called?** A defined-and-never-called function produces no output and no error, so a missing banner is the tell.
 3. **Are the `def`s above the calls?** If not, `NameError`.
-4. **Do the names say what the functions do?** `print_banner` is good. `banner` is acceptable. `do_stuff` loses a mark and deserves a conversation.
+4. **Do the names say what the functions do?** `print_banner` is good. `banner` is acceptable. `do_stuff` deserves a conversation.
 
-**9.4(b) How many lines did you save, and was that the point?**
+**"Write down what you found" (the model answer's three blocks):**
+
+| # | The block | Which of my files it was in | Lines in it |
+|---|---|---|---|
+| 1 | The banner (`=` row, title, `=` row) | `about_me.py` and `grade.py` | 3 |
+| 2 | The divider (`-` row) | every report | 1 |
+| 3 | The sign-off (divider, thank-you line, `=` row) | `guess.py` and `grade.py` | 3 |
+
+**"The proof" (the model answer):**
+
+| Check | Answer |
+|---|---|
+| How did you compare the before and after output? | `diff long.txt short.txt` |
+| Was it identical? | Yes — `diff` printed nothing |
+| Lines in the file before | 25 |
+| Lines in the file after | 18 |
+| Lines saved | 7 |
+| Places the banner text is now written down | 1 |
+
+**(d) How many lines did you save, and was that the point?**
 For the model answer, `report_long.py` is 25 lines and `report_short.py` is 18 — **seven lines.** And no, that was not the point. The point is that the heading is now written down in exactly one place, so changing it is one edit and it is **impossible to miss a copy, because there are none.** Seven lines is a nice side effect of a change that was really about certainty.
 
-**9.4(c) Why must you copy the block rather than retype it?**
-Because if you retype it and the output changes, you will not know whether the change came from the function or from your typing. Copying makes the extraction the only variable — which is exactly how you test one change at a time.
+**(e) Why must you copy the block rather than retype it?**
+Because if you retype it and the output changes, **you will not know whether the change came from the function or from your typing.** Copying makes the extraction the only variable — which is exactly how you test one change at a time.
 
-**9.4(d) What does `print_divider()` inside `print_goodbye()` show?**
-That a function can call another function, and that there is no special rule for it — it is an ordinary call that happens to sit inside a `def`. The only requirement is that `print_divider` must exist by the time `print_goodbye` is actually called, which it does if all the `def`s are at the top.
+**(f) Did any of your functions call another function? What does that show?**
+In the model answer, `print_divider()` inside `print_goodbye()` shows that **a function can call another function, and there is no special rule for it** — it is an ordinary call that happens to sit inside a `def`. The only requirement is that `print_divider` exists by the time `print_goodbye` is actually called, which it does if all the `def`s are at the top. **And it means the divider's width is written down once, so changing 34 to 40 changes both dividers together.** A student whose functions do not call each other has not done anything wrong; ask them whether any of their three blocks contains another.
 
-**9.4(e) Rewrite Week 7's average as a function that returns.**
+#### Part 3 — Week 7's average, as a returning function
+
+
 
 ```python
 # average_fn.py - a function that hands a number back.
@@ -1726,36 +2157,58 @@ print(f"Average : {average:.2f}")
 print(f"Doubled : {average * 2:.2f}")      # you can do maths with a returned value
 ```
 
-With the twelve numbers from the Week 7 card, the last two lines of real output:
+With the twelve card scores (88 92 70 65 100 54 78 81 47 90 62 73, which total 900), the last two lines of real output:
 
 ```text
 Average : 75.00
 Doubled : 150.00
 ```
 
-**And the honest criticism of that function**, which a strong student will raise: it both **fetches** the data and **works it out**, which means you cannot test it without typing twelve numbers by hand. Splitting those two jobs needs a way to hand the numbers *in* — which is parameters, and which is next week.
+| Check | Wanted | Got |
+|---|---|---|
+| Average printed | 75.00 | **75.00** |
+| Doubled printed | 150.00 | **150.00** |
+| Agrees with Week 7's `scores.py`? | yes | **yes** |
+| Agrees with Week 8's `grade.py`? | yes | **yes** |
 
-### Page 9.5 — Term 1 reflection sheet and revision list
+**(g) Three differently shaped programs all say 75. Why does that matter?**
+Because **three programs with completely different shapes** — a `for` loop, a validated `while` loop, and a function that returns — all agree on the same twelve numbers. Any one of them could be wrong on its own; all three being wrong in exactly the same way is much less likely. **That agreement is an independent check, and it is the checkpoint doing its job.**
 
-**There are no right answers on this page and there is no mark.** What follows is what a good, honest sheet looks like — use it to judge whether a student is being specific, not whether they agree.
+**(h) The honest criticism.**
+That function both **fetches** the data *and* **works it out**, which means **you cannot test it without typing twelve numbers by hand.** Every single time. To check whether the arithmetic is right you have to do twelve keystrokes of setup, which is exactly the kind of friction that stops people testing at all. Fixing it needs a way to hand the numbers **in** to the function rather than having the function go and get them — which is **parameters**, and which is next week. **If the student felt that itch, they are ready for Week 10.**
 
-**9.5(a) Which single thing from Term 1 do you use most often without thinking about it?**
+> **🧑‍🏫 Marking tip:** if the two checks that say "agrees with Week 7 / Week 8" are ticked but the student no longer has those files, the answer is still 75.00 — accept it, and note that the agreement was with the numbers, not the files. The usual bug is the one in the Bug Log table below (Part 7, entry 2): `print(total / 12)` where `return total / 12` was needed.
 
-> Probably `f"..."`. In Week 3 I had to stop and remember the `f` every time and now my hands just do it. Second would be `int(input(...))` — I no longer have to be told that input is text.
+#### Part 4 — sort the whole Bug Log
 
-**9.5(b) Which week's idea took longest to land, and what finally made it land?**
+There is no right answer here, only an honest one. What a healthy Term 1 looks like: **around fifteen entries, of which four or five are family 3.**
 
-> Week 6, the ordering bug. What made it land was not the explanation, it was tracing 95 down the chain with my finger and having to say "is 95 sixty or more?" out loud. When I read it silently I kept skipping to the answer I expected.
+**(i) Is your total number of entries honest?** Three entries for eight weeks does **not** mean the student had only three bugs. It means the log is not being kept, and **that goes on the revision list as a habit rather than a topic.** If that is the student, build ten entries now from the ten repair programs — the habit can start this week.
 
-**9.5(c) Which mistake have you made more than three times?**
+**Where family 3 clusters: weeks 6 and 7**, nearly always. That is not a coincidence — `elif` chains and `range` boundaries are exactly where silence lives, because every individual line in both is a correct line.
+
+#### Parts 5 and 6 — the reflection sheet and the revision list
+
+**There are no right answers and there is no mark.** What follows is what a good, honest sheet looks like — use it to judge whether the student is being **specific**, not whether they agree.
+
+**(j) Which single thing from Term 1 do you now use without thinking about it?**
+
+> Probably `f"..."`. In Week 3 I had to stop and remember the `f` every time, and now my hands just do it. Second would be `int(input(...))` — I no longer have to be told that input is text.
+
+**(k) Which week's idea took longest to land, and what finally made it land?**
+
+> Week 6, the ordering bug. What made it land was not the explanation, it was tracing 95 down the chain with my finger and having to say *"is 95 sixty or more?"* out loud. When I read it silently I kept skipping to the answer I expected.
+
+**(l) Which mistake have you made more than three times?**
 
 > Forgetting the colon. And off-by-one on `range`, which I have now done in weeks 7, 8 and 9.
 
-**9.5(d) How many entries are in your Bug Log, and how many are family three?**
+**(m) One thing you can do now that you could not do in Week 1.** Anything honest. The strongest answers are usually not about syntax:
 
-A number and a number. Fifteen entries with five family-threes is a healthy Term 1. Three entries means the log is not being kept, and **that goes on the revision list as a habit.**
+> I can read the last line of a traceback and know roughly where to look before I even open the file.
 
-**9.5(e) The revision list — weeks, specifics, and how you will know.**
+**The revision list** (Part 6):
+
 
 | Week | What specifically | How I'll know I've got it |
 |---|---|---|
@@ -1765,17 +2218,14 @@ A number and a number. Fifteen entries with five family-threes is a healthy Term
 | 8 | I converted with `int()` before checking with `.isdigit()` | Take one of my own programs and make it survive `banana` at every single prompt |
 | — | Bug Log has six entries for eight weeks | One entry every time something breaks, even when the fix took ten seconds |
 
-**What full credit looks like:** at least three rows, every row naming a *specific* thing rather than a week, and every row's third column being something you could actually check on a Saturday. "Revise Week 6" is not a plan. "Write a five-branch chain and test both sides of every boundary" is.
+**What full credit looks like:** at least three rows, every row naming a **specific thing** rather than a week, and every row's third column being something you could actually **check on a Saturday.** "Revise Week 6" is not a plan. "Write a five-branch chain and test both sides of every boundary" is. **Notice the last row has no week in it.** A habit is a legitimate finding and it belongs on the list.
 
-**9.5(f) One thing you can now do that you could not do in Week 1.**
+> **🧑‍🏫 Marking tip:** no score anywhere on these parts. If the student has written "7/10", cross it out in front of them, as promised in the homework script.
 
-Anything honest. The strongest answers are usually not about syntax:
+#### Part 7 — the Bug Log
 
-> I can read the last line of a traceback and know roughly where to look before I even open the file.
+Two entries, at least one a function bug.
 
-### Page 9.6 — Bug Log, Think Deeper and Self-Check
-
-**The Bug Log.** Two entries, at least one a function bug.
 
 | # | What I saw (real text) | What it meant, in my words | What I changed |
 |---|---|---|---|
@@ -1789,26 +2239,23 @@ Also acceptable, and arguably better:
 | 3 | **No output and no error**, with the call clearly there on the last line | I wrote `print_header` without brackets. That is the function's *name*, not an instruction to run it — and Python was perfectly happy to think about it and move on. Same trap as `.isdigit` last week. | Added the brackets |
 | 4 | `NameError: name 'print_header' is not defined`, on a line where the function obviously existed twenty lines below | Python reads top to bottom. When it reached my call it had not read the `def` yet, so the name did not exist. | Moved all the `def`s to the top |
 
-**9.6(a) Should every repeated block become a function?**
+**(n) Both of this week's bugs were silent-ish. Which was worse, and why?**
+The **`print`-instead-of-`return`** one was worse, and the reason is counter-intuitive: **the right answer was on the screen.** `75.0` printed correctly, one line before the crash. Anything that shows you a correct-looking answer makes you look somewhere else for the problem. Accept the other answer with a reason. What matters is noticing that the answer being **visible** made it *harder*, not easier — and that the traceback's line number pointed at line 17 while the mistake was on line 8.
 
-A full-credit answer (4+ sentences) argues a side and names the cost of being wrong. Model answer:
+---
 
-> There are two real camps and I do not think either one is silly. One says never write the same thing twice, because every duplicate is a future inconsistency waiting to happen — and today proved that, because I could not tell whether my three banners were identical without reading every character.
->
-> The other camp says wait until the third copy, and their argument is better than it first sounds. Two blocks that look identical today are sometimes two different ideas that happen to coincide, and if I merge them and then one of them needs to change, I end up with a single function trying to serve two masters. That usually grows extra options and flags, and ends up harder to read than the duplication was.
->
-> What I notice is that the disagreement is really about something neither side can know: whether those two blocks will change *together* or *separately* in future. So the rule I am going to use is: two copies, notice it and leave it; three copies, extract it. And one thing that seems to settle it either way — **if I have already had to change the same thing in two places on the same day, extract it now**, because that is no longer a prediction, it is evidence.
+### Draw It
 
-**9.6(b) Which family of trouble would you rather have in a program you were about to hand in?**
-Family one, without hesitation. It never ran, so it cannot possibly have told anybody anything untrue. Family two is next, because at least it stopped and pointed at a line. Family three is the one I would not want, because it hands in a confident wrong answer and there is nothing at all to notice. **A program that refuses to run has not misled anyone; a program that lies has.**
+There is no single right drawing. A strong answer has **exactly one recipe card** on the right-hand side, with all three call arrows pointing **back to it**. If the picture shows three cards, the misunderstanding is drawn: three calls do not make three copies of the block.
 
-**9.6(c) Why does Python need `def`? Couldn't it work out which lines belong together?**
-No, because there is nothing in five consecutive lines that says whether they are one idea or five unrelated things that happen to be next to each other. Grouping is a fact about my intention, and my intention is not in the file until I put it there. `def` is exactly how I put it there — **and that is why the function's name matters so much, because the name is the only place my intention gets written down.** A wrong name is worse than no name, because it actively misleads the next reader, and the next reader is usually me.
+Two other things to check. **Is the pasted side's pencil drawn with three arrows and the named side's with one?** That contrast is the actual lesson, and it is about certainty rather than length. And **does the drawing say how the two outputs were compared?** "It looked the same" is not the answer; `diff` printing nothing is.
 
-**9.6(d) Your revision list has no marks on it. Is that better or worse than a score out of ten?**
-Better, and the reason is that a score answers a question nobody needs answered. "Seven out of ten" does not tell me what to do on Saturday. "You missed all three of the silent ones" does. A score also encourages me to try to look good, which is precisely the wrong instinct in a checkpoint — the whole value of today was **finding out**, and finding out requires being willing to get things wrong on purpose. The one thing a score is genuinely good for is comparing across time, and my Bug Log already does that better: five family-three bugs in Term 1 versus two in Term 2 is a real measurement of something that matters.
+---
 
-**Self-check.**
+### Self-Check
+
+The six "I can…" rows are the student's own rating (got it / nearly / not yet); there is no key. Read them beside the Build It results: a 😀 on "Repair broken programs" with three silent bugs missed is worth a conversation. The true-or-false rows:
+
 
 | Statement | Answer |
 |---|---|
@@ -1828,6 +2275,8 @@ Better, and the reason is that a score answers a question nobody needs answered.
 | A `SyntaxError` means part of your program ran | **False.** None of it ran. |
 | A `Traceback` with a line number means the program started | **True.** That is family two. |
 | The most dangerous bugs give the clearest messages | **False.** The most dangerous ones give no message at all. |
+
+> **🧑‍🏫 Marking tip:** sixteen rows; fourteen or more right is solid for this stage. The rows students miss are "a function defined and never called causes an error" (they expect a complaint) and "`return` prints the value". Any row wrong here should be matched to its workbook twin: rows 1–3 to P1 and A2, row 6 to A3, row 11 to Build It Part 7, entry 2, row 12 to P4.
 
 ### Lesson questions posed in the Say-this scripts
 

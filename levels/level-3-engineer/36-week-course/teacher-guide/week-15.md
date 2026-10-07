@@ -15,10 +15,10 @@
 | **New maths** | **The gradient: one slope per knob, collected in a list** — and the update `w ← w − lr × slope` applied to all of them at once, **worked for three rounds on paper before any code.** |
 | **New syntax** | `(X * w).sum(axis=1)` · `w -= lr * grad` · `ax.set_yscale("log")` |
 | **Dataset** | `make_classification(n_samples=400, n_features=2, n_informative=2, n_redundant=0, random_state=0)` — 400 rows, generated offline instantly. Plus **four hand-typed delivery rows** for the paper work. |
-| **Materials** | Printed workbook pages 15.1–15.8 · **the four-round update table blown up on the board before the lesson** · a calculator per pair · the Bug Log · `0.6931` still on the wall from last week |
+| **Materials** | The printed workbook (`workbook/week-15.md`: Warm-Up, Do the Maths by Hand, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Build It, Draw It, Self-Check) · **the four-round update table blown up on the board before the lesson** · a calculator per pair · the Bug Log · `0.6931` still on the wall from last week |
 | **Tech needed** | Laptop with Python 3, numpy, matplotlib, scikit-learn. **Nothing to install, nothing to download.** matplotlib writes to a file — no window ever opens. |
 | **Prep time** | 25 minutes the night before · 5 minutes on the day |
-| **Expected runtime of the code** | `three_rounds.py` **instant**. `descent.py` — 1,500 epochs across three learning rates — **under 2 seconds.** `match.py`, 20,000 epochs, **about 1 second.** `curves.py` including both plots, **about 1 second.** **Nothing in this lab takes longer than you can hold your breath.** |
+| **Expected runtime of the code** | `three_rounds.py` **instant**. `descent.py` — 3,500 epochs across three learning rates and the final run — **under 2 seconds.** `match.py`, 20,000 epochs, **about 1 second.** `curves.py` including both plots, **about 1.7 seconds.** **Nothing in this lab takes longer than you can hold your breath.** |
 
 > **⚠️ Watch out:** the whole lab rests on **three rounds of arithmetic done on paper before anybody opens an editor.** If the class types the loop first, the loop is a spell — twenty-five lines that produce a number, with no way to tell a right number from a wrong one. If they do three rounds by hand first, then every line of code has a hand-computed number sitting beside it, and the loop is a *transcription*. **Paper first. Non-negotiable.**
 
@@ -33,7 +33,7 @@ By the end of the lab the student can:
 3. **Plot three learning rates on one loss curve** and match each to its name: **too small**, **converged**, **diverged**.
 4. **Match their own final weights against scikit-learn's to three decimal places**, and say what it means that they agree.
 
-Observable evidence: a completed four-round table on workbook page 15.2 with every `z`, `p`, error, slope and update shown; a `descent.png` with a log-scale left panel carrying three named curves; a printed side-by-side weight comparison; and a diagnosis of four supplied loss curves with a one-line fix for each.
+Observable evidence: a completed four-round table in the workbook (Do the Maths by Hand, M2 and M3) with every `z`, `p`, error, slope and update shown; a `descent.png` with a log-scale left panel carrying three named curves; a printed side-by-side weight comparison; and a diagnosis of four supplied loss curves with a one-line fix for each.
 
 ---
 
@@ -582,13 +582,13 @@ round 3
 
 **Check your paper answers against that printout, row by row, before you go to bed.** That is exactly the experience the class will have, and having had it yourself is what lets you run the lab.
 
-- [ ] **Type and run `descent.py`.** The complete file is in the Answer Key, page 15.4. **Runtime under 2 seconds** for all 1,500 epochs. You must get `0.5098 / 0.3416 / 7.8482` in the final column and `True / True / False` in the last.
-- [ ] **Run `match.py`** (Answer Key, page 15.6). **Runtime about 1 second** for 20,000 epochs. You must get `biggest gap vs tol=1e-8 : 0.000000`.
-- [ ] **Run `curves.py`** (Answer Key, page 15.5) and **open `descent.png`.** **Runtime about 1 second.** Look at both panels: the left has three curves on a log scale with the red one thrashing above the dashed `ln 2` line; the right has four straight lines sweeping from a badly wrong angle into place.
+- [ ] **Type and run `descent.py`.** The complete file is in the Answer Key, under Practice Set A. **Runtime under 2 seconds** for all 3,500 epochs. You must get `0.5098 / 0.3416 / 7.8482` in the final column and `True / True / False` in the last.
+- [ ] **Run `match.py`** (Answer Key, Practice Set B, B5). **Runtime about 1 second** for 20,000 epochs. You must get `biggest gap vs tol=1e-8 : 0.000000`.
+- [ ] **Run `curves.py`** (Answer Key, Practice Set B, B4) and **open `descent.png`.** **Runtime about 1.7 seconds.** Look at both panels: the left has three curves on a log scale with the red one thrashing above the dashed `ln 2` line; the right has four straight lines sweeping from a badly wrong angle into place.
 - [ ] **Break it on purpose, twice**, so both deliberate mistakes are muscle memory:
   1. Write `w = np.array([0, 0])` without the decimal points. Real message: `numpy.core._exceptions._UFuncOutputCastingError: Cannot cast ufunc 'subtract' output from dtype('float64') to dtype('int64') with casting rule 'same_kind'`.
   2. Write `w += lr * grad` instead of `w -= lr * grad`. **No error.** The loss climbs: `0.693147, 0.759960, 0.844350, 0.949854, 1.079249`.
-- [ ] **Print workbook pages 15.1–15.8.**
+- [ ] **Print the whole workbook (`workbook/week-15.md`).**
 - [ ] **Check `0.6931` is still on the wall from last week.** You will point at it inside the first four minutes.
 
 ### 5 minutes on the day
@@ -1114,7 +1114,7 @@ This section describes the lab the students do in the Their Turn segment.
 - The four-round table is on the board, filled in, from the concept segment. **It stays up for the whole lab** — it is the reference every student checks their loop against.
 - `w ← w − lr × slope` in giant letters with a box round the minus sign.
 - `0.6931` on the wall.
-- Workbook pages 15.3 to 15.6 out.
+- Workbook out, open at Practice Set B (B1–B5); Predict the Output beside it.
 - **The Week 13 `squash` function should be copied in, not retyped.** There is no learning left in typing the sigmoid a fourth time.
 
 **Part 1 — the loop, and one hard checkpoint (8 minutes)**
@@ -1146,7 +1146,7 @@ They type the `train` function. About fifteen lines.
 
 Switch to the 400-row dataset. Run 500 epochs at `0.005`, `0.5` and `800`. Print the table, then plot all three with `ax.set_yscale("log")` and a dashed line at `ln 2`.
 
-**Then, on page 15.5, they write the three names next to the three learning rates and one line of evidence for each.** Not the label alone — **the evidence.**
+**Then, in A2 of Practice Set A and in the Bug Log, they write the three names next to the three learning rates and one line of evidence for each.** Not the label alone — **the evidence.**
 
 **Part 3 — the sklearn match (4 minutes)**
 
@@ -1486,163 +1486,226 @@ add:  −0.8 + 1.2 = +0.4
 
 ## 📤 Homework to Assign
 
-This section gives the wording for assigning the homework.
+This section gives the wording for assigning the homework. The workbook has far more in it than one evening can hold, so **three parts are the marked homework** and everything else is either done in class or optional. Sections are named as they appear in the workbook (`workbook/week-15.md`); item labels are the workbook's own (W1, M2, P3, A4, B5 and so on).
 
 **Say this:**
 
 > "About an hour, three parts, and the third is short and is the one I am marking hardest.
 >
-> **First, page 15.2 — finish the four-round table.** You did rounds 0 and 1 in class. Do rounds 2 and 3 at home, by hand, on the four rows from the board. **Every intermediate number:** all four `z` values, all four `p` values, all four errors, three slopes, three updates. Then check the whole thing against `three_rounds.py` and **put a tick or a cross beside every single number.** I want to see crosses. A page of forty ticks with no working is a page I do not believe.
+> **First, Do the Maths by Hand, M3 — finish the four-round table.** You did rounds 0 and 1 in class (M2, and round 1 is printed for you at the top of M3). Do rounds 2 and 3 at home, by hand, on the four rows from the board. **Every intermediate number:** all four `z` values, all four `p` values, all four errors, three slopes, three updates. Then check the whole thing against `three_rounds.py` and **put a tick or a cross beside every single number.** I want to see crosses. A page of forty ticks with no working is a page I do not believe.
 >
-> **Second, page 15.6 — match scikit-learn, printed side by side.** Your weights and theirs, in aligned columns, plus the biggest gap. Then do it again with `tol=1e-8` in sklearn's call and print both comparisons. **One sentence: whose 0.0025 was it, and how do you know?**
+> **Second, Practice Set B, B5, and Build It Part A — match scikit-learn, printed side by side.** Your weights and theirs, in aligned columns, plus the biggest gap. Then do it again with `tol=1e-8` in sklearn's call and print both comparisons. Fill the table in Part A from your own screen. **One sentence: whose 0.0025 was it, and how do you know?**
 >
-> **Third, page 15.7 — diagnose four loss curves.** I give you four tables of numbers. For each one: **the name** — too small, too big, converged, or diverged — **the evidence you used**, and **the fix, in one line.** Four names, four pieces of evidence, four fixes.
+> **Third, Build It Part B — diagnose four loss curves.** I give you four tables of numbers. For each one: **the name** — too small, too big, converged, or diverged — **the evidence you used**, and **the fix, in one line.** Four names, four pieces of evidence, four fixes.
 >
 > And the evidence is the part I am marking. **'It looks wrong' is not evidence. 'It rises between epoch 100 and 101' is.**"
 
-**Workbook pages:** 15.1, 15.3, 15.4 and 15.5 in class · **15.2, 15.6 and 15.7** at home · **15.8** stretch, for anyone who wants to find the largest safe learning rate by measurement.
+**Workbook sections, by when they are done:**
 
-**Expected time:** 25 min on rounds 2 and 3 with the check · 15 min on the sklearn match · 20 min on the four diagnoses. **About an hour.**
+| When | Workbook sections |
+|---|---|
+| **In class** | **Warm-Up** (W1–W5, the first five minutes) · **Do the Maths by Hand, M1 and M2** (Concept segment) · **Predict the Output** (P1–P5, as each piece of syntax arrives) · **Practice Set B, B1–B4** (the lab: B1–B3 is the loop and its checkpoint, B4 is the three-learning-rates plot) · **Fix the Broken Program** (the three bugs are the ones the Debugging Clinic covers) · the **Bug Log** table (ninety seconds at the end of each bug, as in the lesson plan) |
+| **At home, marked** | **Do the Maths by Hand, M3** · **Practice Set B, B5** with **Build It, Part A** · **Build It, Part B** |
+| **At home, if there is time (not marked unless you say so)** | **M4** (the gradient check) · **Practice Set A** (A1–A6, a read-it check that takes about 20 minutes) · **Self-Check** |
+| **Stretch** | **Build It, Stretch** (the largest safe learning rate) · **Puzzle of the Week** · **Think Deeper** (T1, T2) · **Draw It** |
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are all the intermediate numbers on page 15.2, with ticks and crosses?** Three slopes and three updates per round is the minimum; a page with only the final weights has skipped the objective. Watch for the bias in round 0: its slope must be **exactly** 0.000000, and a student who writes 0.0001 has an arithmetic slip worth finding. **Two — does the sentence about `tol` say whose gap it was?** The answer is scikit-learn's, and the evidence is that tightening *their* tolerance closed it while our loop never changed. A student who writes *"we were slightly less accurate"* has it backwards. **Three — is the evidence in part three actually evidence?** For the "too big" curve the evidence is that consecutive epochs alternate — `0.3557, 0.3591, 0.3557, 0.3591` — which you can only see by looking at consecutive rows rather than every fiftieth. **A student who spots that has learned the most useful debugging habit in the whole term**, and it is worth saying so in the margin.
+**Expected time for the marked part:** 25 min on rounds 2 and 3 with the check · 15 min on B5 and Part A · 20 min on Part B. **About an hour.**
+
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are all the intermediate numbers on M3, with ticks and crosses?** Three slopes and three updates per round is the minimum; a page with only the final weights has skipped the objective. While you are there, look back at M2: the bias's slope in round 0 must be **exactly** 0.000000, and a student who writes 0.0001 has an arithmetic slip worth finding. **Two — does the sentence in Build It Part A say whose gap it was?** The answer is scikit-learn's, and the evidence is that tightening *their* tolerance closed it while our loop never changed. A student who writes *"we were slightly less accurate"* has it backwards. **Three — is the evidence in Part B actually evidence?** For the "too big" curve (C) the evidence is that consecutive epochs alternate — `0.3557, 0.3591, 0.3557, 0.3591` — which you can only see by looking at consecutive columns rather than every fiftieth epoch. **A student who spots that has learned the most useful debugging habit in the whole term**, and it is worth saying so in the margin.
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+The key follows the workbook section by section, in the workbook's own order and with its own item labels, and the values are the ones in the workbook's Answers section (re-checked against the code for this guide). Each section opens with the questions restated in one line, so you can mark from this page alone. The grey-box notes headed **🧑‍🏫 Watch for** are teacher-only: the mistakes the student is expected to make.
 
-### Page 15.1 — Warm-up: which way does the weight move?
+### Warm-Up (W1–W5)
 
-*For each row, say whether the weight goes up or down, and give the new value. `lr = 0.1` throughout.*
+*The questions on the page: **W1** `−ln(0.9)` and `−ln(0.02)` to six places · **W2** why the minus sign (must mention `ln(1)`) · **W3** log loss of a constant `0.50`, and does it depend on the data · **W4** the divide-by-zero warning: what went in, and the one-line fix · **W5** the two cost ratios and which ruler for a fraud alert.**
 
-| # | Weight now | Its slope | Up or down? | New weight |
+**W1.** `−ln(0.9) = 0.105361` and `−ln(0.02) = 3.912023`.
+
+**W2.** Because `ln(1) = 0` and every probability is below 1, so every `ln(p)` is **negative** — and a negative loss is meaningless, since zero already means perfect. The minus sign flips them all positive.
+
+**W3.** `0.693147`, and **no** — it does not depend on the data at all. When `p = 0.5` both branches of the loss are the same number, so the labels never enter the arithmetic.
+
+**W4.** A probability of exactly `0` or exactly `1` went into the logarithm, so `ln(0)` was asked for. One line fixes it: `p = np.clip(p, 1e-12, 1 - 1e-12)`, **before** the logs.
+
+**W5.** `3.9120 ÷ 0.9163 = 4.27` and `0.9604 ÷ 0.3600 = 2.67`. **For a fraud alert you want log loss**, because a confidently wrong alert is a different category of event from an unsure one, and only log loss prices it that way.
+
+> **🧑‍🏫 Watch for:** W2 answers that say "to make it positive" without `ln(1)` are half-marked: the point is *why* every `ln(p)` is negative. On W5 the ratios are `4.27` and `2.67`; a student who writes only "log loss is bigger" has not divided.
+
+### Do the Maths by Hand (M1–M4)
+
+*The questions on the page: four sub-pages, on the four delivery rows with `lr = 1.0`, `X = [[1,1], [1,2], [2,1], [3,1]]`, `y = [0, 0, 1, 1]`, start at all zeros.**
+
+**M1 — which way does the weight move?** *Five rows, `lr = 0.1`: up or down, the new weight with the subtraction written out; M1(a) the sentence; M1(b) is a zero slope good or bad (name both situations).*
+
+| # | Weight now | Slope | Up or down? | New weight |
 |:--:|:--:|:--:|---|:--:|
-| 1 | `0.80` | `+0.25` | **down** — positive slope means the loss grows as the weight grows | `0.80 − 0.1 × 0.25 = 0.775` |
-| 2 | `0.80` | `−0.25` | **up** — negative slope means the loss shrinks as the weight grows | `0.80 − 0.1 × (−0.25) = 0.825` |
+| 1 | `0.80` | `+0.25` | **down** — a positive slope means the loss grows as the weight grows | `0.80 − 0.1 × 0.25 = 0.775` |
+| 2 | `0.80` | `−0.25` | **up** — a negative slope means the loss shrinks as the weight grows | `0.80 − 0.1 × (−0.25) = 0.825` |
 | 3 | `0.00` | `−0.375` | **up** | `0.00 − 0.1 × (−0.375) = 0.0375` |
 | 4 | `−0.50` | `+1.20` | **down** | `−0.50 − 0.1 × 1.20 = −0.62` |
-| 5 | `2.00` | `0.00` | **neither** | `2.00 − 0.1 × 0 = 2.00` — a zero slope means flat ground; nothing to do |
+| 5 | `2.00` | `0.00` | **neither** | `2.00 − 0.1 × 0 = 2.00` |
 
-**The question on the page:** *"Row 5's slope is zero. Is that good or bad?"*
+**M1(a).** *"A negative slope means the loss **falls** as the weight **rises**, and I want the loss to fall, so the weight **rises**."*
 
-**It is what the bottom looks like** — at the lowest point of a bowl the ground is level, so the slope is zero and the weight stops moving. **But it is also what a stuck model looks like**, and today you saw one: in round 0 the bias's slope was exactly zero and the bias did not move, even though it was nowhere near its final value. **A zero slope means "no reason to move *right now*", not "we have arrived".**
+**M1(b).** **Both, and they look identical from inside the loop.**
 
-### Page 15.2 — The four-round table (rounds 0–1 in class, 2–3 at home)
+- **Good:** it is what the **bottom** looks like. At the lowest point of a bowl the ground is level, so the slope is zero and the weight has nowhere better to go.
+- **Bad:** it is also what a **stuck** knob looks like, and you saw one today — in round 0 the bias's slope was exactly zero and the bias did not move, even though, by round 3, it had moved to `−0.243791`.
 
-`X = [[1,1], [1,2], [2,1], [3,1]]`, `y = [0, 0, 1, 1]`, start at all zeros, `lr = 1.0`.
+**A zero slope means "no reason to move *right now*", not "we have arrived."**
 
-**Round 0**
+**M2 — round 0, every number.** *Step 1 the predictions for rows 1 and 4 and the loss; Step 2 the four errors (and which two are negative); Step 3 the three slopes with every term; Step 4 the three updates; M2(a) which term is biggest; M2(b) why the bias slope is exactly zero; M2(c) is "negative slope, weight went up" right.*
+
+**M2. Step 1.** Both rows give `z = 0`, because **everything is multiplied by a weight of zero.** So every `p` is `sigmoid(0) = 0.5`, exactly — Week 13's third property, doing real work.
+
+`loss = −ln(0.5) = 0.693147`, before anything has happened.
+
+**Step 2.**
 
 ```text
-w = [0.000000, 0.000000]   b = 0.000000
+row 1:  0.5 − 0 = +0.5
+row 2:  0.5 − 0 = +0.5
+row 3:  0.5 − 1 = −0.5
+row 4:  0.5 − 1 = −0.5
+```
 
-z   = [0, 0, 0, 0]                      (everything is multiplied by zero)
-p   = [0.5, 0.5, 0.5, 0.5]              (sigmoid(0) is exactly a half)
-loss = −ln(0.5) averaged = 0.693147
+**Rows 3 and 4 are negative** because those two really were late and the model said "coin flip".
 
-err = [+0.5, +0.5, −0.5, −0.5]
+**Step 3.**
 
-slope w1 = (0.5×1 + 0.5×1 − 0.5×2 − 0.5×3) ÷ 4 = (0.5+0.5−1.0−1.5) ÷ 4 = −1.5 ÷ 4 = −0.375000
-slope w2 = (0.5×1 + 0.5×2 − 0.5×1 − 0.5×1) ÷ 4 = (0.5+1.0−0.5−0.5) ÷ 4 = +0.5 ÷ 4 = +0.125000
-slope b  = (0.5 + 0.5 − 0.5 − 0.5) ÷ 4         = 0.0 ÷ 4                          =  0.000000
+```text
+slope w1 = ( +0.5×1  +0.5×1  −0.5×2  −0.5×3 ) ÷ 4
+         = ( 0.5 + 0.5 − 1.0 − 1.5 ) ÷ 4 = −1.5 ÷ 4 = −0.375000
 
+slope w2 = ( +0.5×1  +0.5×2  −0.5×1  −0.5×1 ) ÷ 4
+         = ( 0.5 + 1.0 − 0.5 − 0.5 ) ÷ 4 = +0.5 ÷ 4 = +0.125000
+
+slope b  = ( +0.5  +0.5  −0.5  −0.5 ) ÷ 4 = 0.0 ÷ 4 =  0.000000
+```
+
+**Step 4.**
+
+```text
 w1 ← 0.000000 − 1.0 × (−0.375000) = +0.375000
 w2 ← 0.000000 − 1.0 × (+0.125000) = −0.125000
 b  ← 0.000000 − 1.0 × ( 0.000000) =  0.000000
 ```
 
-**Round 1**
+**M2(a).** **Row 4**, contributing `−1.5`. Its feature is `3`, the largest of the four. **Rows with big features get the biggest say in that weight** — if a weight is attached to a feature that was large on a row, that weight really is more responsible for whatever the model said about the row. **Big feature, big responsibility, big correction.**
+
+**M2(b).** Two facts. **One:** two rows were late and two were not. **Two:** every prediction was exactly `0.5`. So the four errors were `+0.5, +0.5, −0.5, −0.5` and **they cancelled perfectly.** The bias only moves when the **average prediction** is off from the **average label**, and right now it is dead on. **That will not last** — from round 1 the predictions differ from each other, so the errors stop cancelling.
+
+**M2(c).** **Yes.** A negative slope means the loss falls as the weight rises, so **up is downhill.** `0 − 1.0 × (−0.375) = +0.375`.
+
+**M3 — rounds 2 and 3.** *Round 1 is printed on the page; the student fills in `z`, `p`, loss, errors, three slopes and three updates for rounds 2 and 3; M3(a) the loss column and the three improvements; M3(b) what `w2` has learned; M3(c) why the improvements shrink.*
+
+**M3.** Real output of `three_rounds.py`:
 
 ```text
-w = [0.375000, -0.125000]   b = 0.000000
-
-z   = [0.250000, 0.125000, 0.625000, 1.000000]
-p   = [0.562177, 0.531209, 0.651355, 0.731059]
-loss = 0.581375
-
-err = [+0.562177, +0.531209, −0.348645, −0.268941]
-
-slope w1 = −0.102682     slope w2 = +0.251752     slope b = +0.118950
-
-w1 ← 0.375000 − 1.0 × (−0.102682) = 0.477682
-w2 ← −0.125000 − 1.0 × (+0.251752) = −0.376752
-b  ← 0.000000 − 1.0 × (+0.118950) = −0.118950
+round 2
+   w = [0.477682, -0.376752]   b = -0.118950   loss = 0.504824
+   z   = [-0.01802  -0.394772  0.459662  0.937344]
+   p   = [0.495495 0.402569 0.612934 0.718563]
+   err = [ 0.495495  0.402569 -0.387066 -0.281437]
+   grad = [-0.180095, 0.158033]   grad_b = 0.057390
+   after the step:  w = [0.657777, -0.534785]   b = -0.176340
+round 3
+   w = [0.657777, -0.534785]   b = -0.176340   loss = 0.448421
+   z   = [-0.053348 -0.588133  0.604429  1.262206]
+   p   = [0.486666 0.357063 0.646669 0.779406]
+   err = [ 0.486666  0.357063 -0.353331 -0.220594]
+   grad = [-0.131179, 0.156717]   grad_b = 0.067451
+   after the step:  w = [0.788956, -0.691502]   b = -0.243791
 ```
 
-**Round 2**
+Written out as the page asks:
 
 ```text
-w = [0.477682, -0.376752]   b = -0.118950
+Round 2:  z   = [−0.018020, −0.394772, +0.459662, +0.937344]
+          p   = [ 0.495495,  0.402569,  0.612934,  0.718563]
+          loss = 0.504824
+          err = [+0.495495, +0.402569, −0.387066, −0.281437]
+          slope w1 = −0.180095   slope w2 = +0.158033   slope b = +0.057390
+          w1 ←  0.477682 − 1.0 × (−0.180095) =  0.657777
+          w2 ← −0.376752 − 1.0 × (+0.158033) = −0.534785
+          b  ← −0.118950 − 1.0 × (+0.057390) = −0.176340
 
-z   = [-0.018020, -0.394772, 0.459662, 0.937344]
-p   = [ 0.495495,  0.402569, 0.612934, 0.718563]
-loss = 0.504824
-
-err = [+0.495495, +0.402569, −0.387066, −0.281437]
-
-slope w1 = −0.180095     slope w2 = +0.158033     slope b = +0.057390
-
-w1 ← 0.477682 − 1.0 × (−0.180095) = 0.657777
-w2 ← −0.376752 − 1.0 × (+0.158033) = −0.534785
-b  ← −0.118950 − 1.0 × (+0.057390) = −0.176340
+Round 3:  z   = [−0.053348, −0.588133, +0.604429, +1.262206]
+          p   = [ 0.486666,  0.357063,  0.646669,  0.779406]
+          loss = 0.448421
+          err = [+0.486666, +0.357063, −0.353331, −0.220594]
+          slope w1 = −0.131179   slope w2 = +0.156717   slope b = +0.067451
+          w1 ←  0.657777 − 1.0 × (−0.131179) =  0.788956
+          w2 ← −0.534785 − 1.0 × (+0.156717) = −0.691502
+          b  ← −0.176340 − 1.0 × (+0.067451) = −0.243791
 ```
 
-**Round 3**
+**M3(a).** `0.693147 → 0.581375 → 0.504824 → 0.448421`. **Down every single round.**
 
-```text
-w = [0.657777, -0.534785]   b = -0.176340
+The three improvements: `0.111772`, `0.076551`, `0.056403`.
 
-z   = [-0.053348, -0.588133, 0.604429, 1.262206]
-p   = [ 0.486666,  0.357063, 0.646669, 0.779406]
-loss = 0.448421
+**M3(b).** `w2` is "riders standing free", and it is becoming more and more negative. **The model has worked out — from four rows and four rounds of arithmetic — that more riders standing free makes an order *less* likely to be late.** Nobody told it that; it found it in the errors. **A negative weight is not a bug. It is the model disagreeing with a feature, out loud, in a number you can read.**
 
-err = [+0.486666, +0.357063, −0.353331, −0.220594]
+**M3(c).** Because **the slopes, taken together, are shrinking** (their overall size goes `0.395`, `0.297`, `0.246`, `0.215`; any single one can wobble) as the weights get closer to the bottom of the bowl, and the step is `lr × slope`. Flatter ground means smaller steps means smaller improvements. **That is what approaching a minimum looks like**, and it is why a converged run goes *flat* rather than stopping dead at some particular epoch.
 
-slope w1 = −0.131179     slope w2 = +0.156717     slope b = +0.067451
-
-w1 ← 0.657777 − 1.0 × (−0.131179) = 0.788956
-w2 ← −0.534785 − 1.0 × (+0.156717) = −0.691502
-b  ← −0.176340 − 1.0 × (+0.067451) = −0.243791
-```
-
-**The loss column, which is the point of the page:**
-
-```text
-0.693147  →  0.581375  →  0.504824  →  0.448421
-```
-
-**Down every single round.**
-
-**The three questions on the page:**
-
-**(a) Why was the bias's slope exactly zero in round 0 and not afterwards?**
-
-Because in round 0 every prediction was 0.5 and two rows were late while two were not, so the four errors were `+0.5, +0.5, −0.5, −0.5` and they cancelled exactly. From round 1 onwards the predictions differ from each other, so the errors no longer cancel. **The bias only moves when the average prediction is off from the average label.**
-
-**(b) `w2` goes 0 → −0.125 → −0.377 → −0.535 → −0.692. What is the model learning?**
-
-`w2` is "riders free". It is becoming more and more negative, which means **the model has worked out that more riders standing free makes an order *less* likely to be late.** A negative weight is the model disagreeing with a feature, and it is one of the most readable things about a linear model.
-
-**(c) Between rounds 0 and 1 the loss fell by 0.1118. Between 2 and 3 it fell by 0.0564. Why is the improvement shrinking?**
-
-Because the slopes, taken together, are shrinking as the weights get closer to the bottom of the bowl — the overall size of the three slopes goes `0.395`, `0.297`, `0.246`, `0.215`. (Any single slope can wobble: `slope w1` went `−0.375`, `−0.103`, `−0.180`, `−0.131`.) **Flatter ground means smaller steps means smaller improvements.** That is what approaching a minimum looks like, and it is why `lr = 0.5` was flat by epoch 100 rather than stopping dead at some particular epoch.
-
-The check, and its real output — the complete file is in the Prep Checklist, and its full output is printed there.
-
-### Page 15.3 — Predict the output
-
-*Write what each block prints before you run it.*
-
-**P1**
+**M4 — the gradient check.** *Loss at `w1 = 0.3751` and `0.3749`, their difference, divided by `2h`, against round 1's formula slope; M4(a) do they agree and to how many places; M4(b) passes for each method; M4(c) why the nudge still matters.*
 
 ```python
+"""gradcheck.py - the same slope two ways: nudge, and the formula."""
 import numpy as np
+
 X = np.array([[1.0, 1.0], [1.0, 2.0], [2.0, 1.0], [3.0, 1.0]])
-w = np.array([0.5, -0.25])
-print(X * w)
-print((X * w).sum(axis=1))
+y = np.array([0.0, 0.0, 1.0, 1.0])
+
+
+def loss_at(w1, w2, b):
+    z = w1 * X[:, 0] + w2 * X[:, 1] + b
+    p = 1.0 / (1.0 + np.exp(-z))
+    return -np.mean(y * np.log(p) + (1 - y) * np.log(1 - p))
+
+
+w1, w2, b = 0.375, -0.125, 0.0
+h = 0.0001
+up, down = loss_at(w1 + h, w2, b), loss_at(w1 - h, w2, b)
+nudged = (up - down) / (2 * h)
+z = w1 * X[:, 0] + w2 * X[:, 1] + b
+p = 1.0 / (1.0 + np.exp(-z))
+formula = np.mean((p - y) * X[:, 0])
+
+print("loss at w1 + h  = %.12f" % up)
+print("loss at w1 - h  = %.12f" % down)
+print("difference      = %.12f" % (up - down))
+print("divided by 2h   = %.9f" % nudged)
+print("the formula     = %.9f" % formula)
+print("they agree to   = %.12f" % abs(nudged - formula))
 ```
+
+```text
+loss at w1 + h  = 0.581364940997
+loss at w1 - h  = 0.581385477431
+difference      = -0.000020536433
+divided by 2h   = -0.102682166
+the formula     = -0.102682165
+they agree to   = 0.000000001271
+```
+
+**M4(a).** **Yes**, to **nine** decimal places — they differ by `0.000000001271`. **Two completely different methods, one answer.** That is a gradient check, and it is the single most useful debugging tool in machine learning: it does not care whether you understand your own formula, only whether it is right.
+
+**M4(b).** nudge: **6** passes (two per knob, three knobs). formula: **1** pass for all three.
+
+**M4(c).** Because **it never lies.** The formula is a shortcut that somebody derived, and a derivation can be wrong or mistyped; the nudge only needs the loss function itself. **So you use the formula in the training loop, for speed, and the nudge once at the start, to prove the formula.** In Week 19 you will build a network with dozens of slopes and this is the only check that will tell you which one is wrong.
+
+> **🧑‍🏫 Watch for:** the commonest slip is `truth − prediction` for the errors (the page says "that order, always"): every slope then comes out with the wrong sign and the weights move the wrong way, which is Practice Set A, A3(f), arriving early. In round 0 the bias slope must be exactly `0.000000` (a student who gets `0.0001` has an arithmetic slip). On M3, any single slope may wobble (`slope w1` goes `−0.375, −0.103, −0.180, −0.131`); accept M3(c) only if it says the slopes *taken together* shrink. Six-decimal agreement with `three_rounds.py` is the standard; a cross with a corrected number beside it is worth more than a tick.
+
+### Predict the Output (P1–P5)
+
+*The questions on the page: **P1** the forward pass in two lines (prediction, then the real output; P1(a) numbers in and out; P1(b) what `.sum(axis=1)` returns) · **P2** the `.sum()` trap and two shapes (P2(a) what `()` means; P2(b) the axis table; P2(c) which axis for a raw score per order) · **P3** `X[:, 0]` and `X[:, 1]` (P3(a) read it in words; P3(b) what each column is multiplied by) · **P4** `np.diff` and `np.all` (P4(a) why three numbers; P4(b) what question `np.all` answers; P4(c) what `True` does and does not prove) · **P5** the `int64` / `float64` error (P5(a) the two types; P5(b) the fix; P5(c) refuse or round).**
+
+**P1.**
 
 ```text
 [[ 0.5  -0.25]
@@ -1652,77 +1715,129 @@ print((X * w).sum(axis=1))
 [0.25 0.   0.75 1.25]
 ```
 
-**`X * w` keeps the grid shape** — every row multiplied item by item. `.sum(axis=1)` collapses each row to one number. Four rows in, four numbers out.
+**P1(a).** **Eight numbers in, eight numbers out.** `X * w` multiplies every row item by item and **keeps the grid shape** — each row is now `[x1 × w1, x2 × w2]`.
 
-**P2 — the trap**
+**P1(b).** **Four.** Each one is a row's two products added together — **one raw score per order.**
 
-```python
-import numpy as np
-X = np.array([[1.0, 1.0], [1.0, 2.0], [2.0, 1.0], [3.0, 1.0]])
-w = np.array([0.5, -0.25])
-print((X * w).sum())
-print(np.shape((X * w).sum()))
-```
+**P2.** `2.25`, `()`, `(2,)`.
 
-```text
-2.25
-()
-```
+**P2(a).** `()` means **no rows and no columns** — a single number, not a list of one. It is the shape of a scalar, and it is the shape that tells you `.sum()` has collapsed everything you wanted to keep.
 
-**`.sum()` with no axis adds up everything** and gives one number, with shape `()` — no rows at all. **This is the bug that hides for three lines and then explodes.** `axis=1` keeps the rows.
+**P2(b).**
 
-**P3**
+| | What it does | From a `(4, 2)` grid |
+|---|---|---|
+| `.sum(axis=0)` | goes **down** the **columns** | **2** numbers — one per column |
+| `.sum(axis=1)` | goes **across** the **rows** | **4** numbers — one per row |
+| `.sum()` | adds up **everything** | **1** number |
 
-```python
-import numpy as np
-X = np.array([[1.0, 1.0], [1.0, 2.0], [2.0, 1.0], [3.0, 1.0]])
-print(X[:, 0])
-print(X[:, 1])
-```
+**P2(c).** `axis=1`, **because you want one raw score per order** and there are four orders. **`axis=1` keeps the rows.**
 
-```text
-[1. 1. 2. 3.]
-[1. 2. 1. 1.]
-```
+**P3.** `[1. 1. 2. 3.]` and `[1. 2. 1. 1.]`.
 
-`X[:, 0]` is "every row, column 0". These two are the two feature columns, and they are what the errors get multiplied by.
+**P3(a).** *"Every row, column zero."* The colon means "all of them".
 
-**P4**
+**P3(b).** **The errors.** `err * X[:, 0]` is error times feature 1, row by row; averaging that is `w1`'s slope. **That is "error times feature, averaged", typed out.**
 
-```python
-import numpy as np
-h = [0.6931, 0.5814, 0.5048, 0.4484]
-print(np.diff(h))
-print(np.all(np.diff(h) <= 0))
-```
+**P4.** `[-0.1117 -0.0766 -0.0564]` and `True`.
+
+**P4(a).** Because `np.diff` gives the **gaps between** consecutive numbers, and four numbers have three gaps. *(Four fence posts, three panels.)*
+
+**P4(b).** *"Was every single gap zero or negative?"* — that is, **did the loss never once go up?** One line, one word, no squinting at a picture.
+
+**P4(c).** `True` proves the run was **stable**. It does **not** prove the run **finished**. `0.5098` is monotone and 0.17 short of where `0.3416` got to. **You need the final loss as well, and the two numbers answer different questions: *was it safe?* and *did it get anywhere?***
+
+**P5.**
 
 ```text
-[-0.1117 -0.0766 -0.0564]
-True
-```
-
-**`np.diff` gives the gaps.** All three are negative, so the loss fell every round, so `np.all(... <= 0)` is `True`. **That is the whole `downhill?` test in one line.**
-
-**P5 — the hard one**
-
-```python
-import numpy as np
-w = np.array([0, 0])
-w -= 0.5 * np.array([0.1, 0.2])
-```
-
-```text
-Traceback (most recent call last):
-  File "p5.py", line 3, in <module>
-    w -= 0.5 * np.array([0.1, 0.2])
 numpy.core._exceptions._UFuncOutputCastingError: Cannot cast ufunc 'subtract' output from dtype('float64') to dtype('int64') with casting rule 'same_kind'
 ```
 
-**`np.array([0, 0])` has no decimal points**, so numpy made a whole-number box and then refused to store `−0.05` in it. **Two characters fix it:** `np.array([0.0, 0.0])`.
+**P5(a).** `int64` is **whole numbers** — it is the box, made that way by `np.array([0, 0])` with no decimal points. `float64` is **decimals** — the thing you tried to put in it, namely `−0.05`.
 
-### Page 15.4 — `descent.py` (done in class)
+**P5(b).** **Two** characters: `w = np.array([0.0, 0.0])`.
 
-The complete file:
+**P5(c).** **The refusal, every time.** A silent round to zero would mean the weights never moved and the loss parked at `0.6931` for five hundred epochs with no message at all — which is one of the hardest bugs in this course to find. **numpy stopped, named both types, named the operation and pointed at the exact line. Long error messages are usually the helpful kind.**
+
+> **🧑‍🏫 Watch for:** on P2 the prediction most students write is `[0.25 0. 0.75 1.25]` for the first line, because they expect `.sum()` to behave like `.sum(axis=1)`; the printed `2.25` and shape `()` are the point. On P4(c), "it converged" is the wrong reading of `True`: it proves safe, not finished.
+
+### Practice Set A (A1–A6)
+
+*The questions on the page: **A1** match six words to six descriptions · **A2** read the `descent.py` printout (a–f, then A2(g) the one line behind the `downhill?` word, A2(h) why the worst loss of a good run is its first) · **A3** seven buggy lines, what happens and the fix (A3(h) how many are silent; A3(i) why (f) looks like (e)) · **A4** match five snippets to five outputs (A4(f) which step of M2 is output R) · **A5** label the eight boxes of the round-zero figure, then the panel (A5(a), A5(b)) · **A6** finish seven sentences.**
+
+**A1.** gradient → (ii) · epoch → (v) · step/iteration → (i) · divergence → (vi) · convergence criterion → (iii) · batch/mini-batch/stochastic → (iv)
+
+**A2.**
+
+| Question | Answer |
+|---|---|
+| a | `test_size=0.25` — a quarter of 400 is 100, so 300 train and 100 test. **And `stratify=y` kept the class balance the same in both piles.** |
+| b | `0.6931`. **All three start with every weight at zero**, so every raw score is zero, so every probability is exactly `0.5`, so every row costs `−ln(0.5) = 0.693147`. Week 14's number, arriving in every training run there will ever be. |
+| c | **No.** `lr = 0.005` is monotone *and* unfinished — `0.5098` against `0.3416`. **Monotone means safe, not finished.** |
+| d | `−ln(p) = 12` means `p = e^(−12) = 0.0000061` — a six-millionths chance given to something that happened. **It is not "a bit worse than 0.69"; it is a model that is extremely sure of itself on the rows it gets wrong. **But it does not mean the model gets most rows wrong:** this `lr = 800` run still classifies roughly 80% of the training rows correctly on average, and the loss is huge because each wrong row is charged up to `−ln(1e-12) = 27.6`. Loss and accuracy answer different questions. |
+| e | **Feature 2, by a long way, and positively**: `+3.0924` against `−0.6221`. Feature 1 pushes gently towards class 0. **The comparison is fair only because both features were standardised** — on raw columns it would be meaningless, which is Week 4's whole point. |
+| f | **The model's, not the loop's.** The loop converged and matched scikit-learn. This model draws a **straight line** — it predicts "late" when `z ≥ 0`, and that is the equation of a line — and the data is not straight. **That is the reason Weeks 16 to 19 exist.** |
+
+**A2(g).** `downhill = bool(np.all(np.diff(h) <= 1e-12))`. It measures whether the loss went down at **every single epoch** — `np.diff` gives the gaps, `np.all` asks whether they were all zero or negative. **A curve that rises by `0.0001` somewhere in five hundred epochs looks perfectly flat to the eye, which is why this is measured rather than looked at.**
+
+**A2(h).** Because a successful run **never goes up**, so the highest loss it ever reaches is the one it started with. **`worst = 0.6931` is therefore another way of saying "this run was monotone"** — and notice that `lr = 20` in the stretch has `worst = 0.6931` and is *not* monotone, so it is a weaker test than `downhill?`.
+
+**A3.**
+
+| # | What happens | The fix |
+|:--:|---|---|
+| a | `_UFuncOutputCastingError: Cannot cast ... float64 ... to dtype('int64')`. **A whole-number box will not hold `−0.1875`.** | `np.array([0.0, 0.0])` — two characters. |
+| b | `ValueError: operands could not be broadcast together with shapes (300,2) (3,)`. **The bias is not one of the weights.** `w` holds the two weights; `b` sits on its own. | `w = np.array([0.0, 0.0])` and a separate `b = 0.0`. |
+| c | **No error.** One number where you wanted 300, with shape `()`. **The bug hides for three lines and then explodes somewhere downstream**, in a message naming a shape you have never heard of. | `.sum(axis=1)` — **`axis=1` keeps the rows.** |
+| d | `ValueError: operands could not be broadcast together with shapes (2,) (2,300) (2,)`. **Your gradient is a grid, not a list**: the `np.mean` is missing. | `np.array([np.mean(err * X[:, 0]), np.mean(err * X[:, 1])])`. |
+| e | **No error.** The loss **climbs smoothly**: `0.693147, 0.759960, 0.844350, 0.949854, 1.079249`. You are walking uphill on purpose, five hundred times. | `w -= lr * grad`. **The gradient points uphill.** |
+| f | **No error.** `y - p` is the error with every sign flipped, so every slope is flipped, so the update goes the wrong way. **Identical symptom to (e).** | `err = p - y`. **Prediction minus truth. That order, always.** |
+| g | `ValueError: 'logarithmic' is not a valid value for scale; supported values are 'linear', 'log', 'symlog', 'asinh', 'logit', 'function', 'functionlog'` | `ax.set_yscale("log")`. **When a message lists the legal values, read the list.** |
+
+**A3(h).** **Three** — (c), (e) and (f) — and (c) is the one people forget because it only bites later. To catch **(c)** you print `z.shape` and expect `(300,)`. To catch **(e)** or **(f)** you **print the loss every epoch and look at it**; if it is going up, it is one of those two and nothing else.
+
+**A3(i).** **The loss would climb smoothly from `0.693147`**, exactly as in (e). The reason is the same: `y - p` is `-(p - y)`, so every slope has the wrong sign, and subtracting a flipped slope is the same as adding the right one. **Two different typos, one symptom** — which is why the diagnostic is *"the loss is going up, so it is the sign or the stride"* rather than *"the loss is going up, so line 31 is wrong"*.
+
+**A4.** i → **S** · ii → **P** · iii → **T** · iv → **R** · v → **Q**
+
+**A4(f).** **M2 step 4** — the two weights after round 0's update: `w1 = +0.375` and `w2 = −0.125`. The code is literally `0 − 1.0 × gradient`, which is the update rule with the numbers you computed by hand.
+
+**A5.** The eight boxes, top to bottom:
+
+```text
+1.  p for every row                                    = 0.500000
+2.  err on row 3 = p − y = 0.5 − 1                     = −0.500000
+3.  slope w1 = (0.5 + 0.5 − 1.0 − 1.5) ÷ 4 = −1.5 ÷ 4  = −0.375000
+4.  slope w2 = (0.5 + 1.0 − 0.5 − 0.5) ÷ 4 = +0.5 ÷ 4  = +0.125000
+5.  slope b  = (0.5 + 0.5 − 0.5 − 0.5) ÷ 4 =  0.0 ÷ 4  =  0.000000
+6.  w1 ← 0 − 1.0 × (−0.375000)                         = +0.375000
+7.  w2 ← 0 − 1.0 × (+0.125000)                         = −0.125000
+8.  loss = −ln(0.5)                                    =  0.693147
+```
+
+The panel: `grad.shape` is **`(2,)`**; there are **3** knobs in total (`w1`, `w2` and `b` — **the bias is a knob but it is not in `w`**). **The bias did not move.** Why not: two rows late, two on time, every prediction `0.5`, so the four errors cancelled exactly. **And no, it has not arrived** — by round 3 it is at `−0.243791`.
+
+**A5(a).** **Box 8, `0.693147`, would be the same on any dataset at all** — it is `−ln(0.5)`, and every model that starts with all weights at zero predicts `0.5` for every row, whatever the features and whatever the labels. **Box 5, `0.000000`, is a property of *this* dataset** — it is zero only because exactly half the rows are late.
+
+**A5(b).** Boxes **2 stays the same** (row 3 is still late), but boxes **3, 4, 5, 6 and 7 all change**, because row 4's error flips from `−0.5` to `+0.5`. **Box 1 and box 8 do not change at all** — all-zero weights give `p = 0.5` and a loss of `0.693147` whatever the labels are. **And box 5 would no longer be zero:** the errors would be `+0.5, +0.5, −0.5, +0.5`, which average to `+0.25`, so `slope b = +0.25`.
+
+**A6.**
+
+**a)** …**one slope per knob**…, …**a list**…, **3** numbers.
+
+**b)** …**the error (prediction − truth)** times **that feature**, averaged over **all the rows**.
+
+**c)** …set to **1**, which means **there is nothing to multiply by** — it is just the average error.
+
+**d)** `w ← w **−** lr × slope`, because the gradient points **uphill** and you want to go down.
+
+**e)** `axis=1` goes **across** the rows and gives **4** numbers; `axis=0` goes **down the columns** and gives **2**.
+
+**f)** …at **`0.6931`**, because **every weight starts at zero, so every raw score is zero, so every probability is exactly 0.5, so every row costs `−ln(0.5)`**.
+
+**g)** …**the sigmoid** and **log loss** are always used together.
+
+**The file behind A2.** The printout in A2 is the real output of `descent.py`, below. It is the file you run in the Prep Checklist. It is not one of the student's tasks (B4 and B5 cover its pieces), so this is a reference copy for you.
 
 ```python
 """descent.py - logistic regression trained by our own gradient descent."""
@@ -1782,7 +1897,7 @@ print("   final training loss = %.4f" % h[-1])
 print("   test accuracy       = %.4f" % float((pred == y_te).mean()))
 ```
 
-Real output. **Runtime under 2 seconds for all 3,500 epochs.**
+Real output. **Runtime under 2 seconds for all 3,500 epochs.** It should match A2's printout exactly.
 
 ```text
 X_tr shape: (300, 2)   X_te shape: (100, 2)
@@ -1800,29 +1915,138 @@ lr = 0.5, 2000 epochs
 
 **Count the lines in `train`: thirteen, including the `def` and the `return`. Add the three-line `squash` and you have sixteen.** That is the whole of `fit()`. The other thirty-odd lines of the file are generating data, splitting it, scaling it and printing tables — all Weeks 1 to 4.
 
-### Page 15.5 — Name the three learning rates (done in class)
+### Practice Set B (B1–B5)
 
-| `lr` | Final loss | Worst loss | Downhill every epoch? | **Name** | Evidence | Fix |
-|:--:|:--:|:--:|:--:|---|---|---|
-| `0.005` | 0.5098 | 0.6931 | `True` | **too small** | Still falling at epoch 500 and its final loss is 0.17 above what `lr = 0.5` reached. **Nothing is broken; it did not finish.** | Turn the learning rate up, or run many more epochs. |
-| `0.5` | 0.3416 | 0.6931 | `True` | **converged** | Flat from about epoch 100 (0.3438 → 0.3416 over 400 epochs) and monotone throughout. | Nothing. Extra epochs cost time and buy nothing. |
-| `800` | 7.8482 | **12.1169** | `False` | **diverged** | Went **above** its starting point, peaked at 12.1169, and ended eleven times worse than a model that knows nothing. | Divide by 10 until the curve is monotone, then use the largest value that still is. |
+*The questions on the page: **B1** the forward pass and the trap beside it · **B2** round 0 as code (`p`, `err`, `grad` with its shape, `grad_b`, one step) · **B3** `three_rounds.py`, four rounds in a loop, four losses `0.693147, 0.581375, 0.504824, 0.448421` · **B4** `curves.py`, three learning rates on one log axis, plus the boundary at epochs 0, 50, 150, 300 · **B5** `match.py`, your loop against scikit-learn twice.**
 
-**The three questions on the page:**
+**B1.**
 
-**(a) Why does every run start at exactly 0.6931?**
+```python
+import numpy as np
+X = np.array([[1.0, 1.0], [1.0, 2.0], [2.0, 1.0], [3.0, 1.0]])
+w = np.array([0.375, -0.125])
+b = 0.0
+z = (X * w).sum(axis=1) + b
+print("z       =", z)
+print("z.shape =", z.shape)
+print("no axis =", (X * w).sum(), "  shape", np.shape((X * w).sum()))
+```
 
-Every weight starts at zero, so every raw score is zero, so every probability is exactly 0.5, so every row's loss is `−ln(0.5) = 0.693147`. **Week 14's number, arriving in every training run there will ever be.**
+```text
+z       = [0.25  0.125 0.625 1.   ]
+z.shape = (4,)
+no axis = 2.0   shape ()
+```
 
-**(b) `lr = 0.005` and `lr = 0.5` both show `True` in the downhill column. Are they equally good?**
+Those four raw scores are round 1's `z` column, and `2.0` is their total — **a perfectly real number that answers a question nobody asked.**
 
-No. **Monotone means safe, not finished.** `lr = 0.005` never went up, and it also never arrived: 0.5098 against 0.3416. **`downhill? True` is a safety check, not a success check** — you need the final loss as well.
+**B2.**
 
-**(c) `lr = 800`'s worst loss is 12.1169. What does a loss of 12 mean?**
+```python
+import numpy as np
 
-It means the model is confidently, catastrophically wrong on many rows. `−ln(p) = 12` means `p = e^(−12) = 0.0000061` — a six-millionths chance given to something that happened. **A loss of 12 is not "a bit worse than 0.69"; it is a model that is extremely sure of itself on the rows it gets wrong.** (Its accuracy need not be bad — on this data the `lr = 800` run still gets about 80% of training rows right on average, and the loss is huge only because the few wrong rows cost `−ln(1e-12) = 27.6` each. Loss and accuracy answer different questions, which is Week 14's point.)
+X = np.array([[1.0, 1.0], [1.0, 2.0], [2.0, 1.0], [3.0, 1.0]])
+y = np.array([0.0, 0.0, 1.0, 1.0])
+w = np.array([0.0, 0.0])
+b = 0.0
 
-**And the plot that goes with this page.** The complete `curves.py`:
+z = (X * w).sum(axis=1) + b
+p = 1.0 / (1.0 + np.exp(-z))
+err = p - y
+grad = np.array([np.mean(err * X[:, 0]), np.mean(err * X[:, 1])])
+grad_b = np.mean(err)
+
+print("p      =", p)
+print("err    =", err)
+print("grad   =", grad, "  shape", grad.shape)
+print("grad_b = %.6f" % grad_b)
+print()
+print("after one step at lr = 1.0:")
+print("w =", w - 1.0 * grad, "  b = %.6f" % (b - 1.0 * grad_b))
+```
+
+```text
+p      = [0.5 0.5 0.5 0.5]
+err    = [ 0.5  0.5 -0.5 -0.5]
+grad   = [-0.375  0.125]   shape (2,)
+grad_b = 0.000000
+
+after one step at lr = 1.0:
+w = [ 0.375 -0.125]   b = 0.000000
+```
+
+**`w - 1.0 * grad` does both subtractions at once**, because `w` and `grad` are both lists of two. That single line is the whole algorithm.
+
+**B3.**
+
+```python
+"""three_rounds.py - the four-order table, three rounds, every number printed."""
+import numpy as np
+
+X = np.array([[1.0, 1.0],
+              [1.0, 2.0],
+              [2.0, 1.0],
+              [3.0, 1.0]])
+y = np.array([0.0, 0.0, 1.0, 1.0])
+
+w = np.array([0.0, 0.0])
+b = 0.0
+lr = 1.0
+
+for it in range(4):
+    z = (X * w).sum(axis=1) + b
+    p = 1.0 / (1.0 + np.exp(-z))
+    loss = -np.mean(y * np.log(p) + (1 - y) * np.log(1 - p))
+    err = p - y
+    g1 = np.mean(err * X[:, 0])
+    g2 = np.mean(err * X[:, 1])
+    gb = np.mean(err)
+    print("round %d" % it)
+    print("   w = [%.6f, %.6f]   b = %.6f   loss = %.6f" % (w[0], w[1], b, loss))
+    print("   z   =", np.round(z, 6))
+    print("   p   =", np.round(p, 6))
+    print("   err =", np.round(err, 6))
+    print("   grad = [%.6f, %.6f]   grad_b = %.6f" % (g1, g2, gb))
+    grad = np.array([g1, g2])
+    w = w - lr * grad
+    b = b - lr * gb
+    print("   after the step:  w = [%.6f, %.6f]   b = %.6f" % (w[0], w[1], b))
+```
+
+```text
+round 0
+   w = [0.000000, 0.000000]   b = 0.000000   loss = 0.693147
+   z   = [0. 0. 0. 0.]
+   p   = [0.5 0.5 0.5 0.5]
+   err = [ 0.5  0.5 -0.5 -0.5]
+   grad = [-0.375000, 0.125000]   grad_b = 0.000000
+   after the step:  w = [0.375000, -0.125000]   b = 0.000000
+round 1
+   w = [0.375000, -0.125000]   b = 0.000000   loss = 0.581375
+   z   = [0.25  0.125 0.625 1.   ]
+   p   = [0.562177 0.531209 0.651355 0.731059]
+   err = [ 0.562177  0.531209 -0.348645 -0.268941]
+   grad = [-0.102682, 0.251752]   grad_b = 0.118950
+   after the step:  w = [0.477682, -0.376752]   b = -0.118950
+round 2
+   w = [0.477682, -0.376752]   b = -0.118950   loss = 0.504824
+   z   = [-0.01802  -0.394772  0.459662  0.937344]
+   p   = [0.495495 0.402569 0.612934 0.718563]
+   err = [ 0.495495  0.402569 -0.387066 -0.281437]
+   grad = [-0.180095, 0.158033]   grad_b = 0.057390
+   after the step:  w = [0.657777, -0.534785]   b = -0.176340
+round 3
+   w = [0.657777, -0.534785]   b = -0.176340   loss = 0.448421
+   z   = [-0.053348 -0.588133  0.604429  1.262206]
+   p   = [0.486666 0.357063 0.646669 0.779406]
+   err = [ 0.486666  0.357063 -0.353331 -0.220594]
+   grad = [-0.131179, 0.156717]   grad_b = 0.067451
+   after the step:  w = [0.788956, -0.691502]   b = -0.243791
+```
+
+**Runtime 0.08 seconds.** **A loop that prints *a* number, with no hand-computed answer beside it, is a spell. A loop that prints these four is a transcription of something you already understand.**
+
+**B4.**
 
 ```python
 """curves.py - three learning rates on one log-scale plot, and the boundary moving."""
@@ -1902,8 +2126,6 @@ plt.savefig("descent.png", dpi=120)
 print("wrote descent.png")
 ```
 
-Real output. **Runtime about 1.4 seconds, including both panels.**
-
 ```text
 epoch       w1        w2         b      loss
     0    2.0000   -2.0000    1.0000    2.0454
@@ -1913,13 +2135,11 @@ epoch       w1        w2         b      loss
 wrote descent.png
 ```
 
-**What you should see in `descent.png`.** Left panel: three curves on a **log** vertical axis. The orange `lr = 0.5` curve dives almost vertically and flattens just under 0.35. The blue `lr = 0.005` curve sags gently and is still sagging at epoch 500. The green `lr = 800` curve leaps straight over the dashed `ln 2` line in one epoch and then thrashes between about 2 and 12 for the remaining 499. Right panel: the epoch-0 line cuts steeply across the data at completely the wrong angle, and the other three lie almost on top of each other, nearly flat, with circles below and triangles above.
+**Runtime 1.7 seconds. What to look for in `descent.png`.** Left: the `lr = 0.5` curve dives almost vertically and flattens just under `0.35`; `lr = 0.005` sags gently and is still sagging at epoch 500; `lr = 800` leaps clean over the dashed `ln 2` line in one epoch and thrashes between about 2 and 12 for the remaining 499. Right: the epoch-0 line cuts steeply across the data at completely the wrong angle, and the other three lie almost on top of each other, nearly flat.
 
-> **⚠️ Watch out:** `matplotlib.use("Agg")` **must come before** `import matplotlib.pyplot`. It tells matplotlib to draw into a file rather than trying to open a window, which is what you want on a machine with no display and what stops the program appearing to hang.
+**And the question worth answering: the line is basically right by epoch 50, so why run another 250 epochs?** **Because the loss was still falling** — `0.3590 → 0.3423 → 0.3416` — even though the picture barely changes. **A picture is not a measurement.**
 
-### Page 15.6 — Match scikit-learn (homework)
-
-The complete file:
+**B5.**
 
 ```python
 """match.py - my 25 lines against scikit-learn's."""
@@ -1965,11 +2185,12 @@ print("sklearn, tol=1e-8   %11.6f %11.6f %11.6f"
 print()
 print("biggest gap vs default   : %.6f" % float(np.max(np.abs(w - loose.coef_[0]))))
 print("biggest gap vs tol=1e-8  : %.6f" % float(np.max(np.abs(w - tight.coef_[0]))))
+print()
+mine_acc = float(((squash((X_te * w).sum(axis=1) + b) >= 0.5).astype(int) == y_te).mean())
+print("my test accuracy         : %.4f" % mine_acc)
+print("sklearn default accuracy : %.4f" % loose.score(X_te, y_te))
+print("sklearn tight accuracy   : %.4f" % tight.score(X_te, y_te))
 ```
-
-(`np.abs` strips the minus sign off every number in a list, so `np.max(np.abs(...))` is "the biggest disagreement, ignoring which way round it was". It is the only place it appears today.)
-
-Real output. **Runtime about 1 second for 20,000 epochs.**
 
 ```text
                       weight 1    weight 2        bias
@@ -1979,80 +2200,142 @@ sklearn, tol=1e-8     -0.622142    3.092423    0.227114
 
 biggest gap vs default   : 0.002492
 biggest gap vs tol=1e-8  : 0.000000
+
+my test accuracy         : 0.8200
+sklearn default accuracy : 0.8200
+sklearn tight accuracy   : 0.8200
 ```
 
-**The four questions on the page:**
+**Runtime about 1.1 seconds for 20,000 epochs.**
 
-**(a) Whose 0.0025 was it, and how do you know?**
+> **🧑‍🏫 Watch for:** B3 is the checkpoint of the lab: a student whose four losses differ from the four on the page does not go on to B4. On B4, `matplotlib.use("Agg")` after `import matplotlib.pyplot` and `set_yscale("logarithmic")` are the two mistakes you will see. On B5, leaving out `penalty=None` gives a gap far bigger than 0.0025 and is not a bug in their loop; see Build It Part A.
 
-**scikit-learn's.** The evidence is that our loop never changed between the two comparisons — the only thing that changed was scikit-learn's stopping rule. Tightening `tol` from `1e-4` to `1e-8` moved *their* answer onto ours, to all six printed decimal places. **If the gap had been our error, tightening their tolerance would have made it worse, not zero.**
+> **⚠️ Watch out (B4):** `matplotlib.use("Agg")` **must come before** `import matplotlib.pyplot`. It tells matplotlib to draw into a file rather than trying to open a window, which is what you want on a machine with no display and what stops the program appearing to hang.
 
-**(b) Why does `penalty=None` matter?**
+### Fix the Broken Program
 
-By default `LogisticRegression` applies **L2 regularisation** — it deliberately handicaps the model by adding a penalty for large weights, so it cannot overfit by leaning hard on one feature. That shrinks the weights towards zero, so a regularised model will never match an unregularised one. **We are comparing training loops, so both sides must be unhandicapped.**
+*The questions on the page: three bugs in `broken15.py`. **Bug 1** which line the message points at, which line is at fault, the kind of bug, which type is the box and which the thing, the two-character fix · **Bug 2** which line, the kind of bug, what each of the three shapes is, what is missing and how many times, the fix · **Bug 3** what the loss is doing against what it should do, which two lines, the kind of bug, raggedly versus smoothly, the fix · then the three closing questions (where you have seen the final weights, rank the bugs, where a bug lives versus where it lands).**
 
-**(c) Is it a problem that scikit-learn stops early?**
+**Bug 1 — the message points at line 31; the fault is on line 23, `w = np.array([0, 0])`. A dtype bug.** The **box** is `int64` — whole numbers, made that way by writing `0` instead of `0.0`. The **thing** is `float64`, the decimal you asked it to store.
 
-No, and this is the honest answer. Both versions score **exactly 0.8200** on the test set, so the last 0.0025 of a weight changed no prediction at all. **Stopping early trades an amount of precision that does not matter for time that does.** The valuable thing is not that they agree — it is that you can now *tell* they disagree, and turn it off.
+**The fix, two characters:** `w = np.array([0.0, 0.0])`.
 
-**(d) We wrote 25 lines and matched a professional library. Does that mean our loop is as good as theirs?**
+**Bug 2 — line 30 (`grad`), landing on line 31. A shape bug.** `(2,)` is `w` — two weights. `(2,300)` is the gradient — **two rows of three hundred numbers, one per training row**. The second `(2,)` is the output `w` is being written back into.
 
-**No, and this is worth being precise about.** We matched the *answer*, not the *method*. Ours took 20,000 steps; scikit-learn's L-BFGS took about ten steps (7 to 11), because it builds up a picture of the shape of the bowl as it goes and uses it to take much better steps.
+**What is missing is `np.mean`, twice** — once around `err * X_tr[:, 0]` and once around `err * X_tr[:, 1]`. Without it you have not averaged over the rows, so instead of *"one slope per knob"* you have *"one slope per knob per row"*.
 
-We matched because **the loss is convex** — one bowl, one bottom — so there is exactly one right answer and any correct method must find it. **What we proved is that our method is correct, not that it is efficient.**
+**The fix:** `grad = np.array([np.mean(err * X_tr[:, 0]), np.mean(err * X_tr[:, 1])])`.
 
-And the interesting footnote: neural networks mostly do not use L-BFGS, because it works best on exact full-batch gradients (networks train on noisy mini-batches) and keeps extra copies of every weight. **They use variants of the loop you just wrote.** So these 25 lines are closer to how a real network trains than scikit-learn's optimiser is.
+**Bug 3 — lines 31 and 32, the two `+=`. A silent logic bug.** The loss is **climbing**: `0.693147, 0.759960, 0.844350, 0.949854, 1.079249`. It should be **falling**.
 
-### Page 15.7 — Diagnose four loss curves (homework)
+The first loss is correct, so the data, the scaler, the squash and the loss function are all fine — **the setup is right and the step is backwards.** `w += lr * grad` follows the gradient, and **the gradient points uphill**, so this program is walking up the hill as fast as it can, deliberately, five hundred times. The final weights, `[−42.44, −190.47]`, are enormous because it never stopped climbing.
 
-*Four training runs, all on the same data. Name each, give your evidence, and give the fix in one line.*
+**A loss that climbs *raggedly* would have meant a learning rate that is too big** — bounding across the valley and back. **A loss that climbs *smoothly* from `0.693147` is the sign, and essentially nothing else.**
 
-Here are the four tables as the student sees them. **Note the two extra columns of consecutive epochs — they are there on purpose.**
+**The fix, two characters:** `w -= lr * grad` and `b -= lr * np.mean(err)`.
 
-| Curve | ep 0 | ep 1 | ep 2 | ep 3 | ep 100 | ep 101 | ep 102 | ep 103 | ep 250 | ep 499 |
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| **A** | 0.6931 | 0.6925 | 0.6919 | 0.6913 | 0.6375 | 0.6370 | 0.6365 | 0.6360 | 0.5757 | 0.5098 |
-| **B** | 0.6931 | 0.6342 | 0.5889 | 0.5537 | 0.3438 | 0.3438 | 0.3437 | 0.3437 | 0.3417 | 0.3416 |
-| **C** | 0.6931 | 0.4485 | 0.3684 | 0.3571 | 0.3557 | 0.3591 | 0.3557 | 0.3591 | 0.3557 | 0.3591 |
-| **D** | 0.6931 | 3.5719 | 3.3446 | 3.5101 | 2.7628 | 3.1164 | 8.8994 | 6.4570 | 7.1064 | 7.8482 |
+**Where have you seen `[-0.621281, 3.089822]`?** They are within `0.0009` of **scikit-learn's default answer**, `[-0.621309, 3.089931]`, from `match.py`. **Five hundred epochs of a correct loop already lands essentially where a professional optimiser lands** — the remaining digits took another 19,500.
 
-**Curve A — too small.** *(This was `lr = 0.005`.)*
+**Ranking, hardest first:**
 
-**Evidence:** it falls at every single epoch and never rises, so nothing is unstable. But the drop per epoch is tiny — `0.0006` between epoch 0 and 1 — and at epoch 499 it is still falling and still 0.17 above what curve B reached. **A correct run that has not finished.**
+1. **Bug 3, by a distance.** No message, no crash, five plausible-looking numbers, and the only thing that catches it is **knowing what the loss is supposed to do.** It would run to completion five hundred times out of five hundred.
+2. **Bug 2.** A good message, but it names three shapes and you have to work out which one is the impostor. **Reading `(2,300)` as "two per row instead of two in total" is the skill.**
+3. **Bug 1, cheapest.** It names both types, names the operation, and points at the line. Ten seconds.
 
-**Fix:** turn the learning rate up — multiply by 10 and check it is still monotone — or run far more epochs.
+**Where a bug lives versus where it lands.** Both bugs crashed on `w += lr * grad`, and **neither of them was on that line.** One was created on line 23 and one on line 30. **A traceback tells you where the program stopped, not where you were wrong** — so the habit is to read the message for *what* is inconsistent, then walk backwards to wherever each of those things was made.
 
-**Curve B — converged.** *(This was `lr = 0.5`.)*
+> **🧑‍🏫 Watch for:** the student who fixes Bug 3 by lowering `lr` has misread the symptom. The loss climbs *smoothly* from the correct `0.693147`, which is the sign and nothing else; a smaller `lr` only climbs more slowly. On Bug 2, accept "`np.mean`, twice" only if the student says why (one slope per knob, not one per knob per row).
 
-**Evidence:** falls fast, monotone throughout, and essentially flat from epoch 100 onwards: it improves by `0.0022` over the last 400 epochs. The consecutive columns confirm there is no wobble — `0.3438, 0.3438, 0.3437, 0.3437`.
+### Puzzle of the Week
 
-**Fix:** none. Stop earlier if you want the time back.
+*The questions on the page: **Part 1** run the update backwards for five weight changes (1(a) the rearranged formula; 1(b) which round and knob rows 3 and 4 came from; 1(c) what you know when a weight went up) · **Part 2** the bias that refuses to move (2(a) how many of the sixteen labellings make `slope b` zero; 2(b) `y = [0, 0, 0, 1]`; 2(c) can `slope w1` be zero; 2(d) change one `x1` so that it can).**
 
-**Curve C — too big.** *(This was `lr = 15`.)*
+**Part 1(a).** `slope = (w_before − w_after) ÷ lr`
 
-**Evidence, and this is the discriminating one:** it looks converged if you only read epochs 0, 100, 250 and 499 — it sits at about 0.356 the whole way. But **read the consecutive columns**: `0.3557, 0.3591, 0.3557, 0.3591`. It is **alternating**, for ever, between two values either side of the bottom. It never lands. And its final loss (0.3591) is worse than curve B's (0.3416).
+| # | before | after | `lr` | slope |
+|:--:|:--:|:--:|:--:|:--:|
+| 1 | `0.800000` | `0.775000` | `0.1` | `(0.800000 − 0.775000) ÷ 0.1 = ` **+0.250000** |
+| 2 | `0.000000` | `0.037500` | `0.1` | `(0.000000 − 0.037500) ÷ 0.1 = ` **−0.375000** |
+| 3 | `−0.125000` | `−0.376752` | `1.0` | `(−0.125000 + 0.376752) ÷ 1.0 = ` **+0.251752** |
+| 4 | `0.477682` | `0.657777` | `1.0` | `(0.477682 − 0.657777) ÷ 1.0 = ` **−0.180095** |
+| 5 | `2.000000` | `2.000000` | `0.1` | `(2.000000 − 2.000000) ÷ 0.1 = ` **0.000000** |
 
-**Fix:** divide the learning rate by 2 or 3. **You lose almost nothing** — this run got most of the way down in three epochs — but you gain the last 0.0175.
+**Part 1(b).** Row 3 is **round 1's `slope w2`**; row 4 is **round 2's `slope w1`**. Both are on your M3 page.
 
-**Curve D — diverged.** *(This was `lr = 800`.)*
+**Part 1(c).** **For certain: its slope was negative** (or the learning rate was negative, which nobody does). **What you do not know: by how much**, because the move is `lr × slope` and a big slope with a tiny `lr` looks exactly like a small slope with a large one. **One number cannot be recovered from a product without the other.**
 
-**Evidence:** it went **above its starting point immediately** — 0.6931 to 3.5719 in one epoch — never came back below 1.9, spiked to 8.8994 at epoch 102, and ended at 7.8482, which is **eleven times worse than a model that knows nothing.** The steps are so long that it leaps across the valley and up the far side every time.
+**Part 2(a).** **Six** of the sixteen. They all have **exactly two late orders** — `Σy = 2`. With every prediction at `0.5`, each on-time row contributes `+0.5` and each late row `−0.5`, so the four errors cancel exactly when there are two of each. *(The six are `1100, 1010, 1001, 0110, 0101, 0011`.)*
 
-**Fix:** divide the learning rate by 10 repeatedly until the curve is monotone, then use the largest value that still is.
+**Part 2(b).**
 
-**The two questions on the page:**
+```text
+err      = [ +0.5 , +0.5 , +0.5 , −0.5 ]
+slope b  = ( 0.5 + 0.5 + 0.5 − 0.5 ) ÷ 4 = 1.0 ÷ 4 = +0.250000
+```
 
-**(a) Which two curves would you have called "converged" if you had only been given epochs 0, 100, 250 and 499?**
+**The slope is positive, so the bias goes *down*:** `0 − 1.0 × 0.25 = −0.25`. **And that makes sense.** Only one order in four was late, so the model's flat `0.5` is far too pessimistic, and the bias is the knob that slides every prediction at once. **A negative bias pushes every probability below a half** — which is exactly the right first move when three rows out of four are on time.
 
-**B and C.** At those four epochs C reads `0.6931, 0.3557, 0.3557, 0.3591` and looks flat and settled. **Only the consecutive rows expose the alternation.** This is the whole reason the `downhill?` measurement exists: `np.all(np.diff(h) <= 1e-12)` returns `False` for C and `True` for B, and no amount of squinting at a plot would have told you.
+**Part 2(c).** The four `x1` values add to `1 + 1 + 2 + 3 = ` **7**. For the on-time sum to equal the late sum, each would have to be `7 ÷ 2 = ` **3.5**.
 
-**(b) Curve D's loss at epoch 1 is 3.5719. What did the weights do in that one epoch?**
+**Not possible.** The one-line proof: **each of those sums is a total of whole numbers, so it is a whole number, and 3.5 is not.** *(Equivalently: `slope w1 = 0.125 × (7 − 2 × Σ_late x1)`, and `7 − 2 × anything whole` is odd, so it can never be 0.)*
 
-They took a step 800 times the gradient. The gradient at the start is `[−0.0051, −0.3545]` on this data, so `w2` alone leapt from `0` to `800 × 0.3545 = 283.6`. **Raw scores in the hundreds make probabilities of essentially 0 or 1**, so every row that the model got wrong contributed an enormous surprise. **A single step turned a know-nothing model into a confidently wrong one.**
+**Part 2(d).** You need the `x1` column to add up to an even number, **and** to be splittable into two halves that are equal. **Change row 4's `x1` from `3` to `4`:** now `x1 = [1, 1, 2, 4]`, which adds to `8`, so each side needs `4` — and `4` on its own equals `1 + 1 + 2`. So **`y = [0, 0, 0, 1]`** does it: the late side is `{4}` and the on-time side is `{1, 1, 2}`, both totalling `4`.
 
-### Page 15.8 — The largest safe learning rate (stretch)
+*(Check it: `err = [+0.5, +0.5, +0.5, −0.5]`, and `slope w1 = (0.5×1 + 0.5×1 + 0.5×2 − 0.5×4) ÷ 4 = (0.5 + 0.5 + 1.0 − 2.0) ÷ 4 = 0 ÷ 4 = 0`. And notice this labelling makes `slope b` **non**-zero — it is `+0.25`, from Part 2(b). That is the point: the knobs get stuck for independent reasons, and a zero slope on one knob says nothing at all about the others.)*
 
-*Sweep the learning rate and find the biggest one whose loss still falls every single epoch.*
+### Think Deeper (T1, T2)
+
+*The questions on the page: **T1** what matching scikit-learn to six places does and does not prove (convexity, 20,000 steps versus about ten, networks use variants of your loop, is "same answer" ever enough) · **T2** why nobody picks a random direction instead of computing the gradient (with a number for three knobs and for a hundred thousand).**
+
+**T1 — model answer.** Matching to six decimal places proves that **our method is correct**, and nothing at all about whether it is good. The reason the match was even possible is that the loss for logistic regression is **convex** — one bowl, one bottom, no traps anywhere — so there is exactly **one** right answer, and any correct method has to find it. Twenty-five lines of numpy and a professionally engineered optimiser both arrived because there was only one place to arrive. What the two programs do not share is **effort**: ours took 20,000 steps of a fixed size, while scikit-learn's L-BFGS took about ten steps (7 to 11), because it builds up a picture of the shape of the bowl as it goes and uses that picture to take much better steps. So it is roughly a thousand times more efficient at the same problem. And yet the footnote is the interesting part: **neural networks mostly do not use L-BFGS**, because it works best on exact full-batch gradients (networks train on noisy mini-batches) and it keeps extra copies of every weight, which hurts when a network has millions or billions of them. **They use variants of the loop we just wrote** — which means these 25 lines are closer to how a real network trains than scikit-learn's optimiser is. So: "it got the same answer" is never enough to call two programs equivalent, because it says nothing about cost, nothing about what happens on a problem with more than one bottom, and nothing about which one will still work when the problem gets a thousand times bigger. **Equality of output on one input is the weakest kind of agreement there is** — but it is exactly the right thing to check first, because a fast wrong answer is worth nothing.
+
+**T2 — model answer.** Random search works, and it works for a reason that quietly evaporates: with **three** knobs, a random direction has a decent chance of pointing somewhere useful — roughly half of all directions go downhill at all, and of those a fair fraction go downhill steeply enough to be worth the step. With **a hundred thousand** knobs, still about half of all directions go downhill, but almost all of them go downhill *by a hopelessly tiny amount*, because the one direction of steepest descent is a vanishingly thin sliver of a hundred-thousand-dimensional space; a random direction is very nearly perpendicular to it. So you keep almost every step and almost none of them help. **The gradient buys you the single best direction, at the cost of one pass over the data** — and crucially that cost does **not** grow with the number of knobs, because one pass produces every slope at once. This is exactly Week 12's counting problem in a new costume: 8 candidates for one weight, 64 for two, 512 for three, and a small network has a hundred thousand, so `8^100000` is not a number anybody will ever evaluate. **Gradient descent is the thing that turned an impossible search into a cheap walk**, and the price is that you must be able to compute the slope — which is why Week 12 measured one by nudging, and why this week's formula, which gets all of them in one pass, is worth the page of arithmetic it took to trust.
+
+> **🧑‍🏫 Watch for:** these are model answers to mark against the listed ingredients, not for a word-for-word match. T1 must address all four named points; T2 must include a number and the Week 12 counting link.
+
+### Build It
+
+*Part A: the side-by-side table from the student's own screen, whose `0.0025` it was, `penalty=None`, the three accuracies, is scikit-learn wrong to stop early. Part B: name, evidence and fix for curves A to D, then B(a) to B(d). Stretch: the learning-rate sweep. Bug Log: three entries.*
+
+**Part A — real output of `match.py`. Runtime about 1.1 seconds.**
+
+| | weight 1 | weight 2 | bias |
+|---|---|---|---|
+| mine, 20,000 epochs | `-0.622142` | `3.092423` | `0.227114` |
+| sklearn, default | `-0.621309` | `3.089931` | `0.226750` |
+| sklearn, `tol=1e-8` | `-0.622142` | `3.092423` | `0.227114` |
+
+```text
+biggest gap vs default   : 0.002492
+biggest gap vs tol=1e-8  : 0.000000
+```
+
+**Whose `0.0025` was it? scikit-learn's.** And the evidence is that **our loop never changed between the two comparisons** — the only thing that changed was scikit-learn's stopping rule. Its default is `tol=1e-4`, *"stop when the improvement gets small"*, and it stopped a little short of the bottom on purpose. Tighten `tol` to `1e-8` and it walks the rest of the way and lands **exactly** where we did, to all six printed decimal places. **If the gap had been our error, tightening their tolerance would have made it worse, not zero.**
+
+**What `penalty=None` turns off:** **L2 regularisation.** By default `LogisticRegression` deliberately handicaps the model by adding a penalty for large weights, so it cannot overfit by leaning hard on one feature. That shrinks the weights towards zero, **so a handicapped model can never match an unhandicapped one** — we are comparing training loops, so both sides have to be unhandicapped or the comparison measures the handicap instead.
+
+**All three test accuracies: `0.8200`.** So **the last `0.0025` of a weight changed no prediction at all.** Stopping early traded an amount of precision that does not matter for time that does.
+
+**Is scikit-learn wrong to stop early? No.** Chasing a difference that moves zero predictions is not accuracy, it is arithmetic — **and the valuable thing here is not that they agree, it is that you can now tell when they do not, and turn it off.**
+
+**Part B — the four curves.**
+
+| Curve | Name | Evidence | Fix |
+|:--:|---|---|---|
+| **A** | **too small** | Falls at every epoch and never rises, so nothing is unstable — but the drop is `0.0006` between epochs 0 and 1, and at epoch 499 it is **still falling** and still `0.168` above what B reached. **A correct run that has not finished.** *(This was `lr = 0.005`.)* | Turn the learning rate up ×10 and check it is still monotone, or run far more epochs. |
+| **B** | **converged** | Falls fast, monotone throughout, essentially flat from epoch 100: it improves by `0.0022` over the last 400 epochs, and the consecutive columns show no wobble — `0.3438, 0.3438, 0.3437, 0.3437`. *(This was `lr = 0.5`.)* | None. Stop earlier if you want the time back. |
+| **C** | **too big** | **The discriminating one.** It looks converged at epochs 0, 100, 250 and 499 — about `0.356` all the way. But read the consecutive columns: `0.3557, 0.3591, 0.3557, 0.3591`. It is **alternating for ever** between two values either side of the bottom, and its final loss `0.3591` is worse than B's `0.3416`. *(This was `lr = 15`.)* | Divide the learning rate by 2 or 3. You lose almost nothing and gain the last `0.0175`. |
+| **D** | **diverged** | Went **above its starting point immediately** — `0.6931` to `3.5719` in one epoch — never came back below 1.9, spiked to `8.8994` at epoch 102, and ended at `7.8482`, **eleven times worse than a model that knows nothing.** *(This was `lr = 800`.)* | Divide by 10 repeatedly until the curve is monotone, then use the largest value that still is. |
+
+**Part B(a).** **B and C.** At those four epochs C reads `0.6931, 0.3557, 0.3557, 0.3591` and looks flat and settled. **Only the consecutive rows expose the alternation** — and `np.all(np.diff(h) <= 1e-12)` returns `False` for C and `True` for B, which no amount of squinting at a plot would have told you. **This is the whole reason the measurement exists.**
+
+**Part B(b).** `800 × 0.3545 = 283.6`. The slope was **negative**, so the step was `0 − 800 × (−0.3545)`, and `w2` leapt from `0` to about **`+283.6`** in a single epoch. **Raw scores in the hundreds make probabilities of essentially exactly 0 or 1**, so every row the model got wrong contributed an enormous surprise — `−ln(1e-12)` after clipping. **One step turned a know-nothing model into a confidently wrong one.**
+
+**Part B(c).** A: **True** · B: **True** · C: **False** · D: **False**
+
+**Part B(d).** **"Correct but unfinished" is A. "Stable but permanently worse" is C.** *(C alternates for ever, so it never lands, and its final loss is worse than B's.)* **I would rather hand in A**, and the reason is honest: A is a correct run with a knob turned too low, and one change fixes it. C *looks* finished, which means I might ship it, and it will be permanently `0.0175` worse than it needed to be with nobody ever finding out. **A bug that announces itself is cheaper than a bug that looks like success.**
+
+**Stretch — the code:**
 
 ```python
 for lr in (1.0, 3.0, 8.0, 10.0, 12.0, 15.0, 20.0, 30.0):
@@ -2062,7 +2345,7 @@ for lr in (1.0, 3.0, 8.0, 10.0, 12.0, 15.0, 20.0, 30.0):
           % (lr, h.max(), h[-1], bool(np.all(np.diff(h) <= 1e-12))))
 ```
 
-Real output:
+**Stretch — real output:**
 
 ```text
 lr=1      worst 0.6931  final 0.3416  downhill True
@@ -2075,21 +2358,40 @@ lr=20     worst 0.6931  final 0.5115  downhill False
 lr=30     worst 1.5311  final 0.8175  downhill False
 ```
 
-**The largest safe learning rate on this problem is between 12 and 15.**
+**The boundary is between 12 and 15.**
 
-**The three questions on the page:**
+**Is `lr = 20` safe? No, and that is the trap in the question.** It never went above its **starting** value, so `worst` looks innocent at `0.6931` — but `downhill` is `False`, which means it rose *somewhere*, and its final loss of `0.5115` is far worse than `0.3416`. **"Worst loss ≤ starting loss" is a much weaker test than "went down every epoch." Use the strong one.**
 
-**(a) How many epochs does `lr = 12` need to reach 0.3416, and how many does `lr = 0.5` need?**
+**So why use `0.5`?** `lr = 12` is essentially at the bottom by **epoch 8** — its first eight losses are `0.6931, 0.4018, 0.3495, 0.3456, 0.3439, 0.3429, 0.3423, 0.3420` — where `lr = 0.5` needs about 100. Twenty-four times the stride bought about twelve times the speed and was still perfectly safe. **But on a problem where you do not already know the answer you cannot tell 12 from 15 without trying, and 15 costs you a permanently worse final loss.** `0.5` is slow and unmistakably safe. **On a training run that costs an hour you tune; on one that costs a second you do not bother.**
 
-`lr = 12` is essentially there by **epoch 8** (its first eight losses are `0.6931, 0.4018, 0.3495, 0.3456, 0.3439, 0.3429, 0.3423, 0.3420`). `lr = 0.5` needs about **100**. **Twenty-four times the stride bought about twelve times the speed, and it was still perfectly safe.**
+**Bug Log, filled in:**
 
-**(b) So why would anybody use `lr = 0.5`?**
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `_UFuncOutputCastingError: ... float64 ... to dtype('int64')` | A decimal will not fit in a whole-number box | `np.array([0, 0])` with no decimal points | `np.array([0.0, 0.0])` |
+| `ValueError: operands could not be broadcast together with shapes (2,) (2,300) (2,)` | My gradient is a grid, not a list | `np.mean` forgotten inside the gradient | Wrap both terms in `np.mean` |
+| **No error.** Loss climbs smoothly from `0.6931` | Walking uphill on purpose, 500 times | `w += lr * grad`, or `err = y - p` | `w -= lr * grad`, and `err = p - y`. **Print the loss every epoch and look at it.** |
 
-Because on a problem where you do not already know the answer, **you cannot tell 12 from 15 without trying**, and 15 costs you a permanently worse final loss. `0.5` is slow and unmistakably safe. **On a training run that costs an hour you tune; on one that costs a second you do not bother.**
+> **🧑‍🏫 Watch for:** Part A, "we were slightly less accurate" has it backwards (see the marking note above). Part B, a label of "converged" for curve C is the expected wrong answer, and it is correct only if the student has not read the consecutive columns; a student who reads them and still writes "converged" for C has not understood the alternation. In the Stretch, `lr = 20` has `worst = 0.6931`, so a student who judges safety by the worst-loss column alone calls it safe; the `downhill?` word and the final loss `0.5115` say otherwise. In the Bug Log, the third row is the one to insist on: *no error, loss climbs smoothly*.
 
-**(c) `lr = 30` has a worst loss of 1.5311, above its starting point. `lr = 20` has a worst loss of 0.6931. Is `lr = 20` therefore safe?**
+### Draw It
 
-**No, and this is the trap in the question.** `lr = 20` never went above its *starting* value, so "worst loss" looks innocent — but `downhill` is `False`, which means it rose *somewhere*, and its final loss of 0.5115 is far worse than 0.3416. **"Worst loss ≤ starting loss" is a much weaker test than "went down every epoch".** Use the strong one.
+*Draw the three learning-rate curves from the real numbers. Four questions: the common starting height and why, which curve crosses the dashed line, which two score `True`, why the side axis is unevenly spaced.*
+
+A good drawing has: **all three curves starting exactly on the dashed `ln 2` line**; `lr = 0.005` sagging gently and still falling at epoch 500, ending at `0.5098`; `lr = 0.5` diving and flat from about epoch 100, ending at `0.3416`; `lr = 800` leaping above the dashed line to `3.5719` in **one** epoch, peaking at `12.1169` and ending at `7.8482`; and each curve labelled with **both** its rate and its name.
+
+**The four answers:**
+
+- **All three start at `0.6931`**, and it is not a coincidence: every run starts with every weight at zero, so every raw score is zero, so every probability is exactly `0.5`, so every row costs `−ln(0.5)`.
+- **The `lr = 800` curve crosses the dashed line upwards, between epoch 0 and epoch 1.** One step. That single crossing is the entire diagnosis.
+- **`lr = 0.005` and `lr = 0.5`** would both score `True`. **Monotone means safe, not finished.**
+- Because `0.3416` and `12.1169` have to share the axis — **a factor of about 35.** On an evenly spaced scale both good curves would be squashed into an unreadable smear along the bottom. **A logarithmic scale gives every *ratio* the same amount of room**, so the gap from `0.34` to `0.69` gets as much space as the gap from `6` to `12`.
+
+### Self-Check
+
+*Eleven "I can..." statements, each marked 😀, 🙂 or 😕, and the one question the student would ask.*
+
+All eleven statements should be 😀 or 🙂. If **"see a loss climbing smoothly and know it is the sign"** is 😕, go back and re-read Run 3 of the broken program: `0.693147, 0.759960, 0.844350, 0.949854, 1.079249` is a fingerprint, and recognising it on sight will save you an hour before the end of this term.
 
 ### Answers to every question posed in the lesson
 

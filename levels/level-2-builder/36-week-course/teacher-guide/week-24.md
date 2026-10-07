@@ -13,7 +13,7 @@
 | **Big idea** | `groupby` answers *"what's the average per house?"* in one line — **and hides how many rows each answer came from.** |
 | **New vocabulary** | duplicate · string method · derived column · groupby · aggregate |
 | **New syntax** | `df.drop_duplicates()` · `df["c"].value_counts()` · `df["c"].str.strip().str.title()` · `df["new"] = ...` · `df.groupby("c")["v"].mean()` |
-| **Materials** | Printed workbook pages 24.1–24.10 · **last week's cleaning log sheet, continued — not a fresh one** · a printed copy of the forty-row table (for the paper fallback and for circling things) · the Bug Log |
+| **Materials** | Printed workbook (Warm-Up through Self-Check) · **last week's cleaning log sheet, continued — not a fresh one** · a printed copy of the forty-row table (for the paper fallback and for circling things) · the Bug Log |
 | **Tech needed** | Laptop with Python 3 and pandas. **`house_raw.csv` must exist in the student's folder before class** — the prep script writes it. A paper fallback exists; see Prep. |
 | **Prep time** | 20 minutes the night before · 5 minutes on the day |
 
@@ -733,7 +733,7 @@ sizes sum to 38 and the table has 38 rows
 
 **Delete `mess_detective.py` before class.** The student builds it.
 
-**4. Print (2 minutes).** Workbook pages 24.1–24.10, plus **one copy of the forty-row table printed out** for circling and for the paper fallback. Find last week's cleaning log sheets — the log **continues** on the same paper.
+**4. Print (2 minutes).** The whole workbook (Warm-Up through Self-Check), plus **one copy of the forty-row table printed out** for circling and for the paper fallback. Find last week's cleaning log sheets — the log **continues** on the same paper.
 
 ### 5 minutes on the day
 
@@ -1333,7 +1333,7 @@ And check: the group sizes must add up to len(df).
 >
 > **Real data work isn't mostly about errors. It's about being the person who asks the extra question.**"
 
-**Do this:** Run the three checks from "Assessing Understanding". Assign the homework. Hand out pages 24.1–24.10.
+**Do this:** Run the three checks from "Assessing Understanding". Assign the homework. Hand out the workbook.
 
 ---
 
@@ -1378,7 +1378,7 @@ And the sentence for this week, which is the sentence for the whole term:
 
 ### Part A — Six Questions, Hand-Checked (14 minutes)
 
-**Setup.** Student has `mess_detective.py` working through Step 5. Workbook page 24.6 has the six questions printed with space for an answer, a group size, **and a hand-check**. The board carries the rule: *never `.mean()` without `.size()`*.
+**Setup.** Student has `mess_detective.py` working through Step 5. Workbook **Build It, Part 3** has the six questions printed with space for an answer, a group size, **and a hand-check**. The board carries the rule: *never `.mean()` without `.size()`*.
 
 **The rule that makes this activity work:** every answer must be reported as **the number AND how many rows it came from**. An answer without its `n` does not count, even if it is right.
 
@@ -1533,7 +1533,7 @@ Let them go and find out, even though it was on screen four minutes ago in Quest
 3. *"If one average pupil — say 73 — joined Gold, what happens?"* → (97 + 93 + 73) ÷ 3 = **87.67**. Still top, but the lead over Blue has shrunk from 20.6 marks to 13.3 (about a third) from one person arriving.
 4. *"How many pupils would have to join Blue to move it 20 marks?"* → an absurd number. **That is the difference between fourteen rows and two.**
 
-**Step 4 — the sentence, written down.** Workbook page 24.7:
+**Step 4 — the sentence, written down.** Workbook **Build It, Part 4**:
 
 > *"Gold has the highest average score (95.00), but it has only ______ members, so ______________________."*
 
@@ -1758,32 +1758,32 @@ Run all three in the last five minutes. Say them exactly as written.
 >
 > One extra sentence at the bottom: **the one answer out of your six that you would not say out loud in assembly, and why.** There is more than one defensible choice there, and I care about the reason, not which one you pick."
 
-**Workbook pages: 24.1 to 24.10.**
+**Workbook sections (in the order they appear): Warm-Up · Predict the Output · Practice Set A · Practice Set B · Fix the Broken Program · Puzzle of the Week · Think Deeper · Build It · Draw It · Self-Check.** Items are labelled W1–W5, P1–P4, A1–A6, B1–B5, T1–T3, Bug 1–4, Build It Parts 1–7, and the Puzzle's (a)–(j). The workbook's own **✅ Answers** section at the end is folded shut; the student should not open it until they have written their own answers.
 
-| Page | What it is | Time |
-|---|---|---|
-| 24.1 | Warm-Up — five vocabulary words matched to five plain definitions | 4 min |
-| 24.2 | Predict the Output — six printouts to predict before running | 8 min |
-| 24.3 | Practice Set A — Read It — read a `value_counts()` and a `groupby` result | 8 min |
-| 24.4 | Practice Set B — Write It — the four repairs, before/after shape | 12 min |
-| 24.5 | Fix the Broken Program — four bugs in `detective.py` | 8 min |
-| 24.6 | Build It — the six groupby answers, each with its `n` | 12 min |
-| 24.7 | The Gold sentence — the trap, written out | 4 min |
-| 24.8 | Think Deeper — three written questions | 6 min |
-| 24.9 | Draw It — split, apply, combine, with the group sizes on it | 4 min |
-| 24.10 | Self-Check — six statements, tick or cross | 4 min |
+| Section | What it is | Items | Time (estimate) |
+|---|---|---|---|
+| Warm-Up | Five questions recalling last week's four kinds of broken | W1–W5 | 4 min |
+| Predict the Output | Four snippets to predict before running: `duplicated()` count, the 8-not-4 house printout, the silent `drop_duplicates`, the sizes that sum to 32 | P1–P4 | 8 min |
+| Practice Set A — Read It | Read a `value_counts()`, read a `groupby`, hand-check sums, spot nine bugs, label the groupby diagram, read two tracebacks | A1–A6 | 12 min |
+| Practice Set B — Write It | One-liner, two-liner, derived column, three-number `agg`, then the whole 20-line lab | B1–B5 | 15 min |
+| Fix the Broken Program | Four bugs in `detective.py`, two of them silent | Bugs 1–4 | 8 min |
+| Puzzle of the Week | The missing `house` × `club` combinations, then design a fairer column | Parts 1–2, (a)–(j) | 8 min, optional |
+| Think Deeper | Three written paragraphs | T1–T3 | 8 min |
+| Build It — Six Answers, Each With Its `n` | **The main assignment.** Shapes, cleaning log entries 8–12, the six answers with `n` and hand-checks, the Gold sentence, the age-13 sentence, the assembly sentence, the Bug Log | Parts 1–7 | 20 min |
+| Draw It | Split, apply, combine with the group sizes written on it | one drawing | 4 min |
+| Self-Check | Eight can-do rows, then twelve true-or-false | 8 + 12 | 5 min |
 
-**Total: about 70 minutes.** If it is running long, cut 24.9 and two questions from 24.6. **Never cut 24.7.**
+**Total: about 90 minutes if everything is done, about 80 without the Puzzle.** It is written to be spread across the week rather than done in one sitting. The three things announced in "Say this" above are all in **Build It**: the shapes and accounting sentence (Part 1), the cleaning log (Part 2), and the six answers with their `n` (Part 3), plus the assembly sentence (Part 6). If it is running long, cut **Draw It**, then the **Puzzle**, then two of the six questions in Build It Part 3. **Never cut Build It Part 4 (the Gold sentence).**
 
 ---
 
 ## 🔑 Answer Key
 
-Every line of code below was run on Python 3.10 with pandas 1.5.3, and every output block is copied from the real run.
+Every line of code below was run on Python 3.10 with pandas 1.5.3, and every output block is copied from the real run. The values agree with the workbook's own **✅ Answers** section; this key adds the wrong-answer maps and marking advice that only a teacher needs.
 
 ### The clean starting point
 
-Every page from 24.6 onwards assumes this. It is printed at the top of the workbook.
+Every section from **Build It** onwards (and Practice Set A, B and the Puzzle, which read from the same `clean`) assumes this. It is printed at the top of the workbook.
 
 ```python
 import pandas as pd
@@ -1801,44 +1801,79 @@ print(clean.shape)
 (38, 7)
 ```
 
-### Page 24.1 — Warm-Up: vocabulary
+### Warm-Up (W1–W5)
 
-| Word | Plain definition |
-|---|---|
-| **duplicate** | A row identical to another row in every single column. |
-| **string method** | A command that works on writing — `strip` takes spaces off the ends, `title` fixes the capitals. |
-| **derived column** | A new column worked out from columns you already have. |
-| **groupby** | Sort the rows into piles by one column, do a calculation on each pile, stack the answers into a small table. |
-| **aggregate** | Squash many rows into one number — a mean, a count, a maximum. |
+Last week's material, retrieved cold. Full marks on W1 is the four *problems*, in any wording; the rest is one sentence each.
 
-Bonus, and ask for it: **the three words for what `groupby` does** — split, apply, combine.
+| Item | Answer | Watch for |
+|---|---|---|
+| **W1** | **A hole** (nobody filled the cell in) · **text pretending to be numbers** (one word turns a whole column into writing) · **the same row twice** · **several spellings of one thing.** | Students often name only three. "Typos" is the spellings one. |
+| **W2** | **No.** `isna()` asks "is this cell empty?", and a cell containing the word `unknown` is not empty. Pandas answered exactly the question it was asked; the mistake was asking it when you meant "how many ages do we know?" | "Pandas has a bug" — gently redirect: it was exact, we were vague. |
+| **W3** | **The assignment.** `fillna` hands back a repaired *copy*; without `df["hours"] = ` on the front the copy is thrown away and nothing warns you. | This is the first sighting of the silent-copy rule that P3 and Bug 1 return to. |
+| **W4** | Because **a hole is not a whole number.** Pandas has no whole-number value meaning "missing", so it refuses (`IntCastingNaNError`). Deal with the hole first, then change the type. | |
+| **W5** | It has a **WHAT** and no **WHY.** Filled with what, and why that number? What should a reader be careful about because of it? | A good answer also says a reader in six weeks cannot tell whether 13 came from the world or from you. |
 
-### Page 24.2 — Predict the Output
+### Predict the Output (P1–P4)
 
-| # | The code | The real output | The point |
-|---|---|---|---|
-| 1 | `print(raw.shape)` | `(40, 6)` | Before anything happens. |
-| 2 | `print(raw.duplicated().sum())` | `2` | Two, not four. The **first** copy is not counted as a duplicate. |
-| 3 | `print(raw["house"].nunique())` | `14` | Fourteen spellings of four houses. |
-| 4 | `print(raw["club"].nunique())` | `8` | Eight spellings of three clubs. |
-| 5 | `print(clean["house"].value_counts())` | see below | Four houses, and Gold is 2. |
-| 6 | `print(clean.groupby("house")["score"].size().sum())` | `38` | The check that must always pass. |
+Every snippet assumes `raw = pd.read_csv("house_raw.csv")`. Mark the prediction and the explanation separately; the prediction is allowed to be wrong.
 
-Item 5:
+**P1 — two, or four?** Real output:
 
 ```text
-Blue     14
-Red      12
-Green    10
-Gold      2
+2
+4
+```
+
+`duplicated()` marks a row `True` only if an identical row appeared **above** it, so the first Bela Roy is `False` and the second is `True`; same for Farah Aziz. Two rows are marked, even though four rows are involved. `keep=False` marks **both** copies, so you can put them side by side and compare field by field before deleting anything. **Most students predict 4 for the first number**, which is reasonable and worth arguing about.
+
+**P2 — the repair that looks broken.** Real output:
+
+```text
+8
+Red       12
+Blue      12
+Green      9
+Blue       1
+ Blue      1
+Green      1
+Gold       1
+Gold       1
 Name: house, dtype: int64
 ```
 
-**Item 2 is the one worth arguing about.** Most students predict 4 because four rows are involved. `duplicated()` marks a row `True` only if an identical row appeared **above** it, so the first Bela Roy is `False` and the second is `True`.
+First number **8**, and the second printout has **8 lines**. **Three lines say `Blue`** (`Blue`, `Blue ` and ` Blue`); they are not the same writing, because `title` fixes capitals and does nothing about spaces, and a space prints as nothing. **No error.** The one extra command is `.str.strip()`, in the chain `.str.strip().str.title()`, and then 8 becomes 4. To see the spaces: `print(m["house"].str.title().unique())`:
 
-### Page 24.3 — Practice Set A: Read It
+```text
+['Red' 'Blue' 'Blue ' 'Green' ' Blue' 'Green ' 'Gold' 'Gold ']
+```
 
-Given this printout:
+**P3 — the silent one.** Real output:
+
+```text
+(40, 6)
+(38, 6)
+```
+
+**No error on line 2, and nothing happened:** `drop_duplicates()` built a new 38-row table and line 2 threw it away. The one difference between line 2 and line 4 is **`clean = ` on the front**. The two earlier commands that behave the same way are **`sort_values` (Week 22) and `fillna` (Week 23)**; `to_numeric` and `astype` make five. The rule in one sentence: if there is no `=` on the left, nothing happened, and nothing warns you.
+
+**P4 — the sum that does not add up.** Real output:
+
+```text
+age
+12.0    10
+13.0    12
+14.0    10
+Name: score, dtype: int64
+32 38
+```
+
+Sizes sum to **32** but the table has **38** rows: **6 rows** are missing. They are the six pupils whose age nobody recorded; `groupby` makes a pile per value, and a hole has no pile to go in, so those rows are silently left out. Nothing warned you because, as far as pandas is concerned, nothing was wrong. **The sum check is the only thing on the screen that would have told you.**
+
+The workbook asks for a score out of 4 and the most surprising prediction. P1 and P4 are the two most students miss.
+
+### Practice Set A — Read It (A1–A6)
+
+**A1. Read a count.** Given the `raw["house"].value_counts()` printout:
 
 ```text
 Red       8
@@ -1858,14 +1893,14 @@ Gold      1
 Name: house, dtype: int64
 ```
 
-1. **"How many lines, and how many houses?"** — 14 lines, 4 houses.
-2. **"`blue` appears on two separate lines. How is that possible?"** — they are not the same piece of writing. One has a trailing space. Two pieces of writing are the same only if every character matches, and a space is a character.
-3. **"Which lines have an invisible space, and which end is it on?"** — the second `blue` (count 1) has a **trailing** space; ` Blue` has a **leading** space. There is also a second `green` (count 1) with a trailing space, which is easy to miss, and the single `Gold` (count 1) has a trailing space too (so four lines in all).
-4. **"Add up every Blue spelling. What should Blue's count be after cleaning?"** — 5 + 4 + 3 + 1 + 1 = **14** ✔. That sum is the proof nothing was lost.
-5. **"The counts add to 40, but the clean table has 38 rows. Why?"** — this is the **raw** column, before the two duplicate rows were removed. Neither duplicate was Blue or Gold, so only Red and Green lose one each.
-6. **"Given this printout, would `.str.title()` on its own be enough?"** — no. It fixes the capitals and leaves the spaces, so you get **8** distinct values, and the printout looks broken because a space prints as nothing. `strip` first.
+- **(a)** **14** lines, **4** houses.
+- **(b)** `blue` appears on two lines because they are not the same piece of writing: one has a trailing space. Two pieces of writing are the same only if **every character** matches, and a space is a character.
+- **(c)** Four lines have an invisible space: the second `blue` (count 1) has a **trailing** space; ` Blue` (count 1) has a **leading** space; the second `green` (count 1) has a **trailing** space, which everybody misses; and the single `Gold` (count 1) has a **trailing** space too, with no plain `Gold` to make it look like a duplicate.
+- **(d)** 5 + 4 + 3 + 1 + 1 = **14** (Blue, blue, BLUE, `blue `, ` Blue`). That sum is the proof nothing was lost.
+- **(e)** This is the **raw** column, before the two duplicate rows were removed. The duplicates were **Bela Roy (Red)** and **Farah Aziz (green)**, so **Red and Green each lose one row**; Blue and Gold are unaffected. 40 − 2 = 38.
+- **(f)** **No.** `.str.title()` fixes the capitals and leaves the spaces, so you get **8** distinct values instead of 4, and the printout looks broken because a space prints as nothing. `strip` too.
 
-Then, given this `groupby` result:
+**A2. Read a groupby.** Given this result:
 
 ```text
 house
@@ -1876,137 +1911,122 @@ Red      74.25
 Name: score, dtype: float64
 ```
 
-7. **"What is missing from this table that you would need before believing it?"** — **the group sizes.** Gold's 95.00 comes from 2 rows and Blue's 74.36 from 14, and nothing here says so.
-8. **"Why is Gold second in the list when it has the highest average?"** — `groupby` sorts by the **group name**, alphabetically, not by the answer. Blue, Gold, Green, Red.
+- **(g)** **The group sizes.** Gold's 95.00 comes from 2 rows and Blue's 74.36 from 14, and nothing here says so.
+- **(h)** `groupby` sorts by the **group name**, alphabetically (Blue, Gold, Green, Red), not by the answer. Sorting by the answer, `.sort_values("avg", ascending=False)`, would put the two-member group on top, so presentation can mislead all by itself.
+- **(i)** **The number is right and the conclusion is wrong.** 97 + 93 over 2 really is 95.00; what is wrong is treating a two-row average as comparable with a fourteen-row one. Students who say "the number is wrong" need the correction given on the Gold sentence partial-answers table under Build It Part 4.
 
-### Page 24.4 — Practice Set B: the four repairs
+**A3. Hand-check the arithmetic.**
 
-Complete working file, run end to end:
+| Group | Sum | n | Mean |
+|---|---|---|---|
+| Gold | **190** | **2** | **95.00** |
+| Green | **652** | **10** | **65.20** |
+| Red | 891 | 12 | **74.25** |
+| Blue | 1041 | 14 | **74.36** (74.357… rounded) |
+
+Green's sum: 48 + 50 + 54 + 59 + 61 + 63 + 67 + 70 + 85 + 95 = **652**, and 652 ÷ 10 = **65.20**. **A3(j):** 14 + 12 + 10 + 2 = **38**, and `len(clean)` is **38**.
+
+**A4. Spot the bug.**
+
+| # | The line | The fix |
+|---|---|---|
+| a | `clean["house"].strip()` | `clean["house"].str.strip()`. `AttributeError: 'Series' object has no attribute 'strip'`; `.str` is the doorway |
+| b | `.str.strip.str.title()` | `.str.strip().str.title()`, brackets after `strip`. `AttributeError: 'function' object has no attribute 'str'` |
+| c | `clean.drop_duplicates()` | `clean = clean.drop_duplicates()`. **No error without it, and no drop either** |
+| d | `.str.title().str.strip()` | **Nothing to fix; this one works.** It gives the same four houses, because `strip` removes the spaces whichever order it runs in. Strip-first is just the habit; the bug would be leaving `strip` out |
+| e | `clean["pph"] = clean["score"] / clean["hour"]` | `clean["hours"]`. `KeyError: 'hour'`, the most common derived-column bug |
+| f | `clean["new"] = [1, 2, 3]` | A derived column comes from **other columns**, not a hand-typed list. `ValueError: Length of values (3) does not match length of index (38)` |
+| g | `print(clean.groupby("house"))` | Say what to do with each pile: `["score"].mean()`. Otherwise you print `<...DataFrameGroupBy object at 0x...>`; the piles are not a result |
+| h | `["score"].size` with no brackets | `.size()`. Otherwise you print `<bound method GroupBy.size of ...>` |
+| i | `groupby("house")["score"].mean()` | `groupby("house").agg(n=("score", "size"), avg=("score", "mean"))` |
+
+**A4(j).** **(i).** It runs perfectly and produces four correct numbers, and it hides that one of them came from two rows. Every other line either crashes or does nothing. **Line (c) is the runner-up** (also no error, and the duplicates stay), so give credit for (c) only with a good reason, and the full mark for (i). **Line (d) is the trap in the list:** a student who "fixes" it has not noticed it works.
+
+**A5. Label the diagram.**
+
+| Box | Phrase |
+|---|---|
+| **A** | the 38 rows going in |
+| **B** | SPLIT — one pile per different value in the column |
+| **C** | the smallest pile: only 2 rows |
+| **D** | APPLY — one calculation done to each pile |
+| **E** | COMBINE — one row per pile comes out |
+
+**A5(f).** **C.** The two-row pile is what makes Gold's 95.00 untrustworthy, and **box E, the result table, gives no way to see it.** That is why `.size()` has to be printed beside `.mean()`.
+
+**A6. Read the two tracebacks.**
+
+- **`KeyError: 'hosue'`:** the name inside `groupby(...)`, the **first** bracket. It could not even make the piles.
+- **`KeyError: 'Column not found: scoer'`:** the name after the groupby, the **second** bracket. The piles were fine; the column inside them was not found.
+- **What the different wording tells you:** how far pandas got before giving up. One failed at the split, the other at the apply. That is a free clue about which bracket to look at.
+- **The command:** `print(clean.columns.tolist())`. Read the real names and copy one exactly.
+
+### Practice Set B — Write It (B1–B5)
+
+**B1.**
 
 ```python
-# detective.py - Week 24 homework. Four repairs, accounted for.
-import pandas as pd
-
-raw = pd.read_csv("house_raw.csv")
-clean = raw.copy()
-
-# ---------- DIAGNOSE (before touching anything)
-print("shape           :", raw.shape)
-print("duplicate rows  :", raw.duplicated().sum())
-print("house spellings :", raw["house"].nunique())
-print("club spellings  :", raw["club"].nunique())
-print("missing ages    :", raw["age"].isna().sum())
-
-# ---------- REPAIR 1: the duplicates
-print("before:", clean.shape)
-clean = clean.drop_duplicates()
-print("after :", clean.shape)
-clean = clean.reset_index(drop=True)
-
-# ---------- REPAIR 2: fourteen house spellings become four
-clean["house"] = clean["house"].str.strip().str.title()
-print(clean["house"].value_counts())
-
-# ---------- REPAIR 3: eight club spellings become three
-clean["club"] = clean["club"].str.strip().str.lower()
-print(clean["club"].value_counts())
-
-# ---------- REPAIR 4: the six missing ages
-print("median age:", clean["age"].median())
-clean["age"] = clean["age"].fillna(13).astype(int)
-print(clean.isna().sum())
-
-# ---------- a column that was not there
-clean["points_per_hour"] = (clean["score"] / clean["hours"]).round(2)
-# hand-check row 0: 72 / 3.5 = 20.571... -> 20.57
-
-print("final shape:", clean.shape)
-print(clean.dtypes)
+print(clean["house"].nunique())
 ```
 
-Real output:
+```text
+4
+```
+
+Trust this number over the printout: `value_counts()` can show `Blue` three times and look broken; `nunique()` gives one honest integer.
+
+**B2.**
+
+```python
+clean["club"] = clean["club"].str.strip().str.lower()
+print(clean["club"].value_counts())
+```
 
 ```text
-shape           : (40, 6)
-duplicate rows  : 2
-house spellings : 14
-club spellings  : 8
-missing ages    : 6
-before: (40, 6)
-after : (38, 6)
-Blue     14
-Red      12
-Green    10
-Gold      2
-Name: house, dtype: int64
 chess    14
 music    12
 art      12
 Name: club, dtype: int64
-median age: 13.0
-name     0
-age      0
-house    0
-club     0
-hours    0
-score    0
-dtype: int64
-final shape: (38, 7)
-name                object
-age                  int64
-house               object
-club                object
-hours              float64
-score                int64
-points_per_hour    float64
-dtype: object
 ```
 
-**The accounting sentence, which is the graded part:** *"Forty rows in, thirty-eight out. The two that went were the second Bela Roy and the second Farah Aziz, both exact duplicates. Six columns became seven because I added `points_per_hour`. No other row moved."*
+14 + 12 + 12 = **38**. `lower` rather than `title` is a style decision, so it belongs on the log; what matters is one choice used everywhere. A student who writes `.str.title()` here has missed "Use lower case" and will see `Chess`, `Music`, `Art` in the output.
 
-### Page 24.5 — Fix the Broken Program
-
-The broken file as printed in the workbook:
+**B3.**
 
 ```python
-# detective.py - four bugs.
-import pandas as pd
-
-raw = pd.read_csv("house_raw.csv")
-clean = raw.copy()
-
-clean.drop_duplicates()                                    # BUG 1
-clean["house"] = clean["house"].strip().title()            # BUG 2
-clean["points_per_hour"] = clean["score"] / clean["hour"]  # BUG 3
-print(clean.groupby("house")["score"].mean())              # BUG 4
+clean["points_per_hour"] = (clean["score"] / clean["hours"]).round(2)
+print(clean[["name", "score", "hours", "points_per_hour"]].head(3))
 ```
-
-**Bug 1 — the silent one.** No error. `drop_duplicates` returns a new table and nothing catches it, so `clean` still has 40 rows. Fix: `clean = clean.drop_duplicates()`.
-
-**Bug 2.** `AttributeError: 'Series' object has no attribute 'strip'`. A whole column has no `strip` — the `.str` doorway is missing. Fix: `clean["house"].str.strip().str.title()`.
-
-**Bug 3.** `KeyError: 'hour'`. The column is `hours`. Fix: `clean["hours"]`.
-
-**Bug 4 — the one that is not a syntax bug at all.** This line runs perfectly and produces a correct, misleading table: four averages with no group sizes, and a two-member house at the top. Fix:
-
-```python
-print(clean.groupby("house").agg(n=("score", "size"), avg=("score", "mean")).round(2))
-```
-
-**Give the mark for Bug 4 only if the student says *why*** — that the average hides how many rows it came from. Spotting that a working line is the worst bug in the file is the whole point of this page.
-
-Fixed file output:
 
 ```text
-        n    avg
-house           
-Blue   14  74.36
-Gold    2  95.00
-Green  10  65.20
-Red    12  74.25
+         name  score  hours  points_per_hour
+0  Aarav Shah     72    3.5            20.57
+1    Bela Roy     90    5.0            18.00
+2     Chen Wu     55    2.0            27.50
 ```
 
-### Page 24.6 — Build It: the six answers, each with its `n`
+Hand-check: 72 ÷ 3.5 = 20.571… → **20.57**; row 2 is easier, 55 ÷ 2 = **27.5**. The new column works because the name on the left does not exist yet.
+
+**B4.**
+
+```python
+print(clean.groupby("club").agg(n=("score", "size"),
+                                avg=("score", "mean"),
+                                best=("score", "max")).round(2))
+```
+
+```text
+        n    avg  best
+club                  
+art    12  70.58    97
+chess  14  76.07    97
+music  12  71.83    93
+```
+
+The pattern read aloud: `n=("score", "size")` means "make me a column called `n`, from the `score` column, by counting how many rows are in the pile." The new name goes on the left of the `=`. All three clubs have twelve or more members, so chess winning by four to five marks is a far stronger claim than Gold's twenty-mark lead over two.
+
+**B5.** The full program and its real output. The six answers have the same values as under Build It Part 3.
+
 
 Complete working file:
 
@@ -2099,9 +2119,225 @@ Red    12       3.17
 | Sami's rate | 48 ÷ 0.5 | **96.0** ✔ |
 | All group sizes | 14 + 12 + 10 + 2 | **38** ✔ |
 
-**Marking notes.** Full marks needs the `n` beside **every** answer, and the sizes-sum check printed at least once. **Q4 needs one extra sentence** to earn full marks: age 13 has eighteen pupils because six missing ages were filled with 13, and six of those eighteen are 13 only because we said so. Before the fill, the twelve pupils with a *known* age of 13 averaged **71.92**; after it, eighteen average **73.11**.
+**Marking notes.** Full marks needs the `n` beside **every** answer, and the sizes-sum check printed at least once. **Q4 needs one extra sentence** (see Build It Part 5). **Q5:** Green works the least (2.60 hours) and scores the least (65.20); do not let the student call that cause and effect, it is two numbers moving together on ten rows. **Q6:** the top three are the three *lowest* scorers in the school (48, 45, 42), all on half an hour, because dividing by 0.5 doubles the number.
 
-### Page 24.7 — The Gold sentence
+### Fix the Broken Program (Bugs 1–4)
+
+The broken file as printed in the workbook:
+
+```python
+# detective.py - four bugs.
+import pandas as pd
+
+raw = pd.read_csv("house_raw.csv")
+clean = raw.copy()
+
+clean.drop_duplicates()                                    # BUG 1
+clean["house"] = clean["house"].strip().title()            # BUG 2
+clean["points_per_hour"] = clean["score"] / clean["hour"]   # BUG 3
+print(clean.groupby("house")["score"].mean())              # BUG 4
+```
+
+**Bug 1 — the silent one.** The shape printed is `(40, 6)`: nothing was dropped and there was no error. The rule, third week running: `drop_duplicates`, `sort_values`, `fillna`, `to_numeric` and `astype` all hand back a NEW thing; no `=` on the left means nothing happened. Fix: `clean = clean.drop_duplicates()`, after which the shape is `(38, 6)`.
+
+**Bug 2.** `AttributeError: 'Series' object has no attribute 'strip'`. A Series is one whole column (38 pieces of writing); `strip` works on one piece of writing. **Two things to get right, not one:** the `.str` doorway in front of `strip`, and again in front of `title`. Fix: `clean["house"].str.strip().str.title()`. A student who fixes only `strip` will hit `AttributeError: 'Series' object has no attribute 'title'` next.
+
+**Bug 3.** `KeyError: 'hour'`. The missing name is in quotes at the end of the message; the column is `hours`. Fix: `clean["hours"]`.
+
+**Bug 4 — the one that is not a syntax bug at all.** The line runs and prints four correct numbers (Blue 74.36, Gold 95.00, Green 65.20, Red 74.25) with no group sizes, so it invites "Gold is the best house", which the data does not support. Fix:
+
+```python
+print(clean.groupby("house").agg(n=("score", "size"), avg=("score", "mean")).round(2))
+```
+
+
+Fixed file output:
+
+```text
+        n    avg
+house           
+Blue   14  74.36
+Gold    2  95.00
+Green  10  65.20
+Red    12  74.25
+```
+
+**Give the mark for Bug 4 only if the student says *why*** (what the average hides, and what wrong conclusion that invites). "Add the `n`" alone earns nothing.
+
+**Ranking, most dangerous first:** Bug 4 (runs, correct, wrong, and you would hand it in); Bug 1 (silent, and every later average is computed on 40 rows with two pupils double-counted); then Bugs 2 and 3 (both crash at once and name the problem; ten seconds each). **The two you would never find from error messages are Bugs 1 and 4**, because there were none. Bug 1 shows up on the shape check; Bug 4 by asking "how many rows is that number made of?"
+
+### Puzzle of the Week
+
+**Part 1** (`groupby(["house", "club"]).size()`)
+
+- **(a)** **9** rows.
+- **(b)** 4 houses × 3 clubs = **12** possible combinations.
+- **(c)** **3** missing: **Red/art, Gold/chess and Gold/music.**
+- **(d)** They genuinely have zero pupils, but pandas did not tell you; `groupby` gives a list of what exists, not a grid with zeros. The absence is invisible unless you do the multiplication yourself. Had Red/art existed and been filtered away by accident, the printout would look exactly the same.
+- **(e)** 2 + 3 + 9 + 2 + 8 + 1 + 1 + 10 + 2 = **38**.
+- **(f)** Before reading a two-column `groupby`, multiply the two `nunique()` values to get the expected number of combinations, compare with the rows you got, and account for the difference.
+
+**Part 2**
+
+- **(g)** Dividing by a number smaller than 1 makes the answer **bigger**: half an hour is 0.5, and dividing by 0.5 is multiplying by 2, so the least work gets the score doubled while six hours divides it by six. The column rewards not working.
+- **(h)** Any defensible design earns full marks. Three students write: `clean["score"] - (6 - clean["hours"]) * 5`; `clean["score"] / clean["hours"].clip(lower=2)`; or the simplest, rank by `score` and use `hours` only to break ties.
+- **(i)** For the first design, run for real:
+
+```text
+          name  score  hours  score_minus_slacking
+5   Farah Aziz     95    6.0                  95.0
+19  Tara Joshi     97    5.0                  92.0
+33   Hana Sato     93    5.5                  90.5
+```
+
+The student's own top three will differ; what matters is that they are actually high scorers, not the three lowest.
+
+- **(j)** The defence is what is marked: what the column rewards (high scores from people who put the hours in) and what it still gets wrong (it punishes somebody genuinely quick, and the "5" is a number chosen out of thin air). A derived column is a design decision made by a person, and that person can be twelve.
+
+### Think Deeper (T1–T3)
+
+**T1. "Both duplicate rows had the same name AND the same score. Why does that make you confident it's a mistake rather than two pupils with the same name?"**
+
+Because it is not just the name. **Every single field matches:** name, age, house, club, hours *and* the score to the mark. Two different people called Bela Roy could exist, but they would not both be 14, both in Red, both in music club, both have done exactly 5.0 hours, and both score exactly 90. A scrolling slip while typing is common. The strongest answers also notice that **what a row means decides this**: if the table were one row per *test attempt*, two identical rows might be two genuine attempts, and deleting one would be wrong. Finish: the deciding question is "what does one row mean?", and only somebody who knows where the data came from can answer it. **Marking:** (1) the list of matching fields, not just "the name"; (2) the test-attempt counter-example or an equivalent; (3) the recognition that the deciding question is about meaning, not code.
+
+**T2. "`groupby(...).mean()` gave a correct answer that led you to a wrong conclusion. Is that pandas's fault?"**
+
+No. Pandas computed exactly what it was asked: the mean score per house. It has no idea what you intend to *claim*. **The gap is between "a correct number" and "a supported conclusion", and only a person can close it.** The fair other side: pandas cannot know what counts as tiny for your question (a researcher with twelve patients has twelve patients, and a warning that always fires protects nobody). So the fix is a habit: `.size()` beside `.mean()` does not make pandas smarter, **it makes you harder to fool.** **Marking:** the key move is correct number versus supported conclusion; full marks adds an honest cost for the warning, and states the habit as something about *you*, not the tool.
+
+**T3. "How many rows does a group need before you may say its average out loud?"**
+
+Any number is acceptable (the model answer says five). What is markable: (1) a reason for the number; (2) actually applying it to their own six answers and counting survivors (with a rule of five, Gold's 2 fails in Q2 and Q5, and Q6 is not a group average at all); (3) the recognition that medical and polling people would disagree, and that **"always print the size" is what everybody agrees on.** A second fact worth a line: two is not enough, for anything.
+
+### Build It — Six Answers, Each With Its `n` (Parts 1–7)
+
+**Part 1 — the shapes.**
+
+| | Rows | Columns |
+|---|---|---|
+| `raw.shape` before anything | **40** | **6** |
+| after `drop_duplicates()` | **38** | **6** |
+| after adding `points_per_hour` | **38** | **7** |
+
+The two rows that went were the **second Bela Roy** and the **second Farah Aziz**; they were duplicates and not two people because every field matched, including the exact score. The column count went up by one because `points_per_hour` was added; nothing came from outside. The reference file below produces every number in Parts 1 and 2:
+
+```python
+# detective.py - Week 24 homework. Four repairs, accounted for.
+import pandas as pd
+
+raw = pd.read_csv("house_raw.csv")
+clean = raw.copy()
+
+# ---------- DIAGNOSE (before touching anything)
+print("shape           :", raw.shape)
+print("duplicate rows  :", raw.duplicated().sum())
+print("house spellings :", raw["house"].nunique())
+print("club spellings  :", raw["club"].nunique())
+print("missing ages    :", raw["age"].isna().sum())
+
+# ---------- REPAIR 1: the duplicates
+print("before:", clean.shape)
+clean = clean.drop_duplicates()
+print("after :", clean.shape)
+clean = clean.reset_index(drop=True)
+
+# ---------- REPAIR 2: fourteen house spellings become four
+clean["house"] = clean["house"].str.strip().str.title()
+print(clean["house"].value_counts())
+
+# ---------- REPAIR 3: eight club spellings become three
+clean["club"] = clean["club"].str.strip().str.lower()
+print(clean["club"].value_counts())
+
+# ---------- REPAIR 4: the six missing ages
+print("median age:", clean["age"].median())
+clean["age"] = clean["age"].fillna(13).astype(int)
+print(clean.isna().sum())
+
+# ---------- a column that was not there
+clean["points_per_hour"] = (clean["score"] / clean["hours"]).round(2)
+# hand-check row 0: 72 / 3.5 = 20.571... -> 20.57
+
+print("final shape:", clean.shape)
+print(clean.dtypes)
+```
+
+Real output:
+
+```text
+shape           : (40, 6)
+duplicate rows  : 2
+house spellings : 14
+club spellings  : 8
+missing ages    : 6
+before: (40, 6)
+after : (38, 6)
+Blue     14
+Red      12
+Green    10
+Gold      2
+Name: house, dtype: int64
+chess    14
+music    12
+art      12
+Name: club, dtype: int64
+median age: 13.0
+name     0
+age      0
+house    0
+club     0
+hours    0
+score    0
+dtype: int64
+final shape: (38, 7)
+name                object
+age                  int64
+house               object
+club                object
+hours              float64
+score                int64
+points_per_hour    float64
+dtype: object
+```
+
+**The accounting sentence, which is the graded part:** *"Forty rows in, thirty-eight out. The two that went were the second Bela Roy and the second Farah Aziz, both exact duplicates. Six columns became seven because I added `points_per_hour`. No other row moved."*
+
+**Part 2 — the cleaning log, continuing last week's numbering (first entry is 8).** Model entries:
+
+```text
+ 8  drop_duplicates(): 40 rows -> 38     Bela Roy and Farah Aziz each appeared
+                                        twice with EVERY field identical, incl.
+                                        the exact score. A typing slip, not two
+                                        people. Keeping both would double-count
+                                        them in every average.
+
+ 9  house: .str.strip().str.title()      value_counts() showed 14 spellings of 4
+    14 spellings -> 4 houses            houses, two with spaces I could not see.
+                                        strip AND title: title alone leaves the
+                                        spaces and they print as nothing.
+                                        5+4+3+1+1 = 14, so nothing was lost.
+
+10  club: .str.strip().str.lower()       8 spellings of 3 clubs. lower not title
+    8 spellings -> 3 clubs              because club names read better small.
+                                        14+12+12 = 38, all rows accounted for.
+
+11  Filled 6 missing ages with 13,       13 is the median of the 32 ages we know.
+    then astype(int)                    WARNING: 6 of the 18 "13-year-olds" are
+                                        13 only because I said so. Do NOT trust
+                                        any answer that groups by age.
+
+12  Added points_per_hour =              To ask "who gets most from their time?".
+    score / hours, rounded to 2          Hand-checked row 0: 72 / 3.5 = 20.57.
+                                        WARNING: dividing by 0.5 doubles the
+                                        number, so this column rewards doing
+                                        the least work. It is a choice, not a
+                                        measurement.
+```
+
+Check the five tick-boxes: the `drop_duplicates` line names both rows; the `house` line carries 5+4+3+1+1 = 14; the `club` line says why `lower`; the age line has a WARNING; the derived-column line has the hand-check. **Entry 12's warning is where the extra marks are.** Every line needs a reason, not just a what.
+
+**Part 3 — the six answers, each with its `n`.** All six outputs, the hand-checks and the marking notes are under **B5** above (the program is identical). For the table: Q1 Blue 14, Gold 2, Green 10, Red 12; Q2 74.36 / 95.00 / 65.20 / 74.25 with the same `n`; Q3 art 70.58 (12), chess 76.07 (14), music 71.83 (12); Q4 12 → 84.80 (10), 13 → 73.11 (18), 14 → 61.00 (10); Q5 Blue 3.18, Gold 3.75, Green 2.60, Red 3.17 (same `n`); Q6 Sami Aden 96.0, Hugo Silva 90.0, Greta Hahn 84.0, Gita Menon and Omar Haddad tied on 52.0. **An answer with an empty `n` box does not count, even if the number is right.** The check line: **14 + 12 + 10 + 2 = 38, and `len(clean)` is 38.** At least three hand-checks on paper.
+
+**Part 4 — the Gold sentence.**
 
 > *"Gold has the highest average score (95.00), but it has only ______ members, so ______________________."*
 
@@ -2111,6 +2347,8 @@ Red    12       3.17
 
 > *"Gold has the highest average score (95.00), but it has only **2** members, so all it really tells me is that two particular pupils did well. It is not a fact about a house. Blue's 74.36 is a fact about a house, because fourteen different people had to agree to produce it. I should print `.size()` next to `.mean()` so that nobody reads my table the way I read it first."*
 
+The four questions: **(a)** **97 and 93.** **(b)** **97 or 93**, still top, now from a single row. **(c)** (97 + 93 + 73) ÷ 3 = 263 ÷ 3 = **87.67**; the lead over Blue shrinks from 20.6 marks to 13.3, from one person arriving. **(d)** **Six**, each scoring 100: (1041 + 600) ÷ 20 = **82.05**, only **7.69** up, whereas one ordinary pupil moved Gold **7.33** the other way.
+
 **Three real partial answers, and what to say to each:**
 
 | What they wrote | What is missing | Say this |
@@ -2119,45 +2357,41 @@ Red    12       3.17
 | *"…only 2 members, so we need more data."* | True, and it dodges the question. | "You've got the data you've got. What can you honestly say about Gold **today**, in one sentence?" |
 | *"…only 2 members, so the average is wrong."* | This one is **wrong** and must be corrected. | "No — the average is exactly right. 97 plus 93 over 2 is 95.00; you checked it yourself. **The number is correct and the conclusion isn't.** That distinction is the whole lesson." |
 
-### Page 24.8 — Think Deeper
+**Part 5 — question 4's extra sentence.** Age 13 has eighteen pupils because six missing ages were filled with 13, and six of those eighteen are 13 only because we said so. Before the fill the twelve pupils with a *known* age of 13 averaged **71.92**; after it, eighteen average **73.11**. The rule biting is last week's: never fill a column with a guess and then make that column the subject of your question. The answer is not worthless, but it must be reported with that sentence attached (log entry 11 already says so).
 
-**1. "Both duplicate rows had the same name AND the same score. Why does that make you confident it's a mistake rather than two pupils with the same name?"**
+**Part 6 — the sentence at the bottom.** Any of these is full marks **if a reason is given:** Q2's Gold row (95.00 from 2); Q5's Gold row (3.75 hours from 2); Q4 entirely (six of the eighteen 13-year-olds are 13 because we said so); Q6 (`points_per_hour` puts the three lowest scorers on top, so praising Sami Aden would be heard as "best pupil"). **Naming an answer with no reason earns nothing, and naming Q3 does not earn the mark** either: it is the sturdiest result (three groups of twelve or more, a five-mark gap).
 
-Because it is not just the name. **Every single field matches** — name, age, house, club, hours *and* the score to the mark. Two different people called Bela Roy could easily exist, but they would not both be 14, both in Red, both in music club, both have done exactly 5.0 hours, and both score exactly 90. The chance of all six agreeing is negligible; a scrolling slip while typing is common. The strongest answers also notice that **what a row means decides this**: if the table were one row per *test attempt*, two identical rows might be two genuine attempts, and deleting one would be wrong.
+**Part 7 — the Bug Log.** Expect at least the entry for the silent `drop_duplicates` (no error message; fixed by `clean = `; check the shape next time), and the "8 not 4" printout (no error; `strip` first). The sentence from class, *never print `.mean()` without `.size()` beside it*, should also be in their handwriting.
 
-**2. "`groupby(...).mean()` gave a correct answer that led you to a wrong conclusion. Is that pandas's fault?"**
+### Draw It
 
-No, and this is worth stating plainly. Pandas computed exactly what it was asked: the mean score per house. It has no idea what you intend to *claim*. **The gap is between "a correct number" and "a supported conclusion", and only a person can close it.** A full answer notices that this is why the fix is a habit rather than a command — `.size()` beside `.mean()` does not make pandas smarter, it makes *you* harder to fool. Some students argue that pandas ought to warn you about tiny groups; that is a reasonable design opinion, and the counter-argument is that pandas cannot know what counts as tiny for your question.
+No single right drawing. Full marks needs **three** things:
 
-**3. "You made `points_per_hour` and it put the three lowest scorers in the school at the top. Is it a good column?"**
+1. **The group sizes written on the piles:** Blue 14, Red 12, Green 10, Gold 2.
+2. **The Gold pile visibly the smallest**, a sliver and not a fourth equal box.
+3. **The sum check written out:** `14 + 12 + 10 + 2 = 38`, with a note that 38 is the number of rows in the table.
 
-Not for the question "who is best". Dividing by 0.5 hours doubles the number, so `points_per_hour` mostly rewards **doing as little work as possible**: Sami Aden scored 48 out of 100 in half an hour and tops the table, while Farah Aziz scored 95 in six hours and is nowhere near it. It is a fine column for a genuinely different question — *"who gets the most out of the time they put in?"* — but it is a bad column for *"who is doing well?"*
+Also expected for the three stages: SPLIT (four piles), APPLY (`mean()` on the arrow), COMBINE (a four-row table: Blue 74.36, Gold 95.00, Green 65.20, Red 74.25). **A drawing with the four averages and no sizes has drawn the trap rather than the lesson**, which is a useful thing to say out loud while marking. Compare with Figures 24.4 and 24.5 in this chapter.
 
-Full marks proposes an alternative and defends it. Real answers students give: rank by score and only use hours to break ties; `score - hours * 5` to penalise nothing-doers; or ignore anybody with under one hour as too little to judge. **All are defensible.** The point is that a derived column is a **design decision made by a person**, and that person can be twelve.
+### Self-Check
 
-### Page 24.9 — Draw It
+The eight can-do rows are self-rated; ask the student to point at the evidence for any "got it" on *hand-check one pile* and *sizes-sum check*. The twelve true-or-false rows:
 
-The student draws split, apply, combine, in three labelled stages.
-
-Required on the drawing:
-
-1. **Split** — four piles, and **the number of rows written on each pile**: Blue 14, Red 12, Green 10, Gold 2. The Gold pile must be visibly the smallest.
-2. **Apply** — one machine or arrow per pile, labelled `mean()`.
-3. **Combine** — a small four-row table on the right, one row per pile: Blue 74.36, Red 74.25, Green 65.20, Gold 95.00.
-4. **The arithmetic somewhere on the page:** 14 + 12 + 10 + 2 = 38, with a note that 38 is the number of rows in the table.
-
-Full marks requires the **group sizes** on the piles and the sum check written out. A drawing with the four averages and no sizes has drawn the trap rather than the lesson — which is a useful thing to say out loud while marking. Compare with Figures 24.4 and 24.5 in this chapter.
-
-### Page 24.10 — Self-Check
-
-| # | Statement | Tick or cross | Why |
+| # | Statement | Answer | Why |
 |---|---|---|---|
-| 1 | "`raw.duplicated().sum()` counts all the copies, so two repeated rows give 4." | ✗ | It gives **2**. The first copy of each row is not marked as a duplicate; only later copies are. |
-| 2 | "`df["house"].strip()` removes the spaces from every value in the column." | ✗ | It raises `AttributeError`. You need `.str.strip()` — `.str` is the doorway to doing it to every cell. |
-| 3 | "`.str.title()` on its own would have been enough to fix the house column." | ✗ | It leaves the spaces, so you get 8 values instead of 4 — and the printout looks broken because a space prints as nothing. |
-| 4 | "`df["new"] = df["a"] / df["b"]` creates a new column." | ✓ | A name on the left that does not exist yet creates a column. If it does exist, it is overwritten, silently. |
-| 5 | "If a group has the highest average, it is the best group." | ✗ | Not without its size. Gold's 95.00 comes from two rows; one pupil joining or leaving would move it enormously. |
-| 6 | "The group sizes from `groupby` should add up to the number of rows in the table." | ✓ | If they do not, rows have been silently dropped — usually because the grouping column still has holes in it. |
+| 1 | `raw.duplicated().sum()` gives 4 when two rows are repeated | **FALSE** | It gives **2**. The first copy of each row is not marked; only later copies are. |
+| 2 | `df["house"].strip()` removes the spaces from every value | **FALSE** | `AttributeError`. You need `.str.strip()`. |
+| 3 | `.str.title()` on its own is enough to fix the house column | **FALSE** | It leaves the spaces, so 8 values instead of 4, and the printout looks broken because a space prints as nothing. |
+| 4 | `df["new"] = df["a"] / df["b"]` creates a new column | **TRUE** | A name that does not exist yet creates a column. If it does exist, it is overwritten, silently. |
+| 5 | If a group has the highest average, it is the best group | **FALSE** | Not without its size. Gold's 95.00 comes from two rows; one ordinary pupil joining would move it more than seven marks. |
+| 6 | The group sizes should add up to the number of rows | **TRUE** | If they do not, rows were silently dropped, usually because the grouping column still has holes. |
+| 7 | `clean.drop_duplicates()` on its own removes the duplicates | **FALSE** | It hands back a new table. No `clean = ` means nothing happened, and no error. Third week for this one. |
+| 8 | A space is a character | **TRUE** | So `"Blue"` and `"Blue "` are as different to a computer as `"Blue"` and `"Banana"`. |
+| 9 | `groupby` shows every possible combination of two columns | **FALSE** | Only combinations that **exist**: nine of twelve here, no zeros for the missing three. |
+| 10 | `groupby` silently leaves out rows whose group value is a hole | **TRUE** | There is no pile for them. Sizes sum to 32 instead of 38, and nothing says so. |
+| 11 | Assigning to a column name that already exists gives an error | **FALSE** | It **overwrites** it, silently. |
+| 12 | `groupby` sorts its result by the answer, biggest first | **FALSE** | It sorts by the **group name**, alphabetically, which is why Gold sits second with the highest average. |
+
 
 ### Answers to every question posed in the lesson
 
@@ -2167,11 +2401,11 @@ Full marks requires the **group sizes** on the piles and the sum check written o
 
 **Live-code.** Step 1 → shape still `(40, 6)`, **no error**, because `drop_duplicates` returned a copy; then `(38, 6)`, and the two rows that went were the second Bela Roy and the second Farah Aziz. Step 2 → `title` alone gives **8** values with `Blue` printed three times; `strip` then `title` gives **4**, and 5 + 4 + 3 + 1 + 1 = 14 proves nothing was lost. Clubs: 14 + 12 + 12 = 38. Step 3 → six holes, median **13.0**, filled, zero holes; six pupils are now 13 because we said so. Step 4 → 55 ÷ 2 = **27.5**; shape `(38, 7)`. Step 5 → Gold 97 + 93 = 190, 190 ÷ 2 = **95.00** ✔.
 
-**Activity Part A.** All six outputs are under Page 24.6. Q1 sizes: Blue 14, Gold 2, Green 10, Red 12, summing to 38. Q2 averages: 74.36, 95.00, 65.20, 74.25. Q3: art 70.58 (12), chess 76.07 (14), music 71.83 (12). Q4: 12 → 84.80 (10), 13 → 73.11 (18), 14 → 61.00 (10) — and the 18 is six fills. Q5 hours: Blue 3.18, Gold 3.75, Green 2.60, Red 3.17. Q6: Sami Aden 96.0, Hugo Silva 90.0, Greta Hahn 84.0, then Gita Menon and Omar Haddad tied on 52.0.
+**Activity Part A.** All six outputs are under Practice Set B (B5) in the Answer Key. Q1 sizes: Blue 14, Gold 2, Green 10, Red 12, summing to 38. Q2 averages: 74.36, 95.00, 65.20, 74.25. Q3: art 70.58 (12), chess 76.07 (14), music 71.83 (12). Q4: 12 → 84.80 (10), 13 → 73.11 (18), 14 → 61.00 (10) — and the 18 is six fills. Q5 hours: Blue 3.18, Gold 3.75, Green 2.60, Red 3.17. Q6: Sami Aden 96.0, Hugo Silva 90.0, Greta Hahn 84.0, then Gita Menon and Omar Haddad tied on 52.0.
 
 *"Is Sami Aden the best pupil in the school?"* — no; he scored 48. *"Is `points_per_hour` a good measure?"* — of "who gets most from their time", maybe; of "who is doing well", no, because dividing by half an hour doubles the number.
 
-**Activity Part B.** Gold's two scores are 97 and 93. One member absent → 97 or 93, from a single row. One average pupil (73) joining → (97 + 93 + 73) ÷ 3 = **87.67**. Model sentences and the three partial answers are under Page 24.7.
+**Activity Part B.** Gold's two scores are 97 and 93. One member absent → 97 or 93, from a single row. One average pupil (73) joining → (97 + 93 + 73) ÷ 3 = **87.67**. Model sentences and the three partial answers are under Build It, Part 4.
 
 **Harder variation.** `groupby(["house", "club"]).size()` gives **9** rows of 12 possible — missing are Red/art, Gold/chess and Gold/music, and pandas lists only what exists rather than showing zeros. The four-statistic `agg` output is in the "harder" section above; Red's best score is 97, equal to Gold's, which is worth pointing at. Grouping by `age` before the fill gives sizes summing to **32**, not 38 — the six pupils with no recorded age have no pile to go in, and nothing warns you.
 

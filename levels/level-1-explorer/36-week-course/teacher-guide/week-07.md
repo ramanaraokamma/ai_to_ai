@@ -12,7 +12,7 @@
 | **Type** | Teach |
 | **Big idea** | A pattern is something that repeats often enough that betting on it beats guessing — and a rule is a pattern written down so tightly that a computer can follow it. |
 | **New vocabulary** | pattern · condition · threshold · rulebook · default |
-| **Materials** | Printed Workbook Week 7 pages 1–4 · **the Fresh Four card, cut off and kept in your pocket** · a board or big sheet of paper · two pens of different colours · a calculator (optional) |
+| **Materials** | A one-page handout you make from the fourteen-row bus table in this guide (table, empty counting grid, rulebook frame) · **the Fresh Four card, cut off and kept in your pocket** · a board or big sheet of paper · two pens of different colours · a calculator (optional) |
 | **Tech needed** | **None.** Paper and pencil only. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
@@ -227,22 +227,21 @@ by Week 36 every week has landed on one.
 
 ### 15 minutes the night before
 
-- [ ] **Print Workbook Week 7, pages 1–4.**
-  - Page 1 is the fourteen-row bus table plus the empty counting grid.
-  - Page 2 is the rulebook frame plus the Fresh Four scorecard.
-  - Page 3 is the three practice tables.
-  - Page 4 is the homework.
-- [ ] **Cut off the Fresh Four card** at the bottom of page 2 — the four extra days — **and put it in your pocket.** If the student sees those four rows before writing the rulebook, the last five minutes of the lesson are dead. This is the single most important prep step this week.
+- [ ] **Make the in-class handout.** The workbook does not contain the lesson materials, so copy them from this guide ("The table they get" and the Fresh Four rows in the Activity section):
+  - Sheet 1: the fourteen-row bus table plus the empty counting grid.
+  - Sheet 2: the rulebook frame plus the Fresh Four scorecard.
+  - Print **Workbook Week 7** separately; it is the homework (Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Build It, Draw It, Self-Check) and goes home at the end.
+- [ ] **Cut off the Fresh Four card** at the bottom of sheet 2 — the four extra days — **and put it in your pocket.** If the student sees those four rows before writing the rulebook, the last five minutes of the lesson are dead. This is the single most important prep step this week.
 - [ ] **Fill in the counting grid yourself.** Five minutes with a pencil. You need to have felt the "3 out of 3 versus 3 out of 11" moment before the student hits it.
 - [ ] **Do the division for the four guessing strategies** (8 ÷ 14, 6 ÷ 14) so those numbers are in your head, not on a page you have to find.
-- [ ] **Read the Answer Key** below, especially the Wi-Fi worked example and workbook page 3. Ten minutes.
+- [ ] **Read the Answer Key** below, especially the Wi-Fi worked example and the workbook's Practice Set B and Build It answers. Ten minutes.
 - [ ] **Check the student's Week 6 homework exists** — they need their own table with at least fifteen rows for tonight's homework. If it doesn't exist, decide now which fallback you'll use (see the table below).
 
 ### 5 minutes on the day
 
 - [ ] Board wiped, with room for a three-column grid and a three-line rulebook.
 - [ ] Two different coloured pens.
-- [ ] Workbook pages 1–4 on the desk. **Fresh Four card in your pocket.**
+- [ ] Handout sheets 1 and 2 on the desk (workbook kept for the end). **Fresh Four card in your pocket.**
 - [ ] The student's own Week 6 table beside them.
 
 ### If something fails
@@ -478,7 +477,7 @@ IF   rain_mm >= 3      THEN   predict "late"
 
 Full instructions in the next section. In brief: fourteen rows of bus data, a counting grid filled by counting, a two-rule rulebook with a default, and then four fresh days out of your pocket.
 
-**Do this at minute 40:** hand over Workbook page 1. Keep the Fresh Four card in your pocket and say nothing about it.
+**Do this at minute 40:** hand over handout sheet 1 (the bus table and empty grid). Keep the Fresh Four card in your pocket and say nothing about it.
 
 **Say this:**
 
@@ -543,9 +542,10 @@ Then assign the homework as written below.
 
 ### Materials
 
-- Workbook Week 7 page 1: the fourteen-row table and the empty counting grid
-- Workbook Week 7 page 2: the rulebook frame and the Fresh Four scorecard
-- **The Fresh Four card, cut off page 2 and in your pocket**
+- Handout sheet 1, made from this guide: the fourteen-row table and the empty counting grid
+- Handout sheet 2, made from this guide: the rulebook frame and the Fresh Four scorecard
+- **The Fresh Four card, cut off sheet 2 and in your pocket**
+- (The Week 7 workbook is not used in class; it is the homework.)
 - A pencil. A calculator is allowed and not needed.
 
 ### The table they get
@@ -720,7 +720,7 @@ Park that one. Genuinely — I want you to write it on your page and bring it ba
 | They write "IF it's rainy THEN late" and think they're done | That's how humans think, and it feels precise enough | Play dumb, hard. "It's drizzling. Is that rainy? Say yes. Now my friend says no. Which of us does the computer believe?" Then point at the `rain_mm` column: "You have a *number* right there. Use it." |
 | The default is left blank | Nothing in the table looks like a "leftover" case | Count it with them: run down the fourteen rows and tally how many match neither rule. It's seven — half the table. "Half your days are answered by the line you left empty." |
 | They score the rulebook on the fourteen rows and get 14 out of 14 | They "fixed" row 14 while scoring, or skipped it | Make them read row 14 aloud: Thursday, 4 mm, on time. "What does your rule 2 say?" Late. "What actually happened?" On time. "So?" Write the cross. **The score is what the rules give, not what you'd like.** This is the single most important habit of the term. |
-| They peek at the Fresh Four early | It's on the same printed page unless you cut it off | This is a prep failure, not a student failure. If it happens, use four different fresh days: `Mon 0 mm → LATE`, `Fri 6 mm → LATE`, `Wed 2 mm → on time`, `Thu 5 mm → on time`. Score is 3 of 4 again, and F4 is now a *wrong* answer, which works just as well. |
+| They peek at the Fresh Four early | It's on the same handout sheet unless you cut it off | This is a prep failure, not a student failure. If it happens, use four different fresh days: `Mon 0 mm → LATE`, `Fri 6 mm → LATE`, `Wed 2 mm → on time`, `Thu 5 mm → on time`. Score is 3 of 4 again, and F4 is now a *wrong* answer, which works just as well. |
 | The percentages become the whole lesson and the arithmetic swallows twelve minutes | Division with a remainder is genuinely hard at 11 | Round brutally and say you're doing it: 3/11 is "about a quarter", 8/14 is "a bit over half". Nothing this week depends on a second decimal place. Precision returns in Week 9 where it matters. |
 | They conclude "so the bus is always late on Mondays" — back to the original claim | The pattern confirmed the hunch, so the hunch feels vindicated | Reclaim it: "Not *always*. Three out of three, which is the best kind of bet we've got with only three Mondays. If I'd watched thirty Mondays, would you expect thirty out of thirty?" Get them to say no. |
 
@@ -799,24 +799,24 @@ Do these in the last five minutes. Exact wording below.
 
 ## 📤 Homework to Assign
 
-**Workbook Week 7, pages 3 and 4.**
-**Time: 45–60 minutes across the week.**
+**The whole of Workbook Week 7**, in this order: Warm-Up, Practice Set A, Practice Set B, Puzzle of the Week, Think Deeper, Build It (its pages are headed 7.4 and 7.5), Draw It, Self-Check.
+**Time: 45–60 minutes across the week.** A sensible split: Warm-Up and Practice Set A (about 12 min), Practice Set B (about 15 min), Puzzle and Think Deeper (about 10 min), Build It (about 20 min), with Draw It and Self-Check as a few minutes of finishing off. Nothing in the workbook is done in class; the in-class bus table, rulebook and Fresh Four are on your own handout, not the workbook.
 
 **Say this:**
 
 > "Two jobs, and the second one is the real one.
 >
-> **Page 3 is practice.** Three little tables. For each one, fill the counting grid, work out both rates, and say whether there's a pattern worth betting on — or whether it's noise. One of those three tables has no pattern at all in it, and saying so is the right answer. Don't invent a pattern to be polite.
+> **The first job is practice.** Warm-Up, then Set A, then Set B. In Set B there are three little tables. For each one, fill the counting grid, work out both rates, and say whether there's a pattern worth betting on — or whether it's noise. One of those three tables has no pattern at all in it, and saying so is the right answer. Don't invent a pattern to be polite. There's a puzzle after that and two big questions, and there's no wrong answer to the big ones as long as you tell me what you really think.
 >
-> **Page 4 is your own data.** Get out the table you've been building since Week 4. Pick one column that could be an answer — tired or not tired, late or on time, finished or not finished — and one column that might predict it. Then **count**. Not a feeling. A grid, with days and hits and a rate, exactly like today.
+> **The second job is Build It, and it's your own data.** Get out the table you've been building since Week 4. Pick one column that could be an answer — tired or not tired, late or on time, finished or not finished — and one column that might predict it. Then **count**. Not a feeling. A grid, with days and hits and a rate, exactly like today.
 >
 > Then write it as an if-then rule with a real threshold in it, and write one sentence saying where that threshold came from. 'I made it up because it looked like the gap' is a completely acceptable and honest sentence.
 >
 > Then run your rule on the **last five rows** of your table and record how many it got right, out of five.
 >
-> And here's the thing I want you to notice while you're doing it, because we'll come back to it in two weeks: **those last five rows were part of the data you found the pattern in.** You've already seen them. So is five-out-of-five actually good news, or is it just you marking your own homework? Write me one sentence on that. There's no wrong answer this week — I want to know what you think."
+> And here's the thing I want you to notice while you're doing it, because we'll come back to it in two weeks: **those last five rows were part of the data you found the pattern in.** You've already seen them. So is five-out-of-five actually good news, or is it just you marking your own homework? That's the question on the last Build It page. There's no wrong answer this week — I want to know what you think. Last of all, draw one real pattern from your own week, and tick the Self-Check."
 
-**What to check when it comes in:** the counting grid has both halves of every pair; rates are written as divisions; the rule contains a number, not an adjective; the last-five score is out of five and honestly recorded; and the last sentence shows some suspicion about scoring yourself on rows you already looked at.
+**What to check when it comes in:** Warm-Up and Set A first (quick, against the key); Set B's counting grids have both halves with rates as divisions, and (c) is answered "no pattern"; the Puzzle's P3 list is exactly 25 to 28; in Build It the counting grid has both halves of every pair, rates are divisions, the rule contains a number rather than an adjective, the last-five score is out of five and honestly recorded, and the 7.5 sentence shows some suspicion about scoring yourself on rows you already looked at. The answers are below, one section per workbook section.
 
 ---
 
@@ -950,115 +950,162 @@ Scoring the same rulebook with different thresholds in Rule 2 (Rule 1 and the de
 
 Three thresholds — 2, 3 and 4 — score identically, because no day in the table measured 3 mm exactly. And `>= 5` genuinely scores 14 out of 14, which is a *lovely* trap: it wins by stepping over the single awkward row (Thursday, 4 mm, on time). Ask the killer question — *"Did we find a better rule, or did we just move the line to dodge one row?"* Moving a threshold to swallow one inconvenient row is the first cousin of the mistake Week 21 calls memorising.
 
-### Workbook Week 7, page 3 — three tables
+### Workbook Week 7 — Warm-Up (W1–W5)
 
-#### Q1 (a) — Homework handed in on time?
+**W1.** Any three of: **who** collected it · **from whom** (or from what) · **when** · **how** exactly (the method or instrument) · **with whose permission**.
 
-| # | subject | on time? |
+**W2.** The **population** is everything you want your answer to be true about (all 800 students). The **sample** is the smaller set you actually measured (the 30 you asked). They are almost never the same, and the gap is what makes an answer wobbly.
+
+**W3.** **FALSE.** More data does not fix a badly chosen sample; it makes a wrong answer look more scientific. Asking three hundred football-club members instead of thirty tells you more about the club and still nothing about the school. **Stirring beats spoon size.**
+
+**W4.** **Line 7** of the data card.
+
+**W5.** **Yes, easily.** Clean is not trustworthy. The four Week 5 checks ask whether the numbers are tidy, never where they came from. Thirty tidy answers from your own friends still say nothing about the school.
+
+*Marking tip:* this is Week 6 revision, so accept the idea in the student's own words. W3 and W5 are the two that matter; if they miss one, say "good, that is Week 6 coming back at us" and move on.
+
+### Workbook Week 7 — Practice Set A (A1–A6)
+
+**A1.** guessing · **condition** · **threshold** · **rulebook** · **default**.
+
+**A2.** **(b) 60%.** 12 ÷ 20 = 0.6 = 60%. Saying "late" every day is right 12 times. (a) A coin gets about 50%. (c) "On time" every day is 8 ÷ 20 = 40%. (d) You can always answer by repeating one word, and **that lazy word is the bar a pattern has to clear.**
+
+**A3.** **FALSE.** Equal counts mean nothing without the size of each group. The extra number is **how many Mondays and how many Tuesdays there were altogether.** If 3 Mondays and 15 Tuesdays: 3 ÷ 3 = 100% against 3 ÷ 15 = 20%.
+
+**A4.** pattern = **C** · condition = **D** · threshold = **E** · rulebook = **B** · default = **A**.
+
+**A5.** (1) The part after IF is the **condition**. (2) The answer it gives is the **action**. (3) The number inside the condition is the **threshold**. (4) The bottom line is the **default**.
+
+**Bonus:** **Rule 1**, `IF day = "Monday"`, has no threshold: Monday is a category, so the condition is an exact match, not a cut-off. **Every condition has a test; only some have a number.** A student who writes "no threshold" has understood the word.
+
+**A6.**
+
+| The condition | Verdict | Why |
 |---|---|---|
-| 1 | maths | yes |
-| 2 | english | no |
-| 3 | maths | yes |
-| 4 | english | no |
-| 5 | maths | yes |
-| 6 | english | yes |
-| 7 | maths | yes |
-| 8 | english | no |
+| `rain_mm >= 3` | **can test** | A gauge gives one number |
+| if it looks like rain | **not yet** | Two people at the same window disagree |
+| `day = "Monday"` | **can test** | An exact match on a category |
+| if the queue is really long | **not yet** | "Really long" is not a number |
+| `queue_length >= 21` | **can test** | Count the people |
+| if the message is a bit dodgy | **not yet** | Pure opinion |
+| `character_count > 100` | **can test** | Count the characters |
+| if the child is quite tall | **not yet** | Tall compared with whom? |
+
+**Fix (model):** `if the queue is really long` becomes `queue_length >= 21`, where `queue_length` is the number of people between the door and the serving hatch at 12:30. Any condition with a count, a measurement or an exact match is fine. The point to say out loud: **you did not capture "really long", you swapped it for something measurable that goes along with it, and it is worth naming what you gave up.**
+
+*Marking tip:* the usual slip is a "fix" that is still an adjective ("`queue_is_very_long`", "`quite_tall = yes`"). Ask: could two people get different answers?
+
+### Workbook Week 7 — Practice Set B (B1–B5)
+
+#### B1 (a) — Homework handed in on time?
 
 | group | pieces | late | rate late |
 |---|---|---|---|
-| english | 4 | 3 | 3 ÷ 4 = **75%** |
-| maths | 4 | 0 | 0 ÷ 4 = **0%** |
+| english | 4 (rows 2, 4, 6, 8) | 3 (rows 2, 4, 8) | 3 ÷ 4 = **75%** |
+| maths | 4 (rows 1, 3, 5, 7) | 0 | 0 ÷ 4 = **0%** |
 
-**Pattern:** yes — english goes with late, 3 of 4, against 0 of 4 for maths. A 75-point gap.
+**Pattern: YES**, a 75-point gap. **Rule:** `IF subject = "english" THEN predict "late"`, default `on time`.
 
-**Rule:** `IF subject = "english" THEN predict "late"`, default `on time`.
+**Score:** rows 2, 4, 8 predicted late and were late ✅✅✅. Row 6 predicted late and was on time ❌. Rows 1, 3, 5, 7 predicted on time and were ✅✅✅✅. **7 out of 8 = 87.5%.**
 
-**Score:** rows 2, 4, 8 predicted late and were late ✅✅✅. Row 6 predicted late and was on time ❌. Rows 1, 3, 5, 7 predicted on time and were on time ✅✅✅✅. **7 out of 8 = 87.5%.**
+**Guessing:** 5 on time, 3 late, so "always on time" scores 5 ÷ 8 = **62.5%**. The rule beats it by 25 points. Worth betting on.
 
-**Guessing:** 5 on time, 3 late, so always saying "on time" scores 5 ÷ 8 = **62.5%**. The rule beats it by 25 points. Worth betting on.
+#### B1 (b) — Is the phone battery dead by 6pm?
 
-#### Q1 (b) — Is the phone battery dead by 6pm?
-
-| # | screen_min | dead by 6pm? |
-|---|---|---|
-| 1 | 40 | no |
-| 2 | 210 | yes |
-| 3 | 65 | no |
-| 4 | 180 | yes |
-| 5 | 90 | no |
-| 6 | 250 | yes |
-| 7 | 120 | no |
-| 8 | 160 | yes |
-
-Sorted, this is a perfectly clean split:
-
-```
-40   65   90   120  │  160  180  210  250
-no   no   no   no   │  yes  yes  yes  yes
+```text
+ 40   65   90  120  │  160  180  210  250
+ no   no   no   no  │  yes  yes  yes  yes
                     ▲
-        the line sits anywhere between 121 and 160
+      the gap sits between 120 and 160
 ```
 
-**Rule:** `IF screen_min >= 150 THEN predict "dead"`, default `not dead`. **Score: 8 out of 8 = 100%.**
+Any threshold from **121 to 160** scores 8 out of 8. A tidy choice: `IF screen_min >= 150 THEN predict "dead"`, default `not dead`. **Score: 8 out of 8 = 100%.** **Guessing:** 4 and 4, so 4 ÷ 8 = **50%**; the rule beats it by 50 points.
 
-**Where the threshold came from:** the gap between 120 and 160. Any threshold from 121 to 160 scores 8 out of 8. We wrote 150 because it's round. **Full credit requires saying that the number was chosen inside a gap, not discovered.**
+**Where the threshold came from:** the gap between 120 and 160. Nothing was measured in that range, so every number fits the eight rows identically. **Full credit requires saying it was chosen inside a hole, not discovered.**
 
-**Guessing:** 4 and 4, so 4 ÷ 8 = **50%**. The rule beats it by 50 points.
-
-#### Q1 (c) — Lucky socks
-
-| # | wore_lucky_socks | score over 70? |
-|---|---|---|
-| 1 | yes | yes |
-| 2 | no | yes |
-| 3 | yes | no |
-| 4 | no | no |
-| 5 | yes | yes |
-| 6 | no | no |
-| 7 | yes | no |
-| 8 | no | yes |
+#### B1 (c) — Lucky socks
 
 | group | tests | over 70 | rate |
 |---|---|---|---|
 | socks yes | 4 | 2 | 2 ÷ 4 = **50%** |
 | socks no | 4 | 2 | 2 ÷ 4 = **50%** |
 
-**Pattern: none.** The rates are identical, so the gap is zero. A rule based on socks scores 4 out of 8 = 50%, which is exactly what a coin flip gets and exactly what "always say no" gets. **It does not beat guessing, so it is not a pattern.**
+**Pattern: NO.** The rates are identical, so the gap is zero. A socks rule scores 4 out of 8 = 50%, the same as a coin and the same as "always say no". **It does not beat guessing, so it is not a pattern.**
 
 **The marking point:** "there is no pattern here" is the correct and complete answer. A student who invents one to fill the space has missed the lesson. Say so, warmly.
 
-#### Q2 — Label the parts
+#### B2 — The rulebook with no default
 
-For each rule, underline the condition, circle the threshold, box the action.
+(a) **Nothing.** Rule 1 doesn't fire (18 is not ≥ 30), Rule 2 doesn't fire (18 is not ≤ 5), and there is no third line. The rulebook is silent: it does not say "cold", it does not say "no", it has no answer. A machine handed no answer stops, or passes nothing on and something breaks somewhere untraceable.
 
-| Rule | Condition | Threshold | Action |
+(b) **Everything from 6 to 29 degrees.**
+
+(c) `DEFAULT: OTHERWISE THEN "mild"` (any sensible word for the middle).
+
+(d) The **ordinary** case, by a huge margin. **The default is not the leftovers; it is usually the busiest line in the rulebook.**
+
+#### B3 — Priya's rulebook
+
+(a) **RULE 1.** Row 1 is sunny, so Rule 1 matches and first match wins.
+
+(b) It answers **"on time"**; the truth is **LATE**, so it is **wrong**, on row 1 and on row 11.
+
+(c) Rule 2 **never gets a turn** on those rows. It is not outvoted, it is never read. Both of Priya's late Mondays happen to be sunny, so her best rule sits underneath a weaker one that answers first.
+
+(d) **Swap the order**: move Rule 2 above Rule 1. Neither rule changes, only their positions, and rows 1 and 11 flip from wrong to right. **The order of the rules is part of the rulebook.** (This is the rainy-Monday cliffhanger again; a student who gets it has got next week early.)
+
+#### B4 — Sam's tick
+
+(a) His score now measures **Sam**, not the rulebook: it records what he thinks the answer should have been.
+
+(b) The cross was the only **information** in the exercise. A rulebook whose mistakes are quietly ticked looks exactly like one that genuinely scored full marks, and nothing on the page records the difference. He has destroyed his ability to measure the rulebook.
+
+(c) **Write it in the margin.** The nap may be a whole new column worth collecting. **The score is what the rules give, not what you would like.**
+
+#### B5 — Marking somebody else's rulebook
+
+| Fault | Why it's a fault | The fix |
+|---|---|---|
+| `IF the queue is huge` | "Huge" is an adjective; a machine needs the same answer every time | `IF queue_at_1230 >= 21` |
+| The **default line is empty** | No answer for every row where neither rule fires, which here is most of them | `DEFAULT: OTHERWISE THEN "doesn't run out"` |
+| Rule 2 (`dish = "chips"`) is the weaker pattern and gives false alarms | From the student guide's canteen example, chips is 75% against 17% while queue is 100% against 0%. Rule 2 wrongly flags row 9 (Thu, chips, queue 19, didn't run out) | Delete Rule 2, or keep the false alarm on purpose and write down that you chose it |
+
+**The fault that stops a machine completely: the empty default.** A vague condition gives *bad* answers, which are survivable and detectable. A missing default gives *no* answer, which the next piece of software cannot use.
+
+*Marking tip:* any three genuine faults earn the marks; the three above are the ones the item was built around. Do not accept "the rules are in the wrong order" as a fault unless the student can point at a row where it changes an answer.
+
+### Workbook Week 7 — Puzzle of the Week: The Mystery Threshold (P1–P6)
+
+**P1.**
+
+| group | days | sold out | rate |
 |---|---|---|---|
-| `IF rain_mm >= 3 THEN "late"` | `rain_mm >= 3` | `3` | predict "late" |
-| `IF sleep_h < 7 THEN "tired"` | `sleep_h < 7` | `7` | predict "tired" |
-| `IF price > 500 THEN "too expensive"` | `price > 500` | `500` | predict "too expensive" |
-| `IF day = "Monday" THEN "late"` | `day = "Monday"` | **none** | predict "late" |
+| temp 28 or more | 4 (days 5, 6, 7, 8) | 4 | 4 ÷ 4 = **100%** |
+| temp under 28 | 4 (days 1, 2, 3, 4) | 0 | 0 ÷ 4 = **0%** |
 
-**The fourth one is the interesting one, and it's deliberate.** `day = "Monday"` has no threshold at all, because Monday isn't a number — it's a category, so the condition is an exact match rather than a cut-off. **Not every condition has a threshold; every condition does have a test.** A student who writes "no threshold" here has understood the word properly.
+A perfect split, a 100-point gap.
 
-#### Q3 — The rulebook with no default
+**P2.** **8 out of 8.**
 
-```
-RULE 1: IF temperature >= 30 THEN "hot"
-RULE 2: IF temperature <= 5  THEN "cold"
-```
+**P3.** The highest "no" is 24 and the lowest "yes" is 28, so the thresholds that score 8 out of 8 are **25, 26, 27, 28: four whole numbers.** The ends are where people slip: **24** wrongly flags day 4 (7 out of 8) and **29** misses day 5 (7 out of 8).
 
-**Input: 18 degrees. What does the rulebook say?**
+**P4.** There is **no data-based answer**, and saying so earns most of the credit. Any answer that gives a **reason** wins: "28, the only one a real day demonstrated"; "26 or 27, the middle of the hole"; "25, cautious, because running out costs a customer". A bare number earns nothing.
 
-**Nothing.** Rule 1 doesn't fire (18 is not ≥ 30), Rule 2 doesn't fire (18 is not ≤ 5), and there is no third line. The rulebook is silent. It does not say "cold", it does not say "no", it does not guess — it has no answer.
+**P5.** A ninth day at 26 degrees that sold out means the threshold must be 26 or lower. **25** ✅ and **26** ✅ still score 9 out of 9; **27** ❌ and **28** ❌ now score 8 out of 9. **Two are left: 25 and 26.**
 
-**The fix:** `DEFAULT: OTHERWISE THEN "mild"`.
+**P6.** **A new day inside the hole (25 to 28 degrees)**, because only those days can tell the candidate thresholds apart. Days at 18 or 34 add nothing; every candidate already agrees about them. *This is the same idea as the Wi-Fi gap in class: the most valuable new data sits right next to your threshold.*
 
-**Follow-up:** which inputs reach the default? Everything from 6 to 29 — which is most of the temperatures that ever happen. **The default handles the ordinary case, not the leftovers.**
+### Workbook Week 7 — Think Deeper (T1–T2)
 
-### Workbook Week 7, page 4 — your own table
+Full credit is about the ideas, not the length. Do not mark spelling or neatness.
 
-There is no single correct answer, because it's the student's own data. Here is a **fully worked model** on a fifteen-row table, which is also the fallback dataset if the student's own table doesn't exist.
+**T1.** Full credit needs: the difference between **"the better bet"** and **"will happen"** · that three rows is very little · a named thing that would change their mind (for example ten more Mondays all late, or two Mondays on time taking 3 out of 3 to 3 out of 5 = 60%) · and the point that the rulebook **cannot notice its own pattern dying**. If the roadworks finish, it keeps announcing "late" every Monday, wrong every time, with no signal, until a person happens to count again.
+
+**T2.** Full credit needs: the word **hole** or **gap** · that a **person** chose the 3 (the rainy days measured 4, 5, 6 and 9 mm and the dry days 0, 1 and 2, so 3, 3.5 and 4 split the fourteen rows identically) · that several numbers are equally justified, so somebody sensible could have chosen 4 · and **a new measurement inside the gap**, for example a day with about 3 mm of rain, as the thing that would finally make the choice matter. The summary line: **the data gives you a gap; a human turns the gap into a number.**
+
+### Workbook Week 7 — Build It (Pages 7.4 and 7.5): your own table
+
+There is no single correct answer, because it is the student's own data. Here is a **fully worked model** on a fifteen-row table, which is also the fallback dataset if the student's own table doesn't exist. (The workbook's own Answers section prints the same model.)
 
 | # | day | sleep_h | screen_min | tired at school? |
 |---|---|---|---|---|
@@ -1078,47 +1125,67 @@ There is no single correct answer, because it's the student's own data. Here is 
 | 14 | Thu | 9.0 | 30 | no |
 | 15 | Fri | 6.5 | 200 | no |
 
-**The counting grid:**
+**Step 1 — the counting grid.**
 
 | group | days | tired | rate |
 |---|---|---|---|
 | `sleep_h` under 7 | 6 (rows 1, 4, 6, 9, 12, 15) | 5 (rows 1, 4, 6, 9, 12) | 5 ÷ 6 = **83%** |
 | `sleep_h` 7 or more | 9 | 1 (row 10) | 1 ÷ 9 = **11%** |
 
-**The rule:** `IF sleep_h < 7 THEN predict "tired"`, default `not tired`.
+**The gap between the two rates: 72 percentage points.**
 
-**Where the 7 came from:** the sleep values under 7 are 5.5, 6.0, 6.5, 6.5, 6.5, 6.5 and the ones at or above are 7.0, 7.0, 7.5, 7.5, 7.5, 8.0, 8.0, 8.5, 9.0. There is a gap between 6.5 and 7.0, so any threshold in that gap works identically. 7 was chosen because it's a whole number of hours. **Invented, in a gap.**
+**Step 2 — the bar to beat.** 6 tired, 9 not tired, 15 rows. Always saying "not tired" scores 9 ÷ 15 = **60%**.
 
-**Score on all fifteen:** correct on rows 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14 — that's thirteen — and wrong on row 10 (slept 7.0, predicted not tired, was tired) and row 15 (slept 6.5, predicted tired, wasn't). **13 out of 15 = 87%.**
+**Step 3 — the rule.** `IF sleep_h < 7 THEN predict "tired"`, default `not tired`.
 
-**Guessing:** 6 tired, 9 not tired, so always saying "not tired" gives 9 ÷ 15 = **60%.** The rule beats guessing by 27 points. ✅
+**Where the 7 came from:** the values under 7 are 5.5, 6.0, 6.5, 6.5, 6.5, 6.5 and the ones at or above are 7.0, 7.0, 7.5, 7.5, 7.5, 8.0, 8.0, 8.5, 9.0. There is a gap between 6.5 and 7.0, so any threshold in it works identically. 7 was chosen because it's a whole number of hours. **Invented, in a gap.**
 
-**Run on the last five rows (11–15):**
+**Score on all fifteen:** thirteen correct (rows 1 to 9, 11, 12, 13, 14) and wrong on row 10 (slept 7.0, predicted not tired, was tired) and row 15 (slept 6.5, predicted tired, wasn't). **13 out of 15 = 87%.** Against the bar of 60% the rule earns **27 points** ✅.
 
-| # | sleep_h | Predicts | Truth | ✓/✗ |
-|---|---|---|---|---|
-| 11 | 8.0 | not tired | no | ✅ |
-| 12 | 6.5 | tired | yes | ✅ |
-| 13 | 7.5 | not tired | no | ✅ |
-| 14 | 9.0 | not tired | no | ✅ |
-| 15 | 6.5 | tired | **no** | ❌ |
+**Step 4 — run it on the last five rows (11–15).**
 
-**4 out of 5 = 80%.**
+| row # | sleep_h | Rule fires? | Says | Truth | ✓/✗ |
+|---|---|---|---|---|---|
+| 11 | 8.0 | no → DEFAULT | not tired | no | ✅ |
+| 12 | 6.5 | RULE 1 | tired | yes | ✅ |
+| 13 | 7.5 | no → DEFAULT | not tired | no | ✅ |
+| 14 | 9.0 | no → DEFAULT | not tired | no | ✅ |
+| 15 | 6.5 | RULE 1 | tired | **no** | ❌ |
 
-**The honesty sentence — what full credit looks like:**
+**Score: 4 out of 5 = 4 ÷ 5 = 0.8 = 80%.**
 
-> "Four out of five looks good, but those five rows were part of the data I counted, so I already knew the answers when I chose my threshold. It isn't a real test. To test it properly I'd need five days I hadn't looked at yet."
+> **⚠️ Check before you mark "Does it beat my bar?"** The workbook's own Answers section says the bar on these five rows is 3 ÷ 5 = 60% (3 not tired, 2 tired) and that the rule beats it by 20 points. The table says otherwise: in rows 11–15 only row 12 is tired, so 4 not tired and 1 tired, and "always not tired" scores 4 ÷ 5 = **80%**, a **tie** with the rule, not a win. Mark the student's own table against its own rows. If a student borrowing this fallback table writes 60% / 20 points, they have copied the workbook's printed answer; it is a nice, true thing to show them that the "good" 80% only ties the lazy guess on five rows, and it feeds straight into the honesty question below and Week 9.
 
-Any sentence containing that suspicion earns full credit, even hedged. A student who writes "80%, so my rule is good" has done the arithmetic and missed the point — and you should not correct it harshly, because **it is exactly the mistake Week 9 is built to fix.** Write "hold this thought — Week 9" beside it and move on.
-
-**Marking criteria for page 4:**
+**Marking criteria for Build It, Step 1 to 4** (all six):
 
 - [ ] Both halves of the counting grid filled, with counts *and* rates
 - [ ] Rates written as divisions, not just as words
-- [ ] A rule containing a number, or an exact category match — no adjectives
+- [ ] The guessing bar worked out, so the score has something to be compared to
+- [ ] A rule containing a number or an exact category match, no adjectives
 - [ ] One sentence saying where the threshold came from
 - [ ] The last-five score recorded honestly, out of five, including any crosses
-- [ ] Some stated suspicion about scoring on rows they had already seen
+
+**Page 7.5 — the honesty sentence. What full credit looks like:**
+
+> "Four out of five looks good, but those five rows were part of the data I counted, so I already knew the answers when I chose my threshold. It isn't a real test. To test it properly I'd need five days I hadn't looked at yet."
+
+Any sentence containing that suspicion earns full credit, even hedged. A student who writes "80%, so my rule is good" has done the arithmetic and missed the point, and you should not correct it harshly, because **it is exactly the mistake Week 9 is built to fix.** Write "hold this thought — Week 9" beside it and move on.
+
+### Workbook Week 7 — Draw It
+
+There is no single right drawing. A strong answer has:
+
+- **two groups**, not one (a pattern with no comparison group is not a pattern)
+- **both counts**, each with its bottom number visible
+- **both rates**, written as divisions
+- **a gap** between the rates, in percentage points
+- **a rule** with a real condition and a real action, and a default
+
+The workbook's own model is PE days against not-PE days: `4 ÷ 5 = 80%` and `2 ÷ 9 = 22%`, a 58-point gap. A drawing with one tally column and a confident sentence is not finished; ask it the two words: **out of how many?**
+
+### Workbook Week 7 — Self-Check
+
+Not marked. Read the "one thing I'd like explained again" line first, and any 😕 row becomes the first five minutes of Week 8. Two rows to watch: "Compare **rates**, not counts" and "admit when a human made it up", which are this week's two core habits.
 
 ---
 

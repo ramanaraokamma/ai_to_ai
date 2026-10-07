@@ -12,7 +12,7 @@
 | **Type** | 🟩 Lab |
 | **Big idea** | If your features are good enough, a stranger who has never seen the thing can guess its label from the numbers alone. |
 | **New vocabulary** | bucketing |
-| **Materials** | 20 index cards (or paper cut to card size) · a ruler · a kitchen scale · a pen · the student's box of 20 objects · a scoring sheet · **a second person to be the tester** |
+| **Materials** | 20 index cards (or paper cut to card size) · a ruler · a kitchen scale · a pen · the student's box of 20 objects · a scoring sheet (the trial table in the workbook's Build It, Step 4) · **a second person to be the tester** |
 | **Tech needed** | None. A phone scale app is fine if you have no kitchen scale. |
 | **Prep time** | 15 minutes the night before, plus one text message to arrange a tester |
 | **⚠️ The one thing that ruins this lesson** | You knowing what is in the box. Read the Prep Checklist before you do anything else. |
@@ -208,7 +208,7 @@ Send this, or say it, at the end of Week 13:
 - [ ] **Check you have 20 index cards.** Or cut A4 paper into eight rectangles each; three sheets does it. Cards must be opaque — hold one up to the light. If the back shows through, double it up.
 - [ ] **Find a scale.** Kitchen scale, luggage scale, or a phone app. If you genuinely have none, see the fallback below.
 - [ ] **Read the worked example numbers once.** There is one 12-card demo deck below with a full result table. Skim it so you can run it at pace.
-- [ ] **Print or copy the scoring sheet** (20 rows: card, guess, truth, ✓/✗) or draw it on paper.
+- [ ] **Print or copy the scoring sheet** (20 rows: card, guess, truth, ✓/✗): the workbook's Build It, Step 4 already has it, or draw it on paper. The feature sheet is Build It, Step 1.
 
 ### 3 minutes before class
 
@@ -742,15 +742,15 @@ Aim for 3, and expect 4 on objective 4 from a student who enjoyed the detective 
 >
 > First: **finish the deck to a full twenty cards.** Same five features, same order, same measuring instructions — do not change the instructions halfway, and if you have to, re-measure everything. Number every card.
 >
-> Second: **test it on a second human.** Somebody who has not seen your objects and was not in the room today. Same rules: you say nothing, you make no faces, you write the guess down before you turn the card over. Fill in the twenty-row scoring sheet, and work out the score, the baseline and the gap.
+> Second: **test it on a second human.** Somebody who has not seen your objects and was not in the room today. Same rules: you say nothing, you make no faces, you write the guess down before you turn the card over. Fill in the twenty-row scoring sheet (Build It, Step 4), and work out the score, the baseline and the gap.
 >
 > Third, and this is the one I'll be reading most carefully: **write which feature you think the testers actually used, and give me the card numbers that prove it.** Not what they told you. What the wrong cards show. 'I think they used colour, and cards 3, 11 and 17 prove it because on all three the length would have been right and the colour was wrong.' That shape of sentence.
 >
 > Then a last line: **what would you change about the deck to make the tester's job harder?** Name one thing — a feature to remove, an object to add, a number to bucket."
 
-**Workbook pages:** Week 14, pages 1–5.
-**Expected time:** 55–65 minutes. Card-making is about 25 of it; the trial is 10; the write-up is the rest.
-**The one thing not to skip:** the card numbers in the third task. Without them it's an opinion, and the whole lesson is about the difference.
+**In the workbook:** the script above is the **🛠️ Build It** section: Step 2 and 4 (finish the deck, second tester), Step 5 (the three numbers), Step 6 (which feature, with card numbers), Step 7 (make it harder). Step 1, the first ten cards and the first ten trial rows were done in class. Around it the workbook also has **✅ Warm-Up** (W1–W5, last week's ideas), **✍️ Practice Set A** (A1–A6) and **Set B** (B1–B5), **🧩 Puzzle of the Week**, **🤔 Think Deeper** (T1–T2), **🎨 Draw It** and **📊 Self-Check**. Build It is the required core; assign the other sections as time allows (Warm-Up, A6 and B1 are quick; B4 and the Puzzle are the ones worth doing if you can only pick two).
+**Expected time:** 55–65 minutes for Build It. Card-making is about 25 of it; the trial is 10; the write-up is the rest. The other sections add roughly 30 to 40 minutes if you set them all.
+**The one thing not to skip:** the card numbers in Build It, Step 6. Without them it's an opinion, and the whole lesson is about the difference.
 
 ---
 
@@ -823,38 +823,108 @@ And every pair the tester got **right** has a length gap of at least 3.5 cm:
 
 ### Homework — model answers and marking
 
-**Task 1 — the finished twenty-card deck.**
+*These follow the workbook's own section order and item labels (W1–W5, A1–A6, B1–B5, Puzzle, T1–T2, Build It Steps 1–7, Draw It, Self-Check). The workbook's **✅ Answers** section at the back is the student-facing version; the lines below give you the same values plus what to watch for.*
 
-Marking criteria:
+#### ✅ Warm-Up (last week's ideas)
+
+**W1.** Classification predicts **which one** (a category from a short, fixed list). Regression predicts **how much** (a number on a sliding scale). Accept "a label" / "a number" if the meaning is right.
+
+**W2.** Four school houses = **multi-class** (categories, even if numbered 1 to 4). Parcel weight = **regression**. Spam = **binary**.
+
+**W3.** 512 − 480 = **32 g**. "Was the model good?" depends what it is for: 32 g is nothing for a parcel and everything for a letter. Any answer that does not ask "good for what?" is incomplete. Catch the units slip: 32 g is *not* "32% wrong".
+
+**W4.** **FALSE.** Route 12 is a label wearing digits: route 12 + route 13 = route 25 means nothing, and route 12 is not "nearly" route 13. So it is classification.
+
+**W5.** Wrongly **different**: a pair straddling a boundary, e.g. 29 and 31, or 59 and 61. Wrongly **the same**: a pair inside one bucket, e.g. 31 and 59 (both `normal`, 28 minutes apart) or 12 and 29 (both `quick`).
+
+#### ✍️ Practice Set A — Understand It
+
+**A1.** Exactly **five** features, in the **same** order on every card, **one** word on the back. Leak test: *"Could a **stranger** name the object from this **one line** alone? Then it's banned."*
+
+**A2.** **(c)** `found_in_the_kitchen: yes` is banned: it hands over a whole category in one line. Why the others are allowed: **(a)** `number_of_holes: 2` is a real count that names nothing and separates things most features cannot (button from coin, colander from bowl); **(b)** `is_shiny: yes` fits many objects and only narrows the field; **(d)** `weight_g: 6` cannot name an object alone. *Watch for:* a student who circles (a) because "numbers of holes sounds like a clue" — a clue is not a leak, a name is.
+
+**A3.** **FALSE**, or at least not proven. The other explanation is that **the objects were too easy to tell apart** (five shoes, five apples, five books, five spoons). The question to ask: *"which two of my objects were hardest to tell apart, and did the tester get both right?"* If there was no genuinely hard pair, the score cannot be trusted. Swapping in near-identical things and watching the score fall is the real measurement.
+
+**A4.** 1 → **c** · 2 → **a** · 3 → **e** · 4 → **b** · 5 → **d**
+
+**A5.** The card is the student's own; check for five feature names with five values in sheet order, a card number at the top, and one word only on the back. **A:** fixed order, because otherwise the tester gets slow, then sloppy, and the test measures their patience instead of your features (real datasets have fixed columns for the same reason). **B:** any feature that names the object, its use or its category (`is_used_for_writing`, `found_in_the_kitchen`, `can_you_eat_it`, `shape: spoon-shaped`). The reason must be the leak test, not "because it's a word".
+
+**A6.**
+
+| deck size | score | score % | baseline | baseline % | gap |
+|---|---|---|---|---|---|
+| 10 cards | 7 | **70%** | **1/10** | **10%** | **60 points** |
+| 12 cards | 8 | 0.667, so **67%** | **1/12** | 0.083, so **8%** | **59 points** |
+| 20 cards | 13 | **65%** | **1/20** | **5%** | **60 points** |
+| 20 cards | 6 | **30%** | **1/20** | **5%** | **25 points** |
+
+The 13/20 deck is the better result (60 points against 25). The 6/20 deck is still worth something: six times the baseline of one, so the features carry real information. *"My five features identify the category reliably and the individual object unreliably"* is a genuine finding. Watch for the gap written as "percent" rather than "points" (see Build It, Step 5).
+
+#### ✍️ Practice Set B — Use It
+
+**B1.** score = 9 / 15 = **60%**; baseline = 1 / 15 = **7%** (0.067); gap = 60 − 7 = **53 percentage points**. Sentence: *"The deck beat blind guessing by 53 percentage points."*
+
+**B2.** The score will be **too high**. It is meaningless, not just high, because the brother is **recognising your things**, not reading the card: he sees `24.0, 310, silver, metal, hollow` and thinks "the dented water bottle". You have measured his memory of your house, not your five features. Two honest fixes: (1) **say so in the write-up**, naming the tester and that they had seen the objects; (2) **find a second tester who has never seen them** and report both numbers.
+
+**B3.** **(i)** No numbers makes the **elimination hunt impossible** (you cannot write "cards 3, 11 and 17 prove it") and the scoring sheet cannot be lined up with the deck. **(ii)** A wandering feature order makes the tester re-read labels every card, so they slow down and skip lines: you end up measuring **their patience and reading speed instead of your features**, and cannot tell afterwards which it was.
+
+**B4.**
+
+| card | colour? | length? | weight? | material? |
+|---|---|---|---|---|
+| 05 (ruler vs pen) | no, both red | **yes**, 4 cm apart | **yes**, 39 g apart | no, both plastic |
+| 11 (eraser vs marble) | no, both blue | **yes**, 4.5 cm apart | maybe, only 3 g apart | **yes**, plastic vs glass |
+| 16 (tin vs bottle) | no, both green | no, 2 cm apart | **yes**, 120 g apart | no, both metal |
+
+The tester was using **colour**: it is the only feature that would have been wrong on all three cards (the named object shares its colour with the truth every time). Length would have got cards 05 and 11 right, weight cards 05 and 16, so neither can be what they were reading. Model conclusion: *"The tester was using colour, and cards 05, 11 and 16 prove it, because on every one of them the object they named is the same colour as the object on the card, and on every one at least one other feature (length by 4 cm on card 05, weight by 120 g on card 16) would have given the right answer."* Accept "maybe" or a tick for card 11 weight if the student says why; the 3 g gap is the weak one. The three card numbers are 05, 11, 16, in that order.
+
+**B5.** Boundaries belong in the **empty gaps**: between 6 and 22, and between 62 and 180. So `light` = under 15 g, `medium` = 15 to 100 g, `heavy` = over 100 g. Any boundaries that sit in real gaps and carry units earn full marks; boundaries that slice through a cluster (say at 40) should be corrected. A pair Option 2 hides: **38 g and 44 g**, both `medium` (also fine: 22 and 62, or 180 and 310 which are both `heavy`). Raw number or bucket are both acceptable; mark on whether the choice was made **on purpose**, with a reason and a checkable prediction.
+
+#### 🧩 Puzzle of the Week — Find the Twins
+
+**Part 1.** Cards **04** and **13**: length 14.0, weight 6, blue, plastic, hollow yes, identical on every line. **Part 2.** *"No tester and no machine could ever **separate those two objects using this feature set**, because the two rows are identical and there is nothing to separate them with."* The sentence must be about the deck, not the tester. **Part 3.** The wrong fixes are **(a), (b) and (d)**; the right fix is **(c)**, a sixth feature. **Part 4.** Any feature with a unit and a measuring instruction that is measurable without knowing the object and passes the leak test. Model answers for a blue pen versus a blue mechanical pencil: `has_a_clip` (yes/no), `number_of_pieces` (count), `tip_width_mm` (nearest 0.5 mm), `writes_in_ink` (borderline, edging towards use, and worth credit if the student says so). `is_it_a_pen` and `used_for_writing` fail the leak test. A name with no unit or no "how" is incomplete.
+
+#### 🤔 Think Deeper
+
+**T1.** Believe the **cards**, not because the tester is lying (people are poor at knowing why they did things) but because only the evidence can be checked. Full credit needs: (1) siding with the evidence; (2) a reason that is not an accusation; (3) reporting **both** the claim and the evidence rather than dropping the claim; (4) for top marks, the point that a reader can check your working. Model wording: *"Tester 2 said she was mostly going on weight. The evidence says colour: on cards 3, 12 and 19 the object she named had the same colour as the object on the card, and on all three the weight would have separated them by at least 20 grams. I'm going with colour."*
+
+**T2.** Two things the same (any two): the **row is all there is** (five values arrive, a decision goes out); **whoever chose the features decided what was knowable** (identical rows cannot be separated by cleverness); you find out what was used by **testing, not asking** (for machines this is removing a feature and re-testing, called an ablation study; do not insist on the term). One thing different: the human brings **a lifetime of knowledge about the world** while a machine trained on twenty cards knows only those twenty, so the human flatters the features. Also acceptable: a machine never gets tired, bored or generous.
+
+#### 🛠️ Build It
+
+This is the homework spine; it is also the part the old homework script describes. Step 1 and the first ten cards and trial rows of Steps 2 and 4 are done in class; Step 3 (the sealed prediction) belongs before the trial, so make sure it was not skipped.
+
+**Step 1: the feature sheet.** Five feature names, each with a measuring instruction, written **before** any measuring, and the banned-check boxes ticked after reading each aloud. If a measuring instruction is missing, send it back: that is how `length` quietly changes meaning halfway through a deck.
+
+**Step 2: the deck (checklist).**
 - 20 numbered cards, no gaps in the numbering.
 - The same five features in the same order on all 20 fronts.
+- One name on each back, nothing else.
 - No blanks. A missing measurement must be written as blank and flagged, never invented (Week 5's rule).
+- At least two genuinely hard-to-tell-apart objects.
+- Cards opaque (held up to the light).
 - Nothing on the front except the five values.
-- One name on each back, and nothing else.
-- The feature sheet attached, with a measuring instruction for all five and the banned-check ticked.
 
-**Task 2 — the second trial.**
+**Step 3: the sealed prediction.** Any two card numbers with a reason. Marks for making it, not for being right; a wrong but reasoned prediction is worth as much as a right one. *Watch for* a prediction written after the trial (ask when it was folded).
 
-A model completed sheet, for a deck of 20 in 4 categories of 5:
+**Step 4: the trial.** Tester's name and whether they had seen the objects are filled in, plus whether the silence rule was broken and on which card. All 20 rows must be filled **including the ones they got right**: a sheet with only the mistakes cannot be scored. Honesty about a contaminated test earns full marks; hiding it does not.
 
-```
+**Step 5: the three numbers.** A model set, for 20 cards in 4 categories of 5:
+
+```text
 correct  = 13 out of 20        13 ÷ 20 = 65%
 baseline =  1 out of 20         1 ÷ 20 =  5%
 gap      = 65 − 5 = 60 percentage points
+
+categories: 4    biggest group: 5    category baseline = 5/20 = 25%
+category correct = 20/20 = 100%
 ```
 
-Marking criteria:
-- All 20 rows filled, including the ones they got right.
-- Score written as **both** a fraction and a percentage.
-- Baseline stated as 1/20 = 5% (accept a category baseline as well, but not instead).
-- Gap computed and stated in **percentage points**, not percent — a small distinction worth correcting gently.
-- A note on who the tester was and whether they had seen the objects. Honesty about a contaminated test earns full marks; hiding it does not.
+Marking: score as **both** a fraction and a percentage; baseline 1/20 = 5% (a category baseline is an addition, not a replacement); gap in **percentage points**, not percent, corrected gently. The bonus lines matter: 20/20 on category and 13/20 on object describe different things. A shop sorting deliveries into four bins cares about the first; a lost-property desk finding *your* pen cares about the second.
 
-**Task 3 — which feature did they use, with evidence.**
+**Step 6: the elimination hunt.** One row for every card the tester got wrong, with a yes/no for each feature. The feature with the most "no"s is the suspect. Model conclusion:
 
-Model answer:
-
-> *"I think both testers used `main_colour`. Here is the evidence. They got seven cards wrong between them: cards 3, 6, 11, 12, 14, 17 and 19. On five of those seven — 3, 6, 12, 14 and 19 — the object they named has the same colour as the object on the card. On card 3 the truth was my green sock and they said 'green pencil'. On card 12 the truth was the blue mug and they said 'blue toothbrush'. Every time they got it wrong, they got the colour right and the object wrong.*
+> *"I think both testers used `main_colour`. They got seven cards wrong between them: 3, 6, 11, 12, 14, 17 and 19. On five of those seven (3, 6, 12, 14 and 19) the object they named has the same colour as the object on the card. On card 3 the truth was my green sock and they said 'green pencil'. On card 12 the truth was the blue mug and they said 'blue toothbrush'. Every time they got it wrong, they got the colour right and the object wrong.*
 >
 > *`weight_g` would have separated four of those five pairs. The sock is 22 g and the pencil is 5 g, and they still swapped them. So they were not reading the weight.*
 >
@@ -863,12 +933,10 @@ Model answer:
 Marking criteria:
 - Names **one** feature, not a vague list.
 - Gives **specific card numbers**, at least three.
-- Explains for at least one card *why* those numbers prove it — i.e. that another feature would have given the right answer.
-- Bonus credit: notices a disagreement between what the tester said and what the cards show, and sides with the cards.
+- Explains for at least one card *why* those numbers prove it, i.e. that another feature would have given the right answer.
+- Bonus credit: notices a disagreement between what the tester said and what the cards show, and sides with the cards (the "What the tester said they used / Do the cards agree?" line).
 
-**Task 4 — what would you change to make it harder.**
-
-Any one of these, argued:
+**Step 7: what would make the tester's job harder.** Any one of these, argued:
 
 | Change | Why it makes it harder |
 |---|---|
@@ -878,7 +946,15 @@ Any one of these, argued:
 | Replace `main_colour` with `is_shiny` | Removes the easy feature people reach for first |
 | Add a second object of the same colour, weight and material as an existing one | Manufactures a genuine tie and exposes the deck's limit |
 
-Marking criteria: one specific change, plus a prediction of what will happen to the score. "Make it harder" with no mechanism is not an answer; "remove colour, and I predict the score drops from 13 to about 8 because five of the seven errors were already colour-driven" is a very good one.
+Marking criteria: one specific change, plus a prediction of what will happen to the score. "Make it harder" with no mechanism is not an answer; "remove colour, and I predict the score drops from 13 to about 8 because five of the seven errors were already colour-driven" is a very good one. A prediction that turns out wrong but was reasoned is worth as much; ask for what actually happened underneath it.
+
+#### 🎨 Draw It
+
+There is no single right drawing. A good one shows the **card as the tester saw it** (five lines, no answer visible), what they said, what it really was, and the three boxes filled in (card number, feature used, what the card actually said), plus an arrow to the feature that **would** have saved them. If the drawing shows the object rather than the card, ask for a redraw: the tester never saw the object, and that is the point.
+
+#### 📊 Self-Check
+
+Not marked. Read the six ticks and the "one thing I still find confusing" line. Any "not yet" on the baseline row or the card-numbers-as-evidence row is the thing to revisit at the start of Week 15; those are the two habits this week exists to build.
 
 ### Extension answers (for the "flying" path)
 

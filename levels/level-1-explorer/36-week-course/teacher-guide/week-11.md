@@ -12,7 +12,7 @@
 | **Type** | 🟦 Teach — a new idea, then hands on objects |
 | **Big idea** | A feature is one measured description of one example, and the label is the answer you want the machine to give back. |
 | **New vocabulary** | feature · feature table · measuring instruction · class |
-| **Materials** | A ruler (30 cm) · a kitchen scale, or a phone scale app · a book or box to hide an object behind · **three household objects that are easy to confuse** (three spoons of different sizes is ideal) · one apple or similar piece of fruit · pencil · workbook |
+| **Materials** | A ruler (30 cm) · a kitchen scale, or a phone scale app · a book or box to hide an object behind · **three household objects that are easy to confuse** (three spoons of different sizes is ideal) · one apple or similar piece of fruit · pencil · plain paper · workbook |
 | **Tech needed** | **None.** A phone scale app is optional. |
 | **Prep time** | 12 minutes the night before, 5 minutes on the day |
 
@@ -192,7 +192,7 @@ is the only thing that tells a machine what "right" means. Shelves, not content 
 - [ ] **Choose your hidden object** for Describe It Down the Phone. It must be small, ordinary, and not obvious from its weight alone. Good: a stapler, a mug, a TV remote, an orange, a pair of scissors, a roll of tape. Bad: anything the student has seen you carrying in.
 - [ ] **Test your scale.** Weigh one object. If you are using a phone app, open it now and check it actually works — many of them do not.
 - [ ] **Measure one object yourself, twice, two different ways** (longest side and widest side) so you have felt the disagreement in Figure 11.3 personally.
-- [ ] Print workbook pages 11.1–11.6.
+- [ ] Print the whole Week 11 workbook (Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Build It Pages 11.4–11.6, Draw It, Self-Check), plus two sheets of plain paper for the in-class activities.
 - [ ] Write the fixed colour list on a card: **red · orange · yellow · green · blue · black · white · grey · brown · silver**. You will need it in three places today.
 
 **5 minutes on the day**
@@ -334,7 +334,7 @@ Write it up:
 
 ### 🔍 Worked Example Together — Build the Dog Row (14 minutes)
 
-**Do this:** Open the workbook to page 11.2 and put Figure 11.6 where you can both see it.
+**Do this:** Open the student guide (chapter) to Figure 11.6 and put it where you can both see it.
 
 ![Six measurable features of one dog](../figures/fig-w11-1-dog-six-features.svg)
 *Figure 11.6 — The machine gets these six values. Nothing else about the dog exists for it.*
@@ -432,11 +432,11 @@ Play it. Answer only in numbers and colour words. Be strict about refusing the u
 >
 > "Which question did you want to ask and weren't allowed?" *(Write their answer down. Then:)* "Could we turn that into a measurable one?"
 
-Record the whole thing on workbook page 11.1.
+Record the whole thing on a sheet of plain paper (there is no workbook page for this).
 
 ### Part B — Three Objects Into Three Rows (12 minutes)
 
-**Materials:** the three confusable objects, ruler, scale, colour card, workbook page 11.3.
+**Materials:** the three confusable objects, ruler, scale, colour card, a sheet of plain paper.
 
 **Step 1 — write the label question first (1 min).** At the top of the page, before touching anything:
 
@@ -619,101 +619,140 @@ Three checks, five minutes, exact wording below.
 
 **Say this:**
 
-> "One job, in two halves, about fifty minutes.
+> "One main job, then a handful of short pages. About fifty minutes for the job, and a bit over an hour for the rest, spread over the week.
 >
-> **First half — the kitchen table.** Workbook page 11.4. Go into the kitchen and pick five objects. They have to be **similar enough to be confusable** — five spoons, or five bottles, or five mugs. Not a spoon, a fridge and a banana. Then build a table with five feature columns plus the label column, and — this is the part that gets marked — **write the measuring instruction for every single column before you measure anything.** Five instructions, five objects, twenty-five measurements, no blanks.
+> **The main job — the kitchen table.** In the workbook, open **Build It, Page 11.4**. Go into the kitchen and pick five objects. They have to be **similar enough to be confusable** — five spoons, or five bottles, or five mugs. Not a spoon, a fridge and a banana. Then build a table with five feature columns plus the label column, and — this is the part that gets marked — **write the measuring instruction for every single column before you measure anything.** Five instructions, five objects, twenty-five measurements, no blanks.
 >
-> **Second half — the test.** Workbook page 11.5. Take your feature sheet and **one** of your objects to an adult. Don't tell them your numbers. Ask them to measure all five features using only what you wrote. Then write down their five numbers next to yours, and for every one that doesn't match, write the new wording you'd use to fix it. You are not trying to score five out of five. You're trying to find out which of your sentences was sloppy, and a mismatch is a *result*, not a failure.
+> **Then the test — Page 11.5.** Take your feature sheet and **one** of your objects to an adult. Don't tell them your numbers. Ask them to measure all five features using only what you wrote. Then write down their five numbers next to yours, and for every one that doesn't match, write the new wording you'd use to fix it. You are not trying to score five out of five. You're trying to find out which of your sentences was sloppy, and a mismatch is a *result*, not a failure.
 >
-> And page 11.6 if you've got ten minutes left — six vague descriptions to turn into real measuring instructions."
+> **Page 11.6** is six vague descriptions to turn into real measuring instructions, and one of them can't be done honestly — find it.
+>
+> **The rest of the workbook** — the Warm-Up, Practice Sets A and B, the Puzzle of the Week, Think Deeper, Draw It and the Self-Check — is shorter and you can do it a page a day. Do the Build It pages first, because next week's work needs your kitchen table."
 
-**Workbook pages:** 11.1, 11.2 and 11.3 done in class; **11.4, 11.5, 11.6** at home.
+**Workbook sections:** the workbook has no in-class pages. The two lesson activities (the phone game and the three-objects-into-three-rows table) are done on plain paper during the lesson, and the student's own record of them is not marked from the workbook. **Everything in the workbook is homework.** Order: Build It (Pages 11.4, 11.5, 11.6) first, then Warm-Up, Practice Set A, Practice Set B, Puzzle of the Week, Think Deeper, Draw It, Self-Check.
 
-**Expected time:** 25 min for the table · 15 min for the adult test · 10 min for page 11.6. About 50 minutes.
+**Expected time:** Build It about 50 min (25 min for the table · 15 min for the adult test · 10 min for Page 11.6). Warm-Up 5 min · Practice Set A 15 min · Practice Set B 20 min · Puzzle 10 min · Think Deeper 10 min · Draw It 10 min · Self-Check 3 min. Roughly two hours in all, over several days.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 11.1 — Describe It Down the Phone (in class)
+This key follows the workbook's own sections, in order, and uses the workbook's item labels (W1, A3, B2, P4, T1 and so on). The values are the ones in the workbook's Answers section, re-checked. The two in-class activity records are at the end, because they are not workbook pages.
 
-There is no fixed answer; mark the *record*. A complete page shows:
+### Warm-Up (last week's ideas)
 
-- Five questions written down, all four allowed types used at least once.
-- The answers received.
-- At least one question that was refused as "not measurable", with the refused wording recorded.
-- A final guess, right or wrong.
-- One sentence: which question was most useful and why.
+| Item | Answer | Watch for |
+|---|---|---|
+| **W1** | **2⁶ = 64** situations (2, 4, 8, 16, 32, 64) | "12" (6 × 2) — adding instead of doubling |
+| **W2** | The number of rules needed grows far faster than the number of cases, until no human can maintain the rulebook (8 checks already needs 258 lines) | Any answer that just says "lots of rules" without the growing-faster idea is half marks |
+| **W3** | **Give up:** writing the rules yourself (and being able to explain why a decision was made). **Supply:** labelled examples — things with the correct answer written next to them — and a lot of them | Students supply "a computer" or "code"; the answer is examples |
+| **W4** | **FALSE.** It **doubles** the situations. One more check on top of 10 adds 1,024, not 1 | "TRUE" is the whole misconception of Week 10 |
+| **W5** | Any of: income tax, chess legality, a maximum safe drug dose, a speed limit. Reason: the correct answer is already written down by somebody, so learning could only make a fuzzy copy of something exact | Mark the reason, not the example |
 
-**Model debrief answers:**
-- *Most useful question:* usually `parts_count` or `longest_cm`, because they cut the possibilities furthest. Mass tends to be least useful early, because most household objects are somewhere between 50 g and 500 g.
-- *A refused question, converted:* "Is it useful?" → cannot be converted, it is an opinion. "Is it sharp?" → **can** be converted: `does it have an edge that cuts paper, yes or no`. "Is it old?" → not directly, but `has visible rust or wear, yes/no` captures some of it.
+### Practice Set A — Understand It
 
-### Page 11.2 — Name the features and the label
+**A1.** feature = one **measured** description of one example, one **column** in your table. Label = the column you **cover up** (or "hide"). Class = one of the **answers** the label is allowed to be (accept "possible answers", "allowed answers").
 
-For each system, list at least four plausible features and exactly one label, and say what the classes are (the answers the label is allowed to be).
+**A2.** Circle **(b), (d) and (f).** (a), (c) and (e) are descriptions, not features: two people would give two different answers and neither would be wrong. (f) counts only because it comes from a fixed list.
+*Model conversion of one not circled:* "it's quite heavy" → `mass_g` — kitchen scale, dry and empty, nearest gram. Or "it looks old" → `visible_wear_1to3` — 1 = looks new, 2 = scratched or faded, 3 = chipped or cracked; judged by two people, and if they disagree take the lower.
+*Marking tip:* the conversion must name a tool (or list), a unit and a rounding. "Measure how heavy" is not a conversion.
 
-**(a) An app that decides whether a photo contains a face.**
-Features: `image_width_px`, `image_height_px`, `brightness_average`, `number_of_skin_toned_regions`, `has_two_dark_blobs_above_a_horizontal_line`.
-**Label:** `contains_face`. **Classes:** yes, no.
+**A3.** **FALSE.** The label is whichever column **you decided to cover up**; it is a choice about your question, not a fact about the table. We usually put it last as a tidy habit, like writing the date on homework.
+*Watch for:* "TRUE, because that's where it was in class." Point back to the dog table and ask what happens when `mass` is covered instead.
 
-**(b) A music app predicting whether you'll skip a song in the first 10 seconds.**
-Features: `seconds_of_intro_before_vocals`, `times_you_played_this_artist_last_month`, `genre`, `time_of_day`, `is_it_already_in_your_playlist`, `tempo_bpm`.
-**Label:** `skipped_in_first_10s`. **Classes:** yes, no.
+**A4.** feature = **B** · label = **D** · class = **E** · measuring instruction = **A** · feature table = **C**.
 
-**(c) A school kitchen deciding how many lunches to cook tomorrow.**
-Features: `students_on_roll`, `day_of_week`, `menu_item`, `lunches_sold_same_weekday_last_week`, `school_trip_tomorrow`, `weather_forecast`.
-**Label:** `lunches_to_cook`. **Classes:** here the answer is a number, so there is no short list of classes — accept "any whole number" and move on. *(Do not teach the word "regression"; that is Week 13.)*
+**A5.** (Figure W11.1, the headings-off table.)
+1. The whole column: **a feature** (here `mass_g`).
+2. The whole row: **one example** (one spoon).
+3. The shaded column: **the label**.
+4. The word "silver": **one value of the feature `colour`** (one cell, one measurement, for one example).
+*Common mistake:* calling the row "a feature". Rows are examples; columns are features.
 
-**(d) A weather app predicting whether it will rain tomorrow.**
-Features: `today_humidity_percent`, `today_pressure_hpa`, `pressure_change_over_6h`, `month`, `wind_direction`, `rained_today`.
-**Label:** `rain_tomorrow`. **Classes:** yes, no.
+**A6.** Can use: `weighs 340 g`, `18.5 cm long`, `3 separate parts`, `colour: blue` from a fixed list. Not yet: quite big ("bigger than what?"), nice colour ("nice" is about the person looking), looks expensive (a guess about price), feels nice to hold (a feeling, and hands differ).
+*Model fix:* `feels nice to hold` → `handle_width_cm` — ruler across the handle at its widest point, nearest 0.5 cm. Make sure the student says out loud what they gave up: they did not capture "nice", they replaced it with something measurable that is related to it.
 
-**(e) A website suggesting a price for a used bicycle.**
-Features: `age_years`, `wheel_size_inches`, `number_of_gears`, `brand`, `condition_1to5`, `has_rust`, `frame_material`.
-**Label:** `price`. **Classes:** a number, not a short list.
+### Practice Set B — Use It
 
-**Marking note:** any four sensible features is full marks. What must be right is that **exactly one** column is named the label, and that every listed feature is genuinely measurable. Cross out anything like `is_it_a_good_song` or `how_nice_the_bike_looks`.
+**B1.**
 
-### Page 11.3 — Three objects into three rows (in class)
+| The question | Label | Classes | How many features |
+|---|---|---|---|
+| "Will I feel tired tomorrow?" | `felt_tired` | 2 — yes, no | **4** |
+| "What will my mood be?" | `mood_1to5` | 5 — 1, 2, 3, 4, 5 | **4** |
+| "How long will my homework take?" | `homework_minutes` | not a short list — any number of minutes | **4** |
 
-Model answer, using three spoons:
+*What changed about the table:* **nothing at all.** Only the question changed, and the label follows the question. (In row 2, `felt_tired` stops being the answer and becomes just another feature.)
+*Watch for:* "5" or "6" features (counting the label, or the `id` column, as a feature), and "the table changed".
 
+**B2.** Model answers (any instruction with a tool or list, a unit and a rounding is full marks):
+
+```text
+f1  height_cm      ruler, floor to the top of the closed main zip, bag standing
+                   upright and empty, nearest 0.5 cm
+f2  mass_g         kitchen or luggage scale, bag completely empty, all pockets
+                   emptied, nearest gram
+f3  pockets_count  count every opening that closes with a zip, popper or velcro,
+                   including the main compartment
 ```
-FEATURE SHEET
-label question: teaspoon / dessert spoon / serving spoon?
 
-f1  mass_g        kitchen scale, dry and empty, nearest gram
-f2  longest_cm    ruler, tip of handle to tip of bowl, nearest 0.5 cm
-f3  parts_count   count pieces that come apart without breaking it
-f4  colour        ONE of: red / orange / yellow / green / blue / black /
-                  white / grey / brown / silver
-```
+*What could I still do differently on f1?* Standing on the base or hanging from the strap? Straps included or just the bag body? Does the built-in laptop sleeve count as "empty"? Full marks for naming at least one real way the instruction can still be read two ways.
 
-| id | mass_g | longest_cm | parts_count | colour | **label** |
-|---|---|---|---|---|---|
-| 1 | 24 | 13.0 | 1 | silver | **teaspoon** |
-| 2 | 41 | 18.0 | 1 | silver | **dessert spoon** |
-| 3 | 96 | 27.5 | 1 | silver | **serving spoon** |
+**B3.** (a) **Meaningless.** Three numbers mean one thing and two mean another, so comparing any two rows tells you nothing. "Slightly inaccurate" would mean every number is a bit off in the same direction. (b) A blank column is honestly useless and would be noticed; this one is dishonestly useful, it would be trusted, and nobody could tell which rows were which. (c) **The sentence.** Write `lid ON` into the instruction, then re-measure the two rows done the other way. Never adjust a number to fit.
 
-**11.3(a) Which feature separates the three best, and what's your evidence?**
-`mass_g` — 24, 41, 96. Three values with big gaps between them; the closest pair is 24 and 41, still 17 g apart. `longest_cm` also separates all three (13.0, 18.0, 27.5) and is nearly as good.
+**B4.** (a) "dog" or "cat" — never anything else. (b) **Very confident**; it has no way to express doubt about a category it does not have. (c) **Meera's mistake, made before the machine ran:** she chose two classes; there is no rabbit box. The machine is not being stupid. (d) She is asking for **a third class** such as `other` or `neither`, which is a change to the design and needs examples of "other" too. (This returns in Week 16.)
 
-**11.3(b) Which feature was useless here, and why?**
-`parts_count` — every row says 1. `colour` — every row says silver. A column where every row is the same tells you nothing at all, because it can never split the rows apart. *(Do not extend this into scoring; that is next week.)*
+**B5.** Three faults (any three of these):
 
-**11.3(c) Record of the re-measure test.**
-A good page shows your four numbers next to theirs, and a rewritten sentence for every mismatch. Typical genuine mismatch, and the fix:
+| Fault | Why it's a fault | The fix |
+|---|---|---|
+| `f1 size — how big it is` | Not an instruction: no tool, unit or rounding, and "big" could mean height, width or volume | `height_cm` — ruler, base to top of the closed lid, nearest 0.5 cm |
+| `f2 weight — weigh it` | No unit, no rounding, and not stated empty or full | `empty_mass_g` — kitchen scale, empty and dry, lid ON, nearest gram |
+| `f3 colour — bluey-green` | Not from a fixed list; a compound colour is what a list prevents | `colour` — ONE of: red / orange / yellow / green / blue / black / white / grey / brown / silver |
 
-| feature | theirs | mine | why | rewritten instruction |
-|---|---|---|---|---|
-| longest_cm | 18.0 | 17.0 | I measured to where the bowl starts curving, they measured to the very tip | "ruler, tip of handle to the furthest point of the bowl, nearest 0.5 cm" |
+**The one that cannot honestly be fixed: `f4 age`.** The age of a bottle is not on the object. You can build `visible_wear_1to3`, scored by two people, but the honest statement is that you measured wear, not age. A new bottle dragged across gravel would score 3.
 
-### Page 11.4 — The kitchen feature table (homework)
+### 🧩 Puzzle of the Week (four spoons)
+
+**P1.** No single column works.
+
+| column | the four values | any two the same? | works alone? |
+|---|---|---|---|
+| mass_g | 24, 41, 41, 96 | yes — rows 2 and 3 both 41 | **no** |
+| longest_cm | 13.0, 18.0, 13.0, 27.5 | yes — rows 1 and 3 both 13.0 | **no** |
+| parts_count | 1, 1, 2, 1 | yes — rows 1, 2 and 4 all 1 | **no** |
+| colour | silver, silver, black, silver | yes — rows 1, 2 and 4 all silver | **no** |
+
+**P2.** Tick five of the six; only the last fails.
+
+| pair | the four value-pairs | works? |
+|---|---|---|
+| mass + longest | (24, 13.0) (41, 18.0) (41, 13.0) (96, 27.5) | ✅ |
+| mass + parts | (24, 1) (41, 1) (41, 2) (96, 1) | ✅ |
+| longest + parts | (13.0, 1) (18.0, 1) (13.0, 2) (27.5, 1) | ✅ |
+| longest + colour | (13.0, silver) (18.0, silver) (13.0, black) (27.5, silver) | ✅ |
+| mass + colour | (24, silver) (41, silver) (41, black) (96, silver) | ✅ |
+| parts + colour | (1, silver) (1, silver) (2, black) (1, silver) | ❌ fails |
+
+**P3.** **Two columns.**
+
+**P4.** **`parts_count` + `colour`** fails. Rows 1 and 2, the **teaspoon and the dessert spoon**, are both `(1, silver)`: identical rows, different labels. No machine can tell them apart, however clever or well trained; the only fixes are a column that separates them or accepting that they will be confused forever.
+*Teacher note:* `parts_count` and `colour` are the two columns that barely vary (three 1s, three silvers), which is the seed of next week's lesson. Do not score it yet.
+
+### 🤔 Think Deeper
+
+**T1.** Full marks needs three things: that nothing is "lost" so much as **never present**; that a **person chose** the six and is responsible for what they left off; and that the **machine can never find out what it is missing**. Model answer, in short: six things went in and everything else (breed, age, name, temperament) does not exist for the machine; a person picked those six; a different choice would be a completely different machine and neither would know the other was possible. Every feature table contains somebody's opinion about what matters, dressed as a number.
+
+**T2.** Any one example is full marks if the reason is argued. Model answers: *how much someone is loved* — reason **(iii)** (you can count messages or birthday guests, but those measure contact, not love; nobody could show a score to be wrong). *What someone believes in private* — reason **(ii)** (measurable in principle, but it should not be measured). *How much pain someone is in* — mostly **(i)** (doctors use a 1-to-10 scale because no instrument exists), close to (iii).
+*The distinction that earns the marks:* "no instrument yet" might be solved by science; "it shouldn't be measured" never will be, because it is not a science question. Confusing "we shouldn't" with "we can't" is the error to catch.
+
+### 🛠️ Build It
+
+#### Page 11.4 — The kitchen feature table
 
 The student's objects are their own. Mark against this structure. Model answer, using five drinking bottles:
 
-```
+```text
 FEATURE SHEET
 label question: water bottle / flask / juice bottle / baby bottle / sports bottle?
 
@@ -737,6 +776,7 @@ f5 lid_type         ONE of {screw, flip, push, straw}
 - Twenty-five values, no blanks.
 - The label column named and marked.
 - Five objects that are genuinely confusable.
+- The last two workbook prompts answered: covering the label and reading row 3 aloud, and naming the feature that separates the five best (it is tested with numbers next week, so any sensible guess is fine).
 
 **Common faults and the marking response:**
 
@@ -748,7 +788,7 @@ f5 lid_type         ONE of {screw, flip, push, straw}
 | Instruction says "lid on" but one row was clearly measured lid off | The point of the whole page. Re-measure that row; do not adjust the number. |
 | Five objects that are wildly different | The table will be trivially separable and teaches nothing. Ask for five of one kind. |
 
-### Page 11.5 — The adult re-measure
+#### Page 11.5 — The adult re-measure test
 
 Model answer:
 
@@ -760,11 +800,13 @@ Model answer:
 | material | plastic | plastic | ✓ | — |
 | lid_type | screw | screw | ✓ | — |
 
-**Model closing sentence:** "Three out of five matched. Both the ones that didn't were my fault, not theirs — I knew what I meant and didn't write it down. The mass one is the worse mistake, because an 18-gram error is bigger than the difference between two of my bottles, so that column would have told the machine something false."
+**Score:** 3 out of 5 matched. **Model closing sentence:** "Three out of five matched. Both the ones that didn't were my fault, not theirs — I knew what I meant and didn't write it down. The mass one is the worse mistake, because an 18-gram error is bigger than the difference between two of my bottles (92 g and 118 g are only 26 g apart), so that column would have told the machine something false."
+
+The workbook also asks for a re-test: the student rewrites the worst instruction, the adult measures that one feature again, and the student records the new numbers and whether they match now. Any rewrite that adds the missing detail is full marks.
 
 **Marking guidance:** a student who reports **5 out of 5 matched** should be gently interrogated. Ask: "Did they measure it, or did you show them your number first?" A perfect score on the first attempt is possible but uncommon, and it usually means the adult was being helpful rather than literal.
 
-### Page 11.6 — Sharpen the vague descriptions
+#### Page 11.6 — Sharpen the vague descriptions
 
 Turn each into a measuring instruction. Model answers:
 
@@ -777,11 +819,71 @@ Turn each into a measuring instruction. Model answers:
 | "It's old" | `visible_wear_1to3` — 1 = looks new, 2 = scratched or faded, 3 = chipped or cracked. Judged by two people, and if they disagree, take the lower. |
 | "It smells nice" | **Cannot be converted honestly.** You could build `contains_perfume` (yes/no from the packaging), but that is a different thing being measured. |
 
-**11.6(a) Which one could not be converted, and why?**
+**Which one could not be converted, and why?**
 "Smells nice." The others are all facts about the object; "nice" is a fact about the person smelling it. Two people genuinely disagree and neither is wrong, so no instruction can make them agree. That is the difference between a hard measurement and an impossible one.
 
-**11.6(b) Why does `visible_wear_1to3` need the two-person rule?**
+**Bonus — why does `visible_wear_1to3` need the two-person rule?**
 Because it is a judgement, not a reading off an instrument. Writing "1, 2 or 3" makes it look like a measurement; the two-person rule is what makes it behave like one. Whenever you see a 1-to-5 score in a real dataset, ask who scored it and whether anyone checked.
+
+### 🎨 Draw It
+
+There is no single right drawing. A strong answer has **six leader lines, every one landing on something measurable**, with a unit written on it. A line that says *nice*, *cool*, *fast* or *big* is not finished: ask it "with what tool, in what unit, rounded how?" The three boxes (tool, unit, rounding) must be **specific**: *bathroom scale*, not "a scale"; *nearest 0.1 kg*, not "grams-ish"; *bike lifted clear of the floor*, not "carefully". The workbook's example is a bicycle with `wheel_diameter_cm` (26.0), `mass_kg` (11.4), `gears_count` (7), `frame_colour` (blue, from a list), `has_bell` (yes) and `saddle_height_cm` (82.0). If somebody could follow the three boxes and still get a different number, the student should keep writing.
+
+### 📊 Self-Check
+
+No right answers; it is the student's own tick-chart. Read it with them. A 😕 on "Explain why a dog-or-cat machine calls a rabbit a cat" is worth a two-minute replay of B4; a 😕 on "Write a measuring instruction precise enough that someone else gets my number" means the Page 11.5 re-test is worth repeating on a different object. The last line, "One thing I'd like explained again", is the start of next lesson's first five minutes.
+
+### In-class activity records (lesson activities, not workbook pages)
+
+These are done on plain paper during the lesson. There is no workbook page for them; mark or discuss them from the student's own sheet.
+
+#### Describe It Down the Phone (Activity, Part A)
+
+There is no fixed answer; mark the *record*. A complete record shows:
+
+- Five questions written down, all four allowed types used at least once.
+- The answers received.
+- At least one question that was refused as "not measurable", with the refused wording recorded.
+- A final guess, right or wrong.
+- One sentence: which question was most useful and why.
+
+**Model debrief answers:**
+- *Most useful question:* usually `parts_count` or `longest_cm`, because they cut the possibilities furthest. Mass tends to be least useful early, because most household objects are somewhere between 50 g and 500 g.
+- *A refused question, converted:* "Is it useful?" → cannot be converted, it is an opinion. "Is it sharp?" → **can** be converted: `does it have an edge that cuts paper, yes or no`. "Is it old?" → not directly, but `has visible rust or wear, yes/no` captures some of it.
+
+#### Three objects into three rows (Activity, Part B)
+
+Model answer, using three spoons:
+
+```text
+FEATURE SHEET
+label question: teaspoon / dessert spoon / serving spoon?
+
+f1  mass_g        kitchen scale, dry and empty, nearest gram
+f2  longest_cm    ruler, tip of handle to tip of bowl, nearest 0.5 cm
+f3  parts_count   count pieces that come apart without breaking it
+f4  colour        ONE of: red / orange / yellow / green / blue / black /
+                  white / grey / brown / silver
+```
+
+| id | mass_g | longest_cm | parts_count | colour | **label** |
+|---|---|---|---|---|---|
+| 1 | 24 | 13.0 | 1 | silver | **teaspoon** |
+| 2 | 41 | 18.0 | 1 | silver | **dessert spoon** |
+| 3 | 96 | 27.5 | 1 | silver | **serving spoon** |
+
+**(a) Which feature separates the three best, and what's your evidence?**
+`mass_g` — 24, 41, 96. Three values with big gaps between them; the closest pair is 24 and 41, still 17 g apart. `longest_cm` also separates all three (13.0, 18.0, 27.5) and is nearly as good.
+
+**(b) Which feature was useless here, and why?**
+`parts_count` — every row says 1. `colour` — every row says silver. A column where every row is the same tells you nothing at all, because it can never split the rows apart. *(Do not extend this into scoring; that is next week.)*
+
+**(c) Record of the re-measure test.**
+A good record shows your four numbers next to theirs, and a rewritten sentence for every mismatch. Typical genuine mismatch, and the fix:
+
+| feature | theirs | mine | why | rewritten instruction |
+|---|---|---|---|---|
+| longest_cm | 18.0 | 17.0 | I measured to where the bowl starts curving, they measured to the very tip | "ruler, tip of handle to the furthest point of the bowl, nearest 0.5 cm" |
 
 ### Lesson questions posed in the Say-this scripts
 
@@ -799,7 +901,7 @@ Because it is a judgement, not a reading off an instrument. Writing "1, 2 or 3" 
 
 Next week we settle, with numbers, the argument the student has probably already started: **which of these features is actually any good?** They will meet a twelve-row fruit table with five candidate features, one of which is quietly useless and one of which is quietly disastrous — a sticker on the fruit that reads APPLE. The lesson turns on a fact that feels upside-down: a feature that scores **100%** is bad news, not good news. Before anything else they will compute the **baseline** — how well you'd do by just guessing the most common answer — because a feature that cannot beat guessing is worth nothing at all.
 
-**Prep early:** you need either a real bowl of fruit (4 apples, 4 oranges, 4 bananas is ideal) or the printed twelve-row table from workbook page 12.2 — the printed version works completely, so do not buy fruit specially. If you do use real fruit, stick a small paper label reading APPLE, ORANGE or BANANA on each piece before the lesson; the moment the student notices those stickers is the best moment of the week. Also keep this week's kitchen table safe — Week 12's homework scores its five features against a baseline, so it needs to still exist.
+**Prep early:** you need either a real bowl of fruit (4 apples, 4 oranges, 4 bananas is ideal) or the printed twelve-row table from the Week 12 chapter (student guide) — the printed version works completely, so do not buy fruit specially. If you do use real fruit, stick a small paper label reading APPLE, ORANGE or BANANA on each piece before the lesson; the moment the student notices those stickers is the best moment of the week. Also keep this week's kitchen table safe — Week 12's homework scores its five features against a baseline, so it needs to still exist.
 
 ---
 

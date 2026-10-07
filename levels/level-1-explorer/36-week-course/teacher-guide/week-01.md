@@ -270,7 +270,7 @@ settle each, that is a very good lesson.
 
 ### 15 minutes the night before
 
-- [ ] **Print** the card sheet — Figure 1.4 below, or the workbook's cut-out page. **Cut out the 12
+- [ ] **Print** the card sheet — Figure 1.4 below (the workbook has no cut-out sheet). **Cut out the 12
       cards.** Card stock is nicer but ordinary paper is fine.
 - [ ] **Print** the three-bin mat (Figure 1.4, top half) at A4 or larger. A hand-drawn version on the
       back of an envelope works just as well — three big boxes labelled *A HUMAN WROTE THE STEPS*,
@@ -1034,8 +1034,18 @@ Aim for 4. A 3 in week one is completely fine and Week 2 reinforces all of it.
 
 ## 📤 Homework to Assign
 
-**Workbook pages: Week 1, sections W1.1 – W1.3.** Roughly 45 minutes, spread over the week rather than
-done in one sitting.
+**Workbook: Week 1, in this order** — *Warm-Up*, *Practice Set A*, *Practice Set B*, *Puzzle of the
+Week*, *Think Deeper*, *Build It* (Pages 1.4, 1.5 and 1.6), *Draw It*, *Self-Check*. The workbook's
+own **Answers** section at the back is folded away; the student should not open it until they have
+finished a section.
+
+**Suggested split.** The **Warm-Up** is done **before** the learner reads the chapter, in pen, and is
+never changed — that is its whole point, so tell them so (it is five minutes). The three **Build It**
+pages are the part you actually mark, about 45 minutes spread over the week. The script below sets
+Pages 1.4 and 1.5; Page 1.6 (*Be the computer*) repeats the vending rulebook from class, so it is
+quick. **Practice Sets A and B, the Puzzle, Think Deeper, Draw It** and **Self-Check** are the rest
+of the workbook: assign them if you have the time, or use them as Week 2's warm-up. Nothing in Week 2
+depends on them.
 
 **Say this:**
 
@@ -1150,30 +1160,191 @@ Answers that do **not** pass, and exactly why:
 
 ### Workbook answers
 
-**W1.1 — AI Spotter's Log, part 1 (8 systems)**
+These follow the workbook's own sections, in order, and use its item labels (W1, A3, B2, P1, T1 and
+so on). The values are the ones in the workbook's **Answers** section at the back; this key adds what
+only you need — the wrong-answer maps and the marking notes.
 
-Answers will differ; the *shape* is what you mark. Here is a model log at the standard you're aiming
-for:
+#### Warm-Up (five predictions — nobody marks these)
 
-| # | System (specific) | A human wrote the steps / it worked it out — and why |
-|:--:|---|---|
-| 1 | The alarm on my phone, 06:45 | A human wrote the steps. Somebody typed `IF time = 06:45 THEN ring`. It does the same thing every day and has never surprised anyone. |
-| 2 | My phone's face unlock | It worked it out itself. Nobody could write down rules for what my face looks like from every angle in every light. |
-| 3 | The keyboard's suggested-word bar | It worked it out itself. Nobody made a list of every three words I might type next — it must have studied real writing. |
-| 4 | The microwave's 30-second button | A human wrote the steps. `IF pressed THEN add 30 seconds`. Not even close to a judgement. |
-| 5 | YouTube's home page | It worked it out itself. The videos change every time and match what I watched — no person is choosing them for me personally. |
-| 6 | The school bell | A human wrote the steps. It's a clock with a speaker. |
-| 7 | My email's spam folder | It worked it out itself, I think. Some of the spam it catches is new wording nobody could have listed in advance. |
-| 8 | The automatic doors at the shop | A human wrote the steps. `IF something moves THEN open`. It opens for a cat, which is how I know it isn't judging anything. |
+| Item | What to look for |
+|:--:|---|
+| **W1** — what does AI mean? | Most first answers contain *robots*, *thinking* or *ChatGPT*. Not embarrassing; nearly every adult says the same, and the learner proves it in Week 3. The course answer is *a machine doing a job that used to need a person's judgement.* |
+| **W2** — a smart machine in the room | Whatever they picked, ask now: *does its job need judgement?* Most of what a phone does — timers, alarms, arithmetic — needs none. |
+| **W3** — is a calculator AI? | **NO.** Fast is not judgement; nobody sensible disagrees about 47 + 88. A circled YES is the commonest mistake in the subject and the learner now holds the test that fixes it. |
+| **W4** — Go program or thermostat | No right answer; it is a bet to revisit in the Wrap. Strongest: *the Go program, because nobody could write down every Go move.* If they pick the thermostat for *"it works with nobody there"*, that is thoughtful, and the reply is that a person *is* there — they came earlier and left four if-then boxes behind. |
+| **W5** — did a person write the spam rules? | **NO** — and that is so strange it is next week's lesson. If they circled YES, good: Week 2 is going to upset that. |
+
+#### Practice Set A — Understand It
+
+**A1. Fill in the blanks.** Reading in order: **job** · **judgement** · **sensible** · **disagree** ·
+**human** (or *person*) · **before** · **IF** · **THEN**.
+
+**A2. Circle (b), (d) and (f)** — spam folder, face unlock, choosing the next video.
+
+| Not circled | Why it fails the judgement test |
+|:--:|---|
+| (a) calculator | One right answer, one exact method. |
+| (c) microwave timer | Counting down to zero is not a decision. |
+| (e) factory arm | Impressive body, but a body is a *robot* question, not an *AI* question; one fixed motion repeated needs no judgement. |
+
+Accept any one of the three reasons. Wrong-answer map: circling (e) is the usual slip, because it
+*looks* clever.
+
+**A3. (a) FALSE.** A rulebook that meets a case nobody imagined does not break; it gives a confident,
+technically-correct, useless answer. The vending machine saying SOLD OUT to someone who had not put in
+enough money was Rule 2 working perfectly. **Rulebooks fail quietly.**
+**(b) FALSE.** Hard and judgement are different. Finding one tiny bird in a forest photo is hard, and
+there is still one right answer everyone agrees on. Judgement means there is no single right answer —
+*is this room tidy?* is not hard at all. A learner who writes "because it's hard" has not got it yet.
+
+**A4.** 1 → **C** · 2 → **D** · 3 → **E** · 4 → **B** · 5 → **A**.
+
+**A5. Label the diagram.** Box 1: **read the temperature.** Box 2: **is it below 20 degrees?** Box 3:
+**heater on, or heater off.** Box 4: **wait one minute**, then the loop arrow returns to box 1 for
+ever.
+**(a)** Box **2** (the only box with a condition in it). Full credit also for "boxes 2 and 3 together",
+since the IF and the THEN are split across them.
+**(b)** **A person** — probably in about ten minutes, years before the thermostat was fitted. Every
+box.
+
+**A6. Judgement, or not?**
+
+| The job | Answer | The reason that matters |
+|---|---|---|
+| How many chairs? | Doesn't need judgement | Count them. One answer. |
+| Is this room tidy? | **Needs judgement** | Two people genuinely sort this differently. |
+| Add 47 + 88 | Doesn't need judgement | 135; anyone who says otherwise is wrong. |
+| Is this message from a scammer? | **Needs judgement** | Depends on the specific message; people sort these differently. |
+| Is the traffic light red? | Doesn't need judgement | One fixed right answer. |
+| Is this joke funny? | **Needs judgement** | No right answer exists at all. |
+
+A passing sentence: *"…because two people could look at exactly the same thing and give different
+answers, and neither would be wrong."* "Because it's hard" does not pass.
+
+#### Practice Set B — Use It
+
+**B1. Write Rule 6.** Answers vary. Typical: `IF the customer says the item is broken THEN give them
+another one.`
+**(a)** It hands out free crisps for ever; the rule only reads what the customer *says*.
+**(b)** Typical fix: `…AND they have not already claimed one today`, or `…AND they show the burst bag
+to staff`.
+**(c)** *"Not already claimed today"* punishes someone who honestly gets two burst bags in one
+afternoon; *"show staff"* punishes anyone at 9pm when there is no staff. **Every condition added to
+protect the machine also catches somebody honest.** That is what rules *are*; Weeks 8 and 10 build on
+this feeling. Mark for (c) naming a *real* honest person who is caught.
+
+**B2. Cinema machine.**
+**(a)**
+
+| Customer | Rule | Price |
+|---|:--:|---|
+| Aged 2 | **R1** (under 3) | **free** |
+| Aged 14 | **R2** (under 16) | **£5** |
+| Aged 67 | **R3** (60 or over) | **£5** |
+
+**(b)** With Rules 1 and 2 swapped, the **2-year-old pays £5**, because "under 16" fires first and the
+machine never reaches the free rule. Same child, same wording, different order. Nobody edited a rule.
+**(c)** **No rule fires for the group as a group**: pupils are priced one at a time (R2) and the
+teachers by their ages (R3 or R4). Nothing in the rulebook knows about groups. Deciding it properly
+needs somebody to judge whether this counts as a school group and whether the promise applies — two
+sensible people could disagree about even three cousins. **That is judgement.**
+
+**B3. The dog flap.**
+**(a)** Input: something warm pressing on the flap. **(b)** Output: `open` or `stay shut`.
+**(c) NO.**
+**(d) NO, not AI**; the evidence is the neighbour's cat — it opens for anything warm that pushes. A
+system making case-by-case decisions would sometimes decline; this one never does, so there is no
+decision inside, just `IF pushed THEN open`. Full marks for *rule-based, probably not AI*.
+
+**B4. Own rulebook.** Answers vary. A typical set:
+
+```text
+RULE 1: IF the lesson has started        THEN phones stay in bags
+RULE 2: IF the teacher says "phones out" THEN phones may come out
+RULE 3: IF a phone rings                 THEN it is taken to the office
+```
+
+Good breaking cases, with the rule that causes each:
+- A parent is in hospital and might ring: **Rule 1** keeps the phone in the bag. A teacher would grant
+  an exception in a second; the rulebook has no idea what an emergency is.
+- A phone is a diabetes monitor that beeps: **Rule 3** sends the medical alert to the office.
+- The teacher says "phones out" *after* the lesson starts: Rules 1 and 2 now contradict each other.
+
+**Mark for:** a real situation **and** the specific rule named. "It might not work sometimes" does not
+pass.
+
+**B5. Sort five more.**
+
+| System | Answer | Reason |
+|---|:--:|---|
+| Washing machine "cotton 40°" | **R** | A fixed sequence of times and temperatures an engineer wrote. |
+| Bus board "3 mins" | **?** | A fixed timetable is rules; live bus position brings in something learned. Settling fact: *does the number change while you stand there?* |
+| Photo search for "dog" | **W** | Nobody could write if-then rules over coloured dots; trained on millions of tagged photos. |
+| Smart speaker waking on its name | **?** | Both: recognising the sound is learned; what happens afterwards may be either. |
+| Plagiarism checker | **?** | Matching against a database can be rules; judging whether reworded text counts as copying cannot. |
+
+Three **?** with reasons beats five confident letters.
+
+#### Puzzle of the Week — The Ice-Cream Machine
+
+**P1.**
+
+| Customer | Rule | What the machine says |
+|---|:--:|---|
+| **A** · mango · 60p · age 9 | **R4** | Serves the cone; 60p is enough. |
+| **B** · lemon · 80p · age 9 | **R3** | "SOLD OUT"; the money is never checked. |
+| **C** · mint · 40p · age 4 | **R2** | "SMALL SIZE ONLY"; it stops there and never mentions 40p is short of 70p. |
+| **D** · banana · 100p · age 12 | **R1** | "WE DON'T HAVE THAT". |
+| **E** · lemon · 50p · age 3 | **R2** | "SMALL SIZE ONLY", for a flavour that is completely sold out. |
+
+**P2. Customer E.** Rule 2 fires before Rule 3 is looked at, so the machine offers a three-year-old a
+small lemon ice cream that does not exist. No single rule is wrong; the **order** is. *(Answering C is
+second best and earns most of the marks — C's reply also ignores her real problem — but C's offer is at
+least possible; E's is impossible.)*
+**P3.** Move **R3** (tub empty) to sit **above R2** (under 5): the order becomes R1, R3, R2, R4, R5.
+**P4.** Customer E now hits **R3** → **"SOLD OUT"**.
+**P5.** The machine can say only **one** thing. C needs two facts ("small size only" **and** "that's
+70p, you have 40p"), and a rulebook that stops at the first rule that fires cannot say both. That is a
+limit of the shape, not something reordering fixes.
+
+#### Think Deeper
+
+**T1.** Mark on three things: (1) did they say the list of things a person might say to a machine has
+no end, so adding Rules 6, 7 and 8 does not help? (2) did they say deciding needs somebody to *look
+at the bag* and decide whether it counts as burst? (3) did they connect that to two sensible people
+disagreeing, which is what *judgement* means? Model: *"The problem is not a missing rule; there is no
+comparison that settles 'is this bag burst enough', so the machine sits in silence, not because it is
+broken but because nobody could ever write the line it needs."* Four sentences or more.
+
+**T2.** Mark on three things: a real **right** (never tired, treats the hundredth visitor like the
+first), a real **wrong** (a new haircut, a hood, a cousin collecting a little brother is refused for a
+reason nobody in the building can explain), and — the one most skip — **who a visitor can argue
+with**. A good answer keeps a person at the desk and gives the machine the boring half, such as
+checking the list of expected visitors. Opinions may differ; the three parts are what you mark.
+
+#### Build It
+
+**Page 1.4 — AI Spotter's Log, part 1 (8 systems).** Answers will differ; the *shape* is what you
+mark. A model log at the standard you are aiming for:
+
+| # | System (specific) | R/W/? | Why |
+|:--:|---|:--:|---|
+| 1 | The alarm on my phone, 06:45 | R | Somebody typed `IF time = 06:45 THEN ring`. It does the same thing every day and has never surprised anyone. |
+| 2 | My phone's face unlock | W | Nobody could write down rules for what my face looks like from every angle in every light. |
+| 3 | The keyboard's suggested-word bar | W | Nobody listed every three words I might type next; it must have studied real writing. |
+| 4 | The microwave's 30-second button | R | `IF pressed THEN add 30 seconds`. Not close to a judgement. |
+| 5 | YouTube's home page | W | It changes every time and matches what I watched; no person is choosing for me personally. |
+| 6 | The school bell | R | A clock with a speaker. |
+| 7 | My email's spam folder | W | Some of the spam it catches uses wording nobody could have listed in advance. |
+| 8 | The automatic doors at the shop | R | `IF something moves THEN open`. It opens for a cat, which is how I know it isn't judging anything. |
 
 **Mark for:** eight rows, each naming a *specific* system (not "my phone"), each with a reason that
-mentions either *a person wrote it down* or *it must have learned it*. Row 8's reasoning — using the
-system's *failure* as evidence — is the best kind of answer in the whole exercise; say so if you see
-anything like it.
+mentions *a person wrote it down* or *it must have learned it*. A wrong letter with a real reason
+beats a right letter with none. Row 8 — using the system's *failure* as evidence — is the best kind of
+answer in the exercise; say so if you see anything like it. The count line (R / W / ?) must add up to
+8. For the **?** question, any real fact plus a real person to ask is full marks.
 
-**W1.2 — Rewrite the magic sentence**
-
-> Original: **"My phone magically knows my face."**
+**Page 1.5 — Kill the magic word.** Original: **"My phone magically knows my face."**
 
 Model answer:
 
@@ -1189,15 +1360,47 @@ What to reject, and why:
 | Attempt | Problem |
 |---|---|
 | "My phone is smart enough to know my face." | *Smart* is doing the same job *magic* was. Ask again. |
-| "My phone recognises my face." | True but empty — it hasn't said what happens. Ask *"how?"* |
-| "My phone scans my face and it unlocks." | Better, but there's no decision in it. Ask *"what if it's your cousin?"* |
+| "My phone recognises my face." | True but empty; it hasn't said what happens. Ask *"how?"* |
+| "My phone scans my face and it unlocks." | Better, but there is no decision in it. Ask *"what if it's your cousin?"* |
 
-The tell you are looking for is the word **decides**, **compares**, **matches** or **guesses**. Any of
-those means they've replaced magic with a mechanism, which is the entire point of the exercise.
+The tell is the word **decides**, **compares**, **matches**, **measures** or **guesses**. The learner
+also ticks three self-checks in the workbook (what actually happens, none of the banned words, not
+true of a wizard); check the ticks are honest, and that a second go is written if fewer than three
+are ticked.
 
-**W1.3 — Trace the rulebook (repeat of requests 1–8 for practice)**
+**Page 1.6 — Be the computer.** All nine requests (the workbook's intro says "eight", but the table
+has nine rows, request 9 included):
 
-Answers as in the nine-request table above.
+| # | Request | Rule that fires | Machine does | Common wrong answer |
+|:--:|---|:--:|---|---|
+| 1 | A1, 30p | **R4** (30 = 30) | Drops the crisps. No change. | R3 — students read "less than" as "less than or equal to". |
+| 2 | A2, 45p | **R2** (stock 0) | SOLD OUT. Returns 45p. | R4 — they compare the money and forget stock comes first. |
+| 3 | C7, 30p | **R1** (not on the list) | UNKNOWN CODE. Returns 30p. | Guessing crisps, because C7 "looks like" A1. |
+| 4 | B1, 20p | **R3** (20 < 25) | ADD MORE. Waits, keeps the 20p. | Saying it returns the coins — it doesn't; R3 says *wait*. |
+| 5 | B2, 60p | **R5** (60 > 50) | Drops the juice, returns 10p. | *(This is the one you demonstrate.)* |
+| 6 | B1, 25p | **R4** (25 = 25) | Drops the water. No change. | R5 — miscounting equal as more. |
+| 7 | A2, 20p | **R2** (stock 0) | SOLD OUT. Returns 20p. | **R3 — "ADD MORE". About two-thirds of students say this. It is the trap and it is the best moment in the lesson.** |
+| 8 | A1, 100p | **R5** (100 > 30) | Drops the crisps, returns 70p. | Arithmetic slip: 100 − 30 = 70. |
+| 9 | "The bag was burst, can I have another?" | **None** | Nothing. The machine has no rule for this. | Inventing a rule. Ask them to read rule 2 aloud. |
+
+Request 7 and request 9 are explained in full under *The vending machine — all nine requests*, above.
+The one-sentence answer on request 9: *"No rule fires, and answering it would need somebody to look
+at the bag and judge whether it counts as burst — which two sensible people would disagree about."*
+
+#### Draw It
+
+There is no single right drawing. Mark for **all four**: (1) **boxes**, not just a picture of the
+object; (2) **arrows** showing what happens next; (3) a **loop arrow** back to the top, because these
+machines never stop checking; (4) a **star** on the box with a condition in it. The commonest slip by
+far is a beautiful microwave and no decision; if there are no arrows, the learner drew the object, not
+the thinking. Model: a kettle — heat the water → ⭐ is it 100°C? → (no) keep heating, back to the top /
+(yes) click off.
+
+#### Self-Check
+
+Not marked. Read the 😕 ticks and the "one thing I'd like explained again" line — that is your Week 2
+opening. A learner who ticks 😀 on *"which of AlphaGo and the thermostat… and why"* should be able to
+say *nobody could write the rules for Go*; ask them to say it.
 
 ---
 

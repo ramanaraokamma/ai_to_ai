@@ -13,7 +13,7 @@
 | **Big idea** | Real data arrives broken in **four predictable ways**, and each one has a named fix. Every fix is a **decision**, so it gets written down with a reason. |
 | **New vocabulary** | missing value · isna · fillna · astype · cleaning log |
 | **New syntax** | `pd.read_csv()` / `df.to_csv()` · `df.isna().sum()` · `df["c"].fillna(v)` · `df["c"].astype(int)` |
-| **Materials** | Printed workbook pages 23.1–23.10 · **a large sheet of paper ruled into two columns headed WHAT I DID and WHY I DID IT** — this is the cleaning log and it must be on paper · a pen · the Bug Log |
+| **Materials** | Printed workbook (all sections, Warm-Up to Self-Check) · **a large sheet of paper ruled into two columns headed WHAT I DID and WHY I DID IT** — this is the cleaning log and it must be on paper · a pen · the Bug Log |
 | **Tech needed** | Laptop with Python 3 and pandas. **`club_raw.csv` must exist in the student's folder before class** — the prep script writes it. A paper version exists; see Prep. |
 | **Prep time** | 20 minutes the night before · 5 minutes on the day |
 
@@ -695,7 +695,7 @@ dtype: object
 
 **4. Delete `club_clean.csv` before class (10 seconds).** The student should create it themselves.
 
-**5. Print (2 minutes).** Workbook pages 23.1–23.10 and one blank cleaning log sheet per student, plus a spare — they will want to rewrite it.
+**5. Print (2 minutes).** The whole workbook (Warm-Up through Self-Check) and one blank cleaning log sheet per student, plus a spare — they will want to rewrite it.
 
 ### 5 minutes on the day
 
@@ -1235,7 +1235,7 @@ fillna, astype and sort_values all hand you a COPY.
 No "=" on the left means nothing happened, and nothing warns you.
 ```
 
-**Do this:** Run the three quick checks from "Assessing Understanding". Assign homework. Hand out pages 23.1–23.10 and a fresh log sheet.
+**Do this:** Run the three quick checks from "Assessing Understanding". Assign homework. Hand out the workbook and a fresh log sheet.
 
 ---
 
@@ -1280,7 +1280,7 @@ And the sentence for this week:
 
 ### Part A — Fill or Drop: compute both, then choose (14 minutes)
 
-**Setup.** Student at the keyboard with `clean_club.py` open and working through Step 8. Cleaning log sheet beside them with entries 1–6 already written. Workbook page 23.6 open.
+**Setup.** Student at the keyboard with `clean_club.py` open and working through Step 8. Cleaning log sheet beside them with entries 1–6 already written. The workbook's **Build It** page open beside it (Part 4 uses the same WHAT / WHY layout).
 
 **The question, and write it on the board so it stays put:**
 
@@ -1349,7 +1349,7 @@ B - dropped: 9 rows total
 - Version B: 72 + 83 + 78 + 67 = **300**, and 300 ÷ 4 = **75.0** ✔
 - Version A: 300 + 55 + 61 + 74 = **490**, and 490 ÷ 7 = **70.0** ✔
 
-**Step 4 — the decision, in writing (4 minutes). This is the graded item of the week.** Workbook page 23.6:
+**Step 4 — the decision, in writing (4 minutes). This is the graded item of the week.** On the cleaning log sheet (same layout as the workbook's **Build It, Part 4**):
 
 > *I chose to __________ the three unknown ages.*
 > *I chose it because __________________________________.*
@@ -1370,7 +1370,7 @@ B - dropped: 9 rows total
 
 ### Part B — Name All Four, Board Covered (6 minutes)
 
-**Setup.** Cover the four-line board table. Workbook page 23.7 has a four-row empty grid: *the problem · how you spot it · the named fix*.
+**Setup.** Cover the four-line board table. The workbook's **Practice Set A, item A1** has a four-row empty grid: *the problem · how you spot it · the named fix*.
 
 Student fills it in from memory. Then check it against the board together. Full marks:
 
@@ -1590,28 +1590,29 @@ Run all three in the last five minutes. Say them exactly as written.
 >
 > There's a fresh log sheet in your pack. Use it. The WHY column is the wide one for a reason."
 
-**Workbook pages: 23.1 to 23.10.**
+**Workbook sections, in the order they appear in `workbook/week-23.md`:** Warm-Up (W1–W5) · Predict the Output (P1–P4) · Practice Set A — Read It (A1–A6) · Practice Set B — Write It (B1–B5) · Fix the Broken Program (Bugs 1–4) · Puzzle of the Week (a–g) · Think Deeper (T1–T3) · Build It — The Cleaning Log (Parts 1–6) · Draw It · Self-Check. The workbook has no page numbers; find things by the section name and item label.
 
-| Page | What it is | Time |
+| Workbook section | What it is | Time |
 |---|---|---|
-| 23.1 | Warm-Up — name the four kinds of broken, and one spotting command each | 5 min |
-| 23.2 | Predict the Output — six printouts to predict before running | 8 min |
-| 23.3 | Practice Set A — Read It — read an `info()` printout and answer six questions | 8 min |
-| 23.4 | Practice Set B — Write It — diagnose and repair the reading log | 15 min |
-| 23.5 | Fix the Broken Program — four bugs in `repair_reading.py` | 8 min |
-| 23.6 | Build It — the cleaning log, numbered, every line with a reason | 10 min |
-| 23.7 | Puzzle of the Week — the fill that changes the answer | 5 min |
-| 23.8 | Think Deeper — three written questions, including "whose ages were missing?" | 6 min |
-| 23.9 | Draw It — a column with a hole, before and after | 3 min |
-| 23.10 | Self-Check — six statements, tick or cross | 3 min |
+| Warm-Up | W1–W5: five questions about **last week** (`loc`/`iloc`, filtering, booleans, `sort_values`, the row label) | 5 min |
+| Predict the Output | P1–P4: four snippets to predict before running — the useless `isna()` count, a hole is not a zero, the repair that never happened, the number that goes up | 8 min |
+| Practice Set A — Read It | A1–A6: name the four kinds of broken, read an `info()` printout, fact-or-guess, spot the bug, label the diagram, read the traceback | 12 min |
+| Practice Set B — Write It | B1–B5: one-line, two-line and filter exercises, repair-and-prove, then the whole `repair_reading.py` | 15 min |
+| Fix the Broken Program | four bugs in `repair_reading.py`, three that crash and one silent | 8 min |
+| Puzzle of the Week | (a)–(g): the fill that changes the answer, hand-checked both ways | 6 min |
+| Think Deeper | T1–T3: three written paragraphs, T2 being "whose ages were missing?" | 8 min |
+| Build It — The Cleaning Log | Parts 1–6: diagnose, who is missing, repairs, **the numbered log**, the sentence at the bottom, the Bug Log | 15 min |
+| Draw It | a column with a hole, before and after | 3 min |
+| Self-Check | the can-do grid, then twelve true-or-false statements | 4 min |
 
-**Total: about 60 minutes.** If it is running long, cut 23.7 and 23.9. **Never cut 23.6 or the last question of 23.8.**
+**Total: more than an hour if all of it is done in one sitting, so spread it over two evenings.** (The earlier plan of one hour was written for a shorter workbook.) If it is running long, cut the **Warm-Up, Draw It and the Puzzle**. **Never cut Build It Part 4 (the log), Build It Part 5, or Think Deeper T2** — they are the same question, and it is the graded one.
 
 ---
 
 ## 🔑 Answer Key
 
-Every line of code below was run on Python 3.10 with pandas 1.5.3, and every output block is copied from the real run.
+Every line of code below was run on Python 3.10 with pandas 1.5.3, and every output block is copied from the real run. Item labels (W1, P1, A3, B2, T1 …) are the workbook's own; the workbook ends with its own Answers section, and this key agrees with it value for value.
+
 
 ### The homework file
 
@@ -1662,41 +1663,31 @@ Loaded with `pd.read_csv("reading_raw.csv")`, it looks like this:
 11    Kai Brown         13  fantasy     380     45.0       5
 ```
 
-### Page 23.1 — Warm-Up: name the four
+### Warm-Up — W1 to W5 (last week's material)
 
-| # | The problem | How you spot it | The named fix |
-|---|---|---|---|
-| 1 | A hole — nobody filled the cell in | `df.isna().sum()` is not zero | `fillna(value)` or `dropna()` |
-| 2 | Text pretending to be numbers | `df.info()` says `object` where a number belongs | `to_numeric(errors="coerce")` then `astype` |
-| 3 | The same row twice | `df.duplicated().sum()` is not zero | `drop_duplicates()` |
-| 4 | Several spellings of one thing | `df["col"].value_counts()` shows `Blue`, `blue`, `BLUE` | `.str.strip().str.title()` |
+| # | Answer |
+|---|---|
+| **W1** | The **row labels would have to stop matching the positions.** Any one of three things does it: a custom `index`, **filtering**, or **sorting** into a named copy. On a table pandas numbered itself every label equals its position, so `loc` and `iloc` agree on every row and nothing is being tested. |
+| **W2** | **Something else** — the original labels of the surviving rows, for example `2, 5, 9`. Filtering **keeps** the labels; it does not renumber. That lets you trace a survivor back to the raw data, and it is why `iloc[0]` and `loc[0]` mean different things on a filtered table (`loc[0]` may not exist at all). |
+| **W3** | **Twelve things, and they are True/False answers**, one per row, labels still attached, with `dtype: bool` at the bottom. **Not rows** — the rows appear only when you wrap it in `df[ ... ]`. |
+| **W4** | **No.** `sort_values` hands back a sorted **copy** and throws it away if nothing catches it. One-line proof: `print(df)` straight afterwards shows the original order. To keep it: `by_rating = df.sort_values("rating")`. |
+| **W5** | It is the **row's label** — your **receipt**, telling you *which* row you actually got. It catches a `loc`/`iloc` mix-up in four seconds. |
 
-Accept any sensible wording for the problems. **The names are the graded part.** Numbers 3 and 4 are named this week and fixed next week — a student who writes "next week" in the fix column has understood the plan and should get the mark.
+**Marking.** These are recall from Week 22 and should be quick. W1 is the one most often half-answered: "the index" without naming *how* it stops matching is half marks. W4 echoes this week's silent-bug theme (a copy that nobody catches) — point at that after marking it.
 
-### Page 23.2 — Predict the Output
+### Predict the Output — P1 to P4
 
-| # | The code | The real output | The point |
-|---|---|---|---|
-| 1 | `print(raw.shape)` | `(12, 6)` | Twelve rows, six columns. |
-| 2 | `print(raw["age"].head(4))` | see below | The dtype line is the answer: `object`. |
-| 3 | `print(raw.isna().sum())` | see below | **One** missing — minutes. Age reports **zero**. |
-| 4 | `print(raw.duplicated().sum())` | `1` | Ben Osei, rows 1 and 8. |
-| 5 | `print(raw["genre"].nunique())` | `10` | Ten spellings of three genres. |
-| 6 | `print(raw["age"].astype(int))` | `ValueError` | `invalid literal for int() with base 10: 'not given'` |
+All four use `raw = pd.read_csv("reading_raw.csv")`.
 
-Item 2:
+**P1 — the count that is right and useless.** Real output:
 
 ```text
+(12, 6)
 0           12
 1           13
 2    not given
 3           12
 Name: age, dtype: object
-```
-
-Item 3 — and this is the one worth arguing about, because most students predict `age 3`:
-
-```text
 name       0
 age        0
 genre      0
@@ -1706,9 +1697,53 @@ rating     0
 dtype: int64
 ```
 
-### Page 23.3 — Practice Set A: Read It
+The table actually does not know **3** ages. `isna()` reported **0**. Both are correct: `isna()` asks "is this cell empty?", and a cell holding the words `not given` is not empty. The tell is `dtype: object` on the line above — a column of ages has no business being writing. **This is the item worth arguing about, because most students predict `age 3`.** That is why `info()` is run as well as `isna()`.
 
-The `info()` printout given in the workbook:
+**P2 — a hole is not a zero.** Real output:
+
+```text
+336.6666666666667
+252.5
+3 4
+```
+
+Line 1 divides by **three** (1010 ÷ 3) — pandas stepped over the hole silently. Line 2 divides by **four** (1010 ÷ 4) — filling with 0 invented a reader who read nothing. About **84** pages apart from four numbers. `count()` counts cells with something in them (3); `len()` counts all cells (4). That gap is the whole of `NaN`.
+
+**P3 — the repair that never happened.** Real output:
+
+```text
+1
+0
+```
+
+**No error on line 2, and the hole was still there.** `fillna` returns a repaired copy and line 2 threw it away. The one difference between line 2 and line 4 is `clean["minutes"] = ` on the front. It is the most dangerous bug so far because **nothing tells you**: the program runs, the log claims a repair, and every later average divides by the wrong number.
+
+**P4 — the number that goes UP.** Real output:
+
+```text
+before: 0 object
+after : 3 float64
+```
+
+**No, the repair did not break the file.** The repair did not make the holes; it made them **visible** — they were hiding inside the words `not given`. `float64`, not `int64`, because a hole cannot live in a whole-number column; `astype(int)` comes only after the fill.
+
+**Marking.** The "how many of four right" and "which surprised you" lines are self-report; do not mark them. Expect P1 and P4 to be predicted wrong — that is the design, and a wrong prediction that is honestly recorded is full marks.
+
+### Practice Set A — Read It (A1 to A6)
+
+**A1. The four kinds of broken, from memory.**
+
+| # | The problem | How you spot it | The named fix |
+|---|---|---|---|
+| 1 | A hole — nobody filled the cell in | `df.isna().sum()` is not zero | `fillna(value)` or `dropna()` |
+| 2 | Text pretending to be numbers | `df.info()` says `object` where a number belongs | `to_numeric(errors="coerce")` then `astype` |
+| 3 | The same row twice | `df.duplicated().sum()` is not zero | `drop_duplicates()` — next week |
+| 4 | Several spellings of one thing | `df["col"].value_counts()` shows `Blue`, `blue`, `BLUE` | `.str.strip().str.title()` — next week |
+
+Accept any sensible wording for the problems. **The names are the graded part.** **A1(e):** **1 and 2.** Numbers 3 and 4 are named this week and fixed next week; a student who writes "next week" in the fix column has understood the plan and should get the mark.
+
+**A2. Read the health report.** The `info()` printout given in the workbook:
+
 
 ```text
 <class 'pandas.core.frame.DataFrame'>
@@ -1726,16 +1761,118 @@ dtypes: float64(1), int64(2), object(3)
 memory usage: 704.0+ bytes
 ```
 
-1. **"How many rows?"** — 12. `RangeIndex: 12 entries, 0 to 11`.
-2. **"Which column has a hole in it, and how many?"** — `minutes`, one hole. 11 non-null out of 12.
-3. **"Which column is writing when it should be numbers, and how can you tell?"** — `age`. Its dtype says `object`, and ages are numbers.
-4. **"What is blocking it?"** — three rows say `not given`, and one word forces the whole column to be writing.
-5. **"Why is `minutes` `float64` when every minute count is a whole number?"** — because it has a hole in it, and a hole cannot live in a whole-number column. Pandas has to use decimals, where `NaN` is allowed.
-6. **"Why does `name` say `object`, and is that a problem?"** — names *are* writing, so `object` is exactly right there. **`object` is only a problem when you expected numbers.** This question catches the student who has learnt "object is bad" instead of the actual idea.
+- **(a)** 12 rows — the line `RangeIndex: 12 entries, 0 to 11`.
+- **(b)** `minutes`, one hole: 11 non-null out of 12.
+- **(c)** `age`. Its dtype says `object`, and ages are numbers.
+- **(d)** Three rows say `not given`, and one word forces the whole column to be writing. Nine good numbers do not save it.
+- **(e)** Because it has a hole in it, and a hole cannot live in a whole-number column. Pandas has to use decimals, where `NaN` is allowed. Fill the hole and `astype(int)` and the decimals go away.
+- **(f)** **No.** Names *are* writing, so `object` is exactly right for `name`. **`object` is only a problem where you expected numbers.** This catches the student who has learnt "object is bad" instead of the actual idea.
 
-### Page 23.4 — Practice Set B: diagnose and repair
+**A3. Fact or guess?**
 
-Complete working file, run end to end:
+| # | The fill | Answer | Why |
+|---|---|---|---|
+| a | `DNP` → `0` minutes | **Fact** | Did not play means exactly zero minutes on the pitch. Nothing is invented. |
+| b | blank age → median 12 | **Guess** | Nobody knows that person's age; 12 is a reasonable stand-in, still a stand-in. |
+| c | blank `minutes` → `0` | **Guess, and a bad one** | Zero claims they read for no time; if they read 150 pages that is false. |
+| d | `absent` → class median | **Guess** | They did not sit the test; inventing a mark changes the class average. |
+| e | blank `pages` → `0` for a 5-star rating | **Guess, and an obviously wrong one** | Nobody gives five stars to a book they read none of. |
+
+**A3(f).** **(e), and (c) very nearly** — both use 0 to mean "we don't know" and both make a claim the rest of the row contradicts. The honest options are to fill with the median **and log it**, or to leave the hole and let pandas step over it while **printing the count beside any average that touches it**.
+
+**A4. Spot the bug.**
+
+| # | The line | The fix |
+|---|---|---|
+| a | `astype(int)` with `not given` still in it | `pd.to_numeric(..., errors="coerce")`, then `fillna`, **then** `astype(int)`. Error: `ValueError: invalid literal for int() with base 10: 'not given'` |
+| b | `pd.to_numeric(clean["age"])` | Add `errors="coerce"`, or it stops dead at the first word: `ValueError: Unable to parse string "not given" at position 2` |
+| c | `clean["minutes"].fillna(45)` | `clean["minutes"] = clean["minutes"].fillna(45)`. No error without it, and no repair either |
+| d | `raw.isnull_sum()` | It is **two** commands: `raw.isna().sum()` (`raw.isnull().sum()` is the same command under another name) |
+| e | `.fillna()` with empty brackets | Fill with **what**? `fillna(45)` or `fillna(clean["minutes"].median())`. `ValueError: Must specify a fill 'value' or 'method'.` |
+| f | `to_csv("reading_clean.csv")` | Add `index=False`, or reading it back shows a mystery column called `Unnamed: 0` |
+| g | `pd.read_csv("reading.csv")` | The file is `reading_raw.csv`; run `ls` and read the real name |
+| h | `fillna("not given").astype(int)` | Fill a numeric column with a **number**. Filling with the word that caused the problem puts you back where you started |
+
+**A5. Label the diagram.**
+
+| Box | Phrase |
+|---|---|
+| **A** | how many rows the table has |
+| **B** | `object`, and this one is CORRECT — names are writing |
+| **C** | `object` where a number belongs — a word is blocking it |
+| **D** | `float64` because there is a hole in the column |
+| **E** | one cell is empty: 11 filled out of 12 |
+
+**A5(f).** **B is fine.** The column is `name`, and names are writing. The test is not "does it say object" but **"did I expect a number here?"**
+
+**A6. Read the traceback.** Read the **last** line first: it names the kind of error and the exact thing that broke. "Invalid literal for int()" means "I tried to turn a piece of writing into a whole number, and this piece is not one." The culprit is in quotes at the very end: `'not given'`. It is a *kind* message because it **names the culprit** — most errors only say that something failed. The three steps of the fix, in order:
+
+1. `clean["age"] = pd.to_numeric(clean["age"], errors="coerce")` — words become countable holes
+2. `clean["age"] = clean["age"].fillna(12)` — deal with the holes (or `dropna`)
+3. `clean["age"] = clean["age"].astype(int)` — **now** the type change is safe
+
+**Marking.** Step order in A6 is the graded part: a student who writes `astype` before `fillna` has the Bug 2 misconception again.
+
+### Practice Set B — Write It (B1 to B5)
+
+**B1.**
+
+```python
+print(raw.isna().sum())
+```
+
+Output: the six-row column count shown under P1 (`minutes 1`, everything else 0, then `dtype: int64`). `isna()` asks every cell "are you empty?" and returns a table of True/False; `.sum()` adds each column, and `True` counts as 1.
+
+**B2.**
+
+```python
+clean = raw.copy()
+clean["age"] = pd.to_numeric(clean["age"], errors="coerce")
+print(clean["age"].isna().sum())
+print(clean["age"].dtype)
+```
+
+```text
+3
+float64
+```
+
+The count went **up** from 0 to 3, and that is a success: the repair made three hidden holes visible. (The workbook's template shows three comment lines; the copy line is the third, so accept either layout.)
+
+**B3.**
+
+```python
+print(clean[clean["age"].isna()][["name", "genre", "pages", "rating"]])
+```
+
+```text
+         name     genre  pages  rating
+2   Cara Diaz     SCIFI    150       3
+5  Fay Turner   Mystery    120       2
+9  Ira Volkov     scifi    200       3
+```
+
+Week 22's boolean filter with a new question inside. Marks are for **noticing** that these three read 150, 120 and 200 pages — three of the four lowest in the table — with ratings 3, 2, 3. This is the seed of the Puzzle and of Think Deeper T2.
+
+**B4.**
+
+```python
+print("holes before:", clean["minutes"].isna().sum())
+print("median      :", clean["minutes"].median())
+clean["minutes"] = clean["minutes"].fillna(clean["minutes"].median())
+print("holes after :", clean["minutes"].isna().sum())
+```
+
+```text
+holes before: 1
+median      : 45.0
+holes after : 0
+```
+
+The count printed **after** the repair is the point — it is the four-second habit that catches the missing-`=` bug. "It looks right" is not proof.
+
+**B5. The whole program.** Complete working file, run end to end:
+
 
 ```python
 # repair_reading.py - Week 23 homework. Diagnose, repair two, log everything.
@@ -1857,7 +1994,7 @@ dtype: object
 
 **Marking notes.** `minutes` may be left as `float64` — that is a defensible choice and needs a log line saying so. `age` **must** end up `int64`. A student who filled `minutes` with `0` instead of `45` has made an error worth talking about, not just marking wrong: Cara Diaz read 150 pages, so she cannot have read for zero minutes.
 
-### Page 23.5 — Fix the Broken Program
+### Fix the Broken Program — Bugs 1 to 4
 
 The broken file as printed in the workbook:
 
@@ -1889,6 +2026,11 @@ Fix: `pd.to_numeric(clean["age"], errors="coerce")`.
 
 **Bug 4 — the silent one, and the one to praise loudly if they find it.** No error at all. `fillna` returned a repaired copy and nothing caught it, so `minutes` still has its hole and the printed count still says 1. Fix: `clean["minutes"] = clean["minutes"].fillna(45)`.
 
+**In plain words, per bug (the workbook asks for each):** Bug 1 — "there is no file by that name where I am standing"; the one command is `ls` (macOS/Linux) or `dir` (Windows). Bug 2 — the culprit is the quoted `'not given'` at the end, and the two faults are *what it tried to do* (`astype` cannot get past a word) and *where it sits* (before the `to_numeric` line); even in the right order, `astype` before `fillna` would hit `IntCastingNaNError`. Bug 3 — `errors="coerce"` is missing; "coerce" means *force it*, i.e. "anything you cannot turn into a number, turn into a hole instead of crashing"; `at position 2` is the row where it gave up (Cara Diaz). Bug 4 — the student asked for the hole to be filled and the printout still says `minutes 1`.
+
+**Most dangerous: Bug 4**, because bugs 1–3 stopped the program and named the problem, while Bug 4 ran perfectly and did not do what it said. **The four-second habit:** after every `fillna`, `to_numeric` or `astype`, print `df.isna().sum()` — the count, not "does it look right" — and ask "is there an `=` on the left?"
+
+
 The corrected middle of the file — note the `print` at the end, which is how you prove the repairs actually landed:
 
 ```python
@@ -1908,61 +2050,7 @@ rating     0
 dtype: int64
 ```
 
-### Page 23.6 — Build It: the cleaning log
-
-**Model answer, full marks.** Six entries, each with a reason. Wording will vary; the WHY column is what is being marked.
-
-```text
-CLEANING LOG - reading_raw.csv, 12 rows, 6 columns
---------------------------------------------------------------------------
- #  WHAT I DID                          WHY I DID IT
---------------------------------------------------------------------------
- 1  Worked on a copy called clean;       If a repair turns out to be wrong I
-    never touched reading_raw.csv        need to be able to start again.
-
- 2  Turned age from writing into         info() said age was object. Three rows
-    numbers with to_numeric             said "not given", and one word makes the
-    (errors="coerce")                   whole column writing, which blocked
-                                        astype(int). This made 3 hidden holes
-                                        countable - it did not create them.
-
- 3  Filled 3 missing ages with 12        12 is the median of the 9 ages I know.
-                                        The median isn't dragged about by one
-                                        wrong value the way the mean is.
-                                        WARNING: those 3 ages are guesses now.
-
- 4  astype(int) on age                   Nobody is 12.0 years old. Also proves
-                                        the holes really are gone - it would
-                                        have crashed otherwise.
-
- 5  Filled 1 missing minutes with 45     45 is the median of the 11 I know.
-                                        I did NOT use 0: Cara read 150 pages,
-                                        so she cannot have read for 0 minutes.
-
- 6  Found 1 duplicate row (Ben Osei,     No tool for it until next week. Flagged
-    twice, every field identical)        here so it isn't forgotten. Every single
-    - NOT removed                       field matching means a typing slip, not
-                                        two people with the same name.
-
- 7  Found 10 spellings of 3 genres       Next week's job.
-    (fantasy/Fantasy/"fantasy ",
-    scifi/SCIFI/"scifi ",
-    mystery/Mystery/MYSTERY/" Mystery")
-    - NOT fixed
---------------------------------------------------------------------------
-```
-
-**Marking.** Entries 2, 3 and 5 are where the marks are. Entry 3 must mention that the ages are now guesses. Entry 5 must say **why 45 and not 0** — that is the entry that shows the student understood `NaN` is not zero. Entries 6 and 7 earn credit for recording something found and deliberately not fixed.
-
-**Three real partial answers, and what to say to each:**
-
-| What they wrote | What is missing | Say this |
-|---|---|---|
-| *"3. Filled the ages."* | Filled with what? Why that? | "Filled with **what**? And why that number rather than any other?" |
-| *"3. Filled 3 ages with 12 because 12 is the median."* | The consequence. Good WHAT, half a WHY. | "Good. Now one more line: what does somebody reading your report need to be careful about because of this?" |
-| *"5. Filled minutes with 0."* | This one is wrong, not just thin. | Don't just mark it. Ask: "Cara read 150 pages. How long did that take her?" Then: "so what did filling 0 claim about her?" |
-
-### Page 23.7 — Puzzle of the Week
+### Puzzle of the Week — (a) to (g)
 
 > *"Fill the three missing ages with 12. Then answer: what is the average number of pages read by the 12-year-olds? Now do it again, dropping those three rows instead. Why did the answer move so much?"*
 
@@ -1992,21 +2080,32 @@ filled : 7 readers, 244.29 pages
 dropped: 4 readers, 310.0 pages
 ```
 
-**Filled: 7 readers, average 244.29 pages. Dropped: 4 readers, average 310.0 pages. A gap of 65.71 pages.**
+**(a)** Prediction: most students say "close". They are not — the gap is 65.71 pages. Mark the prediction as honest, not right.
 
-**Hand-check.** Filled: 320 + 280 + 300 + 340 + 150 + 120 + 200 = **1710**, and 1710 ÷ 7 = **244.29**. Dropped: 320 + 280 + 300 + 340 = **1240**, and 1240 ÷ 4 = **310.0**.
+| | How many readers? | Average pages |
+|---|---|---|
+| filled with the median 12 | **7** | **244.29** |
+| dropped those three rows | **4** | **310.0** |
 
-**Why it moved so much:** the three readers whose ages are unknown read **150, 120 and 200 pages** — three of the four lowest counts in the whole table (only Hana Ito's 90 is lower). Filling their age with 12 dropped all three of them into the 12-year-old group and pulled its average down by 66 pages.
+**(c)** **65.71 pages apart** (about 66).
 
-**And the rule it proves, which is the point of the puzzle:** *never fill a column with a guess and then make that column the subject of your question.* We guessed at `age` and then grouped by `age`.
+**(d) Dropped, by hand.** The four known 12-year-olds: Anya 320, Dara 280, Gus 300, Jun 340. 320 + 280 + 300 + 340 = **1240**, and 1240 ÷ 4 = **310.0**.
 
-### Page 23.8 — Think Deeper
+**(e) Filled, by hand.** The same four plus Cara 150, Fay 120, Ira 200: 1240 + 470 = **1710**, and 1710 ÷ 7 = **244.29**.
 
-**1. "`isna()` said zero missing ages when three ages were unknown. Is pandas wrong?"**
+**(f) Why it moved so much:** the three readers whose ages are unknown read **150, 120 and 200 pages** — three of the four lowest counts in the whole table (only Hana Ito's 90 is lower). Filling their age with 12 dropped all three into the 12-year-old group and pulled its average down by 66 pages. They are not a random three: their ratings (3, 2, 3) are also among the lowest, and Cara is also missing a minutes figure.
+
+**(g) The rule:** *never fill a column with a guess and then make that column the subject of your question.* We guessed at `age` and then grouped by `age`.
+
+### Think Deeper — T1 to T3
+
+**T1. "`isna()` said zero missing ages when three ages were unknown. Is pandas wrong?"**
 
 No. There is something in those cells — the words `not given`. `isna()` asks "is this cell empty?" and the honest answer is no. Pandas answered exactly the question it was asked. **The mistake was ours: we asked "how many empty cells" when we meant "how many ages don't we know".** Those are different questions, and the way you catch the difference is to run `info()` as well, and notice `object` where a number belongs.
 
-**2. "Whose ages were missing, and why might that matter?"** *(This is the graded question of the homework.)*
+**Marking T1.** Full marks needs (1) the exact question `isna()` asks, (2) whose mistake it was, stated as two different questions, and (3) `info()` plus **what specifically** to look for in it (`object` where a number belongs). "Run `info()` too" alone is half marks.
+
+**T2. "Whose ages were missing, and why might that matter?"** *(This is the graded question of the homework.)*
 
 ```text
          name     genre  pages  rating
@@ -2024,13 +2123,101 @@ Why that matters, and a full-mark answer says at least one of these:
 - Any question **about age** is now partly a question about **who forgot to fill in a form**, which is not what anybody wanted to measure.
 - The general principle: **missing data is often not random.** Ask who is missing before you decide what to do about it. If you fill in the gaps without looking at whose gaps they are, you can invent a pattern that was never there.
 
-**3. "Should the cleaning log travel with the results, or is it just working-out?"**
+**Marking T2.** The three names alone are half marks. Full marks needs (1) the observation that they are the *lightest readers*, not a random three, and (2) the consequence for a question about age. The general principle about missingness not being random is a bonus — praise it loudly.
+
+**T3. "Should the cleaning log travel with the results, or is it just working-out?"**
 
 **It must travel with the results.** A number and its log are one object, and separating them is how misleading claims get made without anybody lying. Reporting "the 12-year-olds read 244 pages on average" without the log hides that three of those seven twelve-year-olds are only twelve **because we said so**. The strongest answers notice that this is exactly why scientific papers have a methods section, and that "I did the cleaning, trust me" is not a methods section.
 
-### Page 23.9 — Draw It
+**Marking T3.** The strongest answers name the *three different worlds behind one number*. Recognising the methods-section parallel, or the show-your-working parallel from maths, is full marks.
+
+### Build It — The Cleaning Log (Parts 1 to 6)
+
+**Part 1 — the diagnosis, filled in.**
+
+| What I checked | The command | The number |
+|---|---|---|
+| rows and columns | `raw.shape` | **(12, 6)** |
+| the same row twice | `raw.duplicated().sum()` | **1** (Ben Osei, rows 1 and 8) |
+| spellings of genre | `raw["genre"].nunique()` | **10** — for three genres |
+| holes, per column | `raw.isna().sum()` | **`minutes` 1**, everything else 0 |
+| writing where numbers belong | `raw.info()` | **`age` is `object`** |
+
+Both tick-boxes are honesty checks: the student ran `info()` **and** `isna()` and knows why both were needed (P1), and opened the CSV as plain text to see `SCIFI,150,,3`.
+
+**Part 2 — who is missing.** Cara Diaz (row 2, 150 pages, rating 3), Fay Turner (row 5, 120, 2), Ira Volkov (row 9, 200, 3). In common: **three of the four lightest readers in the table**, with the lowest ratings bar Hana Ito's 3 — see T2. This must be done **before** choosing fill or drop.
+
+**Part 3 — the repairs.** `age` filled with **12** (median of the nine known), then `astype(int)`, count after **0**; `minutes` filled with **45** (median of the eleven known, **not 0**), count after **0**; `reading_clean.csv` saved with `index=False` and `age` reads back as **`int64`**. A student who left `minutes` as `float64` should have said so in the log (see the Marking notes under B5).
+
+| Repair | What I filled with | The count after |
+|---|---|---|
+| `age` | 12 | 0 |
+| `minutes` | 45 | 0 |
+
+**Part 4 — the log. This is the bit being marked.** Model answer, full marks. Seven entries, each with a reason. Wording will vary; the WHY column is what is being marked.
+
+
+```text
+CLEANING LOG - reading_raw.csv, 12 rows, 6 columns
+--------------------------------------------------------------------------
+ #  WHAT I DID                          WHY I DID IT
+--------------------------------------------------------------------------
+ 1  Worked on a copy called clean;       If a repair turns out to be wrong I
+    never touched reading_raw.csv        need to be able to start again.
+
+ 2  Turned age from writing into         info() said age was object. Three rows
+    numbers with to_numeric             said "not given", and one word makes the
+    (errors="coerce")                   whole column writing, which blocked
+                                        astype(int). This made 3 hidden holes
+                                        countable - it did not create them.
+
+ 3  Filled 3 missing ages with 12        12 is the median of the 9 ages I know.
+                                        The median isn't dragged about by one
+                                        wrong value the way the mean is.
+                                        WARNING: those 3 ages are guesses now.
+                                        Do not use this column to answer
+                                        questions about age.
+
+ 4  astype(int) on age                   Nobody is 12.0 years old. Also proves
+                                        the holes really are gone - it would
+                                        have crashed otherwise.
+
+ 5  Filled 1 missing minutes with 45     45 is the median of the 11 I know.
+                                        I did NOT use 0: Cara read 150 pages,
+                                        so she cannot have read for 0 minutes.
+
+ 6  Found 1 duplicate row (Ben Osei,     No tool for it until next week. Flagged
+    twice, every field identical)        here so it isn't forgotten. Every single
+    - NOT removed                       field matching means a typing slip, not
+                                        two people with the same name.
+
+ 7  Found 10 spellings of 3 genres       Next week's job.
+    (fantasy/Fantasy/"fantasy ",
+    scifi/SCIFI/"scifi ",
+    mystery/Mystery/MYSTERY/" Mystery")
+    - NOT fixed
+--------------------------------------------------------------------------
+```
+
+**Marking.** Entries 2, 3 and 5 are where the marks are. Entry 3 must mention that the ages are now guesses. Entry 5 must say **why 45 and not 0** — that is the entry that shows the student understood `NaN` is not zero. Entries 6 and 7 earn credit for recording something found and deliberately not fixed.
+The workbook requires **at least two** *found, not fixed* lines; entries 6 and 7 are those two.
+
+**Three real partial answers, and what to say to each:**
+
+| What they wrote | What is missing | Say this |
+|---|---|---|
+| *"3. Filled the ages."* | Filled with what? Why that? | "Filled with **what**? And why that number rather than any other?" |
+| *"3. Filled 3 ages with 12 because 12 is the median."* | The consequence. Good WHAT, half a WHY. | "Good. Now one more line: what does somebody reading your report need to be careful about because of this?" |
+| *"5. Filled minutes with 0."* | This one is wrong, not just thin. | Don't just mark it. Ask: "Cara read 150 pages. How long did that take her?" Then: "so what did filling 0 claim about her?" |
+
+**Part 5 — the sentence at the bottom.** See Think Deeper T2. The three names plus **"they are among the lightest readers in the table, so filling their age moves the whole 12-year-old group"** is a full-mark answer.
+
+**Part 6 — the Bug Log.** No single right answer; each row needs all four columns. The strong entry for this week is the silent one: *what happened* "hole still there after `fillna`" · *error message?* **none** · *what fixed it* `clean["minutes"] = ...` · *check next time* "print `isna().sum()` after every repair; look for the `=`". A second good row is the missing `errors="coerce"`.
+
+### Draw It
 
 The student draws one column, six cells, twice.
+
 
 **Before:** the six cells hold `12`, `13`, `not given`, `12`, `13`, `11`. Labels required: a badge on the column reading **`object`**, an arrow to the `not given` cell reading **"one word makes the whole column writing"**, and a note reading **"holes found: 0"**.
 
@@ -2038,16 +2225,31 @@ The student draws one column, six cells, twice.
 
 Full marks needs three things: the badge changing from `object` to `float64`, the hole count going **up**, and the `NaN` cell drawn as **empty** rather than as a zero. Compare with Figure 23.3 in this chapter.
 
-### Page 23.10 — Self-Check
+The three bottom boxes in the workbook's sample answer: **"the `not given` cell"** · **"UP, from 0 to 1"** · *"the repair didn't make the hole — it made it visible, so I can count it and argue about it"*. A strong extra annotation: an arrow to the `float64` badge saying "not `int64`, because a hole can't live in a whole-number column — that comes after the fill". **The tell that it is wrong:** a `0` drawn in the hole, or the count going down.
 
-| # | Statement | Tick or cross | Why |
+### Self-Check
+
+The first table (eight "I can…" rows with 😀 / 🙂 / 😕) is self-assessment and has no key. Use it as a conversation: any 😕 on "Explain why a missing count went **up** after a repair" or "Compute both fill and drop, and defend the one I chose" means re-teach that item next week before moving on.
+
+The twelve true-or-false statements:
+
+| # | Statement | Answer | Why |
 |---|---|---|---|
-| 1 | "`NaN` and `0` mean the same thing." | ✗ | `0` means we asked and the answer was none. `NaN` means nobody told us. On four numbers the difference was 4.33 against 3.25. |
-| 2 | "If `isna().sum()` says 0, the column has no missing data." | ✗ | It has no **empty cells**. It may be full of words meaning "empty", like `not given`. Check `info()` too. |
-| 3 | "`object` in `info()` always means something is wrong." | ✗ | `name` is `object` and that is correct — names are writing. `object` is only a problem where you expected numbers. |
-| 4 | "You must deal with the holes before you can use `astype(int)`." | ✓ | A hole is not a whole number, and pandas refuses with `IntCastingNaNError`. |
-| 5 | "`df["age"].fillna(13)` on its own repairs the column." | ✗ | It hands you a repaired **copy**. Without `df["age"] = ` on the front, nothing changes and nothing warns you. |
-| 6 | "A cleaning log entry needs the reason, not just what you did." | ✓ | Without the reason, nobody — including you, in six weeks — can tell whether the number came from the world or from a repair. |
+| 1 | "`NaN` and `0` mean the same thing." | FALSE | `0` means we asked and the answer was none. `NaN` means nobody told us. On four numbers: 336.67 against 252.5. |
+| 2 | "If `isna().sum()` says 0, the column has no missing data." | FALSE | It has no **empty cells**. It may be full of words meaning "empty", like `not given`. Check `info()` too. |
+| 3 | "`object` in `info()` always means something is wrong." | FALSE | `name` is `object` and that is correct. `object` is only a problem where you expected numbers. |
+| 4 | "You must deal with the holes before you can use `astype(int)`." | TRUE | A hole is not a whole number, and pandas refuses with `IntCastingNaNError`. |
+| 5 | "`df["age"].fillna(13)` on its own repairs the column." | FALSE | It hands you a repaired **copy**. Without `df["age"] = ` on the front, nothing changes and nothing warns you. |
+| 6 | "A cleaning log entry needs the reason, not just what you did." | TRUE | Without the reason, nobody — including you, in six weeks — can tell whether the number came from the world or from a repair. |
+| 7 | "One word in a column of numbers makes the whole column writing." | TRUE | A column has to be one kind of thing all the way down. |
+| 8 | "`to_numeric` without `errors="coerce"` still works on `not given`." | FALSE | `ValueError: Unable to parse string "not given" at position 2`. Coerce turns it into a hole instead of a crash. |
+| 9 | "Filling is the safe option because you keep all your rows." | FALSE | Filling **invents facts**; dropping does not. Neither is safe — they are unsafe in different directions. |
+| 10 | "A missing count going up after a repair means the repair failed." | FALSE | It means the repair **worked**. The holes were always there, hiding in a word. |
+| 11 | "`to_csv("out.csv")` writes exactly the columns you can see." | FALSE | It also writes the row labels, as a mystery column called `Unnamed: 0`. Use `index=False`. |
+| 12 | "The mean is a safer thing to fill a hole with than the median." | FALSE | The mean is dragged about by one silly value; the median does not move. A mean also gives ages like 12.33, and nobody is 12.33 years old. |
+
+**A note on row 12 for the teacher.** The workbook's own answer quotes "13.111…" and "an age typed as 130 sends it to nearly 25". Those are the **chess-club** numbers from the lesson, not the reading log. On the reading log the mean of the nine known ages is **12.33** (111 ÷ 9) and the median is **12**. The verdict (FALSE) and the reasoning are unaffected; if the student quotes 13.111 they are remembering the lesson, not making an error.
+
 
 ### Answers to every question posed in the lesson
 

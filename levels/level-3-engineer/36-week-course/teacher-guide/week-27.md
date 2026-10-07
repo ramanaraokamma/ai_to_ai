@@ -15,7 +15,7 @@
 | **New maths** | **None.** Counting, subtracting two accuracies, and reading a grid. This week practises Weeks 8, 22, 25 and 26. |
 | **New syntax** | `np.roll(img, shift, axis=0)` · `p.requires_grad = False` · `ConfusionMatrixDisplay.from_predictions(y, pred)` · `torch.cat([a, b])` |
 | **Dataset** | `load_digits()` — 1,797 8×8 digits — **plus numpy-shifted copies of it.** Augmentation and transfer learning entirely offline. **Nothing downloads. No internet needed. No torchvision.** |
-| **Materials** | Printed workbook pages 27.1–27.7 · **a big two-column sheet headed FROZEN / UNFROZEN** · the **PARAMETER COUNT** sheet from Week 22 and **THE SHAPE LADDER** from Week 25 (both come down at the end of today) · **six Term 3 showcase station cards, printed** · squared paper · the Bug Log · Week 26's `digits_cnn.py` on disk |
+| **Materials** | The printed workbook (`workbook/week-27.md`; it has no page numbers, see Homework) · **a plain sheet of lined paper for the six showcase lines** · **a big two-column sheet headed FROZEN / UNFROZEN** · the **PARAMETER COUNT** sheet from Week 22 and **THE SHAPE LADDER** from Week 25 (both come down at the end of today) · **six Term 3 showcase station cards, printed** · squared paper · the Bug Log · Week 26's `digits_cnn.py` on disk |
 | **Tech needed** | Laptop with Python 3, numpy, scikit-learn, matplotlib, **torch**. **No new installs.** |
 | **Prep time** | 30 minutes the night before · 10 minutes on the day (setting up six stations) |
 | **Expected runtime of the code** | `see_it.py` trains **six** networks. The augmented ones are the slow pair at **about 15 seconds each**; the whole file is **about 40 seconds** on this machine. **Time yours before you say a number.** |
@@ -651,7 +651,8 @@ trained on the WRONG axis: train 0.5968  test 0.8574
 **Look at those two numbers and say the alarm out loud: the test accuracy is higher than the training accuracy.** That is impossible for an honest model, and it means the training labels are wrong. This is deliberate mistake one.
 
 - [ ] **Do the confusion-matrix addition check yourself.** The diagonal sums to 529, the off-diagonal to 11, 529 + 11 = 540. **One minute, and it is the check you make the class do.**
-- [ ] **Print workbook pages 27.1–27.7.**
+- [ ] **Print the workbook** (`workbook/week-27.md`, one copy). It has sections, not numbered pages; the ones you use in class are Build It (checklist step 1, the predictions) and Practice Set A, item A2.
+- [ ] **Have a plain sheet of lined paper ready for the six showcase lines**, one per station.
 - [ ] **Put up the FROZEN / UNFROZEN sheet:** two columns, three blank rows each (`movable weights`, `seconds`, `test accuracy`). It gets filled in live in the activity.
 - [ ] **Print the six Term 3 showcase station cards.** One card each, and each card has two things on it and nothing else: **what you show** and **the one number you say out loud.** The six are in the Activity section. **Ten minutes to print and lay out, and it is the difference between a showcase and a shuffle.**
 - [ ] **Check both wall sheets from earlier weeks are still up** — PARAMETER COUNT from Week 22, THE SHAPE LADDER from Week 25. **You take them both down at the end of today**, and doing it deliberately, in front of the class, is a small ceremony worth having.
@@ -663,7 +664,7 @@ trained on the WRONG axis: train 0.5968  test 0.8574
 - [ ] Editor open, terminal ready. `see_it.py` **partly** given: hand them the `make_cnn`, `train`, `acc` and `report` helper functions complete, because they wrote all four of those in Weeks 23 and 26 and retyping them costs eight minutes today. **They type the augmentation and the freezing themselves** — those are the new lines.
 - [ ] FROZEN / UNFROZEN sheet on the wall, blank.
 - [ ] PARAMETER COUNT and THE SHAPE LADDER both still up.
-- [ ] Workbook 27.2 out. **The augmentation prediction filled in, in pen, before anything runs.**
+- [ ] Workbook open at Build It, checklist step 1. **The three predictions written on paper, in pen, before anything runs.**
 - [ ] Bug Log out. **It is the last week of the term and it should be thick by now — you point at it once.**
 
 ### Fallback if the laptops fail
@@ -871,7 +872,7 @@ what would training from scratch on the 5-to-9 rows have given?
 
 > "**If you do not measure that, you cannot claim anything.** If the frozen version gets 92% and you have nothing to compare it to, 92% is a number, not a result. **That third run is called a control and it is not optional.**"
 
-**Do this:** Hand out page 27.2 — the augmentation prediction, in pen. Four minutes.
+**Do this:** Hand out the workbook's Build It section, checklist step 1 — the three predictions, in pen, on paper. Four minutes.
 
 > "Pen. Three predictions. **Will the wrapped version beat the plain one? Will the blanked version? And which will win out of frozen, fine-tuned, and from scratch?** I want to see what you actually thought."
 
@@ -966,7 +967,7 @@ print("wrap-around augmentation bought %+.2f points" % (100 * (a_wrap - a_plain)
 print("blanked-edge  augmentation bought %+.2f points" % (100 * (a_aug - a_plain)))
 ```
 
-**Do this:** Before running, collect their page 27.2 predictions and write the votes on the board. Then run it. **It takes about half a minute and you should let the silence happen.**
+**Do this:** Before running, collect their written predictions (Build It, step 1) and write the votes on the board. Then run it. **It takes about half a minute and you should let the silence happen.**
 
 ```text
 plain                3.3s  movable 1898  train 0.9881  test 0.9796  (529 of 540)
@@ -1211,7 +1212,7 @@ And the sentence for this week, and for the term:
 
 **Run it with a timer, out loud.** Two minutes, move. **Do not let station 6 run long** — it is the exciting one and it will eat station 1's time if you let it.
 
-**What "finished" looks like:** six stations visited, six numbers said out loud, page 27.1 with one line written per station. **A student who says "I don't remember what Week 20 was" gets one prompt — *"what did `.backward()` do?"* — and then moves on.** The station is not a test.
+**What "finished" looks like:** six stations visited, six numbers said out loud, the showcase sheet with one line written per station. **A student who says "I don't remember what Week 20 was" gets one prompt — *"what did `.backward()` do?"* — and then moves on.** The station is not a test.
 
 ### Part B — The Honest Transfer Learning Experiment (8 minutes)
 
@@ -1220,7 +1221,7 @@ And the sentence for this week, and for the term:
 ### Setup
 
 - The FROZEN / UNFROZEN wall sheet: two columns, three rows (`movable weights`, `seconds`, `test accuracy`). **Add a third column headed FROM SCRATCH before you start** — and let somebody notice you adding it.
-- Workbook page 27.3, the same three-by-three grid.
+- Workbook Practice Set A, item A2, is the paper version of this grid (it has four rows, including conv1 only).
 - `see_it.py` with sections 1 and 2 already run.
 
 ### Step 1 — stage one, and a prediction (2 minutes)
@@ -1339,7 +1340,7 @@ scratch on 5-9       1.5s  movable 1898  train 0.9729  test 0.9814  (264 of 269)
 ### What "finished" looks like
 
 - The FROZEN / UNFROZEN / FROM SCRATCH sheet with all nine numbers on it.
-- Page 27.3 filled in to match.
+- Practice Set A, item A2, filled in to match (the seconds will differ from the wall sheet; that is fine).
 - `80 + 1,168 + 650 = 1,898` written somewhere, and the 650 checked against the print.
 - The student can say, unprompted: *"you need the control."*
 - **Nobody in the room believes transfer learning is magic, and nobody believes it is useless.**
@@ -1354,7 +1355,7 @@ scratch on 5-9       1.5s  movable 1898  train 0.9729  test 0.9814  (264 of 269)
 
 ### Variation — harder
 
-1. **Make the target task genuinely small, and watch transfer win.** Take only **100** of the 627 rows of digits 5–9 and rerun all three. The code and the real numbers are in the Answer Key under page 27.7. **Frozen 0.8848, fine-tuned 0.9257, from scratch 0.9628** — so scratch still wins even at 100 rows, which is itself a finding, and the honest conclusion is that on 8×8 digits a 1,898-weight network barely needs help. **A student who runs it and reports "it still didn't win, and here is how few rows I got down to" has done a better experiment than the lesson did.**
+1. **Make the target task genuinely small, and watch transfer win.** Take only **100** of the 627 rows of digits 5–9 and rerun all three. The code and the real numbers are in the Answer Key under the stretch (not in the workbook). **Frozen 0.8848, fine-tuned 0.9257, from scratch 0.9628** — so scratch still wins even at 100 rows, which is itself a finding, and the honest conclusion is that on 8×8 digits a 1,898-weight network barely needs help. **A student who runs it and reports "it still didn't win, and here is how few rows I got down to" has done a better experiment than the lesson did.**
 2. **Freeze only the first conv layer** instead of both. `frozen[0]` only, so 1,168 + 650 = 1,818 movable. **Predict where the accuracy lands before running: between 0.9257 and 0.9665.** Then check.
 3. **Augment with two-pixel shifts as well**, nine copies instead of five: 1,257 × 9 = 11,313 rows. Predict whether it helps before running. **On an 8×8 digit a two-pixel shift is a quarter of the picture, and it usually hurts.** Finding the point where augmentation turns from help to harm is the real skill.
 4. **Attack the 1/8 pair directly.** Add extra shifted copies of the 1s and 8s only, leaving the other classes alone, and see whether those four mistakes go away. **Then the honest check: did the other digits get worse?** This is the whole class-imbalance conversation in one experiment.
@@ -1594,21 +1595,27 @@ Three checks, five minutes, exact wording.
 
 This section is what to say when you set the homework.
 
+**What the workbook holds.** `workbook/week-27.md` has, in order: ✅ Warm-Up (W1–W5) · 🔢 Do the Maths by Hand (M1–M4) · 🔎 Predict the Output (P1–P4) · ✍️ Practice Set A (A1–A6) · ✍️ Practice Set B (B1–B5) · 🐞 Fix the Broken Program · 🧩 Puzzle of the Week · 🤔 Think Deeper (T1–T2) · 🛠️ Build It · 🎨 Draw It · 📊 Self-Check, with its own ✅ Answers at the very end. **It has no numbered pages.** The showcase circuit sheet and the three-column grid are not workbook pages: the circuit sheet is a plain sheet with six lines, and the grid is Practice Set A, item A2.
+
+**The core, and the part you mark hardest, is 🛠️ Build It.** It is three things: the See It results table, the diagnosis of the worst confusion pair, and the Term 3 reflection.
+
 **Say this:**
 
-> "About an hour, three pages, and the middle one is the one I mark hardest.
+> "About an hour, and the middle part is the one I mark hardest. It is all in the Build It section of the workbook.
 >
-> **First, page 27.4 — the See It results table, four rows.** Plain, augmented, frozen-transfer, fine-tuned. Columns: the held-out pile, the weights trained, the seconds, the test accuracy. **And I want the held-out pile written on every single row** — not in a footnote, not once at the top. On every row. Then one sentence naming **which two comparisons in your table are fair, and which one you must not make.**
+> **First, the See It results table — four rows.** Plain, augmented, frozen-transfer, fine-tuned. Columns: the held-out pile, the weights trained, the seconds, the test accuracy, and the test correct. **And I want the held-out pile written on every single row** — not in a footnote, not once at the top. On every row. Then the two sentences underneath: **which two comparisons in your table are fair, and which one you must not make.** And there is a fifth row the table does not ask for. **Find it and give me its number.**
 >
-> **Second, page 27.5 — diagnose the worst confusion pair, and this is the page I care about.** Find the pair. Say the counts, both directions. **And then explain *physically* why those two digits look alike at eight pixels by eight pixels.** Not 'because they're similar'. Not 'because 4 out of 11'. **What do the two digits actually share when you only have 64 pixels?** Use the ink-per-column numbers if they help. **A page that restates the count in different words scores nothing on this page**, and I will hand it back once.
+> **Second, 'Diagnose the worst confusion pair' — and this is the part I care about.** Find the pair. Say the counts, both directions. **And then explain *physically* why those two digits look alike at eight pixels by eight pixels.** Not 'because they're similar'. Not 'because 4 out of 11'. **What do the two digits actually share when you only have 64 pixels?** Use the ink-per-column numbers if they help. **A diagnosis that restates the count in different words scores nothing**, and I will hand it back once. Then name one fix that addresses the cause and one that only addresses the symptom.
 >
-> **Third, page 27.6 — the Term 3 reflection.** Six lines, one per week from Week 20 to Week 26, and each line has the same shape: **what I can do now that I could not do in Week 19, and one number that proves it.** One number per line. Not 'I learned about convolution'. *'I can work out a conv layer's output size on paper: 8 becomes 8 with padding 1, and 4 without.'*
+> **Third, the Term 3 reflection.** Six lines, one per week from Week 20 to Week 26, and each line has the same shape: **what I can do now that I could not do in Week 19, and one number that proves it.** One number per line. Not 'I learned about convolution'. *'I can work out a conv layer's output size on paper: 8 becomes 8 with padding 1, and 4 without.'*
 >
-> Page 27.7 is a stretch: it makes the target task tiny and asks whether transfer learning wins when there is almost no data. **The answer surprised me and I want to know if it surprises you.**"
+> Before you start that, do **Do the Maths by Hand, M3 and M4** — they are the confusion-matrix addition and the fair-comparison rules, and the Build It answers come straight out of them. The rest of the workbook — Warm-Up, Predict the Output, both practice sets, Fix the Broken Program, the Puzzle, Think Deeper and Draw It — is for the week, in whatever order you like, and Self-Check goes last. Fix the Broken Program has three bugs and the last one makes no error message at all.
+>
+> The stretch is not in the workbook: it makes the target task tiny and asks whether transfer learning wins when there is almost no data. **The answer surprised me and I want to know if it surprises you.**"
 
-**Workbook pages:** 27.1, 27.2, 27.3 in class · **27.4, 27.5, 27.6** at home · 27.7 optional.
+**Where it is done.** *In class:* the three predictions (Build It, checklist step 1) during the Concept block, the showcase circuit lines on a plain sheet during Part A, and Practice Set A item A2 as the paper copy of the three-column grid during Part B. *At home, required:* Build It (the table and its sentences, the diagnosis, the reflection) with M3 and M4 first. *At home, as time allows:* everything else in the workbook, Self-Check last. The stretch is optional.
 
-**Expected time:** 20 min on the table and the fair-comparison sentence · 25 min on the confusion-pair diagnosis · 15 min on the reflection · **about 60 minutes**, plus 20 more for the stretch.
+**Expected time:** M3 and M4 about 15 min · the table and the fair-comparison sentences 20 min · the confusion-pair diagnosis 25 min · the reflection 15 min · **about 75 minutes for the required part** (the old plan counted the same three jobs at about an hour; M3 and M4 are the addition), plus roughly 20 minutes each for the stretch and for the remaining workbook sections you choose to set.
 
 > **🧑‍🏫 What to look for when you mark it:** three things, and the second is the real one. **One — is the held-out pile on every row of the table?** A table with `540` on rows 1 and 2 and `269` on rows 3 and 4 is a table that cannot mislead anybody, including its author in six months. A table with the piles missing is the single most common way a real report tells a lie without anybody meaning to. **Two — is the diagnosis physical?** The bar is: *did they say something about what 64 pixels can and cannot show?* "An 8's loops are about three pixels across, which is too small to hold a hole, so they fill in and leave a bright bar down the middle — and a 1 is a bright bar down the middle" is a diagnosis. "The model confused 1 and 8 four times" is a location. **Mark the difference explicitly, and praise loudly anybody who notices the asymmetry** — three 8s called 1 but only one 1 called 8, because information only travels one way. **Three — does every line of the reflection have a number in it?** Six lines, six numbers. A reflection without numbers is a feeling, and this course has spent twenty-seven weeks on the difference.
 
@@ -1616,26 +1623,225 @@ This section is what to say when you set the homework.
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Keyed to `workbook/week-27.md`, section by section and item by item, so you can mark from this page alone. The values are the ones in the workbook's own Answers section. **Seconds are machine-dependent and are never marked:** the workbook's run shows plain 2.4, augmented 11.3, frozen 0.2, conv1-only 0.6, fine-tuned 1.1 and scratch 1.1, while the live wall sheet in the lesson shows 0.3, 1.6 and 1.5. Accept the student's own. **Accuracies and counts are seeded and should match to four places.**
 
-### Page 27.1 — The Term 3 showcase circuit sheet
+### ✅ Warm-Up (W1–W5)
 
-*Six lines, one per station: what you showed, and the number you said.*
+- **W1.** `8 × 3 × 3 × 16 = 1,152`, plus **16** biases (one per filter), so **1,168**. ❌ 1,152 is the missing-biases error.
+- **W2.** **Ten logits** — raw, unsquashed scores, one per digit. **Definitely not probabilities:** one of ours is `−10.94`, and they do not add up to 1.
+- **W3.** **About 2.30**, because a model that has learned nothing spreads its confidence evenly over ten options, each with a chance of 0.1, and `−ln(0.1) = 2.3026`. Ours printed `2.2796`.
+- **W4.** **Ten answers**, and no, you wanted 540 — one per picture. **It did not error.** `dim=0` runs down each column, across all 540 pictures for one digit, and answers a question nobody asked. *Count the answers.*
+- **W5.** Because `0.9796` looks precise to four decimal places and it is not. **One more correct answer takes it to 0.9815**, so the fourth decimal place is noise. `529 of 540` invites the right question: *"how much would one more move it?"*
 
-| # | Station | The number |
+**Marking notes.** W4 is the one to look at. A student who writes "540" for *answers* has not run it; the point is that it printed ten and nothing complained.
+
+### 🔢 Do the Maths by Hand (M1–M4)
+
+**M1.** `0.9926 − 0.9796 = 0.0130`, which is **1.30 accuracy points**. In digits: `0.9796 × 540 = 529.0`, `0.9926 × 540 = 536.0`, so augmentation read **7** more digits correctly. **The wrapped version read 0 more** — exactly `0.9796`, the same 529 of 540.
+
+Full-marks sentence: *"Blanking the rolled-off edge turned five times the training data from worth nothing into worth 7 more digits out of 540, which is +1.30 accuracy points in our seed-0 run (other seeds varied, and part of the gain may be the extra training steps)."*
+
+**M2.**
+
+| What is frozen | frozen count | the subtraction | movable |
+|---|---:|---|---:|
+| nothing | 0 | 1898 − 0 | **1898** |
+| conv1 only | **80** | 1898 − 80 | **1818** |
+| conv1 and conv2 | **1248** | 1898 − 1248 | **650** |
+| everything | **1898** | 1898 − 1898 | **0** |
+
+The row that makes Adam refuse is the last: `ValueError: optimizer got an empty parameter list`. Freezing nothing when you meant to freeze gives no error at all, which is why the check matters: **`frozen + movable` must equal 1,898.** The 650 must be there; a student who wrote 1,898 for conv1-and-conv2 has not frozen anything in their head.
+
+**M3.** Diagonal: `54 + 53 + 52 + 53 + 53 + 55 + 53 + 54 + 48 + 54 = ` **529**. The nine off-diagonal cells (row, column = count): 1,5 = 1 · 1,8 = 1 · 2,1 = 1 · 3,5 = 1 · 3,7 = 1 · 4,9 = 1 · 6,1 = 1 · 8,1 = **3** · 8,7 = 1; **total 11**. **`529 + 11 = 540`** ✅.
+
+Worst pair: row 8 column 1 holds **3**, row 1 column 8 holds **1**, together **4**. **No other pair comes close:** every other off-diagonal cell is a 1 and none faces another across the diagonal, so every other pair totals 1. *Second place:* there is no second place, just a seven-way tie at 1 (1 & 5, 2 & 1, 3 & 5, 3 & 7, 4 & 9, 6 & 1, 8 & 7). Any one of them is a correct answer to "which pair comes second"; the tie is the point.
+
+**M4.** Rows 1 and 2: `0.9926 − 0.9796 = +0.0130`, **FAIR** (same 540 rows, same ten classes, one thing changed). Rows 3 and 4: `0.9665 − 0.9257 = +0.0408`, **FAIR** (same 269 rows, five classes). Rows 2 and 4: **NOT ALLOWED**, two different exams. Rows 1 and 3: **NOT ALLOWED**, same reason.
+
+Why 269 rows of five classes is easier: fewer wrong answers available. Random guessing scores 20% on five classes and 10% on ten, and the 1/8 pair that caused a third of the ten-class errors cannot happen in 5–9 because there is no 1. **Fewer ways to be wrong means a higher score for the same skill.**
+
+**Marking notes.** For M3 the check that matters is the addition to 540. For M4, "NOT ALLOWED" with no reason is half marks.
+
+### 🔎 Predict the Output (P1–P4)
+
+**P1.**
+
+```text
+[5 1 2 3 4]
+[2 3 4 5 1]
+[4 5 1 2 3]
+[1 2 3 4 5]
+```
+
+Line 4 gives the original back: shifting a list of 5 by 5 sends every number all the way round. **Nothing was thrown away** — what falls off one end comes back on the other. That is exactly what ruins an augmented digit, and is what you want for rotating a queue or cycling a buffer.
+
+**P2.**
+
+```text
+ink per picture: [0. 9. 9. 9.]
+ink per picture: [9. 9. 9. 9.]
+```
+
+`out[0, :, :]` blanks **picture 0 entirely**; `out[:, 0, :]` blanks **row 0 of every picture**, which is what you want after rolling down (all four kept their ink, since the bright pixel moved from row 1 to row 2). Neither errored; **the ink per picture** told you: a zero means a whole picture was wiped while its label stayed.
+
+**P3.**
+
+```text
+(6285, 1, 8, 8)
+(6285,)
+(1257, 2, 8, 8)
+```
+
+Line 3 glued along `dim=1`, the channel dimension: "one picture with two channels", so 1,257 two-channel pictures instead of 2,514 one-channel ones; the batch count did not change, which is the giveaway. **Line 1 (with line 2 for the labels) is the one for augmenting.** The out-loud check: *"as many labels as pictures — 6,285 and 6,285, and `1257 × 5 = 6285`."*
+
+**P4.**
+
+```text
+1898
+730
+4
+```
+
+`m[3]` is the **second conv layer**, `nn.Conv2d(8, 16, 3, padding=1)`; freezing it locked **1,168** numbers, `1898 − 1168 = 730`. Line 3 counts blocks: the four still movable are conv1's `weight` and `bias` and the linear's `weight` and `bias`. ❌ A student who predicted `650` for line 2 froze both convs in their head: `m[0]` is conv1, `m[3]` is conv2.
+
+The "how many did you get right" line at the end of the section is a self-rating; do not mark it.
+
+### ✍️ Practice Set A (A1–A6)
+
+**A1.** data augmentation (iii) · transfer learning (v) · freezing (vi) · backbone (ii) · fine-tuning (i) · confusion pair (iv)
+
+**A2.** *(This is the paper copy of the three-column grid used in Part B.)*
+
+| What you froze | movable weights | seconds | test accuracy |
+|---|---:|---:|---:|
+| both convs | **650** | **0.2** | **0.9257** |
+| conv1 only | **1818** | **0.6** | **0.9517** |
+| nothing (fine-tuned) | **1898** | **1.1** | **0.9665** |
+| from scratch, no borrowing | **1898** | **1.1** | **0.9814** |
+
+**From scratch won on accuracy** (0.9814, which is 264 of 269). **Freezing both convs won on speed** (0.2 seconds). Trade in one sentence: *"Freezing both convs trained 650 weights instead of 1,898 in 0.2 seconds instead of 1.1, and it cost 5.6 accuracy points against the from-scratch control."* Test counts: 249, 256, 260 and 264 of 269. The live three-column sheet in Part B has three of these four rows with its own seconds (0.3, 1.6, 1.5).
+
+**A3.** The impossible thing: **test accuracy (0.8574) is higher than training accuracy (0.5968)**. `axis=0` and `axis=1` should be `axis=1` and `axis=2`. On `(1257, 8, 8)`, `axis=0` is *which picture*, so rolling it shuffles the pictures while the labels stay put. Of the five shifts, `(-1, 0)` and `(1, 0)` roll the stack and are pictures paired with somebody else's label; `(0, 0)` shifts nothing and `(0, -1)`, `(0, 1)` roll each picture's rows, so **three fifths of the rows are still right** and training accuracy lands near 0.6. Alarm: *"If my test accuracy is higher than my training accuracy, my training labels are the first thing to check."*
+
+**A4.** head swapped first → **(iii)** · everything frozen → **(v)** · `torch.cat` with a numpy array → **(i)** · predictions from the 5-to-9 model against all ten classes → **(ii)** · mixing `(n,1,8,8)` and `(n,8,8)` → **(iv)**
+
+**A5.** Diagonal `50 + 52 + 51 + 45 + 51 = ` **249**; off-diagonal `1 + 3 + 1 + 2 + 3 + 1 + 2 + 4 + 2 + 1 = ` **20**; **249 + 20 = 269** ✅. 20 mistakes in 269, and `249 ÷ 269 = ` **0.9257**, the frozen-transfer row.
+
+```text
+8 & 9:  row 8 said 9 = 4,  row 9 said 8 = 1   ->  5
+6 & 8:  row 6 said 8 = 2,  row 8 said 6 = 1   ->  3
+5 & 8:  row 5 said 8 = 3,  row 8 said 5 = 0   ->  3
+5 & 7:  row 5 said 7 = 0,  row 7 said 5 = 3   ->  3
+```
+
+**The worst pair is 8 and 9, with 5 mistakes.** Watch the direction on the last two: same total, opposite directions, so read both cells. A different pair from 1 and 8 is not surprising, because **1 is not in this problem**; the worst pair is always relative to the classes asked about, which is one more reason the table names the pile.
+
+**A6.** Diagonal **529** · off the diagonal **11** · `529 + 11 = 540` **yes** · biggest off-diagonal cell **row 8, column 1, holding 3** · mirror cell **row 1, column 8, holding 1** · pair **1 and 8, with 4 of the 11 mistakes**. The written diagnosis is marked exactly as the Build It diagnosis below.
+
+### ✍️ Practice Set B (B1–B5)
+
+**B1.**
+
+```text
+[5 1 2 3 4]
+[2 3 4 5 1]
+[1 2 3 4 5]
+```
+
+The shift of 5 gives the original back, because all five numbers go all the way round.
+
+**B2.** Expected output:
+
+```text
+original ink per picture: [4. 4. 4.]
+wrapped  ink per picture: [4. 4. 4.]
+blanked  ink per picture: [0. 0. 0.]
+wrapped  row 0: [0 1 1 1 1 0]  <- the bar teleported
+blanked  row 0: [0 0 0 0 0 0]  <- gone, as it should be
+np.shares_memory(stack, np.roll(stack, 1, axis=1)) : False
+np.shares_memory(stack, stack[1:])                 : True
+```
+
+**The blanked ink of ZERO is not a bug:** the whole picture was one bar on the bottom row; rolling down sent it to row 0 and blanking row 0 deleted it. It is a real cost: every shift sacrifices a row or column, which is harmless when the ink is mostly in the middle (so one-pixel shifts help) and costly on a two-pixel shift (a quarter of an 8×8 picture, which is why those usually hurt). `shares_memory` is **False** and **True**, so `.copy()` is **not strictly necessary** for `np.roll`; **keep it anyway**, because `stack[1:]` and `stack.T` are views and blanking a view silently corrupts the real training data.
+
+**B3.** Shapes `(6285, 1, 8, 8)` and `(6285,)`, test tensor still `(540, 1, 8, 8)`; `1257 × 5 = 6285`, match **yes**. The labels must be glued in the same order because row 3,000 of the pictures and of the labels must be the same digit; otherwise the model trains on wrong pairings and **nothing errors** (the impossible test-above-train pattern, or a plausible mediocre number).
+
+**B4.**
+
+```text
+freeze both convs   movable  650   0.2s  test 0.9257  (249 of 269)
+freeze conv1 only   movable 1818   0.6s  test 0.9517  (256 of 269)
+freeze nothing      movable 1898   1.1s  test 0.9665  (260 of 269)
+```
+
+A good prediction for the middle row is "between 0.9257 and 0.9665"; it landed at 0.9517. The counts are three subtractions: `1898 − 1248`, `1898 − 80`, `1898 − 0`. Pattern: *the less you freeze, the better it does and the slower it is.* In this seed-0 run every weight let loose bought accuracy; freezing both was lowest in all five seeds re-run, but the order of the other two is not stable across seeds, so do not mark that ordering as fixed. The prediction before running is what earns the mark.
+
+**B5.** The program is in the student guide (Type This, Step 7). Expected results: `mistakes in total: 11 out of 540`, nine ranked mistakes (3 for 8→1, then eight single mistakes: 8→7, 6→1, 4→9, 3→7, 3→5, 2→1, 1→8, 1→5), `worst pair: 1 and 8, with 4 mistakes between them`, and
+
+```text
+average 1, ink per column: [  0   5  42  93 106  56   9   2]
+average 8, ink per column: [ 0  9 71 87 86 66 11  0]
+```
+
+Addition check `529 + 11 = 540`. Both pile their ink into **columns 2 to 5** and peak in the middle. The 8 has slightly more in columns 2 and 5 (71 and 66 against 42 and 56), gaps of 29 and 10 summed over 8 pixels on a 0–16 scale, about 3.6 and 1.3 grey levels per pixel.
+
+### 🐞 Fix the Broken Program
+
+**Bug 1** — the `copies` list comprehension hands numpy arrays to `torch.cat`, which only glues tensors. Fix: `torch.from_numpy(...).float().unsqueeze(1)` on each copy, or (better) put every copy through the same `t4()` helper. Next run ends:
+
+```text
+ValueError: optimizer got an empty parameter list
+```
+
+**Bug 2** — `for p in model.parameters(): p.requires_grad = False` froze **everything**, so the list of trainable parameters is empty. Fix: delete the freezing loop (this program is not transfer learning), or freeze the convs only and check with `sum(p.numel() for p in model.parameters() if p.requires_grad)`. Third run:
+
+```text
+augmented: (6285, 1, 8, 8) (6285,)
+train 0.5938   test 0.8889
+```
+
+**Bug 3, the silent one** — test (0.8889) is **higher** than train (0.5938), which is impossible. The line `np.roll(np.roll(X_train, dr, axis=0), dc, axis=1)`: `axis=0` is *which picture*. Fix: `axis=0` → `axis=1`, `axis=1` → `axis=2`.
+
+| | bug 3 still in | all three fixed |
+|---|---:|---:|
+| train accuracy | **0.5938** | **0.9548** |
+| test accuracy | **0.8889** | **0.9759** |
+
+Twenty epochs, not forty, so the fixed numbers are below the chapter's 0.9926. Alarm: *test accuracy above training accuracy means the training labels are wrong.* **Marking notes.** Credit a student who finds bugs 1 and 2 from the error messages; bug 3 has no message and is the one to insist on. These broken-program numbers are from the workbook's own Answers section and were not re-run here, since they need the program as printed in the workbook.
+
+### 🧩 Puzzle of the Week
+
+| The change | same **digit**? | **cat photo** you might really meet? |
 |---|---|---|
-| 1 | W20 — autograd | *"`w.grad` matched the slope I did by hand in Week 18."* |
-| 2 | W21 — the five-line loop | *"Five lines: `zero_grad`, forward, loss, `backward`, `step`."* |
-| 3 | W22 — layers and overfitting | *"`2 → 16 → 1` is 65 parameters."* |
-| 4 | W23 — `nn.Module` and digits | *"1,257 digits at 32 at a time is 40 steps per epoch."* |
-| 5 | W24/25 — the picture and the shapes | *"`16 × 2 × 2 = 64`, and that is the number in my `Linear` layer."* |
-| 6 | W26 — a network that reads digits | *"529 of 540 held-out digits, 1,898 weights, about three seconds."* |
+| shift one pixel left | **yes** | **yes** |
+| shift one pixel left, wrapping | **no** | **usually yes** |
+| flip left-to-right | **no** | **yes** |
+| flip top-to-bottom | **no** | **no** (label true, picture unrealistic) |
+| turn a quarter turn | **no** | **no** (label true, picture unrealistic) |
+| turn upside down | **no** | **no** (label true, picture unrealistic) |
+| make it 20% brighter | **yes** | **yes** |
+| swap two pixels at random | **yes** (usually) | **yes** (usually) |
 
-**Marking notes.** **Present or absent, not right or wrong.** The point is that they can narrate the term. **A student whose six numbers are all their own — from their own runs, not this file's — should be told so; it means they actually ran everything.**
+**Part 1.** Safe for digits: **shifting one pixel, and changing the brightness** (small random swaps are also broadly safe, just useless). Unsafe for cats: **flipping top-to-bottom and turning a quarter turn** (the label survives; they are unrealistic, not mislabelled). **Part 2.** The pair is **6 and 9**: an upside-down 6 is a real 9 carrying the old label. **Part 3.** Ink per row:
 
-### Page 27.2 — Predictions, in pen, before running
+```text
+ink per row, the upside-down 6: [39 57 61 36 27 32 29 25]
+ink per row, the real 9      : [23 63 55 45 55 23 28 37]
+```
 
-*Three predictions. (a) Will wrapped augmentation beat plain? (b) Will blanked augmentation beat plain? (c) Which will win: frozen, fine-tuned, or from scratch?*
+Both are heaviest in rows 1 and 2 and thin out below; the upside-down 6 has a loop across the top and a tail running down and right, the shape of a 9. "Same digit?" **you would not confidently call it a 6.** (Recomputed for this file: these two rows reproduce exactly.) **Part 4**, full marks for the idea, not the words: *digits* — safe if a different person's handwriting could have done it (shifts, small brightness, small noise; no reflections or rotations). *Animals* — safe if a different camera or day could have produced it (flips, brightness, small crops and rotations; not upside-down or quarter turns unless real photos arrive that way). *Road signs* — almost nothing that moves pixels is safe, since a mirrored word is not a word; brightness, contrast, blur and weather-like noise are. **Part 5.** *"Which changes does it apply, and what kind of data were they chosen for?"* ("The usual set" is not a thing; a photo library will flip your digits silently.) A second good question: *does it augment the test set too?* Anything other than an immediate no means do not use it.
+
+### 🤔 Think Deeper (T1–T2)
+
+Both are paragraphs; mark on whether each hits its three points.
+
+**T1.** (a) **What you would have learned instead:** two techniques and the habit "do this, it helps"; what you actually learned is the *condition each technique needs* (augmentation needs the label to stay true; transfer needs a source that knows far more than the target) plus the two checks that exposed the failures (training accuracy falling as data was added, and the from-scratch control). (b) **Why a measured price beats a belief:** a known price can be planned around. A frozen backbone cost about 5.6 points and bought a fifth of the training time where source and target were the same size, so with fifty pictures and someone's million-picture backbone you can predict which way the trade goes. (c) **Reading a paper:** look for the control, the denominators, and whether every comparison is on the same held-out pile; a paper where all four configurations beat the baseline has probably run more than four.
+
+**T2.** (a) **What the 1985 feature has:** a hole-counter encodes something known about digits (an 8 has two enclosed regions, a 1 none), free and exact, but someone has to think of a feature for every distinction, which is why hand-designed vision stopped scaling. (b) **What the CNN has:** it found edge detectors itself from 1,257 pictures, reads 529 of 540 across all ten digits, and on a different problem will find whatever that problem needs. (c) **Where each belongs in a report:** the overall accuracy with its denominator goes in the results; the 1/8 pair, its cause, and the note that a simple hand-designed feature would fix it go in the limitations. Combining them (feeding a hole count in beside the learned features) is normal; at 8×8 the network demonstrably has not found that feature itself.
+
+### 🛠️ Build It
+
+This is the required homework. The checklist (steps 1–14) is a build log, not an answer sheet; mark the artefacts below. **Step 1 says "Page 27.2, in pen"; the workbook has no such page, so the predictions are on whatever sheet you handed out in class.** The prediction answers:
 
 | | Most students predict | The truth |
 |---|---|---|
@@ -1643,43 +1849,26 @@ Every question restated, so you can mark from this page alone.
 | (b) blanked vs plain | yes | **yes — +1.30 points, 536 of 540** |
 | (c) frozen / fine-tuned / scratch | frozen or fine-tuned | **from scratch, 0.9814, beating fine-tuned 0.9665 and frozen 0.9257** |
 
-**Marking notes.** **Present or absent.** Nearly everybody gets (a) and (c) wrong and that is the design. **What earns credit is a prediction with a reason attached**, even a wrong one: *"wrapped will win because five times the data must help"* is a real hypothesis and it got tested. **A blank page means the experiment was a demonstration.**
+**Marking notes.** Present or absent. Nearly everybody gets (a) and (c) wrong and that is the design. What earns credit is a prediction with a reason attached, even a wrong one. A blank means the experiment was a demonstration. Step 10's print must say **650**; step 8's stage-one accuracy is not comparable to last week's because it is a five-class problem on different rows. For the frozen layers, `80 + 1,168 = 1,248` and `1,248 + 650 = 1,898`.
 
-### Page 27.3 — The three-column transfer grid
-
-| | frozen | unfrozen (fine-tuned) | from scratch |
-|---|---:|---:|---:|
-| movable weights | **650** | **1,898** | **1,898** |
-| seconds | **0.3** | **1.6** | **1.5** |
-| test accuracy | **0.9257** | **0.9665** | **0.9814** |
-| test correct | **249 of 269** | **260 of 269** | **264 of 269** |
-
-**And the addition check:** the frozen layers are conv1 (80) and conv2 (1,168), so `80 + 1,168 = 1,248` frozen, and `1,248 + 650 = 1,898`. ✅
-
-**Marking notes.** **All nine cells, and the 650 must be there.** A student who wrote 1,898 in the frozen column has either not frozen anything or not checked — and the check is one line. **The `test correct` row is worth insisting on**, because 260 against 249 is eleven digits and 0.9665 against 0.9257 is four decimal places of nothing much; the counts are what make the difference feel real.
-
-### Page 27.4 — The See It results table
+**The See It results table.**
 
 | row | held-out pile | weights trained | seconds | test accuracy | test correct |
 |---|---|---:|---:|---:|---|
-| plain | **540 all-digit rows** | 1,898 | 3.3 | 0.9796 | 529 of 540 |
-| augmented | **540 all-digit rows** | 1,898 | 14.6 | **0.9926** | 536 of 540 |
-| frozen-transfer | **269 rows of 5–9** | 650 | 0.3 | 0.9257 | 249 of 269 |
-| fine-tuned | **269 rows of 5–9** | 1,898 | 1.6 | 0.9665 | 260 of 269 |
+| plain | **540 all-digit rows** | 1,898 | 2.4 | 0.9796 | 529 of 540 |
+| augmented | **540 all-digit rows** | 1,898 | 11.3 | **0.9926** | 536 of 540 |
+| frozen-transfer | **269 rows of 5–9** | 650 | 0.2 | 0.9257 | 249 of 269 |
+| fine-tuned | **269 rows of 5–9** | 1,898 | 1.1 | 0.9665 | 260 of 269 |
 
-**The fair-comparison sentence, full marks:**
+**Which two comparisons are fair, and which one must never be made — full marks:**
 
 > *"Two comparisons in this table are fair. **Rows 1 and 2**: `0.9926 − 0.9796 = +0.0130`, or seven more digits out of the same 540, and the only thing that changed was the training data. **Rows 3 and 4**: `0.9665 − 0.9257 = +0.0408`, or eleven more digits out of the same 269, and the only thing that changed was whether the conv layers were allowed to move. **The comparison I must not make is row 2 against row 3 or row 4**, because those are measured on different held-out piles — 540 digits across ten classes against 269 digits across five — and five classes is an easier problem than ten. Printing 0.9926 next to 0.9665 makes it look like a 2.6-point difference and it is not a difference at all."*
 
+**The missing fifth row** (the "what fifth row is missing" box): **`scratch on 5-9`, 269 rows of 5–9, 1,898 weights, 1.1 seconds, `0.9814` — 264 of 269.** The row box takes the name and the number box takes **0.9814**. The four rows as asked cannot justify anything about transfer learning without it; a student who spots that is at level 5, so tell them so.
+
 **Marking notes.** **The pile on every row is the objective.** Missing it once is a level-2 page, whatever else is right, and say why: *"which 540? which 269? if your reader can't tell, your table can lie."*
 
-**And one thing to praise:** a student who adds a fifth row for the from-scratch control has understood that the table's job is to support a conclusion, not to list what they ran. **The four rows the homework asks for cannot actually justify anything about transfer learning without the control** — that is a genuine flaw in the assignment as stated, and a student who spots it is at level 5. Tell them so.
-
-### Page 27.5 — Diagnose the worst confusion pair
-
-*From the plain CNN's confusion matrix on 540 held-out digits.*
-
-**Step 1 — the counts.**
+**Diagnose the worst confusion pair.** The counts, both directions:
 
 ```text
 row 8, column 1 = 3      three real 8s were called 1
@@ -1688,9 +1877,9 @@ row 1, column 8 = 1      one real 1 was called 8
                   4      of the 11 mistakes in total
 ```
 
-11 mistakes out of 540, and **4 of them — more than a third — come from one pair out of the 45 possible pairs.**
+11 mistakes out of 540, and **4 of them — more than a third — come from one pair out of the 45 possible pairs.** The ink-per-column rows are `average 1: 0 5 42 93 106 56 9 2` and `average 8: 0 9 71 87 86 66 11 0`; both pile their ink into **columns 2 to 5**.
 
-**Step 2 — the physical diagnosis. A full-marks answer:**
+**The diagnosis, a full-marks answer:**
 
 > *"The pair is 1 and 8, with 4 of the 11 mistakes, and it leans one way: three 8s called 1 against one 1 called 8.*
 >
@@ -1698,22 +1887,18 @@ row 1, column 8 = 1      one real 1 was called 8
 >
 > *You can see it in the average pictures. Adding up the ink in each column of the average 1 gives `0 5 42 93 106 56 9 2`, and for the average 8 it gives `0 9 71 87 86 66 11 0`. **Both pile their ink into columns 2 to 5 and both peak in the middle.** The 8 has a bit more ink out in columns 2 and 5 — 71 and 66 against 42 and 56 — but the gaps of 29 and 10 are sums over 8 pixels on a 0-16 scale, so about 3.6 and 1.3 grey levels per pixel, small next to the bright bar in the middle.*
 >
-> *The direction makes sense too. **An 8 can lose its holes and turn into a bar. A bar cannot grow holes.** The information loss only goes one way, so the confusion should be lopsided, and it is: three against one.*
->
-> *The fix is not a better optimiser and it is not more training. **It is more pixels** — at 16×16 an 8's loops have room to be holes. Failing that, a different kind of feature entirely: count the enclosed regions in the picture, which is what a hand-designed system in 1985 would have done and which would separate these two instantly."*
+> *The direction makes sense too. **An 8 can lose its holes and turn into a bar. A bar cannot grow holes.** The information loss only goes one way, so the confusion should be lopsided, and it is: three against one."*
 
-**Marking notes.** **This is the page you mark hardest and the bar is one question: did they say something about what 64 pixels can and cannot show?**
+**The fixes box.** *Cause:* more pixels (at 16×16 an 8's loops have room to be holes), or a different kind of feature, such as counting enclosed regions, which a hand-designed system in 1985 would have done and which separates these two instantly. *Symptom only:* train longer on 1s and 8s, or add extra shifted copies of just those two classes; it would probably move those four mistakes, you must then check what it broke, and no amount of training puts information into 64 pixels that is not there.
+
+**Marking notes.** **This is the part you mark hardest and the bar is one question: did they say something about what 64 pixels can and cannot show?**
 
 - ✅ Full marks: the loops are too small to hold a hole, so they fill in and leave a bar. Anything that reaches that idea, however phrased.
-- ✅ Level 5: notices the **asymmetry** and explains the direction. Three against one is too few to prove anything on its own, but it is what information loss going one way predicts.
-- ✅ Also level 5: proposes a fix that addresses the cause (more pixels, or a hole-counting feature) rather than the symptom (train longer on 1s and 8s).
-- ❌ Zero on this page: *"the model confused 1 and 8 four times out of eleven"*, or *"they look similar"*, or *"the model needs more training"*. Hand it back once, with one question written on it: **"what do a 1 and an 8 actually share when you only have 64 pixels?"**
+- ✅ Level 5: notices the **asymmetry** and explains the direction. Three against one is too few to prove anything alone, but it is what information loss going one way predicts.
+- ✅ Also level 5: proposes a fix that addresses the cause rather than the symptom.
+- ❌ Zero: *"the model confused 1 and 8 four times out of eleven"*, or *"they look similar"*, or *"the model needs more training"*. Hand it back once, with one question written on it: **"what do a 1 and an 8 actually share when you only have 64 pixels?"**
 
-### Page 27.6 — The Term 3 reflection
-
-*Six lines, Weeks 20 to 26. Each line: what you can do now that you could not do in Week 19, and one number that proves it.*
-
-**A full-marks set:**
+**The Term 3 reflection — a full-marks set:**
 
 > **W20.** *"I can get a slope out of PyTorch instead of computing it. `w.grad` gave me the same number — 42 — that I got by hand in Week 18 by measuring stage by stage."*
 >
@@ -1727,9 +1912,21 @@ row 1, column 8 = 1      one real 1 was called 8
 >
 > **W26.** *"I can train a CNN and look at what it learned. 1,898 weights, 529 of 540 held-out digits, about three seconds — and filter 6 answers +2.830 to a bright-left edge, so it taught itself to be an edge detector."*
 
-**Marking notes.** **One number per line, six lines, six numbers.** A line without a number is a feeling and it comes back. **And accept their own numbers over this file's** — a student whose Week 26 line says "527 of 540, five seconds" has run it themselves, which is better.
+**Marking notes.** **One number per line, six lines, six numbers.** A line without a number is a feeling and it comes back. **Accept their own numbers over this file's** — a Week 26 line saying "527 of 540, five seconds" means they ran it.
 
-### Page 27.7 — Stretch: does transfer learning win when the target task is tiny?
+### 🎨 Draw It
+
+- **Blanked edges, one per copy:** shifted up → blank the **bottom** row · down → the **top** row · left → the **right** column · right → the **left** column; the fifth, unshifted copy blanks nothing.
+- **Weight counts:** **1,248 frozen, 650 movable, total 1,898.**
+- **Number in the control box:** **0.9814.**
+- **Why the control box has to be on the drawing:** *"Because 0.9257 on its own is a number and not a result. With 0.9814 next to it, the drawing says what borrowing cost as well as what it bought — and anybody looking at it can see that the technique lost, which is the honest thing for the picture to say."*
+- **Great versus good:** the great drawing shows the **540 test rows as a separate, untouched block marked "never shifted"**. The accuracy pair `0.9796 → 0.9926` with `+1.30 points` also earns marks.
+
+### 📊 Self-Check
+
+Not marked; there are no right answers. Three rows predict the capstone in Weeks 34 to 36. If **"ask 'compared to what?'"** is a 😕, cover the `scratch on 5-9` row and show that 0.9257 and 0.9665 are not a story until the control is on the page. If **"a results table with the held-out pile on every row"** is a 😕, it is the most transferable habit of Term 3 and costs ten seconds a table; have them redo Build It's table. If **"diagnose a confusion pair physically"** is a 😕, have them draw an 8 inside an 8×8 grid on squared paper and try to fit two holes in it. They cannot, which is the whole diagnosis.
+
+### Stretch (not in the workbook) — does transfer learning win when the target task is tiny?
 
 *Cut the digits-5-to-9 training set to 100 rows and rerun all three.*
 
@@ -1857,7 +2054,7 @@ scratch  100 rows   1.0s  movable 1898  train 0.9500  test 0.9628
 
 **Wrap — "can I say augmentation is 6.7 points better than frozen transfer?"** **No.** 540 all-digit rows against 269 rows of five classes. **Two different exams.** The fair comparisons are `0.9926 − 0.9796` and `0.9665 − 0.9257`.
 
-**Variation-harder 1 — the 100-row target task.** Frozen **0.8848**, fine-tuned **0.9257**, from scratch **0.9628**. **Scratch still wins.** Full numbers and the reason on page 27.7.
+**Variation-harder 1 — the 100-row target task.** Frozen **0.8848**, fine-tuned **0.9257**, from scratch **0.9628**. **Scratch still wins.** Full numbers and the reason in the Answer Key's stretch section.
 
 **Variation-harder 2 — freeze one conv layer only.** Freezing `frozen[0]` alone leaves `1,168 + 650 = 1,818` movable, and the accuracy lands between the frozen and the fine-tuned numbers, which is what you would predict — the less you freeze, the closer you get to fine-tuning.
 

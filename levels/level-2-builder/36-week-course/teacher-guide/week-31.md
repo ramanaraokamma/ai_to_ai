@@ -13,7 +13,7 @@
 | **Big idea** | A decision tree is a stack of yes/no questions, and you can print the exact rules it learned. |
 | **New vocabulary** | decision tree · split · depth · leaf · feature importance |
 | **New syntax** | `DecisionTreeClassifier(max_depth=3)` · `export_text(tree, feature_names=[...])` · `tree.feature_importances_` · `plot_tree(tree, ...)` |
-| **Materials** | Printed workbook pages 31.1–31.6 · pencil · **five ordinary objects from the room** for the Hook (see the Activity) · a big blank sheet or whiteboard · the student's Week 29 and Week 30 Python files · the Bug Log |
+| **Materials** | Printed workbook (Practice Set A for class; Build It for homework) · pencil · **five ordinary objects from the room** for the Hook (see the Activity) · a big blank sheet or whiteboard · the student's Week 29 and Week 30 Python files · the Bug Log |
 | **Tech needed** | Python 3 with scikit-learn and matplotlib. No new install. No internet. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
@@ -324,7 +324,7 @@ to 31 — this is the week that earns its last word. Two threads lit: model and 
 
 ### 20 minutes the night before
 
-- [ ] **Print workbook pages 31.1–31.6.** Page 31.3 (the rule-tracing grid) is worth printing twice.
+- [ ] **Print the workbook.** Practice Set A, question A2 (the rule-tracing grid for flowers P, Q and R), is worth printing twice.
 - [ ] **Find last week's file.** Open `~/ai-academy/level2/` and confirm `week29_knn_iris.py` (or whatever the student named it) is there and still runs. If it has vanished, the Fallback table below tells you what to do — do not discover this in class.
 - [ ] **Run the code yourself. This is the step that buys your confidence.** In a terminal:
 
@@ -367,7 +367,7 @@ to 31 — this is the week that earns its last word. Two threads lit: model and 
 |---|---|
 | **Last week's file is gone** | Type this week's file from scratch. It is 30 lines and takes 8 minutes. You lose the "one line changed" drama, so recover it by writing both model lines on the board side by side and physically covering one with your hand. |
 | **scikit-learn will not import** | `ModuleNotFoundError` is almost always the virtual environment. Check for `(.venv)` in the prompt; if it is missing, re-run the activate line. Full table in Section 4 of the orientation. |
-| **No laptop at all today** | The paper version is a complete lesson. Print the `export_text` output from section 5, print the workbook, and run pages 31.2 and 31.3 entirely by hand: the student traces flowers through the printed rules with a pencil. That delivers objectives 1, 3 and 5 in full. Objectives 2 and 4 wait for the next session. |
+| **No laptop at all today** | The paper version is a complete lesson. Print the `export_text` output from section 5, print the workbook, and run Practice Set A (A1 and A2) entirely by hand: the student traces flowers through the printed rules with a pencil. That delivers objectives 1, 3 and 5 in full. Objectives 2 and 4 wait for the next session. |
 | **`plot_tree` produces no window** | Expected on many setups, and harmless. The script calls `fig.savefig(...)`, so open `week31_tree.png` from the folder instead. Every chart in this course saves to a file for exactly this reason. |
 | **The student's numbers differ from this guide** | Check `random_state=42` in the split and `random_state=0` in the tree. One of the two is almost always missing or different. |
 | **Everything runs and there are 25 minutes left** | Go to the Differentiation "flying" path, item 1: the depth sweep. It is the best 15 minutes available and it plants Week 33. |
@@ -734,8 +734,8 @@ Open the PNG. Five leaves, three deep — the same tree as the text, drawn.
 
 Full instructions in the Activity section below. In the lesson flow:
 
-- **Minutes 0–8:** workbook page 31.2 — read all four iris rules as English sentences, out loud, then written down.
-- **Minutes 8–15:** workbook page 31.3 — trace three named flowers down the printed rules by hand, with the pencil, no computer.
+- **Minutes 0–8:** workbook Practice Set A, A1 (sort the printout lines into questions and answers), then read all four iris rules as English sentences, out loud, then written down on scrap paper (the written version in the workbook is Build It, Part 3, set as homework).
+- **Minutes 8–15:** workbook Practice Set A, A2 — trace the three named flowers P, Q and R down the printed rules by hand, with the pencil, no computer.
 - **Minutes 15–20:** find the useless split, and re-check flower 25 against the hand-drawn tree from the Hook.
 
 ---
@@ -816,21 +816,21 @@ Any five will do, as long as no two are alike in every respect. **Do not buy any
 
 ### Part B — Read the computer's rules (Their Turn, 20 minutes)
 
-**Setup.** On the table: the printed `export_text` output (or the screen), workbook pages 31.2 and 31.3, a pencil, and the hand-drawn sheet from Part A.
+**Setup.** On the table: the printed `export_text` output (or the screen), workbook Practice Set A (A1 and A2), a pencil, and the hand-drawn sheet from Part A.
 
 **Step 1 (8 minutes) — four sentences.** The student writes each of the four iris rules as one English sentence a non-programmer could follow, then reads all four out loud. Insist on species *names*, not `class: 0`. Insist on the units — "0.8 centimetres", not "0.8".
 
 Model answers are in the Answer Key. What you are marking is whether each sentence stands alone: could a person with a ruler and no computer use it?
 
-**Step 2 (7 minutes) — trace three flowers by hand.** Page 31.3 gives three flowers. For each one the student writes down every question they hit, the yes/no answer, and the final species. **Pencil only. The laptop stays shut for this step.**
+**Step 2 (7 minutes) — trace three flowers by hand.** Workbook A2 gives three flowers, P, Q and R. For each one the student writes down every question they hit, the yes/no answer, and the final species. **Pencil only. The laptop stays shut for this step.**
 
 | Flower | sepal length | sepal width | petal length | petal width |
 |---|---|---|---|---|
-| A | 5.1 | 3.5 | 1.4 | 0.2 |
-| B | 6.0 | 2.7 | 4.2 | 1.3 |
-| C | 6.7 | 3.0 | 5.0 | 1.7 |
+| P | 4.9 | 3.1 | 1.5 | 0.1 |
+| Q | 5.7 | 2.8 | 4.1 | 1.3 |
+| R | 6.3 | 2.9 | 5.6 | 1.8 |
 
-Flower C is the one the computer got wrong. Do not tell them that yet.
+None of these three is the computer's mistake. For Step 3, add one more flower on the board, **flower C**: sepals 6.7 / 3.0, petal length 5.0, petal width 1.7. It is the one the computer got wrong. Do not tell them that yet; have them trace it as a fourth pencil trace (its trace is in the Answer Key, under Practice Set A).
 
 **Step 3 (5 minutes) — the two discoveries.**
 
@@ -859,7 +859,7 @@ Flower C is the one the computer got wrong. Do not tell them that yet.
   ```
 
   Three sentences, one measurement, test accuracy 0.9333. Objectives 1, 3 and 5 all survive intact.
-- **Trace one flower, not three.** Flower A, which needs a single question. Getting one trace completely right beats three half-done.
+- **Trace one flower, not three.** Flower P in workbook A2, which needs a single question. Getting one trace completely right beats three half-done.
 - **Pre-write the sentence frames** in the workbook: *"If the petal is ______ or narrower, it is a ______."* They fill the blanks.
 - **Do not touch `plot_tree`.** The picture is the first thing to cut; the text version teaches more.
 
@@ -1040,141 +1040,333 @@ Hand them this printout, which they have not seen:
 
 **Say this:**
 
-> "Three pages, about an hour.
+> "The workbook is called *Trees You Can Read Out Loud*, and the part that matters most is the **Build It** section at the back. That is tonight's hour. Three parts of it are the heart.
 >
-> **First, page 31.4 — the build.** Train a depth-3 tree on the flowers, exactly like today, and print the rules. Then write out **every** rule as an English sentence a person who has never seen a computer could follow. Species names, not `class: 2`. Units on every number — '0.8 centimetres', not '0.8'. Four sentences. Read them out loud to somebody in the house before you write them down; if they don't understand a sentence, it isn't finished.
+> **First, Build It Parts 1 to 3 — the build.** Before you run anything, write your prediction in Part 1: which of the four measurements will the tree lean on most? Then train a depth-3 tree on the flowers, exactly like today, and print the rules. Fill in the little table. Then write out **every** rule as an English sentence a person who has never seen a computer could follow. Species names, not `class: 2`. Units on every number — '0.8 centimetres', not '0.8'. Four sentences. Read them out loud to somebody in the house before you write them down; if they don't understand a sentence, it isn't finished.
 >
-> **Second, page 31.5 — the one it gets wrong.** Find the hidden flower the tree fails on. Write down its number, its petal length and its petal width. Then — and this is the part that gets the marks — **name the rule that caught it** and say why. Not 'the tree was wrong'. Something like: 'rule four says wider than 1.65 means virginica, and this flower was 1.7, so it lost by half a millimetre.'
+> **Second, Build It Part 4 — the one it gets wrong.** Find the hidden flower the tree fails on. Write down its number, its petal length and its petal width. Then — and this is the part that gets the marks — **name the rule that caught it** and say why. Not 'the tree was wrong'. Something like: 'rule four says wider than 1.65 means virginica, and this flower was 1.7, so it lost by half a millimetre.' Then try to fix it by moving the cut-off, and tell me whether you removed the mistake or moved it.
 >
-> **Third, page 31.6 — the Bug Log and the importances.** Both of today's errors go in the Bug Log, with the real message copied out and the fix in your own words. Then write down the four importance numbers and answer this: two of them are 0.000. Does that mean those two measurements are useless? Answer in two sentences.
+> **Third, Build It Parts 5 and 6 — the importances and the Bug Log.** Write down the four importance numbers and answer this: two of them are 0.000. Does that mean those two measurements are useless? Answer in two sentences, then test it. Both of today's errors go in the Bug Log, with the real message copied out and the fix in your own words.
 >
-> One more thing. Before you run anything on page 31.4, write down which of the four measurements you think the tree will lean on most. Then find out. **I would quite like you to be wrong** — being wrong there is worth more than being right."
+> One more thing. Part 1 is written **before** you run anything. **I would quite like you to be wrong** — being wrong there is worth more than being right."
 
-**Workbook pages:** 31.1, 31.2 and 31.3 in class; **31.4, 31.5, 31.6** at home.
+**Workbook sections.** The workbook has no page numbers; it is laid out in sections. This is the split:
 
-**Expected time:** 20 min for the build and the four sentences · 20 min for the misclassified row · 20 min for the Bug Log and the importances. About 60 minutes.
+| When | Workbook section | What it is | Answered in the key under |
+|---|---|---|---|
+| **In class** (Their Turn) | **Practice Set A**, A1 and A2 | Sort the printout lines into questions and answers; trace flowers P, Q, R by hand | Practice Set A |
+| **Homework — the main hour** | **Build It**, Parts 1–6 | Predict, train and print the rules, four sentences, the row it gets wrong, importances, Bug Log | Build It |
+| **Homework — next-session opener** | **Warm-Up** (5 min) and **Predict the Output** P1–P4 | Last week's recall; four short predict-then-check items | Warm-Up; Predict the Output |
+| **Homework — pick from, over the week** | **Practice Set A** A3–A6, **Practice Set B** B1–B5, **Fix the Broken Program**, **Puzzle of the Week**, **Think Deeper**, **Draw It**, **Self-Check** | Reading, writing and extension work | One heading each below |
+
+**Expected time:** about 60 minutes for Build It — 20 min for Parts 1 to 3, 20 min for Part 4, 20 min for Parts 5 and 6. The Warm-Up and Predict the Output add about 20 minutes. Everything else in the table is a menu: set what the student's week has room for, and say which sections you are marking. The workbook's own **Answers** section at the end is the student-facing key; the one below carries the same values plus the marking notes.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 31.1 — Predict before you run
+Every section of the workbook has an entry below, in workbook order. Item labels (W1, P1, A3, B2, T1) are the workbook's own. All values were taken from the workbook's Answers section and re-checked by running the code (seeds `random_state=42` in the split, `random_state=0` in the tree).
 
-Each of these is answered against the file from section 4, which the student has on screen.
+### Warm-Up
 
-**(a) `print(iris.data.shape)`**
+These are recall questions about **last week** (kNN). A student who cannot answer them is not behind on trees; they are behind on Week 30, and that is worth knowing.
+
+- **W1.** Because kNN works out **distances across all the columns at once**. A column measured in thousands contributes thousands to every distance while a column in single units contributes almost nothing, so the big column decides every answer. Scaling puts every column on the same footing first.
+- **W2.** **Truth first**, guesses second: `confusion_matrix(y_test, predictions)`. Swapped, the grid is **flipped along the diagonal** — rows become guesses and columns become truths. The diagonal is unchanged, so the accuracy looks identical, and **every mistake reads backwards.**
+- **W3.** Quote **0.9444**, the one where the scaler saw only the training rows. The higher number, 0.9722, came from **leakage**: the scaler saw the test rows while working out its averages. A leak always flatters you.
+- **W4.** `stratify=y` forces each class to keep the **same share in both halves** of the split. It is `y` (the labels) because the class mix is what you are protecting. `stratify=X` asks it to preserve the mix of the measurements, which is not a mix of anything, and gives a confusing error.
+- **W5.** A **plateau**. It is more trustworthy because the answer does not depend on getting `k` exactly right; a lonely spike with dips either side is usually luck.
+
+### Predict the Output
+
+Marking tip: the point of this section is the *why* after each prediction. A correct number with no reason scores half.
+
+**P1** — expected output:
 
 ```text
-(150, 4)
+5
+9
+32
 ```
-150 flowers, 4 measurements each. Rows first, columns second.
 
-**(b) `print(iris.target_names)`**
+Trained on all 150 flowers with no split, a depth-5 tree reaches a real depth of 5 and grows 9 leaves. **9 is how many leaves the tree actually grew; 32 is the most it could have had** (2 × 2 × 2 × 2 × 2). Most branches stopped early because their piles were already all one kind. **Would `max_depth=20` change line 1? No.** It prints `20 -> depth 5 leaves 9`, identical to `max_depth=5` and to no limit at all. `max_depth` is a ceiling; once there are no impure leaves left to split, raising it changes nothing.
+
+**P2** — expected output:
 
 ```text
-['setosa' 'versicolor' 'virginica']
+4
+1.0
+[0. 0. 0. 1.]
 ```
-Position 0 is setosa, 1 is versicolor, 2 is virginica. This is what `class: 0` means.
 
-**(c) `print(len(X_train), len(X_test))`**
+Line 1 is **4**: one importance per column, used or not. Line 2 is **1.0**: importances are shares of the work and always total 1. Petal length is 0.000 here and 0.061 in the chapter because this tree has `max_depth=2` (not 3) and was fitted on all 150 flowers (not the 120 training ones); at depth 2 two questions about petal width are enough. **Importances are a report on one particular tree on one particular pile of rows, not a fact about irises.**
+
+**P3** — expected output:
 
 ```text
-120 30
+0 1 2
+virginica
+True
+False
 ```
-`test_size=0.2` means one fifth held back. 20% of 150 is 30, leaving 120.
 
-**(d) How many `class:` lines will `export_text` print for `max_depth=3`?**
-**Five.** At most 8 are possible at depth 3, but two branches settled after fewer questions. `model.get_n_leaves()` confirms it: `5`.
+Lines 3 and 4 disagree and both are right. Line 3 compares the **numbers** (`2 > 1`, `True`, because `iris.target` holds integers). Line 4 compares the **words** (`'versicolor' > 'virginica'` is `False`, because strings compare alphabetically and `'e'` comes before `'i'`). Does `True` mean virginica is "more" than versicolor? **No.** The numbers are **name-tags**; the comparison is arithmetically correct and completely meaningless. Bus 8 is not twice bus 4.
 
-**(e) Will the four importance numbers add up to 1?**
-Yes. 0.000 + 0.000 + 0.061 + 0.939 = **1.000**. They are shares of the work, so they must.
-
-**(f) `model = DecisionTreeClassifier(max_depth=1, random_state=0)` — what will the test accuracy be, roughly, and why can it not be near 1.0?**
-**0.6667.** One question gives exactly two possible answers, and there are three species. Whatever the question, one whole species has to share an answer with another. A depth-1 tree cannot beat about two-thirds here, however good the question is.
-
-### Page 31.2 — Read the iris rules as English
-
-The printout:
+**P4** — expected output:
 
 ```text
+|--- hours <= 5.50
+|   |--- class: no
+|--- hours >  5.50
+|   |--- class: yes
+
+['no']
+['no']
+['yes']
+```
+
+**5.50** is halfway between the two nearest values either side of the gap, 3 and 8: (3 + 8) ÷ 2. A tree always cuts halfway between the nearest values it can see, which is why cut-offs so often end in `.5` or `.05`. **`predict([[5.5]])` goes left, to `no`**, because the symbol is `<=`: equal goes with the left branch, always. **100 hours:** the tree does not object, and arguably it should. Nobody in the training data revised more than 10 hours, so 100 is far outside the evidence, yet the tree answers `yes` with total confidence. A tree does not extrapolate the way a line does (every leaf is a flat answer), but it will confidently apply a rule to a row from a world it has never seen. Write down the range the model was built from.
+
+### Practice Set A
+
+**A1.** In order: **Q, A, Q, Q, Q, A, Q, A, Q, Q, A, Q, A.** (Wrong-answer map: a student who marks the `>` lines as answers has read "greater than" as a result. Re-teach with Figure 31.3: a line is an answer only if it says `class:`.)
+
+- **A1(a).** **Five** A lines.
+- **A1(b).** `model.get_n_leaves()`, which prints `5`.
+- **A1(c).** A **`<=` or `>` with a number after it**. Questions compare a measurement with a number; answers say `class:` and stop.
+
+**A2.** The three traces, using flowers P, Q and R from the workbook table.
+
+**Flower P** — petal width 0.1
+
+```text
+petal width <= 0.80?   0.1 <= 0.80?   YES  -> class 0
+                                            -> SETOSA
+```
+
+One question. Correct: a real setosa.
+
+**Flower Q** — petal width 1.3, petal length 4.1
+
+```text
+petal width  <= 0.80?  1.3 <= 0.80?   NO   -> go right
+petal width  <= 1.65?  1.3 <= 1.65?   YES  -> go left
+petal length <= 4.95?  4.1 <= 4.95?   YES  -> class 1
+                                            -> VERSICOLOR
+```
+
+**Flower R** — petal width 1.8, petal length 5.6
+
+```text
+petal width  <= 0.80?  1.8 <= 0.80?   NO   -> go right
+petal width  <= 1.65?  1.8 <= 1.65?   NO   -> go right
+petal length <= 4.85?  5.6 <= 4.85?   NO   -> class 2
+                                            -> VIRGINICA
+```
+
+Marking: full marks need **every question hit**, its yes/no, and the species name. The final species alone is half marks, because the point is the path.
+
+- **A2(a).** **Flower P**, one question. Setosas have very narrow petals (under 0.8 cm) and nothing else does, so one question settles it every time. That is why the tree spent its first question there.
+- **A2(b).** Because **both branches of `petal length <= 4.85` say `class: 2`**. Whichever way R went, the answer was already virginica; its fate was sealed by the second question. This is the "split that does nothing" the lesson asks the student to find.
+
+**Extra trace for the lesson (teacher only — flower 25).** The lesson's Step 3 reveals that one flower from the hidden set is the tree's one miss. It is **not** in the workbook's A2 table; it is the hidden flower of Build It Part 4. Sepals 6.7 / 3.0, petal length 5.0, petal width 1.7:
+
+```text
+petal width  <= 0.80?  1.7 <= 0.80?   NO   -> go right
+petal width  <= 1.65?  1.7 <= 1.65?   NO   -> go right
+petal length <= 4.85?  5.0 <= 4.85?   NO   -> class 2
+                                            -> VIRGINICA   (wrong: it is really a versicolor)
+```
+
+The question that did the damage is `petal width <= 1.65`: 1.7 fails it by 0.05 cm, half a millimetre. The third question is irrelevant, because both its branches say virginica.
+
+**A3.** Filled-in table:
+
+| After this line | What does `model` hold? | What can you ask it for yet? |
+|---|---|---|
+| `model = DecisionTreeClassifier(...)` | An **empty, untrained** tree. It knows its settings (`max_depth=3`) and nothing else. | Its settings only. Not the rules, not the importances, not a prediction. |
+| `model.fit(X_train, y_train)` | A **trained** tree: the questions and cut-offs found from 120 flowers. | Everything: `export_text`, `feature_importances_`, `get_n_leaves()`, `predict`, `score`. |
+| `guesses = model.predict(X_test)` | Unchanged. `predict` only asks the tree; it does not change it. | The same as before. |
+
+**A3(a).** It starts working at the **second** line, `model.fit(...)`. Before that:
+
+```text
+sklearn.exceptions.NotFittedError: This DecisionTreeClassifier instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+```
+
+That is what the trailing underscore in `feature_importances_` is warning about.
+
+**A4.** The fixes:
+
+| # | The fix |
+|---|---|
+| a | `DecisionTreeClassifier(max_depth=3)` — **max**_depth. `TypeError: ... unexpected keyword argument 'depth'` |
+| b | `from sklearn.tree import ...` — **singular**. The plural gives `ModuleNotFoundError`. |
+| c | `model.feature_importances_` — trailing underscore. Python even suggests it. |
+| d | **One name per column**, four of them in column order, or `feature_names=list(iris.feature_names)`. Two names gives `ValueError: feature_names must contain 4 elements, got 2`. |
+| e | `model.predict([[5.9, 3.0, 5.1, 1.8]])` — **two** sets of brackets: outer = the table, inner = the one row. |
+| f | Move `model.fit(X_train, y_train)` **above** it. An untrained tree has no rules to print. |
+| g | Delete it. A split compares one column with one number, so rescaling the column just rescales the cut-off. (This is also the answer to "why is there no `StandardScaler` in the tree file?" — kNN needs scaling because it measures distances across all four columns at once; a tree never does.) |
+| h | Delete the claim. `0`, `1` and `2` are **name-tags**, not amounts. Print `iris.target_names` and use the names. |
+
+**A4(i).** **(g)**: fitting a `StandardScaler` before a tree runs happily with no error. What is wrong is that it is pointless, makes the file longer, and teaches a habit the student will later apply where it does harm. *(Also arguable: **(h)** produces no error either, being only a print, and it is the worse of the two because it puts a false sentence into a report. Accept either with a reason.)*
+
+**A5.** **1 → C · 2 → E · 3 → F · 4 → D · 5 → B · 6 → A**
+
+**A5(a).** `get_depth()` gives **3** and `get_n_leaves()` gives **5**, and these two get muddled because both feel like "how big is the tree". **`get_depth()` counts questions on the longest path. `get_n_leaves()` counts answers.** The third easy confusion is `len(feature_importances_)` = **4**, which counts columns and has nothing to do with either.
+
+**A6.** **A** = split · **B** = leaf · **C** = decision tree · **D** = 2 · **E** = 3. (A is the top question box; B a shaded end box; C names the whole shape; D is the longest path in questions, width <= 0.80 then width <= 1.65, so two; E is the number of shaded boxes: setosa, versicolor, virginica.)
+
+- **A6(f).** **Eight** (2 × 2 × 2).
+- **A6(g).** Because the setosa branch **stopped after one question**: its pile was already all one kind, so there was nothing left to split. Depth is a ceiling, not an order.
+
+### Practice Set B
+
+**B1.** `print("leaves:", tree.get_n_leaves())` prints `leaves: 5`. **Why not 8?** Two branches settled after fewer than three questions; eight is the maximum, not the promise. (Accept `print(tree.get_n_leaves())`. The workbook's Answers section gives the full stand-alone file.)
+
+**B2.** Depth-1 tree. Expected output:
+
+```text
+test accuracy: 0.6667
+leaves       : 2
 |--- petal width (cm) <= 0.80
 |   |--- class: 0
 |--- petal width (cm) >  0.80
-|   |--- petal width (cm) <= 1.65
-|   |   |--- petal length (cm) <= 4.95
-|   |   |   |--- class: 1
-|   |   |--- petal length (cm) >  4.95
-|   |   |   |--- class: 2
-|   |--- petal width (cm) >  1.65
-|   |   |--- petal length (cm) <= 4.85
-|   |   |   |--- class: 2
-|   |   |--- petal length (cm) >  4.85
-|   |   |   |--- class: 2
+|   |--- class: 1
 ```
 
-**The four rules, in full:**
+The sentence: one question gives exactly **two** possible answers and there are **three** species, so two species must share an answer and one is wrong every time. Two thirds is the ceiling. The confusion matrix shows it: all 10 setosas right, all 10 versicolors right, and all 10 virginicas called versicolor. 20 out of 30 is 0.6667.
 
-1. *"If the petal is 0.80 centimetres wide or narrower, it is a **setosa**."*
-2. *"Otherwise, if the petal is 1.65 cm wide or narrower **and** 4.95 cm long or shorter, it is a **versicolor**."*
-3. *"Otherwise, if the petal is 1.65 cm wide or narrower but longer than 4.95 cm, it is a **virginica**."*
-4. *"If the petal is wider than 1.65 cm, it is a **virginica**, whatever its length."*
-
-Accept any wording that keeps the numbers, the units, the species names, and the *order* — rule 2 only applies once rule 1 has failed.
-
-**31.2(a) How many measurements does the tree ever ask about?**
-**Two** — petal width and petal length. Sepal length and sepal width never appear in a single question.
-
-**31.2(b) Which measurement does the tree ask about first, and why does that matter?**
-Petal width. The first question is the one the tree judged most useful of all the questions it could have asked, so the first split is a strong hint about which measurement carries the signal. The importances confirm it: petal width 0.939.
-
-**31.2(c) Find the question where both answers are the same. Write it out and explain why the tree asked it.**
-`petal length (cm) <= 4.85`. Both branches give `class: 2` (virginica). It changes no prediction at all. The tree asked it because it made the two training piles very slightly tidier — 3 flowers on one side, 35 on the other — not because it helps. It is the model fussing over detail. A shallower tree would not have made it.
-
-**31.2(d) Rewrite rule 4 for somebody holding a ruler and no computer.**
-*"Measure the petal across at its widest. More than 1.65 cm? It's a virginica. You don't need to measure anything else."*
-
-### Page 31.3 — Trace three flowers by hand
-
-**Flower A — sepal 5.1 / 3.5, petal length 1.4, petal width 0.2**
-
+```text
+[[10  0  0]
+ [ 0 10  0]
+ [ 0 10  0]]
 ```
-petal width <= 0.80?   0.2 <= 0.80?   YES  → class 0
-                                           → SETOSA
+
+**B3.** The importances for the **depth-3** tree (not B2's depth-1 one):
+
+```text
+  sepal length (cm)    0.000
+  sepal width (cm)     0.000
+  petal length (cm)    0.061
+  petal width (cm)     0.939
 ```
-One question. Correct — this is a real setosa.
 
-**Flower B — sepal 6.0 / 2.7, petal length 4.2, petal width 1.3**
+They add to 1.000. Wrong-answer map: a student who gets `0.000 / 0.000 / 0.000 / 1.000` has used the depth-1 tree from B2.
 
+**B4.** The eight snacks. Expected output:
+
+```text
+|--- salt_g <= 2.50
+|   |--- class: sweet
+|--- salt_g >  2.50
+|   |--- class: savoury
+
+leaves: 2  depth: 1
+  sugar_g   0.000
+  salt_g    1.000
+a snack with 12 g sugar and 2 g salt -> ['sweet']
 ```
-petal width  <= 0.80?  1.3 <= 0.80?   NO   → go right
-petal width  <= 1.65?  1.3 <= 1.65?   YES  → go left
-petal length <= 4.95?  4.2 <= 4.95?   YES  → class 1
-                                           → VERSICOLOR
+
+**Why one question when it was allowed two?** After `salt_g <= 2.50` both piles were already all one kind, so there was nothing impure left to split. **Depth is a ceiling, not an order.** **Why does `sugar_g` score 0.000 without being "useless"?** Salt did the whole job on its own, so no work was left over for sugar. Sugar is a real and relevant fact about a snack; it was simply not *needed here*, by this tree, on these eight rows. The cut-off 2.50 is halfway between the salt values 1 and 4.
+
+**B5.** The depth sweep. Expected output:
+
+```text
+max_depth  leaves  real_depth   train    test
+        1       2           1  0.6667  0.6667
+        2       3           2  0.9667  0.9333
+        3       5           3  0.9833  0.9667
+        4       7           4  0.9917  0.9333
+        5       8           5  1.0000  0.9667
 ```
-Three questions. Correct — a real versicolor.
 
-**Flower C — sepal 6.7 / 3.0, petal length 5.0, petal width 1.7**
+The sentence about `train`: *"It goes up at every single step (0.6667, 0.9667, 0.9833, 0.9917, 1.0000) and never once down. More questions is always better on the flowers the tree learned from."* A student who also notices that `test` dipped at depth 4 has arrived at Week 33's whole lesson two weeks early: praise it, and hold it.
 
+### Fix the Broken Program
+
+**Bug 1 — the unclosed bracket.** **Did any of it run?** No, not one line: there is no output above the message, and the message says `SyntaxError`, which happens while Python is still *reading* the file. The missing `)` belongs at the **end of line 9**, after `stratify=iris.target`. Python reports line 8 because that is where the bracket was **opened**; it read on past line 9 and the blank line before giving up. General shape: Python names the line where the bracket opened; the character you need is further down.
+
+```python
+X_train, X_test, y_train, y_test = train_test_split(
+    iris.data, iris.target, test_size=0.2, random_state=42, stratify=iris.target)
 ```
-petal width  <= 0.80?  1.7 <= 0.80?   NO   → go right
-petal width  <= 1.65?  1.7 <= 1.65?   NO   → go right
-petal length <= 4.85?  5.0 <= 4.85?   NO   → class 2
-                                           → VIRGINICA
+
+**Bug 2 — `export_text` never imported.** One line ran first, which tells you that Python runs a file top to bottom and stops only at the trouble, so you must read the output *above* a traceback as well. **`NameError` always means "you used a name Python was never given."** The fix is to change the existing import line:
+
+```python
+from sklearn.tree import DecisionTreeClassifier, export_text
 ```
-Three questions. **Wrong** — this flower is really a versicolor. It is hidden flower number 25, the one the computer also gets wrong, and for the same reason.
 
-**31.3(a) Which flower needed the fewest questions? Why?**
-Flower A, one question. Setosas have very narrow petals — under 0.8 cm — and nothing else does, so a single question settles it every time. That is why the tree spent its very first question there.
+**Bug 3 — the silent one.** The line is labelled `"test accuracy:"` but computes `tree.score(X_train, y_train)`, the score on the rows the tree learned from. Wrong number, right-sounding label, no error of any kind. The fix:
 
-**31.3(b) For flower C, which question was the one that did the damage?**
-`petal width <= 1.65`. At 1.7 the flower fails that test by 0.05 cm — half a millimetre — and everything on the "no" side of it is virginica. Notice also that the *third* question was irrelevant: both of its branches say virginica, so flower C's fate was sealed by the second question.
+```python
+print("test accuracy:", round(tree.score(X_test, y_test), 4))
+```
 
-**31.3(c) Could you change one number to get flower C right? What would it cost?**
-Not with one number. Raising 1.65 to 1.75 alone leaves flower C virginica (it then hits `petal length <= 4.95` and 5.0 is over it). You must also raise 4.95 to about 5.05; then flower C becomes a versicolor. The cost is that genuine virginicas with a petal 1.66–1.75 cm wide and length up to 5.05 now become wrong (on the training flowers, 2 wrong becomes 4). You have not removed a mistake, you have moved it. Versicolors and virginicas genuinely overlap around 1.7 cm, and no single number separates overlapping things.
+The first line then reads `test accuracy: 0.9333`. **Which is honest? 0.9333.** The 0.9667 was measured on the 120 flowers the tree had already been shown, which is a memory test; only 0.9333 says anything about a flower that has not happened yet. The check that catches this whole family: **look at what is inside the brackets, not at the label outside them.**
 
-### Page 31.4 — Train it and write out the rules (homework)
+### Puzzle of the Week
 
-The complete working file:
+**(a)** Eight different rows, one per snack; any assignment is fine as long as **no two rows are identical**. One valid table:
+
+| snack | sweet? | crunchy? | wrapper? |
+|---|---|---|---|
+| chocolate biscuit | 1 | 1 | 1 |
+| apple | 1 | 1 | 0 |
+| toffee | 1 | 0 | 1 |
+| banana | 1 | 0 | 0 |
+| crisps | 0 | 1 | 1 |
+| carrot stick | 0 | 1 | 0 |
+| cheese slice | 0 | 0 | 1 |
+| boiled egg | 0 | 0 | 0 |
+
+(Do not let the student argue for ten minutes about whether toffee is crunchy. The puzzle is about the table having eight different rows.)
+
+**(b)** 2 × 2 × 2 = **8**. Each question doubles the number of possible answer-patterns.
+
+**(c)** **Eight.** Three yes/no questions can never separate nine things.
+
+**(d)** Typed into the tree (depth 3, `random_state=0`), the result is **leaves: 8 · depth: 3 · score: 1.0**: every snack at its own leaf. The tree chose `crunchy` first; with eight perfectly balanced rows all three questions are equally good and `random_state=0` settles the tie. Do not mark down a student whose first question differs if they changed the seed.
+
+**(e)** Adding a pear with the apple's answers, `[1, 1, 0]`:
+
+```text
+leaves: 8   score: 0.8889
+predicted for the apple's answers: ['apple']
+```
+
+**leaves: 8** (unchanged), **score: 0.8889**, eight right out of nine.
+
+**(f)** **Why:** the pear and the apple have **identical answers to all three questions**, so no tree that asks only those three can tell them apart; they reach the same leaf and a leaf holds one name. Eight out of nine is the best any model could do. **What would fix it:** a fourth question (*"is it green?"*), which means **measuring something new**. The fix is in the table, not in the tree, the depth or the code.
+
+**(g)**
+
+| Questions allowed | Most possible answers |
+|---|---|
+| 1 | 2 |
+| 2 | 4 |
+| 3 | 8 |
+| 4 | 16 |
+| 5 | 32 |
+
+**(h)** **Four.** Three questions give only 8 endings and ten are needed.
+
+**(i)** **Seven.** 2, 4, 8, 16, 32, 64, **128**: six questions give 64 endings, not enough for a hundred; seven give 128.
+
+### Think Deeper
+
+These are paragraph answers. Mark the reasoning, not the wording.
+
+**T1 — the tree is better, without mentioning the score.** A full-credit paragraph makes at least two of these points. The tree hands over **four sentences** that can be written on a card and used with a ruler and no computer, by somebody who has never programmed. That means the model can be **checked** by a person who is not the author (a botanist can read rule 4 and argue about 1.65) and **audited** if its decisions ever mattered. Last week's kNN cannot do this: its reasoning *is* 120 flowers, and the only explanation it can give is "because of those, over there". And the tree volunteered a finding nobody asked for, that it never asked about sepals, which only arrived because the model was readable. **Zero marks for any sentence containing 0.9667 or "more accurate".**
+
+**T2 — Ines and Jai.** Full credit: they have **identical measurements and opposite results, so as far as the table is concerned they are the same pupil**. No model, however good, can get both right; identical rows take identical paths to the same leaf, and a leaf holds one answer. The best possible score on that table is eleven out of twelve, and the tree achieved it, so **the mistake is in the table, not the code**. What to do about it: **add a column** (a previous test score, how confident each pupil felt, how many practice questions were done), re-run, and see whether the new column earns a non-zero importance; and write the limitation down next to the result. A student who proposes "try a deeper tree" or "try a different model" has missed the point.
+
+### Build It
+
+**Part 1 — the prediction.** Mark the honesty, not the accuracy. Most students write **petal length**; the answer is **petal width** (0.939). A student who predicted wrong and says so understood the exercise better than one who happened to be right. It must be written **before** the code runs.
+
+**Part 2 — train it and print the rules.** The complete working file:
 
 ```python
 # week31_hw_rules.py
@@ -1223,15 +1415,18 @@ names          : ['setosa' 'versicolor' 'virginica']
 |   |   |   |--- class: 2
 ```
 
-The four sentences are as given for page 31.2. **Marking:** one mark per sentence for the numbers, one for the units, one for the species name instead of the class number, and one for keeping the order (each rule only applies when the ones above it have failed). A sentence that says "class 2" instead of "virginica" is not finished, because the point of the exercise is that a non-programmer could use it.
+The table to fill in: train accuracy **0.9833**, test accuracy **0.9667**, leaves **5**, species names **setosa, versicolor, virginica**. There is no `StandardScaler` in this file for the reason given at A4(g).
 
-**31.4(a) Your prediction: which measurement will the tree lean on most?**
-Mark the honesty, not the accuracy. Most people write **petal length**, because it is the measurement that differs most obviously between the species. The answer is **petal width**, at 0.939. A student who predicted wrong and says so out loud has understood the point of measuring rather than guessing better than one who happened to be right.
+**Part 3 — the four sentences.**
 
-**31.4(b) Why is there no `StandardScaler` in this file?**
-Because a tree compares one column against one number at a time — `petal width <= 1.65`. Multiply that column by a thousand and the tree simply learns `<= 1650`; nothing about the model changes. Scaling is essential for kNN, which measures distances across all four columns at once, and pointless for a tree.
+1. *"If the petal is **0.80 centimetres** wide or narrower, it is a **setosa**."*
+2. *"Otherwise, if the petal is **1.65 cm** wide or narrower **and 4.95 cm** long or shorter, it is a **versicolor**."*
+3. *"Otherwise, if the petal is **1.65 cm** wide or narrower but **longer than 4.95 cm**, it is a **virginica**."*
+4. *"If the petal is **wider than 1.65 cm**, it is a **virginica**, whatever its length."*
 
-### Page 31.5 — Find the row it gets wrong (homework)
+Accept any wording that keeps the numbers, the units, the species names and the *order*. **Marking, one mark each:** the numbers · the units · the species name instead of the class number · keeping the order (each rule applies only when the ones above it have failed). A sentence that says "class 2" scores one out of four however confidently it is written, because a non-programmer must be able to use it. The read-aloud lines ("who did you read them to", "did they understand") are marked for being filled in honestly; if a listener did not understand a sentence, the rewrite is the learning. For a ruler-and-no-computer version of rule 4: *"Measure the petal across at its widest. More than 1.65 cm? It's a virginica. You don't need to measure anything else."*
+
+**Part 4 — the row it gets wrong.**
 
 ```python
 # week31_hw_wrong.py
@@ -1263,49 +1458,78 @@ flower 25 measurements: [6.7 3.  5.  1.7]
   tree said: virginica  truth: versicolor
 ```
 
-**Full-credit answer (all four parts):**
+The table: how many wrong **1** · hidden flower number **25** · petal length **5.0 cm** · petal width **1.7 cm** · the tree said **virginica** · the truth was **versicolor**. The rule that caught it is **rule four** (petal wider than 1.65 cm, so virginica). It missed the cut-off by **0.05 cm**, half a millimetre.
 
-> The tree gets **one** of the 30 hidden flowers wrong: **number 25**. Its four measurements are sepal length 6.7, sepal width 3.0, **petal length 5.0** and **petal width 1.7**.
+**Full-credit answer:**
+
+> The tree gets **one** of the 30 hidden flowers wrong: **number 25**. Its measurements are sepal length 6.7, sepal width 3.0, **petal length 5.0** and **petal width 1.7**.
 >
-> The rule that caught it is **rule four: "if the petal is wider than 1.65 cm, it is a virginica."** Its petal is 1.7 cm wide. That is over the cut-off by 0.05 cm — half a millimetre — so the tree sent it down the virginica side, and everything on that side comes out virginica.
+> The rule that caught it is **rule four: "if the petal is wider than 1.65 cm, it is a virginica."** Its petal is 1.7 cm wide, over the cut-off by 0.05 cm, so the tree sent it down the virginica side.
 >
-> It is really a **versicolor** with an unusually wide petal. The tree is not broken. Versicolors and virginicas genuinely overlap in petal width around 1.7 cm, so no single cut-off can be right about all of them.
->
-> I tried moving the width cut-off to 1.75 and flower 25 was still wrong, because its length is also just over a cut-off. When I moved both cut-offs it came out right, but more of the flowers the tree learned from came out wrong. Moving the line moves the mistake; it does not delete it.
+> It is really a **versicolor** with an unusually wide petal. The tree is not broken: versicolors and virginicas genuinely overlap in petal width around 1.7 cm, so no single cut-off can be right about all of them.
 
-**31.5(a) Notice something about the third question in flower 25's path.**
-Its path hits `petal length <= 4.85`, and **both branches of that question say virginica.** So the third question changed nothing. Flower 25's answer was already decided by the second question. That is the useless split from page 31.2, met again from the other direction.
+**"Now try to fix it" (1.65 to 1.75).** On its own this does **not** rescue flower 25: it then meets `petal length <= 4.95`, and 5.0 is over that too, so it is still virginica. Move the length cut-off to about 5.05 as well and it comes out versicolor, correctly. But a genuine virginica with a petal 1.66 to 1.75 cm wide and a short petal now comes out versicolor; on the 120 training flowers the two moves together turn 2 wrong into 4 wrong. **Answer to "removed or moved": moved.** The species overlap around 1.7 cm, and no single number separates things that overlap.
 
-**31.5(b) How many did the tree get wrong on the flowers it learned from?**
-**Two out of 120** — hence train accuracy 0.9833. Both are versicolors with wide petals, measured `[5.9 3.2 4.8 1.8]` and `[6.0 2.7 5.1 1.6]`, and both are called virginica. Same story as flower 25: the species overlap and the tree has to pick.
+Teacher extras. Flower 25's path ends at `petal length <= 4.85`, where **both branches say virginica**, so its third question changed nothing; that is the useless split from Practice Set A (A2(b)), met from the other direction. The tree also gets **2 of the 120 training flowers** wrong (hence train 0.9833): both are versicolors with wide petals, `[5.9 3.2 4.8 1.8]` and `[6.0 2.7 5.1 1.6]`, both called virginica, for the same overlap reason. The useless split exists because it made the training piles very slightly tidier (3 flowers on one side, 35 on the other); it is the tree fussing, and a shallower tree would not make it.
 
-### Page 31.6 — Bug Log and feature importances (homework)
+**Part 5 — the importances.**
 
-**The two Bug Log entries.** Full credit is the real message copied exactly, plus the fix in the student's own words.
+| measurement | importance |
+|---|---|
+| sepal length (cm) | **0.000** |
+| sepal width (cm) | **0.000** |
+| petal length (cm) | **0.061** |
+| petal width (cm) | **0.939** |
+| **total** | **1.000** |
 
-| Message | What it means | The fix |
+**Was the Part 1 prediction right?** See Part 1: petal width, not petal length. The total is exactly 1 because importances are **shares** of the work, not scores out of 10. They are also relative: 0.939 says "most of the work here", not "petal width is 93.9% accurate".
+
+**Two sentences on the 0.000s (model answer):**
+
+> No. It means *this* tree, at depth 3, on *these* 120 training flowers, never needed those two, because petal width alone already separates the species so well that there was no job left over. "Not needed by this model" and "useless" are different claims, and a 0.000 supports only the first.
+
+**Now test it** (sepals only, `X = iris.data[:, [0, 1]]`): **train 0.8583, test 0.6667.** Two flowers out of three from the two "useless" columns alone, which supports **"not needed here"**, not "useless". Teacher aside: the tree used two measurements out of four, which is good news twice over. A working identifier needs only two measurements in the field, and the model handed over that discovery free because it is a model you can read.
+
+**Part 6 — the Bug Log.** Two entries, full credit for the real message copied exactly plus the fix in the student's own words.
+
+| What happened | The real message | What fixed it | What I will check next time |
+|---|---|---|---|
+| Typed `depth=3` on the tree | `TypeError: DecisionTreeClassifier.__init__() got an unexpected keyword argument 'depth'` | Renamed it `max_depth=3`. The setting exists; I called it the wrong thing. It is **max** because depth is a ceiling. | Say "max" out loud while typing it. |
+| Used `export_text` without importing it | `NameError: name 'export_text' is not defined` | Added it to the import: `from sklearn.tree import DecisionTreeClassifier, export_text`. One import line can fetch several tools, comma-separated. | When I see `NameError`, scroll to the imports **first**. |
+
+What the two messages mean, if the student's own words are vague: the `TypeError` says the tree tool has no setting by that name; the `NameError` says Python was never given the name `export_text`.
+
+### Draw It
+
+Marked on four things, not artistic quality:
+
+1. **Every box is a genuine yes/no question.** "What colour is it?" is not a split.
+2. **Every branch is labelled yes or no.** The part people leave out; without it nobody else can read the drawing.
+3. **The leaves are rung**, and there are as many as there are objects (or the student can explain why not).
+4. **A reason is written down for the first question.** A first question that halves the pile is good; one that names a single object is a gamble.
+
+A depth of 3 for five objects is normal and 4 is fine. If the first question was "is it the mug?" and it took four more, the student should write that down too: a bad first question is exactly what the computer avoids by trying every cut-off.
+
+### Self-Check
+
+The "I can" grid is self-rated; do not mark it, but read it against the assessment above. **True or false:**
+
+| Statement | Answer | Why |
 |---|---|---|
-| `TypeError: DecisionTreeClassifier.__init__() got an unexpected keyword argument 'depth'` | I passed a setting called `depth`, and the tree tool has no setting by that name. | Change `depth=3` to `max_depth=3`. It is *max* because depth is a ceiling, not an instruction. |
-| `NameError: name 'export_text' is not defined` | I used the name `export_text` and Python was never given it. | Add it to the import: `from sklearn.tree import DecisionTreeClassifier, export_text`. One import line can fetch several tools, comma-separated. |
-
-**The four importances:**
-
-```text
-  sepal length (cm)    0.000
-  sepal width (cm)     0.000
-  petal length (cm)    0.061
-  petal width (cm)     0.939
-```
-
-**31.6(a) Two of them are 0.000. Does that mean those two measurements are useless?**
-
-> No. It means *this* tree, at depth 3, on *these* 120 training flowers, never needed them. Petal width alone already separates the species so well that there was no job left over. If I train a tree using only the two sepal measurements it still works — it gets 0.6667 on the hidden flowers, two out of three — so the information is real, it just isn't needed here. "Not needed by this model" and "useless" are different claims, and only the first one is supported by a 0.000.
-
-**31.6(b) Add the four numbers up. What does the total tell you?**
-1.000 exactly. The importances are **shares** of the work, not scores out of 10, so they always total 1. That also means they are relative: petal width's 0.939 says "most of the work here", not "petal width is 93.9% accurate".
-
-**31.6(c) The tree used two measurements out of four. Is that good news or bad news?**
-Good news, twice over. It means you could build a working iris identifier while measuring only two things instead of four — half the work in the field. And it is a genuine discovery about irises that nobody had to go looking for: the model handed it over free, because it is a model you can read.
+| `max_depth=3` means the tree asks exactly three questions | **FALSE** | A ceiling, not an order. The setosa branch stops after one. |
+| A depth-3 tree can have at most 8 leaves | **TRUE** | 2 × 2 × 2. Ours has 5. |
+| `class: 0` means none of them | **FALSE** | A name-tag. Position 0 is setosa. |
+| The number 0.80 appears somewhere in our code | **FALSE** | `.fit()` found it. Search the file. |
+| A split can ask about two measurements at once | **FALSE** | One column, one number, one comparison. |
+| Every line of an `export_text` printout is a question | **FALSE** | Five of our thirteen lines are answers. |
+| The four feature importances add up to 1 | **TRUE** | They are shares of the work. |
+| Importance 0.000 proves a measurement is worthless | **FALSE** | Sepals alone still score 0.6667. "Not needed here." |
+| A tree needs `StandardScaler` just like kNN does | **FALSE** | A split compares one column with one number; rescaling just rescales the cut-off. |
+| A tree can ask a question whose two answers are the same | **TRUE** | `petal length <= 4.85`: both branches say virginica. |
+| `feature_importances` works before you call `fit` | **FALSE** | Two things wrong: the missing underscore, and no `fit`. |
+| `from sklearn.trees import ...` is the correct import | **FALSE** | `sklearn.tree`, singular. |
+| Moving a cut-off can remove a mistake completely | **FALSE** | Moving one cut-off alone usually trades one mistake for another (here it does not even rescue flower 25). |
+| You can write a tree's rules on a card and use them with no computer | **TRUE** | Four sentences, a ruler, and you agree with the computer 29 times out of 30. |
 
 ### Lesson questions posed in the Say-this scripts
 

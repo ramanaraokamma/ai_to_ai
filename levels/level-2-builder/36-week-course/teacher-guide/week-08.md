@@ -13,7 +13,7 @@
 | **Big idea** | A `while` loop repeats until its condition goes `False`, which is how a program waits for a human to get it right. |
 | **New vocabulary** | while loop · infinite loop · break · continue · input validation |
 | **New syntax** | `while condition:` · `break` · `continue` · `random.randint(a, b)` |
-| **Materials** | Printed workbook pages 8.1–8.6 · pencil · notebook open at the **Bug Log** · **last week's twelve-score index card** (88 92 70 65 100 54 78 81 47 90 62 73) · a scrap of paper for the Hook, folded, with a number on it |
+| **Materials** | The printed workbook (all sections, through Self-Check) · pencil · notebook open at the **Bug Log** · **last week's twelve-score index card** (88 92 70 65 100 54 78 81 47 90 62 73) · a scrap of paper for the Hook, folded, with a number on it |
 | **Tech needed** | One laptop, Python 3, terminal in `~/ai-academy/level2`, editor with 4-space indent. `random` is in the standard library — **nothing to install**. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
@@ -380,7 +380,7 @@ Stage one's first tile stays white; everything from stage two onwards is still d
 
 ### 20 minutes the night before
 
-- [ ] **Print workbook pages 8.1–8.6.**
+- [ ] **Print the whole workbook for Week 8** (Warm-Up through Self-Check) — the Build It section is where `guess.py`, `grade.py`, the banana record and the Bug Log get written up.
 - [ ] **Write a number between 1 and 100 on a scrap of paper and fold it.** This is the Hook. You will play the guessing game by hand before any code appears. Pick something that is not 50 and not a round number — 37, 63, 82.
 - [ ] **Keep last week's twelve-score index card.** `grade.py` uses the same twelve numbers, and the fact that the total is still 900 and the average still 75 is a real check on a program that has changed shape completely.
 - [ ] **Cause an infinite loop and stop it. This is the most important two minutes of prep this term.** Type this file exactly:
@@ -428,7 +428,7 @@ Stage one's first tile stays white; everything from stage two onwards is still d
 | If this fails | Do this instead |
 |---|---|
 | **No laptop** | Play the whole of `guess.py` on paper, twice. **First:** you hold the number, they guess, and they write each guess in a column with the hint next to it and *how many numbers are still possible* — which is Figure 8.4, drawn by hand. **Then swap**: they hold the number and **you** are the program, and you follow the rules stupidly and literally, including asking for an eighth guess if the rule says `<=`. Playing the machine badly on purpose teaches the off-by-one better than a screen does. |
-| **Python not installed** | The paper version above plus the trace tables on page 8.1 is a complete 70-minute lesson. Do the install afterwards. |
+| **Python not installed** | The paper version above plus the trace tables (Practice Set A, A1) is a complete 70-minute lesson. Do the install afterwards. |
 | **The student is frightened by the runaway loop** | Stop. Do it again, together, with your hand next to theirs on the Ctrl key, and this time **you** count the seconds out loud so they know when it will end. Then a third time where *they* choose when to stop it. Control is the cure for fear, and three goes is usually enough. |
 | **Ctrl+C does not stop it** | Very occasionally the terminal is not listening. Close the terminal tab entirely — the program dies with it. Then check they are pressing Ctrl and not Command, and that the terminal window (not the editor) has focus. |
 | **The whole thing is done in twenty minutes** | Go to the harder variations: the difficulty menu, the warmer/colder hint, and the histogram in `grade.py`. All three need only this week's syntax. |
@@ -951,7 +951,7 @@ Then the homework, using the script in **📤 Homework to Assign**. Frame it in 
 
 ### Setup
 
-**On the table:** the laptop · workbook pages 8.4 and 8.5 · page 8.6 (Bug Log) · **last week's twelve-score index card** · a pencil.
+**On the table:** the laptop · the workbook open at **Build It** (Parts 2 to 4) and **Part 5, the Bug Log** · **last week's twelve-score index card** · a pencil.
 
 **On the screen:** the hardened `guess.py` from the live-code, saved and working. They are about to finish it, not restart it.
 
@@ -1082,7 +1082,7 @@ Final record: 1 of 1. Thanks for playing.
 
 > "Now the bit that makes this a real program instead of a demo. You are going to attack your own program. Type `banana` at **every single prompt**, one at a time, and write down exactly what happens each time. Not 'it worked' — what it *printed*."
 
-Page 8.5 has the table. The honest, real answers:
+**Build It, Part 4** has the table. The honest, real answers:
 
 | Prompt | Type `banana` | What actually happens | Is that acceptable? |
 |---|---|---|---|
@@ -1106,7 +1106,7 @@ There is no single right answer and the student should feel the tension. It is n
 
 > "Second program, and you already know most of it — it's last week's `scores.py` with this week's validation bolted on. Same twelve numbers off the same card, so you already know the answer: total nine hundred, average seventy-five. **If your program says anything else, your program is wrong, and that is a very comfortable position to be in.**"
 
-The complete file is in the Answer Key (page 8.5). In class, get them as far as Step 3 — the validated reading loop — and leave the letter grade for homework.
+The complete file is in the Answer Key, under **Teacher extras**. In class, get them as far as Step 3 — the validated reading loop — and leave the letter grade for homework.
 
 The one structural thing to say out loud, because it is the interesting bit:
 
@@ -1118,7 +1118,7 @@ The one structural thing to say out loud, because it is the interesting bit:
 - Typing `banana`, `-5`, `500` or `85.5` at any prompt produces a message and never a traceback.
 - A rejected input does **not** consume a try — provable by watching the `(n left)` number stay put.
 - The student has caused an infinite loop and stopped it with Ctrl+C **with their own hands**, at least once.
-- The banana table on page 8.5 is filled in with what actually printed, including the `-5` row and its honest verdict.
+- The banana record (Build It, Part 4) is filled in with what actually printed, including the `-5` row and its honest verdict.
 - `grade.py` exists and reads validated scores. The letter grade may be homework.
 - **Two Bug Log entries**, one of which is the `KeyboardInterrupt`.
 
@@ -1353,57 +1353,122 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour. This is a project week, so most of it is building rather than answering.
+> "About an hour and a half, in two evenings. This is a project week, so the heart of it is building — but the workbook has a page for everything we did, and I will mark from it section by section.
 >
-> **Page 8.1 — the trace tables, laptop closed.** Three `while` loops. For each one, fill in the table: the value before each check, whether the check is `True` or `False`, what gets printed, and the value after. **One of the three never ends** — when you get to it, write 'infinite' and say which line is missing.
+> **Warm-Up — five questions about last week.** Do these first, cold. Then in **Practice Set A, A1**, the three trace tables, laptop closed: for each `while` loop fill in the value before each check, whether the check is `True` or `False`, what gets printed, and the value after. **One of the three never ends** — when you get to it, write 'infinite' and say which line is missing.
 >
-> **Pages 8.2 and 8.3 — the practice.** Page 8.3 has six broken loops. Predict before running, as always — and this week **three of them have no error message at all**, so 'what do you expect' means 'exactly what will it print'.
+> **Predict the Output, P1 to P4.** Write your prediction before you run anything. P2 is the one almost everybody gets wrong.
 >
-> **Page 8.4 — finish `guess.py`.** Hints, the seven-try limit, the replay loop. It must give the number away when you lose, and it must never crash.
+> **Practice Set A, A2 to A6, and Practice Set B, B1 to B5.** Set A is reading: the trace tables, matching code to output, four programs with four different kinds of trouble, labelling the diagram, and six one-sentence answers. Set B is writing: a dice roll, a countdown, a yes/no loop, a 'passes 100' loop, and a PIN lock that survives `banana`. In A4, **two of the four have no error message at all**, so 'what do you expect' means 'exactly what will it print'.
 >
-> **Page 8.5 — `grade.py`, and the banana record.** Total, average, highest, letter grade. **Test it on the twelve numbers off your card first** — if it doesn't say 900 and 75.00, it's wrong, and you'll know straight away. Then the record: type `banana` at **every single prompt in both programs** and write down what each one actually printed. Not 'it was fine' — the words on the screen. And where the message is not quite honest, say so.
+> **Fix the Broken Program.** `lock.py` has three bugs — one that stops Python reading the file, one that crashes it, and one that says nothing at all. Fix them in that order and paste in each real message.
 >
-> **Page 8.6 — Bug Log, Think Deeper, self-check.** Two Bug Log entries, and **one of them must be your `KeyboardInterrupt`** — copy the real traceback in, with the line number.
+> **Puzzle of the Week.** Five loops: which end and which run away, and the halving arithmetic behind the seven tries.
+>
+> **Think Deeper, T1 and T2.** Pick a side and name a cost, in four or more sentences.
+>
+> **Build It.** Part 1: cause the runaway loop and stop it, three times. Part 2: finish `guess.py` — hints, the seven-try limit, the replay loop; it must give the number away when you lose, and it must never crash. Part 3: `grade.py`, **tested on the twelve numbers off your card first** — if it doesn't say 900 and 75.00, it's wrong, and you'll know straight away. Part 4: the banana record. Type `banana` at **every single prompt in both programs** and write down what each one actually printed. Not 'it was fine' — the words on the screen. And where the message is not quite honest, say so. Part 5: the Bug Log — two entries, and **one of them must be your `KeyboardInterrupt`** — copy the real traceback in, with the line number.
+>
+> **Draw It, and the Self-Check** at the very end.
 >
 > Every line commented, saying *why*."
 
-**Workbook pages:** 8.1 in class if there is time; **8.2, 8.3, 8.4, 8.5 and 8.6** at home.
+**Workbook sections:** the **Warm-Up** and **Practice Set A, A1** (the trace tables) in class if there is time; everything else — Predict the Output, the rest of Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It (Parts 1–5), Draw It and Self-Check — at home. The Build It tables are also where the in-class `guess.py` and banana work gets written up.
 
-**Expected time:** 10 min trace tables · 10 min practice · 20 min `guess.py` · 15 min `grade.py` · 5 min the banana record · 10 min Bug Log and Think Deeper. About 70 minutes, and this is the longest homework of the term.
+**Expected time:** 15 min Warm-Up, Predict and trace tables · 15 min rest of Practice Set A · 15 min Practice Set B · 10 min Fix the Broken Program · 10 min Puzzle and Think Deeper · 20 min `guess.py` · 15 min `grade.py` · 5 min the banana record · 10 min Bug Log, Draw It and Self-Check. Roughly 115 minutes in all, so split it across two evenings; this is the longest homework of the term. If time is short, the sections to drop first are Draw It and the Puzzle; never drop Build It.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 8.1 — Warm-Up: trace three `while` loops
+Organised by the **workbook's own sections and item labels** (W1, P1, A1, B1, Bug 1, T1, Part 1 …), so you can mark with the workbook open beside it. The values are the ones in the workbook's own Answers section, re-checked by running the code. Teacher-only material (the complete `grade.py`, extra diagnostics, marking tips) follows after Self-Check, under **Teacher extras**.
 
-**8.1(a)**
+### Warm-Up
 
-```python
-lives = 3
-while lives > 0:
-    print(f"lives left: {lives}")
-    lives -= 1
-print("game over")
+**W1.** `range(4)` → **4** · `range(1, 11)` → **10** · `range(3, 20)` → **17** · `range(5, 5)` → **0**. Every one of them is `stop - start`.
+
+**W2.** **Set it up before the loop** (at the margin) · **update it inside the loop** (in the indent) · **use it after the loop** (at the margin).
+
+**W3.** It prints **`5`**. `total = 0` is *inside* the loop, so every pass wipes the running total before adding, and the box ends up holding only the last value. **No error message at all.** Fix: move that line above the `for`.
+
+**W4.** It is a `TypeError`:
+
+```text
+TypeError: can't multiply sequence by non-int of type 'str'
 ```
+
+You cannot repeat a piece of text a *text* number of times. The count has to be a number, so take the quotes off the 20.
+
+**W5.** **Count.** Two numbers: how many things went in (twelve) and how many lines came out (eleven). If they differ you have the bug's fingerprint before you have the bug — and *then* you look at the `range` boundary. Reading the code will not find it, because every line in it is correct.
+
+---
+
+### Predict the Output
+
+**P1.**
+
+```text
+0
+1
+2
+done 3
+```
+
+**Three prints inside the loop, four checks.** The loop printed 0, 1 and 2 — a counter starting at 0 with a `<` test gives you exactly what `range(3)` would give you. Then the fourth check asked `3 < 3`, got `False`, and ended the loop, which is why the last line says `done 3`.
+
+**P2.**
+
+```text
+1 2 4 5 
+passes: 5
+```
+
+**Five passes happened. All five.** `continue` on pass three threw away the rest of *that pass* — the `print` — and went straight back to the check. It did **not** remove a pass, which is why `passes` reached 5. The `passes += 1` line is above the `continue`, so it ran on every single pass including the third.
+
+**This is the trick of the week.** If you predicted `passes: 4`, you are in very normal company, and the cure is a count rather than an explanation.
+
+**P3.**
+
+```text
+1 2 
+n is 3
+```
+
+`break` on pass three left the loop **immediately**, so 3, 4 and 5 were never printed and passes four and five never happened at all. But `n` had already been given the value 3 by the `for` line before the `if` ran — so after the loop it still holds 3. **The counter keeps whatever went in last, and with a `break` the last value is the one that triggered it.**
+
+**P4.**
+
+```text
+True False False False
+```
+
+`"42"` is all digits ✔ `"-42"` is `False` because **a minus sign is not a digit.** `" 42 "` is `False` because **a space is not a digit** — which is exactly why `.strip()` exists. `"4.2"` is `False` because a dot is not a digit either.
+
+**The two that will annoy a real user are `-42` and `" 42 "`.** The spaces one you can fix today with `.strip()`. The minus sign one you cannot fix with this week's tools, so **write it on the box**: an honest message would be `Digits only please - no minus signs or decimal points`, not "whole numbers only", because −42 *is* a whole number.
+
+---
+
+### Practice Set A
+
+**A1(i).**
 
 | Check | `lives` before | `lives > 0`? | Prints | `lives` after |
 |---|---|---|---|---|
 | 1 | 3 | `True` | `lives left: 3` | 2 |
 | 2 | 2 | `True` | `lives left: 2` | 1 |
 | 3 | 1 | `True` | `lives left: 1` | 0 |
-| 4 | 0 | **`False`** | — | ends |
+| 4 | 0 | **`False`** | — | the loop ends |
 
-Then `game over`. **Three passes, four checks.**
+Then `game over`. **Three passes, four checks.** Real output:
 
-**8.1(b)**
-
-```python
-count = 0
-while count < 3:
-    print(f"count is {count}")
-    count += 1
+```text
+lives left: 3
+lives left: 2
+lives left: 1
+game over
 ```
+
+**A1(ii).**
 
 | Check | `count` before | `count < 3`? | Prints | after |
 |---|---|---|---|---|
@@ -1412,17 +1477,15 @@ while count < 3:
 | 3 | 2 | `True` | `count is 2` | 3 |
 | 4 | 3 | **`False`** | — | ends |
 
-Three passes, and the numbers printed are **0, 1 and 2** — not 1, 2, 3. Starting a counter at 0 and testing `<` gives you exactly the same values `range(3)` would.
-
-**8.1(c)**
-
-```python
-fuel = 5
-while fuel > 0:
-    print("still flying")
+```text
+count is 0
+count is 1
+count is 2
 ```
 
-**Infinite.** Every check asks `5 > 0`, which is `True` forever, because **nothing in the body changes `fuel`.** The missing line is `fuel -= 1` inside the loop. Stop it with Ctrl+C, which gives:
+**The numbers printed are 0, 1 and 2 — not 1, 2, 3.** Because the counter *starts* at 0 and the printing happens **before** the `+= 1`. Starting a counter at 0 and testing `<` gives you exactly the same values `range(3)` would.
+
+**A1(iii). Infinite.** Every check asks `5 > 0`, which is `True` forever, because **nothing in the body changes `fuel`.** The missing part is the **change**. Stop it with Ctrl+C:
 
 ```text
 still flying
@@ -1435,58 +1498,28 @@ Traceback (most recent call last):
 KeyboardInterrupt
 ```
 
-**8.1(d) In (a), why are there four checks but only three passes?**
-Because the check happens *before* every pass, including the one that does not happen. Three checks said `True` and were followed by a pass; the fourth said `False` and ended the loop. A `while` loop always checks one more time than it runs.
-
-**8.1(e) Change (b)'s condition to `count <= 3`. How many passes now, and which numbers print?**
-Four passes: 0, 1, 2, 3. That extra pass is exactly the off-by-one from the lesson — `<=` lets the boundary value through one more time.
-
-### Page 8.2 — Practice Set A: understand it
-
-**8.2(a) What is the one question that decides between `for` and `while`?**
-Can you say the number of repeats out loud before you start? Yes → `for`. No → `while`.
-
-**8.2(b) Name the three parts of a `while` loop and say what goes wrong if each is missing.**
-**Set up** (before the loop): missing it gives `NameError`, because the condition asks about a box that does not exist. **Check** (the condition): without it you have not written a `while` loop at all. **Change** (inside the body): missing it gives an infinite loop, with no error message until you press Ctrl+C.
-
-**8.2(c) What does `KeyboardInterrupt` mean, and is it a bug in your code?**
-It means a human pressed Ctrl+C and stopped the program. It is not a bug in the code — it is you taking control back. The bug is whatever made the loop refuse to end, and the traceback's line number tells you where the program was when you stopped it.
-
-**8.2(d) `break` and `continue` — one sentence each.**
-`break` ends the loop immediately, skipping every remaining pass. `continue` ends only the current pass and goes straight back to the check.
-
-**8.2(e) A loop is set up for five passes. On pass two it hits `continue`; on pass four it hits `break`. How many passes run?**
-Four. Pass two runs but is cut short; pass four runs as far as the `break`; pass five never happens.
-
-**8.2(f) What does `random.randint(1, 6)` hand back, and how is that different from `range(1, 6)`?**
-`randint(1, 6)` hands back one whole number from 1 to 6, **both ends included** — six possible answers. `range(1, 6)` hands out 1, 2, 3, 4, 5 — the stop is excluded. Two tools, two rules; the one with "range" in the name is the one that excludes.
-
-**8.2(g) What is input validation, and why does the check come before the conversion?**
-Checking what the user typed before using it, and refusing it politely if it is not usable. The check comes first because `int()` is the thing that crashes — once it has raised `ValueError` the program is over and there is nothing left to check. `.isdigit()` can be asked of any text at all and never crashes.
-
-**8.2(h) What does `.strip()` do, and why does it matter for `.isdigit()`?**
-It removes spaces from both ends of the text. It matters because `"  42  ".isdigit()` is `False` — a space is not a digit — so a user who types a space before their number would be rejected for no visible reason. Real proof: `'  42  '` → `False`; `'42'` → `True`.
-
-**8.2(i) Why does `.isdigit()` reject `-5`, and is that a bug?**
-Because the minus sign is not a digit from 0 to 9, and `.isdigit()` requires *every* character to be one. It is a **known limitation**, not a mystery: the program still refuses the input politely and does not crash, but the message "whole numbers only" is not quite honest, because −5 is a whole number. Record it rather than hide it.
-
-**8.2(j) Why exactly seven tries for 1 to 100?**
-Because a guess in the middle halves what is left: 100 → 50 → 25 → 12 → 6 → 3 → 1. That is six halvings plus one final guess to name the survivor, so seven guesses always suffice for a player who halves. With fewer, even a perfect player would sometimes lose; more would make it easy to win without being clever.
-
-**8.2(k) What is a flag?**
-A variable whose only job is to hold `True` or `False` and steer a loop. In `guess.py`, `won` ends one game and `playing` ends the whole session. Flipping a flag is a change step made out of a decision instead of arithmetic.
-
-### Page 8.3 — Practice Set B: use it
-
-**8.3(a)**
-
 ```python
-tries = 0
-while tries < 3
-    tries += 1
+    fuel -= 1                  # inside the loop, in the indent
 ```
 
-*The real message:*
+**A2.** Because the check happens **before** every pass, **including the one that does not happen.** Three checks said `True` and were each followed by a pass; the fourth said `False` and ended the loop instead. A `while` loop always checks one more time than it runs.
+
+**A3.** a → **2** · b → **3** · c → **4** · d → **1**
+
+The four real outputs:
+
+```text
+1 2 
+1 2 4 5 
+1 2 3 
+1 2 3 4 
+```
+
+**c and d differ by exactly one character: the `=` in `<=`.** `while n < 4:` gives three numbers; `while n <= 4:` gives four. That is the same one-character off-by-one as the eighth guess in `guess.py`.
+
+**A4.**
+
+**(i) There is an error message:**
 
 ```text
   File "a.py", line 2
@@ -1495,17 +1528,9 @@ while tries < 3
 SyntaxError: expected ':'
 ```
 
-*The fix:* add the colon. Nothing ran at all — a `SyntaxError` means Python could not read the file.
+The colon is missing. **Family 1 — nothing ran at all.**
 
-**8.3(b)**
-
-```python
-count = input("How many? ")
-while count < 1:
-    print("again")
-```
-
-*The real message:*
+**(ii) There is an error message:**
 
 ```text
 How many? 3
@@ -1515,9 +1540,450 @@ Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'str' and 'int'
 ```
 
-*The fix:* `input()` always hands back text. Either convert — `count = int(input(...))` — or compare text with text. Note that it printed the prompt first, so the program *did* start; this is a runtime error, not a syntax one.
+`input()` always hands back **text**, and you cannot compare text with a number. Note that the prompt printed first, so the program **did** start — this is family 2, not family 1. Fix: `count = int(input(...))`, or compare text with text. Do not mix.
 
-**8.3(c)**
+**(iii) No error message at all**, and it prints the wrong thing for **every** input:
+
+```text
+Guess? banana
+  That looked like a number.
+```
+
+The **brackets are missing.** `typed.isdigit` is the question itself, not the answer, and Python counts a thing-that-exists as a yes — so `not typed.isdigit` is always `False` and the complaint never fires. Fix: `typed.isdigit()`. **Brackets mean "actually ask it."**
+
+**(iv) No error message**, and it never ends. The change step is there, but it goes the **wrong way**: `lives += 1` makes `lives` bigger, so `lives > 0` gets *more* true, not less. Real output starts:
+
+```text
+3
+4
+5
+6
+```
+
+…and keeps going. Fix: `lives -= 1`. **Having a change step is not enough — it has to move the condition towards `False`.**
+
+**A5.** Part 1 is **set up**, e.g. `countdown = 3`, and it goes **before** the loop.
+
+Part 2 is the **check** (the condition), e.g. `while countdown > 0:`, asked **before every pass**.
+
+Part 3 is the **change**, e.g. `countdown -= 1`, and it goes **inside** the loop.
+
+**Missing part 3 gives you an infinite loop** — no error message at all until you press Ctrl+C. **Missing part 1 gives you `NameError`** on the `while` line, because Python cannot check a box that does not exist.
+
+The box after the `no` exit is whatever comes **after** the loop, at the margin — `print("Liftoff!")`.
+
+**A6.**
+
+(a) **Can you say the number of repeats out loud before you start?** Yes → `for`. No → `while`.
+
+(b) **`break` ends the loop** immediately, skipping every remaining pass. **`continue` ends only the current pass** and goes straight back to the check.
+
+(c) `randint(1, 6)` hands back one whole number from 1 to 6, **both ends included** — six possible answers. `range(1, 6)` hands out 1, 2, 3, 4, 5 — the stop is excluded. Two tools, two rules; **the one with "range" in its name is the one that excludes.**
+
+(d) Because **`int()` is the thing that crashes.** Once it has raised `ValueError` the program is over and there is nothing left to check. `.isdigit()` can be asked of any text at all and never crashes, so it goes first.
+
+(e) It means **a human pressed Ctrl+C and stopped the program.** It is not a bug in the code — it is you taking control back. The bug is whatever made the loop refuse to end, and the traceback's line number tells you where the program was standing when you stopped it.
+
+(f) Because each good guess **halves** what is left: 100 → 50 → 25 → 12 → 6 → 3 → 1. That is six halvings plus one final guess to name the survivor, so seven guesses always suffice for a player who halves. With fewer, even a perfect player would sometimes lose; more would make it easy to win without being clever.
+
+---
+
+### Practice Set B
+
+**B1.**
+
+```python
+import random                      # at the very top of the file
+print(random.randint(1, 6))        # 1 to 6, BOTH ends included
+```
+
+One real run printed `2`. **Yours will be different, and running it again will give a different answer again** — which is the entire point of the tool. Run it twenty times and you will see a 6, because `randint` includes both ends.
+
+**B2.**
+
+```python
+countdown = 5                      # 1. SET UP
+while countdown > 0:               # 2. CHECK
+    print(countdown, end=" ")      # end=" " keeps it on one line
+    countdown -= 1                 # 3. CHANGE - the line that ends the loop
+print()                            # a bare print() ends the line
+print("Go!")
+```
+
+```text
+5 4 3 2 1 
+Go!
+```
+
+**Five passes, six checks.** The sixth check asked `0 > 0`, got `False`, and let the program out.
+
+**B3.**
+
+```python
+answer = ""                                     # empty, so the CHECK is True once
+while answer != "yes" and answer != "no":       # CHECK before every pass
+    answer = input("Ready? (yes/no) ").strip().lower()
+    if answer != "yes" and answer != "no":
+        print("  Please type yes or no.")
+print(f"You said {answer}.")
+```
+
+```text
+Ready? (yes/no) maybe
+  Please type yes or no.
+Ready? (yes/no) YES
+You said yes.
+```
+
+**Two things worth noticing.** `.lower()` is what makes `YES` work — it flattens the text to small letters *before* the comparison, so you only have to write the two words once. And **each side of the `and` is a complete comparison** — `answer != "yes" and answer != "no"`, spelled out in full both times, which is Week 6's rule still doing work.
+
+**B4.**
+
+```python
+total = 0                                       # SET UP the accumulator
+turns = 0                                       # SET UP the counter
+
+while total <= 100:                             # CHECK: still 100 or under?
+    typed = input(f"Add a number (total {total})? ").strip()
+    if not typed.isdigit():                     # check BEFORE converting
+        print("  Whole numbers only.")
+        continue                                # ends this pass, not the loop
+    total += int(typed)                         # CHANGE: this moves the total up
+    turns += 1                                  # only a real number counts
+
+print(f"Passed 100 after {turns} numbers. Total is {total}.")
+```
+
+```text
+Add a number (total 0)? 30
+Add a number (total 30)? banana
+  Whole numbers only.
+Add a number (total 30)? 45
+Add a number (total 75)? 40
+Passed 100 after 3 numbers. Total is 115.
+```
+
+**Hand-check:** 30 + 45 + 40 = 115 ✔ And the prompt stayed on `total 30` after `banana`, because `continue` skipped both the adding *and* the counting.
+
+**B5.**
+
+```python
+# pinlock.py - three tries at the PIN, and it survives "banana".
+
+PIN = 1234                                      # the correct PIN
+MAX_TRIES = 3                                   # three goes and no more
+tries = 0                                       # SET UP
+unlocked = False                                # the flag
+
+while tries < MAX_TRIES and not unlocked:       # CHECK: tries left AND still locked
+    typed = input(f"PIN (try {tries + 1} of {MAX_TRIES})? ").strip()
+    if not typed.isdigit():                     # check BEFORE converting
+        print("  Digits only. That try was free.")
+        continue                                # ends this pass, not the loop
+    tries += 1                                  # only a real attempt costs a try
+    if int(typed) == PIN:
+        unlocked = True                         # CHANGE: this ends the loop
+    else:
+        print("  Wrong PIN.")
+
+if unlocked:
+    print(f"Unlocked in {tries} of {MAX_TRIES} tries.")
+else:
+    print("Locked out. Go and find a grown-up.")
+```
+
+Typing `banana`, `1111`, `1234`:
+
+```text
+PIN (try 1 of 3)? banana
+  Digits only. That try was free.
+PIN (try 1 of 3)? 1111
+  Wrong PIN.
+PIN (try 2 of 3)? 1234
+Unlocked in 2 of 3 tries.
+```
+
+And three wrong PINs:
+
+```text
+PIN (try 1 of 3)? 1111
+  Wrong PIN.
+PIN (try 2 of 3)? 2222
+  Wrong PIN.
+PIN (try 3 of 3)? 3333
+  Wrong PIN.
+Locked out. Go and find a grown-up.
+```
+
+**Three things to check in your own version.** The try number **stayed at 1** after `banana` — that is `continue` placed *above* `tries += 1`. The condition has **two parts**, so both reasons to stop are readable in one line. And `int(typed)` happens **after** `.isdigit()`, never before.
+
+---
+
+### Fix the Broken Program
+
+**Bug 1 — family 1, it never started.** No output at all, so nothing ran. The colon is missing from the `while` line.
+
+```python
+while tries <= 3:
+```
+
+**Bug 2 — family 2, it started then stopped.** `ValueError` means: **the kind of thing was right — `int` takes text, and you gave it text — but the value was wrong, because that text is not a number.**
+
+**Why an `if` after the `int(...)` cannot work:** `int()` is the line that crashes. By the time the `if` would run, the program is already over. **There is nothing left to check.**
+
+The three lines:
+
+```python
+    text = input(f"PIN (try {tries + 1} of 3)? ").strip()   # keep it as TEXT
+    if not text.isdigit():                                  # CHECK - brackets required
+        print("  Digits only.")
+        continue                                            # this pass is over
+    typed = int(text)                                       # CONVERT, safely
+```
+
+(That is four lines including the `continue`, and four is the right answer — the check needs somewhere to go when it fails.)
+
+**Bug 3 — family 3, it finished and lied.**
+
+(a) `PIN (try 4 of 3)?` — **and that is the tell.** The program is announcing the bug in its own prompt.
+
+(b) There should have been **3**. There were **4**.
+
+(c) *"While tries is less than **or equal to** three."* When `tries` is exactly 3 — meaning three goes have already been used — the check answers **`True`**, so it goes round a fourth time.
+
+(d) One character:
+
+```python
+while tries < 3:
+```
+
+(e) Because `while tries <= 3:` is a completely ordinary, correct line of Python. **There is nothing wrong with it as a line** — thousands of programs mean exactly that. The number three is a rule in the programmer's head; Python has no way to know that the fourth go was not allowed.
+
+(f) **Counting.** Specifically: counting the **prompts** against the number in the rule. Four prompts for a three-try lock. Reading the condition does not help until you already suspect it — and the prompt saying `try 4 of 3` is the count doing the work for you.
+
+---
+
+### Puzzle of the Week
+
+**P1.**
+
+**(i) Ends.** `n` goes 10, 8, 6, 4, 2, then 0 fails the check. **Five passes.** No fix needed.
+
+**(ii) Ends.** `n` goes 1, 2, 4, 8, 16, 32, 64, then 128 fails the check. **Seven passes.** No fix needed. (Doubling is a perfectly good change step — a change step does not have to be `+= 1`.)
+
+**(iii) Never ends.** No change step at all. Fix: `n -= 1` **inside** the loop.
+
+**(iv) Never ends** — and this is the clever one. Fix: `n -= 1` instead of `n += 1`.
+
+**(v) Never ends.** Fix: the change has to be able to *reach* the value that ends the loop. `answer = input("yes or no? ")` inside the loop would do it.
+
+**P2.** Loop (iv) has a change step and it changes `n` on every single pass — but it changes it in the **wrong direction.** The condition is `n > 0`, and `n += 1` makes `n` *bigger*, so the condition gets more true, not less. **Having a change step is not enough. It has to move the condition towards `False`.**
+
+That is why the third of the three debugging questions is *"could it ever reach the value that ends the loop?"* — because questions one and two both pass here.
+
+**P3.** Because `answer = "no"` sets the variable to a value that **is not** `"yes"`, every single pass, forever. The variable genuinely changes on pass one (from `""` to `"no"`) and then never changes again. **The change step has to be able to produce the value that ends the loop, and this one never can.**
+
+**P4.** Each guess leaves you at most half of what was still possible:
+
+| Numbers | The chain | Guesses needed |
+|---|---|---|
+| 1 to 20 | 20 → **10** → **5** → **2** → 1 | **5** |
+| 1 to 50 | 50 → **25** → **12** → **6** → **3** → 1 | **6** |
+| 1 to 100 | 100 → 50 → **25** → **12** → **6** → **3** → 1 | **7** |
+| 1 to 1000 | 1000 → 500 → 250 → 125 → **62** → **31** → **15** → **7** → **3** → 1 | **10** |
+
+**Read the guess count as "the number of halvings, plus one final guess to name the survivor."** Four halvings for 1–20, plus one guess: five. Nine halvings for 1–1000, plus one: ten.
+
+**P5. Yes — exactly.** Nine halvings takes 1000 down to 1, and one more guess names it. **Ten tries is precisely enough for 1 to 1000**, in the same way seven is precisely enough for 1 to 100. That is not a coincidence: each extra try roughly **doubles** the range you can cover.
+
+**P6.** **The difficulty lives entirely in what the player already knows.** The code is identical for both of them; the halving idea is not in the program at all, it is in one player's head and not the other's.
+
+That is worth sitting with, because it is exactly what happens with real systems: **the same rule, applied identically to everybody, can be easy for one group and nearly impossible for another** — and nothing in the rule looks unfair when you read it. It is the same idea as Level 1's work on rules meeting people they were not designed for, and it comes back in Week 30 when a model's accuracy turns out to be very different for different groups of people.
+
+---
+
+### Think Deeper
+
+**T1.** A full-credit answer (4+ sentences) argues a side and names a cost. Model answer:
+
+> It cannot, and that is not a limitation someone will fix one day — it was **proved impossible.** Alan Turing showed in 1936 that no program can examine all programs and reliably say whether they stop; it is called the halting problem. So the strongest thing Python could offer is a warning about the **easy** cases, and today's runaway was an easy case: the condition mentioned `guess`, and nothing in the body touched `guess`.
+>
+> I think a warning for that specific shape would have helped me. It would have saved me four minutes of `Lower.` filling my screen. But there are two real arguments against. First, **a checker that catches the easy cases and misses the hard ones teaches me to trust it** — and then the hard one bites me and I have stopped looking. Second, **an infinite loop is sometimes exactly what somebody wants**: a program running a website waits forever on purpose. Python cannot tell my mistake from someone else's intention, and it should not guess.
+>
+> There is also a cost I noticed in myself. If a tool had told me, I would never have learnt to ask *"which line ends this loop?"* before pressing Enter. That question is now a habit, and the habit came from the four minutes.
+
+**T2.** Model answer:
+
+> It is **not a crash**, and it follows exactly from a rule I chose on purpose: bad input is free. So it is a consequence, not an accident.
+>
+> But it does mean the program can only ever end if the human eventually **cooperates**, and "the program ends when the user decides to be reasonable" is not a guarantee. My loop's exit depends on somebody else's behaviour, which is not something I control.
+>
+> The professional answer is to cap attempts of **every** kind, not just good ones — count rejected inputs, and after ten say so politely and stop. That is three lines and another accumulator.
+>
+> **Whether I should depends entirely on the program.** A game can afford to be patient: the worst outcome of asking a hundred and one times is a bored player. A **cash machine** absolutely cannot: an unlimited number of free attempts at a PIN is not patience, it is a security hole, and after three tries it should keep the card. Same loop shape, opposite decision, and the difference is not in the code — it is in what happens if somebody is attacking it rather than fumbling.
+
+---
+
+### Build It
+
+**Part 1 — the infinite loop.**
+
+| | Answer |
+|---|---|
+| What key combination stopped it? | **Ctrl+C** |
+| Was it Ctrl or Command? | **Ctrl**, on every machine including a Mac |
+| What was the last line of the traceback? | **`KeyboardInterrupt`** |
+| What line number did it name? | **Line 6** — the `print(countdown)` line |
+| Is that line the bug? | **No.** It is just where the program was standing when you stopped it |
+| Which of the three parts is missing? | **The change** |
+| Was your heart rate different on the third go? | It should have been. That is the whole reason for doing it three times |
+
+```python
+    countdown -= 1              # inside the loop, in the indent
+```
+
+**Part 2 — `guess.py`.** The complete reference version is in **🎲 The Activity, In Full → Part 1** above. Marking notes:
+
+| Test | What proves it |
+|---|---|
+| Different number each game | Play twice; the numbers differ. If they are the same, `secret = random.randint(...)` is **above** the outer loop instead of inside it |
+| Hints the right way round | Secret 40, guess 25 → **Higher**. Being told "lower" when you guessed low is a `<`/`>` swap, and it is the commonest wrong answer |
+| Exactly seven real tries | Guess wrong seven times and **count the prompts.** Seven, not eight |
+| Rejected input is free | Type `banana` twice; the `(n left)` number must not move |
+| Losing reveals the number | Lose on purpose. A game that keeps its secret afterwards is just annoying |
+| Replay takes only yes/no | Answer `maybe`, then `no`. It must complain, then exit cleanly |
+| Record is right | Play two games, win one: `Final record: 1 of 2` |
+
+**(a)** Because **a new game needs a new number.** Above the outer loop it is chosen once, so every game in the session has the same secret — and the second game is trivially easy. Inside, it is chosen once per game, which is what "one pass of the outer loop is one game" means. **If you move it and play twice, you discover why the line is where it is.**
+
+**(b)** **Three.** The **outer** one waits for the player to say they have had enough (the `playing` flag). The **game** loop waits for a correct guess or the tries to run out. The **yes/no** loop waits for an answer it recognises. You can tell which is the outer one from the **indentation**, and only from that.
+
+**(c)** Because there are **two different reasons for a game to end**: the tries run out, or the player wins. `while tries_used < MAX_TRIES and not won:` puts both of them in one readable line. With a `break` instead of the flag, the second reason would be hidden in the middle of the body.
+
+**Part 3 — `grade.py`.** The complete reference program, with one real run, is under **Teacher extras** below. On the twelve card scores:
+
+| Check | Wanted | Got |
+|---|---|---|
+| Scores entered | 12 | **12** |
+| Total | 900 | **900** |
+| Average | 75.00 | **75.00** |
+| Highest | 100 | **100** |
+| Letter grade | ? | **B** |
+
+The real output:
+
+```text
+----------------------------------------
+  Scores entered : 12
+  Total          : 900
+  Average        : 75.00
+  Highest        : 100
+  Letter grade   : B
+----------------------------------------
+```
+
+**(d)** Because with the card **you already know the answer**, which means you cannot fool yourself. If the program says 900 and 75, it agrees with two earlier programs of completely different shapes. If it says anything else, the program is wrong — full stop, no argument. With numbers you made up you would have nothing to hold it to, and a confidently wrong program wins every argument.
+
+**(e)** **B**, and the comparison that decides it is `average >= 75`. Exactly 75 is not *more* than 75, but it **is** "75 or more", so the `>=` lets it through. Change that one character to `>` and a class average of exactly 75 drops to a C — which is Week 5's boundary rule, still true four weeks later.
+
+**(f)** Because **you do not know how many prompts it will take.** Twelve scores might need twelve prompts, or fifteen if three inputs are typed badly. The loop counts **successes, not attempts**: `while scores_read < count:`, and `scores_read` only goes up when a good score has gone in.
+
+**(g)** Because it has to start **lower than any possible score**, and **0 is a possible score.** Starting at 0 would happen to work most of the time, and would quietly report a highest of 0 for a class where everybody scored 0 — right by luck rather than by design. Start below every possible value and you never have to be lucky.
+
+**Part 4 — the banana record.** The honest answers:
+
+| Prompt | Typed | What actually printed | Acceptable? |
+|---|---|---|---|
+| `Guess (7 left):` | `banana` | `  Whole numbers only. That try was free.` and the prompt returns still saying 7 left | **Yes** |
+| `Guess (7 left):` | `-5` | `  Whole numbers only. That try was free.` | **Works, message wrong.** −5 *is* a whole number |
+| `Guess (7 left):` | `85.5` | `  Whole numbers only. That try was free.` | Yes, and the message is fair here |
+| `Guess (7 left):` | ` 42 ` | Accepted as 42 | **Yes — `.strip()` earning its keep** |
+| `Guess (7 left):` | `500` | `  Stay between 1 and 100. That try was free.` | Yes |
+| `Play again? (yes/no)` | `banana` | `  Please type yes or no.` and it asks again | Yes |
+| `Play again? (yes/no)` | `BANANA` | The same message — `.lower()` runs first | Yes, and worth noticing |
+| `How many scores?` | `banana` | `  Whole numbers only.` then asks again | Yes |
+| `How many scores?` | `0` | `  I need at least one score.` then asks again | Yes |
+| `Score n of m:` | `120` | `    The most anyone can score is 100.` and the **same** score number repeats | Yes — the `continue` means it was not counted |
+
+**(h)** The `-5` and `-4` rows. The program says "whole numbers only" when the rule it is actually applying is **"digits only — no minus signs, no decimal points."** An honest message would be `Digits only please - no minus signs or decimal points.` **Naming the limitation precisely is worth more than pretending it does not exist**, and it is exactly what a Bug Log is for.
+
+**(i)** It asks **a hundred and one** times. **Not a crash.** And whether it is a bug is a genuine design question with no single answer — see T2. It is not a *crash*, and it follows from a rule you chose; but it does mean the loop's ending depends on the human eventually cooperating.
+
+**Part 5 — the Bug Log.**
+
+| # | What I saw (real text) | What it meant, in my words | What I changed |
+|---|---|---|---|
+| 1 | Thousands of identical `  Higher.` lines, then after Ctrl+C: `KeyboardInterrupt`, pointing at line 10, `print("  Higher.")` | My loop's condition was `guess != secret`, and nothing inside the loop ever changed `guess`, so the answer was `True` forever — and since `guess` was 0, the hint was always "Higher". | Moved the `input()` line **inside** the loop, so `guess` gets a new value every pass |
+| 2 | **No error message.** It let me have eight guesses when the game is supposed to allow seven. | `while tries_used <= MAX_TRIES:` — the `<=` means that when `tries_used` is exactly 7 the check still says yes, so it goes round one more time. I only found it by counting the prompts. | `<` instead of `<=` |
+
+Also acceptable, and arguably better:
+
+| # | What I saw | What it meant | What I changed |
+|---|---|---|---|
+| 3 | `ValueError: invalid literal for int() with base 10: 'banana'` | `int()` crashes when the text is not a number, and it crashes *before* any of my `if`s get a chance to look at it. The check has to come first. | Kept the input as text, checked `.isdigit()`, converted afterwards |
+| 4 | **No error message.** `banana` was accepted as a guess. | I wrote `typed.isdigit` without the brackets. That is the question itself rather than the answer, and Python counts a thing-that-exists as a yes. | Added the brackets: `typed.isdigit()` |
+
+**(j)** Model answer:
+
+> The traceback was not a bug in my code. `KeyboardInterrupt` means **a human stopped the program**, and the human was me. The line it named — `print("  Higher.")` — is a perfectly correct line; it is simply where the program happened to be standing at the moment I pressed Ctrl+C. If I had waited another second it would have named the same line again, because that is where the loop spends all its time.
+>
+> **The bug is the missing change step, and no traceback will ever point at a missing line.** That is why the fix comes from a question, not from the message: *which variable is in the condition, and where in the body does it change?*
+
+---
+
+### Draw It
+
+There is no single right drawing. A strong answer has, on the runaway side, **the `no` exit either crossed out or drawn with nothing reaching it** — because that is the actual difference. An infinite loop does not take a different exit; it never gets to the exit at all.
+
+Two other things to check. **Is there a line in the body of the good version that you can point at and say "this is what ends it"?** If not, both your loops are runaways. And **does the trace along the bottom have one more check than it has passes?** Six checks, five pours. That is the fact from section 1, drawn.
+
+---
+
+### Self-Check answers
+
+| Statement | Answer |
+|---|---|
+| A `while` loop knows how many passes it will do before it starts | **False.** That is a `for` loop |
+| A `while` loop checks its condition before every pass | **True.** And once more, at the end, to find out it should stop |
+| A `while` loop with three passes checks three times | **False.** Four |
+| Missing the change step gives you an error message | **False.** It gives you an infinite loop and no message at all until you press Ctrl+C |
+| `KeyboardInterrupt` means your code has a bug on that line | **False.** It means a human stopped the program while it was on that line |
+| `continue` reduces the number of passes | **False.** It cuts one pass short. The number of passes is unchanged |
+| `break` can be used outside a loop | **False.** `SyntaxError: 'break' outside loop` |
+| `random.randint(1, 6)` can return 6 | **True.** Both ends are included |
+| `range(1, 6)` can produce 6 | **False.** The stop is excluded |
+| `input()` sometimes hands back a number | **False.** Always text, every time, without exception |
+| `int()` is safe to call on anything | **False.** `ValueError` on any text that is not a whole number, such as `banana` or `4.2`. Check first |
+| `"-42".isdigit()` is `True` | **False.** The minus sign is not a digit |
+| `"  42  ".isdigit()` is `True` | **False.** A space is not a digit. Use `.strip()` first |
+| `typed.isdigit` and `typed.isdigit()` do the same thing | **False.** Without brackets you never ask the question, and the answer counts as a yes |
+| On a Mac you stop a runaway loop with Command+C | **False.** Ctrl+C, everywhere |
+
+
+### Teacher extras (not asked in the workbook)
+
+These answer things the **lesson** raises that the workbook does not ask. Use them if the student brings the question or the marking turns up a wrong answer.
+
+**Trace tables — a variation.** Change the `count` loop in A1(ii) to `count <= 3`. How many passes now, and which numbers print?
+Four passes: 0, 1, 2, 3. That extra pass is exactly the off-by-one from the lesson — `<=` lets the boundary value through one more time.
+
+**A loop is set up for five passes. On pass two it hits `continue`; on pass four it hits `break`. How many passes run?**
+Four. Pass two runs but is cut short; pass four runs as far as the `break`; pass five never happens.
+
+**What does `.strip()` do, and why does it matter for `.isdigit()`?**
+It removes spaces from both ends of the text. It matters because `"  42  ".isdigit()` is `False` — a space is not a digit — so a user who types a space before their number would be rejected for no visible reason. Real proof: `'  42  '` → `False`; `'42'` → `True`.
+
+**What is a flag?**
+A variable whose only job is to hold `True` or `False` and steer a loop. In `guess.py`, `won` ends one game and `playing` ends the whole session. Flipping a flag is a change step made out of a decision instead of arithmetic.
+
+**Why not keep a separate variable for the `(n left)` number?** It is computed as `MAX_TRIES - tries_used`.
+You could, but then there would be two numbers that have to agree, and every place you changed one you would have to remember the other. **Working it out from the counter means it cannot get out of step.** This is the same principle as Week 6's "a boundary you do not write is a boundary you cannot get wrong."
+
+#### More broken programs, if the student wants them
+
+Each has its real message. None is in the workbook.
+
+**Extra 1**
 
 ```python
 score = int(input("Score? "))
@@ -1537,7 +2003,7 @@ ValueError: invalid literal for int() with base 10: 'banana'
 
 *The fix:* keep it as text, `.strip()` it, check `.isdigit()`, and convert only after the check passes.
 
-**8.3(d)**
+**Extra 2**
 
 ```python
 guess = 5
@@ -1556,7 +2022,7 @@ SyntaxError: 'break' outside loop
 
 *The fix:* `break` needs a loop to break out of. Either put it inside one or delete it. The `if` does not count — an `if` is not a loop.
 
-**8.3(e)**
+**Extra 3**
 
 ```python
 secret = random.randint(1, 100)
@@ -1574,7 +2040,7 @@ NameError: name 'random' is not defined
 
 *The fix:* `import random` at the top. And note that if you write `randint(1, 100)` *with* the import but without the `random.`, you get a different message: `NameError: name 'randint' is not defined`. Two mistakes, two messages.
 
-**8.3(f)**
+**Extra 4**
 
 ```python
 import random
@@ -1592,7 +2058,7 @@ AttributeError: module 'random' has no attribute 'randInt'. Did you mean: 'randi
 
 *The fix:* all lowercase — `randint`. **Python guessed what you meant and told you**, which is worth pointing out; not every message is this kind.
 
-**8.3(g)**
+**Extra 5**
 
 ```python
 import random
@@ -1614,27 +2080,7 @@ ValueError: empty range for randrange() (100, 2, -98)
 
 *The fix:* small number first — `randint(1, 100)`. **Teaching point:** this traceback has *three* `File` lines, and the middle two are inside Python's own code. **Read from the bottom, and then find the last `File` line that names your own file.** Everything below that is Python's plumbing, not your problem.
 
-**8.3(h)** No error. What happens, and why?
-
-```python
-typed = input("Guess? ")
-if not typed.isdigit:
-    print("  Whole numbers only.")
-else:
-    print("  That looked like a number.")
-```
-…and the user types `banana`.
-
-*Real output:*
-
-```text
-Guess? banana
-  That looked like a number.
-```
-
-*What is wrong:* the brackets are missing. `typed.isdigit` is the question *itself*, not the answer, and Python treats a thing-that-exists as a yes — so `not typed.isdigit` is always `False` and the complaint never fires. **Every input is accepted, including `banana`.** The fix is `typed.isdigit()`. **Brackets mean "actually ask it."**
-
-**8.3(i)** No error. Why does it never say "Correct"?
+**Extra 6** No error. Why does it never say "Correct"?
 
 ```python
 import random
@@ -1655,7 +2101,7 @@ Not equal. You typed 40, the secret is 40.
 
 *What is wrong:* `typed` is the *text* `"40"` and `secret` is the *number* `40`, and text is never equal to a number, however identical they look on screen. **This is the single best silent bug of the week, because the output actively insists that two identical things are different.** The fix: `if int(typed) == secret:`.
 
-**8.3(j)** No error, but a rejected input costs a try. Why?
+**Extra 7** No error, but a rejected input costs a try. Why?
 
 ```python
 while tries_used < MAX_TRIES:
@@ -1668,33 +2114,7 @@ while tries_used < MAX_TRIES:
 
 *What is wrong:* `tries_used += 1` happens **before** the check, so a rejected input has already cost a try by the time `continue` runs. The fix is to move the counter below the checks — the last thing that happens once the input is known to be good.
 
-### Page 8.4 — Build It: `guess.py`
-
-The complete reference implementation is in the Activity section above and it is what full marks looks like. One real run is printed there too. Marking notes:
-
-| Requirement | How to check it in ten seconds |
-|---|---|
-| Different number each game | Play twice in one session; the numbers differ. If they are the same, `secret = random.randint(...)` is above the outer loop instead of inside it. |
-| Hints are the right way round | If the secret is 40 and you guess 25, it must say **Higher**. Guessing low and being told "lower" is a `<`/`>` swap and it is the most common wrong answer. |
-| Exactly seven real tries | Guess wrong seven times and **count the prompts.** Seven, not eight. |
-| Rejected input is free | Type `banana` twice; the `(n left)` number must not move. |
-| Loss reveals the number | Lose on purpose. If it does not tell you, the program is annoying and loses a mark. |
-| Replay works and only takes yes/no | Answer `maybe`, then `no`. It must complain, then exit cleanly. |
-| `wins` and `games` are right | Play two games, win one. `Final record: 1 of 2`. |
-
-**8.4(b) Why is `secret = random.randint(LOW, HIGH)` inside the outer loop and not above it?**
-Because a new game needs a new number. Above the outer loop it is chosen once, so every game in the session has the same secret — and the second game is trivially easy. Inside, it is chosen once per game, which is what "one pass of the outer loop is one game" means.
-
-**8.4(c) Why does the inner loop's condition have two parts?**
-Because there are two different reasons for a game to end: the tries run out, or the player wins. `while tries_used < MAX_TRIES and not won:` puts both of them in one readable line. With a `break` instead of the flag, the second reason would be hidden in the middle of the body.
-
-**8.4(d) How many `while` loops are in the finished file, and what does each one wait for?**
-Three. The outer one waits for the player to say they have had enough (`playing`). The game loop waits for a correct guess or the tries to run out. The yes/no loop waits for an answer it recognises.
-
-**8.4(e) The `(n left)` number is computed as `MAX_TRIES - tries_used`. Why not keep a separate variable?**
-You could, but then there would be two numbers that have to agree, and every place you changed one you would have to remember the other. **Working it out from the counter means it cannot get out of step.** This is the same principle as Week 6's "a boundary you do not write is a boundary you cannot get wrong."
-
-### Page 8.5 — Build It: `grade.py`, and the banana record
+#### The complete `grade.py`, and one real run
 
 The complete program:
 
@@ -1807,86 +2227,25 @@ How many scores? 4
 
 Total 900 and average 75.00 — **the same answers last week's `scores.py` gave**, from a completely differently shaped program. That agreement is the point of keeping the card. An average of 75 is ≥ 75, so the grade is **B**, and that boundary is worth pointing at: exactly 75 gets a B because the test is `>=`.
 
-**8.5(b) Why is the reading loop a `while` and not a `for`?**
-Because you do not know how many prompts it will take. Twelve scores might need twelve prompts, or fifteen if three inputs are typed badly. The loop counts **successes**, not attempts: `while scores_read < count:`, and `scores_read` only goes up when a good score has gone in.
-
-**8.5(c) Why does `highest` start at −1?**
-Because it has to start lower than any possible score, and 0 is a possible score. Starting at 0 would happen to work most of the time, and would quietly report a highest of 0 for a class where everyone scored 0 — right by luck rather than by design.
-
-**8.5(d) The banana record — the honest table.**
+**More banana rows for `grade.py`** (the workbook table has `0` and `banana` at the count prompt and `120` at the score prompt):
 
 | Prompt | Typed | What actually printed | Verdict |
 |---|---|---|---|
-| `How many scores?` | `banana` | `  Whole numbers only.` then asks again | Good |
-| `How many scores?` | `0` | `  I need at least one score.` then asks again | Good |
 | `How many scores?` | `-4` | `  Whole numbers only.` | Works, message imprecise — `.isdigit()` rejects the minus sign, so it never reaches the "at least one" branch |
 | `Score n of m:` | `banana` | `    Whole numbers 0 to 100 only.` and the prompt repeats with the **same** score number | Good — the `continue` means it was not counted |
-| `Score n of m:` | `120` | `    The most anyone can score is 100.` | Good |
 | `Score n of m:` | `85.5` | `    Whole numbers 0 to 100 only.` | Works; the message is accurate here |
-| `Guess (7 left):` in `guess.py` | `banana` | `  Whole numbers only. That try was free.` and `(7 left)` does not move | Good |
-| `Play again? (yes/no)` | `banana` | `  Please type yes or no.` | Good |
-| `Play again? (yes/no)` | `BANANA` | Same complaint, because `.lower()` runs first | Good |
-| Any prompt | `banana` a hundred times | Asks a hundred and one times. Never crashes, never ends. | **Not a crash, but a real design decision.** A cap on bad inputs would fix it. |
 
-**8.5(e) Which of your messages are not quite honest, and what would you write on the box?**
-The `-4` and `-5` rows. The program says "whole numbers only" when the real rule it is applying is "digits only, no minus sign, no decimal point". An honest message would be `Digits only please - no minus signs or decimal points.` **Naming the limitation precisely is worth more than pretending it does not exist**, and it is exactly what a Bug Log is for.
+**Is `break` bad style?**
+There is a real fifty-year argument here and no settled answer. Against: a loop whose exits are all in the `while` line can be understood by reading one line, whereas three scattered `break`s mean reading the whole body to know when it stops. For: forcing every exit into the condition sometimes means inventing flag variables that exist only to satisfy the rule, and that is harder to read, not easier. **The workable position: use `break` for "stop as soon as you find it", keep it near the top of the body where it is visible, and treat a third `break` in one loop as a sign the loop is doing too much.**
 
-### Page 8.6 — Bug Log, Think Deeper and Self-Check
-
-**The Bug Log.** Two entries, one of which must be the `KeyboardInterrupt`.
-
-| # | What I saw (real text) | What it meant, in my words | What I changed |
-|---|---|---|---|
-| 1 | Thousands of identical `  Higher.` lines, then after Ctrl+C: `KeyboardInterrupt`, pointing at line 10, `print("  Higher.")` | My loop's condition was `guess != secret`, and nothing inside the loop ever changed `guess`, so the answer was `True` forever — and since `guess` was 0, the hint was always "Higher". The traceback is not a bug; it is just where the program happened to be when I stopped it. | Moved the `input()` line **inside** the loop, so `guess` gets a new value every pass |
-| 2 | **No error message.** It let me have eight guesses when the game is supposed to allow seven. | `while tries_used <= MAX_TRIES:` — the `<=` means that when `tries_used` is exactly 7 the check still says yes, so it goes round one more time. I only found it by counting the prompts. | `<` instead of `<=` |
-
-Also acceptable, and arguably better:
+**One more Bug Log entry that is acceptable.**
 
 | # | What I saw | What it meant | What I changed |
 |---|---|---|---|
-| 3 | `ValueError: invalid literal for int() with base 10: 'banana'` | `int()` crashes when the text is not a number, and it crashes *before* any of my `if`s get a chance to look at it. The check has to come first. | Kept the input as text, checked `.isdigit()`, converted afterwards |
-| 4 | **No error message.** `banana` was accepted as a guess. | I wrote `typed.isdigit` without the brackets. That is the question itself rather than the answer, and Python counts a thing-that-exists as a yes, so `not typed.isdigit` was always `False`. | Added the brackets: `typed.isdigit()` |
 | 5 | **No error message.** `Not equal. You typed 40, the secret is 40.` | I was comparing text with a number. `"40"` and `40` are never equal, however identical they look. | `int(typed) == secret` |
 
-**8.6(a) Should Python refuse to run a loop it can tell will never end?**
+**One more Self-Check row.** `"42".isdigit()` is `True` → **True.**
 
-A full-credit answer (4+ sentences) argues a side and names a cost. Model answer:
-
-> It cannot, and that is not a limitation someone will fix one day — it was proved impossible. Alan Turing showed in 1936 that no program can examine all programs and reliably say whether they stop; it is called the halting problem. So the strongest thing Python could offer is a warning about the easy cases, and today's runaway was an easy case: the condition mentioned `guess`, and nothing in the body touched `guess`.
->
-> I think a warning for that specific shape would have helped me. It would have saved me the four minutes of `Lower.` filling my screen. But there are two real arguments against. First, a checker that catches easy cases and misses hard ones teaches me to trust it, and then the hard one bites me and I have stopped looking. Second, an infinite loop is sometimes exactly what somebody wants — a program running a website waits forever on purpose — and Python cannot tell my mistake from someone else's intention.
->
-> There is also a cost I noticed in myself: if a tool had told me, I would not have learnt to ask "which line ends this loop?" before I press Enter. That question is now a habit, and the habit came from the four minutes.
-
-**8.6(b) Is `break` bad style?**
-There is a real fifty-year argument here and no settled answer. Against: a loop whose exits are all in the `while` line can be understood by reading one line, whereas three scattered `break`s mean reading the whole body to know when it stops. For: forcing every exit into the condition sometimes means inventing flag variables that exist only to satisfy the rule, and that is harder to read, not easier. **The workable position: use `break` for "stop as soon as you find it", keep it near the top of the body where it is visible, and treat a third `break` in one loop as a sign the loop is doing too much.**
-
-**8.6(c) Your program gives seven tries. Is the game fair?**
-Fair to whom is the real question. A player who halves the range wins every single time in at most seven. A player who has never met that idea and guesses more or less at random has roughly a 7% chance. **Nothing in the code is different for those two people; the difficulty lives entirely in what they already know.** That is worth noticing because it is exactly what happens with real systems: the same rule, applied identically, can be easy for one group and near-impossible for another. It is the same idea as Level 1's work on rules meeting people they were not designed for, and it comes back in Week 30 when a model's accuracy turns out to be very different for different groups of people.
-
-**8.6(d) Typing `banana` forever means the program asks forever. Is that a bug?**
-It is not a crash, and it follows exactly from the rule I chose: bad input is free. But it does mean the program can only end if the human eventually cooperates, and "the program ends when the user decides to be reasonable" is not a guarantee. **The professional answer is to cap attempts of every kind, not just good ones** — count rejected inputs, and after ten say so politely and stop. Whether you *should* depends on the program: a game can afford to be patient; a cash machine cannot.
-
-**Self-check.**
-
-| Statement | Answer |
-|---|---|
-| A `while` loop knows how many passes it will do before it starts | **False.** That is a `for` loop. |
-| A `while` loop checks its condition before every pass | **True.** And once more, at the end, to find out that it should stop. |
-| A `while` loop with three passes checks three times | **False.** Four. |
-| Missing the change step gives you an error message | **False.** It gives you an infinite loop and no message at all until you press Ctrl+C. |
-| `KeyboardInterrupt` means your code has a bug on that line | **False.** It means a human stopped the program while it was on that line. |
-| `continue` reduces the number of passes | **False.** It cuts one pass short. The number of passes is unchanged. |
-| `break` can be used outside a loop | **False.** `SyntaxError: 'break' outside loop`. |
-| `random.randint(1, 6)` can return 6 | **True.** Both ends are included. |
-| `range(1, 6)` can produce 6 | **False.** The stop is excluded. |
-| `input()` sometimes hands back a number | **False.** Always text, every time, without exception. |
-| `int()` is safe to call on anything | **False.** `ValueError` on any text that is not a whole number, such as `banana` or `4.2`. Check first. |
-| `"42".isdigit()` is `True` | **True.** |
-| `"-42".isdigit()` is `True` | **False.** The minus sign is not a digit. |
-| `"  42  ".isdigit()` is `True` | **False.** A space is not a digit. Use `.strip()` first. |
-| `typed.isdigit` and `typed.isdigit()` do the same thing | **False.** Without brackets you never ask the question, and the answer counts as a yes. |
-| On a Mac you stop a runaway loop with Command+C | **False.** Ctrl+C, everywhere. |
 
 ### Lesson questions posed in the Say-this scripts
 

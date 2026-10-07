@@ -435,7 +435,7 @@ asking.
 
 #### Part A — The five-state table, out loud (6 minutes)
 
-**Do this:** hand them the blank five-state table (workbook page W35-1) and fill it in together,
+**Do this:** hand them the blank five-state table (workbook, Build It page W35-1) and fill it in together,
 speaking each row. Do not write it for them; ask and record.
 
 | State | Backdrop | What the sprite says | Counter |
@@ -719,7 +719,7 @@ on purpose. With Route A, hold up the squashed carton from the hook.
 
 Three objects come out of this station:
 
-1. **The bias report** (workbook page W35-4): four condition percentages, the gap in percentage
+1. **The bias report** (workbook, Build It page W35-4): four condition percentages, the gap in percentage
    points, the named group in one reproducible sentence, the four-link chain ending in a count, the
    priced fix with the arithmetic, and the highest confidence recorded while wrong.
 2. **The printed data card** — the Week 34 draft, finished, with box 7 now carrying the real bias
@@ -972,20 +972,31 @@ have thirty seconds and I'm counting on my fingers."*
 ![Six rehearsal cards from the question bank](../figures/fig-w35-4-rehearsal-cards.svg)
 *Figure 35.6 — Cut these out. Someone reads the front; you answer before you turn it over.*
 
-| Page | What it is | Time |
+The workbook (`workbook/week-35.md`) has these sections, in this order. The eight Build It pages are
+the writing that matters; the rest is the thinking that sits around it.
+
+| Workbook section | What it is | Time |
 |---|---|---|
-| W35-1 | The five-state table, completed and matching the built app | 5 min |
+| ✅ Warm-Up | Five quick questions from Week 34: the sealed envelope, 26/40 in all three forms, a gain with its unit, matrix axes, "100% is best?" | 5 min |
+| ✍️ Practice Set A — Understand It | A1-A6: fill-in on confidence numbers, how many states, the threshold-changes-the-model claim, sorting objects into states, the threshold flowchart, a mis-nested threshold in Scratch | - |
+| ✍️ Practice Set B — Use It | B1-B5: the "always not sure" bug, the priced fix for a 144/36 split, Jo's runaway counter, Ali hiding his lamplight result, rewriting five banned phrases | - |
+| 🧩 Puzzle of the Week | The Threshold Detective: ten photos, four thresholds, table plus questions (a)-(c) | - |
+| 🤔 Think Deeper | T1 ("just set it to 95") and T2 ("Route B is cheating"), a paragraph each | - |
+| 🛠️ Build It, W35-1 | The five-state table, completed and matching the built app | 5 min |
 | W35-2 | The threshold, written out as blocks, plus the units check ("my confidence reads as ___, so my threshold is ___") | 6 min |
-| W35-3 | The four bias scoring sheets, tidied, with each condition's fraction → decimal → percentage | 8 min |
-| W35-4 | The bias report: gap in points · named group · four-link chain · priced fix with arithmetic · highest confidence while wrong | 12 min |
+| W35-3 | The four bias scoring sheets, tidied, with each condition's fraction, decimal and percentage | 8 min |
+| W35-4 ★ | The bias report: gap in points · named group · four-link chain · priced fix with arithmetic · highest confidence while wrong | 12 min |
 | W35-5 | The final data card, all 8 boxes, boxes 7 and 8 now carrying the real numbers | 8 min |
 | W35-6 | The DO NOT USE THIS FOR sign, drafted before it goes on poster paper | 4 min |
-| W35-7 | The demo script, minute by minute, plus the rehearsal log: three rows of time · banned words · did the failure get shown | 10 min |
+| W35-7 ★ | The demo script, minute by minute, plus the rehearsal log: three rows of time · banned words · did the failure get shown | 10 min |
 | W35-8 | The six question-bank answers, in the student's own words, with the numbers filled in | 8 min |
+| 🎨 Draw It | The five states of the student's own app, one box each: backdrop, sentence, counter | - |
+| 📊 Self-Check | Eight "I can..." rows, 😀 / 🙂 / 😕, and a "week to go back to" line | - |
 
-**Total: about 60 minutes** of writing, plus the three rehearsals. If time is short, W35-4 and W35-7
-are the two that cannot be dropped — the report is a Must-have and the rehearsals are what next week
-is made of.
+**Total: about 60 minutes** of writing (the eight Build It pages add up to 61), plus the three
+rehearsals. The workbook's own header says the same. If time is short, W35-4 and W35-7 (marked ★) are
+the two that cannot be dropped: the report is a Must-have and the rehearsals are what next week is made
+of. Everything else in the table has an answer in the key below.
 
 ---
 
@@ -1010,6 +1021,102 @@ is made of.
 | **Wrap** — the two words for "how does it know?" | **Training** and **model** (plus *pattern* and the photo count). Never the six banned phrases. |
 
 ### Workbook answers
+
+The answers follow the workbook's own order: Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, then
+the eight Build It pages, then Draw It and Self-Check. Values match the Answers section at the end of
+the workbook.
+
+#### ✅ Warm-Up
+
+| # | Answer | Marking note |
+|---|---|---|
+| 1 | So the model **never saw** those photos; that is the only thing that makes the score a measurement rather than a memory test. | A model cannot be made to un-see a photo, so it cannot be fixed afterwards. |
+| 2 | `fraction 26/40` · `decimal 0.65` · `percentage 65%` · `baseline 25%` | Working: 26/40 = 13/20 = 65/100. |
+| 3 | **43 percentage points** (68 - 25). | Unit is a mark on its own. "43%" loses it. |
+| 4 | Down the side = **what the photo actually was** (true label). Across the top = **what the model said** (prediction). | Swapped axes make every finding say the opposite of the truth. |
+| 5 | **False.** 100% is usually a symptom: the test photos were in the training pile, or the test was tiny. | A hard job gets things wrong sometimes. |
+
+#### ✍️ Practice Set A — Understand It
+
+| # | Answer | Marking note |
+|---|---|---|
+| A1 | **four** numbers · add up to **100** · the **biggest** wins · incapable of **hesitating** | Fill-in; all four blanks needed. |
+| A2 | **(c) five.** Four classes plus "not sure". | "Not sure" is not a class: the model cannot say it, the app does, by refusing a weak winner. |
+| A3 | **False.** The model's accuracy on the same 40 photos is unchanged. The app now refuses to *repeat* guesses that won by too little, so the accuracy of the answers it gives goes up and the number of answers it gives goes down. | A trade, not a loss. The student should say "the model did not change". |
+| A4 | Car key: **`other`** · squashed carton with foil lid: **not sure** · clean tin can: *neither, it is `recycling`* (trick row) · blurry 31/25/23/21: **not sure** · TV remote: **`other`** | `other` needs the model to be *sure*; the carton makes it unsure. Different cause, different state. Blurry row: 31 wins but is nowhere near 70. |
+| A5 | Flowchart: input box = winning confidence and label · diamond = "Is the winning confidence above 70?" · "no" branch = one box, "Say: Not sure - only __% confident. Name no bin. Counter unchanged." · "yes" branch = four boxes: recycling (+1), compost (+1), landfill (+1), other (no change). | Why one box against four: there is one way to be unsure and four ways to be sure. |
+| A6 | The threshold check is **inside** the first `if`, so only `choice = 1` has a threshold; classes 2, 3 and 4 announce a 31% guess at full volume. Fix: one threshold `if` on the **outside**, the four class `if`s inside it, "not sure" in its `else`. | Tip: build the threshold first, before any behaviour exists, and it cannot end up in the wrong place. Same error as the common W35-2 mistake below. |
+
+#### ✍️ Practice Set B — Use It
+
+**B1. The app says "not sure" every time (threshold 70, confidence reads 0.61).**
+
+- (a) It says **"not sure"** every single time, forever.
+- (b) `0.61 > 70` is never true. The extension reports a decimal between 0 and 1; the threshold is on a 0-100 scale, so the app always takes the `else` branch.
+- (c) `say (image label confidence)` once and read the number. If it shows `0.61`, set `threshold` to `0.7`; if it shows `61`, set it to `70`. Do this before debugging anything else: it is the number one bug of the lesson and looks exactly like a broken model.
+
+**B2. The priced fix (144 daylight, 36 lamplight; 85% vs 48%).**
+
+- (a) 85% - 48% = **37 percentage points**.
+- (b) Answer in full:
+
+```text
+   L  >=  1/3 x (144 + L)
+  3L  >=  144 + L
+  2L  >=  144
+   L  >=  72
+
+  CHECK:  72 / (144 + 72) = 72 / 216 = 0.3333 = 33.3%
+  Already have 36, so photos still to take = 72 - 36 = 36
+```
+
+- (c) Otherwise you cannot separate "the fix worked" from "the new photos were easier". The same test before and after is the only comparison that means anything.
+
+**B3. Jo and the runaway counter.**
+
+- (a) The sprite repeats the same line over and over, as fast as the laptop allows: the `forever` loop re-fires the matching `if` on every pass and nothing says "you already said this".
+- (b) Something like **37**: a large, meaningless number whose exact value depends on laptop speed.
+- (c) Accept: "It does not mean 37 items. It means the loop ran 37 times while a can was in front of the camera. `count` counted loop passes, not items sorted. The fix is a change-detection guard so it only counts when the label changes." This is the Week 30 bug in another costume; the fix is `wait (0.5) seconds` plus `if <not <(image label) = (last)>>`.
+
+**B4. Ali leaves the lamplight result off his poster.**
+
+- (a) Ali has nothing to say ("um, it's pretty good"), and at that moment the visitor stops believing everything else he said, including the true parts.
+- (b) (i) The lamplight number is **the best object on his booth**: twenty stalls will have a demo that works, nobody else can say exactly who they fail, the number, and the cost of the fix. (ii) It is the chance to say **"nothing broke"**: the model learned exactly what it was shown.
+
+**B5. Rewrite the banned phrases.** Model rewrites; the student's will differ, but each must contain *training*, *model*, *pattern* or a measured number:
+
+| Banned phrase | Model rewrite |
+|---|---|
+| "It's basically magic." | "It found a pattern in 160 labelled photos." |
+| "It just knows what a can is." | "It matches a new photo against the pattern it found. It has never seen a can, only numbers that came from photos of cans." |
+| "It's really smart." | "It gets 30 out of 40 right on photos it had never seen, against a 25% baseline." |
+| "Obviously it uses AI." | Delete "obviously": "It's a classifier I trained on 200 photos I took myself." |
+| "It understands rubbish." | "It produces four numbers that add up to 100, and the biggest one wins. It doesn't understand anything." |
+
+#### 🧩 Puzzle of the Week — The Threshold Detective
+
+"Above the threshold" means strictly greater. The five ticks are photos #1, 2, 4, 5, 7.
+
+| threshold | answers given | of those, correct | accuracy of answers given | wrong let through | correct refused |
+|---|---|---|---|---|---|
+| **50** | 9 (#1-9) | 5 | 5/9 = **55.6%** | **4** (#3, 6, 8, 9) | 0 |
+| **70** | 6 (#1-6) | 4 | 4/6 = **66.7%** | **2** (#3, 6) | 1 (#7) |
+| **85** | 3 (#1-3) | 2 | 2/3 = **66.7%** | **1** (#3) | 3 (#4, 5, 7) |
+| **90** | 2 (#1-2) | 2 | 2/2 = **100%** | **0** | 3 (#4, 5, 7) |
+
+- **(a)** The workbook answer: anything **above 88**, so **89 or 90**, because photo #3 (88%, wrong) has to be cut off. Marking note: under the strict "above the threshold" rule a threshold of exactly **88** also refuses #3 and lets zero wrong through, so a student who writes 88 has a defensible answer; accept it if they say why.
+- **(b)** It costs almost the whole booth. At 90 the app answers only **2 of 10** photos (eight "not sure"), and refuses **3 answers it would have got right** (#4, #5, #7). Higher threshold = more right when it speaks, speaks less often.
+- **(c)** Accept: "Photo 3 was 88% confident and wrong. That one row proves confidence is guess *strength*, not a hit rate; nothing inside the model checks the answer against reality, only I did, with a pencil." That is why the highest-confidence-while-wrong number goes on the poster, large.
+
+#### 🤔 Think Deeper
+
+**T1 ("just set it to 95").** A strong answer uses the puzzle's own numbers: at 90 the app is right 2 out of 2 but refuses 8 photos out of 10, three of which it would have got right; at 70 it answers 6, is right 4, lets 2 wrong through. They are different trades, and the choice depends on what happens when it is wrong (a pot in the wrong bin against a medical model). Marking points: **uses actual numbers** · names the trade in both directions · notices the right answer depends on **what happens when it is wrong**.
+
+**T2 ("Route B is cheating").** A strong answer says the guess is the machine's (the model runs on this laptop and produces four numbers adding to 100, which the student cannot change) and the typing is the student's (reading the winner and typing `2`), that this was a privacy choice made with an adult, and that it is written on the sign and the data card. Marking points: names **exactly** what the machine does and what the human does · names the privacy reason · points at the sign · is not defensive, and does not claim Route B is *better*, only that it is disclosed.
+
+#### 🛠️ Build It
+
+The next eight entries are the workbook's Build It pages, W35-1 to W35-8.
 
 #### W35-1 — The five-state table
 
@@ -1160,6 +1267,14 @@ Every answer must contain a number the student measured.
 | "Is my photo going to Google?" | Route B: "Nothing has left this laptop, including the model. I type the prediction in myself, and that sign says so." Route A: "My photos never left this laptop — training happened in the browser — but the finished model is on a Google link, and I decided that with an adult." Precision matters more than reassurance. |
 | "How much better than guessing?" | "Baseline for four classes is 25%. Mine is 75% — 30 out of 40 photos it had never seen. That's a **50 percentage point** gain, and here's the sheet so you can see it was 40 photos and not 4,000." |
 | "Should a council use this?" | "No, and here's the number: 40% under a lamp. A bin sensor in a dark kitchen would be wrong more than half the time. To make it usable I'd need 47 more lamplight photos, a retrain, and the identical test rerun — and the daylight number might drop when I do." |
+
+#### 🎨 Draw It
+
+Five boxes, one per state, each showing the backdrop colour, the sentence and the counter. The one thing that makes the drawing **wrong** is four boxes instead of five, or boxes 4 and 5 drawn identically. A good drawing has boxes 1-3 in different colours with a bin name and `+1`; box 4 (`other`) white, "I don't recognise that - I only know 3 kinds of rubbish", `no change`; box 5 (`not sure`) white with a big `?`, quoting the actual confidence ("Not sure - only 61% confident"), `no change`. Boxes 4 and 5 must look visibly different.
+
+#### 📊 Self-Check
+
+No right answers; it is the student's honest 😀 / 🙂 / 😕. Look at the two rows most likely to be over-claimed: "Deliver the five-minute demo, standing, with zero banned words" (compare with the rehearsal log in W35-7) and "Check the confidence units before debugging anything else" (ask what `61` against `0.61` does to the threshold, see B1). If any row is 😕, check the "week to go back to" line is filled in.
 
 #### Reflection
 

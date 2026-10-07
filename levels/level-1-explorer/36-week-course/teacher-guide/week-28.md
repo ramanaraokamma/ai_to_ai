@@ -541,7 +541,7 @@ possible place to practise it.
 - Hold up their tally sheet in one hand and the phone in the other. Physically, side by side.
 - Show Figure 28.3 and let them match the three suggestions on their phone to the three top rows in the
   drawn table.
-- Have them write the fifteen-tap sentence into the workbook, unedited.
+- Have them write the fifteen-tap sentence into the workbook (Build It → The phone task → "My fifteen-tap sentence"), unedited.
 
 **Ask this:**
 
@@ -588,8 +588,8 @@ Let them look. There isn't.
 
 **Do this:**
 
-- Have the student write the four vocabulary words and their own one-line definitions in the workbook
-  glossary box. Their own words, not yours. If a definition is wrong, ask a question rather than
+- Have the student write the four vocabulary words and their own one-line definitions on a sheet of
+  paper to keep with the workbook (Practice Set A, A1 and A4, tests the same words). Their own words, not yours. If a definition is wrong, ask a question rather than
   correcting it.
 - Leave all three board zones up if you can, or photograph them. Week 29 uses this exact table.
 - Assign the homework as written in the Homework section below.
@@ -931,24 +931,42 @@ the answer. Prompt: "Where did the guess come from? What did somebody have to do
 >
 > Then answer four questions off your own table. Not off mine. Off yours."
 
-**Workbook pages:** Week 28, pages 1–5.
+**Workbook:** Week 28 workbook, sections in order: Warm-Up (W1–W5) · Practice Set A (A1–A6) ·
+Practice Set B (B1–B5) · Puzzle of the Week · Think Deeper (T1–T2) · Build It · Draw It · Self-Check.
+The workbook has its own Answers section at the end; the Answer Key below matches it item for item and
+adds what to watch for.
 
-- **Page 1** — your tokenizing rules, your chosen text copied out, tokens numbered, total written down.
-- **Page 2** — the prediction box (`tokens − 1 = ___ pairs`), then the tally sheet: CURRENT · NEXT ·
-  TALLY.
-- **Page 3** — the finished next-word table with COUNT and OUT OF columns, and both checks ticked off.
-- **Page 4** — the four questions:
-  1. Which word appears most often in your text, and how many times?
-  2. Which word has the most **different** followers? How many?
-  3. What is the most likely word to come after your text's **first** word?
-  4. Find one pair that appears **exactly once**. Write it out.
-- **Page 5** — the phone task written up: the three suggestions after `I am going to the`, your
-  fifteen-tap sentence unedited, and two lines on what tally must be sitting behind it.
+**The split.** The hand-tally lesson above is done in class. For the week, the **Build It** section is
+the main homework, and it is exactly the task described in the script above. Hand over the rest of the
+workbook alongside it, to be done in short sittings before Week 29: the Warm-Up first, then Practice
+Sets A and B, then the Puzzle, Think Deeper and Draw It, and the Self-Check last. Nothing in the
+workbook is new material. Warm-Up, A and B are the quick checks, so a student who finishes them quickly
+should go straight to Build It.
 
-**How long it should take:** 45–60 minutes. Roughly 10 minutes choosing and tokenizing, 25 minutes
-tallying, 10 minutes on the table and the checks, 10 minutes on the questions and the phone write-up.
-If it is running well over an hour, they picked a text with too many one-off words — let them switch
-to something more repetitive, which is a real and useful finding to write down.
+**What Build It asks for**, in the workbook's own order:
+
+- **Step checklist (10 steps)** — choose about 60 words, write the tokenizing rules first, copy out and
+  number every token, predict `tokens − 1` before any mark, tally, total, walk the sentence joins if
+  it doesn't match, add COUNT and OUT OF, run check 2, answer the four questions.
+- **My rules and my text** — four rule lines, the text, and where it came from.
+- **My prediction box** — total tokens, `− 1`, pairs expected, marks actually counted, Check 1 ticked.
+- **My tally sheet** — CURRENT · NEXT · TALLY · COUNT · OUT OF (twelve ruled rows; they will copy it out
+  as often as they need).
+- **Check 2 — my three biggest groups** — word, OUT OF number, times the word appears, same?
+- **The four questions, answered off MY table:**
+  1. Which word appears most often in your text, and how many times? (Q1)
+  2. Which word has the most **different** followers? How many? (Q2)
+  3. What is the most likely word to come after your text's **first** word? Give the count. (Q3)
+  4. Find one pair that appears **exactly once**. Write it out. (Q4)
+- **The phone task** — the three suggestions after `I am going to the`, the fifteen-tap sentence
+  unedited, whether it went round in a circle (and which words repeated), and two lines on what tally
+  must be sitting behind those three keys.
+
+**How long it should take:** Build It, 45–60 minutes. Roughly 10 minutes choosing and tokenizing, 25
+minutes tallying, 10 minutes on the table and the checks, 10 minutes on the questions and the phone
+task. The other sections are short: the Warm-Up is written for 5 minutes, and Sets A and B are a few
+minutes per item. If Build It is running well over an hour, they picked a text with too many one-off
+words — let them switch to something more repetitive, which is a real and useful finding to write down.
 
 ---
 
@@ -1083,7 +1101,80 @@ marks and `.` appears 6 times, but one of those is token 40 with nothing after i
    CHECK 2  every group's OUT OF = that word's frequency   ☐ pass
 ```
 
-### Part F — model answers for the homework, on a worked 60-token corpus
+### Part F — workbook answer key, section by section (Warm-Up to Think Deeper)
+
+Use this as the marking reference. It follows the order of the workbook and agrees with the workbook's
+own Answers section; the extra lines are for you. Build It is Part G, Draw It and Self-Check are Part H.
+
+#### Warm-Up (W1–W5) — last week's tokens
+
+| Item | Answer | Marking note |
+|---|---|---|
+| **W1** | A **corpus** is the body of text a machine learns from. Our corpus this week was six sentences about a bus. | Any wording of "the pile of text we count" is right. |
+| **W2** | Way 1 (glued): `[I] [love] [pizza!]` = **3 tokens**. Way 2 (split): `[I] [love] [pizza] [!]` = **4 tokens**. | Neither is "the" answer. They are two rules. Mark the student writing down which rule they used. |
+| **W3** | **9 tokens, 7 unique.** Tokens: `i · love · pizza · . · do · you · love · pizza · ?`. Unique: `i · love · pizza · . · do · you · ?`. | They differ because `love` and `pizza` each appear twice. Common slip: counting `.` and `?` as nothing, which gives 7 and 5. |
+| **W4** | **Consistent.** The same written rule every time gives counts you can trust and check. | A student who says "clever" has not yet grasped last week. Ask what happens to `don't` counted two ways. |
+| **W5** | **No.** A full stop is a token and not a word (so is `?`, and in many real systems an emoji). | "Token = word" is close enough for this course and wrong in general. |
+
+#### Practice Set A — Understand It (A1–A6)
+
+| Item | Answer |
+|---|---|
+| **A1** | (a) **tokens**, **1** · (b) **next to each other**, **order** · (c) **Word frequency** · (d) **language model** · (e) **token**, **cross** |
+| **A2** | **A — 75.** Every token starts one pair except the last, so it is always tokens − 1 without reading the story. **D** is the tempting wrong answer. |
+| **A3** | (a) **False.** Order is part of what a bigram is: `hot dog` and `dog hot` differ. (b) **False** — the most important false of the week. A pair written backwards (`the → to` for `to → the`) still puts exactly one mark on the sheet, so the total is blind to direction. Passing a check means you did not fail *that* check. (c) **True.** A word gets one row for each **different** follower; `the` has three (`bus`, `market`, `shop`). |
+| **A4** | 1 → **C** · 2 → **A** · 3 → **D** · 4 → **B** · 5 → **E** |
+| **A5** | Box 1 **CURRENT** · Box 2 **NEXT** · Box 3 **COUNT** · Box 4 **OUT OF** · Box 5 **bigrams = tokens − 1**. Swapping CURRENT and NEXT makes every pair point backwards and nothing warns them. |
+| **A6** | (a) **3** — `barks`, `sleeps`, `runs`. (b) **`sleeps`, 4 out of 5.** (c) **6 times** — the OUT OF for `dog` is 6, and `dog` is not the final token of that corpus. (d) **`cat` is more predictable**: best guess 4 out of 5, against `dog`'s 3 out of 6 (half the time), even though `dog` appears more often. How often is not the same as how predictable. |
+
+What to watch for in A: in A6(d) many students pick `dog` because its count (6) is bigger. Ask them to
+compare "out of" fractions, not totals. In A3(b) accept any explanation that a backwards pair still
+makes one mark.
+
+#### Practice Set B — Use It (B1–B5)
+
+| Item | Answer |
+|---|---|
+| **B1** | They are **wrong**: 100 tokens must give **99** pairs, so 105 is six too many (pairs counted twice, invented, or a place lost and doubled back over). Bonus: even 99 would not prove the tally right — that is check 2. |
+| **B2** | (a) **48 − 8 = 40 pairs** (one pair lost at each of the 8 line ends; our rule would give 47). (b) They have thrown away the **line-break group**, and with it every clue about which words **start a line**. Their rule is a defensible choice if written down and applied every time; it is not defensible to switch rules between verses. |
+| **B3** | (a) Almost every group has exactly **one follower with count 1**; the `.` group has a long list of different followers, one mark each. (b) **Nothing to predict**: every guess is a pick among equals, and the tally is miserable (a new row for nearly every one of the 59 pairs). (c) Something **repetitive**: song lyrics with a chorus, a recipe, the rules of a game, ordinary prose with lots of `the`, `and`, `to`. |
+| **B4** | (a) Any two legal-sounding words: `hereinafter`, `party`, `agreement`, `whereas`, `shall`, `clause`. (b) Any two of: slang, friends' names, emoji, the name of a game, "lol", anything newer than the contracts. A pair that never occurred has no count and can never be suggested. (c) …**the corpus it counted** (any wording of "the text it was built from"). |
+| **B5** | **One pair was written into the wrong group** — a `to → something` pair recorded as `bus → something`. That makes `bus` one too big (6) and `to` one too small (3). **Check 1 cannot see it**, because the total is 39 whichever group the mark lands in. One group one too big plus another one too small always means one misfiled pair. |
+
+#### 🧩 Puzzle of the Week — The Mystery Corpus
+
+The nine tokens: **`the big cat sat on the small mat .`**
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|---|
+| the | big | cat | sat | on | the | small | mat | . |
+
+The hard part: if token 2 were `small`, the sentence goes `the small mat .` and runs out after **4
+tokens**, having used only **3** of the 8 pairs, because `.` has no followers in the table. So `big`
+must be token 2. After that every step is forced until the second `the`, which takes the one unused
+`the` pair (`small`). What to watch for: students who choose `small` first and then want to "cheat" by
+restarting. That is fine; the dead end is exactly the proof the workbook asks for. The second thing
+worth saying aloud: `the` appears twice in the answer, and that is the only reason it has two rows.
+
+#### 🤔 Think Deeper (T1–T2)
+
+No single right paragraph. Mark on whether the three things are present.
+
+- **T1** (who chose the pile). (1) **Who chose it:** a company, engineers at a phone or keyboard maker
+  deciding what to feed the counter. Nobody voted and it is usually not published. (2) **In and out:** in
+  — a great deal of published, mostly formal English; out — languages with less text online, slang from
+  last year, the way the student's family talks. (3) **How it shows up:** suggestions that sound like a
+  newspaper, a keyboard that is weak at a second language. Full marks for seeing that it is a **choice
+  made by people**, not a fact about the world. Keep the answer: Weeks 31 and 32 return to it.
+- **T2** (does the brain keep a tally?). (1) **Confident:** something in the head predicts upcoming
+  words (reading slows at an unexpected word; a wrong note in a familiar phrase is heard instantly).
+  (2) **Unknown:** whether the brain stores anything like counts of pairs; nobody can read the table off
+  a brain. (3) **Claiming too much:** "chatbots work just like the brain" — a person knows what a bus
+  *is* and can ride one, and none of that is in a tally. Prediction, yes; distantly like counting,
+  maybe; the same table, no evidence. An 11-year-old may not reach all three; two of the three is a
+  good answer, and the "we don't know" part is the one to praise.
+
+### Part G — Build It: marking reference on a worked 60-token corpus
 
 Use this as the marking reference. The student's corpus will differ; what must match is the *method*
 and the *checks*.
@@ -1184,9 +1275,9 @@ clear winner instead, that is fine too — ask them what the second-place word w
 **4. Find one pair that appears exactly once.**
 Many. Clean examples: `hundred → and` (once), `runs → to` (once), `four → runs` (once), `crowd → stood`
 (once). Any of the 26 singleton groups qualifies, as do several rows inside the bigger groups. Accept
-any correct pair; check it against Part F's list rather than trusting memory.
+any correct pair; check it against the singleton list in this Part G rather than trusting memory.
 
-### Part G — the phone write-up (page 5)
+#### The phone task (Build It, last block of the section)
 
 The exact sentence will differ on every device, so mark the *reasoning*, not the output. A full-credit
 answer has three parts:
@@ -1201,6 +1292,27 @@ answer has three parts:
    amount of text beforehand, (b) the phone looks up the word just typed, (c) it shows the three
    followers with the biggest counts. Half credit for "it has a table of what follows what" without the
    lookup or the top-three rule.
+
+### Part H — Draw It and Self-Check
+
+#### 🎨 Draw It — what is inside a phone keyboard
+
+No single right drawing. Full credit has four parts, left to right: (1) an enormous **pile of text**
+with a note that somebody counted pairs in it long before the phone was bought; (2) a **table** with
+CURRENT, NEXT, COUNT and a few real rows; (3) an arrow labelled **"look up the word I just typed"**
+pointing at **one group** of the table; (4) **three keys** fed from the **top three rows by count**,
+arrow labelled "sorted by count, biggest first". What separates a good drawing from a correct one is
+the honest label: a box saying **"nothing anywhere in here is about what the words mean"**, pointing at
+the table. If a visitor could come away thinking the phone understands the sentence, it is not
+finished. A nice extra: a second, smaller pile labelled "my own messages" feeding the same table with a
+thinner arrow (why a friend's name eventually appears as a suggestion).
+
+#### 📊 Self-Check
+
+There is no answer key: the student ticks one box per row (😀 easily · 🙂 with a bit of help · 😕 not
+yet) for the six "I can…" statements. Do not mark it. Use it: read the ticks against what you saw. A
+😀 on "Use **both** checks, and say why one is not enough" with a wrong A3(b) or B5 is the one to talk
+through, because that is the week's main idea.
 
 ### Answers to every question posed in the lesson
 

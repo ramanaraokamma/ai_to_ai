@@ -15,7 +15,7 @@
 | **New maths** | **The output-size rule: `(n + 2p − k) ÷ s + 1`, rounded down.** Derived by counting window positions on an 8×8 grid by hand *before* the formula is written down. That is the only new maths this week, and it is one division. |
 | **New syntax** | `nn.Conv2d(..., stride=2, padding=1)` · `nn.MaxPool2d(2)` · `nn.Flatten()` · `t.view(t.size(0), -1)` |
 | **Dataset** | 8×8 pictures **written inline with numpy** — a half-bright bar you type in four lines — plus `load_digits()` reshaped to `(1797, 1, 8, 8)` if you get to the stretch. **Nothing downloads. No internet needed. No torchvision.** |
-| **Materials** | **Squared paper for everybody, and a pen — not a pencil** · printed workbook pages 25.1–25.7 · a big sheet on the wall headed **THE SHAPE LADDER** with six blank rows · the PARAMETER COUNT sheet from Week 22, still up · the Bug Log · a strip of card 3 squares wide per student (the "window") |
+| **Materials** | **Squared paper for everybody, and a pen — not a pencil** · the printed workbook (in class you use *Do the Maths by Hand* and item A6 of *Practice Set A*; the rest goes home or is optional) · a big sheet on the wall headed **THE SHAPE LADDER** with six blank rows · the PARAMETER COUNT sheet from Week 22, still up · the Bug Log · a strip of card 3 squares wide per student (the "window") |
 | **Tech needed** | Laptop with Python 3, numpy, **torch**. Torch has been installed since Week 20. **No new installs.** |
 | **Prep time** | 25 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `shapes.py` and `sizes.py` are both **instant** — under a second each. Nothing trains this week. |
@@ -33,7 +33,7 @@ By the end of the lesson the student can:
 3. **Predict all six shapes** through an 8×8 → conv → pool → conv → pool → flatten stack **in pen, before running it**, and read the real error when one prediction is wrong.
 4. **Explain what padding is for and what stride 2 costs you**, each in one sentence with a number in it.
 
-Observable evidence: a sheet of squared paper with six pencilled window positions and the count `6` circled; workbook page 25.1 with six shapes written **in pen** before any code ran, and the printed shape written beside each; twelve hand-computed output sizes with the printed number beside each; and one real traceback pasted into the Bug Log with the numbers `64` and `32` circled and labelled *"picture"* and *"mine"*.
+Observable evidence: a sheet of squared paper with six pencilled window positions and the count `6` circled; workbook item A6 (the six-shape figure) with six shapes written **in pen** before any code ran, and the printed shape written beside each; twelve hand-computed output sizes with the printed number beside each (*Build It*, "The twelve sizes"); and one real traceback pasted into the Bug Log with the numbers `64` and `32` circled and labelled *"picture"* and *"mine"*.
 
 ---
 
@@ -416,7 +416,7 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 
 **Read it once and say out loud which number is yours.** The `32`. Because you typed `nn.Linear(32, 10)`. The `64` came out of `16 × 2 × 2`.
 
-- [ ] **Print workbook pages 25.1–25.7.**
+- [ ] **Print the whole workbook** (Warm-Up through Self-Check). It is one document, not seven pages: in class you need *Do the Maths by Hand* and item A6; *Build It* goes home.
 - [ ] **Put up the wall sheet: THE SHAPE LADDER**, six blank rows, with two columns headed `my prediction (pen)` and `what it printed`. It stays up until Week 27.
 - [ ] **Check the PARAMETER COUNT sheet from Week 22 is still on the wall.** You point at it twice this week and add a row to it next week.
 
@@ -424,7 +424,7 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 
 - [ ] Editor open, terminal ready. `shapes.py` and `stack.py` **deleted or renamed** — they type them.
 - [ ] Squared paper out, one sheet each, **plus the 3-square card strips**, one each, on the desk before they sit down.
-- [ ] **Pens, not pencils**, for page 25.1. The point of pen is that you cannot quietly fix a wrong prediction.
+- [ ] **Pens, not pencils**, for item A6 (the six shapes). The point of pen is that you cannot quietly fix a wrong prediction.
 - [ ] THE SHAPE LADDER sheet blank on the wall.
 - [ ] Bug Log out.
 
@@ -434,7 +434,7 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 
 1. **The card slide.** Eight squares, a 3-wide card, count the starts. **Objective 1, complete, in four minutes.**
 2. **The stride and padding variations, on paper.** Slide the card two at a time: three positions. Draw a ring of squares round an 8×8 and slide again: eight positions. **Both halves of objective 4, complete.**
-3. **Twelve divisions.** Workbook page 25.4 is twelve rows of arithmetic and needs no computer at all. Do six in class, six at home.
+3. **Twelve divisions.** The workbook's *Build It* table, "The twelve sizes", is twelve rows of arithmetic and needs no computer at all. Do six in class, six at home.
 4. **The shape ladder, in pen, on the wall sheet.** They can predict all six shapes without a machine. You then read the six correct shapes out from this file's Answer Key and they mark their own. **Objective 3 minus the traceback.**
 5. **The traceback, read from Figure 25.1.** Project it or pass it round on paper. *"Two numbers. Which one did you type?"* **This works on paper and it is the sentence the week exists for.**
 
@@ -624,7 +624,7 @@ padding 0:  corner in 1 window,  middle in 9
 padding 1:  corner in 4 windows, middle in 9
 ```
 
-**Do this:** Hand out workbook page 25.2 — four configurations, by hand, five minutes. Then page 25.1: **the six shapes, in pen.**
+**Do this:** Hand out the workbook's *Do the Maths by Hand* — M1 to M4, four configurations, by hand, five minutes. Then item A6 in *Practice Set A*: **the six shapes, in pen.**
 
 > "Pen. Six shapes. You have four minutes and no computer, and I will be able to tell afterwards exactly what you thought."
 
@@ -745,7 +745,7 @@ for name, layer in stack:
     print("%-28s %s" % (name, tuple(h.shape)))
 ```
 
-**Do this:** **Before running, go round the room and collect the six predictions from page 25.1, in pen, and write them on the wall sheet.** Do not correct anything. Then run it.
+**Do this:** **Before running, go round the room and collect the six predictions from item A6, in pen, and write them on the wall sheet.** Do not correct anything. Then run it.
 
 ```text
 input                        (4, 1, 8, 8)
@@ -931,7 +931,7 @@ The point is not that they get it right. **The point is that the wrong predictio
 
 ### Setup
 
-- Workbook page 25.1: the six blank shapes with the layer names beside them, and a wide right-hand column headed `what it printed`.
+- Workbook item A6 (*Practice Set A*, Figure W25.1): the six blank shapes to fill in, in pen. The workbook figure has no `what it printed` column, so have them rule one down the right-hand side of the page before you start.
 - **Pens.** Not pencils. This is load-bearing.
 - THE SHAPE LADDER wall sheet, six blank rows, two columns.
 - Laptops **closed** for part 1. Say so out loud.
@@ -1015,7 +1015,7 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 
 ### What "finished" looks like
 
-- Page 25.1 with six shapes in pen, six printed shapes beside them, and every disagreement circled.
+- Item A6 with six shapes in pen, six printed shapes beside them, and every disagreement circled.
 - THE SHAPE LADDER wall sheet with both columns full.
 - At least one division written in the margin per pooled line — evidence they used the rule rather than a pattern.
 - One real traceback in the Bug Log with `64` and `32` circled and labelled **picture** and **mine**.
@@ -1035,7 +1035,7 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 2. **Do the whole ladder again with every `padding=1` removed.** 8 → 6 → 3 → 1 → **the pool fails**. Then the question: *"how many pad-free conv-pool blocks does an 8×8 picture support?"* One complete block: the second conv still fits (down to 1×1), but the pool after it fails.
 3. **Replace the pools with stride-2 convs.** `Conv2d(8, 16, 3, stride=2, padding=1)` on a 8×8 gives `(4, 16, 4, 4)` — the same shape as conv-then-pool, in one layer instead of two. Then the honest question: *"what is different, if the shapes are identical?"* The stride-2 conv has weights and can learn what to keep; the pool always keeps the biggest. **That is a real answer to a real question and it is a level-5 conversation.**
 4. **Work backwards.** *"I want the flatten to give exactly 100 numbers, starting from an 8×8. Find a stack that does it."* One answer: 25 filters and two pools, since `25 × 2 × 2 = 100`. There are others. Genuinely hard and completely checkable.
-5. **The receptive field, empirically.** Switch on one pixel at a time and see which ones can change the top-left cell of the final 2×2 map. The code is in the Answer Key under page 25.7. The answer is the top-left **7×7 — 49 of the 64 pixels.** Then the good question: *"why not all 64?"* Because the top-left cell is in the corner, and the corner's window is clipped by the edge of the picture.
+5. **The receptive field, empirically.** Switch on one pixel at a time and see which ones can change the top-left cell of the final 2×2 map. The code is in the Answer Key under item B5. The answer is the top-left **7×7 — 49 of the 64 pixels.** Then the good question: *"why not all 64?"* Because the top-left cell is in the corner, and the corner's window is clipped by the edge of the picture.
 
 ---
 
@@ -1242,31 +1242,129 @@ This section gives the homework to set at the end of the lesson, with the words 
 
 **Say this:**
 
-> "About an hour, three pages, and the middle one is the one I care about most.
+> "About an hour, and one part of the workbook matters most. Open it at the section called **Build It — Twelve Sizes, Then Break It on Purpose**. It has three parts and the middle one is the one I care about most.
 >
-> **First, page 25.4 — twelve output sizes, by hand.** Twelve rows: the picture width, the window, the jump, the rings of zeros. **Write the arithmetic out, not just the answer** — the subtraction, the division, the rounding, the plus one. Then run `sizes.py`, which prints what PyTorch says, and **write the printed number beside each of your twelve.** If they match, tick it. **If they do not match, you write one sentence saying what you did instead of what the rule says.** Not 'I got it wrong'. *'I rounded 2.5 up to 3 instead of down to 2.'* That sentence is the whole point of the page.
+> **First, 'The twelve sizes'.** Twelve rows: the picture width, the window, the jump, the rings of zeros. **Write the arithmetic out, not just the answer** — the subtraction, the division, the rounding, the plus one. Then run `sizes.py`, which prints what PyTorch says, and **write the printed number beside each of your twelve.** If they match, tick it. **If they do not match, you write one sentence saying what you did instead of what the rule says.** Not 'I got it wrong'. *'I rounded 2.5 up to 3 instead of down to 2.'* That sentence is the whole point of the table. Then answer the two questions underneath it: which three rows give you back the number you started with, and which three turn an 8 into a 4.
 >
-> **Second, page 25.5 — break it on purpose.** Build the stack from today. Then **deliberately put the wrong number in the `Linear` layer after the flatten.** Any wrong number you like. Run it. **Paste the real error into your workbook, all of the last line.** Then two labels: circle the number that came from the picture and write *picture* next to it, circle the number you typed and write *mine* next to it. **And one sentence: how you would have known the right number without running anything.**
+> **Second, 'Break it on purpose'.** Build the stack from today. Then **deliberately put the wrong number in the `Linear` layer after the flatten.** Any wrong number you like. Run it. **Paste the real error into your workbook, all of the last line.** Then two labels: circle the number that came from the picture and write *picture* next to it, circle the number you typed and write *mine* next to it. **And one sentence: how you would have known the right number without running anything.**
 >
-> **Third, page 25.6 — two sentences, and each one needs a number in it.** What is padding for? What does stride 2 cost you? One sentence each. **A sentence with no number in it does not count**, and I will hand it back.
+> **Third, 'Two sentences with numbers in them'.** What is padding for? What does stride 2 cost you? One sentence each. **A sentence with no number in it does not count**, and I will hand it back.
 >
-> Page 25.7 is a stretch and it is optional. It measures how much of the picture the very last cell can see, and the answer surprised me the first time."
+> Item **B5** in *Practice Set B* is a stretch and it is optional. It measures how much of the picture the very last cell can see, and the answer surprised me the first time."
 
-**Workbook pages:** 25.1, 25.2, 25.3 in class · **25.4, 25.5, 25.6** at home · 25.7 optional.
+**Workbook split.** **In class:** *Do the Maths by Hand* (M1–M4) and item **A6** in *Practice Set A* (the six shapes, in pen, which is the activity). **At home, the assignment:** all of *Build It* — the twelve sizes, break it on purpose, the two sentences. **Optional stretch:** **B5**. **Everything else is extra practice and is yours to choose from:** *Warm-Up* (five questions on Week 24 — best done in the first five minutes of next week), *Predict the Output* (P1–P4), the rest of *Practice Set A* (A1–A5), *Practice Set B* (B1–B4), *Fix the Broken Program*, *Puzzle of the Week*, *Think Deeper*, *Draw It* and *Self-Check*. If you want one addition that fits the hour, pick **P3** (the silent `padding` versus `stride` slip) — it is the same lesson as the traceback in a quieter form.
 
 **Expected time:** 25 min on the twelve calculations and checking them · 20 min breaking the `Linear` layer and labelling the error · 10 min on the two sentences · **about 55 minutes**, plus 15 more if they do the stretch.
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the second is the real one. **One — is the arithmetic written out, or just the answers?** Twelve correct numbers with no working is a page that might have been produced by pattern-matching, and the first stride-2 layer in Week 26 will find out. **Two — does the traceback on page 25.5 have both numbers labelled?** *Picture* and *mine*. This is the page that decides whether Weeks 26, 27, 33 and 34 cost them ten seconds or twenty minutes per bug, and it is worth a full line of feedback. **Three — do both sentences on 25.6 contain a number?** "Padding stops the image shrinking" is true and useless. "Padding keeps an 8 at 8 instead of 6, and takes the corner pixel from 1 window to 4" is the same idea with the evidence attached. **A rule you can only state in words is a rule you cannot check. A rule you can state in numbers checks itself.**
+> **🧑‍🏫 What to look for when you mark it:** three things, and the second is the real one. **One — is the arithmetic written out, or just the answers?** Twelve correct numbers with no working is a table that might have been produced by pattern-matching, and the first stride-2 layer in Week 26 will find out. **Two — does the traceback under 'Break it on purpose' have both numbers labelled?** *Picture* and *mine*. This is the part that decides whether Weeks 26, 27, 33 and 34 cost them ten seconds or twenty minutes per bug, and it is worth a full line of feedback. **Three — do both sentences under 'Two sentences with numbers in them' contain a number?** "Padding stops the image shrinking" is true and useless. "Padding keeps an 8 at 8 instead of 6, and takes the corner pixel from 1 window to 4" is the same idea with the evidence attached. **A rule you can only state in words is a rule you cannot check. A rule you can state in numbers checks itself.**
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every question restated, so you can mark from this page alone. The sections follow the workbook's own order and use its item labels (W1, M1, P1, A1, B1 and so on). The workbook ends with its own Answers section; every value below agrees with it, and the code blocks were re-run for this key.
 
-### Page 25.1 — The six shapes, in pen, before running
+### Warm-Up (five questions about Week 24)
 
-*The stack: a batch of 4 pictures, 1 channel, 8 by 8 → conv window 3 with 8 filters and one ring of zeros → ReLU → max pool 2 → conv window 3 with 16 filters and one ring of zeros → ReLU → max pool 2 → flatten.*
+*Five minutes; mark them in thirty seconds by sight. They are retrieval, not assessment.*
+
+- **W1 — 3×3 kernel on a 6×6 picture.** **4 × 4** feature map, **16** windows. The starts are 0, 1, 2, 3 — last start `6 − 3 = 3`, plus one for the start at zero — so four across and four down. *Expect 6 × 6 (they thought nothing shrinks) or 9 windows.*
+- **W2 — the same nine numbers at every position.** **Weight sharing.** It buys one rule that works everywhere, and a parameter count that does not grow with the picture (10 numbers for a 3×3 filter whether the picture is 6×6 or 600×600).
+- **W3 — `24.088203` instead of `24`.** **The bias.** Setting `conv.weight.data` leaves the bias at a random `0.088204`; it is the same amount wrong in every cell because there is one bias per filter, added once at every position. Fix: `conv.bias.data = torch.zeros(1)`.
+- **W4 — one 3×3 filter, one channel.** **10** numbers: nine weights plus **one bias**. *The common miss is 9.*
+- **W5 — why flattening throws the picture away.** A dense layer sees 64 slots with no idea which were next to each other: after a flatten the pixel directly above lands 8 slots away and the pixel across the row lands 1 slot away, and the layer cannot tell which means "touching".
+
+### Do the Maths by Hand (M1–M4) — in class
+
+*Calculator only, no code. Every step written: subtraction, division, rounding, plus one. These four are **not** the four on your night-before sticky note (`6, 8, 4, 4`); only M4 is the same configuration as the sticky note's fourth row.*
+
+| # | n | k | s | p | Arithmetic | out |
+|---|---:|---:|---:|---:|---|---:|
+| M1 | 10 | 4 | 1 | 0 | `(10 + 0 − 4) = 6`; `6 ÷ 1 = 6`; `6 + 1` | **7** |
+| M2 | 8 | 5 | 1 | 2 | `(8 + 4 − 5) = 7`; `7 ÷ 1 = 7`; `7 + 1` | **8** |
+| M3 | 7 | 2 | 2 | 0 | `(7 + 0 − 2) = 5`; `5 ÷ 2 = 2.5 → 2`; `2 + 1` | **3** |
+| M4 | 8 | 3 | 2 | 1 | `(8 + 2 − 3) = 7`; `7 ÷ 2 = 3.5 → 3`; `3 + 1` | **4** |
+
+- **M1 words.** The last legal start is 6 (a 4-wide window at 6 covers squares 6, 7, 8, 9; there is no square 10). The answer is one bigger **because the starts run 0 to 6, which is seven numbers, and the start at zero counts.**
+- **M2 follow-up.** The other pair that gives the size back is **`k = 3, p = 1`** (stride 1) — not M4, which has stride 2. Pattern: **`p = (k − 1) ÷ 2`** (`3 → 1`, `5 → 2`, `7 → 3`). Odd windows have a size-keeping ring count; even windows do not, which is one reason odd kernels are nearly universal.
+- **M3 words.** **The last column of the picture is dropped.** Starts 0, 2, 4 cover columns 0–5; column 6 is never inside a window. An odd size cannot be halved by a 2×2 pool without losing a row and a column.
+- **M4 words.** Rounding to the nearest gives `3.5 → 4`, then `4 + 1 = ` **5** (wrong). The card shows it: on the padded row of ten squares the stride-2 starts are 0, 2, 4, 6 — four — and a fifth start at 8 would need square 10, which does not exist. **Down, always down.**
+- **The tally.** They record how many of four were right first time and which one caught them; expect M3 or M4.
+
+**M4 is the row that separates level 2 from level 3.** `7 ÷ 2 = 3.5`, rounded **down** to 3, then `+ 1` gives 4. A student who wrote 5 rounded up. A student who wrote 4 with no working may have guessed, because a 2×2 pool on 8 also gives 4 — **ask them which one produced the 3.5.**
+
+**And the observation worth praising:** M4 (a padded 3-wide conv, stride 2) and a 2×2 pool with stride 2 both turn an 8 into a 4. **Both halve an 8.** So there are two different ways to halve a picture, and next week's stack uses the pool version. A student who spots that unprompted is at level 4. (The same thing appears again in *Build It* as rows c and g.)
+
+### Predict the Output (P1–P4)
+
+*Predictions in pen first. The student's own "/14" is a self-tally; do not re-derive it.*
+
+**P1 — an odd number of squares.**
+
+```text
+(1, 3, 3, 3)
+(1, 3, 3, 3)
+```
+
+The division: `(7 + 0 − 2) ÷ 2 + 1 = 5 ÷ 2 + 1 = 2.5 → 2, then 3`. **Not 3.5 and not 4;** the last row and column are dropped. The channel count stayed 3 for two different reasons: `MaxPool2d` never mixes channels, and `Conv2d(3, 3, ...)` was asked for 3 filters. `nn.Conv2d(3, 7, 2, stride=2)` would give `(1, 7, 3, 3)`.
+
+**P2 — two ways to reshape.**
+
+```text
+(4, 64)
+(256,)
+256
+```
+
+**Line 1 is the flatten you want:** it keeps the batch (4 pictures of 64 numbers). **Line 2 throws the batch away** — one flat list of 256 with no idea where a picture ends. Line 3 shows they are the same numbers: `4 × 16 × 2 × 2 = 256`.
+
+**P3 — one missing word, no error at all.**
+
+```text
+(2, 4, 6, 6)
+(2, 4, 8, 8)
+```
+
+**No, they differ.** The fourth positional argument of `nn.Conv2d` is **`stride`**, not `padding`, so `Conv2d(1, 4, 3, 1)` has padding 0: `(8 + 0 − 3) ÷ 1 + 1 = 6`. **Nothing goes red.** You catch it by printing the shape, and you avoid it by always writing `padding=1` with the keyword.
+
+**P4 — four layers, one changes nothing.**
+
+```text
+after conv 5x5 pad 2 : (6, 8, 8, 8)
+after ReLU           : (6, 8, 8, 8)
+after MaxPool2d(4)   : (6, 8, 2, 2)
+after Flatten        : (6, 32)
+```
+
+`MaxPool2d(4)`'s stride is **4** (a pool's stride defaults to its window; a conv's defaults to 1 — an annoying inconsistency). Line 3: `(8 + 0 − 4) ÷ 4 + 1 = 1 + 1 = 2`. Flatten: `8 × 2 × 2 = 32`. The ReLU line is the free one: a squash never changes a shape.
+
+*Wrong-answer map:* a 5-wide conv with `padding=2` written as `(6, 8, 4, 4)` means they shrank it; `(6, 8, 1, 1)` for line 3 means they divided 8 by 4 and then subtracted 1.
+
+### Practice Set A — Read It (A1–A6)
+
+**A1.** stride **(iii)** · padding **(i)** · max pooling **(v)** · receptive field **(ii)** · flatten **(iv)**.
+
+**A2 — the shape down a stack** (batch 10, 1 channel, 16 × 16).
+
+| Layer | Shape | The arithmetic |
+|---|---|---|
+| input | **(10, 1, 16, 16)** | given |
+| `nn.Conv2d(1, 6, 3, padding=1)` | **(10, 6, 16, 16)** | channels 1 → 6; `(16 + 2 − 3) ÷ 1 + 1 = 16` |
+| `nn.ReLU()` | **(10, 6, 16, 16)** | a squash never changes a shape |
+| `nn.MaxPool2d(2)` | **(10, 6, 8, 8)** | `(16 + 0 − 2) ÷ 2 + 1 = 7 + 1 = 8` |
+| `nn.Conv2d(6, 12, 3, padding=1)` | **(10, 12, 8, 8)** | channels 6 → 12; `(8 + 2 − 3) ÷ 1 + 1 = 8` |
+| `nn.MaxPool2d(2)` | **(10, 12, 4, 4)** | `(8 + 0 − 2) ÷ 2 + 1 = 3 + 1 = 4` |
+| `nn.Flatten()` | **(10, 192)** | `12 × 4 × 4 = 192` |
+
+`nn.Linear` must start at **192**, and the batch size 10 appears on every row.
+
+**A3 — spot the bug.** **The wrong line is `nn.Conv2d(1, 8, 3, 1)`.** The author thought the fourth number was `padding`; it is `stride` (already the default), so padding stays 0 and the conv gives 6×6, not 8×8. Real flatten length: conv `(8 + 0 − 3) ÷ 1 + 1 = 6`, pool `(6 + 0 − 2) ÷ 2 + 1 = 3`, flatten `8 × 3 × 3 = 72` — the 72 in the error. The `128` was right for the intended network: conv with one ring `= 8`, pool `= 4`, `8 × 4 × 4 = 128`. **Right fix: `nn.Conv2d(1, 8, 3, padding=1)`** (the program then prints `(4, 10)`). **Tempting wrong fix: `nn.Linear(72, 10)`** — it runs, and the network is not the one designed.
+
+**A4.** `Linear(32, 10)` after a flatten of 64 → **(iii)** · numpy 8×8 straight to a conv → **(i)** · `from_numpy` with no `.float()` → **(iv)** · a fourth pool on an 8×8 → **(ii)** · `Conv2d(1, 16, 3)` where 8 channels arrive → **(v)**.
+
+**A5.** In `(8x128 and 64x10)`: **128 came out of the picture; the 64 is written in the file and must change to 128.** Guess: **8 filters** — two pools from 16×16 give 4×4 = 16 positions, and `128 ÷ 16 = 8`. (An answer of 32 means they divided by 4 instead of 16.)
+
+**A6 — the six shapes, in pen, before running** (the activity's page). *The stack: a batch of 4 pictures, 1 channel, 8 by 8 → conv window 3 with 8 filters and one ring of zeros → ReLU → max pool 2 → conv window 3 with 16 filters and one ring of zeros → ReLU → max pool 2 → flatten.*
 
 | # | Layer | Shape | The arithmetic |
 |---|---|---|---|
@@ -1277,36 +1375,181 @@ Every question restated, so you can mark from this page alone.
 | 5 | max pool 2×2 | **(4, 16, 2, 2)** | `(4 + 0 − 2) ÷ 2 + 1 = 1 + 1 = 2` |
 | 6 | flatten | **(4, 64)** | `16 × 2 × 2 = 64` |
 
-*(The ReLU lines are not counted as shapes because they do not change one: `(4, 8, 8, 8)` in, `(4, 8, 8, 8)` out.)*
+*(The ReLU lines are not counted as shapes because they do not change one: `(4, 8, 8, 8)` in, `(4, 8, 8, 8)` out.)* **The number identical on every row is the 4, the batch size** — nothing done to a picture changes how many pictures there are.
 
 **Marking notes.** **The three misses to expect, in order of frequency.** (a) Line 6 written as **32** — they did `16 × 2` and forgot the second 2. This is the miss the activity is built around, and it is the miss that produces the traceback. (b) Lines 3 and 5 written as **3** and **1** — the `+1` dropped. (c) Lines 2 and 4 with the channel count copied down from the line above. **Full marks does not require six right answers; it requires six answers in pen with the division shown for lines 3 and 5.**
 
-### Page 25.2 — Four configurations, by hand, in class
-
-| # | n | k | s | p | Arithmetic | out |
-|---|---:|---:|---:|---:|---|---:|
-| a | 8 | 3 | 1 | 0 | `(8 + 0 − 3) ÷ 1 + 1 = 5 + 1` | **6** |
-| b | 8 | 3 | 1 | 1 | `(8 + 2 − 3) ÷ 1 + 1 = 7 + 1` | **8** |
-| c | 8 | 2 | 2 | 0 | `(8 + 0 − 2) ÷ 2 + 1 = 3 + 1` | **4** |
-| d | 8 | 3 | 2 | 1 | `(8 + 2 − 3) ÷ 2 + 1 = 3.5 → 3, then 3 + 1` | **4** |
-
-**Row (d) is the row that separates level 2 from level 3.** `7 ÷ 2 = 3.5`, rounded **down** to 3, then `+ 1` gives 4. A student who wrote 5 rounded up. A student who wrote 4 with no working may have guessed, because (c) also gives 4 — **ask them which one produced the 3.5.**
-
-**And the observation worth praising:** rows (c) and (d) both give 4. **Both halve an 8.** So there are two different ways to halve a picture, and next week's stack uses the pool version. A student who spots that unprompted is at level 4.
-
-### Page 25.3 — The shape ladder audit
-
-*For each of your six predictions, write the printed shape beside it and circle any disagreement. Then, for each circled line, one sentence: what did you do that the rule does not do?*
-
-The six printed shapes are the table on page 25.1. **The sentences are what you mark.** Good ones:
+**The audit sentence.** In the activity, after the printed shapes go beside the predictions, each circled disagreement gets one sentence: what did you do that the rule does not do? Good ones:
 
 - *"I wrote 3 for the pool. I did 8 ÷ 2 = 4 and then subtracted 1 for some reason. The rule says `(8 − 2) ÷ 2 + 1`, which is 4."*
 - *"I wrote (4, 1, 8, 8) again after the conv. I forgot that 8 filters means 8 channels out."*
 - *"I wrote 32 at the end. I multiplied 16 by 2 and stopped. It's 16 × 2 × 2 because the map is 2 wide AND 2 tall."*
 
-**Anything that says only "I got it wrong" scores nothing on this page**, and say why: *"which number did you use, and where did it come from?"*
+**Anything that says only "I got it wrong" scores nothing**, and say why: *"which number did you use, and where did it come from?"*
 
-### Page 25.4 — Twelve output sizes, by hand, then checked
+### Practice Set B — Write It (B1–B5)
+
+**B1.** `print(tuple(nn.Conv2d(1, 6, 5, padding=2)(torch.zeros(2, 1, 8, 8)).shape))` prints
+
+```text
+(2, 6, 8, 8)
+```
+
+`p = 2` for `k = 5` because a ring adds a square on each side, so `2p = 4` and `(8 + 4 − 5) ÷ 1 + 1 = 8`; in general `p = (k − 1) ÷ 2`.
+
+**B2 — the rule as a function.**
+
+```python
+def out_size(n, k, s, p):
+    return (n + 2 * p - k) // s + 1
+
+
+for n, k, s, p in [(8, 3, 1, 0), (8, 3, 1, 1), (8, 2, 2, 0), (10, 4, 1, 0),
+                   (5, 3, 2, 1)]:
+    hand = out_size(n, k, s, p)
+    real = nn.Conv2d(1, 1, k, stride=s, padding=p)(
+        torch.zeros(1, 1, n, n)).shape[-1]
+    print("n=%3d k=%d s=%d p=%d  by hand %2d  PyTorch %2d  %s"
+          % (n, k, s, p, hand, real, "agree" if hand == real else "DISAGREE"))
+```
+
+```text
+n=  8 k=3 s=1 p=0  by hand  6  PyTorch  6  agree
+n=  8 k=3 s=1 p=1  by hand  8  PyTorch  8  agree
+n=  8 k=2 s=2 p=0  by hand  4  PyTorch  4  agree
+n= 10 k=4 s=1 p=0  by hand  7  PyTorch  7  agree
+n=  5 k=3 s=2 p=1  by hand  3  PyTorch  3  agree
+```
+
+*(With `import torch`, `import torch.nn as nn` and `torch.manual_seed(0)` above it.)* **With `/` instead of `//`** the `(5,3,2,1)` row still passes (`4 / 2 + 1 = 3.0`, and `3.0 == 3`). The row `(8, 3, 2, 0)` breaks: both printed numbers say 3 (`%2d` rounds `3.5` for display) and the verdict says DISAGREE. **`//` is the rounding-down in the rule**, and a `/` version can look right on screen while being wrong. Full marks: all five say `agree` and the function uses `//`.
+
+**B3 — a ladder printer.** The last lines of the two outputs are the ones to mark:
+
+```text
+  Flatten()                    (2, 64)
+  so nn.Linear must start at 64
+  ...
+  Flatten()                    (2, 256)
+  so nn.Linear must start at 256
+```
+
+The full function prints six shapes per call (`(2, 1, n, n)`, `(2, 8, n, n)`, `(2, 8, n/2, n/2)`, `(2, 16, n/2, n/2)`, `(2, 16, n/4, n/4)`, then the flatten); for `ladder(16)` that is `(2, 1, 16, 16)`, `(2, 8, 16, 16)`, `(2, 8, 8, 8)`, `(2, 16, 8, 8)`, `(2, 16, 4, 4)`, `(2, 256)`. **Doubling the width multiplies the flatten by four because the flatten counts an AREA:** 2 × 2 became 4 × 4. The conv weights did not change (still 80 and 1,168); only the `Linear` after the flatten grew, fourfold.
+
+**B4 — how many pools does an 8×8 support?** Loop of `nn.MaxPool2d(2)` on `(1, 1, 8, 8)`.
+
+```text
+start       (1, 1, 8, 8)
+after pool 1 (1, 1, 4, 4)
+after pool 2 (1, 1, 2, 2)
+after pool 3 (1, 1, 1, 1)
+after pool 4:
+RuntimeError: Given input size: (1x1x1). Calculated output size: (1x0x0). Output size is too small
+```
+
+**Three pools** (`8 → 4 → 2 → 1`). **A 32×32 photo supports five** (`32 → 16 → 8 → 4 → 2 → 1`). The size of the picture is a hard ceiling on depth.
+
+**B5 — how much of the picture does the last cell see?** (the stretch, optional). Switch on one pixel at a time and find which can change the top-left cell of the final 2×2 feature map.
+
+```python
+import numpy as np
+import torch
+import torch.nn as nn
+
+back = nn.Sequential(nn.Conv2d(1, 1, 3, padding=1, bias=False), nn.MaxPool2d(2),
+                     nn.Conv2d(1, 1, 3, padding=1, bias=False), nn.MaxPool2d(2))
+with torch.no_grad():
+    for p in back.parameters():
+        p.fill_(1.0)
+
+mask = np.zeros((8, 8), dtype=int)
+for r in range(8):
+    for c in range(8):
+        x = torch.zeros(1, 1, 8, 8)
+        x[0, 0, r, c] = 1.0
+        if back(x)[0, 0, 0, 0].item() != 0:
+            mask[r, c] = 1
+print("pixels that can change the TOP-LEFT cell of the final 2x2 map:")
+print(mask)
+print("count:", mask.sum(), "of 64")
+```
+
+**The real output:**
+
+```text
+pixels that can change the TOP-LEFT cell of the final 2x2 map:
+[[1 1 1 1 1 1 1 0]
+ [1 1 1 1 1 1 1 0]
+ [1 1 1 1 1 1 1 0]
+ [1 1 1 1 1 1 1 0]
+ [1 1 1 1 1 1 1 0]
+ [1 1 1 1 1 1 1 0]
+ [1 1 1 1 1 1 1 0]
+ [0 0 0 0 0 0 0 0]]
+count: 49 of 64
+```
+
+**The answer: the top-left 7×7 — 49 of the 64 pixels** (rows 0–6 all 1 in columns 0–6; row 7 and column 7 all 0). That region is the **receptive field** of that cell.
+
+**And the good follow-up, which is why this is the stretch:** *"why not all 64?"* Because that cell is in the corner, so its window is clipped by the edge of the picture. **A cell in the middle of a bigger picture would see 10×10.** Two convs and two pools reach further than the 8×8 picture is wide, which is why the last layer of this stack can, in effect, look at nearly the whole digit at once — whereas one cell of a single conv layer sees only a 3×3 patch. `bias=False` matters: with a bias every cell is non-zero whatever goes in. **Do not turn this into a formula.** The count is the lesson.
+
+### Fix the Broken Program
+
+*`broken25.py`, three bugs: a dtype, a visible shape error, and a silent one.*
+
+- **Bug 1 — dtype.** Line `x = torch.from_numpy(imgs).unsqueeze(1)`; `np.zeros` is 64-bit, the conv weights 32-bit. **Fix: `.float()`**, i.e. `torch.from_numpy(imgs).float().unsqueeze(1)`. After the fix the new last line is `RuntimeError: mat1 and mat2 shapes cannot be multiplied (3x16 and 32x10)`.
+- **Bug 2 — shape.** **The `16` came out of the picture; the `32` was typed** in `nn.Linear(32, 10)`. **Do not just change the 32 to 16** — that runs and leaves the network wrong, which is bug 3.
+- **Bug 3 — silent.** Line `nn.Conv2d(1, 8, 3, 1)`: the author thought the fourth number was padding; it is **stride**, so that conv has no padding and the whole ladder comes out smaller than intended.
+
+| Layer | broken (bug 3 still in) | fixed |
+|---|---|---|
+| input | **(3, 1, 8, 8)** | **(3, 1, 8, 8)** |
+| conv 1 | **(3, 8, 6, 6)** | **(3, 8, 8, 8)** |
+| pool 1 | **(3, 8, 3, 3)** | **(3, 8, 4, 4)** |
+| conv 2 | **(3, 16, 3, 3)** | **(3, 16, 4, 4)** |
+| pool 2 | **(3, 16, 1, 1)** | **(3, 16, 2, 2)** |
+| flatten | **(3, 16)** | **(3, 64)** |
+
+The fully fixed program (`.float()`, `nn.Conv2d(1, 8, 3, padding=1)`, `nn.Linear(64, 10)`) prints `input shape: (3, 1, 8, 8)` then `output shape: (3, 10)`. **The lesson from bug 3:** *a shape error tells you two numbers disagree; it does not tell you which of the two should have been different, and fixing the wrong one gives a program that runs and a network that is not the one you designed.*
+
+### Puzzle of the Week — The Halving Ladder
+
+**Part 1.**
+
+| start | the ladder | how many pools |
+|---:|---|---:|
+| 8 | 4 → 2 → 1 | **3** |
+| 12 | **6 → 3 → 1** | **3** |
+| 28 | **14 → 7 → 3 → 1** | **4** |
+| 32 | **16 → 8 → 4 → 2 → 1** | **5** |
+| 224 | **112 → 56 → 28 → 14 → 7 → 3 → 1** | **7** |
+
+**Part 2.** Start 12: the step **3 → 1**, because `(3 − 2) ÷ 2 = 0.5` rounds down to 0, then `+ 1 = 1` (half of 3 is 1.5; the last row and column are dropped). Start 28: the step **7 → 3**, because `(7 − 2) ÷ 2 = 2.5` rounds down to 2, then `+ 1 = 3`. (224 passes through 7 and 3 as well.)
+
+**Part 3.** **8 and 32 are powers of two.** They halve exactly every time and nothing is ever dropped; every other size loses a row and column at least once.
+
+**Part 4.** **224 gives seven halvings.** `224 = 32 × 7`, so it halves cleanly five times (224, 112, 56, 28, 14) and then meets the odd 7. Against 256 (eight clean halvings) the honest answer is that both work and 224 is largely a convention that stuck; anyone who says 224 is optimal is repeating something they read.
+
+**Part 5.** The loop `nxt = (cur + 0 - 2) // 2 + 1` reproduces the table:
+
+```text
+   8 -> 4 -> 2 -> 1                        3 pools
+  12 -> 6 -> 3 -> 1                        3 pools
+  28 -> 14 -> 7 -> 3 -> 1                  4 pools
+  32 -> 16 -> 8 -> 4 -> 2 -> 1             5 pools
+ 224 -> 112 -> 56 -> 28 -> 14 -> 7 -> 3 -> 1 7 pools
+```
+
+Pooling a 1×1 then errors with `Output size is too small`, as in B4.
+
+### Think Deeper (T1, T2)
+
+*Paragraph answers; mark against three points each.*
+
+**T1.** (1) **Provable on paper:** every shape, every parameter count, how many pools a picture supports, the flatten length, which of two numbers in a shape error came from the data — none depend on a pixel value or a weight. (2) **Only measurable:** time, memory, accuracy, what filters look like, fairness. (3) **Why it matters:** if a shape is wrong, stop typing and do arithmetic; if accuracy is disappointing, arithmetic will not help and you need an experiment with a control. *Pen or seed.*
+
+**T2.** (1) **Name both costs with numbers:** padding invents border values from zeros (a faint frame on feature maps); pooling turns sixteen numbers into four and loses *where* the strong response was. (2) **An admitted cost beats a claimed free lunch** because you can price it, plan round it and test whether it hurts your case. (3) **What goes in the report:** the padding per conv; the number of pools and so positions known only to within four pixels; the required input size; the flatten length that welds the model to it. A good limitations section lets a reader predict a failure.
+
+### Build It — Twelve Sizes, Then Break It on Purpose (the homework)
 
 *For each row, apply `(n + 2p − k) ÷ s + 1`, rounded down. Write the arithmetic. Then run `sizes.py` and write the printed number beside each.*
 
@@ -1369,14 +1612,18 @@ for tag, n, k, s, p, kind in CASES:
 
 **Runtime: under one second.**
 
+**The two questions under the table.** *Three rows that give the size back:* **(b), (e) and (l)** — `k=3, p=1` (on an 8 and on a 4) and `k=5, p=2`; what their `k` and `p` share is `p = (k − 1) ÷ 2`. *Three rows that turn an 8 into a 4:* **(c), (d) and (g)**; (c) and (g) halve it on purpose in completely different ways (a 2×2 pool, and a padded 3×3 conv with stride 2), and **(d) shrinks it by accident** (a 5-wide window with no padding loses 4 squares — shrinking, not halving).
+
 **The four rows to talk about, and it is worth doing in Week 26's first two minutes:**
 
-- **(b), (e) and (l) all give the starting size back.** `k=3, p=1` (on an 8 and on a 4) and `k=5, p=2`. **The pattern is `p = (k − 1) ÷ 2`**, so `k=3 → p=1`, `k=5 → p=2`, `k=7 → p=3`. A student who spots that has found same padding by themselves and should be told so.
+- **(b), (e) and (l) all give the starting size back.** A student who spots `p = (k − 1) ÷ 2` has found same padding by themselves and should be told so.
 - **(f) and (i) both need rounding down**, and they are the two rows most people get wrong. Both come out to `2.5 → 2`.
 - **(i) with an odd input:** 7 is odd, so a 2×2 pool cannot halve it evenly. It gives 3, not 3.5 and not 4. **The last column of the picture is simply dropped**, and that is worth knowing before it happens to somebody's data.
 - **(j) has stride 3 and a window of 3**, which means the windows do not overlap at all: squares 0–2, then 3–5. Two positions, no double-counting. **Stride equal to the window size is exactly the non-overlapping case, which is what pooling almost always does.**
 
-### Page 25.5 — Break it on purpose
+**The "misses" line.** For each miss there is one sentence saying what they did instead of what the rule says; "I got it wrong" scores nothing. The expected misses are (f), (g) and (i) (rounded up), and (b) with `2p` written as `p`.
+
+#### Break it on purpose
 
 *Build the stack. Put a deliberately wrong number in the `Linear` after the flatten. Run it. Paste the real error. Label both numbers.*
 
@@ -1417,11 +1664,11 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 - **`32`** — **mine.** I typed `nn.Linear(32, 10)`. **This is the number to change.**
 - **`10`** — **mine**, and correct: ten digits, ten scores.
 
-**The sentence: how you would have known without running anything.** *"Walk the ladder. 8×8 → pad-1 conv keeps 8×8 → pool gives 4×4 → pad-1 conv keeps 4×4 → pool gives 2×2, with 16 channels. So the flatten is 16 × 2 × 2 = 64, and `Linear` must start at 64."*
+**The sentence: how you would have known without running anything.** *"Walk the ladder. 8×8 → pad-1 conv keeps 8×8 → pool gives 4×4 → pad-1 conv keeps 4×4 → pool gives 2×2, with 16 channels. So the flatten is 16 × 2 × 2 = 64, and `Linear` must start at 64."* Fixed, it prints `(4, 10)`.
 
 **Marking notes.** **Both labels must be there.** A pasted traceback with no labels is a screenshot, and say so: *"which of those two numbers is written in your file?"* And accept any wrong number they chose — 32, 128, 100, whatever — as long as the labelling is right. **A student who chose 128 and correctly labelled the 64 as coming from the picture has met the objective exactly.**
 
-### Page 25.6 — Two sentences with numbers in them
+#### Two sentences with numbers in them
 
 **Padding — a full-marks answer:**
 
@@ -1433,53 +1680,13 @@ RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x64 and 32x10)
 
 **Marking notes.** **A number in each sentence, or it comes back.** The three numbers that earn full marks are: **8 stays 8 instead of 6** (padding's size job), **1 window versus 4** (padding's fairness job), and **6 starts become 3** (stride's cost). Any two of the three is secure; all three is level 4. **And mark hard on "the picture shrinks" for stride** — it does not, and the misconception causes real confusion when they meet a stride-2 conv in a diagram.
 
-### Page 25.7 — Stretch: how much of the picture does the last cell see?
+### Draw It
 
-*Switch on one pixel at a time and find out which pixels can change the top-left cell of the final 2×2 feature map.*
+**Counts:** first drawing **6** starts, with padding **8**, with stride 2 **3**. A good drawing has a row of 8 squares numbered from zero, every legal 3-wide start marked (the last labelled `5`, with `5 + 1 = 6`), the padded row with `(8 + 2 − 3) ÷ 1 + 1 = 8`, and the stride-2 row with starts 0, 2, 4 and `2.5 rounded down to 2, then + 1 = 3`. **A good sentence on the arrow:** *"Same picture, both times — eight squares, nothing removed. Stride 2 only changed how many of the windows I bothered to compute, so the ANSWER went from 6 long to 3 long."* The great drawing labels the last legal start on every row (5, then 7, then 4), because that is the number the `+ 1` is added to.
 
-```python
-import numpy as np
-import torch
-import torch.nn as nn
+### Self-Check
 
-back = nn.Sequential(nn.Conv2d(1, 1, 3, padding=1, bias=False), nn.MaxPool2d(2),
-                     nn.Conv2d(1, 1, 3, padding=1, bias=False), nn.MaxPool2d(2))
-with torch.no_grad():
-    for p in back.parameters():
-        p.fill_(1.0)
-
-mask = np.zeros((8, 8), dtype=int)
-for r in range(8):
-    for c in range(8):
-        x = torch.zeros(1, 1, 8, 8)
-        x[0, 0, r, c] = 1.0
-        if back(x)[0, 0, 0, 0].item() != 0:
-            mask[r, c] = 1
-print("pixels that can change the TOP-LEFT cell of the final 2x2 map:")
-print(mask)
-print("count:", mask.sum(), "of 64")
-```
-
-**The real output:**
-
-```text
-pixels that can change the TOP-LEFT cell of the final 2x2 map:
-[[1 1 1 1 1 1 1 0]
- [1 1 1 1 1 1 1 0]
- [1 1 1 1 1 1 1 0]
- [1 1 1 1 1 1 1 0]
- [1 1 1 1 1 1 1 0]
- [1 1 1 1 1 1 1 0]
- [1 1 1 1 1 1 1 0]
- [0 0 0 0 0 0 0 0]]
-count: 49 of 64
-```
-
-**The answer: the top-left 7×7 — 49 of the 64 pixels.** That region is the **receptive field** of that cell.
-
-**And the good follow-up, which is why this is the stretch:** *"why not all 64?"* Because that cell is in the corner, so its window is clipped by the edge of the picture. **A cell in the middle of a bigger picture would see 10×10.** Two convs and two pools reach further than the 8×8 picture is wide, which is why the last layer of this stack can, in effect, look at nearly the whole digit at once — whereas one cell of a single conv layer sees only a 3×3 patch.
-
-**Do not turn this into a formula.** The count is the lesson.
+There are no right answers to a self-check, but two rows predict next week. **"look at `(4x64 and 32x10)` and say which number is mine"** — if that is a 😕, repeat 'Break it on purpose' with a different wrong number; ninety seconds, highest value on the sheet. **"say why the `+ 1` is there, in one sentence, without hesitating"** — if that is a 😕, get the card strip and chant the start numbers once more.
 
 ### Answers to every question posed in the lesson
 
@@ -1519,7 +1726,7 @@ count: 49 of 64
 
 **Variation-harder 4 — a flatten of exactly 100.** `25 × 2 × 2 = 100`: two pad-1 convs with 25 filters in the second, and two pools. Also `100 × 1 × 1` with three pools and 100 filters, and `4 × 5 × 5` if you use unpadded convs on a bigger picture. **Several right answers, all checkable by running it.**
 
-**Variation-harder 5 — the receptive field.** The top-left 7×7, **49 of 64 pixels**, clipped by the corner. Code and output on page 25.7.
+**Variation-harder 5 — the receptive field.** The top-left 7×7, **49 of 64 pixels**, clipped by the corner. Code and output under item B5 in the Answer Key.
 
 ---
 

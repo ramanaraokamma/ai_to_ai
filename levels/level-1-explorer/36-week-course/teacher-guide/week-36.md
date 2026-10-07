@@ -12,7 +12,7 @@
 | **Type** | 🏁 Assessment + showcase — the last week of Level 1 |
 | **Big idea** | You can build a guessing machine, measure it honestly, find out who it fails, and explain every bit of it without once saying "magic". |
 | **New vocabulary** | None. Nothing new is introduced today. Today is proof. |
-| **Materials** | Printed assessment pack (32 items) · pencil, eraser, spare paper · a calculator · the whole booth from Weeks 34–35 (laptop, poster, data card, scoring sheet, confusion matrix, bias report, DO NOT USE sign) · the break-it log and a good pen · printed six-outcome checklist · printed certificate · one envelope for the sealed letter |
+| **Materials** | Printed assessment pack (32 items) · pencil, eraser, spare paper · a calculator · the whole booth from Weeks 34–35 (laptop, poster, data card, scoring sheet, confusion matrix, bias report, DO NOT USE sign) · the break-it log and a good pen · printed six-outcome checklist · printed certificate · one envelope for the sealed letter · the Week 36 workbook (revision sections before the paper, W36-4 to W36-9 after) |
 | **Tech needed** | Whatever the booth already needs. Nothing new. The paper is pencil and paper on purpose. |
 | **Prep time** | 25 minutes the night before, plus inviting two adults earlier in the week |
 
@@ -815,20 +815,30 @@ There is no new content homework. There are two pieces of writing, and they clos
 > date on the front, and don't open it until you finish Level 2. Then you get to find out whether the
 > person who wrote it was right about you."
 
-| Page | What it is | Time |
+The workbook has two halves, and the order matters. The **revision sections** are "Different numbers,
+same ideas" and are meant to be done *before* the paper if the student can; they are not the paper
+and they are not marked for marks. The **Build It** pages (W36-4 to W36-9) are records of what
+actually happened today, so they come *after* the paper and the showcase.
+
+| Workbook section | What it is | When |
 |---|---|---|
-| W36-1 | Part A answer grid, 20 items, with "not sure" marked beside every guess | *in the paper sitting* |
-| W36-2 | Part B, 8 short answers, arithmetic visible | *in the paper sitting* |
-| W36-3 | Part C, 4 debug problems | *in the paper sitting* |
-| W36-4 | Score tally — A + B + C, the total out of 60, the band, and the band's instruction copied out | 5 min |
+| ✅ Warm-Up (5 questions) | Five quick recalls from Week 35: the 31/25/23/21 "not sure" app, `other` vs "not sure", the 88% vs 51% gap with its unit, the 0.83 vs 70 units mismatch, two banned phrases | before the paper, 5 min |
+| ✍️ Practice Set A (A1-A6) | Understand It: A1 fill the blanks, A2 the 21 out of 28 division, A3 true/false on a "not yet", A4 match "not yet" to weeks, A5 label the Level 1 to Level 2 door, A6 spot the uncopied band instruction | before the paper |
+| ✍️ Practice Set B (B1-B5) | Use It: B1 the "97% accurate" report, B2 the lamplight algebra, B3 the 420-photo test that was never a test, B4 marking after applause, B5 a DO NOT USE line | before the paper |
+| 🧩 Puzzle of the Week | The Broken Bigram Table: count the pairs, find two mistakes, correct the table, generate a sentence, bonus count | before the paper |
+| 🤔 Think Deeper (T1, T2) | T1 40 photos vs 400; T2 what a professional team has that you do not | before the paper, or any spare time |
+| W36-1, W36-2, W36-3 | The paper itself: Part A answer grid, Part B 8 short answers, Part C 4 debug problems, closed book, "not sure" beside every guess | *in the paper sitting* |
+| W36-4 | Score tally: A + B + C, the total out of 60, the band, and the band's instruction copied out | 5 min |
 | W36-5 | Showcase record: demo time, banned-word count, which six questions were asked, which one was unrehearsed | 5 min |
 | W36-6 | The break-it log, completed: attempts, successful fools, and the single most useful thing a visitor found | 5 min |
-| W36-7 | The six-outcome checklist, 31 items, ticked honestly, with a week number beside every "not yet" | 12 min |
-| W36-8 | The six-point Level 2 gate: yes / not-yet, plus a week number for every not-yet | 8 min |
+| W36-7 | The six-outcome checklist (32 boxes in the workbook), ticked honestly, with a week number beside every "not yet" | 12 min |
+| W36-8 | The six-point Level 2 gate: yes / not-yet, plus a week number for every not-yet, plus the plan for the next fortnight | 8 min |
 | W36-9 | The letter to yourself, sealed and dated | 15 min |
+| 🎨 Draw It | Draw your own door: what you can do now (with at least one real number from your own booth) on the left, what you want to build next on the right | any time after the showcase |
+| 📊 Self-Check | Eight "I can..." rows, 😀 / 🙂 / 😕; anything at 😕 is a "not yet" on the gate, with a week number | last, 2-3 min |
 
-**Total: about 50 minutes**, not counting the paper. W36-8 and W36-9 are the two that matter; the rest
-is recording.
+**Build It total: about 50 minutes**, not counting the paper or the revision sections. W36-8 and W36-9
+are the two that matter; the rest is recording.
 
 ---
 
@@ -1084,6 +1094,74 @@ with a table this small, every sentence it can produce is one the corpus already
 
 ### Workbook answers
 
+The workbook's revision sections come first, in workbook order (they are done before the paper). Then
+the paper pages and the W36-4 to W36-9 records.
+
+#### Warm-Up
+
+| # | Answer | Watch for |
+|:--:|---|---|
+| 1 | **"Not sure, only 31% confident."** No bin named, counter unchanged: 31 is nowhere near 70, so the app refuses to pass the guess on. (31 + 25 + 23 + 21 = 100.) | "Recycling", because it had the biggest number. That is the whole point of the threshold. |
+| 2 | `other` is a **class the model predicts**: it has real training photos, and picking it means the model is confident this is none of the three bins. "Not sure" is an **app decision**: the model did not say it; the app refused to repeat a winner that won by too little. | Both described as "the model being unsure". Only one of them is the model's. |
+| 3 | **37 percentage points** (88 - 51). Not "37%". | The unit. "37%" loses the mark. |
+| 4 | The app says "not sure" **every time, forever**, even on a 99%-confident answer, because `0.83 < 70` is always true: the extension reports a decimal between 0 and 1 and the threshold sits on a 0-100 scale. Fix: look at the raw number on screen and set the threshold to `0.7`. Do this before debugging anything else; a units mismatch looks exactly like a broken model. | "Retrain it." Wrong tool for a units problem. |
+| 5 | Any two of the six banned phrases with a replacement: "magic" / "it found a pattern in 160 labelled photos"; "it just knows" / "it matches a new photo against that pattern"; "it's smart" / "it gets 30 out of 40 right on photos it has never seen"; "it thinks" / "it produces four numbers that add to 100 and the biggest wins"; "it understands" / "it has never seen a bin, it has seen numbers that came from photos"; "obviously" / delete it. | A replacement that is just a synonym ("it knows"). The replacement must say what actually happens. |
+
+#### Practice Set A
+
+| Item | Answer | Wrong-answer map |
+|:--:|---|---|
+| A1 | **32** items worth **60** marks; Part A is **20** multiple choice; Parts B and C are **40** of the 60 (two thirds); about **explaining** and **fixing**; the **division** must be written down. | "Choosing" for explaining and fixing: the student has not taken in where the marks are. |
+| A2 | **(a) 0.75 and 75%.** Division: 28 x 0.7 = 19.6, 21 - 19.6 = 1.4, 1.4 / 28 = 0.05, so 0.75. Simplify check: 21 and 28 both divide by 7, 21/7 = 3, 28/7 = 4, so 3/4 = 0.75. Both roads agree. | (b) 70% is an estimate, not a division; Road 2 catches it (3/4 is not 0.70). (c) 133% is 28 / 21, upside down; accuracy can never exceed 100%. (d) 21% is the 21 with a decimal point stuck on; nothing was divided. |
+| A3 | **False.** A "not yet" means I know what the question asks, I know I cannot do it yet, and I know where to go. What makes it **complete** is a week number next to it; without one it is "just a mood". A gate with two "not yets" and two week numbers is a completed gate. | "True" because of the word "failed". Also: a correct "False" with no mention of the week number loses the second sentence's mark. |
+| A4 | 1 to **(b)** W1-W3 · 2 to **(d)** W11-W14 · 3 to **(a)** W19-W22 · 4 to **(e)** W23-W26 · 5 to **(c)** W31-W33 · 6 to **(f)** W28-W30 | Swapped pairs are usually a sign the student is matching by week order, not by topic. |
+| A5 | Table of examples = `pandas.DataFrame` · features and a label = `X` and `y` · "hide 20% before training" = `train_test_split(X, y, test_size=0.2)` · paper confusion matrix = `confusion_matrix(y_test, y_pred)` · the model = `model.fit(...)` then `model.predict(...)`. | None of this is code the student writes in Level 1; they only match the names. Point out that `test_size=0.2` is the sealed envelope written as one number. **Not one new idea in the right-hand column, only spelling.** |
+| A6 | The band's **instruction** was not copied out, only the word "solid". It should read: *"42-52: Solid. The gate is open. Finish the booth, then Level 2."* A circled band is a label; an instruction is a next action. | Hunting for an arithmetic error. The brief says the arithmetic and the band are right. |
+
+#### Practice Set B
+
+| Item | Answer |
+|:--:|---|
+| B1 | In order: (i) **"Out of how many?"** (97% of 30 parcels and 97% of 30,000 are different claims). (ii) **"What's the baseline?"** (if 96% of parcels are undamaged, "always say undamaged" scores 96%, so 97% is worth one percentage point). (iii) **"Were the test parcels in the training data?"** (if yes, the number measures memory, not learning). Also excellent as a third: "what is the per-class accuracy?", because the headline hides a poor score on the rare damaged ones. |
+| B2 | (a) 88 - 46 = **42 percentage points**. (b) L >= 1/4 x (240 + L), so 4L >= 240 + L, 3L >= 240, **L >= 80** (already whole, no rounding needed). Check: 80 / (240 + 80) = 80 / 320 = 0.25 = 25%. Already have 30, so **50 still to take**. (c) The requirement says **at least** a quarter: if the algebra gave 79.5, then 79 photos would land just under and fail, so you always round **up**. (Here it came out exactly 80; the habit is what is marked.) |
+| B3 | (a) **The test photos were training photos**: the 15 came from the same 420, so there is no held-out set, and 93% cannot tell learning from memorising. (b) (200 - 20) / 200 = 180 / 200 = **0.9 = 90%**; the target is under 20%, so this is severe. (c) The test set is 7 shirts, 7 shorts, 1 cap; always guessing "shirt" gets 7 of 15, so the baseline is **7/15 = 46.7%** and the claimed 93% is **46.3 percentage points** above a do-nothing strategy, on a test that was never a test. (d) The cap class was measured by **one photo**, so its accuracy is either 0% or 100% and the headline barely moves; and caps (20 training photos) are exactly where the model is weakest. |
+| B4 | (a) They will **mark generously**: benefit of the doubt on half-answers, no "not sure" beside guesses, "basically right" for a wrong answer. (b) It is not dishonesty: after praise a wrong answer feels small. Marking first, while the answers are cold, keeps the diagnosis intact, and the celebration lands on something real. |
+| B5 | *DO NOT USE THIS FOR: stocking the school shop, or identifying any item of uniform that is not a shirt, shorts or a cap. It has seen **20 cap photos**, and it has never been tested on a single photo it did not train on.* Both marks: an **absent category** (jumpers, ties, PE bags) and a **measured number** (20) a stranger could check. |
+
+#### Puzzle of the Week: The Broken Bigram Table
+
+```text
+   the·sun·set·.   = 4 tokens
+   the·sun·rose·.  = 4 tokens
+   the·moon·rose·. = 4 tokens
+   tokens: 12     sentences: 3
+   pairs = tokens - sentences = 12 - 3 = 9
+   The learner's counts add up to 2+1+1+1+1+1+1+2 = 10, which is 1 too many.
+```
+
+- **Mistake 1:** the `. -> the` row must not exist. Pairs are never counted across a full stop. Deleting it removes 2.
+- **Mistake 2:** `rose -> .` is undercounted. `rose` ends sentences 2 and 3, so it is **2**, not 1. Adds 1.
+- Check: 10 - 2 + 1 = 9. The total is only one out although there are two mistakes, because they pull in opposite directions.
+
+| word pair | times seen | chance |
+|---|---|---|
+| the -> sun | 2 | 2/3 = 66.7% |
+| the -> moon | 1 | 1/3 = 33.3% |
+| sun -> set | 1 | 1/2 = 50% |
+| sun -> rose | 1 | 1/2 = 50% |
+| moon -> rose | 1 | 1/1 = 100% |
+| set -> . | 1 | 1/1 = 100% |
+| rose -> . | 2 | 2/2 = 100% |
+
+Every group sums to 100%, and the counts sum to 2+1+1+1+1+1+2 = 9. Step 4 has many correct answers; one run is `the` (random, sun or moon) then `sun` (random, set or rose) then `rose` (forced, `.`), giving "the sun rose." Mark the forced/random labels, not the sentence: only `the` and `sun` have more than one option. **Bonus: 3 sentences** (the sun set. / the sun rose. / the moon rose.), all already in the training text, so with a table this small the generator cannot say anything new.
+
+#### Think Deeper
+
+| Item | What a strong answer does |
+|:--:|---|
+| T1 | **Quantifies** what one photo is worth (40 photos: one photo = 2.5 percentage points, so 75% is "somewhere around 75"; 400 photos: 0.25 points, the second digit becomes trustworthy). Says the **method** stays exactly the same (split before training, one attempt per photo, fraction plus baseline, matrix). Does **not** claim 400 photos would make a bad model good. |
+| T2 | Three things a professional team has, with "could I get it?" for each: hundreds of thousands of photos (not alone); thousands of photographers, rooms, cameras and lighting conditions (partly: more variety is cheap and helps the worst condition); a test set collected by somebody else (**yes, almost free**: ask a friend to shoot the held-out batch). The strongest answer spots that the third is the one they can actually get. "More data and better computers" is true but unactionable. |
+
 #### W36-1 / W36-2 / W36-3 — the paper
 
 Marked from the three sections above. Two marking habits worth keeping: write the **week number** in
@@ -1141,7 +1219,7 @@ There is no right answer, only a true one. What you check as the teacher:
 | Ticks | Can they show you where? Ask on three at random. Outcome 3's "confusion matrix by hand" and outcome 6's "gap in percentage points" both have a physical page to point at. |
 | "Not yets" | Does each one have a week number beside it? Use the module-to-week table. |
 | The two unfakeable items | *"a model that scored well on its own photos and failed on new ones"* → Week 18. *"said out loud, to a real person, something my own model is bad at"* → today. If either is untrue, that is the most important finding on the page. |
-| Suspiciously perfect | 31 ticks with no examples is a red flag, not a triumph. One honest "not yet" is worth more than a full sheet. |
+| Suspiciously perfect | A full sheet of ticks with no examples is a red flag, not a triumph. One honest "not yet" is worth more than a full sheet. |
 
 #### W36-8 — The six-point Level 2 gate
 
@@ -1162,6 +1240,14 @@ Not marked, not read by you unless offered. Say only this: it should contain one
 **build** and one thing they want to be able to **do** that they can't do yet. Sealed, dated, opened
 after Level 2. If they ask what to write, offer the one prompt that always unlocks it: *"What would
 you build if nobody was going to mark it?"*
+
+#### Draw It
+
+Marking point: something must **cross** the door (an arrow, or the same idea written twice with different names); otherwise it is two lists. The left-hand side must carry a **real number from the student's own booth**, not "I can measure models" but, for example, "30/40 = 75%, baseline 25%". The best versions put a `?` on the right and are honest that it is a question, not a promise.
+
+#### Self-Check
+
+Not marked. Read the 😕 rows: each is a "not yet" on the gate and must carry a week number on the line beneath the table. Eight ticks of 😀 with nothing to show is the same red flag as a full checklist.
 
 ---
 

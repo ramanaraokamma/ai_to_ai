@@ -13,7 +13,7 @@
 | **Big idea** | A chart with no axis labels is a decoration. The labels are what turn it into evidence. |
 | **New vocabulary** | figure · axes · marker · axis label · savefig |
 | **New syntax** | `fig, ax = plt.subplots(figsize=(6, 4))` · `ax.plot(x, y, marker="o")` · `ax.set_title()` / `ax.set_xlabel()` / `ax.set_ylabel()` · `fig.savefig("f.png", dpi=120, bbox_inches="tight")` |
-| **Materials** | Printed workbook pages 25.1–25.6 · **one printed copy of the naked chart** (see Prep) · a pencil · a ruler is handy but optional |
+| **Materials** | Printed workbook (every section up to, but **not** including, the ✅ Answers at the end) · **one printed copy of the naked chart** (see Prep) · a pencil · a ruler is handy but optional |
 | **Tech needed** | The `level2` folder, the `.venv` active, matplotlib installed (Orientation §4.3 and §4.5). One laptop is enough; two is better. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
@@ -239,7 +239,7 @@ Stage four is solid for the first time and its first tile is gold. Only **repres
 
 ### 15 minutes the night before
 
-- [ ] **Print workbook pages 25.1–25.6.**
+- [ ] **Print the workbook, every section from the Warm-Up to the Self-Check.** Leave off the ✅ Answers section at the very end: it holds the student's own answer key.
 - [ ] **Print the naked chart for the Hook.** Open `../figures/fig-w25-2-naked-chart-says-nothing.svg`, and print **only the left-hand box** — the rising line with no words on it. Easiest way: print the whole figure, then fold or cut the page so the three note cards on the right are hidden. You will reveal them one at a time. If you cannot print, draw it by hand on paper: eight dots rising left to right with one small dip, joined up, with two bare axis lines and **not one single word or number**.
 - [ ] **Run the smoke test again.** In your `level2` folder, with the venv active:
 
@@ -338,7 +338,7 @@ Pause. Then card 3 — *Flu cases each week*.
 ![An unlabelled chart does not mean anything](../figures/fig-w25-2-naked-chart-says-nothing.svg)
 *Figure 25.5 — All three note cards fit that line exactly. So the line, on its own, is a decoration.*
 
-> "Here's the sentence for the whole lesson, and I want you to write it at the top of page 25.1.
+> "Here's the sentence for the whole lesson, and I want you to write it at the top of the first page of the workbook, above the Warm-Up.
 >
 > **A chart with no labels is a decoration. The labels are what turn it into evidence.**
 >
@@ -357,7 +357,7 @@ Pause. Then card 3 — *Flu cases each week*.
 
 ### 🧠 Concept — Paper, Frame, and Five Labels (16 minutes)
 
-**Do this:** Put workbook page 25.1 between you (the labelled-diagram page). Have Figure 25.1 visible — on screen or printed.
+**Do this:** Put the workbook open at Practice Set A, question A5 (the label-the-diagram question) between you. Have Figure 25.1 visible — on screen or printed.
 
 **Say this — part 1, the sheet and the frame:**
 
@@ -623,11 +623,11 @@ Student on the keyboard. You do not touch it. Full instructions in the next sect
 
 ### Setup
 
-**On the table:** workbook pages 25.2 and 25.4, a pencil.
+**On the table:** the workbook open at **Build It** (Parts 1–3), a pencil.
 
 **On the machine:** the `level2` folder, terminal in it, venv active, editor open, and the folder window visible beside the editor.
 
-**The data:** the student's own 10-row DataFrame from Week 21 — the one about their own week. If it is missing, drop `myweek.py` (Answer Key, page 25.4) into the folder and use that.
+**The data:** the student's own 10-row DataFrame from Week 21 — the one about their own week. If it is missing, drop `myweek.py` (Answer Key, Build It) into the folder and use that.
 
 ### The rules
 
@@ -699,7 +699,7 @@ Charts two and three: `screen_min` and `steps`. Same shape, new titles, new y la
 
 ### Step 4 — Caption them (4 minutes)
 
-For each chart, one sentence on page 25.4 saying **what it shows**, and one saying **what it does not tell you**.
+For each chart, one sentence in Build It, Part 3, saying **what it shows**, and one saying **what it does not tell you**.
 
 Model answers:
 
@@ -744,7 +744,7 @@ Model answers:
 
 ### Variation — harder
 
-1. **Write the function.** They have had `def` since Week 10. Turn the repeated six lines into one function that takes the x values, the y values and four strings, and call it three times. The Answer Key page 25.4 has the model version.
+1. **Write the function.** They have had `def` since Week 10. Turn the repeated six lines into one function that takes the x values, the y values and four strings, and call it three times. The Answer Key has the model version under Build It, and Practice Set B (B5) has a smaller one.
 2. **Two decimal places on the axis.** Chart `sleep_hours` and notice that the y-axis ticks come out as 7.0, 7.5, 8.0 — matplotlib chose those. Ask: "who picked those numbers, and could they mislead anybody?" That is a soft, honest opening onto Week 27 with no new syntax.
 3. **Count your own markers.** "How many dots should be on each chart? Count them in the PNG. If you get nine, what happened?" (A dropped row, or a list one item short. It is also how you would notice a missing day.)
 4. **The naked-chart challenge, in reverse.** Take one of their finished charts and produce a *deliberately* stripped version with no title and no labels. Print both. Show them to somebody else in the house and ask what each one means. Bring back the answer. This is the Hook, run by the student, on a real person.
@@ -876,7 +876,7 @@ saved myfirstchart.png
 
 Extensions that need no new syntax at all:
 
-1. **Write the function.** They have had `def` since Week 10. Six repeated lines become one function with six parameters, called three times. See the Answer Key for page 25.4. Then ask the real question: "You've written this function once. Which week are you going to `import` it in?" (The answer is the capstone.)
+1. **Write the function.** They have had `def` since Week 10. Six repeated lines become one function with six parameters, called three times. See the Answer Key under Build It (and B5). Then ask the real question: "You've written this function once. Which week are you going to `import` it in?" (The answer is the capstone.)
 2. **Chart every number column in the table, in a loop.** They have had `for` since Week 7 and lists of strings since Week 11. `for column in ["homework_min", "screen_min", "steps"]:` and build a filename with an f-string from Week 3. Four charts from one loop and no new syntax.
 3. **Interrogate a chart in the wild.** Find any chart — a newspaper, a cereal box, a phone battery screen — and write down five things it does not tell you. Then write the axis labels it *should* have had. This is objective 5 at full strength and it is harder than it sounds.
 4. **The count-the-dots audit.** "Your chart should have ten dots. Count them in the PNG. Now break it on purpose: delete one number from one list, run it, and read the error." They produce the `ValueError` themselves, deliberately, which is the best possible way to meet it.
@@ -930,46 +930,52 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "Three pages, about an hour.
+> "The workbook has a lot in it, so here is the order. About an hour, and I've marked what's core.
 >
-> **First, page 25.3 — read the errors.** Four real error messages, copied off a real screen. For each one: write what Python is trying to tell you in your own plain words, and write the one thing you'd change. Not 'fix the typo'. Which typo, in which word.
+> **First, Practice Set A — Read It.** Six questions, A1 to A6. They're all about reading: which name is `fig` and which is `ax`, which file is on disk after which line, title or filename, spot the bug, label the diagram, and translate one real traceback into your own words. Write the answers. Don't just nod at them.
 >
-> **Second, page 25.4 — the three charts.** This is the main job. Three line charts from your own Week 21 table, each one saved as its own PNG with its own name. Every chart needs a title that says what you *found*, both axis labels with the units in brackets, and markers on every real point. And under each one, two sentences: one saying what it shows, one saying what it does **not** tell you. That second sentence is the one I'm going to read first.
+> **Second, Practice Set B — Write It, B1 to B3.** One line, one whole chart from nothing, and the four bad strings repaired. B4 and B5 are extras: the loop, and the function. Do them if you're keen.
 >
-> **Third, page 25.6 — interrogate a naked chart.** There's an unlabelled chart printed on the page. List five things it does not tell you, then write out the exact five lines of Python that would fix it.
+> **Third, Fix the Broken Program.** `steps.py` has three bugs: one that stops Python reading the file, one that stops it partway, and one with no error at all. Run it, fix it, and answer the question at the end about which bug was the most dangerous.
 >
-> And one instruction that isn't on any page: **open all three of your PNGs and look at them.** A chart you haven't looked at isn't finished. I will ask."
+> **Fourth, finish Build It.** The three charts and the six sentences are from today. Finish anything we didn't get to, then do Part 4, the naked chart, and Part 5, the Bug Log. Part 3 is the bit I'm going to read first, and the 'does NOT tell you' sentences are worth more than the 'shows' ones.
+>
+> And one instruction that isn't on any page: **open all three of your PNGs and look at them.** A chart you haven't looked at isn't finished. I will ask.
+>
+> If you've time left: the Puzzle of the Week, Think Deeper, Draw It and the Self-Check grid are all fair game. The Self-Check only takes two minutes, so please do that one."
 
-**Workbook pages:** 25.1, 25.2 and 25.5 in class; **25.3, 25.4, 25.6** at home.
+**Workbook sections, in class:** **Build It** Parts 1–3 (this is the Their Turn activity: choose the columns and filenames, build the three charts, write the six sentences). The lesson plan above does not schedule the **Warm-Up** (5 minutes, about last week) or **Predict the Output** (P1–P4). If there is time, use the Warm-Up as the opener and do Predict the Output at a natural pause. If not, both go home with the rest.
 
-**Expected time:** 12 min for the error reading · 35 min for the three charts · 12 min for the naked-chart interrogation. About 60 minutes.
+**Workbook sections, at home:** core: **Practice Set A** (A1–A6), **Practice Set B** B1–B3, **Fix the Broken Program**, and the rest of **Build It** (finish Parts 1–3, then Parts 4 and 5). Optional, in this order: B4 and B5, **Puzzle of the Week**, **Think Deeper**, **Draw It**, **Self-Check** (the Self-Check is short, so ask for it anyway). Warm-Up and Predict the Output also go here if they were not done in class.
+
+**Expected time (core):** 15 min for Practice Set A · 15 min for B1–B3 · 10 min for Fix the Broken Program · 20 min to finish Build It. About 60 minutes. The optional sections add roughly 10–15 minutes each.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 25.1 — Name the parts
+This key follows the workbook's own sections and item labels (W1–W5, P1–P4, A1–A6, B1–B5, Bug 1–3, Puzzle (a)–(i), T1–T2, Build It, Draw It, Self-Check), in the order they appear in the workbook. The values are the ones in the workbook's own Answers section at the end. The workbook has no page numbers, so neither does this key. Teacher-only extras (wrong-answer maps, marking tips, extra fragments) are marked as such.
 
-| # | Blank | Answer |
+### Warm-Up (last week's Mess Detective)
+
+| # | Answer | Marking note |
 |---|---|---|
-| (a) | The whole picture, the thing that becomes a `.png` | **figure** |
-| (b) | One drawing frame inside it, with its own title and axes | **axes** |
-| (c) | The call that hands you both at once | `plt.subplots()` |
-| (d) | The call that draws the data inside the frame | `ax.plot()` |
-| (e) | The dot placed on every real measurement | **marker** |
-| (f) | The call that writes the picture to a file | `fig.savefig()` |
-| (g) | The sentence at the top that states the finding | **title** |
-| (h) | The words on the bottom and the side, which must include the units | **axis labels** |
+| W1 | The two vanished rows were **exact duplicates of other rows**: every value in every column matched a row that appeared earlier. `drop_duplicates()` keeps the first of each set and drops the rest. It does **not** catch "nearly the same" rows. `"Red "` with a trailing space is a different row from `"Red"`, which is why you clean the text **before** dropping duplicates. | Accept "they were the same as other rows". Push for "every column". |
+| W2 | `.str.strip()` removes spaces from the **ends** of each value (`" Red "` becomes `"Red"`). `.str.title()` capitalises the first letter of each word and lower-cases the rest (`"RED"` and `"red"` both become `"Red"`). Together they turn three different-looking values into one. | Both halves are needed. |
+| W3 | On the left is `df["score_out_of_10"]`, a **new column**, and **no, it did not exist** before the line ran. Assigning to a name that is not there creates it. Assigning to one that *is* there silently overwrites it, the same trap as two `savefig` calls with one filename. | "It existed" is the usual slip. Ask what `df.columns` showed before. |
+| W4 | The **count**, meaning how many rows each mean came from. A mean of 2 rows and a mean of 2,000 rows print identically. `df.groupby("house")["score"].agg(["count", "mean"])` gives both. | |
+| W5 | A column holding **text that is not all digits**: an empty string, a `NaN`, `"eighty"`, or a stray space or symbol. First `print(df["score"].unique())` or `df["score"].isna().sum()` to *see* what is in there. You cannot convert what you have not looked at. | "Look first" is the habit being marked. |
 
-**25.1(i) Why is a title different from an axis label?**
-A title says **what you found** — the conclusion. An axis label says **what was measured, and in what units** — the ingredients. A chart can have perfect axis labels and a useless title, or the reverse, and both are broken in different ways.
+### Predict the Output (P1–P4)
 
-**25.1(j) Why does saving belong to `fig` and titling belong to `ax`?**
-Because you save the whole sheet of paper but you title one drawing on it. If a sheet held two graphs, you would need two titles and still only one file.
+| # | Real output | What to check |
+|---|---|---|
+| P1 | `about to draw` then `done`. **Two lines print and no file appears**, so the folder listing shows only `p1.py` and the new-`.png` count is **0**. Nothing was wrong with it *as code*. It did exactly what it was told. The chart was built and left in memory, and nobody asked for it. | The key sentence is "A silent success is not a success." |
+| P2 | `Text(0.5, 0, 'Day of the week')` then `Day of the week`. **The surprise is the first line.** `ax.set_xlabel(...)` hands back the **label object** it just made, and printing it shows its position (`0.5, 0`, halfway across at the bottom) and its text. Every call is handing something back whether you catch it or not, as `plt.subplots()` does. | Students predict only `Day of the week` twice. Fine, that is the point of the question. |
+| P3 | `y label is: Minutes` and `title is  : ` (an empty string). The second call **silently replaced** the first, and **no, there was no error**. No title was ever set, and `get_title()` returns nothing rather than complaining. It is dangerous because you copy a chart, change the plot line, forget one label string, and get a chart labelled with somebody else's units, with nothing in the terminal to tell you. | |
+| P4 | `saved twice`, and **one file**, `chart.png`. The first `savefig("chart")` had no extension, so matplotlib fell back to PNG and made `chart.png`. The second save wrote to **exactly the same filename** and flattened the first. Write the `.png` yourself and check the folder, not the terminal. | The "how many of 4 did you get right" line is self-reported. Do not mark it. |
 
-### Page 25.2 — Predict, then run
-
-Six fragments. Write the prediction first, in pen, before running anything.
+**Teacher-only extra: six more fragments** (not in the workbook) for a spoken round if there is time. Ask for the prediction first.
 
 | # | Fragment | What actually happens | Why |
 |---|---|---|---|
@@ -983,7 +989,7 @@ Six fragments. Write the prediction first, in pen, before running anything.
 **25.2(g) Which of (a)–(f) produced no error but was still wrong?**
 (a). It ran perfectly and produced nothing at all. **A silent success is not a success.**
 
-### Page 25.3 — Read the error (homework)
+**Teacher-only extra: four more error messages** (not in the workbook, which uses `set_xlable` in A6 and Fix the Broken Program). Use them for a spoken round, or when a student meets one by accident.
 
 | # | The message | What Python is telling you | The one thing to change |
 |---|---|---|---|
@@ -995,10 +1001,363 @@ Six fragments. Write the prediction first, in pen, before running anything.
 **25.3(e) Which line of a traceback do you read first, and why?**
 The **last** line. It names the kind of error and what went wrong. Everything above it is the route Python took to get there, which matters only once you know what broke.
 
-**25.3(f) One of these four is not really an error message at all. Which, and what is it?**
-None of these four — but the `UserWarning` about the `agg` backend, which you met in the lesson, is a **warning**. The program did not stop; it finished. It is telling you the computer has no window system. The correct response is to save the file, not to fix anything.
 
-### Page 25.4 — Three labelled line charts (homework)
+### Practice Set A — Read It
+
+**A1. `fig` or `ax`?**
+
+| # | The call | Answer |
+|---|---|---|
+| a | `_____.plot(...)` | **ax**: you draw *inside* a frame |
+| b | `_____.set_title(...)` | **ax**: the title belongs to one frame |
+| c | `_____.savefig(...)` | **fig**: you save the whole sheet |
+| d | `_____.set_xlabel(...)` | **ax** |
+| e | `_____.set_ylabel(...)` | **ax** |
+| f | the sheet of paper | **fig** |
+| g | one drawing frame | **ax** |
+
+**A1(h).** Everything you draw or write goes to the frame (`ax`); the only thing that goes to the sheet (`fig`) is saving it. Or: *a sheet of paper does not have a title. A drawing on it does.* Also accept the spoken version from the lesson: you save the whole sheet, but you title one drawing on it. If a sheet held two graphs you would need two titles and still only one file.
+
+**A2. Trace the file.**
+
+| After line | Is there a `scores.png`? | Does it have a y label? |
+|---|---|---|
+| 4 | **no** | n/a |
+| 6 | **yes** | **no** |
+| 7 | yes (the one from line 6) | **no**: the file on disk has not changed |
+| 8 | yes (rewritten) | **yes** |
+
+**A2(i).** **No.** The file written on line 6 is a picture of the figure *as it was at that moment*, and there was no y label then. Line 7 changes the figure in memory. It does not reach back into a file already written.
+
+**A2(j).** matplotlib draws the picture when you call `savefig`, not when you call `plot`. Everything before the save is instructions building up in memory, and `savefig` is the shutter click. The order of the label calls does not matter *as long as they all come before the save*, and one landing after the save is a silent, invisible bug.
+
+**A3. Title or filename?**
+
+| # | The text | Answer |
+|---|---|---|
+| a | "Steps by day" | **filename** |
+| b | "Saturday was my only 10,000-step day" | **title** |
+| c | "Rainfall chart" | **filename** |
+| d | "Rainfall trebled after the first week of June" | **title** |
+| e | "Homework minutes vs day number" | **filename** |
+| f | "I did no homework at all on day 6" | **title** |
+
+**A3(g).** The test: *could this text sit, unchanged, on top of **any** chart of the same data?* If yes, it names the ingredients rather than the finding, and it is a filename. (a), (c) and (e) would fit the data whichever way the numbers came out. (b), (d) and (f) would become **false** if the numbers changed, which is what makes them titles.
+
+**A4. Spot the bug.**
+
+| # | The line | The fix |
+|---|---|---|
+| a | `ax = plt.subplots(...)` | `fig, ax = plt.subplots(...)`: **two** names, because it hands back two things |
+| b | `ax.set_xlable("Week")` | `ax.set_xlabel("Week")`: l-a-b-e-l |
+| c | `marker="0"` | `marker="o"`: lowercase letter o. `ValueError: Unrecognized marker style '0'` |
+| d | `fig.set_title(...)` | `ax.set_title(...)`: titles belong to the frame |
+| e | `fig.savefig(dpi=120, ...)` | `fig.savefig("visits.png", dpi=120, bbox_inches="tight")`: the filename comes first |
+| f | `ax.savefig("visits.png", dpi=120)` | `fig.savefig("visits.png", dpi=120, bbox_inches="tight")`: you save the sheet |
+| g | `ax.plot(visits, weeks, marker="o")` | `ax.plot(weeks, visits, marker="o")`: **x first, y second.** No error at all; it just draws the chart sideways |
+
+**Marking note:** (g) is the only one of the seven with no error message, and the one most likely to be handed in. Full marks for (f) need the bare `.savefig` moved to `fig`; the extra arguments are a bonus.
+
+**A5. Label the diagram.**
+
+| Box | Phrase | The call that puts it there |
+|---|---|---|
+| **A** | the title, stating the finding | `ax.set_title(...)` |
+| **B** | the y axis label, with units | `ax.set_ylabel(...)` |
+| **C** | the x axis label, with units | `ax.set_xlabel(...)` |
+| **D** | the marker on one real point | `ax.plot(..., marker="o")` |
+| **E** | the axes (the drawing frame) | `plt.subplots(...)` |
+
+**A5(f).** The one with no call of its own is **E**: you do not *add* the frame with a `set_` call, you **get** it, already made, from `plt.subplots(...)`. Accept "E, because it comes for free". The point of the diagram: four of the five are words you type, and the line is the bit everybody thinks is the chart, but it is one fifth of it. (Figure 25.1 in the lesson shows the same five parts.)
+
+**A6. Read the traceback.**
+
+- **Which line first?** The **last** one. It names the kind of error and what went wrong. Everything above is the route Python took to get there.
+- **"Has no attribute"** means "I asked this thing to do something, and it has never heard of that name."
+- **`'Axes'`** is the **frame**, the `ax` in `fig, ax = ...`.
+- **Is the suggestion right?** **Yes.** `set_xlabel` is what was meant. It will not always be (Week 27 has one where the suggestion is wrong), so read it and then decide.
+- **In your own words**, a full-marks version: "I asked the drawing frame to do something called `set_xlable`. The frame has no such thing, because I spelled 'label' wrong. Python noticed how close it was to `set_xlabel` and offered that instead."
+
+### Practice Set B — Write It
+
+**B1.**
+
+```python
+fig.savefig("week.png", dpi=120, bbox_inches="tight")
+```
+
+`dpi=120` for a screen, `bbox_inches="tight"` so a long axis label is not cropped, and `.png` so matplotlib knows what to write. Three things inside the brackets and a `.png` on the end is "done".
+
+**B2.** Any five numbers, Monday to Friday, are fine. Marked on structure: both list lengths printed first, markers, a title that states a finding and would not fit another chart, both axis labels with units, a saved `.png`, and a student who has **opened** it. Model:
+
+```python
+"""b2.py - one fully labelled line chart of five numbers, saved."""
+
+import matplotlib.pyplot as plt
+
+days = [1, 2, 3, 4, 5]                       # day 1 = Monday, in order
+minutes = [30, 45, 20, 60, 15]               # minutes of reading that day
+
+print("days   :", len(days))
+print("minutes:", len(minutes))
+
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.plot(days, minutes, marker="o")
+
+ax.set_title("My best reading day was Thursday, at 60 minutes")
+ax.set_xlabel("Day of the week (day 1 = Monday)")
+ax.set_ylabel("Reading done (minutes)")
+
+fig.savefig("reading.png", dpi=120, bbox_inches="tight")
+print("saved reading.png")
+```
+
+```text
+days   : 5
+minutes: 5
+saved reading.png
+```
+
+The title works because it names a specific day and number and would become false if the numbers changed. The y label works because "Reading done (minutes)" cannot be misread as pages, books or hours.
+
+**B3.** Do not change any numbers. Model:
+
+```python
+"""b3.py - the same chart with all four words repaired."""
+
+import matplotlib.pyplot as plt
+
+tests = [1, 2, 3, 4]
+scores = [12, 15, 11, 19]
+
+print("tests :", len(tests))
+print("scores:", len(scores))
+
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.plot(tests, scores, marker="o")
+
+ax.set_title("My spelling score rose from 12 to 19 out of 20")
+ax.set_xlabel("Spelling test number (test 1 = first week of term)")
+ax.set_ylabel("Words spelled correctly (out of 20)")
+
+fig.savefig("spelling_scores.png", dpi=120, bbox_inches="tight")
+print("saved spelling_scores.png")
+```
+
+```text
+tests : 4
+scores: 4
+saved spelling_scores.png
+```
+
+| Was | Now | What was missing |
+|---|---|---|
+| `"Scores"` | `"My spelling score rose from 12 to 19 out of 20"` | the finding, and the scale |
+| `"Test"` | `"Spelling test number (test 1 = first week of term)"` | which test 1 is, so a reader knows when |
+| `"Score"` | `"Words spelled correctly (out of 20)"` | **out of what.** 12 out of 20 and 12 out of 100 are different lives |
+| `"spelling.png"` | `"spelling_scores.png"` | nothing was wrong, but a folder of six charts needs names you can tell apart in six months |
+
+The four numbers did not change. Every improvement was words.
+
+**B4 (optional).** One loop over a list of column names, with an f-string filename:
+
+```python
+"""b4.py - three charts from one loop. No new syntax since Week 11."""
+
+import matplotlib.pyplot as plt
+from myweek import build_my_week
+
+df = build_my_week()
+
+columns = ["homework_min", "screen_min", "steps"]      # a list of column names
+units = ["minutes", "minutes", "count"]                # the units, in the same order
+
+for i in range(len(columns)):                          # Week 7's counting loop
+    column = columns[i]
+    unit = units[i]
+
+    fig, ax = plt.subplots(figsize=(6, 4))
+    ax.plot(df["day"], df[column], marker="o")
+    ax.set_title(f"{column} across ten days, highest was {df[column].max()}")
+    ax.set_xlabel("Day of the fortnight (day 1 = first Monday)")
+    ax.set_ylabel(f"{column} ({unit})")
+
+    filename = f"loop_{column}.png"                    # Week 3's f-string
+    fig.savefig(filename, dpi=120, bbox_inches="tight")
+    print("saved", filename)
+```
+
+```text
+saved loop_homework_min.png
+saved loop_screen_min.png
+saved loop_steps.png
+```
+
+Three different filenames and no copy-pasted chart code. The honest weakness to draw out: a loop cannot know what you found, so its titles are better than "Homework data" and worse than a hand-written finding. Loops are right for making charts and wrong for writing titles. Hand-edit them before handing in.
+
+**B5 (optional).** Six parameters is the right number here, because four of them (title, both labels, filename) must differ between charts, and those four *are* the chart.
+
+```python
+"""b5.py - one function, two charts, and the labels passed in as strings."""
+
+import matplotlib.pyplot as plt
+
+
+def line_chart(x, y, title, xlabel, ylabel, filename):
+    """Draw ONE fully labelled line chart and save it. Returns nothing."""
+    fig, ax = plt.subplots(figsize=(6, 4))
+    ax.plot(x, y, marker="o")                 # dot on every real point
+    ax.set_title(title)                       # the finding
+    ax.set_xlabel(xlabel)                     # what x is, with units
+    ax.set_ylabel(ylabel)                     # what y is, with units
+    fig.savefig(filename, dpi=120, bbox_inches="tight")
+    print("saved", filename)
+
+
+months = [1, 2, 3, 4, 5, 6]
+rainfall = [12, 8, 22, 105, 260, 410]
+pocket_money = [50, 50, 60, 60, 75, 75]
+
+line_chart(months, rainfall,
+           "Rainfall rose from 12 mm to 410 mm in six months",
+           "Month (month 1 = January)", "Rainfall (mm)", "rain.png")
+
+line_chart(months, pocket_money,
+           "My pocket money went up twice in six months",
+           "Month (month 1 = January)", "Pocket money (rupees per week)",
+           "money.png")
+```
+
+```text
+saved rain.png
+saved money.png
+```
+
+Marked on: the six chart lines appear once, and the two calls differ only in their arguments. A function that wrote its own labels from `x`, `y` and `filename` alone would re-create the problem of the week.
+
+### Fix the Broken Program
+
+**Bug 1, the syntax error.** It is a **`SyntaxError`**, and **none of the program ran.** There is no `Traceback`, because Python could not finish reading the file. That is the quick tell: no traceback and no output from earlier lines. The `^^^^^^^^^` marks sit under `8400 6900`, showing exactly where Python stopped making sense, and "Perhaps you forgot a comma?" is right. **The fix:** put the comma back.
+
+```python
+steps = [6200, 7100, 5800, 8400, 6900, 11200, 4300]
+```
+
+**Bug 2, the runtime error.** After bug 1 is fixed:
+
+```text
+days : 7
+steps: 7
+Traceback (most recent call last):
+  File "steps.py", line 14, in <module>
+    ax.set_xlable("Day of the week (day 1 = Monday)")
+AttributeError: 'Axes' object has no attribute 'set_xlable'. Did you mean: 'set_xlabel'?
+```
+
+**Two lines of output appeared before the crash**, so everything above line 14 ran perfectly. A `SyntaxError` gives you nothing; a runtime error gives you everything up to the moment it broke, which is why the seatbelt prints are worth having. The 7 and 7 also show the two lists are fine. **The fix:**
+
+```python
+ax.set_xlabel("Day of the week (day 1 = Monday)")
+```
+
+**Bug 3, the silent one.** After bug 2 is fixed:
+
+```text
+days : 7
+steps: 7
+saved steps.png
+```
+
+**Zero `.png` files** are in the folder:
+
+```text
+$ ls *.png
+(no png files)
+```
+
+The `print("saved steps.png")` line told a lie. It prints whatever is in the quotes whether or not anything was saved, and nobody ever called `savefig`. **A `print` that says "saved" is not evidence that anything was saved. The only evidence is the file.** **The fix:** add the save **above** the print.
+
+```python
+fig.savefig("steps.png", dpi=120, bbox_inches="tight")
+print("saved steps.png")
+```
+
+```text
+days : 7
+steps: 7
+saved steps.png
+```
+
+```text
+$ ls *.png
+steps.png
+```
+
+**The check that catches this whole family:** look in the folder, not at the terminal (`ls` on macOS or Linux, `dir` on Windows). Keep the `print`, but its job is to say *which* file was written, not *that* one was.
+
+**Which bug was most dangerous?** **Bug 3.** Bugs 1 and 2 stopped the program and said where to look, and each cost about ten seconds. Bug 3 ran, printed a reassuring sentence and did nothing, and could have been handed in. **Loud bugs cost minutes. Silent bugs cost the work.**
+
+### Puzzle of the Week
+
+**Part 1**
+
+**(a)** Any five, as long as they are genuinely different *kinds* of thing and one is alarming. Model set:
+
+| # | Title | x label + units | y label + units |
+|---|---|---|---|
+| 1 | Pizza orders rose 60% over the term | School week (week 1 = start of term) | Pizzas ordered (count) |
+| 2 | Rainfall rose 60% as the monsoon arrived early | Week of June (week 1 = 1st June) | Rainfall (mm) |
+| 3 | **Flu cases at this school rose 60% in a term** | School week (week 1 = start of term) | Students off sick with flu (count) |
+| 4 | My reading speed climbed 60% after I started reading at night | Week of practice (week 1 = first week) | Reading speed (words per minute) |
+| 5 | The bus was 60% more late by the end of term | School week (week 1 = start of term) | Minutes the bus was late (minutes) |
+
+**(b)** The **y axis label**. Without it you do not know what the chart is *about*, and every other label describes something unnamed. "The title" is a defensible alternative **if** the reason is argued, but the y label is the one that cannot be guessed from anything else on the page.
+
+**(c)** Number 3. Somebody who believed it might close the school, cancel a trip or send letters to hundreds of families. A chart is an argument, and arguments cause things to happen.
+
+**(d)** Any two of: **how many real measurements it came from** (eight, countable); **that the dip in the middle is a real measured value**, not a wobble in the drawing; **that the line between two dots is not data**, since nobody measured there; **that eight is a small number**, so this is a short story and not a trend.
+
+**Part 2**
+
+**(e)** 189 − 118 = **71**, and 71 ÷ 118 = **0.602**, so a rise of **60.2%**.
+
+```text
+60.2 1.602
+```
+
+**(f)** **Yes, the title is honest.** 60% is right to within a fifth of a percentage point, and a reader can check it against the first and last markers.
+
+**(g)** It went down in **two places**: from week 5 (152) to week 6 (**149**), and from week 8 (171) to week 9 (166) and again to week 10 (**158**). That is three single-week drops (5→6, 8→9, 9→10), as one lone drop and one two-week slide. Accept "weeks 5–6 and weeks 8–10" for full marks.
+
+**(h)** Something like "Library visits rose 60% over the term, with a dip in weeks 9 and 10" or "Visits climbed 60% overall, but fell two weeks running after week 8." "Climbed" is true of the *ends* and slightly misleading about the *middle*, and one extra clause fixes it. A title should survive somebody looking at the chart carefully.
+
+**(i)** A checkable claim gives the reader something to do. "Climbed 60%" invites them to check the first and last markers, and they would catch you if it were wrong. "Climbed a lot" cannot be checked, so it cannot be wrong, so it is not really a claim. A number in a title is an offer to be corrected, and that is what makes it trustworthy.
+
+### Think Deeper
+
+**T1.** Model answer. Full marks need three parts: (1) where the figure actually is, (2) an honest cost of the warning, not just "it would be nice", and (3) a habit stated as something the student will actually do.
+
+> *When a matplotlib program runs and produces nothing, the figure has genuinely been built. It exists as instructions and measurements in the computer's memory, the way a variable does. It is not on the screen because nobody asked for a window, and not on disk because nobody called `savefig`. When the program ends, that memory is thrown away and the chart stops existing.*
+>
+> *Should matplotlib warn you? There is a real argument for it: it would kill the most common beginner failure in the library. But plenty of correct programs build figures they never save. A program that tries fifty bin counts and saves only the best one builds forty-nine figures on purpose. A warning would fire forty-nine times, and a warning that fires when nothing is wrong is one people learn to ignore, at which point it protects nobody.*
+>
+> *So if the tool will not do it, the habit has to. Mine is: **every chart program ends with a `savefig` and a `print`, and I look in the folder, not at the terminal.** The folder is the only thing that cannot lie to me.*
+
+**T2.** Model answer. The key move is inventing a **specific** perfectly-labelled-but-misleading chart. Vague answers ("charts can leave things out") get half marks. Anything naming a specific omission (a date range, a chosen quantity, a missing group) gets full marks.
+
+> *A title promises "here is what I found". An axis label promises "here is what was measured, and in what units". Between them they tell you what is **in** the chart. Neither says a word about what is **not** in it.*
+>
+> *Here is a perfectly labelled misleading chart. Title: "Library visits climbed 60% over one term." x label: "School week (week 1 = start of term)". y label: "Visits per week (count of people)". Markers on all twelve points. Every number correct. And in week 13, the week after my chart stops, visits collapsed to 60 because the library moved to a different building. My chart is true, checkable, honest about its units, and gives exactly the wrong impression, because **I chose where to stop.***
+>
+> *Could a label fix that? Partly. I could write "weeks 1-12 only; the library moved in week 13", which would help. But I cannot label the things I did not think of, and that is the honest limit: **labels tell you what a chart contains, and nothing can tell you what its maker chose not to look at.** So the trust a reader should give any chart, however well labelled, is: trust the numbers, check the framing, and always ask what happened just outside the edges.*
+
+### Build It (three labelled charts from your own table)
+
+**Part 1, before typing.** Marked on structure: three **different** filenames all ending `.png`, `day` along the bottom of all three, three different number columns up the side (any of `homework_min`, `screen_min`, `steps`, `sleep_hours`), written on paper before any code.
+
+**Why can't `day_name` go on the x axis?** Two reasons, and the second is better: (1) it is **text, not a number**, so "halfway between Mon and Tue" is meaningless, and a line chart's promise is that the space between points is real; (2) **`Mon`, `Tue` and `Wed` each appear twice in ten days**, so day 1 and day 8 would land in the same place. A line chart's x axis has to be **ordered and unique**, and `day` is both. Full marks for either; reason 2 can only be found by looking at the data, which is the habit.
+
+**Part 2, build them.** Each chart should have **ten** markers, one per row of a 10-row table. If a count is nine, a number is missing from a list or a row got lost, and the seatbelt catches it: `print(len(df["day"]), len(df["homework_min"]))`. The checklist items and the table (filename, file exists, markers counted, opened) are self-reported: check the folder yourself and ask "show me your three files." Planted bug to watch for: three programs saving to the same filename, leaving one file where there should be three.
 
 Marked on structure, not on whose week it is. If the student's Week 21 table is lost, this is the fallback used throughout:
 
@@ -1096,76 +1455,60 @@ steps   max  : 11200
 | `myweek_screen.png` | Screen time hit 180 minutes on day 6 — the Saturday, its highest of the fortnight — then dropped back to school-day levels. | What was *on* the screen. Homework research, a film and a group chat are all identical on this chart. |
 | `myweek_steps.png` | Day 6 was the only day over 10,000 steps; day 7 was the lowest of the fortnight at 4,300. | Whether the tracker was worn all day, what counted as a step, or whether a bike ride got logged as walking. |
 
-**25.4(a) Why do all three charts have the same x axis label?**
-Because all three are the same ten days. The x axis has not changed; only what is being measured up the side has. Reusing the label in a variable (`DAY_LABEL`) also means a typo can only happen once.
+**Teacher-only extras on the three charts.**
 
-**25.4(b) You wrote three `savefig` lines. What happens if two of them use the same filename?**
-The second one silently overwrites the first. No error, no warning, `saved` printed twice, and one file where there should be two. Check the folder, not the terminal.
+**Why do all three charts have the same x axis label?** They are the same ten days. Only what is measured up the side has changed. Keeping the label in a variable (`DAY_LABEL`) means a typo can only happen once.
 
-**25.4(c) Could you draw a line chart with `day_name` on the x axis instead of `day`?**
-matplotlib will draw it, but you should not, for two reasons. `day_name` is text, not a number, so "halfway between Mon and Tue" is meaningless — and worse, `Mon`, `Tue` and `Wed` each appear twice in ten days, so the chart would put day 1 and day 8 in the same place. A line chart needs an x axis that is **ordered and unique**. `day` is both.
+**You wrote three `savefig` lines. What if two use the same filename?** The second silently overwrites the first, with no error or warning, `saved` printed twice, and one file where there should be two. Check the folder, not the terminal.
 
-### Page 25.5 — Caption clinic
+**Part 3, the six sentences.** Marked with the table above: one "what it shows" and one "what it does NOT tell you" per chart, and the second is where the marks are. "It doesn't tell you everything" is not an answer: somebody has to be able to **point at** the missing thing.
 
-Rewrite each weak title as a finding.
+**Part 4, interrogate a naked chart.** The student strips the title and both axis labels from one of their own charts, saves it under a new name, prints both, and shows them to someone at home. Any five of these earn full marks, each a **specific absence**, not "it's confusing":
 
-| # | Weak title | A title that states the finding |
-|---|---|---|
-| (a) | "Visits vs week" | "Library visits climbed 60% over one term" |
-| (b) | "Homework data" | "Homework peaked at 90 minutes on day 7" |
-| (c) | "Steps" | "Day 6 was the only day over 10,000 steps" |
-| (d) | "Screen time chart" | "Screen time trebled at the weekend, then dropped back" |
-| (e) | "Graph of sleep hours by day" | "I slept least on the two days I did the most homework" |
-
-**The test to apply to all five:** could this title sit, unchanged, on top of *any* chart of the same data? If yes, it names the ingredients instead of the finding, and it goes back.
-
-**25.5(f) Fix these three axis labels.**
-
-| Weak | Fixed | What was missing |
-|---|---|---|
-| `Score` | `Score (points out of 100)` | The scale. 8 could be excellent or terrible. |
-| `Time` | `Homework done (minutes)` | Both the quantity *and* the units. "Time" could be a clock reading. |
-| `Distance` | `Distance to school (km)` | The units, and which distance. |
-
-### Page 25.6 — Interrogate a naked chart (homework)
-
-**Five things the printed chart does not tell you.** Any five of these earn full marks; the answer must be a *specific absence*, not "it's confusing".
-
-1. **What is being measured.** Money, rainfall, people, pizzas — nothing on the chart says.
-2. **The units.** Even if you knew it was money, is it rupees or thousands of rupees?
-3. **What the x axis is.** Days, weeks, months, years, or something not time at all.
+1. **What is being measured.** Minutes, steps, money, people: nothing says.
+2. **The units.** Even if you knew it was time, is it minutes or hours?
+3. **What the x axis is.** Days, weeks, tests, or something that is not time at all.
 4. **Over what period.** A rise over ten days and a rise over ten years are different claims.
-5. **How many real measurements it came from.** With no markers, four points and four hundred look identical.
-6. **How big the numbers actually are.** There are no tick numbers, so a rise from 2 to 3 and a rise from 2,000 to 3,000 look the same.
+5. **How many real measurements it came from**, if the markers went too.
+6. **How big the numbers actually are**, if the tick numbers went: a rise from 2 to 3 and a rise from 2,000 to 3,000 look identical.
 7. **Whose data it is, and who drew it.** Every chart is somebody's argument.
 
-**The five lines of Python that would fix it.** Any sensible quantity is fine; the *shape* of the answer is what is being marked.
+"What did they actually say it was a chart of?" has no fixed answer. Expect "I don't know" or a guess, and that is the Hook, run by the student on a real person. The five repair lines (shown here for the steps chart; any of the student's three will do, and the shape of the answer is what is marked):
 
 ```python
-# week25_fix_the_naked_chart.py
-import matplotlib.pyplot as plt
-
-weeks = [1, 2, 3, 4, 5, 6, 7, 8]
-visits = [118, 131, 126, 152, 166, 158, 174, 189]
-
-fig, ax = plt.subplots(figsize=(6, 4))
-ax.plot(weeks, visits, marker="o")                       # 1. markers on every point
-ax.set_title("Library visits rose 60% over eight weeks")  # 2. the finding
-ax.set_xlabel("School week (week 1 = start of term)")     # 3. what x is, with units
-ax.set_ylabel("Visits per week (count of people)")        # 4. what y is, with units
-fig.savefig("fixed.png", dpi=120, bbox_inches="tight")    # 5. save it so it exists
-print("saved fixed.png")
+ax.plot(df["day"], df["steps"], marker="o")              # 1. markers on every point
+ax.set_title("Day 6 was my only day over 10,000 steps")  # 2. the finding
+ax.set_xlabel("Day of the fortnight (day 1 = first Monday)")  # 3. what x is, with units
+ax.set_ylabel("Steps walked (count)")                    # 4. what y is, with units
+fig.savefig("myweek_steps.png", dpi=120, bbox_inches="tight")  # 5. so it exists
 ```
 
-```text
-saved fixed.png
-```
+Two discussion questions worth asking aloud afterwards (teacher-only). *Which of your five fixes would you make first, if you could make only one?* The **y axis label with units**, since without it you do not know what the chart is about (the title is a defensible alternative if the reason is argued). *Is having no numbers on either axis worse than having no title?* Different, and arguably worse: a missing title costs you the *conclusion*, which a careful reader can sometimes work out, but missing numbers cost you the *scale*, which nobody can recover.
 
-**25.6(a) Which of your five fixes would you make first, if you could only make one?**
-The **y axis label with units**. Without it you do not know what the chart is *about*, and every other label is describing something unnamed. (A defensible alternative answer: the title, because a good title implies the quantity. Accept either if the reason is argued.)
+**Part 5, the Bug Log.** No fixed answer. Mark that at least one row is filled in honestly, including the "was there an error message?" column. A silent bug recorded as "no" is a good entry.
 
-**25.6(b) The chart on this page has no numbers on either axis. Is that worse than having no title?**
-Different, and arguably worse. A missing title costs you the *conclusion*, which a careful reader can sometimes work out. Missing numbers cost you the *scale*, which nobody can recover — a doubling and a rise of two look identical, and there is no way to tell from the picture which one you are being shown.
+### Draw It
+
+There is no single right drawing. A good one has **a title that would become false if the numbers changed**, **units inside both axis labels**, and **one dot per real measurement, countable**. The tell that it is right: the bottom-right box ("one thing it does NOT tell you") names something a reader could point at. "It doesn't tell you everything" is the weak answer; "it doesn't say whether I walked or got the bus" is the strong one. A weak drawing has a title like "Journey times", a y label that just says "Time", or a smooth line with no dots. All three are the same mistake: the picture got made and the words were left as an afterthought.
+
+### Self-Check
+
+Self-rated grid: not marked. For the ticks, ask the student to **show** two of the eight, for example "type `fig, ax = plt.subplots(figsize=(6, 4))` and say what both names hold." True or false:
+
+| Statement | Answer | Why |
+|---|---|---|
+| An *axes* is the plural of *axis* | **FALSE** | An *axes* is one drawing **frame**, containing an x axis and a y axis. Terrible name, real wart |
+| You save the figure, not the axes | **TRUE** | `fig.savefig(...)`. You save the whole sheet |
+| `ax.set_title(...)` and `fig.set_title(...)` both work | **FALSE** | Only `ax`. A sheet of paper has no title; a drawing on it does |
+| `marker="0"` puts a dot on every point | **FALSE** | `ValueError: Unrecognized marker style '0'`. Lowercase letter o |
+| If a program runs with no error, a chart file must exist | **FALSE** | The misconception of the week. No error and no file is a perfectly normal outcome |
+| `figsize=(6, 4)` means 6 pixels by 4 pixels | **FALSE** | **Inches.** 6 inches at `dpi=120` is 720 pixels |
+| "Steps by day" is a title that states a finding | **FALSE** | It names the ingredients. It would fit any chart of that data |
+| Two `savefig` calls with the same filename give you two files | **FALSE** | One file. The second silently flattens the first, and `saved` prints twice |
+| `bbox_inches="tight"` can stop an axis label being cut off | **TRUE** | Without it, matplotlib saves a fixed rectangle and a long label can fall off the edge |
+| `ax.plot` needs the x values first and the y values second | **TRUE** | Swapping them gives **no error**, just a chart drawn sideways |
+| `plt.show()` always opens a window | **FALSE** | With no window system it prints a `UserWarning` and carries on, producing nothing |
+| A chart with no labels is about 80% finished | **FALSE** | It is 0% finished, because nobody can act on it, including you in a month |
 
 ### Lesson questions posed in the Say-this scripts
 

@@ -13,7 +13,7 @@
 | **Big idea** | The question decides the chart: comparison to bar, spread to histogram, relationship to scatter. |
 | **New vocabulary** | bar chart · histogram · bin · scatter plot · distribution |
 | **New syntax** | `ax.bar(names, values)` · `ax.hist(values, bins=8)` · `ax.scatter(x, y)` · `df["c"].value_counts()` (back from Week 24) |
-| **Materials** | Printed workbook pages 26.1–26.6 · **the eight question cards, cut out** (page 26.1) · **the five shape cards, cut out** (page 26.2) · **one printed copy of the broken line chart** (see Prep) · a pencil |
+| **Materials** | The printed workbook (Warm-Up through Self-Check; the card-matching grid is **Practice Set A, A1**) · **the eight question cards, cut out** (the eight A1 questions, one per slip; also listed in the Answer Key) · **the five shape cards** (LINE · BAR · HISTOGRAM · SCATTER · NEITHER, one slip each) · **one printed copy of the broken line chart** (see Prep) · a pencil |
 | **Tech needed** | The `level2` folder, venv active, matplotlib and pandas. The cleaned 38-row table from Week 24. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
@@ -284,8 +284,8 @@ week. There are three dashed boxes left on it. In Week 1 there were thirteen.
 
 ### 15 minutes the night before
 
-- [ ] **Print workbook pages 26.1–26.6.**
-- [ ] **Cut out the eight question cards** (page 26.1) and the **five shape cards** (page 26.2). Put the question cards in a face-down pile. Put the five shape cards face up in a row: LINE · BAR · HISTOGRAM · SCATTER · NEITHER.
+- [ ] **Print the workbook** (Warm-Up through Self-Check). It carries section names and item labels, not page numbers.
+- [ ] **Make and cut out the eight question cards** (the eight questions in the A1 table of Practice Set A, one per slip) and the **five shape cards**. Put the question cards in a face-down pile. Put the five shape cards face up in a row: LINE · BAR · HISTOGRAM · SCATTER · NEITHER.
 - [ ] **Print the broken line chart for the Hook.** Run this in your `level2` folder and print the PNG:
 
   ```bash
@@ -318,7 +318,7 @@ week. There are three dashed boxes left on it. In Week 1 there were thirteen.
 - [ ] `students.py` present in the folder.
 - [ ] Printed broken line chart face down.
 - [ ] Eight question cards face down; five shape cards face up in a row.
-- [ ] Workbook page 26.3 (the card-matching grid) on the table.
+- [ ] Workbook open at Practice Set A, A1 (the card-matching grid with a "reason" column) on the table.
 
 ### Fallback if a laptop fails
 
@@ -753,7 +753,7 @@ Full instructions in the next section.
 
 ### Setup
 
-**On the table:** the eight question cards, **face down** in a pile. The five shape cards, face up in a row. Workbook page 26.3 (the matching grid with a "reason" column). A pencil.
+**On the table:** the eight question cards, **face down** in a pile. The five shape cards, face up in a row. The workbook open at Practice Set A, A1 (the matching grid with a "reason" column). A pencil.
 
 **On the machine:** `level2` folder, venv active, `students.py` present.
 
@@ -763,7 +763,7 @@ Full instructions in the next section.
 
 1. **Draw one card. Read it out loud.**
 2. **Put it on one of the five shape cards.** Out loud, before anything else.
-3. **Then write the reason on page 26.3, in one sentence.** The reason is what is being marked, not the match.
+3. **Then write the reason in the A1 grid of the workbook, in one sentence.** The reason is what is being marked, not the match.
 4. **No laptop open during Part A.** This is the rule that makes the activity work. If the laptop is open they will start typing and stop thinking.
 
 The eight cards and their answers:
@@ -861,7 +861,7 @@ saved house_means.png
 
 ### Part C — What does it hide? (2 minutes)
 
-One sentence per chart, on page 26.4. Not "it hides information" — something specific.
+One sentence per chart, on scrap paper (the house-means sentence can be copied straight into Build It, Part 5, Chart 2 later). Not "it hides information" — something specific.
 
 | Chart | What it hides |
 |---|---|
@@ -879,7 +879,7 @@ One sentence per chart, on page 26.4. Not "it hides information" — something s
 
 - **Use four cards, not eight:** 1, 2, 3, 4 — one clean example of each shape, no NEITHER cards. That is objective 1 complete.
 - **Build one chart, not two.** The scatter. It is the newest shape and the most useful.
-- **Pre-fill the shape column** on page 26.3 and have them write only the reason. Explaining a correct answer is most of the learning here.
+- **Pre-fill the Shape column** of A1 and have them write only the reason. Explaining a correct answer is most of the learning here.
 - Cut Part C to one sentence about one chart.
 
 ### Variation — harder
@@ -1079,23 +1079,52 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "Three pages, about an hour.
+> "The workbook this week has more in it than one evening, so here is the order.
 >
-> **First, page 26.3 — finish the card matching.** All eight questions, the shape for each, and — this is where the marks are — **one sentence of reason each.** Two of the eight are NEITHER, and they're NEITHER for two completely different reasons. I want both reasons written out.
+> **First, finish Practice Set A, question A1.** We did the eight cards out loud; now make sure all eight have the shape **and one sentence of reason each** — that's where the marks are. Then A1(a): two of the eight are NEITHER, and they're NEITHER for two completely different reasons. I want both reasons written out.
 >
-> **Second, page 26.5 — build four charts** from your cleaned Week 24 table. A bar chart of the club counts, a bar chart of the house averages, a histogram of the study hours, and a scatter of age against hours. All four fully labelled with units, all four saved as separate PNGs with different names. Same rules as last week: a title that says what you *found*, and units in both axis labels.
+> **Second, Build It — that's the main job.** Four charts from your cleaned Week 24 table. A bar chart of the club counts, a bar chart of the house averages, a histogram of the study hours, and a scatter of age against hours. All four fully labelled with units, all four saved as separate PNGs with different names. Same rules as last week: a title that says what you *found*, and units in both axis labels. Fill in the Part 1 table *before* you type anything.
 >
-> **Third, and this is the important one — page 26.6.** For each of those four charts, write **one sentence naming exactly what it hides.** Not 'it hides some information'. Something you could put your finger on. My example, for the house chart: *it hides that Green's average came from only twelve students.* Four charts, four specific things.
+> **Third, and this is the important one — Part 5 of Build It.** For each of those four charts, write **one sentence naming exactly what it hides.** Not 'it hides some information'. Something you could put your finger on. My example, for the house chart: *it hides that Green's average came from only twelve students.* Four charts, four specific things.
+>
+> The rest of the workbook — Warm-Up, Predict the Output, the other Practice questions, Fix the Broken Program, the Puzzle, Think Deeper, Draw It and the Self-Check — is for the other evenings this week. Do Predict the Output *before* you run anything, and do Fix the Broken Program with the real error messages in front of you.
 >
 > And read your four titles back to yourself before you hand it in. If a title would fit any chart of that data, it isn't finished."
 
-**Workbook pages:** 26.1, 26.2 and 26.4 in class; **26.3, 26.5, 26.6** at home.
+**Workbook sections, in printed order:** Warm-Up (W1–W5) · Predict the Output (P1–P4) · Practice Set A — Read It (A1–A6) · Practice Set B — Write It (B1–B5) · Fix the Broken Program · Puzzle of the Week · Think Deeper (T1–T2) · Build It (Parts 1–6) · Draw It · Self-Check. The workbook carries **section names and item labels, not page numbers**, so this guide refers to them the same way.
 
-**Expected time:** 12 min for the card reasons · 35 min for the four charts · 12 min for the "what it hides" sentences. About 60 minutes.
+**In class:** the card game is **A1** (Activity Part A); Activity Part B builds two charts that reappear inside Build It (the house-means bar is Chart 2); Part C is a first draft of Build It, Part 5.
+**At home:** finish A1 and A1(a)–(c); **Build It (Parts 1–6)** is the core; everything else is spread over the week.
+
+| Workbook section | What it is | Time (estimate) |
+|---|---|---|
+| Warm-Up | W1–W5 — five questions about last week's chart checklist | 5 min |
+| Predict the Output | P1–P4 — `value_counts()`, do-the-bins-add-up, the missing brackets, the chart with no error | 8 min |
+| Practice Set A — Read It | A1 match the question to the shape (done aloud in class, reasons finished at home) · A2 bar or histogram · A3 read a histogram out loud · A4 spot the bug · A5 label the diagram · A6 read the traceback | 20 min |
+| Practice Set B — Write It | B1 one line · B2 bar chart of counts · B3 histogram with round edges · B4 scatter described in three parts · B5 four charts in one ~30-line program | 25 min |
+| Fix the Broken Program | `clubroom.py`: one syntax error, one runtime error, one silent bug | 10 min |
+| Puzzle of the Week | Part 1 bin detective · Part 2 wreck the histogram on purpose | 10 min |
+| Think Deeper | T1 the median and the hole · T2 every chart hides something | 10 min |
+| Build It | Parts 1–6: decide the shapes, build four charts, describe charts 3 and 4, four things they hide (**the bit being marked**), Bug Log | 60 min |
+| Draw It | one question of their own, a hand sketch, one hidden thing | 10 min |
+| Self-Check | nine "I can" ticks and twelve true/false | 5 min |
+
+**Core time, if only the three spoken items are done:** 12 min for the A1 reasons · 35 min for the four charts · 12 min for the "what it hides" sentences. About 60 minutes. The full workbook is several evenings.
 
 ---
 
 ## 🔑 Answer Key
+
+The answers follow the workbook's own **Answers** section, section by section and item by item; the wrong-answer maps and marking notes are the teacher-only part. Where to find each section:
+
+| Workbook section | Where it is answered below |
+|---|---|
+| Warm-Up, Predict the Output | "Warm-Up and Predict the Output" |
+| Practice Set A | A1 in "The eight cards"; A2–A6 in "Practice Set A, A2–A6" |
+| Practice Set B | "Practice Set B" (B5 is the four-chart program under Build It) |
+| Fix the Broken Program, Puzzle, Think Deeper | sections of the same names |
+| Build It | "Build It — Parts 1 to 6" and "Build It, Part 5" |
+| Draw It, Self-Check | sections of the same names |
 
 ### The cleaned Week 24 table, in full
 
@@ -1199,7 +1228,7 @@ Name: club, dtype: int64
 saved hook_bad_line.png
 ```
 
-### Page 26.1 / 26.3 — The eight cards
+### Practice Set A, A1 — The eight cards (Activity Part A)
 
 | # | Question | Shape | Reason (this is what earns the marks) |
 |---|---|---|---|
@@ -1212,16 +1241,16 @@ saved hook_bad_line.png
 | 7 | Does age go with study hours? | **SCATTER** | Two number columns again. (The answer turns out to be a *negative* tilt, which is a surprise worth having.) |
 | 8 | Is the chess club better than the art club? | **NEITHER** | "Better" is not defined. Highest average? Highest lowest mark? Most members? Most consistent? Four questions, four different winners. Hand it back. |
 
-**26.3(a) Two cards are NEITHER. Why are they NEITHER for different reasons?**
+**A1(a) Two cards are NEITHER. Why are they NEITHER for different reasons?**
 Card 5 is a perfectly good, perfectly measurable question whose answer happens to be **one number** — so a chart would add nothing. Card 8 is **not measurable at all** until somebody says what "better" means; the problem is not the chart, it is the question. One needs a `print`. The other needs a conversation.
 
-**26.3(b) Cards 2 and 6 are both BAR. What is different underneath?**
+**A1(b) Cards 2 and 6 are both BAR. What is different underneath?**
 Card 2's bar heights are **counts** — how many rows are in each club — from `value_counts()`. Card 6's heights are **averages** — the mean score inside each house — from `groupby`. Identical picture, completely different arithmetic, and a reader cannot tell which they are looking at unless your y-axis label says so. That is why the label reads `Mean score (points out of 100)` and not `Score`.
 
-**26.3(c) Card 1 is a LINE. What would have to change about the data for it to become a BAR?**
+**A1(c) Card 1 is a LINE. What would have to change about the data for it to become a BAR?**
 If the x axis stopped being ordered. "Homework minutes per **subject**" — maths, English, science — is the same kind of number on the same kind of chart, but subjects have no order and no in-between, so it becomes a bar chart. The y axis has not changed at all; the x axis decided the shape.
 
-### Page 26.2 / 26.4 — In-class charts
+### In-class charts (Activity Part B)
 
 **Bar of counts:**
 
@@ -1270,9 +1299,9 @@ saved club_counts.png
 
 **The scatter** and **the bar of house means** — full files and output in The Activity, Part B.
 
-### Page 26.5 — Build four charts (homework)
+### Build It, Part 2 and Practice Set B, B5 ��� the four-chart program (homework)
 
-One file, four charts. Three separate files would also be fine.
+One file, four charts. Three separate files would also be fine. This is the workbook's B5 program and the code behind Build It, Part 2.
 
 ```python
 # week26_homework.py -- four charts, four shapes, from the cleaned Week 24 table.
@@ -1336,11 +1365,11 @@ age
 saved four PNGs
 ```
 
-**Chart 3, read out loud:** the hours run from 0.5 to 6.0; the three middle bins are level at 8 students each; it is one broad pile with a slight tail off the high end. Bin counts 5 + 8 + 8 + 8 + 6 + 3 = **38**. ✓
+**Chart 3, read out loud:** the hours run from 0.5 to 6.0; the three middle bins are level at 8 students each; it is one broad pile with a thin tail off the high end. Bin counts 5 + 8 + 8 + 8 + 6 + 3 = **38**. ✓
 
 **Chart 4, the surprise.** The tilt goes **down** to the right, which nobody expects. The groupby confirms it: 12-year-olds average 4.30 hours, 13-year-olds 2.97, 14-year-olds 1.95. That is a real pattern in this table, and the honest sentence is *"older students in this table reported fewer study hours."* Not *"getting older makes you study less"* — ten fourteen-year-olds is not a generation, and there are half a dozen innocent explanations (more homework counted separately, more honest reporting, a small odd sample).
 
-### Page 26.6 — What does each chart hide? (homework)
+### Build It, Part 5 — What does each chart hide? (homework)
 
 Full marks needs something you could point at. Model answers:
 
@@ -1348,17 +1377,269 @@ Full marks needs something you could point at. Model answers:
 |---|---|
 | 1. bar of club counts | **Every score.** Chess has 14 members and they range from 55 to 97; the bar is a single number standing in front of a very mixed crowd. It also hides that these 38 students came from a 40-row table with two duplicates removed. |
 | 2. bar of house means | **How many rows each average came from** — Blue 14, Green 12, Red 12 — and the spread inside each house. Blue's scores run 42 to 93. A mean of 12 students and a mean of 12,000 look identical on a bar chart. It also hides that Blue beats Red by **0.11 of a mark**, which is nothing at all. |
-| 3. histogram of hours | **Who.** The 8 students in the 2-to-3-hour bin could be all one club or one from each. A histogram deliberately throws away every column except one — that is what makes it readable and what makes it blind. |
+| 3. histogram of hours | **Who.** The 8 students in any one of the middle bins (for example 2.33 to 3.25 hours) could be all one club or one from each. A histogram deliberately throws away every column except one — that is what makes it readable and what makes it blind. |
 | 4. scatter of age vs hours | **Dots hidden under other dots.** There are 38 rows but only **23** different (age, hours) combinations, so 15 students are invisible. The chart looks like it has 23 people in it. Three students have age 13 and 3.0 hours and they are all one dot. |
 
-**26.6(a) Which of your four charts hides the most?**
+**Build It, Part 5 — Which hides the most by design, and which by accident?**
 Chart 3, the histogram, hides the most **by design** — it throws away five of the six columns. Chart 4 hides the most **by accident**, and accidental hiding is the dangerous kind, because nothing on the picture warns you it is happening.
 
-**26.6(b) Is a chart that hides something a bad chart?**
+**Teacher-only, and the heart of Think Deeper T2 — is a chart that hides something a bad chart?**
 No — every chart hides something, and that is what makes charts readable. The test is not "does it hide anything?" but **"does it hide something that would change what somebody decides?"** A chart that hides irrelevant detail is called clear. A chart that hides a decision-changing detail is called misleading. **The code is identical.** The difference lives entirely in what happens next.
 
-**26.6(c) Pick one hidden thing and say what chart would reveal it.**
+**Teacher-only extension — pick one hidden thing and say what chart would reveal it.**
 Model answer: chart 2 hides the spread inside each house. A **histogram of Blue's scores alone** would reveal it, or three histograms side by side. (The chart actually designed for that job is a **box plot**, which is the fifth shape — you will meet it by name this year and draw it later.)
+
+### Warm-Up and Predict the Output
+
+**Warm-Up (last week's checklist).**
+
+| # | Answer | Watch for |
+|---|---|---|
+| W1 | **`fig`.** You save the whole sheet of paper, not one drawing on it; `ax.savefig(...)` does not exist. | "Either" or "`ax`". Ask what would happen with two drawings on one sheet. |
+| W2 | Whether there is a `fig.savefig(...)` line at all, then **look in the folder** (`ls` on macOS or Linux, `dir` on Windows). The absence of the file is the diagnosis. | Staring at the terminal. Nothing was broken; the program was obedient. |
+| W3 | Any title that states a finding, e.g. "Screen time trebled on Saturday, then dropped back." Test: could the title sit unchanged on *any* chart of that data? If yes, it is a filename. | A rewording of the filename ("Chart of screen time"). |
+| W4 | The **units** (the scale). Repaired: `"Score (points out of 100)"`. | "Nothing is missing", or adding only a capital letter. |
+| W5 | A line through 4 points and a line through 400 points can look identical, and the two deserve very different amounts of **trust**; without the dots the reader cannot tell how much to give. | A sentence about looks ("it looks nicer") with no mention of trust. |
+
+**Predict the Output.**
+
+| # | Real output and answer | Watch for |
+|---|---|---|
+| P1 | Output: `chess 14`, `music 12`, `art 12`, `Name: club, dtype: int64`, then `14`, `chess`, `3`. `counts["chess"]` looks up by name; `counts.index[0]` is the first name in the result; `len(counts)` is the number of different clubs (**3**, not 38). Slot 0 is the biggest club because **`value_counts()` sorts biggest-first automatically**; it is not alphabetical (use `.sort_index()` for that). | Predicting `38` for `len(counts)`; predicting `art` for `counts.index[0]`. |
+| P2 | Output: `counts: [5. 1. 2. 2.]`, `sum   : 10.0`, `edges : [50.   55.25 60.5  65.75 71.  ]`. **Five edges for four bins** (four fence panels, five posts). 71 goes into the **last** bin; the counts sum to 10 because matplotlib always includes the top value in the last bin. | Predicting four edges. Predicting 71 is dropped (the sum of 10 disproves it). |
+| P3 | **Not an error.** It prints `<bound method IndexOpsMixin.value_counts of 0      art ...>`, a description of the method itself, not the result. Fix: add the brackets, `clubs.value_counts()`. Brackets mean "do it". Tie to Week 17: `runs.shape` needs no brackets (a fact about the thing); `value_counts()` does (a job it performs). | Predicting a `TypeError`. |
+| P4 | Output: `rectangles drawn: 38`, `clubs in the table: 3`, `saved oops.png`. **No crash.** 38 rectangles crammed into three columns. "Describe it in one sentence?" No, and that is the point: when nothing errors, the diagnosis is your own inability to say what the chart shows. | Predicting an error, or "a bar chart of the clubs". |
+
+### Practice Set A, A2–A6
+
+(A1 is "The eight cards" above.)
+
+**A2 — bar or histogram?**
+
+| # | The clue | Answer |
+|---|---|---|
+| a | gaps between the rectangles | **Bar chart** |
+| b | rectangles touching | **Histogram** |
+| c | exactly three rectangles | **Cannot tell** (a histogram with `bins=3` is legal) |
+| d | x numbers at the **edges** | **Histogram** (a bar chart labels the middle of each bar) |
+| e | x labels are words | **Bar chart** |
+| f | swapping two would still make sense | **Bar chart** (reordering a histogram is reordering a ruler) |
+| g | rectangles get taller then shorter | **Cannot tell** (plenty of bar charts do that too) |
+
+**A2(h).** **(a)/(b), whether the bars touch.** It works with every label covered, in a photocopy, in a newspaper photo. (d) and (f) are just as logical but need the axis read or the meaning thought about. Accept (d) or (f) with a reason, but half marks if the reason is only "I remember it".
+
+**A3 — read a histogram out loud.** **38 values**, because the eight counts add up: 3+4+4+5+6+5+6+5 = 38 (the free check). **Centre:** the bulk is between about 60 and 90 (the four middle bins hold 5, 6, 5 and 6, which is 22 of the 38). **Spread:** very wide, 42 to 97, a range of 55. **Shape:** one broad, flat pile, no single peak (tallest bin is 6), no isolated bars, **no gap**; which is why mean 72.1 and median 72.5 are 0.4 apart and both trustworthy.
+
+- **A3(i).** **matplotlib chose them**: it took the lowest (42) and highest (97) values and split the 55-point gap into eight equal slices of 6.875. Nothing in the arithmetic asked for round numbers.
+- **A3(j).** 3 + 6 + 7 + 8 + 8 + 6 = **38**. Which version for somebody else? The round one, because you can say it out loud ("three in the forties, six in the fifties..."). Accept the opposite (the automatic bins use the full range with no wasted space) if the reason is argued.
+
+**A4 — spot the bug.**
+
+| # | The line | The fix |
+|---|---|---|
+| a | `counts.value` | `counts.values`, **with an s** |
+| b | `ax.bar(club_counts)` | `ax.bar(club_counts.index, club_counts.values)`: bars need where *and* how tall |
+| c | `ax.bar(df["club"], df["score"])` | Summarise first: `value_counts()` or `groupby(...).mean()` |
+| d | `ax.hist(df["club"], bins=8)` | A histogram needs **numbers**; bar-chart the text column instead |
+| e | `ax.scatter(df["hours"])` | `ax.scatter(df["hours"], df["score"])`: a dot needs two coordinates |
+| f | `ax.plot(..., marker="o")` | `ax.scatter(x, y)`: there is no order to join |
+| g | `print(df["club"].value_counts)` | Add the brackets: `value_counts()` |
+| h | `df.value_counts()` | `df["club"].value_counts()`: pick the column **first** |
+
+- **A4(i).** The five with **no error** are **c, d, f, g and h**. c gives 38 bars in three columns; d turns three words into 0, 1, 2 and bins those; f joins 38 dots into a scribble; g prints a `<bound method ...>` line; h prints 38 lines each with a count of 1. (a, b and e raise real errors.)
+- **A4(j).** **"Describe my chart to me, out loud, in one sentence."** If you cannot, that is the bug report. It works on all five silent ones and needs no tools.
+
+**A5 — label the diagram.** A = the 18 raw values, one dot each · B = one bin, one range of values · C = the bin's count becomes the bar's height · D = a bin edge, where one range stops and the next starts · E = the counts must add up to 18. **A5(f):** **E** is the check, not a part; do it **every time** you draw a histogram, before you read the shape, because if the counts do not add up the shape you are about to read is a shape of the wrong data.
+
+**A6 — read the traceback.**
+
+- **Which line first?** The **last** one. The middle lines are the route Python took through pandas' own code.
+- **A `'Series'`** is **one column** (here, the little result `value_counts()` handed back). A whole table is a `DataFrame`.
+- **Is the suggestion right?** **Yes**: `values` is what you meant.
+- **The rule:** `index` has no s; `values` has an s. No reason; write it in the Bug Log.
+- **Read the pandas file?** **No.** It only shows where inside somebody else's library the error surfaced. The only line that is about your program is the one naming your own filename.
+
+### Practice Set B
+
+**B1.** `print(df["house"].value_counts())`, which prints:
+
+```text
+Blue     14
+Red      12
+Green    12
+Name: house, dtype: int64
+```
+
+14 + 12 + 12 = 38. **Watch for:** `df.value_counts()` (the A4(h) trap) or `df["house"].value_counts` with no brackets.
+
+**B2 — bar chart of counts.** Core lines: `counts = df["club"].value_counts()`, then `print(counts)` and `print("total:", counts.sum())` **before drawing**, then `ax.bar(counts.index, counts.values)`, a title that states a finding, both axis labels with units, `fig.savefig("my_club_counts.png", ...)`.
+
+```text
+chess    14
+music    12
+art      12
+Name: club, dtype: int64
+total: 38
+saved my_club_counts.png
+```
+
+Model title: "Chess is the biggest club: 14 of 38, two ahead of the others". Credit "two ahead" as the honest version of "chess wins": the gap is small and the title says so. **Watch for:** `counts.value` (A6), a title like "Club counts", a y label of just "Count".
+
+**B3 — histogram with round edges.** Core lines: `counts, edges, bars = ax.hist(df["score"], bins=range(40, 101, 10), edgecolor="white")`, then print `counts`, `counts.sum()` and `edges`.
+
+```text
+counts: [3. 6. 7. 8. 8. 6.]
+sum   : 38.0
+edges : [ 40.  50.  60.  70.  80.  90. 100.]
+saved my_score_hist.png
+```
+
+The `101` matters (Week 7's off-by-one): `range(40, 100, 10)` stops at 90 and silently drops the nineties (see Puzzle, Part 2). Spoken shape: three in the forties, six in the fifties, seven in the sixties, eight in the seventies, eight in the eighties, six in the nineties: one broad flat pile.
+
+**B4 — scatter in three parts.** Core lines: `print("rows:", len(df))`, `ax.scatter(df["hours"], df["score"])` with **no line**, title e.g. "Students who studied more hours tended to score higher", x label "Study hours per week", y label "Score (points out of 100)".
+
+```text
+rows: 38
+saved my_scatter.png
+```
+
+Model sentences: **Direction:** up to the right. **Tightness:** a fairly tight band, not a blob. **Exception:** one dot at about 1.5 hours and 78 sits well above its neighbours. Check it: three students studied exactly 1.5 hours and scored **78, 57 and 54**, a 24-mark spread at the same x. **Verbs:** "tended to go with", never "caused" (Week 27 is about why).
+
+**B5.** The four-chart program is printed above under "Build It, Part 2 and Practice Set B, B5". Marking checks: four different filenames, each title states a finding, units on both axes, chart 2's y label says **Mean**, and the printed output matches the block above (`{'chess': 14, 'music': 12, 'art': 12}`, `{'Blue': 74.36, 'Red': 74.25, 'Green': 67.42}`, hour counts `[5. 8. 8. 8. 6. 3.]`, ages 12, 13, 14 averaging 4.30, 2.97, 1.95).
+
+### Fix the Broken Program
+
+The program is `clubroom.py`; it has three bugs (line numbers below are the file's own).
+
+**Bug 1, the syntax error.** `SyntaxError: '(' was never closed`, pointing at line 10. **Is the mistake on line 10?** **Yes, this time**, because the missing `)` is on the same line as the opening bracket (in Week 17 the bracket was closed five lines later and Python still pointed at the opening). **Did any of it run?** **No**: no `Traceback` and the `print(counts)` on line 8 produced nothing. No traceback and no earlier output means Python never started your program. **Fix:** add one closing bracket:
+
+```python
+fig, ax = plt.subplots(figsize=(6, 4))
+```
+
+**Bug 2, the runtime error.** The run ends `AttributeError: 'Series' object has no attribute 'value'. Did you mean: 'values'?` on line 11, `ax.bar(counts.index, counts.value)`. **The counts printed before the crash**, which proves they are fine (chess 14, music 12, art 12, total 38). That is what printing before drawing buys you. **Fix:**
+
+```python
+ax.bar(counts.index, counts.values)
+```
+
+**Bug 3, the silent one.** The output has edges `[0.   0.25 0.5  0.75 1.   1.25 1.5  1.75 2.  ]`. **What is 0.75 of a house?** Nothing. **Do the counts add up to 38?** Yes, 12 + 14 + 12, so **the counts are not wrong**; the chart is nonsense, which is what makes it nasty. **What is wrong** is line 19, `ax.hist(df["house"], bins=8)`: a histogram of a **text** column. matplotlib turned the house names into 0, 1 and 2 and binned those. **Is anything on the chart a score?** No; the title says "Scores run from 42 to 97" and the x label says "Score (points out of 100)" while the x axis runs 0 to 2: three labels, all lying, no error. **Fix:**
+
+```python
+spread, edges, bars = ax.hist(df["score"], bins=8, edgecolor="white")
+```
+
+Real output after the fix:
+
+```text
+chess    14
+music    12
+art      12
+Name: club, dtype: int64
+saved clubs.png
+counts: [3. 4. 4. 5. 6. 5. 6. 5.]
+edges : [42.    48.875 55.75  62.625 69.5   76.375 83.25  90.125 97.   ]
+saved spread.png
+```
+
+**The check that catches this family:** print the counts **and the edges** and read the edges; if they are not numbers your column could contain, you histogrammed the wrong column.
+
+**Bonus, what order did matplotlib use?** The order the names **first appear in the table**: row 0 Aarav Shah is Red (0), row 2 Chen Wu is Blue (1), row 4 Emeka Obi is Green (2). Hence 12, 14, 12 (Red, Blue, Green). Not alphabetical, not by size: a third reason not to do this.
+
+**Marking tips:** full marks on Bug 1 needs the "never started" reasoning, not just the bracket. The usual slip on Bug 3 is "the counts are wrong"; they are right.
+
+### Puzzle of the Week
+
+**Part 1, bin detective.**
+
+- **(a)** 3 + 4 + 5 + 3 + 3 = **18 values**.
+- **(b)** Each bin is **10 wide**; there are **5 bins** (six edges, five gaps).
+- **(c)** **Nine**: the 20-to-30 bin holds 4 and the 30-to-40 bin holds 5.
+- **(d)** **Yes**: 55 falls in the last bin, 50-to-60, which holds 3 values.
+- **(e)** **No value of 7 is in this histogram**: it is below the lowest edge, 10. Strictly a 7 could have existed and been silently dropped, but then the counts would not add up to the 18 that were counted in.
+- **(f)** You **cannot** know the smallest value, only that it is somewhere in 10 to 20. A histogram tells you how many, not which.
+- **(g)** The **middle** bin, 30-to-40, holds the most at 5. Shape: one hump, roughly symmetric (3, 4, **5**, 3, 3).
+- **(h)** **No, the mean cannot be checked from the histogram alone.** You can bracket it: all values at their bins' low edges gives 3(10) + 4(20) + 5(30) + 3(40) + 3(50) = 530, and 530 / 18 = **29.4**; all at the high edges gives 3(20) + 4(30) + 5(40) + 3(50) + 3(60) = 710, and 710 / 18 = **39.4**. So the mean must be between 29.4 and 39.4; 31 is **possible but not confirmed** (you have failed to rule it out). The values behind the histogram were `12, 15, 18, 21, 24, 25, 27, 31, 33, 34, 36, 38, 41, 44, 47, 52, 55, 58`, real mean 33.9, inside the bracket and not 31.
+
+**Part 2, wreck the histogram on purpose.**
+
+- **(i)** Six students scored 90 or more: Bela Roy (90), Farah Aziz (95), Rhea Bose (92), Tara Joshi (97), Anika Verma (93), Hana Sato (91). With edges stopping at 90, Bela's exactly-90 is **kept** (in the last bin, 80 to 90) and the other **five are dropped**.
+- **(j)/(k)** Real output:
+
+```text
+counts: [3. 6. 7. 8. 9.] sum 33.0
+```
+
+  Sum 33, not 38: five students gone and nothing said a word. You only notice by printing `counts.sum()` and comparing it with `len(df)`; the sum is the only witness.
+- **(l)** With edges stopping at 90, the value 90 lands in the *last* bin (80-to-90) instead of the 90-to-100 bin, so 8 becomes 9; the other five nineties vanish. Two lessons: the top edge behaves differently from the others, and a bin range that does not cover your data silently deletes rows.
+
+### Think Deeper
+
+**T1 (model answer).** The median is the middle value **by position**, so it is robust to **extreme values** (change one 33 to a 3 and the middle person does not move). It has no defence against a **hole in the middle**: with ten marks in the thirties and forties and ten in the eighties, the tenth and eleventh values are 44 and 81 and the median sits in the empty canyon between them. It is robust to outliers, not to shape. Of the three rules, "quote both, and if they differ that difference is the finding" would not have helped here, because 62.0 and 62.5 agreed; it catches skew and misses bimodality. The procedure that works: look at the shape before you pick a summary.
+
+**Marking note:** full marks needs "robust to outliers, not to shape" (or equivalent) **and** the honest admission that the chosen rule has a cost.
+
+**T2 (model answer).** A chart is readable because it throws things away (the score histogram discarded five of six columns). So the difference between clear and misleading is not *whether* it hides something but *what*. Example: the house-means bar chart (Blue 74.36, Red 74.25, Green 67.42) hides how many students each average came from (14, 12, 12) and that Blue beats Red by 0.11 of a mark; a prize given to Blue on that chart would turn on a hidden, meaningless gap, while the same code showing Green is well behind hides nothing that matters. The code cannot tell the difference, so the chart-maker writes the caption: one sentence on what it shows and one on what it hides.
+
+**Marking note:** the key move is naming a **specific decision** that the hidden thing would change. "Somebody might be misled" is half marks; "Blue would get the prize on a 0.11 gap" is full marks.
+
+### Build It — Parts 1 to 6
+
+**Part 1, decide before you type.**
+
+| Chart | Shape | Which columns |
+|---|---|---|
+| 1. Which club has the most members? | **BAR** | `club` (then `value_counts()`) |
+| 2. Which house has the highest average score? | **BAR** | `house` and `score` (then `groupby(...).mean()`) |
+| 3. How are the study hours spread out? | **HISTOGRAM** | `hours` only |
+| 4. Does age go with study hours? | **SCATTER** | `age` and `hours` |
+
+**Which chart needs only one column?** **Chart 3, the histogram**: just `hours`. Chart 1 needs `club` plus the counting; charts 2 and 4 need two columns each. Charts 1 and 2 are the same shape but need different arithmetic (counts versus means), which is why chart 2's y label says **Mean**.
+
+**Part 2, build them.** Check column: chart 1 counts total **38**; chart 2 row counts printed too (**14, 12, 12**); chart 3 bins total **38**; chart 4 dots one can count: **about 23**.
+
+**Chart 4: 38 rows, about 23 dots.** The difference is **overplotting**: students with the same age *and* the same hours land on the same spot, so the second is invisible. One line of Week 24 code shows it:
+
+```python
+print(len(df.groupby(["age", "hours"]).size()))
+```
+
+```text
+23
+```
+
+Only 23 different (age, hours) pairs for 38 students, so 15 are hidden under others (three students share age 13 and 3.0 hours and show as one dot). Real analysts use `alpha=0.5` or nudge the dots apart; neither is this week's syntax, the point is that the student noticed.
+
+**Part 3, chart 3 described.** **Centre:** the bulk is between about 1.4 and 4.2 hours (the three middle bins hold 8 each). **Spread:** 0.5 to 6.0 hours, fairly wide. **Shape:** one broad pile with a thin tail off the high end; no gap, no second hump. **Is the mean safe to quote?** **Yes**: one hump, no gap, median inside the bulk, and they know it because they looked at the shape first.
+
+**Part 4, chart 4 described.** **Direction:** down to the right; older students in this table reported **fewer** hours (12-year-olds average 4.30, 13-year-olds 2.97, 14-year-olds 1.95). **Tightness:** loose; because age takes only three values, the dots sit in three vertical stripes that overlap heavily (12s run 2.0 to 6.0 hours, 13s 1.0 to 5.5, 14s 0.5 to 5.0). **Exceptions:** any 14-year-old with high hours, e.g. 5.0 hours (Bela Roy), or a 12-year-old with 2.0. **"Caused" count:** the target is **0**; accept "tended to", "goes with", "reported".
+
+**Part 5, four things they hide.** See "Build It, Part 5" above for the model table, the by-design versus by-accident answer and the "which is more dangerous" reasoning (the accidental one, Chart 4, because it hides a different number of students depending on the data and nothing on the picture warns you).
+
+**Part 6, the Bug Log.** Personal; there is no single answer. Full marks: at least one real row with an honest "was there an error message?" (a good entry is the silent `value_counts` without brackets, or `counts.value`) and a *check* in the last column, not just the fix.
+
+### Draw It
+
+There is no single right drawing. A good one has **one ticked shape with a written reason**, a sketch whose **bars touch if it is a histogram and have gaps if it is a bar chart**, and a "what it hides" box naming something a reader could point at. The two tells that it is right: the counts above the bars **add up to the number of things in the dataset**, and the hidden thing is specific enough to argue about. A weak answer: a histogram with gaps, or with names along the x axis (the chart matplotlib will draw without complaining).
+
+### Self-Check
+
+The "I can" ticks are the student's own; compare them against your Mastery scale. True or false:
+
+| Statement | Answer | Why |
+|---|---|---|
+| A histogram needs two columns of data | **FALSE** | **One** column of numbers |
+| Histogram bars touch; bar-chart bars have gaps | **TRUE** | 50-to-60 touches 60-to-70; art does not touch chess |
+| You can reorder the bars of a histogram | **FALSE** | That would be reordering a ruler |
+| `ax.hist(df["club"], bins=8)` raises an error | **FALSE** | No error; words become 0, 1, 2 and are binned |
+| `counts.index` has an s on the end | **FALSE** | `index` has none; `values` has one |
+| `ax.bar(df["club"], df["score"])` gives one bar per club | **FALSE** | One bar per **row**: 38, in three columns |
+| A scatter plot should have a line joining the dots | **FALSE** | A line says you travelled from one dot to the next in order |
+| A histogram's bin counts must add up to the number of values | **TRUE** | If not, rows fell outside your bins and vanished silently |
+| If the mean and median agree, the mean is safe to quote | **FALSE** | The quiz marks were 62.0 and 62.5 and both misled; agreement is not shape |
+| A distribution with two humps usually means two groups mixed together | **TRUE** | It is called **bimodal**; go and look for the two groups |
+| "Which club is best?" can be answered with one bar chart | **FALSE** | Not until "best" is defined |
+| Every chart hides something | **TRUE** | The question is whether the hidden thing changes a decision |
 
 ### Lesson questions posed in the Say-this scripts
 

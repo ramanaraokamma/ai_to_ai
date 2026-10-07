@@ -15,7 +15,7 @@
 | **New maths** | **Variance** — the average squared distance from the mean — computed by hand on the five numbers 4, 6, 8, 10, 12. Then **"the direction of biggest spread"** found the honest way: try six candidate directions 30° apart, project all five points onto each one, and keep whichever gave the widest spread. **No eigenvectors. No linear algebra.** |
 | **New syntax** | `PCA(n_components=2)` · `pca.explained_variance_ratio_` · `pca.components_` · `pca.inverse_transform(Z)` |
 | **Dataset** | **Five 2-D points drawn on graph paper by hand**, then `load_wine()` with all thirteen columns. Both ship inside scikit-learn. **Nothing downloads. No internet needed.** |
-| **Materials** | Printed workbook pages 29.1–29.7 · **real graph paper, one sheet each, at least 10 squares by 10** · **a ruler and a protractor each** · a new wall sheet headed **SPREAD** with a blank number line · the SIX POINTS sheet still up from last week · the Bug Log |
+| **Materials** | Printed workbook (Warm-Up, Do the Maths by Hand, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Build It, Draw It, Self-Check) · **real graph paper, one sheet each, at least 10 squares by 10** · **a ruler and a protractor each** · a new wall sheet headed **SPREAD** with a blank number line · the SIX POINTS sheet still up from last week · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, matplotlib, scikit-learn. **No torch this week. No new installs.** |
 | **Prep time** | 25 minutes the night before · 10 minutes on the day (drawing the six candidate axes on the board) |
 | **Expected runtime of the code** | `new_axes.py` runs in **about 1.7 seconds** end to end, including saving one PNG. **Time yours anyway.** |
@@ -33,7 +33,7 @@ By the end of the lesson the student can:
 3. **Read `explained_variance_ratio_`** and say how many components are needed to keep 80% of the spread. For the wine data the answer is **5**.
 4. **Reconstruct data from a few components and measure what was lost, in the table's own units** — two components miss a typical wine by **2.2550** when a typical wine sits only **3.5180** from the middle.
 
-Observable evidence: page 29.2 with the four steps of variance written out and `40 ÷ 4 = 10.0`; page 29.3 with one candidate angle's five projected scores and its spread, matching the class table; the thirteen-row explained-variance table with a running total column and **5** circled at `0.8016`; and a sentence of the form *"two components keep 55.4% of the spread and miss a typical wine by 2.2550, which is 64% of a typical distance from the middle."*
+Observable evidence: the class graph-paper sheet with the four steps of variance written out and `40 ÷ 4 = 10.0`; the same sheet with one candidate angle's five projected scores and its spread, matching the class table; the workbook's Build It table of thirteen shares with a running total column and **5** circled at `0.8016`; and a sentence of the form *"two components keep 55.4% of the spread and miss a typical wine by 2.2550, which is 64% of a typical distance from the middle."*
 
 ---
 
@@ -707,7 +707,7 @@ print(np.round(pu.explained_variance_ratio_[:3], 4))
 
 **99.81% on the first component, and it is proline.** That is deliberate mistake two and it is the best thirty seconds of the live-code.
 
-- [ ] **Print workbook pages 29.1–29.7.**
+- [ ] **Print the whole workbook (`workbook/week-29.md`), every section from Warm-Up to Self-Check.** The lesson's own cloud is worked on graph paper, not in the workbook.
 - [ ] **Get real graph paper, a ruler and a protractor for every student.** **This is the one prep item that cannot be improvised on the day.** The activity is drawing six axes at 30° steps through a cloud and measuring along them, and on plain paper it does not work at all. **Borrow protractors from the maths department this week, not on Monday morning.**
 - [ ] **Put up the SPREAD sheet.** A big blank number line from 0 to 20, with room to plot six dots — one per candidate angle. It gets filled in live and the winner is obvious the moment the sixth dot goes on.
 - [ ] **Write the six candidate directions on the board before class**, because looking up six cosines mid-lesson kills the pace:
@@ -725,7 +725,7 @@ print(np.round(pu.explained_variance_ratio_[:3], 4))
 - [ ] Graph paper, ruler, protractor on every desk.
 - [ ] The six directions on the board, and the SPREAD number line blank on the wall.
 - [ ] Editor open, `new_axes.py` **empty** — they type sections 1 to 4 with you.
-- [ ] Workbook 29.1 out. **The prediction — which angle will win — filled in, in pen, before anything is measured.**
+- [ ] Scrap paper out for the pen vote. **The prediction — which angle will win — written in pen, before anything is measured.** (The workbook's Build It predictions are a separate set, done at home.)
 - [ ] Bug Log out.
 - [ ] Six slips of paper with one angle written on each, for handing out in the activity.
 
@@ -949,7 +949,7 @@ add up  :  69.67691
 
 **Ask this:** "Before we measure. Which of the six do you think will win? 0, 30, 60, 90, 120 or 150?"
 
-*Take a vote, and have them write it in pen on page 29.1. Most will say 30 or 60.*
+*Take a vote, and have them write it in pen on their scrap paper. Most will say 30 or 60.*
 
 > "Write it in pen. **And notice what 0 degrees and 90 degrees are** — 0 degrees is straight along the 'hours studied' axis, so its spread is just the variance of that column. 90 degrees is 'hours slept'. **Your two original columns are two of the six candidates.** If one of them wins, PCA had nothing to offer you. If neither does — and neither will — then there is a better axis than any column you were given."
 
@@ -1292,7 +1292,7 @@ And the sentence for this week:
 ```
 
 - **The SPREAD number line on the wall**, 0 to 20, blank.
-- **Workbook page 29.3** — a five-row projection table and the four variance steps underneath.
+- **A sheet of scrap paper per student** — a five-row projection table and the four variance steps underneath (the workbook has no page for this cloud; its M1 and M2 repeat the method at home on other numbers).
 
 ### Step 1 — centre the cloud (3 minutes)
 
@@ -1302,7 +1302,7 @@ Everybody, together, before any angles:
 
 *8 and 7.*
 
-They write the five centred points on 29.3:
+They write the five centred points on the scrap sheet:
 
 ```text
 (−4, −4)   (−2, −1)   (0, 0)   (2, 1)   (4, 4)
@@ -1399,7 +1399,7 @@ its spread: 18.2812
 ### What "finished" looks like
 
 - Six dots on the SPREAD sheet, labelled with their angles, and the 30° dot visibly furthest right.
-- Page 29.3 with five projected scores and a spread on it, and **the ruler measurement and the arithmetic agreeing to about a tenth**.
+- The scrap sheet with five projected scores and a spread on it, and **the ruler measurement and the arithmetic agreeing to about a tenth**.
 - Somebody has noticed that 0° and 90° are just the two original columns.
 - Somebody has objected that 42.62° was not one of our choices. **That is the best outcome available.**
 - A student can say, unprompted: **"it's a search."**
@@ -1418,7 +1418,7 @@ its spread: 18.2812
 2. **Compute PC2's spread and check the total.** PC2 is at right angles to PC1, so at `42.62 + 90 = 132.62°`, and its spread is **0.2188**. Then `18.2812 + 0.2188 = 18.5000 = 10.0 + 8.5`. **The total spread is conserved, and proving it yourself is much better than being told.**
 3. **Rebuild one point from PC1 alone, by hand.** The last student's score is `5.6520`. Multiply the direction by it: `5.6520 × 0.7359 = 4.1593` and `5.6520 × 0.6771 = 3.8270`. Add the means back: `(4.1593 + 8, 3.8270 + 7) = (12.1593, 10.8270)`. **The real point was (12, 11), so the miss is `√(0.1593² + 0.1730²) = 0.2352`** — and that matches `inverse_transform`'s `0.2351` to within the rounding of the hand values.
 4. **Break the cloud.** Move one point so the cloud is round instead of long — say change `(12, 11)` to `(12, 3)` — and re-run. **The two explained-variance shares come out much closer together, because there is no longer a clearly widest direction.** Then the good question: *"when is PCA useless?"* **When your data is already round.**
-5. **The curse of dimensionality, measured.** The script is in the Answer Key under page 29.7. **Find the number of columns at which the contrast ratio first falls below 1.0** — it is between 20 and 100 — and say in plain words what that means for k-means.
+5. **The curse of dimensionality, measured.** The script is in the Answer Key under Build It, Stretch. **Find the number of columns at which the contrast ratio first falls below 1.0** — it is between 20 and 100 — and say in plain words what that means for k-means.
 6. **PCA on the 8×8 digits from Term 3.** `load_digits()` has 64 columns. How many components for 80% of the spread? **Then look at `pca.components_[0]` reshaped to 8×8 as an image** — it is a recognisable blob of "where digits have ink". A genuinely beautiful two-line experiment and it needs nothing new.
 
 ---
@@ -1573,7 +1573,7 @@ None of these need syntax from a later week.
 2. **Prove the total spread is conserved** (Variation-harder 2): `18.2812 + 0.2188 = 18.5000 = 10.0 + 8.5`. **Working that out yourself is much better than being shown it, and it is what turns PCA from magic into a rotation.**
 3. **Rebuild a point by hand** (Variation-harder 3) and match `inverse_transform` to four decimals: `(12.1592, 10.8270)`, miss `0.2351`.
 4. **Make the cloud round and watch PCA become useless** (Variation-harder 4). **The good question is "when is PCA worth nothing?" and the answer is "when there is no widest direction".**
-5. **The curse of dimensionality, measured** (page 29.7). The contrast ratio crosses below 1.0 between 20 and 100 columns. **Then: what does that mean for k-means?** Every assignment becomes a coin toss between near-identical distances.
+5. **The curse of dimensionality, measured** (Build It, Stretch). The contrast ratio crosses below 1.0 between 20 and 100 columns. **Then: what does that mean for k-means?** Every assignment becomes a coin toss between near-identical distances.
 6. **PCA on the 64 pixels of `load_digits()`** (Variation-harder 6). How many components for 80%? And **`pca.components_[0].reshape(8, 8)` drawn as an image is a picture of which pixels rise together and which fall against them (positive and negative patches, not a plain "where the ink is" blob)**. Two lines, and it connects Term 4 straight back to Term 3.
 
 ### If the student won't engage today
@@ -1650,120 +1650,301 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, four parts, one page each, and they build on each other.
+> "The whole workbook is this week's homework, and it is in the order you will meet things. **Start with the Warm-Up, five minutes, all about last week** — it is there so that k-means is fresh when PCA borrows its ideas. **Then 'Do the Maths by Hand': four exercises, calculator only, no code.** Variance in four steps, projecting five students onto a direction, the explained-variance ratio, and rebuilding one student from one number. Then the Predict the Output, Practice Set A and Practice Set B, the Fix the Broken Program, the Puzzle, the two Think Deeper paragraphs, the Draw It, and the Self-Check.
 >
-> **First, page 29.4 — the explained variance table for all thirteen wine components, with a running total column.** Thirteen rows, two number columns. **Then circle the row where the running total first passes 80% and write the number of components beside it.** That is one integer and I want to see it.
+> **The part I mark hardest is Build It, and it has four pieces that build on each other.** About an hour.
 >
-> **Second, page 29.5 — the two-dimensional projection plot.** 178 wines, squashed to two components, scattered. **And the percentage goes in both axis labels.** A plot with bare 'PC1' and 'PC2' on it comes back to you, because a picture that is 55% true and does not say so is worse than no picture.
+> **First, the thirteen shares — the explained variance table for all thirteen wine components, with a running total column.** Thirteen rows, two number columns. **Then circle the row where the running total first passes 80% and write the number of components beside it.** That is one integer and I want to see it. Check it with the one-line shortcut and write down what that prints.
 >
-> **Third, page 29.6 — the top three loadings of PC1, and a name you invented for that axis.** Print the three columns that pull hardest, with their numbers. **Then give the axis a human name — three or four words — and one sentence saying why those three loadings justify it.** 'PC1' is not a name. 'Total phenolic richness' is a name. **And if you disagree with my name, say so and give me yours; that is a better answer than agreeing.**
+> **Second, the plot — the two-dimensional projection, saved as a PNG.** 178 wines, squashed to two components, scattered. **And the percentage goes in both axis labels, written out in full in the workbook as well.** A plot with bare 'PC1' and 'PC2' on it comes back to you, because a picture that is 55% true and does not say so is worse than no picture. Then one honest sentence on what you actually see.
 >
-> **Fourth, page 29.7 — the reconstruction error at two components against six, and this is the part I mark hardest.** Two numbers, and then one sentence on what the difference cost. **And the sentence has to compare the miss against something** — a typical wine sits 3.5180 from the middle of the cloud, so a miss of 2.2550 is 64% of that. **A sentence that just says 'the error was bigger with two components' scores nothing, because I already knew that.**
+> **Third, PC1's loadings and its name.** Print the three columns that pull hardest, with their numbers. **Then give the axis a human name — three or four words — and one sentence saying why those three loadings justify it.** 'PC1' is not a name. 'Total phenolic richness' is a name. **And if you disagree with my name, say so and give me yours; that is a better answer than agreeing.**
 >
-> The stretch on 29.7 is the curse of dimensionality — measure how the contrast between the furthest and nearest pair of points collapses as you add columns, and tell me at what point 'nearest neighbour' stops meaning anything."
+> **Fourth, the bill — the reconstruction error at two components against six, and this is the part I mark hardest.** Two misses and the yardstick, and then one sentence on what the difference cost. **And the sentence has to compare the miss against something** — a typical wine sits 3.5180 from the middle of the cloud, so a miss of 2.2550 is 64% of that. **A sentence that just says 'the error was bigger with two components' scores nothing, because I already knew that.**
+>
+> The stretch at the bottom of Build It is the curse of dimensionality — measure how the contrast between the furthest and nearest pair of points collapses as you add columns, and tell me at what point 'nearest neighbour' stops meaning anything. And before you run anything in Build It, fill in the four predictions in pen."
 
-**Workbook pages:** 29.1, 29.2, 29.3 in class · **29.4, 29.5, 29.6, 29.7** at home.
+**Workbook sections, in the order they appear:** Warm-Up · Do the Maths by Hand (M1–M4) · Predict the Output (P1–P4) · Practice Set A (A1–A6) · Practice Set B (B1–B5) · Fix the Broken Program · Puzzle of the Week · Think Deeper (T1, T2) · Build It · Draw It · Self-Check.
 
-**Expected time:** 10 min on the variance table · 15 min on the plot · 15 min on the loadings and the name · 20 min on the reconstruction error and its sentence · **about 60 minutes**, plus 20 more for the curse-of-dimensionality stretch.
+**In class and at home.** The workbook is **all at home**: it has no sheet for the lesson's own cloud (4, 6, 8, 10, 12 and the six-angle search), so in class the variance steps, the six projections and the pen vote on "which angle wins" go on **graph paper and scrap paper**. The workbook then repeats the same two procedures on a different cloud (M1 and M2, then B2 and B3), which is useful: a student who did the class cloud now does it again without you. The workbook's own **Build It predictions** (which of the six angles is widest on the *five students*, and so on) are a second, separate set of guesses about the workbook's cloud, so they are made at home, in pen, before anything runs.
 
-> **🧑‍🏫 What to look for when you mark it:** four things, and the fourth is the real one. **One — is there a single integer answering "how many for 80%"?** It is **5**, read off the running total at `0.8016`. A student who writes "about five or six" has not read the table. **Two — are the percentages in the axis labels?** This is a habit, and habits are built by being marked. **Three — is the component's name justified by the loadings, or is it decoration?** The bar is: *do the three numbers they printed actually support the name they chose?* "Total phenolic richness, because flavanoids 0.423, total_phenols 0.395 and od280/od315 0.376 are all phenolic measures and all pull the same way" is justified. "Wine quality" is not, because nothing in the loadings mentions quality. **Four — does the reconstruction sentence contain a comparison?** `2.2550` against `1.3258` is two numbers; `2.2550 ÷ 3.5180 = 0.6410` is a judgement. **Only the second one is an answer**, and it is the same "compared to what?" discipline as Week 27's control and Week 9's baseline. **Mark that difference explicitly and praise loudly anybody who found their own yardstick.**
+**Expected time:** Warm-Up 5 min · Build It about **60 minutes** (10 min on the shares table · 15 min on the plot · 15 min on the loadings and the name · 20 min on the bill and its sentence), plus 20 more for the curse-of-dimensionality stretch. The rest of the workbook is more than one evening: **let the student spread it across the week, and if you must choose, mark Build It, M1–M4 and Fix the Broken Program.**
+
+> **🧑‍🏫 What to look for when you mark Build It:** four things, and the fourth is the real one. **One — is there a single integer answering "how many for 80%"?** It is **5**, read off the running total at `0.8016`. A student who writes "about five or six" has not read the table. **Two — are the percentages in the axis labels?** This is a habit, and habits are built by being marked. **Three — is the component's name justified by the loadings, or is it decoration?** The bar is: *do the three numbers they printed actually support the name they chose?* "Total phenolic richness, because flavanoids 0.423, total_phenols 0.395 and od280/od315 0.376 are all phenolic measures and all pull the same way" is justified. "Wine quality" is not, because nothing in the loadings mentions quality. **Four — does the reconstruction sentence contain a comparison?** `2.2550` against `1.3258` is two numbers; `2.2550 ÷ 3.5180 = 0.6410` is a judgement. **Only the second one is an answer**, and it is the same "compared to what?" discipline as Week 27's control and Week 9's baseline. **Mark that difference explicitly and praise loudly anybody who found their own yardstick.**
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every workbook section and item, in workbook order, so you can mark from this page alone. **Values are taken from the workbook's own Answers section and were re-run for this key.** The lesson's own questions, on the lesson's own cloud, are answered after it, under **Answers to every question posed in the lesson**.
 
-### Page 29.1 — Predictions, in pen, before measuring
+### Warm-Up (5 min)
 
-*Four predictions. (a) Which of the six angles will have the widest spread? (b) Will the winning angle be exactly what PCA reports? (c) If we keep only PC1 for the five students, how far off will the rebuilt points be? (d) On the 13-column wine data, how many components do you think you need for 80% of the spread?*
+*Five questions about last week.*
 
-| | Most students predict | The truth |
+| Item | Answer | What to watch for |
 |---|---|---|
-| (a) winning angle | 30° or 60° | **30°, with a spread of 17.4192** (60° is close behind at 16.6692) |
-| (b) will it match PCA | yes | **no — PCA says 42.62° with 18.2812. Our grid was 12.62° short and cost 0.8620 of spread** |
-| (c) how far off the rebuild | "a long way", or "not at all" | **an average of 0.3414 hours, and the worst two are 0.6183** |
-| (d) components for 80% | 2, or 10 | **5** |
+| **W1** two steps of k-means | **Step 2 is ASSIGN** — every point goes to its nearest centre; **nothing moves**, only the colouring changes. **Step 3 is MOVE** — every centre goes to the middle of what it just got; **only the centres move.** | Students say "the points move". The points are the data and never move. |
+| **W2** `print(km.inertia_)` | `AttributeError: 'KMeans' object has no attribute 'inertia_'`. **The clue is the trailing underscore** — a name ending in `_` does not exist until `.fit` has run. | Students write a number. There is no `.fit` call in the line, so nothing has been computed. |
+| **W3** smallest possible inertia | **k = 178**, **inertia 0**. Worthless because every point is its own centre, so every squared distance is zero: a perfect score that has grouped nothing. | Students answer "k = 1". That gives the *largest* inertia. |
+| **W4** unscaled bands | **`proline`, spread 314.91**; the three bands **do not overlap** — *sealed*, or *non-overlapping*. | Students name `alcohol`. Only the column with the biggest numbers can do this. |
+| **W5** the sigma, six terms | `Σ (distance)² = 0.4444 + 1.1111 + 1.1111 + 0.0000 + 2.0000 + 2.0000 = 6.6667` | A term of `0` in the fourth place is correct, not a gap. |
 
-**Marking notes.** **Present or absent, not right or wrong.** (b) is designed to be got wrong and nearly everybody does. **What earns credit is a reason attached** — *"30° will win because the cloud looks like it leans about that much"* is a real hypothesis that was nearly right, and finding out it was 12 degrees off is the lesson. **A blank page means the activity was a procedure rather than a search.**
+### Do the Maths by Hand
 
-### Page 29.2 — Variance in four steps (in class)
+*Four exercises, calculator only. Make sure no code was used: the point is to feel the arithmetic before Python does it.*
 
-*Compute the variance of 4, 6, 8, 10, 12 by hand, showing all four steps. Then do it again for 2, 4, 6.*
+**M1 — variance of 2, 5, 6, 9, 13, and the cost of skipping the centring.**
+
+**(a)** `( 2 + 5 + 6 + 9 + 13 ) ÷ 5 = 35 ÷ 5 = 7.0`
+
+**(b)**
+
+| the number | minus the mean | squared |
+|---:|---:|---:|
+| 2 | −5 | 25 |
+| 5 | −2 | 4 |
+| 6 | −1 | 1 |
+| 9 | +2 | 4 |
+| 13 | +6 | 36 |
+| | **sum: 0** | **sum: 70** |
+
+The middle column adds to **0 for any list**, because the mean is *defined* as the place where distances above and below cancel. **That is the whole reason you square.**
+
+**(c)** `70 ÷ 4 = 17.5` (what sklearn does) · `70 ÷ 5 = 14.0`.
+
+**(d)** `4 + 25 + 36 + 81 + 169 = 315`, and `315 ÷ 4 = 78.75`. `78.75 ÷ 17.5 = 4.50` — **four and a half times too big.** The sentence: the uncentred number measures how far the numbers are from **zero**, not from each other; it is mostly a measurement of *where* the cloud is, not how big it is.
+
+**Marking notes.** A student who reports a variance of 0 summed the middle column instead of the last. A student with `14.0` in the "sklearn" slot divided by 5. A student who skipped (b)'s "why" has done the arithmetic without the idea; it is worth a question.
+
+**M2 — five students `(1,3)`, `(3,4)`, `(5,8)`, `(7,9)`, `(9,11)`, projected by hand.**
+
+**(a)** `middle = (25 ÷ 5, 35 ÷ 5) = (5.0, 7.0)`. Centred points: `(−4, −4)  (−2, −3)  (0, 1)  (2, 2)  (4, 4)`. Check: across `−4 − 2 + 0 + 2 + 4 = 0`, up `−4 − 3 + 1 + 2 + 4 = 0`.
+
+**(b) 30°, direction (0.8660, 0.5000):**
+
+| centred point | across × 0.8660 | up × 0.5000 | the score |
+|---|---|---|---|
+| (−4, −4) | −3.4641 | −2.0000 | **−5.4641** |
+| (−2, −3) | −1.7321 | −1.5000 | **−3.2321** |
+| (0, 1) | 0.0000 | 0.5000 | **0.5000** |
+| (2, 2) | 1.7321 | 1.0000 | **2.7321** |
+| (4, 4) | 3.4641 | 2.0000 | **5.4641** |
+
+**(c)** `29.8564 + 10.4465 + 0.2500 + 7.4644 + 29.8564 = 77.8737`, `÷ 4 = 19.4684` by hand; **Python prints `19.4683`** because the scores were typed already rounded. **Both are right.**
+
+**(d) 60°, direction (0.5000, 0.8660):** scores `−5.4641, −3.5981, 0.8660, 2.7321, 5.4641`; squares add to `80.8735`; `÷ 4 = 20.2184` by hand (**Python 20.2183**). **60° is wider than 30°.**
+
+**Marking notes.** Five positive scores means **distance from the origin** was measured, not position along the axis (the same error flagged in B3). Scores that do not sum to about 0 point to an arithmetic slip in the centring, usually in the `up` column: the second student is `(−2, −3)`, not `(−2, −1)`. (`−1` belongs to the *lesson's* cloud, which is a different cloud.)
+
+**M3 — explained variance ratio, by hand.**
+
+**(a)** `10.0000 + 11.5000 = 21.5000`. **(b)** `21.2768 + 0.2232 = 21.5000`. **(c) Yes, exactly the same.** PCA does not throw anything away when it rotates: it *re-shares* the same total. **(d)** `PC1: 21.2768 ÷ 21.5 = 0.9896` · `PC2: 0.2232 ÷ 21.5 = 0.0104`. **(e)** They add to **1.0000**, and they always must. *(On 13 columns, `PCA(n_components=2)` gives two shares that add to 0.5541, not 1.)*
+
+**The sentence:** `explained_variance_` holds actual spreads in the units of the scaled table and adds up to roughly the number of columns; `explained_variance_ratio_` holds shares of that total and adds up to 1.
+
+**Marking notes.** A "No" in (c) means an addition slip, not a misunderstanding; have them redo it. The sentence must separate *spreads* from *shares*.
+
+**M4 — rebuild one point from one number.**
+
+**(a)** `across: 5.0 + (−3.5585 × 0.6815) = 5.0 + (−2.4251) = 2.5749` · `up: 7.0 + (−3.5585 × 0.7319) = 7.0 + (−2.6045) = 4.3955`. (Python, unrounded: `2.5751` and `4.3957`.)
+
+**(b)** `across gap: 3 − 2.5751 = 0.4249, squared 0.1805` · `up gap: 4 − 4.3957 = −0.3957, squared 0.1566` · `add: 0.3371` · `square root: 0.5806`.
+
+**(c)** `0.5806 ÷ 3.7495 = 0.1548`.
+
+**(d)** Small: the rebuilt student is out by about 15% of a typical distance from the middle, and the student only knows that because they had a yardstick. **Full marks needs the comparison in the sentence.**
+
+### Predict the Output
+
+*The students predict in pen before running; the "truth" is the printed output.*
+
+**P1.**
 
 ```text
-the numbers  :   4     6     8    10    12
-the mean     :   40 ÷ 5 = 8
-
-step 1, how far off :  −4    −2     0    +2    +4      (these add to 0 — always)
-step 2, squared     :  16     4     0     4    16
-step 3, added up    :  16 + 4 + 0 + 4 + 16 = 40
-step 4, averaged    :  40 ÷ 4 = 10.0
+D     (5, 2)
+Z     (5, 1)
+back  (5, 2)
+same numbers back? False
 ```
 
-And for 2, 4, 6:
+**`back` has the right shape and the wrong numbers.** `transform` narrows `(5, 2)` to `(5, 1)`, throwing one number per point away; `inverse_transform` widens back by placing every point **on the new axis**. **A shape match is not a content match.** *Common wrong prediction: `True`, or `Z (5, 2)`.*
+
+**P2.**
 
 ```text
-mean = 12 ÷ 3 = 4
-how far off :  −2   0   +2
-squared     :   4   0    4
-added up    :   8
-÷ 2         :   4.0
+ratio sums to : 1.0
+variance sums to: 13.0734
+first two ratios add to: 0.5541
 ```
 
-**Marking notes.** **All four steps, both times.** The one to watch for is step 1 being summed instead of step 2 — **the distances always add to zero, so a student who reports a variance of 0 has skipped the squaring**, and it is worth showing them that it is zero for *any* set of numbers, not just these. A student who asks why we divide by 4 rather than 5 has read carefully; the answer is in §2 and it is a convention, not a deep fact.
+**Where the extra comes from.** `StandardScaler` divides by `178`, `PCA` averages by `177`, so each column comes out as `178 ÷ 177 = 1.00565`, and `13 × 178 ÷ 177 = 13.0734`. **Two conventions meeting; not a bug, not rounding.** *Common wrong prediction: `13.0` on line 2; the question is there to make them explain the gap.*
 
-### Page 29.3 — Your assigned angle (in class)
-
-*The five centred points, one angle each, five projections, and one spread.*
-
-Centred points: `(−4, −4)`, `(−2, −1)`, `(0, 0)`, `(2, 1)`, `(4, 4)`.
-
-| angle | direction (across, up) | the five scores | spread |
-|---|---|---|---:|
-| 0° | (1.0000, 0.0000) | −4.0000, −2.0000, 0, 2.0000, 4.0000 | **10.0000** |
-| 30° | (0.8660, 0.5000) | −5.4641, −2.2321, 0, 2.2321, 5.4641 | **17.4192** |
-| 60° | (0.5000, 0.8660) | −5.4641, −1.8660, 0, 1.8660, 5.4641 | **16.6692** |
-| 90° | (0.0000, 1.0000) | −4.0000, −1.0000, 0, 1.0000, 4.0000 | **8.5000** |
-| 120° | (−0.5000, 0.8660) | −1.4641, 0.1340, 0, −0.1340, 1.4641 | **1.0808** |
-| 150° | (−0.8660, 0.5000) | 1.4641, 1.2321, 0, −1.2321, −1.4641 | **1.8308** |
-
-The 30° arithmetic in full, since it is the winner and the one you will check:
+**P3.**
 
 ```text
-(−4, −4):  −4 × 0.8660 + −4 × 0.5000  =  −3.4641 + −2.0000  =  −5.4641
-(−2, −1):  −2 × 0.8660 + −1 × 0.5000  =  −1.7321 + −0.5000  =  −2.2321
-( 0,  0):   0 × 0.8660 +  0 × 0.5000  =   0.0000 +  0.0000  =   0.0000
-( 2,  1):   2 × 0.8660 +  1 × 0.5000  =   1.7321 +  0.5000  =   2.2321
-( 4,  4):   4 × 0.8660 +  4 × 0.5000  =   3.4641 +  2.0000  =   5.4641
-
-squared :  29.85641   4.98205   0.00000   4.98205   29.85641
-added up:  69.67691
-÷ 4     :  17.41923   →  printed as 17.4192
+UNSCALED evr[0] : 0.9981
+SCALED   evr[0] : 0.362
+UNSCALED PC1's biggest loading: proline 0.9998
 ```
 
-**Marking notes.** **Two checks.** **One — are the scores signed?** Two of the five must be negative, and a student with five positive numbers has measured distance-from-origin instead of position-along-the-axis. **Two — do the ruler and the arithmetic agree to about a tenth?** They should. If the ruler number is way off, the protractor line is wrong — most often on 120° or 150°.
+**`0.9981` looks like a triumph and is a disaster**: PC1's loading on `proline` is `0.9998`, so PC1 *is* the proline column. Variance is measured in the column's own units, and proline's units are hundreds. Same cause as last week's unscaled k-means.
 
-### Page 29.4 — The thirteen components, with a running total (homework)
+**P4.**
+
+```text
+wine  : 13 columns -> 5
+digits: 64 columns -> 21
+```
+
+`n_components=0.80` means *"keep however many components I need to reach 80% of the spread, and work out the number yourself."* *Common wrong prediction: `0.80` read as "80% of the columns" (about 10 for the wine).*
+
+### Practice Set A — Read It
+
+**A1.** variance **(iii)** · projection **(i)** · principal component **(vii)** · explained variance ratio **(vi)** · loading **(ii)** · reconstruction error **(iv)** · curse of dimensionality **(v)**
+
+**A2.** Read the **running total** column and take the first row that reaches or passes the target.
+
+| Question | Answer |
+|---|---|
+| at least 80% | **5** — 0.8016 |
+| at least 90% | **8** — 0.9202 (seven only reaches 0.8934) |
+| at least 99% | **12** — 0.9920 (eleven only reaches 0.9791) |
+| all of it | **13** — 1.0000 |
+
+**"About five or six for 80%" is not an answer** because four gives 0.7360 (under) and five gives 0.8016 (over); the table contains the one integer. *Watch for 7 for 90%, which reads the share column instead of the running total.*
+
+**A3.** `(1)` → **(c)** · `(2)` → **(b)** · `(3)` → **(a)**. The sentence: **`transform` narrows, `inverse_transform` widens, so whatever came out of one goes into the other.**
+
+**A4 — the diagram.** Answers depend on the angle chosen. **60° worked in full:** direction `(0.5000, 0.8660)`; scores `−5.4641, −3.5981, 0.8660, 2.7321, 5.4641`; squares add to `80.8735`; `÷ 4 = 20.2184`; two scores negative (the first two). Comparison panel: widest of the six is **60°, spread 20.2183**; PCA says **47.04°, spread 21.2768**; the grid was short by **12.96°**. Extra: **45° scores 21.2500**, only 0.0268 short of PCA, so a finer grid closes the gap. *(Check against the student's own angle by recomputing the five scores; any angle is acceptable if its arithmetic is right.)*
+
+**A5.**
+
+| Student | Verdict |
+|---|---|
+| Asha, "total phenolic richness" | **Pass.** Flavanoids 0.423, total_phenols 0.395 and od280/od315 0.376 are all phenolic measures pulling the same way. |
+| Ben, "wine quality" | **Fail.** Nothing in thirteen chemical measurements mentions quality. Naming an axis something the data cannot see is the over-claim this course exists to prevent. |
+
+The opposite-pulling row is **`nonflavanoid_phenols` at −0.299**. **It is not a bug**: as the other phenolic measures rise it tends to fall in these 178 wines. *Spotting and explaining it is the best available reading of the table.*
+
+**A6.** **(a)** They divided by **5**; they should have divided by **4**. The giveaway is the ratio: `0.80 = 4 ÷ 5`. **(b)** **They forgot to centre.** Every spread is enormous and barely changes from angle to angle, because almost all of the number is *where the cloud sits*.
+
+### Practice Set B — Write It
+
+Expected outputs. Each program is a short script of the student's own; mark the **output**, not the code's wording.
+
+**B1.** Prints a single integer:
+
+```text
+5
+```
+
+Accept any one-liner that gets there (e.g. `PCA(n_components=0.80).fit(X).n_components_` on scaled wine). A student who prints a running-total table instead did not follow "without building the table yourself".
+
+**B2.** Variance in four printed steps, then with no centring:
+
+```text
+the numbers   : [ 2.  5.  6.  9. 13.]   mean = 7.0
+step 1 distance: [-5. -2. -1.  2.  6.]  which add to 0.0
+step 2 squared : [25.  4.  1.  4. 36.]
+step 3 added up: 70.0
+step 4 / 4     : 17.5
+       / 5     : 14.0
+
+and with NO centring at all:
+squared        : [  4.  25.  36.  81. 169.]
+added up       : 315.0
+/ 4            : 78.75
+which is 4.50 times too big
+```
+
+**Done looks like:** distances total `0.0`, and the uncentred version is `4.50` times the centred one.
+
+**B3.** Six axes on the five students, centred first:
+
+```text
+the middle of the cloud: [5. 7.]
+centred: [[-4.0, -4.0], [-2.0, -3.0], [0.0, 1.0], [2.0, 2.0], [4.0, 4.0]]
+ angle   direction (across, up)     the five scores along it              spread
+   0   ( 1.0000,  0.0000)   [-4.000 -2.000  0.000  2.000  4.000]  10.0000
+  30   ( 0.8660,  0.5000)   [-5.464 -3.232  0.500  2.732  5.464]  19.4683
+  60   ( 0.5000,  0.8660)   [-5.464 -3.598  0.866  2.732  5.464]  20.2183
+  90   ( 0.0000,  1.0000)   [-4.000 -3.000  1.000  2.000  4.000]  11.5000
+ 120   (-0.5000,  0.8660)   [-1.464 -1.598  0.866  0.732  1.464]   2.0317
+ 150   (-0.8660,  0.5000)   [ 1.464  0.232  0.500 -0.732 -1.464]   1.2817
+widest of the six: 60 degrees with spread 20.2183
+```
+
+*Watch for all-positive scores (distance from the origin), and for an uncentred run, whose spreads are large and nearly equal.*
+
+**B4.** One component, rebuild, price:
+
+```text
+PC1 direction: [0.6815 0.7319]
+its angle    : 47.04 degrees
+one number per point: [-5.6533 -3.5585  0.7319  2.8266  5.6533]
+rebuilt:
+[[ 1.1476  2.8626]
+ [ 2.5751  4.3957]
+ [ 5.4987  7.5356]
+ [ 6.9262  9.0687]
+ [ 8.8524 11.1374]]
+miss per point: [0.2016 0.5806 0.6815 0.1008 0.2016]
+average miss  : 0.3532
+yardstick: a typical point sits 3.7495 from the middle
+so the miss is 0.0942 of a typical distance
+```
+
+**No point has a miss of `0.0000`**, which is the thing to notice: none of the five sits exactly on the new axis. The middle student `(5, 8)` is a unit above the mean `(5, 7)` and is the **worst**-rebuilt (`0.6815`). *The point nearest the middle is not automatically the best-rebuilt one.*
+
+**B5.** The whole wine report. Script and expected output:
 
 ```python
+"""b5.py - the whole wine PCA report: shares, a name, and the bill."""
 import numpy as np
 import pandas as pd
 from sklearn.datasets import load_wine
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
+np.random.seed(0)
 wine = load_wine()
 X_raw = pd.DataFrame(wine.data, columns=wine.feature_names)
 X = StandardScaler().fit_transform(X_raw)
+print("table:", X.shape)
 
 evr = PCA().fit(X).explained_variance_ratio_
+print()
 print("PC   its share   running total")
 for i, share in enumerate(evr, start=1):
     print("%2d     %.4f       %.4f" % (i, share, evr[:i].sum()))
+print("components needed for 80%:", PCA(n_components=0.80).fit(X).n_components_)
+
+p2 = PCA(n_components=2).fit(X)
+print()
+for j, tag in ((0, "PC1"), (1, "PC2")):
+    pull = pd.Series(p2.components_[j], index=wine.feature_names)
+    print("%s: the three hardest-pulling columns" % tag)
+    print(pull.reindex(pull.abs().sort_values(ascending=False).index)
+          .round(3).head(3).to_string())
+
+print()
+print("  how many PCs   running share   average rebuild miss")
+for m in (2, 6):
+    p = PCA(n_components=m).fit(X)
+    Xh = p.inverse_transform(p.transform(X))
+    miss = np.sqrt(((X - Xh) ** 2).sum(axis=1)).mean()
+    print("      %2d           %.4f            %.4f"
+          % (m, p.explained_variance_ratio_.sum(), miss))
+yard = np.sqrt((X ** 2).sum(axis=1)).mean()
+print("for scale: a typical wine sits %.4f away from the middle" % yard)
+print("2 PCs: the miss is %.4f of that   6 PCs: %.4f of that"
+      % (2.2550 / yard, 1.3258 / yard))
 ```
 
 ```text
+table: (178, 13)
+
 PC   its share   running total
  1     0.3620       0.3620
  2     0.1921       0.5541
@@ -1778,15 +1959,91 @@ PC   its share   running total
 11     0.0174       0.9791
 12     0.0130       0.9920
 13     0.0080       1.0000
+components needed for 80%: 5
+
+PC1: the three hardest-pulling columns
+flavanoids                      0.423
+total_phenols                   0.395
+od280/od315_of_diluted_wines    0.376
+PC2: the three hardest-pulling columns
+color_intensity    0.530
+alcohol            0.484
+proline            0.365
+
+  how many PCs   running share   average rebuild miss
+       2           0.5541            2.2550
+       6           0.8510            1.3258
+for scale: a typical wine sits 3.5180 away from the middle
+2 PCs: the miss is 0.6410 of that   6 PCs: 0.3769 of that
 ```
 
-**The answer to circle: 5 components, where the running total first passes 80% at 0.8016.**
+**Done looks like:** every number in the write-up can be pointed at in this output, and the last line turns two raw misses into two judgements. For PC2 the next two are `ash 0.316` and `magnesium 0.300`, fairly named **"body and depth"** (colour, alcohol and proline together).
 
-Worth noting in your feedback: **8 components carry 92%**, and **2 carry 55.4%**. And a student can check the whole table with one line — `PCA(n_components=0.80).fit(X).n_components_` prints **5**, because sklearn accepts a fraction and does the reading for you.
+### Fix the Broken Program
 
-**Marking notes.** **One integer, and it is 5.** "Five or six" is not an answer to "how many do I need for 80%" — 4 components give 0.7360, which is under 80%, so 5 is the answer and it is not ambiguous. **A student who found the `n_components=0.80` shortcut has read the documentation, which is a real skill; say so.**
+*Three bugs: a shape error, a runtime error, and one that prints a beautiful, worthless number.*
 
-### Page 29.5 — The two-dimensional projection plot (homework)
+| Bug | Line | What it is | The fix |
+|---|---|---|---|
+| **1** | **21** `back = p2.inverse_transform(X_raw)` | `(178, 13)` is **the table handed in**; `(2, 13)` is **`p2.components_`**, two directions of 13 numbers each. `inverse_transform` needs rows with 2 numbers. | `back = p2.inverse_transform(Z2)`. **`transform` narrows, `inverse_transform` widens.** |
+| **2** | **24** `PCA(n_components=14)` | Thirteen columns can give at most thirteen directions. | **Fix A:** `PCA(n_components=13)`. **Fix B, the better one:** `PCA()`. |
+| **3** | **17, 18 and 24** (fitted on `X_raw`) | `Xs` is built on line 14 and never used. | Fit on `Xs`: `p2 = PCA(n_components=2).fit(Xs)`, `Z2 = p2.transform(Xs)`, `pf = PCA().fit(Xs)`. |
+
+**Bug 3 (a), the two giveaway lines.** `every share: [0.9981 0.0017 0.0001 ...]`: one component holding 99.81% of thirteen chemical columns is a unit problem, not a discovery. And `proline 0.9998`: PC1 *is* the proline column, renamed.
+
+**Bug 3 (c), the fixed output:**
+
+```text
+table: (178, 13)
+squashed to: (178, 2)
+rebuilt to: (178, 13)
+every share: [0.362  0.1921 0.1112 0.0707 0.0656 0.0494 0.0424 0.0268 0.0222 0.0193
+ 0.0174 0.013  0.008 ]
+share kept by PC1 + PC2: 0.5541
+PC1's three hardest-pulling columns:
+flavanoids                      0.4229
+total_phenols                   0.3947
+od280/od315_of_diluted_wines    0.3762
+```
+
+So the six numbers are `0.5541` and `flavanoids 0.4229`, `total_phenols 0.3947`, `od280/od315_of_diluted_wines 0.3762`. **`0.9998` became `0.5541`: that is the bug being fixed, not the result getting worse.**
+
+**Marking notes.** Bug 1 is often "fixed" by passing `Z2.T` or re-fitting; accept only `Z2`. For Bug 3, students usually blame line 24 only; all three fits must use `Xs`. A student who spots that `Xs` is "built and never used" has read the program closely.
+
+### Puzzle of the Week — Guess the Axis
+
+| Cloud | PC1 angle | explained variance ratios |
+|---|---:|---|
+| (a) flat line | 0.00° | `[1. 0.]` |
+| (b) upright line | 90.00° | `[1. 0.]` |
+| (c) uphill diagonal | 45.00° | `[1. 0.]` |
+| (d) downhill | −45.00° | `[1. 0.]` |
+| (e) perfect square | 0.00° | **`[0.5 0.5]`** |
+| (f) shallow slope | 14.04° | `[1. 0.]` |
+
+**The puzzle is (e), the perfect square.** Both directions hold exactly half; **there is no widest direction**, since a square is equally wide whichever way it is turned. PCA **picks one anyway and is not wrong**: `[1. 0.]` is one of infinitely many correct answers, and which one appears depends on floating-point crumbs. (f) is `arctan(3 ÷ 12) = 14.04°`, which a protractor gets.
+
+**The report sentence for (e):** *PC1 came out at 0° with a ratio of 0.5000 and PC2 at 90° with 0.5000. Because the two shares are equal, the direction is not a finding; both components matter equally and neither can be dropped.* **Transferable rule: before naming a component, compare its share with the next one.** `0.3620` against `0.1921` is an ordering worth naming; `0.5000` against `0.5000` is a tie.
+
+**Marking notes.** Students predict 45° for (d); the sign matters, it is −45° (or 135°). Students predict `[0.5 0.5]` for (a)–(d) because a single line "has two directions"; the ratio of a straight line is `[1. 0.]`.
+
+### Think Deeper
+
+**T1 — one mistake or two?** *One mistake, wearing two costumes.* Both algorithms are built on squared gaps added across columns, so both are decided by whichever column has the biggest numbers, and "biggest" is a property of the units, not the data. k-means hands back groups (three non-overlapping bands of one column); PCA hands back shares (`0.9981` on PC1 and a loading of `0.9998`). **The printout:** `print(X.std().sort_values(ascending=False))` before anything is fitted. On the wine it shows proline `314.91` at the top and nonflavanoid_phenols `0.12` at the bottom, a ratio of about 2,530 (millions to one in influence once squared).
+
+**T2 — the brochure number and the invoice number.** `0.5541` is reported because it is flattering and comes out of `fit` for free; `0.6410` is what the person deciding needs, because it answers "how wrong will each wine be?" They describe the same run but are in different units (a share of *squared* spread against a per-row distance). A decider would want the **worst-hit** wines, not the average, and the comparison of 2 against 6 components. On 178 rows four extra columns cost nothing, so the only reason to keep two is to draw a picture, and "so I could draw it" is a legitimate reason as long as it is the reason written down.
+
+**Marking notes (both).** T1 passes with "same cause, different symptom" and *any* named printout of column spreads; it fails with "always scale" alone, which restates the rule without the reason. T2 needs both numbers and the reason they feel so far apart.
+
+### Build It — The Thirteen Shares, a Name, and the Bill
+
+**Step checklist.** Ten boxes: predictions in pen · the thirteen shares with running total · the 80% row circled · the 2-D plot saved · a sentence about it · PC1's top three loadings · a name and one sentence · the average rebuild miss at 2 and at 6 · the yardstick and both fractions · (optional) the curse of dimensionality. **A box ticked with nothing written beside it does not count.**
+
+**Predictions.** Present or absent, not right or wrong. **(a) 60°** on the five students, spread 20.2183 *(an answer of 30 is a reasonable, wrong hypothesis; it was the winner on the lesson's cloud)*. **(b) No. PCA says 47.04° with 21.2768**, so the 30°-step grid was 12.96° short and cost 1.0585 of spread. **(c)** An average of **0.3532**, with the worst point off by **0.6815**. **(d) 5.** **What earns credit is a reason attached.** *A blank row means the activity was a procedure rather than a search.*
+
+**The thirteen shares.** Exactly the table in B5's output above. **Components for 80%: 5**, and `PCA(n_components=0.80).fit(X).n_components_` prints **5** as the check. Also worth noting in feedback: **8 components carry 92%**, **2 carry 55.4%**.
+
+**The plot.** Filename `wine_2d.png` (any name is fine; it must be a saved PNG). Script for the plot, run after B5's `X` and `evr` exist:
 
 ```python
 import matplotlib
@@ -1810,76 +2067,46 @@ print("saved wine_2d.png")
 saved wine_2d.png
 ```
 
-**What the plot shows, and what to expect them to describe.** A single connected cloud, wider than it is tall and roughly V-shaped, with **no clean gaps in it** (a student may well notice three loose lobes, which is fair). PC1 runs from about −4.3 to +4.3 and PC2 from about −3.9 to +3.5. **There are hints of density — the cloud is a little lumpy — but nothing a person would confidently draw a line through.**
+**The two axis labels, in full:** `PC1 (36.2% of the spread)` and `PC2 (19.2% of the spread)`.
 
-**And that is exactly the honest finding, so do not treat it as a failure.** Next week the same plot gets coloured by cluster and the three groups appear cleanly, which is a much better demonstration *because* the uncoloured version has no clean gaps. **A student who writes "I can't see three separate groups in this" has looked properly, and so has one who notices three loose lobes but says they can't be sure where the edges are.**
+**What the plot shows.** A single connected cloud, wider than it is tall and roughly V-shaped, with **no clean gaps in it** (a student may notice three loose lobes, which is fair). PC1 runs from about −4.3 to +4.3 and PC2 from about −3.9 to +3.5. **That is the honest finding, not a failure**: next week the same plot coloured by cluster shows three clean groups, a better demonstration *because* this version looked like one blob. A student who writes "I can't see three separate groups in this" has looked properly; one who reports "three clear clusters" wrote what they expected rather than what they saw.
 
-**Marking notes.** **The percentages must be in the axis labels: `36.2%` and `19.2%`.** This is the entire point of the page and it is the habit that stops a PCA plot lying to its reader. **Second thing to check: does their description match what is on the screen?** A student who reports "three clear clusters" has written what they expected rather than what they saw.
+**Marking notes.** **The percentages must be in the axis labels: `36.2%` and `19.2%`.** This is the entire point of the step, the habit that stops a PCA plot lying to its reader.
 
-### Page 29.6 — PC1's loadings, and a name for the axis (homework)
+**PC1's loadings and its name.**
 
-```python
-pull1 = pd.Series(p2.components_[0], index=wine.feature_names)
-print(pull1.reindex(pull1.abs().sort_values(ascending=False).index)
-      .round(3).head(5).to_string())
-```
+| rank | column | loading |
+|---:|---|---:|
+| 1 | flavanoids | 0.423 |
+| 2 | total_phenols | 0.395 |
+| 3 | od280/od315_of_diluted_wines | 0.376 |
 
-```text
-flavanoids                      0.423
-total_phenols                   0.395
-od280/od315_of_diluted_wines    0.376
-proanthocyanins                 0.313
-nonflavanoid_phenols           -0.299
-```
+(The fuller list, from `.head(5)`, adds `proanthocyanins 0.313` and `nonflavanoid_phenols −0.299`.)
 
-**A good name and its justification:**
+> **PC1 = "total phenolic richness."** The three hardest-pulling columns are all measures of phenolic content and all pull the same way, so a wine that is high on one is high on all of them. One end of the axis is chemically rich wine and the other is thin wine.
 
-> **PC1 = "total phenolic richness."** The three hardest-pulling columns — `flavanoids` at 0.423, `total_phenols` at 0.395 and `od280/od315_of_diluted_wines` at 0.376 — are all measures of phenolic content, and all three pull the same way, so a wine that is high on one is high on all of them. One end of this axis is chemically rich wine and the other is thin wine.
+**And the detail worth a bonus mark:** `nonflavanoid_phenols` loads **−0.299** and pulls the *opposite* way: a real pattern PCA found without being told, not a bug.
 
-**And the detail worth a bonus mark:** `nonflavanoid_phenols` loads **−0.299** — it pulls the *opposite* way from the rest. In these wines the two go opposite ways, which is a real pattern rather than a bug, and PCA found it without being told.
+**Marking notes.** **Any name is acceptable if the loadings support it.** "Phenol level", "chemical richness", "how much stuff is in it" all pass. What fails is a name with **no connection to the printed numbers** — "wine quality", "price", "age". **A student who disagrees with the suggested name and argues their own case from the numbers should score higher than one who copies it**, and a student who spotted the negative loading and explained it has done the most interesting available reading.
 
-For comparison, PC2:
+**The bill.**
 
-```text
-color_intensity    0.530
-alcohol            0.484
-proline            0.365
-ash                0.316
-magnesium          0.300
-```
+| components | running share | average rebuild miss | miss ÷ yardstick |
+|---:|---:|---:|---:|
+| 2 | 0.5541 | 2.2550 | **0.6410** |
+| 6 | 0.8510 | 1.3258 | **0.3769** |
 
-Fairly named **"body and depth"** — colour, alcohol and proline together.
-
-**Marking notes.** **Any name is acceptable if the loadings support it.** "Phenol level", "chemical richness", "how much stuff is in it" all pass. What fails is a name with **no connection to the printed numbers** — "wine quality", "price", "age" — because nothing in the loadings mentions any of those, and inventing one is exactly the over-claiming this course spends thirty-six weeks preventing. **A student who disagrees with the suggested name and argues their own case from the numbers should score higher than one who copies it.** And a student who spotted the negative loading and explained it has done the most interesting available reading of this page.
-
-### Page 29.7 — Reconstruction error at 2 against 6 components (homework)
-
-```python
-print("  how many PCs   running share   average rebuild miss")
-for m in (2, 6):
-    p = PCA(n_components=m).fit(X)
-    Xh = p.inverse_transform(p.transform(X))
-    miss = np.sqrt(((X - Xh) ** 2).sum(axis=1)).mean()
-    print("      %2d           %.4f            %.4f"
-          % (m, p.explained_variance_ratio_.sum(), miss))
-print("for scale: a typical wine sits %.4f away from the middle"
-      % np.sqrt((X ** 2).sum(axis=1)).mean())
-```
-
-```text
-  how many PCs   running share   average rebuild miss
-       2           0.5541            2.2550
-       6           0.8510            1.3258
-for scale: a typical wine sits 3.5180 away from the middle
-```
+**The yardstick: 3.5180.**
 
 **The sentence being marked, and here is what full marks looks like:**
 
 > Going from 2 components to 6 raises the share of the spread kept from **0.5541 to 0.8510** and cuts the average rebuild miss from **2.2550 to 1.3258** — a 41% reduction in error for four extra columns. **And the miss only means something against a yardstick:** a typical wine sits **3.5180** from the middle of the cloud, so `2.2550 ÷ 3.5180 = 0.6410` — with two components a rebuilt wine is wrong by **64% of a typical wine's whole distance from the middle**, which is a lot. With six it is `1.3258 ÷ 3.5180 = 0.3769`, or **38%**. **So "we kept 55% of the variance" and "we are wrong by 64% of a typical distance" describe the same run, and only the first one is usually reported.**
 
-The cost of going to six components is four more columns per row, which for 178 wines is nothing — so on this dataset six is the better trade and the only reason to use two is to draw a picture.
+The cost of going to six components is four more columns per row, which for 178 wines is nothing, so on this dataset six is the better trade and the only reason to use two is to draw a picture.
 
-**The stretch — the curse of dimensionality:**
+**Marking notes.** **The two numbers are the easy half; the comparison is the step.** `2.2550` and `1.3258` earn a pass. **Full marks needs a yardstick** — 3.5180, or a per-column version, or anything defensible — and the division done. **A student who invents their own yardstick (say, a per-column version: the miss divided by √13 ≈ 3.61, about 0.63 per column, compared against the spread of a single standardised column, which is 1.0 — comparing the raw 13-column miss straight against 1.0 would mix a 13-column distance with a one-column spread) has done something better than the assignment asked, and should be told so.**
+
+**Stretch — the curse of dimensionality.**
 
 ```python
 import numpy as np
@@ -1905,15 +2132,29 @@ for d in (2, 5, 20, 100, 500):
 
 **Runtime: about 0.1 seconds.**
 
-**And the reading.** The contrast ratio — how much further apart the furthest pair is than the closest pair — collapses from **534** at two columns to **0.21** at five hundred. **It crosses below 1.0 somewhere between 20 and 100 columns**, and past that point the most distant pair of points in your entire dataset is **less than twice** as far apart as the two closest.
+**The reading.** The contrast collapses from **534** at two columns to **0.21** at five hundred. **It drops below 1.0 between 20 and 100 columns** (`1.9645` at 20, `0.7065` at 100); past that the most distant pair is **less than twice** as far apart as the closest.
 
-**What that means for k-means, in plain words:** k-means makes every single decision by asking "which centre is nearest?" When every distance is nearly the same, that question is being answered by differences smaller than the noise in the data — so a tiny change in one column, or a different random seed, flips large numbers of assignments. **That is one reason clusterings in very many columns can become unstable (the table shows the mechanism for random points; it is not a law for every dataset), and it is a concrete reason PCA and k-means are taught in the same fortnight.**
+**What that means for k-means:** it decides everything by asking "which centre is nearest?" When every distance is nearly the same, the question is answered by differences smaller than the noise, so a tiny change in one column, or a different seed, flips large numbers of assignments. **That is one reason clusterings in very many columns can become unstable (the table shows the mechanism for random points; it is not a law for every dataset), and a concrete reason PCA and k-means are taught in the same fortnight.** Two responses the student should name: **cut the columns down first** (this week), and **use a distance suited to the data**, such as cosine distance for text (Week 32).
 
-Two responses, and the student should name both: **cut the columns down first** (this week), and **use a distance suited to your data** rather than plain Euclidean — cosine distance for text, which arrives in Week 32.
+*(If a student asks about the `d = 2` row: 533 is enormous because with 150 points in a unit square, two land almost on top of each other, so `min` is nearly zero. A genuine property of low dimensions, not a glitch.)*
 
-*(A note on the `d = 2` row, in case a student asks: 533 is enormous because with 150 points crammed into a unit square, two of them land almost on top of each other, so `min` is nearly zero. That is a genuine property of low dimensions, not a glitch — and it is exactly the thing that stops happening as columns are added.)*
+**Marking notes.** On the stretch, the reading matters more than the table: "everything is the same distance from everything, so 'nearest' stops meaning anything" is the sentence you are looking for.
 
-**Marking notes.** **The two numbers are the easy half; the comparison is the page.** `2.2550` and `1.3258` earn a pass. **Full marks needs a yardstick** — 3.5180, or a per-column version, or anything defensible — and the division done. **A student who invents their own yardstick (say, a per-column version: the miss divided by √13 ≈ 3.61, about 0.63 per column, compared against the spread of a single standardised column, which is 1.0 — comparing the raw 13-column miss straight against 1.0 would mix a 13-column distance with a one-column spread) has done something better than the assignment asked, and should be told so.** On the stretch: the reading matters more than the table, and "everything is the same distance from everything, so 'nearest' stops meaning anything" is the sentence you are looking for.
+### Draw It
+
+**My angle for PC1: about 47° (47.04°). My two spreads: 21.2768 and 0.2232**, which add to 21.5000 — the same total as the original columns, `10.0 + 11.5`. **The squashed-and-rebuilt point: `(3, 4)` → `(2.5751, 4.3957)`, miss `0.5806`.** **The division: `2.2550 ÷ 3.5180 = 0.6410`.**
+
+**The marks are in:** the five students as five dots with a cross at the mean `(5, 7)` drawn; **both** axes (PC1 at about 47°, PC2 at right angles) each labelled with its spread; one point picked out with a dashed right-angle drop, the score `−3.5585` where it lands, the hollow rebuilt dot, and the gap labelled `0.5806`; thirteen bars tallest first with a running-total line and the 80% crossing ringed at **5 components**; and the division written as a real division. **A great drawing draws PC2 too**, so that `21.2768 + 0.2232 = 21.5000` is visible: the rotation lost nothing, only the decision to keep one axis did.
+
+**Marking notes.** Most students draw only PC1. The ringed crossing must say **5**, not 4 and not "five or six". A drawing without the mean has forgotten that everything this week happens after the cloud is moved there.
+
+### Self-Check
+
+There are no right answers. Three rows predict Week 30 and the capstone:
+
+- **"say why a projected score can be negative"** — a 😕 means looking at the five centred points: two sit on the negative side in both columns. A page of five positive scores measured distance, not position; it is the most common silent error of the week.
+- **"tell `explained_variance_` from `explained_variance_ratio_` without guessing"** — a 😕 means printing both once and reading the totals: one adds to roughly the column count, the other to 1.
+- **"measure reconstruction error and compare it against a yardstick"** — the row that matters most, because Week 30 is built on it and Week 36 is marked on it. `2.2550` is not a result; `2.2550 ÷ 3.5180 = 0.6410` is.
 
 ### Answers to every question posed in the lesson
 

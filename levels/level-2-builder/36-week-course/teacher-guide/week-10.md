@@ -13,7 +13,7 @@
 | **Big idea** | A parameter is a box the function fills from whoever called it, and `return` is the only way a value gets back out. |
 | **New vocabulary** | parameter · argument · default value · scope · `None` |
 | **New syntax** | `def f(a, b):` · `def f(a, b=0):` · `f(b=3)` · `None` |
-| **Materials** | Printed workbook pages 10.1–10.6 · the student's notebook, open at the Bug Log · pencil · **four index cards and a marker pen** for the Hook · a calculator |
+| **Materials** | Printed workbook (`workbook/week-10.md`; in class you use Build It Parts 1 and 3) · the student's notebook, open at the Bug Log · pencil · **four index cards and a marker pen** for the Hook · a calculator |
 | **Tech needed** | Python 3, an editor, one terminal. **No libraries at all this week** — nothing to install, nothing to import. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
@@ -354,7 +354,7 @@ gold badge has crossed into `HOLD THE DATA`, and the thread strip has two pills 
 
 ### 15 minutes the night before
 
-- [ ] **Print workbook pages 10.1–10.6.** Page 10.2 (the spec sheet) is the one that gets written on most — print it single-sided so there is room in the margin.
+- [ ] **Print the workbook (`workbook/week-10.md`).** **Build It** (Part 1, the spec sheet, and Part 2, the test table) is the section that gets written on most — print it single-sided so there is room in the margin.
 - [ ] **Write four index cards for the Hook.** One word per card, big:
       `PAID` · `COST` · `100` · `65`. Keep the two name cards separate from the two number cards.
 - [ ] **Run this code yourself first.** Make a file called `week10_functions.py` in `~/ai-academy/level2` and type exactly this:
@@ -740,8 +740,8 @@ Have them save. Then the notebook: **one line in the Bug Log — "answer is: Non
 
 Full instructions in the next section. In the lesson flow:
 
-- **Minutes 0–13:** workbook page 10.2. Build the five functions in `week10_toolkit.py`, testing each on three inputs before starting the next one. **One at a time, run after each.** A student who writes all five and then runs will get five errors at once and will not know which is which.
-- **Minutes 13–20:** workbook page 10.4. Open `week10_broken.py`, find the missing `return`, and write down *why it looked correct*.
+- **Minutes 0–13:** workbook **Build It, Part 1** (the spec sheet). Build the five functions in `week10_toolkit.py`, testing each on three inputs before starting the next one. **One at a time, run after each.** A student who writes all five and then runs will get five errors at once and will not know which is which.
+- **Minutes 13–20:** workbook **Build It, Part 3** (the bug hunt). Open `week10_broken.py`, find the missing `return`, and write down *why it looked correct*.
 
 You should be almost silent for these twenty minutes. When they get stuck, use the escalation ladder from the orientation: point at the line number in the error, then ask what the last line says, then ask what they expected. Do not type.
 
@@ -805,7 +805,7 @@ Two extra lines and the invisible becomes visible. **This is the most transferab
 
 ### Setup
 
-**On the table:** workbook page 10.2 (the spec sheet), page 10.3 (the test table), page 10.4 (the bug hunt), a pencil, a calculator, the notebook open at the Bug Log.
+**On the table:** workbook **Build It** — Part 1 (the spec sheet), Part 2 (the test table) and Part 3 (the bug hunt) — a pencil, a calculator, the notebook open at the Bug Log.
 
 **On the screen:** a new empty file called `week10_toolkit.py`, and — not yet opened — `week10_broken.py`.
 
@@ -813,7 +813,7 @@ Two extra lines and the invisible becomes visible. **This is the most transferab
 
 The rule of the activity, said once and enforced: **write one function, test it on three inputs, run it, and only then start the next one.**
 
-Here is the spec sheet exactly as it appears on workbook page 10.2. It says what each function must *do*, never how.
+Here is the spec sheet exactly as it appears in workbook Build It, Part 1. It says what each function must *do*, never how.
 
 | # | Name | Takes | Gives back | Test on these three |
 |---|---|---|---|---|
@@ -878,7 +878,7 @@ bus_fare      : 0 15 10
 
 ### Part 2 — The bug hunt (7 minutes)
 
-**Do this:** hand them `week10_broken.py` (workbook page 10.4 has it printed, and it should also be on the machine — you can type it in during prep in about ninety seconds). Say only this:
+**Do this:** hand them `week10_broken.py` (workbook Build It, Part 3 has it printed, and it should also be on the machine — you can type it in during prep in about ninety seconds). Say only this:
 
 > "Three functions. Two of them are fine. One of them prints when it should return. Run it first. Then find it. Do not read the code looking for it — that is slow and you will miss it. Run it, read the last line, and follow the trail."
 
@@ -1108,53 +1108,347 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "Two pages, about an hour, and the second one is the one I actually care about.
+> "Today you did the middle of the workbook — **Build It, Part 1**, the five functions, and the start of **Part 3**, the bug hunt. The rest is yours this week, and the order matters.
 >
-> **First, finish the spec sheet.** Pages 10.2 and 10.3. All five functions in `week10_toolkit.py`, every one of them returning, and every one tested on the three inputs on the sheet — including the awkward third one. Write the results into the table on page 10.3 **before** you run it, then run it and mark yourself. Getting a prediction wrong is more interesting than getting it right, so don't cheat by running first.
+> **Start with the Warm-Up and Predict the Output.** Write every prediction down first, then run it. Predict the Output is where you meet `None` coming back from a function that printed.
 >
-> **Second, the bug hunt.** Page 10.4. `week10_broken.py` has three functions in it and exactly one of them prints when it should return. Three things I want written down, in this order:
+> **Then Practice Set A and Practice Set B.** Set A is reading: parameter or argument, trace the output, read a traceback. Set B is writing — and every function you write must `return`. Not one of them prints inside itself.
 >
-> One: the **real error message**, copied character for character into the Bug Log. Not a summary. The actual traceback.
+> **Then finish Build It.** Part 1 is the five functions. Part 2 is the test table — fill in the *I predict* column **before** you run anything, then run it and mark yourself. Getting a prediction wrong is more interesting than getting it right, so don't cheat by running first.
+>
+> **Part 3 is the bug hunt, and it is the part I actually care about.** `week10_broken.py` has three functions and exactly one of them prints when it should return. Three things written down, in this order:
+>
+> One: the **real error message**, copied character for character. Not a summary. The actual traceback.
 >
 > Two — and this is the marks — **one sentence saying why the bug looked correct.** Not "because I made a mistake". Something like: "it printed 55, and 55 was the right answer, so nothing looked wrong until the answer had to be used."
 >
 > Three: the fix, which is one word, and the output after fixing it.
 >
-> **Then page 10.5**, which is four predictions about scope. Write your answer down first. Then run them. Three of the four will surprise somebody, and I would quite like it to be you.
+> **Part 4** is four predictions about scope. Write your answer first. Then run them. Three of the four will surprise somebody, and I would quite like it to be you. **Part 5** is the Bug Log entry — three parts, all three needed.
 >
-> Before you close the book tonight, page 10.6: this week's five words and four bits of syntax, in your own words. Not mine."
+> **Fix the Broken Program, the Puzzle of the Week and Think Deeper** are for when the rest is done. Think Deeper is a paragraph each, and the marks are for your reasoning, not which side you pick.
+>
+> Last: **Draw It** — your own function as a machine — and the **Self-Check** at the end, the faces and the true-or-false. Be honest with the faces."
 
-**Workbook pages:** 10.1 and 10.2 started in class; **10.2 finished, 10.3, 10.4, 10.5, 10.6** at home.
+**In class / at home.** *In class (see Their Turn and the activity):* Build It Part 1 (the five functions, minutes 0–13) and Part 3 (the bug hunt, minutes 13–20). *At home:* Warm-Up, Predict the Output, Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, the rest of Build It (finish Part 1, then Parts 2, 4 and 5; finish Part 3 if not done), Draw It and Self-Check.
 
-**Expected time:** 25 min for the five functions and the test table · 20 min for the bug hunt and the write-up · 10 min for the scope predictions · 5 min for vocabulary. **About 60 minutes.**
+**Expected time (estimates; the shipped workbook is larger than the old "two pages"):** Warm-Up 5 min · Predict the Output 10 · Practice Set A 20 · Practice Set B 25 · Fix the Broken Program 15 · Puzzle of the Week 15 · Think Deeper 10 · Build It at home (finish Part 1, Parts 2, 4, 5) 35 · Draw It 10 · Self-Check 5. **That is roughly two and a half hours, so spread it over the week in two or three sittings.** If you want a one-hour version, set **Predict the Output, Build It (Parts 2–5) and the Fix the Broken Program** and make the rest optional. Do not drop Build It Part 3 and Part 5: the bug hunt is the lesson.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 10.1 — Parameter or argument?
+Section order follows the workbook. Item labels (W1, P1, A1…, B1…, T1, Parts 1–5) are the workbook's own. The values are the workbook's Answers section, re-checked by running the code.
 
-For each line, name what is underlined.
+### ✅ Warm-Up
 
-| # | The line | Underlined | Answer |
+| # | Answer | What to listen for |
+|---|---|---|
+| **W1** | **Defining** (`def name():`) writes the block down and gives it a name — **nothing runs.** **Calling** (`name()`) runs the block, top to bottom, as often as you like. | Accept any wording with both halves. |
+| **W2** | **"Did I call it?"** A function defined and never called gives no output and no error — the recipe was written and nobody cooked it. | "Is there a typo?" is the wrong first question: there is no error to have a typo in. |
+| **W3** | `print_header()` **with brackets** runs it. `print_header` without brackets is just the *name* of the function — legal, does nothing, no error. | |
+| **W4** | **`None`** — Python's word for "no value at all". | "Zero", "nothing happens" or "an error" are wrong. |
+| **W5** | A function you called **printed its answer instead of returning it**, so you were handed `None`, and then tried to do maths with nothing. | This is the whole week in one sentence; if they get W5, they are ready. |
+
+### 🔎 Predict the Output
+
+Nine lines of output in all across P1–P4; the workbook asks for "how many of the nine you got right".
+
+**P1.**
+
+```text
+10
+None
+```
+
+The function did the maths and put `10` on the screen. `answer = double(5)` caught **what came back** — and nothing did, because there is no `return`. **The right answer being visible is exactly what makes this bug hard to see.** A student who predicts `10` twice is predicting that `print` and `return` are the same thing; this is the misconception of the week.
+
+**P2.**
+
+```text
+210.0
+200.0
+220.0
+```
+
+- `add_tax(200)` → default 5 used, 5% of 200 is 10 → 210.0.
+- `add_tax(200, 0)` → the 0 **replaces** the default → 200.0.
+- `add_tax(rate=10, price=200)` → both boxes named, so the order does not matter → 220.0.
+
+*Passing `0` is not the same as saying nothing.* Saying nothing means "use the 5"; passing 0 means "use 0". *Why the third line works:* a keyword argument names its box, so position stops mattering. Watch for `200` / `210` written without `.0`: `/` always gives a decimal.
+
+**P3.**
+
+```text
+-35
+35
+```
+
+`change_left(60, 95)` is "paid 60, cost 95" → −35. `change_left(95, 60)` → 35. *Which did somebody want?* Only the caller knows; **Python cannot know**, because both boxes take numbers and it has no idea what money is. `change_left(paid=95, cost=60)` makes the promise unbreakable.
+
+**P4.**
+
+```text
+100
+5
+```
+
+**Two boxes**, not one. `total = 100` inside the function made a brand-new local box; the outer `total` is still 5. (The name appears four times in the text but refers to two boxes: the outer on lines 1 and 8, the inner on lines 4 and 5.) Answer to "how many boxes": **2**.
+
+*Marking the closing questions:* "how many of the nine" is a self-score, so accept any honest number. The "which surprised you" line is marked on honesty: the usual surprises are P4 (`100` then `5`) and P2 line 2.
+
+### ✍️ Practice Set A — Read It
+
+**A1.**
+
+| # | Answer | Why |
+|---|---|---|
+| a | **Parameter** | A name in the definition. |
+| b | **Argument** | A value at the call. |
+| c | **Parameter** — the second one | Still in the definition. |
+| d | **Argument** | It goes into `paid`, because it is first. |
+| e | **Neither — it is a default value** | It is what is already sitting inside the parameter `slices`. A definition contains no arguments at all. Accept "part of the parameter" if the word *default* is in the answer. |
+| f | **A keyword argument** | An argument that names the box it is going into. |
+| g | **Argument** | It has the same name as the parameter, and that changes nothing whatsoever. |
+
+**(h)** The parameter is the name written in the definition; the argument is the value handed over at the call. Same box, two moments.
+
+**(i)** Yes, it is common, and it means nothing special. One is a label inside the function, the other is a value outside it. Renaming the parameter would not break the call.
+
+**A2.**
+
+| Part | Output | Notes |
+|---|---|---|
+| (i) | `12` then `9` | `triple(1)` runs first and hands back **3**; that 3 becomes the argument to the outer `triple`, which hands back **9**. **Inside out.** |
+| (ii) | `hi` then `None` | `shout` printed `hi` and handed nothing back, so `box` holds `None`. |
+| (iii) | `24`, `30`, `30` | Lines 2 and 3 are the same answer: `fare(3, 10)` and `fare(rate=10, km=3)` fill the same two boxes with the same values. |
+| (iv) | `9`, `9`, `5` | No `else` is needed because **`return` ends the function immediately.** `best(5, 5)`: `5 > 5` is False, so it falls to `return b`; both are 5 anyway. |
+
+**A3.** It printed **20.0**; it should have printed **15.0**. `a + b / 2` divides **only `b`** by 2, then adds `a`: 10 + 10. **Fix: brackets** — `return (a + b) / 2`. No error message. Family: **finished and lied.**
+
+**A4.**
+
+| Call | Answer |
+|---|---|
+| `f1(6)` | **C** — 12 |
+| `f1(6, 3)` | **D** — 18 |
+| `f2(6)` | **B** — 8 |
+| `f3(6)` | **A** — 4 |
+
+The call that does not use the default is **`f1(6, 3)`**.
+
+**A5.** **A** = `paid`, a **parameter** · **B** = `cost`, a **parameter** · **C** = `100`, an **argument** · **D** = `65`, an **argument**. **A and B** would still be there if nobody called the function: parameters belong to the definition; arguments only exist at a call.
+
+**A6.**
+
+- **(a)** `TypeError`.
+- **(b)** The bottom `File` line is nearer the crash; the **top one is nearer the cause**. Read from the bottom up: the bottom is *where* it broke, the ones above are *who asked for it*. *Marking tip:* the question is "nearer the cause", so "the bottom one" is the usual wrong answer.
+- **(c)** That **something worked.** The correct 55 was worked out and printed — which is why the bug is hard to spot.
+- **(d)** **No.** `rupees` was handed a `None` and did its best. The guilty function is `weekly_saving`, which used `print` where it should have used `return`. **The line that breaks is almost never the line that is wrong.**
+
+### ✍️ Practice Set B — Write It
+
+Every function must `return`. Mark *return, not print* first, then the output. Any equivalent body is fine.
+
+**B1.**
+
+```python
+def half(number):
+    return number / 2
+
+print(half(10), half(7), half(0))
+```
+
+```text
+5.0 3.5 0.0
+```
+
+`0.0` and not `0`, because `/` **always** produces a decimal.
+
+**B2.**
+
+```python
+def tip(bill, percent=10):
+    return bill * percent / 100
+
+print(tip(500), tip(500, 20), tip(500, 0))
+```
+
+```text
+50.0 100.0 0.0
+```
+
+*Why the 0-percent test?* It is the only one that proves the default is **replaced**, not added to or always applied. A function that ignores its second argument would still pass the first two tests' plausibility but give `50.0` for `tip(500, 0)`. Watch for a student who returns the total (`bill + tip`): the spec says the tip amount only.
+
+**B3.**
+
+```python
+def is_multiple(number, of):
+    return number % of == 0
+
+print(is_multiple(12, 3), is_multiple(13, 3), is_multiple(0, 3))
+```
+
+```text
+True False True
+```
+
+One line, no `if`, because a comparison is already `True` or `False`. If they wrote the `if`/`else` version it is correct and four lines doing one line's job; show them the short one once. **`(0, 3)` is `True`** and most people predict `False`: 0 ÷ 3 leaves nothing over. (Also note `of` is a legal parameter name; accept `divisor`.)
+
+**B4.**
+
+```python
+# walk_planner.py - three tools for planning a walk to school.
+
+def minutes(distance_km, speed_kmh=4):     # 4 km/h is an ordinary walking speed
+    # Give back how many minutes the walk takes.
+    return distance_km / speed_kmh * 60
+
+
+def leave_by(arrive_at, travel_minutes):   # both in minutes past midnight
+    # Give back the latest minute you can leave.
+    return arrive_at - travel_minutes
+
+
+def as_clock(minutes_past_midnight):
+    # Give back the time as text, like "8 h 30 min".
+    hours = minutes_past_midnight // 60    # whole hours
+    mins = minutes_past_midnight % 60      # minutes left over
+    return f"{hours} h {mins} min"
+
+
+walk = minutes(2)                          # 2 km at the default speed
+print("walk (min)  :", walk)
+print("fast walker :", minutes(2, 6))      # 6 km/h
+print("a stroll    :", minutes(2, 2))      # awkward: half speed
+
+school_starts = 8 * 60 + 30                # 08:30, in minutes past midnight
+leave = leave_by(school_starts, walk)
+print("school at   :", as_clock(school_starts))
+print("leave by    :", as_clock(round(leave)))
+```
+
+```text
+walk (min)  : 30.0
+fast walker : 20.0
+a stroll    : 60.0
+school at   : 8 h 30 min
+leave by    : 8 h 0 min
+```
+
+Hand-check: 2 ÷ 4 × 60 = 30 · 2 ÷ 6 × 60 = 20 · 2 ÷ 2 × 60 = 60 · 08:30 = 510 minutes · 510 − 30 = 480 = 8 h 0 min. **Why `round(leave)`?** `minutes` returns a decimal, so `leave` is `480.0` and `//` and `%` would give `8.0 h 0.0 min`; rounding to whole minutes is the caller's decision. **Most likely mistake:** `print` inside a function, or a missing `round` giving `8.0 h 0.0 min` — which is the right lesson, not a failure. The required last line is `leave by    : 8 h 0 min`.
+
+**B5.**
+
+```python
+def water_bottles(litres_needed):
+    return litres_needed / 0.75          # bottles hold 0.75 litres
+
+
+bottles = water_bottles(6)
+print(f"bottles needed : {bottles:.2f}")
+print("for two days   :", bottles * 2)
+```
+
+```text
+bottles needed : 8.00
+for two days   : 16.0
+```
+
+*What became possible?* **Keeping the answer** — it lives in `bottles`, so it can be formatted, doubled, compared, saved or passed on. A printed answer can only be looked at.
+
+### 🐞 Fix the Broken Program
+
+**Bug 1.** Family **1 — never started.** **None of it ran.** The carets sit under the comment because Python reached the end of the `def` line still waiting for a colon and marked everything from there to end-of-line as "where I wanted one": **the carets show where Python noticed, not what you typed wrong.** Fix:
+
+```python
+def weekly(monthly, weeks=4):             # bug 1 lives on this line
+```
+
+**Bug 2.**
+
+- **(a)** The bare `40.0` came from **inside `left_over`**, which printed instead of returning. It has no label because the label is in the `print` on line 23 — which never printed, because the f-string crashed trying to format the `None`.
+- **(b)** `NoneType` means **something handed back nothing, and then we tried to use it.**
+- **(c)** **No.** Line 23 is where the damage showed up; the mistake is on line 9, inside `left_over`. Fix:
+
+```python
+    return pocket - spent                 # bug 2 lives on this line
+```
+
+**Bug 3.**
+
+- **(d)** It says **15**; it should say **0** — under fives travel free.
+- **(e)** **`if age < 18` is checked first, and 4 is less than 18**, so it returns 15 and the function ends. The `elif age < 5` is unreachable for every age it was meant to catch. **The order of an `if`/`elif` chain is the logic, not just the layout.**
+- **(f)** Narrowest test first:
+
+```python
+def bus_fare(age):
+    if age < 5:
+        return 0
+    elif age < 18:
+        return 15
+    else:
+        return 30
+```
+
+Full output after all three fixes:
+
+```text
+each week : 100.0
+left over : Rs 40.00
+fare at 4 : 0
+fare at 12: 15
+fare at 40: 30
+```
+
+- **(g)** **Because nothing impossible happened.** `bus_fare(4)` returned 15, a perfectly good number of rupees; Python has no idea what the fare *should* be. Family 3 — **finished and lied.**
+- **(h)** **Bug 3 was hardest**, because it showed a *plausible* answer. Bug 1 stopped dead; bug 2 crashed and pointed at a line. Accept another choice if the reasoning mentions plausibility.
+
+### 🧩 Puzzle of the Week
+
+**Part A — The Black Box.**
+
+| Mystery | Body | Check |
+|---|---|---|
+| **A** | `return a * b - a` | 4 × 5 − 4 = 16 · 2 × 2 − 2 = 2 �� 10 × 1 − 10 = 0 |
+| **B** | `def mystery_b(n, k=3): return n * k` | 5 × 3 = 15 · 5 × 4 = 20 · 0 × 3 = 0 |
+| **C** | `return a > b` | `True` · `False` · `5 > 5` is `False` |
+
+*Wrong answer to watch for on A:* `a * b - b` fits row 2 but gives 15 and 9 on the other rows — always check every row. **B:** the default is **3**, and **`mystery_b(5)` proves it** (the caller said nothing about `k`); `mystery_b(5, 4)` tells you nothing about the default. **C:** with `>=` instead, `mystery_c(5, 5)` would be **`True`**; the third row is the only one that can tell `>` and `>=` apart — that is what a boundary test is for.
+
+**Part B — The Chain.**
+
+| # | Call | Answer | Working |
 |---|---|---|---|
-| a | `def double(number):` | `number` | **Parameter** — a name in the definition. |
-| b | `print(double(6))` | `6` | **Argument** — a value at the call. |
-| c | `def change_left(paid, cost):` | `cost` | **Parameter.** The second one. |
-| d | `change_left(100, 65)` | `100` | **Argument.** It goes into `paid`, because it is first. |
-| e | `def slice_cost(pizza_price, slices=8):` | `8` | **Neither, exactly — it is a default value.** It is what is already sitting in the parameter `slices`. Accept "part of the parameter" with the word *default* in the answer. |
-| f | `slice_cost(400, slices=16)` | `slices=16` | **A keyword argument** — an argument that names the box it is going into. |
-| g | `pizza_price = 400` then `slice_cost(pizza_price)` | `pizza_price` at the call | **Argument.** Confusingly it has the same name as the parameter, and that changes nothing at all — inside the function it is only ever called `pizza_price` because that is what the *definition* says. |
+| 1 | `add(3)` | **4** | 3 + 1, default `b=1` |
+| 2 | `times(3)` | **6** | 3 × 2, default `b=2` |
+| 3 | `add(times(3))` | **7** | inner gives 6, then 6 + 1 |
+| 4 | `times(add(3))` | **8** | inner gives 4, then 4 × 2 |
+| 5 | `add(times(add(1)))` | **5** | `add(1)` → 2, `times(2)` → 4, `add(4)` → 5 |
+| 6 | `times(3, add(3))` | **12** | `add(3)` → 4, then 3 × 4 |
 
-**10.1(h) In one sentence, what is the difference?**
-The parameter is the name written in the definition; the argument is the value handed over when the function is called. Same box, two moments.
+```text
+1: 4
+2: 6
+3: 7
+4: 8
+5: 5
+6: 12
+```
 
-**10.1(i) Can a parameter and an argument have the same name?**
-Yes, and it is common, and it means nothing special. They are still two different things: one is a label inside the function, the other is a value outside it. Renaming the parameter would not break the call.
+*Why do rows 3 and 4 differ?* The order is different: in row 3 the multiplying happens first, in row 4 the adding does. **Inside out, always** — Python cannot pass a value on until it has it. *Row 6:* `add(3)` must be worked out **first**, because its answer is the argument; a call used as an argument is just a value not yet worked out. Score is out of 6 — self-marked.
 
-### Page 10.2 — The spec sheet
+### 🤔 Think Deeper
 
-Complete working file, run, with its real output:
+Marks are for the reasoning, not the side. A good paragraph contains the points below; do not require the exact wording.
+
+**T1.** With `def bus_fare(age=30):`, a program that loses somebody's age and calls `bus_fare()` gets **₹30 back and no error.** Nothing says "there was no age", the 30 looks as trustworthy as a real fare, so it goes into the report and the total and nobody finds out. A crash would be loud, would point at the line where the age went missing, and would be *findable*. The honest answer depends on what happens next: for a bill sent to somebody a crash is far better; for a quick script over thirty journeys, stopping dead on journey seventeen is a nuisance. Agreed ground: **a default that quietly covers up a missing value is one of the main ways bad data gets into real systems.** A default should be a *sensible usual answer*, not a *repair for something that went wrong*; "the fare for nobody" is not a sensible usual answer.
+
+**T2.** If any function could read and change any variable, you would have to read **every** function to understand any one of them. There would be no such thing as "the input" — the answer would depend on whatever ran before, so functions could not be tested and two runs could differ for untraceable reasons. The promise that makes `model.fit(...)` safe in Week 29: **it can only see what you handed it through its brackets, and cannot reach out and rewrite your other variables by name** (it *can* change the object you hand it — only that object). Scope is **the wall that makes other people's code usable.**
+
+### 🛠️ Build It
+
+**Part 1 — the spec sheet.** Complete working file, run, with its real output. Check the tick-boxes: slice_cost has the default **in the definition**, `is_even` body is **one line**, **no function contains `print`**, all five test lines are at the bottom.
 
 ```python
 # week10_toolkit.py — five tiny functions, built from the spec sheet.
@@ -1205,33 +1499,37 @@ bus_fare      : 0 15 10
 
 **Notes on each function, for marking:**
 
-- **`double`** — full marks needs `return`, not `print`. `-3` doubling to `-6` needs no special code, and it is worth pointing that out.
-- **`change_left`** — `change_left(50, 65)` giving `-15` is **correct**, not a bug. A student who adds an `if` to stop it going negative has made a design decision, not a fix; ask them who decided that ₹-15 should be reported as ₹0, and whether that is honest. Both answers are defensible; the *deciding* is the point.
-- **`slice_cost`** — the default must be written `slices=8` in the definition, not handled with an `if` inside the body. If they wrote the `if` version, it works, and the default is shorter and says what it means. Also: the answers come out `50.0` and not `50`, because `/` always gives a decimal in Python. That is not an error.
-- **`is_even`** — the shortest correct body is `return number % 2 == 0`, because a comparison *is already* `True` or `False`. If they wrote `if number % 2 == 0: return True else: return False`, it is correct and it is four lines doing one line's job — worth showing them the shorter version once. And `is_even(0)` being `True` is right: zero divides by two exactly.
-- **`bus_fare`** — the four bands must be checked in order, and because every branch `return`s, the chain stops at the first match. `bus_fare(60)` gives **10**, not 30: `60 < 60` is `False`, so it falls through to the `else`. That is the whole reason 60 is the awkward test.
+- **`double`** — full marks needs `return`, not `print`. `-3` doubling to `-6` needs no special code; point that out.
+- **`change_left`** — `change_left(50, 65)` giving `-15` is **correct**, not a bug. A student who adds an `if` to stop it going negative has made a design decision, not a fix; ask who decided ₹-15 should be reported as ₹0, and whether that is honest. Both answers are defensible; the *deciding* is the point.
+- **`slice_cost`** — the default must be written `slices=8` in the definition, not handled with an `if` inside the body. If they wrote the `if` version, it works, but the default is shorter and says what it means. The answers are `50.0`, not `50`, because `/` always gives a decimal.
+- **`is_even`** — shortest correct body is `return number % 2 == 0`. The `if`/`else` version is correct but four lines doing one line's job; show the short one once. `is_even(0)` being `True` is right.
+- **`bus_fare`** — four bands checked in order; every branch `return`s so the chain stops at the first match. `bus_fare(60)` gives **10**, not 30: `60 < 60` is `False`, so it falls to the `else`. That is why 60 is the awkward test.
 
-### Page 10.3 — The test table
+**Part 2 — the test table.** Predict first, then run. The "Real" column is the output above; the prediction column is the student's own and is marked on honesty.
 
-Predict first, then run. Correct values:
+| Function | Test 1 | Test 2 | Test 3 (awkward) |
+|---|---|---|---|
+| `double` | `6` → **12** | `0` → **0** | `-3` → **-6** |
+| `change_left` | `(100, 65)` → **35** | `(100, 100)` → **0** | `(50, 65)` → **-15** |
+| `slice_cost` | `(400)` → **50.0** | `(400, 4)` → **100.0** | `(400, 1)` → **400.0** |
+| `is_even` | `10` → **True** | `7` → **False** | `0` → **True** |
+| `bus_fare` | `4` → **0** | `12` → **15** | `60` → **10** |
 
-| Function | Test 1 | Test 2 | Test 3 (awkward) | Why test 3 is awkward |
-|---|---|---|---|---|
-| `double` | `double(6)` → **12** | `double(0)` → **0** | `double(-3)` → **-6** | Negatives are the case people forget to try. |
-| `change_left` | `(100, 65)` → **35** | `(100, 100)` → **0** | `(50, 65)` → **-15** | Exactly zero is a boundary; a negative is a real answer, not an error. |
-| `slice_cost` | `(400)` → **50.0** | `(400, 4)` → **100.0** | `(400, 1)` → **400.0** | One slice means the whole pizza — and it proves the division is real division. |
-| `is_even` | `is_even(10)` → **True** | `is_even(7)` → **False** | `is_even(0)` → **True** | Nearly everyone predicts `False` for zero. |
-| `bus_fare` | `bus_fare(4)` → **0** | `bus_fare(12)` → **15** | `bus_fare(60)` → **10** | 60 sits exactly on a boundary; `60 < 60` is False. |
+- **(a)** The two that catch almost everybody are **`is_even(0)` → `True`** and **`bus_fare(60)` → `10`**. Mark the honesty, not the accuracy: a wrong prediction that was then explained is worth more than a blank filled in after running.
+- **(b) No, `50.0` is not a bug.** `/` always produces a decimal, even when exact. For `50.00` the caller uses an f-string: `f"{slice_cost(400):.2f}"`. The function hands back the true number; whoever prints it decides how it looks.
+- **(c)** Why test 3 is awkward:
 
-**10.3(a) Which prediction did you get wrong, and why?**
-The two that catch almost everybody are `is_even(0)` → `True` and `bus_fare(60)` → `10`. Mark the honesty, not the accuracy: a student who wrote a wrong prediction and then explained the gap has learned more than one who wrote nothing until after running it.
+| Function | Why test 3 is awkward |
+|---|---|
+| `double` | Negatives are the case people forget to try — and they need no special code. |
+| `change_left` | Exactly zero is a boundary; a negative answer is a **real** answer, not an error (you spent more than you had). |
+| `slice_cost` | One slice means the whole pizza, which proves the division is real division. |
+| `is_even` | Nearly everybody predicts `False` for zero. Zero divides by two exactly. |
+| `bus_fare` | 60 sits **exactly** on a boundary; `60 < 60` is False, so it falls to the `else`. |
 
-**10.3(b) `slice_cost(400)` gave `50.0`, not `50`. Is that a bug?**
-No. Dividing with `/` in Python always produces a decimal number, even when the answer is exact. If you want a reader to see `50.00`, that is the caller's job with an f-string: `f"{slice_cost(400):.2f}"`. The function should hand back the true number and let whoever is printing decide how it looks.
+**Part 3 — the bug hunt.**
 
-### Page 10.4 — The bug hunt
-
-**(a) Paste the real error message.**
+**(a) The real message** (the path will be the student's own; the path is never the interesting part):
 
 ```text
 55
@@ -1243,25 +1541,17 @@ Traceback (most recent call last):
 TypeError: unsupported format string passed to NoneType.__format__
 ```
 
-**(b) Which function is guilty, and how do you know?**
-
-`weekly_saving`. The reasoning, and full marks needs the chain, not just the name:
+**(b) Which function is guilty, and how do you know?** `weekly_saving`. Full marks needs the chain, not just the name (naming it alone is half marks):
 
 1. The last line says **`NoneType`** — so something handed back nothing.
-2. The bottom `File` line points at line 17, inside `rupees` — but that is only where the damage *showed up*. `rupees` was handed a `None` and did the best it could.
-3. The `File` line above it points at line 22 — that is who called `rupees`, and what it passed in was `left_each_week`.
+2. The bottom `File` line points at line 17, inside `rupees` — but that is only where the damage *showed up*. `rupees` was handed a `None` and did its best.
+3. The `File` line above it points at line 22 — who called `rupees`, passing `left_each_week`.
 4. `left_each_week` was set on line 21, from `weekly_saving(200, 145)`.
 5. `weekly_saving` ends with `print`, not `return`. **Guilty.**
 
-**(c) Why did the bug look correct? (one sentence)**
+**(c) Why it looked correct (one sentence).** Model answer: *"It printed 55, and 55 was the right answer, so the function looked like it worked — the mistake only showed up when the answer had to be used somewhere instead of just read."* Accept any sentence containing both halves: **the right answer appeared**, and **nothing came back**. Do not accept "because I typed the wrong word" — that says what happened, not why it was invisible.
 
-Model answer: *"It printed 55, and 55 was the right answer, so the function looked like it worked — the mistake only showed up when the answer had to be used somewhere instead of just read."*
-
-Accept any sentence containing both halves: **the right answer appeared**, and **nothing came back**. Do not accept "because I typed the wrong word" — that says what happened, not why it was invisible.
-
-**(d) The fix, and the output afterwards.**
-
-One word on line 7: `print` becomes `return`.
+**(d) The fix** — one word on line 7, `print` becomes `return`:
 
 ```python
 def weekly_saving(pocket_money, spent):
@@ -1274,11 +1564,21 @@ left each week: Rs 55.00
 saved in a year: Rs 2860.00
 ```
 
-Hand-check: 200 − 145 = 55 ✔ · 55 × 52 = 2,860 ✔ · `Rs 2860.00` because `:.2f` always shows two decimal places.
+Hand-check: 200 − 145 = **55** · 55 × 52 = **2,860**; `Rs 2860.00` because `:.2f` always shows two decimals.
 
-**(e) How could you have found it in two lines instead of by reading the whole file?**
+**(e) Two lines instead of reading the whole file:**
 
-Catch what came back and print it. A complete file that does nothing but diagnose:
+```python
+came_back = weekly_saving(200, 145)
+print("what came back was:", came_back, type(came_back))
+```
+
+```text
+55
+what came back was: None <class 'NoneType'>
+```
+
+A longer version some students write, a whole file that only diagnoses:
 
 ```python
 # diagnose.py -- what did that function actually hand back?
@@ -1297,27 +1597,11 @@ what came back was: None
 its type is: <class 'NoneType'>
 ```
 
-**(f) `yearly_saving` has a default of `52`. Was that used?**
+**(f) Yes, the default was used.** `yearly_saving(left_each_week)` supplies only **one** argument, so `weeks` fell back on its default of 52. `yearly_saving(55, 12)` would give 660 — a year of *monthly* saving instead of weekly.
 
-Yes. `yearly_saving(left_each_week)` supplies only one argument, so `weeks` used its default of 52. Calling `yearly_saving(55, 12)` would give 660 — a year of monthly saving instead of weekly.
-
-### Page 10.5 — Scope predictions
-
-Write your answer first, then run each one.
+**Part 4 — scope predictions.** Write first, then run.
 
 **(a)**
-
-```python
-def bus_fare(age):
-    fare = 15
-    return fare
-
-print(bus_fare(12))
-print(fare)
-```
-
-**Prediction:** most people expect `15` then `15`.
-**What actually happens:**
 
 ```text
 15
@@ -1327,71 +1611,42 @@ Traceback (most recent call last):
 NameError: name 'fare' is not defined
 ```
 
-**Why:** `fare` was created inside `bus_fare`, so it only existed while the call was running. The *value* 15 escaped through the `return`. The *name* never left the room.
+`fare` was created inside `bus_fare`, so it only existed while the call ran. **The value 15 escaped through the `return`. The name never left the room.** Most people predict `15` then `15`.
 
 **(b)**
-
-```python
-pocket_money = 200
-
-def spend_it_all():
-    pocket_money = 0
-    print("inside the function :", pocket_money)
-
-spend_it_all()
-print("after the function   :", pocket_money)
-```
 
 ```text
 inside the function : 0
 after the function   : 200
 ```
 
-**Why:** two different boxes that happen to share a word. Assigning to `pocket_money` inside the function made a brand-new local box; the outer one was never touched. Same word, different rooms.
+Two different boxes that share a word. Assigning inside the function made a brand-new local box; the outer one was never touched. **Same word, different rooms.**
 
 **(c)**
-
-```python
-PASS_MARK = 35
-
-def has_passed(mark):
-    return mark >= PASS_MARK
-
-print(has_passed(40))
-print(has_passed(30))
-```
 
 ```text
 True
 False
 ```
 
-**Why:** *reading* an outside variable from inside a function is allowed. This is the one that goes the way people expect. (Whether it is a good idea is another matter — a function that reads things from outside itself is harder to test, which is exactly the argument in "Questions Students Ask".)
+*Reading* an outside variable from inside a function **is** allowed; this is the one that goes the way people expect. (Whether it is a good idea is another matter — see T2 and "Questions Students Ask".)
 
 **(d)**
 
-```python
-score_total = 0
-
-def add_one():
-    score_total = score_total + 1
-    return score_total
-
-print(add_one())
-```
-
 ```text
 Traceback (most recent call last):
-  File "/Users/you/ai-academy/level2/hw10_scope.py", line 7, in <module>
+  File "/Users/you/ai-academy/level2/err_unbound.py", line 7, in <module>
     print(add_one())
-  File "/Users/you/ai-academy/level2/hw10_scope.py", line 4, in add_one
+  File "/Users/you/ai-academy/level2/err_unbound.py", line 4, in add_one
     score_total = score_total + 1
 UnboundLocalError: local variable 'score_total' referenced before assignment
 ```
 
-**Why, and this is the subtle one:** because there is an *assignment* to `score_total` somewhere in the function, Python decides the name is local for the whole function — before it runs a single line. Then the very first thing that line does is *read* it, and the local box is still empty. Hence "referenced before assignment".
+*The subtle one:* because there is an **assignment** to `score_total` somewhere in the function, Python decides the name is local for the *whole* function — before it runs a line. Then the first thing that line does is **read** it, and the local box is still empty. *(On Python 3.12 and later the message reads "cannot access local variable 'score_total' where it is not associated with a value". Same error, same reason, same fix.)*
 
-**The fix, and it is not `global`:** take the value in and hand the new one back.
+**(e)** Mark the honesty. The two that surprise most people are **(a)**, because the value clearly existed, and **(d)**, because the outer variable is right there on the screen. A good answer names the belief: "I thought a variable was a variable and anything could see it."
+
+**(f) The fix, and it is not `global`** — take the value in and hand the new one back:
 
 ```python
 score_total = 0
@@ -1408,14 +1663,51 @@ print(score_total)
 2
 ```
 
-*(On Python 3.12 and later the message reads "cannot access local variable 'score_total' where it is not associated with a value". Same error, same reason, same fix.)*
+**Part 5 — the Bug Log entry.** All three parts are needed.
 
-**10.5(e) Which of the four surprised you, and what did you believe before?**
-Mark the honesty. The two that surprise most people are (a) — because the value clearly existed — and (d), because the outer variable is right there on the screen. A good answer names the belief: "I thought a variable was a variable and anything could see it."
+| | |
+|---|---|
+| **The real message** | `TypeError: unsupported format string passed to NoneType.__format__` — and `55` was on the screen just above it. |
+| **Why it looked correct** | It printed 55, which was the right answer, so nothing looked wrong until the answer had to be *used* instead of just read. |
+| **The fix** | `weekly_saving` used `print` where it should have used `return`. One word: `return pocket_money - spent`. |
 
-### Page 10.6 — Vocabulary and syntax, in your own words
+*Marking tip:* the "why it looked correct" box is where the marks are. A box that only restates the fix scores no more than half.
 
-Accept any wording that is *correct and theirs*. These are the reference versions:
+### 🎨 Draw It
+
+There is no single right drawing. A strong one has all four of these:
+
+1. **The parameter drawn as a *label* on an *empty* box**, not as a number.
+2. **The argument as a separate card falling in**, with at least two different arguments shown for the same parameter.
+3. **A wall round the workings**, with a local name inside and a note that it does not exist outside.
+4. **One value coming out of the bottom, into a hand** — ideally with the red version beside it, where the answer goes on the glass and the hand holds `None`.
+
+**Commonest weak drawing:** the value written on the hopper instead of the parameter name. A number where the label should be means the two ideas of the week have merged back together.
+
+### 📊 Self-Check
+
+The "I can…" faces are self-assessed; no answer. Where a student marks 😕 on the last two rows, return to the Part 3 traceback and the Part 4 predictions with them. **True or false:**
+
+| Statement | Answer |
+|---|---|
+| A parameter is a name; an argument is a value | **TRUE** |
+| The argument must have the same name as the parameter | **FALSE** — the parameter name is private to the function |
+| Python checks that you got the order of the arguments right | **FALSE** — it only checks *how many* arrived |
+| `change_left(50, 65)` giving −15 is a bug | **FALSE** — it is correct; you spent more than you had |
+| A function with no `return` hands back `None` | **TRUE** |
+| `None` is the same as 0 | **FALSE** — `0 * 2` is 0; `None * 2` crashes |
+| You can always print a value that was returned | **TRUE** |
+| You can get back a value that was only printed | **FALSE** — it is gone |
+| `8` in `def f(a, b=8):` is an argument | **FALSE** — it is a **default value**; definitions contain no arguments |
+| A parameter with a default may come before one without | **FALSE** — `SyntaxError`, and the file never starts |
+| Passing `0` is the same as passing nothing | **FALSE** — 0 replaces the default; nothing uses it |
+| `f(b=3)` names the box, so the order cannot be got wrong | **TRUE** |
+| A variable made inside a function can be printed outside it | **FALSE** — `NameError`; values get out, names do not |
+| Setting `x = 0` inside a function changes an outer `x` | **FALSE** — it makes a brand-new local box |
+| *Reading* an outer variable from inside a function is allowed | **TRUE** |
+| The line a traceback points at is always the line that is wrong | **FALSE** — it is where the damage showed up; read the `File` lines upwards |
+
+**Wrong answers to watch for when a student explains this week's words** (for the "one thing I'd like explained again" line and for the end-of-lesson vocabulary check):
 
 | Term | A good answer contains | A wrong answer to watch for |
 |---|---|---|
@@ -1424,13 +1716,6 @@ Accept any wording that is *correct and theirs*. These are the reference version
 | **default value** | What the parameter holds when the caller says nothing. | "The answer if it goes wrong." |
 | **scope** | The part of the program where a name exists. | "How big the function is." |
 | **`None`** | Python's word for no value; what you get back when there was no `return`. | "Zero", or "an error". |
-
-| Syntax | What it does |
-|---|---|
-| `def f(a, b):` | Makes a function with two empty boxes, filled in that order by the caller. |
-| `def f(a, b=0):` | The same, but `b` already has 0 in it, so the caller may leave it out. |
-| `f(b=3)` | Fills the box called `b` by name, so the order cannot be got wrong. |
-| `None` | No value at all. What comes back from a function that never returned. |
 
 ### Answers to the questions posed in the lesson scripts
 

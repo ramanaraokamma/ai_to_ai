@@ -13,7 +13,7 @@
 | **Big idea** | `input()` always hands you text, so you must convert it yourself — and Python tells you exactly where you forgot. |
 | **New vocabulary** | input · conversion · traceback · derived value · hard-coding |
 | **New syntax** | `input("prompt")` · `int(input("Age? "))` · `str(x)` · `round(x, 2)` |
-| **Materials** | Printed workbook pages 4.1–4.6 · pencil · the student's notebook, open at the **Bug Log** page · a printed copy of `about_me.py` Stage 3 (the paper fallback) |
+| **Materials** | Printed workbook (all of it, one file) · pencil · the student's notebook, open at the **Bug Log** page · a printed copy of `about_me.py` Stage 3 (the paper fallback) |
 | **Tech needed** | One laptop, Python 3, a terminal open in `~/ai-academy/level2` with `(.venv)` showing, and an editor. **Nothing installed today** — standard library only. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
@@ -375,7 +375,7 @@ plain white and the one below it turns gold.*
 
 ### 20 minutes the night before
 
-- [ ] **Print workbook pages 4.1–4.6.** Also print **page 4.5 twice** — that is the Bug Log page and it fills up fast.
+- [ ] **Print the workbook.** Also print the **Build It** section twice (its Part 2 is the Bug Log and it fills up fast). Keep the Answers section at the end back from the student; the Answer Key below follows the workbook's sections.
 - [ ] **Type and run this yourself, from scratch, in a scratch file.** Do not copy-paste. Make the file `~/ai-academy/level2/teacher_scratch.py`, type this, and run `python3 teacher_scratch.py`:
 
   ```python
@@ -416,7 +416,7 @@ plain white and the one below it turns gold.*
 - [ ] Terminal open, in `~/ai-academy/level2`, with `(.venv)` visible in the prompt.
 - [ ] Editor open on the `level2` folder. Last week's file still runs — open it, run it, ten seconds.
 - [ ] Notebook out, **open at the Bug Log page**. Today produces three entries.
-- [ ] Workbook pages 4.1–4.6 on the table.
+- [ ] Workbook on the table, open at Warm-Up.
 - [ ] **Laptop closed** for the first seven minutes. The Hook is screens-off.
 - [ ] Your hands somewhere that is not the keyboard.
 
@@ -826,7 +826,7 @@ Full instructions in the next section. In the lesson flow:
 
 ### Setup
 
-**On the table:** the laptop with `about_me.py` open · workbook pages 4.4 and 4.5 · the notebook open at the Bug Log · a pencil.
+**On the table:** the laptop with `about_me.py` open · workbook **Build It** (Part 1 and Part 2, the Bug Log) · the notebook open at the Bug Log · a pencil.
 
 **On the screen:** `about_me.py` as it stood at the end of Stage 4 — three `input()` lines and three hard-coded values.
 
@@ -920,7 +920,7 @@ Bug Log entry #3.
 >
 > **Two: change one of the derived numbers to one of yours.** Something you'd actually want to know. Work out on paper what the answer should be *before* you run it."
 
-Options to offer if they are stuck (page 4.4 lists these too):
+Options to offer if they are stuck (the Build It section, Part 1, lists these too):
 
 | Derived value | How |
 |---|---|
@@ -1175,181 +1175,290 @@ TypeError: can only concatenate str (not "int") to str
 
 **Say this:**
 
-> "About an hour, and it is mostly finishing what you started. Three pages.
+> "About an hour and a quarter, and it is mostly finishing what you started. The workbook has named sections, so I'll go through them in order.
 >
-> **Page 4.1, the warm-up.** Eight little things — you write down what type each one is *before* you run anything. Then run them and see how you did. Getting some wrong is the point; getting them all right means the page was too easy.
+> **Warm-Up and Predict the Output.** The Warm-Up is five quick questions about last week. Then four little snippets: you write down what Python will print *before* you run anything, then run them and see how you did. Getting some wrong is the point; getting them all right means it was too easy.
 >
-> **Pages 4.2 and 4.3, the practice.** Page 4.3 has four broken lines on it. Do not just fix them — for each one, **write the error you'd expect first**, then fix it, then run it and see whether you were right. Predicting the error is a real skill and it's most of what page 4.3 is for.
+> **Practice Set A and Practice Set B.** Set A is reading: tracing values, spotting a bug, matching code to output, and reading a traceback. Set B is writing, and it grows from a one-line answer to a fifteen-line book-reading bot. Every number that comes from `input()` and gets used in arithmetic needs a conversion round it, and work out your derived values on paper first.
 >
-> **Page 4.4, the bot.** Finish it properly. Six questions. At least one has to take a decimal. At least two numbers on the card that nobody typed. A comment on every single line saying *why* that line is there, not what it does. And check every derived number against paper before you believe it.
+> **Fix the Broken Program.** `screen_report.py` has three bugs: one that stops Python reading the file at all, one that stops it partway through, and one that gives no error whatsoever. Do them in order, and for each one **say what you expect before you fix it.** Predicting the error is a real skill and it's most of what this section is for.
 >
-> **Page 4.5, the Bug Log — and this is the page I'll be reading first.** Three tracebacks that you actually caused. Not three you copied off this sheet. Real ones, from your own program, pasted in exactly as they appeared — and next to each one, in your own words, what Python was trying to tell you and what one thing you changed.
+> **Puzzle of the Week and Think Deeper.** Six outputs and a detective job, then two paragraphs. Take a side and be honest about what your side costs.
 >
-> And here's the part I really want. **One of your three has to be a bug with no error message at all.** Something that ran, printed, and was wrong. Go and cause one on purpose if you have to."
+> **Build It — and the Bug Log is the part I'll be reading first.** Finish the bot properly. Six questions. At least one has to take a decimal. At least two numbers on the card that nobody typed. A comment on every single line saying *why* that line is there, not what it does. And check every derived number against paper before you believe it. Then three tracebacks that you actually caused. Not three you copied off a sheet. Real ones, from your own program, pasted in exactly as they appeared, and next to each one, in your own words, what Python was trying to tell you and what one thing you changed.
+>
+> And here's the part I really want. **One of your three has to be a bug with no error message at all.** Something that ran, printed, and was wrong. Go and cause one on purpose if you have to.
+>
+> Last two, both quick: **Draw It**, where you draw your own bot with only things nobody typed on the right, and **Self-Check** at the end."
 
-**Workbook pages:** 4.1, 4.2 and 4.3 in class if there is time; **4.4, 4.5 and 4.6** at home.
+**Workbook sections:** Warm-Up, Predict the Output and Practice Set A in class if there is time; Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, **Build It (Parts 1 and 2)**, Draw It and Self-Check at home. (Build It is also the in-class Activity, so the student arrives at home with a start on it.)
 
-**Expected time:** 10 min warm-up · 15 min practice · 25 min finishing the bot · 10 min Bug Log. About 60 minutes.
+**Expected time:** 10 min Warm-Up and Predict · 15 min Practice Set A · 15 min Practice Set B · 10 min Fix the Broken Program · 5 min Puzzle and Think Deeper · 20 min finishing the bot and the Bug Log. Draw It and Self-Check are extra. About 75 minutes.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 4.1 — Warm-Up: what type is it?
+Every answer below is in the order of the workbook, under the workbook's own section names and item labels (W1, P1, A1, B1, T1 and so on). The values are the ones in the workbook's own Answers section. The teacher-only notes (what students get wrong, how to mark) are added on top.
 
-The student writes a prediction, then runs `print(x, type(x))`.
+### Warm-Up — five questions about last week
 
-| # | Expression | Type | What prints |
-|---|---|---|---|
-| a | `12` | `int` | `12 <class 'int'>` |
-| b | `1.52` | `float` | `1.52 <class 'float'>` |
-| c | `"12"` | `str` | `12 <class 'str'>` |
-| d | `"Ramana"` | `str` | `Ramana <class 'str'>` |
-| e | `input("Age? ")` after typing `12` | `str` | `12 <class 'str'>` |
-| f | `int("12")` | `int` | `12 <class 'int'>` |
-| g | `float("12")` | `float` | `12.0 <class 'float'>` |
-| h | `str(12)` | `str` | `12 <class 'str'>` |
+**W1.** The `f` turns the curly braces **on**. With it, `{name}` is replaced by whatever is in the box called `name`. Without it, `print` puts the six literal characters `{name}` on the screen: no error, wrong answer. (This is the week's silent bug, seen one week early.)
 
-**The two that catch nearly everyone:** (e), because it *looks* like a number on the screen and isn't; and (g), because `float("12")` prints `12.0`, not `12` — the moment something becomes a float it keeps a decimal point even when the value is whole.
+**W2.** `4.99`. The `:.2f` means "show exactly two digits after the point", and it **rounds** to get there. `4.9868768` becomes `4.99`.
 
-**4.1(i) Which two of these print the same characters but are different types?**
-`"12"` and `int("12")` both put `12` on the screen. One is text, one is a number. **The screen cannot show you a type — only `type()` can.** That sentence is the whole warm-up.
+**W3.** `17 // 5` is **3** and `17 % 5` is **2**. `//` is "how many whole ones fit" and `%` is "what is left over". Check: 3 × 5 = 15, and 17 − 15 = 2.
 
-### Page 4.2 — Practice Set A: understand it
+**W4.** `2 ** 5` is **32** (2 × 2 × 2 × 2 × 2) and `7 ** 3` is **343** (7 × 7 × 7). The 343 is the same cube the bot prints for a favourite number of 7.
 
-**4.2(a) In one sentence, what does `input()` hand back?**
-Text — always text, whatever the human typed, even if it looks like a number.
+**W5.** `print(f"{8.50:.2f}")` prints `8.50`. The number 8.5 genuinely has no trailing zero; the format specifier is what puts one on the screen.
 
-**4.2(b) Fill in the conversion table.**
+**What to watch for:** W1 and W5 are the two that students who skimmed Week 3 miss. If W5 is answered with `round(8.50, 2)`, show them that it still prints `8.5` (see P2).
 
-| I have | I want | I write |
+### Predict the Output
+
+The student writes a prediction, then runs the snippet. Real outputs:
+
+| Snippet | Real output | Why |
 |---|---|---|
-| `"12"` | a whole number | `int("12")` |
-| `"1.52"` | a decimal number | `float("1.52")` |
-| `12` | text | `str(12)` |
-| `"1.52"` | a *whole* number | `int(float("1.52"))` — two steps, because `int("1.52")` fails |
-| `1.52` | 2 decimal places | `round(1.52, 2)` |
+| **P1** | `4545` then `90` | `minutes` is the **text** `"45"`, so `* 2` repeats it. `int(minutes)` is the number 45, and `45 * 2` really is 90. |
+| **P2** | `8`, `8`, `8.5` | `int(8.5)` chops to 8. `round(8.5)` is **also 8** (round half to even, so `round(2.5)` is 2 and `round(3.5)` is 4). `round(8.4999, 2)` is the number `8.5`, which has no trailing zero. |
+| **P3** | `71`, `8`, `81` | `"7" + "1"` glues text. `int("7") + 1` adds numbers. `str(8) + "1"` turns 8 back into text and glues. |
+| **P4** | `3.04`, `4.99`, `1` | `1.52 × 2 = 3.04`. `1.52 × 3.28084 = 4.9868768`, rounded to 4.99. `int(float("1.52"))` is `1`, chopped, not rounded. |
 
-**4.2(c) Why does `int("1.52")` fail when `float("1.52")` works?**
-`int()` produces whole numbers, and `"1.52"` is not a whole number written down. Rather than silently throw the `.52` away — which might be exactly the part you cared about — Python stops and tells you. `float()` has no such problem because a decimal point is what it is for.
+The score line is "out of eleven" (2 + 3 + 3 + 3 lines). There is no single right score; a student who gets all eleven was not stretched.
 
-**4.2(d) What is the difference between `int(3.9)` and `round(3.9)`?**
-`int(3.9)` is `3` — it **chops** everything after the point off. `round(3.9)` is `4` — it goes to the nearest whole number. They are different tools: `int()` for "how many complete ones", `round()` for "what's the closest".
+**Most people miss:** P2's second line (`round(8.5)` being 8) and P2's third line (`8.5`, not `8.50`). If a student is upset about `round(8.5)`, use the round-half-to-even answer in "Questions Students Ask This Week" above. Nobody should be marked down for predicting 9 on that line.
 
-**4.2(e) Write the line that asks for a price in rupees and paise and stores it as a number.**
-`price = float(input("Price in rupees? "))` — `float`, because paise means a decimal point.
+### Practice Set A — Read It
 
-**4.2(f) Two lines below do the same job. Which would you write, and why?**
+**A1. Trace the value.** Real run, typing `20`: `print(answer, doubled, number, tripled, as_text)` shows `20 2020 20 60 60`.
 
-```python
-age_text = input("Age? ")
-age = int(age_text)
-```
-```python
-age = int(input("Age? "))
-```
+| After this line | `answer` | `doubled` | `number` | `tripled` | `as_text` |
+|---|---|---|---|---|---|
+| line 1 | `"20"` (str) | — | — | — | — |
+| line 2 | `"20"` (str) | `"2020"` (str) | — | — | — |
+| line 3 | `"20"` (str) | `"2020"` (str) | `20` (int) | — | — |
+| line 4 | `"20"` (str) | `"2020"` (str) | `20` (int) | `60` (int) | — |
+| line 5 | `"20"` (str) | `"2020"` (str) | `20` (int) | `60` (int) | `"60"` (str) |
 
-The second. Both work, but the first leaves a variable holding text for one line, and that is exactly where people forget to convert. Convert at the door and the value is a number for the rest of the program.
+**The row to notice is the last one.** `tripled` and `as_text` both put `60` on the screen, one a number and one text. *Marking tip:* a student who writes the values but leaves out the types has done half the question. The types are what it is asking for.
 
-**4.2(g) Name three things that look like numbers but should be stored as text, and say why.**
-A phone number (leading zeros matter, and you never do arithmetic on it) · a postcode (same) · a bank card number (same, plus it is not a quantity you ever add up). Also acceptable: a house number like `221B`, a version number like `3.10.2` (two dots — not a number at all).
-
-### Page 4.3 — Practice Set B: use it
-
-Four broken lines. For each, the student predicts the error, then fixes and runs it.
-
-**4.3(a)**
-
-```python
-age = input("Age? ")
-print("Next year you will be", age + 1)
-```
-
-*Predicted error:* `TypeError`.
-*Real traceback, typing `12`:*
+**A2. Spot the bug.** **Line 3**: `int()` is wrong for a height in metres. Typing `1.52`:
 
 ```text
 Traceback (most recent call last):
-  File "a.py", line 2, in <module>
-    print("Next year you will be", age + 1)
-TypeError: can only concatenate str (not "int") to str
-```
-
-*The fix:* `age = int(input("Age? "))`. Then the real output is `Next year you will be 13`.
-*Why:* `age` was text, so `+` meant "join two pieces of text", and you cannot join a number onto text.
-
-**4.3(b)**
-
-```python
-height = int(input("Height in metres? "))
-print(height)
-```
-
-*Predicted error:* `ValueError`, if they type a decimal.
-*Real traceback, typing `1.52`:*
-
-```text
-Traceback (most recent call last):
-  File "b.py", line 1, in <module>
-    height = int(input("Height in metres? "))
+  File "a2.py", line 3, in <module>
+    height_m = int(input("Height in metres? "))
 ValueError: invalid literal for int() with base 10: '1.52'
 ```
 
-*The fix:* `float` instead of `int`. Output: `1.52`.
-*Why:* a height in metres is not a whole number. The wrong conversion function was chosen.
+The fix is `float()`. If the human types `1` instead, the program works and quietly loses everybody's decimal: a bug that only appears for some inputs is still a bug.
 
-**4.3(c)**
+**A3. Match the code to the output.** a→**3** · b→**1** · c→**3** · d→**2** · e→**4**. Real outputs, in order a to e: `12`, `12.0`, `12`, `1212`, `24`.
+
+**The two that print the same characters are (a) and (c).** `int("12")` is the number twelve; `"12"` is text. Tell them apart with `print(type(...))`, or by trying `* 2` on each: one gives `24`, the other gives `1212`.
+
+*The one that catches people:* (b), because `float("12")` prints `12.0`. Once something is a float it keeps a decimal point even when the value is whole.
+
+**A4. Label the diagram.** **A** = the human, typing · **B** = the prompt, and `input()` waiting for an answer · **C** = what `input()` hands back, **text**, always · **D** = the conversion, `int()`, at the door · **E** = the named box, holding a **number** now.
+
+Without D, C is still text, so E would hold text too. The part to ring is **E**, because it is the one whose contents change depending on whether D is there. Ringing C is also worth part marks with a good explanation: C is *always* text, which is exactly why D has to exist.
+
+**A5. Which need a conversion?**
+
+| The question you are asking | Answer |
+|---|---|
+| your first name | **no conversion**, a name is text |
+| your age in whole years | **`int()`** |
+| your height in metres | **`float()`**, 1.52 has a dot in it |
+| your favourite colour | **no conversion** |
+| how many siblings you have | **`int()`**, you cannot have 2.5 siblings |
+| a price in rupees and paise | **`float()`**, paise means a decimal point |
+| your phone number | **no conversion** |
+| a mark out of 100 | **`int()`** (`float()` is defensible if your school gives half marks; the student should say which they assumed) |
+
+**The phone number row.** It looks exactly like a number and must never be treated as one. Two reasons: a leading zero would vanish the moment it became a number, and **you never do arithmetic on a phone number**. If you never need to add it, it does not need to be a number. Also acceptable as further examples in discussion: a postcode, a bank card number, a house number like `221B`, a version number like `3.10.2`.
+
+**A6. Read the traceback.**
+
+- **(a)** A **`TypeError`**: right names, wrong kinds of thing. *Concatenate* is a long word for "glue end to end", which is what `+` does to text. So Python is saying: the thing on the left of the `+` is text, so `+` means glue, and I cannot glue a number onto text. That tells you `minutes` is text, so a conversion is missing somewhere above.
+- **(b)** Python gave up on **line 10**. **No, the mistake is not on line 10.** Line 10 is only where it *noticed*.
+- **(c)** Put `int()` round the `input()` on the line that filled `minutes`, probably near the top of the file. Then read the other input lines as a column and check each one.
+
+The workbook's own answer adds a real run, typing `120`, where `Reporting...` prints before the traceback. **That is how you tell this family of error from a `SyntaxError`, where nothing prints at all.**
+
+*What students get wrong:* answering (b) with "yes" because the traceback points at the line. This is the key idea of the whole Fix the Broken Program section too.
+
+### Practice Set B — Write It
+
+**B1.** `price = float(input("Price in rupees? "))`. `float`, not `int`: with `int`, typing `49.50` gives `ValueError: invalid literal for int() with base 10: '49.50'`. Check: `price * 2` gives `99.0`.
+
+**B2.** Two lines:
 
 ```python
-name = input("Name? ")
-print("Hello, {name}!")
+minutes = int(input("Minutes? "))       # a whole number of minutes -> int()
+print(f"That is {minutes / 60:.1f} hours.")   # 60 minutes in an hour
 ```
 
-*Predicted error:* none — and that is the answer.
-*Real output, typing `Ramana`:*
+Typing `150`, the output is `That is 2.5 hours.` Doing the arithmetic inside the braces is fine, and so is a separate `hours = minutes / 60` line.
 
-```text
-Name? Ramana
-Hello, {name}!
-```
-
-*The fix:* an `f` before the opening quote — `print(f"Hello, {name}!")` — which gives `Hello, Ramana!`.
-*Why:* without the `f`, the braces are just characters, and `print` printed them faithfully. **No error, wrong answer.** This is a Bug Log entry.
-
-**4.3(d)**
+**B3.** Four lines and two derived values:
 
 ```python
-minutes = int(input("Minutes? ")
-print(minutes * 365)
+slices = int(input("How many slices?        "))          # whole slices -> int()
+slice_price = float(input("Price of one slice?     "))   # can have paise -> float()
+
+total = slices * slice_price                             # derived: nobody typed this
+half = total / 2                                         # derived: half a pizza
+
+print(f"Total       : {total:.2f} rupees")
+print(f"Half a pizza: {half:.2f} rupees")
 ```
 
-*Predicted error:* `SyntaxError`.
-*Real traceback:*
+Typing `8` and `45.50`: `Total       : 364.00 rupees` and `Half a pizza: 182.00 rupees`. Check on paper: 8 × 45.50 = 364, half of that is 182. `total` is the *number* 364.0; `:.2f` is what makes it read as money.
+
+**B4.** Six lines:
+
+```python
+steps = int(input("Steps today? "))     # a whole number -> int(). Without this, * 7 repeats text.
+
+steps_week = steps * 7                  # derived: seven days
+steps_year = steps * 365                # derived: a whole year
+
+print(f"Today   : {steps}")
+print(f"A week  : {steps_week}")
+print(f"A year  : {steps_year}")
+```
+
+Typing `8000`: `Today   : 8000`, `A week  : 56000`, `A year  : 2920000`. Check: 8,000 × 7 = 56,000 · 8,000 × 365 = 2,920,000.
+
+**Without the `int()`:** no error at all. `A week` becomes `8000` written out seven times (28 characters) and `A year` becomes 1,460 characters of `8000800080008000…`. This is the week's bug in the student's own program. Give full marks for B4 only if the student can say what happens without `int()`.
+
+**B5. The book-reading bot.** The student's questions are their own; mark against the "done looks like" line in the workbook (a comment on every line saying why, a conversion round every numeric `input()`, at least one `:.1f` or `:.2f`, both derived values worked out on paper first). The model answer:
+
+```python
+# book_bot.py - four questions in, one reading plan out.
+
+name = input("Your name?                    ")               # text, no conversion needed
+title = input("Book title?                   ")              # text, no conversion needed
+pages = int(input("How many pages?               "))         # whole pages -> int()
+pages_per_day = float(input("Pages per day (can be 12.5)?  "))  # decimal -> float()
+
+days_needed = round(pages / pages_per_day, 1)                # derived: how long it will take
+pages_in_a_week = pages_per_day * 7                          # derived: a week's reading
+pages_left = round(pages - pages_in_a_week, 1)               # derived: what is still to go
+
+print("========================================")
+print(f"  READING PLAN FOR {name}")
+print("========================================")
+print(f"  Book          : {title}")
+print(f"  Pages         : {pages}")
+print(f"  Pages a day   : {pages_per_day:.1f}")
+print("----------------------------------------")
+print("  THINGS YOU DID NOT TELL ME")
+print(f"  It will take about {days_needed:.1f} days.")
+print(f"  In one week you will read {pages_in_a_week:.1f} pages.")
+print(f"  That leaves {pages_left:.1f} pages to go.")
+print("========================================")
+```
+
+Answering `Anika`, `The Hobbit`, `310`, `12.5`:
 
 ```text
-  File "d.py", line 1
-    minutes = int(input("Minutes? ")
-                 ^
-SyntaxError: '(' was never closed
+Your name?                    Anika
+Book title?                   The Hobbit
+How many pages?               310
+Pages per day (can be 12.5)?  12.5
+========================================
+  READING PLAN FOR Anika
+========================================
+  Book          : The Hobbit
+  Pages         : 310
+  Pages a day   : 12.5
+----------------------------------------
+  THINGS YOU DID NOT TELL ME
+  It will take about 24.8 days.
+  In one week you will read 87.5 pages.
+  That leaves 222.5 pages to go.
+========================================
 ```
 
-*The fix:* one more `)` at the end of line 1. Typing `120`, the output is `43800`.
-*Why:* `int(input(...))` opens two brackets and must close two. Notice that **nothing ran at all** — a `SyntaxError` means Python could not even read the file, so there was no output before the error.
+Check on paper: 310 ÷ 12.5 = 24.8 · 12.5 × 7 = 87.5 · 310 − 87.5 = 222.5.
 
-**4.3(e) Compute these three by hand, then check with Python.**
+**Two honest limitations the workbook invites the student to notice.** "24.8 days" is a strange thing to say, since you cannot read for 0.8 of a day. And at 50 pages a day, `pages_left` comes out **negative**: `-40.0`. Both need the program to make a **decision**, which is next week.
 
-| | By hand | Python agrees |
-|---|---|---|
-| your age in days, if you are 12 | 12 × 365 = **4,380** | `4380` |
-| minutes of screen a year, at 120 a day | 120 × 365 = **43,800** | `43800` |
-| 1.52 metres in feet, 2 d.p. | 1.52 × 3.28084 = 4.9868768 → **4.99** | `round(1.52 * 3.28084, 2)` → `4.99` |
+### Fix the Broken Program
 
-**4.3(f) One of your derived numbers disagrees with your paper. What are the two possible explanations, and how do you tell them apart?**
-Either the paper is wrong or the program is wrong. Tell them apart by doing the arithmetic a second, different way — 120 × 365 as (100 × 365) + (20 × 365), for instance — and by printing the *types* of the values going in. If a value's type is `str`, the program is wrong. If both agree on types and the program's answer is still different, redo the paper.
+`screen_report.py`. Three bugs, to be fixed in this order.
 
-### Page 4.4 — Build It: the About-Me Bot
+**Bug 1, the syntax one.** `int(input(...))` opens **two** brackets and closes only one (`SyntaxError: '(' was never closed`, reported on line 5).
 
-The student's questions and derived values are their own; mark against the checklist. Here is a complete, working model answer — this is the reference implementation, run exactly as printed.
+- *How many questions did it ask?* **Zero.** A `SyntaxError` means Python could not even read the file, so not one line ran, not even `Your name?`. If the very first question never appears, suspect a `SyntaxError`.
+- *The fix:* `days = int(input("How many days to report?   "))   # how many days to add up`
+
+**Bug 2, the runtime one.** `minutes` is still text, because its `input()` has no `int()` round it.
+
+- *Is the mistake on line 8?* **No.** Line 8 is where Python *gave up*. The mistake is on **line 4**, the line that filled `minutes`.
+- *The fix:* `minutes = int(input("Screen minutes a day?      "))  # minutes per day`
+- **Bonus question.** Line 7 is `minutes * days`. With `minutes` as text, `*` means **repeat**, which is legal, so Python did it silently, producing 21 characters of `120120120…` (`"120"` written out 7 times). Line 8 then divides that text by 60, there is no "repeat" meaning for `/`, and Python has to complain. **`*` hides a missing conversion. `/` exposes it.** If line 8 hadn't existed, the program would have printed nonsense and never said a word.
+
+**Bug 3, the silent one.** The Name line printed the literal characters `{name}`, because there is no `f` before its opening quote. *Why no error message?* Without the `f`, the braces are ordinary characters, and `print` printed them faithfully. *The fix:* `print(f"  Name  : {name}")`.
+
+**Check your arithmetic.** 120 × 7 = **840**, and 840 ÷ 60 = **14.0** hours. Fully fixed, the output shows `Name  : Ramana`, `Days  : 7`, `Total : 840 minutes` and `= 14.0 hours`.
+
+**Marking tip:** the order matters. The `SyntaxError` first, because nothing runs until it is gone. Then the `TypeError`, because the program stops there. Then the silent one, which you can only find by *reading the output*. A student who found bug 3 by reading the code, not the output, has still earned it; one who skipped bug 3 because "it ran" has met the week's lesson in person.
+
+### Puzzle of the Week
+
+Actually run: `print("2" * 3)`, `print(2 * 3)`, `print("ab" * 3)`, `print(1.5 * 3)`, `print("1.5" * 3)`, `print("0" * 3)`.
+
+| | What printed | text or number? | and it was… |
+|---|---|---|---|
+| a | `222` | **either!** | `"2"` as text, **or** the number `74` |
+| b | `6` | **number** | `2` |
+| c | `ababab` | **text** | `"ab"` |
+| d | `4.5` | **number** | `1.5` |
+| e | `1.51.51.5` | **text** | `"1.5"` |
+| f | `000` | **text** | `"0"` |
+
+**P1.** Row **(a)**. It could be the text `"2"` repeated three times, or the number `74`, because 74 × 3 = 222. Both are correct, and you cannot tell from the screen.
+
+**P2.** Row (f) must be text. If it were a number, `0 * 3` would be `0`, one character. `000` is three characters, so it can only be repetition.
+
+**P3.** Row (b) must be a number, because no piece of text repeated three times gives one single character. Repetition always makes things longer. `6` is one character, so nothing was repeated.
+
+**P4.** `print(type(mystery))`, which prints `<class 'str'>` or `<class 'int'>`.
+
+**P5.** The screen only shows **characters**. The number 12 and the text `"12"` are drawn as the same two shapes, because printing a number means turning it into characters first. **A type is a fact about what is stored, not about what is displayed**, so you ask (`type()`) rather than look.
+
+*What students get wrong:* answering (a) "text" and stopping. The row has two answers, and the puzzle is noticing that.
+
+### Think Deeper
+
+**T1. Which is better, Python refusing to guess `"5" + 5` or a language returning `"55"`?** A full-credit answer takes a side, names a **consequence in the world**, and is honest about what the side costs. Model answer:
+
+> Python's way is better for anything where being wrong matters, and the reason is that guessing wrong is **silent**. If `"5" + 5` gives me `"55"`, my program keeps running and produces a wrong answer that I might not see for weeks. If it stops with a `TypeError`, I find out in eleven seconds, at the exact line, and the fix is one word long.
+>
+> Here is a consequence, not just a worry. A shop's website stores a jumper's price as the text `"100"` and the delivery charge as the number `50`. A guessing language glues them, and the customer's total comes out as `10050` instead of `150`. Nothing crashes. The page looks completely normal. The first person to find out is somebody's parent staring at a bank statement three weeks later.
+>
+> But the cost of Python's way is real and I shouldn't pretend otherwise: it is more typing, and for a beginner it feels like being told off for something obvious. For something quick and throwaway, a label on a web page where the worst outcome is a slightly odd word, the guessing version genuinely is more convenient.
+>
+> What tips it for me is the **direction** of the mistakes. Strict rules produce mistakes you find. Guessing produces mistakes you ship.
+
+**T2. How wrong is "about 4,380 days", and should the bot say how unsure it is?** Two sources of error, very different sizes. **Leap years:** `age * 365` ignores them, so a 12-year-old has had about three leap days and the true figure is nearer 4,383. That is about 0.07%, negligible. **The birthday:** the bot only knows the age in whole years, so someone who is "12" might be 12 years and 1 day or 12 years and 364 days. That is up to 365 days out, about **8%**. **The second problem is more than a hundred times bigger than the first**, and it is the one nobody thinks about. Should the bot say how unsure it is? Yes, and it already does, quietly, with the word "about". A stronger version would print a range ("between about 4,380 and 4,745 days"). This is the same idea as Level 1's work on how confidently a system should state things.
+
+*Full marks for T2 needs:* both sources of error, a rough size for each, the observation that the birthday one is far larger, and a view on hedging.
+
+**Optional talking point (not a workbook item):** *"Would you rather have a program that crashes or one that gives a wrong answer?"* Crashes, nearly always. A crash is loud, immediate, located, and comes with a category and a message. A wrong answer is silent, might be discovered months later by someone else, and gives you nothing to go on. The one real exception is a program that must not stop, such as a plane's controls or a heart monitor. **Notice that today's worst bug was the one that didn't crash.**
+
+### Build It
+
+#### Part 1 — Finish `about_me.py`
+
+The student's questions and derived values are their own; mark against the workbook's checklist. The workbook also has two tables for the student to fill in: *the six questions and the conversion each one needs* (name and city: `none`; age, screen minutes and favourite number: `int()`; height: `float()`, if the student has used the model's questions) and *the derived values with the paper column filled in before running*. Mark the paper column: **a paper figure written after the run does not count**, and the "Same?" column should be honest, including an occasional "No".
+
+Here is a complete, working model answer: the reference implementation, run exactly as printed.
 
 ```python
 # about_me.py - the About-Me Bot. Six questions in, one profile card out.
@@ -1444,7 +1553,7 @@ A second real run with different answers — `Meera`, `Pune`, `15`, `1.65`, `200
 
 Check the second run by hand: 15 × 365 = 5,475 ✔ · 200 × 365 = 73,000 ✔ · 1.65 × 3.28084 = 5.4133… → 5.41 ✔ · 8³ = 512 ✔.
 
-**Marking checklist — one mark each:**
+**Marking checklist (the workbook's nine criteria), one mark each:**
 
 | | Criterion |
 |---|---|
@@ -1458,11 +1567,10 @@ Check the second run by hand: 15 × 365 = 5,475 ✔ · 200 × 365 = 73,000 ✔ �
 | ☐ | Top border, middle divider, bottom border |
 | ☐ | Every derived number checked against paper |
 
-**4.4(a) Which of your six answers needed no conversion, and why?**
-The text ones — a name and a city. They are already text and text is what `input()` gives you, so there is nothing to convert. Converting them would be pointless work.
+**(a) Which of your six answers needed no conversion, and why?**
+The text ones, a name and a city. They are already text and text is what `input()` gives you, so there is nothing to convert. Converting them would be pointless work.
 
-**4.4(b) What would happen if you put `int()` round your name?**
-A `ValueError`. Real traceback, typing `Ramana`:
+**(b) What happens if you put `int()` round your name?** A `ValueError`. Real traceback, typing `Ramana`:
 
 ```text
 Traceback (most recent call last):
@@ -1473,11 +1581,11 @@ ValueError: invalid literal for int() with base 10: 'Ramana'
 
 Right kind of thing (text), impossible value (there is no number called Ramana).
 
-### Page 4.5 — Build It: the Bug Log
+#### Part 2 — The Bug Log
 
 The three entries are the student's own. Mark on **structure**, not on which bugs they found.
 
-A full-credit entry has four parts: the real error text (or "no error"), the line number, what Python was trying to say **in their own words**, and the one thing they changed.
+A full-credit entry has four parts: the real error text (or "no error"), the line number, what Python was trying to say **in their own words**, and the one thing they changed. **One of the three must be a bug with no error message.**
 
 Three model entries:
 
@@ -1487,48 +1595,39 @@ Three model entries:
 | 2 | `NameError: name 'agee' is not defined. Did you mean: 'age'?` — line 18 | I spelled the box's name wrong inside the braces, so Python went looking for a box that doesn't exist. It even guessed what I meant. | Deleted the extra `e` |
 | 3 | **No error at all.** The screen-time line printed `120120120…` for about a thousand characters. | Nothing was wrong as far as Python was concerned. `screen_minutes` was still text, and `× 365` on text means *repeat it 365 times*. I found it with `print(type(screen_minutes))`, which said `<class 'str'>`. | Put `int(` and `)` round the `input()` on line 13 |
 
-**4.5(a) Which of your three was hardest to find, and why?**
+**(c) Which of your three was hardest to find, and why?**
 Almost always the one with no error message. The honest reason: a traceback hands you the file, the line number, the category of mistake and a sentence about it. A silent wrong answer hands you nothing, so you have to notice, and to notice you must already know roughly what the right answer looks like. **Full credit for saying that the crashes were the easy ones.**
 
-**4.5(b) What is the one line you add when a number is behaving oddly?**
+**(d) What is the one line you add when a number is behaving oddly and nothing has crashed?**
 `print(type(the_variable))`. If it prints `<class 'str'>`, a conversion is missing. Delete the line once you have the answer.
 
-**4.5(c) Somebody says "I got no errors this week." What does that tell you?**
-Almost certainly that they wrote very little code — or that they have a silent bug they haven't noticed. The number of errors you meet is mostly a measure of how much you built.
+**(e) Somebody says "I got no errors this week." What does that tell you?**
+Almost certainly that they wrote very little code, or that they have a silent bug they haven't noticed. The number of errors you meet is mostly a measure of how much you built.
 
-### Page 4.6 — Think Deeper
+### Draw It
 
-**4.6(a) Python refuses to guess what `"5" + 5` means. JavaScript happily returns `"55"`. Which is better?**
+There is no single right drawing. The workbook's example is a sleep-tracker bot. A strong answer does three things:
 
-A full-credit answer (4+ sentences) argues a side and admits the cost of it. Model answer:
+1. **Everything on the right is something nobody typed.** If an answer the human gave appears on the right, the drawing has become a photocopier. (The commonest weak answer is putting *hours slept* on the right.)
+2. **Each thing on the left is tagged with its conversion**: `none`, `int()` or `float()`. The `float()` ones are the ones with a decimal point in real life.
+3. **The third box names a real line that would break**, with the reason. "It would crash" is not enough; "`"7.5" * 7` gives seven copies of the text, with no error" is.
 
-> Python's way is better for anything where being wrong matters, and the reason is that guessing wrong is silent. If `"5" + 5` gives me `"55"`, my program keeps running and produces a wrong answer that I might not see for weeks. If it stops with a `TypeError`, I find out in eleven seconds, at the exact line, and the fix is one word long.
->
-> But the cost is real and I shouldn't pretend otherwise: it is more typing, and for a beginner it feels like being told off for something obvious. If you are writing something quick and throwaway — a form on a web page where the worst outcome is a slightly odd label — the guessing version is genuinely more convenient and the strictness is just friction.
->
-> What tips it for me is the direction of the mistakes. Strict rules produce mistakes you find. Guessing produces mistakes you ship.
+Test: **cover the left-hand side. Is anything on the right still just a copy of something you covered up?** If so, move it back.
 
-**4.6(b) Your bot says "you have been alive about 4,380 days". How wrong is that?**
-Two separate sources of error, and they are different sizes. **Leap years:** `age * 365` ignores them, so a 12-year-old has had about three leap days, and the true figure is nearer 4,383. That is an error of 0.07% — negligible. **The birthday:** the bot only knows the age in whole years, so someone who is "12" might be 12 years and 1 day or 12 years and 364 days. That is an error of up to 365 days, or 8%. **The second problem is a hundred times bigger than the first**, and it is the one nobody thinks about. The word "about" in the output is doing real work.
+### Self-Check
 
-**4.6(c) Should the bot say how unsure it is?**
-Yes, and it already does, quietly, with the word "about". A stronger version would print a range rather than a single number. This is the same idea as Level 1's work on how confidently a system should state things: a number printed with no hedge reads as a fact, and this one is not one. It costs one word to be honest.
-
-**4.6(d) Would you rather have a program that crashes or one that gives a wrong answer?**
-Crashes, nearly always, and it is worth saying why rather than just asserting it. A crash is loud, immediate, located, and comes with a category and a message — you cannot fail to notice it, and it tells you where to look. A wrong answer is silent, might be discovered months later by someone else, and gives you nothing to go on. The one real exception is a program that must not stop — a plane's controls, a heart monitor — and those are built by teams who spend most of their effort on exactly this question. **Notice that today's worst bug was the one that didn't crash.**
-
-### Page 4.6 (continued) — Self-Check
+The "I can…" ticks are the student's own; use them to pick what to reteach next. Then the true-or-false rows:
 
 | Statement | Answer |
 |---|---|
-| `input()` sometimes gives back a number | **False.** Always text. |
-| `int()` and `round()` do the same thing | **False.** `int(3.9)` is `3`, `round(3.9)` is `4`. |
-| You should read a traceback from the top | **False.** Last line first. |
-| A program that runs is a program that works | **False.** The whole lesson. |
-| `"7" * 3` is `21` | **False.** It is `"777"`. |
-| A derived value is one the user typed | **False.** It is one the program worked out. |
-| Hard-coding is always bad practice | **False.** While debugging it is the fastest thing you can do. |
-| `float("12")` gives `12.0` | **True.** Once it is a float it keeps a decimal point. |
+| `input()` sometimes gives back a number | **FALSE.** Always text. |
+| `int()` and `round()` do the same thing | **FALSE.** `int(3.9)` is `3`, `round(3.9)` is `4`. |
+| You should read a traceback from the top | **FALSE.** Last line first. |
+| A program that runs is a program that works | **FALSE.** The whole lesson. |
+| `"7" * 3` is `21` | **FALSE.** It is `"777"`. |
+| A derived value is one the user typed | **FALSE.** It is one the program worked out. |
+| Hard-coding is always bad practice | **FALSE.** While debugging it is the fastest thing you can do. |
+| `float("12")` gives `12.0` | **TRUE.** Once it is a float it keeps a decimal point. |
 
 ### Lesson questions posed in the Say-this scripts
 

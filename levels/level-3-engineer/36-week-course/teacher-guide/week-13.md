@@ -15,7 +15,7 @@
 | **New maths** | **The exponential `e^(−z)`.** Evaluated on a calculator for z = −2, 0, 1.4 and 3, then plotted as the S-curve from those four points. That is all. |
 | **New syntax** | `np.exp(x)` · `np.where(cond, a, b)` |
 | **Dataset** | **8 hand-typed pizza orders** (they fit on the board), then `make_classification(n_samples=200, n_features=2, n_informative=2, n_redundant=0, random_state=0)` — 200 rows, generated offline in a tenth of a second |
-| **Materials** | A **real calculator with an `e^x` key** per pair — this is not optional · one big sheet of graph paper for the shared S-curve · printed workbook pages 13.1–13.7 · the Bug Log · board space for eight rows |
+| **Materials** | A **real calculator with an `e^x` key** per pair — this is not optional · one big sheet of graph paper for the shared S-curve · the printed Week 13 workbook (all sections) · the Bug Log · board space for eight rows |
 | **Tech needed** | Laptop with Python 3, numpy, matplotlib, scikit-learn. **No PyTorch yet, no downloads, nothing to install.** |
 | **Prep time** | 20 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | Every file today runs in **well under a second**. Nothing trains. |
@@ -33,7 +33,7 @@ By the end of the lesson the student can:
 3. **State the three properties that make the sigmoid the right squasher**, including that `sigmoid(0)` is *exactly* 0.5.
 4. **Go backwards from a probability to a raw score** using the odds and the log-odds, and explain why `z` is called the logit.
 
-Observable evidence: eight `z` values and eight probabilities in pen on workbook page 13.4; eight points plotted on the shared graph paper with the S-curve drawn through them; four backwards conversions with `ln(odds)` shown; and a pasted `RuntimeWarning: overflow encountered in exp` next to a fixed version that produces no warning.
+Observable evidence: eight `z` values and eight probabilities in pen in the workbook's *Do the Maths by Hand* table M4 (the `z` column) and on the activity sheet beside it; eight points plotted on the shared graph paper with the S-curve drawn through them; four backwards conversions with `ln(odds)` shown; and a pasted `RuntimeWarning: overflow encountered in exp` next to a fixed version that produces no warning.
 
 ---
 
@@ -444,12 +444,12 @@ squash(-1000) = 0.0000   <- no warning, no infinity
 squash( 1000) = 1.0000
 ```
 
-- [ ] **Run `overflow.py`** (full file in the Answer Key, page 13.7) so the `RuntimeWarning` on your own screen is familiar. **It appears above the table, not below it**, because warnings go to a different output stream. That surprises people. **Runtime under a second.**
-- [ ] **Run `real_data.py`** (full file in the Answer Key, page 13.6) and check you get twelve zeros on the last line. **Runtime under a second.**
+- [ ] **Run `overflow.py`** (full file in the Answer Key, under *Build It*) so the `RuntimeWarning` on your own screen is familiar. **It appears above the table, not below it**, because warnings go to a different output stream. That surprises people. **Runtime under a second.**
+- [ ] **Run `real_data.py`** (full file in the Answer Key, under *In-class demo — `real_data.py`*) and check you get twelve zeros on the last line. **Runtime under a second.**
 - [ ] **Break it on purpose, twice**, so both deliberate mistakes in the live-code are muscle memory:
   1. Change `np.exp(negative_part)` to `np.exp(-z)` and feed it `−1000`. You get `RuntimeWarning: overflow encountered in exp`.
   2. **Swap the two arms of the first `np.where`** — write `np.where(z >= 0, z, -z)` instead of `np.where(z >= 0, -z, z)`. `squash(1.4)` quietly returns `0.1978` instead of `0.8022` and the S-curve runs backwards. Feed it `−1000` as well and you get `nan`, plus `RuntimeWarning: invalid value encountered in scalar divide`.
-- [ ] **Print workbook pages 13.1–13.7.**
+- [ ] **Print the Week 13 workbook** (every section; M4 and Predict the Output are used in class).
 - [ ] **Tape one large sheet of graph paper to the board** and draw the axes on it: `z` across from −4 to +5, `p` up from 0 to 1. Mark the halfway line at `p = 0.5` with a dashed line. **Do this the night before**; drawing axes in front of a class eats four minutes.
 
 ### 5 minutes on the day
@@ -468,7 +468,7 @@ squash( 1000) = 1.0000
 1. **The hook works untouched** — it is arithmetic on the board.
 2. **The activity works untouched** — it was always going to be calculators and graph paper.
 3. **For the concept**, do all four `e^(−z)` values on the board with the class calling out digits from their own calculators. Then have every pair verify one row of the eight-row table against a neighbour's.
-4. **Replace the live-code with a "predict the printout" exercise.** Write the `squash.py` source on the board, hand out workbook page 13.5, and have them fill in what each `print` will produce. Mark it together. **This is genuinely a good lesson, not a consolation prize** — they cannot skim, because there is nothing to run.
+4. **Replace the live-code with a "predict the printout" exercise.** Write the `squash.py` source on the board, hand out the workbook's *Predict the Output* section (P1 to P5), and have them fill in what each `print` will produce. Mark it together. **This is genuinely a good lesson, not a consolation prize** — they cannot skim, because there is nothing to run.
 5. **Replace the `predict_proba` payoff with paper.** Write `w = [3.6298, −0.5546]`, `b = −0.7127`, and the row `x = [0.6170, −1.1940]`. Have them get to `z = 2.1891` and `p = 0.8993`. Then tell them scikit-learn printed `0.899268`. **Objectives 1 and 2, delivered with a pencil.**
 
 | If this fails | Do this instead |
@@ -927,7 +927,7 @@ And the sentence for this week:
 - The formula stays on the board: `z = 0.6 × (orders in the oven) + 0.4 × (km to drive) − 3`
 - One large sheet of graph paper on the board, axes already drawn: `z` across from −4 to +5, `p` up from 0.0 to 1.0, with a dashed line at `p = 0.5`.
 - One calculator per pair.
-- Workbook page 13.4 out — it is the eight-row table with three columns blank.
+- Workbook *Do the Maths by Hand* **M4** out — the eight-row table with the `0.6 × oven`, `0.4 × km` and `z` columns blank. The `e^(−z)` and `p` columns are not printed on it; each student works those beside it on scrap paper in the same three-step layout as **M2**.
 - Assign orders. With eight students, one each. With sixteen, pairs. With four, two each. **Everybody must own at least one row, because owning it is what makes them walk to the board.**
 
 **The eight orders**
@@ -991,7 +991,7 @@ Ask these at the sheet, with the class looking at their own curve:
 
 **What "finished" looks like**
 
-- Eight rows filled in on page 13.4, in pen, with **all three intermediate steps** shown for both halves — not just the answers.
+- Eight rows filled in on M4, in pen, with **all three intermediate steps** shown for both halves (the `z` working on M4, the `e^(−z)`, `1 + e^(−z)` and `p` working on scrap paper beside it) — not just the answers.
 - Eight dots on the shared sheet and a hand-drawn S through them.
 - The dot at `z = 0` sitting exactly on the dashed line.
 - Every student able to say their own two numbers without looking.
@@ -1228,59 +1228,65 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, three parts, and the third one is the interesting one.
+> "About an hour, three parts, and the third one is the interesting one. They are all in your workbook, and they have their names printed on them.
 >
-> **First, page 13.2 — eight sigmoid conversions.** Eight raw scores. For each one: `e^(−z)`, then `1 +` it, then `1 ÷` it, to **four decimal places**, and **all three steps written down in pen.** Then beside each, the numpy check — one line, and a tick or a cross. I want to see the crosses. Eight ticks with no working is a page I do not believe.
+> **First, 'Do the Maths by Hand', M2 — eight sigmoid conversions.** Eight raw scores. For each one: `e^(−z)`, then `1 +` it, then `1 ÷` it, to **four decimal places**, and **all three steps written down in pen.** Calculator only, no code on that section. Then do the three little questions under the table, M2(a) to (c) — the last one is a self-check that tells you whether you lost a minus sign. I want to see the working. Eight final answers with nothing in the middle column is a page I do not believe.
 >
-> **Second, page 13.3 — four conversions backwards.** I give you a probability, you give me the raw score. Show the odds as a division, then the log. Then check it comes back through the sigmoid. **Both directions on the same line.**
+> **Second, M3 — four conversions backwards.** I give you a probability, you give me the raw score. Show the odds as a division, then the log. Then check it comes back through the sigmoid. **Both directions on the same line.** Then M3(a) to (c), including why `z` is called the logit.
 >
-> **Third, page 13.7 — the overflow experiment, and this is the one I am marking.** Compute the sigmoid of **minus one thousand** the naive way. Paste **exactly what happens** — the whole yellow warning, word for word, not 'it gave a warning'. Then do it the two-branch way and paste that. Then **two sentences**: what was the machine actually asked to compute that it could not do, and what did the second version do differently?
+> **Third, 'Build It — The Overflow Experiment', and this is the one I am marking.** Type `overflow.py`, run it, and paste **exactly what happens** — the whole yellow warning, word for word, not 'it gave a warning'. Fill in the six-row table from your own screen. Then run `why_safe.py` and fill in the five-row table. Then **two sentences**: what was the machine actually asked to compute that it could not do, and what did the second version do differently?
 >
 > Not 'the second one is safer'. **What number was too big, and how big was it?**"
 
-**Workbook pages:** 13.4, 13.5 and 13.6 in class · **13.2, 13.3 and 13.7** at home · **13.1** as the warm-up either place.
+**Workbook sections, and where they happen:**
 
-**Expected time:** 25 min on the eight conversions with the numpy checks · 15 min on the four backwards · 20 min on the overflow experiment and the two sentences. **About an hour.**
+- **In class:** *Do the Maths by Hand* **M4** (the Worry Meter table, filled in at the board during the activity) and *Predict the Output* **P1 to P5** (the lesson's predict-then-run habit; also the fallback lesson if the laptops fail). The `real_data.py` payoff is teacher-run and has no workbook page.
+- **At home, the marked core:** **M2**, **M3** and **Build It**.
+- **Warm-Up (W1 to W5, about last week) and M1:** the five-minute opener, either place.
+- **The rest of the workbook is practice for the week, not for tonight:** Practice Set A (A1 to A6), Practice Set B (B1 to B5), Fix the Broken Program, Puzzle of the Week, Think Deeper (T1, T2), Draw It and the Self-Check. Pick from them to fit the student; **Fix the Broken Program** and **Draw It** are the two best next choices, and **B3** and **Think Deeper T1** carry the two ideas that Week 14 relies on (`False` from `==` on decimals; a zero that should not be a zero).
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are all three intermediate steps there for each of the eight?** A column of eight final answers is a column of eight numbers copied off a screen; the `e^(−z)` column is the evidence of hand work. **Two — is the warning pasted verbatim?** `RuntimeWarning: overflow encountered in exp` is a result. *"It broke"* is not. **Three — do the two sentences name the number?** The answer that earns full marks says something like *"it was asked for e to the power of a thousand, which has 435 digits, and the biggest number a float64 can hold has 309, so it stored infinity instead; the second version flips the sign first so the exponent is never positive and the answer is never bigger than 1."* A student who writes *"the second one avoids overflow"* has the vocabulary and not the idea, and that is worth one line of feedback: **"which number overflowed, and how big was it?"**
+**Expected time:** 25 min on M2 with its three questions · 15 min on M3 · 20 min on Build It and the two sentences. **About an hour.**
+
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are all three intermediate steps there for each of the eight in M2?** A column of eight final answers is a column of eight numbers copied off a screen; the `e^(−z)` column is the evidence of hand work. **Two — is the warning pasted verbatim?** `RuntimeWarning: overflow encountered in exp` is a result. *"It broke"* is not. **Three — do the two sentences name the number?** The answer that earns full marks says something like *"it was asked for e to the power of a thousand, which has 435 digits, and the biggest number a float64 can hold has 309, so it stored infinity instead; the second version flips the sign first so the exponent is never positive and the answer is never bigger than 1."* A student who writes *"the second one avoids overflow"* has the vocabulary and not the idea, and that is worth one line of feedback: **"which number overflowed, and how big was it?"**
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every workbook section and item, **in the workbook's own order and under its own labels** (W1, M2(c), P3(a), A3(g), B4, Bug 3, Part 2(b), T1 and so on), so you can mark from this page alone. The values are the workbook's own Answers section, re-run and checked here; the marking notes, wrong-answer maps and in-class sheets marked *teacher-only* are additions for you. Sections the student does not have (the `real_data.py` payoff) come last, and are labelled as such.
 
-### Page 13.1 — Warm-up: is it a probability?
+### Warm-Up — W1 to W5
 
-*For each number, say whether it could be a probability, and if not, why not.*
+**W1.** `slope = (f(w + h) − f(w − h)) ÷ (2 × h)`. **The brackets around `2 × h` are the whole answer.** Write `/ 2 * h` and you get `0.000006` instead of `6.000000` — a million times out, with no error message. Write `/ h` and you get `12.000000`, exactly double, because you travelled two nudges and only divided by one.
 
-| # | Number | Could it be a probability? | Why |
-|:--:|---|---|---|
-| 1 | `0.8022` | **Yes** | Between 0 and 1. |
+**W2.** The rule is `2 × x`, and **you found it by measuring.** Three slopes at `x = 1, 3, 5` came out `2, 6, 10`, and each one is twice the `x`. Nobody handed it over as a formula to memorise; it fell out of four presses of a calculator.
+
+**W3.** `np.argmin` gives a **position** (`4` means "the fifth item in the list"); `np.min` gives the **value** (`0.0`). **You want neither on its own** — you want `candidates[np.argmin(losses)]`, which gave `8.0`, the weight that produced the smallest loss.
+
+**W4.** **Either the sign in the update is wrong, or the learning rate is too big.** Those are the only two options. **Check the sign first**, because that is one character and it is free to check; the learning rate needs a re-run. Here the numbers grow by about 2.6 times each step, which is an explosion, so it is more likely to be the learning rate — but you still check the cheap thing first.
+
+**W5.** **`6.000` is right**, and it is the two-sided one. The curve bends, so a one-sided nudge measures the slope of a line between where you are and slightly to the right of where you are, which is a bit too steep. The two-sided version takes one step each way and splits the difference, and it is **the same amount of work** — two evaluations of the function either way.
+
+### Do the Maths by Hand — M1 to M4
+
+**M1.**
+
+| # | Number | Probability? | Why |
+|:--:|:--:|:--:|---|
+| 1 | `0.8022` | **Yes** | Between 0 and 1. It is `sigmoid(1.4)`. |
 | 2 | `1.4` | **No** | Above 1. This is a raw score. |
 | 3 | `−3` | **No** | Below 0. Also a raw score. |
-| 4 | `0.5` | **Yes** | And it is what `sigmoid(0)` gives, exactly. |
+| 4 | `0.5` | **Yes** | And it is exactly what `sigmoid(0)` gives. |
 | 5 | `9.8` | **No** | 980% of nothing. |
-| 6 | `0.0000` | **Only as a printed value** | A true sigmoid output is never exactly 0 — but a computer will print 0.0000 once `z` is very negative. **This is the trick question.** |
+| 6 | `0.0000` | **Only as a printed value** | **Trick question.** A true sigmoid output is never exactly 0 — but a computer prints `0.0000` once `z` is very negative, because it has run out of room. |
 | 7 | `0.9879` | **Yes** | `sigmoid(4.4)`. |
-| 8 | `1.0` | **Same trick as 6** | Legal as a probability in general, but never produced by a sigmoid. |
+| 8 | `1.0` | **Same trick as 6** | Legal as a probability in general, but **never produced by a sigmoid.** |
 
-### Page 13.2 — Eight sigmoid conversions, by hand and then checked
+**M1(a).** `1.4`, `−3` and `9.8` — orders 6, 1 and the eight-in-the-oven, twenty-km order from the hook.
 
-*For each `z`: compute `e^(−z)`, then `1 + e^(−z)`, then `1 ÷ that`, to 4 dp. Then check with numpy.*
+**M1(b).** *"If it could be 4.4, it is a **raw score**."*
 
-| # | `z` | `e^(−z)` | `1 + e^(−z)` | `p` (4 dp) |
-|:--:|:--:|---|---|:--:|
-| 1 | `−4.00` | `54.598150` | `55.598150` | **0.0180** |
-| 2 | `−1.50` | `4.481689` | `5.481689` | **0.1824** |
-| 3 | `−0.70` | `2.013753` | `3.013753` | **0.3318** |
-| 4 | `0.00` | `1.000000` | `2.000000` | **0.5000** |
-| 5 | `0.25` | `0.778801` | `1.778801` | **0.5622** |
-| 6 | `1.00` | `0.367879` | `1.367879` | **0.7311** |
-| 7 | `2.50` | `0.082085` | `1.082085` | **0.9241** |
-| 8 | `6.00` | `0.002479` | `1.002479` | **0.9975** |
-
-The check, and its real output:
+**M2.** Real output of the check:
 
 ```python
 import numpy as np
@@ -1302,45 +1308,15 @@ z=  2.50   e^(-z)=    0.082085   1+e^(-z)=    1.082085   p=0.9241
 z=  6.00   e^(-z)=    0.002479   1+e^(-z)=    1.002479   p=0.9975
 ```
 
-**Marking notes.** Row 4 must be **exactly** 0.5000, not 0.4999 or "about a half". Rows 1 and 8 are the ends of the curve: 0.0180 and 0.9975, neither of which is 0 or 1. If a student's rows 1 and 2 look like `0.9820` and `0.8176`, they have computed `e^(+z)` — those are `1 −` the right answers.
+**M2(a).** `e^0 = 1`, `1 + 1 = 2`, `1 ÷ 2 = 0.5`. **Three operations, no rounding in any of them.** This is why `sigmoid(0)` is exactly a half and not approximately one.
 
-### Page 13.3 — Four conversions backwards
+**M2(b).** `0.0180` and `0.9975`. **Neither end arrived.** `e^(−z)` is `54.598150` at one end and `0.002479` at the other — small, but never zero, so the division never gives exactly 1.
 
-*For each probability: write the odds as a division, take `ln`, then check the answer comes back through the sigmoid.*
+**M2(c).** `0.9820 + 0.0180 = 1.0000`. **Your answer is `1 −` the right answer, every row**, which is the signature of a lost sign change: you computed `e^(+z)` where `e^(−z)` was meant. Every number is "possible" and every one is the mirror of the truth.
 
-**1. `p = 0.90`**
+**Marking notes (teacher-only).** Row 4 must be **exactly** 0.5000, not 0.4999 or "about a half". Rows 1 and 8 are the ends of the curve: 0.0180 and 0.9975, neither of which is 0 or 1. If a student's rows 1 and 2 look like `0.9820` and `0.8176`, they have computed `e^(+z)` — those are `1 −` the right answers.
 
-```text
-odds = 0.90 ÷ 0.10 = 9.000000
-z    = ln(9) = 2.197225
-check: e^(−2.197225) = 0.111111,  1 ÷ 1.111111 = 0.900000   ✓
-```
-
-**2. `p = 0.62`**
-
-```text
-odds = 0.62 ÷ 0.38 = 1.631579
-z    = ln(1.631579) = 0.489548
-check: e^(−0.489548) = 0.612903,  1 ÷ 1.612903 = 0.620000   ✓
-```
-
-**3. `p = 0.50`**
-
-```text
-odds = 0.50 ÷ 0.50 = 1.000000
-z    = ln(1) = 0.000000
-check: e^0 = 1,  1 ÷ 2 = 0.500000   ✓
-```
-
-**4. `p = 0.05`**
-
-```text
-odds = 0.05 ÷ 0.95 = 0.052632
-z    = ln(0.052632) = −2.944439
-check: e^(2.944439) = 19.000000,  1 ÷ 20.000000 = 0.050000   ✓
-```
-
-The check, and its real output:
+**M3.**
 
 ```python
 import numpy as np
@@ -1360,11 +1336,47 @@ p = 0.50   odds = 1.000000   z = ln(odds) =  0.000000   back again = 0.500000
 p = 0.05   odds = 0.052632   z = ln(odds) = -2.944439   back again = 0.050000
 ```
 
-**Marking notes.** Row 3 is the anchor: `odds = 1`, `ln(1) = 0`, and that ties back to `sigmoid(0) = 0.5`. Row 4 is the mirror of row 1 — `−2.944` where row 1 gave `+2.197`, and **the signs should be opposite because 0.05 and 0.95 are mirror images.** A student who spots that unprompted is at level 4.
+Longhand, so every division is visible:
 
-### Page 13.4 — The Worry Meter table (done in class)
+```text
+1.  odds = 0.90 ÷ 0.10 = 9.000000        z = ln(9) = 2.197225
+    check: e^(−2.197225) = 0.111111 ,  1 ÷ 1.111111 = 0.900000   ✓
+2.  odds = 0.62 ÷ 0.38 = 1.631579        z = ln(1.631579) = 0.489548
+    check: e^(−0.489548) = 0.612903 ,  1 ÷ 1.612903 = 0.620000   ✓
+3.  odds = 0.50 ÷ 0.50 = 1.000000        z = ln(1) = 0.000000
+    check: e^0 = 1 ,  1 ÷ 2 = 0.500000   ✓
+4.  odds = 0.05 ÷ 0.95 = 0.052632        z = ln(0.052632) = −2.944439
+    check: e^(2.944439) = 19.000000 ,  1 ÷ 20.000000 = 0.050000   ✓
+```
 
-`z = 0.6 × (orders in the oven) + 0.4 × (km to drive) − 3`
+**M3(a).** `odds = 1`, `ln(1) = 0`, and `sigmoid(0) = 0.5`. **Everything closes.** Evens in one language, zero in the other.
+
+**M3(b).** `0.95` and `0.05` are exact mirrors, and their raw scores are `+2.944439` and `−2.944439`. (`0.90` and `0.05` are *not* mirrors — `0.90`'s mirror is `0.10`, with `z = −2.197225`.)
+
+**M3(c).** `z` is the **log** of the **odds**. That is the whole reason for the name **logit**, and it is a slightly silly name for a genuinely useful quantity.
+
+**Marking notes (teacher-only).** Row 3 is the anchor: `odds = 1`, `ln(1) = 0`, and that ties back to `sigmoid(0) = 0.5`. Row 4 is the mirror of row 1 — `−2.944` where row 1 gave `+2.197`, and **the signs should be opposite because 0.05 and 0.95 are mirror images.** A student who spots that unprompted is at level 4.
+
+**M4.**
+
+| Order | Oven | Km | `0.6 × oven` | `0.4 × km` | `z` |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| 1 | 0 | 0 | 0.0 | 0.0 | **−3.00** |
+| 2 | 1 | 1 | 0.6 | 0.4 | **−2.00** |
+| 3 | 2 | 2 | 1.2 | 0.8 | **−1.00** |
+| 4 | 3 | 3 | 1.8 | 1.2 | **0.00** |
+| 5 | 5 | 2 | 3.0 | 0.8 | **0.80** |
+| 6 | 4 | 5 | 2.4 | 2.0 | **1.40** |
+| 7 | 6 | 6 | 3.6 | 2.4 | **3.00** |
+| 8 | 7 | 8 | 4.2 | 3.2 | **4.40** |
+
+**M4(a).** Order 4, and therefore **exactly `0.5000`**.
+
+**M4(b).** In `z`: `4.40 − (−3.00) = 7.40`. In `p`: `0.9879 − 0.0474 = 0.9405`.
+
+**M4(c).** `0.6900 − 0.2689 = 0.4211`. **So a `z` gap of `1.80` in the middle buys `0.4211` of probability, while a `z` gap of `7.40` across the whole range buys only `0.9405`.** Four times the distance bought a bit over twice the probability. **The middle is steep; the ends are flat.**
+
+**In class — the Worry Meter activity sheet (teacher-only).** The workbook's M4 prints only the `z` half (three blank columns). The activity also has each student carry the same row through the sigmoid, so the board / scrap-paper sheet looks like this, and the three questions at the finished curve are answered below it:
 
 | Order | Oven | Km | `0.6 × oven` | `0.4 × km` | `z` | `e^(−z)` | `p` | Late at 0.5? |
 |:--:|:--:|:--:|---|---|:--:|---|:--:|:--:|
@@ -1383,85 +1395,475 @@ p = 0.05   odds = 0.052632   z = ln(odds) = -2.944439   back again = 0.050000
 2. **Where would `z = 20` go?** Hard against the top of the sheet, at `p = 0.9999999979`, and **not touching 1.** `e^(−20) = 0.00000000206`, so `p = 1 ÷ 1.00000000206`, which is below 1. It can never touch.
 3. **Furthest apart in `z` versus in `p`?** Orders 1 and 8 are 7.40 apart in `z` but only 0.9405 apart in `p`. Orders 3 and 5 are 1.80 apart in `z` and 0.4211 apart in `p`. **So a `z` gap of 1.8 in the middle buys almost half as much probability as a `z` gap of 7.4 across the whole range.** The middle is steep; the ends are flat. Keep the student's phrasing of this — it is Week 15's opening.
 
-### Page 13.5 — Predict the output
+### Predict the Output — P1 to P5
 
-*Write what each block prints before you run it.*
+**P1.** `1.0` then `2.718281828459045`. Anything to the power zero is 1, for any base at all. And `e^1` is `e` itself — **that line is where the number comes from.** It is not `2.718` and it is not 22/7; it goes on for ever like π.
 
-**P1**
-
-```python
-import numpy as np
-print(np.exp(0))
-print(np.exp(1))
-```
-
-```text
-1.0
-2.718281828459045
-```
-
-`e^0` is 1 for any base. `e^1` is `e` itself — this is where the number comes from.
-
-**P2**
-
-```python
-import numpy as np
-z = np.array([-2.0, 0.0, 1.4, 3.0])
-print(np.round(1.0 / (1.0 + np.exp(-z)), 4))
-```
+**P2.**
 
 ```text
 [0.1192 0.5    0.8022 0.9526]
+(4,)
+(4,)
 ```
 
-**The four numbers from the concept segment, in one line.** Note numpy prints `0.5` and not `0.5000` — trailing zeros are dropped, and that is display, not value.
+**P2(a).** `0.5` and `0.5000` are the **same number.** numpy drops trailing zeros when it prints an array, and it lines the columns up instead. **Display is not value** — the trap of the week.
 
-**P3**
+**P2(b).** The shape did **not** change: `(4,)` both times. **A shape counts items, not what kind of thing they are.** Four numbers in, four words out, same shape. This is the first appearance of a habit you will use for the next twenty weeks: when something is confusing, print the shape.
+
+**P3.** `[0 1 1 1]`.
+
+**P3(a).** The third item went to **1**, and the character that decided it is the `=` in `>=`. With `>` it would have gone to `0`.
+
+**P3(b).** `print(np.where(p > 0.5, 1, 0))` → `[0 1 0 1]`.
+
+**P4.** `['no' 'yes']`. **P4(a).** You can no longer do **arithmetic** on them. They are text. `"yes" + 1` is an error, and `"no" * 2` gives `'nono'`, which is worse than an error because it does not complain.
+
+**P5.** `0.8022`, `0.1978`, `1.0`.
+
+**P5(a).** `sigmoid(z) + sigmoid(−z) = 1`, always. It is "the chance the order is late" plus "the chance it is on time", and those two have to add to one.
+
+**P5(b).** Because it is a test that **fails when the code is wrong.** `sigmoid(0) = 0.5` passes even on a squasher with the sign the wrong way round, so it tests nothing. The mirror test uses a value where wrong and right differ, and it works on every `z` you can think of.
+
+### Practice Set A — Read It (A1 to A6)
+
+**A1.** weight → (iv) · bias → (vi) · logit/raw score → (vii) · sigmoid → (v) · odds → (i) · log-odds → (iii) · overflow → (ii)
+
+**A2.**
+
+| Question | Answer |
+|---|---|
+| a | **Eight orders, two facts each** — orders in the oven, and km to drive. |
+| b | Order 5 is `5` oven and `2` km; order 6 is `4` oven and `5` km. `0.6 × 5 + 0.4 × 2 = 3.8` against `0.6 × 4 + 0.4 × 5 = 4.4`. **The extra 3 km outweighed the extra pizza**, because `0.4 × 3 = 1.2` beats `0.6 × 1 = 0.6`. |
+| c | **Yes.** `0.5000` is not greater than `0.5`, so with `>` order 4 would read "no". **One character moves one order across the line.** |
+| d | The `p` column is the **model's output.** The `late?` column is **your decision**, made by a threshold you chose, on a different line of the program. |
+| e | **No.** The true value is below 1 by an amount with 434 zeros in it, and the machine has no way to store a number that close to 1, so it printed 1.0000. **It has run out of room, not lied.** |
+| f | Between orders **3 and 4**: `0.5000 − 0.2689 = 0.2311`. That is the steep middle of the S. |
+
+**A2(g).** `0.6 × 4 = 2.4`, `0.4 × 5 = 2.0`, `2.4 + 2.0 − 3 = 1.40`.
+
+**A2(h).** **The `p` column.** A probability is always between 0 and 1, so you can draw the axis *before* you have any data, and every model's output will fit on it. The `z` column has no bounds at all — one model's raw scores might run −3 to 4.4 and another's −400 to 900 — so you cannot draw the axis until you have looked. **That is the practical reason for squashing: it makes the output comparable across models, thresholds and days.**
+
+**A3.**
+
+| # | What happens | The fix |
+|:--:|---|---|
+| a | `TypeError: bad operand type for unary -: 'list'`. **You put a minus sign in front of a plain Python list**, and lists cannot be negated. | `z = np.array([1.0, 2.0])`, or let `np.asarray(z, dtype=float)` inside `squash` do it. |
+| b | **No error.** The missing brackets make it `(1.0 ÷ 1.0) + e^(−z)`, which is `1 + e^(−z)`. First value `21.0855`. | `p = 1.0 / (1.0 + np.exp(-z))`. **Say the recipe out loud: "one, divided by, one plus the exponential".** |
+| c | **No error.** The S-curve runs backwards: `sigmoid(1.4)` gives `0.1978`. Every value is `1 −` the right one. | `np.exp(-z)`. Check against `0.8022`, never against `sigmoid(0)`. |
+| d | **No error.** Identical to the correct version on seven of the eight orders, and **different on order 4** — `0.5000` now reads "no". | Decide which you want and write it down. It is not a bug so much as an undocumented choice, which is worse. |
+| e | **No error at first.** `p / 1 - p` is `(p ÷ 1) − p`, which is `0.0` for every `p`. Then `ln(0)` gives `-inf`. | `odds = p / (1 - p)`. **Brackets again** — this is the same bug as (b) wearing a different hat. |
+| f | **No error.** `log10(9) = 0.954243` instead of `ln(9) = 2.197225`. Every raw score is `2.302585` times too small, the ordering is perfect, and the numbers are all wrong. | `np.log`. **`np.log` is `ln`**; `np.log10` is base 10. |
+
+**A3(g).** **Exactly one** — **(a)** — raises a `Traceback` and stops. **(e)** produces a `RuntimeWarning` and keeps going with `-inf` in it. The other four — **(b), (c), (d), (f)** — run to the end in perfect silence with wrong numbers. **That ratio is the point of the page: one loud bug to five quiet ones.**
+
+**A3(h).** `21.0855` is above 1, so it cannot be a probability at all — **no amount of squashing can produce it, so something upstream is not a squash.** The missing characters are a pair of brackets: `1.0 / (1.0 + ...)`.
+
+**A4.** i → **S** · ii → **Q** · iii → **T** · iv → **P** · v → **R**
+
+**A4(f).** `S = 2.0137527074704766` is **M2 row 3's `e^(−z)` column** (`z = −0.70`, so `e^(0.70) = 2.013753`). `Q = [0.5622]` is **M2 row 5's `p` column** (`z = 0.25`). `P = 2.1972245773362196` is **M3 row 1's answer** — `ln(9) = 2.197225`, the log-odds of `p = 0.90`.
+
+**A5.** The eight boxes, top to bottom:
+
+```text
+1.  e^(−1.4)          = 0.246597
+2.  1 + 0.246597      = 1.246597
+3.  1 ÷ 1.246597      = 0.8022        <- p
+4.  0.8022 ≥ 0.5      = yes
+5.  0.90 ÷ 0.10       = 9.000000      <- odds
+6.  ln(9)             = 2.197225      <- z, the logit
+7.  e^(−2.197225)     = 0.111111
+8.  1 ÷ 1.111111      = 0.900000      <- back to p
+```
+
+The panel: `z.shape` for eight orders is **`(8,)`**. `sigmoid(0) = 0.5000`, **exactly**. And **two** of the eight boxes could be a probability: box 3 (`0.8022`) and box 8 (`0.900000`). Box 7 is `0.111111`, which *looks* like a probability but is `e^(−z)` — a step in the middle of a calculation, not a chance of anything.
+
+**A5(a).** Box 3 is the chance that **this order with `z = 1.4` is late.** Box 8 is the chance we **started** with in row 5 — it is `0.90` coming back round after a trip through the odds and the logarithm. **They are unrelated numbers that happen to live on the same page.**
+
+**A5(b).** Box 1 is `e^(−1.4) = 0.246597`; box 7 is `e^(−2.197225) = 0.111111`. **Box 1 is bigger**, and you could say so before computing either, because `e^(−z)` shrinks as `z` grows and `1.4` is less than `2.197225`.
+
+**A6.**
+
+**a)** …**any number at all**; …**between 0 and 1**.
+
+**b)** `e^(−z)`, then **add 1**, then **divide 1 by the answer**.
+
+**c)** `0.5`; `e^0 = 1`; `1 + 1 = 2`; `1 ÷ 2 = 0.5`.
+
+**d)** …**a positive number, however tiny**; …**a little more than 1**, so dividing 1 by it always lands a little under 1.
+
+**e)** first **divide by one minus itself to get the odds**, then **take `ln` of the odds**.
+
+**f)** `e^1000` has **435** digits and there is room for **309**, so the machine stores **`inf`** and prints **`RuntimeWarning: overflow encountered in exp`**.
+
+### Practice Set B — Write It (B1 to B5)
+
+**B1.**
 
 ```python
 import numpy as np
-p = np.array([0.2, 0.6, 0.5, 0.9])
-print(np.where(p >= 0.5, 1, 0))
+
+np.random.seed(0)
+oven = np.array([0, 1, 2, 3, 5, 4, 6, 7])
+km   = np.array([0, 1, 2, 3, 2, 5, 6, 8])
+z = 0.6 * oven + 0.4 * km - 3.0
+print("z      =", z)
+print("shape  =", z.shape)
 ```
 
 ```text
-[0 1 1 1]
+z      = [-3.  -2.  -1.   0.   0.8  1.4  3.   4.4]
+shape  = (8,)
 ```
 
-`np.where` asked the question of every item. **Note `0.5` itself counts as yes**, because the test is `>=`. That is a choice, and a different threshold rule would give `[0 1 0 1]`.
+**Sixteen multiplications and eight additions in one line.** Multiplying a numpy array by a single number multiplies every item; adding two arrays adds them item by item.
 
-**P4**
+**B2.**
+
+```python
+"""b2.py - the squasher that cannot overflow, and the three checks."""
+import numpy as np
+
+np.random.seed(0)
+
+
+def squash(z):
+    z = np.asarray(z, dtype=float)
+    e = np.exp(np.where(z >= 0, -z, z))
+    return np.where(z >= 0, 1.0 / (1.0 + e), e / (1.0 + e))
+
+
+print("squash(0.0)     = %.4f" % squash(0.0))
+print("squash(1.4)     = %.4f" % squash(1.4))
+print("squash(-1000.0) = %.4f" % squash(-1000.0))
+print("squash(1000.0)  = %.4f" % squash(1000.0))
+```
+
+```text
+squash(0.0)     = 0.5000
+squash(1.4)     = 0.8022
+squash(-1000.0) = 0.0000
+squash(1000.0)  = 1.0000
+```
+
+**Why it cannot overflow:** `np.where(z >= 0, -z, z)` strips the sign off, so the number handed to `np.exp` is **always zero or less**, so `e` is always between 0 and 1. A number between 0 and 1 cannot be too big to store.
+
+**B3.**
 
 ```python
 import numpy as np
-print(np.where(np.array([-3.0, 2.0]) >= 0, "yes", "no"))
+
+np.random.seed(0)
+
+
+def squash(z):
+    z = np.asarray(z, dtype=float)
+    e = np.exp(np.where(z >= 0, -z, z))
+    return np.where(z >= 0, 1.0 / (1.0 + e), e / (1.0 + e))
+
+
+z = np.array([-4.0, -1.5, -0.7, 0.0, 0.25, 1.0, 2.5, 6.0])
+print("squash(z)      =", np.round(squash(z), 6))
+print("squash(-z)     =", np.round(squash(-z), 6))
+print("the two added  =", np.round(squash(z) + squash(-z), 6))
+print("all exactly 1? ", bool(np.all(squash(z) + squash(-z) == 1.0)))
 ```
 
 ```text
-['no' 'yes']
+squash(z)      = [0.017986 0.182426 0.331812 0.5      0.562177 0.731059 0.924142 0.997527]
+squash(-z)     = [0.982014 0.817574 0.668188 0.5      0.437823 0.268941 0.075858 0.002473]
+the two added  = [1. 1. 1. 1. 1. 1. 1. 1.]
+all exactly 1?  False
 ```
 
-`np.where` works on words as happily as on numbers. Note the quotes in the output: these are text, not numbers, and you cannot do arithmetic on them.
+**The `False` is the interesting part and it is not a bug in your code.** Seven of the eight pairs add to exactly `1.0`. The eighth — `z = 6.0` — adds to `1.0000000000000002`:
 
-**P5 — the hard one**
+```python
+a = 0.99752737684336534318   # squash(6.0)
+b = 0.00247262315663477478   # squash(-6.0)
+print(repr(a + b - 1.0))
+```
+
+```text
+2.220446049250313e-16
+```
+
+The two halves were computed separately, each rounded to the nearest storable decimal, and the roundings did not cancel. **The gap is two parts in ten thousand million million.** The lesson: **never test decimals with `==`.** Use `np.allclose(squash(z) + squash(-z), 1.0)`, which returns `True`.
+
+**B4.**
 
 ```python
 import numpy as np
-z = 1.4
-print(round(1.0 / (1.0 + np.exp(-z)), 4))
-print(round(1.0 / (1.0 + np.exp(z)), 4))
-print(round(1.0 / (1.0 + np.exp(-z)) + 1.0 / (1.0 + np.exp(z)), 4))
+
+np.random.seed(0)
+print("    p       odds          z = ln(odds)   back again")
+for p in (0.90, 0.62, 0.50, 0.05):
+    odds = p / (1 - p)
+    z = np.log(odds)
+    back = 1.0 / (1.0 + np.exp(-z))
+    print("%5.2f   %10.6f   %12.6f   %10.6f" % (p, odds, z, back))
 ```
 
 ```text
-0.8022
-0.1978
-1.0
+    p       odds          z = ln(odds)   back again
+ 0.90     9.000000       2.197225     0.900000
+ 0.62     1.631579       0.489548     0.620000
+ 0.50     1.000000       0.000000     0.500000
+ 0.05     0.052632      -2.944439     0.050000
 ```
 
-**The third line is exactly 1.0**, and that is not a coincidence: `sigmoid(z) + sigmoid(−z) = 1` always. It is the "chance it is late" plus "chance it is on time". **This is the check that catches a lost minus sign.**
+**B5.**
 
-### Page 13.6 — Match `predict_proba` (done in class)
+```python
+"""b5w13.py - eight orders, forwards to a chance and backwards to a score."""
+import numpy as np
+
+np.random.seed(0)
+
+oven = np.array([0, 1, 2, 3, 5, 4, 6, 7])
+km   = np.array([0, 1, 2, 3, 2, 5, 6, 8])
+
+
+def squash(z):
+    z = np.asarray(z, dtype=float)
+    e = np.exp(np.where(z >= 0, -z, z))
+    return np.where(z >= 0, 1.0 / (1.0 + e), e / (1.0 + e))
+
+
+z = 0.6 * oven + 0.4 * km - 3.0
+p = squash(z)
+odds = p / (1 - p)
+z_again = np.log(odds)
+late = np.where(p >= 0.5, "yes", "no ")
+
+print("order oven   km        z        p      odds   ln(odds)  late?")
+for i in range(8):
+    print("%5d %4d %4d %8.2f %8.4f %9.4f %9.4f    %s"
+          % (i + 1, oven[i], km[i], z[i], p[i], odds[i], z_again[i], late[i]))
+print()
+print("biggest gap between z and ln(odds): %.12f"
+      % float(np.max(np.abs(z - z_again))))
+```
+
+```text
+order oven   km        z        p      odds   ln(odds)  late?
+    1    0    0    -3.00   0.0474    0.0498   -3.0000    no 
+    2    1    1    -2.00   0.1192    0.1353   -2.0000    no 
+    3    2    2    -1.00   0.2689    0.3679   -1.0000    no 
+    4    3    3     0.00   0.5000    1.0000    0.0000    yes
+    5    5    2     0.80   0.6900    2.2255    0.8000    yes
+    6    4    5     1.40   0.8022    4.0552    1.4000    yes
+    7    6    6     3.00   0.9526   20.0855    3.0000    yes
+    8    7    8     4.40   0.9879   81.4509    4.4000    yes
+
+biggest gap between z and ln(odds): 0.000000000000
+```
+
+**Twelve zeros.** The `ln(odds)` column is the `z` column, recovered from the probabilities alone — and the probabilities were the only thing in between. `np.abs` strips the minus sign off every number, so `np.max(np.abs(...))` reads as *"the biggest disagreement, ignoring which way round it was"*.
+
+**Worth noticing:** order 1's odds are `0.0498` and order 7's are `20.0855`, and `1 ÷ 0.0498 = 20.08`. Their `z` values are `−3.00` and `+3.00`. **Mirror scores give reciprocal odds.**
+
+### Fix the Broken Program — three bugs
+
+**Bug 1 — line 7 (`km`). A shape bug.** `km` has only **seven** numbers and `oven` has **eight**. The `8` counts the orders in `oven`; the `7` counts the orders in `km`. numpy has no way to pair them up, so it refuses rather than guessing.
+
+**The fix:** `km = np.array([0, 1, 2, 3, 2, 5, 6, 8])` — the eighth order drives 8 km.
+
+**Bug 2 — line 26. A runtime bug.** `extreme` is a plain Python **list**, and `-extreme` has no meaning: a list can be added to another list, and multiplied by a whole number, but it cannot be negated. **numpy never got a chance to help, because the minus sign was applied before `np.exp` was called.**
+
+**The fix:** `extreme = np.array([-20.0, 20.0])`.
+
+**Bug 3 — line 12, inside `squash`. A silent logic bug.** The two arms of `np.where` are swapped: it says `np.where(z >= 0, z, -z)` where it should say `np.where(z >= 0, -z, z)`.
+
+Order 1 has an empty oven and no distance and the program gives it a **95%** chance of being late, which is nonsense on its face. And `squash(1.4)` gives `0.1978`, where the correct answer is `0.8022`, and `0.1978 + 0.8022 = 1.0000`. **Every probability in the table is `1 −` the right one, so the model's advice is exactly reversed.**
+
+**The fix:** `e = np.exp(np.where(z >= 0, -z, z))`.
+
+**Order 4 reads `0.5000` in both tables** because `z = 0`, and `−0` is `0`. Both arms of the swapped `np.where` hand `np.exp` the same number, so both versions compute `1 ÷ (1 + 1)`. **So a test of `squash(0) == 0.5` would have told you nothing at all** — it passes on the broken code. **A test that cannot fail is not a test.**
+
+**Ranking, hardest first:**
+
+1. **Bug 3, by a mile.** It runs, it prints eight plausible probabilities, and every one is wrong. The only thing that catches it is a hand-computed answer at a `z` that is not zero.
+2. **Bug 2.** A clear message, but it names a Python type rather than your intent, so you have to know that `-list` is meaningless.
+3. **Bug 1, cheapest.** The message literally prints both shapes and you count the numbers. Ten seconds.
+
+### Puzzle of the Week — Parts 1 and 2
+
+**Part 1 — The Ladder.**
+
+| # | `p` | `odds` | `z = ln(odds)` | nearest |
+|:--:|:--:|---|---|:--:|
+| 1 | `0.5000` | `1.000000` | `0.000000` | **0** |
+| 2 | `0.7311` | `2.718855` | `1.000211` | **1** |
+| 3 | `0.8808` | `7.389262` | `2.000028` | **2** |
+| 4 | `0.9526` | `20.097046` | `3.000573` | **3** |
+| 5 | `0.9820` | `54.555556` | `3.999220` | **4** |
+
+**The `z` gaps:** `1`, `1`, `1`, `1`. **The `p` gaps:** `0.2311`, `0.1497`, `0.0718`, `0.0294`.
+
+**The sentence:** **equal steps in `z` buy less and less probability the further out you go.** The first step buys `0.2311`; the fourth buys `0.0294` — about **eight times less** for exactly the same step.
+
+**Would the gaps ever reach zero?** **No.** Each gap is smaller than the one before, and each one is **more than nothing**, because `e^(−z)` is never zero. They shrink for ever and never arrive — the same fact that stops the curve touching 1, seen from the side.
+
+*(The odds column is worth a second look: `1`, `2.72`, `7.39`, `20.10`, `54.56`. Each one is about `2.718` times the last. **Equal steps in `z` multiply the odds by `e` every time.** That is the cleanest single sentence anybody has ever written about the logit.)*
+
+**Part 2 — The Mirror.**
+
+| `z` | `p` | twin `−z` | twin's `p` | add to 1? |
+|:--:|:--:|:--:|:--:|:--:|
+| `1.4` | `0.8022` | `−1.4` | `0.1978` | **yes** |
+| `−4.0` | `0.0180` | `4.0` | `0.9820` | **yes** |
+| `0.0` | `0.5000` | `0.0` | `0.5000` | **yes** |
+
+**Part 2(a).** The `z = 0` row. **Zero is its own negative**, so the row is its own twin, and a number that must add to itself to make 1 has no choice but to be `0.5`. **That is a second, independent proof that `sigmoid(0)` is exactly a half.**
+
+**Part 2(b).** They typed `np.exp(z)` where `np.exp(-z)` was meant (or swapped the two arms of `np.where`, which does the same thing). Their odds column would be the **reciprocal** of the right one: where the correct table has `4.0552` they would have `1 ÷ 4.0552 = 0.2466`, and their `ln(odds)` column would be the correct one with every sign flipped.
+
+### Think Deeper — T1 and T2
+
+**T1 — model answer.** The machine is not lying; it has run out of room. Mathematically `sigmoid(−1000)` is a positive number smaller than anything you could write down in a lifetime, and `sigmoid(1000)` is below 1 by a similarly absurd amount. But the decimals a computer uses have a smallest positive value of about `5e−324`, and the gap between 1 and the next number below it is about `1e−16`. Our two values fall inside those gaps, so **there is no representation other than `0.0` and `1.0`**, and printing anything else would be the lie. The reason to care is what happens next: next week those exact values go into a logarithm, and `ln(0)` is `−inf`, which poisons every average it touches. **For a pizza shop, clipping is the right answer** — one line, `np.clip(p, 1e-12, 1 - 1e-12)`, and no prediction changes by an amount anybody could notice. **For a hospital I would keep `z` and never store `p` at all**, because in log-odds there is no ceiling to hit. Tiny probabilities near 0 are stored finely enough (`1e-7` and `1e-9` stay different), so the trouble is on the near-1 side: a confidence of `1 − 1e-17` and one of `1 − 1e-20` both become exactly `1.0` (and a clip at `1 − 1e-12` merges even more), while `z = 39` and `z = 46` stay *distinguishable* — and in a medical setting telling "very sure" from "extremely sure" can be exactly the thing the model exists to do. The honest summary is that almost all real code clips, because clipping is one line and working in log-odds means rewriting the loss function — and that is a decision about effort, not about correctness.
+
+**T2 — model answer.** With base 2:
+
+```text
+z = 0 :  2^0 = 1         1 ÷ (1 + 1) = 0.500000
+z = 1 :  2^(−1) = 0.5    1 ÷ 1.5     = 0.666667
+z = −1:  2^1 = 2         1 ÷ 3       = 0.333333
+```
+
+**Everything still works.** It is an S, it is bounded by 0 and 1, `z = 0` still gives exactly a half, and `0.666667 + 0.333333 = 1`, so the mirror rule survives. The two curves are not even different shapes — base-2 is the base-`e` curve fed `z × ln(2)` (`ln(2) = 0.6931`) instead of `z`, so it is the same curve stretched sideways by about 1.44 times, which is why the base-2 curve rises more slowly. **So nothing is lost about the model; what is lost is arithmetic two weeks from now.** In Week 15 you need to know how steeply the sigmoid rises at a point, and with base `e` that steepness comes out as `p × (1 − p)` — a number you already have on the page, requiring no new work. With base 2 you get the same thing multiplied by `0.6931`, for ever, in every line. **My judgement: yes, that is a good enough reason**, and it is worth being clear about why. It is not that `e` is magic. It is that a constant you carry through ten thousand lines of arithmetic is ten thousand chances to drop it, and choosing the base that makes the constant equal to 1 removes all of them. Engineers choose conventions that delete whole categories of mistake, and this is one.
+
+### Build It — The Overflow Experiment (Parts A and B, the two sentences, extra credit, Bug Log)
+
+**The complete files**, for the prep checklist and so you can run them yourself. `overflow.py`:
+
+```python
+"""overflow.py - the naive squasher, then the safe one, side by side."""
+import numpy as np
+
+
+def naive(z):
+    return 1.0 / (1.0 + np.exp(-z))
+
+
+def safe(z):
+    z = np.asarray(z, dtype=float)
+    negative_part = np.where(z >= 0, -z, z)
+    e = np.exp(negative_part)
+    return np.where(z >= 0, 1.0 / (1.0 + e), e / (1.0 + e))
+
+
+print("       z         naive          safe")
+for zi in (-1000.0, -20.0, 0.0, 1.4, 20.0, 1000.0):
+    print("%8.1f  %.10f  %.10f" % (zi, naive(zi), safe(zi)))
+```
+
+`why_safe.py`:
+
+```python
+import numpy as np
+
+print("what the naive way asks for at z = -1000:")
+print("   e^(-z) = e^(1000) =", np.exp(1000.0))
+print("   1 / (1 + inf)     =", 1.0 / (1.0 + np.exp(1000.0)))
+print()
+print("what the safe way asks for at z = -1000:")
+print("   e^(-|z|) = e^(-1000) =", np.exp(-1000.0))
+print("   that / (1 + that)   =", np.exp(-1000.0) / (1.0 + np.exp(-1000.0)))
+print()
+print("and the sting in the tail, which is next week's problem:")
+print("   ln(0.0) =", np.log(0.0))
+```
+
+**Part A — real output of `overflow.py`.** The warning arrives **above** the table in this captured output, because warnings go to a different output stream from `print` and `print` is buffered when output is piped (in a live terminal it may appear between the header and the first row; either is normal):
+
+```text
+overflow.py:6: RuntimeWarning: overflow encountered in exp
+  return 1.0 / (1.0 + np.exp(-z))
+       z         naive          safe
+ -1000.0  0.0000000000  0.0000000000
+   -20.0  0.0000000021  0.0000000021
+     0.0  0.5000000000  0.5000000000
+     1.4  0.8021838886  0.8021838886
+    20.0  0.9999999979  0.9999999979
+  1000.0  1.0000000000  1.0000000000
+```
+
+| `z` | `naive(z)` | `safe(z)` | same? | warning? |
+|:--:|---|---|:--:|:--:|
+| `−1000.0` | `0.0000000000` | `0.0000000000` | yes | **yes** |
+| `−20.0` | `0.0000000021` | `0.0000000021` | yes | no |
+| `0.0` | `0.5000000000` | `0.5000000000` | yes | no |
+| `1.4` | `0.8021838886` | `0.8021838886` | yes | no |
+| `20.0` | `0.9999999979` | `0.9999999979` | yes | no |
+| `1000.0` | `1.0000000000` | `1.0000000000` | yes | no |
+
+**Every answer in the two columns is identical.** Only the route differed. The warning fired **once**, on the first row, because that is the only row where the naive version was asked for a positive power big enough to overflow. *(numpy reports a given warning once per line of code, so a second overflow on the same line prints nothing — which is another reason not to live with warnings.)*
+
+**Part B — real output of `why_safe.py`:**
+
+```text
+why_safe.py:4: RuntimeWarning: overflow encountered in exp
+  print("   e^(-z) = e^(1000) =", np.exp(1000.0))
+why_safe.py:5: RuntimeWarning: overflow encountered in exp
+  print("   1 / (1 + inf)     =", 1.0 / (1.0 + np.exp(1000.0)))
+why_safe.py:12: RuntimeWarning: divide by zero encountered in log
+  print("   ln(0.0) =", np.log(0.0))
+what the naive way asks for at z = -1000:
+   e^(-z) = e^(1000) = inf
+   1 / (1 + inf)     = 0.0
+
+what the safe way asks for at z = -1000:
+   e^(-|z|) = e^(-1000) = 0.0
+   that / (1 + that)   = 0.0
+
+and the sting in the tail, which is next week's problem:
+   ln(0.0) = -inf
+```
+
+| Asked for | Got |
+|---|---|
+| `e^(1000)` | `inf` |
+| `1 ÷ (1 + inf)` | `0.0` |
+| `e^(−1000)` | `0.0` |
+| `that ÷ (1 + that)` | `0.0` |
+| `ln(0.0)` | `-inf` |
+
+**The two sentences, full marks:**
+
+> **One.** The naive version was asked for `e^1000`, a number with 435 digits, and the biggest number this kind of decimal can hold has 309 — so it could not store it and stored `inf` instead, which is what the warning was about.
+>
+> **Two.** The two-branch version flips the sign before the exponential, so the power is never positive, `e^(−1000)` is a tiny number rather than an enormous one, and nothing ever exceeds what the machine can hold.
+
+**The honest extra credit.** **No, `0.0` is not right** — the sigmoid never reaches 0. **What the fix fixed was the warning and the `inf` in the middle of the calculation. It did not fix the zero at the end**, which is a different problem with a different cause: `e^(−1000)` is smaller than the smallest storable decimal, so it rounds down. That zero walks into a logarithm next week.
+
+**Common wrong answers.** *"The second one is more stable"* — no number in it, half marks. *"The naive one gave the wrong answer"* — **it did not**; it gave `0.0`, the same as the safe one. **The naive version's crime is the warning and the infinity in the middle, not the final value.**
+
+**Bug Log, filled in:**
+
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `RuntimeWarning: overflow encountered in exp` | A number too big to store, so `inf` was stored | `np.exp` was handed `+1000` | Two-branch `squash`, so the power is never positive |
+| No error; every `p` was `1 −` the right one | The S-curve is running backwards | The two arms of `np.where` swapped, or `np.exp(z)` for `np.exp(-z)` | Check `squash(1.4) == 0.8022`, **never** `squash(0)` |
+
+### Draw It
+
+A good drawing has: **four fat dots at (−2, 0.1192), (0, 0.5000), (1.4, 0.8022) and (3, 0.9526)**; one smooth S through them; the crossing at `z = 0` ringed and annotated *"exactly 0.5"*; an arrow at each end saying *"gets closer, never arrives"*; and both axes named in words — **raw score** along the bottom, **chance** up the side.
+
+**The four answers:**
+
+- **It crosses at `z = 0` exactly**, and you know it is exact because `e^0 = 1`, `1 + 1 = 2`, `1 ÷ 2 = 0.5` — there is no rounding in that sum to hide behind.
+- At the two ends: *"flattening towards 0 and 1, never touching either"*.
+- `z = 0` to `z = 1`: `0.7311 − 0.5000 = 0.2311`. `z = 3` to `z = 4`: `0.9820 − 0.9526 = 0.0294`. **Nearly eight times less for the same step.**
+- **`(0, 0.5000)`.** It is the one point you can place from the three-line sum in your head.
+
+### Self-Check
+
+All ten statements should be 😀 or 🙂 by now. If **"explain why `sigmoid(0)` is exactly 0.5"** is 😕, go back to M2(a) and write the three lines out again — next week's most useful number, `0.6931`, is built directly on that one being exact rather than approximate.
+
+### In-class demo, not in the workbook — `real_data.py` (the `predict_proba` payoff)
+
+The workbook has **no section** for this: it is the teacher-run payoff segment of the lesson (live-code, objective 2). Its three questions are asked aloud in class, so they are answered here and not on any workbook page.
 
 *Fit a logistic regression, take its weights out, and reproduce its probabilities yourself.*
 
@@ -1533,7 +1935,7 @@ w = [ 3.6298 -0.5546]   b = -0.7127
 biggest disagreement over all 200 rows: 0.000000000000
 ```
 
-**The three questions on the page:**
+**The three questions asked in class:**
 
 **(a) Check row 0 by hand.**
 
@@ -1555,92 +1957,6 @@ The screen says `0.899268`; we got `0.8992645`. **The gap of three parts in a mi
 
 The weight on feature 1 is `+3.6298` and on feature 2 is `−0.5546`. So **feature 1 pushes hard towards class 1, and feature 2 pushes gently towards class 0.** The honest caveat, and full marks needs it: **weights are only comparable when the features are on the same scale.** These came out of `make_classification`, which produces roughly standardised columns, so here the comparison is fair. On raw data it would not be — which is Week 4's whole point.
 
-### Page 13.7 — The overflow experiment (homework)
-
-*Compute `sigmoid(−1000)` the naive way, paste what happens, then do it the two-branch way, and explain the difference in two sentences.*
-
-The complete file:
-
-```python
-"""overflow.py - the naive squasher, then the safe one, side by side."""
-import numpy as np
-
-
-def naive(z):
-    return 1.0 / (1.0 + np.exp(-z))
-
-
-def safe(z):
-    z = np.asarray(z, dtype=float)
-    negative_part = np.where(z >= 0, -z, z)
-    e = np.exp(negative_part)
-    return np.where(z >= 0, 1.0 / (1.0 + e), e / (1.0 + e))
-
-
-print("       z         naive          safe")
-for zi in (-1000.0, -20.0, 0.0, 1.4, 20.0, 1000.0):
-    print("%8.1f  %.10f  %.10f" % (zi, naive(zi), safe(zi)))
-```
-
-Real output. **Note that the warning appears above the table in this captured output** — warnings go to a different output stream from `print`, and `print` is buffered when output is piped, so they are not interleaved in the order you would expect. In a live terminal the warning may instead appear between the header and the first row; both are normal:
-
-```text
-overflow.py:6: RuntimeWarning: overflow encountered in exp
-  return 1.0 / (1.0 + np.exp(-z))
-       z         naive          safe
- -1000.0  0.0000000000  0.0000000000
-   -20.0  0.0000000021  0.0000000021
-     0.0  0.5000000000  0.5000000000
-     1.4  0.8021838886  0.8021838886
-    20.0  0.9999999979  0.9999999979
-  1000.0  1.0000000000  1.0000000000
-```
-
-**The extra diagnostic block on the page** — save it as `why_safe.py` — which is what makes the two sentences answerable:
-
-```python
-import numpy as np
-
-print("what the naive way asks for at z = -1000:")
-print("   e^(-z) = e^(1000) =", np.exp(1000.0))
-print("   1 / (1 + inf)     =", 1.0 / (1.0 + np.exp(1000.0)))
-print()
-print("what the safe way asks for at z = -1000:")
-print("   e^(-|z|) = e^(-1000) =", np.exp(-1000.0))
-print("   that / (1 + that)   =", np.exp(-1000.0) / (1.0 + np.exp(-1000.0)))
-print()
-print("and the sting in the tail, which is next week's problem:")
-print("   ln(0.0) =", np.log(0.0))
-```
-
-```text
-why_safe.py:4: RuntimeWarning: overflow encountered in exp
-  print("   e^(-z) = e^(1000) =", np.exp(1000.0))
-why_safe.py:5: RuntimeWarning: overflow encountered in exp
-  print("   1 / (1 + inf)     =", 1.0 / (1.0 + np.exp(1000.0)))
-why_safe.py:12: RuntimeWarning: divide by zero encountered in log
-  print("   ln(0.0) =", np.log(0.0))
-what the naive way asks for at z = -1000:
-   e^(-z) = e^(1000) = inf
-   1 / (1 + inf)     = 0.0
-
-what the safe way asks for at z = -1000:
-   e^(-|z|) = e^(-1000) = 0.0
-   that / (1 + that)   = 0.0
-
-and the sting in the tail, which is next week's problem:
-   ln(0.0) = -inf
-```
-
-**The two sentences, full marks version:**
-
-> The naive version was asked for `e^1000`, a number with 435 digits, and the biggest number a float64 can hold has 309 — so it could not store it and stored `inf` instead, which is what the warning was about. The two-branch version flips the sign before the exponential, so the power is never positive, `e^(−1000)` is a tiny number rather than an enormous one, and nothing ever exceeds what the machine can hold.
-
-**The honest extra credit**, and worth a line of praise if anybody writes it unprompted:
-
-> Both versions still return exactly `0.0`, which cannot be right, because the sigmoid never reaches 0. The fix stopped the warning; it did not stop the zero.
-
-**Marking notes.** The commonest wrong answer is *"the second one is more stable"* with no number in it. Ask back: **"which number overflowed, and how big was it?"** The second commonest is claiming the naive version gave a *wrong answer* — it did not, it gave `0.0`, same as the safe one. **The naive version's crime is the warning and the `inf` in the middle, not the final value**, and being precise about that is what separates level 3 from level 4.
 
 ### Answers to every question posed in the lesson
 

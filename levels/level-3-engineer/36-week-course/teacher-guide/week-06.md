@@ -17,7 +17,7 @@ This table is the week on one page: what is taught, how long it takes, and what 
 | **New maths** | **None new.** Today re-uses the median from Level 2 and the subtraction of two scores from Week 5. One median is worked out by hand on 1,140 numbers by counting to the middle. |
 | **New syntax** | `SimpleImputer(strategy="median")` · `add_indicator=True` · `pipe.named_steps["prep"]` |
 | **Dataset** | The Week 1 pizza-delivery table (`make_data.py`, seed 0) with one poisoned column joined onto it by a supplied file, `support_calls.py` · a 3,000-row drifting table generated inline with numpy (seed 0) · a 200×2,000 table of **pure noise** (seed 0). **Nothing downloads.** |
-| **Materials** | Printed workbook pages 6.1–6.6 · printed copies of `mystery.py`'s output (one each) · **a whiteboard divided into three columns headed `target` / `temporal` / `preprocessing`** · a red pen · a timer that can do twelve minutes · the Bug Log |
+| **Materials** | The printed Week 6 workbook (`workbook/week-06.md`, printed **without** the Answers section at its end) · plain paper for the Crime Scene notes · printed copies of `mystery.py`'s output (one each) · **a whiteboard divided into three columns headed `target` / `temporal` / `preprocessing`** · a red pen · a timer that can do twelve minutes · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, scikit-learn. **No new installs.** `make_data.py` from Week 1 must still be in the folder, unchanged. You must place `support_calls.py` and `noise_leak.py` in the folder before class — full text in the Prep Checklist. |
 | **Prep time** | 25 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | Every script this week runs in **about one second**. `fill_blanks.py` 0.8 s · `leak_hunt.py` 0.9 s · `temporal.py` 0.8 s · `noise_leak.py` 0.8 s · `deploy.py` 0.9 s. If anything runs for a minute, something else is wrong. |
@@ -439,7 +439,7 @@ def attach_support_calls(df):
     return df.assign(customer_called_support=called.astype(int))
 ```
 
-**3. (5 min) Create and run `fill_blanks.py`.** Complete file in the **🔑 Answer Key**, page 6.4. Run it and check you get exactly this:
+**3. (5 min) Create and run `fill_blanks.py`.** Complete file in the **🔑 Answer Key**, under **📁 The teacher scripts** (`fill_blanks.py`). Run it and check you get exactly this:
 
 ```text
 --- where the holes are ---
@@ -469,7 +469,7 @@ its weight: -0.1609
 
 **Runtime: about 0.8 seconds.** 60 + 25 + 21 = 106. ✅
 
-**4. (5 min) Create and run `mystery.py` and `leak_hunt.py`.** Both complete in the Answer Key, pages 6.3 and 6.5. `mystery.py` is what the student is handed at the start of the Crime Scene — **print one copy of its output per student and nothing else.**
+**4. (5 min) Create and run `mystery.py` and `leak_hunt.py`.** Both complete in the Answer Key: `mystery.py` under **🕵️ The Crime Scene**, `leak_hunt.py` under **📁 The teacher scripts**. `mystery.py` is what the student is handed at the start of the Crime Scene — **print one copy of its output per student and nothing else.**
 
 ```text
 columns going into the model: 21
@@ -478,7 +478,7 @@ validation roc_auc  : 0.9762
 Week 5's best honest score was 0.7843.  Congratulations?
 ```
 
-**5. (4 min) Create and run `temporal.py`.** Complete file in the Answer Key, page 6.5. Expected:
+**5. (4 min) Create and run `temporal.py`.** Complete file in the Answer Key, under **📁 The teacher scripts** (`temporal.py`). Expected:
 
 ```text
 RANDOM split AUC  0.8139   <- what you would report
@@ -486,11 +486,12 @@ TIME   split AUC  0.5249   <- what production will give you
 the gap           0.2890
 ```
 
-**6. (4 min) Create and run `noise_leak.py`.** Complete file in the Answer Key, page 6.6. It contains **both halves** — the leaky route and the fixed route — so one run prints both numbers, and you must get `0.765` and then `0.520`. The homework asks the student to comment out the wrong half and prove the right half on its own, which is why the file is built this way.
+**6. (4 min) Create and run `noise_leak.py`.** Complete file in the Answer Key, under **📁 The teacher scripts** (`noise_leak.py`). It contains **both halves** — the leaky route and the fixed route — so one run prints both numbers, and you must get `0.765` and then `0.520`. The homework asks the student to comment out the wrong half and prove the right half on its own, which is why the file is built this way.
 
 **7. (4 min) Print and set up.**
 
-- Workbook pages **6.1–6.6**.
+- The Week 6 workbook, printed **without its Answers section** (sections: Warm-Up, Do the Maths by Hand, Predict the Output, Practice Set A and B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It, Draw It, Self-Check).
+- Plain paper, one sheet each, for the Crime Scene notes — the workbook has no page for them.
 - **One printed copy of `mystery.py`'s output per student.** Nothing else printed for the Crime Scene — no code, no hints.
 - The whiteboard divided into **three columns**, headed `target`, `temporal`, `preprocessing`, each with three empty rows underneath labelled *what it is · fake score · honest score*. Leave it empty and visible.
 - A timer. The Crime Scene is **twelve minutes** and it needs to be twelve.
@@ -641,7 +642,7 @@ the two middle ones are number 570 and number 571:
 | "Which of the three is a bug in a *column*, and which are bugs in *how you cut*?" | Target is a column. Temporal and preprocessing are both about the cut. | If they get it backwards, walk it through once more with the three headings on the board. This distinction is the spine of the week. |
 | "0.8139 and 0.5249. Which of those is the lie?" | 0.8139. | If they say 0.5249 "because it's worse", press: "which of the two matches how we'll actually use it?" |
 | "Why is 'the median of all the rows' a leak if the median is only one number?" | Because that number was partly computed from rows you were about to be marked on. | If they say "it's basically the same number anyway", agree — and promise them a case where it is worth 24 points. Do not resolve it yet. |
-| "Name the tell for each flavour." | *Is it filled in yet? · Do the rows have a date? · Was it fitted before the cut?* | Write all three on the board and leave them up. They go on the workbook page. |
+| "Name the tell for each flavour." | *Is it filled in yet? · Do the rows have a date? · Was it fitted before the cut?* | Write all three on the board and leave them up. They go on the student's Build It page (the three-repairs table and its tells). |
 | "Could a leak ever make your score go *down*?" | **This one is genuinely open.** | Take the discussion. The honest answer is in the Questions section: contrived cases exist, but if you find one in the wild you almost certainly have a different bug. Do not fake certainty. |
 
 ---
@@ -904,7 +905,7 @@ This section gives the full set-up and running order of the week's activity.
 - one printed copy of `mystery.py`'s output — **the four lines and nothing else**;
 - one printed list of the 21 column names going into the model;
 - a laptop with the delivery folder on it;
-- workbook page 6.3, which is a blank investigation sheet.
+- a sheet of plain paper to write the investigation on (the workbook has no page for the Crime Scene; the student lists each check and its result, including dead ends).
 
 The whiteboard still says `Week 5's best honest score: 0.7843`. Set the timer for twelve minutes.
 
@@ -1000,7 +1001,7 @@ RIGHT - the choosing is inside the Pipeline
 >
 > And now the important half: look at what fixes it. One line moved. The choosing goes **inside** the `Pipeline`, so it only ever sees training rows. Not 'be more careful'. **Move the line, and the bug becomes impossible to write.** That is what a `Pipeline` is actually for, and it took you six weeks to find out."
 
-**What "finished" looks like:** the three-column board table full — nine cells, each flavour with its tell, its fake score and its honest score. Every student's page 6.3 carries at least three checks they ran, including the ones that went nowhere.
+**What "finished" looks like:** the three-column board table full — nine cells, each flavour with its tell, its fake score and its honest score. Every student's investigation sheet carries at least three checks they ran, including the ones that went nowhere.
 
 ---
 
@@ -1091,7 +1092,7 @@ One sentence: it splits the rows into five piles, trains five times, and gives y
 
 | What happens | Why | What to do right now |
 |---|---|---|
-| Somebody blurts out "it's the support-call column" in minute two | The name is a giveaway and bright students read column lists fast. | Have this planned. Say warmly: *"Right. Now prove it four different ways, and don't tell anyone else."* Give them page 6.3 as a prosecution brief. **Do not let the room hear it** — eleven other people still have ten minutes of real work to do. |
+| Somebody blurts out "it's the support-call column" in minute two | The name is a giveaway and bright students read column lists fast. | Have this planned. Say warmly: *"Right. Now prove it four different ways, and don't tell anyone else."* Give them a blank investigation sheet as a prosecution brief. **Do not let the room hear it** — eleven other people still have ten minutes of real work to do. |
 | You help during the twelve minutes | Watching a student flounder is genuinely uncomfortable and you will want to nudge. | **Sit on your hands.** The discovery has to be theirs; a leak found for you is a fact, a leak found by you is a habit. One neutral prompt maximum, and only after four minutes of nothing. |
 | The class decides the lesson is "don't use bad columns" | It is the easiest available summary and it is nearly useless. | Push back with the hospital ward column: it was a real column, correctly recorded, joined correctly. **The lesson is about timing, not badness.** Make them say the word "when". |
 | Nobody believes the noise result | It is genuinely unbelievable. Disbelief is the correct first reaction. | **Feed it.** Open the file together and read the two lines that make the data: `rng.normal` for X, `rng.integers` for y, drawn separately, never compared. Then have somebody change the seed and watch 76.5% become some other equally impossible number. Belief has to be earned here. |
@@ -1232,97 +1233,580 @@ This section says what to assign at the end of class and how to introduce it.
 
 **Say this:**
 
-> "About an hour. Three pages, and page 6.5 is the one I'm marking.
+> "About an hour, and the part I'm marking is **Build It** at the back of the workbook. Everything else in the workbook is practice that leads up to it — do it first if you want the numbers to come easily.
 >
-> **Page 6.4 — the imputation.** Fill in the 106 blanks properly, with a median learned from the training rows only, and print `statistics_` to prove which number it learned. Then add the missing indicator, ablate it exactly the way you learned last week, and write the delta to four decimal places. **If it loses, delete it and write down the number** — a new tool does not get an exemption.
+> **Build It, the imputation.** Fill in the 106 blanks properly, with a median learned from the training rows only, and print `statistics_` to prove which number it learned. Write down the number you were *not* allowed. Then add the missing indicator, ablate it exactly the way you learned last week, and write the delta to four decimal places. **If it loses, delete it and write down the number** — a new tool does not get an exemption.
 >
-> **Page 6.5 — three leakage repairs, and this is the marked one.** One row per flavour. Each row needs: the flavour's name, one sentence on what the bug was, **the fake number and the honest number side by side**, and the subtraction written out. Target, temporal, preprocessing. Three rows, six numbers, three subtractions.
+> **Build It, the three repairs — this is the marked one.** One row per flavour. Each row needs: the flavour's name, one sentence on what the bug was, **the fake number and the honest number side by side**, and the subtraction written out. Target, temporal, preprocessing. Three rows, six numbers, three subtractions.
 >
-> **Page 6.6 — the noise experiment.** Run `noise_leak.py` and paste the whole output — both halves, all ten fold scores. Then run it a second time with the leaky half commented out, to prove to yourself that the honest half stands on its own. Then two things in your own words: **how can a table with nothing in it score 76.5%**, and **which of the three flavours would be hardest to spot at a real job, and why?**
+> **Build It, the noise experiment.** Run `noise_leak.py` and paste the whole output — both halves, all ten fold scores. Then run it a second time with the leaky half commented out, to prove to yourself that the honest half stands on its own. Then the two paragraphs in your own words: **how can a table with nothing in it score 76.5%**, and **which of the three flavours would be hardest to spot at a real job, and why?** And two entries in the Bug Log, one loud and one silent.
 >
 > That last question has no single right answer and I will mark you on the reason, not the choice."
 
-**Workbook pages:** 6.1, 6.2, 6.3 in class · **6.4, 6.5, 6.6** at home.
+**Workbook sections:** in class — **Predict the Output** (P1–P4, in pen, before running anything) and, if time allows, **Practice Set A, A1** (match the words) · at home — **Build It** (marked), then the rest of the workbook over the week: **Warm-Up**, **Do the Maths by Hand**, **Practice Set A and B**, **Fix the Broken Program**, **Puzzle of the Week**, **Think Deeper**, **Draw It**, **Self-Check**. The Crime Scene is done in class on plain paper and is not in the workbook. *(The whole workbook is more than an hour of work; the hour below is the marked Build It only, and the other sections are for the student to work through before Week 7, checking against the workbook's own Answers section.)*
 
-**Expected time:** 15 min on the imputation and the indicator ablation · 20 min on the three repairs and their six numbers · 15 min running the noise experiment and reading it · 10 min writing the two paragraphs. **About 60 minutes.**
+**Expected time (Build It):** 15 min on the imputation and the indicator ablation · 20 min on the three repairs and their six numbers · 15 min running the noise experiment and reading it · 10 min writing the two paragraphs. **About 60 minutes.**
 
-> **🧑‍🏫 What to look for when you mark it:** four things. **One — are there two numbers on every row of 6.5?** A repair with only the honest number is not a repair, it is a claim. The fake number is the evidence that there was something to fix. **Two — is the subtraction written out?** Same rule as Week 5: the number is the deliverable, not the decision. **Three — does the noise paragraph blame the *selection* rather than the *model*?** "The model overfitted" is the commonest wrong answer and it misses the whole point; the model never saw 2,000 columns. **Four — the hardest-to-spot answer.** A student who picks **preprocessing** and argues that a leak worth −0.0000 can never be found by measurement has produced the best answer in the class. A student who picks **temporal** and argues that it needs no bad column at all, just a shuffle, is equally right. A student who picks **target** because "it's the biggest" has missed the question — the loud one is the easy one.
+> **🧑‍🏫 What to look for when you mark it:** four things. **One — are there two numbers on every row of the three-repairs table?** A repair with only the honest number is not a repair, it is a claim. The fake number is the evidence that there was something to fix. **Two — is the subtraction written out?** Same rule as Week 5: the number is the deliverable, not the decision. **Three — does the noise paragraph blame the *selection* rather than the *model*?** "The model overfitted" is the commonest wrong answer and it misses the whole point; the model never saw 2,000 columns. **Four — the hardest-to-spot answer.** A student who picks **preprocessing** and argues that a leak worth −0.0000 can never be found by measurement has produced the best answer in the class. A student who picks **temporal** and argues that it needs no bad column at all, just a shuffle, is equally right. A student who picks **target** because "it's the biggest" has missed the question — the loud one is the easy one.
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone. **All code below was run; all output is real.**
+Organised in the **same order as the student workbook** (`workbook/week-06.md`), using its own section names and item labels (W1, M1, P1, A1, B1 …), with every question restated so you can mark from this page alone. Every workbook section has an entry. The values are the ones in the workbook's own *Answers* section; the numeric ones were re-run or recomputed while this key was being aligned. The complete teacher scripts (`mystery.py`, `fill_blanks.py`, `leak_hunt.py`, `deploy.py`, `temporal.py`, `silent.py`, `noise_leak.py`) are at the end of the key, under **🕵️ The Crime Scene** and **📁 The teacher scripts**. **All code below was run; all output is real.**
 
-### Page 6.1 — Match the word to the thing
+> **📌 The workbook has no numbered pages.** Earlier drafts of this guide called its sections "Page 6.1 … 6.6". Those labels never existed in the workbook. Use the section names below. The workbook also has **no blank investigation sheet** for the Crime Scene — the student records their checks on plain paper (see **🕵️ The Crime Scene**, below).
 
-| Word | Description |
+### ✅ Warm-Up (five from last week)
+
+| # | Question | Answer |
+|---|---|---|
+| **W1** | Name the four shapes of invented column, with a one-word example of each. | **FLAG** (`is_rush`) · **BIN** (`hour_band`) · **RATIO** (`min_per_km`) · **INTERACTION** (`dist_x_weather`). |
+| **W2** | `pd.cut(..., bins=[10, 14, 17, 20, 23], ...)` on hours that start at 10. No error. What went wrong, how many rows? | `pd.cut` reads `(10, 14]` as "bigger than 10, up to and including 14", and **hour 10 is not bigger than 10.** All **47** orders placed at 10:00 fell out of the bins and became `NaN` — no error, no warning. Fix: start the first edge below the minimum (`bins=[9, ...]`) and `print(int(s.isna().sum()))` every time. |
+| **W3** | Round `+0.0018` and `−0.0014` to two decimal places. Why a disaster? | `0.00` and `0.00`. One means keep and one means delete; rounding erases the answer, and the sign matters more than the size. |
+| **W4** | A new feature's delta is **exactly** `0.0000`. What does that almost always mean, and what is the one line? | The model **never saw the feature** — it was created but not added to the `ColumnTransformer`'s list, so it was silently dropped. The line: `print(pipe.named_steps["prep"].get_feature_names_out())`, then count. |
+| **W5** | `d["prep_minutes"] / (d["distance_km"] + 0.5)`: what is `+ 0.5` for, and what error without it? | A **guard** against dividing by zero. Without it a `distance_km` of 0 gives `inf`, then `ValueError: Input X contains infinity or a value too large for dtype('float64')`. Pick a constant and write down that you picked it. |
+
+**Marking tip:** W3 and W4 are the two that catch people. A student who writes "0.00 and 0.00, so they're the same" has got the numbers right and missed the point — ask them which one you would keep.
+
+### 🔢 Do the Maths by Hand
+
+No new maths this week: the median, three subtractions, two divisions, and the fold-score averages. Calculator only.
+
+**M1 — the median, by counting to the middle.** Eight pupils, sleep hours `5.0, 6.0, blank, 7.0, 9.0 | blank, 12.0, 10.0` (first five rows are train, last three validation).
+
+```text
+values present in train, lined up:  5.0  6.0  7.0  9.0
+
+that is 4 numbers. 4 is even, so there is no single middle one.
+the two middles are number 2 and number 3, which are 6.0 and 7.0
+( 6.0 + 7.0 ) ÷ 2 = 6.5
+
+values present in the whole table:  5.0  6.0  7.0  9.0  10.0  12.0
+that is 6 numbers, so the two middles are number 3 and number 4, which are 7.0 and 9.0
+( 7.0 + 9.0 ) ÷ 2 = 8.0
+```
+
+- **M1(a)** Which two pupils caused the difference, and which pile? **Gus (12.0) and Hana (10.0)**, both in the **validation** pile. Using 8.0 would write into Cleo's row a number partly computed from two pupils you are about to be marked on.
+- **M1(b)** Cleo → **6.5**, Fay → **6.5**. Same number because **the imputer does not re-learn on new rows — it applies the number it already remembers.** `.fit` on train, `.transform` on everything.
+- **M1(c)** Train mean: 27.0 ÷ 4 = **6.75**. Whole-table mean: 49.0 ÷ 6 = **8.1667**. Both moved; the medians by 1.5, the means by 1.4167. Put a 100 in instead of the 12 and the mean runs away while the median barely moves — that is why the median.
+- **M1(d)** 1140 is even, so the two middles are number **570** and number **571**; (29 + 30) ÷ 2 = **29.5**. Whole table: (29 + 29) ÷ 2 = **29.0**. The two candidates are **29.0 and 29.5**; the student is allowed **29.5**.
+
+**M2 — three subtractions.**
+
+```text
+target        : 0.9762 − 0.7752 = 0.2010
+temporal      : 0.8139 − 0.5249 = 0.2890
+preprocessing : 0.765  − 0.520  = 0.245
+```
+
+- **M2(a)** 0.2011 ÷ 0.0091 = **22.1**. Twenty-two times as much from one column, in four seconds, as two honest features bought in a whole lesson. That ratio is the alarm.
+- **M2(b)** The rule: **round the printed result, never the inputs.** 0.976231884 − 0.775163997 = 0.2010678…, which rounds to **0.2011**; subtracting the two rounded numbers gives 0.2010. It changes no verdict, but say so when it happens instead of quietly writing a different number from the machine's. *(This is why the key gives the target gap as 0.2010 in the hand subtraction and 0.2011 everywhere the machine printed it. Accept either from the student if they say why.)*
+- **M2(c)** All three make the score go **up**, which is why leakage is nearly the only kind of bug that gets applauded. A bug that makes your number worse gets fixed on Tuesday; one that makes it better gets a presentation and six months in production being wrong.
+
+**M3 — two divisions that convict a column.**
+
+```text
+12 + 540 = 552 orders had a support call
+540 ÷ 552 = 0.9783
+
+1413 + 35 + 12 + 540 = 2000
+1413 + 540 = 1953
+1953 ÷ 2000 = 0.9765
+```
+
+- **M3(a)** Hospital: 11 + 187 = **198** biopsies booked; 187 ÷ 198 = **0.9444** malignant.
+- **M3(b)** The two big numbers sit on **one diagonal** and the other two are tiny — what "this column is nearly a photocopy of the answer" looks like.
+- **M3(c)** 0.942 ÷ 0.345 = **2.73** · 3.482 ÷ 0.804 = **4.33**. **The crosstab needs the fewest keystrokes** — one line, four seconds, no model.
+
+**M4 — five fold scores, twice.**
+
+```text
+WRONG: 0.875 + 0.750 + 0.800 + 0.725 + 0.675 = 3.825    3.825 ÷ 5 = 0.765
+RIGHT: 0.425 + 0.475 + 0.600 + 0.425 + 0.675 = 2.600    2.600 ÷ 5 = 0.520
+
+0.765 − 0.520 = 0.245 of pure invention
+```
+
+- **M4(a)** An honest method should give about **0.500**; it gave **0.520**, twenty thousandths off on 40 rows a fold — the size of wobble to expect. 0.520 is what "nothing there" looks like.
+- **M4(b)** **0.675** appears in both. It means **nothing** — a coincidence between two lists of five noisy numbers.
+- **M4(c)** Drift: week 0 → 2.0 − 0 = **2.0** · week 15 → 2.0 − 1.95 = **0.05** · week 29 → 2.0 − 3.77 = **−1.77**. It has **reversed**: a model trained on a shuffled mixture of all thirty weeks has no way to express a knob whose true value changed sign.
+
+**Marking tip:** the commonest slip is M1 Step 2 — counting the whole table as 8 numbers (blanks included) and taking the 4th and 5th. There are 6 present values. A second slip is answering M1(b) "Fay gets 8.0" — that is the leak itself.
+
+### 🔎 Predict the Output
+
+**P1 — asking before it has looked.** The first snippet (`print(imp.statistics_)` on an unfitted imputer) **stops with an error**:
+
+```text
+Traceback (most recent call last):
+  File "/private/tmp/w56/p6/p1a.py", line 7, in <module>
+    print(imp.statistics_)
+AttributeError: 'SimpleImputer' object has no attribute 'statistics_'
+```
+
+With `imp.fit(col)` added:
+
+```text
+statistics_: [6.5]
+filled     : [5.  6.  6.5 7.  9. ]
+if mean    : [6.75]
+```
+
+Present values 5, 6, 7, 9 → median **6.5**, mean **6.75**. **The trailing underscore means "I learnt this from data."** The `AttributeError` is the library saying "I have not looked at any data yet"; nothing in scikit-learn ending in `_` exists before `.fit`, so an `AttributeError` on such a name has exactly one cause.
+
+**P2 — shapes.** Blanks: `sleep` 1, `screen` 1, total **2**.
+
+```text
+in shape     : (5, 2)
+plain out    : (5, 2)
+flagged out  : (5, 4)
+[[5.  2.  0.  0. ]
+ [6.  4.  0.  1. ]
+ [6.5 4.  1.  0. ]
+ [7.  4.  0.  0. ]
+ [9.  8.  0.  0. ]]
+```
+
+It is `(5, 4)` and not `(5, 3)` because there is **one indicator column per column that had a blank**, and both columns had one. The **indicators go on the end**, not beside the column they describe: columns 0–1 are the filled `sleep` and `screen`, column 2 flags `sleep` blanks (the 1 in row 3), column 3 flags `screen` blanks (the 1 in row 2). On the delivery table this is why 20 becomes 21 rather than the indicator appearing beside `driver_experience_months`.
+
+**P3 — the same column, two piles.**
+
+```text
+values present in train : [5.0, 6.0, 7.0, 9.0]
+values present in all   : [5.0, 6.0, 7.0, 9.0, 10.0, 12.0]
+train-only median : 6.5
+whole-table median: 8.0
+train-only mean   : 6.75
+whole-table mean  : 8.1667
+```
+
+*Is silent dropping right here?* For **computing a statistic, yes** — you cannot include a blank in a median. It would be wrong to report "the median of 8 pupils" when you used 6. **Dropping blanks to compute a number is fine; dropping blanks to make a problem go away is not; the difference is whether you print the count.** Gaps: medians **1.5**, means **1.4167**. The mean is more affected by Gus's 12 in principle (every value drags it), but here both move by almost the same amount because 10 and 12 both sit above the old middle. With a 100 instead of the 12 the mean would jump to 22.8 and the median would not move.
+
+**P4 — read a crosstab you have never seen.**
+
+```text
+late   : 0  0  1  1  0  1  0  1  1  0
+called : 0  0  0  1  1  1  0  1  1  0
+              ^     ^
+            index 2  index 4
+```
+
+```text
+late    0  1
+called      
+0       4  1
+1       1  4
+orders with a call : 5
+of those, late     : 4
+agreement count    : 8 out of 10
+the column on its own, AUC: 0.8
+```
+
+`called[2] = 0` created the **`called 0 / late 1`** cell (a late order nobody rang about); `called[4] = 1` created the **`called 1 / late 0`** cell (somebody rang about an order that was not late). Those two cells are all that stops the column being a perfect photocopy; on the real table they hold 35 and 12 out of 2,000.
+
+**The scoreboard ("___ / 18")** is self-reported and not marked; there is no answer to give. **Marking tip for P1:** a student who ticks "it prints a number" has not yet absorbed that `_` means fitted. Do not tell them — have them run it.
+
+### ✍️ Practice Set A — Read It
+
+**A1 — match the word to the thing.** imputation → **ii** · missing indicator → **v** · data leakage → **vii** · target leakage → **vi** · temporal leakage → **iii** · preprocessing leakage → **i** · NaN → **iv**.
+
+| Word | Letter | Description |
+|---|---|---|
+| **imputation** | ii | Filling a blank with a number worked out from the rows you are allowed to look at. |
+| **missing indicator** | v | An extra 0/1 column recording that the original value was blank. |
+| **data leakage** | vii | Information that will not be available at the moment you have to predict. |
+| **target leakage** | vi | A column that only gets filled in because the outcome already happened. |
+| **temporal leakage** | iii | Shuffling rows across a time boundary, so the model trains on the future. |
+| **preprocessing leakage** | i | A statistic worked out over all the data before the split. |
+| **NaN** | iv | How a computer writes "not a number". |
+
+**A2 — trace the shapes.**
+
+```text
+df.shape                                        (2000, 11)
+X.shape                                         (2000, 9)
+X_tr.shape                                      (1200, 9)
+X_tr[NUM].shape                                 (1200, 5)
+imp.statistics_.shape                           (5,)
+imp.transform(X_tr[NUM]).shape                  (1200, 5)
+with add_indicator=True, statistics_.shape      (5,)
+with add_indicator=True, transform shape        (1200, 6)
+len(get_feature_names_out()), plain             20
+len(get_feature_names_out()), add_indicator     21
+len(get_feature_names_out()), + leaky column    21
+```
+
+`df` has 11 columns because the support-call column was joined on; `X` has 9 because `late` and `order_id` came off.
+
+- **A2(a)** The two 21s: with `add_indicator=True` the 21st column is **`num__missingindicator_driver_experience_months`** (a 0/1 blank flag — honest); with the leaky column the 21st is **`num__customer_called_support`** (a sixth real numeric column — a disaster). Same count, so print the **names**, not just the number.
+- **A2(b)** `statistics_` holds **one fill-in number per column**; the indicator is a *record of where the filling happened*, not a fill-in number. Five columns still means five statistics, while the output gains a sixth column.
+
+**A3 — spot the bug.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `ValueError: Input X contains NaN.` plus a long paragraph; the model cannot multiply by a blank | `SimpleImputer(strategy="median")` in the numeric branch. The fix is written inside the message |
+| b | `ValueError: Cannot use median strategy with non-numeric data: could not convert string to float: 'clear'` | send word columns down the categorical branch, or `strategy="most_frequent"` |
+| c | `AttributeError: 'ColumnTransformer' object has no attribute 'statistics_'` — you asked the box, not the thing inside it | `...named_transformers_["num"].named_steps["impute"].statistics_` |
+| d | `KeyError: 'pre'` | use the exact stage name; `print(pipe.named_steps.keys())` lists them |
+| e | **No error.** Blanks filled with the **whole-table** median, 29.0, partly computed from the 800 rows you are marked on. Worth **−0.0000** here | let the imputer inside the `Pipeline` do it, fitted on train rows only → **29.5** |
+| f | **No error.** The 20 columns were chosen while looking at every label, so cross-validation is scoring a cheat sheet. **0.765 on pure noise** | put the `SelectKBest` **inside** the `Pipeline` → **0.520** |
+
+- **A3(g)** **e** and **f** give no traceback. **e is more dangerous**: f is worth +0.245 and anyone who checks against "what should an honest method score?" finds it; e is worth −0.0000, so no measurement will reveal it — only reading *where* the statistic was computed.
+- **A3(h)** Flavour: **preprocessing leakage.** e: **0.7751 against 0.7752** (gap −0.0000, from `silent.py`). f: **0.765 against 0.520** (gap +0.245). Same bug, one thousand times the consequence; the strength depends on how many chances the leak had to find a lucky coincidence.
+
+**A4 — match the code to the output.** i → **S** (106) · ii → **R** (`[ 2.91  4.   14.   18.   29.5 ]`) · iii → **T** (21) · iv → **P** (0.9556) · v → **Q** (`[1413   35   12  540]`).
+
+- **A4(a)** One column reaching 0.9556 on its own is not a feature — it is a label with a different name on it. If any honest column moved that closely with the thing you are predicting, nobody would need a model. Compare `distance_km` alone: 0.6800.
+- **A4(b)** The one this week cares about is **29.5** (the fifth, `driver_experience_months`). The number you are **not** allowed is **29.0**, the whole-table median, because 800 of the rows behind it are rows you are about to be marked on.
+
+**A5 — four audit reports, four verdicts.**
+
+| Report | Verdict | Why |
+|---|---|---|
+| 1 — `customer_called_support` | **TARGET LEAKAGE — drop it.** | Fastest convincing audit: **the crosstab** — one line, no model, 540 of 552 is unmistakable. The 0.942 is just as damning; accept either if the student says *why*. |
+| 2 — `distance_km` | **KEEP — it is honest.** | A big gap is not evidence of leakage. The address is known the moment the order is placed, and it is nowhere near a photocopy: over 5 km is late 0.5521 of the time, so **45% of long trips arrive on time**. A leaked column does not leave 45% of its rows disagreeing. |
+| 3 — `order_hour` | **KEEP — the Week 5 lesson in audit clothing.** | `0.064` and `0.5358` both look for a steady one-way trend; the effect of the hour is a **hump** (0.374 at 18:00, 0.196 at 22:00). Neither sees a hump; the two-group rates do (0.3682 against 0.2424). A low correlation can mean you are measuring the wrong way. |
+| 4 — `biopsy_booked` | **TARGET LEAKAGE — drop it.** | A biopsy gets booked *because* somebody read the scan and was worried. |
+
+- **A5(a)** The question: **"At the moment I need the prediction, does this value exist?"** `distance_km` → **yes** (the address exists the instant somebody clicks ORDER). `biopsy_booked` → **no** (only after a radiologist has read the scan). It needs no data, no code and no maths.
+- **A5(b)** Keeping one number can hide a catastrophe: AUC fell 0.15 and looked survivable; recall fell from 87.5% to 6.25% (60 women with malignant tumours told they were fine). A leaky column can look respectable in one metric while ruinous in another — which is why next week is about four numbers instead of one.
+
+**A6 — fill in the three flavours** (Figure W6.1, the blank diagram).
+
+```text
+TARGET         tell: "is it filled in yet?"            0.9762 / 0.7752  gap 0.2011
+TEMPORAL       tell: "do the rows have a date?"        0.8139 / 0.5249  gap 0.2890
+PREPROCESSING  tell: "was it fitted before the cut?"   0.765  / 0.520   gap 0.245
+
+the question no computer can answer:
+  "At the moment I need the prediction, does this value exist?"
+  For customer_called_support the answer is No.
+```
+
+- **A6(a)** Self-marked ("which boxes did you get wrong?"); check against the block above.
+- **A6(b)** **Temporal and preprocessing** are bugs in **how you cut**; target is a bug **in a column**. The two cutting bugs have a *structural* fix (everything that learns from data goes inside the `Pipeline`; split by time when rows have a time); the column bug needs a human to ask a question about the world.
+
+### ✍️ Practice Set B — Write It
+
+**B1 — count the holes, find the two numbers.** Expected output:
+
+```text
+blanks: whole 106  train 60  val 25  test 21
+they add up to: 106
+median of the WHOLE table: 29.0
+median of the TRAIN rows : 29.5
+the one I am allowed     : 29.5
+```
+
+60 + 25 + 21 = 106 ✅. Roughly 60% of the blanks landed in the pile that is 60% of the rows, as a random split should do. Done looks like two different medians on screen at once. (`fill_blanks.py` under **📁 The teacher scripts** prints all of this.)
+
+**B2 — walk the address into a fitted pipeline.**
+
+```python
+prep = pipe.named_steps["prep"]
+print("stage names   :", list(pipe.named_steps.keys()))
+print("branch names  :", list(prep.named_transformers_.keys()))
+imp = prep.named_transformers_["num"].named_steps["impute"]
+print("statistics_   :", imp.statistics_)
+print("the one I care about:", imp.statistics_[4])
+```
+
+```text
+stage names   : ['prep', 'model']
+branch names  : ['num', 'cat']
+statistics_   : [ 2.91  4.   14.   18.   29.5 ]
+the one I care about: 29.5
+```
+
+**B2(a)** `prep` is a **`ColumnTransformer`** — the box that *contains* the imputer — so it has no `statistics_` of its own. Read the address aloud: the pipeline's `prep` stage, its `num` branch, that branch's `impute` step, and what it learned.
+
+**B3 — the fastest audit there is.**
+
+```text
+late                        0    1
+customer_called_support           
+0                        1413   35
+1                          12  540
+calls: 552  of those late: 540
+540 / 552 = 0.9783
+the column agrees with the answer 1953 times out of 2000
+```
+
+**B3(a)** A crosstab of a continuous column against the answer would have hundreds of rows. Cut it into two or three groups and compare the rates: `df.groupby(df["distance_km"] > 5)["late"].agg(["size", "mean"])` gives 0.2167 against 0.5521. Same audit, one extra step.
+
+**B4 — ablate the missing indicator.**
+
+```text
+add_indicator=False cols= 20  accuracy=0.7600  roc_auc=0.7752
+add_indicator=True  cols= 21  accuracy=0.7550  roc_auc=0.7723
+0.7723 - 0.7752 = -0.0029
+the new column is called: num__missingindicator_driver_experience_months
+its weight: -0.1609
+```
+
+Worse, so it goes: a new tool does not get an exemption. Honest caveat: −0.0029 on 400 validation rows is inside the wobble of a 400-row measurement, so retest with cross-validation in Week 11. **B4(a)** 60 × 0.15 = **9** late deliveries. The whole "enormous" 0.1447 gap is made of nine events, and `make_data.py` chose the blanks with a coin flip, so there is no rookie-driver story to find — the gap is noise wearing a costume.
+
+**B5 — `noise_shrink.py`.** A whole program the student writes (about 20 lines):
+
+```python
+"""noise_shrink.py - fewer columns, fewer lucky coincidences."""
+import numpy as np
+from sklearn.feature_selection import SelectKBest, f_classif
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import StratifiedKFold, cross_val_score
+from sklearn.pipeline import Pipeline
+
+cv = StratifiedKFold(5, shuffle=True, random_state=0)
+print("columns   fake    honest   invented")
+for ncols in [2000, 500, 200, 50]:
+    rng = np.random.default_rng(0)
+    X = rng.normal(size=(200, ncols))
+    y = rng.integers(0, 2, size=200)
+    X20 = SelectKBest(f_classif, k=20).fit_transform(X, y)
+    wrong = cross_val_score(LogisticRegression(max_iter=1000), X20, y, cv=cv).mean()
+    pipe = Pipeline([("select", SelectKBest(f_classif, k=20)),
+                     ("model", LogisticRegression(max_iter=1000))])
+    right = cross_val_score(pipe, X, y, cv=cv).mean()
+    print(f"{ncols:>7d}   {wrong:.3f}   {right:.3f}    {wrong - right:+.3f}")
+```
+
+```text
+columns   fake    honest   invented
+   2000   0.765   0.520    +0.245
+    500   0.735   0.505    +0.230
+    200   0.700   0.540    +0.160
+     50   0.635   0.615    +0.020
+```
+
+Runtime about 1 second. Check: the `StratifiedKFold` is created **once outside the loop**, and `invented` shrinks all the way down.
+
+- **B5(a)** More columns means more **chances** for a column of noise to line up with the coin flip by luck, so the best 20 of 2,000 look far more convincing than the best 20 of 50 — none of which has anything to do with the data meaning anything.
+- **B5(b)** **No, the bug is not gone at 50 columns** — the code is exactly as wrong. The honest score there is **0.615**, so the invented part is only **+0.020**. The bug has not changed; its consequence has. A leak's danger depends on how many chances it had. *(Honest caveat from the workbook: this is one seed, and the 0.615 is itself a lucky draw on noise whose true answer is 0.5. Averaged over 20 seeds the 50-column leak is worth about +0.085 and the 2,000-column leak about +0.28. The slide from large to small is real; the exact size of the last row is not.)*
+
+### 🐞 Fix the Broken Program
+
+`broken06.py` has **three** bugs: one runtime, one attribute, one silent logic.
+
+> **Line numbers.** Counting the listing exactly as printed in the workbook (docstring = line 1), the three offending lines are **28** (`("num", StandardScaler(), NUM)`), **37** (the `statistics_` print) and **14** (the `NUM = [...]` list, with `"customer_called_support"` on line 15). The workbook's own *Answers* say "line 30" and "line 40" for the first two, taken from the file the author ran, which had a few extra lines. **Accept either**; mark the *kind* of bug and the fix, not the line number.
+
+**Bug 1 — a runtime bug.** No imputer in the numeric branch, and `driver_experience_months` has holes. Error: `ValueError: Input X contains NaN.` The seven words that are the fix: **"by using an imputer transformer in a pipeline"**. The error message contains the answer; most people stop at the red word. Fix:
+
+```python
+    ("num", Pipeline([("impute", SimpleImputer(strategy="median")),
+                      ("scale", StandardScaler())]), NUM),
+```
+
+Blanks in the column: **106**; in the training pile: **60**.
+
+**Bug 2 — an attribute bug.** `AttributeError: 'ColumnTransformer' object has no attribute 'statistics_'`. The first four words name the type: `prep` is a **`ColumnTransformer`**, the box that *contains* the imputer. Fix:
+
+```python
+pipe.named_steps["prep"].named_transformers_["num"].named_steps["impute"].statistics_
+```
+
+**Bug 3 — a silent logic bug:** `customer_called_support` is in `NUM`. It runs, prints a lovely score, and is **target leakage.** The three tells in the three-line output:
+
+1. **`columns going into the model: 21`** — should be 20 (five numeric plus fifteen one-hot). There is a sixth numeric column in there.
+2. **`roc_auc : 0.9762`** — nineteen points above last week's best honest 0.7843, when last week's two surviving honest features bought +0.0091 between them. When one change moves the score by more than about 0.05, stop and audit.
+3. **`statistics_` has SIX numbers, the sixth is `0.`** — one per numeric column, so six numbers means six numeric columns; a median of 0 says most rows have no call, which is what a column that only fills in after a failure looks like.
+
+The question that settles it: *"At the moment I need the prediction — the moment a customer clicks ORDER — has that customer already rung up to complain about a delivery that has not arrived yet?"* **No.** The fix: remove **`"customer_called_support"`** from **`NUM`**. After all three fixes:
+
+```text
+columns going into the model: 20
+validation roc_auc : 0.7752
+the fill-in number it learned: [ 2.91  4.   14.   18.   29.5 ]
+```
+
+**Ranking, easiest to hardest: bug 1, bug 2, bug 3.** Bug 1 stopped the program and the fix was inside the message ("an error that shouts is a good day"). Bug 2 also stopped the program and named the wrong object type. Bug 3 printed three tidy lines and a wonderful score; nothing would ever have stopped the student handing it in, and shipped, it would have caught **2 late deliveries out of 115**. **The sentence:** a bug that makes your number worse gets fixed on Tuesday afternoon because somebody is annoyed; a bug that makes it better gets a presentation and six months in production being wrong — which is why good news gets audited harder than bad news.
+
+### 🧩 Puzzle of the Week — The Timing Detective
+
+| # | Column | Exists at prediction time? | When does it appear? |
+|---|---|---|---|
+| 1 | `driver_experience_months` | **yes** | a fact about the driver, already true before the order exists |
+| 2 | `customer_called_support` | **no** | about an hour later, and **only if the delivery was late** |
+| 3 | `ward_moved_to` | **no** | after a doctor has already decided the patient needs intensive care |
+| 4 | `mock_exam_mark` | **yes**, if the mock happened before you predict | in the spring term, weeks before the summer exam |
+| 5 | `summer_revision_hours` | **arguable** | during the revision period, which may be after you wanted the prediction |
+| 6 | `total_repaid_so_far` | **no**, as written | grows for the whole life of the loan, including after the default |
+
+- **Part 1(a)** **Number 5.** You would need to be told **when you are making the prediction**. In April, after revision is over, it is a legal column; in September, when you want to offer help early, it does not exist yet — and how much revision they will do is partly a consequence of what you are predicting. The question is not "is this column allowed?" but "is it allowed at the moment I predict?"
+- **Part 1(b)** It is **temporal**: the value is measured at a point in time that may be **after** your prediction moment. Nothing about the column is dishonest; the bug is in **when** you read it.
+- **Part 1(c)** **`total_repaid_so_far_as_at_the_moment_of_prediction`** — a snapshot frozen at the decision date, stored with the date you read it, not a running total that keeps updating. Any column that keeps changing after the outcome is a leak in waiting.
+
+**Part 2 — work backwards.**
+
+```text
+target        : 0.9762 − 0.2011 = 0.7751     (the printed honest number is 0.7752)
+temporal      : 0.8139 − 0.2890 = 0.5249
+preprocessing : 0.520  + 0.245  = 0.765
+```
+
+The target one comes out 0.7751 rather than 0.7752 — the rounding lesson again; working backwards from rounded numbers recovers the answer to about ±0.0001. Accept 0.7751 or 0.7752 if the student says why.
+
+- **Part 2(a)** **The temporal one, 0.5249.** 0.5000 is what a model that knows nothing scores — a coin flip. The time split is reporting a model no better than guessing, because the rule it learned from the past has reversed.
+- **Part 2(b)** The threshold is about **0.05**; +0.06 is above it, so **audit**. Real features arrive in units of 0.005. Four audits and one question take under ten minutes; being wrong in production for eight months does not.
+- **Part 2(c)** **There is no clean answer, and that is the point.** Somebody joined two correct tables, another built a model on the result, a third approved it. Every step was reasonable, so there is no individual to blame and therefore none who will spontaneously fix it — which is why you need audits that run whether or not anyone suspects anything, and a model card naming every column and when it is filled in. **Leakage is a design accident, not dishonesty.** (The student keeps this answer for Week 34.)
+
+### 🤔 Think Deeper
+
+Marked on the reasoning, not a single right answer. A full-marks answer contains these moves.
+
+**T1 — the −0.0000 bug against the +0.245 bug.**
+
+- **The −0.0000 one is more dangerous**, which is counter-intuitive. The +0.245 bug announces itself: anybody who asks "what should an honest method score on a table with nothing in it?" finds it in a minute. The −0.0000 bug cannot be found by **any** measurement; you find it only by reading where the statistic was computed.
+- **It will not stay worth −0.0000.** The same line was worth +0.245 on 2,000 columns, and `noise_shrink.py` shows the consequence sliding from +0.245 to +0.020 on that seed (about +0.28 to +0.09 averaged over 20 seeds) purely on how many chances the leak had. A loaded gun pointing at the floor.
+- **The fix is structural, not moral.** "Be more careful" fails under deadlines, new colleagues and 200-line files. Putting everything that learns from data inside the `Pipeline` means the bug cannot be expressed.
+- **Is carefulness ever right?** Yes — for "does this value exist at prediction time?", because no structure can answer it; that question is about the world. Structure for the bugs a computer can see, discipline for the ones only a person can.
+
+**T2 — nobody made a mistake, so whose job?**
+
+- The mistake was that **nobody's job description included the question** "when does this column get its value?"; a question that belongs to nobody gets asked by nobody.
+- **A checklist** anyone can run: (1) print every column name and write when each gets filled in — before, at, or after the prediction; (2) any "after" column is deleted, no argument; (3) for every 0/1 column print the crosstab against the answer — if two cells hold nearly everything, stop; (4) if the score is more than about 0.05 better than the previous honest model, stop and run step 1 again; (5) do the rows have a date? Then also split by time and report both numbers.
+- **Can you make people follow "good news gets audited harder"?** Not by asking — good news is when people are least motivated to look. It has to be **built into the tools**: the script that reports the score also prints the four audits and the column timing table every time, with no flag to switch it off.
+
+### 🛠️ Build It — Three Repairs, Six Numbers, One Noise Table
+
+**This is the marked section** — the three things handed in are the imputation with `statistics_` printed, the three repairs with fake and honest numbers side by side, and the two paragraphs. Step-checklist answers:
+
+| Step | What a correct entry has |
 |---|---|
-| **imputation** | Filling a blank with a number worked out from the rows you are allowed to look at. |
-| **missing indicator** | An extra 0/1 column recording "the original value here was blank", kept beside the filled-in value. |
-| **data leakage** | When a column contains information that would not be available at the moment you actually have to predict. |
-| **target leakage** | A column that only exists, or only gets filled in, because the outcome already happened. |
-| **temporal leakage** | Shuffling rows across a time boundary, so the model trains on the future and is tested on the past. |
-| **preprocessing leakage** | Any statistic worked out over all the data before the split — a mean, a median, a choice of which columns to keep. |
+| 1 | First `order_id` is **100955** (`make_data.py` unchanged). |
+| 2 | Blank counts **whole 106 · train 60 · val 25 · test 21**, adding to **106**. |
+| 3 | `statistics_` printed with **29.5** in it; the number not allowed is **29.0**. |
+| 4 | Indicator ablated; delta written with its sign: **−0.0029**. |
+| 5–7 | Repairs 1–3: two numbers, the subtraction, and the one-sentence tell (below). |
+| 8 | `noise_leak.py` run once, all ten fold scores pasted, both totals (3.825, 2.600) and both means (0.765, 0.520). |
+| 9 | `noise_leak.py` run again with the leaky half removed, with two sentences on what was expected. |
+| 10 | Two Bug Log entries, one loud and one silent (below). |
 
-### Page 6.2 — Predict the output (answered in pen, in class)
-
-**(a)** `SimpleImputer(strategy="median")` fitted and applied to the column `[10.0, 20.0, NaN, 40.0]`. What comes out, and what is `statistics_`?
-
-```text
-[10. 20. 20. 40.]  statistics_: [20.]
-```
-
-The three values present are 10, 20, 40; the middle one is **20**, so 20 goes into the blank.
-
-**(b)** The same imputer with `add_indicator=True`, on a two-column table:
-
-| exp | dist |
-|---|---|
-| 10.0 | 1.0 |
-| 20.0 | 2.0 |
-| NaN | 3.0 |
-| 40.0 | 4.0 |
+**The imputation** (a worked model answer):
 
 ```text
-[[10.  1.  0.]
- [20.  2.  0.]
- [20.  3.  1.]
- [40.  4.  0.]]
-shape in: (4, 2)  shape out: (4, 3)
+blanks: whole 106  train 60  val 25  test 21      add up to 106 ✅
+
+statistics_ : [ 2.91  4.   14.   18.   29.5 ]
+
+the number I am allowed  : 29.5   (the median of the 1,140 training values present)
+the number I am NOT       : 29.0   (the median of all 1,894 values present)
+where the difference came from: the 800 validation-and-test rows, which I am
+   about to be marked on and am therefore not allowed to learn anything from.
 ```
 
-Two columns in, **three** out. The indicator goes **on the end**, not beside the column it describes. The `1` marks row three.
+**The arithmetic the student must be able to reproduce:**
 
-**(c)** Training rows are `[10.0, 20.0, 40.0, NaN]`; the whole table is `[10.0, 20.0, 40.0, NaN, 2.0, 4.0]`. Which median may the imputer learn, and what is the other one?
+- 60 + 25 + 21 = **106.** Every blank is accounted for.
+- **The median, by hand.** 1,200 train rows − 60 blanks = **1,140 with a value.** 1,140 ÷ 2 = 570, so the two middles are number 570 (**29**) and number 571 (**30**). (29 + 30) ÷ 2 = **29.5.**
+- **The whole-table median.** 2,000 − 106 = **1,894 with a value.** Both middles are 29, so the median is **29.0** — the number the imputer is *not* allowed to learn.
+- **The indicator ablation.** 0.7723 − 0.7752 = **−0.0029.** Delete it.
+- **Column count.** 5 numeric + 15 one-hot = 20 without the indicator; 21 with it.
+
+| | cols | accuracy | roc_auc |
+|---|---|---|---|
+| `add_indicator=False` | 20 | 0.7600 | 0.7752 |
+| `add_indicator=True` | 21 | 0.7550 | 0.7723 |
 
 ```text
-train median: 20.0   whole median: 10.0
+the subtraction: 0.7723 − 0.7752 = −0.0029     verdict DELETE
 ```
 
-It may learn **20.0**. The whole-table median is 10.0 and using it would be preprocessing leakage — a number partly worked out from rows you are going to be marked on.
+*Why didn't it pay?* The lateness rates were 0.15 (blank) against 0.2947 (present), a gap of 0.1447, but with 60 blank training rows the 0.15 is made of **nine** late deliveries, and `make_data.py` chooses the blanks with a coin flip. The column's fitted weight (−0.1609) is the model dutifully learning from nine events.
 
-**(d)** 1,140 training rows have a value for `driver_experience_months`. The 570th and 571st in sorted order are 29 and 30. What is the median, and why is it not a whole number?
+**The deletion note that earns full marks:**
 
-**(29 + 30) ÷ 2 = 29.5.** 1,140 is even, so there is no single middle value; you split the difference between the two middles.
+> **Feature:** the missing indicator on `driver_experience_months`.
+> **What I thought it would do:** if the paperwork is worse for brand-new drivers, then "this field is blank" is itself a clue about who the driver was.
+> **AUC without it:** 0.7752 · **AUC with it:** 0.7723 · **the delta:** 0.7723 − 0.7752 = **−0.0029**
+> **Why I am deleting it:** it made the model worse. The blanks in this table were chosen at random by `make_data.py` — you can read the line that does it — so there is no story about rookie drivers hiding in there. The 60 blank training rows do look less late (0.15 against 0.2947), but that is nine late deliveries out of sixty and it is noise.
+> **Honest caveat:** −0.0029 on 400 validation rows is inside the wobble. Retest with cross-validation in Week 11.
 
-**(e)** `pipe.named_steps["prep"].statistics_`, where `"prep"` is a `ColumnTransformer`. What happens?
+**The three repairs:**
+
+| Flavour | What the bug was | Fake score | Honest score | The subtraction |
+|---|---|---|---|---|
+| **target** | `customer_called_support` is only filled in after the delivery has already arrived late — a bug in a **column** | **0.9762** | **0.7752** | 0.9762 − 0.7752 = **0.2011** |
+| **temporal** | 3,000 rows across 30 weeks, split at random, so next month's rows were in the training pile — a bug in **how you cut** | **0.8139** | **0.5249** | 0.8139 − 0.5249 = **0.2890** |
+| **preprocessing** | 20 of 2,000 columns chosen while looking at every label — a bug in **how you cut** | **0.765** | **0.520** | 0.765 − 0.520 = **0.245** |
+
+The tells, as one-sentence answers: **target** — *"Is it filled in yet?"* A customer rings up after the pizza is late; at the moment of ORDER the column is empty for every row. **Timing question, one sentence:** at the moment somebody clicks ORDER, no customer has rung up. **temporal** — *"Do the rows have a date, and will I deploy forward in time?"* If both, split by time; the random split reports a working model, the time split reports roughly a coin flip, and **the time split is the one that matches how the thing will be used.** **preprocessing** — *"Was the statistic fitted before the cut?"* A median, a mean, a ranking, a choice of columns; you cannot detect it from the score, only from where the statistic was computed. (`leak_hunt.py`, `temporal.py`, `silent.py` and `deploy.py` under **📁 The teacher scripts** produce every number in this table.)
+
+**The noise experiment, run 1:**
 
 ```text
-AttributeError: 'ColumnTransformer' object has no attribute 'statistics_'
+WRONG five scores: 0.875  0.750  0.800  0.725  0.675
+       total 3.825  ÷ 5 = 0.765
+
+RIGHT five scores: 0.425  0.475  0.600  0.425  0.675
+       total 2.600  ÷ 5 = 0.520
+
+the invented score: 0.765 − 0.520 = 0.245
+98 + 102 = 200 ✅  the label really is a coin flip
 ```
 
-The `prep` stage is the box that *contains* the imputer. The full address is `pipe.named_steps["prep"].named_transformers_["num"].named_steps["impute"].statistics_`.
-
-**(f)** A model was fitted with `customer_called_support` in its column list. A new order arrives without that column. What happens?
+**Run 2 — the leaky half removed.** Expected and seen: only the honest half prints, with **exactly the same five scores and the same 0.520**, because removing the leaky *report* does not change the honest number — the two halves never interacted.
 
 ```text
-ValueError: columns are missing: {'customer_called_support'}
+RIGHT - the choosing is inside the Pipeline
+  five scores: [0.425 0.475 0.6   0.425 0.675]
+  their total: 2.600   divided by 5: 0.520   <- the truth
 ```
 
-**And that error is the whole lesson**: the pipeline is telling you the column cannot exist at prediction time.
+If the honest number *does* change, something else is wrong — most likely the generator was re-seeded in between, or the `cross_val_score` call was moved. A correct measurement should not care what else is in the file.
 
-### Page 6.3 — The Crime Scene investigation sheet (in class)
+**Paragraph 1 — "How can a table with nothing in it score 76.5%?" The answer that earns full marks:**
+
+> There are 2,000 columns, so there are 2,000 chances for a column of noise to line up with the coin flip by luck. Some of them do, very well — that is what 2,000 tries buys you, and it has nothing to do with the data meaning anything. When the best 20 are chosen *while looking at all 200 labels*, the model is handed the columns that happen to match the exact rows it is about to be marked on. **The model did nothing wrong; the choosing did.** Moving the selection inside the `Pipeline` means it only ever sees the training rows of each fold, and the score falls to 0.520 — which is what "nothing there" looks like.
+
+**What does not earn full marks:** "the model overfitted." The model never saw 2,000 columns. Push the student to name **who chose the twenty**.
+
+**Paragraph 2 — "Which flavour would be hardest to spot at a real job?" Three defensible answers:**
+
+| Choice | The argument | Verdict |
+|---|---|---|
+| **preprocessing** | It produces **no error and no measurable score change** — ours cost −0.0000. You cannot find by measurement a bug that does not move the measurement. You can only find it by reading where the statistic was computed. | **The strongest answer.** |
+| **temporal** | It needs no bad column at all. Every column is honest, every value is true, and the bug is a single call to `train_test_split` that looks exactly like the right thing to do. | **Equally strong.** |
+| **target** | Real tables have hundreds of columns, most of them undocumented, and nobody knows when each one gets filled in. | Defensible **only** with the "hundreds of undocumented columns" reasoning. "Because it's the biggest" misses the question — the loud one is the easy one. |
+
+A model student paragraph: *"Preprocessing, because it is the only one you cannot find by measuring. On my delivery table it was worth −0.0000 — the wrong version scored 0.7751 and the right one 0.7752 — so no experiment I could run would ever reveal it. Target leakage announces itself with a suspiciously good score, and temporal leakage shows up the moment you also report a time split. Preprocessing leakage shows up as nothing at all, until the day somebody runs the same code on a table with 2,000 columns and it is suddenly worth 0.245."*
+
+**Optional extension — the temporal hunt on the student's own table.** Real numbers:
+
+```text
+RANDOM split AUC : 0.7462
+TIME   split AUC : 0.8018      (cut at order_id 101499, 1500 train / 500 test)
+the gap          : −0.0556
+```
+
+The finding is that **nothing bad happens — the time split is actually higher.** That is strong evidence of no drift (a drifting world would make the time split *worse*). `make_data.py` uses the same rule for row 1 and row 2000, so there is nothing to leak, and the ±0.05 is the noise of two different 500-row test piles. A negative result explained is worth more than a positive one guessed. *(Not re-run while aligning this key; the figures are the workbook's.)*
+
+**The Bug Log — two entries, one loud and one silent:**
+
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `ValueError: Input X contains NaN.` plus a long paragraph | the model cannot multiply by a blank | no imputer in the numeric branch | `SimpleImputer(strategy="median")`. The fix was inside the message |
+| `roc_auc : 0.9762`, `21` columns, and a `statistics_` array with **six** numbers. **No error at all** | a column that will not exist at prediction time is in my feature list | `customer_called_support` in `NUM` | drop the column. **Run the four audits on good news, not just on bad news** |
+
+### 🎨 Draw It
+
+- **Panel 1 — the prediction moment comes FIRST.** Somebody clicks ORDER and you need the prediction that instant. `customer_called_support` gets its value **about an hour later**, and **only if the delivery was late** and the customer is annoyed enough to ring — two separate later events, which the model is trained on as though they were the click. The real gap is about an hour.
+- **Panel 2 — the two recalls are 0.9217 in the lab and 0.0174 in production.** The counts: **115** late orders in the 400 validation rows, **2** flagged. (`deploy.py` prints these.)
+- **Redrawn for `driver_experience_months`,** the two moments collapse: the value's moment moves to **before** the prediction, because the driver's tenure is already true when the order arrives. A good drawing makes the arrow for `driver_experience_months` come in from the *left* of the prediction, and the arrow for `customer_called_support` from the *right*. That is the whole difference between an honest column and a leaked one, and it is a fact about time, not statistics.
+
+### 📊 Self-Check
+
+The student rates themselves; there is no answer key, but every row should be 😀 by the end of Build It. Four rows deserve an honest conversation:
+
+- *"explain why 29.5 is allowed and 29.0 is not"* — full marks names the 800 rows: "29.0 was partly computed from the validation and test rows, which I am about to be marked on." "Because you should only use training data" is the rule without the reason.
+- *"ablate it like any other column"* — did they actually write `0.7723 − 0.7752 = −0.0029` down, or just remember that it "didn't help"? The number is the deliverable.
+- *"ask the one question no computer can answer, unprompted"* — the word that matters is **unprompted.** If they only ask it when a workbook tells them to, mark it 🙂 and put it on a sticky note.
+- *"say why a leak worth −0.0000 is more dangerous"* — full answer: "because no measurement can ever reveal it, and its size depends on the data rather than the code." The row about the list `2, 4, 6, 8, 100` (median 6, mean 24) tests the median-not-mean reasoning.
+
+### 🕵️ The Crime Scene (class activity — no workbook page)
+
+The Crime Scene is the 20-minute class activity. **It has no page in the workbook**; students record their checks on plain paper. Nothing from it is handed in or marked on a form, so there is no workbook item to cross-reference.
 
 There is no single right route. **Marked on the number of checks recorded, including the ones that led nowhere.** A full sheet has at least three checks with their results, and a verdict naming the column and the flavour. Routes that earn full marks:
 
@@ -1391,7 +1875,11 @@ Week 5's best honest score was 0.7843.  Congratulations?
 
 **Runtime: about 0.9 seconds.**
 
-### Page 6.4 — The imputation
+### 📁 The teacher scripts
+
+The complete files you create before class (see the Prep Checklist), with their real output. `mystery.py` is above, under the Crime Scene. The numbers in the workbook sections above all come from these files.
+
+#### `fill_blanks.py` — the imputation (workbook B1, B2, B4 and Build It)
 
 **The complete, runnable file.** Save as `fill_blanks.py` beside `make_data.py`.
 
@@ -1502,29 +1990,7 @@ its weight: -0.1609
 
 **Runtime: about 0.8 seconds.**
 
-**The arithmetic the student must be able to reproduce:**
-
-- 60 + 25 + 21 = **106.** ✅ Every blank is accounted for.
-- **The median, by hand.** 1,200 train rows − 60 blanks = **1,140 with a value.** 1,140 ÷ 2 = 570, so the two middle ones are number 570 (**29**) and number 571 (**30**). (29 + 30) ÷ 2 = **29.5.**
-- **The whole-table median.** 2,000 − 106 = **1,894 with a value.** The two middles are both 29, so the median is **29.0** — and this is the number the imputer is *not* allowed to learn.
-- **The indicator ablation.** 0.7723 − 0.7752 = **−0.0029.** Delete it.
-- **Column count.** 5 numeric + 15 one-hot = 20 without the indicator; 21 with it.
-
-**The deletion note that earns full marks:**
-
-> **Feature:** the missing indicator on `driver_experience_months`.
-> **What I thought it would do:** if the paperwork is worse for brand-new drivers, then "this field is blank" is itself a clue about who the driver was.
-> **AUC without it:** 0.7752 · **AUC with it:** 0.7723 · **the delta:** 0.7723 − 0.7752 = **−0.0029**
-> **Why I am deleting it:** it made the model worse. The blanks in this table were chosen at random by `make_data.py` — you can read the line that does it — so there is no story about rookie drivers hiding in there. The 60 blank training rows do look less late (0.15 against 0.2947), but that is nine late deliveries out of sixty and it is noise.
-> **Honest caveat:** −0.0029 on 400 validation rows is inside the wobble. Retest with cross-validation in Week 11.
-
-### Page 6.5 — Three leakage repairs
-
-| Flavour | What the bug was | Fake score | Honest score | The subtraction |
-|---|---|---|---|---|
-| **target** | `customer_called_support` is only filled in after the delivery has already arrived late | **0.9762** | **0.7752** | 0.9762 − 0.7752 = **0.2011** |
-| **temporal** | 3,000 rows across 30 weeks, split at random, so next month's rows were in the training pile | **0.8139** | **0.5249** | 0.8139 − 0.5249 = **0.2890** |
-| **preprocessing** | 20 of 2,000 columns chosen while looking at every label | **0.765** | **0.520** | 0.765 − 0.520 = **0.245** |
+#### `leak_hunt.py`, `deploy.py`, `temporal.py`, `silent.py` — the three repairs (workbook Build It, A3, A5, Fix the Broken Program, Draw It)
 
 **The complete `leak_hunt.py`.** Save it beside `make_data.py` and `support_calls.py`.
 
@@ -1849,8 +2315,7 @@ difference                                   -0.0000
 ```
 
 **Runtime: about 1.3 seconds.** Note what this proves: **the leak is real and the score cannot see it.** Which is the argument for the structural fix rather than a watchful eye.
-
-### Page 6.6 — The noise experiment
+#### `noise_leak.py` — the noise experiment (workbook Build It, M4, B5)
 
 **The complete supplied file.** Save as `noise_leak.py`.
 
@@ -1911,22 +2376,6 @@ RIGHT - the choosing is inside the Pipeline
 ```
 
 **Runtime: about 0.8 seconds.**
-
-**The arithmetic:** 0.875 + 0.750 + 0.800 + 0.725 + 0.675 = **3.825**, and 3.825 ÷ 5 = **0.765.** Then 0.425 + 0.475 + 0.600 + 0.425 + 0.675 = **2.600**, and 2.600 ÷ 5 = **0.520.** The difference, 0.765 − 0.520 = **0.245**, is pure invention. And 98 + 102 = **200** ✅ — the label really is a coin flip.
-
-**"How can a table with nothing in it score 76.5%?" — the answer that earns full marks:**
-
-> There are 2,000 columns, so there are 2,000 chances for a column of noise to line up with the coin flip by luck. Some of them do, very well — that is what 2,000 tries buys you, and it has nothing to do with the data meaning anything. When the best 20 are chosen *while looking at all 200 labels*, the model is handed the columns that happen to match the exact rows it is about to be marked on. **The model did nothing wrong; the choosing did.** Moving the selection inside the `Pipeline` means it only ever sees the training rows of each fold, and the score falls to 0.520 — which is what "nothing there" looks like.
-
-**What does not earn full marks:** "the model overfitted." The model never saw 2,000 columns. Push the student to name **who chose the twenty**.
-
-**"Which flavour would be hardest to spot at a real job?" — three defensible answers:**
-
-| Choice | The argument | Verdict |
-|---|---|---|
-| **preprocessing** | It produces **no error and no measurable score change** — ours cost −0.0000. You cannot find by measurement a bug that does not move the measurement. You can only find it by reading where the statistic was computed. | **The strongest answer.** |
-| **temporal** | It needs no bad column at all. Every column is honest, every value is true, and the bug is a single call to `train_test_split` that looks exactly like the right thing to do. Nothing in the data looks wrong. | **Equally strong.** |
-| **target** | Real tables have hundreds of columns, most of them undocumented, and nobody knows when each one gets filled in. | Defensible **only** with the "hundreds of undocumented columns" reasoning. "Because it's the biggest" misses the question — the loud one is the easy one. |
 
 ### Every question posed in the lesson
 

@@ -12,7 +12,7 @@
 | **Type** | Review — checkpoint |
 | **Big idea** | A rulebook scored on the very messages you wrote it from tells you nothing; the honest score is the one you get on messages it has never seen. |
 | **New vocabulary** | training examples · fresh examples · accuracy |
-| **Materials** | **The sealed, signed envelope from Week 8** · the student's Week 8 rulebook · printed Workbook Week 9 pages 1–5 · a board or big sheet · two coloured pens · scissors or a letter opener for the ceremony |
+| **Materials** | **The sealed, signed envelope from Week 8** · the student's Week 8 rulebook · printed Workbook Week 9 **Build It** pages 9.1–9.5 (plus the optional sections, see Homework) · a board or big sheet · two coloured pens · scissors or a letter opener for the ceremony |
 | **Tech needed** | **None.** A calculator is allowed but the long division is the point, so keep it in a drawer. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
@@ -225,13 +225,13 @@ available: *"because today was about nothing except scoring things honestly."*
 ### 15 minutes the night before
 
 - [ ] **Find the envelope.** Sealed, signed across the flap, unopened, from Week 8. Put it somewhere you cannot forget it. This lesson does not work without it.
-- [ ] **Find the student's Week 8 rulebook** (Workbook Week 8, page 1) and their Week 8 score of 10 out of 10. You need both numbers in front of you.
-- [ ] **Print Workbook Week 9, pages 1–5.**
-  - Page 1: the ten-row scoring sheet.
-  - Page 2: accuracy three ways, and the two-bar chart to fill in.
-  - Page 3: the twelve-question checkpoint quiz. **Keep this face down until minute 40.**
-  - Page 4: the Term 1 reflection sheet.
-  - Page 5: the homework — fix the rulebook, plus the five further fresh messages.
+- [ ] **Find the student's Week 8 rulebook** (the one they finished in Week 8) and their Week 8 score of 10 out of 10. You need both numbers in front of you.
+- [ ] **Print Workbook Week 9.** The workbook opens with Warm-Up, Practice Set A, Practice Set B, Puzzle of the Week and Think Deeper; the **🛠️ Build It** section holds the five pages used in class and for homework; Draw It and Self-Check close it. **The workbook file ends with an Answers section (in a fold-down box) — print the student copy without it.**
+  - Page 9.1 — The Sealed Envelope Trial: the ten-row scoring sheet (messages 11–20).
+  - Page 9.2 — Accuracy three ways, and the gap: fraction, division, percentage, the two-bar chart to fill in, and the sentence.
+  - Page 9.3 — The Term 1 checkpoint quiz (twelve questions). **Keep this face down until minute 40.**
+  - Page 9.4 — Term 1 reflection sheet (six prompts).
+  - Page 9.5 — Fix your rulebook, then test it honestly: v2 rulebook, v2 re-scored on the original ten, the five further fresh messages (21–25), the two sentences.
 - [ ] **Score the ten sealed messages yourself** against the student's rulebook, using the trace in the Answer Key. Four minutes. Then you can run the trial without reading from a script.
 - [ ] **Read the twelve quiz answers**, including the "weak answer" notes. You will be marking out loud at speed and you need the model answers in your head, not on a page you're hunting through.
 - [ ] **Decide your tone about the 50% now, before the lesson.** Write the sentence you're going to say on a sticky note if it helps. The single biggest risk today is a well-meant "never mind, it's fine" that kills the whole point.
@@ -240,7 +240,7 @@ available: *"because today was about nothing except scoring things honestly."*
 
 - [ ] Envelope on the table, in plain sight, still sealed.
 - [ ] Week 8 rulebook and the 10 out of 10 beside it.
-- [ ] Workbook pages 1, 2, 4 out. **Page 3 face down. Page 5 out of sight.**
+- [ ] Workbook Pages 9.1, 9.2, 9.4 out. **Page 9.3 face down. Page 9.5 out of sight.** The Warm-Up through Think Deeper sections are not used in class.
 - [ ] Board wiped, with room for two bars and a long division.
 - [ ] Calculator put away in a drawer, deliberately.
 
@@ -282,7 +282,7 @@ available: *"because today was about nothing except scoring things honestly."*
 >
 > Your rulebook got ten out of ten last week. Perfect score. I want you to look at that ten out of ten, and then look at this envelope, and answer me one question — in writing, on the top of your page, before we open anything."
 
-**Do this:** have them write a number on Workbook page 1, in the box marked *my prediction*, and read it out.
+**Do this:** have them write a number on Workbook Page 9.1, in the box marked *my prediction*, and read it out.
 
 **Ask this:**
 
@@ -493,7 +493,7 @@ The gap                                            50 percentage points
 
 Full instructions in the next section. Twelve questions, closed-book, twelve minutes, then eight minutes marking out loud with week numbers in the margin.
 
-**Do this at minute 40:** turn page 3 face up. Put everything else — workbook, notes, the concept map — out of reach and out of sight.
+**Do this at minute 40:** turn Page 9.3 face up. Put everything else — workbook, notes, the concept map — out of reach and out of sight.
 
 **Say this:**
 
@@ -564,7 +564,7 @@ This week's activity has two parts. Part 1 happened in the Worked Example slot, 
 **Time:** 14 minutes (in the 26–40 slot)
 **The point:** to produce one number that can be trusted, by a procedure the student can see is fair.
 
-**Materials:** the sealed envelope · the student's Week 8 rulebook · Workbook Week 9 page 1 (the ten-row scoring sheet) · page 2 (accuracy three ways and the bar chart)
+**Materials:** the sealed envelope · the student's Week 8 rulebook · Workbook Week 9 Page 9.1 (the ten-row scoring sheet) · Page 9.2 (accuracy three ways and the bar chart)
 
 **Setup (1 minute).** Check the signatures. Let the student open it. Lay the message sheet face down; you read from it, they never see ahead.
 
@@ -593,7 +593,7 @@ This week's activity has two parts. Part 1 happened in the Worked Example slot, 
 **Time:** 20 minutes — 12 writing, 8 marking out loud
 **Group size:** 1 student, alone, silent, closed book
 
-**Setup (1 minute).** Everything off the desk except page 3 and a pen. Concept map turned over. Workbook out of reach. Say the framing: *this produces a list of weeks, not a grade.*
+**Setup (1 minute).** Everything off the desk except Page 9.3 and a pen. Concept map turned over. Workbook out of reach. Say the framing: *this produces a list of weeks, not a grade.*
 
 **The twelve questions** (full answers in the Answer Key):
 
@@ -735,20 +735,22 @@ Do these in the last five minutes. Exact wording below.
 
 ## 📤 Homework to Assign
 
-**Workbook Week 9, pages 4 and 5.**
+**Workbook Week 9, Page 9.4 (reflection sheet) and Page 9.5 (fix your rulebook).** Pages 9.1–9.3 are done in class (the trial, the arithmetic, the quiz); nothing about that split has changed.
 **Time: 45–60 minutes across the week.**
+
+**The rest of the workbook is optional.** Warm-Up, Practice Set A, Practice Set B, Puzzle of the Week, Think Deeper, Draw It and Self-Check are not part of the lesson plan and are not needed for the 45–60 minutes above. If the student wants more, the sensible order is Warm-Up and Practice Set A first (vocabulary and the arithmetic, about 15 minutes), then Draw It; keep Practice Set B, the Puzzle and Think Deeper for a student who is flying, or for next week's first ten minutes. Self-Check takes two minutes and is worth doing last. Their answers are in the Answer Key below.
 
 **Say this:**
 
 > "Two jobs, and one of them needs you to be honest when nobody's watching.
 >
-> **Page 4 is the Term 1 reflection sheet.** Six short questions about the last nine weeks — what stuck, what didn't, which week you'd redo, and what you want to build at the AI fair in Week 34. It's not a test and there are no wrong answers. The two weeks on your list from today go at the top.
+> **Page 9.4 is the Term 1 reflection sheet.** Six short questions about the last nine weeks — what stuck, what didn't, which week you'd redo, and what you want to build at the AI fair in Week 34. It's not a test and there are no wrong answers. The two weeks on your list from today go at the top.
 >
-> **Page 5 is the real job. Fix your rulebook.**
+> **Page 9.5 is the real job. Fix your rulebook.**
 >
 > Use the notes you wrote in the margin during the trial. Change your rules — tighten them, add a condition, move the threshold, add a rule that says ham. Write the new rulebook out in full and **write the date next to it in pen.**
 >
-> Then, and only then, turn over to the five messages at the bottom of page 5. **Five more fresh messages you've never seen and never used for anything.** Score your fixed rulebook on those five. Fraction, decimal, percentage — all three, with the division shown.
+> Then, and only then, turn over to the five messages at the bottom of Page 9.5. **Five more fresh messages you've never seen and never used for anything.** Score your fixed rulebook on those five. Fraction, decimal, percentage — all three, with the division shown.
 >
 > Then two sentences, and these are the ones I'll read first:
 >
@@ -761,6 +763,23 @@ Do these in the last five minutes. Exact wording below.
 ---
 
 ## 🔑 Answer Key
+
+### Where each workbook section is answered
+
+| Workbook section | Items | Answered under |
+|---|---|---|
+| ✅ Warm-Up | W1–W5 | Warm-Up, Practice Sets, Puzzle, Think Deeper, Draw It, Self-Check (at the end of this key) |
+| ✍️ Practice Set A | A1–A6 | same |
+| ✍️ Practice Set B | B1–B5 | same |
+| 🧩 Puzzle of the Week | P1–P6 | same |
+| 🤔 Think Deeper | T1–T2 | same |
+| 🛠️ Build It, Pages 9.1, 9.2 | prediction, scoring sheet, totals, three-ways arithmetic, gap, bar chart, sentence | The Sealed Envelope Trial, and Workbook Page 9.1 and 9.2 |
+| 🛠️ Build It, Page 9.3 | twelve quiz questions | The twelve quiz questions |
+| 🛠️ Build It, Page 9.4 | six reflection prompts | Workbook Page 9.4 |
+| 🛠️ Build It, Page 9.5 | v2 rulebook, v2 on the original ten, five fresh messages, two sentences | Workbook Page 9.5 |
+| 🎨 Draw It, 📊 Self-Check | drawing and three boxes; self-rating | end of this key |
+
+There is no "fix the broken program" section this week, and no code, which is correct for Level 1.
 
 ### The Sealed Envelope Trial — full trace
 
@@ -801,7 +820,7 @@ The gap                                50 percentage points
 - **#19 is the cruellest row.** `Congratulations on your exam results!` — a real message, from a real person, about something that mattered, binned by a rule that only counted characters. One exclamation mark, not two, so Rule 1 didn't touch it; it died on length alone.
 - **#15 is the dangerous row.** `Verify your account now` is 23 characters, no capitals, no punctuation, no trigger words. It is what a real scam looks like *because* rulebooks like ours exist. There is no word in it that isn't also in ordinary messages.
 - **#12 and #20 were right for the wrong reason.** Both fired on length. Nothing about their content was detected at all. Of the five correct answers, only #17 caught spam for a defensible reason — and #11 and #18 were correct by doing nothing.
-- **The rule that did the most damage is Rule 3**, the character count. It caused three of the five errors (#16, #19 as false alarms) and got two right by coincidence (#12, #20). **The rule with the most action was the rule with the least understanding.**
+- **The rule that did the most damage is Rule 3**, the character count. It caused two of the five errors (#16 and #19, both false alarms) and got two right by coincidence (#12, #20). **The rule with the most action was the rule with the least understanding.**
 
 ### The twelve quiz questions — model answers
 
@@ -851,7 +870,7 @@ Because the rules were written while looking at those exact ten messages *with t
 
 **How to use the marking:** beside each wrong answer write the bracketed week number. Gather them into a list at the end. Do not total them, and do not convert to a percentage.
 
-### Workbook Week 9, page 1 and 2 — the trial and the arithmetic
+### Workbook Page 9.1 and 9.2 — the trial and the arithmetic
 
 See the full trace above. The arithmetic, written out as the page demands:
 
@@ -876,7 +895,7 @@ THE PERCENTAGE    0.5 x 100 = 50%
 
 **Not full credit:** "It did worse on the new ones because they were harder." That explains the drop away instead of reading it. Ask which of the ten was unfair, and work through their answer with them.
 
-### Workbook Week 9, page 4 — the Term 1 reflection sheet
+### Workbook Page 9.4 — the Term 1 reflection sheet
 
 No right answers; these are the six prompts and what a useful response looks like.
 
@@ -887,7 +906,7 @@ No right answers; these are the six prompts and what a useful response looks lik
 5. **Something I now don't trust that I used to:** the best answers here are things like "percentages without the fraction", "a high score", "my own memory of what usually happens".
 6. **What I want to build at the AI fair in Week 34:** anything at all. Write it down and keep the page; you will come back to it in Week 34 and it is genuinely moving to compare.
 
-### Workbook Week 9, page 5 — fix the rulebook
+### Workbook Page 9.5 — fix the rulebook
 
 **A model fixed rulebook (v2).** The student's will differ; this one is worked all the way through so you can mark any version against the same standard.
 
@@ -923,7 +942,7 @@ Messages 1, 2 still fire Rule 1 (both have ALL-CAPS words). Message 3 (`Free ent
 
 **9 out of 10 on training, down from 10 out of 10. That is the fix that broke something.**
 
-**v2 on the five further fresh messages (page 5, bottom):**
+**v2 on the five further fresh messages (Page 9.5, bottom):**
 
 | # | message | chars | First rule | Says | Truth | ✓/✗ | Error |
 |---|---|---|---|---|---|---|---|
@@ -945,13 +964,130 @@ Messages 1, 2 still fire Rule 1 (both have ALL-CAPS words). Message 3 (`Free ent
 
 **Also full credit** for spotting that the "no question mark" fix on Rule 2 created message 21: `Want a free phone?` is obvious spam and now sails through, purely because it ends in a question mark. **Every patch opened a hole somewhere else.** A student who says that in their own words has understood the whole term.
 
-**Marking criteria for page 5:**
+**Marking criteria for Page 9.5:**
 
 - [ ] The fixed rulebook written out in full, and dated
+- [ ] Re-scored on the original ten training messages, so "what broke" could actually be found
 - [ ] Scored on five genuinely fresh messages, all three forms, division shown
 - [ ] "Which fix helped" names a specific message that changed from wrong to right
 - [ ] "Which fix broke something" names a specific message that changed from right to wrong
 - [ ] Some recognition that a score on the ten they fixed against is no longer honest
+
+### Warm-Up — W1 to W5
+
+1. **W1.** A **false alarm** raises the flag when it shouldn't: says yes, truth was no (a friend's message in the junk bin). A **miss** stays quiet when it should have flagged: says no, truth was yes (a scam sitting in the inbox). Full credit if they name a person harmed by each.
+2. **W2.** Any pair either side of the 4: a bruise of **3.9 cm²** is sold, **4.1 cm²** is binned, and nobody could tell them apart by eye.
+3. **W3.** The rules are read top to bottom and **the first one that matches decides**; everything below is skipped, not outvoted, never read.
+4. **W4.** **FALSE.** Tightening a rule cuts misses by causing false alarms, and loosening does the reverse; the total barely moves, only the mix. You choose which kind of mistake, not how many.
+5. **W5.** The two error words are defined relative to the flag. Change the flag from "spam" to "ham" and false alarms and misses swap places, inverting every count and grid afterwards.
+
+### Practice Set A — A1 to A6
+
+- **A1.** **training** · **fresh** · **Accuracy** · **test** (in the order the blanks appear).
+- **A2.**
+
+| Score | Fraction | Division | Percentage |
+|---|---|---|---|
+| 5 out of 10 | 5/10 | 10 into 50 goes 5, so **0.5** | **50%** |
+| 7 out of 8 | 7/8 | 8 into 70 goes 8 (r 6); into 60 goes 7 (r 4); into 40 goes 5, so **0.875** | **87.5%** |
+| 3 out of 5 | 3/5 | 5 into 30 goes 6, so **0.6** | **60%** |
+| 4 out of 6 | 4/6 | 6 into 40 goes 6 (r 4), forever, so **0.666…** | **67%** (rounded, and they must say so) |
+| 13 out of 14 | 13/14 | 14 into 130 goes 9 (r 4); into 40 goes 2 (r 12); into 120 goes 8, so **0.928…** | **93%** (rounded) |
+
+  Only the fraction tells you how many tries there were; the decimal and percentage both throw that away, which is why neither is ever written alone.
+- **A3.** **FALSE.** Student A gets the answer sheet the night before and scores 10 out of 10; Student B gets a sealed paper and scores 5 out of 10. B's mark tells you more and is the lower one; A's 100% only shows A can copy from an answer sheet. The rulebook was Student A: you can always get 100% on a test written after seeing the answers.
+- **A4.** training examples = **C** · fresh examples = **E** · accuracy = **B** · 50% = **A** · contaminating your test = **D**.
+- **A5.** Left pile: **training examples**, 10 out of 10 = 100%, honest? **No**, rules were written looking at these with the answers showing. Right pile: **fresh examples**, 5 out of 10 = 50%, honest? **Yes**, sealed before any rule existed. *Bonus:* if the arrow pointed both ways, the fresh pile would be used to fix the rules and become a second training pile, and nothing on the page would record it. That is why the arrow is one-way.
+- **A6.**
+
+| The score | Verdict | Why |
+|---|---|---|
+| 10/10 on the ten it was written from | not honest | Saw the answers |
+| 5/10 on the sealed ten | honest | Sealed before any rule existed |
+| 8/10 after fixing using those same ten | not honest | Used to decide, so used up |
+| 2/5 on five nobody had looked at | honest | Genuinely fresh |
+| 19/20 on a paper you have done twice | not honest | Already know the answers |
+| 14/20 on a paper opened for the first time | honest | Never seen |
+
+  The one-line test: *"Could these examples have shaped the thing I'm scoring?"* If yes, the score is not evidence.
+
+### Practice Set B — B1 to B5
+
+**B1 — the smoothie stall.** (a, b)
+
+| # | temp_c | Rule says | Truth | ✓/✗ | Error |
+|---|---|---|---|---|---|
+| F1 | 27 | doesn't sell out | SOLD OUT | ❌ | miss |
+| F2 | 30 | sells out | SOLD OUT | ✅ | — |
+| F3 | 26 | doesn't sell out | didn't | ✅ | — |
+| F4 | 29 | sells out | didn't | ❌ | false alarm |
+| F5 | 35 | sells out | SOLD OUT | ✅ | — |
+| F6 | 23 | doesn't sell out | didn't | ✅ | — |
+
+- (a/b) Fresh score **4 out of 6 = 4 ÷ 6 = 0.666… = 67%**, rounded and said to be.
+- (c) Training score 100%; the gap is **33 percentage points**.
+- (d) Three sold out, three didn't, so always saying the same thing scores 3 ÷ 6 = **50%**. The rule's 67% beats that by **17 percentage points**: not nothing, not impressive.
+- (e) Both mistakes sit one or two degrees from the threshold (F1 at 27, F4 at 29, line at 28). Days far from the line (23, 35) are easy. This is Week 8's edge-case idea inside a Week 9 calculation; to improve they need a different measurement (rain? school day?), not a better number.
+
+**B2 — Kavya's poster.**
+
+- (a) **No**, the arithmetic is fine: 9 ÷ 10 is 0.9 is 90%.
+- (b) The 90% was measured on the same ten messages she used to decide what to fix, the original problem one layer down: a true number answering a useless question. The poster tells readers something untrue, that the filter will get 9 in 10 on unseen messages.
+- (c) **Contaminating her test set**; the sealed ten are used up.
+- (d) She needs more messages she has never touched (five, ten, ideally a hundred), collected without reference to her rules and scored once.
+- (e) **Below 90%**: the fixes were chosen to suit those exact ten, so part of the gain from 50% to 90% is fitting those rows. Worked Example 3 in the chapter shows a "fixed" 75% on the contaminated batch becoming **60%** on fresh data.
+
+**B3 — the disease machine.**
+
+- (a) Any three of: 97% of how many photos (the fraction)? · Were the photos sealed away before the machine was built and adjusted? · Where did the photos come from (one hospital, one camera, one group)? · What does a lazy answer score (if 97% of the test set were healthy, "healthy" every time also scores 97%)? · How many false alarms and how many misses, counted separately?
+- (b) A true number can be a true answer to the wrong question. "97% on the photos we built and tuned on" is honest and worthless; nobody lied, they left out the words that would let anyone notice.
+- (c) A specific patient: told they were fine and wasn't, or told they might be ill and wasn't and spent three weeks frightened waiting for a second test.
+- (d) "Never write a percentage on its own; write the fraction." The second rule: the only honest score comes from examples the machine has never seen.
+
+**B4 — which number would you rather have?**
+
+| Pair | Trust more | Why |
+|---|---|---|
+| 5/10 or 45/100 | **45 out of 100** | Lower score, far more trustworthy. 5/10 could swing 10 or 20 points with a different ten; 45/100 barely moves. |
+| 3/3 or 80/100 | **80 out of 100** | 3 out of 3 is a perfect score and almost no evidence; three in a row happens by luck constantly. |
+| 100% on training or 55% on fresh | **55% on fresh** | The 100% was measured on its own answers. The 55% is the only measurement in the room. |
+
+*The harder version* (which would you rather *use*): you cannot be sure, and noticing that is the best answer. The 50% one might be better than the 45% one and 10 tries cannot tell them apart. Trusting a measurement and preferring a system are different questions.
+
+**B5 — marking the results page.**
+
+| Fault | Why it is a fault | The fix |
+|---|---|---|
+| Bare percentages with no fractions | 100%, 50% and 80% hide how many tries there were (one was measured on eight rows, one on ten) | Write every score as `5 out of 10 = 0.5 = 50%` |
+| "(but they were trick questions)" | Explains the drop away. Every one of the ten is a message a real phone receives; failing on them is the finding | Delete the excuse; write "the 50% is the honest number" |
+| The 80% presented as the conclusion, but measured on the sealed ten after fixing against them | Same contamination as the original 100% | Score v2 on five further messages never used, and put that number in the conclusion |
+
+A fourth fault, if spotted, is excellent: "better than a coin" is asserted, not shown. Spam-or-ham is a two-way choice, so a coin scores 50%, and the only honest number on the page **is** 50%, exactly a coin. That 50% is the only number worth anything, and the lowest, which is why it got an excuse written next to it.
+
+### Puzzle of the Week — Four Score Cards, P1 to P6
+
+- **P1.** Team **A**: no (measured on the very 8 examples the rules came from). Team **B**: yes (sealed before any rule existed, but only 5 tries, so it wobbles). Team **C**: no (fresh once, then used to choose fixes, then re-used). Team **D**: yes (sealed, and 200 tries, so it barely wobbles).
+- **P2.** **1st D · 2nd B · 3rd C · 4th A.** D and B are the only ones that measured anything, and D has forty times the evidence. C is marginally ahead of A because C did produce one honest number (its first score on the fresh ten) and then threw it away by fixing against it; A never had one. Either order for 3rd and 4th is acceptable **if argued**; A first because 100% is biggest is not.
+- **P3.** **Team D**: 52% against a coin's 50%, two percentage points on 200 tries, very close to nothing.
+- **P4.** The trap is that the answer is not simply "D". D's 52% is honest and almost exactly a coin, so D's filter is nearly worthless and we know it. B's 60% might beat a coin or might be luck on five messages. A's and C's filters could be brilliant or dreadful and their teams cannot say. Honest answer: **B, tentatively**, the only filter with any evidence of beating a coin, and weak evidence. A and C cannot be chosen at all, not because they are bad but because they have told us nothing. **Not the same as P2:** P2 ranks measurements, P4 asks about filters; a trustworthy measurement of something poor (D) and an untrustworthy claim about something unknown (A) are different problems, and the second is worse.
+- **P5.** Team B: 2 out of 5 = **40%**, 3 out of 5 = **60%**, 4 out of 5 = **80%**, so the real answer sits in a band of roughly 40% to 80%, and one message moves it 20 points. Team D: 103 out of 200 = **51.5%**, 105 out of 200 = **52.5%**, so one message moves it half a point. The denominator decides how much a score is allowed to wobble; 60% from five tries and 52% from two hundred are not comparable claims, which is why a percentage never travels without its fraction.
+- **P6.** Team C chose their fixes by looking at those ten, so the ten stopped being able to test anything the moment they were used to decide something; the 90% is a true answer to the same useless question as A's 100%, one layer further down.
+
+### Think Deeper — T1 and T2
+
+**T1.** Full credit needs: the scores were **not lies but honest measurements of the wrong question** (fit to the rows in front of me, not to new ones); the one genuine use of a training score (it shows the rules are at least consistent with the examples, and a rulebook that cannot fit its own training set is broken); and the point that **a bad measurement misleads its maker as much as anyone**, which is why they predicted 8 or 9: the only number they had was 100%.
+
+**T2.** Full credit needs: an actual **band with numbers** (for example 40% to 60%, since a different sealed ten might give 4 or 6); the sentence that the objection **cannot reach 100%**, so a 50-point gap survives a wobble of about 10 and the finding that the training score was wildly optimistic stands; uncertainty about *how* bad is not uncertainty about *whether* the drop is real; more fresh examples (a hundred, two hundred) would tighten it; and a practical reason people skip it: writing and labelling a hundred messages by hand is about an hour of tedious work, it makes the number worse, and reusing the ten is tempting.
+
+### Draw It
+
+No single right drawing. A strong one records **what each student was allowed to look at beforehand**. The model shows Student A at a desk with an open answer sheet, 10/10 above their head and a "I've seen all of these before" bubble; Student B with a folded sealed paper, two signatures across the flap, 5/10 above, "I've never seen any of these"; an arrow at B's mark labelled **THIS ONE IS THE NEWS**. The three boxes: what each was given (A the answer sheet the night before, B a sealed paper nobody had opened) · what each scored (A 10/10 = 100%, B 5/10 = 50%) · which is news (B's, because it is the only mark measured on something B hadn't already seen the answers to, and it is the lower one).
+
+Check three things: it is obvious which student had the answer sheet; the arrow points at the **lower** mark; the third box says **why**, not just which. "B's, because it's lower" is right for the wrong reason. **Weak:** two stick figures, 10/10 and 5/10, caption "A did better" — backwards, with the answer sheet (the only thing that matters) undrawn. If the two students could be swapped without the drawing making less sense, the marks are doing all the work.
+
+### Self-Check
+
+There are no right answers; it is a self-rating of seven "I can…" statements. Read it for 😕 ratings and for the "one thing I'd like explained again" line, and treat the two weeks on the quiz list as the default follow-up. Statements rated 😕 on *compute accuracy three ways* or *50% on a two-way choice* point back to Practice Set A (A2) and Page 9.2; on *why fixing with the sealed ten uses them up* point to A5 and Page 9.5.
 
 ---
 

@@ -12,7 +12,7 @@
 | **Type** | 🟩 Lab |
 | **Big idea** | A rule-based bot and a learned language model fail in completely different ways, and knowing which one you are talking to changes how much you should trust it. |
 | **New vocabulary** | n-gram · trigram · fallback |
-| **Materials** | **Week 29's score sheet and next-word table** (essential for the comparison at the end), the printed Trigger Planning Sheet and Ten-Question Log (both in the Answer Key), pencil, a USB stick or a folder you can find again |
+| **Materials** | **Week 29's score sheet and next-word table** (essential for the comparison at the end), the student's workbook open at **Build It** (Part 3a, the Trigger Planning Sheet, and Part 3c, the Ten-Question Log — print or copy these two pages), pencil, a USB stick or a folder you can find again |
 | **Tech needed** | A browser at **scratch.mit.edu**. Nothing to install. An account is optional but makes saving easier. Keyboard required; a mouse or trackpad strongly preferred over a touchscreen for dragging blocks. |
 | **Prep time** | 25 minutes the night before + 5 minutes on the day |
 
@@ -270,8 +270,9 @@ the threads; the map is orientation, never assessment.
 - [ ] **Decide the saving plan.** Signed in: `File → Save now` works. Not signed in:
       `File → Save to your computer` downloads a `.sb3` file. Decide **which folder** it goes in and write
       the path on a sticky note. "Downloads" is where student work goes to die.
-- [ ] **Print two sheets** from the Answer Key: the **Trigger Planning Sheet** and the **Ten-Question
-      Log**.
+- [ ] **Print two pages** from the Week 30 workbook, **Build It**: **Part 3a (the Trigger Planning
+      Sheet)** and **Part 3c (the Ten-Question Log)**. (Blank versions are also in Answer Key Parts C
+      and D below.)
 - [ ] **Find Week 29's score sheet and next-word table.** The final ten minutes of this lesson do not work
       without them physically on the desk.
 
@@ -688,8 +689,8 @@ homework to extend it to ten trigger/reply pairs on their own topic.
 
 **Materials:**
 - A browser at scratch.mit.edu, on a device with a keyboard and ideally a mouse
-- The printed **Trigger Planning Sheet** — Answer Key Part C
-- The printed **Ten-Question Log** — Answer Key Part D
+- The printed **Trigger Planning Sheet** — workbook Build It, Part 3a (blank copy: Answer Key Part C)
+- The printed **Ten-Question Log** — workbook Build It, Part 3c (blank copy and reference set: Answer Key Part D)
 - **Week 29's score sheet** — essential for the last two minutes
 - Somewhere to save a file that is not the Downloads folder
 
@@ -1001,19 +1002,39 @@ with 'Error'? And what do they *not* know with 'Interesting question'?"
 > **Then the write-up: three sentences.** Compare how the rule-based bot fails with how the bigram
 > generator fails, and give a **real example of each, from your own logs.** Not from mine. Yours."
 
-**Workbook pages:** Week 30, pages 1–6.
+**The workbook** (`workbook/week-30.md`) has these sections, in this order. The Answer Key below marks
+every one of them, in the same order and with the workbook's own labels:
 
-- **Page 1** — the Trigger Planning Sheet, filled in: ten triggers, ten replies, in the order they will
-  sit in the lists, with a note beside any pair where order matters and why.
-- **Page 2** — your fallback, written out, plus one line on how it does each of the three jobs.
-- **Page 3** — the Ten-Question Log, complete, each failure labelled **gap** / **false match** /
-  **honest fallback**.
-- **Page 4** — the repeat bug: which of the three causes yours had, the symptom you saw, and the fix.
-- **Page 5** — the three-sentence comparison, with one real example of each failure taken from your own
-  log and your own score sheet.
-- **Page 6** — the mini-project checklist, ticked, and where the two saved copies of your bot are.
+- **✅ Warm-Up** (W1–W5) — five questions on last week, dice and hallucinations. Notebook closed.
+- **✍️ Practice Set A — Understand It** (A1–A6) — blanks, multiple choice, true/false, matching, label the
+  flowchart (Figure W30.1), and "be the bot" on the school-office list.
+- **✍️ Practice Set B — Use It** (B1–B5) — the repeat bug twice, the trigger `is` at the top, the hospital
+  generator, and `open` versus `opening time`.
+- **🧩 Puzzle of the Week** — *Two Replies That Can Never Speak* (parts a–d, Figure W30.2).
+- **🤔 Think Deeper** (T1–T2) — which failure would you rather have; design a layered bot.
+- **🛠️ Build It** — *The Human Language Model*, a ten-step checklist and Parts 3a–3f. **This is the
+  centre of the homework** and is what the speech above describes:
+  - **3a** the Trigger Planning Sheet: ten triggers, ten replies, a note where order matters, and which
+    reply came from the bigram generator.
+  - **3b** your fallback, word for word, marked against the three jobs.
+  - **3c** the Ten-Question Log, each failure labelled **gap** / **false match** / **honest fallback** /
+    **correct**, and the score out of 10.
+  - **3d** the repeat bug: which of the three causes, the exact symptom, the fix, and how it was proved.
+  - **3e** where the work is saved: the `.sb3` file and the second copy.
+  - **3f** the three-sentence comparison, with one real example of each failure from your own log and
+    your own score sheet.
+- **🎨 Draw It** — the two machines side by side, both stuck on the same question (Figure W30.3).
+- **📊 Self-Check** — six "I can…" rows.
 
-**How long it should take:** 45–60 minutes, *assuming Parts 1 and 2 are already done* — they were the
+**Suggested split.** In class you have already done the bot, the log and the first look at the
+comparison, so **Build It** is the homework proper. The Warm-Up, Practice Sets A and B, the Puzzle,
+Think Deeper and Draw It are the rest of the workbook: set the Warm-Up as the first five minutes of next
+week's sitting (it is about Week 29, and it reads better after a gap), and treat Practice Sets A and B,
+the Puzzle, Think Deeper and Draw It as a second sitting of 30–40 minutes, done at the student's own
+pace across the week. If time is short, Build It comes first and the Puzzle second; the Puzzle is the
+quickest way to see whether the order-of-the-list rule has landed.
+
+**How long it should take:** Build It alone is 45–60 minutes, *assuming Parts 1 and 2 are already done* — they were the
 last two weeks' homework. Budget 20 minutes extending the bot to ten pairs, 10 minutes on the log and
 the bug write-up, 10 minutes on the three-sentence comparison, 10 minutes tidying and saving. If Parts 1
 or 2 are unfinished, deal with that first and let the bot stay at five pairs; the tally sheet is the
@@ -1022,6 +1043,110 @@ foundation and the bot is the contrast.
 ---
 
 ## 🔑 Answer Key
+
+**How this key is laid out.** First comes **the workbook key**, section by section in workbook order, with
+the workbook's own item labels (W1, A3, B2, T1 …) — mark from this. After it come **Parts A–F**, the
+teacher-only reference material it leans on: the complete Scratch project, the repeat-bug table, the blank
+sheets, the fully worked ten-question log, the three-sentence model answers and the trigram trace.
+
+### Workbook key — ✅ Warm-Up
+
+| Item | Answer | Marking note |
+|---|---|---|
+| **W1** | Greedy makes the **same** choice on the **same** row every time, so once it returns to a word it has already visited, it repeats that whole path for ever. | The word *same* must be doing the work. "Because it's stuck" is not yet an answer. |
+| **W2** | Any two of `amma`, `market`, `shop`, `goes`, `is`, `very`, `late`, `my`, `take`, `takes`, `town`, `run`, `like`, `it`, `and`, `i`, `.` — 17 of the 20 words. From `the`, greedy can only ever reach `the`, `bus` and `to`. | If they name `the`, `bus` or `to`, that is the wrong way round. |
+| **W3** | A hallucination is something that **sounds right but isn't true**. It is **not a lie** (lying needs an intention, and a tally sheet holds none) and **not a bug** (every step obeyed every rule). | Accept either "not a lie" or "not a bug" for the second half, but the reason matters. |
+| **W4** | **One** word · about **a hundred thousand** words. The bigger window fixes **forgetting** (losing track of who the sentence is about, crude loops). It does **not** fix **truth**: the world is not in the window and no step checks reality. | Students often say the bigger one fixes everything. That is the Week 29 misconception. |
+| **W5** | Reads well **✓** · true to corpus **✗**. It is the dangerous combination because it is the one you would believe: obviously broken output is harmless, and this one carries no warning. | |
+
+### Workbook key — ✍️ Practice Set A
+
+| Item | Answer | Marking note |
+|---|---|---|
+| **A1** | (a) **n-gram** · (b) **1**, **2** · (c) **fallback** · (d) **first**, **order** · (e) **four** | (b) is the usual slip: bigram = 1 word of memory, trigram = 2, not 2 and 3. |
+| **A2** | **C — 38.** General rule: an n-gram gives **40 − (n − 1)** groups from 40 tokens (39 bigrams, 38 trigrams, 37 four-grams). A group of n tokens cannot start in the last n − 1 positions. | **D (37)** is the subtract-twice-again slip; **B (39)** is copying the bigram count. |
+| **A3** | (a) **False.** No block changes the lists after the green flag; its knowledge came from a person typing, which is what makes it rule-based. (b) **False.** The fallback firing is the bot **succeeding at being honest**; annoying beats dangerous. (c) **False.** Every step of `amma takes the bus to the market .` is legal under trigrams; at the deciding step the visible words are `to the` and `amma` is four words further back. You would need a **7-gram**. | Full marks need the reason, not just F. (b) is the most valuable item of the week: a student who says T here has not yet got the lesson. |
+| **A4** | 1 → **E** · 2 → **C** · 3 → **B** · 4 → **A** · 5 → **D** | |
+| **A5** | **Box 1:** you type something (`ask … and wait`; what you typed lands in `answer`). **Box 2:** walk the trigger list from the top: does `answer` contain item `i` of triggers? (`repeat until` with the `contains` check.) **Box 3:** yes, so say the reply at the same position, set `matched` to 1, and stop walking. **Box 4:** no, all the way to the bottom, so say the fallback (`if matched = 0`). | The **no** branch (box 4) is the one everybody forgets to build. Give credit for the idea even if the block names are missing. |
+| **A6** | **(i)** Row 1 `homework`: no, `change i by 1`. Row 2 `home time`: **yes**, say reply 2, `matched` = 1, stop. Bot says *School finishes at 3:15pm.* Label **correct**. **(ii)** Row 1 `homework`: no, i → 2. Row 2 `home time`: no, i → 3. Row 3 `lunch`: **yes**, say reply 3, stop. Bot says *Lunch is 12:30 to 1:15. Hot food in the main hall.* Label **false match**. Why: the letters `lunch` really are inside `lunchbox`; `contains` looks anywhere in the text and knows nothing about meaning. **(iii)** All four rows checked, nothing matches, `matched` stays 0, so the fallback fires: *"I don't know that one — try asking about homework, home time, lunch or the school bus."* Label **honest fallback**. It is a **pass**: it genuinely did not know, said so, and steered. | In (i) check they walked row 1 before row 2 and did not skip. In (ii) students often label this "correct" because the reply is a real reply; ask whether the question was about lunch. In (iii) "failure" is the Week 29 reflex. |
+
+### Workbook key — ✍️ Practice Set B
+
+| Item | Answer | Marking note |
+|---|---|---|
+| **B1** | **Cause 1:** `set i to 1` and `set matched to 0` sit **above** the `forever` block, so they run once. After turn 1, `i` is parked past the end of the list (or `matched` at 1) and the `repeat until` exits before checking anything. **Fix:** drag both `set` blocks **inside** the forever loop, directly under `ask and wait`. | See Part B for the full symptom table. |
+| **B2** | **Cause 2:** `set matched to 1` is missing from inside the `if`. The loop says the right reply, keeps walking, and at the end `matched` is still 0, so the fallback fires too. (Same bug, other symptom: a question with two trigger words gets two stacked replies.) **Fix:** add `set matched to 1` straight after the `say`, still **inside** the `if`. | Students confuse B1 and B2 because both end in the fallback. The difference: B1 fails on every turn after the first, B2 fails after a **correct** answer. |
+| **B3** | (a) Almost every question gets reply 1, whatever it was about. (b) The letters `is` occur inside a huge number of ordinary questions, e.g. *"where **is** the bus"*, *"**is** there lunch"*, and inside whole words: *"what time do you close th**is** week"*. (c) **Lengthen it** (e.g. `is it open`), or **demote** it below all specific triggers; best, do both. Rule: no trigger shorter than four letters, specific above general. | Accept any two sensible example questions; the test is whether they contain the letters `is`. Two different fixes are required for (c). |
+| **B4** | (a) It **invents**, fluently and confidently, in exactly the voice it uses when it is right; no step checks reality. (b) The **cost of being wrong** is enormous and the claim is specific, checkable and consequential; on a story website a made-up sentence is the product. The person asking is the least able to spot the error. (c) A layered design: hand-written, doctor-approved answers for the commonest questions, and anything else straight to a human with a clear button; no generator near medicine questions. | Full credit for putting rules where the stakes are highest and a human where the rules run out. |
+| **B5** | (a) The **`opening time`** reply, row 2. (b) A question would have to contain "opening time" but not "open", which is impossible because "opening time" has "open" inside it; row 1 always matches first and the loop stops. (c) **Swap them**, so `opening time` sits above `open`. (d) The swap itself costs nothing. Tightening a trigger is what costs: if `open` were changed to `what time do you open`, *"are you open on Sunday?"* would stop matching. Every tightening loses something: the Week 8 tighten-versus-loosen trade-off. | For (d), accept any genuine example of a question that stops working after a trigger is made longer. "It costs nothing" with no example is half marks. |
+
+### Workbook key — 🧩 Puzzle of the Week
+
+- **(a)** **Rows 2 and 5**: `pizza box` and `delivery area`.
+- **(b)** Row 2 (`pizza box`): a question would have to contain "pizza box" but not "pizza", impossible, so
+  row 1 always grabs it first. Row 5 (`delivery area`): it would have to contain "delivery area" but not
+  "deliver", impossible, because "deliver" is inside "delivery", so row 4 always grabs it first.
+- **(c)** A working order (specific above general):
+
+  | Row | TRIGGER |
+  |---:|---|
+  | 1 | pizza box |
+  | 2 | pizza |
+  | 3 | price |
+  | 4 | delivery area |
+  | 5 | deliver |
+
+  Check: *"how big is the pizza box"* → row 1; *"do you do pizza"* → row 2; *"what is your delivery
+  area"* → row 4; *"do you deliver"* → row 5. Any order with `pizza box` above `pizza` and `delivery
+  area` above `deliver` is correct; `price` can sit anywhere.
+- **(d)** If one trigger contains another, the **longer one must sit higher** (specific above general).
+- **Marking note.** The usual wrong answer to (a) is rows 1 and 4, the swallowers rather than the swallowed.
+  Ask: "which reply can never be heard?" Students who only move row 2 above row 1 and forget the delivery
+  pair have fixed half.
+
+### Workbook key — 🤔 Think Deeper
+
+- **T1.** Both answers earn full marks; what is marked is engagement with **visibility**. *The rule bot*:
+  you know when it fails, and the honest second half names what you give up (it only says ten things, it
+  cannot handle phrasings you did not think of, it falls back on "hello"). *The generator*: more useful,
+  provided you say **how** you would check (names, dates and numbers against a source you trust; never
+  hand in an unchecked claim). Not full marks: "they both get things wrong", which is the flattening the
+  week exists to prevent. The failures look different and only one announces itself.
+- **T2.** No single right design; a strong answer has all three layers and hangs the reasoning on the cost
+  of being wrong. Example (surgery): **hand-written rules** for hours, address, booking, repeat
+  prescriptions, out-of-hours (the wording must be exactly right); a **generator** for nothing medical,
+  perhaps rewording or translating approved answers; **a human**, with an obvious button, for symptoms,
+  medicines, dosages and anything about a specific patient. Full credit for saying the layers exist
+  because the two kinds of system fail differently.
+
+### Workbook key — 🛠️ Build It
+
+Each student's bot and topic are their own, so mark against what is being looked for, using Parts A–F
+below as the reference. **Tick the ten-step checklist first**: steps 1 and 2 (Parts 1 and 2 from Weeks 28
+and 29) are done or not; steps 3–10 are the bot.
+
+| Workbook part | What full marks looks like | Reference below |
+|---|---|---|
+| **3a** Trigger Planning Sheet | Ten triggers and ten replies; specific above general; **no trigger shorter than four letters**; a real "order matters" note wherever one trigger sits inside another; one row identified as a sentence the bigram generator actually produced (it must be a sentence from last week's sheet, not a new one). | Part C (blank), Part A (working project) |
+| **3b** Fallback | Word for word, in the bot's own voice, and each of the three jobs ticked with a reason: **admits** it does not know, does not **pretend**, **steers** to what it can answer. "Error" fails all three; "Interesting question!" is worst, it hides the failure. | Idea 3 in the lesson plan |
+| **3c** Ten-Question Log | All ten questions written **before** typing, at least two the student knows will fail, the bot's **exact words**, and every failure labelled `gap` / `false match` / `honest fallback` (or `correct`). The score out of 10 is not the point, the labels are. Both "could you tell instantly?" boxes answered: **yes** for the student's own failures, **no** for last week's FALSE-stamped row. | Part D (reference set: **7 out of 10**, two gaps and one false match) |
+| **3d** Repeat bug | One of the three causes named, the **exact symptom** quoted, the fix, and a proof it is fixed (same question that failed now works on turn 2 and 3). | Part B |
+| **3e** Saved | A `.sb3` in a named folder, **not Downloads**, and a second copy (Save now, or a photo of the blocks and both lists). Ask to see them. | |
+| **3f** Three sentences | One rule-bot example and one generator example from the student's own log and score sheet, and the visibility point. | Part E (three levels of model answer) |
+
+### Workbook key — 🎨 Draw It
+
+There is no single right drawing. Full credit: the **same question** (*"What is the moon made of?"*)
+feeding both halves; each machine's actual output in a speech bubble; the labels **failed loudly** (rule
+bot, with its fallback) and **failed silently** (generator, stamped FALSE); and the fair-to-both notes
+*"can only say 10 things"* and *"can answer anything"*. A drawing that makes the generator look simply bad
+has told the wrong story: the more dangerous machine is also the more useful one. A bonus line across the
+bottom: *annoying beats dangerous, but only if you know which one you have.*
+
+### Workbook key — 📊 Self-Check
+
+Not marked. Read it: a 😕 on the fourth row (order of the trigger list) or the third (diagnosing the
+repeat bug) means set Practice Set B5 and the Puzzle again before Week 31.
 
 ### Part A — the complete Scratch project
 

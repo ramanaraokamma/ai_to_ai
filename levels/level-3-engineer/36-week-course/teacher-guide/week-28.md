@@ -15,7 +15,7 @@
 | **New maths** | **Sigma notation** `Σ`, introduced as nothing more than *"add up all of these"* — and **the full expanded sum written out beside the symbol every single time.** It arrives on inertia over six points, where the expanded sum is six numbers and one addition. |
 | **New syntax** | `KMeans(n_clusters=3, n_init=10, random_state=0)` · `km.cluster_centers_` · `km.inertia_` · `km.labels_` |
 | **Dataset** | **Six 2-D points typed on the board by hand**, then `load_wine()` — 178 wines, 13 chemical measurements, and three real grape varieties we lock in a drawer. Both ship inside scikit-learn. **Nothing downloads. No internet needed.** |
-| **Materials** | Printed workbook pages 28.1–28.7 · **masking tape** · **a big blank sheet headed SIX POINTS with a grid drawn on it** · squared paper for everybody · **three colours of pen per student** · two volunteers willing to stand still · the Bug Log |
+| **Materials** | Printed workbook (all of it; the homework core is **Do the Maths M1** and **Build It**) · **masking tape** · **a big blank sheet headed SIX POINTS with a grid drawn on it** · squared paper for everybody · **three colours of pen per student** · two volunteers willing to stand still · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, scikit-learn. **No torch this week. No new installs.** |
 | **Prep time** | 25 minutes the night before · 10 minutes on the day (taping six crosses to the floor) |
 | **Expected runtime of the code** | `no_answer_key.py` runs in **about 1.5 seconds** end to end on this machine. Nothing here trains a neural network. **Time yours anyway.** |
@@ -33,7 +33,7 @@ By the end of the lesson the student can:
 3. **Compute inertia by hand** for a clustering and say what a smaller value means about the clusters — and why you can never choose `k` by making it smallest.
 4. **Show a numeric example where scaling flips the answer**, and name which column took over and why, from the column's spread alone.
 
-Observable evidence: page 28.3 with twelve squared distances in round 1 and twelve in round 2, and **C circled as the switcher**; the sigma sum written out as `0.4444 + 1.1111 + 1.1111 + 0.0000 + 2.0000 + 2.0000 = 6.6667` beside the symbol; `km.inertia_` printing `6.6667` and the student's hand total matching it; and a sentence naming **`proline`, spread 314.91** as the column that ate the unscaled wine clustering.
+Observable evidence: the floor-trace tables on squared paper with twelve squared distances in round 1 and twelve in round 2, and **C circled as the switcher**; the sigma sum written out as `0.4444 + 1.1111 + 1.1111 + 0.0000 + 2.0000 + 2.0000 = 6.6667` beside the symbol; `km.inertia_` printing `6.6667` and the student's hand total matching it; and a sentence naming **`proline`, spread 314.91** as the column that ate the unscaled wine clustering.
 
 ---
 
@@ -649,7 +649,7 @@ SCALED
 
 - [ ] **Do the two rounds by hand yourself, on paper, before you read §2 again.** Twelve squared distances, then twelve more. **It takes eight minutes and it is the single best-value prep in this file**, because you are going to do it live on a floor with a class watching.
 - [ ] **Check the last two blocks of output and know what you are going to say about them.** The SCALED table has `59`, `65` and `48` sitting almost alone in their rows: **172 of 178 wines grouped with their own grape variety, by an algorithm that never saw a variety.** The UNSCALED table is a mess. **Have your sentence ready, and make it the honest one:** *"we got to check today because this dataset happens to have answers hidden in it. Normally you do not get to check. That is the whole problem."*
-- [ ] **Print workbook pages 28.1–28.7.**
+- [ ] **Print the workbook, one copy per student (it is one file; the sections to point at are Warm-Up, Do the Maths by Hand M1, and Build It).** The six-point floor trace has no workbook page, so also rule squared paper into the two tables described in the Activity setup.
 - [ ] **Make the SIX POINTS wall sheet.** A big sheet, a grid from 0 to 10 both ways, the six points marked and lettered, and **room underneath for two rounds of numbers.** It stays up until Week 30.
 - [ ] **Tape six crosses to the floor** — see the Activity for the exact layout and the scale. **Ten minutes, and it needs doing before the class walks in**, because taping the floor with an audience takes twenty.
 - [ ] **Three colours of pen per student.** Round 1 in one colour, round 2 in another, the centres in the third. **One colour does not work** — the whole point is seeing what changed.
@@ -671,7 +671,7 @@ That is deliberate mistake one in the live-code, and it teaches the trailing-und
 - [ ] Six crosses taped to the floor, lettered A to F on cards beside them.
 - [ ] SIX POINTS sheet on the wall, the points marked, the number space blank.
 - [ ] Editor open, terminal ready, `no_answer_key.py` **empty** — they type sections 1 and 2 with you.
-- [ ] Workbook 28.2 out. **The predictions filled in, in pen, before anything runs.**
+- [ ] Workbook open at the **Build It predictions table** (four rows, (a) to (d)). **The predictions filled in, in pen, before anything runs.**
 - [ ] Bug Log out.
 - [ ] Squared paper and three pens on every desk.
 
@@ -1222,7 +1222,7 @@ This section is the full script for the floor activity, step by step.
 - **A letter card beside each cross**: A, B, C, D, E, F.
 - **Two more cards**, CENTRE 1 and CENTRE 2, for the two volunteers to hold.
 - **The board, ruled into two tables** of six rows and three columns: `point | to centre 1 | to centre 2`. One table for round 1, one for round 2.
-- **Workbook page 28.3** open on every desk — the same two tables, to fill in as the class goes.
+- **Squared paper** ruled into the same two tables on every desk (the workbook has no six-point sheet; its Build It tables are the eight-point homework version) — to fill in as the class goes.
 - Three colours of pen each.
 
 ### Step 1 — put the centres in the wrong place (2 minutes)
@@ -1235,7 +1235,7 @@ Two volunteers. **CENTRE 1 stands on A. CENTRE 2 stands on C.**
 
 ### Step 2 — round 1, assign (5 minutes)
 
-Go point by point. For each point the class computes **two** squared distances and the nearer one wins. Write every one on the board; they write them on 28.3 in colour one.
+Go point by point. For each point the class computes **two** squared distances and the nearer one wins. Write every one on the board; they write them on their squared-paper tables in colour one.
 
 ```text
 A (1,2):  to (1,2) -> 0 + 0 = 0       to (2,3) -> 1 + 1 = 2       centre 1
@@ -1330,7 +1330,7 @@ print(km.labels_, np.round(km.cluster_centers_, 4).tolist(), round(km.inertia_, 
 
 ### What "finished" looks like
 
-- Page 28.3 with **twenty-four squared distances** on it, in two colours, and C ringed as the switcher.
+- The squared-paper tables with **twenty-four squared distances** on them, in two colours, and C ringed as the switcher.
 - The two final centres, `(1.6667, 2.0)` and `(8, 8)`, written down and matching the printout.
 - Inertia `6.6667`, hand-added, matching `km.inertia_`.
 - A student can say, unprompted: **"it only did two things."**
@@ -1340,7 +1340,7 @@ print(km.labels_, np.round(km.cluster_centers_, 4).tolist(), round(km.inertia_, 
 
 **Drop to four points and skip round 2.** `A=(1,2)`, `B=(2,1)`, `D=(8,8)`, `E=(9,7)`, with centres starting on A and B. Eight squared distances, one move, done — and the arithmetic is all single digits.
 
-**And give them the distances half-filled.** Pre-print page 28.3 with the *across-gap squared* column already filled in, so the only work is adding the second number and comparing. **Objective 1 is about seeing the loop, not about squaring numbers.**
+**And give them the distances half-filled.** Pre-print the squared-paper tables with the *across-gap squared* column already filled in, so the only work is adding the second number and comparing. **Objective 1 is about seeing the loop, not about squaring numbers.**
 
 **The one thing not to cut:** the MOVE step being an average. If a student leaves believing the centre is "somewhere in the middle-ish", they have missed the only computation in the algorithm.
 
@@ -1569,63 +1569,290 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
-This section gives the wording for setting the homework.
+This section gives the wording for setting the homework. The workbook has no page numbers; it has named sections (Warm-Up, Do the Maths by Hand, Predict the Output, Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It, Draw It, Self-Check), so this script names them.
 
 **Say this:**
 
-> "About an hour, three pages, and the middle one is the one I mark hardest.
+> "About an hour and ten minutes, two pieces, and the second one is the one I mark hardest.
 >
-> **First, page 28.4 — two rounds by hand on eight new points.** Same as the floor, bigger. Eight points, two centres, and **I want all sixteen squared distances in round one and all sixteen in round two.** Not the winners. **All sixteen, both rounds.** Then both sets of new centres, and the name of the point that switched. There is one and it is not the obvious one.
+> **First, Do the Maths by Hand, M1 — inertia on five points.** Two clusters, five points, calculator only. Find both centres, then one squared distance per point to its own centre, and then **the sigma written out: the symbol, then all five terms added, then the total.** If you write the symbol and then a total with nothing in between, it scores zero.
 >
-> **Second, page 28.6 — the scaling experiment on the wine data, and this is the page I care about.** Cluster the 178 wines twice: once on the raw columns and once scaled. Report both sets of cluster sizes. **Then find which column took over the unscaled run, and prove it** — print the minimum and maximum of that column inside each unscaled cluster, and show me the bands. **Then two sentences: which column took over, and how you could have predicted it from the column spreads alone, before running anything.**
+> **Second, Build It — the eight points by hand, then the column that took over.** Same as the floor, bigger. Eight points, two centres, and **I want all sixteen squared distances in round one and all sixteen in round two.** Not the winners. **All sixteen, both rounds.** Then both sets of new centres, and the name of the point that switched. There is one and it is not the obvious one. Then the inertia with **the sum written out in full beside the symbol**, eight numbers and one addition, checked against `km.inertia_` to four decimal places.
 >
-> A page that says 'I scaled it because you should always scale' scores nothing on this page. **I want the number 314.91 in your answer, or whichever number you found.**
+> **Then the wine table at the bottom of Build It, and this is the part I care about.** Cluster the 178 wines twice: once on the raw columns and once scaled. Report both sets of cluster sizes. **Then find which column took over the unscaled run, and prove it** — print the minimum and maximum of that column inside each cluster, and show me the bands. Practice Set B, question B5, is the recipe for that program. **Then two sentences: which column took over, and how you could have predicted it from the column spreads alone, before running anything.**
 >
-> **Third, page 28.5 — inertia and the sigma.** Compute the inertia of your eight-point clustering by hand, **with the sum written out in full beside the symbol.** Eight numbers, one addition. Then check it against `km.inertia_` and tell me whether they match to four decimal places.
+> A page that says 'I scaled it because you should always scale' scores nothing here. **I want the number 314.91 in your answer, or whichever number you found.**
 >
-> Page 28.7 is a stretch: it asks you to run the whole thing on 178 rows of pure random numbers. **It still gives you three clusters. Tell me what you think about that.**"
+> Everything else in the workbook is on the menu. **Predict the Output is four short questions and I would like you to do those in pen before you run them. Fix the Broken Program is the one to pick if you want to practise reading tracebacks. The Puzzle of the Week is the one to pick if you want to be surprised.** The last step of Build It, the stretch, asks you to run the whole thing on 178 rows of pure random numbers. **It still gives you three clusters. Tell me what you think about that.**"
 
-**Workbook pages:** 28.1, 28.2, 28.3 in class · **28.4, 28.5, 28.6** at home · 28.7 optional.
+**Workbook split.** *Warm-Up* and the *predictions table at the top of Build It* in class (the Warm-Up is about Week 27, so it is the first five minutes, or a do-now as they come in; the predictions go down in pen before the live-code runs anything) · **M1 and Build It steps 2–9** at home, required · *Do the Maths* M2–M4, *Predict the Output*, *Practice Set A*, *Practice Set B*, *Fix the Broken Program*, *Puzzle of the Week*, *Think Deeper*, *Draw It* and *Self-Check* as the menu, by choice or as weeks allow · the Build It *Stretch* optional.
 
-**Expected time:** 25 min on the eight-point trace · 10 min on the inertia and the sigma · 25 min on the scaling experiment · **about 60 minutes**, plus 15 more for the stretch.
+**Expected time:** 10 min on M1 · 30 min on the two eight-point rounds · 10 min on the inertia and the sigma · 20 min on the wine table and the two sentences · **about 70 minutes required**, plus 15 more for the stretch, plus whatever is picked from the menu. *(The old "three pages, about an hour" split no longer applies; the required core is deliberately the same three things it always was: the sixteen-and-sixteen trace, the sigma written out, and the scaling proof.)*
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the second is the real one. **One — are all thirty-two squared distances there?** A page with only the winning distances has not done the assign step, it has guessed it. The whole value of the exercise is that a point can be *nearly* equidistant, and you only see that if you write both numbers. **Two — is the scaling explanation mechanical, or is it a slogan?** The bar is: *did they name a column, quote its spread, and show the bands?* "proline, spread 314.91, and the three unscaled clusters have proline ranges 278–590, 600–937 and 970–1680 which do not overlap" is an explanation. "You have to scale before k-means" is a slogan they could have written before the lesson. **Mark the difference explicitly.** **Three — is the sigma written out?** Eight terms and an addition, beside the symbol. If they wrote the symbol and then wrote a total with nothing in between, hand it back — that is exactly the habit this course is trying to prevent, and it is much easier to prevent now than in Week 32.
+> **🧑‍🏫 What to look for when you mark it:** three things, and the second is the real one. **One — are all thirty-two squared distances there?** A page with only the winning distances has not done the assign step, it has guessed it. The whole value of the exercise is that a point can be *nearly* equidistant, and you only see that if you write both numbers. **Two — is the scaling explanation mechanical, or is it a slogan?** The bar is: *did they name a column, quote its spread, and show the bands?* "proline, spread 314.91, and the three unscaled clusters have proline ranges 278–590, 600–937 and 970–1680 which do not overlap" is an explanation. "You have to scale before k-means" is a slogan they could have written before the lesson. **Mark the difference explicitly.** **Three — is the sigma written out?** Eight terms and an addition, beside the symbol (five terms in M1). If they wrote the symbol and then wrote a total with nothing in between, hand it back — that is exactly the habit this course is trying to prevent, and it is much easier to prevent now than in Week 32.
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every workbook section restated in workbook order, so you can mark from this page alone. The values are the workbook's own Answers section, which has been re-run; the wrong-answer maps and marking notes are the teacher-only additions. (The six-point floor trace done in class has no workbook page, so its answers are kept at the end of this key.)
 
-### Page 28.1 — Match the word to the thing
+### Warm-Up (in class, about Week 27)
 
-| Word | What it means |
+| | Answer |
 |---|---|
-| **unsupervised learning** | Finding structure in a table that has **no answer column**. There is nothing to compare your result against. |
-| **cluster** | A group of points more like each other than like anything outside the group. |
-| **centroid** | The **average position** of everything currently in a cluster. `{(1,2), (2,1)}` has centroid `(1.5, 1.5)`. |
-| **inertia (WCSS)** | Add up the squared distance from every point to **its own** centre. Smaller means tighter. `6.6667` for our six points. |
-| **k-means++** | A smarter way of choosing the starting centres, which **spreads them out** instead of letting them land on top of each other. scikit-learn's default. |
-| **elbow method** | Plot inertia against `k` and look for **the bend** — the `k` after which extra clusters stop buying much. A hint, never a verdict. |
+| **W1** | The bottom row reappears **at the top, as row 0**, because `np.roll` wraps. The line that clears it is **`out[0, :, :] = 0.0`**, applied after rolling down. |
+| **W2** | Reason 1: you would be scoring yourself on rows you invented, so the number would measure the augmentation and not the model. Reason 2: every earlier accuracy was measured on the same 540 real digits, so changing that pile makes the new number incomparable. |
+| **W3** | **frozen 1,248** (80 + 1,168) · **movable 650** · **total 1,898**. 1,248 + 650 = 1,898 is the arithmetic check. |
+| **W4** | **`test 0.8574` beating `train 0.5968`** is the impossible one. It is a **labelling bug**: the augmented `X` and `y` are no longer lined up, so training rows carry wrong answers while the untouched test rows are right. |
+| **W5** | **Borrowing lost.** The frozen backbone scored 0.9257 against 0.9814 from scratch, so the borrowed features were worse than ones learned on the job; the backbone had been trained on the very same small pile and had nothing extra to bring. |
 
-**Marking notes.** **Six for six, and be strict about two of them.** *Centroid* must say **average** or **mean**, not "middle-ish" or "centre". *Inertia* must say **own** centre — a student who writes "distance to the centres" has not understood that each point only measures against one of them. The other four are recall.
+**Marking notes.** Recall from last week, so mark for presence. The one to look at is W4: a student who says "overfitting" has it backwards, because overfitting makes train *better* than test, never worse.
 
-### Page 28.2 — Predictions, in pen, before running
+### Do the Maths by Hand
 
-*Four predictions. (a) Which point will switch sides? (b) Will it take more or fewer than five rounds? (c) When we cluster 178 wines on 13 chemical columns unscaled, will the groups be meaningful? (d) What would happen if we clustered 178 rows of pure random numbers?*
+**M1 — inertia on five points.**
+
+```text
+centre 1 = ( 2÷3 , 2÷3 ) = ( 0.6667 , 0.6667 )
+centre 2 = ( 14÷2 , 12÷2 ) = ( 7.0 , 6.0 )
+```
+
+| point | across² | up² | total |
+|---|---|---|---|
+| Q1 (0,0) | 0.4444 | 0.4444 | **0.8889** |
+| Q2 (0,2) | 0.4444 | 1.7778 | **2.2222** |
+| Q3 (2,0) | 1.7778 | 0.4444 | **2.2222** |
+| Q4 (6,6) | 1.0000 | 0.0000 | **1.0000** |
+| Q5 (8,6) | 1.0000 | 0.0000 | **1.0000** |
+
+```text
+Σ (distance to my own centre)²  =  0.8889 + 2.2222 + 2.2222 + 1.0000 + 1.0000
+                                =  7.3333
+```
+
+Python prints centres `[[0.6667, 0.6667], [7.0, 6.0]]` and inertia `7.3333`, so hand and machine agree.
+
+**M2.** First centre: `across = 16 ÷ 4 = 4.0`, `up = 24 ÷ 4 = 6.0`, so **(4, 6)**. Second centre: `across = 36 ÷ 3 = 12.0`, `up = 6 ÷ 3 = 2.0`, so **(12, 2)**. The sentence: the point at (8, 8) dragged the centre up and to the right, because an average has no way to ignore a distant member. That is exactly what happened to centre 2 in class.
+
+**M3.** Drops: **820.1, 289.7, 144.1, 32.1, 24.9, 23.5, 20.5**. (a) Between **k = 4 and k = 5** (144.1 falls to 32.1). (b) `144.1 ÷ 32.1 = 4.49`. (c) **k = 4** (the data was generated with four blobs). (d) **k = 8** has the smallest inertia, 146.5, and always will, because inertia only falls as `k` grows, down to exactly 0 at one cluster per row; so "smallest inertia" has a known, useless answer and you read the drops instead.
+
+**M4.**
+
+(a) `d(P,Q)² = 0.25 + 6400 = 6400.25` · `d(P,R)² = 16 + 25 = 41.00`. On the raw numbers **P and R** are the alike pair, by `6400.25 ÷ 41 = 156.1` times.
+
+(b) Standardised:
+
+| | km | minutes |
+|---|---|---|
+| P | −0.8429 | −0.7743 |
+| Q | −0.5620 | 1.4120 |
+| R | 1.4049 | −0.6377 |
+
+(c) `d(P,Q)² = 0.0789 + 4.7799 = 4.8588` by calculator (Python prints **4.8590**; the gap is the rounding of the z-scores typed in, not an arithmetic slip) · `d(P,R)² = 5.0526 + 0.0187 = 5.0713`.
+
+(d) The **minutes** column did all the deciding: its gaps run up to 80 against at most 4 for km, and distance squares them (6400 against 16). Once both are on one ruler the pairs are nearly tied, 4.859 against 5.071, and the order flips, so P and Q are now the alike pair.
+
+**Marking notes.** **Accept 4.8588 or 4.8590 for d(P,Q)².** The flip is narrow (about 4%) and that is the finding: the raw ruler shouted a 156-fold certainty that was not there. Watch for a student who standardises with the wrong spread, or who subtracts the mean but forgets to divide; the raw-looking numbers in the standardised table give that away.
+
+### Predict the Output
+
+| | Answer | Why |
+|---|---|---|
+| **P1** | **No output: `AttributeError: 'KMeans' object has no attribute 'cluster_centers_'`** | `KMeans(...)` only builds the clusterer. A name ending in `_` does not exist until `.fit` has run. |
+| **P2** | `(5,)` · `(2, 2)` · `[3 2]` | One label per row, flat, so no second number. In `(2, 2)` the first 2 is your `k`, the second is the data's column count; `k = 3` would give `(3, 2)`. Then three points in cluster 0, two in cluster 1. |
+| **P3** | `a: [0 0 0 1 1] 7.3333` · `b: [1 1 1 0 0] 7.3333` · `same grouping? False` | The last line is `False`, but **the groupings are identical**; only which group is called 0 changed. `0`, `1`, `2` are names, not measurements. |
+| **P4** | `k = 4  inertia = 2.0  sizes = [1 1 2 1]` · `k = 5  inertia = 0.0  sizes = [1 1 1 1 1]` | At `k = 5` every point is its own centre, every squared distance is 0, so inertia is the best possible value and nothing has been grouped. |
+
+**Marking notes.** **Present or absent, not right or wrong.** Nearly everybody predicts `True` for P3; what earns credit is noticing afterwards that the two groupings are the same. For P1, accept any prediction with a reason, and bank the trailing-underscore rule.
+
+### Practice Set A
+
+| | Answer |
+|---|---|
+| **A1** | unsupervised learning **(iii)** · cluster **(v)** · centroid **(ii)** · inertia (WCSS) **(vi)** · k-means++ **(iv)** · elbow method **(i)** |
+| **A2 (a)** | Sizes say how many rows landed in each pile and nothing about *why*; a size list cannot be wrong, so it cannot be evidence. |
+| **A2 (b)** | The proline ranges 278–590, 600–937, 970–1680 do not overlap by a single unit: it is one column cut into three bands. |
+| **A2 (c)** | The alcohol ranges overlap almost completely, so alcohol had essentially no say. |
+| **A2 (d)** | **No.** The ruler, and so the units, changed. Inertias are comparable only from the same table measured the same way. |
+| **A3** | `(1)` → **(b)** · `(2)` → **(c)** · `(3)` → **(a)**. The one-word rule for (1): **underscore** (a trailing underscore means `.fit` has not run). |
+| **A4** | Panel 1 is **ASSIGN**, measuring **ten** distances (five points × two centres). Panel 2 is **MOVE**, and only the centres move, never the points. Arithmetic panel: centroid of {Q1,Q2,Q3} = (0.6667, 0.6667); `Σ = 0.8889 + 2.2222 + 2.2222 + 1.0000 + 1.0000`; inertia 7.3333. |
+| **A5** | **Both are right.** You counted rounds that changed something; `n_iter_` also counts the final pass that found nothing changed. The underscore rule, in their own words: a name ending in `_` does not exist until `.fit` has run. |
+| **A6 (a)** | `Xs` was built and thrown away; the next line fits on `X_raw`. Nothing errors because raw numbers are valid numbers. |
+| **A6 (b)** | Print each cluster's minimum and maximum of the widest column: three non-overlapping bands (278–590 / 600–937 / 970–1680) prove the unscaled run. |
+
+**Marking notes.** A1: be strict on *centroid* (must say average or mean) and *inertia* (must say **own** centre), as before. A2(a) is the subtle one; "they are different" without "sizes cannot be evidence" is half marks. A4 is a drawing-labelling task: check the ten, not five.
+
+### Practice Set B
+
+Run each program from the workbook's Answers section; these are the outputs to compare against.
+
+| | What the student's program must print |
+|---|---|
+| **B1** | `[65 51 62]` (adds to 178) |
+| **B2** | shape `(8, 2)` · labels `[0 0 0 0 1 1 1 1]` · centres `[[1.75, 1.75], [8.0, 6.5]]` · inertia `12.5000` · rounds counted `3` · sizes `[4 4]` |
+| **B3** | eight per-point lines (P1 1.1250, P2 0.6250, P3 2.1250, P4 1.6250, P5 1.2500, P6 2.2500, P7 1.2500, P8 2.2500), the sigma line, `= 12.5000`, `km.inertia_ = 12.5000`, and `True` |
+| **B4** | shape `(150, 2)`; inertias 1501.3, 681.2, 391.6, 247.5, 215.4, 190.5, 167.0, 146.5; drops 820.1, 289.7, 144.1, 32.1, 24.9, 23.5, 20.5; `ratio 144.1 / 32.1 = 4.49`; elbow at **k = 4** |
+| **B5** | table `(178, 13)` · widest **proline 314.91** · next **magnesium 14.28** · narrowest **nonflavanoid_phenols 0.12** · ratio **2530** and squared **6402548** · unscaled `[69 47 62]` inertia 2370689.7 · scaled `[65 51 62]` inertia 1277.9 · unscaled proline bands 278–590 / 970–1680 / 600–937 · scaled bands 278–886 / 372–880 / 465–1680 |
+
+**Marking notes.** **B2: `init=...` is the bug to look for**; without it sklearn starts from k-means++ and the centres will not match the pen page, and the student will blame their arithmetic. `n_iter_` printing 3 where they counted 2 is the final confirming pass, not an error. B5: the printed 2530 is from full-precision spreads; dividing the rounded `314.91 ÷ 0.12` gives 2,624, so do not mark 2,530 against 2,624 as wrong in either direction. **The contrast is the answer**: sealed proline bands unscaled, heavy overlap scaled.
+
+### Fix the Broken Program
+
+| | Where | What | Fix |
+|---|---|---|---|
+| **Bug 1** | the `warm = KMeans(...).fit(across)` line (workbook prints 15; counted in the listing it is line 14), `ValueError: Expected 2D array` | `pts[:, 0]` is flat, shape `(6,)`; k-means needs rows by columns | `.fit(across.reshape(-1, 1))`, giving `(6, 1)`; and print `.shape` before fitting |
+| **Bug 2** | the `print("cluster sizes:", np.bincount(km.labels_))` line (workbook says 22 in its answer and 23 in its traceback; counted in the listing it is line 21), `AttributeError ... 'labels_'` | `km` was built and never fitted | `KMeans(...).fit(Xs)` |
+| **Bug 3** | the `km3 = KMeans(...).fit(X_raw)` line (workbook says 25; counted in the listing it is line 23), silent | `Xs` is built and never used; `km3` fits `X_raw` | `km3 = KMeans(...).fit(Xs)` |
+
+**The contradiction:** `cluster sizes: [65 51 62]` (from `km`, scaled) sits above `cluster 0: n= 69` (from `km3`, raw); two different clusterings printed as one.
+
+**Fully fixed, the last lines print:**
+
+```text
+cluster sizes: [65 51 62]
+inertia: 1277.9
+cluster 0: n= 65  proline  278 to  886
+cluster 1: n= 51  proline  372 to  880
+cluster 2: n= 62  proline  465 to 1680
+```
+
+The bands now overlap heavily, which is the fingerprint of a clustering that used all thirteen columns.
+
+**Marking notes.** Bug 3 is the one that matters: credit it only if the student finds the contradiction *in the output* and not by reading the code line by line. **The line numbers printed in the workbook do not agree with each other or with the listing** (it prints 15, 23 and 25; the lines count as 14, 21 and 23), so mark the *line identified by its code*, not the number, and do not let a student lose a mark over an off-by-one that the workbook itself makes. For Bug 2 the unfitted `km = ...` is the cause and the `print` is where it fires; accept either.
+
+### Puzzle of the Week
+
+| | arrangement | centres | stopping place? | inertia |
+|---|---|---|---|---|
+| (i) | {A,C} · {B} · {D,E,F} | (1.5, 2.5) · (2, 1) · (8, 8) | **yes** | 5.0000 |
+| (ii) | {A,B,C} · {D,F} · {E} | (1.6667, 2.0) · (7.5, 8.5) · (9, 7) | **yes** | 3.6667 |
+| (iii) | {A,B} · {C} · {D,E,F} | (1.5, 1.5) · (2, 3) · (8, 8) | **yes** | 5.0000 |
+| (iv) | {A,B,C,D} · {E} · {F} | (3.25, 3.5) · (9, 7) · (7, 9) | **no, D jumps** | (lands on (ii), 3.6667) |
+| (v) | {A} · {B,C} · {D,E,F} | (1, 2) · (2, 2) · (8, 8) | **yes** | 6.0000 |
+
+**Four of the five** are stopping places. **(ii) has the smallest inertia, 3.6667**, and is the one `n_init=10` finds. In (iv), D is 42.8125 from its own centre and 2 from each of the other two, so it jumps.
+
+**The punchline:** six points and `k = 3` have at least four places k-means can legally stop, three of them worse than the best, and nothing inside the algorithm can tell which it landed in; running from several starts and keeping the lowest inertia is what `n_init=10` is for.
+
+**Marking notes.** The usual slip is to check only that *some* point is nearest its own centre and miss D in (iv). Credit the "several starts, keep the lowest" sentence; a student who writes "to make it more accurate" has not got it.
+
+### Think Deeper
+
+**T1.** A good paragraph names **at least two** pieces of evidence and says what each cannot prove: (1) tightness compared on the same table, e.g. inertia drops and a ratio like `381.1 ÷ 97.2 = 3.9` (cannot show any group is real, since inertia falls to zero at one cluster per row); (2) the groups' contents in real units, e.g. proline 1100 against an overall 747 (checkable by an expert, but a cluster of noise can be described as convincingly); (3) the strongest, running the identical pipeline on data with no structure and reporting it. **Full marks also needs "here is what would change my mind."** A write-up with no falsifiable claim is a brochure.
+
+**T2.** Inertia cannot choose `k` because it always prefers more. The paragraph must bring in something the data cannot know: two independent numbers agreeing (drop ratio and, from next week, a separation score), **who will use the groups** (three vouchers means `k = 3`; a trial needs groups big enough to run), and **what a wrong grouping costs** (photos against patients). The honest answer always includes a person.
+
+**Marking notes.** No single right answer; mark for the two named pieces of evidence and for an outside-the-data consideration in T2. A paragraph that says "use the elbow" and stops has answered the question the lesson said was not enough.
+
+### Build It
+
+**Predictions (top of Build It, in class).** Present or absent, not right or wrong.
 
 | | Most students predict | The truth |
 |---|---|---|
-| (a) which point switches | A, or none | **C**, because centre 2 gets dragged to (6.5, 6.75) and C is left behind |
-| (b) how many rounds | 5 to 10 | **2** |
-| (c) unscaled wine clusters | yes, it has 13 columns of chemistry | **no — they are three non-overlapping bands of `proline` and nothing else** |
-| (d) random numbers | it will refuse, or return one cluster, or error | **three tidy clusters, sizes `[62 44 72]`, and you can invent names for them** |
+| (a) which point switches | P1, or none | **P4**, because a centre starts exactly on it (distance 0, unbeatable in round 1) and then that centre is dragged away |
+| (b) more or fewer than five rounds | more | **Fewer: 2** rounds (`n_iter_` prints 3) |
+| (c) unscaled wine clusters | yes, there are 13 columns of chemistry | **No: three non-overlapping bands of `proline` and nothing else** |
+| (d) 178 rows of random numbers | refuse, one cluster, or an error | **Three tidy clusters, sizes `[62 44 72]`, and you can invent names for them** |
 
-**Marking notes.** **Present or absent, not right or wrong.** (c) and (d) are designed to be got wrong, and nearly everybody gets (d) wrong. **What earns credit is a prediction with a reason attached** — *"the groups will be meaningful because there are thirteen columns of real chemistry in there"* is a genuine hypothesis and it got tested and refuted, which is the best thing that can happen to a hypothesis. **A blank page means the lesson was a demonstration rather than an experiment.**
+**Round 1, all sixteen.** Centres `C1 = (1,1)`, `C2 = (3,2)`.
 
-### Page 28.3 — The floor trace (in class)
+| point | to C1 = (1,1) | to C2 = (3,2) | winner |
+|---|---|---|---|
+| P1 (1,1) | 0 + 0 = **0** | 4 + 1 = 5 | C1 |
+| P2 (2,1) | 1 + 0 = **1** | 1 + 1 = 2 | C1 |
+| P3 (1,3) | 0 + 4 = **4** | 4 + 1 = 5 | C1 |
+| P4 (3,2) | 4 + 1 = 5 | 0 + 0 = **0** | C2 |
+| P5 (7,6) | 36 + 25 = 61 | 16 + 16 = **32** | C2 |
+| P6 (8,8) | 49 + 49 = 98 | 25 + 36 = **61** | C2 |
+| P7 (9,7) | 64 + 36 = 100 | 36 + 25 = **61** | C2 |
+| P8 (8,5) | 49 + 16 = 65 | 25 + 9 = **34** | C2 |
 
-**Round 1, with centres at (1, 2) and (2, 3).** All twelve squared distances:
+Groups: **C1 = {P1, P2, P3}**, **C2 = {P4, P5, P6, P7, P8}**. Move:
+
+```text
+C1 = ( (1+2+1) ÷ 3 , (1+1+3) ÷ 3 )         = ( 4÷3 , 5÷3 )   = ( 1.3333 , 1.6667 )
+C2 = ( (3+7+8+9+8) ÷ 5 , (2+6+8+7+5) ÷ 5 ) = ( 35÷5 , 28÷5 ) = ( 7.0 , 5.6 )
+```
+
+**Round 2, all sixteen.**
+
+| point | to C1 = (1.3333, 1.6667) | to C2 = (7.0, 5.6) | winner |
+|---|---|---|---|
+| P1 (1,1) | 0.1111 + 0.4444 = **0.5556** | 36.0000 + 21.1600 = 57.1600 | C1 |
+| P2 (2,1) | 0.4444 + 0.4444 = **0.8889** | 25.0000 + 21.1600 = 46.1600 | C1 |
+| P3 (1,3) | 0.1111 + 1.7778 = **1.8889** | 36.0000 + 6.7600 = 42.7600 | C1 |
+| P4 (3,2) | 2.7778 + 0.1111 = **2.8889** | 16.0000 + 12.9600 = 28.9600 | **C1 ← switched** |
+| P5 (7,6) | 32.1111 + 18.7778 = 50.8889 | 0.0000 + 0.1600 = **0.1600** | C2 |
+| P6 (8,8) | 44.4444 + 40.1111 = 84.5556 | 1.0000 + 5.7600 = **6.7600** | C2 |
+| P7 (9,7) | 58.7778 + 28.4444 = 87.2222 | 4.0000 + 1.9600 = **5.9600** | C2 |
+| P8 (8,5) | 44.4444 + 11.1111 = 55.5556 | 1.0000 + 0.3600 = **1.3600** | C2 |
+
+Groups: **C1 = {P1, P2, P3, P4}**, **C2 = {P5, P6, P7, P8}**. **The switcher is P4.** Move:
+
+```text
+C1 = ( (1+2+1+3) ÷ 4 , (1+1+3+2) ÷ 4 ) = ( 7÷4 , 7÷4 )   = ( 1.75 , 1.75 )
+C2 = ( (7+8+9+8) ÷ 4 , (6+8+7+5) ÷ 4 ) = ( 32÷4 , 26÷4 ) = ( 8.0 , 6.5 )
+```
+
+**Rounds to converge: 2** (round 3 changes nothing; `km.n_iter_` prints 3).
+
+**Inertia, sigma written out** (final centres `(1.75, 1.75)` and `(8.0, 6.5)`):
+
+```text
+P1 (1,1) to (1.75, 1.75):  0.5625 + 0.5625 = 1.1250
+P2 (2,1) to (1.75, 1.75):  0.0625 + 0.5625 = 0.6250
+P3 (1,3) to (1.75, 1.75):  0.5625 + 1.5625 = 2.1250
+P4 (3,2) to (1.75, 1.75):  1.5625 + 0.0625 = 1.6250
+P5 (7,6) to (8.0,  6.5) :  1.0000 + 0.2500 = 1.2500
+P6 (8,8) to (8.0,  6.5) :  0.0000 + 2.2500 = 2.2500
+P7 (9,7) to (8.0,  6.5) :  1.0000 + 0.2500 = 1.2500
+P8 (8,5) to (8.0,  6.5) :  0.0000 + 2.2500 = 2.2500
+
+Σ (distance to my own centre)²
+   =  1.1250 + 0.6250 + 2.1250 + 1.6250 + 1.2500 + 2.2500 + 1.2500 + 2.2500
+   =  12.5000
+```
+
+`km.inertia_` prints **12.5000**; **they match to four decimal places.** **The looser cluster is C2 (the second):** its four terms add to 7.0000 against 5.5000 for C1 (5.5 + 7.0 = 12.5), visible from the eight terms alone.
+
+**The wine results table.**
+
+| run | sizes | inertia | proline range of each cluster |
+|---|---|---:|---|
+| unscaled, k = 3 | `[69 47 62]` | 2,370,689.7 | 278–590 / 970–1680 / 600–937 |
+| scaled, k = 3 | `[65 51 62]` | 1,277.9 | 278–886 / 372–880 / 465–1680 |
+
+**The column that took over: `proline`, spread 314.91.** Next widest: `magnesium`, **14.28**. Narrowest: `nonflavanoid_phenols`, **0.12**.
+
+**The two sentences being marked.**
+
+> **`proline` took over.** Its spread is **314.91** against **14.28** for the next widest and **0.12** for the narrowest, and because distance adds up the *squared* gaps, proline contributes roughly **2,530² ≈ 6.4 million** times more to every comparison than the narrowest column does (against about 99,000 times for a column with a spread of 1, such as `flavanoids`). The proof is the bands: the three unscaled clusters have proline ranges **278–590, 600–937 and 970–1680, which do not overlap by a single unit**, while their alcohol ranges (11.03–14.13, 12.85–14.83, 11.45–14.34) overlap almost completely.
+>
+> **It was predictable from `X_raw.std()` alone**, before clustering anything: one column's spread was **22 times** the next biggest (`magnesium`, 14.28) and **2,530 times** the smallest (`nonflavanoid_phenols`, 0.12), so that column was always going to be the whole model. Twelve of thirteen columns were not weakly consulted; they were not consulted at all.
+
+**Stretch — three clusters from nothing.** Sizes **`[62 44 72]`**, inertia **1973.0**, no errors or warnings, and the groups can be named from their column means (cluster 0 low on column 1, cluster 1 high on it and on column 4; first-four means `[-0.444 -0.259 0.296 -0.041]` and `[0.522 -0.029 0.096 0.91]`). The sentence: *`km.labels_` coming back is not evidence of anything; in a formless cloud there is still a tightest three groups, so a clustering is a finding only once the same pipeline has been shown to give something different on data with nothing in it.* That is the negative control Week 30 makes routine.
+
+**Marking notes (the trace).** **Thirty-two squared distances, or it is incomplete.** The interesting row is P4: it starts as a centre's own location (distance 0, so it cannot lose round 1) and then switches, the same trap as C on the floor. **A student who noticed that P4 was *guaranteed* to win round 1 has understood something real.** Watch for `(9−7)² = 4` being written as `2`; the fingerprint is the row for P7. **Marking notes (the sigma).** **The eight terms must be on the page, beside the symbol.** A total with no sum written out fails even if the total is right. Full marks also needs "they match", stated. Noticing the looser cluster goes beyond the task.
+
+**Marking notes (the wine table).** **This is the part to mark hardest, and there are three bars.** **One — is a specific column named, with its spread quoted?** `proline`, `314.91`. **Two — is there evidence rather than assertion?** The non-overlapping bands. A student who only reports the two sets of cluster sizes has not proved anything: `[69 47 62]` and `[65 51 62]` look reassuringly similar, which is exactly why sizes are the wrong evidence. **Say that in your feedback; it is the subtlest point on the page.** **Three — does the prediction come from the spreads, not from hindsight?** "I could have predicted it because I know you have to scale" is not a prediction. A student who notices that distance squares the gaps, so a 315-to-1 ratio in spread becomes about 99,000-to-1 in influence, is at level 5. **Marking notes (the stretch).** The numbers are the easy half; the sentence is the page. Full marks needs some version of *"getting clusters is not evidence that there are clusters"*. A student who proposes running the noise version as a routine check has independently invented the negative control, and should be told so loudly. A student who says "the random data must have had a pattern in it" has the misconception backwards; have them regenerate with a different seed and see the sizes change but the tidiness stay.
+
+### Draw It
+
+**The point that switched, and why it was guaranteed to win round 1:** *P4. A starting centre was sitting exactly on top of it, so its squared distance was 0 + 0 = 0 and nothing beats zero; then that centre was dragged out to (7, 5.6) by four far-away points and P4 was left nearest the other one.* **The three proline bands: 278–590 / 600–937 / 970–1680. The number beside them: 314.91.**
+
+The drawing should also show the eight points twice (ASSIGN with dashed lines, then MOVE with arrows), one squared distance written out in full, the sigma with all eight terms and `12.5000`, and the words "twelve columns were not consulted". **A great drawing puts the three bands on a single number line**, because the gaps between them are the evidence; bands stacked as a table have only written the numbers down.
+
+**Marking notes.** Mark for the labelled ASSIGN and MOVE and for the bands on one axis with 314.91. Artwork quality is not marked.
+
+### Self-Check
+
+No right answers. Three rows predict later weeks. *Smallest inertia can never choose `k`*: if 😕, cluster the five Q points at `k = 5` (inertia `0.0000`, sizes `[1 1 1 1 1]`). *Name the column that took over*: the fix is a habit; after every clustering print the min and max of the widest column inside each cluster. *Why clusters are not evidence*: if 😕, run the stretch (`[62 44 72]`), try to name them, and notice how easy it was. That is the door into Week 30.
+
+### The six-point floor trace (done in class; no workbook page)
+
+The class fills these in on squared paper ruled into the two tables on the board, not in the workbook. **Round 1, with centres at (1, 2) and (2, 3).** All twelve squared distances:
 
 | point | to centre 1 = (1,2) | to centre 2 = (2,3) | winner |
 |---|---|---|---|
@@ -1661,202 +1888,9 @@ centre 1 = ( 5÷3 , 6÷3 ) = ( 1.6667 , 2.0 )
 centre 2 = ( 24÷3 , 24÷3 ) = ( 8.0 , 8.0 )
 ```
 
-**Round 3 changes nothing, so it stops. Converged in 2 rounds.** The switcher is **C**.
+**Round 3 changes nothing, so it stops. Converged in 2 rounds.** The switcher is **C**, and the inertia is `6.6667`. The class's predictions before this run (which point switches: most say A or none, the truth is C because centre 2 is dragged to (6.5, 6.75) and C is left behind) are the lesson-plan version of the Build It prediction table.
 
-**Marking notes.** **Twenty-four squared distances, or it is not finished.** The most common error is computing the *across* gap and forgetting to square it — you will see `A to centre 2 = 1 + 1 = 2` written as `1 + 1 = 2` correctly by luck, since 1² = 1, and then `D to centre 1 = 7 + 6 = 13` instead of `49 + 36 = 85`. **Check a row where the gaps are bigger than 1; that is where the error shows.**
-
-### Page 28.4 — Two rounds by hand on eight points (homework)
-
-*The points: `P1=(1,1)`, `P2=(2,1)`, `P3=(1,3)`, `P4=(3,2)`, `P5=(7,6)`, `P6=(8,8)`, `P7=(9,7)`, `P8=(8,5)`. Starting centres: `C1=(1,1)` and `C2=(3,2)`.*
-
-**ROUND 1, assign — all sixteen squared distances.**
-
-| point | to C1 = (1,1) | to C2 = (3,2) | winner |
-|---|---|---|---|
-| P1 (1,1) | 0 + 0 = **0** | 4 + 1 = 5 | C1 |
-| P2 (2,1) | 1 + 0 = **1** | 1 + 1 = 2 | C1 |
-| P3 (1,3) | 0 + 4 = **4** | 4 + 1 = 5 | C1 |
-| P4 (3,2) | 4 + 1 = 5 | 0 + 0 = **0** | C2 |
-| P5 (7,6) | 36 + 25 = 61 | 16 + 16 = **32** | C2 |
-| P6 (8,8) | 49 + 49 = 98 | 25 + 36 = **61** | C2 |
-| P7 (9,7) | 64 + 36 = 100 | 36 + 25 = **61** | C2 |
-| P8 (8,5) | 49 + 16 = 65 | 25 + 9 = **34** | C2 |
-
-Groups: **C1 = {P1, P2, P3}**, **C2 = {P4, P5, P6, P7, P8}**.
-
-**ROUND 1, move.**
-
-```text
-C1 = ( (1+2+1) ÷ 3 , (1+1+3) ÷ 3 )           = ( 4÷3 , 5÷3 )   = ( 1.3333 , 1.6667 )
-C2 = ( (3+7+8+9+8) ÷ 5 , (2+6+8+7+5) ÷ 5 )   = ( 35÷5 , 28÷5 ) = ( 7.0 , 5.6 )
-```
-
-**ROUND 2, assign — all sixteen squared distances.**
-
-| point | to C1 = (1.3333, 1.6667) | to C2 = (7.0, 5.6) | winner |
-|---|---|---|---|
-| P1 (1,1) | 0.1111 + 0.4444 = **0.5556** | 36.0000 + 21.1600 = 57.1600 | C1 |
-| P2 (2,1) | 0.4444 + 0.4444 = **0.8889** | 25.0000 + 21.1600 = 46.1600 | C1 |
-| P3 (1,3) | 0.1111 + 1.7778 = **1.8889** | 36.0000 + 6.7600 = 42.7600 | C1 |
-| P4 (3,2) | 2.7778 + 0.1111 = **2.8889** | 16.0000 + 12.9600 = 28.9600 | **C1 ← switched** |
-| P5 (7,6) | 32.1111 + 18.7778 = 50.8889 | 0.0000 + 0.1600 = **0.1600** | C2 |
-| P6 (8,8) | 44.4444 + 40.1111 = 84.5556 | 1.0000 + 5.7600 = **6.7600** | C2 |
-| P7 (9,7) | 58.7778 + 28.4444 = 87.2222 | 4.0000 + 1.9600 = **5.9600** | C2 |
-| P8 (8,5) | 44.4444 + 11.1111 = 55.5556 | 1.0000 + 0.3600 = **1.3600** | C2 |
-
-Groups: **C1 = {P1, P2, P3, P4}**, **C2 = {P5, P6, P7, P8}**. **The switcher is P4.**
-
-**ROUND 2, move.**
-
-```text
-C1 = ( (1+2+1+3) ÷ 4 , (1+1+3+2) ÷ 4 ) = ( 7÷4 , 7÷4 )   = ( 1.75 , 1.75 )
-C2 = ( (7+8+9+8) ÷ 4 , (6+8+7+5) ÷ 4 ) = ( 32÷4 , 26÷4 ) = ( 8.0 , 6.5 )
-```
-
-**Round 3 changes nothing — converged in 2 rounds**, exactly as on the floor.
-
-And the check:
-
-```python
-import numpy as np
-from sklearn.cluster import KMeans
-
-pts = np.array([[1., 1.], [2., 1.], [1., 3.], [3., 2.],
-                [7., 6.], [8., 8.], [9., 7.], [8., 5.]])
-km = KMeans(n_clusters=2, init=np.array([[1., 1.], [3., 2.]]),
-            n_init=1, random_state=0).fit(pts)
-print("labels :", km.labels_)
-print("centres:", np.round(km.cluster_centers_, 4).tolist())
-print("inertia: %.4f   rounds: %d" % (km.inertia_, km.n_iter_))
-```
-
-```text
-labels : [0 0 0 0 1 1 1 1]
-centres: [[1.75, 1.75], [8.0, 6.5]]
-inertia: 12.5000   rounds: 3
-```
-
-**Marking notes.** **Thirty-two squared distances or it is incomplete.** The interesting row is P4: it starts as a centre's own location (distance 0, so it cannot lose round 1) and then switches, which is the same trap as C on the floor wearing different clothes. **A student who noticed that P4 was *guaranteed* to win round 1 because a centre was sitting on it has understood something real.** Watch for `(9−7)² = 4` being written as `2`; the fingerprint is the row for P7.
-
-### Page 28.5 — Inertia, with the sigma written out (homework)
-
-*Compute the inertia of your final eight-point clustering by hand, writing the sum out in full beside the symbol. Then check it against `km.inertia_`.*
-
-Final centres: `C1 = (1.75, 1.75)` with `{P1, P2, P3, P4}`, and `C2 = (8.0, 6.5)` with `{P5, P6, P7, P8}`.
-
-```text
-P1 (1,1) to (1.75, 1.75):  0.5625 + 0.5625 = 1.1250
-P2 (2,1) to (1.75, 1.75):  0.0625 + 0.5625 = 0.6250
-P3 (1,3) to (1.75, 1.75):  0.5625 + 1.5625 = 2.1250
-P4 (3,2) to (1.75, 1.75):  1.5625 + 0.0625 = 1.6250
-P5 (7,6) to (8.0,  6.5) :  1.0000 + 0.2500 = 1.2500
-P6 (8,8) to (8.0,  6.5) :  0.0000 + 2.2500 = 2.2500
-P7 (9,7) to (8.0,  6.5) :  1.0000 + 0.2500 = 1.2500
-P8 (8,5) to (8.0,  6.5) :  0.0000 + 2.2500 = 2.2500
-```
-
-And the sigma, written out beside the symbol as required:
-
-```text
-Σ (distance to my own centre)²
-   =  1.1250 + 0.6250 + 2.1250 + 1.6250 + 1.2500 + 2.2500 + 1.2500 + 2.2500
-   =  12.5000
-```
-
-`km.inertia_` prints **12.5000**. **They match to four decimal places.** ✅
-
-A useful extra check they may notice: cluster 1 contributes `1.1250 + 0.6250 + 2.1250 + 1.6250 = 5.5000` and cluster 2 contributes `1.2500 + 2.2500 + 1.2500 + 2.2500 = 7.0000`, and `5.5 + 7.0 = 12.5`. **Cluster 2 is the looser of the two**, which is visible in the numbers and not in a picture.
-
-**Marking notes.** **The eight terms must be on the page, beside the symbol.** A total with no sum written out fails this page even if the total is right — that is the whole point of the page. **Full marks also needs "they match", stated.** A student who breaks the total down per cluster and notices cluster 2 is looser has gone beyond the task.
-
-### Page 28.6 — The scaling experiment on `load_wine` (homework)
-
-```python
-import numpy as np
-import pandas as pd
-from sklearn.cluster import KMeans
-from sklearn.datasets import load_wine
-from sklearn.preprocessing import StandardScaler
-
-wine = load_wine()
-X_raw = pd.DataFrame(wine.data, columns=wine.feature_names)
-
-print("the spread of each column, biggest first:")
-print(X_raw.std().sort_values(ascending=False).round(2).head(5).to_string())
-
-km_raw = KMeans(n_clusters=3, n_init=10, random_state=0).fit(X_raw)
-Xs = StandardScaler().fit_transform(X_raw)
-km_sc = KMeans(n_clusters=3, n_init=10, random_state=0).fit(Xs)
-print()
-print("UNSCALED sizes", np.bincount(km_raw.labels_))
-print("SCALED   sizes", np.bincount(km_sc.labels_))
-
-print()
-pro, alc = X_raw["proline"].values, X_raw["alcohol"].values
-for c in range(3):
-    m = km_raw.labels_ == c
-    print("unscaled cluster %d: n=%3d  proline %4.0f to %4.0f   alcohol %.2f to %.2f"
-          % (c, m.sum(), pro[m].min(), pro[m].max(), alc[m].min(), alc[m].max()))
-```
-
-```text
-the spread of each column, biggest first:
-proline              314.91
-magnesium             14.28
-alcalinity_of_ash      3.34
-color_intensity        2.32
-malic_acid             1.12
-
-UNSCALED sizes [69 47 62]
-SCALED   sizes [65 51 62]
-
-unscaled cluster 0: n= 69  proline  278 to  590   alcohol 11.03 to 14.13
-unscaled cluster 1: n= 47  proline  970 to 1680   alcohol 12.85 to 14.83
-unscaled cluster 2: n= 62  proline  600 to  937   alcohol 11.45 to 14.34
-```
-
-**The two sentences being marked.**
-
-> **`proline` took over.** Its spread is **314.91**, against **1.00** for `flavanoids` and **0.81** for `alcohol` — and because distance adds up the *squared* gaps, proline contributes roughly 314.91² ÷ 1.00² ≈ **99,000 times** more to every comparison than flavanoids does. The proof is in the three unscaled clusters' proline ranges — **278–590, 600–937, 970–1680, which do not overlap by a single unit** — while their alcohol ranges (11.03–14.13, 12.85–14.83, 11.45–14.34) overlap almost completely.
->
-> **It was predictable from `X_raw.std()` alone**, before clustering anything: one column's spread was **22 times** the next biggest (`magnesium`, 14.28) and **2,624 times** the smallest (`nonflavanoid_phenols`, 0.12), so that column was always going to be the whole model.
-
-**Marking notes.** **This is the page to mark hardest, and there are three bars.** **One — is a specific column named, with its spread quoted?** `proline`, `314.91`. **Two — is there evidence rather than assertion?** The non-overlapping bands. A student who only reports the two sets of cluster sizes has not proved anything — `[69 47 62]` and `[65 51 62]` look reassuringly similar, which is exactly why sizes are the wrong evidence. **Say that in your feedback; it is the subtlest point on the page.** **Three — does the prediction come from the spreads, not from hindsight?** "I could have predicted it because I know you have to scale" is not a prediction. **A student who notices that distance squares the gaps, so a 315-to-1 ratio in spread becomes about 99,000-to-1 in influence, is at level 5.**
-
-### Page 28.7 — Stretch: three clusters from nothing
-
-*Run the whole thing on 178 rows of 13 columns of pure random numbers. Report what you get, and say what you think about it.*
-
-```python
-import numpy as np
-from sklearn.cluster import KMeans
-
-noise = np.random.default_rng(0).normal(size=(178, 13))
-km = KMeans(n_clusters=3, n_init=10, random_state=0).fit(noise)
-print("sizes  :", np.bincount(km.labels_))
-print("inertia: %.1f" % km.inertia_)
-print("cluster 0 means, first four columns:",
-      np.round(noise[km.labels_ == 0].mean(axis=0)[:4], 3))
-print("cluster 1 means, first four columns:",
-      np.round(noise[km.labels_ == 1].mean(axis=0)[:4], 3))
-```
-
-```text
-sizes  : [62 44 72]
-inertia: 1973.0
-cluster 0 means, first four columns: [-0.444 -0.259  0.296 -0.041]
-cluster 1 means, first four columns: [ 0.522 -0.029  0.096  0.91 ]
-```
-
-**And here is the honest reading, which is the whole point of the page.**
-
-**Nothing went wrong.** There is no structure whatsoever in that data — every one of the 2,314 numbers came out of the same random generator — and k-means returned three clean clusters of 62, 44 and 72, with a perfectly respectable-looking inertia and **visibly different column means.** Cluster 0 is low on column 1 and cluster 1 is high on it; cluster 1 is high on column 4 and cluster 0 is not. **You could write a report about those groups. You could name them.** Somebody would believe it.
-
-**So the lesson is not "k-means is unreliable". It is this: `km.labels_` coming back is not evidence of anything.** The algorithm is doing exactly what it was asked — find the tightest three groups in this cloud — and in a formless cloud there is still a tightest three groups. It just does not mean there are three of anything.
-
-**Which is why the deliverable in unsupervised learning is an argument.** You need a reason to believe your structure is in the data rather than in the method, and **you get it by comparing against exactly this: run your whole pipeline on noise and see what it gives you.** A silhouette score of 0.28 on real data means something very different if noise scores 0.08 than if noise scores 0.26. Week 30 does this properly and calls it a negative control.
-
-**Marking notes.** **The numbers are the easy half; the sentence is the page.** Full marks needs some version of *"getting clusters is not evidence that there are clusters"*. **A student who proposes running the noise version as a routine check before trusting any clustering has independently invented the negative control, which is a genuinely rare move — say so loudly.** A student who says "the random data must have had a pattern in it" has the misconception backwards; push them to generate it again with a different seed and see that the sizes change but the tidiness does not.
+**Marking notes.** **Twenty-four squared distances, or it is not finished.** The most common error is computing the *across* gap and forgetting to square it: `A to centre 2 = 1 + 1 = 2` comes out right by luck, since 1² = 1, and then `D to centre 1 = 7 + 6 = 13` instead of `49 + 36 = 85`. **Check a row where the gaps are bigger than 1; that is where the error shows.**
 
 ### Answers to every question posed in the lesson
 

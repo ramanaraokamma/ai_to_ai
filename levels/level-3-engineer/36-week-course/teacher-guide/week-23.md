@@ -15,7 +15,7 @@
 | **New maths** | **None.** One division rounded up — 1257 ÷ 32 — done three ways and made to agree. |
 | **New syntax** | `class Net(nn.Module)` with `super().__init__()` and `forward(self, x)` · `TensorDataset(X, y)` + `DataLoader(ds, batch_size=32, shuffle=True)` · `model.eval()` / `model.train()` · `torch.save(model.state_dict(), p)` + `model.load_state_dict(torch.load(p))` |
 | **Dataset** | `make_moons(random_state=0)` for the identity proof, then **`load_digits()`** — 1,797 handwritten digits, 8×8 greyscale, 64 columns, shipped inside scikit-learn. **Nothing downloads. No internet needed. No torchvision.** |
-| **Materials** | Printed workbook pages 23.1–23.6 · the **PARAMETER COUNT** wall sheet from Week 22, still up · a printed **CLEAN ROOM** checklist with seven tick-boxes, one per student · the Bug Log · Week 22's `layers.py` on disk |
+| **Materials** | The printed workbook (Warm-Up, Predict the Output and Build It are the sections used in class) · the **PARAMETER COUNT** wall sheet from Week 22, still up · a printed **CLEAN ROOM** checklist with seven tick-boxes, one per student · the Bug Log · Week 22's `layers.py` on disk |
 | **Tech needed** | Laptop with Python 3, numpy, scikit-learn, matplotlib, **torch**. **No new installs.** `load_digits` is part of scikit-learn and loads instantly offline. |
 | **Prep time** | 30 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `same_brain.py` **instant**. `train_digits.py` trains 15 epochs, 600 optimizer steps, and saves the weights in **0.2 seconds**. `predict_digits.py` **instant**. Nothing this week takes longer than a breath. |
@@ -620,7 +620,7 @@ exit=1
 - [ ] **Break it on purpose, twice.** These are the two deliberate mistakes in the live-code:
   1. Delete `super().__init__()`. You get `AttributeError: cannot assign module before Module.__init__() call` on the very next line.
   2. Load `digits_mlp.pt` into an `nn.Sequential(nn.Linear(64,64), nn.ReLU(), nn.Linear(64,10))`. You get the `Missing key(s)` / `Unexpected key(s)` error in full.
-- [ ] **Print workbook pages 23.1–23.6.**
+- [ ] **Print the workbook** (`workbook/week-23.md`). In class you use Warm-Up, Predict the Output and the Build It checklist; the rest is set as homework.
 - [ ] **Leave the PARAMETER COUNT wall sheet up** and put a fifth row on it: `64 → 64 → 10`. The `by hand` column already says 4810 from last week's activity.
 
 ### 5 minutes on the day
@@ -628,7 +628,7 @@ exit=1
 - [ ] Editor open, terminal ready. All three files **deleted or renamed** — they type them.
 - [ ] Wall sheet up with the fifth row.
 - [ ] CLEAN ROOM checklists handed out face down.
-- [ ] Workbook 23.1 out. **The two shape lists get predicted in pen before anything runs.**
+- [ ] Workbook out at Predict the Output (P2, the two `state_dict` name lists). **The two shape lists get predicted in pen before anything runs.**
 - [ ] Bug Log out.
 - [ ] **One terminal window you can close dramatically.** The Clean Room Test needs a visible "everything is gone" moment.
 
@@ -1091,7 +1091,7 @@ FINAL: test accuracy 0.9667 on 540 held-out digits
 >
 > Which means it is not looking at a picture. **Next week we find out what that costs, and what to use instead.**"
 
-**Do this:** Hand out the homework and read part three out loud, slowly.
+**Do this:** Hand out the homework and read Part 3 of Build It (the `model.eval()` experiment) out loud, slowly.
 
 ---
 
@@ -1142,7 +1142,7 @@ This section gives the full setup, stages and variations for the lab, so you can
 
 - Three empty files in one folder: `digits_net.py`, `train_digits.py`, `predict_digits.py`.
 - The CLEAN ROOM checklist, one per student, face down until stage 3.
-- Workbook page 23.3, which is the same checklist with room for the pasted evidence.
+- The workbook's Build It section: its 12-step checklist and Parts 1 to 3, with room for the pasted evidence. (The CLEAN ROOM handout is the seven-box sheet; the workbook checklist is the longer one.)
 - The three-box diagram still on the board.
 
 ### Stage 1 — the three files (12 minutes)
@@ -1493,17 +1493,17 @@ This section gives the wording to use when you set the homework.
 
 **Say this:**
 
-> "About an hour, three pages, and the third one is an experiment, not a question.
+> "About an hour, three parts, and the third one is an experiment, not a question. They are all in the **Build It** section of the workbook.
 >
-> **First, page 23.4 — finish the digits MLP and its `predict.py`.** If it already works, run it once more and paste the output. I want three things on the page: the `FINAL:` line **with the split in it**, the four `state_dict` names with their shapes, and the grep with its `exit=1`.
+> **First, Build It Part 1 — finish the digits MLP and its `predict.py`.** If it already works, run it once more and paste the output. I want three things on the page: the `FINAL:` line **with the split in it**, the four `state_dict` names with their shapes, and the grep with its `exit=1`.
 >
-> **Second, page 23.5 — count the optimizer steps in one epoch three different ways, and make all three agree.** By dividing and rounding up. By counting the loop. By asking the DataLoader. **All three printed numbers pasted on the page**, and one sentence saying what you would do if they disagreed.
+> **Second, Build It Part 2 — count the optimizer steps in one epoch three different ways, and make all three agree.** By dividing and rounding up. By counting the loop. By asking the DataLoader. **All three printed numbers pasted in the table**, then the fourth check, the sum of the batch sizes, and one sentence saying what you would do if they disagreed.
 >
-> **Third, page 23.6 — the `model.eval()` experiment, and this is the one I care about.** Take one digit. Push it through the model five times with `model.train()` and paste all five answers. Then call `model.eval()` and push the same digit through five more times and paste those. **Then two sentences: what changed, and why that matters if you were shipping this to somebody.**"
+> **Third, Build It Part 3 — the `model.eval()` experiment, and this is the one I care about.** Take one digit. Push it through the model five times with `model.train()` and paste all five answers. Then call `model.eval()` and push the same digit through five more times and paste those. **Then two sentences: what changed, and why that matters if you were shipping this to somebody.** Fill in the Bug Log while you are there."
 
-**Workbook pages:** 23.1, 23.2, 23.3 in class · **23.4, 23.5, 23.6** at home.
+**Workbook sections:** **in class:** Warm-Up, Predict the Output (P1–P4) and the Build It step checklist (steps 1–10, during the activity) · **at home (the hour below):** Build It Parts 1, 2 and 3, and the Bug Log. **The rest of the workbook is not part of the hour** (Do the Maths by Hand, Practice Sets A and B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Draw It, Self-Check); you choose how much of it to set. The Answer Key covers all of it, in workbook order.
 
-**Expected time:** 25 min finishing the files and pasting the three pieces of evidence · 15 min on the three step counts · 20 min on the eval experiment and the two sentences. **About 60 minutes.**
+**Expected time:** 25 min finishing the files and pasting the three pieces of evidence (Part 1) · 15 min on the three step counts (Part 2) · 20 min on the eval experiment and the two sentences (Part 3). **About 60 minutes** for Build It; any other workbook section is extra.
 
 > **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — does the `FINAL:` line name the pile?** *"0.9667 on 540 held-out digits"* is full marks; *"96.67% accurate"* is not, and it is worth one line of feedback every week until it sticks. **Two — are all three step counts actually pasted?** A page that says "they agree" without the three numbers has not done the task; the whole skill is the comparison. **Three — do the ten pasted predictions actually differ in the first block and match in the second?** If all ten are identical, `model.eval()` was called before the `train()` block, or `nn.Dropout` is missing from the class — and that is worth chasing, because the student has not seen the thing the page exists to show them. If the first five differ and the second five match, the point has landed, and the two sentences will usually say so.
 
@@ -1511,11 +1511,654 @@ This section gives the wording to use when you set the homework.
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+This key follows the **workbook** section by section, in workbook order, using the workbook's own item labels (W1–W5, M1–M4, P1–P4, A1–A7, B1–B5, Fix the Broken Program, Puzzle, T1–T2, Build It, Draw It, Self-Check), so you can mark from this page alone. Every value matches the Answers section at the back of the workbook. The teacher-only additions (wrong-answer maps, marking tips, what to praise) are marked as such. The reference files and outputs from the live-code, and the CLEAN ROOM handout key, come after the workbook sections.
 
-### Page 23.1 — The identity proof (in pen, before running)
+### ✅ Warm-Up
 
-*Predict both lists of shapes and both totals, then check.*
+*Five questions about Week 22.*
+
+**W1.** **Inside `nn.Linear`:** a grid of weights and a list of biases, and nothing else; it multiplies and adds. **Inside `nn.ReLU()`:** nothing at all. No learnable numbers; it replaces every negative with zero and leaves everything else alone.
+
+**W2.** `weight` prints **(5, 3)**, outputs first. `5 × 3 = 15` weights plus **5** biases = **20** numbers.
+
+**W3.** A logit is the **raw score out of the last layer, before any squash**, and it can be any number. `BCEWithLogitsLoss` wants logits because it **does the sigmoid squash itself, inside**, in one combined step that never divides by anything tiny.
+
+**W4.** **No error at all.** The only symptom is a training loss that stops falling at about **0.54**, and a model that looks permanently mediocre (on the moons run: stuck at 0.5423 instead of falling to 0.1538).
+
+**W5.** The **validation** curve. The training curve only tells you what the model has memorised. The dashed line goes at the **lowest point of the validation curve**, **not** where the two curves cross.
+
+> **🧑‍🏫 Wrong-answer map:** `(3, 5)` for W2 is Week 22's transpose slip; point them at Figure 22.1 rather than writing out the correction. "The dashed line goes where the curves cross" for W5 is the slip the answer above warns against.
+
+### 🔢 Do the Maths by Hand
+
+*No new maths this week. One division rounded up, and Week 22's parameter counting.*
+
+**M1.**
+
+| rows | batch | `rows ÷ batch` | full batches | leftover | total batches | check |
+|---|---|---|---|---|---|---|
+| 1257 | 32 | **39.28125** | **39** | **9** | **40** | 39 × 32 + 9 = **1257** ✅ |
+| 500 | 100 | **5.0** | **5** | **0** | **5** | 5 × 100 + 0 = **500** ✅ |
+| 1000 | 128 | **7.8125** | **7** | **104** | **8** | 7 × 128 + 104 = **1000** ✅ |
+| 426 | 64 | **6.65625** | **6** | **42** | **7** | 6 × 64 + 42 = **426** ✅ |
+
+```text
+rows  1257  bs  32  ->  batches 40  last   9  sum  1257  ceil 40
+rows   500  bs 100  ->  batches  5  last 100  sum   500  ceil  5
+rows  1000  bs 128  ->  batches  8  last 104  sum  1000  ceil  8
+rows   426  bs  64  ->  batches  7  last  42  sum   426  ceil  7
+```
+
+**M1(a).** **Row 2: 500 rows at 100.** `500 ÷ 100 = 5.0` exactly, so nothing is left over and **the last batch is a full 100**.
+
+**M1(b).** They have learned "round up" as a **ritual** rather than an idea. You round up **because the leftovers have to go somewhere**. With no leftovers there is nothing to round up, and a batch of zero rows is not a batch.
+
+**M2.**
+
+| batch size | batches per epoch | × 15 epochs |
+|---|---|---|
+| 32 | **40** | **600** |
+| 512 | **3** | **45** |
+
+```text
+1257 ÷ 512 = 2.455…   round up → 3
+2 × 512 = 1024        1257 − 1024 = 233      1024 + 233 = 1257 ✅
+```
+
+**M2(a).** `600 ÷ 45 = 13.33`, so **more than thirteen times fewer**.
+
+**M2(b).** *"15 epochs" says how many times the data went past, not how many times the weights moved, and the weights only learn when they move. One run nudged them 600 times and the other 45, so the same words describe two completely different amounts of learning.*
+
+> **🧑‍🏫 Talk about M2.** Same data, same 15 epochs, **45 steps instead of 600**. That is why "15 epochs" alone is not a statement about anything.
+
+**M3.**
+
+```text
+first layer,  64 → 64:   64 × 64 + 64  =  4096 + 64  =  4160
+second layer, 64 → 10:   10 × 64 + 10  =   640 + 10  =   650
+                                                        ----
+                                                        4810
+```
+
+| Block | Shape | How many |
+|---|---|---|
+| `fc1.weight` | `(64, 64)` | **4096** |
+| `fc1.bias` | `(64,)` | **64** |
+| `fc2.weight` | `(10, 64)` | **640** |
+| `fc2.bias` | `(10,)` | **10** |
+| | | **4810** |
+
+**M3(a).** **Yes, 4810 both ways.** Two groupings of the same numbers. *(This is the fifth row of the Week 22 wall sheet, now confirmed by a real network.)*
+
+**M3(b).** `4810 × 4 = 19,240` bytes.
+
+**M3(c).** The extra 2,112 bytes are **bookkeeping**: the four names as text, the shape of each block, what kind of number each holds, and a little wrapper saying which PyTorch version wrote the file. **The numbers are the payload; the rest is the label on the tin**, and the label is what makes the file loadable at all.
+
+```text
+4810 numbers
+19240 bytes of numbers
+21352 bytes on disk
+```
+
+**M4.**
+
+| Network | first grid | first bias | second grid | second bias | total |
+|---|---|---|---|---|---|
+| 30 → 16 → 1 | 16 × 30 = **480** | **16** | 1 × 16 = **16** | **1** | **513** |
+| 64 → 32 → 10 | 32 × 64 = **2048** | **32** | 10 × 32 = **320** | **10** | **2410** |
+
+The smaller file is the **30 → 16 → 1** network (513 numbers).
+
+**M4(a).** `4810 − 2410 = 2400`.
+
+**M4(b).** The biases do not halve the way the grids do. Halving the hidden width halved both grids exactly (4096 → 2048, 640 → 320), but the output bias is 10 either way, because it depends on the number of *outputs*. `4810 ÷ 2 = 2405`, the real answer is 2410, and the five extra are the five bias numbers that did not halve.
+
+### 🔎 Predict the Output
+
+*Predictions are written in pen before anything runs. The page is scored out of 14 (the "how many did you get right" line).*
+
+**P1.**
+
+```text
+100 10 10
+100 30 4
+1257 32 40
+7 32 1
+```
+
+The last one: 7 rows at batch size 32 gives **one** batch holding all 7 rows. `ceil(7 ÷ 32) = 1`. Sensible: it is what happens whenever the batch size is bigger than the dataset.
+
+> **🧑‍🏫 Row 1 is the trap and it is deliberate.** 100 ÷ 10 is exact, so there is **no leftover**. A student who predicts 11 has learned "round up" as a ritual (compare M1(b)).
+
+**P2.**
+
+```text
+['0.weight', '0.bias', '2.weight', '2.bias']
+['hidden.weight', 'hidden.bias', 'out.weight', 'out.bias']
+```
+
+**No, you could not load one into the other.** The shapes are identical (`(5, 3)`, `(5,)`, `(1, 5)`, `(1,)`), but a `state_dict` is keyed by **name**, so you get:
+
+```text
+RuntimeError: Error(s) in loading state_dict for Sequential:
+	Missing key(s) in state_dict: "0.weight", "0.bias", "2.weight", "2.bias". 
+	Unexpected key(s) in state_dict: "hidden.weight", "hidden.bias", "out.weight", "out.bias". 
+```
+
+A name problem, not a shape problem.
+
+> **🧑‍🏫 Marking note.** A student who cannot say *why* the second Sequential layer is numbered `2` has not connected it to the ReLU in slot 1. It is a thirty-second fix.
+
+**P3.**
+
+```text
+(4, 3) (4, 1)
+(4, 3) (4, 1)
+(2, 3) (2, 1)
+```
+
+**Three lines.** The **first** number changes (4, 4, 2) because it is the batch size and the last batch is short. The **second** number never changes: 3 features and 1 answer. `4 + 4 + 2 = 10`, exactly the rows we started with, which is the reassuring part: every row was used exactly once.
+
+**P4.**
+
+```text
+train mode: [0.367, 0.367, 0.3624, -0.2901, -0.0479]
+eval  mode: [0.1635, 0.1635, 0.1635, 0.1635, 0.1635]
+```
+
+The first line moved because `no_grad` and `eval` do **different jobs**. `no_grad` stops PyTorch *recording* what it would need for `backward()`; it changes no answers. `model.eval()` stops the dropout layer *dropping*; that is what changes answers. Dropout was still switching about 8 of the 16 hidden units off at random on every call.
+
+*(Two train-mode numbers are identical, 0.367 twice. For this input only 6 of the 16 hidden units are above zero after ReLU, so two different masks that agree on those six give exactly the same answer. "I ran it twice and got the same answer" is not conclusive; run it five times.)*
+
+> **🧑‍🏫 Praise if you see it:** anyone who points out that `no_grad` was in *both* blocks and did not prevent the randomness has separated the two lines' jobs properly.
+
+### ✍️ Practice Set A — Read It
+
+**A1.** `DataLoader` → **(iii)** · batch → **(v)** · epoch → **(iv)** · `state_dict` → **(i)** · inference → **(ii)**
+
+**A1(a).** **Epoch and batch** (more precisely epoch and step, since one batch is one step). A number of epochs means nothing without the batch size, because the batch size turns laps into weight updates.
+
+**A2.** *Figure W23.1, reading down.*
+
+| After this part | shape |
+|---|---|
+| a batch of digits | **(32, 64)** (given) |
+| `fc1` = `nn.Linear(64, 64)` | **(32, 64)** |
+| `nn.ReLU()` | **(32, 64)** |
+| `nn.Dropout(0.2)` | **(32, 64)** |
+| `fc2` = `nn.Linear(64, 10)` | **(32, 10)** |
+| ten scores per digit | **(32, 10)** |
+
+```text
+batch     (32, 64)
+Linear    (32, 64)
+ReLU      (32, 64)
+Dropout   (32, 64)
+Linear    (32, 10)
+```
+
+**A2(a).** The **first** number, **32**, the batch size.
+
+**A2(b).** **`fc2`**, `nn.Linear(64, 10)`. The 10 is its number of outputs.
+
+**A2(c).** **`nn.ReLU()` and `nn.Dropout(0.2)`.** Both work one number at a time (ReLU zeroes negatives, dropout zeroes some numbers), so the grid out is the shape of the grid in. Neither has learnable numbers either.
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `AttributeError: cannot assign module before Module.__init__() call` | `super().__init__()` as the **first** line of `__init__` |
+| b | `NotImplementedError: Module [Net] is missing the required "forward" function` | Define `def forward(self, x):`. **Spelling matters**: `foward` gets no warning |
+| c | `TypeError: 'int' object is not callable` from inside `dataset.py` | `torch.from_numpy(arr).float()` first; `TensorDataset` takes **tensors** |
+| d | `Missing key(s) … "0.weight"` / `Unexpected key(s) … "fc1.weight"` | Build the **same class** the weights were saved from |
+| e | `numpy.exceptions.AxisError: axis 1 is out of bounds for array of dimension 1` | `.reshape(1, 64)`. **One row is still a batch: a batch of one** |
+| f | **No error.** A different answer every run | `model.eval()` immediately after `load_state_dict` |
+
+**A3(g).** **(f).** The two-second test: **run it twice on the same input and see whether you get the same answer.**
+
+**A3(h).** **(d) is the name problem**; the four shapes are right and the names are wrong. A **shape** problem looks different: `size mismatch for fc1.weight: copying a param with shape torch.Size([64, 64]) … current model is torch.Size([32, 64])`, with both shapes printed on every line.
+
+**A4.** i → **R** · ii → **P** · iii → **T** · iv → **Q** · v → **S**
+
+```text
+7
+['0.weight', '0.bias']
+4810
+[(2, 2), (2, 2), (1, 2)]
+(2, 10)
+```
+
+**A4(f).** `5 ÷ 2` does not divide exactly: two full batches of 2 and **one leftover row**, `2 + 2 + 1 = 5`. **Not a bug; the opposite of one.** A short final batch means no row was thrown away.
+
+**A5.**
+
+**a)** Line 3: `from train_alice import AliceNet` in `predict_alice.py`.
+
+**b)** **Importing a script runs it.** `predict_alice.py` runs all 45 lines of `train_alice.py` first: it retrains the whole model and prints all its training output, *then* predicts. Every time anybody uses it.
+
+**c)** Change `train_alice` to **`alice_net`**.
+
+**d)**
+
+```bash
+grep -E "optimizer|loss_fn|backward|\.step\(\)|DataLoader|train_test_split" predict_alice.py ; echo "exit=$?"
+```
+
+**`exit=1` is the pass**; grep exits 1 when it finds nothing.
+
+**e)** **Before the fix: no** (`ModuleNotFoundError: No module named 'train_alice'`). **After the fix: yes**; the predictor only ever needed the class and the weights file. **That is the entire point of the week.**
+
+> **🧑‍🏫 Say it before you run the grep,** or somebody will spend two minutes trying to fix a success.
+
+**A6.**
+
+**a)** **Block one is `model.train()`** (dropout on), **block two is `model.eval()`** (dropout off).
+
+**b)** **Three** different answers: **5, 9 and 3.**
+
+**c)** **Run it more than once on the same input and compare.** No error, no warning, nothing on the screen, so only a deliberate repeatability test shows it.
+
+**d)** `torch.no_grad()` stops PyTorch **recording** what it would need for `backward()`; it is faster, uses less memory, and changes **no answers**. It does **not** turn dropout off; that is `model.eval()`'s job. They are not substitutes: `no_grad` was in both blocks and the top one still gave three answers.
+
+**A7.**
+
+**a)** `__init__` **declares the parts the model will need** and runs **once, when the model is built**; `forward` **says how one batch flows through those parts** and runs **every time you call the model**.
+
+**b)** …**`super().__init__()`**, and leaving it out gives **`AttributeError: cannot assign module before Module.__init__() call`, immediately, on the next line**.
+
+**c)** An epoch is **one full lap of the training data** and a step is **one nudge of the weights**, so 15 epochs at batch size 32 over 1,257 rows is **600** steps.
+
+**d)** A `state_dict` holds **names and blocks of numbers** but not **the model's code or architecture**, which is why **you have to build the same class first and then pour the numbers in**.
+
+**e)** Every loading error is either **a name that does not match** or **a shape that does not match**, and the message **tells you which: `Missing key(s)` / `Unexpected key(s)` for names, `size mismatch` with both shapes printed for shapes**.
+
+**f)** `model.eval()` stops **dropout dropping** and `torch.no_grad()` stops **the recording**, so you need **both, every time you measure anything**.
+
+### ✍️ Practice Set B — Write It
+
+**B1.**
+
+```python
+import torch
+from torch.utils.data import TensorDataset, DataLoader
+print(len(DataLoader(TensorDataset(torch.zeros(426, 30)), batch_size=64)))
+```
+
+```text
+7
+```
+
+`7 × 64 − 426 = 448 − 426 = 22`: the "empty places" in the short final batch, which holds 42 rows rather than 64.
+
+**B2.**
+
+```python
+import torch
+import torch.nn as nn
+
+
+class TinyNet(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.hidden = nn.Linear(3, 5)
+        self.out = nn.Linear(5, 1)
+
+    def forward(self, x):
+        return self.out(torch.relu(self.hidden(x)))
+
+
+torch.manual_seed(0)
+net = TinyNet()
+for name, tensor in net.state_dict().items():
+    print("%-14s %s" % (name, tuple(tensor.shape)))
+print("total:", sum(p.numel() for p in net.parameters()))
+print("by hand: 5 x 3 + 5 + 1 x 5 + 1 =", 5 * 3 + 5 + 1 * 5 + 1)
+```
+
+```text
+hidden.weight  (5, 3)
+hidden.bias    (5,)
+out.weight     (1, 5)
+out.bias       (1,)
+total: 26
+by hand: 5 x 3 + 5 + 1 x 5 + 1 = 26
+```
+
+**B2(a).** `'0.weight'`, `'0.bias'`, `'2.weight'`, `'2.bias'`: numbered by position, with slot 1 taken by the ReLU. Same 26 numbers, four different names, and a file saved from one will not load into the other.
+
+**B3.**
+
+```python
+import math
+import torch
+from torch.utils.data import TensorDataset, DataLoader
+
+torch.manual_seed(0)
+X = torch.zeros(1000, 4)
+loader = DataLoader(TensorDataset(X), batch_size=128, shuffle=True)
+sizes = [xb.shape[0] for (xb,) in loader]
+print("way 1 - divide and round up:", math.ceil(1000 / 128))
+print("way 2 - count the loop     :", len(sizes))
+print("way 3 - ask the DataLoader :", len(loader))
+print("every batch:", sizes)
+print("they add up to:", sum(sizes))
+```
+
+```text
+way 1 - divide and round up: 8
+way 2 - count the loop     : 8
+way 3 - ask the DataLoader : 8
+every batch: [128, 128, 128, 128, 128, 128, 128, 104]
+they add up to: 1000
+```
+
+**B3(a).** With `drop_last=True`, **only way 1 still says 8**. Ways 2 and 3 drop to **7** and the sum drops to **896**: 104 rows thrown away every epoch. **The sum is the check that notices.**
+
+**B4.**
+
+```python
+import torch
+from tumour_net import TumourNet
+
+a = TumourNet()
+a.load_state_dict(torch.load("tumour.pt"))
+a.eval()
+b = TumourNet()
+b.load_state_dict(torch.load("tumour.pt"))
+b.eval()
+
+torch.manual_seed(0)
+x = torch.randn(5, 30)
+with torch.no_grad():
+    sa, sb = a(x), b(x)
+print("model A:", [round(v, 6) for v in sa.reshape(-1).tolist()])
+print("model B:", [round(v, 6) for v in sb.reshape(-1).tolist()])
+print("identical:", torch.equal(sa, sb))
+print("biggest difference: %.6f" % float((sa - sb).abs().max()))
+```
+
+```text
+model A: [1.212721, -0.017426, 1.373963, 12.045229, -0.754386]
+model B: [1.212721, -0.017426, 1.373963, 12.045229, -0.754386]
+identical: True
+biggest difference: 0.000000
+```
+
+**B4(a).** Loading a `state_dict` **copies the numbers**; it recomputes nothing. Both models then do bit-for-bit identical arithmetic on identical inputs. **Anything other than exactly zero would mean the two models are not the same model.**
+
+**B5.** The complete `predict_digits.py` is in the chapter's 💻 Type This, Step 6. Its real output (the text-art digits are in the Prep Checklist):
+
+```text
+loaded digits_mlp.pt, dropout is off
+picked rows: [1528, 1144, 918]
+
+   .=@@@...
+   .@@@@-..
+   .*=-@-..
+   ...=@-..
+   ...@@...
+   ..:@@.-.
+   ..@@@@@.
+   .-@@@@@.
+   row 1528   true 2   guessed 2   correct
+```
+
+*(and the same for rows 1144 and 918: a 5 and a 3, both correct)*
+
+**B5(a).**
+
+```text
+exit=1
+```
+
+**B5(b).** **Identical**, and the single line that makes it true is **`model.eval()`**.
+
+**B5(c).** **Yes, it still works.** The prediction script does not know how to train; it only knows how to load. A folder of `digits_net.py`, `predict_digits.py` and `digits_mlp.pt` is a complete, shippable thing: about 30 lines plus 21 kilobytes.
+
+> **🧑‍🏫 Marking notes for B5.** A grep that prints something means training code is in the prediction script; nine times out of ten the culprit is `from train_digits import DigitNet`, and the fix is one word. **Box 4 of the CLEAN ROOM handout is the one that fails** because that import works perfectly and is therefore very attractive. The demonstration that kills it: run `predict_digits.py` and watch fifteen epochs of training scroll past before the prediction appears. *"You just retrained the model in order to use it."*
+
+### 🐞 Fix the Broken Program
+
+**Bug 1** — line 26, `Y_tr_t = np.eye(10)[y_tr]`. **A type bug.** We handed `TensorDataset` a numpy array where it wanted a tensor. It checks row counts with `tensor.size(0)`; on a torch tensor `.size` is a **method**, on a numpy array it is a **plain number** (12,570, since the grid is 1,257 × 10), so `.size(0)` means "call the number 12570" and Python says `'int' object is not callable`.
+
+**The fix:** `Y_tr_t = torch.from_numpy(np.eye(10)[y_tr]).float()`
+
+**Bug 2** — lines 11–12: `def __init__(self):` with no `super().__init__()`. **A missing line in a class.** The missing line is `super().__init__()`, the very first line of `__init__`, before any `self.something = nn.Something()`. It is a **friendly** error because PyTorch caught it immediately, on the next line, and the message names what was skipped. An error that stops you is doing you a favour.
+
+**Bug 3** — the last three lines. The accuracy is measured on `X_tr_t` and `y_tr` (the **training** rows) and printed with the label "test accuracy". **0.9698 is a true number with a wrong label**: the model has seen those rows 15 times, so the number says nothing about new digits, and the word "test" claims it does.
+
+**The fix (three changed lines, plus the pile named in the print):**
+
+```python
+model.eval()
+with torch.no_grad():
+    scores = model(X_te_t).numpy()
+print("test accuracy %.4f on %d held-out digits"
+      % ((scores.argmax(axis=1) == y_te).mean(), len(y_te)))
+```
+
+```text
+test accuracy 0.9574 on 540 held-out digits
+```
+
+*(Changes: `model.eval()` added, `X_tr_t` → `X_te_t`, `y_tr` → `y_te`, and the pile named in the printed line, which is what stops it happening again.)*
+
+**Does the small gap make the bug less serious?** **No, and this is the trap.** The gap is small (0.9698 against 0.9574) because this network is small and 1,257 rows is a lot for it. Make the network wider, use fewer rows or more epochs, and the same bug reports 0.99 while the truth is 0.85. The size of the gap is luck; the bug is the same bug.
+
+**Which bug would still be there a month later?** **Bug 3.** The other two stop the program dead and are fixed in the first minute. Bug 3 prints a tidy, plausible, slightly-too-good number and never complains, so it survives into the report, the slide, and the conversation where somebody asks how good the model is.
+
+> **🧑‍🏫 Marking note.** A `FINAL:` or accuracy line without the pile (*"96.67% accurate"*) is the Week 2 habit slipping; worth one line of feedback every week until it sticks.
+
+### 🧩 Puzzle of the Week
+
+| Run | rows | batch size | batches | last batch | epochs | steps |
+|---|---|---|---|---|---|---|
+| A | 1257 | 32 | **40** | **9** | 15 | **600** |
+| B | 1000 | 128 | **8** | **104** | 20 | **160** |
+| C | **1257** | 32 | 40 | 9 | 15 | **600** |
+| D | **350** | 50 | 7 | 50 | 4 | **28** |
+| E | 500 | 32 | 10 | 40 | 6 | — |
+
+**Run C:** `39 × 32 + 9 = 1248 + 9 = 1257`.
+
+**Run D, why no leftover?** `350 ÷ 50 = 7` **exactly**: seven full batches of 50, so the last batch is a full 50. `7 × 50 = 350` ✅.
+
+**Run E is impossible: the last batch (40) is bigger than the batch size (32).** A `DataLoader` can never produce that. *(The batch count is wrong too: `ceil(500 ÷ 32) = 16`, not 10.)*
+
+**Puzzle(a).** **Yes, the same run.** Given 40 batches, last batch 9 and batch size 32, there is exactly one possible row count, `39 × 32 + 9 = 1257`. Three of the four numbers pin down the fourth.
+
+**Puzzle(b).** `ceil(1000 ÷ b) = 8` means `1000 ÷ b` is more than 7 and at most 8.
+
+```text
+1000 ÷ 8 = 125      → b must be at least 125 (at exactly 125 the division is exactly 8)
+1000 ÷ 7 = 142.85…  → b must be less than 142.85, so at most 142
+```
+
+**Smallest possible: 125. Largest possible: 142.** Checks: `1000 ÷ 124 = 8.06…` rounds up to 9, so 124 is too small; `ceil(1000 ÷ 143) = 7`, so 143 is too big.
+
+```text
+[125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142]
+```
+
+**Puzzle(c).** **The sum of the batch sizes.** Every other number in the table (batches, last batch, steps) is consistent with `drop_last=True` on some other row count. Only "do the batches add up to the rows?" shows whether rows are being quietly discarded.
+
+### 🤔 Think Deeper
+
+**T1 — a full answer.**
+
+> "Four things have to travel. **The weights file**, or there is no model at all. **The class file**, or there is nothing to pour the weights into — a `state_dict` is names and numbers and does not record that the network was 64 → 64 → 10, so without the class you get `Missing key(s)` at best and nothing at worst. **The preparation numbers** — the scaler's mean and spread (the two `.npy` files) — because the model was trained on scaled inputs and a fresh process must scale the same way, using the *training set's* numbers. Miss those and the model gives confident, sensible-looking, completely wrong answers with no error. And **the prediction script itself**, which puts the other three together in the right order.
+>
+> And the thing that is not a file: **the contract.** What shape does one input have to be, and in what units? What do the ten output numbers mean, and in what order? What was the model trained on, and what is it therefore *not* safe to use it for? What score did it get, on which pile, and how many rows was that? None of that is in the folder, and no code can tell somebody. **It has to be written down by a person, in words** — which is what a model card is, and it is Weeks 34 and 35."
+
+**T2 — a full answer.**
+
+> "The checks agreed on the wrong answer because **two of them were asking the same object the same question.** Counting the loop and calling `len(loader)` both ask the DataLoader — the very thing that had been told to throw rows away. They were downstream of the bug, so they reported the bug's answer confidently and consistently. (Dividing 426 by 64 and rounding up gives 7, which would have disagreed with them — but a divide rounded *down* by mistake would have agreed with them and been wrong too.)
+>
+> The fourth check was different because it looked at something the DataLoader had no say over: **the total number of rows I started with.** 426 is a fact about my data, not my loader, so comparing `sum(sizes)` with 426 brought in information from outside the thing being tested.
+>
+> So what makes a check worth having is **not** that it agrees with my other checks. It is that it **carries information from somewhere else.** In Level 2 I met a normalisation check that could never fail: after dividing by the range the minimum is always 0 and the maximum always 1, so checking those checks nothing. **The useful check there was a range check that knew something the formula did not**, that a test score cannot be 950."
+
+> **🧑‍🏫 Marking note.** The idea that **three agreeing answers can be wrong together** is a level-5 observation; praise it loudly if it appears unprompted. The numbers the student should bring to T2: 6 batches reported, 42 rows thrown away, 426 in the data.
+
+### 🛠️ Build It — Ship the Digits MLP
+
+**Step checklist (12 steps).** Tick against the evidence: steps 1–7 are the three files on disk (the class file holds a class and nothing else, with `super().__init__()` first; the trainer prints the `FINAL:` line and the four names; the predictor imports only from `digits_net` and has `model.eval()` straight after `load_state_dict`). Step 8 is the Clean Room run. Step 9 is Part 1's grep. Step 10 is two identical pasted runs. Step 11 is Part 2 and step 12 is Part 3.
+
+#### Part 1 — the three pieces of evidence
+
+**The `FINAL:` line:**
+
+```text
+optimizer steps in total: 600
+FINAL: test accuracy 0.9667 on 540 held-out digits
+```
+
+**Where 540 came from:** 30% of **1797** is **539.1**, and `train_test_split(test_size=0.30, stratify=y, random_state=0)` gives **540** test and **1257** train. `540 + 1257 = 1797` ✅
+
+**The four names:**
+
+```text
+saved digits_mlp.pt
+   fc1.weight (64, 64)
+   fc1.bias   (64,)
+   fc2.weight (10, 64)
+   fc2.bias   (10,)
+```
+
+```text
+4096 + 64 + 640 + 10 = 4810
+```
+
+PyTorch agrees: `learnable numbers   : 4810`.
+
+**The grep:**
+
+```text
+exit=1
+```
+
+**`exit=1` means it passed.** It feels backwards because an exit code of 1 usually means failure, but grep's job is to *find* things, so "found nothing" is its failure and our success. Say it out loud before you run it.
+
+**The prediction run itself:**
+
+```text
+loaded digits_mlp.pt, dropout is off
+picked rows: [1528, 1144, 918]
+   row 1528   true 2   guessed 2   correct
+   row 1144   true 5   guessed 5   correct
+   row 918   true 3   guessed 3   correct
+```
+
+> **🧑‍🏫 Praise if you see it:** a student who reports epoch 13's 0.9704 *and* the saved model's 0.9667, and explains why they reported the second, has understood something Week 34 will formalise.
+
+#### Part 2 — the steps, three ways
+
+| The way | The number |
+|---|---|
+| divide and round up: `1257 ÷ 32` rounded up | **40** |
+| count the loop | **40** |
+| ask the DataLoader | **40** |
+
+All three agree. **The fourth check:** the batch sizes add up to **1257**, the training row count ✅. **Steps in the whole run:** 15 epochs × 40 steps = **600**.
+
+**The sentence at full marks:**
+
+> "Each way tests something different, so the *pattern* of disagreement tells me where to look. If the division says 40 and the loop and `len(loader)` both say 39, the DataLoader is not the one I think I built — most likely `drop_last=True` (the loop only agrees with `len(loader)` because it counts the same loader). If the loop says fewer than `len(loader)`, something is breaking out of it early. And if all three say 39, I should add up the batch sizes, because three methods can agree with each other and still all be wrong: the sum would come to 1,248, not 1,257, and only that check notices the nine missing digits."
+
+> **🧑‍🏫 Marking note.** The three pasted numbers are the task; a sentence claiming agreement without them scores nothing.
+
+#### Part 3 — the `model.eval()` experiment
+
+The complete file, and its real output:
+
+```python
+"""eval_test.py - the same digit, five times, with dropout on and then off."""
+import torch
+from sklearn.datasets import load_digits
+
+from digits_net import DigitNet
+
+torch.manual_seed(0)
+
+model = DigitNet()
+model.load_state_dict(torch.load("digits_mlp.pt"))
+
+digits = load_digits()
+row = 37
+x = torch.from_numpy(digits.data[row] / 16.0).float().reshape(1, 64)
+print("row %d, true label %d" % (row, digits.target[row]))
+
+model.train()          # dropout ON
+print("\nmodel.train()  - dropout is ON")
+for i in range(5):
+    with torch.no_grad():
+        scores = model(x).numpy()
+    print("   try %d: guess %d   score for 9 = %+.4f" % (i + 1, scores.argmax(axis=1)[0], scores[0][9]))
+
+model.eval()           # dropout OFF
+print("\nmodel.eval()   - dropout is OFF")
+for i in range(5):
+    with torch.no_grad():
+        scores = model(x).numpy()
+    print("   try %d: guess %d   score for 9 = %+.4f" % (i + 1, scores.argmax(axis=1)[0], scores[0][9]))
+```
+
+```text
+row 37, true label 9
+
+model.train()  - dropout is ON
+   try 1: guess 5   score for 9 = -1.7783
+   try 2: guess 9   score for 9 = +0.6095
+   try 3: guess 3   score for 9 = -3.0162
+   try 4: guess 9   score for 9 = -1.8427
+   try 5: guess 5   score for 9 = -0.8994
+
+model.eval()   - dropout is OFF
+   try 1: guess 9   score for 9 = -1.6703
+   try 2: guess 9   score for 9 = -1.6703
+   try 3: guess 9   score for 9 = -1.6703
+   try 4: guess 9   score for 9 = -1.6703
+   try 5: guess 9   score for 9 = -1.6703
+```
+
+**Different answers:** three in block one (5, 9, 3), one in block two. *(A student's own row will give different numbers; what must hold is that block one varies and block two does not.)*
+
+**Sentence one — what changed, and why? Full marks:**
+
+> "With `model.train()` the dropout layer was still switching about 13 of the 64 hidden units off at random on every forward pass (`0.2 × 64 = 12.8`, so about 13, not always exactly 13), a different random set each time, so the same picture got five different sets of ten scores and three different answers: 5, 9, 3, 9, 5. After `model.eval()` the dropout stops dropping, the forward pass is exactly the same arithmetic every time, and all five runs give 9 with a score of −1.6703 to four decimal places."
+
+**Sentence two — why it matters if you were shipping this? Full marks:**
+
+> "Because nothing goes wrong on the screen. There is no error and no warning — the model just gives a different answer to the same question depending on when you asked, so two people checking the same digit would disagree and neither could reproduce the other's result. And it costs real accuracy: measured over all 540 test digits, these same weights score 0.9519, 0.9444, 0.9463, 0.9481 and 0.9500 on five passes with dropout still on, against exactly 0.9667 every single time after `model.eval()`. So forgetting one line loses about two points — and, worse, loses the ability to quote a single number at all."
+
+> **🧑‍🏫 Marking notes.** **All ten predictions must be pasted**, not summarised. **If all ten agree**, `model.eval()` was called too early or the class has no `nn.Dropout`; chase it, because the student has not seen the thing the part exists to show. **The best answers notice that there is no error message.** That is the actual danger, and a student who says so has understood why this is a lab and not a lecture.
+
+**Bug Log, filled in:**
+
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `AttributeError: cannot assign module before Module.__init__() call` | I hung a layer on a model that was not set up yet | `super().__init__()` missing from `__init__` | Make it the **first** line of `__init__` |
+| **No message** — a different answer every time I ran the predictor | The model is not repeatable | `model.eval()` missing, so dropout was still dropping | `model.eval()` straight after `load_state_dict` |
+
+### 🎨 Draw It
+
+**How many arrows point at `digits_net.py`?** **Two**, one from the trainer and one from the predictor.
+
+**How many arrows touch `digits_mlp.pt`?** **Two, in opposite directions:** **out of** `train_digits.py` **into** the file (`torch.save`), and **out of** the file **into** `predict_digits.py` (`torch.load`). The file is the only thing the two scripts share, and they never talk to each other directly.
+
+**If you delete the trainer box:** the arrow from the trainer to the class file disappears, and so does the arrow from the trainer into the `.pt` file. **The predictor still works**, because the two arrows it depends on (class file in, weights file in) remain. You just cannot make a **new** weights file any more.
+
+**A drawing at full marks also has** the forbidden arrow drawn as a dashed line from `predict_digits.py` to `train_digits.py`, crossed out and labelled *"importing a script runs it"*, and `4810 numbers` written on the `.pt` file.
+
+### 📊 Self-Check
+
+No right answers, but two nudges. If they ticked 😕 for **"tell a `state_dict` name error from a shape error at a glance"**, have them cause both on purpose: rename `fc1` to `layer1` in the class after training, and separately change 64 to 32. Two minutes, two tracebacks, and the distinction becomes permanent. If they ticked 😕 for **"report a score with the pile it came from"**, that is a habit, not a skill, and the easiest mark to pick up between now and Week 36: write the sentence out once, **a score, and the pile it came from.**
+
+### 🧪 Lesson-file reference (not workbook items)
+
+These are the teacher-side files and handouts from the lesson. The student does not hand them in; the workbook's Build It and Practice Set B cover the same ideas.
+
+**`same_brain.py` — the identity proof from the live-code, and its real output.** Students predict both lists of shapes and both totals in pen first (workbook P2 and B2 are the written versions).
 
 | | `nn.Sequential` | class `MoonNet` |
 |---|---|---|
@@ -1524,8 +2167,6 @@ Every question restated, so you can mark from this page alone.
 | second grid | `2.weight` **(1, 16)** | `fc2.weight` **(1, 16)** |
 | second bias | `2.bias` **(1,)** | `fc2.bias` **(1,)** |
 | total | **65** | **65** |
-
-**The complete file, and its real output:**
 
 ```python
 """same_brain.py - the class version and the Sequential version are one model."""
@@ -1588,131 +2229,11 @@ same output on the same input: True
 that output: [0.059556588530540466, 0.0902349054813385]
 ```
 
-**The required sentence about the names, at full marks:**
+**The sentence about the names, at full marks:**
 
 > "The shapes and the numbers are identical — 65 either way, and `torch.equal` says True on all four blocks. Only the names differ: `nn.Sequential` names its children by position, so the layers are 0 and 2 with the ReLU occupying slot 1, while the class names them by the attribute I chose. That matters because a `state_dict` is keyed by those names, so weights saved from one will not load into the other."
 
-**Marking notes.** A student who predicted `(2, 16)` for the first shape has made Week 22's transpose slip; refer them to Figure 22.1 rather than writing out the correction. A student who cannot say *why* the second Sequential layer is `2` has not connected it to the ReLU, and that is a thirty-second fix.
-
-### Page 23.2 — Steps in one epoch, four times (in class)
-
-*For each row: full batches, leftover, total batches, and steps in 15 epochs.*
-
-| rows | batch size | full batches | leftover | total batches | 15 epochs |
-|---|---|---|---|---|---|
-| 100 | 10 | 10 | **0** | **10** | 150 |
-| 100 | 30 | 3 | **10** | **4** | 60 |
-| 1257 | 32 | 39 | **9** | **40** | 600 |
-| 1257 | 512 | 2 | **233** | **3** | 45 |
-
-**The arithmetic, in full, for the two that matter:**
-
-```text
-1257 ÷ 32 = 39.28…    round up → 40
-39 × 32 = 1248        1257 − 1248 = 9        1248 + 9 = 1257 ✅
-
-1257 ÷ 512 = 2.455…   round up → 3
-2 × 512 = 1024        1257 − 1024 = 233      1024 + 233 = 1257 ✅
-```
-
-**Row 1 is the trap and it is deliberate.** 100 ÷ 10 = 10 exactly, so there is **no leftover** and the last batch is a full 10. A student who writes "11 batches, last one has 0 rows" has learned "round up" as a ritual rather than as an idea.
-
-**Row 4 is the one to talk about.** Same data, same 15 epochs, **45 steps instead of 600.** Thirteen times fewer nudges of the weights. That is why "15 epochs" alone is not a statement about anything.
-
-**Confirmed against the DataLoader:**
-
-```text
-way 1 - divide and round up: 40
-        39 x 32 = 1248, and 1257 - 1248 = 9 left over
-way 2 - count the loop      : 40
-        first batch 32 rows, last batch 9 rows, all rows 1257
-way 3 - ask the DataLoader  : 40
-
-15 epochs x 40 steps = 600 optimizer steps
-```
-
-### Page 23.3 — The CLEAN ROOM checklist (in class)
-
-*All seven, with what counts as evidence.*
-
-| | Box | Evidence |
-|---|---|---|
-| 1 | `digits_net.py` holds the class, and nothing else | The file is 14 lines: one import, one class, two methods. No `train`, no `print`. |
-| 2 | `train_digits.py` imports it | `from digits_net import DigitNet` |
-| 3 | `predict_digits.py` imports it | `from digits_net import DigitNet` |
-| 4 | `predict_digits.py` does **not** import `train_digits.py` | No line beginning `from train_digits` or `import train_digits` |
-| 5 | No optimizer, no loss, no backward, no DataLoader in `predict_digits.py` | The grep prints nothing and reports `exit=1` |
-| 6 | `predict_digits.py` calls `model.eval()` | The line is there, immediately after `load_state_dict` |
-| 7 | Two runs give the same answer | Two pasted runs, identical |
-
-**The grep, and the thing to say about it:**
-
-```bash
-grep -E "optimizer|loss_fn|backward|\.step\(\)|DataLoader|train_test_split" predict_digits.py ; echo "exit=$?"
-```
-
-```text
-exit=1
-```
-
-**`exit=1` is the pass.** grep exits 1 when it finds no matches. Say it before you run it or somebody will spend two minutes trying to fix a success.
-
-**Box 4 is the one that fails.** `from train_digits import DigitNet` works perfectly and is therefore very attractive. The demonstration that kills it: run `predict_digits.py` and watch fifteen epochs of training scroll past before the prediction appears. *"You just retrained the model in order to use it."*
-
-### Page 23.4 — Finish the digits MLP and its `predict.py`
-
-**The three pieces of evidence, in full.**
-
-**One — the `FINAL:` line, with the split:**
-
-```text
-optimizer steps in total: 600
-FINAL: test accuracy 0.9667 on 540 held-out digits
-```
-
-**At full marks the student can also say where 540 came from:** 30% of 1,797 is 539.1, and `train_test_split(test_size=0.30, stratify=y, random_state=0)` gives 540 test and 1,257 train. `540 + 1257 = 1797` ✅.
-
-**Two — the four names in the file, with their shapes and the total:**
-
-```text
-saved digits_mlp.pt
-   fc1.weight (64, 64)
-   fc1.bias   (64,)
-   fc2.weight (10, 64)
-   fc2.bias   (10,)
-```
-
-```text
-4096 + 64 + 640 + 10 = 4810
-```
-
-And PyTorch agrees: `learnable numbers   : 4810`. **This is the fifth row of the Week 22 wall sheet, now confirmed by a real network.**
-
-**Three — the grep:**
-
-```text
-exit=1
-```
-
-**And the prediction run itself:**
-
-```text
-loaded digits_mlp.pt, dropout is off
-picked rows: [1528, 1144, 918]
-   row 1528   true 2   guessed 2   correct
-   row 1144   true 5   guessed 5   correct
-   row 918   true 3   guessed 3   correct
-```
-
-*(The full text-art digits are in the Prep Checklist.)*
-
-**Marking notes.** Two failure shapes to watch for. **A `FINAL:` line without the pile** — *"96.67% accurate"* — is the Week 2 habit slipping and it is worth one line of feedback. **A grep that prints something** means training code is in the prediction script; nine times out of ten the culprit is `from train_digits import DigitNet`, and the fix is one word.
-
-**Praise if you see it:** a student who reports epoch 13's 0.9704 *and* the saved model's 0.9667 and explains why they reported the second has understood something Week 34 will formalise.
-
-### Page 23.5 — Three ways, all agreeing
-
-**The complete file, and its real output:**
+**`steps.py` — three ways, all agreeing, and its real output.**
 
 ```python
 """steps.py - how many optimizer steps in one epoch? Three ways, one answer."""
@@ -1752,79 +2273,44 @@ way 3 - ask the DataLoader  : 40
 15 epochs x 40 steps = 600 optimizer steps
 ```
 
-**The required sentence — "what would you do if they disagreed?"** Full marks:
+**Fallback: steps, four times** (the paper version from the Prep Checklist's fallback plan; not a workbook item).
 
-> "Each way tests something different, so the pattern of disagreement tells me where to look. If the division says 40 and the loop and `len(loader)` both say 39, the DataLoader is not the one I think I built — most likely `drop_last=True`, which throws away the last 9 rows (the loop only agrees with `len(loader)` because it is counting the same loader). If the loop says fewer than `len(loader)`, something is breaking out of it early. And if all three say 39, I should check the sum of the batch sizes, because three methods can agree with each other and still all be wrong: `sum(sizes)` would be 1,248, not 1,257, and that is the check that catches it."
+| rows | batch size | full batches | leftover | total batches | 15 epochs |
+|---|---|---|---|---|---|
+| 100 | 10 | 10 | **0** | **10** | 150 |
+| 100 | 30 | 3 | **10** | **4** | 60 |
+| 1257 | 32 | 39 | **9** | **40** | 600 |
+| 1257 | 512 | 2 | **233** | **3** | 45 |
 
-**Marking notes.** The three pasted numbers are the task; a sentence claiming agreement without them scores nothing. The last part of the sentence above — **three agreeing answers can be wrong together** — is a level-5 observation and should be praised loudly if it appears unprompted.
+```text
+1257 ÷ 32 = 39.28…    round up → 40
+39 × 32 = 1248        1257 − 1248 = 9        1248 + 9 = 1257 ✅
 
-### Page 23.6 — The `model.eval()` experiment
+1257 ÷ 512 = 2.455…   round up → 3
+2 × 512 = 1024        1257 − 1024 = 233      1024 + 233 = 1257 ✅
+```
 
-**The complete file, and its real output:**
+**Row 1 is the trap and it is deliberate**: 100 ÷ 10 is exact, so there is no leftover and the last batch is a full 10. **Row 4 is the one to talk about**: same data, same 15 epochs, 45 steps instead of 600.
 
-```python
-"""eval_test.py - the same digit, five times, with dropout on and then off."""
-import torch
-from sklearn.datasets import load_digits
+**The CLEAN ROOM handout (the printed seven-box sheet from the Prep Checklist), with what counts as evidence.**
 
-from digits_net import DigitNet
+| | Box | Evidence |
+|---|---|---|
+| 1 | `digits_net.py` holds the class, and nothing else | The file is 14 lines: one import, one class, two methods. No `train`, no `print`. |
+| 2 | `train_digits.py` imports it | `from digits_net import DigitNet` |
+| 3 | `predict_digits.py` imports it | `from digits_net import DigitNet` |
+| 4 | `predict_digits.py` does **not** import `train_digits.py` | No line beginning `from train_digits` or `import train_digits` |
+| 5 | No optimizer, no loss, no backward, no DataLoader in `predict_digits.py` | The grep prints nothing and reports `exit=1` |
+| 6 | `predict_digits.py` calls `model.eval()` | The line is there, immediately after `load_state_dict` |
+| 7 | Two runs give the same answer | Two pasted runs, identical |
 
-torch.manual_seed(0)
-
-model = DigitNet()
-model.load_state_dict(torch.load("digits_mlp.pt"))
-
-digits = load_digits()
-row = 37
-x = torch.from_numpy(digits.data[row] / 16.0).float().reshape(1, 64)
-print("row %d, true label %d" % (row, digits.target[row]))
-
-model.train()          # dropout ON
-print("\nmodel.train()  - dropout is ON")
-for i in range(5):
-    with torch.no_grad():
-        scores = model(x).numpy()
-    print("   try %d: guess %d   score for 9 = %+.4f" % (i + 1, scores.argmax(axis=1)[0], scores[0][9]))
-
-model.eval()           # dropout OFF
-print("\nmodel.eval()   - dropout is OFF")
-for i in range(5):
-    with torch.no_grad():
-        scores = model(x).numpy()
-    print("   try %d: guess %d   score for 9 = %+.4f" % (i + 1, scores.argmax(axis=1)[0], scores[0][9]))
+```bash
+grep -E "optimizer|loss_fn|backward|\.step\(\)|DataLoader|train_test_split" predict_digits.py ; echo "exit=$?"
 ```
 
 ```text
-row 37, true label 9
-
-model.train()  - dropout is ON
-   try 1: guess 5   score for 9 = -1.7783
-   try 2: guess 9   score for 9 = +0.6095
-   try 3: guess 3   score for 9 = -3.0162
-   try 4: guess 9   score for 9 = -1.8427
-   try 5: guess 5   score for 9 = -0.8994
-
-model.eval()   - dropout is OFF
-   try 1: guess 9   score for 9 = -1.6703
-   try 2: guess 9   score for 9 = -1.6703
-   try 3: guess 9   score for 9 = -1.6703
-   try 4: guess 9   score for 9 = -1.6703
-   try 5: guess 9   score for 9 = -1.6703
+exit=1
 ```
-
-**Sentence one — what changed?** Full marks:
-
-> "With `model.train()` the dropout layer was still switching about 13 of the 64 hidden units off at random on every forward pass, and a different random set each time (about 13, not always exactly 13) — so the same picture got five different sets of ten scores and three different answers: 5, 9, 3, 9, 5. After `model.eval()` the dropout stops dropping, the forward pass is exactly the same arithmetic every time, and all five runs give 9 with a score of −1.6703 to four decimal places."
-
-*(0.2 × 64 = 12.8, so "about 13 of 64" is the honest phrasing.)*
-
-**Sentence two — why it matters if you were shipping this?** Full marks:
-
-> "Because nothing goes wrong on the screen. There is no error and no warning — the model just gives a different answer to the same question depending on when you asked, so two people checking the same digit would disagree and neither could reproduce the other's result. And it costs real accuracy: measured over all 540 test digits, these same weights score 0.9519, 0.9444, 0.9463, 0.9481 and 0.9500 on five passes with dropout still on, against exactly 0.9667 every single time after `model.eval()`. So forgetting one line loses about two points — and, worse, loses the ability to quote a single number at all."
-
-**Marking notes.** Three things. **All ten predictions must be pasted**, not summarised. **If all ten agree**, `model.eval()` was called too early or the class has no `nn.Dropout` — chase it, because the student has not seen the thing the page exists to show. And **the best answers notice that there is no error message**; that is the actual danger, and a student who says so has understood why this is a lab and not a lecture.
-
-**Praise if you see it:** anyone who points out that `with torch.no_grad()` is in *both* blocks and did not prevent the randomness has separated the two lines' jobs properly. `no_grad` stops the recording; `eval` stops the dropping. They are not substitutes.
 
 ### Answers to every question posed in the lesson
 
@@ -1854,7 +2340,7 @@ model.eval()   - dropout is OFF
 
 **Activity stage 2 — "epoch 13 got 0.9704 and epoch 14 got 0.9667. Which do you report?"** **0.9667**, because that is the model that was saved. And the difference, 0.0037 of 540 rows, is **two digits** — not a result you could defend. Keeping the best epoch's weights is early stopping, and it is Week 34.
 
-**Activity stage 3 — "same three digits, same three answers?"** **Yes**, because `model.eval()` is in the file. If it were not, the answers would move — see page 23.6.
+**Activity stage 3 — "same three digits, same three answers?"** **Yes**, because `model.eval()` is in the file. If it were not, the answers would move — see Build It, Part 3 in the workbook.
 
 **Harder variation 1 — "which of the four ways would catch `drop_last=True`?"** **The sum of the batch sizes.** With `drop_last=True` the divide-and-round-up would still say 40 while the loop and `len(loader)` would both say 39 — but if the student had *predicted* 39 for some other reason, all three could agree on 39 and be wrong. `sum(sizes)` would come to **1248, not 1257**, and only that check notices the nine missing digits.
 

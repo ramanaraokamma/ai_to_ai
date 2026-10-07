@@ -13,7 +13,7 @@
 | **Big idea** | A **DataFrame** is a table where the columns have names and the rows have an index, so you never again have to remember "column 3". |
 | **New vocabulary** | DataFrame · Series · index · column name · NaN |
 | **New syntax** | `pd.DataFrame({...})` · `df.head()` · `df.info()` · `df["col"]` |
-| **Materials** | **Week 14's hand-formatted table printout, on paper** · printed workbook pages 21.1–21.6 · a blank ten-row grid template (Figure 21.6) · the Bug Log |
+| **Materials** | **Week 14's hand-formatted table printout, on paper** · the printed workbook (Warm-Up, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Build It, Draw It, Self-Check) · a blank ten-row grid template (Figure 21.6) · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, **and pandas installed**. This is the second and last install of the course, and it is the one thing that can eat the lesson. `squad_data.py` from Week 14/15 must still exist. |
 | **Prep time** | 25 minutes the night before (15 of them are the install) · 5 minutes on the day |
 
@@ -452,7 +452,7 @@ If you see `ModuleNotFoundError: No module named 'pandas'`, the install did not 
 
 > **📌 Version note:** pandas 2.x prints everything in this file identically, with one exception — the `memory usage:` line in `info()` may show a different number. That line is the least interesting one on the page. If your numbers differ from this file *only* there, you are fine. The one other difference to expect on 2.x is in long tracebacks: the number of lines and the pandas file paths and line numbers can differ from the nineteen-line one printed here, so count the lines on your own screen before you tell the class "nineteen". The recipe (last line first, then your own `File` line) does not change.
 
-- [ ] **Print workbook pages 21.1–21.6.**
+- [ ] **Print the whole Week 21 workbook** (`workbook/week-21.md`, every section down to the Self-Check). **Stop before the ✅ Answers section at the end** — that is a `<details>` block with every answer in it, so do not print it for the student.
 - [ ] **Find Week 14's hand-formatted table printout**, on paper if you still have it, or re-run their old file and print it. **The Hook is built on putting it next to pandas's output**, and it takes ten seconds if you prepared and four minutes if you did not.
 - [ ] **Check `squad_data.py` still exists and still runs.** Today imports it once.
 - [ ] **Print the blank ten-row grid** (Figure 21.6, left panel). The student fills in their own week on it before typing anything.
@@ -620,7 +620,7 @@ Name: age, dtype: float64
 - [ ] `table.py` and `ages.py` **deleted or renamed** — they type them.
 - [ ] **Week 14's paper printout on the table, face down.** You are going to reveal it.
 - [ ] Blank ten-row grid printed and ready for the activity.
-- [ ] Workbook 21.1–21.3 out. **21.2's prediction column filled in pen before any code runs.**
+- [ ] Workbook out, open at **Practice Set A, question A2** (the snack `info()` prediction table). **A2's answer column filled in pen before any code runs.**
 - [ ] Bug Log out, with the Week 17 `<U21` entry and the Week 18 `float64` entry **findable** — today's silent surprise is the same rule for the third time and the student should find their own old notes.
 
 ### Fallback if the laptop or the install fails
@@ -834,9 +834,9 @@ df.info()   ->  can I TRUST it?              (rows, columns, kinds, holes)
 >
 > Here's why it matters. If a column you *meant* to be numbers says `object`, **something has gone wrong** — there's a word or a stray space or an empty cell in there somewhere, and none of your arithmetic will work. `object` on a number column is the loudest alarm bell in pandas. Watch for it all year."
 
-**Say this — part 5, page 21.2, in pen:**
+**Say this — part 5, Practice Set A, question A2, in pen:**
 
-> "**Page 21.2, in pen, before we touch the keyboard.**
+> "**Practice Set A, question A2, in pen, before we touch the keyboard.**
 >
 > There's a small DataFrame written out for you — six snacks, four columns. **Predict `info()`.** How many entries? How many columns? And for each of the four columns: its name, how many of its cells are filled in, and what kind of thing it holds.
 >
@@ -1261,7 +1261,7 @@ Full instructions in the next section. In the lesson flow:
 
 ### Setup
 
-**On the table:** the printed **blank ten-row grid** (Figure 21.6, left panel); a pencil; workbook page 21.2 with the snack predictions already in pen; the Bug Log with the Week 17 and Week 18 entries findable.
+**On the table:** the printed **blank ten-row grid** (Figure 21.6, left panel); a pencil; the workbook open at Practice Set A, question A2, with the snack predictions already in pen; the Bug Log with the Week 17 and Week 18 entries findable.
 
 **On the screen:** a new file, `myweek.py`.
 
@@ -1721,92 +1721,163 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, and most of the marking is on one page.
+> "About an hour, and most of the marking is on one part.
 >
-> **First, page 21.4 — build a ten-row DataFrame about your own week.** Ten days, four columns, and **you choose the columns.** One must be words. At least one must be decimals — hours of sleep is the easy one. **At least one must be whole numbers** — steps, or minutes of homework — because you'll need it for the last part.
+> **First, finish the Build It section of your workbook — 'Your Own Week, In Ten Rows'.** You did the paper grid, `myweek.py`, and your first look at `info()` in class. Tonight is the rest of it. Tick off the step checklist, and make sure the paper grid is in pencil and still has your row count written on it. **You chose the columns:** one must be words, at least one decimals — hours of sleep is the easy one — and **at least one whole numbers**, steps or minutes of homework, because you need it for the hole experiment.
 >
-> Fill in the paper grid with a pencil **first**, then type it. The paper is how you check that pandas agrees with you about how many rows there are.
->
-> **Second, page 21.5 — and this is the part I'm actually marking. Write out what every single line of `info()` is telling you.** Every line. In your own words, not mine. If it says `RangeIndex: 10 entries, 0 to 9`, I want a sentence saying *ten rows, named zero to nine, and that matches the ten rows on my paper.* If it says `object`, I want a sentence saying what `object` means and whether it's right for that column.
+> **Second, and this is the part I'm actually marking: 'info(), line by line, in my own words.' Write what every single line of your `info()` is telling you.** Every line in the table. In your own words, not mine. If it says `RangeIndex: 10 entries, 0 to 9`, I want a sentence saying *ten rows, named zero to nine, and that matches the ten rows on my paper.* If it says `object`, I want a sentence saying what `object` means and whether it's right for that column. Then do 'The three checks' under it.
 >
 > **And one specific thing I will be looking for: if any column is a decimal when you typed whole numbers, tell me why.** If none of them is, say so — that's a real answer.
 >
-> **Third, page 21.6 — the hole experiment.** Take one value out of your whole-number column and put `None` there. **Before you run it, write down three things you think will change.** Then run it and see. Then one sentence: why did *everybody else's* number change when only one was missing?"
+> **Third, the hole experiment, still in Build It.** Take one value out of your whole-number column and put `None` there. **Before you run it, write down three things you think will change.** Then run it, fill in the before-and-after table, and write the one sentence: why did *everybody else's* number change when only one was missing? Finish 'The same rule, three times' and the two Bug Log entries.
+>
+> **Fourth, two more sections.** 'Predict the Output' — four small snippets, prediction in pen *before* you run anything; two of them run cleanly and are not what you typed. And 'Fix the Broken Program' — three bugs, one of each kind."
 
-**Workbook pages:** 21.1, 21.2, 21.3 in class · **21.4, 21.5, 21.6** at home.
+**What is assigned, and what is not.** The workbook is much bigger than one evening. The split, in the order of the workbook:
 
-**Expected time:** 10 min filling in the paper grid · 15 min typing it and running both commands · 20 min writing out `info()` line by line · 10 min on the hole experiment and its sentence. **About 55 minutes.**
+| Section | When | Needed for the mark? |
+|---|---|---|
+| ✅ Warm-Up (W1–W5) | **In class**, first five minutes | No. Last week's recall; mark it from the key below |
+| 🔎 Predict the Output (P1–P4) | **At home** | Yes |
+| ✍️ Practice Set A — Read It | **A2 in class** (the lesson's part 5, in pen); **the rest optional** | A2 only |
+| ✍️ Practice Set B — Write It | Optional (B5 is the same program as Build It — see below) | No |
+| 🐞 Fix the Broken Program | **At home** | Yes |
+| 🧩 Puzzle of the Week | Optional — a good one for a student who finishes early | No |
+| 🤔 Think Deeper (T1, T2) | Optional, or a conversation at the next lesson | No |
+| 🛠️ Build It | **Steps 1–9 in class** (the activity); **steps 10–12 and all the tables at home** | **Yes — the marked part** |
+| 🎨 Draw It | Optional | No |
+| 📊 Self-Check | **At home**, last, honestly | No marks; read it |
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the second is the real one. **One — does the entry count match the number of rows on their paper grid?** If they did not fill in the paper, they cannot answer this and the check did not happen. **Two — is every line of `info()` explained in their own words?** Twelve lines, twelve sentences. A page that says "it tells you about the DataFrame" for line one and skips to the dtypes has not done the work, and this is the objective. **Three — does the hole sentence explain why *everybody else* changed?** The good sentence is something like *"`NaN` is a decimal and a column can only hold one kind of thing, so the whole column had to become decimals even though only one value was missing."* A sentence about the one missing value has spotted the obvious half and missed the point.
+**Expected time:** 20 min for the `info()` line-by-line table and the three checks · 10 min for the hole experiment and its sentence · 10 min on the 'same rule, three times' table and the Bug Log · 10 min on Predict the Output · 10 min on Fix the Broken Program. **About an hour.** Anything marked optional is on top of that.
+
+> **🧑‍🏫 What to look for when you mark it:** three things, and the second is the real one. **One — does the entry count match the number of rows on their paper grid?** (Build It, 'The three checks', check 1.) If they did not fill in the paper, they cannot answer this and the check did not happen. **Two — is every line of `info()` explained in their own words?** Eleven table rows, eleven sentences — the Build It table lists the two `#`/`---` heading lines as rows of their own. A page that says "it tells you about the DataFrame" for line one and skips to the dtypes has not done the work, and this is the objective. **Three — does the hole sentence explain why *everybody else* changed?** The good sentence is something like *"`NaN` is a decimal and a column can only hold one kind of thing, so the whole column had to become decimals even though only one value was missing."* A sentence about the one missing value has spotted the obvious half and missed the point.
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every workbook section and item, in workbook order, so you can mark from this page alone. Values are taken from the workbook's own ✅ Answers section and were re-checked by running the code (pandas 1.5.3).
 
-### Page 21.1 — Match the word to the thing
+### ✅ Warm-Up
 
-*Match each word to its description.*
+*Five questions about last week.*
 
-| Word | Description |
+| Item | Answer |
 |---|---|
-| **DataFrame** | A whole table: named columns, an index down the side, and each column may be a different kind of thing. |
-| **Series** | One column on its own, carrying the values, the index they sit on, and its own name. |
-| **index** | The row labels down the left-hand side. By default the counting numbers. **Not a column.** |
-| **column name** | The label along the top of a column. Text, and case-sensitive. |
-| **NaN** | pandas's marker for "there is nothing here". It is itself a decimal. |
+| **W1** | **Shape `(10, 5)`** — the same shape as the data. It holds **`True` and `False`, one per cell**, fifty of them, dtype `bool`. It is **not** a shorter list of the high scores. |
+| **W2** | The nineteen were `False`, so they are **simply not in the answer.** They did **not** become zeros — a zero score and a missing score are different things. *(The answer is one long row, not a grid, because students have different numbers of high scores and there is no rectangle shaped like that.)* |
+| **W3** | **Python treats `True` as 1 and `False` as 0.** Adding a mask up adds one for every yes and nothing for every no, which is counting. |
+| **W4** | **The formula guarantees both.** Subtracting the smallest makes the smallest zero; dividing by the gap makes the largest one. **A check that cannot fail is not a check.** A range check — `scores[scores > 100]` giving `[950]` — would have caught it, because it brings knowledge from outside the formula. |
+| **W5** | **A verb takes brackets; a fact does not.** `.min()` is something the array **does**; `.shape` is something the array **is**. |
 
-*Label the printed table below.*
+### 🔎 Predict the Output
+
+*Four snippets, prediction in pen first. All four run; the workbook warns that two of them are not what you typed (P3 and P4 are the ones that bite). The /16 self-score at the bottom of the section is the student's own count and needs no key.*
+
+**P1 — which way round is a column?** Real output:
 
 ```text
-     name     team  runs  balls    out      <- (a) column names
-0    Asha  Falcons    48     32   True
-1    Ravi  Falcons    12     20   True      <- (c) one row
-2    Nita  Falcons    77     55  False
-^^                     ^^
-(b) the index          (d) one column, which is a Series
+  snack  price
+0  idli     10
+1  dosa     30
+2  vada     20
+3
+0    10
+1    30
+2    20
+Name: price, dtype: int64
 ```
 
-**21.1(e) How many columns has that table got?**
-**Five** — `name`, `team`, `runs`, `balls`, `out`.
+- **Prediction:** **3 rows, 2 columns.**
+- **Which number became the rows?** **Three** — the length of each list. Two keys give two columns; three items give three rows. *(Getting this backwards is the most common beginner mistake with `pd.DataFrame({...})`.)*
+- **The extra line** is the footer `Name: price, dtype: int64`. It carries **the column's own name** and **the one dtype shared by all its values.** A numpy array knew its dtype; it never knew its name.
 
-**21.1(f) Is the index one of them?**
-**No.** `info()` says "total 5 columns" and the index is not counted. It has no column name, and `df[0]` raises `KeyError: 0`.
+**P2 — two ways to ask.** Real output: `menu["snack"]` prints `idli`, `dosa`, `vada` with the footer `Name: snack, dtype: object`; then `menu[0]` ends in a long traceback whose last line is `KeyError: 0`.
 
-**21.1(g) What comes back from `df["runs"]`, and what three things does it carry?**
-A **Series**. It carries the **values**, the **index** they belong to, and its own **name** (`runs`) — plus one dtype for all of it. The footer line `Name: runs, dtype: int64` is where the last two show up.
+- **Will it work?** No — `KeyError: 0`.
+- **In their own words:** *"There is no column called 0."*
+- **Fill the blank:** square brackets on a DataFrame ask for **columns**, not **rows**. The index is not a column, so it has no name to ask for. Rows arrive next week, with two new words.
+- *(Also worth noticing: `snack` printed `dtype: object` — pandas's word for text.)*
 
-**21.1(h) In one sentence, what does a DataFrame give you that a numpy array does not?**
-**Names on the columns, an index on the rows, and permission for each column to be a different kind of thing.** *(Any two of the three earns the mark.)*
+**P3 — one hole.** Real output:
 
-**21.1(i) In one sentence, what does a numpy array give you that a list of dictionaries does not?**
-**Arithmetic on everything at once**, in one line, plus a shape it knows about. *(Week 17's answer, still true.)*
-
-**21.1(j) So why did we not start with DataFrames in Week 14?**
-Two honest reasons. **It is slower and much more complicated** — a big library with several ways to write everything. And **you would not have known what named columns were worth**: four weeks of carrying a separate `names` array around is what makes today feel like a relief instead of a formality.
-
-### Page 21.2 — Predict `info()` (in pen, before running)
-
-*The table:*
-
-```python
-snacks = pd.DataFrame({
-    "snack": ["samosa", "vada", "idli", "dosa", "poha", "upma"],
-    "price": [15, 20, 10, 40, 25, 20],
-    "spicy": [True, True, False, False, False, True],
-    "stars": [4.5, 4.0, 3.5, 5.0, None, 3.0],
-})
+```text
+   pet  legs
+0  cat     4
+1  dog     4
+2  rat     4
+   pet  legs
+0  cat   4.0
+1  dog   NaN
+2  rat   4.0
 ```
+
+- **Will `b` crash?** **No.** **All three** `legs` values look different (`4` became `4.0` twice, plus the `NaN`).
+- **How many changed appearance / how many did you change?** **3** and **1**.
+- **The two `info()` lines:**
+
+```text
+from a:   1   legs    3 non-null      int64
+from b:   1   legs    2 non-null      float64
+```
+
+- **Symptom and disease:** **the `float64` is the symptom; the `2 non-null` is the disease.** The decimal point is what you *see*; the missing value is what is wrong. A person who shrugs at `4.0` will average a column with holes in it and never know.
+- **Why the whole column changed:** `NaN` is a decimal and a column holds one kind of thing, so the only kind that can hold both `4` and `NaN` is decimals.
+
+**P4 — one quote mark.** Real output:
+
+```text
+   pet legs
+0  cat    4
+1  dog    4
+2  rat    4
+```
+
+then the `legs` line of `info()`:
+
+```text
+ 1   legs    3 non-null      object
+```
+
+then `print(c["legs"] * 2)`:
+
+```text
+0     8
+1    44
+2     8
+Name: legs, dtype: object
+```
+
+- **`print(c)`:** three ordinary-looking 4s. The only clue is that the `legs` header sits one space closer to its column than when all three were numbers — far too subtle to rely on.
+- **Is the column fine?** **No.** The count is 3 so nothing is missing; one value is *the wrong kind*.
+- **The three values printed:** **`8`, `44`, `8`.**
+- **Which one is not like the others, and why?** **`44`.** The two real integers were multiplied (`4 * 2 = 8`); the text `"4"` was **repeated** (`"4" * 2 = "44"`) — `*` on text means *repeat*, Week 11's rule, still true. No error, a confident nonsense answer. This is what `object` on a number column costs you.
+- **Teacher note:** marks for noticing that *nothing* in `print(c)` warns them; this is the loudest lesson in the section.
+
+### ✍️ Practice Set A — Read It
+
+**A1 — match and label.** DataFrame → **(iii)** · Series → **(v)** · index → **(iv)** · column name → **(i)** · NaN → **(ii)**.
+
+Labelling: **(a)** the header row `name team runs balls out`; **(b)** the `0 1 2` strip down the left; **(c)** any one whole row, such as `1 Ravi Falcons 12 20 True`; **(d)** any one whole column, which is a Series.
+
+- **A1(e)** **Five** — `name`, `team`, `runs`, `balls`, `out`.
+- **A1(f)** **No.** Any three of: (1) `info()` says "total 5 columns" and the index is not counted; (2) it has no column name — the strip has nothing written above it; (3) `df[0]` raises `KeyError: 0`, because there is no column named `0`.
+- **A1(g)** A **Series**. It carries the **values**, the **index** they belong to, and its own **name** (plus one dtype for all of it). The footer `Name: runs, dtype: int64` is where the last two show up.
+- **A1(h)** **Names on the columns, an index on the rows, and permission for each column to be a different kind of thing.** *(Any two of the three earns the mark.)*
+- **A1(i)** **Arithmetic on everything at once**, in one line, plus a shape it knows about. *(Week 17's answer, still true.)*
+- **A1(j)** Two honest reasons: (1) **it is slower and much more complicated** — a big library with several ways to write everything; (2) **you would not have known what named columns were worth.** Four weeks of carrying a separate `names` array around is what makes this week feel like a relief instead of a formality.
+
+**A2 — predict `info()`** (this is the lesson's part 5, done in class, in pen). The table is `snacks`: samosa, vada, idli, dosa, poha, upma, with `stars` holding one `None`.
 
 | # | Question | Answer |
 |---|---|---|
-| (a) | How many entries? | **6**, named 0 to 5 |
-| (b) | How many columns? | **4** |
-| (c) | `snack` — non-null count and dtype | `6 non-null`, **`object`** (it is words) |
-| (d) | `price` — non-null count and dtype | `6 non-null`, **`int64`** (whole numbers, no holes) |
-| (e) | `spicy` — non-null count and dtype | `6 non-null`, **`bool`** |
-| (f) | `stars` — non-null count and dtype | **`5 non-null`, `float64`** ← the miss |
+| a | entries | **6**, named 0 to 5 |
+| b | columns | **4** |
+| c | `snack` | `6 non-null`, **`object`** (it is words) |
+| d | `price` | `6 non-null`, **`int64`** (whole numbers, no holes) |
+| e | `spicy` | `6 non-null`, **`bool`** |
+| f | `stars` | **`5 non-null`, `float64`** ← the miss |
+| g | the `dtypes:` tally | `bool(1), float64(1), int64(1), object(1)` |
 
 Real output:
 
@@ -1818,7 +1889,6 @@ Real output:
 3    dosa     40  False    5.0
 4    poha     25  False    NaN
 5    upma     20   True    3.0
-
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 6 entries, 0 to 5
 Data columns (total 4 columns):
@@ -1832,52 +1902,243 @@ dtypes: bool(1), float64(1), int64(1), object(1)
 memory usage: 278.0+ bytes
 ```
 
-**21.2(g) Which one did you get wrong, and why?**
-Almost always **(f)**. The expected wrong answer is `6 non-null`, on the grounds that there are six rows. There *are* six rows — `RangeIndex: 6 entries` is right — but one of `stars`'s cells holds nothing, so only **five** are non-null. **The row did not disappear; the cell is empty.**
+- **A2(h) Which did you get wrong?** Almost always **(f)**. The expected wrong answer is `6 non-null`, on the grounds that there are six snacks. There *are* six rows — `RangeIndex: 6 entries` is right — but one of `stars`'s cells holds nothing, so only **five** are non-null. **The row did not disappear; the cell is empty.** Model sentence: *"I said `stars` would be 6 non-null because there are six snacks. It's 5, because one cell has `None` in it — the row is still there, but that one cell holds nothing."*
+- **A2(i) What did the `None` change?** **Only the non-null count**, 6 to 5. `stars` already had `4.5`, so it was going to be `float64` with or without the hole.
+- **A2(j) The only clue?** **The count, and nothing else.** No `12.0`-style giveaway, because the column was always decimals. Which is exactly why you read `info()` rather than glancing at the printed table.
+- **A2(k)** **`price`.** It is `int64` now; one `None` would turn it into `float64` and print `15` as `15.0`.
+- **A2(l)** The tally adds to **four**, and there are **four** columns. A free check, and it passes.
 
-Model sentence:
+**A3 — spot the bug.**
 
-> *"I said `stars` would be 6 non-null because there are six snacks. It's 5, because one of the cells has `None` in it — the row is still there, but that one cell holds nothing."*
+| # | What happens | The fix |
+|---|---|---|
+| a | `AttributeError: module 'pandas' has no attribute 'dataframe'` | `pd.DataFrame(...)` — capital D **and** capital F. Read the name in quotes and compare it with the spelling you meant |
+| b | A nineteen-line traceback ending `KeyError: 'Runs'` | `squad_df["runs"]`. Column names are case-sensitive text |
+| c | A nineteen-line traceback ending `KeyError: 0`. Square brackets mean **columns** | Ask for a column by name. Rows come next week |
+| d | **No error.** It prints the whole report, then the word `None` underneath | `squad_df.info()` on its own. `info()` prints for itself and hands nothing back |
+| e | `TypeError: 'method' object is not subscriptable` | `squad_df.head(3)` — **round** brackets. `head` is a verb |
+| f | `ValueError: All arrays must be of the same length` | Count the items in every list. Three days, two step counts — not a rectangle |
 
-**21.2(h) `stars` was going to be `float64` anyway. So what did the `None` actually change?**
-**The non-null count**, from 6 to 5. This is a good and slightly sneaky question: because `stars` already had `4.5` in it, the dtype was going to be `float64` with or without the hole. **So this time the decimal point is *not* the clue** — the only clue is the count.
+- **A3(g)** **(d).** It prints the report correctly and then a lonely `None`, which looks broken and isn't.
+- **A3(h)** **(b) and (c)** are both nineteen lines. The recipe never changes: *how many lines is it, and what does the last one say? Then: which `File` line has my own filename in it?* *(Say the length out loud first — "nineteen lines for one wrong letter" removes the panic in about two seconds. On pandas 2.x the count may differ; see the version note in Prep.)*
 
-Which is exactly why you read `info()` rather than glancing at the printed table.
+**A4 — match code to output.** i → **P** · ii → **Q** · iii → **T** · iv → **S** · v → **R**.
 
-**21.2(i) Which column would show a decimal point it did not need if a value went missing?**
-**`price`.** It is `int64` now, and one `None` would turn it into `float64` and print `15` as `15.0`.
+- **A4(f)** **`T` and `R`** end with a `Name:` line; `S` does not. **A `Name:` footer means you are looking at a Series — one column.** A whole DataFrame has several columns, each with its own name, so it prints no footer. *(And `v` shows `head()` works on a Series too, footer and all.)*
 
-**21.2(j) The `dtypes:` tally line says `bool(1), float64(1), int64(1), object(1)`. Add it up.**
-**Four**, which matches "total 4 columns". A free check.
+**A5 — say what every line of `info()` tells you** (the five lines in Figure W21.1).
 
-### Page 21.3 — Array or DataFrame?
+| Line | Model sentence |
+|---|---|
+| 1 `<class 'pandas.core.frame.DataFrame'>` | This really is a DataFrame — a whole table, not a single column. If it said `Series`, I had handed pandas one column by mistake. |
+| 2 `RangeIndex: 10 entries, 0 to 9` | Ten rows, named 0 to 9. I check that ten against the number of rows I actually typed. |
+| 3 `Data columns (total 4 columns):` | Four columns follow. I typed four names, so that matches. The index is **not** one of the four. |
+| 4 ` 3   steps   9 non-null   float64` | Column 3 is `steps`. **Nine** of its cells hold something, and it holds decimals. |
+| 5 `dtypes: float64(3), object(1)` | A tally: three decimal columns and one text column. Adds to four, matching the column count. |
 
-*For each job, which container would you use, and why?*
+- **A5(a)** **The `10` in line 2 and the `9` in line 4.** One cell in `steps` is empty — the row did not disappear, the cell is empty. The `float64` is the knock-on effect: `NaN` is a decimal.
+- **A5(b)** **Line 4** — the only one with a column name on it, so it says **which** column and **how many** are missing. The tally says neither (`float64(3)` does not say which three, or why).
+- **A5(c)** It would mean **`steps` has text in it** (a quote mark, a stray space, a word). And it would be **worse**: with `9 non-null float64` there are two signals (short count, decimal points); with `10 non-null object` there is one — the dtype. The count says nothing is missing, the values look like numbers, and no error is ever raised.
 
-| # | The job | Container | Why |
-|---|---|---|---|
-| (a) | A 10×5 grid of test scores, and you only want averages | **numpy array** | All one kind, and all you want is arithmetic. Faster and simpler. |
-| (b) | A table with a name, a team, three numbers and a true/false | **DataFrame** | Mixed kinds in one table. An array would turn every number into text. |
-| (c) | Twelve cricketers, and you want the total runs per team | **DataFrame** | Grouping needs the team **names**, and names are exactly what an array cannot hold alongside numbers. |
-| (d) | A grid of pixel brightness values from a photo | **numpy array** | All one kind, no column names to speak of, and you want speed. |
-| (e) | Ten days of your own week: day, sleep, screen time, steps | **DataFrame** | One column is words and the rest are numbers. |
-| (f) | The `X` you hand to a model in Week 29 | **numpy array** *(or a DataFrame's numbers)* | A model wants a block of numbers. The names come off at the door — which is why you keep them somewhere. |
+**A6 — finish the sentence.**
 
-**21.3(g) One sentence: what is the pattern?**
-**If every value is the same kind and all you want is arithmetic, use an array. If the columns mean different things — especially if one of them is words — use a DataFrame.**
+- **a)** …with **the labels put back on**, and each column is allowed to **be a different kind of thing**.
+- **b)** The index is the **row's name** (its label), not a **column**.
+- **c)** `head()` tells you **what the table looks like** (the first five rows). `info()` tells you **whether you can trust it**.
+- **d)** …because **`info()` prints for itself and hands nothing back**, so `print` would show the report and then the word `None`.
+- **e)** …**you have a hole somewhere**, and the command that tells you where is **`info()`** (its non-null count).
+- **f)** …means **one of its values is text**, and it raises **no error at all**.
 
-**21.3(h) You have a DataFrame and you need a numpy array to hand to a model. Have you lost anything?**
-**Yes — the column names and the index.** Which is fine, as long as you still have the DataFrame to look them up in. *(That is exactly the workflow of Weeks 28 to 33: keep the DataFrame, hand the numbers to the model, put the names back on for the report.)*
+### ✍️ Practice Set B — Write It
 
-**21.3(i) Two weeks ago you wrote that an array costs you the labels. Has that stopped being true?**
-No. **An array still has no labels.** What has changed is that you now have a container that keeps them, so you no longer have to choose between labels and arithmetic. The array's cost is real; you just do not have to pay it any more.
-
-### Page 21.4 — Build your own ten-row DataFrame
-
-Model answer, actually run:
+**B1.**
 
 ```python
-"""hw21.py - ten days of my own week, as a DataFrame."""
+import pandas as pd
+
+library = pd.DataFrame({
+    "book":  ["Wonder", "Holes", "Coraline"],
+    "pages": [320, 233, 176],
+})
+
+print(library)
+```
+
+```text
+       book  pages
+0    Wonder    320
+1     Holes    233
+2  Coraline    176
+```
+
+Marks: a **dict of columns**, each key a column name, each list running *down* the page; capital D, capital F. *"Key, colon, and then a whole column running down the page."* Two keys, two columns; three items, three rows.
+
+**B2.**
+
+```python
+print(library.head(2))
+print()
+library.info()
+```
+
+```text
+     book  pages
+0  Wonder    320
+1   Holes    233
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 3 entries, 0 to 2
+Data columns (total 2 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   book    3 non-null      object
+ 1   pages   3 non-null      int64 
+dtypes: int64(1), object(1)
+memory usage: 176.0+ bytes
+```
+
+`head(2)` has `print()` round it because it *hands you back* a table. `info()` does not, because it prints for itself and returns nothing — `print(library.info())` would add a stray `None`.
+
+**B3.**
+
+```python
+print(library["pages"])
+print("the whole table is a:", type(library))
+print("one column is a    :", type(library["pages"]))
+```
+
+```text
+0    320
+1    233
+2    176
+Name: pages, dtype: int64
+the whole table is a: <class 'pandas.core.frame.DataFrame'>
+one column is a    : <class 'pandas.core.series.Series'>
+```
+
+**B4.**
+
+```python
+by_columns = pd.DataFrame({
+    "book":  ["Wonder", "Holes", "Coraline"],
+    "pages": [320, 233, 176],
+})
+
+by_rows = pd.DataFrame([
+    {"book": "Wonder",   "pages": 320},
+    {"book": "Holes",    "pages": 233},
+    {"book": "Coraline", "pages": 176},
+])
+
+print(by_columns)
+print()
+print(by_rows)
+print()
+print("are they the same table?", by_columns.equals(by_rows))
+```
+
+The output is the B4 expected output in the workbook: the same three-row table twice, then `are they the same table? True`.
+
+- **B4(a)** **The dict of columns** — each column name once instead of once per row (with ten rows and four columns, 4 names against 40).
+- **B4(b)** **The list of dicts.** Every value sits next to its own key. In the dict-of-columns version, one missed or extra value shifts everything after it under the wrong name, and pandas only notices if the lists end up different lengths — two cancelling mistakes go unnoticed. *(Students often say "the dict of columns, because it is shorter"; that answers (a), not (b).)*
+
+**B5 — `myweek.py`.** The model program and its output are the same as the one in **Build It** below (the ten-row `my_week` table: `info()` shows `10 entries`, `total 4 columns`, `float64(2), int64(1), object(1)`, `memory usage: 448.0+ bytes`). Their columns will be their own. **The second version, with one `None` in `steps`**, prints `steps` as `6200.0 … NaN … 5100.0` and `info()` ends:
+
+```text
+ 3   steps   9 non-null      float64
+dtypes: float64(3), object(1)
+memory usage: 448.0+ bytes
+```
+
+- **B5(a)** Three good predictions: the missing value prints as **`NaN`**; the dtype goes **`int64` to `float64`**; the non-null count goes **10 to 9**. *(A fourth almost nobody predicts: every other step count grows a decimal point.)*
+- **B5(b)** `before: dtypes: float64(2), int64(1), object(1)` / `after : dtypes: float64(3), object(1)`. **The `int64` vanishes completely** — after the conversion there is no whole-number column left in the table.
+- **B5(c)** **No.** Both tallies still add to four. The check passed and the table is still not what you typed. *A check that cannot fail is not much of a check.* Read the per-column lines instead; one of them says `9 non-null`.
+
+### 🐞 Fix the Broken Program
+
+Three bugs in `snacks21.py`, met in this order.
+
+| Bug | Line | Kind | What the student should say | The fix |
+|---|---|---|---|---|
+| **1** | 7 | **Syntax** | Run 1 prints nothing at all (a `SyntaxError` happens before the program runs). The message ends in a question, and **it is right**: the comma is missing at the end of the `price` line, after the closing `]`. | `"price": [15, 20, 10, "40", 25, 20],` |
+| **2** | 16 | **Runtime** | `KeyError: 'Price'`. **Asked for** `'Price'`; **actually called** `'price'`. The message quotes exactly what you asked for, so hold the two strings side by side. The `File` line to act on is `File "snacks21.py", line 16`; the rest of the nineteen lines are inside pandas. | `snacks["price"]` |
+| **3** | 7 | **Logic**, no error message | Column **`price`** says **`object`**; it should say **`int64`**. The count is 6 of 6, so nothing is missing; one value is the wrong *kind*. The culprit is the **quote mark** round `"40"` (two characters, and either would do it). | `"price": [15, 20, 10, 40, 25, 20],` |
+
+- **The fixed `info()` lines:**
+
+```text
+ 1   price   6 non-null      int64
+dtypes: bool(1), float64(1), int64(1), object(1)
+```
+
+- **Fixed program's last line:** `the prices: 0    15 … 5    20` with the footer `Name: price, dtype: int64`.
+- **Is the bug visible in `head(3)`?** **Not usefully.** The only trace is one space less before `price` in the header (`snack price  spicy  stars` against `snack  price  spicy  stars`), because pandas pads a column of numbers wider than one of text. `dosa`, the row holding the quote mark, is row 3 and is not in `head(3)` at all. One character of whitespace is not a check.
+- **Bug 3 versus the `stars` hole:**
+
+| Fault | Announces itself? | Which field of `info()` catches it |
+|---|---|---|
+| `stars` has a `None` | **Yes** — prints as `NaN` | the **Non-Null Count** — `5`, not `6` |
+| `price` has a `"40"` | **No** — count 6, values look like numbers, no error | the **Dtype** — `object` where you expected `int64` |
+
+  The sentence to keep: **a hole shows up in the count; text-where-you-wanted-numbers shows up in the dtype. Read both fields, on every column, every time.**
+
+### 🧩 Puzzle of the Week
+
+**Part 1 — the whole report.** Twelve blanks. Real output:
+
+```text
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 5 entries, 0 to 4
+Data columns (total 5 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   city    5 non-null      object 
+ 1   temp    5 non-null      int64  
+ 2   rain    4 non-null      float64
+ 3   coast   5 non-null      bool   
+ 4   pop     5 non-null      object 
+dtypes: bool(1), float64(1), int64(1), object(2)
+memory usage: 293.0+ bytes
+```
+
+- **Part 1(a)** The two most-missed blanks are **`rain`'s count** (people write 5) and **`pop`'s dtype** (people write `int64`). `coast` being `bool` is the third.
+- **Part 1(b)**
+
+| Column | The fault | Which field shows it | Visible in `print(mystery)`? |
+|---|---|---|---|
+| `rain` | one value is missing (`None`) | the **Non-Null Count** — `4`, not `5` | **Yes** — `NaN` on Shimla's row |
+| `pop` | one value is text (`"16700000"`) | the **Dtype** — `object`, not `int64` | **No** — all five print as ordinary numbers |
+
+  `rain` was going to be `float64` anyway, so only the count tells you; for `pop` the count is a perfect 5 and only the dtype tells you. **Two faults, two fields, and neither field catches both.**
+- **Part 1(c)** **Into `float64`:** put a `None` in `temp`, or type one temperature with a decimal point, like `31.5` — only the count distinguishes them. **Into `object`:** put quote marks round one temperature (`"31"`), or a word or stray space in there.
+
+**Part 2 — the three sick tables.**
+
+| Report | What is wrong | How to find the culprit |
+|---|---|---|
+| **A** `10 entries`, `steps 9 non-null float64` | **One `steps` value is missing.** `NaN` is a decimal, so the whole column became `float64` | Print the table and look for the `NaN` |
+| **B** `10 entries`, `steps 10 non-null object` | **One `steps` value is text** (a quote mark, stray space or word). Nothing is missing | Print the column and look for the odd one out, or try arithmetic: `print(df["steps"] * 2)` and look for a value that got *repeated* rather than *doubled* |
+| **C** `9 entries`, `steps 9 non-null int64` | **A whole row is missing.** `steps` itself is perfect | Count the items in each of the four lists: nine all round means a dropped row (a missing comma gluing two values, or a line deleted while editing) |
+
+- **Part 2(a)** **Easiest to hardest: A, C, B.** A has two signals (`NaN` in capitals, and every value visibly changed). C is invisible *in the report*, but is obvious the moment you compare `9 entries` with the ten rows on paper. B is hardest: perfect count, values look like numbers, no error.
+- **Part 2(b)** **Report C.** `9 entries` and `9 non-null` are perfectly consistent — the table is internally flawless. You have to know you meant ten, and that fact lives outside the data.
+- **Part 2(c)** **The paper grid, filled in first, in pencil.** It is the only independent record of how many rows there were supposed to be.
+
+### 🤔 Think Deeper
+
+Open-ended; there is no single right answer. Mark for the ideas below.
+
+- **T1** (were the four weeks without labels worth it?): a good paragraph says that carrying a separate `names` array and hoping the lengths matched is what made named columns feel like a relief rather than a formality (the same point as A1(j)), that you now know what the one `pd.DataFrame` line is doing, and that an array is still the right tool when everything is one kind and all you want is arithmetic or a block of numbers for a model. A paragraph that says "no, we should have started with pandas" is allowed if it is argued; probe it with "what would you not have known?".
+- **T2** (what a DataFrame cannot record): a good paragraph names things like *guessed* values, the phone in a bag on Tuesday, two "Mon" rows being two different Mondays; says it is **the person's job** to record them, because `info()` can only see what is in the table; and suggests somewhere outside it — a note beside the paper grid, a comment in the file, or an extra column. This connects to the Bug Log and to Puzzle Part 2(c): the paper is the record the computer cannot keep for you.
+
+### 🛠️ Build It — Your Own Week, In Ten Rows
+
+Their columns will be their own. **Check the entry count against the rows on their paper grid, not against this page.** Mark: ten rows on paper and `10 entries` in `info()`; four column names typed and `total 4 columns`; at least one `object` column, at least one `float64`, at least one `int64`.
+
+Model program (`myweek.py`), actually run:
+
+```python
+"""myweek.py - ten days of my own week, as a DataFrame."""
 
 import pandas as pd
 
@@ -1907,8 +2168,6 @@ print()
 print("--- one column is a Series ---")
 print(my_week["sleep"])
 ```
-
-Real output:
 
 ```text
 pandas version: 1.5.3
@@ -1959,139 +2218,79 @@ memory usage: 448.0+ bytes
 Name: sleep, dtype: float64
 ```
 
-*(Their columns will be their own. Check the entry count against the rows on their paper grid, not against this page.)*
+**The three checks, on the model table.**
 
-**Mark:** ten rows on paper and `10 entries` in `info()`; four column names typed and `total 4 columns`; at least one `object` column, at least one `float64`, at least one `int64`.
+1. **Entry count against the paper:** `RangeIndex: 10 entries, 0 to 9` and ten rows on paper. They agree. If not, a row was lost or doubled while typing, and only the paper could have told you.
+2. **Column count against the names typed:** `total 4 columns`, four names typed. They agree. The index is not one of the four.
+3. **Is any column a decimal when you typed whole numbers?** **No** — `steps` is `int64`. The number that proves it is the count: `steps 10 non-null int64`. *(If it had said `float64`, the count is what tells you whether that was typed `7.5` or a missing value.)* Two acceptable forms, both of which must be reasoned: *"No. `steps` is `int64` and I typed whole numbers, and its count is 10 out of 10."* or *"Yes — `steps` came out `float64`. A value is missing: its count is 9, not 10. `NaN` is a decimal and a column holds one kind of thing, so the whole column became decimals."* **Mark the reasoning.** "Because pandas does that" is not an answer.
 
-**21.4(a) `Mon` appears twice, in rows 0 and 7. Is that a problem?**
-**No.** Two rows may hold the same value in a column. What they **should not** share is the **index** — row 0 and row 7 are different rows with different names. (pandas will technically allow a repeated index, but asking for that name then returns two rows, so you avoid it.) That is what the index is for: naming each row.
-
-**21.4(b) Which of your columns is `object`, and is that right?**
-`day`, and yes — it is words. **If a *number* column had said `object`, that would be a bug**, and it would mean a quote mark or a stray space had got in.
-
-**21.4(c) Why are `sleep` and `screen` `float64`?**
-Because values like `7.5` were typed. **Not because anything is missing** — the non-null counts are 10 out of 10. *(This is the distinction the homework is testing: a `float64` can come from typing decimals **or** from a hole, and `info()`'s count is what tells you which.)*
-
-### Page 21.5 — Read `info()` line by line
-
-*Every line of your own table's `info()`, in your own words.*
-
-Model answers for the ten-row week table above:
+**`info()` line by line — model answers.** This is the marked part.
 
 | Line | What it tells me |
 |---|---|
 | `<class 'pandas.core.frame.DataFrame'>` | This is a DataFrame — a whole table, not a single column. If it said `Series` I had handed pandas one column by mistake. |
 | `RangeIndex: 10 entries, 0 to 9` | Ten rows, named 0 to 9. **That matches the ten rows on my paper grid**, so nothing was lost or doubled while typing. |
 | `Data columns (total 4 columns):` | Four columns follow. I typed four names, so that matches too. The index is not one of the four. |
-| `#  Column  Non-Null Count  Dtype` | The headings of the little table under it: the column's number, its name, how many of its cells are filled, and what kind of thing it holds. |
-| `---  ------  ...` | Just a divider line. Nothing to read. |
-| `0   day     10 non-null     object` | Column 0 is `day`. All ten cells are filled. It is `object`, which means text — correct, because days are words. |
-| `1   sleep   10 non-null     float64` | Column 1 is `sleep`. All ten filled. `float64` means decimals, which is right because I typed values like 7.5. |
-| `2   screen  10 non-null     float64` | Same as `sleep`: ten values, decimals because I typed halves. |
-| `3   steps   10 non-null     int64` | Column 3 is `steps`. Ten filled. `int64` means whole numbers, which is right — you cannot take half a step. |
-| `dtypes: float64(2), int64(1), object(1)` | The tally: two decimal columns, one whole-number column, one text column. **Adds to four**, which matches the column count. |
+| `#  Column  Non-Null Count  Dtype` | The headings of the little table under it: the column's number, its name, how many cells are filled, and what kind of thing it holds. |
+| `---  ------  --------------  -----` | Just a divider. Nothing to read. |
+| ` 0   day     10 non-null     object` | Column 0 is `day`. All ten cells filled. `object` means text — correct, because days are words. |
+| ` 1   sleep   10 non-null     float64` | Column 1 is `sleep`. All ten filled. `float64` means decimals, which is right because I typed values like 7.5. |
+| ` 2   screen  10 non-null     float64` | Same as `sleep`: ten values, decimals because I typed halves. |
+| ` 3   steps   10 non-null     int64` | Column 3 is `steps`. Ten filled. `int64` means whole numbers, which is right — you cannot take half a step. |
+| `dtypes: float64(2), int64(1), object(1)` | The tally: two decimal columns, one whole-number, one text. **Adds to four**, matching the column count. |
 | `memory usage: 448.0+ bytes` | How much space the table takes. Not interesting. The `+` means it is an estimate, because text is stored elsewhere. |
 
-**21.5(a) Which line would tell you fastest that you had lost a row while typing?**
-`RangeIndex: 10 entries` — **if you know how many rows you meant to have.** Which is the entire reason the paper grid exists.
+**What loses the marks:** *"it tells you about the DataFrame"* for line one, then skipping to the dtypes. One sentence per line. And the sentence for line two has to mention the paper, or the check did not happen.
 
-**21.5(b) Which line would tell you fastest that a number column had text in it?**
-The per-column `Dtype` line: it would say **`object`** where you expected `int64` or `float64`.
+**Two side questions from the model table.** `Mon` appears twice, in rows 0 and 7: **not a problem** — two rows may share a value; what they should not share is the **index**, whose job is to name each row. (pandas allows a repeated index, but asking for that name then returns two rows.) And `sleep` and `screen` are `float64` **because decimals were typed, not because anything is missing** — the counts are 10 of 10; `info()`'s count is what tells you which.
 
-**21.5(c) Which line would tell you fastest that a value was missing?**
-The **Non-Null Count** on that column's line. Anything less than the number of entries means holes.
+**The hole experiment, both columns filled** (model: one `steps` value set to `None`).
 
-**21.5(d) Is any of your columns a decimal when you typed whole numbers? Why?**
+| | Before the `None` | After the `None` |
+|---|---|---|
+| `RangeIndex: ___ entries` | **10** | **10 — unchanged** |
+| `total ___ columns` | **4** | **4 — unchanged** |
+| `steps` non-null count | **10** | **9** |
+| `steps` dtype | **`int64`** | **`float64`** |
+| how the values print | `6200` | **`6200.0`** |
+| the `dtypes:` tally | `float64(2), int64(1), object(1)` | **`float64(3), object(1)`** |
 
-Two acceptable answers and both must be reasoned:
+- **Three things that changed:** the missing value prints as **`NaN`**; the dtype went **`int64` to `float64`** and every step count grew a decimal point; the non-null count went **10 to 9**. *(The vanished `int64` in the tally is a fourth.)*
+- **One thing that did NOT change:** **`RangeIndex: 10 entries`** — the row did not disappear; only one cell is empty. *(Also acceptable: `day`, `sleep`, `screen`, or the column count.)*
+- **The sentence being marked.** Model: *"`NaN` is a decimal, and a column can only hold one kind of thing, so the only kind that can hold both 6200 and `NaN` is decimals — which means every step count in the column had to become a decimal, even though only one value was missing."* **Mark for the reasoning about *one kind*.** A sentence that only says "because one was missing" has described the cause and not the mechanism.
 
-> *"No. `steps` is `int64` and I typed whole numbers, and its count is 10 out of 10, so there are no holes."*
+**The same rule, three times.**
 
-> *"Yes — `steps` came out `float64`. I typed whole numbers, so that means a value is missing: its count is 9, not 10. `NaN` is a decimal, and a column can only hold one kind of thing, so the whole column had to become decimals."*
+| Week | What one odd thing went in | What the whole container became |
+|---|---|---|
+| 17 | one **word** in a list of numbers | everything became text — `<U21`, and `48` became `'48'` |
+| 18 | one **decimal** in a list of whole numbers | everything became `float64` |
+| **21** | one **hole** (`None`) in a column of whole numbers | everything became `float64`, and `6200` became `6200.0` |
 
-**Mark the reasoning.** "Because pandas does that" is not an answer.
+**The rule:** *A container picks the one kind that can hold everything in it.* Same rule, three costumes; a student who spots the connection has had a very good term. *(A fourth costume, from this week's Worked Example 2: one quote mark round a number makes the whole column `object`.)* Fastest to notice is today's (`12` becoming `12.0` shows in the printed table); most dangerous is Week 17's `<U21`, because `'48'` prints as `48` and the next arithmetic either crashes confusingly or silently glues characters together. Any well-argued comparison earns the mark.
 
-### Page 21.6 — The hole experiment
-
-```python
-with_hole = pd.DataFrame({
-    "day":    ["Mon", "Tue", "Wed", "Thu", "Fri",
-               "Sat", "Sun", "Mon", "Tue", "Wed"],
-    "steps":  [6200, 8100, 4300, 7700, 3900, 11200, 9800, 6600, None, 5100],
-})
-```
-
-Real output, before and after:
-
-```text
---- nothing missing ---
-   day  steps
-0  Mon   6200
-1  Tue   8100
-2  Wed   4300
-<class 'pandas.core.frame.DataFrame'>
-RangeIndex: 10 entries, 0 to 9
-Data columns (total 2 columns):
- #   Column  Non-Null Count  Dtype 
----  ------  --------------  ----- 
- 0   day     10 non-null     object
- 1   steps   10 non-null     int64 
-dtypes: int64(1), object(1)
-memory usage: 288.0+ bytes
-
---- one step count missing ---
-   day   steps
-0  Mon  6200.0
-1  Tue  8100.0
-2  Wed  4300.0
-<class 'pandas.core.frame.DataFrame'>
-RangeIndex: 10 entries, 0 to 9
-Data columns (total 2 columns):
- #   Column  Non-Null Count  Dtype  
----  ------  --------------  -----  
- 0   day     10 non-null     object 
- 1   steps   9 non-null      float64
-dtypes: float64(1), object(1)
-memory usage: 288.0+ bytes
-```
-
-**(a) Three things that changed.**
-
-1. The missing value prints as **`NaN`**.
-2. The dtype went from **`int64` to `float64`**, and every step count grew a decimal point — `6200` became `6200.0`.
-3. The non-null count went from **`10 non-null` to `9 non-null`**.
-
-**(b) One thing that did NOT change.**
-**`RangeIndex: 10 entries`.** There are still ten rows. The row did not disappear — it still has a `day` in it. **Only one cell is empty.** *(Also acceptable: `day` is unaffected; the number of columns is unaffected.)*
-
-**(c) The sentence: why did everybody else's number change?**
-
-Model answer:
-
-> *"`NaN` is a decimal, and a column can only hold one kind of thing, so the only kind that can hold both 6200 and `NaN` is decimals — which means every step count in the column had to become a decimal, even though only one value was missing."*
-
-**Mark for the reasoning about *one kind*.** A sentence that only says "because one was missing" has described the cause and not the mechanism.
-
-**(d) Where have you seen this rule before? Twice.**
-**Week 17:** one word in a list of numbers turned every number into text (`<U21`). **Week 18 (and Week 17's page 17.3):** one decimal in a list of whole numbers made the whole array `float64`. **Today:** one hole makes the whole column `float64`.
-
-**Same rule, three costumes: a container picks the one kind that can hold everything.**
-
-**(e) Which of the three would you notice fastest, and which is most dangerous?**
-
-*Fastest to notice:* today's, because `12` becoming `12.0` is visible in the printed table.
-
-*Most dangerous:* **Week 17's `<U21`**, because `'48'` prints as `48` with only a pair of quote marks to tell you, and the very next thing you do — arithmetic — either crashes confusingly or silently glues characters together.
-
-*(Any well-argued answer earns the mark. The point is that the student is comparing them at all.)*
-
-**(f) Write your Bug Log entry.**
-
-Model:
+**Bug Log entries, done properly** (one loud, one silent):
 
 | What I saw | What it means | Cause | Fix |
 |---|---|---|---|
-| Whole numbers printing as `6200.0`. No error. | The column had to become decimals. | One cell is empty, and `NaN` is a decimal, so the whole column changed kind. | Run `info()` and read the non-null count. Fixing the hole is Week 23; today, noticing it is the job. |
+| Nineteen lines of traceback ending `KeyError: 'Runs'` | There is no column with that name | A capital letter. Column names are case-sensitive text | `df["runs"]`. Read the last line first, then find the `File` line with my own filename |
+| Whole numbers printing as `6200.0`. **No error.** | The column had to become decimals | One cell is empty, and `NaN` is a decimal, so the whole column changed kind | Run `info()` and read the non-null count. Fixing the hole is Week 23; today, noticing it is the job |
+
+### 🎨 Draw It
+
+Open-ended; mark against these five things:
+
+1. **The heavy frame goes round the columns only**, with a header rule under the names.
+2. **The index strip is drawn outside that frame**, in grey, labelled *"row names — not a column"*. Four columns inside, not five.
+3. **Ten rows, numbered from zero** — so the last one is 9, not 10.
+4. **Each column labelled with its dtype and non-null count**, with the two number columns distinguished for the right reason: a `float64` because decimals were typed (count 10) versus a `float64` because a value is missing (count 9).
+5. **The thing that earns the marks:** every other value in the `NaN` column marked with a note (`142` written as `142.0`) — they all changed and nobody touched them.
+
+The three write-in questions: **How many entries?** 10. **How many columns?** 4. **Which column is `object`, and why?** The words column, because it holds words — and the follow-up worth answering unprompted: *if a number column had said `object`, that would be a bug (a quote mark or stray space)*. **Which is `int64`?** The whole-number column that did *not* get the hole. **What did the one `NaN` change?** Model: *"the non-null count dropped from 10 to 9, the dtype went from `int64` to `float64`, every other value in that column grew a decimal point, and the `int64` disappeared from the tally line, because no whole-number column was left."*
+
+### 📊 Self-Check
+
+No right answers; it is a record of where the student is, most useful when honest. Three rows matter most. **"Read every line of `df.info()` out loud in my own words"** is the week's objective — if it is not a 😀, the fix is not more reading but doing it out loud, once, on a table they built (twelve lines, three minutes). **"Explain what the index is, and why it is not a column"** — if 😕, next week will be genuinely confusing; redo the three proofs from A1(f). **"Notice a whole-number column printing as decimals and say what caused it"** — if 😀, they have the most useful habit in pandas.
 
 ### Answers to every question posed in the lesson
 

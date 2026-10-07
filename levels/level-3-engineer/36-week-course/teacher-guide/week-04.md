@@ -15,7 +15,7 @@
 | **New maths** | **standard deviation** as the typical distance of a value from the mean, then the **z-score** = (value − mean) ÷ sd. Both worked by hand on the five numbers **2, 4, 6, 8, 100**. |
 | **New syntax** | `MinMaxScaler()` · `scaler.mean_` / `scaler.scale_` · `OneHotEncoder(handle_unknown="ignore")` · `OrdinalEncoder(categories=[...])` |
 | **Dataset** | Five numbers typed on paper — `2, 4, 6, 8, 100` — then the numpy-generated pizza-delivery table from Week 1 (`make_data.py`, seed 0) |
-| **Materials** | Graph paper, at least four sheets · a calculator (phone is fine) · **five index cards with the five restaurant names on them, and a sixth blank one** · printed workbook pages 4.1–4.6 · the Bug Log |
+| **Materials** | Graph paper, at least four sheets · a calculator (phone is fine) · **five index cards with the five restaurant names on them, and a sixth blank one** · the printed Week 4 workbook (all of it; A6, Draw It and Build It are the ones used today) · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, scikit-learn. `make_data.py` from Week 1 must still be in the folder. Nothing new to install. |
 | **Prep time** | 20 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | Every block in this lesson finishes in **under 2 seconds**. The `make_data.py` import is the slowest part and it is about half a second. |
@@ -436,7 +436,7 @@ weather codes: [0 1 2 1 0]
 
 **4. (4 min) Print and cut.**
 
-- Workbook pages **4.1–4.6**.
+- The Week 4 workbook, printed in full. Today uses **A6**, **Draw It** and **Build It**; the rest is practice bank.
 - **Five index cards**, one restaurant name on each in big letters: `Napoli`, `SliceHouse`, `CrustyBros`, `TandooriPizza`, `GreenLeaf`. Plus **one more card reading `PopUpPizza`**, kept in your pocket until the end of the activity.
 - Four sheets of graph paper.
 - Figure 4.2 printed, **face down**. It is the answer to the first half of the activity and it goes face-up only at the end.
@@ -922,7 +922,7 @@ This section gives the full instructions for the hands-on activity, with its eas
 
 ### The Two Rulers, and Five Cards
 
-**Setup (2 minutes).** Each student needs: two sheets of graph paper, a calculator, a pencil, and workbook page 4.3. The five index cards go face-down in the middle of the table. Figure 4.2 stays face-down until the very end.
+**Setup (2 minutes).** Each student needs: two sheets of graph paper, a calculator, a pencil, and the Week 4 workbook (A6 and Draw It, kept closed until Part 1 is finished). The five index cards go face-down in the middle of the table. Figure 4.2 stays face-down until the very end.
 
 ---
 
@@ -1179,70 +1179,506 @@ Three checks, five minutes, exact wording.
 
 This section gives the words to use when setting the homework.
 
+The workbook has twelve sections, in this order: ✅ Warm-Up · 🔢 Do the Maths by Hand (M1–M4) · 🔎 Predict the Output (P1–P4) · ✍️ Practice Set A (A1–A6) · ✍️ Practice Set B (B1–B5) · 🐞 Fix the Broken Program · 🧩 Puzzle of the Week · 🤔 Think Deeper (T1–T2) · 🛠️ Build It · 🎨 Draw It · 📊 Self-Check · ✅ Answers. It is far more than one evening, so split it:
+
+- **In class:** **A6** (Fill in the two rulers) and **🎨 Draw It**, because both use the lesson's own numbers `2, 4, 6, 8, 100`.
+- **At home, marked:** **🛠️ Build It**. This is the old "three pages" and it is the one you mark.
+- **At home, as preparation for Build It:** **🔢 Do the Maths by Hand** (M1–M4). Drills 1–10 in Build It are M1 and M2 again with the machine's answer beside them, so a student who has done M1–M4 finds Build It quick.
+- **Later, not assigned tonight:** Warm-Up, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle of the Week, Think Deeper and Self-Check. They are the practice bank for the week after; the Warm-Up is also a good opening for Week 5. Set any of them if the student has time or is flying.
+
 **Say this:**
 
-> "About an hour, three pages, and one of them is the one I'm actually marking.
+> "About an hour, and one part of it is the one I'm actually marking. Open the workbook at **Build It**.
 >
-> **Page 4.4 — ten scaling drills, by hand, with the machine's answer written beside each one.** Two short columns. For each one: the mean, the typical gap, the z-scores, the min-max values. **Show the five steps every time.** I want to see the subtracting, the squaring, the adding, the dividing and the square root — not just the answer. Then run `StandardScaler` and `MinMaxScaler` on the same numbers and write what the machine said **next to** what you said. If they disagree, don't cross yours out — write which of the five steps went wrong.
+> **Do the ten drills, by hand, with the machine's answer written beside each one.** The two short columns are **P** and **Q**: five drills each. For each one: the mean, the typical gap, the z-scores, the min-max values. **Show the five steps every time** for drills 2 and 7. I want to see the subtracting, the squaring, the adding, the dividing and the square root — not just the answer. Then run `drills.py` and write what the machine said **next to** what you said. If they disagree, don't cross yours out — write which of the five steps went wrong. If you want practice first, the **Do the Maths by Hand** page has the same arithmetic with the blanks laid out for you.
 >
-> **Page 4.5 — one-hot by hand.** Take the five restaurants, one-hot three rows of them on paper, and then count: how many columns did you create for `restaurant`, for `day_of_week`, and for `weather`? Write the sum. Then one sentence: **what does `handle_unknown="ignore"` save you from?** I want the sentence to mention something that happens in the real world, not something that happens in Python.
+> **Then the one-hot by hand.** Take the five restaurants, one-hot three rows of them on paper, and then count: how many columns did you create for `restaurant`, for `day_of_week`, and for `weather`? Write the sum. Then one sentence: **what does `handle_unknown="ignore"` save you from?** I want the sentence to mention something that happens in the real world, not something that happens in Python.
 >
-> **Page 4.6 — and this is the marked one. The ordinal trap.** Encode `weather` as clear=0, rain=1, storm=2. Then **two sentences on exactly what the model now wrongly believes about rain.** Two sentences, and I want a number in at least one of them. The real lateness rates are on the page: clear 0.2451, rain 0.3507, storm 0.5360. Do the two subtractions before you write.
+> **And last, the marked one: the ordinal trap.** Encode `weather` as clear=0, rain=1, storm=2. Then **two sentences on exactly what the model now wrongly believes about rain.** Two sentences, and I want a number in at least one of them. The real lateness rates are on the page: clear 0.2451, rain 0.3507, storm 0.5360. Do the two subtractions before you write.
 >
-> The thing I am *not* looking for is 'ordinal encoding is bad'. It isn't. On page 4.6 there is also a column where ordinal encoding is the right answer, and I want you to name it."
+> The thing I am *not* looking for is 'ordinal encoding is bad'. It isn't. At the bottom of that page there is also a column where ordinal encoding is the right answer, and I want you to name it and write the ladder with less-than signs. Finish with two lines in the Bug Log, one loud and one silent."
 
-**Workbook pages:** 4.1, 4.2, 4.3 in class · **4.4, 4.5, 4.6** at home.
+**Workbook sections:** **A6 and Draw It** in class · **Build It** (marked) and **Do the Maths by Hand** at home.
 
-**Expected time:** 25 min on the ten drills (the arithmetic is the slow part) · 10 min running the sklearn check and writing it up · 10 min on the one-hot page · 15 min on the ordinal trap, including the two subtractions. **About 60 minutes.**
+**Expected time:** 15 min on M1–M4 if they do them first (the arithmetic is the slow part) · 25 min on the ten drills · 10 min running `drills.py` and writing it up · 10 min on the one-hot page · 15 min on the ordinal trap, including the two subtractions. **About 60 minutes for Build It alone with a quick pass over M1–M4; allow 75 if M1–M4 are done properly.**
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are the five steps shown, or only the answers?** A page with `sd = 36.0056` and nothing else did not do the homework, however right the number is. **Two — is the sklearn output written beside the hand answer, or on a separate page?** Beside. The comparison is the point. **Three — do the two sentences on page 4.6 talk about the *spacing* of the codes, or only the order?** The order is fine. Ordinal encoding gets weather's order right. The wrong belief is that the gap from rain to storm is the same size as the gap from clear to rain, and the numbers 0.1056 and 0.1853 say it is not. A sentence about order only has spotted the easy half and missed the lesson.
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are the five steps shown, or only the answers?** A page with `sd = 36.0056` and nothing else did not do the homework, however right the number is. **Two — is the sklearn output written beside the hand answer, or on a separate page?** Beside. The comparison is the point. **Three — do the two sentences on the ordinal-trap part of Build It talk about the *spacing* of the codes, or only the order?** The order is fine. Ordinal encoding gets weather's order right. The wrong belief is that the gap from rain to storm is the same size as the gap from clear to rain, and the numbers 0.1056 and 0.1853 say it is not. A sentence about order only has spotted the easy half and missed the lesson.
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone. **All code below was run; all output is real.**
+The key follows the workbook **section by section, in the workbook's own order**, using the workbook's item labels (W1, M1, P1, A1, B1, Bug 1, T1 and so on). Every item is answered, and the values are the ones in the workbook's own ✅ Answers section. Teacher-only notes (what wrong answers look like, what to credit) are marked 🧑‍🏫. **All code below was run; all output is real** — except where marked, the values that come from the 2,000-row delivery table are taken from the workbook's answers and agree with the lateness rates used throughout this guide.
 
-### Page 4.1 — Match the word to the thing
+### ✅ Warm-Up
 
-| Word | Description |
+- **W1.** **The model must be last.** Everything before it must have a `.transform`, and the model does not. Put it first and `.fit` raises a `TypeError`, because the pipeline tries to transform with something that cannot transform.
+- **W2.** 5 number columns → **5** · 5 + 7 + 3 = **15** · total **20**. Scaling changes values, not width; the three word columns became fifteen.
+- **W3.** **The fitted thing.** Not the code (that is in the `.py` files), not the score (a number in a report): 5002 bytes of learned numbers — medians, means, standard deviations, category lists and weights.
+- **W4.** Any two of `fit(`, `make_data`, `train_test`. Three zeros means no training code got into the prediction program.
+- **W5.** A score without its baseline is not a result. Printed by one script, nobody can quote 0.7541 and forget 0.5000.
+
+### 🔢 Do the Maths by Hand
+
+**M1 — column P = `[3, 5, 7, 9, 11]`.**
+
+```text
+3 + 5 + 7 + 9 + 11 = 35        35 ÷ 5 = 7
+
+subtract 7:   −4    −2     0     2     4
+square:       16     4     0     4    16
+add:          16 + 4 + 0 + 4 + 16 = 40
+divide by 5:  40 ÷ 5 = 8
+square root:  √8 = 2.8284
+```
+
+- z of 3 = (3 − 7) ÷ 2.8284 = **−1.4142**; z of 11 = (11 − 7) ÷ 2.8284 = **+1.4142**.
+- **M1(a).** Yes, equal and opposite, **because this list is symmetric about its mean** (no monster in it).
+- **Step 4.** min 3, max 11, range 8. (5 − 3) ÷ 8 = 2 ÷ 8 = **0.2500**.
+- **M1(b).** **0, 0.25, 0.5, 0.75, 1.** Evenly spaced inputs give evenly spaced outputs.
+- **M1(c).** **Min-max** gives the nicer-looking numbers here. Nothing about the recipes changes between P and Q, only the data.
+
+**M2 — column Q = `[1, 2, 2, 3, 92]`.**
+
+```text
+1 + 2 + 2 + 3 + 92 = 100       100 ÷ 5 = 20
+
+subtract 20:  −19   −18   −18   −17   +72
+square:       361   324   324   289  5184
+add:          361 + 324 + 324 + 289 + 5184 = 6482
+divide by 5:  6482 ÷ 5 = 1296.4
+square root:  √1296.4 = 36.0056
+```
+
+- **Step 3.** z of 92 = (92 − 20) ÷ 36.0056 = 72 ÷ 36.0056 = **+1.9997**.
+- **Step 4.** min 1, max 92, range 91. (2 − 1) ÷ 91 = 1 ÷ 91 = **0.0110**.
+- **Step 5.** z: (120 − 20) ÷ 36.0056 = 100 ÷ 36.0056 = **2.7773**. Min-max: (120 − 1) ÷ 91 = 119 ÷ 91 = **1.3077**.
+- **M2(a).** **The min-max answer, 1.3077.** The promise was "every value comes out between 0 and 1"; it breaks the first time a value bigger than anything in training arrives, with **no error and no warning**. The z-score never promised a limit; 2.7773 says "120 sits 2.78 typical steps above average", which is true and comparable with any other column.
+- **M2(b).** **One value changed** (11 became 92), and that one number moved the mean from 7 to 20, the typical gap from 2.8284 to 36.0056 and the min-max range from 8 to 91, so the four small values collapse into the bottom 2.2% of the ruler. Neither recipe changed.
+
+**M3 — months against years.**
+
+```text
+MONTHS 0, 12, 24, 36, 48
+mean = 120 ÷ 5 = 24
+squares: 576 + 144 + 0 + 144 + 576 = 1440
+1440 ÷ 5 = 288        √288 = 16.9706
+z of 48 = (48 − 24) ÷ 16.9706 = +1.4142
+
+YEARS 0, 1, 2, 3, 4
+mean = 10 ÷ 5 = 2
+squares: 4 + 1 + 0 + 1 + 4 = 10
+10 ÷ 5 = 2            √2 = 1.4142
+z of 4 = (4 − 2) ÷ 1.4142 = +1.4142
+```
+
+- **M3(a).** The two sets of z-scores are **identical, digit for digit**.
+- **M3(b).** After standardizing they are **exactly the same column** (mean 0, typical step 1, same five values).
+- **M3(c).** "...immune to **the unit somebody happened to choose when they wrote the data down.**" Dividing every value by 12 divides the mean and the typical gap by 12 as well, and the division cancels.
+- 🧑‍🏫 The workbook's confirming code prints `mean_ [24.]  scale_ [16.9706]` for months and `mean_ [2.]  scale_ [1.4142]` for years, with z `[-1.4142 -0.7071  0.  0.7071  1.4142]` on both rows.
+
+**M4 — the uneven ladder.**
+
+```text
+rain  − clear = 0.3507 − 0.2451 = 0.1056
+storm − rain  = 0.5360 − 0.3507 = 0.1853
+0.1853 ÷ 0.1056 = 1.75
+```
+
+- **M4(a).** The **order** → **right**. The **spacing** → **wrong**: codes 0, 1, 2 say the two steps are equal, and the second is **1.75 times** the first.
+- **M4(b).** `restaurant` 5 → 5 · `day_of_week` 7 → 7 · `weather` 3 → 3 · **total 15**.
+- **M4(c).** Three leave and **fifteen** arrive. **The row count is not affected** — one-hot changes the width, never the height.
+
+### 🔎 Predict the Output
+
+**P1 — every value the same.** By hand: mean **5**, every distance **0**, every square **0**, so sd = **0**.
+
+```text
+mean_ : [5.]
+scale_: [1.]
+z     : [0. 0. 0. 0.]
+```
+
+`scale_` is **1, not 0**: sklearn noticed the standard deviation was zero and quietly replaced it with 1, because the next step divides by it and dividing by zero would turn every row into `nan`. 🧑‍🏫 A constant column carries no information; the real fix is to notice it and drop it.
+
+**P2 — one capital letter.**
+
+```text
+['weather_Storm' 'weather_clear' 'weather_rain']
+(4, 3)
+[[0 1 0]
+ [0 0 0]
+ [0 0 1]
+ [0 1 0]]
+```
+
+Names: `weather_Storm`, `weather_clear`, `weather_rain` — the capital sorts first. Shape **(4, 3)**, and **three** 1s in the grid. **Row 2 (the second row, `"storm"`) is all zeros**: it asked for `"storm"` with a small s, the encoder learned `"Storm"`, and the two are different strings, so `handle_unknown="ignore"` turned it into zeros with no error. **The check:** `print(out.sum(axis=1))` should be 1 on every row; here it prints `[1. 0. 1. 1.]`. A row summing to 0 is a category the encoder has never met. (Also acceptable: `print(sorted(later["weather"].unique()), sorted(train["weather"].unique()))`.)
+
+**P3 — the ladder nobody told it about.**
+
+```text
+categories_: [array(['large', 'medium', 'small'], dtype=object)]
+codes      : [2 1 0 1 2]
+```
+
+Sorted alphabetically, so `large` = 0 and `small` = 2. The model believes **small is bigger than large**, by two whole steps, with medium between them. **The fix:** `oe = OrdinalEncoder(categories=[["small", "medium", "large"]])` — a list **inside** a list.
+
+**P4 — the shape prediction on the real table.**
+
+```text
+in shape : (2000, 3)
+out shape: (2000, 15)
+sum of every row: {3.0}
+sum of the whole grid: 6000
+```
+
+The row sum is **3** because there are three one-hot blocks side by side and each contributes one 1. Grid total: **2000 × 3 = 6000**. The "How many did you get right ___ / 14" line is the student's own count (there are 14 predictions on the page); it has no answer.
+
+🧑‍🏫 Wrong-answer map: a student who writes `sum of every row: {1.0}` has applied "one 1 per row" to the whole grid instead of to one encoded column. A student who writes `(2000, 5)` for out shape forgot that all three columns are encoded.
+
+### ✍️ Practice Set A — Read It
+
+**A1.** standardization → **(iii)** · min-max → **(v)** · one-hot → **(i)** · ordinal → **(iv)** · cardinality → **(ii)**.
+
+**A2.**
+
+| Line | Result |
 |---|---|
-| **standardization (z-score)** | Take away the mean, then divide by the standard deviation. The column ends up centred on 0 with a typical step of 1. |
-| **min-max scaling** | Take away the smallest value, then divide by the range. The smallest becomes 0 and the biggest becomes 1 — **on the training data only.** |
-| **one-hot encoding** | One yes-or-no column per category, with exactly one 1 in every row. No order invented. |
-| **ordinal encoding** | Each category becomes one integer on a ladder. One column out — and an ordering that may not be real. |
-| **cardinality** | How many different values a column has. `restaurant`: 5. `weather`: 3. `postcode`: 41,000. |
+| `X.shape` | **(5, 1)** |
+| `ss.transform(X).shape` | **(5, 1)** |
+| `ss.transform(X).ravel().shape` | **(5,)** |
+| `ohe.fit_transform(df[["restaurant"]]).shape` | **(2000, 5)** |
+| `ohe.fit_transform(df[CAT]).shape` | **(2000, 15)** |
+| `oe.fit_transform(df[["weather"]]).shape` | **(2000, 1)** |
 
-### Page 4.2 — Predict the output (answered in pen, in class)
+- **A2(a).** The third one, **(5,)**, has one number in it: `.ravel()` flattened the one-column table into a flat row, which has only a length. (Fine for printing, not fine to hand back to sklearn.) 🧑‍🏫 The workbook asks for "two of those six"; the only one-number shape is `(5,)`, and `(2000, 1)` has a 1 as its second number. Credit a student who names `(5,)` and explains it, and one who also names `(2000, 1)` as "one column".
+- **A2(b).** **15** and **1**, because one-hot makes one column per value and ordinal makes one column, full stop — and that one column carries the extra claim that the values are in order and evenly spaced.
 
-**(a)** `StandardScaler().fit(X)` where `X` is `[[2],[4],[6],[8],[100]]`. What do `scaler.mean_` and `scaler.scale_` print?
+**A3.**
 
-`[24.]` and `[38.05259518]`.
+| # | What happens | The fix |
+|---|---|---|
+| a | `ValueError: Expected 2D array, got 1D array instead` | `x.reshape(-1, 1)` |
+| b | `ValueError: Expected a 2-dimensional container but got <class 'pandas.core.series.Series'> instead.` | double brackets: `df[["distance_km"]]` |
+| c | `AttributeError: 'StandardScaler' object has no attribute 'mean_'` | call `.fit(X)` first |
+| d | **no error** — it prints `(0, 0)  1.0` and so on, a list of coordinates | add `sparse_output=False` while learning |
+| e | `ValueError: Shape mismatch: if categories is an array, it has to be of shape (n_features,).` | list **inside** a list: `categories=[["clear", "rain", "storm"]]` |
+| f | `ValueError: could not convert string to float: 'clear'` | send word columns down the categorical branch |
 
-**(b)** What is the z-score of 8?
+- **A3(g).** **(d).** It returns a *sparse* matrix, which stores only the non-zero cells and prints as coordinates: `(0, 0)	1.0`, `(1, 1)	1.0`, `(2, 1)	1.0`. Not a bug, and what you want inside a pipeline, but useless while you are learning.
+- **A3(h).** **(a) and (b).** Both hand a **flat row** to something that wants a **table**: `reshape(-1, 1)` for numpy, double brackets for a DataFrame.
+- 🧑‍🏫 Related, worth knowing: `categories=[["clear", "rain"]]` on a column that also contains `storm` gives `Found unknown categories ['storm'] in column 0 during fit` — **during fit**, because the list was incomplete from the start.
 
-(8 − 24) ÷ 38.0526 = **−0.4205**.
+**A4.** i → **S** · ii → **R** · iii → **Q** · iv → **T** · v → **P**.
 
-**(c)** What is the min-max value of 8?
+- **A4(a).** **Q, `[91.]`**, is the number min-max divides by (the range, 92 − 1). **P, `[1.3077]`**, could only have come from min-max, because it is outside 0 to 1 and the z-score makes no such promise. (`[36.0056]` is the z-score's divisor; 91 and 36.0056 are two different answers to "what do I divide by?" on the same column.)
+- **A4(b).** **Down.** With 120 in the training data the mean rises from 20 to about 36.7 and the typical gap rises too, so 120 is fewer typical steps above a higher average (1.6770 against 2.7773). A z-score is always a statement about the company a value keeps.
 
-(8 − 2) ÷ 98 = 6 ÷ 98 = **0.0612**.
+**A5.**
 
-**(d)** A value of 150 arrives at prediction time. Both scalers were fitted on the five numbers. What comes out of each?
+- **Report A — `distance_km`: standardize.** The deciding number is **448 of 2000** min-max values below 0.10, with a biggest z of +4.7435 showing the long tail that caused it.
+- **Report B — `items`: arguable; min-max is defensible.** *"A basket holds 1 to 6 items, the limits are real limits rather than the biggest thing I happened to see, and the biggest z is only +1.4159, so there is no monster to crush anybody."*
+- **Report C — `pixel_brightness`: min-max, honestly.** *"Brightness is 0 to 255 **by definition**, so nothing bigger can ever arrive."* (The other honest reason: something later in the program demands 0 to 1.)
+- **Report D — `monthly_pay`: the worst candidate for min-max.** The two numbers are the biggest z of **+4.9811** and **487 of 2000** below 0.10: a handful of large salaries own the range and everybody else shares the bottom.
+- **A5(a).** **Report C.** Its 0 and 255 come from what a pixel *is*; the others' limits (0.33 and 14.40, 1 and 6, 617 and 9033) come from whatever turned up in 2,000 training rows. Min-max's promise only holds inside the range it saw: real limits mean it holds for ever, accidental ones mean it holds until next Tuesday. (Report B sits in between, which is why it is arguable.)
 
-z: (150 − 24) ÷ 38.0526 = 126 ÷ 38.0526 = **3.3112**.
-min-max: (150 − 2) ÷ 98 = 148 ÷ 98 = **1.5102** — **outside the 0-to-1 box, with no error and no warning.**
+**A6 — Fill in the two rulers** (`2, 4, 6, 8, 100`). This is the in-class check; it is the same material as the graph-paper activity key further down.
 
-**(e)** One column with the five restaurant names goes into `OneHotEncoder`. What are the input and output shapes?
+```text
+the five numbers      2   4   6   8   100
+sum 120,  mean 120 ÷ 5 = 24
 
-`(5, 1)` in, `(5, 5)` out.
+1  subtract 24:   −22    −20    −18    −16    +76
+2  square:        484    400    324    256   5776
+3  add:           7240
+4  divide by 5:   1448
+5  square root:   38.0526
 
-**(f)** What comes out for a restaurant the encoder has never seen, with `handle_unknown="ignore"`?
+z-score of 8 :  ( 8 − 24 ) ÷ 38.0526 = −0.4205
+min-max of 8 :  ( 8 −  2 ) ÷ 98      =  0.0612
 
-`[[0 0 0 0 0]]`.
+a new value of 150:  z = 3.3112     min-max = 1.5102
+min-max values under 0.10:  4  (0.0000, 0.0204, 0.0408, 0.0612)
+one-hot restaurant + day_of_week + weather:  15 columns
+```
 
-### Page 4.3 — The Two Rulers (in class, on graph paper)
+- **A6(a).** The student's own list of wrong boxes; use the figure above to mark. Any wrong box is worth tracing back to which of the five steps went wrong.
+- **A6(b).** **The `4`** (min-max values under 0.10) and **the `15`** (one-hot columns) are counts of things rather than measurements.
 
-Values `2, 4, 6, 8, 100`.
+### ✍️ Practice Set B — Write It
+
+**B1.** The blanks are `reshape(-1, 1)`, `StandardScaler().fit(Q)` and `round(ss.scale_[0], 4)`. Output: `Q typical gap: 36.0056`. `scale_` is an array with one number in it, so `scale_[0]` gets the number out; without `[0]` it prints `[36.0056]`, which is not wrong, just noisier.
+
+**B2.** The blanks, in order:
+
+```text
+n = len(values)
+total = total + v
+mean = total / n
+squares = squares + (v - mean) * (v - mean)
+sd = (squares / n) ** 0.5
+zs.append(round((v - mean) / sd, 4))
+```
+
+Expected output: for `[3, 5, 7, 9, 11]`, mean 7.0, sd 2.8284, z `[-1.4142, -0.7071, 0.0, 0.7071, 1.4142]`; for `[1, 2, 2, 3, 92]`, mean 20.0, sd 36.0056, z `[-0.5277, -0.4999, -0.4999, -0.4721, 1.9997]`; sklearn's two lines match the by-hand lines exactly. 🧑‍🏫 `sd` must be computed from the **unrounded** `squares / n`; rounding before the square root breaks the fourth decimal place.
+
+- **B2(a).** **Dividing by `n`** matches sklearn (`n − 1` gives 3.1623 for P). `StandardScaler` divides by `n`, so the course does too.
+
+**B3.** The program loops over `[("P", [3, 5, 7, 9, 11]), ("Q", [1, 2, 2, 3, 92])]`, fits a `StandardScaler` and a `MinMaxScaler` on each `reshape(-1, 1)` column, and then tests 120 on Q. Expected output:
+
+```text
+--- column P ---
+  scaler.mean_  [7.]  scaler.scale_ [2.82842712]
+  z             [-1.4142 -0.7071  0.      0.7071  1.4142]
+  min-max       [0.   0.25 0.5  0.75 1.  ]
+--- column Q ---
+  scaler.mean_  [20.]  scaler.scale_ [36.00555513]
+  z             [-0.5277 -0.4999 -0.4999 -0.4721  1.9997]
+  min-max       [0.    0.011 0.011 0.022 1.   ]
+
+new value 120 for Q:
+  z       [2.7773]
+  min-max [1.3077]
+```
+
+🧑‍🏫 Marking note: column P is the tidy one — min-max gives 0, 0.25, 0.5, 0.75, 1 and looks *better* than the z-scores. Column Q is the same list with a monster in it, and min-max collapses to 0, 0.011, 0.011, 0.022, 1. **A student who notices that the two columns disagree about which ruler is nicer has understood the week.** Give credit even if they did not write it as a question.
+
+**B4.** Expected output: cardinalities **5, 7, 3**; `in shape : (2000, 3)`; `out shape: (2000, 15)`; `5 + 7 + 3 = 15`; and the 15 names grouped by column and alphabetical inside each group (`restaurant_CrustyBros`, `restaurant_GreenLeaf`, `restaurant_Napoli`, `restaurant_SliceHouse`, `restaurant_TandooriPizza`, `day_of_week_Fri`, `day_of_week_Mon`, `day_of_week_Sat`, `day_of_week_Sun`, `day_of_week_Thu`, `day_of_week_Tue`, `day_of_week_Wed`, `weather_clear`, `weather_rain`, `weather_storm`).
+
+- **B4(a).** **The days of the week:** `Fri, Mon, Sat, Sun, Thu, Tue, Wed` — alphabetical, not Monday-to-Sunday. (A small argument for one-hot over a bare `OrdinalEncoder()` on `day_of_week`, which would code Friday as day zero.)
+
+**B5.** Expected output:
+
+```text
+column              mean_    scale_       min       max
+distance_km        3.5193    2.2938      0.33     14.40
+items              3.5520    1.7290      1.00      6.00
+prep_minutes      14.0658    4.0002      4.00     26.60
+order_hour        16.7885    3.6022     10.00     23.00
+
+one new value per column, arriving at prediction time:
+distance_km        5.00  ->  z +0.6455   min-max  +0.3319   inside
+items              8.00  ->  z +2.5726   min-max  +1.4000   ESCAPED THE BOX
+prep_minutes      30.00  ->  z +3.9833   min-max  +1.1504   ESCAPED THE BOX
+order_hour         9.00  ->  z -2.1622   min-max  -0.0769   ESCAPED THE BOX
+```
+
+The program needs two loops, an `if m < 0 or m > 1` deciding `inside` or `ESCAPED THE BOX`, and `pd.DataFrame({col: [value]})` for each new value (a bare `[[value]]` works but prints `UserWarning: X does not have valid feature names`).
+
+- **B5(a).** **`order_hour`, with −0.0769.** The recipe is `(value − data_min_) ÷ range`; a value below the smallest training value makes the top negative. Nobody ordered before 10 in these rows, so `data_min_` is 10 and (9 − 10) ÷ 13 = −0.0769. Min-max escapes at both ends.
+- **B5(b).**
+
+```text
+z      : (5.00 − 3.5193) ÷ 2.2938 = 1.4807 ÷ 2.2938 = 0.6455
+min-max: (5.00 − 0.33)   ÷ 14.07  = 4.67   ÷ 14.07  = 0.3319
+```
+
+### 🐞 Fix the Broken Program
+
+- **Bug 1.** Line **10** (`ss = StandardScaler().fit(price)`). Kind: **shape bug.** Use `reshape(-1, 1)`, because the five prices are **five examples of one thing**; `reshape(1, -1)` says "one example with five features". **The fix:** `ss = StandardScaler().fit(price.reshape(-1, 1))`. **Line 15 already does it right** (`mm = MinMaxScaler().fit(price.reshape(-1, 1))`): the answer was already in the file, so look for the same operation done correctly elsewhere before searching the internet.
+- **Bug 2.** Line **21** (`ohe.transform(... "teal" ...)`). Kind: **runtime** (`ValueError` at transform time). *During fit* means the problem is in training data you can look at; **during transform means it arrived after the model was built and shipped** — a real customer's order and a shop that opened last week. **The fix:** `ohe = OneHotEncoder(handle_unknown="ignore", sparse_output=False).fit(colour)`.
+- **The arithmetic check in Run 2:**
+
+```text
+8 + 10 + 12 + 14 + 96 = 140        140 ÷ 5 = 28     (matches mean_ [28.]  yes)
+squares: 400 + 324 + 256 + 196 + 4624 = 5800
+5800 ÷ 5 = 1160        √1160 = 34.0588            (matches scale_ [34.05877273]  yes)
+min-max of 10: (10 − 8) ÷ (96 − 8) = 2 ÷ 88 = 0.0227
+```
+
+- **The consistency check on the Run 3 table.** **Yes** — both `small` rows say 2 and both `medium` rows say 1. Worth checking because a wrong-but-consistent mapping is a bug in your *instructions*, and a wrong-and-inconsistent one is a bug in your *data*; they need different fixes.
+- **Bug 3.** Line **28** (`oe = OrdinalEncoder()`). Kind: **silent logic.** The model now believes **`small` is two rungs above `large`** (alphabetical: `large` < `medium` < `small`). **The fix:** `oe = OrdinalEncoder(categories=[["small", "medium", "large"]])`. After the fix: small → **0**, medium → **1**, large → **2**.
+- **The decision the library filled in:** bug 1 — *is this five examples of one thing or one example of five things?* (sklearn refused, which is the friendliest outcome); bug 2 — *what to do with a value never seen* (default: stop); bug 3 — *what order the categories are in* (default: alphabetical, silently).
+- **Easiest → hardest: 1, 2, 3.** Bug 1 fails on the first line that does any work; bug 2 fails only if the program happens to try an unseen colour (otherwise it ships and fails in production); bug 3 is caught only by reading the printed codes against the ladder you meant — not by the error log, the score or the shape.
+- 🧑‍🏫 Line numbers are those in the printed `broken04.py`; a student who writes the right line but an adjacent number has counted the docstring differently, so accept the right statement.
+
+### 🧩 Puzzle of the Week
+
+| # | Which ruler? | The clue |
+|---|---|---|
+| 1 | **min-max** | exactly one `0` and exactly one `1` |
+| 2 | **z-score** | adds up to 0, and there are negatives |
+| 3 | **min-max** | one `0`, one `1`, everybody else crushed near the bottom |
+| 4 | **z-score** | negatives that sum to 0 (−0.5277 − 0.4999 − 0.4999 − 0.4721 + 1.9997 = 0.0001, rounding) |
+| 5 | **cannot tell** | both rulers give all zeros for a constant column |
+
+- **Part 1(a).** **Min-max always contains** a `0` (the smallest training value) **and a `1`** (the biggest), and never a negative unless a value from outside the training range was pushed through it. **z-scores always add up to 0** across the column they were fitted on (and their standard deviation is 1).
+- **Part 1(b).** **Number 5.** A constant column has sd 0 and range 0, sklearn replaces both with 1, and both rulers return zeros. You would have to be told which scaler was used, or be shown `data_min_`/`data_max_` versus `mean_`/`scale_`. The useful reaction is "why is there a constant column at all?"
+- **Part 1(c).** **Printouts 3 and 4** came from the monster column (Q). In 3, four of five values are jammed into the bottom 2.2% of the ruler; in 4, four z-scores bunch near −0.5 while one sits at +2.0. Printouts 1 and 2 are evenly spread.
+- **Part 2.**
+
+```text
+raw = mean + z × sd
+
+50 + (−2.50 × 8) = 50 − 20 = 30
+50 + ( 0.00 × 8) = 50 +  0 = 50
+50 + ( 1.25 × 8) = 50 + 10 = 60
+```
+
+- **Part 2(a).** `data_min_` = **30**, `data_max_` = **60**.
+- **Part 2(b).** (50 − 30) ÷ 30 = **20 ÷ 30 = 0.6667** (not 0.5, because 30, 50, 60 are not evenly spaced).
+- **Part 2(c).** **Both** can be run backwards: `raw = mean_ + z × scale_` and `raw = data_min_ + m × (data_max_ − data_min_)`. Each needs exactly its own two learned numbers, which is what the 5002-byte artifact from Week 3 holds. A scaled column is not anonymous. 🧑‍🏫 The question wording invites "only one can"; the workbook's answer is that both can, and that is the one to mark against.
+
+### 🤔 Think Deeper
+
+🧑‍🏫 Open-ended; mark on reasoning, not on wording.
+
+- **T1.** A strong answer separates two claims. "The score went up" is about one 400-row validation pile on one Tuesday, and a delta of 0.0009 can flip sign on a re-split. "The answer no longer depends on a unit somebody chose" is about the structure of the model, true before you measure anything (dividing by 12 divides the mean and the typical gap by 12, and they cancel). The second reason is stronger. To the student who wants to remove the scaler for a 0.0009 drop: **0.0009 on 400 rows is not a finding**, and keeping the scaler costs one line in a `Pipeline` while buying immunity to a class of bug and readable weights. Best answers add the honest exception: a decision tree does not care, so on a tree the argument is only readability.
+- **T2.** The strongest answers refuse to make it a rule. Case for five zeros: a service that stops answering because a shop opened is worse than one that is slightly vaguer. Case for the crash: if the unknown column carries most of the prediction, five zeros is a confident guess with nothing behind it, and stopping is honest (medicine, money). The best answers land on "it depends on how much of the prediction that column was carrying and on what the receiver is told", and say the receiver should be able to find out that this restaurant was never seen — which is what heading 7 of the Week 3 model card is for.
+
+### 🛠️ Build It — Ten Drills, Five Cards, One Trap
+
+This is the homework being marked. **Step 1 check:** the first `order_id` must be 100955.
+
+**The ten drills.**
+
+| Drill | What | Answer |
+|---|---|---|
+| 1 | mean of P | **7** |
+| 2 | sd of P | **2.8284** |
+| 3 | z of 3 | **−1.4142** |
+| 4 | z of 11 | **+1.4142** |
+| 5 | min-max of 5 | **0.2500** |
+| 6 | mean of Q | **20** |
+| 7 | sd of Q | **36.0056** |
+| 8 | z of 92 | **+1.9997** |
+| 9 | min-max of 2 | **0.0110** |
+| 10 | 120: z and min-max | **2.7773** and **1.3077** |
+
+**The five steps for drill 2:** subtract −4 −2 0 2 4 · square 16 4 0 4 16 · add 40 · divide 40 ÷ 5 = 8 · root √8 = 2.8284.
+
+**The five steps for drill 7:** subtract −19 −18 −18 −17 +72 · square 361 324 324 289 5184 · add 6482 · divide 6482 ÷ 5 = 1296.4 · root √1296.4 = 36.0056.
+
+🧑‍🏫 **The commonest disagreement is drill 8, and it is always step 5:** rounding 36.0056 to 36.01 before dividing gives 1.9994 instead of 1.9997. "Which drill disagreed, if any" and "which step was guilty" are the student's own; the usual answers are drill 8 and the square-root step. For drill 10 the sklearn column is `[2.7773]` (z) and `[1.3077]` (min-max), as printed by `drills.py`.
+
+**Which ruler, and why.** Full marks for anything of this shape:
+
+> *"For column P I would use min-max, because the five values are evenly spaced with no freak value, so min-max gives a clean 0, 0.25, 0.5, 0.75, 1 and the hard-limits argument is at least arguable. For column Q I would use the z-score, because 92 is a freak value and min-max divides by a range of 91 that only exists because of it, so 1, 2, 2 and 3 land in 0.0000, 0.0110, 0.0110 and 0.0220 — the bottom 2.2% of the ruler — and 2 and 3 become nearly the same number when one is 1.5 times the other."*
+
+The sentence that explains the disagreement: *"Nothing about either recipe changed. Only the data did — 11 became 92 — and that one value moved the range from 8 to 91."* Accept a z-score for P as well if the reason is given; the point is naming the freak value for Q.
+
+**One-hot by hand**, categories sorted alphabetically as sklearn sorts them.
+
+| restaurant | _CrustyBros | _GreenLeaf | _Napoli | _SliceHouse | _TandooriPizza |
+|---|---|---|---|---|---|
+| Napoli | 0 | 0 | **1** | 0 | 0 |
+| CrustyBros | **1** | 0 | 0 | 0 | 0 |
+| TandooriPizza | 0 | 0 | 0 | 0 | **1** |
+
+**The check:** **3** ones, **12** zeros, 3 × 5 = **15** cells.
+
+**The column count.**
+
+```text
+restaurant   : 5 values  ->  5 columns
+day_of_week  : 7 values  ->  7 columns
+weather      : 3 values  ->  3 columns
+                            ---
+                             15 new columns, replacing 3 old ones
+```
+
+**What `handle_unknown="ignore"` saves you from — a good sentence:** *"A restaurant opens that wasn't in my training data, and without that setting my saved model throws an exception on a real customer's order instead of giving a slightly worse answer."*
+
+**What to catch:** answers that describe the Python (*"it stops a ValueError"*) rather than the world (*"a new shop opened"*). Both are true; only the second shows they know why anybody cares. The real message, for reference:
+
+```text
+ValueError: Found unknown categories ['PopUpPizza'] in column 0 during transform
+```
+
+and with the setting on:
+
+```text
+PopUpPizza -> [[0 0 0 0 0]]
+```
+
+**The sixth restaurant's row:** `0  0  0  0  0`. Not a sixth column: the model was trained with five weights, so a sixth column would have no weight to multiply by.
+
+**The ordinal trap.** Codes: clear **0**, rain **1**, storm **2**.
+
+```python
+from sklearn.preprocessing import OrdinalEncoder
+import pandas as pd
+
+oe = OrdinalEncoder(categories=[["clear", "rain", "storm"]])
+w = pd.DataFrame({"weather": ["clear", "rain", "storm", "rain", "clear"]})
+print("weather codes:", oe.fit_transform(w).ravel().astype(int))
+```
+
+```text
+weather codes: [0 1 2 1 0]
+```
+
+**The real lateness rates**, from the delivery table:
+
+```python
+from make_data import make_deliveries
+df = make_deliveries(n=2000, seed=0)
+print(df.groupby("weather")["late"].agg(["size", "mean"]).round(4).to_string())
+```
+
+```text
+         size    mean
+weather              
+clear    1416  0.2451
+rain      479  0.3507
+storm     125  0.5360
+```
+
+**The two subtractions.**
+
+```text
+rain  − clear = 0.3507 − 0.2451 = 0.1056
+storm − rain  = 0.5360 − 0.3507 = 0.1853
+
+0.1853 ÷ 0.1056 = 1.75
+```
+
+**The two marked sentences.** Full marks for anything of this shape:
+
+> *"By coding clear 0, rain 1 and storm 2 and giving the model one weight for the whole column, I have told it that going from clear to rain and going from rain to storm are steps of exactly the same size. They are not: the first step costs 0.1056 in lateness and the second costs 0.1853, so the second is 1.75 times the first."*
+>
+> *"So the model has to split the difference — whatever single weight it picks, it will over-estimate the harm of rain or under-estimate the harm of a storm, and it can never get both right."*
+
+**What to catch:** a sentence about the *order* (*"it thinks storm is worse than rain"*). That is true and ordinal encoding gets it right — weather really is a ladder. The wrong belief is always about the **spacing**.
+
+**The column where ordinal encoding is the right answer.** Any genuine ladder, written out with the less-than signs: t-shirt sizes `XS < S < M < L < XL`; education `none < primary < secondary < bachelor < master < phd`; a 1-to-5 star rating; `cold < warm < hot`. Full marks needs the chain, because that is the test: if you cannot write the chain, it is not a ladder. (The workbook's blank has five slots; a shorter ladder is fine if the chain is real.)
+
+**The Bug Log — two entries, one loud and one silent.** A model pair:
+
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `ValueError: Expected 2D array, got 1D array instead` | I gave a row where a table was wanted | `.fit(x)` on a flat numpy row | `x.reshape(-1, 1)`, or `df[["col"]]` with double brackets |
+| Ordinal codes came out `large 0, medium 1, small 2`. **No error at all** | sklearn sorted my categories alphabetically because I never said what order I meant | `OrdinalEncoder()` with no `categories=` | `OrdinalEncoder(categories=[["small", "medium", "large"]])`, and always read the printed codes |
+
+### 🎨 Draw It
+
+The five numbers are `2, 4, 6, 8, 100`, drawn on three number lines (raw, z-score, min-max).
+
+- **Four of the five dots touch each other on line 3**, the min-max line: `0.0000, 0.0204, 0.0408, 0.0612` all sit inside the first 6% of the ruler.
+- **The mean is to the right of four of the five dots on line 1** (24, with four values at 8 or less) — the reason the median exists.
+- **The order is the same on all three lines.** Scaling is a change of units, not of facts: it never reorders a column. What changes is how big the numbers are that the weights multiply, and so how much each column counts.
+- **Rub out the 100 and line 3 changes character completely:** `2, 4, 6, 8` min-maxed becomes `0, 0.3333, 0.6667, 1`, evenly spread and the nicest of the three. Line 2 barely changes shape (z-scores `−1.3416, −0.4472, +0.4472, +1.3416`). Min-max is a recipe one freak value can ruin, and the z-score is not.
+
+### 📊 Self-Check
+
+The student's own faces; nothing is marked. Three rows are worth probing honestly:
+
+- *"say why you square"* — the test is "because averaging the raw distances gives exactly zero, every time, for every list". "To get rid of the minus signs" is half of it.
+- *"name a column where ordinal encoding is right"* — "ordinal bad, one-hot good" is a memorised rule. The chain with less-than signs proves the idea.
+- *"explain what a trailing underscore means"* — "the machine learned it from data, so it does not exist before `.fit`", and an `AttributeError` on anything ending in `_` has exactly one cause.
+
+The two numbers in the Self-Check rows are the ones already keyed above: a new value of 150 gives **3.3112** (z) and **1.5102** (min-max), and the uneven ladder is **0.1056** and **0.1853**.
+
+### 🎲 The in-class activity key (graph paper, `2, 4, 6, 8, 100`)
+
+This is the key to the Their Turn activity. It is the same arithmetic as A6 and Draw It, and the student checks it against those two workbook sections.
+
+**Predictions asked during the lesson.**
+
+- `StandardScaler().fit(X)` on `[[2],[4],[6],[8],[100]]` prints `[24.]` and `[38.05259518]`.
+- z-score of 8: (8 − 24) ÷ 38.0526 = **−0.4205**. Min-max of 8: (8 − 2) ÷ 98 = 6 ÷ 98 = **0.0612**.
+- A value of 150 arrives: z = (150 − 24) ÷ 38.0526 = 126 ÷ 38.0526 = **3.3112**; min-max = (150 − 2) ÷ 98 = 148 ÷ 98 = **1.5102**, **outside the 0-to-1 box with no error and no warning**.
+- One column of the five restaurant names into `OneHotEncoder`: `(5, 1)` in, `(5, 5)` out. With `handle_unknown="ignore"`, an unseen restaurant gives `[[0 0 0 0 0]]`.
 
 **Mean.** 2 + 4 + 6 + 8 + 100 = 120, and 120 ÷ 5 = **24**.
 
@@ -1305,183 +1741,6 @@ min-max      : [0.     0.0204 0.0408 0.0612 1.    ]
 
 **The judgement sentence.** Full marks for anything with this shape: *"I would standardize this column. The 100 is a freak value, and min-max divides by a range of 98 that only exists because of it, so 2, 4, 6 and 8 all land inside the first 6% of the ruler (0.0000 to 0.0612) and become nearly indistinguishable. The z-score keeps them spread out and gives the 100 a big value of +2.0, which is honest."*
 
-### Page 4.4 — Ten scaling drills
-
-**Column P = `[3, 5, 7, 9, 11]`.**
-
-**Drill 1 — the mean.** 3 + 5 + 7 + 9 + 11 = 35, and 35 ÷ 5 = **7**.
-
-**Drill 2 — the standard deviation.**
-
-```text
-subtract 7:   −4   −2    0    2    4
-square:       16    4    0    4   16
-add:          16 + 4 + 0 + 4 + 16 = 40
-divide by 5:  40 ÷ 5 = 8
-square root:  2.8284
-```
-
-**Drill 3 — z-score of 3.** (3 − 7) ÷ 2.8284 = −4 ÷ 2.8284 = **−1.4142**.
-
-**Drill 4 — z-score of 11.** (11 − 7) ÷ 2.8284 = 4 ÷ 2.8284 = **+1.4142**. (Symmetric, and worth noticing: this list has no monster in it.)
-
-**Drill 5 — min-max of 5.** min 3, max 11, range 8. (5 − 3) ÷ 8 = 2 ÷ 8 = **0.2500**.
-
-**Column Q = `[1, 2, 2, 3, 92]`.**
-
-**Drill 6 — the mean.** 1 + 2 + 2 + 3 + 92 = 100, and 100 ÷ 5 = **20**.
-
-**Drill 7 — the standard deviation.**
-
-```text
-subtract 20:  −19   −18   −18   −17   +72
-square:       361   324   324   289  5184
-add:          361 + 324 + 324 + 289 + 5184 = 6482
-divide by 5:  6482 ÷ 5 = 1296.4
-square root:  36.0056
-```
-
-**Drill 8 — z-score of 92.** (92 − 20) ÷ 36.0056 = 72 ÷ 36.0056 = **+1.9997**.
-
-**Drill 9 — min-max of 2.** min 1, max 92, range 91. (2 − 1) ÷ 91 = 1 ÷ 91 = **0.0110**.
-
-**Drill 10 — a new value of 120 arrives for column Q.**
-
-- z: (120 − 20) ÷ 36.0056 = 100 ÷ 36.0056 = **2.7773**
-- min-max: (120 − 1) ÷ 91 = 119 ÷ 91 = **1.3077**
-
-*Which is more honest?* The z-score. It says "120 sits 2.78 typical steps above average", which is true and comparable with any other column. The min-max value of 1.3077 has quietly broken the one guarantee min-max exists to give, and anything downstream that assumed a 0-to-1 range will now misbehave without saying so.
-
-**The check.**
-
-```python
-import numpy as np
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
-
-for name, vals in [("P", [3, 5, 7, 9, 11]), ("Q", [1, 2, 2, 3, 92])]:
-    X = np.array(vals, dtype=float).reshape(-1, 1)
-    ss = StandardScaler().fit(X)
-    mm = MinMaxScaler().fit(X)
-    print(f"--- column {name} ---")
-    print("  scaler.mean_ ", ss.mean_, " scaler.scale_", ss.scale_)
-    print("  z            ", np.round(ss.transform(X).ravel(), 4))
-    print("  min-max      ", np.round(mm.transform(X).ravel(), 4))
-
-X = np.array([1., 2., 2., 3., 92.]).reshape(-1, 1)
-ss = StandardScaler().fit(X)
-mm = MinMaxScaler().fit(X)
-print("\nnew value 120 for Q:")
-print("  z      ", np.round(ss.transform([[120.]]).ravel(), 4))
-print("  min-max", np.round(mm.transform([[120.]]).ravel(), 4))
-```
-
-Real output:
-
-```text
---- column P ---
-  scaler.mean_  [7.]  scaler.scale_ [2.82842712]
-  z             [-1.4142 -0.7071  0.      0.7071  1.4142]
-  min-max       [0.   0.25 0.5  0.75 1.  ]
---- column Q ---
-  scaler.mean_  [20.]  scaler.scale_ [36.00555513]
-  z             [-0.5277 -0.4999 -0.4999 -0.4721  1.9997]
-  min-max       [0.    0.011 0.011 0.022 1.   ]
-
-new value 120 for Q:
-  z       [2.7773]
-  min-max [1.3077]
-```
-
-**Runtime: under 1 second.**
-
-> **🧑‍🏫 Marking note:** column P is the tidy one — min-max gives a clean 0, 0.25, 0.5, 0.75, 1 and looks *better* than the z-scores. Column Q is the same list with a monster in it, and min-max collapses to 0, 0.011, 0.011, 0.022, 1. **A student who notices that the two columns disagree about which ruler is nicer has understood the week.** Give credit for it even if they did not write it down as a question.
-
-### Page 4.5 — One-hot by hand
-
-**Three rows, categories sorted alphabetically as sklearn sorts them.**
-
-| restaurant | _CrustyBros | _GreenLeaf | _Napoli | _SliceHouse | _TandooriPizza |
-|---|---|---|---|---|---|
-| Napoli | 0 | 0 | **1** | 0 | 0 |
-| CrustyBros | **1** | 0 | 0 | 0 | 0 |
-| TandooriPizza | 0 | 0 | 0 | 0 | **1** |
-
-**The column count.**
-
-```text
-restaurant   : 5 values  ->  5 columns
-day_of_week  : 7 values  ->  7 columns
-weather      : 3 values  ->  3 columns
-                            ---
-5 + 7 + 3               =    15 new columns, replacing 3 old ones
-```
-
-**What `handle_unknown="ignore"` saves you from — a good sentence:** *"A restaurant opens that wasn't in my training data, and without that setting my saved model throws an exception on a real customer's order instead of giving a slightly worse answer."*
-
-**What to catch:** answers that describe the Python (*"it stops a ValueError"*) rather than the world (*"a new shop opened"*). Both are true; only the second one shows they know why anybody cares. The real message, for reference:
-
-```text
-ValueError: Found unknown categories ['PopUpPizza'] in column 0 during transform
-```
-
-and with the setting on:
-
-```text
-PopUpPizza -> [[0 0 0 0 0]]
-```
-
-### Page 4.6 — The ordinal trap
-
-**The encoding.**
-
-```python
-from sklearn.preprocessing import OrdinalEncoder
-import pandas as pd
-
-oe = OrdinalEncoder(categories=[["clear", "rain", "storm"]])
-w = pd.DataFrame({"weather": ["clear", "rain", "storm", "rain", "clear"]})
-print("weather codes:", oe.fit_transform(w).ravel().astype(int))
-```
-
-```text
-weather codes: [0 1 2 1 0]
-```
-
-**The real lateness rates**, from the delivery table:
-
-```python
-from make_data import make_deliveries
-df = make_deliveries(n=2000, seed=0)
-print(df.groupby("weather")["late"].agg(["size", "mean"]).round(4).to_string())
-```
-
-```text
-         size    mean
-weather              
-clear    1416  0.2451
-rain      479  0.3507
-storm     125  0.5360
-```
-
-**The two subtractions.**
-
-```text
-rain  − clear = 0.3507 − 0.2451 = 0.1056
-storm − rain  = 0.5360 − 0.3507 = 0.1853
-
-0.1853 ÷ 0.1056 = 1.75
-```
-
-**The two marked sentences.** Full marks for anything of this shape:
-
-> *"By coding clear 0, rain 1 and storm 2 and giving the model one weight for the whole column, I have told it that going from clear to rain and going from rain to storm are steps of exactly the same size. They are not: the first step costs 0.1056 in lateness and the second costs 0.1853, so the second is 1.75 times the first."*
->
-> *"So the model has to split the difference — whatever weight it picks, it will over-estimate the harm of rain or under-estimate the harm of a storm, and it can never get both right."*
-
-**What to catch:** a sentence about the *order* (*"it thinks storm is worse than rain"*). That is true and ordinal encoding gets it right — weather really is a ladder. The wrong belief is always about the **spacing**.
-
-**The column where ordinal encoding is the right answer.** Any genuine ladder, stated out loud without wincing: t-shirt sizes `XS < S < M < L < XL`; education `none < primary < secondary < bachelor < master < phd`; a 1-to-5 star rating; `cold < warm < hot`. Full marks needs the ordering *written out with the less-than signs*, because that is the test: if you cannot write the chain, it is not a ladder.
-
 ### Every question posed in the lesson
 
 - *"Does the model know that one kilometre is a big deal and one month is almost nothing?"* → No. It only sees that one column's numbers are about four times bigger.
@@ -1513,7 +1772,7 @@ There are three shapes of invented column, all built out of arithmetic they alre
 
 And then the part that makes it engineering rather than guessing: the **ablation**. Build the model with the new column, build it without it, change nothing else, compare on the validation set, and write the difference down to four decimal places. Next week's table has six rows in it, and **two of the four invented columns will turn out to buy nothing at all** — one of them a feature that sounds so sensible nobody wants to delete it. The student will have to delete it anyway, in writing, with the number that justified the deletion. That is the habit the week is really for.
 
-**Prep early:** three things. **Keep this week's `rulers.py` and `encode.py`** — Week 5 puts a `FunctionTransformer` in front of the same `ColumnTransformer` and it helps if the encoding half is already familiar. **Read the ten scaling drills before the lesson**, because the students who rounded 38.0526 early are the same ones who will read a ΔAUC of −0.0014 as "about the same" — and next week the fourth decimal place is the whole deliverable. And **have graph paper again**: the Invention Round at the start of Week 5 is eight silent minutes of everybody writing down five columns that could exist but do not, and it works far better on paper than on a screen.
+**Prep early:** three things. **Keep this week's `rulers.py` and `encode.py`** — Week 5 puts a `FunctionTransformer` in front of the same `ColumnTransformer` and it helps if the encoding half is already familiar. **Read the ten drills in Build It before the lesson**, because the students who rounded 38.0526 early are the same ones who will read a ΔAUC of −0.0014 as "about the same" — and next week the fourth decimal place is the whole deliverable. And **have graph paper again**: the Invention Round at the start of Week 5 is eight silent minutes of everybody writing down five columns that could exist but do not, and it works far better on paper than on a screen.
 
 ---
 

@@ -12,7 +12,7 @@
 | **Type** | 🟦 Teach |
 | **Big idea** | Classification picks from a short list and regression predicts a number on a sliding scale — and the *same table* does either, depending on which column you cover up. |
 | **New vocabulary** | classification · binary classification · multi-class classification · regression · error |
-| **Materials** | The 10 task cards (print or hand-write) · the fruit table printout · a ruler · a mystery object in an opaque bag · a kitchen scale (optional but lovely) · paper, pencil, whiteboard or big sheet |
+| **Materials** | The 10 task cards (print or hand-write) · the fruit table printout · the student's Week 13 workbook (Build It, Part 1 table) · a ruler · a mystery object in an opaque bag · a kitchen scale (optional but lovely) · paper, pencil, whiteboard or big sheet |
 | **Tech needed** | **None.** This is a paper-and-pencil week. A calculator is allowed for the division. |
 | **Prep time** | 20 minutes the night before (15 of it is writing the 10 task cards) |
 
@@ -505,7 +505,7 @@ MEAN ERROR = 7.5 grams
 Full instructions are in the next section. In the lesson flow:
 
 - **40–46 · Sort.** Deal the ten cards. Student sorts them under `WHICH ONE?` and `HOW MUCH?`. You say nothing until all ten are placed.
-- **46–56 · Flip.** Take each card in turn and rewrite the task as the other kind, out loud, then in the workbook.
+- **46–56 · Flip.** Take each card in turn and rewrite the task as the other kind, out loud, then in the Part 1 table of the workbook.
 - **56–60 · Argue.** For three of the cards, argue about which version is genuinely more useful for the person who'd use it. You take the opposite side deliberately.
 
 ---
@@ -535,7 +535,7 @@ Full instructions are in the next section. In the lesson flow:
 ### Flip Every Task
 
 **Time:** 20 minutes. **Group size:** one student and you, or pairs.
-**Materials:** the ten task cards, the two pile headers, the workbook page, a pencil.
+**Materials:** the ten task cards, the two pile headers, the workbook open at **🛠️ Build It, Part 1** (the ten-row table), a pencil.
 
 ### Setup (1 minute)
 
@@ -663,7 +663,7 @@ Yes, easily. "Which country is this flag from?" has about 195 boxes and it's sti
 
 **Hold the line on this:** they must be able to say "classification means which one; regression means how much" without looking. Everything else this week can be soft. If they leave with only that sentence and the "nearly right" test, the week worked.
 
-**A crutch that helps:** let them draw a tiny bin or a tiny ruler beside every task in the workbook instead of writing the word. The word can come next week.
+**A crutch that helps:** let them draw a tiny bin or a tiny ruler beside every task in the workbook instead of writing the word in the Build It table. The word can come next week.
 
 ### If they are flying
 
@@ -734,21 +734,22 @@ Aim for 3. A 6th grader hitting 4 this week is doing genuinely well.
 
 > "Two things, and they should take you about fifty minutes.
 >
-> First: **the ten cards, both ways.** You've got them written in your workbook. For every one of the ten, write the classification version and the regression version — both, even the one you flipped in class. Then, underneath each pair, one line: **which version is more useful in real life, and who for?** Not which is easier. Which is more *useful*, and for which person.
+> First: **the ten cards, both ways.** The table is in your workbook, under **Build It, Part 1**. Fill in every one of the ten, write the classification version and the regression version — both, even the one you flipped in class. Then, underneath each pair, one line: **which version is more useful in real life, and who for?** Not which is easier. Which is more *useful*, and for which person.
 >
 > Second: **go back to your own table from Week 12** — the one you built with your own objects. Find a column that holds a number. Cut it into **three named buckets** with sensible boundaries you choose yourself. Give each bucket a name a human would actually say. Then write two sentences on **what information the bucketing threw away.** I want specifics — 'two values that were close together ended up in different buckets' is the kind of sentence I'm after, with the actual numbers.
 >
 > Bring the table and the cards next week. You'll need your own objects again."
 
-**Workbook pages:** Week 13, pages 1–4.
-**Expected time:** 45–55 minutes. If it takes over an hour they are over-writing; tell them one line per flip means one line.
-**The one thing not to skip:** the "who for?" part of the first task. That is the objective; the flipping is just the vehicle.
+**Workbook sections (Week 13 workbook, in order):** ✅ Warm-Up (W1–W5) · ✍️ Practice Set A (A1–A6) · ✍️ Practice Set B (B1–B5) · 🧩 Puzzle of the Week · 🤔 Think Deeper (T1–T2) · 🛠️ Build It Part 1 (ten flips) and Part 2 (bucketing) · 🎨 Draw It · 📊 Self-Check. The two tasks in the script above are **Build It Part 1** and **Build It Part 2**.
+**Suggested split (the workbook is longer than the script):** Build It Part 1 is started in class during the Flip phase and finished at home; Build It Part 2 is home only. The rest of the workbook is for the week: Warm-Up, Practice Sets A and B and the Puzzle on one or two short sittings, Think Deeper and Draw It on another, Self-Check last. Don't assign everything in one evening.
+**Expected time:** Build It Parts 1 and 2 about 45–55 minutes, as scripted. Expect roughly another hour across the rest of the workbook, spread over the week. If Build It takes over an hour they are over-writing; tell them one line per flip means one line.
+**The one thing not to skip:** the "who for?" column of Build It Part 1. That is the objective; the flipping is just the vehicle.
 
 ---
 
 ## 🔑 Answer Key
 
-*Complete worked answers to every question posed in the lesson and every workbook item.*
+*Complete worked answers to every question posed in the lesson and every workbook item, in workbook order: Warm-Up, Practice Set A, Practice Set B, Puzzle, Think Deeper, Build It Parts 1 and 2, Draw It, Self-Check. The workbook's own ✅ Answers section agrees with this key.*
 
 ### Lesson questions
 
@@ -802,9 +803,110 @@ bananas: 120 + 135 + 110 + 128 = 493     493 ÷ 4 = 123.25 g
 
 Split: 5 classification (1, 3, 5, 7, 9), 5 regression (2, 4, 6, 8, 10).
 
-### Activity Phase 2 and homework task 1 — all ten flips
+### Workbook — ✅ Warm-Up (W1–W5, last week's ideas)
 
-For each: the original kind, the flipped version, the new label column, and which is more useful and for whom.
+**W1.** A feature is one **measured** description of one example; a label is the **answer** you want the machine to produce. (Accept "number or word" for measured, "right answer" for answer.)
+
+**W2.** **(b)** — almost the same value for every example, so it never helps tell anything apart. *Wrong-answer map:* (a) is a **leaky** feature, a different problem — the usual slip; (c) and (d) are not problems at all.
+
+**W3.** The sticker is not part of what an apple *is*; it is a trace of where this apple came from. It separates apples from bananas perfectly in **their bowl** and fails on an apple from a tree or a banana that happens to have a sticker. It works on the examples you have and tells you nothing real, and it *looks* like the best feature — that is what makes it dangerous.
+
+**W4.** 4 / 12 = **1/3**, which is **33%** (0.333…). That is the baseline any real model has to beat. *Watch for:* 4/4 or 100% (they counted only the apples), or 4/3.
+
+**W5.** **FALSE.** 100% can mean an excellent feature, **or** a leaky one that is reading the answer, **or** examples that were too easy to tell apart. A perfect score is a reason to investigate, not to celebrate.
+
+### Workbook — ✍️ Practice Set A, Understand It (A1–A6)
+
+**A1.** Classification predicts **which one** — the answer is a **word (a category)** from a short, fixed list. Regression predicts **how much** — the answer is a **number** on a sliding scale.
+
+**A2.** **(b)** is binary classification (exactly two boxes). The others: (a) **multi-class classification** (four boxes; houses numbered 1–4 are still categories); (c) **regression** (4 mm is nearly 4.5 mm); (d) **multi-class classification** (three boxes). *Watch for:* (a) called "regression" because the houses have numbers, and (d) called "binary".
+
+**A3.** **FALSE.** Bus route 12 is written in digits and is not nearly bus route 13. Shirt numbers, house numbers, postcodes and phone numbers are categories wearing digits. The test: try adding two. 150 g + 200 g = 350 g means something; player 7 + player 8 = player 15 does not. Accept any example where adding or averaging gives nonsense.
+
+**A4.**
+
+| Task | Answer | Why |
+|---|---|---|
+| 1. Cat or dog? | **(b)** binary | Two boxes |
+| 2. How many grams? | **(a)** regression | 204 g is nearly 205 g |
+| 3. Which country's flag? | **(c)** multi-class | About 195 boxes, still classification |
+| 4. What price? | **(a)** regression | £4,400 is nearly £4,500 |
+| 5. Run out of lunches? | **(b)** binary | Yes or no — the *answer* is not a count |
+| 6. Which of three routes? | **(c)** multi-class | Three named boxes; A, B, C are labels, not a scale |
+
+*Most likely error:* item 3 marked (a) because "there are so many countries", or item 5 marked (a) because lunches are counted.
+
+**A5. The labelled diagram (Figure W13.1).** **A** = **classification** (the bins). **B** = **multi-class classification** (three or more boxes). **C** = **regression** (the ruler). **D** = **error** (the gap between the guess and the truth). **E** = any real classification task (e.g. "which of my three water bottles is this?"). **F** = any real regression task (e.g. "how heavy is my school bag today?"). If their **E** or **F** is number-shaped like "which bus route", it belongs in **E** — have them run the addition test.
+
+**A6.**
+
+| | predicted | true | error | working |
+|---|---|---|---|---|
+| 1 | 120 g | 133 g | **13 g** | 133 − 120 |
+| 2 | 150 g | 141 g | **9 g** | 150 − 141 (the guess was *above* the truth, so bigger − smaller runs the other way) |
+| 3 | 480 g | 512 g | **32 g** | 512 − 480 |
+| 4 | 205 g | 205 g | **0 g** | exactly right |
+
+Best: **row 4** (error 0). Worst: **row 3** (error 32).
+
+```text
+13 + 9 + 32 + 0 = 54
+54 ÷ 4          = 13.5
+
+MEAN ERROR = 13.5 g
+```
+
+*Watch for:* a negative error on row 2 (−9) — remind them it is always bigger minus smaller. Some will divide by 3 because one error is 0 and "doesn't count"; it counts, divide by 4.
+
+### Workbook — ✍️ Practice Set B, Use It (B1–B5)
+
+**B1.** **Regression.** 410 people against a model that said 400 is nearly right, so the answer is a number on a scale, not a box. Error = 410 − 400 = **10 people**. Is that good? **It depends what it is for.** For how many chairs to put out: excellent. For ordering exactly enough food: 10 people is 10 lunches, which may matter. Any answer that does not ask "good for what?" is incomplete.
+
+**B2.** Two things wrong (any two of these):
+1. **A house number is a category, not a measurement.** 15.5 is not "nearly" house 14; it is not a house at all, so the model is allowed to answer things that cannot exist.
+2. **The error is meaningless as a score.** "Off by 1.5" sounds tiny, but a parcel at the wrong house is 100% wrong, exactly as wrong as house 90. There is no partial credit for nearly finding a front door.
+
+*Should have done:* **classification** — the answer is one of the house numbers that exist on that street — scored with ticks and crosses. Bonus if they notice the list of boxes changes street by street.
+
+**B3.** **79 and 80:** one mark apart, but grades **B** and **A** — a one-mark difference becomes the biggest visible difference on the report. **80 and 99:** nineteen marks apart, both **A** — now literally the same answer. That is both losses of bucketing in one question. *Who:* grades suit somebody scanning two hundred reports, a form with room for one letter, or a student asking "did I pass?"; marks suit the teacher deciding who needs help, or a student seeing they improved from 62 to 78 (both B). Accept any sensible named person with a reason.
+
+**B4.** **Gain:** the ability to express doubt — a 50/50 photo gets a different answer from an obvious one, and someone can set their own cut-off or flag the uncertain ones. **Cost:** someone has to produce those numbers for every training photo; there is no cat-o-meter, so you would ask a hundred people about every photo, and you would still be measuring what people think. **Worth it for a photo album app? NO** — nobody will ever look at "63% cat". It would be worth it where ambiguity matters, such as a vet's system flagging photos a human should re-check.
+
+**B5.**
+
+```text
+1 + 1 + 1 + 40 = 43
+43 ÷ 4         = 10.75 g
+```
+
+"About eleven grams on average" is misleading because it describes a model that does not exist: it sounds consistently a bit off, when this model was **superb three times out of four and catastrophic once**. The mean cannot tell those stories apart; the one huge error hides inside it. Better to report the mean **and** the worst single error, or the list. (This comes back in Week 20.)
+
+### Workbook — 🧩 Puzzle of the Week (six cards, two are lying)
+
+| card | column | tray | why |
+|---|---|---|---|
+| 1 | `house_number` | **category in disguise** | House 14 + house 16 = house 30, which means nothing |
+| 2 | `weight_g` | **real number** | 150 g + 200 g = 350 g |
+| 3 | `shoe_size` | **arguable** | see below |
+| 4 | `temperature_c` | **real number** | averaging temperatures means something |
+| 5 | `bus_route` | **category in disguise** | route 12 + route 13 = route 25, nonsense |
+| 6 | `rain_mm` | **real number** | 2 mm + 2 mm = 4 mm of rain |
+
+**The arguable card is 3, `shoe_size`.** *Side 1, a real number:* sizes are in order and roughly evenly spaced (4 to 5 is about the same amount of foot as 8 to 9), and averaging a family's sizes means something-ish. *Side 2, a category:* sizes are whole steps with nothing between, they differ by country (a UK 5 is not a US 5), and a shoe is not 5 of anything. Nobody has settled it; star ratings and school grades are the same family. In practice people try both and see which works better. If a student argues `temperature_c` is tricky (20°C is not "twice as hot" as 10°C), credit it — it is still a real number for our purposes.
+
+### Workbook — 🤔 Think Deeper (T1–T2)
+
+**T1.** No single answer; it is their own Week 12 table. A model answer from the ten-writing-implements table: cover `kind` (pen / pencil / marker) for **multi-class classification**, scored by counting ticks; cover `weight_g` for **regression** (5.5 g is nearly 6 g), scored by the error in grams. They would build the classification one, for someone tidying a pencil case who needs to know which drawer it goes in — but for a shop posting parcels the weight one becomes the useful one. Mark for: (1) two different named columns; (2) the right task type for each, with the "nearly right" test applied; (3) a named **person** who would use one; (4) for top marks, a situation where the *other* one becomes the useful one — that last part is the actual idea.
+
+**T2.** Two reasons regression is not "more advanced":
+1. **Somebody has to produce the numbers.** Fruit weight has a scale; "how much of a cat is this photo?" has no instrument, so you would need a hundred human opinions per photo. When there is no honest way to produce the label, regression is not available.
+2. **A number often does not match the decision.** For "can I finish before dinner?", `quick / normal / long` answers it and 43.6 minutes does not do better. The right task type matches the decision.
+
+A third, if offered: in classification "nearly right" does not exist, which is sometimes exactly right — a parcel goes to one house, a bus takes one route. At least one of their reasons must be about the work of producing labels; if both are about something else, prompt for that one.
+
+### Activity Phase 2 and Workbook — 🛠️ Build It, Part 1: all ten flips
+
+The workbook table has columns Original task, Kind, Flipped version, New label column and More useful for… The **Kind** column is the original kind listed under each number below. For each: the original kind, the flipped version, the new label column, and which is more useful and for whom.
 
 **1 — Is this text message spam?** *Classification (binary).*
 → **Flipped:** "How spammy is this message, from 0 to 100?" New label `spam_score`, any number 0–100.
@@ -846,9 +948,11 @@ For each: the original kind, the flipped version, the new label column, and whic
 → **Flipped:** "Will this song be a hit — yes or no?" (Define "hit" as over 100,000 plays in week one.) New label `is_hit`, two values.
 *More useful:* the **original**, for anyone making a decision about money, because 99,000 plays and 5,000 plays are both "no" and they are not remotely the same outcome. The flipped version is useful only for a headline. Notice you had to *invent a threshold* to do the flip at all — and whoever picks that threshold quietly controls the answer.
 
-### Homework task 2 — bucketing your own table
+**Checking the Part 1 checklist:** all ten rows flipped (including the one done in class); every flip a real, sayable question (not "how much cat is this?"); every flip has a named label column such as `spam_score`; every row names a person; at least one row where the student chose the **original**. **Which flip is genuinely a bad idea?** Card 5. Credit a solid argument for card 3 or 7.
 
-There is no single right answer; the student's own numbers vary. Here is a full model answer, and the marking criteria follow.
+### Workbook — 🛠️ Build It, Part 2: bucketing your own table
+
+There is no single right answer; the student's own numbers vary. The workbook asks for the column and its unit, all values in order, a three-bucket table with a count per bucket and a total, a YES/NO check that every row appears once, then Loss 1 and Loss 2. Here is a full model answer, and the marking criteria follow.
 
 **Model answer.** My Week 12 table has ten writing implements with a `weight_g` column: 4, 4, 5, 5, 6, 6, 7, 16, 18, 20.
 
@@ -859,6 +963,7 @@ There is no single right answer; the student's own numbers vary. Here is a full 
 | `feather` | under 5.5 g | 4, 4, 5, 5 → four rows |
 | `normal` | 5.5 g to 10 g | 6, 6, 7 → three rows |
 | `chunky` | over 10 g | 16, 18, 20 → three rows |
+| | **total** | **10** rows |
 
 I put the boundaries in the empty gaps rather than in the middle of a cluster: there's a real gap between 7 and 16, and a smaller one between 5 and 6.
 
@@ -874,6 +979,14 @@ Second, and worse, it invented a difference that wasn't really there. The 5 g pe
 - Every row from their table assigned to a bucket, with none missing and none in two.
 - At least one loss identified **with the actual numbers from their own table**, not a generic sentence.
 - Full credit needs the second, subtler loss too: two values that were close now sit in different buckets. Most students find the first loss and miss this one; it is worth prompting for.
+
+### Workbook — 🎨 Draw It
+
+No single right drawing. A good one has the **same** table drawn twice, two **different** columns covered, both task types named correctly, and the scoring method written under each half (ticks for classification, the gap for regression). The three reminder boxes in Figure W13.3 should be filled for both halves. If the two halves show two *different* tables, have them redraw — the point is that nothing changed except the question. Crossings-out are a good sign, not a mistake.
+
+### Workbook — 📊 Self-Check
+
+Not marked; it is a self-rating. Read it for the 😕 ticks and reteach those lines. A student who ticks 😀 on "Say what bucketing threw away, using real numbers" but could not find Loss 2 in Build It Part 2 is overrating themselves — ask them to show you.
 
 ### Extension answers (for the "flying" path)
 

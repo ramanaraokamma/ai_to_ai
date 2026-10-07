@@ -15,7 +15,7 @@
 | **New maths** | **Steepness of a curve between two points, as rise over run.** Computed from two real points taken off the class's own ROC curve, and read out loud as *"how much recall you buy per false alarm"*. |
 | **New syntax** | `(prob >= t).astype(int)` · `roc_curve(y, prob)` · `precision_recall_curve(y, prob)` · `average_precision_score(y, prob)` |
 | **Dataset** | Week 8's `make_classification(n_samples=5000, n_features=8, n_informative=4, n_redundant=0, weights=[0.99, 0.01], random_state=0)` fraud table — 1,000 validation rows, **14 of them real fraud**. **Nothing downloads. No internet needed.** |
-| **Materials** | **20 index cards, written and shuffled before class** (exact numbers below) · a long strip of wall or a whiteboard for the probability line · **one sheet of squared graph paper per student**, plus one big sheet for the wall · three sticky notes · printed workbook pages 10.1–10.6 · **Week 8's 2×2 and Week 9's harmonic-mean board still up** · the Bug Log |
+| **Materials** | **20 index cards, written and shuffled before class** (exact numbers below) · a long strip of wall or a whiteboard for the probability line · **one sheet of squared graph paper per student**, plus one big sheet for the wall · three sticky notes · the printed workbook (`workbook/week-10.md`: Warm-Up, Do the Maths by Hand, Predict the Output, Practice Sets A and B, Fix the Broken Program, Puzzle, Think Deeper, Build It, Draw It, Self-Check; print it without its final Answers section) · **Week 8's 2×2 and Week 9's harmonic-mean board still up** · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, scikit-learn, matplotlib. **No new installs.** |
 | **Prep time** | 25 minutes the night before (10 of them writing the 20 index cards) · 5 minutes on the day |
 | **Expected runtime of the code** | `dial.py` **under 2 seconds** including the saved figure. `cards.py` **under 1 second**. Nothing this week trains for longer than a blink. |
@@ -548,7 +548,7 @@ saved dial.png
   1. `fpr, tpr, thr = roc_curve(y_val, pred)` — probabilities replaced by hard predictions. **No error.** You get a curve with **3 points** instead of 28 and an AUC of 0.6046 instead of 0.6116. This is deliberate mistake two and it is the important one.
   2. `tn, fp, fn, tp = confusion_matrix(y_val, pred).ravel()` with `labels=[0, 1]` deleted, at `t = 0.50` on a tiny slice — `ValueError: not enough values to unpack (expected 4, got 1)`. Loud and instant.
 
-- [ ] **Print workbook pages 10.1–10.6.**
+- [ ] **Print the workbook** (`workbook/week-10.md`) **without its final ✅ Answers section**, which is for checking after the work is done. Add a second copy of the **🛠️ Build It** section's ten-threshold table (the hand sweep) if you want a clean sheet for the activity.
 - [ ] **Tape a long strip of paper along a wall, or clear a whole whiteboard**, and draw one horizontal line on it with `0` at the left end, `0.5` in the middle and `1` at the right end. That is the probability line and the cards will go on it.
 - [ ] **One sheet of squared graph paper per student, plus one big sheet taped up next to the probability line.** Draw the axes on the big one in advance: false positive rate 0 to 1 along the bottom, true positive rate 0 to 1 up the side, in tenths. **Ten squares each way, so one square is 0.1 and one card is one square.**
 - [ ] **Check Week 8's 2×2 is still on the wall.** You will point at it in the first minute.
@@ -560,7 +560,7 @@ saved dial.png
 - [ ] The probability line on the wall, blank.
 - [ ] The big graph-paper axes taped up, blank.
 - [ ] Three sticky notes in your pocket for the three defended thresholds.
-- [ ] Workbook 10.1 out. Nothing filled in.
+- [ ] Workbook out, open at **🛠️ Build It** (the hand-sweep table). Nothing filled in.
 - [ ] Bug Log open at a fresh page.
 
 ### Fallback if the laptops fail
@@ -568,7 +568,7 @@ saved dial.png
 **This is the most laptop-proof lesson of the term. All four objectives survive with no computer at all**, because the twenty cards *are* the dataset.
 
 1. **Lay out the cards on the probability line.** Objective 1's raw material, and better on paper than on a screen.
-2. **Sweep the threshold from 0.90 down to 0.05 by hand**, ten stops, recomputing the four counts each time. The full table is in the Answer Key under page 10.1. **Objective 1, complete.**
+2. **Sweep the threshold from 0.90 down to 0.05 by hand**, ten stops, recomputing the four counts each time. The full table is in the Answer Key under **🛠️ Build It** (and again under Practice Set B, B4). **Objective 1, complete.**
 3. **Plot each stop on the big graph paper.** Ten dots, joined up. That is objective 3's ROC curve and it is the same curve `roc_curve` would draw.
 4. **The two rise-over-run divisions, from their own dots.** Objective 2 is pure arithmetic and needs nothing but a pencil.
 5. **The three sticky notes.** Objective 4 is a writing task.
@@ -1272,36 +1272,439 @@ Say: *"How steep is the curve between those two points, and is that a good deal?
 
 ## 📤 Homework to Assign
 
+The workbook (`workbook/week-10.md`) has eleven sections, and no student does all of them in an evening. **The split:** the twenty-card hand sweep (Build It steps 1–5) is started in class during *Their Turn*, so what goes home is the finishing of it plus the sections below. Treat **Warm-Up, Do the Maths by Hand, Predict the Output, Practice Set B, Fix the Broken Program, Build It and Self-Check** as the required core; **Practice Set A, Puzzle of the Week, Think Deeper and Draw It** are the choose-two extras (Draw It is the quickest and the best of them for a student who thinks in pictures).
+
 **Say this, word for word:**
 
-> "Three pages, about an hour, and the last one is the one I actually care about.
+> "Three parts, about an hour and a half, and the last one is the one I actually care about.
 >
-> **Page 10.1 — the sweep by hand, on the twenty cards.** Ten thresholds from 0.90 down to 0.05. For every one: flagged, caught, false alarms, precision and recall, with **the division written out** — not just the answer. `8 ÷ 10 = 0.80`, not `0.80`. Ten rows.
+> **Part one — the Warm-Up and Do the Maths by Hand.** Five quick questions about last week's F1, then the week's one new division, rise ÷ run. M1 is on the twenty cards, M2 to M4 are on the real fraud data. **After every division, write the sentence** — *'I bought ___ units of recall per unit of false alarm.'* A number on its own gets no marks.
 >
-> **Page 10.2 — the sweep in code, on the real fraud data.** Nine thresholds. Print the table, then plot both curves and save the picture. If your `highest probability` is not `0.1774`, stop and find the missing `random_state=0` before you go any further.
+> **Part two — the code.** Predict the Output: write your guess in pen *before* you run anything, all four. Then Practice Set B, B1 to B5. If your `highest probability` is not `0.1774`, stop and find the missing `random_state=0` before you go any further. Then Fix the Broken Program: three bugs, one of which never says a word.
 >
-> **Page 10.3 — two divisions.** Take two points off *your own* ROC curve where it looks steep, and two where it looks flat. Rise, run, divide. **Then write the answer as a sentence with the words 'frauds' and 'false alarms' in it.** A number on its own gets no marks.
->
-> **Page 10.4 — the three thresholds you would defend.** Three numbers, and beside each one, **a person.** Not 'this is the best' — *who is this right for, and what do they care about that the other two do not.* One sentence each. I want to be able to argue with you."
+> **Part three — Build It.** Finish the hand sweep of the twenty cards, **every row adding to 20**, plot the ten dots, and do two rise-over-run divisions off your own graph paper. Check four numbers from `dial.py`. Then the one I care about: **three thresholds you would defend, and beside each one, a person.** Not 'this is the best' — *who is this right for, and what do they care about that the other two do not.* One sentence each. I want to be able to argue with you. Finish with the Bug Log and the Self-Check."
 
-| Page | What it is | Time |
-|---|---|---|
-| 10.1 | The ten-threshold sweep on the twenty cards, by hand, all divisions shown | 20 min |
-| 10.2 | `dial.py` — the nine-row sweep on the real data, plus both curves saved to a file | 20 min |
-| 10.3 | Two rise-over-run divisions from their own curve, each read out as a sentence | 10 min |
-| 10.4 | Three defended thresholds with a stakeholder each | 10 min |
-| 10.5 | Vocabulary: six terms, one line each in their own words | 5 min |
-| 10.6 | Bug Log: this week's two silent bugs written up | 5 min |
+| Workbook section | Items | What it checks | Status | Rough time |
+|---|---|---|---|---|
+| ✅ Warm-Up | W1–W5 | Last week's F1 and harmonic mean | required | 5 min |
+| 🔢 Do the Maths by Hand | M1(a)–(f), M2, M3, M4 | Rise ÷ run on cards, then on 14 / 986 | required | 20 min |
+| 🔎 Predict the Output | P1–P4 | Shapes, `inf` sentinel, `>=` vs `>`, the silent AUC bug | required | 10 min |
+| ✍️ Practice Set A — Read It | A1–A6 | Vocabulary match, reading the nine-row table, spot-the-bug, baselines, the three denominators | extra | 20 min |
+| ✍️ Practice Set B — Write It | B1–B5 | `dial` one-liner, `dot(t)`, `steep.py`, `sweep20.py`, `defend.py` | required | 30 min |
+| 🐞 Fix the Broken Program | Bugs 1–3 and the ranking | A shape bug, a runtime bug, a silent bug | required | 10 min |
+| 🧩 Puzzle of the Week | Part 1(a)–(g), Part 2(a)–(c) | Three rankings on graph paper; AUC as pairs counted | extra | 20 min |
+| 🤔 Think Deeper | T1, T2 | Two paragraphs: AUC versus AP; who owns a default | extra | 15 min |
+| 🛠️ Build It | checklist 1–10, hand sweep, two divisions, `dial.py` numbers, three thresholds, Bug Log | The week's deliverable | required | 40 min (hand sweep started in class) |
+| 🎨 Draw It | the staircase and three questions | Where the curve is vertical, flat, and where `t = 0.50` sits | extra | 10 min |
+| 📊 Self-Check | ten lines | Confidence, honestly rated | required | 3 min |
 
 ---
 
 ## 🔑 Answer Key
 
-This section holds the answers to the workbook pages and to every question posed in the lesson. Keep it away from the student.
+This section holds the answers to the workbook, **section by section and item by item, in the order the workbook sets them**, and to every question posed in the lesson. The values are the ones in the workbook's own ✅ Answers section (recomputed against `dial.py` for this guide); the wrong-answer maps and marking notes are the teacher's additions. Keep it away from the student.
 
-### Page 10.1 — The ten-threshold sweep, by hand, on the twenty cards
+### ✅ Warm-Up
 
-The twenty cards, in order, with the truths:
+- **W1.** `2 × 3 ÷ (6 + 7 + 11) = 6 ÷ 24 = 0.2500`. The bottom is `2 × TP`, then FP, then FN.
+- **W2.** smaller **0.4435**, twice the smaller **0.8870**, **yes** — 0.4976 sits between them. A four-second check that catches every arithmetic slip in a harmonic mean.
+- **W3.** It averaged the F1 of the fraud class (**0.2500**) and the F1 of the legitimate class (**0.9909**): `(0.9909 + 0.2500) ÷ 2 = 0.6204`. The classes hold **14** and **986** rows, so an equal vote gives the 986 easy rows the same say as the 14 hard ones.
+- **W4.** **TN.** Padding the easy class cannot inflate F1.
+- **W5.** A press release would quote **0.5000**; the truth is **0.1800**. Nine of ten things they were looking for walked past.
+
+**Wrong answers to expect:** W1 written as `6 ÷ 21` (forgot the doubled TP on the bottom); W3 answered "it averaged precision and recall" (it averaged two *class* F1s).
+
+### 🔢 Do the Maths by Hand
+
+**M1, on the twenty cards** (dots are (fpr, tpr)):
+
+| Item | Pair | Rise | Run | Steepness | The sentence |
+|---|---|---|---|---|---|
+| M1(a) | 0.90 → 0.80 | 0.20 | 0.10 | **2.0** | "For every unit of false-alarm rate I spent, I bought **two** units of recall" — a bargain. |
+| M1(b) | 0.80 → 0.70 | 0.20 | 0.00 | **no answer** (÷ 0) | see M1(b1) |
+| M1(c) | 0.60 → 0.50 | 0.80 − 0.80 = 0.00 | 0.30 − 0.20 = 0.10 | **0.0** | One more innocent card blocked, zero extra frauds. A pure loss. |
+| M1(d) | 0.40 → 0.30 | 0.10 | 0.10 | **1.0** | One for one, a coin's exchange rate. |
+| M1(e) | 0.30 → 0.05 | 0.00 | 0.50 | **0.0** | Five innocent cards blocked to catch nothing; all ten frauds were already caught at 0.30. |
+
+- **M1(b1).** Nothing went wrong with the arithmetic; **the curve went straight up.** You caught two more frauds and raised not one extra false alarm — **that recall was free.** Dividing by zero is the arithmetic's way of saying "infinitely steep". In code you test `if run == 0:` first, which is why B3 asks for it.
+- **M1(f).** In order: **straight up (0.80→0.70), then 2.0, then 1.0, then 0.0, then 0.0.** Recall is cheap at the top of the ranking, where the frauds are stacked; from `t = 0.30` down you pay in people and get nothing back. *Steep on the left, flat on the right, and the flat part is where you stop.*
+
+**M2, on the real data (denominators 14 and 986):**
+
+| from → to | rise | run | steepness | take it? |
+|---|---|---|---|---|
+| 0.12 → 0.10 | `1 ÷ 14 = 0.071429` | `5 ÷ 986 = 0.005071` | **14.0857** | yes |
+| 0.10 → 0.08 | `0 ÷ 14 = 0.000000` | `7 ÷ 986 = 0.007099` | **0.0000** | no |
+| 0.04 → 0.02 | `1 ÷ 14 = 0.071429` | `150 ÷ 986 = 0.152130` | **0.4695** | think hard |
+| 0.02 → 0.01 | `3 ÷ 14 = 0.214286` | `210 ÷ 986 = 0.212982` | **1.0061** | probably not |
+
+The rises come from `tp` going 2→3, 3→3, 4→5, 5→8; the runs from `fp` going 0→5, 5→12, 61→211, 211→421.
+
+- **M2(a).** **1.0061** (0.02 → 0.01). A steepness of 1 is the rate a coin would give you; below about `t = 0.02` the model has stopped helping.
+- **M2(b).** **0.4695** (0.04 → 0.02): one more fraud for 150 more people bothered. Full marks names a person: the customer whose £900 is gone (worth it), the 150 people declined at a till on a Saturday (not worth it), or the analyst who phones all 150 (a fortnight for one arrest). **"Not worth it because 0.4695 is less than 1" gets half marks** — it has not noticed that a price list settles it, which is next week.
+
+**M3.** `1 ÷ 14 = 0.0714286` · `1 ÷ 986 = 0.00101420` · `986 ÷ 14 = 70.4286`.
+
+- **M3(a).** …on **how lopsided your classes are** — how many positives and negatives are in the pile measured.
+- **M3(b).** **Bank A's** looks steeper: its rise steps are `1 ÷ 14 = 0.0714` against bank B's `1 ÷ 500 = 0.0020`, thirty-five times as far per fraud. **No, their model is not better — it is the same model.** A steep left corner on a very imbalanced problem is partly the imbalance talking.
+
+**M4.**
+
+- **M4(a).** `4 + 61 + 10 + 925 = 1000` ✅ and `5 + 211 + 9 + 775 = 1000` ✅. Do this before any division, every time.
+- **M4(b).**
+
+| t | precision | recall | fpr |
+|---|---|---|---|
+| 0.04 | `4 ÷ 65 = 0.061538` | `4 ÷ 14 = 0.285714` | `61 ÷ 986 = 0.061866` |
+| 0.02 | `5 ÷ 216 = 0.023148` | `5 ÷ 14 = 0.357143` | `211 ÷ 986 = 0.213996` |
+
+- **M4(c).** precision moved by **−0.038390**, recall by **+0.071429**, fpr by **+0.152130**.
+- **M4(d).** **Precision** is the one dragged down, because the false alarms fill its own denominator (the review pile went from 65 to 216). The false positive rate moved more in absolute terms but has a **fixed denominator of 986** and plenty of room: each false alarm adds only 0.001. **Full marks names both denominators: 216 (filled by the false alarms) versus 986 (fixed).**
+
+**Wrong answers to expect:** M1(b) given as "0.20" or "infinity" with no English; M2 rises or runs with the two denominators swapped (steepness then comes out as 0.07 and 0.005 inverted); M3(b) answered "bank B, because 500 is bigger".
+
+### 🔎 Predict the Output
+
+Answers assume `dial.py` has been run, so `y_val` and `prob` exist.
+
+**P1.**
+
+```text
+(1000,)
+[0.03113533 0.01705627 0.01463761]
+(1000,) int64
+8
+```
+
+Same shape because it is the same thousand rows: comparing asks one yes/no question of each number, and `.astype(int)` changes what is in each box, never how many. **`pred.sum()` counts the 1s**, so **8 is the number flagged at `t = 0.10`** — the 8 in the sweep table.
+
+**P2.**
+
+```text
+28 28 28
+1001 1001 1000
+inf
+1.0 0.0
+```
+
+`prec` and `rec` have 1001 entries and `pthr` has 1000: scikit-learn tacks the point (recall 0, precision 1) on the end so the curve reaches the axis, and no threshold produces it. Plot `rec` against `prec`, never against `pthr`. **`thr[0]` is `inf`**, a sentinel: a fake first threshold so high that nothing is flagged, putting the first dot at the origin. You never use it as a threshold.
+
+**P3.**
+
+```text
+[1 0 1 0]
+[0 0 0 0]
+2 0
+```
+
+`>=` includes the value itself; `>` does not. **Line 1 explains the ten flagged cards at `t = 0.60`.** And no, Python would never have told you — `>` is legal and silent.
+
+**P4.**
+
+```text
+0.6116
+0.6046
+0.0914
+3
+```
+
+You handed the two functions the 0s and 1s from `pred`, and **the confidence had already been thrown away**; they need the raw probabilities to try every threshold. **Line 4 is the tell-tale: three points**, because a column of 0s and 1s has only two places to cut. A real ROC curve on this data has 28.
+
+| Kind of function | What it wants |
+|---|---|
+| draws a curve: `roc_curve`, `precision_recall_curve`, `roc_auc_score`, `average_precision_score` | probabilities |
+| counts cells: `confusion_matrix`, `precision_score`, `recall_score`, `f1_score` | predictions |
+
+**Wrong answers to expect:** P1 line 1 given as `(1000, 2)` (confusing `prob` with `predict_proba`'s raw output); P2 line 2 given as `28 28 28` (they forgot the extra end point); P3 line 3 given as `2 2`.
+
+### ✍️ Practice Set A — Read It
+
+- **A1.** decision threshold → **(iii)** · true positive rate → **(v)** · false positive rate → **(i)** · ROC curve → **(ii)** · average precision → **(iv)**.
+- **A1(a).** True positive rate and **recall** are the same fraction, `TP ÷ (TP + FN)`; recall is the more common name and is not in the list. Say "recall, also called the true positive rate" once and move on.
+- **A2(a).** **No, never.** Lowering the bar can only add rows to the flagged pile, so a caught fraud cannot escape. If recall ever goes down there is a bug, most likely the `tn, fp, fn, tp` order.
+- **A2(b).** **No** — precision goes up between `t = 0.50` and `t = 0.15`, from 0.0000 to 1.0000. At 0.50 nothing is flagged, so precision is `0 ÷ 0` and `zero_division=0` printed a placeholder. The 0.0000 on the top row is not a measurement; after that, precision only falls.
+- **A2(c).** extra false alarms **17** (5 → 22), extra frauds **0**.
+- **A2(d).** `4 + 61 + 10 + 925 = 1000` ✅.
+- **A2(e).** `t = 0.10` is the best defensible answer ("eight flagged, three real, a third of the pile is worth opening; the next two rows add seventeen people for nothing"), said to the person who signs off the review queue. `t = 0.12` is equally full marks, said to a two-person review desk. **`t = 0.50` scores zero**: it flags nothing.
+- **A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `ValueError: not enough values to unpack (expected 4, got 1)`, with a `UserWarning` above it naming the fix. Truth and prediction in those five rows are all zeros, so the matrix is 1×1 | `confusion_matrix(y_val[:5], pred[:5], labels=[0, 1]).ravel()` |
+| b | `ValueError: too many values to unpack (expected 2)`; `roc_curve` returns three lists | `fpr, tpr, thr = roc_curve(y_val, prob)` |
+| c | `ValueError: continuous format is not supported`; the first argument must be the truth | `roc_curve(y_val, prob)` — truth first, always |
+| d | `ValueError: x and y must have same first dimension, but have shapes (1000,) and (1001,)` | `plt.plot(rec, prec)` |
+| e | `predict_proba` returns two columns, so `pred` is (1000, 2) and the metrics raise `ValueError: Classification metrics can't handle a mix of binary and multilabel-indicator targets` | `model.predict_proba(X_val)[:, 1]` |
+| f | **No error, no warning**, and 0.6046 instead of 0.6116 | pass `prob`, not a 0/1 array |
+
+  Note on (a): on the full thousand rows it does **not** crash, because `y_val` holds 14 frauds, so the matrix is `[[986, 0], [14, 0]]`. The crash needs the truth to be single-class too, which is why it bites on small slices and not on the data you tested with. That is why `labels=[0, 1]` goes in every time.
+- **A3(g).** **(f)** is the silent one, and the most dangerous because 0.6046 looks exactly like a result. Everything else stops the program.
+- **A4.** i → **S** · ii → **R** · iii → **T** · iv → **P** · v → **Q**.
+- **A5(a).** `0.7986 ÷ 0.5000 = 1.5972` · `0.1877 ÷ 0.0140 = 13.4071`.
+- **A5(b).** The **rare** model's AP is further above its own coin (13.4 times against 1.6), but it is the **smaller** number (0.1877 against 0.7986). That does not make it the more useful model: the balanced model has the higher AUC (0.7788 against 0.6831). AP has no fixed baseline, so quoting one without the class balance is close to meaningless.
+- **A5(c).** **AUC**, because a coin always gets exactly 0.5000. AP's baseline moves with the positive rate (0.5000 here, 0.0140 there).
+- **A5(d).** Nobody's fault except the 0.5. The rare model's most confident answer is 0.1774, so comparing with 0.5 flags nothing. **Change the threshold, not the model.**
+- **A6.** The three boxes: **precision = 3 ÷ 8 = 0.3750**, **recall = 3 ÷ 14 = 0.2143**, **false positive rate = 5 ÷ 986 = 0.005071**. Rise-over-run panel: rise `3/14 − 2/14 = 1/14 = 0.071429`, run `5/986 − 0/986 = 0.005071`, steepness **14.0857**. Sentence: "I bought **fourteen** units of recall per unit of false-alarm rate, so I would take that trade."
+- **A6(a).** **986** is on the bottom of the false positive rate; **14** is on the bottom of recall.
+- **A6(b).** Recall's (14) and the false positive rate's (986) never change: they are properties of the data. **Precision's denominator is the one that moves** (0 → 8 → 216 → 429), because it is how many rows you chose to flag.
+
+**Note on the A5 figures:** they come from `balance.py` in the workbook, which is not reproduced in this guide; they are the workbook's own values and were not re-derived for this key.
+
+**Vocabulary reference (A1 and the week's six new terms).** Not a workbook page, but these are the one-line definitions to mark A1 and the Self-Check against:
+
+> **Decision threshold** — the probability above which you call something positive. 0.5 is a default that came with the library, not a law of nature.
+
+> **True positive rate** — of everything that really was positive, the fraction you caught. `TP ÷ (TP + FN)`. **The same number as recall, under an older name.**
+
+> **False positive rate** — of everything that really was negative, the fraction you wrongly flagged. `FP ÷ (FP + TN)`. On our data the denominator is 986, which is why it moves so slowly.
+
+> **ROC curve** — one dot per threshold, true positive rate up, false positive rate across. **One model, many dots.** The dashed diagonal is what a coin gets.
+
+> **Precision-recall curve** — the same sweep, precision up, recall across. The one to trust when positives are rare, because precision's denominator is the pile you actually have to review.
+
+> **Average precision** — one number summarising the precision-recall curve. Its baseline is not 0.5; it is **the positive class rate** — 0.0140 for us — so it must always be quoted with the class balance beside it.
+
+**Wrong answers to expect:** A2(b) answered "yes, it only goes down" (missed the placeholder); A3 answered "(a) is the silent one" (it is loud); A6(b) answered "precision's" (it is the one that moves).
+
+### ✍️ Practice Set B — Write It
+
+Each program is checked by running it; the expected output is the real output.
+
+**B1.**
+
+```python
+print("flagged at t = 0.04 :", int((prob >= 0.04).astype(int).sum()))
+```
+
+```text
+flagged at t = 0.04 : 65
+```
+
+One `(prob >= t).astype(int)`, one `.sum()`, one `int(...)` so it prints as a whole number.
+
+**B2.**
+
+```python
+pos = y_val.sum()
+neg = len(y_val) - pos
+
+
+def dot(t):
+    pred = (prob >= t).astype(int)
+    tn, fp, fn, tp = confusion_matrix(y_val, pred, labels=[0, 1]).ravel()
+    print("t %.2f  tp %3d / %d  fp %3d / %d  dot (fpr %.6f, tpr %.6f)"
+          % (t, tp, pos, fp, neg, fp / neg, tp / pos))
+    return fp / neg, tp / pos
+
+
+for t in [0.12, 0.10, 0.02]:
+    dot(t)
+```
+
+```text
+t 0.12  tp   2 / 14  fp   0 / 986  dot (fpr 0.000000, tpr 0.142857)
+t 0.10  tp   3 / 14  fp   5 / 986  dot (fpr 0.005071, tpr 0.214286)
+t 0.02  tp   5 / 14  fp 211 / 986  dot (fpr 0.213996, tpr 0.357143)
+```
+
+`pos` and `neg` live outside the function because they never change: the denominators are fixed and only the numerators move.
+
+**B3.** `steep.py`:
+
+```python
+"""steep.py - five pairs of thresholds, one division each.  Week 10 workbook."""
+pos = y_val.sum()
+neg = len(y_val) - pos
+
+
+def point(t):
+    pred = (prob >= t).astype(int)
+    tn, fp, fn, tp = confusion_matrix(y_val, pred, labels=[0, 1]).ravel()
+    return tp / pos, fp / neg
+
+
+print("  from    to     rise      run      steepness   verdict")
+for t1, t2 in [(0.15, 0.12), (0.12, 0.10), (0.10, 0.08), (0.04, 0.02), (0.02, 0.01)]:
+    tpr1, fpr1 = point(t1)
+    tpr2, fpr2 = point(t2)
+    rise = tpr2 - tpr1
+    run = fpr2 - fpr1
+    if run == 0:
+        print("  %.2f -> %.2f  %.6f %.6f   straight up   free recall"
+              % (t1, t2, rise, run))
+    else:
+        s = rise / run
+        if s > 1:
+            v = "take it"
+        elif s > 0:
+            v = "think hard"
+        else:
+            v = "do not"
+        print("  %.2f -> %.2f  %.6f %.6f   %9.4f   %s" % (t1, t2, rise, run, s, v))
+```
+
+```text
+  from    to     rise      run      steepness   verdict
+  0.15 -> 0.12  0.071429 0.000000   straight up   free recall
+  0.12 -> 0.10  0.071429 0.005071     14.0857   take it
+  0.10 -> 0.08  0.000000 0.007099      0.0000   do not
+  0.04 -> 0.02  0.071429 0.152130      0.4695   think hard
+  0.02 -> 0.01  0.214286 0.212982      1.0061   take it
+```
+
+**The `if run == 0:` branch is the point.** Without it the first pair raises `ZeroDivisionError` and the other four never print; the honest label for that row is "free recall", the best row in the table. The last row says "take it" because 1.0061 is just over 1, and **a human should override that**: one for one is a coin's exchange rate, and the program can do the division but not the judgement.
+
+**B4.** `sweep20.py`:
+
+```python
+"""sweep20.py - the twenty index cards, ten thresholds, with the sum check.  Week 10 workbook."""
+import numpy as np
+from sklearn.metrics import confusion_matrix
+
+prob = np.array([0.96, 0.92, 0.88, 0.84, 0.80, 0.76, 0.72, 0.68, 0.64, 0.60,
+                 0.55, 0.48, 0.42, 0.36, 0.30, 0.25, 0.20, 0.15, 0.10, 0.05])
+truth = np.array([1, 1, 1, 0, 1, 1, 1, 0, 1, 1,
+                  0, 1, 0, 0, 1, 0, 0, 0, 0, 0])
+print("   t   tp  fp  fn  tn   sum   tpr    fpr")
+for t in [0.90, 0.80, 0.70, 0.60, 0.50, 0.40, 0.30, 0.20, 0.10, 0.05]:
+    pred = (prob >= t).astype(int)
+    tn, fp, fn, tp = confusion_matrix(truth, pred, labels=[0, 1]).ravel()
+    total = tn + fp + fn + tp
+    print("%5.2f %4d %3d %3d %3d %5d  %.2f   %.2f   %s"
+          % (t, tp, fp, fn, tn, total, tp / 10.0, fp / 10.0,
+             "OK" if total == 20 else "LOST A CARD"))
+```
+
+```text
+   t   tp  fp  fn  tn   sum   tpr    fpr
+ 0.90    2   0   8  10    20  0.20   0.00   OK
+ 0.80    4   1   6   9    20  0.40   0.10   OK
+ 0.70    6   1   4   9    20  0.60   0.10   OK
+ 0.60    8   2   2   8    20  0.80   0.20   OK
+ 0.50    8   3   2   7    20  0.80   0.30   OK
+ 0.40    9   4   1   6    20  0.90   0.40   OK
+ 0.30   10   5   0   5    20  1.00   0.50   OK
+ 0.20   10   7   0   3    20  1.00   0.70   OK
+ 0.10   10   9   0   1    20  1.00   0.90   OK
+ 0.05   10  10   0   0    20  1.00   1.00   OK
+```
+
+A program that prints its own sum is worth ten that are probably right. Every row matches the by-hand sweep under **🛠️ Build It** below, so mark the page against it row by row.
+
+**B5.** `defend.py` (it needs the imports and `prob` from `dial.py`, including `precision_score`, `recall_score`, `roc_auc_score` and `average_precision_score`):
+
+```python
+"""defend.py - nine thresholds, and the three I would defend.  Week 10 workbook."""
+pos = int(y_val.sum())
+neg = len(y_val) - pos
+print("val rows %d   real frauds %d   real legit %d" % (len(y_val), pos, neg))
+print("   t  flagged  tp  fp   precision  recall      fpr   extra tp  extra fp")
+last_tp = 0
+last_fp = 0
+worth_it = None
+for t in [0.50, 0.15, 0.12, 0.10, 0.08, 0.06, 0.04, 0.02, 0.01]:
+    pred = (prob >= t).astype(int)
+    tn, fp, fn, tp = confusion_matrix(y_val, pred, labels=[0, 1]).ravel()
+    if tn + fp + fn + tp != len(y_val):
+        print("COUNTS DO NOT ADD UP")
+    if tp > last_tp:
+        worth_it = t
+    print("%5.2f %7d %3d %3d     %.4f  %.4f  %.6f %9d %9d"
+          % (t, int(pred.sum()), tp, fp, precision_score(y_val, pred, zero_division=0),
+             recall_score(y_val, pred, zero_division=0), fp / neg,
+             tp - last_tp, fp - last_fp))
+    last_tp = tp
+    last_fp = fp
+print("the lowest threshold that still bought me a fraud : %.2f" % worth_it)
+print("ROC AUC %.4f   (a coin gets 0.5000)" % roc_auc_score(y_val, prob))
+print("AP      %.4f   (a coin gets %.4f)"
+      % (average_precision_score(y_val, prob), y_val.mean()))
+```
+
+```text
+val rows 1000   real frauds 14   real legit 986
+   t  flagged  tp  fp   precision  recall      fpr   extra tp  extra fp
+ 0.50       0   0   0     0.0000  0.0000  0.000000         0         0
+ 0.15       1   1   0     1.0000  0.0714  0.000000         1         0
+ 0.12       2   2   0     1.0000  0.1429  0.000000         1         0
+ 0.10       8   3   5     0.3750  0.2143  0.005071         1         5
+ 0.08      15   3  12     0.2000  0.2143  0.012170         0         7
+ 0.06      25   3  22     0.1200  0.2143  0.022312         0        10
+ 0.04      65   4  61     0.0615  0.2857  0.061866         1        39
+ 0.02     216   5 211     0.0231  0.3571  0.213996         1       150
+ 0.01     429   8 421     0.0186  0.5714  0.426978         3       210
+the lowest threshold that still bought me a fraud : 0.01
+ROC AUC 0.6116   (a coin gets 0.5000)
+AP      0.2078   (a coin gets 0.0140)
+```
+
+**The workbook's closing question:** the two rows that bought **zero** extra frauds are `t = 0.08` and `t = 0.06`, and between them they bothered **17** people (7 + 10). `worth_it` comes out at 0.01, not 0.10, because the program only remembers the *lowest* threshold that bought a fraud; the honest answer to "where does lowering the bar stop paying?" needs a price, which is next week.
+
+**Wrong answers to expect:** B1 printing `65` as `65.0` (no `int`); B3 crashing with `ZeroDivisionError` on the first pair; B4 with `>` instead of `>=` (every row where a card sits exactly on the threshold is one out, and the sum still says OK); B5 with `last_tp` and `last_fp` updated before they are printed, so the two "extra" columns are all zeros.
+
+### 🐞 Fix the Broken Program
+
+- **Bug 1 — `prob = model.predict_proba(X_val)`. A shape bug.** `predict_proba` returns two columns (column 0 "probability legit", column 1 "probability fraud"), so `prob` is **(1000, 2)** and the comparison is a 1000×2 grid that the metrics cannot match against 1,000 truths. **The line to add:** `print(prob.shape)`, which prints `(1000, 2)` against `y_val` at `(1000,)`. **The fix:** `prob = model.predict_proba(X_val)[:, 1]`.
+- **Bug 2 — `fpr, tpr, thr = roc_curve(prob, y_val)`. A runtime bug.** "Continuous" means full of decimals, and the thing full of decimals is **`prob`**, which was put in the first position where the truth belongs. **The fix:** `roc_curve(y_val, prob)`. **The rule: truth first, always.**
+- **Bug 3 — `flagged`. A silent logic bug.** `flagged` holds 0s and 1s, a thousand decisions already made; `prob` holds 1,000 decimals between 0.0001 and 0.1774. `roc_auc_score` had only two distinct values to work with (two places to cut, a three-point curve) and the confidence had already been thrown away by the `>= 0.10`. **The fix:** `roc_auc_score(y_val, prob)` and `average_precision_score(y_val, prob)`.
+- **The two closing questions.** The **AUC** is the easier error to miss: 0.6046 against 0.6116 is a second-decimal difference nobody would question, while 0.0914 against 0.2078 is a big miss. A wrong input can produce a right-looking number, so "it looked fine" is not evidence; the reliable check is **`len(fpr)` was 3 instead of 28**.
+- **Ranking, easiest → hardest: 1, 2, 3.** Bug 1 crashes on the first row and names both shapes if you print them; Bug 2 is obscure for ten seconds and then obvious; Bug 3 never complains and would have gone into a report. What catches each: **printing a shape**, **the phrase "truth first"**, and **`len(fpr)`**.
+
+### 🧩 Puzzle of the Week
+
+**Part 1(a).** Typing the rounded numbers: `0.3333 ÷ 0.2000 = 1.6665`. Using the fractions: `(1 ÷ 3) ÷ (1 ÷ 5) = 5 ÷ 3 = 1.6667`. Take the mark for either; the gap is the rounding, and rounding early leaks into every number downstream. An up-step is about **1.67** times as tall as a right-step is wide, because there are fewer frauds than legits.
+
+**Part 1(b) — ranking A, `F F L F L L L L`:**
+
+| card | F or L | fpr | tpr |
+|---|---|---|---|
+| start | — | 0.0000 | 0.0000 |
+| 1 | F | 0.0000 | 0.3333 |
+| 2 | F | 0.0000 | 0.6667 |
+| 3 | L | 0.2000 | 0.6667 |
+| 4 | F | 0.2000 | 1.0000 |
+| 5 | L | 0.4000 | 1.0000 |
+| 6 | L | 0.6000 | 1.0000 |
+| 7 | L | 0.8000 | 1.0000 |
+| 8 | L | 1.0000 | 1.0000 |
+
+**Part 1(c) — ranking B, `F L F L F L L L`:** after card 1 **(0.0000, 0.3333)**, card 3 **(0.2000, 0.6667)**, card 5 **(0.4000, 1.0000)**, card 8 **(1.0000, 1.0000)**.
+
+**Part 1(d) — ranking C, `L F F L F L L L`:** after card 1 **(0.2000, 0.0000)**, card 3 **(0.2000, 0.6667)**, card 5 **(0.4000, 1.0000)**, card 8 **(1.0000, 1.0000)**. Same as B except it starts by going sideways.
+
+**Part 1(e).** By eye, best first: **A, B, C.**
+
+**Part 1(f).**
+
+| ranking | pairs in the right order | that over 15 |
+|---|---|---|
+| A | **14** (5 + 5 + 4) | 0.93333 |
+| B | **12** (5 + 4 + 3) | 0.80000 |
+| C | **11** (4 + 4 + 3) | 0.73333 |
+
+**Part 1(g).** It printed **0.93333**, and the count for A was 14 out of 15 = 0.93333. **The sentence:** "`roc_auc_score` is counting pairs: the fraction of fraud-and-legit pairs my model put in the right order." That explains why a coin gets 0.5, and why AUC cares only about the ranking, not the probabilities. (Checked by running `roc_auc_score` on the three rankings: 0.9333, 0.8000, 0.7333.)
+
+**Part 2(a).** **No.** The most suspicious card in ranking C is legit, so any threshold low enough to catch a fraud has already caught that legit card. **Part 2(b).** A threshold between 0.80 and 0.84 either flags the legit card at 0.84 and misses the fraud at 0.80, or flags neither. **Part 2(c).** To reach the top-left corner you must change **the ranking** (a better model, features or data), **not the threshold**; the threshold only chooses a point on the staircase you already have.
+
+### 🤔 Think Deeper
+
+**T1.** A full-marks paragraph separates the two questions and names the denominator.
+
+> *"AUC asks **can the model rank the frauds above the innocents**, and ours scores 0.6116 where a coin gets 0.5000 — so as a ranking machine it is mediocre, and I would not claim otherwise. AP asks **if I open my review pile, will it be worth opening**, and ours scores 0.2078 where a coin would get 0.0140, the fraud rate. That is about fifteen times better than nothing. Both describe the same model on the same 1,000 rows. The reason they disagree is the denominator: the false positive rate divides by **986**, so 211 false alarms slide the ROC across by only 0.2140 and it looks survivable, while precision divides by **216**, the pile a human has to review, and it falls from 0.3750 to 0.0231. At `t = 0.10` the model hands me 8 rows of which 3 are fraud, out of a background rate of 1.4% — it has concentrated the needles by a factor of twenty-seven without catching anything yet. **So: a weak ranker that is nevertheless a useful triage tool, and the sentence I would put on the report is 'AUC 0.6116, AP 0.2078 on 14 positives in 1,000 validation rows — at a threshold of 0.10 it returns 8 cases a day of which about 3 are real.'"*
+
+**What earns the marks:** the two questions named separately, at least three real numbers, the class balance printed beside the AP, and a report sentence that contains the threshold. **What loses them:** "it's a bad model" with no number, or "AP 0.21 is terrible", which forgets that AP has no fixed baseline.
+
+**T2.** A full-marks paragraph does not blame the library.
+
+> *"A default is somebody else's guess, frozen into a tool, that keeps making decisions until somebody notices. 0.5 is a perfectly sensible guess when you know nothing — it is the least stupid place to cut if the classes are roughly even — and the library authors were right to pick something rather than force everyone to choose on day one. The person responsible is **me**, because I am the one who knows my classes are 99 to 1 and knows my highest probability is 0.1774, and the library does not. The smallest thing I can write down is the threshold and where I picked it: `THRESHOLD = 0.10  # chosen on the validation set; the review desk clears ~8 cases a day`. Three things in one line — the number, the pile it was chosen on, and the human reason. Now the next person can disagree with me, and that is the difference between tuning and lying."*
+
+The strongest answers notice that a default is not neutral just because nobody chose it, and that writing the choice down is what makes it arguable. **"It's the library's fault" scores zero.**
+
+### 🛠️ Build It
+
+The workbook's ten-item step checklist maps onto the material below: steps 1–4 are the hand sweep (the first table), step 5 is the two divisions, steps 6–7 are the `dial.py` numbers and the picture, steps 8–9 are the three thresholds and the last line, step 10 is the Bug Log. Marking priority: **the three defended thresholds, with people, are the hardest-marked item.**
+
+**The ten-threshold sweep — the marking key.** Every row must come to 20. Here are the twenty cards, in order, with the truths:
 
 | prob | 0.96 | 0.92 | 0.88 | 0.84 | 0.80 | 0.76 | 0.72 | 0.68 | 0.64 | 0.60 |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -1311,7 +1714,7 @@ The twenty cards, in order, with the truths:
 |---|---|---|---|---|---|---|---|---|---|---|
 | truth | legit | F | legit | legit | F | legit | legit | legit | legit | legit |
 
-**Ten frauds, ten legits.** Now the ten rows, with every division written out:
+**Ten frauds, ten legits.** The workbook's table asks for `tp`, `fp`, `fn`, `tn`, the sum, `tpr` and `fpr`; `fn = 10 − tp` and `tn = 10 − fp`, so the key for those columns is the **B4** output above (every row sums to 20). The rows below add the teacher's extra check, **precision and recall with every division written out** — a stretch the workbook does not require, but the one to use if a student asks "what happens to precision?":
 
 | t | flagged | caught | false alarms | precision | recall | tpr | fpr |
 |---|---|---|---|---|---|---|---|
@@ -1326,7 +1729,7 @@ The twenty cards, in order, with the truths:
 | 0.10 | 19 | 10 | 9 | `10 ÷ 19 = 0.5263` | `10 ÷ 10 = 1.0000` | 1.00 | 0.90 |
 | 0.05 | 20 | 10 | 10 | `10 ÷ 20 = 0.5000` | `10 ÷ 10 = 1.0000` | 1.00 | 1.00 |
 
-**Machine check.** This is the real output of `cards.py`:
+**Machine check.** This is the real output of `cards.py` (it also prints AUC 0.8500 and the three rise-over-run lines):
 
 ```python
 """cards.py - the twenty index cards, checked by machine.  Week 10."""
@@ -1393,9 +1796,19 @@ t 0.30 -> t 0.05 :  rise 0.00  run 0.50  rise/run 0.0000
 - **Precision at `t = 0.30` written as `10 ÷ 10`.** They used the fraud count as the denominator. **Precision's denominator is how many you flagged: 15.**
 - **Recall falling somewhere.** Impossible. Ask them to re-count; a card got dropped.
 
-### Page 10.2 — The nine-row sweep in code, on the real data
 
-The complete `dial.py` and its real output are in the **🧰 Prep Checklist** above, printed in full. Do not re-derive them; check the student's output against that block **character by character on these four numbers**:
+**Step 6 and the "numbers from `dial.py`" table.** The complete `dial.py` and its real output are in the **🧰 Prep Checklist** above, printed in full. Do not re-derive them. The workbook's table asks for six values:
+
+| What | Must be |
+|---|---|
+| highest probability | **0.1774** |
+| how many above 0.5 | **0** |
+| `tp` at `t = 0.10` | **3** |
+| `roc_auc_score` | **0.6116** |
+| `average_precision_score` | **0.2078** |
+| a coin's AP here | **0.0140** |
+
+If any is off, check the student's whole output against the Prep Checklist block **character by character on these four numbers**:
 
 | Must be exactly | If it is not |
 |---|---|
@@ -1404,11 +1817,10 @@ The complete `dial.py` and its real output are in the **🧰 Prep Checklist** ab
 | `t = 0.10` row reading `8   3   5  11  981` | The threshold list is wrong, or `ravel()` is being unpacked in the wrong order. It is `tn, fp, fn, tp`. |
 | `roc_auc_score 0.6116` | `pred` was passed instead of `prob` — you will see `0.6046`. |
 
-**And the plot.** Two panels. The left ROC climbs raggedly and stays above the diagonal. The right PR curve starts at the top-left and **falls off a cliff within the first fifth of the chart**, then crawls along just above the dashed 0.0140 line. A student whose PR curve looks like a gentle slope has plotted `prec` against `pthr` — see the Debugging Clinic.
+**Step 7, the plot (`dial.png`).** Two panels. The left ROC climbs raggedly and stays above the diagonal. The right PR curve starts at the top-left and **falls off a cliff within the first fifth of the chart**, then crawls along just above the dashed 0.0140 line. A student whose PR curve looks like a gentle slope has plotted `prec` against `pthr` — see the Debugging Clinic.
 
-### Page 10.3 — Two rise-over-run divisions, read as sentences
 
-**The steep pair** — from the card curve, `t = 0.90` at (0.00, 0.20) to `t = 0.80` at (0.10, 0.40):
+**Step 5 — the two divisions off their own graph paper.** The workbook asks for the steepest and the flattest pair they can find. **The steep pair** — from the card curve, `t = 0.90` at (0.00, 0.20) to `t = 0.80` at (0.10, 0.40):
 
 ```text
 rise  =  0.40 − 0.20  =  0.20
@@ -1442,9 +1854,8 @@ t 0.02 -> 0.01   rise 0.214286  run 0.212982  rise/run = 1.0061
 
 **Marking note:** the number alone is worth nothing. **The sentence is the objective.** A student who writes `14.0857` and stops has done the arithmetic and missed the week.
 
-### Page 10.4 — The three thresholds you would defend
 
-There is no single right answer, and that is deliberate. A **full-mark** answer names three thresholds that are genuinely different in kind, gives a real stakeholder for each, and says what that stakeholder is willing to give up. Three that earn full marks:
+**Step 8 (and the last-line prompt, step 9).** There is no single right answer, and that is deliberate. A **full-mark** answer names three thresholds that are genuinely different in kind, gives a real stakeholder for each, and says what that stakeholder is willing to give up. Three that earn full marks:
 
 | Threshold | Defended to | The sentence |
 |---|---|---|
@@ -1459,23 +1870,12 @@ There is no single right answer, and that is deliberate. A **full-mark** answer 
 - **Three thresholds with no people.** Send it back. The stakeholder **is** the answer; the number is just a label for it.
 - **Three thresholds that are all within 0.01 of each other.** They have not understood that the three should be *different kinds of decision*.
 
-### Page 10.5 — Vocabulary
+**Step 9 — "what would you need to know to choose between those three?"** *"How much each kind of mistake actually costs. If a missed fraud costs the bank £500 and a false alarm costs £10, I can multiply instead of arguing."* Anything like that means they have worked out what Week 11 is for.
 
-> **Decision threshold** — the probability above which you call something positive. 0.5 is a default that came with the library, not a law of nature.
+**Which panel falls off a cliff, and why it disagrees with the other one** (the two prompts under the `dial.py` table): the **precision-recall** panel, from 0.3750 to 0.0231 as false alarms go from 5 to 211, then it crawls just above the dashed 0.0140 line. *"Precision divides by **216**, the pile I have to review, and 216 rows holding 5 frauds is about forty-two innocent people per thief. The false positive rate divides by **986**, so 211 false alarms only move it by 0.21. Both charts are true; the precision-recall one tells the truth about the day's work."*
 
-> **True positive rate** — of everything that really was positive, the fraction you caught. `TP ÷ (TP + FN)`. **The same number as recall, under an older name.**
 
-> **False positive rate** — of everything that really was negative, the fraction you wrongly flagged. `FP ÷ (FP + TN)`. On our data the denominator is 986, which is why it moves so slowly.
-
-> **ROC curve** — one dot per threshold, true positive rate up, false positive rate across. **One model, many dots.** The dashed diagonal is what a coin gets.
-
-> **Precision-recall curve** — the same sweep, precision up, recall across. The one to trust when positives are rare, because precision's denominator is the pile you actually have to review.
-
-> **Average precision** — one number summarising the precision-recall curve. Its baseline is not 0.5; it is **the positive class rate** — 0.0140 for us — so it must always be quoted with the class balance beside it.
-
-### Page 10.6 — Bug Log
-
-Two entries. **Both of them are silent**, and that is the point of the page.
+**Step 10 — the Bug Log (two entries).** One loud and one silent, and the point is that both kinds exist: *entry one* (the three-point curve) never complains; *entry two* (the 1×1 matrix) stops the program and names its own fix.
 
 **Entry one.**
 Message: *none.* Symptom: `roc_curve` returned 3 points instead of 28, and the AUC read 0.6046 instead of 0.6116.
@@ -1488,6 +1888,20 @@ Message: `ValueError: not enough values to unpack (expected 4, got 1)`, with a `
 Meaning: the truth and my predictions each held only one class (a tiny slice, nothing flagged), so the confusion matrix came back 1×1.
 Fix: `confusion_matrix(y, pred, labels=[0, 1])`.
 The rule I am keeping: **read the whole error, not just the last line. This one's fix was printed one line above the traceback.**
+
+### 🎨 Draw It
+
+The staircase drawn on squared paper, with the three questions answered:
+
+- **Where it goes straight up:** between `t = 0.80` and `t = 0.70` (and from the origin up to `t = 0.90`). It cost nothing: two extra frauds, zero extra false alarms, so the division has no answer and the honest label is "free recall".
+- **Where it goes straight across:** from `t = 0.30` down to `t = 0.05`. It bought nothing at all: recall was already 1.0000 and five more innocent cards were blocked. Both ends of a sweep are usually waste.
+- **`t = 0.50` on the real fraud model:** the **bottom-left corner, exactly (0, 0)**, catching **0 of the 14 frauds**. A good drawing labels that dot "the default".
+
+A strong drawing also has the diagonal dashed in with a sentence under it (*"this is what a coin gets; the gap between my curve and it is all my model contributed"*) and an arrow labelled "the price list" pointing at the three ringed dots, which is next week.
+
+### 📊 Self-Check
+
+There are no right answers to a self-check, but three of the ten lines carry the week. **"Add the four counts up every row"** is four seconds that catches every miscount you will make this year; if it is not a 😀 the habit is not installed. **"Read a steepness out loud as recall bought per false alarm"**: a decimal without the sentence is arithmetic without the point; go back to M1 and say all five out loud. And **"name the person each threshold is right for"** is marked again in Week 11, Week 34 and Week 36, and it separates somebody who can operate a library from somebody you would let near a live system.
 
 ### Answers to every question posed in the lesson
 

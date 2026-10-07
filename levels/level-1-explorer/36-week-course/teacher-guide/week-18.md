@@ -806,7 +806,9 @@ them as Week 19 warm-ups.
 
 ## 📤 Homework to Assign
 
-**Workbook:** Week 18, pages 1–3. **Time: about 55 minutes.**
+**Workbook:** Week 18, the whole sheet. The **🛠️ Build It** section (Parts 1–3) is the core and takes
+about 55 minutes; the rest (✅ Warm-Up, ✍️ Practice Sets A and B, 🧩 Puzzle of the Week, 🤔 Think Deeper,
+🎨 Draw It, 📊 Self-Check) is about 60 minutes more, best spread over the week. Set Build It first.
 
 **Say this, word for word:**
 
@@ -815,23 +817,34 @@ them as Week 19 warm-ups.
 > say what you'd predict next time. I mean that: a wrong prediction you've thought about is worth
 > more to me than a right one you got lucky on."
 >
-> "Second, the Term 2 reflection sheet. Three things you can do now that you could not do in Week 10.
+> "Second, the Term 2 reflection. Three things you can do now that you could not do in Week 10.
 > Not 'I learned about AI' — three specific things, with an example of each. Something like 'I can
 > work out a margin from three confidence scores' is what I'm after."
+>
+> "The rest of the sheet — the warm-up, the two practice sets, the puzzle, the two Think Deeper
+> questions and the drawing — is for across the week. The Answers section at the back is folded away;
+> do not open it until you have written your own."
 
 **Check before they leave:** ask them to say aloud the explanation for row 1. That's step one.
 
-| Page | Task | Approx. time |
+| Workbook section | Task | Approx. time |
 |---|---|---|
-| 1 | The five-row table completed with score and margins | 15 min |
-| 2 | One written explanation per row + prediction right/wrong | 25 min |
-| 3 | Term 2 reflection: three things you can now do | 15 min |
+| ✅ Warm-Up (W1–W5) | Five questions on last week's model-building | 5 min |
+| ✍️ Practice Set A (A1–A6) | Blanks, multiple choice, true/false, matching, label the four knobs, Term 2 vocabulary | 20 min |
+| ✍️ Practice Set B (B1–B5) | Two "what would go wrong" cases, Term 2 review, two shapes of answer, design a fifth sabotage | 25 min |
+| 🧩 Puzzle of the Week | Which sabotage damaged each of four models, with reasons, plus the bonus question | 10 min |
+| 🤔 Think Deeper (T1–T2) | Two paragraphs on trust and on whose job it is to find the snow | 15 min |
+| 🛠️ Build It, Part 1 | The five-row results table completed with score and margins | 15 min |
+| 🛠️ Build It, Part 2 | One written explanation per row + prediction right/wrong | 25 min |
+| 🛠️ Build It, Part 3 | Term 2 reflection: three things you can now do, plus the minute-one guess | 15 min |
+| 🎨 Draw It | Same object twice: what the model was really looking at | 10 min |
+| 📊 Self-Check | Tick the grid, list weeks to revisit, one question for next lesson | 5 min |
 
 ---
 
 ## 🔑 Answer Key
 
-### K1 — The five-row results table, model answers
+### K1 — Build It Parts 1 and 2: the five-row results table, model answers
 
 The student's numbers will differ. **The shape is what matters.** Five test items: spoon, toothbrush,
 comb, fork, empty hand. (The fork and hand are in no class, so a perfect score is 3 out of 5 unless
@@ -862,8 +875,8 @@ runs. If they used three real objects only, scores are out of 3 and the pattern 
 > The margin went *up*, from 86 to 92 — better than the baseline. That's the surprising bit. Because
 > every training photo had the wooden table in it, the table itself became evidence for all three
 > classes, and when I test on the table that evidence is there, so the model is more sure than ever.
-> **My prediction was 4/5 and I was right, but for the wrong reason** — I thought it'd be fine because
-> the objects hadn't changed, and actually it was fine because the *table* hadn't changed.
+> **My prediction was "about the same" and I was right, but for the wrong reason** — I thought it'd be
+> fine because the objects hadn't changed, and actually it was fine because the *table* hadn't changed.
 
 **Row 2 — one background, tested at the sink.**
 > Same spoon, same model, two metres away, and the margin fell from 92 to 5 — a coin toss that landed
@@ -916,7 +929,7 @@ predicted experiment 2 and can say why, say so out loud — that is genuinely st
 | Activity | If you'd only tested on the table, what would you conclude? | That the single-background model was better. That is exactly the trap. |
 | Wrap | Did your model have a snow? | Compare against their minute-8 guess. |
 
-### K4 — Homework page 3: the Term 2 reflection
+### K4 — Build It Part 3: the Term 2 reflection
 
 Model answer:
 
@@ -1008,6 +1021,113 @@ Common patterns and what they mean:
 | 11 | Week 16 arithmetic. Do one more balance sum, slowly, on paper. |
 | 12, 13, 14 | Today. Reteach with the four-knobs picture as the Week 19 warm-up. |
 | 6, 7 | Week 15. Reteach with the cake analogy — you can't get the eggs back out. |
+
+### K6 — The rest of the workbook, section by section
+
+The workbook's own ✅ Answers section (folded at the back) is the student's copy of these and has been
+checked. Mark against the values below. K1 covers 🛠️ Build It Parts 1–2, K4 covers Part 3; here is
+everything else.
+
+**✅ Warm-Up**
+
+| Item | Answer | Likely wrong answer |
+|---|---|---|
+| W1 | `(44 − 36) ÷ 44 = 8 ÷ 44 = 0.1818… ≈ 18.2%`. Under 20%, so **yes, train** — close enough to note in the log. | Dividing by 36 (22.2%, which would wrongly say no). The gap is divided by the **biggest** class. |
+| W2 | `120 × 50 = 6,000` photo-examinations (about 100 minutes at one per second). | Adding, 170. |
+| W3 | **No.** Model file about 3 MB; photos about 40 MB. 3 MB cannot hold 40 MB, so the photos are not in it. | "No" with no numbers. The question asks for two. |
+| W4 | **☰ menu → Download project as file.** No autosave of any kind. The file was `baseline-v1.tm`. | "Click save." There is no save button. |
+| W5 | **No, not broken** — three boxes, 100 points of belief to give away, no box for "none of these", so it gave nearly all of it to the closest-shaped box. | "It was wrong" with no mention of boxes. |
+
+**✍️ Practice Set A**
+
+- **A1.** (a) exactly **one**, everything **else**. (b) **damaging**, **depending** (or relying). (c)
+  **`baseline-v1.tm`**, the saved project file. (d) The margin moves **before** the verdict does.
+- **A2.** **D** — the experiment cannot answer the question. Two things changed, so the 20 points cannot
+  be divided. **C is the tempting wrong answer**: 10 and 10 feels fair, but the number is invented.
+- **A3.** **CAN'T TELL** is best; **FALSE** with a good explanation is also full credit. The explanation
+  must say **where**: the one-background model scored 95% on the table it trained on and 34% at the
+  sink, while the baseline scored 91% everywhere it was tried. **TRUE** is the trap.
+- **A4.** 5 photos = **R** · one background = **P** · blurry = **S** · imbalance 40 / 40 / 5 = **Q**.
+- **A5.** Knobs: **A** photos per class (40 or 5) · **B** number of different backgrounds · **C** sharpness
+  · **D** whether the classes are balanced. Any four sensible properties of the *photos* earn credit
+  (lighting, angle, distance). Not a knob: how clever the computer is, how long it trains, the Advanced
+  settings. Six things taped down: same three objects · same five test items **in the same order** ·
+  same room, spot and light · same distance · same person holding · same way of reading the numbers
+  (freeze, count to two, read). "Same order" feels fussy to them and isn't: testing the spoon first
+  with a steady hand and the comb last when bored adds a variable.
+- **A6.** feature: one measured description of one example, one column (`weight_g = 150`). label: the
+  answer you want produced, the column you cover up. baseline: the score from always guessing the most
+  common answer, what every result is compared against. training: the one-off process of studying
+  labelled examples over and over and tuning its own internal numbers. confidence: how strongly the
+  model prefers a class, **not** the chance of being right. Three of five with no notes is a solid pass;
+  star the misses and reteach as next week's warm-up (this is the same material as quiz Q1, Q2, Q4, Q6,
+  Q10 in K5).
+
+**✍️ Practice Set B**
+
+- **B1.** (a) Nothing useful. (b) "Which of the two caused the drop, and how much belongs to each?" —
+  unanswerable now and later. (c) **Yes**: to test whether two things *together* do what neither does
+  alone, but only once the one-at-a-time results exist to compare against.
+- **B2.** (a) **Five** — nothing put the samples back. (b) **Two** at least: photos per class (still 5)
+  and number of backgrounds; possibly a third if the one-background set has another count. (c) Cross
+  them out, the experiment is void; reload `baseline-v1.tm` and rerun. A number from a broken
+  experiment is worse than none because you will believe it. (d) Reloading has no button and nothing on
+  screen warns you; every other step in the loop shows something. That is why you say it aloud.
+- **B3.** (a) A **leaky feature** (a leak) — it already contains the answer. (b) Testing: about
+  **100%**. Real use: **useless**, because at the moment you need a prediction the sticker is not there
+  yet. (c) `1 in 3 = 33.3%`. (d) At 34% it has learned **essentially nothing**: no better than always
+  guessing one fruit.
+- **B4.** (a) **Classification**. (b) **Regression**. (c) Write **both** numbers: "95% on the surface it
+  was trained on; 34% on a surface it had never seen." Only the 95% is dishonest because a number with
+  no "where" invites the reader to assume it holds everywhere. If forced to give one, give the 34%.
+- **B5.** No single right answer; marks are in (b), (c), (d), not in whether the prediction came true.
+  Full credit needs all five parts, exactly **one** changed thing, a hold-fixed list, a written
+  prediction with a mechanism, and a statement of what it would prove. Model answer: photograph only
+  the comb at night under a lamp; change = lighting of one class; hold fixed = the same objects, 40
+  photos per class, test items and order, daylight test spot, distance, person, reading method;
+  prediction 2 out of 3 because "dim and orange" becomes part of what a comb is; proves the model can key
+  on lighting as readily as on background, and that the damage stays inside the damaged class. Red flag:
+  a design that changes two things.
+
+**🧩 Puzzle of the Week**
+
+| Model | Sabotage | Giveaway |
+|:--:|:--:|---|
+| 1 | **B** one background | Right on the table, wrong two metres away: only the place changed. |
+| 2 | **C** blurry | All right, margins halved, worst on the thin object with the finest edges. Blur destroys edges. |
+| 3 | **A** 5 photos | Every margin collapsed at once (41, 14, 7), score barely fell: thin pattern, not yet wrong. |
+| 4 | **D** imbalance | Two healthy classes (88, 83), one vanished. Damage confined to one class. |
+
+**Bonus:** **A** and **D** need no new photos; both are done by deleting samples (A down to 5 per class;
+D delete combs down to 5). B and C need photos they do not already own. Credit a correct answer with a
+reason for every row; the reason matters more than the letter. Common swap: 2 and 3 (both "margins
+fell"), separated by edges versus even collapse.
+
+**🤔 Think Deeper** (marked on reasoning, not on matching the wording)
+
+- **T1.** Must use *tested in enough different situations*: other surfaces, lights, distances, unseen
+  objects, each class scored separately, failures written down (a list of successes is an advertisement,
+  a list of failures is a map). The trust is earned by watching, not by being told, and is stronger than
+  a self-explaining model because an explanation can be invented and a result on unseen tests cannot.
+  Strong answers add that the trust is **local**: these objects, these places, this light.
+- **T2.** Full credit names who (the people building and selling it) and a mechanism that makes it
+  happen: test somewhere the model has never been, publish results split by group and condition rather
+  than averaged, say plainly what it was trained on, and require a sabotage test report from whoever
+  signs off. Weak answer: "someone should check" with no how.
+
+**🎨 Draw It** (no single right drawing; four things earn the marks)
+
+1. The **same object twice**.
+2. Exactly **one** difference between panels, labelled as the thing that changed.
+3. **Both readouts as numbers** (for example `95, margin 92` and `39, margin 5`), not "good" and "bad".
+4. The arrow points at the **background**, not the object: the model was never looking at the spoon.
+
+Final test to put to them: "does your picture explain why a higher score can mean a worse model?" If
+not, add the line "if I'd only tested here, I'd have called this my best one."
+
+**📊 Self-Check** has no key. Read the "Weeks I want to go back over" line and the question for next
+lesson: the first should match the list of weeks from the quiz in K5, and the question is a free opener
+for Week 19.
 
 ---
 

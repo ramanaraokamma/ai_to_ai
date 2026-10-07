@@ -12,7 +12,7 @@
 | **Type** | Teach |
 | **Big idea** | Whatever an AI knows, it arrived as rows and columns — one row is one thing, one column is one measurement. |
 | **New vocabulary** | data · table · row · column · header |
-| **Materials** | A school backpack or kitchen drawer with at least 8 objects in it · a kitchen scale that reads in grams · a 30 cm ruler · 12 sticky notes (or 12 scraps of paper) · the printed record sheet (Workbook Week 4, page 3) · a pen each · a board, big sheet of paper, or whiteboard |
+| **Materials** | A school backpack or kitchen drawer with at least 8 objects in it · a kitchen scale that reads in grams · a 30 cm ruler · 12 sticky notes (or 12 scraps of paper) · a hand-ruled record sheet (the workbook has no record sheet; see Prep Checklist) · a pen each · a board, big sheet of paper, or whiteboard |
 | **Tech needed** | **None.** This whole lesson is paper and objects. No computer, no internet, no accounts. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
@@ -200,7 +200,7 @@ written down *in*). Do not name them for the learner today.
 - [ ] **Draw the same twelve facts as a table** on a separate sheet of paper, and turn it face down. (4 rows: pencil, book, bottle, ball. 3 columns: grams, cm, colour.) You will reveal it at minute 5.
 - [ ] **Check the objects.** Find a backpack, a kitchen drawer, or a pencil case with **at least 8 separate objects** in it. Eight is the minimum; ten is more comfortable. Nothing valuable, nothing sharp, nothing wet.
 - [ ] **Test the kitchen scale.** Switch it on. Check it reads grams (not just kilograms — a 6 g pencil must not read `0.0`). If your scale only shows whole grams, fine. If it only shows kilograms to one decimal place, swap the "grams" column for "how many of these fit in one hand" or use a different scale.
-- [ ] **Print** Workbook Week 4, pages 1–4. Page 3 is the blank record sheet used in class; page 4 goes home.
+- [ ] **Print** the Week 4 workbook (all of it: Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Build It, Draw It, Self-Check). It goes home. **The workbook has no blank record sheet**, so also **rule one by hand** on plain paper for class: columns `object`, `grams`, `length_cm`, `pocket`, eight rows, with a line at the top for `ONE ROW = ONE ______`. Leave the back blank for the pocket table.
 - [ ] **Read the Answer Key** at the bottom of this file. Ten minutes. It will change how you ask the questions.
 
 ### 5 minutes on the day
@@ -456,7 +456,7 @@ Then run the activity as written below.
 >
 > Three. **Every column has to be measured the same way every time.** We spent five minutes deciding what 'length' meant for a bottle. That was not wasted time. That was the actual job."
 
-**Do this:** fill in the vocabulary box in the workbook together — five words, one line each, in the student's own words. Do not let them copy from a definition; make them say it, then write what they said.
+**Do this:** write the five vocabulary words together on the back of the record sheet (they will match them again in Workbook A4 at home) — one line each, in the student's own words. Do not let them copy from a definition; make them say it, then write what they said.
 
 | Word | The definition you're steering to |
 |---|---|
@@ -490,7 +490,7 @@ Then assign the homework as written in the 📤 section.
 - One backpack, kitchen drawer, pencil case or coat with **at least 8 objects** inside
 - Kitchen scale reading grams
 - 30 cm ruler
-- Workbook Week 4 page 3 (the blank record sheet) — or a hand-ruled grid
+- A hand-ruled record sheet (columns `object`, `grams`, `length_cm`, `pocket`; the workbook does not contain one)
 - One pen
 
 ### Setup (1 minute)
@@ -717,14 +717,29 @@ Record the level in your own notes. You will want it in Week 9 at the Term 1 Che
 
 ## 📤 Homework to Assign
 
-**Workbook Week 4, page 4 — "Your Life In 30 Rows", part 1.**
-**Time: 45–60 minutes total, spread across the week (about 8 minutes a day).**
+**The Week 4 workbook, in order — and the project in it, "Your Life In 30 Rows", part 1 (Build It).**
+**Time: 45–60 minutes total, spread across the week (about 8 minutes a day).** Build It is about 20 of those minutes.
 
 This is the first instalment of a three-week project. They finish it in Week 6, and they will use the same table again in Week 7 to hunt for patterns. Say that — knowing it is going somewhere changes how carefully they do it.
 
+The workbook's sections, and what each one is for:
+
+| Workbook section | Items | What it checks | Minutes |
+|---|---|---|---|
+| ✅ Warm-Up | W1–W5 | Week 3 recall (picking vs generating, confidence, narrow/general AI, sideways step, three families) | 5 |
+| ✍️ Practice Set A — Understand It | A1–A6 | Vocabulary, counting rows and cells, labelling the diagram, naming the row unit for five projects | 10 |
+| ✍️ Practice Set B — Use It | B1–B5 | Designing a table (bakery, bus), spotting a TOTAL row, mixed units, the wrong row unit | 10 |
+| 🧩 Puzzle of the Week — The Squashed Table | 4 ticks + the real puzzle | Which questions a one-row-per-pocket table can answer | 5 |
+| 🤔 Think Deeper | T1–T2 | Add-up-not-split rule; a missing column that affects a person | 5 |
+| 🛠️ Build It | Steps 1–7, row unit, four columns, seven rows, blanks log, sentence | The project (below) | 20 |
+| 🎨 Draw It | one drawn table | Labelling header, row, column, cell on their own table | 5 |
+| 📊 Self-Check | five faces + one question | Honest self-rating; not marked | 2 |
+
+The workbook's own answers are at its end; ask the student **not to look until the whole section is done**. Today's class activity used a hand-ruled record sheet, which is not part of the workbook (see the key below for how to mark it).
+
 **Say this:**
 
-> "Homework is the start of something we'll build over the next three weeks. It's called *Your Life In 30 Rows*, and by Week 6 you'll have a real dataset that belongs to you.
+> "Homework is the start of something we'll build over the next three weeks. It's called *Your Life In 30 Rows*, and by Week 6 you'll have a real dataset that belongs to you. It's the Build It page of your workbook; the other pages are practice for it.
 >
 > Four jobs this week.
 >
@@ -738,13 +753,13 @@ This is the first instalment of a three-week project. They finish it in Week 6, 
 >
 > If you miss a row, leave it blank and write why. A blank with a reason is worth more than a made-up number, and I mean that literally — next week you'll see the damage a made-up number does to an average."
 
-**What to check when it comes in:** the row unit is written down, the four instructions are specific enough to repeat, there are 7 rows, and the sentence names a rejected alternative. Do not mark on neatness.
+**What to check when it comes in:** the row unit is written down, the four instructions are specific enough to repeat, there are 7 rows, and the sentence names a rejected alternative. Do not mark on neatness. For the other sections, mark against the key below; Self-Check is not marked, and a 😕 is a useful answer.
 
 ---
 
 ## 🔑 Answer Key
 
-Complete answers to everything asked in this lesson and in Workbook Week 4.
+Complete answers to everything asked in this lesson and in the Week 4 workbook. The workbook sections are in the workbook's own order, with the workbook's own item labels.
 
 ### Lesson questions
 
@@ -804,51 +819,171 @@ The corrected table:
 
 …and "Tuesday: 40 pizzas sold" belongs in a *different* table where one row = one day.
 
-### Workbook Week 4, page 1 — Warm-up: Name the row
+### Workbook Week 4 — ✅ Warm-Up (W1–W5)
 
-*For each project, write "one row = one ___" and name three columns.*
+*Week 3 recall. Mark on the idea, not the wording.*
 
-**(a) Predicting whether it will rain tomorrow**
-One row = **one day at one place**. Columns: `date`, `city`, `temperature_at_noon_c`, `humidity_percent`, `rained_next_day`.
-⚠️ "One row = one day" alone is not quite enough: if you record Mumbai and Delhi on the same date you get two rows for one day. The row is the *pair* (date, city).
+**W1. The test.** **Count the possible outputs.** If the system can only reply with something from a **short fixed list**, it is *picking a label*. If it could reply with anything at all, it is *generating*. Why this test and not "does it seem clever": the number of possible answers can be counted, and cleverness cannot.
 
-**(b) Deciding if a text message is spam**
-One row = **one message**. Columns: `sender_saved_in_contacts`, `number_of_links`, `word_count`, `is_spam`.
+**W2. FALSE.** A confidence score is how strongly the system **prefers** one answer over the others, not a promise about how often it is right. It can be 94% confident and wrong. *Confidence is not correctness.*
 
-**(c) Predicting how much a house sells for**
-One row = **one sale**. Columns: `area_sq_ft`, `bedrooms`, `age_years`, `sale_price`.
-⚠️ Not "one house" — a house sold three times over ten years is three examples at three prices.
+**W3.**
+- **Narrow AI** — a system that does **one** job, and fails the moment you step sideways out of it.
+- **General AI (AGI)** — a system that could turn its hand to any job a person can. **Nobody has built one.**
 
-**(d) Recognising handwritten digits**
-One row = **one image of one digit**. Columns at Level 1: `image_file`, `true_digit`. (In Week 23 we find out that `image_file` is secretly hundreds of number columns.)
+**W4. Sideways step.** Any task one small step from "draw the thing, roughly centred, in one continuous style": draw it *upside down*, *half* of it, *very small in a corner*, two of them, or with deliberately wobbly lines. Marking point: it must still be obviously the right object **to a human**. "Draw something random" is a different task, not a sideways step.
 
-**(e) Recommending a film**
-One row = **one rating** — one person rating one film. Columns: `person_id`, `film_id`, `rating_1to5`, `date_rated`.
-⚠️ Neither "one film" nor "one person" works, because the thing being predicted joins a person *to* a film.
+**W5. Three families.** Any correct classification.
+
+| Family | Model examples |
+|---|---|
+| Rules | A microwave timer; a vending machine; a lift |
+| Learned | Spam filter; video recommendations; face unlock |
+| Generating | A chatbot; an image maker; predictive text |
+
+### Workbook Week 4 — ✍️ Practice Set A (A1–A6)
+
+**A1. Blanks.** Rows go **across**. Columns **stand up**. The top line is the **header**, and it is **not data**. A single box is a **cell**.
+
+**A2. (b) 4.** Four animals, so four rows. Not 5: that counts the header. Test: could you put `legs` on a weighing scale? **Boxes holding data: 16** (4 rows × 4 columns). Wrong-answer map: (c) 5 = counted the header; (d) 16 = answered the second question in the first; (a) 3 = skipped one.
+
+**A3. FALSE.** To the machine `weight_kg` is a **meaningless label**. It would behave **identically** if the column were renamed `banana`. The header is there so *people* remember what the numbers mean, which is why whoever picks the columns has so much power.
+
+**A4.** 1 → **C** · 2 → **E** · 3 → **D** · 4 → **A** · 5 → **B**
+
+**A5. Label the diagram.**
+1. **header**
+2. **row**
+3. **column**
+4. **cell**
+
+**Rows: 4. Boxes holding data: 16.** Common slip: "5 rows" because the header is a line on the page. Point at `can_fly` and ask whether it can fly. (Cell meaning, if you want the full sentence: the pigeon weighs 0.3 kilograms; insist on a sentence, not "0.3".)
+
+**A6. Name the row unit.** Any three sensible columns are fine.
+
+**(a) Rain tomorrow.** One row = **one day at one place**. Columns: `date`, `city`, `temperature_at_noon_c`, `humidity_percent`, `rained_next_day`.
+⚠️ "One row = one day" alone is not quite enough: Mumbai and Delhi on the same date would be two rows for one day. The row is the *pair* (date, city). Accept "one day" at this age if they offer a place column; praise it if they spot the pair.
+
+**(b) Spam or not.** One row = **one message**. Columns: `sender_saved_in_contacts`, `number_of_links`, `word_count`, `is_spam`.
+
+**(c) House price.** One row = **one sale**. Columns: `area_sq_ft`, `bedrooms`, `age_years`, `sale_price`.
+⚠️ Not "one house": a house sold three times over ten years is three examples at three prices.
+
+**(d) Handwritten digits.** One row = **one image of one digit**. Columns at Level 1: `image_file`, `true_digit`. (Only two are needed here; a third such as `who_wrote_it` is fine. In Week 23 `image_file` turns out to be hundreds of number columns.)
+
+**(e) Film recommendation.** One row = **one rating**, one person rating one film. Columns: `person_id`, `film_id`, `rating_1to5`, `date_rated`.
+⚠️ Neither "one film" nor "one person" works, because the prediction **joins** a person to a film.
 
 **The pattern across all five:** find what you are trying to predict, and the row is whatever that prediction is *about*.
 
-### Workbook Week 4, page 2 — Label the table
+### Workbook Week 4 — ✍️ Practice Set B (B1–B5)
 
-*Students are given this table and asked to label the parts and answer four questions.*
+**B1. The bakery.** One row = **one sale** (or just as good, **one cake sold on one day**).
 
-| animal | legs | weight_kg | can_fly |
+| Column | Measuring instruction |
+|---|---|
+| `cake_type` | ONE of exactly: `chocolate`, `vanilla`, `fruit`, `cheese` |
+| `date` | The calendar date off the till, written `2026-09-03` |
+| `day_of_week` | ONE of: `Mon` `Tue` `Wed` `Thu` `Fri` `Sat` `Sun` |
+| `price_rupees` | Whole rupees actually charged, after any discount, off the receipt |
+
+⚠️ Why not "one row = one cake type"? Four rows for the whole year and nowhere for the day. Why not "one row = one day"? You could not tell which cake sold. The question names both cake and day, so the row has to be the pair, or one sale (finer, and the pair can be built from it). Marking point: each instruction must be repeatable by a stranger; "how many sold" with no counting rule fails.
+
+**B2. The TOTAL row.** The machine will believe there is a **fifth object in the bag called "Total" that weighs 891 grams**. **Golden rule 1 was broken:** every row must be the same kind of thing, and a total is not a thing. Silly questions: "What colour is the total?" · "Can I hold the total?" **Fix:** move the total beside the table, off the grid.
+
+**B3. Mixed units.** **Golden rule 2 was broken:** every column must be measured the same way in every row. The worst part: the table **looks completely fine**, so it looks trustworthy. **Can you fix it by looking at the table? No.** `10` could be 10 cm or 10 inches and both are plausible for a book; the information was never written down. The only fix is to measure again, writing the instruction first.
+
+**B4. The school bus.** One row = **one journey** (one bus on one day). Four columns to keep, e.g. `date`, `scheduled_time`, `actual_arrival_time`, `minutes_late` (also correct: `date`, `stop_name`, `minutes_late`, `weather`). Rejected column with a reason, e.g. `was_it_crowded` (means something different every morning) or `was_the_driver_nice` (an opinion, not a measurement).
+⚠️ `minutes_late` can be **negative** if the bus is early; that is a real value, and next week's lesson.
+
+**B5. The friend who chose wrong.** **NO.** One row per channel squashed every video from a channel into one line; video 3's length is gone. They should have chosen **one row = one video**: it answers both questions, because the channel table can be built from the video table by adding rows up, never the other way. Sentence to remember: **record the smallest thing you care about.**
+
+### Workbook Week 4 — 🧩 Puzzle of the Week: The Squashed Table
+
+| | Question | Answer | Why |
 |---|---|---|---|
-| dog | 4 | 22 | no |
-| pigeon | 2 | 0.3 | yes |
-| spider | 8 | 0.001 | no |
-| bat | 2 | 0.02 | yes |
+| 1 | Which pocket is heaviest? | **✓ YES** | `main`, at 1230 g, straight off the column |
+| 2 | Heaviest single object? | **✗ NO** | Individual weights were added away; 1230 g across 3 objects could be 410 each or 1200 + 20 + 10 |
+| 3 | How many objects altogether? | **✓ YES** | 3 + 3 + 2 = **8**. Adding rows up is always allowed |
+| 4 | How long is the pencil? | **✗ NO** | Length was never a column, and a pocket has no length |
 
-1. **Where is the header?** The top line: `animal`, `legs`, `weight_kg`, `can_fly`.
-2. **How many rows?** **4.** (Not 5 — the header is not a row.)
-3. **How many columns?** **4.**
-4. **What does the cell where `pigeon` meets `weight_kg` mean?** "The pigeon weighs 0.3 kilograms." (Insist on the full sentence.)
-5. **How many cells hold data?** 4 rows × 4 columns = **16**.
-6. **What is one row here?** One row = one **animal**.
-7. **Add a row for a cat.** `cat, 4, 4.5, no` — any sensible weight between about 3 and 6 kg is correct. Marking point: they must fill **all four** columns, in the right order.
-8. **Why can't you add a row saying "we saw 3 dogs today"?** Because that is not an animal — it is a count of a day's sightings. Golden rule 1. It belongs in a different table where one row = one day.
+**Row unit needed for questions 2 and 4:** one row = **one object** (with a `pocket` column and a `length_cm` column).
 
-### Workbook Week 4, page 3 — The in-class record sheet
+**The real puzzle.** **Object table → pocket table: YES.** Group by `pocket`, count, add the grams (for `main`: 380 + 640 + 210 = 1230). **Pocket table → object table: NO.** Only the totals survive. Principle: you can always squash rows together and never pull them apart, so record the finest grain you care about.
+
+### Workbook Week 4 — 🤔 Think Deeper (T1–T2)
+
+**T1. Add up but not split.** Full credit has this idea: **adding is a calculation, splitting is a guess.** When rows are added, everything needed is written down; when one row is split, how it was divided was never recorded. `1230` over three objects has endless possible splits. The example must be the student's own, not the backpack or the videos. Model:
+> *"My mum's receipt shows one line: `vegetables ₹240`. I can add it to the fruit line for a food total, but I can't work out the onions, because the till never wrote them down. One line per item would give me both."*
+
+Other good examples: a school report with one grade per subject; a monthly electricity bill (cannot recover Tuesday); a team's total score (cannot recover one player's runs).
+
+**T2. A missing column that matters.** Full credit names (a) a specific missing column, (b) a specific decision, and (c) **who** is affected. Model answers:
+> *"A school's attendance table has `present` and `absent` but no `reason`. A child who missed twelve days caring for a sick parent looks identical to one who bunked off twelve times, and the first child gets in trouble for something that was not their fault."*
+> *"A hospital records temperature, blood pressure and age, but not whether the patient can afford the medicine. The poorest patients get advice they can never use."*
+
+Not full credit: "if you leave out a column the machine won't work properly." It is true and names nobody.
+
+### Workbook Week 4 — 🛠️ Build It: Your Life In 30 Rows, Part 1
+
+There is no single right answer. Check against the seven steps in the workbook.
+
+**Row unit (step 1, and "Yesterday this happened ___ times", step 2).** Correct if it produces 3–5 rows a day:
+
+| Row unit | Rows per day | 7 days gives |
+|---|---|---|
+| one meal or snack | 3–5 | 21–35 ✅ |
+| one time I picked up my phone (over 5 minutes) | 4–8 | 28–56 ✅ |
+| one journey from A to B | 4–6 | 28–42 ✅ |
+| one homework sitting | 2–4 | 14–28 ⚠️ tight, allow it with a note |
+| one day | 1 | 7 ❌ reject, or switch to a 30-day project |
+
+**Four columns and measuring instructions (steps 3–4).** Model answer for "one meal":
+
+| Column | Instruction |
+|---|---|
+| `meal_type` | One of exactly: `breakfast`, `lunch`, `dinner`, `snack` |
+| `minutes_eating` | Clock time from first bite to last, rounded to whole minutes |
+| `main_food` | The biggest single item, lowercase with underscores, from my written list |
+| `sleepy_after_1to5` | Rated exactly one hour later. 1 = wide awake, 5 = could fall asleep now |
+
+Marking point: "how sleepy I was" **fails**. "Rated exactly one hour later, 1 = wide awake, 5 = could fall asleep now" **passes**, because a stranger could repeat it. Also check names are lowercase with underscores, and that they tested one instruction on a person.
+
+**Seven rows (step 5).** Model answer:
+
+| row_id | date | meal_type | minutes_eating | main_food | sleepy_after_1to5 |
+|---|---|---|---|---|---|
+| 1 | 2026-09-03 | breakfast | 8 | idli | 2 |
+| 2 | 2026-09-03 | lunch | 25 | rice_dal | 5 |
+| 3 | 2026-09-03 | dinner | 15 | roti_sabzi | 2 |
+| 4 | 2026-09-04 | breakfast | 10 | dosa | 2 |
+| 5 | 2026-09-04 | lunch | 22 | rice_dal | 4 |
+| 6 | 2026-09-04 | snack | 4 | biscuits | 1 |
+| 7 | 2026-09-04 | dinner | 18 | rice_curry | 3 |
+
+**Blanks log (step 6).** Any blank must have a row, a column and a reason. A blank with a reason is full credit; an unexplained blank, or a suspiciously perfect table with no blanks and numbers that look made up, is worth a gentle question.
+
+**Row-unit sentence (step 7).** Full credit names the alternative it beat:
+> *"One row = one meal, because I want to find out which meals make me sleepy, and if one row were one day I couldn't tell which meal did it — the whole day would be squashed into a single line."*
+
+Half credit states the choice but not the rejected alternative: *"One row = one meal because I eat several meals a day."* Push for the comparison when you mark it.
+
+### Workbook Week 4 — 🎨 Draw It
+
+Marked on five things, not artistic skill:
+- [ ] `ONE ROW = ONE ______` written **before** the grid
+- [ ] At least 4 rows and 4 columns, filled in
+- [ ] Four leader lines labelling the **header**, one **row**, one **column**, one **cell**
+- [ ] The header explicitly marked as *not data* (e.g. "not a fish")
+- [ ] One question it can answer, one it cannot, and a rejected row unit **with a reason**
+
+The most common mistake: labelling the header as "the first row". Have them write "not one of the things being measured" beside it.
+
+### Workbook Week 4 — 📊 Self-Check
+
+Not marked. Read the ticks and the "one thing I still want to ask about" line. Several 😕 on "Name the row unit" means reteach with the register example from Differentiation before Week 5.
+
+### In-class record sheet (hand-ruled, not in the workbook)
 
 There is no fixed answer; the marking criteria are:
 
@@ -871,47 +1006,6 @@ A worked example of a fully correct sheet is Figure 4.6.
 | side | 2 | 760 |
 
 *(main: 210 + 640 + 380 = 1230. front: 6 + 12 + 45 = 63. side: 500 + 260 = 760. All eight objects accounted for: 3 + 3 + 2 = 8. Grand total 2053 g, which matches the object table.)*
-
-### Workbook Week 4, page 4 — "Your Life In 30 Rows", part 1
-
-**Question: Choose your row unit.** Any of these is correct if it produces 3–5 rows a day:
-
-| Row unit | Rows per day | 7 days gives |
-|---|---|---|
-| one meal or snack | 3–5 | 21–35 ✅ |
-| one time I picked up my phone (over 5 minutes) | 4–8 | 28–56 ✅ |
-| one journey from A to B | 4–6 | 28–42 ✅ |
-| one homework sitting | 2–4 | 14–28 ⚠️ tight, allow it with a note |
-| one day | 1 | 7 ❌ — reject, or switch to a 30-day project |
-
-**Question: four column headers with measuring instructions.** A model answer for the "one meal" row unit:
-
-| Column | Instruction |
-|---|---|
-| `meal_type` | One of exactly: `breakfast`, `lunch`, `dinner`, `snack` |
-| `minutes_eating` | Clock time from first bite to last, rounded to whole minutes |
-| `main_food` | The biggest single item, lowercase with underscores, from my written list |
-| `sleepy_after_1to5` | Rated exactly one hour later. 1 = wide awake, 5 = could fall asleep now |
-
-Marking point: an instruction like "how sleepy I was" **fails**. "Rated exactly one hour later, 1 = wide awake, 5 = could fall asleep now" **passes**, because a stranger could repeat it.
-
-**Question: seven rows of real data.** Model answer (first 7 rows of a meals table):
-
-| row_id | date | meal_type | minutes_eating | main_food | sleepy_after_1to5 |
-|---|---|---|---|---|---|
-| 1 | 2026-09-03 | breakfast | 8 | idli | 2 |
-| 2 | 2026-09-03 | lunch | 25 | rice_dal | 5 |
-| 3 | 2026-09-03 | dinner | 15 | roti_sabzi | 2 |
-| 4 | 2026-09-04 | breakfast | 10 | dosa | 2 |
-| 5 | 2026-09-04 | lunch | 22 | rice_dal | 4 |
-| 6 | 2026-09-04 | snack | 4 | biscuits | 1 |
-| 7 | 2026-09-04 | dinner | 18 | rice_curry | 3 |
-
-**Question: one sentence explaining the row unit.** A full-credit answer names the alternative it beat:
-
-> *"One row = one meal, because I want to find out which meals make me sleepy, and if one row were one day I couldn't tell which meal did it — the whole day would be squashed into a single line."*
-
-A half-credit answer states the choice but not the rejected alternative: *"One row = one meal because I eat several meals a day."* True, but it doesn't show the reasoning. Push for the comparison when you mark it.
 
 ---
 

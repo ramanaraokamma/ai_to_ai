@@ -17,7 +17,7 @@ This table is the lesson in one view: what is taught, what you need to have read
 | **New maths** | **the shape of a grid of numbers** — rows × columns, written `(3, 2)`, counted off a printout, and established as the first thing you print when anything is confusing |
 | **New syntax** | `np.maximum(0, z)` · `np.tanh(z)` · `arr.reshape(r, c)` · `arr.T` |
 | **Dataset** | Hand-typed 3-input rows and small 3×2 grids. Then, in the last five minutes only, a **first look** at `make_moons(random_state=0)` — 400 points, ships inside scikit-learn, no download. |
-| **Materials** | **Six index cards per group**, large, written in thick pen: three input cards, three weight cards, one bias card (see 🎲) · printed workbook pages 16.1–16.6 · the Bug Log · a calculator per student that has an `e^x` key · a wide clear space on the board for the four-row table |
+| **Materials** | **Six index cards per group**, large, written in thick pen: three input cards, three weight cards, one bias card (see 🎲) · the printed workbook (`workbook/week-16.md`, every section; the homework uses M2 and Build It, see 📤) · the Bug Log · a calculator per student that has an `e^x` key · a wide clear space on the board for the four-row table |
 | **Tech needed** | Laptop with Python 3, numpy, matplotlib, scikit-learn. **No PyTorch this week** — that is Week 20. No internet, no downloads. |
 | **Prep time** | 20 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | Every file today runs in **under 2 seconds**. Nothing trains. The `make_moons` scatter takes about 1 second including the plot. |
@@ -458,9 +458,9 @@ row                       z     ReLU   sigmoid     tanh
 
 **Runtime: well under a second.**
 
-- [ ] **Run `shapes8.py`** (full file in the Answer Key, page 16.2) so the three printouts are familiar. **Under a second.**
-- [ ] **Run `collapse.py`** (full file in the Answer Key, page 16.3). The line you care about is the last one: **`biggest disagreement between two layers and one line: 4.440892098500626e-16`**. **Under a second.**
-- [ ] **Run `moons_look.py`** (Answer Key, page 16.6) and **look at `moons.png`**. You will show it for ninety seconds at the end. **About 1 second.**
+- [ ] **Run `shapes8.py`** (full file in the Answer Key, under Build It Part B) so the three printouts are familiar. **Under a second.**
+- [ ] **Run `collapse.py`** (full file in the Answer Key, under M4 — "The chapter's own collapse"). The line you care about is the last one: **`biggest disagreement between two layers and one line: 4.440892098500626e-16`**. **Under a second.**
+- [ ] **Run `moons_look.py`** (Answer Key, last section, "Not in the workbook — the `make_moons` first look") and **look at `moons.png`**. You will show it for ninety seconds at the end. **About 1 second.**
 - [ ] **Do these four things on your own calculator.** If you have not, you cannot answer *"where did 0.550 come from?"*, and somebody will ask:
 
 | Keys | Result |
@@ -473,7 +473,7 @@ row                       z     ReLU   sigmoid     tanh
 - [ ] **Break it on purpose, twice**, so both deliberate mistakes in the live-code are muscle memory:
   1. Write `max(0, z)` instead of `np.maximum(0, z)` where `z` is a grid. Real message: `ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()`.
   2. Write `G.reshape(4, 2)` on a six-number grid. Real message: `ValueError: cannot reshape array of size 6 into shape (4,2)`.
-- [ ] **Print workbook pages 16.1–16.6.**
+- [ ] **Print the workbook, `workbook/week-16.md`, without its ✅ Answers section** (it is the last section, inside a `<details>` block — cut it off before printing, or the student has the answers). Read its ✅ Answers section yourself first: the 🔑 Answer Key below follows the workbook item by item.
 - [ ] **Clear a wide space on the board** for a five-column, four-row table. You will fill it in by hand before any laptop is opened.
 
 ### 5 minutes on the day
@@ -913,7 +913,7 @@ And the sentence for this week:
   - **one Adder** — does the running total out loud, and *only* out loud
   - **one Squasher** — applies ReLU, and says the rule before the answer
 - Board table drawn, blank: `row | z | ReLU | sigmoid | tanh`.
-- Workbook page 16.3 (the collapse) face down on desks. **Do not let them turn it over yet.**
+- The workbook's **M4 — prove the collapse** face down on desks (it is the same proof, on a new network). **Do not let them turn it over yet.**
 
 ![Human Neuron: who holds which card](../figures/fig-w16-6-human-neuron-card-setup.svg)
 *Figure 16.5 — Human Neuron: who holds which card. The Adder reads out `0.8 − 0.7 + 0.6 − 0.5` and gets `z = 0.20`.*
@@ -1241,27 +1241,62 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour, two pages, and the second page has an unusual instruction so listen for it.
+> "About an hour, two jobs, and the second one has an unusual instruction so listen for it.
 >
-> **First, page 16.1 — six rows, three squashes, eighteen numbers.** Same judge as today: weights `0.4`, `−0.7`, `1.2`, bias `−0.5`. Six new rows. For each one: work out `z`, then ReLU, then sigmoid, then tanh, **in pen, on the page**. Then run the check script and put a **tick or a cross** beside every one of the eighteen. **I want to see crosses.** Eighteen ticks with no working is a page I do not believe.
+> **First, workbook M2 and Build It Part A — six rows, three squashes, eighteen numbers.** Same judge as today: weights `0.4`, `−0.7`, `1.2`, bias `−0.5`. Six new rows. For each one: work out `z`, then ReLU, then sigmoid, then tanh, **in pen, on the page**. Then write `b5w16.py` (B5), run it, and put a **tick or a cross** beside every one of the eighteen in the Build It table. **I want to see crosses.** Eighteen ticks with no working is a page I do not believe.
 >
-> **Second, page 16.2 — eight shapes, and here is the unusual bit. Write your prediction for all eight BEFORE you run anything.** In pen. Then run the script once, and for every one you got wrong, write **one line** saying what you had thought and what was actually true.
+> **Second, Build It Part B — eight shapes, and here is the unusual bit. Write your prediction for all eight BEFORE you run anything.** In pen. Then run the script once, and for every one you got wrong, write **one line** saying what you had thought and what was actually true.
 >
 > That one line is what I am marking. Not the right answer — the sentence about the miss. If you got all eight right first time, tell me which one you were least sure about and why."
 
-**Workbook pages:** 16.3, 16.4 and 16.5 in class · **16.1 and 16.2** at home · **16.6** stretch, for anybody who wants a longer look at `make_moons` and the tanh comparison.
+**Workbook split (the old page-number split no longer applies — the workbook is organised by section, not by page):** **in class**, only M4 is on the desks (face down, for the activity's collapse moment); **at home, required:** M2, then B5 (`b5w16.py`), then **Build It Part A and Part B**; **at home, next tier** (for the student who finishes early, or over a longer week): M1, M3, M4, P1–P4 and the Warm-Up; **the rest** — Practice Sets A and B (B1–B4), Fix the Broken Program, Puzzle of the Week, Think Deeper, Draw It, the Build It stretch and Bug Log, and Self-Check — is the extended set, to be chosen by the student or assigned across the week. There is no `make_moons` section in the workbook; the ninety-second look is done in class only.
 
-**Expected time:** 35 min on the eighteen numbers with a calculator · 20 min on the eight shapes and the miss-sentences. **About 55 minutes.**
+**Expected time:** 35 min on the eighteen numbers with a calculator (M2 and Build It Part A) · 20 min on the eight shapes and the miss-sentences (Build It Part B). **About 55 minutes** — allow extra if B5 is the first program the student has written from a spec; the next tier adds roughly another hour (estimate, not timed).
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is `z` right on all six rows?** A wrong `z` makes all three squashes wrong, so mark `z` first and do not penalise a correct squash of a wrong `z` twice. **Two — are there crosses on page 16.1?** Eighteen unmarked ticks means the hand answers were written after the run, which is the one thing the page exists to prevent. **Three — do the shape sentences name a *reason*?** *"I put `(2, 3)` and it was `(3, 2)`"* is a correction, not a sentence. The one that earns full marks is *"I read the columns first — rows come first"*, or *"I forgot that transposing a flat list does nothing because there is nothing to flip."* A student whose eight sentences all say "I got it wrong" has done the page and missed the point, and that is worth one line of feedback: **"tell me what you were thinking, not what you scored."**
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is `z` right on all six rows?** A wrong `z` makes all three squashes wrong, so mark `z` first and do not penalise a correct squash of a wrong `z` twice. **Two — are there crosses in the Build It Part A table?** Eighteen unmarked ticks means the hand answers were written after the run, which is the one thing the page exists to prevent. **Three — do the "if I missed it, why" sentences in Build It Part B name a *reason*?** *"I put `(2, 3)` and it was `(3, 2)`"* is a correction, not a sentence. The one that earns full marks is *"I read the columns first — rows come first"*, or *"I forgot that transposing a flat list does nothing because there is nothing to flip."* A student whose eight sentences all say "I got it wrong" has done the page and missed the point, and that is worth one line of feedback: **"tell me what you were thinking, not what you scored."**
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+**This key follows the shipped student workbook (`workbook/week-16.md`) section by section and item by item** — Warm-Up, Do the Maths by Hand (M1–M4), Predict the Output (P1–P4), Practice Set A (A1–A6), Practice Set B (B1–B5), Fix the Broken Program, Puzzle of the Week, Think Deeper (T1–T2), Build It, Draw It and Self-Check — using the workbook's own labels, so you can mark from this page alone. The workbook has sections, not numbered pages; **there is no "Page 16.N" anywhere in it.** Values are taken from the workbook's own Answers section at the end of the file, and the arithmetic has been re-checked. Where the lesson itself needs a longer script or table (the eighteen numbers, the eight shapes, the chapter's collapse, the slopes table, the error snippets, `make_moons`), it sits under the workbook item it serves.
 
-### Page 16.1 — Six neuron outputs, three squashes, eighteen numbers
+### Warm-Up
+
+*Five questions about last week (Week 15, gradient descent from scratch). Not taught again this week, so expect some rust.*
+
+| Item | Answer | What to listen for |
+|---|---|---|
+| **W1** | **One number per knob.** A model with three knobs has a gradient of three numbers — a **list**, not a single value. `[−0.375, +0.125, 0.000]` is a gradient. | "How many" is *the number of weights*. A student who says "one" has forgotten that a gradient is a list. |
+| **W2** | Because **the gradient points uphill** and you want to go down. Subtracting takes you the opposite way to the slope. Write `+` and the loss climbs, smoothly and forever. | The word *uphill*. |
+| **W3** | `−ln(0.5) = 0.693147`. Every weight starts at zero, so every score is zero, so every probability is `0.5`. **It is the loss of a model that is guessing.** | The blank is `0.5`. |
+| **W4** | The `−` in `w -= lr * grad` has become a `+`. **One character.** A loss that rises *smoothly* with a sensible learning rate is this bug and essentially nothing else — a bad learning rate makes it jump about, not climb tidily. | "Sign of the update line". |
+| **W5** | **The model's.** The loop is correct and converged; the model draws a **straight line** (it predicts "late" when `z ≥ 0`, the equation of a line) and the data is not straight. **That is the reason Weeks 16 to 19 exist.** | Blaming the model, with the word *straight*. |
+
+### Do the Maths by Hand
+
+*Calculator only, no code. M1 is counting; M2 to M4 are the arithmetic the shape is wrapped around.*
+
+#### M1 — count the shape off the printout
+
+| grid | shape | how many numbers |
+|---|---|---|
+| `P` | **(4, 2)** | **8** |
+| `Q` | **(2, 3)** | **6** |
+| `R` | **(4, 1)** | **4** |
+| `S` | **(1, 6)** | **6** |
+| `T` | **(3,)** | **3** |
+| `U` | **(1, 1)** | **1** |
+
+**M1(a).** **`T`, which is `(3,)`.** The lone comma is Python saying *"this shape has exactly one number in it"* — three numbers, flat, with no rows and columns at all. It is not a typo and not a printing bug. (The question says "only one number *in the shape*"; a student who answers `U` has read it as "one number in the grid" — `U` is `(1, 1)`, two numbers in its shape.)
+
+**M1(b).** `(1, 8)`, `(2, 4)`, `(4, 2)`, `(8, 1)` — **anything whose two numbers multiply to 8** (and `(8,)` if flat shapes are allowed).
+
+**M1(c).** `3 × 3 = 9` and `P` has **8**. numpy will not invent a ninth number, so it refuses.
+
+**Marking tip.** The commonest M1 slip is writing columns first — `P` as `(2, 4)`. Ask them to count with a finger going *down* first.
+
+#### M2 — six neuron outputs, three squashes, eighteen numbers (also Build It Part A)
 
 *Weights `w = [0.4, −0.7, 1.2]`, bias `b = −0.5`. For each row: `z` first, then the three squashes to three decimal places. These are the rows in the student workbook's M2 and Build It Part A.*
 
@@ -1326,70 +1361,144 @@ row                         z     ReLU   sigmoid     tanh
 
 **Three things worth a comment when you mark this.** Row 6's `z` is `−0.15`, a whisker below zero — **ReLU says `0.000` and tanh says `−0.149`, and a student who wrote `0.000` for tanh has confused the two.** Row 5 and row 6 have the same ReLU answer (`0.000`) from different negative `z` values (`−0.20` and `−0.15`); ReLU threw away two different numbers and nobody downstream can tell. And three of the six ReLU answers are `0.000`, which is not a mistake — **it is what a picky neuron does a lot of the time.** A common slip on the sigmoid column is to skip the negate and get `1 − sigmoid(z)` (row 1 would read `0.250` rather than `0.750`).
 
-### Page 16.2 — Predict the shape of eight arrays
+**M2(b).** **Three** negatives: `−0.604`, `−0.197`, `−0.149`. **All three are in the tanh column.** ReLU's floor is a hard zero. Sigmoid's floor is zero too, and it never even reaches it — it squeezes everything into the gap between 0 and 1. **Tanh is the only one of the three allowed to say "actively bad".**
 
-*Write all eight predictions in pen first. Then run once. Item 4 is a deliberate error.*
+**M2(c).** Row 5 lost **`−0.20`** and row 6 lost **`−0.15`**. **No, you cannot get either back.** Both arrive at the next layer as `0`, and nothing downstream can tell them apart — or tell either from `−47.5`. That is exactly the point of T1.
 
-| # | Expression | Prediction | Real | Why |
-|:--:|---|---|---|---|
-| 1 | `A.shape` (`A = [[1, 2, 3], [4, 5, 6]]`) | `(2, 3)` | **`(2, 3)`** | Two rows, three columns. Rows first. |
-| 2 | `A.T.shape` | `(3, 2)` | **`(3, 2)`** | Rows become columns: `[[1 4], [2 5], [3 6]]`. |
-| 3 | `A.reshape(3, 2).shape` | `(3, 2)` | **`(3, 2)`** | Same shape as #2, **different grid**: `[[1 2], [3 4], [5 6]]`. It reads along the rows. |
-| 4 | `A.reshape(4, 2)` | *(not a shape)* | **`ValueError: cannot reshape array of size 6 into shape (4,2)`** | `4 × 2 = 8` but `A` holds 6 numbers. numpy will not invent two or throw two away. |
-| 5 | `v.shape` (`v = [2.0, 4.0, 6.0]`) | `(3,)` | **`(3,)`** | Flat: three numbers, no rows and columns. One number in the shape, hence the trailing comma. |
-| 6 | `v.T.shape` | `(3,)` | **`(3,)`** | Nothing to flip in a flat list, so transposing does nothing, silently. |
-| 7 | `v.reshape(3, 1).shape` | `(3, 1)` | **`(3, 1)`** | `3 × 1 = 3`, so it is legal. One tall column. |
-| 8 | `(rows * w).sum(axis=1).shape` | `(6,)` | **`(6,)`** | Six rows in, one weighted sum per row, so six numbers in a flat list. |
+**Eight-place values, for anyone checking a calculator properly:**
 
-**The script, and its real output:**
+```text
+z =  1.1000  relu=1.100000  sig=0.75026011  tanh= 0.80049902
+z =  1.2000  relu=1.200000  sig=0.76852478  tanh= 0.83365461
+z = -0.7000  relu=0.000000  sig=0.33181223  tanh=-0.60436778
+z =  0.9000  relu=0.900000  sig=0.71094950  tanh= 0.71629787
+z = -0.2000  relu=0.000000  sig=0.45016600  tanh=-0.19737532
+z = -0.1500  relu=0.000000  sig=0.46257015  tanh=-0.14888503
+```
+
+#### M3 — how steep is each squash, by nudging
+
+**Sigmoid at `z = 1.0`:**
+
+```text
+e^(−1.001) = 0.367512,  so  sigmoid(1.001) = 1 ÷ 1.367512 = 0.73125515
+e^(−0.999) = 0.368248,  so  sigmoid(0.999) = 1 ÷ 1.368248 = 0.73086192
+
+it moved:  0.73125515 − 0.73086192 = 0.00039323
+we moved:  0.002
+
+0.00039323 ÷ 0.002 = 0.196615
+```
+
+The chapter's table says **`0.196612`**, and Python with every digit gets `0.196612`. **Accept anything from `0.196` to `0.197`.**
+
+> **⚠️ Watch out:** the thing being subtracted is about **four ten-thousandths**. A student who rounds the two sigmoids to four places first (`0.7313` and `0.7309`) gets `0.0004 ÷ 0.002 = 0.2`, which is wrong in the second digit. **When you subtract two nearly-equal numbers, every digit thrown away earlier comes back magnified.** Keep eight places on this item.
+
+**M3(a).** `tanh(1.001) = 0.76201381`, `tanh(0.999) = 0.76117386`:
+
+```text
+(0.76201381 − 0.76117386) ÷ 0.002 = 0.00083995 ÷ 0.002 = 0.419975
+```
+
+**`0.419974` to six places** — the chapter's number for tanh at `z = 1.0`. **About twice as steep as sigmoid at `z = 1`** (and four times as steep at `z = 0`): tanh wins in the middle and loses at the edges.
+
+**M3(b).** **No calculator needed, and the answer is `1`.** ReLU at `z = 1` is firing, and while it fires it repeats its input exactly — nudge the input up by a thousandth and the output goes up by a thousandth. `0.002 ÷ 0.002 = 1`.
+
+**M3(c).** `0.25⁵ = 0.0009765625` — about **one thousandth** of the signal survives five sigmoid layers. `1⁵ = 1` — **all** of it. That one comparison is the main reason ReLU is the default (not the only one: it is also cheap).
+
+**The lesson's own slopes script and table** (the chapter's Trick 4; it gives the same `0.196612` and `0.419974` and the answers to the chapter questions below):
+
+*Measure the steepness of each squash by nudging, then answer the three questions.*
 
 ```python
-"""shapes8.py - eight shapes, predicted in pen first."""
+"""slopes.py - why ReLU is the default hidden activation."""
 import numpy as np
+
 np.random.seed(0)
+sigmoid = lambda z: 1.0 / (1.0 + np.exp(-z))
+h = 0.001
 
-A = np.array([[1, 2, 3],
-              [4, 5, 6]])
-v = np.array([2.0, 4.0, 6.0])
-w = np.array([0.4, -0.7, 1.2])
-rows = np.array([[1.0, 0.0, 1.0],
-                 [0.0, 1.0, 2.0],
-                 [3.0, 2.0, 0.0],
-                 [2.0, 0.0, 0.5],
-                 [-1.0, -1.0, 0.0],
-                 [0.5, 1.5, 1.0]])
+print("%6s %12s %12s %12s" % ("z", "sigmoid slope", "tanh slope", "ReLU slope"))
+for z in [0.0, 1.0, 2.0, 5.0, 10.0]:
+    s = (sigmoid(z + h) - sigmoid(z - h)) / (2 * h)
+    t = (np.tanh(z + h) - np.tanh(z - h)) / (2 * h)
+    r = (np.maximum(0, z + h) - np.maximum(0, z - h)) / (2 * h)
+    print("%6.1f %12.6f %12.6f %12.6f" % (z, s, t, r))
 
-print("1. A.shape                       =", A.shape)
-print("2. A.T.shape                     =", A.T.shape)
-print("3. A.reshape(3, 2).shape         =", A.reshape(3, 2).shape)
-print("5. v.shape                       =", v.shape)
-print("6. v.T.shape                     =", v.T.shape)
-print("7. v.reshape(3, 1).shape         =", v.reshape(3, 1).shape)
-print("8. (rows * w).sum(axis=1).shape  =", (rows * w).sum(axis=1).shape)
 print()
-print("4. A.reshape(4, 2) ->")
-print(A.reshape(4, 2))
+print("five sigmoid layers stacked: 0.25 ** 5 =", 0.25 ** 5)
+print("five ReLU    layers stacked: 1.00 ** 5 =", 1.0 ** 5)
 ```
 
 ```text
-1. A.shape                       = (2, 3)
-2. A.T.shape                     = (3, 2)
-3. A.reshape(3, 2).shape         = (3, 2)
-5. v.shape                       = (3,)
-6. v.T.shape                     = (3,)
-7. v.reshape(3, 1).shape         = (3, 1)
-8. (rows * w).sum(axis=1).shape  = (6,)
+     z sigmoid slope   tanh slope   ReLU slope
+   0.0     0.250000     1.000000     0.500000
+   1.0     0.196612     0.419974     1.000000
+   2.0     0.104994     0.070651     1.000000
+   5.0     0.006648     0.000182     1.000000
+  10.0     0.000045     0.000000     1.000000
 
-4. A.reshape(4, 2) ->
-Traceback (most recent call last):
-  File "shapes8.py", line 25, in <module>
-    print(A.reshape(4, 2))
-ValueError: cannot reshape array of size 6 into shape (4,2)
+five sigmoid layers stacked: 0.25 ** 5 = 0.0009765625
+five ReLU    layers stacked: 1.00 ** 5 = 1.0
 ```
 
-**The ones that are supposed to catch people, and what a good miss-sentence looks like.** Items 5 and 6 are the silent pair: `v` is flat, so `v.T` has no rows and columns to swap and quietly returns the same `(3,)`. A good sentence: *"I thought transposing would make it a column, but a flat list has nothing to flip."* Items 2 and 3 both print `(3, 2)` and are different grids; a student who assumes `.T` and `.reshape` give the same thing has only compared the shapes, not the contents. Item 4 is the only non-shape: the last line of the traceback is the answer, and the arithmetic `4 × 2 = 8` against 6 numbers is what refused it. A good sentence for item 8: *"I expected `(6, 3)` because I was multiplying a grid, but `sum(axis=1)` collapses each row to one number."*
+**Q1 — "What is the steepest sigmoid ever gets, and where?"**
+**`0.25`, at `z = 0`.** Everywhere else it is less. That is a hard ceiling.
 
-### Page 16.3 — The collapse, in three lines
+**Q2 — "Multiply five sigmoid slopes together at their very best. What survives?"**
+`0.25 × 0.25 × 0.25 × 0.25 × 0.25 = 0.0009765625` — **about one thousandth.** And that is the *best* case; at `z = 5` a single layer already contributes `0.0066`, so five of those would be about `1.3e-11`. Five ReLU layers give `1 × 1 × 1 × 1 × 1 = 1` — **all of it.**
+
+**Q3 — "Why is ReLU's slope `0.500000` at `z = 0`?"**
+Because ReLU has a **corner** there and a corner has no single steepness. Nudge up and the slope is 1; nudge down and it is 0; the two-sided nudge averages them to `0.5`. **This is a place where the maths genuinely has no answer and every library makes a documented decision** — PyTorch, in Week 20, will report `0`. A student who writes *"there isn't one answer, so somebody chose"* has understood something most textbooks skip.
+
+**One honest note for marking:** the tanh column at `z = 0` says `1.000000`, which is **four times steeper than sigmoid**. So why is tanh not the default? Because it flattens out just as badly further along — by `z = 5` it is `0.000182`, *worse* than sigmoid. Tanh is better near the middle and worse at the edges. ReLU never flattens at all on the side that fires, and that is the whole argument.
+
+#### M4 — prove the collapse, in three lines
+
+*The workbook uses a **new** network (not the chapter's), so a student cannot copy the class proof.*
+
+```text
+h1 =  0.2·x₁ + 1.5·x₂ − 0.4
+h2 =  0.6·x₁ − 0.9·x₂ + 0.2
+out = 2.0·h1 + 1.0·h2 − 0.1
+
+out = 2.0(0.2x₁ + 1.5x₂ − 0.4) + 1.0(0.6x₁ − 0.9x₂ + 0.2) − 0.1
+
+x₁ terms:        0.4 + 0.6 = 1.0
+x₂ terms:        3.0 − 0.9 = 2.1
+plain numbers:  −0.8 + 0.2 − 0.1 = −0.7
+
+out = 1.0·x₁ + 2.1·x₂ − 0.7
+```
+
+**M4(a).** On `x = [3.0, 2.0]`:
+
+```text
+two layers:  h1 = 0.2(3) + 1.5(2) − 0.4 = 0.6 + 3.0 − 0.4 = 3.20
+             h2 = 0.6(3) − 0.9(2) + 0.2 = 1.8 − 1.8 + 0.2 = 0.20
+             out = 2.0(3.20) + 1.0(0.20) − 0.1 = 6.4 + 0.2 − 0.1 = 6.50
+
+one line:    out = 1.0(3) + 2.1(2) − 0.7 = 3.0 + 4.2 − 0.7 = 6.50
+```
+
+**They agree. Exactly** — the same function written two ways.
+
+**M4(b).** On `x = [1.0, 4.0]` with ReLU on `h1` and `h2`:
+
+```text
+h1 = 0.2(1) + 1.5(4) − 0.4 = 0.2 + 6.0 − 0.4 =  5.80
+h2 = 0.6(1) − 0.9(4) + 0.2 = 0.6 − 3.6 + 0.2 = −2.80    ← h2 gets binned
+
+with ReLU:  out = 2.0(5.80) + 1.0(0) − 0.1 = 11.60 − 0.1 = 11.50
+no squash:  out = 2.0(5.80) + 1.0(−2.80) − 0.1 = 11.6 − 2.8 − 0.1 = 8.70
+the gap:    11.50 − 8.70 = 2.80
+```
+
+**M4(c).** **The gap is exactly the contribution that got thrown away.** `h2` was `−2.80` and its weight into the output is `1.0`, so binning it removed `1.0 × (−2.80) = −2.80` from the answer, which *raised* the answer by `2.80`. **ReLU bends the line because it cuts some rows and leaves others alone; a rule that behaves differently in different places is not a straight line.**
+
+**Marking tip.** If `x₁` and `x₂` collect wrongly here, B4's gap column will not be zero — the student has a built-in check. The usual slip is sign: `1.0 × (−0.9x₂)` collected as `+0.9`.
+
+**The chapter's own collapse** (the one proved in class with `h1 = 0.5x1 + 0.8x2 + 0.1`, used by A6(e), T1 and the activity; `collapse.py` in the Prep Checklist is this file):
 
 *Two layers, no squash. Substitute and simplify.*
 
@@ -1486,54 +1595,322 @@ biggest disagreement between two layers and one line: 4.440892098500626e-16
 
 **Three things to point at in that table.** The `gap` column is `0.000000` on **every** row — the two-layer network and the single line are not "close", they are the same function. The last line says the biggest disagreement anywhere is `4.44e-16`, which is **zero as far as a computer is concerned**; it is the same rounding wobble that makes `0.1 + 0.2` print as `0.30000000000000004`. And the `with ReLU` column disagrees on **three of the five rows** — rows `(2.0, −1.0)`, `(−1.0, −1.0)` and `(3.0, 3.0)` — which is precisely the network doing something a line cannot.
 
-### Page 16.4 — Why ReLU is the default hidden activation
+### Predict the Output
 
-*Measure the steepness of each squash by nudging, then answer the three questions.*
+*Prediction in pen first. One of the four prints something that is not a shape and is not a number either (P4 line 4, `()`).*
+
+**P1.**
+
+```text
+(3,)
+(3,)
+(3, 1)
+(1, 3)
+```
+
+**Lines 1 and 2 are identical.** `a.T` did nothing at all, and there was **no error**. A flat `(3,)` has no rows and columns to swap, so transposing it is a no-op. **To get a column you must make it 2-D first:** `a.reshape(3, 1)`.
+
+**P2.**
+
+```text
+[1 3 5]
+[1 2 3]
+False
+```
+
+**Same shape, different grid.** `G.T` reads **down the columns** of the original — one, three, five. `G.reshape(2, 3)` reads **along the rows** — one, two, three. `np.array_equal` compares the *contents*, not the shape, so it says `False`. **Shape is not identity.**
+
+**P3.**
+
+```text
+[0.  0.2 0.7]
+0.7
+(3,)
+```
+
+**`np.maximum`** compares **two things, cell by cell**, and returns a grid the same shape as what went in — it is the ReLU. **`np.max`** looks *inside one array* and returns **the single largest number in it**. Two letters apart, completely different jobs, and mixing them up is a real bug that does not crash.
+
+**P4.**
+
+```text
+(2, 3)
+(2,)
+(3,)
+()
+```
+
+**Line 1 keeps six numbers** because `rows * w` is a **cell-by-cell** multiply: each row's three values are paired against the three weights, giving three products **per row**. Nothing has been added yet. The adding is `.sum(axis=1)`, line 2, which turns six products into two weighted sums.
+
+**Line 4 is `()`** — an **empty** shape, because `.sum()` with no axis adds up *everything* and gives back a single number with no rows and columns. On its own, `(rows * w).sum()` prints **`-1.0999999999999999`** — the total of all six products, `0.7 + (−1.8) = −1.1`, with the usual binary wobble on the last digit.
+
+**Scoring line:** "How many of the answers on this page did you get right? ___ / 14" (P1 has four lines, P2 three, P3 three, P4 four). Accept the student's own count and ask which one surprised them — usually P1 line 2 or P4 line 4.
+
+### Practice Set A
+
+**A1.** neuron → **(vii)** · pre-activation `z` → **(iv)** · activation `a` → **(i)** · ReLU → **(v)** · tanh → **(viii)** · layer → **(iii)** · hidden layer → **(vi)** · MLP → **(ix)** · shape → **(ii)**
+
+**A2.** The spam-filter printout (`w = [0.9, 1.4, −0.6]`, `b = −1.5`, four texts):
+
+| Question | Answer |
+|---|---|
+| a | **Four texts, three features each** — that is what `(4, 3)` says, rows first |
+| b | Because `w` was built from a flat list with no inner brackets. It is **one weight per feature, in a line** — not a grid. `(3,)` and `(3, 1)` hold the same three numbers but behave differently |
+| c | One **feature**, across all four texts. Row 0 of `rows.T` is every text's exclamation-mark count. **Same twelve numbers, a different question** |
+| d | **Both had a negative `z`** — `−3.3` and `−0.7`. ReLU silences anything negative |
+| e | **`−0.997283` and `−0.604368`, both from tanh.** It is the only squash of the three that can go below zero |
+| f | Because there are **four rows**, and a neuron produces **one number per row**. One `z` per text |
+
+**A2(g).** `3 × (−0.6) + (−1.5) = −1.8 − 1.5 = −3.3`. Three shouted words, each weighted `−0.6`, plus the grumpy bias. The blanks are **`−0.6`** and **`−1.5`**.
+
+**A2(h).** **Tanh's `−0.997283`.** ReLU says *"nothing"* and sigmoid says *"very unlikely"*, but both are small positive numbers or zero. Tanh says **"actively, definitely not spam"** — it has a direction, not only a size.
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `TypeError: 'tuple' object is not callable`. `.shape` is a **property**, not a function | drop the brackets: `rows.shape` |
+| b | `ValueError: The truth value of an array with more than one element is ambiguous` | `np.maximum(0, z)` — it asks the question once per cell |
+| c | `AttributeError: 'list' object has no attribute 'shape'`. A plain Python list has no shape | wrap it: `np.array([0.4, -0.7, 1.2])` |
+| d | `ValueError: cannot reshape array of size 6 into shape (4,2)`. `4 × 2 = 8`, and there are 6 | any shape multiplying to 6: `(2,3)`, `(3,2)`, `(1,6)`, `(6,1)` |
+| e | `ValueError: operands could not be broadcast together with shapes (n,3) (4,)`. Four weights, three columns | delete the fourth weight. **One weight per column, always** |
+| f | **No error, and nothing happens.** `a` is flat `(3,)`, so there is nothing to flip and `col` has the same shape and numbers as `a` | `a.reshape(3, 1)`, or `a.reshape(1, 3).T` |
+
+**A3(g).** **f.** Nothing crashes, `col` looks plausible, and the shape is quietly still `(3,)`. **How you would notice: `print(col.shape)`** — this week's whole reflex, and f is the reason it exists.
+
+**A4.** i → **R** · ii → **T** · iii → **Q** · iv → **P** · v → **S**
+
+**A4(f).** **`Q` (`[-0.9800964]`)**: ReLU cannot return a negative number and sigmoid lives strictly between 0 and 1, so neither could have made it. It must be **tanh**. (`S`, `[0.5]`, is sigmoid's answer at `z = 0`.)
+
+**A5.** The eight boxes of the "Label the neuron" figure, in order:
+
+| # | the step | answer |
+|---|---|---|
+| 1 | `1.0 × 0.4` | **0.4** |
+| 2 | `0.0 × (−0.7)` | **0.0** |
+| 3 | `1.0 × 1.2` | **1.2** |
+| 4 | the bias `b` | **−0.5** |
+| 5 | `z` = add rows 1–4 | **1.10** |
+| 6 | `ReLU(z)` | **1.100** |
+| 7 | `sigmoid(z)` | **0.750** |
+| 8 | `tanh(z)` | **0.800** |
+
+Underneath: `w.shape` is **`(3,)`**, six rows of three is **`(6, 3)`**, and the squash that can return a negative number is **tanh**.
+
+**A5(a).** **Box 2, the product `0.0 × (−0.7)`.** It is zero because the **input** was zero, not because anything squashed it. `w₂ = −0.7` is perfectly alive — it simply had nothing to multiply. **An absent input contributes nothing, whatever its weight.**
+
+**A5(b).** **Boxes 4, 5, 6, 7 and 8** — every box from the bias downwards. Boxes 1 to 3 are input × weight and have nothing to do with `b`. Without the bias, `z` would be `1.60` and all three squash answers would change.
+
+**A6.**
+
+**a)** **multiply each input by its own weight**, **add the products plus a bias**, **squash the total**.
+
+**b)** `z` is the number **before** the squash and can be **any number at all — `−40`, `0`, `6000`**; `a` is the number **after** the squash.
+
+**c)** `(4, 3)` means **4** rows and **3** columns, and **rows come first**.
+
+**d)** `.T` reads **down the columns** and `.reshape` reads **along the rows**. Same shape out, **different numbers** inside.
+
+**e)** With no squash, two layers are **one layer, written out the long way**, and the chapter's single line is `out = 1.1·x₁ + 0.4·x₂ + 0.3`.
+
+**f)** ReLU's slope is **1** everywhere it fires, while sigmoid's steepest is ever **0.25** — and `0.25⁵` is about a thousandth.
+
+### Practice Set B
+
+**B1.**
 
 ```python
-"""slopes.py - why ReLU is the default hidden activation."""
 import numpy as np
 
-np.random.seed(0)
-sigmoid = lambda z: 1.0 / (1.0 + np.exp(-z))
-h = 0.001
-
-print("%6s %12s %12s %12s" % ("z", "sigmoid slope", "tanh slope", "ReLU slope"))
-for z in [0.0, 1.0, 2.0, 5.0, 10.0]:
-    s = (sigmoid(z + h) - sigmoid(z - h)) / (2 * h)
-    t = (np.tanh(z + h) - np.tanh(z - h)) / (2 * h)
-    r = (np.maximum(0, z + h) - np.maximum(0, z - h)) / (2 * h)
-    print("%6.1f %12.6f %12.6f %12.6f" % (z, s, t, r))
-
-print()
-print("five sigmoid layers stacked: 0.25 ** 5 =", 0.25 ** 5)
-print("five ReLU    layers stacked: 1.00 ** 5 =", 1.0 ** 5)
+z = np.array([-2.3, 0.2, 0.7])
+print(np.maximum(0, z), np.maximum(0, z).shape)
 ```
 
 ```text
-     z sigmoid slope   tanh slope   ReLU slope
-   0.0     0.250000     1.000000     0.500000
-   1.0     0.196612     0.419974     1.000000
-   2.0     0.104994     0.070651     1.000000
-   5.0     0.006648     0.000182     1.000000
-  10.0     0.000045     0.000000     1.000000
-
-five sigmoid layers stacked: 0.25 ** 5 = 0.0009765625
-five ReLU    layers stacked: 1.00 ** 5 = 1.0
+[0.  0.2 0.7] (3,)
 ```
 
-**Q1 — "What is the steepest sigmoid ever gets, and where?"**
-**`0.25`, at `z = 0`.** Everywhere else it is less. That is a hard ceiling.
+**B2.**
 
-**Q2 — "Multiply five sigmoid slopes together at their very best. What survives?"**
-`0.25 × 0.25 × 0.25 × 0.25 × 0.25 = 0.0009765625` — **about one thousandth.** And that is the *best* case; at `z = 5` a single layer already contributes `0.0066`, so five of those would be about `1.3e-11`. Five ReLU layers give `1 × 1 × 1 × 1 × 1 = 1` — **all of it.**
+```python
+import numpy as np
 
-**Q3 — "Why is ReLU's slope `0.500000` at `z = 0`?"**
-Because ReLU has a **corner** there and a corner has no single steepness. Nudge up and the slope is 1; nudge down and it is 0; the two-sided nudge averages them to `0.5`. **This is a place where the maths genuinely has no answer and every library makes a documented decision** — PyTorch, in Week 20, will report `0`. A student who writes *"there isn't one answer, so somebody chose"* has understood something most textbooks skip.
+w = np.array([0.4, -0.7, 1.2])
+b = -0.5
+x = np.array([1.0, 0.0, 1.0])
 
-**One honest note for marking:** the tanh column at `z = 0` says `1.000000`, which is **four times steeper than sigmoid**. So why is tanh not the default? Because it flattens out just as badly further along — by `z = 5` it is `0.000182`, *worse* than sigmoid. Tanh is better near the middle and worse at the edges. ReLU never flattens at all on the side that fires, and that is the whole argument.
+z = (x * w).sum() + b
 
-### Page 16.5 — Three errors, read and fixed
+print("z       = %.2f" % z)
+print("ReLU    = %.6f" % np.maximum(0, z))
+print("sigmoid = %.6f" % (1.0 / (1.0 + np.exp(-z))))
+print("tanh    = %.6f" % np.tanh(z))
+```
+
+```text
+z       = 1.10
+ReLU    = 1.100000
+sigmoid = 0.750260
+tanh    = 0.800499
+```
+
+`0.4 + 0 + 1.2 − 0.5 = 1.10`. **If they wrote `1.10` on the page first, tick it.**
+
+**B3.**
+
+```python
+import numpy as np
+
+rows = np.array([[1.0, 0.0, 1.0], [0.0, 1.0, 2.0]])
+w = np.array([0.4, -0.7, 1.2])
+
+print("%-22s %s" % ("rows", rows.shape))
+print("%-22s %s" % ("rows.T", rows.T.shape))
+print("%-22s %s" % ("w", w.shape))
+print("%-22s %s" % ("w.reshape(3, 1)", w.reshape(3, 1).shape))
+print("%-22s %s" % ("np.maximum(0, rows)", np.maximum(0, rows).shape))
+```
+
+```text
+rows                   (2, 3)
+rows.T                 (3, 2)
+w                      (3,)
+w.reshape(3, 1)        (3, 1)
+np.maximum(0, rows)    (2, 3)
+```
+
+**B3(a).** **Yes, those two are the same grid here** — but only because every number in this `rows` is already zero or positive. `np.maximum(0, rows)` squashes **every cell in place**, so the shape is untouched and no number moves; with a negative cell the *value* would change to `0` but would still sit in the same place. It is `.T` and `.reshape` that give the same shape with the numbers *moved*. **A squash never changes a shape; a rearrangement never changes the count.**
+
+**B4.**
+
+```python
+import numpy as np
+
+def two_layers_no_squash(x1, x2):
+    h1 = 0.2 * x1 + 1.5 * x2 - 0.4
+    h2 = 0.6 * x1 - 0.9 * x2 + 0.2
+    return 2.0 * h1 + 1.0 * h2 - 0.1
+
+def one_line(x1, x2):
+    return 1.0 * x1 + 2.1 * x2 - 0.7
+
+for x1, x2 in [(3.0, 2.0), (1.0, 4.0), (-2.0, 0.5)]:
+    a = two_layers_no_squash(x1, x2)
+    b = one_line(x1, x2)
+    print("(%.1f, %.1f)  two layers %9.6f   one line %9.6f   gap %.6f"
+          % (x1, x2, a, b, abs(a - b)))
+```
+
+```text
+(3.0, 2.0)  two layers  6.500000   one line  6.500000   gap 0.000000
+(1.0, 4.0)  two layers  8.700000   one line  8.700000   gap 0.000000
+(-2.0, 0.5)  two layers -1.650000   one line -1.650000   gap 0.000000
+```
+
+**Three rows, three zeros.** If **one** row disagrees, the `x₁` or `x₂` collection in M4 has a slip; if **all three** disagree, the plain numbers were collected wrongly.
+
+**B5.** The program the student writes is their own; this is the reference `b5w16.py`, with the answer-key hand answers typed in:
+
+```python
+"""b5w16.py - six rows through one neuron, three squashes, marked against my paper."""
+import numpy as np
+
+np.random.seed(0)
+np.set_printoptions(precision=6, suppress=True)
+
+w = np.array([0.4, -0.7, 1.2])
+b = -0.5
+
+rows = np.array([[1.0, 0.0, 1.0],
+                 [0.0, 1.0, 2.0],
+                 [3.0, 2.0, 0.0],
+                 [2.0, 0.0, 0.5],
+                 [-1.0, -1.0, 0.0],
+                 [0.5, 1.5, 1.0]])
+
+# my eighteen hand answers, in the order ReLU, sigmoid, tanh
+by_hand = [[1.100, 0.750, 0.800],
+           [1.200, 0.769, 0.834],
+           [0.000, 0.332, -0.604],
+           [0.900, 0.711, 0.716],
+           [0.000, 0.450, -0.197],
+           [0.000, 0.463, -0.149]]
+
+print("w.shape    =", w.shape)
+print("rows.shape =", rows.shape)
+print()
+print("%-20s %7s %8s %9s %8s" % ("row", "z", "ReLU", "sigmoid", "tanh"))
+worst = 0.0
+misses = 0
+for i in range(len(rows)):
+    r = rows[i]
+    z = (r * w).sum() + b
+    got = [float(np.maximum(0, z)), 1.0 / (1.0 + np.exp(-z)), float(np.tanh(z))]
+    print("%-20s %7.2f %8.3f %9.3f %8.3f" % (str(r), z, got[0], got[1], got[2]))
+    for k in range(3):
+        mine = by_hand[i][k]
+        theirs = got[k]
+        gap = abs(mine - theirs)
+        worst = max(worst, gap)
+        if gap > 0.0005:
+            misses += 1
+print()
+print("numbers checked      : 18")
+print("misses (gap > 0.0005): %d" % misses)
+print("biggest gap          : %.6f" % worst)
+```
+
+```text
+w.shape    = (3,)
+rows.shape = (6, 3)
+
+row                        z     ReLU   sigmoid     tanh
+[1. 0. 1.]              1.10    1.100     0.750    0.800
+[0. 1. 2.]              1.20    1.200     0.769    0.834
+[3. 2. 0.]             -0.70    0.000     0.332   -0.604
+[2.  0.  0.5]           0.90    0.900     0.711    0.716
+[-1. -1.  0.]          -0.20    0.000     0.450   -0.197
+[0.5 1.5 1. ]          -0.15    0.000     0.463   -0.149
+
+numbers checked      : 18
+misses (gap > 0.0005): 0
+biggest gap          : 0.000499
+```
+
+**Mark the student's own program, not a copy of this one:** it must set the seed and print options, print `w.shape` and `rows.shape`, use **their** hand answers (not these), and count a miss as a gap **greater than** `0.0005`. Three misses from honest hand slips is the program doing its job.
+
+**"Try this".** At a threshold of `0.0001` several numbers "miss" — `0.800` against `0.80049902` is a gap of `0.000499`. **Nothing is wrong.** Rounding to three places can be off by up to `0.0005` by definition, so a threshold *tighter* than that asks three-place answers to be four-place answers. **The threshold has to match the precision you wrote down.**
+
+### Fix the Broken Program
+
+*`broken16.py`, four rows through one neuron. Three bugs — a shape bug, a runtime bug, a silent logic bug.*
+
+**Bug 1 — line 7, `w = np.array([0.4, -0.7, 1.2, 0.9])`. A shape bug.** (The error surfaces on line 21, `z_all = ...`, but the fault is the fourth weight.)
+
+The message names `(4,3)` and `(4,)`. **The `3` counts the feature columns in `rows`** — each row has three numbers. **The `4` counts the weights supplied.** One weight per column, always, so the fourth weight has nothing to multiply and numpy stops. *(The nasty part: `rows` also has four **rows**, so the `4` on the right is **not** the `4` on the left. Read what each number counts, not where it sits.)*
+
+**The fix:** `w = np.array([0.4, -0.7, 1.2])`.
+
+**Bug 2 — line 16, `return max(0, z)`. A runtime bug.** (It fires from the call on line 23.)
+
+Python's built-in `max` asks **one** yes-or-no question — *"is this one bigger?"* — and the student handed it **four** numbers at once, so *"is `[0.7, −1.8, 1.2, 0.9]` bigger than zero"* has no single answer. The two blanks on the page are **one** question and **four** numbers.
+
+**The fix:** `return np.maximum(0, z)`. **Built-in Python functions work on one thing; numpy functions work on every cell.**
+
+**Bug 3 — lines 21 and 27: `+ b` is missing from both.** A silent logic bug.
+
+Every `z` in the Run 3 table is exactly **`0.5` too big**: `0.70` instead of `0.20`, `−1.80` instead of `−2.30`, `1.20` instead of `0.70`, `0.90` instead of `0.40`. `0.5` is the size of the bias, and the bias is negative, so leaving it out raises every score. **The two guilty lines are `z_all = (rows * w).sum(axis=1)` and `z = (r * w).sum()`.**
+
+**The fix:** `+ b` on both. (Fixing only one gives a program whose two printouts disagree, which is its own kind of horrible.) The Run 4 table confirms it: `z_all = [0.2 −2.3 0.7 0.4]`.
+
+**Ranking by time cost: bug 3 ≫ bug 2 ≈ bug 1.** Bugs 1 and 2 crash on the spot and the message names the exact problem — one prints both shapes, the other prints the offending line. Bug 3 produces a program that runs, prints a tidy table, and is wrong in eleven of the twelve squash numbers (row 2's ReLU is `0.000` either way). **Only a hand-checked row or a table to compare against catches it.**
+
+**Could you spot it from `sigmoid(z)` alone?** **Yes, but only by doing arithmetic.** The sigmoid column is `0.668, 0.142, 0.769, 0.711`, and nothing about those looks wrong — they are all sensible probabilities. You would have to **take one row and compute `z` by hand**: `2×0.4 + 1×(−0.7) + 0.5×1.2 − 0.5 = 0.20`, then `sigmoid(0.20) = 0.550`, which is not `0.668`. **One hand-checked row is the whole defence.**
+
+**Bug Log entry (Build It):** bug 3 is the new category — *no error, no crash, every number wrong.*
+
+#### The stand-alone error snippets used in class
+
+*These are the lesson's live-code versions of the same three messages (and of A3 b, d, e, f). They are not workbook items; use them if a student needs the error shown on its own.*
 
 *Run each broken snippet, paste the real message, name the two numbers in it, fix it.*
 
@@ -1610,7 +1987,185 @@ a.reshape(1, 3).T.shape = (3, 1)
 
 **Nothing crashed and nothing happened.** Transposing a flat list does nothing, because a flat list has no rows and columns to swap. To get a column you must make it 2-D first. **This is the silent one, and it is the one that will bite in Week 17.**
 
-### Page 16.6 — First look at `make_moons` (stretch)
+### Puzzle of the Week
+
+**Part 1 — which squash made this?**
+
+| # | `z` | answer | which squash | why |
+|---|---|---|---|---|
+| 1 | −3.0 | 0.000 | **ReLU** | sigmoid gives `0.047`, tanh gives `−0.995`. Only ReLU is exactly 0 |
+| 2 | 0.0 | 0.500 | **sigmoid** | ReLU gives 0, tanh gives 0 |
+| 3 | 2.0 | 0.964 | **tanh** | ReLU gives 2.000, sigmoid gives 0.881 |
+| 4 | 1.5 | 1.500 | **ReLU** | it repeated its input, which only ReLU does |
+| 5 | −1.0 | −0.762 | **tanh** | it is negative |
+| 6 | 0.0 | 0.000 | **ReLU or tanh** | both give exactly 0 at `z = 0` |
+
+**Part 1(a).** **ReLU and tanh.** `ReLU(0) = 0` and `tanh(0) = 0` — they agree at exactly one point, and that is the point given. **One measurement is not always enough to identify a function**; the cure is a second, different `z`.
+
+**Part 1(b).** Because **the answer is negative**, and only one of the three squashes may return a negative number. The *sign* is the whole diagnosis.
+
+**Part 1(c).** `ReLU = 2.000`, `sigmoid = 0.881`, `tanh = 0.964`. ReLU is ruled out because it would have repeated `2.0` exactly; sigmoid because `0.881 ≠ 0.964`. **Both were ruled out by arithmetic, not by taste.**
+
+**Part 2 — the Mystery Judge.**
+
+**Part 2(a).** The row `[0, 0, 0]` feeds **nothing** in, so every weight is multiplied by zero. **Whatever comes out must be the bias, on its own.** It is the row to start with because it isolates one unknown — and it is why the bias exists: the only knob with an opinion about an empty row.
+
+**Part 2(b).** `b = −0.20`. Then each other row is one weight plus the bias:
+
+```text
+w₁ + (−0.20) =  0.30  →  w₁ =  0.50
+w₂ + (−0.20) = −0.40  →  w₂ = −0.20
+w₃ + (−0.20) =  1.50  →  w₃ =  1.70
+```
+
+**Part 2(c).** `z = 2(0.50) + 1(−0.20) + 1(1.70) − 0.20 = 1.00 − 0.20 + 1.70 − 0.20 = 2.30`.
+
+`ReLU = 2.300` · `sigmoid = 0.909` · `tanh = 0.980`. *(`e^(−2.3) = 0.100259`, so `1 ÷ 1.100259 = 0.908877`.)*
+
+**Part 2(d).** **They are wrong.** Three rows give three equations in **four** unknowns — the three weights and the bias — one short. With only `[1,0,0]`, `[0,1,0]`, `[0,0,1]` you would know `w₁ + b`, `w₂ + b`, `w₃ + b`, so you could find the **differences** between weights but never any one of them. **The empty row is not a spare; it is the fourth equation.**
+
+**Part 2(e).** **Rows 2 and 4 become useless.** Their `z` values are `−0.40` and `−0.20`, so after a ReLU both would be recorded as `0.000`, and *any* negative number produces `0.000`; `w₂` and `b` could no longer be recovered, only known to be negative. **What to do: feed rows that push `z` positive, or ask for `z` instead of `a`.** For `w₂` feed a *negative* input, e.g. `[0, −5, 0]`, giving `z = (−0.20)(−5) − 0.20 = 0.80`. For `b`, use `[0, 0, 1]` and `[0, 0, 2]` (`1.50` and `3.20`), whose difference gives `w₃ = 1.70` and then `b = 1.50 − 1.70 = −0.20`. **A squash that clips is a squash that destroys evidence** — the same fact as T1.
+
+### Think Deeper
+
+**T1 — a model answer.** It is a cost *and* a bend, and the measurement shows the bend. With no squash, the chapter's two-layer network is exactly `1.1x₁ + 0.4x₂ + 0.3` — a straight line, however many layers are stacked. Put ReLU back in and the row `[2.0, −1.0]` goes from `2.10` to `0.60`. **That gap of `1.50` exists only because ReLU cut something off for that row and not for others.** If the cutting were uniform — everything halved, say — it would still be a line. **The bend comes from the rule behaving differently in different places.**
+
+**A squash that keeps all its information can still bend.** Sigmoid and tanh never throw anything away — each output traces back to exactly one input — and neither is a straight line, so a network built from them does *not* collapse. So losing information is not what makes a squash useful: **not being a straight line is.** ReLU happens to bend by cutting, and that cut has a real cost: a unit whose `z` is negative on *every* row is permanently silent and (its slope being zero there) gets no training signal to revive it — the "dead ReLU", met properly in Week 19. **For ReLU the cut is the bend, and the price is that some units can die.**
+
+**T2 — a model answer.** With `double(z) = 2z` between the layers:
+
+```text
+h1 = 0.5x₁ + 0.8x₂ + 0.1      →  double →  1.0x₁ + 1.6x₂ + 0.2
+h2 = −0.3x₁ + 0.2x₂ + 0.05    →  double → −0.6x₁ + 0.4x₂ + 0.10
+
+out = 1.0(1.0x₁ + 1.6x₂ + 0.2) − 2.0(−0.6x₁ + 0.4x₂ + 0.10) + 0.3
+    = (1.0 + 1.2)x₁ + (1.6 − 0.8)x₂ + (0.2 − 0.2 + 0.3)
+    = 2.2x₁ + 0.8x₂ + 0.3
+```
+
+**Still one straight line.** The collapse happens exactly as before; `double` only doubled two of the three coefficients, which different weights could have done anyway.
+
+So the property a squash must have is **not** "makes numbers smaller" and **not** "keeps numbers in a range". It is: **it must not be a straight line itself.** `2z` is a straight line through the origin, so a layer of it composes with its neighbours into another line. ReLU is two straight pieces with a **corner**, and the corner is the point — which row you are on decides which piece you get, something no single line can imitate.
+
+**"Squashing" is a slightly misleading word.** Sigmoid and tanh squash, into `(0,1)` and `(−1,1)`. ReLU does not squash on the side that fires — it repeats its input exactly, with no ceiling. **The honest name for what all three share is "not a straight line"** — *non-linearity*. **Put a bend in it, or depth is free money you cannot spend.**
+
+**Marking tip.** Full marks need all of: the `2.10`/`0.60` numbers used, a clear statement that sigmoid can bend without losing information (T1), and the worked `2.2x₁ + 0.8x₂ + 0.3` with the word *straight* (T2). A T2 that says "yes it still collapses" with no algebra shown is half marks.
+
+### Build It
+
+*Two parts. Part A is about being wrong in pen; Part B is about being right before you run anything.*
+
+**Part A — the eighteen numbers.** The table is in **M2** above, to three and eight decimal places. Marking notes:
+
+- **`z` first.** If the student's `z` is wrong, all three squashes on that row are wrong and it counts as **one** mistake, not three — but they write three crosses, because that is what a marker sees. On the workbook page, "how many of the eighteen did it poison?" has the answer **three** per bad `z`.
+- **The column that causes most crosses is usually sigmoid**, because it needs four calculator presses in order: negate, `e^x`, `+1`, `1/x`. Skipping the negate gives `1 − sigmoid(z)`; row 1 would read `0.250` rather than `0.750`. **If the sigmoid column looks like one minus the right answer, that is the slip.**
+- **"Zero crosses with no working" is not believed.** The page exists to make the hand column come *before* the run.
+- A cross is a gap over `0.0005` against numpy (the same test `b5w16.py` applies), so a hand answer rounded carelessly in the third place is a genuine cross.
+
+**Part B — the eight shapes.** The workbook table has columns *my prediction · what it printed · ✓/✗ · if I missed it, why — one line*; the real answers are below (predictions, real output, and why), with the script:
+
+*Write all eight predictions in pen first. Then run once. Item 4 is a deliberate error.*
+
+| # | Expression | Prediction | Real | Why |
+|:--:|---|---|---|---|
+| 1 | `A.shape` (`A = [[1, 2, 3], [4, 5, 6]]`) | `(2, 3)` | **`(2, 3)`** | Two rows, three columns. Rows first. |
+| 2 | `A.T.shape` | `(3, 2)` | **`(3, 2)`** | Rows become columns: `[[1 4], [2 5], [3 6]]`. |
+| 3 | `A.reshape(3, 2).shape` | `(3, 2)` | **`(3, 2)`** | Same shape as #2, **different grid**: `[[1 2], [3 4], [5 6]]`. It reads along the rows. |
+| 4 | `A.reshape(4, 2)` | *(not a shape)* | **`ValueError: cannot reshape array of size 6 into shape (4,2)`** | `4 × 2 = 8` but `A` holds 6 numbers. numpy will not invent two or throw two away. |
+| 5 | `v.shape` (`v = [2.0, 4.0, 6.0]`) | `(3,)` | **`(3,)`** | Flat: three numbers, no rows and columns. One number in the shape, hence the trailing comma. |
+| 6 | `v.T.shape` | `(3,)` | **`(3,)`** | Nothing to flip in a flat list, so transposing does nothing, silently. |
+| 7 | `v.reshape(3, 1).shape` | `(3, 1)` | **`(3, 1)`** | `3 × 1 = 3`, so it is legal. One tall column. |
+| 8 | `(rows * w).sum(axis=1).shape` | `(6,)` | **`(6,)`** | Six rows in, one weighted sum per row, so six numbers in a flat list. |
+
+**The script, and its real output:**
+
+```python
+"""shapes8.py - eight shapes, predicted in pen first."""
+import numpy as np
+np.random.seed(0)
+
+A = np.array([[1, 2, 3],
+              [4, 5, 6]])
+v = np.array([2.0, 4.0, 6.0])
+w = np.array([0.4, -0.7, 1.2])
+rows = np.array([[1.0, 0.0, 1.0],
+                 [0.0, 1.0, 2.0],
+                 [3.0, 2.0, 0.0],
+                 [2.0, 0.0, 0.5],
+                 [-1.0, -1.0, 0.0],
+                 [0.5, 1.5, 1.0]])
+
+print("1. A.shape                       =", A.shape)
+print("2. A.T.shape                     =", A.T.shape)
+print("3. A.reshape(3, 2).shape         =", A.reshape(3, 2).shape)
+print("5. v.shape                       =", v.shape)
+print("6. v.T.shape                     =", v.T.shape)
+print("7. v.reshape(3, 1).shape         =", v.reshape(3, 1).shape)
+print("8. (rows * w).sum(axis=1).shape  =", (rows * w).sum(axis=1).shape)
+print()
+print("4. A.reshape(4, 2) ->")
+print(A.reshape(4, 2))
+```
+
+```text
+1. A.shape                       = (2, 3)
+2. A.T.shape                     = (3, 2)
+3. A.reshape(3, 2).shape         = (3, 2)
+5. v.shape                       = (3,)
+6. v.T.shape                     = (3,)
+7. v.reshape(3, 1).shape         = (3, 1)
+8. (rows * w).sum(axis=1).shape  = (6,)
+
+4. A.reshape(4, 2) ->
+Traceback (most recent call last):
+  File "shapes8.py", line 25, in <module>
+    print(A.reshape(4, 2))
+ValueError: cannot reshape array of size 6 into shape (4,2)
+```
+
+**The ones that are supposed to catch people, and what a good miss-sentence looks like.** Items 5 and 6 are the silent pair: `v` is flat, so `v.T` has no rows and columns to swap and quietly returns the same `(3,)`. A good sentence: *"I thought transposing would make it a column, but a flat list has nothing to flip."* Items 2 and 3 both print `(3, 2)` and are different grids; a student who assumes `.T` and `.reshape` give the same thing has only compared the shapes, not the contents. Item 4 is the only non-shape: the last line of the traceback is the answer, and the arithmetic `4 × 2 = 8` against 6 numbers is what refused it. A good sentence for item 8: *"I expected `(6, 3)` because I was multiplying a grid, but `sum(axis=1)` collapses each row to one number."*
+
+**Item 4's last line, verbatim:** `ValueError: cannot reshape array of size 6 into shape (4,2)`. The arithmetic: `4 × 2 = 8` against `A` holding **6** numbers. **numpy will not invent two numbers and will not throw two away.**
+
+**Items 5 and 6, in one sentence:** *"`v` is flat — `(3,)` — so there are no rows and columns to swap, and transposing it does nothing at all, silently."*
+
+**Items 2 and 3 are the pair worth noticing.** Both print `(3, 2)` and **they are different grids**: `A.T` is `[[1 4], [2 5], [3 6]]` and `A.reshape(3, 2)` is `[[1 2], [3 4], [5 6]]`.
+
+**The sentence being marked:**
+
+> *"The shape is two numbers that say how the data is laid out, and almost every array bug is a disagreement between two shapes — so printing it first turns a mysterious crash into arithmetic I can do in my head."*
+
+**Accept** any answer naming *diagnosis*, *the two clashing numbers*, or *"it tells me what the error message is about to tell me"*. **Do not accept** *"so I know how big it is"* — size is not the point; **agreement** is.
+
+**Stretch — the silent neuron.**
+
+```text
+with no bias at all, the four class rows give z = 0.70, −1.80, 1.20, 0.90
+so the biggest is 1.20, and any bias below −1.20 silences every row
+
+b = −1.3:   z = [−0.6, −3.1, −0.1, −0.4]   ReLU = [0, 0, 0, 0]    silent on all four  ✅
+b = −1.0:   z = [−0.3, −2.8,  0.2, −0.1]   ReLU = [0, 0, 0.2, 0]  not silent          ❌
+```
+
+The two blanks are **`1.20`** and **`−1.20`**. *(These `z` values use `w = [0.4, −0.7, 1.2]` on the chapter's four rows `[2,1,0.5]`, `[−1,2,0]`, `[0,0,1]`, `[1,1,1]`.)*
+
+**Bug or waste?** **Waste, on this data.** Not a bug — the neuron does exactly what its numbers say — but it contributes nothing to any prediction. **Worse than waste: because ReLU's slope is zero there, no gradient ever reaches it, so no training wakes it up.** That is Week 19's "dead ReLU", and the student has just built one on purpose.
+
+**The Bug Log** (two entries): any two real ones. Expect the "no error, every number wrong" row to be bug 3 of Fix the Broken Program (missing `+ b`), and a shape row such as the `(4,3)`/`(4,)` broadcast message. Full marks need the *cause* and *fix* columns filled, not just "what I saw".
+
+### Draw It
+
+**A good drawing has:** three input wires, each labelled with both its value and its weight (`2.0` with `×0.4`, `1.0` with `×−0.7`, `0.5` with `×1.2`); the **bias on its own fourth wire with no input attached to it**; the three products written out (`0.8`, `−0.7`, `0.6`); the running total ending at **`z = 0.20`**; a box for the squash with **the rule inside it**, not just the name — *"negatives become zero, positives come through"*; the activation `a = 0.200` leaving on the right; and the two shapes `(3,)` and `(4, 3)` in a corner.
+
+**The four questions.** **Three wires in, three weights on them** — a fourth weight drawn on the bias wire is the commonest slip; the bias is not multiplied by anything. **The bias attaches to nothing**; that is why it can have an opinion about an empty row. **Inside the squash box: a rule, not a name** — "ReLU" tells a reader nothing, "negatives → 0" tells them everything. And **`z = 0.20` is before the box, `a = 0.200` is after it.** A drawing with only one number there is half a neuron.
+
+### Self-Check
+
+No right answers; the honest bar: 😀 means you could do it now on a blank sheet with nothing open, 🙂 with the chapter beside you, 😕 is the one to ask about first. Make sure **"count the shape off a printout, rows first"** is not a 😕, because next week is nothing but shapes, and the week after that is shapes with transposes in them. The last row ("read `ValueError: cannot reshape array of size 6 into shape (4,2)` and fix it in ten seconds") should be a 😀 by the end of Fix the Broken Program.
+
+### Not in the workbook — the `make_moons` first look
+
+*Used only in the last ninety seconds of class (🔑 Wrap & Assign) and as the hook for Weeks 17–19. The shipped workbook has no `make_moons` section; this is a teacher demonstration and an optional stretch for a student who asks for a longer look.*
 
 *Load it, print the shapes, plot it, and answer one question with a ruler.*
 
@@ -1663,7 +2218,7 @@ saved moons.png
 
 **No straight line separates them.** Two hundred of each class, hooked together like two links of a chain. The best single line gets somewhere around **85–88%** — a student who eyeballs "about fifty wrong" is in the right area, and the exact number does not matter. What matters is the reason: **the boundary that would work is curved, and a weighted sum plus a bias can only ever draw something straight.**
 
-**Two details worth noticing in that printout.** `y.shape` is `(400,)` — flat, not `(400, 1)`, the same flat-list point as `v` in page 16.2. And `np.bincount(y)` gives `[200 200]`, so the classes are perfectly balanced and **accuracy is a fair measure here** — which will not be true of the fraud data from Term 1, and it is worth one sentence connecting the two.
+**Two details worth noticing in that printout.** `y.shape` is `(400,)` — flat, not `(400, 1)`, the same flat-list point as `v` in Build It Part B. And `np.bincount(y)` gives `[200 200]`, so the classes are perfectly balanced and **accuracy is a fair measure here** — which will not be true of the fraud data from Term 1, and it is worth one sentence connecting the two.
 
 ### Answers to every question posed in the lesson
 

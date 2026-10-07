@@ -10,7 +10,7 @@
 |---|---|
 | **Duration** | 70 minutes |
 | **Type** | 🟦 Teach — one new discipline (count, don't guess) applied five times |
-| **Material** | Printed workbook pages 12.1–12.6 · pencil · a calculator · **an umbrella** (or a coat, or a towel) for the Hook · the student's Week 11 kitchen table · optional: a real bowl with 4 apples, 4 oranges, 4 bananas and paper stickers |
+| **Material** | Printed workbook (Warm-Up through Self-Check; the only numbered pages are 12.4–12.6 in Build It) · the twelve-row fruit table (student guide, section 1, or the Activity Setup below) · a blank landscape sheet · pencil · a calculator · **an umbrella** (or a coat, or a towel) for the Hook · the student's Week 11 kitchen table · optional: a real bowl with 4 apples, 4 oranges, 4 bananas and paper stickers |
 | **Big idea** | A feature is only useful if it beats guessing, and a leaky feature that already contains the answer will betray you the moment it matters. |
 | **New vocabulary** | baseline · useful feature · useless feature · leaky feature · leak |
 | **Tech needed** | **None.** A spreadsheet is an optional extension. |
@@ -211,7 +211,7 @@ shelves, and the only thing that matters is that by week 36 every week has lande
 
 **12 minutes the night before**
 
-- [ ] Print workbook pages 12.1–12.6. Page 12.2 (the twelve-row table) should ideally be printed twice — one to write on, one to keep clean for reference.
+- [ ] Print the whole workbook (Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Build It pages 12.4–12.6, Draw It, Self-Check). The workbook does **not** contain the twelve-row fruit table, so also print it from the student guide (section 1) or copy it from the Activity Setup below — ideally twice, one to write on and one to keep clean for reference.
 - [ ] **Score `colour` yourself** using the method in section 2 above. Do it with a pencil, do not just read it. Fifteen minutes of teaching confidence for two minutes of counting.
 - [ ] **Find the umbrella.** Or a coat, or a towel — anything that gets wet. Put it out of sight but within reach.
 - [ ] **Find the Week 11 kitchen table.** The homework needs it. If it has gone missing, the homework becomes "score the five features in the printed fruit table you haven't already scored" instead.
@@ -228,9 +228,9 @@ shelves, and the only thing that matters is that by week 36 every week has lande
 
 | If this fails | Do this instead |
 |---|---|
-| No fruit, no props | The printed table on page 12.2 is the primary version. Nothing is lost. |
+| No fruit, no props | The printed twelve-row table is the primary version. Nothing is lost. |
 | No umbrella | Use any object that changes state after an event: a wet towel, muddy shoes, an empty plate. "How do I know somebody had dinner? The plate's dirty. When did the plate get dirty?" |
-| The Week 11 kitchen table is lost | Homework page 12.5 becomes: build a five-row table of five objects you can see from where you're sitting, then score it. Slightly weaker, entirely workable. |
+| The Week 11 kitchen table is lost | Homework page 12.5 (Build It) becomes: build a five-row table of five objects you can see from where you're sitting, then score it. Slightly weaker, entirely workable. |
 | The student already knows the answer because they read ahead | Excellent. Hand them the pencil and make *them* explain the sticker to you. Then jump straight to the harder question: "Give me a case where the sticker is honest and not a leak." (Answer: a supermarket's own checkout system, where every item genuinely has a sticker.) |
 | The arithmetic is defeating them | Do the counting orally, together, one group at a time, while they only write the totals. The counting is the method; the handwriting is not. |
 
@@ -294,7 +294,7 @@ Write it up:
 
 ### 🧠 Concept — Baseline, Then the Three Kinds (18 minutes)
 
-**Do this:** Put the twelve-row table (workbook page 12.2) between you. Take the blank landscape sheet for the scoreboard and put it beside it.
+**Do this:** Put the printed twelve-row table (student guide, section 1) between you. Take the blank landscape sheet for the scoreboard and put it beside it.
 
 **Say this — part 1, the baseline:**
 
@@ -362,7 +362,7 @@ Draw the three verdicts on the scoreboard sheet as three zones. Then:
 
 Both of these you do **together, out loud, with the student holding the pencil and doing the counting.**
 
-**Feature 1 — `colour` (7 minutes).** Workbook page 12.2, first scoring grid.
+**Feature 1 — `colour` (7 minutes).** The first scoring grid, drawn on the blank sheet (the workbook has no fruit scoring grids).
 
 **Say this:**
 
@@ -433,7 +433,7 @@ Full instructions below. In the lesson flow:
 ![The fruit bowl activity setup](../figures/fig-w12-6-fruit-bowl-setup.svg)
 *Figure 12.6 — Write the baseline in a box at the top of the board before scoring anything: 4 of 12 = 33.3%.*
 
-**On the table:** workbook page 12.2 (the twelve-row table and the five scoring grids), page 12.3 (the blank scoreboard), a pencil, a calculator.
+**On the table:** the printed twelve-row table (student guide, section 1), a blank landscape sheet for the five scoring grids and the scoreboard (workbook item A5 / Figure W12.1 holds a blank scoreboard you can use instead), a pencil, a calculator.
 
 **On the board or the big sheet:** the baseline box, already written, and a horizontal line across the scoreboard sheet at the 33.3% level.
 
@@ -698,39 +698,248 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "Two pages, about fifty minutes.
+> "The workbook has a lot in it this week, so you'll do it over a few sittings rather than all at once. It starts with five quick questions about last week, then two sets of practice, a puzzle, and a section called Build It, which has two pages I care about most.
 >
-> **First, the leak hunt.** Page 12.4. Six real situations, each with four possible features, and in every single one of them exactly one feature is leaky. Mark it — and this is the part that gets the marks — write **one sentence saying when that value actually becomes known.** Not 'it's cheating'. Something like: 'it only exists after a doctor has already made the diagnosis'. Use the three-second test on every single one: stand at the moment you need the answer, and ask whether you've got it yet.
+> **First, the leak hunt.** In Build It, page 12.4. Six real situations, each with four possible features, and in every single one of them exactly one feature is leaky. Mark it — and this is the part that gets the marks — write **one sentence saying when that value actually becomes known.** Not 'it's cheating'. Something like: 'it only exists after a doctor has already made the diagnosis'. Use the three-second test on every single one: stand at the moment you need the answer, and ask whether you've got it yet.
 >
-> **Second, score your own table.** Page 12.5. Get out your kitchen table from last week — the five objects with the five features. Compute the baseline first. Put it in a box at the top. Then score all five of your own features by counting, exactly the way we did the fruit, and rank them into a scoreboard.
+> **Second, score your own table.** Page 12.5, also in Build It. Get out your kitchen table from last week — the five objects with the five features. Compute the baseline first. Put it in a box at the top. Then score all five of your own features by counting, exactly the way we did the fruit, and rank them into a scoreboard.
 >
 > And I want a prediction from you before you start: write down, right now, which of your five features you think will win. Then find out if you were right. Being wrong there is the most interesting outcome and I'd quite like it to happen."
 
-**Workbook pages:** 12.1, 12.2 and 12.3 in class; **12.4, 12.5, 12.6** at home.
+**What the workbook contains, in order** (the pages are not numbered 12.1–12.3; only the three Build It pages carry a page number):
 
-**Expected time:** 15 min for the leak hunt · 25 min for scoring their own table · 10 min for page 12.6. About 50 minutes.
+| Section | Items | What it asks |
+|---|---|---|
+| ✅ Warm-Up (5 min) | W1–W5 | Week 11 recall: feature, label, measuring instruction, the "rabbit" machine |
+| ✍️ Practice Set A — Understand It | A1–A6 | Fill-in on baseline and leaks · baseline for 12/5/3 animals · "58% is good" true/false · match the vocabulary · label the scoreboard (Figure W12.1) · five baselines plus the 94% spam detector |
+| ✍️ Practice Set B — Use It | B1–B5 | Score `weather` by counting · score a number feature by banding · the flu-tablets leak · "a score below the baseline" (Anika) · the same column honest in one place and leaky in another |
+| 🧩 Puzzle of the Week | P1–P6 | Twenty cakes, five features, find the leak and the useless one |
+| 🤔 Think Deeper | T1–T2 | Why a hard job should produce wrong answers · how far above baseline is good enough |
+| 🛠️ Build It | Page 12.4 (items 1–6, g, h) · Page 12.5 (steps 1–3, a–c) · Page 12.6 (write-up) | The leak hunt · score your own kitchen table · why 100% is bad news |
+| 🎨 Draw It | one drawing | Invent your own wet umbrella |
+| 📊 Self-Check | five rows | Tick-box confidence check |
+
+**Suggested split.** The fruit-bowl scoring itself (the twelve-row table and the five scoring grids) is done **in class** in the Worked Example and the Activity, on a blank sheet; the workbook does not contain the twelve-row table (it is in the student guide, section 1, and in the Activity Setup above). Everything in the workbook is **homework**, in three sittings:
+
+1. **Sitting 1 — the basics (about 25 min):** Warm-Up, Practice Set A. Figure W12.1 (A5) is a copy of the scoreboard already built in class.
+2. **Sitting 2 — the two Build It pages that carry the marks (about 50 min):** page 12.4 (about 15 min), page 12.5 (about 25 min), page 12.6 (about 10 min).
+3. **Sitting 3 — practice and stretch (about 45 min):** Practice Set B, Puzzle of the Week, Think Deeper, Draw It, Self-Check.
+
+If time is short, drop Sitting 3 to B1, B2 and the Puzzle, and treat Think Deeper and Draw It as optional. The times are estimates, not measured.
+
+**Mark in this order:** page 12.4 and 12.5 first (the "when is it known" sentences and the baseline-in-a-box), then 12.6, then the rest.
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 12.1 — Compute the baseline
+This key follows the workbook section by section, using the workbook's own item labels (W1–W5, A1–A6, B1–B5, P1–P6, T1–T2, pages 12.4–12.6). The values are those in the workbook's own Answers section; the teacher-only notes (what wrong answers look like, what to say when marking) are added underneath.
 
-| # | Table | Baseline |
+### ✅ Warm-Up
+
+| Item | Answer | What a wrong answer usually means |
 |---|---|---|
-| (a) | 4 apples, 4 oranges, 4 bananas | 4/12 = **33.3%** (three-way tie; pick any one) |
-| (b) | 12 dogs, 5 cats, 3 rabbits | 12/20 = **60.0%** |
-| (c) | 95 ham, 5 spam | 95/100 = **95.0%** |
-| (d) | 7 pass, 7 fail | 7/14 = **50.0%** (tie) |
-| (e) | 30 red, 12 blue, 5 green, 3 yellow | 30/50 = **60.0%** |
+| **W1** | A feature is **one measured description of one example**, one column in the table. The key word is **measured**. | "Quite heavy" or "a thing about the fruit" — no measurement. Ask: "How would two people get the same number?" |
+| **W2** | The five measurement columns are the features; the `label` column (which spoon it is) is the label. It is the label because you chose to cover it, not because it is last. | Saying the last column is the label "because it's last". |
+| **W3** | **Neither.** One measured top to bottom, one across the widest point. The instruction was missing; fix the sentence, not the person. | "The one who said 9" — they are blaming a person. |
+| **W4** | A **tool** (or fixed list) · a **unit** · a **rounding**. Example: kitchen scale · grams · nearest gram. | Listing "a ruler, a pencil, a table" — things on the desk, not parts of the instruction. |
+| **W5** | It says **dog or cat**, confidently, every time. It is **your** fault, not the machine's: you built two classes and there is no rabbit box. | "It says rabbit" — it cannot; it only has the classes it was given. |
 
-**12.1(f) In table (c), is a spam detector scoring 94% any good?**
-No. It is **worse than useless**: a machine that says "ham" to every email, and has never looked at a single one, scores 95%. This is why the baseline must be computed first — 94% sounds excellent right up until you know the floor.
+### ✍️ Practice Set A — Understand It
 
-**12.1(g) What does a tie mean for the baseline?**
-Nothing, except that you must pick one class and say which. In (a) the baseline is 33.3% whichever of the three you pick.
+**A1.** most common · **nothing at all** · **leaky** · the **answer** · **before**.
 
-### Page 12.2 — The five scoring grids
+**A2.** **(c) 60.0%.** Biggest group = dogs, 12 of 20; 12/20 = 0.60 = 60%.
+*Tempting wrong answer (a) 33.3%:* that is 1 ÷ 3 classes. The baseline is the size of the biggest group over the total, not one over the number of classes; they match only when the groups are equal.
+
+**A3.** **FALSE.** 58% only means something next to the baseline. Against a 33.3% baseline it is decent; against 60% (the animal table in A2) it is **worse than guessing**. A table where 58% is terrible: 95 ordinary emails and 5 spam (baseline 95%).
+
+**A4.** baseline = **C** · useful feature = **D** · useless feature = **A** · leaky feature = **E** · the three-second test = **B**.
+
+**A5.** Baseline box: **BASELINE = 4/12 = 33.3%.** The dashed line is **the baseline**. Bars and verdicts:
+
+| feature | bar height | verdict to write |
+|---|---|---|
+| `sticker_says` | 100% — top of the chart | 🚨 **LEAKY — remove** |
+| `colour` | 91.7% | ✅ very useful (+58.4) |
+| `mass_g` | 83.3% | ✅ useful (+50.0) |
+| `length_cm` | 66.7% | ✅ useful (+33.4) |
+| `quadrant` | 33.3% — flat on the line | ❌ **useless — remove** |
+
+Check two things on the drawing: `quadrant` sits **exactly** on the dashed line, and `sticker_says` is marked as a problem despite being the tallest bar. **Final feature list: `colour`, `mass_g`, `length_cm`.**
+
+*Discussion questions from the class scoreboard:*
+
+- **Why is `sticker_says` not ranked 1st, even though it scored highest?** Because it is not really a feature: it is the answer copied into another column. It would not exist at the moment the prediction is needed, so its score describes the table and not the world.
+- **Which feature would you delete next, if you had to lose one more?** `length_cm`, at 66.7%. But say what you would lose: it is the only perfect banana detector, and deleting it leaves bananas depending entirely on `colour` and `mass_g`. There is no free deletion.
+
+**A6.**
+
+| # | Table | Baseline (fraction) | Baseline (%) |
+|---|---|---|---|
+| (a) | 4 apples, 4 oranges, 4 bananas | 4/12 | **33.3%** (three-way tie; pick any one and say so) |
+| (b) | 12 dogs, 5 cats, 3 rabbits | 12/20 | **60.0%** |
+| (c) | 95 ordinary emails, 5 spam | 95/100 | **95.0%** |
+| (d) | 7 pass, 7 fail | 7/14 | **50.0%** (tie) |
+| (e) | 30 red, 12 blue, 5 green, 3 yellow | 30/50 | **60.0%** |
+
+**Is a 94% spam detector any good in table (c)?** No. It is **worse than useless**: a machine that says "ordinary" to every email, and has never looked at one, scores 95%. This is why the baseline goes first — 94% sounds excellent right up until you know the floor.
+
+*On ties:* a tie changes nothing except that you must pick one class and say which. In (a) the baseline is 33.3% whichever of the three you pick.
+
+### ✍️ Practice Set B — Use It
+
+**B1.** Step 1: late = **5** (ids 1, 2, 3, 9, 10), not late = **5** (ids 4–8). A tie, so pick one and say so. **Baseline = 5/10 = 50%.**
+
+| weather | late: yes | late: no | best guess | gets right |
+|---|---|---|---|---|
+| rain | 4 | 1 | **late** | 4 of 5 |
+| dry | 1 | 4 | **not late** | 4 of 5 |
+
+Step 3: 4 + 4 = 8 → 8/10 = **80%**. Step 4: **30 percentage points** above the baseline, so `weather` is **a useful feature**. It fails on id 4 (rain, not late) and id 9 (dry, late); two rows against the pattern is an honest feature on a real problem.
+
+**B2.**
+(a) 4 cats and 4 dogs, a tie. **Baseline = 4/8 = 50%.**
+(b) Cats: **3,200 · 4,100 · 4,800 · 5,500.** Dogs: **5,200 · 6,000 · 12,400 · 18,000.**
+(c) **The 5,500 g cat is heavier than the 5,200 g dog.** They overlap between 5,200 and 5,500, so no single threshold puts both on the correct side.
+(d) Rule `IF mass_g < 5350 THEN cat ELSE dog`:
+
+| id | mass_g | predicted | true | ✓/✗ |
+|---|---|---|---|---|
+| 1 | 3,200 | cat | cat | ✓ |
+| 2 | 4,100 | cat | cat | ✓ |
+| 3 | 4,800 | cat | cat | ✓ |
+| 4 | 5,500 | dog | cat | ✗ |
+| 5 | 6,000 | dog | dog | ✓ |
+| 6 | 12,400 | dog | dog | ✓ |
+| 7 | 18,000 | dog | dog | ✓ |
+| 8 | 5,200 | cat | dog | ✗ |
+
+**6/8 = 75%.**
+(e) Push the threshold below 5,200 (for example `< 5100`): only the 5,500 g cat is wrong, **7/8 = 87.5%.** Or push it above 5,500 (`< 5600`): only the 5,200 g dog is wrong, also **7/8 = 87.5%.**
+(f) **No, 8 out of 8 is impossible.** Moving the threshold only swaps which of the two overlapping rows is wrong; it never fixes both. That is a fact about a world where some cats are heavier than some dogs, not an arithmetic slip.
+
+**B3.**
+(a) **The feature is blank.** The patient has just walked in and nobody has prescribed anything, so the 100% is worth nothing.
+(b) **Only after a doctor has already diagnosed flu** and decided to treat it: a record of the answer arriving after the answer.
+(c) `days_of_symptoms_so_far`, known the moment the patient sits down. Also fine: `temperature_c`, `is_it_flu_season`, `household_member_already_diagnosed`.
+(d) In ten years of records every flu patient already had the tablets column filled in. In the past, the future has already happened, so the leak is invisible when testing on history. That is why the three-second test asks about the **moment of prediction**, not about the data.
+
+**B4.**
+(a) **No.** The maths is fine.
+(b) She predicted **the less common label inside each group**, the rule written the wrong way round. Scoring properly means predicting the commonest label *in that group*.
+(c) Should predict **dog** (8 of 10 right); probably predicted **cat** (2 of 10 right).
+(d) The lowest a properly scored feature can get is **exactly the baseline**: the worst case is that every group's commonest label is the same as the whole table's, and that is the baseline by definition. A score below the baseline is a message about the rule, never the feature.
+
+**B5.**
+(a) **Whether the value exists at the moment you need the prediction.** At a self-checkout every item carries a sticker when scanned; holding a plum from someone's garden, it does not. The column did not change; the moment did.
+(b) Any well-argued pair is right. Examples:
+
+| The column | Honest here | A leak here |
+|---|---|---|
+| `barcode_scanned` | A shop till, where every item is scanned before the price is decided | Identifying an unknown object from a photo — no barcode in the photo |
+| `ticket_number` | A cloakroom, where the ticket is issued before you collect the coat | Predicting who will attend an event — tickets are issued after they decide |
+| `bank_transaction_description` | Sorting your own past spending into categories | Predicting whether a payment *will* happen — it does not exist yet |
+
+### 🧩 Puzzle of the Week
+
+**P1.** Most common label = **did not win a prize**, 15 of 20. **Baseline = 15/20 = 75%.** (Tempting mistake: "five won" → 5/20 = 25%. The baseline uses the **biggest** group.)
+
+**P2.**
+
+| | feature | score | % | gap | verdict |
+|---|---|---|---|---|---|
+| A | `hours_practised` | 17/20 | **85.0%** | **+10.0** | ✅ useful |
+| B | `oven_temperature_c` | 16/20 | **80.0%** | **+5.0** | ✅ useful, but only barely |
+| C | `judges_rosette_on_the_plate` | 20/20 | **100%** | +25.0 | 🚨 **LEAKY — remove** |
+| D | `cake_height_cm` | 18/20 | **90.0%** | **+15.0** | ✅ very useful — the best honest one |
+| E | `kitchen_number_1to5` | 15/20 | **75.0%** | **0.0** | ❌ **useless — remove** |
+
+**P3.** **C — `judges_rosette_on_the_plate`.** The rosette goes on only **after the judges have decided**; when you need the prediction every plate is bare.
+**P4.** **E — `kitchen_number_1to5`.** 15/20 is **exactly** the baseline, so the feature carries no information, visible without reading the name.
+**P5.** **B — `oven_temperature_c`**, 80% against 75%: only **+5.0 points**, which with twenty rows is one single cake.
+**P6.** Final ranked list: **1. `cake_height_cm` (90.0%, +15.0) · 2. `hours_practised` (85.0%, +10.0) · 3. `oven_temperature_c` (80.0%, +5.0, keep but barely)**, with `judges_rosette_on_the_plate` (leak) and `kitchen_number_1to5` (useless) crossed out. The highest-scoring feature was removed, and the table got better for it.
+
+### 🤔 Think Deeper
+
+**T1.** Full marks needs a specific overlapping pair (the 190 g apple and 185 g orange, or the green apple and green banana) and the conclusion that **perfection on a hard job is evidence of a shortcut, not of skill.** Model answer: weight genuinely cannot separate every apple from every orange, rows 4 and 6 sit inside each other's territory, and colour's single miss is the one row where the world does not cooperate; getting that row wrong is evidence colour is doing the real job. A feature that never errs on a hard problem usually has the answer lying in a column.
+
+**T2.** Full marks needs two examples with genuinely different stakes and the recognition that what decides it is **the cost of being wrong, and who pays it**, not the maths. Model answer: barely above baseline is fine for a next-song suggester (press skip); it is nowhere near enough for a bank-loan decision (a real person refused). The one thing always true: on or below the baseline is never good enough, because guessing gets that.
+
+### 🛠️ Build It
+
+### Page 12.4 — The leak hunt (Build It)
+
+| # | Task | The leak | When does it become known? | A non-leaky replacement |
+|---|---|---|---|---|
+| 1 | Will this parcel arrive late? | `customer_complaint_filed` | Only **after** the parcel was already late — a complaint is a reaction to the outcome. | `distance_km` combined with `courier_late_rate_last_month` — both known the moment the parcel is posted. |
+| 2 | Will this student join the football team? | `team_shirt_number` | Only after they have **already joined**. Nobody is issued a shirt number in advance. | `sport_played_last_year`, or `attended_the_trial` (yes/no) — both known before the decision. |
+| 3 | Will it rain tomorrow? | `tomorrow_umbrella_sales` | Tomorrow. It is literally from the future. | `today_pressure_change_over_6h` — a genuine early signal available today. |
+| 4 | Is this song going to be a hit? | `weeks_in_top_10` | Only after it has already been a hit. It *is* the answer. | `artist_followers_at_release` and `playlist_adds_in_first_week` — known early, and honestly predictive. |
+| 5 | Does this patient have flu? | `flu_tablets_prescribed` | Only after a doctor has already diagnosed flu. At prediction time it is always blank. | `days_of_symptoms_so_far` — known the moment the patient walks in. |
+| 6 | Will this customer cancel this month? | `cancellation_reason_text` | Only for people who have **already cancelled**. For everyone else it is empty — so the model learns "if this box has any text in it, they cancelled". | `days_since_last_login` or `support_tickets_in_last_30_days` — both exist for every customer at any moment. |
+
+**12.4(g) What do all six leaks have in common?**
+Every one of them is **a record of the outcome, or of a decision made after the outcome.** They are all in the future relative to the moment of prediction.
+
+**12.4(h) How would you check a replacement is honest?**
+Point at a clock. At *this exact time*, does this value already exist — for **every** example, including the ones where nothing has happened yet? If some rows would be blank, it is still a leak in disguise.
+
+### Page 12.5 — Score your own kitchen table (Build It)
+
+The student's table is their own; mark the structure and the arithmetic. Model answer, using the five-bottle table from Week 11:
+
+**Baseline:** five bottles, five different labels — one of each. So the most common label appears once: **1/5 = 20%.**
+
+> **Teacher note, important:** a five-row table with five different labels gives a 20% baseline and *every* feature will score at or above it, usually well above, because with five rows almost anything separates them. Say this out loud when you mark it: **"Your table is too small to trust these scores. Four of your five features would look brilliant on five rows, and that's evidence about the size of your table, not about your features."** That honesty is worth more than the marks.
+
+| feature | grouping | score | vs baseline 20% | verdict |
+|---|---|---|---|---|
+| `empty_mass_g` | 92 / 410 / 265 / 78 / 118 — all different | 5/5 = 100% | +80 | separates perfectly, but see note |
+| `height_cm` | 24.0 / 27.5 / 19.0 / 16.0 / 23.5 — all different | 5/5 = 100% | +80 | same |
+| `material` | plastic ×3, steel ×1, glass ×1 | 3/5 = 60% | +40 | ✅ useful |
+| `lid_type` | screw ×3, push ×1, straw ×1 | 3/5 = 60% | +40 | ✅ useful |
+| `widest_cm` | 7.0 / 8.0 / 6.5 / 6.0 / 7.5 — all different | 5/5 = 100% | +80 | same |
+
+**12.5(a) Did any of your features score 100%? Is it a leak?**
+Almost certainly yes, and almost certainly **no**. This is the important distinction of the page. A feature is leaky when it *contains the answer* — a sticker, an outcome, a decision made afterwards. `empty_mass_g` scoring 5/5 is not a leak; it is a five-row table where every object happens to have a different mass. Test it: *would this value exist for a brand-new bottle I picked up in a shop?* Yes, you can weigh it. Not a leak. Just a tiny table.
+
+**12.5(b) Was your prediction right about which feature would win?**
+Whatever they wrote, mark the honesty rather than the accuracy. A student who predicted wrong and says so has understood the point of counting better than one who predicted right.
+
+**12.5(c) Did any of your features land on the baseline?**
+Common answer: a column where every row says the same thing — `parts_count` all 1, or `colour` all silver. Those score exactly the baseline and are useless, for the simplest possible reason: a column that never changes can never separate anything.
+
+### Page 12.6 — Why 100% is bad news (Build It)
+
+A full-credit write-up (5+ sentences) contains all four of these. Model answer:
+
+> A hundred percent means my system got every single row right on the table I built it from — but I already knew the answers for those rows, so that is not the achievement it looks like. What I actually want to know is whether it works on the next piece of fruit, and a perfect score on old data tells me nothing about that.
+>
+> The usual reason for a perfect score is that one of my columns secretly contains the answer. In the fruit table it was `sticker_says`, which reads APPLE for every apple. It scored twelve out of twelve, and it is worthless, because at the moment I actually need a prediction I am holding an unknown fruit with no sticker on it.
+>
+> The test I use is three seconds long: stand at the moment I need the answer and ask whether I have this value yet. If it only turns up later — a diagnosis, a final score, a complaint, a shirt number — it is a leak, and I cross it out no matter what it scored.
+>
+> The last part is the bit I found hardest to accept: a hard job should produce some wrong answers. If telling apples from oranges by weight is genuinely difficult, and one heavy apple weighs the same as one light orange, then a feature that never gets anything wrong is not being cleverer than the problem. It is not doing the problem.
+
+
+### 🎨 Draw It
+
+There is no single right drawing. A strong answer does three things:
+
+1. The **dashed line is the moment of prediction**: a moment in time, not a wall between "good" and "bad" features.
+2. Everything on the **right** is both **later** *and* **a record of the outcome**. Just being in the future is not enough; tomorrow's weather is later but irrelevant, not leaky.
+3. The **honest replacement** in the third box captures *some* of the same information from something you actually have. An unrelated replacement means the thinking is unfinished.
+
+Test: at the exact moment the dashed line marks, could I look up every item on the left? If not for even one, it belongs on the right. The workbook's sample (the little brother's dinner, with the empty plate as the leak) is a model, not the only answer.
+
+### 📊 Self-Check
+
+Not marked. Read the ticks against the work: a student who ticks "got it" for the three-second test but wrote "it's cheating" on page 12.4 needs the "when is it known" conversation again. The last line ("one thing I'd like explained again") is the best input you will get for the start of Week 13.
+
+### Class activity — the five scoring grids (worked in class, not in the workbook)
+
+The student did these in class on their blank sheet. The workbook does not reproduce them, but A5 depends on these scores, so they are kept here for reference while marking.
 
 **`colour` — 11/12 = 91.7%**
 
@@ -777,77 +986,6 @@ Bananas 4 of 4 ✓ · apples 4 of 4 ✓ · oranges 0 of 4 ✗.
 
 **12/12 = 100%.** Verdict: 🚨 **LEAKY.** At the moment you are holding an unknown fruit and need the answer, there is no sticker — and if there were, you would not have needed a machine. Cut it regardless of the score.
 
-### Page 12.3 — The scoreboard
-
-| rank | feature | score | vs baseline 33.3% | verdict |
-|---|---|---|---|---|
-| — | `sticker_says` | 12/12 = 100% | +66.7 | 🚨 LEAKY — remove |
-| 1 | `colour` | 11/12 = 91.7% | +58.4 | ✅ very useful |
-| 2 | `mass_g` | 10/12 = 83.3% | +50.0 | ✅ useful |
-| 3 | `length_cm` | 8/12 = 66.7% | +33.4 | ✅ useful (banana specialist) |
-| — | `quadrant` | 4/12 = 33.3% | 0.0 | ❌ useless — remove |
-
-**Final feature list: `colour`, `mass_g`, `length_cm`.**
-
-**12.3(a) Why is `sticker_says` not ranked 1st, even though it scored highest?**
-Because it is not a feature at all — it is the answer copied into another column. It would not exist at the moment the prediction is needed, so its score describes the table and not the world.
-
-**12.3(b) Which feature would you delete next, if you had to lose one more?**
-`length_cm`, at 66.7%. But say what you'd lose: it is the only perfect banana detector, and deleting it makes bananas depend entirely on `colour` and `mass_g`. There is no free deletion.
-
-### Page 12.4 — The leak hunt
-
-| # | Task | The leak | When does it become known? | A non-leaky replacement |
-|---|---|---|---|---|
-| 1 | Will this parcel arrive late? | `customer_complaint_filed` | Only **after** the parcel was already late — a complaint is a reaction to the outcome. | `distance_km` combined with `courier_late_rate_last_month` — both known the moment the parcel is posted. |
-| 2 | Will this student join the football team? | `team_shirt_number` | Only after they have **already joined**. Nobody is issued a shirt number in advance. | `sport_played_last_year`, or `attended_the_trial` (yes/no) — both known before the decision. |
-| 3 | Will it rain tomorrow? | `tomorrow_umbrella_sales` | Tomorrow. It is literally from the future. | `today_pressure_change_over_6h` — a genuine early signal available today. |
-| 4 | Is this song going to be a hit? | `weeks_in_top_10` | Only after it has already been a hit. It *is* the answer. | `artist_followers_at_release` and `playlist_adds_in_first_week` — known early, and honestly predictive. |
-| 5 | Does this patient have flu? | `flu_tablets_prescribed` | Only after a doctor has already diagnosed flu. At prediction time it is always blank. | `days_of_symptoms_so_far` — known the moment the patient walks in. |
-| 6 | Will this customer cancel this month? | `cancellation_reason_text` | Only for people who have **already cancelled**. For everyone else it is empty — so the model learns "if this box has any text in it, they cancelled". | `days_since_last_login` or `support_tickets_in_last_30_days` — both exist for every customer at any moment. |
-
-**12.4(g) What do all six leaks have in common?**
-Every one of them is **a record of the outcome, or of a decision made after the outcome.** They are all in the future relative to the moment of prediction.
-
-**12.4(h) How would you check a replacement is honest?**
-Point at a clock. At *this exact time*, does this value already exist — for **every** example, including the ones where nothing has happened yet? If some rows would be blank, it is still a leak in disguise.
-
-### Page 12.5 — Score your own kitchen table
-
-The student's table is their own; mark the structure and the arithmetic. Model answer, using the five-bottle table from Week 11:
-
-**Baseline:** five bottles, five different labels — one of each. So the most common label appears once: **1/5 = 20%.**
-
-> **Teacher note, important:** a five-row table with five different labels gives a 20% baseline and *every* feature will score at or above it, usually well above, because with five rows almost anything separates them. Say this out loud when you mark it: **"Your table is too small to trust these scores. Four of your five features would look brilliant on five rows, and that's evidence about the size of your table, not about your features."** That honesty is worth more than the marks.
-
-| feature | grouping | score | vs baseline 20% | verdict |
-|---|---|---|---|---|
-| `empty_mass_g` | 92 / 410 / 265 / 78 / 118 — all different | 5/5 = 100% | +80 | separates perfectly, but see note |
-| `height_cm` | 24.0 / 27.5 / 19.0 / 16.0 / 23.5 — all different | 5/5 = 100% | +80 | same |
-| `material` | plastic ×3, steel ×1, glass ×1 | 3/5 = 60% | +40 | ✅ useful |
-| `lid_type` | screw ×3, push ×1, straw ×1 | 3/5 = 60% | +40 | ✅ useful |
-| `widest_cm` | 7.0 / 8.0 / 6.5 / 6.0 / 7.5 — all different | 5/5 = 100% | +80 | same |
-
-**12.5(a) Did any of your features score 100%? Is it a leak?**
-Almost certainly yes, and almost certainly **no**. This is the important distinction of the page. A feature is leaky when it *contains the answer* — a sticker, an outcome, a decision made afterwards. `empty_mass_g` scoring 5/5 is not a leak; it is a five-row table where every object happens to have a different mass. Test it: *would this value exist for a brand-new bottle I picked up in a shop?* Yes, you can weigh it. Not a leak. Just a tiny table.
-
-**12.5(b) Was your prediction right about which feature would win?**
-Whatever they wrote, mark the honesty rather than the accuracy. A student who predicted wrong and says so has understood the point of counting better than one who predicted right.
-
-**12.5(c) Did any of your features land on the baseline?**
-Common answer: a column where every row says the same thing — `parts_count` all 1, or `colour` all silver. Those score exactly the baseline and are useless, for the simplest possible reason: a column that never changes can never separate anything.
-
-### Page 12.6 — Why 100% is bad news
-
-A full-credit write-up (5+ sentences) contains all four of these. Model answer:
-
-> A hundred percent means my system got every single row right on the table I built it from — but I already knew the answers for those rows, so that is not the achievement it looks like. What I actually want to know is whether it works on the next piece of fruit, and a perfect score on old data tells me nothing about that.
->
-> The usual reason for a perfect score is that one of my columns secretly contains the answer. In the fruit table it was `sticker_says`, which reads APPLE for every apple. It scored twelve out of twelve, and it is worthless, because at the moment I actually need a prediction I am holding an unknown fruit with no sticker on it.
->
-> The test I use is three seconds long: stand at the moment I need the answer and ask whether I have this value yet. If it only turns up later — a diagnosis, a final score, a complaint, a shirt number — it is a leak, and I cross it out no matter what it scored.
->
-> The last part is the bit I found hardest to accept: a hard job should produce some wrong answers. If telling apples from oranges by weight is genuinely difficult, and one heavy apple weighs the same as one light orange, then a feature that never gets anything wrong is not being cleverer than the problem. It is not doing the problem.
 
 ### Lesson questions posed in the Say-this scripts
 

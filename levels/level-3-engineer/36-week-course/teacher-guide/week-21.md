@@ -15,7 +15,7 @@
 | **New maths** | **None.** The only arithmetic is one gradient and one step, both worked by hand on six numbers. |
 | **New syntax** | `torch.optim.SGD([w], lr=0.1)` · `optimizer.zero_grad()` · `optimizer.step()` · `with torch.no_grad():` |
 | **Dataset** | **Six hand-typed points** — the hours-versus-marks pairs from Week 12: **(1, 20), (2, 28), (3, 36), (4, 44), (5, 52), (6, 60)**. Nothing loads, nothing downloads, and the answer is hidden in the data on purpose. |
-| **Materials** | **Five large index cards, one line of code on each** — cut and written before class · printed workbook pages 21.1–21.6 · Blu-tack or tape for sticking results on the wall · the Bug Log · last week's `6 + 27 = 33` still on the wall |
+| **Materials** | **Five large index cards, one line of code on each** — cut and written before class · the printed workbook (all of it: Warm-Up through Self-Check, with the Answers section torn off or folded away) · Blu-tack or tape for sticking results on the wall · the Bug Log · last week's `6 + 27 = 33` still on the wall |
 | **Tech needed** | Laptop with Python 3, PyTorch and matplotlib. **No new installs.** No dataset, no internet. |
 | **Prep time** | 25 minutes the night before (10 of them writing the five cards) · 5 minutes on the day |
 | **Expected runtime of the code** | `fit_line.py` **about 1 second** for all 400 steps. `drop_a_line.py` runs six variants in **under 2 seconds**. Nothing today is slow. |
@@ -512,13 +512,13 @@ b after = 0 − 0.05 × (−80.0) = 4.0
 
 **If you have not done those six lines yourself, do not teach the lesson.** They are the difference between "the computer says 1786.6666" and "we knew it would say 1786.6666".
 
-- [ ] **Run `drop_a_line.py`** (full file in the Answer Key, page 21.3) so all six variants are familiar and neither traceback surprises you. **Runtime under 2 seconds.**
-- [ ] **Run `pile_up.py`** (Answer Key, page 21.2). Four backwards, no wipe: `−326.6667`, `−653.3334`, `−980.0001`, `−1306.6667`. **This is the demonstration that justifies line 1.**
-- [ ] **Run `measure.py`** (Answer Key, page 21.5) for the `no_grad` evidence and the loss-curve PNG.
+- [ ] **Run `drop_a_line.py`** (full file in the Answer Key, under Build It Part B) so all six variants are familiar and neither traceback surprises you. **Runtime under 2 seconds.**
+- [ ] **Run `pile_up.py`** (Answer Key, under Do the Maths by Hand, item M4). Four backwards, no wipe: `−326.6667`, `−653.3334`, `−980.0001`, `−1306.6667`. **This is the demonstration that justifies line 1.**
+- [ ] **Run `measure.py`** (Answer Key, under Build It Part C) for the `no_grad` evidence and the loss-curve PNG.
 - [ ] **Break it on purpose, twice**, so both deliberate mistakes are muscle memory:
   1. `torch.optim.SGD(w, lr=0.05)` without the brackets. Real message: `TypeError: params argument given to the optimizer should be an iterable of Tensors or dicts, but got torch.FloatTensor`.
   2. `lr=0.1`. **No error.** The loss goes 1786 → 8553 → 41215 → 198849 and by step 400 everything is `nan`.
-- [ ] **Print workbook pages 21.1–21.6.**
+- [ ] **Print the whole workbook** — and remove its **✅ Answers** section at the end (the student must not see it).
 - [ ] **Blu-tack or tape on the desk**, for sticking result slips on the wall during the clinic.
 - [ ] **Leave last week's `6 + 27 = 33` on the wall.** You will point at it in the first two minutes.
 
@@ -528,7 +528,7 @@ b after = 0 − 0.05 × (−80.0) = 4.0
 - [ ] Five cards **shuffled and face down** on the desk. **Card 1 kept separately at the bottom of the pile** — the `zero_grad` card is played last, on purpose.
 - [ ] The six points on the board: **(1, 20), (2, 28), (3, 36), (4, 44), (5, 52), (6, 60)** — and **not** the line they came from. That is the thing they are looking for.
 - [ ] A blank five-row table drawn on the wall sheet: *line removed · predicted · what happened · error message*.
-- [ ] Workbook 21.1 out.
+- [ ] Workbook open at **🛠️ Build It, Part B** (the five-row table), with **🔢 Do the Maths by Hand** marked for M1–M3.
 - [ ] Bug Log out.
 
 ### Fallback if the laptops fail
@@ -954,7 +954,7 @@ This section gives the main activity in full, step by step.
 - A working `fit_line.py` (theirs, from the live-code).
 - **Five index cards** on the wall, numbered 1 to 5.
 - **Five blank slips of paper** and something to stick them up with.
-- Workbook page 21.3, which is the five-row table: *line removed · what I predicted · what happened · the error message if any*.
+- Workbook **🛠️ Build It, Part B**, which is the five-row table: *line removed · what I predicted · what happened · the error message if any*.
 - A pen.
 
 ### The rules, read out once
@@ -1022,7 +1022,7 @@ Then step 2: up to 2737. Step 3: down to 31.9. Step 399: **2907.9082**.
 ### What "finished" looks like
 
 - Five slips on the wall under five cards.
-- Page 21.3 with five rows filled: prediction, result, and error message where there was one.
+- Build It Part B with five rows filled: prediction, result, and error message where there was one.
 - **At least one row saying "no error, but wrong"** — ideally three.
 - The student can answer: *"how do you tell a missing `backward` from a missing `step`?"* **Look at `.grad`: `None` versus a real number.**
 
@@ -1254,23 +1254,40 @@ Three checks, five minutes, exact wording.
 
 ## 📤 Homework to Assign
 
-This section gives the homework and the words to introduce it.
+This section gives the homework and the words to introduce it. **The workbook has twelve sections, not two pages**, so the table below says which are done in class, which are the core homework, and which are extra. The split is a suggestion for this guide; the key below answers every section whichever ones you set.
 
 **Say this:**
 
-> "About an hour, two pages, and the second one is the one I care about.
+> "About an hour, two parts, and the second one is the one I care about. Both are in the **🛠️ Build It** section near the end of your workbook.
 >
-> **First, page 21.2 — fit the line.** Six points, the five-line loop, four hundred steps. Report **the `w` and the `b` it found**, to four decimal places, and write beside them the line I hid in the data. If your numbers are not close to 8 and 12, do not fix the numbers — find the missing line.
+> **First, Build It Part A — fit the line.** Six points, the five-line loop, four hundred steps. Write your predicted step-0 row from your maths-by-hand answers **before** you run it. Then report **the `w` and the `b` it found**, to four decimal places, and write beside them the line I hid in the data. If your numbers are not close to 8 and 12, do not fix the numbers — find the missing line.
 >
-> **Second, page 21.3 — delete each line in turn and fill in the table.** Five rows. Four columns: **which line you removed, what you predicted, what actually happened, and the error message if there was one.**
+> **Second, Build It Part B — delete each line in turn and fill in the table.** Five rows. Four columns: **which line you removed, what you predicted, what actually happened, and the error message if there was one.**
 >
-> Two rules on that page. **One: write the prediction before you run it.** In pen. **Two: at least one of your five rows must say 'no error, but wrong'** — and if you have got three of them, you have done it properly.
+> Two rules on that table. **One: write the prediction before you run it.** In pen. **Two: at least one of your five rows must say 'no error, but wrong'** — and if you have got three of them, you have done it properly.
 >
-> And copy the error messages **exactly**. Not 'it crashed'. The real words, including the bit that says *'a second time'*, because that phrase is the clue."
+> And copy the error messages **exactly**. Not 'it crashed'. The real words, including the bit that says *'a second time'*, because that phrase is the clue.
+>
+> The other sections — Warm-Up, Predict the Output, the two Practice Sets, Fix the Broken Program and the rest — are listed on the sheet I am handing you. Do the ones I have ticked."
 
-**Workbook pages:** 21.1 and 21.4 in class · **21.2 and 21.3** at home · **21.5** (the `no_grad` measurement) and **21.6** (the learning-rate sweep) stretch.
+**Workbook sections, in the order they appear:**
 
-**Expected time:** 20 min on the fit and the report · 30 min on the five deletions and the table · 10 min copying messages accurately. **About 60 minutes.**
+| Workbook section | Items | Where | Approx. time |
+|---|---|---|---|
+| ✅ Warm-Up | W1–W5 (last week's tensors and autograd) | Home, first | 5 min |
+| 🔢 Do the Maths by Hand | M1–M4 | **In class** — the Concept segment works M1–M3 on the board; M4 goes with the `pile_up.py` demonstration | 15 min |
+| 🔎 Predict the Output | P1–P4 | Home | 10 min |
+| ✍️ Practice Set A — Read It | A1–A6 | Home | 25 min |
+| ✍️ Practice Set B — Write It | B1–B5 | Home (B5 is the long one, about 25 lines) | 30 min |
+| 🐞 Fix the Broken Program | three bugs, Runs 1–4 | Home | 20 min |
+| 🧩 Puzzle of the Week | Part 1 (learning-rate boundary), Part 2 (Order Puzzle) | Extra | 20 min |
+| 🤔 Think Deeper | T1, T2 | Extra | 15 min |
+| 🛠️ Build It — Parts A and B | fit the line; five-row table | **Core homework** (Part B is also filled in live during the Drop-a-Line Clinic) | **about 60 min** |
+| 🛠️ Build It — Part C, Stretch, Bug Log | `no_grad` once; learning-rate sweep | Stretch | 20 min |
+| 🎨 Draw It | one trip round the loop, four questions | Extra | 10 min |
+| 📊 Self-Check | ten "I can..." rows | Home, last | 3 min |
+
+**Expected time for the core homework:** 20 min on the fit and the report (Part A) · 30 min on the five deletions and the table (Part B) · 10 min copying messages accurately. **About 60 minutes.** Everything else is on top of that, so choose; do not set the whole workbook in one week.
 
 > **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — are the predictions in pen and clearly written before the results?** A table where every prediction matches every result exactly is a table that was filled in backwards. **Two — are the error messages verbatim?** *"Trying to backward through the graph a second time"* is a result; *"it crashed"* is not, and the difference is whether they can search for it in two years' time. **Three — does the `zero_grad` row explain the mechanism?** The answer that earns full marks says something like *"the gradients added up instead of being wiped, so each step carried every old slope along with it, so it kept overshooting and ended worse than it started — 1786.6666 to 2907.9082."* A student who writes *"it broke"* has watched the failure without understanding it, and that is worth one line of feedback: **"what happened to the gradient column?"**
 
@@ -1278,11 +1295,69 @@ This section gives the homework and the words to introduce it.
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every workbook section and item, in workbook order, so you can mark from this page alone. The values come from the workbook's own **✅ Answers** section, re-checked by running the code. Teacher-only notes (wrong-answer maps, marking tips) are marked **Marking** or **Watch for**. The complete runnable files `drop_a_line.py`, `pile_up.py` and `measure.py` sit under Build It Part B, Maths item M4 and Build It Part C.
 
-### Page 21.1 — The step-0 arithmetic, by hand
+### Warm-Up
 
-*Both knobs start at zero. Work out the loss, both slopes, and where one step of `lr = 0.05` lands.*
+*Last week's tensors and autograd. W1–W5.*
+
+**W1.** **One:** the default decimal type is `float32`, about seven digits, so `2.1` prints as `2.0999999046325684` — numpy would say `float64`. **Two:** a tensor can be **tracked**: set `requires_grad=True` and the results grow a `grad_fn` in the printout, and you can call `backward()` on them. Both are visible on a screen.
+
+**W2.** It is **the recording**: `z` remembers that a matrix multiply produced it and which tensors went in. **It is there because one of the inputs (`w`) had `requires_grad=True`**, so PyTorch started tracking.
+
+**W3.** **33**, because the slopes are `6` and `27` and **`.grad` adds instead of replacing.**
+
+**W4.** Either **`backward()` has not been called yet**, or **`requires_grad=True` is missing** on that tensor. `print(w.requires_grad)` tells you which.
+
+**W5.** **200 tensors, each still carrying the whole graph that made it** — visible as the `grad_fn` in the printout. The first thing to break is plotting: `Can't call numpy() on Tensor that requires grad`. And the memory cost is real — about six times as much for the same numbers.
+
+**Watch for:** W3 answered "27" (thinks the second call replaced the first) or "9" (adds the wrong things). Only 33 is right, and the reason has to say *adds instead of replacing* — this is the fact that the whole of line 1 depends on today.
+
+
+### Do the Maths by Hand
+
+*No new maths; calculator only. Both knobs start at zero. M1–M4.*
+
+**M1.**
+
+```text
+errors:        −20   −28   −36   −44   −52   −60
+squared:       400   784  1296  1936  2704  3600
+sum:           10720
+÷ 6:           1786.6667
+```
+
+**M1(a).** **Both are right.** `10720 ÷ 6` is `1786.66666…` repeating for ever. Your calculator rounds the seventh digit up to `1786.6667`; the screen is showing you `float32`, which holds about seven digits and lands on `1786.6666`. **Same number, different number of digits kept.**
+
+**M2.**
+
+```text
+(−20 × 1) = −20    (−28 × 2) = −56    (−36 × 3) = −108
+(−44 × 4) = −176   (−52 × 5) = −260   (−60 × 6) = −360
+
+sum:  −980
+× 2:  −1960
+÷ 6:  −326.6667
+```
+
+**M2(a).** **Increase it.** A negative slope means the loss falls as `w` rises, so you go that way. The `−` in `w ← w − lr × slope` turns the negative slope into a positive step.
+
+**M2(b).** `w ← 0 − 0.05 × (−326.6667) = 0 + 16.3333 = 16.3333`.
+
+**M3.**
+
+```text
+sum of the errors:  −240
+× 2 ÷ 6:            −80.0
+
+b ← 0 − 0.05 × (−80.0) = 0 + 4.0 = 4.0
+```
+
+**M3(a).** **`w` moves faster, by about four times**: `326.6667 ÷ 80 = 4.08`.
+
+**M3(b).** **Yes.** At step 50, `w` has travelled from 0 to 8.88 (already past 8) while `b` has only reached 8.24 out of 12. **Different knobs learn at different speeds**, and this is one of the reasons Week 26's optimizer exists.
+
+**The whole of step 0 in one block** (this is also the predicted step-0 row in Build It Part A):
 
 ```text
 predictions with w = 0, b = 0:   all six are 0
@@ -1313,9 +1388,480 @@ step   0  loss  1786.6666  w 16.3333  b  4.0000  dL/dw  -326.6667
 
 **Marking:** `1786.6667` (accept `1786.67`), `−326.6667`, `−80`, `16.3333`, `4.0`. The `b` slope is the one people miss — it is the errors added up with no multiplication, because the bias multiplies 1 on every row.
 
-### Page 21.2 — Fit `y = 8x + 12` with the five-line loop
+**M4 — the pile-up.**
 
-*The complete `fit_line.py` is in the Prep Checklist.* Real output:
+| after | `w.grad` |
+|---|---|
+| 1 backward | **−326.6667** |
+| 2 backwards | **−653.3334** |
+| 3 backwards | **−980.0001** |
+| 4 backwards | **−1306.6668** |
+
+**M4(a).** `4 × 326.6667 = 1306.6668`.
+
+**M4(b).** *Because each of the four additions happens in `float32`, which keeps about seven digits, so a tiny rounding error accumulates and the fourth total lands on `1306.6667` instead.* **That is last week's dtype lesson, turning up somewhere you were not looking for it.**
+
+**M4(c).** **Four times as big as you meant.** The step is `lr × .grad`, and the `lr` is unchanged, so a gradient four times too large is a step four times too large. **In a real loop the pile is not four times the slope but the running total of every slope so far, which is why the run swings about instead of settling.**
+
+**`pile_up.py` is the live demonstration behind M4.** The complete file:
+
+```python
+"""pile_up.py - what 'gradients add up' actually means."""
+import torch
+
+hours = torch.tensor([[1.0], [2.0], [3.0], [4.0], [5.0], [6.0]])
+marks = torch.tensor([[20.0], [28.0], [36.0], [44.0], [52.0], [60.0]])
+
+w = torch.tensor([[0.0]], requires_grad=True)
+b = torch.tensor([0.0], requires_grad=True)
+
+print("same weights, same data, four backward() calls, no zero_grad:")
+for i in range(4):
+    pred = hours @ w + b
+    loss = ((pred - marks) ** 2).mean()
+    loss.backward()
+    print("  after backward %d:  w.grad = %10.4f   (%d x -326.6667 = %10.4f)"
+          % (i + 1, w.grad.item(), i + 1, (i + 1) * -326.6667))
+
+print()
+print("now wipe it and do one more:")
+w.grad.zero_()
+b.grad.zero_()
+pred = hours @ w + b
+loss = ((pred - marks) ** 2).mean()
+loss.backward()
+print("  after zero_() and one backward: w.grad = %.4f" % w.grad.item())
+```
+
+Real output:
+
+```text
+same weights, same data, four backward() calls, no zero_grad:
+  after backward 1:  w.grad =  -326.6667   (1 x -326.6667 =  -326.6667)
+  after backward 2:  w.grad =  -653.3334   (2 x -326.6667 =  -653.3334)
+  after backward 3:  w.grad =  -980.0001   (3 x -326.6667 =  -980.0001)
+  after backward 4:  w.grad = -1306.6667   (4 x -326.6667 = -1306.6668)
+
+now wipe it and do one more:
+  after zero_() and one backward: w.grad = -326.6667
+```
+
+*(The four growing bars, and the fifth one after the wipe, are **Figure 21.4** in the Concept segment above.)*
+
+**The point to insist on:** the true slope was `−326.6667` on all four occasions. **Nothing about the data or the weights changed.** The last row differs from `4 × 326.6667` in the fourth decimal (`1306.6667` against `1306.6668`) because each addition is done in float32 — a nice, harmless reminder of last week's dtype lesson.
+
+**Marking:** M3 is the one people miss. If the `dL/db` answer is a multiple of the hours (for example −980 × 2 ÷ 6), they multiplied by the input; the bias multiplies 1.
+
+
+### Predict the Output
+
+*P1–P4. Predictions in pen before anything runs.*
+
+**P1.**
+
+```text
+tensor([[6.]])
+None
+tensor([[3.]], requires_grad=True)
+```
+
+**Line 2: expected `tensor([[0.]])`, got `None`.** Modern PyTorch's `zero_grad()` **throws the box away** rather than filling it with zero — it is slightly faster, and the effect on the next `backward()` is the same, because `backward()` adds into an empty box either way.
+
+**So `None` is a completely normal thing to see just after `zero_grad()`.** And last week's rule still stands: `None` means nobody has written there.
+
+**Line 3: no, `zero_grad()` did not change `w`.** It is still `3.0`. **That proves the two jobs are separate: `zero_grad` touches slopes only.**
+
+**P2.** The slope of `w × w` at `w = 3` is `2 × 3 = **6**`. So `3 − 0.1 × 6 = 2.4`.
+
+```text
+2.4000000953674316
+6.0
+```
+
+**Line 1 is not exactly 2.4 because it is `float32`** — 2.4 has no exact binary form, so you get it right to about seven digits and then it stops.
+
+**Line 2 proves that `step()` does not touch the slopes.** It moved `w` from 3.0 to 2.4 and left `w.grad` sitting on `6.0`, exactly where `backward()` put it. **Which is precisely why you must wipe it yourself.**
+
+**P3.**
+
+```text
+torch.Size([3, 1])
+torch.Size([3, 3])
+5.333333492279053
+```
+
+By hand: `1 × 2 + 1 = **3**`, `2 × 2 + 1 = **5**`, `3 × 2 + 1 = **7**`. The three marks are 3, 5, 7. **The model is perfect, so the loss should be `0.0`.**
+
+**It was `5.333333492279053`.** The extra numbers came from **broadcasting**: `pred` is a `(3, 1)` column and `marks` is a `(3,)` flat row, so `pred - marks` became a **3 × 3 grid** comparing every prediction with every mark — including the six pairs that belong to different students.
+
+**The one-word fix:** `marks.reshape(-1, 1)` — make it a **column**. *(Writing `marks = torch.tensor([[3.0], [5.0], [7.0]])` in the first place is the same fix.)*
+
+**P4.**
+
+```text
+True False
+False True
+8.0 8.0
+```
+
+**Line 3 in one sentence:** *`no_grad` gave exactly the same answer, `8.0`, while storing nothing for a backward pass that was never going to happen.* **Same numbers, less bookkeeping. That is the entire trade.**
+
+**Marking:** the surprise is P1 line 2 (`None`, not `tensor([[0.]])`) and P3 (a wrong loss with no error). A student who predicted all four right has probably seen them before; ask which one they would have got wrong a week ago.
+
+
+### Practice Set A
+
+*Read It. A1–A6.*
+
+**A1.** optimizer → **(iii)** · `zero_grad` → **(iv)** · `step` → **(v)** · `no_grad` → **(i)** · gradient accumulation → **(ii)**
+
+**A2.** The correct order and jobs:
+
+| # | line | job |
+|---|---|---|
+| 1 | `optimizer.zero_grad()` | wipe last step's slopes |
+| 2 | `pred = hours @ w + b` | predict with today's knobs |
+| 3 | `loss = ((pred − marks) ** 2).mean()` | one number for how wrong |
+| 4 | `loss.backward()` | one slope per knob |
+| 5 | `optimizer.step()` | move every knob downhill |
+
+**A2(a).**
+
+- **line 2 after line 1:** so that the slopes are clean before the pass that will add to them.
+- **line 3 after line 2:** the loss compares a prediction with the truth, and without line 2 there is no prediction — or worse, there is **last iteration's**.
+- **line 4 after line 3:** `backward()` starts from a loss. Without one there is nothing to walk back from.
+- **line 5 after line 4:** `step()` applies the slopes, so the slopes have to exist first.
+
+**A2(b).** Because **it is the only position where you can look at a loop and *know* the gradients are clean before `backward()` runs.** Putting it at the end also works (see the Order Puzzle), but then you have to reason about what happens on the first iteration. **First, every time, and then you never think about it again.**
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `TypeError: params argument given to the optimizer should be an iterable of Tensors or dicts, but got torch.FloatTensor` | `SGD([w, b], lr=0.05)` — a list, even for one knob |
+| b | `RuntimeError: grad can be implicitly created only for scalar outputs` | `.mean()` on the loss line |
+| c | `RuntimeError: expected m1 and m2 to have the same dtype, but got: long long != float` | `[[1.0], [2.0], [3.0]]` |
+| d | Completes step 0, then `RuntimeError: Trying to backward through the graph a second time ...` | Put the forward line **inside** the loop |
+| e | **No error.** `pred - marks` broadcasts into a 3 × 3 grid (6 × 6 with the full data) and every number afterwards is about the wrong question | Make it a column: `[[20.0], [28.0], [36.0]]` |
+| f | **No error.** `step()` applies the freshly-wiped gradient, so nothing moves — 400 steps and `w` stays `0.0000` | Put `backward()` before `step()` |
+
+**A3(g).** **e and f.**
+
+**A3(h).** For **e**, print `marks.shape` — `(3,)` instead of `(3, 1)` — or notice `(pred - marks).shape` is `(3, 3)`. For **f**, `w` never leaves `0.0000` while `w.grad` holds a perfectly good `−326.6667`. **The gradient is right and nothing moves.**
+
+**A4.** i → **Q** · ii → **S** · iii → **P** · iv → **T** · v → **R**
+
+**A4(f).** **Q (`None`) and T (`False`).** `None` means **no slope has ever been written into that box** — it is an absence. `False` means **this tensor is genuinely not being tracked** — it is a fact about the tensor, deliberately arranged by the `no_grad` block. **One is "nothing has happened yet"; the other is "nothing is going to."**
+
+**A5.**
+
+**Log W — `optimizer.zero_grad()` is missing.** Giveaway: **the gradient column never shrinks and flips sign** (−326.7, −129.9, +277.1, and still around ±250 at step 399) and **the final loss, 2907.9082, is higher than the starting 1786.6666.** Those are piles, not slopes.
+
+**Log X — `loss.backward()` is missing.** Giveaway: **`dL/dw` is `None` on every line.** No backward pass ever ran, so `step()` had nothing to apply.
+
+**Log Y — `optimizer.step()` is missing.** Giveaway: **`dL/dw` is a perfectly correct `−326.6667` on every line, and nothing moves.** The slopes were computed and then wiped, 400 times.
+
+**Log Z — nothing is missing. The learning rate is too big** (`0.1` instead of `0.05`). Giveaway: **step 0 is fine, then `w` alternates in sign** (32.7, −39.4, +118.6) while the loss grows, and it ends in `nan`.
+
+**A5(a).** **The question is: what does `dL/dw` say?** X says **`None`** — no `backward()`. Y says **`−326.6667`** — `backward()` ran, `step()` did not.
+
+**A5(b).** **The learning rate**, changed from `0.05` to **`0.1`**. `0 − 0.1 × (−326.6667) = 32.6667`, exactly twice the healthy step.
+
+**A5(c).** **Easiest → hardest: Z, X, Y, W.** Z screams — the numbers are absurd within three steps and end in `nan`. X and Y are obvious *if you print the gradient*, and invisible if you only watch the loss. **W is the hardest by a long way**, because it goes down at step 1 and produces a plausible-looking log all the way through; the only thing that catches it is comparing the **first** loss with the **last** one.
+
+**A6.**
+
+**a)** `zero_grad` wipes **the slopes** and never touches **the weights**. `step` moves **the weights** and never touches **the slopes**.
+
+**b)** Line 1 exists because line 4 **adds into `.grad`** instead of **overwriting it**.
+
+**c)** Three of the five lines fail with **no error at all**. The comparison that catches the worst of them is **the first loss (1786.6666)** against **the last loss (2907.9082)**.
+
+**d)** by looking at **`w.grad`**: `None` means **`backward()` never ran**, and `−326.6667` means **`backward()` ran and `step()` did not**.
+
+**e)** `no_grad` changes **nothing** about the answer, and saves **the memory and time of storing every intermediate value for a backward pass that will never happen**.
+
+**f)** look at the **first four** steps.
+
+**Watch for:** in A5(c) students put **W** easiest because "the loss goes down" at step 1. It is the hardest, and the only thing that catches it is first loss against last loss. In A3, (e) and (f) are the two that students label as errors; both are silent.
+
+
+### Practice Set B
+
+*Write It. B1–B5. Accept any code that produces the expected output; the versions below are the model.*
+
+**B1.**
+
+```python
+import torch
+
+w = torch.tensor([[0.0]], requires_grad=True)
+b = torch.tensor([0.0], requires_grad=True)
+optimizer = torch.optim.SGD([w, b], lr=0.05)
+print("w", tuple(w.shape), " b", tuple(b.shape), " w.grad", w.grad)
+```
+
+```text
+w (1, 1)  b (1,)  w.grad None
+```
+
+`w` is `(1, 1)` so that `hours @ w` works — `(6, 1) @ (1, 1)` gives `(6, 1)`. `b` is a single number that broadcasts across all six rows.
+
+**B2.**
+
+```python
+import torch
+
+hours = torch.tensor([[1.0], [2.0], [3.0], [4.0], [5.0], [6.0]])
+marks = torch.tensor([[20.0], [28.0], [36.0], [44.0], [52.0], [60.0]])
+w = torch.tensor([[0.0]], requires_grad=True)
+b = torch.tensor([0.0], requires_grad=True)
+optimizer = torch.optim.SGD([w, b], lr=0.05)
+
+optimizer.zero_grad()
+pred = hours @ w + b
+loss = ((pred - marks) ** 2).mean()
+loss.backward()
+print("before step: w = %.4f   w.grad = %.4f   loss = %.4f"
+      % (w.item(), w.grad.item(), loss.item()))
+optimizer.step()
+print("after  step: w = %.4f   w.grad = %.4f" % (w.item(), w.grad.item()))
+```
+
+```text
+before step: w = 0.0000   w.grad = -326.6667   loss = 1786.6666
+after  step: w = 16.3333   w.grad = -326.6667
+```
+
+**B2(a).** *`step()` moved `w` from 0 to 16.3333 and left `w.grad` sitting on exactly the same `−326.6667`, so it moves the weights and does not touch the slopes — which is why they have to be wiped by something else.*
+
+**B3.**
+
+```python
+import torch
+
+torch.manual_seed(0)
+hours = torch.tensor([[1.0], [2.0], [3.0], [4.0], [5.0], [6.0]])
+marks = torch.tensor([[20.0], [28.0], [36.0], [44.0], [52.0], [60.0]])
+w = torch.tensor([[0.0]], requires_grad=True)
+b = torch.tensor([0.0], requires_grad=True)
+optimizer = torch.optim.SGD([w, b], lr=0.05)
+
+for step in range(400):
+    optimizer.zero_grad()
+    pred = hours @ w + b
+    loss = ((pred - marks) ** 2).mean()
+    loss.backward()
+    optimizer.step()
+
+print("w = %.4f   b = %.4f   loss = %.6f" % (w.item(), b.item(), loss.item()))
+```
+
+```text
+w = 8.0014   b = 11.9939   loss = 0.000007
+```
+
+**B4.**
+
+```python
+with torch.no_grad():
+    pred = hours @ w + b
+    gap = (pred - marks).abs().mean()
+print("requires_grad", pred.requires_grad, " grad_fn", pred.grad_fn)
+print("average miss %.4f marks" % gap.item())
+```
+
+```text
+requires_grad False  grad_fn None
+average miss 0.0023 marks
+```
+
+**B4(a).** Without `.abs()`, a prediction that is **2 too high** and one that is **2 too low** would cancel out, and a model that was wildly wrong in both directions could report an average miss of zero. **You want the *size* of each miss, not its direction.**
+
+**B5.**
+
+```python
+"""b5w21.py - run the loop five ways and report one row each."""
+import torch
+
+hours = torch.tensor([[1.0], [2.0], [3.0], [4.0], [5.0], [6.0]])
+marks = torch.tensor([[20.0], [28.0], [36.0], [44.0], [52.0], [60.0]])
+
+
+def fresh():
+    torch.manual_seed(0)
+    w = torch.tensor([[0.0]], requires_grad=True)
+    b = torch.tensor([0.0], requires_grad=True)
+    return w, b, torch.optim.SGD([w, b], lr=0.05)
+
+
+def run(label, skip=None):
+    w, b, opt = fresh()
+    for step in range(400):
+        if skip != "zero_grad":
+            opt.zero_grad()
+        pred = hours @ w + b
+        loss = ((pred - marks) ** 2).mean()
+        if skip != "backward":
+            loss.backward()
+        if skip != "step":
+            opt.step()
+    grad = "None" if w.grad is None else "%.4f" % w.grad.item()
+    print("%-22s %12.4f %9.4f %9.4f %10s" % (label, loss.item(), w.item(), b.item(), grad))
+
+
+print("%-22s %12s %9s %9s %10s" % ("run", "final loss", "w", "b", "w.grad"))
+run("all five lines")
+run("no zero_grad", skip="zero_grad")
+run("no backward", skip="backward")
+run("no step", skip="step")
+```
+
+```text
+run                      final loss         w         b     w.grad
+all five lines               0.0000    8.0014   11.9939     0.0005
+no zero_grad              2907.9082    5.3946   18.9274  -247.1715
+no backward               1786.6666    0.0000    0.0000       None
+no step                   1786.6666    0.0000    0.0000  -326.6667
+```
+
+**Read the last two rows across.** Identical in every column except the last, where one says `None` and the other says `−326.6667`. **That single column is the whole diagnosis.**
+
+**Why `fresh()` has to be a function:** because each run needs **brand-new knobs starting at zero and a brand-new optimizer holding them.** Make them once at the top and run 2 starts wherever run 1 finished, so every row after the first is measuring something meaningless.
+
+### Fix the Broken Program
+
+*Three bugs: dtype, runtime, silent logic. The step-0 hand check and Runs 1–4 were re-run and reproduce the printed logs exactly.*
+
+**Bug 1 — line 6, `km = torch.tensor([[1], [2], [3], [4], [5]])`. A dtype bug.**
+
+**`km` holds whole numbers**, so its dtype is `int64` — which PyTorch calls `long long` in this message. The missing character is the **`.0`** (or just the `.`) on each of the five values. `minutes` and `w` are decimals, so the multiply refuses.
+
+**The fix:** `km = torch.tensor([[1.0], [2.0], [3.0], [4.0], [5.0]])`.
+
+**Bug 2 — the traceback names line 16, `loss.backward()`, but the wrong line is line 15**, `loss = ((pred - minutes) ** 2)`. **The `.mean()` is missing.**
+
+`loss` is holding **five** numbers, one per delivery, because `(pred - minutes) ** 2` squares each row separately and nothing collapses them.
+
+**Why `backward()` needs one number:** *"how much does the loss change if I nudge this knob?"* only has an answer if there is **one** loss. Five losses is five different questions, and PyTorch will not guess which one you meant.
+
+**The fix:** `loss = ((pred - minutes) ** 2).mean()`.
+
+**Bug 3 — `optimizer.zero_grad()` is missing from the top of the loop. A silent logic bug.**
+
+**The `dL/dw` column is wrong in two ways: the magnitudes do not shrink, and the sign keeps flipping.** In a healthy run the gradient falls steadily towards zero. −192.0, +209.3, −122.3, +193.3 are not slopes at all; they are **sums of every slope so far**, so `w` keeps being pushed by old slopes after it has passed the answer.
+
+**`w` is thrashing** — 9.6, then −0.1, then 14.8, then −4.2. It is leaping past the answer and back again, never settling. It ends at `−4.2352` when the answer is 6.
+
+**The missing line:** `optimizer.zero_grad()`, as the first line inside the loop.
+
+**Step 0 by hand:**
+
+```text
+errors:        −16   −22   −28   −34   −40
+squared sum:   256 + 484 + 784 + 1156 + 1600  =  4280
+÷ 5:           856.0                     ← matches 856.0000  ✅
+
+each error × its km:  −16, −44, −84, −136, −200   sum = −480
+× 2 ÷ 5:                                −192.0    ← matches −192.0000  ✅
+w ← 0 − 0.05 × (−192.0)               = +9.6      ← matches 9.6000     ✅
+```
+
+**Step 0 is identical in both runs**, because on the very first trip there is nothing in `.grad` to pile onto. **The bug only bites from step 1 onwards** — which is exactly why it survives so long. *(That is also the answer to the "byte-for-byte identical" question.)*
+
+**Comparing the two `dL/dw` columns:** in Run 4 it **shrinks monotonically towards zero** (−192.0 → 0.0240 → 0.0008 → 0.0000), which is what arriving at the bottom of a valley looks like. In Run 3 it stays large and **changes sign**, which is what a pile looks like. **Run 4 is the healthy one.**
+
+**Ranking: bug 3 ≫ bug 2 > bug 1.** Bugs 1 and 2 crash on the first trip and name the problem. Bug 3 costs the most because **it produces a running program with a plausible log.** The habit that catches it: **compare the first loss with the last loss, and read the gradient column.** Not *"is it going down"* — it went down between steps 0 and 200 in Run 3 too.
+
+**Watch for:** Bug 2 located at "line 16" because that is what the traceback names. The traceback names where the error surfaced; the bug is on line 15.
+
+
+### Puzzle of the Week
+
+**Part 1 — the learning-rate boundary.** Real output, all five rows printed with the same formatting:
+
+```text
+lr 0.01  w   8.5199  b   9.7743  loss 0.960224
+lr 0.05  w   8.0014  b  11.9939  loss 0.000007
+lr 0.06  w   8.0003  b  11.9986  loss 0.000000
+lr 0.07  w      nan  b      nan  loss nan
+lr 0.10  w      nan  b      nan  loss nan
+```
+
+| `lr` | `w` | `b` | final loss | verdict |
+|---|---|---|---|---|
+| `0.01` | `8.5199` | `9.7743` | `0.960224` | too small |
+| `0.05` | `8.0014` | `11.9939` | `0.000007` | about right |
+| **`0.06`** | **`8.0003`** | **`11.9986`** | **`0.000000`** | **about right — very slightly better** |
+| **`0.07`** | **`nan`** | **`nan`** | **`nan`** | **too big — dead** |
+| `0.1` | `nan` | `nan` | `nan` | too big — dead |
+
+*(The `0.06` loss is not truly zero — it is about four ten-millionths, and `%.6f` has run out of places to show it. **A printed `0.000000` is a formatting limit, not a fact.**)*
+
+**Part 1(a).** **Between `0.06` and `0.07`.** There is no single "right" number; there is a cliff, and it is very close to a value that works beautifully.
+
+**Part 1(b).** **A model answer.** *For the optimizer:* `SGD` takes a fixed step of `lr × slope`, with no memory and no adaptation, so how big a step is safe is entirely determined by that one number. *For the data:* the slopes themselves come from the data — our `dL/dw` starts at `−326.6667` because the marks run up to 60 and the hours up to 6. The cliff comes from the inputs: a nudge to `w` changes each prediction by `hours × nudge`, so with hours up to 6 a step that is too big gets amplified up to 6 times. Squash the hours down (say to 0.1–0.6) and the same `lr` would be perfectly safe. (Scaling the *marks* down would shrink the first slopes but would **not** move the cliff: `lr = 0.1` still gives `nan` with marks divided by 10.) **It is both**, and the honest conclusion is that a learning rate is not a property of an algorithm — it is a property of an algorithm **and** the numbers you feed it. That is exactly why Week 15 made you hunt for one instead of giving you a rule, and why Week 4's scaling lesson matters even when the model does not care about scale.
+
+**Part 1(c).** **Run it for longer.** `lr = 0.01` is walking in the right direction and simply has not arrived; a few thousand more steps would get there. **The cost is time** — and on a real model that is hours or days of computing, which is why nobody just turns the learning rate down and waits.
+
+**Part 1(d).** **You watch a curve.** Try a few values that differ by roughly a factor of three (0.001, 0.003, 0.01, 0.03, 0.1), plot the loss for the first fifty steps of each, and pick the largest one whose loss is falling smoothly rather than jumping. **And you check the first four steps, not the last one**, because divergence is visible immediately and `nan` tells you nothing about the cause. There is no formula, and pretending otherwise would be dishonest.
+
+**Part 2 — the Order Puzzle.**
+
+| # | order | verdict | correct? |
+|---|---|---|---|
+| 1 | Z F L B S | **learns** | **yes** — this is the canonical loop |
+| 2 | F L B S Z | **learns** | **yes** — `zero_grad` at the end works |
+| 3 | Z F L S B | **runs and learns nothing** | no — and **no error at all** |
+| 4 | Z B F L S | **crashes on the first line it reaches** | — there is no `loss` yet to walk back from |
+| 5 | F L Z B S | **learns** | **yes** — the wipe still happens before `backward()` |
+
+Real output, all four of the non-canonical orders run for 400 steps:
+
+```text
+2 F L B S Z -> w 8.0014  b 11.9939  loss 0.000007  w.grad None
+3 Z F L S B -> w 0.0000  b 0.0000  loss 1786.666626  w.grad -326.6667
+4 Z B F L S -> UnboundLocalError: local variable 'loss' referenced before assignment
+5 F L Z B S -> w 8.0014  b 11.9939  loss 0.000007  w.grad 0.0005
+```
+
+**Orders 2 and 5 land on exactly the same `8.0014` and `11.9939` as the canonical order** — all three are genuinely correct loops. Order 4's message is Python's, not PyTorch's: you asked to differentiate a variable that does not exist yet. *(Written at the top level of a file rather than inside a function, the same mistake says `NameError: name 'loss' is not defined`.)*
+
+**Part 2(a).** **Number 2 works because `zero_grad` only has to happen once per trip, before the next `backward()`.** Wiping at the *end* of trip 1 leaves the box empty at the start of trip 2, which is exactly what wiping at the *start* of trip 2 would have achieved.
+
+**We still write it first because of the first iteration.** With the wipe at the end, you have to stop and reason: *"is `.grad` clean on the very first trip?"* (It is — it starts as `None`.) With the wipe at the front, that question never arises. **The order that requires no reasoning is the order to write.**
+
+**Part 2(b).** Trip by trip:
+
+1. `zero_grad()` — `w.grad` becomes `None`.
+2. forward and loss — fine, a real prediction and a real number.
+3. `step()` — **the optimizer looks for a gradient and there is nothing there**, so it skips `w` and `b` entirely. `w` does not move.
+4. `backward()` — fills `w.grad` with a perfectly correct `−326.6667`.
+5. Next trip begins with `zero_grad()`, which **throws that gradient away before anything uses it.**
+
+So every trip computes the right slope, one line too late, and discards it. **400 steps, `w = 0.0000`, `w.grad = −326.6667`, and no error whatsoever.** Note that this is indistinguishable from a missing `step()` by looking at the log — the tell is reading the code.
+
+**Part 2(c).** **Number 4**, the crash, without hesitation. It stops immediately and tells you what is wrong. **Number 3 is the one to fear**: it runs, it looks fine, and it wastes however long it takes you to notice that `w` has not moved.
+
+### Think Deeper
+
+*Open answers. Mark against the points named, not the wording.*
+
+**T1 — a model answer.** Take them one at a time. **A missing `step()`:** a library *could* detect this. It knows gradients were computed, and it could warn if `.grad` is overwritten without any parameter having changed. Nobody does, but it is possible. **A missing `backward()`:** also detectable — `step()` could notice that every gradient it was asked to apply is `None` and say so. Arguably it should. **A missing `zero_grad()`:** this one genuinely cannot be detected, because accumulating is sometimes exactly what you asked for — that is the whole point of the default — and the library cannot know whether four backwards were four pieces of one batch or four mistakes.
+
+So the honest verdict is: two of the three are missed opportunities, and one is unavoidable. And the general lesson is bigger than PyTorch: **in this subject the failures that matter usually do not raise errors.** What I will check every run: **the first loss against the last loss**, and **the gradient column shrinking rather than growing.** Two habits, thirty seconds, and they catch all three.
+
+**T2 — a model answer.** **You cannot tell**, and that is the whole answer. A loss of `0.000007` on the data you trained on tells you the model fits those six points; it says nothing about whether it would work on a seventh student. In this particular case we happen to know it is a good model, but **not because of the loss** — because we hid `8x + 12` in the data ourselves and can see it found it. **Take that knowledge away and `0.000007` is uninterpretable.**
+
+What I would need is **data the model has not learned from.** A seventh student who revised for 7 hours: the model predicts `8.0014 × 7 + 11.9939 = 68.0037`, and the real line says 68. That comparison is a measurement; the training loss is not.
+
+And when the data does **not** sit on a line, the loss will **stop falling at some non-zero number**, and that leftover is the part of the data no straight line can explain. Our wobbled pizza example bottomed out at `0.560000` and stayed there — nothing broken, just an honest limit. **A loss that reaches zero on real data is more likely to be a warning than a triumph.**
+
+### Build It — Fit the Hidden Line, Then Break It Five Ways
+
+#### Part A — fit the line
+
+*The predicted step-0 row comes from M1–M3: loss `1786.6666`, `w` `16.3333`, `dL/dw` `−326.6667`. The complete `fit_line.py` is in the Prep Checklist.* Real output:
 
 ```text
 step   0  loss  1786.6666  w 16.3333  b  4.0000  dL/dw  -326.6667
@@ -1332,15 +1878,21 @@ found:  marks = 8.0014 x hours + 11.9939
 wanted: marks = 8 x hours + 12
 ```
 
-**The answer to report: `w = 8.0014`, `b = 11.9939`, against the hidden line `8x + 12`.**
+**The answer to report: `w = 8.0014`, `b = 11.9939`, against the hidden line `8x + 12`.** Accept anything above `w = 7.99` and `b = 11.9`.
+
+**The three questions to read off the log:**
+
+1. The `dL/dw` column **shrinks steadily, from −326.6667 to 0.0005.** A flattening slope means arrival — Week 12's picture, seen from inside a loop.
+2. **`w` is closer** at step 50 (8.88 against 8; `b` is 8.24 against 12), because `w`'s slope started at −326.7 and `b`'s at −80, so `w` moves about four times as fast.
+3. **No; it never reaches exactly 8 and 12.** Each step is proportional to the remaining slope, so the steps shrink as you approach.
 
 **Three things worth a comment when you mark:**
 
-1. **`w` arrives before `b`.** At step 50, `w` is already 8.88 while `b` is only 8.24. `w`'s slope started at −326.7 and `b`'s at −80, so `w` moves four times as fast.
-2. **The gradient shrinks from −326.6667 to 0.0005.** A flattening slope means arrival. That is Week 12's curve, seen from inside a loop.
-3. **It never reaches exactly 8 and 12**, and it never will — each step is proportional to the remaining slope, so the steps get smaller as you approach. **Accept anything above `w = 7.99` and `b = 11.9`.**
+1. **`w` arrives before `b`**, for the reason above.
+2. **The gradient shrinking to 0.0005** is the sign of arrival.
+3. **It never reaches 8 and 12**, and it never will.
 
-### Page 21.3 — Delete each line, five rows
+#### Part B — the five-row table
 
 The complete file:
 
@@ -1475,56 +2027,13 @@ w 0.0000  b 0.0000  loss 1786.666626  dL/dw -326.6667
 
 **Three of the five rows say "no error".** That is the objective, and a table with fewer than three has probably conflated something.
 
-### Page 21.4 — The pile-up
+**The `zero_grad` sentence (the one being marked):** *"The gradients added up instead of being wiped, so each step carried every old slope along with it, so it kept overshooting the bottom and ended up worse than it started — 1786.6666 at step 0 and 2907.9082 at step 399."* **Accept nothing that does not name accumulation and use both numbers.**
 
-The complete file:
+**The separating question for the last two rows:** what does `w.grad` say? `None` in the no-`backward` run; `−326.6667` in the no-`step` run.
 
-```python
-"""pile_up.py - what 'gradients add up' actually means."""
-import torch
+**How many rows say "no error"?** Three. **How many predictions were right** is the student's own count; it is not marked, but a count of 5 / 5 is suspicious (see the marking note above).
 
-hours = torch.tensor([[1.0], [2.0], [3.0], [4.0], [5.0], [6.0]])
-marks = torch.tensor([[20.0], [28.0], [36.0], [44.0], [52.0], [60.0]])
-
-w = torch.tensor([[0.0]], requires_grad=True)
-b = torch.tensor([0.0], requires_grad=True)
-
-print("same weights, same data, four backward() calls, no zero_grad:")
-for i in range(4):
-    pred = hours @ w + b
-    loss = ((pred - marks) ** 2).mean()
-    loss.backward()
-    print("  after backward %d:  w.grad = %10.4f   (%d x -326.6667 = %10.4f)"
-          % (i + 1, w.grad.item(), i + 1, (i + 1) * -326.6667))
-
-print()
-print("now wipe it and do one more:")
-w.grad.zero_()
-b.grad.zero_()
-pred = hours @ w + b
-loss = ((pred - marks) ** 2).mean()
-loss.backward()
-print("  after zero_() and one backward: w.grad = %.4f" % w.grad.item())
-```
-
-Real output:
-
-```text
-same weights, same data, four backward() calls, no zero_grad:
-  after backward 1:  w.grad =  -326.6667   (1 x -326.6667 =  -326.6667)
-  after backward 2:  w.grad =  -653.3334   (2 x -326.6667 =  -653.3334)
-  after backward 3:  w.grad =  -980.0001   (3 x -326.6667 =  -980.0001)
-  after backward 4:  w.grad = -1306.6667   (4 x -326.6667 = -1306.6668)
-
-now wipe it and do one more:
-  after zero_() and one backward: w.grad = -326.6667
-```
-
-*(The four growing bars, and the fifth one after the wipe, are **Figure 21.4** in the Concept segment above.)*
-
-**The point to insist on:** the true slope was `−326.6667` on all four occasions. **Nothing about the data or the weights changed.** The last row differs from `4 × 326.6667` in the fourth decimal (`1306.6667` against `1306.6668`) because each addition is done in float32 — a nice, harmless reminder of last week's dtype lesson.
-
-### Page 21.5 — Measuring with `no_grad` (stretch)
+#### Part C — `no_grad`, once
 
 The complete file:
 
@@ -1612,11 +2121,18 @@ wrote loss_curve.png
 loss at steps 0, 100, 200, 300, 399: 1786.6666 0.4466 0.0112 0.0003 0.000007
 ```
 
+| | `requires_grad` | `grad_fn` |
+|---|---|---|
+| recorder on | `True` | `AddBackward0` |
+| inside `no_grad()` | `False` | `None` |
+
+**The average miss: 0.0023 marks.** **The two numbers are identical** — `no_grad` changes nothing about the arithmetic. What it saves is the storage of every intermediate value that would have been needed for a backward pass that is never going to happen.
+
 **What to look for:** `requires_grad: True` and a `grad_fn` outside the block, `False` and `None` inside it. **That contrast is the whole answer** — with the recorder off, nothing is stored for a backward pass that will never happen.
 
 **And the six predictions are worth reading out**: 19.9953 for 20, 60.0024 for 60. **The average miss is 0.0023 of a mark.**
 
-### Page 21.6 — The learning-rate sweep (stretch)
+#### Stretch — the learning-rate sweep
 
 *Run the same loop for 400 steps at `lr = 0.01`, `0.05` and `0.1`. Report `w`, `b` and the final loss.*
 
@@ -1649,6 +2165,28 @@ lr 0.10 after 400: w nan b nan loss nan
 2. *"These are Week 15's three panels: too small crawls, about right walks down, too big leaps and climbs. The only difference is that `optimizer.step()` is doing the stepping."*
 
 **The honest extra note, worth full credit:** the boundary is somewhere between 0.06 (works, `w = 8.0003`) and 0.07 (`nan`), and it depends on the data as much as on the code — which is why there is no universal "right" learning rate and why Week 15 made them hunt for one.
+
+#### The Bug Log
+
+No fixed answer; any two real entries. Two model entries, both reproduced above:
+
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `RuntimeError: Trying to backward through the graph a second time ...` | The graph was freed by the first `backward()` and the loop tried to use it again | `pred` (or `loss`) computed once, above the `for` line | Put the forward and loss lines inside the loop |
+| **No message.** Loss went 1786.6666 → 2907.9082 and the `dL/dw` column flipped sign | Gradients were piling up | `optimizer.zero_grad()` missing | `optimizer.zero_grad()` as the first line of the loop |
+
+
+### Draw It
+
+**A good drawing has:** five stations round the circle, **numbered 1 to 5**; arrows going **one way only**; a box labelled `w.grad` that is **emptied at station 1 and filled at station 4**; a box labelled `w` that **only station 5 touches**; the step-0 numbers written on the relevant stations — `loss 1786.6666` at station 3, `−326.6667` at station 4, and `0 → 16.3333` at station 5; and a mark showing which stations can be dropped silently.
+
+**The four questions.** **Station 1 empties `w.grad`; station 4 fills it.** **Station 5 is the only one that touches `w`.** `−326.6667` belongs on station 4 (or on the arrow out of it); `16.3333` belongs on station 5. **The three stations that can be removed with no error are 1, 4 and 5** — `zero_grad`, `backward` and `step`. Stations 2 and 3 both crash.
+
+### Self-Check
+
+No right answers here, but the honest bar: 😀 means you could do it now on blank paper with nothing open. 🙂 means you could do it with your chapter beside you. 😕 is the one to ask about first — and make sure **"name the three failures that produce no error"** is not a 😕, because from Week 22 onwards the models get big enough that reading a log carefully is the only debugging tool you have left.
+
+---
 
 ### Answers to every question posed in the lesson
 

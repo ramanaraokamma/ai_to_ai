@@ -13,7 +13,7 @@
 | **Big idea** | You can take a question, a messy table and a keyboard, and produce an answer you are willing to defend. |
 | **New vocabulary** | showcase · defence · limitation · gate check |
 | **New syntax** | **None.** Everything today is something they already have. |
-| **Materials** | Printed workbook pages 36.1–36.6 (36.1–36.3 are the written paper — print them, do not show them early) · the printed syntax ladder · a pen · a red pen · **a real audience who does not code** |
+| **Materials** | The printed workbook. Its **📝 The Written Assessment** (Pages 36.1–36.3: Part A, Part B, Part C) is the closed-book paper — separate those three pages and do not show them early. **🛠️ Build It** (Pages 36.4–36.6) is used on the day. The other sections (Warm-Up, Predict the Output, Practice Set A and B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Draw It, Self-Check) are not part of the timed lesson — see Homework to Assign · the printed syntax ladder · a pen · a red pen · **a real audience who does not code** |
 | **Tech needed** | Laptop for the showcase and the debug round. The written paper is pen-and-paper, no laptop. |
 | **Prep time** | 30 minutes the night before, 10 minutes on the day |
 
@@ -233,7 +233,7 @@ lit: impact and evaluation.*
 **30 minutes the night before**
 
 - [ ] **Confirm the audience.** Message them. Tell them two things: *you may interrupt*, and *say "I don't understand" out loud whenever it is true, because that is the most useful thing you can do.*
-- [ ] Print workbook pages 36.1–36.6. **Keep 36.1–36.3 face down** — that is the written paper and it is closed book.
+- [ ] Print the whole workbook. **Pull out the Written Assessment (Pages 36.1–36.3, Parts A, B and C) and keep it face down** — that is the written paper and it is closed book. Pages 36.4–36.6 (Build It) are used on the day; the remaining sections are optional extras (see Homework to Assign).
 - [ ] Print the syntax ladder (Figure 36.3) at a readable size, and the Level 3 gate (Figure 36.4).
 - [ ] **Put the four debug files on the laptop, ready to run.** They are in the Answer Key, complete. Name them `d1.py`, `d2.py`, `d3.py`, `d4.py` so the debug round starts in four seconds instead of four minutes.
 - [ ] **Run all four yourself, broken and fixed.** Confirm you get:
@@ -722,7 +722,7 @@ No hints, no prompting, no multiple choice. A good answer names something specif
 
 ### Sitting 2 — The Written Assessment (separate, ~90 minutes)
 
-**Setup.** Pages 36.1, 36.2 and 36.3. Pen. Paper for working out. The glossary. **No laptop.** A clock.
+**Setup.** The Written Assessment — Page 36.1 (Part A), Page 36.2 (Part B) and Page 36.3 (Part C). Pen. Paper for working out. The glossary. **No laptop.** A clock.
 
 **Timing:** Part A 25 minutes · Part B 35 minutes · Part C 30 minutes. Tell them the splits in advance so they do not spend forty minutes on the multiple choice.
 
@@ -935,13 +935,451 @@ Three checks, five minutes, exact wording.
 >
 > Then put a date on it and put it somewhere you will find it at the end of Level 3. That letter is the only piece of work this year that is entirely for you, and it is the one I would bet on you still having in ten years."
 
-**Workbook pages:** 36.1, 36.2 and 36.3 are the written paper (closed book, separate sitting); **36.4** is the showcase self-record, completed in class; **36.5** and **36.6** at home.
+**Where each workbook section sits.** The two assigned items are unchanged; the rest of the workbook is listed so nothing is orphaned.
+
+| Workbook section | When | Marked how |
+|---|---|---|
+| 📝 The Written Assessment — Page 36.1 (Part A, 20 × 1), Page 36.2 (Part B, 8 × 3), Page 36.3 (Part C, 4 × 4) | Sitting 2, closed book, ~90 min | Self-marked against the key; then **📊 Score Yourself** (total out of 60, bands, by-week table) |
+| 🛠️ Build It — Page 36.4, the showcase self-record | In class, straight after presenting | Honesty, not performance |
+| 🛠️ Build It — Page 36.5, the Level 3 gate self-check | **Homework (assigned)** | Honesty, not ticks |
+| 🛠️ Build It — Page 36.6, a letter to yourself | **Homework (assigned)** | Not marked |
+| ✅ Warm-Up (W1–W5) · 🔎 Predict the Output (P1–P4) · ✍️ Practice Set A (A1–A6) · ✍️ Practice Set B (B1–B5) · 🐞 Fix the Broken Program | Not assigned. Optional revision, any order, any time before Level 3 starts. Practice Set B asks for code (B1 one line, B2 a function, B3 a broadcast checker, B4 an honest bar chart, B5 the audit function) and takes longest. | Against the key; the marking notes there say what to look for |
+| 🧩 Puzzle of the Week · 🤔 Think Deeper · 🎨 Draw It · 📊 Self-Check | Not assigned. Optional; Think Deeper and Draw It make good conversation at the end of the sitting. | Read, do not score |
+
+Note that Practice Set A and the Fix the Broken Program section revisit the same bugs as Part C of the paper (for example the 17.8 average), so if the student does them **before** the paper, they will have seen the answers. Suggest they wait until after Sitting 2.
 
 **Expected time:** 15 min for the gate check · 25 min for the letter. About 40 minutes, and no marking.
 
 ---
 
 ## 🔑 Answer Key
+
+The workbook has its own Answers section at the end. This key follows the workbook **in the order a student meets the sections**, so you can mark with the printed pages in front of you. Items are labelled as the workbook labels them (W1, P1, A1, B1, C1 and so on). Watch the labels: **A1–A6 and B1–B5 in the practice sets are different questions** from **A1–A20 and B1–B8 in Parts A and B of the paper** (Pages 36.1 and 36.2). Say "Practice A3" or "Part A3" out loud. Only the paper's items carry a `[W..]` week tag.
+
+| Workbook section | Items | Key below |
+|---|---|---|
+| ✅ Warm-Up | W1–W5 | Warm-Up |
+| 🔎 Predict the Output | P1–P4 | Predict the Output |
+| ✍️ Practice Set A — Read It | A1 (a–g), A2 (a, b), A3–A6 | Practice Set A |
+| ✍️ Practice Set B — Write It | B1–B5 | Practice Set B |
+| 🐞 Fix the Broken Program | 3 bugs and a bonus | Fix the Broken Program |
+| 📝 Page 36.1 / 36.2 / 36.3 | Parts A, B, C | Page 36.1, 36.2, 36.3 |
+| 📊 Score Yourself | totals and bands | Score Yourself |
+| 🧩 Puzzle of the Week | Parts 1–4 | Puzzle of the Week |
+| 🤔 Think Deeper | 1, 2 | Think Deeper |
+| 🛠️ Build It — Pages 36.4, 36.5, 36.6 | self-record, gate, letter | Page 36.4, 36.5, 36.6 |
+| 🎨 Draw It | one drawing | Draw It |
+| 📊 Self-Check | ten can-dos, fourteen true/false | Self-Check |
+
+---
+
+### Warm-Up
+
+**W1.** Copy your five captions into a plain text file with nothing else in it and **read it aloud**. If it is a paragraph that answers your question, the order is right. If it reads as five unrelated sentences, **reorder the charts** — a five-minute fix, not a five-hour one.
+
+**W2.** **Exactly once.** If it appears twice, two of your models were judged on two different test sets — two different exam papers — so the two scores cannot go in the same table at all. And nothing crashes to tell you.
+
+**W3.** Its **units** ("minutes") and a **baseline** ("against 7.98 minutes for guessing the average"). Full marks also mentions the **test-set size**. A metric with none of those is a rumour.
+
+**W4.** **`_train`.** If it is on the right-hand side of a scoring line and you are calling the result a result, cross the number out.
+
+**W5.** Something like: *"126 rows, 26 held out. One journey 9 minutes out would move my MAE by 0.35, so the 0.35-minute gap between my tree and my kNN is too small to trust — I am not ranking them."* Two numbers minimum, and a consequence.
+
+**Marking tip.** Warm-Up is five minutes of recall from Week 35 and is not scored; look for the specific word (`_train`, "units and baseline", "exactly once"), not a paraphrase.
+
+---
+
+### Predict the Output
+
+**P1** — real output:
+
+```text
+<class 'float'>
+3 1
+3.0
+13 1212
+```
+
+**Line 3 is `3.0`, not `3`.** In Python 3, `/` is **true division** and *always* hands back a float, even when it divides exactly. `//` is the one that gives you an int.
+
+**Line 4.** `int("12") + 1` converts the text to the number 12 and adds 1, giving **13**. But `"12" * 2` does not multiply anything — `*` on a string **repeats** it, so you get `"1212"`. `+` and `*` both have two jobs, and which job they do depends entirely on the **types** on either side. That has been true since Week 2 and it is still the commonest source of surprise in the language.
+
+**P2** — real output:
+
+```text
+5
+None
+True False
+2
+```
+
+`player.get("wickets", 0)` hands back the fallback `0`, and `0 + 5` is 5. Nothing crashes.
+
+`player.get("wickets")` with **no** fallback hands back `None`. So `player.get("wickets") + 5` would raise `TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'` — and note **where** that error appears: not on the `.get()` line, but three lines later when you try to do arithmetic. **That is why `.get(key, 0)` with a fallback is the habit.**
+
+Line 3: `True False`. The one-word reason is **case**. `"runs"` is a key; `"Runs"` is not. Dictionary keys are case-sensitive, exactly like column names.
+
+Line 4: `2`, because there are two key–value pairs.
+
+**P3** — real output:
+
+```text
+5
+['driver', 'categories', 'spread']
+my choice
+True
+```
+
+`captions[1:4]` gives **three** items, not four: a slice **includes `start` and excludes `stop`**. The shortcut is that the length of a slice is `stop − start` = 4 − 1 = 3.
+
+`captions[5]` would raise `IndexError: list index out of range`. Five items live at indices **0 to 4**. And the last line proves the useful thing: `captions[-1]` and `captions[len(captions) - 1]` are the same slot, which is why `[-1]` exists.
+
+**P4** — real output:
+
+```text
+(3, 4) (4,)
+[[ 8  8  9  8]
+ [ 4  6  3  8]
+ [10 10 10 11]]
+[7.5 4.5 9.5]
+5
+```
+
+**Broadcasting** (Week 18) made the addition work. Compare shapes right to left: `(3, 4)` and `(4,)`. The last dimensions match — 4 and 4 — and the missing one is stretched, so `bonus` is treated as if it were repeated down all three rows. Check row 2: `4+0, 5+1, 3+0, 6+2` = `4, 6, 3, 8`. ✅
+
+Line 3 gave **three** numbers because `axis=1` collapses the four columns. `axis=0` would have collapsed the three rows and given **four** numbers, one per test.
+
+Line 4: `(marks > 8)` builds a grid of True and False, and `.sum()` **counts the Trues** — because True counts as 1. The five values above 8 are the 9, the 10, the 9, the 10 and the 9. ✅
+
+---
+
+### Practice Set A
+
+**A1.**
+
+| # | crash / silent | Look at first |
+|---|---|---|
+| (a) | **crash** | Whether the cell that creates `df` has run. Restart and Run All. |
+| (b) | **silent** | The loop body — `=` versus `+=` — and where `range` starts. |
+| (c) | **crash** | The `FEATURES` list: a text column is still in it. |
+| (d) | **silent** | `df.dtypes`. The column is text, so it sorts alphabetically. |
+| (e) | **silent** | `set_ylim`. The numbers are fine; the axis is the lie. |
+| (f) | **silent** | The split: no `random_state`. |
+
+**A1(g).** **Four of the six are silent.** The lesson: **the errors that stop your program are the easy ones.** A crash names the error type and the line number and refuses to continue. A silent bug finishes, prints a plausible number, and gets believed.
+
+**A2.** `total` after the loop is **89**, and it prints:
+
+```text
+Average: 17.8
+```
+
+`89 / 5` = 17.8.
+
+**A2(a).** Index **0** is never visited, and the value there is **45**. `range(1, len(scores))` starts at 1.
+
+**A2(b).** Fixing only the `=` gives:
+
+```text
+Average: 53.6
+```
+
+268 ÷ 5 — the 45 is still missing. **That is more dangerous than 17.8** because 17.8 is obviously silly next to five numbers that include a 112, and 53.6 is not. **A partly-fixed bug produces a more believable wrong answer than the original**, which is exactly why you hand-check the answer instead of eyeballing the code.
+
+**A3.**
+
+| # | What is wrong |
+|---|---|
+| (a) | `//` is floor division. `6 // 12` is **0**, so the percentage is 0 for every case except "all deliveries late" (`total // total` is 1). Use `/`. |
+| (b) | The **order**. Every value of 50 or more also satisfies `>= 10`, so the chain stops at the first branch and `"fifty!"` never fires. Put the narrowest condition first. |
+| (c) | The **`f` is missing**. Without it, Python prints the braces and the words inside them, literally. No error, and the output looks like a template somebody forgot to fill in — which is what it is. |
+
+**A4.** 1 → **C** · 2 → **A** · 3 → **B**
+
+**A4(a).** **A** is the pupils' averages, and you knew it because **there are four pupils and A has four numbers in it.** C has five. That is the whole diagnosis, and it needs no arithmetic — which is why "count what came back" is one of the four habits.
+
+**A5.** The timeline:
+
+| Time | Section | Length |
+|---|---|---|
+| 0:00 | The question | 45 s |
+| 0:45 | The data | 60 s |
+| 1:45 | The cleaning | 75 s |
+| 3:00 | The charts | 2 min |
+| 5:00 | The models | 90 s |
+| 6:30 | What I got wrong | 60 s |
+| 7:30 | Whose data, what it costs | 30 s |
+
+**A5(a).** **The charts**, two whole minutes — a quarter of the showcase. Not because they take long to explain, but because the five captions read in order **are your argument.**
+
+**A5(b).** **The cleaning.** Nobody expects it to be good, so reading three log lines out loud with the reasons in them — *"131 rows in, 126 out, here is every row I lost and why"* — is genuinely startling to an adult. They have never seen anyone do it.
+
+**A6.**
+
+| # | ✅/❌ | Why |
+|---|:--:|---|
+| (a) | ❌ | Defensive, and it tells the asker you have not thought about it. |
+| (b) | ❌ | Agrees, then adds nothing. "More data would help" is true of every project ever. |
+| (c) | ✅ | Agrees, then is **more precise than the question was** — and draws a consequence. |
+| (d) | ❌ | Only half an answer. "I don't know" needs "and here is what I do know" behind it. |
+| (e) | ✅ | Admits the limit of what is knowable, then gives three numbers. This is the strongest of the five. |
+
+**Marking tip.** In A1, the common error is calling (b) or (d) a crash because the number looks "wrong" — wrong is not the same as an error message. In A2, a student who answers 62.6 has run the fixed program in their head, not the broken one.
+
+---
+
+### Practice Set B
+
+**B1.**
+
+```python
+mae = 2.35
+baseline = 7.98
+n_test = 26
+print(f"Off by {mae} minutes, against a baseline of {baseline} minutes, on {n_test} unseen rows.")
+```
+
+```text
+Off by 2.35 minutes, against a baseline of 7.98 minutes, on 26 unseen rows.
+```
+
+**B2.**
+
+```python
+def count_late(waits, limit):
+    """How many waits were longer than the limit?"""
+    late = 0
+    for wait in waits:
+        if wait > limit:
+            late += 1
+    return late
+
+deliveries = [28, 34, 19, 41, 22, 47, 31, 26, 44, 18, 29, 36]
+n_late = count_late(deliveries, 30)
+print(f"{n_late} of {len(deliveries)} were late ({n_late / len(deliveries) * 100:.1f}%)")
+print(count_late(deliveries, 100))
+```
+
+```text
+6 of 12 were late (50.0%)
+0
+```
+
+**Hand-check:** the waits over 30 are 34, 41, 47, 31, 44, 36 — six of twelve. ✅
+
+**Why the second call matters.** `count_late(deliveries, 100)` returns `0`, which proves the `limit` **parameter** is really being used rather than a 30 hard-coded inside the function. A function that ignores one of its own parameters is a very quiet bug.
+
+**And note `return`, not `print`.** With `print` inside instead, `n_late` would be `None` and the f-string on the next line would say `None of 12 were late` — or crash on the division. That is question B1 of the written paper, arriving in real life.
+
+**B3.**
+
+```python
+def will_broadcast(shape_a, shape_b):
+    """Check two shapes right to left. Each pair must match or one must be 1."""
+    a = list(shape_a)
+    b = list(shape_b)
+    while len(a) < len(b):          # pad the shorter shape with 1s on the LEFT
+        a = [1] + a
+    while len(b) < len(a):
+        b = [1] + b
+    for i in range(len(a)):
+        if a[i] != b[i] and a[i] != 1 and b[i] != 1:
+            return False
+    return True
+
+pairs = [((3, 4), (4,)), ((3, 4), (3,)), ((3, 4), (3, 1)), ((2, 3), (2, 3))]
+for shape_a, shape_b in pairs:
+    print(shape_a, "and", shape_b, "->", will_broadcast(shape_a, shape_b))
+```
+
+```text
+(3, 4) and (4,) -> True
+(3, 4) and (3,) -> False
+(3, 4) and (3, 1) -> True
+(2, 3) and (2, 3) -> True
+```
+
+All four agree with numpy — which raises `ValueError: operands could not be broadcast together with shapes (3,4) (3,)` on the second pair and is happy with the other three.
+
+**Why the second fails and the third passes.** Both involve a 3 against a `(3, 4)`. But the rule works **right to left**: `(3,)` gets padded to `(1, 3)`, so the rightmost pair is 3 against 4 — neither equal nor 1 — and it fails. `(3, 1)` puts the 3 on the **left**, where it matches the 3 rows, and the 1 on the right, where it stretches to 4 columns. **To add one value per row you must reshape to `(3, 1)`.** That is the whole of numpy's shape confusion in one sentence, and it is Level 3 gate number four.
+
+**B4.**
+
+```python
+import matplotlib.pyplot as plt
+
+clubs  = ["Chess", "Choir", "Coding"]
+means  = [8.4, 8.1, 7.6]
+counts = [9, 21, 4]
+
+fig, ax = plt.subplots(figsize=(6, 4))
+bars = ax.bar(clubs, means)
+
+ax.set_ylim(0, 10)                                                     # FIX 1
+ax.set_title("Chess averages 0.8 points above Coding - the clubs are close")   # FIX 3
+ax.set_xlabel("after-school club")                                     # FIX 2
+ax.set_ylabel("mean enjoyment score (points out of 10)")                # FIX 2, with units
+
+for i, bar in enumerate(bars):
+    mean = means[i]
+    n = counts[i]
+    ax.text(bar.get_x() + bar.get_width() / 2, mean + 0.3,
+            f"{mean:.1f} (n={n})", ha="center", fontsize=9)             # FIX 4
+
+fig.savefig("figures/clubs_honest.png", dpi=120, bbox_inches="tight")
+print("saved figures/clubs_honest.png")
+print("real gap:", round(means[0] - means[2], 1), "points out of 10")
+print("smallest group:", min(counts), "pupils")
+```
+
+```text
+saved figures/clubs_honest.png
+real gap: 0.8 points out of 10
+smallest group: 4 pupils
+```
+
+**And now the caption**, which is where the honesty actually lives: *"All three clubs score between 7.6 and 8.4 out of 10 — a gap of 0.8 points. Coding's average comes from only 4 pupils, so it is the least reliable of the three."*
+
+**Try the dishonest version once**, for the feeling: swap in `ax.set_ylim(7.4, 8.6)` and look at what happens. Chess's visible bar becomes 1.0 units and Coding's becomes 0.2 — Coding looks **80% smaller** when it is really 10% lower. Same numbers, entirely different claim.
+
+**B5.**
+
+```python
+# b5_audit.py - one function that makes a silent evaluation bug impossible.
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error
+
+def audit(name, model, X_train, y_train, X_test, y_test, units):
+    """Print both scores, both row counts, and what one test row is worth."""
+    train_mae = mean_absolute_error(y_train, model.predict(X_train))
+    test_mae  = mean_absolute_error(y_test,  model.predict(X_test))
+    print(f"{name}")
+    print(f"   train MAE: {train_mae:.2f} {units} on {len(y_train)} rows it learned from  <- NOT a result")
+    print(f"   test  MAE: {test_mae:.2f} {units} on {len(y_test)} unseen rows            <- this one")
+    print(f"   one test row is worth {100 / len(y_test):.1f}% of an accuracy score")
+
+sleep = pd.DataFrame({
+    "screen_off_hour": [21, 22, 23, 21, 22, 20, 23, 22, 21, 23,
+                        20, 22, 21, 23, 22, 20, 21, 23, 22, 21],
+    "exercise_min":    [30, 0, 15, 45, 0, 60, 10, 25, 40, 0,
+                        50, 20, 35, 5, 30, 55, 45, 0, 15, 40],
+    "hours_slept":     [8.6, 7.9, 7.1, 8.9, 8.0, 9.2, 6.8, 8.1, 8.7, 6.9,
+                        9.3, 8.0, 8.6, 6.7, 8.2, 9.1, 8.8, 6.8, 7.9, 8.5],
+})
+
+X = sleep[["screen_off_hour", "exercise_min"]]
+y = sleep["hours_slept"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42)
+
+tree = DecisionTreeRegressor(max_depth=2, random_state=0).fit(X_train, y_train)
+line = LinearRegression().fit(X_train, y_train)
+
+audit("tree depth=2",      tree, X_train, y_train, X_test, y_test, "hours")
+audit("linear regression", line, X_train, y_train, X_test, y_test, "hours")
+```
+
+Real output:
+
+```text
+tree depth=2
+   train MAE: 0.14 hours on 16 rows it learned from  <- NOT a result
+   test  MAE: 0.16 hours on 4 unseen rows            <- this one
+   one test row is worth 25.0% of an accuracy score
+linear regression
+   train MAE: 0.17 hours on 16 rows it learned from  <- NOT a result
+   test  MAE: 0.19 hours on 4 unseen rows            <- this one
+   one test row is worth 25.0% of an accuracy score
+```
+
+**Why the function makes the bug structurally impossible.** There is nowhere in it to accidentally report a train score as a result, because it always prints **both**, always labels them, and always says how many rows each came from. You cannot forget, because forgetting would mean deleting a line.
+
+**And now say what this output does NOT support.** **Four test rows.** One row is worth **25%**. The gap between the tree at 0.16 hours and the line at 0.19 hours is three hundredths of an hour — under two minutes — on four nights. **You can conclude absolutely nothing about which model is better**, and the honest sentence is: *"with 4 test rows I cannot compare these two at all; what I can say is that both are within about ten minutes on nights they had never seen."*
+
+Twenty rows was never going to be enough. That is why the capstone floor is 100.
+
+**Marking tip.** B1 to B5 are code: run them. Accept any correct structure, but B2 must `return` rather than `print`, and B5 must print **both** train and test scores with row counts. The B5 numbers are real output (seed 42 split, 4 test rows).
+
+---
+
+### Fix the Broken Program
+
+**Bug 1 — syntax, line 10.** `for row in results` is missing its **colon**. The caret sits at exactly the character where it should be.
+
+**Bug 2 — runtime, line 17.** `row["test_MAE"]` with a capital **MAE**. The dictionary keys are `"model"` and `"test_mae"`, lower case. Dictionary keys are case-sensitive, just like column names.
+
+The line that would have told you:
+
+```python
+print(results[0].keys())
+```
+
+```text
+dict_keys(['model', 'test_mae'])
+```
+
+**Bug 3 — logic, silent.** The second `print` is missing its **`f`**:
+
+```python
+print("Off by {best['test_mae']} minutes, against a baseline of {baseline_mae} minutes,")   # no f
+```
+
+So Python prints the braces and their contents literally:
+
+```text
+Off by {best['test_mae']} minutes, against a baseline of {baseline_mae} minutes,
+```
+
+**No error.** The line below it, which *does* have its `f`, works perfectly — so the output is half-filled-in, which is a very odd thing to notice at speed and an extremely obvious thing to hear when read aloud.
+
+**Bonus.** `row_worth = 100 // test_rows` gives **3**, because `100 // 26` throws the remainder away. It should be `100 / test_rows`, which is **3.846...**, printed with `:.1f` as **3.8%**. Reporting 3% when it is 3.8% is small — and it is exactly the sort of small that turns "these two models are indistinguishable" into "these two models differ by more than one row".
+
+**Which bug would have survived into the showcase?** **Bug 3, and the bonus with it.** Bugs 1 and 2 stop the program dead; you cannot present a program that will not run. Bug 3 produces output, and you would have stood up and read *"off by curly-bracket-best-square-bracket-test-underscore-mae"* out loud to a real adult. **The bugs that survive to the audience are always the silent ones.**
+
+**The fixed program:**
+
+```python
+# summary.py - print the one-paragraph summary I will read out at the showcase.
+results = [
+    {"model": "baseline", "test_mae": 7.98},
+    {"model": "kNN k=5",  "test_mae": 2.70},
+    {"model": "tree d=4", "test_mae": 2.35},
+]
+test_rows = 26
+
+best = results[0]
+for row in results:                        # FIX 1: the colon
+    if row["test_mae"] < best["test_mae"]:
+        best = row
+
+baseline_mae = 0
+for row in results:
+    if row["model"] == "baseline":
+        baseline_mae = row["test_mae"]     # FIX 2: lower-case mae
+
+bought = baseline_mae - best["test_mae"]
+row_worth = 100 / test_rows                # BONUS FIX: / not //
+
+print("My best model is", best["model"])
+print(f"Off by {best['test_mae']} minutes, against a baseline of {baseline_mae} minutes,")   # FIX 3: the f
+print(f"on {test_rows} unseen rows. The model buys me {bought:.2f} minutes of accuracy.")
+print(f"One test row is worth {row_worth:.1f}% of an accuracy score.")
+```
+
+```text
+My best model is tree d=4
+Off by 2.35 minutes, against a baseline of 7.98 minutes,
+on 26 unseen rows. The model buys me 5.63 minutes of accuracy.
+One test row is worth 3.8% of an accuracy score.
+```
+
+Hand-check: 7.98 − 2.35 = 5.63. ✅ And 100 ÷ 26 = 3.846, so 3.8%. ✅
+
+---
 
 ### Page 36.1 — Part A, Multiple Choice (20 × 1 point)
 
@@ -1356,15 +1794,81 @@ Caption to go under it:
 
 **The lesson:** the dishonest chart and the honest chart are drawn from **identical data.** Nothing was faked. The lie lived entirely in `set_ylim`.
 
+### Score Yourself
+
+Totals: Part A **20** · Part B **24** · Part C **16** · **60** overall. Bands: **0–29 Rebuild**, **30–41 Patch**, **42–52 Ready**, **53–60 Fluent**. Gate 1 needs 42 or more **and** no single week holding four of the mistakes, so the by-week table matters more than the total. Group the wrong items by their `[W..]` tags: W2–W3, W6–W7, W10–W12, W13, W16, W18–W20, W22–W24, W25–W27, W29–W30, W32–W33, W35. Four or more in one row is a real gap; four spread out is a tired afternoon.
+
+---
+
+### Puzzle of the Week
+
+**Part 1 — the three impostors: 2, 6 and 10.**
+
+| # | What it is | Where it lives |
+|---|---|---|
+| **2** | `try: / except ValueError:` — running code that might fail and catching the failure instead of crashing | A real and useful thing, and **not** in Level 2. This year you have read tracebacks and fixed the cause instead, which is the right order to learn them in. |
+| **6** | `class Dog:` — defining your own kind of object | A whole way of organising code. You have not needed it yet, because functions and dictionaries have carried everything. |
+| **10** | `import torch` — the deep-learning library | **Level 3.** It is on the other side of the gate. |
+
+**Part 2 — the twelve rungs:**
+
+| Rung | Weeks | Snippet | One thing you can do with it |
+|---|---|:--:|---|
+| 1 | W1–3 | **4** `print(f"{total:.2f}")` | Print a sentence with a number worked out inside it, to two decimal places |
+| 2 | W4–6 | **15** `if mark >= 90:` | Make the program do different things on different days |
+| 3 | W7–9 | **8** `for i in range(10):` | Do something ten times without typing it ten times |
+| 4 | W10–12 | **14** `scores.append(7)` | Keep a growing list of things and add up all of them |
+| 5 | W13–15 | **7** `player.get("wickets", 0)` | Look something up by name and not crash when it is missing |
+| 6 | W16–18 | **11** `with open(...) as f:` | Save a table to a file and get it back tomorrow |
+| 7 | W19–21 | **5** `arr.mean(axis=0)` | Average a whole grid in one direction with no loop at all |
+| 8 | W22–24 | **1** `df.groupby(...)` | Answer "what is the average per group?" in one line |
+| 9 | W25–27 | **9** `fig, ax = plt.subplots(...)` | Draw a chart nobody can accuse me of faking |
+| 10 | W28–30 | **3** `train_test_split(...)` | Hide 20% of my rows so my score means something |
+| 11 | W31–33 | **13** `DecisionTreeRegressor(max_depth=4)` | Predict a number, and turn the complexity dial to watch it overfit |
+| 12 | W34–36 | **12** `df.describe()` | Read a whole table out loud as a sentence about the real world |
+
+*(Two of these could look interchangeable at a glance — `groupby` and `describe` are both "ask the table a question". Check the week numbers: `groupby` is Week 24 and `describe` is Week 34, ten weeks apart, so they belong on rungs 8 and 12. When two snippets feel like the same rung, the week number is the tie-breaker.)*
+
+**Part 3.** **10 (`import torch`) is the one Level 3 opens up** — it is where the neural networks live, after you have written the maths by hand in numpy first. **6 (`class Dog:`) is the whole way of organising code** you have not needed yet. **2 (`try / except`) is neither** — it is an ordinary, useful piece of Python that was not this year's business, because this year the job was to read the traceback and fix the cause rather than to catch the error and carry on.
+
+**Part 4.** No right answer, and that is the point. Most people find rung 7 (`axis`) or rung 10 (the split) the hardest, and use rung 1 (f-strings) or rung 3 (`for`) most. **The hardest rung and the most-used rung are almost never the same one** — which tells you something useful: difficulty is a bad guide to importance.
+
+---
+
+### Think Deeper
+
+**1 — model answer.**
+
+It is not a coincidence, because the four problems were chosen to make one point: **a program that crashes has already told you most of what you need.** A traceback names the error type, gives the line number, and refuses to continue until something has been understood. It is annoying, it is on your side, and it is fast — bugs 1 and 2 in this workbook took about fifteen seconds each.
+
+A silent bug does the opposite of all three. `Average: 17.8` is a complete sentence with a plausible number in it. `Top score: 90` is not obviously wrong until you notice Divya scored 100. `R2: 0.93` looks *better* than the honest 0.769. And the bar chart is a valid picture drawn from real numbers where nothing was faked at all.
+
+So the damage is proportional to trust, and a plausible number is trusted completely. Worse, the most important of the four — `R2: 0.93` against an honest 0.769 — makes things look **better** than they are, which means that bug is not merely invisible, it is **rewarding** — there is a small pull towards not investigating.
+
+The one habit I would keep: **hand-check one value.** Add the five numbers up on paper. Count how many numbers came back and compare it with how many things you asked about. It costs about ten seconds per number, and it is the only check that works when there is no error message to read — because it does not trust the program at all. Every one of the four problems in Part C, and all three worked examples, are caught by that one habit.
+
+**2 — model answer.**
+
+Everybody agrees on the **floor**: a model that cannot beat the baseline does not work. If always guessing the average is off by 7.98 minutes and your model is off by 8.5, there is nothing to discuss. That is not a matter of opinion, and it is why every results table needs a baseline row.
+
+Past the floor, people genuinely disagree, and they disagree for a reason that is not about statistics at all: **"works" is not a property of the model.** It is a property of the model *plus what you are going to do with it.* Some people argue you need a proper statistical test before claiming any difference. Some argue you need cross-validation so that every row gets a turn at being a test row — which is right, and is the first thing Level 3 teaches. Some argue that for a decision with money attached you need a fresh dataset collected *after* you finished choosing. All three are defensible, they answer slightly different questions, and which one you need depends on the consequences.
+
+Two examples where the same score means completely different things. A model that suggests which song to play next can be barely better than guessing and still be genuinely useful, because the cost of a wrong suggestion is that you press skip — so a 60% hit rate is a good product. A model that helps decide whether somebody gets a loan at exactly 60% is a disaster, because the cost of being wrong is carried by a person who did nothing wrong, and it is not carried equally by everybody.
+
+So the honest position is: **"works" is a judgement about consequences, not a fact about mathematics.** What I can always do, and what today assessed, is state the number, its units, the baseline, how many rows it was measured on, and who would pay if it were wrong. Those five things are everything that is actually knowable. The judgement after that belongs to whoever carries the cost.
+
+---
+
 ### Page 36.4 — The showcase self-record (marking guidance)
 
 Completed in class, immediately after presenting. Mark the honesty, not the performance.
 
 | Box | Full marks looks like |
 |---|---|
-| Banned words I said | An honest number, matching your tally. A student who writes 0 when you counted 4 gets 0 for the box. |
+| How long I actually took | A real time, near the 8:00 target. Over or under is not penalised; an invented 8:00 is. |
+| Banned words I said, and which one most | An honest number, matching your tally (the tally sheet lists magic · the AI figured it out · pretty accurate · it's smart · basically perfect · the data speaks for itself · obviously · just). A student who writes 0 when you counted 4 gets 0 for the box. |
 | Where my audience looked confused | At least one specific place, quoted. "They didn't know what R² was." |
-| The question I answered worst | Named, with what they would say next time. |
+| The question I answered worst, and what I will say next time instead | Named, with the better sentence written out. |
 | My biggest limitation | Specific, with a magnitude or a group. |
 | What I would do differently in Week 34 | Traced back to a real decision — a column they should have measured differently, a row unit they chose wrongly. This is the hardest box and the most valuable. |
 
@@ -1373,6 +1877,8 @@ Completed in class, immediately after presenting. Mark the honesty, not the perf
 > *"In one sentence: what did this project find, and how sure should I be about it?"*
 
 If the audience can answer that, the showcase worked, whatever the tally says. If they cannot, it did not — and that is the feedback, not a mark.
+
+**The six-questions table** (question asked, and whether the answer had a number in it): questions 4 (*isn't 126 rows really quite small?*) and 6 (*should anyone decide anything with this?*) are the two hard ones. A tick on a hard question needs an actual number in the answer, for example 26 test rows or 3.8% per row.
 
 ### Page 36.5 — The Level 3 gate self-check
 
@@ -1387,6 +1893,8 @@ There is no right answer; there is only an honest one. Mark the honesty.
 | 5 — leakage | Explaining it out loud to a real person in under a minute, including the direction | Ticking because they can define the word |
 | 6 — the graph | Drawing both lines with both axes labelled, and saying what the gap means | Drawing one line |
 
+The student also fills in the *Missing gate / The fix / When I will do it* table for every blank, and the closing box (*pick the gate you least believe, test it now with a timer, what happened?*). Full marks: a fix taken from the reference table in the workbook (it matches section 6 above) **and** a real date, not "soon".
+
 **What to say when you hand it back:** name the one gate you least believe and test it on the spot. One test recalibrates the whole sheet, and the student learns more from failing one honest test than from six easy ticks.
 
 ### Page 36.6 — The letter to yourself
@@ -1396,6 +1904,35 @@ Not marked. Read only if the student offers it.
 What a full one contains: the hardest **moment** (an evening, not a topic) and what they did about it; one specific thing they can do now that they could not in September; and something they want to **build** — not learn. Dated, and put somewhere they will find it after Level 3.
 
 If a student is stuck on the third part, three prompts that work: *what is annoying in your house that a table of numbers could settle?* · *what would you like to know about something you do every day?* · *what does a program you use every day get wrong about you?*
+
+### Draw It
+
+Not marked. Hold the drawing up against the workbook's model: a table with a question mark and an arrow to one sentence (*off by 2.35 minutes, against 7.98 for guessing, on 26 rows it had never seen*), five drawn things feeding in (paper sheet, padlock on `raw.csv`, sticky note with a reason, a deck cut once with 100 and 26, a red pen with a crossed-out number), a traceback with a tick in the corner, and the three caption boxes filled in honestly. **A good drawing** shows things the student can *do*. **A weak one** is a list of topic names (loops, lists, pandas, models) in boxes. Test: could any box be swapped for a chapter heading? If so, ask them to redraw that box as an action.
+
+---
+
+### Self-Check
+
+The ten can-do rows are self-rated (😀 / 🙂 / 😕); do not correct them, but ask about any 😀 on *Name the single biggest limitation of my own project, unprompted* if you had to prompt it. The true/false answers:
+
+| Statement | Answer | Why |
+|---|:--:|---|
+| A traceback means you have done something terrible | **FALSE** | It is the computer helping you, with a line number attached. |
+| All four Part C debug problems raise an error | **FALSE** | **None** of them do. That is the whole point. |
+| "I don't know" loses you marks in the question bank | **FALSE** | It is one of the strongest answers, followed by what you do know. |
+| The written assessment is a test you can fail | **FALSE** | It is a map of your holes. Holes are cheaper to find now. |
+| The total score matters more than which weeks the mistakes are in | **FALSE** | Four wrong in one week is a gap; four spread out is a tired afternoon. |
+| `just` is banned because it is informal | **FALSE** | Because every "just" hides a decision you skipped explaining. |
+| "The model scored well" is one of the eight rubric rows | **FALSE** | It is not on the list at all. Honesty is. |
+| A model that cannot beat the baseline still works if the score looks high | **FALSE** | That is the one thing everybody agrees on. |
+| Fixing one of two bugs makes the wrong answer more believable | **TRUE** | 17.8 is obviously silly; 53.6 is not. |
+| Four pupils' averages should come back as four numbers | **TRUE** | And counting them is a free bug check. |
+| `6 // 12 * 100` is 50 | **FALSE** | It is **0**. `6 // 12` is 0, then 0 × 100. |
+| An `if / elif` chain checks every condition | **FALSE** | It stops at the first true one. |
+| A tick you argued yourself into is better than an honest blank | **FALSE** | Level 3 will not slow down for a tick that is not true. |
+| Level 3 adds a tenth tool | **FALSE** | It goes **downwards** — it opens the boxes you have been using. |
+
+---
 
 ### Lesson questions posed in the Say-this scripts
 

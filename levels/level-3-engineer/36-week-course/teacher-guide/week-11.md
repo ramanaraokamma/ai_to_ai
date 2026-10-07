@@ -15,7 +15,7 @@
 | **New maths** | **Area under a curve, added up as trapezoid strips by hand** on a five-point curve, then checked against `np.trapz` to four decimal places. This is what "AUC" has meant all along. |
 | **New syntax** | `StratifiedKFold(n_splits=5, shuffle=True, random_state=0)` · `cross_val_score(pipe, X, y, cv=skf, scoring="roc_auc")` · `np.trapz(tpr, fpr)` · `scores.mean()` / `scores.std()` |
 | **Dataset** | Week 8's `make_classification(n_samples=5000, n_features=8, n_informative=4, n_redundant=0, weights=[0.99, 0.01], random_state=0)` fraud table. **72 frauds in 5,000 rows**; 14 of them in the 1,000 validation rows. **Nothing downloads. No internet needed.** |
-| **Materials** | **The price list, written on a card in advance**: `a miss costs £500 · a false alarm costs £10` · **two sheets of squared graph paper per student** · a whiteboard **divided down the middle**, `BY HAND` on the left and `np.trapz` on the right · a calculator each (phones are fine) · printed workbook pages 11.1–11.6 · **last week's nine-row sweep table and ten-dot ROC curve still on the wall** · the Bug Log |
+| **Materials** | **The price list, written on a card in advance**: `a miss costs £500 · a false alarm costs £10` · **two sheets of squared graph paper per student** · a whiteboard **divided down the middle**, `BY HAND` on the left and `np.trapz` on the right · a calculator each (phones are fine) · the printed workbook (`workbook/week-11.md`, all sections) · **last week's nine-row sweep table and ten-dot ROC curve still on the wall** · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, scikit-learn. **No new installs.** |
 | **Prep time** | 25 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | `fraud_bench.py` **about 1 second** — and that includes fitting the model six times, once for the sweep and five more for the folds. |
@@ -562,7 +562,7 @@ report it as  : AUC = 0.628 +/- 0.087 (5-fold stratified CV)
   1. `cross_val_score(pipe, X, y, cv=skf)` with `scoring=` deleted. **No error.** You get `[0.986 0.986 0.986 0.985 0.985]` — five almost identical, beautiful, meaningless numbers. This is deliberate mistake one and it is a returning villain.
   2. `np.trapz(xs, ys)` with the arguments swapped. **No error.** You get `0.3000` instead of `0.7000`. This is deliberate mistake two.
 
-- [ ] **Print workbook pages 11.1–11.6.**
+- [ ] **Print the workbook** (`workbook/week-11.md`, one file: Warm-Up through Self-Check).
 - [ ] **Divide a whiteboard down the middle** with a vertical line. `BY HAND` on the left, `np.trapz` on the right. **That board is the Trapezoid Race and it should be waiting when they walk in.**
 - [ ] **Two sheets of squared graph paper per student.** One for the five-point curve, one spare.
 - [ ] **Check last week's artifacts are still up:** the nine-row sweep table and the ten-dot ROC curve. **You will add two columns to the first one and measure the area of the second one.**
@@ -575,7 +575,7 @@ report it as  : AUC = 0.628 +/- 0.087 (5-fold stratified CV)
 - [ ] Board divided, `BY HAND` and `np.trapz` written.
 - [ ] Graph paper out, two sheets per student.
 - [ ] Last week's sweep table on the wall, with two blank columns ruled on the right.
-- [ ] Workbook 11.1 out. Nothing filled in.
+- [ ] Workbook out, open at the Warm-Up. Nothing filled in.
 - [ ] Bug Log open at a fresh page.
 
 ### Fallback if the laptops fail
@@ -1323,111 +1323,57 @@ Say: *"One strip. What is its area?"*
 
 ## 📤 Homework to Assign
 
+The workbook is one file, `workbook/week-11.md`, with these sections in this order: **✅ Warm-Up** (W1–W5), **🔢 Do the Maths by Hand** (M1–M4), **🔎 Predict the Output** (P1–P4), **✍️ Practice Set A — Read It** (A1–A6), **✍️ Practice Set B — Write It** (B1–B5), **🐞 Fix the Broken Program** (Bugs 1–3), **🧩 Puzzle of the Week**, **🤔 Think Deeper** (T1, T2), **🛠️ Build It — Fraud Bench**, **🎨 Draw It** and **📊 Self-Check**. There are no numbered pages.
+
+**The split.** The lesson itself already works the four-strip curve (M1) and the Trapezoid Race curve (M2) on the board, so those two are revision, not new work. The **core hour** for the night is **Warm-Up, M3, M4 and Build It**. Everything else is for the rest of the week, in the order of the table below; it is there to be picked from, and no one should be asked to do all of it in one evening.
+
 **Say this, word for word:**
 
-> "Four pages, about an hour, and the last sentence is the one I will read first.
+> "About an hour tonight, and the last sentence is the one I will read first. Open the workbook.
 >
-> **Page 11.1 — the cost table, all nine rows.** Two multiplications and one addition each. **Circle the winner** and write its arithmetic out longhand underneath — `500 × 11 = 5500`, `10 × 5 = 50`, `5500 + 50 = 5550`. Not just the total.
+> **Warm-Up, five questions.** Last week's threshold dial, from memory, before you look anything up.
 >
-> **Page 11.2 — the second price list.** Change a miss to £50 and do all nine rows again. **A different row wins.** Write down which, and one sentence saying what changed and what did not.
+> **Do the Maths by Hand, M3 — the cost table, all nine rows.** Two multiplications and one addition each. **Write `10 × 0 = 0` on the rows that have no false alarms**, circle the winner and write its arithmetic out longhand — `500 × 11 = 5500`, `10 × 5 = 50`, `5500 + 50 = 5550`. Not just the total.
 >
-> **Page 11.3 — the trapezoid strips.** Five points, four strips, all four averages and all four multiplications shown, added up. Then `np.trapz` on the same numbers, and **the two answers written side by side.** If they do not match to three decimals, find your mistake before you write anything else.
+> **M4 — the second price list.** A miss is now £50. Do the rows again. **Two rows tie**; tell me which two, which one you ship, and why. Then the mean and the `±` of the five fold scores, by hand.
 >
-> **Page 11.4 — five folds.** `StratifiedKFold` with `shuffle=True` and `random_state=0`, `cross_val_score` with `scoring="roc_auc"`. Print the five numbers, the mean and the sd, and write the result out in the proper form: `AUC = 0.628 ± 0.087 (5-fold stratified CV)`.
+> **Build It.** The checklist on that page is your hand-in: the cost table, the second price list, the four strips matched against `np.trapz` to three decimals, the five folds with the fold counts added up to 72, and your Bug Log.
 >
-> **And then the sentence.** One sentence saying **what the `±` is for**, and one more saying **what you would conclude if it were three times bigger.** Three times bigger is ± 0.260, which puts our band at 0.368 to 0.888. Think about what a band that wide would let you claim. That is the sentence I care about."
+> **And then the sentence.** On the Build It page, one sentence saying **what the `±` is for**, and one more saying **what you would conclude if it were three times bigger.** Three times bigger is ± 0.260, which puts our band at 0.368 to 0.888. Think about what a band that wide would let you claim. That is the sentence I care about."
 
-| Page | What it is | Time |
-|---|---|---|
-| 11.1 | The nine-row cost table, winner circled, one row longhand | 15 min |
-| 11.2 | The same nine rows at £50 a miss; which row wins now and why | 10 min |
-| 11.3 | Four trapezoid strips by hand, matched against `np.trapz` | 15 min |
-| 11.4 | 5-fold stratified AUC reported as mean ± sd | 10 min |
-| 11.5 | The two `±` sentences | 5 min |
-| 11.6 | Vocabulary (6 terms) and the Bug Log's two silent bugs | 10 min |
+| Workbook section | Items | What it is | Time | When |
+|---|---|---|---|---|
+| ✅ Warm-Up | W1–W5 | Five recall questions on last week's dial, curves and the coin | 5 min | Tonight |
+| 🔢 Do the Maths by Hand | M1, M2 | Four strips, equal widths; four strips, unequal widths; two-strip comparison | 15 min | Revision of the lesson |
+| 🔢 Do the Maths by Hand | M3 (a–f) | The nine-row cost table at £500, winner longhand, the bump | 15 min | Tonight |
+| 🔢 Do the Maths by Hand | M4 (a–g) | The £50 price list, the tie, the break-even formula, mean and sd by hand, the `±` band | 20 min | Tonight |
+| 🔎 Predict the Output | P1–P4 | Four predictions in pen before running anything | 15 min | Later this week |
+| ✍️ Practice Set A — Read It | A1–A6 | Vocabulary match, read the cost table, spot the bug, match code to output, two error bars, label the strips | 25 min | Later this week |
+| ✍️ Practice Set B — Write It | B1–B5 | Five short programs, the last one about 25 lines | 40 min | Later this week |
+| 🐞 Fix the Broken Program | Bugs 1–3 | Three broken lines; one crashes on the first row, one on the last, one is silent | 15 min | Later this week |
+| 🧩 Puzzle of the Week | Parts 1 and 2 | The Price List Detective | 15 min | Optional |
+| 🤔 Think Deeper | T1, T2 | Two paragraphs | 15 min | Optional |
+| 🛠️ Build It — Fraud Bench | 11-step checklist, cost tables, strips, folds, two `±` sentences, Bug Log | The hand-in | 30 min | Tonight |
+| 🎨 Draw It | the cost bowl | One drawing and three short answers | 10 min | Later this week |
+| 📊 Self-Check | ten lines | Tick a face per line, not marked | 3 min | Last thing tonight |
 
 ---
 
 ## 🔑 Answer Key
 
-### Page 11.1 — The nine-row cost table
+Every answer below is taken from the workbook's own **✅ Answers** section at the end of `workbook/week-11.md`, and the arithmetic has been re-checked. The teacher-only parts (machine checks, wrong-answer maps, what to send back) are added under the item they belong to.
 
-`cost = 500 × misses + 10 × false alarms`. The misses and false alarms come straight from last week's sweep.
+### ✅ Warm-Up
 
-| t | misses (fn) | false alarms (fp) | `500 × fn` | `10 × fp` | total |
-|---|---|---|---|---|---|
-| 0.50 | 14 | 0 | 7000 | 0 | **£7,000** |
-| 0.15 | 13 | 0 | 6500 | 0 | **£6,500** |
-| 0.12 | 12 | 0 | 6000 | 0 | **£6,000** |
-| **0.10** | **11** | **5** | **5500** | **50** | **£5,550** ⬅ **cheapest** |
-| 0.08 | 11 | 12 | 5500 | 120 | **£5,620** |
-| 0.06 | 11 | 22 | 5500 | 220 | **£5,720** |
-| 0.04 | 10 | 61 | 5000 | 610 | **£5,610** |
-| 0.02 | 9 | 211 | 4500 | 2110 | **£6,610** |
-| 0.01 | 6 | 421 | 3000 | 4210 | **£7,210** |
+- **W1.** `predict()` is `predict_proba()` followed by **`>= 0.5`**. **Nobody chose it** — it is a default that shipped with the library, and it has been making decisions on the student's behalf since Week 3.
+- **W2.** `precision = 3 ÷ 8` (everything flagged) · `recall = 3 ÷ 14` (everything that really was fraud) · `fpr = 5 ÷ 986` (everything that really was innocent). Three different denominators, and choosing the denominator is the whole skill.
+- **W3.** `0.071429 ÷ 0.005071 = 14.0857` — "I bought fourteen units of recall per unit of false alarm." A bargain.
+- **W4.** **No, Python does not complain.** The curve comes back with **3 points instead of 28** and the AUC reads **0.6046** instead of 0.6116, because hard predictions have already had the threshold applied and the confidence thrown away. (0.6046 is the AUC of the 0/1 decisions made at `t = 0.10`: `(1 + 3/14 − 5/986) ÷ 2`.) You cannot un-decide a decision.
+- **W5.** A coin's ROC AUC is always **0.5000**. A coin's average precision on our data is **0.0140**, which is also **the positive class rate**, `14 ÷ 1000`.
 
-The winner's arithmetic, longhand:
+### 🔢 Do the Maths by Hand
 
-```text
-500 × 11  =  5500
- 10 ×  5  =    50
-              ----
-              5550
-```
-
-**And the saving against the default:** `7000 − 5550 = 1450`.
-
-**Machine check.** The complete `fraud_bench.py` and its real output are printed in full in the **🧰 Prep Checklist** above. Check the student's output against that block on these three numbers:
-
-| Must be exactly | If it is not |
-|---|---|
-| `cheapest of the nine: t = 0.10 at 5550` | `COST_FN` or `COST_FP` has been changed, or the threshold list is wrong. |
-| `cheapest of the 99 : t = 0.032 at 5420` | `np.arange(0.002, 0.200, 0.002)` has different arguments. |
-| `the five AUCs : [0.6183 0.5909 0.6873 0.7504 0.4954]` | `shuffle=True` or `random_state=0` missing from `StratifiedKFold`. Without `shuffle` you get `[0.7349 0.6389 0.6484 0.5851 0.648]`. |
-
-**Common wrong answers:**
-
-- **Forgetting to multiply the zero cells.** `10 × 0 = 0` still has to be written down. It is where the habit comes from.
-- **Using `tp` instead of `fn`.** The cost is for **mistakes**. `tp` and `tn` are free.
-- **Getting £7,000 for `t = 0.01`.** They have used 14 misses instead of 6. At the lowest threshold you miss *fewer*.
-
-### Page 11.2 — The second price list
-
-`COST_FN = 50`, `COST_FP = 10` — a miss is now worth only five false alarms.
-
-| t | misses | alarms | `50 × fn` | `10 × fp` | total |
-|---|---|---|---|---|---|
-| 0.50 | 14 | 0 | 700 | 0 | **£700** |
-| 0.15 | 13 | 0 | 650 | 0 | **£650** |
-| **0.12** | **12** | **0** | **600** | **0** | **£600** ⬅ **cheapest** |
-| **0.10** | **11** | **5** | **550** | **50** | **£600** ⬅ **tied** |
-| 0.08 | 11 | 12 | 550 | 120 | **£670** |
-| 0.06 | 11 | 22 | 550 | 220 | **£770** |
-| 0.04 | 10 | 61 | 500 | 610 | **£1,110** |
-| 0.02 | 9 | 211 | 450 | 2110 | **£2,560** |
-| 0.01 | 6 | 421 | 300 | 4210 | **£4,510** |
-
-**The winner moves from 0.10 to 0.12** — and 0.10 ties with it at exactly £600, which is worth noticing and worth saying: **when two thresholds tie, take the higher one, because it bothers fewer people for the same money.**
-
-> **The sentence:** "The model did not change at all — the same 1,000 probabilities, the same nine thresholds, the same 14 frauds. **What changed was somebody's opinion about what a stolen paycheque is worth.** Making a miss ten times cheaper made me ten times more reluctant to raise an alarm, so the threshold went up."
-
-**And for the £5,000 version, if they did it:**
-
-| t | total |
-|---|---|
-| 0.50 | £70,000 |
-| 0.15 | £65,000 |
-| 0.12 | £60,000 |
-| 0.10 | £55,050 |
-| 0.08 | £55,120 |
-| 0.06 | £55,220 |
-| 0.04 | £50,610 |
-| 0.02 | £47,110 |
-| **0.01** | **£34,210** ⬅ **cheapest** |
-
-**The winner slides all the way to the bottom of the table**, flagging 429 of 1,000 rows.
-
-### Page 11.3 — Four trapezoid strips
+#### M1 — four strips, equal widths
 
 The five points: `(0.00, 0.00) (0.25, 0.60) (0.50, 0.80) (0.75, 0.90) (1.00, 1.00)`. Every strip is 0.25 wide.
 
@@ -1451,41 +1397,121 @@ by hand   : 0.7000
 np.trapz  : 0.7000
 ```
 
-**Both 0.7000. Exactly, not approximately** — because the top of each strip is a straight line, so averaging the two heights is not a shortcut, it is correct.
+- **M1(a).** Because **the top of each strip is a straight line.** Averaging the two ends of a straight line gives its exact middle height, so `average height × width` is the exact area of that trapezoid. Not a shortcut and not an approximation; the only approximation anywhere is pretending the *curve* is made of straight pieces, which is M2.
+- **M1(b).** `0.7000 + 0.3000 = 1.0000`, the area of the whole 1-by-1 square. The classmate measured the area to the **left** of the curve, because `np.trapz` wants heights first and positions second. The check needs no documentation: if your two answers add up to something you recognise, you measured the wrong side.
 
-**If they used the race curve instead** (unequal widths), the answer is **0.8600**:
+**Common wrong answers (M1):**
 
-```text
-(0.2 + 0.6) ÷ 2 × 0.1 = 0.0400
-(0.6 + 0.8) ÷ 2 × 0.2 = 0.1400
-(0.8 + 1.0) ÷ 2 × 0.2 = 0.1800
-(1.0 + 1.0) ÷ 2 × 0.5 = 0.5000
-                        ------
-                        0.8600
-```
-
-and `np.trapz(ys, xs)` on those five points also prints **0.8600**, while `roc_auc_score` on all twenty cards prints **0.8500** — because five points cut the corners off an eleven-point staircase, and cutting corners off *this* shape makes the answer slightly **too big**.
-
-**Common wrong answers:**
-
-- **0.3000.** `np.trapz(xs, ys)` — arguments swapped. **Check: does it add to 1 with your hand answer? Then you measured the other side.**
+- **0.3000.** `np.trapz(xs, ys)`, arguments swapped. **Check: does it add to 1 with your hand answer? Then you measured the other side.**
 - **0.6375.** The x values were not in increasing order.
-- **0.7800 on the race curve.** They used two strips instead of four. Not wrong, just coarser — and worth praising if they say so.
 - **Multiplying the two heights together.** They are averaging, not multiplying. Ask: *"if a fence panel is 1 m tall at both ends, how tall is it in the middle?"*
 
-### Page 11.4 — Five folds, reported properly
+#### M2 — four strips, different widths
 
-Real output:
+Widths `w1 = 0.1`, `w2 = 0.2`, `w3 = 0.2`, `w4 = 0.5`, adding to **1.0**.
 
 ```text
-frauds per test fold, StratifiedKFold : [14, 14, 14, 15, 15]
-frauds per test fold, plain KFold     : [11, 17, 14, 17, 13]
-the five AUCs : [0.6183 0.5909 0.6873 0.7504 0.4954]
-mean 0.6285   sd 0.0867
-report it as  : AUC = 0.628 +/- 0.087 (5-fold stratified CV)
+strip 1:  (0.2 + 0.6) ÷ 2 = 0.40     0.40 × 0.1 = 0.0400
+strip 2:  (0.6 + 0.8) ÷ 2 = 0.70     0.70 × 0.2 = 0.1400
+strip 3:  (0.8 + 1.0) ÷ 2 = 0.90     0.90 × 0.2 = 0.1800
+strip 4:  (1.0 + 1.0) ÷ 2 = 1.00     1.00 × 0.5 = 0.5000
+                                                  ------
+                                     total      = 0.8600
 ```
 
-The mean, longhand:
+`np.trapz(ys, xs)` on those five points also prints **0.8600**, while `roc_auc_score` on all twenty cards prints **0.8500**. If a student's answer disagrees, it is almost always strip 4, which is 0.5 wide and not 0.25.
+
+- **M2(a).** `(0.2 + 0.8) ÷ 2 = 0.50`, `0.50 × 0.3 = 0.1500`; `(0.8 + 1.0) ÷ 2 = 0.90`, `0.90 × 0.7 = 0.6300`; total **0.7800**.
+- **M2(b).** Four strips: **0.8600** (too big). Two strips: **0.7800** (too small). The truth is 0.8500 with eleven strips. Nobody is wrong: the direction of the error depends on which corners you happen to cut, and noticing that four strips came out high while two came out low is a genuinely good observation.
+- **M2(c).** **More strips, more accurate.** scikit-learn simply uses every point the curve has.
+
+**Common wrong answer (M2):** 0.7800 on the four-strip question means they used two strips. Not wrong, just coarser, and worth praising if they say so.
+
+#### M3 — the cost table at £500 a miss
+
+- **M3(a).** `500 ÷ 10 = 50` false alarms per missed fraud.
+- **M3(b).** `cost = 500 × misses + 10 × false alarms`. The misses and false alarms come straight from last week's sweep.
+
+| t | misses (fn) | false alarms (fp) | `500 × fn` | `10 × fp` | total |
+|---|---|---|---|---|---|
+| 0.50 | 14 | 0 | 7000 | 0 | **£7,000** |
+| 0.15 | 13 | 0 | 6500 | 0 | **£6,500** |
+| 0.12 | 12 | 0 | 6000 | 0 | **£6,000** |
+| **0.10** | **11** | **5** | **5500** | **50** | **£5,550** ⬅ **cheapest** |
+| 0.08 | 11 | 12 | 5500 | 120 | **£5,620** |
+| 0.06 | 11 | 22 | 5500 | 220 | **£5,720** |
+| 0.04 | 10 | 61 | 5000 | 610 | **£5,610** |
+| 0.02 | 9 | 211 | 4500 | 2110 | **£6,610** |
+| 0.01 | 6 | 421 | 3000 | 4210 | **£7,210** |
+
+- **M3(c).** The winner's arithmetic, longhand:
+
+```text
+500 × 11  =  5500
+ 10 ×  5  =    50
+              ----
+              5550
+```
+
+- **M3(d).** Default **£7,000**, winner **£5,550**, saved **£1,450** on a thousand transactions. **None of the model changed.**
+- **M3(e).** `5 × 500 = 2500` saved; `421 × 10 = 4210` spent. **£4,210 spent to save £2,500.** The sentence: "A miss being fifty times worse than a false alarm does not help you when there are eighty times as many false alarms." (`421 ÷ 5 ≈ 84`.)
+- **M3(f).** `t = 0.04` costs **£5,610** and `t = 0.06` costs **£5,720**, so **0.04 is the bump**, cheaper than the row above it, which a smooth bowl would not allow. It is made of one fraud: the table rests on 14 frauds, and one fraud crossing a line moves the cost by £500. The bump is noise, not a discovery.
+
+**Machine check.** The complete `fraud_bench.py` and its real output are printed in full in the **🧰 Prep Checklist** above. Check the student's output against that block on these three numbers:
+
+| Must be exactly | If it is not |
+|---|---|
+| `cheapest of the nine: t = 0.10 at 5550` | `COST_FN` or `COST_FP` has been changed, or the threshold list is wrong. |
+| `cheapest of the 99 : t = 0.032 at 5420` | `np.arange(0.002, 0.200, 0.002)` has different arguments. |
+| `the five AUCs : [0.6183 0.5909 0.6873 0.7504 0.4954]` | `shuffle=True` or `random_state=0` missing from `StratifiedKFold`. Without `shuffle` you get `[0.7349 0.6389 0.6484 0.5851 0.648]`. |
+
+**Common wrong answers (M3):**
+
+- **Forgetting to multiply the zero cells.** `10 × 0 = 0` still has to be written down. It is where the habit comes from.
+- **Using `tp` instead of `fn`.** The cost is for **mistakes**. `tp` and `tn` are free.
+- **Getting £7,000 for `t = 0.01`.** They have used 14 misses instead of 6. At the lowest threshold you miss *fewer*.
+
+#### M4 — the £50 price list, and the `±` by hand
+
+`COST_FN = 50`, `COST_FP = 10`: a miss is now worth only five false alarms.
+
+| t | misses | alarms | `50 × fn` | `10 × fp` | total |
+|---|---|---|---|---|---|
+| 0.50 | 14 | 0 | 700 | 0 | **£700** |
+| 0.15 | 13 | 0 | 650 | 0 | **£650** |
+| **0.12** | **12** | **0** | **600** | **0** | **£600** ⬅ **cheapest** |
+| **0.10** | **11** | **5** | **550** | **50** | **£600** ⬅ **tied** |
+| 0.08 | 11 | 12 | 550 | 120 | **£670** |
+| 0.06 | 11 | 22 | 550 | 220 | **£770** |
+| 0.04 | 10 | 61 | 500 | 610 | **£1,110** |
+| 0.02 | 9 | 211 | 450 | 2110 | **£2,560** |
+| 0.01 | 6 | 421 | 300 | 4210 | **£4,510** |
+
+The workbook asks for the six rows 0.15, 0.12, 0.10, 0.08, 0.04 and 0.01 (totals 650, 600, 600, 670, 1110, 4510); the full table is above for marking.
+
+- **M4(a).** **`t = 0.12` and `t = 0.10` tie at exactly £600. Ship 0.12**: when two thresholds tie, take the higher one, because it bothers five fewer people for the same money.
+- **M4(b).** £500 list: `10 ÷ 510 = 0.0196`. £50 list: `10 ÷ 60 = 0.1667`. The formula moved the same way the sweep did: make a miss cheaper and the threshold goes up.
+- **M4(c).** What changed was **somebody's opinion about what a stolen paycheque is worth**, and it is not the data scientist's job; it belongs to whoever owns the consequences. The data scientist's job is to write their number down where a person can argue with it.
+
+> **The sentence:** "The model did not change at all — the same 1,000 probabilities, the same nine thresholds, the same 14 frauds. **What changed was somebody's opinion about what a stolen paycheque is worth.** Making a miss ten times cheaper made me ten times more reluctant to raise an alarm, so the threshold went up."
+
+**And for the £5,000 version, if a student did it** (it is also in B3):
+
+| t | total |
+|---|---|
+| 0.50 | £70,000 |
+| 0.15 | £65,000 |
+| 0.12 | £60,000 |
+| 0.10 | £55,050 |
+| 0.08 | £55,120 |
+| 0.06 | £55,220 |
+| 0.04 | £50,610 |
+| 0.02 | £47,110 |
+| **0.01** | **£34,210** ⬅ **cheapest** |
+
+The winner slides all the way to the bottom of the table, flagging 429 of 1,000 rows.
+
+- **M4(d).** The mean, longhand:
 
 ```text
 0.6183 + 0.5909  =  1.2092
@@ -1496,62 +1522,294 @@ The mean, longhand:
 3.1423 ÷ 5  =  0.62846   →   0.6285
 ```
 
-**The fold counts add up:** `14 + 14 + 14 + 15 + 15 = 72`, which is every fraud in the 5,000-row table. ✅ **Make them check this.**
+- **M4(e).** Using the mean 0.6285:
 
-**Two things to insist on in the write-up:**
+| score | score − 0.6285 | squared |
+|---|---|---|
+| 0.6183 | −0.0102 | 0.00010404 |
+| 0.5909 | −0.0376 | 0.00141376 |
+| 0.6873 | +0.0588 | 0.00345744 |
+| 0.7504 | +0.1219 | 0.01485961 |
+| 0.4954 | −0.1331 | 0.01771561 |
 
-1. **The words "5-fold stratified CV" beside the number.** A `±` with no method beside it is meaningless.
-2. **The observation that one fold scored 0.4954** — below a coin — **and another scored 0.7504.** A student who reports the mean and never mentions the extremes has done the arithmetic and missed the point.
+  `sum = 0.03755046`, `÷ 5 = 0.00751009`, `square root = 0.086661`, which rounds to **0.0867**, exactly what numpy printed. Dividing by 5 is numpy's default; `ddof=1` divides by 4 and gives **0.0969**. Both are standard; the student must say which was used.
+- **M4(f).** `AUC = 0.628 ± 0.087`, a band from **0.542 to 0.715**.
+- **M4(g).** **0.65: no, you cannot claim anything**, it is inside the band. **0.85: yes, now you can talk**, it is well outside. The rule: "The `±` is a rule of thumb for how big a difference between two models to trust." Anything inside the band is unproven.
 
-### Page 11.5 — The two `±` sentences
+**The fold counts add up:** `14 + 14 + 14 + 15 + 15 = 72`, which is every fraud in the 5,000-row table. **Make them check this.** Real output for the folds:
 
-**Full marks, sentence one:**
+```text
+frauds per test fold, StratifiedKFold : [14, 14, 14, 15, 15]
+frauds per test fold, plain KFold     : [11, 17, 14, 17, 13]
+the five AUCs : [0.6183 0.5909 0.6873 0.7504 0.4954]
+mean 0.6285   sd 0.0867
+report it as  : AUC = 0.628 +/- 0.087 (5-fold stratified CV)
+```
 
-> "The `±` is my **rule of thumb for how big a difference between two models to trust.** Our band is 0.628 ± 0.087, so about 0.54 to 0.72. Any model scoring inside that band might just be our own model on a luckier split, so I cannot claim it is better."
+### 🔎 Predict the Output
 
-**Full marks, sentence two:**
+- **P1.** Four lines:
 
-> "Three times bigger is ± 0.260, which puts the band at **0.368 to 0.888.** That band contains 'clearly worse than a coin' and 'genuinely good' at the same time, so I would conclude that **my measurement cannot answer any question I actually care about** — and the fix is more data, or at least more positive examples per fold, not a different model."
+```text
+(5,) (5,)
+0.7000
+0.3000
+2.8000
+```
 
-**Acceptable variations** on sentence two, all of which earn full marks:
+  Line 4 gave no positions, so `np.trapz` assumed every strip was `1` wide; ours are 0.25 wide, so the answer is four times too big (`0.7000 × 4 = 2.8000`). It never warns you. Lines 2 and 3 add to 1.0000, the whole square: one is the area under the curve and the other the area to its left.
+- **P2.**
 
-- "I would not report an AUC at all, I would say the experiment was too small to measure."
-- "I would go back and check whether one fold contained something weird — a whole different kind of row."
-- "I would stop comparing models on this dataset, because I could not tell any two of them apart."
+```text
+[14, 14, 14, 15, 15]
+[1000, 1000, 1000, 1000, 1000]
+[11, 17, 14, 17, 13]
+72
+```
 
-**Answers to send back:**
+  Line 2 is 1000 five times because 5,000 rows in 5 equal chunks is 1,000 each; every row is held out exactly once. Line 1 is stratified, line 3 is plain `KFold`; both add to 72. The cost of plain `KFold`: if the five scores differ you cannot tell whether the model is unstable or one chunk had an easier job. Stratification removes one of the two explanations.
+- **P3.**
 
-- **"The `±` shows how accurate the model is."** No. It shows how noisy the **measurement** is. The model has one true quality; we measured it five times badly.
-- **"A bigger `±` means a worse model."** No. Our `±` is mostly a statement about having 14 frauds per fold.
-- **"It means the model is 0.628 accurate give or take 0.087."** It is not accuracy, it is AUC. Precision of language matters here and it is worth one gentle correction.
+```text
+[0.986 0.986 0.986 0.985 0.985]
+0.6285  0.0867  0.0969
+```
 
-### Page 11.6 — Vocabulary and Bug Log
+  0.986 is the fraction of rows that are legitimate: `cross_val_score` defaults to **accuracy**, and the student forgot `scoring="roc_auc"`. On this dataset any score near 0.98 is a suspect, not a result. The two standard deviations differ by the divisor: `scores.std()` divides by 5 (0.0867), `ddof=1` divides by 4 (0.0969). No conclusion changes; say which you used.
+- **P4.**
 
-> **Cost matrix** — the confusion matrix with a price in each cell instead of a count. Ours: £0 for a correct legit, £10 for a false alarm, £500 for a miss, £0 for a caught fraud.
+```text
+5550
+5525.0
+501.0
+0.0196078431372549
+```
 
-> **Expected cost** — the total price of the mistakes a model makes at a given threshold. `500 × misses + 10 × false alarms`.
+  Line 3, in the order Python did it: `10 ÷ 10 = 1.0`, then `+ 500 = 501.0`; division binds tighter than addition. It is wildly wrong, which is better news than plausibly wrong. Line 2 is out by £25 and looks normal; its stray `.0` is the only visible clue.
 
-> **k-fold cross-validation** — chop the data into *k* chunks, train on *k*−1 and score on the one left out, *k* times, so every row is held out exactly once. Report the mean **and** the wobble.
+### ✍️ Practice Set A — Read It
 
-> **Stratified k-fold** — the same, but every chunk is built to hold the same proportion of the rare class. Ours gave 14, 14, 14, 15, 15 frauds per fold; plain `KFold` gave 11, 17, 14, 17, 13.
+- **A1.** cost matrix → **(iii)** · expected cost → **(v)** · stratified k-fold → **(ii)** · AUC → **(i)** · error bar → **(iv)**.
+  - **A1(a).** The two diagonal cells: a legitimate transaction correctly left alone, and a fraud correctly caught. Getting it right is free, which is why the cost of a threshold is only two multiplications and one addition.
+- **A2.**
+  - **A2(a).** "Down, then up, with a bump." Or "a bowl that is not smooth." "Down then up" without the bump misses the interesting half.
+  - **A2(b).** **`t = 0.10`, `0.08` and `0.06`.** All have `fn = 11`: the same eleven frauds missed. Lowering the bar twice added 17 innocent people and caught not one extra fraud.
+  - **A2(c).** **`t = 0.04` at £5,610**, cheaper than `t = 0.06` at £5,720. Four words: "one fraud, fourteen total" (or "noise from 14 positives").
+  - **A2(d).** Recompute the `10 × fp` column, now `100 × fp`. `t = 0.12`: `500 × 12 + 100 × 0 = 6000`; `t = 0.10`: `500 × 11 + 100 × 5 = 6000`. They tie, so by the tie-break rule the winner is `0.12`: it moves **up** the table, the mirror of M4.
+- **A3.** Six broken lines:
 
-> **AUC** — the area under the ROC curve, added up as trapezoid strips. A coin's curve is the diagonal and the area under it is exactly 0.5. Ours is 0.6116.
+| # | What happens | The fix |
+|---|---|---|
+| a | `InvalidParameterError: The 'scoring' parameter … Got 'auc' instead`, then a wall of sixty valid names; the right one is in the list | `scoring="roc_auc"` |
+| b | **No error.** You get accuracy: `[0.986 0.986 0.986 0.985 0.985]` | `scoring="roc_auc"` |
+| c | **No error.** `shuffle=True` is missing, the sd comes out **0.0481** instead of 0.0867 (a different chop of the same data; across shuffle seeds the sd wanders from about 0.03 to 0.12) | `StratifiedKFold(n_splits=5, shuffle=True, random_state=0)` |
+| d | **No error**, and **0.3000**, the area of the wrong side | `np.trapz(ys, xs)`; check your two answers add to the square |
+| e | `AttributeError: 'list' object has no attribute 'mean'` | `np.array(scores).mean()`, or collect with `cross_val_score` |
+| f | **No error**, and every fold's score is slightly different, because the scaler had already seen the held-out rows (in principle an optimistic leak; here the mean fell by 0.0005) | put the scaler **inside** the `Pipeline` |
 
-> **Error bar** — the `±` printed beside a mean. It says how much the number moves when you measure the same thing again a slightly different way, and therefore a rule of thumb for which differences to trust.
+  - **A3(g).** **b, c and d** produce no error. The hardest to find in somebody else's code is **(f)**, leakage through a scaler applied before cross-validation: nothing looks wrong and there is no single line to point at. Of the three on the list, **(c) is the nastiest**, because its symptom, a smaller error bar, looks like an improvement.
+- **A4.** i → **T** · ii → **P** · iii → **S** · iv → **R** · v → **Q**.
+- **A5.**
+  - **A5(a).** `0.087 ÷ 0.006 = 14.5` times wider.
+  - **A5(b).** **No.** The fraud *measurement* is fourteen times noisier, not the fraud *model* fourteen times worse: each fraud fold holds 14 or 15 positives against the hospital's 42 or 43, and the problem is much harder. A `±` is a statement about the measuring equipment.
+  - **A5(c).** **Not with this evidence.** A 0.02 improvement is far smaller than the ±0.087 spread. A rough rule-of-thumb threshold is an improvement about as big as the spread, something like 0.09, so about 0.72 or better before claiming anything, and 0.85 to be comfortable. It is a guide, not a derived figure.
+  - **A5(d).** 1. The held-out chunks are too small for what you are measuring. 2. The model is genuinely unstable. 3. The data is not homogeneous. **Ours is 1**, overwhelmingly; the fix is more data, or at least more positives per fold, not a different model.
+- **A6.** The four boxes are **0.0750, 0.1750, 0.2125, 0.2375**; the total panel is **0.7000** by hand and **0.7000** from `np.trapz`; the wrong-side check is `0.7000 + 0.3000 = 1`.
+  - **A6(a).** **Strip 4, at 0.2375.** All four are the same width, so only height can make one bigger, and strip 4 sits under the highest part of the curve (0.90 and 1.00).
+  - **A6(b).** **Strips 1 and 2 both change, each by +0.0375.** Strip 1 goes from 0.0750 to `(0.00 + 0.90) ÷ 2 × 0.25 = 0.1125`; strip 2 from 0.1750 to `(0.90 + 0.80) ÷ 2 × 0.25 = 0.2125`. New total: `0.1125 + 0.2125 + 0.2125 + 0.2375 = 0.7750`.
 
-**Bug Log — both entries are silent.**
+### ✍️ Practice Set B — Write It
 
-**Entry one.**
-Message: *none.* Symptom: `cross_val_score` returned `[0.986 0.986 0.986 0.985 0.985]`.
-Meaning: I never said which number I wanted, so it gave me accuracy, and accuracy on a 98.6%-legit table is a statement about the easy rows.
-Fix: `scoring="roc_auc"`.
-The rule I am keeping: **any score near 0.98 on this dataset is a suspect, not a result.**
+Marking is by output, not by matching the text of the code.
 
-**Entry two.**
-Message: *none.* Symptom: `np.trapz` returned 0.3000 where my hand arithmetic said 0.7000.
-Meaning: I passed the positions first and the heights second, so I measured the area to the left of the curve instead of underneath it.
-Fix: `np.trapz(ys, xs)` — heights first.
-The rule I am keeping: **add my two answers up. 0.7 + 0.3 = 1, the whole square, so I measured the other side.**
+- **B1.** One line plus a print:
+
+```python
+print("%.4f" % np.trapz(ys, xs))
+```
+
+```text
+0.7000
+```
+
+- **B2.** `strips.py`, a function that shows its working. Expected output for the two calls (equal widths, then the race curve):
+
+```text
+strip 1: width 0.25  (0.00 + 0.60) / 2 x 0.25 = 0.0750
+strip 2: width 0.25  (0.60 + 0.80) / 2 x 0.25 = 0.1750
+strip 3: width 0.25  (0.80 + 0.90) / 2 x 0.25 = 0.2125
+strip 4: width 0.25  (0.90 + 1.00) / 2 x 0.25 = 0.2375
+by hand   : 0.7000
+np.trapz  : 0.7000
+agree to 3 dp? True
+
+strip 1: width 0.10  (0.20 + 0.60) / 2 x 0.10 = 0.0400
+strip 2: width 0.20  (0.60 + 0.80) / 2 x 0.20 = 0.1400
+strip 3: width 0.20  (0.80 + 1.00) / 2 x 0.20 = 0.1800
+strip 4: width 0.50  (1.00 + 1.00) / 2 x 0.50 = 0.5000
+by hand   : 0.8600
+np.trapz  : 0.8600
+agree to 3 dp? True
+```
+
+  The line that matters is `width = xs[i + 1] - xs[i]`. A version with `0.25` typed in works on the first curve and is silently wrong on the second.
+- **B3.** `price.py`, three price lists, three winners. The three winners are **`0.12`** (miss £50), **`0.10`** (miss £500) and **`0.01`** (miss £5,000), with winning costs **600, 5550 and 34210** and break-even formulas **0.1667, 0.0196 and 0.0020**. The £50 and £500 cost columns are the M4 and M3 tables above; the £5,000 column is in the M4 section. Same model, same 1,000 probabilities, same 14 frauds, three answers, because only somebody's opinion about money changed. Which is correct? All of them, each under its own price list; none, without one. At `COST_FN = 50` the miss part of every row is ten times smaller but the false-alarm part is unchanged, so the ordering changed, which is why last week's winner cannot be re-used.
+- **B4.** `folds.py`. Expected output:
+
+```text
+frauds per fold, stratified : [14, 14, 14, 15, 15]  sum 72
+frauds per fold, plain      : [11, 17, 14, 17, 13]  sum 72
+every fraud held out once?   True
+the five AUCs : [0.6183 0.5909 0.6873 0.7504 0.4954]
+mean 0.6285   sd (divide by 5) 0.0867   sd (divide by 4) 0.0969
+report it as  : AUC = 0.628 +/- 0.087 (5-fold stratified CV)
+the band      : 0.542 to 0.715
+```
+
+  `sum(strat) == int(y.sum()) == sum(plain)` is a chained comparison that gives one `True`. Printing the band is the point: `0.628 ± 0.087` is a pair of numbers, `0.542 to 0.715` is a conclusion.
+- **B5.** `bench200.py`, the student's own Fraud Bench at £200 a miss. Expected output:
+
+```text
+price list: a miss 200, a false alarm 10, so 20 alarms per miss
+ 0.50  fn 14  fp   0  200 x 14 =  2800  10 x   0 =     0  total   2800
+ 0.15  fn 13  fp   0  200 x 13 =  2600  10 x   0 =     0  total   2600
+ 0.12  fn 12  fp   0  200 x 12 =  2400  10 x   0 =     0  total   2400
+ 0.10  fn 11  fp   5  200 x 11 =  2200  10 x   5 =    50  total   2250
+ 0.08  fn 11  fp  12  200 x 11 =  2200  10 x  12 =   120  total   2320
+ 0.06  fn 11  fp  22  200 x 11 =  2200  10 x  22 =   220  total   2420
+ 0.04  fn 10  fp  61  200 x 10 =  2000  10 x  61 =   610  total   2610
+ 0.02  fn  9  fp 211  200 x  9 =  1800  10 x 211 =  2110  total   3910
+ 0.01  fn  6  fp 421  200 x  6 =  1200  10 x 421 =  4210  total   5410
+cheapest t = 0.10 at 2250   default 0.50 costs 2800   saved 550
+break-even formula t* = 0.0476
+np.trapz(tpr, fpr) 0.6116   roc_auc_score 0.6116
+AUC = 0.628 +/- 0.087 (5-fold stratified CV)
+```
+
+  The winner is `t = 0.10`, the same as at £500, but the saving is £550 instead of £1,450: the winner stops 3 of the 14 misses either way, worth `3 × 500 − 50 = 1450` at £500 and `3 × 200 − 50 = 550` at £200. The threshold is set by the *ratio* of the prices; the saving by their *size*. Mixing these up is the commonest mistake in the lab. The break-even formula moved a long way (0.0196 to 0.0476) and the nine-row winner did not move at all, because nine rows are too coarse to notice.
+
+### 🐞 Fix the Broken Program
+
+- **Bug 1, the `confusion_matrix(...)` line, a shape bug.** `.ravel()` is missing. `confusion_matrix` returns a (2, 2) grid; unpacking it gives two *rows* (`[979 7]` and `[11 3]`) where four names wait. Fix: `confusion_matrix(y_val, pred, labels=[0, 1]).ravel()`.
+- **Bug 2, the `print("AUC = ..." % (scores.mean(), scores.std()))` line, a runtime bug.** `scores` is a plain Python list, and `.mean()` and `.std()` are numpy methods. `np.round(scores, 4)` worked on the line above because it is a *function you hand a list to* and it converts on the way in; `.mean()` is a *method the list has never heard of*. Fix A: `scores = np.array(scores)` first. Fix B, better: replace the loop with `scores = cross_val_score(pipe, X, y, cv=skf, scoring="roc_auc")`, which returns an array and avoids fitting the scaler outside the fold.
+- **Bug 3, `skf = StratifiedKFold(n_splits=5)`, a silent logic bug.** `shuffle=True, random_state=0` is missing. A smaller `±` here is not good news: the folds are cut in storage order, a different chop of the same data (the mean also moved, 0.651 against 0.628), and the sd of five folds on 14 frauds is itself noisy (0.03 to 0.12 across seeds). Choosing the chop that flatters you would be cheating. Fix: `StratifiedKFold(n_splits=5, shuffle=True, random_state=0)`.
+- **Why the cost table never changed.** It is computed from `prob`, from the single train/validation split at the top of the file, and none of the three bugs has a path to it. When only *some* of the output is wrong, trace backwards from the wrong number to its variables and ignore the rest.
+- **Ranking, easiest to hardest: 1, 2, 3.** Bug 3 never complains and its symptom looks like good news; it is the only one that could survive a code review.
+
+### 🧩 Puzzle of the Week
+
+- **Part 1(a).** Compare 0.10, 0.08 and 0.06: all cost `11C + something` with somethings **50, 120 and 220**, so **`t = 0.10` is cheapest whatever C is**. You never need to know C. Rows 0.50 and 0.15 cost `14C` and `13C`, both more than `t = 0.12`'s `12C`, for any positive C.
+- **Part 1(b).**
+
+| C | `12C` | `11C + 50` | cheaper |
+|---|---|---|---|
+| 20 | 240 | 270 | 0.12 |
+| 50 | 600 | 600 | tie |
+| 100 | 1200 | 1150 | 0.10 |
+
+- **Part 1(c).**
+
+| C | `11C + 50` | `10C + 610` | cheaper |
+|---|---|---|---|
+| 300 | 3350 | 3610 | 0.10 |
+| 560 | 6210 | 6210 | tie |
+| 700 | 7750 | 7610 | 0.04 |
+
+- **Part 1(d).**
+
+| C | `10C + 610` | `6C + 4210` | cheaper |
+|---|---|---|---|
+| 700 | 7610 | 8410 | 0.04 |
+| 900 | 9610 | 9610 | tie |
+| 1200 | 12610 | 11410 | 0.01 |
+
+- **Part 1(e).**
+
+| if a miss costs… | the winning threshold is |
+|---|---|
+| up to **£50** | `t = 0.12` |
+| **£50** to **£560** | `t = 0.10` |
+| **£560** to **£900** | `t = 0.04` |
+| more than **£900** | `t = 0.01` |
+
+  Four winners out of nine rows; at each boundary the two rows tie and the higher threshold wins.
+- **Part 1(f).** At C = 700, `0.02` costs `9 × 700 + 2110 = 8410` against `0.04` at `10 × 700 + 610 = 7610`, so 0.04 wins. At C = 2000, `0.02` costs `9 × 2000 + 2110 = 20110` against `0.01` at `6 × 2000 + 4210 = 16210`, so 0.01 wins. A row that is never cheapest for any price is **dominated**, so it is not a candidate and never was; five of the nine rows are decoration. Two well-chosen values on each side settle it, because the costs are straight lines in C and two lines cross at most once.
+- **Part 1(g).** £500 is in the £50 to £560 band, so the winner is **`t = 0.10`**, matching the circled winner in M3.
+- **Part 2(a).** **No, not really.** One fraud crossing one threshold changes the cost by £C (£700 at C = 700), and the whole band for `t = 0.04` is only £340 wide. The arithmetic cannot be more precise than the fourteen frauds it rests on.
+- **Part 2(b).** Full marks:
+
+> "Threshold 0.10, chosen on the 1,000 validation rows under the price list 'a miss £500, a false alarm £10'. It is the cheapest of nine thresholds at £5,550 against the default's £7,000. **The measurement rests on 14 frauds**, so the boundary between 0.10 and 0.04 sits at about £560 a miss and one differently-placed fraud could move it; I would re-check this threshold on more positives before trusting it in production."
+
+  Three things earn the marks: the price list, the number of positives, and an admission.
+
+The three boundaries come from `12C = 11C + 50` (C = 50), `11C + 50 = 10C + 610` (C = 560) and `10C + 610 = 6C + 4210` (C = 900).
+
+### 🤔 Think Deeper
+
+- **T1.** Full marks explains that the *disagreement itself* is the result. The formula `t* = 10 ÷ (10 + 500) = 0.0196` assumes the probabilities are honest, that is **calibrated**; the student cannot tell whether ours are (the scores top out at 0.1774 and sum to 14.1 against 14 real frauds, but 14 frauds cannot check each score). The sweep's `t = 0.032` is a measurement but **rests on 14 frauds**, and one fraud moves the cost by £500. Neither is wrong. In a report, print both and say they disagree by about half again, which prompts a calibration check, though much of the gap may be noise; and if they had agreed, say that too, since agreement between an assumption and a measurement is mild evidence the assumption holds. **What earns the marks:** naming *calibrated*, naming *14*, and seeing that the disagreement is a free question.
+- **T2.** Full marks says *better*, and then does the hard half. It is better because now there is a somebody: last week `0.5` sat in a library's defaults and nobody could be asked. Writing the price list down does not make it correct, it makes it **arguable**. For a case with no possible price (school exclusion, bail, medical screening) the acceptable answers are **price the ratio** ("wrongly excluding a child is at least a hundred times worse than wrongly keeping one in") or **publish the whole curve** and let the decision-maker choose; the strongest answers add **log which threshold was used** so it can be audited. **"You just have to be careful" scores zero.**
+
+### 🛠️ Build It — Fraud Bench
+
+Mark against the 11-step checklist on that page.
+
+- **Steps 1–3, the cost table.** The table is the M3 table above: winner `t = 0.10` at **£5,550**, with `10 × 0 = 0` written on the three zero rows (0.50, 0.15, 0.12) and the longhand `500 × 11 = 5500`, `10 × 5 = 50`, `5500 + 50 = 5550`. Default £7,000, saved £1,450.
+- **Step 4, the second price list.** The M4 table: the winner moved from `0.10` up to `0.12`, with `0.10` tied at £600. Ship 0.12. One sentence on why, as in the M4 box.
+- **Steps 5–6, four strips.** Widths **0.25, 0.25, 0.25, 0.25** adding to 1.0; strips **0.0750, 0.1750, 0.2125, 0.2375**; by hand **0.7000**, `np.trapz` **0.7000**. The matching tolerance is 3 dp, and nobody moves on until they agree.
+- **Step 7, the reveal.** `np.trapz(tpr, fpr) = 0.6116` and `roc_auc_score = 0.6116`: the same calculation, with twenty-seven strips instead of four (`len(fpr) - 1 = 27`). So `roc_auc_score` is trapezoid strips and nothing else, and "a coin gets 0.5" is the area of a triangle, `½ × 1 × 1`.
+- **Steps 8–9, five folds.**
+
+| fold | frauds held out | AUC |
+|---|---|---|
+| 1 | 14 | 0.6183 |
+| 2 | 14 | 0.5909 |
+| 3 | 14 | 0.6873 |
+| 4 | 15 | 0.7504 |
+| 5 | 15 | 0.4954 |
+| **total** | **72** | |
+
+  Mean by hand `3.1423 ÷ 5 = 0.62846`. Report **`AUC = 0.628 ± 0.087 (5-fold stratified CV)`**, band **0.542 to 0.715**. Plain `KFold` gave `[11, 17, 14, 17, 13]`: one chunk had 11 frauds to find and another 17, so when the scores differ you cannot tell an unstable model from an easy chunk.
+
+  **Two things to insist on in the write-up:**
+  1. **The words "5-fold stratified CV" beside the number.** A `±` with no method beside it is meaningless.
+  2. **Mention of the extremes:** one fold scored 0.4954, below a coin, and another 0.7504. A student who reports the mean and never mentions them has done the arithmetic and missed the point.
+- **Step 10, the two `±` sentences.**
+
+  **Sentence one, full marks:**
+
+> "The `±` is my **rule of thumb for how big a difference between two models to trust.** Our band is 0.628 ± 0.087, so about 0.542 to 0.715. Any model scoring inside that band might just be our own model on a luckier split, so I cannot claim it is better from that alone — and a model scoring 0.85 is well outside it and worth taking seriously."
+
+  **Sentence two, full marks** (three times bigger is ± 0.260, a band from **0.368 to 0.888**):
+
+> "That band contains 'clearly worse than a coin' and 'genuinely good' at the same time, so I would conclude that **my measurement cannot answer any question I actually care about.** The instrument is too blunt for the job, and reporting the mean on its own would be dishonest. The fix is more data, or at least more positive examples per fold, not a different model."
+
+  **Acceptable variations** on sentence two, all full marks:
+  - "I would not report an AUC at all, I would say the experiment was too small to measure."
+  - "I would go back and check whether one fold contained something weird — a whole different kind of row."
+  - "I would stop comparing models on this dataset, because I could not tell any two of them apart."
+
+  **Answers to send back:**
+  - **"The `±` shows how accurate the model is."** Scores zero. It shows how noisy the **measurement** is. The model has one true quality; we measured it five times badly.
+  - **"A bigger `±` means a worse model."** No. Our `±` is mostly a statement about having 14 frauds per fold.
+  - **"It means the model is 0.628 accurate give or take 0.087."** It is not accuracy, it is AUC. One gentle correction.
+- **Step 11, the Bug Log.** The two entries to expect:
+
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `InvalidParameterError: … Got 'auc' instead` | not the name of a scorer, and the real name is in the wall of text | `scoring="auc"` | `scoring="roc_auc"`, scan the list, do not panic |
+| `np.trapz : 0.3000` with no error | the area of the wrong side of the curve | heights and positions swapped | `np.trapz(ys, xs)`; check the two answers add to 1 |
+
+  A student who met the other villain instead (no error, just `[0.986 0.986 0.986 0.985 0.985]`) also earns the entry: *message: none; meaning: I never said which number I wanted, so it gave me accuracy; fix: `scoring="roc_auc"`; rule: any score near 0.98 on this dataset is a suspect, not a result.* For the `np.trapz` entry the rule to look for is "add my two answers up: 0.7 + 0.3 = 1, so I measured the other side."
+
+### 🎨 Draw It
+
+- **Which end is higher:** the `t = 0.01` end, **£7,210 against £7,000**, so it is **£210 worse** than the default. Flagging 429 rows and catching 8 of the 14 frauds is more expensive than flagging nothing. A strong drawing labels that.
+- **The £50 bowl** is about ten times shallower and its lowest point has slid left to `t = 0.12`. It is not the same shape scaled down, because the ordering of rows changed.
+- **The bump:** no, five thresholds would probably have hidden it. `t = 0.04` is cheaper than `t = 0.06` by only £110, and a five-row table (say 0.50, 0.20, 0.10, 0.05, 0.01) skips both rows and draws a smooth bowl. A cost table needs enough rows to see whether it is smooth, which is why the chapter also runs 99 thresholds, and why the 99-row answer (0.032) is not the 9-row answer (0.10).
+
+### 📊 Self-Check
+
+Not marked; there are no right answers. Three of the ten lines carry the week: **"show one row's arithmetic longhand"** (if that is not a 😀 they are trusting a computer to do two multiplications and an addition), **"match my hand answer to `np.trapz` to three decimal places"** (the same move checks a neural network's gradients in Week 19), and **"say what the `±` is for"** (if they can compute it but not say what it licenses them to claim, they have a number and not a measurement; have them write sentence 1 again without looking).
 
 ### Answers to every question posed in the lesson
 

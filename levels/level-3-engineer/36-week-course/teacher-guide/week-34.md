@@ -15,7 +15,7 @@
 | **New maths** | **None.** One cost sweep and one addition, both using Week 11's expected-cost arithmetic. |
 | **New syntax** | `argparse.ArgumentParser()` · `json.dump` / `json.load` · `time.perf_counter()` · `Path(...).mkdir(parents=True, exist_ok=True)` |
 | **Dataset** | **The student's own.** Either their Week 33 sentiment engine (Path A — recommended) or their Week 26/27 digits CNN (Path B). The reference corpus in this file is 80 typed reviews plus 12 negation traps; the Path B reference is `load_digits()`. **Nothing downloads.** |
-| **Materials** | Printed workbook pages 34.1–34.7 · **a big blank sheet headed THE SIX BOXES** (it stays up for three weeks) · one **A4 CONTRACT sheet per student**, printed, with the six boxes empty · the Bug Log · their Week 33 (or Week 26) folder on disk |
+| **Materials** | The printed workbook, every section (its old page numbers: **34.2** is *Do the Maths by Hand*, **34.3** is prediction P3, **34.1, 34.4–34.7** are the *Build It* steps) · **a big blank sheet headed THE SIX BOXES** (it stays up for three weeks) · one **A4 CONTRACT sheet per student**, printed, with the six boxes empty · the Bug Log · their Week 33 (or Week 26) folder on disk |
 | **Tech needed** | Laptop with Python 3, numpy, scikit-learn, **joblib** — and torch only for Path B. **No new installs. `argparse`, `json`, `time` and `pathlib` all ship with Python.** |
 | **Prep time** | 30 minutes the night before · 10 minutes on the day |
 | **Expected runtime of the code** | `train.py` is **under 2 seconds** on Path A (about 4 seconds on Path B). `predict.py` from a cold terminal is **about 0.8 seconds, almost all of it import**. `tests.py` is under a second. **Nothing in this week is slow. Time yours anyway.** |
@@ -303,7 +303,7 @@ exactly the kind of attention Part C of the Week 36 paper rewards.**
 
 - [ ] **Read §1 to §6 above.** Twenty minutes. There is no maths to practise this week, which is why the prep is reading rather than doing.
 - [ ] **Decide which path the class is on, and write it on the board.** Path A (their Week 33 sentiment engine) for everybody unless a student was much prouder of their Week 26 digits CNN. **Everything in the lesson works for both; Path B has one extra gotcha, in §5 of the Answer Key.**
-- [ ] **Print** workbook pages 34.1–34.7, and **one A4 CONTRACT sheet per student** — the six boxes, empty, big enough to write in. This sheet is the lesson.
+- [ ] **Print** the whole workbook (Warm-Up through Self-Check; the Build It steps are 34.1, 34.4, 34.5, 34.6 and the stretch 34.7), and **one A4 CONTRACT sheet per student** — the six boxes, empty, big enough to write in. This sheet is the lesson.
 - [ ] **Put up the blank THE SIX BOXES wall sheet.** It stays up until Week 36.
 - [ ] **Build the reference project yourself, below, and run all four commands.** Twenty minutes including reading. Do not skip it: you need to have seen `3/3 passed` with your own eyes.
 - [ ] **Check the folders their Week 33 work is in.** If three students have their reviews in a notebook and nowhere else, you need to know that tonight, not at minute 44.
@@ -649,7 +649,7 @@ SECOND predict_proba     :  0.173 ms
 **This week survives a total power cut better than any other week of the year, because the deliverable is a piece of paper.**
 
 1. **The contract, unchanged.** Twenty-five silent minutes, the cross-examination, the whole activity. Objective 1 — the hardest and most important one — needs no electricity at all.
-2. **Box 5's arithmetic on paper.** Print the nine-row cost table from the Answer Key (page 34.2) and do the sweep by hand. `10 × 1 + 1 × 0 = 10` against `10 × 0 + 1 × 4 = 4`.
+2. **Box 5's arithmetic on paper.** Print the eight-row cost table from the Answer Key (*Do the Maths by Hand*, M1) and do the sweep by hand. `10 × 1 + 1 × 0 = 10` against `10 × 0 + 1 × 4 = 4`.
 3. **The cold-start addition on paper.** `92.2 + 659.3 + 0.4 = 751.9`, then `751.9 ÷ 0.4 ≈ 1,880`. A real and startling number, done with a pencil.
 4. **The three golden tests chosen on paper**, from the probability list in the Answer Key, with the distance from the threshold written beside each. That is objective 4's *thinking*, without objective 4's typing.
 5. **Objectives 2 and 3 are the casualty.** Say so plainly: *"the one thing we cannot do on paper is freeze the file and open a cold terminal. That is your homework, and next week's lesson needs it done."*
@@ -660,7 +660,7 @@ SECOND predict_proba     :  0.173 ms
 | `ModuleNotFoundError: No module named 'model_def'` | They ran `python3 train.py` from inside `model/`, or from the wrong folder. The `sys.path.insert(...)` line fixes it — check it is there and above the import. |
 | `FileNotFoundError: ... 'artifacts/sentiment_v1.metadata.json'` | The `mkdir` line is missing or below the `open`. **Python makes files, never folders.** |
 | Somebody's `predict.py` imports `train` | Rule 1. Show the grep. **Do not fix it for them — run the grep on the shared screen and let the room see a line printed where a blank should be.** |
-| The whole class finishes the artifact in 8 minutes | Send them to page 34.7: train a `v2` with one deliberate change, and **write down why they reject it**. A written rejection scores higher than an unjustified upgrade. |
+| The whole class finishes the artifact in 8 minutes | Send them to Build It 34.7: train a `v2` with one deliberate change, and **write down why they reject it**. A written rejection scores higher than an unjustified upgrade. |
 | Somebody starts building the HTTP service | Stop them warmly. *"That is next week and it is the hardest milestone. Today you make the thing it will serve."* |
 
 ---
@@ -1064,10 +1064,10 @@ And the sentence for this week:
 ### Setup
 
 - One printed A4 CONTRACT sheet per student, six empty boxes, face-down until you say.
-- Workbook page 34.1 is the same six boxes, for the final tidy copy at home.
+- Workbook *Build It* step 34.1 is the same six boxes, for the final tidy copy at home.
 - The wall sheet with **your** worked example still on it. **Leave it up.** They are allowed to copy the *shape*, not the content.
 - A visible timer.
-- Page 34.2 — the cost table — beside them, because box 5 needs arithmetic.
+- *Do the Maths by Hand* (M1, the cost table) beside them, because box 5 needs arithmetic.
 
 ### Part 1 — the silent write (12 minutes)
 
@@ -1085,7 +1085,7 @@ And the sentence for this week:
 |---|---|
 | Box 1 says "one prediction is about sentiment" | Point at it and say one word: *"noun."* |
 | Box 4 says "a false positive is when it's wrong" | Point and say: *"in the language of the forum. What happens to that comment?"* |
-| Box 5 says "0.5" | Point at page 34.2 and say nothing. |
+| Box 5 says "0.5" | Point at the M1 cost table and say nothing. |
 | Box 6 says "anything illegal" | *"Name something a reasonable person would actually try on Tuesday."* |
 | A blank sheet at minute six | Sit down beside them and ask box 1 out loud. Write their answer for them, once, then hand the pen back. |
 
@@ -1174,7 +1174,7 @@ You can, and one day you should. Not this week. `pytest` hides the two things th
 
 ### If the student is struggling
 
-**Cut:** Path B entirely · the `--json` flag · `--version` and `--threshold` overrides · the third golden test · page 34.7.
+**Cut:** Path B entirely · the `--json` flag · `--version` and `--threshold` overrides · the third golden test · Build It 34.7.
 
 **Give them the copy-this-exactly scaffold.** Hand them `predictor.py` complete and printed. They type only `predict.py`, which is nineteen lines and includes three of the week's four new constructs. **Typing `predict.py` is the whole of objective 3.**
 
@@ -1251,23 +1251,32 @@ Three checks, five minutes, exact wording.
 
 **Say this:**
 
-> "About an hour. Four pages, and the last one is one line long and the hardest.
+> "About an hour for the core, and the last piece of it is one line long and the hardest. The core is four steps of the **Build It** section of your workbook.
 >
-> **First, page 34.1 — the contract, tidied up.** Same six boxes, neat, in ink, with the two things the room made you change. **Box 5 must contain a sum.**
+> **First, Build It 34.1 — the contract, tidied up.** Same six boxes, neat, in ink, with the two things the room made you change. **Box 5 must contain a sum.**
 >
-> **Second, page 34.4 — the frozen artifact.** Run the trainer, then list the folder and copy out the three filenames **with their byte sizes**. Then open the metadata file and copy out four fields: the version, the threshold, the test accuracy and the two library versions. **Generated, not typed** — if you typed any of it, you have missed the point of the page.
+> **Second, Build It 34.4 — the frozen artifact.** Run the trainer, then list the folder and copy out the three filenames **with their byte sizes**. Then open the metadata file and copy out four fields: the version, the threshold, the test accuracy and the two library versions. **Generated, not typed** — if you typed any of it, you have missed the point of the step.
 >
-> **Third, page 34.5 — your three golden tests, and why those three.** For each one: the input, the frozen answer, the probability, and **how far it sits from your threshold**. Then one sentence: which of the three is the most fragile, and what its flipping would mean.
+> **Third, Build It 34.5 — your three golden tests, and why those three.** For each one: the input, the frozen answer, the probability, and **how far it sits from your threshold**. Then one sentence: which of the three is the most fragile, and what its flipping would mean.
 >
-> **Fourth, page 34.6, and this is the one I mark hardest. One line.** Write out the **exact command a stranger would type** to get a prediction out of your project, starting from a terminal in your project folder. Then — and this is the part people skip — **open a brand-new terminal, paste your own line, and check it works.** If it doesn't, the line is wrong, not the terminal.
+> **Fourth, Build It 34.6, and this is the one I mark hardest. One line.** Write out the **exact command a stranger would type** to get a prediction out of your project, starting from a terminal in your project folder. Then — and this is the part people skip — **open a brand-new terminal, paste your own line, and check it works.** If it doesn't, the line is wrong, not the terminal.
 >
-> Page 34.7 is a stretch: train a `v2`, compare it on the same test set, and **reject it in writing**. Rejecting is harder than upgrading and it scores higher."
+> The other sections of the workbook are for the rest of the week: the Warm-Up, the rest of Do the Maths by Hand, the Predict the Output pages, Practice Set A, Fix the Broken Program, Draw It and the Self-Check. Build It 34.7 is a stretch: train a `v2`, compare it on the same test set, and **reject it in writing**. Rejecting is harder than upgrading and it scores higher."
 
-**Workbook pages:** 34.1, 34.2, 34.3 in class · **34.1 (tidy), 34.4, 34.5, 34.6** at home · 34.7 optional.
+**Workbook sections:**
 
-**Expected time:** 15 min tidying the contract · 15 min on the artifact page · 20 min on the golden tests · 10 min on the one-line command, honestly tested · **about 60 minutes**, plus 25 more for the stretch.
+| When | Sections |
+|---|---|
+| **In class** | *Build It* 34.1 (first draft, in the silent-write activity) · *Do the Maths by Hand* M1 and M2 (box 5's sum) · *Predict the Output* P3 (the cold-start predictions, alongside the live code) |
+| **At home, the core** | *Build It* 34.1 (tidy copy), 34.4, 34.5, 34.6 |
+| **At home, over the week** | Warm-Up · *Do the Maths by Hand* M3, M4 · *Predict the Output* P1, P2 (P4 for Path B) · *Practice Set A* · *Fix the Broken Program* · *Draw It* · *Self-Check* |
+| **Optional** | *Practice Set B* · *Puzzle of the Week* · *Think Deeper* · *Build It* 34.7 |
 
-> **🧑‍🏫 What to look for when you mark it:** four things. **One — is there a sum in box 5?** A number alone is not an answer to "where did the threshold come from". **Two — were the metadata fields copied from a file, or invented?** The tell is `created_utc`: a real one has a plausible date and time on it, an invented one is suspiciously round. **Three — does page 34.5 give a distance from the threshold for each golden test?** A student who picked three inputs at 0.63, 0.65 and 0.67 has built an alarm that will cry wolf, and saying so to them is worth more than a tick. **Four — did page 34.6's command actually get tested in a fresh terminal?** Ask them. The commonest failure is a command that only works from one folder, and it is invisible until somebody else tries it. **Next week's entire lesson assumes their artifact loads cold. Mark this page first, tonight, so you know on Monday who needs ten minutes of help before the bell.**
+The old split (pages 34.1 to 34.3 in class, 34.1 and 34.4 to 34.6 at home) no longer covers the workbook, so this is the split to use. Mark the core first; the rest can be marked from the Answer Key in one sitting.
+
+**Expected time:** 15 min tidying the contract · 15 min on the artifact step · 20 min on the golden tests · 10 min on the one-line command, honestly tested · **about 60 minutes for the core**, plus about 60 more for the paper sections (Warm-Up, M3 and M4, P1 and P2, Set A, Fix the Broken Program, Draw It, Self-Check), plus 25 for the 34.7 stretch.
+
+> **🧑‍🏫 What to look for when you mark it:** four things. **One — is there a sum in box 5?** A number alone is not an answer to "where did the threshold come from". **Two — were the metadata fields copied from a file, or invented?** The tell is `created_utc`: a real one has a plausible date and time on it, an invented one is suspiciously round. **Three — does Build It 34.5 give a distance from the threshold for each golden test?** A student who picked three inputs at 0.63, 0.65 and 0.67 has built an alarm that will cry wolf, and saying so to them is worth more than a tick. **Four — did Build It 34.6's command actually get tested in a fresh terminal?** Ask them. The commonest failure is a command that only works from one folder, and it is invisible until somebody else tries it. **Next week's entire lesson assumes their artifact loads cold. Mark 34.6 first, tonight, so you know on Monday who needs ten minutes of help before the bell.**
 
 ---
 
@@ -1453,22 +1462,25 @@ traps  : 12 (never trained on)
 > **Read the subgroup table.** The 16 test reviews score a respectable `0.812`, and the traps score `0.417` with recall `0.000`; the negation-word group scores `0.462`, also with recall `0.000`. A respectable headline sitting above those numbers is the whole point of Week 35.
 
 
-### Page 34.1 — The contract, six boxes
+### Which workbook section each part of this key answers
 
-Model answer for the reference project. **Accept any contract whose boxes are specific; do not mark against this wording.**
+This key follows the printed workbook **in its own order**: Warm-Up, Do the Maths by Hand, Predict the Output, Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It, Draw It, Self-Check. The workbook's own cover note uses the older page numbers, so here is the map: **page 34.2 is *Do the Maths by Hand*, page 34.3 is prediction P3, and pages 34.1, 34.4, 34.5, 34.6 and the stretch 34.7 are the numbered steps of *Build It*.** Items are labelled as the student sees them (W1, M1, P1, A1, B1, T1).
 
-| Box | Model answer |
-|---|---|
-| **1 · one prediction is about** | one review, written by one person, at one time. **Not** a person, **not** an account. |
-| **2 · input** | field `text`, a non-empty string, at most 100,000 bytes |
-| **3 · output** | `label` (one of `negative`, `positive`) · `probability` 0–1 · `threshold` · `model_version` · `latency_ms` |
-| **4 · the two errors, priced** | a nasty review marked positive is a nasty review nobody reads → **10**. A nice review marked negative is a moderator's ten seconds wasted → **1**. So the expensive error is about **10×** the cheap one, and I chose 10 by judgement, not measurement. |
-| **5 · the threshold** | `0.65`, from the cost sweep on the 16 validation rows: `10 × 1 + 1 × 0 = 10` at 0.50, `10 × 1 + 1 × 1 = 11` at 0.55, `10 × 0 + 1 × 4 = 4` at 0.65 and again at 0.70. Minimum 4; tied, so take the lower, 0.65. Module 3's rule of thumb would say `10 ÷ 11 = 0.91`; the measurement disagrees because by 0.65 there are no expensive errors left to remove. **16 rows, so one row is worth 6.25 points — this is a decision on thin evidence and the card will say so.** |
-| **6 · never used for** | (1) deciding who gets banned or muted — it outputs a suggestion, not a decision. (2) marking anybody's schoolwork. |
+**Values are taken from the workbook's own Answers section.** Where a timing differs from the live-code run in the lesson plan (`92.2 + 659.3`, `0.38 ms`, about `1,880×`), that is a different artifact on a different run, not an error: the lesson numbers are for the reference project's 10,228-byte artifact, the workbook P3 numbers are for its small `tiny_v1` artifact. Students' own numbers will match neither, and should not.
 
-**Marking notes.** **Box 5 must contain a `×` and an `=`.** Box 6 must name two things a reasonable person would try. Box 1 must be a countable noun. Boxes 2 and 3 are the easy marks and nearly everybody gets them.
+### Warm-Up
 
-### Page 34.2 — The cost sweep, by hand
+| Item | Answer | What to watch for |
+|---|---|---|
+| **W1** | `tfidfvectorizer` and `logisticregression`. `pipe.named_steps["tfidf"]` raises `KeyError: 'tfidf'`. | `make_pipeline` lowercases the class name and removes nothing. Students who write `tfidf` and `lr` have remembered the shorthand they would pick. Ask with `pipe.named_steps.keys()`. |
+| **W2** | `coefs = clf.coef_[0]`. Without the `[0]` the grid is `(1, 97)`, so indexing fails with `IndexError: index 12 is out of bounds for axis 0 with size 1`. | The message sounds like a different problem. The fix is to print the shape first. |
+| **W3** | A coefficient is only as trustworthy as the number of rows it was learned from: `lumpy −0.9621` rests on one review, `rude −3.2033` on eleven. | Full marks need "weight and evidence are two different facts". |
+| **W4** | A feature can only help if the training data contained it. Bigrams add a *type* of feature, not data: `"not fresh"` was never two adjacent words in any training review. | "Adding a feature type does not add features; adding data does." |
+| **W5** | `ValueError: Iterable over raw text documents expected, string object received.` Fix: two square brackets, `pipe.predict(["one review"])`. | A string is iterable over its letters, which is why the library checks by hand. This is the same bug as Fix the Broken Program, Bug 2. |
+
+### Do the Maths by Hand (workbook page 34.2)
+
+**M1 — the eight cost cells.** The workbook table has eight rows (0.30 to 0.80), not nine.
 
 *The nine-row table is printed in the workbook with the two count columns filled in and the cost column blank. Fill it in and ring the winner.*
 
@@ -1483,29 +1495,248 @@ Model answer for the reference project. **Accept any contract whose boxes are sp
 | 0.70 | 0 | 4 | `10 × 0 + 1 × 4` | **4** |
 | 0.80 | 0 | 7 | `10 × 0 + 1 × 7` | **7** |
 
-**And the follow-up question: "0.65 and 0.70 tie at 4. Which do you ship?"**
+The column falls, bottoms out, then climbs: **50 → 30 → 10 → 11 → 13 → 4 → 4 → 7.** It goes *up* from 10 to 13 before the drop to 4, because the one nasty review sits at `0.6143` and nothing removes it until the line passes that number.
 
-**0.65**, and the reason is worth a mark: of two thresholds with the same cost, take the lower one, because it flags fewer things as negative on rows nobody has seen yet, which wastes fewer moderator ten-seconds on nice reviews (it also lets more borderline reviews through, so the rule is a stated convention, not a proven better choice). Accuracy cannot separate them either — 0.7500 at 0.65 against 0.7500 at 0.70 on these rows, with identical mistakes — so the tie-break is a judgement you write down. **And the honest sentence that goes with it: this is 16 validation rows, and 0.50 had the best accuracy (0.9375) but one expensive error, so the choice rests on a single row.** **A student who notices the tie and breaks it with a stated reason is at level 4.**
+**Marking notes.** All eight cost cells and the ring round 0.65. **The commonest error is multiplying the wrong column by 10** — catch it by asking which mistake was the expensive one.
 
-**Marking notes.** All eight cost cells, and the ring round 0.65. **The commonest error is multiplying the wrong column by 10** — catch it by asking which mistake was the expensive one.
+**M2 — two thresholds tie.**
 
-### Page 34.3 — Predict the cold-start arithmetic, in pen
+- **(a)** Ship **0.65**.
+- **(b)** Of two thresholds with the same total cost, take the lower one, because it calls fewer things negative on rows nobody has seen, and every extra negative is a moderator reading a comment nobody needed to flag. At 0.65 and 0.70 the counts are identical (4 and 4), so here the tie-break changes nothing you can measure; it is a stated convention, not a proven better choice. Accuracy cannot help either: it is `0.7500` at both. **A student who notices the tie and breaks it with a stated reason is at level 4.**
+- **(c)** With both prices 1: `1 × 5 + 1 × 0 = 5` at 0.30, `1 × 1 + 1 × 0 = 1` at 0.50, `1 × 0 + 1 × 4 = 4` at 0.65. The winner is **t = 0.50**, and what you have computed is **the error count**, which is what **accuracy** is made of (`0.9375` at 0.50). **Accuracy is the cost sweep with both prices set to 1.** At prices `10` and `1`, 0.50 costs `10` and 0.65 costs `4`.
+- **Honest sentence to extract:** this is 16 validation rows, and 0.50 has the best accuracy (0.9375) but one expensive error, so the choice rests on a single row.
 
-*Before running anything: three predictions. (a) How long will the whole command take? (b) How long will the prediction itself take? (c) Which will be bigger, and by how many times?*
+**M3 — the rule of thumb against the measurement.**
 
-| | Most students predict | The truth |
+- **(a)** `10 ÷ (10 + 1) = 10 ÷ 11 = 0.9091`.
+- **(b)** Ship the **measurement**, `0.65`. The rule of thumb assumes perfectly calibrated probabilities and smoothly trading errors; this is a real model measured on 16 real rows. When they disagree, the measurement wins, and then you say why.
+- **(c)** **Zero** expensive mistakes are left at `0.65`, so a higher threshold buys nothing on the expensive side and costs more cheap mistakes (`4 → 4 → 7`). The rule of thumb is aiming at a trade-off that has already finished.
+
+**M4 — sixteen rows.**
+
+- **(a)** `100 ÷ 16 = 6.25 %`.
+- **(b)** One more wrong: `0.8125 − 0.0625 = 0.7500`. One more right: `0.8125 + 0.0625 = 0.8750`. For a card reading `0.8750`: `0.8125` or `0.9375`. On 16 rows accuracy can only be a multiple of `0.0625`, so "0.90 on 16 rows" is not a number anybody can have measured.
+- **(c)**
+
+```text
+test 1:  0.7661 − 0.65  = 0.1161
+test 2:  0.65  − 0.2110 = 0.4390
+test 3:  0.65  − 0.2380 = 0.4120
+```
+
+- **(d)** Test **1** is the most fragile, and the smallest change that would flip it is a drop of **0.1161** in its probability. The number is the answer, not "test 1 looks closest".
+
+### Predict the Output
+
+**P1 — the three `argparse` runs.** Expected output (the runs are real):
+
+```text
+$ python3 argp2.py sentiment --ngram-max 3
+name      : sentiment str
+ngram_max : 3 int
+threshold : 0.65 float
+json      : False bool
+
+$ python3 argp2.py sentiment --threshold 1 --json
+name      : sentiment str
+ngram_max : 2 int
+threshold : 1.0 float
+json      : True bool
+
+$ python3 argp2.py --ngram-max 3
+usage: argp2.py [-h] [--ngram-max NGRAM_MAX] [--threshold THRESHOLD] [--json]
+                name
+argp2.py: error: the following arguments are required: name
+```
+
+- The exit code of run C is **`2`**, not 1: `argparse` uses 2 for "you called me wrongly". Run C fails before any of the student's own code runs.
+- `--threshold 1` prints **`1.0 float`**, not `1 int`, because `type=float` converted it. `--json` carries no value: `False` when absent, `True` when present.
+- The 💡 answer is **`args.ngram_max`**: `argparse` turns the dash into an underscore, because `args.ngram-max` would read as "args.ngram minus max".
+- **Wrong-answer map:** `1 int` for the threshold (forgot `type=float`); exit code `1` for run C.
+
+**P2 — what survives a trip through JSON.** Expected output:
+
+```text
+{"threshold": 0.65, "classes": ["negative", "positive"], "n_test": 16, "1": "one"}
+classes came back a list
+keys: ['threshold', 'classes', 'n_test', '1']
+threshold still a float? float True
+n_test still an int?   int
+same dictionary? False
+```
+
+The two changes to name: the **tuple became a list** (JSON has only arrays), and the **integer key `1` became the string `"1"`** (JSON object keys are always text, so `back[1]` would raise `KeyError: 1`). `0.65` stays a `float` and `16` stays an `int`, which is why the threshold lives in a JSON file. If a student asks why the tuple-to-list change matters: it does not, since you only index it. The integer key is the one that bites.
+
+**P3 — the cold-start arithmetic (workbook page 34.3).** The program is `coldstart.py` as printed in the workbook. Reference run, on the laptop the book was written on; **these numbers will not reproduce, and the shape is what is marked**:
+
+```text
+import joblib        :    98.14 ms
+FIRST joblib.load    :   658.62 ms
+SECOND joblib.load   :     0.21 ms
+FIRST predict_proba  :     0.38 ms
+SECOND predict_proba :    0.147 ms
+the ratio            :     4484 x  (658.6 / 0.147)
+```
+
+| | What most people predict | The truth here |
 |---|---|---|
-| (a) whole command | "instant" or "a second" | **about 0.82 s wall clock**, of which `92.2 + 659.3 = 751.5 ms` is import-and-load |
-| (b) the prediction | "half a second" | **0.38 ms** — about four ten-thousandths of a second (one 2,600th) |
-| (c) the ratio | 2× or 10× | **about 1,880×**: `751.9 ÷ 0.4 ≈ 1,880` |
+| (a) whole command | "instant", or "a second" | about **0.8 s**, of which `98.14 + 658.62 = 756.76 ms` is import-and-load |
+| (b) one prediction | "half a second" | **0.147 ms**, about one seven-thousandth of a second |
+| (c) the ratio | "twice", or "ten times" | about **4,500×** |
+| (d) the SECOND load | "the same as the first" | **0.21 ms**, about three thousand times faster than the first |
 
-**And the follow-up: "the artifact is 10,228 bytes. Why did loading it take 659 ms?"**
+**The follow-up: "the artifact is about nine kilobytes, so why does the first load take 658 ms and the second a fraction of one?"** Because `joblib.load` is not mainly reading nine kilobytes: unpickling makes Python **import the scikit-learn machinery the file refers to** (the vectorizer class, the logistic-regression class, the sparse-matrix code). Importing is the cost, not reading. The proof is the second load of the same file, `0.21 ms`, because everything it needed is already imported.
 
-Because `joblib.load` does not merely read 10,228 bytes; unpickling makes Python **import the scikit-learn machinery the file refers to** — the vectorizer, the logistic-regression class, the sparse-matrix code. Importing is the cost. The proof is that a **second** load of the same file in the same program takes **0.4 ms**.
+**Marking notes.** Present or absent for the predictions: nearly everybody gets (c) wrong by a factor of a hundred, and that is the design. The follow-up is the marked part, and the word to look for is "importing", not "reading". For the lesson's reference artifact (10,228 bytes) the live-code run gave `92.2 + 659.3 = 751.5 ms` and about `1,880×`; if a student's numbers look like either set, that is fine.
 
-**Marking notes.** **Present or absent for the predictions** — nearly everybody gets (c) wrong by a factor of a hundred, and that is the design. The follow-up is the marked part, and the words to look for are "importing", not "reading".
+**P4 — the shapes inside the artifact (Path B's network).** Expected output:
 
-### Page 34.4 — The frozen artifact and its metadata
+```text
+0.weight   (8, 1, 3, 3)            72 numbers
+0.bias     (8,)                     8 numbers
+3.weight   (16, 8, 3, 3)         1152 numbers
+3.bias     (16,)                   16 numbers
+7.weight   (10, 64)               640 numbers
+7.bias     (10,)                   10 numbers
+total learnable numbers: 1898
+a batch of 5 digits in  : (5, 1, 8, 8)
+ten numbers per digit out: (5, 10)
+```
+
+The arithmetic: `1 × 3 × 3 × 8 + 8 = 80` · `8 × 3 × 3 × 16 + 16 = 1168` · `64 × 10 + 10 = 650`, and `80 + 1168 + 650 = 1898`. **Why `3.weight`:** `nn.Sequential` names children by position: `0` conv, `1` ReLU, `2` MaxPool, `3` conv, `4` ReLU, `5` MaxPool, `6` Flatten, `7` Linear. ReLU and MaxPool have no learnable numbers so they are absent from `state_dict()`, but they still use up their position numbers, hence the keys 0, 3, 7. A wrong architecture at load time gives `size mismatch for 3.weight: copying a param with shape torch.Size([16, 8, 3, 3]) from checkpoint, the shape in current model is torch.Size([32, 8, 3, 3])`, and the `3` is a position in a list. That is the argument for one `model_def.py` imported by both sides.
+
+### Practice Set A
+
+- **A1.** prediction contract **(ii)** · artifact versioning **(v)** · golden test **(iv)** · cold start **(iii)** · latency **(i)**.
+- **A2 (a).** Index 1 holds **`positive`**. Alphabetising `["negative", "positive"]` changes nothing, which is the trap; with `["spam", "ham"]` it would flip index 1 and silently invert every prediction. Full marks for seeing the order is a load-bearing decision.
+- **A2 (b).** `48 + 16 + 16 = 80`. The **validation** pile (16 rows) chose the `0.65`. The test pile must never choose anything.
+- **A2 (c).** `sklearn_version` and `python_version`.
+- **A2 (d).** A comment is for a human, a JSON file is for both: the serving code reads the threshold from the file, so there is exactly one copy. Also acceptable: two metadata files can be diffed between model versions, a comment cannot.
+- **A2 (e).** `created_utc`: every other field was generated by the script and cannot be wrong, while this one must differ from everyone else's copy. An invented one is suspiciously round (`12:00:00Z`).
+- **A3 (1), silent.** Both `perf_counter()` readings are on the same side of the work, so it prints `0.00 ms`. A latency of exactly zero is never real. Fix: `t1` goes after the prediction.
+- **A3 (2), silent then a crash.** It dumps only the classifier, so the artifact has no vectorizer; the first prediction gives `ValueError: Expected 2D array, got 1D array instead: array=['cold food and a rude driver'].` The artifact is the whole fitted pipeline.
+- **A3 (3), the traceback.** The `json.dump` arguments are the wrong way round; last line `TypeError: Object of type TextIOWrapper is not JSON serializable`. Fix: `json.dump(meta, f, indent=2)`, data first and file second.
+- **A4.** (a) most fragile **1**, then **2**, then **3**. (b) `0.7661 − 0.65 = 0.1161`. (c) It would print **`1`**; that number is how one program tells another something is wrong, and it is the whole of automated testing. (d) `0.6502` sits `0.0002` above the threshold and will flip on a retrain or a rounding difference, so it is an alarm that cries wolf, not a test.
+- **A5.** (a) `12 + 1 = 13`: twelve characters in `sentiment_v1` plus one newline. (b) `echo "sentiment_v2" > model/artifacts/LATEST`. (c) **`LATEST`** has no version in its name, correctly: it is the pointer, and a pointer whose own name changed would need a pointer of its own.
+- **A6.** Box 1 *one prediction is about* · Box 2 *what goes in, with types* · Box 3 *what comes out* · Box 4 *the two errors, priced* · Box 5 *the threshold, as a sum* · Box 6 *never used for*. The box containing `×` and `=` is **box 5**; the box naming two tempting things is **box 6**.
+
+### Practice Set B
+
+Programs are student-written; mark against the output.
+
+- **B1.** Expected `13 13`. `write_text` returns characters written and `stat().st_size` is bytes; they agree only because every character is one byte, which is a reason to keep version names to plain letters, digits and underscores.
+- **B2.** `resolve_version` returns a real name untouched, reads and **`.strip()`s** `LATEST` for `None` or `"latest"`, and raises `FileNotFoundError` with the fix inside the message. Expected output:
+
+```text
+resolve_version(None)          -> sentiment_v1
+resolve_version('latest')      -> sentiment_v1
+resolve_version('tiny_v1')     -> tiny_v1
+with LATEST deleted           -> No LATEST file at LATEST. Run: python3 model/train.py --version 1
+```
+
+  Without `.strip()` the filename is `sentiment_v1\n.joblib`, and the error looks perfectly correct because the newline is invisible.
+- **B3.** `meta.py` makes the folder with `parents=True, exist_ok=True`, writes with `json.dump(meta, f, indent=2)` plus a trailing newline, reads it back, and prints:
+
+```text
+version          tiny_v1                str
+threshold        0.65                   float
+test_accuracy    1.0                    float
+sklearn_version  1.7.1                  str
+python_version   3.10.10                str
+bytes on disk   : 241
+classes[1]      : positive   (index 1 is the positive class, always)
+```
+
+  The `created_utc` and the byte count will differ from student to student; everything else is generated. The mark is `threshold ... float`, not `str`.
+- **B4.** `sweep.py` prints eight rows with the sum as text, then the three closing lines:
+
+```text
+0.50       1        0     10 x 1 + 1 x 0  =  10
+0.55       1        1     10 x 1 + 1 x 1  =  11
+0.65       0        4     10 x 0 + 1 x 4  =   4
+
+smallest cost   : 4
+thresholds tied : [0.65, 0.7]
+ship            : 0.65  (of tied thresholds, take the LOWER one: a stated convention, not a proven better choice)
+```
+
+  All eight costs must agree with the hand table in M1. `[0.65, 0.7]` prints `0.7`, not `0.70`, because a float does not know how many places were meant.
+- **B5.** `coldstart.py` is the P3 program written from memory. Look for **five separate timings**, a ratio **in the thousands**, and the SECOND load thousands of times faster than the first. A ratio under 10 means both `perf_counter()` calls are on the same side of the work.
+
+### Fix the Broken Program
+
+- **Bug 1, runtime.** Python makes files, never folders. One line, before anything is written: `ART.mkdir(parents=True, exist_ok=True)`.
+- **Bug 2, the two characters `[` and `]`.** `prob = pipe.predict_proba([text])[0, 1]`. A string is iterable over its letters, so `"hot delicious pizza"` looks like 19 one-character documents. One review is a list of one.
+- **Bug 3, the silent one.** `expected` is computed from the same probability by the same rule as `label`, so `label != expected` is never true, `failures` stays 0, and it prints `3/3 passed` whatever the model does. (A second, smaller crime: `"PASS" if label == failures` compares a string to a count, so it always prints `FAIL` while the tally says everything passed.)
+  - **(a)** The two lines to quote are `label = "positive" if prob >= THRESHOLD else "negative"` and `expected = "positive" if prob >= THRESHOLD else "negative"`.
+  - **(b)** With `THRESHOLD = 0.99` it still prints `3/3 passed` while `hot delicious pizza` is now called `negative` and test accuracy has halved to `0.5000`. That is the proof: a test whose expected answer is computed by the thing being tested is a mirror.
+  - **(c)** Expected answers written by a human, once, in a `GOLDEN` list of `(text, expected)` pairs; the loop iterates over them; the `expected =` line is deleted; and the `label == failures` comparison is repaired. **Three lines changed**, plus the repair. Fixed program:
+
+```text
+PASS hot delicious pizza      p=0.6857 -> positive
+PASS cold soggy awful bread   p=0.2750 -> negative
+PASS rude slow driver         p=0.2800 -> negative
+3/3 passed  (threshold 0.55, test accuracy 1.0000)
+```
+
+  And with the threshold wrecked to `0.99` it must now fail, with exit code `1`:
+
+```text
+FAIL hot delicious pizza      p=0.6857 -> negative
+PASS cold soggy awful bread   p=0.2750 -> negative
+PASS rude slow driver         p=0.2800 -> negative
+2/3 passed  (threshold 0.99, test accuracy 0.5000)
+```
+
+- **Wrong-answer map:** students who fix Bugs 1 and 2 and stop at `3/3 passed` have found two bugs out of three; ask them what the test would do if the model were broken.
+
+### Puzzle of the Week
+
+- **Part 1.** The positive lines say `probability >= t`, so `t ≤ 0.6331` (the smaller of `0.7562` and `0.6331`). The negative lines say `probability < t`, so `t > 0.4614` (the larger of `0.4614` and `0.2750`). So `0.4614 < t ≤ 0.6331`.
+- **Part 2. No.** Log lines only give inequalities; no line ever says `t` equals anything, so the gap can shrink but never close to one number. That is the argument for logging the threshold.
+- **Part 3.** From line 2: `t ≤ 0.6331`. From line 5: `t > 0.6857`. And `0.6331 < 0.6857`, so no number satisfies both.
+- **Part 4.** Every line claims the same model version, so the version cannot explain it: two different thresholds were live (a restart with a `--threshold` flag, a hand-edited metadata file, or a retrain that overwrote the artifact without a version bump). The field that would have told you in one second is **`threshold`**, the one the typo dropped. Report the two stretches separately.
+
+### Think Deeper
+
+**T1 — model answer.**
+
+> "Box 6 is not about covering myself; it is about the one thing my measurements cannot do. My model scores `0.8125` on 16 held-out reviews, which sounds respectable until you notice that **16 rows means one row is worth 6.25 percentage points** — so what I actually know is 'roughly right on reviews that look like my training reviews'. A ban is how you write down the *limit of the evidence*.
+>
+> The tempting use is **counting**: telling the forum owner whether the mood is improving week to week. It feels harmless, and it is the worst thing you could do with this model, because a few percent of real change would be buried in its own uncertainty, and the owner would act on a graph made of noise. And unlike a wrong label, nobody would ever find out."
+
+Full marks needs a number from the student's own results, a use that is genuinely tempting, and a mechanism for what goes wrong. "Anything illegal" scores nothing.
+
+**T2 — model answer.**
+
+> "`C` controls how strongly the model is allowed to hold an opinion. A smaller `C` presses its probabilities towards `0.5`: it ranks the reviews in almost the same order, it is just less **sure**. The review that was `0.7450` under v1 is `0.6134` under v2, and v2's highest probability on the validation pile is `0.6453` where v1's is `0.8186`. Its **scale** changed, not its judgement.
+>
+> My threshold of `0.65` was measured on v1's probabilities; it is a fact about v1's number line. Under v2 it sits above everything, so every review is called negative and accuracy drops to `0.5000`.
+>
+> What else went out of date: my golden tests' margins (test 1 goes from `0.1161` clear to `0.0302` on the wrong side, and the other two lose about a third of their margin) and my monitoring baseline (the share of predictions landing between 0.45 and 0.65 rises on its own)."
+
+**The level-5 sentence to look for:** *a threshold belongs to a probability scale, so a new model invalidates the old threshold even when the new model is better.* Say so out loud to any student who writes it.
+
+### Build It
+
+Accept any specific contract and any working project; the tables below are the reference project. **Path A** (sentiment) is marked here; Path B differences follow the stretch.
+
+#### Build It 34.1 — The contract, six boxes
+
+Model answer for the reference project. **Accept any contract whose boxes are specific; do not mark against this wording.**
+
+| Box | Model answer |
+|---|---|
+| **1 · one prediction is about** | one review, written by one person, at one time. **Not** a person, **not** an account. |
+| **2 · input** | field `text`, a non-empty string, at most 100,000 bytes |
+| **3 · output** | `label` (one of `negative`, `positive`) · `probability` 0–1 · `threshold` · `model_version` · `latency_ms` |
+| **4 · the two errors, priced** | a nasty review marked positive is a nasty review nobody reads → **10**. A nice review marked negative is a moderator's ten seconds wasted → **1**. So the expensive error is about **10×** the cheap one, and I chose 10 by judgement, not measurement. |
+| **5 · the threshold** | `0.65`, from the cost sweep on the 16 validation rows: `10 × 1 + 1 × 0 = 10` at 0.50, `10 × 1 + 1 × 1 = 11` at 0.55, `10 × 0 + 1 × 4 = 4` at 0.65 and again at 0.70. Minimum 4; tied, so take the lower, 0.65. Module 3's rule of thumb would say `10 ÷ 11 = 0.91`; the measurement disagrees because by 0.65 there are no expensive errors left to remove. **16 rows, so one row is worth 6.25 points — this is a decision on thin evidence and the card will say so.** |
+| **6 · never used for** | (1) deciding who gets banned or muted — it outputs a suggestion, not a decision. (2) marking anybody's schoolwork. |
+
+**Marking notes.** **Box 5 must contain a `×` and an `=`.** Box 6 must name two things a reasonable person would try. Box 1 must be a countable noun. Boxes 2 and 3 are the easy marks and nearly everybody gets them.
+
+#### Build It 34.4 — The frozen artifact and its metadata
 
 ```text
 $ ls -l model/artifacts/
@@ -1521,13 +1752,15 @@ $ ls -l model/artifacts/
 | `test_accuracy` | `0.8125` | the headline number, measured once, on 16 rows |
 | `sklearn_version` | `1.7.1` | so "it broke after I updated my laptop" is a two-minute diagnosis |
 | `python_version` | `3.10.10` | same reason |
-| `created_utc` | e.g. `2026-09-18T17:47:14Z` | **the only field that is meant to differ from mine** |
+| `created_utc` | e.g. `2026-09-22T19:36:31Z` | **the only field that is meant to differ from mine** |
 
 **And: "why is `LATEST` exactly 13 bytes?"** Because it contains `sentiment_v1` — twelve characters — and one newline. `12 + 1 = 13`. **A rollback is one edit to those 13 bytes.**
 
 **Marking notes.** Byte sizes present, and the metadata copied rather than invented. **The `created_utc` field is the lie detector.**
 
-### Page 34.5 — The three golden tests, and why those three
+The workbook also asks for the Rule 1 grep, `grep -rnE "\.fit\(|train_test_split|DummyClassifier|optimizer" serve/`. The correct result is that it prints **nothing**, and the blank line is Rule 1 checked instead of promised (strong evidence, not a proof: the pattern cannot see every spelling of training). A student who pastes a printed line has a training line in `serve/` and should fix it with the grep still on screen.
+
+#### Build It 34.5 — The three golden tests, and why those three
 
 | # | input | frozen answer | p | distance from 0.65 |
 |---|---|---|---:|---:|
@@ -1549,7 +1782,9 @@ PASS expected=negative got=negative p=0.2380  <<stale bread and awful coffee>>
 
 **Marking notes.** **The distance column is the marked part.** Three inputs clustered near the threshold is the failure mode; say so directly. Also check they ran `echo $?` and saw `0` — and that they know it prints `1` when a test fails, because that number is how one program tells another that something is wrong.
 
-### Page 34.6 — The exact command a stranger would type
+Also for the workbook's "three things that could have caused it": the vocabulary changed, the preparation broke, or the threshold moved. The workbook's run block expects `3/3 passed` and exit code `0`.
+
+#### Build It 34.6 — The exact command a stranger would type
 
 ```bash
 python3 serve/predict.py "the pizza was hot and delicious"
@@ -1561,7 +1796,7 @@ positive p=0.7450  (threshold 0.65, model sentiment_v1, 0.38 ms, loaded in 650 m
 
 **Marking notes.** One line. **Check three things.** Is it in quotes? Does it work from the project root *and* from `/`? And did they actually open a fresh terminal to test it — ask, and watch the face. The commonest real failure is `python predict.py` (wrong interpreter name, or wrong folder), and it is invisible until a stranger tries it. **This is the page that decides whether next week's lesson starts on time.**
 
-### Page 34.7 — Stretch: a v2 you reject in writing
+#### Build It 34.7 — Stretch: a v2 you reject in writing
 
 ```bash
 $ python3 model/train.py --version 2 --C 1.0
@@ -1604,6 +1839,14 @@ $ python3 tests.py
 ```
 
 **Marking notes.** **The rejection paragraph is the whole page.** It must name the same test set, quote both numbers, and say what was given up. A student who ships v2 because it is newer has missed it; a student who rejects v2, rolls `LATEST` back and re-runs the golden tests has done a real engineering day's work. **And a student who spots that the threshold belongs to a probability scale — so a new `C` invalidates the old threshold — is at level 5 and should be told so out loud.**
+
+### Draw It
+
+A full-mark drawing has three things. **One terminal box** with the real command and the real reply, and **five** fields ringed and named (`label`, `probability`, `threshold`, `model_version`, `latency_ms`); people routinely ring four and forget `model_version`, which is the one that makes a complaint answerable. **Three file rectangles** with `10228`, `421` and `13` written on them, and an arrow from the 13-byte one (holding `sentiment_v1`) to the live artifact. And **two bars drawn to scale**: if the cold-start bar is the width of the page, the latency bar is barely a line. Write `658.62 ÷ 0.147 = 4484` (or the student's own numbers) beside them, with the words `paid once` and `paid every single time`. **The commonest mistake is drawing the two bars the same size, or drawing one bar.**
+
+### Self-Check
+
+There are no right answers, but two rows deserve an honest look. **"Prove Rule 1 with `grep`"**: if the command was never run and the blank line never seen, that row is a 😕, not a 🙂. **"Time a cold start and one prediction separately, and never add them"**: if the student's notes contain one timing number, that row is a 😕 too, and next week's question 2 is where it will cost them.
 
 ### Path B — the digits CNN, for whoever chose it
 
@@ -1651,4 +1894,4 @@ digit 0   p=0.9996  (model digits_v1, 0.83 ms, loaded in 4 ms)
 
 Next week the artifact stops being a file on your own disk and becomes something a stranger can reach: a **service**. About forty lines, using nothing but the standard library — no Flask, no installs, nothing to download — bound to `127.0.0.1` so that only your own machine can reach it, and they will be able to say why that matters. Then the interesting half, which is what happens *after* the prediction: **every request gets a line in a log file** with its input, its output and its latency, and they read their own log back as data and compute the **p95** — the time 95 percent of requests came in under. Then the activity that students remember for years: **Break Each Other's Service.** Laptops swap, and everybody sends four pieces of deliberate rubbish at somebody else's service — an empty body, broken JSON, the wrong field name, the right field with a number in it. Every crash goes on the board as a **finding, not a failure**, and gets fixed before the bell. Then the subgroup table, where a respectable `0.812` headline on the 16 test reviews turns out to be hiding a group — the reviews containing a negation word — that the model scores `0.462` on, with recall `0.000`.
 
-**To prep early:** four things. **One — mark page 34.6 tonight**, not at the weekend. Next week's lesson cannot start until every student's artifact loads from a cold terminal, and you want to know on Monday morning who needs ten minutes of help, not at minute four. **Two — check that `curl` exists on the machines** (`curl --version` in a terminal). It ships with macOS and most Linux; on Windows check whether it is `curl` or `curl.exe` in their terminal, and find out tonight rather than in front of the class. **Three — decide how laptops will physically swap** for the Break Each Other's Service activity, and whether it is pairs or a rotation; write the pairing on the board before they arrive, because choosing partners live costs six minutes. **Four — put up a fresh wall sheet headed FINDINGS**, with four blank rows. Every crash that happens next week gets written on it, in the finder's handwriting, and the word "failure" is banned from that sheet.
+**To prep early:** four things. **One — mark Build It 34.6 tonight**, not at the weekend. Next week's lesson cannot start until every student's artifact loads from a cold terminal, and you want to know on Monday morning who needs ten minutes of help, not at minute four. **Two — check that `curl` exists on the machines** (`curl --version` in a terminal). It ships with macOS and most Linux; on Windows check whether it is `curl` or `curl.exe` in their terminal, and find out tonight rather than in front of the class. **Three — decide how laptops will physically swap** for the Break Each Other's Service activity, and whether it is pairs or a rotation; write the pairing on the board before they arrive, because choosing partners live costs six minutes. **Four — put up a fresh wall sheet headed FINDINGS**, with four blank rows. Every crash that happens next week gets written on it, in the finder's handwriting, and the word "failure" is banned from that sheet.

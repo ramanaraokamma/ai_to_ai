@@ -15,7 +15,7 @@
 | **New maths** | **None.** Two fractions with whole numbers on the top and bottom. Every one of them is done by hand, on paper, before any code runs. |
 | **New syntax** | `make_classification(weights=[0.99, 0.01], random_state=0)` · `confusion_matrix(y, pred).ravel()` · `precision_score(y, pred)` / `recall_score(y, pred)` · `classification_report(y, pred)` |
 | **Dataset** | `sklearn.datasets.make_classification` with `weights=[0.99, 0.01]`, `random_state=0` — a 5,000-row, 1.44%-fraud table generated inside scikit-learn. **Nothing downloads. No internet needed.** |
-| **Materials** | **Forty index cards or slips of paper, cut before class** · four large labels for the piles (`caught`, `false alarm`, `miss`, `left alone`) · printed workbook pages 8.1–8.6 · a big sheet for the 2×2 on the wall · the Bug Log · last week's ablation table left up on the wall |
+| **Materials** | **Forty index cards or slips of paper, cut before class** · four large labels for the piles (`caught`, `false alarm`, `miss`, `left alone`) · the printed workbook (Build It and Practice Set A are the in-class and homework pages; see the Answer Key for the split) · a big sheet for the 2×2 on the wall · the Bug Log · last week's ablation table left up on the wall |
 | **Tech needed** | Laptop with Python 3, numpy, pandas, scikit-learn. **No new installs.** Nothing this week needs `make_data.py`. |
 | **Prep time** | 25 minutes the night before (10 of them cutting cards) · 5 minutes on the day |
 | **Expected runtime of the code** | `fraud.py` **under 2 seconds** including generating 5,000 rows, fitting two models and printing everything. |
@@ -362,7 +362,7 @@ This section lists what to cut, print and run before class, so the lesson itself
 
 ### 25 minutes the night before
 
-- [ ] **Cut forty index cards or forty slips of paper.** Ten minutes. Do it now; doing it in class costs five minutes of the activity. On each card write two things — `actual` and `predicted` — using the list on workbook page 8.3 (reproduced in the Answer Key). **Twelve cards say `actual: FRAUD`. Twenty-eight say `actual: legit`.**
+- [ ] **Cut forty index cards or forty slips of paper.** Ten minutes. Do it now; doing it in class costs five minutes of the activity. On each card write two things — `actual` and `predicted` — using the list in the Answer Key under "The forty activity cards" (the workbook does not carry the list; its M1 uses the resulting piles). **Twelve cards say `actual: FRAUD`. Twenty-eight say `actual: legit`.**
 - [ ] **Write four large pile labels** and put them face down: `CAUGHT (TP)`, `FALSE ALARM (FP)`, `MISS (FN)`, `LEFT ALONE (TN)`.
 - [ ] **Type and run `fraud.py` yourself.** The complete file:
 
@@ -449,7 +449,7 @@ weighted avg     0.9792    0.9820    0.9805      1000
 - [ ] **Break it on purpose, twice.**
   1. Swap the arguments: `confusion_matrix(pred, y_val)`. **No error appears.** You get `979 11 7 3` instead of `979 7 11 3` — the FP and FN have quietly changed places. This is deliberate mistake two in the live-code.
   2. Ask `precision_score` about the lazy model: `precision_score(y_val, pred_lazy)`. You get a warning, not an error: `UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.` **Read it: it is scikit-learn telling you the model never said yes.**
-- [ ] **Print workbook pages 8.1–8.6.**
+- [ ] **Print the workbook** — all of it, double-sided. The in-class parts are Practice Set A (A2), M1 and the Build It "Predict the lazy model" table; the homework is the rest of Build It.
 - [ ] **Big blank 2×2 on the wall**, next to last week's ablation table. Both stay up until Week 9.
 
 ### 5 minutes on the day
@@ -458,7 +458,7 @@ weighted avg     0.9792    0.9820    0.9805      1000
 - [ ] Forty cards shuffled and face down in a stack. **Shuffled matters** — sorted cards make the activity trivial.
 - [ ] Four pile labels laid out on the table, face down until minute 47.
 - [ ] Blank 2×2 on the wall. Nothing written in it.
-- [ ] Workbook 8.1 and 8.2 out. **8.2's prediction filled in pen before any code runs.**
+- [ ] Workbook out at Practice Set A (A2) and at Build It. **The Build It "Predict the lazy model" table filled in pen before any code runs.**
 - [ ] Bug Log out.
 - [ ] Last week's ablation table still on the wall. You will point at it once.
 
@@ -682,7 +682,7 @@ specificity  =  979 ÷ 986  =  0.9929
 
 > "0.9929. Which is the only respectable-looking number on the board, and it's respectable because there were 986 easy rows and it got nearly all of them. **That's what accuracy was mostly measuring all along.**"
 
-**Do this:** Hand out workbook page 8.1 — ten scenarios, name the cell — and give them five minutes. Then page 8.2: predict the lazy model's four counts, **in pen**, before any code runs.
+**Do this:** Hand out the workbook at Practice Set A, item A2 — ten scenarios, name the cell — and give them five minutes. Then the Build It page: in the "Predict the lazy model" table, predict the lazy model's four counts, **in pen**, before any code runs.
 
 > "Pen. Four numbers. Two of them are zero and I want to see whether you can tell me which two."
 
@@ -757,7 +757,7 @@ tn, fp, fn, tp = confusion_matrix(y_val, pred_lazy).ravel()
 print("tn %d  fp %d  fn %d  tp %d" % (tn, fp, fn, tp))
 ```
 
-**Ask before running:** "Page 8.2. Read me your four predicted counts."
+**Ask before running:** "The Predict table on the Build It page. Read me your four predicted counts."
 
 Run it:
 
@@ -972,9 +972,9 @@ This section gives the card activity in full, so you can run it without improvis
 
 ### Setup
 
-- **Forty cards**, shuffled, face down in a stack. Each card carries two lines: `actual:` and `predicted:`. The full list is in the Answer Key under page 8.3.
+- **Forty cards**, shuffled, face down in a stack. Each card carries two lines: `actual:` and `predicted:`. The full list is in the Answer Key under "The forty activity cards".
 - **Four pile labels** laid out with clear space between them: `CAUGHT (TP)` · `FALSE ALARM (FP)` · `MISS (FN)` · `LEFT ALONE (TN)`.
-- Workbook page 8.3, which is a blank 2×2 with room for the arithmetic underneath.
+- The big blank 2×2 on the wall, with room for the arithmetic underneath. (The workbook has no blank 2×2 for the forty cards; its M1 gives the four piles for the fractions afterwards, and the workbook's "My 2×2" is for the homework's thirty transactions.)
 - A pen.
 
 ### Part 1 — sort the cards (7 minutes)
@@ -989,7 +989,7 @@ Read the instruction once and then say nothing at all:
 
 ### Part 2 — count, and fill in the 2×2 (4 minutes)
 
-> **"Count each pile. Write the four numbers into the 2×2 on page 8.3. Then add all four up."**
+> **"Count each pile. Write the four numbers into the 2×2 on the wall. Then add all four up."**
 
 The four counts are:
 
@@ -1281,17 +1281,17 @@ This section gives the homework and the exact words to introduce it.
 
 **Say this:**
 
-> "About an hour, three pages, and I'm marking the last one hardest.
+> "About an hour, three parts of one page, and I'm marking the last one hardest. It's all on the Build It page of the workbook.
 >
-> **First, page 8.4 — build the 2×2 by hand from the thirty predictions on the page.** Thirty transactions, each with what really happened and what the model said. **Count them into four cells, then add the four cells up and check you get thirty.** If you don't get thirty, you've miscounted, and finding it is part of the job.
+> **First, the thirty transactions — build the 2×2 by hand.** Thirty transactions, each with what really happened and what the model said. **Count them into four cells, writing the card numbers into the four lists as you go, then add the four cells up and check you get thirty.** If you don't get thirty, you've miscounted, and finding it is part of the job.
 >
-> **Second, page 8.5 — precision, recall and specificity, with the working shown.** And by working I mean: **for each one, write down which count you put on the bottom and why.** Not '0.6000'. '*Of the 10 I flagged, 6 were really fraud, so 6 ÷ 10 = 0.6000.*' The sentence is the answer; the decimal is just the arithmetic.
+> **Second, the three fractions, with the working shown.** And by working I mean: **for each one, write down which count you put on the bottom and why.** Not '0.6000'. '*Of the 10 I flagged, 6 were really fraud, so 6 ÷ 10 = 0.6000.*' The sentence is the answer; the decimal is just the arithmetic.
 >
-> **Third, page 8.6 — and this is the page I care about most. Describe one false positive and one false negative in the language of the actual application.** Pick your application — fraud, spam, a smoke alarm, a metal detector, marking homework — and write me **two sentences about a real person's real afternoon.** Not 'a negative instance was misclassified'. A person, a place, a time, and what went wrong for them. Then one more sentence: **which of the two would you rather cause, and why.**"
+> **Third, the two afternoons — and this is the part I care about most. Describe one false positive and one false negative in the language of the actual application.** Pick your application — fraud, spam, a smoke alarm, a metal detector, marking homework — and write me **a person, a place, a time, and what they lost, for each of the two.** Not 'a negative instance was misclassified'. Then say **which of the two you would rather cause, and why.**"
 
-**Workbook pages:** 8.1, 8.2, 8.3 in class · **8.4, 8.5, 8.6** at home.
+**Workbook sections:** Practice Set A (A2), M1 and the Build It "Predict the lazy model" table in class · **the rest of Build It (thirty transactions and 2×2, the three fractions, the two afternoons, the Bug Log)** at home. The other sections are extra practice; the Answer Key answers every one.
 
-**Expected time:** 20 min counting the 30 predictions into the 2×2 and checking the addition · 20 min on the three fractions with their sentences · 20 min on the two application sentences and the choice. **About 60 minutes.**
+**Expected time:** 20 min counting the 30 predictions into the 2×2 and checking the addition · 20 min on the three fractions with their sentences · 20 min on the two afternoons and the choice. **About 60 minutes.**
 
 > **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — do the four cells add up to 30?** If the page has no addition check on it, the habit has not been installed and it is worth one line of feedback every week until it is. **Two — is there a sentence naming the denominator beside every fraction?** A page of three correct decimals with no sentences is a page that has done the arithmetic and missed the lesson. **Three — are the two application sentences about a person?** The good answer names somebody, somewhere, at some time, and says what they lost. The weak answer defines the term again in different words. That difference is the whole reason this week exists: **a metric you can only say in abbreviations is a metric nobody will ever argue with, and metrics that nobody argues with are how bad systems get shipped.**
 
@@ -1299,46 +1299,89 @@ This section gives the homework and the exact words to introduce it.
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Items are labelled exactly as in the student workbook (W1–W5, M1–M4, P1–P4, A1–A6, B1–B5, the three bugs, the Puzzle parts, T1–T2, the Build It steps), in the workbook's own order, so you can hold the two files side by side. **Every answer below is taken from the workbook's own Answers section** (which was checked by running the code and redoing the arithmetic); the teacher-only notes on what students get wrong are added under each section. Keep the workbook open next to this page: the questions are named by label rather than restated.
 
-### Page 8.1 — Name the cell
+**Suggested split for the week.** In class: Practice Set A item **A2** (name the cell), the Build It **Predict the lazy model** table and **M1** (the four fractions on the forty-card piles). At home: the rest of **Build It** — the thirty transactions into the 2×2, the three fractions with their sentences, and the two afternoons. The other sections (Warm-Up, Predict the Output, the rest of Practice Set A and B, Fix the Broken Program, Puzzle, Think Deeper, Draw It, Self-Check) are not in the spoken homework script; set them as the week's extra practice as time allows. All of them are answered below.
 
-*For each scenario, name the cell. The model's job is flagging fraud, so "positive" means "the model said fraud".*
+### Warm-Up — W1–W5
 
-| # | Scenario | Cell | Why |
-|---|---|---|---|
-| 1 | The card was stolen and the model flagged it. | **True Positive** | Predicted fraud, and right. **Caught one.** |
-| 2 | An ordinary weekly shop, nothing flagged. | **True Negative** | Predicted legit, and right. **Correctly left alone.** |
-| 3 | The card was stolen and the model let it through. | **False Negative** | Predicted legit, and wrong. **A miss.** |
-| 4 | A tourist's genuine card was blocked in Rome. | **False Positive** | Predicted fraud, and wrong. **A false alarm.** |
-| 5 | Somebody's £3 coffee was flagged as fraud. It wasn't. | **False Positive** | Same as 4. Small money, still a false alarm. |
-| 6 | £2,000 was stolen and the model said nothing. | **False Negative** | Same as 3. The size of the loss does not change the cell. |
-| 7 | The model flagged a transaction and the bank confirmed it was fraud. | **True Positive** | Predicted fraud, and right. |
-| 8 | A legitimate transaction went through untouched. | **True Negative** | Predicted legit, and right. |
-| 9 | The model flagged 200 transactions and 6 were fraud. | **6 True Positives and 194 False Positives.** | A trap: one sentence can describe many cards. **Precision would be 6 ÷ 200 = 0.0300.** |
-| 10 | The model has never once said "fraud" in a year. | **FP = 0 and TP = 0.** | The entire predicted-fraud column is empty. **That is the fingerprint of a model that has given up**, and its accuracy will look excellent. |
+*Last week's recall, not this week's content.*
 
-**Rows 9 and 10 are the two worth discussing.** Row 9 breaks the one-card-one-cell assumption. Row 10 is the whole hook, restated as a scenario.
 
-### Page 8.2 — Predict the lazy model (in pen, before running)
+**W1.** **Throw the row away and re-run it as two rows.** With two changes in one row, +0.0006 could be `+0.0006` and `0.0000`, or `+0.0013` and `−0.0007`, or anything else. **The number cannot say which change did what**, so the row carries no information.
 
-*The `DummyClassifier(strategy="most_frequent")` on 1,000 validation rows containing 14 frauds. Predict all four counts and the accuracy.*
+**W2.** `0.7599 − 0.7541 = **0.0058**` — and it is stated on the 400 validation rows.
 
-| | Prediction to expect | The truth |
-|---|---|---|
-| TN | 986 | **986** |
-| FP | 0 | **0** |
-| FN | 14 | **14** |
-| TP | 0 | **0** |
-| accuracy | 986 ÷ 1000 | **0.9860** |
+**W3.** **A change that made things worse.** Nothing to do with `LinearRegression`; it is the ordinary software-engineering word. Six of the eight rows last week were drops, four of them genuine regressions, **and that is healthy** — a table of eight successes means nothing risky was tried.
 
-**The two zeros are the answer to the whole page.** A student who predicts a non-zero FP has not yet grasped that "most frequent" means it *never* says fraud — and the fastest cure is to ask *"how many times does it say fraud?"*
+**W4.** **`prep`** is the `ColumnTransformer` that routes the columns. **`num`** is the branch inside it that handles the number columns. **`scaler`** is the step inside that branch which does the scaling. **Double underscores, twice — it is an address, not a word.**
 
-**And the bonus line if they got all four:** precision is **undefined**, because its denominator is TP + FP = 0. scikit-learn prints 0.0000 and warns you. **"Undefined" is a better answer than "0" here** and should be marked as such.
+**W5.** ***"At the moment a customer places the order, does this value exist?"*** No — nobody knows yet whether it will be late. **That one question is worth more than all four statistical audits put together.**
 
-### Page 8.3 — The forty cards
+> **🧑‍🏫 Marking tip:** W1 and W5 carry the marks. Accept any W1 answer that says the row cannot be credited to either change; accept any W5 answer that asks whether the value exists at the moment of the order. A W4 answer that gives three plain words and no mention of the double underscore is a half-answer.
 
-*The full list. Twelve are actually fraud; the model flags fifteen.*
+### Do the Maths by Hand — M1–M4
+
+**M1(a).** `22 + 6 + 3 + 9 = **40**`, and 40 is **the number of cards** — every card is in exactly one pile, and there is no fifth pile.
+
+**M1(b).**
+
+| Metric | The sentence | On top | On the bottom | = |
+|---|---|---|---|---|
+| **precision** | "of everything I flagged, **9 out of 15** was really fraud" | 9 | **15** (TP + FP) | **0.6000** |
+| **recall** | "of everything that really was fraud, I caught **9 out of 12**" | 9 | **12** (TP + FN) | **0.7500** |
+| **specificity** | "of everything that really was legit, I left **22 of 28** alone" | 22 | **28** (TN + FP) | **0.7857** |
+| **accuracy** | "of all forty cards, I got **31** right" | 31 | **40** | **0.7750** |
+
+The four divisions in full: `9 ÷ 15 = 0.6000` · `9 ÷ 12 = 0.7500` · `22 ÷ 28 = 0.7857` · `31 ÷ 40 = 0.7750`.
+
+**M1(c).** **15 on the bottom is precision, and it is a column** — the predicted-fraud column, everything you flagged. **12 on the bottom is recall, and it is a row** — the actual-fraud row, everything that really was fraud. **Same four numbers, two different outlines.**
+
+**M2(a).** `14 ÷ 1000 = **0.014**` and `986 ÷ 1000 = **0.986**`.
+
+**M2(b).**
+
+```text
+recall      x share of fraud  =  0.2143  x  0.014  =  0.0030
+specificity x share of legit  =  0.9929  x  0.986  =  0.9790
+                                                total =  0.9820
+```
+
+On a calculator: `0.2143 × 0.014 = 0.0030002` and `0.9929 × 0.986 = 0.9790` (0.97900), and `0.0030 + 0.9790 = 0.9820`. **Every digit is checkable.**
+
+**M2(c).** **Yes — 0.9820, exactly the accuracy.**
+
+**M2(d).** *"So accuracy on this data is **98.6%** a statement about leaving the easy rows alone, and only **1.4%** a statement about catching the hard ones."*
+
+**That is the accuracy paradox in arithmetic**, and it is the clearest explanation there is: accuracy was never hiding anything from you. **You just did not ask what it was made of.**
+
+**M3(a).** `TP ÷ 12 = 0.5000` so **TP = 6**, and since TP + FN = 12, **FN = 6**.
+
+**M3(b).** Precision 0.5000 means the top is half the bottom, so **FP must equal TP**, so **FP = 6**.
+
+**M3(c).** `40 − 6 − 6 − 6 = **TN = 22**`.
+
+**M3(d).** `6 + 6 + 6 + 22 = **40**` ✅
+
+**M3(e).** `(6 + 22) ÷ 40 = 28 ÷ 40 = **0.7000**`.
+
+**And notice something:** this model and the class activity's model have **the same accuracy to within 0.075**, and completely different behaviour — 9 caught against 6 caught, 6 false alarms against 6. **Accuracy is a very blunt instrument.**
+
+**M4(a).** `986 ÷ 1000 = **0.9860**`.
+
+**M4(b).** `0 ÷ 14 = **0.0000**`. It caught nothing.
+
+**M4(c).** `986 ÷ 986 = **1.0000**`. A *perfect* specificity, because it never raises a false alarm — and it never raises an alarm at all.
+
+**M4(d).** `0 ÷ 0` is **undefined**. In words: *"of everything I flagged, how much was fraud?"* — **it flagged nothing, so the question has nothing to be about.** scikit-learn prints `0.0000` and warns you, but **"undefined" is the better answer**, and the honest one.
+
+**M4(e).** You know **FP = 0** (it never went off, so it never went off wrongly) and **TP = 0** (it never went off, so it never caught anything). The count that matters is **FN — how many fires there actually were.** Zero fires and the alarm has made no mistakes yet (though it has never been tested either, so recall is 0 ÷ 0). One fire and it failed at the only job it had. **Two of its four cells are empty, and the two that matter are the two you cannot read off the device.**
+
+> **🧑‍🏫 Where marks go wrong:** **M1(b)** — correct decimals with no sentence; mark it down exactly as you will mark the Build It fractions. **M1(c)** — students call 15 a row; it is the predicted-fraud *column*, and 12 is the actual-fraud *row*. **M2(b)** — `0.0030` and `0.0030002` are the same answer at four places. **M4(d)** — `0.0000` is accepted because scikit-learn prints it, but "undefined, it flagged nothing" scores higher.
+
+### The forty activity cards (the lesson's card list — not a workbook page)
+
+*The full list for cutting the cards in the prep checklist and running the activity. Twelve are actually fraud; the model flags fifteen. The workbook's M1 gives the four piles that result (22 / 6 / 3 / 9) and asks for the fractions.*
 
 | # | actual | predicted | | # | actual | predicted |
 |---|---|---|---|---|---|---|
@@ -1391,24 +1434,366 @@ precision 0.6000  recall 0.7500  specificity 0.7857  accuracy 0.7750  F1 0.6667
 
 *(Ignore the F1 for now. It is next week and it is 2 × 9 ÷ (18 + 6 + 3) = 18 ÷ 27 = 0.6667, which you may want in your pocket for Week 9.)*
 
-### Page 8.4 — The 2×2 by hand from 30 predictions
+### Predict the Output — P1–P4
 
-*Thirty transactions. `1` means fraud / flagged.*
+**P1.**
 
-| # | actual | predicted | | # | actual | predicted | | # | actual | predicted |
-|---|---|---|---|---|---|---|---|---|---|---|
-| T01 | 0 | 0 | | T11 | 1 | 1 | | T21 | 0 | 0 |
-| T02 | 0 | 0 | | T12 | 0 | 1 | | T22 | 0 | 0 |
-| T03 | 1 | 1 | | T13 | 0 | 0 | | T23 | 1 | 0 |
-| T04 | 0 | 0 | | T14 | 1 | 0 | | T24 | 0 | 1 |
-| T05 | 0 | 1 | | T15 | 0 | 0 | | T25 | 0 | 0 |
-| T06 | 1 | 0 | | T16 | 1 | 1 | | T26 | 1 | 1 |
-| T07 | 0 | 0 | | T17 | 0 | 0 | | T27 | 0 | 0 |
-| T08 | 1 | 1 | | T18 | 0 | 1 | | T28 | 0 | 0 |
-| T09 | 0 | 0 | | T19 | 0 | 0 | | T29 | 0 | 0 |
-| T10 | 0 | 0 | | T20 | 1 | 1 | | T30 | 0 | 0 |
+```text
+(2, 2)
+[[979   7]
+ [ 11   3]]
+[979   7  11   3]
+(4,)
+```
 
-**Sorting them, card by card:**
+**`.ravel()` reads left to right, top to bottom** — so the order is **TN, FP, FN, TP**.
+
+**TN comes out first, and it is the one you care about least.** 979 correctly-left-alone rows is the easy work. **That is exactly why you never index into a confusion matrix blindly** — unpack it into four *named* variables and then use the names.
+
+**P2.**
+
+```text
+[979  11   7   3]
+[979   7  11   3]
+```
+
+**The 7 and the 11 swapped**, which are FP and FN — **the two errors.**
+
+**Python did not complain.** No error, no warning, nothing.
+
+Somebody reading line 1 as a report would say *"we blocked 11 innocent cards and missed 7 frauds"*. **The truth is "we blocked 7 innocent cards and missed 11 frauds."** Those are different afternoons for different people, and both sentences sound equally confident. **`confusion_matrix` takes the truth first.**
+
+**P3.**
+
+```text
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1731: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
+precision       : 0.0000
+```
+
+**It is a warning, not an error**, and you can tell because **the program carried on and printed a number.** A traceback stops everything; a warning grumbles and continues.
+
+**The missing part of the fraction is the bottom** — `TP + FP`, which is `0 + 0`.
+
+**`0.0000` is not the honest answer. "Undefined" is**, because there is nothing on the bottom of the fraction. And notice what the message is really doing: **it is not telling you your code is wrong. It is describing your model.** That makes it one of the friendliest messages you will get all year.
+
+**P4.**
+
+```text
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/sklearn/metrics/_classification.py:534: UserWarning: A single label was found in 'y_true' and 'y_pred'. For the confusion matrix to have the correct shape, use the 'labels' parameter to pass all known labels.
+  warnings.warn(
+(1, 1)
+[[1000]]
+Traceback (most recent call last):
+  File "p4.py", line 13, in <module>
+    tn, fp, fn, tp = cm.ravel()
+ValueError: not enough values to unpack (expected 4, got 1)
+```
+
+**The matrix is 1×1 because only one label — `0` — appears anywhere in either argument.** `confusion_matrix` builds a grid out of the classes it can *see*, and it could only see one, so it built a 1×1 grid holding all 1,000 rows.
+
+The warning tells you the cure by name:
+
+```python
+cm = confusion_matrix(y_val, pred_lazy, labels=[0, 1])
+```
+
+**`labels=[0, 1]` says "there are two classes, whether or not this model believes in both of them".** You need it any time a model might predict only one class — which is exactly what the baseline does.
+
+> **🧑‍🏫 Where marks go wrong:** **P2** — students predict an error or the same output twice; nothing complains, which is the lesson. **P3** — students call the warning an error; the test is that the program carried on and printed a number. **P4** — students predict `(2, 2)`; the matrix is `(1, 1)` because only one label appears in either argument. Note the sheet says three of the four snippets run cleanly; P4 is the one that crashes.
+
+### Practice Set A — A1–A6 (Read It)
+
+**A1.** true positive → **(iii)** · false positive → **(i)** · false negative → **(v)** · true negative → **(vii)** · confusion matrix → **(iv)** · precision → **(viii)** · recall → **(ii)** · specificity → **(ix)** · accuracy paradox → **(vi)**
+
+**A2.**
+
+| # | Cell | Why |
+|---|---|---|
+| 1 | **True Positive** | Predicted fraud, and right. **Caught one.** |
+| 2 | **True Negative** | Predicted legit, and right. **Correctly left alone.** |
+| 3 | **False Negative** | Predicted legit, and wrong. **A miss.** |
+| 4 | **False Positive** | Predicted fraud, and wrong. **A false alarm.** |
+| 5 | **False Positive** | Same as 4. Small money, still a false alarm. |
+| 6 | **False Negative** | Same as 3. The size of the loss does not change the cell. |
+| 7 | **True Positive** | Predicted fraud, and right. |
+| 8 | **True Negative** | Predicted legit, and right. |
+| 9 | **6 True Positives and 194 False Positives** | One sentence, many cards. |
+| 10 | **FP = 0 and TP = 0** | The whole predicted-fraud column is empty. **The fingerprint of a model that has given up** — and its accuracy will look excellent. |
+
+**A2(a).** **Numbers 9 and 10.** Number 9 describes 200 cards at once, which breaks the one-sentence-one-cell habit. Number 10 describes a whole *column* of the table being empty, which is a fact about the model rather than about a card. **Both are worth arguing about, and 10 is the entire hook of the week restated as a scenario.**
+
+**A2(b).** `6 ÷ 200 = **0.0300**`. **Three per cent.** 194 people had a card declined so that six frauds could be caught.
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | **No error, no warning.** FP and FN swap: you get `979, 11, 7, 3` instead of `979, 7, 11, 3`. Every sentence you write about the two errors is now back to front. | `confusion_matrix(y_val, pred).ravel()` — **truth first** |
+| b | `ValueError: not enough values to unpack (expected 4, got 2)`. Without `.ravel()` you are unpacking a 2×2 grid into four names, and Python sees only two rows. | add `.ravel()` |
+| c | `ValueError: not enough values to unpack (expected 4, got 1)`, plus a `UserWarning`. Only one class is present, so the matrix is 1×1. | `confusion_matrix(y_val, pred_lazy, labels=[0, 1]).ravel()` |
+| d | `InvalidParameterError: The 'y_pred' parameter of accuracy_score must be an array-like... Got DecisionTreeClassifier(random_state=0) instead.` You handed over the **model** instead of its predictions. | `accuracy_score(y_val, tree.predict(X_val))`, or use `pred` |
+| e | `NameError: name 'specificity_score' is not defined`. **There isn't one in scikit-learn**, and people assume they have installed something wrong. They have not. | `print("specificity: %.4f" % (tn / (tn + fp)))` |
+| f | **No error and a plausible number.** 0.9820 sounds like an achievement until you put 0.9860 next to it. | print the majority-class rate on the line underneath, always |
+
+**A3(g).** **(a) is the most dangerous.** (b), (c), (d) and (e) all crash, and a crash is a gift — it stops you and names the problem. (f) is dangerous but at least the number is *true*. **(a) produces four correct-looking counts with two of them in the wrong cells, silently, and the two that move are the two errors.** You would go and tell somebody a confident, precise, backwards sentence about who got hurt.
+
+**A4.** i → **R** · ii → **T** · iii → **Q** · iv → **S** · v → **P**
+
+Note **iv is 72, not 50.** `weights=[0.99, 0.01]` is a *target, not a promise*: the generator aimed at 1% of 5,000 and landed at 1.44%. **Ask for something, then check what you got.**
+
+**A5.**
+
+**Model A** — accuracy **0.9860**, precision **undefined** (`0 ÷ 0`), recall **0.0000**, specificity **1.0000**. **This is the piece of paper**: `DummyClassifier(strategy="most_frequent")`, the model that never says yes. Its entire predicted-fraud column is empty.
+
+**Model B** — accuracy **0.0140**, precision **0.0140** (`14 ÷ 1000`), recall **1.0000**, specificity **0.0000**. **This is the model that flags everything.** It caught all 14 frauds and blocked all 986 honest customers to do it.
+
+**Model C** — accuracy **0.9820**, precision **0.3000**, recall **0.2143**, specificity **0.9929**. **This is the decision tree** — the only one of the four anybody would consider shipping, and it misses 11 of 14.
+
+**Model D** — accuracy **0.9860**, precision **0.5000**, recall **0.0714** (`1 ÷ 14`), specificity **0.9990**. **This is the timid model**: it says fraud exactly twice in a thousand rows and is right once.
+
+**A5(a).** **A and D both score 0.9860.** One of them has **never once said yes**; the other has caught a fraud. **Accuracy cannot tell them apart, and recall can** — 0.0000 against 0.0714. That is the whole week in one comparison.
+
+**A5(b).** **No.** Model B's recall is perfect and its **precision is 0.0140**, which means 986 legitimate customers had their cards blocked to catch 14 frauds. **You can always max out one metric by wrecking the other** — that is the fishing net: drain the lake and you catch every fish.
+
+**A5(c).** **Model D, at 0.5000** — and no, it is not the best model. It has the best precision because it barely ever guesses, and being right one time out of two is easy when you only guess twice. **It caught one fraud out of fourteen.** Precision without recall beside it is a stunt.
+
+**A6.** The four names: **979 = correctly left alone (TN)** · **7 = false alarm (FP)** · **11 = miss (FN)** · **3 = caught (TP)**.
+
+**A6(a).** **precision = 3 ÷ 10, which is the predicted-fraud column** (7 + 3 = 10, everything you flagged). **recall = 3 ÷ 14, which is the actual-fraud row** (11 + 3 = 14, everything that really was fraud).
+
+**A6(b).** The four cells add up to **1000**, and that is **the number of validation rows**. Do that addition every single time you draw one of these; it takes five seconds and it catches every counting mistake you will ever make.
+
+**A6(c).** **Only the outline moved.** 979, 7, 11 and 3 sat still. Draw a box round a column and you get 0.30; draw a box round a row and you get 0.21. **Precision and recall are not two measurements — they are the same four numbers read twice.**
+
+> **🧑‍🏫 Where marks go wrong:** **A2** rows 9 and 10 are the two worth discussing; row 9 breaks the one-card-one-cell assumption and row 10 is the whole hook restated as a scenario. **A3(g)** — students pick the line that crashes hardest; the answer is (a), which is silent. **A4 iv** — students write 50; it is 72, because the generator aimed at 1% and landed at 1.44%. **A5** — the pair with equal accuracy is A and D (0.9860); recall is what separates them.
+
+### Practice Set B — B1–B5 (Write It)
+
+**B1.**
+
+```python
+print("specificity : %.4f" % (979 / (979 + 7)))
+```
+
+```text
+specificity : 0.9929
+```
+
+Or, better, with the counts in variables so the arithmetic reads itself: `tn / (tn + fp)`.
+
+**B2.**
+
+```python
+from sklearn.metrics import confusion_matrix
+
+
+def four_counts(y_true, y_pred, name):
+    tn, fp, fn, tp = confusion_matrix(y_true, y_pred, labels=[0, 1]).ravel()
+    print("%s" % name)
+    print("  caught (TP)       : %d" % tp)
+    print("  false alarm (FP)  : %d" % fp)
+    print("  missed (FN)       : %d" % fn)
+    print("  left alone (TN)   : %d" % tn)
+    print("  check: %d + %d + %d + %d = %d" % (tp, fp, fn, tn, tp + fp + fn + tn))
+    return tn, fp, fn, tp
+```
+
+```text
+thirty transactions
+  caught (TP)       : 6
+  false alarm (FP)  : 4
+  missed (FN)       : 3
+  left alone (TN)   : 17
+  check: 6 + 4 + 3 + 17 = 30
+```
+
+**Two design choices worth naming.** `labels=[0, 1]` means the function still works on a model that only predicts one class — which is the baseline, which is the model you run *first*, every time. And the words come before the letters: **"caught", not "TP"**, because a report full of abbreviations is a report nobody argues with.
+
+**B3.**
+
+```python
+print("accuracy            : %.4f" % accuracy_score(y_val, pred_lazy))
+print("majority-class rate : %.4f" % (1 - y_val.mean()))
+print("times it said fraud :", int(pred_lazy.sum()))
+```
+
+```text
+accuracy            : 0.9860
+majority-class rate : 0.9860
+times it said fraud : 0
+```
+
+**When those two numbers are identical, the model has added exactly nothing.** `most_frequent` *is* the majority class, so of course they match — and that is why this is the number to print beside every accuracy you ever report. `0.9820` sounds like an achievement; `0.9820 against a majority rate of 0.9860` is obviously a problem.
+
+**B4.**
+
+```python
+tn, fp, fn, tp = 979, 7, 11, 3
+print("precision   = %d / %d = %.4f" % (tp, tp + fp, tp / (tp + fp)))
+print("recall      = %d / %d = %.4f" % (tp, tp + fn, tp / (tp + fn)))
+print("specificity = %d / %d = %.4f" % (tn, tn + fp, tn / (tn + fp)))
+print("accuracy    = %d / %d = %.4f"
+      % (tp + tn, tp + fp + fn + tn, (tp + tn) / (tp + fp + fn + tn)))
+```
+
+```text
+precision   = 3 / 10 = 0.3000
+recall      = 3 / 14 = 0.2143
+specificity = 979 / 986 = 0.9929
+accuracy    = 982 / 1000 = 0.9820
+```
+
+**Every denominator is built out of the counts, and that is the whole exercise.** `10` is not a number you typed — it is `tp + fp`, and printing it that way means the code says out loud which region of the table each fraction reads.
+
+**B5.** `cards30.py`:
+
+```python
+"""cards30.py - the thirty transactions, counted twice: by hand and by sklearn."""
+from sklearn.metrics import confusion_matrix
+
+actual = [0, 0, 1, 0, 0, 1, 0, 1, 0, 0,
+          1, 0, 0, 1, 0, 1, 0, 0, 0, 1,
+          0, 0, 1, 0, 0, 1, 0, 0, 0, 0]
+flagged = [0, 0, 1, 0, 1, 0, 0, 1, 0, 0,
+           1, 1, 0, 0, 0, 1, 0, 1, 0, 1,
+           0, 0, 0, 1, 0, 1, 0, 0, 0, 0]
+
+tp = fp = fn = tn = 0
+for a, p in zip(actual, flagged):
+    if a == 1 and p == 1:
+        tp = tp + 1
+    elif a == 0 and p == 1:
+        fp = fp + 1
+    elif a == 1 and p == 0:
+        fn = fn + 1
+    else:
+        tn = tn + 1
+
+print("caught (TP)      : %d" % tp)
+print("false alarm (FP) : %d" % fp)
+print("missed (FN)      : %d" % fn)
+print("left alone (TN)  : %d" % tn)
+print("check : %d + %d + %d + %d = %d" % (tp, fp, fn, tn, tp + fp + fn + tn))
+print()
+print("precision   = %d / %d = %.4f" % (tp, tp + fp, tp / (tp + fp)))
+print("recall      = %d / %d  = %.4f" % (tp, tp + fn, tp / (tp + fn)))
+print("specificity = %d / %d = %.4f" % (tn, tn + fp, tn / (tn + fp)))
+print("accuracy    = %d / %d = %.4f" % (tp + tn, len(actual), (tp + tn) / len(actual)))
+print()
+print("sklearn agrees:", confusion_matrix(actual, flagged).ravel())
+```
+
+```text
+caught (TP)      : 6
+false alarm (FP) : 4
+missed (FN)      : 3
+left alone (TN)  : 17
+check : 6 + 4 + 3 + 17 = 30
+
+precision   = 6 / 10 = 0.6000
+recall      = 6 / 9  = 0.6667
+specificity = 17 / 21 = 0.8095
+accuracy    = 23 / 30 = 0.7667
+
+sklearn agrees: [17  4  3  6]
+```
+
+**Read the last line carefully: `[17  4  3  6]`.** That is TN, FP, FN, TP — **the same order `.ravel()` always gives you**, and the reason to unpack into names rather than trusting positions. Your own four counters printed the same four numbers in the order a human would say them.
+
+> **🧑‍🏫 Where marks go wrong:** **B2** — leaving out `labels=[0, 1]`, or passing the prediction first. **B4** — typing `10` instead of building it as `tp + fp`. **B5** — printing in `.ravel()` order (TN, FP, FN, TP) and then being surprised that the last line disagrees with the human order of the four counters; the counts match, the order does not. Any working variant of the loop is fine so long as it does not use `confusion_matrix` for the counting itself.
+
+### Fix the Broken Program
+
+**Bug 1 — line `a, b, c, d = confusion_matrix(pred_lazy, pred_lazy).ravel()`. A shape bug.** The matrix came back **1×1**, holding a single 1000, because `pred_lazy` is all zeros and it was passed as *both* arguments — so only one class was visible anywhere.
+
+**There are two mistakes on that line.** **One:** the truth is missing — `y_val` should be the first argument, not a second copy of the predictions. **Two:** there is no `labels=[0, 1]`, so even with the truth in place a model that only predicts one class can still produce a wrong-shaped matrix (here it would be fine, because `y_val` contains both classes — but on the day it is not, you get this same crash).
+
+**The fix:**
+
+```python
+a, b, c, d = confusion_matrix(y_val, pred_lazy, labels=[0, 1]).ravel()
+```
+
+**Bug 2 — the `accuracy_score(y_val, tree)` line. A runtime bug.** The **model** was handed over where its **predictions** belonged. The message says so almost in English: *"Got DecisionTreeClassifier(random_state=0) instead."*
+
+**The fix:** `accuracy_score(y_val, pred)` — `pred` is on the previous line, waiting.
+
+**Bug 3 — `confusion_matrix(pred, y_val)`. A silent logic bug.** Truth goes **first**. With the arguments swapped, FP and FN change places: you get `fp 11, fn 7` instead of `fp 7, fn 11`, and specificity comes out `0.9889` instead of `0.9929`.
+
+**The broken program says:** *"we blocked 11 innocent people's cards and let 7 frauds through."*
+**The truth is:** *"we blocked 7 innocent people's cards and let 11 frauds through."*
+
+**The fix:** `tn, fp, fn, tp = confusion_matrix(y_val, pred).ravel()`.
+
+**Why precision and recall survived the swap:** because they were computed by `precision_score(y_val, pred)` and `recall_score(y_val, pred)` — **which had the arguments in the right order all along.** Only the four counts came from the broken line, so only the counts, the specificity and the two English sentences were corrupted. **That is the nastiest part: half the report was right, which makes the other half look right too.**
+
+**Ranking, easiest → hardest: 2, 1, 3.**
+
+**Bug 2** is easiest: it crashes and the message names the object you passed. **Bug 1** also crashes, and the `UserWarning` above the traceback hands you the cure (`labels`), but you still have to notice the missing truth. **Bug 3** is by far the hardest, because nothing is red, the numbers are plausible, and the two numbers that moved are the two that matter. What would have caught it: **the meaning check, not the numbers.** FN is "frauds I missed", and on a model that barely catches anything FN should be *large*. `fn 7` next to `fp 11` on a model that caught 3 of 14 is the wrong shape, and asking *"does this story make sense?"* catches it in four seconds.
+
+### Puzzle of the Week
+
+**Part 1(a).** `0.9000 × 100 = **90** right`, so **10 wrong**.
+
+**Part 1(b).** `FP + FN = **10**`. Every wrong row is either a false alarm or a miss; there is no third way to be wrong.
+
+**Part 1(c).** Substituting `FN = 22 − TP`: `FP + 22 − TP = 10`, so `FP = TP − **12**`.
+
+**Part 1(d).** Precision `TP ÷ (TP + FP) = 0.8` means `TP + FP` is `TP ÷ 0.8 = 1.25 × TP`, so `FP = 0.25 × TP`, that is `FP = TP ÷ **4**`.
+
+**Part 1(e).** `TP ÷ 4 = TP − 12` → multiply both sides by 4 → `TP = 4TP − 48` → `48 = 3TP` → **TP = 16**.
+
+**Part 1(f).** `FP = 16 ÷ 4 = 4`. `FN = 22 − 16 = 6`. `TN = 100 − 16 − 4 − 6 = 74`.
+
+| | predicted legit | predicted fraud | row total |
+|---|---|---|---|
+| **actual legit** | **74** | **4** | **78** |
+| **actual fraud** | **6** | **16** | **22** |
+| column total | **80** | **20** | **100** |
+
+**Part 1(g).** `accuracy = (16 + 74) ÷ 100 = 90 ÷ 100 = **0.9000**` ✅ · `precision = 16 ÷ 20 = **0.8000**` ✅ · `real frauds = 16 + 6 = **22**` ✅
+
+**Part 1(h).** `recall = 16 ÷ 22 = **0.7273**`. **Nobody told you that number and you reconstructed it**, which is the point of the puzzle: **from the four counts you can get every metric, and from the metrics you can sometimes — with enough of them — get back to the counts.**
+
+**Part 2(a).** **Yes.** Precision 0.8 gives `FP = TP ÷ 4`; recall 0.7273 gives `FN = TP × (1 ÷ 0.7273 − 1) = TP × 0.375`; and accuracy gives `FP + FN = 10`. So `TP ÷ 4 + 0.375 × TP = 10` → `0.625 × TP = 10` → **TP = 16** again, and the rest follows. **Two ratios and a total are enough; which two ratios does not much matter.**
+
+**Part 2(b).** Any two tables where TP + TN = 90 and the other two add to 10. For example:
+
+**table one:** TP **16** FP **4** FN **6** TN **74**
+**table two:** TP **0** FP **0** FN **10** TN **90**
+
+**Table two is the piece of paper**: it never says fraud, catches nothing, and scores exactly the same 0.9000. **That is the accuracy paradox in two lines of a puzzle.**
+
+**Part 2(c).** *One number can be true and still be **useless** (or "**a cover-up**", or "**not about the thing you care about**"); four counts can only be **complete** (or "**taken apart again**").*
+
+### Think Deeper — T1–T2
+
+**T1.** A good answer has a clear choice, a named victim, and one honest admission.
+
+**Spam filter — the false positive costs more.** Your bank's one-time passcode lands in the junk folder and you cannot log in; the alternative is one junk email you delete in half a second. The person who pays is the recipient, and they pay in a missed message they never knew arrived.
+
+**Cancer screening — the false negative costs more**, and it is not close. A false positive costs an anxious week and one extra scan. A false negative is an undetected tumour that grows for another year. The person who pays is the patient.
+
+**Bail — this is the one that is not a maths question.** A false positive is a low-risk person held in a cell, losing their job and possibly their housing, before any trial. A false negative is a high-risk person released. **Both costs land on different people, and they are not measured in the same units** — one is liberty, the other is somebody else's safety — so no arithmetic can trade them off. Before anybody could honestly put a number on it you would need a public, argued decision about **how many days of wrongful detention are worth one prevented harm**, made by people who are accountable for it, in the open. **A model cannot supply that number, and a model that quietly picks one has made a decision about other people's lives and hidden it inside a metric.**
+
+**The best answers also notice that "which costs more" changes with the count**: one false positive in ten thousand is a different product from one in five.
+
+**T2.** The position is not safe because **false positives destroy the system that produces them.** The alarm goes off over toast at 7am every other week; the family stands outside in February; and two weeks later somebody takes the battery out — and now the alarm has **FP = 0 and a guaranteed FN** on the night there is a real fire. **The false positives caused the false negative.**
+
+The bank version is identical in shape. Decline enough honest cards and customers stop using the card, or move bank. The fraud rate on a card nobody uses is zero, so the model's numbers *improve* while the business dies. **You have solved fraud by making the card useless.**
+
+The number to watch is **specificity** — of everything that really was legitimate, how much did you correctly leave alone? — because it is the only one of the four fractions whose denominator is the honest customers. **F1 will never tell you that** (a full-marks answer might not know that yet; it arrives next week). And a full-marks answer says the general rule: ***"I don't care about false alarms" is not a safe position, because the two errors are connected.***
+
+### Build It — The 2×2 By Hand, The Three Fractions, The Two Afternoons
+
+*This is the page the homework script refers to. The thirty transactions and every value below are the ones printed in the workbook.*
+
+**Predict the lazy model — the truth:** TN **986**, FP **0**, FN **14**, TP **0**, accuracy **986 ÷ 1000 = 0.9860**.
+
+**The two zeros are the whole answer.** FP = 0 and TP = 0 means **the entire predicted-fraud column is empty**: it never says yes, so it never raises a false alarm and it never catches anything. Anybody who predicted a non-zero FP has not yet grasped what "most frequent" means, and the fastest cure is the question *"how many times does it say fraud?"*
+
+**Sorting the thirty, card by card:**
 
 - **True Positives** (actual 1, predicted 1): T03, T08, T11, T16, T20, T26 → **6**
 - **False Positives** (actual 0, predicted 1): T05, T12, T18, T24 → **4**
@@ -1423,94 +1808,98 @@ precision 0.6000  recall 0.7500  specificity 0.7857  accuracy 0.7750  F1 0.6667
 | **actual fraud** | **3** missed | **6** caught | 9 |
 | column total | 20 | 10 | **30** |
 
-**The check: 17 + 4 + 3 + 6 = 30.** ✅ And 9 real frauds, 10 flagged.
+**The check: 17 + 4 + 3 + 6 = 30.** ✅ **9 real frauds, 10 flagged.**
 
-**Confirmed against scikit-learn:**
-
-```text
-n = 30  actual fraud = 9  flagged = 10
-tn 17  fp 4  fn 3  tp 6
-```
-
-### Page 8.5 — Precision, recall and specificity, with the working shown
-
-*From the four counts on page 8.4: TP 6, FP 4, FN 3, TN 17.*
-
-**Precision — "of everything I flagged, how much was really fraud?"**
+**The three fractions, with the working:**
 
 ```text
-I flagged  TP + FP  =  6 + 4  =  10
-Of those,  6  were really fraud.
-precision  =  6 ÷ 10  =  0.6000
+I flagged   TP + FP  =  6 + 4  =  10
+Of those,   6 were really fraud.
+precision   =  6 ÷ 10  =  0.6000
 ```
 
 **The count on the bottom is 10, because 10 is how many I flagged.**
 
-**Recall — "of everything that really was fraud, how much did I catch?"**
-
 ```text
 Real frauds  TP + FN  =  6 + 3  =  9
-Of those,  6  were caught.
-recall  =  6 ÷ 9  =  0.6667
+Of those,    6 were caught.
+recall       =  6 ÷ 9  =  0.6667
 ```
 
 **The count on the bottom is 9, because 9 is how many frauds there really were.**
 
-**Specificity — "of everything that really was legitimate, how much did I correctly leave alone?"**
-
 ```text
-Real legit  TN + FP  =  17 + 4  =  21
-Of those,  17  were left alone.
+Real legit   TN + FP  =  17 + 4  =  21
+Of those,    17 were left alone.
 specificity  =  17 ÷ 21  =  0.8095
 ```
 
 **The count on the bottom is 21, because 21 is how many were really legitimate.**
 
-**And accuracy, for comparison:**
-
 ```text
-correct  =  TP + TN  =  6 + 17  =  23
+correct   =  TP + TN  =  6 + 17  =  23
 accuracy  =  23 ÷ 30  =  0.7667
 ```
 
-**Confirmed against scikit-learn:**
+**The majority-class rate here is `21 ÷ 30 = 0.7000`**, and accuracy 0.7667 beats it by **0.0667** — real, and not enormous. **Notice how differently accuracy behaves on a balanced-ish table**: on the fraud data it was useless because 98.6% of rows were easy; here 70% are, and accuracy starts to mean something again. **The paradox is caused by rarity, not by accuracy being a stupid idea.**
+
+**The two afternoons — a full-marks answer for fraud detection:**
+
+> **The false positive.** "Mrs Okafor's card was declined at the supermarket checkout on Saturday afternoon. She had a full trolley and two children with her, and eleven people in the queue behind her. She had to leave the shopping at the till and drive home. She spent forty minutes on the phone to the bank on Sunday and she has started carrying cash."
+>
+> **The false negative.** "Somebody used Daniel's card details to buy £240 of vouchers at 3am. Nobody noticed for three weeks, because the amount was small enough not to look strange. By the time he reported it the vouchers had been spent and the money was gone."
+>
+> **Which would I rather cause?** "The declined card, because the money is not gone and it can be undone with a phone call, whereas the £240 cannot. **But I would want to know how often** — if we decline one legitimate card in every twenty, people stop using the card at all, and the bank has solved fraud by making the card useless. So my answer depends on the count, not just the cell."
+
+**And one for a smoke alarm, which is just as good:**
+
+> **False positive:** "The alarm went off at 7am because of toast. The whole family went outside in dressing gowns in February. Two weeks later somebody took the battery out, which is the actual danger."
+>
+> **False negative:** "There was a fire in the kitchen at 2am and the alarm stayed silent."
+>
+> **Which would I rather cause?** "The toast, every time — a false alarm costs five cold minutes and a miss can cost a life. **But** the fact that false alarms make people remove the battery means the false positive can *cause* the false negative, so 'I don't care about false alarms' is not actually a safe position."
+
+**What earns the marks:** a person, a place, a time, and what they lost. **What earns nothing:** anything that begins *"a legitimate instance was incorrectly..."* — that is the definition again in different words. And the best answers do two extra things: they **notice the two errors interact**, and they **ask how often**. The cell tells you *what kind* of wrong; only the count tells you *how bad*.
+
+**Bug Log — the two entries to expect:**
+
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `UndefinedMetricWarning: Precision is ill-defined` | the fraction has nothing on the bottom | the model flagged nothing at all | nothing to fix in the code — it is describing the model. Report "undefined" |
+| four plausible counts with FP and FN swapped | the two errors are the wrong way round | `confusion_matrix(pred, y_val)` | truth first, always; then sanity-check that FN is large on a model that misses a lot |
+
+**Confirmed against scikit-learn (the thirty):**
 
 ```text
+n = 30  actual fraud = 9  flagged = 10
+tn 17  fp 4  fn 3  tp 6
 accuracy    0.7667  (23/30)
 precision   0.6000  (6/10)
 recall      0.6667  (6/9)
 specificity 0.8095  (17/21)
 ```
 
-**Marking notes.** Full marks needs **the sentence naming the denominator** beside each fraction, not just the correct decimal. Three correct decimals with no sentences is a level-2 answer, and say so on the page — this is the single habit that carries them through Weeks 9, 10 and 11.
+**Bonus line for the Predict table:** precision for the lazy model is **undefined**, because its denominator is TP + FP = 0. scikit-learn prints 0.0000 and warns you. "Undefined" is a better answer than "0" here and should be marked as such.
+
+**Marking notes for the fractions.** Full marks needs **the sentence naming the denominator** beside each fraction, not just the correct decimal. Three correct decimals with no sentences is a level-2 answer, and say so on the page — this is the single habit that carries them through Weeks 9, 10 and 11.
 
 **One thing to praise if you see it:** a student who notices that the **majority-class rate here is 21 ÷ 30 = 0.7000**, and that accuracy 0.7667 therefore beats it by a decent margin, has applied this week's rule to a *balanced-ish* table unprompted. That is a level-4 observation.
 
-### Page 8.6 — One false positive, one false negative, in the language of the application
-
-*Marked on whether it is about a person, not on whether it is well written.*
-
-**A full-marks answer for fraud detection:**
-
-> **The false positive.** "Mrs Okafor's card was declined at the supermarket checkout on Saturday afternoon. She had a full trolley and two children with her, and eleven people in the queue behind her. She had to leave the shopping at the till and drive home. She spent forty minutes on the phone to the bank on Sunday and she has started carrying cash."
->
-> **The false negative.** "Somebody used Daniel's card details to buy £240 of vouchers at 3am. Nobody noticed for three weeks, because the amount was small enough not to look strange. By the time he reported it the vouchers had been spent and the money was gone."
->
-> **Which would I rather cause?** "The declined card, because the money is not gone and it can be undone with a phone call, whereas the £240 cannot. But I would want to know **how often** — if we decline one legitimate card in every twenty, people stop using the card at all, and the bank has solved fraud by making the card useless. So my answer depends on the count, not just the cell."
-
-**A full-marks answer for a smoke alarm:**
-
-> **False positive:** "The alarm went off at 7am because of toast. The whole family went outside in dressing gowns in February. Two weeks later somebody took the battery out, which is the actual danger."
->
-> **False negative:** "There was a fire in the kitchen at 2am and the alarm stayed silent."
->
-> **Which would I rather cause?** "The toast. Every time, without hesitation — a false alarm costs five cold minutes and a miss can cost a life. **But** the fact that false alarms make people remove the battery means the false positive can *cause* the false negative, so 'I don't care about false alarms' is not actually a safe position."
-
-**Marking notes:**
+**Marking notes for the two afternoons** (marked on whether it is about a person, not on whether it is well written):
 
 - **A person, a place, a time, and what they lost.** That is the bar. Anything that begins "a legitimate instance was incorrectly..." scores zero on this page, however accurate it is, and say why: *"that's the definition again. What happened to the person?"*
 - **The best answers notice that the two errors interact.** The smoke-alarm answer above is a level-5 answer because it spots that too many false positives create false negatives — people disable the system. Fraud has the same shape: too many declines and customers switch banks, so nobody is protected at all.
 - **The best answers also ask "how often".** The cell tells you *what kind* of wrong; only the count tells you *how bad*. A student who says "it depends on the count" has understood the whole week.
+
+### Draw It
+
+A good pair of frames has **a person in both**, **a time of day in both**, and **something lost in both** — money, an afternoon, a weekend, trust. If one frame is much easier to draw than the other, that is worth knowing about yourself: **most people find the false alarm easy to picture and the miss hard**, because a false alarm happens *in front of you* and a miss happens quietly, somewhere else, to somebody who does not find out for three weeks. **That asymmetry is exactly why misses go unfixed.**
+
+**The extra arrow** should say something like *"the family got sick of the toast alarm and took the battery out"* or *"Mrs Okafor stopped using the card, so the bank cannot protect her at all"*. Any arrow that makes **one error produce the other** is the best answer on the page.
+
+### Self-Check
+
+There are no right answers to a self-check, but two of those eleven lines carry the week. **"Compute precision and say which count I put on the bottom, and why"** — if that is not a 😀, go back to M1 and do the four fractions again saying each sentence out loud; the sentence is the skill and the decimal is only arithmetic. And **"describe both errors as things that happened to a real person"** — if that is a 😕, the cure is not more maths. Pick a different application and write two more afternoons.
 
 ### Answers to every question posed in the lesson
 

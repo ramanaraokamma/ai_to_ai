@@ -15,7 +15,7 @@
 | **New maths** | **None.** Sixteen sums of nine multiplications, all done by hand. The output-size *rule* is next week; today they count the windows. |
 | **New syntax** | `torch.from_numpy(a).float()` · `t.unsqueeze(0)` · `nn.Conv2d(1, 4, kernel_size=3)` · `conv.weight.data = ...` |
 | **Dataset** | 6 × 6 and 8 × 8 pictures **written out inline with numpy** — a half-bright bar, a vertical stripe, a cross, and a noisy square. Plus `load_digits()` for the hook. **Nothing downloads. No internet needed. No torchvision.** |
-| **Materials** | **Squared paper, two sheets per student** — this is the week's most important material · pencils **with rubbers** · printed workbook pages 24.1–24.6 · the **PARAMETER COUNT** wall sheet, still up, with two spare rows · the Bug Log |
+| **Materials** | **Squared paper, two sheets per student** — this is the week's most important material · pencils **with rubbers** · the printed workbook (its Practice Set A item A2 is used in class) · the **PARAMETER COUNT** wall sheet, still up, with two spare rows · the Bug Log |
 | **Tech needed** | Laptop with Python 3, numpy, matplotlib, scikit-learn, **torch**. **No new installs. No torchvision — we write our own pictures.** |
 | **Prep time** | 30 minutes the night before, **including doing the sixteen cells in pencil yourself** · 5 minutes on the day |
 | **Expected runtime of the code** | `flatten_cost.py` **instant**. `by_hand.py` **instant**. `kernels.py` writes a 4 × 4 grid of pictures in **about 2 seconds**. `shuffle_pixels.py` trains two MLPs in **under a second**. |
@@ -578,18 +578,18 @@ all sixteen cells agree? True
 
 **Expected runtime: instant.** **Check your pencil grid against that printout now**, before class. If they disagree, you have found the disagreement in your kitchen instead of in front of thirty people.
 
-- [ ] **Run `kernels.py` and open `feature_maps.png`.** The complete file is in the Answer Key under page 24.4. It writes a 4 × 4 grid of pictures — four pictures down, the original plus three feature maps across — in about two seconds. **Look at it.** The vertical-edge column lights up on the bar and the stripe and does nothing on a flat region; the average column blurs everything and finds no edges at all.
+- [ ] **Run `kernels.py` and open `feature_maps.png`.** The complete file is in the Answer Key under Build It (it is also Practice Set B, B5). It writes a 4 × 4 grid of pictures — four pictures down, the original plus three feature maps across — in about two seconds. **Look at it.** The vertical-edge column lights up on the bar and the stripe and does nothing on a flat region; the average column blurs everything and finds no edges at all.
 - [ ] **Break it on purpose, twice.** These are the two deliberate mistakes in the live-code:
   1. Feed the 6 × 6 tensor in without any `unsqueeze`: `RuntimeError: Expected 3D (unbatched) or 4D (batched) input to conv2d, but got input of size: [6, 6]`.
   2. Set the weights and **forget** `conv.bias.data = torch.zeros(1)`. No error. Every cell reads 24.088203 instead of 24.
-- [ ] **Print workbook pages 24.1–24.6.** Page 24.1 must have the 6 × 6 picture pre-printed with its 10s and 2s, the 3 × 3 kernel, and a blank 4 × 4 grid. **Do not make them draw the grids in class.**
+- [ ] **Print the workbook, and check Practice Set A, item A2.** A2 already has the 6 × 6 picture printed with its 10s and 2s, the 3 × 3 kernel, and a blank 4 × 4 grid (Figure W24.1). **Do not make them draw the grids in class.**
 - [ ] **Add two rows to the PARAMETER COUNT wall sheet**: `dense on 8×8` and `conv 3×3 on 8×8`.
 
 ### 5 minutes on the day
 
 - [ ] Editor open, terminal ready. `by_hand.py` and `flatten_cost.py` **deleted or renamed** — they type them.
 - [ ] Squared paper and pencils out. **Pencils with rubbers.** They will make a mistake and they need to be able to fix it without starting again.
-- [ ] Workbook 24.1 out, face down.
+- [ ] Workbook out, open at Practice Set A item A2, face down.
 - [ ] Wall sheet with the two new rows, blank.
 - [ ] Bug Log out.
 - [ ] Last week's `digits_mlp.pt` and the three digit files still in the folder — the hook uses them.
@@ -852,7 +852,7 @@ cells:   4 × 4 = 16
 >
 > That is why these things work on far less data than you would expect."
 
-**Do this:** Hand out squared paper and workbook 24.1, and say the activity is coming. Do not start it yet.
+**Do this:** Hand out squared paper and the workbook (open at Practice Set A, A2), and say the activity is coming. Do not start it yet.
 
 ---
 
@@ -1148,7 +1148,7 @@ This section gives the whole graph-paper activity, so you can run it from this p
 
 - **Squared paper, two sheets each.** Not optional.
 - **A pencil with a rubber.** Also not optional.
-- Workbook page 24.1, pre-printed with the 6 × 6 picture (10s on the left, 2s on the right), the 3 × 3 kernel, and a blank 4 × 4 grid.
+- Workbook Practice Set A, item A2, with the 6 × 6 picture (10s on the left, 2s on the right), the 3 × 3 kernel, and a blank 4 × 4 grid already printed (Figure W24.1).
 - Laptops **closed** for part 1.
 - The 6 × 6 picture and the kernel still on the board from the concept segment.
 
@@ -1550,108 +1550,97 @@ window          kernel
 
 ## 📤 Homework to Assign
 
-This section gives the homework and the words to assign it with.
+This section gives the homework and the words to assign it with. **It is written against the workbook as it ships** — sections called Warm-Up, Do the Maths by Hand, Predict the Output, Practice Set A, Practice Set B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It, Draw It and Self-Check, with items labelled W1, M1, P1, A1, B1 and so on. There are no numbered pages.
+
+**The split.** **In class:** Practice Set A, item **A2** — the sixteen-cell feature map, which is the "Kernel on Graph Paper" activity below. The workbook prints the picture, the kernel and a blank grid for it as Figure W24.1, so nothing needs pre-printing beyond the workbook itself. **At home:** everything else, in the order below. The first three paragraphs are the required core; the rest is for the student's own pace over the week.
 
 **Say this:**
 
-> "About an hour, three pages, and the first one produces a picture I am going to put on the wall.
+> "About an hour for the core, and the first part produces a picture I am going to put on the wall.
 >
-> **First, page 24.4 — four pictures, three kernels, twelve feature maps, one figure.** Build four 8 by 8 pictures in numpy: the bar, the stripe, the cross, and a noisy one. Write three kernels by hand: a vertical-edge finder, a horizontal-edge finder, and an averager. Apply all three to all four, and save the whole lot as **one labelled figure** — four rows, four columns, the original picture and then its three feature maps. Then **one sentence per kernel** saying what that kernel found. Not what it is called. What it found.
+> **First, Build It — four pictures, three kernels, twelve feature maps, one figure.** Build four 8 by 8 pictures in numpy: the bar, the stripe, the cross, and a noisy one. Write three kernels by hand: a vertical-edge finder, a horizontal-edge finder, and an averager. Apply all three to all four, and save the whole lot as **one labelled figure** — four rows, four columns, the original picture and then its three feature maps. Then **one sentence per kernel** saying what that kernel found. Not what it is called. What it found.
 >
-> **Second, page 24.5 — the parameter-count comparison, written up.** Dense against conv, on the 8 by 8 picture and again on a 64 by 64 one. **Both numbers, the division, and a one-line verdict.** The verdict is the marked part and it has to be a sentence, not a number.
+> **Second, still in Build It, Part 2 — the parameter-count comparison, written up.** Dense against conv, on the 8 by 8 picture and again on a 64 by 64 one. **Both numbers, the division, and a one-line verdict.** The verdict is the marked part and it has to be a sentence, not a number.
 >
-> **Third, page 24.6 — six short questions.** Ten minutes. One of them asks you to work out a convolution cell by hand and I want all nine products written down."
+> **Third, Do the Maths by Hand, M1 to M4, calculator only.** Ten to fifteen minutes each at most. M2 and M3 ask you to work out convolution cells by hand and I want every product written down. Then Predict the Output, P1 to P4, in pen, before you run anything.
+>
+> **After that, as the week allows:** the Warm-Up, the rest of Practice Set A, Practice Set B, Fix the Broken Program, the Puzzle, Think Deeper, Draw It, and the Self-Check. Fix the Broken Program and B4 are the two I would do first."
 
-**Workbook pages:** 24.1, 24.2, 24.3 in class · **24.4, 24.5, 24.6** at home.
+**Workbook sections:** Practice Set A, **A2** in class · **Build It, Do the Maths by Hand (M1–M4), Predict the Output (P1–P4)** at home as the core · Warm-Up, Practice Set A (A1, A3–A7), Practice Set B (B1–B5), Fix the Broken Program, Puzzle of the Week, Think Deeper, Draw It, Self-Check as the rest of the week's work.
 
-**Expected time:** 30 min on the four pictures, three kernels and the figure · 15 min on the counts and the verdict · 15 min on the six questions. **About 60 minutes.**
+**Expected time:** core — 30 min on Build It Part 1 (the four pictures, three kernels and the figure) · 15 min on Part 2 (the counts and the verdict) · 25 min on M1–M4 and P1–P4. **About 70 minutes.** The remaining sections are roughly another two hours in total and are not meant for one evening.
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the first is the real one. **One — do the twelve maps have labels, and does each sentence say what the kernel *found* rather than what it is called?** *"The vertical-edge kernel finds vertical edges"* scores nothing; *"it lit up in a bright stripe down the middle of the bar picture and stayed at exactly 0 on the flat left and right parts, so it is reporting where brightness steps sideways"* is full marks. **Two — is the verdict on page 24.5 a sentence with a reason in it?** *"1040 against 10, so conv is smaller"* is half; *"1,040 against 10, a hundred and four times fewer, and the small one is also the one that knows which pixels are neighbours"* is full. **Three — on the by-hand cell, are all nine products written?** The answer is worth nothing on its own — nine products, a row sum, and a total is the answer.
+> **🧑‍🏫 What to look for when you mark it:** three things, and the first is the real one. **One — do the twelve maps have labels, and does each sentence say what the kernel *found* rather than what it is called?** *"The vertical-edge kernel finds vertical edges"* scores nothing; *"it lit up in a bright stripe down the middle of the bar picture and stayed at exactly 0 on the flat left and right parts, so it is reporting where brightness steps sideways"* is full marks. **Two — is the verdict in Build It Part 2 (and in M4(b)) a sentence with a reason in it?** *"1040 against 10, so conv is smaller"* is half; *"1,040 against 10, a hundred and four times fewer, and the small one is also the one that knows which pixels are neighbours"* is full. **Three — on the by-hand cells (M2, M3(b)), are all nine products written?** The answer is worth nothing on its own — nine products, a row sum, and a total is the answer.
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every section and item of the workbook, in workbook order, so you can mark from this page alone. The values are the workbook's own Answers section, re-checked: every code block below was re-run and its printed output matches.
 
-### Page 24.1 — Kernel on Graph Paper (in class)
+### Warm-Up
 
-*The 6 × 6 picture and the 3 × 3 kernel are printed on the page. Fill in all sixteen cells.*
+**W1.** `__init__` declares the parts and runs **once**, when the model is built; `forward` says how one batch flows through them and runs **every time** the model is called. (`super().__init__()` is the first line of `__init__`.)
 
-**The picture:**
+**W2.** `900 ÷ 100 = 9` exactly: **9 batches, no leftover**, the last batch a full 100. `12 × 9 = 108` steps. *Wrong-answer map:* "10 batches, last one has 0 rows" means rounding up as a ritual.
 
-```text
- 10  10  10   2   2   2
- 10  10  10   2   2   2
- 10  10  10   2   2   2
- 10  10  10   2   2   2
- 10  10  10   2   2   2
- 10  10  10   2   2   2
-```
+**W3.** **In the file:** a dictionary of names and blocks of numbers — four names and 4,810 numbers for the digits model. **Not in it:** the code. Nothing says the network was 64 → 64 → 10.
 
-**The kernel:**
+**W4.** **Not on its own.** They also need the class file (to build the same architecture before pouring the numbers in) and, if inputs were scaled, the scaler's numbers. And they must call `model.eval()`, or dropout stays on and answers vary run to run.
 
-```text
-  1   0  −1
-  1   0  −1
-  1   0  −1
-```
+**W5.** **Forgetting `model.eval()`** is the silent one; forgetting `super().__init__()` gives an immediate `AttributeError`. The symptom: the same input gives different answers on different runs with nothing printed — five goes at the same handwritten 9 gave 5, 9, 3, 9, 5.
 
-**The answer, all sixteen cells:**
+### Do the Maths by Hand
 
-```text
-   0   24   24    0
-   0   24   24    0
-   0   24   24    0
-   0   24   24    0
-```
+**M1.**
 
-**The arithmetic, one window per distinct case:**
+| picture | kernel | starting columns | starting rows | feature map | cells |
+|---|---|---|---|---|---|
+| 6 × 6 | 3 × 3 | **4** | **4** | **4 × 4** | **16** |
+| 8 × 8 | 3 × 3 | **6** | **6** | **6 × 6** | **36** |
+| 10 × 10 | 3 × 3 | **8** | **8** | **8 × 8** | **64** |
+| 8 × 8 | 5 × 5 | **4** | **4** | **4 × 4** | **16** |
+| 6 × 6 | 6 × 6 | **1** | **1** | **1 × 1** | **1** |
 
-| window, each row | one row | three rows | cell |
-|---|---|---|---|
-| 10, 10, 10 | (1×10) + (0×10) + (−1×10) = 0 | 0 + 0 + 0 | **0** |
-| 10, 10, 2 | (1×10) + (0×10) + (−1×2) = 8 | 8 + 8 + 8 | **24** |
-| 10, 2, 2 | (1×10) + (0×2) + (−1×2) = 8 | 8 + 8 + 8 | **24** |
-| 2, 2, 2 | (1×2) + (0×2) + (−1×2) = 0 | 0 + 0 + 0 | **0** |
+**M1(a).** Take the kernel's width away from the picture's width, **then add one**. Adding one is the part people drop: a 3-wide window on a 6-wide picture starts at column 0, 1, 2 or 3 — four positions, not three. (Do not write it as a formula yet; Week 25 grows it.)
 
-**And why sixteen cells:** the window can start at column 0, 1, 2 or 3 — `6 − 3 + 1 = 4` — and the same going down. **4 × 4 = 16.**
+**M1(b).** **Sometimes very useful, but not here.** One number for a whole picture cannot say *where* anything is, so it is useless for finding an edge; it is exactly what you want at the **end** of a network ("is this a 7?"). Early layers keep positions, late layers throw them away deliberately.
 
-**Confirmed against `nn.Conv2d`:**
+**M2.**
 
 ```text
-by hand, sixteen windows, sixteen sums:
-[[ 0. 24. 24.  0.]
- [ 0. 24. 24.  0.]
- [ 0. 24. 24.  0.]
- [ 0. 24. 24.  0.]]
-
-the picture as a tensor: (1, 1, 6, 6)
-conv.weight shape      : (1, 1, 3, 3)
-learnable numbers      : 10
-the output as a tensor : (1, 1, 4, 4)
-
-from nn.Conv2d:
-[[ 0. 24. 24.  0.]
- [ 0. 24. 24.  0.]
- [ 0. 24. 24.  0.]
- [ 0. 24. 24.  0.]]
-
-all sixteen cells agree? True
+Window A (9 9 0 in every row):   products 9 0 0 | 9 0 0 | 9 0 0    row sums 9, 9, 9      total  27
+Window B (0 9 9 in every row):   products 0 0 -9 | 0 0 -9 | 0 0 -9  row sums -9, -9, -9  total -27
+Window C (all 4s):               products 4 0 -4 | 4 0 -4 | 4 0 -4  row sums 0, 0, 0      total   0
 ```
 
-**Marking notes.** Three failure shapes and their causes: **all rows different** means the window slid down instead of right; **8s or 16s instead of 24s** means a kernel row was skipped; **−24s throughout** means the kernel is mirrored, which is not an arithmetic error at all and should be marked correct with a note about polarity. **Praise loudly** any student who worked out one row and copied it down having noticed that every row of the picture is identical — that is the reasoning that makes convolutions efficient.
+**M2(a).** A is bright-left, dark-right; B is the reverse. The kernel adds the left column and subtracts the right, so bright-minus-dark is positive and dark-minus-bright is negative. **Same edge, opposite direction, opposite sign.**
 
-### Page 24.2 — The parameter-count comparison (in class)
+**M2(b).** It measures **the difference between the left and right columns of the window** — a sideways step in brightness. A flat window scores 0 whether bright or dark: **a change detector, not a brightness meter.**
 
-*Both layers, on the same 8 × 8 picture, and then on a 64 × 64 one.*
+**M3.** The horizontal kernel on the same three windows gives **A = 0, B = 0, C = 0.**
+
+**M3(a).** Every row of each window equals the row above it. The horizontal kernel adds the top row and subtracts the bottom row, so they cancel exactly. It needs an up-and-down step and none of the three has one.
+
+**M3(b).** Window `9 9 0 / 9 9 0 / 0 0 0` with kernel `1 1 1 / 0 0 0 / −1 −1 −1`:
+
+```text
+row 0:   (1 × 9) + (1 × 9) + (1 × 0)      =   9 + 9 + 0   =   18
+row 1:   (0 × 9) + (0 × 9) + (0 × 0)      =   0 + 0 + 0   =    0
+row 2:  (−1 × 0) + (−1 × 0) + (−1 × 0)    =   0 + 0 + 0   =    0
+18 + 0 + 0 = 18
+```
+
+**Total 18**; the nine products are `9, 9, 0, 0, 0, 0, 0, 0, 0`. (A made-up corner shape; 18 does also appear in the cross's horizontal-edge map.) *Marking:* the total alone earns nothing — all nine products must be written.
+
+**M4.**
 
 | Layer | weights | biases | total |
 |---|---|---|---|
 | `nn.Linear(64, 16)` | 16 × 64 = **1024** | **16** | **1040** |
 | `nn.Conv2d(1, 1, kernel_size=3)` | 3 × 3 = **9** | **1** | **10** |
 | `nn.Conv2d(1, 4, kernel_size=3)` | 4 × 1 × 3 × 3 = **36** | **4** | **40** |
-| `nn.Linear(4096, 256)` on 64 × 64 | 256 × 4096 = **1048576** | **256** | **1048832** |
+| `nn.Linear(4096, 256)` | 256 × 4096 = **1048576** | **256** | **1048832** |
 | `nn.Conv2d(1, 4, kernel_size=3)` on 64 × 64 | **36** | **4** | **40** |
 
 ```text
@@ -1659,7 +1648,7 @@ all sixteen cells agree? True
 1048832 ÷ 40 = 26220.8
 ```
 
-**Confirmed against PyTorch:**
+Confirmed against PyTorch:
 
 ```text
 nn.Linear(64, 16)                  total: 1040
@@ -1669,27 +1658,186 @@ nn.Linear(4096, 256) needs         1048832
 nn.Conv2d(1, 4, kernel_size=3)     40
 ```
 
-**The point to make out loud:** rows 3 and 5 are **the same layer** and **the same 40 numbers**, on a picture with sixty-four times as many pixels. The dense layer's count grew by a factor of a thousand. **A convolution's count does not depend on the size of the picture.**
+**M4(a).** **Rows 3 and 5** — the same layer, the same 40 numbers, on a picture with sixty-four times as many pixels. The dense count grew about a thousandfold between rows 1 and 4. **A convolution's count depends on the kernel, not the picture.**
 
-### Page 24.3 — Predict the shape (in pen, before running)
+**M4(b), at full marks:** "On the 8 × 8 picture the dense layer needs 1,040 learnable numbers and the convolution needs 10 — a hundred and four times fewer — and the convolution is *also* the one that knows which pixels are neighbours, so it is smaller and **better**. And the gap grows: on a 64 × 64 image the dense layer needs over a million while the convolution still needs 40." *"Conv is smaller"* is half a mark; the verdict needs a reason, best of all two. **Accept 1,040 against 10, and praise a verdict that notes it is not like-for-like (592 against 10, about 59 times, is the fairer figure).**
 
-| Question | Answer |
-|---|---|
-| What shape does `nn.Conv2d` need its input in? | `(batch, channels, height, width)` — **four numbers** throughout this course (PyTorch also accepts three, `(channels, height, width)`, for one unbatched picture) |
-| One greyscale 6 × 6 picture, as a tensor for `nn.Conv2d`? | **(1, 1, 6, 6)** — one picture, one channel |
-| `torch.from_numpy(img).float()` on a 6 × 6 numpy grid gives what shape? | **(6, 6)** |
-| …and after two `.unsqueeze(0)` calls? | **(1, 1, 6, 6)** |
-| What shape is `conv.weight` for `nn.Conv2d(1, 1, kernel_size=3)`? | **(1, 1, 3, 3)** — nine numbers |
-| What shape is `conv.weight` for `nn.Conv2d(1, 4, kernel_size=3)`? | **(4, 1, 3, 3)** — thirty-six numbers |
-| `nn.Conv2d(1, 1, kernel_size=3)` on a `(1, 1, 8, 8)` input gives what? | **(1, 1, 6, 6)** — because 8 − 3 + 1 = 6 |
-| `nn.Conv2d(1, 3, kernel_size=3)` on a `(1, 1, 8, 8)` input gives what? | **(1, 3, 6, 6)** — three filters, three feature maps |
+### Predict the Output
 
-**The last two are the ones to talk about.** The **second** number of the output shape is the number of filters, and the **last two** come from counting window positions. A student who has those two facts separately can predict any conv shape in this course.
+**P1.**
 
-### Page 24.4 — Four pictures, three kernels, one figure
+```text
+(4, 1, 3, 3)
+(4,)
+40
+```
 
-**The complete file:**
+Four filters, one channel in, three high, three wide: `4 × 1 × 3 × 3 = 36` weights. **Four biases, not 36, because there is one bias per filter**; its single bias is added to every cell of that filter's map.
 
+**P2.**
+
+```text
+(1, 3, 6, 6)
+(1, 1, 4, 4)
+(4, 8, 4, 4)
+```
+
+First number: the batch. Second: the number of **filters** (3, 1, 8). Last two: counting window positions (`8 − 3 + 1 = 6`, `8 − 5 + 1 = 4`, `6 − 3 + 1 = 4`). Two separate facts; a student who holds them separately can predict any conv shape in this course.
+
+**P3.**
+
+```text
+(6, 6)
+(1, 6, 6)
+(1, 1, 6, 6)
+(6, 1, 6)
+```
+
+The number in the brackets says *where* the new 1 goes. `unsqueeze(1)` puts it in the middle, giving six pictures of one channel — not what anybody wanted. **`(1, 1, 6, 6)` is one greyscale picture.** PyTorch would also accept the second, `(1, 6, 6)`, as one unbatched picture and return `(1, 4, 4)`; the fourth, `(6, 1, 6)`, is read as six channels and fails ("expected 1 channels … got 6"). So the second and third are usable; only the third has the batch number the course always uses.
+
+**P4.**
+
+```text
+[[4.0882044 4.0882044 4.0882044]
+ [4.0882044 4.0882044 4.0882044]
+ [4.0882044 4.0882044 4.0882044]]
+```
+
+Shape `(3, 3)` (`5 − 3 + 1 = 3`). The value should be exactly **4.0**: the kernel copies the middle pixel and every pixel is 4. **0.0882044 is the bias**, and it is the bias and not an arithmetic slip because it is exactly the same in all nine cells. The missing line: `conv.bias.data = torch.zeros(1)`.
+
+### Practice Set A
+
+**A1.** convolution → **(iii)** · kernel / filter → **(iv)** · feature map → **(ii)** · weight sharing → **(v)** · channel → **(i)**. **A1(a):** **weight sharing** — the same nine numbers at every position, so nine weights and a bias whatever the picture size.
+
+**A2 — Kernel on Graph Paper (done in class).** The workbook prints the picture and the kernel (Figure W24.1); the student fills in the feature map and the three boxes.
+
+The picture:
+
+```text
+ 10  10  10   2   2   2
+ 10  10  10   2   2   2
+ 10  10  10   2   2   2
+ 10  10  10   2   2   2
+ 10  10  10   2   2   2
+ 10  10  10   2   2   2
+```
+
+The kernel:
+
+```text
+  1   0  −1
+  1   0  −1
+  1   0  −1
+```
+
+**All sixteen cells:**
+
+```text
+   0   24   24    0
+   0   24   24    0
+   0   24   24    0
+   0   24   24    0
+```
+
+**Boxes:** windows across **4** (`6 − 3 + 1`) · windows down **4** · cells **16**.
+
+The arithmetic, one window per distinct case:
+
+| window, each row | one row | three rows | cell |
+|---|---|---|---|
+| 10, 10, 10 | (1×10) + (0×10) + (−1×10) = 0 | 0 + 0 + 0 | **0** |
+| 10, 10, 2 | (1×10) + (0×10) + (−1×2) = 8 | 8 + 8 + 8 | **24** |
+| 10, 2, 2 | (1×10) + (0×2) + (−1×2) = 8 | 8 + 8 + 8 | **24** |
+| 2, 2, 2 | (1×2) + (0×2) + (−1×2) = 0 | 0 + 0 + 0 | **0** |
+
+**A2(a) and (b).** Working out one row and copying it down **is allowed**, and is the better answer: every row of the picture is identical, so every window in a given column position holds the same nine numbers. Noticing that is the same reasoning that makes convolutions efficient — **praise it loudly.**
+
+**A2(c).** **Columns 0 and 3.** Under column 0 the window sits wholly in the bright half (all 10s); under column 3 wholly in the dark half (all 2s). No sideways step, so no response.
+
+Confirmed against `nn.Conv2d` (the Live-Code segment prints the same grid): by hand and from PyTorch all sixteen cells agree, with the input `(1, 1, 6, 6)`, `conv.weight` `(1, 1, 3, 3)`, 10 learnable numbers and the output `(1, 1, 4, 4)`.
+
+**Marking notes.** Three failure shapes and their causes: **all rows different** means the window slid down instead of right; **8s or 16s instead of 24s** means a kernel row was skipped; **−24s throughout** means the kernel is mirrored, which is not an arithmetic error at all and should be marked correct with a note about polarity.
+
+**A3.**
+
+| # | What happens | The fix |
+|---|---|---|
+| a | `RuntimeError: Expected 3D (unbatched) or 4D (batched) input to conv2d, but got input of size: [6, 6]` | `.unsqueeze(0).unsqueeze(0)` → `(1, 1, 6, 6)` |
+| b | `RuntimeError: Input type (double) and bias type (float) should be the same` | `.float()` after `torch.from_numpy(...)` |
+| c | `RuntimeError: weight should have at least three dimensions` | `.reshape(1, 1, 3, 3)` |
+| d | `TypeError: cannot assign 'torch.FloatTensor' as parameter 'weight' (torch.nn.Parameter or None expected)` | `conv.weight.data = ...` — with `.data` |
+| e | `RuntimeError: Given groups=1, weight of size [1, 4, 3, 3], expected input[1, 1, 6, 6] to have 4 channels, but got 1 channels instead` | Channels **in** first, filters **out** second: `nn.Conv2d(1, 4, ...)` |
+| f | **No error.** Every cell is 24.088203 instead of 24 | `conv.bias.data = torch.zeros(1)` |
+
+**A3(g).** **(f).** The one question: is the error the same amount in every cell, or different? Identical means a bias. Taken one at a time, (a) has the right dtype but wrong shape and (b) the reverse; with both problems torch reports the dtype first, then the shape — the order in Fix the Broken Program.
+
+**A4.** i → **R** · ii → **P** · iii → **T** · iv → **S** · v → **Q**. The five printed values are `60`, `(1, 1, 3, 3)`, `(1, 3, 6, 6)`, `(1, 6, 6)`, `1040`.
+
+**A4(f).** **Q (1,040)** is a dense layer taking a flattened 8 × 8 picture to 16 units; **R (60)** is six 3 × 3 filters (`6 × 1 × 3 × 3 = 54` weights plus 6 biases). **Only R** would still work on a 16 × 16 picture: a dense layer's first number *is* the pixel count (`16 × 256 + 16 = 4112` on 16 × 16), while the conv count never mentions the picture.
+
+**A5.** (a) **8 × 8** — both maps are 6 × 6 and a 3 × 3 kernel loses one ring all round, so `6 + 3 − 1 = 8`. (b) The **stem** of the T: its left edge (negative) and right edge (positive); rows 3 and 4 of the map are strongest, where the stem is 9s against 0s with nothing else in the window. (c) A **vertical stem** with nothing changing up-or-down: rows 3, 4 and 5 of the picture are identical, so top-minus-bottom is exactly zero. A detector silent on the wrong thing is a working detector. (d) **Neither is a bug.** `1, 0, −1` is positive on bright-to-dark and negative on dark-to-bright; the sign says which way the edge runs. (e) From how many of the window's three rows contain the step; each full step row contributes `9 − 0 = 9`, so one row gives 9, two give 18, three give 27. ±27 means the step ran the whole window height; the numbers fade as you move away from an edge.
+
+**A6.** (a) `0.0037 × 540 = 1.998`, **about two digits**. (b) **Neither — you cannot tell**; two digits in 540 is unresolvable and a different seed reverses the order. (c) That **this measurement cannot tell the two models apart**, so the model's accuracy does not depend on pixel arrangement — it was never using it. (d) It has **not** proved shuffling helps, nor that arrangement is unimportant in general — only that this model on this tidy dataset did not use it. (e) **Shift every digit two pixels left and test the trained model on the shifted version**: the dense model's learned slots all move and it falls over (a similar network dropped from about 97% to under 20%). The shuffled model falls over equally, so the test separates dense from convolutional, not shuffled from unshuffled; next week's conv model should cope far better (not perfectly).
+
+**A7.** (a) …**which pixels are next to which**; evidence: shuffling the 64 columns identically for every picture leaves accuracy unchanged, **0.9704 against 0.9667**. (b) **nine multiplications and one addition** at every position; the grid of answers is a **feature map**. (c) …because **the window cannot hang off the edge**, so a 3 × 3 kernel on 10 × 10 gives **8 × 8**. (d) …**it is cheap — ten numbers instead of 592, and they do not grow with the picture** — and **it only has to learn "this is an edge" once**, not separately for every position (both benefits are needed for full marks). (e) **four** numbers: **pictures (the batch)**, **channels**, **height**, **width**. (f) …**a bias in it**; the wrong sign means **a mirrored kernel**; neither **produces an error message**.
+
+### Practice Set B
+
+**B1.** `nn.Conv2d(1, 6, kernel_size=3)` prints **60**: `6 × 1 × 3 × 3 = 54` weights plus **6** biases, one per filter.
+
+**B2.** `stack = np.zeros((6, 6)); stack[0:3, :] = 10.0; stack[3:6, :] = 2.0` prints three rows of ten 10s above three rows of 2s. `stack[0:3, :]` is "rows 0, 1, 2, every column", the top half; the chapter's `bar` used `[:, 0:3]`, every row and the first three columns. **The comma is the whole difference.**
+
+**B3.** The window `stack[1:4, 2:5]` is `10 10 10 / 10 10 10 / 2 2 2`; the nine products are `10 10 10 / 0 0 0 / −2 −2 −2`; their sum is **24.0**. **B3(a):** `10 + 10 + 10 + 0 + 0 + 0 − 2 − 2 − 2 = 30 − 6 = 24`. **B3(b):** the middle row of the kernel is all zeros, and a horizontal-edge detector compares only top with bottom, so the middle row is multiplied by 0 and disappears.
+
+**B4.** By hand and from `nn.Conv2d` with the horizontal kernel on the stack picture, the same grid, and `np.allclose` prints `True`:
+
+```text
+[[ 0.  0.  0.  0.]
+ [24. 24. 24. 24.]
+ [24. 24. 24. 24.]
+ [ 0.  0.  0.  0.]]
+```
+
+The vertical kernel on the same picture gives sixteen zeros. **B4(a):** the chapter's feature map turned a quarter turn — `0 24 24 0` ran across every row there and runs down every column here; same picture rotated, same kernel rotated, same answer rotated. **B4(b):** **No.** The vertical kernel looks for sideways steps and every row of this picture is flat; sixteen zeros is the correct answer. A detector that fires at everything is not a detector.
+
+**B5.** This is the same program as Build It, so the complete `kernels.py`, its real output, the figure and the full-marks sentences are given once, under **Build It** below. **B5(b):** **No — the opposite of a failure.** The bar has a vertical edge and no horizontal one, so the horizontal detector *should* say nothing; exact zeros are the strongest evidence it does what you designed. **B5(c):** **It has blurred it.** Averaging nine neighbours pulls extremes to the middle, so 0-to-9 becomes 3.11-to-6.00; narrowing the range *is* blur in numbers. **B5(a):** the three full-marks sentences are the ones under Build It.
+
+### Fix the Broken Program
+
+**Bug 1 — a dtype bug**, line 23, `t = torch.from_numpy(bar)`. `double` (64-bit, numpy's default) meets `float` (32-bit, torch's default). Fix: `t = torch.from_numpy(bar).float()`.
+
+**Bug 2 — a shape bug**, the same line. The four numbers are pictures (batch), channels, height, width; one greyscale 6 × 6 picture must be `(1, 1, 6, 6)`. Fix: `t = torch.from_numpy(bar).float().unsqueeze(0).unsqueeze(0)`. Both bugs are on one line and torch finds them one at a time, dtype first, so the fix arrives in two runs.
+
+**Bug 3 — `conv.bias.data` was never set.** Each cell is wrong by **0.08820419**, the same amount in all sixteen, so it is **not** arithmetic: it is the random starting bias, added to every cell. The missing line `conv.bias.data = torch.zeros(1)` goes immediately after the line that sets the weights.
+
+**Why 0.37% wrong is more dangerous than 100% wrong.** It looks like *your* mistake: you redo the sixteen sums, get 24 again, and start to doubt your own adding. A near-miss attacks your confidence in the check itself.
+
+**Without `np.allclose`?** The program would print two grids and no verdict, and a glance at `24.088203` beside `24.` would likely be called agreement. That one line turns a pile of numbers into a verdict.
+
+### Puzzle of the Week
+
+**Map 1 → kernel Z** (identity) · **Map 2 → kernel Y** (horizontal-edge, silent on this picture) · **Map 3 → kernel X** (mirrored vertical, everything negative) · **Map 4 → kernel W** (vertical-edge).
+
+```text
+W: 0 24 24 0 on every row        X: 0 -24 -24 0 on every row
+Y: all sixteen cells 0           Z: 10 10 2 2 on every row
+```
+
+**Puzzle(a).** **Map 1** — the only one whose numbers are the picture's own brightnesses (10 and 2) rather than differences; only the identity kernel produces no new numbers. **Puzzle(b).** **No information is lost**: X is W negated, so either recovers the other; the sign carries *which way* the edge runs. **Puzzle(c).** Z is a single 1 in the middle, so the nine products are eight zeros and a copy of the middle pixel — **it copies the picture**; the output is still 4 × 4 because the window cannot hang off the edge whatever is inside it (padding is Week 25). **Puzzle(d).** Window rows 0–2, columns 1–3, every row `10, 10, 2`: `22 per row, three rows = 66`, `66 ÷ 9 = 7.33`. **Puzzle(e).** Each averaged pixel mixes in its eight neighbours, so near the boundary windows straddle bright and dark: a sharp step becomes a ramp, 10, 7.33, 4.67, 2 — blurring written as numbers.
+
+### Think Deeper
+
+Both are open answers; mark on reasoning, not wording.
+
+**T1 — a full answer has three parts.** (1) The result means accuracy did not depend on the pixels being in place, so the model **never used the arrangement**; what it learned is which of 64 slots tend to be bright per digit, a real pattern, so 96.67% is a real score. (2) It worked because `load_digits` is unusually tidy — every digit centred and scaled first — and a digit shifted two pixels left would break every slot. (3) A real-world example of hidden fragility (the model answer uses a phone's face unlock) and the point that **finding out how a model is fragile is not the same as measuring its accuracy.**
+
+**T2 — a full answer has three parts.** (1) Learned weights mean nobody has to know what a good filter looks like; gradient descent builds detectors no one would draw, and scales to millions of weights in later layers no human could design. (2) What is lost is the ability to say what a filter is *for*: the honest answer to "why those nine numbers" is "it made the loss smaller", which leaves nothing to inspect when the model misbehaves. (3) First-layer filters looking like edge detectors cuts both ways: optimistic (the method finds true things) and pessimistic (that was the part we already knew; the claim worth checking is about the layers after it, which nobody can check by eye).
+
+### Build It
+
+**Predicted and real:** `conv.weight.shape` is **`(3, 1, 3, 3)`** and the count is `3 × 1 × 3 × 3 + 3 = 27 + 3 = 30`.
+
+**Part 1 — the complete file:**
 ```python
 """kernels.py - four pictures, three kernels, twelve feature maps in one figure."""
 import numpy as np
@@ -1791,11 +1939,25 @@ the vertical kernel on the cross, all 36 cells:
 >
 > **Average.** "It found no edges at all. On the bar its answers run from +2 to +10, which are just the picture's own two brightness levels, and on the noisy picture it squashed everything into +3.11 to +6.00 — a much narrower band than the original 0 to 9. So it is **smoothing, not detecting**: it replaces each pixel with the average of its nine neighbours."
 
-**Marking notes.** The mark is for **what it found, from the evidence on the page**. A sentence that only restates the kernel's name scores nothing. The two best observations, both worth calling out if you see them: **the horizontal kernel's exact zeros on the bar** (a detector that stays silent is doing its job), and **the averager narrowing the noisy picture's range** from 0–9 to 3.11–6.00, which is what "blur" means in numbers.
+**Marking notes.** The mark is for **what it found, from the evidence on the page**. A sentence that only restates the kernel's name scores nothing. The two best observations, both worth calling out: **the horizontal kernel's exact zeros on the bar** (a detector that stays silent is doing its job), and **the averager narrowing the noisy picture's range** from 0–9 to 3.11–6.00, which is what "blur" means in numbers.
 
-### Page 24.5 — The counts, and the verdict
+**The table, filled in:**
 
-**The two comparisons:**
+| picture | vertical: biggest / smallest | horizontal: biggest / smallest | average: biggest / smallest |
+|---|---|---|---|
+| bar | **+24.00 / +0.00** | **+0.00 / +0.00** | **+10.00 / +2.00** |
+| stripe | **+0.00 / −24.00** | **+0.00 / +0.00** | **+8.00 / +0.00** |
+| cross | **+27.00 / −27.00** | **+27.00 / −27.00** | **+8.00 / +0.00** |
+| noisy | **+12.00 / −10.00** | **+14.00 / −13.00** | **+6.00 / +3.11** |
+
+**The two all-zero rows** are the horizontal kernel on **bar** and on **stripe**: neither has a top-to-bottom step, so top-minus-bottom is exactly zero. Both are the detector working, not failing.
+
+**Part 2 — the counts:**
+
+| Picture | dense layer | count | convolution | count |
+|---|---|---|---|---|
+| 8 × 8 | `nn.Linear(64, 16)` | **1,040** | `nn.Conv2d(1, 1, kernel_size=3)` | **10** |
+| 64 × 64 | `nn.Linear(4096, 256)` | **1,048,832** | `nn.Conv2d(1, 4, kernel_size=3)` | **40** |
 
 ```text
 8 × 8 picture
@@ -1813,52 +1975,25 @@ the vertical kernel on the cross, all 36 cells:
 
 > "On the 8 × 8 picture the dense layer needs 1,040 learnable numbers and the convolution needs 10 — a hundred and four times fewer — and the convolution is *also* the one that knows which pixels are neighbours, so it is smaller and better rather than smaller and worse. And the gap grows with the picture: on a 64 × 64 image the dense layer needs over a million while the convolution still needs 40, because a convolution's count depends on the size of its kernel and not on the size of the picture."
 
-**Marking notes.** *"Conv is smaller"* is half a mark. The verdict has to contain **a reason**, and the best ones contain two: the count, and the fact that the cheaper layer is the one with the right assumption baked in. **A student who spots that rows 3 and 5 are the same 40 numbers has understood weight sharing**, and that is worth saying on the page. **Accept a verdict that uses 1,040 against 10, and praise one that notes it is not like-for-like (592 against 10, about 59 times, is the fairer figure).**
+**Marking notes.** *"Conv is smaller"* is half a mark. The verdict has to contain **a reason**, and the best ones contain two: the count, and the fact that the cheaper layer is the one with the right assumption baked in. **The number that did not change is 40**: the same layer on a picture with sixty-four times as many pixels — weight sharing. A student who spots that has understood it; say so on the page. Accept 1,040 against 10, and praise one that notes it is not like-for-like (592 against 10, about 59 times).
 
-### Page 24.6 — Six short questions
+**Bug Log, filled in:**
 
-**1. What does flattening an image throw away, and how do you know it matters?**
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| `RuntimeError: Expected 3D (unbatched) or 4D (batched) input to conv2d, but got input of size: [6, 6]` | The layer needs to know how many pictures and how many channels | Two `.unsqueeze(0)` calls missing | `torch.from_numpy(img).float().unsqueeze(0).unsqueeze(0)` → **batch, channels, height, width** |
+| **No message** — every cell read 24.088203 instead of 24 | All sixteen answers off by exactly the same amount | The bias was never zeroed, and **a bias is added to every cell of the feature map** | `conv.bias.data = torch.zeros(1)` |
 
-Which pixels are next to which. **The evidence:** shuffle the 64 columns of `load_digits` — one shuffle, applied identically to every picture — retrain the same network, and the accuracy does not fall: **0.9704 shuffled against 0.9667 unshuffled**, a difference of two digits out of 540. A person cannot read the shuffled pictures at all. **A model that scores the same on both was never using the arrangement.**
+### Draw It
 
-**2. A 3 × 3 kernel slides over a 10 × 10 picture, one step at a time, no padding. How big is the feature map, and how did you get it?**
+**How many products go into one cell?** **Nine.** **How many cells does a 3 × 3 kernel make on a 6 × 6 picture?** **Sixteen** — `4 × 4`. **How many times did you draw the kernel?** **Once** — the same nine numbers at every position is weight sharing, and a drawing with the kernel drawn twice has missed the week's point.
 
-**8 × 8.** The window can start at column 0 through column 7 — that is `10 − 3 + 1 = 8` places — and the same going down. 8 × 8 = 64 cells.
+**A drawing at full marks has:** a picture grid with two window outlines (top-left and one step right); the kernel drawn **once** to the side with an arrow to each position; the nine products for the second window in full; their three row sums (8, 8, 8); the total boxed (`8 + 8 + 8 = 24`); and a small answer grid with `0` and `24` in its first two cells and the other fourteen blank.
 
-**3. `nn.Conv2d(1, 6, kernel_size=3)`. How many learnable numbers, and what shape is `weight`?**
+### Self-Check
 
-`weight` is **(6, 1, 3, 3)** — six filters, one input channel, three by three — so 6 × 1 × 3 × 3 = **54 weights**, plus **6 biases**, one per filter. **60 numbers.**
+No right answers; two nudges to pass on. If the student ticked 😕 for **filling in all sixteen cells without losing their place**, redo it on a picture they invent, saying each cell aloud ("row zero, column two: ten, ten, two — eight, eight, eight — twenty-four"); speaking it stops the drift. If 😕 for **diagnosing a uniformly-offset feature map as a bias**, there is only one question: is the error the same amount everywhere, or different? Identical means a bias.
 
-**4. Work out this cell by hand. Write all nine products.**
-
-```text
-window            kernel
- 9   9   0        1   1   1
- 9   9   0        0   0   0
- 0   0   0       −1  −1  −1
-```
-
-```text
-row 0:  (1 × 9) + (1 × 9) + (1 × 0)      =   9 + 9 + 0   =   18
-row 1:  (0 × 9) + (0 × 9) + (0 × 0)      =   0 + 0 + 0   =    0
-row 2:  (−1 × 0) + (−1 × 0) + (−1 × 0)   =   0 + 0 + 0   =    0
-```
-
-```text
-18 + 0 + 0 = 18
-```
-
-**18.** And the nine products in full: 9, 9, 0, 0, 0, 0, 0, 0, 0.
-
-*(This window is a made-up corner shape, not one that occurs in the cross picture, where the arms run straight on through; 18 does also appear as a cell of the cross's horizontal-edge feature map.)*
-
-**5. Explain weight sharing to somebody who has not done this lesson, in two sentences — one about cost and one about learning.**
-
-**Cost:** the same nine numbers are used at every position, so the layer has 10 learnable numbers instead of one set per position — and that 10 does not change when the picture gets bigger. **Learning:** it only has to learn "this is an edge" once, whereas a dense layer would have to learn it separately for every position and would need training pictures with an edge in each place.
-
-**6. Your feature map comes out as `[[0.0882, 24.0882], [0.0882, 24.0882]]` and you expected `[[0, 24], [0, 24]]`. What is wrong, and how do you know it is that and not an arithmetic mistake?**
-
-The **bias** was never zeroed, so PyTorch's random starting value — 0.088204 here — is being added to every cell. **How you know:** the error is *exactly the same amount in every cell*. An arithmetic mistake would be wrong differently in different cells. Fix with `conv.bias.data = torch.zeros(1)`.
 
 ### Answers to every question posed in the lesson
 
@@ -1908,4 +2043,4 @@ The **bias** was never zeroed, so PyTorch's random starting value — 0.088204 h
 
 Next week is the one piece of maths in this run of the course, and it is one line long: `(n + 2p − k) ÷ s + 1`, rounded down. The student will not meet it as a formula first. They will count window positions on an 8 × 8 grid by hand — with the window jumping two at a time instead of one, and with a ring of zeros glued round the edge so the corner pixels stop being cheated — and only once they have counted three different cases will the line get written down, beside the counts it reproduces. Then `nn.MaxPool2d(2)`, which halves the height and width and has no learnable numbers at all, and `nn.Flatten()`, which is where the shape error everybody meets actually happens: get the number after the flatten wrong by one and `nn.Linear` prints both numbers at you.
 
-**To prep early:** three things. **One — keep the squared paper out**, because Week 25 counts window positions on an 8 × 8 grid three times with different strides and paddings, and it is the same activity shape as this week. **Two — do the twelve output-size calculations from the workbook yourself tonight**, and print the shape beside each; the whole lesson turns on the teacher being able to say "yes, and now print it" with confidence. **Three — keep `load_digits` in mind and reshape it once tonight**, so you have seen `digits.data.reshape(-1, 1, 8, 8)` produce `(1797, 1, 8, 8)` with your own eyes. Week 25 uses it, Week 26 trains a CNN on it, and the reshape from a flat 64 back into a picture is the moment the two halves of this term join up.
+**To prep early:** three things. **One — keep the squared paper out**, because Week 25 counts window positions on an 8 × 8 grid three times with different strides and paddings, and it is the same activity shape as this week. **Two — do the output-size calculations from the workbook (M1 and P2) yourself tonight**, and print the shape beside each; the whole lesson turns on the teacher being able to say "yes, and now print it" with confidence. **Three — keep `load_digits` in mind and reshape it once tonight**, so you have seen `digits.data.reshape(-1, 1, 8, 8)` produce `(1797, 1, 8, 8)` with your own eyes. Week 25 uses it, Week 26 trains a CNN on it, and the reshape from a flat 64 back into a picture is the moment the two halves of this term join up.

@@ -12,7 +12,7 @@
 | **Type** | Teach |
 | **Big idea** | Every rule has edge cases, and the two ways of being wrong — false alarms and misses — hurt completely different people. |
 | **New vocabulary** | edge case · false alarm · miss · first match wins · labelled example |
-| **Materials** | Printed Workbook Week 8 pages 1–4 · **the Breaker Card, cut off and kept in your pocket** · a plain sheet of paper and an envelope for the Week 9 seal · a pen you can both sign with · a board or big sheet · a ruler or tape measure if you have one |
+| **Materials** | Printed Workbook Week 8 (the homework: Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Build It, Draw It, Self-Check) · **the Breaker Card — five messages you copy onto a small card from the Answer Key, kept in your pocket** · plain paper for the in-class rulebook · a plain sheet of paper and an envelope for the Week 9 seal · a pen you can both sign with · a board or big sheet · a ruler or tape measure if you have one |
 | **Tech needed** | **None.** Paper and pencil only. |
 | **Prep time** | 20 minutes the night before, 5 minutes on the day |
 
@@ -219,12 +219,9 @@ They are shelves, not content — do not teach or test them.
 
 ### 20 minutes the night before
 
-- [ ] **Print Workbook Week 8, pages 1–4.**
-  - Page 1: the ten labelled messages, the tally table, the rulebook frame.
-  - Page 2: the Breaker scorecard and the empty two-by-two grid.
-  - Page 3: the 138 cm homework.
-  - Page 4: the five vague rules to sharpen.
-- [ ] **Cut off the Breaker Card at the bottom of page 2 and put it in your pocket.** Same discipline as last week's Fresh Four. If the student reads the five breaker messages before writing their rules, the second half of the lesson is dead.
+- [ ] **Print the Week 8 workbook** (it is the homework; hand it over in the Wrap, not before). It holds: Warm-Up (W1–W5), Practice Set A (A1–A6), Practice Set B (B1–B5), Puzzle of the Week (P1–P6), Think Deeper (T1–T2), Build It (Page 8.3 the 138 cm argument, Page 8.4 sharpen five vague rules, Page 8.5 the envelope), Draw It, and Self-Check. **The workbook does not contain the in-class activity sheets.**
+- [ ] **Prepare the in-class activity sheets yourself on plain paper** (or copy them from the Student Guide, *What We Did In Class*): the ten labelled messages, the tally table and the rulebook frame (both printed in *Break My Rule* below), and a big empty two-by-two grid. The student writes the rulebook on a plain sheet that you **keep for Week 9**.
+- [ ] **Write the five breaker messages on a small card and put it in your pocket** (they are in the Answer Key under *the five breakers*). Same discipline as last week's Fresh Four. If the student reads the five breaker messages before writing their rules, the second half of the lesson is dead.
 - [ ] **Read the five breaker messages out loud once, now, to yourself.** You have to deliver them one at a time with a straight face. Two of them are jokes at the rulebook's expense and you will smile — that's fine, but know which ones they are.
 - [ ] **Write out the ten Week 9 envelope messages on a plain sheet of paper.** They are printed in the Answer Key at the bottom of this file under *The sealed ten*. Fold the sheet. **Do not seal it yet — you seal it in front of the student at the end of the lesson.** Put the folded sheet and an empty envelope in your bag.
 - [ ] **Do the worked example yourself** — the eight ride queue riders, the grid, and the two threshold changes. Ten minutes with a pencil. The threshold-moving bit is the part you must have done by hand.
@@ -234,7 +231,7 @@ They are shelves, not content — do not teach or test them.
 ### 5 minutes on the day
 
 - [ ] Board with room for a 2×2 grid drawn large.
-- [ ] Workbook pages 1–4 out. **Breaker Card in your pocket.**
+- [ ] Plain paper with the ten messages, tally table and rulebook frame ready; the workbook set aside for the Wrap. **Breaker Card in your pocket.**
 - [ ] Folded sheet of ten messages, plus the empty envelope and a signing pen, out of sight.
 - [ ] Last week's rainy-Monday question visible.
 
@@ -515,7 +512,7 @@ Only A (152) and G (158) get on.
 
 Full instructions in the next section. In brief: the student writes a three-rule spam rulebook from ten labelled messages and scores it. Then you read five messages built to defeat it, they run the rulebook mechanically, and everything goes into the grid.
 
-**Do this at minute 40:** hand over Workbook page 1. Breaker Card stays in your pocket.
+**Do this at minute 40:** hand over the sheet with the ten labelled messages and the tally table (your own printout, not the workbook). Breaker Card stays in your pocket.
 
 **Say this:**
 
@@ -569,7 +566,7 @@ Seal it. Both sign across the flap. Put it somewhere visible for a week — on a
 | **first match wins** | Check rules top to bottom; the first one that matches decides |
 | **labelled example** | A piece of data with the correct answer written next to it |
 
-Then assign the homework as written below.
+Then hand over the workbook and assign the homework as written below.
 
 ---
 
@@ -583,9 +580,9 @@ Then assign the homework as written below.
 
 ### Materials
 
-- Workbook Week 8 page 1: ten labelled messages, the tally table, the rulebook frame
-- Workbook Week 8 page 2: the Breaker scorecard and the empty 2×2 grid
-- **The Breaker Card, cut off page 2, in your pocket**
+- Sheet 1 (you prepare it; not in the workbook): ten labelled messages, the tally table, the rulebook frame
+- Sheet 2 (you prepare it): the breaker scorecard and an empty 2×2 grid
+- **The Breaker Card, copied from the Answer Key onto a small card, in your pocket**
 - A pencil
 
 ### Part 1 — Build the rulebook (8 minutes)
@@ -605,7 +602,7 @@ The ten labelled examples they get:
 | 9 | `bring my charger back` | ham |
 | 10 | `practice moved to 4pm` | ham |
 
-**Step 1 — tally, don't guess.** Same discipline as last week. The table on their page has the clues listed and the counting left blank:
+**Step 1 — tally, don't guess.** Same discipline as last week. The table on their sheet has the clues listed and the counting left blank:
 
 | clue | in spam (of 5) | in ham (of 5) | gap |
 |---|---|---|---|
@@ -688,7 +685,7 @@ DEFAULT: OTHERWISE                                     THEN ham
 
 ### Part 3 — Fill the grid and count the two errors (5 minutes)
 
-They fill the 2×2 grid on page 2 with the five breakers. **Announce the flag first: the flag is "spam".**
+They fill the 2×2 grid on sheet 2 with the five breakers. **Announce the flag first: the flag is "spam".**
 
 |  | Rulebook said spam | Rulebook said ham |
 |---|---|---|
@@ -847,24 +844,38 @@ Read these three aloud, one at a time. For each: **false alarm or miss, and who 
 
 ## 📤 Homework to Assign
 
-**Workbook Week 8, pages 3 and 4.**
-**Time: 45–60 minutes across the week.**
+**The Week 8 workbook, start to finish.**
+**Time: 45–60 minutes across the week, plus Think Deeper if they want it.**
+
+The workbook is sectioned, not paged, and the in-class activity is not in it. Suggested split across the week:
+
+| Sitting | Workbook section | What it is | About |
+|---|---|---|---|
+| 1 | **Warm-Up** (W1–W5) and **Practice Set A** (A1–A6) | Last week's ideas, then the vocabulary and the labelled grid | 12 min |
+| 2 | **Practice Set B** (B1–B5) | The parcel grid, Ravi's rulebook, the essay checker, moving a threshold, marking another student's work | 15 min |
+| 3 | **Puzzle of the Week** (P1–P6), **Draw It**, and **Self-Check** | Three thresholds on one parcel belt; one false alarm and one miss, each with a person in it | 10 min |
+| 4 | **Build It**: **Page 8.3** (138 cm, both sides), **Page 8.4** (sharpen five vague rules), **Page 8.5** (the envelope) | The two writing jobs, which carry the week | 20 min |
+| Optional | **Think Deeper** (T1, T2) | Two paragraphs; for a student who wants more | 10+ min |
 
 **Say this:**
 
-> "Two jobs, and they're both writing jobs this week rather than counting jobs.
+> "There's a workbook this week, and most of it is quick: a warm-up on last week, then questions on the two kinds of wrong, a puzzle with parcels, and a drawing. Do those in short bursts across the week.
 >
-> **Page 3 — the 138 centimetre argument, both sides.** You were the one turned away today, so you've got the easy half. I want you to write the ride operator's side *properly* — not a straw man, not a cartoon villain. Their best possible argument, in their words. Then yours. Then one honest sentence: **is there any rule that would have been fair to both of you?**
+> But the part I care about is **Build It**, and those are both writing jobs rather than counting jobs.
+>
+> **Page 8.3 — the 138 centimetre argument, both sides.** You were the one turned away today, so you've got the easy half. I want you to write the ride operator's side *properly* — not a straw man, not a cartoon villain. Their best possible argument, in their words. Then yours. Then one honest sentence: **is there any rule that would have been fair to both of you?**
 >
 > And then the question underneath: **who pays for each choice?** If the sign says 140, who pays? If it says 130, who pays? Name a person each time, not 'people'.
 >
-> **Page 4 — sharpen five vague rules.** Five rules that are useless as written. 'If it looks dodgy.' 'If the student is often late.' Rewrite each one so a computer could run it. Three requirements per rule, and I'll be checking all three:
+> **Page 8.4 — sharpen five vague rules.** Five rules that are useless as written. 'If it looks dodgy.' 'If the student is often late.' Rewrite each one so a computer could run it. Three requirements per rule, and I'll be checking all three:
 >
-> **One**, it must contain a number or an exact match — no adjectives, ever. **Two**, one sentence on where your number came from. 'I made it up, it seemed about right' is a completely honest and acceptable answer, and it's better than pretending. **Three** — and this is the new bit — **give me one edge case your new rule creates.** You know how to find them now: take your threshold and step one either side.
+> **One**, it must contain a number or an exact match — no adjectives, ever. **Two**, one sentence on where your number came from. 'I made it up, it seemed about right' is a completely honest and acceptable answer, and it's better than pretending. **Three** — and this is the new bit — **give me one edge case your new rule creates**, and say whether it's a false alarm or a miss. You know how to find them now: take your threshold and step one either side.
 >
-> That third requirement is the whole homework. Anyone can put a number in a rule. Knowing what your number just did to somebody standing next to it is the part that took us an hour today."
+> That third requirement is the whole homework. Anyone can put a number in a rule. Knowing what your number just did to somebody standing next to it is the part that took us an hour today.
+>
+> And **Page 8.5**: leave the envelope alone. Don't open it, don't hold it up to the light, don't ask anybody what's in it."
 
-**What to check when it comes in:** the operator's argument is genuinely reasonable and not a caricature; both "who pays" answers name a specific person; all five sharpened rules contain a number or an exact match; every number has a stated origin; and every rule has an edge case built by stepping across its own threshold.
+**What to check when it comes in:** Warm-Up and Practice Sets A and B against the key below (the usual slips are named there: a transposed grid, a flag written backwards, "line C" chosen because it has no false alarms with no mention of harm). Puzzle: all three lines score 6 of 8, and the student must say there is no line that gets both errors to zero. Build It: the operator's argument is genuinely reasonable and not a caricature; both "who pays" answers name a specific person; all five sharpened rules contain a number or an exact match; every number has a stated origin; every rule has an edge case built by stepping across its own threshold, labelled false alarm or miss; the envelope is still sealed. Draw It has a person in each panel and the flag word written down. Self-Check is the student's own; read the "explained again" line.
 
 ---
 
@@ -1012,7 +1023,85 @@ Every answer stays the same. Message 4 and 5 already fired on Rule 3; messages 1
 
 The finding to lead a strong student to: **you cannot change an answer by reordering, because every rule in this book outputs the same verdict — spam.** Order only changes answers when rules disagree, and this rulebook contains no rule that says "ham". Ask them to add one — for example `IF contains "?" THEN ham` — and *then* reorder. Put the `?` rule at the top and B3 (`Free period tomorrow?`) flips from spam to ham, fixing a false alarm. Put it at the bottom and nothing changes at all. **Same rule, two positions, one useful and one dead.**
 
-### Workbook Week 8, page 3 — the 138 cm write-up
+### Workbook — Warm-Up (W1–W5, about last week)
+
+**W1.** …**betting on it beats guessing.** "It happens a lot" is not enough; the bar is a comparison, and the student has to work out what guessing scores first.
+
+**W2.** The **condition** (after IF) · the **threshold** (the cut-off number inside the condition) · the **action** (the answer it gives).
+
+**W3.** Monday: 4 ÷ 4 = **100%**. Friday: 1 ÷ 4 = **25%**. **Monday** is stronger, by 75 points. *Watch for:* percentages written the wrong way round (4 ÷ 1).
+
+**W4.** **FALSE.** With no rule firing and no default, the rulebook answers **nothing at all** — not "no". A machine handed no answer stops, or passes nothing on to the next program.
+
+**W5.** **A person made it up, inside a gap.** Rainy days measured 4, 5, 6, 9 mm; dry days 0, 1, 2; nothing measured 3, so any threshold from 3 to 4 fits identically and 3 was picked because it is tidy.
+
+### Workbook — Practice Set A (A1–A6, understand it)
+
+**A1.** **edge case** · **false alarm** · **miss** · **first match wins** · **labelled example**.
+
+**A2.** **(c).** 139 and 141 sit either side of the threshold and there is no real difference between those two people, which is exactly where a rule stops agreeing with reality. (a) 210 cm and (b) 60 cm are both answered correctly, so there is nothing to learn from them. (d) collects opinions, not examples the rule gets wrong. **Edge cases live at the boundary, not at the extremes.**
+
+**A3.** **FALSE.** It depends on who is hurt and how badly. Spam filter: the false alarm is worse (you can never read a message you did not know arrived). Smoke detector: the miss is catastrophically worse. Third, and the best: face unlock, where the false alarm (unlocks for your brother) is worse than the miss (you type your code). Accept any two jobs with a named victim.
+
+**A4.** edge case = **D** · false alarm = **E** · miss = **A** · first match wins = **F** · labelled example = **B** · stand-in = **C**.
+
+**A5.** Column headings: rulebook said **spam** / rulebook said **ham**. Row headings: **truly spam** / **truly ham**. Top-left ✅ **caught it**; top-right ❌ **MISS** (a scam in the inbox); bottom-left ❌ **FALSE ALARM** (a friend's message in the bin); bottom-right ✅ **fine**. **Bonus:** the error cells are top-right (miss) and bottom-left (false alarm).
+*Common mistake:* a **transposed** grid (truth across the top). Fix: write the flag word on the grid first, then read each cell as a full sentence — "truly ham, and the rulebook said spam: that's the friend in the bin."
+
+**A6.**
+
+| The job | The flag |
+|---|---|
+| Spam filter | "this is spam" |
+| Smoke detector | "there is a fire" |
+| The ride's height sign | "refuse this person — they are unsafe" |
+| Your phone's face unlock | "this is the owner" |
+| A shop's security tag | "this person is carrying something unpaid for" |
+| The lateness rule | "phone home — something may be wrong" |
+
+*Why it matters:* get the flag backwards and **false alarms and misses swap places**, so every count, grid and "which is worse" argument after it is inverted. It is the most common mistake of the week. Watch especially for the ride sign: the flag is "refuse", not "allow".
+
+### Workbook — Practice Set B (B1–B5, use it)
+
+**B1 — the parcel rule.** (a) The flag is **"charge extra"**. (b) Caught: **P6, P7, P8** (3) · MISS: **P4** (1) · FALSE ALARM: **P5** (1) · fine: **P1, P2, P3** (3). (c) **6 out of 8**; false alarms **1**; misses **1**. (d) **P4 (4.8 kg) and P5 (5.2 kg)**, **0.4 kg** apart, opposite treatment — and they are also the only two rows the rule gets wrong, because errors cluster at the boundary.
+
+**B2 — Ravi's rulebook.** (a) **Rule 1** (35 characters is 30 or more; first match wins). (b) Answers **spam**; **wrong**, a **false alarm**. (c) Rule 2 **never gets a turn**; it is not outvoted, it is never read. (d) **Move Rule 2 above Rule 1**, changing no wording. (e) It then comes out **ham** (the 52-character scam ends in `?`), which is **wrong**: a **miss**. Every patch is paid for somewhere; re-run the old examples after any change.
+
+**B3 — the essay checker.** (a) **False alarms** (34 of 40 flagged were honest). (b) A **specific honest student**: a formal accusation, a meeting with parents, and she may not be believed because the app sounds objective. (c) "Safe" is doing two jobs: safe for the school, not for honest students; say **safe for whom**. (d) Loosening gives **more misses**; the cost lands on honest students who get the same mark as a cheat, and diffusely on everyone. There is no setting with no victim. *Marking:* a named person, not "students".
+
+**B4 — moving the threshold.**
+
+| The change | False alarms | Misses | Total mistakes |
+|---|---|---|---|
+| Loosen to 60 characters | **fewer** | **more** | about the same |
+| Leave at 30 | baseline | baseline | baseline |
+| Tighten to 15 characters | **more** | **fewer** | about the same |
+
+**The sentence:** you do not get to choose how many mistakes, only which kind. *Watch for:* loosen and tighten reversed; first check they know loosening to 60 flags *fewer* messages.
+
+**B5 — marking the sharpened rule.** Three faults: (1) `looks a bit fuzzy` is still an adjective, not a number (fix: e.g. `IF the image is smaller than 400 x 400 pixels OR more than 60% of pixels are pure black or pure white THEN reject`); (2) "where the number came from" is **blank**, which hides that there is no number (fix: write the origin, or honestly "I made it up"); (3) the edge case does not test the rule's boundary (fix: 401 x 401 accepted against 399 x 399 rejected). **Why the black wall is not an edge case for their rule:** an edge case is an example the rule gets wrong at its boundary, and their rule has no boundary. Once it has a number, the black wall becomes a case where the stand-in itself has failed, which no threshold move can fix. Any three genuine faults earn credit.
+
+### Workbook — Puzzle of the Week: Three Thresholds, One Parcel Belt (P1–P6)
+
+**P1.** Truth: P1 3.1 no · P2 3.9 no · P3 4.4 no · P4 4.8 **YES** · P5 5.2 no · P6 5.6 YES · P7 6.1 YES · P8 6.4 YES.
+
+| Line | Flagged | False alarms | Misses | Score |
+|---|---|---|---|---|
+| **A — 4.0 kg** | P3, P4, P5, P6, P7, P8 | **2** (P3, P5) | **0** | **6 of 8** |
+| **B — 5.0 kg** | P5, P6, P7, P8 | **1** (P5) | **1** (P4) | **6 of 8** |
+| **C — 6.0 kg** | P7, P8 | **0** | **2** (P4, P6) | **6 of 8** |
+
+**P2.** **Line A** (zero misses). **P3.** **Line C** (zero false alarms). **P4.** **All three tie at 6 of 8**: the score cannot choose for you.
+**P5.** Must argue about **harm**, not score. Strongest case is line A: a false alarm costs the driver ten seconds, a miss means somebody lifts 4.8 kg unwarned and hurts their back. A good answer for line C also exists if it names its cost (drivers stop reading warnings that are usually wrong). A bare "A" or "C" earns nothing.
+**P6.** **No line works.** To catch P4 (4.8, YES) the line must be at 4.8 or lower, but that also flags P5 (5.2, no), so the two are the wrong way round for any single cut. There is no right number; weight is a stand-in, and separating them needs a different measurement.
+
+### Workbook — Think Deeper (T1, T2; optional, marked by the points below)
+
+**T1** — full credit needs: a way to **find out** which error was chosen (count real messages in your own junk folder); noticing **other people share the setting** and were not asked; the point that **you cannot see a false alarm**; and some real difficulty with "let everybody choose" (most never open the setting, so the default decides for almost everyone).
+
+**T2** — full credit needs: the **test versus attack** distinction (a test is chosen before anyone saw the rules, an attack after); that the attack is realistic because **scammers do it for a living**; and an honest admission that a fair five would have scored higher (around 4 of 5) and taught less, because most messages are nowhere near the boundary.
+
+### Workbook — Build It, Page 8.3 — the 138 cm write-up
 
 **The ride operator's best argument** (full credit needs it to be genuinely reasonable):
 
@@ -1033,7 +1122,7 @@ The finding to lead a strong student to: **you cannot change an answer by reorde
 
 **The marking point:** naming a *specific person* both times. "People who are too short" earns half credit. And the strongest answers notice the asymmetry — one cost is small, frequent and visible; the other is rare, severe and hidden. **That asymmetry is exactly why safety rules are set tight.**
 
-### Workbook Week 8, page 4 — sharpen five vague rules
+### Workbook — Build It, Page 8.4 — sharpen five vague rules
 
 Each answer needs three parts: the sharpened rule, where the number came from, and one edge case.
 
@@ -1059,7 +1148,7 @@ Each answer needs three parts: the sharpened rule, where the number came from, a
 
 > **Sharpened:** `IF weight_kg >= 5 THEN charge extra`
 > **Where the numbers came from:** the courier's own van-loading guidance says one person shouldn't repeatedly lift more than 5 kg. Not invented — looked up. Say so.
-> **Edge case:** a 4.9 kg parcel goes free and a 5.0 kg parcel costs more. The two parcels are identical to anybody carrying them. **A pure boundary edge case, found by stepping either side.**
+> **Edge case:** a 4.9 kg parcel goes free and a 5.0 kg parcel costs more. The two parcels are identical to anybody carrying them. **A pure boundary edge case, found by stepping either side.** (Strictly, the 5.0 kg parcel is the false alarm: charged when it did not need to be.)
 
 **(e) `IF the video is too long THEN don't watch it`**
 
@@ -1067,7 +1156,22 @@ Each answer needs three parts: the sharpened rule, where the number came from, a
 > **Where the numbers came from:** both made up, honestly — 20 minutes is about one episode and 40 leaves time to clean your teeth. A different person would pick different numbers and would not be wrong.
 > **Edge case:** a 21-minute video with 45 minutes until bedtime is allowed; a 19-minute video with 35 minutes left is also allowed; but a 21-minute video with 39 minutes left is banned. **Two thresholds means edge cases along two different edges**, and spotting that is the best possible answer on this page.
 
-**General marking rule for page 4:** no adjectives anywhere; every rule contains a number or an exact match; every number has a stated origin (and "I made it up" is honest and acceptable); every edge case is built by crossing the rule's own threshold, not by inventing an unrelated weird case.
+**The last question — which rule has two thresholds?** **(e)**, with `20` and `40` ((a) has two conditions but only one number). Two thresholds give the rule **two separate edges**, so cases can sit near either or both: more thresholds means more edges, not fewer. That is the first hint of Week 10.
+
+**General marking rule for Page 8.4:** no adjectives anywhere; every rule contains a number or an exact match; every number has a stated origin (and "I made it up" is honest and acceptable); every edge case is built by crossing the rule's own threshold, not by inventing an unrelated weird case.
+
+
+### Workbook — Build It, Page 8.5 — the envelope
+
+All three boxes ticked (sealed, not opened or held to the light, rulebook unchanged). A good sentence: "If I look at those ten messages, I might change my rules to fit them without even meaning to — and then scoring my rulebook on them wouldn't measure anything, because they'd have helped build it."
+
+### Workbook — Draw It
+
+No single right drawing. A strong answer has a **person in each panel** (the two errors differ only because different people pay), **the flag word** written somewhere, **something the person cannot see** in the false-alarm panel, and a third box with a **cost that hurts** ("more scams reach Nani", not "a bit worse"). If the two panels could be swapped without loss, they have drawn "wrong" twice; send them back to put a different person in each.
+
+### Workbook — Self-Check
+
+Not marked. The student ticks their own confidence on seven "I can…" lines and writes one thing they want explained again. Read that line, and use any 😕 as next week's starting point.
 
 ### The sealed ten
 

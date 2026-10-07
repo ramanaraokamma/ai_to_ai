@@ -12,7 +12,7 @@
 | **Type** | 🟦 teach — one new word, one new tool, both built by hand |
 | **Big idea** | A model that scores 100% on its own photos and 40% on new ones did not learn the object — it learned the photos. |
 | **New vocabulary** | overfitting · confusion matrix · diagonal · off-diagonal cell |
-| **Materials** | **Last week's marked Handout 20A** (the 15-row sheet) · a **ruler** · plain paper · a **green** pen or highlighter · a red pen · Handout 21A (the pen/pencil/marker sheet, for homework) |
+| **Materials** | **Last week's marked Handout 20A** (the 15-row sheet) · a **ruler** · plain paper · a **green** pen or highlighter · a red pen · the student's **Week 21 workbook** (its Build It Page 21.1 carries the pen/pencil/marker sheet, Handout 21A, for homework) |
 | **Tech needed** | **None.** Third week running with no computer — and the last one for a while. |
 | **Prep time** | 15 minutes the night before, 5 minutes on the day |
 
@@ -273,8 +273,9 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
       now saves a wonky grid in front of the student.
 - [ ] **Fill your own copy in from the sheet**, all fifteen tally marks, and check the diagonal comes to
       11. If you have done it once you will spot the student's mis-tally instantly.
-- [ ] **Print Handout 21A** — the pen / pencil / marker fifteen-row sheet, with the "correct?" column
-      blank. This is the homework. Data in §K4.
+- [ ] **Print the Week 21 workbook.** Its **Build It → Page 21.1** already carries Handout 21A — the
+      pen / pencil / marker fifteen-row sheet with the "correct?" column blank — so no separate print is
+      needed. This is the homework. The same data is in §K4.
 - [ ] **Find a green pen or highlighter** for the diagonal, and a red one for the worst cell. Two
       colours; that is all the lesson needs.
 - [ ] **Have the Week 18 sabotage table on the table too.** You will point at the one-background row
@@ -284,7 +285,7 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
 
 - [ ] Handout 20A, marked, flat on the table
 - [ ] Plain paper, ruler, pen, green pen, red pen
-- [ ] Handout 21A face down (it goes home, not out in the lesson)
+- [ ] The Week 21 workbook (with Handout 21A on Build It Page 21.1) face down (it goes home, not out in the lesson)
 - [ ] Board or big sheet with room for the empty grid and four lines of arithmetic
 - [ ] The Week 19 envelope in sight and untouched. One more week.
 
@@ -295,7 +296,7 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
 | **Last week's sheet is lost** | Reprint from §K1 and mark it yourself before class. Losing the student's own marks costs about four minutes of ownership and nothing else. |
 | **No ruler** | The edge of a book. A hand-drawn wobbly grid works exactly as well; the labels are what matter, not the straightness. |
 | **The student cannot get the grid to balance** | Do it as a physical tally: fifteen small paper squares, one per sheet row, physically placed into nine drawn boxes. Then count the piles. It is slower and it never goes wrong. |
-| **No printer for Handout 21A** | Read the fifteen rows out loud and have them write it down as a warm-up next week, or dictate it as the first five minutes of homework. The data is in §K4. |
+| **No printer for the workbook / Handout 21A** | Read the fifteen rows out loud and have them write them down as a warm-up next week, or dictate them as the first five minutes of homework. The data is in §K4; the workbook's Page 21.1 has it too. |
 | **You are short of time** | Cut the column reading and the prediction. Never cut the diagonal check or the sentence-out-loud step. |
 
 ---
@@ -937,35 +938,48 @@ big idea, and the grid can be a Week 22 warm-up.
 
 ## 📤 Homework to Assign
 
-**Workbook:** Week 21, pages 1–3. **Time: about 50 minutes.**
+**Workbook:** Week 21 — all sections (Warm-Up, Practice Set A, Practice Set B, Puzzle of the Week, Think
+Deeper, Build It, Draw It, Self-Check). **The marked core is Build It, Pages 21.1–21.3: about 50
+minutes.** The other sections are the rest of the week's practice, done across the days before Week 22.
 
 **Say this, word for word:**
 
 > "This is somebody else's model again — the last time, I promise. It's a **pen, pencil and marker**
 > classifier, and it's a fifteen-row sheet exactly like the one we did today. Handout 21A."
 >
-> "Page one: mark the fifteen rows, then overall accuracy three ways with the division shown, then
+> "Build It, Page 21.1: mark the fifteen rows, then overall accuracy three ways with the division shown, then
 > per-class accuracy for all three classes. Exactly what you did last week — you should be quick at it
 > now."
 >
-> "Page two: draw its confusion matrix. Ruler. Labels first — truth down the side, said across the top.
+> "Page 21.2: draw its confusion matrix. Ruler. Labels first — truth down the side, said across the top.
 > Row totals, column totals, and **both checks written down**, not just done in your head."
 >
-> "Page three, and this is the marked bit: **three sentences naming what got confused with what.** In
+> "Page 21.3, and this is the marked bit: **three sentences naming what got confused with what.** In
 > the shape 'two markers were called pen.' Then one sentence — one — saying what you'd go and look at
 > first. Not 'more photos'. Which photos, of what, and why."
 >
-> "And write down your prediction for your own model. Which cell will be worst next week? You've got a
-> week to think about it and you can't change it after Wednesday."
+> "And write down your prediction for your own model, at the bottom of Page 21.3. Which cell will be
+> worst next week? You've got a week to think about it and you can't change it after Wednesday. Then
+> the rest of the workbook — Warm-Up, the two practice sets, the puzzle, Think Deeper — through the
+> week, and Draw It last, because it uses your prediction."
 
 **Check before they leave:** ask them to say the labels out loud — "truth down the side, said across the
-top." If that comes back without hesitation, page 2 will be fine.
+top." If that comes back without hesitation, Page 21.2 will be fine.
 
-| Page | Task | Approx. time |
+| Workbook section | Task | Approx. time |
 |---|---|---|
-| 1 | Mark Handout 21A; overall accuracy three ways; per-class accuracy | 20 min |
-| 2 | The confusion matrix, ruled and labelled, with row totals, column totals and both checks | 15 min |
-| 3 | Three "what got confused with what" sentences, one investigate-first sentence, and the prediction for their own model | 15 min |
+| ✅ Warm-Up (W1–W5) | Five questions on last week: accuracy formula, 18/24 three ways, why fraction first, percentage points, the 70% model with a 20% class | 5 min (as printed) |
+| ✍️ Practice Set A (A1–A6) | Fill-ins, gap comparison, true/false, matching, label the diagram, explain overfitting | 15 min |
+| ✍️ Practice Set B (B1–B5) | Cup/bowl/plate grid, the transposed-grid trap, the "100% accurate" report, reading columns, symmetric or not | 20 min |
+| 🧩 Puzzle of the Week | Cat/dog/fox grid with four missing cells, plus four questions | 15 min |
+| 🤔 Think Deeper (T1–T2) | What the checks are for; what per-class accuracy can and cannot tell you | 10 min |
+| 🛠️ Build It, Page 21.1 | Mark Handout 21A; overall accuracy three ways; per-class accuracy; both checks | 20 min |
+| 🛠️ Build It, Page 21.2 | The confusion matrix, ruled and labelled, with row totals, column totals and both checks | 15 min |
+| 🛠️ Build It, Page 21.3 | Three "what got confused with what" sentences, one investigate-first sentence, and the prediction for their own model | 15 min |
+| 🎨 Draw It | Their own labelled grid, drawn from the Page 21.3 prediction | 10 min |
+| 📊 Self-Check | Tick the seven "I can..." rows | 2 min |
+
+The times outside Build It are estimates; only Build It's 50 minutes comes from the earlier plan.
 
 ---
 
@@ -1077,7 +1091,168 @@ A pen / pencil / marker classifier, 15 held-out photos, 5 per class.
 | 14 | marker | marker | 68% | Y |
 | 15 | marker | **pen** | 52% | N |
 
-### K5 — Workbook page 1: scoring Handout 21A
+### K5 — Workbook ✅ Warm-Up (W1–W5)
+
+**W1.** Accuracy = the number of **correct** guesses ÷ the **total** number of guesses.
+
+**W2.**
+```text
+   fraction:   18/24   (= 3/4)
+   decimal:    24 × 0.75 = 18 exactly  →  0.7500
+   percentage: 75.0%
+```
+
+**W3.** The fraction is the only one of the three forms that says **how many tries there were.** 75%
+could be 3 out of 4 or 300 out of 400 — very different amounts of evidence — but once converted they look
+identical.
+
+**W4.** "My model is **35 percentage points** better than guessing." Both words matter; "35 percent better"
+would mean something different and much smaller.
+
+**W5.** The **20% class.** With three roughly equal classes the baseline is 33.3%, so on that class the
+model is **13.3 percentage points *worse* than guessing.** First action: look at that class's training
+photos, count them, and check whether they were all taken in the same place.
+
+### K6 — Workbook ✍️ Practice Set A (A1–A6)
+
+**A1.** **generalizing** · **memorizing** · **overfitting** · **diagonal**
+
+**A2.** **(b) training 100%, test 96%.** Gaps:
+
+```text
+   (a) 100 - 40 = 60 pts       (b) 100 - 96 =  4 pts
+   (c)  55 - 52 =  3 pts       (d)  82 - 74 =  8 pts
+```
+
+(b) and (c) have almost the same gap (4 and 3 points) and are nowhere near equally good: (b) gets 96% on
+unseen photos; (c) gets 52%, barely 19 points above the 33.3% baseline — a tiny gap because it never
+learned much. **Read the gap AND the level together.** A student who circles (d) has a defensible,
+honest-model answer worth hearing, but (b) wins on both counts.
+
+**A3.** **FALSE.** The proving row is **55% training / 52% test**: a 3-point gap and a useless model. A
+small gap only means not much memorising happened — also true of a model that learned nothing.
+
+**A4.** **1 → (c)** · **2 → (d)** · **3 → (a)** · **4 → (b)**
+
+**A5.** Across the top: **what the model said** (predicted class / SAID). Down the side: **the truth**
+(true class / TRUTH). The three shaded corner-to-corner cells: **the diagonal**. The pink cell: **an
+off-diagonal cell**, read as **"Two combs were called toothbrush."** Checks written under the grid:
+
+```text
+   diagonal =  5 + 4 + 2  =  11        ✓ matches the correct count
+   all cells = 5+0+0 + 0+4+1 + 1+2+2 = 15    ✓ matches the number of photos
+```
+
+**A6.** "It learned the photos, not the object." Also fine: "it memorised the pictures instead of the
+thing in them", "it learned the background instead of the object". **Not enough:** "it's when it does
+badly on new stuff" — that is the symptom, not the mechanism (ask *why* it does badly). Any honest
+life example works (memorised spellings and forgot them; learned one route and got lost when a shop
+closed; learned a boss's pattern and died in the sequel).
+
+### K7 — Workbook ✍️ Practice Set B (B1–B5)
+
+**B1.**
+
+| | said cup | said bowl | said plate | row total |
+|---|:--:|:--:|:--:|:--:|
+| **true cup** | 5 | 1 | 0 | **6** |
+| **true bowl** | 0 | 4 | **2** | 6 |
+| **true plate** | 1 | **2** | 3 | 6 |
+| **total said** | **6** | **7** | **5** | **18** |
+
+```text
+   diagonal = 5 + 4 + 3 = 12
+   all nine cells add to 18        ✓ same as the number of photos
+   overall accuracy = 12 / 18 = 0.6667 = 66.7%
+   (18 × 0.6 = 10.8;  12 − 10.8 = 1.2;  1.2 ÷ 18 = 0.0667;  0.6 + 0.0667 = 0.6667)
+```
+
+The biggest off-diagonal cell is a **tie at 2**: "Two bowls were called plate, and two plates were
+called bowl." The tie means the confusion is symmetric — the two just look alike to the model.
+
+**B2.** Both checks pass because **the diagonal is identical whichever way round the grid is drawn**, and
+transposing adds or loses no marks, so the total is still 15. Catch it by **reading a cell aloud as a
+sentence** and noticing it describes something that did not happen. Prevent it by writing `TRUTH` down the
+left and `SAID` across the top **before any number goes in**.
+
+**B3.** True: it really did get 100% of its *training* photos right. Wrong: those are the photos it
+studied, so 100% there cannot tell a brilliant model from a memorising one. She is at risk of being
+**Ben**, and nobody can tell yet because on the practice sheet Aisha and Ben looked identical. She needs
+a test score on unseen photos, then the gap.
+
+**B4.**
+```text
+   said bat:  8 times, though only 5 bats existed   →  OVER-EAGER about bat
+   said ball: 2 times, though 5 balls existed       →  RELUCTANT about ball
+```
+Reluctant usually means that class had **too few training photos, or they were all too similar** — the
+model has partly stopped believing the class exists. That differs from "bad at balls", where its ball
+guesses would be scattered rather than almost absent.
+
+**B5.**
+```text
+   true ball → said bat:   3        true bat → said ball:   0
+   true bat → said stumps: 1        true stumps → said bat: 1
+```
+The lopsided pair is **ball / bat** (bat / stumps is symmetric at 1 and 1). Objects that merely look alike
+give **roughly equal** confusion both ways. Lopsided confusion points at the **class itself** — too few
+or too samey ball photos, so `bat` became the comfortable default when unsure.
+
+### K8 — Workbook 🧩 Puzzle of the Week
+
+| | said cat | said dog | said fox | row total |
+|---|:--:|:--:|:--:|:--:|
+| **true cat** | 7 | **2** | 1 | 10 |
+| **true dog** | **2** | 6 | 2 | 10 |
+| **true fox** | 3 | **3** | **4** | 10 |
+| **total said** | 12 | 11 | 7 | 30 |
+
+**First cell, and how they knew:** either of the top two rows, because each has only one gap and every
+row adds to 10 (cat: 10 − 7 − 1 = 2; dog: 10 − 6 − 2 = 2). The fox row has two gaps, so use the columns:
+said dog 11 − 2 − 6 = 3; said fox 7 − 1 − 2 = 4; fox row 3 + 3 + 4 = 10 ✓; diagonal 7 + 6 + 4 = 17 ✓ (the
+given number).
+
+**(a)**
+```text
+   fraction:   17 / 30
+   decimal:    30 × 0.5 = 15;   17 − 15 = 2;   2 ÷ 30 = 0.0667;   0.5 + 0.0667 = 0.5667
+   percentage: 56.7%
+   baseline = 33.3%  →  beats the baseline by 23.4 percentage points
+```
+
+**(b)**
+```text
+   cat  7 / 10 = 70.0%     dog  6 / 10 = 60.0%     fox  4 / 10 = 40.0%   ← worst class
+```
+
+**(c)** The catch: a **tie at 3** — "Three foxes were called cat, and three foxes were called dog." Both
+biggest mistakes are in the fox row: the model is failing on foxes generally and scattering them. One
+sentence alone is a correct sentence, but the pattern is the point: look for a tie before circling.
+
+**(d)**
+```text
+   cat → dog 2 vs dog → cat 2   symmetric
+   cat → fox 1 vs fox → cat 3   lopsided
+   dog → fox 2 vs fox → dog 3   mildly lopsided
+```
+The traffic runs **away from fox**: it said `fox` only 7 times though 10 foxes existed (reluctant), and
+`cat` 12 times against 10 real cats. Diagnosis: foxes are being lost, mostly to cat; count the fox
+training photos first.
+
+### K9 — Workbook 🤔 Think Deeper (T1–T2)
+
+**T1.** The checks catch **bookkeeping** errors (a mark in the wrong box, a row tallied twice or missed).
+They cannot catch a **set-up** error such as a transposed grid, because the arithmetic stays consistent
+about the wrong thing. A passing check means "nothing I was checking for went wrong", not "nothing went
+wrong": checks are necessary but not sufficient. So pair arithmetic checks with **reading the answer aloud
+as a real-world sentence**, which catches nonsense no sum can.
+
+**T2.** Per-class accuracy *is* the diagonal in percentage form (100%, 80%, 40% of 5 → 5, 4, 2), so the
+diagonal is deducible. It says **how many** a class got wrong but not **where they went** ("3 wrong" could
+be 3 to one class or 2 and 1), so the mistakes are not deducible. Per-class accuracy tells you **which
+class is broken**, not **what it is broken against** — the confusion matrix supplies the directions.
+
+### K10 — Workbook 🛠️ Build It, Page 21.1: scoring Handout 21A
 
 **Correct rows:** 1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 14 → **11 correct out of 15**.
 
@@ -1108,7 +1283,7 @@ Checks: 4 + 4 + 3 = 11 ✓ · 5 + 5 + 5 = 15 ✓
 > notices this unprompted, it is the best possible answer on the page. If they don't, point it out when
 > you mark it: it is the whole argument for per-class numbers in a single comparison.
 
-### K6 — Workbook page 2: the confusion matrix for Handout 21A
+### K11 — Workbook 🛠️ Build It, Page 21.2: the confusion matrix for Handout 21A
 
 | | **said pen** | **said pencil** | **said marker** | row total |
 |---|:--:|:--:|:--:|:--:|
@@ -1117,13 +1292,13 @@ Checks: 4 + 4 + 3 = 11 ✓ · 5 + 5 + 5 = 15 ✓
 | **true marker** | 2 | 0 | **3** | 5 |
 | **total said** | 7 | 4 | 4 | **15** |
 
-**Checks:** diagonal 4 + 4 + 3 = **11** ✓ matches the correct count · all cells = **15** ✓ · column
+**Checks:** diagonal 4 + 4 + 3 = **11** ✓ matches the correct count from Page 21.1 · all cells = **15** ✓ · column
 totals 7 + 4 + 4 = 15 ✓
 
 **Reading down the columns:** it said `pen` **7** times when only 5 pens existed — the model is
 over-eager about pen. It said `pencil` 4 times and `marker` 4 times against 5 of each.
 
-### K7 — Workbook page 3: the sentences
+### K12 — Workbook 🛠️ Build It, Page 21.3: the sentences
 
 **The three sentences (model answers):**
 
@@ -1165,6 +1340,21 @@ the question: *"look at what, exactly?"*
 
 That second one is a superb answer, because it traces a prediction about a grid back to a decision they
 made with a camera. Say so.
+
+### K13 — Workbook 🎨 Draw It
+
+A good drawing has six things: (1) `TRUTH` down the left and `SAID` across the top, **written before any
+numbers**; (2) their three real class names on both axes; (3) nine numbers that **add to 15**; (4) a
+diagonal whose sum **matches** the correct count they predicted, with the sum written **outside** the
+grid; (5) the diagonal shaded green and the biggest off-diagonal cell circled red; (6) two or three
+sentences beside it in the shape "two ___s were called ___." **The one thing that must be right is the
+labels** — if `TRUTH` ends up across the top, every sentence describes an event that never happened and
+neither check warns you.
+
+### K14 — Workbook 📊 Self-Check
+
+No answers; it is their own tick-box. Any 😕 "not yet" on the grid-building or the both-checks row is
+what to revisit at the start of Week 22.
 
 ---
 

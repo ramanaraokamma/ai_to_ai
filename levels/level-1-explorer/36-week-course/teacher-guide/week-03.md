@@ -572,7 +572,7 @@ Tell me about the 1987 Australian film "The Glass Kangaroo of Wollongong",
 including its director and how it was received.
 ```
 
-**Then read the answer aloud** and have the student fill in the four-row table in the workbook.
+**Then read the answer aloud** and have the student fill in the four-row table on a sheet of paper (it is not in the workbook).
 
 **Ask this:**
 
@@ -928,7 +928,8 @@ and use a restaurant. *"Here's a menu with four things on it. Point at one."* �
 menu with two things on it. A chatbot has no menu."*
 
 **Simplify the board:** ten notes, two columns, no zone requirement. Ten sorted notes with real
-reasons beats fifteen guessed ones every time.
+reasons beats fifteen guessed ones every time. (Workbook Page 3.4 has fifteen rows — tell them to
+fill ten and leave the rest blank, and skip its zone and count-up lines.)
 
 ### If they are flying
 
@@ -1003,19 +1004,28 @@ wolf."* Not-yet answer: *"…is nearly certain it's right"* or *"…will be righ
 
 ## 📤 Homework to Assign
 
-**Workbook pages: Week 3, sections W3.1 – W3.3.** About 55 minutes. This is the biggest homework of
-the term so far — say that out loud so it isn't a surprise.
+**Workbook: Week 3.** The workbook's sections, in order: **✅ Warm-Up** (W1–W5) · **Practice Set A**
+(A1–A6) · **Practice Set B** (B1–B5) · **🧩 Puzzle of the Week** (P1–P4) · **🤔 Think Deeper**
+(T1–T2) · **🛠️ Build It** (**Page 3.4** Spotter's Log, **Page 3.5** three defences, **Page 3.6**
+interview an adult) · **🎨 Draw It** · **📊 Self-Check**. Nothing in the workbook is done in class —
+the lesson uses all 70 minutes.
+
+**The split:** **Build It (Pages 3.4–3.6) is the assignment** — about 55 minutes, and the biggest
+homework of the term so far, so say that out loud so it isn't a surprise. The rest (Warm-Up, Practice
+Sets A and B, Puzzle, Think Deeper, Draw It, Self-Check) is the rest of the week's workbook: set it
+in short sittings across the week, Warm-Up and Draw It first. If the week is tight, protect Build It
+and let the others slip a day. The Warm-Up covers *last* week, so it works as a cold retrieval check.
 
 **Say this:**
 
 > "Three things.
 >
-> **One — finish the Spotter's Log.** Fifteen rows in the workbook, one per system, each sorted into
+> **One — finish the Spotter's Log.** Page 3.4 of the workbook, fifteen rows, one per system, each sorted into
 > rules, learned or generating. You've got them all on sticky notes already, so this is mostly
 > copying — except each row also needs a **one-line reason**. Every reason has to mention either 'a
 > person wrote the steps' or 'it must have learned it from examples'.
 >
-> **Two — defend your three hard calls.** These are the three you moved into the DEFEND column. One
+> **Two — defend your three hard calls.** Page 3.5. These are the three you moved into the DEFEND column. One
 > paragraph each, at least five sentences, and every paragraph must contain all four of these:
 >
 > 1. What made it hard to classify.
@@ -1026,19 +1036,24 @@ the term so far — say that out loud so it isn't a surprise.
 > Number four is the one everyone skips and it's the most valuable. 'I'd need to know whether the
 > doorbell can tell a person from a cat' is a real, answerable question. Write real ones.
 >
-> There's a model defence in the workbook. Read it before you start. Copy its shape, not its words.
+> There's a model defence at the top of Page 3.5. Read it before you start. Copy its shape, not its words.
 >
-> **Three — go and interview an adult.** Ask any adult: *what is AI?* Write down **exactly** what they
+> **Three — go and interview an adult.** Page 3.6. Ask any adult: *what is AI?* Write down **exactly** what they
 > said, word for word, even if it's short, even if it's wrong. Then rewrite it honestly underneath —
 > same rules as last week, no magic words.
 >
+> The other sections of the workbook — Warm-Up, the two practice sets, the puzzle, Think Deeper, Draw
+> It and the Self-Check — are for the rest of the week; start with the Warm-Up and Draw It.
+>
 > Step one, now: name your three DEFEND notes out loud without looking at the board."
 
-**Marking notes:** the defences are the whole assignment. Mark them and be relaxed about the fifteen
+**Marking notes:** within Build It, the defences are the whole assignment. Mark them and be relaxed about the fifteen
 rows. A defence missing point 4 is incomplete — hand it back and ask only for point 4. On the adult
-interview, be gentle: most adults say something with "robots" or "smart" in it, and the student
+interview (Page 3.6), be gentle: most adults say something with "robots" or "smart" in it, and the student
 noticing that is the entire exercise. Do not let it become "the adult was stupid" — the honest frame
-is *"this is what almost everyone thinks, including me three weeks ago."*
+is *"this is what almost everyone thinks, including me three weeks ago."* Mark the other sections
+against **Workbook answers** below — Practice Set A items A3 and A6(d) are the ones that show whether
+the confidence-score idea landed.
 
 ---
 
@@ -1225,33 +1240,165 @@ outside it — and being confident is not the same as being right."*
 
 ### Workbook answers
 
-**W3.1 — The fifteen-row Spotter's Log**
+The workbook's own **✅ Answers** section at the end is the student-facing version of everything
+below. This is the same material, in workbook order, with the teacher-only additions: where the
+wrong answers come from, and how to mark. Section and item names are the workbook's own — **Warm-Up
+(W1–W5) · Practice Set A (A1–A6) · Practice Set B (B1–B5) · Puzzle of the Week (P1–P4) · Think Deeper
+(T1–T2) · Build It (Pages 3.4, 3.5, 3.6) · Draw It · Self-Check.**
 
-Marked against six criteria. Tick each:
+#### Warm-Up (last week's ideas)
+
+| Item | Answer | Watch for |
+|---|---|---|
+| **W1** Who writes the rule in ML? | **Nobody.** A person collected examples and wrote labels; a program found the rule. | "The programmer." That is Week 1's rule-based answer. Ask: *"who typed the rule?"* |
+| **W2** The two halves of an example | **The thing** (input) and **the label** (the correct answer, attached by a person before training). | "Question and answer" is fine in spirit; push for *label*. |
+| **W3** Examples stored in the model? | **FALSE.** They are gone; what is left is a rule. The mango cards were in a pocket when the test cards were answered. | Circling TRUE with "it remembers them". |
+| **W4** 4 out of 8 is the same as…? | **Exactly the same as flipping a coin** (50%, pure guessing on a two-way choice), so colour carried no information. | "Half right" is true but incomplete — ask what 50% means on a two-way choice. |
+| **W5** Where do mistakes come from? | **The examples it was given** (accept: *the examples and the labels people wrote*). | "The computer glitched." |
+
+#### Practice Set A — Understand It
+
+**A1.** content · list · one · blank · AGI · not · prefers · promise.
+
+**A2.** Circle **(b) chatbot poem** and **(d) image maker** for certain. **(f) the keyboard bar is
+genuinely arguable** — full marks either way *if the reason is given* (it produces words, but only
+ever shows three, which looks like a menu). That argument is the model defence on **Page 3.5**. For
+the "one you did not circle" line, the counts are: **(a)** spam folder = **2** · **(c)** face unlock =
+**2** · **(e)** music autoplay = a huge but **fixed list of songs that already exist** (it composed
+nothing).
+
+**A3. (a) FALSE.** 96% means *"wolf is the answer I'm leaning towards hardest"* — the biggest number
+in a list that adds to 100, not a hit rate. Models are most confidently wrong on inputs unlike
+anything they trained on. **(b) FALSE.** Generative AI is **inside** machine learning, not beside it:
+a chatbot learned from examples exactly as a spam filter did, and only the output shape differs.
+
+**A4.** 1 → **C** (10) · 2 → **A** (2) · 3 → **B** (5) · 4 → **D** · 5 → **E**. D and E are
+interchangeable — both are blank pages, and noticing that is the point.
+
+**A5.** Line 1 = **artificial intelligence** (big outer box) · line 2 = **rule-based** · line 3 =
+**machine learning** · line 4 = **generative AI** (small box inside machine learning). Example lines:
+rule-based → thermostat, alarm clock, school bell, vending machine; machine learning → spam filter,
+face unlock, translate, photo search; generative → chatbot, image maker.
+**(a)** Generative AI **is a kind of** machine learning, not a rival to it; its only difference is a
+blank-page output instead of a fixed list. **(b)** **Machine learning** — not the generative box,
+because face unlock has exactly two possible answers.
+
+**A6. (a)** **Circle.** **(b) NO** — it was not hedging; it was confident about *circle* out loud, then
+more strokes changed its top answer. Confidence moves, and at every moment sounds certain.
+**(c)** **100**, and **not a coincidence**: the model spreads its preference across every option on its
+menu, so the numbers always total 100. **(d)** *"94% means the model **prefers dog more strongly than
+anything else on its list**."* Reject *"nearly certainly right"* and *"right 94 times in 100"*.
+**(e)** **No, it was not broken.** It gave every option a number and handed back the biggest; *fox*
+was on the list and scored 4. Nothing in the machine compares its answer to reality.
+
+**Marking Set A:** A3 and A6(d) are the two items that show whether objective 3 landed. Hand back any
+answer that reads a confidence score as a probability of being right — it is the misconception the
+whole week targets.
+
+#### Practice Set B — Use It
+
+**B1. (a)** It says **cat** or **dog** with a confidence score, something like *"dog, 71%"* — the only
+two things it can say. **(b) No**, it will not warn anybody: its whole menu is two items, so there is
+no option for *"that's outside my world"*. **(c)** **Today's AI cannot reliably know when it doesn't
+know.**
+
+**B2. (a)** Invented sources: real-sounding titles, authors, page numbers and website names that do
+not exist. **(b) Yes, extremely convincing** — it looks **exactly like** a real bibliography, because
+the machine's job is text of the right *shape* and shaped-right is not the same as true. **(c)** Two
+steps: **1.** search for each title and author, one at a time — a real book leaves more than one
+trace; **2.** ask whether you can actually find and open the thing — if you cannot reach the page you
+cannot cite it. Asking the chatbot "are these real?" is **not** a check.
+
+**B3.**
+
+| Test | Good proof? | Why |
+|---|---|---|
+| "Make me a sandwich" | **No** | Miles from the job; nobody claimed it could, so failing proves nothing. |
+| "Is the sentence it just translated polite?" | **Yes** | One small step sideways, about the same sentence it just handled, easy for a person — so the failure marks the edge. |
+
+The student's own test varies. Good ones: ask what the sentence *means*; ask whether it is *true*; ask
+it to translate a **photo** of a sign; ask whether it would be rude to say to a teacher. Mark that the
+test is one step sideways, the expectation is stated, and the "what it would prove" line is honest.
+
+**B4.**
+
+| System | How many | Kind |
+|---|---|---|
+| Smart speaker, wake word? | **2** (yes / no) | picking |
+| Chatbot birthday message | **can't be counted** | **generating** |
+| School register, present/absent from a face | **2** | picking |
+| Weather app icon | **4** (sunny, cloudy, rain, snow) | picking |
+
+**B5.** **Part 1** — *notices that something moved and starts recording.* Family **rules**: it is
+`IF the pixels change THEN record`, a line somebody wrote, and it fires for a moth, a shadow or a car.
+**Part 2** — *decides "that's a person, not a cat"* (on some doorbells, "a parcel"). Family
+**learned**: nobody can write if-then rules over camera pixels for every person in every coat and
+light. **The fact to look up:** does the app actually **distinguish people from animals** in the
+alerts it sends? If it says "person at your door" rather than just "movement", the learned part is
+confirmed.
+
+#### Puzzle of the Week
+
+**P1.**
+
+| # | System | How many | Kind |
+|:--:|---|:--:|---|
+| 1 | Spam folder | **2** | picking |
+| 2 | Digit reader | **10** | picking |
+| 3 | Chatbot bedtime story | **can't be counted** | **generating** |
+| 4 | Animal tagger | **5** | picking |
+| 5 | Image maker | **can't be counted** | **generating** |
+| 6 | Face-check register | **2** | picking |
+
+**P2.** **Numbers 3 and 5.** They have **no list**: both can produce something that never existed
+before, so there is nothing to count. **P3.** **NO.** A hundred million is enormous and still a
+**list** — every song already existed and a human recorded it. *Big list, still a list.* **P4.**
+Answers vary. Full marks for **any** system with a genuine argument on **both** sides; a one-sided
+answer missed the point. Three that work: keyboard suggestion bar (3 options = a menu / produces words
+no list contains) · photo "auto-enhance" (picks a preset / the picture never existed before) · satnav
+route (picks from existing roads / that exact route may never have been driven).
+
+#### Think Deeper
+
+**T1** (5+ sentences, both sides, then a call). Mark on: did the writer argue **both** sides properly
+before choosing — one side only scores half, however good. The model call is **"still narrow"**: one
+job (guess the next chunk of text) that looks like a hundred, with limits that show at once — it
+cannot ride a bicycle, cannot check whether what it said is true, cannot do anything that isn't text.
+A student who calls it "not narrow" with honest reasoning is fine; the word really is straining.
+
+**T2** (4+ sentences). Mark on: a **real example from the student's own life** (a teacher's voice, a
+friend who is never unsure, an official-looking website) and a **habit they could actually do** — not
+just "be more careful". The model habit is one question: *which bit of this could I look up?* — names,
+dates and numbers, the easy-to-check bits that get invented.
+
+#### Build It
+
+This is the bulk of the homework and the part to mark properly.
+
+**Page 3.4 — Finish the Spotter's Log (15 rows).** Answers differ; **the reasons are what get marked,
+not the notes.** Tick against six criteria:
 
 - [ ] Fifteen rows, no blanks
 - [ ] Every system **specific** ("my phone's keyboard bar", not "my phone")
-- [ ] At least three rows from each of the four zones
+- [ ] At least three rows from each of the four zones (home · phone · school · street)
 - [ ] At least two rows in each of rules / learned / generating — **or** a written sentence explaining
-      why a column is empty
+      why a column is empty (the count-up line and the sentence under it)
 - [ ] Every reason mentions either *a person wrote the steps* or *it learned from examples*
 - [ ] Three rows starred as hard calls
 
-See the model board above for the standard.
+Also check the **count-up line** adds to 15. **Not AI** is a valid family (light switch, kettle,
+bicycle bell) — write NOT AI beside it and praise it. The model board is under **Round 3** above.
 
-**W3.2 — The three defences**
+**Page 3.5 — Defend your three hard calls.** Every paragraph must contain all four points: what made
+it hard · evidence for · evidence against · the one fact to look up. Five sentences minimum. **A
+defence missing point 4 is incomplete — hand it back and ask only for point 4.** The best defences use
+the system's **failures** as evidence: "it opens for a cat, so it isn't judging" is worth more than any
+amount of confident assertion. The workbook prints the keyboard-bar model defence; the other two model
+defences (shop doors, maps arrival time) are under **The three defences** above.
 
-See the model defence above. Every paragraph must contain all four points; a missing point 4 means
-hand it back and ask only for point 4. Five sentences minimum. The best defences use the system's
-**failures** as evidence — "it opens for a cat, so it isn't judging" is worth more than any amount of
-confident assertion.
-
-**W3.3 — Interview an adult**
-
-There is no wrong answer to record — the student writes down exactly what was said. What you're
-marking is the honest rewrite underneath.
-
-Typical adult answers and their honest rewrites:
+**Page 3.6 — Interview an adult.** There is no wrong answer to record — the student writes down
+exactly what was said. What you are marking is the honest rewrite underneath, and the circled words
+(robots · thinking · ChatGPT · smart · learning · none of these) at the bottom of the page.
 
 | What the adult said | The honest rewrite |
 |---|---|
@@ -1265,6 +1412,22 @@ Typical adult answers and their honest rewrites:
 *ChatGPT*. Those are the three misconceptions the student has now personally worked past in three
 weeks. Frame it generously — *"that's what nearly everyone thinks, including me before I read this"*
 — never as the adult being stupid.
+
+#### Draw It
+
+A good page has **all four**: **one** outer box labelled artificial intelligence · **two** boxes inside
+it (rule-based, machine learning) · **one smaller box inside machine learning** (generative AI — not
+beside it) · **two real examples in each box**, taken from the student's own log rather than the
+chapter. **The one mistake to check for:** three boxes drawn **in a row**. The fix is one line —
+redraw the generative box inside the machine learning box, because a chatbot learned from examples
+exactly like a spam filter did.
+
+#### Self-Check
+
+Five "I can…" rows, ticked 😀 / 🙂 / 😕, plus *"one thing I'd like explained again"*. There is no
+right answer — read it. Any 😕 becomes the first two minutes of Week 4, and the "explain again" line
+tells you what to reteach. A row of 😀 on the confidence-score line next to a wrong A3 or A6(d) is
+worth a gentle conversation, not a mark.
 
 ---
 

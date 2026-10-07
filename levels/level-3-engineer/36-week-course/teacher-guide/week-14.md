@@ -15,7 +15,7 @@
 | **New maths** | **The natural logarithm `ln`, as a surprise meter.** `−ln(p)` computed for p = 0.9, 0.5, 0.1 and 0.02, read off a curve and checked on a calculator. One button. |
 | **New syntax** | `np.log(x)` · `np.clip(p, 1e-12, 1 - 1e-12)` · `log_loss(y, prob)` |
 | **Dataset** | **6 hand-typed weather forecasts** with their outcomes, then last week's `make_classification(n_samples=200, n_features=2, n_informative=2, n_redundant=0, random_state=0)` |
-| **Materials** | A **calculator with an `ln` key** per pair · printed workbook pages 14.1–14.7 · **three large cards labelled BOLD, CAREFUL and COIN** for the contest · the Bug Log · board space for a six-row table three times over |
+| **Materials** | A **calculator with an `ln` key** per pair · the printed workbook (Warm-Up through Self-Check) · ruled paper for each team's contest sheet · **three large cards labelled BOLD, CAREFUL and COIN** for the contest · the Bug Log · board space for a six-row table three times over |
 | **Tech needed** | Laptop with Python 3, numpy, matplotlib, scikit-learn. **Nothing to install, nothing to download.** |
 | **Prep time** | 20 minutes the night before · 5 minutes on the day |
 | **Expected runtime of the code** | Every file today runs in **under a second.** Nothing trains. |
@@ -33,7 +33,7 @@ By the end of the lesson the student can:
 3. **Explain in one sentence, using the word *surprise*, why classification does not use squared error.**
 4. **Recognise a loss stuck at 0.6931** and say immediately what the model is doing.
 
-Observable evidence: four `−ln(p)` values in pen with the calculator keystrokes beside them; a completed six-day scoreboard for one forecaster on the board; workbook page 14.2 with log loss and squared error side by side for six rows and both ratios computed; and a three-sentence written answer naming what a model that scores 0.6931 is doing.
+Observable evidence: four `−ln(p)` values in pen with the calculator keystrokes beside them; a completed six-day scoreboard for one forecaster on the board; workbook M2 (Do the Maths by Hand) with log loss and squared error side by side for six rows and both ratios computed; and a three-sentence written answer naming what a model that scores 0.6931 is doing.
 
 ---
 
@@ -430,12 +430,12 @@ sklearn log_loss, Coin   : 0.69315
 
 - [ ] **Look at that middle block until you can see the twist without reading it.** **Log loss: CAREFUL wins (0.56883 beats 0.66038). Squared error: BOLD wins (0.16015 beats 0.18833).** Different winner, same six days, same three forecasters. **That is the lesson, and you must be able to say it while pointing.**
 - [ ] **Work out the one-sentence explanation of the twist and rehearse it**, because a student will ask and a vague answer wastes the moment. Here it is: **BOLD's disaster on day 4 costs 3.912 under log loss, which is more than CAREFUL's entire six-day total of 3.413. The same disaster costs 0.9604 under squared error, which is less than CAREFUL's total of 1.1300.** One number bigger than a whole scoreboard; the other smaller. That is the whole twist, in two comparisons.
-- [ ] **Run `guard.py`** (full file in the Answer Key, page 14.5) so `nan` on your own screen is familiar. **Runtime under a second.**
-- [ ] **Run `parked.py`** (full file in the Answer Key, page 14.6) and check you get `0.693147` twice. **Runtime under a second.**
+- [ ] **Run `guard.py`** (full file in the Answer Key, under Practice Set B, B4) so `nan` on your own screen is familiar. **Runtime under a second.**
+- [ ] **Run `parked.py`** (full file in the Answer Key, under Build It, Part A) and check you get `0.693147` twice. **Runtime under a second.**
 - [ ] **Break it on purpose, twice**, so both deliberate mistakes in the live-code are muscle memory:
   1. Drop the minus sign from `surprise`. **No error.** Every loss comes out negative, and the "best" forecaster becomes the worst.
   2. Use `np.log10` instead of `np.log`. **No error.** All the numbers shrink by a factor of 2.3026 and the *ranking does not change*, which makes it very hard to spot.
-- [ ] **Print workbook pages 14.1–14.7.**
+- [ ] **Print the workbook** (all sections, Warm-Up to Self-Check), and **have ruled paper ready** for the contest: the workbook has no contest sheet, so each team draws a six-row table.
 - [ ] **Make three large cards: BOLD, CAREFUL, COIN.** You will hand one to each team and they will hold it up when they announce their total. **Physical cards make the contest a contest.**
 - [ ] **Write the six days on the board before the lesson**, truth column only:
 
@@ -954,7 +954,7 @@ This section holds the complete sheet and running notes for the contest.
 - The six-day truth row and the three forecaster rows are already on the board from the hook.
 - Three teams. Hand each team one card: **BOLD**, **CAREFUL**, **COIN**. (With a small class: one student per forecaster. With a large class: three teams of any size.)
 - One calculator per pair.
-- Workbook page 14.3 out — the six-row scoring sheet, blank.
+- Ruled paper out — one blank six-row scoring sheet per team (the workbook has no contest sheet; each team rules its own).
 - **Keep the hook's vote counts visible.** You will point at them at the end.
 
 **The data, once, so it is in one place**
@@ -970,7 +970,7 @@ This section holds the complete sheet and running notes for the contest.
 
 **Part 1 — six surprises (8 minutes)**
 
-Each team fills in one row per day on page 14.3. For each day, **two decisions and one calculator press**:
+Each team fills in one row per day on their sheet. For each day, **two decisions and one calculator press**:
 
 1. **Did it rain?** If yes, the chance they gave the thing that happened is `p`. If no, it is `1 − p`.
 2. Write that number down. **This column is where every mistake happens.**
@@ -1063,7 +1063,7 @@ A full-marks sentence: *"Log loss measures surprise and has no ceiling, so a con
 
 **What "finished" looks like**
 
-- Page 14.3 filled in with **three columns per forecaster**: the chance given to what happened, the surprise, and the squared error.
+- The contest sheet filled in with **three columns per forecaster**: the chance given to what happened, the surprise, and the squared error.
 - Both averages computed and both winners circled — **and they are different names.**
 - COIN's log loss written as `0.6931` with `= −ln(0.5)` beside it.
 - One sentence per student containing the word *surprise*.
@@ -1312,105 +1312,330 @@ Three checks, five minutes, exact wording.
 
 > "About an hour, two parts, and the second one is short and is the one I am marking hardest.
 >
-> **First, page 14.2 — six predictions, two rulers.** I give you six rows: what really happened, and what the model said. For each row, **two numbers side by side**: the log loss and the squared error, both worked out in pen with the arithmetic shown. Then both averages. Then **two divisions**: the disaster row divided by the near-miss row, under each ruler. Those two numbers are the whole point of this week and I want to see them circled.
+> **First, the Do the Maths by Hand section, M2 — six predictions, two rulers.** I give you six rows: what really happened, and what the model said. For each row, **two numbers side by side**: the log loss and the squared error, both worked out in pen with the arithmetic shown. Then both averages. Then **two divisions**: the disaster row divided by the near-miss row, under each ruler. Those two numbers are the whole point of this week and I want to see them circled. M3 is the follow-up that reads your own table back to you; do that too.
 >
-> **Second, page 14.7 — three sentences about 0.6931.** Sentence one: why is `0.6931` the loss of a model that answers 0.50 to everything? Show the arithmetic. Sentence two: **why does that number not depend on the data at all?** Sentence three: if you saw a training run parked there, **what is the first thing you would print, and what would each answer tell you?**
+> **Second, Build It — three sentences about 0.6931.** Sentence one: why is `0.6931` the loss of a model that answers 0.50 to everything? Show the arithmetic. Sentence two: **why does that number not depend on the data at all?** Sentence three: if you saw a training run parked there, **what is the first thing you would print, and what would each answer tell you?** The diagnosis table just above the sentences is where you plan it.
 >
 > Not 'the model isn't learning'. **What would you print, and what would you conclude from what you saw?**"
 
-**Workbook pages:** 14.1, 14.3, 14.4 and 14.5 in class · **14.2 and 14.7** at home · **14.6** stretch, for anyone who wants to see 0.6931 come out of two completely different datasets.
+**Workbook sections, and the split.** The workbook is one printed booklet with these sections, in this order: ✅ Warm-Up (W1–W5) · 🔢 Do the Maths by Hand (M1–M4) · 🔎 Predict the Output (P1–P5) · ✍️ Practice Set A — Read It (A1–A6) · ✍️ Practice Set B — Write It (B1–B5) · 🐞 Fix the Broken Program · 🧩 Puzzle of the Week · 🤔 Think Deeper (T1–T2) · 🛠️ Build It (Part A, Part B, the three sentences, the Bug Log) · 🎨 Draw It · 📊 Self-Check. **The workbook has no scoring sheet for the contest**, so the contest in class runs on ruled paper or the board (see the key's last section).
 
-**Expected time:** 30 min on the six predictions with both rulers and both ratios · 20 min on the three sentences. **About 50 minutes.**
+- **In class:** the Warm-Up and **M1** (the four `ln` presses, as the concept segment's calculator work), **P1–P5** if time is left after the live-code, and the contest and `guard.py` from the lesson plan.
+- **At home (the marked part):** **M2 and M3**, and **Build It** — the Part B diagnosis table and the three sentences. This is the same two-part, about-an-hour homework as the lesson always had.
+- **Stretch and follow-on, any order, none required:** M4 (the ceiling, measured), Practice Sets A and B, Fix the Broken Program, Puzzle of the Week, Think Deeper, Build It Part A (`parked.py`, for anyone who wants to see 0.6931 come out of two different datasets), Draw It, and the Self-Check at the end.
 
-> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is the arithmetic shown, not just the answers?** `−ln(0.02) = 3.912023` with the calculator step beside it, not a bare `3.9120`. And check row 3 and row 6, where the truth is 0 and they must use `1 − p`; that is where the marks are lost. **Two — are both ratios there, and does the student say which is bigger?** `4.27` against `2.67`. A page with the two averages and no ratios has missed the objective. **Three — does sentence two actually explain the independence?** The answer that earns full marks is some version of *"because every row's surprise is `−ln(0.5)` whichever way the truth went — the chance the model gave to the thing that happened is 0.5 either way — so the average of a list of identical numbers is that number, and the labels never enter the arithmetic."* A student who writes *"because it's always 0.5"* is halfway there, and that is worth one line of feedback: **"why does it not matter what the label was?"**
+**Expected time:** 30 min on M2 and M3 with both rulers and both ratios · 20 min on the diagnosis table and the three sentences. **About 50 minutes** for the marked part; every stretch section is on top.
+
+> **🧑‍🏫 What to look for when you mark it:** three things, and the third is the real one. **One — is the arithmetic shown, not just the answers?** `−ln(0.02) = 3.912023` with the calculator step beside it, not a bare `3.9120`. And check rows 3, 4 and 6 of M2, where the truth is 0 and they must use `1 − p`; that is where the marks are lost. **Two — are both ratios there, and does the student say which is bigger?** `4.27` against `2.67`. A page with the two averages and no ratios has missed the objective. **Three — does sentence two actually explain the independence?** The answer that earns full marks is some version of *"because every row's surprise is `−ln(0.5)` whichever way the truth went — the chance the model gave to the thing that happened is 0.5 either way — so the average of a list of identical numbers is that number, and the labels never enter the arithmetic."* A student who writes *"because it's always 0.5"* is halfway there, and that is worth one line of feedback: **"why does it not matter what the label was?"**
 
 ---
 
 ## 🔑 Answer Key
 
-Every question restated, so you can mark from this page alone.
+Every question restated, so you can mark from this page alone. **The sections below follow the workbook's own order and use its own labels (W1, M2(b), A3(h), B4, T1 …).** The values are the ones in the workbook's Answers section at the back, re-derived by running the code (the numbers all reproduce). Under several sections is a **🧑‍🏫 Teacher only** note with the wrong answers to expect; the student never sees those. The last section is the contest sheet used in class, which is **not** a workbook page.
 
-### Page 14.1 — Warm-up: four presses of `ln`
+### ✅ Warm-Up — last week's sigmoid, five questions
 
-*For each probability, compute `−ln(p)` and write what level of surprise it is.*
+*W1: the sigmoid as three calculator steps for `z = 1.4`. W2: the three-operation sum that makes `sigmoid(0)` exactly `0.5`. W3: the raw score behind `p = 0.90`, both steps. W4: which number overflowed in `exp`, and roughly how many digits. W5: what a classmate typed wrong to get `0.1978` for `z = 1.4`.*
+
+**W1.** `e^(−1.4) = 0.246597` → `1 + 0.246597 = 1.246597` → `1 ÷ 1.246597 = 0.8022`.
+
+**W2.** `e^0 = 1`, `1 + 1 = 2`, `1 ÷ 2 = 0.5`. **No rounding anywhere in that sum**, which is exactly why this week's `0.693147` can be quoted as exact.
+
+**W3.** `odds = 0.90 ÷ 0.10 = 9`, `z = ln(9) = 2.197225`.
+
+**W4.** `e^1000` was too big. **It has 435 digits**, and the biggest number this kind of decimal holds has 309, so the machine stored `inf`.
+
+**W5.** They asked for `e^(+z)` where `e^(−z)` was meant — a lost sign change, or the two arms of `np.where` swapped. **You know without reading the code because `0.1978 + 0.8022 = 1.0000`:** their answer is exactly `1 −` the right one, which is the signature of a flipped sign.
+
+> **🧑‍🏫 Teacher only:** W1 is where a student who skipped Week 13 shows up. A common slip is stopping at `1.246597` (step 2) and writing that as `p`. In W5 the full-marks answer must say *how you know* (`0.1978 + 0.8022 = 1`), not just "the sign".
+
+### 🔢 Do the Maths by Hand — M1 to M4
+
+*Calculator only, no code. M1: four `−ln(p)` presses for `p` = 0.9, 0.5, 0.1, 0.02 with the there-and-back check, why every `ln(p)` is negative, why the loss has a minus sign, and the two gaps. M2: six predictions priced by both rulers, with totals, means and the two ratios. M3: read your own M2 table. M4: one row pushed until squared error gives up.*
+
+**M1.**
 
 | # | `p` | `ln(p)` | `−ln(p)` | Read as |
 |:--:|:--:|---|:--:|---|
 | 1 | `0.9` | `−0.105361` | **0.105361** | barely surprised — I said it would |
 | 2 | `0.5` | `−0.693147` | **0.693147** | a shrug; no information either way |
 | 3 | `0.1` | `−2.302585` | **2.302585** | genuinely surprised |
-| 4 | `0.02` | `−3.912023` | **3.912023** | astonished |
+| 4 | `0.02` | `−3.912023` | **3.912023** | astonished; I said it basically wouldn't |
 
-**And the there-and-back check:** press `e^x` on `−3.912023` and you get `0.02`. **`ln` undoes `e^x`.**
+**M1(a).** `0.02` comes back. **`ln` undoes `e^x`**, the way minus undoes plus. Try it on your own calculator once and the `ln` key stops feeling like magic for ever.
 
-**Two follow-up questions on the page:**
+**M1(b).** `ln(1) = 0`, and every probability is **below 1**. `ln` of anything below 1 is below zero, so this was always going to happen.
 
-**(a) Why is every `ln(p)` negative?**
-Because `ln(1) = 0` and every probability is below 1. `ln` of anything below 1 is below zero. **This is why the loss has a minus sign on the front** — without it every loss would be negative, which is meaningless.
+**M1(c).** Because a **negative loss is meaningless** — zero means perfect and there is nothing better than perfect. The minus sign out in front flips all of them positive. **It is not decoration; it is the whole reason the sign is there.**
 
-**(b) Which gap is bigger: 0.9 → 0.5, or 0.1 → 0.02?**
+**M1(d).**
 
 ```text
-0.693147 − 0.105361 = 0.587786      (a probability drop of 0.40)
-3.912023 − 2.302585 = 1.609438      (a probability drop of only 0.08)
+from 0.9 down to 0.5 :  0.693147 − 0.105361 = 0.587786     (p dropped by 0.40)
+from 0.1 down to 0.02:  3.912023 − 2.302585 = 1.609438     (p dropped by 0.08)
 ```
 
-**The second gap is 2.7 times bigger on a probability drop five times smaller.** The meter gets steeper the more confident you are, and it never stops.
+`1.609438 ÷ 0.587786 = 2.74`, so **about 2.7 times bigger on a probability change five times smaller.**
 
-### Page 14.2 — Six predictions, two rulers (homework)
+**The sentence:** the meter gets steeper and steeper the more confidently wrong you are, **and it never stops** — `−ln(0.001) = 6.907755` and `−ln(0.0000001) = 16.118096`.
 
-*For each row compute the log loss and the squared error. Then both averages, and the ratio of the disaster row to the near-miss row under each ruler.*
+*(A note on rounding: subtract the **full-precision** values and you get `0.587787`, not `0.587786`. Both are right — the first rounds the answer, the second rounds the inputs and then subtracts. **Round at the end, never in the middle**, and when you cannot, say which you did.)*
+
+**M2.**
 
 | Row | `y` | `p` | Log loss, worked | Value | Squared error, worked | Value |
 |:--:|:--:|:--:|---|:--:|---|:--:|
-| 1 | 1 | 0.90 | `−ln(0.90)` | **0.105361** | `(1 − 0.90)²= 0.10²` | **0.010000** |
+| 1 | 1 | 0.90 | `−ln(0.90)` | **0.105361** | `(1 − 0.90)² = 0.10²` | **0.010000** |
 | 2 | 1 | 0.40 | `−ln(0.40)` | **0.916291** | `(1 − 0.40)² = 0.60²` | **0.360000** |
 | 3 | 0 | 0.20 | `−ln(1 − 0.20) = −ln(0.80)` | **0.223144** | `(0 − 0.20)² = 0.20²` | **0.040000** |
 | 4 | 0 | 0.95 | `−ln(1 − 0.95) = −ln(0.05)` | **2.995732** | `(0 − 0.95)² = 0.95²` | **0.902500** |
 | 5 | 1 | 0.02 | `−ln(0.02)` | **3.912023** | `(1 − 0.02)² = 0.98²` | **0.960400** |
 | 6 | 0 | 0.50 | `−ln(1 − 0.50) = −ln(0.50)` | **0.693147** | `(0 − 0.50)² = 0.50²` | **0.250000** |
 
-```text
-log loss     sum = 8.845697      mean = 8.845697 ÷ 6 = 1.474283
-squared err  sum = 2.522900      mean = 2.522900 ÷ 6 = 0.420483
-```
-
-**The two ratios.** Row 5 is the confident disaster (said 2%, answer was yes). Row 2 is the near miss (said 40%, answer was yes).
+**M2(a).**
 
 ```text
-log loss     : 3.912023 ÷ 0.916291 = 4.2694
-squared error: 0.960400 ÷ 0.360000 = 2.6678
+log loss      sum = 8.845697      ÷ 6 = 1.474283
+squared error sum = 2.522900      ÷ 6 = 0.420483
 ```
 
-**Circle both.** `4.27` against `2.67` is the whole week in two numbers.
-
-**The three follow-up questions on the page:**
-
-**(a) Which row is the worst under each ruler, and by how much of the total?**
-
-Row 5 is worst under both.
+**M2(b).**
 
 ```text
-log loss share    : 3.912023 ÷ 8.845697 = 0.4423  →  44.2% of the total
-squared error share: 0.960400 ÷ 2.522900 = 0.3807  →  38.1% of the total
+log loss      : 3.912023 ÷ 0.916291 = 4.2694
+squared error : 0.960400 ÷ 0.360000 = 2.6678
 ```
 
-**(b) Row 6 has a log loss of `0.693147`. Where have you seen that number?**
+**`4.27` against `2.67` is the whole week in two numbers.** Squared error says the catastrophe is under three times worse than the near-miss. **Nobody experiences it that way.**
 
-It is `−ln(0.5)`, and it is `ln(2)`. **Any row where the model said exactly 0.50 costs exactly this, whichever way the truth went.** It is the price of a shrug.
+**M2(c).** `0.693147`, because the model said exactly `0.50`, and `−ln(0.5) = 0.693147 = ln(2)`. **Any row where the model said exactly 0.50 costs exactly this, whichever way the truth went.** It is the price of a shrug.
 
-**(c) Row 4 said 0.95 and the answer was no. Row 5 said 0.02 and the answer was yes. Which is worse, and does each ruler agree?**
-
-Row 5 is worse under both, but by very different margins:
+**M3(a).**
 
 ```text
-log loss     : 3.912023 vs 2.995732  →  row 5 is 1.31 times worse
-squared error: 0.960400 vs 0.902500  →  row 5 is 1.06 times worse
+log loss      : 3.912023 ÷ 8.845697 = 0.4423  →  44.2 % of the total
+squared error : 0.960400 ÷ 2.522900 = 0.3807  →  38.1 % of the total
 ```
 
-**Squared error thinks they are nearly the same event.** Log loss thinks one is a third worse again. Row 5's forecaster was more confidently wrong (2% versus 5%), and only one ruler noticed.
+**M3(b).**
 
-The check, and its real output:
+```text
+log loss      : 3.912023 vs 2.995732  →  row 5 is 1.31 times worse
+squared error : 0.960400 vs 0.902500  →  row 5 is 1.06 times worse
+```
+
+**M3(c).** **Squared error** thinks they are nearly the same event — `1.06` times apart is nothing. But row 5's forecaster was **more** confidently wrong: 2% against 5%. Only one ruler noticed. **It should worry you because "how confident were you?" is the only thing that separates a mistake from a disaster**, and if your ruler cannot see the difference, your training loop cannot either.
+
+**M4.**
+
+```python
+import numpy as np
+print("%12s %14s %14s" % ("p", "log loss", "squared err"))
+for p in (0.40, 0.02, 0.001, 0.0000001):
+    print("%12.7f %14.6f %14.7f" % (p, -np.log(p), (1 - p) ** 2))
+```
+
+```text
+           p       log loss    squared err
+   0.4000000       0.916291      0.3600000
+   0.0200000       3.912023      0.9604000
+   0.0010000       6.907755      0.9980010
+   0.0000001      16.118096      0.9999998
+```
+
+**M4(a).** It is heading for **1**, and **no, it can never pass it.** The worst squared error for one row is `(1 − 0)² = 1`. **That is the ceiling.**
+
+**M4(b).** **Nowhere.** There is no worst possible log loss; it keeps climbing for ever as `p` heads towards 0.
+
+**M4(c).**
+
+```text
+log loss      : 16.118096 ÷ 3.912023 = 4.1201 times worse
+squared error : 0.9999998 ÷ 0.9604000 = 1.0412 times worse
+```
+
+**Squared error cannot tell those two predictions apart** — they differ in the fourth decimal place, and a prediction of one ten-millionth is a hundred thousand times more confident than a prediction of 2%.
+
+**M4(d).** *Classification does not use squared error because* **squared error has a ceiling of 1 per row, so it cannot express how surprised you should be by a confident disaster — and surprise is exactly the thing that separates a near-miss from a catastrophe.**
+
+**M4(e).** `−ln(0.5) = 0.693147`, which is also `ln(2)`.
+
+> **🧑‍🏫 Teacher only — wrong answers to expect.** **M1:** `−1.69897` for the `0.02` row means they pressed `log`, not `ln`; `−1.69897 × 2.3026 = 3.9120` is a kind way to show it is the same idea on a different scale. **M2:** on rows 3, 4 and 6 (`y = 0`) the usual error is `−ln(p)` instead of `−ln(1 − p)`, giving `1.609438` for row 3 and `0.051293` for row 4 (row 6 comes out right by accident, because `1 − 0.5 = 0.5`). Ask: *"what chance did your forecaster give the thing that actually happened?"* A total that is off by a whole row is nearly always this. **M2(b):** a student who writes the ratio upside down (`0.916 ÷ 3.912 = 0.234`) has the right numbers and the wrong question; the disaster goes on top. **M2 and M3 carry the homework marks**, so mark them against the full-precision values above and accept a last-digit difference from early rounding (the workbook's own note on `0.587786` against `0.587787` applies).
+
+### 🔎 Predict the Output — P1 to P5
+
+*Five snippets, each prediction written in pen before running: P1 `np.log(1)` and `np.log(np.e)`; P2 four surprises from a plain list, and `.shape`; P3 `np.log` against `np.log10` of `0.02` and their ratio; P4 `np.clip` on `[0.0, 0.3, 1.0]` and `1 - c[2]`; P5 the loss formula at `p = 0.5` for `y = [1, 0]`, and what `0.6931` says about the data.*
+
+**P1.** `0.0` then `1.0`. `ln(1) = 0` — the surprise of a prediction you were sure about and got right. And `ln(e) = 1` **by definition**: that is what `e` is *for*.
+
+**P2.**
+
+```text
+[0.105361 0.693147 2.302585 3.912023]
+(4,)
+```
+
+**P2(a).** `np.log` **converted the plain list into a numpy array** on the way in. numpy functions do this quietly, which is convenient and is also exactly why a bug like `-[0.9, 0.5]` surprises people: the conversion happens inside `np.log`, and a minus sign written *before* the call never gets the benefit of it.
+
+**P2(b).** In the `−ln(p)` column of **M1**. All four, in order.
+
+**P3.** `-3.912023005428146`, `-1.6989700043360187`, `2.302585092994046`.
+
+**P3(a).** `ln(10)`. The two logarithms differ by that one fixed number, always, like centimetres and inches.
+
+**P3(b).** **Yes, the ranking would be perfect** — dividing every score by the same constant cannot reorder them. **That is exactly what makes it dangerous.** You catch it with a number you already know: score an all-0.5 forecaster and it **must** come out at `0.693147`. With `np.log10` it comes out at `0.30103`.
+
+**P4.**
+
+```text
+[1.e-12 3.e-01 1.e+00]
+9.999778782798785e-13
+```
+
+**P4(a).** **No, it is not 1.** numpy printed four significant figures of `0.999999999999`. The evidence is line 2: `1 - c[2]` is `9.999778782798785e-13`, which would be exactly `0.0` if the value were really 1. **Display versus value — the same trap as last week's rounded weights.**
+
+**P4(b).** `0.000000000001` — eleven zeros after the point, then a 1.
+
+**P5.**
+
+```text
+[0.69314718 0.69314718]
+0.6931471805599453
+```
+
+**P5(a).** `y = 1 → −ln(0.5) = 0.693147` and `y = 0 → −ln(1 − 0.5) = −ln(0.5) = 0.693147`. **Both branches collapse to the same number**, because `0.5` and `1 − 0.5` are the same thing.
+
+**P5(b).** **Nothing at all.** When `p = 0.5` the labels never enter the arithmetic, so `0.6931` tells you about the **model** and nothing about the data. A balanced dataset and a 90%-skewed one both score exactly `0.693147`.
+
+> **🧑‍🏫 Teacher only:** the two traps this section sets are **P3(b)** (a loss written with `log10` ranks everybody correctly and is wrong in every digit; the all-0.5 test is the catch) and **P4(a)** (`1.e+00` is not `1`; display versus value, as with last week's weights). A student who answers P4(a) "yes it is 1" has not read line 2.
+
+### ✍️ Practice Set A — Read It (A1 to A6)
+
+*A1: match five words to five descriptions. A2: read the real `contest.py` printout and answer six questions (a to f), then write day 3 in full (g) and say why sklearn's lines were printed (h). A3: six buggy lines, say what happens and write the fix, then which one makes every loss negative (g) and which three rows of M2 would be wrong under bug (c) (h). A4: match five code lines to five outputs, then which two outputs are the same number (f). A5: label the eight boxes of the surprise-meter figure, plus (a) and (b). A6: finish six sentences.*
+
+**A1.** log loss → (iv) · squared error → (i) · surprise → (v) · numerical guard → (ii) · confidently wrong → (iii)
+
+**A2.**
+
+| Question | Answer |
+|---|---|
+| a | It did not rain, so the chance BOLD gave **the thing that happened** was `1 − 0.01 = 0.99`. **BOLD was confidently right**, and `−ln(0.99) = 0.0101`. Anybody who writes `−ln(0.01) = 4.605` here has inverted the whole week. |
+| b | Whether the chance they gave the thing that happened was `0.60` or `0.55`. `−ln(0.60) = 0.5108` and `−ln(0.55) = 0.5978`. **Days 1 and 5 are the `0.60` days** — day 1 they said 0.60 and it rained; day 5 they said 0.40 and it did not, so they gave 0.60 to what happened. |
+| c | **Day 4**, and it cost `3.9120` — more than three hundred times any other day of theirs. |
+| d | CAREFUL's six add to `3.412999`. **BOLD's day 4 alone is `3.912023`, which is bigger.** One day worse than somebody else's entire week. |
+| e | `0.6931`, six times. `−ln(0.5)` whichever way the truth went, because the chance COIN gave the thing that happened was `0.5` either way. |
+| f | **No — both are correct.** They are different rulers, and the choice between them is a statement about **consequences**, not about arithmetic. |
+
+**A2(g).** it did not rain, so the chance BOLD gave the thing that happened was `1 − 0.01 = 0.99`, so the surprise is `−ln(0.99) = 0.010050`.
+
+**A2(h).** To check **our** arithmetic, not theirs. It is the same move as Week 13's twelve zeros against `predict_proba`. **Once the library agrees with a formula you typed yourself, the formula stops being a spell** — and if it ever disagrees in future, you will know which of the two to doubt.
+
+**A3.**
+
+| # | What happens | The fix |
+|:--:|---|---|
+| a | **No error.** The leading minus sign is gone, so every loss is negative and the ranking inverts — the most negative wins, so **COIN becomes champion.** | `return -(...)`. One character. |
+| b | **No error.** Every value is `2.302585` times too small and **the ranking is perfectly correct**, which is what makes it the nastiest bug in the chapter. | `np.log`, not `np.log10`. Catch it with the all-0.5 test. |
+| c | **No error.** Correct on every row where `y = 1`, wrong on every row where `y = 0`. | Use the two-branch form, or the one-liner with `(1 - y)` in it. |
+| d | **No error, and it looks fine.** It guards the bottom end and leaves the top end open, so a prediction of exactly `1.0` still gives `ln(1 - 1) = ln(0)`. **Half a guard is no guard.** | `np.clip(p, 1e-12, 1 - 1e-12)`. |
+| e | `ValueError: Found input variables with inconsistent numbers of samples: [2, 3]`. Two predictions, three truths. **Note the order in the message is predictions first** — do not assume it matches your argument order. | `print(len(y), len(p))` — the cheapest check in the file. |
+| f | **No error, and the numbers are nonsense.** The `nan` has already happened by the time the clip runs; clipping a `nan` leaves a `nan`. **A guard has to be in front of the thing it is guarding.** | Clip `p` on the line **before** the logarithm. |
+
+**A3(g).** **(a).** And the rule: **a loss is never negative. If you see a minus, you have lost a minus.** It is the cheapest diagnostic in the whole course.
+
+**A3(h).** **Rows 3, 4 and 6** are the rows where `y = 0`, so all three use the wrong branch — but **row 6 comes out right anyway**, because `p = 0.50` and `1 − 0.50` are the same number. So two rows are actually wrong:
+
+```text
+row 3:  wrong −ln(0.20) = 1.609438      right −ln(0.80) = 0.223144
+row 4:  wrong −ln(0.95) = 0.051293      right −ln(0.05) = 2.995732
+```
+
+**Row 4 is the most wrong**, and it is wrong in the worst possible direction: the bug reports the confident disaster as costing `0.05` — **the cheapest row on the page** — when it should be the second most expensive. `2.995732 ÷ 0.051293 = 58.4` times out. **A bug that makes your worst row look like your best row is the most expensive kind there is.** And note row 6: a test built only on `p = 0.50` would have passed.
+
+**A4.** i → **R** · ii → **S** · iii → **T** · iv → **P** · v → **Q**
+
+**A4(f).** **P (`0.693147`) and T (`0.6931471805599453`)** are the same number. `T` is the full stored value; `P` went through `"%.6f"`, which **rounds for display only** and does not change anything. Two rulers' worth of digits, one number underneath.
+
+**A5.** The eight boxes, top to bottom:
+
+```text
+1.  it happened, you said 0.9    →  −ln(0.90)        = 0.105361
+2.  it happened, you said 0.5    →  −ln(0.50)        = 0.693147
+3.  it happened, you said 0.1    →  −ln(0.10)        = 2.302585
+4.  it happened, you said 0.02   →  −ln(0.02)        = 3.912023
+5.  it did NOT, you said 0.20    →  −ln(1 − 0.20)    = 0.223144
+6.  it did NOT, you said 0.95    →  −ln(1 − 0.95)    = 2.995732
+7.  squared: (1 − 0.02)²         =  0.98²            = 0.960400
+8.  squared: (1 − 0.40)²         =  0.60²            = 0.360000
+```
+
+The panel: log loss `3.912023 ÷ 0.916291 = 4.2694`; squared error `0.960400 ÷ 0.360000 = 2.6678`. **Squared error has the ceiling, and it is `1` per row.**
+
+**A5(a).** **Row 4 is bigger** — `3.912023` against row 6's `2.995732`. Row 4's forecaster said 2% and row 6's said 5%, and **2% is the more confident claim**, so it costs more. The meter is measuring how far you stuck your neck out.
+
+**A5(b).** `3.912023 ÷ 0.960400 = 4.0733`. Same prediction, same truth, **four times the cost** depending on which ruler you picked up.
+
+**A6.**
+
+**a)** …**the chance you gave the thing that actually happened** — not "what the model said".
+
+**b)** …**an if-statement**…; `−ln(p)` if **it happened**, `−ln(1 − p)` if **it did not**.
+
+**c)** …a **multiplication**…; `y` is only ever **0** or **1**, so one half is always **multiplied by zero and disappears**.
+
+**d)** …**1**…; and log loss's is **there isn't one — it climbs for ever**.
+
+**e)** …**a model that answers 0.50 to every row**…; `ln(2)`; …**the data**…
+
+**f)** …**zero times minus infinity, which has no answer**…; numpy returns **`nan`**; and one of those makes the average of five hundred rows **`nan`**.
+
+> **🧑‍🏫 Teacher only:** **A2(a)** is the self-check item that matters most; the wrong answer, `−ln(0.01) = 4.605`, is the whole week inverted, so it is worth stopping on if you see it. **A3(a)** and **A3(g)** are the same bug seen from two sides: if a student answers (g) with anything but (a), go back to the rule "a loss is never negative". **A4:** the answer string is i→R, ii→S, iii→T, iv→P, v→Q; two students swapping P and T have not yet understood A4(f).
+
+### ✍️ Practice Set B — Write It (B1 to B5)
+
+*B1: one line printing the four surprises rounded to six places. B2: write `surprise(y, p)` with the guard inside, then the all-0.5 test against `ln(2)`. B3: the M2 table in code, with sums, means and both ratios. B4: `guard.py`, with and without the clip, against `log_loss`. B5: `b5w14.py`, a fourth forecaster of your own, both rulers, both winners by `np.argmin`, and the self-test. Each task gives the expected output to match.*
+
+**B1.**
+
+```python
+import numpy as np
+print(np.round(-np.log([0.9, 0.5, 0.1, 0.02]), 6))
+```
+
+```text
+[0.105361 0.693147 2.302585 3.912023]
+```
+
+**B2.**
+
+```python
+import numpy as np
+
+
+def surprise(y, p):
+    p = np.clip(p, 1e-12, 1 - 1e-12)
+    return -(y * np.log(p) + (1 - y) * np.log(1 - p))
+
+
+y = np.array([1, 0, 1, 0])
+half = np.array([0.5, 0.5, 0.5, 0.5])
+print("per row       :", np.round(surprise(y, half), 6))
+print("mean          : %.6f" % float(np.mean(surprise(y, half))))
+print("must be ln(2) : %.6f" % np.log(2.0))
+print("passes?       ", bool(abs(float(np.mean(surprise(y, half))) - np.log(2.0)) < 1e-12))
+```
+
+```text
+per row       : [0.693147 0.693147 0.693147 0.693147]
+mean          : 0.693147
+must be ln(2) : 0.693147
+passes?        True
+```
+
+**Note the `y` in that test is `[1, 0, 1, 0]` — deliberately mixed.** The test still passes, and **that is the point**: the labels do not matter when `p = 0.5`.
+
+**B3.**
 
 ```python
 import numpy as np
@@ -1418,35 +1643,352 @@ import numpy as np
 y = np.array([1, 1, 0, 0, 1, 0])
 p = np.array([0.90, 0.40, 0.20, 0.95, 0.02, 0.50])
 
-ll = -(y * np.log(p) + (1 - y) * np.log(1 - p))
-se = (y - p) ** 2
 
-print(" y     p       log loss    squared err")
+def surprise(y, p):
+    p = np.clip(p, 1e-12, 1 - 1e-12)
+    return -(y * np.log(p) + (1 - y) * np.log(1 - p))
+
+
+ll = surprise(y, p)
+se = (y - p) ** 2
+print("row   y      p     log loss   squared err")
 for i in range(6):
-    print(" %d   %.2f   %10.6f   %10.6f" % (y[i], p[i], ll[i], se[i]))
-print("sums  %18.6f   %10.6f" % (ll.sum(), se.sum()))
-print("means %18.6f   %10.6f" % (ll.mean(), se.mean()))
+    print("%3d   %d   %.2f   %10.6f    %10.6f" % (i + 1, y[i], p[i], ll[i], se[i]))
+print("                 sum %10.6f    %10.6f" % (ll.sum(), se.sum()))
+print("                mean %10.6f    %10.6f" % (ll.mean(), se.mean()))
 print()
-print("ratio, log loss   : %.6f / %.6f = %.4f" % (ll[4], ll[1], ll[4] / ll[1]))
-print("ratio, squared err: %.6f / %.6f = %.4f" % (se[4], se[1], se[4] / se[1]))
+print("disaster / near-miss, log loss    : %.6f / %.6f = %.4f"
+      % (ll[4], ll[1], ll[4] / ll[1]))
+print("disaster / near-miss, squared err : %.6f / %.6f = %.4f"
+      % (se[4], se[1], se[4] / se[1]))
 ```
 
 ```text
- y     p       log loss    squared err
- 1   0.90     0.105361     0.010000
- 1   0.40     0.916291     0.360000
- 0   0.20     0.223144     0.040000
- 0   0.95     2.995732     0.902500
- 1   0.02     3.912023     0.960400
- 0   0.50     0.693147     0.250000
-sums            8.845697     2.522900
-means           1.474283     0.420483
+row   y      p     log loss   squared err
+  1   1   0.90     0.105361      0.010000
+  2   1   0.40     0.916291      0.360000
+  3   0   0.20     0.223144      0.040000
+  4   0   0.95     2.995732      0.902500
+  5   1   0.02     3.912023      0.960400
+  6   0   0.50     0.693147      0.250000
+                 sum   8.845697      2.522900
+                mean   1.474283      0.420483
 
-ratio, log loss   : 3.912023 / 0.916291 = 4.2694
-ratio, squared err: 0.960400 / 0.360000 = 2.6678
+disaster / near-miss, log loss    : 3.912023 / 0.916291 = 4.2694
+disaster / near-miss, squared err : 0.960400 / 0.360000 = 2.6678
 ```
 
-### Page 14.3 — The Weather Forecaster Contest sheet (done in class)
+**B4.**
+
+```python
+"""guard.py - what ln(0) does to a loss, and the one line that stops it."""
+import numpy as np
+from sklearn.metrics import log_loss
+
+y = np.array([1, 1, 0, 0])
+p = np.array([0.9, 1.0, 0.0, 0.3])       # rows 2 and 3 are dead certain
+
+print("--- no guard ---")
+raw = -(y * np.log(p) + (1 - y) * np.log(1 - p))
+print("per row :", raw)
+print("mean    :", raw.mean())
+
+print()
+print("--- with the guard ---")
+p_safe = np.clip(p, 1e-12, 1 - 1e-12)
+print("p after clip:", p_safe)
+guarded = -(y * np.log(p_safe) + (1 - y) * np.log(1 - p_safe))
+print("per row :", np.round(guarded, 6))
+print("mean    : %.6f" % guarded.mean())
+
+print()
+print("sklearn log_loss:", "%.6f" % log_loss(y, p))
+print("1 - p_safe[1]   :", 1 - p_safe[1])
+```
+
+```text
+guard.py:9: RuntimeWarning: divide by zero encountered in log
+  raw = -(y * np.log(p) + (1 - y) * np.log(1 - p))
+guard.py:9: RuntimeWarning: invalid value encountered in multiply
+  raw = -(y * np.log(p) + (1 - y) * np.log(1 - p))
+--- no guard ---
+per row : [0.10536052        nan        nan 0.35667494]
+mean    : nan
+
+--- with the guard ---
+p after clip: [9.e-01 1.e+00 1.e-12 3.e-01]
+per row : [0.105361 0.       0.       0.356675]
+mean    : 0.115509
+
+sklearn log_loss: 0.115509
+1 - p_safe[1]   : 9.999778782798785e-13
+```
+
+**Three things worth pointing at.** **Row 2 now costs `0.000000`** — a perfect prediction, correctly priced at nothing; the loss was always right, it was the *route* to it that died. **scikit-learn's answer equals our clipped one**, because scikit-learn clips too — every real implementation does. And **the clipped array prints `1.e+00` and looks unclipped**; the last line proves it is not.
+
+**B5.**
+
+```python
+"""b5w14.py - four forecasters, six days, two rulers, and a self-test."""
+import numpy as np
+from sklearn.metrics import log_loss
+
+np.random.seed(0)
+
+rained = np.array([1, 1, 0, 1, 0, 0])
+
+bold    = np.array([0.99, 0.99, 0.01, 0.02, 0.01, 0.01])
+careful = np.array([0.60, 0.55, 0.45, 0.55, 0.40, 0.45])
+coin    = np.array([0.50, 0.50, 0.50, 0.50, 0.50, 0.50])
+mine    = np.array([0.90, 0.85, 0.15, 0.80, 0.10, 0.15])
+
+
+def surprise(y, p):
+    p = np.clip(p, 1e-12, 1 - 1e-12)
+    return -(y * np.log(p) + (1 - y) * np.log(1 - p))
+
+
+everyone = [("Bold", bold), ("Careful", careful), ("Coin", coin), ("Mine", mine)]
+
+print("%-9s %12s %12s %12s" % ("forecaster", "log loss", "squared err", "sklearn"))
+lls = []
+ses = []
+for name, p in everyone:
+    ll = float(np.mean(surprise(rained, p)))
+    se = float(np.mean((rained - p) ** 2))
+    lls.append(ll)
+    ses.append(se)
+    print("%-9s %12.6f %12.6f %12.6f" % (name, ll, se, log_loss(rained, p)))
+
+print()
+print("winner on log loss    :", everyone[int(np.argmin(lls))][0], "%.6f" % np.min(lls))
+print("winner on squared err :", everyone[int(np.argmin(ses))][0], "%.6f" % np.min(ses))
+print()
+print("self-test: an all-0.5 forecaster must score ln(2) = %.6f" % np.log(2.0))
+print("   Coin scored %.6f" % lls[2])
+```
+
+```text
+forecaster     log loss  squared err      sklearn
+Bold          0.660379     0.160150     0.660379
+Careful       0.568833     0.188333     0.568833
+Coin          0.693147     0.250000     0.693147
+Mine          0.153570     0.021250     0.153570
+
+winner on log loss    : Mine 0.153570
+winner on squared err : Mine 0.021250
+
+self-test: an all-0.5 forecaster must score ln(2) = 0.693147
+   Coin scored 0.693147
+```
+
+**Why `[0.90, 0.85, 0.15, 0.80, 0.10, 0.15]` wins both columns.** It is **confident but never certain**. It beats CAREFUL on log loss because it commits — `−ln(0.90) = 0.105` against `−ln(0.60) = 0.511` — and it beats BOLD on squared error because it never hands in a 2% on a day it rains, so it has no `0.9604` anywhere. **That is exactly what a well-behaved trained model looks like**, and it is worth remembering that a *shape* of prediction, not a cleverer formula, is what wins both rulers at once.
+
+> **🧑‍🏫 Teacher only:** B4 is the same file the Prep Checklist has you run (`guard.py`), and its clipped-`1.e+00` line is the display-versus-value trap again. For B5 any invented forecaster is valid if the program runs, prints four aligned rows, names both winners and the self-test prints `0.693147`; the one in the key is just the example that wins both columns. Check that the clip is **inside** `surprise`, and that `np.random.seed(0)` is there (it does nothing today, but the course habit is that every file carries it).
+
+**Questions asked in class about `guard.py`** (from the live-code segment; the same file as B4):
+
+**(a) Row 2 was a perfect prediction (`y = 1`, `p = 1.0`). Why is it `nan`?**
+
+The first half is `1 × ln(1) = 0`, which is fine. The second half is `(1 − 1) × ln(1 − 1)` = `0 × ln(0)` = `0 × (−inf)`, and **zero times infinity has no answer**, so numpy returns `nan`.
+
+**(b) Why is the mean `nan` when two of the four rows are fine?**
+
+Because `nan` propagates. Anything plus `nan` is `nan`, so the sum is `nan` and so is the average. **Two bad rows out of four destroyed all four.**
+
+**(c) What does the clip actually change?**
+
+`0.0` becomes `0.000000000001` and `1.0` becomes `0.999999999999`. **Neither is meaningfully different as a probability**, and neither is 0 or 1, so `ln` is happy. Rows 2 and 3 now cost `0.000000` each — correct, since both were perfect.
+
+**(d) Why does scikit-learn's `log_loss` match the clipped version and not the unclipped one?**
+
+**Because scikit-learn clips too.** Every real implementation does. This is not our workaround; it is the standard behaviour, and doing it by hand once is how you know it is happening.
+
+### 🐞 Fix the Broken Program — three bugs in `broken14.py`
+
+*Four real outputs, in the order you meet them. Bug 1: which line the message points at, which line is at fault, the kind of bug, what the `6` and the `5` count, the fix. Bug 2: which line, the kind, what is impossible about the column, the false "winner", the fix in characters. Bug 3: which forecaster and what is unusual, day 1 followed through, the kind, the one-line fix. Then three closing questions: is CERTAIN's `4.605170` fair, rank the three bugs by time to find, and why scikit-learn says `6.007276`.*
+
+**Bug 1 — the message points at line 14; the fault is on line 7 (`bold`). A shape bug.** The `6` counts the days in `rained`; the `5` counts the predictions in `bold`. **numpy will not guess which day is missing.**
+
+**The fix:** `bold = np.array([0.99, 0.99, 0.01, 0.02, 0.01, 0.01])` — six days, and BOLD said 0.01 on day 6.
+
+**On reading a traceback:** the bottom line is the message, and the frames above it are the story. Line 20 called `surprise`; line 14 is where the two mismatched arrays actually met. **The fault is usually neither of those lines — it is wherever the bad value was created**, which here is line 7.
+
+**Bug 2 — line 14, inside `surprise`. A silent logic bug.** The leading minus sign is missing.
+
+**Every number in that column is negative, and a loss can never be negative** — zero means perfect and there is nothing better than perfect. **A negative loss is not a bad score; it is a broken score.**
+
+Lower is better, so the "winner" on that broken screen is **COIN** at `−0.693147` — the forecaster who owns no instruments. **One missing character crowned the one competitor who did nothing.** And the self-test said it out loud: *we got `−0.693147`, sklearn says `0.693147`.*
+
+**The fix is one character:** `return -(y * np.log(p) + (1 - y) * np.log(1 - p))`.
+
+**Bug 3 — CERTAIN. A runtime bug that produces `nan` rather than a crash.** CERTAIN's six numbers are all exactly `1.00` or `0.00` — **dead certain, both ways.**
+
+Day 1 in full: it rained and CERTAIN said `1.00`, so the first half is `1 × ln(1) = 0`, which is fine. The second half is `(1 − 1) × ln(1 − 1)` = `0` `×` `−inf`, which has **no answer at all** — not zero, not infinity. So numpy writes `nan`.
+
+**And notice what that means: the rows CERTAIN got *perfectly right* are the rows that broke.** `nan` then propagates: anything plus `nan` is `nan`, so the mean of six is `nan`.
+
+**The fix, one line, inside `surprise` before the logs:**
+
+```python
+p = np.clip(p, 1e-12, 1 - 1e-12)
+```
+
+**Is `4.605170` fair to CERTAIN?** **Yes, and it is the whole argument of the week.** Five of their days cost essentially nothing — `−ln(0.999999999999)` is about `1e−12`. Day 4 they said a **0%** chance of rain and it rained, and after clipping that single day costs `−ln(1e-12) = 27.631021`, which divided by six is `4.605170`. **A forecaster who says "impossible" about something that then happens has said the one thing a probability is not allowed to say.**
+
+**Ranking, hardest first:**
+
+1. **Bug 2**, the missing minus sign — no error, four plausible-looking numbers, and the ranking silently inverted. Only the self-test caught it, and the self-test only existed because somebody wrote it.
+2. **Bug 3**, the `nan` — a warning rather than a crash, and it arrives on a different output stream so it can scroll away. **Three of the four forecasters were fine, which makes it easy to shrug at.**
+3. **Bug 1**, the shape — the message prints both numbers and you count. Ten seconds.
+
+**And the sting: `4.605170` against scikit-learn's `6.007276`.** The number we chose differently is **the clip constant**. We clipped at `1e-12`, so the worst one row can cost is `−ln(1e-12) = 27.631021`. scikit-learn clips at about `2.22e-16` — the smallest gap its decimals can represent — so its worst is `−ln(2.22e-16) = 36.043654`, and `36.043654 ÷ 6 = 6.007276`. **Neither is wrong; the clip constant is a *policy* about how much you are willing to punish a certainty.** Two lessons: the cost of a dead-certain mistake is **decided by you, not discovered**, and this is why guard.py's numbers agreed with sklearn while these do not — in guard.py the clipped rows were perfect predictions, so the constant barely mattered.
+
+> **🧑‍🏫 Teacher only:** the item students most often get wrong is the line number in Bug 1. They write 14 (where the crash is) rather than 7 (where `bold` was typed with five numbers). Do not tell them; ask them what the `6` counts and what the `5` counts, and let them walk back up the file. The workbook's ranking (Bug 2 hardest, then Bug 3, then Bug 1) is a defensible order, not the only one: accept any ranking whose reason is "how loudly did it fail?".
+
+### 🧩 Puzzle of the Week — two parts
+
+*Part 1: six losses with the predictions thrown away; undo the meter with `e^x` (rows 5 and 6 have `y = 0`); (a) the extra step for rows 5 and 6; (b) can `0.693147` have come from a prediction that was not 0.5? Part 2: how little BOLD's day 4 had to change to win the log-loss championship; (a) as a percentage with the startling sentence; (b) the same sum under squared error; (c) what (b) proves.*
+
+**Part 1.**
+
+```python
+import numpy as np
+for L in (0.105361, 0.693147, 2.302585, 3.912023, 0.223144, 0.356675):
+    print('L=%.6f -> e^(-L) = %.6f' % (L, np.exp(-L)))
+```
+
+```text
+L=0.105361 -> e^(-L) = 0.900000
+L=0.693147 -> e^(-L) = 0.500000
+L=2.302585 -> e^(-L) = 0.100000
+L=3.912023 -> e^(-L) = 0.020000
+L=0.223144 -> e^(-L) = 0.800000
+L=0.356675 -> e^(-L) = 0.700000
+```
+
+| # | loss | `y` | `e^(−L)` | `p` the model said | how |
+|:--:|:--:|:--:|:--:|:--:|---|
+| 1 | `0.105361` | 1 | `0.900000` | **0.90** | `y = 1`, so `e^(−L)` **is** `p` |
+| 2 | `0.693147` | 1 | `0.500000` | **0.50** | same |
+| 3 | `2.302585` | 1 | `0.100000` | **0.10** | same |
+| 4 | `3.912023` | 1 | `0.020000` | **0.02** | same |
+| 5 | `0.223144` | 0 | `0.800000` | **0.20** | `y = 0`, so `e^(−L) = 1 − p`, so `p = 1 − 0.80` |
+| 6 | `0.356675` | 0 | `0.700000` | **0.30** | same: `p = 1 − 0.70` |
+
+**Part 1(a).** The extra step is **subtracting from 1.** When the truth is 0, the loss was built from `1 − p`, so `e^(−L)` gives you `1 − p` back and you have to undo that too. **The loss never records which of the two branches it came from — you have to supply the label.**
+
+**Part 1(b).** **Yes.** A loss of `0.693147` with `y = 0` came from `p = 0.5` as well, since `1 − 0.5 = 0.5`. **But more interestingly: any single loss value has two possible predictions** — one if the truth was yes and a different one if the truth was no. `0.356675` means `p = 0.70` when `y = 1` and `p = 0.30` when `y = 0`. **A loss on its own is not enough information to reconstruct a prediction.**
+
+**Part 2.**
+
+```text
+BOLD's five good days cost  5 × 0.010050 = 0.050252
+CAREFUL's whole week totals              = 3.412999
+so day 4 was allowed to cost at most     3.412999 − 0.050252 = 3.362747
+so day 4's probability had to be above   e^(−3.362747) = 0.034640
+```
+
+**BOLD said `0.02`. They only had to say `0.034640` to win.**
+
+**Part 2(a).** **3.46% instead of 2%.** The startling sentence: *"BOLD lost a championship by one and a half percentage points on one day out of six."* That is how steep the meter is down at the confident end — one tiny adjustment to one number out of thirty-six flips the result.
+
+**Part 2(b).**
+
+`1.130000 − 0.000500 = 1.129500`, and `(1 − p)² = 1.129500` needs `1 − p = 1.0628`, so `p` above `−0.0628` — **which is impossible to fail**, because a probability cannot go below **0**.
+
+**Part 2(c).** **Under squared error, BOLD could not have lost day 4 badly enough to lose the championship, no matter what they said.** The very worst possible cost for one row is `1`, and CAREFUL's hedging had already spent `1.13`. **A ruler with a ceiling cannot price a catastrophe, and that is not an opinion — it is the arithmetic you just did.**
+
+### 🤔 Think Deeper — T1 and T2
+
+*T1: argue for one ruler in a specific setting of the student's own choosing, naming the setting, what a confident wrong prediction costs there, and using `3.9120` and `0.9604`; finish with what you would do if the payer insisted on the other. T2: is `0.6931` a bad score? Address below it, above it, and a hospital model scoring `0.6900`, using the data-independence fact and next week's `7.8482`.*
+
+**T1 — model answer (one of many valid settings).** I would use log loss for a **flood warning**. The setting: a model outputs a daily probability that a river tops its banks, and a town decides whether to sandbag on the strength of it. A confidently wrong prediction there does not cost a little more than a hedged one — it costs the difference between a town that prepared and a town that did not, and people plan their day around the number. Under log loss, saying 2% on the day of the flood costs **`3.9120`**; under squared error the same forecast costs **`0.9604`**, which is less than the `1.13` that a whole week of "maybe, maybe not" costs the careful forecaster. So squared error would train a model towards confident announcements, because it charges so little when they fail. Log loss charges 4.27 times what a near-miss charges, and keeps going, so it trains a model that is only as certain as the evidence warrants. If the person paying me insisted on squared error, I would fit with log loss and **report** both — every metric they asked for, plus the log loss, plus the single worst row and what it said. **The argument that actually wins is never "my formula is nicer"; it is one row of data with a cost attached.**
+
+**T2 — model answer.** `0.6931` is neither good nor bad; it is **exactly the score of guessing**, and it is the score of answering 0.50 to every row on every dataset (on a skewed dataset, answering the base rate scores lower, e.g. 0.325 for 90% class 1, so there the baseline to beat is that one). Below it on balanced data, the model knows something — it has found some signal, however small. **Above it, the model is worse than guessing**, which sounds impossible for something that is trying and is not: next week a learning rate of 800 produces a loss of `7.8482`, because the model marched confidently in the wrong direction and a confident wrong answer is punished without limit. So the range is not "0 to 0.6931 is the useful part"; it is "below 0.6931 you have learned something, at it you have learned nothing, above it you have learned something backwards." Should a model scoring `0.6900` be deployed in a hospital? **No** — and the reason is not that `0.6900` is a bad number but that it is `0.0031` below guessing, which on a small or ordinary-sized test set is well within noise (with a very large one it could be a real but useless gain), and a hospital deploying a coin flip with a confident interface attached is worse than a hospital deploying nothing, because people will believe it. **The honest action is to report `0.6931` as the baseline next to `0.6900` and let the gap speak.** That is also why `0.6931` is worth memorising: it is the number that, on balanced data, turns "the loss is 0.69" from a measurement into a verdict.
+
+> **🧑‍🏫 Teacher only:** these are open answers and the two above are model answers, not the only ones. Mark T1 on three things: a named setting, a real-world cost, and both numbers used. Mark T2 on whether all three required points are addressed; the sharpest students will notice that on a skewed dataset the baseline to beat is the base-rate score, not `0.6931`.
+
+### 🛠️ Build It — Three Sentences About 0.6931
+
+*Part A: run `parked.py` and fill in the six-row table of what was printed, then say why every `z` is exactly zero and why `np.unique` prints one number. Part B: the diagnosis drill, three things to print in order, what each result would look like, and what the problem would then be. Then the three marked sentences, and the Bug Log (two entries).*
+
+**Part A — real output of `parked.py`. Runtime under a second.**
+
+```text
+all 200 z values are: [0.]
+all 200 p values are: [0.5]
+log loss            : 0.693147
+ln(2)               : 0.693147
+sklearn agrees      : True
+
+and a model that answers 0.5 to a 90-percent-class-1 dataset:
+log loss            : 0.693147
+```
+
+| What was printed | Value |
+|---|---|
+| all 200 `z` values are | `[0.]` |
+| all 200 `p` values are | `[0.5]` |
+| log loss, balanced data | `0.693147` |
+| `ln(2)` | `0.693147` |
+| `sklearn agrees` | `True` |
+| log loss, 90%-class-1 data | `0.693147` |
+
+**Why is every `z` exactly zero?** Because both weights and the bias are zero, so `0 × x1 + 0 × x2 + 0 = 0` **whatever the features are.** The features never get a chance to matter. And `sigmoid(0)` is exactly `0.5` — last week's third property, doing real work.
+
+**Why one number and not 200?** `np.unique` lists the **distinct** values. There are 200 raw scores and they are all the same, so there is one distinct value. **It is the cheapest way to prove a column is constant.**
+
+**Part B — the diagnosis drill:**
+
+| Order | What I would print | If it comes back like this… | …then the problem is |
+|:--:|---|---|---|
+| 1 | **the weights**, `print(w, b)` | still all zero | nothing is being updated — the update step is missing, or the learning rate is so small nothing moved |
+| 2 | **the features**, their means and standard deviations | all zero, or all identical | a scaler applied to the wrong thing, or a column selected that does not exist |
+| 3 | **`np.unique(y)`** | one value only (a lost class — a data bug); both classes present but still parked → labels shuffled or misaligned | there is nothing to separate, or the labels are disconnected from the features |
+
+**In that order**, because each check is cheaper than the next and each one rules out the one after it.
+
+**The three sentences, full marks:**
+
+> **One.** If the model says 0.50 to every row then every row's cost is `−ln(0.5)`, and `−ln(0.5) = 0.693147`, which is also `ln(2)`; averaging a list of identical numbers gives that number back, so the whole dataset scores exactly `0.693147`.
+>
+> **Two.** It does not depend on the data because when `p = 0.5` the two branches of the loss are the same number: if the answer was yes the cost is `−ln(0.5)` and if it was no the cost is `−ln(1 − 0.5)`, which is also `−ln(0.5)` — so the labels never enter the arithmetic at all, and a balanced dataset and a 90%-skewed one both score `0.693147`.
+>
+> **Three.** I would print the weights first: if they are all still zero then nothing has been updated, so either the update step is missing or the learning rate is so small that nothing has moved. Then the feature column means and standard deviations: if the features are all zero or all identical, the raw score is forced to be zero no matter what the weights are. Then `np.unique(y)`: if there is only one class present, that is a data bug (there is nothing to separate), and if both classes are present but the loss is still parked, the labels may be shuffled or misaligned with the rows.
+
+**Marking notes.** Sentence one is arithmetic and almost everybody gets it. **Sentence two is the discriminator** — it must say *why the label stops mattering*, which is that both branches collapse to the same number at `p = 0.5`. *"Because it's always 0.5"* is halfway. Sentence three must name **what would be printed** and **what each answer would imply**; three things to print with no conclusions attached is worth half.
+
+**Bug Log, filled in:**
+
+| What I saw | What it means | Cause | Fix |
+|---|---|---|---|
+| Every loss negative, and COIN winning | The score is broken, not bad | The leading minus sign is missing | `return -(...)`; and remember **a loss is never negative** |
+| `RuntimeWarning: divide by zero encountered in log`, then `nan` | A probability was exactly 0 or 1, so `ln(0)` was asked for | No guard before the logarithm | `p = np.clip(p, 1e-12, 1 - 1e-12)` **before** the logs |
+
+### 🎨 Draw It — both rulers on one picture
+
+*Draw both curves from your own hand-computed numbers on the empty frame, then answer four questions about your drawing: which curve leaves the top and at roughly which `p`; what the other curve does towards 0; what both do at `p = 1`; and where BOLD's day 4 sits.*
+
+A good drawing has: **log loss dots at (0.9, 0.105), (0.5, 0.693), (0.1, 2.303) and (0.02, 3.912)** with a curve through them that leaves the top of the frame; **squared error dots at (0.9, 0.010), (0.5, 0.250), (0.1, 0.810) and (0.02, 0.960)** with a curve that flattens against the dashed line at 1; the word **"ceiling"** with an arrow at that dashed line; and both ratios, `4.27` and `2.67`, written in at the `p = 0.02` end.
+
+**The four answers:**
+
+- **The log loss curve** leaves the top. With the frame drawn to a cost of 4 it goes over the edge at about `p = 0.018`, because `−ln(0.018) = 4.017`.
+- The squared error curve **flattens and stops** — it reaches `0.9604` at `p = 0.02` and cannot get past `1` however far left you go.
+- **At `p = 1` both are exactly 0.** A prediction that gave 100% to the thing that happened is perfect, and both rulers agree that perfect costs nothing. **It is the only place they agree.**
+- BOLD's day 4 sits on the **log loss** curve at `p = 0.02`, cost `3.9120` — and on the squared error curve at the same `p`, cost `0.9604`. **One dot, two heights, and the gap between them is the week.**
+
+### 📊 Self-Check
+
+*Ten "I can ..." statements, each rated 😀, 🙂 or 😕, and one question to ask.*
+
+
+All ten statements should be 😀 or 🙂. If **"say what `p` means in `−ln(p)`"** is 😕, go straight back to A2(a) — day 3 of the contest is the whole point, and getting it backwards produces answers that look perfectly reasonable, which is the worst kind of wrong.
+
+### The contest sheet — done in class (not a workbook page)
+
+*The workbook has no sheet for the Weather Forecaster Contest; each team fills in a six-row sheet on ruled paper or the board while the lesson plan runs. This is what a finished sheet looks like, and it is the key to the contest's marking.*
 
 *Truth:* `rained = [YES, YES, no, YES, no, no]`
 
@@ -1500,221 +2042,6 @@ squared error             0.9604       <         1.1300
 
 > Log loss measures surprise and has no ceiling, so a confidently wrong prediction can cost more than every other row put together, whereas squared error stops at 1 per row and so treats a disaster and a near-miss as almost the same.
 
-### Page 14.4 — Predict the output
-
-*Write what each block prints before you run it.*
-
-**P1**
-
-```python
-import numpy as np
-print(np.log(1))
-print(np.log(np.e))
-```
-
-```text
-0.0
-1.0
-```
-
-`ln(1) = 0` — the surprise of a prediction you were certain about and got right. `ln(e) = 1` by definition; that is what `e` is *for*.
-
-**P2**
-
-```python
-import numpy as np
-print(np.round(-np.log([0.9, 0.5, 0.1, 0.02]), 6))
-```
-
-```text
-[0.105361 0.693147 2.302585 3.912023]
-```
-
-**The four calculator answers in one line.** `np.log` works on a whole list.
-
-**P3**
-
-```python
-import numpy as np
-print(np.log(0.02))
-print(np.log10(0.02))
-print(np.log(0.02) / np.log10(0.02))
-```
-
-```text
--3.912023005428146
--1.6989700043360187
-2.302585092994046
-```
-
-**The third line is `ln(10)`.** The two logs differ by exactly that constant, always — which is why swapping them never changes a ranking and is therefore such a hard bug to see.
-
-**P4**
-
-```python
-import numpy as np
-print(np.clip(np.array([0.0, 0.3, 1.0]), 1e-12, 1 - 1e-12))
-```
-
-```text
-[1.e-12 3.e-01 1.e+00]
-```
-
-**The trap.** The third value looks unclipped. It is not — numpy printed four significant figures of `0.999999999999`. `print(1 - clipped[2])` gives `9.999778782798785e-13`.
-
-**P5 — the hard one**
-
-```python
-import numpy as np
-y = np.array([1, 0])
-p = np.array([0.5, 0.5])
-print(-(y * np.log(p) + (1 - y) * np.log(1 - p)))
-print(np.log(2))
-```
-
-```text
-[0.69314718 0.69314718]
-```
-```text
-0.6931471805599453
-```
-
-**Both rows cost the same, even though one answer was yes and the other was no.** Because the chance the model gave the thing that happened was 0.5 either way. **That is exactly why 0.6931 does not depend on the data.**
-
-### Page 14.5 — The `nan` and the guard (done in class)
-
-The complete file:
-
-```python
-"""guard.py - what ln(0) does to a loss, and the one line that stops it."""
-import numpy as np
-from sklearn.metrics import log_loss
-
-y = np.array([1, 1, 0, 0])
-p = np.array([0.9, 1.0, 0.0, 0.3])       # rows 2 and 3 are dead certain
-
-print("--- no guard ---")
-raw = -(y * np.log(p) + (1 - y) * np.log(1 - p))
-print("per row :", raw)
-print("mean    :", raw.mean())
-
-print()
-print("--- with the guard ---")
-p_safe = np.clip(p, 1e-12, 1 - 1e-12)
-print("p after clip:", p_safe)
-guarded = -(y * np.log(p_safe) + (1 - y) * np.log(1 - p_safe))
-print("per row :", np.round(guarded, 6))
-print("mean    : %.6f" % guarded.mean())
-
-print()
-print("sklearn log_loss:", "%.6f" % log_loss(y, p))
-```
-
-Real output. **Runtime under a second.** Note the warnings arrive above the output, on a different stream:
-
-```text
-guard.py:9: RuntimeWarning: divide by zero encountered in log
-  raw = -(y * np.log(p) + (1 - y) * np.log(1 - p))
-guard.py:9: RuntimeWarning: invalid value encountered in multiply
-  raw = -(y * np.log(p) + (1 - y) * np.log(1 - p))
---- no guard ---
-per row : [0.10536052        nan        nan 0.35667494]
-mean    : nan
-
---- with the guard ---
-p after clip: [9.e-01 1.e+00 1.e-12 3.e-01]
-per row : [0.105361 0.       0.       0.356675]
-mean    : 0.115509
-
-sklearn log_loss: 0.115509
-```
-
-**The four questions on the page:**
-
-**(a) Row 2 was a perfect prediction (`y = 1`, `p = 1.0`). Why is it `nan`?**
-
-The first half is `1 × ln(1) = 0`, which is fine. The second half is `(1 − 1) × ln(1 − 1)` = `0 × ln(0)` = `0 × (−inf)`, and **zero times infinity has no answer**, so numpy returns `nan`.
-
-**(b) Why is the mean `nan` when two of the four rows are fine?**
-
-Because `nan` propagates. Anything plus `nan` is `nan`, so the sum is `nan` and so is the average. **Two bad rows out of four destroyed all four.**
-
-**(c) What does the clip actually change?**
-
-`0.0` becomes `0.000000000001` and `1.0` becomes `0.999999999999`. **Neither is meaningfully different as a probability**, and neither is 0 or 1, so `ln` is happy. Rows 2 and 3 now cost `0.000000` each — correct, since both were perfect.
-
-**(d) Why does scikit-learn's `log_loss` match the clipped version and not the unclipped one?**
-
-**Because scikit-learn clips too.** Every real implementation does. This is not our workaround; it is the standard behaviour, and doing it by hand once is how you know it is happening.
-
-### Page 14.6 — 0.6931 out of two different datasets (stretch)
-
-The complete file:
-
-```python
-"""parked.py - the loss of a model that answers 0.5 to everything."""
-import numpy as np
-from sklearn.datasets import make_classification
-from sklearn.metrics import log_loss
-
-np.random.seed(0)
-
-X, y = make_classification(n_samples=200, n_features=2, n_informative=2,
-                           n_redundant=0, random_state=0)
-
-w = np.array([0.0, 0.0])
-b = 0.0
-z = w[0] * X[:, 0] + w[1] * X[:, 1] + b
-p = 1.0 / (1.0 + np.exp(-z))
-
-print("all 200 z values are:", np.unique(z))
-print("all 200 p values are:", np.unique(p))
-print("log loss            : %.6f" % log_loss(y, p))
-print("ln(2)               : %.6f" % np.log(2.0))
-print("sklearn agrees      :", abs(log_loss(y, p) - np.log(2.0)) < 1e-12)
-print()
-print("and a model that answers 0.5 to a 90-percent-class-1 dataset:")
-y_skew = np.zeros(200, dtype=int)
-y_skew[:180] = 1
-print("log loss            : %.6f" % log_loss(y_skew, p))
-```
-
-Real output. **Runtime under a second.**
-
-```text
-all 200 z values are: [0.]
-all 200 p values are: [0.5]
-log loss            : 0.693147
-ln(2)               : 0.693147
-sklearn agrees      : True
-
-and a model that answers 0.5 to a 90-percent-class-1 dataset:
-log loss            : 0.693147
-```
-
-**The two questions on the page:**
-
-**(a) Why is every `z` exactly zero?**
-
-Because both weights are zero and the bias is zero, so `0 × x1 + 0 × x2 + 0 = 0` for every row, whatever the features are. **And `sigmoid(0)` is exactly 0.5** — last week's third property, doing real work.
-
-**(b) The second dataset is 90% class 1 and gets the identical loss. Why?**
-
-Because every row's surprise is `−ln(0.5)` regardless of the label: if `y = 1` the loss is `−ln(0.5)`, and if `y = 0` the loss is `−ln(1 − 0.5)`, which is the same number. **The labels never enter the arithmetic.** So the average of 200 identical values is that value, on any dataset at all.
-
-### Page 14.7 — Three sentences about 0.6931 (homework)
-
-*Sentence one: why is 0.6931 the loss of a model that answers 0.50 to everything? Show the arithmetic. Sentence two: why does it not depend on the data? Sentence three: what would you print first, and what would each answer tell you?*
-
-**Full-marks version:**
-
-> **One.** If the model says 0.50 to every row then every row's cost is `−ln(0.5)`, and `−ln(0.5) = 0.693147`, which is also `ln(2)`; averaging a list of identical numbers gives that number back, so the whole dataset scores exactly 0.693147.
->
-> **Two.** It does not depend on the data because when `p = 0.5` the two branches of the loss are the same number: if the answer was yes the cost is `−ln(0.5)` and if it was no the cost is `−ln(1 − 0.5)`, which is also `−ln(0.5)` — so the labels never enter the arithmetic at all, and a balanced dataset and a 90%-skewed one both score 0.693147.
->
-> **Three.** I would print the weights first: if they are all still zero then nothing has been updated, so either the update step is missing or the learning rate is so small that nothing has moved. Then I would print the feature column means and standard deviations: if the features are all zero or all identical, the raw score is forced to be zero no matter what the weights are. Then I would print `np.unique(y)`: if there is only one class present, that is a data bug (there is nothing to separate), and if both classes are present but the loss is still parked, the labels may be shuffled or misaligned with the rows.
-
-**Marking notes.** Sentence one is arithmetic and almost everybody gets it. **Sentence two is the discriminator** — the answer must say *why the label stops mattering*, which is that both branches collapse to the same number at `p = 0.5`. *"Because it's always 0.5"* is halfway. Sentence three must name **what would be printed** and **what each answer would imply**; a list of three things to print with no conclusions attached is worth half.
 
 ### Answers to every question posed in the lesson
 

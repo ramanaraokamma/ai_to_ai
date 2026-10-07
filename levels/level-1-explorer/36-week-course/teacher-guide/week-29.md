@@ -653,8 +653,8 @@ Then the honest scale conversation, using Figure 29.3:
 
 **Do this:**
 
-- Have them write the five vocabulary words with their own one-line definitions in the workbook glossary
-  box. Their own words.
+- Have them write the five vocabulary words with their own one-line definitions on a sheet of paper. Their
+  own words. Practice Set A1 in the workbook tests the same words, so this is a rehearsal for it.
 - Have them write one sentence, in their own handwriting, answering: *where exactly did the falseness
   come from?* This is the homework's central question and a rehearsal now makes it much better later.
 - Keep the table, the bag sheet and the die. Next week uses the generator one more time, as the thing a
@@ -996,22 +996,30 @@ say none did: "Right. So it's not a step, it's a *join*. Show me the join."
 > hand from your table and show that every step is legal. That counts for full marks — arguably more,
 > because constructing one deliberately is harder than stumbling into one."
 
-**Workbook pages:** Week 29, pages 1–6.
+**Workbook:** Week 29, `workbook/week-29.md`. The sections, in order, and where each is marked in the key:
 
-- **Page 1** — your bags, written out. One bag per word that has more than one follower, slips numbered.
-- **Page 2** — trace table for sentence 1: STEP · AT WORD · SLIPS IN BAG · ROLL · GOT. Output at the
-  bottom.
-- **Page 3** — trace tables for sentences 2 and 3.
-- **Page 4** — the greedy run: twelve words, no rolls, plus how many words of your table greedy can never
-  reach and why.
-- **Page 5** — the two-column score sheet, all four rows.
-- **Page 6** — the hallucination write-up: the sentence, a red FALSE stamp, the two pairs named, and the
-  one-sentence explanation.
+- **✅ Warm-Up** (W1–W5) — five questions about last week's bigrams and tally sheets, notebook closed.
+- **✍️ Practice Set A — Understand It** (A1–A6) — vocabulary blanks, the roll-of-6 question, three
+  true-or-false items, the matching, labelling one trace row, and two short traces on the bus table.
+- **✍️ Practice Set B — Use It** (B1–B5) — the two-answers explanation, the "trillion counts" objection,
+  the attendance register, the story app, and the proof that greedy can never say `amma`.
+- **🧩 Puzzle of the Week** (a–d) — let greedy out of the circle.
+- **🤔 Think Deeper** (T1–T2) — "fluent is easy", and a design that refuses unsupported claims.
+- **🛠️ Build It** — the homework this script describes, done on **your own** table: your bags, three
+  sampled traces, the greedy run, the score sheet and the hallucination write-up, with the roll strip above.
+- **🎨 Draw It** — where a hallucination comes from.
+- **📊 Self-Check** — six I-can statements. Nothing to mark; read the 😕 column and re-teach from it.
 
-**How long it should take:** 45–60 minutes. About 10 minutes writing out the bags, 20 on the three
-traces, 5 on greedy, 5 on scoring, 10 on the hallucination write-up. If they are much over an hour they
-are probably writing out bags for every single word rather than only the ones with a choice in them —
-one-follower words are forced and need no bag at all.
+The workbook has its own Answers section at the end; the key below carries the same answers (Part I)
+plus the wrong-answer notes. The **Build It** section is the part the homework speech above asks for, and
+Part H is its model answer on the bus table.
+
+**How long it should take:** the **Build It** section is 45–60 minutes. About 10 minutes writing out the
+bags, 20 on the three traces, 5 on greedy, 5 on scoring, 10 on the hallucination write-up. If they are
+much over an hour they are probably writing out bags for every single word rather than only the ones
+with a choice in them — one-follower words are forced and need no bag at all. The rest of the workbook
+(Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Draw It) is about another 45 minutes; assign it in
+the same sitting or as a second one, as suits the week.
 
 ---
 
@@ -1216,7 +1224,7 @@ problem is structural, not a one-off.
 ### Part H — model answers for the homework, worked on the bus table
 
 If your student's own table is unusable, or you want a reference for what a full-credit answer looks
-like, here is the homework done on the bus table with the supplied roll strip
+like, here is the workbook's **Build It** section (the homework) done on the bus table with the supplied roll strip
 `4 1 3 6 2 5 1 4 2 6 3 1 5 2 4 1 6 3 2 5`, taken left to right.
 
 **Sentence 1 — prompt `the`. Uses strip numbers 1–4.**
@@ -1287,6 +1295,85 @@ Reads well **✗**. Reachable set `{the, bus, to}` — 3 of 20 words, so **17 wo
 > they came from two different sentences about two different things, and nobody in the story ever runs to
 > town. The table could not know, because when it chose `town` the only word it could see was `to`, and
 > `run` had already been forgotten."*
+
+### Part I — the workbook, section by section
+
+These are the workbook's own answers, in workbook order. The **Build It** section is marked from Part H
+above. Items marked "own table" have no single right answer; mark them against the method.
+
+**✅ Warm-Up**
+
+| Item | Answer | Marking note |
+|---|---|---|
+| W1 | **50 bigrams.** Every token starts one pair except the last, so it is always tokens − 1. | Wrong answer 51 means they counted tokens, not pairs. |
+| W2 | **Order is part of what a bigram is.** `hot dog` records A followed by B; `dog hot` records the opposite. | Direction is what word frequency threw away. |
+| W3 | A pair written **backwards**, or filed in the **wrong group**: one mark goes down either way, so the total is unchanged. | A misfiled pair makes one group too big and another too small, which is why check 2 exists. |
+| W4 | `the` was followed by something **six times**, so the group has six marks. It also equals how many times `the` appears. | |
+| W5 | (1) Somebody counted word pairs in a huge amount of text; (2) the phone **looks up** the word you typed; (3) it shows the **three followers with the biggest counts**. | No understanding anywhere in it. |
+
+**✍️ Practice Set A — Understand It**
+
+| Item | Answer |
+|---|---|
+| A1 | (a) **greedy** · (b) **sampling** · (c) **prompt** · (d) **context** · (e) **hallucination** · (f) **forced** |
+| A2 | **C** — the roll doesn't count, roll again. **A is unfair** because slip 5 would then be picked on a 5 **and** a 6, twice as often as slips 1 to 4, so its word becomes twice as likely as the data says. The counts are supposed to *be* the chances. (B is unfair for the same reason, with slip 1.) |
+| A3 | (a) **False.** Greedy works perfectly; the loop is a consequence of working correctly. Best-at-each-step is not best-overall. (b) **False.** Reading well and being true are separate questions, and nothing in the procedure checks reality. (c) **True.** `the bus goes to town .` is sentence 3 of the corpus, produced on rolls 2-3-4. Sampling can copy, can invent, and has no idea which it did. |
+| A4 | 1 → **C** · 2 → **E** · 3 → **D** · 4 → **A** · 5 → **B** |
+| A5 | 1 **STEP** · 2 **AT WORD** · 3 **SLIPS IN BAG** · 4 **ROLL** · 5 **GOT**. The die decides column 4. Whole bag, not just the roll: it is the only thing that makes a random process **checkable afterwards**. |
+| A6 (i) | Prompt `my`, roll 4: my → bus (forced) · bus → **is** (roll 4, bag `1 to · 2 to · 3 goes · 4 is · 5 .`) · is → very (forced) · very → late (forced) · late → `.` (forced). **Output `my bus is very late .`** Reads well ✓, True ✓ (sentence 4 of the corpus). Only one roll was needed. |
+| A6 (ii) | Prompt `.`, rolls 1, 2, 3: `.` → amma (roll 1) · amma → **and** (roll 2) · and → i (forced) · i → **like** (roll 3) · like → it (forced) · it → `.` (forced). **Output `amma and i like it .`** Reads well ✓, True ✗ (nobody said Amma liked anything). Pairs that joined: **`and → i`** and **`i → like`**. |
+
+Marking A6: a student who rolls on a forced step, or who writes only the roll and not the bag, has the
+method wrong even if the output is right.
+
+**✍️ Practice Set B — Use It**
+
+| Item | Answer |
+|---|---|
+| B1 | Needs **sampling** (or the bag idea) **and** the point that nothing changed between the two tries. Half credit for "it's random" — it misses the *weighting*. |
+| B2 | (a) **Right:** a bigger table and a bigger **context** fix **forgetting**; a large model would not lose track that we were talking about Amma. (b) **Wrong:** it does not fix **truth**. Nothing in the counting checks reality, so a million times the counts is a million times the fluency. The world is not in the window. |
+| B3 | (a) **"is here"** for every pupil, for ever — the biggest count in the `is` group never changes. (b) Never **`absent`**: greedy is deterministic and `absent` has a smaller count in the only group that could produce it, so its chance is zero, not small. (c) **No**, nothing is broken: every step obeyed every rule. What is missing is a step that checks whether the claim is true. |
+| B4 | (a) **One story**: grammatical, dull, repeating for ever. (b) **Exactly the same story**, word for word. (c) Any job where the same input must give the same output: a form turned into a standard sentence, a keyboard strip built for thumb-memory. Greedy is the right tool for a different job. |
+| B5 | From `the`, greedy goes `bus`, then `to`, then `the` — already visited. Reachable set **`{the, bus, to}`**, 3 words. It can never grow because greedy's choice depends only on the current word and the table never changes, so the set is closed. **`amma` is impossible, not merely unlikely.** So are 16 others: **17 of the 20 words.** |
+
+**🧩 Puzzle of the Week**
+
+| Item | Answer |
+|---|---|
+| (a) | Add **3** marks. New counts: `town` **4** vs `the` **3**. |
+| (b) | `the bus to town .` — greedy takes `bus`, then `to`, then `town` (4 beats 3), then `town` is forced to `.` and it stops. |
+| (c) | **A tie is not an escape.** With 3 versus 3 greedy has no answer in the data and needs a written tie-break rule. The tie-break "first in the corpus wins" gives `to → the` (tokens 5→6) over `to → town` (tokens 20→21), so it is back in the circle. Accept a different tie-break that escapes, if the student notices they had to add a rule that was not in the data. |
+| (d) | They changed the **data**, not the procedure. The machine was stuck and the fix was in what it was given to count (same pattern as Week 17; it returns in Week 31). |
+
+**🤔 Think Deeper**
+
+| Item | Answer |
+|---|---|
+| T1 | Full credit explains the quote (the machine is built to produce text that reads like text, so "convincing" says nothing about truth), names a job to trust straight away (nothing to get wrong, or checkable in seconds: simplifying, suggesting names, practice questions), and a job to check every claim (specific, checkable, expensive if wrong: a date, a page number, a quote from a real person). The test is "what does it cost me if this sentence is wrong?" |
+| T2 | No single design; the marks are in the cost. Typical: (1) only allow whole sentences from the text — works, but can never say anything new (a slow photocopier); (2) check each sentence against a list of true things — works in principle, but no trustworthy list exists for most of the world and the check would run on every word. Full marks for sitting honestly in the trade-off. This is a real unsolved research problem. |
+
+**🛠️ Build It** — own table, marked from Part H (model answer on the bus table), Part E (reference traces)
+and Part F (the hallucination in full). The items to mark, in workbook order:
+
+| Workbook item | What a full-credit answer has |
+|---|---|
+| Step checklist (1–9) | All nine ticked, in order. |
+| My bags | A bag only for words with more than one follower, slips numbered; the **forced** words listed separately. A bag for every word means they have missed the point of forced. |
+| My traces (three) | Every row has the bag written out and the roll; rolls bigger than the bag crossed out and the next taken; strip numbers used left to right. |
+| My greedy run | Twelve words, no rolls, biggest count each step; "words greedy can reach: __ out of __" computed from their own table (bus table: 3 of 20, 17 impossible). |
+| My score sheet | READS WELL column filled completely before TRUE. A student whose TRUE answers follow their READS WELL answers has let one column answer the other. |
+| My hallucination write-up | The sentence, whether any step broke a rule (**no**), the two pairs named, where each came from, and the one sentence. Needs the two pairs, both real, and the one-word context. If none came out false, a hand-built false sentence with every step shown legal earns full marks (Part G is a spare). |
+
+**🎨 Draw It**
+
+No single right drawing. Full credit has both real pairs (ticked), the join marked and circled, the false
+sentence stamped, a window frame round the **one** word the machine could see, and the label **"nothing
+here is broken"**. A drawing that lets a reader think a bug caused it has told the wrong story.
+
+**📊 Self-Check**
+
+Not marked. Count the 😕 column: "Name words greedy can never produce" and "Trace a hallucination to the
+two pairs" are the two most likely to need a second go.
 
 ### Answers to every question posed in the lesson
 

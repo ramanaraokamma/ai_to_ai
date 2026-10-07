@@ -12,7 +12,7 @@
 | **Type** | 🟩 lab — hands on a keyboard from minute 26 |
 | **Big idea** | Thirty rows about you are a **sample**, not the world — and a **data card** is how you stay honest about that. |
 | **New vocabulary** | provenance · sample · population · data card · outlier |
-| **Materials** | The student's own table from Weeks 4–5 (aim: 21+ rows) · the printed data card template (Workbook Week 6, page 3) · a board or big sheet of paper · a pen |
+| **Materials** | The student's own table from Weeks 4–5 (aim: 21+ rows) · the printed workbook (Week 6), whose Build It section holds the blank "My data card" table · a board or big sheet of paper · a pen |
 | **Tech needed** | A browser and **one** of: Google Sheets (free account), Excel, or LibreOffice Calc. All three behave identically for everything we do. Nothing to install if you use Sheets. Plus **one web page with a statistic on it**, chosen by you in advance. |
 | **Prep time** | 20 minutes the night before — 5 of them spent actually typing `=AVERAGE` yourself |
 
@@ -242,7 +242,7 @@ Orientation, not assessment: no marks, no quiz.
 
 ### 20 minutes the night before
 
-- [ ] **Print Workbook Week 6, pages 1–4.** Page 3 is the blank data card and it is the one that must exist on paper — writing a card in a text box on a screen kills it.
+- [ ] **Print the whole Workbook Week 6** (Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Build It, Draw It, Self-Check; the Answers section at the end is the student's own check, so print without it or fold it under). The **Build It** page is the one that must exist on paper, because it holds the blank "My data card" table; writing a card in a text box on a screen kills it.
 - [ ] **Get a spreadsheet working, and type `=AVERAGE` yourself.** Five minutes. Open [sheets.google.com](https://sheets.google.com) (or Excel, or LibreOffice), make a blank sheet, type the numbers 2, 4, 6 down cells A1, A2, A3, click A5 and type `=AVERAGE(A1:A3)`, press Enter. It must show **4**. If it shows `=AVERAGE(A1:A3)` as text, you missed the `=`. **Do not skip this step.** Reading about it is not the same as your fingers having done it.
 - [ ] **Check the student can get in.** If they need a Google account they do not have, decide tonight: use your account, use Excel/LibreOffice, or use the paper fallback. Do not discover this at minute 26.
 - [ ] **Pick your web page and open it in a tab.** Any page with a statistic: a news article with a percentage, a sports statistics page, a Wikipedia table, a product review score. **Choose one that will frustrate you slightly.** A page that answers all five questions makes for a lovely dataset and a dead lesson. A page that answers two is perfect.
@@ -253,7 +253,7 @@ Orientation, not assessment: no marks, no quiz.
 
 - [ ] Board: write the two sleep averages, `5.9` and `7.8`, and nothing else. Cover them or turn the board round.
 - [ ] Laptop open, blank spreadsheet on screen, web page in a second tab, screen brightness up.
-- [ ] Data card template (page 3) face down on the desk.
+- [ ] Workbook open to Build It, "My data card" table, face down on the desk.
 - [ ] The student's own table on the desk, next to the laptop.
 - [ ] Their Week 5 fault log where you can both see it — it becomes line 6 of the card.
 
@@ -541,7 +541,7 @@ Then assign the homework using the words in the Homework section, and check the 
 
 - The web page you chose, open in a tab
 - Board or big paper with the five questions already numbered down the left
-- Workbook Week 6, page 3 — the blank data card, **on paper**
+- Workbook Week 6, Build It, the blank "My data card" table, **on paper**
 - The student's Week 5 fault log
 - The completed averages from the first half
 
@@ -583,7 +583,7 @@ Three or four unknowns out of five is the normal result. When you get it, say th
 
 ### Part 2b — Writing the card (10 minutes)
 
-Hand over page 3. Seven lines, in order. Read each line's prompt aloud, give them a minute, move on. Do not let them polish line 1 for four minutes — the last two lines are worth more than the first five put together.
+Hand over the Build It page. Seven lines, the rows of the "My data card" table, in order. Read each line's prompt aloud, give them a minute, move on. Do not let them polish line 1 for four minutes — the last two lines are worth more than the first five put together.
 
 Timing inside the ten minutes:
 
@@ -753,8 +753,10 @@ Write the level in your own notes. Week 9's Term 1 Checkpoint asks for it, and W
 
 ## 📤 Homework to Assign
 
-**Workbook Week 6, pages 1–4 — finish "Your Life In 30 Rows" plus the data card.**
+**Workbook Week 6, all sections — Warm-Up, Practice Set A, Practice Set B, Puzzle of the Week, Think Deeper, Build It (finish "Your Life In 30 Rows" plus the data card), Draw It, Self-Check.**
 **Time: 45–60 minutes across the week.**
+
+The workbook is meant to be done in its printed order, about 45–60 minutes across the week; **Build It takes about 20 of those**. In class the student only drafts the "My data card" table (Part 2b of the activity); everything else in the workbook is home work, and the card is finished there. Tell the student that the Warm-Up and Practice Sets are quick, and that **Build It is the part you will read first.**
 
 **Say this:**
 
@@ -770,7 +772,9 @@ Write the level in your own notes. Week 9's Term 1 Checkpoint asks for it, and W
 >
 > **Five. Get one of those three sentences checked by an adult.** Read it to them and ask one question: 'Does this make sense to you?' If they look confused, your sentence is not finished. Write down what they said, even if what they said was 'I don't get it.' Especially then."
 
-**What to check when it comes in:** the row count on the card matches the actual number of rows; both averages appear on paper with the count they were computed from; line 7 names at least two forbidden claims; and each of the three sentences names something specific and missing rather than just expressing doubt.
+The five spoken instructions below are the Build It page ("My two averages", "My data card", "My three sentences", "The adult check"). Say them after the sections above are on the table.
+
+**What to check when it comes in:** the row count on the card matches the actual number of rows; both averages appear on paper with the count they were computed from; line 7 names at least two forbidden claims; and each of the three sentences names something specific and missing rather than just expressing doubt. Then mark the other sections from the Answer Key below, which follows the workbook's own order; the answers are also printed at the end of the workbook, so a student can self-check Warm-Up through Think Deeper.
 
 ---
 
@@ -802,7 +806,7 @@ As many as were non-blank, not necessarily thirty. `AVERAGE` silently ignores em
 Full credit requires three things: whose data, which subset, and when. Model answer: *"My thirty meals, recorded over ten days in September, took 16.4 minutes on average."* Not acceptable: *"Meals take 16.4 minutes."* Watch for the middle case — *"I take 16.4 minutes to eat"* — which drops the *when* and quietly claims it is true all year. Ask for the dates back.
 
 **Wrap — "Give me one 'does not show that' sentence about your own table."**
-See the marking rules under page 4 below. In class, accept a rough version and sharpen it on the spot: every "everyone" must be replaced by a specific group, and every sentence must end with a *because* naming something absent from the table.
+See the marking rules under Workbook Build It, "My three sentences", below. In class, accept a rough version and sharpen it on the spot: every "everyone" must be replaced by a specific group, and every sentence must end with a *because* naming something absent from the table.
 
 **Activity — "Would you be happy for someone to make a decision using this data, after hearing that card?"**
 No single correct answer; both answers can be excellent. Strong "no": *"No — it is one person and ten days, and line 7 says not to use it for anyone else."* Strong "yes": *"Yes, for one kind of decision — a decision about my own routine. Nothing bigger."* What you are marking is whether the answer is *scoped*. An unscoped "yes, it's my data, it's fine" is a level 2.
@@ -824,6 +828,8 @@ Answers depend on your chosen page, so what follows are the marking rules and a 
 | 5 | With whose permission? | Not mentioned | **Unknown** |
 
 **The conclusion to write on the board:** four unknowns out of five. The number is not proven false — it may well be right. It is **unchecked**, and now we can say precisely which four things we would need in order to check it. That sentence is the deliverable.
+
+**The one-line verdict.** The student closes with *"This number is unchecked because I cannot answer questions ___ and ___."* A verdict of "this number is a lie" is **not** full credit: it claims more than the interrogation showed. Being unable to check a number is not the same as knowing it is false, and that distinction is worth a mark of its own. (The interrogation is done in class; it is not a workbook section.)
 
 ### Activity — the data card
 
@@ -848,60 +854,115 @@ Marking criteria rather than a single answer:
 > **Known gaps:** 2 meals blank (forgot to record). 1 sleepiness value of 9 deleted as impossible on a 1–5 scale. 1 meal of 47 minutes kept — it was a birthday lunch, not an error. No weekend meals at all.
 > **Do NOT use for:** Guessing anyone else's eating or sleepiness. Any claim about children in general. Deciding what anybody should eat.
 
-### Workbook Week 6, page 1 — the spreadsheet and the two averages
+### Workbook Week 6 — Warm-Up (W1–W5)
 
-**The averages.** Numbers depend on the student's own data. The worked example used throughout this file:
+Recap of Week 5. Mark quickly; if more than two are wrong, spend two minutes on Week 5's type test before moving on.
 
-- `minutes`: the thirty values sum to **492**. 492 ÷ 30 = **16.4 minutes**.
-- `sleepy_1to5`: the thirty values sum to **87**. 87 ÷ 30 = **2.9**.
+- **W1.** The one-question test: *"If I **add** two of these values together, does the answer **mean anything**?"* Yes means number; no means category, however many digits it has.
+- **W2. CATEGORY.** ID 1001 + ID 1002 = 2003, which is a different person or nobody. The digits are a **name**, not an amount. *(Watch for: NUMBER, "because it has digits". Send them back to the W1 test.)*
+- **W3. Do:** leave it visibly blank and write a note saying why. **Never:** put a 0 in it. A blank says *I don't know*; a 0 says *I know, and it was zero.* *(This is the same idea that matters again in B5(d).)*
+- **W4.** `sleep_h` = 88 is **IMPOSSIBLE** (outside 0–16): blank it and note `was 88, impossible, original lost`; do **not** guess 8 or 8.8. `screen_min` = 480 is an **OUTLIER** (inside 0–1440, so legal): **keep it** and note why that day was different. The common swap is treating the 480 as an error and deleting it.
+- **W5.** A closed, short list, for example `ALLOWED VALUES for day: Mon · Wed · Fri`, with nothing else allowed. It has to be a **list**, **short** and **closed**. "Be consistent" fails: it is not a list and cannot be checked.
 
-**If two cells are blank**, the correct arithmetic changes and the student must say so. Suppose the two blanks were in `minutes` and the remaining 28 values sum to 461: 461 ÷ 28 = **16.46**, and the paper must read "average of 28 rows, 2 blank". A student who writes "16.5, average of 30" has recorded something that did not happen.
+### Workbook Week 6 — Practice Set A, Understand It (A1–A6)
 
-**"Is / is not evidence for", both lines.** Model answers:
+- **A1.** **population**, **sample**, **provenance**, **data card**, **seven**, **unknown**. Accept "dataset" or "table" for *population* only with a prompt: "everything you would like your answer to be true about".
+- **A2. (b) Question 2, "From whom?"** The answer "visitors to a sleep-problems clinic" gives the whole game away. **Second best: (d) question 4, "How, exactly?"**, because a proper description of the method would have had to mention recruiting at a clinic. Questions 1, 3 and 5 would **not** have caught it: an honest, recent, fully consented study can still measure the wrong people. *(This is the same item as the "Which of the five questions would have caught the sleep-clinic problem?" lesson question above.)*
+- **A3. FALSE.** All 300 are still cricket people. A bigger badly chosen sample narrows the **luck** and leaves the **lean** exactly where it was. In soup words: **an unstirred ladle is not better than an unstirred teaspoon; stirring matters more than spoon size.**
+- **A4.** 1 → **C** · 2 → **D** · 3 → **A** · 4 → **E** · 5 → **B**.
+- **A5.** 1. **population** · 2. **sample** · 3. **bias** (also accept "the gap between what I measured and what I am talking about") · 4. **the things I never measured**, the rest of the population. **Fraction: 8 / 46.** The denominator is the **whole** population, the 8 filled dots **plus** the 38 hollow ones. **8/38 is the common slip** (measured versus unmeasured, not measured versus everything). 8 out of 46 is about 17%, so 83% was never looked at.
+- **A6.** Numbering, top to bottom of the jumbled list: Who it is about **4** · Do NOT use for **7** · What it is **1** · Permission **5** · Known gaps **6** · How much **2** · Who collected it **3**. **The two that matter: lines 6 and 7.** Anybody can count rows and write a date; saying what is missing and what you may not claim is the skill, and it is the part a careless person would leave off.
+
+### Workbook Week 6 — Practice Set B, Use It (B1–B5)
+
+**B1.**
+
+| Dataset | The question it honestly answers |
+|---|---|
+| **A** (sleep clinic) | *"How much sleep do teenagers **who already have a sleep problem** get?"* The entry ticket to the clinic is having one |
+| **B** (4 random schools) | *"How much sleep do teenagers in these four schools get?"* Much closer to the question asked, though still not "all teenagers everywhere" |
+
+**Averaging them to about 6.85: NO.** It answers two different questions and so answers none. Use the giraffe-and-mouse line (see the lesson question "Should we average the two" above).
+
+**B2. Face unlock.** It will work **noticeably worse on children's faces** (failing, or taking several tries) and fine for adults, while nothing in the table looks broken: Week 5's four checks all pass. **Clean is not the same as trustworthy.** The word is **sample** (accept **bias**): the sample does not match the population it is used on. **20,000 more adult faces: NO.** More unstirred ladle; it adds not a single child. The fix is more of the *missing kind* of data, not more data.
+
+**B3. The volunteer survey.** Population: **all 30 students in the class.** Sample: **the 11 who chose to walk up to the desk.** The failure is **self-selection**. The people who volunteer tend to feel strongly, often the ones who dislike maths and want to say so; the 19 who thought it was "fine" did not bother, and "fine" is the answer that never gets recorded. So 2.1 out of 5 is the opinion of the people who cared enough to walk over. Honest sentence to add, for example: *"This is 11 students out of 30 who chose to answer. It under-represents students who feel neutral about maths, because neutral people do not usually volunteer."*
+
+**B4. Repairing the sentences.** Marking rule: every good sentence names **a specific claim** and ends with a **because** pointing at something **absent from the table**.
+
+| The bad sentence | Why it fails | A repaired version |
+|---|---|---|
+| "This might be wrong." | **Anything** might be wrong. It names nothing, costs nothing, and tells a reader zero | *"This does not show that my sleepiness comes from the food, because I never recorded how much homework I had that night."* |
+| "This does not prove anything." | An **over-correction**. It does prove something small and true: that these 30 meals took this long | *"This does prove that my own 30 meals in September took about 16 minutes. It does not show that anyone else's do, because my sample is one person."* |
+| "This does not show that everyone eats like me." | Right **idea**, but "everyone" does no work and no reason is attached | *"This does not show that other children in my class eat for 16 minutes, because I measured one person, me, and one person tells you nothing about anyone else, however many meals I record."* |
+
+Further repairs you may need at the desk:
+
+| Not accepted | Why | The repair |
+|---|---|---|
+| "This does not show that I am healthy." | True but unconnected: health was never measured or claimed | "Pick a claim somebody might actually make from your numbers" |
+| "This does not prove anything." (unrepaired) | Over-correction | "What is the smallest true thing it does prove? Start there, then say where it stops" |
+
+**B5. The average that quietly divided by 28.**
+
+| Part | Answer |
+|---|---|
+| (a) | 492 ÷ **30** = **16.4** minutes |
+| (b) | 461 ÷ **28** = 16.4642... = **16.46** minutes. `AVERAGE` did this **silently** and never mentioned the 28 |
+| (c) | **`=COUNT(D2:D31)`**. If it says 28, the machine has told you something it would never have volunteered |
+| (d) | 461 ÷ **30** = 15.3666... = **15.37** minutes: a drop of more than a minute for a reason that never happened. **A blank gets honestly skipped; a fake zero gets honestly believed** |
+| (e) | `16.46 minutes — average of 28 values, 2 rows blank` |
+
+"16.5, average of 30" records something that did not happen. Accept 16.5 in (b) only if the student shows 16.46 first, but the (e) line must say 28 and 2 blank.
+
+### Workbook Week 6 — Puzzle of the Week, Four Surveys, One School
+
+1. **Order, most trustworthy first: D → B → C → A.** D measured **all 800**, so there is no sampling error. B is only 30 but **stirred** (a lottery pick of 5 from each of 6 year groups), and its 34% is within 4 points of the true 38%. C is 120 but **self-selected**, off by 24 points. A is 400 but every one stood **in the pizza queue**, off by 43 points.
+2. **Survey A.** 400 people, but all from the one place in the school where pizza-lovers had collected. Being in the queue was the entry ticket, exactly like walking into the sleep clinic. More rows from the wrong place is a wrong answer that looks scientific.
+3. Because **B was stirred and A and C were not.** A well-stirred teaspoon beats an unstirred ladle. B used about 13 times less data than A and landed 39 points closer to the truth.
+4. **Survey D:** population = **all 800 students**; sample = **all 800 students**. The unusual thing is that **they are the same set**. When the sample is the whole population the result is a fact, not an estimate. (It is a fact only about *that* question: ask about students in the whole town and the same 800 rows become a sample again.)
+5. **A: wrong place** · **B: nothing wrong** (accept "too small" as a fair worry, but B landed closest of the three samples) · **C: self-selection** · **D: nothing wrong**.
+
+### Workbook Week 6 — Think Deeper (T1–T2)
+
+**T1. Invent a question for which Dataset A is the better dataset.** Full credit needs a question where the clinic's entry condition is a **feature, not a flaw**. Model answers: *"How well are the treatments at this clinic working? Dataset A is the only one that can answer that, because everyone in it is a patient there."* Or *"How little sleep do teenagers with sleep problems actually get? That is exactly what Dataset A measures, and Dataset B would mostly measure people who sleep fine."* The big idea: the dataset was never bad, it was **matched to the wrong question**. A student who reaches this is at level 5.
+
+**T2. Designing a stirred sample.** Marked on (a) some mechanism for **stirring** and (b) finding their **own** flaw. A strong plan: *"I'd go to six registration classes, one per year group, on the same morning. In each, the teacher reads out five names from a list I shuffled beforehand, and only those five answer. That is 30 people across every year, and I never choose who."* Full-credit flaws include: one class per year is not a fair slice (classes are often grouped by ability or language); anyone absent is invisible; the student standing at the front may be told what they want to hear; one morning is one day (if it is chips day, chips wins). The most common weak answer is *"nothing is wrong with my plan."* Something always is; push until they find it.
+
+### Workbook Week 6 — Build It, Finish Your Life In 30 Rows
+
+Eight checklist steps, then four fill-in parts: **My two averages**, **My data card**, **My three sentences**, **The adult check**. No single answer; mark against the points below.
+
+**My two averages.** Numbers depend on the student's own data. The worked example used throughout this file: `minutes` sums to **492**, and 492 ÷ 30 = **16.4 minutes**; `sleepy_1to5` sums to **87**, and 87 ÷ 30 = **2.9**. If two cells are blank the arithmetic changes and the paper must say so: for example, 28 remaining `minutes` values summing to 461 give 461 ÷ 28 = **16.46**, written as "average of 28 rows, 2 blank". Check the table's *Average*, *How many values it came from* and *Rows blank* columns agree with each other and with the student's `=COUNT` result (step 4).
+
+**The full sentence, with *whose* and *when*.** Model: *"My own thirty meals, recorded over ten days in September, took 16.4 minutes on average."* Not acceptable: *"Meals take 16.4 minutes."* Watch for the middle case, *"I take 16.4 minutes to eat"*, which drops the *when* and quietly claims it is true all year; ask for the dates back. Model IS / IS NOT pair if a student asks for the contrast:
 
 | | |
 |---|---|
 | **IS** evidence that | "My own meals, over these ten days in September, took about 16 minutes on average." |
 | **is NOT** evidence that | "Meals in general take 16 minutes. My sample is one person, ten days, one routine, no weekends." |
 
-Marking point: the IS line must contain *whose* and *when*. The IS NOT line must name what is missing, not merely express doubt.
+**My data card.** Marked with the seven criteria in "Activity — the data card" above, against the seven numbered rows of the *My data card* table. Two notes. **A card with honest unknowns scores full marks:** "Who collected it: unknown, my little brother wrote three of the rows and cannot remember how he measured them" is an excellent line 3, specific and honest, and it tells a reader which rows to distrust. **A card that contradicts the table loses marks:** if line 2 says 30 rows and the table has 22, that is the fault the card exists to prevent. Check this first; it takes five seconds and is the most common failure.
 
-### Workbook Week 6, page 2 — the five questions, on a real source
+**My three sentences.** Every sentence must (a) start "This does not show that…", (b) name a specific claim, and (c) give a *because* that names something **absent from the table**. Three full-credit answers for the meals dataset:
 
-Answers depend on the page. Full credit requires: all five questions written out; an answer or the word "unknown" beside each; and a final one-line verdict of the form *"This number is unchecked because I cannot answer questions ___ and ___."* A verdict of "this number is a lie" is **not** full credit — it claims more than the interrogation showed. Being unable to check a number is not the same as knowing it is false, and that distinction is worth a mark of its own.
-
-**Also on page 2:** *"Name a question for which a biased dataset is the right dataset."* Model answer: Dataset A, collected at a sleep clinic, is the *best* available data for "do the treatments at this clinic help?" or "how little sleep do teenagers with sleep problems actually get?" The dataset is not bad. It was matched to the wrong question. A student who reaches this is at level 5.
-
-### Workbook Week 6, page 3 — the data card
-
-Marked with the seven criteria above. Two additional notes for marking:
-
-**A card with honest unknowns scores full marks.** "Who collected it: unknown, my little brother wrote three of the rows and cannot remember how he measured them" is an excellent line 3. It is specific, it is honest, and it tells a reader exactly which rows to distrust.
-
-**A card that contradicts the table loses marks.** If line 2 says 30 rows and the table has 22, that is the fault the whole card exists to prevent. Check this one first; it takes five seconds and it is the most common failure.
-
-### Workbook Week 6, page 4 — three things this does not prove
-
-The graded page. Every sentence must (a) start "This does not show that…", (b) name a specific claim, and (c) give a reason that names something **absent from the table**.
-
-**Three full-credit answers for the meals dataset:**
-
-> **1.** "This does not show that other children eat for 16 minutes. My sample is one person — me — and one person tells you nothing about anyone else, however many meals I record."
+> **1.** "This does not show that other children eat for 16 minutes. My sample is one person, me, and one person tells you nothing about anyone else, however many meals I record."
 
 > **2.** "This does not show that big meals make me sleepy. Every big meal in my table was also a rice meal, so I cannot tell whether it is the size or the rice. I would need a big meal that was not rice, and I do not have one."
 
 > **3.** "This does not show anything about weekends. I only recorded school days, so Saturday and Sunday are not in the table at all, and those are the days I eat most differently."
 
-**Sentences that do not earn credit, and the repair for each:**
+Sentences that do not earn credit are in the B4 repair tables above; use the same repairs here.
 
-| Not accepted | Why | The repair |
-|---|---|---|
-| "This might be wrong." | Anything might be wrong. Names nothing | "Wrong how? What is missing from the table?" |
-| "This does not show that I am healthy." | True but unconnected — health was never measured or claimed | "Pick a claim somebody might actually make from your numbers" |
-| "This does not prove anything." | Over-correction. It does prove something small and true | "What is the smallest true thing it does prove? Start there, then say where it stops" |
-| "This does not show that everyone eats like me." | Right idea, vague. "Everyone" is doing no work | "Everyone — who? And say the reason: because my sample is what?" |
+**The adult check.** Full credit is the adult's actual words written down, whatever they were. "My dad said he didn't understand the second one" is a genuine result and should be praised loudly: the student tested their sentence instead of assuming it worked. A suspiciously perfect "my mum said it was very good" with no detail earns a gentle question: "What exactly did she say?"
 
-**The adult check.** Full credit is the adult's actual words written down, whatever they were. "My dad said he didn't understand the second one" is a genuine result and should be praised loudly — it means the student tested their sentence instead of assuming it worked. A suspiciously perfect "my mum said it was very good" with no detail earns a gentle question: "What exactly did she say?"
+### Workbook Week 6 — Draw It
+
+Marked on four things, not artistic skill: the population drawn **much bigger** than the sample and labelled with a real number or description; the sample patch **shaded** and labelled with the actual rows and dates; the **missing** part labelled, ideally with a count; and one "This does not show that…" sentence naming something **specific and absent**. **The single most common mistake** is drawing the sample as a neat patch in the **middle**, evenly spread, which quietly claims the spoonful was stirred. For a one-person, ten-school-day table it was not, so **draw it in a corner**; where the patch goes is an honest claim about how it was sampled. The workbook's own example (about 1,100 meals a year; a corner patch of 30 meals, 3–12 September; "about 1,070 meals never measured") is a full-credit answer.
+
+### Workbook Week 6 — Self-Check
+
+Five "I can…" rows with 😀 / 🙂 / 😕 boxes, and a free "one thing I still want to ask about" line. Nothing to mark. Read the 😕 ticks and the question; they tell you where to start Week 7's recap. A student who ticks 😀 on all five but wrote an unscoped "everyone" sentence in Build It is over-rating themselves; show them the sentence.
 
 ### The three claims for the "won't engage" fallback
 
@@ -913,7 +974,7 @@ If you used the game where you make outrageous claims and the student shoots the
 | "So eating slowly makes you sleepy." | "The table shows them happening together. It cannot show which one caused the other — and my big meals were all rice anyway." |
 | "So this proves people should eat faster." | "It does not show that eating faster helps anything at all. I never tried eating faster on purpose, so there is nothing in the table about it." |
 
-Write their rebuttals down verbatim. They are line 7 of the card and page 4 of the workbook, already written in the student's own voice.
+Write their rebuttals down verbatim. They are line 7 of the card and the "My three sentences" part of Build It, already written in the student's own voice.
 
 ---
 

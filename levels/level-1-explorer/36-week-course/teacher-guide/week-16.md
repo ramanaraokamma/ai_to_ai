@@ -266,10 +266,12 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 
 ### 10 minutes the night before
 
-- [ ] **Print Handout 16A** — the eight readout cards, from the workbook. One sheet, cut into eight
-      cards, or leave it as a sheet and cover the ones you are not on with a piece of paper.
+- [ ] **Print Handout 16A** — the eight readout cards. (They are not in the workbook; the workbook's
+      own eight readouts, H1–H8, are the homework.) Take the card table from §The Activity, In
+      Full → *The eight cards*. One sheet, cut into eight cards, or leave it as a sheet and cover
+      the ones you are not on with a piece of paper.
       *(No printer? Copy the eight readouts onto eight index cards by hand. It takes four minutes.
-      They are listed in full in the Answer Key below.)*
+      They are listed in full in the Answer Key below, K1.)*
 - [ ] **Do the eight cards yourself, on paper**, without looking at the answer key. If you cannot do
       card 5 and card 6 cold, re-read §3 and §4 above.
 - [ ] **Do the balance arithmetic yourself:** 200 + 200 + 8 = 408, then 400 ÷ 408. Write out the
@@ -295,7 +297,7 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 |---|---|
 | No printer for Handout 16A | Write the eight readouts on the board three at a time. Slower but works. |
 | The student did not do last week's photo homework | Use the sample counts in Answer Key §K7 instead. The lesson does not depend on their own photos. |
-| You run out of time in the activity | Do cards 1, 2, 5, 6 in class. Cards 3, 4, 7, 8 move to homework, and the homework's own eight become optional. |
+| You run out of time in the activity | Do cards 1, 2, 5, 6 in class. Cards 3, 4, 7, 8 move to homework, and the workbook's own eight (Build It Part 1, H1–H8) become optional. |
 | The student refuses to write a policy | Write yours on the board, deliberately badly (threshold 30%), and ask them to attack it. Getting them to argue is the same skill. |
 
 ---
@@ -875,7 +877,7 @@ so out loud.
 
 ## 📤 Homework to Assign
 
-**Workbook:** Week 16, pages 1–3. **Time: about 50 minutes.**
+**Workbook:** Week 16, the 🛠️ **Build It** section (Parts 1–3). **Time: about 50 minutes.** The rest of the workbook (Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Draw It, Self-Check) is not part of the required 50 minutes; see the table below.
 
 **Say this, word for word:**
 
@@ -892,21 +894,31 @@ so out loud.
 **Check before they leave:** ask them to do the sum on readout 1 out loud. That's step one. Do not
 walk them through more than that.
 
-| Page | Task | Approx. time |
-|---|---|---|
-| 1 | Eight readouts: sum, winner, margin, call with a reason | 25 min |
-| 2 | The confidence policy, two thresholds, two reasons | 15 min |
-| 3 | Vocabulary: four terms in their own words | 10 min |
+| Workbook section | Task | Approx. time | Status |
+|---|---|---|---|
+| 🛠️ Build It, Part 1 | Eight readouts H1–H8: sum, winner, margin, call with a reason, plus the pattern question | 25 min | Assign |
+| 🛠️ Build It, Part 2 | The confidence policy, two thresholds, two reasons, OR-not-AND, test it on H1–H8 | 15 min | Assign |
+| 🛠️ Build It, Part 3 | Vocabulary: four terms in their own words | 10 min | Assign |
+| ✅ Warm-Up (W1–W5) | Five recall questions about Week 15 (training) | 5 min | Optional: use as a retrieval start to Week 17 |
+| ✍️ Practice Set A (A1–A6) | Understand it: blanks, margin matching, label the readout, spot the misread | about 20 min | Optional extra practice |
+| ✍️ Practice Set B (B1–B5) | Use it: crisp packet, teacher-photo balance (B2), flawed policy, app design, bird feeder | about 25 min | Optional extra practice |
+| 🧩 Puzzle of the Week | Three readouts with numbers rubbed out | about 10 min | Optional |
+| 🤔 Think Deeper (T1, T2) | Two paragraph arguments | about 15 min | Optional |
+| 🎨 Draw It | Draw the 100 points of belief and the missing box | about 10 min | Optional |
+| 📊 Self-Check | Six tick-box lines and one question for next lesson | 3 min | Suggested: ask for the question at the start of Week 17 |
+
+The required 50 minutes is unchanged. If you want the optional sections done, spread them over the
+week rather than adding them to one evening.
 
 > **💡 Try this:** If the student finishes early, ask them to test their own policy against the
-> eight *class* cards from today. How many of the eight would their policy have blocked? Was that
+> eight *class* cards from today (the workbook's Part 2 table only tests it on H1–H8). How many of the eight would their policy have blocked? Was that
 > the right call on each one? It takes ten minutes and it turns a guess into a measurement.
 
 ---
 
 ## 🔑 Answer Key
 
-*Complete worked answers to every question in this week's lesson and workbook.*
+*Complete worked answers to every question in this week's lesson and workbook. K1–K3 and K7 cover the lesson. K4–K6 and K8–K14 cover the workbook, one key section per workbook section, using the workbook's own item labels (W1, A3, B2, H6, T1 and so on): K4–K6 are Build It Parts 1–3, then K8 Warm-Up, K9 Practice Set A, K10 Practice Set B, K11 Puzzle, K12 Think Deeper, K13 Draw It, K14 Self-Check. The values are the ones in the workbook's own Answers section. To mark: find the section heading, then the item label.*
 
 ### K1 — The eight in-class cards (Handout 16A)
 
@@ -1020,7 +1032,7 @@ course actually does.
 | Wrap | Model says 90%. Is it right? | You can't tell. Depends entirely on what was held up. |
 | Wrap | Why is 45/44/11 worse than 45/30/25? | Margin 1 versus margin 15. The first flips from nothing. |
 
-### K4 — Workbook page 1: the eight homework readouts
+### K4 — Workbook 🛠️ Build It, Part 1: the eight homework readouts (H1–H8)
 
 Classes are spoon / toothbrush / comb in that order.
 
@@ -1073,7 +1085,7 @@ lands nearest spoon. The model isn't malfunctioning. It has 100 points and three
 because the object wasn't in any class. **Margin is necessary but not sufficient. You also have to
 know what was held up.**
 
-### K5 — Workbook page 2: the confidence policy
+### K5 — Workbook 🛠️ Build It, Part 2: the confidence policy
 
 There is no single correct policy. Grade the **defence**, not the number. A full-credit answer has:
 two thresholds, one reason about false alarms, one reason about misses, and numbers that survive one
@@ -1089,34 +1101,54 @@ counter-example.
    my model must say "not sure" instead of guessing.
 ```
 
-> **Reason 1 — about false alarms.** A false alarm here means saying "spoon" when it isn't one. On
-> my eight cards, every wrong answer except card 8 had a margin under 25. If I'd used a 25-point
-> margin rule, I'd have blocked cards 2, 3, 5 and 7 — all four of the shaky ones — and card 8 would
-> still have got through, but that one had nothing wrong with the readout to warn me. So 25 points
-> catches most of my false alarms without me having to see the true answer first.
+> **Reason 1 — about false alarms.** A false alarm here means saying "spoon" when it isn't one. Every
+> wrong row in my H table except H8 had a margin under 25: H2 had 1, H4 had 15, H6 was a misread. So
+> a 25-point margin rule catches my false alarms **without me needing to know the true answer
+> first** — which is the whole trick, because in real use nobody tells you the true answer. H8
+> (margin 81 on a banana) still gets through, and I have to be honest that no threshold catches that
+> one; only an `other` class would.
 >
-> **Reason 2 — about misses.** A miss here means saying "not sure" about a perfectly good spoon.
-> Card 4 was a real spoon at 68% with a margin of 38 — my policy lets it through, which is right,
-> because refusing to answer on a correct 68% would make the model annoying to use. If I set the
-> threshold at 80% instead I'd block card 4 and probably half of all my correct answers, and a model
-> that says "not sure" half the time is a model nobody uses.
+> **Reason 2 — about misses.** A miss here means saying "not sure" about a perfectly good spoon and
+> making a person do work that didn't need doing. H3 was a real spoon at 62% with a margin of 41 —
+> and my 65% threshold **blocks it**, which is a miss I have chosen to accept. If I set the threshold
+> at 80% instead I'd block H3 *and* probably half of my correct answers, and a model that says "not
+> sure" half the time is a model nobody uses. If I set it at 55% I'd let H4 (a wrong answer)
+> through. 65 is my chosen trade.
 >
-> **Why I used OR and not AND.** Card 6 was 99% with a margin of 98 — it passes both tests and it's
-> still wrong, so no threshold catches that one. But 45/44/11 has a high-ish top score and a terrible
-> margin, and I want that blocked. If I used AND, it would need to fail *both* tests to be blocked,
-> and it would sneak through. OR is stricter, and stricter is right here.
+> **Why OR, not AND.** With **OR**, failing *either* test blocks the answer. 45 / 44 / 11 has a
+> middling top score and a terrible margin — with AND it would need to fail *both* to be blocked, so
+> it would sneak through. OR is stricter, and stricter is right here.
+
+**Testing the model policy (65% and 25 points) against H1–H8** — this is the table the workbook asks
+the student to fill in:
+
+| # | top | ≥ 65? | margin | ≥ 25? | policy says | right call? |
+|:--:|:--:|---|:--:|---|---|---|
+| H1 | 93 | yes | 88 | yes | **answer: spoon** | ✓ correct answer let through |
+| H2 | 47 | **no** | 1 | **no** | **not sure** | ✓ blocked a wrong answer |
+| H3 | 62 | **no** | 41 | yes | **not sure** | ✗ blocked a *correct* answer — an accepted miss |
+| H4 | 55 | **no** | 15 | **no** | **not sure** | ✓ blocked a wrong answer |
+| H5 | 100 | yes | 100 | yes | **answer: spoon** | ✓ right, though the test was invalid |
+| H6 | 38 | **no** | — | — | **not sure** | ✓ and the sum was wrong anyway |
+| H7 | 71 | yes | 56 | yes | **answer: toothbrush** | ✓ correct answer let through |
+| H8 | 88 | yes | 81 | yes | **answer: spoon** | ✗ let a confidently wrong answer through |
+
+**Blocked: 4 of 8** (H2, H3, H4, H6). **Three of those four blocks were the right call**; H3 was a
+correct answer sacrificed. **One wrong answer got through** (H8) — and no threshold could have
+stopped it, which is exactly the argument for an `other` class. The student's own numbers will give
+different counts; check their table against *their* policy, not against this one.
 
 **Common wrong answers and how to handle them:**
 
 | They wrote | The problem | What to ask |
 |---|---|---|
-| "Trust anything over 50%" | 51/45/4 passes. Card 2's exact readout. | "Card 2 was 51. Is that a good answer?" |
-| One threshold only (top score) | 45/44/11 has no defence at all. | "Show me how your policy handles 45/44/11." |
-| "Trust anything over 95%" | Blocks nearly every real answer. Card 6 still passes. | "How many of the eight cards does this let through? Is that a useful machine?" |
+| "Trust anything over 50%" | H4 was 55 and wrong. | "Do you want H4 through?" |
+| One threshold only (top score) | 45/44/11 has no defence at all. | "Show me how your policy handles a margin of 1." |
+| "Trust anything over 95%" | Blocks nearly every real answer, and H8 still passes. | "How many of the eight does this let through? Is that a useful machine?" |
 | Two numbers, no reasons | Objective 4 is the defence, not the number. | Hand it back. "Now tell me why 70 and not 60." |
-| "Never trust it" | Consistent, but useless. | "Card 1 was 97/2/1 on a real spoon. What's wrong with that one?" |
+| "Never trust it" | Consistent, but useless. | "H1 was 93/5/2 on a real spoon. What's wrong with that one?" |
 
-### K6 — Workbook page 3: vocabulary
+### K6 — Workbook 🛠️ Build It, Part 3: vocabulary
 
 Accept the student's own wording. These are the targets.
 
@@ -1124,11 +1156,13 @@ Accept the student's own wording. These are the targets.
 |---|---|---|
 | **confidence score** | How strongly the model prefers each class; the scores always add to 100. | spoon 62, toothbrush 21, comb 17 |
 | **margin** | Top score minus second score — how close the race was. | 62 − 21 = 41 |
-| **class balance** | Whether each class has roughly the same number of examples. | 41/40/39 is balanced; 200/200/8 is not |
-| **`other` class** | An extra box for "none of the above", filled with random and background photos. | empty hand, bare table, fork, wall |
+| **class balance** | Whether each class has roughly the same number of examples; check that (biggest − smallest) ÷ biggest is under 20%. | 41/40/39 is balanced; 200/200/8 and 60/60/4 (93%) are not |
+| **`other` class** | An extra box for "none of the above", filled with random and background photos. | empty hand, bare table, fork, wall; or empty feeder, branch, squirrel, sky |
 
 Reject: "confidence = how right it is" (that's the misconception), "margin = the difference between
-the numbers" (which numbers?), "class balance = when it's fair" (measure it, don't feel it).
+the numbers" (which numbers?), "class balance = when it's fair" (measure it, don't feel it),
+"`other` = the wrong answers" (it is a class you build on purpose and fill with photos). The
+example must differ from the one in the chapter.
 
 ### K7 — Sample photo counts, if the student didn't do Week 15's homework
 
@@ -1141,6 +1175,181 @@ Use these for the balance check so the lesson can run:
 | comb | 39 |
 
 Balance check: biggest 41, smallest 39, difference 2. `2 ÷ 41 ≈ 4.9%` — well under 20%. ✅ Balanced.
+
+### K8 — Workbook ✅ Warm-Up (W1–W5)
+
+These are about **last week** (training), so a student who was away may struggle. That is a Week 15
+gap, not a Week 16 one.
+
+**W1.** Training is the one-off process where the machine looks at all the labelled examples over and
+over, checks how many it got wrong, and nudges thousands of its own internal numbers until its
+guesses on those examples are as good as it can get them. Any version of "studied the examples and
+tuned itself" is right. "It figured it out" or "it's smart" is not — those words explain nothing.
+
+**W2.** An **epoch**.
+
+**W3.** `120 × 50 = 6,000` photo-examinations. *(At one photo per second a human would need 6,000
+seconds = 100 minutes. The browser does it in about twenty seconds.)*
+
+**W4.** **False.** Forty near-identical photos teach the model roughly what **one** photo teaches it,
+while making you feel you did forty times the work. What matters is the number of genuinely
+**different situations**: backgrounds, lights, angles, distances. Count distinct situations, not
+shutter clicks.
+
+**W5.** Retraining on the same photos gives essentially the same model. Training has a little
+randomness in it, so the numbers wobble by a point or two, and that wobble is very tempting to read
+as improvement. **You cannot fix a model by retraining it; you fix it by changing the photos.** She
+should add photos in new backgrounds, lights and angles. *Watch for:* "press Train again" offered as
+the fix.
+
+### K9 — Workbook ✍️ Practice Set A — Understand It (A1–A6)
+
+**A1.** (a) **100** (or 100%). (b) The **top** score minus the **second-highest** score — not the
+lowest; second place, not last place. (c) **15**. (d) **100** points of belief, and it must give
+every point to one of the boxes **you** gave it.
+
+**A2.** **C — 45 / 44 / 11.** The margin is only `45 − 44 = 1`; one point is a coin toss that
+happened to land on spoon. The others: A has margin 95, B has 41, D has `71 − 15 = 56`. *Common wrong
+answer:* **A**, because 97% "looks too good to be true". The instinct is worth something, but the
+question asks which readout the **numbers** tell you to distrust, and A's numbers are the strongest.
+
+**A3.** **FALSE.** Confidence is how strongly the model prefers one class among the boxes you gave
+it, not a count of how often it has been right. Example: shown a **stapler**, a spoon / toothbrush /
+comb model reports 99 / 1 / 0 — 99% confident, margin 98, 100% wrong, because there is no stapler
+box. The explanation must contain an example; without one, no full credit.
+
+**A4.** 1. Margin **1** is **a coin toss**, so I would **not act on it**. 2. Margin **22** is
+**shaky — it could flip**, so I would **check it another way**. 3. Margin **41** is **reasonably
+clear**, so I would **act, but write it down**. 4. Margin **86** is **not even close**, so I would
+**act on it**. *(Read "not even close" as "the runner-up is not even close".)*
+
+**A5.** From Figure W16.1 (spoon 72, toothbrush 20, comb 8):
+- **A — winner:** **spoon** (72).
+- **B — margin:** `72 − 20 = 52`.
+- **C — the scores add to:** `72 + 20 + 8 = 100` ✓, so the bars were read correctly.
+- **D — call:** **trust it.** A margin of 52 is in the 30–59 band: act on it but log it. Full credit
+  also wants the honest caveat: this only says the model prefers spoon strongly; if the object had no
+  class at all, 72% would mean nothing.
+
+**A6.**
+
+| # | readout | sum | real or misread? |
+|:--:|---|:--:|---|
+| 1 | 74 / 15 / 11 | **100** | real |
+| 2 | 50 / 30 / 25 | **105** | **misread** |
+| 3 | 34 / 33 / 33 | **100** | real |
+| 4 | 88 / 9 / 3 | **100** | real |
+
+The impossible one is **#2**: the scores add to **105** and there are only ever 100 points. **What to
+do:** do not guess and do not average; write "sum = 105, so I misread a bar" and read it again. A
+student who computed a margin for #2 without noticing the 105 has missed the point of the sum check.
+
+### K10 — Workbook ✍️ Practice Set B — Use It (B1–B5)
+
+**B1.** A sensible readout: **glass 12 · plastic 71 · paper 17** (sum 100). A crisp packet has no
+class, but the machine has 100 points and three boxes and no way to say "none of these", so it must
+hand them all out; shiny and flexible is nearest plastic. The margin `71 − 17 = 54` looks respectable
+and the answer is still wrong. Any readout adding to 100 with a sensible reason gets full credit.
+Not credited: "it will say it doesn't know" (it can't) or "it will say error".
+
+**B2.**
+(a) `60 + 60 + 4 = 124`.
+(b) `(60 − 4) ÷ 60 = 56 ÷ 60 = 0.9333… ≈ 93%` — want under 20%, so badly imbalanced.
+(c) Prediction: good at Mr Ahmed and Ms Bell, almost never says Mr Chen, because giving up 4 photos
+in 124 costs almost nothing. (Check that (c) was written *before* (d).)
+(d)
+```text
+   got right  =  60 + 60 + 0  =  120
+
+   accuracy   =  120 ÷ 124  =  0.96774…  ≈  96.8 %
+```
+(e) `0 ÷ 4 = 0 = 0%`.
+(f) Yes, and the arithmetic in (d) and (e) proves it: 96.8% overall, 0% on one of the three people it
+was built to recognise. Same idea as K2, with a different school.
+
+**B3.** Any readout with a top score over 40 and a tiny margin. Cleanest: **45 / 44 / 11** (sum 100).
+45 is over 40 so his policy waves it through, but the margin is `45 − 44 = 1`. Also accept
+**41 / 30 / 29** (passes, margin 11). The fix: a **second threshold about the margin**, joined with
+**OR**, e.g. "...or the margin is below 25 points." One number about the top score can never catch a
+close race. *Check that the student's readout sums to 100.*
+
+**B4.** Any two genuinely different problems, each with a person who is hurt. Model answers:
+- **Users cannot tell a 97 / 2 / 1 from a 45 / 44 / 11.** Both just say "foxglove". The user is hurt:
+  eating or touching a plant on the strength of a coin toss. (Foxglove is poisonous; its lookalikes
+  are not.)
+- **The app cannot tell you the plant isn't in its list.** With no `other` class and no visible
+  scores, an unknown plant still gets a confident name. The user is hurt, and so are the developers,
+  who never learn the app is failing because nobody can see the low margins.
+- Also accepted: nobody can report a bug usefully ("said X at 41% with a margin of 3" versus "said X
+  and was wrong"); the company cannot tell which classes need more photos.
+
+**B5.** (a) A plausible readout: **robin 52 · sparrow 31 · blue tit 17** (sum 100). Any readout
+adding to 100 is fine. (b) Add an **`other` class**, filled with about forty photos of everything
+that is not one of the three birds: empty feeder, feeder with a squirrel, a branch, a leaf, a passing
+cat, the fence, the sky. It must contain the *kinds* of things the camera will actually see. (c) The
+cost: one big messy class usually steals some belief from the real classes, so **every margin gets
+smaller** (robin might drop from 88% to 79%). Wrong: "it costs nothing". True but not the point: "it
+takes time to photograph".
+
+### K11 — Workbook 🧩 Puzzle of the Week
+
+**Row 1.** `58 + ? + 12 = 100`, so `? = 30`. Readout **58 / 30 / 12**. Margin `58 − 30 = 28`. That is
+in the 15–29 shaky band: don't act on it without checking another way.
+
+**Row 2.** Spoon won by 1 over toothbrush on 44, so spoon = `44 + 1 = 45`. Check `45 + 44 + 11 = 100`.
+Readout **45 / 44 / 11**. Do not trust it. A margin of 1 does not say the answer is wrong; it says the
+answer is **unstable**.
+
+**Row 3.** With each loser `L` and the winner `L + 1`:
+```text
+   (L + 1)  +  L  +  L  =  100
+              3L  +  1  =  100
+                    3L  =  99
+                     L  =  33
+```
+Readout **34 / 33 / 33**, margin 1. (The blank in the workbook's middle line is the coefficient 3,
+and `L = 33`.)
+
+**Bonus.** Blind guessing with three classes is 1 in 3 = **33.3%**. Row 3 **is** the blind-guessing
+rate: the model has learned nothing usable about this input. It is the purest shrug there is.
+
+### K12 — Workbook 🤔 Think Deeper (T1, T2)
+
+Both are paragraph answers. Mark against the required words and ideas, not the wording.
+
+**T1.** Must use *margin* and *shrug*. The strong argument: 45 / 44 / 11 is the model being honest.
+A margin of 1 tells you it genuinely cannot separate spoon from toothbrush on this photo, which is
+real information you can act on (second photo, more light, hand it to a person). A model that says 99%
+on everything, including a stapler, gives you nothing to work with. The broken model is not the one
+that hesitates; it is the one that never does. Most products throw the shrug away and show only the
+winning word.
+
+**T2.** Must mention **false alarms** and **misses**, say which is worse in each case, and say why.
+Model answer: no, not the same threshold, because the mistakes cost different amounts. Music app: a
+false alarm (wrong song) costs four seconds; a miss (refusing when it had it right) makes the app feel
+broken, so use a **low** threshold and answer often. Hospital machine: a miss on something dangerous
+could cost a life and go unnoticed for months; a false alarm costs a worried person and a doctor's
+time, and is noticed at once. So it should flag readily and send many cases to a human. The rule
+underneath: set the threshold by asking which mistake is harder to undo, and a named person is
+accountable for the number.
+
+### K13 — Workbook 🎨 Draw It
+
+There is no single right drawing. A strong answer does **four** things: (1) the 100 points are drawn
+as countable things (dots, beans, squares), not a cloud; (2) all 100 end up somewhere, for example
+74 + 15 + 11; (3) the fork is in front of the camera and the arrows still go to the three real boxes;
+(4) the **missing box** is drawn and marked missing — dashed, crossed out, something like "none of the
+above — no such box" — with a blocked arrow. Number 4 is what turns a picture of a readout into a
+picture of the idea. Test: *could someone looking only at the drawing explain why 74% on a fork is not
+a fault?* If not, number 4 is usually what is missing. If the drawing shows the model *choosing*
+spoon, the note should say it had nowhere else to put the points.
+
+### K14 — Workbook 📊 Self-Check
+
+Not marked. Six tick-box lines and "one thing I want to ask about next lesson". Read the ticks
+quickly: a 😕 on "predict what 200 / 200 / 8 will do, and prove it with arithmetic" means redo K2 with
+them; a 😕 on "explain why 99% confident can still be 100% wrong" means revisit A3 and card 6. Collect
+the question at the start of Week 17.
 
 ---
 
