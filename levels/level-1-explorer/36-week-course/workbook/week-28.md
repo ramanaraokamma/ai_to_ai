@@ -38,6 +38,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know the words and ideas from this week.
+
 **A1. Fill in the blanks.**
 
 (a) Number of bigrams = number of ____________ minus ________.
@@ -133,6 +135,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+These questions ask you to use the ideas on new situations.
+
 **B1.** Your friend tallies a 100-token story and ends up with **105** tally marks. Without seeing their sheet at all, what do you know?
 
 ________________________________________________________________
@@ -189,7 +193,7 @@ ________________________________________________________________
 
 **B5.** Your tally on the bus corpus totals **39**, which is exactly right. But check 2 says:
 
-```
+```text
    bus group:  6 marks,  but "bus" appears 5 times     <- one too many
    to  group:  3 marks,  but "to"  appears 4 times     <- one too few
 ```
@@ -238,7 +242,9 @@ The table, written out:
 |---|---|---|---|---|---|---|---|---|
 | the | ______ | ______ | ______ | ______ | ______ | ______ | ______ | ______ |
 
-**The hard part.** At token 1 you are at `the`, and `the` has **two** followers — `big` and `small`. So you have a choice. Show that one of the two choices is **impossible**, by starting with it and seeing what happens:
+**The hard part.**
+
+At token 1 you are at `the`, and `the` has **two** followers — `big` and `small`. So you have a choice. Show that one of the two choices is **impossible**, by starting with it and seeing what happens:
 
 If token 2 were `small`, the sentence goes: ____________________________________
 
@@ -247,6 +253,8 @@ and it runs out after ______ tokens, having used only ______ of the 8 pairs. So 
 ---
 
 ## 🤔 Think Deeper
+
+Two questions with no single right answer. Write a short paragraph for each.
 
 **T1.** Your phone's next-word table was built by counting pairs in an enormous pile of text. **Somebody chose that pile.** Write a paragraph: who do you think chose it, what might they have included, and what might they have left out? Then say one way that choice could show up in the suggestions you see.
 
@@ -277,6 +285,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+In this section you make your own next-word table from a text you choose. Follow the checklist in order.
 
 ### Your own next-word table, from your own sixty words
 
@@ -389,6 +399,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for showing what you know as a picture instead of words.
+
 Draw what is inside a phone keyboard when it offers you three words. Label everything.
 
 ![Draw it: what is inside a phone keyboard?](../figures/fig-w28-10-draw-frame.svg)
@@ -414,6 +426,8 @@ Tick one box per row. Be honest — this is for you, not for marks.
 ---
 
 ## ✅ Answers
+
+Finish everything above first. Then open the box to check your work.
 
 <details>
 <summary>Check your answers</summary>
@@ -513,7 +527,7 @@ It is worth saying clearly: their rule is not *wrong*. It is a different, defens
 
 **So token 2 must be `big`**, and after that there is no choice at all — every remaining group is forced:
 
-```
+```text
    the  -> big     (choice: we proved small fails)
    big  -> cat     forced
    cat  -> sat     forced
@@ -558,7 +572,7 @@ Your table will be your own, so there is no single answer — but here is a full
 
 **The reference corpus:**
 
-```
+```text
    India won the toss and chose to bat. Rohit hit the first ball for four.
    He hit the next ball for six. The crowd stood up and cheered.
    India scored two hundred runs. Australia needed two hundred and one runs to win.

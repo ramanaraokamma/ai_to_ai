@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+Use this table to see the whole lesson on one screen before you read further.
+
 | | |
 |---|---|
 | **Duration** | 73 minutes (60-minute and 75-minute versions given in §The Lesson) |
@@ -92,8 +94,10 @@ That definition is doing real work. It draws a line that nothing else draws clea
 
 Say the test out loud a few times so it becomes automatic: **"Could two sensible people disagree?"**
 If yes, judgement. If no, not judgement, and so (as a rule of thumb) probably not a candidate for AI no
-matter how modern the box looks. It is a heuristic, not an exact boundary: reading a number plate has
-one right answer yet is a real AI job; say so if a student raises it.
+matter how modern the box looks.
+
+It is a heuristic, not an exact boundary: reading a number plate has
+one right answer yet is a real AI job. Say so if a student raises it.
 
 ![The judgement spectrum](../figures/fig-w01-2-judgement-spectrum.svg)
 
@@ -129,15 +133,18 @@ Your student's home is full of these:
 Two properties of rule-based systems matter, and they matter all year:
 
 **They are predictable and explainable.** You can always point at the exact line that produced the
-answer. If a thermostat misbehaves, an engineer reads the rules and finds the bug. That is a genuine
-advantage and this course never sneers at it. Most of the software in the world is rule-based and
+answer. If a thermostat misbehaves, an engineer reads the rules and finds the bug.
+
+That is a genuine advantage and this course never sneers at it. Most of the software in the world is rule-based and
 that is correct.
 
 **They only know what a human put in them.** Here is the crack. Suppose a spell-checker's dictionary
-contains `cat, cot, cut, dog, dot`. You type `dat` — no match, so it underlines it. Good. Now you
-type **"I have a pet dot."** You meant *dog*. The system finds `dot` in the list and stays silent.
-It cannot catch your mistake, because nobody wrote a rule about pets and dots. A rule-based system
-does not fail loudly; it fails *quietly*, giving a technically-correct answer to a case its author
+contains `cat, cot, cut, dog, dot`. You type `dat` — no match, so it underlines it. Good.
+
+Now you type **"I have a pet dot."** You meant *dog*. The system finds `dot` in the list and stays silent.
+It cannot catch your mistake, because nobody wrote a rule about pets and dots.
+
+A rule-based system does not fail loudly; it fails *quietly*, giving a technically-correct answer to a case its author
 never imagined.
 
 ### The two misconceptions you will meet today
@@ -168,12 +175,14 @@ in a basement.
 ### How deep to go — and where to stop
 
 **Go this deep today:**
+
 - The definition, with *judgement* circled.
 - The two-reasonable-people test, used out loud at least six times.
 - Rule-based systems, if-then rules, and running one by hand.
 - The idea that some things go in a "not sure" bin, and that this is fine.
 
 **Stop before all of these — they belong to later weeks:**
+
 - **Machine learning** — that is Week 2, next week, and it is the punchline. If the student says
   "but how does the spam filter know?", write it on the Questions We Owe page and say *"that is
   exactly next week"*. Do not answer it today. The suspense is doing work.
@@ -235,6 +244,9 @@ They exist so that by week 36 the learner has seen every week land on one of six
 ---
 
 ### Close the loop you opened — do not skip this
+
+This part tells you how to answer the opening question, so the loop closes.
+
 The chapter opens with AlphaGo versus the thermostat, asks the learner to **write down one of the two
 words**, and promises an answer. **Section 5 of the student guide delivers it, and you must deliver it
 in the Wrap.** An opened loop that never closes teaches the learner that the questions in this course
@@ -244,8 +256,9 @@ The answer, in the order to give it: the thermostat's job needs **no judgement**
 20 — nobody ever disagreed), and a person wrote all four of its boxes. AlphaGo's job needs judgement
 (strong players can disagree about the best move), and **nobody could write those rules** — which
 is why it had to learn them, from human games and from playing itself. (The rules of Go and the search
-procedure were written by people; what was learned was how to judge moves and positions.) Then the honest correction to the headline: *narrow, not
-thinking.* One machine, extraordinarily good at one job, blank one step outside it.
+procedure were written by people; what was learned was how to judge moves and positions.)
+
+Then give the honest correction to the headline: *narrow, not thinking.* One machine, extraordinarily good at one job, blank one step outside it.
 
 > **🧑‍🏫 If a student wrote THERMOSTAT:** say so warmly and specifically — *"that is the single most
 > reasonable wrong answer in this whole subject, because 'it decides with nobody there' is a genuinely
@@ -269,6 +282,8 @@ settle each, that is a very good lesson.
 ---
 
 ## 🧰 Prep Checklist
+
+This list gets the room ready. Do the first part the night before and the second part just before class.
 
 ### 15 minutes the night before
 
@@ -306,6 +321,8 @@ settle each, that is a very good lesson.
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the script. Each segment says what to do, what to say, what to ask, and what to expect.
 
 | Time | Minutes | Segment | What happens |
 |---|---|---|---|
@@ -416,9 +433,9 @@ single time.
 > A submarine doesn't swim like a fish. It moves through water in a totally different way, and it
 > still gets from one port to another. AI is like that. It does the job. It does not do it your way."
 
-**Do this:** Write on the board, big, and leave it up for the whole lesson:
+**Do this:** Write this on the board, big, and leave it up for the whole lesson:
 
-```
+```text
 ARTIFICIAL INTELLIGENCE
 = a machine doing a job that used to need
   a person's JUDGEMENT
@@ -611,7 +628,7 @@ finger. Do not skip a rule even though you know the answer.
 
 ### 🎲 Segment 4 — Activity: The Thermostat Trial (0:40–1:00)
 
-Full instructions in the next section. In the minute-by-minute, it splits like this:
+Full instructions are in the next section. In the minute-by-minute, it splits into two parts:
 
 **Part A — the 12-card sort (0:40–0:51, 11 minutes)**
 
@@ -737,6 +754,8 @@ their phone or look around the room and write down the very first system they to
 
 ## 🎲 The Activity, In Full
 
+This section gives the full set-up for The Thermostat Trial, with variations for different learners.
+
 ### The Thermostat Trial
 
 **What it is:** two halves. First a sorting game that surfaces what the student already believes.
@@ -746,6 +765,7 @@ limit from the inside.
 **Time:** 20 minutes in class (11 + 9). Comfortably stretches to 30 if you have the time.
 
 **Materials:**
+
 - The three-bin mat (one sheet, printed or hand-drawn)
 - 12 cards, cut out
 - Two copies of the vending-machine rulebook + price list
@@ -794,7 +814,9 @@ answer it."*
 
 ### The full rulebook (print this)
 
-```
+This is the rulebook, price list and request list for the student's copy and yours.
+
+```text
 VENDING MACHINE RULEBOOK — check in order, STOP at the first rule that fires
 
   RULE 1:  IF the code is not on the list   THEN say "UNKNOWN CODE" and return all coins
@@ -861,6 +883,8 @@ Request 7 are the best discussion in the lesson — protect five minutes for it.
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions you are most likely to hear, with an honest answer for each.
+
 **1. "So is a robot AI?"**
 
 Sometimes, sometimes not, and they are actually two separate questions. *Robot* is about having a
@@ -926,6 +950,8 @@ is the whole of Week 8.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual problems, why they happen, and what to do straight away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | Student sorts every card into "it worked it out itself" | Everything modern feels like AI; "a human wrote the steps" sounds old-fashioned and boring | Pick up the vending machine card. *"You've put this in 'worked it out itself'. Show me what it worked out. What did it study?"* One card done properly resets all twelve. |
@@ -939,6 +965,8 @@ is the whole of Week 8.
 ---
 
 ## 🧭 Differentiation
+
+Use this section to make the lesson easier, harder, or lighter, depending on the learner.
 
 ### If they are struggling
 
@@ -1038,18 +1066,20 @@ Aim for 4. A 3 in week one is completely fine and Week 2 reinforces all of it.
 
 ## 📤 Homework to Assign
 
+This section says what to set, how to split it, and how to mark it.
+
 **Workbook: Week 1, in this order** — *Warm-Up*, *Practice Set A*, *Practice Set B*, *Puzzle of the
-Week*, *Think Deeper*, *Build It* (Pages 1.4, 1.5 and 1.6), *Draw It*, *Self-Check*. The workbook's
-own **Answers** section at the back is folded away; the student should not open it until they have
+Week*, *Think Deeper*, *Build It* (Pages 1.4, 1.5 and 1.6), *Draw It*, *Self-Check*.
+
+The workbook's own **Answers** section at the back is folded away. The student should not open it until they have
 finished a section.
 
-**Suggested split.** The **Warm-Up** is done **before** the learner reads the chapter, in pen, and is
-never changed — that is its whole point, so tell them so (it is five minutes). The three **Build It**
-pages are the part you actually mark, about 45 minutes spread over the week. The script below sets
-Pages 1.4 and 1.5; Page 1.6 (*Be the computer*) repeats the vending rulebook from class, so it is
-quick. **Practice Sets A and B, the Puzzle, Think Deeper, Draw It** and **Self-Check** are the rest
-of the workbook: assign them if you have the time, or use them as Week 2's warm-up. Nothing in Week 2
-depends on them.
+**Suggested split:**
+
+- The **Warm-Up** is done **before** the learner reads the chapter, in pen, and is never changed. That is its whole point, so tell them so (it is five minutes).
+- The three **Build It** pages are the part you actually mark, about 45 minutes spread over the week.
+- The script below sets Pages 1.4 and 1.5. Page 1.6 (*Be the computer*) repeats the vending rulebook from class, so it is quick.
+- **Practice Sets A and B, the Puzzle, Think Deeper, Draw It** and **Self-Check** are the rest of the workbook. Assign them if you have the time, or use them as Week 2's warm-up. Nothing in Week 2 depends on them.
 
 **Say this:**
 
@@ -1078,6 +1108,8 @@ with none.
 ---
 
 ## 🔑 Answer Key
+
+This section holds every answer, with the usual wrong answers and what to mark for. Keep it away from the student.
 
 ### The twelve cards — full answers with reasoning
 
@@ -1149,6 +1181,7 @@ rule-based system.
 **Wrap — "Define AI in one sentence."**
 
 Model answers, all acceptable:
+
 - *"AI is when a machine does a job that a person used to have to decide."* (16 words — the cleanest.)
 - *"AI is a machine making choices humans used to make, like sorting messages or spotting faces."*
 - *"Artificial intelligence means a machine handles a decision that used to be a person's job."*
@@ -1269,6 +1302,7 @@ RULE 3: IF a phone rings                 THEN it is taken to the office
 ```
 
 Good breaking cases, with the rule that causes each:
+
 - A parent is in hospital and might ring: **Rule 1** keeps the phone in the bag. A teacher would grant
   an exception in a second; the rulebook has no idea what an emergency is.
 - A phone is a diabetes monitor that beeps: **Rule 3** sends the medical alert to the office.
@@ -1356,6 +1390,7 @@ Model answer:
 > close enough to unlock."**
 
 Other good versions:
+
 - *"My phone was shown my face lots of times, and now it can guess whether a new picture is me."*
 - *"My phone measures the face in front of the camera and checks how well it matches the one it saved."*
 
@@ -1409,15 +1444,22 @@ say *nobody could write the rules for Go*; ask them to say it.
 
 ## 🔮 Next Week Preview
 
+This section tells you what next week needs from you, so you can prepare early.
+
 Next week is the other half of today, and it is the strange half. Today the student learned that a
 person can write down every step in advance — and then watched that idea fall over on a burst crisp
-packet. Week 2 shows them the second way: nobody writes the rule at all. The student studies eight
+packet. Week 2 shows them the second way: nobody writes the rule at all.
+
+The student studies eight
 mango cards with the answers on the back, the cards are taken away, and they discover they can still
-sort a mango they have never seen. They *were* the model; the cards were the training examples. Then
+sort a mango they have never seen. They *were* the model; the cards were the training examples.
+
+Then
 they compare it directly with this week's vending rulebook and answer the one question that separates
 the two halves of the whole course: **who wrote the rule?**
 
 **Prep early:**
+
 - Print and cut the eight mango cards **with the label written on the back**, not the front. This
   matters — if the label is visible while they study, the activity does not work.
 - Print the three test cards separately and keep them out of sight until the moment.

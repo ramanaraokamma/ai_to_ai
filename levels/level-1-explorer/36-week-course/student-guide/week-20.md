@@ -34,7 +34,7 @@ Out of the **90 real** emails, how many did it get right? All ninety. It said "n
 
 Out of the **10 spam** emails? None. Zero. Not one.
 
-```
+```text
    accuracy = 90 ÷ 100 = 0.90 = 90%
 
    real emails:  90 / 90  = 100%
@@ -53,7 +53,7 @@ So this week does two things:
 1. How to work out accuracy properly, and write it three different ways.
 2. **How to catch a number that is lying to you while telling the truth.**
 
-```
+```text
    THE QUESTION FOR THE WHOLE WEEK
 
         THIS NUMBER IS TRUE.
@@ -66,11 +66,13 @@ So this week does two things:
 
 ## 🧠 The Big Idea
 
+This section teaches you to work out accuracy by hand, write it three ways, and open it up class by class.
+
 ### 1. Correct divided by total — and doing the division by hand
 
 This is the simplest formula in the whole course. There is nothing else in it.
 
-```
+```text
                 number of correct guesses
    accuracy =  ---------------------------
                  total number of guesses
@@ -78,9 +80,9 @@ This is the simplest formula in the whole course. There is nothing else in it.
 
 The formula is not the hard part. **Writing the division down is the hard part**, because it is boring and a calculator is right there.
 
-Do it anyway. Here is the method, using the number you worked with in class: **11 out of 15.**
+Do it anyway. Here is the method, using the number you worked with in class: **11 out of 15.** Read the working below line by line.
 
-```
+```text
    11 ÷ 15
 
    15 x 0.7  = 10.5              →  so the answer is at least 0.7
@@ -112,7 +114,7 @@ You got 11 out of 15 on a spelling test. That one fact can be dressed three ways
 | **Decimal** | 0.7333 | Easy to compare and to multiply with. |
 | **Percentage** | 73.3% | Familiar and quotable. **Hides that there were only fifteen.** |
 
-Same fact. Three costumes. And here is the sentence to build everything on:
+Same fact. Three costumes. Here is the sentence to build everything on:
 
 > **🔑 The fraction is the only one of the three that tells you how much evidence there was.**
 
@@ -129,7 +131,7 @@ You cannot tell. And those are wildly different claims. Three out of four is one
 
 **And here is the number that comes out of it.** On a 15-photo test:
 
-```
+```text
    one photo  =  1 ÷ 15  =  0.0667  =  6.7 percentage points
 ```
 
@@ -147,9 +149,9 @@ So you break the average open, one class at a time.
 
 > **Per-class accuracy** — of the test examples that truly belong to class X, what fraction did the model get right? Worked out separately, once per class.
 
-Here is what happened when you did that in class, on the same fifteen-row sheet:
+Here is what you got when you did that in class, on the same fifteen-row sheet:
 
-```
+```text
    OVERALL      11 / 15  =  0.7333  =  73.3%
 
    spoon         5 / 5   =  1.000   =  100.0%
@@ -170,7 +172,7 @@ And the thing to keep for life: **the 73.3% was honest.** Nobody cheated to get 
 
 **Accuracy also means nothing without a baseline.** You met **baseline** back in Week 12: how well you would do by ignoring everything and just guessing.
 
-```
+```text
    3 roughly equal classes  →  baseline = 1 in 3 = 33.3%
 
    73.3 - 33.3 = 40 percentage points better than blind guessing
@@ -178,7 +180,7 @@ And the thing to keep for life: **the 73.3% was honest.** Nobody cheated to get 
 
 That makes 73.3% a real result. But now flip it round, the way the spam filter did:
 
-```
+```text
    a test set that is 90% spoons  →  "always say spoon" scores 90%
 ```
 
@@ -197,7 +199,7 @@ This one is a word idea, not a maths idea, and it is worth more than it looks.
 
 Why does it matter? Because "40 percent more" and "40 percentage points more" are genuinely different claims:
 
-```
+```text
    33.3% + 40 percentage points   =  73.3%                    ← what actually happened
    33.3% + 40 percent OF ITSELF   =  33.3 x 1.4  =  46.6%     ← a much smaller claim
 ```
@@ -207,7 +209,7 @@ Why does it matter? Because "40 percent more" and "40 percentage points more" ar
 
 **The habit to build:** when you subtract two percentages, the answer's unit is **points**, and you say the word out loud.
 
-```
+```text
    73.3% - 33.3%  =  40 percentage points
    80%   - 40%    =  40 percentage points
    100%  - 73.3%  =  26.7 percentage points
@@ -236,7 +238,9 @@ Three of this week's new words belong to a bigger idea that **next week** unpack
 
 The person who built the sheet you scored also wrote down how their model did on the 60 photos it trained on: **sixty out of sixty.**
 
-```
+Here is the subtraction:
+
+```text
    training accuracy:  60/60 = 100.0%
    test accuracy:      11/15 =  73.3%
    -------------------------------------
@@ -254,9 +258,9 @@ Twenty-six point seven percentage points. Some of what this model learned was re
 ![Week 20 finished board](../figures/fig-w20-6-board-plan.svg)
 *Figure 20.6 — The four numbers that travel together, from now on. Copy this into your notebook if you missed class.*
 
-**These four numbers now travel together, always:**
+**These four numbers now travel together, always.** Here they are on one card:
 
-```
+```text
    ACCURACY   11/15 = 0.7333 = 73.3%
    BASELINE   33.3%   →  40 percentage points better
    PER CLASS  spoon 100%  ·  toothbrush 80%  ·  comb 40%
@@ -277,13 +281,15 @@ You built a model that sorts fruit into **unripe · ripe · overripe.** You test
 
 **Step 1 — the fraction, first, always.**
 
-```
+Write the score as a fraction:
+
+```text
    19 / 24
 ```
 
 **Step 2 — the decimal, with the division shown.**
 
-```
+```text
    24 x 0.7  = 16.8              →  at least 0.7
    19 - 16.8 = 2.2 left over
    2.2 ÷ 24  = 0.0917
@@ -292,13 +298,13 @@ You built a model that sorts fruit into **unripe · ripe · overripe.** You test
 
 **Step 3 — the percentage.**
 
-```
+```text
    0.7917 x 100 = 79.17...  ≈  79.2%
 ```
 
 **Step 4 — the baseline, in the same breath.**
 
-```
+```text
    3 roughly equal classes  →  baseline = 1 in 3 = 33.3%
    79.2 - 33.3 = 45.9 percentage points better than guessing
 ```
@@ -314,7 +320,7 @@ You built a model that sorts fruit into **unripe · ripe · overripe.** You test
 
 **Step 6 — both checks.**
 
-```
+```text
    8 + 7 + 4 = 19   ✓   matches the correct count
    8 + 8 + 8 = 24   ✓   matches the number of photos
 ```
@@ -325,7 +331,7 @@ You built a model that sorts fruit into **unripe · ripe · overripe.** You test
 
 **And the gap.** The person who built it trained on 72 photos and scored 72/72.
 
-```
+```text
    100.0% - 79.2%  =  20.8 percentage points of gap
 ```
 
@@ -341,7 +347,7 @@ The app says **"no wicket"** about every single ball.
 
 **Step 1 — overall accuracy.**
 
-```
+```text
    46 / 50
 
    50 x 0.9  = 45
@@ -366,7 +372,7 @@ Checks: `46 + 0 = 46` ✓ and `46 + 4 = 50` ✓.
 
 **Step 3 — and now the baseline, which is the killer.** The classes are *not* equal here. 46 out of 50 balls took no wicket. So the best you can do by ignoring the ball entirely is:
 
-```
+```text
    "always say no wicket"  =  46 ÷ 50  =  92.0%
 
    92.0 - 92.0 = 0 percentage points better than guessing
@@ -388,7 +394,7 @@ A school-uniform sorter with **four** classes: `tie · blazer · jumper · PE ki
 
 **Step 1 — fraction, decimal, percentage.**
 
-```
+```text
    34 / 40
 
    40 x 0.8 = 32
@@ -401,7 +407,7 @@ A school-uniform sorter with **four** classes: `tie · blazer · jumper · PE ki
 
 **Step 2 — the baseline, and watch this, because it is different.** Four classes, not three:
 
-```
+```text
    4 roughly equal classes  →  baseline = 1 in 4 = 0.25 = 25.0%
 
    85.0 - 25.0 = 60 percentage points better than guessing
@@ -438,6 +444,8 @@ Checks: `10 + 9 + 10 + 5 = 34` ✓ and `10 + 10 + 10 + 10 = 40` ✓.
 ---
 
 ## 🎲 What We Did In Class
+
+This section records what you did in class, so you can redo it at home.
 
 ### The scoring sheet, row by row
 
@@ -476,7 +484,7 @@ Here is the full sheet, in case you missed the lesson or want to redo it:
 
 You highlighted the sheet by class — rows 1–5 are spoon, 6–10 toothbrush, 11–15 comb — and scored each block on its own.
 
-```
+```text
    spoon:       5 / 5 = 1.000 = 100.0%
    toothbrush:  4 / 5 = 0.800 =  80.0%
    comb:        2 / 5 = 0.400 =  40.0%
@@ -490,7 +498,7 @@ Then you drew four bars — the overall one at 73.3%, three class bars underneat
 
 ### And the drill
 
-Five subtractions, each read out loud with the unit attached:
+Here are five subtractions. Read each one out loud with the unit attached:
 
 | # | The question | Say out loud |
 |:--:|---|---|
@@ -515,6 +523,8 @@ Five subtractions, each read out loud with the unit attached:
 
 ## 💬 Talk About It
 
+Use these questions to talk with a grown-up. Each one has a hint.
+
 **1. "Nine out of ten dentists recommend this toothpaste." Ask a grown-up what is missing.**
 
 > *Hint:* three questions get you there — *out of how many dentists? chosen how? recommend it compared to what?* If they asked ten dentists, "nine out of ten" and "90%" are the same number wearing different clothes, and only one of them is honest about the evidence.
@@ -530,6 +540,8 @@ Five subtractions, each read out loud with the unit attached:
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four common ways accuracy numbers get misread. Each shows a wrong way and a right way.
 
 ### Trick 1 — reporting one number instead of four
 
@@ -570,6 +582,8 @@ Five subtractions, each read out loud with the unit attached:
 
 ## 🌍 Where You've Seen This
 
+Accuracy numbers turn up outside this course. Here are places to spot them.
+
 - **School reports.** "78%" on a report card. Out of how many marks? Compared to what? Which topics dragged it down? Your report is an overall accuracy with the per-class breakdown removed.
 - **Cricket batting averages.** A batter averaging 45 might have been out ten times for 450 runs, or a hundred times for 4,500. Same average, wildly different amounts of evidence. **The fraction matters.**
 - **App store ratings.** "4.8 stars" from 12 ratings versus 4.6 stars from 40,000. The second one is far more trustworthy, and the bigger number is the less believable one.
@@ -607,6 +621,8 @@ evaluation. One idea, done thoroughly, is what this week is.*
 
 ## 🔑 Remember This
 
+These are the points to keep from this week.
+
 - **Accuracy = correct ÷ total.** That is the whole formula. Write the division down; a number with no working is not an answer.
 - **Write the fraction first.** It is the only form that says how much evidence there was. 75% could be 3/4 or 300/400.
 - **Always write the baseline next to the accuracy.** A number with no baseline beside it is a boast, not a result.
@@ -619,6 +635,8 @@ evaluation. One idea, done thoroughly, is what this week is.*
 ---
 
 ## 📓 New Words
+
+This section lists the words this week introduced.
 
 ![The five new words of Week 20](../figures/fig-w20-9-vocab-icons.svg)
 *Figure 20.9 — Five words. Three of them get their proper lesson next week.*
@@ -636,6 +654,8 @@ evaluation. One idea, done thoroughly, is what this week is.*
 ---
 
 ## 📤 Your Homework
+
+The homework is in the workbook. Here is how it is split.
 
 Go to **[Workbook — Week 20](../workbook/week-20.md)**.
 

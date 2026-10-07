@@ -99,13 +99,15 @@ Suppose the tester gets 13 out of 20. Is that good?
 
 You cannot possibly know until you answer: **what would they have got with no information at all?**
 
-There are two baselines worth computing, and they answer different questions:
+There are two baselines worth computing, and they answer different questions.
 
 **Name baseline — matching at random.** The tester has a shuffled list of 20 object names and must assign one to each card. If they closed their eyes and matched at random, how many would they get right?
 
-The answer is **about 1**. Not 1 in 20 as a percentage of something — literally about one card. Here is why, and it is a nice fact: each card has a 1-in-20 chance of getting the right name, and there are 20 cards, so on average 20 × (1/20) = 1 card comes out right. Curiously this stays at about 1 whether the deck has 12 cards or 200. So:
+The answer is **about 1**. Not 1 in 20 as a percentage of something — literally about one card.
 
-```
+Here is why. Each card has a 1-in-20 chance of getting the right name, and there are 20 cards, so on average 20 × (1/20) = 1 card comes out right. Curiously this stays at about 1 whether the deck has 12 cards or 200. So:
+
+```text
 name baseline  =  1 out of 20  =  5%
 ```
 
@@ -194,6 +196,8 @@ because a person played the model. No need to name them in class.
 
 ## 🧰 Prep Checklist
 
+*Do these jobs before class so the lab runs smoothly. The most important one is a week ahead.*
+
 ### ⚠️ One week before — the message that saves the lesson
 
 Send this, or say it, at the end of Week 13:
@@ -230,6 +234,8 @@ Send this, or say it, at the end of Week 13:
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+*Use this plan to run the lesson. The table is the map; the sections below give the words.*
 
 | Minutes | Segment | What happens |
 |---|---|---|
@@ -319,9 +325,9 @@ Let them guess. Let them be wrong. Give them three goes. Then reveal.
 >
 > You have to pick. And I want you to write down *why* you picked, because in ten minutes you're going to find out whether you were right."
 
-**Do this:** Write the definition on the board and leave it up.
+**Do this:** Write the definition on the board and leave it up. It looks like this:
 
-```
+```text
 bucketing = turning a number into a named range
             38 g  ->  medium        (easier to read, less precise)
 ```
@@ -348,9 +354,9 @@ bucketing = turning a number into a named range
 
 **Do this:** Show the student this 12-card demo deck. Say clearly: "someone else built this. We're going to mark their experiment."
 
-**The deck.** Twelve objects, four categories of three. Feature sheet, written before any measuring:
+**The deck.** Twelve objects, four categories of three. This is the feature sheet, written before any measuring:
 
-```
+```text
 FEATURE SHEET - the demo deck
 f1  longest_side_cm  ruler, longest straight dimension, nearest 0.5 cm
 f2  weight_g         kitchen scale, nearest gram
@@ -476,9 +482,9 @@ The remaining ten cards and a second tester are homework.
 
 ### 🔑 Wrap & Assign (60–70 min)
 
-**Do this:** Score the trial together, on paper, immediately. Do not save it for later — the tester's reasoning is fresh and the student is invested.
+**Do this:** Score the trial together, on paper, immediately. Do not save it for later — the tester's reasoning is fresh and the student is invested. Use this scoring layout:
 
-```
+```text
 correct  = ____ out of 10          =  ____%
 baseline = 1 out of 10             =  10%
 gap      = ____ minus 10           =  ____ percentage points
@@ -500,6 +506,8 @@ Then run the elimination hunt on their own wrong cards, exactly as you did on th
 
 ## 🎲 The Activity, In Full
 
+*Use this section to run the Deck Trial step by step: the feature sheet, building cards, the trial and the scoring.*
+
 ### The Deck Trial
 
 **Time:** 20 minutes in class, plus homework. **Materials:** 20 index cards, ruler, scale, pen, the box of objects, scoring sheet, one human tester.
@@ -508,9 +516,9 @@ Then run the elimination hunt on their own wrong cards, exactly as you did on th
 
 **Nothing gets measured until the sheet is written.** This rule exists because a student who starts measuring first will change what `length` means halfway through the deck and the column becomes nonsense.
 
-The sheet must have five features and, for each, the **exact measuring instruction**:
+The sheet must have five features and, for each, the **exact measuring instruction**. Here is the blank sheet:
 
-```
+```text
 FEATURE SHEET  -  name: ______________   date: __________
 
 f1  ________________  how:  _______________________________
@@ -525,7 +533,7 @@ object from that one line?   f1 □  f2 □  f3 □  f4 □  f5 □
 
 A working default, if they're stuck — hand it over rather than lose four minutes:
 
-```
+```text
 f1  longest_side_cm  ruler, longest straight dimension, nearest 0.5 cm
 f2  weight_g         scale, nearest gram
 f3  main_colour      ONE of {red, blue, green, yellow, black, white, brown, clear}
@@ -536,6 +544,7 @@ f5  is_hollow        yes / no  (could it hold water?)
 ### Phase 1 — Build ten cards (12 minutes)
 
 **Rules:**
+
 1. One object at a time. Measure all five features, write them on the front in sheet order, write the name on the back. Next object.
 2. **Number every card.** You will need the numbers for the elimination hunt and they are impossible to add later.
 3. Same order every card. No exceptions, not even to save space.
@@ -556,11 +565,13 @@ f5  is_hollow        yes / no  (could it hold water?)
 *Figure 14.7 — The setup. The student's only job is the scoring sheet.*
 
 **Rules — read these aloud to the tester before starting:**
+
 1. "Match each card to one name from the list. You can use a name more than once if you want to, or not at all."
 2. "Say your guess out loud. Don't explain it — just the name."
 3. "You may look at the card as long as you like, but once you've said a name we move on."
 
 **Rules for the student — read these aloud too, in front of the tester:**
+
 1. **No talking.** At all.
 2. **No faces.** No wincing, no smiling, no eyebrows.
 3. **No sounds.** No hmm, no oh, no sharp intake of breath.
@@ -578,7 +589,9 @@ If the student breaks the silence rule, stop, restart from the current card, and
 
 ### Phase 3 — Score and eliminate (in the Wrap segment)
 
-```
+First write the three numbers on one line:
+
+```text
 correct  ____ / 10  = ____%      baseline 1/10 = 10%      gap = ____ points
 ```
 
@@ -618,6 +631,8 @@ Have them write three sentences on which happened and what they'd do about it if
 
 ## ❓ Questions Students Ask This Week
 
+*Use these answers when the questions come up. Each one is short enough to say out loud.*
+
 **"Can I use six features instead of five?"**
 Not this week, and the reason is worth knowing. Five is a hard limit because it forces you to *choose*, and choosing is the skill. With six you'd keep the marginal one, with ten you'd keep everything, and you'd never find out which ones were pulling their weight. The constraint is the exercise. (Real teams do this too — they deliberately cap the feature count to force the conversation.)
 
@@ -646,6 +661,8 @@ Let them. Time isn't being measured. But do write down which card it was — a c
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+*Nine common problems, why each happens, and what to do right now.*
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **You already know what's in the box** | The message never went home, or the student showed you proudly | Do not test yourself and pretend. Either recruit anyone else in the building for eight minutes, or convert to a build-only lesson: make the cards, run the elimination hunt on the demo deck, and make the real trial homework. Say out loud why you're doing it — "I've seen your objects, so my score wouldn't mean anything." That sentence teaches more than the trial would |
@@ -661,6 +678,8 @@ Let them. Time isn't being measured. But do write down which card it was — a c
 ---
 
 ## 🧭 Differentiation
+
+*Ways to adjust the lesson if the student is struggling, flying, or not engaging.*
 
 ### If they are struggling
 
@@ -694,31 +713,33 @@ The answer — *the baseline* — is the habit. Get it, write it down, stop.
 
 ## ✅ Assessing Understanding
 
+*Use these checks to see whether the student has the three habits this week builds.*
+
 Three checks for the last five minutes. Use the exact wording.
 
 ### Check 1 — the leak reflex
 
 > "I want to add a sixth feature to your deck: `can_you_write_with_it`. Allowed or banned?"
 
-**A good answer:** "Banned — that one line tells you it's a pen or a pencil. A stranger could name it."
-**A weak answer:** "Banned" with no reason. Ask "how do you know?" and listen for the three-second test.
-**A wrong answer:** "Allowed, because you can check it." True but irrelevant — reteach the test: *could a stranger name it from that one line?*
+- **A good answer:** "Banned — that one line tells you it's a pen or a pencil. A stranger could name it."
+- **A weak answer:** "Banned" with no reason. Ask "how do you know?" and listen for the three-second test.
+- **A wrong answer:** "Allowed, because you can check it." True but irrelevant — reteach the test: *could a stranger name it from that one line?*
 
 ### Check 2 — the baseline reflex
 
 > "My friend's tester got 14 out of 20 on her deck. Is that good?"
 
-**A good answer:** "You can't tell yet. Random guessing gets about 1 out of 20, so 14 is 70% against a 5% baseline — a 65-point gap. That's very good."
-**An acceptable answer:** "You need the baseline first," even without computing it. That's the habit; the arithmetic can follow.
-**A wrong answer:** "Yes, that's most of them." That is the exact instinct this lesson exists to break. Reteach with the arithmetic on the board.
+- **A good answer:** "You can't tell yet. Random guessing gets about 1 out of 20, so 14 is 70% against a 5% baseline — a 65-point gap. That's very good."
+- **An acceptable answer:** "You need the baseline first," even without computing it. That's the habit; the arithmetic can follow.
+- **A wrong answer:** "Yes, that's most of them." That is the exact instinct this lesson exists to break. Reteach with the arithmetic on the board.
 
 ### Check 3 — elimination from evidence
 
 > "My tester got cards 4, 9 and 15 wrong. On all three, the object was **yellow** and they guessed a **red** object. Were they using colour?"
 
-**A good answer:** "No. If they'd been using colour they'd have got them right. Colour would have told them yellow. They were using something else."
-**A weak answer:** "Maybe" or "I'd ask them." Push: "what do the three cards tell you, without asking?"
-**A wrong answer:** "Yes, they used colour and got it wrong." Reteach with the demo deck's card 10: colour said red, the truth was the red apple, they said lemon. If they'd read the colour they could not have said lemon.
+- **A good answer:** "No. If they'd been using colour they'd have got them right. Colour would have told them yellow. They were using something else."
+- **A weak answer:** "Maybe" or "I'd ask them." Push: "what do the three cards tell you, without asking?"
+- **A wrong answer:** "Yes, they used colour and got it wrong." Reteach with the demo deck's card 10: colour said red, the truth was the red apple, they said lemon. If they'd read the colour they could not have said lemon.
 
 ### Mastery scale for this week's objective
 
@@ -736,6 +757,8 @@ Aim for 3, and expect 4 on objective 4 from a student who enjoyed the detective 
 
 ## 📤 Homework to Assign
 
+*Say the script below at the end of class, then point the student to the workbook.*
+
 **Say this:**
 
 > "Three things. About an hour.
@@ -748,8 +771,19 @@ Aim for 3, and expect 4 on objective 4 from a student who enjoyed the detective 
 >
 > Then a last line: **what would you change about the deck to make the tester's job harder?** Name one thing — a feature to remove, an object to add, a number to bucket."
 
-**In the workbook:** the script above is the **🛠️ Build It** section: Step 2 and 4 (finish the deck, second tester), Step 5 (the three numbers), Step 6 (which feature, with card numbers), Step 7 (make it harder). Step 1, the first ten cards and the first ten trial rows were done in class. Around it the workbook also has **✅ Warm-Up** (W1–W5, last week's ideas), **✍️ Practice Set A** (A1–A6) and **Set B** (B1–B5), **🧩 Puzzle of the Week**, **🤔 Think Deeper** (T1–T2), **🎨 Draw It** and **📊 Self-Check**. Build It is the required core; assign the other sections as time allows (Warm-Up, A6 and B1 are quick; B4 and the Puzzle are the ones worth doing if you can only pick two).
+**In the workbook:** the script above is the **🛠️ Build It** section: Step 2 and 4 (finish the deck, second tester), Step 5 (the three numbers), Step 6 (which feature, with card numbers), Step 7 (make it harder). Step 1, the first ten cards and the first ten trial rows were done in class. Around it the workbook also has these sections:
+
+- **✅ Warm-Up** (W1–W5, last week's ideas)
+- **✍️ Practice Set A** (A1–A6) and **Set B** (B1–B5)
+- **🧩 Puzzle of the Week**
+- **🤔 Think Deeper** (T1–T2)
+- **🎨 Draw It**
+- **📊 Self-Check**
+
+Build It is the required core; assign the other sections as time allows (Warm-Up, A6 and B1 are quick; B4 and the Puzzle are the ones worth doing if you can only pick two).
+
 **Expected time:** 55–65 minutes for Build It. Card-making is about 25 of it; the trial is 10; the write-up is the rest. The other sections add roughly 30 to 40 minutes if you set them all.
+
 **The one thing not to skip:** the card numbers in Build It, Step 6. Without them it's an opinion, and the whole lesson is about the difference.
 
 ---
@@ -780,8 +814,9 @@ Aim for 3, and expect 4 on objective 4 from a student who enjoyed the detective 
 
 **"Which category will be hardest?"** Toy is the best prediction: the car and the ball are both plastic, both hollow, both red-or-blue, and 1 cm apart in length. Fruit is a reasonable second: apple and lemon are 0.5 cm apart. Both predictions turn out correct.
 
-**The score.**
-```
+**The score.** The arithmetic for the demo deck:
+
+```text
 correct  = 8 out of 12          8 ÷ 12 = 0.667 = 66.7%, call it 67%
 baseline = about 1 out of 12    1 ÷ 12 = 0.083 =  8.3%, call it  8%
 gap      = 67 − 8 = 59 points   (58.3 exactly, before rounding)
@@ -897,6 +932,7 @@ This is the homework spine; it is also the part the old homework script describe
 **Step 1: the feature sheet.** Five feature names, each with a measuring instruction, written **before** any measuring, and the banned-check boxes ticked after reading each aloud. If a measuring instruction is missing, send it back: that is how `length` quietly changes meaning halfway through a deck.
 
 **Step 2: the deck (checklist).**
+
 - 20 numbered cards, no gaps in the numbering.
 - The same five features in the same order on all 20 fronts.
 - One name on each back, nothing else.
@@ -931,6 +967,7 @@ Marking: score as **both** a fraction and a percentage; baseline 1/20 = 5% (a ca
 > *Tester 2 told me she was 'mostly going on size'. The evidence says colour. Cards 3 and 12 are both cases where size would have been right and colour was wrong, so she can't have been going on size."*
 
 Marking criteria:
+
 - Names **one** feature, not a vague list.
 - Gives **specific card numbers**, at least three.
 - Explains for at least one card *why* those numbers prove it, i.e. that another feature would have given the right answer.
@@ -965,6 +1002,8 @@ Not marked. Read the six ticks and the "one thing I still find confusing" line. 
 ---
 
 ## 🔮 Next Week Preview
+
+*What next week covers, and what you must prepare before it.*
 
 Next week the object of study stops being a person and becomes a program. The student learns what **training** actually is: a one-off process that eats labelled examples and produces a model, after which the examples are gone and only the model remains. They will *be* the model first, unplugged — shown twelve labelled cards for twenty seconds each, then the cards are physically taken away and six new ones are handed over. Whatever is left in their head is the model, and the cards are in an envelope. Then, before any camera comes out, they plan a photo shoot on paper: five backgrounds, three lighting conditions, eight angles, two distances, turned into a numbered shot list of forty photographs.
 

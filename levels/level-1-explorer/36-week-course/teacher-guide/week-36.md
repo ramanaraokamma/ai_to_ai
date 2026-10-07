@@ -69,7 +69,7 @@ harder than explaining:
 
 Sixty marks, three parts.
 
-```
+```text
    Part A   20 multiple choice   × 1 mark   =  20
    Part B    8 short answer      × 3 marks  =  24
    Part C    4 applied / debug   × 4 marks  =  16
@@ -159,7 +159,7 @@ Today's job is to close Level 1 cleanly.
 
 This is the last time you will show this figure, and today it is not orientation — it is the syllabus,
 finished. **Every box is solid.** Both branches, all nine tiles, nothing dashed, nothing outstanding.
-Show it before the showcase, not after, because it is also the best possible prompt sheet for the
+Show it before the showcase, not after. It is also the best possible prompt sheet for the
 five-minute demo.
 
 ![The course map in Week 36: all fourteen boxes are solid and the level is complete](../figures/fig-w36-0-where-this-fits.svg)
@@ -193,6 +193,8 @@ assessment.
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to do before the day, and what to do if something fails.
 
 ### 🗓️ Earlier in the week
 
@@ -233,8 +235,7 @@ assessment.
 
 ## ⏱️ The Lesson, Minute by Minute
 
-*(This is the 70-minute class. The paper itself is Option 1's separate sitting, or Option 2's
-homework from last night.)*
+This section is the plan for the 70-minute class, segment by segment. The paper itself is Option 1's separate sitting, or Option 2's homework from last night.
 
 | Minutes | Segment | What happens |
 |---|---|---|
@@ -379,7 +380,7 @@ part. Do these on the board, not on their paper.
 
 Work it on the board with them:
 
-```
+```text
    FRACTION     27/36
    DECIMAL      27 ÷ 36 :  36 × 0.7 = 25.2 → remainder 1.8 ; 1.8 ÷ 36 = 0.05
                 0.7 + 0.05 = 0.75
@@ -399,7 +400,9 @@ right than you attempted."
 > the training data, keeping all 183 daylight photos. How many lamplight photos in total, and how many
 > more must you take?
 
-```
+Here is the working to put on the board.
+
+```text
    (a)   91% − 42% = 49 PERCENTAGE POINTS      ← "49%" loses the mark
 
    (c)   Let L = total lamplight photos.
@@ -428,7 +431,7 @@ right than you attempted."
 
 Build the answer with them in two moves, and make them say the first one:
 
-```
+```text
    MOVE 1 — the test photos were training photos.
             A model that had done nothing but MEMORISE those 611 images
             would score at least this well here (probably 100%). So the number cannot tell
@@ -526,6 +529,8 @@ Have a listener sign it.
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the showcase, the visitors' question bank, and two variations.
+
 ### The Showcase — a real audience, five minutes, no notes
 
 **Materials:** the complete booth · the break-it log, open, with a good pen resting on it · a timer
@@ -534,7 +539,7 @@ objects for breaking attempts, including something with no class at all.
 
 **Setup (10 minutes, ideally the night before):**
 
-```
+```text
    ┌──────────────────────────────────────────────────────────────────────┐
    │                                                                      │
    │      ╔══════════════════════════════════════════════════╗            │
@@ -576,7 +581,7 @@ learned 90s** · how good it is 60s · **where it fails 45s** · the invitation 
 
 **"Finished" looks like this:**
 
-```
+```text
    □ Delivered in 5 minutes (± 60 seconds), with no notes in hand
    □ All six segments happened, in order
    □ The words "30 out of 40", "75%" and "25% baseline" were all said out loud
@@ -624,10 +629,14 @@ in full, because that part is fun and requires no performance.
 
 ## ❓ Questions Students Ask This Week
 
+These are eight questions students tend to ask, with an answer for each.
+
 **1. "Do I have to get 42 to be allowed into Level 2?"**
 
 Forty-two is the line where the gate opens with no extra work. Below it, the door isn't locked — it's
-just that walking through with a hole costs you more than a fortnight of fixing does. The gate's own
+just that walking through with a hole costs you more than a fortnight of fixing does.
+
+The gate's own
 wording covers this: *42 or more, **or** you fixed what you missed and can now explain it without
 notes.* Fixing counts. Pretending doesn't.
 
@@ -662,8 +671,9 @@ Try that with most certificates.
 
 You're good at the part almost everyone skips. You can build a small model, measure it honestly, find
 who it fails, and explain it — and the measuring and the explaining are the rare bits. What you have
-not done yet is type a line of code in a text language, and Level 2 is where that starts. Both things are true at once
-and neither cancels the other.
+not done yet is type a line of code in a text language, and Level 2 is where that starts.
+
+Both things are true at once and neither cancels the other.
 
 **7. "What will AI be able to do by the time I'm grown up?"**
 
@@ -672,7 +682,9 @@ they have been wrong in *both* directions — some things arrived decades late (
 conversation), and some arrived far earlier than expected (machines beating the world's best Go
 player, which many experts had expected to be at least a decade away right up until it happened). The honest position
 is that experts today disagree with each other loudly, and anybody who tells you a confident
-timetable is selling something. What is *not* a guess is the thing you already own: whatever gets
+timetable is selling something.
+
+What is *not* a guess is the thing you already own: whatever gets
 built, the questions "what was it trained on?", "out of how many?", "what's the baseline?" and "who
 does it fail?" will still be the right questions. Those don't go out of date.
 
@@ -685,6 +697,8 @@ six ticks and no examples is an unfinished one.
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This table lists the common traps today and what to do about each.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -702,6 +716,8 @@ six ticks and no examples is an unfinished one.
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to adjust the day for a student who is struggling, flying, or not engaging.
 
 ### If they are struggling
 
@@ -737,7 +753,7 @@ six ticks and no examples is an unfinished one.
 
 ### If they won't engage today
 
-The last week is a real risk for this, and there are two very different reasons for it. Diagnose
+The last week is a real risk for this. There are two very different reasons for it. Diagnose
 first.
 
 **If it's nerves about the audience:** cut the audience, not the day. One adult, three minutes, or
@@ -800,7 +816,7 @@ reviews. Impressed?"*
 
 ## 📤 Homework to Assign
 
-There is no new content homework. There are two pieces of writing, and they close the level.
+This section says what to assign and where each workbook part fits. There is no new content homework. There are two pieces of writing, and they close the level.
 
 **Say this, word for word:**
 
@@ -843,6 +859,8 @@ are the two that matter; the rest is recording.
 ---
 
 ## 🔑 Answer Key
+
+This section holds every answer: the lesson questions, the paper, and the workbook. Keep it away from the student.
 
 ### Lesson questions
 
@@ -937,7 +955,7 @@ wearing a percentage sign.
 
 **B6 — the confusion matrix.**
 
-```
+```text
    (a)  diagonal = 5 + 4 + 2 = 11
         FRACTION 11/15 · DECIMAL 11 ÷ 15 = 0.7333 · PERCENTAGE 73.3%
         baseline (3 equal classes) = 1/3 = 33.3%  →  gain 40.0 points
@@ -974,7 +992,7 @@ outcome of learning from examples.
 
 **(c)**
 
-```
+```text
    L ≥ 1/3 × (183 + L)  →  3L ≥ 183 + L  →  2L ≥ 183  →  L ≥ 91.5  →  92
    check: 92 ÷ 275 = 0.3345 = 33.5%  ✓
    already have 17  →  92 − 17 = 75 more to take
@@ -993,7 +1011,9 @@ outcome of learning from examples.
 
 **(b)** `F12` covers image patch rows 2–4, columns E–G:
 
-```
+The arithmetic for this cell is below.
+
+```text
    V filter = (G2+G3+G4) − (E2+E3+E4) = (0+0+0) − (0+255+255) = −510
    H filter = (row 4)    − (row 2)    = (255+255+0) − (0+0+0) = +510
    sum with no ABS = −510 + 510 = 0    →  MIN(255, 0) = 0
@@ -1006,7 +1026,7 @@ bright→dark is only which way you slid the filter. An edge is an edge.
 
 **(c)** With `ABS`, `C12:F15` reads a **hollow square**:
 
-```
+```text
       255   255   255   255
       255     0     0   255
       255     0     0   255
@@ -1171,7 +1191,9 @@ moment on someone else's test.
 
 #### W36-4 — Score tally
 
-```
+The score tally looks like this.
+
+```text
    Part A  ___ / 20      Part B  ___ / 24      Part C  ___ / 16
    TOTAL   ___ / 60      BAND ______________
    The band's instruction, copied out in the student's own hand: ______________
@@ -1193,7 +1215,9 @@ one line on how it was answered. Model version:
 
 #### W36-6 — The break-it log
 
-```
+A model log looks like this.
+
+```text
    #  what they showed it     model said   conf  fooled?  my guess why
    ─  ─────────────────────   ──────────   ────  ───────  ──────────────────────────
    1  a car key               other         71    no      the other class did its job
@@ -1253,7 +1277,7 @@ Not marked. Read the 😕 rows: each is a "not yet" on the gate and must carry a
 
 ## 🔮 Next Week Preview
 
-There is no next week — Level 1 is finished, and it is worth saying that out loud rather than letting
+There is no next week. Level 1 is finished, and it is worth saying that out loud rather than letting
 the course just stop. What happens next is Level 2, and it hands over a keyboard: the table becomes
 `pandas`, the split becomes one line, the confusion matrix becomes one function call. Not one new
 idea, only new spelling, which is exactly why this level was taken slowly.

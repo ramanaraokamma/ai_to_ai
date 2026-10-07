@@ -99,7 +99,9 @@ This word is not on the vocabulary list and you do not need to teach it as a ter
 the point of Milestone 1, so here is why it matters.
 
 Suppose the student trains the model and gets 62%. What do they say? Almost always: *"62%! That's
-way better than guessing!"* Suppose they get 41%. What do they say? *"Well, 41% is still better
+way better than guessing!"*
+
+Suppose they get 41%. What do they say? *"Well, 41% is still better
 than 25%, so it works."* Notice that **every possible result was going to be declared a success.**
 A test that cannot fail is not a test.
 
@@ -111,8 +113,9 @@ that scores 95%.
 ### The third idea: three numbers, not one
 
 The student must report accuracy three ways. This looks like a maths-teacher fussiness. It isn't.
+Here is what each form is for:
 
-```
+```text
    FRACTION      30 / 40      tells you the SIZE of the test.
                               "95%" out of 20 photos is 19/20. Out of 4 photos it is
                               cheating. The fraction is the honesty.
@@ -168,7 +171,9 @@ class and then says "I'll test on the last 10". Stop them. That is the unfixable
 **Misconception 2: "A higher confidence number means it's more likely to be right."**
 
 Week 16 covered this and it will come back today, because the model will produce a big confident
-number on a photo it gets wrong, and it will feel like a betrayal. Confidence is how strongly the
+number on a photo it gets wrong, and it will feel like a betrayal.
+
+Confidence is how strongly the
 model prefers one class over the others. It is calculated by the same machinery that produced the
 answer, so it cannot check the answer. The only thing that measures correctness is the held-out
 score they are computing today.
@@ -224,6 +229,8 @@ the threads; the map is orientation, never assessment.
 
 ## 🧰 Prep Checklist
 
+This section gets you ready. Do the photo shoot first, then the night-before jobs.
+
 ### 🗓️ Earlier in the week — the photo shoot (40 minutes, with the student)
 
 This is the only part of Milestone 2 that will not fit in the lesson, so it happens before.
@@ -270,6 +277,8 @@ This is the only part of Milestone 2 that will not fit in the lesson, so it happ
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson. Each segment has words to say, questions to ask and answers to listen for.
 
 | Minutes | Segment | What happens |
 |---|---|---|
@@ -458,7 +467,7 @@ Use *these* numbers, not their real ones, so nothing today depends on how their 
 
 **Do this:** Draw this on the board or a sheet of paper as you talk:
 
-```
+```text
      30 correct out of 40 photos
 
      FRACTION     30 / 40
@@ -555,6 +564,8 @@ recycling, said recycling — tick in the top-left."*
 
 ## 🎲 The Activity, In Full
 
+This section has everything you need to run the Build Sprint: materials, rules and timings.
+
 ### The Build Sprint — Milestones 2, 3 and 4 against a clock
 
 **What it is.** Twenty minutes, three milestones, one visible clock. The student builds; you time,
@@ -619,6 +630,8 @@ pre-fill the fraction and have them do only the division and the percentage.
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions this week tends to bring up, with short answers you can use.
+
 **"Can't I just use more photos so I don't need to hold any back?"**
 
 No — the held-out photos aren't wasted, they're *spent on measurement*. Ten per class buys the only
@@ -671,6 +684,8 @@ test sheet measures nothing.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual trouble spots and what to do when each one happens.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student uploads all 50 photos per class, then says "I'll test on the last ten" | Teachable Machine makes uploading everything feel natural, and holding photos back feels wasteful | Stop immediately. Delete the class, move 10 files into `heldout` in the file browser, re-upload. Costs three minutes now; costs the whole project if you let it slide. |
@@ -685,6 +700,8 @@ test sheet measures nothing.
 ---
 
 ## 🧭 Differentiation
+
+Use this section when the lesson needs to be easier, harder or smaller.
 
 ### If they are struggling
 
@@ -726,23 +743,31 @@ sheet, and the honesty is the entire lesson. Move the sprint to the weekend.
 
 ## ✅ Assessing Understanding
 
+Use these checks to see what the student has understood.
+
 Three checks, five minutes, at the very end.
 
 **Check 1 — the irreversible step.**
+
 Ask exactly: *"Why did we seal the envelope before we opened the laptop, and what would have gone
 wrong if we'd done it the other way round?"*
+
 > **A good answer** names both halves: the model would have seen those photos, so the score would
 > measure memory instead of learning — and there's no way to fix it afterwards except taking new
 > photos. A weak answer says "because those are the rules."
 
 **Check 2 — the number with its baseline.**
+
 Point at their own result and ask: *"Say that number the way you'd say it at the fair."*
+
 > **A good answer** contains all three parts: the fraction, the percentage, and the baseline —
 > e.g. "30 out of 40, that's 75%, and guessing would be 25%." If they say only "75%", ask "out of
 > how many?" and "compared to what?" until all three appear.
 
 **Check 3 — reading the matrix.**
+
 Point at the biggest off-diagonal number and ask: *"What is this box telling us?"*
+
 > **A good answer** names both classes in the right order: "three landfill photos got called
 > recycling." A weak answer says "it got three wrong" without saying *which way round*. The
 > direction is the whole information.
@@ -760,6 +785,8 @@ Point at the biggest off-diagonal number and ask: *"What is this box telling us?
 ---
 
 ## 📤 Homework to Assign
+
+This section tells you what to say about homework and what the workbook contains.
 
 **Say this:**
 
@@ -809,6 +836,8 @@ leave Think Deeper for the weekend.
 
 ## 🔑 Answer Key
 
+This section is for you only. It gives the answers to the lesson questions and the workbook, with the mistakes to watch for.
+
 ### Lesson questions
 
 | Question asked in the lesson | The worked answer |
@@ -823,15 +852,20 @@ leave Think Deeper for the weekend.
 | **Worked example** — what should the bar be? | Anything the student can justify; 50–60% is sensible for four classes. 26% makes success meaningless; 95% turns a genuinely good model into a failure. The reasoning matters more than the number. |
 
 **Worked example — "27 out of 36 as a decimal and a percentage."**
-```
+
+The working, written out:
+
+```text
    27 / 36  →  divide top and bottom by 9  →  3 / 4
    36 × 0.7 = 25.2 ; 27 − 25.2 = 1.8 ; 1.8 ÷ 36 = 0.05 ; 0.7 + 0.05 = 0.75
    0.75 × 100 = 75%
 ```
+
 **0.75 and 75%.** A decimal accuracy is always between 0 and 1; if it comes out above 1 the division
 was done upside down.
 
 **Worked example — "A friend says 95% accurate. Your two questions?"**
+
 **Out of how many?** (19/20 and 950/1000 are different claims.) **What's the baseline?** (95% is
 impressive against 25% and worthless against 94%.)
 
@@ -956,7 +990,9 @@ that it happened, which is itself honest, and pre-register properly next time).
 
 #### W34-2 — The counts table and the balance check
 
-```
+The counts table, with a passing check and a failing one:
+
+```text
    class        total  heldout(20%)  train        balance check:
    recycling      50        10         40         (biggest − smallest) ÷ biggest
    compost        50        10         40       = (50 − 50) ÷ 50 = 0%   ✓ under 20%
@@ -968,7 +1004,9 @@ that it happened, which is itself honest, and pre-register properly next time).
 
 #### W34-3 — Model file record card
 
-```
+The record card as it should look:
+
+```text
    filename: booth-v1.tm     folder: Downloads/     saved: <today>     size: <as shown in the file browser>
    trained on:     160 photos, 40 per class, default settings
    NOT trained on: the 40 photos in the sealed envelope        ← the line that matters
@@ -984,7 +1022,9 @@ The sheet has 40 rows of `# · true label · predicted · top % · ✓/✗ · no
 while wrong, which is the student's own number from the sheet. W34-5 also asks "Did I beat my bar?"
 (here 75% against a bar of 50%: YES; the "if NO" sentence stays blank).
 
-```
+The worked numbers:
+
+```text
    FRACTION     30 / 40
    DECIMAL      30 ÷ 40 :  40 × 0.7 = 28 → remainder 2 ; 2 ÷ 40 = 0.05 ; 0.7 + 0.05 = 0.75
                 check: 30/40 = 3/4 = 0.75  ✓
@@ -1010,7 +1050,9 @@ classes were different sizes, it would not, and the overall would be the one to 
 
 #### W34-6 — The confusion matrix and the finding
 
-```
+The finished matrix with row and column totals:
+
+```text
                         PREDICTED
                    rec   com   lan   oth
    TRUE  rec        9     0     1     0     = 10
@@ -1051,10 +1093,12 @@ kitchen, or glass — I have no glass photos at all."*
 #### W34-8 — Reflection
 
 **"Which step could not be undone, and why?"**
+
 > Splitting before training. Once a photo has trained the model, no score from it can tell learning
 > from memorising, and there is no repair except collecting new photos.
 
 **"Write the sentence you'd say to a stranger at the fair."**
+
 > Four parts — fraction, percentage, baseline, failure: *"It got 30 out of 40 photos right that it
 > had never seen — 75%, against 25% for blind guessing. It's worst at landfill, six out of ten, and
 > it usually calls those recycling."* Percentage only is incomplete; send them back for the rest.
@@ -1078,6 +1122,8 @@ finding in the right direction.
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what comes next and what to prepare this week.
 
 Next week is the other half of the booth, and it contains the hardest milestone in the whole
 project: the Scratch app. Four different behaviours, one per class, plus a **confidence threshold**

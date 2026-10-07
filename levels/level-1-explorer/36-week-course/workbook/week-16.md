@@ -8,7 +8,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week** — training. Notebook closed.
+This warm-up checks what you remember from last week: training. Keep your notebook closed.
 
 **W1.** In one sentence: what does **training** actually do?
 
@@ -37,6 +37,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Understand It
+
+These questions check that you know the ideas from the chapter. Write on the lines.
 
 **A1. Fill in the blanks.**
 
@@ -131,6 +133,8 @@ What should you do about it? ________________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+These questions ask you to use the ideas on new problems. Show your working.
+
 **B1.** A recycling machine has three classes: **glass**, **plastic**, **paper**. Somebody drops in an empty **crisp packet**. Write down what the machine will do and why. Include a made-up but sensible readout.
 
 My readout: glass ________ · plastic ________ · paper ________  (must add to 100)
@@ -159,9 +163,9 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-(d) Suppose it never says "Mr Chen". How many of its own training photos does it get right, and what is that as a percentage? Show your working.
+(d) Suppose it never says "Mr Chen". How many of its own training photos does it get right, and what is that as a percentage? Fill in the working below.
 
-```
+```text
    got right  =  ________ + ________ + ________  =  ________
 
    accuracy   =  ________ ÷ ________  =  ____________  ≈  ________ %
@@ -223,6 +227,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle gives you readouts with missing numbers.
+
 Three readouts have had numbers rubbed out. Every row has exactly **one** possible answer in whole numbers. Find them.
 
 ![Puzzle: the missing scores](../figures/fig-w16-12-puzzle-missing-scores.svg)
@@ -242,9 +248,9 @@ Trust it? ______________  Why: ________________________________
 
 **Row 3.** All three rubbed out. Clues: the three add to 100 · they are whole numbers · the two losers are **equal** · spoon wins by exactly **1** point.
 
-Let each loser be `L`. Then the winner is `L + 1`, so:
+Let each loser be `L`. Then the winner is `L + 1`, so fill in the working:
 
-```
+```text
    (L + 1)  +  L  +  L  =  100
 
    ________ L  +  1  =  100
@@ -261,6 +267,8 @@ What does that tell you about Row 3? ________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions ask for a short paragraph each. Give reasons, not just opinions.
 
 **T1.** A model reports 45 / 44 / 11. Your friend says: *"That model is broken — it can't even make its mind up."* Write a paragraph arguing the opposite: that this readout is the model being **more** useful than a 99% one would be. Use the words *margin* and *shrug*.
 
@@ -297,6 +305,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+Three bigger tasks: read eight readouts, write your own policy, and explain the key words.
 
 ### Part 1 — Eight readouts, four steps each (25 min)
 
@@ -345,7 +355,9 @@ ________________________________________________________________
 
 ### Part 2 — Your confidence policy (15 min)
 
-```
+Fill in the two blanks to write your policy.
+
+```text
    MY CONFIDENCE POLICY
    ──────────────────────────────────────────────────────────
    If the top score is below ________ %,
@@ -407,6 +419,8 @@ Do **not** copy the chapter. Your own wording, and a different example from the 
 
 ## 🎨 Draw It
 
+This page is for a picture of the idea. Draw it in the frame.
+
 **Your task:** draw the **100 points of belief** being shared out between three boxes — and then draw what happens when someone holds up a **fork**.
 
 You must label: the three boxes, the pile of 100 points, where the points end up, and one arrow showing what the model *cannot* do.
@@ -438,6 +452,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+**Finish your own work first.** Then open the box below to check it.
 
 <details>
 <summary>Check your answers</summary>
@@ -508,8 +524,9 @@ What happens and why: a crisp packet is not glass, not plastic bottle, not paper
 (a) `60 + 60 + 4 = **124**`
 (b) `(60 − 4) ÷ 60 = 56 ÷ 60 = 0.9333… ≈ **93%**`. We want under 20%, so this is **badly imbalanced**.
 (c) Prediction: *"It will get very good at Mr Ahmed and Ms Bell and will almost never say Mr Chen, because giving up on 4 photos out of 124 costs it almost nothing."*
-(d)
-```
+(d) The working:
+
+```text
    got right  =  60 + 60 + 0  =  120
 
    accuracy   =  120 ÷ 124  =  0.96774…  ≈  96.8 %
@@ -537,7 +554,8 @@ Even worse: **34 / 33 / 33** has a top score of 34, so his rule blocks it — bu
 ### 🧩 Puzzle of the Week
 
 **Row 1.** The three must add to 100, so:
-```
+
+```text
    58 + ? + 12 = 100
         ? + 70 = 100
              ? = 30
@@ -550,7 +568,8 @@ Check: `45 + 44 + 11 = 100` ✓
 Readout: **45 / 44 / 11.** **Do not trust it.** A one-point win is not a preference. And note what a margin of 1 does *not* tell you: it doesn't tell you the answer is wrong — it tells you the answer is **unstable**, which is a different and more useful warning.
 
 **Row 3.** Let each loser be `L`, so the winner is `L + 1`:
-```
+
+```text
    (L + 1)  +  L  +  L  =  100
               3L  +  1  =  100
                     3L  =  99
@@ -625,9 +644,9 @@ Are those the two you trust most? **Only partly.** H1 is a genuinely good readin
 
 There is no single correct policy. **The defence is what gets marked, not the number.** A full-credit answer has: two thresholds, one reason about false alarms, one reason about misses, an explanation of OR, and numbers that survive a counter-example.
 
-**Model answer:**
+**Model answer** (the policy as written):
 
-```
+```text
    MY CONFIDENCE POLICY
    ──────────────────────────────────────────────────────────
    If the top score is below 65%,

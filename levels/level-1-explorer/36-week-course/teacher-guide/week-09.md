@@ -33,7 +33,7 @@ Objective 3 is the one that carries the week, and it is mostly about tone. A stu
 
 ## 🧑‍🏫 What YOU Need to Know First
 
-**Read this once, slowly. About 13 minutes. It is complete — you need nothing else.**
+This section is the background you need. Read it once, slowly. It takes about 13 minutes and is complete — you need nothing else.
 
 ### The one-sentence version
 
@@ -47,7 +47,7 @@ Every number you have computed so far this term has been measured on the same ex
 
 Last week the student wrote a rulebook from ten labelled messages. Those ten are the **training examples**. The ten in the envelope are the **fresh examples** — and crucially, you wrote them before the student's rules existed, so there is no possible way the rules were shaped to fit them.
 
-That sealing ceremony was not theatre for its own sake. It is the physical version of a rule that professional researchers follow, break, and ruin real studies by breaking: **you set the test aside first, and you look at it once.**
+The sealing ceremony was not just theatre. It is the physical version of a rule that professional researchers follow. Some break it, and they ruin real studies by doing so: **you set the test aside first, and you look at it once.**
 
 ### Part 2 — Why a training score is always high, and always meaningless
 
@@ -72,7 +72,7 @@ Imagine two students sit the same test.
 
 **That is precisely what a training score is.** The rulebook had the answers in front of it while it was being written. 100% measures the student's ability to fit ten rows. It does not measure anything about text messages, or spam, or the world.
 
-Here is the sharpest way to say it to an 11-year-old, and it is worth memorising:
+Here is the sharpest way to say it to an 11-year-old. Memorise it:
 
 > **"You can always get 100% on a test you wrote after seeing the answers. That number isn't a lie — it's just not about the future."**
 
@@ -89,7 +89,7 @@ The same score gets written three ways, and the student needs all three because 
 
 **2. The decimal.** Do the division, on paper, properly:
 
-```
+```text
       0.5
     ______
 10 )  5.0
@@ -110,16 +110,22 @@ Ten doesn't go into 5, so write 0 and a decimal point. Ten goes into 50 exactly 
 
 All three are 50%, and they are wildly different amounts of evidence. **The fraction tells you there were only ten tries. The percentage hides it.** This is why good scientific papers report the denominator, and why a headline that says "50% of people prefer…" without saying how many people were asked is doing something dishonest.
 
-Insist on this and it will pay off all year: **never write 50% on its own. Write "5 out of 10 = 50%".**
+Insist on this and it will pay off all year.
 
-**And one more thing to know for today: on a two-way choice, 50% is the score of a coin.** Spam or ham is a two-way choice. So a rulebook at 50% is no better than a coin — you could throw it away, flip a coin, and do about as well. Add one line: a coin is the right baseline only when the two answers are about equally common. In the sealed ten, 6 are ham and 4 are spam, so always saying "ham" would score 6 out of 10 = 60%, and the rulebook's 50% is a little worse than that. That is not a rhetorical flourish; it is arithmetic, and the student should hear it plainly.
+**Never write 50% on its own. Write "5 out of 10 = 50%".**
+
+**One more thing to know for today: on a two-way choice, 50% is the score of a coin.** Spam or ham is a two-way choice. So a rulebook at 50% is no better than a coin. You could throw it away, flip a coin, and do about as well.
+
+Add one line: a coin is the right baseline only when the two answers are about equally common. In the sealed ten, 6 are ham and 4 are spam, so always saying "ham" would score 6 out of 10 = 60%. The rulebook's 50% is a little worse than that. That is arithmetic, not a flourish, and the student should hear it plainly.
 
 ### Part 4 — Reading the gap, and refusing to explain it away
 
 ![Same rulebook, two very different scores](../figures/fig-w09-2-training-vs-fresh-bars.svg)
 *Figure 9.4 — 100% on its own ten. 50% on ten it had never seen. The drop is the news.*
 
-```
+The two scores, side by side:
+
+```text
 Training accuracy   10 out of 10  =  1.0   =  100%
 Fresh accuracy       5 out of 10  =  0.5   =   50%
 The gap                                       50 percentage points
@@ -188,6 +194,8 @@ Score the ten sealed messages yourself against the student's rulebook, so you kn
 
 ### 🧭 The Growing Map
 
+This short end-of-lesson routine shows the student where today sits on the course map.
+
 This week the tinted tile moves **down** rather than across: the person's room holds two tiles and the
 learner now occupies the second, TOO MANY RULES. The tile above it has turned white and carries its
 finished range, wk 7-8. A tile going from tinted to white is the only reward this figure ever hands
@@ -221,6 +229,8 @@ available: *"because today was about nothing except scoring things honestly."*
 ---
 
 ## 🧰 Prep Checklist
+
+Use this list to get the room, the papers and yourself ready. Most of it happens the night before.
 
 ### 15 minutes the night before
 
@@ -259,6 +269,8 @@ available: *"because today was about nothing except scoring things honestly."*
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the whole lesson plan. Each step below says what to do, what to say and what to ask.
+
 | Minutes | Segment | What happens |
 |---|---|---|
 | 0–8 | 🪝 **Hook** — the envelope, unopened | The student predicts their score, in writing, before anything is opened. |
@@ -267,8 +279,8 @@ available: *"because today was about nothing except scoring things honestly."*
 | 40–60 | 🎲 **Activity** — The Term 1 checkpoint quiz | Twelve questions closed-book, then marked out loud with week numbers. |
 | 60–70 | 🔑 **Wrap & Assign** | The concept map, the list of weeks, the reflection sheet, the homework. |
 
-**Running 60 minutes?** Cut the quiz to six questions (1, 5, 7, 9, 11, 12) and the wrap to 6 minutes. **Never cut the envelope trial** — everything else this term was preparation for those fourteen minutes.
-**Running 75?** Add the coin-flip demonstration from Differentiation, and have the student write their own thirteenth quiz question with a model answer, which is a genuinely hard and revealing task.
+- **Running 60 minutes?** Cut the quiz to six questions (1, 5, 7, 9, 11, 12) and the wrap to 6 minutes. **Never cut the envelope trial** — everything else this term was preparation for those fourteen minutes.
+- **Running 75?** Add the coin-flip demonstration from Differentiation, and have the student write their own thirteenth quiz question with a model answer, which is a genuinely hard and revealing task.
 
 ---
 
@@ -367,9 +379,9 @@ Let them answer. They will say B, immediately and confidently. Then:
 >
 > And we're going to write it three ways every single time, because each way hides something different."
 
-**Do this:** write all three, in order, on the board.
+**Do this:** write all three, in order, on the board. Copy this layout:
 
-```
+```text
 1. THE FRACTION          5
                         ──      correct on top, how many you tried underneath
                         10
@@ -449,9 +461,9 @@ The full trace, for you to hold:
 
 **Score: 5 out of 10.**
 
-**Do this — the three forms, on the board, in the student's handwriting:**
+**Do this:** write the three forms on the board, in the student's handwriting.
 
-```
+```text
 Fresh accuracy  =  5 out of 10  =  5/10  =  0.5  =  50%
 Training accuracy = 10 out of 10 = 10/10 =  1.0  = 100%
 The gap                                            50 percentage points
@@ -530,9 +542,9 @@ Full instructions in the next section. Twelve questions, closed-book, twelve min
 >
 > **Week 9. Today.** The only honest score comes from examples the rulebook has never… seen."
 
-**Do this:** write the list of weeks on the reflection sheet — the actual output of the quiz. It should look like a to-do list, not a report card:
+**Do this:** write the list of weeks on the reflection sheet — the actual output of the quiz. It should look like a to-do list, not a report card. An example:
 
-```
+```text
 GO BACK TO:  Week 5 (data types),  Week 7 (rates not counts)
 SOLID:       Weeks 1, 2, 4, 6, 8
 ```
@@ -624,6 +636,8 @@ At the end, gather the week numbers into a list. That list is the output.
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions you are likely to hear, with answers you can say out loud.
+
 **"So all the scores I've written down this term were fake?"**
 Not fake — just not evidence about the future. They were honest measurements of the wrong thing. A training score genuinely tells you one useful thing: that your rules are consistent with the examples you had. If a rulebook can't even fit its own training examples, something is badly wrong. It just cannot tell you how the rulebook will do on tomorrow's messages, and tomorrow's messages are the whole reason you built it.
 
@@ -649,6 +663,8 @@ Yes, regularly, and it ruins real work. It has a name — contaminating your tes
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table when the lesson goes off course. Find what is happening in the left column.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The 50% lands as a personal failure and the student shuts down | It looks exactly like a bad test result, because it looks exactly like a bad test result | Get in first — say the "this number is worth more than the hundred was" line *before* opening the envelope, not after. If it happens anyway, stop and say the true thing: almost every professional has watched this drop on project after project. Then hand them the count of false alarms to do, which is a task, and tasks re-engage. |
@@ -663,6 +679,8 @@ Yes, regularly, and it ruins real work. It has a name — contaminating your tes
 ---
 
 ## 🧭 Differentiation
+
+This section covers a student who is struggling, one who is flying, and one who will not engage today.
 
 ### If they are struggling
 
@@ -764,6 +782,8 @@ Do these in the last five minutes. Exact wording below.
 
 ## 🔑 Answer Key
 
+This section holds every answer for the week. Keep it away from the student.
+
 ### Where each workbook section is answered
 
 | Workbook section | Items | Answered under |
@@ -783,9 +803,9 @@ There is no "fix the broken program" section this week, and no code, which is co
 
 ### The Sealed Envelope Trial — full trace
 
-The rulebook under test (from Week 8):
+The rulebook under test (from Week 8) is:
 
-```
+```text
 RULE 1:  IF contains "!!"                   THEN spam
 RULE 2:  IF contains "free" (any capitals)  THEN spam
 RULE 3:  IF 30 or more characters           THEN spam
@@ -807,7 +827,7 @@ DEFAULT: OTHERWISE                          THEN ham
 
 **Score: 5 out of 10.**
 
-```
+```text
 Fresh accuracy    =  5 / 10  =  0.5  =  50%
 Training accuracy = 10 / 10  =  1.0  = 100%
 The gap                                50 percentage points
@@ -872,9 +892,9 @@ Because the rules were written while looking at those exact ten messages *with t
 
 ### Workbook Page 9.1 and 9.2 — the trial and the arithmetic
 
-See the full trace above. The arithmetic, written out as the page demands:
+See the full trace above. The arithmetic, written out as the page demands, looks like this:
 
-```
+```text
 THE FRACTION      5 / 10        correct on top, tries underneath
 
 THE DIVISION           0.5
@@ -908,9 +928,9 @@ No right answers; these are the six prompts and what a useful response looks lik
 
 ### Workbook Page 9.5 — fix the rulebook
 
-**A model fixed rulebook (v2).** The student's will differ; this one is worked all the way through so you can mark any version against the same standard.
+**A model fixed rulebook (v2).** The student's will differ; this one is worked all the way through so you can mark any version against the same standard. It looks like this:
 
-```
+```text
 RULE 1:  IF contains "!!" AND has an ALL-CAPS word of 3+ letters  THEN spam
 RULE 2:  IF contains "free" AND the message has no "?"            THEN spam
 RULE 3:  IF 40 or more characters                                 THEN spam
@@ -1093,9 +1113,17 @@ There are no right answers; it is a self-rating of seven "I can…" statements. 
 
 ## 🔮 Next Week Preview
 
-Next week we take the obvious next step and follow it until it falls over. The student's rulebook is at 50% and the natural instinct is *add more rules* — so next week we do exactly that, and count. How many rules does each new fix need? How much does the fresh score actually move? The numbers are printed and they are uncomfortable: five rules gets you 50%, eighteen rules gets you 65%, and two hundred and fifty-eight rules gets you 70% and a rulebook nobody on earth can read. Then we count situations instead of rules — three yes/no questions make eight combinations, thirty make over a billion — and work out how many years of solid eight-hour days that would take. By the end the student proposes the machine learning trade themselves, which is far better than being told it.
+This section says where next week starts, so you can prepare.
 
-**Prep early:** you need a **spreadsheet** for the first time in three weeks — Google Sheets, Excel or LibreOffice, all identical for our purposes. Test that you can type `=2^A2` into a cell and drag it down twenty rows before the lesson; that is the entire technical requirement. If no computer is available, the doubling table works perfectly on paper and there's a folded-paper version in next week's activity that some students find more convincing anyway. Also keep this week's 50% written somewhere visible — next week opens by pointing at it.
+Next week we take the obvious next step and follow it until it falls over. The student's rulebook is at 50% and the natural instinct is *add more rules* — so next week we do exactly that, and count. How many rules does each new fix need? How much does the fresh score actually move? The numbers are printed and they are uncomfortable: five rules gets you 50%, eighteen rules gets you 65%, and two hundred and fifty-eight rules gets you 70% and a rulebook nobody on earth can read.
+
+Then we count situations instead of rules — three yes/no questions make eight combinations, thirty make over a billion — and work out how many years of solid eight-hour days that would take.
+
+By the end the student proposes the machine learning trade themselves, which is far better than being told it.
+
+**Prep early:** you need a **spreadsheet** for the first time in three weeks — Google Sheets, Excel or LibreOffice, all identical for our purposes. Test that you can type `=2^A2` into a cell and drag it down twenty rows before the lesson. That is the entire technical requirement.
+
+If no computer is available, the doubling table works perfectly on paper and there's a folded-paper version in next week's activity that some students find more convincing anyway. Also keep this week's 50% written somewhere visible — next week opens by pointing at it.
 
 ---
 

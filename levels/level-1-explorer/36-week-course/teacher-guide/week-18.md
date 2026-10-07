@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the lesson on one page. Read it first.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes (this one is tight — the 60-minute cut is in §Differentiation) |
@@ -58,9 +60,9 @@ help. The information is not there. The experiment is worthless.
 ![A controlled experiment is one knob turned and the rest taped down](../figures/fig-w18-1-one-knob-turned.svg)
 *Figure 18.1 — One knob turned. Everything else taped down. That is the whole method.*
 
-The things you must hold fixed today, and you should say them out loud:
+Hold these things fixed today, and say them out loud:
 
-```
+```text
    TAPED DOWN, every single run
    ─────────────────────────────────────────────────
    □  the same three objects
@@ -71,7 +73,7 @@ The things you must hold fixed today, and you should say them out loud:
    □  read the numbers the same way (freeze, count 2, read)
 ```
 
-An 11-year-old will find "the same order" fussy. It is not: if you always test the spoon first while
+An 11-year-old will find "the same order" fussy. It is not. If you always test the spoon first while
 your hand is steady and the comb last while you are bored, you have added a variable.
 
 ### 2. What a sabotage test is, and why it isn't vandalism
@@ -119,8 +121,10 @@ feel it first.
 
 In 2016 three researchers built a picture classifier on purpose to be bad, and didn't tell anyone.
 
-It told huskies from wolves. It mostly worked. This is the Ribeiro, Singh and Guestrin 2016 "Why
-Should I Trust You?" (LIME) paper. As I recall (not re-checked; do not quote numbers), the training set was small and hand-picked, the
+It told huskies from wolves. It mostly worked.
+
+This is the Ribeiro, Singh and Guestrin 2016 "Why
+Should I Trust You?" (LIME) paper. As I recall (not re-checked; do not quote numbers), the training set was small and hand-picked. The
 audience was about 27 graduate students on a survey, and only a minority trusted the biased model
 before seeing explanations.
 
@@ -130,7 +134,9 @@ mostly learned: *white fuzzy stuff at the bottom of the picture → say wolf.* P
 snow and it is likely to say wolf, and sound sure of itself.
 
 Nobody wrote that rule. Nobody wanted it. **The model learns the easiest pattern that separates your
-classes, not the pattern you meant.** Experiment 2 today is a close cousin of that story, shown in your own
+classes, not the pattern you meant.**
+
+Experiment 2 today is a close cousin of that story, shown in your own
 kitchen, in about ten minutes.
 
 ### 5. Why the prediction must be written down first
@@ -222,6 +228,8 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
 
 ## 🧰 Prep Checklist
 
+Use this list to get ready.
+
 ### 20 minutes the night before
 
 - [ ] **Confirm `baseline-v1.tm` exists.** Open Teachable Machine → ☰ → **Open project from file** →
@@ -264,6 +272,8 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson, one segment at a time.
 
 | Minutes | Segment | What happens |
 |---|---|---|
@@ -311,9 +321,9 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
 Draw two boxes on the board — a wolf in snow, a husky on grass. Then draw a third: a husky in snow,
 with a big label `MODEL SAYS: WOLF`. Stick figures are fine.
 
-Leave one question on the board for the whole lesson:
+Leave this question on the board for the whole lesson:
 
-```
+```text
    WHAT IS MY MODEL REALLY LOOKING AT?
 ```
 
@@ -356,10 +366,10 @@ Leave one question on the board for the whole lesson:
 
 **Do this:**
 
-Draw the tape across the other three knobs. Then write the taped-down list on the board and read it
+Draw the tape across the other three knobs. Then write this taped-down list on the board and read it
 out, item by item, pointing at each:
 
-```
+```text
    TAPED DOWN, every run:
       same 3 objects
       same 5 test items, same order
@@ -408,9 +418,9 @@ Write both definitions on the board. Leave them up.
 **Experiment 1: five photos per class.** You drive the structure, they drive the mouse.
 
 **Step 1 — copy row 0 (2 min).** Open Handout 18A. Copy the baseline result across from last week's
-table. Do **not** re-measure it — re-measuring would change a variable.
+table. Do **not** re-measure it — re-measuring would change a variable. The baseline row reads:
 
-```
+```text
    row 0  |  baseline: 40 each, full variety  |  3 / 3 real objects correct  |  margins 86, 82, 66
 ```
 
@@ -433,9 +443,9 @@ the top score and the margin for each of the five. Then the score out of five.
 
 > "Give me the sentence in this shape: **the margin fell from ___ to ___ because ___.**"
 
-**Model result and model explanation:**
+**Model result and model explanation.** The first sabotage row reads:
 
-```
+```text
    row 1  |  5 photos per class  |  2 / 3 real objects correct  |  margins 41, 14, 7
 ```
 
@@ -502,6 +512,8 @@ Put this map up and walk it left to right, then back along the bottom, naming th
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the Sabotage Lab.
+
 ### Sabotage Lab
 
 **Time:** 20 minutes (about 6–7 minutes per experiment)
@@ -511,7 +523,9 @@ Handout 18A · prediction slips 2, 3 and 4
 
 ### The loop — identical for every experiment
 
-```
+Run these seven steps, in this order, for every experiment:
+
+```text
    ┌─────────────────────────────────────────────────────────────┐
    │  1. PREDICT   write the slip. Score out of 5, and WHY.      │
    │  2. SABOTAGE  change ONE thing in the photos.               │
@@ -532,7 +546,9 @@ same surface, in the same light.
 
 **The extra step that makes this experiment special:** test **twice**.
 
-```
+The two tests are:
+
+```text
    Test A:  on the SAME surface the photos were taken on
    Test B:  somewhere completely different (the sink, the windowsill)
 ```
@@ -564,7 +580,9 @@ Then, and only then, ask:
 **The explanation to draw out:** the wooden table appeared in every single training photo, so the model was
 never shown that backgrounds can change, and it probably leaned on "warm brown texture in the
 background" as well as on the spoon. (This one test does not isolate the cause; that is the likely
-explanation.) Remove the table and a chunk of the evidence may vanish. **It is a cousin of the husky
+explanation.) Remove the table and a chunk of the evidence may vanish.
+
+**It is a cousin of the husky
 in the snow: there the snow went with one label, here the table goes with every label, but either way
 the model was never shown that backgrounds vary.**
 
@@ -582,7 +600,9 @@ object. Feeding blurry photos is like learning to recognise faces from out-of-fo
 you'd manage, badly.
 
 **The subtle bit worth raising if there's time:** this model was trained blurry and tested sharp, and
-it *still* struggled. This hints that a mismatch can hurt. We did not test the reverse direction, but a model trained only on perfect studio photos may
+it *still* struggled. This hints that a mismatch can hurt.
+
+We did not test the reverse direction, but a model trained only on perfect studio photos may
 well struggle with the wobbly ones real people take. **Your training photos should look like the photos the
 model will actually meet.**
 
@@ -602,9 +622,9 @@ and toothbrush at 40. Check the counts read 40 / 40 / 5 before training.
 Point at the comb row: **the model gives the comb class 11 points out of 100 while staring straight
 at a comb.** It has essentially stopped believing combs exist.
 
-Then the arithmetic, which they did in Week 16 and can now see happening:
+Then do the arithmetic, which they did in Week 16 and can now see happening:
 
-```
+```text
    photos:  40 + 40 + 5  =  85
    a model that never says "comb" gets  40 + 40 + 0  =  80 correct
    80 ÷ 85  =  0.941…  ≈  94.1%
@@ -644,6 +664,8 @@ Cut the quiz to eight questions: 1, 3, 4, 6, 8, 10, 12, 14.
 
 ## ❓ Questions Students Ask This Week
 
+Use these answers when the student asks one of these questions.
+
 **1. "Why are we breaking it? We just made it."**
 Because you can't just read the answer off the numbers inside a model — not even the people who built Teachable Machine can.
 One reliable way to find out what it was using is to take something away and see what falls over. If you
@@ -656,7 +678,9 @@ experiment. You can't repair a damaged model, but you can always go back to the 
 also why we never overwrite the file.
 
 **3. "The one-background model scored higher. Isn't that better?"**
-Better *where*? It's better on that one table and much worse everywhere else. This is the most
+Better *where*? It's better on that one table and much worse everywhere else.
+
+This is the most
 important question anyone asks this week and the answer is: **a score means nothing until you know
 where it was measured.** Hold onto that thought — it's the whole of next term.
 
@@ -694,6 +718,8 @@ reliable and you having watched them be reliable.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual problems, why they happen and what to do.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The baseline isn't reloaded between experiments** | It's an invisible step with no button of its own, and the tab looks fine. | Say it out loud every single time, as step 7. If you catch it late, that experiment is void — redo it. Do not quietly keep the number. |
@@ -709,6 +735,8 @@ reliable and you having watched them be reliable.
 ---
 
 ## 🧭 Differentiation
+
+Use this section to make the lesson easier or harder for the student in front of you.
 
 ### If they are struggling
 
@@ -756,6 +784,8 @@ to Week 19.
 ---
 
 ## ✅ Assessing Understanding
+
+Use these checks to see what the student understood. They are not a grade.
 
 ### Check 1 — the method
 
@@ -810,6 +840,8 @@ them as Week 19 warm-ups.
 
 ## 📤 Homework to Assign
 
+This section says what to set, what to say, and how long each part takes.
+
 **Workbook:** Week 18, the whole sheet. The **🛠️ Build It** section (Parts 1–3) is the core and takes
 about 55 minutes; the rest (✅ Warm-Up, ✍️ Practice Sets A and B, 🧩 Puzzle of the Week, 🤔 Think Deeper,
 🎨 Draw It, 📊 Self-Check) is about 60 minutes more, best spread over the week. Set Build It first.
@@ -847,6 +879,8 @@ about 55 minutes; the rest (✅ Warm-Up, ✍️ Practice Sets A and B, 🧩 Puzz
 ---
 
 ## 🔑 Answer Key
+
+This section holds the model answers for the workbook, the lesson questions and the quiz. Keep it away from the student.
 
 ### K1 — Build It Parts 1 and 2: the five-row results table, model answers
 
@@ -1136,6 +1170,8 @@ for Week 19.
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what the next week needs from you now.
 
 Term 3 opens with **Week 19 — The Test You Can't Study For**, and it is the week the whole course has
 been building towards. Today the student found out that a model can score brilliantly where it was

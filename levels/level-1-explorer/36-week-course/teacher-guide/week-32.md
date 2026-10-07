@@ -23,6 +23,8 @@
 
 ## 🎯 Lesson Objectives
 
+These are the five things to check for at the end of the lesson.
+
 By the end of the lesson the student can, and you will have seen them do it:
 
 1. **Narrow a group of 800 people down to one** using five "anonymous" facts, and say which single
@@ -69,8 +71,9 @@ where the danger lives:
 | School ID number | The times of day you are online | The plot of a novel |
 
 No single item in the middle column identifies anybody. Put enough together (in Round 1 it takes five) and there is exactly one
-person they can refer to. This is called **re-identification**, and it is why *"we
-removed the names, so it's anonymous"* is one of the most commonly repeated false statements in
+person they can refer to.
+
+This is called **re-identification**. It is why *"we removed the names, so it's anonymous"* is one of the most commonly repeated false statements in
 technology.
 
 You will demonstrate this live in Round 1. It usually takes under ninety seconds, and the part that
@@ -87,7 +90,7 @@ as private.
 ![What a photo file carries besides the picture](../figures/fig-w32-3-photo-metadata.svg)
 *Figure 32.1 — You shared one thing. The file also carried six hidden notes of its own.*
 
-The analogy that works with an eleven-year-old: you post a photo of yourself in your garden. You are
+The analogy that works with an eleven-year-old is a garden photo. You post a photo of yourself in your garden. You are
 thinking about your face. The photo also contains your house number on the gate, your school
 uniform, a neighbour's number plate, a reflection in the window, and — attached invisibly to the
 file — the exact GPS coordinates and the time. **You shared one thing and gave away eleven** (seven things visible in a typical garden photo, four attached to the file).
@@ -120,7 +123,9 @@ Fakes are as old as photography. Three things changed, and it is the three toget
 | One at a time | Thousands, automatically, each slightly different |
 | Voice was hard to fake | A few seconds of audio is enough |
 
-**The second harm is the sneakier one and most adults miss it.** Once everybody knows convincing
+**The second harm is the sneakier one, and most adults miss it.**
+
+Once everybody knows convincing
 fakes exist, a person caught on *genuine* video can simply say "that's a deepfake" — and plenty of
 people will believe them. So the technology damages truth twice: it makes false things believable,
 **and it makes true things deniable.** The second harm reaches you even if you never see a single
@@ -163,7 +168,7 @@ means "best of my options", not "probability I am right", and a text generator p
 invented sentences in the same smooth voice because there is no wobble channel. **A confident wrong
 answer and a confident right answer are made by the same machinery and look identical.**
 
-Here are the three situations to memorise, and the figure to show:
+Here is the figure that shows the three situations to memorise:
 
 ![Three times not to trust an AI answer](../figures/fig-w32-1-when-not-to-trust.svg)
 *Figure 32.4 — Print this one and stick it somewhere. It is the most reusable thing in the week.*
@@ -234,6 +239,8 @@ best question of the wrap. Do not quiz them on the threads; the map is orientati
 
 ## 🧰 Prep Checklist
 
+Use this list to get ready. The photo step must be done the night before.
+
 **10 minutes, the night before — this is the part that cannot be improvised**
 
 - [ ] Take a photo on a phone **with location services switched on for the camera**, outdoors is best.
@@ -266,6 +273,8 @@ best question of the wrap. Do not quiz them on the threads; the map is orientati
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This is the plan for the whole lesson. Each segment is set out below the table.
 
 | Minutes | Segment | What happens |
 |---|---|---|
@@ -325,7 +334,9 @@ Three blocks, six minutes each. Do not let block 1 eat block 3.
 > are a hundred and twenty of you. 'Lives in postcode area 3' is not personal data on its own.
 > 'Left-handed' is not personal data on its own.
 >
-> Put enough facts like those together — in a minute you will see it takes five — and there is one person. That is called **re-identification**, and it is
+> Put enough facts like those together — in a minute you will see it takes five — and there is one person.
+>
+> That is called **re-identification**, and it is
 > why the sentence 'we removed the names so it's anonymous' is one of the most common false
 > statements in the whole of technology."
 
@@ -484,7 +495,9 @@ true. What do you do differently?"*
 
 ## 🎲 The Activity, In Full
 
-### **Three Rounds**
+This section gives the full instructions for the three activity rounds.
+
+### Three Rounds
 
 **Time:** 20 minutes (7 + 5 + 8) · **Group size:** 1 (notes for 2–6 at the end)
 
@@ -648,6 +661,8 @@ habit you are actually installing.
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions the student is likely to ask, with answers you can give.
+
 **1. "If I delete a photo, is it gone?"**
 
 From your phone, yes. From everywhere, almost never. If you posted it, somebody may have saved it,
@@ -709,6 +724,8 @@ checkpoint, and the last checkpoint is not allowed to be asleep.**
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table when the lesson stalls. Each row gives a problem, its cause and a fix.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The room gets frightened | Three ideas about being watched, faked and fooled, all in one hour | Every idea must end with an action, not a warning. "Here is how to open the file." "Here are four checks." "Here is when it is fine to trust it." Competence, not fear |
@@ -722,6 +739,8 @@ checkpoint, and the last checkpoint is not allowed to be asleep.**
 ---
 
 ## 🧭 Differentiation
+
+Use this section to make the lesson easier or harder for your student.
 
 ### If the student is struggling
 
@@ -759,6 +778,8 @@ moves to Week 33's warm-up.
 ---
 
 ## ✅ Assessing Understanding
+
+Use these checks to see what the student has understood. Each one has three levels of answer.
 
 **Check 1 — re-identification.**
 > Say: *"Give me three facts about a person, none of which is their name, that together would
@@ -801,6 +822,8 @@ moves to Week 33's warm-up.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives you the words to introduce the homework, and a map of the workbook.
 
 **Say this:**
 
@@ -1277,6 +1300,8 @@ fact-checking to B2, "when it is fine to trust" to B5(a) and the Concept 3 row b
 ---
 
 ## 🔮 Next Week Preview
+
+Read this so you can prepare for next week now.
 
 Week 33 is where all of this stops being about other people. The student runs the full fairness
 audit on their **own** model: four batches of twelve photos in four deliberately different

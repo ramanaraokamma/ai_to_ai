@@ -43,11 +43,15 @@ By the end of this chapter you will hand somebody a page with 144 numbers on it 
 
 ## 🧠 The Big Idea
 
+This section explains what a picture is made of inside a computer. It builds up one idea at a time, from the pixel to the size of a whole photo.
+
 ### 1. A pixel is one square, holding one number
 
 > **Pixel** — one tiny square of a picture, and the smallest piece a computer can store. The word is just "**pic**ture **el**ement" squashed together, which is a very boring origin for such a good word.
 
-Hold a bright phone screen right up against your eye, closer than you can focus, and look at a plain white area. If the screen is bright enough, the smooth white breaks apart into a grid of tiny dots or stripes of light. Those are not an illusion. They are the screen's own tiny lights, one small cluster per pixel, and the picture is nothing but how bright each one is. **There is nothing else there.**
+Hold a bright phone screen right up against your eye, closer than you can focus, and look at a plain white area. If the screen is bright enough, the smooth white breaks apart into a grid of tiny dots or stripes of light.
+
+Those are not an illusion. They are the screen's own tiny lights, one small cluster per pixel, and the picture is nothing but how bright each one is. **There is nothing else there.**
 
 > **Grayscale** — a black-and-white picture where each pixel is a single number for brightness, and nothing else.
 
@@ -94,9 +98,11 @@ Shuffle the order and the picture is destroyed — even though every single numb
 ![Numbers plus their arrangement](../figures/fig-w23-6-order-matters.svg)
 *Figure 23.6 — Sixteen numbers on the left. The same sixteen numbers on the right. One is a line. The other is nothing at all.*
 
-So "a photo is just a list of numbers" is not quite right, and you should say so if anybody tells you it. A photo is a list of numbers **in a known arrangement**. To send a picture down a phone line using only spoken numbers you need **two** things:
+So "a photo is just a list of numbers" is not quite right, and you should say so if anybody tells you it. A photo is a list of numbers **in a known arrangement**.
 
-```
+To send a picture down a phone line using only spoken numbers you need **two** things:
+
+```text
    1.  the numbers, in a fixed order
    2.  how wide the grid is
 ```
@@ -140,7 +146,7 @@ That is not a flaw in the activity. **Real cameras have exactly this problem, at
 
 A phone camera might shoot **4032 × 3024**. Multiply it out:
 
-```
+```text
    4032 x 3024  =  12,192,768 pixels
 ```
 
@@ -148,7 +154,7 @@ Twelve million. That is where "12 megapixel" comes from — "mega" just means mi
 
 Now the number that lands hardest. **Teachable Machine — the tool you used in Week 17 — does not look at 12 million pixels.** Before training, it squashes every photo down to **224 × 224**.
 
-```
+```text
    224 x 224            =      50,176 pixels
    12,192,768 ÷ 50,176  =         243
 ```
@@ -158,7 +164,9 @@ Now the number that lands hardest. **Teachable Machine — the tool you used in 
 
 Your model saw **one pixel out of every 243** that your camera recorded. Two hundred and forty-two out of every 243 were thrown in the bin before training even started.
 
-Sit with that, because it quietly explains an enormous amount. If the thing that tells two of your classes apart is **thin** — the teeth of a comb, a hairline crack, small printed text, the stitching on a ball — the model may literally never have seen it. That is not the model being stupid. **The information was deleted before the model was born.**
+Sit with that, because it quietly explains an enormous amount.
+
+If the thing that tells two of your classes apart is **thin** — the teeth of a comb, a hairline crack, small printed text, the stitching on a ball — the model may literally never have seen it. That is not the model being stupid. **The information was deleted before the model was born.**
 
 ![The same face at three resolutions](../figures/fig-w23-5-resolution-ladder.svg)
 *Figure 23.5 — The same drawing at 48 × 48, 12 × 12 and 4 × 4. At 48 it is a face. At 12 each eye is one square. At 4 there is no face left at all. Circled: what died at each step.*
@@ -174,7 +182,7 @@ Ask yourself one question about that figure: **at which of the three could you s
 
 And one bit of arithmetic for scale. Deciding and writing 144 numbers took you about ten minutes, but let us be generous and say the writing alone could be done at one number per second.
 
-```
+```text
         144 numbers  ->  2 minutes 24 seconds
      50,176 numbers  ->  about 14 hours
  12,192,768 numbers  ->  141 days, non-stop, no sleeping
@@ -186,11 +194,13 @@ That is what **one photograph** is. This week you will write out about 0.001% of
 
 ## 🔍 Worked Examples
 
+This section works through three examples, one step at a time. Follow each one with your pencil.
+
 ### Example 1 — Food: reading a grid you have never seen a picture of
 
 Here is a 6 × 6 grid of numbers. Nobody is going to show you the picture. This is exactly the job a computer has, every time, for every photo.
 
-```
+```text
         c1   c2   c3   c4   c5   c6
    r1   255  255  255  255  255  255
    r2   255  255  128  128  255  255
@@ -202,7 +212,7 @@ Here is a 6 × 6 grid of numbers. Nobody is going to show you the picture. This 
 
 **Q1 — how many pixels, and how many numbers to store it?**
 
-```
+```text
    6 x 6 = 36 pixels
    grayscale = one number per pixel  ->  36 numbers
 ```
@@ -211,7 +221,7 @@ Here is a 6 × 6 grid of numbers. Nobody is going to show you the picture. This 
 
 **Q3 — is there a perfectly straight edge anywhere?** No. A straight horizontal edge would show up as a whole row of identical dark numbers with different rows above and below — like row 10 of a grid with a shelf in it. Nothing here does that.
 
-**Q4 — what shape is it?** Count the run of non-255 squares in each row:
+**Q4 — what shape is it?** Count the run of non-255 squares in each row. The table shows the counts:
 
 | Row | dark-ish columns | width |
 |---|---|---:|
@@ -226,7 +236,7 @@ Here is a 6 × 6 grid of numbers. Nobody is going to show you the picture. This 
 
 **Q6 — the average brightness.**
 
-```
+```text
    4 squares  x    0  =      0
    8 squares  x  128  =  1,024
   24 squares  x  255  =  6,120
@@ -248,9 +258,9 @@ You take a photo of a cricket match on a phone that shoots **4032 × 3024**. In 
 
 You upload it to Teachable Machine, which crops it to a square and squashes it to **224 × 224**.
 
-**Step 1 — the pixel counts.**
+**Step 1 — the pixel counts.** Three sizes of the same photo:
 
-```
+```text
    original:   4032 x 3024  =  12,192,768 pixels     ("12 megapixels")
    the square crop:  3024 x 3024  =   9,144,576 pixels
    what the model sees:  224 x 224  =      50,176 pixels
@@ -258,7 +268,7 @@ You upload it to Teachable Machine, which crops it to a square and squashes it t
 
 **Step 2 — how much does each side shrink by?**
 
-```
+```text
    3024 ÷ 224  =  13.5
 ```
 
@@ -266,7 +276,7 @@ Every 13.5 pixels along a side become **one** pixel. That is the shrink factor.
 
 **Step 3 — so how wide is the ball now?**
 
-```
+```text
    40 ÷ 13.5  =  2.96  ->  about 3 pixels wide
 ```
 
@@ -274,7 +284,7 @@ The whole ball is **three squares across**. Not three centimetres. Three numbers
 
 **Step 4 — and the seam?**
 
-```
+```text
    4 ÷ 13.5  =  0.30 pixels
 ```
 
@@ -282,7 +292,7 @@ Less than one pixel. **The seam does not survive at all.** It cannot: there is n
 
 **Step 5 — what does that mean for the model?** If you were hoping your model would tell a cricket ball from a tennis ball **by the seam**, it never had a chance. Not because it is stupid, and not because you needed more photos. The seam was deleted, by arithmetic, before training began.
 
-```
+```text
    total numbers thrown away  =  12,192,768 − 50,176  =  12,142,592
    fraction the model kept    =  50,176 ÷ 12,192,768  =  1 in 243
 ```
@@ -295,9 +305,9 @@ Less than one pixel. **The seam does not survive at all.** It cannot: there is n
 
 Somebody shades a capital **T** into a 6 × 6 box on graph paper. (Its bar is only one square thick, thinner than the two-square rule for your own drawing, to keep the arithmetic short.) They deliberately let the line fall wherever it falls, so a couple of squares end up awkward. Then they number every square using the five-step key.
 
-Here is what they hand over:
+Here is the grid of numbers they hand over:
 
-```
+```text
         c1   c2   c3   c4   c5   c6
    r1   255  255  255  255  255  255
    r2   192   0    0    0    0   128
@@ -324,7 +334,7 @@ Those two are the interesting ones, and they are both on the **boundary** of the
 
 **Step 4 — count each value.**
 
-```
+```text
    0s   :  4 in the bar (c2..c5 of row 2)  +  2 each in rows 3, 4, 5  =  4 + 6  =  10
    192s :  1
    128s :  1
@@ -333,7 +343,7 @@ Those two are the interesting ones, and they are both on the **boundary** of the
 
 **Step 5 — average brightness.**
 
-```
+```text
    10 x   0  =      0
     1 x 192  =    192
     1 x 128  =    128
@@ -353,6 +363,8 @@ Those two are the interesting ones, and they are both on the **boundary** of the
 ---
 
 ## 🎲 What We Did In Class
+
+This section is the graph-paper activity from the lesson. Use it to repeat the activity at home or to check what you did.
 
 ### Become a Pixel Grid
 
@@ -416,6 +428,8 @@ One missing number wrecked everything after it. That lesson is worth more than a
 
 ## 💬 Talk About It
 
+These three questions are for talking over with a friend or a grown-up. Each one has a hint underneath.
+
 **1. "How big is a pixel?"**
 > *Hint:* this is a much better question than it looks. A pixel has **no size** — it is a *number*. It only gets a size when it is shown on something: on a phone screen a pixel is about a tenth of a millimetre, on a stadium screen a pixel is the size of your fist, and printed in a book it is whatever size the printer chose. Same numbers, wildly different sizes. Ask the other person how a photo can be "small" and "huge" at the same time.
 
@@ -428,6 +442,8 @@ One missing number wrecked everything after it. That lesson is worth more than a
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four wrong ideas that sound sensible. Each one is shown next to the right idea.
 
 ### Trick 1 — putting the big numbers where the pencil is
 
@@ -468,6 +484,8 @@ Averages destroy arrangement. That comes back in two weeks when you start huntin
 
 ## 🌍 Where You've Seen This
 
+Pixels are all around you. Here are seven places you may already have met them.
+
 1. **The moment a video call goes bad.** The picture breaks into visible blocks of flat colour. You are watching a picture with far less detail (fewer numbers, or numbers squashed together) being stretched over the same screen.
 2. **"Zoom and enhance" in every police drama ever.** They zoom into a car park camera and read a number plate. Next week you will know exactly why that is fiction.
 3. **Minecraft, and pixel art generally.** A deliberate choice to make the grid visible instead of hiding it. Every block face is a tiny grid of numbers you are *meant* to see.
@@ -506,6 +524,8 @@ idea.*
 
 ## 🔑 Remember This
 
+These are the ideas to keep from this week.
+
 - A **pixel** is one square holding one number. In grayscale, that number is **how much light comes out of that square**.
 - **0 is pure black. 255 is pure white.** 128 is middle grey. Pencil blocks light, so more pencil means a *smaller* number.
 - It stops at 255 because **one byte holds exactly 256 values** — 0 to 255. That is the entire reason.
@@ -519,6 +539,8 @@ idea.*
 ---
 
 ## 📓 New Words
+
+These are the four new words of the week, with an example of each.
 
 ![The four new words of Week 23](../figures/fig-w23-8-vocab-icons.svg)
 *Figure 23.8 — Four words. Every photo you have ever taken is made of the first one and measured by the third one.*

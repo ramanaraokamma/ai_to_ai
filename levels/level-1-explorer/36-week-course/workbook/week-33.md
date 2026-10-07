@@ -35,6 +35,8 @@ ________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know the words and the steps of an audit.
+
 ### A1 — Fill in the blanks
 
 > **attribution** — saying where something ______________________ and who ______________________.
@@ -107,6 +109,8 @@ ________________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+These questions use the words and the steps on Aisha's audit.
+
 ### B1 — Somebody else's audit, all the way through
 
 Aisha trained a three-class model — **hair clip · pencil · rubber** — and audited it on **48 photos** it had never seen.
@@ -120,21 +124,21 @@ Aisha trained a three-class model — **hair clip · pencil · rubber** — and 
 
 **(a)** The four divisions, in full.
 
-```
+```text
    A:  11 ÷ 12 = ____________  →  ______%      B:  ___ ÷ 12 = ____________  →  ______%
    C:  ___ ÷ 12 = ____________  →  ______%      D:  ___ ÷ 12 = ____________  →  ______%
 ```
 
 **(b)** The overall accuracy. **Add the corrects and divide once.**
 
-```
+```text
    ____ + ____ + ____ + ____ = ______      12 × 4 = ______
    ______ ÷ ______ = ____________  →  ______%
 ```
 
 **(c)** The gap.
 
-```
+```text
    best  = ______________ at ______%       worst = ______________ at ______%
    ACCURACY GAP = ______ − ______ = ______ ______________________
 ```
@@ -160,7 +164,7 @@ ________________________________________________
 
 **(b)** Price the fix. Target: odd-background photos are **1 in 5** of the training set, which is 20%.
 
-```
+```text
    Let x = odd-background photos to add.
 
         x / (140 + x) = 0.20
@@ -215,6 +219,8 @@ Each of these lines is useless. Rewrite it so it names a **specific use** and ca
 
 ## 🧩 Puzzle of the Week
 
+This puzzle prices several fixes, one after another.
+
 ### The snowball
 
 ![The snowball: price three fixes in a row](../figures/fig-w33-13-puzzle-snowball.svg)
@@ -224,14 +230,14 @@ Rohan has **120 training photos**: 84 daylight, 22 held in a hand, 14 odd backgr
 
 **(a)** Fix 1 — lamplight, 0 photos now, out of 120.
 
-```
+```text
    x / (120 + x) = 0.20   →   0.80x = ______   →   x = ______ photos
    NEW TOTAL = 120 + ______ = ______
 ```
 
 **(b)** Fix 2 — odd background, 14 photos now, out of your new total.
 
-```
+```text
    (14 + y) / (______ + y) = 0.20   →   14 + y = ______ + 0.20y
    0.80y = ______   →   y = ______ photos
    NEW TOTAL = ______ + ______ = ______
@@ -239,7 +245,7 @@ Rohan has **120 training photos**: 84 daylight, 22 held in a hand, 14 odd backgr
 
 **(c)** Fix 3 — held in a hand, 22 photos now, out of your new total.
 
-```
+```text
    (22 + z) / (______ + z) = 0.20   →   22 + z = ______ + 0.20z
    0.80z = ______   →   z = ______ photos
    NEW TOTAL = ______ + ______ = ______
@@ -253,7 +259,7 @@ ________________________________________________
 
 **(f) The sting in the tail.** After all three fixes, work out what share lamplight actually is. Is it still 20%? What does that tell you about fixing things one at a time?
 
-```
+```text
    lamplight = ______ out of ______ = ____________ = ______%
 ```
 
@@ -262,6 +268,8 @@ ________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions have no single right answer. Give your reasons.
 
 **1.** Your model is 91.7% in daylight and 33.3% in lamplight. **Is it fairer to publish it with a warning, or not to publish it at all?** There is no clean answer. Argue both, then commit — and say who is helped and who is risked by your choice.
 
@@ -286,6 +294,8 @@ ________________________________________________
 ---
 
 ## 🛠️ Build It
+
+This is the main work of the week: you audit your own model and make your poster. Work through the pages in order.
 
 ### Page W33.1 — Count your own training data
 
@@ -313,7 +323,7 @@ ________________________________________________
 
 **Three rules, said out loud before you start:** one attempt per photo · write the row **before** the next photo goes in · write the confidence **even when it is right**.
 
-```
+```text
   #  bat  TRUE label      model said      conf%  ✓/✗       #  bat  TRUE label      model said      conf%  ✓/✗
  --- ---  --------------  --------------  -----  ---      --- ---  --------------  --------------  -----  ---
   1   A   ______________  ______________  _____  ___       25   C   ______________  ______________  _____  ___
@@ -356,7 +366,7 @@ ________________________________________________
 | C | Held in a hand | | 12 | | | ______% |
 | D | Odd background | | 12 | | | ______% |
 
-```
+```text
    overall  =  (____ + ____ + ____ + ____) ÷ 48  =  __________  =  ______%
 
    best group  = ______________________  at  ______%
@@ -370,7 +380,7 @@ ________________________________________________
 
 **Open the envelope now. Not before.** Tear it yourself.
 
-```
+```text
    I PREDICTED the worst group would be: _________________________________
 
    Because: ______________________________________________________________
@@ -395,7 +405,7 @@ ________________________________________________
 
 **(b)** Price the fix. Target: your worst condition is **1 in 5** of the training set, which is 20%.
 
-```
+```text
    Worst condition: ______________     Photos of it now: ______ of ______
 
    Let x = photos to add.
@@ -412,7 +422,7 @@ ________________________________________________
 
 **(c)** How I would know the fix worked:
 
-```
+```text
    Re-run the IDENTICAL four batches — the same 48 photos — and publish both
    columns, before and after. I want my worst group above ______% and the gap
    below ______ percentage points, AND my best group no worse than ______%.
@@ -453,7 +463,7 @@ ________________________________________________
 
 Write it **for a real person** — imagine your cousin is about to use this to name things in her kitchen tonight. Plain words. Three limits. A number on each.
 
-```
+```text
    ┌──────────────────────────────────────────────────────────────┐
    │  DO NOT USE THIS MODEL FOR…                                  │
    │                                                              │
@@ -479,6 +489,8 @@ Write it **for a real person** — imagine your cousin is about to use this to n
 
 ## 🎨 Draw It
 
+You draw your results as bars by hand.
+
 Draw **your own results grid as bars**, by hand, with a ruler. Four bars, one per condition, labelled with the percentage on top and the **training count** underneath. Circle the worst bar. Then draw a **dashed** bar showing where you hope your worst group gets to after the fix — and label it "hoped for, not measured".
 
 ![Draw it: the audit in five steps](../figures/fig-w33-12-draw-frame.svg)
@@ -491,6 +503,8 @@ Draw **your own results grid as bars**, by hand, with a ruler. Four bars, one pe
 ---
 
 ## 📊 Self-Check
+
+Tick one face for each line. Be honest.
 
 | I can… | 😀 easily | 🙂 with a bit of help | 😕 not yet |
 |---|:---:|:---:|:---:|
@@ -507,6 +521,8 @@ Draw **your own results grid as bars**, by hand, with a ruler. Four bars, one pe
 ---
 
 ## ✅ Answers
+
+Check your work here after you finish the pages above.
 
 <details>
 <summary>Check your answers</summary>
@@ -569,21 +585,21 @@ Draw **your own results grid as bars**, by hand, with a ruler. Four bars, one pe
 
 **(a)**
 
-```
+```text
    A:  11 ÷ 12 = 0.916666...  →  91.7%      B:  6 ÷ 12 = 0.500000     →  50.0%
    C:   8 ÷ 12 = 0.666666...  →  66.7%      D:  3 ÷ 12 = 0.250000     →  25.0%
 ```
 
 **(b)**
 
-```
+```text
    11 + 6 + 8 + 3 = 28        12 × 4 = 48
    28 ÷ 48 = 0.583333...  →  58.3%
 ```
 
 **(c)**
 
-```
+```text
    best  = A, bright daylight   at 91.7%
    worst = D, odd background    at 25.0%
 
@@ -606,7 +622,7 @@ Read the two number columns together: **96 → 91.7% · 32 → 66.7% · 12 → 5
 
 **(b)**
 
-```
+```text
    Let x = odd-background photos to add.
 
         x / (140 + x) = 0.20
@@ -649,14 +665,14 @@ Every rewrite must contain a **specific use** and a **number**. "Be careful" sco
 
 **(a) Fix 1 — lamplight.**
 
-```
+```text
    x / (120 + x) = 0.20   →   x = 24 + 0.20x   →   0.80x = 24   →   x = 30
    NEW TOTAL = 120 + 30 = 150       Check: 30/150 = 0.20 ✓
 ```
 
 **(b) Fix 2 — odd background (14 now, out of 150).**
 
-```
+```text
    (14 + y) / (150 + y) = 0.20   →   14 + y = 30 + 0.20y
    0.80y = 16   →   y = 20
    NEW TOTAL = 150 + 20 = 170       Check: 34/170 = 0.20 ✓
@@ -664,7 +680,7 @@ Every rewrite must contain a **specific use** and a **number**. "Be careful" sco
 
 **(c) Fix 3 — held in a hand (22 now, out of 170).**
 
-```
+```text
    (22 + z) / (170 + z) = 0.20   →   22 + z = 34 + 0.20z
    0.80z = 12   →   z = 15
    NEW TOTAL = 170 + 15 = 185       Check: 37/185 = 0.20 ✓
@@ -676,7 +692,7 @@ Every rewrite must contain a **specific use** and a **number**. "Be careful" sco
 
 **(f) The sting.**
 
-```
+```text
    lamplight = 30 out of 185 = 0.1622 = 16.2%
 ```
 

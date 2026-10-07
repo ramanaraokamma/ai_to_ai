@@ -25,7 +25,7 @@ Both did it properly. A thousand rows each. One row per teenager. Nobody made an
 
 Here are their answers:
 
-```
+```text
 Dataset A:  average sleep = 5.9 hours
 Dataset B:  average sleep = 7.8 hours
 ```
@@ -34,13 +34,13 @@ That is a gap of nearly **two hours a night**. If you were writing a newspaper h
 
 **Which team made the mistake?**
 
-Think about it before you read on. Really — decide.
+Think about it before you read on. Decide first.
 
 ...
 
-**Neither.** You cannot tell from the numbers, and that is the point. Here is what was missing:
+**Neither.** You cannot tell from the numbers, and that is the point. Here is what was missing from each table:
 
-```
+```text
 Dataset A:  5.9 hours  ←  1,000 visitors to a SLEEP-PROBLEMS CLINIC
 Dataset B:  7.8 hours  ←  every student in 4 RANDOMLY CHOSEN SCHOOLS
 ```
@@ -61,11 +61,15 @@ That sentence has a name: **provenance**. This week you learn to ask for it, and
 
 ## 🧠 The Big Idea
 
+This section gives you the tools for the week: provenance, sample and population, and the data card. Each one is about the story behind the numbers.
+
 ### 1. Provenance: every dataset has an origin story
 
 > **Provenance** — the origin story of a dataset: who collected it, from whom, when, how, and with whose permission.
 
-The word is best known from the art world. When a museum buys a painting it demands the provenance: who painted it, who has owned it, where it has been. Not because knowing that changes the paint — but because **a painting with no history is a warning sign: it might be stolen or fake.**
+The word is best known from the art world. When a museum buys a painting it demands the provenance: who painted it, who has owned it, where it has been.
+
+It asks for this not because knowing that changes the paint — but because **a painting with no history is a warning sign: it might be stolen or fake.**
 
 **The analogy: the unlabelled tin.** You would not eat from a tin with no label. You want to know what is in it, who made it, when, and whether it has expired. A dataset with no provenance is exactly that tin — and people feed them to models every single day.
 
@@ -109,7 +113,9 @@ If the first link is unknown, the model is not broken. It works perfectly. **You
 
 **The analogy: tasting the soup.** You are cooking a big pot and you want to know if the whole pot needs salt. You do not drink the pot. You **stir** it, take one spoonful, taste, and decide.
 
-That works — and it works for one specific reason: *you stirred*. Skim your spoonful off the top without stirring and you get the oily layer floating on it, and you tell everyone the soup is greasy. You are **wrong about the pot even though you were completely right about your spoonful.**
+That works for one specific reason: *you stirred*.
+
+Skim your spoonful off the top without stirring and you get the oily layer floating on it, and you tell everyone the soup is greasy. You are **wrong about the pot even though you were completely right about your spoonful.**
 
 So here is the sentence to remember all year:
 
@@ -167,7 +173,9 @@ This is the misconception adults hold as firmly as children, so it gets its own 
 
 **No.** All 300 are still cricket people.
 
-Increasing the size of a badly chosen sample does not move the answer towards the truth. It narrows the **luck** while leaving the **lean** exactly where it was. Which is worse than a small wrong answer, because now the wrong answer looks scientific.
+Increasing the size of a badly chosen sample does not move the answer towards the truth.
+
+It narrows the **luck** while leaving the **lean** exactly where it was. Which is worse than a small wrong answer, because now the wrong answer looks scientific.
 
 > **⚠️ Watch out:** the test question, whenever somebody says "we just need more data": *is an unstirred ladle better than an unstirred teaspoon?*
 
@@ -235,9 +243,9 @@ That is **correct** behaviour. It is also exactly why last week's rule — never
 
 > **💡 Try this:** in your own sheet, type `=COUNT(D2:D31)` in the cell below your average. It reports how many boxes actually held a number. If it says 28, the machine has just quietly told you something it would never have volunteered.
 
-**And then the sentence habit that the whole lesson is really about.** Every time you compute an average, write two lines:
+**And then the sentence habit that the whole lesson is really about.** Every time you compute an average, write two lines like these:
 
-```
+```text
 This average IS evidence that ...........
 This average is NOT evidence that .......
 ```
@@ -253,25 +261,27 @@ The **IS** line must contain *whose* and *when*. The **is NOT** line must name *
 
 ## 🔍 Worked Examples
 
+This section works through three examples, one each from food, sport and school. Follow the steps with a pencil.
+
 ### Worked Example 1 — Two averages, and what they are not (food)
 
 Somebody's meals table. Thirty rows, one row = one meal, 3 to 16 September.
 
-**Step 1 — compute the first average.** The `minutes` column: the thirty values sum to **492**.
+**Step 1 — compute the first average.** The `minutes` column: the thirty values sum to **492**. Then divide:
 
-```
+```text
 492 ÷ 30 = 16.4 minutes
 ```
 
-**Step 2 — compute the second.** The `sleepy_1to5` column: the thirty values sum to **87**.
+**Step 2 — compute the second.** The `sleepy_1to5` column: the thirty values sum to **87**. Then divide:
 
-```
+```text
 87 ÷ 30 = 2.9
 ```
 
-**Step 3 — check the count, because two boxes were blank.** Suppose the two blanks were in `minutes`, and the remaining 28 values sum to **461**.
+**Step 3 — check the count, because two boxes were blank.** Suppose the two blanks were in `minutes`, and the remaining 28 values sum to **461**. Then divide:
 
-```
+```text
 461 ÷ 28 = 16.46 minutes,  average of 28 rows, 2 blank
 ```
 
@@ -354,9 +364,9 @@ Now the exact same thirty rows are a **sample of 30 out of 800** — 3.75% of th
 
 **The rows did not change. Not one number moved. The question changed.**
 
-**Step — put a number on the gap.**
+**Step — put a number on the gap.** Here is the sum:
 
-```
+```text
 30 measured  ÷  800 in the population  =  0.0375  =  3.75%
 770 students never asked
 ```
@@ -378,6 +388,8 @@ Remember Dataset A from the hook — the one collected at a sleep clinic? It is 
 
 ## 🎲 What We Did In Class
 
+This section reminds you of the workshop, so you can repeat it at home. It has a spreadsheet half and a provenance half.
+
 ### Data Card Workshop — two halves
 
 ![The five provenance questions](../figures/fig-w06-5-five-questions.svg)
@@ -393,7 +405,7 @@ Remember Dataset A from the hook — the one collected at a sleep clinic? It is 
 6. Type `=COUNT(D2:D31)` in the next cell down and read the number. **That is how many boxes actually held a value.**
 7. **Turn away from the screen** and write, on paper:
 
-```
+```text
 This average IS evidence that ...........
 This average is NOT evidence that .......
 ```
@@ -447,11 +459,15 @@ Any answer is fine, as long as it is **scoped**.
 
 ## 💬 Talk About It
 
+These three questions are for talking over with an adult. Try your own answer before you read the hint.
+
 **1. "If my data is only about me, is it useless?"**
 *Hint for you:* the opposite. It is the only dataset in the world where you know the answer to **all five** provenance questions, which makes it more trustworthy than almost anything online. It is just **narrow** — evidence about you, in September, doing your usual routine. Narrow and honest beats broad and unchecked. Every professional dataset started as somebody's narrow one.
 
 **2. "How many rows do I need before it counts?"**
-*Hint for you:* **nobody knows for sure**, and here is why. It depends on how varied the thing you are measuring is. If every meal takes exactly 15 minutes, three rows tell the whole story. If your meals swing from 4 to 40 minutes, a hundred rows will still wobble. Statisticians have real maths for estimating how much luck is left in a number, and they still argue about the answer, because it depends on how wrong you can afford to be. The working rule: **more rows shrink the luck, but no number of rows fixes a badly chosen sample.**
+*Hint for you:* **nobody knows for sure**, and here is why. It depends on how varied the thing you are measuring is. If every meal takes exactly 15 minutes, three rows tell the whole story. If your meals swing from 4 to 40 minutes, a hundred rows will still wobble. Statisticians have real maths for estimating how much luck is left in a number.
+
+They still argue about the answer, because it depends on how wrong you can afford to be. The working rule: **more rows shrink the luck, but no number of rows fixes a badly chosen sample.**
 
 **3. "Where does ChatGPT's data come from?"**
 *Hint for you:* mostly enormous amounts of text collected from the internet — web pages, books, forums, code — plus a lot of human writing and rating done afterwards to shape the answers. But the honest part: for most of the big systems the **full list is not published**. So if you ask the five questions about it, several honest answers are "unknown" — and that is not you failing to research it, it is genuinely not public. Some researchers think that is a serious problem, for exactly the reason in this chapter: you cannot say who a model's answers are about if you cannot say who its data came from.
@@ -459,6 +475,8 @@ Any answer is fine, as long as it is **scoped**.
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four wrong ideas people hold about data. Each one is shown next to the right idea.
 
 ### Trick 1 — "A bigger sample fixes a biased sample"
 
@@ -502,6 +520,8 @@ There genuinely are well-documented sources: a national census, your school's ow
 
 ## 🌍 Where You've Seen This
 
+These are places where you can ask the five questions in everyday life.
+
 1. **"9 out of 10 dentists recommend it."** Ask the five questions of a toothpaste box. How many dentists? Chosen how? Asked what, exactly? Paid by whom? Packaging statistics are magnificently unprovenanced, and they are the easiest place in your house to practise.
 2. **A shop's "4.7 stars from 12 reviews".** That is a sample of people who chose to write a review — self-selection. The furious and the delighted write reviews. Imagine (this number is made up) another 4,000 people who thought it was fine and never wrote anything. They did not.
 3. **An online poll about school food.** Anyone who felt like it answered, which is why the result never matches what a paper slip handed to every student gets.
@@ -538,6 +558,8 @@ this the tile goes white like ONE JOB EACH, and the left-hand room is where the 
 
 ## 🔑 Remember This
 
+These are the key points of the week.
+
 - **Provenance is part of the data.** Who collected it, from whom, when, how, and with what permission changes what the numbers mean — and **nothing in the numbers reveals it.**
 - **The five questions:** who collected it · from whom · when · how exactly · with whose permission.
 - **"Unknown" is an honest answer**, and a common one. Guessing is not.
@@ -550,6 +572,8 @@ this the tile goes white like ONE JOB EACH, and the left-hand room is where the 
 ---
 
 ## 📓 New Words
+
+These are this week's words, with an example of each.
 
 ![Week 6 words as pictures](../figures/fig-w06-8-vocab-icons.svg)
 *Figure 6.10 — This week's five words, drawn.*

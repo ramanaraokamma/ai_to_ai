@@ -20,7 +20,7 @@
 
 ## 🪝 Start Here
 
-Look at any screen showing plain white. Here is a question that sounds stupid:
+Look at any screen showing plain white. Here is a question that sounds silly:
 
 > **How many different colours of lamp are inside that screen, making the white?**
 
@@ -41,11 +41,13 @@ Brown. Mud. That is what every art lesson you have ever had says, and it is **co
 
 On a screen, red and green make **yellow**.
 
-I am not going to just tell you that and expect you to swallow it, because it sounds like nonsense. By the end of section 3 you will know exactly why **both** answers are right.
+That sounds like nonsense, so you should not just take my word for it. By the end of section 3 you will know exactly why **both** answers are right.
 
 ---
 
 ## 🧠 The Big Idea
+
+This section explains how a screen stores colour, and what happens to a picture when it is made smaller.
 
 ### 1. Three grids, stacked — and nothing new to learn
 
@@ -56,26 +58,26 @@ I am not going to just tell you that and expect you to swallow it, because it so
 ![One colour image is three number grids stacked](../figures/fig-w24-1-three-channels-stacked.svg)
 *Figure 24.1 — One small colour picture, pulled apart into its three channels. Each channel is a plain grid of numbers, 0 to 255. Stack all three and the colour appears.*
 
-That is the whole idea, and notice how little of it is new. Last week you learned everything about a grid of numbers from 0 to 255. Colour is **that, three times.**
+That is the whole idea, and very little of it is new. Last week you learned everything about a grid of numbers from 0 to 255. Colour is **that, three times.**
 
 🍕 **The analogy — three sheets of tracing paper.** Imagine three sheets of tracing paper, each with a grey drawing on it. One sheet is lit by a red bulb, one by a green bulb, one by a blue bulb. Lay them exactly on top of each other and look through the stack: you see a colour picture. Pull them apart and each one is just a grey drawing again.
 
 **The counting is where it gets silly.** Your model's photos were 224 × 224:
 
-```
+```text
    224 x 224            =      50,176 pixels
    50,176 x 3 channels  =     150,528 numbers
 ```
 
-A hundred and fifty thousand numbers, for one small photo. And you uploaded sixty of them.
+That is a hundred and fifty thousand numbers for one small photo. And you uploaded sixty of them.
 
 Now: **how many different colours can a single pixel be?** Three numbers, each with 256 possible values:
 
-```
+```text
    256 x 256 x 256  =  16,777,216
 ```
 
-Sixteen point seven million. When a television is advertised as "16.7 million colours", that is not a boast. It is just 256 cubed, and it has been the standard for ordinary screens for about thirty years. You can never be impressed by that sticker again.
+Sixteen point seven million. When a television is advertised as "16.7 million colours", that is not a boast. It is just 256 cubed, and it has been the standard for ordinary screens for about thirty years.
 
 ---
 
@@ -124,7 +126,7 @@ Two ideas hide in that table and they are worth saying out loud:
 
 ### 3. The yellow argument: paint takes light away, lamps add light
 
-Here is the argument. Then you can decide whether to believe me.
+Here is the argument. Then you can decide whether to believe it.
 
 **Paint takes light away.**
 
@@ -145,9 +147,9 @@ Same two colours. Opposite results. **You were never wrong about paint.** It is 
 
 > **🧑‍🏫 If someone asks "so how does a printer make colours?"** — ink is paint. It sits on paper and takes light away. So printers start from a *different* set: cyan, magenta, yellow and black. That is why printer cartridges come in those odd colours instead of red, green and blue — and it is why a photo never looks quite the same printed as it did on screen. One is made of lamps adding light; the other of ink removing it, and they cannot reach exactly the same set of colours.
 
-**One more thing, and it is a warm-up for the second half of this chapter.** One simple way to turn a colour pixel grey is to average its three numbers (real photo software weights green a little more, because eyes are more sensitive to it, but plain averaging is all we need):
+**One more thing, as a warm-up for the second half of this chapter.** One simple way to turn a colour pixel grey is to average its three numbers (real photo software weights green a little more, because eyes are more sensitive to it, but plain averaging is all we need):
 
-```
+```text
    grey  =  (R + G + B) ÷ 3
          =  (200 + 80 + 40) ÷ 3
          =  320 ÷ 3
@@ -162,12 +164,12 @@ Three numbers became one number. And now notice: (200, 80, 40) gives 107 — and
 
 > **Downsampling** — making a picture smaller by replacing each block of pixels with a single number, usually their average.
 
-Here is the entire mechanism. It is addition and division and there is nothing else in it.
+Here is the whole mechanism. It is addition and division, and nothing else.
 
 ![Averaging a two by two block into one pixel](../figures/fig-w24-3-block-average.svg)
 *Figure 24.3 — Four pixels become one. Add the four numbers, divide by four, write the answer in the new grid. That is downsampling, complete.*
 
-```
+```text
      128    0            (128 + 0 + 192 + 0)  =  320
                   ->            320 ÷ 4       =   80
      192    0
@@ -175,17 +177,17 @@ Here is the entire mechanism. It is addition and division and there is nothing e
 
 Sometimes it does not divide neatly, and that is fine. **The rule: work out the exact answer, then round to the nearest whole number, and .5 rounds up.**
 
-```
+```text
      255  255            (255 + 255 + 255 + 128)  =  893
                   ->              893 ÷ 4         =  223.25  ->  223
      255  128
 ```
 
-Why round at all? Because a pixel must hold a **whole** number. Real software has to end up with whole numbers too (some rounds, some just chops the decimal off, but the idea is the same).
+Why round at all? Because a pixel must hold a **whole** number. Real software also ends up with whole numbers. Some rounds and some chops the decimal off, but the idea is the same.
 
 **How many blocks are in a 12 × 12 grid?** Each block is 2 across and 2 down, so 6 blocks across and 6 rows of blocks:
 
-```
+```text
    6 x 6  =  36 blocks       ->  144 numbers become 36
    do it again               ->   36 numbers become  9
 ```
@@ -209,7 +211,7 @@ Your shrunk pixel holds **80**. What were the four numbers that made it?
 
 You cannot know. Look:
 
-```
+```text
    (128 +  0 + 192 +   0) ÷ 4  =  320 ÷ 4  =  80
    ( 80 + 80 +  80 +  80) ÷ 4  =  320 ÷ 4  =  80
    (  0 +  0 +  65 + 255) ÷ 4  =  320 ÷ 4  =  80
@@ -222,13 +224,11 @@ Three completely different blocks — a hard edge, a flat grey, and a black-and-
 
 The shrunk picture holds one number, and that number is compatible with an enormous number of different originals. The information is not hidden. It is **gone** — the way a burnt letter is gone, not the way a letter in a locked drawer is gone.
 
-**And no, a better computer would not help.** A computer looking at that 80 has exactly the same three options you do, and exactly no way of choosing between them.
+**A better computer would not help.** A computer looking at that 80 has exactly the same three options you do, and exactly no way of choosing between them.
 
 **The honest complication, because you have definitely seen an app that seems to do it.** There are apps and websites that take a blurry photo and make it sharp, and they are not lying about what they show you. What they are doing is **inventing** plausible detail: a model that has seen millions of faces guesses what a face-ish blur was probably made of, and paints that in. It often looks superb. And it can be confidently wrong — it can invent a number plate that reads perfectly clearly and is not the real number plate.
 
 > **You can generate a convincing replacement for lost detail. You can never recover it. And you must never treat the replacement as evidence.**
-
-That is a grown-up distinction and you can hold it.
 
 **Last thing, and it is a name for something you already found.** Last week you and somebody else argued about a handful of squares on the edge of your letter. Every one of them was on the boundary, where the drawn line cut a square in half and neither 0 nor 255 was right.
 
@@ -245,6 +245,8 @@ Two things worth knowing about it:
 
 ## 🔍 Worked Examples
 
+This section works through the examples step by step. Follow each one with a pencil.
+
 ### Example 1 — Food: a four-pixel fruit bowl, read three ways
 
 Here is a 2 × 2 colour picture. Each pixel is one piece of fruit, wildly zoomed out.
@@ -256,7 +258,7 @@ Here is a 2 × 2 colour picture. Each pixel is one piece of fruit, wildly zoomed
 
 **Step 1 — how many numbers is that?**
 
-```
+```text
    2 x 2 = 4 pixels
    4 x 3 channels = 12 numbers
 ```
@@ -272,7 +274,7 @@ Here is a 2 × 2 colour picture. Each pixel is one piece of fruit, wildly zoomed
 
 **Step 3 — pull it apart into channels.** Each channel is a 2 × 2 grid of single numbers:
 
-```
+```text
    RED channel        GREEN channel       BLUE channel
      255   255           0   255            0    0
      255     0         140   100            0    0
@@ -282,7 +284,7 @@ Look at the blue channel: it is **all zeros**. Not one of these four colours use
 
 **Step 4 — turn each pixel grey with (R + G + B) ÷ 3.**
 
-```
+```text
    red apple:     (255 +   0 +   0) ÷ 3  =  255 ÷ 3  =  85
    yellow banana: (255 + 255 +   0) ÷ 3  =  510 ÷ 3  =  170
    orange:        (255 + 140 +   0) ÷ 3  =  395 ÷ 3  =  131.67  ->  132
@@ -291,7 +293,7 @@ Look at the blue channel: it is **all zeros**. Not one of these four colours use
 
 **Step 5 — the one-way door, in miniature.** The red apple became **85**. So would a plain grey pixel of (85, 85, 85). So would (0, 0, 255) — pure blue — because that also sums to 255.
 
-```
+```text
    (255,   0,   0)  ->  85       a bright red
    ( 85,  85,  85)  ->  85       a middling grey
    (  0,   0, 255)  ->  85       a bright blue
@@ -307,7 +309,7 @@ Three completely different colours, one identical grey. **Three numbers went in,
 
 You photograph a cricket pitch. Here is a 4 × 4 patch of it, in grayscale, containing the white crease line — **one pixel wide** — on darker grass:
 
-```
+```text
         c1   c2   c3   c4
    r1   64  255   64   64
    r2   64  255   64   64
@@ -319,7 +321,7 @@ You photograph a cricket pitch. Here is a 4 × 4 patch of it, in grayscale, cont
 
 **Step 2 — average each block.**
 
-```
+```text
    top-left:      64 + 255 +  64 + 255  =  638  ;  638 ÷ 4 = 159.5  ->  160
    top-right:     64 +  64 +  64 +  64  =  256  ;  256 ÷ 4 =  64
    bottom-left:   64 + 255 +  64 + 255  =  638  ;  638 ÷ 4 = 159.5  ->  160
@@ -328,7 +330,7 @@ You photograph a cricket pitch. Here is a 4 × 4 patch of it, in grayscale, cont
 
 **Step 3 — the 2 × 2 result.**
 
-```
+```text
    160   64
    160   64
 ```
@@ -340,7 +342,7 @@ You photograph a cricket pitch. Here is a 4 × 4 patch of it, in grayscale, cont
 
 **Step 4 — shrink once more, to 1 × 1.**
 
-```
+```text
    160 + 64 + 160 + 64  =  448  ;  448 ÷ 4  =  112
 ```
 
@@ -348,7 +350,7 @@ One number. **112.** There is no line. There is no pitch. There is a single mid-
 
 **Step 5 — now the mown stripes, which die even faster.** A striped pitch, alternating dark and light every single pixel:
 
-```
+```text
         c1   c2   c3   c4
    r1    0  255    0  255
    r2    0  255    0  255
@@ -358,13 +360,13 @@ One number. **112.** There is no line. There is no pitch. There is a single mid-
 
 Every one of the four blocks contains two 0s and two 255s:
 
-```
+```text
    0 + 255 + 0 + 255  =  510  ;  510 ÷ 4  =  127.5  ->  128
 ```
 
 The result is:
 
-```
+```text
    128   128
    128   128
 ```
@@ -381,7 +383,7 @@ A shrunk pixel on a school-photo grid says **100**. Your teacher claims you cann
 
 **Step 1 — what do the four numbers have to add up to?**
 
-```
+```text
    sum ÷ 4 = 100      ->      sum = 400
 ```
 
@@ -389,7 +391,7 @@ So the question becomes: *how many sets of four whole numbers from 0 to 255 add 
 
 **Step 2 — find three, by hand.**
 
-```
+```text
    (100, 100, 100, 100)   sum = 400  ,  ÷ 4 = 100      a flat grey patch
    (  0,   0, 145, 255)   sum = 400  ,  ÷ 4 = 100      a hard black-to-white edge
    ( 20,  60, 120, 200)   sum = 400  ,  ÷ 4 = 100      a smooth gradient
@@ -399,7 +401,7 @@ Three genuinely different pictures. Same single number.
 
 **Step 3 — and arrangement matters too, which doubles the trouble.** These two blocks contain the *same four numbers* in different places:
 
-```
+```text
      0    0            0  255
                  and
    145  255          145    0
@@ -409,7 +411,7 @@ Both average to 100. One is a shadow in the bottom-right corner; the other is a 
 
 **Step 4 — how many possibilities are there really?** You do not have to work this out, and you are not expected to. But if you grind through it properly, the number of ways to pick four whole numbers from 0 to 255 that add to 400 is:
 
-```
+```text
    8,752,741
 ```
 
@@ -419,7 +421,7 @@ Eight and three quarter million different 2 × 2 blocks, every single one of whi
 
 **Step 6 — the same argument, in colour.** Which colours turn into the grey **100**? Any triple where (R + G + B) ÷ 3 = 100, so R + G + B = 300:
 
-```
+```text
    (100, 100, 100)  ->  100      a middling grey
    (255,  45,   0)  ->  100      a bright orange-red
    (  0, 150, 150)  ->  100      a teal
@@ -432,6 +434,8 @@ A grey, a bright red and a blue-green. All become the identical grey pixel. Same
 ---
 
 ## 🎲 What We Did In Class
+
+This section lists the activities from the lesson. Use it to redo them or to catch up if you missed class.
 
 ### Part A — Colour By Numbers, both directions
 
@@ -497,6 +501,8 @@ Do not answer from opinion. Take one of your shrunk numbers and produce **three 
 
 ## 💬 Talk About It
 
+These are questions to discuss with a partner or an adult. Each has a hint underneath.
+
 **1. "Why red, green and blue? Why not red, yellow and blue like in art?"**
 > *Hint:* because screens are built to match your **eye**, not your paint set. The back of your eye has three kinds of colour detector, most sensitive to reddish, greenish and bluish light. Put lamps at those three and you can trigger your eye's three detectors in any combination — which is enough to make you see essentially any colour. Red, yellow and blue is the set art lessons teach for *paint*, which works by taking light away (printers actually use cyan, magenta and yellow, but it is the same idea). Ask the other person: different job, or different world?
 
@@ -509,6 +515,8 @@ Do not answer from opinion. Take one of your shrunk numbers and produce **three 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section shows wrong ideas next to the right ones.
 
 ### Trick 1 — "zoom in and enhance"
 
@@ -549,6 +557,8 @@ This is the deep one and it survives most explanations, because the shrunk photo
 
 ## 🌍 Where You've Seen This
 
+This section lists places in everyday life where this week's ideas show up.
+
 1. **Uploading a photo and it comes back looking soft.** Every site shrinks your photos to save space. The softness is anti-aliasing being manufactured at every edge as blocks get averaged.
 2. **A thumbnail you cannot read.** Small text is the very first thing to die when a picture is downsampled — thin strokes average away into the background in a single step.
 3. **A striped shirt on television that shimmers and crawls.** The stripes are finer than the pixels, so every frame averages them slightly differently. TV presenters are often told not to wear them.
@@ -586,6 +596,8 @@ week, with data and representation lit along the bottom.*
 
 ## 🔑 Remember This
 
+These are the main points of the week, in one list.
+
 - A colour picture is **three grids stacked**: red, green and blue, one number each per pixel, 0 to 255.
 - A **channel** on its own is just a grayscale picture. There is nothing new to learn about it.
 - **224 × 224 × 3 = 150,528 numbers** for one small photo. **256 × 256 × 256 = 16,777,216** possible colours for one pixel.
@@ -602,6 +614,8 @@ week, with data and representation lit along the bottom.*
 
 ## 📓 New Words
 
+These are the words you met this week.
+
 ![The four new words of Week 24](../figures/fig-w24-8-vocab-icons.svg)
 *Figure 24.8 — Three of these four are about storing a picture. The third one is about throwing part of it away.*
 
@@ -615,6 +629,8 @@ week, with data and representation lit along the bottom.*
 ---
 
 ## 📤 Your Homework
+
+This section tells you what to do after class and how long it takes.
 
 Go to **[Workbook — Week 24](../workbook/week-24.md)**. About **50 minutes**, and no screen is needed.
 

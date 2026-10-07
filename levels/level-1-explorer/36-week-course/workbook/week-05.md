@@ -11,6 +11,8 @@
 
 ## ✅ Warm-Up (5 min) — What do you remember from Week 4?
 
+This warm-up checks the table ideas from last week. Write your answers on the lines.
+
 **W1.** In a table, rows go `____________` and columns `____________ ____`.
 
 **W2.** This table is put in front of you. How many **rows** does it have?
@@ -40,6 +42,8 @@ Circle one: **TRUE** / **FALSE**  Because: `_________________________`
 ---
 
 ## ✍️ Practice Set A — Understand It
+
+This set is for the four kinds of mess and the data types. Do the page before you look at the answers.
 
 **A1. Fill in the blanks.** There are four kinds of mess, and each has a different fix.
 
@@ -85,7 +89,7 @@ Because: `_____________________________________________________________`
 | 4. Row 5's weight box is empty | | ☐ | D. Standardise to one spelling, then write the allowed list |
 | 5. Screen time reads 480 in a week of 95–150 | | ☐ | E. Check it is genuinely the same event, then delete one |
 
-**A5. Name the fault at each pin.** Five pins are marked on the table below. For each one, write **what kind of fault it is** and **what you would do** — or write "not a fault" and say why.
+**A5. Name the fault at each pin.** Five pins are marked on the table in the figure. For each one, write **what kind of fault it is** and **what you would do** — or write "not a fault" and say why.
 
 ![Name the fault at each pin](../figures/fig-w05-8-blank-fault-label.svg)
 *Figure W5.1 — Five pins, five faults. The legal ranges are printed beside the table on purpose — use them.*
@@ -124,6 +128,8 @@ Which three of those are **numbers on the outside and categories on the inside**
 
 ## ✍️ Practice Set B — Use It
 
+This set is for using what you learned on small tables and lists. Write your reasons, not only your answers.
+
 **B1. Write the legal ranges.** You cannot spot an impossible value if you never said what was possible. Write a smallest and biggest for each column, and one line saying why you chose it.
 
 | Column | Legal range: from | to | Why those numbers |
@@ -147,21 +153,21 @@ What will it learn about Mondays, and why will nobody notice?
 
 `_____________________________________________________________________`
 
-Write the controlled vocabulary that would have stopped it:
+Write the controlled vocabulary that would have stopped it in the box below.
 
-```
+```text
 ALLOWED VALUES for day: ____________________________________________
 
 ____________________________________________________________________
 ```
 
-**B3. What would go wrong?** Here are ten nights of sleep. Three were never recorded.
+**B3. What would go wrong?** Here are ten nights of sleep. Three were never recorded. The blanks are shown in the box.
 
-```
+```text
 7.5   8.0   6.5   ____   8.5   ____   9.0   7.0   8.0   ____
 ```
 
-(a) The honest average — add the **seven** real values and divide by 7:
+(a) The honest average. Add the **seven** real values and divide by 7:
 
 Sum = `__________`   Average = `__________`   *(round to 2 decimal places)*
 
@@ -185,7 +191,7 @@ Circle one: **YES** / **NO**   Why? `_______________________________`
 
 **B5. Impossible, or outlier?** The legal ranges are printed for you. For each value, circle one and say what you would do.
 
-```
+```text
 sleep_h    0 to 16       screen_min   0 to 1440      bag_kg   0.1 to 12
 age_years  5 to 19       jump_cm     50 to 900       temp_c    -10 to 50
 ```
@@ -206,6 +212,8 @@ One of those six needs a completely different kind of note from all the others. 
 ---
 
 ## 🧩 Puzzle of the Week — The Pizza Order Pad
+
+This puzzle is for practising the checks on one small order pad.
 
 ![The pizza order pad puzzle](../figures/fig-w05-9-puzzle-pizza-orders.svg)
 *Figure W5.2 — Eight orders, one topping spelled several ways. A person sees one topping; a computer counts several.*
@@ -237,7 +245,7 @@ List them: `_____________________________________________________`
 
 **E.** Write the controlled vocabulary that would have stopped all of this:
 
-```
+```text
 ALLOWED VALUES for topping: __________________________________________
 ______________________________________________________________________
 ```
@@ -245,6 +253,8 @@ ______________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions are for slower thinking. Take your time and write full sentences.
 
 **T1.** In class you met a hard truth: **sometimes you genuinely cannot tell an outlier from a mistake.** Explain why that is true for the 480-minute screen day, and then say what somebody could have done — at the moment they wrote it down — that would have settled it forever.
 
@@ -276,6 +286,8 @@ Which of your four ideas is the strongest, and why?
 ---
 
 ## 🛠️ Build It — Run All Four Checks on Your Own Table
+
+This page is for checking your own project table.
 
 **About 20 minutes, plus keep collecting rows.** You should be at **14 rows** by now. Get to **21** by next week — in Week 6 you finish at 30.
 
@@ -342,6 +354,8 @@ Value: `____________`  Row: `______`  Why it might be real: `_________`
 
 ## 🎨 Draw It
 
+This page is for showing the four kinds of mess, and the one that is not a fault, as pictures.
+
 Draw one small cartoon for each of the four kinds of mess, write its fix on the dotted line, and then draw the fifth thing — **the one that is not a fault** — showing clearly that it sits *inside* the legal range.
 
 ![Draw It frame for Week 5](../figures/fig-w05-10-draw-frame.svg)
@@ -349,7 +363,7 @@ Draw one small cartoon for each of the four kinds of mess, write its fix on the 
 
 **An example of a good answer.** A student drew:
 
-```
+```text
 1. MISSING       an empty box with a big "?" and a sticky note: "forgot Tuesday"
                  FIX: leave blank + note. NOT a zero.
 2. DUPLICATE     identical twins side by side, both holding a card reading
@@ -372,6 +386,8 @@ Notice what makes it good: **the fence is drawn**, so you can see the outlier is
 
 ## 📊 Self-Check
 
+This table is for you to rate yourself. Tick one box in each row.
+
 | I can... | 😀 easily | 🙂 with a think | 😕 not yet |
 |---|---|---|---|
 | Decide a column's data type by asking whether averaging it would mean anything | ☐ | ☐ | ☐ |
@@ -387,6 +403,8 @@ One thing I still want to ask about:
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished the pages. Open it only then.
 
 <details>
 <summary>Check your answers</summary>
@@ -481,7 +499,7 @@ The machine thinks there are **4** different days.
 It will learn **almost nothing about Mondays**, because instead of one group of four Mondays it has four groups of one. A group of one tells you nothing — there is no pattern in a single example.
 **And nobody will notice**, because the table looks perfectly fine. There is no blank, no red cell, no absurd number. This is the most dangerous kind of fault precisely because it is **silent**.
 
-```
+```text
 ALLOWED VALUES for day:  Mon · Tue · Wed · Thu · Fri
 Nothing else may be typed in this column.
 ```
@@ -491,14 +509,14 @@ Also full credit with `Monday · Tuesday · …`, as long as it is an explicit c
 
 **(a) The honest average.** The seven real values are 7.5, 8.0, 6.5, 8.5, 9.0, 7.0, 8.0.
 
-```
+```text
 7.5 + 8.0 + 6.5 + 8.5 + 9.0 + 7.0 + 8.0 = 54.5
 54.5 ÷ 7 = 7.7857... = 7.79 hours      "average of 7 values, 3 blank"
 ```
 
 **(b) With three fake zeros.** The sum is unchanged — adding zero adds nothing — but the **count** changes from 7 to 10.
 
-```
+```text
 54.5 ÷ 10 = 5.45 hours
 ```
 
@@ -562,7 +580,7 @@ This is the trap and it cuts both ways:
 **The honest answer is that you cannot be sure**, and the reason is the one from class: nobody gave the rows unique IDs at collection time. With `order_id` on every line, orders 1 and 8 would be obviously separate and this whole problem would evaporate.
 
 **E.**
-```
+```text
 ALLOWED VALUES for topping:  margherita · paneer · veggie
 Nothing else may be written in this column. All lowercase.
 Every order also gets its own order_id, so two identical orders

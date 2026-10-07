@@ -38,9 +38,11 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These six questions check that you know the words and ideas from this week's chapter.
+
 **A1. Fill in the blanks.**
 
-```
+```text
    accuracy  =  the number it got ______________
                 ─────────────────────────────────
                 the number of ______________
@@ -138,6 +140,8 @@ Pick **one** from the "Over-claiming" column and rewrite it honestly:
 
 ## ✍️ Practice Set B — Use It
 
+These five questions give you real scoring sheets and reports to work through with a pencil.
+
 **B1. Score this sheet.** A **bat / ball / stumps** classifier, 12 held-out photos, 4 of each.
 
 | # | true | predicted | # | true | predicted |
@@ -153,7 +157,7 @@ Pick **one** from the "Over-claiming" column and rewrite it honestly:
 
 (b) Accuracy three ways — **show the division**:
 
-```
+```text
    fraction    ______ / ______
 
    decimal     ______ ÷ ______ = ______________
@@ -238,7 +242,7 @@ ________________________________________________________________
 
 **B5. Mark somebody else's verdict.** Here is what another student wrote up. Find **three** faults and write the fix.
 
-```
+```text
 MY RESULTS
 My model is 87% accurate.
 It's 54% better than guessing.
@@ -259,6 +263,8 @@ ________________________________________________________________
 ---
 
 ## 🧩 Puzzle of the Week
+
+Four cells of a confusion matrix have gone missing. Use the clues to fill them in.
 
 ![Puzzle: the missing cells](../figures/fig-w22-9-puzzle-missing-cells.svg)
 *Figure W22.2 — A **pizza / pasta / salad** classifier. Four cells have gone missing.*
@@ -304,6 +310,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions have no single right answer. Write a short paragraph for each.
+
 **T1.** You are only allowed 15 test photos. Every photo you move into the envelope is a photo your model does not get to learn from.
 
 Write a paragraph about that trade. What do you gain by hiding more photos? What do you lose? Is there a right answer, and if not, what should you *say* about the choice you made?
@@ -340,6 +348,8 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+These pages are for your own model's hidden ten. Fill them in with your own photos and numbers.
+
 ### Page W22.1 — The completed scoring sheet
 
 Copy up today's sheet neatly if it is messy, and **staple the original behind it.** Do not "improve" any row.
@@ -372,7 +382,7 @@ Copy up today's sheet neatly if it is messy, and **staple the original behind it
 
 **Show the division longhand.** A calculator answer with no working scores nothing today.
 
-```
+```text
    FRACTION     ______ / ______
 
    DECIMAL      ______ x 0.___ = ______        remainder ______
@@ -436,7 +446,7 @@ Which class name did it say **least** often? ____________ ______ times.
 
 ### Page W22.5 — The gap
 
-```
+```text
    training accuracy (from Week 17)  =  ______ %
    test accuracy (today)             =  ______ %
 
@@ -499,7 +509,7 @@ A **sock / glove / hat** classifier, 12 held-out photos, 4 of each. Its **traini
 
 **(a)** Overall accuracy, three ways, with the division shown. Baseline, and the improvement in points.
 
-```
+```text
    ____________________________________________________________
 
    ____________________________________________________________
@@ -550,6 +560,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for turning your results into one picture.
+
 Draw your model's **report card** — as a poster somebody else could read and check in twenty seconds. Include: the fraction, the percentage, the baseline drawn as a line, three per-class bars, and the confusion matrix with its worst cell circled.
 
 ![Draw it here: your model's report card](../figures/fig-w22-10-draw-frame.svg)
@@ -562,6 +574,8 @@ Draw your model's **report card** — as a poster somebody else could read and c
 ---
 
 ## 📊 Self-Check
+
+Tick one face for each line. Be honest with yourself.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -579,6 +593,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Finish the whole workbook first. Then open the box below to check your work.
 
 <details>
 <summary>Check your answers</summary>
@@ -650,7 +666,8 @@ Model rewrite: *"73% accurate"* → **"11 out of 15 held-out photos, which is 73
 (a) Correct rows: 1, 2, 4, 5, 6, 7, 9, 10, 12 → **9 out of 12**.
 
 (b)
-```
+
+```text
    FRACTION    9 / 12          (simplifies to 3/4)
 
    DECIMAL     12 x 0.7 = 8.4        remainder  9 − 8.4 = 0.6
@@ -799,7 +816,7 @@ These depend on your own model, so check yourself against this list rather than 
 
 **(a)** Correct rows: 1, 2, 4, 5, 7, 9, 10, 11 → **8 correct**.
 
-```
+```text
    FRACTION    8 / 12       (simplifies to 2/3)
 
    DECIMAL     12 x 0.6 = 7.2        remainder  8 − 7.2 = 0.8
@@ -841,7 +858,7 @@ Diagonal 3 + 2 + 3 = **8** ✓ · all cells = **12** ✓
 
 **(f)**
 
-```
+```text
    correct answers (8):  88, 74, 93, 81, 69, 90, 85, 77
        sum  = 657
        mean = 657 ÷ 8 = 82.125  =  82.1%

@@ -19,6 +19,8 @@
 
 ## 🪝 Start Here
 
+In this section you try describing a lost bag with words only.
+
 Your school bag has gone missing.
 
 Someone is going to make a poster and stick it up around the school. But there is a problem: there's no photo of your bag. The poster can only have **words** on it. So — tell them what to write.
@@ -50,6 +52,8 @@ So this week is about writing the version of that poster that actually works. An
 ---
 
 ## 🧠 The Big Idea
+
+This section explains five ideas: feature, label, class, measuring instruction and feature table.
 
 ### 1. A feature is one *measured* description
 
@@ -141,9 +145,9 @@ Neither of us. You measured top to bottom. I measured across the widest point. W
 
 The problem is not us. **The problem is that nobody wrote down what `length_cm` means.**
 
-So the fix isn't "be more careful". The fix is to write the sentence:
+So the fix isn't "be more careful". The fix is to write the sentence. It looks like this:
 
-```
+```text
 longest_cm    ruler across the widest point, nearest 0.5 cm
 ```
 
@@ -184,20 +188,22 @@ Three rules make a feature table honest. You will break all three at least once,
 
 ## 🔍 Worked Examples
 
+This section works through three examples: an apple, a dog and a homework table.
+
 ### Worked Example 1 — Turning an apple into a row (food)
 
 **The job:** build a machine that says whether a piece of fruit is an apple, an orange or a banana.
 
-**Step 1 — write the label question first.** Before touching anything:
+**Step 1 — write the label question first.** Before touching anything, write this:
 
-```
+```text
 label question: apple / orange / banana?
 classes: 3  (apple, orange, banana)
 ```
 
-**Step 2 — write the measuring instructions.** Not the measurements. The *instructions*.
+**Step 2 — write the measuring instructions.** Not the measurements. The *instructions*. Write these four lines:
 
-```
+```text
 f1  mass_g       kitchen scale, dry, nothing else on the scale, nearest gram
 f2  longest_cm   ruler along the longest straight line between any two
                  points on the fruit, nearest 0.5 cm
@@ -311,6 +317,8 @@ Notice what just happened: `handed_in_on_time` **stopped being the label** and b
 
 ## 🎲 What We Did In Class
 
+This section has two activities. You can repeat both at home.
+
 ### Part 1 — Describe It Down the Phone (8 minutes)
 
 You can play this at home with anybody.
@@ -354,13 +362,13 @@ Guess: *a pair of scissors.* (It was a TV remote — 2 parts because the battery
 
 **Step 1 — the label question, before anything else.**
 
-```
+```text
 label question: teaspoon / dessert spoon / serving spoon?
 ```
 
 **Step 2 — the four measuring instructions. Written before you touch the ruler.**
 
-```
+```text
 FEATURE SHEET
 label question: teaspoon / dessert spoon / serving spoon?
 
@@ -399,6 +407,8 @@ A real mismatch, and the fix:
 
 ## 💬 Talk About It
 
+Use these questions to talk through the week's ideas with someone.
+
 **1. "Two people measured the same apple. One got 7 cm, one got 9 cm. Which one measured it wrong?"**
 *Hint for you:* neither. One measured top to bottom, one measured across the widest point. The right answer is that the *instruction* was missing, not that a person was careless. Ask them what you should fix — the person or the sentence.
 
@@ -411,6 +421,8 @@ A real mismatch, and the fix:
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four wrong ideas that sound right, each with the right idea beside it.
 
 ### Trick 1 — "The machine sees the photo of my dog"
 
@@ -453,6 +465,8 @@ Every professional who builds these systems will tell you the same thing: **the 
 
 ## 🌍 Where You've Seen This
 
+Features and labels turn up in places you already know.
+
 1. **A doctor's appointment.** Height, mass, temperature, blood pressure — four features, each with a strict measuring instruction, which is exactly why they use the *same* instrument and the *same* method every visit.
 2. **A missing pet poster on a lamp post.** Breed, colour, size, collar, name. Whatever the owner left off, the whole neighbourhood is now unable to use.
 3. **Your report card.** Every subject is a column, every term is a row, and there's a label column at the end called *grade*. It is a feature table and you've been living in one for years.
@@ -491,6 +505,8 @@ of the year.*
 
 ## 🔑 Remember This
 
+These are the points to keep from this week.
+
 - **A machine never meets the real thing. It only ever meets the row.** Everything you didn't measure does not exist for it.
 - **A feature is one *measured* description.** No measurement, no feature — not a weak one, none.
 - **The label is the answer you want back**, and it's whichever column you decided to cover up. Change the question, change the label.
@@ -501,6 +517,8 @@ of the year.*
 ---
 
 ## 📓 New Words
+
+These are this week's words and what they mean.
 
 ![Week 11 words as pictures](../figures/fig-w11-8-vocab-icons.svg)
 *Figure 11.9 — This week's four words, drawn.*
@@ -521,6 +539,8 @@ And one word from Week 2 that this week sharpens into something you can point at
 ---
 
 ## 📤 Your Homework
+
+This is your practice for the week.
 
 Go to **[the Week 11 workbook](../workbook/week-11.md)**. About **50 minutes** in total.
 

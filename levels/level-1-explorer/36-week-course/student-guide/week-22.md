@@ -39,13 +39,17 @@ Before anything else, here are the three rules. They are strict, they are strict
 >
 > **3. Nothing gets crossed out afterwards.** That is why you are using a **pen**. When row 4 is written, row 4 is finished — even after you have seen row 12.
 
-That signature across the flap is doing a real job. It is not decoration. It is proof that nobody — not you, not your teacher — has quietly slipped a photo in or out since Week 19. Real scientists guard against this in a similar way: they fix their test data and their plan *before* anybody looks at the results, because human beings, including completely honest ones, are extremely good at talking themselves into small adjustments.
+That signature across the flap is doing a real job. It is not decoration. It is proof that nobody — not you, not your teacher — has quietly slipped a photo in or out since Week 19.
+
+Real scientists guard against this in a similar way. They fix their test data and their plan *before* anybody looks at the results. Human beings, including completely honest ones, are extremely good at talking themselves into small adjustments.
 
 > **💡 Try this now, before you read on:** write down the score you think you are about to get, out of 15, and circle it. Fifteen seconds. Comparing that circled number to what actually happens is the cheapest and most memorable thing in this whole chapter, and it works whether you guessed high or low.
 
 ---
 
 ## 🧠 The Big Idea
+
+This section explains the four numbers you will report, the grid you will draw, and the sentence you will write.
 
 ### 1. Four numbers, and they always travel together
 
@@ -62,7 +66,7 @@ Why four and not one? Because one number can lie to you without saying anything 
 
 A spam filter is tested on 100 emails: 90 ordinary ones and 10 spam ones. The filter says **"not spam"** to everything. It has never caught a spam email in its life. It is a brick with a label on it.
 
-```
+```text
    accuracy  =  90 correct  ÷  100 tries  =  90%
 ```
 
@@ -70,7 +74,7 @@ Ninety percent accurate. You could put it on a poster. It is completely honest a
 
 Break it open by class and the truth falls out:
 
-```
+```text
    real emails:  90 / 90  =  100%
    spam emails:   0 / 10  =    0%
 ```
@@ -85,7 +89,7 @@ And here is the killer: with 90 real emails and 10 spam ones, the strategy **"al
 
 The formula is the easy bit:
 
-```
+```text
    accuracy  =    number it got right
                  ─────────────────────
                    number of tries
@@ -95,7 +99,7 @@ There is no harder formula hiding behind it. The **skill** is writing the answer
 
 Say you got **11 out of 15**.
 
-```
+```text
    FRACTION:    11 / 15
                 the honest one — it tells you there were only fifteen tries
 
@@ -112,7 +116,7 @@ Say you got **11 out of 15**.
 
 Now put the **baseline** next to it. Three classes, roughly the same number of photos of each, so shouting a random name every time gets you right about one time in three:
 
-```
+```text
    baseline   = 1/3 = 33.3%
    73.3 − 33.3 = 40.0 percentage POINTS above not-thinking
 ```
@@ -121,7 +125,7 @@ Now put the **baseline** next to it. Three classes, roughly the same number of p
 
 **And one photo is worth a lot when you only have fifteen.**
 
-```
+```text
    100% ÷ 15 photos  =  6.7 percentage points per photo
 ```
 
@@ -135,7 +139,7 @@ A confusion matrix has a grand name and it is something you could explain to a s
 
 > **Rows are the truth. Columns are what the model said.** Every photo you score puts one tally mark in one box.
 
-```
+```text
                         ┌─────── WHAT THE MODEL SAID ───────┐
                         │  cricket    tennis    football    │  total
    ┌────────────────────┼───────────────────────────────────┼───────
@@ -157,7 +161,7 @@ If everything went perfectly, every mark lands on the **diagonal** — the boxes
 
 **Two checks, four seconds, do them every single time:**
 
-```
+```text
    DIAGONAL CHECK:   4 + 4 + 3 = 11    must equal your correct count  ✓
    TOTAL CHECK:      all nine cells add to 15   must equal your photo count  ✓
 ```
@@ -200,7 +204,7 @@ Here is what an enormous amount of public talk about AI sounds like: *"97% accur
 
 Your verdict sentence has **five parts**, and you say all five:
 
-```
+```text
    "On [how many] held-out photos, my model scored [fraction] = [percentage]
     against a [baseline] baseline; it was worst at [class] ([fraction] = [%]),
     and its commonest mistake was calling a [X] a [Y]."
@@ -219,6 +223,8 @@ That second one is worth exactly as much as the first. A checked wrong guess bea
 ---
 
 ## 🔍 Worked Examples
+
+Here are three finished test reports, worked step by step. Use them as models for your own.
 
 ### Example 1 — Food: a lunchbox classifier, twelve held-out photos
 
@@ -243,7 +249,7 @@ Somebody built a model to sort a lunchbox photo into **samosa**, **sandwich** or
 
 **Step 2 — accuracy three ways.**
 
-```
+```text
    FRACTION:    9 / 12
 
    DECIMAL:     12 x 0.7 = 8.4         remainder  9 − 8.4 = 0.6
@@ -282,7 +288,7 @@ Diagonal 4 + 3 + 2 = **9** ✓. All cells add to **12** ✓.
 
 **Step 6 — the confidence split**, because there is a spare column and it is free information.
 
-```
+```text
    correct (9):  91, 78, 86, 84, 88, 71, 80, 93, 69   sum 740   mean 740 ÷ 9 = 82.2%
    wrong   (3):  58, 62, 55                            sum 175   mean 175 ÷ 3 = 58.3%
 ```
@@ -314,7 +320,7 @@ A **cricket ball / tennis ball / football** classifier. Fifteen held-out photos,
 
 **Accuracy three ways.** Correct rows: 1, 2, 3, 5, 6, 7, 8, 10, 11, 12, 15 → **11 correct**.
 
-```
+```text
    FRACTION:    11 / 15
 
    DECIMAL:     15 x 0.7 = 10.5        remainder  11 − 10.5 = 0.5
@@ -357,7 +363,7 @@ Diagonal 4 + 4 + 3 = **11** ✓ · all cells = **15** ✓
 
 **The gap.** Training accuracy was 100%.
 
-```
+```text
    100.0 − 73.3  =  26.7 percentage points
 ```
 
@@ -380,7 +386,7 @@ Results: all 8 pens correct · 2 of 4 pencils correct · 0 of 3 rubbers correct.
 
 **Accuracy three ways.** Correct = 8 + 2 + 0 = **10 out of 15**.
 
-```
+```text
    FRACTION:    10 / 15        (simplifies to 2/3)
 
    DECIMAL:     15 x 0.6 = 9           remainder  10 − 9 = 1
@@ -392,7 +398,7 @@ Results: all 8 pens correct · 2 of 4 pencils correct · 0 of 3 rubbers correct.
 
 **Now the baseline, and this is the whole example.** The baseline is *the score of the best strategy that ignores the photo completely.* Here that strategy is **"always say pen"**, because pen is the commonest class in the test set:
 
-```
+```text
    BASELINE:    8 pens out of 15  ->  8/15 = 53.3%   (NOT 33.3%)
    BEATS IT BY: 66.7 − 53.3  =  13.3 percentage points
 ```
@@ -431,6 +437,8 @@ Look at the **said rubber** column. It totals **zero**. In fifteen attempts, thi
 
 ## 🎲 What We Did In Class
 
+This section records the two parts of the lesson. If you missed it, you can follow the steps yourself.
+
 ### Part 1 — somebody else's fifteen minutes of shame
 
 Before touching your own envelope you scored a stranger's results (made up for the course, but realistic). That is deliberate: you practise every move with nothing at stake, so when your own numbers land you already know what to do with them.
@@ -454,7 +462,7 @@ This was a **cat / dog / rabbit** classifier, twelve test photos, four of each.
 
 **7 correct out of 12.**
 
-```
+```text
    DECIMAL:     12 x 0.5 = 6      remainder 1      1/12 = 0.0833
                 0.5 + 0.0833 = 0.5833      ->  58.3%
    BASELINE:    33.3%             BEATS IT BY: 25.0 percentage points
@@ -504,7 +512,7 @@ Here is the whole procedure, so you can redo it at home if you missed it. **You 
 
 **The arithmetic — 4 minutes.** At the bottom of the sheet:
 
-```
+```text
    correct: ____ / ____
 
    fraction   ____/____
@@ -544,6 +552,8 @@ Then go and look at your training photos and add one more line: *"I checked, and
 
 ## 💬 Talk About It
 
+Three questions to talk through with an adult. Try your own answer before you read the hint.
+
 **1. "Why couldn't I re-test the blurry one? That photo was genuinely unfair."**
 > *Hint:* you might be completely right that it was a hard photo — write "blurry" in the notes, because that is real information. But ask the other person this: *who decided which photos went in the envelope, and when?* You did, three weeks ago, before you knew which ones would fail. If photos get removed **now**, they are being removed *because* the model failed on them. What is the score measuring at that point?
 
@@ -556,6 +566,8 @@ Then go and look at your training photos and add one more line: *"I checked, and
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four common mistakes about test scores. Each one shows the wrong way next to the right way.
 
 ### Trick 1 — "that photo was unfair, so it shouldn't count"
 
@@ -594,6 +606,8 @@ Four numbers, always together. A single accuracy figure is an average, and an av
 
 ## 🌍 Where You've Seen This
 
+Honest testing is not only for models. Here are six places you already meet the same ideas.
+
 1. **Exam results at school.** A mock paper you have already seen the answers to is a training score. The real exam is the held-out test set — and everybody knows which one counts.
 2. **"9 out of 10 dentists recommend..."** Nine out of ten *of how many asked?* Ten dentists, or ten thousand? The fraction carries the sample size and that is exactly why adverts prefer the percentage.
 3. **A weather app that says "70% chance of rain".** A cousin of confidence, but not the same thing. A forecast probability is meant to be checked by tallying: on a hundred 70%-days it should rain on about seventy. A classifier's confidence is not guaranteed to work like that (Trick 2). When it says 70% and stays dry, the app is not broken — but you cannot check it on one day.
@@ -631,6 +645,8 @@ and caring who the answer is true for.*
 ---
 
 ## 🔑 Remember This
+
+Keep these ten points. They are the whole week in short form.
 
 - **The only score worth reporting is the one from examples the model had never seen.** Everything else is a rehearsal.
 - **Four numbers, always together:** overall accuracy, baseline, per-class accuracy, and the gap.

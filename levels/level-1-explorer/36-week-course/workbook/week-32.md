@@ -33,6 +33,8 @@ ________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+This set checks that you know the words and ideas from the chapter.
+
 ### A1 — Fill in the blanks
 
 > **personal data** — any information that is about an ______________________ person, **or that could be ______________________ with other information to identify them.**
@@ -100,6 +102,8 @@ Write **one** hidden thing on each of the five lines. Five *different kinds* of 
 ---
 
 ## ✍️ Practice Set B — Use It
+
+This set makes you use the ideas on real products, real claims and a real video.
 
 ### B1 — Audit a real product's data map *(page W32.1)*
 
@@ -220,6 +224,8 @@ ________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for working with a small table of students, one column at a time.
+
 ### Eight students, four harmless columns
 
 ![Eight students, four harmless columns](../figures/fig-w32-12-puzzle-eight-students.svg)
@@ -238,7 +244,7 @@ ________________________________________________
 
 **(a)** Does any **single** column identify S5 on its own? Show how many people are left for each one.
 
-```
+```text
    Year = 8        →  ____ people left
    Bus = B         →  ____ people left
    Lunch = non-veg →  ____ people left
@@ -262,6 +268,8 @@ ________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions are for slower thinking. Write a full paragraph for each.
 
 **1.** Make the canteen dataset **genuinely** anonymous. Say exactly what you would delete, bucket or blur — then say **which question it can no longer answer.** Is the trade worth it? Write a paragraph.
 
@@ -287,9 +295,11 @@ ________________________________________________
 
 ## 🛠️ Build It
 
+This section is for looking at the hidden information in three of your own photos.
+
 ### The metadata investigation
 
-**The checklist.**
+**The checklist.** Tick each box as you finish it.
 
 - [ ] Choose **three** photos: one taken outdoors, one indoors, one that arrived through a chat app
 - [ ] Open each one's details — **Mac:** Preview → Tools → Show Inspector → **i** tab, then **GPS**. **Windows:** right-click → Properties → Details
@@ -321,7 +331,7 @@ Write the four provenance checks **in your own words** on a small card. Not on t
 - [ ] Card written
 - [ ] Card is somewhere real, not in this book
 
-```
+```text
    1. ________________________________________
    2. ________________________________________
    3. ________________________________________
@@ -332,6 +342,8 @@ Write the four provenance checks **in your own words** on a small card. Not on t
 ---
 
 ## 🎨 Draw It
+
+This section is for drawing what a photo shows and what it carries without showing.
 
 Draw **one photo you might really post**, and label everything in it — and attached to it — that you did not mean to share. Aim for at least ten labels. Put the invisible ones (the metadata) in a box off to the side with an arrow, because they are not *in* the picture.
 
@@ -346,6 +358,8 @@ Draw **one photo you might really post**, and label everything in it — and att
 
 ## 📊 Self-Check
 
+Use this table to see how sure you feel about each skill. Tick one box per row.
+
 | I can… | 😀 easily | 🙂 with a bit of help | 😕 not yet |
 |---|:---:|:---:|:---:|
 | Re-identify a person from a few "anonymous" facts, and say which fact did the work | ☐ | ☐ | ☐ |
@@ -359,6 +373,8 @@ Draw **one photo you might really post**, and label everything in it — and att
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished. Open it only when you are done.
 
 <details>
 <summary>Check your answers</summary>
@@ -517,7 +533,7 @@ The habit: **when it is a specific fact that matters, look it up somewhere that 
 
 **(a)** No single column works.
 
-```
+```text
    Year = 8        →  4 people left  (S4, S5, S6, S8)
    Bus = B         →  3 people left  (S3, S5, S6)
    Lunch = non-veg →  3 people left  (S2, S5, S7)

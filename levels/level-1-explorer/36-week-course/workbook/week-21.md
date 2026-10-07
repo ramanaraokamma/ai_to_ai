@@ -40,6 +40,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know the new words. Write in the spaces.
+
 **A1. Fill in the blanks.**
 
 A model that works on examples it has never seen is ____________________.
@@ -52,7 +54,7 @@ In a confusion matrix, the cells where truth equals prediction are called the __
 
 **A2. Multiple choice.** Which of these models would you rather have? Circle one.
 
-```
+```text
    (a)  training 100%,  test 40%
    (b)  training 100%,  test 96%
    (c)  training  55%,  test 52%
@@ -61,7 +63,7 @@ In a confusion matrix, the cells where truth equals prediction are called the __
 
 Work out all four gaps first:
 
-```
+```text
    (a) ______ pts     (b) ______ pts     (c) ______ pts     (d) ______ pts
 ```
 
@@ -111,6 +113,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+These questions use confusion matrices. Write in the spaces.
+
 **B1.** A **cup / bowl / plate** model. Fill in the missing cells and the totals. Each class had 6 test photos.
 
 | | said cup | said bowl | said plate | row total |
@@ -120,7 +124,7 @@ ________________________________________________________________
 | **true plate** | 1 | ______ | 3 | 6 |
 | **total said** | ______ | ______ | ______ | ______ |
 
-```
+```text
    diagonal = ______ + ______ + ______ = ______
 
    all nine cells add to ______           ✓ same as the number of photos?  ______
@@ -183,7 +187,7 @@ ________________________________________________________________
 
 **B5. Is the confusion symmetric?** Using the same bat / ball / stumps grid:
 
-```
+```text
    true ball → said bat:  ______        true bat → said ball:  ______
 
    true bat → said stumps: ______       true stumps → said bat: ______
@@ -202,6 +206,8 @@ ________________________________________________________________
 ---
 
 ## 🧩 Puzzle of the Week
+
+This puzzle has a confusion matrix with missing cells.
 
 ![The mystery matrix puzzle](../figures/fig-w21-10-puzzle-mystery-matrix.svg)
 *Figure W21.2 — Four cells missing, but every total is given — so every missing cell can be worked out.*
@@ -225,7 +231,7 @@ ________________________________________________________________
 
 **(a) Overall accuracy, three ways, with the division shown.**
 
-```
+```text
    ________________________________________________________________
 
    ________________________________________________________________
@@ -233,7 +239,7 @@ ________________________________________________________________
 
 **(b) Per-class accuracy, and the worst class.**
 
-```
+```text
    cat  ______ / 10 = ______%      dog ______ / 10 = ______%      fox ______ / 10 = ______%
 
    worst class: ____________________
@@ -252,6 +258,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+Two bigger questions. Take your time and write full answers.
 
 **T1.** Both checks can pass on a grid that is completely wrong. So **what are the checks actually for**, and what does that tell you about checks in general — in maths, in science, anywhere?
 
@@ -277,6 +285,8 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+Three pages. You score a sheet, build a matrix, then write what you found.
+
 ### Page 21.1 — Score somebody else's sheet
 
 A **pen / pencil / marker** classifier, tested on 15 held-out photos, 5 per class. Fill in the `correct?` column yourself: Y if the prediction matches the truth, N if it doesn't. **All fifteen rows first, then count.**
@@ -301,7 +311,7 @@ A **pen / pencil / marker** classifier, tested on 15 held-out photos, 5 per clas
 
 **Overall accuracy, three ways:**
 
-```
+```text
    FRACTION:    ______ / ______
 
    DECIMAL:     15 x 0.7 = ______;   ______ - ______ = ______;   ______ ÷ 15 = ______
@@ -326,7 +336,7 @@ A **pen / pencil / marker** classifier, tested on 15 held-out photos, 5 per clas
 
 **Both checks:**
 
-```
+```text
    ______ + ______ + ______ = ______     ✓
 
    ______ + ______ + ______ = ______     ✓
@@ -349,7 +359,7 @@ A **pen / pencil / marker** classifier, tested on 15 held-out photos, 5 per clas
 
 **Shade the diagonal green. Then:**
 
-```
+```text
    diagonal:  ______ + ______ + ______ = ______
 
    correct count from page 21.1:  ______            ✓ do they match?  ______
@@ -364,7 +374,7 @@ A **pen / pencil / marker** classifier, tested on 15 held-out photos, 5 per clas
 
 **Now read down the columns:**
 
-```
+```text
    said pen:     ______ times, though ______ pens existed      →  ____________________
 
    said pencil:  ______ times, though ______ pencils existed   →  ____________________
@@ -394,7 +404,7 @@ ________________________________________________________________
 
 **Now the prediction about YOUR OWN model.** Next week the envelope opens.
 
-```
+```text
    I predict the worst cell of my grid will be:
 
         true ____________________  called  ____________________
@@ -412,6 +422,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing your own confusion matrix.
+
 Draw your **own** confusion matrix — for your three objects, using your prediction from page 21.3 as the numbers. Label it properly, shade the diagonal, circle the worst cell, and write the mistakes as sentences.
 
 ![Draw It frame for Week 21](../figures/fig-w21-11-draw-frame.svg)
@@ -424,6 +436,8 @@ Draw your **own** confusion matrix — for your three objects, using your predic
 ---
 
 ## 📊 Self-Check
+
+Tick one box on each row to show how sure you are.
 
 | I can... | 😀 easily | 🙂 with a bit of thought | 😕 not yet |
 |---|:--:|:--:|:--:|
@@ -439,6 +453,8 @@ Draw your **own** confusion matrix — for your three objects, using your predic
 
 ## ✅ Answers
 
+Check your work here after you finish. Open the box below.
+
 <details>
 <summary>Check your answers</summary>
 
@@ -446,8 +462,9 @@ Draw your **own** confusion matrix — for your three objects, using your predic
 
 **W1.** Accuracy is the number of **correct** guesses divided by the **total** number of guesses.
 
-**W2.**
-```
+**W2.** Worked out:
+
+```text
    fraction:   18/24   (= 3/4)
    decimal:    24 x 0.75 = 18 exactly  →  0.7500
    percentage: 75.0%
@@ -465,7 +482,7 @@ Draw your **own** confusion matrix — for your three objects, using your predic
 
 **A2.** **(b) training 100%, test 96%.**
 
-```
+```text
    (a) 100 - 40 = 60 pts       (b) 100 - 96 =  4 pts
    (c)  55 - 52 =  3 pts       (d)  82 - 74 =  8 pts
 ```
@@ -492,7 +509,8 @@ The row that proves it is **55% training / 52% test.** A 3-point gap and a compl
 The pink cell as a sentence: **"Two combs were called toothbrush."**
 
 The two checks:
-```
+
+```text
    diagonal =  5 + 4 + 2  =  11        ✓ matches the correct count
    all cells = 5+0+0 + 0+4+1 + 1+2+2 = 15    ✓ matches the number of photos
 ```
@@ -516,7 +534,7 @@ Other correct versions people write: *"it memorised the pictures instead of the 
 | **true plate** | 1 | **2** | 3 | 6 |
 | **total said** | **6** | **7** | **5** | **18** |
 
-```
+```text
    diagonal = 5 + 4 + 3 = 12
 
    all nine cells add to 18        ✓ yes, same as the number of photos
@@ -545,7 +563,7 @@ And that tie is itself informative: **the confusion is symmetric.** That is a hi
 
 **B4.**
 
-```
+```text
    said bat:  8 times, though only 5 bats existed   →  OVER-EAGER about bat
    said ball: 2 times, though 5 balls existed       →  RELUCTANT about ball
 ```
@@ -554,7 +572,7 @@ And that tie is itself informative: **the confusion is symmetric.** That is a hi
 
 **B5.**
 
-```
+```text
    true ball → said bat:   3        true bat → said ball:   0
    true bat → said stumps: 1        true stumps → said bat: 1
 ```
@@ -578,21 +596,24 @@ And that tie is itself informative: **the confusion is symmetric.** That is a hi
 
 **Which cell first, and how you knew:** either of the top two rows, because each has **only one gap**, and every row must add to 10.
 
-```
+```text
    cat row:  10 - 7 - 1 = 2
    dog row:  10 - 6 - 2 = 2
 ```
 
 Then the fox row has two gaps, so use the **column totals**:
-```
+
+```text
    said dog column:  11 - 2 - 6 = 3
    said fox column:   7 - 1 - 2 = 4
    check the fox row: 3 + 3 + 4 = 10     ✓
 ```
+
 And the diagonal check confirms it: `7 + 6 + 4 = 17` ✓ — exactly the number you were given.
 
 **(a) Overall accuracy.**
-```
+
+```text
    fraction:   17 / 30
 
    decimal:    30 x 0.5 = 15;   17 - 15 = 2;   2 ÷ 30 = 0.0667
@@ -605,11 +626,13 @@ And the diagonal check confirms it: `7 + 6 + 4 = 17` ✓ — exactly the number 
 ```
 
 **(b) Per class.**
-```
+
+```text
    cat  7 / 10 = 0.700 = 70.0%
    dog  6 / 10 = 0.600 = 60.0%
    fox  4 / 10 = 0.400 = 40.0%       ← the worst class
 ```
+
 Checks: `7 + 6 + 4 = 17` ✓ and `10 + 10 + 10 = 30` ✓.
 
 **(c) The biggest off-diagonal cell — and this is the catch.** There is a **tie at 3**:
@@ -621,7 +644,8 @@ Both of the biggest mistakes are in the **fox row.** That is a much more useful 
 *(If you wrote only one of the two sentences, that's a correct sentence — but the pattern is the prize. Look for a tie before you circle.)*
 
 **(d) Symmetric?**
-```
+
+```text
    cat → dog  2  vs  dog → cat  2     symmetric
    cat → fox  1  vs  fox → cat  3     lopsided
    dog → fox  2  vs  fox → dog  3     mildly lopsided
@@ -654,7 +678,7 @@ That second habit — say your answer as a sentence about the real world and see
 
 **Correct rows:** 1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 14 → **11 correct out of 15.** Wrong rows: 3, 9, 13, 15.
 
-```
+```text
    FRACTION:    11 / 15
 
    DECIMAL:     15 x 0.7 = 10.5;   11 - 10.5 = 0.5;   0.5 ÷ 15 = 0.0333
@@ -693,7 +717,8 @@ Checks: `4 + 4 + 3 = 11` ✓ · `5 + 5 + 5 = 15` ✓
 | **total said** | 7 | 4 | 4 | **15** |
 
 **Checks:**
-```
+
+```text
    diagonal:  4 + 4 + 3 = 11        ✓ matches the correct count from page 21.1
    all nine cells:  4+0+1 + 1+4+0 + 2+0+3 = 15      ✓
    column totals:   7 + 4 + 4 = 15                  ✓
@@ -702,7 +727,8 @@ Checks: `4 + 4 + 3 = 11` ✓ · `5 + 5 + 5 = 15` ✓
 **The biggest off-diagonal cell** is the **2** in *true marker / said pen*. Circle that one.
 
 **Reading down the columns:**
-```
+
+```text
    said pen:     7 times, though only 5 pens existed     →  OVER-EAGER about pen
    said pencil:  4 times, though 5 pencils existed       →  about right, very slightly shy
    said marker:  4 times, though 5 markers existed       →  about right, very slightly shy

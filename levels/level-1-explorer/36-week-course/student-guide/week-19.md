@@ -20,9 +20,11 @@
 
 ## 🪝 Start Here
 
+This section starts with a small test, to show what is wrong with testing on questions you have already seen.
+
 I want to test you. Here are three questions. I am writing them on the board right now, where you can see them.
 
-```
+```text
    1.  7 x 8 = ?
    2.  What is the capital of France?
    3.  Spell "rhythm".
@@ -51,7 +53,7 @@ It studied about a hundred and twenty photos. Suppose I want to know how good it
 
 So this week's job is to build a test that a machine *cannot* study for.
 
-```
+```text
    THE QUESTION FOR THE WHOLE WEEK
 
         HOW DO I MEASURE SOMETHING
@@ -67,6 +69,8 @@ So this week's job is to build a test that a machine *cannot* study for.
 ## 🧠 The Big Idea
 
 ### 1. A score only counts if the questions were hidden first
+
+The Big Idea has five parts. This one gives the two key words.
 
 > **Training set** — the examples the model is allowed to study.
 >
@@ -125,7 +129,7 @@ The moment a test photo gets trained on, it stops being a test photo. It becomes
 
 Here is the sum, on the 30 index cards you had on the table in class.
 
-```
+```text
    total = 30
    ratio = 80 / 20
 
@@ -143,7 +147,7 @@ Imagine you have 75 photos — 25 spoons, 25 toothbrushes, 25 combs. You shuffle
 
 You could easily grab **12 combs and 1 spoon.** Then your "test set" is basically a comb test, and it barely mentions spoons at all. So instead:
 
-```
+```text
    per class:   test  = 0.20 x 25 = 5
                 train = 25 - 5     = 20
 
@@ -205,7 +209,7 @@ That is not a school game. Ballot boxes get sealed like this. So do evidence bag
 ![Timeline from collect to score with the seal step highlighted](../figures/fig-w19-5-seal-timeline.svg)
 *Figure 19.5 — Six steps. Move the seal to after step 4 and the whole timeline stops measuring anything.*
 
-```
+```text
    1. collect   →   2. split   →   3. SEAL   →   4. train   →   5. open   →   6. score
 ```
 
@@ -247,32 +251,32 @@ You are building a snack classifier: **samosa, banana, biscuit.** You took 15 ph
 
 **Step 1 — how many hidden, per class?**
 
-```
+```text
    0.20 x 15 = 3
 ```
 
 **Step 2 — how many left to study from, per class?**
 
-```
+```text
    15 - 3 = 12
 ```
 
 **Step 3 — multiply up by the three classes.**
 
-```
+```text
    test  = 3 x 3  = 9
    train = 12 x 3 = 36
 ```
 
 **Step 4 — the check.**
 
-```
+```text
    9 + 36 = 45   ✓
 ```
 
 **Step 5 — write it down properly, with the class names, not just the numbers:**
 
-```
+```text
    TEST SET (sealed):   samosa 3 · banana 3 · biscuit 3      = 9
    TRAINING SET:        samosa 12 · banana 12 · biscuit 12    = 36
    split ratio:  9 ÷ 45 = 0.2 = 20%   →   80 / 20    ✓
@@ -286,7 +290,7 @@ You are building a snack classifier: **samosa, banana, biscuit.** You took 15 ph
 
 You are classifying four cricket shots from photos: **cover drive, pull, sweep, reverse sweep.** You have:
 
-```
+```text
    cover drive    60 photos
    pull           60 photos
    sweep          60 photos
@@ -297,32 +301,32 @@ That is 202 photos in total. 80/20, per class.
 
 **The three easy classes:**
 
-```
+```text
    0.20 x 60 = 12 test,   60 - 12 = 48 train      (x3 classes)
 ```
 
 **The awkward one:**
 
-```
+```text
    0.20 x 22 = 4.4  →  ???
 ```
 
 You cannot hide 4.4 photos. **Round up to 5, not down to 4.** Here is the reason, and it is worth knowing rather than just remembering:
 
-```
+```text
    with 4 test photos:  one photo is worth  1 ÷ 4 = 25 points of that class's score
    with 5 test photos:  one photo is worth  1 ÷ 5 = 20 points
 ```
 
 Fewer test photos means each one swings the score more, which makes the score wobblier. The one extra training photo you give up matters less than being able to measure the class at all. **When in doubt, round the test set up.**
 
-```
+```text
    reverse sweep:  5 test,  22 - 5 = 17 train
 ```
 
 **Now the totals:**
 
-```
+```text
    test  = 12 + 12 + 12 + 5   = 41
    train = 48 + 48 + 48 + 17  = 161
 
@@ -331,7 +335,7 @@ Fewer test photos means each one swings the score more, which makes the score wo
 
 **And the honest label.** Is this really 80/20?
 
-```
+```text
    41 ÷ 202 = 0.2029...  =  20.3%
 ```
 
@@ -345,7 +349,7 @@ Close enough to call it 80/20, and you should say "roughly" when you do.
 
 You are building a school-bag classifier: **pencil case, water bottle, lunch box.** You only managed **14 photos of each** — 42 in total. 80/20, per class.
 
-```
+```text
    0.20 x 14 = 2.8   →  round UP  →  3 test
    14 - 3 = 11 train
 
@@ -355,7 +359,7 @@ You are building a school-bag classifier: **pencil case, water bottle, lunch box
 
 **Now the interesting part — do not label this 80/20.**
 
-```
+```text
    9 ÷ 42 = 0.2142...  =  21.4%
 ```
 
@@ -371,6 +375,8 @@ So your real split ratio is about **79 / 21**, not 80/20. Write *that*. It sound
 ---
 
 ## 🎲 What We Did In Class
+
+Two activities from the lesson: splitting cards by hand, then four cheating cards.
 
 ### Part 1 — The Split, Unplugged
 
@@ -391,7 +397,7 @@ So your real split ratio is about **79 / 21**, not 80/20. Write *that*. It sound
 
 Four cards were turned over one at a time. For each one, three questions:
 
-```
+```text
    1.  WHAT LEAKED?        what did the model effectively already see?
    2.  WHICH DIRECTION?    will the reported score be too high or too low?
    3.  WHAT'S THE FIX?     one sentence, something you could actually do
@@ -436,6 +442,8 @@ Here are the four cards, and the answers.
 
 ## 💬 Talk About It
 
+Three questions to chat about with a friend or a grown-up. Each has a hint.
+
 **1. "How would you test whether somebody can actually cook, rather than whether they can follow one recipe?"**
 
 > *Hint:* what is the "training set" of a cook? What would the sealed envelope be? (Somebody's kitchen you have never stood in, with ingredients you did not choose.)
@@ -451,6 +459,8 @@ Here are the four cards, and the answers.
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four mistakes that are easy to make. Each one shows the wrong way and the right way.
 
 ### Trick 1 — thinking you can just remember which photos not to train on
 
@@ -492,6 +502,8 @@ Here are the four cards, and the answers.
 
 ## 🌍 Where You've Seen This
 
+The same idea shows up in places you already know.
+
 - **Driving tests.** You practise on roads near the test centre. Then the examiner picks the route. If *you* picked the route, the licence would mean nothing.
 - **Past papers.** Your teacher gives you last year's paper to practise on, and sets a *different* one for the real exam. Same idea, exact same reason.
 - **Taste tests in supermarkets.** The person handing out samples is not the person who invented the recipe. If the inventor scored their own recipe, the score would be 10 out of 10, every time.
@@ -528,6 +540,8 @@ is the new tinted, badged box, with **data** and **evaluation** lit along the bo
 
 ## 🔑 Remember This
 
+The main points of the week, in one list.
+
 - A score only means something if the thing being scored **had never seen the questions.**
 - Split **before** you train. After training there is nothing left to hide, and picking six photos afterwards only changes what you *call* them.
 - **Training set** = the pile the model studies. **Test set** = the pile you hide, and open once, at the end.
@@ -540,6 +554,8 @@ is the new tinted, badged box, with **data** and **evaluation** lit along the bo
 ---
 
 ## 📓 New Words
+
+The four words you met this week.
 
 ![The four new words of Week 19](../figures/fig-w19-9-vocab-icons.svg)
 *Figure 19.9 — Four words, and one rule that ties them together.*
@@ -556,6 +572,8 @@ is the new tinted, badged box, with **data** and **evaluation** lit along the bo
 ---
 
 ## 📤 Your Homework
+
+This is your homework for the week, and how long each part takes.
 
 Go to **[Workbook — Week 19](../workbook/week-19.md)**.
 

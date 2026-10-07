@@ -116,7 +116,7 @@ get the object that this entire lesson is about.
 Read one group out of that figure slowly, because if you can read one group you can read any language
 model ever built:
 
-```
+```text
    CURRENT   NEXT      COUNT   OUT OF
    the       bus         4       6
              market      1       6
@@ -142,6 +142,7 @@ Run both checks and your table is almost certainly right. Run neither and it is 
 ### Idea 5 — next-word prediction, and why this counts as "a model"
 
 > **Next-word prediction** — given the words so far, guess which word comes next.
+>
 > **Language model** — any system that predicts likely next words. Your tally sheet is one. So is a
 > chatbot; it uses far bigger and cleverer machinery for the same job.
 
@@ -175,7 +176,11 @@ When your student types `I am going to the` and three suggestions appear, here i
 4. It sorted that group by count, biggest first.
 5. It printed the top three onto three keys.
 
-**No understanding. No meaning. No sentence plan.** A tally, sorted, top three shown. (Real keyboards add extras: many look at more than one word back and some use neural models. The bigram table is the right picture of the idea, not an exact copy of any phone.) The reason
+**No understanding. No meaning. No sentence plan.** A tally, sorted, top three shown.
+
+(Real keyboards add extras: many look at more than one word back and some use neural models. The bigram table is the right picture of the idea, not an exact copy of any phone.)
+
+The reason
 `shop` and `bus` and `park` come up after `the` is not that your phone knows anything about shops. It
 is that in the text it counted, `the shop` happened 812 times and `the aardvark` happened almost never.
 
@@ -195,11 +200,17 @@ Two extra details worth having, because your student will ask:
 **Misconception 1: "the machine understands the sentence, and the table is just a shortcut."**
 
 This is the big one, and it is very hard to shake because the output is so convincing. The cure is not
-argument, it is the tally sheet. Have your student point at the row that produced a word. There is
-nothing else there. No meaning is stored anywhere on the page. If they say "but a real chatbot has more
+argument, it is the tally sheet.
+
+Have your student point at the row that produced a word. There is nothing else there. No meaning is
+stored anywhere on the page.
+
+If they say "but a real chatbot has more
 than a table" — the honest answer is: it has a much better way of storing and blending the counts, and
 it looks back at thousands of words instead of one, and it still has no step anywhere in it that reliably checks
-what is true. Concede the scale and machinery gap loudly. Do not concede understanding.
+what is true.
+
+Concede the scale and machinery gap loudly. Do not concede understanding.
 
 **Misconception 2: "a bigger count means a better word."**
 
@@ -211,11 +222,13 @@ measures how often, never how good.**
 ### How deep to go, and where to stop
 
 **Go this deep:**
+
 - Tokens → pairs → grouped table → look up a group → read off the counts.
 - Both arithmetic checks, done for real, on a real tally the student made.
 - The keyboard explanation, in the student's own words, with no prompting.
 
 **Stop before all of these — they are later weeks:**
+
 - Generating sentences, dice, randomness, greedy versus sampling → **Week 29**. If a student starts
   making sentences early, that is wonderful; write it on the board as "next week" and move on.
 - Hallucination and fluent-but-false → **Week 29**. Do not spoil it. The trap only bites if they walk
@@ -264,6 +277,8 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 
 ## 🧰 Prep Checklist
 
+This section lists what to print, practise and test before the lesson, and what to do if something fails.
+
 ### 15 minutes, the night before
 
 - [ ] **Print two sheets** from the Answer Key at the bottom of this file: the **Bus Corpus sheet**
@@ -301,6 +316,8 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This is the plan for the whole lesson. Each step gives you words to say, questions to ask and things to do.
 
 | # | Segment | Minutes | Running total |
 |---|---|---|---|
@@ -600,6 +617,8 @@ Let them look. There isn't.
 
 ## 🎲 The Activity, In Full
 
+This section gives the whole hand-tally activity in one place: setup, rules, steps and what finished looks like.
+
 ### Tally a Paragraph by Hand
 
 **What it is:** the student converts a 40-token text into a complete next-word table using nothing but
@@ -635,7 +654,9 @@ checks, then explains a phone keyboard using what they just built.
 
 ### The corpus
 
-```
+The student tallies this text:
+
+```text
    I take the bus to the market. Amma takes the bus to the shop.
    The bus goes to town. My bus is very late.
    Amma and I run to the bus. I like it.
@@ -643,7 +664,7 @@ checks, then explains a phone keyboard using what they just built.
 
 Tokenizing rules, printed at the top of the corpus sheet:
 
-```
+```text
    1. Lowercase everything.
    2. The full stop is its own token.
    3. There is no other punctuation in this text.
@@ -661,6 +682,7 @@ row. One mark. Slide to token 2. Repeat 38 more times.
 prediction. If it is 39, say so out loud. If it is not, go to step 4.
 
 **Step 4 (2 min, only if needed) — hunt the error.** Two techniques, in this order:
+
 - Walk the five sentence joins first: tokens 8→9, 16→17, 22→23, 28→29, 36→37. Missed joins are the
   commonest error by a distance.
 - Then check each group against the word's frequency: `the` must have 6, `.` must have 5, `bus` 5,
@@ -688,6 +710,7 @@ which is a nine-minute job instead of a twelve-minute one, and the resulting tab
 group with three different followers, so nothing conceptually is lost.
 
 Two further supports, use either or both:
+
 - **Pre-rule the rows.** Hand them a tally sheet with `the`, `bus`, `to`, `i`, `amma` and `.` already
   written in the CURRENT column. Deciding *whether to start a new row* is the hardest micro-skill in
   this activity, and removing it lets them practise the marking.
@@ -714,6 +737,8 @@ Three genuine extensions, in increasing order of difficulty:
 ---
 
 ## ❓ Questions Students Ask This Week
+
+These are the questions your student is likely to ask, each with an answer you can give.
 
 **1. "Does my phone store every message I've ever sent?"**
 
@@ -787,6 +812,8 @@ distantly like it. The same table? No evidence at all. When somebody tells you c
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the common problems, why they happen and what to do right now.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student skips the pairs that cross a full stop and lands on 34 marks instead of 39 | The full stop looks like a wall, not a token. Every human reader has been trained since infancy to stop there | Do not just tell them. Have them walk the five joins with a finger — 8→9, 16→17, 22→23, 28→29, 36→37 — and count how many marks they add. Five. Then write "pairs cross full stops" on the board and make them copy it |
@@ -801,6 +828,8 @@ distantly like it. The same table? No evidence at all. When somebody tells you c
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to change the lesson if your student is struggling, flying or not engaging.
 
 ### If they are struggling
 
@@ -863,7 +892,7 @@ worth a fight.
 
 ## ✅ Assessing Understanding
 
-Three checks, last five minutes, exact wording given. Do all three; each takes about ninety seconds.
+This section gives three short checks for the last five minutes, with exact wording. Do all three; each takes about ninety seconds.
 
 ### Check 1 — read the table
 
@@ -917,6 +946,8 @@ the answer. Prompt: "Where did the guess come from? What did somebody have to do
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to introduce the homework and lists what the workbook asks for.
 
 **Say this:**
 
@@ -974,9 +1005,13 @@ words — let them switch to something more repetitive, which is a real and usef
 
 ## 🔑 Answer Key
 
+This is for you only. Never hand it to your student. It holds the sheets to print and the answers to the workbook.
+
 ### Part A — the Bus Corpus sheet (print this)
 
-```
+Print this sheet for the student:
+
+```text
    MY TOKENIZING RULES
    1. Lowercase everything.
    2. The full stop is its own token.
@@ -1019,7 +1054,9 @@ Check: 6 + 6 + 5 + 4 + 3 + 2 = 26, plus 14 words appearing once = **40 tokens** 
 
 ### Part C — all 39 bigrams, in order
 
-```
+Here are all the pairs, in the order a left-to-right walk finds them:
+
+```text
     1  i -> take            14  the -> shop         27  late -> .
     2  take -> the          15  shop -> .           28  . -> amma
     3  the -> bus           16  . -> the            29  amma -> and
@@ -1035,7 +1072,9 @@ Check: 6 + 6 + 5 + 4 + 3 + 2 = 26, plus 14 words appearing once = **40 tokens** 
    13  to -> the            26  very -> late        39  it -> .
 ```
 
-**39 pairs.** ✓ The five joins that cross a full stop are pairs 8, 16, 22, 28 and 36. Those are the
+**39 pairs.** ✓
+
+The five joins that cross a full stop are pairs 8, 16, 22, 28 and 36. Those are the
 ones students miss.
 
 ### Part D — the complete next-word table (all 20 groups)
@@ -1087,7 +1126,9 @@ marks and `.` appears 6 times, but one of those is token 40 with nothing after i
 
 ### Part E — the blank Tally Sheet (print this)
 
-```
+Print this sheet for the student:
+
+```text
    TEXT: ______________________________   TOKENS: ____   PREDICTION: ____ - 1 = ____ pairs
 
    ┌──────────────────┬──────────────────┬────────────────────────────┬───────┬────────┐
@@ -1183,7 +1224,7 @@ and the *checks*.
 
 **The reference corpus** (a match report, 60 tokens, 8 sentences):
 
-```
+```text
    India won the toss and chose to bat. Rohit hit the first ball for four.
    He hit the next ball for six. The crowd stood up and cheered.
    India scored two hundred runs. Australia needed two hundred and one runs to win.
@@ -1192,7 +1233,9 @@ and the *checks*.
 
 **Tokens, numbered:**
 
-```
+The tokens, in order:
+
+```text
     1 india      13 first      25 .          37 runs       49 they
     2 won        14 ball       26 the        38 .          50 lost
     3 the        15 for        27 crowd      39 australia  51 by
@@ -1345,6 +1388,8 @@ through, because that is the week's main idea.
 
 ## 🔮 Next Week Preview
 
+This section says where next week goes and what to prepare now.
+
 Next week the table stops being a record and starts being a machine. Your student takes this exact
 next-word table, adds a six-sided die, and generates sentences — real sentences, in order, one word at
 a time, with every roll written down so you can check the whole thing afterwards. They will produce one
@@ -1362,8 +1407,6 @@ surprise: a row that says **3** is the same thing as **three paper slips**.
 
 That is the whole trick of next week. Tally marks are hard to pick from fairly; slips in a bag are easy.
 So we turn each row group into a bag, one slip per tally mark, and let a die choose the slip.
-
-
 
 **Prep early:** you need **one ordinary six-sided die**. A board-game die is perfect; a dice app on a
 phone works but is less satisfying, and paper slips in a cup work fine too. Second, and more important:

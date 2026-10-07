@@ -21,7 +21,9 @@
 
 I have built something and I want to show off.
 
-I have invented a machine that tells you whether it is raining outside, and it is right **one hundred percent of the time**. Not ninety. Not ninety-nine. A hundred. I have tested it on the last thirty days and it has never once been wrong.
+I have invented a machine that tells you whether it is raining outside, and it is right **one hundred percent of the time**. Not ninety. Not ninety-nine. A hundred.
+
+I have tested it on the last thirty days and it has never once been wrong.
 
 How much do you reckon that's worth?
 
@@ -39,12 +41,14 @@ You've got it, haven't you.
 
 **The umbrella only gets wet *after* I've already been out in the rain.**
 
-So picture the actual moment I need this machine. I'm standing at the front door. Coat, or no coat? And at that exact moment my umbrella is hanging on its hook, **completely dry** — because I haven't been out yet. My hundred-percent machine has nothing at all to tell me. It is worth exactly nothing.
+So picture the actual moment I need this machine. I'm standing at the front door. Coat, or no coat?
+
+At that exact moment my umbrella is hanging on its hook, **completely dry**, because I haven't been out yet. My hundred-percent machine has nothing at all to tell me. It is worth exactly nothing.
 
 ![The three-second leak test](../figures/fig-w12-5-three-second-test.svg)
 *Figure 12.1 — Stand at the moment you need the answer and ask one question: do I have this value yet?*
 
-Now here is the bit I want you to carry for the rest of the year, and it feels upside-down the first time:
+Now here is the bit to carry for the rest of the year. It feels upside-down the first time:
 
 > **The 100% was not a warning that something *might* be wrong. It was the actual symptom.**
 
@@ -58,13 +62,15 @@ A feature like my wet umbrella has a name:
 
 ## 🧠 The Big Idea
 
+This section gives you the tools to score a feature: the baseline, counting, and the leak test.
+
 ### 1. The baseline — the number you must work out before anything else
 
 **The plain explanation.** Before you get impressed by any score, you need to know one thing: **how well would you do knowing absolutely nothing?**
 
 **The analogy.** Imagine a test where every question is multiple choice with the same four options. Before you celebrate scoring 30%, notice that closing your eyes and picking C every time gets you 25%. Your 30% is worth five points, not thirty.
 
-**The concrete version.** Here is a bowl of fruit written down as a table. Twelve rows, because twelve pieces of fruit.
+**The concrete version.** Here is a bowl of fruit written down as a table. It has twelve rows, because there are twelve pieces of fruit.
 
 | id | mass_g | length_cm | colour | quadrant | sticker_says | **fruit** |
 |---|---|---|---|---|---|---|
@@ -91,15 +97,19 @@ Say the same thing every time. Say "apple" twelve times. **You get 4 right out o
 
 **That number is your ruler.** A feature that cannot beat the baseline is worth **nothing at all** — however sensible it sounded, and however long it took to measure.
 
-**Why it goes first, in a box, before any other work happens.** In a minute you're going to score a feature and it will come out at 58%. And 58 out of 100 *feels* alright, doesn't it? It's a pass. It's over half. But 58 only means something sitting next to 33.3.
+**Why it goes first, in a box, before any other work happens.** In a minute you're going to score a feature and it will come out at 58%.
+
+58 out of 100 *feels* alright, doesn't it? It's a pass. It's over half. But 58 only means something sitting next to 33.3.
 
 > **⚠️ Watch out:** **build the ruler before you measure anything with it.** If you score first and compute the baseline afterwards, you'll already have decided how you feel about the number.
 
-**One baseline that will shock you.** Suppose 95 of your 100 emails are ham and 5 are spam. The baseline is **95%** — say "ham" to everything and you're right 95 times out of 100. Which means a spam detector scoring **94%** is *worse than a machine that has never looked at an email in its life.* Hold on to that; it comes back in a big way in Week 20.
+**One baseline that will shock you.** Suppose 95 of your 100 emails are ham and 5 are spam. The baseline is **95%**. Say "ham" to everything and you're right 95 times out of 100.
+
+Which means a spam detector scoring **94%** is *worse than a machine that has never looked at an email in its life.* Hold on to that; it comes back in a big way in Week 20.
 
 ### 2. How to score one feature: count, don't guess
 
-**The plain explanation.** There is a method, it has four steps, and there is no cleverness in it anywhere.
+**The plain explanation.** The method has four steps. There is no cleverness in it anywhere.
 
 1. **Group the rows** by what that feature says.
 2. **In each group, look at the labels and pick whichever one shows up most.** That's the best guess you can make for that whole group.
@@ -115,7 +125,7 @@ Say the same thing every time. Say "apple" twelve times. **You get 4 right out o
 | yellow | 0 | 0 | 3 | banana | 3 of 3 |
 | green | 1 | 0 | 1 | apple *(tie — pick one, say so)* | 1 of 2 |
 
-```
+```text
 3 + 4 + 3 + 1 = 11
 11 out of 12 = 11 / 12 = 0.9166... = 91.7%
 ```
@@ -133,7 +143,7 @@ Say the same thing every time. Say "apple" twelve times. **You get 4 right out o
 
 **The concrete version — scoring `length_cm`.** Sort the twelve lengths and look for a gap:
 
-```
+```text
 7, 7, 8, 8, 8, 8, 8, 9,        18, 19, 20, 21
                         ^
               an enormous empty gap between 9 and 18
@@ -147,7 +157,9 @@ That gap is doing all the work. Rule: `IF length_cm >= 15 THEN banana, ELSE appl
 | 1, 2, 3, 4 (7–9 cm) | apple | 4 of 4 |
 | 5, 6, 7, 8 (7–8 cm) | apple | 0 of 4 |
 
-**8 out of 12 = 66.7%.** Above the line, so it's useful — but look at the *shape* of what it does. It is a **perfect banana detector**: on the question "banana or not banana?" it scores 12 out of 12. And it is completely hopeless at telling an apple from an orange. That is a very common and very real shape for a feature to have.
+**8 out of 12 = 66.7%.** Above the line, so it's useful — but look at the *shape* of what it does.
+
+It is a **perfect banana detector**: on the question "banana or not banana?" it scores 12 out of 12. And it is completely hopeless at telling an apple from an orange. That is a very common and very real shape for a feature to have.
 
 **Now `mass_g`, which is messier.** Sort by class first:
 
@@ -157,7 +169,7 @@ That gap is doing all the work. Rule: `IF length_cm >= 15 THEN banana, ELSE appl
 
 Bananas separate cleanly. **Apples and oranges overlap between 185 and 190.** Best three-band rule:
 
-```
+```text
 IF mass < 138        THEN banana
 ELSE IF mass <= 187  THEN apple
 ELSE                      orange
@@ -180,7 +192,9 @@ ELSE                      orange
 
 **10 out of 12 = 83.3%.**
 
-Look at rows 4 and 6: one heavy apple and one light orange, each sitting in the other's territory. **No threshold can fix both.** Move the boundary up and you fix row 4 but break another one. Moving it can shuffle which row you get wrong, but it can never fix both. That is not a mistake in your maths — real measurements overlap constantly.
+Look at rows 4 and 6: one heavy apple and one light orange, each sitting in the other's territory.
+
+**No threshold can fix both.** Move the boundary up and you fix row 4 but break another one. Moving it can shuffle which row you get wrong, but it can never fix both. That is not a mistake in your maths — real measurements overlap constantly.
 
 > **💡 Try this:** try to get `mass_g` to 12 out of 12 by nudging the threshold. Genuinely try. You'll find it isn't stubbornness on your part — it is impossible, and finding that out with your own pencil is worth more than being told.
 
@@ -205,12 +219,14 @@ Look at rows 4 and 6: one heavy apple and one light orange, each sitting in the 
 | bottom-left | 1 | 1 | 1 | any | 1 of 3 |
 | bottom-right | 1 | 1 | 1 | any | 1 of 3 |
 
-```
+```text
 1 + 1 + 1 + 1 = 4
 4 out of 12 = 33.3%
 ```
 
-**Exactly on the line.** Not near it. *On* it. Knowing the quadrant is worth precisely as much as not asking the question. Somebody went round that bowl writing down which quarter every single fruit was in, and they could have stayed in bed.
+**Exactly on the line.** Not near it. *On* it. Knowing the quadrant is worth precisely as much as not asking the question.
+
+Somebody went round that bowl writing down which quarter every single fruit was in, and they could have stayed in bed.
 
 Here's the important part: **before you counted, did `quadrant` sound stupid?** It didn't to me. Maybe the heavy fruit sank to one side. It sounded like it might be *something*.
 
@@ -220,7 +236,7 @@ Here's the important part: **before you counted, did `quadrant` sound stupid?** 
 
 ### 5. The three-second leak test
 
-**The plain explanation.** In our fruit bowl the leak is `sticker_says` — the supermarket sticker reading APPLE.
+**The plain explanation.** In our fruit bowl the leak is `sticker_says`, the supermarket sticker reading APPLE. Here is its score.
 
 | sticker | apples | oranges | bananas | gets right |
 |---|---|---|---|---|
@@ -255,6 +271,8 @@ That is the whole lesson in one sentence: **the score didn't tell us this featur
 
 ## 🔍 Worked Examples
 
+These three examples use the tools from The Big Idea on new tables: a canteen, a cricket team and a school test.
+
 ### Worked Example 1 — The school canteen (food)
 
 The canteen wants to predict, at 9 a.m., whether they'll run out of the hot lunch.
@@ -268,7 +286,7 @@ The canteen wants to predict, at 9 a.m., whether they'll run out of the hot lunc
 
 **Step 1 — the baseline, first, always.**
 
-```
+```text
 Most common label = "no", 14 days out of 20
 Baseline = 14/20 = 0.70 = 70%
 ```
@@ -282,7 +300,7 @@ Write it in a box. **BASELINE = 14/20 = 70%.**
 | yes | 5 | 1 | ran out = yes | 5 of 6 |
 | no | 1 | 13 | ran out = no | 13 of 14 |
 
-```
+```text
 5 + 13 = 18
 18 out of 20 = 90.0%
 90.0 - 70.0 = +20.0 percentage points above the baseline
@@ -300,7 +318,7 @@ Run the three-second test. **It is 9 a.m. Is the 2 p.m. bin full yet?** No — i
 |---|---|---|---|---|
 | yes | 6 | 14 | no | 14 of 20 |
 
-```
+```text
 14 out of 20 = 70.0%
 70.0 - 70.0 = 0.0
 ```
@@ -326,7 +344,7 @@ Run the three-second test. **It is 9 a.m. Is the 2 p.m. bin full yet?** No — i
 
 **Step 1 — baseline.** Most common label is "no", 6 of 10.
 
-```
+```text
 Baseline = 6/10 = 60%
 ```
 
@@ -347,7 +365,7 @@ No. It landed **exactly** on the baseline. Keeping it is the same as keeping a c
 
 **And a trap worth knowing.** Suppose somebody writes this rule for `we_batted_first`:
 
-```
+```text
 IF we_batted_first = yes THEN we_won, ELSE we_won
 ```
 
@@ -366,7 +384,7 @@ It is **Monday**. You want a prediction about **Friday**. That date difference i
 | yes | 13 |
 | no | 7 |
 
-```
+```text
 Baseline = 13/20 = 65%
 ```
 
@@ -392,6 +410,8 @@ Baseline = 13/20 = 65%
 
 ## 🎲 What We Did In Class
 
+This section shows the fruit bowl activity from class, so you can repeat it at home.
+
 ### The Fruit Bowl Scoreboard
 
 ![The fruit bowl activity setup](../figures/fig-w12-6-fruit-bowl-setup.svg)
@@ -408,7 +428,7 @@ Baseline = 13/20 = 65%
 
 **The baseline box:**
 
-```
+```text
 ┌────────────────────────────┐
 │  BASELINE = 4/12 = 33.3%   │
 └────────────────────────────┘
@@ -442,7 +462,7 @@ Baseline = 13/20 = 65%
 
 **Two honest features beat all five.** Chain them, first match wins:
 
-```
+```text
 RULE 1: IF length_cm >= 15      THEN banana
 RULE 2: ELSE IF colour = orange THEN orange
 RULE 3: OTHERWISE                    apple
@@ -464,6 +484,8 @@ Score it on all twelve rows:
 
 ## 💬 Talk About It
 
+These three questions are for talking over with someone at home.
+
 **1. "I've built a machine that predicts whether it's raining, and it's right 100% of the time. Should you be impressed?"**
 *Hint for you:* let them be impressed first, then reveal the wet umbrella. The point isn't that they got tricked — it's that **100% should make you suspicious rather than pleased**, and almost nobody's first instinct works that way.
 
@@ -476,6 +498,8 @@ Score it on all twelve rows:
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four wrong ideas that people believe about scores. Each one is shown with the right idea next to it.
 
 ### Trick 1 — "100% is the best possible result"
 
@@ -518,6 +542,8 @@ Two real costs to keeping junk columns. They **hide** the good features, because
 
 ## 🌍 Where You've Seen This
 
+These are places in real life where baselines and leaks matter.
+
 1. **A "100% accurate" claim in an advert.** Now you know the first question to ask, and it isn't "how?" — it's "what was the baseline, and would you have that value in advance?"
 2. **Weather apps.** In a place where it rains 5 days a year, an app that says "dry" every single day is right 98.6% of the time. Impressive number. Useless app.
 3. **Your report card comments.** "Attendance 96%" is a feature you have all term. "Final exam grade" is a leak if you're trying to predict the final exam grade.
@@ -555,6 +581,8 @@ have not happened yet. Only two of the six threads at the bottom are lit this we
 
 ## 🔑 Remember This
 
+These are the main points of the week.
+
 - **Compute the baseline first, in a box, before you score anything.** Most common label ÷ total rows. That is your ruler.
 - **Score a feature by counting:** group the rows, take the commonest label in each group, count the hits, divide.
 - **Above the line = useful. On the line = useless, cut it. 100% = go looking for a leak.**
@@ -566,6 +594,8 @@ have not happened yet. Only two of the six threads at the bottom are lit this we
 ---
 
 ## 📓 New Words
+
+These are the words from this week.
 
 ![Week 12 words as pictures](../figures/fig-w12-8-vocab-icons.svg)
 *Figure 12.8 — This week's five words, drawn.*

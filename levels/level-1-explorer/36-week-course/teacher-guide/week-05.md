@@ -20,6 +20,8 @@
 
 ## 🎯 Lesson Objectives
 
+These are the four things to check for by the end of the lesson.
+
 By the end of this lesson the student can:
 
 1. **Decide a column's data type** by asking whether averaging its values would mean anything — and correctly catch at least one column that is made of digits but is not a number.
@@ -195,6 +197,8 @@ If they cannot remember which thread it was, that costs nothing.
 
 ## 🧰 Prep Checklist
 
+This section lists what to get ready, and what to do if something is missing.
+
 ### 15 minutes the night before
 
 - [ ] **Print the Crime Scene Table and the Workbook.** The Crime Scene Table is *not* in the workbook: copy it from "The table they get" in the activity section below (or print it plain). The student's copy has **no shading and no numbered pins**; Figure 5.6 is the teacher copy. Check that before you hand it over; handing them the teacher copy ends the lesson instantly. Then print the whole of `workbook/week-05.md` for homework, with the **✅ Answers** section at the bottom removed or folded under, so the student does the page before looking.
@@ -234,6 +238,8 @@ If they cannot remember which thread it was, that costs nothing.
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the plan for the whole lesson, with the words to say at each step.
+
 | Minutes | Segment | What happens |
 |---|---|---|
 | 0–8 | 🪝 **Hook** — "This person sleeps fifteen hours a night" | An impossible average, from a table they haven't seen yet. |
@@ -243,6 +249,7 @@ If they cannot remember which thread it was, that costs nothing.
 | 60–70 | 🔑 **Wrap & Assign** | Controlled vocabulary, takeaways, homework. |
 
 **Running 60 minutes?** Cut the Worked Example to 8 minutes (do the dog table's duplicate and impossible value only) and the Wrap to 6. Do not cut the activity — the outlier argument lives there.
+
 **Running 75?** Add the extension questions from Differentiation, or have the student plant faults in a fresh table for *you* to find.
 
 ---
@@ -251,7 +258,7 @@ If they cannot remember which thread it was, that costs nothing.
 
 **Do this:** reveal the board. It says, and only says:
 
-```
+```text
 average sleep = 15.0 hours per night
 ```
 
@@ -273,7 +280,7 @@ Let them answer. It is possible — a very ill person, or a teenager after an ex
 
 **Do this:** write these two numbers under the first one:
 
-```
+```text
 average sleep      = 15.0 hours per night
 average bag weight = 3.42 kg
 ```
@@ -472,7 +479,7 @@ Full instructions below. In brief: the student gets a printed twelve-row table w
 
 **Do this:** the controlled vocabulary, written properly. Have them write, at the top of their own Week 4 homework table, the allowed values for their category column. Actual example, actual list. It should look like:
 
-```
+```text
 ALLOWED VALUES for meal_type:  breakfast · lunch · dinner · snack
 Nothing else goes in this column. Ever.
 ```
@@ -492,6 +499,8 @@ Then assign the homework as written below.
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives everything you need to run the Crime Scene Table: the sheet, the rules, the timing and the discussion.
 
 ### Crime Scene Table
 
@@ -532,7 +541,7 @@ One row = one school day. Twelve rows, Mondays, Wednesdays and Fridays through A
 
 Legal ranges, written on the board before they start — they need these to judge "impossible":
 
-```
+```text
 sleep_h     0 to 16
 bag_kg      0.1 to 12
 screen_min  0 to 1440
@@ -589,7 +598,7 @@ If they hesitate or refuse — praise it immediately and hard. That hesitation i
 
 They should write, at the top of the sheet:
 
-```
+```text
 ALLOWED VALUES for day:  Mon · Wed · Fri
 Nothing else goes in this column.
 ```
@@ -623,6 +632,8 @@ Marking points: it must be an explicit written list, it must be short, and it mu
 
 ## ❓ Questions Students Ask This Week
 
+These are questions students are likely to ask, with answers you can give.
+
 **"Why can't we just fill the blank with the average? It's the closest we can get."**
 It is a real technique and professionals do use it on very large datasets. We don't, for two reasons. First, on a twelve-row table you'd be inventing a meaningful fraction of your own data. Second, and worse, once it's filled in nothing on the page marks it as invented — three weeks later it looks exactly as real as the measured numbers. A visible blank keeps you honest. If you ever do fill a gap, the rule is: log it, and mark it.
 
@@ -648,6 +659,8 @@ No. Not at any scale that matters. Anything collected by humans over time drifts
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual trouble spots and what to do the moment each one happens.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student crosses out the 480 in three seconds flat and moves on | It looks weird, and crossing things out feels productive | Don't stop them mid-hunt. Save it for the discussion and run the "cross it out then" silence. The mistake is far more useful once they've committed to it. |
@@ -662,6 +675,8 @@ No. Not at any scale that matters. Anything collected by humans over time drifts
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to change the lesson for a student who is struggling, flying or not engaging.
 
 ### If they are struggling
 
@@ -702,6 +717,7 @@ Do these in the last five minutes. Exact wording below.
 > "I've got a column called `bus_route` full of numbers, and a column called `journey_minutes` full of numbers. I average both. Which answer is meaningless, and why?"
 
 **A good answer looks like:** "`bus_route` — because route 7 plus route 12 isn't route 19, it's a different bus. The numbers are names, not amounts."
+
 **A weak answer looks like:** "The bus one because buses aren't numbers." Push once: "But it *is* written as a number. What's the actual test?" You want them to reach for addition.
 
 ### Check 2 — Name the fault and the fix (90 seconds)
@@ -714,6 +730,7 @@ Read these four aloud, one at a time. For each: **what kind of fault, and what d
 4. "The weight box for row 5 is empty." → **Missing.** Leave blank, add a note. **Never 0.**
 
 **A good answer:** three or four correct, with the fix, not just the name.
+
 **A weak answer:** naming the fault but not the fix, or saying "delete the row" for the missing value.
 
 ### Check 3 — The trap (60 seconds)
@@ -721,6 +738,7 @@ Read these four aloud, one at a time. For each: **what kind of fault, and what d
 > "Your screen-time column reads 95, 120, 110, 105, 150, and 480. Is the 480 a fault? Tell me why or why not, and tell me what you'd do."
 
 **A good answer looks like:** "Not a fault — 480 minutes is eight hours, which is possible. It's an outlier. Keep it and write a note saying what happened that day."
+
 **A weak answer looks like:** "Yes, delete it." Ask: "What's the legal range for screen minutes?" Then: "Is 480 inside it?" Let them get there.
 
 ### Mastery scale for this week
@@ -736,6 +754,8 @@ Read these four aloud, one at a time. For each: **what kind of fault, and what d
 ---
 
 ## 📤 Homework to Assign
+
+This section says what to assign, how to say it, and what to check when it comes back.
 
 **Workbook Week 5, the whole workbook: Warm-Up (W1–W5), Practice Set A (A1–A6), Practice Set B (B1–B5), Puzzle of the Week (the Pizza Order Pad), Think Deeper (T1–T2), Build It (the fault log, run on their own table), Draw It, and Self-Check.**
 **Time: 45–60 minutes across the week, including continued data collection.**
@@ -763,6 +783,8 @@ Read these four aloud, one at a time. For each: **what kind of fault, and what d
 ---
 
 ## 🔑 Answer Key
+
+This section holds the answers for the lesson questions, the activity and every workbook page. Keep it away from the student.
 
 ### Lesson questions
 
@@ -871,9 +893,9 @@ Note what happened: cleaning moved the screen average *up* slightly, and the out
 
 ### Activity — the controlled vocabulary
 
-Full credit:
+Full credit looks like this:
 
-```
+```text
 ALLOWED VALUES for day:  Mon · Wed · Fri
 Nothing else may be typed in this column.
 ```
@@ -1070,6 +1092,8 @@ No right answers; it is the student's own rating. Read it for patterns. A 😕 o
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week needs from you before the lesson.
 
 Next week is a lab, and we open a computer for the first time. The student finishes their thirty-row table in Google Sheets, computes two averages with a real formula, and then immediately has to write down what those averages *are not* evidence for. Then we interrogate a real dataset off a real web page with five questions — who collected it, from whom, when, how, and with whose permission — writing "unknown" every time the page won't say, which will be more often than they expect. They finish by writing a seven-line data card for their own dataset and reading it out loud.
 

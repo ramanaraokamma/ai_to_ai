@@ -140,7 +140,9 @@ Under **trigrams**, follow it through:
   three-way tie**, broken by whichever appeared first in the corpus: `market`.
 - Context `(the, market)` occurs once, followed by `.`. Forced.
 
-Output: **`the bus to the market .`** — and it *ends* (because our rule is to stop at the first full stop). One extra word of memory broke the loop on the way there. If you let it run past the full stop it carries on from `market .` to `amma` and circles the same route again.
+Output: **`the bus to the market .`** — and it *ends* (because our rule is to stop at the first full stop). One extra word of memory broke the loop on the way there.
+
+If you let it run past the full stop it carries on from `market .` to `amma` and circles the same route again.
 
 So more context genuinely fixes forgetting and loops. Now the sting, which is the honest part:
 
@@ -254,6 +256,8 @@ the threads; the map is orientation, never assessment.
 
 ## 🧰 Prep Checklist
 
+Use this list to get ready. It covers the night before, the day itself, and what to do if something fails.
+
 ### 25 minutes, the night before
 
 - [ ] **Open scratch.mit.edu on the actual device** you will use. Click **Create**. Check the editor loads
@@ -300,6 +304,8 @@ the threads; the map is orientation, never assessment.
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson. Each segment lists what to say, ask and do.
 
 | # | Segment | Minutes | Running total |
 |---|---|---|---|
@@ -458,7 +464,9 @@ Scratch.
 >
 > Green flag. Type something. It should repeat your words back at you."
 
-```
+This is the first stack to build.
+
+```text
    when green flag clicked
      ask [What do you want to know?] and wait
      say (answer) for (2) seconds
@@ -485,7 +493,9 @@ Here is the target stack. Build it a block at a time, saying each line as you pl
 ![The ask / compare / say loop](../figures/fig-w30-2-scratch-blocks.svg)
 *Figure 30.5 — The finished block stack. Grey and red outlines are Control blocks that wrap what sits inside them.*
 
-```
+The same stack, written out as text:
+
+```text
    when green flag clicked
 
      delete all of [triggers v]
@@ -558,7 +568,9 @@ Full instructions in the next section. Lesson flow:
 
 **Minutes 0–5 — stage 3, the fallback.** One `if` block, and a sentence they write themselves.
 
-```
+This is the block to add:
+
+```text
      if <(matched) = (0)> then
        say [I don't know that one - try asking about toppings, price, delivery or opening time.] for (3) seconds
      end
@@ -773,6 +785,8 @@ Two further supports:
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions students are likely to ask, each with an honest answer you can give.
+
 **1. "Is my Scratch bot AI?"**
 
 It depends entirely on what you mean, and the honest answer is worth more than a yes or no. If AI means
@@ -849,6 +863,8 @@ piece of thinking.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table when something breaks in the room. Find the symptom, then do what the last column says.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | A block ends up inside a wrapper instead of after it, and the bot behaves impossibly | Scratch's drop zones are small, and `if` and `repeat` blocks look similar when collapsed | Check nesting before anything else. Two specifics: `change i by 1` must be inside the repeat-until but outside the if. The fallback `if` must be inside the forever but after the repeat-until. Drag the suspect block out to a blank area and re-drop it — that is usually faster than squinting |
@@ -865,6 +881,8 @@ piece of thinking.
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to change the lesson for a student who is struggling, flying or not engaging.
 
 ### If they are struggling
 
@@ -979,6 +997,8 @@ with 'Error'? And what do they *not* know with 'Interesting question'?"
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to assign the homework, the workbook layout, and a suggested split.
 
 **Say this:**
 
@@ -1151,7 +1171,9 @@ repeat bug) means set Practice Set B5 and the Puzzle again before Week 31.
 
 ### Part A — the complete Scratch project
 
-```
+This is the finished project, with the nesting marked in the arrows.
+
+```text
    LISTS:      triggers, replies          (Variables > Make a List)
    VARIABLES:  i, matched                 (Variables > Make a Variable)
    Untick all four checkboxes so they do not cover the stage.
@@ -1219,7 +1241,9 @@ checked forever. Fix: move it out of the if, still inside the repeat.
 
 ### Part C — the Trigger Planning Sheet (print this)
 
-```
+This is the blank sheet the student fills in.
+
+```text
    MY BOT'S TOPIC: ______________________________     BOT'S NAME: ______________
 
    Rules:  specific triggers ABOVE general ones.  No trigger shorter than 4 letters.
@@ -1249,9 +1273,9 @@ checked forever. Fix: move it out of the if, still inside the repeat.
 
 ### Part D — the Ten-Question Log, with a fully worked reference set
 
-Print the blank version:
+Print the blank version. It is the format of the log:
 
-```
+```text
    ┌────┬──────────────────────────┬──────────────────────────────┬────────┬─────────┬──────────────┐
    │ #  │ I TYPED                  │ THE BOT SAID (exact words)   │ MATCH? │ SENSIBLE│ LABEL        │
    ├────┼──────────────────────────┼──────────────────────────────┼────────┼─────────┼──────────────┤
@@ -1337,7 +1361,9 @@ The four groups needed:
 
 **Greedy under trigrams, starting from `the bus`:**
 
-```
+Here is the trace, one step per line.
+
+```text
    (the, bus)     -> to      (2, the biggest)
    (bus, to)      -> the     (forced)
    (to, the)      -> market  (a 1-1-1 tie, broken by first appearance in the corpus)
@@ -1351,7 +1377,9 @@ word of memory broke the loop** before the full stop. That is a genuine, checkab
 
 **Does it fix the hallucination? No.** Trace `amma takes the bus to the market .` under trigrams:
 
-```
+Here is the trace, with the reason for each step on the right.
+
+```text
    (amma, takes)  -> the      forced      ("amma takes" occurs once, at tokens 9-10)
    (takes, the)   -> bus      forced      (tokens 10-11)
    (the, bus)     -> to       2 of 4
@@ -1406,6 +1434,8 @@ wearing a different hat, and it is the honest reason nobody builds language mode
 ---
 
 ## 🔮 Next Week Preview
+
+This section says where the course goes next and what to prepare for it.
 
 Term 4 turns its second corner next week, and the question changes from *how does it work* to *who does
 it work for*. Your student has spent three weeks building models out of data they chose themselves — a

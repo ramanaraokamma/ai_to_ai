@@ -21,7 +21,7 @@
 
 Think about somebody you know really well. Your best friend. Someone in your family. Don't say who.
 
-Now: if that person walked past the window right now — from behind, in a coat, in the rain, thirty metres away — would you know it was them?
+Now imagine this. If that person walked past the window right now — from behind, in a coat, in the rain, thirty metres away — would you know it was them?
 
 Yes. Of course yes.
 
@@ -51,6 +51,8 @@ That is what happens inside a machine when it is trained. The examples go in. So
 ---
 
 ## 🧠 The Big Idea
+
+This section explains what training is, why the photos are put away afterwards, and how to plan a good set of photos.
 
 ### 1. Four boxes: examples in, model out
 
@@ -84,7 +86,7 @@ That is the single most useful practical sentence in this week, and it is worth 
 
 You don't have to take anyone's word for it. Do the sums:
 
-```
+```text
    120 photos from a phone      ≈  40 megabytes
    the model those photos made  ≈   3 megabytes
 ```
@@ -114,7 +116,7 @@ The machine has **thousands** of tiny dials. One epoch is: look at all 120 photo
 
 **The arithmetic, which is fun:**
 
-```
+```text
    120 photos × 50 epochs = 6,000 photo-looks
 
    a human at one photo per second, no breaks
@@ -194,6 +196,8 @@ This week you only need to know it's coming. In Week 17 the model you train firs
 
 ## 🔍 Worked Examples
 
+These three examples show how to plan a photo shoot, read someone else's tally sheet, and check class counts.
+
 ### Worked Example 1 — Spoon, toothbrush, comb: planning the shoot (household)
 
 Three objects, chosen on purpose to be hard: **a spoon, a toothbrush and a comb.** All small, all thin, all held in a hand. A machine that tells a spoon from a sofa proves nothing.
@@ -204,7 +208,7 @@ Target: **40 photos each. 120 in total.** And not one photo gets taken until the
 
 Student A shoots all forty on the kitchen table, in the afternoon, from two angles, at one distance.
 
-```
+```text
    1 background × 1 lighting × 2 angles × 1 distance  =  2 situations
 ```
 
@@ -212,7 +216,7 @@ Two situations, twenty photos of each.
 
 Student B uses five backgrounds, three kinds of light, eight turns and two distances.
 
-```
+```text
    5 backgrounds × 3 lightings × 8 angles × 2 distances  =  240 situations
 ```
 
@@ -241,7 +245,7 @@ Still **two**. They photographed the same two scenes two hundred times each. No 
 
 **Step 3 — check the plan three ways, not one.** Adding the shots column is the easy check. Do the other two as well:
 
-```
+```text
    by shots:       6 + 6 + 7 + 7 + 7 + 7                        = 40 ✓
    by background:  desk 12 · carpet 7 · tiles 7 · wood 7 · bed 7 = 40 ✓  (5 backgrounds)
    by lighting:    window 13 · low lamp 13 · ceiling 14          = 40 ✓  (3 kinds)
@@ -253,7 +257,7 @@ Notice the desk appears twice, in rows 1 and 2, so it carries 12 photos against 
 
 **Step 4 — the totals.**
 
-```
+```text
    40 photos × 3 objects   = 120 labelled examples
    120 photos × 50 epochs  = 6,000 looks
    training time: about 20 seconds
@@ -277,7 +281,7 @@ Somebody else has already taken their photos. Your job is to read their tally sh
 
 **Step 1 — count the distinct situations per class.**
 
-```
+```text
    lemon:        1 background × 1 lighting × maybe 2 angles = about 2
    lime:         1 background × 1 lighting × maybe 2 angles = about 2
    green_apple:  1 background × 1 lighting × maybe 2 angles = about 2
@@ -306,7 +310,7 @@ That's a subtle finding and it's the kind of sentence that separates guessing fr
 
 **Step 5 — the fix, in numbers.** Do not take 400 more photos. Take the **missing** ones:
 
-```
+```text
    green apples on the kitchen counter, window light   -> 8 photos
    lemons on the garden grass, outdoor light           -> 8 photos
    limes on the garden grass, outdoor light            -> 8 photos
@@ -331,7 +335,7 @@ They ask: "is 8 enough? I'll just run 500 epochs to make up for it."
 
 **Step 1 — the epoch question first, because it's quick.**
 
-```
+```text
    88 photos × 50 epochs  = 4,400 looks
    88 photos × 500 epochs = 44,000 looks
 ```
@@ -346,7 +350,7 @@ Here is the key fact. **Training reduces the *total* number of mistakes across a
 
 So think like the machine. What if it simply **never said `whiteboard_eraser` at all**?
 
-```
+```text
    it gets all 40 glue sticks right     = 40
    it gets all 40 markers right         = 40
    it gets all 8 erasers wrong          =  0
@@ -443,7 +447,7 @@ Now the paper half. Three objects, chosen to be **similar** — three toothbrush
 
 **Step 1 — objects and class names.**
 
-```
+```text
    object 1: ________________   class name: ________________
    object 2: ________________   class name: ________________
    object 3: ________________   class name: ________________
@@ -453,7 +457,7 @@ Class names must be words you'll still understand in three days. Not `A`, `B`, `
 
 **Step 2 — the variety checklist, with real places in your real house.**
 
-```
+```text
    BACKGROUNDS (5):  1.________  2.________  3.________  4.________  5.________
    LIGHTING (3):     1.________  2.________  3.________
    ANGLES (8):       turn the object one notch between every shot
@@ -476,6 +480,8 @@ You check that against reality in the homework. Being right about your own futur
 
 ## 💬 Talk About It
 
+Use these three questions to think and to talk with a grown-up.
+
 **1. "If I delete all the photos, does the model stop working?"**
 Ask an adult before you tell them. Most say yes.
 *Hint for you:* no. Training already happened, and the photos were the ingredients, not parts of the cake. The knock-down argument is the arithmetic: **40 megabytes of photos, a 3 megabyte model.** There is nowhere to keep them. And you have physical proof from class — the twelve cards were in a drawer while you classified six new ones.
@@ -491,6 +497,8 @@ Almost everybody guesses wrong, including adults who work with computers.
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four wrong ideas about training. Each one is shown next to the right idea.
 
 ### Trick 1 — "The computer keeps my photos and compares new ones against them"
 
@@ -523,7 +531,7 @@ The one-question test to run on yourself: **"how many photos did that add?"** No
 
 Do the multiplication before you take a single photo:
 
-```
+```text
    backgrounds × lighting × angles × distances = distinct situations
 ```
 
@@ -544,6 +552,8 @@ The wolves were snow. Your Blorbs were size. And when your own model fails next 
 ---
 
 ## 🌍 Where You've Seen This
+
+Training shows up in places outside a computer too.
 
 1. **Your phone's photo app, grouping faces.** It was trained once, on labelled examples. When it gets your cousin wrong you cannot explain your cousin to it — you can only re-label some photos and let it rebuild. That's the cake.
 2. **Voice assistants mishearing one particular word.** The training examples didn't contain enough voices like yours. Usually nothing you say in the moment teaches it (some assistants adjust a little to your voice); somebody has to retrain it with different examples.
@@ -581,6 +591,8 @@ with the tick is TRAINING, and it is the first box on the middle row of nine.*
 
 ## 🔑 Remember This
 
+Keep these eight points from the week.
+
 - **Training is a one-off process, and the model is what it leaves behind.** Examples in, model out, examples put away.
 - **You cannot talk to a model, read it, or fix it by explaining.** You change the examples and bake again.
 - **The arithmetic points the same way:** 40 MB of photos make a 3 MB model (rough sizes). The pictures are not in there.
@@ -593,6 +605,8 @@ with the tick is TRAINING, and it is the first box on the middle row of nine.*
 ---
 
 ## 📓 New Words
+
+These are the four words you met this week.
 
 ![Week 15 words as pictures](../figures/fig-w15-9-vocab-icons.svg)
 *Figure 15.9 — This week's four words, drawn.*

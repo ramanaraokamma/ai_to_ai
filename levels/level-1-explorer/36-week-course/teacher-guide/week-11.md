@@ -35,7 +35,9 @@ Observable evidence: three completed rows with four measurements each, four writ
 
 ## 🧑‍🏫 What YOU Need to Know First
 
-This is the week where the course stops being about ideas and starts being about tables. Everything from here to Week 36 sits on top of what is in this section. Read all of it.
+This section gives you the background for the lesson. Read all of it before you teach.
+
+This is the week where the course stops being about ideas and starts being about tables. Everything from here to Week 36 sits on top of what is in this section.
 
 ### 1. The whole idea in one picture
 
@@ -44,7 +46,9 @@ A machine never meets your dog. It never meets the apple, the spoon or the text 
 ![What the machine actually gets](../figures/fig-w11-5-real-thing-vs-row.svg)
 *Figure 11.1 — Everything you did not measure is gone forever.*
 
-You look at an apple and take in millions of things per second — the smell, the exact shade, the bruise on the back, who gave it to you, the fact that it is slightly warm. Then you choose four things to measure. Those four things become the machine's entire universe for that apple. Everything else is not "less important" to the machine. It does not exist.
+You look at an apple and take in millions of things per second — the smell, the exact shade, the bruise on the back, who gave it to you, the fact that it is slightly warm.
+
+Then you choose four things to measure. Those four things become the machine's entire universe for that apple. Everything else is not "less important" to the machine. It does not exist.
 
 > **Feature** — one measured description of one example. One column in your table.
 
@@ -142,7 +146,7 @@ The fix is a rule you can apply mechanically, and you should teach the student t
 
 **Go this far:** feature, label, class, measuring instruction, feature table. Objects into rows. The re-measure test.
 
-**Stop before:**
+**Stop before these:**
 - **Which features are good.** That is next week, and it is a whole lesson with counting in it. If the student says "the colour one is useless", say: "Hold that thought — that's exactly next week's lesson, and we're going to settle it with numbers instead of opinions." Write their guess in the margin so they can check it in seven days.
 - **Classification vs regression.** Week 13. Do not use those words. If the label happens to be a number in one of their examples, that is fine — say nothing about it.
 - **Training a model.** Week 15. Nothing today involves a machine learning anything. Today is entirely about building the thing you will later hand to a machine.
@@ -186,6 +190,8 @@ is the only thing that tells a machine what "right" means. Shelves, not content 
 
 ## 🧰 Prep Checklist
 
+This section lists what to get ready, and what to do if something fails.
+
 **12 minutes the night before**
 
 - [ ] **Choose your three objects.** Three spoons of different sizes is the recommendation. Alternatives that work well: three drinking bottles, three shoes, three books, three coins of different values. **Do not** pick three wildly different things.
@@ -215,6 +221,8 @@ is the only thing that tells a machine what "right" means. Shelves, not content 
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson, one segment at a time.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -405,6 +413,8 @@ Full instructions in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section has the full instructions for both parts of the activity, and two variations.
+
 ### Part A — Describe It Down the Phone (8 minutes)
 
 **Setup**
@@ -438,17 +448,17 @@ Record the whole thing on a sheet of plain paper (there is no workbook page for 
 
 **Materials:** the three confusable objects, ruler, scale, colour card, a sheet of plain paper.
 
-**Step 1 — write the label question first (1 min).** At the top of the page, before touching anything:
+**Step 1 — write the label question first (1 min).** At the top of the page, before touching anything. The student writes this line:
 
-```
+```text
 label question: teaspoon / dessert spoon / serving spoon?
 ```
 
 Insist on this order. Deciding what you are asking before you decide what to measure is a habit worth building now.
 
-**Step 2 — write the four measuring instructions (4 min).** Not the measurements. The *instructions*. This is the part they will want to rush.
+**Step 2 — write the four measuring instructions (4 min).** Not the measurements. The *instructions*. This is the part they will want to rush. Here is a sheet to show as a model:
 
-```
+```text
 FEATURE SHEET
 label question: teaspoon / dessert spoon / serving spoon?
 
@@ -505,6 +515,8 @@ Three extensions, in order of difficulty:
 
 ## ❓ Questions Students Ask This Week
 
+This section gives short answers to questions that often come up.
+
 **"Why can't I just show the machine a photo?"**
 
 You can — and a photo is a table too. It just has thousands of columns instead of four, one for each tiny dot of colour in the picture. Somebody still had to decide that a photo becomes a grid of numbers, and how big the grid is. We spend Weeks 23 to 26 taking a photo apart into exactly that table. So the answer is: showing it a photo doesn't escape the table, it just gives you a very wide one.
@@ -537,6 +549,8 @@ It doesn't. A computer doesn't care where it is. It's a habit, and it exists bec
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the common traps and what to do when you meet each one.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | Measurements get written before the instructions | Measuring is fun and writing sentences is not | Physically cover the table part of the page with a sheet of paper until all four instructions are written. It sounds heavy-handed and it works. |
@@ -551,6 +565,8 @@ It doesn't. A computer doesn't care where it is. It's a habit, and it exists bec
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to change the lesson if it is too hard, too easy, or the student will not engage.
 
 ### If the student is struggling
 
@@ -582,6 +598,8 @@ Then get one thing on paper before you stop — a single sentence: *"A machine c
 ---
 
 ## ✅ Assessing Understanding
+
+This section is for checking what the student understood. It has three checks and a mastery scale.
 
 Three checks, five minutes, exact wording below.
 
@@ -617,6 +635,8 @@ Three checks, five minutes, exact wording below.
 
 ## 📤 Homework to Assign
 
+This section tells you what to say about the homework, and how long each part takes.
+
 **Say this:**
 
 > "One main job, then a handful of short pages. About fifty minutes for the job, and a bit over an hour for the rest, spread over the week.
@@ -629,13 +649,17 @@ Three checks, five minutes, exact wording below.
 >
 > **The rest of the workbook** — the Warm-Up, Practice Sets A and B, the Puzzle of the Week, Think Deeper, Draw It and the Self-Check — is shorter and you can do it a page a day. Do the Build It pages first, because next week's work needs your kitchen table."
 
-**Workbook sections:** the workbook has no in-class pages. The two lesson activities (the phone game and the three-objects-into-three-rows table) are done on plain paper during the lesson, and the student's own record of them is not marked from the workbook. **Everything in the workbook is homework.** Order: Build It (Pages 11.4, 11.5, 11.6) first, then Warm-Up, Practice Set A, Practice Set B, Puzzle of the Week, Think Deeper, Draw It, Self-Check.
+**Workbook sections:** the workbook has no in-class pages. The two lesson activities (the phone game and the three-objects-into-three-rows table) are done on plain paper during the lesson. The student's own record of them is not marked from the workbook.
+
+**Everything in the workbook is homework.** Order: Build It (Pages 11.4, 11.5, 11.6) first, then Warm-Up, Practice Set A, Practice Set B, Puzzle of the Week, Think Deeper, Draw It, Self-Check.
 
 **Expected time:** Build It about 50 min (25 min for the table · 15 min for the adult test · 10 min for Page 11.6). Warm-Up 5 min · Practice Set A 15 min · Practice Set B 20 min · Puzzle 10 min · Think Deeper 10 min · Draw It 10 min · Self-Check 3 min. Roughly two hours in all, over several days.
 
 ---
 
 ## 🔑 Answer Key
+
+This section is for you only. Do not hand it to the student.
 
 This key follows the workbook's own sections, in order, and uses the workbook's item labels (W1, A3, B2, P4, T1 and so on). The values are the ones in the workbook's Answers section, re-checked. The two in-class activity records are at the end, because they are not workbook pages.
 
@@ -898,6 +922,8 @@ A good record shows your four numbers next to theirs, and a rewritten sentence f
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week covers and what to prepare.
 
 Next week we settle, with numbers, the argument the student has probably already started: **which of these features is actually any good?** They will meet a twelve-row fruit table with five candidate features, one of which is quietly useless and one of which is quietly disastrous — a sticker on the fruit that reads APPLE. The lesson turns on a fact that feels upside-down: a feature that scores **100%** is bad news, not good news. Before anything else they will compute the **baseline** — how well you'd do by just guessing the most common answer — because a feature that cannot beat guessing is worth nothing at all.
 

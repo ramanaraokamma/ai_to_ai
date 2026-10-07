@@ -50,8 +50,7 @@ content properly, not just be able to read it aloud.*
 
 **A score is only worth something if the thing being scored had never seen the questions.**
 
-That is the whole of today. Everything else — the arithmetic, the grid, the verdict sentence — is
-machinery for making that one sentence concrete enough that an 11-year-old cannot wriggle out of it.
+That is the whole of today. Everything else is machinery for making that one sentence concrete enough that an 11-year-old cannot wriggle out of it.
 
 ### Where we are in the story
 
@@ -92,7 +91,7 @@ honest arithmetic and a complete lie about what the thing does.
 
 Broken open by class:
 
-```
+```text
    real emails:  90 / 90  = 100%
    spam emails:   0 / 10  =   0%
 ```
@@ -106,7 +105,7 @@ filter scored exactly the baseline, which means it learned nothing at all.
 It is a grid. **Rows are the truth. Columns are what the model said.** Each cell counts how many
 photos fell into that combination.
 
-```
+```text
                         ┌─────── WHAT THE MODEL SAID ───────┐
                         │  spoon    toothbrush     comb     │  total
    ┌────────────────────┼───────────────────────────────────┼───────
@@ -172,8 +171,8 @@ Here is the correct answer, and it is important that you say it warmly rather th
 > throw out photos now, we're choosing them **because** the model failed on them, and then the score
 > stops measuring the model and starts measuring how many photos we were willing to delete."*
 
-The photo stays in. The complaint gets written down. That is the deal, and it is exactly the deal
-real scientists make with themselves.
+The photo stays in. The complaint gets written down. That is the deal, and it is the deal real
+scientists make with themselves.
 
 **Misconception 2: "The model is 73% sure, so it's right 73% of the time."**
 
@@ -239,7 +238,7 @@ asking *good for whom?*
 3. **Have them write their own four numbers** on their notebook map beside HONEST TESTING, and circle
    their worst class. Numbers they measured themselves are the numbers they will defend.
 
-> **🧑‍🏫 Why this is worth two minutes.** Today can feel like an ending — the project is scored, the
+> **💡 Why:** This is worth two minutes. Today can feel like an ending — the project is scored, the
 > envelope is used up. The map reframes it as a foundation: those four numbers are exactly what Weeks
 > 31 to 34 stand on. A learner who sees that treats the Week 33 audit as a bigger version of something
 > they already own, instead of as a brand-new topic they have to learn from zero.
@@ -250,6 +249,8 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 ---
 
 ## 🧰 Prep Checklist
+
+This section lists what to get ready before class, and what to do if the tool or the envelope goes wrong.
 
 ### 20 minutes the night before
 
@@ -306,6 +307,8 @@ that sentence learns more about science than one who gets a clean result.
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson. The table is the overview; the steps below it say what to do and say.
 
 | Minutes | Segment | What happens |
 |---|---|---|
@@ -409,7 +412,7 @@ guessed high or low.
 
 **Do this:** Write on the board, under `ACCURACY`:
 
-```
+```text
    accuracy  =    number it got right
                  ─────────────────────
                    number of tries
@@ -436,7 +439,7 @@ guessed high or low.
 **Do this:** Write the division out longhand on the board while you say it. Do not use a calculator
 here. The student needs to see an adult do arithmetic slowly and without embarrassment.
 
-```
+```text
    FRACTION:    11 / 15
 
    DECIMAL:     15 x 0.7 = 10.5        remainder 11 - 10.5 = 0.5
@@ -531,7 +534,7 @@ is a cat / dog / rabbit classifier somebody else built, with 4 test photos per c
 
 **Do this — step 2, accuracy three ways, on the board.**
 
-```
+```text
    FRACTION:    7 / 12
 
    DECIMAL:     12 x 0.5 = 6           remainder 7 - 6 = 1
@@ -674,6 +677,8 @@ Assign the homework (see 📤 below).
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the envelope activity, plus an easier and a harder version.
+
 ### Opening the Envelope
 
 **Time:** 20 minutes in class · **Group size:** one student, one adult witness
@@ -747,7 +752,7 @@ Your job during these twelve minutes is almost entirely to **not help**. Specifi
 
 At the bottom of the sheet, in this order:
 
-```
+```text
    correct: ____ / ____
 
    fraction   ____/____
@@ -835,6 +840,8 @@ If they finish with time to spare:
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions this lesson usually brings up, with answers you can read out.
+
 **"Can I just try that one again? The camera was blurry."**
 
 > No — but write "blurry" in the notes column, because that is real information and it belongs in
@@ -911,6 +918,8 @@ If they finish with time to spare:
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual problems, why they happen, and what to do right away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student wants to re-test a photo the model got wrong | It feels obviously unfair, and they are emotionally invested in the model | Hold the line, warmly. "Write 'blurry' in the notes — that's real data. The photo still counts." Then explain the deletion argument in one sentence and move straight on. Do not debate it for three minutes. |
@@ -927,6 +936,8 @@ If they finish with time to spare:
 ---
 
 ## 🧭 Differentiation
+
+This section says how to change the lesson if the student is struggling, flying, or not engaging.
 
 ### If they are struggling
 
@@ -989,6 +1000,8 @@ so long; after that it becomes dread.
 
 ## ✅ Assessing Understanding
 
+This section gives three quick checks and a scale for judging the week.
+
 Three checks, in the last five minutes. Ask them exactly as written.
 
 **Check 1 — the four-part sentence.**
@@ -1032,6 +1045,8 @@ Level 3 is a fully successful week. Level 5 is what you would hope to see by Wee
 ---
 
 ## 📤 Homework to Assign
+
+This section tells the student what to finish at home and lists the workbook pages that go with it.
 
 **Say this:**
 
@@ -1080,11 +1095,13 @@ Each key entry below carries the workbook's own item labels, so you can mark str
 
 ## 🔑 Answer Key
 
+This section is for the teacher only. It has the answers for the lesson examples and for every workbook section.
+
 ### Lesson — the cat / dog / rabbit worked example (done together on the board)
 
 **Correct rows:** 1, 2, 4, 5, 6, 7, 10 → **7 correct out of 12**.
 
-```
+```text
    FRACTION:    7 / 12
 
    DECIMAL:     12 x 0.5 = 6           remainder 7 - 6 = 1
@@ -1107,6 +1124,7 @@ Each key entry below carries the workbook's own item labels, so you can mark str
 | **overall** | | **7/12** | 0.5833 | **58.3%** |
 
 Checks: 3 + 3 + 1 = 7 ✓ · 4 + 4 + 4 = 12 ✓
+
 Rabbit at 25.0% is **below** the 33.3% baseline — on rabbits this model is no better than a dice (one photo below it, which is within noise).
 
 **Confusion matrix:**
@@ -1240,6 +1258,7 @@ Model rewrite: *"73% accurate"* → **"11 out of 15 held-out photos, which is 73
 (a) Correct rows: 1, 2, 4, 5, 6, 7, 9, 10, 12 → **9 out of 12**.
 
 (b)
+
 ```text
    FRACTION    9 / 12          (simplifies to 3/4)
 
@@ -1363,8 +1382,6 @@ And look at the reverse cell: *"true pasta → said salad"* is **0**. Not one pa
 
 ---
 
----
-
 ### Homework W22.1–W22.6 — the student's own model
 
 These depend on the student's own results, so mark against the **checklist**, not against numbers:
@@ -1427,7 +1444,7 @@ class:
 
 **(a) Overall accuracy.** Correct rows: 1, 2, 4, 5, 7, 9, 10, 11 → **8 correct**.
 
-```
+```text
    FRACTION:    8 / 12       (simplifies to 2/3)
 
    DECIMAL:     12 x 0.6 = 7.2          remainder 8 - 7.2 = 0.8
@@ -1472,7 +1489,7 @@ perhaps because they look quite different to the model (the matrix cannot tell u
 
 **(f) Confidence split.**
 
-```
+```text
    correct answers (8):  88, 74, 93, 81, 69, 90, 85, 77
        sum  = 88+74+93+81+69+90+85+77 = 657
        mean = 657 / 8 = 82.125  =  82.1%
@@ -1501,7 +1518,7 @@ not help, if the existing glove photos already look sock-like (a guess the matri
 
 **(i) The gap.** The workbook states this model's training accuracy as 100%.
 
-```
+```text
    training accuracy: 100.0%
    test accuracy:      66.7%
    gap:                33.3 percentage points
@@ -1538,6 +1555,8 @@ the input**, which for classification means always naming the commonest class.
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week is about and what to buy before then.
 
 Today ended with a question the student cannot yet answer: *why* was the model worst at that
 particular class? They can name the confusion, but not its cause — because they cannot see what the

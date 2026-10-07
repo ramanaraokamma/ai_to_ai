@@ -57,7 +57,7 @@ Two special names, and they are just counts:
 >
 > **Multi-class classification** — classification where the list has **three or more** options. Apple / orange / banana.
 
-There is nothing deeper going on. "Binary" means two. That is genuinely it, and you should say so, because an 11-year-old will assume a fancy word must hide a fancy idea and will waste effort looking for it.
+There is nothing deeper going on. "Binary" means two. That is all it is, and you should say so. An 11-year-old will assume a fancy word must hide a fancy idea and will waste effort looking for it.
 
 The crucial property of classification: **there is no such thing as nearly right.** If the truth is "orange" and the machine says "apple", that is exactly as wrong as saying "banana". You cannot be 10% wrong about which fruit it is.
 
@@ -107,28 +107,30 @@ The fix, when a student says "it's a number so it's regression":
 
 In regression, **every prediction has an error, including the good ones.** An error of 0.2 grams is not a failure; it is an excellent prediction. An error of exactly 0 on a real measurement is rare enough to be worth a second look (leaking is one possible cause).
 
-Students who have spent six years being marked right or wrong find this genuinely hard. They will write "error = 0" for a good guess because they think error means "mistake". Head it off in the concept segment with a single line:
+Students who have spent six years being marked right or wrong find this hard. They will write "error = 0" for a good guess because they think error means "mistake". Head it off in the concept segment with a single line:
 
 > "In regression, 'error' doesn't mean you did something wrong. It just means 'how far off'. A brilliant prediction still has an error — a small one."
 
 ### How to compute error (and where to stop)
 
-For a single prediction:
+For one prediction, use this rule:
 
-```
+```text
 error = the distance between predicted and true
       = the bigger one minus the smaller one
 ```
 
-Real practitioners write this with vertical bars, `|205 − 197.5|`, which means "take the positive size of that gap and ignore the minus sign". **Do not introduce the bars.** With an 11-year-old, "bigger minus smaller" is exact, does the same job, and costs no confusion. If your student already knows absolute value from maths, by all means use it.
+Real practitioners write this with vertical bars, `|205 − 197.5|`, which means "take the positive size of that gap and ignore the minus sign".
+
+**Do not introduce the bars.** With an 11-year-old, "bigger minus smaller" is exact, does the same job, and costs no confusion. If your student already knows absolute value from maths, by all means use it.
 
 For several predictions, add the errors and divide by how many:
 
-```
+```text
 mean error = (all the errors added up) ÷ (how many predictions)
 ```
 
-Professionals call that the *mean absolute error*. Call it **mean error** in class. That name is honest and the word "absolute" buys nothing here.
+Professionals call that the *mean absolute error*. Call it **mean error** in class. That name is honest, and the word "absolute" adds nothing here.
 
 **Where to stop, firmly.** Do not mention squared error, root mean square error, R-squared, loss functions, or linear regression. Do not draw a line of best fit — that is a different idea and this course does not need it. Regression in Level 1 means one thing only: *the answer is a number, so score the guess by its distance from the truth.*
 
@@ -223,11 +225,15 @@ the learner has seen 36 weeks land on six shelves rather than 36 unrelated topic
 
 ## 🧰 Prep Checklist
 
+This section tells you what to make and gather before class, and what to do if something is missing.
+
 ### 20 minutes the night before
 
 - [ ] **Write the ten task cards (15 min).** Index cards, sticky notes, or paper torn into ten rectangles. Write ONE task on each, exactly as listed below, in this order. Do not write the answers on them.
 
-```
+The ten cards:
+
+```text
  1  Is this text message spam?
  2  How many millimetres of rain will fall tomorrow?
  3  Which fruit is this: apple, orange or banana?
@@ -263,6 +269,8 @@ the learner has seen 36 weeks land on six shelves rather than 36 unrelated topic
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the script for the whole lesson. The table is the map; the parts below it give the words.
 
 | Minutes | Segment | What happens |
 |---|---|---|
@@ -335,9 +343,9 @@ Pause and let them write. Then:
 >
 > Two names, one idea, and the only difference is how many bins are on the floor."
 
-**Do this:** Write the four terms on the board in a column with a one-line definition each. Leave them up all lesson.
+**Do this:** Write the four terms on the board in a column with a one-line definition each, like this. Leave them up all lesson.
 
-```
+```text
 classification              which one?  -> a word from a short list
   binary classification     exactly 2 boxes
   multi-class classification  3 or more boxes
@@ -436,9 +444,9 @@ This is the fruit table from Week 12, reused with the label moved. **Do the arit
 >
 > Let's build it. Apples first."
 
-**Do this:** Work the three averages on the board, letting the student do the adding.
+**Do this:** Work the three averages on the board, letting the student do the adding. The board should look like this.
 
-```
+```text
 apples:   150 + 165 + 140 + 190  =  645       645 ÷ 4 = 161.25 g
 oranges:  200 + 185 + 210 + 195  =  790       790 ÷ 4 = 197.5  g
 bananas:  120 + 135 + 110 + 128  =  493       493 ÷ 4 = 123.25 g
@@ -472,7 +480,9 @@ Let them answer (the banana, error 4.25).
 
 > "Now — if somebody asks 'how good is your model?', you can't hand them three numbers. You need one. So do the obvious thing: add them up and divide by how many."
 
-```
+**Do this:** Write the sum and the division on the board.
+
+```text
 7.5 + 4.25 + 10.75  =  22.5
 22.5 ÷ 3            =  7.5
 
@@ -532,6 +542,8 @@ Full instructions are in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full rules for Flip Every Task, phase by phase, so you can run it without the rest of the guide.
+
 ### Flip Every Task
 
 **Time:** 20 minutes. **Group size:** one student and you, or pairs.
@@ -539,9 +551,9 @@ Full instructions are in the next section. In the lesson flow:
 
 ### Setup (1 minute)
 
-Put the two header cards at the top of the table, about 40 cm apart:
+Put the two header cards at the top of the table, about 40 cm apart, like this:
 
-```
+```text
    ┌─────────────────┐              ┌─────────────────┐
    │   WHICH ONE?    │              │    HOW MUCH?    │
    │ (classification)│              │  (regression)   │
@@ -612,8 +624,14 @@ Then: **invent an eleventh card** for a task in their own life, write both versi
 
 ## ❓ Questions Students Ask This Week
 
+This section gives honest answers to questions students tend to ask. Read it before class.
+
 **"Is a 1-to-5 star rating a number or a category?"**
-Honestly: **nobody has a settled answer, and people who do this for a living still argue about it.** Here is why. The stars are in order — 4 really is better than 3 — so they are not pure categories like apple and orange. But the gaps aren't equal: the difference between 1 star and 2 stars usually means something much bigger than the difference between 4 and 5. So they're not proper numbers either. There's a whole in-between name for data like this, and there is no agreement on the right way to handle it. What people actually do is try both and see which works better for their problem, which is a slightly unsatisfying but completely honest answer. If it helps: this is a real open argument in statistics, not a gap in your teacher's knowledge.
+Honestly: **nobody has a settled answer, and people who do this for a living still argue about it.** Here is why.
+
+The stars are in order — 4 really is better than 3 — so they are not pure categories like apple and orange. But the gaps aren't equal: the difference between 1 star and 2 stars usually means something much bigger than the difference between 4 and 5. So they're not proper numbers either. There's a whole in-between name for data like this, and there is no agreement on the right way to handle it.
+
+What people actually do is try both and see which works better for their problem. That is a slightly unsatisfying but honest answer. If it helps: this is a real open argument in statistics, not a gap in your teacher's knowledge.
 
 **"Can something be both classification and regression at the same time?"**
 Not the same question, no. But the same *table* can give you both, which is what we did with the fruit — cover `fruit` and it's classification, cover `weight_g` and it's regression. And a real system often runs both at once: a weather app tells you "rain tomorrow: yes" *and* "12 mm". Those are two separate predictions from the same data, not one prediction being two things.
@@ -640,6 +658,8 @@ Yes, easily. "Which country is this flag from?" has about 195 boxes and it's sti
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the slips you are most likely to see, why they happen, and what to say right then.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | Student calls everything with a number in it "regression" | The word "number" is doing all the work in their head, and nobody has shown them a counter-example | Stop and do the shirt-number question. Then the addition trick: "add player 7 and player 8 — is that player 15? Does that mean anything?" Three examples fixes it permanently |
@@ -654,6 +674,8 @@ Yes, easily. "Which country is this flag from?" has about 195 boxes and it's sti
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to change the lesson if the student is struggling, flying, or not engaging.
 
 ### If they are struggling
 
@@ -730,6 +752,8 @@ Aim for 3. A 6th grader hitting 4 this week is doing genuinely well.
 
 ## 📤 Homework to Assign
 
+This section gives the words to use when you set the homework, and how to split the workbook across the week.
+
 **Say this:**
 
 > "Two things, and they should take you about fifty minutes.
@@ -764,7 +788,10 @@ Aim for 3. A 6th grader hitting 4 this week is doing genuinely well.
 **Concept — "which was better?"** The second. 9 g is a smaller gap than 13 g.
 
 **Worked example — the three averages.**
-```
+
+The sums and averages:
+
+```text
 apples:  150 + 165 + 140 + 190 = 645     645 ÷ 4 = 161.25 g
 oranges: 200 + 185 + 210 + 195 = 790     790 ÷ 4 = 197.5  g
 bananas: 120 + 135 + 110 + 128 = 493     493 ÷ 4 = 123.25 g
@@ -1001,6 +1028,8 @@ Not marked; it is a self-rating. Read it for the 😕 ticks and reteach those li
 ---
 
 ## 🔮 Next Week Preview
+
+This section tells you what next week needs from you, starting this week.
 
 Next week is a lab, and it is the one where the ideas stop being about machines and start being about a person you know. The student builds a deck of twenty cards. On the front of each card: five measured features and nothing else. On the back: the name of the object. Then they hand the deck to a real human being who has never seen the objects and find out whether five numbers are enough to identify a thing. They are not allowed to speak during the test — not a hint, not a raised eyebrow — and the last ten minutes are spent working out, from the evidence, which single feature the tester was secretly relying on.
 

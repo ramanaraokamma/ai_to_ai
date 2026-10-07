@@ -40,6 +40,8 @@ Circle → **YES** / **NO** / **NO IDEA**
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know the key words from the chapter.
+
 **A1. Fill in the blanks.**
 
 Artificial intelligence is a machine doing a ____________________ that used to need a person's
@@ -134,6 +136,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+These questions ask you to use rulebooks: write them, run them and find where they go wrong.
+
 **B1. Write Rule 6 — then watch it break.**
 
 The vending machine from the chapter had no rule for the customer with the burst crisp packet. Write one.
@@ -160,7 +164,7 @@ ________________________________________________________________
 
 **B2. What would go wrong here?** A cinema ticket machine.
 
-```
+```text
 CINEMA RULEBOOK — check in order, STOP at the first rule that fires
 
   RULE 1: IF age is under 3        THEN free
@@ -238,10 +242,12 @@ ________________________________________________________________
 
 ### The Ice-Cream Machine
 
+This puzzle is a rulebook for you to run, one customer at a time.
+
 ![The ice-cream machine rulebook puzzle](../figures/fig-w01-10-puzzle-ice-cream-rules.svg)
 *Figure W1.2 — Five rules, three flavours, five customers.*
 
-```
+```text
 CHECK IN ORDER. STOP AT THE FIRST RULE THAT FIRES.
 
   R1  IF the flavour is not on the board    THEN say "WE DON'T HAVE THAT"
@@ -287,6 +293,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+Two longer questions. Take your time and write full sentences.
+
 **T1.** A woman comes back to the vending machine. *"I put 30p in, I pressed A1, I got my crisps —
 but the bag was already burst and they're stale. Can I have another packet?"*
 
@@ -322,6 +330,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+Three pages that use what you learned on real things: your day, one sentence, and the vending machine rulebook.
 
 ### Page 1.4 — AI Spotter's Log, part 1
 
@@ -403,6 +413,8 @@ what the machine does.** No being sensible.
 
 ## 🎨 Draw It
 
+This page is for drawing one machine's decision as boxes and arrows.
+
 Pick **one rule-following machine in your own home** — a microwave, a kettle, an alarm, a washing
 machine, an automatic light, a fridge. Draw its decision as a loop: **3 to 5 boxes, arrows between
 them, and one loop arrow going back to the top.** Label every box, and mark the box that is the
@@ -424,6 +436,8 @@ if-then rule with a star.
 
 ## 📊 Self-Check
 
+Tick one face for each line. Be honest. It is for you.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Say what AI is in one sentence, with no *robot*, *brain* or *magic* | ☐ | ☐ | ☐ |
@@ -441,12 +455,14 @@ ________________________________________________________________
 
 ## ✅ Answers
 
+Check your work here only after you have finished every page.
+
 <details>
 <summary>Check your answers</summary>
 
 ### Warm-Up
 
-These five are **predictions**, not tests. Nobody marks them. But here is what to notice when you
+These five are **predictions**, not tests. Nobody marks them. Here is what to look for when you
 come back to them.
 
 **W1.** Most first answers contain *robots*, *thinking* or *ChatGPT*. That's not embarrassing — it's
@@ -564,7 +580,7 @@ wrote **rule-based, and probably not AI**.
 
 **B4.** Answers vary. A typical set:
 
-```
+```text
 RULE 1: IF the lesson has started        THEN phones stay in bags
 RULE 2: IF the teacher says "phones out" THEN phones may come out
 RULE 3: IF a phone rings                 THEN it is taken to the office

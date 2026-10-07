@@ -32,13 +32,15 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know the ideas from the chapter. Write your answers in the spaces.
+
 **A1. Fill in the blanks.**
 
 **RGB** stands for ______________, ______________ and ______________. A colour picture stores ______________ numbers for every pixel, and each one runs from ______ to ______.
 
 One of the three grids on its own is called a ______________, and on its own it looks exactly like a ______________ picture.
 
-```
+```text
    224 x 224 = ____________ pixels
 
    ____________ x 3 = ____________ numbers for one photo
@@ -138,6 +140,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+These questions make you do the arithmetic and spot mistakes. Show all your working.
+
 **B1. Average four blocks.** Show the sum and the division. Round to the nearest whole number; **.5 rounds up.**
 
 | Block | The four values | Sum | ÷ 4 | Rounded |
@@ -155,7 +159,7 @@ ________________________________________________________________
 
 **B2. Shrink this grid twice.**
 
-```
+```text
      0     0   255  255
      0     0   255  255
      0   128  255  255
@@ -166,7 +170,7 @@ ________________________________________________________________
 
 (b) Work out the 2 × 2. Show every sum.
 
-```
+```text
    top-left:      ______ + ______ + ______ + ______ = ______  ; ÷ 4 = ______  ->  ______
 
    top-right:     ______ + ______ + ______ + ______ = ______  ; ÷ 4 = ______  ->  ______
@@ -189,7 +193,7 @@ The 2 × 2 result:  ______  ______
 
 (e) Can you get the original 4 × 4 back from that single number? Prove your answer by writing **two different** 2 × 2 blocks that would both have produced it.
 
-```
+```text
    ( ______ , ______ , ______ , ______ )  sum ______  ÷ 4 = ______
 
    ( ______ , ______ , ______ , ______ )  sum ______  ÷ 4 = ______
@@ -245,7 +249,7 @@ ________________________________________________________________
 
 **B5. Mark somebody else's work.** Here is another student's colour homework. Find **four** faults and write the fix.
 
-```
+```text
 COLOUR BY NUMBERS
 
 1   (255, 255, 0)   = white,    because all the numbers are high
@@ -270,6 +274,8 @@ ________________________________________________________________
 ---
 
 ## 🧩 Puzzle of the Week
+
+This page is four clues about secret colours. Use the clues to write each triple.
 
 ![Puzzle: the secret colours](../figures/fig-w24-11-puzzle-secret-colour.svg)
 *Figure W24.2 — Four clues. Colour the little swatch in too, if you have the pencils.*
@@ -308,6 +314,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions need a whole paragraph each. Take your time and use your own words.
+
 **T1.** An app that "un-blurs" a photo is not lying about what it shows you — but it is not recovering anything either.
 
 Write a paragraph about the difference between **generating** detail and **recovering** it. Where does that difference stop being interesting and start mattering? Name a situation where treating a generated picture as a real one would do actual harm.
@@ -343,6 +351,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+This is the main task of the week. You do it in three parts: colour by numbers, shrinking a grid, and writing down what was lost.
 
 ### Part 1 — Colour by numbers, both directions (15 min)
 
@@ -383,7 +393,7 @@ ________________________________________________________________
 
 Here is a 12 × 12 grid. It is the letter **T**, drawn with a soft pencil.
 
-```
+```text
         c1   c2   c3   c4   c5   c6   c7   c8   c9  c10  c11  c12
    r1   255  255  255  255  255  255  255  255  255  255  255  255
    r2   255  128   0    0    0    0    0    0    0    0   128  255
@@ -423,7 +433,7 @@ Here is a 12 × 12 grid. It is the letter **T**, drawn with a soft pencil.
 
 **Full working for four blocks.** Pick **interesting** ones — the blocks on the edge of the letter, not four identical 255s.
 
-```
+```text
    Block ______ :  ______ + ______ + ______ + ______ = ______  ;  ÷ 4 = ______  ->  ______
 
    Block ______ :  ______ + ______ + ______ + ______ = ______  ;  ÷ 4 = ______  ->  ______
@@ -483,7 +493,9 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
-Draw **one single colour pixel** pulled apart into its three numbers — big enough to fill the frame — and then, beside it, the same pixel after it has been averaged together with three neighbours.
+This page is for a picture. Use the frame below.
+
+**Your task:** draw **one single colour pixel** pulled apart into its three numbers — big enough to fill the frame — and then, beside it, the same pixel after it has been averaged together with three neighbours.
 
 ![Draw it here: three grids stacked](../figures/fig-w24-12-draw-frame.svg)
 *Figure W24.3 — Your page.*
@@ -495,6 +507,8 @@ Draw **one single colour pixel** pulled apart into its three numbers — big eno
 ---
 
 ## 📊 Self-Check
+
+Tick one face for each line. Be honest.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -512,6 +526,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Open this only after you have tried every question. Mark your own work and fix mistakes in a different colour.
 
 <details>
 <summary>Check your answers</summary>
@@ -534,7 +550,7 @@ ________________________________________________________________
 
 **A1.** **Red**, **Green**, **Blue** · **three** numbers per pixel · each from **0** to **255** · one grid is a **channel** · it looks like a **grayscale** picture.
 
-```
+```text
    224 x 224 = 50,176 pixels
    50,176 x 3 = 150,528 numbers for one photo
    256 x 256 x 256 = 16,777,216 possible colours for ONE pixel
@@ -563,7 +579,7 @@ Same two colours, opposite results, because one machine subtracts light and the 
 
 How to work it out: write the four colours out as triples first.
 
-```
+```text
    red    = (255,   0,   0)        yellow = (255, 255,   0)
    blue   = (  0,   0, 255)        white  = (255, 255, 255)
 ```
@@ -610,15 +626,16 @@ Now read the **first** number of each: 255, 255, 0, 255 — that is grid B, so B
 
 (a) 2 blocks across × 2 rows of blocks = **4 blocks**.
 
-(b)
-```
+(b) Work out each block:
+
+```text
    top-left:        0 +   0 +   0 +   0 =    0  ; ÷ 4 =   0     ->    0
    top-right:     255 + 255 + 255 + 255 = 1020  ; ÷ 4 = 255     ->  255
    bottom-left:     0 + 128 + 128 + 255 =  511  ; ÷ 4 = 127.75  ->  128
    bottom-right:  255 + 255 + 255 + 255 = 1020  ; ÷ 4 = 255     ->  255
 ```
 
-```
+```text
    2 x 2 result:      0   255
                     128   255
 ```
@@ -632,7 +649,7 @@ Now read the **first** number of each: 255, 255, 0, 255 — that is grid B, so B
 
 (e) The single number is 160, so the four numbers must add to 4 × 160 = **640**. Two different blocks:
 
-```
+```text
    ( 160, 160, 160, 160 )   sum 640   ÷ 4 = 160      a flat grey patch
    (   0, 130, 255, 255 )   sum 640   ÷ 4 = 160      a hard edge
 ```
@@ -686,7 +703,7 @@ Both give 160. So **no**, you cannot get the original back: the number does not 
 
 **Clue 3.** Only one lamp is on, and the three add to 255, so that one lamp must be at **255** and the other two at 0. So it is one of:
 
-```
+```text
    (255,   0,   0)  =  red
    (  0, 255,   0)  =  green
    (  0,   0, 255)  =  blue
@@ -696,7 +713,7 @@ Both give 160. So **no**, you cannot get the original back: the number does not 
 
 **Clue 4.** Average 100 means the three add up to **300**. Any two different triples summing to 300, for example:
 
-```
+```text
    (100, 100, 100)  ->  100      a middling grey
    (255,  45,   0)  ->  100      a bright orange-red
    (  0, 150, 150)  ->  100      a teal
@@ -813,7 +830,7 @@ Both give 160. So **no**, you cannot get the original back: the number does not 
 
 **The 6 × 6 result:**
 
-```
+```text
         C1   C2   C3   C4   C5   C6
    R1   223  128  128  128  128  223
    R2   223   96   48   48   96  223
@@ -827,7 +844,7 @@ Both give 160. So **no**, you cannot get the original back: the number does not 
 
 **The four blocks worth showing full working for** (they are the only genuinely interesting ones):
 
-```
+```text
    B11 (top-left corner):         255 + 255 + 255 + 128 = 893  ;  893 ÷ 4 = 223.25 -> 223
    B12 (middle of the crossbar):  255 + 255 +   0 +   0 = 510  ;  510 ÷ 4 = 127.5  -> 128
    B23 (just under the crossbar):   0 +   0 + 192 +   0 = 192  ;  192 ÷ 4 = 48
@@ -848,7 +865,7 @@ Both give 160. So **no**, you cannot get the original back: the number does not 
 | bottom-middle | 32, 32, 144, 144 | 352 | 88 | **88** |
 | bottom-right | 255, 255, 255, 255 | 1020 | 255 | **255** |
 
-```
+```text
    3 x 3 result:      168   88  168
                       255   32  255
                       255   88  255

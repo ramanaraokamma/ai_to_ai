@@ -46,6 +46,8 @@ Every score you have written down since Week 4 was measured on the same examples
 
 ## 🧠 The Big Idea
 
+This section explains the two piles of examples, how accuracy is written, and how to read the gap between two scores.
+
 ### 1. Two piles of examples, with jobs that must never be swapped
 
 > **Training examples** — the labelled examples you looked at while building your rules. You were *allowed* to study these. Studying them was the point.
@@ -110,17 +112,17 @@ That is all it is. And from now on you write it **three ways**, in this order, b
 ![Accuracy written three ways](../figures/fig-w09-3-accuracy-three-ways.svg)
 *Figure 9.4 — One score, three costumes. The fraction is the honest one.*
 
-**1. The fraction.** Correct on top, how many you tried underneath.
+**1. The fraction.** Correct on top, how many you tried underneath. Here is the fraction written out.
 
-```
+```text
  5
 ──
 10
 ```
 
-**2. The decimal.** Do the division, on paper, properly. No calculator.
+**2. The decimal.** Do the division, on paper, properly. No calculator. Here is the long division.
 
-```
+```text
       0.5
     ______
 10 )  5.0
@@ -131,17 +133,17 @@ That is all it is. And from now on you write it **three ways**, in this order, b
 
 Ten does not go into 5, so you write a 0 and a decimal point. Ten goes into 50 exactly 5 times. **Answer: 0.5.**
 
-**3. The percentage.** Multiply the decimal by 100.
+**3. The percentage.** Multiply the decimal by 100. Here it is written out.
 
-```
+```text
 0.5 x 100 = 50   ->  50%
 ```
 
 Read it out loud as what it actually means: *"out of every hundred messages, it would get about fifty right."*
 
-**One that does not come out neatly**, because most of them don't. Suppose you got 7 right out of 8:
+**One that does not come out neatly**, because most of them don't. Suppose you got 7 right out of 8. Here is the long division, with notes beside it:
 
-```
+```text
       0.875          8 into 7 won't go, so 0 and a point.
     _______          8 into 70 goes 8 times (64), remainder 6.
  8 ) 7.000           8 into 60 goes 7 times (56), remainder 4.
@@ -152,9 +154,9 @@ Read it out loud as what it actually means: *"out of every hundred messages, it 
 
 ### 4. Never write a percentage on its own
 
-Here is why all three forms are compulsory, and it is not to be annoying.
+Here is why all three forms are compulsory, and it is not to be annoying. Three scores, side by side:
 
-```
+```text
     5 / 10  =  50%
   50 / 100  =  50%
 500 / 1000  =  50%
@@ -171,7 +173,7 @@ This is why good scientific papers write down the bottom number, and why a headl
 
 > **The rule, for the rest of this course: never write 50% on its own. Write "5 out of 10 = 50%".**
 
-**And one more thing you need, and it is arithmetic, not a rhetorical flourish.**
+**One more thing you need, and it is arithmetic.**
 
 Spam or ham is a **two-way** choice. So what does a coin score on a two-way choice? **Half. Fifty percent.**
 
@@ -181,7 +183,9 @@ Which means a rulebook that scores 50% on spam is **no better than a coin.** You
 
 ### 5. Reading the gap — and refusing to explain it away
 
-```
+Here are last week's two scores for the same rulebook, lined up:
+
+```text
 Training accuracy   10 out of 10  =  10/10  =  1.0  =  100%
 Fresh accuracy       5 out of 10  =   5/10  =  0.5  =   50%
 The gap                                              50 percentage points
@@ -209,6 +213,8 @@ And the last thing to know, because it will make you feel better and it is also 
 
 ## 🔍 Worked Examples
 
+Three full examples, with every step shown. Follow each one with a pencil and do the divisions yourself.
+
 ### Worked Example 1 — The mango smoothie stall (food)
 
 A stall outside the school gate wants to know when to make extra mango smoothies. Somebody wrote down eight days: the temperature, whether it was a school day, and whether they sold out.
@@ -235,14 +241,18 @@ A stall outside the school gate wants to know when to make extra mango smoothies
 
 A perfect split. The threshold sits in the gap between **25 and 29**, so 26, 27, 28 and 29 all fit identically. We wrote 28 because it is even.
 
-```
+The rule we wrote:
+
+```text
 RULE 1:  IF temp_c >= 28   THEN predict "sells out"
 DEFAULT: OTHERWISE         THEN predict "doesn't sell out"
 ```
 
 **Step 2 — the training score, all three ways.**
 
-```
+Here is the working:
+
+```text
 THE FRACTION     8 / 8        THE DIVISION   8 into 8 goes once  ->  1.0
 THE PERCENTAGE   1.0 x 100 = 100%
 ```
@@ -262,7 +272,9 @@ THE PERCENTAGE   1.0 x 100 = 100%
 
 **Step 4 — the fresh score, all three ways. Do the division.**
 
-```
+Here is the working:
+
+```text
 THE FRACTION     4 / 6
 
 THE DIVISION     6 into 4 won't go  ->  0 and a point
@@ -277,7 +289,9 @@ THE PERCENTAGE   0.67 x 100 = 67%    (rounded, and you must say so)
 
 **Step 5 — read the gap.**
 
-```
+The two scores, lined up:
+
+```text
 Training:  8 out of 8  = 100%
 Fresh:     4 out of 6  =  67%
 The gap                   33 percentage points
@@ -319,14 +333,18 @@ A team wants to know whether scoring the first goal predicts winning. Twelve mat
 
 A 66-point gap. That is a pattern in these twelve matches.
 
-```
+The rule:
+
+```text
 RULE 1:  IF scored_first = "yes"   THEN predict "win"
 DEFAULT: OTHERWISE                 THEN predict "lose"
 ```
 
 **Step 2 — the training score.** Right on all six "scored first" matches except row 11; right on all six others except row 6. **10 out of 12.**
 
-```
+The division:
+
+```text
 12 into 10 won't go  ->  0 and a point
 12 into 100 goes 8 times (96), remainder 4
 12 into 40 goes 3 times (36), remainder 4  ... forever
@@ -347,7 +365,9 @@ DEFAULT: OTHERWISE                 THEN predict "lose"
 | N7 | yes | win | WON | ✅ |
 | N8 | no | lose | **WON** | ❌ |
 
-```
+The fresh score, all three ways:
+
+```text
 THE FRACTION     4 / 8        THE DIVISION   8 into 40 goes 5 times  ->  0.5
 THE PERCENTAGE   0.5 x 100 = 50%
 ```
@@ -397,14 +417,18 @@ Somebody records ten school mornings: how many minutes they spent getting ready,
 
 **Step 1 — sort it and the gap jumps out.**
 
-```
+The ten mornings, sorted by minutes:
+
+```text
  7    8    9   11   12   │   15   18   20   22   25
 YES  YES  YES  YES  YES  │   no   no   no   no   no
                          ▲
               the hole sits between 12 and 15
 ```
 
-```
+The first version of the rule:
+
+```text
 RULE 1 (v1):  IF ready_min <= 13   THEN predict "forgot something"
 DEFAULT:      OTHERWISE            THEN predict "didn't forget"
 ```
@@ -424,14 +448,18 @@ DEFAULT:      OTHERWISE            THEN predict "didn't forget"
 | G7 | 12 | forgot | **didn't** | ❌ | false alarm |
 | G8 | 9 | forgot | FORGOT | ✅ | — |
 
-```
+The division for the fresh score:
+
+```text
 8 into 5 won't go  ->  0 and a point.  8 into 50 goes 6 (48), remainder 2.
 8 into 20 goes 2 (16), remainder 4.    8 into 40 goes 5 exactly.
 
 5 / 8  =  0.625  =  62.5%    (or about 63%)
 ```
 
-```
+The two scores, lined up:
+
+```text
 Training:  10 out of 10  = 100%
 Fresh:      5 out of  8  =  63%
 The gap                     37 percentage points
@@ -451,7 +479,9 @@ Look at the three errors and what each one demands of the threshold:
 
 **Step 4 — so fix what you can. Raise the threshold to 14.**
 
-```
+The second version of the rule:
+
+```text
 RULE 1 (v2):  IF ready_min <= 14   THEN predict "forgot something"
 DEFAULT:      OTHERWISE            THEN predict "didn't forget"
 ```
@@ -476,7 +506,9 @@ Same trap. One page later. With your own hands on it.
 | H4 | 16 | didn't forget | **FORGOT** | ❌ | miss |
 | H5 | 8 | forgot | FORGOT | ✅ | — |
 
-```
+The division for this score:
+
+```text
 5 into 3 won't go  ->  0 and a point.  5 into 30 goes 6 times exactly.
 
 3 / 5  =  0.6  =  60%
@@ -499,6 +531,8 @@ And one last honest number: on those five, three mornings involved forgetting so
 
 ## 🎲 What We Did In Class
 
+This section records the sealed envelope trial and the checkpoint quiz, so you can check your notes or redo them at home.
+
 ### Part 1 — The Sealed Envelope Trial
 
 The signatures were checked, out loud. The envelope was opened. The message sheet was laid face down.
@@ -512,7 +546,7 @@ The signatures were checked, out loud. The envelope was opened. The message shee
 
 The rulebook under test, unchanged from Week 8:
 
-```
+```text
 RULE 1:  IF contains "!!"                   THEN spam
 RULE 2:  IF contains "free" (any capitals)  THEN spam
 RULE 3:  IF 30 or more characters           THEN spam
@@ -536,7 +570,9 @@ DEFAULT: OTHERWISE                          THEN ham
 
 **Score: 5 out of 10.**
 
-```
+The two scores for the same rulebook:
+
+```text
 Fresh accuracy      =  5 out of 10  =  5/10  =  0.5  =  50%
 Training accuracy   = 10 out of 10  = 10/10  =  1.0  = 100%
 The gap                                                50 percentage points
@@ -628,6 +664,8 @@ Write ten new messages of your own — five spam, five ham, truths written next 
 
 ## 💬 Talk About It
 
+Three questions to talk through with someone at home. The hints are for the person asking.
+
 **1. "So were all my scores this term fake?"**
 *Hint:* not fake — honest measurements of the wrong thing. Push towards precision, because it matters: a training score genuinely tells you your rules are *consistent* with the examples you had, which is worth knowing. It just cannot tell you anything about tomorrow. Try to get the other person to say the difference between *"that number is a lie"* and *"that number is a true answer to a useless question."*
 
@@ -640,6 +678,8 @@ Write ten new messages of your own — five spam, five ham, truths written next 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas about scores, each next to the right idea.
 
 ### Trick 1 — "The high score is the real one"
 
@@ -680,6 +720,8 @@ Whenever anybody quotes you a percentage, ask the two words: **out of how many?*
 
 ## 🌍 Where You've Seen This
 
+These are places outside class where the same ideas show up.
+
 1. **Revising from a past paper you have already done twice.** You get 19 out of 20 and feel great. That score is Student A's score. The honest version is a paper you have never opened.
 2. **A shop's "4.7 stars".** From how many reviews? A 4.7 from 3 people and a 4.7 from 30,000 people look identical on the screen and mean utterly different things. **The star rating is the percentage; the review count is the fraction's bottom number.**
 3. **"9 out of 10 dentists recommend."** Ten dentists. Which ten? Chosen how? Asked before or after somebody looked at the answers? Every single one of this week's questions applies.
@@ -690,6 +732,8 @@ Whenever anybody quotes you a percentage, ask the two words: **out of how many?*
 ---
 
 ## 🧭 Where This Fits
+
+This section shows where this week sits on the course map.
 
 This week the map moves **down**, not across. The room where a person writes the rules holds two
 tiles, and you have just moved into the second one — the tile that ends with your own rulebook
@@ -717,6 +761,8 @@ only **one** thread lit along the bottom — because this week had one job.*
 
 ## 🔑 Remember This
 
+The main points of the week, in one place.
+
 - **Training examples** are the ones you studied while building your rules. **Fresh examples** are ones the rulebook has never seen, set aside first and scored once.
 - **You can always get 100% on a test you wrote after seeing the answers.** That number is not a lie; it is just not about the future.
 - **Accuracy = correct ÷ total.** Write it three ways every time: the fraction, the decimal with the division shown, and the percentage.
@@ -729,6 +775,8 @@ only **one** thread lit along the bottom — because this week had one job.*
 ---
 
 ## 📓 New Words
+
+Three words from this week, plus one phrase.
 
 ![Week 9 words as pictures](../figures/fig-w09-8-vocab-icons.svg)
 *Figure 9.10 — This week's three words, drawn.*
@@ -754,12 +802,14 @@ Go to **[the Week 9 workbook](../workbook/week-09.md)**. About **45–60 minutes
 | **9.3** | The Four Score Cards puzzle, and Think Deeper | 10 min |
 | **9.4** | **Build It: fix your rulebook, date it, and score it on five further fresh messages.** Plus the Term 1 reflection sheet | 20 min |
 
-Two jobs, and one of them needs you to be honest when nobody is watching.
+There are two jobs. One of them needs you to be honest when nobody is watching.
 
-1. **The Term 1 reflection sheet.** Six short questions about the last nine weeks — what stuck, what didn't, which week you would redo, and what you want to build at the AI fair in Week 34. It is not a test and there are no wrong answers. **The two weeks from your quiz list go at the top.**
+1. **The Term 1 reflection sheet.** Six short questions about the last nine weeks. They ask what stuck, what didn't, which week you would redo, and what you want to build at the AI fair in Week 34. It is not a test and there are no wrong answers. **The two weeks from your quiz list go at the top.**
 2. **Fix your rulebook.** Use the notes you wrote in the margin during the trial. Tighten a rule, add a condition, move a threshold, add a rule that says *ham*. Write the new rulebook out **in full**, and **write the date next to it in pen.**
+
    Then — and only then — turn over to the five messages at the bottom of the page. **Five more fresh messages you have never seen and never used for anything.** Score your fixed rulebook on those five: fraction, decimal, percentage, with the division written out.
-   Then two sentences: **which fix helped?** and **which fix broke something that used to work?** Because at least one of them will have. Go back and check your fixed rulebook against the original ten training messages too — if it now gets one of *those* wrong, that is the answer, and it is the most interesting thing on the page.
+
+   Then write two sentences: **which fix helped?** and **which fix broke something that used to work?** Because at least one of them will have. Go back and check your fixed rulebook against the original ten training messages too — if it now gets one of *those* wrong, that is the answer, and it is the most interesting thing on the page.
 
 > **⚠️ The honesty bit, and it is the whole exercise.** The five messages are printed right there and nobody is going to be in the room. If you read them before you write your fix, you will get a lovely score, learn absolutely nothing, and nobody will be able to tell.
 >

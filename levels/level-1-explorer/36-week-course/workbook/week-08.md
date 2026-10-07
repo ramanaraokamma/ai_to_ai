@@ -38,6 +38,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+This set checks that you know the new words and can say what each one means.
+
 **A1. Fill in the blanks.**
 
 An ____________________ is an example a rule gets wrong, usually right at its boundary.
@@ -127,6 +129,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Use It
+
+This set gives you rules and examples to work on with the new words.
 
 **B1. The parcel rule.** A courier's rule is `IF weight_kg >= 5 THEN charge extra postage`. Eight parcels went out today, and later somebody checked which ones genuinely needed two people to carry.
 
@@ -226,7 +230,9 @@ ________________________________________________________________
 
 **B5. Mark somebody else's work.** Another student was asked to sharpen a vague rule and give an edge case. Here is what they handed in. Find **three** faults.
 
-```
+Read this work first, then fill in the table under it.
+
+```text
 VAGUE RULE:   "If the photo is blurry, reject it."
 
 SHARPENED:    IF the photo looks a bit fuzzy THEN reject it
@@ -247,6 +253,8 @@ ________________________________________________________________
 ---
 
 ## 🧩 Puzzle of the Week
+
+This puzzle uses the same eight parcels and three different lines.
 
 ### Three Thresholds, One Parcel Belt
 
@@ -287,6 +295,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions need a paragraph each, in your own words.
+
 **T1.** Somebody chose the threshold on the spam filter that handles your messages. They did it in a meeting, once, probably years ago, and they did not tell you.
 
 Write a paragraph about that. Which error did they choose to have more of, and how would you find out? Who else is using the same setting — and did anybody ask *them*? Is there any way you could ever discover a message you never received? And finish on this: **is it possible to build a spam filter that lets every single user choose their own setting, and what would go wrong if you did?**
@@ -322,6 +332,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+These pages ask you to write arguments, sharpen rules and look after the sealed envelope.
 
 ### Page 8.3 — The 138 centimetre argument, both sides
 
@@ -382,7 +394,9 @@ ________________________________________________________________
 
 **(a) "If the email looks dodgy, mark it as spam."**
 
-```
+Fill in this box:
+
+```text
 SHARPENED:  IF ____________________________________________ THEN spam
 
 WHERE MY NUMBER CAME FROM: ______________________________________
@@ -394,7 +408,7 @@ Is that edge case a FALSE ALARM or a MISS?  ______________
 
 **(b) "If the student is often late, phone home."**
 
-```
+```text
 SHARPENED:  IF ____________________________________________ THEN phone home
 
 WHERE MY NUMBER CAME FROM: ______________________________________
@@ -406,7 +420,7 @@ Is that edge case a FALSE ALARM or a MISS?  ______________
 
 **(c) "If the photo is blurry, reject it."**
 
-```
+```text
 SHARPENED:  IF ____________________________________________ THEN reject
 
 WHERE MY NUMBER CAME FROM: ______________________________________
@@ -418,7 +432,7 @@ Is that edge case a FALSE ALARM or a MISS?  ______________
 
 **(d) "If the parcel is heavy, charge extra."**
 
-```
+```text
 SHARPENED:  IF ____________________________________________ THEN charge extra
 
 WHERE MY NUMBER CAME FROM: ______________________________________
@@ -430,7 +444,7 @@ Is that edge case a FALSE ALARM or a MISS?  ______________
 
 **(e) "If the video is too long, don't watch it."**
 
-```
+```text
 SHARPENED:  IF ____________________________________________ THEN don't watch
 
 WHERE MY NUMBER CAME FROM: ______________________________________
@@ -473,6 +487,8 @@ Draw **one false alarm and one miss**, side by side, with a **person** in each. 
 
 ## 📊 Self-Check
 
+Tick one face for each line. Be honest, because only you will see it.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Build an edge case for any rule by stepping either side of its threshold | ☐ | ☐ | ☐ |
@@ -490,6 +506,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Check your work here only after you have tried every question.
 
 <details>
 <summary>Check your answers</summary>

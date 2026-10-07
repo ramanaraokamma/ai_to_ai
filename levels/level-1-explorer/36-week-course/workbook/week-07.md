@@ -38,6 +38,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know the words and ideas from the chapter.
+
 **A1. Fill in the blanks.**
 
 A **pattern** is something that repeats often enough that betting on it beats ____________________.
@@ -121,6 +123,8 @@ Pick **one** from the right-hand column and fix it:
 
 ## ✍️ Practice Set B — Use It
 
+These questions give you real tables and rulebooks to count, score and mark.
+
 **B1. Three little tables.** For each one: fill the counting grid, work out **both** rates as divisions, and say whether there is a pattern worth betting on.
 
 > **⚠️ One of these three has no pattern in it at all. Saying so is the right answer. Do not invent one to be polite.**
@@ -165,7 +169,7 @@ Score on all 8: ______ out of 8. Best you could do by guessing: ______ out of 8.
 
 Sort the eight numbers along this line and mark where the gap is:
 
-```
+```text
 ____  ____  ____  ____  │  ____  ____  ____  ____
 ```
 
@@ -201,7 +205,7 @@ ________________________________________________________________
 
 **B2. A rulebook with no default.** Here is somebody's whole rulebook:
 
-```
+```text
 RULE 1: IF temperature >= 30 THEN "hot"
 RULE 2: IF temperature <= 5  THEN "cold"
 ```
@@ -262,7 +266,7 @@ ________________________________________________________________
 
 **B5. Mark somebody else's work.** Here is a rulebook handed in by another student. Find **three** faults and write the fix.
 
-```
+```text
 RULEBOOK — will the canteen run out of chips?
 
 RULE 1:  IF the queue is huge          THEN "runs out"
@@ -283,6 +287,8 @@ ________________________________________________________________
 ---
 
 ## 🧩 Puzzle of the Week
+
+A puzzle about picking a threshold. Take your time.
 
 ### The Mystery Threshold
 
@@ -335,6 +341,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+Two questions that need a paragraph each. Write in full sentences.
+
 **T1.** The class rulebook said "Monday means late", built from exactly **three** Mondays.
 
 Write a paragraph about how much that rulebook actually knows. What is it fair to claim? What is not fair to claim? What would change your mind — in either direction? And what would happen to the rulebook if the roadworks near that bus stop finished tomorrow, and how long would it take anybody to notice?
@@ -370,6 +378,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+Here you find a pattern in your own table and write a rulebook for it.
 
 ### Page 7.4 — Find one real pattern in your own table
 
@@ -407,7 +417,7 @@ Always saying the commonest answer scores ______ ÷ ______ = ______ %. **That is
 
 **Step 3 — my rule.**
 
-```
+```text
 RULE 1:  IF ______________________________  THEN predict ______________
 
 DEFAULT: OTHERWISE                          THEN predict ______________
@@ -451,6 +461,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+Here you show one pattern as a picture.
+
 Draw **one real pattern from your own week** — anything at all. Two groups, side by side, with the counts and the rates written on them. Then fill in the three boxes underneath.
 
 ![Draw It frame for Week 7](../figures/fig-w07-11-draw-frame.svg)
@@ -463,6 +475,8 @@ Draw **one real pattern from your own week** — anything at all. Two groups, si
 ---
 
 ## 📊 Self-Check
+
+Tick one face for each line. Be honest.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -480,6 +494,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have tried every question.
 
 <details>
 <summary>Check your answers</summary>
@@ -504,7 +520,7 @@ ________________________________________________________________
 
 **A2.** **(b) 60%.** Twelve of the twenty days were late, so if you say "late" every single day you are right 12 times.
 
-```
+```text
 12 ÷ 20 = 0.6 = 60%
 ```
 
@@ -553,7 +569,7 @@ Model fix: `if the queue is really long` → `queue_length >= 21`, where `queue_
 
 **Pattern: YES.** A 75-point gap.
 
-```
+```text
 RULE 1:  IF subject = "english"  THEN predict "late"
 DEFAULT: OTHERWISE               THEN predict "on time"
 ```
@@ -566,7 +582,7 @@ DEFAULT: OTHERWISE               THEN predict "on time"
 
 Sorted, this is a perfectly clean split:
 
-```
+```text
  40   65   90  120  │  160  180  210  250
  no   no   no   no  │  yes  yes  yes  yes
                     ▲
@@ -575,7 +591,7 @@ Sorted, this is a perfectly clean split:
 
 Any threshold from **121 to 160** scores 8 out of 8. A tidy choice is **150**:
 
-```
+```text
 RULE 1:  IF screen_min >= 150  THEN predict "dead"
 DEFAULT: OTHERWISE             THEN predict "not dead"
 ```
@@ -650,7 +666,7 @@ A perfect split — the biggest gap possible, 100 points.
 
 **P3.** The highest "no" is **24** and the lowest "yes" is **28**, so the hole runs from 25 to 28. Any threshold that is **above 24 and at most 28** puts the line inside the hole:
 
-```
+```text
 25, 26, 27, 28    ->  four whole numbers, all scoring 8 out of 8
 ```
 
@@ -738,7 +754,7 @@ There is no single right answer, because it is your own table. Here is a **fully
 
 **Step 3 — the rule.**
 
-```
+```text
 RULE 1:  IF sleep_h < 7   THEN predict "tired"
 DEFAULT: OTHERWISE        THEN predict "not tired"
 ```

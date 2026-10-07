@@ -51,6 +51,8 @@ They belong together because in all three cases, **the confident surface hides t
 
 ## 🧠 The Big Idea
 
+This section explains the four ideas behind the week: personal data, metadata, deepfakes and over-trust.
+
 ### 1. "Personal data" is much wider than your name
 
 > **Personal data** — any information that is about an identifiable person, **or that could be combined with other information to identify them.**
@@ -226,6 +228,8 @@ And a fourth, which is about you: **when you are in a hurry and the answer is wh
 
 ## 🔍 Worked Examples
 
+These three examples work through the ideas step by step, using made-up data.
+
 ### Example 1 — The canteen dataset 🍕
 
 A school wants help planning lunches, so it publishes a spreadsheet on its website. Very sensibly, it **removes every name first** and announces that the data is now anonymous.
@@ -245,31 +249,31 @@ Here are four rows of it. There are 600 rows in total.
 
 **Step 2 — apply "Year 7".** The school has 600 students across five year groups, roughly evenly.
 
-```
+```text
    600 ÷ 5 = 120 students in Year 7
 ```
 
 **Step 3 — apply "postcode area 5".** The school draws from six postcode areas, and area 5 is one of the smaller ones — about 40 students.
 
-```
+```text
    still possible: about 40 × (120/600) → roughly 8 students
 ```
 
 Let us do it more carefully: of the 40 students in postcode area 5, about a fifth are in Year 7.
 
-```
+```text
    40 ÷ 5 = 8 students
 ```
 
 **Step 4 — apply "bus route C".** Route C serves the far side of the town. Of those 8, maybe 3 use route C.
 
-```
+```text
    3 students left
 ```
 
 **Step 5 — apply "9 days late this term".** Nine is a lot. In a group of three, quite possibly only one of them. (The numbers in these steps are made up to show the idea, not measured from real data.)
 
-```
+```text
    1 student.
 ```
 
@@ -277,7 +281,9 @@ Let us do it more carefully: of the 40 students in postcode area 5, about a fift
 
 **Which single column did the most work?** Year 7 — it removed 480 of the 600 in one step. **Which one feels the most private?** The lateness. Which removed two people.
 
-**Now the bit that makes it serious rather than clever.** Combine the lunch choice column with anything else and you may have revealed a family's religion. Combine the lateness column with the postcode and you have built something that looks a lot like a judgement about a neighbourhood. **Nobody intended either of those.** They published a spreadsheet about sandwiches.
+**Now the bit that makes it serious rather than clever.**
+
+Combine the lunch choice column with anything else and you may have revealed a family's religion. Combine the lateness column with the postcode and you have built something that looks a lot like a judgement about a neighbourhood. **Nobody intended either of those.** They published a spreadsheet about sandwiches.
 
 ---
 
@@ -297,11 +303,13 @@ Then I go to the athlete's **own verified account**, and to their **club's accou
 
 Eleven minutes old. 90,000 shares. From 40 followers. Do the arithmetic:
 
-```
+```text
    90,000 shares ÷ 40 followers = 2,250 shares per follower
 ```
 
-Forty followers cannot explain that. Shares come from other people passing it on, so a huge number of other accounts would have had to pick it up within minutes. That happens to real news from a big, trusted source. It almost never happens to a post from a brand-new account nobody follows. Either somebody is pushing it deliberately, or it was engineered to be maximally shareable. Both are reasons to slow down.
+Forty followers cannot explain that. Shares come from other people passing it on, so a huge number of other accounts would have had to pick it up within minutes.
+
+That happens to real news from a big, trusted source. It almost never happens to a post from a brand-new account nobody follows. Either somebody is pushing it deliberately, or it was engineered to be maximally shareable. Both are reasons to slow down.
 
 **Check 3 — WHO ELSE HAS IT. Corroboration.**
 
@@ -347,7 +355,7 @@ Atlas, index, "continents". Seven continents; Asia largest at about 44 million k
 
 **Step 3 — check B.** Encyclopedia, "leap year". And here is the rule as it actually is:
 
-```
+```text
    A year is a leap year if it divides by 4
    ... UNLESS it also divides by 100
    ... UNLESS it ALSO divides by 400
@@ -355,7 +363,7 @@ Atlas, index, "continents". Seven continents; Asia largest at about 44 million k
 
 So:
 
-```
+```text
    1900 ÷ 4   = 475      ✓ divides by 4     → looks like a leap year
    1900 ÷ 100 = 19       ✓ divides by 100   → so NOT a leap year
    1900 ÷ 400 = 4.75     ✗ does not divide  → exception does not apply
@@ -376,6 +384,8 @@ Look at what statement B got *right*. Leap years really are roughly every four y
 ---
 
 ## 🎲 What We Did In Class
+
+This section records the three rounds we played in class, so you can replay them at home.
 
 ### Three Rounds
 
@@ -425,6 +435,8 @@ Card C is a beautiful specimen, so look at everything it got right. Edmund Hilla
 
 ## 💬 Talk About It
 
+Pick one of these questions and talk it through with an adult.
+
 **1. "Which three ordinary facts about you would identify exactly one person in your town?"**
 
 > *Hint:* you are not allowed to use a name, an address or a phone number — those are the easy case. Use facts that sound completely harmless. Then ask the adult whether they would have thought to protect any of them.
@@ -440,6 +452,8 @@ Card C is a beautiful specimen, so look at everything it got right. Edmund Hilla
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four wrong ideas people often believe, each next to the better one.
 
 ### 1. "It's anonymous — the names are gone"
 
@@ -480,6 +494,8 @@ It may well confirm itself in the same confident voice, using the same machinery
 
 ## 🌍 Where You've Seen This
 
+These ideas show up in everyday life more often than you might expect.
+
 1. **A photo you sent a friend that showed more than you meant.** A shirt in the background, a letter on the table, a house number across the road. Nobody edits those out, because nobody is looking at them.
 2. **"Sign in with…" buttons.** One tap and you have introduced two companies to each other. Which is convenient, and is also one of the fastest ways to combine two piles of facts about you.
 3. **A recommendation that knew something you never typed.** It suggested something oddly specific, and you have no idea which combination of facts produced it. That feeling is a close cousin of re-identification: someone working out more about you than you told them.
@@ -518,6 +534,8 @@ to 36. Only **impact** is lit along the bottom.*
 
 ## 🔑 Remember This
 
+These are the points to keep from the week.
+
 - **"Anonymous" usually is not.** Names are the easy part. The boring facts — year group, postcode area, bus route — do most of the identifying, and nobody protects them.
 - **A photo file carries more than the picture:** the time, the device, the camera settings and often the exact location. It travels *inside the file*, so if you send the file, you send all of it.
 - **Data you put into a system may not come back out.** Deleting your copy is not deleting the data.
@@ -530,6 +548,8 @@ to 36. Only **impact** is lit along the bottom.*
 ---
 
 ## 📓 New Words
+
+Here are this week's five words, with an example of each.
 
 ![This week's five words, drawn](../figures/fig-w32-9-vocab-icons.svg)
 *Figure 32.9 — This week's five words, drawn.*

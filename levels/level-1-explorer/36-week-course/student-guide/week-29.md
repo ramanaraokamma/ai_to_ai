@@ -78,11 +78,15 @@ Run it on last week's table. Start at `the`.
 
 You are back at `the`. And the table has not changed. So it picks `bus`. Then `to`. Then `the`. Then `bus`.
 
-```
+Here is the whole route written out.
+
+```text
    the -> bus -> to -> the -> bus -> to -> the -> bus -> to -> ...
 ```
 
-For ever. **And nothing is broken.** Greedy makes the same decision on the same row every single time — the posh word is *deterministic*. A machine that always makes the same decision, walking round a table with only so many rows in it, must eventually come back to a word it has already visited. And from that moment it is trapped in a circle it cannot leave.
+For ever. **And nothing is broken.** Greedy makes the same decision on the same row every single time — the posh word is *deterministic*.
+
+A machine that always makes the same decision, walking round a table with only so many rows in it, must eventually come back to a word it has already visited. From that moment it is trapped in a circle it cannot leave.
 
 ![Two routes through the same table](../figures/fig-w29-2-greedy-vs-sampled.svg)
 *Figure 29.3 — Same table, same start word. The only difference is how you pick.*
@@ -186,7 +190,9 @@ Now check every single step against the table.
 
 Now read the sentence as a claim about the world. Go back to the original six sentences and find out who goes to the market.
 
-```
+Here are the two sentences from the story that matter.
+
+```text
    I take the bus to the market.        <- me
    Amma takes the bus to the shop.      <- Amma
 ```
@@ -206,7 +212,9 @@ Three things to be precise about, because this word gets thrown around loosely.
 
 **It comes from gluing.** The falseness does not live in any one step. It lives at a **join**.
 
-```
+Here are the two pairs that were glued together.
+
+```text
    to -> the        learned 3 times, mostly from sentences about buses in general
    the -> market    learned exactly ONCE, from the sentence about ME
 
@@ -229,9 +237,9 @@ Three complete runs on three small tables. Every bag, every roll. Cover the answ
 
 ### Worked Example 1 — Hot pizza and cold soup (food)
 
-**The corpus:**
+**The corpus** (the text we start from):
 
-```
+```text
    I eat hot pizza. Dad eats hot soup. I eat cold soup.
 ```
 
@@ -252,9 +260,9 @@ Three complete runs on three small tables. Every bag, every roll. Cover the answ
 | **eats** | hot | 1 | 1 |
 | **cold** | soup | 1 | 1 |
 
-**The bags:**
+**The bags** (one slip per tally mark):
 
-```
+```text
    BAG FOR "eat"  - 2 slips     1 hot     2 cold
    BAG FOR "hot"  - 2 slips     1 pizza   2 soup
    BAG FOR "."    - 2 slips     1 dad     2 i
@@ -291,9 +299,9 @@ Reads well? **✓** — perfectly fine English. True to the corpus? **✓** — 
 
 Reads well? **✓** Now check it against the corpus. Dad eats hot **soup**. The pizza belongs to **me**. So: **true? ✗**
 
-**The trace.** Which two pairs did it?
+**The trace.** Which two pairs did it? Here are the two pairs used.
 
-```
+```text
    eats -> hot      learned once, from DAD's sentence
    hot  -> pizza    learned once, from MY sentence
 ```
@@ -304,7 +312,7 @@ Both real. Both counted. Glue them and Dad is eating my pizza. At the moment it 
 
 **The corpus:**
 
-```
+```text
    Rohit hits a four. Virat hits a six. Rohit takes a catch.
 ```
 
@@ -350,14 +358,16 @@ Check: 2 + 2 + 3 + 2 + 1 + 1 + 1 + 1 + 1 = **14** = 15 − 1 ✓
 
 **Output: `virat hits a four .`** Reads ✓ · True **✗** — Virat hit a **six**. Rohit hit the four.
 
-**Now look at Runs A and B side by side and notice how thin the difference is.**
+**Now put Runs A and B side by side.**
 
-```
+```text
    rohit hits a four .     <-  TRUE
    virat hits a four .     <-  FALSE
 ```
 
-**One word different.** Three of the four steps were *identical*, and the table treated both runs exactly the same way, with exactly the same enthusiasm. The join is between `hits → a` and `a → four`: `hits → a` was learned from both batsmen, and `a → four` was learned only from Rohit's. When the generator chose `four`, all it could see was the word `a`. It had no idea whose innings it was in.
+**One word different.** Three of the four steps were *identical*, and the table treated both runs exactly the same way, with exactly the same enthusiasm.
+
+The join is between `hits → a` and `a → four`: `hits → a` was learned from both batsmen, and `a → four` was learned only from Rohit's. When the generator chose `four`, all it could see was the word `a`. It had no idea whose innings it was in.
 
 > **💡 The tie rule, since you will hit it:** in this table `rohit` has `hits` 1 and `takes` 1. What does *greedy* do with a tie? There is no answer inside the data, so you have to make a rule and write it down. Ours: **whichever appeared first in the corpus wins.** Admitting that this was a choice and not a discovery is the correct behaviour.
 
@@ -365,7 +375,7 @@ Check: 2 + 2 + 3 + 2 + 1 + 1 + 1 + 1 + 1 = **14** = 15 − 1 ✓
 
 **The corpus:**
 
-```
+```text
    Maya is here. Rohan is here. Dev is absent.
 ```
 
@@ -394,7 +404,9 @@ Check: 2 + 2 + 3 + 2 + 1 + 1 + 1 + 1 + 1 = **14** = 15 − 1 ✓
 | rohan | is 1 | forced | is |
 | is | *(same row, unchanged)* | 2 | here |
 
-```
+Here is the output.
+
+```text
    OUTPUT:  maya is here . rohan is here . rohan is here .
 ```
 
@@ -441,7 +453,9 @@ True? **✗** Dev is the one person in this corpus who is **absent**.
 
 ### The fixed rolls
 
-```
+Use these rolls, in order, for each sentence.
+
+```text
    SENTENCE 1   prompt: the      rolls:  2  3  4
    SENTENCE 2   prompt: amma     rolls:  1  4  2  3  5
    SENTENCE 3   prompt: the      rolls:  1  2  6  1  3  5      (the 6 is a re-roll - watch for it)
@@ -492,7 +506,9 @@ Read it out loud like a newsreader first. It is *better written* than sentence 1
 
 ### Greedy — no die, twelve words
 
-```
+This is the greedy run, written out.
+
+```text
    the bus to the bus to the bus to the bus to
 ```
 
@@ -523,6 +539,8 @@ And the machine cannot tell you which is which. All four sentences came out of t
 
 ## 💬 Talk About It
 
+These questions are for talking with someone at home. Each one has a hint underneath.
+
 **1. Ask someone who uses a chatbot: "Have you ever caught it being confidently wrong? How did you find out?"**
 
 > *Hint:* the interesting part of their answer is almost never the mistake. It is *how they noticed*. Nearly always it is because they already knew the right answer, or because they went and checked. Almost nobody says "it sounded unsure" — because it didn't.
@@ -538,6 +556,8 @@ And the machine cannot tell you which is which. All four sentences came out of t
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that sound sensible. Each one is shown next to the right idea.
 
 ### Trick 1 — "That's one question, so one verdict"
 
@@ -578,6 +598,8 @@ That is a real and general idea, and it is not only about words. Always taking t
 
 ## 🌍 Where You've Seen This
 
+This week's ideas turn up in places you already know.
+
 1. **A chatbot giving you a different answer when you press "regenerate".** Same bag, different draw. You have just watched sampling happen.
 2. **Your phone keyboard looping when you tap the middle word over and over.** That is like greedy, run by your thumb, hitting much the same rows and making the same choices.
 3. **A confidently wrong answer about a real person, a date or a page number.** That is a join between two real-looking patterns. The specific, checkable claims are exactly where hallucination bites.
@@ -615,6 +637,8 @@ wrong to a real person.*
 
 ## 🔑 Remember This
 
+The main points of the week, in short.
+
 - **Generation is a four-step loop:** where am I, look up the group, pick one, say it. Repeat. That is the loop chatbots use.
 - **Greedy always takes the biggest count**, so it makes the same choice every time, so it walks into a circle and cannot climb out. It also makes most of the table permanently unreachable — 17 of our 20 words.
 - **Sampling makes one slip per tally mark and draws one.** The counts *become* the chances, with no arithmetic. That is why the same question gives two different answers.
@@ -627,6 +651,8 @@ wrong to a real person.*
 ---
 
 ## 📓 New Words
+
+Five words from this week, with an example of each.
 
 ![This week's five words](../figures/fig-w29-7-vocab-icons.svg)
 *Figure 29.10 — This week's five words, drawn.*

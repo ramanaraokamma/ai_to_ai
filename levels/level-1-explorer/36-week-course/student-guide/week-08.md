@@ -23,7 +23,9 @@ You have been queuing for forty minutes. It is the big ride, the one with the dr
 
 There is a sign next to the person who checks. It says:
 
-```
+The sign reads:
+
+```text
 YOU MUST BE 140 CENTIMETRES TALL TO RIDE
 ```
 
@@ -46,7 +48,9 @@ You are right that you are plenty strong enough, and two centimetres is nothing.
 
 > **Edge case** — an example a rule gets wrong, usually because it is sitting right on the boundary of what somebody was imagining when they wrote the rule.
 
-```
+Here is the rule and your case, side by side.
+
+```text
 THE RULE:      height >= 140  ->  allowed
 THE EDGE CASE: 138 cm         ->  refused, and she was fine
 ```
@@ -60,6 +64,8 @@ And now find a second edge case for the *same* rule — this time somebody it le
 ---
 
 ## 🧠 The Big Idea
+
+This section gives you five ideas: rule order, stand-ins, finding edge cases, the two kinds of wrong, and the threshold slider.
 
 ### 1. First match wins — so the order of the rules is part of the rulebook
 
@@ -127,9 +133,9 @@ The answer is almost always **no** — which means you have just built **two edg
 ![A rule boundary drawn on a number line](../figures/fig-w08-3-rule-boundary-number-line.svg)
 *Figure 8.4 — The rule's boundary drawn as a line, with real examples as dots either side. Everybody far from the line is fine. Everybody near it is a coin toss with consequences.*
 
-**The concrete version, with real messages.** Take the spam rule `IF the message has 30 or more characters THEN spam`, and count characters carefully:
+**The concrete version, with real messages.** Take the spam rule `IF the message has 30 or more characters THEN spam`, and count characters carefully. Here are two messages on either side of the line:
 
-```
+```text
 "can you bring my charger today"   30 characters  ->  SPAM     (junk bin)
 "can you bring my charger back"    29 characters  ->  ham      (inbox)
 ```
@@ -210,6 +216,8 @@ And for any one stand-in, this trade-off does not go away: moving the threshold 
 
 ## 🔍 Worked Examples
 
+These three examples walk through the same steps: name the flag, fill the grid, count, then move the threshold.
+
 ### Worked Example 1 — The Ride Queue (the one we did in class)
 
 Eight riders came through the gate. The rule was `IF height >= 140 THEN allow`, default refuse.
@@ -287,7 +295,9 @@ The defensible answer is 150 or higher, and the reason is not the score: **three
 
 A shop has a rule for the fruit crate. Somebody measures the bruise on each apple with a small ruler and works out its area in square centimetres.
 
-```
+The shop's rule is:
+
+```text
 RULE:    IF bruise_cm2 >= 4   THEN bin it
 DEFAULT: OTHERWISE            THEN sell it
 ```
@@ -321,9 +331,9 @@ Later, all eight apples were cut open, so we know the truth: was each one **actu
 - **The false alarm, A4:** a perfectly good apple in the bin. Somebody, somewhere, threw away food. Small cost, and it happens every single day in every shop in the world.
 - **The miss, A3:** a mouldy apple sold to a customer, who bites into it. Bigger cost, much rarer, and far more likely to end up as a complaint.
 
-**Step 4 — build the edge case, using the procedure.** Take the threshold, 4, and step either side.
+**Step 4 — build the edge case, using the procedure.** Take the threshold, 4, and step either side. These are the two apples closest to it.
 
-```
+```text
 A8  bruise 3.9 cm2  ->  SOLD
 A4  bruise 4.1 cm2  ->  BINNED
 ```
@@ -368,7 +378,9 @@ A3 had a bruise of only 3.5 cm² and was rotten *inside*. Bruise area is a **sta
 
 A school has this rule. Notice it has a **threshold** *and* a **time window** — most real rules about counting need both, and forgetting the window is a classic mistake.
 
-```
+The school's rule is:
+
+```text
 RULE:    IF late 3 or more times in the last 20 school days   THEN phone home
 DEFAULT: OTHERWISE                                            THEN do nothing
 ```
@@ -427,6 +439,8 @@ The score went **up**, and the misses went to **zero**. So is lowering it to 2 s
 
 ## 🎲 What We Did In Class
 
+This section is a record of the lesson, so you can follow it again at home.
+
 ### Break My Rule
 
 You built a spam rulebook from ten labelled messages, scored it perfectly, and then watched it fall over in four minutes.
@@ -462,7 +476,9 @@ You built a spam rulebook from ten labelled messages, scored it perfectly, and t
 
 ### The rulebook
 
-```
+This is the rulebook you built in class.
+
+```text
 CONVENTION: first match wins, checked top to bottom.
 
 RULE 1:  IF the message contains "!!"                   THEN spam
@@ -547,6 +563,8 @@ Give a three-rule spam book to an adult, and ask them to write five messages des
 
 ## 💬 Talk About It
 
+Use these three questions to talk with an adult or a friend. Each has a hint below it.
+
 **1. "Which mistake would you rather your email app made — and who pays?"**
 *Hint:* there is no right answer, and the point is to notice that. Push the other person past "I'd rather it was accurate" (which is not a choice) to an actual preference. Then the harder half: name a **specific person** other than yourself who is affected. A grandparent using the same app. A younger sibling. A small business whose invoice went to somebody's junk folder.
 
@@ -559,6 +577,8 @@ Give a three-rule spam book to an adult, and ask them to write five messages des
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four wrong ideas that are easy to believe. Each is shown next to a better one.
 
 ### Trick 1 — "Wrong is wrong. That's four mistakes."
 
@@ -599,6 +619,8 @@ So whenever you score a rulebook, always write down **which rule fired**, not ju
 
 ## 🌍 Where You've Seen This
 
+False alarms and misses show up in many places outside this course. Here are seven.
+
 1. **Your own junk folder.** Go and look. Most people find a real message that should not be there within ninety seconds, and it is often something that mattered. That is a **false alarm**, in your own life, with a real cost — and notice how long it sat there unread.
 2. **A smoke alarm going off while somebody makes toast.** A false alarm. And here is the dangerous bit: after enough of them, somebody takes the battery out — which converts every future false alarm into a potential **miss**. Annoying errors cause dangerous ones.
 3. **A shop's security tag beeping as you walk out with nothing.** False alarm. You get looked at by everybody in the queue. Who paid? You did, and you had done nothing.
@@ -637,6 +659,8 @@ just write rules, you counted how they were wrong.*
 
 ## 🔑 Remember This
 
+These are the points to keep from this week.
+
 - **Every rule has edge cases, and they are guaranteed** — not because the rule is sloppy, but because every rule measures a **stand-in** for something it cannot see.
 - **To find an edge case on purpose: take the threshold and step one unit either side.** Then ask whether the answer really ought to flip there. It almost never should.
 - **There are two ways of being wrong.** A **false alarm** says yes when the truth was no. A **miss** says no when the truth was yes.
@@ -649,6 +673,8 @@ just write rules, you counted how they were wrong.*
 ---
 
 ## 📓 New Words
+
+These are the words this week introduced.
 
 ![Week 8 words as pictures](../figures/fig-w08-9-vocab-icons.svg)
 *Figure 8.9 — This week's five words, drawn.*

@@ -42,6 +42,8 @@ Not twenty minutes. Twenty seconds. Before you press anything, write down your p
 
 ## 🧠 The Big Idea
 
+This section explains how Teachable Machine works. It also tells you what to check before and after you train.
+
 ### 1. Teachable Machine is a web page, and it is only five clicks
 
 **Teachable Machine** is a free web page made by Google that trains a small image classifier by being shown photos. No code. No account. Nothing to install. You open it, you make some named boxes, you put photos in each box, you press one button, and about twenty seconds later you have a working model.
@@ -72,18 +74,20 @@ Making a class is putting a label on a shoebox. Loading photos is dropping photo
 
 ### 2. Name the boxes properly, then check the balance — before you press anything
 
-The step everybody skips is naming. `Class 1`, `Class 2`, `Class 3` means nothing to you in three days' time. I promise. Everybody thinks they'll remember and nobody does. Click the little pencil and type `spoon`, `toothbrush`, `comb`.
+The step everybody skips is naming. `Class 1`, `Class 2`, `Class 3` means nothing to you in three days' time. Everybody thinks they'll remember and nobody does.
+
+Click the little pencil and type `spoon`, `toothbrush`, `comb`.
 
 Then load your photos: **Upload** and drag the whole folder in, or **Webcam** if you're shooting live.
 
 > **⚠️ Watch out — the record button trap.** If you use the webcam, do **not** hold *Hold to Record* down for twenty seconds. You'll get two hundred nearly identical pictures, which teaches the model about as much as one picture does — while making you feel like you did two hundred times the work. **Two seconds, stop, move the object, two seconds, stop, move it again.**
 
-Now the bit that separates a careful person from a hopeful one. Look at the little **sample count** printed under each class, write the three numbers down, and do the arithmetic:
+Now the check that separates a careful person from a hopeful one. Look at the little **sample count** printed under each class and write the three numbers down. Then do the arithmetic shown here:
 
 ![Three classes with real names and their sample counts](../figures/fig-w17-3-three-class-setup.svg)
 *Figure 17.3 — Names, counts, and the check you do before you press anything.*
 
-```
+```text
    THE BALANCE CHECK
 
    (biggest − smallest)  ÷  biggest   must be under 20%
@@ -93,30 +97,39 @@ Now the bit that separates a careful person from a hopeful one. Look at the litt
    (41 − 39) ÷ 41  =  2 ÷ 41  =  0.0487…  ≈  4.9%     ✓ under 20%, so I can train
 ```
 
-If your counts are badly out of balance, fix it **now**, not later: either add photos to the small class, or use the class's **⋮ three-dot menu → Remove All Samples** on the big one and reload fewer. Five minutes here saves the whole model — that's the Week 16 lesson (200 / 200 / 8 scores 98% and never says "comb") arriving in real life.
+If your counts are badly out of balance, fix it **now**, not later. You have two choices:
+
+- Add photos to the small class.
+- Use the big class's **⋮ three-dot menu → Remove All Samples**, then reload fewer.
+
+Five minutes here saves the whole model. That's the Week 16 lesson (200 / 200 / 8 scores 98% and never says "comb") arriving in real life.
 
 ---
 
 ### 3. Twenty seconds is enough, and here is honestly why
 
-Press **Train Model** and don't touch anything — don't switch tabs, don't minimise the window. Browsers deliberately slow down tabs you aren't looking at, and training can stall if you look away.
+Press **Train Model** and don't touch anything. Don't switch tabs. Don't minimise the window. Browsers deliberately slow down tabs you aren't looking at, and training can stall if you look away.
 
 **What's happening in those seconds:**
 
-The model looks at all 120 of your photos, checks how many it got wrong, nudges thousands of internal numbers a tiny bit, and then looks at **all 120 again**. One complete pass through every photo is an **epoch**.
+The model looks at all 120 of your photos. It checks how many it got wrong and nudges thousands of internal numbers a tiny bit. Then it looks at **all 120 again**.
+
+One complete pass through every photo is an **epoch**.
 
 ![One epoch is one full pass](../figures/fig-w15-2-epoch-loop.svg)
 *Figure 15.2 — One epoch is one full pass through every single example. (You met this in Week 15.)*
 
-Teachable Machine does **50 epochs** by default. So:
+Teachable Machine does **50 epochs** by default. The sum looks like this:
 
-```
+```text
    120 photos  ×  50 epochs  =  6,000 photo-examinations
 ```
 
 If a human looked at one photo per second without stopping, 6,000 seconds is **100 minutes**. Your browser does it in about twenty. That is not magic — it is very fast arithmetic, repeated.
 
-**And there's an honest bit that most explanations leave out.** Teachable Machine does not start from nothing. It begins with a model Google already trained on **millions** of everyday photographs — a model that already recognises edges, curves, shine, fur, wood grain, fabric texture. Your forty photos only have to teach the last small step: **which of those already-known patterns go with which of your three names.**
+**And there's an honest bit that most explanations leave out.** Teachable Machine does not start from nothing. It begins with a model Google already trained on **millions** of everyday photographs.
+
+That model already recognises edges, curves, shine, fur, wood grain, fabric texture. Your forty photos only have to teach the last small step: **which of those already-known patterns go with which of your three names.**
 
 That's why forty photos is enough, and why it takes twenty seconds instead of a week. **You are not building a brain from scratch. You are giving names to a vocabulary that already exists.**
 
@@ -127,7 +140,11 @@ That's why forty photos is enough, and why it takes twenty seconds instead of a 
 
 After training, the photos are **not inside the model.** What's left is a pile of adjusted numbers that happen to work.
 
-Here is the clinching evidence, and it's arithmetic you can check yourself: a Teachable Machine model file is a **few megabytes**. Your 120 photos might be **forty megabytes**. The model is much *smaller* than the data that made it, so it cannot possibly be storing them. It genuinely squeezed them into a pattern and let them go. (One honest wrinkle: the `.tm` **project file** you save in Part 4 is a different thing. It keeps a copy of your photos so you can reopen and edit the project, so it is much bigger than the model. The argument above is about the trained model itself.)
+Here is the evidence, and it's arithmetic you can check yourself. A Teachable Machine model file is a **few megabytes**. Your 120 photos might be **forty megabytes**.
+
+The model is much *smaller* than the data that made it, so it cannot possibly be storing them. It genuinely squeezed them into a pattern and let them go.
+
+One honest wrinkle: the `.tm` **project file** you save in Part 4 is a different thing. It keeps a copy of your photos so you can reopen and edit the project, so it is much bigger than the model. The argument above is about the trained model itself.
 
 🍕 **The analogy — you cannot get the eggs back out of a cake.**
 Once it's baked, you can't retrieve the eggs, you can't read the recipe off the sponge, and if the cake tastes bad, arguing with it changes nothing. **The only fix is to bake a new one with better ingredients.** You never fix a model by telling it off. You fix it by changing the photos.
@@ -143,9 +160,9 @@ The **Preview** panel on the right is now live. Point the camera at something an
 ![Holding a spoon up to the live preview](../figures/fig-w17-4-live-preview-bars.svg)
 *Figure 17.4 — Read all three numbers, not just the winner. Then check the sum. Then the margin.*
 
-Everything you learned last week applies here, unchanged. Same four steps:
+Everything you learned last week applies here, unchanged. Use the same four steps:
 
-```
+```text
    1.  READ    all three numbers, biggest first
    2.  SUM     add them. Must be 100. If it isn't, you misread — read again.
    3.  MARGIN  top − second
@@ -171,9 +188,9 @@ Close the tab and your model is gone. Refresh the page and it's gone. Let the la
 ![Save it or lose it](../figures/fig-w17-2-save-it-or-lose-it.svg)
 *Figure 17.2 — There is no autosave. This is the only save there is.*
 
-The one and only save is:
+The one and only save is this menu path:
 
-```
+```text
    ☰ menu (top-left)  →  Download project as file
 ```
 
@@ -187,13 +204,17 @@ Then do the step people skip: **open your Downloads folder and actually look at 
 
 ## 🔍 Worked Examples
 
+Three examples show how to read, balance and question a model. Follow the working in each one before you try your own.
+
 ### Example 1 — Food: three live readings from a fruit-bowl model
 
 A model is trained on three classes: **apple**, **banana**, **orange**, forty photos each. Here are three live readings, taken with the objects held still 30 cm from the camera.
 
 **Reading 1 — an apple, flat on.**
 
-```
+The three scores on screen:
+
+```text
    apple 89   ·   banana 6   ·   orange 5
 ```
 
@@ -207,7 +228,9 @@ A model is trained on three classes: **apple**, **banana**, **orange**, forty ph
 
 **Reading 2 — a banana, tilted 45°.**
 
-```
+The three scores on screen:
+
+```text
    apple 11   ·   banana 82   ·   orange 7
 ```
 
@@ -215,13 +238,19 @@ Sum: 11 + 82 + 7 = **100** ✓. Winner: **banana**. Margin: 82 − 11 = **71**. 
 
 **Reading 3 — an orange, at arm's length.**
 
-```
+The three scores on screen:
+
+```text
    apple 31   ·   banana 12   ·   orange 57
 ```
 
 Sum: 31 + 12 + 57 = **100** ✓. Winner: **orange** — correct. Margin: 57 − 31 = **26**.
 
-Band: 15–29, **shaky**. So: right answer, weak margin. **This is the interesting row.** The answer is correct, so a table that recorded only right-or-wrong would show nothing at all. But the margin has dropped from the 70s and 80s to 26, and that tells you something real: **an apple and an orange may be the two most similar classes in this set, and distance may be making it worse** (one reading is a hint, not proof).
+Band: 15–29, **shaky**. So: right answer, weak margin.
+
+**This is the interesting row.** The answer is correct, so a table that recorded only right-or-wrong would show nothing at all. But the margin has dropped from the 70s and 80s to 26, and that tells you something real.
+
+**An apple and an orange may be the two most similar classes in this set, and distance may be making it worse** (one reading is a hint, not proof).
 
 That is the model's weak spot, and you found it *before* anything actually went wrong. That is the entire reason the margin column exists.
 
@@ -241,7 +270,7 @@ You want a model that sorts your kit bag: **cricket ball**, **shin pad**, **swim
 
 **Step 1 — do the balance check before touching Train.**
 
-```
+```text
    biggest  = 52   (cricket ball)
    smallest = 33   (goggles)
 
@@ -250,7 +279,9 @@ You want a model that sorts your kit bag: **cricket ball**, **shin pad**, **swim
 
 36.5% is **over 20%**, so this is **not balanced enough**. Do not train yet.
 
-**Step 2 — how bad is it really?** Worth knowing, because it changes what you do. This isn't 200 / 200 / 8 — nobody is going to abandon the goggles class entirely with 33 examples. What you'd expect instead is a mild, sneaky lean: cricket ball wins slightly more often than it deserves, and the goggles margins run a bit lower than the others.
+**Step 2 — how bad is it really?** It is worth knowing, because it changes what you do.
+
+This isn't 200 / 200 / 8. Nobody is going to abandon the goggles class entirely with 33 examples. What you'd expect instead is a mild, sneaky lean: cricket ball wins slightly more often than it deserves, and the goggles margins run a bit lower than the others.
 
 **Step 3 — fix it, and choose the cheaper fix.**
 
@@ -286,9 +317,9 @@ You've trained a model on your school desk: **pencil**, **rubber**, **ruler**. F
 
 Nine out of nine, every margin over 29. You are, quite correctly, delighted.
 
-**Now hold up a pencil case.** There is no pencil case class.
+**Now hold up a pencil case.** There is no pencil case class. The three scores on screen:
 
-```
+```text
    pencil 74   ·   rubber 9   ·   ruler 17
 ```
 
@@ -302,9 +333,13 @@ Sum: 74 + 9 + 17 = **100** ✓. Winner: **pencil**. Margin: 74 − 17 = **57** (
 
 **Q2 — Is it right?** No. A pencil case is not a pencil.
 
-**Q3 — Is it broken?** **No.** And this is the answer that matters. It has three boxes and 100 points of belief, and no way at all to say "none of these." A pencil case is long and thin, so (my best guess) of the three boxes it lands nearest **pencil**. It is stuck, not stupid.
+**Q3 — Is it broken?** **No.** And this is the answer that matters.
 
-**What would have helped?** An **`other` class** — a fourth box filled with photos of the empty desk, your hand, a pencil case, a book, a phone. Then the belief would have somewhere honest to go. And remember the cost from Week 16: adding that big messy class usually **shrinks every other margin**. It's a trade, not a free win.
+It has three boxes and 100 points of belief, and no way at all to say "none of these." A pencil case is long and thin, so (my best guess) of the three boxes it lands nearest **pencil**. It is stuck, not stupid.
+
+**What would have helped?** An **`other` class** — a fourth box filled with photos of the empty desk, your hand, a pencil case, a book, a phone. Then the belief would have somewhere honest to go.
+
+Remember the cost from Week 16: adding that big messy class usually **shrinks every other margin**. It's a trade, not a free win.
 
 > **🔑 What Example 3 teaches:** your model is exactly as good as the photos you gave it — and a confident number tells you nothing until you know what was in front of the camera.
 
@@ -312,7 +347,7 @@ Sum: 74 + 9 + 17 = **100** ✓. Winner: **pencil**. Margin: 74 − 17 = **57** (
 
 ## 🎲 What We Did In Class
 
-**The Build, start to finish.** Everything below can be done at home on your own. Give it about 30 minutes.
+This section is the build, start to finish. You can do all of it at home on your own. Give it about 30 minutes.
 
 ### Part 0 — before you start
 
@@ -335,9 +370,9 @@ Sum: 74 + 9 + 17 = **100** ✓. Winner: **pencil**. Margin: 74 − 17 = **57** (
 
 ### Part 2 — the nine-row baseline (about 12 minutes)
 
-Each of the three objects is held up in **three positions**:
+Each of the three objects is held up in **three positions**. The box shows what each one means:
 
-```
+```text
    ┌──────────────────────────────────────────────────────────┐
    │  POSITION 1 — flat on      face the camera, ~30 cm away  │
    │  POSITION 2 — tilted       turn it about 45°, same distance│
@@ -376,9 +411,9 @@ Here is what a healthy 40-photo, good-variety model looks like. **Yours will be 
 
 Now bring out the hidden fourth object — the fork, the stapler, the TV remote. Hold it up. Read the screen.
 
-You'll get something like `spoon 74% · toothbrush 15% · comb 11%`. Write it into the table as row 10, marked clearly:
+You'll get something like `spoon 74% · toothbrush 15% · comb 11%`. Write it into the table as row 10, marked clearly. Here is how that row can look:
 
-```
+```text
    row 10  |  a FORK  |  no class exists  |  74 / 15 / 11  |  sum 100  |  margin 59  |  ✗ WRONG
 ```
 
@@ -406,6 +441,8 @@ This part is not admin. Week 18 is built entirely on this file.
 
 ## 💬 Talk About It
 
+Pick one question and talk it through with someone at home. The hints help you start.
+
 **1. "Where does the model keep my photos?"**
 > *Hint:* it doesn't. Try the file-size argument on someone: the model file is a few megabytes, the photos were about forty. Ask them how three megabytes could be hiding forty megabytes. Then try the cake: can you get the eggs back out?
 
@@ -418,6 +455,8 @@ This part is not admin. Week 18 is built entirely on this file.
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four mistakes that feel right. Each one shows the wrong way, then the right way.
 
 ### Trick 1 — holding the record button down feels productive
 
@@ -458,6 +497,8 @@ Holding an object up to the camera where you trained is the loosest possible che
 
 ## 🌍 Where You've Seen This
 
+Image classifiers like yours are already around you. Here are six places.
+
 1. **Your phone unlocking with your face.** It checks what the camera sees against a saved scan of exactly one face — yours — and it can wobble in the dark, at odd angles, and behind sunglasses. Same weaknesses as your table's "far away" rows.
 2. **The photo app sorting your pictures into "dogs", "beaches", "food".** Same idea as your three boxes, with millions of photos and a much bigger network.
 3. **Supermarket self-checkout produce cameras.** They classify a small set of items, and they get confidently confused by anything not in the set — your fork, in a shop.
@@ -494,6 +535,8 @@ moved back to **data** and **model**: you handed over photos, and a model came o
 
 ## 🔑 Remember This
 
+These are the key points of Week 17.
+
 - Teachable Machine trains an image classifier **in your browser tab, on your own laptop.** Your photos are never uploaded anywhere.
 - **Name your classes properly** and **check the balance** — `(biggest − smallest) ÷ biggest` under 20% — *before* you press Train.
 - **50 epochs × 120 photos = 6,000 photo-examinations** in about twenty seconds. It's fast because it starts from a model Google already trained on millions of pictures.
@@ -507,7 +550,9 @@ moved back to **data** and **model**: you handed over photos, and a model came o
 
 ## 📓 New Words
 
-**None this week.** Week 17 is a consolidation week — every word you needed today, you already owned. Here they are, doing real work for the first time.
+There are no new words this week. Every word you needed today, you already owned.
+
+The table lists the six old words, and where each one did real work today.
 
 ![Six words you already own](../figures/fig-w17-9-vocab-recap-icons.svg)
 *Figure 17.9 — No new words. Six old ones, all used before you were allowed to press the button.*
@@ -524,6 +569,8 @@ moved back to **data** and **model**: you handed over photos, and a model came o
 ---
 
 ## 📤 Your Homework
+
+The workbook turns today's build into practice. Here is where to find it and how long it takes.
 
 Go to **[Workbook — Week 17](../workbook/week-17.md)**. About **45 minutes**, and you need the laptop for part of it.
 

@@ -58,14 +58,14 @@ three.
 
 The counting is the part that lands:
 
-```
+```text
    224 × 224          =  50,176 pixels
    50,176 × 3 channels = 150,528 numbers
 ```
 
 One small photo, 150,528 whole numbers. And how many colours can a single pixel be?
 
-```
+```text
    256 × 256 × 256 = 16,777,216
 ```
 
@@ -100,9 +100,10 @@ all three channels hold the same numbers, which is why you only bother storing o
 
 ### The yellow moment — light, not paint
 
-This is the single most important thirty seconds of the lesson, and if you assert it instead of
-explaining it, your student will not believe you. They should not believe you. Every art lesson they
-have ever had says red and green make brown.
+This is the single most important thirty seconds of the lesson. If you assert it instead of
+explaining it, your student will not believe you.
+
+They should not believe you. Every art lesson they have ever had says red and green make brown.
 
 **Both facts are true, because there are two different kinds of mixing.**
 
@@ -130,7 +131,7 @@ is all three at once. Nothing in this lesson persuades an 11-year-old as thoroug
 
 To turn a colour pixel grey you average its three numbers:
 
-```
+```text
    grey = (R + G + B) ÷ 3
         = (200 + 80 + 40) ÷ 3
         = 320 ÷ 3
@@ -156,7 +157,7 @@ Here is the whole mechanism, and it is just addition and division:
 ![Averaging a two by two block into one pixel](../figures/fig-w24-3-block-average.svg)
 *Figure 24.3 — Four pixels become one. Add the four numbers, divide by four, write the answer in the new grid. That is downsampling, complete.*
 
-```
+```text
    (128 + 0 + 192 + 0) ÷ 4  =  320 ÷ 4  =  80
 ```
 
@@ -174,7 +175,7 @@ many numbers become few, and the rest are thrown away.
 
 Your shrunk pixel holds 80. What were the four numbers that made it? You cannot know. Look:
 
-```
+```text
    (128 + 0 + 192 + 0) ÷ 4  = 320 ÷ 4 = 80
    ( 80 + 80 + 80 + 80) ÷ 4 = 320 ÷ 4 = 80
    (  0 + 0 + 65 + 255) ÷ 4 = 320 ÷ 4 = 80
@@ -193,9 +194,11 @@ exist that make a small blurry photo look sharp, and they are not lying about wh
 What they are doing is **inventing** plausible detail — a model that has seen millions of faces
 guesses what a face-ish blur was probably made of, and paints that in. It looks convincing. It is a
 *guess*, and it can be confidently wrong: an invented number plate that reads clearly and is not the
-real number plate. So the honest sentence is: **you cannot recover detail, but you can generate a
-convincing replacement for it, and you must never treat the replacement as evidence.** That is a
-grown-up distinction and an 11-year-old can hold it.
+real number plate.
+
+So the honest sentence is: **you cannot recover detail, but you can generate a convincing
+replacement for it, and you must never treat the replacement as evidence.** That is a grown-up
+distinction and an 11-year-old can hold it.
 
 ### Anti-aliasing — the grey squares finally get their name
 
@@ -224,9 +227,13 @@ magnifying-glass demo. Fifteen years of art lessons need something physical to p
 
 **Misconception 2 — "shrinking loses quality, but the detail is still in there somewhere."** This is
 the deep one, and it survives most explanations because it feels true — the photo *looks* like it
-still nearly has the detail. Beat it with arithmetic, not with words: put 80 on the board, ask them to
+still nearly has the detail.
+
+Beat it with arithmetic, not with words. Put 80 on the board, ask them to
 give you four numbers that average to 80, then ask for four *different* numbers that also average to
-80, then a third set. Once *they* have generated three different pasts for the same present, they own
+80, then a third set.
+
+Once *they* have generated three different pasts for the same present, they own
 the argument. Explaining it does not work nearly as well as making them do it.
 
 A third one to have ready: **"RGB means a pixel is red or green or blue."** Some students hear "three
@@ -285,6 +292,8 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 
 ## 🧰 Prep Checklist
 
+Use this list to get ready. It covers the night before, the day itself, and what to do if something fails.
+
 **15 minutes the night before**
 
 - [ ] **Find last week's 12 × 12 number grid.** This is the one genuinely critical item. The whole second half of the lesson shrinks that exact grid. If it has gone missing, use the worked grid in the Answer Key below — it is the letter T, ready to go — but the lesson is noticeably better when the numbers are *theirs*.
@@ -310,6 +319,8 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This is the lesson plan. Each segment gives you words to say, questions to ask and what to expect.
 
 | # | Segment | Minutes | What happens |
 |---|---|---|---|
@@ -508,7 +519,7 @@ middle, B low is correct. There is no single right answer and you should say so.
 ![Averaging a two by two block into one pixel](../figures/fig-w24-3-block-average.svg)
 *Figure 24.3 (again) — the board sketch. Four numbers, one sum, one division, one answer.*
 
-```
+```text
      128    0                 (128 + 0 + 192 + 0)  =  320
                        →              320 ÷ 4      =   80
      192    0
@@ -516,7 +527,7 @@ middle, B low is correct. There is no single right answer and you should say so.
 
 Then a second one where the answer is not whole:
 
-```
+```text
      255  255                 (255 + 255 + 255 + 128)  =  893
                        →                893 ÷ 4        =  223.25   →  223
      255  128
@@ -603,7 +614,7 @@ division. Then ask for four **different** numbers that also average to 80. Then 
 going until they have produced three genuinely different blocks. Do not supply them yourself; the
 whole force of this depends on them generating it.
 
-```
+```text
    (128 +  0 + 192 +   0) ÷ 4  =  320 ÷ 4  =  80
    ( 80 + 80 +  80 +  80) ÷ 4  =  320 ÷ 4  =  80
    (  0 +  0 +  65 + 255) ÷ 4  =  320 ÷ 4  =  80
@@ -650,6 +661,8 @@ Then assign homework and stop.
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full instructions for both parts of the lesson activity, with setup, rules and what finished looks like.
 
 ### Part A — Colour By Numbers, Both Directions
 
@@ -729,6 +742,8 @@ Three good extensions:
 
 ## ❓ Questions Students Ask This Week
 
+Read these before class. Each question has an answer you can say out loud.
+
 **"Why red, green and blue? Why not red, yellow and blue like in art?"**
 Because screens are built to match your **eye**, not your paint set. The back of your eye has three
 kinds of colour detector, and they are most sensitive to reddish light, greenish light and bluish
@@ -789,6 +804,8 @@ a gap in the science yet; it may be a permanent one.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual trouble spots. For each one it says why it happens and what to do on the spot.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | They insist **red + green = brown** and will not budge. | They are right about paint, and thirteen art lessons say so. Being told "no" just makes them dig in. | Never say they are wrong. Say: *"You are completely right about paint. I'm talking about lamps, and they work backwards."* Then get physical — magnifier on the screen, or two coloured torch beams overlapping on a white wall, or Figure 24.6 drawn big. This needs a demonstration, not a sentence. |
@@ -803,6 +820,8 @@ a gap in the science yet; it may be a permanent one.
 ---
 
 ## 🧭 Differentiation
+
+Use this when the lesson is too hard, too easy, or your student will not engage.
 
 ### If they are struggling
 
@@ -851,6 +870,8 @@ properly or postpone the whole colour half.
 
 ## ✅ Assessing Understanding
 
+These checks and the mastery scale show you what has landed.
+
 Three checks, last five minutes.
 
 **Check 1 — the counting (20 seconds)**
@@ -897,6 +918,8 @@ whole point of Term 3 and does not usually arrive until Week 26.
 
 ## 📤 Homework to Assign
 
+This is what to say when you hand out the workbook, and how the time is split.
+
 **Say this:**
 
 > "The workbook for Week 24 has a few sections, and the big one is **Build It** — about fifty minutes,
@@ -942,6 +965,8 @@ second priority because it uses exactly the skills Build It tests.
 
 ## 🔑 Answer Key
 
+This key holds the answers for the lesson and the workbook. Keep it away from the student.
+
 ### Lesson · Worked Example, Half A (triples both directions)
 
 | Triple | Colour | Reason |
@@ -957,7 +982,7 @@ lamp turned down; brown *is* a dark orange, and there is no brown lamp.
 
 ### Lesson · Worked Example, Half B (the two blocks)
 
-```
+```text
    (128 + 0 + 192 + 0)     = 320  ;  320 ÷ 4 = 80          (whole)
    (255 + 255 + 255 + 128) = 893  ;  893 ÷ 4 = 223.25 → 223 (rounded down)
 ```
@@ -1023,7 +1048,7 @@ Use this grid if last week's is missing. It is the letter T with a soft-pencil e
 ends of the crossbar, the 192s under it, and the 64s down the sides of the stem are the anti-aliased
 squares.
 
-```
+```text
         c1   c2   c3   c4   c5   c6   c7   c8   c9  c10  c11  c12
    r1   255  255  255  255  255  255  255  255  255  255  255  255
    r2   255  128   0    0    0    0    0    0    0    0   128  255
@@ -1083,7 +1108,7 @@ block-column 3, covering image rows 3–4 and columns 5–6.
 
 **The 6 × 6 result:**
 
-```
+```text
         C1   C2   C3   C4   C5   C6
    R1   223  128  128  128  128  223
    R2   223   96   48   48   96  223
@@ -1107,7 +1132,7 @@ block-column 3, covering image rows 3–4 and columns 5–6.
 | bottom-middle | 32, 32, 144, 144 | 352 | 88 | **88** |
 | bottom-right | 255, 255, 255, 255 | 1020 | 255 | **255** |
 
-```
+```text
    3 × 3 result:      168   88  168
                       255   32  255
                       255   88  255
@@ -1134,7 +1159,9 @@ block-column 3, covering image rows 3–4 and columns 5–6.
 **A4.** RGB = **C** · channel = **E** · downsampling = **A** · anti-aliasing = **B** · grey = **D**.
 
 **A5.** Grid **A** (0, 0 / 255, 255) = **blue** channel. Grid **B** (255, 255 / 0, 255) = **red** channel. Grid **C** (0, 255 / 0, 255) = **green** channel. The yellow pixel is **(255, 255, 0)**. The method is to write the four colours as triples, then read the first numbers (255, 255, 0, 255 = grid B, red), the second (0, 255, 0, 255 = grid C, green) and the third (0, 0, 255, 255 = grid A, blue).
+
 (e) The giveaway for grid A is the **blue pixel** (bottom-left): the only channel where the bottom-left is 255 while the top-left is 0.
+
 (f) The **green channel (grid C)**: 0 for the **red** pixel and the **blue** pixel, which use no green. Grid A (blue channel) also has exactly two 0s (the red and yellow pixels), so either grid is correct if the two pixels are named; the red channel has only one 0.
 
 **A6.**
@@ -1246,7 +1273,7 @@ The workbook's Build It Part 2 prints the same letter-T grid as above, so the an
 **The four blocks worth demanding full working for** (they are the only interesting ones — everything
 else is either four 255s or a straightforward repeat):
 
-```
+```text
    B11 (top-left corner):        255 + 255 + 255 + 128 = 893   ;  893 ÷ 4 = 223.25 → 223
    B12 (middle of the crossbar): 255 + 255 +   0 +   0 = 510   ;  510 ÷ 4 = 127.5  → 128
    B23 (just under the crossbar):  0 +   0 + 192 +   0 = 192   ;  192 ÷ 4 = 48
@@ -1302,6 +1329,8 @@ and you must never treat it as evidence.*
 ---
 
 ## 🔮 Next Week Preview
+
+A short look ahead, so you can prepare.
 
 Your student now knows what the machine actually receives: a grid of numbers, three deep, already
 shrunk. The obvious next question is the one they have been asking since Week 15 — *"so how does it

@@ -12,7 +12,7 @@
 
 Five questions from **last week**. No looking back until you've tried all five.
 
-**W1.** Fill in the blank. A **feature** is one ________________ description of one example, and a **label** is the ________________ you want the machine to produce.
+**W1.** Fill in the blanks. A **feature** is one ________________ description of one example, and a **label** is the ________________ you want the machine to produce.
 
 **W2.** Circle the one that describes a **useless** feature.
 
@@ -29,7 +29,7 @@ ________________________________________________________________
 
 **W4.** Your fruit bowl has 4 apples, 4 oranges and 4 bananas. Somebody guesses `apple` every single time without looking. What score do they get, as a fraction **and** a percentage?
 
-```
+```text
 fraction: ______ / ______        percentage: ______ %
 ```
 
@@ -42,6 +42,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Understand It
+
+These questions check that you know the words and can work out an error.
 
 **A1. Fill in the blanks.**
 
@@ -97,7 +99,7 @@ Which prediction was **best**? ________ Which was **worst**? ________
 
 Now the mean error of all four:
 
-```
+```text
 add the four errors:  ______ + ______ + ______ + ______  =  ______
 
 divide by how many:   ______ ÷ 4  =  ______
@@ -108,6 +110,8 @@ MEAN ERROR = ______ g
 ---
 
 ## ✍️ Practice Set B — Use It
+
+These questions use this week's ideas on real situations.
 
 **B1.** Your school wants to predict **how many people will come to the summer fair**.
 
@@ -167,13 +171,13 @@ ________________________________________________________________
 
 **B5.** Four predictions from a fruit-weight model. The errors were:
 
-```
+```text
 1 g   ·   1 g   ·   1 g   ·   40 g
 ```
 
 Work out the mean error:
 
-```
+```text
 1 + 1 + 1 + 40 = ______        ______ ÷ 4 = ______ g
 ```
 
@@ -186,6 +190,8 @@ ________________________________________________________________
 ---
 
 ## 🧩 Puzzle of the Week — Six Cards, and Two Are Lying
+
+This puzzle is about sorting cards that all look like numbers.
 
 ![Six label cards, and two of them are lying](../figures/fig-w13-10-puzzle-six-labels.svg)
 *Figure W13.2 — Six cards, six numbers. Two of these columns are categories wearing number clothes.*
@@ -212,6 +218,8 @@ side 2: ______________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions need a longer written answer.
 
 **T1.** Your student guide says: *"the task type isn't a property of the data. It's a property of your question."*
 
@@ -244,6 +252,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+In this section you work with ten tasks, and then with a table of your own.
 
 ### Part 1 — All ten tasks, both ways
 
@@ -305,6 +315,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+In this section you draw one table used for two different problems.
+
 Draw **one table, two problems.** On the left, your table with one column covered by a flap and the task named underneath. On the right, the *same* table with a *different* column covered, and *that* task named.
 
 ![Draw It frame for Week 13](../figures/fig-w13-11-draw-frame.svg)
@@ -334,6 +346,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Open this only after you have tried every page. Your own answers can differ and still be right.
 
 <details>
 <summary>Check your answers</summary>
@@ -394,7 +408,7 @@ If your **E** or **F** is a number-shaped category (like "which bus route"), tha
 
 Best: **row 4** (error 0). Worst: **row 3** (error 32).
 
-```
+```text
 13 + 9 + 32 + 0  =  54
 54 ÷ 4           =  13.5
 
@@ -435,7 +449,7 @@ That is both losses of bucketing, in one question.
 
 **B5.**
 
-```
+```text
 1 + 1 + 1 + 40 = 43
 43 ÷ 4         = 10.75 g
 ```

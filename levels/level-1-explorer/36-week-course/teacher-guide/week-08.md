@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table gives the lesson's size, materials and prep time in one place.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes (works in 60, stretches to 75) |
@@ -48,7 +50,9 @@ Last week ended with a question left deliberately unanswered: what happens on a 
 ![First match wins: a rainy Monday never reaches rule 3](../figures/fig-w08-4-first-match-wins-ladder.svg)
 *Figure 8.1 — Monday, 8 mm of rain, left home early. Rule 1 fires and everything below it never runs at all.*
 
-Here is the thing to notice, and it is bigger than it looks. In that figure, **Rule 3 says "on time" and never gets a turn.** It is not outvoted. It is not overruled after consideration. It is simply never read.
+Look at that figure. It matters more than it seems.
+
+In it, **Rule 3 says "on time" and never gets a turn.** It is not outvoted. It is not overruled after consideration. It is simply never read.
 
 So:
 
@@ -75,7 +79,7 @@ Today the student gets ten labelled messages and writes rules from them. That wo
 
 The clearest example in the world is a theme park height sign.
 
-```
+```text
 IF height_cm >= 140  THEN allow on the ride
 ```
 
@@ -151,7 +155,9 @@ Take the spam rule `IF the message has 30 or more characters THEN spam` and star
 
 **Every threshold in the world is a position on that slider, and somebody chose it.** They chose it by deciding which error they could live with — usually without writing down that they had decided anything at all.
 
-For any one stand-in measurement, this trade-off does not go away by moving the threshold: that only swaps one error for the other. What can shrink both errors is a better measurement (the apple and parcel examples), and better models and more data can help too; some mistakes remain. It is a property of using a stand-in to guess something you cannot see, and it will still be true in Week 35 when the student is demonstrating a trained model at the AI fair. Say so today. It is one of the two or three ideas from this whole year that they will still be using at university.
+For any one stand-in measurement, this trade-off does not go away by moving the threshold: that only swaps one error for the other. What can shrink both errors is a better measurement (the apple and parcel examples), and better models and more data can help too; some mistakes remain.
+
+It is a property of using a stand-in to guess something you cannot see, and it will still be true in Week 35 when the student is demonstrating a trained model at the AI fair. Say so today. It is one of the two or three ideas from this whole year that they will still be using at university.
 
 ### The three misconceptions you will meet today
 
@@ -217,6 +223,8 @@ They are shelves, not content — do not teach or test them.
 
 ## 🧰 Prep Checklist
 
+Use this list to get ready. It is split into the night before, the day itself, and what to do if something fails.
+
 ### 20 minutes the night before
 
 - [ ] **Print the Week 8 workbook** (it is the homework; hand it over in the Wrap, not before). It holds: Warm-Up (W1–W5), Practice Set A (A1–A6), Practice Set B (B1–B5), Puzzle of the Week (P1–P6), Think Deeper (T1–T2), Build It (Page 8.3 the 138 cm argument, Page 8.4 sharpen five vague rules, Page 8.5 the envelope), Draw It, and Self-Check. **The workbook does not contain the in-class activity sheets.**
@@ -250,6 +258,8 @@ They are shelves, not content — do not teach or test them.
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the script for the whole lesson. The table is the overview; the parts below it give the words to say.
+
 | Minutes | Segment | What happens |
 |---|---|---|
 | 0–8 | 🪝 **Hook** — "You're 138 centimetres. Argue with me." | The teacher plays the ride operator and refuses the student entry. |
@@ -258,8 +268,8 @@ They are shelves, not content — do not teach or test them.
 | 40–60 | 🎲 **Activity** — Break My Rule | They build a three-rule spam book; you break it with five messages. |
 | 60–70 | 🔑 **Wrap & Assign** | The "who pays" question, vocabulary, homework, and the sealing of the envelope. |
 
-**Running 60 minutes?** Cut the worked example to 8 minutes — do the eight riders and the grid, and skip the two threshold moves (you can describe the result in one sentence). Cut the wrap to 6, but **do not cut the envelope**.
-**Running 75?** Add extension question 2 or 4 from Differentiation, or let the student write five breakers aimed at *your* rulebook, which they will enjoy far too much.
+- **Running 60 minutes?** Cut the worked example to 8 minutes — do the eight riders and the grid, and skip the two threshold moves (you can describe the result in one sentence). Cut the wrap to 6, but **do not cut the envelope**.
+- **Running 75?** Add extension question 2 or 4 from Differentiation, or let the student write five breakers aimed at *your* rulebook, which they will enjoy far too much.
 
 ---
 
@@ -295,9 +305,9 @@ Let them argue. Whatever they say, take it seriously and then hold your ground o
 >
 > You are what's called an **edge case**. Not a mistake. Not a bug. You're a person standing right on the boundary of a rule, where the rule stops working and starts just hurting somebody."
 
-**Do this:** write on the board:
+**Do this:** write these two lines on the board:
 
-```
+```text
 THE RULE:      height >= 140  ->  allowed
 THE EDGE CASE: 138 cm         ->  refused, and she was fine
 ```
@@ -572,6 +582,8 @@ Then hand over the workbook and assign the homework as written below.
 
 ## 🎲 The Activity, In Full
 
+This section gives the complete instructions for the Break My Rule activity.
+
 ### Break My Rule
 
 **Time:** 20 minutes — 8 building, 7 breaking, 5 discussing
@@ -614,9 +626,9 @@ The ten labelled examples they get:
 
 They must count characters for the third row. That is deliberate: it is fiddly, and it makes the threshold feel real.
 
-**Step 2 — write three rules and a default.** Frame:
+**Step 2 — write three rules and a default.** Give the student this frame to fill in:
 
-```
+```text
 CONVENTION: first match wins, checked top to bottom.
 
 RULE 1:  IF ______________________  THEN ________
@@ -627,9 +639,9 @@ DEFAULT: OTHERWISE                  THEN ________
 
 Requirements said out loud: no adjectives, at least one rule with a number in it, and the default filled in.
 
-The rulebook they will almost certainly write (and the one everything below assumes):
+This is the rulebook they will almost certainly write, and the one everything below assumes:
 
-```
+```text
 RULE 1:  IF the message contains "!!"                 THEN spam
 RULE 2:  IF the message contains "free" (any capitals) THEN spam
 RULE 3:  IF the message has 30 or more characters      THEN spam
@@ -667,9 +679,9 @@ DEFAULT: OTHERWISE                                     THEN ham
 
 **Score: 1 out of 5.** Three false alarms, one miss, and **zero scams caught.**
 
-**The pair to slow down on is B4 and B5.** Read them back to back:
+**The pair to slow down on is B4 and B5.** Read them back to back. The block shows each message, its length and which rule fires:
 
-```
+```text
 "can you bring my charger today"   30 characters  ->  RULE 3 fires  ->  SPAM
 "can you bring my charger back"    29 characters  ->  nothing fires ->  HAM
 ```
@@ -731,6 +743,8 @@ Any answer is acceptable **if it names who is hurt**. Push once for the second h
 
 ## ❓ Questions Students Ask This Week
 
+These are questions students are likely to ask, each with a suggested reply.
+
 **"Why don't they just make the ride sign say 'must be 140cm OR over 12 years old'?"**
 Some real rules add a route like that (an age, or "with an adult"), and it can help. But look at what you've done: you now need to know everyone's age, which means asking, which means being told the truth, which means someone checking. The rule got better *and* the system got bigger and slower — and it still has edge cases, they've just moved. Now it's the eleven-year-old who's 139 cm. **Every fix trades an edge case for a different edge case plus more complexity.** That trade is sometimes worth it. It is never free.
 
@@ -756,6 +770,8 @@ The oldest ones did, almost exactly — lists of banned words and length checks,
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table when the lesson stalls. Each row gives a common problem, the reason for it and a quick fix.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | During the breaker round they "correct" the rulebook's answer instead of writing what it says | Writing a wrong answer feels like being wrong | Say the line: "You're the computer, not the judge." Then make it concrete: "The computer doesn't know it's being silly. That's exactly what we're measuring." If it keeps happening, you hold the pen and they call out the rule number. |
@@ -770,6 +786,8 @@ The oldest ones did, almost exactly — lists of banned words and length checks,
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to change the lesson for a student who is struggling, flying or not engaging.
 
 ### If they are struggling
 
@@ -809,8 +827,8 @@ Do these in the last five minutes. Exact wording below.
 
 > "Here's a rule: `IF a parcel weighs 5 kg or more THEN charge extra postage`. Give me an edge case, and tell me how you found it."
 
-**A good answer looks like:** "A parcel that's 4.9 kg — it's basically the same as a 5 kg one but it's free. I found it by going just under the threshold."
-**A weak answer looks like:** "A really heavy parcel." Push: *"Does the rule get that one wrong?"* No — it gets it right. Steer them to the boundary. The *method* is what you're assessing.
+- **A good answer looks like:** "A parcel that's 4.9 kg — it's basically the same as a 5 kg one but it's free. I found it by going just under the threshold."
+- **A weak answer looks like:** "A really heavy parcel." Push: *"Does the rule get that one wrong?"* No — it gets it right. Steer them to the boundary. The *method* is what you're assessing.
 
 ### Check 2 — Name the error and the victim (90 seconds)
 
@@ -820,15 +838,15 @@ Read these three aloud, one at a time. For each: **false alarm or miss, and who 
 2. "A scam text lands in your grandmother's inbox looking like a real bank message." → **Miss.** Harmed: your grandmother, possibly badly.
 3. "An honest student's essay is flagged as copied." → **False alarm.** Harmed: the student, seriously, and they may not be believed.
 
-**A good answer:** all three named correctly with a specific person in each.
-**A weak answer:** correct names but "the person" as the victim. Push for who *specifically*, because the whole idea lives in the specifics.
+- **A good answer:** all three named correctly with a specific person in each.
+- **A weak answer:** correct names but "the person" as the victim. Push for who *specifically*, because the whole idea lives in the specifics.
 
 ### Check 3 — The trade-off (45 seconds)
 
 > "I've made my spam filter stricter so no scams get through. What have I just done to my friend's messages, and why?"
 
-**A good answer looks like:** "More of them will end up in the junk folder. You can't stop the misses without causing false alarms."
-**A weak answer looks like:** "Nothing — it's better now." Reteach with the slider: draw the three panels from Figure 8.8 and count with them.
+- **A good answer looks like:** "More of them will end up in the junk folder. You can't stop the misses without causing false alarms."
+- **A weak answer looks like:** "Nothing — it's better now." Reteach with the slider: draw the three panels from Figure 8.8 and count with them.
 
 ### Mastery scale for this week
 
@@ -843,6 +861,8 @@ Read these three aloud, one at a time. For each: **false alarm or miss, and who 
 ---
 
 ## 📤 Homework to Assign
+
+This section says what to hand over, how to split it across the week, and what to check when it comes back.
 
 **The Week 8 workbook, start to finish.**
 **Time: 45–60 minutes across the week, plus Think Deeper if they want it.**
@@ -875,11 +895,19 @@ The workbook is sectioned, not paged, and the in-class activity is not in it. Su
 >
 > And **Page 8.5**: leave the envelope alone. Don't open it, don't hold it up to the light, don't ask anybody what's in it."
 
-**What to check when it comes in:** Warm-Up and Practice Sets A and B against the key below (the usual slips are named there: a transposed grid, a flag written backwards, "line C" chosen because it has no false alarms with no mention of harm). Puzzle: all three lines score 6 of 8, and the student must say there is no line that gets both errors to zero. Build It: the operator's argument is genuinely reasonable and not a caricature; both "who pays" answers name a specific person; all five sharpened rules contain a number or an exact match; every number has a stated origin; every rule has an edge case built by stepping across its own threshold, labelled false alarm or miss; the envelope is still sealed. Draw It has a person in each panel and the flag word written down. Self-Check is the student's own; read the "explained again" line.
+**What to check when it comes in:**
+
+- **Warm-Up and Practice Sets A and B:** check against the key below. The usual slips are named there: a transposed grid, a flag written backwards, "line C" chosen because it has no false alarms with no mention of harm.
+- **Puzzle:** all three lines score 6 of 8, and the student must say there is no line that gets both errors to zero.
+- **Build It:** the operator's argument is genuinely reasonable and not a caricature. Both "who pays" answers name a specific person. All five sharpened rules contain a number or an exact match. Every number has a stated origin. Every rule has an edge case built by stepping across its own threshold, labelled false alarm or miss. The envelope is still sealed.
+- **Draw It:** a person in each panel and the flag word written down.
+- **Self-Check:** this is the student's own. Read the "explained again" line.
 
 ---
 
 ## 🔑 Answer Key
+
+This section holds the answers to every question in the lesson, the activity and the workbook. Keep it away from the student.
 
 ### Lesson questions
 
@@ -964,7 +992,9 @@ And note the trap in that table, because a sharp student will find it: the *loos
 
 ### Activity — the rulebook scored on the ten training messages
 
-```
+This is the rulebook the table below scores:
+
+```text
 RULE 1:  IF contains "!!"                   THEN spam
 RULE 2:  IF contains "free" (any capitals)  THEN spam
 RULE 3:  IF 30 or more characters           THEN spam
@@ -1017,7 +1047,7 @@ DEFAULT: OTHERWISE                          THEN ham
 
 ### Activity — harder variation: moving Rule 3 to the top
 
-Re-scoring the ten training messages with the order `RULE 3 → RULE 1 → RULE 2 → DEFAULT`:
+Re-score the ten training messages with the order `RULE 3 → RULE 1 → RULE 2 → DEFAULT`.
 
 Every answer stays the same. Message 4 and 5 already fired on Rule 3; messages 1, 2, 3 are all under 30 characters so Rule 3 doesn't touch them; all the hams are 21–23 characters. **Ten out of ten, again, with exactly the same rule firing on every row.**
 
@@ -1160,7 +1190,6 @@ Each answer needs three parts: the sharpened rule, where the number came from, a
 
 **General marking rule for Page 8.4:** no adjectives anywhere; every rule contains a number or an exact match; every number has a stated origin (and "I made it up" is honest and acceptable); every edge case is built by crossing the rule's own threshold, not by inventing an unrelated weird case.
 
-
 ### Workbook — Build It, Page 8.5 — the envelope
 
 All three boxes ticked (sealed, not opened or held to the light, rulebook unchanged). A good sentence: "If I look at those ten messages, I might change my rules to fit them without even meaning to — and then scoring my rulebook on them wouldn't measure anything, because they'd have helped build it."
@@ -1197,6 +1226,8 @@ Write the messages **and the truths**, both, on the sheet. Five spam, five ham. 
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what happens next week, so you can prepare early.
 
 Next week is the Term 1 checkpoint, and it opens with the envelope. The student scores their rulebook on the ten sealed messages, one row at a time with no skipping, and writes the result next to the 100% they got on their own ten. The gap is fifty points. We do not explain it away — we sit with it, compute accuracy three ways with the long division written out, and name the idea that makes the whole rest of the year work: **the only honest score comes from examples the rulebook has never seen.** Then a twelve-question closed-book quiz on everything since Week 1, marked together out loud, with the week number written beside every wrong answer so the output is a list of weeks to revisit rather than a grade.
 

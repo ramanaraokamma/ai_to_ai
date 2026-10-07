@@ -20,7 +20,7 @@
 
 ## 🪝 Start Here
 
-Imagine I stand at the front of the room and say three things, one after another, in exactly the same voice.
+Imagine I stand at the front of the room. I say three things, one after another, in exactly the same voice.
 
 > "The capital of France is **Paris**." *(Completely certain.)*
 >
@@ -37,7 +37,7 @@ Here is the uncomfortable part. I said all three in the same confident voice. If
 
 Next week you are going to build a real model with a camera, and every single time it guesses it will show you a number: 62%, 91%, 45%. That number is the machine's version of a confident voice.
 
-This week — before the camera starts moving and distracting you — you are going to learn to read that number properly. Because most adults read it wrong, and getting it wrong is how people end up trusting machines they shouldn't.
+This week, before the camera starts moving, you will learn to read that number properly. Most adults read it wrong. Getting it wrong is how people end up trusting machines they shouldn't.
 
 > **💡 Try this before you read on:** think of one time you were *completely sure* about something and turned out to be wrong. A test answer. A person's name. Which cupboard the cereal was in. Write it down in one line. We come back to it at the end.
 
@@ -45,13 +45,15 @@ This week — before the camera starts moving and distracting you — you are go
 
 ## 🧠 The Big Idea
 
+This section explains confidence scores, the margin, class balance and the confidence policy. Each part builds on the one before.
+
 ### 1. A model has exactly 100 points of belief, and it must give every point away
 
-When you hold a spoon up to a trained model, it does **not** say "spoon."
+When you hold a spoon up to a trained model, it does **not** just say "spoon."
 
-What actually comes out underneath is never just "spoon." It is **one number for every box you gave it**, like this:
+What comes out is **one number for every box you gave it**, like this:
 
-```
+```text
    spoon       ████████████████████░░░░░░░░░░   62%
    toothbrush  ███████░░░░░░░░░░░░░░░░░░░░░░░   21%
    comb        █████░░░░░░░░░░░░░░░░░░░░░░░░░   17%
@@ -85,7 +87,7 @@ That is a much more honest reading than "it says spoon."
 
 ### 2. The margin is the number that actually tells you something
 
-Most people read the biggest number and stop. That is a mistake, and here is the proof. Look at these two readouts:
+Most people read the biggest number and stop. That is a mistake. Look at these two readouts:
 
 | Readout | Top score | Second score | Margin |
 |---|---|---|---|
@@ -104,7 +106,7 @@ Two races. In the first, the winner finishes twenty metres ahead of second place
 ![Same winner, completely different race](../figures/fig-w16-2-same-winner-different-race.svg)
 *Figure 16.2 — Identical winner. Completely different situation. Only the margin shows it.*
 
-Here is the reading guide this course uses all year. It is not an official law of the universe — it's a sensible habit — but use it consistently and you will stop being fooled.
+Here is the reading guide this course uses all year. It is not an official law. It is a sensible habit. Use it every time.
 
 ![How to read a margin](../figures/fig-w16-10-margin-bands.svg)
 *Figure 16.10 — Four bands. Learn these; you will use them every week from here to Week 36.*
@@ -116,9 +118,9 @@ Here is the reading guide this course uses all year. It is not an official law o
 | **15 – 29** | Shaky — a small change could flip this | Check it another way |
 | **Under 15** | A coin toss dressed up as an answer | Do not act on it |
 
-**Watch how the arithmetic works, every time, in the same order:**
+**Here is the arithmetic, in the same order every time:**
 
-```
+```text
    readout:   68  /  30  /  2
    sum:       68 + 30 + 2  =  100     ✓ so I read the bars correctly
    winner:    the 68  (biggest number, not the first one)
@@ -127,7 +129,9 @@ Here is the reading guide this course uses all year. It is not an official law o
 
 > **⚠️ Watch out:** the margin is **top minus second**, never top minus bottom. In 68 / 30 / 2 the margin is 38, not 66. It's a race for first place, so only second place can threaten the winner. The last-place bar is irrelevant.
 
-**Why professionals care about the margin more than the top score:** the margin moves *before* the right-or-wrong column does. A model that is quietly falling apart can keep getting answers right for a while while its margins shrink first. **The margin is an early warning. Right-or-wrong is a late one.**
+**Why professionals care about the margin more than the top score:** the margin moves *before* the right-or-wrong column does.
+
+A model that is quietly falling apart can keep getting answers right for a while. Its margins shrink first. **The margin is an early warning. Right-or-wrong is a late one.**
 
 ---
 
@@ -137,11 +141,13 @@ This is the sentence to tattoo on your brain:
 
 > **A confidence score is not the chance of being right.**
 
-99% confident does **not** mean "right 99 times out of 100." It means "of the boxes I was given, this one fits far better than the others." On things like the ones it was trained on, a confidence score is usually a rough guide, but it is never a guarantee. And the two things fall apart completely the moment you show the model something that isn't in **any** of its boxes.
+99% confident does **not** mean "right 99 times out of 100." It means "of the boxes I was given, this one fits far better than the others."
 
-**The demonstration, with real numbers.** Take a model that knows exactly three things: spoon, toothbrush, comb. Now hold up a **fork**. There is no fork class. There never was. It reports:
+On things like the ones it was trained on, a confidence score is usually a rough guide, but it is never a guarantee. And the two things fall apart completely the moment you show the model something that isn't in **any** of its boxes.
 
-```
+Here is a demonstration with real numbers. Take a model that knows exactly three things: spoon, toothbrush, comb. Now hold up a **fork**. There is no fork class. There never was. It reports:
+
+```text
    spoon 74%   ·   toothbrush 15%   ·   comb 11%
 ```
 
@@ -149,7 +155,9 @@ Check it: 74 + 15 + 11 = 100 ✓. Winner: spoon. Margin: 74 − 15 = **59** — 
 
 And it is 100% wrong.
 
-**The model is not broken.** Read that again. It is doing precisely what it was built to do. It has 100 points of belief and three boxes, and a fork is more spoon-shaped than it is comb-shaped, so that is where the belief went. **It had nowhere else to put it.**
+**The model is not broken.** It is doing exactly what it was built to do.
+
+It has 100 points of belief and three boxes. A fork is more spoon-shaped than it is comb-shaped, so that is where the belief went. **It had nowhere else to put it.**
 
 🍕 **The analogy — the multiple-choice question you had no idea about.**
 A, B or C. You genuinely don't know, so you tick B because it feels least wrong. Your answer sheet now says **B**, with total certainty, in ink. It does not record your shrug. A confidence score is the shrug the model is honest enough to show you — and most apps throw it away and show you only the letter.
@@ -163,9 +171,11 @@ If a model must always pick one of your boxes, then the fix is obvious the momen
 ![The other class is a box for none of the above](../figures/fig-w16-3-other-class-bin.svg)
 *Figure 16.3 — Give it somewhere honest to put the belief, or it will put it somewhere wrong.*
 
-It is not a magic fix, and you should know the cost. Adding one big messy class usually steals a few points of belief from your real classes, so **many margins get a bit smaller**. That's a real trade: you lose a little sharpness and you gain the ability to say "I don't know."
+It is not a magic fix, and it has a cost. Adding one big messy class usually steals a few points of belief from your real classes, so **many margins get a bit smaller**.
 
-Here is the part worth being slightly annoyed about: **many real products don't do this.** That is one reason they can be confidently wrong at you.
+That is a real trade. You lose a little sharpness and you gain the ability to say "I don't know."
+
+**Many real products don't do this.** That is one reason they can be confidently wrong at you.
 
 ---
 
@@ -173,7 +183,9 @@ Here is the part worth being slightly annoyed about: **many real products don't 
 
 > **Class balance** — how evenly your examples are spread across the classes. Roughly equal counts is **balanced**; wildly unequal counts is **imbalanced**.
 
-Why does this matter? Because of how training works. Training nudges the model to reduce **total mistakes across all the examples**. It does not care *which* class the mistakes come from. So if one class is huge and one is tiny, the cheapest way to cut total mistakes is to lean towards the big classes and quietly give up on the small one.
+Why does this matter? Because of how training works.
+
+Training nudges the model to reduce **total mistakes across all the examples**. It does not care *which* class the mistakes come from. So if one class is huge and one is tiny, the cheapest way to cut total mistakes is to lean towards the big classes and quietly give up on the small one.
 
 🍕 **The analogy — the class vote.**
 Thirty children vote on the school trip. Twenty-eight want the zoo, two want the museum. The zoo wins. And it will win every time, forever. Those two children are not outvoted because they're wrong — they're outvoted **on the count**. Now imagine the vote decides what your model believes.
@@ -181,7 +193,7 @@ Thirty children vote on the school trip. Twenty-eight want the zoo, two want the
 ![A balance scale tipping under 200 200 and 8](../figures/fig-w16-4-imbalance-scale.svg)
 *Figure 16.4 — The count decides. Training goes where the examples are.*
 
-**Now do the arithmetic yourself.** Somebody trains a three-class model with:
+**Now do the arithmetic yourself.** Somebody trains a three-class model with these photos:
 
 | class | training photos |
 |---|---|
@@ -190,9 +202,9 @@ Thirty children vote on the school trip. Twenty-eight want the zoo, two want the
 | comb | 8 |
 | **total** | **408** |
 
-Suppose the model gives up on combs completely and never once outputs "comb." How does it score on its own training photos?
+Suppose the model gives up on combs completely and never once outputs "comb." How does it score on its own training photos? The working is below.
 
-```
+```text
    total photos   =  200 + 200 + 8     =  408
 
    got right      =  200 (spoons)
@@ -206,7 +218,7 @@ Suppose the model gives up on combs completely and never once outputs "comb." Ho
 
 **98.0% accurate.** That number would look magnificent on a poster. And the model is **0% right on every single comb** — the class somebody presumably added *because they cared about combs.*
 
-```
+```text
    accuracy on combs  =  0 ÷ 8  =  0.0  =  0%
 ```
 
@@ -214,7 +226,9 @@ Nobody lied. Both numbers are true. The 98% just answers a question nobody shoul
 
 **The fix is boring:** make the counts roughly equal. The working rule this course uses is that the **biggest class should be within about 20% of the smallest**.
 
-```
+Here is the check, with two examples.
+
+```text
    check:  (biggest − smallest) ÷ biggest
 
    41 / 40 / 39   →  (41 − 39) ÷ 41  =  2 ÷ 41  ≈  4.9%   ✓ balanced
@@ -229,9 +243,9 @@ Nobody lied. Both numbers are true. The 98% just answers a question nobody shoul
 
 You now know enough to write a real engineering rule. A **confidence policy** is a written rule, with actual numbers in it, that says when your model is allowed to answer and when it must shut up and say "not sure."
 
-It looks like this:
+Here is the template to fill in.
 
-```
+```text
    MY CONFIDENCE POLICY
    ─────────────────────────────────────────────────────
    If the top score is below ______ %,
@@ -239,9 +253,9 @@ It looks like this:
    my model must say  "not sure"  instead of guessing.
 ```
 
-Two numbers, not one. Here is why you need both: 45 / 44 / 11 has a *middling* top score of 45 and a *terrible* margin of 1. A policy about the top score alone would let it through. A policy about the margin catches it.
+There are two numbers, not one. You need both. 45 / 44 / 11 has a *middling* top score of 45 and a *terrible* margin of 1. A policy about the top score alone would let it through. A policy about the margin catches it.
 
-And notice the word **OR**, not AND. With OR, failing *either* test blocks the answer — that's stricter, and stricter is right here.
+Notice the word **OR**, not AND. With OR, failing *either* test blocks the answer. That is stricter, and stricter is right here.
 
 There is no single correct policy. What matters is that you can **defend your numbers with an example**. "65% and 25 points" is a good answer if you can say why. "Whatever" is not an answer at all.
 
@@ -249,41 +263,47 @@ There is no single correct policy. What matters is that you can **defend your nu
 
 ## 🔍 Worked Examples
 
+Here are three full examples, worked step by step. Use them as a pattern for your own readouts.
+
 ### Example 1 — Food: the canteen photo sorter
 
-A school canteen has a camera that photographs each tray and sorts what's on it into three classes: **apple**, **banana**, **sandwich**. Here are three readouts from one lunchtime.
+A school canteen has a camera that photographs each tray. It sorts what is on the tray into three classes: **apple**, **banana**, **sandwich**. Here are three readouts from one lunchtime.
 
 **Reading A — a banana was on the tray.**
 
-```
+```text
    apple 54   ·   banana 39   ·   sandwich 7
 ```
 
-Step 1 — **sum:** 54 + 39 + 7 = **100** ✓ (so I read the bars right)
-Step 2 — **winner:** 54, so **apple**
-Step 3 — **margin:** 54 − 39 = **15**
-Step 4 — **band:** 15 is the very bottom of "15–29 shaky"
-Step 5 — **call:** **do not trust it.** And in fact it was **wrong** — there was a banana on the tray. Notice that the margin warned us *before* we knew the true answer. That's the whole point of computing it.
+- Step 1 — **sum:** 54 + 39 + 7 = **100** ✓ (so I read the bars right)
+- Step 2 — **winner:** 54, so **apple**
+- Step 3 — **margin:** 54 − 39 = **15**
+- Step 4 — **band:** 15 is the very bottom of "15–29 shaky"
+- Step 5 — **call:** **do not trust it.** And in fact it was **wrong** — there was a banana on the tray. Notice that the margin warned us *before* we knew the true answer. That's the whole point of computing it.
 
 **Reading B — a sandwich was on the tray.**
 
-```
+```text
    apple 4   ·   banana 8   ·   sandwich 88
 ```
 
 Sum: 4 + 8 + 88 = **100** ✓. Winner: **sandwich**. Margin: 88 − 8 = **80**.
-Band: 60+, "not even close." **Call: trust it.** Right answer, huge margin, nothing else in the race. This is what a good reading looks like — and you need to see one, or you'll start believing all models are useless.
+Band: 60+, "not even close." **Call: trust it.** Right answer, huge margin, nothing else in the race.
+
+This is what a good reading looks like. You need to see one, or you may start believing all models are useless.
 
 **Reading C — a pear was on the tray.**
 
-```
+```text
    apple 71   ·   banana 22   ·   sandwich 7
 ```
 
 Sum: 71 + 22 + 7 = **100** ✓. Winner: **apple**. Margin: 71 − 22 = **49**.
 Band: 30–59, "reasonably clear." **Call: it looks fine and it is completely wrong.**
 
-There is no pear class. There never was. A pear is round, fruit-sized and has a stalk, so of the three boxes it lands nearest **apple** — and 100 points of belief had to go somewhere. Compare it with Reading A: A was wrong *and* warned you. C was wrong and **did not warn you at all.**
+There is no pear class. There never was. A pear is round, fruit-sized and has a stalk, so of the three boxes it lands nearest **apple**. The 100 points of belief had to go somewhere.
+
+Compare it with Reading A. A was wrong *and* warned you. C was wrong and **did not warn you at all.**
 
 > **🔑 What Example 1 teaches:** a good margin is necessary but not sufficient. You also have to know **what was actually put in front of the camera.**
 
@@ -302,7 +322,7 @@ A coach wants to sort video clips of a batter into three shots: **cover drive**,
 
 **Question 1 — is this balanced?**
 
-```
+```text
    (biggest − smallest) ÷ biggest
    = (150 − 10) ÷ 150
    = 140 ÷ 150
@@ -318,7 +338,7 @@ The prediction: it will get very good at cover drives and pull shots and will **
 
 **Question 3 — if it never says "defensive block", what accuracy does it get on its own clips?**
 
-```
+```text
    got right  =  150 (cover drives) + 150 (pull shots) + 0 (blocks)
               =  300
 
@@ -331,7 +351,7 @@ The prediction: it will get very good at cover drives and pull shots and will **
 
 **Question 4 — and how good is it at the thing she actually wanted?** She built this to study *defence*.
 
-```
+```text
    accuracy on defensive blocks  =  0 ÷ 10  =  0%
 ```
 
@@ -344,7 +364,9 @@ Zero. The headline number hides it perfectly.
 | **Level up** | Film about 140 more defensive blocks | 150 / 150 / 150 — balanced *and* plenty of examples |
 | **Level down** | Delete cover drives and pull shots down to 10 each | 10 / 10 / 10 — balanced and useless |
 
-**Choose level up.** Levelling down throws away 280 perfectly good clips and leaves you with 10 examples per class, which is far too few. If filming 140 more blocks is impossible, the realistic middle path is about 40 of each — trim the big classes a bit *and* film some more blocks.
+**Choose level up.** Levelling down throws away 280 perfectly good clips. It leaves you with 10 examples per class, which is far too few.
+
+If filming 140 more blocks is impossible, the realistic middle path is about 40 of each. Trim the big classes a bit *and* film some more blocks.
 
 > **🔑 What Example 2 teaches:** an impressive accuracy number can be completely real and completely worthless at the same time. Always ask what it scores on **the class you cared about**.
 
@@ -354,7 +376,7 @@ Zero. The headline number hides it perfectly.
 
 The lost-property cupboard at school has a camera that sorts items into **water bottle**, **jumper**, **lunchbox**. Anything the machine isn't sure about goes on a shelf for a human to look at later.
 
-Here are four real readouts from Monday. (Order: bottle / jumper / lunchbox.)
+Here are four real readouts from Monday, in the order bottle / jumper / lunchbox.
 
 | # | What it really was | bottle | jumper | lunchbox | sum | winner | margin |
 |:--:|---|:--:|:--:|:--:|:--:|---|:--:|
@@ -363,9 +385,9 @@ Here are four real readouts from Monday. (Order: bottle / jumper / lunchbox.)
 | 3 | a lunchbox | 12 | 20 | 68 | 100 | lunchbox ✓ | 68 − 20 = **48** |
 | 4 | **a pencil case** | 61 | 30 | 9 | 100 | bottle ✗ | 61 − 30 = **31** |
 
-Now write a policy. Here's one:
+Now write a policy. Here is one.
 
-```
+```text
    If the top score is below 65%,
    OR the margin is below 25 points,
    the machine must put the item on the human shelf.
@@ -380,7 +402,9 @@ Now write a policy. Here's one:
 | 3 | 68 | yes | 48 | yes | **answer: lunchbox** | ✓ correct, correctly allowed |
 | 4 | 61 | **no** | 31 | yes | **human shelf** | ✓ good — a pencil case has no box at all |
 
-**Score: the policy got all four calls right.** It let both correct answers through and stopped both wrong ones. Notice row 4 especially: the *margin* was fine at 31, and it was only the **top-score half** of the policy that caught it. That is exactly why you need two numbers.
+**Score: the policy got all four calls right.** It let both correct answers through and stopped both wrong ones.
+
+Look at row 4 especially. The *margin* was fine at 31. Only the **top-score half** of the policy caught it. That is exactly why you need two numbers.
 
 **Now defend the numbers — two reasons, and they must be different kinds of reason.**
 
@@ -394,16 +418,20 @@ Now write a policy. Here's one:
 
 ## 🎲 What We Did In Class
 
-**"Read the Bars Like an Expert."** If you missed the lesson, or you want to run it again at home, everything you need is here. All you need is this page and your notebook.
+This section is the class activity, **"Read the Bars Like an Expert."** If you missed the lesson, or want to run it again at home, this page and your notebook are all you need.
 
-**The setup:** eight printed cards, each showing what was held up and three confidence scores. Classes are always **spoon / toothbrush / comb**, in that order. The cards are worked **one at a time**, face down until you get to them — no peeking ahead, because two of them are traps and the surprise is the lesson.
+**The setup:** eight printed cards, each showing what was held up and three confidence scores. Classes are always **spoon / toothbrush / comb**, in that order.
+
+The cards are worked **one at a time**, face down until you get to them. No peeking ahead, because two of them are traps and the surprise is the lesson.
 
 ![The eight readout cards and one worked card](../figures/fig-w16-6-activity-cards.svg)
 *Figure 16.6 — Eight cards, worked one at a time. Card 5 is the first trap.*
 
 **The rule:** for every card you write **four** things, in this order and no other.
 
-```
+The four steps are boxed below.
+
+```text
    ┌──────────────────────────────────────────────────────┐
    │  1.  SUM       add the three numbers. Is it 100?     │
    │  2.  WINNER    which class has the top score?        │
@@ -415,6 +443,8 @@ Now write a policy. Here's one:
 **The reason is compulsory.** "Don't trust it" with no reason is not an answer.
 
 ### The eight cards
+
+This table lists what was held up for each card and its three scores.
 
 | Card | Held up | spoon | toothbrush | comb |
 |:--:|---|:--:|:--:|:--:|
@@ -429,19 +459,31 @@ Now write a policy. Here's one:
 
 ### How it went
 
-**Cards 1–4** are practice. Card 1 (97 / 2 / 1, margin 95) is what a genuinely good reading looks like — keep it, because it stops you concluding that every model is rubbish. Card 2 is the sneaky one: the **winner is the biggest number, not the first one listed**, so toothbrush wins — but only by 6, so don't trust it.
+This part tells the story of the lesson, card by card.
 
-**Card 5 — the first trap.** 45 / 44 / 11. Almost everybody writes "spoon wins" and moves on. Then comes the question: **"by how much?"** By one point. A toothbrush was held up and it lost by a single point. It *won*, and it means nothing. **A winner is not the same as a preference.**
+**Cards 1–4** are practice.
 
-**Card 6 — the trap that matters.** 99 / 1 / 0. Margin 98 — the biggest margin on any card. Everyone writes "trust it." Then: **"what was held up?"** A **stapler**. There is no stapler class. There never was. The model has never seen a stapler in its life. It isn't lying to you — it had 100 points of belief and three boxes and did the only thing it could do.
+- Card 1 (97 / 2 / 1, margin 95) is what a genuinely good reading looks like. Keep it, because it stops you concluding that every model is rubbish.
+- Card 2 is the sneaky one. The **winner is the biggest number, not the first one listed**, so toothbrush wins. But it wins only by 6, so don't trust it.
 
-**Cards 7–8 are the aftershocks.** Card 7 is 34 / 33 / 33 — the purest shrug there is. With three classes, guessing blind gets you 1 in 3, which is 33.3%, so **this readout is literally the blind-guessing rate**. Card 8 is the nastiest of all: a real comb, one of the three genuine classes, called a spoon at 80% with a margin of 61. Nothing odd about the object at all — the model just missed, confidently.
+**Card 5 — the first trap.** 45 / 44 / 11. Almost everybody writes "spoon wins" and moves on. Then comes the question: **"by how much?"**
+
+By one point. A toothbrush was held up and it lost by a single point. It *won*, and it means nothing. **A winner is not the same as a preference.**
+
+**Card 6 — the trap that matters.** 99 / 1 / 0. Margin 98, the biggest margin on any card. Everyone writes "trust it." Then comes the question: **"what was held up?"**
+
+A **stapler**. There is no stapler class. There never was. The model has never seen a stapler in its life. It isn't lying to you. It had 100 points of belief and three boxes, and did the only thing it could do.
+
+**Cards 7–8 are the aftershocks.**
+
+- Card 7 is 34 / 33 / 33, the purest shrug there is. With three classes, guessing blind gets you 1 in 3, which is 33.3%, so **this readout is literally the blind-guessing rate**.
+- Card 8 is the nastiest of all. It is a real comb, one of the three genuine classes, called a spoon at 80% with a margin of 61. Nothing odd about the object at all. The model just missed, confidently.
 
 **Then the class-balance arithmetic** (200 / 200 / 8 → 408 → 400 → 98.0%), written down *before* being told the answer.
 
-**Then the policy**, which you wrote — and then had to defend against someone deliberately attacking your numbers. Full worked answers to all eight cards are in [the workbook answer key](../workbook/week-16.md).
+**Then the policy**, which you wrote. After that you had to defend it against someone deliberately attacking your numbers. Full worked answers to all eight cards are in [the workbook answer key](../workbook/week-16.md).
 
-**The summary you should be able to give:** cards 1 and 4 are usable. Cards 2, 3, 5 and 7 are shaky, and the margin told you so. Cards 6 and 8 look great and are wrong — and only knowing **what was held up** revealed it.
+**The summary you should be able to give:** cards 1 and 4 are usable. Cards 2, 3, 5 and 7 are shaky, and the margin told you so. Cards 6 and 8 look great and are wrong. Only knowing **what was held up** revealed it.
 
 ---
 
@@ -461,6 +503,8 @@ Take these to a parent, a brother or sister, or a friend. Argue about them; don'
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four mistakes are easy to make with confidence scores. Each one is shown as wrong, then right.
 
 ### Trick 1 — "62% means it's right 62% of the time"
 
@@ -501,6 +545,8 @@ It's a race for first. Only second place can threaten the winner. The bar in las
 
 ## 🌍 Where You've Seen This
 
+Confidence scores show up in things you use every day. Here are six places.
+
 1. **Your phone's photo app "People" album.** It has already grouped faces into people, and every so often it puts your cousin in your own album. That's a small margin you never got shown — two faces the model genuinely couldn't separate, and the app probably hid the shrug and picked one.
 2. **Voice assistants mishearing you.** "Play *Cheap Thrills*" becomes "play cheap drills." There was a close race between two guesses, the assistant only ever shows you the winner, and it committed.
 3. **Autocorrect and predictive text.** Those three suggested words above your keyboard *are* a confidence readout — the top three classes, ranked. When the three suggestions are all wildly different, that's a small margin, and that's when autocorrect ruins your message.
@@ -512,9 +558,9 @@ It's a race for first. Only second place can threaten the winner. The bar in las
 
 ## 🔁 Back to Your Line
 
-Find the line you wrote at the start of this chapter — the time you were **completely sure** about
-something and turned out to be wrong. The test answer, the person's name, the cupboard the cereal was
-in.
+This section returns to the line you wrote at the start of this chapter.
+
+Find the time you were **completely sure** about something and turned out to be wrong. It might be the test answer, the person's name, or the cupboard the cereal was in.
 
 Read it again, and now answer one question about it:
 
@@ -569,6 +615,8 @@ have changed: evaluation has joined model. Judging what comes out is a different
 
 ## 🔑 Remember This
 
+These are the key points of this week.
+
 - A model has **100 points of belief** and must give every point to one of the boxes you gave it. The scores always add up to 100.
 - A **confidence score** is how strongly it *prefers* a class. **It is not the chance of being right.**
 - The **margin** (top − second) is the most useful number on the screen. Under 15 is a coin toss; 60 or more is a clear win.
@@ -580,6 +628,8 @@ have changed: evaluation has joined model. Judging what comes out is a different
 ---
 
 ## 📓 New Words
+
+These are the four words you need from this week.
 
 ![The four new words of Week 16](../figures/fig-w16-7-vocab-icons.svg)
 *Figure 16.7 — All four of this week's words are things you can point at and measure.*

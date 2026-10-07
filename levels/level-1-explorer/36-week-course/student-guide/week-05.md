@@ -23,7 +23,7 @@ Somebody hands you a table. Twelve school days, one row per day. Three things me
 
 You do the arithmetic. You add up the sleep column and divide by how many numbers there were. Here is the answer:
 
-```
+```text
 average sleep = 15.0 hours per night
 ```
 
@@ -35,13 +35,13 @@ Yes — for one night. A very ill person, or a teenager after an exhausting week
 
 So one of two things is true. Either this person has a very unusual life, or **there is something wrong with the table.**
 
-And here is the genuinely alarming part.
+Here is the alarming part. **The arithmetic is correct.** Nobody made a mistake. Add up the sleep column, divide by the count, and the answer really is 15.0.
 
-**The arithmetic is correct.** Nobody made a mistake. Add up the sleep column, divide by the count, and the answer really is 15.0. The table produced a lie using perfect maths, and it did not warn anybody.
+The table produced a lie using perfect maths, and it did not warn anybody.
 
 Now here is the second number from the same table:
 
-```
+```text
 average bag weight = 3.42 kg
 ```
 
@@ -59,6 +59,8 @@ By the end of this chapter you will be able to find all of it in about ninety se
 ---
 
 ## 🧠 The Big Idea
+
+This section gives you the tools for the week: column types, the four kinds of mess, blanks versus zeros, and outliers.
 
 ### 1. Columns have types, and the test is arithmetic
 
@@ -94,9 +96,9 @@ Try it out loud:
 
 **The analogy: shirt numbers.** Your football team's shirt numbers are 4, 7 and 10. The average is 7. Is there a player who *is* 7? Yes, but only by coincidence — nothing about "7" makes it the middle of the team. Now make the shirts 4, 7 and 99. The average is 36.67 and there is no such player and there never could be. **The digits are a name, not an amount.**
 
-**The concrete version, and this one is worth doing properly.** Three friends live at postcodes 560001, 110001 and 400001. Average them:
+**The concrete version, and this one is worth doing properly.** Three friends live at postcodes 560001, 110001 and 400001. Here is what happens when you average them:
 
-```
+```text
 560001 + 110001 + 400001 = 1,070,003
 1,070,003 ÷ 3 = 356,667.67
 ```
@@ -141,9 +143,9 @@ But **check before you delete.** Two rows can be identical and still be two genu
 
 88 hours of sleep. A bag weighing −3.2 kg. A dog aged 45. A mood of 9 on a 1-to-5 scale.
 
-How do you catch them? **You write down the legal range for every number column before you collect anything.**
+How do you catch them? **You write down the legal range for every number column before you collect anything.** Here are the legal ranges for the twelve-row table:
 
-```
+```text
 sleep_h      0 to 16
 bag_kg       0.1 to 12
 screen_min   0 to 1440     (there are 1440 minutes in a day)
@@ -155,20 +157,22 @@ Then anything outside the range puts its own hand up.
 
 `Monday`, `monday`, `MON`, `Mon.` To you, obviously one day. **To a machine, four unrelated categories** — as different from each other as `dog` and `Tuesday`.
 
-This is, genuinely, one of the most common data errors there is.
+This is one of the most common data errors there is.
 
 > **Controlled vocabulary** — the written-down list of allowed values for a category column.
 
-And notice what the fix is **not**. The fix is not "be more careful". Being more careful does not work; nobody is careful in week three at nine o'clock at night. The fix is to decide the allowed values *in advance*, write them where you can see them, and never type anything else:
+The fix is not "be more careful". Being more careful does not work; nobody is careful in week three at nine o'clock at night.
 
-```
+The fix is to decide the allowed values *in advance*, write them where you can see them, and never type anything else. Here is an example list for the `day` column:
+
+```text
 ALLOWED VALUES for day:  Mon · Wed · Fri
 Nothing else goes in this column. Ever.
 ```
 
 ### 3. A blank is not a zero, and this is the one that does the most damage
 
-This gets its own section because it is the mistake with the biggest consequences per second of effort.
+This part is about the difference between an empty box and a zero. It gets its own section because it is the mistake with the biggest consequences per second of effort.
 
 ![Wrong and right: what to do with an empty box](../figures/fig-w05-6-blank-versus-zero.svg)
 *Figure 5.4 — Same empty box. Two ways to handle it. Only one of them is honest.*
@@ -180,7 +184,7 @@ Those are **opposite sentences**, and no machine on Earth can tell them apart af
 
 **The concrete version, with real numbers.** Here are nine nights of sleep and one night you forgot to record:
 
-```
+```text
 7.5   8.0   6.5   7.0   ????   8.5   7.5   9.0   7.0   8.0
 ```
 
@@ -188,7 +192,9 @@ The nine real numbers add up to 69.0, so the honest average is 69.0 ÷ 9 = **7.6
 
 Now fill the gap with a 0. The ten values add up to 69.0 still, but now you divide by 10: 69.0 ÷ 10 = **6.90 hours**.
 
-The average dropped by three quarters of an hour, and — this is the part that matters — **nothing on the page records that it happened.** Three weeks later that 0 looks exactly as measured, exactly as real, exactly as trustworthy as the 7.5 next to it. You will not remember.
+The average dropped by three quarters of an hour. **Nothing on the page records that it happened.**
+
+Three weeks later that 0 looks exactly as measured, exactly as real, exactly as trustworthy as the 7.5 next to it. You will not remember.
 
 **The analogy: the register.** A teacher marks the register. A child who is absent gets a mark that says *absent*. A child whose name the teacher forgot to check gets... what? If the teacher writes "absent" for both, one child has been wrongly recorded as away from school, and there is no way to ever find out which.
 
@@ -205,11 +211,11 @@ Both look like an absent number. Only a note written at the time tells them apar
 
 ### 4. The trap: an outlier is not a fault
 
-This is the most important part of the week, and it separates people who tidy tables from people who understand them.
+This is the most important part of the week. It separates people who tidy tables from people who understand them.
 
-Look at this screen-time column:
+Here is a screen-time column:
 
-```
+```text
 95   120   110   105   150   480
 ```
 
@@ -243,7 +249,7 @@ In the Crime Scene Table you worked on in class, look at what else is on the 480
 
 ### 5. One bad cell can destroy an average — and it does not have to look silly
 
-Here is the whole week in numbers, from the twelve-row table in the hook.
+Here is the whole week in numbers, from the twelve-row table in the hook. Each column is worked out before and after cleaning.
 
 **The sleep column.** Eleven non-blank values: 7.5, 8.0, 6.5, 7.0, 8.5, 7.5, **88**, 9.0, 7.0, 8.0, 8.0. They sum to 165.0, so 165.0 ÷ 11 = **15.00 hours**. Now delete the duplicated row (removing one 8.0) and blank the 88. Nine values left, summing to 69.0, so 69.0 ÷ 9 = **7.67 hours**. **A drop of 7.33 hours, caused overwhelmingly by one cell.**
 
@@ -258,6 +264,8 @@ The dirty answer, 3.42 kg, looked completely believable. Nothing about it raised
 ---
 
 ## 🔍 Worked Examples
+
+Three small tables, cleaned step by step. Try each one yourself before you read the diagnosis.
 
 ### Worked Example 1 — Six dogs at an animal shelter (the one we did in class)
 
@@ -285,16 +293,16 @@ Six dogs. Six faults. Find them before you read on.
 
 **Now the arithmetic — average weight, before and after.**
 
-**Before** (every number as written, skipping the blank):
+**Before** (every number as written, skipping the blank). Here is the sum and the average:
 
-```
+```text
 22 + 8 + 22 + 30 + (−5) = 77
 77 ÷ 5 numbers = 15.4 kg
 ```
 
 **After** (duplicate deleted, both impossibles blanked):
 
-```
+```text
 22 + 8 + 30 = 60
 60 ÷ 3 numbers = 20.0 kg
 ```
@@ -342,16 +350,16 @@ One row = one order. Eight orders across three days.
 
 **Do the trap on purpose.** Average the `table_no` column:
 
-```
+```text
 4 + 7 + 4 + 2 + 9 + 4 + 4 + 4 = 38
 38 ÷ 8 = 4.75
 ```
 
 "The average table is 4.75." There is no table 4.75. There never will be. The spreadsheet gave you a confident, precise, meaningless answer and did not blink.
 
-**Step 2 — legal ranges, written before you judge anything.**
+**Step 2 — legal ranges, written before you judge anything.** These are the two ranges for this log:
 
-```
+```text
 price_rupees   1 to 500
 time           11:00 to 15:00
 ```
@@ -370,13 +378,13 @@ time           11:00 to 15:00
 
 **Average price before** (seven non-blank values): 20 + 20 + 60 + (−60) + 20 + 60 + 60 = **180**.
 
-```
+```text
 180 ÷ 7 = 25.71 rupees
 ```
 
 **Average price after** — duplicate row deleted (removes one 60), the −60 blanked, the missing one still blank. Five values: 20, 20, 60, 20, 60 = **180**.
 
-```
+```text
 180 ÷ 5 = 36.00 rupees
 ```
 
@@ -391,9 +399,9 @@ Same sum, different count, and the answer moves by more than ten rupees. That is
 
 Before cleaning, the canteen manager asks "which is more popular, samosas or dosas?" A program that treats every spelling as different counts `dosa` four times and `samosa` only twice, so it says dosas win. After cleaning, samosas have 4 orders and dosas have 3. **The spelling mess did not just blur the answer; it flipped it.**
 
-**Step 6 — write the controlled vocabulary that would have prevented it.**
+**Step 6 — write the controlled vocabulary that would have prevented it.** One list per category column:
 
-```
+```text
 ALLOWED VALUES for day:   Mon · Tue · Wed · Thu · Fri
 ALLOWED VALUES for item:  samosa · dosa · idli · rice_plate · juice
 Nothing else may be typed in these columns.
@@ -403,7 +411,7 @@ Nothing else may be typed in these columns.
 
 One row = one jump. Legal ranges written first, before anything is judged:
 
-```
+```text
 jump_cm     50 to 900       (the world record is about 895 cm)
 age_years    5 to 19
 ```
@@ -452,14 +460,14 @@ Now the table can say what actually happened. `result = foul` is the real inform
 
 **Average jump before**, taking every number exactly as written (all eight):
 
-```
+```text
 285 + 310 + 298 + 0 + 421 + (−12) + 302 + 291 = 1895
 1895 ÷ 8 = 236.88 cm
 ```
 
 **Average jump after** cleaning — the −12 blanked, A4's 0 moved out into the `result` column, the 421 **kept**:
 
-```
+```text
 285 + 310 + 298 + 421 + 302 + 291 = 1907
 1907 ÷ 6 = 317.83 cm
 ```
@@ -468,7 +476,7 @@ Now the table can say what actually happened. `result = foul` is the real inform
 
 **Step 5 — prove the outlier was worth keeping.** What if we had crossed out the 421 too?
 
-```
+```text
 285 + 310 + 298 + 302 + 291 = 1486
 1486 ÷ 5 = 297.20 cm
 ```
@@ -478,6 +486,8 @@ So keeping the outlier lifts the average from 297.20 to 317.83 — about 20.6 cm
 ---
 
 ## 🎲 What We Did In Class
+
+This section is a record of the class activity, so you can repeat it at home or check your notes.
 
 ### Crime Scene Table
 
@@ -518,7 +528,7 @@ One row = one school day. Twelve rows: Mondays, Wednesdays and Fridays through A
 
 ### The legal ranges, written on the board before we started
 
-```
+```text
 sleep_h     0 to 16
 bag_kg      0.1 to 12
 screen_min  0 to 1440
@@ -565,7 +575,7 @@ And look across that row: **6.5 hours of sleep, the lowest in the whole table.**
 
 ### The last job — the controlled vocabulary
 
-```
+```text
 ALLOWED VALUES for day:  Mon · Wed · Fri
 Nothing else may be typed in this column.
 ```
@@ -584,6 +594,8 @@ The best answer says all of that, and notices that **the count depends on whethe
 
 ## 💬 Talk About It
 
+These three questions are for talking over with your teacher or a friend.
+
 **1. "Was the 88 a typo for 8.8 or for 8?"**
 *Hint for you:* **nobody knows, and nobody ever will.** That is not being coy — the information is genuinely gone. `8.8` is a slipped decimal point; `8` is a doubled keypress. Both plausible, no method recovers it. Ask them what that means for the fix (blank it, note `original lost`), and then the good question: *what could the person who typed it have done, in the four seconds when they still knew?*
 
@@ -596,6 +608,8 @@ The best answer says all of that, and notices that **the count depends on whethe
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that catch people out, each with the right idea beside it.
 
 ### Trick 1 — "Anything weird is an error"
 
@@ -639,6 +653,8 @@ Not by being clever, not by being modern. To a machine, `Monday` and `monday` ar
 
 ## 🌍 Where You've Seen This
 
+These six places outside class show the same ideas.
+
 1. **Your contacts list.** Three entries for the same person: "Mum", "Mum mobile", "Amma". You know they are one person. Your phone does not, which is why it shows you three birthdays and three chat threads. That is an inconsistent category, in your pocket.
 2. **A dropdown menu on a website.** Country, month, size, quantity. Nobody made those dropdowns to look nice — they are **controlled vocabularies**, enforced so you *physically cannot* type `Inida`.
 3. **Weather apps disagreeing.** Two apps, same city, two different temperatures. Often one is reading a sensor at an airport and one is reading a city-centre sensor. Both correct, both measured differently — Week 4's Rule 2, out in the wild.
@@ -675,6 +691,8 @@ week — what changed is the thread strip at the bottom and the line underneath 
 
 ## 🔑 Remember This
 
+The key points of the week, in one list.
+
 - **Every column has a type, and the test is arithmetic.** If adding two values does not mean anything, it is a **category**, no matter how many digits it is made of.
 - **Bus routes, postcodes, IDs, shirt numbers and table numbers are categories.** A spreadsheet will average them anyway and will never warn you.
 - **Four kinds of mess, four different fixes.** Missing: blank plus a note. Duplicate: check, then delete one. Impossible: blank plus a note, never guess. Inconsistent: write the allowed list.
@@ -686,6 +704,8 @@ week — what changed is the thread strip at the bottom and the line underneath 
 ---
 
 ## 📓 New Words
+
+These are the words you met this week.
 
 ![Week 5 words as pictures](../figures/fig-w05-7-vocab-icons.svg)
 *Figure 5.9 — This week's five words, drawn.*
@@ -716,9 +736,19 @@ Go to **[the Week 5 workbook](../workbook/week-05.md)**. About **45–60 minutes
 Three jobs, spelled out:
 
 1. **Keep collecting.** You should be at 14 rows by now. Get to **21** by next week. In Week 6 we finish at 30 and turn it into a real dataset.
-2. **Run all four checks** — the same four you did in class. Blanks. Duplicates. Impossible values. Inconsistent spellings. Do them as **four separate passes**, one check at a time, one column at a time. It is faster and it finds more.
+2. **Run all four checks** — the same four you did in class:
+   - Blanks.
+   - Duplicates.
+   - Impossible values.
+   - Inconsistent spellings.
+
+   Do them as **four separate passes**, one check at a time, one column at a time. It is faster and it finds more.
+
    **Before you start, write your legal ranges at the top** — the smallest and biggest each number column is allowed to be.
-   Every fault goes in the fault log with four things: which row, which column, what kind of fault, and what you did about it. **Every single change gets logged.** If you change a value and do not log it, you have destroyed your own record of what happened — and you will not remember in three weeks. I promise you that.
+
+   Every fault goes in the fault log with four things: which row, which column, what kind of fault, and what you did about it. **Every single change gets logged.** If you change a value and do not log it, you have destroyed your own record of what happened.
+
+   You will not remember in three weeks.
 3. **Answer the "most dangerous" question** in two or three sentences. There is more than one good answer. I want the reasoning, not the answer.
 
 > **⚠️ Watch out:** **you might find zero faults.** If so, do not invent one. Write "no faults found" and then write down which four checks you ran, so it is clear you actually looked. Finding nothing after four real checks is a completely respectable result — and a much better one than a fake fault.

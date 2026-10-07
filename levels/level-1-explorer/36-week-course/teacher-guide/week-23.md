@@ -165,15 +165,16 @@ cluster along the outline.
 
 A phone camera might shoot **4032 × 3024**. Multiply it out:
 
-```
+```text
    4032 × 3024 = 12,192,768 pixels
 ```
 
-Twelve million, which is where "12 megapixel" comes from. Now the number that lands hardest:
-Teachable Machine — the tool your student used in Week 17 to train their model — does **not** look at
+Twelve million is where "12 megapixel" comes from.
+
+Now the number that lands hardest. Teachable Machine — the tool your student used in Week 17 to train their model — does **not** look at
 12 million pixels. Before training, it squashes every photo down to **224 × 224**.
 
-```
+```text
    224 × 224      =     50,176 pixels
    12,192,768 ÷ 50,176  =  243
 ```
@@ -181,7 +182,9 @@ Teachable Machine — the tool your student used in Week 17 to train their model
 Their model saw **one pixel out of every 243 they took**. Two hundred and forty-two out of every 243
 were thrown in the bin before training even started.
 
-Sit with that for a moment, because it quietly explains an enormous amount. If the thing that tells
+Sit with that for a moment, because it quietly explains an enormous amount.
+
+If the thing that tells
 two of their classes apart is *thin* — the teeth of a comb, a hairline crack, small printed text —
 the model may literally never have seen it. That is not the model being stupid. The information was
 deleted before the model was born.
@@ -276,6 +279,8 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 
 ## 🧰 Prep Checklist
 
+Use this list to get everything ready before the lesson starts.
+
 **15 minutes the night before**
 
 - [ ] **Buy or find real 5 mm graph paper** — at least 4 sheets. This matters more than it sounds. Printed graph paper usually comes out too small to write a three-digit number inside a square. If you must print, print at 8 mm or 10 mm squares, not 5 mm. *(If you were prepping ahead in Week 22, you already have this.)*
@@ -303,6 +308,8 @@ things that can still go wrong:
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This is the plan for the whole lesson. The table gives the overview, and each segment below it has the words to say.
 
 | # | Segment | Minutes | What happens |
 |---|---|---|---|
@@ -453,7 +460,7 @@ which is small enough to finish in ten minutes and big enough to be a real lette
 row 5, and along row 5 from column 2 to column 5, with the bottom-right square (row 5, column 6)
 only *half* shaded. Then fill in the numbers together, calling them out. The finished board:
 
-```
+```text
         c1    c2    c3    c4    c5    c6
    r1   255   255   255   255   255   255
    r2   255    0     0    255   255   255
@@ -463,13 +470,13 @@ only *half* shaded. Then fill in the numbers together, calling them out. The fin
    r6   255   255   255   255   255   255
 ```
 
-Then three checks, out loud, in this order:
+Then do three checks, out loud, in this order:
 
 1. **"How many squares altogether?"** 6 × 6 = 36. Count the numbers you wrote. If you have 35 or 37, you skipped or doubled one — find it now.
 2. **"How many pure black squares?"** Ten. (Two in each of rows 2, 3 and 4 = 6, plus four in row 5.)
 3. **"What is the average brightness of the whole picture?"** Do this one properly on the board:
 
-```
+```text
    sum  = (10 × 0) + (1 × 128) + (25 × 255)
         = 0 + 128 + 6375
         = 6503
@@ -556,7 +563,7 @@ Full instructions are in the next section. In the lesson flow, it runs like this
 **Do this:** build this on the board, one line at a time, asking for each multiplication before you
 write the answer. Let them use the calculator for the big ones.
 
-```
+```text
    your grid                12 × 12      =        144 pixels
    what Teachable Machine sees   224 × 224      =     50,176 pixels
    what a phone camera shoots  4032 × 3024      = 12,192,768 pixels   ("12 megapixels")
@@ -594,6 +601,8 @@ Then assign homework (see 📤 below) and stop.
 ---
 
 ## 🎲 The Activity, In Full
+
+This section has everything you need to run the activity: materials, setup, rules and variations.
 
 ### Become a Pixel Grid
 
@@ -661,6 +670,8 @@ Two extensions, both good:
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions your student is likely to ask, with plain answers you can say out loud.
+
 **"Why 255? That's such a weird number to stop at."**
 Because computers store things in bytes, and one byte holds exactly 256 different values: 0, 1, 2,
 all the way up to 255. It stops at 255 because that is where one byte runs out. If you ever see 256
@@ -715,6 +726,8 @@ that they are clever. It is that they are fast and they never get bored.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists what usually goes wrong, why it happens, and what to do right then.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | They write **255 in the shaded squares and 0 in the blank ones** — the whole grid is inverted. | 255 feels like "full" and "lots of pencil". It is a meaning error, not a carelessness error. | Do not correct the numbers. Point at the boxed reminder on the board and ask: *"how much light comes out of a solid black square?"* Then let them fix it. Catch it in the first two rows by glancing at row 1 — if row 1 is all 0s and the top of the page is blank paper, it is inverted. |
@@ -728,6 +741,8 @@ that they are clever. It is that they are fast and they never get bored.
 ---
 
 ## 🧭 Differentiation
+
+Use this section when the lesson needs to go slower, go further, or be rescued.
 
 ### If they are struggling
 
@@ -775,7 +790,7 @@ a flat note instead of a good one. Better a finished 6 × 6 than an abandoned 12
 
 ## ✅ Assessing Understanding
 
-Three checks, last five minutes. Ask them exactly like this.
+These three checks show whether the lesson landed. Use them in the last five minutes and ask them exactly like this.
 
 **Check 1 — the direction (10 seconds)**
 
@@ -818,6 +833,8 @@ worth telling them about.
 ---
 
 ## 📤 Homework to Assign
+
+This section tells you what to say about the homework and how the workbook sections fit together.
 
 **Say this:**
 
@@ -873,7 +890,7 @@ first, then every workbook section. Values are taken from the workbook's Answers
 
 ### Lesson · the 6 × 6 letter L (Segment 3)
 
-```
+```text
         c1    c2    c3    c4    c5    c6
    r1   255   255   255   255   255   255
    r2   255    0     0    255   255   255
@@ -1017,7 +1034,7 @@ things, and mark them in this order:
 
 **A model answer, for comparison — a capital H:**
 
-```
+```text
         c1   c2   c3   c4   c5   c6   c7   c8   c9  c10  c11  c12
    r1   255  255  255  255  255  255  255  255  255  255  255  255
    r2   255  192   0    0   255  255  255  255   0    0   192  255
@@ -1043,7 +1060,7 @@ average = 23,220 ÷ 144 = **161.25**.
 This is the grid printed in the workbook. **Do not show the student this section until they have
 answered.**
 
-```
+```text
         c1   c2   c3   c4   c5   c6   c7   c8   c9  c10  c11  c12
    r1   255  255  255  255  255  255  255  255  255  255  255  255
    r2   255  255  255  255  255  255  255  255  255  255  255  255
@@ -1113,14 +1130,14 @@ outside are 255. Doubt only exists on the boundary, which is exactly what happen
 
 **S1. A picture is 12 pixels across and 12 down. How many pixels? How long to write the numbers out at one per second?**
 
-```
+```text
    12 × 12 = 144 pixels
    144 seconds = 2 minutes 24 seconds
 ```
 
 **S2. Teachable Machine shrinks every photo to 224 × 224. How many pixels is that? How long at one number per second?**
 
-```
+```text
    224 × 224 = 50,176 pixels
    50,176 seconds ÷ 60 = 836.3 minutes
                   ÷ 60 = 13.9 hours  ≈ 14 hours
@@ -1128,7 +1145,7 @@ outside are 255. Doubt only exists on the boundary, which is exactly what happen
 
 **S3. A phone camera shoots 4032 × 3024. How many pixels? How many times more than the model sees?**
 
-```
+```text
    4032 × 3024 = 12,192,768 pixels   (that is the "12 megapixels" on the box)
 
    12,192,768 ÷ 50,176 = 243
@@ -1158,6 +1175,8 @@ so accept 12,000,000 **if** the multiplication 4032 × 3024 is shown correctly s
 ---
 
 ## 🔮 Next Week Preview
+
+This section tells you what next week builds on and what to prepare early.
 
 Today's picture was grey. Next week it gets its colour back, and the answer is beautifully simple:
 a colour picture is **three** number grids stacked on top of each other — one for red, one for

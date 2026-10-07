@@ -42,6 +42,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know the words and the steps.
+
 **A1. Fill in the blanks.**
 
 (a) The balance check is `( ____________ − ____________ ) ÷ ____________`, and the answer must be under ________ %.
@@ -125,6 +127,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Use It
+
+These questions ask you to use what you know on new situations.
 
 **B1. What would go wrong?** Your friend loads her spoon class by holding *Hold to Record* down for a full twenty seconds. The counter reads **214 samples** and she is delighted.
 
@@ -228,6 +232,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for working things out from clues, one step at a time.
+
 Somebody trained a three-class model — **spoon**, **toothbrush**, **comb** — and then lost the note saying which name went in which slot. All you have are three readouts.
 
 ![Puzzle: whose bar is whose?](../figures/fig-w17-11-puzzle-whose-bar.svg)
@@ -267,6 +273,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions need a paragraph each. Take your time.
+
 **T1.** Teachable Machine trains a working model from 40 photos in twenty seconds. A team of researchers might need a million photos and a week. Write a paragraph explaining **how both of those things can be true at once.** Use the phrase *starts from a model that was already trained*.
 
 ________________________________________________________________
@@ -302,6 +310,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+Here you test your own model on objects it has never seen and write about what happens.
 
 > **First:** re-open your model. Teachable Machine → **☰ menu** → **Open project from file** → `baseline-v1.tm`.
 > **Do not** overwrite or delete that file. Week 18 opens it four times.
@@ -367,6 +377,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing the whole journey.
+
 **Your task:** draw the whole journey, from you taking photos to the model putting a number on the screen.
 
 You must label: your photos, the three named classes, the Train Model button, the model itself, the live preview, and the **one thing that is no longer there after training**.
@@ -379,6 +391,8 @@ You must label: your photos, the three named classes, the Train Model button, th
 ---
 
 ## 📊 Self-Check
+
+Tick one box on each row. Be honest. It helps your teacher know what to go over.
 
 | I can… | 😀 easily | 🙂 with a bit of thought | 😕 not yet |
 |---|:--:|:--:|:--:|
@@ -397,6 +411,8 @@ ________________________________________________________________
 
 ## ✅ Answers
 
+Come here only after you have tried every question. Open the box below to check your work.
+
 <details>
 <summary>Check your answers</summary>
 
@@ -408,11 +424,13 @@ ________________________________________________________________
 
 **W3.** Because the object in front of the camera is in **none** of its classes. A three-class model that knows spoon / toothbrush / comb, shown a stapler, reports something like 99 / 1 / 0 — it has 100 points, three boxes, and no way to say "none of these," so it gives nearly everything to the closest shape. Nothing is broken. *(Also acceptable: you are testing on a photo it was trained on, so the 99% tells you nothing about new objects.)*
 
-**W4.** It will mostly stop saying "comb" altogether, because combs are only 8 of 408 photos and abandoning them barely affects total mistakes.
-```
+**W4.** It will mostly stop saying "comb" altogether, because combs are only 8 of 408 photos and abandoning them barely affects total mistakes. The sums:
+
+```text
    200 + 200 + 0 = 400 correct out of 200 + 200 + 8 = 408
    400 ÷ 408 = 0.98039… ≈ 98.0%
 ```
+
 **98.0% overall, and 0% right on every single comb.**
 
 **W5.** An extra class for "none of the above." Three things to put in it: an empty hand, a bare table, a fork. *(Also fine: a wall, a pen, the floor, a book — anything the camera will realistically see that isn't one of your real classes.)*

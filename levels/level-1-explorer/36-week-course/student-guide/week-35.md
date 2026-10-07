@@ -22,7 +22,7 @@
 
 ## 🪝 Start Here
 
-Go and find something genuinely awkward from the kitchen. A yoghurt pot with the foil lid still half on. A squashed carton. A paper cup with a plastic rim.
+Go and find something awkward from the kitchen. A yoghurt pot with the foil lid still half on. A squashed carton. A paper cup with a plastic rim.
 
 Hold it up. **What bin does it go in?**
 
@@ -32,7 +32,9 @@ Now the question I actually care about. If you hold that thing up to your model,
 
 It will say *something*. It has to.
 
-Remember what those four numbers do: they add up to a hundred, every single time, so **something always comes first**. And here is the problem, drawn:
+Remember what those four numbers do. They add up to a hundred, every single time, so **something always comes first**.
+
+Here is the problem, drawn:
 
 ![Two sets of four numbers, one voice](../figures/fig-w35-12-ambiguous-item.svg)
 *Figure 35.1 — Same answer, completely different situation. Your app cannot currently tell them apart.*
@@ -53,13 +55,15 @@ Here's a question worth sitting with before you read on: would you rather have a
 
 ## 🧠 The Big Idea
 
+This section explains the six ideas you need to turn your model into a booth. Read them in order.
+
 ### 1. Your model and Scratch are strangers
 
 **The plain explanation.** Your trained model lives in a browser tab on Teachable Machine's website. Scratch is a **different** tab, made by different people. They do not talk to each other. There is no button labelled "send my model to Scratch." So you need a **bridge**, and there are exactly two.
 
 **The analogy.** Two friends who don't speak the same language. Either you hire an interpreter who stands between them and does it automatically (and now a stranger is in the room), or you pass notes back and forth yourself (slower, nobody else involved, and you have to admit you're doing it).
 
-**The concrete version.**
+**The concrete version.** Here are the two routes, drawn and then compared.
 
 ![Route A and Route B, the two ways to connect the model](../figures/fig-w35-5-route-a-b.svg)
 *Figure 35.2 — Two honest ways to wire the app. Default to Route B.*
@@ -74,9 +78,9 @@ Here's a question worth sitting with before you read on: would you rather have a
 
 > **⚠️ Watch out:** Route A puts your **model** on a public link. That is a real privacy decision, and it is an adult's decision to make, not yours. **If an adult has not actively said yes, it is Route B.**
 
-Route B has one cost, and it must be said out loud, on a printed sign, in ordinary-sized text:
+Route B has one cost. It must be said out loud, on a printed sign, in ordinary-sized text. Here is the sign:
 
-```
+```text
    ┌────────────────────────────────────────────────────────────┐
    │  HOW THIS BOOTH WORKS: the model runs on this laptop and   │
    │  makes the prediction. I type the prediction into Scratch  │
@@ -116,7 +120,7 @@ A knowledgeable adult respects that sign far more than a slicker demo. **Neither
 
 **The plain explanation.** Pick a number. Seventy is a good default. Then before the app says anything, it asks one question: *is the winning confidence above 70?*
 
-```
+```text
    if the winning confidence is ABOVE 70   →   act on the label (four behaviours)
    if it is 70 or BELOW                    →   say "not sure", name no bin, count nothing
 ```
@@ -148,7 +152,7 @@ That's a trade, and it's yours to make. What matters is that you **write down th
 
 **The analogy.** You ask a shopkeeper for a specific screw. `other` is them saying, confidently, *"we don't sell that here, try the hardware shop"* — they know exactly what they've got and yours isn't it. "Not sure" is them squinting at your screw and saying *"I genuinely can't tell what that is."* Both mean you leave without a screw. They are completely different conversations.
 
-**The concrete version.**
+**The concrete version.** Here the two are side by side.
 
 | | **`other`** | **"not sure"** |
 |---|---|---|
@@ -195,10 +199,14 @@ So: a **car key** triggers `other` — the model has seen keys in its `other` ph
 
 **The plain explanation.** The demo is five minutes. It has six segments in a fixed order, and two of them are worth more than the other four put together.
 
+This picture shows the timeline:
+
 ![The five-minute demo, minute by minute](../figures/fig-w35-2-demo-timeline.svg)
 *Figure 35.6 — The two starred segments are the ones nobody else at the fair has.*
 
-```
+Here are the six segments and their times:
+
+```text
    the annoyance      30s
    it works           60s
    HOW IT LEARNED     90s   ★  most questions come from here
@@ -229,6 +237,8 @@ The replacements are longer and they are **true**, and true is what wins a fair.
 
 ## 🔍 Worked Examples
 
+Three booths, three stories. Each one shows the arithmetic or the script step by step.
+
 ### Worked Example 1 — What the threshold costs (food)
 
 Sam's booth sorts what's in the fridge: `leftovers`, `fresh`, `packet`, `other`. His Week 34 sheet says **30 out of 40 = 75%**.
@@ -239,9 +249,9 @@ He wants to know what a threshold of 70 would actually do. He already has the an
 
 **Step 2 — of those nine, how many had he got wrong?** Six wrong, three right.
 
-**Step 3 — do the arithmetic both ways.**
+**Step 3 — do the arithmetic both ways.** First with no threshold, then with the threshold.
 
-```
+```text
    NO THRESHOLD
       answers given          40
       correct                30
@@ -293,9 +303,9 @@ Aisha's booth sorts cricket kit: `ball`, `glove`, `pad`, `other`. She trained on
 
 Tenths are deliberately easy so that nothing hides in the arithmetic. The interesting number isn't in this table at all — it's the distance between the top row and the bottom row.
 
-**Step 2 — the gap.**
+**Step 2 — the gap.** Subtract the worst from the best.
 
-```
+```text
    best 90%  −  worst 40%  =  50 PERCENTAGE POINTS
 ```
 
@@ -305,9 +315,9 @@ Not "50%". When you subtract two percentages you get points.
 
 > *"It fails on cricket kit photographed under a lamp after dark."*
 
-**Step 4 — the chain, ending in a count.**
+**Step 4 — the chain, ending in a count.** Each line leads to the next.
 
-```
+```text
    I only shot photos on the patio in the afternoon, because that's when I was free
        ↓
    132 of my 160 training photos are daylight. Only 28 are lamplight. (82.5% vs 17.5%)
@@ -319,9 +329,11 @@ Not "50%". When you subtract two percentages you get points.
 
 And the sentence that earns the most credit: **nothing broke.** No bug, no crash. The model learned exactly what it was shown. Ten photos per batch is small, so call daylight skew the likely cause; the retrain-and-rerun is how you find out.
 
-**Step 5 — the priced fix, with the algebra shown.** Aisha decides she wants lamplight to be **at least a quarter** of her training photos, and she's keeping all 132 daylight ones.
+**Step 5 — the priced fix, with the algebra shown.** Aisha decides she wants lamplight to be **at least a quarter** of her training photos. She's keeping all 132 daylight ones.
 
-```
+Here is her working:
+
+```text
    Let L = the total number of lamplight photos I end up with.
 
         L  ≥  1/4 × (132 + L)
@@ -387,7 +399,9 @@ Here is the fixed version, minute by minute. Read it out loud with a stopwatch �
 **The invitation — 15 seconds.**
 > *"Right. Please try to break it. Hold up anything you like. There's a log and a pen — whatever you manage, I'll write down what you did and why I think it worked."*
 
-```
+The times add up like this:
+
+```text
    30 + 60 + 90 + 60 + 45 + 15  =  300 seconds  =  5:00 exactly
 ```
 
@@ -396,6 +410,8 @@ Here is the fixed version, minute by minute. Read it out loud with a stopwatch �
 ---
 
 ## 🎲 What We Did In Class
+
+This section is the class activity. You can follow it again at home.
 
 ### The Booth Sprint — Milestones 5, 6 and 7
 
@@ -409,9 +425,13 @@ Twenty minutes, three stations, visible clock.
 
 ### Station 1 — the app, Route B (every block is plain Scratch)
 
-Build it in **this order**. The threshold goes in **first**, before the four behaviours, so it can never become an afterthought. (Pick any sounds you like from the Sounds tab; the sound names and extension block names here may differ slightly from your version of Scratch or Stretch3.)
+Build it in **this order**. The threshold goes in **first**, before the four behaviours, so it can never become an afterthought.
 
-```
+Pick any sounds you like from the Sounds tab. The sound names and extension block names here may differ slightly from your version of Scratch or Stretch3.
+
+Here is the whole script:
+
+```text
 when green flag clicked
 
     set [threshold v] to (70)          · my cut-off, in percent
@@ -465,9 +485,15 @@ when green flag clicked
     end
 ```
 
-**Route A**, if an adult has approved the upload, is the same shape with three differences: the model URL goes in at the top, the label comes from a reporter block instead of `ask`, and you **must** add two things or the sprite spams itself:
+**Route A**, if an adult has approved the upload, is the same shape with three differences:
 
-```
+1. The model URL goes in at the top.
+2. The label comes from a reporter block instead of `ask`.
+3. You **must** add two things or the sprite spams itself.
+
+The two things to add:
+
+```text
     wait (0.5) seconds                       · don't hammer the CPU
     if <not <(image label) = (last)>> then    · only act on a CHANGE
         set [last v] to (image label)
@@ -476,9 +502,9 @@ when green flag clicked
 
 > **⚠️ Watch out (Route A only):** without that change-guard the sprite repeats itself endlessly and the counter races to 40 off one tin can. It's the exact bug you debugged on paper in Week 30.
 
-**"Finished" means all five of these, demonstrated to a real person:**
+**"Finished" means all five of these, demonstrated to a real person.** Tick each box as you show it:
 
-```
+```text
    □ recycling item  → blue backdrop,  right sentence, counter +1
    □ compost item    → green backdrop, right sentence, counter +1
    □ landfill item   → grey backdrop,  right sentence, counter +1
@@ -490,9 +516,9 @@ when green flag clicked
 
 ### Station 2 — the sign
 
-Marker. Poster paper. **The biggest text on the booth.**
+Marker. Poster paper. **The biggest text on the booth.** Here is an example:
 
-```
+```text
    ┌──────────────────────────────────────────────────────────┐
    │        DO  NOT  USE  THIS  FOR                           │
    │                                                          │
@@ -507,11 +533,15 @@ Three requirements: at least one **measured** limit with its number attached, at
 
 ### Station 3 — rehearsal one
 
-Lay everything out. Deliver the demo once, standing, timed. The listener does exactly two jobs and nothing else: **do not interrupt**, and **hold up one finger per banned word**. At the end they report three numbers — total time, finger count, and whether the failure was actually *demonstrated* or only described.
+Lay everything out. Deliver the demo once, standing, timed.
+
+The listener does exactly two jobs and nothing else: **do not interrupt**, and **hold up one finger per banned word**. At the end they report three numbers: total time, finger count, and whether the failure was actually *demonstrated* or only described.
 
 ### If you missed the class, or want to redo it at home
 
-All three stations work alone except the rehearsal, and the rehearsal is the one you can't fake. Rehearsing in your head does not count and you will be able to tell. If there's genuinely nobody, record yourself on a phone and watch it back with the banned-words sign in your hand. It's uncomfortable and it works.
+All three stations work alone except the rehearsal, and the rehearsal is the one you can't fake.
+
+Rehearsing in your head does not count and you will be able to tell. If there's genuinely nobody, record yourself on a phone and watch it back with the banned-words sign in your hand. It's uncomfortable and it works.
 
 ![Six rehearsal cards from the question bank](../figures/fig-w35-4-rehearsal-cards.svg)
 *Figure 35.8 — Cut these out. Someone reads the front; you answer before you turn it over.*
@@ -526,6 +556,8 @@ All three stations work alone except the rehearsal, and the rehearsal is the one
 
 ## 💬 Talk About It
 
+These are three questions to ask other people. Their answers help you think about your booth.
+
 **1. Ask an adult: "would you rather use an app that always gives an answer, or one that sometimes says 'I'm not sure'?"**
 > *Hint:* most say the first one instinctively, then change their mind when you make it concrete. Try: *"a weather app that always says a number, or one that says 'genuinely can't tell today'?"* Then: *"a doctor?"* The answer flips somewhere in the middle, and finding out where is the interesting bit.
 
@@ -538,6 +570,8 @@ All three stations work alone except the rehearsal, and the rehearsal is the one
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that sound sensible. Each one is set next to the right idea.
 
 ### Trick 1 — "Saying 'not sure' means my model is worse"
 
@@ -588,6 +622,8 @@ Think about which booth you'd believe. And remember the chain: **nothing broke**
 
 ## 🌍 Where You've Seen This
 
+These are places outside the booth where the same ideas show up.
+
 1. **Your phone's voice assistant saying "sorry, I didn't catch that."** That's a threshold. Somebody at that company picked a number, and below it the assistant refuses to act rather than doing something random to your alarm clock.
 2. **Spam folders.** A borderline email doesn't get deleted — it gets moved to a folder where you can check. That's the same design: when unsure, don't commit.
 3. **Autocorrect suggesting instead of replacing.** Some corrections happen silently; some show you a little popup. Confidence is deciding which.
@@ -598,6 +634,8 @@ Think about which booth you'd believe. And remember the chain: **nothing broke**
 ---
 
 ## 🧭 Where This Fits
+
+This section shows where this week sits on the course map.
 
 Same box as last week. **YOUR OWN AI** stays shaded because the booth is not finished — you have a
 model and some paperwork, and this week it becomes something a stranger can walk up to and use.
@@ -624,6 +662,8 @@ to 36 and this is the middle of it. No dashed boxes anywhere. The lit threads ar
 
 ## 🔑 Remember This
 
+These are the points to keep from this week.
+
 - **The four confidences always add to 100, so something always wins** — even when the model has no opinion at all. That's why a threshold exists.
 - **A threshold is one `if` and one number you chose.** Not AI. Arithmetic. And you must be able to defend the number as a trade, not a fact.
 - **Check the units before you debug anything else.** `61` or `0.61` — look at the raw number once with a `say` block.
@@ -637,7 +677,7 @@ to 36 and this is the middle of it. No dashed boxes anywhere. The lit threads ar
 
 ## 📓 New Words
 
-**No new words this week either.** Here are the five doing the heavy lifting today.
+This section lists the five old words that do the work today. **No new words this week either.**
 
 ![Week 35 words, drawn](../figures/fig-w35-8-words-recap.svg)
 *Figure 35.10 — Five old words doing today's work.*
@@ -658,7 +698,7 @@ to 36 and this is the middle of it. No dashed boxes anywhere. The lit threads ar
 
 Go to **[the Week 35 workbook](../workbook/week-35.md)**. About **60 minutes** of writing, **plus three rehearsals out loud**.
 
-The rehearsals are the part that matters. At least two of them to a real live human who is allowed to interrupt you and ask anything. Standing up. Timed. **Reading it silently in your head does not count, and you will be able to tell.**
+The rehearsals are the part that matters. Do at least two of them to a real person who is allowed to interrupt you and ask anything. Stand up, and time yourself. **Reading it silently in your head does not count, and you will be able to tell.**
 
 | Page | What to do | Time |
 |---|---|---|

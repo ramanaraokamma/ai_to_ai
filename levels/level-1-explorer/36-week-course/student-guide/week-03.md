@@ -75,6 +75,8 @@ One job. Blank everywhere else.
 
 ## 🧠 The Big Idea
 
+This section gives you four ideas for the week: labels versus generating, narrow AI, confidence scores, and hallucinations.
+
 ### 1. Picking a label, or writing on a blank page?
 
 Last week's spam filter: how many different things could ever come out of it?
@@ -109,7 +111,9 @@ different kinds of answer.**
 | Chatbot writing a paragraph | any sequence of words | can't be counted | **generating** |
 | Image maker | any picture | can't be counted | **generating** |
 
-```
+Here is the test as a picture you can copy.
+
+```text
    COUNT THE POSSIBLE OUTPUTS
      short fixed list  →  picking a label
      blank page        →  generating
@@ -246,6 +250,8 @@ the plausible answer and the true answer are different things.
 
 ## 🔍 Worked Examples
 
+Three examples show the ideas at work, one step at a time. Follow each one before you try your own.
+
 ### ✏️ Worked Example 1 (a drawing game) — reading a score card, then finding the edge
 
 Here is a real six-round session, written down properly. Notice that the important column is not
@@ -303,9 +309,9 @@ demo. That is the method of this entire course.
 
 ### 🏫 Worked Example 2 (school project) — catching a chatbot inventing
 
-Say you're researching Australian films for a school project. An adult types this, with you watching:
+Say you're researching Australian films for a school project. An adult types this prompt, with you watching.
 
-```
+```text
 Tell me about the 1987 Australian film "The Glass Kangaroo of Wollongong",
 including its director and how it was received.
 ```
@@ -334,9 +340,9 @@ it up.
 **Step 2 — count the warnings it gave you.** Zero. No hedge, no "I'm not sure", no "I can't find a
 record of this".
 
-**Step 3 — challenge it.**
+**Step 3 — challenge it.** The adult types this second prompt.
 
-```
+```text
 Was that film real? Answer with just yes or no.
 ```
 
@@ -418,6 +424,8 @@ just writing down the input and the output before deciding anything.
 
 ## 🎲 What We Did In Class — AI Detective, in three rounds
 
+This section is the plan for the lesson. Use it to repeat the three rounds at home with an adult.
+
 ### Round 1 — Quick, Draw! and the narrowness proof (14 min)
 
 1. **Say the privacy line out loud first.** Every drawing goes to Google and into a public pile.
@@ -473,6 +481,8 @@ sure, not most interesting — and move them into DEFEND THESE. Those three are 
 
 ## 💬 Talk About It
 
+These three questions have no single right answer. Argue them with a friend or an adult.
+
 **1. "A chatbot writes poems, explains science and translates Spanish. Is it still narrow?"**
 
 *Hint:* this is a genuinely hard question and there's no clean answer — which is why it's worth asking.
@@ -493,12 +503,13 @@ often not checked like that. Same-looking number, completely different promise.
 *Hint:* **nobody knows**, and that's an honest answer rather than a dodge. Well-informed people give
 answers from five years to never, all looking at the same evidence. What we *can* say about today:
 no system anywhere does everything a person can, and chatbots, which do many text jobs, are the
-hard case (Week 28). Anyone who tells you
-the date is guessing — especially the confident ones.
+hard case (Week 28). Anyone who tells you the date is guessing — especially the confident ones.
 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas are very common. Each one is shown below next to the better version.
 
 ### Trick 1 — "AI means chatbots"
 
@@ -546,6 +557,8 @@ biggest systems have every reason to *announce* progress, not hide it.
 
 ## 🌍 Where You've Seen This
 
+These are everyday places where this week's ideas show up.
+
 1. **Autocorrect's red squiggle vs the suggestion bar.** The squiggle is a word list (rules). The bar
    above your keyboard produces words — a very small blank page. Same feature, two families. This is
    the single best hard call on the whole board.
@@ -564,6 +577,8 @@ biggest systems have every reason to *announce* progress, not hide it.
 ---
 
 ## 🧭 Where This Fits
+
+This section shows where this week sits on the course map.
 
 The right-hand branch of the fork was one big empty room last week. This week it became a heading
 with **nine tiles** underneath it, and you filled in the first one. From here the branch fills up
@@ -591,6 +606,8 @@ tile with the tick is yours. Every dashed tile is a "not yet", and it says which
 
 ## 🔑 Remember This
 
+Keep these eight points from the week.
+
 - **Count the possible outputs.** Short fixed list → picking a label. Blank page → **generating**.
 - **Generative AI lives inside machine learning.** It is not a separate family; it learned from
   examples just like everything else.
@@ -609,6 +626,8 @@ tile with the tick is yours. Every dashed tile is a "not yet", and it says which
 
 ## 📓 New Words
 
+These are the four words for this week.
+
 ![Week 3's four new words](../figures/fig-w03-9-vocab-icons.svg)
 
 *Figure 3.9 — Three of these describe real machines. One describes nothing that exists.*
@@ -623,6 +642,7 @@ tile with the tick is yours. Every dashed tile is a "not yet", and it says which
 > **🧑‍🏫 If someone asks "so is it actually intelligent?"** — it depends entirely on what you mean, and
 > that isn't a dodge, it's the real answer. Can it do a job that used to need a person's judgement?
 > Yes, often brilliantly. Does it understand what it's doing? As far as anyone can tell, there's nothing in there having a time.
+>
 > Does it know when it's out of its depth? **No — and that's the dangerous bit.** Pick your definition
 > and the answer follows.
 

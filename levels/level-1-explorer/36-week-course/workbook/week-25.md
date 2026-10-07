@@ -35,6 +35,8 @@
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check the words and the arithmetic of a filter.
+
 **A1. Fill in the blanks.**
 
 A filter is a small grid of __________ numbers. You lay it on top of a patch of the picture, __________ each filter number by the pixel underneath it, and __________ up the nine answers.
@@ -77,14 +79,18 @@ Choose from: *the filter (kernel)* · *the nine pixels under the window* · *the
 
 **A6. Do the arithmetic.** Here is a 3 × 3 patch taken out of the class letter T. Fill in all three lines.
 
-```
+The patch:
+
+```text
         c3    c4    c5
    r5   255   255   255
    r6     0     0   255
    r7     0     0   255
 ```
 
-```
+Fill in this working:
+
+```text
    right column (c5)  =  _____ + _____ + _____  =  __________
 
    left  column (c3)  =  _____ + _____ + _____  =  __________
@@ -98,9 +104,11 @@ Choose from: *the filter (kernel)* · *the nine pixels under the window* · *the
 
 ## ✍️ Practice Set B — Use It
 
+These questions use the filter on new pictures.
+
 **B1. A new picture.** A camera looks at a dark stripe painted on a bright wall. The wall reads 220 and the stripe reads 20. The stripe is **two pixels wide**, in columns 2 and 3.
 
-```
+```text
         c1    c2    c3    c4    c5
    r1  220    20    20   220   220
    r2  220    20    20   220   220
@@ -168,6 +176,8 @@ Sam is wrong twice over. Say why.
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is about three filters side by side.
+
 ![Three mystery filters](../figures/fig-w25-11-puzzle-mystery-filters.svg)
 *Figure W25.2 — Three filters. One finds vertical edges, one finds horizontal edges, and one finds no edges at all.*
 
@@ -192,6 +202,8 @@ Why? `________________________________________________________`
 ---
 
 ## 🤔 Think Deeper
+
+These two questions ask for a written answer in your own words.
 
 **T1.** We throw the minus sign away, and that really does destroy information — we can no longer tell which *direction* the brightness jumped. Was that a good trade? Write a paragraph. Say what we gained, what we lost, and describe one question you might want to ask a picture where you would need to *keep* the sign.
 
@@ -223,7 +235,7 @@ This is the main homework. Same picture, same six cells, **different filter**.
 
 ### The new filter
 
-```
+```text
    -1   -1   -1
     0    0    0        "bottom row  minus  top row"
    +1   +1   +1
@@ -233,7 +245,7 @@ Everything you know still applies: multiply, add, absolute value, clip. The only
 
 ### The picture (same as class)
 
-```
+```text
         c1   c2   c3   c4   c5   c6   c7   c8   c9  c10  c11  c12
   r1     0    0    0    0    0    0    0    0    0    0    0    0
   r2     0  255  255  255  255  255  255  255  255  255  255    0
@@ -309,6 +321,8 @@ Next week you will do this in a spreadsheet, one hundred cells at once. **Predic
 
 ## 🎨 Draw It
 
+This page is for drawing, not for arithmetic.
+
 **Draw your own letter or simple shape on a small grid — 8 × 8 is plenty.** Then, without doing any arithmetic at all, mark it up:
 
 - Put a **thick line** everywhere you think the vertical filter will give a **big** answer.
@@ -322,6 +336,8 @@ Next week you will do this in a spreadsheet, one hundred cells at once. **Predic
 ---
 
 ## 📊 Self-Check
+
+This table shows you what you can do and what to practise.
 
 Tick one box per row. Be honest — this is for you.
 
@@ -376,7 +392,7 @@ Both 1 and 4 give **0**, and that is the point of the question. All-ink and all-
 
 **A6.**
 
-```
+```text
    right column (c5)  =  255 + 255 + 255  =  765
    left  column (c3)  =  255 +   0 +   0  =  255
    answer             =  765 − 255  =  +510
@@ -471,42 +487,48 @@ Filter C's weights add up to 9, so its answer goes **up by 40 × 9 = 360**. C is
 **The horizontal filter, cell by cell.** `H = bottom row − top row`.
 
 **Cell (2,2)** — patch rows 1–3, columns 1–3
-```
+
+```text
    bottom row (r3) =   0 + 255 + 255 = 510
    top    row (r1) =   0 +   0 +   0 =   0
    H = +510        |H| = 510
 ```
 
 **Cell (2,11)** — patch rows 1–3, columns 10–12
-```
+
+```text
    bottom row (r3) = 255 + 255 +   0 = 510
    top    row (r1) =   0 +   0 +   0 =   0
    H = +510        |H| = 510
 ```
 
 **Cell (3,5)** — patch rows 2–4, columns 4–6
-```
+
+```text
    bottom row (r4) = 255 + 255 + 255 = 765
    top    row (r2) = 255 + 255 + 255 = 765
    H = 0           |H| = 0
 ```
 
 **Cell (8,4)** — patch rows 7–9, columns 3–5
-```
+
+```text
    bottom row (r9) =   0 +   0 + 255 = 255
    top    row (r7) =   0 +   0 + 255 = 255
    H = 0           |H| = 0
 ```
 
 **Cell (8,8)** — patch rows 7–9, columns 7–9
-```
+
+```text
    bottom row (r9) = 255 + 255 +   0 = 510
    top    row (r7) = 255 + 255 +   0 = 510
    H = 0           |H| = 0
 ```
 
 **Cell (10,2)** — patch rows 9–11, columns 1–3
-```
+
+```text
    bottom row (r11) = 0 + 0 + 0 = 0
    top    row (r9)  = 0 + 0 + 0 = 0
    H = 0            |H| = 0

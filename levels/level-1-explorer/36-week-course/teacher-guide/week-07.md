@@ -116,7 +116,9 @@ Watch the same rule get sharper:
 | v2 | IF there's a lot of rain THEN late | ❌ "A lot" is not a number |
 | v3 | IF `rain_mm >= 3` THEN late | ✅ Yes |
 
-**And here is the honest thing to say about that 3.** Nobody discovered it. In today's table the rainy days measured 4, 5, 6 and 9 mm and the non-rainy days measured 0, 1 and 2 mm. There is a *gap* between 2 and 4, so any threshold from 3 to 4 fits the data exactly as well. We wrote 3 because it is tidy. **Every threshold in every hand-written rule is a number a human made up in a gap.** Say that sentence to the student; it is one of the most durable ideas in the whole course, and Week 15 pays it off when a machine starts choosing thresholds instead of a person.
+**And here is the honest thing to say about that 3.** Nobody discovered it. In today's table the rainy days measured 4, 5, 6 and 9 mm and the non-rainy days measured 0, 1 and 2 mm. There is a *gap* between 2 and 4, so any threshold from 3 to 4 fits the data exactly as well. We wrote 3 because it is tidy.
+
+**Every threshold in every hand-written rule is a number a human made up in a gap.** Say that sentence to the student; it is one of the most durable ideas in the whole course, and Week 15 pays it off when a machine starts choosing thresholds instead of a person.
 
 ### Part 4 — A rulebook, and why the default is not optional
 
@@ -131,7 +133,7 @@ Draw it as a ladder. An input falls in at the top, tries each rung, and stops at
 
 The rulebook the student will write today:
 
-```
+```text
 CONVENTION: check top to bottom, and the first rule that matches decides.
 
 RULE 1:  IF day = "Monday"     THEN predict "late"
@@ -139,7 +141,9 @@ RULE 2:  IF rain_mm >= 3        THEN predict "late"
 DEFAULT: OTHERWISE              THEN predict "on time"
 ```
 
-**Why the default matters more than it looks.** Count how many of the fourteen days match neither rule: **seven** of them — rows 3, 4, 5, 7, 9, 12 and 13. Rule 1 handles 3 rows, rule 2 handles 4 rows, the default handles 7. Without the default, the rulebook is *silent* on half the table. A machine with no answer does not shrug politely; it stops, or it returns nothing and the next piece of software receives nothing and misbehaves in a way nobody can trace.
+**Why the default matters more than it looks.** Count how many of the fourteen days match neither rule: **seven** of them — rows 3, 4, 5, 7, 9, 12 and 13. Rule 1 handles 3 rows, rule 2 handles 4 rows, the default handles 7. Without the default, the rulebook is *silent* on half the table.
+
+A machine with no answer does not shrug politely; it stops, or it returns nothing and the next piece of software receives nothing and misbehaves in a way nobody can trace.
 
 So: **the default is often the most-used rule in a rulebook.** It is not the leftovers.
 
@@ -225,6 +229,8 @@ by Week 36 every week has landed on one.
 
 ## 🧰 Prep Checklist
 
+This section lists what to make, cut and read before class, and what to do if something fails.
+
 ### 15 minutes the night before
 
 - [ ] **Make the in-class handout.** The workbook does not contain the lesson materials, so copy them from this guide ("The table they get" and the Fresh Four rows in the Activity section):
@@ -258,6 +264,8 @@ by Week 36 every week has landed on one.
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is your script for the whole lesson. Each segment says what to do, what to say and what to ask.
+
 | Minutes | Segment | What happens |
 |---|---|---|
 | 0–8 | 🪝 **Hook** — "I have a feeling about the bus" | The teacher makes a confident claim with no evidence, and gets challenged. |
@@ -267,6 +275,7 @@ by Week 36 every week has landed on one.
 | 60–70 | 🔑 **Wrap & Assign** | Takeaways, vocabulary, homework, and the rainy-Monday cliffhanger. |
 
 **Running 60 minutes?** Cut the worked example to 8 minutes (do the counting grid, skip the scoring) and the wrap to 6. **Do not cut the Fresh Four** — running the rulebook on rows it has never seen is the part the whole term is built on.
+
 **Running 75?** Add extension question 2 or 3 from Differentiation, or have the student invent a fifteenth bus day designed to make the rulebook wrong.
 
 ---
@@ -291,7 +300,7 @@ Let them answer. Most students will say no, or "how do you know?", which is exac
 
 **Do this:** write these two lines on the board, one under the other.
 
-```
+```text
 A FEELING:  "The bus is always late on Mondays."
 A PATTERN:  ?
 ```
@@ -333,7 +342,7 @@ A PATTERN:  ?
 
 **Do this:** work the numbers for the fourteen bus days on the board. Do not skip the division; do it out loud.
 
-```
+```text
 14 days:  6 late, 8 on time
 
 Say "on time" every day     ->  right 8 of 14   ->  8 ÷ 14 = 0.57  = 57%
@@ -359,7 +368,7 @@ Flip a coin                 ->  right about 7   ->  7 ÷ 14 = 0.50  = 50%
 
 **Do this:** write this on the board in two colours. Use colour 1 for the condition, colour 2 for the action, and box the threshold.
 
-```
+```text
 IF   rain_mm >= 3      THEN   predict "late"
      └─── condition ───┘      └─── action ───┘
               ▲
@@ -505,7 +514,7 @@ Full instructions in the next section. In brief: fourteen rows of bus data, a co
 
 **Do this:** point at the board where the cliffhanger is written, and read it out loud.
 
-```
+```text
 WHAT HAPPENS ON A RAINY MONDAY?
 Rule 1 says late.  Rule 2 says late.  They agree... this time.
 What if they didn't?
@@ -530,6 +539,8 @@ Then assign the homework as written below.
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the whole bus activity in five steps, with the tables you copy onto the handout.
 
 ### The Bus Is Always Late
 
@@ -599,7 +610,7 @@ Monday 100% against Not-Monday 27% is a 73-point gap. Rain-3-or-more 75% against
 
 They write two rules and a default, in this frame:
 
-```
+```text
 CONVENTION: first match wins, checked top to bottom.
 
 RULE 1:  IF ________________________  THEN ______________
@@ -615,7 +626,7 @@ Requirements, said out loud before they start:
 
 The expected result:
 
-```
+```text
 RULE 1:  IF day = "Monday"    THEN predict "late"
 RULE 2:  IF rain_mm >= 3      THEN predict "late"
 DEFAULT: OTHERWISE            THEN predict "on time"
@@ -685,6 +696,8 @@ Then the two closing questions, in this order:
 
 ## ❓ Questions Students Ask This Week
 
+These are questions students tend to ask this week, with answers you can say aloud.
+
 **"Isn't three Mondays too few to be sure?"**
 Yes. Completely correct, and it's the sharpest question anyone asks this week — say so. Three rows is nowhere near enough to be *sure* of anything. But notice what we're claiming: not that the bus will definitely be late next Monday, only that "late" is the better bet than "on time". Three out of three does support that, weakly. The professional move is to keep collecting and check whether the pattern survives — which is exactly what your homework asks you to start doing with your own table.
 
@@ -701,10 +714,14 @@ Yes, and that's real. `IF day = "Monday" AND rain_mm >= 3 THEN late` is a perfec
 Yours, by a mile — 93% against 57%. And I want you to notice how you know that: you *counted both*. Anyone can say "my system is good". Only counting the lazy alternative tells you whether "good" means anything.
 
 **"Does a computer find patterns the same way I just did?"**
-Roughly, yes — and this is one of the most surprising things in the whole course. One kind of machine learning program, a decision tree, looking at this table would do essentially what you did: split the rows by a column, count how the answers land on each side, work out the rates, and keep the split that separates the answers best. It just does it for thousands of columns and thousands of possible thresholds in under a second, and it never gets bored on row 400. Your hand-drawn counting grid is not a toy version of how that kind of program works. It's the same idea, done slowly. (Other kinds of machine learning find patterns differently; don't go there today.)
+Roughly, yes — and this is one of the most surprising things in the whole course. One kind of machine learning program, a decision tree, looking at this table would do essentially what you did: split the rows by a column, count how the answers land on each side, work out the rates, and keep the split that separates the answers best.
+
+It just does it for thousands of columns and thousands of possible thresholds in under a second, and it never gets bored on row 400. Your hand-drawn counting grid is not a toy version of how that kind of program works. It's the same idea, done slowly. (Other kinds of machine learning find patterns differently; don't go there today.)
 
 **"Will the Monday pattern still be true next month?"**
-**Nobody knows for sure, and here's why that isn't a dodge.** A pattern is a statement about the past. Using it on the future is a bet, and the world is under no obligation to keep behaving the way it did while you were watching. If the roadworks finish, the pattern vanishes overnight and your rulebook will keep confidently saying "late" every Monday, wrong every time, with total confidence, until somebody notices. There is no cleverness that fixes this — the only defence is to keep collecting data and keep checking. Every real AI system in the world has this problem, and companies pay people full-time salaries to watch for it.
+**Nobody knows for sure, and here's why that isn't a dodge.** A pattern is a statement about the past. Using it on the future is a bet, and the world is under no obligation to keep behaving the way it did while you were watching.
+
+If the roadworks finish, the pattern vanishes overnight and your rulebook will keep confidently saying "late" every Monday, wrong every time, with total confidence, until somebody notices. There is no cleverness that fixes this — the only defence is to keep collecting data and keep checking. Every real AI system in the world has this problem, and companies pay people full-time salaries to watch for it.
 
 **"What if two rules disagree instead of agreeing?"**
 Park that one. Genuinely — I want you to write it on your page and bring it back next week, because it's the first thing we do. The short version: whichever rule is higher up wins, and *somebody chose the order*. That somebody was me, and I didn't think about it very hard.
@@ -712,6 +729,8 @@ Park that one. Genuinely — I want you to write it on your page and bring it ba
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+Use this table when the lesson stalls. Find the row that matches what you see.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -727,6 +746,8 @@ Park that one. Genuinely — I want you to write it on your page and bring it ba
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to change the lesson for a student who is struggling, flying or not engaging.
 
 ### If they are struggling
 
@@ -760,13 +781,14 @@ Park that one. Genuinely — I want you to write it on your page and bring it ba
 
 ## ✅ Assessing Understanding
 
-Do these in the last five minutes. Exact wording below.
+This section has three quick checks and a scale for judging how well the week landed. Do the checks in the last five minutes. Exact wording is below.
 
 ### Check 1 — Counting, not eyeballing (60 seconds)
 
 > "I say Tuesdays are terrible for the bus. What exactly do you need to count before you agree with me?"
 
 **A good answer looks like:** "How many Tuesdays there were, and how many of those were late — and then compare it with the non-Tuesdays."
+
 **A weak answer looks like:** "How many Tuesdays were late." Push once: *"Three Tuesdays late — is that a lot?"* You want them to reach for the denominator on their own.
 
 ### Check 2 — The three parts of a rule (60 seconds)
@@ -774,6 +796,7 @@ Do these in the last five minutes. Exact wording below.
 > "Here's a rule: IF `screen_min >= 120` THEN predict 'tired'. Point at the condition, the threshold and the action."
 
 **A good answer:** condition = `screen_min >= 120`; threshold = `120`; action = predict "tired".
+
 **A weak answer:** naming the parts in the wrong places, or calling the whole line the condition. Reteach by writing it out and covering one part at a time.
 
 **Bonus follow-up if they nail it:** *"Where did 120 come from?"* The best answer is "somebody made it up".
@@ -799,7 +822,10 @@ Do these in the last five minutes. Exact wording below.
 
 ## 📤 Homework to Assign
 
+This section says what homework to set, how to say it to the student, and what to check when it comes back.
+
 **The whole of Workbook Week 7**, in this order: Warm-Up, Practice Set A, Practice Set B, Puzzle of the Week, Think Deeper, Build It (its pages are headed 7.4 and 7.5), Draw It, Self-Check.
+
 **Time: 45–60 minutes across the week.** A sensible split: Warm-Up and Practice Set A (about 12 min), Practice Set B (about 15 min), Puzzle and Think Deeper (about 10 min), Build It (about 20 min), with Draw It and Self-Check as a few minutes of finishing off. Nothing in the workbook is done in class; the in-class bus table, rulebook and Fresh Four are on your own handout, not the workbook.
 
 **Say this:**
@@ -822,6 +848,8 @@ Do these in the last five minutes. Exact wording below.
 
 ## 🔑 Answer Key
 
+**Teacher only.** This section has the answers to the lesson questions, the activity and every workbook section.
+
 ### Lesson questions
 
 **Hook — "Suppose I tell you three Mondays were late. Is that enough?"**
@@ -832,7 +860,7 @@ No. "Sometimes" doesn't clear the bar, and you cannot act on it — there's no b
 
 **Concept A — the guessing numbers for the fourteen bus days.**
 
-```
+```text
 6 late, 8 on time, 14 days total
 
 Always "on time":  8 ÷ 14 = 0.571… = 57%   <- the bar to beat
@@ -886,13 +914,14 @@ The rulebook has no answer at all for that input. Not "no" — *nothing*. Seven 
 | **rain under 3 mm** | 10 | 3 (rows 1, 6, 11) | 3 ÷ 10 = **30%** |
 
 **Strongest pattern:** Monday goes with late, 3 out of 3, a 73-point gap over Not Monday.
+
 **Second pattern:** rain of 3 mm or more goes with late, 3 of 4, a 45-point gap.
 
 **Watch the trap:** Monday and Not-Monday have the *same count* of late days — three each. The rates are 100% and 27%. Counts mislead.
 
 ### Activity — the rulebook, scored on all fourteen rows
 
-```
+```text
 RULE 1:  IF day = "Monday"   THEN "late"
 RULE 2:  IF rain_mm >= 3     THEN "late"
 DEFAULT: OTHERWISE           THEN "on time"
@@ -1190,6 +1219,8 @@ Not marked. Read the "one thing I'd like explained again" line first, and any �
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week is about and what to prepare for it.
 
 Next week we break things on purpose. The student writes a three-rule spam rulebook from ten labelled messages, and then the roles flip: **you** write five new messages engineered to defeat it — a real message full of capitals, a scam with perfect grammar, and one message sitting a single character either side of their threshold. Every result goes into a two-by-two grid, and the two ways of being wrong get counted separately, because a friend's message in the junk bin and a bank scam in the inbox are not the same kind of mistake and they do not hurt the same person. The lesson ends with the question that matters: which of those two mistakes would you rather your email app made, and who pays for your choice?
 

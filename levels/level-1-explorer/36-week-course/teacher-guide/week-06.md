@@ -85,7 +85,9 @@ The reason is not in the numbers. It is in the sentence *"visitors to a sleep-pr
 ![The provenance chain, with one link broken](../figures/fig-w06-3-provenance-chain.svg)
 *Figure 6.2 — Break any link and every box to the right of it inherits the mystery.*
 
-The chain in Figure 6.2 is worth ten minutes of your own thinking before class. Data starts as a **person** who did something. Someone **wrote it down**. Someone **typed it up**. A **model learned** from it. Then a **decision** got made about somebody's real life — a loan, a school place, a medical scan. If the first link is unknown, the model is not broken; it works perfectly. You simply cannot say who its answers are about. That is a different and much worse problem, because it looks like nothing is wrong.
+The chain in Figure 6.2 is worth ten minutes of your own thinking before class. Data starts as a **person** who did something. Someone **wrote it down**. Someone **typed it up**. A **model learned** from it. Then a **decision** got made about somebody's real life — a loan, a school place, a medical scan. If the first link is unknown, the model is not broken; it works perfectly. You simply cannot say who its answers are about. That is a different and much worse problem.
+
+It is worse because it looks like nothing is wrong.
 
 ### Part 2 — Sample and population: your thirty rows are not the world
 
@@ -124,7 +126,9 @@ The true school-wide answer might be cricket 40%, football 35%, badminton 25%. Y
 
 **The one-line fix you can always apply.** You usually cannot make your sample perfect — a real 11-year-old cannot survey 800 students. But you can *always* write down who is in it and who is missing. "This is 30 students from cricket practice; it under-represents students who do not play sport" turns a lie into an **honest limited finding**. Those two words are the goal of the whole lesson.
 
-**Why this matters for AI specifically**, and this is the thread that runs to June: a model learns whatever its sample contains, and then gets used on the whole population. A face-unlock model trained mostly on adult faces is worse at children's faces — not because anyone was cruel, but because children were a thin layer of the sample. In Week 31 the student will measure exactly this gap on their own model, with their own numbers. Today they build the vocabulary for it.
+**Why this matters for AI specifically**, and this is the thread that runs to June: a model learns whatever its sample contains, and then gets used on the whole population. A face-unlock model trained mostly on adult faces is worse at children's faces — not because anyone was cruel, but because children were a thin layer of the sample.
+
+In Week 31 the student will measure exactly this gap on their own model, with their own numbers. Today they build the vocabulary for it.
 
 ### Part 3 — The data card
 
@@ -281,15 +285,18 @@ Orientation, not assessment: no marks, no quiz.
 | 60–70 | 🔑 **Wrap & Assign** | Three "does not show that" sentences, takeaways, homework. |
 
 **Running 60 minutes?** Cut the Worked Example to 8 minutes by entering only 10 rows, and the Wrap to 6. Do **not** cut the card or the reading-aloud.
+
 **Running 75?** Take the extension questions from Differentiation, or interrogate a second web page of the student's own choosing.
 
 ---
 
 ### 🪝 Hook — Two true numbers, two hours apart (0–8)
 
+This segment opens the lesson with two honest datasets that disagree. Use it to show that clean data can still hide where it came from.
+
 **Do this:** reveal the board. It says only:
 
-```
+```text
 Dataset A:  average sleep = 5.9 hours
 Dataset B:  average sleep = 7.8 hours
 ```
@@ -311,7 +318,7 @@ Dataset B:  average sleep = 7.8 hours
 
 **Do this:** now reveal the provenance. Write under each number:
 
-```
+```text
 Dataset A:  average sleep = 5.9 hours   <-  1,000 visitors to a SLEEP-PROBLEMS CLINIC
 Dataset B:  average sleep = 7.8 hours   <-  every student in 4 RANDOMLY CHOSEN SCHOOLS
 ```
@@ -330,6 +337,8 @@ Dataset B:  average sleep = 7.8 hours   <-  every student in 4 RANDOMLY CHOSEN S
 
 ### 🧠 Concept — Soup, samples, and the five questions (8–26)
 
+This segment teaches the two key words, population and sample, with the soup picture and the cricket survey. It ends with the five questions on the board.
+
 **Say this:**
 
 > "Start with soup. You are cooking a big pot of soup and you want to know if the whole pot needs salt. You do not drink the pot. You stir it, take one spoonful, taste it, and decide.
@@ -340,7 +349,7 @@ Dataset B:  average sleep = 7.8 hours   <-  every student in 4 RANDOMLY CHOSEN S
 
 **Do this:** draw the two-word diagram on the board — this is the core board work of the lesson and everything else hangs off it.
 
-```
+```text
   POPULATION  =  everything I want my answer to be true about
                  (the whole pot)
 
@@ -358,7 +367,7 @@ Dataset B:  average sleep = 7.8 hours   <-  every student in 4 RANDOMLY CHOSEN S
 
 **Do this:** write the cricket survey on the board, **without** the provenance line at first.
 
-```
+```text
 Question:  favourite sport at my school?     School = 800 students
 
 Asked 30 students:      cricket   22   (73%)
@@ -373,7 +382,7 @@ Asked 30 students:      cricket   22   (73%)
 
 **Do this:** now add one line.
 
-```
+```text
 I asked 30 people ...  AT CRICKET PRACTICE.
 ```
 
@@ -396,7 +405,7 @@ I asked 30 people ...  AT CRICKET PRACTICE.
 
 **Do this:** write the five questions on the board, numbered, leaving room to the right of each for answers. This list stays up for the rest of the lesson.
 
-```
+```text
 1. Who collected it?
 2. From whom?
 3. When?
@@ -466,7 +475,7 @@ Do the second average — for the meals table, `=AVERAGE(E2:E31)` → **2.9**.
 
 **Do this:** now the important two minutes. Turn away from the screen. On paper, write two sentence-starters and fill them in together, out loud.
 
-```
+```text
 This average IS evidence that ....................
 This average is NOT evidence that ................
 ```
@@ -498,6 +507,8 @@ Do not skip the reading-aloud. Two minutes, standing, out loud, to you. It conve
 ---
 
 ### 🔑 Wrap & Assign (60–70)
+
+This segment gets the student to say what their data does not show, then sets the homework.
 
 **Do this:** show or draw the three-sentence warning panel.
 
@@ -634,11 +645,15 @@ Three extensions, in increasing order of difficulty:
 
 ## ❓ Questions Students Ask This Week
 
+Use this section when the student asks one of these questions. Each answer is written so you can say it nearly as it stands.
+
 **"If my data is only about me, is it useless?"**
 No — it is the opposite. It is the only dataset in the world where you know the answers to all five provenance questions. That makes it more trustworthy than almost anything you will find online. It is just *narrow*: it is evidence about you, in September, doing your usual routine. Narrow and honest beats broad and unchecked. Every professional dataset started as somebody's narrow one.
 
 **"How many rows do I need before it counts?"**
-**Nobody knows for sure, and here is why.** There is no fixed number, because the answer depends on how varied the thing you are measuring is. If every meal you eat takes exactly 15 minutes, three rows tell the whole story. If your meals swing from 4 minutes to 40, even a hundred rows will wobble. Statisticians have real maths for estimating how much luck is left in a number, and even with that maths they argue about the answer, because it depends on how wrong you can afford to be. The honest working rule for this year: **more rows shrink the luck, but no number of rows fixes a badly chosen sample.** Thirty is enough to see a pattern and not enough to prove one — which is exactly why your card says so.
+**Nobody knows for sure, and here is why.** There is no fixed number, because the answer depends on how varied the thing you are measuring is. If every meal you eat takes exactly 15 minutes, three rows tell the whole story. If your meals swing from 4 minutes to 40, even a hundred rows will wobble. Statisticians have real maths for estimating how much luck is left in a number, and even with that maths they argue about the answer, because it depends on how wrong you can afford to be.
+
+The honest working rule for this year: **more rows shrink the luck, but no number of rows fixes a badly chosen sample.** Thirty is enough to see a pattern and not enough to prove one — which is exactly why your card says so.
 
 **"Why can't the computer just check whether data is trustworthy?"**
 Because trustworthiness is not in the data. Go back to the two sleep tables: both clean, both correct, two hours apart. The difference lived in one sentence *about* the table — a sentence written by a person who chose to write it. A computer can check for blanks, duplicates, impossible values and inconsistent spellings, all four of last week's checks, in a fraction of a second. It cannot check who walked into the clinic. Only a human who was there can tell you that, and only if they bothered to write it down.
@@ -647,7 +662,9 @@ Because trustworthiness is not in the data. Go back to the two sleep tables: bot
 Mostly enormous amounts of text collected from the internet — web pages, books, forums, code — plus a lot of human writing and rating done afterwards to shape the answers. But here is the honest part: for most of the big systems, the full list is **not published**. So if you ask the five provenance questions about ChatGPT's training data, several honest answers are "unknown", and that is not you failing to research it — it is genuinely not public. Some researchers think that is a serious problem for exactly the reason we learned today: you cannot say who a model's answers are about if you cannot say who its data came from. We will build our own tiny language machine in Week 28, and you will know its provenance completely, because you will be it.
 
 **"Is it stealing to use somebody's data?"**
-Sometimes, and the honest answer is that the world has not settled this. Some things are clearly wrong: taking a friend's data after they said no, or publishing someone's name and address. Some are clearly fine: your own numbers. In between there is a huge argued-about middle — photos posted publicly years ago and later used to train models, artwork used without asking, medical records shared for research. Courts and governments are working through it right now, and different countries have landed in different places. Our rules for this course are strict and simple: **ask first, use initials, never addresses or faces.** Week 32 goes properly into this.
+Sometimes, and the honest answer is that the world has not settled this. Some things are clearly wrong: taking a friend's data after they said no, or publishing someone's name and address. Some are clearly fine: your own numbers. In between there is a huge argued-about middle — photos posted publicly years ago and later used to train models, artwork used without asking, medical records shared for research. Courts and governments are working through it right now, and different countries have landed in different places.
+
+Our rules for this course are strict and simple: **ask first, use initials, never addresses or faces.** Week 32 goes properly into this.
 
 **"If I ask everyone in my class, is that the whole population?"**
 It depends entirely on the question. If your question is "what is my class's favourite sport?", then yes — you measured every single member of the population, which is a wonderful position to be in. If your question is "what is my school's favourite sport?", your class is a sample of 30 out of 800, and probably an unstirred one, because friends tend to like the same things. **The same thirty rows are a whole population for one question and a biased sample for another.** The rows did not change. The question did.
@@ -661,6 +678,8 @@ No. It means the source documented itself badly, and you found that out — whic
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+This table lists the eight most likely problems, why each happens, and what to do right then.
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -676,6 +695,8 @@ No. It means the source documented itself badly, and you found that out — whic
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson if the student is struggling, flying, or not engaging.
 
 ### If they are struggling
 
@@ -754,6 +775,7 @@ Write the level in your own notes. Week 9's Term 1 Checkpoint asks for it, and W
 ## 📤 Homework to Assign
 
 **Workbook Week 6, all sections — Warm-Up, Practice Set A, Practice Set B, Puzzle of the Week, Think Deeper, Build It (finish "Your Life In 30 Rows" plus the data card), Draw It, Self-Check.**
+
 **Time: 45–60 minutes across the week.**
 
 The workbook is meant to be done in its printed order, about 45–60 minutes across the week; **Build It takes about 20 of those**. In class the student only drafts the "My data card" table (Part 2b of the activity); everything else in the workbook is home work, and the card is finished there. Tell the student that the Warm-Up and Practice Sets are quick, and that **Build It is the part you will read first.**
@@ -772,7 +794,7 @@ The workbook is meant to be done in its printed order, about 45–60 minutes acr
 >
 > **Five. Get one of those three sentences checked by an adult.** Read it to them and ask one question: 'Does this make sense to you?' If they look confused, your sentence is not finished. Write down what they said, even if what they said was 'I don't get it.' Especially then."
 
-The five spoken instructions below are the Build It page ("My two averages", "My data card", "My three sentences", "The adult check"). Say them after the sections above are on the table.
+The five spoken instructions above are the Build It page ("My two averages", "My data card", "My three sentences", "The adult check"). Say them after the sections above are on the table.
 
 **What to check when it comes in:** the row count on the card matches the actual number of rows; both averages appear on paper with the count they were computed from; line 7 names at least two forbidden claims; and each of the three sentences names something specific and missing rather than just expressing doubt. Then mark the other sections from the Answer Key below, which follows the workbook's own order; the answers are also printed at the end of the workbook, so a student can self-check Warm-Up through Think Deeper.
 
@@ -780,7 +802,7 @@ The five spoken instructions below are the Build It page ("My two averages", "My
 
 ## 🔑 Answer Key
 
-Complete answers to everything asked in this lesson and in Workbook Week 6.
+Use this section to mark the lesson questions and every page of the workbook. Complete answers to everything asked in this lesson and in Workbook Week 6.
 
 ### Lesson questions
 
@@ -942,7 +964,11 @@ Eight checklist steps, then four fill-in parts: **My two averages**, **My data c
 | **IS** evidence that | "My own meals, over these ten days in September, took about 16 minutes on average." |
 | **is NOT** evidence that | "Meals in general take 16 minutes. My sample is one person, ten days, one routine, no weekends." |
 
-**My data card.** Marked with the seven criteria in "Activity — the data card" above, against the seven numbered rows of the *My data card* table. Two notes. **A card with honest unknowns scores full marks:** "Who collected it: unknown, my little brother wrote three of the rows and cannot remember how he measured them" is an excellent line 3, specific and honest, and it tells a reader which rows to distrust. **A card that contradicts the table loses marks:** if line 2 says 30 rows and the table has 22, that is the fault the card exists to prevent. Check this first; it takes five seconds and is the most common failure.
+**My data card.** Marked with the seven criteria in "Activity — the data card" above, against the seven numbered rows of the *My data card* table. Two notes.
+
+**A card with honest unknowns scores full marks:** "Who collected it: unknown, my little brother wrote three of the rows and cannot remember how he measured them" is an excellent line 3, specific and honest, and it tells a reader which rows to distrust.
+
+**A card that contradicts the table loses marks:** if line 2 says 30 rows and the table has 22, that is the fault the card exists to prevent. Check this first; it takes five seconds and is the most common failure.
 
 **My three sentences.** Every sentence must (a) start "This does not show that…", (b) name a specific claim, and (c) give a *because* that names something **absent from the table**. Three full-credit answers for the meals dataset:
 
@@ -958,7 +984,9 @@ Sentences that do not earn credit are in the B4 repair tables above; use the sam
 
 ### Workbook Week 6 — Draw It
 
-Marked on four things, not artistic skill: the population drawn **much bigger** than the sample and labelled with a real number or description; the sample patch **shaded** and labelled with the actual rows and dates; the **missing** part labelled, ideally with a count; and one "This does not show that…" sentence naming something **specific and absent**. **The single most common mistake** is drawing the sample as a neat patch in the **middle**, evenly spread, which quietly claims the spoonful was stirred. For a one-person, ten-school-day table it was not, so **draw it in a corner**; where the patch goes is an honest claim about how it was sampled. The workbook's own example (about 1,100 meals a year; a corner patch of 30 meals, 3–16 September; "about 1,070 meals never measured") is a full-credit answer.
+Marked on four things, not artistic skill: the population drawn **much bigger** than the sample and labelled with a real number or description; the sample patch **shaded** and labelled with the actual rows and dates; the **missing** part labelled, ideally with a count; and one "This does not show that…" sentence naming something **specific and absent**.
+
+**The single most common mistake** is drawing the sample as a neat patch in the **middle**, evenly spread, which quietly claims the spoonful was stirred. For a one-person, ten-school-day table it was not, so **draw it in a corner**; where the patch goes is an honest claim about how it was sampled. The workbook's own example (about 1,100 meals a year; a corner patch of 30 meals, 3–16 September; "about 1,070 meals never measured") is a full-credit answer.
 
 ### Workbook Week 6 — Self-Check
 
@@ -979,6 +1007,8 @@ Write their rebuttals down verbatim. They are line 7 of the card and the "My thr
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week needs from you, so you can prepare early.
 
 Next week the table finally pays off. Having built it, cleaned it and written its card, the student goes looking for **patterns** — the things in their own data that repeat often enough to bet on. Week 7 asks what a pattern actually is, how many repeats it takes before you would risk something on it, and why "it happened twice" is a story while "it happened twenty-six times out of thirty" is a rule. Their thirty rows are the raw material for the whole lesson, which is why chasing the row count this week matters more than it looks.
 

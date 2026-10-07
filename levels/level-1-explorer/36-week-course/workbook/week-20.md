@@ -38,6 +38,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+This set is for checking that you know the words and the method.
+
 **A1. Fill in the blanks.**
 
 Accuracy is the number of ____________________ guesses divided by the ____________________ number of guesses.
@@ -50,7 +52,7 @@ When you subtract one percentage from another, the unit of the answer is _______
 
 **A2. Multiple choice.** A model scores **95%**. Circle the one thing you must know before deciding whether that is impressive.
 
-```
+```text
    (a)  who built it
    (b)  the baseline, and how many test examples there were
    (c)  how long it took to train
@@ -87,7 +89,7 @@ ________________________________________________________________
 
 **A6. Do the division.** 27 correct out of 36. Show every line.
 
-```
+```text
    FRACTION:     ______ / ______
 
    DECIMAL:      36 x 0.7 = ____________     →  at least 0.7?  ______
@@ -105,9 +107,11 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+This set is for using the method on new problems.
+
 **B1.** A **dog / cat / rabbit** classifier is tested on 30 held-out photos, 10 of each. It gets **21** right.
 
-```
+```text
    FRACTION:   ______ / ______
 
    DECIMAL:    30 x 0.7 = ______;   21 - ______ = ______;   ______ ÷ 30 = ______
@@ -130,7 +134,7 @@ Work out the accuracy: ______ ÷ ______ = ______ = ______%
 
 Work out the two per-class accuracies:
 
-```
+```text
    pupils who did NOT need help:   ______ / ______ = ______%
 
    pupils who DID need help:       ______ / ______ = ______%
@@ -174,7 +178,7 @@ ________________________________________________________________
 
 **B5. Design a lopsided test set.** Build a **15-photo** test set on which a model that only ever says `spoon` would score **80%**.
 
-```
+```text
    spoon photos: ______     toothbrush photos: ______     comb photos: ______
 
    check: ______ + ______ + ______ = 15   ✓
@@ -191,6 +195,8 @@ ________________________________________________________________
 ---
 
 ## 🧩 Puzzle of the Week
+
+This puzzle is for practising how to judge an accuracy claim.
 
 ![The three adverts puzzle](../figures/fig-w20-11-puzzle-three-adverts.svg)
 *Figure W20.2 — Three adverts, three accuracy claims. Only one of them tells you enough to judge it.*
@@ -216,6 +222,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions are for thinking in your own words.
 
 **T1.** Write the **same result** twice: once as an advert that is technically true and makes the model sound as good as possible, and once as a lab-notebook entry that a hostile reader could not pick apart. Use the class result: 11/15, 73.3%, baseline 33.3%, per class 100% / 80% / 40%, training 100%.
 
@@ -251,13 +259,15 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+These three pages are for doing the sums yourself, with the division shown.
+
 ### Page 20.1 — Five accuracy problems
 
 For each one: **fraction, then decimal to four places, then percentage to one place, with the division shown.** Then how many percentage points it beats a **33.3% baseline** by.
 
 **(a) 9 correct out of 12**
 
-```
+```text
    fraction:    ______ / ______
 
    decimal:     ________________________________________________
@@ -269,7 +279,7 @@ For each one: **fraction, then decimal to four places, then percentage to one pl
 
 **(b) 17 correct out of 20**
 
-```
+```text
    fraction:    ______ / ______
 
    decimal:     ________________________________________________
@@ -281,7 +291,7 @@ For each one: **fraction, then decimal to four places, then percentage to one pl
 
 **(c) 23 correct out of 30**
 
-```
+```text
    fraction:    ______ / ______
 
    decimal:     ________________________________________________
@@ -293,7 +303,7 @@ For each one: **fraction, then decimal to four places, then percentage to one pl
 
 **(d) 4 correct out of 7**
 
-```
+```text
    fraction:    ______ / ______
 
    decimal:     ________________________________________________
@@ -305,7 +315,7 @@ For each one: **fraction, then decimal to four places, then percentage to one pl
 
 **(e) 45 correct out of 60**
 
-```
+```text
    fraction:    ______ / ______
 
    decimal:     ________________________________________________
@@ -327,7 +337,7 @@ A **bike / scooter / skateboard** classifier was tested on **24 held-out photos*
 
 **(a) Overall accuracy, three ways.**
 
-```
+```text
    fraction:    ______ / ______
 
    decimal:     24 x 0.6 = ______;   16 - ______ = ______;   ______ ÷ 24 = ______
@@ -348,7 +358,7 @@ A **bike / scooter / skateboard** classifier was tested on **24 held-out photos*
 
 **Both checks — write them out:**
 
-```
+```text
    ______ + ______ + ______ = ______     ✓  (matches the correct count)
 
    ______ + ______ + ______ = ______     ✓  (matches the number of photos)
@@ -362,7 +372,7 @@ ________________________________________________________________
 
 **(d) How does that class compare to blind guessing?**
 
-```
+```text
    baseline (3 roughly equal classes) = ______%
 
    that class = ______%
@@ -411,6 +421,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing the accuracy bars.
+
 Draw the number that lies. One honest-looking **overall** bar on top, and underneath it the **three per-class bars** that were hiding under it. Circle the worst one in red. Draw the baseline as a dotted line straight through all four.
 
 ![Draw It frame for Week 20](../figures/fig-w20-12-draw-frame.svg)
@@ -423,6 +435,8 @@ Draw the number that lies. One honest-looking **overall** bar on top, and undern
 ---
 
 ## 📊 Self-Check
+
+Tick one box in each row to show how sure you feel.
 
 | I can... | 😀 easily | 🙂 with a bit of thought | 😕 not yet |
 |---|:--:|:--:|:--:|
@@ -445,7 +459,7 @@ Draw the number that lies. One honest-looking **overall** bar on top, and undern
 **W1.** A **test set** is examples you hide **before** training, and look at once, right at the end, to find out how good the model really is. If your answer doesn't have "before" in it, it isn't finished — a set of photos put aside *after* training is not a test set, it's just a subfolder.
 
 **W2.**
-```
+```text
    test  = 0.20 x 50 = 10
    train = 50 - 10   = 40
    check: 40 + 10 = 50     ✓
@@ -473,7 +487,7 @@ It got **11 out of 15** right. 73.3% is what that *would* be if it kept the same
 
 **A5.** From top to bottom, the bars are:
 
-```
+```text
    73.3%  →  OVERALL (all three classes together)
    100%   →  spoon
    80%    →  toothbrush
@@ -485,7 +499,7 @@ The dashed line at 33.3% is the **baseline** — what you'd score by blind guess
 **The thing to notice, and it is the whole week:** **no class scored 73.3%.** The overall bar describes nobody in this model. And the comb bar, at 40%, only just clears the baseline — which you can only see *because* the baseline line is drawn.
 
 **A6.**
-```
+```text
    FRACTION:     27 / 36
 
    DECIMAL:      36 x 0.7 = 25.2          →  at least 0.7?  yes
@@ -500,7 +514,7 @@ The dashed line at 33.3% is the **baseline** — what you'd score by blind guess
 ### Practice Set B
 
 **B1.**
-```
+```text
    FRACTION:   21 / 30
 
    DECIMAL:    30 x 0.7 = 21;   21 - 21 = 0;   0 ÷ 30 = 0
@@ -515,7 +529,7 @@ The dashed line at 33.3% is the **baseline** — what you'd score by blind guess
 This one comes out exactly on 0.7, which is a small gift — `30 × 0.7 = 21` with nothing left over. **Say "percentage points", both words.** "36.7 percent better" would mean something different and smaller.
 
 **B2.**
-```
+```text
    accuracy = 190 ÷ 200 = 0.95 = 95%
 
    pupils who did NOT need help:  190 / 190 = 100%
@@ -533,7 +547,7 @@ And the consequence is the real answer: **the school would believe it had a work
 This is the spam filter, in a school, with real children in it.
 
 **B3.**
-```
+```text
    Ali:  11/15 = 73.3%      Bea:  12/15 = 80.0%
 ```
 The difference is **one photo**, which is **6.7 percentage points.**
@@ -551,7 +565,7 @@ The difference is **one photo**, which is **6.7 percentage points.**
 | "Guessing 25%, mine 60%, so 35 percent better." | "Mine is **35 percentage points** better than guessing." |
 
 **B5.**
-```
+```text
    spoon 12,  toothbrush 2,  comb 1
 
    check: 12 + 2 + 1 = 15     ✓
@@ -575,7 +589,7 @@ Any split with 12 spoons works; 12/2/1 and 12/3/0 both give 80%. *(12/3/0 is wor
 | **C** | **"Out of how many?"** — and the answer is *four*. One photo is worth 25 percentage points. | **3** |
 
 **App A's baseline:**
-```
+```text
    "always say pigeon" = 98 ÷ 100 = 98%
 
    A scored 99%, so it beats its own baseline by  99 - 98 = 1 percentage point.
@@ -617,7 +631,7 @@ Any split with 12 spoons works; 12/2/1 and 12/3/0 both give 80%. *(12/3/0 is wor
 ### Build It — Page 20.1
 
 **(a) 9 out of 12**
-```
+```text
    fraction:   9/12   (= 3/4)
    decimal:    12 x 0.75 = 9 exactly  →  0.7500
    percentage: 75.0%
@@ -625,7 +639,7 @@ Any split with 12 spoons works; 12/2/1 and 12/3/0 both give 80%. *(12/3/0 is wor
 ```
 
 **(b) 17 out of 20**
-```
+```text
    fraction:   17/20
    decimal:    20 x 0.8 = 16;   17 - 16 = 1;   1 ÷ 20 = 0.05
                0.8 + 0.05 = 0.8500
@@ -634,7 +648,7 @@ Any split with 12 spoons works; 12/2/1 and 12/3/0 both give 80%. *(12/3/0 is wor
 ```
 
 **(c) 23 out of 30**
-```
+```text
    fraction:   23/30
    decimal:    30 x 0.7 = 21;   23 - 21 = 2;   2 ÷ 30 = 0.0667
                0.7 + 0.0667 = 0.7667
@@ -643,7 +657,7 @@ Any split with 12 spoons works; 12/2/1 and 12/3/0 both give 80%. *(12/3/0 is wor
 ```
 
 **(d) 4 out of 7**
-```
+```text
    fraction:   4/7
    decimal:    7 x 0.5 = 3.5;   4 - 3.5 = 0.5;   0.5 ÷ 7 = 0.0714
                0.5 + 0.0714 = 0.5714
@@ -653,7 +667,7 @@ Any split with 12 spoons works; 12/2/1 and 12/3/0 both give 80%. *(12/3/0 is wor
 This is the one that cannot be spotted by simplifying, which is exactly why it is here. If you got this one with the working shown, the method is yours.
 
 **(e) 45 out of 60**
-```
+```text
    fraction:   45/60   (= 3/4)
    decimal:    0.7500
    percentage: 75.0%
@@ -664,7 +678,7 @@ This is the one that cannot be spotted by simplifying, which is exactly why it i
 
 They are the **same percentage from wildly different amounts of evidence.** 12 photos versus 60.
 
-```
+```text
    on 12 photos:  one photo is worth  1 ÷ 12 = 8.3 percentage points
    on 60 photos:  one photo is worth  1 ÷ 60 = 1.7 percentage points
 ```
@@ -674,7 +688,7 @@ Same headline. One of them is far more trustworthy than the other. **And once yo
 ### Build It — Page 20.2
 
 **(a) Overall accuracy.**
-```
+```text
    fraction:   16/24   (= 2/3)
    decimal:    24 x 0.6 = 14.4;   16 - 14.4 = 1.6;   1.6 ÷ 24 = 0.0667
                0.6 + 0.0667 = 0.6667
@@ -699,7 +713,7 @@ Same headline. One of them is far more trustworthy than the other. **And once yo
 The overall 66.7% describes **no class in this model**: one is perfect, one is decent, and one is a real problem.
 
 **(d) Compared to blind guessing.**
-```
+```text
    baseline (3 roughly equal classes) = 1 in 3 = 33.3%
    skateboard = 25.0%
    25.0 - 33.3 = -8.3

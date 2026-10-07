@@ -43,7 +43,7 @@ On **lighter-skinned men**, none of the three got more than **0.8%** wrong. One 
 
 On **darker-skinned women**, on the same test, the error rates were 20.8%, 34.5% and **34.7%**. The worst product got more than one in every three wrong.
 
-```
+```text
         0.8%                        34.7%
     lighter-skinned men        darker-skinned women
 ```
@@ -74,7 +74,7 @@ That is *not* what the word means here.
 
 A model does not hold opinions. A model does not think anything about anybody. What a model has is **counts**.
 
-```
+```text
    WHAT IT SAW A LOT OF   →   it gets good at
    WHAT IT SAW A LITTLE   →   it stays shaky
    WHAT IT NEVER SAW      →   it is guessing, nothing to go on
@@ -125,7 +125,7 @@ Now read the last column again. A child using that product gets **nearly one wor
 
 Write it on the inside of your pencil case:
 
-```
+```text
    ALWAYS ASK:  93% ... for WHOM?
 ```
 
@@ -185,7 +185,7 @@ Here is the pile of photos they trained it on. Two hundred photographs.
 
 Nobody was lazy. It was daytime, they were at school in the evenings, and you put a thing down on the table to photograph it because that is what people do.
 
-Now put the training counts next to the test results and read across:
+Now put the training counts next to the test results and read across.
 
 | Condition | Training photos | Test accuracy |
 |---|---:|---:|
@@ -259,7 +259,7 @@ A takeaway shop wants an app that looks at the hot tray and counts how many slic
 
 **Step 1 — one division per group. Show every one.**
 
-```
+```text
    A:  22 ÷ 25 = 0.88   →  ×100 = 88.0   →  88.0%
    B:  20 ÷ 25 = 0.80   →  ×100 = 80.0   →  80.0%
    C:  12 ÷ 25 = 0.48   →  ×100 = 48.0   →  48.0%
@@ -268,7 +268,7 @@ A takeaway shop wants an app that looks at the hot tray and counts how many slic
 
 **Step 2 — the overall number. Add the corrects, divide once.**
 
-```
+```text
    correct = 22 + 20 + 12 + 9 = 63
    total   = 25 × 4 = 100
 
@@ -277,7 +277,7 @@ A takeaway shop wants an app that looks at the hot tray and counts how many slic
 
 **Step 3 — the gap.**
 
-```
+```text
    best  = A, plain cheese   = 88.0%
    worst = D, half-eaten     = 36.0%
 
@@ -314,7 +314,7 @@ A cricket ground installs a camera system that decides whether the ball crossed 
 
 **Step 1 — the four divisions.**
 
-```
+```text
    A:  29 ÷ 30 = 0.96666...  →  96.666...  →  96.7%
    B:  21 ÷ 30 = 0.70        →  70.0       →  70.0%
    C:  18 ÷ 30 = 0.60        →  60.0       →  60.0%
@@ -323,7 +323,7 @@ A cricket ground installs a camera system that decides whether the ball crossed 
 
 **Step 2 — overall.**
 
-```
+```text
    correct = 29 + 21 + 18 + 12 = 80
    total   = 30 × 4 = 120
 
@@ -332,7 +332,7 @@ A cricket ground installs a camera system that decides whether the ball crossed 
 
 **Step 3 — the gap.**
 
-```
+```text
    best  = A, day match                 = 96.7%
    worst = D, ball above the rope       = 40.0%
 
@@ -371,7 +371,7 @@ The school runs its own test on **100 recordings**. This time the groups are **n
 
 **Step 1 — four divisions, four different denominators.**
 
-```
+```text
    A:  37 ÷ 40 = 0.925      →  92.5%
    B:  17 ÷ 25 = 0.68       →  68.0%
    C:   9 ÷ 20 = 0.45       →  45.0%
@@ -380,7 +380,7 @@ The school runs its own test on **100 recordings**. This time the groups are **n
 
 **Step 2 — overall. Add the corrects, divide once.**
 
-```
+```text
    correct = 37 + 17 + 9 + 5 = 68
    total   = 40 + 25 + 20 + 15 = 100
 
@@ -397,7 +397,7 @@ The school runs its own test on **100 recordings**. This time the groups are **n
 
 **Step 3 — the gap.**
 
-```
+```text
    best  = A  = 92.5%
    worst = D  = 33.3%
 
@@ -425,6 +425,8 @@ That is a **false reject** with a person inside it. The child is standing there 
 
 ### The Missing Group
 
+This section is a record of the class activity, so you can redo it at home.
+
 If you missed this, or you want to do it again from scratch, everything you need is right here.
 
 **The setup.** You are handed somebody else's finished test. Four Year 9 students built **WhatIsIt?**, an app that names a mug, a spoon or a fork through a phone camera, to help somebody who cannot see well. They tested it on **48 photos the model had never seen** — twelve photos in each of four situations. Same three objects every time; only the surroundings change. Every photo has already been ticked right or wrong.
@@ -442,7 +444,9 @@ If you missed this, or you want to do it again from scratch, everything you need
 
 We did Batch A together, on the board, in three lines. Not one line. Three.
 
-```
+Here are the three lines for Batch A.
+
+```text
    Batch A:   11 ÷ 12 = 0.91666...
               0.91666... × 100 = 91.666...
               rounded to one decimal place:  91.7%
@@ -459,7 +463,7 @@ Then you did B, C and D yourself, and we filled in the row.
 | C | Held in a hand | 5/12 | 0.4167 | **41.7%** |
 | D | Patterned cloth | 6/12 | 0.5000 | **50.0%** |
 
-```
+```text
    best group  = A, bright daylight   at  91.7%
    worst group = C, held in a hand    at  41.7%
 
@@ -475,13 +479,13 @@ Then you did B, C and D yourself, and we filled in the row.
 
 Add up all the corrects: 11 + 7 + 5 + 6 = **29**, out of 48 photos.
 
-```
+```text
    29 ÷ 48 = 0.604166...  →  60.4% overall
 ```
 
 Now watch this. Suppose the testers had taken **thirty** daylight photos and only six of each of the other three. Same app. Same weaknesses. Same objects. Nothing about the model changes at all.
 
-```
+```text
    30 daylight   × 0.917  = 27.5 correct
     6 lamplight  × 0.583  =  3.5
     6 in a hand  × 0.417  =  2.5
@@ -506,9 +510,9 @@ Then the training counts were turned face up: 183 daylight, 17 lamplight, 0 held
 
 ### Part 3 — the pre-registration
 
-Last twenty minutes, and this is the part Week 33 cannot happen without. You filled in a slip about **your own** Week 17 model:
+This was the last twenty minutes, and Week 33 cannot happen without it. You filled in a slip about **your own** Week 17 model. Here is the slip.
 
-```
+```text
    MY SEALED PREDICTION
 
    Four groups I will test in Week 33:
@@ -550,6 +554,8 @@ Take these to a parent, a grandparent, a friend, anybody. You are not trying to 
 
 ## ⚠️ Don't Get Tricked
 
+This section lists four sentences that sound sensible but are wrong. Each one comes with a better version.
+
 ### 1. "Biased means somebody was being mean"
 
 | ❌ Wrong | ✅ Right |
@@ -589,6 +595,8 @@ This one is exactly backwards, and you have already seen the proof: the overall 
 
 ## 🌍 Where You've Seen This
 
+Here are six places where you may meet the same chain in daily life.
+
 1. **Voice assistants and children.** Ask one to play a song and watch how often it mishears a younger sibling compared to an adult. There were far fewer children's voices in the training recordings, and that may be why.
 2. **Face unlock in a dark room.** It works instantly at your desk in daylight and gives up at 11 p.m. under a lamp. That could be a training-data gap, or it could be the camera hardware (some phones use infrared and work in the dark). Worth wondering about.
 3. **Automatic subtitles.** Watch the captions on a video where somebody has an accent the platform has heard less often, or where two people talk at once. The errors are not spread evenly — they land on particular voices.
@@ -599,6 +607,8 @@ This one is exactly backwards, and you have already seen the proof: the overall 
 ---
 
 ## 🔁 Back to the Mask
+
+This section returns to the story that opened the chapter and compares her steps with yours.
 
 Remember how this chapter opened. A researcher called **Joy Buolamwini** sat in front of a camera
 that would not see her, picked up a white plastic Halloween mask, and held it over her own face.
@@ -631,6 +641,8 @@ the fix.** Nobody argued their way to it and nobody was shamed into it — someb
 
 ## 🧭 Where This Fits
 
+This section shows where this week sits on the course map.
+
 WORDS is done, so it goes plain like every other finished box, and a new one shades in beside it:
 **WHO IT FAILS**. Everything you have built this year has been a machine. This is the first week the
 map asks about the *people on the other side of it*.
@@ -657,6 +669,8 @@ IT FAILS is the newly shaded box. Only one dashed box is left on the whole map. 
 
 ## 🔑 Remember This
 
+Keep these eight points from the week.
+
 - **Bias is a count, not an attitude.** A model has no opinions. It gets good at what it saw a lot of and stays bad at what it barely saw.
 - **The chain has four links**: who got photographed → the data is lopsided → the model copies it → a real person gets bad answers. **The main fix is at link 1.**
 - **A single accuracy number hides somebody.** Always split it up, and always ask *for whom?*
@@ -669,6 +683,8 @@ IT FAILS is the newly shaded box. Only one dashed box is left on the whole map. 
 ---
 
 ## 📓 New Words
+
+These are the four words you learned this week.
 
 ![This week's four words, drawn](../figures/fig-w31-11-vocab-icons.svg)
 *Figure 31.11 — This week's four words, drawn.*

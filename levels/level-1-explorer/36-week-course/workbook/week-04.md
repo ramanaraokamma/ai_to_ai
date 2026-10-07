@@ -43,6 +43,8 @@ Because: `_____________________________________________________________`
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know the parts of a table and what each part is called.
+
 **A1. Fill in the blanks.**
 
 Rows go `____________`. Columns `____________ ____`. The top line of a table is called the
@@ -134,6 +136,8 @@ Columns: `_____________`  `_____________`  `_____________`
 
 ## ✍️ Practice Set B — Use It
 
+These questions ask you to choose a row unit, design a table, and spot tables that go wrong.
+
 **B1. The bakery.** A bakery wants to know **which cake sells best on which day of the week.**
 
 One row = one `______________________`
@@ -216,6 +220,8 @@ What should they have chosen instead, and why does that choice let them answer *
 
 ## 🧩 Puzzle of the Week — The Squashed Table
 
+This puzzle asks which questions a table can answer, given the row unit it was built with.
+
 ![The squashed table and four questions](../figures/fig-w04-10-puzzle-squashed-table.svg)
 *Figure W4.2 — One row is one pocket. Four questions, and one of them cannot be answered from this table at all.*
 
@@ -250,6 +256,8 @@ For every question you crossed, write **what row unit you would have needed**:
 
 ## 🤔 Think Deeper
 
+Two longer questions. Write in your own words.
+
 **T1.** In class you met a professional's rule: **"you can always add rows up, but you can never split them apart."** Explain in your own words *why* that is true, and give one example of your own — not the backpack and not the videos.
 
 `_____________________________________________________________________`
@@ -278,6 +286,8 @@ For every question you crossed, write **what row unit you would have needed**:
 
 ## 🛠️ Build It — Your Life In 30 Rows, Part 1
 
+In this section you start your own table from real life.
+
 This is the start of a three-week project. You finish it in Week 6, and in Week 7 you will use the same table to hunt for patterns. **About 20 minutes this week, spread across several days.**
 
 ### Step checklist
@@ -292,7 +302,9 @@ This is the start of a three-week project. You finish it in Week 6, and in Week 
 
 ### My row unit
 
-```
+Fill in the row unit you chose and how many times it happened yesterday.
+
+```text
 ONE ROW = ONE ______________________________
 
 Yesterday this happened _______ times.
@@ -345,7 +357,7 @@ Draw your **own** table — any subject you like, at least four rows and four co
 
 **An example of a good answer.** A student drew a table of five pet fish:
 
-```
+```text
 ONE ROW = ONE FISH
 
   fish_name | length_cm | colour | tank
@@ -390,6 +402,8 @@ One thing I still want to ask about:
 ---
 
 ## ✅ Answers
+
+Use this section only after you have finished the pages above. Open it to check your work.
 
 <details>
 <summary>Check your answers</summary>

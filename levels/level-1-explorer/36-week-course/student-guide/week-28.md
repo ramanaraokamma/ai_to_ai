@@ -46,6 +46,8 @@ This week we build that tally on paper. Pencil, a ruled sheet, forty words. And 
 
 ## 🧠 The Big Idea
 
+This section shows how to count word pairs, build a next-word table, and read it. Work through the six parts in order.
+
 ### 1. Counting single words is useful — and it can never write a sentence
 
 Last week you learned to chop text into **tokens** — countable pieces, usually words, with the full stop counting as its own token. Here is our text for this week. In this course a text you learn from has a name:
@@ -54,7 +56,7 @@ Last week you learned to chop text into **tokens** — countable pieces, usually
 
 Our corpus, six short sentences:
 
-```
+```text
    I take the bus to the market. Amma takes the bus to the shop.
    The bus goes to town. My bus is very late.
    Amma and I run to the bus. I like it.
@@ -136,7 +138,7 @@ Write that number down **before** you start tallying. A prediction you wrote aft
 
 Now the actual work. Three columns on a sheet:
 
-```
+```text
    CURRENT          NEXT             TALLY
    ───────          ────             ─────
 ```
@@ -157,7 +159,7 @@ Then six rules, and they matter more than they look:
 
 **The mistake almost everybody makes, including adults.** Look at the middle of our corpus:
 
-```
+```text
    ... token 15  shop     token 16  .     token 17  the     token 18  bus ...
 ```
 
@@ -180,7 +182,7 @@ A raw pile of tally marks is not usable yet. Sort it. Group it by the **first** 
 
 Read one group slowly, because if you can read one group you can read any language model ever built:
 
-```
+```text
    CURRENT   NEXT      COUNT   OUT OF
    the       bus         4       6
              market      1       6
@@ -285,13 +287,13 @@ Three complete tallies, start to finish, with every number shown. Cover the answ
 
 **The corpus:**
 
-```
+```text
    I like hot pizza. I like cold pizza.
 ```
 
 **Step 1 — tokenize and number.** Lowercase everything, full stop is its own token.
 
-```
+```text
    1  i        6  i
    2  like     7  like
    3  hot      8  cold
@@ -338,13 +340,13 @@ Notice pair 5. Token 5 is a full stop and token 6 is `i`. That is a pair. Do not
 
 **The corpus:**
 
-```
+```text
    The bowler runs in. The bowler bowls. The batter hits the ball.
 ```
 
 **Step 1 — tokenize.**
 
-```
+```text
    1  the       6  the       11  batter
    2  bowler    7  bowler    12  hits
    3  runs      8  bowls     13  the
@@ -402,13 +404,13 @@ And look at the `.` group: every single sentence in this corpus starts with `the
 
 **The corpus:**
 
-```
+```text
    Maya is here. Rohan is here. Dev is absent.
 ```
 
 **Step 1 — tokenize.**
 
-```
+```text
    1  maya      5  rohan      9  dev
    2  is        6  is        10  is
    3  here      7  here      11  absent
@@ -459,22 +461,26 @@ Ask yourself: does the table know that **Dev** is the absent one? Look for the i
 
 ## 🎲 What We Did In Class
 
-**Tally a Paragraph by Hand.** If you missed the lesson, or you want to do it again properly, everything you need is here.
+This section is for anyone who missed the lesson, or who wants to do it again properly. Everything you need is here.
+
+**Tally a Paragraph by Hand.**
 
 **You need:** a pencil with a working eraser (not a pen — you will erase), two sheets of paper, a ruler, and a phone or tablet with a keyboard. That is all.
 
 ### The corpus, and the tokenizing rules
 
-Write these four rules at the top of your page before you start:
+First, write these four rules at the top of your page:
 
-```
+```text
    1. Lowercase everything.
    2. The full stop is its own token.
    3. There is no other punctuation in this text.
    4. Pairs may cross a full stop. This is one stream of 40 tokens.
 ```
 
-```
+Then copy this corpus onto your page:
+
+```text
    I take the bus to the market. Amma takes the bus to the shop.
    The bus goes to town. My bus is very late.
    Amma and I run to the bus. I like it.
@@ -482,7 +488,9 @@ Write these four rules at the top of your page before you start:
 
 ### The 40 tokens, numbered
 
-```
+Here is the same corpus as numbered tokens. Use these numbers when you walk.
+
+```text
     1  i          11  the        21  town       31  i
     2  take       12  bus        22  .          32  run
     3  the        13  to         23  my         33  to
@@ -531,7 +539,7 @@ Two things almost certainly happened, and both are worth writing down. The sente
 
 ## 💬 Talk About It
 
-Take these to a parent, a sibling or a friend. Each one is a real question, not a quiz.
+These three questions are for talking with a parent, a sibling or a friend. Each one is a real question, not a quiz.
 
 **1. Ask an adult: "How do you think your phone knows what word you're going to type next?"** Let them answer fully before you say anything. Then explain the tally.
 
@@ -548,6 +556,8 @@ Take these to a parent, a sibling or a friend. Each one is a real question, not 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four wrong ideas people often have about this week's work. Each one is set beside the right idea.
 
 ### Trick 1 — "More marks means it's a better word"
 
@@ -588,6 +598,8 @@ Write a pair backwards and the total is still 39 — one mark went down either w
 
 ## 🌍 Where You've Seen This
 
+This section lists places in everyday life where the same idea shows up.
+
 1. **The three suggestions above your phone keyboard.** Now you know: a next-word table, looked up on the word you just typed, top three by count. That is the core of the feature.
 2. **Google's search box finishing your question.** Same idea, bigger tally — except what was counted was *what millions of people typed into the search box*, not books (and it suggests whole searches, not just one next word). That is why it sometimes suggests something odd: lots of people really did type that.
 3. **The autocomplete in a chat app that guesses your friend's name.** That one comes from the small personal tally of *your* typing, sitting on top of the big general one. It is why your phone eventually learns a nickname no dictionary contains.
@@ -599,9 +611,9 @@ Write a pair backwards and the total is still 39 — one mark went down either w
 
 ## 🧭 Where This Fits
 
-Same box as last week — **WORDS** — because chopping a sentence up was only the setting-out. This week
-you do something with the counts, and the something is small enough to fit on one sheet of paper and
-big enough to be an actual language model.
+This section shows where this week sits on the course map.
+
+It is the same box as last week, **WORDS**, because chopping a sentence up was only the setting-out. This week you do something with the counts. It is small enough to fit on one sheet of paper and big enough to be an actual language model.
 
 ![The course map in Week 28: the words tile is this week's box, where word pairs are tallied into a next-word table](../figures/fig-w28-0-where-this-fits.svg)
 
@@ -623,6 +635,8 @@ big enough to be an actual language model.
 
 ## 🔑 Remember This
 
+These are the seven ideas to keep from this week.
+
 - **Word frequency knows how much. It never knows where.** All the right words in the right amounts is still nonsense without an order.
 - **A bigram is two tokens next to each other, in that order.** Direction is half the information, and it is the half that makes it work.
 - **Bigrams = tokens − 1.** Every token starts one pair except the last. Write the prediction down *before* you tally.
@@ -634,6 +648,8 @@ big enough to be an actual language model.
 ---
 
 ## 📓 New Words
+
+These are the four words from this week, with a meaning and an example for each.
 
 ![This week's four words](../figures/fig-w28-7-vocab-icons.svg)
 *Figure 28.9 — This week's four words, drawn.*
@@ -649,9 +665,9 @@ big enough to be an actual language model.
 
 ## 📤 Your Homework
 
-Go to **[the Week 28 workbook](../workbook/week-28.md)**. About **50–60 minutes** in total.
+This section tells you what to do at home. Go to **[the Week 28 workbook](../workbook/week-28.md)**. It takes about **50–60 minutes** in total.
 
-The main job is to do exactly what you did in class, but on a text **you** choose, and about half again as long. **Sixty words.** Not two hundred — sixty.
+The main job is to do exactly what you did in class, but on a text **you** choose. It is about half again as long. **Sixty words.** Not two hundred — sixty.
 
 Pick something with a voice you like: song lyrics you know by heart, a recipe, a match report, a paragraph from a book you love, the rules of a game.
 

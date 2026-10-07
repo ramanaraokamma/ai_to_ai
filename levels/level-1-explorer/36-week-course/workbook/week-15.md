@@ -20,7 +20,7 @@ front: ______ features    back: ______________________________
 
 **W3.** A tester got **7 out of 10** on a friend's deck. Fill in all three numbers.
 
-```
+```text
 score = ______ %      baseline = ______ / 10 = ______ %      gap = ______ points
 ```
 
@@ -38,6 +38,8 @@ because ________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check the big ideas of the week: training, epochs and variety.
+
 **A1. Fill in the blanks.**
 
 **Training** is the ________-off process where a machine looks at ________________ examples over and over and adjusts itself, and what comes out is called a ________________ .
@@ -53,7 +55,7 @@ An **epoch** is one complete ________________ through ________________ training 
 
 Now give the **arithmetic** that proves your answer:
 
-```
+```text
 120 photos from a phone ≈ ______ MB       the model ≈ ______ MB
 ```
 
@@ -99,6 +101,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+These questions put this week's ideas to work on made-up cases.
+
 **B1.** You trained a model on 500 photos of dogs and cats. Tonight you delete all 500 photos.
 
 Does the model still work? `YES / NO`
@@ -140,7 +144,7 @@ ________________________________________________________________
 
 Suppose the model decides never to say `whiteboard_eraser` at all. Work out its score.
 
-```
+```text
 glue sticks right = ______   markers right = ______   erasers right = ______
 
 correct = ______ out of 88   =   ______ ÷ 88 = ______ %
@@ -156,7 +160,7 @@ What is the fix, in numbers? _____________________________________
 
 **B4.** Two people each take **60** photos of their cat. Ravi shoots all 60 on the sofa in the evening. Meera uses 4 rooms, 3 kinds of light and 5 angles.
 
-```
+```text
 Ravi:  ______ × ______ × ______  = about ______ situations
 Meera: ______ × ______ × ______  =       ______ situations
 ```
@@ -193,6 +197,8 @@ Write the row you would add to fix **both** problems at once:
 ---
 
 ## 🧩 Puzzle of the Week — Six Photos, One Thing In Common
+
+This puzzle has five short parts. Work through them in order.
 
 ![Six photo cards and one thing they share](../figures/fig-w15-11-puzzle-snow-and-grass.svg)
 *Figure W15.2 — Six photo cards. Every wolf has snow; every husky has grass. So what did the machine actually learn?*
@@ -231,6 +237,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions need a few sentences each.
+
 **T1.** In class you got test cards 4 and 5 wrong. Somebody says: *"you just weren't concentrating properly."*
 
 Explain, in a paragraph, why that is the wrong diagnosis — and what the right one is. Then connect it to the wolves. Use the words **easiest pattern** somewhere.
@@ -263,9 +271,11 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+Here you plan your own photo shoot on paper, shoot it, and tally what you got. Do the planning steps before you pick up the camera.
+
 ### Step 1 — Your three objects (they must be similar)
 
-```
+```text
 object 1: ________________________   class name: ________________________
 object 2: ________________________   class name: ________________________
 object 3: ________________________   class name: ________________________
@@ -276,7 +286,7 @@ object 3: ________________________   class name: ________________________
 
 ### Step 2 — Your variety checklist, with real named places
 
-```
+```text
 BACKGROUNDS (5)
   1. ______________________  2. ______________________  3. ______________________
   4. ______________________  5. ______________________
@@ -304,7 +314,7 @@ DISTANCES (2):  close  ·  far
 
 **Check it three ways, not one:**
 
-```
+```text
 by shots:       ____ + ____ + ____ + ____ + ____ + ____   = ______   (must be 40)
 by background:  ______________________________________    = ______
 by lighting:    ______________________________________    = ______
@@ -372,7 +382,7 @@ ________________________________________________________________
 
 ### Step 7 — The arithmetic, for your own set
 
-```
+```text
 my photos per object  = ______     × 3 objects  = ______ labelled examples
 my examples × 50 epochs                         = ______ looks
 my distinct situations: ____ × ____ × ____ × ____ = ______
@@ -381,6 +391,8 @@ my distinct situations: ____ × ____ × ____ × ____ = ______
 ---
 
 ## 🎨 Draw It
+
+Here you draw your own set of training cards with a hidden pattern in them.
 
 Draw **a trap of your own.** On the left, at least four training cards for two made-up creatures — and hide something in them that the rules never mention. On the right, the one test card that breaks it.
 
@@ -394,6 +406,8 @@ Then they tested it on their dad, who said "Gorp", and they wrote **"it worked"*
 ---
 
 ## 📊 Self-Check
+
+Tick one box for each line to show how sure you feel.
 
 | I can… | 😀 easily | 🙂 with a bit of thought | 😕 not yet |
 |---|---|---|---|
@@ -412,6 +426,8 @@ ________________________________________________________________
 
 ## ✅ Answers
 
+Open the box below once you have finished everything above.
+
 <details>
 <summary>Check your answers</summary>
 
@@ -423,7 +439,7 @@ ________________________________________________________________
 
 **W3.**
 
-```
+```text
 score = 7 ÷ 10 = 70%       baseline = 1 / 10 = 10%       gap = 60 percentage points
 ```
 
@@ -487,7 +503,7 @@ Notice too that combs and toothbrushes were *both* on the bathroom floor — so 
 
 **B3.** If the model never says `whiteboard_eraser` at all (the worst case, which training is tempted towards): 40 glue sticks right, 40 markers right, 0 erasers right.
 
-```
+```text
 correct = 80 out of 88   =   80 ÷ 88 = 0.909 = 90.9%      erasers alone: 0%
 ```
 
@@ -499,7 +515,7 @@ Look at what that produces: a model that reports **91%** and is **completely bro
 
 **B4.**
 
-```
+```text
 Ravi:  1 background × 1 lighting × about 2 angles  = about 2 situations
 Meera: 4 rooms      × 3 lightings × 5 angles       =       60 situations
 ```
@@ -590,7 +606,7 @@ Marking: **planned and actual side by side** — actual alone cannot show a shor
 
 **Step 7 — your arithmetic**, for a full 40-per-object set:
 
-```
+```text
 40 photos × 3 objects   = 120 labelled examples
 120 examples × 50 epochs = 6,000 looks
 5 × 3 × 8 × 2            = 240 distinct situations

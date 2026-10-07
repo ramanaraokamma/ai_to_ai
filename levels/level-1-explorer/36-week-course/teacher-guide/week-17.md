@@ -92,8 +92,8 @@ already-known patterns go with which of your three names.**
 That is why forty photos is enough, and why it takes twenty seconds instead of a week. You are not
 building a brain from scratch. You are giving names to a vocabulary that already exists.
 
-Say this out loud to the student if they ask why it's so fast. Do not volunteer it if they don't —
-it is a Level 3 topic and it can swamp today's point.
+Say this out loud to the student if they ask why it's so fast. Do not volunteer it if they don't.
+It is a Level 3 topic and it can swamp today's point.
 
 ### 4. What is happening during those twenty seconds
 
@@ -146,7 +146,9 @@ They are not. After training, the photos are gone from the model entirely. What 
 adjusted numbers that happen to work. The clinching evidence is size: a Teachable Machine model file
 is a few megabytes, while the 120 photos that made it might be forty megabytes. **The model is much
 smaller than the data that made it.** It could not possibly be storing them. It genuinely compressed
-them into a pattern. *Careful:* the saved `.tm` **project file** is different. It also keeps copies of the photos (that is how Week 18 can delete samples after reopening it), so it will be far bigger than a few megabytes. The size argument is about the trained model, not the project file; say so if the student looks at the file size.
+them into a pattern.
+
+> **⚠️ Watch out:** the saved `.tm` **project file** is different. It also keeps copies of the photos (that is how Week 18 can delete samples after reopening it), so it will be far bigger than a few megabytes. The size argument is about the trained model, not the project file. Say so if the student looks at the file size.
 
 Useful analogy: the examples are the ingredients, training is the baking, the model is the cake. Once
 it's baked you cannot get the eggs back out, you cannot read the recipe off the cake, and if the cake
@@ -210,6 +212,8 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 
 ## 🧰 Prep Checklist
 
+This section lists what to do the night before and on the day, and what to do if something fails.
+
 ### 15 minutes the night before — the smoke test is not optional
 
 - [ ] **Run the smoke test on the actual laptop you will use.** Five minutes:
@@ -254,6 +258,8 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the whole lesson. The table is the overview; the steps below it say what to say and ask.
+
 | Minutes | Segment | What happens |
 |---|---|---|
 | 0 – 8 | 🪝 **Hook** — the twenty-second claim | You make a bold promise and start a timer |
@@ -285,7 +291,7 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 Open the laptop, already on the Teachable Machine home page. Do **not** click anything yet. Put a
 timer or a clock where the student can see it. Write on the board:
 
-```
+```text
    MY PREDICTION:  training will take _______ seconds
    ACTUAL:         _______ seconds
 ```
@@ -345,7 +351,7 @@ Then the photos:
 When all three classes are loaded, stop everything and point at the sample count under each class.
 Write the three numbers on the board. Then do the arithmetic together:
 
-```
+```text
    spoon: ____    toothbrush: ____    comb: ____
 
    (biggest − smallest)  ÷  biggest  =  ____ %     want: under 20%
@@ -400,7 +406,7 @@ Now the first live reading:
 
 Fill in row 1 of Handout 17A together, out loud, doing all three checks from Week 16:
 
-```
+```text
    object: spoon     position: flat on
    spoon ____   toothbrush ____   comb ____
    sum = ____        (must be 100)
@@ -474,6 +480,8 @@ Then assign the homework and check they can do step one only.
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the Build: the baseline table, the wobble and the save.
+
 ### The Build
 
 **Time:** 20 minutes (12 for the table, 4 for the wobble, 4 for the save)
@@ -486,7 +494,7 @@ fourth object still hidden.
 
 Each of the three objects is held up in **three positions**:
 
-```
+```text
    ┌──────────────────────────────────────────────────────────┐
    │  POSITION 1 — flat on      face the camera, ~30 cm away  │
    │  POSITION 2 — tilted       turn it ~45°, same distance   │
@@ -545,7 +553,7 @@ five seconds. Then:
 
 Then write the wobble reading into the table as row 10, marked clearly:
 
-```
+```text
    row 10  |  a FORK  |  no class exists  |  74 / 15 / 11  |  100  |  margin 59  |  ✗ WRONG
 ```
 
@@ -588,14 +596,20 @@ pen, a wall, and — deliberately — a fork. Retrain, and then re-run the wobbl
 | a real spoon | spoon 91% ✓ | ? |
 | a real comb | comb 79% ✓ | ? |
 
-Two things to watch for, and the second is the interesting one. First: does the fork land in `other`?
-Second: **did the three real objects get worse?** Adding a big messy class often steals belief from
+Two things to watch for, and the second is the interesting one:
+
+1. Does the fork land in `other`?
+2. **Did the three real objects get worse?**
+
+Adding a big messy class often steals belief from
 the real classes and shrinks every margin. Ask them to write three sentences on whether the trade was
 worth it and how they'd decide if this were a real product.
 
 ---
 
 ## ❓ Questions Students Ask This Week
+
+This section gives short, honest answers to the eight questions most likely to come up.
 
 **1. "Are my photos going to Google?"**
 No. The training runs in this browser tab, on this laptop, using this machine's processor. Your photos
@@ -647,6 +661,8 @@ one.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the usual problems, why each happens, and what to do right away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The webcam is a black rectangle** | Another app has the camera — Zoom, Teams, FaceTime, or a second browser tab that once asked for it. | Quit them all, reload the page. Then click the 🔒 padlock in the address bar → Camera → Allow. Works nine times out of ten. |
@@ -662,6 +678,8 @@ one.
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut, add or change for a student who is struggling, flying or not engaging.
 
 ### If they are struggling
 
@@ -707,6 +725,8 @@ something else.
 ---
 
 ## ✅ Assessing Understanding
+
+This section shows what good, partial and weak answers sound like for the three closing checks, and a five-level mastery scale.
 
 ### Check 1 — the process
 
@@ -756,13 +776,18 @@ something else.
 
 ## 📤 Homework to Assign
 
+This section says what to assign, what to say, and how the workbook sections map to time.
+
 **Workbook:** Week 17 (`workbook/week-17.md`). It has nine sections: ✅ Warm-Up (W1–W5), ✍️ Practice Set A
 (A1–A6), ✍️ Practice Set B (B1–B5), 🧩 Puzzle of the Week, 🤔 Think Deeper (T1–T2), 🛠️ Build It (Parts 1
 and 2), 🎨 Draw It, 📊 Self-Check, and a closed ✅ Answers section at the end. **Time: about 45
-minutes for 🛠️ Build It, which is the part that needs the laptop and `baseline-v1.tm`.** The paper
-sections (Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Draw It, Self-Check) need no laptop;
-set them as a second sitting before Week 18, Warm-Up first. Do the Build It first — it is the one the
-script below describes, and everything in the lesson has been leading to it.
+minutes for 🛠️ Build It, which is the part that needs the laptop and `baseline-v1.tm`.**
+
+The paper sections (Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Draw It, Self-Check) need no
+laptop. Set them as a second sitting before Week 18, Warm-Up first.
+
+Do the Build It first. It is the one the script below describes, and everything in the lesson has been
+leading to it.
 
 **Say this, word for word:**
 
@@ -911,8 +936,8 @@ was wrong five times out of five, and three of those wrong answers had margins o
   spoon-shaped and the model commits.
 
 **Marking guide:** full credit needs the prediction written first, all three numbers per row, the sum
-checked, the margin computed, the three counts, and the observation that all five were wrong. A student who wrote only the winner has done a third of
-the work.
+checked, the margin computed, the three counts, and the observation that all five were wrong.
+A student who wrote only the winner has done a third of the work.
 
 ### K4 — 🛠️ Build It, Part 2: the surprise paragraph
 
@@ -1060,6 +1085,8 @@ Six "I can…" rows and one open question ("One thing I want to ask about next l
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what the next week needs from you, so you can prepare this week.
 
 Next week is **Week 18 — Term 2 Checkpoint: Break Your Own Model on Purpose**, and it is the best
 week of the term. The student will deliberately damage their own model four times — five photos per

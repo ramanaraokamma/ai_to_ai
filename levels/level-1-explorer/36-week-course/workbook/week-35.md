@@ -4,7 +4,7 @@
 
 [📖 Student Guide — Week 35](../student-guide/week-35.md) · [Course Home](../README.md) · [Workbook — Week 36 ➡](week-36.md)
 
-> **About 60 minutes of writing — plus three rehearsals out loud.** At least two of those to a real live human who is allowed to interrupt you. Standing up. Timed. **Reading it silently in your head does not count, and you will be able to tell.**
+> **About 60 minutes of writing — plus three rehearsals out loud.** At least two of those must be to a real live human who is allowed to interrupt you. Stand up and time yourself. **Reading it silently in your head does not count, and you will be able to tell.**
 >
 > If time runs out, **W35-4 and W35-7 are the two you cannot drop.**
 
@@ -37,6 +37,8 @@ Down the side: ____________________  Across the top: ____________________
 ---
 
 ## ✍️ Practice Set A — Understand It
+
+*These questions are for checking that you understand the ideas behind your app.*
 
 **A1. Fill in the blanks.**
 
@@ -92,7 +94,7 @@ ____________________________________________________________________
 
 **A6. Spot the bug.** Here is a student's Scratch script. It has **one** structural mistake that means three of the four classes have no threshold at all. Circle it and say what's wrong.
 
-```
+```text
    forever
        ask [Prediction? 1-4] and wait
        set [choice v] to (answer)
@@ -129,6 +131,8 @@ The fix, in one sentence: ____________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+*These questions are for using the ideas on situations like the ones at your booth.*
+
 **B1.** Your extension reports confidence as `0.61`. You set `threshold` to `70`.
 
 (a) What will your app say, every single time, forever? ____________________
@@ -145,7 +149,7 @@ The fix, in one sentence: ____________________________________________
 
 (b) The training set was 144 daylight and 36 lamplight photos. You want lamplight to be at least **one third**. Show the algebra:
 
-```
+```text
         L  ≥  1/3 × ( ______ + L )
 
        ______  ≥  ______ + L
@@ -248,6 +252,8 @@ ____________________________________________________________________
 
 ## 🤔 Think Deeper
 
+*These two questions are for practising longer answers, the kind a visitor at the fair might ask for.*
+
 **T1.** Your threshold is 70. Somebody says: *"just set it to 95 — then it's basically never wrong."* Write a paragraph explaining why that's a trade and not an improvement, using numbers from the puzzle above.
 
 ____________________________________________________________________
@@ -278,6 +284,8 @@ ____________________________________________________________________
 
 ## 🛠️ Build It — Pages W35-1 to W35-8
 
+*These eight pages are for writing down your own app, report, sign and demo. Fill them in from your own sheets.*
+
 ### W35-1 — The five-state table (5 min)
 
 *Fill this in to match the app you **actually built**, not the one in the book.*
@@ -290,7 +298,7 @@ ____________________________________________________________________
 | `other` | | | |
 | **not sure** | | | |
 
-```
+```text
    CHECK:  □ FIVE rows, not four
            □ every row changes something VISIBLE
            □ the counter changes on exactly the three real classes
@@ -300,7 +308,7 @@ ____________________________________________________________________
 
 ### W35-2 — The threshold, written out (6 min)
 
-```
+```text
    set [threshold v] to ( ______ )
 
    if < ( ______ )  ______  ( ______ ) > then
@@ -316,7 +324,7 @@ ____________________________________________________________________
 
 **The units check.** Look at what your own screen actually showed you:
 
-```
+```text
    My confidence reads as ____________  ( a whole number / a decimal )
 
    So my threshold is ____________
@@ -335,14 +343,14 @@ ____________________________________________________________________
 | `new-background` | ______ /10 | | | | |
 | `new-lighting` | ______ /10 | | | | |
 
-```
+```text
    BEST condition:  ______________  at ______ %
    WORST condition: ______________  at ______ %
 ```
 
 ### W35-4 — The bias report (12 min) ★ cannot be dropped
 
-```
+```text
    1  THE GAP
 
       ______ %  −  ______ %  =  ______ ____________________
@@ -404,7 +412,7 @@ ____________________________________________________________________
 
 *Boxes 1 to 6 are last week's, finished. Boxes 7 and 8 now carry real numbers.*
 
-```
+```text
    7  KNOWN LIMITS
 
       held-out:   ______ of ______ = ______ %.  Baseline ______ %,
@@ -429,7 +437,7 @@ ____________________________________________________________________
 
 *Draft it here first. Then it goes on poster paper in marker.*
 
-```
+```text
    ┌──────────────────────────────────────────────────────────────────────┐
    │                                                                      │
    │        D O   N O T   U S E   T H I S   F O R                          │
@@ -452,7 +460,7 @@ ____________________________________________________________________
 
 ### W35-7 — The demo script and the rehearsal log (10 min) ★ cannot be dropped
 
-```
+```text
    1  THE ANNOYANCE                                          30 s
       ____________________________________________________________
       ____________________________________________________________
@@ -492,7 +500,7 @@ ____________________________________________________________________
 | 2 | | | | |
 | 3 | | | | |
 
-```
+```text
    Did the time come DOWN across the three runs?   ______
    Did the banned-word count come DOWN?            ______
    The one thing I'll change for the fair:  ______________________________
@@ -551,6 +559,8 @@ Draw the five states of your own app — one per box. In each box show: the **ba
 
 ## 📊 Self-Check
 
+*This table is for seeing which skills you are sure of. Tick one face on each row.*
+
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
 | Build a Scratch app where each of the four classes does something **visibly different** | | | |
@@ -567,6 +577,8 @@ Anything at 😕? Week number to go back to: ______________
 ---
 
 ## ✅ Answers
+
+*Try every page before you open this. Open the box below to check your work.*
 
 <details>
 <summary>Check your answers</summary>
@@ -623,7 +635,7 @@ If you put `other` for the squashed carton, look at the cause again: `other` nee
 
 **The fix:** the threshold check must **wrap** all four class blocks. One threshold `if` on the outside; the four class `if`s go inside it; the "not sure" line goes in its `else`:
 
-```
+```text
    if <not <(conf) > (threshold)>> then
        say [Not sure - only __%.]
    else
@@ -654,7 +666,7 @@ Build the threshold **first**, before any of the four behaviours exist, and it c
 
 (b)
 
-```
+```text
         L  ≥  1/3 × ( 144 + L )
        3L  ≥  144 + L
        2L  ≥  144
@@ -754,7 +766,7 @@ In order of importance: **five** rows not four · each row changes something *vi
 
 **W35-2 — the threshold.**
 
-```
+```text
    set [threshold v] to (70)
 
    if <not <(conf) > (threshold)>> then
@@ -780,7 +792,7 @@ Full credit needs the threshold check **wrapping** the four behaviours, not sitt
 | `new-background` | 6 | 6/10 | 0.6 | 60% |
 | **`new-lighting`** | **4** | **4/10** | **0.4** | **40%** ← worst |
 
-```
+```text
    1  THE GAP        90% − 40% = 50 PERCENTAGE POINTS
 
    2  NAMED GROUP    "It fails on rubbish photographed under a lamp after dark."
@@ -828,7 +840,9 @@ Model version of the two starred segments:
 >
 > **Where it fails (45s).** *"It's 90% in normal light and 40% under a lamp. That's a 50 percentage point gap, and it's because 138 of my 160 training photos were daylight. Watch —"* [turns the lamp on, holds up the carton, lets it get it wrong] *"— and see that? 88% confident, and wrong."*
 
-**Reading the log:** a good log shows the time coming **down** and the banned-word count coming **down** across the three runs. If the time went **up** in run two, that's usually a *good* sign — it means you stopped reading and started explaining. If it went up in run three, that's a bad sign.
+**Reading the log:** a good log shows the time coming **down** and the banned-word count coming **down** across the three runs.
+
+If the time went **up** in run two, that's usually a *good* sign — it means you stopped reading and started explaining. If it went up in run three, that's a bad sign.
 
 **W35-8 — the six answers.** Every one must contain a number you measured.
 

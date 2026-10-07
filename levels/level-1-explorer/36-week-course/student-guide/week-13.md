@@ -31,23 +31,29 @@ You wrote *rubber* for question 1. You wrote *30 grams* for question 2.
 
 Now the bag opens. It is a rubber. It weighs **42 grams**.
 
-Time to mark you. Question 1: you said rubber, it is a rubber — **tick**. And notice what would have happened if you'd said "pencil". Cross. Not "nearly". Not "half marks because a pencil is also stationery". If you'd said "pen" instead of "pencil" that would not have been *closer* to being a rubber. Wrong is wrong.
+Time to mark you. Question 1: you said rubber, it is a rubber — **tick**.
 
-Question 2 is a completely different experience. You said 30 and it's 42. Do you get a cross? That feels harsh, and it feels harsh for a real reason. You weren't *right*, but you weren't *wrong* in the way "pencil" was wrong. You were **off by twelve grams**.
+Now imagine you had said "pencil". Cross. Not "nearly". Not "half marks because a pencil is also stationery". If you'd said "pen" instead of "pencil" that would not have been *closer* to being a rubber. Wrong is wrong.
+
+Question 2 is a completely different experience. You said 30 and it's 42. Do you get a cross? That feels harsh, and it feels harsh for a real reason.
+
+You weren't *right*, but you weren't *wrong* in the way "pencil" was wrong. You were **off by twelve grams**.
 
 ![Two kinds of being wrong about the bag](../figures/fig-w13-6-two-kinds-of-wrong.svg)
 *Figure 13.1 — One bag, two questions, two completely different ways of being wrong.*
 
 That is the whole lesson, and you have already done it. You just answered the two kinds of question that every prediction machine on Earth answers.
 
-One kind you are **right or wrong** about.
-The other kind you are **off by an amount**.
+- One kind you are **right or wrong** about.
+- The other kind you are **off by an amount**.
 
 They need different names, they need different scoring, and today you get both.
 
 ---
 
 ## 🧠 The Big Idea
+
+This section teaches the two shapes an answer can have, and how to score each one.
 
 ### 1. Shape one: the answer is a word from a short list
 
@@ -126,9 +132,9 @@ Regression cannot be scored that way, because nothing is ever exactly right. So 
 ![Error on a number line](../figures/fig-w13-3-error-number-line.svg)
 *Figure 13.3 — Predicted 197.5 g, true 205 g. The error is the 7.5 g gap between the two pins.*
 
-**How to work it out.** Bigger number minus smaller number:
+**How to work it out.** Bigger number minus smaller number. Here are three examples:
 
-```
+```text
 error = bigger − smaller
 
 predicted 197.5, true 205    ->  205 − 197.5 = 7.5
@@ -140,9 +146,9 @@ Look at the last two rows. One guess was above and one was below, and they have 
 
 > **⚠️ Watch out:** "Error" does **not** mean you did something wrong. It just means *how far off*. A brilliant prediction still has an error — a tiny one. An error of half a gram is an excellent result. You are not being told off; you are being measured.
 
-**One number for the whole model.** If you make several predictions, nobody wants a list of errors. Add them up and divide by how many:
+**One number for the whole model.** If you make several predictions, nobody wants a list of errors. Add them up and divide by how many. Here is the rule:
 
-```
+```text
 mean error = (all the errors added up) ÷ (how many predictions)
 ```
 
@@ -200,6 +206,8 @@ Bucketing does not simply blur small differences. It also makes one small differ
 
 ## 🔍 Worked Examples
 
+This section works through three full examples, one each from food, sport and school. Every number is shown.
+
 ### Worked Example 1 — Twelve fruits, weighed (food)
 
 This is the table from Week 12, with the label moved. Every number here is worked out in full.
@@ -223,9 +231,9 @@ This is the table from Week 12, with the label moved. Every number here is worke
 
 Apply the test: true answer 205, a bit off 203. Nearly as good? Yes. **Regression.**
 
-**Step 2 — build the simplest honest model there is.** For each type of fruit, work out the average weight and use that as the guess every single time.
+**Step 2 — build the simplest honest model there is.** For each type of fruit, work out the average weight. Use that as the guess every single time.
 
-```
+```text
 apples:   150 + 165 + 140 + 190  =  645       645 ÷ 4 = 161.25 g
 oranges:  200 + 185 + 210 + 195  =  790       790 ÷ 4 = 197.5  g
 bananas:  120 + 135 + 110 + 128  =  493       493 ÷ 4 = 123.25 g
@@ -243,9 +251,9 @@ Stop and look at that. **Those three numbers are the entire model.** 161.25, 197
 
 Best prediction: the banana, error 4.25 g. Worst: the apple, error 10.75 g.
 
-**Step 4 — one number for the whole model.**
+**Step 4 — one number for the whole model.** Add the three errors and divide by three:
 
-```
+```text
 7.5 + 4.25 + 10.75  =  22.5
 22.5 ÷ 3            =  7.5
 
@@ -280,9 +288,9 @@ A team keeps a book of past innings. Two columns matter: where the batter came i
 
 **Step 1 — which kind of task?** The label is `runs`. True 42, a bit off 43. Nearly as good? Yes. **Regression.**
 
-**Step 2 — the model: an average per position.**
+**Step 2 — the model: an average per position.** Work out the average runs for each position:
 
-```
+```text
 openers:  42 + 58 + 31 + 71  =  202      202 ÷ 4 = 50.5 runs
 middle:   24 + 18 + 33 + 29  =  104      104 ÷ 4 = 26   runs
 ```
@@ -297,9 +305,9 @@ middle:   24 + 18 + 33 + 29  =  104      104 ÷ 4 = 26   runs
 
 Notice innings 11: the guess was **above** the truth this time, so we did smaller-from-bigger the other way round. The error is still a positive 6.5.
 
-**Step 4 — the mean error.**
+**Step 4 — the mean error.** Add the three errors and divide by three:
 
-```
+```text
 15.5 + 5.0 + 6.5  =  27
 27 ÷ 3            =  9
 
@@ -324,15 +332,15 @@ Now the eight past innings become: 42 `solid`, 24 `quiet`, 58 `solid`, 18 `quiet
 
 ### Worked Example 3 — How long will this homework take? (school)
 
-Priya times her homework for ten nights and writes the minutes down.
+Priya times her homework for ten nights and writes the minutes down. Here are her ten times:
 
-```
+```text
 12 · 18 · 25 · 28 · 31 · 35 · 44 · 52 · 58 · 67
 ```
 
 **Step 1 — the regression version.** Label = `minutes`. The simplest model: predict the average, every time.
 
-```
+```text
 12 + 18 + 25 + 28 + 31 + 35 + 44 + 52 + 58 + 67  =  370
 370 ÷ 10  =  37 minutes
 ```
@@ -347,7 +355,7 @@ The model is one number: **37**.
 | 12 | 37 | 25 | 37 − 25 = **12** |
 | 13 | 37 | 52 | 52 − 37 = **15** |
 
-```
+```text
 3 + 12 + 15  =  30
 30 ÷ 3       =  10
 
@@ -378,13 +386,13 @@ MEAN ERROR = 10 minutes
 
 ## 🎲 What We Did In Class
 
-The activity was called **Flip Every Task**, and it has three phases. You can do all of it at a kitchen table with ten scraps of paper.
+This section replays the class activity so you can do it again at home. The activity was called **Flip Every Task**. You can do all of it at a kitchen table with ten scraps of paper.
 
 ### Setup
 
-Write these ten tasks on ten cards, one each. Then make two header cards: `WHICH ONE?` and `HOW MUCH?`, and put them at the top of the table about 40 cm apart.
+Write these ten tasks on ten cards, one each. Then make two header cards: `WHICH ONE?` and `HOW MUCH?`, and put them at the top of the table about 40 cm apart. The ten tasks are:
 
-```
+```text
  1  Is this text message spam?
  2  How many millimetres of rain will fall tomorrow?
  3  Which fruit is this: apple, orange or banana?
@@ -425,7 +433,7 @@ Now the hard half. Take each card and rewrite it as the other kind. Two rules:
 1. **Name the new label column** and say what values it can take. Not "make it a number" — say `rain_mm`, any number from 0 upwards.
 2. **The flipped version must be a real, sayable question.** "How much cat is this photo?" is not a question. If nobody could measure it, the flip isn't real.
 
-Here is card 1 modelled for you, and then card 4 going the other way:
+Here are two examples. Card 1 goes from classification to regression. Card 4 goes the other way:
 
 > **Card 1.** "Is this text message spam?" — binary classification.
 > Flipped: **"How spammy is this message, from 0 to 100?"** New label column `spam_score`, any number 0–100.
@@ -452,7 +460,7 @@ Then we went back to the Week 12 fruit table, covered `weight_g` instead of `fru
 
 ## 💬 Talk About It
 
-Take these to a parent, a sibling or a friend. Their first answer is usually interesting.
+These three questions are for talking, not for writing. Take these to a parent, a sibling or a friend. Their first answer is usually interesting.
 
 **1. "Is a shirt number a number?"**
 Ask them to defend their answer, then try the addition trick on them.
@@ -469,6 +477,8 @@ Warn them first that this one is a trap, and enjoy it.
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section lists four mistakes that catch many people. Each one shows the wrong thought and the right one.
 
 ### Trick 1 — "If the label is a number, it's regression"
 
@@ -519,6 +529,8 @@ When there is no honest way to produce the number, regression is not on the menu
 
 ## 🌍 Where You've Seen This
 
+Both kinds of prediction are already around you. Here are six places.
+
 1. **Your weather app, twice on one screen.** "Rain tomorrow: yes" is classification. "12 mm" right beside it is regression. Two separate predictions from the same data, sitting next to each other.
 2. **A music app.** It classifies (which genre is this?) and regresses (how many seconds before you skip?) constantly, at the same time, about the same song.
 3. **The spam folder.** Underneath, a filter usually produces a *score* (how sure it is that the message is spam) and then a threshold turns it into `spam` or `not spam` for you. Somebody chose that threshold, and whoever chooses it quietly controls what you see.
@@ -555,6 +567,8 @@ week apart from last week.*
 
 ## 🔑 Remember This
 
+These are the six ideas to keep from this week.
+
 - **Look at the shape of the answer.** A short list of words means **classification**. A number on a scale means **regression**. That is the only test you need.
 - **Binary means two boxes. Multi-class means three or more.** There is nothing more to those words than counting.
 - **Beware numbers that aren't numbers.** Bus route 12 isn't nearly route 13. If you can't add them sensibly, they're categories in disguise.
@@ -565,6 +579,8 @@ week apart from last week.*
 ---
 
 ## 📓 New Words
+
+These are the words from this week, with an example for each.
 
 ![Week 13 words as pictures](../figures/fig-w13-8-vocab-icons.svg)
 *Figure 13.8 — This week's five words, drawn.*
@@ -586,6 +602,8 @@ One more word, which arrives properly next week but you have already used:
 ---
 
 ## 📤 Your Homework
+
+This section tells you what to do in the workbook and how long each page should take.
 
 Go to **[the Week 13 workbook](../workbook/week-13.md)**. About **50 minutes** in total.
 

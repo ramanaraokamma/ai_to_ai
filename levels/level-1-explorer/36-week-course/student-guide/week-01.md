@@ -98,7 +98,9 @@ list has 60 number plates on it. The camera reads each plate, checks the list, a
 Nothing in that machine is thinking about anything. And it is doing a job that used to be a person
 in a small hut with a clipboard.
 
-Here is the thing that trips up nearly every adult. *Robot* and *AI* are two completely different
+Here is a thing that trips up nearly every adult.
+
+*Robot* and *AI* are two completely different
 questions. **Robot** is a question about bodies. **AI** is a question about a kind of decision. They
 cross in all four ways:
 
@@ -238,7 +240,7 @@ Now the problem. And it is not a small one.
 Imagine a spell-checker whose whole dictionary is five words: `cat, cot, cut, dog, dot`.
 
 You type `dat`. The checker looks: is `dat` in the list? Cat — no. Cot — no. Cut — no. Dog — no.
-Dot — no. No match, so it underlines `dat` in red. 
+Dot — no. No match, so it underlines `dat` in red.
 
 Now you type: **"I have a pet dot."**
 
@@ -253,14 +255,14 @@ completely useless answer.
 That is how rule-based systems fail. Not with a bang. **Quietly.**
 
 There is a second crack, and it is sneakier: **the order of the rules changes the answer.** Look at
-this rulebook — you ran it by hand in class.
+this rulebook — you ran it by hand in class. The block below shows the rules and the price list.
 
 ![Running the vending machine rulebook by hand](../figures/fig-w01-5-vending-trace.svg)
 
 *Figure 1.5 — The rulebook, the price list, and one request traced all the way down. The tick shows
 the line that fired.*
 
-```
+```text
 VENDING MACHINE RULEBOOK — check in order, STOP at the first rule that fires
 
   RULE 1:  IF the code is not on the list   THEN say "UNKNOWN CODE" and return all coins
@@ -292,6 +294,8 @@ properly, using nothing but the test you just learned.
 
 **Step one — does the job need judgement?**
 
+Run the two-people test on each job.
+
 | The job | Could two sensible people disagree? | Judgement? |
 |---|---|---|
 | Thermostat: *is 19 lower than 20?* | No. Never. Not once in ten years. | ❌ |
@@ -311,8 +315,8 @@ You can't. Nobody can. **And that is the actual answer to the question in the ho
 
 > **🔑 So here it is:** the thermostat is **just following orders** — a person's orders, written in
 > advance, and you can read every one of them. AlphaGo is doing the genuinely interesting thing,
-> **because nobody wrote its move-judging rules.** It learned them from human games and from playing itself. That is the second way, and it
-> is next week.
+> **because nobody wrote its move-judging rules.** It learned them from human games and from playing itself.
+> That is the second way, and it is next week.
 
 **Now check your word.** If you wrote ALPHAGO — good instinct, and now you can say *why*, which is
 the part that counts. If you wrote THERMOSTAT — you were in excellent company, because "it decides
@@ -329,7 +333,7 @@ to that phrase — it is the honest version of almost every AI headline you will
 
 ## 🔍 Worked Examples
 
-Three of them. Read each one with a pencil in your hand and try to be one step ahead of me.
+This section works through three examples. Read each one with a pencil in your hand and try to be one step ahead of me.
 
 ### 🍫 Worked Example 1 (food) — trace the vending machine, twice
 
@@ -400,9 +404,9 @@ value, and two sensible fans can rate the same shot differently.
 
 ### 🏫 Worked Example 3 (school) — a rulebook that quietly ruins a morning
 
-Here is a real kind of rulebook: the one that decides your attendance mark.
+Here is a real kind of rulebook: the one that decides your attendance mark. The rulebook is in the block below.
 
-```
+```text
 LATE-MARK RULEBOOK — check in order, STOP at the first rule that fires
 
   RULE 1: IF the name is not on the register    THEN "UNKNOWN NAME", send to the office
@@ -499,7 +503,7 @@ Print or copy the vending machine rulebook and price list from §4 above. Then:
    down the stupid answer.
 3. Run all eight requests. Write each answer as **"Rule ___ fires → the machine does ___"**.
 
-```
+```text
 THE EIGHT REQUESTS
   1.  Code A1, 30p inserted        5.  Code B2, 60p inserted
   2.  Code A2, 45p inserted        6.  Code B1, 25p inserted
@@ -604,7 +608,7 @@ Six places this week's idea is already sitting in your life:
    considered whether the lesson was finished.
 3. **Automatic shop doors.** `IF something moves THEN open`. You know they aren't judging anything,
    because they open for a stray cat and for a crisp packet blowing past.
-4. **The red squiggle under a typo.** In the old-style version, that's a word list — rules. Which is exactly why it stays
+4. **The red squiggle under a typo.** In the old-style version, that's a word list — rules. That is exactly why it stays
    silent when you write "I have a pet dot".
 5. **Your spam folder.** Mostly, nobody typed a rule saying *"FREE plus three exclamation marks is
    suspicious"* — and yet it catches wording that didn't exist last year. **Hold that thought. It's
@@ -642,6 +646,8 @@ along the bottom is the six threads every week of this course adds to.*
 
 ## 🔑 Remember This
 
+This section is the short list to keep. Try it from memory first.
+
 > **✅ Before you read the list — close the book and try to say it.**
 >
 > Four things, out loud, from memory: (1) what AI is, in one sentence with no banned words; (2) the
@@ -668,6 +674,8 @@ along the bottom is the six threads every week of this course adds to.*
 ---
 
 ## 📓 New Words
+
+These are this week's four words and what they mean.
 
 ![Week 1's four new words](../figures/fig-w01-8-vocab-icons.svg)
 

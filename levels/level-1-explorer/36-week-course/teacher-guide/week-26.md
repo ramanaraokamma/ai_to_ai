@@ -50,7 +50,7 @@ where the formula is sitting** — not as fixed places, but as directions.
 
 So if you put this in cell `C18`:
 
-```
+```text
    = D2 + D3 + D4
 ```
 
@@ -71,7 +71,9 @@ same sum in its own place.
 
 Here is the formula the student types. It looks frightening. It is three small ideas glued together.
 
-```
+This is the whole formula:
+
+```text
 =MIN(255, ABS((D2+D3+D4)-(B2+B3+B4)) + ABS((B4+C4+D4)-(B2+C2+D2)))
 ```
 
@@ -126,9 +128,9 @@ This is the idea the whole week exists for, and it is provable with two numbers.
 Take a dark object at brightness **40** sitting on a bright wall at **200**. The difference between
 them is **160**.
 
-Now switch a lamp on so that every pixel gets 50 brighter:
+Now switch a lamp on so that every pixel gets 50 brighter. Here are the numbers before and after:
 
-```
+```text
    before:   object  40    wall 200    →   difference = 200 - 40  = 160
    after:    object  90    wall 250    →   difference = 250 - 90  = 160   ← IDENTICAL
 ```
@@ -171,9 +173,11 @@ Back in Week 17 the student trained a Teachable Machine model and then, in Week 
 classic break: photograph everything on the same wooden table, and the model scores beautifully on
 that table and collapses at the sink.
 
-Now you can explain **why**, in pixel language:
+Now you can explain **why**, in pixel language.
 
-Wood grain produces long, straight, strong, repeated edges in every single photo. The object
+Wood grain produces long, straight, strong, repeated edges in every single photo.
+
+The object
 produces a smaller, shorter, wobblier set of edges — and it moves and rotates between shots, while
 the table never does. So one likely reason is that the most reliable edge pattern associated with the label was **the table**,
 and the model learned the table and you gave it the object's name. This is a hypothesis: nobody has
@@ -254,6 +258,8 @@ assessment.
 
 ## 🧰 Prep Checklist
 
+This section lists what to set up and test before class. Most of the work is the night before.
+
 ### 15 minutes, the night before
 
 - [ ] **Open a blank spreadsheet and test three things.** This is the single highest-value ten minutes
@@ -297,6 +303,8 @@ assessment.
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the whole lesson, one segment at a time. The table shows the timings.
+
 | # | Segment | Minutes | Running total |
 |---|---|---|---|
 | 1 | 🪝 Hook — Six cells took you twenty minutes | 8 | 8 |
@@ -333,9 +341,9 @@ assessment.
 
 - Do the divisions on the board, out loud, letting them do the arithmetic. The numbers only land if
   they compute them.
-- Then write the punchline and leave it up:
+- Then write the punchline on the board and leave it up:
 
-```
+```text
    6 cells by hand    =  20 minutes
    100 cells by hand  =  5.5 hours
    100 cells today    =  one drag
@@ -400,9 +408,9 @@ Then the drag:
 - **Demonstrate the drag on something trivial before the real thing.** Type `=B1+1` into `C1`. Type
   numbers into `B1:B5`. Drag `C1` down. Click on `C4` and show them the formula bar: it says `=B4+1`,
   not `=B1+1`. Ten seconds, and it removes all the mystery.
-- Write the three pieces on the board separately, then together:
+- Write the three pieces on the board separately, then together. They look like this:
 
-```
+```text
    V  =  (D2+D3+D4) - (B2+B3+B4)        right col - left col
    H  =  (B4+C4+D4) - (B2+C2+D2)        bottom row - top row
 
@@ -608,9 +616,9 @@ lighting proof, then the model demo.
 **Do this:**
 
 - Screenshot or photograph both grids side by side. That image is the homework evidence.
-- Write the new word on the board with its definition and have them read it back:
+- Write the new word on the board with its definition and have them read it back. It looks like this:
 
-```
+```text
    EDGE MAP  =  the grid of numbers you get after running an edge filter.
                 An outline drawing made of numbers.
 ```
@@ -632,6 +640,8 @@ lighting proof, then the model demo.
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the seven steps of the Pixel Lab in order, with the variations.
 
 ### Pixel Lab
 
@@ -667,9 +677,9 @@ wrong image gives a wrong edge map and you will hunt the bug in the wrong place.
 
 ### Step 3 — One formula (5 min)
 
-Click **C18**. Type exactly:
+Click **C18**. Type this formula exactly:
 
-```
+```text
 =MIN(255, ABS((D2+D3+D4)-(B2+B3+B4)) + ABS((B4+C4+D4)-(B2+C2+D2)))
 ```
 
@@ -747,6 +757,8 @@ Record the score for each. Write one sentence explaining the difference **in edg
 
 ## ❓ Questions Students Ask This Week
 
+This section gives short answers to questions students often ask in this lesson.
+
 **1. "Why do we type the numbers in ourselves? Can't the spreadsheet just open a photo?"**
 
 Not on its own, no — a spreadsheet has no idea how to read a JPEG. Real programs do this with a
@@ -817,6 +829,8 @@ then clip.** The formula does it in that order for you: `ABS` is on the inside, 
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the problems you are most likely to meet, why they happen and what to do.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The whole edge map is zeros | The formula in C18 is pointing at the wrong cells — usually B1 instead of B2, or the grid got typed into A1 instead of B2 | Click C18 and read the formula aloud against the grid position. The formula's *top-left* reference must be `B2`, and `B2` must be the **top-left pixel of the image**. Retype rather than nudge |
@@ -831,6 +845,8 @@ then clip.** The formula does it in that order for you: `ABS` is on the inside, 
 ---
 
 ## 🧭 Differentiation
+
+This section gives ways to make the lab easier or harder for your student.
 
 ### If they are struggling
 
@@ -885,6 +901,8 @@ then clip.** The formula does it in that order for you: `ABS` is on the inside, 
 
 ## ✅ Assessing Understanding
 
+This section gives three checks to ask out loud and a scale for how well your student understood.
+
 ### Check 1 — the machine is not clever
 
 > **Say exactly:** *"Is the spreadsheet doing different maths from you, or the same maths? And how do
@@ -934,6 +952,8 @@ background was in the same place in every photo while the object moved and rotat
 
 ## 📤 Homework to Assign
 
+This section gives the homework, the words to say when you set it, and a map of the workbook.
+
 **Workbook: Week 26, whole workbook** (`workbook/week-26.md`). Expect **50–60 minutes**. The workbook has
 no numbered pages; it has named sections, and the four pieces below are its **Build It** section.
 
@@ -980,9 +1000,11 @@ screen.
 
 ## 🔑 Answer Key
 
+This section holds every answer for the lesson, the workbook and the homework. Keep it away from the student.
+
 ### Part A — the formula, piece by piece
 
-```
+```text
 =MIN(255, ABS((D2+D3+D4)-(B2+B3+B4)) + ABS((B4+C4+D4)-(B2+C2+D2)))
 ```
 
@@ -1002,7 +1024,7 @@ because output = input − 2.
 
 The reference image, for teachers using the Week 25 letter rather than the student's own:
 
-```
+```text
         c1   c2   c3   c4   c5   c6   c7   c8   c9  c10  c11  c12
   r1     0    0    0    0    0    0    0    0    0    0    0    0
   r2     0  255  255  255  255  255  255  255  255  255  255    0
@@ -1018,9 +1040,9 @@ The reference image, for teachers using the Week 25 letter rather than the stude
   r12    0    0    0    0    0    0    0    0    0    0    0    0
 ```
 
-**Recommended check cell: `C18`**, which is the edge value for image pixel `C3`, i.e. cell (3,2).
+**Recommended check cell: `C18`**, which is the edge value for image pixel `C3`, i.e. cell (3,2). The working is below.
 
-```
+```text
    the 3x3 patch = rows 2-4, columns 1-3
 
         c1    c2    c3
@@ -1042,9 +1064,9 @@ The reference image, for teachers using the Week 25 letter rather than the stude
 
 **So `C18` must show 255.** If it does not, the formula is pointing at the wrong cells.
 
-**Second check cell, if you want a zero: `E19`**, the edge value for pixel `E4`, i.e. cell (4,4).
+**Second check cell, if you want a zero: `E19`**, the edge value for pixel `E4`, i.e. cell (4,4). The working is below.
 
-```
+```text
    patch = rows 3-5, columns 3-5.  All nine pixels are 255.
    V = 765 - 765 = 0        H = 765 - 765 = 0
    |V| + |H| = 0     ->    0
@@ -1059,7 +1081,7 @@ Flat ink. Zero. Correct.
 For teachers who want to check a student's whole grid at a glance. Rows are the output rows 18–27
 (image rows 2–11); columns are C to L (image columns 2–11).
 
-```
+```text
         C    D    E    F    G    H    I    J    K    L
   18   255  255  255  255  255  255  255  255  255  255
   19   255    0    0    0    0    0    0    0    0  255
@@ -1103,7 +1125,9 @@ room light, once with a desk lamp 30 cm away. Brightness values on the 0–255 s
 
 **Change in each of the six brightness values:**
 
-```
+The sums are below.
+
+```text
    object 1:  96 - 52 = +44        paper 1:  231 - 188 = +43
    object 2:  92 - 47 = +45        paper 2:  236 - 191 = +45
    object 3: 101 - 55 = +46        paper 3:  228 - 185 = +43
@@ -1113,7 +1137,9 @@ room light, once with a desk lamp 30 cm away. Brightness values on the 0–255 s
 
 **Change in each of the three edge values:**
 
-```
+The average is below.
+
+```text
    average change in edge = (1 + 0 + 3) / 3 = 4 / 3 = 1.3
 ```
 
@@ -1131,7 +1157,7 @@ room light, once with a desk lamp 30 cm away. Brightness values on the 0–255 s
 **Homework 2 — one cell's arithmetic, model answer** (using the reference T and output cell `C21`,
 which is image pixel `C5`, i.e. cell (5,2)):
 
-```
+```text
    1. Output cell: C21.  It is the edge value for image pixel C5 - grid cell (5,2).
 
    2. The nine pixels, rows 4-6, columns 1-3:
@@ -1262,6 +1288,8 @@ A good drawing has all three: (1) background edges drawn **longer and stronger**
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week covers and what to prepare.
 
 Next week is the **Term 3 Checkpoint** — a sixteen-question quiz covering Weeks 19 to 26, marked
 together out loud with the week number written beside each question so you both know exactly what to

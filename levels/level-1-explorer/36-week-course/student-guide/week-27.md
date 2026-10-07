@@ -38,6 +38,8 @@ Today has two halves, and they are not related in the way you'd expect.
 
 ## 🧠 The Big Idea
 
+This section shows how text is chopped into pieces so it can be counted. You need it because everything else this week builds on it.
+
 ### 1. Text is data, so it has to be chopped before it can be counted
 
 Way back in Week 4 you learned the rule that everything since has obeyed: a machine cannot handle "a school day" or "a dog". It can only handle **rows and columns of numbers**.
@@ -63,7 +65,7 @@ There is **no correct slice size.** Only a choice you make on purpose and then s
 
 **The concrete version.** Take this sentence:
 
-```
+```text
    I don't want pizza tonight.
 ```
 
@@ -85,7 +87,7 @@ It follows the same written rule every single time, even when the rule gives a s
 
 These are the six rules we use in this course:
 
-```
+```text
    R1  lowercase everything
    R2  . , ! ?  are each their own token
    R3  contractions stay whole                        don't    isn't
@@ -135,7 +137,7 @@ Students merge these constantly, so read the two definitions side by side:
 - **Token count** = how many pieces you produced. Count every piece, **including repeats**.
 - **Unique token count** = how many *different* pieces there are. Count each distinct piece **once**.
 
-```
+```text
    "I love pizza. Do you love pizza?"
 
    tokens:   i / love / pizza / . / do / you / love / pizza / ?    =  9 tokens
@@ -183,9 +185,11 @@ Almost nothing about the *tools* is new, which is why this course is arranged th
 
 ## 🔍 Worked Examples
 
+Here are three sentences chopped step by step, with the rule named every time.
+
 ### Worked Example 1 — Two sentences about pizza (food)
 
-```
+```text
    I love pizza. Do you love pizza?
 ```
 
@@ -205,13 +209,13 @@ Almost nothing about the *tools* is new, which is why this course is arranged th
 
 **Step 2 — count the tokens.** Count every single piece:
 
-```
+```text
    i / love / pizza / . / do / you / love / pizza / ?        =  9 tokens
 ```
 
 **Step 3 — count the unique tokens.** Go through the list and cross off anything you have already met:
 
-```
+```text
    i            keep
    love         keep
    pizza        keep
@@ -242,7 +246,7 @@ Those two checks are worth doing every single time. If the counts do not add up 
 
 ### Worked Example 2 — Cricket commentary (sport)
 
-```
+```text
    His strike rate was 141.5, wasn't it? His best!
 ```
 
@@ -267,7 +271,7 @@ Four traps in one line: a decimal point, a comma, a contraction, and a repeated 
 
 **Step 2 — the two counts.**
 
-```
+```text
    TOKENS   his / strike / rate / was / 141.5 / , / wasn't / it / ? / his / best / !     =  12
 
    UNIQUE   his appears twice  ->  one repeat
@@ -287,7 +291,7 @@ Check: 2 + 10 = **12** tokens ✓ and 1 + 10 = **11** rows ✓
 
 ### Worked Example 3 — When the rules run out (school)
 
-```
+```text
    Don't forget: bring a pen, a ruler and your book!
 ```
 
@@ -299,7 +303,7 @@ Check: 2 + 10 = **12** tokens ✓ and 1 + 10 = **11** rows ✓
 
 **What do you do?** You do **not** guess, and you do not quietly do whatever feels right. You **write a new rule down** and then you obey it everywhere:
 
-```
+```text
    R7  :  and  ;  are each their own token   (same as R2)
 ```
 
@@ -307,13 +311,13 @@ That is not cheating. That is exactly what a real tokenizer team does — every 
 
 **Step 2 — now chop it properly.**
 
-```
+```text
    don't / forget / : / bring / a / pen / , / a / ruler / and / your / book / !     =  13 tokens
 ```
 
 **Step 3 — the unique count.**
 
-```
+```text
    don't, forget, :, bring, a, pen, ",", ruler, and, your, book, !
 
    `a` appears twice (a pen, a ruler)  ->  one repeat
@@ -323,7 +327,7 @@ That is not cheating. That is exactly what a real tokenizer team does — every 
 
 **Step 4 — now do it again with the punctuation glued on**, so you can see what the choice costs:
 
-```
+```text
    don't / forget: / bring / a / pen, / a / ruler / and / your / book!      =  10 tokens
 
    unique:  don't, forget:, bring, a, pen,, ruler, and, your, book!   ->   9 unique
@@ -342,9 +346,13 @@ Fewer pieces. And look what happened to them: `forget:`, `pen,` and `book!` are 
 
 ## 🎲 What We Did In Class
 
+This section recaps the two parts of class: the checkpoint, then chopping four sentences.
+
 ### Part 1 — The Term 3 checkpoint (18 minutes)
 
-Sixteen short questions, about ten minutes, then marked together out loud. Every question had its **week number** printed beside it, and every wrong answer put that week number onto a sheet in the middle of the table headed **"Weeks to go back to."**
+Sixteen short questions, about ten minutes, then marked together out loud.
+
+Every question had its **week number** printed beside it. Every wrong answer put that week number onto a sheet in the middle of the table headed **"Weeks to go back to."**
 
 That sheet is the entire output of the exercise. A checkpoint that produces a score and nothing else has wasted an hour. A checkpoint that produces a short list of week numbers has done its job.
 
@@ -384,39 +392,43 @@ Draw the cut marks first, as dashed vertical lines. Then draw the numbered token
 
 **Sentence 1 — `I don't want pizza tonight.`**
 
-```
+```text
    i / don't / want / pizza / tonight / .                        6 tokens
 ```
+
 R1 lowercased the `I`. R3 kept `don't` whole. R2 made the full stop its own token.
 
 **Sentence 2 — `Pi is about 3.14, isn't it?`**
 
-```
+```text
    pi / is / about / 3.14 / , / isn't / it / ?                    8 tokens
 ```
+
 This is the one everybody gets wrong first time. **R4 keeps `3.14` whole.** R2 splits off the comma *and* the question mark. R3 keeps `isn't` whole.
 
 Common wrong answers: **7** (comma forgotten), **10** (`3.14` split into three), **9** (`isn't` split).
 
 **Sentence 3 — `My AI-powered pizza-oven is great!`**
 
-```
+```text
    my / ai-powered / pizza-oven / is / great / !                  6 tokens
 ```
+
 R1 lowercases `My` and `AI`. R5 keeps both hyphenated words whole. R2 splits the `!`.
 
 > **🧑‍🏫 If you noticed that `AI` losing its capitals is a real loss** — you are right, and well spotted. `AI` is a name, and the capitals carried information. That is precisely the trade in the R1 row of the table above. We pay it on purpose.
 
 **Sentence 4 — `Pizza 🍕 again? Yes!`**
 
-```
+```text
    pizza / 🍕 / again / ? / yes / !                                6 tokens
 ```
+
 R1 on `Pizza` and `Yes`. R6 makes the emoji its own token. R2 splits `?` and `!`.
 
 ### The two counts, across all four
 
-```
+```text
    TOKENS PER SENTENCE
    1.  i don't want pizza tonight .                       6
    2.  pi is about 3.14 , isn't it ?                       8
@@ -436,7 +448,7 @@ R1 on `Pizza` and `Yes`. R6 makes the emoji its own token. R2 splits `?` and `!`
 
 The full list of 22, in order of first appearance:
 
-```
+```text
    i, don't, want, pizza, tonight, .,
    pi, is, about, 3.14, ",", isn't, it, ?,
    my, ai-powered, pizza-oven, great, !,
@@ -450,6 +462,8 @@ Count them: 6 + 8 + 5 + 3 = **22.** ✓
 ---
 
 ## 💬 Talk About It
+
+Use these three questions to check you can explain the week out loud.
 
 **1. "Corpus, token, tokenize. Give me each one in under ten words."**
 
@@ -466,6 +480,8 @@ Count them: 6 + 8 + 5 + 3 = **22.** ✓
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four wrong ideas people often have about tokens, each with the right idea beside it.
 
 ### Trick 1 — "There's a right answer for how to chop"
 
@@ -506,6 +522,8 @@ The instant cure, and it takes three seconds: `pizza pizza pizza`. **Three token
 
 ## 🌍 Where You've Seen This
 
+Tokens are not only a classroom idea. Here are six places they already show up.
+
 1. **The word count at the bottom of a document.** That is a tokenizer, and somebody had to decide whether `pizza-oven` is one word or two. Different programs give you different numbers for the same document, and now you know exactly why.
 2. **Searching for a word on a web page.** Search for `pizza` and it finds `Pizza` too. Somebody applied R1 before comparing.
 3. **A word cloud.** The biggest word in the middle is almost always something like `the`, unless whoever made it deliberately threw the common words away first. That is a frequency table with the boring rows deleted.
@@ -542,6 +560,8 @@ the first time you turned a picture into numbers.*
 
 ## 🔑 Remember This
 
+These are the six things to keep from this week.
+
 - **A machine cannot handle "a sentence" any more than it can handle "a dog".** It needs numbers in a table. So the very first thing anybody does with text — before any of the impressive stuff — is chop it into pieces and count them.
 - **A tokenizer is not clever, it is consistent.** Write the rules down first, and then obey them even when you don't like the answer.
 - **Punctuation is a token.** So is an emoji. Being a word was never the requirement — carrying meaning is.
@@ -552,6 +572,8 @@ the first time you turned a picture into numbers.*
 ---
 
 ## 📓 New Words
+
+These are the three new words for this week.
 
 ![This week’s three words](../figures/fig-w27-9-vocab-icons.svg)
 *Figure 27.10 — This week's three words, drawn.*
@@ -577,7 +599,9 @@ Go to **[the Week 27 workbook](../workbook/week-27.md)**. About **50 minutes** i
 
 > **⚠️ Watch out:** on page 27.2, "I learned about pixels" is **not** an answer. Start every one with the words **"I can"**, and get a number into at least one of them. *"I can work out that a 12×12 image with a 3×3 filter gives a 10×10 output, and say why"* — that is the standard.
 
-**Keep your paragraph.** Next week uses the **same** one, and re-tokenizing from scratch would cost you twenty minutes you would rather spend on the interesting part. Next week you count something new in it: not how often each word turns up, but **which word tends to follow which** — which is the basic idea behind the thing on a phone that finishes your sentences (real phones use bigger, cleverer versions of it).
+**Keep your paragraph.** Next week uses the **same** one. Re-tokenizing from scratch would cost you twenty minutes you would rather spend on the interesting part.
+
+Next week you count something new in it: not how often each word turns up, but **which word tends to follow which** — which is the basic idea behind the thing on a phone that finishes your sentences (real phones use bigger, cleverer versions of it).
 
 ---
 

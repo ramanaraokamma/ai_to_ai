@@ -61,6 +61,8 @@ Hold that feeling in your fingers. It is the whole lesson.
 
 ## 🧠 The Big Idea
 
+This section explains checks, doubling, and the machine learning trade, one idea at a time.
+
 ### 1. A check is a yes/no question — and each new one doubles your work
 
 A computer program that just follows instructions is built out of **checks**.
@@ -113,9 +115,9 @@ This is the fact I want you to still know when you are thirty.
 >
 > **Check 30, on its own, creates more new work than all twenty-nine checks before it, combined. By exactly one.**
 
-Here is the working, so you can believe it rather than just be told it:
+Here is the working, so you can check it yourself:
 
-```
+```text
 Before you ask any question at all, there is 1 situation ("nothing asked yet").
 
 After 29 checks:   2^29 = 536,870,912 situations
@@ -133,9 +135,9 @@ And here is the part that makes it useful rather than just weird: **this is true
 
 ### 3. Where the number 258 comes from
 
-The title of this week is not made up. Here it is:
+The title of this week is not made up. Here is the count:
 
-```
+```text
 8 yes/no checks                       ->  2^8 = 256 situations
 a rulebook that covers all of them    ->  256 rules
 plus one DEFAULT line ("otherwise...")       + 1
@@ -153,7 +155,7 @@ Now sit with how small eight is. You can hold eight questions in your head while
 
 **Real numbers for the boring part.** Suppose you are fast, and you can write one carefully-thought-out rule every 2 minutes. You work 8 hours a day, 250 days a year. How long to write the rulebook for **20** checks?
 
-```
+```text
 20 checks         = 1,048,576 situations
 x 2 minutes each  = 2,097,152 minutes
 / 60              =    34,952.5 hours
@@ -227,6 +229,8 @@ The row that decides the whole argument is **"effort grows by adding"**. Collect
 
 ## 🔍 Worked Examples
 
+Three short stories, from food, sport and school, that use the ideas above with real numbers.
+
 ### Worked Example 1 — Pizza night (food)
 
 Your family is ordering pizza. There are **6 toppings** available and each one is a yes/no choice: cheese, onion, capsicum, corn, paneer, olives.
@@ -235,7 +239,7 @@ Your family is ordering pizza. There are **6 toppings** available and each one i
 
 Each topping is a check with two answers — on, or off.
 
-```
+```text
 1 topping  : 2
 2 toppings : 2 x 2 = 4
 3 toppings : 4 x 2 = 8
@@ -254,7 +258,7 @@ Why? Because every one of the 64 pizzas you could already make now comes in two 
 
 **Question C: the shop wants a printed price card with a line for every possible pizza. At 2 minutes a line, with 10 toppings, how long?**
 
-```
+```text
 10 toppings       = 2^10 = 1,024 pizzas
 x 2 minutes       = 2,048 minutes
 / 60              = 34.1 hours
@@ -274,7 +278,7 @@ Aarav is captain. He decides to write a rulebook for the toss, so he never has t
 4. Is the opposition's best bowler playing?
 5. Are we chasing well this season?
 
-```
+```text
 5 checks = 2^5 = 32 situations
 ```
 
@@ -282,13 +286,13 @@ Thirty-two. That is a page. Aarav writes all 32 lines in an hour and he is delig
 
 **Round 2 — the season goes on and he keeps finding things his rulebook got wrong.** So he adds five more checks: wind direction, whether the outfield is wet, whether the match is 20 overs or 50, whether their keeper is fit, and what time the match starts.
 
-```
+```text
 10 checks = 2^10 = 1,024 situations
 ```
 
 **Question: how many extra situations did those five extra checks make?**
 
-```
+```text
 1,024 - 32 = 992 extra situations
 ```
 
@@ -296,7 +300,7 @@ Five more questions created **992** new situations — thirty-one times more tha
 
 **Question: what does check 11 alone add?**
 
-```
+```text
 2^11 = 2,048
 2,048 - 1,024 = 1,024
 ```
@@ -323,7 +327,7 @@ Each rule is sensible and each one breaks immediately. So she considers going bi
 
 **How big?** Suppose she could get it right with 12 careful checks.
 
-```
+```text
 12 checks         = 2^12 = 4,096 situations
 x 2 minutes each  = 8,192 minutes
 / 60              = 136.5 hours
@@ -334,7 +338,7 @@ x 2 minutes each  = 8,192 minutes
 
 **Attempt 2 — the trade.** She stops writing rules. Instead:
 
-```
+```text
 300 photos, each with a yes/no answer written next to it
 x 10 seconds to label each one
 = 3,000 seconds
@@ -371,9 +375,9 @@ Take one A4 sheet. Fold it in half as many times as you physically can. Count th
 | 6 | 64 | 32 × 2 |
 | 7 | 128 | 64 × 2 |
 
-Then answer the big one out loud: **how thick would the paper be after 30 folds?**
+Then answer the big one out loud: **how thick would the paper be after 30 folds?** Here is the working:
 
-```
+```text
 2^30 = 1,073,741,824 layers
 x 0.1 mm  = 107,374,182.4 mm
           = 107,374.18 metres
@@ -437,9 +441,9 @@ Then open the envelope and score all ten, first match wins, top to bottom:
 
 *(Those are the model messages. Yours will be different — the shape of the result usually won't be.)*
 
-Then the arithmetic:
+Then do the arithmetic. This is the model result:
 
-```
+```text
 Training accuracy = 19 correct out of 20 = 0.95 = 95%
 Fresh accuracy    =  8 correct out of 10 = 0.80 = 80%
 The gap           = 95 - 80 = 15 percentage points
@@ -455,7 +459,7 @@ Misses            = 1   (message 27 — spam that got through)
 
 ## 💬 Talk About It
 
-Take these to a parent, a sibling or a friend. Their first answer is usually wrong in an interesting way.
+These questions are for a parent, a sibling or a friend. Their first answer is usually wrong in an interesting way.
 
 **1. "If I fold a sheet of paper thirty times, how thick is it?"**
 Let them guess before you tell them. Almost everyone says something between "a book" and "as tall as me".
@@ -472,6 +476,8 @@ This one is harder than it sounds and it is the question that stops you turning 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that sound sensible, each shown next to the right idea.
 
 ### Trick 1 — "One more check adds one more situation"
 
@@ -514,6 +520,8 @@ Labelling five thousand messages is hours of dull work, and every mistake in it 
 
 ## 🌍 Where You've Seen This
 
+These are places in everyday life where the same ideas show up.
+
 1. **Pizza and burger menus.** Nobody lists every possible combination. They list toppings and charge per topping — a shortcut that dodges the explosion and gives up combo pricing to do it.
 2. **Spam folders on a phone.** In the 1990s these really were hand-written rulebooks, and they really did get beaten by people writing "FR33". Most of the ones you use today learn from labelled examples instead (usually with a few hand-written rules added on top).
 3. **A school timetable.** Try writing rules that satisfy every teacher, room, class and lunch break. Every extra requirement can multiply what has to be checked, which is exactly why timetabling is famously the worst job in the school.
@@ -551,6 +559,8 @@ reason the nine tiles on the right-hand branch exist, and next week the year cro
 
 ## 🔑 Remember This
 
+The main points of the week, in one list.
+
 - **A check is a yes/no question. n checks give 2ⁿ situations.** That is the whole arithmetic of the week.
 - **Check number n always adds more work than checks 1 to n−1 combined** — by exactly one. You are always only halfway.
 - **8 checks = 256 situations = 258 rulebook lines**, and eight checks is nothing at all.
@@ -561,6 +571,8 @@ reason the nine tiles on the right-hand branch exist, and next week the year cro
 ---
 
 ## 📓 New Words
+
+These are the words this week introduced, with an example for each.
 
 ![Week 10 words as pictures](../figures/fig-w10-8-vocab-icons.svg)
 *Figure 10.8 — This week's four words, drawn.*

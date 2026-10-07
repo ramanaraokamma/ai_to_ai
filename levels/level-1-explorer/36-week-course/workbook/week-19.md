@@ -34,6 +34,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check the words and the steps of a split.
+
 **A1. Fill in the blanks.**
 
 The pile of examples the model is allowed to study is called the ____________________ ____________________.
@@ -46,7 +48,7 @@ How you divided them, written as train / test, is called the ___________________
 
 **A2. Multiple choice.** When must the split happen? Circle one.
 
-```
+```text
    (a)  after training, so the model has learned as much as possible
    (b)  before training, before the model has seen anything
    (c)  during training, halfway through
@@ -83,7 +85,7 @@ ________________________________________________________________
 
 **A6. Do the arithmetic.** 40 photos, 80/20 split. Show all three lines, including the check.
 
-```
+```text
    test  = 0.20 x 40 = ____________
 
    train = 40 - ____ = ____________
@@ -95,9 +97,11 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+These questions use splits on photo sets and on made-up situations.
+
 **B1.** You have **60 photos** — 20 each of `mug`, `glass`, `bowl`. You decide on a **90/10** split, per class.
 
-```
+```text
    per class:   test  = 0.10 x 20 = ____________
                 train = 20 - ____ = ____________
 
@@ -167,6 +171,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is about five sealed envelopes.
+
 ![The envelope line-up puzzle](../figures/fig-w19-11-puzzle-envelope-lineup.svg)
 *Figure W19.2 — Five envelopes, A to E. Only one of them was sealed honestly. Find the four faults first.*
 
@@ -191,6 +197,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions have no single clean answer. Argue for one side.
 
 **T1.** A doctor has records for **12 patients** with a very rare illness. She wants to build a model that spots it. Hiding 20% means hiding **2** patients — and a test of two measures almost nothing. What should she do? There is no clean answer, so argue for one and say what it costs.
 
@@ -220,13 +228,15 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+Here you do the splitting arithmetic, write up the cheats, and log your own photo sets.
+
 ### Page 19.1 — Five splitting problems
 
 **The rule: show the multiplication and show the check, every time.** If the answer isn't a whole number, say which way you rounded **and why** — that's the marked part, not the number.
 
 **(a) 3 classes, 30 photos each (90 total), 80/20.**
 
-```
+```text
    per class:  test  = ______________     train = ______________
 
    totals:     test  = ______________     train = ______________
@@ -236,7 +246,7 @@ ________________________________________________________________
 
 **(b) 3 classes, 25 photos each (75 total), 80/20.**
 
-```
+```text
    per class:  test  = ______________     train = ______________
 
    totals:     test  = ______________     train = ______________
@@ -246,7 +256,7 @@ ________________________________________________________________
 
 **(c) 4 classes with 50, 50, 50 and 18 photos (168 total), 80/20.**
 
-```
+```text
    class 1:  ______________ test,  ______________ train
    class 2:  ______________ test,  ______________ train
    class 3:  ______________ test,  ______________ train
@@ -265,7 +275,7 @@ ________________________________________________________________
 
 **(d) 2 classes, 200 photos each (400 total), 80/20.**
 
-```
+```text
    per class:  test  = ______________     train = ______________
 
    totals:     test  = ______________     train = ______________
@@ -281,7 +291,7 @@ ________________________________________________________________
 
 **(e) 3 classes, 12 photos each (36 total), 80/20.**
 
-```
+```text
    per class:  0.20 x 12 = ______  →  I rounded to ______ test,  ______ train
 
    totals:  test = ______________     train = ______________
@@ -291,7 +301,7 @@ ________________________________________________________________
 
 Now the honest bit. Work out your **real** split ratio:
 
-```
+```text
    ______ ÷ ______ = ____________ = ______%     →  so the real ratio is ______ / ______
 ```
 
@@ -320,7 +330,7 @@ The fix: _______________________________________________________
 
 **Two sessions. Two different days.** Fill this in as you go, not afterwards.
 
-```
+```text
    SESSION 1  —  date: ______________   time: ________   place: ________________
 
                  light: ________________   surface: ________________
@@ -343,14 +353,14 @@ The fix: _______________________________________________________
 
 **What I changed for session 2** — tick every one you actually did:
 
-```
+```text
    ☐ different day        ☐ different room       ☐ different light
    ☐ different surface    ☐ different hand       ☐ different distance
 ```
 
 **The arithmetic:**
 
-```
+```text
    split ratio:  ______ ÷ ______ = ____________ = ______%   →  ______ / ______
 
    check: ______ + ______ = ______   ✓
@@ -358,7 +368,7 @@ The fix: _______________________________________________________
 
 **The seal:**
 
-```
+```text
    Sealed and signed on: ______________
 
    Signature crosses the flap?     ☐ yes    ☐ no  (if no, do it again)
@@ -392,6 +402,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+Here you draw your own split as a picture.
+
 Draw your **own** split — from the photos you took, through the split, to the sealed envelope. Show the two piles at their real relative sizes (the training pile should look obviously bigger), and write your numbers on it.
 
 ![Draw It frame for Week 19](../figures/fig-w19-12-draw-frame.svg)
@@ -405,7 +417,7 @@ Draw your **own** split — from the photos you took, through the split, to the 
 
 ## 📊 Self-Check
 
-Tick one box per row. Be honest — this page is for you, not for marking.
+Tick one box per row. This page is for you, not for marking.
 
 | I can... | 😀 easily | 🙂 with a bit of thought | 😕 not yet |
 |---|:--:|:--:|:--:|
@@ -419,6 +431,8 @@ Tick one box per row. Be honest — this page is for you, not for marking.
 ---
 
 ## ✅ Answers
+
+Check your work here after you finish the pages above.
 
 <details>
 <summary>Check your answers</summary>
@@ -453,7 +467,7 @@ Hiding more photos gives you a **better measurement** of a **worse model**. Ever
 
 **A5.** The six steps, in order:
 
-```
+```text
    1. collect  →  2. split  →  3. SEAL  →  4. train  →  5. open the envelope  →  6. score
 ```
 
@@ -461,7 +475,7 @@ The decoy word is **delete**. The step to circle is **3, seal** — because step
 
 **A6.**
 
-```
+```text
    test  = 0.20 x 40 = 8
 
    train = 40 - 8    = 32
@@ -475,7 +489,7 @@ If you got 8 and 32 but did not write the check line without being asked — wri
 
 **B1.**
 
-```
+```text
    per class:   test  = 0.10 x 20 = 2
                 train = 20 - 2    = 18
 
@@ -559,22 +573,26 @@ We measure exactly this in **Week 31** and **Week 33** — so if this question b
 ### Build It — Page 19.1
 
 **(a) 3 classes × 30 (90 total), 80/20.**
-```
+
+```text
    per class:  test  = 0.20 x 30 = 6      train = 30 - 6 = 24
    totals:     test  = 6 x 3  = 18        train = 24 x 3 = 72
    check:      18 + 72 = 90     ✓
 ```
+
 No rounding needed.
 
 **(b) 3 classes × 25 (75 total), 80/20.**
-```
+
+```text
    per class:  test  = 0.20 x 25 = 5      train = 25 - 5 = 20
    totals:     test  = 15                 train = 60
    check:      15 + 60 = 75     ✓
 ```
 
 **(c) 4 classes: 50, 50, 50, 18 (168 total), 80/20.**
-```
+
+```text
    class 1:  0.20 x 50 = 10 test,  40 train
    class 2:  0.20 x 50 = 10 test,  40 train
    class 3:  0.20 x 50 = 10 test,  40 train
@@ -590,7 +608,8 @@ No rounding needed.
 **The second problem with class 4:** it has **18 photos against the others' 50**. That is a **class imbalance** (Week 16), and it will hurt this model however the split is done. Note carefully: the split arithmetic above is *correct*. It is the **collection** that needs fixing — go and take about 32 more photos of class 4. Two separate problems, and keeping them separate is the skill.
 
 **(d) 2 classes × 200 (400 total).**
-```
+
+```text
    80/20:  per class  test = 0.20 x 200 = 40,   train = 160
            totals     test = 80,                train = 320
    check:  80 + 320 = 400     ✓
@@ -605,7 +624,8 @@ No rounding needed.
 **The point:** the right ratio depends on **the question you're asking**, not on a rule.
 
 **(e) 3 classes × 12 (36 total), 80/20.**
-```
+
+```text
    per class:  0.20 x 12 = 2.4  →  round UP to 3 test,  12 - 3 = 9 train
    totals:     test = 9,   train = 27
    check:      9 + 27 = 36     ✓
@@ -613,7 +633,7 @@ No rounding needed.
 
 **The honest part, and full marks if you got this even if the rest was shaky:**
 
-```
+```text
    3 ÷ 12 = 0.25 = 25%       →  the real ratio is 75 / 25, NOT 80 / 20
 ```
 
@@ -649,7 +669,7 @@ Frames, sessions, tweaking rounds and single objects are four different ways tha
 
 **Model answer:**
 
-```
+```text
    SESSION 1  —  Saturday 14th, 3pm, kitchen table, afternoon daylight
                  spoon 20 · toothbrush 20 · comb 20      total 60   → folder TRAIN
 

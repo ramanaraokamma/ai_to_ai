@@ -8,7 +8,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week** — building the model. Notebook closed.
+This warm-up checks what you remember from **last week**, when you built the model. Keep your notebook closed.
 
 **W1.** Your class counts are 44 / 40 / 36. Do the balance check and say whether you may train.
 
@@ -37,6 +37,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Understand It
+
+These questions check that you understand this week's ideas.
 
 **A1. Fill in the blanks.**
 
@@ -125,6 +127,8 @@ Now list **six** things you must hold fixed (tape down) while you turn one knob:
 
 ## ✍️ Practice Set B — Use It
 
+These questions ask you to use the ideas on new situations.
+
 **B1. What would go wrong?** Your friend says: *"Four experiments takes ages. I'll do the 5-photo one and the blurry one together — that's one retrain instead of two."*
 
 (a) What will he be able to conclude from his result?
@@ -163,7 +167,7 @@ ________________________________________________________________
 
 **B3. Term 2 review — the sneaky column.** Somebody is building a model to tell apples from oranges from pears, and one of their table columns is:
 
-```
+```text
    sticker_says  =  APPLE
 ```
 
@@ -223,7 +227,9 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
-Four damaged models. You are told only their **results** — you have to work out which sabotage was done to each. Each sabotage was used exactly **once**.
+This puzzle is a detective game. Four models were damaged. You are told only their **results**.
+
+Work out which sabotage was done to each one. Each sabotage was used exactly **once**.
 
 ![Puzzle: which sabotage was it?](../figures/fig-w18-11-puzzle-whodunnit.svg)
 *Figure W18.2 — Four results, four sabotages, one each. Give a reason for every answer.*
@@ -246,6 +252,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions need a written paragraph each.
 
 **T1.** You cannot just read the answer off the numbers inside a model — not you, not the people who built Teachable Machine.
 
@@ -285,9 +293,13 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+Here you record your own experiment results and explain them. There are three parts.
+
 ### Part 1 — The five-row results table (15 min)
 
-Copy **row 0** across from your Week 17 baseline table. Do **not** re-measure it — re-measuring would change a variable.
+Copy **row 0** across from your Week 17 baseline table.
+
+Do **not** re-measure it. Re-measuring would change a variable.
 
 Test items, in the **same order every single run**: ____________ , ____________ , ____________ , ____________ , ____________
 
@@ -310,7 +322,11 @@ Test items, in the **same order every single run**: ____________ , ____________ 
 
 ### Part 2 — One explanation per row (25 min)
 
-Every row gets **three** things: the sentence frame filled in, whether your prediction was right, and — if it was wrong — what you'd predict next time.
+Every row gets **three** things:
+
+1. the sentence frame filled in
+2. whether your prediction was right
+3. if it was wrong, what you'd predict next time
 
 > **The frame, and you must use it:** *"The margin fell from ______ to ______ because ______."*
 >
@@ -362,9 +378,9 @@ ________________________________________________________________
 
 ________________________________________________________________
 
-The arithmetic: a model that never says "comb" gets
+The arithmetic: a model that never says "comb" gets (fill in the blanks):
 
-```
+```text
    ________ + ________ + ________  =  ________  correct
 
    out of  ________ + ________ + ________  =  ________  photos
@@ -382,7 +398,9 @@ ________________________________________________________________
 
 **Three things you can do now that you could not do in Week 10.**
 
-Not "I learned about AI." Not "I got better at computers." **Three specific things you can DO**, each with an example that has numbers or names in it.
+Not "I learned about AI." Not "I got better at computers."
+
+Write **three specific things you can DO**. Give each one an example with numbers or names in it.
 
 **1. I can** ______________________________________________________
 
@@ -418,6 +436,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This section is for showing your idea as a picture.
+
 **Your task:** draw **what your model was really looking at.**
 
 Draw the same object twice — once where the model gets it right, and once where it gets it wrong — and make it obvious what changed. You must label: the object, what changed, the readout in each case, and (your best guess) the thing the model was actually keying on.
@@ -430,6 +450,8 @@ Draw the same object twice — once where the model gets it right, and once wher
 ---
 
 ## 📊 Self-Check
+
+Tick one box on each row to show how sure you feel.
 
 | I can… | 😀 easily | 🙂 with a bit of thought | 😕 not yet |
 |---|:--:|:--:|:--:|
@@ -449,6 +471,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Use this section to mark your own work, after you have finished everything above.
 
 <details>
 <summary>Check your answers</summary>

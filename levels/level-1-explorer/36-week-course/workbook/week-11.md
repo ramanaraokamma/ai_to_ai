@@ -36,6 +36,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check the words from this week's chapter.
+
 **A1. Fill in the blanks.**
 
 A **feature** is one ____________________ description of one example. It is one ____________________ in your table.
@@ -117,6 +119,8 @@ Pick **one** from the "Not yet" column and fix it:
 
 ## ✍️ Practice Set B — Use It
 
+These questions use this week's words on tables and situations.
+
 **B1. Same table, three questions.** Here is a record of four school days.
 
 | id | sleep_hours | screen_minutes | homework_minutes | mood_1to5 | felt_tired |
@@ -140,7 +144,7 @@ What changed about the table between the three rows above? ____________________
 
 **B2. Write three measuring instructions.** You are describing **school bags**. Each instruction needs a **tool (or a fixed list)**, a **unit**, and a **rounding**.
 
-```
+```text
 f1  height_cm     ____________________________________________________
 
 f2  mass_g        ____________________________________________________
@@ -196,7 +200,7 @@ ________________________________________________________________
 
 **B5. Mark somebody else's work.** Here is a feature sheet handed in by another student. Find **three** faults and write the fix.
 
-```
+```text
 FEATURE SHEET
 label question: which drink bottle is it?
 
@@ -219,6 +223,8 @@ ________________________________________________________________
 ---
 
 ## 🧩 Puzzle of the Week
+
+This puzzle uses a small table of four spoons.
 
 ![Four spoons, four measurements each](../figures/fig-w11-10-puzzle-four-spoons.svg)
 *Figure W11.2 — Four spoons. Four columns each.*
@@ -264,6 +270,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions ask you to write longer answers.
+
 **T1.** Somebody chose the six features that describe the dog: mass, shoulder height, ear length, coat colour, white paws, tail length. Breed, age, name and temperament were left off.
 
 Write a paragraph about what that choosing means. Was anything *lost*? Who is responsible for what got left off? Can the machine ever find out what it's missing?
@@ -304,6 +312,8 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+In these pages you build your own feature table and test it with an adult.
+
 ### Page 11.4 — The kitchen feature table
 
 **Step checklist. Tick in order, and don't skip ahead.**
@@ -317,13 +327,13 @@ ________________________________________________________________
 
 **My label question:**
 
-```
+```text
 label question: ______________________________________________________
 ```
 
 **My five measuring instructions:**
 
-```
+```text
 f1  ________________    ____________________________________________
 
 f2  ________________    ____________________________________________
@@ -413,6 +423,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for a drawing of one object and its features.
+
 Draw **one object from your own home** with six measurable features called out on leader lines. Then fill in the three boxes underneath: the tool, the unit, the rounding — for whichever feature you think is hardest to measure honestly.
 
 ![Draw It frame for Week 11](../figures/fig-w11-11-draw-frame.svg)
@@ -425,6 +437,8 @@ Draw **one object from your own home** with six measurable features called out o
 ---
 
 ## 📊 Self-Check
+
+Tick the face that matches how you feel about each line.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -518,7 +532,7 @@ Model fix: `feels nice to hold` → `handle_width_cm` — ruler across the handl
 
 **B2.** Model answers:
 
-```
+```text
 f1  height_cm      ruler, floor to the top of the closed main zip, bag standing
                    upright and empty, nearest 0.5 cm
 f2  mass_g         kitchen or luggage scale, bag completely empty, all pockets
@@ -612,7 +626,7 @@ f3  pockets_count  count every opening that closes with a zip, popper or velcro,
 
 **Page 11.4 — model answer**, using five drinking bottles:
 
-```
+```text
 FEATURE SHEET
 label question: water bottle / flask / juice bottle / baby bottle / sports bottle?
 

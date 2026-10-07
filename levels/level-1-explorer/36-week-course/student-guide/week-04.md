@@ -21,7 +21,7 @@
 
 Twelve scraps of paper are scattered across the table in front of you. Somebody has scribbled one fact on each one, in no order at all:
 
-```
+```text
 pencil 6 g      book 26 cm      bottle blue     ball 45 g
 book 340 g      ball 22 cm      pencil 18 cm    book blue
 bottle 500 g    pencil yellow   bottle 22 cm    ball pink
@@ -31,9 +31,9 @@ Here is your question. **Which of those four things is the heaviest, and how muc
 
 Go on. Actually try it. Time yourself.
 
-If you are like almost everybody, that took you somewhere between forty and ninety seconds, and you had to check at least one thing twice. Your eyes went hunting all over the table. You found `bottle 500 g` and then had to go looking for the other weights to make sure nothing beat it. Then you had to start again for the lengths.
+If you are like almost everybody, that took you somewhere between forty and ninety seconds. You had to check at least one thing twice. Your eyes went hunting all over the table. You found `bottle 500 g` and then had to go looking for the other weights to make sure nothing beat it. Then you had to start again for the lengths.
 
-Now look at the same twelve facts written like this:
+Now look at the same twelve facts written like this. Try the same question again:
 
 | object | grams | cm | colour |
 |---|---|---|---|
@@ -51,17 +51,21 @@ Read that caption again, because it is the whole point. **Nobody added any infor
 
 And here is the part that matters for this whole course.
 
-You are a human being. You can read messy handwriting, you can guess what a scribble means, you can hold four things in your head at once. You still needed a minute.
+You are a human being. You can read messy handwriting and guess what a scribble means. You can hold four things in your head at once. You still needed a minute.
 
 **A computer cannot sensibly do the pile.** It cannot look at a heap of notes and work out which fact belongs to which object. The classic kind of machine learning, the kind you will build in this course, needs the shape on the right: rows and columns.
 
-Even the big systems that learn from photos and raw text first turn them into numbers, and a person chose how. So whether it is the one choosing your next video, the one flagging spam texts, or the one helping a doctor read a scan, someone decided how the world gets written down. For what you build here, that means turning a pile into that shape.
+Even the big systems that learn from photos and raw text first turn them into numbers, and a person chose how. Think of the one choosing your next video, the one flagging spam texts, or the one helping a doctor read a scan. Someone decided how the world gets written down for each of them.
+
+For what you build here, that means turning a pile into that shape.
 
 That shape is called a **table**. This week you are going to make one out of the contents of a bag.
 
 ---
 
 ## 🧠 The Big Idea
+
+This section explains what data is, what the four parts of a table are called, and why choosing the row matters. Read it with a pencil in your hand.
 
 ### 1. Nothing is data until somebody writes it down
 
@@ -244,6 +248,8 @@ Every limitation you will meet for the rest of this year starts right here, in t
 
 ## 🔍 Worked Examples
 
+Three examples show the ideas at work, one each from food, sport and school. Follow the steps in each one.
+
 ### Worked Example 1 — Fixing a broken pizza table (food)
 
 A pizza shop hands you this. They are proud of it.
@@ -389,6 +395,8 @@ Check the total: 110 + 35 + 25 = **170**, and the six original rows add to 35 + 
 
 ## 🎲 What We Did In Class
 
+This section is the backpack activity from class, step by step. You can redo it at home.
+
 ### Turn the Backpack Into a Table
 
 You can redo all of this at home in about twenty minutes. You need: a bag or a kitchen drawer with **at least eight objects** in it, a kitchen scale that reads grams, a 30 cm ruler, and a sheet of paper.
@@ -410,7 +418,7 @@ You win that argument the moment you name a question the pocket table cannot ans
 
 Write it at the top of your sheet, in capitals, before anything else:
 
-```
+```text
 ONE ROW = ONE OBJECT
 ```
 
@@ -438,7 +446,7 @@ Rules:
 - If something genuinely cannot be measured — a crumb, a weightless bus ticket — **swap it for another object** rather than inventing a number. Choosing measurable examples is itself a real data decision.
 - Fill the table going **across**, one whole object at a time. Not down one column and then down the next.
 
-Here is what a finished sheet looks like:
+Here is what a finished sheet looks like. Yours will have different objects:
 
 | object | grams | length_cm | pocket |
 |---|---|---|---|
@@ -457,9 +465,9 @@ Eight rows, four columns, thirty-two cells, no blanks.
 
 ### Step 4 — Rewrite it with a different row unit (2 minutes)
 
-Turn the sheet over. Same objects, brand new table.
+Turn the sheet over. Same objects, brand new table. Write this line at the top first:
 
-```
+```text
 ONE ROW = ONE POCKET
 ```
 
@@ -469,7 +477,7 @@ ONE ROW = ONE POCKET
 | front | 3 | 63 |
 | side | 2 | 760 |
 
-Check the arithmetic yourself:
+Check the arithmetic yourself. Each line adds up one part of the table:
 
 - main: 380 + 640 + 210 = **1230**
 - front: 6 + 12 + 45 = **63**
@@ -493,6 +501,8 @@ Check the arithmetic yourself:
 
 ## 💬 Talk About It
 
+These are questions to talk over with someone at home. Each one has a hint to help you answer.
+
 **1. "I've got a drawer of stuff. What should one row be?"**
 *Hint for you:* it is a trick question, and the honest answer is *"what do you want to know?"* Ask them what question they have in mind, then work out the row unit from it. If they have no question yet, say the professional line: record the smallest unit, because you can always add rows up and you can never split them apart.
 
@@ -506,6 +516,8 @@ Check the arithmetic yourself:
 
 ## ⚠️ Don't Get Tricked
 
+These are four wrong ideas that people often have about tables. Each one is shown next to the right idea.
+
 ### Trick 1 — "The header is a row"
 
 ![Wrong and right: counting the rows](../figures/fig-w04-7-header-not-data.svg)
@@ -515,7 +527,9 @@ Check the arithmetic yourself:
 |---|---|
 | "There are five rows — I can see five lines of writing." | "There are four rows, because there are four animals. The top line is the **header**." |
 
-Anybody can fall for this, because the header genuinely *is* a line on the page. The cure is the scale test: **could you put `legs` on a weighing scale?** No. So it is not one of the things being weighed.
+Anybody can fall for this, because the header genuinely *is* a line on the page.
+
+The cure is the scale test: **could you put `legs` on a weighing scale?** No. So it is not one of the things being weighed.
 
 ### Trick 2 — "There is one right table for a pile of stuff"
 
@@ -544,6 +558,8 @@ The test again: *what colour is the total? Which pocket did it come out of?* If 
 ---
 
 ## 🌍 Where You've Seen This
+
+Tables are all around you. Here are six you may already know.
 
 1. **Your school register.** One row = one student. Columns: name, roll number, class, present today. Nobody designed this; it is the shape the job demands.
 2. **A supermarket receipt.** One row = one item bought. Columns: name, quantity, price. And notice the TOTAL is printed *below a line*, deliberately separated from the rows — the receipt designers knew Rule 1.
@@ -581,6 +597,8 @@ is tinted with the tick, and it is yours for the next three weeks.*
 
 ## 🔑 Remember This
 
+These are the main ideas from the week.
+
 - **A machine's entire world is a table.** It cannot see your bag. It can only read what somebody wrote down.
 - **Nothing is data until it is written down.** A feeling is not data. A number in a box is.
 - **Rows go across, columns stand up, and the header is not a row.** Point at a cell and you should be able to say a whole sentence.
@@ -592,6 +610,8 @@ is tinted with the tick, and it is yours for the next three weeks.*
 ---
 
 ## 📓 New Words
+
+These are the words to know from this week.
 
 ![Week 4 words as pictures](../figures/fig-w04-8-vocab-icons.svg)
 *Figure 4.8 — This week's five words, drawn.*
@@ -609,6 +629,8 @@ A sixth word you will hear a lot, though it is not on this week's list: a **cell
 ---
 
 ## 📤 Your Homework
+
+This section says where your homework is and how to plan your time.
 
 Go to **[the Week 4 workbook](../workbook/week-04.md)**. About **45–60 minutes** in total, and it is much better spread across the week — roughly 8 minutes a day — than crammed into Sunday night.
 

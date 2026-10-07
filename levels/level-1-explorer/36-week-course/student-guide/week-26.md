@@ -19,21 +19,25 @@
 
 ## 🪝 Start Here
 
+This section shows why we need a spreadsheet to do last week's filter.
+
 Last week you computed six cells by hand. How long did it take? About twenty minutes, with a calculator, concentrating the whole time.
 
 Our little grid has **one hundred** output cells.
 
-Let's do the arithmetic. A hundred divided by six, times twenty minutes:
+Let's do the arithmetic. A hundred divided by six, times twenty minutes. Here is the sum:
 
-```
+```text
    100 ÷ 6 × 20 minutes  ≈  333 minutes  ≈  5.5 hours
 ```
 
 Five and a half hours. No break. No mistakes.
 
-Now the real thing. A photo going into Teachable Machine is **224 × 224** pixels. The output grid is 222 × 222, which is **49,284 cells**:
+Now the real thing. A photo going into Teachable Machine is **224 × 224** pixels.
 
-```
+The output grid is 222 × 222, which is **49,284 cells**. Here is the same sum for that:
+
+```text
    49,284 ÷ 6 × 20 minutes  ≈  164,000 minutes  ≈  2,738 hours  ≈  114 days
 ```
 
@@ -52,6 +56,8 @@ Today is about the moment where you stop doing it one cell at a time.
 
 ## 🧠 The Big Idea
 
+This section explains the spreadsheet trick, the edge formula, and how to test it with two lamps.
+
 ### 1. A spreadsheet remembers *directions*, not addresses
 
 This is the trick that makes the whole lesson work, and it has nothing to do with AI at all.
@@ -62,7 +68,7 @@ In a spreadsheet every cell has an address — a column letter and a row number.
 
 So if you put this in cell `C18`:
 
-```
+```text
    = D2 + D3 + D4
 ```
 
@@ -81,9 +87,11 @@ Now copy that formula one cell to the right, into `D18`. The spreadsheet re-read
 
 ### 2. The formula is three things you already know, glued together
 
-Here is the formula you type. It looks frightening. Look at how long it is, then stop worrying about it, because there is nothing new in it.
+Here is the formula you type. It looks long and scary, but there is nothing new in it.
 
-```
+Type it into one cell:
+
+```text
 =MIN(255, ABS((D2+D3+D4)-(B2+B3+B4)) + ABS((B4+C4+D4)-(B2+C2+D2)))
 ```
 
@@ -129,9 +137,9 @@ This is what the whole week exists for. And it is provable with two numbers.
 
 Take a dark object at brightness **40** sitting on a bright wall at **200**. The difference between them is **160**.
 
-Now switch a lamp on so that every pixel gets 50 brighter:
+Now switch a lamp on so that every pixel gets 50 brighter. Here are the numbers before and after:
 
-```
+```text
    before:   object  40    wall 200    →   difference = 200 - 40  = 160
    after:    object  90    wall 250    →   difference = 250 - 90  = 160   ← IDENTICAL
 ```
@@ -175,6 +183,8 @@ And notice what the filter did and did not do wrong here. The filter was perfect
 
 ## 🔍 Worked Examples
 
+These three examples show the check by hand, the drag on its own, and the two-lamp test on a cricket ball.
+
 ### Worked Example 1 — Checking the machine by hand (school)
 
 This is the most important thing you do all week, and it takes three minutes.
@@ -183,43 +193,43 @@ You have built the sheet and dragged the formula. You now have a hundred answers
 
 The letter is the 12×12 T from Week 25, typed into `B2:M13`. So image pixel `C3` is grid cell **(3,2)**, and its answer lives in output cell **`C18`**.
 
-**Step 1 — read the nine pixels off the paper grid.** Cell (3,2) means rows 2–4, columns 1–3:
+**Step 1 — read the nine pixels off the paper grid.** Cell (3,2) means rows 2–4, columns 1–3. Here is that patch:
 
-```
+```text
         c1    c2    c3
    r2    0   255   255
    r3    0   255   255
    r4    0   255   255
 ```
 
-**Step 2 — the vertical filter.**
+**Step 2 — the vertical filter.** Right column minus left column:
 
-```
+```text
    V  =  right column (c3) - left column (c1)
       =  (255 + 255 + 255) - (0 + 0 + 0)
       =  765 - 0  =  +765               |V| = 765
 ```
 
-**Step 3 — the horizontal filter.**
+**Step 3 — the horizontal filter.** Bottom row minus top row:
 
-```
+```text
    H  =  bottom row (r4) - top row (r2)
       =  (0 + 255 + 255) - (0 + 255 + 255)
       =  510 - 510  =  0                |H| = 0
 ```
 
-**Step 4 — combine, then clip.**
+**Step 4 — combine, then clip.** Add the two, then clip:
 
-```
+```text
    |V| + |H|  =  765 + 0  =  765
    MIN(255, 765)  =  255
 ```
 
 **So `C18` must show 255.** Look at your screen. If it does, **now** you may believe the other ninety-nine. If it does not, your formula is pointing at the wrong cells, and no amount of staring at the pretty picture will fix that.
 
-**Now a second one, because a corner is more interesting.** Output cell `C21` is image pixel `C5`, grid cell (5,2) — the **bottom-left corner of the bar** of the T. Patch is rows 4–6, columns 1–3:
+**Now a second one, because a corner is more interesting.** Output cell `C21` is image pixel `C5`, grid cell (5,2) — the **bottom-left corner of the bar** of the T. Patch is rows 4–6, columns 1–3. Here is the patch and its working:
 
-```
+```text
         c1    c2    c3
    r4    0   255   255
    r5    0   255   255
@@ -249,9 +259,9 @@ You are working out the cost of a pizza order:
 | **4** | garlic bread | 3.00 | 3 | |
 | **5** | cola | 1.20 | 4 | |
 
-Type **one** formula, into `D2`:
+Type **one** formula, into `D2`. Here it is:
 
-```
+```text
    =B2*C2
 ```
 
@@ -288,9 +298,9 @@ A camera looks down at a dark red cricket ball resting on the white painted crea
 | 2 | 196 − 60 = **136** | 245 − 111 = **134** | −2 |
 | 3 | 205 − 52 = **153** | 253 − 103 = **150** | −3 |
 
-**Step 2 — how much did each of the six brightness numbers move?**
+**Step 2 — how much did each of the six brightness numbers move?** Sun minus cloud for each number:
 
-```
+```text
    ball 1:  105 -  55 = +50        paint 1:  250 - 200 = +50
    ball 2:  111 -  60 = +51        paint 2:  245 - 196 = +49
    ball 3:  103 -  52 = +51        paint 3:  253 - 205 = +48
@@ -298,9 +308,9 @@ A camera looks down at a dark red cricket ball resting on the white painted crea
    average change in brightness = (50+50+51+49+51+48) ÷ 6 = 299 ÷ 6 = 49.8
 ```
 
-**Step 3 — how much did the three edge values move?**
+**Step 3 — how much did the three edge values move?** Average the three changes:
 
-```
+```text
    average change in edge = (0 + 2 + 3) ÷ 3 = 5 ÷ 3 = 1.7
 ```
 
@@ -310,9 +320,9 @@ A camera looks down at a dark red cricket ball resting on the white painted crea
 
 *(49.8 ÷ 1.7 = 29.3)*
 
-**Step 5 — and now the honest wobble.** Look at spot 3. In cloud the paint reads 205. Suppose the sun had been even brighter and added 60 to everything instead of 50:
+**Step 5 — and now the honest wobble.** Look at spot 3. In cloud the paint reads 205. Suppose the sun had been even brighter and added 60 to everything instead of 50. Here is that spot again:
 
-```
+```text
    ball:   52 + 60 = 112
    paint: 205 + 60 = 265   →   but a pixel cannot go above 255, so the camera records 255
    measured edge = 255 - 112 = 143      (it was 153 in cloud)
@@ -323,6 +333,8 @@ The edge just **shrank by 10**, and nobody did anything wrong. The bright side h
 ---
 
 ## 🎲 What We Did In Class
+
+This section lists the seven steps of the Pixel Lab so you can repeat them at home.
 
 **Pixel Lab.** All seven steps are here. You need a browser and a spreadsheet — Google Sheets, Excel or LibreOffice Calc all work identically. Nothing to install.
 
@@ -353,9 +365,9 @@ Select **B2:M13** → **Format → Conditional formatting → Colour scale**.
 
 ### Step 3 — One formula (5 min)
 
-Click **C18**. Type this exactly, by hand — do not paste it:
+Click **C18**. Type this exactly, by hand — do not paste it. Here is the formula:
 
-```
+```text
 =MIN(255, ABS((D2+D3+D4)-(B2+B3+B4)) + ABS((B4+C4+D4)-(B2+C2+D2)))
 ```
 
@@ -376,9 +388,9 @@ Select **C18:L27** → Conditional formatting → Colour scale.
 
 **Checkpoint:** you are looking at the hollow outline of your letter.
 
-Here is the answer for the class letter T, so you can check yours cell by cell. Rows are the output rows 18–27, columns are C to L:
+Here is the answer for the class letter T, so you can check yours cell by cell. Rows are the output rows 18–27 and columns are C to L:
 
-```
+```text
         C    D    E    F    G    H    I    J    K    L
   18   255  255  255  255  255  255  255  255  255  255
   19   255    0    0    0    0    0    0    0    0  255
@@ -420,7 +432,9 @@ Edge value at each spot (`paper − object`):
 | Spot 2 | 191 − 47 = **144** | 236 − 92 = **144** | 0 |
 | Spot 3 | 185 − 55 = **130** | 228 − 101 = **127** | −3 |
 
-```
+Here is the working for the averages and the comparison:
+
+```text
    average change in brightness = (44+43+45+45+46+43) ÷ 6 = 266 ÷ 6 = 44.3
    average change in edge       = (1 + 0 + 3) ÷ 3        =   4 ÷ 3 =  1.3
 
@@ -452,6 +466,8 @@ The second number is usually much worse. Then write one sentence giving a likely
 
 ## 💬 Talk About It
 
+Use these three questions to explain the week out loud. Each has a hint for you.
+
 **1. "Is the spreadsheet doing different maths from me, or the same maths? And how do you know?"**
 
 *Hint for you:* the same maths — right column minus left column, plus bottom row minus top row. The second half of the question is the real one. The only honest answer is *"I checked one cell by hand and it matched."* If somebody tells you it must be right because it is a computer, ask them how they would find out if it wasn't.
@@ -467,6 +483,8 @@ The second number is usually much worse. Then write one sentence giving a likely
 ---
 
 ## ⚠️ Don't Get Tricked
+
+This section names four wrong ideas from this week and gives the right idea for each.
 
 ### Trick 1 — "It's a computer, so the answers must be right"
 
@@ -509,6 +527,8 @@ This is the most useful trick in the chapter, because it is really about you and
 
 ## 🌍 Where You've Seen This
 
+The same ideas show up in these places outside the classroom.
+
 1. **A spreadsheet at home or at work.** Any adult who keeps a budget has typed one formula and dragged it down a column. It is the same mechanism you used today, and now you know why it works.
 2. **A phone camera in the dark.** Grainy photos look terrible partly because grain is random pixel-to-pixel change, and an edge filter reports every bit of it as a tiny false edge. Dark photos make exactly the problem in this chapter.
 3. **A car reading lane markings at dusk.** The brightness of the road changes enormously between noon and dusk. The edge at the white paint moves much less in the simple model of an evenly added light change (real light also scales edges, so it is not perfectly steady) — which is a big part of why the system can keep working.
@@ -545,6 +565,8 @@ representation and evaluation, because today you tested a claim instead of being
 
 ## 🔑 Remember This
 
+Keep these seven points from the week.
+
 - **A spreadsheet remembers directions, not addresses.** That is why one formula dragged over a hundred cells does a hundred different sums.
 - **The formula is nothing new:** vertical filter, horizontal filter, rub out both minus signs, add them, pin at 255.
 - **Output = input − 2**, still. A 12 × 12 picture gives a 10 × 10 edge map — `C18:L27`, one hundred cells.
@@ -556,6 +578,8 @@ representation and evaluation, because today you tested a claim instead of being
 ---
 
 ## 📓 New Words
+
+This week adds one new word, plus a reminder of three older ones.
 
 ![New word: edge map](../figures/fig-w26-9-vocab-edge-map.svg)
 *Figure 26.9 — Your letter goes in as 144 numbers. The edge map comes out as 100 numbers, and it is a hollow outline.*
@@ -575,6 +599,8 @@ Three words from earlier weeks that you needed today, in case you want to check 
 ---
 
 ## 📤 Your Homework
+
+This section tells you what to hand in and how long each page takes.
 
 Go to **[the Week 26 workbook](../workbook/week-26.md)**. About **55 minutes** in total.
 

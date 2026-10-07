@@ -19,7 +19,9 @@
 
 ## 🪝 Start Here
 
-Somebody is thinking of an object in the room. They are not going to describe it. They are not going to point at it. They are going to read you five numbers, and that is genuinely everything you get.
+This section is a short game to play before the lesson starts.
+
+Somebody is thinking of an object in the room. They will not describe it. They will not point at it. They read you five numbers, and that is everything you get.
 
 > longest side: **14 centimetres**
 > weight: **6 grams**
@@ -27,16 +29,16 @@ Somebody is thinking of an object in the room. They are not going to describe it
 > material: **plastic**
 > hollow: **yes**
 
-That's it. That's the whole thing. What is it?
+That is the whole clue. What is it?
 
 ![Five numbers and nothing else](../figures/fig-w14-6-five-numbers-hook.svg)
 *Figure 14.1 — Five values on a slip of paper. No smell, no weight in the hand, no memory of which drawer it came from.*
 
-You probably said "a pen", and you were right, or very close. Think about what just happened. **You never saw it. You never held it.** You couldn't shake it, smell it, or check whether it had a lid.
+You probably said "a pen", and you were right, or very close. **You never saw it. You never held it.** You couldn't shake it, smell it, or check whether it had a lid.
 
-That is exactly the position a machine is in, every single time, for the kind of machine in this course. It has never met the object. It has a row of numbers somebody chose, and the numbers are all it will ever have.
+That is the position a machine is in every time, for the kind of machine in this course. It has never met the object. It has a row of numbers somebody chose, and the numbers are all it will ever have.
 
-All year you have been told that. It is easy to say and hard to feel. This week you feel it — because this week **you** are the person who chooses the numbers, and then you hand your numbers to a real human being who has never seen your objects and find out whether you chose well.
+All year you have been told that. It is easy to say and hard to feel. This week **you** choose the numbers. Then you hand them to a real person who has never seen your objects, and you find out whether you chose well.
 
 > **💡 Try this before you read on:** which of the five numbers helped you most? Most people say `weight: 6 g` or `hollow: yes`. Six grams rules out almost everything solid. Hollow rules out pencils and rulers. Then ask yourself the sharper question: **what did you want to know that nobody told you?** ("Does it have a lid?" "Is it pointy?") Write it down. Those are the features you'd have chosen — and you're about to get the chance.
 
@@ -44,22 +46,26 @@ All year you have been told that. It is easy to say and hard to feel. This week 
 
 ## 🧠 The Big Idea
 
+This section explains the five ideas behind the Deck Trial: the card, the leak rule, bucketing, the baseline and the elimination hunt.
+
 ### 1. A card is a row of numbers with the answer hidden on the back
 
-Every card in your deck looks the same. A number at the top. Five features underneath. On the back: one word, the name of the object.
+Every card in your deck looks the same. There is a number at the top and five features underneath. On the back is one word, the name of the object.
 
 ![A feature card front and back](../figures/fig-w14-1-card-front-and-back.svg)
 *Figure 14.2 — Front and back. Nothing on the front hints at the answer.*
 
 **The rule that looks like fussiness and isn't:** the same five features, in the same order, on **every single card**. `weight_g` must be on the same line on card 3 and card 17.
 
-**Why.** If the tester has to hunt for the line each time, they get slow, then sloppy, then bored — and your experiment stops measuring your features and starts measuring their patience. Every real dataset in the world has fixed columns for exactly this reason. A table with columns that wander is not a table.
+**Why.** If the tester has to hunt for the line each time, they get slow, then sloppy, then bored. Your experiment stops measuring your features and starts measuring their patience.
+
+Every real dataset in the world has fixed columns for exactly this reason. A table with columns that wander is not a table.
 
 **The analogy: a menu.** Imagine a café where the price is in a different place on every page. You'd still find it, but you'd hate it, and by page eleven you'd be guessing.
 
 ### 2. No leaky features — and this is the rule that gets broken
 
-You met leaks in Week 12. This week it becomes a job you have to *enforce*, because when you're halfway through building twenty cards, a leak will occur to you and it will sound completely reasonable.
+You met leaks in Week 12. This week you have to *enforce* the rule. Halfway through building twenty cards, a leak will occur to you and it will sound reasonable.
 
 > **A leaky feature is one that hands over the answer.** For a deck, that means anything that names the object, names what it's used for, or names what category it's in.
 
@@ -69,6 +75,8 @@ You met leaks in Week 12. This week it becomes a job you have to *enforce*, beca
 **The test, and learn it as a phrase:**
 
 > **Could a stranger name the object from this one line alone? Then it's banned.**
+
+The table applies the test to seven proposed features.
 
 | Proposed feature | Verdict | Why |
 |---|---|---|
@@ -80,9 +88,9 @@ You met leaks in Week 12. This week it becomes a job you have to *enforce*, beca
 | `is_shiny: yes` | ✅ allowed | Loads of things are shiny. It narrows; it doesn't hand over |
 | `number_of_holes: 2` | ✅ allowed | A real count, and a genuinely good feature |
 
-**Why it matters so much.** A deck with a leak on it will score brilliantly, and the score will mean **nothing at all**. You'll have proved that if you tell somebody the answer, they can tell you the answer.
+**Why it matters so much.** A deck with a leak on it will score brilliantly, and the score will mean **nothing at all**. You'll have proved only that if you tell somebody the answer, they can tell you the answer.
 
-> **⚠️ Watch out:** `can_you_eat_it` is the sneaky one, because it *is* a real physical property you could check. That's true and it's not the point. If half your objects are food, that one line does the whole job and the other four features become decoration for those cards. Rule it out anyway.
+> **⚠️ Watch out:** `can_you_eat_it` is the sneaky one, because it *is* a real property you could check. That is true, and it is not the point. If half your objects are food, that one line does the whole job and the other four features become decoration for those cards. Rule it out anyway.
 
 ### 3. Bucketing: a choice you make on the card front
 
@@ -90,7 +98,7 @@ Take weight. On the card, do you write **`weight_g: 38`**, or do you write **`we
 
 > **Bucketing** — turning a number into a category by grouping ranges and giving each range a name. 38 grams becomes `medium`. 7.0 cm becomes `short`.
 
-You met this idea last week, when you cut a number label into three named ranges. This week it turns up as a **design decision**, which is a much more concrete place to meet it. Here is the trade:
+You met this idea last week, when you cut a number label into three named ranges. This week it is a **design decision**. The table shows the trade.
 
 | Writing the raw number | Writing the bucket |
 |---|---|
@@ -98,7 +106,7 @@ You met this idea last week, when you cut a number label into three named ranges
 | More work for you to measure precisely | Hides real differences: 38 g and 62 g might both be `medium` |
 | The tester may **ignore** it, because a number with a unit is effort | The tester will definitely **use** it, because it's an easy word |
 
-There is no right answer. The point is that it's a **choice with a cost** — exactly like last week. Make the choice on purpose and write down why, because in ten minutes you get to find out whether you were right.
+There is no right answer. It is a **choice with a cost**, like last week. Make the choice on purpose and write down why, because in ten minutes you get to find out whether you were right.
 
 > **💡 Try this:** if you have no kitchen scale, bucket weight by hand. Define it in writing *before* you measure anything: `feather` = lighter than a pencil, `normal` = between a pencil and a full mug, `heavy` = heavier than a full mug. That's bucketing doing real work, and it costs nothing.
 
@@ -106,15 +114,15 @@ There is no right answer. The point is that it's a **choice with a cost** — ex
 
 Suppose your tester gets **13 out of 20**. Is that good?
 
-You cannot possibly know. Nobody can. Not until you answer one question: **what would they have got knowing nothing at all?**
+You cannot know until you answer one question: **what would they have got knowing nothing at all?**
 
-That number has a name you already know from Week 12: the **baseline**. For a card deck there are two worth computing, and they answer different questions.
+That number has a name you already know from Week 12: the **baseline**. For a card deck there are two worth computing. They answer different questions.
 
 **Baseline one — the name baseline.** The tester has a shuffled list of your 20 object names and has to put one name on each card. If they closed their eyes and matched at random, how many would come out right?
 
-**About one.** Here is why, and it is a lovely fact:
+**About one.** The block below shows why.
 
-```
+```text
 each card has a 1-in-20 chance of getting the right name
 there are 20 cards
 so on average:  20 × (1/20) = 1 card comes out right
@@ -122,11 +130,11 @@ so on average:  20 × (1/20) = 1 card comes out right
 name baseline = 1 out of 20 = 5%
 ```
 
-Stranger still, that answer stays at about **one** whether the deck has 12 cards or 200. More cards means more chances and a smaller chance each — and the two cancel out exactly.
+That answer stays at about **one** whether the deck has 12 cards or 200. More cards means more chances and a smaller chance each, and the two cancel out exactly.
 
-**Baseline two — the category baseline.** If your 20 objects fall into 4 categories of 5, then somebody who only had to name the *category*, and always said the same one, would get 5 out of 20 = **25%**.
+**Baseline two — the category baseline.** Say your 20 objects fall into 4 categories of 5. Somebody who only had to name the *category*, and always said the same one, would get 5 out of 20 = **25%**.
 
-Use the name baseline as your headline, because that's the game the tester actually played. Keep the category baseline for later, because "right category, wrong object" is by far the most common way a deck fails.
+Use the name baseline as your headline, because that is the game the tester actually played. Keep the category baseline for later, because "right category, wrong object" is by far the most common way a deck fails.
 
 ![Tester accuracy against the deck baseline](../figures/fig-w14-3-accuracy-vs-baseline.svg)
 *Figure 14.4 — The gap is the result. The bar on its own is not.*
@@ -141,11 +149,11 @@ Not "my tester got 8". The **gap**.
 
 At the end, everybody wants to ask the tester "which feature did you use?"
 
-Ask them. And then **do not believe the answer.**
+Ask them. Then **do not believe the answer.**
 
-That is not rudeness. People are unreliable narrators of their own reasoning, and it is one of the most solid findings in psychology. Your tester will say "weight, mostly", completely sincerely, while their guesses line up perfectly with length.
+That is not rude. People are unreliable narrators of their own reasoning, and it is one of the most solid findings in psychology. Your tester will say "weight, mostly", completely sincerely, while their guesses line up perfectly with length.
 
-So instead: **look at the cards they got wrong.**
+So instead, **look at the cards they got wrong.** Follow these steps for each feature.
 
 > For each feature, check the wrong cards. Would that feature have led to the right answer?
 >
@@ -157,19 +165,23 @@ So instead: **look at the cards they got wrong.**
 
 **The analogy: a footprint in a flowerbed.** You don't need a confession. You need the one explanation that fits all the evidence, and no others.
 
-This is the best part of the week, and it is a habit that will serve you for the rest of your life: **check the evidence, don't trust the story.** Grown-ups doing this professionally call it an *ablation study* — they remove one feature, retrain the model, and see how much worse it gets. A close cousin of what you just did, with a bigger budget: you look at the mistakes, they take a feature away and re-test.
+This is the best part of the week, and the habit is worth keeping: **check the evidence, don't trust the story.**
+
+Grown-ups doing this professionally call it an *ablation study*. They remove one feature, retrain the model, and see how much worse it gets. It is a close cousin of what you just did, with a bigger budget: you look at the mistakes, they take a feature away and re-test.
 
 ---
 
 ## 🔍 Worked Examples
 
+This section marks three finished experiments, so you can copy the method for your own deck.
+
 ### Worked Example 1 — The demo deck: twelve objects, four categories
 
 Somebody else built this deck. Your job is to mark their experiment.
 
-**The feature sheet, written before anything was measured:**
+**The feature sheet, written before anything was measured.** It lists the five features and how each one was measured.
 
-```
+```text
 FEATURE SHEET - the demo deck
 f1  longest_side_cm  ruler, longest straight dimension, nearest 0.5 cm
 f2  weight_g         kitchen scale, nearest gram
@@ -178,7 +190,7 @@ f4  material         ONE of {metal, plastic, wood, rubber, glass, food}
 f5  is_hollow        yes / no  (could it hold water?)
 ```
 
-**The deck:**
+**The deck.** Each row is one card, and the last two columns are the back.
 
 | card | longest_side_cm | weight_g | main_colour | material | is_hollow | label (back) | category |
 |---|---|---|---|---|---|---|---|
@@ -214,15 +226,15 @@ f5  is_hollow        yes / no  (could it hold water?)
 | 11 | banana | banana | ✓ |
 | 12 | lemon | **apple** | ✗ |
 
-**Step 3 — the arithmetic. All three numbers, always.**
+**Step 3 — the arithmetic. All three numbers, always.** The block shows score, baseline and gap.
 
-```
+```text
 correct   = 8 out of 12        8 ÷ 12 = 0.667  = 67%
 baseline  = 1 out of 12        1 ÷ 12 = 0.083  =  8%
 gap       = 67 − 8                            =  59 percentage points
 ```
 
-*"The deck beat blind guessing by 59 percentage points."* That is the result. Not the 8.
+*"The deck beat blind guessing by 59 percentage points."* That is the result, not the 8.
 
 **Step 4 — the elimination hunt.** Put the four wrong cards side by side and ignore everything else.
 
@@ -233,9 +245,11 @@ gap       = 67 − 8                            =  59 percentage points
 | 10 | 8.0 | 152 | red | apple | lemon |
 | 12 | 7.5 | 96 | yellow | lemon | apple |
 
-First thing to notice: **every mistake is inside a category.** Toy for toy, fruit for fruit. They never said "pencil" for a fruit. So the category was right 12 times out of 12 — something on the card gives it away, almost certainly `material`.
+First thing to notice: **every mistake is inside a category.** Toy for toy, fruit for fruit. They never said "pencil" for a fruit.
 
-Now eliminate, one feature at a time:
+So the category was right 12 times out of 12. Something on the card gives it away, almost certainly `material`.
+
+Now eliminate, one feature at a time. The list checks colour, weight and length against the four wrong cards.
 
 - **Colour?** On card 10, colour says `red`, and card 10 *is* the red apple. Colour would have been **right**. They got it wrong. → **they were not reading colour.**
 - **Weight?** Apple 152 g against lemon 96 g — 56 grams apart. Car 38 g against ball 62 g — 24 grams apart. Weight would have got **all four** right. → **they were not reading weight.**
@@ -252,13 +266,15 @@ Now eliminate, one feature at a time:
 
 > *"The tester used `material` to pick the category and `longest_side_cm` to pick the object inside it. Cards 08, 09, 10 and 12 are strong evidence for it (on this small deck): those are the only four cards where two objects in the same category are within 1 cm of each other, and they are the only four cards the tester got wrong."*
 
-**And the annoying punchline.** The **weight was written on every single card.** It would have got both of those pairs right. The tester ignored it — probably because a number with a unit is work, and a word like "red" or a length you can picture is not.
+**And the annoying punchline.** The **weight was written on every single card.** It would have got both of those pairs right.
+
+The tester ignored it, probably because a number with a unit is work. A word like "red" or a length you can picture is not.
 
 People reach for the easy feature. So do machines, for the same reason. You'll see exactly this again next week.
 
 ### Worked Example 2 — Six balls (sport)
 
-A six-card deck. Same five features, same fixed order.
+A six-card deck. Same five features, same fixed order. The table is the deck.
 
 | card | diameter_cm | weight_g | main_colour | material | is_hollow | label (back) |
 |---|---|---|---|---|---|---|
@@ -269,7 +285,9 @@ A six-card deck. Same five features, same fixed order.
 | 05 | 7.3 | 156 | white | plastic | no | hockey ball |
 | 06 | 22.0 | 430 | white | leather | yes | football |
 
-**Step 1 — predict before you test.** Which pair looks hardest? Cards 02 and 05: diameters 7.2 and 7.3 — **one millimetre apart** — and weights 160 and 156, four grams apart. That is the pair to watch.
+**Step 1 — predict before you test.** Which pair looks hardest? Cards 02 and 05.
+
+Their diameters are 7.2 and 7.3, **one millimetre apart**. Their weights are 160 and 156, four grams apart. That is the pair to watch.
 
 **Step 2 — the tester's results.**
 
@@ -284,7 +302,7 @@ A six-card deck. Same five features, same fixed order.
 
 **Step 3 — the three numbers.**
 
-```
+```text
 correct   = 4 out of 6         4 ÷ 6 = 0.667  = 67%
 baseline  = 1 out of 6         1 ÷ 6 = 0.167  = 17%
 gap       = 67 − 17                          = 50 percentage points
@@ -300,15 +318,17 @@ gap       = 67 − 17                          = 50 percentage points
 | material | **leather** | **plastic** | **Yes, completely** |
 | is_hollow | no | no | No — identical |
 
-Colour and material would each have settled it on their own. The tester got it wrong. **Therefore they were reading neither.** They were going on size and weight — the two number lines — and ignoring the two word lines.
+Colour and material would each have settled it on their own. The tester got it wrong. **Therefore they were reading neither.**
 
-**Step 5 — what to do about it.** Notice this is the *opposite* finding to the demo deck, where the tester ignored the weight and used the length. There is no universal law about which feature people use. **You have to check, every time, for your deck and your tester.**
+They were going on size and weight, the two number lines. They ignored the two word lines.
 
-The fix here is not a new feature; it's a **presentation** change. Try bucketing the diameter into `small / medium / large` so the two numbers stop looking like the interesting lines, and see whether the tester's eye moves to the colour. Then run it again with a second tester and compare.
+**Step 5 — what to do about it.** This is the *opposite* finding to the demo deck, where the tester ignored the weight and used the length. There is no universal law about which feature people use. **You have to check, every time, for your deck and your tester.**
+
+The fix here is not a new feature. It is a **presentation** change. Try bucketing the diameter into `small / medium / large` so the two numbers stop looking like the interesting lines, and see whether the tester's eye moves to the colour. Then run it again with a second tester and compare.
 
 ### Worked Example 3 — Eight things from a school bag (school)
 
-Eight objects, four categories of two.
+Eight objects, four categories of two. The table is the deck.
 
 | card | longest_side_cm | weight_g | main_colour | material | is_hollow | label | category |
 |---|---|---|---|---|---|---|---|
@@ -334,9 +354,9 @@ Eight objects, four categories of two.
 | 07 | water bottle | water bottle | ✓ |
 | 08 | lunch box | lunch box | ✓ |
 
-**Step 2 — all the numbers, including both baselines.**
+**Step 2 — all the numbers, including both baselines.** The block shows both.
 
-```
+```text
 correct            = 5 out of 8       5 ÷ 8 = 0.625 = 63%
 name baseline      = 1 out of 8       1 ÷ 8 = 0.125 = 13%
 gap                = 63 − 13                       = 50 percentage points
@@ -345,7 +365,7 @@ category baseline  = 2 out of 8       (biggest group is 2)  = 25%
 category correct   = 6 out of 8                             = 75%
 ```
 
-**Step 3 — eliminate.** Look at the three wrong cards and, for each, at the object the tester *named*.
+**Step 3 — eliminate.** Look at the three wrong cards and, for each, at the object the tester *named*. The table compares the two objects on each card.
 
 | wrong card | truth | they said | what the two share | what would have separated them |
 |---|---|---|---|---|
@@ -365,17 +385,25 @@ On all three, colour is the line the two objects **share** that is not just a co
 
 ## 🎲 What We Did In Class
 
-The lab is called **The Deck Trial**. Here is the whole thing, so you can redo it at home or run it for the first time if you missed the lesson.
+This section is the whole lab, called **The Deck Trial**. Use it to redo the lab at home, or to run it for the first time if you missed the lesson.
 
-**You need:** 20 index cards (or A4 cut into eight rectangles each — three sheets does it), a ruler, a scale, a pen, a box of 20 objects (you will use 10 of them for the card trial), a scoring sheet, and **one human tester who has never seen the objects.**
+**You need:**
+
+- 20 index cards (or A4 cut into eight rectangles each — three sheets does it)
+- a ruler, a scale and a pen
+- a box of 20 objects (you will use 10 of them for the card trial)
+- a scoring sheet
+- **one human tester who has never seen the objects**
 
 > **⚠️ Watch out:** the cards must be **opaque**. Hold one up to the light. If you can read the back through the front, double it up.
 
 ### Step 1 — The feature sheet comes first (3 minutes)
 
-**Nothing gets measured until the sheet is written.** This rule exists because if you start measuring first, you will change what `length` means halfway through the deck and the whole column becomes nonsense.
+**Nothing gets measured until the sheet is written.** If you start measuring first, you will change what `length` means halfway through the deck, and the whole column becomes nonsense.
 
-```
+Fill in this blank sheet.
+
+```text
 FEATURE SHEET  -  name: ______________   date: __________
 
 f1  ________________  how:  _______________________________
@@ -388,9 +416,9 @@ BANNED CHECK: read each one aloud. Could a stranger name the
 object from that one line?   f1 □  f2 □  f3 □  f4 □  f5 □
 ```
 
-A working set, if you're stuck — use it rather than lose four minutes:
+If you are stuck, use this working set rather than lose four minutes.
 
-```
+```text
 f1  longest_side_cm  ruler, longest straight dimension, nearest 0.5 cm
 f2  weight_g         scale, nearest gram
 f3  main_colour      ONE of {red, blue, green, yellow, black, white, brown, clear}
@@ -405,7 +433,7 @@ f5  is_hollow        yes / no  (could it hold water?)
 3. Same order every card. No exceptions, not even to save space.
 4. Nothing on the front except the five values.
 
-Aim for about **70 seconds per card**. If you're at four cards after eight minutes, drop the target to eight cards and say so. A finished eight beats a rushed ten.
+Aim for about **70 seconds per card**. If you are at four cards after eight minutes, drop the target to eight cards and say so. A finished eight beats a rushed ten.
 
 ### Step 3 — The trial (5 minutes)
 
@@ -414,7 +442,7 @@ Move the box of objects **out of sight**. Seat the tester where they cannot see 
 ![Handing the deck to a tester](../figures/fig-w14-2-deck-handover.svg)
 *Figure 14.6 — The setup. Your only job in this five minutes is the scoring sheet.*
 
-Hand the tester two things:
+Hand the tester two things.
 
 - the deck, **fronts up, backs hidden**
 - the list of object names, **shuffled into random order**
@@ -425,7 +453,7 @@ Hand the tester two things:
 2. "Say your guess out loud. Don't explain it — just the name."
 3. "Look at the card as long as you like, but once you've said a name we move on."
 
-**And these are your rules, read aloud in front of the tester so they can hold you to them:**
+**These are your rules. Read them aloud in front of the tester so they can hold you to them.**
 
 | Rule | Why |
 |---|---|
@@ -434,7 +462,7 @@ Hand the tester two things:
 | **No sounds.** No hmm, no oh, no sharp breath. | So is a sharp breath |
 | **Write the guess down before turning the card over.** | Gives your hands and eyes a job, which is the only way anyone manages the first three |
 
-The scoring sheet:
+Use this scoring sheet, with one row per card.
 
 | card | tester's guess | truth | ✓/✗ |
 |---|---|---|---|
@@ -446,7 +474,9 @@ If you break the silence rule, stop, restart from the current card, and say why 
 
 ### Step 4 — Score it immediately (3 minutes)
 
-```
+Fill in the three numbers.
+
+```text
 correct  = ____ out of 10          =  ____%
 baseline = 1 out of 10             =  10%
 gap      = ____ minus 10           =  ____ percentage points
@@ -454,17 +484,21 @@ gap      = ____ minus 10           =  ____ percentage points
 
 ### Step 5 — The elimination hunt (5 minutes)
 
-For every card the tester got **wrong**, fill in one row:
+For every card the tester got **wrong**, fill in one row of this table.
 
 | card | truth | tester said | would COLOUR have got it right? | WEIGHT? | LENGTH? | MATERIAL? |
 |---|---|---|---|---|---|---|
 | | | | | | | |
 
-The feature with the most **"no"**s is the one the tester was reading. Then write the conclusion as a sentence with card numbers in it:
+The feature with the most **"no"**s is the one the tester was reading. Then write the conclusion as a sentence with card numbers in it.
+
+Use this shape:
 
 > *"The tester was using ____________, and cards ____, ____ and ____ prove it."*
 
 ### What "finished" looks like
+
+You are done when you have all five of these.
 
 - A written feature sheet, five measuring instructions, banned-check ticked.
 - Ten numbered cards, five values each, one name on each back, no blanks.
@@ -475,6 +509,8 @@ The feature with the most **"no"**s is the one the tester was reading. Then writ
 ---
 
 ## 💬 Talk About It
+
+This section gives three questions to talk through with a grown-up or a friend.
 
 **1. "My tester got 8 out of 12. Is that good?"**
 Ask this cold, with no other information, and see how long it takes them to ask the right question back.
@@ -492,6 +528,8 @@ This one usually produces a good argument.
 
 ## ⚠️ Don't Get Tricked
 
+This section shows four mistakes people make with decks and scores. Each one has a wrong version and a right version.
+
 ### Trick 1 — Reporting a score with no baseline
 
 ![A score with no baseline says nothing](../figures/fig-w14-7-score-without-baseline.svg)
@@ -501,7 +539,7 @@ This one usually produces a good argument.
 |---|---|
 | "13 out of 20 — that's most of them, so my deck is good." | "13/20 = 65%. Random matching gets 1/20 = 5%. The gap is **60 percentage points**." |
 
-If you only remember one thing from this week, make it this. A number with nothing to compare it against is not a measurement; it's a feeling with a digit stuck to it.
+If you remember only one thing from this week, make it this. A number with nothing to compare it against is not a measurement; it's a feeling with a digit stuck to it.
 
 ### Trick 2 — "A high score means my features are good"
 
@@ -511,7 +549,7 @@ If you only remember one thing from this week, make it this. A number with nothi
 
 A box containing five shoes, five apples, five books and five spoons will score almost perfectly and prove nothing, because those categories don't overlap at all. Three toothbrushes is a better exercise than a spoon, a sofa and a cat.
 
-So if the score comes out at 19/20, don't celebrate — **investigate.** Ask: *which two of my objects were hardest to tell apart, and did the tester get both of them right?* If there wasn't a hard pair, the deck was too easy and the score can't be trusted.
+So if the score comes out at 19/20, don't celebrate. **Investigate.** Ask: *which two of my objects were hardest to tell apart, and did the tester get both of them right?* If there wasn't a hard pair, the deck was too easy and the score can't be trusted.
 
 ### Trick 3 — "The tester failed, so the experiment failed"
 
@@ -519,7 +557,7 @@ So if the score comes out at 19/20, don't celebrate — **investigate.** Ask: *w
 |---|---|
 | "They only got 6 out of 20. My deck is rubbish, this was a waste of an afternoon." | "6 out of 20 is 30% against a 5% baseline — six times the baseline. My features carry real information; they just don't pin down the exact object." |
 
-That second sentence is a genuine finding. And if you then find that the wrong guesses mostly stayed inside the right category, you can add a second one: *"my five features identify the category reliably and the individual object unreliably."* (The 6 out of 20 alone does not tell you that. The wrong cards do.) Then you get to ask the useful question — **which pairs got confused, and what one feature would separate them?**
+That second sentence is a genuine finding. If you then find that the wrong guesses mostly stayed inside the right category, you can add a second one: *"my five features identify the category reliably and the individual object unreliably."* (The 6 out of 20 alone does not tell you that. The wrong cards do.) Then you get to ask the useful question — **which pairs got confused, and what one feature would separate them?**
 
 Both outcomes are wins. Decide that **before** you run the test, not after, or it sounds like a consolation prize.
 
@@ -535,6 +573,8 @@ The leak test is not *"is this measurable?"* — it is *"could a stranger name t
 
 ## 🌍 Where You've Seen This
 
+This section shows where feature rows turn up outside the classroom.
+
 1. **Twenty Questions, and Guess Who.** Every question is a feature. A good question splits the field in half; a bad one barely narrows it. Asking "is it my dad's brown hat?" is a leak — it names the answer.
 2. **Online shopping filters.** Size, colour, material, price band. That's a feature row, and the site is asking you to identify one product from five values. When the filters can't separate two things, you have to open both pages — the same failure as two identical cards.
 3. **Lost property desks.** "Black, medium, fabric, has a zip, no name inside." Five features, hundreds of candidate bags, and exactly the problem of two items with identical rows.
@@ -546,9 +586,9 @@ The leak test is not *"is this measurable?"* — it is *"could a stranger name t
 
 ## 🧭 Where This Fits
 
-This is the last week inside the **FEATURES** box, and you get to close it yourself — not by being
-told the columns work, but by handing your numbers to a person who has never seen your objects and
-watching what happens.
+This section shows where this week sits on the course map.
+
+This is the last week inside the **FEATURES** box. You close it yourself, by handing your numbers to a person who has never seen your objects.
 
 ![The course map in Week 14: the features tile closes with a human playing the model](../figures/fig-w14-0-where-this-fits.svg)
 
@@ -571,6 +611,8 @@ box turns white with "wk 11-14" written under it, and the shading moves down to 
 
 ## 🔑 Remember This
 
+These are the six things to keep from this week.
+
 - **Five features on the front, in the same order on every card. The label on the back, one word.** Fixed order isn't tidiness; it's what stops your test measuring the tester's patience.
 - **The leak test:** could a stranger name the object from this one line alone? Then it's banned — even if it's a real property you could measure.
 - **A score means nothing without a baseline.** Random matching on 20 cards gets about **1** card right, whatever the deck size. Report the **gap**, in percentage points.
@@ -581,6 +623,8 @@ box turns white with "wk 11-14" written under it, and the shading moves down to 
 ---
 
 ## 📓 New Words
+
+This section lists the words from this week.
 
 ![Week 14 words as pictures](../figures/fig-w14-8-vocab-icons.svg)
 *Figure 14.8 — The three words this lab runs on. Only the first one is new this week.*
@@ -598,6 +642,8 @@ And one phrase worth keeping, even though it isn't on the vocabulary list:
 ---
 
 ## 📤 Your Homework
+
+This section says what to do after the lesson.
 
 Go to **[the Week 14 workbook](../workbook/week-14.md)**. About **60 minutes** in total.
 

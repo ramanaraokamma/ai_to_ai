@@ -77,6 +77,7 @@ standing next to the rule.
 Rules are wonderful when the thing you're describing is tidy. They fall apart when it's messy.
 
 Try writing if-then rules for "is this photo a cat":
+
 - *Pointy ears* — so are foxes, and so is a paper aeroplane.
 - *Whiskers* — you can't see them at that size.
 - *Fur* — so is a rug.
@@ -108,8 +109,11 @@ message.*
 
 The reason the label has to go on **first** is the thing students trip over. If you show a machine a
 thousand emails and no answers, there is nothing for it to be right or wrong about. It has no way to
-score itself, so it has no way to improve. In the kind of learning we study in this course, the label is what makes learning possible — it is
-the answer sheet (other kinds, which find patterns without human labels, are for later), and somebody human has to write it.
+score itself, so it has no way to improve.
+
+In the kind of learning we study in this course, the label is what makes learning possible. It is
+the answer sheet, and somebody human has to write it. (Other kinds, which find patterns without
+human labels, are for later.)
 
 That has a consequence you will come back to in about thirty weeks: **almost everything the model knows,
 and many of its mistakes, were inherited from the person who wrote the labels** (the choice of examples
@@ -170,8 +174,11 @@ it does not prove what every model stores, so say "most models".)
 
 Also very natural. Most deployed models do **not** learn while you use them. Training happens once,
 it stops, and then the finished model is copied out and runs unchanged, possibly for years. Your
-phone's face unlock model is not learning about faces in general every time you look at it (some phones do refresh the stored data about *your* face; that is a different thing from retraining the model). Sometimes a
-company retrains and ships an update — that is a new model, not the old one growing.
+phone's face unlock model is not learning about faces in general every time you look at it. (Some
+phones do refresh the stored data about *your* face; that is a different thing from retraining the
+model.)
+
+Sometimes a company retrains and ships an update. That is a new model, not the old one growing.
 
 The one-line version to say out loud: **"Training is a thing that happens, finishes, and stops. What
 comes out is frozen."**
@@ -236,6 +243,8 @@ and **model** plus **learning signal** lit along the bottom.*
 
 ## 🧰 Prep Checklist
 
+This section lists everything to make and check before class, and what to do if something fails.
+
 ### 15 minutes the night before
 
 - [ ] **Make the eight mango cards.** Index cards, or paper cut into eight rectangles. On the **front**
@@ -274,6 +283,8 @@ and **model** plus **learning signal** lit along the bottom.*
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson: a timing table first, then a script for each of the five segments.
 
 | Time | Minutes | Segment | What happens |
 |---|---|---|---|
@@ -507,9 +518,9 @@ no maths beyond tallying. The student must do some of the counting themselves.
 > Three out of three, and zero out of three. Look at that split. Every single spam has it, and not
 > one of the others does. That is a **very** good clue."
 
-Write on the board:
+Write this line on the board:
 
-```
+```text
    FREE      spam: 3 / 3      not spam: 0 / 3      ← perfect split
 ```
 
@@ -801,6 +812,8 @@ that examples can support more than one rule, which is a genuinely advanced idea
 
 ## ❓ Questions Students Ask This Week
 
+Use this section when a student asks one of these. Each answer is written so you can say it out loud.
+
 **1. "So the machine really taught itself? Nobody helped?"**
 
 People helped a lot — just not in the place you'd expect. Someone chose which examples to collect.
@@ -811,7 +824,9 @@ different."
 
 **2. "Is the model just remembering all the examples?"**
 
-No, not in the kind we are building, and today's activity shows why. When you answered the test cards, the eight cards were in my
+No, not in the kind we are building, and today's activity shows why.
+
+When you answered the test cards, the eight cards were in my
 pocket. You weren't looking anything up — you had a rule. A real model is the same: after training,
 the photos are gone. It's not a filing cabinet, it's a rule that came out of a filing cabinet that
 has since been thrown away.
@@ -821,7 +836,9 @@ has since been thrown away.
 Usually not, and this surprises everybody. Training happens once, finishes, and stops. What comes out
 is frozen and gets copied onto phones and servers, where it runs unchanged, sometimes for years. When
 a company wants it better they collect new examples and train a *new* model, then ship it as an
-update. Your face unlock model is not learning about faces every time you look at it. (Some phones do update the stored data about your own face after successful unlocks; separate that saved data from the shipped model.)
+update. Your face unlock model is not learning about faces every time you look at it.
+
+(Some phones do update the stored data about your own face after successful unlocks; separate that saved data from the shipped model.)
 
 **4. "What if the person writing the labels gets one wrong?"**
 
@@ -851,7 +868,9 @@ mistake real companies make constantly.
 
 **7. "Could a machine learn to do anything, if you gave it enough examples?"**
 
-**Nobody knows for sure, and this is a real open argument rather than a gap in my knowledge.** Some
+**Nobody knows for sure, and this is a real open argument rather than a gap in my knowledge.**
+
+Some
 very serious people think yes — scale it far enough and you get everything. Other equally serious
 people think there are whole kinds of thinking that no amount of examples will ever produce, because
 the thing you'd need isn't in the examples at all. Right now we can point at things machines
@@ -869,6 +888,8 @@ questions you already had answers to, you wouldn't need a model — you'd need a
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual trouble spots and what to do right now.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student writes a colour rule and it fails on test A | Colour is the loudest thing on the card and touch/smell are abstract on paper | **This is a success, not a failure.** Say so immediately: *"Your rule was reasonable and the evidence killed it. That's how this actually works."* Then get the cards out and find the two green cards together. |
@@ -882,6 +903,8 @@ questions you already had answers to, you wouldn't need a model — you'd need a
 ---
 
 ## 🧭 Differentiation
+
+This section tells you what to cut or change if the student is struggling, flying or not engaging.
 
 ### If they are struggling
 
@@ -932,6 +955,8 @@ completely intact, which is the bit that matters.
 ---
 
 ## ✅ Assessing Understanding
+
+Three quick checks, one per objective, and a scale for judging where the student is.
 
 ### Check 1 — the two pipelines (objective 1)
 
@@ -1026,6 +1051,8 @@ never just the choice.
 ---
 
 ## 🔑 Answer Key
+
+This section holds every answer for the lesson and for the workbook. It is for you only; never hand it to the student.
 
 ### The mango game — every card
 

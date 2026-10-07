@@ -45,6 +45,8 @@ So today is not about finding out whether you learned anything. That question is
 
 ## 🧠 The Big Idea
 
+This section explains how Showcase Day is built: the paper, the marks, the checklist, the showcase and the door to the next level.
+
 ### 1. Three parts, in this order, and the order matters
 
 **The plain explanation.** Today has three parts: the paper, the showcase, the reckoning. They happen in that order and the order is not an accident.
@@ -74,9 +76,9 @@ This is **not** a test somebody is grading you on. It's a **mirror**. Its entire
 
 **The analogy.** In a cooking competition, naming the ingredients gets you a few marks. Cooking the thing and explaining what you'd change gets you the rest. Naming is the cheap third.
 
-**The concrete version.**
+**The concrete version.** Here is how the marks are split.
 
-```
+```text
    Part A   20 multiple choice   × 1 mark   =  20
    Part B    8 short answer      × 3 marks  =  24
    Part C    4 applied / debug   × 4 marks  =  16
@@ -243,7 +245,9 @@ Try that with most certificates.
 
 ## 🔍 Worked Examples
 
-These are the three specimen items you marked together in class, before your own paper was touched. Do them again from scratch — the point is to know the mark scheme before it's applied to you.
+This section works through three specimen items, one from each part of the paper. You marked them together in class, before your own paper was touched.
+
+Do them again from scratch. The point is to know the mark scheme before it is applied to you.
 
 ### Worked Example 1 — A Part A item (sport)
 
@@ -252,7 +256,7 @@ These are the three specimen items you marked together in class, before your own
 
 **The full working — two roads, and you take both.**
 
-```
+```text
    FRACTION     27 / 36
 
    ROAD 1 — do the division
@@ -271,7 +275,7 @@ These are the three specimen items you marked together in class, before your own
    ANSWER (a)
 ```
 
-**Now the interesting part — where do the three wrong answers come from?**
+**Now look at where the three wrong answers come from.**
 
 | Wrong answer | Where it comes from | How to catch it |
 |---|---|---|
@@ -292,7 +296,7 @@ That 1.33 check is worth more than the mark. It means you can catch an upside-do
 
 **(a) The gap — 1 mark, and the unit is the mark.**
 
-```
+```text
    91%  −  42%  =  49 PERCENTAGE POINTS
 ```
 
@@ -300,7 +304,7 @@ Writing "49%" **loses the mark.** Subtracting two percentages gives points. This
 
 **(b) The four links — 1 mark, and all four have to be there.**
 
-```
+```text
    1. WHO/WHAT GOT COLLECTED
       Nearly all photos were taken in the afternoon, because that
       is when there was time.
@@ -322,7 +326,7 @@ And the sentence that earns the credit at the end: **nothing broke.** No bug, no
 
 **(c) The priced fix — 1 mark, and the algebra must be shown.**
 
-```
+```text
    Let L = the total number of lamplight photos I end up with.
 
         L  ≥  1/3 × (183 + L)
@@ -333,14 +337,14 @@ And the sentence that earns the credit at the end: **nothing broke.** No bug, no
    Photos come in whole numbers, so ROUND UP:  L = 92
 ```
 
-**Why round *up*, not to the nearest whole number?** Because the requirement says **at least** one third. Check both:
+**Why round *up*, not to the nearest whole number?** Because the requirement says **at least** one third. Check both numbers:
 
-```
+```text
    91 photos:  91 ÷ (183 + 91) = 91 ÷ 274 = 0.3321 = 33.2%   ✗ just UNDER a third
    92 photos:  92 ÷ (183 + 92) = 92 ÷ 275 = 0.3345 = 33.5%   ✓ just OVER a third
 ```
 
-```
+```text
    already have 17  →  92 − 17 = 75 MORE PHOTOS TO TAKE
    then retrain, and rerun the IDENTICAL lamplight batch
 ```
@@ -365,7 +369,7 @@ Notice this is your own booth's arithmetic with different numbers. Yours was 138
 
 **Problem 2 — severe class imbalance.**
 
-```
+```text
    (biggest − smallest) ÷ biggest  =  (300 − 11) ÷ 300
                                    =  289 ÷ 300
                                    =  0.9633  =  96%
@@ -374,7 +378,7 @@ Notice this is your own booth's arithmetic with different numbers. Yours was 138
 
 **Problem 3 — no baseline, and a test set that hides the problem.**
 
-```
+```text
    The 20 test photos:  10 cat, 9 dog, 1 hamster
    Always guess "cat"   →  10 correct out of 20
                         →  10 ÷ 20 = 0.5 = 50%
@@ -392,7 +396,7 @@ And the hamster class — the class with 11 photos, the one everything will fail
 
 **(b) Why the 95% can't be trusted — two moves.**
 
-```
+```text
    MOVE 1 — the test photos were training photos.
             A model that had done nothing but MEMORISE those 611
             images would score at least this well here (probably
@@ -409,7 +413,7 @@ And the hamster class — the class with 11 photos, the one everything will fail
 
 **(c) The rewritten process.**
 
-```
+```text
    □ Name four classes, INCLUDING `other`, and report the counts
      and the balance check
    □ Split 20% of EACH class BEFORE any training — and say how
@@ -437,6 +441,8 @@ Two things make that line good and both are marks: it names an **absent category
 
 ## 🎲 What We Did In Class
 
+This section lists how the booth was set up, how the showcase ran, and what to do if you missed it.
+
 ### Setting the booth up
 
 Do this the night before. Ten minutes now removes the worst twenty minutes of tomorrow.
@@ -444,9 +450,9 @@ Do this the night before. Ten minutes now removes the worst twenty minutes of to
 ![How to lay the booth table out](../figures/fig-w36-13-booth-table-layout.svg)
 *Figure 36.8 — The DO NOT USE sign is the biggest thing. The log is open, with the pen resting on it.*
 
-**Eleven things, and only two of them are software:**
+**Eleven things, and only two of them are software.** Here they are:
 
-```
+```text
    1  the brief                     7  the confusion matrix
    2  the photo counts              8  the bias report
    3  the sealed envelope           9  the DO NOT USE sign
@@ -465,7 +471,7 @@ Do this the night before. Ten minutes now removes the worst twenty minutes of to
 
 **"Finished" looks like this:**
 
-```
+```text
    □ Delivered in 5 minutes (± 60 seconds), with no notes in hand
    □ All six segments happened, in order
    □ The words "30 out of 40", "75%" and "25% baseline" were all said out loud
@@ -478,9 +484,9 @@ Do this the night before. Ten minutes now removes the worst twenty minutes of to
 
 ### A real break-it log
 
-This is what a **good** log looks like. Notice it has three successful fools in it. That's better than a log with none, because it means real attempts were made.
+This is what a **good** log looks like. It has three successful fools in it. That's better than a log with none, because it means real attempts were made.
 
-```
+```text
    #  what they showed it     model said   conf  fooled?  my guess why
    ─  ─────────────────────   ──────────   ────  ───────  ──────────────────────────
    1  a car key               other         71    no      the other class did its job
@@ -509,6 +515,8 @@ The two parts that need other people are the audience and the break-it attempts,
 
 ## 💬 Talk About It
 
+Use these three questions to talk with an adult or a friend about what Showcase Day is for.
+
 **1. Ask an adult: "what's a certificate you have that actually proves something?"**
 > *Hint:* push past the framed ones. A driving licence proves a stranger watched you drive. A swimming badge proves you swam a distance. Then compare: yours has two numbers on it that you measured, and the evidence is in a folder you can hand over. Ask which of theirs has that.
 
@@ -521,6 +529,8 @@ The two parts that need other people are the audience and the break-it attempts,
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four traps catch people on Showcase Day. Each one is shown as a wrong reaction next to a right one.
 
 ### Trick 1 — "95% accurate" means it's good
 
@@ -571,6 +581,8 @@ That answer is in the **top band** of the rubric on purpose. A confident wrong a
 
 ## 🌍 Where You've Seen This
 
+These are places outside the course where today's ideas show up.
+
 1. **Any exam you've ever sat.** You now know the difference between a test that finds holes and a test you've already seen the answers to. That's the held-out rule, and it's been in your school bag all along.
 2. **A driving test, or a swimming badge.** A stranger watches you do the thing. That's what makes it mean something — the same reason your audience today has to be people who haven't heard the demo.
 3. **Product recall notices and "not suitable for" labels.** That's a DO NOT USE sign written by lawyers. Yours is better, because yours has a measured number in it.
@@ -582,7 +594,9 @@ That answer is in the **top band** of the rubric on purpose. A confident wrong a
 
 ## 🧭 Where This Fits
 
-Here is the map for the last time, and here is the sentence that goes with it: **every single box is
+This section shows the course map one last time and where this week sits on it.
+
+Here is the sentence that goes with the map: **every single box is
 solid.** Thirty-six weeks ago there was one box and a question mark. Today there are fourteen, and you
 can explain all of them.
 
@@ -607,6 +621,8 @@ asks you to do is report a number honestly to somebody who did not have to belie
 ---
 
 ## 🔑 Remember This
+
+These are the points to keep from this week.
 
 - **The paper is a mirror, not a verdict.** Its job is to find the holes so they don't walk into Level 2 with you. What you do next is the actual result.
 - **Two thirds of the marks are for explaining and fixing**, and in Parts B and C the arithmetic has to be **visible**. A calculator is fine; "0.75" with nothing above it is not.
@@ -659,6 +675,8 @@ Go to **[the Week 36 workbook](../workbook/week-36.md)**. About **50 minutes**, 
 ---
 
 ## 🎉 One Last Thing
+
+A short look back before the next level.
 
 Thirty-six weeks. One model. Two hundred photos you took yourself. Forty held-out scores written in pencil, one at a time, when it was boring. A confusion matrix drawn by hand. A bias gap you went looking for on purpose, and then printed in marker in the biggest letters on your own table. And a five-minute demo delivered to strangers without once saying **magic**.
 

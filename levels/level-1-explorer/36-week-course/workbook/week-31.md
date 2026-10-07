@@ -39,13 +39,15 @@ ________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These short questions check that you know the new words and the ideas behind them.
+
 ### A1 — Fill in the blanks
 
 > **bias** — when a model works noticeably ________________ for some group of inputs than for others, in a way that ________________.
 
 A model does not have opinions. What a model has is ________________.
 
-```
+```text
    WHAT IT SAW A LOT OF   →   it ____________________
    WHAT IT SAW A LITTLE   →   it ____________________
    WHAT IT NEVER SAW      →   it ____________________
@@ -111,6 +113,8 @@ One sentence each. Not copied from the chapter — **your** words.
 
 ## ✍️ Practice Set B — Use It
 
+These questions use the new ideas on real numbers and real situations. Show every division.
+
 ### B1 — The school gate *(page W31.3)*
 
 A face scanner at the school gate marks attendance. The company advertises **"98% accurate"**.
@@ -126,13 +130,13 @@ There are **180 days** in the school year.
 
 **(a)** Wrongly marked absent in one year. Show the multiplication.
 
-```
+```text
    average:  ________ × 180 = ________ days      headscarf: ________ × 180 = ________ days
 ```
 
 **(b)** The difference in one year, then over four years of school.
 
-```
+```text
    one year:  ________ − ________ = ________ days
    4 years:   average ________ × 4 = ________   ·   headscarf ________ × 4 = ________
               difference over 4 years = ________ − ________ = ________ days
@@ -140,7 +144,7 @@ There are **180 days** in the school year.
 
 **(c)** The school has **600 students**, and every wrong mark takes a member of staff about **4 minutes** to notice and correct.
 
-```
+```text
    600 × 0.02 = ______ wrong marks/day  →  ______ × 4 = ______ minutes/day
    ______ × 180 = ______ minutes/year   →  ______ ÷ 60 = ______ hours
 ```
@@ -207,7 +211,7 @@ Each batch of 12 WhatIsIt? photos was actually **4 mugs, 4 spoons and 4 forks**.
 
 **(a)** Fill in the three column totals, then turn each into a percentage. Show the division.
 
-```
+```text
    mug:    ____ ÷ 16 = __________  →  ______%
    spoon:  ____ ÷ 16 = __________  →  ______%
    fork:   ____ ÷ 16 = __________  →  ______%
@@ -215,7 +219,7 @@ Each batch of 12 WhatIsIt? photos was actually **4 mugs, 4 spoons and 4 forks**.
 
 **(b)** Check your work two ways:
 
-```
+```text
    ____ + ____ + ____ = ____   (should be 29)      16 × 3 = ____   (should be 48)
 ```
 
@@ -229,7 +233,7 @@ ________________________________________________
 
 WhatIsIt? has **200 training photos** and **0** of them show an object held in a hand. How many held-in-a-hand photos must they add so that held-in-a-hand is **25%** of the training set?
 
-```
+```text
    Let x = the number of photos to add.
 
         x / (200 + x) = 0.25
@@ -250,6 +254,8 @@ ________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is for playing with the numbers. Write every step.
+
 ### Move the photos, move the headline
 
 ![Move the photos, move the headline](../figures/fig-w31-14-puzzle-move-the-photos.svg)
@@ -268,7 +274,7 @@ You must test **exactly 48 photos**, with **at least 6 photos in every group**.
 
 **(a)** Choose the numbers that make the headline as **HIGH** as possible.
 
-```
+```text
    g1: ____ × 0.90 = ______   g2: ____ × 0.60 = ______
    g3: ____ × 0.40 = ______   g4: ____ × 0.20 = ______
    total: ____ photos, ______ correct  →  ______ ÷ 48 = ______%
@@ -276,7 +282,7 @@ You must test **exactly 48 photos**, with **at least 6 photos in every group**.
 
 **(b)** Now choose the numbers that make the headline as **LOW** as possible.
 
-```
+```text
    g1: ____ × 0.90 = ______   g2: ____ × 0.60 = ______
    g3: ____ × 0.40 = ______   g4: ____ × 0.20 = ______
    total: ____ photos, ______ correct  →  ______ ÷ 48 = ______%
@@ -284,7 +290,7 @@ You must test **exactly 48 photos**, with **at least 6 photos in every group**.
 
 **(c)** How far apart are your two headlines? Mind the unit.
 
-```
+```text
    ________ − ________ = ________ ______________________
 ```
 
@@ -295,6 +301,8 @@ ________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions have no single right answer. Write a full paragraph for each.
 
 **1.** Nobody at WhatIsIt? was unkind to anybody. They took 183 photos in daylight because it was daytime. So — **is anyone to blame?** Argue *both* sides, then say where you land and why. Write a paragraph.
 
@@ -320,6 +328,8 @@ ________________________________________________
 
 ## 🛠️ Build It
 
+This is the main work of the week: the audit, the trace, and your own prediction.
+
 ### Page W31.1 — The 48-photo audit, properly
 
 **The checklist. Tick as you go.**
@@ -342,7 +352,7 @@ The scored test set — 48 photos the model had never seen, twelve in each condi
 
 **(a) The four divisions. Every line, in full.**
 
-```
+```text
    A:  11 ÷ 12 = ____________  × 100 = __________  →  ______%
    B:  ___ ÷ 12 = ____________  × 100 = __________  →  ______%
    C:  ___ ÷ 12 = ____________  × 100 = __________  →  ______%
@@ -358,7 +368,7 @@ The scored test set — 48 photos the model had never seen, twelve in each condi
 
 **(b) The overall accuracy.**
 
-```
+```text
    correct = ____ + ____ + ____ + ____ = ________
    total   = 12 × 4 = ________
 
@@ -367,7 +377,7 @@ The scored test set — 48 photos the model had never seen, twelve in each condi
 
 **(c) The accuracy gap.**
 
-```
+```text
    best group  = ______________________  at  ________%
    worst group = ______________________  at  ________%
 
@@ -421,7 +431,7 @@ ________________________________________________
 | 3 | | | |
 | 4 | | | |
 
-```
+```text
    ┌──────────────────────────────────────────────────────────┐
    │  MY SEALED PREDICTION                                    │
    │                                                          │
@@ -447,6 +457,8 @@ ________________________________________________
 ---
 
 ## 🎨 Draw It
+
+This page is for drawing the bias chain about something in your own life.
 
 Draw the four-link bias chain **for something in your own life** — a photo app, a voice assistant, a game, a school system. Four boxes, three arrows, and the dashed arrow showing where the fix goes. Put a real number in link 2 if you can guess one, and mark it with a `?`.
 
@@ -496,7 +508,7 @@ Tick one box per row. Be honest — this page is for you, not for marking.
 
 *worse* … *matters*. What a model has is **counts**.
 
-```
+```text
    WHAT IT SAW A LOT OF   →   it gets good at
    WHAT IT SAW A LITTLE   →   it stays shaky
    WHAT IT NEVER SAW      →   it is guessing, nothing to go on
@@ -542,14 +554,14 @@ What is wrong with (a) "25%": somebody can ask *"25% of what?"* and there is no 
 
 **(a)**
 
-```
+```text
    average student:    0.02 × 180 = 3.6 days
    headscarf student:  0.08 × 180 = 14.4 days
 ```
 
 **(b)**
 
-```
+```text
    one year:  14.4 − 3.6 = 10.8 days
    4 years:   average 3.6 × 4 = 14.4   ·   headscarf 14.4 × 4 = 57.6
               difference over 4 years = 57.6 − 14.4 = 43.2 days
@@ -559,7 +571,7 @@ Put that in human units: **57.6 days is more than eleven school weeks** of being
 
 **(c)**
 
-```
+```text
    600 × 0.02 = 12 wrong marks/day  →  12 × 4 = 48 minutes/day
    48 × 180 = 8,640 minutes/year    →  8,640 ÷ 60 = 144 hours  ≈ 18 working days
 ```
@@ -603,7 +615,7 @@ Also acceptable: *"the groups and the number of photos in each must be decided a
 
 **(a)**
 
-```
+```text
    mug:    13 ÷ 16 = 0.8125  →  81.3%
    spoon:   9 ÷ 16 = 0.5625  →  56.3%
    fork:    7 ÷ 16 = 0.4375  →  43.8%
@@ -615,7 +627,7 @@ Also acceptable: *"the groups and the number of photos in each must be decided a
 
 ### B5 — Price the fix
 
-```
+```text
    Let x = the number of photos to add.
 
         x / (200 + x) = 0.25
@@ -637,7 +649,7 @@ Always round **up**. 66 photos would leave you just under target, and the whole 
 
 **(a) Highest headline.** Put the minimum 6 in every group, then dump all 24 spare photos into the **best** group.
 
-```
+```text
    g1: 30 × 0.90 = 27.0   g2: 6 × 0.60 = 3.6
    g3:  6 × 0.40 =  2.4   g4: 6 × 0.20 = 1.2
    48 photos, 34.2 correct  →  34.2 ÷ 48 = 0.7125  →  71.3%
@@ -645,7 +657,7 @@ Always round **up**. 66 photos would leave you just under target, and the whole 
 
 **(b) Lowest headline.** Same idea, but dump the 24 spare photos into the **worst** group.
 
-```
+```text
    g1:  6 × 0.90 =  5.4   g2: 6 × 0.60 = 3.6
    g3:  6 × 0.40 =  2.4   g4: 30 × 0.20 = 6.0
    48 photos, 17.4 correct  →  17.4 ÷ 48 = 0.3625  →  36.3%
@@ -684,7 +696,7 @@ And the honest sentence that belongs on any poster: *"twelve photos per group, s
 
 **(a)**
 
-```
+```text
    Batch A  (daylight)      11 ÷ 12 = 0.916666...  × 100 = 91.666...  →  91.7%
    Batch B  (lamplight)      7 ÷ 12 = 0.583333...  × 100 = 58.333...  →  58.3%
    Batch C  (held in hand)   5 ÷ 12 = 0.416666...  × 100 = 41.666...  →  41.7%
@@ -695,7 +707,7 @@ So the table reads: A **11/12 = 0.9167 = 91.7%** · B **7/12 = 0.5833 = 58.3%** 
 
 **(b)**
 
-```
+```text
    correct = 11 + 7 + 5 + 6 = 29
    total   = 12 × 4 = 48
 
@@ -704,7 +716,7 @@ So the table reads: A **11/12 = 0.9167 = 91.7%** · B **7/12 = 0.5833 = 58.3%** 
 
 **(c)**
 
-```
+```text
    best group  = Batch A, bright daylight  at  91.7%
    worst group = Batch C, held in a hand   at  41.7%
 

@@ -38,6 +38,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know the words and ideas from this week.
+
 **A1. Fill in the blanks.**
 
 The labelled examples you looked at while building your rules are the ____________________ examples.
@@ -123,6 +125,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Use It
+
+These questions use the ideas on real situations. Show your working.
 
 **B1. The smoothie stall.** A stall built this rule from eight training days: `IF temp_c >= 28 THEN predict "sells out"`, default `doesn't sell out`. On those eight days it scored **8 out of 8**.
 
@@ -219,7 +223,7 @@ ________________________________________________________________
 
 **B5. Mark somebody else's work.** Here is a results page handed in by another student. Find **three** faults.
 
-```
+```text
 MY RULEBOOK RESULTS
 
 Score on my ten messages:        100%
@@ -242,6 +246,8 @@ ________________________________________________________________
 ---
 
 ## 🧩 Puzzle of the Week
+
+This puzzle has four teams and four claims. Work through the questions in order.
 
 ### Four Score Cards
 
@@ -298,6 +304,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions need a paragraph each. Take your time.
+
 **T1.** Every score you wrote down between Week 4 and last week was measured on the examples you built the thing from.
 
 Write a paragraph about that. Were those numbers **lies**? If not, what were they? Is there anything a training score genuinely does tell you? And finish on the hardest bit: **why do you think you predicted 8 or 9 out of 10 before the envelope was opened — when the only evidence you had was a number that could not be trusted?**
@@ -334,6 +342,8 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+These five pages are the hands-on work of the week. Do them in order.
+
 ### Page 9.1 — The Sealed Envelope Trial (do this in class)
 
 ![The sealed envelope and the scoring sheet](../figures/fig-w09-1-sealed-envelope.svg)
@@ -350,7 +360,7 @@ ________________________________________________________________
 
 **My rulebook, copied out exactly as it was last week:**
 
-```
+```text
 RULE 1:  IF ______________________________  THEN ______________
 RULE 2:  IF ______________________________  THEN ______________
 RULE 3:  IF ______________________________  THEN ______________
@@ -389,7 +399,7 @@ ________________________________________________________________
 
 **My fresh score, all three ways. Show the division.**
 
-```
+```text
 THE FRACTION       ______ / ______
 
 THE DIVISION       ______________________________________________
@@ -405,7 +415,7 @@ THE PERCENTAGE     ______ x 100 = ______ %
 
 **The bar chart.** Draw two bars on this grid — one for your training score, one for your fresh score — and arrow the drop.
 
-```
+```text
 100 ┤
     │
  75 ┤
@@ -486,7 +496,7 @@ ________________________________________________________________
 
 **Now gather the week numbers from the margin. This is the output of the whole page:**
 
-```
+```text
 GO BACK TO:  ________________________________________________
 
 SOLID:       ________________________________________________
@@ -545,7 +555,7 @@ ________________________________________________________________
 
 **My fixed rulebook (v2):**
 
-```
+```text
 DATE: ______________
 
 RULE 1:  IF ______________________________  THEN ______________
@@ -609,7 +619,7 @@ The five messages below are **fresh**. Nobody is watching. If you read them befo
 
 **My honest score on the five, all three ways:**
 
-```
+```text
 THE FRACTION       ______ / 5
 
 THE DIVISION       ______________________________________________
@@ -635,6 +645,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for a drawing.
+
 Draw **the two students and their two marks** — Student A with the answer sheet, Student B with the sealed paper. Make it obvious which mark is the news. Then fill in the three boxes underneath.
 
 ![Draw It frame for Week 9](../figures/fig-w09-11-draw-frame.svg)
@@ -647,6 +659,8 @@ Draw **the two students and their two marks** — Student A with the answer shee
 ---
 
 ## 📊 Self-Check
+
+Tick one face for each line to show how sure you feel.
 
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
@@ -665,6 +679,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Come here only after you have tried every question. Open the box to check your work.
 
 <details>
 <summary>Check your answers</summary>
@@ -831,7 +847,7 @@ D and B are the only two that measured anything at all, and D has forty times th
 
 **P5.**
 
-```
+```text
 2 out of 5 = 40%      3 out of 5 = 60%      4 out of 5 = 80%
 ```
 
@@ -839,7 +855,7 @@ So after one message either way, team B's score could be anywhere in a band roug
 
 Team D:
 
-```
+```text
 103 out of 200 = 51.5%      105 out of 200 = 52.5%
 ```
 
@@ -879,7 +895,7 @@ Team D:
 
 **Pages 9.1 and 9.2 — the trial.** The full trace, for the standard Week 8 rulebook:
 
-```
+```text
 RULE 1:  IF contains "!!"                   THEN spam
 RULE 2:  IF contains "free" (any capitals)  THEN spam
 RULE 3:  IF 30 or more characters           THEN spam
@@ -901,7 +917,7 @@ DEFAULT: OTHERWISE                          THEN ham
 
 **Score: 5 out of 10.** False alarms **4** (#13, #14, #16, #19) · misses **1** (#15) · scams correctly caught **2** (#17, #20).
 
-```
+```text
 THE FRACTION      5 / 10
 
 THE DIVISION      10 into 5 won't go  ->  0 and a point
@@ -931,7 +947,7 @@ The gap                             50 percentage points
 
 **A model v2:**
 
-```
+```text
 RULE 1:  IF contains "!!" AND has an ALL-CAPS word of 3+ letters  THEN spam
 RULE 2:  IF contains "free" AND the message has no "?"            THEN spam
 RULE 3:  IF 40 or more characters                                 THEN spam
@@ -973,7 +989,7 @@ Messages 1 and 2 still fire Rule 1 (both have ALL-CAPS words). Message 3 (`Free 
 | 24 | `Can you send me the geography homework please` | 45 | RULE 3 (45 ≥ 40) | spam | ham | ❌ | **false alarm** |
 | 25 | `Your account will be closed, verify now` | 39 | DEFAULT (39 < 40) | ham | spam | ❌ | **miss** |
 
-```
+```text
 THE FRACTION      2 / 5
 
 THE DIVISION      5 into 2 won't go  ->  0 and a point

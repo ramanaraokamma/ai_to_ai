@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table gives you the facts for the week in one place: time, materials, tech and prep.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes (60- and 75-minute versions in §The Lesson) |
@@ -28,6 +30,8 @@
 ---
 
 ## 🎯 Lesson Objectives
+
+These are the things the student should be able to do by the end of the lesson.
 
 By the end of this lesson the student can:
 
@@ -88,7 +92,7 @@ different kinds of output.
 beside it. A chatbot learned from examples exactly like a spam filter did. It is a kind of machine
 learning, not a fourth family.
 
-```
+```text
    ┌──────────────────────── ARTIFICIAL INTELLIGENCE ────────────────────────┐
    │                                                                         │
    │   ┌──────────────────┐        ┌──────────────────────────────────────┐  │
@@ -257,6 +261,8 @@ real systems in a real day). Orientation only — never assessment.
 
 ## 🧰 Prep Checklist
 
+Use this list to get the room, the sites and the fallbacks ready before class.
+
 ### 10 minutes the night before
 
 - [ ] **Open `quickdraw.withgoogle.com` on the laptop you'll actually use.** Click *Let's Draw!* and
@@ -292,6 +298,8 @@ real systems in a real day). Orientation only — never assessment.
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the script for the whole lesson: the plan, then each segment with what to do, say and ask.
 
 | Time | Minutes | Segment | What happens |
 |---|---|---|---|
@@ -383,7 +391,7 @@ Wait for it. The answer is **two**.
 
 **Do this:** Show Figure 3.1 and write the test on the board:
 
-```
+```text
    COUNT THE POSSIBLE OUTPUTS
      short fixed list  →  picking a label
      blank page        →  generating
@@ -568,7 +576,7 @@ Full instructions in the next section. The minute-by-minute:
 
 **Type this, exactly:**
 
-```
+```text
 Tell me about the 1987 Australian film "The Glass Kangaroo of Wollongong",
 including its director and how it was received.
 ```
@@ -584,7 +592,7 @@ review quote. Four or five checkable claims, all invented, all in complete confi
 
 **Then type this follow-up:**
 
-```
+```text
 Was that film real? Answer with just yes or no.
 ```
 
@@ -611,7 +619,7 @@ Was that film real? Answer with just yes or no.
 **If it refuses and says the film doesn't exist:** genuinely good behaviour. Say so out loud —
 *"That's the honest answer and it's better than what I expected"* — then run **Backup B**:
 
-```
+```text
 (in one tab)  Explain in 100 words why the sky is blue.
 (new tab, fresh chat, same question)  Explain in 100 words why the sky is blue.
 ```
@@ -689,6 +697,8 @@ DEFEND column without looking.
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the three rounds, plus easier and harder versions.
+
 ### AI Detective — three rounds
 
 **What it is:** an evidence-gathering lab. Round 1 finds the edge of a learned system. Round 2
@@ -728,14 +738,14 @@ system's real job is — based on their evidence, not the marketing.
 
 **The prompt**
 
-```
+```text
 Tell me about the 1987 Australian film "The Glass Kangaroo of Wollongong",
 including its director and how it was received.
 ```
 
 **The follow-up**
 
-```
+```text
 Was that film real? Answer with just yes or no.
 ```
 
@@ -838,6 +848,8 @@ sorting your own.
 
 ## ❓ Questions Students Ask This Week
 
+These are the questions you are most likely to hear, with answers you can say aloud.
+
 **1. "Is ChatGPT the same thing as AI?"**
 
 No — it's one kind, the way a labrador is one kind of animal. The spam filter on your email is AI.
@@ -862,8 +874,8 @@ designed on a question where the plausible answer and the true answer are differ
 
 Depends entirely on what you mean, and that's not a dodge — it's the real answer. Can it do a job
 that used to need a person's judgement? Yes, often brilliantly. Does it understand what it's doing?
-As far as anyone can tell, there is nothing in there having a time. Does it know when it's out of its depth? No, and that's the
-dangerous bit. Pick your definition and the answer follows.
+As far as anyone can tell, there is nothing in there having a time. Does it know when it's out of its depth? No, and that's
+the dangerous bit. Pick your definition and the answer follows.
 
 **5. "When will AGI exist?"**
 
@@ -872,8 +884,8 @@ well-informed people give answers ranging from five years to never, and they are
 same evidence. We can't predict it because we don't actually know what's missing — if we knew what
 was missing, someone would build it. What I can tell you for certain is what's true *today*: no
 system anywhere does everything a person can do, and chatbots, which do many text jobs, are the hard
-case (Week 28). Anyone who tells you they know
-the date is guessing, including the confident ones. Especially the confident ones.
+case (Week 28). Anyone who tells you they know the date is guessing, including the confident ones.
+Especially the confident ones.
 
 **6. "If it says 99%, is it right 99 times out of 100?"**
 
@@ -902,6 +914,8 @@ narrower job than "name anything in this drawing": it can only pick from the men
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the common problems, why they happen and what to do right then.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The chatbot answers honestly and refuses the fake film | Newer models handle obvious fake-entity prompts better than they used to | **Praise it out loud** — honest refusal is the behaviour we want and the student should see an adult approve of it. Then run Backup B (same question, two fresh chats). Different answers prove *generating* just as well. |
@@ -915,6 +929,8 @@ narrower job than "name anything in this drawing": it can only pick from the men
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson when the student is struggling, flying or not engaging.
 
 ### If they are struggling
 
@@ -968,6 +984,8 @@ fill ten and leave the rest blank, and skip its zone and count-up lines.)
 
 ## ✅ Assessing Understanding
 
+These checks tell you whether each objective landed, and what a good answer sounds like.
+
 ### Check 1 — picking vs generating (objective 1)
 
 > **"Face unlock, or a chatbot writing a poem. Which one is generating, and how do you know?"**
@@ -1006,6 +1024,8 @@ wolf."* Not-yet answer: *"…is nearly certain it's right"* or *"…will be righ
 ---
 
 ## 📤 Homework to Assign
+
+This section says what to set, how to say it and how to mark it.
 
 **Workbook: Week 3.** The workbook's sections, in order: **✅ Warm-Up** (W1–W5) · **Practice Set A**
 (A1–A6) · **Practice Set B** (B1–B5) · **🧩 Puzzle of the Week** (P1–P4) · **🤔 Think Deeper**
@@ -1062,6 +1082,8 @@ the confidence-score idea landed.
 
 ## 🔑 Answer Key
 
+This section holds the answers for the lesson rounds and the workbook. It is for the teacher only.
+
 ### Round 1 — Quick, Draw!
 
 Exact results vary every time, so what follows is a **typical** run and the reasoning that must
@@ -1116,8 +1138,10 @@ is what makes it concrete.
 **"It just changed its story. What does that tell you?"**
 That its first answer was not reliable evidence that it knew. It produced text that looked like the
 right kind of text; when challenged it produced different text that also looked right. (A flip does not
-prove it knew nothing; it shows the first answer cannot be trusted.) *(If it does **not** change its story and sticks to "it was real" — even better. Then say:
-"So now it's confidently wrong twice. Which of the two answers should we believe?" Neither.)*
+prove it knew nothing; it shows the first answer cannot be trusted.)
+
+*If it does **not** change its story and sticks to "it was real" — even better. Then say:
+"So now it's confidently wrong twice. Which of the two answers should we believe?" Neither.*
 
 **The four rows — model answers**
 
@@ -1436,6 +1460,8 @@ worth a gentle conversation, not a mark.
 ---
 
 ## 🔮 Next Week Preview
+
+This section shows where next week goes and what to prepare early.
 
 Term 1 pivots next week. For three weeks the question has been **"who wrote the rule?"** From Week 4
 it becomes **"where did the examples come from?"** — because everything a machine knows arrived as

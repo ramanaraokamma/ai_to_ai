@@ -138,7 +138,7 @@ You need exactly two operations. Division, and subtraction.
 
 **Per-condition accuracy.** Correct ÷ total, then ×100, then round to one decimal place.
 
-```
+```text
    11 ÷ 12 = 0.916666...  →  ×100 = 91.66...  →  91.7%
     8 ÷ 12 = 0.666666...  →  ×100 = 66.66...  →  66.7%
     7 ÷ 12 = 0.583333...  →  ×100 = 58.33...  →  58.3%
@@ -147,20 +147,20 @@ You need exactly two operations. Division, and subtraction.
 
 **Overall accuracy.** Add all the corrects, divide by all the photos.
 
-```
+```text
    11 + 8 + 7 + 4 = 30        12 × 4 = 48
    30 ÷ 48 = 0.625  →  62.5%
 ```
 
 **The accuracy gap.** Best minus worst. The unit is **percentage points**, never percent.
 
-```
+```text
    91.7 − 33.3 = 58.4 percentage points
 ```
 
 **Pricing the fix.** One equation, and it is the only algebra in Level 1.
 
-```
+```text
    Lamplight photos now: 0 out of 120.
    Target: 1 photo in 5, which is 20%.
 
@@ -283,6 +283,8 @@ the map is orientation, never assessment.
 
 ## 🧰 Prep Checklist
 
+This section lists what to do before class: the photo shoot, the night before, and the morning of. Tick each box as you go.
+
 ### Earlier in the week — the photo shoot (25 minutes, non-negotiable)
 
 This is the one piece of prep the lesson cannot survive without. Do it with the student — it is
@@ -352,6 +354,8 @@ enjoyable and it is not really prep, it is step 3 of the audit.
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the whole lesson. The table gives the shape of the lesson; the parts below give the words to say.
+
 | Minutes | Segment | What happens |
 |---|---|---|
 | 0–8 | 🪝 **Hook** — the soap dispenser | A machine that worked perfectly for one hand and not the other |
@@ -390,7 +394,7 @@ Pause. Then the turn:
 
 **Do this:** write only this on the board, and nothing else:
 
-```
+```text
         WORKS            DOESN'T WORK
         ______           _____________
 
@@ -423,7 +427,7 @@ Close with the promise:
 
 **Do this:** put Figure 33.1 up, or draw the five boxes on the board:
 
-```
+```text
    1 COUNT  →  2 PREDICT  →  3 TEST  →  4 TRACE  →  5 PRICE
    training     the worst    12 photos   worst group   the fix, in
    photos, by   group, and   in each of  back to a     actual photos,
@@ -446,9 +450,9 @@ Close with the promise:
 takes five to seven minutes for 120 photos if they work in blocks of ten. If their photos are in one
 big folder, switching the file browser to large thumbnails makes it much faster.
 
-Then have them turn the four tallies into shares:
+Then have them turn the four tallies into shares. They fill in this layout:
 
-```
+```text
    daylight    ____ / 120  =  ____%
    lamplight   ____ / 120  =  ____%
    in a hand   ____ / 120  =  ____%
@@ -542,9 +546,9 @@ together**, so that when the student is alone with 36 photos they are not also f
 **Do this (score Batch A together, 8 minutes):** hand over **W33.2**, the 48-row sheet, and the pen.
 Twelve rows for Batch A. You drag the files; the student writes. Aim for about 30 seconds a photo.
 
-The sheet looks like this and it gets filled in *as you go*, never afterwards:
+The sheet looks like this. Fill it in *as you go*, never afterwards:
 
-```
+```text
    #  | batch | TRUE label  | model said  | conf % | right?
    ---+-------+-------------+-------------+--------+-------
     1 |   A   | spoon       | spoon       |   96   |   ✓
@@ -558,7 +562,7 @@ The sheet looks like this and it gets filled in *as you go*, never afterwards:
 
 - Whatever it is, make them write it three ways, on **W33.3**:
 
-```
+```text
    Batch A:   11 / 12   =  0.9167   =  91.7%
 ```
 
@@ -602,7 +606,7 @@ Show them Figure 33.6 as a finished example, then take it away before they write
 ![A finished warning sign with three measured limits](../figures/fig-w33-5-warning-sign.svg)
 *Figure 33.6 — Anyone can publish a good number. Publishing the boundary is the skill.*
 
-Reject, kindly but firmly, anything of this shape:
+Reject, kindly but firmly, anything of this shape. This table shows what they might write and what to say:
 
 | They write | Say |
 |---|---|
@@ -636,6 +640,8 @@ thinking your model works. Whose fault is that?"*
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full instructions for the audit activity, part by part, with what "finished" looks like.
 
 ### **The Audit**
 
@@ -698,9 +704,9 @@ On **W33.3**, one line per batch, division visible:
 | C | Held in a hand | | 12 | | | |
 | D | Odd background | | 12 | | | |
 
-Then, underneath:
+Then, underneath, add these lines:
 
-```
+```text
    overall  =  (____ + ____ + ____ + ____) ÷ 48  =  ______  =  ______%
 
    best group  = ____________  at ______%
@@ -727,7 +733,7 @@ Make a small ceremony of it. Hand it over. Let them tear it, not you.
 
 They read their Week 31 prediction aloud, then fill in **W33.4**:
 
-```
+```text
    I PREDICTED the worst group would be: _______________________
    Because: ____________________________________________________
 
@@ -768,7 +774,7 @@ Say why it is "probably": one model, twelve photos per group, and lamplight is h
 
 **The price.** Then the algebra, which you do line by line together, out loud:
 
-```
+```text
    Worst condition: ______________     Photos of it now: ____ of 120
 
    Target: 1 photo in 5, which is 20%.
@@ -783,9 +789,9 @@ Say why it is "probably": one model, twelve photos per group, and lamplight is h
    Check: ____ out of ____ = ______, which is ____%.  ✓
 ```
 
-Then the sentence people forget:
+Then the sentence people forget. Have them complete it on the sheet:
 
-```
+```text
    How I would know the fix worked:
    Re-run the IDENTICAL four batches — the same 48 photos — and publish
    both columns, before and after. I want lamplight above ______%
@@ -848,13 +854,18 @@ on "who was wrong?" and make sure your own hand goes up about something.
 
 ## ❓ Questions Students Ask This Week
 
+This section has short answers to the questions students are likely to ask. Read them once before class.
+
 **1. "How many photos would be enough to be sure?"**
 
 **Nobody knows for sure, and here is why.** It depends on how varied the group is, how similar your
 classes are to each other, and how big a difference you are trying to detect — and those three things
 interact in ways that even professional researchers argue about. There is no number you can look up.
+
 What people actually do is: test, look at the size of the gap, add data, retest, and watch whether
-the gap closes. It is a loop, not a formula. What you *can* say honestly today is: "this is twelve
+the gap closes. It is a loop, not a formula.
+
+What you *can* say honestly today is: "this is twelve
 photos per group, so it is a strong hint, not a final number" — and writing that sentence down is
 part of the audit, not an apology for it.
 
@@ -879,7 +890,9 @@ only see it if you kept the same test.
 **4. "Whose fault is it if my model gets someone's thing wrong?"**
 
 Yours, and that is not a scolding — it is the good news. If it were nobody's fault there would be
-nothing to do. You chose the photos, so you own the gap, so you are the person who can close it. The
+nothing to do. You chose the photos, so you own the gap, so you are the person who can close it.
+
+The
 uncomfortable version of the question is worth asking too: what if a company builds something like
 this, knows the gap, and ships it anyway with the good number on the box? Then it is theirs, and the
 person harmed usually never finds out why. That is exactly what the warning sign exists to prevent,
@@ -921,6 +934,8 @@ record is what makes being right mean something.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual problems, why each happens, and what to do right then.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The photos were never shot, and the lesson stalls at minute 26** | It is the one prep item that cannot be done in class, and it does not feel like homework | Shoot Batch A and Batch C live — both work indoors at any hour — score 24 photos, report a two-group gap, and make B and D homework. Do **not** try to fake a lamplight batch by dimming the screen. |
@@ -935,6 +950,8 @@ record is what makes being right mean something.
 ---
 
 ## 🧭 Differentiation
+
+This section helps you change the lesson for a student who is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -993,7 +1010,9 @@ to stand on. The poster becomes the homework and you have lost nothing structura
 
 ## ✅ Assessing Understanding
 
-Three checks, in the last five minutes. Ask them exactly like this.
+This section gives three quick checks and a scale for judging the week.
+
+Ask the three checks in the last five minutes, exactly like this.
 
 **Check 1 — the unit and the trace.**
 > *"Say your headline result in one sentence, with the gap and the reason."*
@@ -1036,6 +1055,8 @@ photographed.
 ---
 
 ## 📤 Homework to Assign
+
+This section tells you what to set for homework and how to say it.
 
 **Say this:**
 
@@ -1338,26 +1359,26 @@ and does every subsequent step for real.
 | C | Held in a hand | 8 | 12 | 8/12 | 0.6667 | **66.7%** |
 | D | Odd background | 7 | 12 | 7/12 | 0.5833 | **58.3%** |
 
-The divisions, written out as the sheet demands:
+Here are the divisions, written out as the sheet demands:
 
-```
+```text
    11 ÷ 12 = 0.916666...  →  ×100 = 91.66...  →  91.7%
     4 ÷ 12 = 0.333333...  →  ×100 = 33.33...  →  33.3%
     8 ÷ 12 = 0.666666...  →  ×100 = 66.66...  →  66.7%
     7 ÷ 12 = 0.583333...  →  ×100 = 58.33...  →  58.3%
 ```
 
-Overall:
+Here is the overall figure:
 
-```
+```text
    11 + 4 + 8 + 7 = 30 correct
    12 × 4 = 48 photos
    30 ÷ 48 = 0.625  →  62.5%
 ```
 
-The gap:
+Here is the gap:
 
-```
+```text
    best  = Batch A, bright daylight  = 91.7%
    worst = Batch B, lamplight        = 33.3%
 
@@ -1379,7 +1400,7 @@ divide once — that always works."*
 
 **Rohan's, worked:**
 
-```
+```text
    I PREDICTED the worst group would be:  held in a hand
    Because:  I never held anything up, I always put it flat on the table.
 
@@ -1409,7 +1430,7 @@ anything blaming the model, the camera or the software rather than the count.
 
 **The fix, priced:**
 
-```
+```text
    Worst condition: lamplight.    Photos of it now: 0 of 120.
    Target: 1 photo in 5, which is 20%.
 
@@ -1437,7 +1458,7 @@ anything blaming the model, the camera or the software rather than the count.
 
 **Extension — all three gaps priced in order, using the new total each time:**
 
-```
+```text
    1. LAMPLIGHT (0 now).            x/(120+x) = 0.20
                                     0.80x = 24     →  x = 30      total 150
    2. ODD BACKGROUND (14 now).      (14+y)/(150+y) = 0.20
@@ -1530,7 +1551,7 @@ bright reflective bowl and a chunky outline and survives everywhere.
 
 **2. The confidence threshold.** From Rohan's sheet, counting only rows above 90%:
 
-```
+```text
    WRONG answers with confidence above 90%:    1   (row 21, comb → toothbrush, 94%)
    CORRECT answers with confidence above 90%:  4   (rows 1, 2, 4, 27)
    CORRECT answers it would have SILENCED:    26   (30 correct − 4 above 90%)
@@ -1597,6 +1618,8 @@ two carry the week.
 ---
 
 ## 🔮 Next Week Preview
+
+This section tells you what next week asks of you, so you can prepare early.
 
 Week 34 begins the capstone, and the tone changes completely: it is a **build session with a clock on
 the wall**, not a lesson. The student designs an AI Fair booth around a real annoyance in their own

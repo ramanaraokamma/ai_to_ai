@@ -78,7 +78,7 @@ Route B takes five minutes to build, works with no internet once the pages are l
 nothing. It has one cost: **there is a human inside the loop.** That is fine — but it must be said
 out loud at the booth, on a printed sign, in ordinary-sized text:
 
-```
+```text
    ┌────────────────────────────────────────────────────────────┐
    │  HOW THIS BOOTH WORKS: the model runs on this laptop and   │
    │  makes the prediction. I type the prediction into Scratch  │
@@ -102,7 +102,7 @@ still wins. The model announces `recycling` with the same voice it uses when the
 A **confidence threshold** is one line of arithmetic that fixes this. Pick a number — 70 is a good
 default. Then:
 
-```
+```text
    if the winning confidence is ABOVE 70   →   act on the label (four behaviours)
    if it is 70 or BELOW                    →   say "not sure", name no bin, count nothing
 ```
@@ -143,7 +143,7 @@ different: `other` means *the machine is confident this is none of my three bins
 
 The student has, from the pre-class session, four batches of ten photos, each scored on paper:
 
-```
+```text
    control          — same room, same lamp-off daylight, same hands as training
    new-lighting     — a lamp, after dark
    new-hands        — somebody else holding the items
@@ -159,8 +159,9 @@ Four accuracies come out of that. A **bias report** is not those four numbers. I
 3. **The chain back to the data.** Four links, and it always ends in a countable number:
    *I only shot in the afternoon → 138 of my 160 training photos are daylight → the model learned
    daylight patterns → anyone using this in the evening gets bad answers.* Nothing broke. The model
-   learned exactly what it was shown. **Skewed examples produce skewed results, and the skew usually starts with how the data was collected**, not
-   bad luck and not anybody being unkind.
+   learned exactly what it was shown.
+   **Skewed examples produce skewed results, and the skew usually starts with how the data was collected**,
+   not bad luck and not anybody being unkind.
 4. **A priced fix.** "Collect more data" is not a plan. "I need 47 more lamplight photos, and here
    is the arithmetic" is a plan. The arithmetic is in the Worked Example below and again in the
    Answer Key.
@@ -236,6 +237,8 @@ not quiz them on the threads; the map is orientation, never assessment.
 
 ## 🧰 Prep Checklist
 
+This section lists what to do before class, so that nothing is hunted for during the lesson.
+
 ### 🗓️ Earlier in the week — the pre-class session (45 minutes, with the student)
 
 This is Milestone 6's measurement. It has to happen before class.
@@ -282,6 +285,8 @@ This is Milestone 6's measurement. It has to happen before class.
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson. Each segment says what to do, what to say and what to ask.
 
 | Minutes | Segment | What happens |
 |---|---|---|
@@ -461,7 +466,7 @@ speaking each row. Do not write it for them; ask and record.
 **Do this:** write these four results on the board. Tell them plainly these are *your* made-up
 numbers, so nobody's real result gets contaminated by expectation.
 
-```
+```text
    condition           correct / 10     fraction   decimal   percent
    ─────────────────   ────────────     ────────   ───────   ───────
    control                  9              9/10      0.9        90%
@@ -472,7 +477,7 @@ numbers, so nobody's real result gets contaminated by expectation.
 
 Then, step by step, out loud:
 
-```
+```text
    1. THE GAP
       best 90%  −  worst 40%  =  50 percentage points
 
@@ -585,6 +590,8 @@ Then assign the homework below, and read the first line of it out loud so it doe
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the Booth Sprint, for both routes.
+
 ### The Booth Sprint — Milestones 5, 6 and 7
 
 **Materials:** laptop with both tabs already open · the four scored bias sheets · the Week 34 booth
@@ -605,7 +612,7 @@ line on the table.
 Build it in this order. The threshold goes in **first**, before the four behaviours, so it can never
 become an afterthought. (Sound names and Stretch3 block wording are from memory and may differ slightly in the live library: any sound will do.)
 
-```
+```text
 when green flag clicked
 
     set [threshold v] to (70)          · my cut-off, in percent
@@ -666,7 +673,7 @@ Then print and mount the Route B honesty sign (the wording is in *What YOU Need 
 Same shape, three differences: the URL goes in at the top, the label comes from a reporter block
 instead of `ask`, and you need a change-guard so it doesn't repeat itself forty times a second.
 
-```
+```text
 when green flag clicked
 
     set image classification model URL [https://teachablemachine.withgoogle.com/models/AbCdEf123/]
@@ -702,7 +709,7 @@ when green flag clicked
 
 #### "Finished" for Station 1 means all five of these, demonstrated to you
 
-```
+```text
    □ recycling item  → blue backdrop,  right sentence, counter +1
    □ compost item    → green backdrop, right sentence, counter +1
    □ landfill item   → grey backdrop,  right sentence, counter +1
@@ -726,7 +733,7 @@ Three objects come out of this station:
    numbers and box 8 the real warning.
 3. **The DO NOT USE THIS FOR sign** — marker, poster paper, biggest text on the booth:
 
-```
+```text
    ┌──────────────────────────────────────────────────────────┐
    │                                                          │
    │        DO  NOT  USE  THIS  FOR                           │
@@ -777,6 +784,8 @@ Three extensions, in order of value:
 ---
 
 ## ❓ Questions Students Ask This Week
+
+These are the questions this week usually brings up, with an answer you can give.
 
 **1. "Why seventy? Why not sixty, or ninety?"**
 
@@ -841,6 +850,8 @@ adults know it.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual problems, why they happen, and what to do right away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The threshold never fires — the app either always answers, or always says "not sure" | Units. The extension reports `0.61` and the threshold is `70` (or vice versa) | `say (image label confidence)` once, read the raw number, set `threshold` to `70` or `0.7` to match. Two minutes. Check this **before** anything else. |
@@ -856,6 +867,8 @@ adults know it.
 ---
 
 ## 🧭 Differentiation
+
+This section says what to cut if the student is struggling, and what to add if they are flying.
 
 ### If they are struggling
 
@@ -910,6 +923,8 @@ and cheerfully. A grim 70 minutes the week before the showcase costs you more th
 
 ## ✅ Assessing Understanding
 
+This section gives three quick checks and a scale for judging the week.
+
 Three checks. Last five minutes. Nothing to print.
 
 **Check 1 — the distinction.** Say exactly: *"I hold up a car key. Then I hold up a squashed yoghurt
@@ -951,6 +966,8 @@ have thirty seconds and I'm counting on my fingers."*
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to say when you set the homework, and a map of the workbook.
 
 **Say this, word for word:**
 
@@ -1001,6 +1018,8 @@ of. Everything else in the table has an answer in the key below.
 ---
 
 ## 🔑 Answer Key
+
+This section has the answers to the questions asked in the lesson and to every part of the workbook.
 
 ### Lesson questions
 
@@ -1127,7 +1146,7 @@ confidence number rather than saying only "not sure".
 
 #### W35-2 — The threshold, written out
 
-```
+```text
    set [threshold v] to (70)
 
    if <not <(conf) > (threshold)>> then
@@ -1175,7 +1194,7 @@ Reproducible by a stranger. "It's worse sometimes" earns nothing.
 
 **3. The four-link chain.**
 
-```
+```text
    COLLECTION HABIT          →   THE DATA IS SKEWED
    I only shot in the            138 of 160 training photos are
    afternoon, because that       daylight; only 22 are lamplight
@@ -1193,7 +1212,7 @@ what it was shown. (Ten photos per batch is small: call daylight skew the likely
 
 **4. The priced fix.** Lamplight to be at least one third of training, keeping all 138 daylight:
 
-```
+```text
    L ≥ 1/3 × (138 + L)   →   3L ≥ 138 + L   →   2L ≥ 138   →   L ≥ 69
    check:  69 ÷ 207 = 0.333… = 33.3%  ✓
    already have 22  →  47 more photos to take
@@ -1292,6 +1311,8 @@ No right answers; it is the student's honest 😀 / 🙂 / 😕. Look at the two
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week holds and what to prepare early.
 
 Next week is Showcase Day, and it is three things in one sitting: the paper, the booth, and the
 reckoning. The paper is the full Level 1 assessment — 20 multiple choice, 8 short answers and 4

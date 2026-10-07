@@ -96,7 +96,7 @@ needed the exam.
 
 ### 3. The gap, as one subtraction
 
-```
+```text
    training accuracy:  60/60 = 100.0%
    test accuracy:      11/15 =  73.3%
    ─────────────────────────────────────
@@ -151,7 +151,7 @@ Point at that row in their Week 18 table today. The word is new; the experience 
 
 That is all. It is a tally chart with two labels.
 
-```
+```text
                         ┌─────── WHAT THE MODEL SAID ───────┐
                         │  spoon    toothbrush     comb     │  total
    ┌────────────────────┼───────────────────────────────────┼───────
@@ -265,6 +265,8 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
 
 ## 🧰 Prep Checklist
 
+*This section lists what to get ready, and what to do if something fails.*
+
 ### 15 minutes the night before
 
 - [ ] **Find last week's marked Handout 20A.** Eleven Ys, four Ns. If it is gone, print it again from
@@ -356,7 +358,7 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
 **Do this:** draw two stick students on the board with their two pairs of numbers, and write between
 them the number that matters:
 
-```
+```text
    Aisha:  practice 100%   exam 95%    gap  5 points
    Ben:    practice 100%   exam 40%    gap 60 points
 ```
@@ -605,6 +607,8 @@ worth more than the score.
 
 ## 🎲 The Activity, In Full
 
+*This section gives the whole activity step by step, with two variations.*
+
 ### Build the Matrix
 
 **Time:** 20 minutes · **Group size:** one student, one adult
@@ -641,7 +645,7 @@ Then convert the tally marks to numbers and write in the row totals. The finishe
 Green pen. Shade the three cells where the truth and the guess match: top-left, middle, bottom-right.
 Then add them up and write the sum outside the grid.
 
-```
+```text
    diagonal:  5 + 4 + 2  =  11
    correct count on the sheet:  11        ✓ they match
    all nine cells:  5+0+0 + 0+4+1 + 1+2+2  =  15   ✓ same as the number of photos
@@ -662,7 +666,7 @@ Then add them up and write the sum outside the grid.
 This is the part that makes the grid worth drawing. There are **three** off-diagonal cells with numbers
 in them (four mistakes between them: 1 + 1 + 2). Each one becomes a full sentence, said aloud, in the form *"N of X were called Y."*
 
-```
+```text
    true toothbrush → said comb,   1   →  "one toothbrush was called a comb."
    true comb → said spoon,        1   →  "one comb was called a spoon."
    true comb → said toothbrush,   2   →  "TWO COMBS WERE CALLED TOOTHBRUSH."
@@ -670,7 +674,7 @@ in them (four mistakes between them: 1 + 1 + 2). Each one becomes a full sentenc
 
 Then read the empty cells too, because zeros are information:
 
-```
+```text
    true spoon → said toothbrush,  0
    true spoon → said comb,        0   →  "no spoon was ever mistaken for anything."
    true toothbrush → said spoon,  0
@@ -683,7 +687,7 @@ most useful single number in the grid.
 **Then read down the columns (2 of the 6 minutes).** This is a second, different reading and it gives a
 different answer.
 
-```
+```text
    said spoon:      6 times, but only 5 spoons existed   →  one extra; too small a difference to read anything into
    said toothbrush: 6 times, but only 5 toothbrushes     →  one extra; too small a difference to read anything into
    said comb:       3 times, though 5 combs existed      →  RELUCTANT about comb
@@ -766,6 +770,8 @@ Skip the column reading and the prediction. Keep the sentences out loud.
 
 ## ❓ Questions Students Ask This Week
 
+*These are the questions you are likely to hear, with an answer for each.*
+
 **1. "Is memorizing always bad?"**
 For a model, in this situation, yes — because you want it to work on new photos and memorising
 specifically doesn't do that. But be careful with the word: memorising is a perfectly good strategy for
@@ -799,8 +805,12 @@ one equally.
 **6. "My model might get 15 out of 15 next week. Is that suspicious?"**
 It might be brilliant and it might be a warning. The question to ask is about the photos, not the score:
 were the fifteen genuinely taken on a different day, in a different room, with different light? If yes —
-excellent, and say so in your write-up. If they were from the same session as your training photos,
-then 15/15 is what a lazy split looks like and the number doesn't mean anything. Also: fifteen photos is
+excellent, and say so in your write-up.
+
+If they were from the same session as your training photos,
+then 15/15 is what a lazy split looks like and the number doesn't mean anything.
+
+Also: fifteen photos is
 a small sample. 15/15 is encouraging, not proof.
 
 **7. "Can I fix the model now that I know it's bad at combs?"**
@@ -811,13 +821,17 @@ list for a *fresh* round, sealed all over again.
 
 **8. "Did the model know it was getting them wrong?"**
 No — and you can see it on the sheet. Look at the confidences on the four wrong rows: 54%, 58%, 66%,
-49%. They're lower than the right answers, so there's a hint there. But row 14 got 66% and was wrong,
+49%. They're lower than the right answers, so there's a hint there.
+
+But row 14 got 66% and was wrong,
 while row 12 got 63% and was right. **They overlap.** There's no confidence number you could use as a
 clean line between right and wrong. That was Week 16's lesson and it's still true.
 
 ---
 
 ## ⚠️ Where This Lesson Goes Wrong
+
+*This table lists the usual problems, why they happen, and what to do.*
 
 | What happens | Why | What to do right now |
 |---|---|---|
@@ -833,6 +847,8 @@ clean line between right and wrong. That was Week 16's lesson and it's still tru
 ---
 
 ## 🧭 Differentiation
+
+*This section shows how to adjust the lesson for different students.*
 
 ### If they are struggling
 
@@ -888,6 +904,8 @@ big idea, and the grid can be a Week 22 warm-up.
 ---
 
 ## ✅ Assessing Understanding
+
+*These checks show whether the student has the ideas.*
 
 ### Check 1 — the two words, cold
 
@@ -985,6 +1003,8 @@ The times outside Build It are estimates; only Build It's 50 minutes comes from 
 ---
 
 ## 🔑 Answer Key
+
+*Teacher only. This section holds every answer for the lesson and the workbook.*
 
 ### K1 — Handout 20A, reprinted (in case last week's sheet is lost)
 
@@ -1259,7 +1279,7 @@ class is broken**, not **what it is broken against** — the confusion matrix su
 
 **Correct rows:** 1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 14 → **11 correct out of 15**.
 
-```
+```text
    FRACTION:    11 / 15
    DECIMAL:     15 × 0.7 = 10.5;  11 − 10.5 = 0.5;  0.5 ÷ 15 = 0.0333
                 0.7 + 0.0333 = 0.7333

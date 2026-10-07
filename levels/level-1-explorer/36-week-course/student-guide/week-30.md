@@ -21,6 +21,8 @@
 
 ## 🪝 Start Here
 
+This part sets up today's question and the two machines that will face it.
+
 Last week your tally sheet and a die produced this:
 
 > ### `amma takes the bus to the market .`
@@ -38,11 +40,15 @@ Your tally sheet has never heard of the moon. Your Scratch bot will only know ab
 
 Now guess: will they behave the same way?
 
-They will not behave the same way at all. They will fail so differently that one of them is merely **annoying** and the other one is genuinely **dangerous**. And by the end of today you will not have to take my word for it, because you will have built both of them with your own hands.
+They will not. They fail so differently that one of them is merely **annoying** and the other one is genuinely **dangerous**.
+
+You do not have to take my word for it. By the end of today you will have built both of them with your own hands.
 
 ---
 
 ## 🧠 The Big Idea
+
+This section explains how a rule-based bot works inside, how it differs from last week's generator, and how much memory a model has.
 
 ### 1. Two machines, two completely different insides
 
@@ -62,13 +68,21 @@ Inside, they could not be more different — and the difference decides how much
 | Which Week 1 family is it? | Rule-based | Machine learning |
 | How much can it cover? | Only what you typed | Almost anything |
 
-**The fourth row is the one that matters.** When a rule-based bot doesn't know, it says so. When a learned generator doesn't know, it tends to invent (the toy you built does; some modern systems also learn to hedge). That single asymmetry is worth an hour of anybody's time.
+**The fourth row is the one that matters.** When a rule-based bot doesn't know, it says so. When a learned generator doesn't know, it tends to invent (the toy you built does; some modern systems also learn to hedge).
 
-**🍕 The analogy: the vending machine and the improviser.** A vending machine has five buttons. Press a button it has, you get exactly what the label says, every time. Press a button it does not have — nothing happens, and you know immediately to go somewhere else. An improviser on stage will produce something for *any* prompt you shout, fluently, in character, at full confidence. Sometimes it is brilliant. It is never checked. **Both are useful. You need to know which one you are standing in front of.**
+That single asymmetry is worth an hour of anybody's time.
+
+**🍕 The analogy: the vending machine and the improviser.**
+
+- A vending machine has five buttons. Press a button it has, you get exactly what the label says, every time.
+- Press a button it does not have and nothing happens. You know at once to go somewhere else.
+- An improviser on stage will produce something for *any* prompt you shout, fluently, in character, at full confidence. Sometimes it is brilliant. It is never checked.
+
+**Both are useful. You need to know which one you are standing in front of.**
 
 ### 2. What a rule-based chatbot actually is: two lists and a number
 
-Here is the entire architecture. It is genuinely this small.
+Here is the entire design. It is genuinely this small.
 
 1. Two lists, side by side. One holds **triggers** — words to look for. The other holds **replies**.
 2. Ask the person a question. Wait for their answer.
@@ -91,7 +105,9 @@ Here is our class bot, PizzaBot:
 
 Three consequences follow, and all three will bite you in the lab.
 
-**Consequence 1 — the order of the list is a rule.** Because the loop stops at the *first* match, `pineapple` beats `topping` **only because it sits higher up**. Move it to the bottom and the pineapple reply becomes nearly unreachable, because most questions with the word "pineapple" in them also mention toppings. It was not deleted. It was **demoted**.
+**Consequence 1 — the order of the list is a rule.** Because the loop stops at the *first* match, `pineapple` beats `topping` **only because it sits higher up**.
+
+Move it to the bottom and the pineapple reply becomes nearly unreachable, because most questions with the word "pineapple" in them also mention toppings. It was not deleted. It was **demoted**.
 
 > **💡 You have met this before.** In Week 8 you built rule ladders where the first rule that fitted decided the answer, so a general rule at the top made every specific rule below it unreachable. This is the same idea wearing different clothes.
 
@@ -103,12 +119,12 @@ Three consequences follow, and all three will bite you in the lab.
 
 ### 3. The loop, block by block
 
-Here is the whole program. Do not be alarmed by the length — most of it is just typing in the lists.
+Here is the whole program as a block listing. Do not be alarmed by the length — most of it is just typing in the lists.
 
 ![The ask / compare / say loop](../figures/fig-w30-2-scratch-blocks.svg)
 *Figure 30.4 — The finished block stack. The grey and red outlines are Control blocks, which wrap whatever sits inside them.*
 
-```
+```text
    when green flag clicked
 
      delete all of [triggers]
@@ -168,7 +184,7 @@ Here is the whole program. Do not be alarmed by the length — most of it is jus
 | `set`, `change`, `add … to`, `item … of`, `length of`, `delete all of` | Variables (orange) |
 | `contains`, `is bigger than`, `=`, `or` | Operators (green) |
 
-Two Scratch facts you need, and nobody tells you:
+Two Scratch facts you need:
 
 - **`contains` ignores capitals.** `HOW MUCH IS THE PRICE` matches a trigger of `price`. (Contrast that with Week 27, when you had to lowercase everything yourself by hand. Scratch does it for you here. Plenty of other systems do not.)
 - **`say … for 2 seconds` blocks everything.** Nothing else happens during those two seconds. So if your bot seems to be ignoring you, it is often just mid-`say`. Keep durations at 2 or 3 seconds, never longer.
@@ -195,11 +211,13 @@ A good fallback does three jobs at once. It **admits** the bot is stuck. It **do
 
 **Now the question that flips most people's thinking.** When the fallback fires, has the bot **failed** or **succeeded**?
 
-Most people say failed. Think about it again. Last week, when your table hit something it didn't know, it produced `amma takes the bus to the market` in a confident voice and you had to go and check the corpus to catch it. This bot says *"I don't know that one."*
+Most people say failed. Think about it again.
+
+Last week, when your table hit something it didn't know, it produced `amma takes the bus to the market` in a confident voice. You had to go and check the corpus to catch it. This bot says *"I don't know that one."*
 
 > ### **The fallback firing is the bot succeeding at being honest.**
 
-Writing an honest error message takes thirty seconds and it is a small piece of ethics disguised as a piece of programming.
+Writing an honest error message takes thirty seconds. It is a small piece of ethics disguised as a piece of programming.
 
 ### 5. n-grams — how much memory a model has
 
@@ -232,7 +250,7 @@ The four trigram groups we need:
 
 Greedy under trigrams, starting from `the bus`:
 
-```
+```text
    (the, bus)     -> to      (2, the biggest)
    (bus, to)      -> the     (forced)
    (to, the)      -> market  (a 1-1-1 tie, broken by first appearance in the corpus)
@@ -241,11 +259,13 @@ Greedy under trigrams, starting from `the bus`:
    OUTPUT:  the bus to the market .        -- and it stops (our rule: stop at the first full stop).
 ```
 
-Compare that with bigram greedy: `the bus to the bus to the bus to …` for ever. **One extra word of memory broke the loop** — at least until the full stop. It stops there only because our rule says to stop at the first full stop. Let it keep going and it carries on from `market .` to `amma` and circles round the same route again. Still a real, checkable win: it reached a full stop, which bigram greedy never did.
+Compare that with bigram greedy: `the bus to the bus to the bus to …` for ever. **One extra word of memory broke the loop** — at least until the full stop.
+
+It stops there only because our rule says to stop at the first full stop. Let it keep going and it carries on from `market .` to `amma` and circles round the same route again. Still a real, checkable win: it reached a full stop, which bigram greedy never did.
 
 **And now the sting.** Is `amma takes the bus to the market .` still legal under trigrams? Check it:
 
-```
+```text
    (amma, takes)  -> the      forced
    (takes, the)   -> bus      forced
    (the, bus)     -> to       2 of 4
@@ -258,13 +278,17 @@ Compare that with bigram greedy: `the bus to the bus to the bus to …` for ever
 
 **How much memory would fix it?** You would need the group `(amma, takes, the, bus, to, the)` to exist as its own row — a **7-gram**. In our corpus that six-word phrase occurs exactly once and is followed by `shop`, so a 7-gram model would forbid `market` outright.
 
-**So why doesn't everyone just use 7-grams?** Because in real text, almost **no** six-word phrase ever repeats. So every group would have exactly one member, there would be no choice to make, and the generator would simply quote its source text back at you word for word. More precision buys you exponentially more rows and exponentially less evidence in each one. That is the **rule explosion** from Week 10 wearing a different hat.
+**So why doesn't everyone just use 7-grams?** Because in real text, almost **no** six-word phrase ever repeats. So every group would have exactly one member, there would be no choice to make, and the generator would quote its source text back at you word for word.
+
+More precision buys you exponentially more rows and exponentially less evidence in each one. That is the **rule explosion** from Week 10 wearing a different hat.
 
 > ### **The one-line version: more memory fixes forgetting. It does not fix truth, and past a point it stops being affordable.**
 
 ---
 
 ## 🔍 Worked Examples
+
+These three examples walk through bots by hand, one question at a time, so you can see exactly what each one does.
 
 ### Worked Example 1 — Be the bot, on paper (food)
 
@@ -413,9 +437,11 @@ Somebody adds `is` at the top of the list, thinking it will catch questions.
 
 ## 🎲 What We Did In Class
 
-**The Scratch Bot.** Four stages, with a test after **every** stage. If you missed the lesson you can do all of this at home in about 25 minutes.
+This section is the lab: you build the Scratch bot in four stages, then test it. If you missed the lesson you can do all of this at home in about 25 minutes.
 
-Go to **scratch.mit.edu** and click **Create**. No account is needed. A keyboard is essential; a mouse or trackpad is much easier than a touchscreen for dragging blocks.
+**The Scratch Bot.** Four stages, with a test after **every** stage.
+
+Go to **scratch.mit.edu** and click **Create**. No account is needed. A keyboard is essential. A mouse or trackpad is much easier than a touchscreen for dragging blocks.
 
 > **⚠️ Watch out — read this before you start:** your project lives in the browser tab. **A closed tab is lost work, and nothing warns you loudly enough.** Save at least twice, and not into Downloads.
 
@@ -427,9 +453,9 @@ A bot that worked five minutes ago and does not now has a bug in the **last five
 
 ### Stage 1 — ask and say (4 min)
 
-Three blocks:
+Build these three blocks:
 
-```
+```text
    when green flag clicked
      ask [What do you want to know?] and wait
      say (answer) for (2) seconds
@@ -463,9 +489,9 @@ Let that silence sit for a few seconds. It is genuinely uncomfortable. It walked
 
 ### Stage 3 — the fallback (5 min)
 
-One block, and a sentence you write yourself:
+Add this block, with a sentence you write yourself:
 
-```
+```text
      if <(matched) = (0)> then
        say [I don't know that one - try asking about toppings, price, delivery or opening time.] for (3) seconds
      end
@@ -516,7 +542,7 @@ Here is the reference log for the five-trigger PizzaBot:
 
 Now put that next to last week's score sheet, row 2:
 
-```
+```text
    amma takes the bus to the market .        reads well ✓        true ✗
 ```
 
@@ -546,6 +572,8 @@ That is not an argument for building stupid bots. It is an argument for **knowin
 
 ## 💬 Talk About It
 
+These are questions to talk over with an adult. Each has a hint for the adult.
+
 **1. Ask an adult: "When you use a company's chat window, do you think you're talking to a rule-based bot, a learned one, or a person?"** Then ask how they would find out.
 
 > *Hint:* the test is easier than it sounds — ask it something slightly off-topic and watch what it does. A rule bot brushes you off with the same sentence every time. A learned one produces something fluent about your off-topic thing. A person mistypes something eventually. Most real chat windows are actually **all three, layered**, with a button that gets you a human.
@@ -561,6 +589,8 @@ That is not an argument for building stupid bots. It is an argument for **knowin
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four mistakes people often make about bots, each next to the better thought.
 
 ### Trick 1 — "The fallback means the bot failed, so the fallback is bad"
 
@@ -601,6 +631,8 @@ The rule bot can say five things. The generator can answer questions nobody ever
 
 ## 🌍 Where You've Seen This
 
+Rule-based bots and fallbacks are all around you. Here are six places to spot them.
+
 1. **A bank or shop chat window that answers "what are your opening hours?" perfectly and then falls apart.** That is a rule-based layer, with hand-written and often carefully checked answers, sitting in front of something else.
 2. **A menu of buttons instead of a text box.** That is a rule bot being honest about being a rule bot — it shows you its trigger list up front so you cannot ask anything it does not have.
 3. **The "did you mean…?" suggestions under a help search.** Often spelling correction or fuzzy search rather than strict trigger matching, but the same idea of showing the top few candidates rather than the single first match.
@@ -611,6 +643,8 @@ The rule bot can say five things. The generator can answer questions nobody ever
 ---
 
 ## 🧭 Where This Fits
+
+This section shows where this week sits on the course map.
 
 Look at the map differently this week. Up to now every week has added to **one** box. This week the
 shaded box on the right reaches all the way back across the fork to the left-hand branch, because you
@@ -637,6 +671,8 @@ lit threads are **model** and **evaluation** — you build a machine, and then y
 
 ## 🔑 Remember This
 
+These are the ideas to keep from this week.
+
 - **A rule-based bot is two lists joined by a position number.** Ask, walk the trigger list from the top, take the **first** match, say the reply at that position, stop.
 - **The order of your list is a rule.** If one trigger sits inside another (`practice` inside `practice ground`), the shorter one above the longer makes the longer permanently unreachable. It is not deleted. It is demoted.
 - **`contains` knows nothing about meaning.** `open` matches "how do I open the box". No trigger shorter than four letters.
@@ -649,6 +685,8 @@ lit threads are **model** and **evaluation** — you build a machine, and then y
 ---
 
 ## 📓 New Words
+
+These are this week's three words.
 
 ![This week's three words](../figures/fig-w30-7-vocab-icons.svg)
 *Figure 30.10 — This week's three words, drawn.*
@@ -665,7 +703,7 @@ lit threads are **model** and **evaluation** — you build a machine, and then y
 
 Go to **[the Week 30 workbook](../workbook/week-30.md)**. About **45–60 minutes**, *assuming your Week 28 tally sheet and Week 29 traces are already done* — they were the last two weeks' homework.
 
-This week finishes the whole thing. It is called **The Human Language Model**, it has been three weeks in the making, and it has three parts plus a write-up.
+This week finishes the whole project. It is called **The Human Language Model**. It has been three weeks in the making, and it has three parts plus a write-up.
 
 **Part 1 — the tally sheet.** Your bigram table from your own sixty-word text. Tidy it up so somebody else could read it. Both checks ticked.
 

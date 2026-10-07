@@ -191,6 +191,8 @@ written down *in*). Do not name them for the learner today.
 
 ## 🧰 Prep Checklist
 
+This section lists what to get ready, and what to do if something is missing.
+
 ### 15 minutes the night before
 
 - [ ] **Write the 12 sticky notes for the hook.** One fact per note. Write them in messy handwriting, in no order. Use exactly these twelve:
@@ -225,6 +227,8 @@ written down *in*). Do not name them for the learner today.
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson. The table shows the shape. Each segment below it has what to say and ask.
 
 | Minutes | Segment | What happens |
 |---|---|---|
@@ -476,6 +480,8 @@ Then assign the homework as written in the 📤 section.
 
 ## 🎲 The Activity, In Full
 
+This section gives the step-by-step instructions for the main activity, with the timings for each step.
+
 ### Turn the Backpack Into a Table
 
 **Time:** 20 minutes
@@ -591,6 +597,8 @@ They will have to add up the grams from their own table — which quietly proves
 
 ## ❓ Questions Students Ask This Week
 
+This section gives honest, short answers to the questions students are likely to ask.
+
 **"Why can't the computer just look at the bag?"**
 Because it has no eyes, and even the ones that seem to have eyes don't work the way you think. A phone camera turns a picture into — you guessed it — a giant table of numbers, one row per photo and thousands of columns. We do that in Week 23 and it is genuinely one of the best weeks of the year. So the honest answer is: *it never looks at the bag. It always reads a table. Sometimes the table was made from a photo.*
 
@@ -598,7 +606,15 @@ Because it has no eyes, and even the ones that seem to have eyes don't work the 
 No. Truly, no. To the machine, the header `grams` is a meaningless label, and the column is just numbers. It would behave identically if you named the column `banana`. The header exists so *you* remember what the numbers are. This is why the person who chooses the columns has so much power — and so much responsibility.
 
 **"How many rows does an AI need?"**
-**Nobody knows for sure, and here is why.** There is no simple universal formula (researchers do find trends for very large models, but nothing a beginner can use). It depends on how complicated the pattern is, how varied your examples are, and how much error you can live with. A team building a real system finds out by trying: train on some, test, add more, test again, and watch where the improvement flattens out. Researchers have been trying to predict this in advance for decades and are still not very good at it. What we can say: in Weeks 15 and 17 you will use around 40 photos per category, and that is enough there because Teachable Machine starts from a model already trained on a huge number of images, so it only has to learn your categories. A few dozen per category is a reasonable starting point for that kind of tool, and it often keeps improving with more. Rough guidance from experience — not a law.
+**Nobody knows for sure, and here is why.** There is no simple universal formula (researchers do find trends for very large models, but nothing a beginner can use). It depends on three things:
+
+- how complicated the pattern is
+- how varied your examples are
+- how much error you can live with
+
+A team building a real system finds out by trying: train on some, test, add more, test again, and watch where the improvement flattens out. Researchers have been trying to predict this in advance for decades and are still not very good at it.
+
+What we can say: in Weeks 15 and 17 you will use around 40 photos per category. That is enough there because Teachable Machine starts from a model already trained on a huge number of images, so it only has to learn your categories. A few dozen per category is a reasonable starting point for that kind of tool, and it often keeps improving with more. Rough guidance from experience — not a law.
 
 **"What if two rows are exactly the same?"**
 Excellent, and that is literally next week's lesson. Short version for today: sometimes it's a mistake and sometimes it's a real coincidence — two different pencils that both weigh 6 grams are not a mistake — and telling them apart is why professionals give every row a unique ID number. Park it; we hunt those next Wednesday.
@@ -619,6 +635,8 @@ If every row is the same kind of thing, and every column was measured the same w
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the common problems and what to do about each one right away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student starts measuring before the row unit is agreed | Measuring feels like the real work; deciding feels like admin | Physically take the scale away and put it on the floor. Say: "The scale comes back when the top line of the sheet is filled in." It sounds strict; it works, and they only need it once. |
@@ -633,6 +651,8 @@ If every row is the same kind of thing, and every column was measured the same w
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to change the lesson if the student is struggling, flying, or not engaging.
 
 ### If they are struggling
 
@@ -1011,7 +1031,17 @@ A worked example of a fully correct sheet is Figure 4.6.
 
 ## 🔮 Next Week Preview
 
-Next week the table fights back. The student gets handed a printed twelve-row table with nine deliberate faults planted in it — two blank cells, a row recorded twice, a bag that weighs minus three kilograms, a night of eighty-eight hours' sleep, and the word "Monday" spelled four different ways — plus one value that looks like a fault and absolutely is not. They will hunt all of it with four coloured pens, and the argument about that last value is the best five minutes of the term. Then they run the same four checks on their own homework table.
+This section says what to get ready for next week.
+
+Next week the table fights back. The student gets a printed twelve-row table with nine deliberate faults planted in it:
+
+- two blank cells
+- a row recorded twice
+- a bag that weighs minus three kilograms
+- a night of eighty-eight hours' sleep
+- the word "Monday" spelled four different ways
+
+There is also one value that looks like a fault and absolutely is not. They hunt all of it with four coloured pens, and the argument about that last value is the best five minutes of the term. Then they run the same four checks on their own homework table.
 
 **Prep early:** you need **four coloured pens or highlighters** in different colours for Week 5, one per fault type — that is the only unusual material. Also make sure this week's homework table actually comes back, because Week 5's homework runs the fault checks on it. If it hasn't been started by the weekend, send a nudge; two weeks of missing rows is very hard to recover from by Week 6.
 

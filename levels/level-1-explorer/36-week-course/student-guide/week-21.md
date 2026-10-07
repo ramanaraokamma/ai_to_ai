@@ -20,27 +20,31 @@
 
 ## 🪝 Start Here
 
-Two students. **Aisha** and **Ben.**
+This section tells a short story about two students. It sets up the question for the whole week.
 
-Both of them are given the same practice sheet: sixty questions, answers on the back. Both of them work through it until they can do every single one. Both of them score **100% on the practice sheet.**
+Two students: **Aisha** and **Ben.**
 
-```
+Both are given the same practice sheet: sixty questions, answers on the back. Both work through it until they can do every single one. Both score **100% on the practice sheet.**
+
+```text
    Aisha:  practice 100%
    Ben:    practice 100%
 ```
 
 **So which one is better at maths?**
 
-Sit with that for a second, because you genuinely cannot tell. They are identical on the page in front of you.
+Stop and think for a second. You cannot tell. They are identical on the page in front of you.
 
-Right. **Exam day.** The paper has twenty questions on it that neither of them has ever seen.
+Now it is **exam day.** The paper has twenty questions on it that neither of them has ever seen.
 
-```
+```text
    Aisha:  practice 100%   exam 95%    gap   5 points
    Ben:    practice 100%   exam 40%    gap  60 points
 ```
 
-Ben is upset, and genuinely confused, and here is the important part: **Ben did know all the answers.** He knew that question 3 was 42 and question 7 was blue. He worked incredibly hard. He learned sixty answers perfectly.
+Ben is upset and confused. Here is the important part: **Ben did know all the answers.**
+
+He knew that question 3 was 42 and question 7 was blue. He worked incredibly hard. He learned sixty answers perfectly.
 
 He just learned the wrong thing. Extremely well.
 
@@ -49,15 +53,17 @@ He just learned the wrong thing. Extremely well.
 
 > **⚠️ Ben is not stupid and Ben is not lazy.** Memorising is a real strategy that works brilliantly right up until the moment it doesn't. Nobody in this story did anything wrong except pick the wrong thing to learn.
 
-Now the question that is actually this week's lesson:
+Now the question that is this week's lesson:
 
 **On the practice sheet, could you have told them apart?**
 
-No. You could not. They looked identical. **You needed the exam.**
+No. They looked identical. **You needed the exam.**
 
-And your model is exactly the same problem. It will happily report 100% on the photos it studied — and that tells you absolutely nothing about which of these two students it is.
+Your model has the same problem. It will happily report 100% on the photos it studied. That tells you nothing about which of these two students it is.
 
-```
+The question for the whole week:
+
+```text
    THE QUESTION FOR THE WHOLE WEEK
 
         DID IT LEARN THE OBJECT,
@@ -70,17 +76,21 @@ And your model is exactly the same problem. It will happily report 100% on the p
 
 ## 🧠 The Big Idea
 
+This section gives you the new words and the tool for this week: two scores, one subtraction and one grid.
+
 ### 1. Two words, and one subtraction that tells them apart
 
 > **Generalizing** — the model works on examples it has never seen. This is almost always what you actually want.
 >
 > **Memorizing** — the model works on the exact examples it studied, and falls apart on anything else.
 
-You **cannot** tell these apart by looking at the model. Nobody can, just by looking — not you, not me, not even the people who built it. It takes a fresh test.
+You **cannot** tell these apart by looking at the model. Nobody can, not you, not me, not even the people who built it. It takes a fresh test.
 
 But you can tell in ten seconds by comparing two numbers: **the score on the photos it trained on, and the score on the photos it had never seen.**
 
-```
+Here is an example, with the gap worked out underneath.
+
+```text
    training accuracy:  60/60 = 100.0%
    test accuracy:      11/15 =  73.3%
    -------------------------------------
@@ -194,14 +204,14 @@ Here is the finished grid from the fifteen-row sheet you scored last week.
 
 **Check 1 — the diagonal must equal the number of correct answers you already counted.**
 
-```
+```text
    diagonal:  5 + 4 + 2  =  11
    correct count on the sheet:  11        ✓ they match
 ```
 
 **Check 2 — all nine cells must add to the number of test photos.**
 
-```
+```text
    5+0+0  +  0+4+1  +  1+2+2  =  15      ✓ same as the number of photos
 ```
 
@@ -225,7 +235,7 @@ That is the model's weakness **on combs.** And notice the spoon row: five marks 
 
 **B) Down a column — what the model was *willing to say*.**
 
-```
+```text
    said spoon:      6 times, but only 5 spoons existed   →  one extra; too small a difference to read anything into
    said toothbrush: 6 times, but only 5 toothbrushes     →  one extra; too small a difference to read anything into
    said comb:       3 times, though 5 combs existed      →  RELUCTANT about comb
@@ -243,7 +253,7 @@ And once you say it out loud it stops being surprising: *a comb and a toothbrush
 
 **One more thing to notice: the confusion is not symmetric.**
 
-```
+```text
    true comb → said toothbrush:      2
    true toothbrush → said comb:      1
 ```
@@ -282,7 +292,7 @@ A **samosa / pakora / vada** classifier, tested on 12 held-out photos, 4 of each
 
 **Step 1 — overall accuracy, all three forms.** Correct rows: 1, 2, 3, 4, 5, 6, 9, 10 → **8 correct.**
 
-```
+```text
    8 / 12
 
    12 x 0.6 = 7.2              →  at least 0.6
@@ -307,14 +317,14 @@ A **samosa / pakora / vada** classifier, tested on 12 held-out photos, 4 of each
 
 **Step 3 — both checks.**
 
-```
+```text
    diagonal:  4 + 2 + 2  =  8   ✓  matches the correct count
    all cells: 4+0+0 + 0+2+2 + 1+1+2  =  12   ✓  matches the number of photos
 ```
 
 **Step 4 — every off-diagonal cell, as a sentence.**
 
-```
+```text
    true pakora → said vada,     2   →  "TWO PAKORAS WERE CALLED VADA."   ← biggest, circle it
    true vada → said samosa,     1   →  "one vada was called a samosa."
    true vada → said pakora,     1   →  "one vada was called a pakora."
@@ -324,7 +334,7 @@ A **samosa / pakora / vada** classifier, tested on 12 held-out photos, 4 of each
 
 **Step 5 — read down the columns.**
 
-```
+```text
    said samosa: 5 times, but only 4 samosas existed   →  over-eager about samosa
    said pakora: 3 times, though 4 pakoras existed     →  slightly reluctant
    said vada:   4 times, and 4 vadas existed          →  about right
@@ -346,7 +356,7 @@ A **cricket ball / tennis ball / hockey ball** classifier, tested on 18 held-out
 
 **Step 1 — overall accuracy.**
 
-```
+```text
    14 / 18
 
    18 x 0.7  = 12.6            →  at least 0.7
@@ -379,14 +389,14 @@ Checks: `5 + 4 + 5 = 14` ✓ and `6 + 6 + 6 = 18` ✓.
 | **true hockey** | 1 | 0 | **5** | 6 |
 | **total said** | 8 | 5 | 5 | **18** |
 
-```
+```text
    diagonal:  5 + 4 + 5 = 14   ✓
    all cells: 5+1+0 + 2+4+0 + 1+0+5 = 18   ✓
 ```
 
 **Step 4 — the sentences.**
 
-```
+```text
    true tennis → said cricket,   2   →  "TWO TENNIS BALLS WERE CALLED CRICKET BALL."
    true cricket → said tennis,   1   →  "one cricket ball was called a tennis ball."
    true hockey → said cricket,   1   →  "one hockey ball was called a cricket ball."
@@ -397,7 +407,7 @@ Checks: `5 + 4 + 5 = 14` ✓ and `6 + 6 + 6 = 18` ✓.
 
 **Step 5 — the interesting bit. Read the columns and notice the lopsidedness.**
 
-```
+```text
    said cricket:  8 times, but only 6 cricket balls existed   →  OVER-EAGER
    said tennis:   5 times, though 6 existed
    said hockey:   5 times, though 6 existed
@@ -405,7 +415,7 @@ Checks: `5 + 4 + 5 = 14` ✓ and `6 + 6 + 6 = 18` ✓.
 
 **All the traffic runs towards "cricket ball".** Two tennis balls and one hockey ball went that way, and only one cricket ball leaked out. Compare:
 
-```
+```text
    tennis → cricket:  2        cricket → tennis:  1
    hockey → cricket:  1        cricket → hockey:  0
 ```
@@ -435,7 +445,7 @@ Four students at the school science fair each trained a **pencil case / water bo
 
 **Step 1 — compute all four gaps. Subtraction, and say the unit.**
 
-```
+```text
    Priya:  100 - 96 =  4 percentage points
    Ravi:   100 - 45 = 55 percentage points
    Meera:   58 - 54 =  4 percentage points
@@ -469,6 +479,8 @@ Look at test accuracy, which is the only number about the real world: 96, 74, 54
 ---
 
 ## 🎲 What We Did In Class
+
+This is the class activity, step by step. You build the confusion matrix by hand from last week's sheet.
 
 ### Build the Matrix
 
@@ -509,7 +521,7 @@ For each row of the sheet, say the sentence, *then* make the mark. Do not let it
 
 Green pen. Shade the three cells where truth and guess match: top-left, middle, bottom-right. Then add them up and write the sum **outside** the grid.
 
-```
+```text
    diagonal:  5 + 4 + 2  =  11
    correct count on the sheet:  11         ✓
    all nine cells:  5+0+0 + 0+4+1 + 1+2+2  =  15   ✓
@@ -519,7 +531,7 @@ Green pen. Shade the three cells where truth and guess match: top-left, middle, 
 
 There are **three** off-diagonal cells with numbers in them (they hold four mistakes between them: 1 + 1 + 2). Each becomes a full sentence, in the shape *"N of the Xs were called Y."*
 
-```
+```text
    true toothbrush → said comb,   1   →  "one toothbrush was called a comb."
    true comb → said spoon,        1   →  "one comb was called a spoon."
    true comb → said toothbrush,   2   →  "TWO COMBS WERE CALLED TOOTHBRUSH."
@@ -527,7 +539,7 @@ There are **three** off-diagonal cells with numbers in them (they hold four mist
 
 Then read the zeros, because zeros are information:
 
-```
+```text
    true spoon → said toothbrush,  0
    true spoon → said comb,        0   →  "no spoon was ever mistaken for anything."
    true toothbrush → said spoon,  0
@@ -537,7 +549,7 @@ Then read the zeros, because zeros are information:
 
 **Step 5 — read down the columns (2 min).**
 
-```
+```text
    said spoon:      6 times, but only 5 spoons existed   →  one extra; too small a difference to read anything into
    said toothbrush: 6 times, but only 5 toothbrushes     →  one extra; too small a difference to read anything into
    said comb:       3 times, though 5 combs existed      →  RELUCTANT about comb
@@ -571,6 +583,8 @@ Written down, dated, initialled: **which cell of *your* grid will be worst next 
 
 ## 💬 Talk About It
 
+These three questions are for talking, with a friend or a grown-up. There is a hint under each one.
+
 **1. "Have you ever revised for a test and then found the test asked something different?"**
 
 > *Hint:* ask what you had actually learned — the answers, or the method? This is Aisha and Ben with your own name on it, and almost everybody has been Ben at least once.
@@ -586,6 +600,8 @@ Written down, dated, initialled: **which cell of *your* grid will be worst next 
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four easy mistakes with the grid and the two scores. Each one shows the wrong way and the right way.
 
 ### Trick 1 — building the grid the wrong way round
 
@@ -627,6 +643,8 @@ Written down, dated, initialled: **which cell of *your* grid will be worst next 
 
 ## 🌍 Where You've Seen This
 
+Memorising and generalising happen outside AI too. Here are seven places you may have met them.
+
 - **Cramming the night before.** You can hold twenty facts for eleven hours and lose all of them by Friday. That is memorising, and it works right up until the exam asks the same idea a different way.
 - **A route you know by landmarks.** Roadworks appear, one turning is closed, and suddenly you have no idea where you are — on a street you have walked hundreds of times.
 - **Learning a song's words without knowing the language.** You can sing it perfectly. Ask what one line means and there is nothing there.
@@ -638,6 +656,8 @@ Written down, dated, initialled: **which cell of *your* grid will be worst next 
 ---
 
 ## 🧭 Where This Fits
+
+This section shows where this week sits on the course map.
 
 Still **HONEST TESTING** — the last week inside that box before you turn all of it on your own model.
 You now have the two numbers and the one grid that, together, tell you whether a model *understood* or
@@ -664,6 +684,8 @@ and **evaluation** lit: what the model turned into, and how you judge it.*
 
 ## 🔑 Remember This
 
+These are the key points of the week, to keep.
+
 - You **cannot** tell memorizing from generalizing by looking at the model. You need two numbers: the training score and the test score.
 - **Overfitting = it learned the photos, not the object.** That plain sentence is worth more than any formal definition right now.
 - **Read the gap AND the level.** A small gap on a low score means "learned nothing", not "did well".
@@ -677,6 +699,8 @@ and **evaluation** lit: what the model turned into, and how you judge it.*
 ---
 
 ## 📓 New Words
+
+These are the words from this week, with what each one means.
 
 ![The four new words of Week 21](../figures/fig-w21-8-vocab-icons.svg)
 *Figure 21.8 — Four words. Three of them describe parts of one grid.*
@@ -693,6 +717,8 @@ and **evaluation** lit: what the model turned into, and how you judge it.*
 ---
 
 ## 📤 Your Homework
+
+This section says what to do in the workbook and how long it takes.
 
 Go to **[Workbook — Week 21](../workbook/week-21.md)**.
 

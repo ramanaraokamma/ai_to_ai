@@ -20,6 +20,8 @@
 
 ## 🪝 Start Here
 
+This story shows why today's lab exists. Read it, then make one written guess.
+
 In 2016, three researchers built a picture classifier on purpose to be bad — and then they didn't tell anybody.
 
 Their model told **huskies** apart from **wolves**. And it mostly worked: it got most of its test photos right. They showed it to some people who study machine learning and asked: *do you trust this model?* Some of them said **yes**. (This is from a 2016 research paper; I am telling it from memory, so the exact numbers are not something to quote.)
@@ -33,11 +35,15 @@ The model had learned very little about wolves. It had mostly learned: *white fu
 ![The wolves that were made of snow](../figures/fig-w18-6-husky-in-snow.svg)
 *Figure 18.6 — Nobody wrote that rule. Nobody wanted it. It came out of the photos.*
 
-Now sit with the part that should genuinely worry you: **it worked.** It passed. A good score hid the problem. And a good score did not show the snow. Researchers did find it with a special explanation tool, but **you cannot just read the answer off the numbers inside a model.** Not you, not me, not Google, not the people who built it.
+Now sit with the part that should genuinely worry you: **it worked.** It passed. A good score hid the problem. And a good score did not show the snow.
+
+Researchers did find it with a special explanation tool, but **you cannot just read the answer off the numbers inside a model.** Not you, not me, not Google, not the people who built it.
 
 So today you are going to find out what *your* model is really looking at. And one reliable way to do that is to break it.
 
-```
+This is the question for the whole lesson:
+
+```text
    THE QUESTION FOR THE WHOLE LESSON
 
         WHAT IS MY MODEL REALLY LOOKING AT?
@@ -49,25 +55,30 @@ So today you are going to find out what *your* model is really looking at. And o
 
 ## 🧠 The Big Idea
 
+This section explains the method you will use today and the four sabotages you will run.
+
 ### 1. A controlled experiment: one knob turned, everything else taped down
 
 > **Controlled experiment** — you change exactly one thing and keep everything else the same, so that anything that changes was most likely caused by the one thing you changed (training wobbles a point or two by chance, so be careful with tiny tests).
 
-That last clause is the whole idea, and it is worth being fussy about, because it is the most useful thing in this entire course — and not just for AI.
+That last clause is the whole idea. It is worth being fussy about. It is the most useful thing in this entire course, and not just for AI.
 
 **Here's what goes wrong without it.** Suppose you retrain your model with fewer photos, **and** you test it in a different room, **and** you hold the objects a bit closer. The score drops by 20 points. Which of the three caused it?
 
-You cannot say. Not "you're not quite sure" — you **literally cannot say**, and no amount of staring at the numbers will help, because the information is not in the experiment. It was never collected. The whole run is worthless.
+You cannot say. Not "you're not quite sure" — you **literally cannot say**.
+
+No amount of staring at the numbers will help, because the information is not in the experiment. It was never collected. The whole run is worthless.
 
 ![A controlled experiment is one knob turned and the rest taped down](../figures/fig-w18-1-one-knob-turned.svg)
 *Figure 18.1 — One knob turned. Everything else taped down. That is the whole method.*
 
 🍕 **The analogy — the recipe you changed four ways at once.**
+
 Your biscuits came out flat. That time you used less butter, a hotter oven, a different tray, **and** you took them out early. So which one flattened them? You will never know. Next Saturday you change one thing, and by the end of the month you actually understand your own oven.
 
-**Here is what must be taped down in today's lab, every single run:**
+**Here is what must be taped down in today's lab, every single run.** Tick each box before you start:
 
-```
+```text
    TAPED DOWN, EVERY RUN
    ────────────────────────────────────────────────
    □  the same three objects
@@ -95,6 +106,7 @@ So here's the honest reason:
 That's not vandalism. It's a diagnosis. It's what a mechanic does when they unplug one sensor at a time to find the fault.
 
 🍕 **The analogy — the wobbly table.**
+
 A table wobbles and you can't see which leg is short. So you take the book out from under leg 3. Still wobbly? Put it back, take the book from under leg 1. **You find out what was holding it up by removing things one at a time**, not by staring at it harder.
 
 And this is a real professional technique. Grown-ups call it an **ablation study**, and researchers run them constantly for exactly this reason.
@@ -104,7 +116,9 @@ And this is a real professional technique. Grown-ups call it an **ablation study
 ![The experiment loop](../figures/fig-w18-7-sabotage-loop.svg)
 *Figure 18.7 — Seven steps, four times. Step 7 is the one everybody forgets.*
 
-Step 7 — **reload `baseline-v1.tm`** — has no button of its own and nothing reminds you. Forget it and your *next* experiment starts from a damaged model, which means you've turned two knobs, which means that run is void. Say it out loud every time.
+Step 7 — **reload `baseline-v1.tm`** — has no button of its own and nothing reminds you.
+
+Forget it and your *next* experiment starts from a damaged model. That means you've turned two knobs, so that run is void. Say it out loud every time.
 
 ---
 
@@ -122,7 +136,9 @@ Step 7 — **reload `baseline-v1.tm`** — has no button of its own and nothing 
 
 **The habit to build from this table: the margin moves before the verdict does.**
 
-In experiments 1 and 3 the model is still getting answers **right** while its margins quietly fall apart. Right-or-wrong is a blunt instrument — with five test items it only has six possible values (0, 1, 2, 3, 4, 5), so it can't register anything finer than "one more wrong." The margin is continuous and keeps reporting all the way down.
+In experiments 1 and 3 the model is still getting answers **right** while its margins quietly fall apart.
+
+Right-or-wrong is a blunt instrument. With five test items it only has six possible values (0, 1, 2, 3, 4, 5), so it can't register anything finer than "one more wrong." The margin is continuous and keeps reporting all the way down.
 
 ---
 
@@ -144,7 +160,11 @@ Then you carry the same spoon two metres to the sink and hold it up.
 
 **Same spoon. Same model. Two metres.** The margin went from 92 to 5 — a coin toss that landed wrong.
 
-**The mechanism, said properly:** the wooden table appeared in **every single training photo**, so the model was never shown that backgrounds can change, and it probably leaned on "warm brown texture in the background" as well as on the spoon. (This one test does not isolate the cause; that is the likely explanation.) Move to the sink and a big chunk of the evidence may vanish with the table. **It is a cousin of the husky in the snow: there the snow went with one label, here the table goes with every label, but either way the model was never shown that backgrounds vary. You can see the damage in your own kitchen, in about ten minutes.**
+**The mechanism, said properly:** the wooden table appeared in **every single training photo**, so the model was never shown that backgrounds can change. It probably leaned on "warm brown texture in the background" as well as on the spoon. (This one test does not isolate the cause; that is the likely explanation.)
+
+Move to the sink and a big chunk of the evidence may vanish with the table.
+
+It is a cousin of the husky in the snow. There the snow went with one label. Here the table goes with every label. Either way the model was never shown that backgrounds vary. **You can see the damage in your own kitchen, in about ten minutes.**
 
 And now the trap — the reason this entire course exists:
 
@@ -158,7 +178,7 @@ Sit with that. There is a name for this trap and it is coming — Term 3 is abou
 
 ### 5. The prediction has to be in ink, and being wrong is worth more
 
-Before **every** retrain, you write down what you think will happen and **why**. This is not a warm-up ritual. It exists for one reason:
+Before **every** retrain, you write down what you think will happen and **why**. This is not a warm-up ritual. It exists for one reason.
 
 > **Human memory rewrites itself.** After you see a result, you genuinely, sincerely remember having expected it. Everybody does this. It is not dishonesty — it's how memory works. **The only defence is ink.**
 
@@ -166,6 +186,7 @@ Before **every** retrain, you write down what you think will happen and **why**.
 *Figure 18.5 — Written before. Reported after. Including the ones that were wrong.*
 
 🍕 **The analogy — calling the match result.**
+
 Everyone who watches the game says afterwards that they knew that team would win. Almost nobody wrote it down beforehand. The ones who *did* write it down are the only ones who can prove anything — and they're also the only ones who ever learn, because they can see how often they were wrong.
 
 **And a wrong prediction is worth more than a right one.** If you write "I predict 4 out of 5" and get 2 out of 5, the model has just taught you something real. If you predict nothing, you have watched a number appear on a screen and learned exactly nothing.
@@ -175,6 +196,8 @@ Everyone who watches the game says afterwards that they knew that team would win
 ---
 
 ## 🔍 Worked Examples
+
+Three examples show the method from start to finish: food, sport and school. Follow each step with a pencil.
 
 ### Example 1 — Food: the five-photo sabotage on a fruit-bowl model
 
@@ -240,7 +263,11 @@ Then you test each version **twice** — once on grass, once on the carpet indoo
 
 > **That version B was better.** 96% versus 88%, honestly measured, no cheating anywhere. And you would have shipped the broken one.
 
-**Question 5 — how much variety does it take to fix version B?** You don't have to double the photo set. Swap just 10 of B's 40 grass photos per class for 10 taken on carpet, retrain, and you could try it and see whether the carpet score climbs while the grass score barely moves (we have not measured it, so write your prediction down first). **A small amount of variety may fix a surprising amount of damage** — if it does, the fix is affordable.
+**Question 5 — how much variety does it take to fix version B?** You don't have to double the photo set.
+
+Swap just 10 of B's 40 grass photos per class for 10 taken on carpet, then retrain. You could try it and see whether the carpet score climbs while the grass score barely moves (we have not measured it, so write your prediction down first).
+
+**A small amount of variety may fix a surprising amount of damage** — if it does, the fix is affordable.
 
 > **🔑 What Example 2 teaches:** **a score means nothing until you know where it was measured.** Always report where, and always test somewhere the model has never been.
 
@@ -250,16 +277,16 @@ Then you test each version **twice** — once on grass, once on the carpet indoo
 
 Back to the lost-property camera: **water bottle / jumper / lunchbox**. You sabotage the balance on purpose — leave bottles and jumpers at 40, and delete lunchbox photos until only **5** remain.
 
-**Step 1 — check the counts read 40 / 40 / 5 before you train.** (If you skip this you don't know what experiment you ran.)
+**Step 1 — check the counts read 40 / 40 / 5 before you train.** (If you skip this you don't know what experiment you ran.) Here is the arithmetic:
 
-```
+```text
    balance check:  (40 − 5) ÷ 40  =  35 ÷ 40  =  0.875  =  87.5%
    we want under 20%.  This is deliberately, hopelessly imbalanced.  ✓ correct sabotage
 ```
 
-**Step 2 — predict it, using Week 16's arithmetic and nothing else.**
+**Step 2 — predict it, using Week 16's arithmetic and nothing else.** Here is the working:
 
-```
+```text
    total photos                        =  40 + 40 + 5  =  85
    a model that never says "lunchbox"  =  40 + 40 + 0  =  80 correct
    its accuracy on its own photos      =  80 ÷ 85
@@ -277,7 +304,9 @@ Back to the lost-property camera: **water bottle / jumper / lunchbox**. You sabo
 | hold a jumper | 7 | **90** | 3 | 100 | jumper | jumper ✓ |
 | hold a lunchbox | 12 | **77** | **11** | 100 | jumper | lunchbox ✗ |
 
-**Step 4 — look at the third row properly.** The model gives the lunchbox class **11 points out of 100 while staring directly at a lunchbox.** It has essentially stopped believing lunchboxes exist. Margins for bottle and jumper are 88 and 83 — completely healthy. Nothing in *those* numbers warns you that a third of the machine is dead.
+**Step 4 — look at the third row properly.** The model gives the lunchbox class **11 points out of 100 while staring directly at a lunchbox.** It has essentially stopped believing lunchboxes exist.
+
+Margins for bottle and jumper are 88 and 83 — completely healthy. Nothing in *those* numbers warns you that a third of the machine is dead.
 
 **Step 5 — the explanation.**
 
@@ -289,11 +318,13 @@ Back to the lost-property camera: **water bottle / jumper / lunchbox**. You sabo
 
 ## 🎲 What We Did In Class
 
+This section lists what we did in class, so you can redo the lab at home.
+
 ### Sabotage Lab
 
 Everything below can be redone at home. You need the laptop, `baseline-v1.tm`, your three objects, and the fork.
 
-**Setup, before anything:**
+**Setup, before anything.** Tick each item:
 
 - [ ] `baseline-v1.tm` loaded: **☰ menu → Open project from file**
 - [ ] **Five test items lined up in a fixed order** on the table. Suggested: spoon, toothbrush, comb, fork, empty hand.
@@ -303,9 +334,9 @@ Everything below can be redone at home. You need the laptop, `baseline-v1.tm`, y
 
 > **⚠️ Watch out:** the fork and the empty hand are in **no class**, so a "perfect" score is **3 out of 5**, not 5 out of 5. That isn't a bug in the lab — it's the point. If you only used your three real objects, score out of 3 and the pattern is identical.
 
-**Row 0 — copy the baseline across.** Do **not** re-measure it. Re-measuring would change a variable.
+**Row 0 — copy the baseline across.** Do **not** re-measure it. Re-measuring would change a variable. Write this line at the top of your table:
 
-```
+```text
    row 0  |  baseline: 40 each, full variety  |  3/3 real  |  margins 86, 82, 66
 ```
 
@@ -326,7 +357,11 @@ Everything below can be redone at home. You need the laptop, `baseline-v1.tm`, y
 
 **Experiment 2 — one background only. ⭐ The moment of the term.** This one gets tested **twice**: once on the surface the photos were taken on, and once somewhere completely different. Test A scores *higher than the baseline* and Test B falls apart. If you only do one experiment ever again, do this one.
 
-**Experiment 3 — blurry photos.** Trained on photos shot while waving the object; tested with everything held perfectly still and sharp. Still correct, margins down hard. And notice the odd bit: **it was trained blurry and tested sharp and it still struggled**, which hints that a mismatch between training and testing photos can hurt. We did not test the reverse direction, but a model trained only on perfect studio photos may well struggle with the wobbly ones real people take. **Your training photos should look like the photos your model will actually meet.**
+**Experiment 3 — blurry photos.** Trained on photos shot while waving the object; tested with everything held perfectly still and sharp. Still correct, margins down hard.
+
+And notice the odd bit: **it was trained blurry and tested sharp and it still struggled**, which hints that a mismatch between training and testing photos can hurt. We did not test the reverse direction, but a model trained only on perfect studio photos may well struggle with the wobbly ones real people take.
+
+**Your training photos should look like the photos your model will actually meet.**
 
 **Experiment 4 — imbalance 40 / 40 / 5.** Done by deleting comb photos; no new photos needed. Check the counts read 40 / 40 / 5 *before* training.
 
@@ -334,7 +369,9 @@ Everything below can be redone at home. You need the laptop, `baseline-v1.tm`, y
 
 ### Then the Term 2 checkpoint quiz
 
-Fourteen questions, notebook closed, marked **together, out loud, straight away** — not later, alone, in red pen. For every wrong answer, the question asked was: **"which week does this belong to?"** and the week number went in the margin.
+There were fourteen questions, notebook closed. They were marked **together, out loud, straight away** — not later, alone, in red pen.
+
+For every wrong answer, the question asked was: **"which week does this belong to?"** The week number went in the margin.
 
 **There was no grade, and there should not be one.** The output of a checkpoint is a **list of weeks to go back to**, not a number. The Practice Sets in this week's workbook cover the same ground if you want another go at it.
 
@@ -343,7 +380,9 @@ Fourteen questions, notebook closed, marked **together, out loud, straight away*
 ![Term 2 concept map](../figures/fig-w18-4-term2-concept-map.svg)
 *Figure 18.4 — Every arrow on this map is a week you have already done.*
 
-```
+The same map as one line:
+
+```text
    rules hit a wall  →  features and labels  →  training  →  a model
                                  →  confidence  →  what it was actually relying on
 ```
@@ -362,6 +401,8 @@ That last box — *what it was actually relying on* — is the one that makes al
 
 ## 💬 Talk About It
 
+Use these three questions to talk the ideas over with another person.
+
 **1. "Why can't we just change two things at once and save time?"**
 > *Hint:* draw four knobs on paper for the other person. Say "I turned two of them and the score fell twenty points — point at the knob that did it." Watch them try. The point isn't that it's hard; it's that the information genuinely isn't there.
 
@@ -374,6 +415,8 @@ That last box — *what it was actually relying on* — is the one that makes al
 ---
 
 ## ⚠️ Don't Get Tricked
+
+These are four traps people fall into. Each one shows the wrong way and the right way.
 
 ### Trick 1 — turning two knobs to save time
 
@@ -408,11 +451,15 @@ Both numbers were measured honestly. **A number without a "where" attached is no
 |---|---|
 | "The margins are terrible, I'll press Train again." | "Same photos, same model. I can only fix this by changing the photos — and I can say exactly which photos, because I ran a controlled experiment." |
 
-Training has a bit of randomness, so the numbers wobble a point or two and it is *very* tempting to read that wobble as improvement. It isn't. **You can't repair a model. You can only bake a new one with better ingredients — and you can always reload the saved one.**
+Training has a bit of randomness, so the numbers wobble a point or two. It is *very* tempting to read that wobble as improvement. It isn't.
+
+**You can't repair a model. You can only bake a new one with better ingredients — and you can always reload the saved one.**
 
 ---
 
 ## 🌍 Where You've Seen This
+
+The same idea turns up in many places outside AI.
 
 1. **Medicine trials.** Two groups, one gets the real pill, one gets a fake one, and **everything else is held identical** — same instructions, same schedule, same doctors. It's the same method as your taped-down knobs, with much higher stakes.
 2. **A phone camera that works beautifully outdoors and badly in a restaurant.** Somebody's training photos had a background, or a light, that yours don't. Same shape as experiment 2.
@@ -425,8 +472,9 @@ Training has a bit of randomness, so the numbers wobble a point or two and it is
 
 ## 🔁 Go and Look at Your Slip
 
-Before you read anything else: find the slip you initialled and dated at the start of this chapter.
-The one that answers **"does your model have a snow?"**
+This section takes you back to your guess from the start of the chapter.
+
+Find the slip you initialled and dated at the start. It answers **"does your model have a snow?"**
 
 Read your own answer. Then say which of these three happened:
 
@@ -448,8 +496,9 @@ visible. That slip is now the most honest page in your notebook.
 
 ## 🧭 Where This Fits
 
-Still **TRAINING** — and this is the week that finishes it off. You did not build anything new today.
-You took last week's model apart one ingredient at a time to find out what had been holding it up.
+This section shows where this week sits on the course map.
+
+Still **TRAINING** — and this is the week that finishes it off. You did not build anything new today. You took last week's model apart one ingredient at a time to find out what had been holding it up.
 
 ![The course map in Week 18: the training tile is finished, broken on purpose to show what was holding it up](../figures/fig-w18-0-where-this-fits.svg)
 
@@ -473,6 +522,8 @@ are **data** and **evaluation**: you changed the ingredients, and you judged wha
 
 ## 🔑 Remember This
 
+These are the ideas to keep from this week.
+
 - A **controlled experiment** changes exactly one thing and tapes everything else down, so anything that changes *must* have been caused by that one thing.
 - A **sabotage test** damages the data on purpose, because you cannot just read the answer off the numbers inside a model — **you can find out what was holding it up by taking things away.**
 - **Predict in writing first.** Memory rewrites itself, and a wrong prediction you've thought about is worth more than a right one you got lucky on.
@@ -484,6 +535,8 @@ are **data** and **evaluation**: you changed the ingredients, and you judged wha
 ---
 
 ## 📓 New Words
+
+There are two new words this week.
 
 ![The two new words of Week 18](../figures/fig-w18-9-vocab-icons.svg)
 *Figure 18.9 — Two words. One is a method; the other is a diagnosis.*
@@ -498,6 +551,8 @@ are **data** and **evaluation**: you changed the ingredients, and you judged wha
 ---
 
 ## 📤 Your Homework
+
+This section says what to do next and how long it takes.
 
 Go to **[Workbook — Week 18](../workbook/week-18.md)**. About **55 minutes**.
 

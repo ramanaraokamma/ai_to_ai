@@ -43,6 +43,8 @@ ____________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know the ideas. Write in the spaces.
+
 **A1. Fill in the blanks.**
 
 The assessment is __________ items worth __________ marks. Part A is __________
@@ -103,7 +105,7 @@ ____________________________________________________________________
 
 **A6. Spot the error.** Here is a score tally from a student's paper:
 
-```
+```text
    Part A  14 / 20      Part B  15 / 24      Part C   9 / 16
    TOTAL   48 / 60      BAND  42-52
    The band's instruction:  "solid"
@@ -118,6 +120,8 @@ ____________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Use It
+
+These questions ask you to use the ideas on new numbers. Show your working.
 
 **B1.** A report claims: *"Our model is 97% accurate at spotting damaged parcels."*
 
@@ -137,7 +141,7 @@ Write down, in order, the first **three** things you would ask for:
 
 (b) You want lamplight to be at least **one quarter** of the training data, keeping all 240 daylight photos. Show the algebra and **round up**:
 
-```
+```text
         L  ≥  1/4 × ( ______ + L )
 
        ______  ≥  ______ + L
@@ -208,7 +212,7 @@ A learner has read three short sentences and built a table of word pairs. The ta
 
 **The whole training text:**
 
-```
+```text
    the sun set.      the sun rose.      the moon rose.
 ```
 
@@ -227,7 +231,7 @@ A learner has read three short sentences and built a table of word pairs. The ta
 
 **Step 1 — how many pairs *should* there be?**
 
-```
+```text
    tokens:    ______        sentences:  ______
 
    pairs = tokens − sentences = ______ − ______ = ______
@@ -255,7 +259,7 @@ Mistake 2: ___________________________________________________________
 
 **Step 4 — generate one sentence starting from `the`.** For each step, write whether it was **forced** (only one option) or **random** (more than one), and what you drew.
 
-```
+```text
    from "the"  →  options: ______________  ( forced / random )  →  drew ____________
    from "____" →  options: ______________  ( forced / random )  →  drew ____________
    from "____" →  options: ______________  ( forced / random )  →  drew ____________
@@ -268,6 +272,8 @@ Mistake 2: ___________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions need a paragraph each. Take your time.
 
 **T1.** Your held-out accuracy came from **40** photos. How would your confidence in that number change if it had come from **400**? And what would stay **exactly the same**? Write a paragraph.
 
@@ -303,7 +309,7 @@ ____________________________________________________________________
 
 ### W36-4 — Score tally (5 min)
 
-```
+```text
    Part A  ______ / 20        Part B  ______ / 24        Part C  ______ / 16
 
    TOTAL   ______ / 60
@@ -337,7 +343,7 @@ ____________________________________________________________________
 
 ### W36-5 — Showcase record (5 min)
 
-```
+```text
    Demo time:  ______ min ______ s        Banned words counted:  ______
 
    Notes in my hand at any point?  YES / NO
@@ -379,7 +385,7 @@ ____________________________________________________________________
 | 5 | | | | | |
 | 6 | | | | | |
 
-```
+```text
    END OF SHOWCASE:  ______ attempts,  ______ successful fools.
 
    THE SINGLE MOST USEFUL THING A VISITOR FOUND:
@@ -464,7 +470,7 @@ ____________________________________________________________________
 | I can state three situations where I should not trust an AI's answer, and what to do instead | | |
 | **I have said out loud, to a real person, something my own model is bad at** | | |
 
-```
+```text
    The two BOLD items are the two nobody can fake or revise for.
    Are both of them true about me?   ______
 
@@ -473,7 +479,7 @@ ____________________________________________________________________
 
 ### W36-8 — The six-point Level 2 gate (8 min) ★
 
-```
+```text
    1  I scored 42+ on the assessment — OR I fixed what I missed and can now
       explain it without notes.
       ______________________   week if not yet: ______
@@ -524,7 +530,7 @@ It must contain **two** things:
 1. One thing you want to **build**.
 2. One thing you want to be able to **do** that you can't do yet.
 
-```
+```text
    Dear me,
 
    Today's date: ______________
@@ -574,6 +580,8 @@ Draw your own door. On the left: what you can do now. On the right: what you wan
 
 ## 📊 Self-Check
 
+Circle one face for each row. Be honest.
+
 | I can... | 😀 | 🙂 | 😕 |
 |---|---|---|---|
 | Complete a closed-book assessment and write "not sure" beside every guess | | | |
@@ -590,6 +598,8 @@ Anything at 😕? That's a "not yet" on the gate. Week number: ______________
 ---
 
 ## ✅ Answers
+
+Only open this after you have tried every question. Then check your work.
 
 <details>
 <summary>Check your answers</summary>
@@ -625,7 +635,7 @@ Anything at 😕? That's a "not yet" on the gate. Week number: ______________
 
 **A2.** **(a) 0.75 and 75%.** Take both roads, and check they agree.
 
-```
+```text
    ROAD 1 - do the division
         28 x 0.7  = 19.6
         21 - 19.6 = 1.4          (the remainder)
@@ -694,7 +704,7 @@ Why it matters: a circled band is a *label*. An instruction is a **next action**
 
 (b)
 
-```
+```text
         L  ≥  1/4 × ( 240 + L )
        4L  ≥  240 + L
        3L  ≥  240
@@ -715,7 +725,7 @@ Why it matters: a circled band is a *label*. An instruction is a **next action**
 
 (c) The test set is 7 shirts, 7 shorts, 1 cap. Always guessing "shirt" gets 7 of 15:
 
-```
+```text
    7 ÷ 15 :  15 × 0.4 = 6 ;  7 − 6 = 1 ;  1 ÷ 15 = 0.0667 ;  0.4 + 0.0667 = 0.4667
    so the baseline is 46.7%
 ```
@@ -742,7 +752,7 @@ Both marks: an **absent category** (every other uniform item — jumpers, ties, 
 
 **Step 1.**
 
-```
+```text
    the·sun·set·.  =  4 tokens
    the·sun·rose·. =  4 tokens
    the·moon·rose·.=  4 tokens
@@ -762,7 +772,7 @@ The learner's counts add up to `2+1+1+1+1+1+1+2 = ` **10**, which is **1 too man
 
 **Mistake 2: `rose → .` is undercounted.** `rose` ends sentence 2 *and* sentence 3, so it happened **twice**, not once. Correcting it adds **1**.
 
-```
+```text
    10  −  2  +  1  =  9   ✓  matches the expected count
 ```
 
@@ -783,7 +793,7 @@ And the counts sum to `2+1+1+1+1+1+2 = 9` ✓
 
 **Step 4 — generating.** One possible run:
 
-```
+```text
    from "the"   →  options: sun (2/3) or moon (1/3)  →  RANDOM  →  drew "sun"
                    (three slips in a bag: sun, sun, moon)
    from "sun"   →  options: set (1/2) or rose (1/2)  →  RANDOM  →  drew "rose"
@@ -839,7 +849,7 @@ Notice that answer reasons **from the data card**. That's the top-band move: you
 
 **W36-6 — the break-it log.** Complete when "my guess why" is filled in on **at least one row**. Logging the fool is *recording*; explaining it from your data card is the **skill**. Model version:
 
-```
+```text
    #  what they showed it     model said   conf  fooled?  my guess why
    ─  ─────────────────────   ──────────   ────  ───────  ──────────────────────────
    1  a car key               other         71    no      the other class did its job
@@ -882,6 +892,8 @@ The one thing that turns two lists into a **door** is something crossing it — 
 ---
 
 ## 🎉 That's Level 1
+
+This is the end of the course. Here is what you did, and what to do next.
 
 Thirty-six weeks. One model. Two hundred photos you took yourself. Forty held-out scores written in pencil, one at a time, when it was boring. A confusion matrix drawn by hand. A bias gap you went looking for **on purpose**, and then printed in marker in the biggest letters on your own table. And a five-minute demo delivered to strangers without once saying **magic**.
 

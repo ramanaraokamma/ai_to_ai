@@ -46,13 +46,16 @@ Last week the student learned to hide examples before training and sealed fiftee
 envelope. They have not scored anything yet. **Today they finally get to score something** — but not
 their own model, because their envelope stays sealed until Week 22.
 
-Instead they score somebody else's completed test sheet. That is deliberate: it means the arithmetic
-gets learned cold, on data with no feelings attached, so that in Week 22 the student can spend their
+Instead they score somebody else's completed test sheet. That is deliberate.
+
+The arithmetic gets learned on data with no feelings attached. Then in Week 22 the student can spend their
 attention on their own result instead of on long division.
 
 ### 2. The formula, and the three costumes
 
-```
+The formula, as a picture:
+
+```text
                 number of correct guesses
    accuracy =  ───────────────────────────
                  total number of guesses
@@ -73,9 +76,9 @@ Same fact, three costumes. And here is the sentence to build the whole lesson on
 only one of the three that tells you how much evidence there was.** "75%" could be 3 out of 4 or 300
 out of 400. Those are wildly different claims and they look identical once you convert them.
 
-The division, written out the way an 11-year-old can actually do it:
+This is the division, written out the way an 11-year-old can do it:
 
-```
+```text
    11 ÷ 15
 
    15 × 0.7  = 10.5              →  so it's at least 0.7
@@ -113,13 +116,15 @@ averages are *for*. It just means you must never stop at one.
 **The example to keep in your head.** A spam filter is tested on 100 emails: 90 real, 10 spam. It marks
 every single email "not spam".
 
-```
+The overall score:
+
+```text
    accuracy = 90 ÷ 100 = 0.90 = 90%
 ```
 
-**90% accurate — and it has never caught a spam email in its life.** Broken open:
+**90% accurate — and it has never caught a spam email in its life.** Broken open by class:
 
-```
+```text
    real emails:  90 / 90  = 100%
    spam emails:   0 / 10  =   0%
 ```
@@ -150,9 +155,9 @@ This is the bit adults get wrong constantly, including on the news.
   percentage points."
 
 Why it matters: "40 percent more" means something completely different from "40 percentage points
-more".
+more". Compare the two sums:
 
-```
+```text
    33.3% + 40 percentage points  =  73.3%          ← what actually happened
    33.3% + 40 percent OF ITSELF  =  33.3 × 1.4  =  46.6%   ← a much smaller claim
 ```
@@ -176,14 +181,16 @@ you introduce them and compute one number. Do not go further.
 >
 > **The gap** — training accuracy minus test accuracy. A big gap is a sign of memorizing.
 
-```
+The gap, worked out:
+
+```text
    training accuracy:  60/60 = 100.0%
    test accuracy:      11/15 =  73.3%
    ─────────────────────────────────────
    the gap:                    26.7 percentage points
 ```
 
-And the sentence that makes 100% boring, which is a genuinely useful thing to make boring:
+One sentence makes 100% boring, which is a useful thing to make boring:
 
 > **A model scoring 100% on its own study material is the most ordinary thing in the world.** It means
 > nothing on its own. Only the gap carries information.
@@ -194,13 +201,16 @@ generalizing, overfitting, and the confusion matrix.
 ### 7. The two misconceptions you will meet today
 
 **Misconception 1 — "73.3% means it gets 73 out of every 100 right."**
+
 Nearly true and worth pinning down, because the *sample size* is the thing being lost. It got 11 out of
 15 right. 73.3% is what that would be *if* it kept up the same rate over a hundred — which it might not.
+
 With 15 photos, **one photo is worth 6.7 percentage points.** If one comb had gone the other way the
 headline would read 80%. So a one-photo difference (6.7 points) between two models measured on 15 photos is
 well within noise and tells you almost nothing.
 
 **Misconception 2 — "the model went up by 40 percent."**
+
 It went up by 40 **percentage points**. Correct this every time, gently, all lesson, until the student
 starts correcting themselves. It is the single most transferable habit in the week.
 
@@ -253,6 +263,8 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 
 ## 🧰 Prep Checklist
 
+This section lists what to print, find and set up before the lesson, and what to do if something fails.
+
 ### 15 minutes the night before
 
 - [ ] **Print Handout 20A — the completed 15-row scoring sheet.** It must be **already filled in** with
@@ -294,6 +306,8 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section is the plan for the whole lesson. The table shows the five segments. Each segment is then written out in full.
+
 | Minutes | Segment | What happens |
 |---|---|---|
 | 0 – 8 | 🪝 **Hook** — the 90% filter that never caught a spam email | One division on the board, and a surprise |
@@ -332,9 +346,9 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 >
 > "So: 90 correct out of 100. Let's write it as a sum."
 
-**Do this:** on the board, exactly this:
+**Do this:** write exactly this on the board:
 
-```
+```text
    accuracy = 90 ÷ 100 = 0.90 = 90%
 
    real emails:  90 / 90  = 100%
@@ -485,16 +499,18 @@ totalling as they go, stop them — the count comes after.
 evenly, which is the thing to notice later, not now.*
 
 **Step 3 — count the Ys, out loud (1 min).** Rows 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12 → **11 correct**.
-Write `11` and `15` at the bottom. Then, before any division happens, make them write the fraction:
+Write `11` and `15` at the bottom.
 
-```
+Then, before any division happens, make them write the fraction:
+
+```text
    correct: 11 / 15
 ```
 
 **Step 4 — the division, on paper, by hand (5 min).** You talk, they write. Do not do it for them, and
-do not let a number appear without a line above it.
+do not let a number appear without a line above it. The student writes:
 
-```
+```text
    FRACTION:    11 / 15
 
    DECIMAL:     11 ÷ 15
@@ -506,9 +522,9 @@ do not let a number appear without a line above it.
    PERCENTAGE:  0.7333 × 100 = 73.33…  ≈  73.3%
 ```
 
-**Step 5 — the baseline, in the same breath (2 min).**
+**Step 5 — the baseline, in the same breath (2 min).** The student writes:
 
-```
+```text
    baseline (3 roughly equal classes) = 1 in 3 = 33.3%
    73.3 − 33.3 = 40 percentage points better than blind guessing
 ```
@@ -550,7 +566,7 @@ Full instructions in the next section.
 
 **Do this:** point at the four headings on the board, now filled in:
 
-```
+```text
    ACCURACY   11/15 = 0.7333 = 73.3%
    BASELINE   33.3%   →  40 percentage points better
    PER CLASS  spoon 100%  ·  toothbrush 80%  ·  comb 40%
@@ -574,8 +590,7 @@ Target sentence, and it is worth insisting on:
 > "And notice what 'it's 73% accurate' would have told you about any of that. Nothing. It's true, and
 > it's nearly useless, and it's what almost every advert about AI says."
 
-Then bring the calculator out of the drawer, let them check 11 ÷ 15, and enjoy the fact that it says
-0.73333333.
+Then bring the calculator out of the drawer and let them check 11 ÷ 15. It says 0.73333333.
 
 **Ask this:**
 
@@ -586,6 +601,8 @@ Then bring the calculator out of the drawer, let them check 11 ÷ 15, and enjoy 
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full steps for the two activity parts: the per-class split and the percentage-point drill.
 
 ### Part 1 — The Number That Lies
 
@@ -602,15 +619,15 @@ bottom: 11/15 = 0.7333 = 73.3%.
    `comb` (rows 11–15).
 2. **Score the spoon rows only.** Count the Ys among those five. Write it as a fraction, then a
    decimal, then a percentage:
-   ```
+   ```text
       spoon: 5 / 5 = 1.000 = 100.0%
    ```
 3. **Score the toothbrush rows only.**
-   ```
+   ```text
       toothbrush: 4 / 5 = 0.800 = 80.0%
    ```
 4. **Score the comb rows only.** Say nothing while they do this one.
-   ```
+   ```text
       comb: 2 / 5 = 0.400 = 40.0%
    ```
 5. **Run the check.** The three correct-counts must add to the overall correct count, and the three
@@ -647,7 +664,7 @@ bottom: 11/15 = 0.7333 = 73.3%.
 > You'd get 100% too if I gave you the exam paper to revise from. **The 100% is boring. The gap is
 > interesting.**"
 
-```
+```text
    training accuracy:  60/60 = 100.0%
    test accuracy:      11/15 =  73.3%
    ────────────────────────────────────
@@ -679,8 +696,8 @@ bottom: 11/15 = 0.7333 = 73.3%.
 
 **Time:** 8 minutes · **Materials:** Handout 20B (five lines) · a pen
 
-**Why this exists:** because everyone gets this wrong, including adults, including the news. Five
-repetitions is roughly what it takes.
+**Why this exists:** everyone gets this wrong, including adults and the news. Five repetitions is
+roughly what it takes.
 
 **How it runs:** they write the subtraction, then **read the whole answer out loud with the unit
 attached.** You correct only the unit, never the arithmetic — the arithmetic here is trivial on
@@ -752,6 +769,8 @@ with the worked example beside it.
 
 ## ❓ Questions Students Ask This Week
 
+Use this section to prepare short answers to the questions this lesson usually brings up.
+
 **1. "Why can't I just use the percentage? It's easier."**
 Use it — just never on its own. The problem isn't that percentages are wrong, it's that they throw away
 the sample size on the way through. "75%" could be 3 out of 4 or 300 out of 400, and those are
@@ -807,6 +826,8 @@ Week 33.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the common problems, why each one happens, and what to do right away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The calculator comes out** | It is right there and the division is tedious. | Trade, don't ban: "write the division, then check it with the calculator." Framing it as *checking the calculator* keeps the pride intact and the working on the page. |
@@ -821,6 +842,8 @@ Week 33.
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson when the student is struggling, flying, or not engaging.
 
 ### If they are struggling
 
@@ -876,6 +899,8 @@ the week.
 
 ## ✅ Assessing Understanding
 
+Use these three checks and the mastery scale to see what the student has understood.
+
 ### Check 1 — accuracy three ways, cold
 
 > **"Nine correct out of twelve. Give me the fraction, the decimal and the percentage, and show me the
@@ -924,6 +949,8 @@ the week.
 ---
 
 ## 📤 Homework to Assign
+
+This section says what to assign, what to say when assigning it, and how long each part takes.
 
 **Workbook:** Week 20 — the whole workbook, in its printed order: ✅ Warm-Up (W1–W5) · ✍️ Practice Set A
 (A1–A6) · ✍️ Practice Set B (B1–B5) · 🧩 Puzzle of the Week · 🤔 Think Deeper (T1–T2) · 🛠️ Build It
@@ -1019,7 +1046,7 @@ This is the sheet the student scores in class. Print it with the last column **b
 
 **Overall:** correct rows are 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12 → **11 correct out of 15**.
 
-```
+```text
    FRACTION:    11 / 15
    DECIMAL:     15 × 0.7 = 10.5;  11 − 10.5 = 0.5;  0.5 ÷ 15 = 0.0333
                 0.7 + 0.0333 = 0.7333
@@ -1050,7 +1077,8 @@ Checks: 5 + 4 + 2 = 11 ✓ · 5 + 5 + 5 = 15 ✓
 ### K2 — Workbook Build It, Page 20.1: five accuracy problems
 
 **(a) 9 out of 12**
-```
+
+```text
    fraction:   9/12   (= 3/4)
    decimal:    12 × 0.75 = 9 exactly  →  0.7500
    percentage: 0.75 × 100 = 75.0%
@@ -1058,7 +1086,8 @@ Checks: 5 + 4 + 2 = 11 ✓ · 5 + 5 + 5 = 15 ✓
 ```
 
 **(b) 17 out of 20**
-```
+
+```text
    fraction:   17/20
    decimal:    20 × 0.8 = 16;  17 − 16 = 1;  1 ÷ 20 = 0.05
                0.8 + 0.05 = 0.8500
@@ -1067,7 +1096,8 @@ Checks: 5 + 4 + 2 = 11 ✓ · 5 + 5 + 5 = 15 ✓
 ```
 
 **(c) 23 out of 30**
-```
+
+```text
    fraction:   23/30
    decimal:    30 × 0.7 = 21;  23 − 21 = 2;  2 ÷ 30 = 0.0667
                0.7 + 0.0667 = 0.7667
@@ -1076,7 +1106,8 @@ Checks: 5 + 4 + 2 = 11 ✓ · 5 + 5 + 5 = 15 ✓
 ```
 
 **(d) 4 out of 7**
-```
+
+```text
    fraction:   4/7
    decimal:    7 × 0.5 = 3.5;  4 − 3.5 = 0.5;  0.5 ÷ 7 = 0.0714
                0.5 + 0.0714 = 0.5714
@@ -1085,7 +1116,8 @@ Checks: 5 + 4 + 2 = 11 ✓ · 5 + 5 + 5 = 15 ✓
 ```
 
 **(e) 45 out of 60**
-```
+
+```text
    fraction:   45/60   (= 3/4)
    decimal:    0.7500
    percentage: 75.0%
@@ -1094,7 +1126,9 @@ Checks: 5 + 4 + 2 = 11 ✓ · 5 + 5 + 5 = 15 ✓
 
 **The point of putting (a) and (e) in the same list:** they are the *same percentage* from very
 different evidence — 12 photos versus 60. On 12 photos one photo is worth 8.3 points; on 60 it is worth
-1.7. Same number, one of them far more trustworthy. **That is why you write the fraction.** If the
+1.7.
+
+Same number, one of them far more trustworthy. **That is why you write the fraction.** If the
 student spots this without being asked, it is the best answer on the page.
 
 ### K3 — Workbook Build It, Page 20.3: the percentage-point drill
@@ -1120,7 +1154,9 @@ student spots this without being asked, it is the best answer on the page.
 > identical once you turn them into a percentage.
 
 **Marking note:** on items 4 and 5, a student who writes *only* the percentage-point answer gets full
-marks. The second sentence is a bonus. A student who writes only the "50% more" version has the
+marks. The second sentence is a bonus.
+
+A student who writes only the "50% more" version has the
 misconception the drill exists to catch — go back to Figure 20.4 in the student chapter (percent versus percentage point).
 
 ### K4 — Workbook Build It, Page 20.2: the number that lies
@@ -1130,7 +1166,8 @@ photos, 8 per class. Overall: 16 correct. Per class: bike 8 correct, scooter 6 c
 correct.
 
 **(a) Overall accuracy, three ways.**
-```
+
+```text
    fraction:   16/24   (= 2/3)
    decimal:    24 × 0.6 = 14.4;  16 − 14.4 = 1.6;  1.6 ÷ 24 = 0.0667
                0.6 + 0.0667 = 0.6667
@@ -1155,7 +1192,7 @@ Checks: 8 + 6 + 2 = 16 ✓ · 8 + 8 + 8 = 24 ✓
 
 **(d) How does it compare to blind guessing?**
 
-```
+```text
    baseline (3 equal classes) = 1 in 3 = 33.3%
    skateboard = 25.0%
    25.0 − 33.3 = −8.3
@@ -1222,7 +1259,7 @@ question: *"look at where, exactly?"*
 | 8 | comb | toothbrush | N |
 | 9 | comb | spoon | N |
 
-```
+```text
    overall: 6/9;  9 × 0.6 = 5.4;  6 − 5.4 = 0.6;  0.6 ÷ 9 = 0.0667
             0.6 + 0.0667 = 0.6667  =  66.7%
 
@@ -1244,7 +1281,8 @@ Last week's material (Week 19). Marking is on the idea, not the wording, except 
 *Watch for:* "a set to test it on" with no *before*. Send it back.
 
 **W2.**
-```
+
+```text
    test  = 0.20 x 50 = 10
    train = 50 - 10   = 40
    check: 40 + 10 = 50     ✓
@@ -1279,7 +1317,8 @@ line at 33.3% is the **baseline**. The thing to notice: no class scored 73.3%, a
 clears the baseline, visible only because the line is drawn.
 
 **A6.**
-```
+
+```text
    FRACTION:     27 / 36
 
    DECIMAL:      36 x 0.7 = 25.2          →  at least 0.7?  yes
@@ -1294,7 +1333,8 @@ Bonus: 27/36 simplifies to 3/4. Good instinct, but the division still has to be 
 ### K9 — Workbook Practice Set B (B1–B5)
 
 **B1.**
-```
+
+```text
    FRACTION:   21 / 30
    DECIMAL:    30 x 0.7 = 21;   21 - 21 = 0;   0 ÷ 30 = 0
                0.7 + 0 = 0.7000
@@ -1305,7 +1345,8 @@ Bonus: 27/36 simplifies to 3/4. Good instinct, but the division still has to be 
 Both words, "percentage points". "36.7 percent better" means something different.
 
 **B2.**
-```
+
+```text
    accuracy = 190 ÷ 200 = 0.95 = 95%
    pupils who did NOT need help:  190 / 190 = 100%
    pupils who DID need help:        0 / 10  =   0%
@@ -1330,7 +1371,8 @@ and a per-class comparison.
 | "Guessing 25%, mine 60%, so 35 percent better." | "35 **percentage points** better than guessing." |
 
 **B5.**
-```
+
+```text
    spoon 12,  toothbrush 2,  comb 1
    check: 12 + 2 + 1 = 15     ✓
    the useless model's score: 12 ÷ 15 = 0.8 = 80%
@@ -1350,7 +1392,7 @@ C is last on any reading. Accept either order of B and A if the reasoning is giv
 | **B** | "Out of how many?": no total. But 10 roughly equal kinds, so a 10% baseline | 1 |
 | **C** | "Out of how many?": the answer is four. One photo is worth 25 points | 3 |
 
-```
+```text
    App A baseline: "always say pigeon" = 98 ÷ 100 = 98%
    A beats its own baseline by 99 - 98 = 1 percentage point.
 
@@ -1405,6 +1447,8 @@ revisit: a 😕 on the first two means redo Page 20.1 with you watching; on the 
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what the next lesson covers and what to prepare for it.
 
 Next week is **Week 21 — Memorizing vs Generalizing**, and it takes the two words introduced today and
 turns them into a diagnosis. The student meets **overfitting** in plain words — *it learned the photos,

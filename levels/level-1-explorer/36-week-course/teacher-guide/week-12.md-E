@@ -35,7 +35,7 @@ Observable evidence: a baseline written in a box at the top of the page *before*
 
 ## 🧑‍🏫 What YOU Need to Know First
 
-This section is your background for the week. Everything in it is arithmetic you can do with a pencil. There is nothing clever here, and that is the point of the week: **feature choice is done by counting, not by opinion.**
+Everything in this section is arithmetic you can do with a pencil. There is nothing clever here, and that is the point of the week: **feature choice is done by counting, not by opinion.**
 
 ### 1. The baseline — the number you must compute first
 
@@ -47,7 +47,7 @@ You count up the answers. Four apples, four oranges, four bananas. Whatever you 
 
 That number is the ruler. **A feature that cannot beat the baseline is worth nothing at all**, however sensible it sounds and however much work it took to measure.
 
-Two things make baselines slippery. Know both before a student trips you with them.
+Two things make baselines slippery, and you should know both before a student trips you with them.
 
 **Slippery thing 1 — a tie.** With 4/4/4, all three guesses are equally good. Pick one, say so out loud, and move on. The baseline is 33.3% either way.
 
@@ -80,7 +80,7 @@ Worked on `colour`, from the twelve-row fruit table:
 
 **Scoring a number feature.** Same method, but you group by *bands* instead of by exact values. For `mass_g`, sort the rows by class first: bananas 110–135, apples 140–190, oranges 185–210. Bananas separate cleanly; apples and oranges overlap between 185 and 190. The best three-band rule is:
 
-```text
+```
 IF mass < 138        THEN banana
 ELSE IF mass <= 187  THEN apple
 ELSE                      orange
@@ -96,7 +96,7 @@ A student will ask this, or you should ask it for them. The honest answer has tw
 
 **But a rule you wrote can be much worse.** Take `has_stem`. Scored properly it gets 7 of 12, 58.3%. Now suppose the student writes:
 
-```text
+```
 IF has_stem = yes THEN banana ELSE apple
 ```
 
@@ -209,8 +209,6 @@ shelves, and the only thing that matters is that by week 36 every week has lande
 
 ## 🧰 Prep Checklist
 
-This list gets you ready. Do the night-before items first.
-
 **12 minutes the night before**
 
 - [ ] Print the whole workbook (Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Build It pages 12.4–12.6, Draw It, Self-Check). The workbook does **not** contain the twelve-row fruit table, so also print it from the student guide (section 1) or copy it from the Activity Setup below — ideally twice, one to write on and one to keep clean for reference.
@@ -239,8 +237,6 @@ This list gets you ready. Do the night-before items first.
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
-
-This is the plan for the whole lesson. The table shows the five segments; each one is written out below it.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -316,7 +312,7 @@ Let them get to "say the same thing every time." Then:
 
 Write it, in a box, at the top of the scoreboard sheet:
 
-```text
+```
 ┌────────────────────────────┐
 │  BASELINE = 4/12 = 33.3%   │
 └────────────────────────────┘
@@ -432,8 +428,6 @@ Full instructions below. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
-This section has everything you need to run the fruit bowl activity: the table, the rules and the steps.
-
 ### Setup
 
 ![The fruit bowl activity setup](../figures/fig-w12-6-fruit-bowl-setup.svg)
@@ -471,7 +465,7 @@ The twelve-row table:
 
 It is a number, so group by bands. Have them sort the twelve lengths and look for a gap.
 
-```text
+```
 7, 7, 8, 8, 8, 8, 8, 9,   18, 19, 20, 21
                         ^
               a huge empty gap between 9 and 18
@@ -497,7 +491,7 @@ Sort by class first:
 
 Bananas separate cleanly. Apples and oranges **overlap between 185 and 190**. Best three-band rule:
 
-```text
+```
 IF mass < 138        THEN banana
 ELSE IF mass <= 187  THEN apple
 ELSE                      orange
@@ -576,7 +570,7 @@ The realisation usually arrives here without further help. If it doesn't:
 ### Variation — harder
 
 1. **Two features beat five.** Chain them, first-match-wins:
-   ```text
+   ```
    RULE 1: IF length_cm >= 15   THEN banana
    RULE 2: ELSE IF colour = orange THEN orange
    RULE 3: OTHERWISE                 apple
@@ -589,8 +583,6 @@ The realisation usually arrives here without further help. If it doesn't:
 ---
 
 ## ❓ Questions Students Ask This Week
-
-These are the questions you are most likely to hear, with an answer for each.
 
 **"Why is 100% bad? Surely getting everything right is the point?"**
 
@@ -624,8 +616,6 @@ No, and this is a good trap to fall into. Scores don't work like that, because t
 
 ## ⚠️ Where This Lesson Goes Wrong
 
-Use this table when the lesson stalls. Find what you see, then do what the last column says.
-
 | What happens | Why | What to do right now |
 |---|---|---|
 | The baseline is computed last, or not at all | It feels like admin and the features are more interesting | Enforce it physically: a box at the top of the sheet, filled in before any pencil touches a scoring grid. If they skip it, stop and go back. This is *the* habit of the week. |
@@ -640,8 +630,6 @@ Use this table when the lesson stalls. Find what you see, then do what the last 
 ---
 
 ## 🧭 Differentiation
-
-This section tells you what to change if the student is struggling, flying or not engaging.
 
 ### If the student is struggling
 
@@ -674,7 +662,7 @@ That game delivers objective 4 completely and takes ten minutes. The scoreboard 
 
 ## ✅ Assessing Understanding
 
-Use these three spoken checks to see whether the lesson landed. They take five minutes. Use the exact wording.
+Three checks, five minutes, exact wording.
 
 **Check 1 — the baseline (spoken)**
 
@@ -707,8 +695,6 @@ Use these three spoken checks to see whether the lesson landed. They take five m
 ---
 
 ## 📤 Homework to Assign
-
-This section gives you the words to assign the homework and a map of the workbook.
 
 **Say this:**
 
@@ -747,7 +733,7 @@ If time is short, drop Sitting 3 to B1, B2 and the Puzzle, and treat Think Deepe
 
 ## 🔑 Answer Key
 
-Teacher only. This key follows the workbook section by section, using the workbook's own item labels (W1–W5, A1–A6, B1–B5, P1–P6, T1–T2, pages 12.4–12.6). The values are those in the workbook's own Answers section; the teacher-only notes (what wrong answers look like, what to say when marking) are added underneath.
+This key follows the workbook section by section, using the workbook's own item labels (W1–W5, A1–A6, B1–B5, P1–P6, T1–T2, pages 12.4–12.6). The values are those in the workbook's own Answers section; the teacher-only notes (what wrong answers look like, what to say when marking) are added underneath.
 
 ### ✅ Warm-Up
 
@@ -936,6 +922,7 @@ A full-credit write-up (5+ sentences) contains all four of these. Model answer:
 >
 > The last part is the bit I found hardest to accept: a hard job should produce some wrong answers. If telling apples from oranges by weight is genuinely difficult, and one heavy apple weighs the same as one light orange, then a feature that never gets anything wrong is not being cleverer than the problem. It is not doing the problem.
 
+
 ### 🎨 Draw It
 
 There is no single right drawing. A strong answer does three things:
@@ -999,6 +986,7 @@ Bananas 4 of 4 ✓ · apples 4 of 4 ✓ · oranges 0 of 4 ✗.
 
 **12/12 = 100%.** Verdict: 🚨 **LEAKY.** At the moment you are holding an unknown fruit and need the answer, there is no sticker — and if there were, you would not have needed a machine. Cut it regardless of the score.
 
+
 ### Lesson questions posed in the Say-this scripts
 
 - *"What's wrong with my rain predictor?"* → The umbrella gets wet after the rain, so at the moment you need to decide, it is dry.
@@ -1015,8 +1003,6 @@ Bananas 4 of 4 ✓ · apples 4 of 4 ✓ · oranges 0 of 4 ✗.
 ---
 
 ## 🔮 Next Week Preview
-
-This section says what comes next week and what to prepare.
 
 Week 13 turns the attention from the feature columns to the label column, and asks one question about it: **which one? or how much?** Some labels are a choice from a short fixed list — apple, orange, banana — and some are a number on a sliding scale, like a weight in grams or the number of minutes a piece of homework will take. Those two kinds of question are graded completely differently: with a list, a guess is simply right or wrong, whereas with a number a guess is *off by an amount*, and 195 grams is nearly right if the truth is 200. Same table, same measurements, one decision — which column you cover up — and it becomes a different kind of problem.
 

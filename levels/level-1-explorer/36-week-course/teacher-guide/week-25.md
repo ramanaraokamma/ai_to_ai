@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table gives you the lesson in one look.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes (works in 60 if you cut Segment 5 to 5 minutes) |
@@ -56,7 +58,7 @@ out loud: *"OK, but how does it get from a pile of numbers to 'that's a dog'?"*
 This week is the first honest answer to that question. It does **not** get there in one leap. It
 climbs a ladder:
 
-```
+```text
    PIXELS      →      EDGES      →      PARTS      →     OBJECTS
    raw numbers        this week         Level 3          Level 3
 ```
@@ -81,7 +83,7 @@ Exactly where one thing ends and another begins — which is where all the usefu
 
 The filter we use today is this 3×3 grid:
 
-```
+```text
    -1    0   +1
    -1    0   +1
    -1    0   +1
@@ -150,7 +152,7 @@ Take two pixels: a dark object at **40** and a bright wall at **200**. The diffe
 
 Now somebody switches a lamp on and every pixel gets 50 brighter:
 
-```
+```text
    before:   object  40    wall 200   →   difference = 160
    after:    object  90    wall 250   →   difference = 160     ← IDENTICAL
 ```
@@ -252,6 +254,8 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 
 ## 🧰 Prep Checklist
 
+Use this list to get everything ready before the student arrives.
+
 ### 10 minutes, the night before
 
 - [ ] **Print two copies of the grid sheet** (the 12×12 letter T, printed below in this file — copy it
@@ -271,7 +275,7 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
       real lesson.
 - [ ] Draw the empty 3×3 filter on the board before the student arrives:
 
-```
+```text
     ┌────┬────┬────┐
     │ -1 │  0 │ +1 │
     ├────┼────┼────┤
@@ -293,6 +297,8 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the lesson, one segment at a time.
 
 | # | Segment | Minutes | Running total |
 |---|---|---|---|
@@ -330,7 +336,7 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
   an abstract word into a physical memory.
 - Write on the board, and leave it there all lesson:
 
-```
+```text
    EDGE = a place where the brightness suddenly changes
 ```
 
@@ -410,7 +416,7 @@ Pause here. Let them look at Figure 25.1 for a moment before you continue.
 - Write these four things on the board and leave them up. This is the board a student can steal
   answers from all lesson, and that is fine — you want the *method* memorised, not the numbers.
 
-```
+```text
    FILTER  =  nine numbers you multiply and add
               "right column  minus  left column"
 
@@ -482,7 +488,7 @@ This is the segment you must not rush. Everything after it is repetition.
 
 Read them off the printed grid with your finger, one at a time. Write them in a 3×3 box on the board:
 
-```
+```text
       c1    c2    c3
  r1    0     0     0
  r2    0   255   255
@@ -513,7 +519,7 @@ Read them off the printed grid with your finger, one at a time. Write them in a 
 - Then show the shortcut you will use for the remaining cells, and say clearly that it is the same
   sum, just written faster:
 
-```
+```text
    THE SHORTCUT
 
    right column (c3) = 0 + 255 + 255 = 510
@@ -572,7 +578,7 @@ computes the remaining **four** cells largely alone, with you checking each one.
 - Hand over the blank 10×10 output grid.
 - Write the four remaining cells on the board so they cannot lose them:
 
-```
+```text
    YOUR FOUR:      (3,5)      (8,4)      (8,8)      (10,2)
 ```
 
@@ -653,6 +659,8 @@ computes the remaining **four** cells largely alone, with you checking each one.
 
 ## 🎲 The Activity, In Full
 
+This section holds everything you need to run the main activity.
+
 ### Run the Filter by Hand
 
 **Time:** 20 minutes (plus the 14 minutes of worked example that precede it)
@@ -665,7 +673,7 @@ grid the same way up.
 
 This is the 12×12 grid. **255 = ink, 0 = paper.** It is a fat capital **T**.
 
-```
+```text
         c1   c2   c3   c4   c5   c6   c7   c8   c9  c10  c11  c12
   r1     0    0    0    0    0    0    0    0    0    0    0    0
   r2     0  255  255  255  255  255  255  255  255  255  255    0
@@ -686,7 +694,7 @@ Sanity check for you: the bar is 4 rows × 10 columns = 40 pixels, the stem is 6
 
 ### The filter
 
-```
+```text
    -1    0   +1
    -1    0   +1        "right column  minus  left column"
    -1    0   +1
@@ -823,6 +831,8 @@ line; a corner tells you about shape.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual trouble spots and what to do about each one.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | Student makes the output grid 12×12 and can't work out why the edges are blank | They forgot the filter cannot sit on the border row | Put the card window on the very corner square and ask "what's above this?" Nothing. Then count the reachable centres out loud: c2, c3 … c11. Ten. Rewrite **output = input − 2** on the board and leave it there |
@@ -837,6 +847,8 @@ line; a corner tells you about shape.
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson when the student is struggling, flying or not engaged.
 
 ### If they are struggling
 
@@ -946,6 +958,8 @@ finished edge map looks flat-black everywhere instead of showing degrees of stre
 ---
 
 ## 📤 Homework to Assign
+
+This section tells you what to assign and what to say when you hand it over.
 
 **Workbook: Week 25, all sections.** Expect **45–55 minutes**. Tell the student to do the **Build It**
 task last — it is the biggest piece and it needs graph paper.
@@ -1166,7 +1180,7 @@ Filter: `-1 0 +1` in all three rows → **right column minus left column**.
 
 **Cell (2,2)** — patch = rows 1–3, columns 1–3
 
-```
+```text
         c1    c2    c3
    r1    0     0     0
    r2    0   255   255
@@ -1187,7 +1201,7 @@ Shortcut form: right column (c3) = 0 + 255 + 255 = 510; left column (c1) = 0 + 0
 
 **Cell (2,11)** — patch = rows 1–3, columns 10–12
 
-```
+```text
    right column (c12) =   0 +   0 +   0 =   0
    left  column (c10) =   0 + 255 + 255 = 510
    V(2,11) = 0 - 510 = -510
@@ -1201,7 +1215,7 @@ each other exactly, which is a free correctness check.
 
 **Cell (3,5)** — patch = rows 2–4, columns 4–6
 
-```
+```text
    right column (c6) = 255 + 255 + 255 = 765
    left  column (c4) = 255 + 255 + 255 = 765
    V(3,5) = 765 - 765 = 0
@@ -1215,7 +1229,7 @@ each other exactly, which is a free correctness check.
 
 **Cell (8,4)** — patch = rows 7–9, columns 3–5
 
-```
+```text
    right column (c5) = 255 + 255 + 255 = 765
    left  column (c3) =   0 +   0 +   0 =   0
    V(8,4) = 765 - 0 = +765
@@ -1229,7 +1243,7 @@ rows of the window. **765 is the largest number a single 3×3 filter can ever pr
 
 **Cell (8,8)** — patch = rows 7–9, columns 7–9
 
-```
+```text
    right column (c9) =   0 +   0 +   0 =   0
    left  column (c7) = 255 + 255 + 255 = 765
    V(8,8) = 0 - 765 = -765
@@ -1242,7 +1256,7 @@ rows of the window. **765 is the largest number a single 3×3 filter can ever pr
 
 **Cell (10,2)** — patch = rows 9–11, columns 1–3
 
-```
+```text
    right column (c3) = 0 + 0 + 0 = 0
    left  column (c1) = 0 + 0 + 0 = 0
    V(10,2) = 0
@@ -1270,7 +1284,7 @@ rows of the window. **765 is the largest number a single 3×3 filter can ever pr
 
 Filter:
 
-```
+```text
    -1   -1   -1
     0    0    0        "bottom row  minus  top row"
    +1   +1   +1
@@ -1278,7 +1292,7 @@ Filter:
 
 **Cell (2,2)** — patch = rows 1–3, columns 1–3
 
-```
+```text
    bottom row (r3) =   0 + 255 + 255 = 510
    top    row (r1) =   0 +   0 +   0 =   0
    H(2,2) = +510        |H| = 510
@@ -1286,7 +1300,7 @@ Filter:
 
 **Cell (2,11)** — patch = rows 1–3, columns 10–12
 
-```
+```text
    bottom row (r3) = 255 + 255 +   0 = 510
    top    row (r1) =   0 +   0 +   0 =   0
    H(2,11) = +510       |H| = 510
@@ -1294,7 +1308,7 @@ Filter:
 
 **Cell (3,5)** — patch = rows 2–4, columns 4–6
 
-```
+```text
    bottom row (r4) = 255 + 255 + 255 = 765
    top    row (r2) = 255 + 255 + 255 = 765
    H(3,5) = 0           |H| = 0
@@ -1302,7 +1316,7 @@ Filter:
 
 **Cell (8,4)** — patch = rows 7–9, columns 3–5
 
-```
+```text
    bottom row (r9) =   0 +   0 + 255 = 255
    top    row (r7) =   0 +   0 + 255 = 255
    H(8,4) = 0           |H| = 0
@@ -1310,7 +1324,7 @@ Filter:
 
 **Cell (8,8)** — patch = rows 7–9, columns 7–9
 
-```
+```text
    bottom row (r9) = 255 + 255 +   0 = 510
    top    row (r7) = 255 + 255 +   0 = 510
    H(8,8) = 0           |H| = 0
@@ -1318,7 +1332,7 @@ Filter:
 
 **Cell (10,2)** — patch = rows 9–11, columns 1–3
 
-```
+```text
    bottom row (r11) = 0 + 0 + 0 = 0
    top    row (r9)  = 0 + 0 + 0 = 0
    H(10,2) = 0          |H| = 0

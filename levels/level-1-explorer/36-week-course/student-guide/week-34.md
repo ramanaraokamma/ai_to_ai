@@ -57,6 +57,8 @@ This week you build the first half of that. Next week, the second half.
 
 ## 🧠 The Big Idea
 
+This section explains the five ideas behind an honest booth. Each one comes with an analogy and a picture.
+
 ### 1. "It worked when I tried it" is a story, not a number
 
 **The plain explanation.** You train a model. You hold up a can. It says `RECYCLING 96%`. It feels like proof. It is not proof. There are three separate holes in it, and you can close all three with paper.
@@ -123,7 +125,7 @@ Did the exam measure anything? No. It measured whether you'd seen the paper.
 
 **The concrete version.** Say you have 50 photos per class, four classes.
 
-```
+```text
    BEFORE you open the browser:
 
    recycling  50  →  10 into the envelope  →  40 left to train on
@@ -195,7 +197,7 @@ Four things the brief must contain, and one rule:
 
 **The concrete version.** Here is what each form is actually for:
 
-```
+```text
    FRACTION      30 / 40      tells you the SIZE of the test.
                               "95%" out of 20 photos is 19/20.
                               Out of 4 photos it is cheating.
@@ -237,13 +239,15 @@ That sentence tells a visitor what to hold up to break it, what photos would fix
 
 ## 🔍 Worked Examples
 
+Three kids build their booths, and you follow each step of their paperwork and arithmetic.
+
 ### Worked Example 1 — The spice jar booth (food)
 
 Priya's mum keeps grabbing the wrong jar. Three powders in identical jars: turmeric, chilli powder, coriander. Priya builds a booth.
 
 **Milestone 1 — the brief.**
 
-```
+```text
    The annoyance:   the wrong spice goes in about 3 times a week. Annoys Dad, who cooks.
    The classes:     turmeric · chilli · coriander · other
    The input:       one webcam photo of one open jar
@@ -255,7 +259,7 @@ Priya's mum keeps grabbing the wrong jar. Three powders in identical jars: turme
 
 **Milestone 2 — the split.** 50 photos per class, 200 total. Ten out of each class into the envelope.
 
-```
+```text
    turmeric    50  →  10 sealed  →  40 train
    chilli      50  →  10 sealed  →  40 train
    coriander   50  →  10 sealed  →  40 train
@@ -267,9 +271,9 @@ Balance check: `(biggest − smallest) ÷ biggest = (50 − 50) ÷ 50 = 0%`. Tar
 
 **Milestone 3.** Trains, saves as `booth-v1.tm`, finds it in `Downloads/`, reads the name out loud. Sixty seconds. Skipping it loses everything, because Teachable Machine has no autosave.
 
-**Milestone 4 — score all 40.** She gets **28 ticks**. Here is every step of the arithmetic:
+**Milestone 4 — score all 40.** She gets **28 ticks**. Here is every step of the arithmetic.
 
-```
+```text
    FRACTION     28 / 40
 
    DECIMAL      28 ÷ 40
@@ -302,6 +306,7 @@ Three checks Priya does herself:
 - Diagonal = 9 + 8 + 5 + 6 = **28**, which matches her tick count ✓
 
 Per-class accuracy: turmeric 9/10 = 90% · chilli 8/10 = 80% · coriander 5/10 = 50% · other 6/10 = 60%.
+
 Average = (90 + 80 + 50 + 60) ÷ 4 = 280 ÷ 4 = **70%** — matches the overall, because every class has exactly 10 photos.
 
 **The one-sentence finding.** The biggest off-diagonal number is the **4** in the coriander row, turmeric column.
@@ -316,9 +321,9 @@ Ravi sorts cricket gear: `ball`, `glove`, `pad`, `other`. 50 photos each, 200 to
 
 He is in a hurry, so he drags **all 200** into Teachable Machine, trains, and then tests on 40 photos picked at random from those same 200.
 
-**His first result:**
+**His first result** (the arithmetic, step by step):
 
-```
+```text
    38 correct out of 40
    38 ÷ 40 :  40 × 0.9 = 36 → remainder 2 ; 2 ÷ 40 = 0.05 ; 0.9 + 0.05 = 0.95
    CHECK: 38/40 = 19/20 = 0.95   ✓
@@ -332,9 +337,9 @@ Ninety-five percent. He is thrilled. And that number is **worth nothing**, becau
 
 Can he fix it by taking 40 of the 200 and calling them held out now? No. They're already inside the model. So on Saturday he shoots **40 brand new photos**, ten per class, on the patio instead of the kitchen table.
 
-**His honest result:**
+**His honest result** (the same steps on the new photos):
 
-```
+```text
    26 correct out of 40
    26 ÷ 40 :  40 × 0.6 = 24 → remainder 2 ; 2 ÷ 40 = 0.05 ; 0.6 + 0.05 = 0.65
    CHECK: 26/40 = 13/20 = 0.65   ✓
@@ -342,9 +347,9 @@ Can he fix it by taking 40 of the 200 and calling them held out now? No. They're
    baseline 25%  →  GAIN 65 − 25 = 40 PERCENTAGE POINTS
 ```
 
-Now compare the two numbers:
+Here are the two numbers side by side:
 
-```
+```text
    fake score      95%
    real score      65%
    difference      30 PERCENTAGE POINTS, mostly illusion
@@ -362,9 +367,9 @@ Most of those thirty points he never had (some of the gap is just that the new p
 
 Ella's school office has a lost-property crate. She builds a booth: `bottle`, `jumper`, `lunchbox`, `other`.
 
-But she couldn't find 50 random `other` objects, so her counts are uneven:
+But she couldn't find 50 random `other` objects, so her counts are uneven. Here are her counts:
 
-```
+```text
    bottle     60      jumper     60      lunchbox   60      other      20      TOTAL 200
 ```
 
@@ -372,7 +377,7 @@ Balance check: `(60 − 20) ÷ 60 = 40 ÷ 60 = 0.667 = 67%`. Target is under 20%
 
 **The split**, 20% of each class:
 
-```
+```text
    bottle     60  →  12 sealed  →  48 train
    jumper     60  →  12 sealed  →  48 train
    lunchbox   60  →  12 sealed  →  48 train
@@ -382,13 +387,13 @@ Balance check: `(60 − 20) ÷ 60 = 40 ÷ 60 = 0.667 = 67%`. Target is under 20%
 
 **Now the baseline, and this is the interesting part.** Blind random guessing over four classes gives 25%. But there's a smarter no-brain strategy: **always guess the most common class.** Her held-out set has 12 bottles, 12 jumpers, 12 lunchboxes, 4 others. Always guessing "bottle" gets:
 
-```
+```text
    12 correct out of 40  =  12 ÷ 40  =  0.3  =  30%
 ```
 
 So her real baseline is **30%**, not 25%. That matters:
 
-```
+```text
    Her score:  26 / 40 = 0.65 = 65%
    Wrong gain:  65 − 25 = 40 points     ← overclaiming by 5 points
    Right gain:  65 − 30 = 35 PERCENTAGE POINTS
@@ -429,6 +434,8 @@ Now try the check that worked in Example 1: `(83.3 + 75 + 50 + 25) ÷ 4 = 233.3 
 
 ## 🎲 What We Did In Class
 
+This section is the plan for the build sprint. Use it to remember the class, or to redo it at home.
+
 ### The Build Sprint — Milestones 2, 3 and 4 against a clock
 
 Twenty minutes. Three milestones. One visible clock. The adult is the clock, not the help desk.
@@ -460,9 +467,9 @@ Twenty minutes. Three milestones. One visible clock. The adult is the clock, not
 | 10–19 | **M4 — score** | Open the envelope. Feed each held-out photo to the Preview panel, one at a time. For each row write: the **true** label, the **prediction**, the **top confidence**, and a ✓ or ✗. |
 | 19–20 | **M4 tally** | Count the ticks. Circle the total at the bottom of the sheet. |
 
-**What "finished" looks like:**
+**What "finished" looks like.** Tick each box when it is true:
 
-```
+```text
    □ the envelope is open and empty, and every photo in it has a row
    □ the sheet has 40 filled rows and a circled total
    □ booth-v1.tm exists on disk and you can point at it
@@ -486,6 +493,8 @@ You can do all of it alone. You need: your photos in four folders, one envelope,
 
 ## 💬 Talk About It
 
+Three questions to talk through with a parent or a friend. Each one has a hint if you get stuck.
+
 **1. Ask a parent: "have you ever believed a number and then found out how it was measured?"**
 > *Hint:* try steering to adverts. "Clinically proven", "9 out of 10 dentists", "up to 70% off". Ask what the missing information is in each. It's usually *out of how many* and *compared with what* — the exact two questions from this chapter.
 
@@ -498,6 +507,8 @@ You can do all of it alone. You need: your photos in four folders, one envelope,
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four wrong ideas that sound sensible. Each one is shown next to the right idea.
 
 ### Trick 1 — "I can hold photos back after training, I just won't look at them"
 
@@ -550,6 +561,8 @@ The same 75% is excellent against a 25% baseline and almost worthless against a 
 
 ## 🌍 Where You've Seen This
 
+The same questions turn up outside the classroom. Here are six places.
+
 1. **Any advert with a percentage in it.** "Kills 99.9% of germs." Out of how many germs, tested how, and what did doing nothing kill? The fraction and the baseline are almost always missing, and now you notice.
 2. **Your own school reports.** "Attendance 96%" is a fraction wearing a percentage costume — 96% of 190 days is a real measurement. "Effort: good" is not measured at all, and that's fine, as long as nobody claims it is.
 3. **App store ratings.** 4.8 stars sounds great until you see it's out of 6 reviews. Same trick, same fix: *out of how many?*
@@ -587,6 +600,8 @@ and **evaluation**.*
 
 ## 🔑 Remember This
 
+These are the seven things to keep from this week.
+
 - **A model is a rumour until three pieces of paper exist:** the scoring sheet, the sealed envelope, and the confusion matrix.
 - **Split before you train.** It is the only mistake this week that cannot be repaired, because there is no way to make a model un-see a photo.
 - **Write the success bar before you look at the result**, or every possible result becomes a win and the test becomes meaningless.
@@ -599,7 +614,9 @@ and **evaluation**.*
 
 ## 📓 New Words
 
-**There are no new words this week.** That is on purpose — this is the week you use everything at once. Here are the five you'll lean on hardest, with the version you'd actually say at a fair.
+**There are no new words this week.** That is on purpose, because this is the week you use everything at once.
+
+Here are the five old words you'll lean on hardest, with the version you'd say at a fair.
 
 ![Week 34 words, drawn](../figures/fig-w34-8-words-recap.svg)
 *Figure 34.9 — Five old words doing today's work.*
@@ -618,7 +635,7 @@ and **evaluation**.*
 
 ## 📤 Your Homework
 
-Go to **[the Week 34 workbook](../workbook/week-34.md)**. About **50 minutes** in total.
+This section lists what to do at home and how long each page takes. Go to **[the Week 34 workbook](../workbook/week-34.md)**. About **50 minutes** in total.
 
 This week's homework is **assembly, not new thinking.** Everything you made in class goes into the booth folder, laid out so a stranger who has never met you could pick it up and understand the project.
 

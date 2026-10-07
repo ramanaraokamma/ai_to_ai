@@ -65,7 +65,9 @@ Here is what doubling does when you keep going.
 ![The doubling staircase](../figures/fig-w10-1-doubling-staircase.svg)
 *Figure 10.1 — Eight even-looking steps and you are already at 256. Thirty steps is over a billion.*
 
-The figure is drawn with **even steps on purpose**. That is the trap in your own head: doubling *feels* like steady progress and it is not. From 3 checks to 30 checks you multiplied the questions by ten and the situations went from 8 to 1,073,741,824.
+The figure is drawn with **even steps on purpose**. That is the trap in your own head: doubling *feels* like steady progress and it is not.
+
+From 3 checks to 30 checks you multiplied the questions by ten and the situations went from 8 to 1,073,741,824.
 
 **The single most striking fact in this lesson — memorise it, it wins the room:**
 
@@ -74,13 +76,19 @@ The figure is drawn with **even steps on purpose**. That is the trap in your own
 >
 > **Check 30 on its own creates more new situations than all twenty-nine checks before it, combined. By exactly one.**
 
-Check the arithmetic yourself so you can say it with confidence: after 29 checks you have 2²⁹ = 536,870,912 situations. Before check 1 you had exactly 1 situation ("no questions asked"). So checks 1 to 29 created 536,870,912 − 1 = 536,870,911 situations between them. Check 30 doubles 536,870,912 to 1,073,741,824, adding 536,870,912. One more than all its predecessors put together. That is not a coincidence or a trick — it is true at every step of any doubling sequence, and it is the cleanest possible statement of why you cannot win this race.
+Check the arithmetic yourself so you can say it with confidence.
+
+After 29 checks you have 2²⁹ = 536,870,912 situations. Before check 1 you had exactly 1 situation ("no questions asked"). So checks 1 to 29 created 536,870,912 − 1 = 536,870,911 situations between them. Check 30 doubles 536,870,912 to 1,073,741,824, adding 536,870,912. One more than all its predecessors put together.
+
+That is not a coincidence or a trick — it is true at every step of any doubling sequence, and it is the cleanest possible statement of why you cannot win this race.
 
 ### 2. Why the title says 258
 
-Because the number is absurd, and because it is real. Here is where it comes from, and you should show this working to the student:
+Because the number is absurd, and because it is real. Show this working to the student.
 
-```
+Here is where the title's number comes from:
+
+```text
 8 yes/no checks                    ->  2^8 = 256 situations
 a rulebook that covers all of them ->  256 rules
 plus one DEFAULT line ("otherwise...")     +1
@@ -89,7 +97,9 @@ plus one line saying which rule wins first +1
                                         258 lines
 ```
 
-Eight checks is *nothing*. A person can hold eight questions in their head. And it already needs a document longer than this teacher guide's answer key. The load-bearing number is **256 = 2⁸**; the extra two lines are the housekeeping every rulebook needs. Be honest with the student about that — "256 is the maths, 258 is the maths plus the two boring lines."
+Eight checks is *nothing*. A person can hold eight questions in their head.
+
+And it already needs a document longer than this teacher guide's answer key. The load-bearing number is **256 = 2⁸**; the extra two lines are the housekeeping every rulebook needs. Be honest with the student about that — "256 is the maths, 258 is the maths plus the two boring lines."
 
 ### 3. Why the count is not even the worst part
 
@@ -202,6 +212,8 @@ not teach or test the threads.
 
 ## 🧰 Prep Checklist
 
+This section lists what to do before the lesson, and what to do if something goes wrong.
+
 **15 minutes the night before**
 
 - [ ] **Find the envelope.** Confirm with the student that the sealed envelope of 10 fresh messages from Week 9 exists and is unopened. Do not open it yourself.
@@ -229,6 +241,8 @@ not teach or test the threads.
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the whole lesson: five segments, each with what to say and ask.
 
 | Segment | Minutes | Running total | What happens |
 |---|---|---|---|
@@ -355,7 +369,7 @@ Now the two conversions. Do these together on the calculator.
 
 **Conversion 1 — hours.** Assume you are fast: one carefully-thought-out rule every 2 minutes, 8 hours a day, 250 working days a year.
 
-```
+```text
 20 checks            = 1,048,576 situations
 1,048,576 x 2 min    = 2,097,152 minutes
 2,097,152 / 60       = 34,952.5 hours
@@ -367,7 +381,7 @@ Now the two conversions. Do these together on the calculator.
 
 **Conversion 2 — the check-30 fact.** Have them look at rows 29 and 30 of their own table.
 
-```
+```text
 after 29 checks:  536,870,912 situations
 after 30 checks: 1,073,741,824 situations
 check 30 added:  1,073,741,824 - 536,870,912 = 536,870,912
@@ -414,6 +428,8 @@ Full instructions are in the next section. In the lesson flow it runs like this:
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full instructions for the project work: the doubling count, the scoring, and two variations.
 
 ### Part A — Count the Explosion (already done in the Worked Example)
 
@@ -466,7 +482,7 @@ Open the envelope. Score all ten, in order, in this table (workbook page 10.4):
 
 **The arithmetic (3 minutes)** — workbook page 10.4, bottom:
 
-```
+```text
 Training accuracy = ____ correct out of 20 = ____ = ____%
 Fresh accuracy    = ____ correct out of 10 = ____ = ____%
 The gap           = training% - fresh%     = ____ percentage points
@@ -513,6 +529,8 @@ The honest answer to 3 is *yes, harder — but not impossible*. You can still pr
 
 ## ❓ Questions Students Ask This Week
 
+This section gives short answers to questions the student is likely to ask.
+
 **"If rules are so bad, why does anything still use them?"**
 
 Because for a lot of jobs they are exactly right, and machine learning would be *worse*. Tax calculations, chess legality, drug dosage limits, speed limits. The test: **did a human write the correct answer down somewhere already?** A parliament wrote the tax bands. FIDE wrote the chess rules. A pharmacologist established the safe dose. If the answer already exists in written form, implement it as rules — learning can only make a fuzzy copy of something already exact. Learning is for jobs where the answer lives only in people's ability to recognise something without explaining it.
@@ -545,6 +563,8 @@ They do try. It doesn't work well, because a scammer doesn't need to *read* your
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This section lists the usual problems, why they happen, and what to do right away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student edits a rule halfway through scoring the fresh messages | It feels obviously wrong to write down an answer you know is wrong | Stop them mid-sentence. "Write it in the margin, don't change the rule." Then say why: "If you fix it now, you'll end up with a rulebook that scores brilliantly on these ten and we'll have learned nothing." |
@@ -559,6 +579,8 @@ They do try. It doesn't work well, because a scammer doesn't need to *read* your
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to change the lesson for a student who is struggling, flying, or not engaging.
 
 ### If the student is struggling
 
@@ -588,6 +610,8 @@ If they are frustrated specifically because their rulebook did badly on the fres
 ---
 
 ## ✅ Assessing Understanding
+
+This section gives three spoken checks and a mastery scale to see how well the lesson landed.
 
 Three checks, five minutes, in the last segment. Use the exact wording.
 
@@ -622,6 +646,8 @@ Three checks, five minutes, in the last segment. Use the exact wording.
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to use when you set the homework, and the workbook pages it covers.
 
 **Say this:**
 
@@ -684,7 +710,9 @@ Three checks, five minutes, in the last segment. Use the exact wording.
 
 ### Build It
 
-### Page 10.3 — The trade
+The pages below follow the workbook's Build It pages, in order.
+
+#### Page 10.3 — The trade
 
 Accept any wording that carries these five points. Model answer:
 
@@ -700,13 +728,13 @@ Accept any wording that carries these five points. Model answer:
 **Oral extra (not in the workbook): name one thing that is worse about the machine learning way.**
 Any of: you cannot explain a decision · you need lots of data · it can surprise you · it learns your labelling mistakes exactly · it can be confidently wrong on something no human would get wrong.
 
-### Page 10.4 — Rulebook vs Reality: the scored table
+#### Page 10.4 — Rulebook vs Reality: the scored table
 
 The student's own messages are their own, so here is a **complete worked model** to mark against. If your student's structure matches this and their arithmetic is right, it is correct.
 
 **Model rulebook** (first match wins, top to bottom):
 
-```
+```text
 RULE 1: IF the message contains "free" (any capitalisation)   THEN spam
 RULE 2: IF it contains "win", "won" or "prize"                THEN spam
 RULE 3: IF it contains [LINK]                                 THEN spam
@@ -730,7 +758,7 @@ Training accuracy on the 20 messages: **19/20 = 95%.**
 | 29 | WIN an iPhone! Just tap [LINK] before midnight | 2 | spam | spam | ✓ | — |
 | 30 | Did you finish the science poster? I'm stuck on question 3 | 4 | ham | ham | ✓ | — |
 
-```
+```text
 Training accuracy = 19/20 = 0.95 = 95%
 Fresh accuracy    =  8/10 = 0.80 = 80%
 The gap           = 95 - 80 = 15 percentage points
@@ -740,7 +768,7 @@ Misses            = 1   (message 27)
 
 **Right for the wrong reason — worth marking:** message 21 was scored by Rule 1 ("free"), but it would also have been caught by Rules 2, 3 and 5. It looks like a triumph for Rule 1 and it is really a triumph for the message being obvious spam four times over.
 
-### Page 10.5 — "Why I stopped adding rules"
+#### Page 10.5 — "Why I stopped adding rules"
 
 A full-credit write-up contains all three required points. Model answer:
 
@@ -758,7 +786,7 @@ A full-credit write-up contains all three required points. Model answer:
 
 **Marking guidance:** if the write-up says "rules are bad and machine learning is good", it is a level 2. Send it back with one question: *"Name three jobs where I'd be an idiot to use machine learning."*
 
-### Page 10.6 — The unwritable rule: is this a photo of a cat?
+#### Page 10.6 — The unwritable rule: is this a photo of a cat?
 
 Model answer:
 
@@ -869,6 +897,8 @@ Before any checks there is exactly 1 situation. After *n*−1 checks there are 2
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what next week is about and what to get ready.
 
 Week 11 changes the subject completely, and on purpose. Having spent three weeks discovering that you cannot *tell* a machine the rule, we start on the only other option: showing it examples. But an example is not a photo or an object — it is a **row of measurements**, and next week is about building one. The student will hide an object behind a book and describe it down an imaginary phone using only things you can measure, then measure three real household objects into three real rows. The single hardest and most important part is writing a *measuring instruction* precise enough that a different person gets the same number.
 

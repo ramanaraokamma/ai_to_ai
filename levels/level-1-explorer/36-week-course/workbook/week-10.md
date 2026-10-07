@@ -37,6 +37,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you understand checks, doubling and the rule explosion.
+
 **A1. Fill in the blanks.**
 
 A **check** is a question with a ________________ answer.
@@ -113,13 +115,15 @@ Which fold first makes the paper thicker than **10 cm** (100 mm)? Fold number __
 
 ## ✍️ Practice Set B — Use It
 
+These questions use what you learned on real situations.
+
 **B1. The ice cream shop.** A shop offers **8 toppings**, each one a yes/no choice.
 
 (a) How many different ice creams can a customer build? ____________________
 
 (b) The owner wants a printed price card with one line per possible ice cream. At 2 minutes a line, how long is that job?
 
-```
+```text
 ______________ lines  x 2 min  =  ______________ minutes
                                 =  ______________ hours
 ```
@@ -134,7 +138,7 @@ ______________ lines  x 2 min  =  ______________ minutes
 
 (b) A tester can test 100 combinations a day. How many days to test them all?
 
-```
+```text
 ______________ / 100  =  ______________ days
 ```
 
@@ -194,6 +198,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+A pocket money puzzle with two plans. Work out the numbers and compare.
+
 ![Two pocket money plans](../figures/fig-w10-10-two-pocket-money-plans.svg)
 *Figure W10.2 — Two envelopes. Choose carefully.*
 
@@ -204,14 +210,14 @@ You are offered pocket money for **20 days**, and you must pick one plan and sti
 
 **P1.** How much do you get on **day 20** under each plan?
 
-```
+```text
 Plan A, day 20 =  ______________________
 Plan B, day 20 =  ______________________
 ```
 
 **P2.** What is the **total** over all 20 days?
 
-```
+```text
 Plan A total =  ______________________
 Plan B total =  ______________________
 ```
@@ -238,6 +244,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+Two questions that need a longer answer in your own words.
 
 **T1.** In the chapter there's a sentence: *"You are always, at every moment, only halfway."*
 
@@ -276,6 +284,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+Four pages of hands-on work: write the trade, score your rulebook, explain your result, and try to write rules for cats.
 
 ### Page 10.3 — Write down the trade
 
@@ -336,7 +346,7 @@ Now open the envelope and fill this in.
 
 **The arithmetic. Both scores as a fraction AND a percentage.**
 
-```
+```text
 Training accuracy = ______ correct out of 20 = ______ = ______ %
 
 Fresh accuracy    = ______ correct out of 10 = ______ = ______ %
@@ -412,6 +422,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for a picture that explains the week in your own way.
+
 Draw a picture that would make a 9-year-old understand why nobody writes 258 rules. Anything goes — a cartoon, a diagram, a staircase, two shopkeepers. Fill in the three small boxes at the bottom.
 
 ![Draw It frame for Week 10](../figures/fig-w10-11-draw-frame.svg)
@@ -443,6 +455,8 @@ ________________________________________________________________
 
 ## ✅ Answers
 
+Come here only after you have tried every page. Open the box to check your work.
+
 <details>
 <summary>Check your answers</summary>
 
@@ -471,7 +485,7 @@ Working by doubling: 2, 4, 8, 16, 32, 64, 128, 256, 512, 1,024, 2,048, 4,096 —
 
 **A3.** **TRUE.**
 
-```
+```text
 After 9 checks  : 2^9  = 512 situations
 So checks 1-9 created:  512 - 1 = 511   (you start with 1 situation: nothing asked yet)
 After 10 checks : 2^10 = 1,024
@@ -602,7 +616,7 @@ Plan B total = `1 + 2 + 4 + … + 524,288 = 2²⁰ − 1 =` **1,048,575 rupees**
 
 Model rulebook, first match wins:
 
-```
+```text
 RULE 1: IF the message contains "free" (any capitalisation)   THEN spam
 RULE 2: IF it contains "win", "won" or "prize"                THEN spam
 RULE 3: IF it contains [LINK]                                 THEN spam
@@ -624,7 +638,7 @@ DEFAULT: OTHERWISE                                            THEN ham
 | 29 | WIN an iPhone! Just tap [LINK] before midnight | 2 | spam | spam | ✓ | — |
 | 30 | Did you finish the science poster? I'm stuck on question 3 | 4 | ham | ham | ✓ | — |
 
-```
+```text
 Training accuracy = 19/20 = 0.95 = 95%
 Fresh accuracy    =  8/10 = 0.80 = 80%
 The gap           = 95 - 80 = 15 percentage points

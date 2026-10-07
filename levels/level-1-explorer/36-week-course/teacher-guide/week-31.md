@@ -70,7 +70,8 @@ because you are a bad person — because it was sunny, and that is when you were
 
 ### The four links, and where the fix lives
 
-Most of the cases of bias you will meet in this course have the same four-link shape. (Bias can also come from how things are labelled, what is chosen to measure, or how a result is used.)
+Most of the cases of bias you will meet in this course have the same four-link shape. (Bias can
+also come from how things are labelled, what is chosen to measure, or how a result is used.)
 
 ![Where bias comes from, in four links](../figures/fig-w31-1-bias-chain.svg)
 *Figure 31.1 — The chain runs left to right, but the repair happens at link 1.*
@@ -201,7 +202,7 @@ think", not by knowing it in advance.
 
 **The entire mathematical requirement on you:** divide, and turn the result into a percentage.
 
-```
+```text
    11 ÷ 12 = 0.9166...  ×100 → 91.7%      5 ÷ 12 = 0.4166...  ×100 → 41.7%
    gap = 91.7 − 41.7 = 50.0 percentage points
 ```
@@ -245,6 +246,8 @@ map is orientation, never assessment.
 
 ## 🧰 Prep Checklist
 
+Use this list to get ready. There are two short rounds: the night before, and just before class.
+
 **10 minutes, the night before**
 
 - [ ] Read the section above. Once is enough.
@@ -276,6 +279,8 @@ Two other things can go wrong:
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This is the plan for the whole lesson. The table shows the five segments. Each one is written out below it.
 
 | Minutes | Segment | What happens |
 |---|---|---|
@@ -319,7 +324,7 @@ Pause here. Let that sit for a second. Then:
 
 **Do this:** write only these four things on the board, nothing else:
 
-```
+```text
         0.8%          34.7%
     lighter men    darker women
 ```
@@ -363,7 +368,7 @@ Close the hook with:
 
 **Do this:** draw this on the board while you talk. Three columns, nothing else:
 
-```
+```text
    WHAT IT SAW A LOT OF   →   it gets good at
    WHAT IT SAW A LITTLE   →   it stays shaky
    WHAT IT NEVER SAW      →   it is guessing, nothing to go on
@@ -417,7 +422,7 @@ Show Figure 31.1 (or draw the four boxes — they are just four boxes and three 
 
 **Do this:** write on the board, and leave it up for the whole lesson:
 
-```
+```text
    ALWAYS ASK:  93% ... for WHOM?
 ```
 
@@ -466,7 +471,7 @@ The test sheet the student is holding:
 
 **Do this:** on the board, write it out fully. Do not skip the decimal.
 
-```
+```text
    Batch A:   11 ÷ 12 = 0.91666...
               0.91666... × 100 = 91.666...
               rounded to one decimal place:  91.7%
@@ -493,7 +498,7 @@ The test sheet the student is holding:
 **Do this:** write this on the board slowly. This is the single most important board work of the
 week.
 
-```
+```text
    30 daylight   × 0.917  = 27.5 correct
     6 lamplight  × 0.583  =  3.5
     6 in a hand  × 0.417  =  2.5
@@ -559,6 +564,8 @@ photos were blurry' a problem?"*
 
 ## 🎲 The Activity, In Full
 
+This section gives the whole activity in three parts: the arithmetic, the trace and the sealed prediction.
+
 ### **The Missing Group**
 
 **Time:** 20 minutes (8 + 6 + 6) · **Group size:** 1 (notes for 2–6 at the end)
@@ -595,9 +602,9 @@ The student fills in:
 | C | Held in a hand | 5 | 12 | | | |
 | D | Patterned cloth | 6 | 12 | | | |
 
-Then, underneath:
+Then, underneath, the student fills in the best group, the worst group and the gap:
 
-```
+```text
    best group  = ________  at ______%
    worst group = ________  at ______%
 
@@ -641,8 +648,8 @@ Then, underneath:
   the hardest-working people on earth and they took every photo in the afternoon because that is
   when they are not at school. Does the model come out any different?" (No.)
 
-Then have the student draw the arrow themselves — literally draw it on the page, from the 58.3%
-result back to the 17.
+Then have the student draw the arrow themselves. They draw it on the page, from the 58.3% result
+back to the 17.
 
 ![Tracing a gap back to a count of 17](../figures/fig-w31-4-trace-gap-to-count.svg)
 *Figure 31.6 — Every gap has a count behind it. This one is 17.*
@@ -664,7 +671,7 @@ This is the half that makes Week 33 possible, so protect the time for it.
 
 The slip has exactly this on it:
 
-```
+```text
    MY SEALED PREDICTION
 
    Four groups I will test in Week 33:
@@ -723,6 +730,8 @@ independence that makes it interesting in Week 33.
 
 ## ❓ Questions Students Ask This Week
 
+Seven questions you are likely to hear, each with an answer you can say out loud.
+
 **1. "So the people who made it were racist?"**
 
 Almost never, and getting stuck on that question is how the problem stays unfixed. Somebody
@@ -737,13 +746,15 @@ impact.
 No, and it is worth understanding why not. The model has no place to put an instruction. It is a
 big pile of numbers that were adjusted by looking at examples. There is no "be fair" dial inside
 it, in the same way there is no "be fair" dial inside a photograph. The main lever you have is
-what you show it (experts also reweight examples and add fairness checks, but that is beyond this week).
+what you show it (experts also reweight examples and add fairness checks, but that is beyond this
+week).
 
 **3. "Twelve photos isn't very many. Can you really trust this?"**
 
 Excellent question, and no — not completely. Twelve is a small sample. If one photo out of twelve
 had gone the other way, that group would move by more than eight points. What twelve photos *can*
-do is tell the difference between 91.7% and 41.7%, because that gap is unlikely to be luck alone, and it matches the training counts, though it is still only twelve photos. Rule
+do is tell the difference between 91.7% and 41.7%, because that gap is unlikely to be luck alone,
+and it matches the training counts, though it is still only twelve photos. Rule
 of thumb for this course: **small samples can spot big gaps but not small ones.** If two groups come
 out three points apart, do not claim a gap; go and take more photos.
 
@@ -788,6 +799,8 @@ match outcomes. Paper is the only witness in the room that cannot be got at.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table when the lesson drifts. Find the row that matches what you see, then do what the last column says.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student writes "the gap is 50%" | Both numbers had a % sign, so the answer feels like it should too | Ask "50% of what?" and wait. There is no answer. Then write **percentage points** on the board and make them copy it once. Takes 20 seconds, sticks for a year |
@@ -801,6 +814,8 @@ match outcomes. Paper is the only witness in the room that cannot be got at.
 ---
 
 ## 🧭 Differentiation
+
+Three paths for three kinds of day: a student who is struggling, one who is flying, and one who will not engage.
 
 ### If the student is struggling
 
@@ -891,6 +906,8 @@ Three checks, five minutes, in this order.
 ---
 
 ## 📤 Homework to Assign
+
+This section says what to tell the student, which workbook parts to set, and which to cut if time is short.
 
 **Say this:**
 
@@ -1206,17 +1223,18 @@ separate, then a commitment.
 ### Think Deeper 2 — How much can twelve photos prove?
 
 One photo changing side moves a group by 1/12, which is 8.3 points, so a gap under about eight or
-nine points could be pure luck. A 50-point gap is unlikely to be luck alone (six photos would all have fallen the
-wrong way in one batch, which happens only now and then) and it matches the training counts, but it is still only twelve photos. **Rule: small samples can spot big gaps but not small ones.** A 50-point gap
-on twelve photos each: believe it and say "twelve photos" out loud. A 3-point gap: claim nothing, take
-more photos.
+nine points could be pure luck. A 50-point gap is unlikely to be luck alone (six photos would all
+have fallen the wrong way in one batch, which happens only now and then) and it matches the
+training counts, but it is still only twelve photos.
+
+**Rule: small samples can spot big gaps but not small ones.** A 50-point gap on twelve photos each:
+believe it and say "twelve photos" out loud. A 3-point gap: claim nothing, take more photos.
 
 ---
 
 ### Build It — the three pages
 
 Page W31.1, W31.2 and W31.4 are the pages used in class; their keys follow.
-
 
 #### Page W31.1 — The 48-photo audit
 

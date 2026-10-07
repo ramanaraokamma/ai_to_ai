@@ -38,6 +38,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These six questions check that you know the new words and can use them.
+
 **A1. Fill in the blanks.**
 
 **Machine learning** is when the machine finds the ____________________ itself, by studying
@@ -142,6 +144,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+These five questions ask you to use this week's ideas on new situations.
+
 **B1. What would go wrong here?** A shop wants an app that tells you if a mango is ripe **from a
 photo**. Their team found the *feel* rule — "if it isn't hard, it's ripe" — from the eight cards, and
 it scored 8 out of 8.
@@ -225,6 +229,8 @@ What result would prove *me* wrong? ______________________________
 
 ### Practice On, or Practice Off?
 
+This puzzle gives you eight cards to score, rule by rule. Work with a pencil.
+
 ![Practice on, or practice off?](../figures/fig-w02-10-puzzle-practice-cards.svg)
 *Figure W2.2 — Eight cards from eight cricket practices. Three clues on each. One of them decides
 everything.*
@@ -280,6 +286,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions need a whole paragraph each. Take your time.
+
 **T1.** Imagine all eight mango cards came from **one farm, in one country, in one week**, and they
 were all the same variety of mango.
 
@@ -313,6 +321,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+Three short pages: rewrite sentences, write the definition from memory, and pick jobs.
 
 ### Page 2.4 — Rewrite five magic sentences
 
@@ -405,6 +415,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing this week's picture from memory.
+
 Draw **the two pipelines**, from memory, in the frame below. Row 1 above the dashed line, row 2 below
 it. Four boxes each, arrows between them, and a big **X** on the box where the person is standing in
 each row.
@@ -426,6 +438,8 @@ each row.
 
 ## 📊 Self-Check
 
+Tick one face in each row to show how you feel about it.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Draw both pipelines and point at where the human is standing | ☐ | ☐ | ☐ |
@@ -441,6 +455,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Stop here until you have tried every page. Then open the box to check your work.
 
 <details>
 <summary>Check your answers</summary>
@@ -477,9 +493,12 @@ What's missing from the others: **(a)** a photo with no answer attached is just 
 nothing to be right or wrong about. **(c)** a folder of 1,000 unlabelled emails is a pile of emails,
 not 1,000 examples. **(e)** that's a **rule**, which is the *output* of learning, not an input to it.
 
-**A3. (a) FALSE** (for the kind of model in this course; a few simple methods do keep their examples). The examples are gone. What's left is a rule. You showed it yourself: the eight
-mango cards were in a pocket when you answered the test cards, so your answer cannot have come from
-the cards. The model we built is not a filing cabinet — it's a rule that came out of a filing cabinet that has
+**A3. (a) FALSE** (for the kind of model in this course; a few simple methods do keep their examples).
+
+The examples are gone. What's left is a rule. You showed it yourself: the eight mango cards were in a
+pocket when you answered the test cards, so your answer cannot have come from the cards.
+
+The model we built is not a filing cabinet — it's a rule that came out of a filing cabinet that has
 since been thrown away.
 
 **(b) FALSE.** A **person** writes every label, by hand, **before** training. And that's not a small
@@ -618,7 +637,10 @@ and practice was cancelled).
 | **Z** — cloudy, **frozen solid**, yes | **The eight cards do not tell you.** | Every card said *dry* or *wet*. Not one said *frozen*. Nothing you learned covers it. |
 
 **P5.** **Test Z.** What's missing is an **example**: no card in the training set was ever frozen, so
-the rule has no idea which side of the line "frozen" falls on. The cards only said dry or wet, so a rule built on them has no answer for frozen ("not wet" might make it say ON). It is also solid ice, which any real coach would say is far more dangerous than a wet
+the rule has no idea which side of the line "frozen" falls on.
+
+The cards only said dry or wet, so a rule built on them has no answer for frozen ("not wet" might make
+it say ON). It is also solid ice, which any real coach would say is far more dangerous than a wet
 outfield. A real model would answer Z **confidently anyway**, and it would be guessing.
 
 **P6.** Because the sky is the loudest, most obvious thing on the card, and because there is a real

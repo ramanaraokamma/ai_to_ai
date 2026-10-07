@@ -38,6 +38,8 @@
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check the ideas behind the spreadsheet formula.
+
 **A1. Fill in the blanks.**
 
 When you type `=D2+D3+D4` into a cell, the spreadsheet does not really remember the addresses `D2`, `D3` and `D4`. It remembers ________________________ from where the formula is sitting.
@@ -91,18 +93,20 @@ Size: `__________ × __________`   Last cell: `____________`
 
 ## ✍️ Practice Set B — Use It
 
+These questions use the ideas on real numbers and real situations.
+
 **B1. Do the whole formula by hand.** Here are the nine pixels around one cell:
 
-```
+```text
         c1    c2    c3
    r1     0     0     0
    r2   255   255     0
    r3   255   255     0
 ```
 
-Fill in every line:
+Fill in every line of this working:
 
-```
+```text
    V  =  right column (c3) − left column (c1)
       =  ( ____ + ____ + ____ ) − ( ____ + ____ + ____ )
       =  ______ − ______  =  ______            |V| = ______
@@ -180,6 +184,8 @@ What kind of place in the picture is this? `________________________________`
 
 ## 🧩 Puzzle of the Week
 
+This puzzle works with the figure below. Answer the questions in order.
+
 ![Which spot did not just get a brighter lamp?](../figures/fig-w26-11-puzzle-lamp-detective.svg)
 *Figure W26.2 — Four spots, two lightings. Fill the edge columns, then find the spot that genuinely changed.*
 
@@ -214,6 +220,8 @@ What kind of place in the picture is this? `________________________________`
 
 ## 🤔 Think Deeper
 
+These two questions need a few careful sentences each.
+
 **T1.** Our proof only covers light that changes **evenly** — the same amount added to every pixel. Describe a change of light in a real room that would **not** be even, and say exactly what it would do to the edge numbers. Then say whether the proof is worthless or just narrower than you thought.
 
 `________________________________________________________`
@@ -228,7 +236,7 @@ What kind of place in the picture is this? `________________________________`
 
 Work it out on an edge of 160 (object 40, wall 200):
 
-```
+```text
    before:  object ______   wall ______   edge = ______
    after:   object ______   wall ______   edge = ______
 ```
@@ -242,6 +250,8 @@ Now rewrite the claim *"edges survive a lighting change"* so that it is honest.
 ---
 
 ## 🛠️ Build It — Finish Pixel Lab
+
+Here you finish your Pixel Lab. Tick the checklist, then fill in each part in order.
 
 ### Step checklist
 
@@ -281,14 +291,14 @@ Pick an output cell that came out at **255 and sits on the edge of a stroke**. N
 
 The nine pixel values:
 
-```
+```text
         c___   c___   c___
    r___  ____   ____   ____
    r___  ____   ____   ____
    r___  ____   ____   ____
 ```
 
-```
+```text
    V  =  ______ − ______  =  ______        |V| = ______
 
    H  =  ______ − ______  =  ______        |H| = ______
@@ -341,6 +351,8 @@ Which moved more, and by how many times? `________________________________`
 
 ## 🎨 Draw It
 
+Here you draw one picture and write one sentence about it.
+
 **Draw the background trap.** Two panels, side by side:
 
 - **Left:** your object sitting on a strongly patterned background — wood grain, a stripy tea towel, a tiled floor, brick.
@@ -357,6 +369,8 @@ Then draw an arrow to whichever set of edges a model would find **easier to rely
 
 ## 📊 Self-Check
 
+Tick the face that fits you for each line.
+
 | I can… | 😀 Yes | 🙂 Nearly | 😕 Not yet |
 |---|---|---|---|
 | build a working edge filter in a spreadsheet with one formula dragged across a grid | | | |
@@ -368,6 +382,8 @@ Then draw an arrow to whichever set of edges a model would find **easier to rely
 ---
 
 ## ✅ Answers
+
+Open this only after you have finished every page. Use it to check your work.
 
 <details>
 <summary>Check your answers</summary>
@@ -417,7 +433,7 @@ That is the dangerous kind of wrong: silent. Error messages only catch *broken* 
 
 **B1.**
 
-```
+```text
    V  =  ( 0 + 0 + 0 ) − ( 0 + 255 + 255 )
       =  0 − 510  =  −510            |V| = 510
 
@@ -457,13 +473,13 @@ To get a hollow interior you need the stroke to be at least **3 pixels** thick (
 
 (ii) The six brightness changes are +38, +39, +39, +38, +39, +38.
 
-```
+```text
    (38 + 39 + 39 + 38 + 39 + 38) ÷ 6  =  231 ÷ 6  =  38.5
 ```
 
 (iii) The three edge changes are 1, 1 and 1.
 
-```
+```text
    (1 + 1 + 1) ÷ 3  =  1.0
 ```
 
@@ -512,7 +528,7 @@ So the honest version of the claim is: **"An edge survives light that changes by
 
 **T2.**
 
-```
+```text
    before:  object  40    wall 200    edge = 160
    after:   object  20    wall 100    edge =  80
 ```
@@ -537,7 +553,7 @@ Also fine: *"edges survive an even change in brightness, but not a change in con
 
 **Part 2 — a model answer**, using the class letter T and output cell `C21`:
 
-```
+```text
    Output cell:   C21
    Image pixel:   C5
    Grid cell:     (5, 2)

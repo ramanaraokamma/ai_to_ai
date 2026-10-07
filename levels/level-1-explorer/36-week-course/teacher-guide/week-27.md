@@ -103,7 +103,7 @@ number you compute afterwards.
 
 **Decision 1 — is punctuation its own token?**
 
-```
+```text
    "I love pizza!"
 
    punctuation glued on    ->  [ I ] [ love ] [ pizza! ]         3 tokens
@@ -122,7 +122,7 @@ a token that means *"a sentence ended here"*, which turns out to be enormously u
 To a computer, `Pizza` and `pizza` are as different as `Pizza` and `banana`. Different letters,
 different word. So many real systems **lowercase everything first**:
 
-```
+```text
    "Pizza is great. I love pizza."
 
    without lowercasing:   Pizza (1),  pizza (1)   <- counted as two different words
@@ -162,7 +162,7 @@ Two different counts, and students merge them constantly.
 - **Token count** = how many pieces you produced. Count every piece, including repeats.
 - **Unique token count** = how many *different* pieces there are. Count each distinct piece once.
 
-```
+```text
    "I love pizza. Do you love pizza?"
 
    tokens:   i / love / pizza / . / do / you / love / pizza / ?     =  9 tokens
@@ -272,6 +272,8 @@ decision. Do not quiz them on the threads; the map is orientation, never assessm
 
 ## 🧰 Prep Checklist
 
+This is everything to print, do and set out before the lesson starts.
+
 ### 20 minutes, the night before
 
 - [ ] **Print the checkpoint quiz** (Answer Key, Part A below — the question text without the
@@ -314,6 +316,8 @@ decision. Do not quiz them on the threads; the map is orientation, never assessm
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the plan for the whole lesson: five segments, each with words to say, things to do and questions to ask.
+
 | # | Segment | Minutes | Running total |
 |---|---|---|---|
 | 1 | 🪝 Hook — Five words, no notes | 8 | 8 |
@@ -355,7 +359,7 @@ decision. Do not quiz them on the threads; the map is orientation, never assessm
 - Turn the quiz face up only at the end of the eight minutes.
 - Draw this on the board and leave it up all lesson:
 
-```
+```text
         TERM 3, IN FIVE WORDS
         ─────────────────────
         test set    hide it, look once
@@ -462,7 +466,7 @@ decision. Do not quiz them on the threads; the map is orientation, never assessm
   Introduce rules 1 and 2 yourself, then hit `don't` and let the need for rule 3 emerge before you
   write it.
 
-```
+```text
         OUR TOKENIZING RULES   (write these first, then obey them)
         ─────────────────────────────────────────────────────────
         R1  lowercase everything
@@ -483,7 +487,7 @@ decision. Do not quiz them on the threads; the map is orientation, never assessm
 ![Chopping a sentence into tokens](../figures/fig-w27-2-chop-the-sentence.svg)
 *Figure 27.2 — The finished board for sentence 1. Cut marks on top, numbered token boxes underneath. Six tokens.*
 
-```
+```text
         I don't want pizza tonight.
         │     │    │     │       ││
         1     2    3     4       5 6
@@ -530,7 +534,7 @@ decision. Do not quiz them on the threads; the map is orientation, never assessm
 
 - Hand over the Chop the Sentence sheet. Sentences 2, 3 and 4:
 
-```
+```text
         2.  Pi is about 3.14, isn't it?
         3.  My AI-powered pizza-oven is great!
         4.  Pizza 🍕 again? Yes!
@@ -545,7 +549,7 @@ decision. Do not quiz them on the threads; the map is orientation, never assessm
 - When all four sentences are done, do the counting **on the board, together** — it is arithmetic
   worth being careful about:
 
-```
+```text
         TOKENS PER SENTENCE
         1.  i don't want pizza tonight .                        6
         2.  pi is about 3.14 , isn't it ?                       8
@@ -608,7 +612,7 @@ decision. Do not quiz them on the threads; the map is orientation, never assessm
   week's file, physically. It must not get lost — it is the output of the lesson.
 - Write the three vocabulary words on the board and have them say each definition once, unprompted:
 
-```
+```text
         corpus     the pile of text we're learning from
         token      one piece after chopping
         tokenize   to chop text into tokens
@@ -629,6 +633,8 @@ decision. Do not quiz them on the threads; the map is orientation, never assessm
 ---
 
 ## 🎲 The Activity, In Full
+
+This section holds the whole Chop the Sentence activity, so you can run it without looking anywhere else.
 
 ### Chop the Sentence
 
@@ -695,7 +701,7 @@ the unique count. Slower, and it makes "unique" impossible to misunderstand.
 
 Add these three and ask for a **new rule** for each, written down before chopping:
 
-```
+```text
         5.  It cost $3.50 -- wasn't that a lot?
         6.  Email me at ramana@example.com!
         7.  She said "no", then "NO!!!"
@@ -704,7 +710,7 @@ Add these three and ask for a **new rule** for each, written down before choppin
 Then the real question: **retokenize all seven sentences with punctuation glued on instead of split
 off, and report both totals.** For the original four, gluing punctuation on gives:
 
-```
+```text
         1.  i  don't  want  pizza  tonight.                 5
         2.  pi  is  about  3.14,  isn't  it?                6
         3.  my  ai-powered  pizza-oven  is  great!          5
@@ -726,6 +732,8 @@ appear in that exact form again, so their counts are stuck at 1 forever. Fewer, 
 ---
 
 ## ❓ Questions Students Ask This Week
+
+These are the questions your student is likely to ask, with an answer you can say out loud.
 
 **"Is there a right way to chop a sentence?"**
 
@@ -802,6 +810,8 @@ today, at its most extreme end.
 ---
 
 ## 🧭 Differentiation
+
+Use this section to adjust the lesson if your student finds it hard, or finds it easy.
 
 ### If they are struggling
 
@@ -923,6 +933,8 @@ a genuinely strong day; do not chase it.
 
 ## 📤 Homework to Assign
 
+This section tells you what to say when you set the homework, and what the homework is.
+
 **Say this:**
 
 > "Two parts, about fifty minutes altogether, and neither one needs a screen.
@@ -967,6 +979,8 @@ goes on Build It, Part 2. If it is running past an hour, cut **Think Deeper** fi
 
 ## 🔑 Answer Key
 
+This section holds the answers for the quiz, the activity and the homework. Keep it away from your student.
+
 ### Part A — the checkpoint quiz (print this half)
 
 > **Term 3 Checkpoint — 16 questions, about 10 minutes.**
@@ -993,7 +1007,7 @@ goes on Build It, Part 2. If it is running past an hour, cut **Think Deeper** fi
 
 **The matrix for question 7:**
 
-```
+```text
                      said      said          said
                      spoon     toothbrush    comb     total
    true spoon          5           0           0        5
@@ -1030,7 +1044,7 @@ the score is not the output of this lesson, the week numbers are.
 
 > **Chop the Sentence.** Write your rules in the box **first**. Then chop.
 
-```
+```text
         MY TOKENIZING RULES
         ┌──────────────────────────────────────────────┐
         │ R1                                           │
@@ -1064,7 +1078,7 @@ the score is not the output of this lesson, the week numbers are.
 
 **The rules (any consistent set is acceptable; this is ours):**
 
-```
+```text
    R1  lowercase everything
    R2  . , ! ?  are each their own token
    R3  contractions stay whole                      don't   isn't
@@ -1075,7 +1089,7 @@ the score is not the output of this lesson, the week numbers are.
 
 **Sentence 1 — `I don't want pizza tonight.`**
 
-```
+```text
    i / don't / want / pizza / tonight / .                      6 tokens
 ```
 Rules used: R1 on `I`, R3 on `don't`, R2 on the final stop. Nothing repeats, so 6 unique within this
@@ -1083,7 +1097,7 @@ sentence.
 
 **Sentence 2 — `Pi is about 3.14, isn't it?`**
 
-```
+```text
    pi / is / about / 3.14 / , / isn't / it / ?                  8 tokens
 ```
 Rules used: R1 on `Pi`, **R4** keeps `3.14` whole (this is the one everybody gets wrong first time),
@@ -1094,7 +1108,7 @@ split).
 
 **Sentence 3 — `My AI-powered pizza-oven is great!`**
 
-```
+```text
    my / ai-powered / pizza-oven / is / great / !                6 tokens
 ```
 Rules used: R1 lowercases `My` and `AI`, R5 keeps both hyphenated words whole, R2 splits the `!`.
@@ -1105,14 +1119,14 @@ your student notices. Many do.
 
 **Sentence 4 — `Pizza 🍕 again? Yes!`**
 
-```
+```text
    pizza / 🍕 / again / ? / yes / !                             6 tokens
 ```
 Rules used: R1 on `Pizza` and `Yes`, R6 makes the emoji its own token, R2 splits `?` and `!`.
 
 **The totals:**
 
-```
+```text
    TOKENS      6 + 8 + 6 + 6  =  26
 
    REPEATS     is      s2, s3
@@ -1126,7 +1140,7 @@ Rules used: R1 on `Pizza` and `Yes`, R6 makes the emoji its own token, R2 splits
 
 **The full list of 22 unique tokens**, in order of first appearance:
 
-```
+```text
    i, don't, want, pizza, tonight, .,
    pi, is, about, 3.14, ",", isn't, it, ?,
    my, ai-powered, pizza-oven, great, !,
@@ -1171,7 +1185,7 @@ like. It is exactly 60 words.
 
 **Counts first, so you can check a student's work in ten seconds:**
 
-```
+```text
    words                      60
    punctuation tokens          9        ( 5 full stops, 4 commas )
                             ────
@@ -1200,7 +1214,7 @@ like. It is exactly 60 words.
 
 **Check the arithmetic with your student, out loud:**
 
-```
+```text
    tokens appearing more than once:
      9 + 5 + 4 + 4 + 4 + 3 + 3 + 3 + 2 + 2 + 2 + 2   =  43
    tokens appearing exactly once:                        26

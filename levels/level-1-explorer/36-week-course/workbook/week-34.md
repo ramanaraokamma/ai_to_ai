@@ -41,6 +41,8 @@ My answer: ______
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you understand the ideas behind the booth test.
+
 **A1. Fill in the blanks.**
 
 A **held-out set** is photos you hide __________________ training, which the model
@@ -96,7 +98,7 @@ ____________________________________________________________________
 
 **A6. Spot the error.** A student writes this on their poster:
 
-```
+```text
    My model got 30 out of 40 = 75%.
    Guessing would be 25%.
    So my model is 50% better than guessing.
@@ -109,6 +111,8 @@ ____________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Use It
+
+These questions let you use the ideas on new numbers.
 
 **B1.** A friend says: *"My model is 95% accurate."* Write down the **two** questions you ask before you decide whether to be impressed.
 
@@ -162,7 +166,7 @@ ____________________________________________________________________
 
 **B5.** Read this row from a confusion matrix. The true class is `landfill`.
 
-```
+```text
                     said recycling   said compost   said landfill   said other
    was landfill            3              1              6              0
 ```
@@ -197,7 +201,7 @@ Fill in the four question marks. Work in this order — one of them is forced, t
 
 Then finish these:
 
-```
+```text
    The shaded (diagonal) boxes add to ______
 
    ACCURACY   fraction  ______ / 15
@@ -213,6 +217,8 @@ Then finish these:
 ---
 
 ## 🤔 Think Deeper
+
+These two questions have no single right answer. Write a paragraph for each.
 
 **T1.** You have five more minutes of camera time. Should you spend it taking **more training photos** or **more held-out photos**? There is no single right answer — the defence is the point. Write a paragraph.
 
@@ -248,7 +254,7 @@ ____________________________________________________________________
 
 ### W34-1 — The brief (5 min)
 
-```
+```text
    In my house, ______________________________________ happens about ______ times a week.
 
    It annoys ______________________ most.
@@ -284,7 +290,7 @@ ____________________________________________________________________
 | `other` | | | |
 | **TOTAL** | | | |
 
-```
+```text
    BALANCE CHECK   (biggest − smallest) ÷ biggest
 
         ( ______ − ______ ) ÷ ______  =  ______  =  ______ %
@@ -296,7 +302,7 @@ ____________________________________________________________________
 
 ### W34-3 — Model file record card (3 min)
 
-```
+```text
    ┌──────────────────────────────────────────────────────────────────────┐
    │  filename:  ____________________________                            │
    │  folder:    ____________________________                            │
@@ -327,13 +333,13 @@ ____________________________________________________________________
 | 10 | | | | | |
 | … | *(continue to 40 on the back)* | | | | |
 
-```
+```text
    TICKS COUNTED:  ⃝ ______        HIGHEST CONFIDENCE WHILE WRONG: ______ %
 ```
 
 ### W34-5 — Accuracy three ways (7 min)
 
-```
+```text
    FRACTION      ______ / ______
 
    DECIMAL       ______ ÷ ______
@@ -367,7 +373,7 @@ ____________________________________________________________________
 | **was ______** | | | | | |
 | **column total** | | | | | |
 
-```
+```text
    THREE CHECKS I DID MYSELF:
 
       □ every row adds to the number of held-out photos in that class
@@ -389,7 +395,7 @@ ____________________________________________________________________
 
 ### W34-7 — Data card draft (12 min)
 
-```
+```text
    1  WHAT IS IT?        ______________________________________________________
 
    2  HOW MANY?          ______ photos, ______ classes, ______ per class
@@ -461,6 +467,8 @@ Anything at 😕? Write the week number here and go back to that project: ______
 ---
 
 ## ✅ Answers
+
+Cover this part until you have finished the pages above. Then open it to check your work.
 
 <details>
 <summary>Check your answers</summary>
@@ -557,7 +565,7 @@ The direction is the whole information. "It got four wrong" is nearly useless. "
 
 Work in forced order. Each step makes the next one forced.
 
-```
+```text
    STEP 1   Row "apple" must add to 5:   4 + ? + 0 = 5   →   apple→pear = 1
 
    STEP 2   Column "pear" must total 4:  1 + 3 + ? = 4   →   plum→pear  = 0
@@ -578,7 +586,7 @@ The finished matrix:
 
 **Two checks that prove it:** column apple = 4 + 1 + 1 = **6** ✓ · column plum = 0 + 1 + 4 = **5** ✓ · all nine boxes = 15 ✓
 
-```
+```text
    Diagonal = 4 + 3 + 4 = 11
 
    ACCURACY   fraction   11 / 15
@@ -633,7 +641,7 @@ Your answers are your own, so here is a **model version** of each page and, more
 
 **W34-2 — the counts and the balance check.**
 
-```
+```text
    class        total  heldout(20%)  train        BALANCE CHECK
    recycling      50        10         40         (biggest − smallest) ÷ biggest
    compost        50        10         40       = (50 − 50) ÷ 50 = 0%   ✓ under 20%
@@ -645,7 +653,7 @@ Your answers are your own, so here is a **model version** of each page and, more
 
 **W34-3 — the record card.** The line that earns the credit is the last one:
 
-```
+```text
    filename: booth-v1.tm     folder: Downloads/     saved: <today>
    trained on:     160 photos, 40 per class, default settings
    NOT trained on: the 40 photos in the sealed envelope     ← this line
@@ -655,7 +663,7 @@ If you couldn't fill in the folder, you didn't actually find the file, and Teach
 
 **W34-4 / W34-5 — the sheet and accuracy three ways.** 40 rows of `# · true · predicted · top % · ✓/✗`, e.g. `2  recycling  landfill  61  ✗`. Ticks counted: **30**.
 
-```
+```text
    FRACTION     30 / 40
    DECIMAL      30 ÷ 40 :  40 × 0.7 = 28 → remainder 2 ; 2 ÷ 40 = 0.05 ; 0.7 + 0.05 = 0.75
                 CHECK: 30/40 = 3/4 = 0.75   ✓
@@ -668,7 +676,7 @@ Marking points, in order: the division **written out** · the simplify check · 
 
 **W34-6 — the matrix and the finding.**
 
-```
+```text
                         PREDICTED
                    rec   com   lan   oth
    TRUE  rec        9     0     1     0     = 10

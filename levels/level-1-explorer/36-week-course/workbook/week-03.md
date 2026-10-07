@@ -8,7 +8,8 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week**. Try all five before you look anything up.
+Five quick questions about **last week**.
+Try all five before you look anything up.
 
 **W1.** In machine learning, who writes the rule? ____________________
 
@@ -33,6 +34,8 @@ Everything the model knows, and every mistake it makes, came from ______________
 ---
 
 ## ✍️ Practice Set A — Understand It
+
+These questions check that you know the new words and ideas from this week's chapter.
 
 **A1. Fill in the blanks.**
 
@@ -95,8 +98,9 @@ ________________________________________________________________
 
 **A5. Label the diagram.**
 
-Write one family name on each numbered dashed line. Then fill in the extra lines with real examples,
-and answer the question underneath.
+Write one family name on each numbered dashed line.
+
+Then fill in the extra lines with real examples, and answer the question underneath.
 
 ![Label the three families](../figures/fig-w03-10-blank-families-map.svg)
 *Figure W3.1 — Boxes inside boxes. The nesting is part of the answer.*
@@ -123,7 +127,7 @@ Why? ____________________________________________________________
 
 Now a different model looks at a photo and reports:
 
-```
+```text
    dog  94%        fox  4%        cat  2%
 ```
 
@@ -140,6 +144,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set B — Use It
+
+These questions ask you to use the ideas on situations you have not seen before.
 
 **B1. What would go wrong here?** A school buys a photo sorter that was trained on cats and dogs only,
 and points it at the whole school photo library — which contains cats, dogs, buses, cakes, 300 pupils
@@ -226,6 +232,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle is a short challenge about counting what a system can output.
+
 ### Count the Possible Outputs
 
 ![Count the possible outputs](../figures/fig-w03-11-puzzle-count-outputs.svg)
@@ -266,6 +274,8 @@ The case for **generating**: _______________________________________
 
 ## 🤔 Think Deeper
 
+These two questions need a written paragraph each. Take your time with them.
+
 **T1.** AlphaGo could only play Go. A chatbot writes poems, explains photosynthesis, translates
 Spanish and plans a party.
 
@@ -302,6 +312,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+This is where you finish your AI Spotter's Log, defend your hardest choices, and interview an adult.
 
 ### Page 3.4 — Finish the AI Spotter's Log (15 rows)
 
@@ -440,6 +452,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+You draw this week's big picture from memory.
+
 Draw the **three families** as boxes inside boxes, from memory. One big box. Two boxes inside it. One
 smaller box inside one of those. Put **two real examples** in each — real ones, from your own log.
 
@@ -461,6 +475,8 @@ smaller box inside one of those. Put **two real examples** in each — real ones
 
 ## 📊 Self-Check
 
+Use this table to tell yourself honestly how the week went. Tick one box in each row.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Tell picking-a-label from generating, by counting the possible outputs | ☐ | ☐ | ☐ |
@@ -476,6 +492,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished every page above. Open it only then.
 
 <details>
 <summary>Check your answers</summary>

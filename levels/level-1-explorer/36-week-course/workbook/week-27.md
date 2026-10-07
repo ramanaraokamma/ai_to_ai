@@ -37,6 +37,8 @@ What happens to the **edge** numbers? `________________________________`
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know the words and the six rules.
+
 **A1. Fill in the blanks.**
 
 The pile of text you are learning from is called a __________________. One piece of text after chopping is called a __________________. Chopping text into pieces is called __________________.
@@ -84,9 +86,11 @@ Which token appears twice? `__________`  And which other one? `__________`
 
 ## ✍️ Practice Set B — Use It
 
+Here you use the six rules on real sentences and think about what happens when rules are missing or broken.
+
 **B1. Tokenize three new sentences** under our six rules. Write the tokens separated by `/`, then the count.
 
-```
+```text
    S1.  Don't panic! It's only 2.5 km.
 
         ______________________________________________  tokens: ____
@@ -130,7 +134,7 @@ Unique tokens: `__________`
 
 **B4. Do it both ways.** Retokenize your three sentences from B1 with the punctuation **glued on** instead of split off.
 
-```
+```text
    S1.  ______________________________________________  tokens: ____
    S2.  ______________________________________________  tokens: ____
    S3.  ______________________________________________  tokens: ____
@@ -158,6 +162,8 @@ Which set is **smaller**? `________________`  Which is more **useful**, and why?
 ---
 
 ## 🧩 Puzzle of the Week
+
+This puzzle asks you to work out the rules behind three different answers.
 
 ![Three people, one sentence, three answers](../figures/fig-w27-11-puzzle-rule-detective.svg)
 *Figure W27.2 — One sentence, three people, three different token counts. None of them is cheating.*
@@ -192,6 +198,8 @@ Ana: `______`   Ben: `______`   Cleo: `______`
 
 ## 🤔 Think Deeper
 
+These two questions are harder. Take your time and write your own thinking.
+
 **T1.** Our R4 says *"a dot between two digits stays in the number."* That is fine for a human, who can use judgement. Rewrite R4 so precisely that a machine could follow it with **no judgement at all** — then find one string where even your precise rule gives an answer you do not like.
 
 My precise R4: `________________________________________________`
@@ -213,6 +221,8 @@ Where it breaks: `________________________________________________`
 ---
 
 ## 🛠️ Build It
+
+In this section you look back at this term, then tokenize a whole paragraph yourself.
 
 ### Part 1 — Term 3 reflection sheet
 
@@ -242,7 +252,9 @@ Take the paragraph you flagged in your book, about **60 words**.
 
 **Step 1 — the rules, FIRST.** You may use ours, you may change them. They must be written down **before** you chop anything.
 
-```
+Write your rules in the lines below.
+
+```text
    R1  ______________________________________________________
 
    R2  ______________________________________________________
@@ -308,6 +320,8 @@ Do they? **Yes / No.** If no, go and find the missing piece — one of your two 
 
 ## 🎨 Draw It
 
+In this section you draw the week as one picture.
+
 **Draw the sentence of the term as one picture.** Two halves, side by side:
 
 - **Left:** a small photo — anything, a face, a pizza, a letter — drawn as a **grid of numbers**. 5 × 5 is plenty. Put a real number in every square.
@@ -326,6 +340,8 @@ A weaker answer draws a nice photo and a nice sentence but **no numbers**. The n
 
 ## 📊 Self-Check
 
+Tick one box in each row to show how sure you feel.
+
 | I can… | 😀 Yes | 🙂 Nearly | 😕 Not yet |
 |---|---|---|---|
 | use the Term 3 words without notes — test set, accuracy, confusion matrix, pixel, filter | | | |
@@ -337,6 +353,8 @@ A weaker answer draws a nice photo and a nice sentence but **no numbers**. The n
 ---
 
 ## ✅ Answers
+
+Check your work here after you have finished every page.
 
 <details>
 <summary>Check your answers</summary>
@@ -371,7 +389,7 @@ The thing that really is wrong is **being inconsistent** — chopping `don't` as
 
 **A5.** `Pi is about 3.14, isn't it?`
 
-```
+```text
    1. pi    2. is    3. about    4. 3.14
    5. ,     6. isn't 7. it       8. ?
 ```
@@ -397,7 +415,7 @@ The trap is `3.14`. R2 says dots are their own token, so R2 on its own would giv
 
 **B1.**
 
-```
+```text
    S1.  don't / panic / ! / it's / only / 2.5 / km / .              8 tokens
    S2.  our / ai-powered / oven / cooks / pizza / in / 3.5 / minutes / !   9 tokens
    S3.  yes / ! / yes / ! / pizza / again / ?                       7 tokens
@@ -407,7 +425,7 @@ The trap is `3.14`. R2 says dots are their own token, so R2 on its own would giv
 
 The repeats:
 
-```
+```text
    !      4 times  (S1 once, S2 once, S3 twice)   ->  3 extra
    pizza  2 times  (S2, S3)                       ->  1 extra
    yes    2 times  (both in S3)                   ->  1 extra
@@ -432,7 +450,7 @@ Two things worth noticing. `2.5` and `3.5` are **different** tokens — obviousl
 
 **B4.**
 
-```
+```text
    S1.  don't / panic! / it's / only / 2.5 / km.                      6 tokens
    S2.  our / ai-powered / oven / cooks / pizza / in / 3.5 / minutes! 8 tokens
    S3.  yes! / yes! / pizza / again?                                  4 tokens
@@ -527,7 +545,7 @@ If all three of yours are topic labels, rewrite them starting with the words **"
 
 **Part 2 — the fallback paragraph, fully worked.** Use this to check your method even if you used your own book.
 
-```
+```text
    words                      60
    punctuation tokens          9        ( 5 full stops, 4 commas )
                             ────
@@ -556,7 +574,7 @@ The full frequency table, most common first:
 
 **Check the arithmetic out loud:**
 
-```
+```text
    tokens appearing more than once:
      9 + 5 + 4 + 4 + 4 + 3 + 3 + 3 + 2 + 2 + 2 + 2   =  43
    tokens appearing exactly once:                        26

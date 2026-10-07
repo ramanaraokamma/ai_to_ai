@@ -24,7 +24,7 @@ Five questions from **last week**. Try all five before looking anything up.
 
 **W3.** A model predicted a parcel would weigh **480 g**. It actually weighed **512 g**.
 
-```
+```text
 error = ______ g
 ```
 
@@ -41,6 +41,8 @@ wrongly different: ______ and ______  wrongly the same: ______ and ______
 ---
 
 ## ✍️ Practice Set A — Understand It
+
+These questions check the ideas behind the card deck. Answer each one in the space given.
 
 **A1. Fill in the blanks.**
 
@@ -115,9 +117,11 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+These questions use the ideas on new cases. Write your working as well as your answer.
+
 **B1.** Your friend built a **15-card** deck. Her tester got **9** right.
 
-```
+```text
 score    = ______ / 15  =  ______ %
 baseline = ______ / 15  =  ______ %
 gap      = ______ minus ______  =  ______ percentage points
@@ -228,6 +232,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions have no single short answer. Write full sentences.
+
 **T1.** Your tester tells you, sincerely, *"I was mostly going on the weight."* Your elimination hunt says they were going on the colour.
 
 Which do you believe, and why? Then say what you would write in a report where somebody else has to trust your answer. Write a paragraph.
@@ -258,9 +264,11 @@ ________________________________________________________________
 
 ## 🛠️ Build It
 
+This is the real experiment. You build a deck, test it on a person and work out the result, one step at a time.
+
 ### Step 1 — The feature sheet (write this before you measure anything)
 
-```
+```text
 FEATURE SHEET     name: ______________________   date: ______________
 
 f1  ________________  how:  _______________________________________
@@ -312,7 +320,7 @@ Write it now, then fold this corner over.
 
 ### Step 5 — The three numbers
 
-```
+```text
 correct  = ______ out of 20   =  ______ %
 baseline = 1 out of 20        =       5 %
 gap      = ______ minus 5     =  ______ percentage points
@@ -320,7 +328,7 @@ gap      = ______ minus 5     =  ______ percentage points
 
 **Bonus, if your objects fall into categories:** how many categories, how big is the biggest, and what is the category baseline?
 
-```
+```text
 categories: ______   biggest group: ______   category baseline = ______ / 20 = ______ %
 category correct = ______ / 20 = ______ %
 ```
@@ -370,6 +378,8 @@ Draw **the exact moment your tester went wrong.** On the left, the card as they 
 
 ## 📊 Self-Check
 
+Tick one box in each row to show how sure you feel.
+
 | I can… | 😀 easily | 🙂 with a bit of thought | 😕 not yet |
 |---|---|---|---|
 | Build a card with five features in a fixed order and the label hidden | ☐ | ☐ | ☐ |
@@ -386,6 +396,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Check your work here after you have finished every page. Open the box below.
 
 <details>
 <summary>Check your answers</summary>
@@ -447,7 +459,7 @@ But **6 out of 20 is still worth a lot.** It is six times the baseline of one, s
 
 **B1.**
 
-```
+```text
 score    = 9 / 15  = 0.60  = 60%
 baseline = 1 / 15  = 0.067 =  7%
 gap      = 60 − 7  = 53 percentage points
@@ -557,7 +569,7 @@ Your tester brings a **lifetime of knowledge about the world** to the row. When 
 
 **Step 5 — a model set of numbers**, for a deck of 20 in 4 categories of 5:
 
-```
+```text
 correct  = 13 out of 20        13 ÷ 20 = 65%
 baseline =  1 out of 20         1 ÷ 20 =  5%
 gap      = 65 − 5 = 60 percentage points

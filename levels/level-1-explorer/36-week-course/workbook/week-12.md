@@ -8,7 +8,7 @@
 
 ## ✅ Warm-Up (5 min)
 
-Five quick questions about **last week**.
+These five questions warm you up. They are about **last week**.
 
 **W1.** What is a **feature**? (The definition has one word doing all the work — make sure it's in there.)
 
@@ -33,6 +33,8 @@ ________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Understand It
+
+These questions check that you know the new words and ideas from the chapter.
 
 **A1. Fill in the blanks.**
 
@@ -119,6 +121,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set B — Use It
 
+These questions make you count, score and judge features yourself.
+
 **B1. Score a feature by counting.** Ten school mornings. The label is `bus_late`.
 
 | id | weather | bus_late |
@@ -134,9 +138,9 @@ ________________________________________________________________
 | 9 | dry | yes |
 | 10 | rain | yes |
 
-**Step 1 — the baseline, before anything else.**
+**Step 1 — the baseline, before anything else.** Fill in the blanks.
 
-```
+```text
 late = ______   not late = ______   Baseline = ______ / 10 = ______ %
 ```
 
@@ -147,9 +151,9 @@ late = ______   not late = ______   Baseline = ______ / 10 = ______ %
 | rain | ______ | ______ | ______________ | ______ of ______ |
 | dry | ______ | ______ | ______________ | ______ of ______ |
 
-**Step 3 — add up and divide.**
+**Step 3 — add up and divide.** Fill in the blanks.
 
-```
+```text
 ______ + ______ = ______   →   ______ / 10 = ______ %
 ```
 
@@ -260,6 +264,8 @@ ________________________________________________________________
 
 ## 🧩 Puzzle of the Week
 
+This puzzle gives you five scores. You work out a verdict for each one.
+
 ![The bake-off line-up](../figures/fig-w12-10-puzzle-bakeoff-lineup.svg)
 *Figure W12.2 — Five suspects. One is the leak.*
 
@@ -275,9 +281,9 @@ Somebody scored all five features and wrote down the numbers, but forgot to writ
 | **D** | `cake_height_cm` | 18/20 |
 | **E** | `kitchen_number_1to5` | 15/20 |
 
-**P1.** What is the baseline?
+**P1.** What is the baseline? Fill in the blanks.
 
-```
+```text
 Most common label = ______________   Baseline = ______ / 20 = ______ %
 ```
 
@@ -308,6 +314,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+These two questions ask you to explain your thinking in your own words.
 
 **T1.** In the chapter there's a claim that sounds ridiculous: *"a hard job should produce some wrong answers."*
 
@@ -346,6 +354,8 @@ ________________________________________________________________
 ---
 
 ## 🛠️ Build It
+
+These pages are bigger jobs: a hunt, a scoring task on your own table, and a short write-up.
 
 ### Page 12.4 — The leak hunt
 
@@ -399,9 +409,9 @@ Get out your **Week 11 kitchen table** — the five objects with the five featur
 
 **Before you start, make a prediction.** Which of your five features do you think will win? ____________________
 
-**Step 1 — the baseline goes in the box FIRST.**
+**Step 1 — the baseline goes in the box FIRST.** Fill in the box.
 
-```
+```text
 ┌──────────────────────────────────────────┐
 │  BASELINE = ______ / 5 = ______ %        │
 └──────────────────────────────────────────┘
@@ -514,6 +524,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for drawing your own idea.
+
 Invent your **own wet umbrella** — a leaky feature nobody has used in this course. Draw the moment of prediction as a line down the middle: what you already have on the left, what only turns up later on the right. Fill in the three boxes.
 
 ![Draw It frame for Week 12](../figures/fig-w12-11-draw-frame.svg)
@@ -533,6 +545,8 @@ Invent your **own wet umbrella** — a leaky feature nobody has used in this cou
 
 ## 📊 Self-Check
 
+Tick one box in each row to show how sure you feel.
+
 | I can… | 😀 got it | 🙂 nearly | 😕 not yet |
 |---|---|---|---|
 | Compute the baseline for a table by counting the labels | ☐ | ☐ | ☐ |
@@ -548,6 +562,8 @@ ________________________________________________________________
 ---
 
 ## ✅ Answers
+
+Check your work here after you have finished every page.
 
 <details>
 <summary>Check your answers</summary>
@@ -572,7 +588,7 @@ ________________________________________________________________
 
 **A2.** **(c) 60.0%.**
 
-```
+```text
 Biggest group = dogs, 12 of them.
 12 / 20 = 0.60 = 60%
 ```
@@ -709,7 +725,7 @@ Or **push it above 5,500** — `IF mass_g < 5600 THEN cat ELSE dog`. Now the 5,5
 
 **P6.**
 
-```
+```text
 1. cake_height_cm          18/20 = 90.0%   (+15.0)  keep
 2. hours_practised         17/20 = 85.0%   (+10.0)  keep
 3. oven_temperature_c      16/20 = 80.0%   (+5.0)   keep, but barely

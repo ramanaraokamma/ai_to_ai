@@ -32,6 +32,8 @@ Why is that combination the dangerous one? _____________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know the words and the steps. Use the chapter if you need it.
+
 **A1. Fill in the blanks.**
 
 (a) n tokens in a row is an ____________.
@@ -102,7 +104,9 @@ Because: ________________________________________________________
 
 ---
 
-**A6. Be the bot.** Here is a school-office bot. Walk the list yourself, strictly and stupidly: start at row 1, take the **first** match, stop.
+**A6. Be the bot.** Here is a school-office bot. Walk the list yourself, strictly and stupidly.
+
+Start at row 1. Take the **first** match. Stop.
 
 | Row | TRIGGER | REPLY |
 |---:|---|---|
@@ -141,6 +145,8 @@ Is (iii) a pass or a failure? ______  Why? ______________________________
 ---
 
 ## ✍️ Practice Set B — Use It
+
+These questions put the ideas to work on bots that are going wrong. Write your answer on the lines.
 
 **B1.** Your bot works perfectly on turn 1 and gives a proper answer. Then every single turn after that, it says nothing at all, no matter what you type.
 
@@ -212,6 +218,8 @@ ________________________________________________________________
 
 ### Two Replies That Can Never Speak
 
+This puzzle is about a trigger list and the order of its rows.
+
 ![Puzzle: two replies can never speak](../figures/fig-w30-11-puzzle-dead-reply.svg)
 *Figure W30.2 — Five triggers in order. Two of them can never fire, because first match wins.*
 
@@ -255,6 +263,8 @@ ________________________________________________________________
 
 ## 🤔 Think Deeper
 
+These two questions ask you to make a choice and explain it. Use full sentences.
+
 **T1.** You have now built one machine from each family — one that **learned** and one that was **told**. Write a paragraph: which failure mode would you rather have, and why? Then answer the harder half — if you chose the generator, say exactly **how** you would check it; if you chose the rule bot, say what you are **giving up**.
 
 ________________________________________________________________
@@ -286,6 +296,8 @@ ________________________________________________________________
 ## 🛠️ Build It
 
 ### The Human Language Model — finish all three parts
+
+This section is where you finish your project and record your work. Tick each step as you go.
 
 **Step checklist — tick as you go:**
 
@@ -399,6 +411,8 @@ ________________________________________________________________
 
 ## 🎨 Draw It
 
+This page is for showing your two machines in one picture.
+
 Draw the two machines side by side, both stuck on the same question, and show what each one does about it.
 
 ![Draw it: two machines, two ways to fail](../figures/fig-w30-10-draw-frame.svg)
@@ -409,6 +423,8 @@ Draw the two machines side by side, both stuck on the same question, and show wh
 ---
 
 ## 📊 Self-Check
+
+This table is for you to rate how well you can do each thing. Tick one box in each row.
 
 | I can… | 😀 easily | 🙂 with a bit of help | 😕 not yet |
 |---|---|---|---|
@@ -422,6 +438,8 @@ Draw the two machines side by side, both stuck on the same question, and show wh
 ---
 
 ## ✅ Answers
+
+This section is for checking your work after you have finished. Open it only when you are done.
 
 <details>
 <summary>Check your answers</summary>
@@ -448,7 +466,9 @@ Draw the two machines side by side, both stuck on the same question, and show wh
 
 **A3.**
 
-(a) **False.** There is no block anywhere in the project that changes the lists — go and look. The only `add` blocks run **once**, at the green flag. Its knowledge came from a person typing, which is what makes it **rule-based** rather than machine learning. (You *could* add a block that pushes a new trigger on when nothing matches. The hard part isn't adding the trigger — it's deciding what the **reply** should be.)
+(a) **False.** There is no block anywhere in the project that changes the lists — go and look. The only `add` blocks run **once**, at the green flag.
+
+Its knowledge came from a person typing, which is what makes it **rule-based** rather than machine learning. (You *could* add a block that pushes a new trigger on when nothing matches. The hard part isn't adding the trigger — it's deciding what the **reply** should be.)
 
 (b) **False**, and getting this the right way round is the most valuable thing in the week. The fallback firing is the bot **succeeding at being honest**. Compare it with last week's generator: faced with something it didn't know, it produced a fluent, confident falsehood and you had to go and check the corpus to catch it. **Annoying beats dangerous.**
 
@@ -475,6 +495,7 @@ The **no** branch is the one everybody forgets to build, and without it the bot 
 | 2 | home time | **yes** | say reply 2, `matched` = 1, stop |
 
 Bot says: *School finishes at 3:15pm.* Label: **correct.**
+
 (Note that `homework` and `home time` are safe together — neither one is contained inside the other, so neither is dead.)
 
 **(ii) `is there a lunchbox rule`**
@@ -486,6 +507,7 @@ Bot says: *School finishes at 3:15pm.* Label: **correct.**
 | 3 | lunch | **yes** | say reply 3, stop |
 
 Bot says: *Lunch is 12:30 to 1:15. Hot food in the main hall.* Label: **false match.**
+
 **Why:** the letters `lunch` really are inside the word `lunchbox`, and `contains` looks anywhere in the text and knows nothing about meaning. Nothing is broken — it did exactly what you told it.
 
 **(iii) `what is the moon made of`**
@@ -498,10 +520,12 @@ It walks all four rows, matches nothing, `matched` stays 0, so the fallback fire
 
 ### Practice Set B
 
-**B1.** **Cause 1: `set i to 1` and `set matched to 0` are sitting ABOVE the `forever` block**, so they only ever run once. After a turn that found a match, `matched` is parked at 1 and `i` is left part-way down the list, so the `repeat until` exits before checking anything, and `if matched = 0` is false too, so the bot says **nothing at all**. (If turn 1 had found no match, `i` would be parked past the end of the list and `matched` at 0, and you would get the **fallback on every turn** instead.)
+**B1.** **Cause 1: `set i to 1` and `set matched to 0` are sitting ABOVE the `forever` block**, so they only ever run once. After a turn that found a match, `matched` is parked at 1 and `i` is left part-way down the list. So the `repeat until` exits before checking anything, and `if matched = 0` is false too, so the bot says **nothing at all**. (If turn 1 had found no match, `i` would be parked past the end of the list and `matched` at 0, and you would get the **fallback on every turn** instead.)
+
 **The fix:** drag both `set` blocks **inside** the forever loop, directly under `ask and wait`.
 
 **B2.** **Cause 2: `set matched to 1` is missing from inside the `if`.** So the loop says the right reply, then carries on walking to the bottom of the list, and at the end `matched` is still 0 — so the fallback fires as well. (The other symptom of the same bug: a question containing **two** trigger words gets two replies stacked on top of each other.)
+
 **The fix:** add `set matched to 1` immediately after the `say`, still **inside** the `if`.
 
 **B3.**

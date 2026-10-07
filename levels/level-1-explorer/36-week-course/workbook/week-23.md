@@ -129,7 +129,7 @@ ________________________________________________________________
 
 **B1. Read this grid.** Nobody is going to show you the picture.
 
-```
+```text
         c1   c2   c3   c4   c5   c6
    r1   255  255  255  255  255  255
    r2   255  255  255  255  255  255
@@ -157,7 +157,7 @@ ________________________________________________________________
 
 (f) The average brightness. Show the working:
 
-```
+```text
    ______ x   0  =  ________
    ______ x 128  =  ________
    ______ x 255  =  ________
@@ -176,19 +176,19 @@ ________________________________________________________________
 
 (a) A tablet screen is **2048 × 1536**. How many pixels?
 
-```
+```text
    2048 x 1536 = ______________ pixels  =  about ______ megapixels
 ```
 
 (b) A grayscale thumbnail is **64 × 64**. How many pixels, and how many numbers?
 
-```
+```text
    64 x 64 = ________ pixels  ->  ________ numbers
 ```
 
 (c) How many times more pixels does the tablet screen have than the thumbnail?
 
-```
+```text
    ______________ ÷ ________ = ________
 ```
 
@@ -240,7 +240,7 @@ ________________________________________________________________
 
 **B5. Mark somebody else's work.** Here is the number grid another student handed in. They were copying a drawing of two dark pencil eyes on blank white paper, with the top row of the drawing blank. Find **three** faults and write the fix.
 
-```
+```text
 NUMBER GRID
 row 1:  0   0   0   0   0   0   0   0   0   0   0   0
 row 2:  0   0  255 255  0   0   0   0  255 255  0   0
@@ -267,11 +267,11 @@ ________________________________________________________________
 ![Puzzle: three grids, one average](../figures/fig-w23-11-puzzle-same-average.svg)
 *Figure W23.2 — Three 4 × 4 grids. Each holds twelve 255s and four 0s.*
 
-Here they are written out.
+Here the three grids are written out as numbers.
 
 **Grid A**
 
-```
+```text
      0   255  255  255
    255    0   255  255
    255  255    0   255
@@ -280,7 +280,7 @@ Here they are written out.
 
 **Grid B**
 
-```
+```text
    255  255  255    0
    255    0   255  255
      0   255  255  255
@@ -289,7 +289,7 @@ Here they are written out.
 
 **Grid C**
 
-```
+```text
      0     0   255  255
      0     0   255  255
    255  255  255  255
@@ -414,9 +414,9 @@ ________________________________________________________________
 
 ### Part 2 — Read the grid (20 min)
 
-Here is a number grid. **You will not be shown the picture.** Answer the six questions from the numbers alone, and for each one **point at the numbers that made you say it.**
+This part is for reading a picture you cannot see. Here is a number grid. **You will not be shown the picture.** Answer the six questions from the numbers alone, and for each one **point at the numbers that made you say it.**
 
-```
+```text
         c1   c2   c3   c4   c5   c6   c7   c8   c9  c10  c11  c12
    r1   255  255  255  255  255  255  255  255  255  255  255  255
    r2   255  255  255  255  255  255  255  255  255  255  255  255
@@ -463,7 +463,7 @@ ________________________________________________________________
 
 **Q5.** How many squares are pure white (255)? Show the working.
 
-```
+```text
    144 total  −  ______ zeros  −  ______ one-two-eights  −  ______ sixty-fours  =  ______
 ```
 
@@ -481,7 +481,7 @@ ________________________________________________________________
 
 **S1.** A picture is 12 pixels across and 12 down.
 
-```
+```text
    12 x 12 = ________ pixels
 
    at one number per second, that is ________ seconds = ______ min ______ sec
@@ -489,7 +489,7 @@ ________________________________________________________________
 
 **S2.** Teachable Machine shrinks every photo to 224 × 224.
 
-```
+```text
    224 x 224 = ____________ pixels
 
    at one number per second: ____________ ÷ 60 = ________ minutes
@@ -498,7 +498,7 @@ ________________________________________________________________
 
 **S3.** A phone camera shoots 4032 × 3024.
 
-```
+```text
    4032 x 3024 = ______________ pixels     (the "____ megapixels" on the box)
 
    ______________ ÷ ________ = ________     times more than the model sees
@@ -572,6 +572,7 @@ Grayscale means **one number per pixel instead of three**. It is missing **colou
 **A5.** Left to right: **0 · 32 · 64 · 128 · 192 · 255**. The arrow reads **darker** on the left and **brighter** on the right.
 
 (g) The **0** swatch — a cinema before the film starts has no light coming out of it at all.
+
 (h) The **255** swatch — untouched paper reflects all the light that falls on it.
 
 **A6.**
@@ -604,8 +605,9 @@ Grayscale means **one number per pixel instead of three**. It is missing **colou
 
 (e) The 128s are in **rows 3 and 5, immediately above and below the black row.** They are there because the real edge of the stripe does not line up with the grid: the stripe's top edge falls partway through row 3, so row 3's squares are **half covered** — and halfway is the honest value for a half-covered square. Not 0 (they are not fully inked) and not 255 (they are not blank).
 
-(f)
-```
+(f) Working:
+
+```text
     6 x   0  =      0
    12 x 128  =  1,536
    18 x 255  =  4,590
@@ -686,7 +688,7 @@ Grayscale means **one number per pixel instead of three**. It is missing **colou
 
 So:
 
-```
+```text
    A shrinks to:   128  255        B shrinks to:  191  191        C shrinks to:    0  255
                    255  128                       191  191                       255  255
 ```
@@ -735,9 +737,9 @@ There is no single correct grid, because it is your own drawing. Check it agains
 4. **The direction is right.** The darkest part of your drawing holds the **lowest** numbers. Check one square in the middle of the letter and one square of blank background — that is enough to catch an inverted grid.
 5. **The greys sit on the boundary.** Your 64s, 128s and 192s should trace the outline. Greys scattered through the middle of a solid stroke means you were guessing rather than looking.
 
-**A model answer, for comparison — a capital H:**
+**A model answer, for comparison — a capital H.** The grid:
 
-```
+```text
         c1   c2   c3   c4   c5   c6   c7   c8   c9  c10  c11  c12
    r1   255  255  255  255  255  255  255  255  255  255  255  255
    r2   255  192   0    0   255  255  255  255   0    0   192  255
@@ -755,7 +757,9 @@ There is no single correct grid, because it is your own drawing. Check it agains
 
 Counts: **48** squares of 0 (20 in the left upright, 20 in the right upright, 8 in the crossbar between them), **20** squares of 192 (the faint outer edge of each upright, ten rows × two), and 144 − 48 − 20 = **76** squares of 255.
 
-```
+The sums:
+
+```text
    sum     = (20 x 192) + (76 x 255) = 3,840 + 19,380 = 23,220
    average = 23,220 ÷ 144 = 161.25
 ```
@@ -793,7 +797,7 @@ Why nothing else fits: a **square** would give 6, 6, 6, 6, 6, 6. A **triangle** 
 
 **Q5.** **100** pure white squares.
 
-```
+```text
    144 total  −  24 zeros  −  8 one-two-eights  −  12 sixty-fours  =  100
 ```
 
@@ -808,20 +812,23 @@ The 24 zeros are the 2 + 4 + 6 + 6 + 4 + 2 counted in Q4. The 8 one-two-eights a
 ### Build It — Part 3
 
 **S1.**
-```
+
+```text
    12 x 12 = 144 pixels
    144 seconds = 2 minutes 24 seconds
 ```
 
 **S2.**
-```
+
+```text
    224 x 224 = 50,176 pixels
    50,176 ÷ 60 = 836.3 minutes
         ÷ 60 = 13.9 hours  ≈  14 hours
 ```
 
 **S3.**
-```
+
+```text
    4032 x 3024 = 12,192,768 pixels     (the "12 megapixels" on the box)
 
    12,192,768 ÷ 50,176 = 243

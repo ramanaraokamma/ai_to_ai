@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table is the whole week on one screen. Check it before you start.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes (comfortable in 65; the 60-minute cut is in §Differentiation) |
@@ -49,7 +51,9 @@ Everything else today — the card deal, the arithmetic, the envelope, the signa
 making that sentence concrete enough that an 11-year-old cannot wriggle out of it.
 
 Here is the situation it protects against. Your student trained a model in Week 17. It works. They
-have shown it a spoon and it said "spoon". If you now ask *"how good is it?"* the natural thing to do
+have shown it a spoon and it said "spoon".
+
+If you now ask *"how good is it?"* the natural thing to do
 is show it some photos and count how many it gets right. And the natural photos to reach for are the
 ones already sitting on the laptop — **the ones it trained on.**
 
@@ -91,9 +95,9 @@ And one rule, which you should write on the board and point at repeatedly:
 
 ### 4. The arithmetic, which is genuinely easy
 
-With 30 examples and an 80 / 20 split:
+With 30 examples and an 80 / 20 split, the sum looks like this:
 
-```
+```text
    test  = 0.20 × 30 = 6
    train = 30 − 6     = 24
    check: 24 + 6 = 30  ✓
@@ -104,9 +108,9 @@ Week 22, and it costs four seconds.
 
 **One refinement that matters more than the ratio: split each class separately.** If you shuffle all
 75 photos together and grab 15, you can end up holding out 12 combs and 1 spoon. Then your "test set"
-measures how good the model is at combs and barely mentions spoons. So:
+measures how good the model is at combs and barely mentions spoons. So the sum is done once for each class:
 
-```
+```text
    per class:  0.20 × 25 = 5 test,  25 − 5 = 20 train
    × 3 classes: 15 test, 60 train
    check: 15 + 60 = 75  ✓
@@ -139,14 +143,18 @@ high**. They are not equally obvious.
 | 3 | **Peek, then retrain** — open the envelope, see 4/6, add photos, retrain, get 6/6 | The *decision* about what to change came from the test set — it leaked through your brain | Each individual step looks harmless and helpful |
 | 4 | **Same object in both** — the same blue bottle photographed for training *and* for testing | You are measuring "can it recognise **this** bottle", not "can it recognise bottles" | Different day, different room, different photos, separate folders. Everything looks right |
 
-**Number 4 deserves the most discussion time, and here is the precise reason.** Cheats 1, 2 and 3 are
-all fixable by being more careful with the same objects. Cheat 4 cannot be fixed by care at all — you
-need *a different bottle*. The question the test set is supposed to answer is "will this work on a
+**Number 4 deserves the most discussion time, and here is the precise reason.**
+
+Cheats 1, 2 and 3 are all fixable by being more careful with the same objects. Cheat 4 cannot be fixed by care at all — you
+need *a different bottle*.
+
+The question the test set is supposed to answer is "will this work on a
 bottle it has never met?" and a test set built from the same physical object can never answer it, no
 matter how good your photography discipline is.
 
-This is not a made-up school worry. It is exactly how a famous real failure worked: in 2020–21 dozens
-of research teams built systems to spot COVID from chest X-rays and reported superb accuracy. When
+This is not a made-up school worry. It is exactly how a famous real failure worked.
+
+In 2020–21 dozens of research teams built systems to spot COVID from chest X-rays and reported superb accuracy. When
 other researchers checked, several of the models turned out to be keying on things like the position
 of the patient or **text markers printed on the image by one particular hospital's machine** — because
 the sick scans came from one hospital and the healthy ones from another. The models had learned *which
@@ -230,6 +238,8 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
 
 ## 🧰 Prep Checklist
 
+Use this list to get everything ready, so nothing stops the lesson half way.
+
 ### 15 minutes the night before
 
 - [ ] **Count out 30 index cards** and number them 1 to 30 in pen, one number per card. Yes, all
@@ -271,6 +281,8 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the plan for the whole lesson. The table shows the five parts. Each part is explained after it.
+
 | Minutes | Segment | What happens |
 |---|---|---|
 | 0 – 8 | 🪝 **Hook** — the exam made of the practice questions | A fake test, marked, and the question it leaves |
@@ -286,13 +298,14 @@ lit this week. Do not quiz them on the threads; the map is orientation, never as
 **Do this first, before you say anything about AI.** Write these three questions on the board and ask
 the student to answer them on paper:
 
-```
+```text
    1.  7 × 8 = ?
    2.  What is the capital of France?
    3.  Spell "rhythm".
 ```
 
-Let them answer. Mark it out loud. Presumably 3 out of 3. Make a small fuss.
+Let them answer. Mark it out loud. Presumably 3 out of 3.
+Make a small fuss.
 
 **Say this:**
 
@@ -435,7 +448,7 @@ Handout 19A has all three plus two more for homework (the same five problems as 
 
 **Split A — 30 cards, 80/20 (4 min).** You write, saying each line out loud.
 
-```
+```text
    total = 30
    ratio = 80 / 20
 
@@ -451,7 +464,7 @@ add back to the whole."*
 **Split B — 75 photos, 25 per class, 80/20, split per class (5 min).** They write. You only ask
 questions.
 
-```
+```text
    per class:  test  = 0.20 × 25 = 5
                train = 25 − 5     = 20
 
@@ -467,16 +480,16 @@ questions.
 **Split C — the one that doesn't divide neatly (5 min).** This is the interesting one. Four classes,
 with 50, 50, 50 and **18** photos.
 
-```
+```text
    class 1:  0.20 × 50 = 10 test,  40 train
    class 2:  0.20 × 50 = 10 test,  40 train
    class 3:  0.20 × 50 = 10 test,  40 train
    class 4:  0.20 × 18 = 3.6  →  ???
 ```
 
-Stop at the 3.6 and ask the question below. Then finish it:
+Stop at the 3.6 and ask the question below. Then finish the sum:
 
-```
+```text
    class 4:  round UP to 4 test,  18 − 4 = 14 train
 
    totals: test = 10 + 10 + 10 + 4 = 34
@@ -532,14 +545,15 @@ Full instructions in the next section.
 > had. And you're going to do it in the world, not in a folder, because that's the only way to make
 > sure the test photos are genuinely new."
 
-**Do this:** open the calendar. Write in two dates, in ink, in front of them.
+**Do this:** open the calendar. Write in two dates, in ink, in front of them. Fill in this layout:
 
-```
+```text
    SESSION 1  —  ____________   20 photos per class   →  folder: TRAIN
    SESSION 2  —  ____________    5 photos per class   →  the ENVELOPE
 ```
 
-**Note for you:** the homework test photos are new photos of the *same three objects*, which is cheat 4 in a mild form. Do not redesign it; have the student write "same three objects" beside the Week 22 score so the limit is labelled.
+> **⚠️ Watch out:** the homework test photos are new photos of the *same three objects*. That is cheat 4 in a mild form.
+> Do not redesign it. Have the student write "same three objects" beside the Week 22 score so the limit is labelled.
 
 **Say this:**
 
@@ -569,6 +583,8 @@ while they watch.
 ---
 
 ## 🎲 The Activity, In Full
+
+This section gives the full instructions for the two activity parts named above.
 
 ### Part 1 — The Split, Unplugged
 
@@ -616,9 +632,9 @@ ritual — it is what stops the test set from being one narrow slice.
 **Time:** 12 minutes · **Materials:** the four Handout 19B cards, face down
 
 **How it runs:** turn over one card at a time. The student reads it out loud. Then they have to say
-**three things**:
+**three things**. Write them on the board like this:
 
-```
+```text
    1.  WHAT LEAKED?          what did the model effectively already see?
    2.  WHICH DIRECTION?      will the reported score be too high or too low?
    3.  WHAT'S THE FIX?       one sentence, something you could actually do
@@ -724,6 +740,8 @@ unshuffled-deal demonstration. You write on Handout 19A while they talk.
 
 ## ❓ Questions Students Ask This Week
 
+These are questions this lesson tends to bring up, with an answer you can give.
+
 **1. "Why can't I just remember which photos not to train on?"**
 Because in three weeks you won't. They'll be sitting in the same folder as all the others, looking
 exactly like them. This isn't about being trustworthy — it's about being human. The envelope survives
@@ -775,6 +793,8 @@ it. Hiding it would be the actual problem, and it would only ever fool one perso
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual trouble spots. Each row says what to do right now.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The student turns over the six test cards "just to see"** | They are cards. Cards get looked at. | Let it happen once and use it: "Those six are spoiled now — we can't un-see them. Deal six new ones." Dealing again from a re-shuffled deck takes 30 seconds and makes the rule real in a way no explanation does. |
@@ -789,6 +809,8 @@ it. Hiding it would be the actual problem, and it would only ever fool one perso
 ---
 
 ## 🧭 Differentiation
+
+This section helps you change the lesson for a student who is struggling, flying, or not engaging.
 
 ### If they are struggling
 
@@ -840,6 +862,8 @@ Let them catch you.
 
 ## ✅ Assessing Understanding
 
+Use these three checks to see what the student has understood. The scale at the end helps you place them.
+
 ### Check 1 — the order of operations
 
 > **"I've got 50 photos. Tell me the order I do things in, from photos to score."**
@@ -886,6 +910,8 @@ Let them catch you.
 ---
 
 ## 📤 Homework to Assign
+
+This section tells you what to set and gives the words to say when you set it.
 
 **Workbook:** Week 19 — the whole workbook, in its own order: Warm-Up, Practice Set A, Practice Set B,
 Puzzle of the Week, Think Deeper, Build It (Pages 19.1, 19.2 and 19.3), Draw It, Self-Check. **The
@@ -1064,7 +1090,7 @@ undo training that already happened. The seal must come earlier than the trainin
 ### K1 — Build It, Page 19.1: the five splitting problems
 
 **(a) 3 classes, 30 photos each (90 total), 80/20.**
-```
+```text
    per class:  test  = 0.20 × 30 = 6
                train = 30 − 6     = 24
    totals:     test  = 6 × 3  = 18
@@ -1074,7 +1100,7 @@ undo training that already happened. The seal must come earlier than the trainin
 No rounding needed.
 
 **(b) 3 classes, 25 photos each (75 total), 80/20.**
-```
+```text
    per class:  test  = 0.20 × 25 = 5
                train = 25 − 5     = 20
    totals:     test = 15,  train = 60
@@ -1082,7 +1108,7 @@ No rounding needed.
 ```
 
 **(c) 4 classes with 50, 50, 50 and 18 photos (168 total), 80/20.**
-```
+```text
    class 1:  0.20 × 50 = 10 test,  40 train
    class 2:  0.20 × 50 = 10 test,  40 train
    class 3:  0.20 × 50 = 10 test,  40 train
@@ -1101,7 +1127,7 @@ problem (Week 16) and it will hurt this model however the split is done. The spl
 right; the *collection* needs fixing.
 
 **(d) 2 classes, 200 photos each (400 total).**
-```
+```text
    80/20:  per class  test = 0.20 × 200 = 40,  train = 160
            totals     test = 80,  train = 320
    check:  80 + 320 = 400  ✓
@@ -1114,7 +1140,7 @@ an 87% model far more reliably than 40 does. **The right ratio depends on the qu
 rule.**
 
 **(e) 3 classes, 12 photos each (36 total), 80/20.**
-```
+```text
    per class:  0.20 × 12 = 2.4  →  round UP to 3 test,  9 train
    totals:     test = 9,  train = 27
    check:      9 + 27 = 36  ✓
@@ -1188,9 +1214,9 @@ scenario that sounds plausible, a named leak, and a fix. Strong examples student
 
 ### K3 — Build It, Page 19.3: the photo plan and the envelope log
 
-Model answer:
+Here is a model answer for the plan and the log:
 
-```
+```text
    SESSION 1  —  Saturday 14th, 3pm, kitchen table, afternoon daylight
                  spoon 20 · toothbrush 20 · comb 20      total 60   → folder TRAIN
 
@@ -1262,7 +1288,9 @@ one.
 
 ### K5 — The 20-card version (for the easier variation)
 
-```
+This is the sum for the easier variation.
+
+```text
    test  = 0.20 × 20 = 4
    train = 20 − 4     = 16
    check: 16 + 4 = 20  ✓
@@ -1283,6 +1311,8 @@ one.
 ---
 
 ## 🔮 Next Week Preview
+
+Read this so you can prepare early for the next lesson.
 
 Next week is **Week 20 — Accuracy, Three Ways — and the Number That Lies**, and it is marked as the
 single most important lesson in the course. The student finally gets to score something: a completed

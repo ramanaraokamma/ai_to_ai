@@ -74,7 +74,7 @@ Say the last two sentences aloud in class. They land.
 
 This is the single most convincing thing you can put on the board, and it needs no expertise from you:
 
-```
+```text
    120 photos from a phone      ≈  40 megabytes
    the model those photos made  ≈   3 megabytes
 ```
@@ -100,7 +100,7 @@ So why look again on pass 37? **Not** because pass 37 shows it anything new. It'
 
 The arithmetic students enjoy:
 
-```
+```text
    120 photos × 50 epochs = 6,000 photo-looks
 
    a human at one photo per second, no breaks
@@ -123,7 +123,11 @@ A photo of a spoon is never just a spoon. It also contains a background, a light
 
 So if all forty spoon photos sit on a wooden table with a window on the left, then "warm brown texture, light from the left" is a far easier pattern to spot than "spoon". Training takes the easy one. Every time.
 
-**The true story to tell in class.** In a 2016 research paper (Ribeiro, Singh and Guestrin, the "Why Should I Trust You?" paper), researchers built a husky-versus-wolf classifier on a deliberately biased, hand-picked set of photos, to show how a model can be right for the wrong reason. They showed it to a small group (as I recall, mostly graduate students; I have not re-checked the details) and asked whether they trusted it; some did. Then an explanation tool revealed the trick: the wolf photos had **snow** in the background and the husky photos did not. The model had learned little about wolves. It had mostly learned *white stuff at the bottom of the picture → say wolf*. Photograph a husky in snow and it is likely to say wolf, and sound confident. Do not quote exact numbers of people or percentages in class.
+**The true story to tell in class.** In a 2016 research paper (Ribeiro, Singh and Guestrin, the "Why Should I Trust You?" paper), researchers built a husky-versus-wolf classifier on a deliberately biased, hand-picked set of photos, to show how a model can be right for the wrong reason. They showed it to a small group (as I recall, mostly graduate students; I have not re-checked the details) and asked whether they trusted it; some did.
+
+Then an explanation tool revealed the trick: the wolf photos had **snow** in the background and the husky photos did not. The model had learned little about wolves. It had mostly learned *white stuff at the bottom of the picture → say wolf*.
+
+Photograph a husky in snow and it is likely to say wolf, and sound confident. Do not quote exact numbers of people or percentages in class.
 
 Nobody wrote that rule. Nobody wanted it. It came out of the photographs.
 
@@ -238,6 +242,8 @@ year reads as six ideas rather than thirty-six topics.
 
 ## 🧰 Prep Checklist
 
+This section lists everything to make or set out before class, and what to do if something fails.
+
 ### ⚠️ 12 minutes the night before — draw the eighteen cards
 
 This is the whole prep, and there is a trap built into it deliberately. **Follow the recipe exactly.** If you improvise the sizes, the best moment in the lesson does not happen.
@@ -298,6 +304,8 @@ Card 6 has no right answer. Do not tell them that.
 ---
 
 ## ⏱️ The Lesson, Minute by Minute
+
+This section is the plan for the lesson: what to do, say and ask in each segment.
 
 | Minutes | Segment | What happens |
 |---|---|---|
@@ -381,7 +389,7 @@ They can't, obviously. Sit in that for a second.
 
 **Do this:** Write on the board, and leave it up all lesson:
 
-```
+```text
 training  =  the one-off process:  labelled examples  ->  a model
                                    40 MB of photos    ->  3 MB model
 ```
@@ -441,7 +449,7 @@ Let them try. Then:
 
 **Do this:** Write the four vocabulary words on the board with room under each for a definition. Leave them up.
 
-```
+```text
 training        =
 epoch           =
 variety         =
@@ -497,9 +505,9 @@ Build it live, one row at a time, asking them for each background and each light
 | 6 | bed sheet | low lamp | far | 7 |
 | | | | **total** | **40** |
 
-Then check it out loud, with them doing the counting:
+Then check the table out loud, with them doing the counting. The four lines below show the check:
 
-```
+```text
    backgrounds:  desk 12 · carpet 7 · tiles 7 · wood 7 · bed 7   = 40   (5 backgrounds ✓)
    lighting:     window 13 · low lamp 13 · ceiling 14            = 40   (3 kinds ✓)
    distance:     close 20 · far 20                               = 40   (2 ✓)
@@ -514,7 +522,7 @@ Then check it out loud, with them doing the counting:
 
 **Do this — Step 3, the total.**
 
-```
+```text
    40 photos × 3 objects = 120 labelled examples
    120 photos × 50 epochs = 6,000 looks
    training time: about 20 seconds
@@ -568,9 +576,13 @@ Full instructions are in the next section. In the lesson flow:
 
 ## 🎲 The Activity, In Full
 
+This section gives the full instructions for the card game and the shoot planning that follow it.
+
 ### Be the Model, Unplugged — then plan the shoot
 
-**Two halves, twenty minutes.** The first half is the fun one. The second half is the one that matters, and the one everybody wants to skip. Protect the second half; if you run out of time, finish the shot list in the wrap.
+**Two halves, twenty minutes.** The first half is the fun one. The second half is the one that matters, and the one everybody wants to skip.
+
+Protect the second half. If you run out of time, finish the shot list in the wrap.
 
 ### Materials
 
@@ -620,9 +632,9 @@ On card 6 (three legs *and* a tail), they will hesitate hard. Let them. Write do
 
 ### Phase 4 — The reveal (2 minutes)
 
-Turn over the truths and mark the sheet.
+Turn over the truths and mark the sheet. The block below is the key for the scoring sheet:
 
-```
+```text
    card 1  large Blorb        -> Blorb    ✓
    card 2  small Zunk         -> Zunk     ✓
    card 3  medium Fip         -> Fip      ✓
@@ -654,7 +666,7 @@ Now the paper half, which is workbook **Build It, Steps 1–3**. The student has
 
 **Step 1 — write the objects and the class names.**
 
-```
+```text
    object 1: ________________   class name: ________________
    object 2: ________________   class name: ________________
    object 3: ________________   class name: ________________
@@ -664,7 +676,7 @@ Class names must be words they'll still understand in three days. Not `A`, `B`, 
 
 **Step 2 — fill in the variety checklist with real places in their real house.**
 
-```
+```text
    BACKGROUNDS (5):  1.________  2.________  3.________  4.________  5.________
    LIGHTING (3):     1.________  2.________  3.________
    ANGLES (8):       turn the object one notch between every shot
@@ -714,6 +726,8 @@ A second extension, for a student who likes arithmetic: work out how many photos
 
 ## ❓ Questions Students Ask This Week
 
+Use this section for short, honest answers to the questions students are most likely to ask.
+
 **"Does the computer keep my photos somewhere?"**
 No. After training, the photos aren't part of the model — you can delete them and the model works exactly the same. The arithmetic proves it: 120 phone photos are around 40 megabytes and the model is around 3. There is nowhere to keep them. What got kept is the pattern they had in common, not the pictures. (In Teachable Machine your photos never even leave your browser unless you deliberately export something — which is a privacy point we come back to in Week 32.)
 
@@ -730,7 +744,9 @@ It's enough because you're not starting from nothing. Teachable Machine begins w
 There isn't one, and this is a genuinely unsettled question, not a gap in your teacher's knowledge. It depends on how similar your objects are, how varied your photos are, and what "good enough" means for your use. Professional teams answer it by trying — train, measure, add more, measure again, and stop when the improvement stops being worth the effort. Which is exactly what you'll do in Week 17. Anyone who gives you a confident number without asking what you're classifying is guessing.
 
 **"Does it learn the same way I do? Nobody actually knows, do they?"**
-Nobody knows for sure, and here's why that's an honest answer rather than a dodge. The similarities are real and surprising: nobody gave you a rule for recognising your friend either, and you learned from thousands of labelled examples the same way. But the differences are also real. You learned "dog" from about five dogs; a from-scratch model needs tens of thousands. You can learn from one bad experience in one second, which no model can do. And the deep reason nobody can settle it is that **we can't read either one.** We can't read the thousands of dials inside a trained model, and we can't read the connections inside your head. Two things we can't inspect, being compared. Scientists in two different fields argue about this and they haven't finished.
+Nobody knows for sure, and here's why that's an honest answer rather than a dodge. The similarities are real and surprising: nobody gave you a rule for recognising your friend either, and you learned from thousands of labelled examples the same way. But the differences are also real. You learned "dog" from about five dogs; a from-scratch model needs tens of thousands. You can learn from one bad experience in one second, which no model can do.
+
+The deep reason nobody can settle it is that **we can't read either one.** We can't read the thousands of dials inside a trained model, and we can't read the connections inside your head. Two things we can't inspect, being compared. Scientists in two different fields argue about this and they haven't finished.
 
 **"Can I look at the model and see what it learned?"**
 Not usefully. You can open the file and find thousands of numbers, and no human can read them — the person who built the training program can't either. What you *can* do is test it: show it things and watch where it fails. That's the only window you get, and it's the reason Weeks 19 to 22 exist. "You can only test it, never read it" is one of the most important true facts about modern AI.
@@ -748,6 +764,8 @@ Not by default, and card 6 in the activity is why we did that to you. You had th
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual ways the lesson slips, and what to do about each one while it is happening.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | **The trap doesn't fire** — they get cards 4 and 5 right | You drew the Blorbs and Zunks at similar sizes, so "big means Blorb" was never available | Don't fake it. Say: "you counted legs, which is exactly right — let me show you what I was *trying* to make you do", then show the twelve cards and explain the trap you failed to set. The lesson still lands, from the outside. Then run the harder variation |
@@ -763,6 +781,8 @@ Not by default, and card 6 in the activity is why we did that to you. You had th
 ---
 
 ## 🧭 Differentiation
+
+This section shows how to lighten the lesson for a student who struggles, and how to stretch it for one who flies.
 
 ### If they are struggling
 
@@ -841,6 +861,8 @@ Aim for 3. A student who genuinely gets cards 4 and 5 is at 4 already, whatever 
 ---
 
 ## 📤 Homework to Assign
+
+This section gives the words to use when you set the homework, and the workbook parts that go with it.
 
 **Say this:**
 
@@ -940,16 +962,16 @@ Aim for 3. A student who genuinely gets cards 4 and 5 is at 4 already, whatever 
 
 ### Worked example — the shot list arithmetic
 
-**Distinct situations:**
+**Distinct situations** (Set A against Set B):
 
-```
+```text
    Set A:  1 background × 1 lighting × 2 angles × 1 distance  =    2
    Set B:  5 backgrounds × 3 lightings × 8 angles × 2 distances = 240
 ```
 
 **The shot list, checked three ways:**
 
-```
+```text
    by shots:       6 + 6 + 7 + 7 + 7 + 7                     = 40 ✓
    by background:  desk 12 · carpet 7 · tiles 7 · wood 7 · bed 7   = 40 ✓  (5 backgrounds)
    by lighting:    window 13 · low lamp 13 · ceiling 14            = 40 ✓  (3 kinds)
@@ -958,7 +980,7 @@ Aim for 3. A student who genuinely gets cards 4 and 5 is at 4 already, whatever 
 
 **The totals:**
 
-```
+```text
    40 photos × 3 objects   = 120 labelled examples
    120 photos × 50 epochs  = 6,000 looks
    6,000 seconds for a human = 100 minutes;  the browser: about 20 seconds
@@ -974,7 +996,7 @@ Note the desk appears twice (rows 1 and 2) and so carries 12 photos against 7 fo
 
 **Check 3 — 60 photos of a cat.**
 
-```
+```text
    sofa-only:  1 background × 1 lighting × ~2 angles      = about 2 situations
    varied:     4 rooms × 3 lightings × 5 angles           = 60 situations
 ```
@@ -1043,6 +1065,7 @@ The second model is better. Same 60 shutter clicks, about thirty times the cover
 **Step 3 — the shot list and the "predict your own laziness" line.** The model list is the six-row one from the worked example: 6 + 6 + 7 + 7 + 7 + 7 = 40, across 5 backgrounds, 3 lighting kinds and 2 distances (checked three ways in the Worked example section above). The desk appears twice and carries 12 against 7; acceptable at 30% of the set, and evening it out to 8/8/8/8/8 is better. The "Identical list for all three objects" box must be ticked, in their own handwriting. The predicted row is usually a low-lamp row. **Do not let a wrong total go home.**
 
 **Step 4 — shoot it.** Marking criteria (the workbook ticks are a checklist, so check them against the photos):
+
 - Roughly 40 per object (accept 30–45), and the three counts within about 20% of each other. Note it if one object is far behind, because an unbalanced pile is a real problem in Week 17.
 - Photos actually differ from each other. Scroll through twenty of them: if fifteen look identical, the shot list was not followed, however good the sheet looks.
 - All five backgrounds and all three lighting kinds appear **for every object**, not just the first one they got bored on.
@@ -1074,6 +1097,7 @@ The "By class" table (class name and photos) should show three counts within abo
 > *"I came up short on low lamp light — I planned 13 and got 5. The lamp photos looked dark and blurry so I kept redoing them under the ceiling light instead. That means most of my photos are bright, so I think my model will be bad at guessing anything photographed in a dim room in the evening. Also tiles: 3 instead of 7, because the bathroom floor is cold and I gave up."*
 
 Marking criteria:
+
 - One named short condition, with the real numbers ("Planned ___, got ___").
 - A **reason**, and an honest one. "I got bored" is a perfectly good reason and should be praised, not marked down.
 - Full credit needs the consequence: *what will my model now be bad at?* This is the sentence that turns a tally into a prediction, and it is the one thing to insist on.
@@ -1110,6 +1134,8 @@ No right answer; it is the learner's own rating of six "I can…" rows and one c
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what comes next week and what to prepare now.
 
 Next week is about the number that sits next to every guess a model makes — the percentage. The student will find out that when a model says `spoon, 74%`, that 74 does **not** mean "74% chance of being right", and that a model shown something it has never met will report a large, confident-looking number while being completely wrong. Card 6 in today's activity was the first taste: three boxes, nothing that fitted, and an answer given anyway. Week 16 gives that situation its name and one simple habit — reading the *gap* between the top two numbers instead of the top number alone — that catches most of the damage.
 

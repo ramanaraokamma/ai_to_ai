@@ -53,7 +53,7 @@ not. It never does.
 What comes out is **one number for every class you set up**, and those numbers always add up to
 100%. Like this:
 
-```
+```text
    spoon       ████████████████████░░░░░░░░░░   62%
    toothbrush  ███████░░░░░░░░░░░░░░░░░░░░░░░   21%
    comb        █████░░░░░░░░░░░░░░░░░░░░░░░░░   17%
@@ -123,7 +123,7 @@ completely when the thing in front of the camera is **not in any of the boxes**.
 The classic demonstration, and the one used in this course: a three-class model that knows
 spoon / toothbrush / comb is shown a **fork**. There is no fork class. There never was. It reports:
 
-```
+```text
    spoon 74%   ·   toothbrush 15%   ·   comb 11%
 ```
 
@@ -174,7 +174,7 @@ Work the numbers. Suppose you train with:
 Now suppose the model gives up on combs entirely and never outputs "comb." How does it score on its
 own training photos?
 
-```
+```text
    correct  = 200 (spoons) + 200 (toothbrushes) + 0 (combs)
             = 400
 
@@ -196,6 +196,7 @@ not.
 ### 6. The two misconceptions you will meet today
 
 **Misconception 1 — "62% means it's right 62% of the time."**
+
 This is the big one and it will come from the student in almost exactly those words. Do not just say
 "no." Do this instead: ask *"right about what?"* Then hold up something they never trained on — a
 stapler, a TV remote — and ask what the model will say. They will work out that it has to say one of
@@ -203,6 +204,7 @@ the three, and that the percentage has nothing to hold on to. That conversation 
 your correction.
 
 **Misconception 2 — "if the model is only 45% sure, it must be broken."**
+
 It is not broken; it is being unusually informative. A 45 / 44 / 11 readout is a model *telling you* it
 cannot separate these two things. Most real products throw that information away and show you only
 the winning word. The shrug is the useful part. Teach the student to value it.
@@ -264,6 +266,8 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 
 ## 🧰 Prep Checklist
 
+Use this list to get ready. It has what to do the night before, what to do on the day, and what to do if something fails.
+
 ### 10 minutes the night before
 
 - [ ] **Print Handout 16A** — the eight readout cards. (They are not in the workbook; the workbook's
@@ -304,6 +308,8 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This is the plan for the whole lesson. Each segment below has the words to say, the things to do, and the questions to ask.
+
 | Minutes | Segment | What happens |
 |---|---|---|
 | 0 – 8 | 🪝 **Hook** — The Confident Wrong Answer | You make a confident wrong claim and get caught |
@@ -337,7 +343,7 @@ are lit this week. Do not quiz them on the threads; the map is orientation, neve
 
 Write on the board, big, and leave it there for the whole lesson:
 
-```
+```text
    CONFIDENT   ≠   CORRECT
 ```
 
@@ -502,7 +508,7 @@ written something, ask them to read it out, and *do not react yet*. Then:
 
 Answers, with the working they must show:
 
-```
+```text
    (a)  200 + 200 + 8  =  408
 
    (b)  200 + 200 + 0  =  400
@@ -577,6 +583,8 @@ whole thing, just step one.
 
 ## 🎲 The Activity, In Full
 
+This section has everything you need to run the eight-card activity: the rules, the cards, how to run each one, and the policy at the end.
+
 ### Read the Bars Like an Expert
 
 **Time:** 20 minutes (15 for the cards, 5 for the policy)
@@ -591,7 +599,7 @@ surprise on cards 5 and 6 is the point and it needs the reveal.
 
 For **every** card, the student writes four things in the notebook, in this order and no other:
 
-```
+```text
    ┌──────────────────────────────────────────────────────┐
    │  1.  SUM       add the three numbers. Is it 100?     │
    │  2.  WINNER    which class has the top score?        │
@@ -659,7 +667,7 @@ comb) is confidence and wrongness together with nothing weird about the object a
 > "You are going to write the rule your own model will follow next week. It has to have a number in
 > it. Fill this in:"
 
-```
+```text
    MY CONFIDENCE POLICY
    ─────────────────────────────────────────────────────
    If the top score is below ______ %,
@@ -705,6 +713,8 @@ work.
 ---
 
 ## ❓ Questions Students Ask This Week
+
+These are the questions that tend to come up, with answers you can say out loud.
 
 **1. "Where does the percentage actually come from? Does it count how many times it was right
 before?"**
@@ -757,6 +767,8 @@ accuracy costs you real work with a pencil.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+Use this table when the lesson is not going to plan. Find what is happening, then do what the last column says.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student reads the top number and stops | The big bar is the one your eye goes to. It is a design problem, not a laziness problem. | Cover the top bar with your thumb and ask "now tell me if you trust it." Make the drill four steps, always, and refuse card answers that skip step 3. |
@@ -771,6 +783,8 @@ accuracy costs you real work with a pencil.
 ---
 
 ## 🧭 Differentiation
+
+Use this section when the student is struggling, flying, or not engaging.
 
 ### If they are struggling
 
@@ -824,6 +838,8 @@ stop. Week 17 will re-teach it with a live camera and it will land better.
 ---
 
 ## ✅ Assessing Understanding
+
+Use these three checks, and the mastery scale, to see whether the week landed.
 
 Three checks, all doable in the last five minutes. Ask them in this order.
 
@@ -987,17 +1003,17 @@ and 7 are shaky and the margin told you so. Cards 6 and 8 look great and are wro
 ### K2 — Balance arithmetic, worked in class
 
 **(a) Total photos.**
-```
+```text
    200 + 200 + 8  =  408
 ```
 
 **(b) Correct, if the model never says "comb".**
-```
+```text
    200 (spoons) + 200 (toothbrushes) + 0 (combs)  =  400
 ```
 
 **(c) Accuracy.**
-```
+```text
    400 ÷ 408
 
    long division:  408 × 0.9  = 367.2      remainder 400 − 367.2 = 32.8
@@ -1094,7 +1110,7 @@ counter-example.
 
 **Model answer (the kind of thing to aim for):**
 
-```
+```text
    MY CONFIDENCE POLICY
    ─────────────────────────────────────────────────────
    If the top score is below 65%,
@@ -1354,6 +1370,8 @@ the question at the start of Week 17.
 ---
 
 ## 🔮 Next Week Preview
+
+This is what next week needs from you, so you can get ready early.
 
 Next week is the one they have been waiting for since Week 10: **Week 17 — Train Your First Real
 Model.** In about twenty minutes, with no code at all, the student will load their forty photos per

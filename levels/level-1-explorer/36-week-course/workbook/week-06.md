@@ -32,7 +32,7 @@ Never: `_______________________________________________________`
 
 **W5.** Write the controlled vocabulary that would have stopped `Monday`, `monday`, `MON` and `Mon.`
 
-```
+```text
 ALLOWED VALUES for day: _____________________________________________
 _____________________________________________________________________
 ```
@@ -40,6 +40,8 @@ _____________________________________________________________________
 ---
 
 ## ✍️ Practice Set A — Understand It
+
+These questions check the words and ideas from the chapter.
 
 **A1. Fill in the blanks.**
 
@@ -116,6 +118,8 @@ Line `______` and line `______`
 
 ## ✍️ Practice Set B — Use It
 
+These questions use this week's ideas on real cases.
+
 **B1. Two honest datasets.** Both were measured correctly. Write, for each one, the question it **honestly answers**.
 
 | | Dataset A — 1,000 visitors to a sleep-problems clinic. Average 5.9 h | Dataset B — every student in 4 randomly chosen schools. Average 7.8 h |
@@ -130,7 +134,7 @@ Circle one: **YES** / **NO**   Why? `_______________________________`
 
 **B2. What would go wrong?** A company trains a face-unlock model. Its training photos are:
 
-```
+```text
 2,000 adult faces        30 child faces
 ```
 
@@ -194,6 +198,8 @@ Write the one sentence the teacher should add to make this an **honest limited f
 
 ## 🧩 Puzzle of the Week — Four Surveys, One School
 
+This puzzle puts four surveys side by side. Work through the five questions in order.
+
 ![Four surveys, one school](../figures/fig-w06-10-puzzle-four-surveys.svg)
 *Figure W6.2 — Four surveys, one school of eight hundred. Only one of these four numbers is worth anything.*
 
@@ -232,6 +238,8 @@ A: `______________` B: `______________` C: `______________` D: `______________`
 
 ## 🤔 Think Deeper
 
+These two questions have no single right answer. Take your time.
+
 **T1.** Dataset A was collected at a sleep clinic, which made it useless for "how much do teenagers sleep?" **Invent a question for which Dataset A is the *better* dataset** — better than Dataset B — and explain why.
 
 `_____________________________________________________________________`
@@ -265,6 +273,8 @@ Still wrong with it:
 **About 20 minutes.** After this the table is finished and it is yours. In Week 7 you use it to hunt for patterns.
 
 ### Step checklist
+
+Tick each step as you finish it.
 
 - [ ] **1. Finish the rows.** Get to 30. If you cannot, get as close as you honestly can and **write the real number on your card.** Do not invent rows — an invented row is worse than a missing one, because a missing one is visible.
 - [ ] **2. Type it into a spreadsheet.** Headers in row 1, data from row 2 down.
@@ -333,9 +343,9 @@ Draw your own sample sitting inside your own population — one dot per thing �
 ![Draw It frame for Week 6](../figures/fig-w06-11-draw-frame.svg)
 *Figure W6.3 — Your own sample and population. Draw the big outline first, then the patch inside it.*
 
-**An example of a good answer.** A student drew:
+**An example of a good answer.** Here is what one student drew and wrote:
 
-```
+```text
 POPULATION: every meal I will eat this year.  Drew a big blob and wrote
             "about 1,100 meals" inside it, with lots of tiny hollow dots.
 
@@ -357,6 +367,8 @@ Notice what makes it good: the sample patch is drawn **in a corner**, not spread
 
 ## 📊 Self-Check
 
+Tick one box in each row to show how sure you feel.
+
 | I can... | 😀 easily | 🙂 with a think | 😕 not yet |
 |---|---|---|---|
 | Tell the population I care about from the sample I actually measured | ☐ | ☐ | ☐ |
@@ -372,6 +384,8 @@ One thing I still want to ask about:
 ---
 
 ## ✅ Answers
+
+This is the answer key. Do the pages first, then open the box and check your work.
 
 <details>
 <summary>Check your answers</summary>
@@ -389,7 +403,7 @@ One thing I still want to ask about:
 - `screen_min` = 480 → **OUTLIER** (inside 0–1440, so legal). **Keep it** and write a note about why that day was different.
 
 **W5.**
-```
+```text
 ALLOWED VALUES for day:  Mon · Wed · Fri
 Nothing else may be typed in this column.
 ```

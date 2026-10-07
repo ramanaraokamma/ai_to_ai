@@ -124,8 +124,10 @@ one's spam"** is an example.
 
 **Why does the label have to go on first?** Think about it properly. If you show a machine a thousand
 emails and never tell it which ones are spam, what could it possibly learn? It has nothing to be
-right or wrong about. In the kind of learning we study here, it cannot score itself, so it cannot improve. It's like marking a test with no
-answer sheet.
+right or wrong about.
+
+In the kind of learning we study here, it cannot score itself, so it cannot improve. It's like
+marking a test with no answer sheet.
 
 **The label is the answer sheet, and a human has to write it.**
 
@@ -162,7 +164,8 @@ You proved this yourself in class. Your teacher put the eight mango cards **in t
 then asked you about a mango you had never seen — and you answered. Where did that answer come from?
 Not from the cards. They were in a pocket. It came from a *rule* that had ended up in your head.
 
-Three things are true of most of the models you will meet, and 11-year-olds accept all three faster than adults do:
+Three things are true of most of the models you will meet. 11-year-olds accept all three faster than
+adults do:
 
 1. **The examples are not inside it.** In most models, after training, the photos are gone. A model is
    not usually a filing cabinet you can search. It is a rule that happens to work. (A few simple
@@ -175,10 +178,13 @@ Three things are true of most of the models you will meet, and 11-year-olds acce
 **And one more, which surprises everyone:** most models do **not** keep learning while you use them.
 Training happens once, stops, and the finished model gets copied out and runs unchanged — sometimes
 for years. The recognition model on your phone's face unlock is not learning about faces every time you glance
-at it. (Some phones do quietly update the stored data about *your* face, so it keeps up when you
-grow a beard or get glasses. The shipped model stays the same; the saved face data is separate.) When a
-company wants it better, they collect new examples and train a **new** model, then send it to you as
-an update. That's a replacement, not growth.
+at it.
+
+(Some phones do quietly update the stored data about *your* face, so it keeps up when you grow a
+beard or get glasses. The shipped model stays the same; the saved face data is separate.)
+
+When a company wants it better, they collect new examples and train a **new** model, then send it to
+you as an update. That's a replacement, not growth.
 
 Say it once out loud: **training is a thing that happens, finishes, and stops. What comes out is
 frozen.**
@@ -223,6 +229,8 @@ rules for.**
 
 ## 🔍 Worked Examples
 
+Three short examples, each worked through step by step: messages, mangoes and school.
+
 ### 📱 Worked Example 1 (messages) — a rule falls out of counting
 
 Six text messages. A person — not a machine — has already written the right answer next to each one.
@@ -263,8 +271,10 @@ Another perfect split. Just as good.
 
 *Figure 2.6 — Three clues, counted. Two of them split the messages perfectly. One is useless.*
 
-**Is "you" a useful clue?** No — and here's the exact reason. It shows up on **both** sides, so it isn't a clean split (and three messages is a tiny sample anyway). Knowing a message contains "you" barely moves your guess at all. FREE moves it all
-the way.
+**Is "you" a useful clue?** No — and here's the exact reason. It shows up on **both** sides, so it
+isn't a clean split (and three messages is a tiny sample anyway).
+
+Knowing a message contains "you" barely moves your guess at all. FREE moves it all the way.
 
 So without anybody writing a single rule, we have one:
 
@@ -446,12 +456,15 @@ is what training produced.
 
 ## 💬 Talk About It
 
+Three questions to argue about with a friend or an adult. The hints show where to push.
+
 **1. "Does face unlock get better at recognising you every time you use it?"**
 
 *Hint:* almost everyone says yes. The honest answer is that training happened once, at the company,
 before the phone was sold — and the model on your phone is frozen. But some phones *do* add and
 refresh a little data about your specific face, which is why this is a genuinely good argument to
 have. Keep the shipped model and the saved face data apart in your head.
+
 Push for the difference between *changing a setting* and *changing the rule*.
 
 **2. "If a model makes an unfair decision, whose fault is it?"**
@@ -470,6 +483,8 @@ rule and you need to be able to point at the line, write the rule.
 ---
 
 ## ⚠️ Don't Get Tricked
+
+Four ideas that sound right and are not. Each one is shown as wrong, then right.
 
 ### Trick 1 — "The model has all the examples stored inside it"
 
@@ -512,10 +527,13 @@ in about four seconds.
 
 ## 🌍 Where You've Seen This
 
+Six places in your own life where a rule was learned from examples.
+
 1. **Your spam folder.** Trained on messages that millions of people marked as junk. It catches
    wording nobody could have listed in advance — which is how you know nobody listed it.
 2. **The suggestion bar above your keyboard.** Nobody made a list of every three words you might type
-   next. It learned from enormous amounts of real writing. (Your phone may also keep a list of your own words, stored separately from the model.)
+   next. It learned from enormous amounts of real writing. (Your phone may also keep a list of your
+   own words, stored separately from the model.)
 3. **Searching your photos for "dog".** Trained on millions of photos that people had already tagged.
    Somebody, somewhere, typed the word "dog" next to each one.
 4. **Music autoplay.** It learned which song people *don't skip* after which song. Notice that's a
@@ -556,6 +574,8 @@ Week 36 hangs off that right-hand branch.
 
 ## 🔑 Remember This
 
+The seven things to keep from this week.
+
 - **Machine learning:** nobody writes the rule. The machine finds it by studying examples that
   already have the right answers attached.
 - **An example is two halves** — the thing, and the label. Missing the label, it isn't an example.
@@ -574,6 +594,8 @@ Week 36 hangs off that right-hand branch.
 
 ## 📓 New Words
 
+The four words from this week, with a meaning and an example for each.
+
 ![Week 2's four new words](../figures/fig-w02-8-vocab-icons.svg)
 
 *Figure 2.8 — Learn them in this order. Each one needs the one before it.*
@@ -586,12 +608,15 @@ Week 36 hangs off that right-hand branch.
 | **model** | The guessing machine that comes out of training. New thing in, guess out | The finished spam filter — and you, in the mango game |
 
 > **🧑‍🏫 If someone asks "how many examples do you need?"** — honestly, it depends, and that's a real
-> answer rather than a dodge. Eight cards were enough to find a rule for mangoes because there were only three clues and
-> two of them lined up perfectly — though card nine showed eight was not enough to be sure which rule
-> was right. A photo classifier built from scratch can need thousands of photos, while tools that start
-> from a model trained earlier, like Teachable Machine, can work with tens. A
-> chatbot was trained on something like a trillion words. You'll measure this with your own hands in
-> Week 15.
+> answer rather than a dodge.
+>
+> - Eight cards were enough to find a rule for mangoes because there were only three clues and two of
+>   them lined up perfectly. Card nine showed eight was not enough to be sure which rule was right.
+> - A photo classifier built from scratch can need thousands of photos. Tools that start from a model
+>   trained earlier, like Teachable Machine, can work with tens.
+> - A chatbot was trained on something like a trillion words.
+>
+> You'll measure this with your own hands in Week 15.
 
 ---
 

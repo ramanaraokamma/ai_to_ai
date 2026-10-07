@@ -6,6 +6,8 @@
 
 ## 📋 At a Glance
 
+This table shows the lesson on one screen: length, materials and prep.
+
 | | |
 |---|---|
 | **Duration** | 70 minutes |
@@ -19,6 +21,8 @@
 ---
 
 ## 🎯 Lesson Objectives
+
+These are the five things your student should be able to do when the lesson ends.
 
 By the end of this lesson your student can:
 
@@ -36,8 +40,8 @@ By the end of this lesson your student can:
 
 ## 🧑‍🏫 What YOU Need to Know First
 
-*Read this once. About 15 minutes. It builds directly on last week's tally sheet and needs nothing else.
-By the end you will understand where AI "making things up" actually comes from, well enough to explain
+*Read this once. It takes about 15 minutes. It builds on last week's tally sheet and needs nothing else.
+By the end you will know where AI "making things up" comes from, well enough to explain
 it to an adult who is frightened of it.*
 
 ### Idea 1 — the table can be run forwards
@@ -45,9 +49,13 @@ it to an adult who is frightened of it.*
 Last week your student built a next-word table: for each word, a list of what followed it and how often.
 So far it has been a *record* — a description of a text that already exists.
 
-This week we run it in the other direction. Pick a starting word. Look up its group. Choose one of the
-followers. Say it. Now that follower is your current word — look *it* up, choose again. Repeat until you
-hit a full stop.
+This week we run it in the other direction:
+
+1. Pick a starting word.
+2. Look up its group.
+3. Choose one of the followers and say it.
+4. That follower is now your current word. Look *it* up and choose again.
+5. Repeat until you hit a full stop.
 
 That loop is called **generation**, and it is the same loop chatbots use to produce text, one word at
 a time. Real chatbots work out the chances with a much bigger and cleverer method than a counted table,
@@ -62,26 +70,27 @@ ways to do it, and they behave so differently that they are worth treating as tw
 
 It sounds obviously correct. Take the best option every time; how could that be wrong?
 
-Try it on last week's table. Start at `the`. The `the` group is `bus` 4, `market` 1, `shop` 1. Biggest
+Try it on last week's table. Here is the run, step by step. Start at `the`. The `the` group is `bus` 4, `market` 1, `shop` 1. Biggest
 count is `bus`, so say `bus`. Now look up `bus`: `to` 2, `goes` 1, `is` 1, `.` 1. Biggest is `to`, so
 say `to`. Now look up `to`: `the` 3, `town` 1. Biggest is `the`.
 
 You are back at `the`. And the table has not changed. So it will pick `bus` again. Then `to`. Then
 `the`. Then `bus`.
 
-```
+The run looks like this:
+
+```text
    the -> bus -> to -> the -> bus -> to -> the -> bus -> to -> ...
 ```
 
-Forever. Not because anything is broken — because greedy is **deterministic**. Same row, same decision,
-every time. And a machine that makes the same decision every time, walking round a finite table, must
-eventually come back to a word it has already visited, and from that moment onward it is trapped in a
-circle it cannot leave.
+Forever. Nothing is broken. Greedy is **deterministic**: same row, same decision, every time.
+
+A machine that makes the same decision every time, walking round a finite table, must come back to a word it has already visited. From then on it is trapped in a circle it cannot leave.
 
 ![Two routes through the same table](../figures/fig-w29-2-greedy-vs-sampled.svg)
 *Figure 29.1 — Same table, same start word. The only difference is how you pick.*
 
-Two consequences worth having ready, because they are the ones students find striking:
+Two consequences to have ready, because students find them striking:
 
 - **The loop is short.** In our 20-word table it is 3 words long. Your phone's keyboard loop is
   longer, because its table is bigger. It is the same phenomenon at a different scale.
@@ -98,18 +107,16 @@ looped because tapping the middle suggestion fifteen times *works like* greedy g
 > **Sampling** — pick randomly, but give each follower a chance in proportion to how often it actually
 > occurred.
 
-The cleanest way to do this by hand is the bag of slips. For each word, write one slip for every single
+The cleanest way to do this by hand is a bag of slips. For each word, write one slip for every single
 tally mark in its group. `the` had 6 marks, so the bag for `the` holds six slips: four saying `bus`, one
 saying `market`, one saying `shop`.
 
 ![A bag where common words get more slips](../figures/fig-w29-1-weighted-bag.svg)
 *Figure 29.2 — Number the slips, roll a die, take that slip. The chances come out right without any arithmetic.*
 
-Shake the bag, take one slip without looking, read it, **put it back**. Because there are four `bus`
-slips out of six, you get `bus` four times out of six over the long run — automatically, with no
-percentages to calculate. The counts *are* the probabilities.
+Shake the bag, take one slip without looking, read it, **put it back**. There are four `bus` slips out of six. So over the long run you get `bus` four times out of six, with no percentages to calculate. The counts *are* the probabilities.
 
-Since a die is easier to manage than actual paper slips, we number the slips instead:
+A die is easier to manage than paper slips, so we number the slips instead:
 
 > **The rolling rule:** number the slips in the bag 1, 2, 3, and so on. Roll the die. If that number is
 > on a slip, take it. **If you roll a number bigger than the number of slips, that roll doesn't count —
@@ -119,12 +126,11 @@ So for `the` (6 slips) every roll counts. For `bus` (5 slips) a 6 means roll aga
 anything from 4 to 6 means roll again. For a word with only one follower, there is nothing to choose —
 we call that **forced** and no roll happens at all. A bag whose slips all name the same word (like `i`: eat, eat) has nothing to choose either. Example 2 skips the roll for those; Examples 1 and 3 roll anyway so you can see the bag. The word you get is identical either way; only which die numbers get used up differs, so follow the example's own way when it gives you a list of rolls.
 
-**Why this matters far beyond the classroom:** sampling is the answer to a question every single person
-asks about chatbots. *"Why did it give me a different answer when I asked the same thing twice?"*
+**Why this matters beyond the classroom:** sampling answers a question everyone asks about chatbots. *"Why did it give me a different answer when I asked the same thing twice?"*
 
-Because it is drawing slips. Same bag, different draw. It is not in a mood, it did not think harder on
-Tuesday, it has not changed its mind. It made a weighted random choice, several hundred times, and got a
-different sequence. Real systems have a dial that slides between greedy and sampling; turn it toward
+Because it is drawing slips. Same bag, different draw.
+
+It is not in a mood. It did not think harder on Tuesday. It has not changed its mind. It made a weighted random choice, several hundred times, and got a different sequence. Real systems have a dial that slides between greedy and sampling; turn it toward
 greedy and answers become repetitive and safe, turn it the other way and they become adventurous and
 start talking nonsense.
 
@@ -161,7 +167,7 @@ from fluency.
 
 ### Idea 5 — hallucination, arrived at rather than announced
 
-Here is the most important thing in the module, and it is not technical.
+This is the most important idea in the module, and it is not technical.
 
 Take last week's table and generate: **`amma takes the bus to the market .`**
 
@@ -178,7 +184,7 @@ fluently, something the source text does not say and in fact contradicts.
 
 > **Hallucination** — when an AI produces something that sounds right but isn't true.
 
-Three things to be precise about, because the word gets thrown around loosely:
+Three things to be precise about, because the word is used loosely:
 
 **It is not lying.** Lying requires knowing the truth and choosing to say something else. There is
 nothing in the table that could know.
@@ -208,6 +214,8 @@ That missing wobble is the whole danger.
 
 ### The two misconceptions you will hit today
 
+Students often start from one of these two ideas. Here is how to answer each.
+
 **Misconception 1: "the AI made a mistake."**
 
 Students want the wrong sentence to be an error, because errors can be fixed. Push back gently and
@@ -226,10 +234,13 @@ Figure 29.3, before restating the limit.
 
 ### How deep to go, and where to stop
 
+Use this list to keep the lesson at the right depth.
+
 **Go this deep:** run the loop by hand with dice; write the bag and the roll at every step; see greedy
 loop; score two axes separately; trace the falseness to a join between two real pairs.
 
 **Stop before these:**
+
 - **Percentages.** Say "4 out of 6". Do not convert to 67%. The arithmetic distracts from the idea, and
   the counts are the honest form anyway.
 - **Multiplying probabilities** to get the chance of a whole sentence. Beautiful, and it belongs to
@@ -278,6 +289,8 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 
 ## 🧰 Prep Checklist
 
+This section lists what to find, print and practise before the lesson, and what to do if something fails.
+
 ### 15 minutes, the night before
 
 - [ ] **Find last week's table.** The student's own tally sheet, or your photograph of the board. This
@@ -319,6 +332,8 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 
 ## ⏱️ The Lesson, Minute by Minute
 
+This section gives the five segments of the lesson with their times. The detailed steps follow the table.
+
 | # | Segment | Minutes | Running total |
 |---|---|---|---|
 | 1 | 🪝 Hook — Ask it twice, get two answers | 8 | 8 |
@@ -343,10 +358,11 @@ this week. Do not quiz them on the threads; the map is orientation, never assess
 >
 > Have a guess. Any guess."
 
-Common guesses, all worth taking seriously for thirty seconds each: *it's learning as it goes* (no — the
-table doesn't change while you talk to it), *it's got a different mood* (no, and it is worth being firm:
-there is no mood in there), *it remembers what I asked before* (sometimes true, but it happens with a
-fresh conversation too).
+Take each guess seriously for thirty seconds. Common guesses:
+
+- *It's learning as it goes.* No — the table doesn't change while you talk to it.
+- *It's got a different mood.* No. Be firm: there is no mood in there.
+- *It remembers what I asked before.* Sometimes true, but it happens with a fresh conversation too.
 
 > "Every one of those is a reasonable guess and every one is wrong. The real answer is much more boring
 > and much more useful, and by the end of today you will have done it yourself with a die.
@@ -481,7 +497,7 @@ Show Figure 29.2.
 
 **Do this** — build this table on the board, one row at a time, saying each row aloud as you write it:
 
-```
+```text
    STEP   AT WORD   SLIPS IN BAG                    ROLL      GOT
    ────   ───────   ─────────────────────────────   ──────    ──────
     1     the       1 bus  2 bus  3 bus  4 bus        2       bus
@@ -592,9 +608,9 @@ re-roll rule once with someone watching.
 They will get: **`the bus to the bus .`** Score it: reads well ✗ (it isn't a sentence — no verb),
 true — not applicable, because it doesn't claim anything.
 
-Then greedy, twelve tokens, prompt `the`. No die needed. They should produce:
+Then greedy, twelve tokens, prompt `the`. No die needed. They should produce this:
 
-```
+```text
    the bus to the bus to the bus to the bus to
 ```
 
@@ -670,6 +686,8 @@ Then the honest scale conversation, using Figure 29.3:
 
 ## 🎲 The Activity, In Full
 
+This section is the complete activity: setup, rules, fixed rolls, scoring and what finished looks like.
+
 ### Three Sentences and a Lie
 
 **What it is:** the student runs the generation loop by hand on last week's table, three times with
@@ -680,6 +698,7 @@ two bigrams that produced it.
 **Time:** 20 minutes (6 · sentence 2 — 5 · the trace — 5 · sentence 3 and greedy — 4 · scoring)
 
 **Materials:**
+
 - Last week's next-word table
 - The printed **Bag Sheet** (six bags, slips numbered) — Answer Key Part B
 - The printed **Trace Sheet** (STEP · AT WORD · SLIPS IN BAG · ROLL · GOT) — Answer Key Part C
@@ -710,7 +729,9 @@ two bigrams that produced it.
 
 ### The fixed rolls
 
-```
+Write these on the board before you start. Each line gives the prompt word and the rolls to use.
+
+```text
    SENTENCE 1   prompt: the      rolls:  2  3  4                  (done together, in segment 3)
    SENTENCE 2   prompt: amma     rolls:  1  4  2  3  5
    SENTENCE 3   prompt: the      rolls:  1  2  6  1  3  5         (the 6 is a re-roll - watch for it)
@@ -746,6 +767,7 @@ Two columns, and they must be judged **separately and in this order**:
 only demonstrates that sampling can also produce rubbish, which is a nice extra rather than a core idea.
 
 Two more supports:
+
 - **You keep the trace table, they choose the slip.** You write the bag contents and the step numbers;
   they read the roll and find the slip. This removes all the copying and keeps all the thinking.
 - **Pre-write the bags** on the trace sheet for the specific words that will come up, so no lookup is
@@ -776,6 +798,8 @@ Two more supports:
 ---
 
 ## ❓ Questions Students Ask This Week
+
+These are the questions students are likely to ask, with answers you can give.
 
 **1. "If the machine can't tell true from false, why does anyone use it?"**
 
@@ -851,6 +875,8 @@ consequences.
 
 ## ⚠️ Where This Lesson Goes Wrong
 
+This table lists the usual ways the lesson goes off track and what to do right away.
+
 | What happens | Why | What to do right now |
 |---|---|---|
 | The student judges "reads well" and "true" as one question and gives one verdict | These feel like the same question, because in ordinary life a fluent sentence usually *is* true. That habit is exactly what the lesson is attacking | Physically separate them. Fill the entire first column down all four rows, put the pencil down, then start again at the top for the second column. If they still merge them, cover the second column with a card while the first is filled |
@@ -866,6 +892,8 @@ consequences.
 ---
 
 ## 🧭 Differentiation
+
+This section tells you what to cut or add when your student is struggling, flying or not engaging.
 
 ### If they are struggling
 
@@ -926,6 +954,8 @@ lesson has worked. Greedy, the trace, the scoring and the vocabulary can move to
 
 ## ✅ Assessing Understanding
 
+These checks show whether the lesson worked.
+
 Three checks, last five minutes, exact wording. About ninety seconds each.
 
 ### Check 1 — the two axes
@@ -979,6 +1009,8 @@ say none did: "Right. So it's not a step, it's a *join*. Show me the join."
 
 ## 📤 Homework to Assign
 
+This section gives you the words to assign the homework and a map of the workbook.
+
 **Say this:**
 
 > "This week you do what we did today, but on **your own** table — the one you built from your own
@@ -1031,6 +1063,8 @@ the same sitting or as a second one, as suits the week.
 
 ## 🔑 Answer Key
 
+This section holds the sheets to print and the model answers. It is for the teacher only.
+
 ### Part A — the table this week uses (from Week 28)
 
 The groups with a genuine choice in them, and their sizes:
@@ -1049,7 +1083,7 @@ goes→to, town→., my→bus, is→very, very→late, late→., and→i, run→
 
 The original corpus, for truth-checking:
 
-```
+```text
    I take the bus to the market. Amma takes the bus to the shop.
    The bus goes to town. My bus is very late.
    Amma and I run to the bus. I like it.
@@ -1057,7 +1091,9 @@ The original corpus, for truth-checking:
 
 ### Part B — the Bag Sheet (print this)
 
-```
+Print this sheet. It shows the six bags with their slips numbered.
+
+```text
    BAG FOR "the"  - 6 slips              BAG FOR "."  - 5 slips
      1 bus    2 bus    3 bus               1 amma   2 amma   3 the
      4 bus    5 market 6 shop              4 my     5 i
@@ -1081,7 +1117,9 @@ The original corpus, for truth-checking:
 
 ### Part C — the Trace Sheet (print this)
 
-```
+Print this sheet. The student fills in one row for each step.
+
+```text
    PROMPT (start word): __________     ROLLS: ______________________
 
    ┌──────┬───────────┬──────────────────────────────────┬────────┬──────────┐
@@ -1101,7 +1139,9 @@ The original corpus, for truth-checking:
 
 ### Part D — the Score Sheet (print this)
 
-```
+Print this sheet. The student scores each sentence in the two columns.
+
+```text
    ┌────┬──────────────────────────────────────────┬─────────────┬──────────────────┐
    │ #  │ THE SENTENCE                             │ READS WELL? │ TRUE TO CORPUS?  │
    ├────┼──────────────────────────────────────────┼─────────────┼──────────────────┤
@@ -1211,9 +1251,9 @@ useless, because it does not identify the mechanism. Push for the window.
 
 ### Part G — a second false sentence, if you need one
 
-`i take the bus to the shop .` — every step legal:
+`i take the bus to the shop .` — every step is legal. The steps are:
 
-```
+```text
    i -> take     (1 of 3 slips)
    take -> the   (forced)
    the -> bus    (4 of 6)
@@ -1279,7 +1319,9 @@ Strip numbers 16–20 (`1 6 3 2 5`) are left over and unused. That is expected; 
 
 **Greedy — prompt `the`, 12 words:**
 
-```
+The greedy run is:
+
+```text
    the bus to the bus to the bus to the bus to
 ```
 
@@ -1413,6 +1455,8 @@ two pairs" are the two most likely to need a second go.
 ---
 
 ## 🔮 Next Week Preview
+
+This section says what comes next week.
 
 Next week is a lab, and it is the week the two halves of this term get put side by side. Your student
 builds a working chatbot in Scratch — in the browser, nothing to install — using two lists and a

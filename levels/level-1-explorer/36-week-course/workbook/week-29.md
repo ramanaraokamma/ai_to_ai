@@ -36,6 +36,8 @@ ________________________________________________________________
 
 ## ✍️ Practice Set A — Understand It
 
+These questions check that you know this week's words and can follow a trace.
+
 **A1. Fill in the blanks.**
 
 (a) Always picking the follower with the highest count is called ____________.
@@ -110,7 +112,7 @@ ________________________________________________________________
 
 **A6. Complete two traces.** Use the Week 28 bus table. The bags are:
 
-```
+```text
    the  - 6 slips: 1 bus  2 bus  3 bus  4 bus  5 market  6 shop
    .    - 5 slips: 1 amma 2 amma 3 the   4 my   5 i
    bus  - 5 slips: 1 to   2 to   3 goes  4 is   5 .
@@ -152,6 +154,8 @@ ______________________  and  ______________________
 ---
 
 ## ✍️ Practice Set B — Use It
+
+These questions ask you to use this week's words in new situations.
 
 **B1.** Your cousin asks a chatbot the same question twice and gets two different answers. Explain why, in **two sentences**, using this week's words.
 
@@ -225,12 +229,14 @@ So `amma` is ____________, not merely ____________.
 
 ### Let Greedy Out of the Circle
 
+This puzzle is a thinking break. You change a table and see what greedy does.
+
 ![Puzzle: let greedy out of the circle](../figures/fig-w29-11-puzzle-escape-the-loop.svg)
 *Figure W29.2 — Greedy is stuck going round three words forever. One branch gets it out — find the cost.*
 
 Greedy is stuck going `the → bus → to → the → bus → to →` for ever. The `to` group looks like this:
 
-```
+```text
    to  ->  the    3 marks
    to  ->  town   1 mark
 ```
@@ -260,6 +266,8 @@ ________________________________________________________________
 ---
 
 ## 🤔 Think Deeper
+
+Two longer questions. Take your time and write full answers.
 
 **T1.** *"Fluent is easy. Fluent is what the machine is **for**."* Write a paragraph on what that means for how you should use a chatbot on your own homework. Be specific: name one job where you would trust it straight away, and one where you would check every claim before using a word of it.
 
@@ -420,6 +428,8 @@ Draw where a hallucination comes from. Two real pairs, one join, one false claim
 
 ## 📊 Self-Check
 
+Tick one box in each row to show how sure you feel.
+
 | I can… | 😀 easily | 🙂 with a bit of help | 😕 not yet |
 |---|---|---|---|
 | Generate a sentence by sampling, writing every bag and every roll | ☐ | ☐ | ☐ |
@@ -432,6 +442,8 @@ Draw where a hallucination comes from. Two real pairs, one join, one false claim
 ---
 
 ## ✅ Answers
+
+Finish the whole workbook first. Then open the box below to check your work.
 
 <details>
 <summary>Check your answers</summary>
@@ -547,7 +559,7 @@ Start at `the`. Greedy picks `bus` (4 beats 1 and 1). From `bus`, `to` (2 beats 
 
 **(b)** Greedy then runs:
 
-```
+```text
    the  -> bus    (4 beats 1 and 1)
    bus  -> to     (2 beats 1, 1, 1)
    to   -> town   (4 beats 3)     <- the escape
@@ -629,7 +641,7 @@ Roll strip, taken left to right: `4 1 3 6 2 5 1 4 2 6 3 1 5 2 4 1 6 3 2 5`
 
 **Greedy — prompt `the`, 12 words:**
 
-```
+```text
    the bus to the bus to the bus to the bus to
 ```
 
