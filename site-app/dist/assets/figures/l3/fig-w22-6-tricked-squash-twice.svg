@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>Wrong and right: where the squash belongs</title>
-  <desc>Two panels. On the left, marked wrong, the model ends with nn.Linear then nn.Sigmoid and then BCEWithLogitsLoss squashes a second time: a score of plus 6.0 becomes 0.997527, is squashed again to 0.730627, and minus the natural log of 0.730627 is 0.3139, so the training loss sticks near 0.5423. On the right, marked right, nothing sits between nn.Linear and the loss: a score of plus 6.0 costs 0.0025 and a score of minus 6.0 costs 6.0025, a range of 6.0000, and the training loss reaches 0.1538.</desc>
+  <desc>Two panels. On the left, marked wrong, the model ends with nn.Linear then nn.Sigmoid and then BCEWithLogitsLoss squashes a second time: a score of plus 6.0 becomes 0.997527, is squashed again to 0.730572, and minus the natural log of 0.730572 is 0.3139, so the training loss sticks near 0.5423. On the right, marked right, nothing sits between nn.Linear and the loss: a score of plus 6.0 costs 0.0025 and a score of minus 6.0 costs 6.0025, a range of 6.0000, and the training loss reaches 0.1538.</desc>
   <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Wrong and right: where the squash belongs</text>
   <rect x="30" y="66" width="350" height="300" rx="12" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
   <rect x="30" y="66" width="350" height="36" rx="12" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
@@ -18,8 +18,8 @@
   <rect x="60" y="228" width="290" height="34" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
   <text x="205" y="250" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">BCEWithLogitsLoss</text>
   <text x="205" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">score +6.0 &#8594; sigmoid 0.997527</text>
-  <text x="205" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">squashed again &#8594; 0.730627</text>
-  <text x="205" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">&#8722;ln(0.730627) = 0.3139</text>
+  <text x="205" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">squashed again &#8594; 0.730572</text>
+  <text x="205" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">&#8722;ln(0.730572) = 0.3139</text>
   <text x="205" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#CC2B1D" text-anchor="middle">loss sticks near 0.5423</text>
   <rect x="420" y="66" width="350" height="300" rx="12" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
   <rect x="420" y="66" width="350" height="36" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>

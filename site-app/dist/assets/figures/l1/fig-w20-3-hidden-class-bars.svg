@@ -51,6 +51,6 @@
     <line x1="70" y1="380" x2="460" y2="380" stroke="#14202B" stroke-width="2"/>
 
     <text x="250" y="440" font-size="14" fill="#55636F" text-anchor="middle">73.3% describes no class in this model. Spoon is solved; comb barely</text>
-    <text x="250" y="460" font-size="14" fill="#55636F" text-anchor="middle">beats a coin toss. The red circle is what one number was covering up.</text>
+    <text x="250" y="460" font-size="14" fill="#55636F" text-anchor="middle">beats blind guessing. The red circle is what one number was covering up.</text>
   </g>
 </svg>

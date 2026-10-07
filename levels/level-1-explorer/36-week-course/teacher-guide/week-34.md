@@ -550,7 +550,7 @@ recycling, said recycling — tick in the top-left."*
 > so a stranger could pick it up and understand it. Six documents: the brief, the counts, the test
 > sheet with the accuracy three ways, the confusion matrix drawn properly, the first draft of the
 > data card, and the model file — which lives on the laptop, so write the filename and where it is
-> on a card and put the card in the folder. About forty-five minutes. Don't rush the data card:
+> on a card and put the card in the folder. About fifty minutes. Don't rush the data card:
 > box six, 'what's NOT in it', is the one adults actually read."
 
 **Ask this — the exit question:**
@@ -843,7 +843,7 @@ This section is for you only. It gives the answers to the lesson questions and t
 | Question asked in the lesson | The worked answer |
 |---|---|
 | **Hook** — how many of the eleven are computer things? | Two: the model file `booth-v1.tm` and the Scratch app. The other nine are written or physical — brief, counts, sealed photos, data card, test sheet, matrix, bias report, sign, delivered demo. |
-| **Hook** — which takes longest? | The Scratch app (75 min, next week) and the photo shoot (60 min). The test sheet takes 40 min and is the one people skip — which is exactly why it is worth the most. |
+| **Hook** — which takes longest? | The Scratch app (75 min, next week) and the photo shoot (40 min). The test sheet takes 40 min and is the one people skip — which is exactly why it is worth the most. |
 | **Concept** — why can't we hold photos back after training? | The model has already seen them, so their score measures memory, not learning, and the two cannot be told apart. There is no way to make a model un-see a photo; the only repair is new photos. |
 | **Concept** — what would guessing score with four classes? | 1 in 4 = 1/4 = 0.25 = **25%**. (Three classes → 33.3%; two → 50%.) |
 | **Concept** — is 30% good? | It is 5 percentage points above baseline: above guessing, practically useless. Compare 75%, which is 50 points above. The **gain** is what tells you anything was learned. |

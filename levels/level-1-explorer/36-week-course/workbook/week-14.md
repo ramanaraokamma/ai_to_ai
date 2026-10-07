@@ -584,7 +584,7 @@ Marking: score as **both** a fraction and a percentage; baseline stated as 1/20 
 
 **Step 6 — a model conclusion:**
 
-> *"I think both testers used `main_colour`. They got seven cards wrong between them: 3, 6, 11, 12, 14, 17 and 19. On five of those seven — 3, 6, 12, 14 and 19 — the object they named has the same colour as the object on the card. On card 3 the truth was my green sock and they said 'green pencil'. On card 12 the truth was the blue mug and they said 'blue toothbrush'. Every time they got it wrong, they got the colour right and the object wrong.*
+> *"I think both testers used `main_colour`. They got seven cards wrong between them: 3, 6, 11, 12, 14, 17 and 19. On five of those seven — 3, 6, 12, 14 and 19 — the object they named has the same colour as the object on the card. On card 3 the truth was my green sock and they said 'green pencil'. On card 12 the truth was the blue mug and they said 'blue toothbrush'. On those five, they got the colour right and the object wrong.*
 >
 > *`weight_g` would have separated four of those five pairs — the sock is 22 g and the pencil is 5 g and they still swapped them — so they were not reading the weight.*
 >

@@ -927,7 +927,7 @@ The tester was using **colour**: it is the only feature that would have been wro
 
 #### 🛠️ Build It
 
-This is the homework spine; it is also the part the old homework script describes. Step 1 and the first ten cards and trial rows of Steps 2 and 4 are done in class; Step 3 (the sealed prediction) belongs before the trial, so make sure it was not skipped.
+This is the homework spine; it is also the part the Homework to Assign script above describes. Step 1 and the first ten cards and trial rows of Steps 2 and 4 are done in class; Step 3 (the sealed prediction) belongs before the trial, so make sure it was not skipped.
 
 **Step 1: the feature sheet.** Five feature names, each with a measuring instruction, written **before** any measuring, and the banned-check boxes ticked after reading each aloud. If a measuring instruction is missing, send it back: that is how `length` quietly changes meaning halfway through a deck.
 
@@ -960,7 +960,7 @@ Marking: score as **both** a fraction and a percentage; baseline 1/20 = 5% (a ca
 
 **Step 6: the elimination hunt.** One row for every card the tester got wrong, with a yes/no for each feature. The feature with the most "no"s is the suspect. Model conclusion:
 
-> *"I think both testers used `main_colour`. They got seven cards wrong between them: 3, 6, 11, 12, 14, 17 and 19. On five of those seven (3, 6, 12, 14 and 19) the object they named has the same colour as the object on the card. On card 3 the truth was my green sock and they said 'green pencil'. On card 12 the truth was the blue mug and they said 'blue toothbrush'. Every time they got it wrong, they got the colour right and the object wrong.*
+> *"I think both testers used `main_colour`. They got seven cards wrong between them: 3, 6, 11, 12, 14, 17 and 19. On five of those seven (3, 6, 12, 14 and 19) the object they named has the same colour as the object on the card. On card 3 the truth was my green sock and they said 'green pencil'. On card 12 the truth was the blue mug and they said 'blue toothbrush'. On those five, they got the colour right and the object wrong.*
 >
 > *`weight_g` would have separated four of those five pairs. The sock is 22 g and the pencil is 5 g, and they still swapped them. So they were not reading the weight.*
 >

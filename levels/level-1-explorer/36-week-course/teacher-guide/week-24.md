@@ -223,7 +223,7 @@ Two things worth knowing:
 **Misconception 1 — "red and green make brown."** Discussed above, and it is not really a
 misconception, it is a *correct fact about the wrong situation*. Never tell a student they are wrong
 about this. Tell them they are right about paint and we are talking about lamps. Then do the
-magnifying-glass demo. Fifteen years of art lessons need something physical to push against.
+magnifying-glass demo. Years of art lessons need something physical to push against.
 
 **Misconception 2 — "shrinking loses quality, but the detail is still in there somewhere."** This is
 the deep one, and it survives most explanations because it feels true — the photo *looks* like it
@@ -808,7 +808,7 @@ This table lists the usual trouble spots. For each one it says why it happens an
 
 | What happens | Why | What to do right now |
 |---|---|---|
-| They insist **red + green = brown** and will not budge. | They are right about paint, and thirteen art lessons say so. Being told "no" just makes them dig in. | Never say they are wrong. Say: *"You are completely right about paint. I'm talking about lamps, and they work backwards."* Then get physical — magnifier on the screen, or two coloured torch beams overlapping on a white wall, or Figure 24.6 drawn big. This needs a demonstration, not a sentence. |
+| They insist **red + green = brown** and will not budge. | They are right about paint, and years of art lessons say so. Being told "no" just makes them dig in. | Never say they are wrong. Say: *"You are completely right about paint. I'm talking about lamps, and they work backwards."* Then get physical — magnifier on the screen, or two coloured torch beams overlapping on a white wall, or Figure 24.6 drawn big. This needs a demonstration, not a sentence. |
 | They treat each pixel as being **red *or* green *or* blue**. | "Three colours" is easy to hear as "pick one of three". | Point at one single pixel in Figure 24.1 and read its three numbers out loud: *"this one pixel has a red number AND a green number AND a blue number. All three. Always."* Then ask them to read out a different pixel's three numbers themselves. |
 | Block averages come out **wrong by a factor of 2** — they add two numbers instead of four. | They average the top pair, or the left pair, and forget the block is 2 × 2. | Prevention: make them draw the heavy block borders on the 12 × 12 *before* any arithmetic. Cure: point at a block and say "how many squares are in there?" Then have them circle the four numbers before adding. |
 | A decimal appears (223.25, 127.5) and everything **stops**. | They expect grid numbers to be whole, and they are right that pixels must be — so the decimal feels like an error. | Announce the rule before it happens: *exact answer first, then round to the nearest whole number, .5 rounds up.* Add the honest reason: a pixel must hold a whole number, so real software has to end with whole numbers too (some rounds, some chops the decimal off; the idea is the same). |

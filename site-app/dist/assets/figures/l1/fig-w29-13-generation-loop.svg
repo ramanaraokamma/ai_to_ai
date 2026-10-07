@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
-  <title>The whole engine, four steps round a circle</title>
+  <title>The generation loop: four steps round a circle</title>
   <desc>Four numbered boxes arranged in a circle joined by arrows: you are at a word, look up its group, pick one follower, say it and now you are there.</desc>
-  <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="21" fill="#14202B" text-anchor="middle">The whole engine, four steps round a circle</text>
+  <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="21" fill="#14202B" text-anchor="middle">The loop: four steps round a circle</text>
   <path d="M360 116 Q404 150 395 204" fill="none" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>
   <polyline points="-12,-8 0,0 -12,8" fill="none" stroke="#6D28D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(395 206) rotate(90)"/>
   <path d="M392 304 Q386 374 366 394" fill="none" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/>

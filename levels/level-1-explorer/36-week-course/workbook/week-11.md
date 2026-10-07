@@ -522,7 +522,7 @@ Model fix: `feels nice to hold` → `handle_width_cm` — ruler across the handl
 
 **B1.**
 
-| The question | Label | Classes | Features left |
+| The question | Label | Classes | How many features |
 |---|---|---|---|
 | "Will I feel tired tomorrow?" | `felt_tired` | 2 — yes, no | **4** |
 | "What will my mood be?" | `mood_1to5` | 5 — 1, 2, 3, 4, 5 | **4** |

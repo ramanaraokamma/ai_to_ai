@@ -24,5 +24,5 @@
   <rect x="428" y="260" width="6" height="20" rx="3" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2.5" stroke-linejoin="round"/>
   <text x="444" y="278" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F">never</text>
   <text x="428" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#55636F">0 times</text>
-  <text x="400" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">You were not thinking. You were counting, without noticing.</text>
+  <text x="400" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Something in your head behaves like a tally, without you noticing.</text>
 </svg>

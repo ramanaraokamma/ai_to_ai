@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>Agree, then be more precise than they were</title>
-  <desc>Two mirrored panels answering the same question, is a hundred and twenty-six rows really quite small. The crossed answer begins with no, that is loads actually. The ticked answer begins with yes and then gives the test-set size, the worth of one row, and the ranking it therefore refuses to claim.</desc>
+  <desc>Two mirrored panels answering the same question, is a hundred and twenty-six rows really quite small. The crossed answer begins with no, that is loads actually. The ticked answer begins with yes and then gives the test-set size, what one journey 9 minutes out does to the MAE, and the ranking it therefore refuses to claim.</desc>
   <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Agree, then be more precise than they were</text>
   <rect x="20" y="62" width="760" height="40" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
   <text x="400" y="84" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">“Isn't 126 rows really quite small?”</text>
@@ -27,9 +27,9 @@
   <path d="M446 178 q0 -8 8 -8 H728 L746 188 V278 q0 8 -8 8 H454 q-8 0 -8 -8 Z" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
   <path d="M728 170 V188 H746 Z" fill="#F5F8FA" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
   <text x="596" y="196" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">“Yes. 26 in the test set, so one</text>
-  <text x="596" y="216" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">row is worth 3.8%. I cannot tell</text>
-  <text x="596" y="236" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">apart two models less than about</text>
-  <text x="596" y="256" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">4 points apart — so no winner.”</text>
+  <text x="596" y="216" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">journey 9 minutes out moves my MAE</text>
+  <text x="596" y="236" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">by 0.35, the whole gap. I cannot</text>
+  <text x="596" y="256" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">rank my top two — so no winner.”</text>
   <text x="596" y="278" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="12" fill="#1B7A4B" text-anchor="middle">starts with: yes</text>
   <text x="596" y="322" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="middle">3 numbers</text>
   <text x="400" y="380" font-family="ui-sans-serif, system-ui, -apple-system, &apos;Segoe UI&apos;, Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The single most useful move in the whole subject, and it is a script you can learn.</text>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>An admission with a number in it</title>
-  <desc>Two mirrored panels each holding a sticky note. The crossed note says only that the dataset was quite small. The ticked note gives the row count, the test-set size, the worth of one test row and the exact gap between two models, and refuses to rank them.</desc>
+  <desc>Two mirrored panels each holding a sticky note. The crossed note says only that the dataset was quite small. The ticked note gives the row count, the test-set size, what one journey 9 minutes out would do to the score and the exact gap between two models, and refuses to rank them.</desc>
 <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">An admission with a number in it</text>
 <rect x="30" y="76" width="360" height="240" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
 <rect x="410" y="76" width="360" height="240" rx="12" fill="#FFFFFF" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
@@ -20,9 +20,9 @@
 <path d="M434 146 H744 V220 L722 242 H434 Z" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
 <path d="M722 242 V220 H744 Z" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
 <text x="452" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">126 rows, 26 of them held out. One</text>
-<text x="452" y="189" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">test row is worth 3.8%, so the 0.35</text>
-<text x="452" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">minute gap between my tree and my</text>
-<text x="452" y="227" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">kNN is noise. I am not ranking them.</text>
+<text x="452" y="189" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">journey 9 minutes out moves the MAE</text>
+<text x="452" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">0.35, the whole gap between my tree</text>
+<text x="452" y="227" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">and kNN. I am not ranking them.</text>
 <text x="210" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">True of every project ever written,</text>
 <text x="210" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">so it costs the reader nothing.</text>
 <text x="590" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">A reader can check every number,</text>

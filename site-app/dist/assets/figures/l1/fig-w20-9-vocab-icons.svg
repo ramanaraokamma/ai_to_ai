@@ -33,7 +33,7 @@
     <text x="405" y="176" font-size="18" fill="#14202B" text-anchor="middle">the gap</text>
     <text x="405" y="204" font-size="12" fill="#55636F" text-anchor="middle">training score minus</text>
     <text x="405" y="222" font-size="12" fill="#55636F" text-anchor="middle">test score</text>
-    <text x="405" y="244" font-size="12" fill="#6D28D9" text-anchor="middle">how much memorising</text>
+    <text x="405" y="244" font-size="12" fill="#6D28D9" text-anchor="middle">a sign of memorising</text>
 
     <rect x="486" y="58" width="146" height="200" rx="12" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
     <rect x="512" y="82" width="26" height="62" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>

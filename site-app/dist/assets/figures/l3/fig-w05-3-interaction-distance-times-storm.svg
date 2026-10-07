@@ -41,7 +41,7 @@
   <text x="524" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">6 km, storm:  6 &#215; 2 = 12</text>
   <text x="524" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C">one knob for 'far AND wet'</text>
   <text x="510" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">A distance weight plus a storm weight</text>
-  <text x="510" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">can never say 'worse together'.</text>
+  <text x="510" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">charges distance one fixed rate.</text>
   <text x="510" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">0.4663 &#247; 0.3269 = 1.43 times as costly</text>
   <text x="510" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B">Multiplying can.</text>
   <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Six cells, 2000 orders. The bottom-right corner is where the two problems meet.</text>

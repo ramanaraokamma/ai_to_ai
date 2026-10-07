@@ -210,7 +210,7 @@ Take `IF the message has 30 or more characters THEN spam` and start moving the n
 
 > **Every threshold in the world is a position on that slider, and somebody chose it** — by deciding which error they could live with. Usually without writing down anywhere that they had decided anything at all.
 
-And for any one stand-in, this trade-off does not go away: moving the threshold only swaps one kind of mistake for the other. What *can* shrink both kinds is a **better measurement** (as with the apple and the parcel earlier), and better models and more data sometimes help too. But the trade-off itself is a property of using a **stand-in** to guess at something you cannot see, and it will still be true in Week 35 when you are standing at your own AI fair booth explaining your own threshold to a stranger.
+And for any one stand-in, this trade-off does not go away: moving the threshold only swaps one kind of mistake for the other. What *can* shrink both kinds is a **better measurement** (as with the apple and the parcel below), and better models and more data sometimes help too. But the trade-off itself is a property of using a **stand-in** to guess at something you cannot see, and it will still be true in Week 35 when you are standing at your own AI fair booth explaining your own threshold to a stranger.
 
 ---
 

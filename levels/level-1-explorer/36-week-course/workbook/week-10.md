@@ -468,7 +468,7 @@ Come here only after you have tried every page. Open the box to check your work.
 
 **W3.** Because once you have read them, you cannot un-read them. Even without meaning to, you would write rules that happen to work on those ten, and the score would then be measuring your memory instead of your rulebook. Sealing it is how you protect yourself from fooling yourself.
 
-**W4.** A false alarm · a miss. *(Worth remembering which is worse: a miss means one scam message reaches you, so you must not click or reply, and you should show an adult; whether a miss or a false alarm is worse depends on the job. A false alarm means a real message from a friend is hidden in a junk folder you never open.)*
+**W4.** A false alarm · a miss. *(Worth remembering the cost of each: a miss means one scam message reaches you, so you must not click or reply, and you should show an adult. A false alarm means a real message from a friend is hidden in a junk folder you never open. Which one is worse depends on the job.)*
 
 **W5.** **Rule 2** — because the convention is **first match wins, checked top to bottom.** The order you write your rules in is itself part of the rulebook, which is why every rulebook needs a line saying which rule wins.
 

@@ -219,7 +219,7 @@ This section lists what to do before the lesson, and what to do if something goe
 - [ ] **Find the envelope.** Confirm with the student that the sealed envelope of 10 fresh messages from Week 9 exists and is unopened. Do not open it yourself.
 - [ ] **Print** the Week 10 workbook (Warm-Up, Practice Sets A and B, Puzzle, Think Deeper, Build It pages 10.3–10.6, Draw It, Self-Check) and have a plain sheet of paper ready for the 1-to-30 doubling table, which is done on paper, not in the workbook.
 - [ ] **Fold a sheet of A4 in half yourself, as many times as you can.** Do it now, in private. You will get 6 folds, possibly 7 with real effort, and you will not get 8. Knowing this in your hands makes the Hook work.
-- [ ] **Read Figure 10.1 and the "check 30" fact** in section 4 above until you can say it without notes.
+- [ ] **Read Figure 10.1 and the "check 30" fact** in section 1 above until you can say it without notes.
 - [ ] **Write the two board panels** (Figure 10.5 below) if you have a whiteboard you can prepare in advance.
 
 **5 minutes on the day**

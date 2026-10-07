@@ -618,7 +618,7 @@ Marking points: it must be an explicit written list, it must be short, and it mu
 
 - **Tell them the count per type up front:** "two missing, one duplicate, two impossible, four spellings." Removes the searching load and keeps the diagnosis.
 - **Do the first two faults together**, out loud, then hand over.
-- **Cut to eight rows** (delete Aug 21, Aug 24, Aug 26, Aug 26 — but then you lose the duplicate, so instead delete Aug 5, Aug 12, Aug 17 and keep the rest). Seven faults in nine rows (three spellings of Monday, the -3.2, the 88, the blank screen time and the duplicate) is a fair reduced target.
+- **Cut to nine rows** (delete Aug 5, Aug 12 and Aug 17 and keep the rest). Seven faults in nine rows (three spellings of Monday, the -3.2, the 88, the blank screen time and the duplicate) is a fair reduced target.
 - Skip the controlled vocabulary writing and just *say* it together.
 
 ### Variation — harder

@@ -117,13 +117,13 @@ from the assessment's module tags to this course's weeks — keep it beside you 
 
 ### The six outcomes, and why the checklist beats the score
 
-The score is one number. The checklist is 31 specific sentences, and every one of them is either
+The score is one number. The checklist is 32 specific sentences, and every one of them is either
 true of this student or not. That is far more useful.
 
 ![The six Level 1 outcomes, as a checklist](../figures/fig-w36-1-outcomes-certificate.svg)
 *Figure 36.3 — The six outcomes. "Not yet" is a legal answer and the only one that helps.*
 
-Two of the 31 items cannot be faked, and they are the two that actually matter:
+Two of the 32 items cannot be faked, and they are the two that actually matter:
 
 > - *"I have personally made a model that scored well on its own photos and failed on new ones."*
 > - *"I have said out loud, to a real person, something my own model is bad at."*
@@ -327,7 +327,7 @@ right. Leave it up all lesson.
 **Say this — part three, the six outcomes (5 minutes):**
 
 > "Underneath the score there's something more useful. Level 1 had six outcomes — six things you were
-> meant to be able to do by the end. There are thirty-one specific sentences under them, and each one
+> meant to be able to do by the end. There are thirty-two specific sentences under them, and each one
 > is either true about you or it isn't."
 
 **Do this:** show Figure 36.3 and read the six headings out loud. Then read these two sentences from
@@ -708,7 +708,7 @@ This table lists the common traps today and what to do about each.
 | Nobody actually tries to break the model | It feels rude to break a child's project | The student must issue the invitation *themselves*, holding out the pen: "Please try to break it — I'll write down what you did." Then go first yourself with the car keys, so the first attempt has already happened. |
 | The break-it log stays empty even though things were tried | Everyone is talking; nobody is writing | Log it as it happens, one line, mid-conversation. If the student is mid-answer, you hold the pen and write while they talk — that is the one moment you're allowed to help. |
 | Marking turns into an argument about a mark | The score suddenly feels like a judgement of them | Concede the mark, immediately and cheerfully, and move to the reason. "Have the mark. Now tell me the answer and the week." The reason is the thing you actually wanted. |
-| The student ticks every box on the checklist | The list is right there and ticking feels like passing | Ask *"show me where"* on three of them, chosen at random. One honest "not yet" appearing is a better result than 31 ticks. |
+| The student ticks every box on the checklist | The list is right there and ticking feels like passing | Ask *"show me where"* on three of them, chosen at random. One honest "not yet" appearing is a better result than 32 ticks. |
 | A "not yet" gets no week number | The list feels finished once the box is marked | No number, not finished. Use the module-to-week table above. A "not yet" with a week number is a plan; without one it's just a mood. |
 | The whole thing turns into a party and the paper never happens | It is the last week and everyone wants it to be nice | Paper first, always, before any applause. The celebration is better afterwards anyway — and it is a genuinely good day, so let it be one **after** part one. |
 | You mark generously because it's the last week | You want them to feel good, and they've worked hard | Generous marking is the one thing today that can actively hurt them, because Level 2 assumes these ideas are automatic. Mark straight, then celebrate loudly. The two are not in conflict. |
@@ -753,7 +753,7 @@ This section shows how to adjust the day for a student who is struggling, flying
 
 ### If they won't engage today
 
-The last week is a real risk for this. There are two very different reasons for it. Diagnose
+The last week is a real risk for this. There are three very different reasons for it. Diagnose
 first.
 
 **If it's nerves about the audience:** cut the audience, not the day. One adult, three minutes, or

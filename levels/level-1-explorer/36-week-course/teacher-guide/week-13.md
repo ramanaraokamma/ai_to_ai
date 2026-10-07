@@ -383,7 +383,7 @@ error                       how far off the number was
 >
 > And here is the bit I need you to get right, because it trips up grown-ups. **'Error' does not mean you did something wrong.** It just means *how far off*. A brilliant prediction still has an error — a tiny one. A prediction with an error of half a gram is a great prediction. You are not being told off. You are being measured."
 
-**Do this:** Draw the number line from Figure 13.3 on the board, with the two pins and the arrow.
+**Do this:** Draw the number line from Figure 13.5 on the board, with the two pins and the arrow.
 
 ![Error on a number line](../figures/fig-w13-3-error-number-line.svg)
 *Figure 13.5 — Error is the gap. Draw exactly this on the board.*

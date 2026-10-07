@@ -8,7 +8,7 @@
 
 | | |
 |---|---|
-| **Duration** | 70 minutes (60-minute and 75-minute versions both given in §Differentiation) |
+| **Duration** | 70 minutes (§Differentiation says what to cut if the student is struggling) |
 | **Type** | 🟦 teach — new idea, worked examples, a paper activity |
 | **Big idea** | A confidence score is how strongly the model **prefers** a class. It is a guess strength, not a promise — and the **margin** tells you how close the race was. |
 | **New vocabulary** | class balance · confidence score · margin · `other` class |
