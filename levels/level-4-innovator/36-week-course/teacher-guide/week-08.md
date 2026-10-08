@@ -1272,6 +1272,8 @@ With `W_xh = 1.0`, `W_hh = 0.5`, `b = 0`, note starts at 0:
 | f | `[1, 0, 0, 0]` with `W_hh = 0` | 0.7616, 0.0, 0.0, 0.0 |
 | g | `[1, 0, 0, 0]` with `W_hh = 1.0` | 0.7616, 0.642, 0.5663, 0.5126 |
 
+**Blank Figure 8.6 (workbook, part c).** Expected fill, pre then note in boxes 1 to 4: 1.0000 / 0.7616, 1.3808 / 0.8811, 0.4406 / 0.4141, 0.2071 / 0.2041.
+
 Worked line for c, step 2: `1.0×1 + 0.5×0.7616 = 1.3808`, `tanh(1.3808) = 0.8811`. Step 3: `0 + 0.5×0.8811 = 0.4406`, `tanh(0.4406) = 0.4141`.
 
 *What to draw out:* **d against e** (the sum of inputs is 1 in both; the final notes are 0.3634 and 0.7616). **f**: with `W_hh = 0` the cell has no memory: the spike is gone after one step. **g**: with `W_hh = 1.0` the note fades more slowly (0.5126 after four steps against 0.0896). Do not generalise: we tested one input and two values.

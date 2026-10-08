@@ -401,6 +401,11 @@ This page repeats the hand table from a new start to confirm you own the method.
 | 3 | ______ | ______ | ______ | ______ | ______ | ______ |
 | 4 | ______ | ______ | ______ | ______ | ______ | ______ |
 
+**Plot your table.** On each number line, draw a dot for `w` after steps 1, 2, 3 and 4 (the open dot is the start at 2), with the step number inside each dot.
+
+![A blank pair of number lines from minus 1 to 2 with a dashed target at 0 and an open dot at 2; the upper line is labelled plain SGD and the lower line momentum](../figures/fig-w02-6-blank-number-lines.svg)
+*Figure W2.1 — Blank number lines for page 2.8: plot where `w` lands after each step.*
+
 **S1.** On which step does momentum's `w` first go negative? ____ Does plain SGD ever go negative in these four steps? ____________
 
 **S2.** Check with torch: copy page 2.1's check block, change `1.0` to `2.0`, and set `range(4)` to stay at 4. I got: SGD ______________________________ momentum ______________________________
@@ -650,6 +655,7 @@ length of [5, 12]: tensor(13.)
 | 3 | 2.5600 | 1.0240 | 1.8400 | 7.9600 | 0.7960 | 0.1240 |
 | 4 | 2.0480 | 0.8192 | 0.2480 | 7.4120 | 0.7412 | -0.6172 |
 
+- **Plot.** Plain SGD dots at 1.6, 1.28, 1.024, 0.8192: they creep toward the target and stop short. Momentum dots at 1.6, 0.92, 0.124, -0.6172: step 3 is nearly on the target and step 4 is past it, on the negative side.
 - **S1.** Step 4. SGD never goes negative (0.8192 after four steps).
 - **S2.** Torch, four steps: SGD `[1.6, 1.28, 1.024, 0.8192]`, momentum `[1.6, 0.92, 0.124, -0.6172]`. Both match the table's four rows.
 - **S3.** Each SGD step multiplies `w` by **0.8** (`w - 0.1 x 2w = 0.8 w`). A number between 0 and 1 shrinks `w` without changing its sign, so no overshoot. With `lr = 1.1`: `w x (1 - 2.2) =` `w x (-1.2)`. Not between 0 and 1: it flips the sign **and** makes `w` 1.2 times bigger, so each jump lands farther away than the last (1.0, -1.2, 1.44, -1.728, ...).

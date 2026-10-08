@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Eight scripted requests meet the fences: only the turns cap and the money cap change the stop reason, the other six end with end_turn and an Error text</title>
+  <desc>A table of eight rows: 1 max_iterations, 2 budget_usd, 3 sandbox, 4 timeout, 5 allowlist, 6 confirmation, bad arguments and hostile calculate. Columns give the stop reason, the number of turns (3, 2, then 2 for every row) and the tool's reply. Rows 1 and 2 have ringed stop reasons, max_iterations and budget_exhausted, and a tick beside the result 2; the other six say end_turn and each has a cross beside an Error text such as PermissionError, timed out, no tool named, the human declined, bad arguments, and unsupported expression element.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Eight scripted requests, no model</text>
+  <text x="20" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">request</text>
+  <text x="180" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">stop reason</text>
+  <text x="340" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">turns</text>
+  <text x="400" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">what the tool handed back (a cross: it began Error:)</text>
+  <rect x="20" y="90" width="760" height="27" rx="0" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+  <text x="20" y="103" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">1 max_iterations</text>
+  <rect x="176" y="93" width="150" height="22" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="251" y="104" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">max_iterations</text>
+  <text x="348" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <polyline points="407.1,104 410.6,107.8 417.6,99.8" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="428" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">result: 2</text>
+  <rect x="20" y="119" width="760" height="27" rx="0" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+  <text x="20" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">2 budget_usd</text>
+  <rect x="176" y="122" width="150" height="22" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="251" y="133" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">budget_exhausted</text>
+  <text x="348" y="133" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <polyline points="407.1,133 410.6,136.8 417.6,128.8" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="428" y="133" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">result: 2</text>
+  <rect x="20" y="148" width="760" height="27" rx="0" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+  <text x="20" y="161" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">3 sandbox</text>
+  <rect x="176" y="151" width="150" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="251" y="162" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">end_turn</text>
+  <text x="348" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <polyline points="407,157 417,167" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="407,167 417,157" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="428" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">PermissionError: refused: '../escape.md'</text>
+  <rect x="20" y="177" width="760" height="27" rx="0" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+  <text x="20" y="190" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">4 timeout</text>
+  <rect x="176" y="180" width="150" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="251" y="191" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">end_turn</text>
+  <text x="348" y="191" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <polyline points="407,186 417,196" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="407,196 417,186" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="428" y="191" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">'slow' timed out.</text>
+  <rect x="20" y="206" width="760" height="27" rx="0" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+  <text x="20" y="219" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">5 allowlist</text>
+  <rect x="176" y="209" width="150" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="251" y="220" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">end_turn</text>
+  <text x="348" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <polyline points="407,215 417,225" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="407,225 417,215" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="428" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">no tool named 'delete_everything'.</text>
+  <rect x="20" y="235" width="760" height="27" rx="0" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+  <text x="20" y="248" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">6 confirmation</text>
+  <rect x="176" y="238" width="150" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="251" y="249" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">end_turn</text>
+  <text x="348" y="249" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <polyline points="407,244 417,254" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="407,254 417,244" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="428" y="249" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">the human declined this action.</text>
+  <rect x="20" y="264" width="760" height="27" rx="0" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+  <text x="20" y="277" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">bad arguments</text>
+  <rect x="176" y="267" width="150" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="251" y="278" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">end_turn</text>
+  <text x="348" y="278" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <polyline points="407,273 417,283" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="407,283 417,273" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="428" y="278" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">bad arguments for 'calculate'</text>
+  <rect x="20" y="293" width="760" height="27" rx="0" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1" stroke-linejoin="round"/>
+  <text x="20" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">hostile calculate</text>
+  <rect x="176" y="296" width="150" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="251" y="307" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">end_turn</text>
+  <text x="348" y="307" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <polyline points="407,302 417,312" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="407,312 417,302" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="428" y="307" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">ValueError: unsupported expression element: Call</text>
+  <text x="400" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Only the two ringed stop reasons differ. The other six read end_turn,</text>
+  <text x="400" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">because the scripted model was handed an error, read it and said ok.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The Error text, not the stop reason, names the fence (a scripted plan, not a model).</text>
+</svg>

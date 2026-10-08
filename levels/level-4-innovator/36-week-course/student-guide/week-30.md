@@ -65,6 +65,9 @@ You have spent twenty-nine weeks building things and looking at whether they wor
 - **Do two raters agree *beyond luck*?** That is Cohen's kappa.
 - **Does the judge change its answer when I only swap the order of the two things it compares?** If it does, it is telling you about *position*, not about the things.
 
+![Four boxes in order: freeze first, baseline first, keep the test out of the lessons, check the judge, each with a one-line reminder, and a panel saying to read every category](../figures/fig-w30-4-four-checks-before-a-score.svg)
+*Figure 30.4 — Four checks stand between a score and a claim, in the order you will meet them.*
+
 ### 🔢 The new maths: Cohen's kappa
 
 Two raters, **H** (strict) and **J** (lenient), each say *pass* or *fail* to the same 20 replies. Count the four kinds of pair:
@@ -636,6 +639,9 @@ Read it slowly.
 - The scan caught **none** of the five, because their highest overlap with any eval ticket is tiny.
 
 So is `23` better than `21`? No. It measures memory of the paraphrases. **A scan with a threshold is a dial**: set it lower and it removes harmless tickets too; set it at `0.95` and it leaves the near-copy in.
+
+![Seven shared words over nine in either gives 0.778, beside bars of 21, 22 and 23 out of 30 for three training sets and the note that the scan caught none of five paraphrases](../figures/fig-w30-5-overlap-and-what-it-missed.svg)
+*Figure 30.5 — Overlap counts words: the near-copy scores 0.778, and the five rewordings slipped past with overlap of at most 0.200.*
 
 ---
 

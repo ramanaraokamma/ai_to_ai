@@ -195,6 +195,13 @@ One question your index **cannot** answer (no shared letter pieces with any note
 
 Save it with `np.save`, load it back, and print `identical`: ____________
 
+### Part 3 — Shapes through the index (5 min)
+
+**Fill every dashed box in the figure below from your own run of `lsa.py`; the class notebook has 15 notes.**
+
+![Blank worksheet: six numbered boxes joined by arrows, from the letter-piece table to what np.argsort returns, each with an empty dashed box to write a shape in](../figures/fig-w25-6-blank-shape-at-each-stage.svg)
+*Figure W25.5 — Write the shape (or the length, or the count) of the data at each of the six stages.*
+
 ---
 
 ## 📏 Page 25.4 — Recall, the Control, and What the Table Does Not Show (20 min)
@@ -404,6 +411,8 @@ F. **Output:**
 G. `0.0`: `colour` and `color` are two different whole words, two different columns, with nothing in common (for the class words the plain table gave `optimizer`/`optimiser` `0.0`, and the letter-piece table `0.359`).
 
 **Part 2.** H. The rule used here is **14** directions for **15** notes, so for four notes `3` (`N - 1`). (Asking for all `4` also runs and keeps everything, `1.000` of the spread, so nothing is squeezed; `N - 1` makes sure at least one direction is dropped.) I. Note `0`, the optimizer note, at `0.992`: it shares most letter pieces even with the different spelling. J. **No.** A top score of `0.999` for `banana bread recipe` means the query happened to land near note 2 in a space with only 3 directions; it tells you nothing about understanding. A top score needs something to compare it to (a threshold tested on questions you know have no answer, which is Week 26). K. No fixed answer: check the rank is reported, the failing question is honestly named, and `identical` is `True`.
+
+**Part 3** (Figure W25.5, class notebook of 15 notes; your run should match). 1. `(15, 3906)`. 2. `(15, 14)`. 3. `1.000`: every row of `M` has length 1. 4. `(14,)` (`encode` gives `(1, 14)`; the `[0]` takes the one row). 5. `(15,)`: one score per note. 6. Three ids, `[1, 0, 2]` for `which optimiser was best`.
 
 ### Page 25.4
 

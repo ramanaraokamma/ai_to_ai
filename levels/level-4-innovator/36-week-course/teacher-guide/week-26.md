@@ -1172,6 +1172,8 @@ The program accepts **1, 2 and 5**; it should have rejected **2 and 5**. The sen
 
 ### Page 26.2 — The Threshold Strip
 
+*Workbook version (twelve letters, figure W26.5):* by score, `H 0.00 U`, `L 0.00 U`, `B 0.08`, `I 0.15`, `E 0.19`, `K 0.22 U`, `F 0.27 U`, `C 0.31`, `J 0.36`, `G 0.44`, `A 0.52`, `D 0.64` (`U` = not in the notes, the rest answerable). Its totals are in the workbook's own Answers page; the class example below uses a different set of letters.
+
 Answerable (10): `ABCDEGHIJM`. Unanswerable (4): `FKLN`.
 
 | line | refused but it HAD an answer (type 1) | answered but had NONE (type 2) | mistakes |

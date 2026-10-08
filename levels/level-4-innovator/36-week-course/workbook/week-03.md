@@ -473,6 +473,11 @@ for gradient in (1000, 1, 1e-3, 1e-6, 1e-8, 1e-9):
 | 1e-08 | ________ |
 | 1e-09 | ________ |
 
+**Plot it.** On the axes, put one point for each of the six rows of your table (the dotted guides mark the gradients), then join the points with a line.
+
+![Blank axes with gradient size from 1e-9 to 1000 across and the first step from 0 to 0.1 up, a dashed line at lr equal to 0.1, and six dotted vertical guides; no point is plotted](../figures/fig-w03-6-blank-epsilon-axes.svg)
+*Figure W3.1 — Blank axes for page 3.7: Adam's first step against the size of the gradient.*
+
 **E4.** For which gradients is the first step `lr` to five decimals? ________________________________. At what gradient does epsilon start to cost something? ________
 
 **E5.** Epsilon does two jobs: it stops ________ and it costs ________ . (Say **both**.)
@@ -730,6 +735,7 @@ Any one, with the last line pasted and a fix.
 | 1e-08 | 0.050000 |
 | 1e-09 | 0.009091 |
 
+- **Plot.** Points at (1000, 0.100000), (1, 0.100000), (0.001, 0.099999), (1e-06, 0.099010), (1e-08, 0.050000), (1e-09, 0.009091): a line lying on the dashed `lr` line for the first three or four points, then falling to half of `lr` at 1e-08 and almost to zero at 1e-09.
 - **E4.** `lr` to five decimals for gradients from 1000 down to 1; at 0.001 it is 0.099999 (accept "about lr"). Epsilon starts to cost something at about **1e-06** (0.099010) and bites hard at **1e-08**.
 - **E5.** It stops **dividing by zero** (`0 / 0` gives `nan`, mistake G) and it **costs** a smaller step when the gradient is as small as epsilon itself. Both.
 

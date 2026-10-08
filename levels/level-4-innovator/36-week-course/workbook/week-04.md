@@ -164,6 +164,13 @@ rate = 0.02 * ______ = ______
 
 **M5 — Plot it.** On graph paper: step on the bottom (0 to 50), rate up the side (0 to 0.02). Plot both columns, two colours. Then write **two things you notice**:
 
+**Use this graph paper:** plot the rate column of the cosine rule with one pen and the warm+cos column with another.
+
+![Blank graph paper: the bottom axis is the step from 0 to 50, the side axis is the rate from 0 to 0.02, and a small key has a dashed sample line for cosine only and a solid sample line for warm plus cosine; nothing is plotted](../figures/fig-w04-6-blank-rate-graph.svg)
+*Figure W4.3 — Blank axes for M5: nine points per column, joined.*
+
+Now write **two things you notice**:
+
 1. ______________________________________________________________
 
 2. ______________________________________________________________
@@ -455,7 +462,7 @@ Marking: allow the 3rd decimal on the multiplier and the 5th decimal place on th
 
 **M4.** `0 / 5 = 0`, so a rate of **0**. A zero rate does nothing, so the first step is wasted.
 
-**M5.** Any honest two. Good ones: "the two curves are almost the same after the ramp"; "warm+cos is higher in the middle, because its cosine started 5 steps later and so has fallen less by any given step, ending in the same place"; "both hit 0 at step 50"; "the warm+cos is a straight line up for 5 steps". (Check: at step 25 warm+cos is 0.01174, higher than cos at 0.01000.)
+**M5.** Any honest two. Good ones: "the two curves are almost the same after the ramp"; "warm+cos is higher in the middle, because its cosine started 5 steps later and so has fallen less by any given step, ending in the same place"; "both hit 0 at step 50"; "the warm+cos is a straight line up for 5 steps". (Check: at step 25 warm+cos is 0.01174, higher than cos at 0.01000.) On the graph paper: each column is nine points from the M2 table, joined; both lines end at 0 at step 50, and the warm+cos line starts at 0.00400 and climbs straight to 0.02000 by step 4.
 
 **M6.** Around step **25** (the middle, between about steps 20 and 30). A straight line is at **0.016** at step 10; the cosine is at **0.01809**. The cosine starts **slower** than a straight line.
 

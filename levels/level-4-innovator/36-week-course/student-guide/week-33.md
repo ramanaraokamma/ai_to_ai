@@ -62,6 +62,11 @@ Last week ended with "ten results is noisy, and I will not tell you by how much"
 
 Two of those parts are the ones people skip. A fix that stops the attack by breaking the agent is not a fix, so you re-test the happy path. And no fix removes every risk, so you write down what is left.
 
+The six parts in order, with the numbers from attack A1 against the scripted agent:
+
+![A row of six numbered boxes: attack, evidence, mechanism, fix, re-test twice, residual risk; below, in a dashed stand-in frame, attack A1 landed 15 of 50 times, and after patch 2 the attack landed 0 of 50 and the real save worked 50 of 50](../figures/fig-w33-4-red-team-finding.svg)
+*Figure 33.3 — A finding ends with two re-tests of the stand-in agent, the attack and the real task, and then the residual risk.*
+
 **A result is a count, and a count wobbles.** Each run of an attack against the stand-in is a flip of a weighted coin. Run it 20 times and count the "it worked" flips: you will not get the same count twice. How far apart can two honest counts be? That is the maths section, and it decides what you are allowed to say.
 
 **The scorecard for today** (what each attack is trying to do):
@@ -509,6 +514,9 @@ gullibility 1.0 vs 0.8, both layers (p 0.3 vs 0.24)   1000     310     225   85 
 ```
 
 The **big** gap is visible at every `n` in this run, but at `n = 20` only just (a gap of 7 against a bound of 5.9; the expected gap there is about the size of the bound, so another 20 runs could easily miss it). The **small** gap is invisible at 20, 50 and 200, and only shows at 1,000. At `n = 200` the counts are `62` against `54`: a difference of 8 that looks like something, but is well inside the noise bound of 18, so these runs cannot tell it from luck (the true gap is real, 0.30 against 0.24; 200 runs are too few to see it). **That is why 20 runs cannot see a small improvement.**
+
+![Two panels of the stand-in's counts on a log scale, each row a bar for the gap in counts and a black line for twice the combined wobble: the big gap passes its line at every n, the small gap passes it only at n 1000](../figures/fig-w33-5-can-runs-see-the-gap.svg)
+*Figure 33.4 — A gap is visible only when its bar passes the line: the big gap of the stand-in at every n, the small one only at 1,000 runs.*
 
 Now the report line, which you type. `line(...)` writes one finding with its noise bound. Then three uses: A1 before and after Patch 2, A2 before and after Patch 1, and the control: **A1 against itself on other seeds**. A fair comparison of a system with itself must say "no difference". If it does not, the bound is wrong.
 

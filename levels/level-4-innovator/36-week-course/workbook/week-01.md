@@ -157,6 +157,13 @@ ________________________________________________________________
         C  (lr = 1e-4)                          F  (lr = 1e-1)
 ```
 
+**Step 7 — draw the bars.** Fill in the two blanks with the constant guessers from page 1.3, then draw a bar for each run's final validation accuracy from your Step 3 table and a dashed vertical line at each guesser.
+
+![A blank chart with six empty dashed bar tracks labelled A to F with their learning rates, a horizontal axis from 0 to 100 percent, and two blanks above it for the constant guessers' accuracies](../figures/fig-w01-6-blank-six-bars.svg)
+*Figure W1.1 — Blank chart for Step 7: six bars and two dashed lines, drawn from your own numbers.*
+
+**Step 7b.** Which bars end on a dashed line? ____________  What does that tell you about those runs? ________________________________
+
 ---
 
 ## 🔮 Page 1.2 — Predict, Then Run
@@ -412,6 +419,8 @@ lr=0.1                       train 0.693  val 0.702  acc  46.9%
 **Step 5.** A: epoch 0 = **0.694**, final **0.693**, a flat line that never moved. F: epoch 0 = **12.786**, final **0.693**, a huge spike that fell all the way back to a coin. Tell them apart by looking at epoch 0 (or at the curve). Also A is the constant-"class 1" guesser (53.1%) and F the constant-"class 0" guesser (46.9%).
 
 **Step 6.** A and B: nearly flat lines near 0.69. C: a slow steady slope down, still falling at the end. D: a fast smooth drop to near zero. E: a faster drop, a little bumpier. F: starts very high, then drops and lies flat at 0.693.
+
+**Step 7.** The two blanks are **46.9** (always class 0, 169/360) and **53.1** (always class 1, 191/360). Bars: A 53.1%, B 55.3%, C 98.1%, D 99.4%, E 99.2%, F 46.9%. **Step 7b.** A ends on the 53.1 line and F on the 46.9 line: both are constant guessers that learned nothing. B (55.3%) is only just past a guesser.
 
 ### Page 1.2 — predict `lr=3e-3`
 

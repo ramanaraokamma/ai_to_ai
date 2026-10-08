@@ -348,6 +348,9 @@ first step out[:, 0] == h_n[0]? False
 
 Look at the last two comparisons: the last-step slice of `out` matches `h_n`, and the first-step slice does not. The last line prints `False` on purpose. The note after the *first* word is not the note after the *last* one.
 
+![A grid x of 2 sentences by 4 words with 3 numbers each goes through nn.RNN into out, 2 by 4 with 5 numbers each, whose last column becomes h_n of shape 1, 2, 5](../figures/fig-w08-4-x-out-and-h-n-shapes.svg)
+*Figure 8.4 — `out` keeps a note for every word, and `h_n` keeps only the last note of each sentence.*
+
 ---
 
 ## 🎲 Your Turn
@@ -499,6 +502,9 @@ step-by-step distance between the two sentences:
 ```
 
 Read the step-by-step distances at the bottom. After word 1 the distance is `0.0000`. Why? What have the two sentences read so far? When do they part ways?
+
+![Five bars of the distance between the two sentences' notes after each word, 0.0000, 0.9854, 0.6620, 0.2906 and 0.8842, with the final distance worked out from the two final states](../figures/fig-w08-5-distance-between-notes-by-word.svg)
+*Figure 8.5 — The distances `order.py` printed, and the last one checked by hand from the two final states.*
 
 > **⚠️ What this shows, and what it does not.** The weights here are seeded random numbers. The two final states are *different*, but they **mean nothing yet**. We showed that a recurrent state **can depend on the order**. We did not show that it understands anything. Teaching the state to mean something is the job of Weeks 10-13.
 

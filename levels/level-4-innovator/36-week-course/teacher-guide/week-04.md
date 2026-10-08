@@ -1139,7 +1139,7 @@ These are the answers for the workbook as shipped (CPU, one thread, seed 0, torc
 | 40 | 0.0955 | 0.00191 | 0.1170 | 0.00234 |
 | 50 | 0.0000 | 0.00000 | 0.0000 | 0.00000 |
 
-M3: progress (20 - 5) / (50 - 5) = 0.3333; angle 1.0472; cosine 0.5; multiplier 0.75; rate 0.015. M4: a rate of 0, so the first step is wasted. M6: fastest around step 25; a straight line is at 0.016 at step 10 and the cosine at 0.01809, so the cosine starts slower. M7: the script prints `0.004, 0.008, 0.012, 0.016` for steps 0 to 3; the table agrees (step 0 uses 0.004); `get_last_lr()` shows the rate the next step will use. Marking: allow the third decimal on the multiplier and the fifth on the rate; a student who writes 0 for the ramp at step 0 forgot the `+ 1`.
+M3: progress (20 - 5) / (50 - 5) = 0.3333; angle 1.0472; cosine 0.5; multiplier 0.75; rate 0.015. M4: a rate of 0, so the first step is wasted. M5: nine points per column from the M2 table, joined on the blank graph (Figure W4.3); both lines end at 0 at step 50, and the warm+cos line climbs from 0.00400 to 0.02000 by step 4 and stays above the cosine line from there to the end. M6: fastest around step 25; a straight line is at 0.016 at step 10 and the cosine at 0.01809, so the cosine starts slower. M7: the script prints `0.004, 0.008, 0.012, 0.016` for steps 0 to 3; the table agrees (step 0 uses 0.004); `get_last_lr()` shows the rate the next step will use. Marking: allow the third decimal on the multiplier and the fifth on the rate; a student who writes 0 for the ramp at step 0 forgot the `+ 1`.
 
 **Page 4.4** (`840 // batch`):
 

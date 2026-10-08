@@ -78,6 +78,11 @@ Add them: `3/6 x 1 + 3/6 x 1/3 = 0.500 + 0.167 = 0.667`. For `n` pairs shown the
 best possible  =  n/6 x 1  +  (6 - n)/6 x 1/(6 - n)  =  (n + 1) / 6
 ```
 
+The case `n = 3` drawn as the two halves you just added:
+
+![Six cards a to f, three ticked as on the page and three dashed as not on the page, leading to two boxes, copy it for 3/6 times 1 equals 0.500 and guess one in three for 3/6 times 1/3 equals 0.167, added to 0.667](../figures/fig-w24-4-ceiling-two-cases.svg)
+*Figure 24.3 — The ceiling is two cases added: the keys on the page are copied, the keys off the page are guessed.*
+
 That is `0.167, 0.333, 0.500, 0.667, 0.833, 1.000, 1.000` for `n = 0` to `6`. **Nothing a model does can beat this line**, however big it is. A score above it means noise or a leak. How much noise? With 500 test prompts, a score wobbles by about two to four points either way, so `0.686` at `n = 3` is not "above the ceiling".
 
 Call this line the **ceiling** (or the **best possible score**). You met the idea in Week 23 as a number for one dataset; today you compute it from the rules of the task, before training anything.
@@ -572,6 +577,11 @@ Two small prints, both measured:
 
 - **Direct is "not learned yet", not "impossible".** Trained for four times the steps (12,000), the direct model scored exact match `0.994`. On this task, with this model, the working bought **speed and reliability**: direct also got there with four times the steps (one seed, one task). We did not test whether that holds for harder tasks.
 - **The design of the working matters.** A leaner working that skips the "copy the two digits" step worked on only three seeds of five. On the failing seeds it writes a wrong working and then copies it faithfully into the answer. A faithful answer to a wrong working is still wrong.
+
+The same numbers, drawn: the two strings for one sum, the accuracy at each answer character, and the five seeds.
+
+![The sum 4211 plus 9 written directly and with working, paired bars for six answer characters with the direct bars at 1.0, 0.98, 0.82, 0.11, 0.11, 0.13 and the working bars all 1.0, and a table of exact match for five seeds of three designs](../figures/fig-w24-5-scratchpad-numbers.svg)
+*Figure 24.4 — Writing the working first lifts the last three answer characters from chance to certain; a leaner working failed on two of five seeds.*
 
 ### 6. The grammar: `grammar.py` (read it, do not type it)
 

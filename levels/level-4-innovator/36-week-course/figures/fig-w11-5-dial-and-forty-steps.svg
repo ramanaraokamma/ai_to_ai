@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Forty multiplications by a dial keep something only when the dial is near 1</title>
+  <desc>Six horizontal bars of the dial f = sigmoid(z) for scores z = -2, 0, 1, 2, 3 and 4, with a dashed line at 0.95. The dials are 0.1192, 0.5000, 0.7311, 0.8808, 0.9526 and 0.9820. Beside each, f to the power 40: 1.126e-37, 9.095e-13, 3.615e-06, 6.238e-03, 1.432e-01 and 4.838e-01. The two bars past the line (z = 3 and 4) are green with a tick marked keeps; the other four carry a cross marked gone. Numbers from block 1, Week 11.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">What a dial leaves after forty steps</text>
+  <text x="150" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">score z</text>
+  <text x="160" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">dial f = sigmoid(z)</text>
+  <text x="458" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">f</text>
+  <text x="552" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">f ** 40</text>
+  <line x1="435.5" y1="104" x2="435.5" y2="340" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="435.5" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">0.95</text>
+  <line x1="160" y1="340" x2="450" y2="340" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="160" y1="340" x2="160" y2="346" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="160" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="305" y1="340" x2="305" y2="346" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="305" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.5</text>
+  <line x1="450" y1="340" x2="450" y2="346" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="450" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <text x="150" y="123" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">z = &#8722;2</text>
+  <rect x="160" y="110" width="34.6" height="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="458" y="123" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">0.1192</text>
+  <text x="552" y="123" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">1.126e&#8722;37</text>
+  <polyline points="694,117 706,129" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="694,129 706,117" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="714" y="123" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" dominant-baseline="central">gone</text>
+  <text x="150" y="161" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">z = 0</text>
+  <rect x="160" y="148" width="145" height="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="458" y="161" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">0.5000</text>
+  <text x="552" y="161" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">9.095e&#8722;13</text>
+  <polyline points="694,155 706,167" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="694,167 706,155" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="714" y="161" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" dominant-baseline="central">gone</text>
+  <text x="150" y="199" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">z = 1</text>
+  <rect x="160" y="186" width="212" height="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="458" y="199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">0.7311</text>
+  <text x="552" y="199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">3.615e&#8722;06</text>
+  <polyline points="694,193 706,205" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="694,205 706,193" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="714" y="199" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" dominant-baseline="central">gone</text>
+  <text x="150" y="237" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">z = 2</text>
+  <rect x="160" y="224" width="255.4" height="26" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="458" y="237" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">0.8808</text>
+  <text x="552" y="237" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">6.238e&#8722;03</text>
+  <polyline points="694,231 706,243" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="694,243 706,231" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="714" y="237" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D" dominant-baseline="central">gone</text>
+  <text x="150" y="275" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">z = 3</text>
+  <rect x="160" y="262" width="276.3" height="26" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="458" y="275" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">0.9526</text>
+  <text x="552" y="275" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">1.432e&#8722;01</text>
+  <polyline points="693.7,275 698.2,279.9 707.2,269.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="714" y="275" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" dominant-baseline="central">keeps</text>
+  <text x="150" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">z = 4</text>
+  <rect x="160" y="300" width="284.8" height="26" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="458" y="313" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">0.9820</text>
+  <text x="552" y="313" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">4.838e&#8722;01</text>
+  <polyline points="693.7,313 698.2,317.9 707.2,307.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="714" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1B7A4B" dominant-baseline="central">keeps</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Only a dial of about 0.95 or more keeps anything. An untrained gate (z = 0) leaves 9e&#8722;13.</text>
+</svg>

@@ -76,6 +76,9 @@ None of the six reads the prompt. None needs a model. **That is how you test the
 
 A tool that fails is not a crash. It is a message the model gets to read, and today's worked run has exactly that at turn 3.
 
+![A model panel with perceive and decide, an arrow labelled tool call to a panel of your code with four steps, and a pink arrow labelled tool result back to the model](../figures/fig-w28-4-model-asks-code-decides.svg)
+*Figure 28.4 — The model only asks by name; looking up, checking, running and reporting the result are all your code.*
+
 ---
 
 ## 1. The four new pieces of syntax
@@ -414,6 +417,9 @@ How to read it:
 - Row 2 stops after 2 turns, not 1: the loop checks spend *before* each turn, so the turn that crosses the budget still happens. A budget is not a hard cap. It stops one call late.
 - The last two rows are not numbered fences. The missing argument comes from Python itself (the loop turns the `TypeError` into text), and the hostile text is refused by the calculator's own whitelist. The kit's message says `unsupported expression element: Call`; yours said `not allowed here: Call`. Same idea.
 - The last two lines are the point: we asked for `../escape.md`, and **nothing happened**. The sandbox holds no files, and nothing was written outside it. That is what a fence looks like.
+
+![Eight rows of scripted requests with their stop reason, turns and tool reply; only the first two stop reasons differ from end_turn and the other six show a cross beside an Error text](../figures/fig-w28-5-eight-requests-six-fences.svg)
+*Figure 28.5 — The printed table of the eight requests, drawn: the stop reason changes for two fences only, and the Error text names the rest.*
 
 ---
 

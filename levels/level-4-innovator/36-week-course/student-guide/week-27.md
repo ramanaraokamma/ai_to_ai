@@ -44,6 +44,9 @@ Say this to yourself before you start: *"This is the X-ray, not the grade. Nobod
 
 Why bother before Term 4? Because **Weeks 28 and 29 build an agent out of parts you made this term**: the harness and its budget guard (Week 23), the chunks, citations and the rule "retrieved text is data" (Week 26), and underneath those the cosine (Week 25) and the token count (Week 20). If one of them is soft, the agent is built on it.
 
+![Eight tiles for Weeks 19 to 26, each with one idea that should still be in your head and the marks that week carries on the paper: 10, 6, 8, 13, 8, 4, 12 and 14, which add to 75](../figures/fig-w27-4-what-each-week-leaves-behind.svg)
+*Figure 27.3 — One idea to say aloud for each of the eight weeks, and the marks each carries on the paper.*
+
 ---
 
 ## 🗺️ What is on the paper
@@ -232,6 +235,9 @@ You will be given the **marking sheet** (the answers, with working) and a pen of
 **Why at most two?** Because a list of eight redos is a list nobody does. Two is a plan.
 
 **A week needs a redo when you scored 60% or less of its marks.** The marking sheet says the exact number for each week. Weeks with few marks are thin: a flag on one of them means "ask yourself the spoken check first".
+
+![Eight bars, one per week, as long as the marks available (10, 6, 8, 13, 8, 4, 12, 14; total 75), each split at the redo line with the hand sum 0.6 times the marks, rounded down: 6, 3, 4, 7, 4, 2, 7, 8](../figures/fig-w27-5-marks-and-the-redo-line.svg)
+*Figure 27.4 — A week's redo line is 60% of its marks, rounded down; the hand sums sit beside the bars.*
 
 ### The remediation table
 

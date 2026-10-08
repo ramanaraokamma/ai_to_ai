@@ -1146,6 +1146,8 @@ The hand unit of block 2 with the forget dial changed to `sigmoid(2) = 0.8808`, 
 
 Slope back from step 3 to step 1: `f ** 2 = ` **0.7758**. With `f = sigmoid(0) = 0.5` instead: `c = 0.8909, 0.4454, 0.2227`, which is `100.0, 50.0, 25.0` per cent of step 1: **exactly halving, close to the RNN's note (`100.0, 47.7, 23.6`)**. **Workbook parts.** a: `g = tanh(0) = 0`, so `i x g = 0` and the memory only shrinks by `f`. b: the slope back is `f = 0.8808`, and over two steps `f x f = 0.7758` (the table's `77.6%`). c: with `f = 0.5` the percentages are `100.0, 50.0, 25.0`. d: `sigmoid(2)`. e: closest to `0.006`; `0.8808 ** 40 = 0.0062`.
 
+*Workbook Figure W11.6 (blank unit):* 1 memory track, 2 forget dial, 3 input dial, 4 candidate, 5 the add, 6 output dial. Accept "gate" for "dial"; parts 3 and 4 may be named in either order, as long as one is the input dial and the other the candidate.
+
 *What to draw out:* at `x = 0`, `i * g = 0.0759 x 0.0000 = 0`, so nothing is added and `c` just shrinks by `f`. *Common errors:* using `tanh` on the old `c` inside the update; adding `h` instead of `c`; using the step-1 `i` at step 2.
 
 ### Page 11.3 — The cell from scratch (from block 3)

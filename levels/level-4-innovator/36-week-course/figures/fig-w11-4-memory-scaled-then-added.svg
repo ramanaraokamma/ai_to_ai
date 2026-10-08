@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The LSTM memory is multiplied by the forget dial and then a new part is added, so the past survives</title>
+  <desc>Four boxes in a row for the memory c at steps 1 to 4: 0.8909, 0.8486, 0.8084, 0.7701, joined by arrows each marked times 0.9526. Under each box an upward arrow brings in what is added: at step 1 plus 0.9241 times 0.9640, marked written and highlighted; at steps 2 to 4 plus 0.0759 times 0.0000, dashed and marked nothing new. Under each column the share of step 1: 100.0, 95.3, 90.7 and 86.4 percent. A panel says the forget dial is sigmoid of 3, 0.9526, at every step, and the old memory only passes through that multiplication. Numbers from block 2, Week 11.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The memory is scaled, then added to</text>
+  <text x="40" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">memory track c</text>
+  <rect x="58" y="100" width="104" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="110" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">step 1</text>
+  <text x="110" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">0.8909</text>
+  <line x1="166" y1="118" x2="241" y2="118" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(241 118) rotate(0)"/>
+  <rect x="171" y="126" width="68" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="205" y="139" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215; 0.9526</text>
+  <line x1="110" y1="210" x2="110" y2="158" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(110 158) rotate(-90)"/>
+  <rect x="36" y="214" width="148" height="30" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="110" y="229" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">+ 0.9241 &#215; 0.9640</text>
+  <text x="110" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle" font-weight="600">i &#215; g: written</text>
+  <text x="110" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">100.0% of step 1</text>
+  <rect x="248" y="100" width="104" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="300" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">step 2</text>
+  <text x="300" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">0.8486</text>
+  <line x1="356" y1="118" x2="431" y2="118" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(431 118) rotate(0)"/>
+  <rect x="361" y="126" width="68" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="395" y="139" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215; 0.9526</text>
+  <line x1="300" y1="210" x2="300" y2="158" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 4"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(300 158) rotate(-90)"/>
+  <rect x="226" y="214" width="148" height="30" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="300" y="229" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">+ 0.0759 &#215; 0.0000</text>
+  <text x="300" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">i &#215; g: nothing new</text>
+  <text x="300" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">95.3% of step 1</text>
+  <rect x="438" y="100" width="104" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="490" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">step 3</text>
+  <text x="490" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">0.8084</text>
+  <line x1="546" y1="118" x2="621" y2="118" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(621 118) rotate(0)"/>
+  <rect x="551" y="126" width="68" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="585" y="139" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215; 0.9526</text>
+  <line x1="490" y1="210" x2="490" y2="158" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 4"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(490 158) rotate(-90)"/>
+  <rect x="416" y="214" width="148" height="30" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="490" y="229" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">+ 0.0759 &#215; 0.0000</text>
+  <text x="490" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">i &#215; g: nothing new</text>
+  <text x="490" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">90.7% of step 1</text>
+  <rect x="628" y="100" width="104" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="680" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">step 4</text>
+  <text x="680" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">0.7701</text>
+  <line x1="680" y1="210" x2="680" y2="158" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 4"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(680 158) rotate(-90)"/>
+  <rect x="606" y="214" width="148" height="30" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="680" y="229" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">+ 0.0759 &#215; 0.0000</text>
+  <text x="680" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">i &#215; g: nothing new</text>
+  <text x="680" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">86.4% of step 1</text>
+  <rect x="40" y="316" width="720" height="36" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">f = sigmoid(3) = 0.9526 at every step. The old memory is only multiplied by f.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">About 5% lost a step: 86.4% left at step 4, against 11.8% for the rewritten note.</text>
+</svg>

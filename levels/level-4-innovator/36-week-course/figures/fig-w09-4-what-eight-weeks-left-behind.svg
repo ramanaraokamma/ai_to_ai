@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Eight weeks left eight sets of skills, and Week 10 leans hardest on Weeks 8, 2 and 6</title>
+  <desc>Eight boxes in two rows of four, one per week. Week 1: the coin and the curve (loss 0.693 when guessing, read the whole curve). Week 2: SGD and momentum by hand. Week 3: Adam and typical size. Week 4: schedules and counting steps. Week 5: curing overfitting. Week 6: norm, road and clipping. Week 7: the sweep and the twice-the-spread rule. Week 8: the recurrent cell and the shapes of x, out and h_n. Weeks 8, 2 and 6 carry ringed numbers 1, 2 and 3, and an arrow below points to Week 10.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">What Weeks 1 to 8 left behind</text>
+  <rect x="20" y="66" width="178" height="110" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="34" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 1</text>
+  <text x="34" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">the coin and the curve</text>
+  <text x="34" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">loss 0.693 when guessing;</text>
+  <text x="34" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">read the whole curve</text>
+  <rect x="214" y="66" width="178" height="110" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="228" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 2</text>
+  <text x="228" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">SGD and momentum</text>
+  <text x="228" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">steps by hand; running</text>
+  <text x="228" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">average with 0.9</text>
+  <rect x="214" y="66" width="178" height="110" rx="12" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="370" cy="88" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="370" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="408" y="66" width="178" height="110" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="422" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 3</text>
+  <text x="422" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Adam and typical size</text>
+  <text x="422" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">root-mean-square;</text>
+  <text x="422" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">Adam's first step</text>
+  <rect x="602" y="66" width="178" height="110" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="616" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 4</text>
+  <text x="616" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">schedules and steps</text>
+  <text x="616" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">what a multiplier does;</text>
+  <text x="616" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">counting steps</text>
+  <rect x="20" y="188" width="178" height="110" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="34" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 5</text>
+  <text x="34" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">curing overfitting</text>
+  <text x="34" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">dropout in eval mode;</text>
+  <text x="34" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">copy.deepcopy snapshot</text>
+  <rect x="214" y="188" width="178" height="110" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="228" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 6</text>
+  <text x="228" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">norm, road, clipping</text>
+  <text x="228" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">slope of x + f(x);</text>
+  <text x="228" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">what clipping returns</text>
+  <rect x="214" y="188" width="178" height="110" rx="12" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="370" cy="210" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="370" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="408" y="188" width="178" height="110" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="422" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 7</text>
+  <text x="422" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">the sweep</text>
+  <text x="422" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">bigger than twice</text>
+  <text x="422" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">the spread?</text>
+  <rect x="602" y="188" width="178" height="110" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="616" y="216" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 8</text>
+  <text x="616" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">the recurrent cell</text>
+  <text x="616" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">bag versus order;</text>
+  <text x="616" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">shapes of x, out, h_n</text>
+  <rect x="602" y="188" width="178" height="110" rx="12" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="758" cy="210" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="758" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <line x1="400" y1="318" x2="400" y2="336" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(400 336) rotate(90)"/>
+  <text x="400" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Week 10 trains the Week 8 cell and leans most on the ringed weeks, in the order 1, 2, 3.</text>
+</svg>

@@ -59,6 +59,9 @@ We have no model in this room, so we make a stand-in that is fooled on purpose, 
 
 Layers 1 and 2 are *soft*: they change **how often**. Layer 3 is *hard*: it changes **what can happen at all**, because it is code that never reads the prompt. Stacking layers is called **defence in depth**. You stack the soft layers to lower how often; you rely on the hard one to bound how bad.
 
+![A chain from a planted note to a search result to the stand-in model to an order, with layers 1 and 2 bracketed under the first arrows and a wall for layer 3 before the order](../figures/fig-w29-4-note-travels-as-data.svg)
+*Figure 29.4 — The note arrives as ordinary text; layers 1 and 2 ask the model to cooperate, and layer 3 is a wall that never reads the prompt.*
+
 **The second idea is the bill.** Every turn re-sends the system prompt, the tool contracts and **everything said so far**. If each step adds about the same number of tokens, then the input on turn 1 is `n₀`, on turn 2 it is `n₀ + grow`, on turn 3 `n₀ + 2·grow`, and so on. Adding those up needs `1 + 2 + 3 + … + k`.
 
 Add `1 + 2 + … + 10`. Pair the ends: `1 + 10 = 11`, `2 + 9 = 11`, and so on. There are five pairs of 11, which is 55. In general `1 + 2 + … + k = k(k+1)/2`. For `k = 20` that is 210; for `k = 30` it is 465. So the total input is
@@ -347,6 +350,9 @@ order for a tool that does not exist: [('search_notes', False), ('delete_everyth
 Rewording made the attacker **better**: 32 became 69, because the scan's `0.5` discount no longer applies. It did not get past the sandbox: `landed 0` in both. And the order for `delete_everything` was answered by last week's allowlist fence.
 
 `find_imperative` is the only sentence shape the stand-in understands: `call`, `run` or `use`, then a tool name, then `(key="value")`. The stand-in cannot read English. So do **not** conclude that rewording "helps the attacker less" in plain English: that would be a limit of the stand-in, not a defence.
+
+![Bars out of 100 runs for obeyed, reached the sandbox and file landed in three set-ups, then obeyed and landed for the original and the reworded note](../figures/fig-w29-5-fences-and-reworded-note.svg)
+*Figure 29.5 — Every run was fooled; the sandbox and the human decide what lands, and a reworded note raises obeying from 32 to 69 without landing anything.*
 
 ---
 

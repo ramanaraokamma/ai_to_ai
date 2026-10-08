@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Both losses start at ln 28, then training loss keeps falling while validation flattens, so the gap grows to 0.543</title>
+  <desc>Seven pairs of bars for steps 0, 300, 500, 750, 1000, 1250 and 1499. Solid blue bars are the training loss: 3.349, 1.873, 1.558, 1.181, 0.999, 0.905, 0.894. Dashed outline bars are the validation loss: 3.351, 1.892, 1.647, 1.470, 1.417, 1.427, 1.437. A dashed pink line marks ln 28 = 3.332. Under each pair is the gap, validation minus train: 0.002, 0.019, 0.089, 0.289, 0.418, 0.522, 0.543. The bars start level and the validation bars stay tall while the train bars fall.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Train and validation loss, and the gap</text>
+  <rect x="112" y="60" width="22" height="14" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="140" y="67" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">train (text it studied)</text>
+  <rect x="330" y="60" width="22" height="14" rx="2" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="358" y="67" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">validation (text it never saw)</text>
+  <line x1="106" y1="270" x2="728" y2="270" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="100" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="106" y1="220" x2="728" y2="220" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="100" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <line x1="106" y1="170" x2="728" y2="170" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="100" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">2</text>
+  <line x1="106" y1="120" x2="728" y2="120" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="100" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">3</text>
+  <line x1="106" y1="103.4" x2="728" y2="103.4" stroke="#C42B8C" stroke-width="2" stroke-dasharray="8 4" stroke-linecap="round"/>
+  <text x="728" y="97.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="end">ln 28 = 3.332: knows nothing</text>
+  <rect x="120" y="102.5" width="28" height="167.5" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="152" y="102.4" width="28" height="167.6" rx="2" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="150" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <text x="150" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">3.349</text>
+  <text x="150" y="324" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">3.351</text>
+  <text x="150" y="342" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0.002</text>
+  <rect x="208" y="176.3" width="28" height="93.7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="240" y="175.4" width="28" height="94.6" rx="2" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="238" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">300</text>
+  <text x="238" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">1.873</text>
+  <text x="238" y="324" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">1.892</text>
+  <text x="238" y="342" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0.019</text>
+  <rect x="296" y="192.1" width="28" height="77.9" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="328" y="187.7" width="28" height="82.3" rx="2" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="326" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">500</text>
+  <text x="326" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">1.558</text>
+  <text x="326" y="324" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">1.647</text>
+  <text x="326" y="342" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0.089</text>
+  <rect x="384" y="210.9" width="28" height="59.1" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="416" y="196.5" width="28" height="73.5" rx="2" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="414" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">750</text>
+  <text x="414" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">1.181</text>
+  <text x="414" y="324" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">1.470</text>
+  <text x="414" y="342" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0.289</text>
+  <rect x="472" y="220.1" width="28" height="50" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="504" y="199.1" width="28" height="70.9" rx="2" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="502" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1000</text>
+  <text x="502" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0.999</text>
+  <text x="502" y="324" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">1.417</text>
+  <text x="502" y="342" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0.418</text>
+  <rect x="560" y="224.8" width="28" height="45.2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="592" y="198.6" width="28" height="71.4" rx="2" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="590" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1250</text>
+  <text x="590" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0.905</text>
+  <text x="590" y="324" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">1.427</text>
+  <text x="590" y="342" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0.522</text>
+  <rect x="648" y="225.3" width="28" height="44.7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="680" y="198.1" width="28" height="71.9" rx="2" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="678" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1499</text>
+  <text x="678" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">0.894</text>
+  <text x="678" y="324" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">1.437</text>
+  <text x="678" y="342" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#C42B8C" text-anchor="middle" font-weight="600">0.543</text>
+  <text x="100" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">step</text>
+  <text x="100" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">train</text>
+  <text x="100" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">validation</text>
+  <text x="100" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="end">gap</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">gap = validation &#8722; train. Both start within 0.02 of ln 28; the gap opens from step 500 on.</text>
+</svg>

@@ -216,6 +216,11 @@ The price is 1.00 per million tokens in and 5.00 per million out. Cost in **mill
 | 4 | 519 | 19 |
 | 5 | 566 | 20 |
 
+**Fill in the grid before you open the code: price each turn, then add each column.**
+
+![A blank grid with the five turns' tokens in and out printed and empty dashed boxes for in times 1, out times 5, their sum, the column totals and the dollars](../figures/fig-w28-6-blank-bill-grid.svg)
+*Figure 28.6 — The bill, turn by turn: tokens are given, every cost box is yours.*
+
 **Part 1 — the trace by hand (10 min).**
 
 (a) Turn 1 in millionths: `247 × 1 + 28 × 5 =` ______ → dollars: ______
@@ -478,6 +483,7 @@ Part 1:
 - (a) `247 × 1 + 28 × 5 = 247 + 140 =` **387** → **$0.000387**.
 - (b) Inputs **2195**, outputs **102**; `2195 × 1 + 102 × 5 = 2195 + 510 =` **2705** millionths → **$0.002705** (the printed `spend`).
 - (c) `415 − 247 =` **168**; the search result (the two notes' text) arrived as a tool result and is now part of the conversation that is re-sent.
+- Figure 28.6 grid: `in x 1` is **247, 415, 448, 519, 566** (total **2195**); `out x 5` is **140, 50, 125, 95, 100** (total **510**); the sums are **387, 465, 573, 614, 666** millionths (total **2705**), so **$0.002705**.
 
 Printed by the run:
 

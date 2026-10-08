@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Ten knobs and four set-up arguments feed one harness; changing one knob at a time makes the loss curve the witness</title>
+  <desc>A panel of ten knob names (lr, batch_size, optimizer, weight_decay, dropout, norm, residual, schedule, warmup_frac, clip) with lr ringed as the only one that moves this week, and a dashed panel of four fixed set-up names (depth, epochs, seed, verbose). An arrow leads from the knobs into a box labelled run, the harness, and a second arrow leads to a small loss curve that falls from 0.691 below a dashed line at 0.693.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Ten knobs, one harness, one witness</text>
+  <rect x="20" y="62" width="560" height="170" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="36" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">ten knobs: they change how it learns</text>
+  <rect x="30" y="102" width="104" height="32" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="4" stroke-linejoin="round"/>
+  <text x="82" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">lr</text>
+  <rect x="140" y="102" width="104" height="32" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="192" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">batch_size</text>
+  <rect x="250" y="102" width="104" height="32" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="302" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">optimizer</text>
+  <rect x="360" y="102" width="104" height="32" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="412" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">weight_decay</text>
+  <rect x="470" y="102" width="104" height="32" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="522" y="118" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">dropout</text>
+  <rect x="30" y="144" width="104" height="32" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="82" y="160" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">norm</text>
+  <rect x="140" y="144" width="104" height="32" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="192" y="160" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">residual</text>
+  <rect x="250" y="144" width="104" height="32" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="302" y="160" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">schedule</text>
+  <rect x="360" y="144" width="104" height="32" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="412" y="160" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">warmup_frac</text>
+  <rect x="470" y="144" width="104" height="32" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="522" y="160" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">clip</text>
+  <text x="36" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="start">lr (ringed): the only knob that moves this week</text>
+  <rect x="600" y="62" width="180" height="170" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="690" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">set-up: held fixed</text>
+  <rect x="630" y="98" width="120" height="26" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="111" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">depth</text>
+  <rect x="630" y="128" width="120" height="26" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="141" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">epochs</text>
+  <rect x="630" y="158" width="120" height="26" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="171" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">seed</text>
+  <rect x="630" y="188" width="120" height="26" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="201" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">verbose</text>
+  <line x1="300" y1="234" x2="300" y2="262" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(300 262) rotate(90)"/>
+  <rect x="20" y="264" width="560" height="56" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="300" y="283" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">run(...)</text>
+  <text x="300" y="303" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">the harness: the same code every time</text>
+  <line x1="582" y1="292" x2="618" y2="292" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(618 292) rotate(0)"/>
+  <rect x="620" y="250" width="160" height="90" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="636" y1="273.5" x2="766" y2="273.5" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <polyline points="636,273.6 647,294.1 658,316.3 680.1,320.5 724.1,321.2 766,320.7" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="636" cy="273.6" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="647" cy="294.1" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="658" cy="316.3" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="680.1" cy="320.5" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="724.1" cy="321.2" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="766" cy="320.7" r="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="700" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">loss curve</text>
+  <text x="766" y="268.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.693</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Change one knob at a time, so the loss curve is the witness.</text>
+</svg>

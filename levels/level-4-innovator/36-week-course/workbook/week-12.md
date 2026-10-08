@@ -264,6 +264,11 @@ Their sentence: *"Train fell from 3.332 to 0.906; validation fell to 2.331 at st
 
 Last line of the printout, `last training step (dropout on)`: ____________ . Why is it **different** from the train loss in the table? ___________________________________________
 
+**Plot your table on the axes below: mark both series, join the points, and ring the lowest validation point.**
+
+![Blank axes for loss against training steps 0 to 800 with a key for the train line (solid, circles) and the validation line (dashed, squares), and no data drawn](../figures/fig-w12-6-blank-loss-axes.svg)
+*Figure W12.6 — Axes for your own table: 7 points for train, 7 for validation.*
+
 ### Step 3 — read it
 
 **a.** `ln 28 =` ____________ . At step 800, is your validation loss above or below it? ____________ What does that say about how the model does on names it has not seen? ___________________________________________
@@ -477,6 +482,8 @@ Seed 0 table:
 | 800 | 0.906 | 3.417 |
 
 `last training step (dropout on)` is **1.001**: it is the number the training loop computed with dropout **on**, while the table is measured with dropout **off** (`model.eval()`).
+
+*Figure W12.6:* train points `(0, 3.346) (100, 1.960) (200, 1.431) (300, 1.103) (400, 0.984) (600, 0.921) (800, 0.906)`; validation points `(0, 3.349) (100, 2.308) (200, 2.544) (300, 2.880) (400, 3.077) (600, 3.314) (800, 3.417)`; ring the validation point at step 100 (`2.308`); a dashed line at `3.332` (`ln 28`) passes just above the step-600 point (`3.314`) and below the step-800 point (`3.417`).
 
 **a.** `ln 28 = 3.332`. The step-800 validation loss `3.417` is **above** it, so on names it has not seen the model does worse than a model that knows nothing: it is confident and wrong. **b.** Prediction 1: validation is bigger. Prediction 2: **down and then up** (lowest among the rows at step 100). The "what surprised you" line is yours; a student who predicted "keeps falling" and says so is doing it right. **c.** `3.417 - 0.906 = ` **2.511**. Model sentence: *"Train fell from 3.346 to 0.906 while validation fell to 2.308 at step 100 and then rose to 3.417, above the 3.332 of a model that knows nothing. The program has memorised the 200 names."* **d.** "Around step 100" is the answer the table supports (the lowest validation among the printed rows, `2.308`). Any step with a reason from the table is fine; the recipe keeps 800 because next week's model needs it, and that is **not** the best stopping point. **e.** Any two of steps 200, 300, 400, 600, 800 (validation at 200 is already above step 100's `2.308`).
 

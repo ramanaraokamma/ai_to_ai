@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A blank chart: draw four chances as bars, mark their running totals, and fill the circle of each letter that top-p keeps</title>
+  <desc>Left, empty axes from 0 to 0.6 with four dotted slots for the 1st to 4th letter. Right, four empty lines from 0 to 1, labelled after the 1st, 2nd, 3rd and 4th letter, with a dashed marker at p equal to 0.9 and an empty circle at the end of each line under the heading kept. No bar, mark or ring is drawn.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Blank: top-p by hand, scores 2, 1, 0.5, 0</text>
+  <text x="230" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">chance of each letter</text>
+  <line x1="70" y1="300" x2="390" y2="300" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="62" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="70" y1="233.3" x2="390" y2="233.3" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="62" y="237.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.2</text>
+  <line x1="70" y1="166.7" x2="390" y2="166.7" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="62" y="170.7" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.4</text>
+  <line x1="70" y1="100" x2="390" y2="100" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="62" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.6</text>
+  <line x1="70" y1="300" x2="390" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="70" y1="100" x2="70" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="86" y="104" width="48" height="192" rx="4" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="2 5"/>
+  <text x="110" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1st</text>
+  <rect x="162" y="104" width="48" height="192" rx="4" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="2 5"/>
+  <text x="186" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2nd</text>
+  <rect x="238" y="104" width="48" height="192" rx="4" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="2 5"/>
+  <text x="262" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3rd</text>
+  <rect x="314" y="104" width="48" height="192" rx="4" fill="none" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="2 5"/>
+  <text x="338" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4th</text>
+  <text x="230" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">letters, best score first</text>
+  <text x="630" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">running total</text>
+  <text x="758" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">kept?</text>
+  <line x1="520" y1="106" x2="520" y2="296" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="520" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="630" y1="106" x2="630" y2="296" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="630" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.5</text>
+  <line x1="740" y1="106" x2="740" y2="296" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="740" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1.0</text>
+  <line x1="718" y1="106" x2="718" y2="296" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="718" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">p = 0.9</text>
+  <text x="508" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">after 1st</text>
+  <line x1="520" y1="140" x2="740" y2="140" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="758" cy="140" r="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="508" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">after 2nd</text>
+  <line x1="520" y1="190" x2="740" y2="190" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="758" cy="190" r="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="508" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">after 3rd</text>
+  <line x1="520" y1="240" x2="740" y2="240" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="758" cy="240" r="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="508" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">after 4th</text>
+  <line x1="520" y1="290" x2="740" y2="290" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="758" cy="290" r="12" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Draw each bar, mark each running total, fill the circle of each letter kept at p = 0.9.</text>
+</svg>

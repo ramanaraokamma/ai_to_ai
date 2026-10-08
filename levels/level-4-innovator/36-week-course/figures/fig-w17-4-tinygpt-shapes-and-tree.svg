@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>TinyGPT is a tree: two tables, four Blocks, a norm and an output layer, with 64 places of width 128 flowing through</title>
+  <desc>A left-to-right row of boxes. Character ids with shape (32, 64) go into two tables, tok with 28 rows and pos with 64 rows, then through a stack of four Block boxes, a last layer norm ln_f and an output layer head, and come out as 28 scores per place with shape (32, 64, 28). Shape chips below read (32, 64, 128) after the tables and after the blocks, and the last norm keeps the same shape. Two rows of chips list the children of the model: tok, pos, blocks, ln_f, head, and the children of one Block: ln1, q, k, v, proj, ln2, up, act, down.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">TinyGPT: shapes in, shapes out</text>
+  <rect x="40" y="90" width="70" height="80" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="75" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">ids</text>
+  <line x1="110" y1="130" x2="132" y2="130" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(132 130) rotate(0)"/>
+  <rect x="136" y="90" width="120" height="80" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="144" y="98" width="104" height="32" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="196" y="114" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">tok: 28 rows</text>
+  <rect x="144" y="134" width="104" height="32" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="196" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">pos: 64 rows</text>
+  <line x1="256" y1="130" x2="278" y2="130" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(278 130) rotate(0)"/>
+  <rect x="282" y="86" width="130" height="88" rx="8" fill="#F5F8FA" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="292" y="91" width="110" height="18" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="347" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Block 1</text>
+  <rect x="292" y="113" width="110" height="18" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="347" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Block 2</text>
+  <rect x="292" y="135" width="110" height="18" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="347" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Block 3</text>
+  <rect x="292" y="157" width="110" height="18" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="347" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">Block 4</text>
+  <line x1="412" y1="130" x2="434" y2="130" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(434 130) rotate(0)"/>
+  <rect x="438" y="100" width="70" height="60" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="473" y="130" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">ln_f</text>
+  <line x1="508" y1="130" x2="530" y2="130" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(530 130) rotate(0)"/>
+  <rect x="534" y="100" width="80" height="60" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="574" y="130" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">head</text>
+  <line x1="614" y1="130" x2="636" y2="130" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(636 130) rotate(0)"/>
+  <rect x="640" y="90" width="120" height="80" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="700" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">28 scores</text>
+  <text x="700" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">per place</text>
+  <text x="75" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">shape out</text>
+  <rect x="35" y="204" width="80" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="75" y="217" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(32, 64)</text>
+  <rect x="140" y="204" width="112" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="196" y="217" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(32, 64, 128)</text>
+  <rect x="291" y="204" width="112" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="347" y="217" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(32, 64, 128)</text>
+  <text x="473" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">same shape</text>
+  <rect x="640" y="204" width="120" height="26" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="700" y="217" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">(32, 64, 28)</text>
+  <text x="35" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" dominant-baseline="central">children of the model:</text>
+  <rect x="215" y="249" width="38" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="234" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">tok</text>
+  <rect x="261" y="249" width="38" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="280" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">pos</text>
+  <rect x="307" y="249" width="62" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="338" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">blocks</text>
+  <rect x="377" y="249" width="46" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">ln_f</text>
+  <rect x="431" y="249" width="46" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="454" y="262" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">head</text>
+  <text x="35" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" dominant-baseline="central">children of one Block:</text>
+  <rect x="215" y="293" width="38" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="234" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">ln1</text>
+  <rect x="261" y="293" width="22" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="272" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">q</text>
+  <rect x="291" y="293" width="22" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="302" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">k</text>
+  <rect x="321" y="293" width="22" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="332" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">v</text>
+  <rect x="351" y="293" width="46" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="374" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">proj</text>
+  <rect x="405" y="293" width="38" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="424" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">ln2</text>
+  <rect x="451" y="293" width="30" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="466" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">up</text>
+  <rect x="489" y="293" width="38" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="508" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">act</text>
+  <rect x="535" y="293" width="46" height="26" rx="6" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="558" y="306" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">down</text>
+  <text x="400" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">32 windows of 64 character ids; d = 128; nothing here is trained.</text>
+</svg>

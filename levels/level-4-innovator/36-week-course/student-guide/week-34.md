@@ -106,6 +106,9 @@ one case is worth 0.04 of the score; a six-case category moves by 0.17 per case
 
 So one case is worth `0.04` of the score, and a category of six cases moves by `0.17` for each case. Two versions of your system must differ by **many** cases before a gap is more than noise. That is why the capstone leans on **per-category tables and named failures**, and not on one headline number.
 
+![A row of 25 cells with 17 filled and the 18th half filled, a bracket from 15.2 to 19.8 passes around the expected 17.5, and a hand sum 25 times 0.70 times 0.30 equals 5.25, square root 2.29. Two small panels show one case as 0.04 of 25 and 0.17 of six.](../figures/fig-w34-5-twenty-five-cases-wobble.svg)
+*Figure 34.5 — On 25 cases a score of about 17.5 wobbles by 2.29 cases, and one case is worth 0.04 of the score.*
+
 > **A sentence to keep:** *one case is never a finding; a whole category moving, with the failing cases named, is.*
 
 Two cautions, so you do not over-trust the formula: it is a **rule of thumb** that treats your cases as a sample of the questions your user might ask; and it ignores that both versions see the *same* 25. Use it as "about".
@@ -340,6 +343,9 @@ The scorer gives **no partial credit**: half an answer is usually useless. Then 
 - `refuse_all` says "NOT IN NOTES" to everything. It is the **floor**: the score a system earns by saying nothing.
 - `oracle` says exactly the needles of each case. It should score everything.
 - `echo` repeats the question. A scorer that gives `echo` anything above zero is leaking the answer into the question.
+
+![Five boxes in a row, numbered 1 to 5: must refuse, refused, needles, citation, cited equals fetched. Boxes 2 to 5 each drop to a red cross naming one way to fail, and after box 5 an arrow leads to PASS.](../figures/fig-w34-4-scorer-check-order.svg)
+*Figure 34.4 — The scorer checks in a fixed order: the first failure ends the case, and there is no partial credit.*
 
 ```python
 # s5_scorer.py - Week 34 block S5: the scorer, and a test OF the scorer. Three fake systems stand in for a real one; none of them answers anything.

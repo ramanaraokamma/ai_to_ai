@@ -171,6 +171,11 @@ In this page `W_xh = 1.0` and `W_hh = 0.5`. The note **starts at 0**. For each w
 | 3 | 0 | ____________ | ____________ |
 | 4 | 0 | ____________ | ____________ |
 
+**Draw part (c) into the four boxes: write each pre and each note, rounded to four decimals.**
+
+![Blank page showing the recurrent cell four times with inputs 1, 1, 0, 0 and empty boxes for each pre and each note](../figures/fig-w08-6-blank-unrolled-cell-part-c.svg)
+*Figure 8.6 — Blank: the same cell four times for x = [1, 1, 0, 0]; the notes carry from box to box.*
+
 **(d) and (e): the order swap.** Only two steps each. The **sum** of the inputs is 1 both times.
 
 | Part | x | note after step 1 | note after step 2 |
@@ -627,6 +632,7 @@ With `W_xh = 1.0`, `W_hh = 0.5`, bias 0, note starts at 0.
 | f | `[1, 0, 0, 0]`, `W_hh = 0` | | 0.7616, 0.0, 0.0, 0.0 |
 | g | `[1, 0, 0, 0]`, `W_hh = 1.0` | | 0.7616, 0.642, 0.5663, 0.5126 |
 
+- **Figure 8.6 (blank unrolled cell, part c).** Boxes 1 to 4 hold pre / note: 1.0000 / 0.7616, then 1.3808 / 0.8811, then 0.4406 / 0.4141, then 0.2071 / 0.2041. Each note is carried into the next box as the old note.
 - **d-e question.** Both sums are **1**. The final notes are **0.3634** and **0.7616**. Not the same: *the sum (what a bag sees) is identical, the note is not; the note depends on the order.*
 - **(f).** The spike is gone after one step: with `W_hh = 0` the cell does not use the old note, so it has no memory.
 - **(g).** 0.5126 against 0.0896: the note fades **more slowly** with the bigger `W_hh`. May say: for this one input and these two values, the spike lasted longer. May not: that a bigger `W_hh` is better, or anything about other inputs.

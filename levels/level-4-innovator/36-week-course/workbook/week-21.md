@@ -349,6 +349,12 @@ Tick, before you run anything:
 
 **B1. The chapter's Fingerprint card** (`the baker opened her door` and seven variants). Run `card.py` and copy: lines that match line 1 raw: ________ ; after `.strip()`: ________ .
 
+**Fill in the grid before you run `card.py`.** Tick A, B and C for each of the eight lines of the chapter's card.
+
+![A blank grid of eight card lines with three empty dashed tick boxes each, headed A md5 says same as written, B same after strip, and C a human says same thing](../figures/fig-w21-6-blank-fingerprint-card.svg)
+
+*Figure 21.5 — Three columns of empty boxes: what md5 says, what md5 says after `.strip()`, and what a person says.*
+
 **B2. Run `dedup.py`.** Copy:
 
 | Quantity | My run printed |
@@ -823,7 +829,7 @@ leaked: ['raise NotImplementedError']
 
 **A1.** **A** = lines 1 and 3; **B** = lines 1, 3, 4, 7; **C** = lines 2 (a capital), 6 (a doubled space) and possibly 8 (a full stop) and 5 (a different word, so a different sentence; accept a reasoned yes or no). **A2.** Distinct as written: **8**. After `.strip()` and the 12-character filter: **8** lines left, **4** distinct, **4** repeats = **50.0%**. Without the length filter (13 stripped lines): distinct are `import os`, `raise NotImplementedError`, `x = compute_total(items, tax)`, `return None`, `pass`, `y = compute_total(items, tax)`, `if value is None: return default` = **7**, so **6** repeats = **46.2%**, and short lines like `pass` and `return None` repeat innocently (the first count, as written, has 8 distinct because of the trailing space in line 12). Leak: **1** (`raise NotImplementedError`). **A3.** **No**: one letter changed means a completely different fingerprint, so md5 only finds **exact** copies.
 
-**B1.** Chapter card: raw lines 1 and 2; after `.strip()` lines 1, 2, 4, 6. **B2.** Reference (your values should match exactly):
+**B1.** Chapter card: raw lines 1 and 2; after `.strip()` lines 1, 2, 4, 6 (Figure 21.5: column A lines 1, 2; column B lines 1, 2, 4, 6; column C lines 3, 7, 8, and line 5 is a different sentence, so accept a reasoned yes or no). **B2.** Reference (your values should match exactly):
 
 ```text
 training lines (25+ characters): 55978   distinct fingerprints: 50155

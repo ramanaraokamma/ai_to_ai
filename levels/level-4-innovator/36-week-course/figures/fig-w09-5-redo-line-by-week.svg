@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A week needs a redo when you score under 60% of its marks, which is the dashed line</title>
+  <desc>Eight bars of marks available per week: Week 1 is 11, Week 2 is 10, Week 3 is 10, Week 4 is 9, Week 5 is 8, Week 6 is 8, Week 7 is 7 and Week 8 is 12, adding to 75. A dashed line across each bar marks 60% of its marks: 6.6, 6.0, 6.0, 5.4, 4.8, 4.8, 4.2 and 7.2. Under each bar, redo if marks are at most 6, 5, 5, 5, 4, 4, 4 and 7.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Where each week's redo line sits</text>
+  <line x1="70" y1="96" x2="70" y2="262" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="70" y1="262" x2="780" y2="262" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="65" y1="262" x2="70" y2="262" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="61" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="65" y1="218" x2="70" y2="218" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="61" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">4</text>
+  <line x1="65" y1="174" x2="70" y2="174" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="61" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">8</text>
+  <line x1="65" y1="130" x2="70" y2="130" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="61" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">12</text>
+  <text x="36" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 36 180)">marks available</text>
+  <rect x="94" y="141" width="48" height="121" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="118" y="133" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">11</text>
+  <line x1="88" y1="189.4" x2="148" y2="189.4" stroke="#C42B8C" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="118" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Week 1</text>
+  <text x="118" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.6 &#215; 11</text>
+  <text x="118" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">= 6.6</text>
+  <text x="118" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">redo if &#8804; 6</text>
+  <rect x="182" y="152" width="48" height="110" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="206" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">10</text>
+  <line x1="176" y1="196" x2="236" y2="196" stroke="#C42B8C" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="206" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Week 2</text>
+  <text x="206" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.6 &#215; 10</text>
+  <text x="206" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">= 6.0</text>
+  <text x="206" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">redo if &#8804; 5</text>
+  <rect x="270" y="152" width="48" height="110" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="294" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">10</text>
+  <line x1="264" y1="196" x2="324" y2="196" stroke="#C42B8C" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="294" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Week 3</text>
+  <text x="294" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.6 &#215; 10</text>
+  <text x="294" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">= 6.0</text>
+  <text x="294" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">redo if &#8804; 5</text>
+  <rect x="358" y="163" width="48" height="99" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="382" y="155" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">9</text>
+  <line x1="352" y1="202.6" x2="412" y2="202.6" stroke="#C42B8C" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="382" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Week 4</text>
+  <text x="382" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.6 &#215; 9</text>
+  <text x="382" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">= 5.4</text>
+  <text x="382" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">redo if &#8804; 5</text>
+  <rect x="446" y="174" width="48" height="88" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="470" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">8</text>
+  <line x1="440" y1="209.2" x2="500" y2="209.2" stroke="#C42B8C" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="470" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Week 5</text>
+  <text x="470" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.6 &#215; 8</text>
+  <text x="470" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">= 4.8</text>
+  <text x="470" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">redo if &#8804; 4</text>
+  <rect x="534" y="174" width="48" height="88" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="558" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">8</text>
+  <line x1="528" y1="209.2" x2="588" y2="209.2" stroke="#C42B8C" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="558" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Week 6</text>
+  <text x="558" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.6 &#215; 8</text>
+  <text x="558" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">= 4.8</text>
+  <text x="558" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">redo if &#8804; 4</text>
+  <rect x="622" y="185" width="48" height="77" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="646" y="177" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">7</text>
+  <line x1="616" y1="215.8" x2="676" y2="215.8" stroke="#C42B8C" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="646" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Week 7</text>
+  <text x="646" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.6 &#215; 7</text>
+  <text x="646" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">= 4.2</text>
+  <text x="646" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">redo if &#8804; 4</text>
+  <rect x="710" y="130" width="48" height="132" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
+  <text x="734" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">12</text>
+  <line x1="704" y1="182.8" x2="764" y2="182.8" stroke="#C42B8C" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="734" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">Week 8</text>
+  <text x="734" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.6 &#215; 12</text>
+  <text x="734" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">= 7.2</text>
+  <text x="734" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">redo if &#8804; 7</text>
+  <text x="90" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">11 + 10 + 10 + 9 + 8 + 8 + 7 + 12 = 75 marks</text>
+  <line x1="440" y1="96" x2="476" y2="96" stroke="#C42B8C" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="484" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">60% of the marks</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A week needs a redo when you earn under 60% of its marks; circle at most two.</text>
+</svg>

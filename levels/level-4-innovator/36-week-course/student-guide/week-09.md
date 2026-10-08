@@ -86,6 +86,9 @@ Do not try to learn everything the night before; just find out which lines are s
 | 7 | Say whether a gap is bigger than twice the spread. Use `itertools.product` to list a grid. Write one row of the playbook: SYMPTOM → CHECK → ACTION. | 7.3, 7.4 |
 | 8 | Say why a bag of words cannot tell two orders apart. Give the shapes of `x`, `out` and `h_n`. Unroll a cell by hand. | 8.3, 8.4 |
 
+![Eight boxes, one per week, each naming what that week left behind, with Weeks 8, 2 and 6 ringed 1, 2, 3 as the ones Week 10 leans on](../figures/fig-w09-4-what-eight-weeks-left-behind.svg)
+*Figure 9.4 — The eight weeks side by side; Week 10 leans hardest on the ringed three.*
+
 > **Do not** stay up late. A tired head does the arithmetic worse than a rested one, and one night cannot teach you what eight weeks did not.
 
 ---
@@ -244,6 +247,9 @@ Homework turns your marks into a plan of at most two redos. You will be given th
 **Why at most two?** Because a list of eight redos is a list nobody does. Two is a plan.
 
 **A week needs a redo when you scored under 60% of its marks.** The marking sheet says the exact number of marks for each week.
+
+![Eight bars of marks available per week, 11, 10, 10, 9, 8, 8, 7 and 12, each with a dashed line at 60% and the redo-if mark under it](../figures/fig-w09-5-redo-line-by-week.svg)
+*Figure 9.5 — The 75 marks split by week, with the 60% line worked out for each.*
 
 ### The remediation table
 

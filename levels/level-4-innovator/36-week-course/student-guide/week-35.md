@@ -317,6 +317,9 @@ Now say the sentence aloud and write it on your card, **both numbers**:
 
 **Your routing rule, in one sentence:** *a number in the question means a sum is probably needed, so use the agent; otherwise retrieve.* Before you read the code, write **your own** rule for **your** two components on a card. That sentence goes in your report, and it will be measured below.
 
+![A question enters question_guard; a guard hit goes to the refuse path. Otherwise route_of sends a question with a number to the agent path and the rest to the retrieve path, both labelled stand-in, not a model. All three paths end in an Answer with 12 fields and then a trace line.](../figures/fig-w35-4-spine-guard-route-path.svg)
+*Figure 35.4 — The spine's order: guard first, then the route, then one of three paths, then the trace line.*
+
 ```python
 # s4_spine.py - Week 35 block S4: M4. src/guards.py and src/spine.py, and a smoke test of the paths. STAND-IN, NOT A MODEL: see the labels inside.
 Path("capstone34/src/guards.py").write_text(r'''# src/guards.py - the question guard and the redactor. Everything here is plain Python; none of it is a model.
@@ -723,6 +726,9 @@ the score: 17 passed of 25 = 0.68 | 18 of 25 would have been 0.72
 If one is `MISSED`, **say so**, with `n`: *"I promised 0.70 and measured 17 of 25, 0.68; 18 would have met it."* Do **not** edit §6. A promise changed after the measurement is not a promise, and the report is judged on whether it says what happened. (You may add a **v2 budget** with a written reason; the original stays above it.)
 
 The `0.0006 s` p95 is a scripted function finishing fast. It is *kept* and it means nothing: write "stand-in milliseconds" next to it, and never use it to say the system is fast.
+
+![Four horizontal bars against a dashed line at headroom 1.0: mean cost 2.21 kept, worst task 2.02 kept, score 0.97 just short and marked MISSED, refusals 1.00 kept.](../figures/fig-w35-5-promise-headroom.svg)
+*Figure 35.5 — Each promise read back as headroom: the score, 17 of 25 against 0.70, falls one case short.*
 
 ---
 

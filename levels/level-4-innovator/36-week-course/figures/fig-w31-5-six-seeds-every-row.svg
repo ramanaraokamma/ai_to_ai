@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Across six seeds each method moves by a few tickets and a different category falls each time</title>
+  <desc>A dot chart of tickets right out of 30 on the 15 to 20 axis, one row per seed 0 to 5, with a circle for base, a square for full fine-tuning and a triangle for LoRA, and the numbers printed to the right. Base: 18, 15, 18, 16, 17, 17. Full: 19, 18, 19, 19, 19, 20. LoRA: 19, 19, 18, 19, 18, 18. The categories that fell from base to LoRA by seed: billing minus 0.2; none; greeting minus 0.17 and billing minus 0.2; billing minus 0.2; refund minus 0.14; out of scope minus 0.2. A callout says 5 of 6 seeds flag something.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Six seeds, every row kept</text>
+  <circle cx="40" cy="76" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="52" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">base</text>
+  <rect x="103" y="71" width="10" height="10" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="120" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">full fine-tune</text>
+  <polygon points="234,70 240,81 228,81" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="246" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">LoRA</text>
+  <text x="300" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">tickets right, of 30</text>
+  <text x="400" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">base</text>
+  <text x="440" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">full</text>
+  <text x="480" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">LoRA</text>
+  <text x="520" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">categories that fell, base to LoRA</text>
+  <line x1="140" y1="110" x2="140" y2="318" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="140" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">15</text>
+  <line x1="184" y1="110" x2="184" y2="318" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="184" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">16</text>
+  <line x1="228" y1="110" x2="228" y2="318" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="228" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">17</text>
+  <line x1="272" y1="110" x2="272" y2="318" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="272" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">18</text>
+  <line x1="316" y1="110" x2="316" y2="318" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="316" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">19</text>
+  <line x1="360" y1="110" x2="360" y2="318" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="360" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">20</text>
+  <line x1="140" y1="318" x2="360" y2="318" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="100" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">seed 0</text>
+  <circle cx="272" cy="119" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="311" y="123" width="10" height="10" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="316,131 322,142 310,142" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">18</text>
+  <text x="440" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">19</text>
+  <text x="480" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">19</text>
+  <text x="520" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">billing -0.2</text>
+  <text x="100" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">seed 1</text>
+  <circle cx="140" cy="153" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="267" y="157" width="10" height="10" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="316,165 322,176 310,176" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">15</text>
+  <text x="440" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">18</text>
+  <text x="480" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">19</text>
+  <text x="520" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">none flagged</text>
+  <text x="100" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">seed 2</text>
+  <circle cx="272" cy="187" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="311" y="191" width="10" height="10" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="272,199 278,210 266,210" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">18</text>
+  <text x="440" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">19</text>
+  <text x="480" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">18</text>
+  <text x="520" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">greeting -0.17, billing -0.2</text>
+  <text x="100" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">seed 3</text>
+  <circle cx="184" cy="221" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="311" y="225" width="10" height="10" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="316,233 322,244 310,244" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">16</text>
+  <text x="440" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">19</text>
+  <text x="480" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">19</text>
+  <text x="520" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">billing -0.2</text>
+  <text x="100" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">seed 4</text>
+  <circle cx="228" cy="255" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="311" y="259" width="10" height="10" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="272,267 278,278 266,278" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">17</text>
+  <text x="440" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">19</text>
+  <text x="480" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">18</text>
+  <text x="520" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">refund -0.14</text>
+  <text x="100" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">seed 5</text>
+  <circle cx="228" cy="289" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="355" y="293" width="10" height="10" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="272,301 278,312 266,312" fill="#FFFFFF" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">17</text>
+  <text x="440" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">20</text>
+  <text x="480" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">18</text>
+  <text x="520" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">out_of_scope -0.2</text>
+  <rect x="504" y="322" width="268" height="30" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="638" y="337" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">5 of 6 seeds flag something</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Base 15 to 18, full 18 to 20, LoRA 18 to 19 tickets of 30: the spread is the result.</text>
+</svg>

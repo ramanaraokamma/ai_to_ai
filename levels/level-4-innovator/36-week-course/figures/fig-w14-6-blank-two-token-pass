@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A blank worksheet: fill four empty 2 by 2 grids for a two-token attention pass</title>
+  <desc>Four empty 2 by 2 grids with rows a and b, headed V, scores, weights and output. A dotted line separates V from the others; arrows labelled softmax and times V join scores to weights and weights to output. The given tokens and tables are printed below: a equals 1, 0; b equals 0, 1; Wq and Wk are the identity; Wv is 2, 0 over 0, 4. All cells are empty.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Blank: a two-token pass, a and b</text>
+  <text x="108" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">1  V</text>
+  <text x="40" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">a</text>
+  <rect x="48" y="140" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="108" y="140" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="40" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">b</text>
+  <rect x="48" y="184" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="108" y="184" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="108" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">values, one row each</text>
+  <text x="312" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">2  scores</text>
+  <text x="282" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a</text>
+  <text x="342" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">b</text>
+  <text x="244" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">a</text>
+  <rect x="252" y="140" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="312" y="140" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="244" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">b</text>
+  <rect x="252" y="184" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="312" y="184" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="312" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">question against label</text>
+  <text x="516" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">3  weights</text>
+  <text x="486" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">a</text>
+  <text x="546" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">b</text>
+  <text x="448" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">a</text>
+  <rect x="456" y="140" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="516" y="140" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="448" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">b</text>
+  <rect x="456" y="184" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="516" y="184" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="516" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">each row adds to 1</text>
+  <text x="720" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">4  output</text>
+  <text x="652" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">a</text>
+  <rect x="660" y="140" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="720" y="140" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="652" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">b</text>
+  <rect x="660" y="184" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <rect x="720" y="184" width="60" height="44" fill="#FFFFFF" stroke="#14202B" stroke-width="2"/>
+  <text x="720" y="250" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">weights blend V</text>
+  <line x1="196" y1="120" x2="196" y2="260" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="378" y1="184" x2="422" y2="184" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(422 184) rotate(0)"/>
+  <text x="400" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">softmax</text>
+  <line x1="582" y1="184" x2="626" y2="184" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(626 184) rotate(0)"/>
+  <text x="604" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">times V</text>
+  <text x="20" y="296" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start">Given:  a = [1, 0]   b = [0, 1]   Wq = Wk = [[1, 0], [0, 1]]   Wv = [[2, 0], [0, 4]]</text>
+  <text x="20" y="318" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start">exp(0) = 1.0000   exp(1) = 2.7183</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Fill every grid from your own working: weights to four places, output to three.</text>
+</svg>

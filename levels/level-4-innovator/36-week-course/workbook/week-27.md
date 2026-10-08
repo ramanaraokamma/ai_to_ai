@@ -193,6 +193,11 @@ This page is for marking your paper and turning your marks into a redo plan.
 
 Mark your paper against the printed marking sheet (the one your teacher gave you). For Sections D and E, mark the **working** and not only the answer. Then fill the grid with **your own** marks.
 
+**Before you mark a single answer, shade one circle per week for how sure you felt, then come back and fill the % column from your grid.**
+
+![Blank worksheet: eight rows for Weeks 19 to 26, each with four empty circles labelled lost, shaky, fair and solid, an empty box for the percentage from the grid, and an empty ring for redo](../figures/fig-w27-6-blank-confidence-map.svg)
+*Figure W27.5 — Shade how sure you felt for each week, set it beside your grid percentage, and ring at most two weeks to redo.*
+
 | Week | What it covers | Marks available | Marks earned | % | Redo if marks ≤ | Circle? |
 |:--:|---|:--:|:--:|:--:|:--:|:--:|
 | 19 | Ablations; the mask leak; heads | 10 | | | 6 | |
@@ -443,6 +448,8 @@ A. full `0.10`, no mask `0.02`, no positions `0.30`, no norm `0.30`. B. **No mas
 ### Page 27.3
 
 A. With the **PRACTICE** marks: flagged **Week 20** (2 of 6) and **Week 22** (6 of 13). Lowest percentages: Week 20 (33%), Week 22 (46%). Circle **both**. (Week 20 is thin, 6 marks: ask the spoken check first.) B, C. Your own. Full marks for C: a real answer with a reason (a wrong answer you believed is the most useful entry you can make).
+
+Confidence map (Figure W27.5): no fixed answer. Full marks if every row has one shaded circle and, after marking, a percentage. The useful finding is a week shaded *solid* whose percentage is at or under its redo line (or the reverse): say that week aloud, because the difference between feeling and marks is where the surprise sits.
 
 ### Page 27.4
 

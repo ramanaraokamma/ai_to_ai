@@ -422,6 +422,11 @@ These eight questions are for writing answers in your own words, pen only.
 7. On Sunday night you have a good idea for a better retriever. Where does it go, and what does it **not** become? ____________________________________________________
 8. In the one-line test someone points at a wrong answer: was it retrieval, generation, the prompt, the tokenizer, or a person over-trusting it? Name the **evidence** you would show for each (a file, a number or a quoted line), and say which of the five your capstone cannot have. ____________________________________________________
 
+**After you have marked the paper, fill in this grid: your marks, the marks available from your marking sheet and the ratio for each week, then ring at most two weeks.**
+
+![An empty table of ten Term 4 weeks, 26 and 28 to 36, each with a short topic, three small rings for sure, unsure and guessed, three empty boxes for scored, available and ratio, and one empty ring to circle the week.](../figures/fig-w36-6-blank-per-week-grid.svg)
+*Figure 36.6 — Blank per-week grid: nothing on it is a grade; it shows where to look first.*
+
 ---
 
 ## 📓 Page 36.7 — The Bug Log
@@ -512,7 +517,7 @@ Which step went wrong (typical): in A the *total* (forgetting the `/ 2`, or usin
 3. `demo.py` carries an `assert` that **refuses to finish** unless at least one failing case is shown. A demo of three best cases is a sales pitch; the failure is what the audience can trust the rest by. The fix is to **choose the failure first** and write its mechanism in one sentence.
 4. It has a **plan**: stages, a gate for each, a stop condition. It has **no result**: nothing was observed. Writing a number for a stage that was not run would be a quote that wishes (36.5-D).
 5. It proved that the card has the ten headings, no number outside the logs and the design, no table row without an `n` beside a count, no unlabelled time, no banned phrase, a `MISSED` where needed and a named person. It has **not** proved any sentence is true, nor that an `n` is the right `n`. The proof is `quotes_hold` (the quotes re-asked) **plus you reading every number against the log**.
-6. **Nothing** about the capstone: the paper tests Term 4's ideas; the capstone is marked from the card, the numbers and the demo. Circle the two weeks with the **lowest** `marks / available`, preferring Weeks 28 and 29 (together 22 of the 75 marks, and their ideas are used again later). **Never circle Weeks 26 or 34 on one question**: one question is not a pattern.
+6. **Nothing** about the capstone: the paper tests Term 4's ideas; the capstone is marked from the card, the numbers and the demo. Circle the two weeks with the **lowest** `marks / available`, preferring Weeks 28 and 29 (together 22 of the 75 marks, and their ideas are used again later). **Never circle Weeks 26 or 34 on one question**: one question is not a pattern. **Figure 36.6 (blank per-week grid).** There is no fixed answer: the `scored` column is the student's own marks, the `available` column is copied from the printed marking sheet's per-week grid and adds to **75**, `scored` is never more than `available`, and `ratio` is `scored / available` to two decimals. Ring the two lowest ratios (at most two), with the Weeks 28 and 29 advice above; S, U or G is how sure they felt before marking, so a row marked S with a low ratio is worth a second look.
 7. It goes in section 8 of the card as **what I would add to the eval next**. It does **not** become a version 2 this week, and you do not tune `tau`, `k` or the generator to reach `0.70`.
 8. **Retrieval**: the list of fetched notes (was the note with the fact among them?). **Generation**: the right note fetched and the copy rule took the wrong sentence (the sentence, quoted). **The prompt / the gate**: a score such as `0.357` against the threshold. **A person over-trusting it**: the card's section 10 and the sentence you said to your named user. **The tokenizer**: a token count or split that changed the text: **none in this capstone**, which is itself a fact.
 

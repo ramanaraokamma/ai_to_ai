@@ -129,6 +129,11 @@ Open `block.py` from Week 16. The `Block` below is **exactly that block**: nothi
 | `ln_f` | one last `nn.LayerNorm` | tidy up |
 | `head` | an `nn.Linear` from 128 numbers to **28 scores**, one per character | the answer |
 
+Here is the whole model drawn as a row of parts, with the shape of what flows through and the names `nested.py` will print.
+
+![A left-to-right row: character ids with shape (32, 64), a tok table of 28 rows and a pos table of 64 rows, four Blocks, ln_f, head, then 28 scores per place with shape (32, 64, 28); below, chips naming the children of the model and of one Block.](../figures/fig-w17-4-tinygpt-shapes-and-tree.svg)
+*Figure 17.3 — TinyGPT is a tree: two tables, four Blocks, a norm and an output layer, with a (32, 64, 128) block of numbers flowing through.*
+
 That is the second new piece: **a nested `nn.Module`**. `TinyGPT` is a module whose parts are modules, and some of those are *your own class*. It is a tree: `TinyGPT` holds four `Block`s, and each `Block` holds its own layers. `model.parameters()` walks the whole tree, so one optimizer trains every knob in it. Two rules keep the tree visible to PyTorch:
 
 1. `super().__init__()` must be the **first line** of `__init__`.
@@ -498,6 +503,11 @@ the ring eftouse is and not
 | 1499 | 0.894 | 1.437 | 0.543 |
 
 Both start within 0.02 of `ln(28)`, so the first-loss check from `check_init.py` holds for the real run. The **gap** is about zero while the model is still bad at everything, then opens at every later checkpoint.
+
+The same seven checkpoints, drawn as bars so you can watch the gap open.
+
+![Seven pairs of bars at steps 0 to 1499: solid train loss 3.349 down to 0.894, dashed validation loss 3.351 down to 1.437, a dashed line at ln 28 = 3.332, and the gap under each pair from 0.002 to 0.543.](../figures/fig-w17-5-train-validation-gap-by-step.svg)
+*Figure 17.4 — Both losses start at ln 28, then training loss keeps falling while validation flattens, so the gap grows to 0.543.*
 
 **What the gap says, and what it does not.** The last lines say: *0.9 on text it studied, 1.4 on text it did not.* The validation text is the last tenth of the typed corpus (698 characters) and the model never trains on it. Here is a reading that fits the numbers, and nothing stronger:
 

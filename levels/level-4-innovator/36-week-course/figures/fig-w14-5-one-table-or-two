@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>With one table for questions and labels the score grid is a mirror image; with two tables it need not be</title>
+  <desc>Two panels, each with a 3 by 3 grid of scores for the, cat and sat above a 3 by 3 grid of weights. Left, one table: scores 1.0 0.0 1.0, 0.0 1.0 1.0, 1.0 1.0 2.0, weights 0.422 0.155 0.422, 0.155 0.422 0.422, 0.212 0.212 0.576; cat to sat and sat to cat are both 1.0. Right, question table changed: scores 0.0 0.0 0.0, 1.0 0.0 1.0, 1.0 0.0 1.0, weights 0.333 0.333 0.333, 0.422 0.155 0.422, 0.422 0.155 0.422; cat to sat is 1.0 and sat to cat is 0.0, ringed in both panels. Largest weights in a row are ringed.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Same table or two tables: the scores</text>
+  <text x="188" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">one table for both</text>
+  <text x="116" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the</text>
+  <text x="188" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">cat</text>
+  <text x="260" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">sat</text>
+  <text x="72" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">the</text>
+  <rect x="80" y="108" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="116" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0</text>
+  <rect x="152" y="108" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="188" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.0</text>
+  <rect x="224" y="108" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="260" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0</text>
+  <text x="72" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">cat</text>
+  <rect x="80" y="136" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="116" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.0</text>
+  <rect x="152" y="136" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="188" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0</text>
+  <rect x="224" y="136" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="260" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0</text>
+  <text x="72" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">sat</text>
+  <rect x="80" y="164" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="116" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0</text>
+  <rect x="152" y="164" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="188" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0</text>
+  <rect x="224" y="164" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="260" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2.0</text>
+  <text x="188" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">weights: softmax of each row</text>
+  <text x="72" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">the</text>
+  <rect x="80" y="222" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="116" y="236" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.422</text>
+  <rect x="152" y="222" width="72" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="188" y="236" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.155</text>
+  <rect x="224" y="222" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="260" y="236" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.422</text>
+  <text x="72" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">cat</text>
+  <rect x="80" y="250" width="72" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="116" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.155</text>
+  <rect x="152" y="250" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="188" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.422</text>
+  <rect x="224" y="250" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="260" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.422</text>
+  <text x="72" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">sat</text>
+  <rect x="80" y="278" width="72" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="116" y="292" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.212</text>
+  <rect x="152" y="278" width="72" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="188" y="292" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.212</text>
+  <rect x="224" y="278" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="260" y="292" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.576</text>
+  <text x="188" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">cat to sat 1.0 = sat to cat 1.0: a mirror</text>
+  <text x="588" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">question table changed</text>
+  <text x="516" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the</text>
+  <text x="588" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">cat</text>
+  <text x="660" y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">sat</text>
+  <text x="472" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">the</text>
+  <rect x="480" y="108" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="516" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.0</text>
+  <rect x="552" y="108" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="588" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.0</text>
+  <rect x="624" y="108" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="660" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.0</text>
+  <text x="472" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">cat</text>
+  <rect x="480" y="136" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="516" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0</text>
+  <rect x="552" y="136" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="588" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.0</text>
+  <rect x="624" y="136" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="660" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0</text>
+  <text x="472" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">sat</text>
+  <rect x="480" y="164" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="516" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0</text>
+  <rect x="552" y="164" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="588" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.0</text>
+  <rect x="624" y="164" width="72" height="28" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="660" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.0</text>
+  <text x="588" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">weights: softmax of each row</text>
+  <text x="472" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">the</text>
+  <rect x="480" y="222" width="72" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="516" y="236" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.333</text>
+  <rect x="552" y="222" width="72" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="588" y="236" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.333</text>
+  <rect x="624" y="222" width="72" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="660" y="236" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.333</text>
+  <text x="472" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">cat</text>
+  <rect x="480" y="250" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="516" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.422</text>
+  <rect x="552" y="250" width="72" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="588" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.155</text>
+  <rect x="624" y="250" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="660" y="264" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.422</text>
+  <text x="472" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">sat</text>
+  <rect x="480" y="278" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="516" y="292" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.422</text>
+  <rect x="552" y="278" width="72" height="28" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="588" y="292" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.155</text>
+  <rect x="624" y="278" width="72" height="28" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="660" y="292" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.422</text>
+  <text x="588" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">cat to sat 1.0, sat to cat 0.0: no mirror</text>
+  <text x="588" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the: all equal, so its answer is the plain mean</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A different question table breaks the mirror: asking and offering can differ.</text>
+</svg>

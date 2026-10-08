@@ -1417,7 +1417,7 @@ N1: sqrt(36 + 64) = **10**. N2: sqrt(25 + 144) = **13**. N3: gradient `[2, 4, 4]
 | 3 | 2.5600 | 1.0240 | 1.8400 | 7.9600 | 0.7960 | 0.1240 |
 | 4 | 2.0480 | 0.8192 | 0.2480 | 7.4120 | 0.7412 | -0.6172 |
 
-S1: step 4; SGD never goes negative. S2: torch gives SGD `[1.6, 1.28, 1.024, 0.8192]`, momentum `[1.6, 0.92, 0.124, -0.6172]`. S3: each SGD step multiplies `w` by 0.8; at `lr = 1.1` the factor is -1.2, not between 0 and 1, so each jump lands farther away (1.0, -1.2, 1.44, -1.728, ...).
+Plot (the blank number lines, Figure W2.1): SGD dots at 1.6, 1.28, 1.024, 0.8192 (creeping, never reaching 0); momentum dots at 1.6, 0.92, 0.124, -0.6172 (step 3 nearly on the target, step 4 past it). S1: step 4; SGD never goes negative. S2: torch gives SGD `[1.6, 1.28, 1.024, 0.8192]`, momentum `[1.6, 0.92, 0.124, -0.6172]`. S3: each SGD step multiplies `w` by 0.8; at `lr = 1.1` the factor is -1.2, not between 0 and 1, so each jump lands farther away (1.0, -1.2, 1.44, -1.728, ...).
 
 ### Page 2.9 — Bug Log and the misspelt optimizer
 

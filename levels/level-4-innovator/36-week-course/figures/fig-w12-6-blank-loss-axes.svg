@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank axes for Week 12 page 12.4: plot train and validation loss at seven steps</title>
+  <desc>A blank chart for the page 12.4 table. The horizontal axis is training steps with ticks at 0, 200, 400, 600 and 800 and dotted vertical lines at 100, 200, 300, 400, 600 and 800; the vertical axis is loss from 0 to 3 with horizontal grid lines. No data is drawn. A key shows train as a solid line with circles and validation as a dashed line with squares, and three numbered instructions: mark 14 points, join each series, ring the lowest validation point.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Page 12.4: plot your own table</text>
+  <line x1="100" y1="316" x2="560" y2="316" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="90" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="100" y1="254.9" x2="560" y2="254.9" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="90" y="258.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <line x1="100" y1="193.8" x2="560" y2="193.8" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="90" y="197.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">2</text>
+  <line x1="100" y1="132.7" x2="560" y2="132.7" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="90" y="136.7" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">3</text>
+  <text x="100" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <text x="215" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">200</text>
+  <text x="330" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">400</text>
+  <text x="445" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">600</text>
+  <text x="560" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">800</text>
+  <text x="330" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">training steps</text>
+  <text x="40" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 40 206)">loss (average surprise per real letter)</text>
+  <line x1="157.5" y1="96" x2="157.5" y2="316" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="215" y1="96" x2="215" y2="316" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="272.5" y1="96" x2="272.5" y2="316" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="330" y1="96" x2="330" y2="316" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="445" y1="96" x2="445" y2="316" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="560" y1="96" x2="560" y2="316" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="100" y1="316" x2="100" y2="321" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="157.5" y1="316" x2="157.5" y2="321" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="215" y1="316" x2="215" y2="321" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="272.5" y1="316" x2="272.5" y2="321" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="330" y1="316" x2="330" y2="321" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="445" y1="316" x2="445" y2="321" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="560" y1="316" x2="560" y2="321" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="157.5" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">100</text>
+  <text x="272.5" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">300</text>
+  <text x="580" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">key</text>
+  <polyline points="580,160 620,160" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="600" cy="160" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="632" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">train</text>
+  <polyline points="580,190 620,190" fill="none" stroke="#845F00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8 5"/>
+  <rect x="594" y="184" width="12" height="12" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="632" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">validation</text>
+  <text x="580" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">1. Mark 14 points</text>
+  <text x="580" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">2. Join each series</text>
+  <text x="580" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">3. Ring the lowest</text>
+  <text x="580" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">    validation point</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Dotted lines are the seven steps of your table. Draw ln 28 as a dashed line.</text>
+</svg>

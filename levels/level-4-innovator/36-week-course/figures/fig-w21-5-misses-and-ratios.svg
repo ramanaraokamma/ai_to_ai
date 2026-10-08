@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The line misses its four fitted models by at most 3.1 percent and the fifth by 15.8 percent; the run time is 4.5 to 72.9 times the 6ND prediction on one laptop</title>
+  <desc>Left, five horizontal bars of signed miss in percent: minus 1.4, plus 3.1, minus 2.1 and plus 0.4 for the four fitted models, and plus 15.8 for the fifth, marked as not in the fit. Right, five bars of measured seconds divided by predicted seconds: 72.9, 32.0, 13.8, 6.8 and 4.5 for widths 16 to 256. A note says the seconds vary by machine and from run to run.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">How far off: the line, and the arithmetic</text>
+  <text x="20" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">measured vs the line, signed miss (%)</text>
+  <text x="135" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">14,549 knobs</text>
+  <rect x="192.4" y="108" width="12.6" height="24" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="211" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">-1.4%</text>
+  <text x="135" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">41,173 knobs</text>
+  <rect x="205" y="150" width="27.9" height="24" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="238.9" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">+3.1%</text>
+  <text x="135" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">131,285 knobs</text>
+  <rect x="186.1" y="192" width="18.9" height="24" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="211" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">-2.1%</text>
+  <text x="135" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">458,965 knobs</text>
+  <rect x="205" y="234" width="3.6" height="24" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="214.6" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">+0.4%</text>
+  <text x="135" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">1,704,149 knobs</text>
+  <rect x="205" y="276" width="142.2" height="24" rx="4" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="353.2" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">+15.8%</text>
+  <line x1="205" y1="100" x2="205" y2="320" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="353.2" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="end">the fifth model, not in the fit</text>
+  <text x="430" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">measured seconds / predicted seconds (6ND)</text>
+  <text x="504" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">width 16</text>
+  <rect x="512" y="108" width="189.5" height="24" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="707.5" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">72.9</text>
+  <text x="504" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">width 32</text>
+  <rect x="512" y="150" width="83.2" height="24" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="601.2" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">32.0</text>
+  <text x="504" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">width 64</text>
+  <rect x="512" y="192" width="35.9" height="24" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="553.9" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">13.8</text>
+  <text x="504" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">width 128</text>
+  <rect x="512" y="234" width="17.7" height="24" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="535.7" y="246" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">6.8</text>
+  <text x="504" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">width 256</text>
+  <rect x="512" y="276" width="11.7" height="24" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="529.7" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">4.5</text>
+  <line x1="512" y1="100" x2="512" y2="320" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="400" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Percentages are the same on every run. Seconds are not: the ratios are from the author's laptop</text>
+  <text x="400" y="354" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and vary by machine and from run to run.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The line fits four models within 3.1% and misses the fifth by 15.8%.</text>
+</svg>

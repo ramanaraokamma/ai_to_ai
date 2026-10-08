@@ -363,6 +363,11 @@ Does `H` appear in the knob count? ____ Why not? _______________________________
 | Knobs in the three tables | | |
 | The divide | | |
 
+**Fill in the figure** for the same `B = 3, T = 4, d = 20, H = 5`: draw the cuts, then write `dh`, the knobs and the three shapes.
+
+![A strip of 20 numbered cells above empty boxes for the head width, the knobs in the three tables, and the shapes after view, after transpose and of the score table](../figures/fig-w15-6-blank-heads.svg)
+*Figure 15.5 — Blank: cut 20 numbers into 5 heads and write the shapes on the way to the score table.*
+
 ```python
 # check155.py - Week 15 workbook page 15.5: the shapes of heads on NEW numbers. Random, seed 0, nothing trained.
 import torch
@@ -767,6 +772,8 @@ RuntimeError: shape '[1, 3, 6, 1]' is invalid for input of size 24
 ```
 
 (There are 24 numbers, and `1 x 3 x 6 x 1` is only 18.) The habit: check that `H x dh = d` (here `6` is not `8`). With `d = 12` and `H = 6`, `dh = 2` and the knob count is unchanged at `432`.
+
+**Figure 15.5 (blank, `B = 3, T = 4, d = 20, H = 5`).** The cuts fall after cells **4, 8, 12 and 16**, giving five heads of four cells; `dh =` **4**; knobs **1200**; the three shapes are **(3, 4, 5, 4)**, **(3, 5, 4, 4)** and **(3, 5, 4, 4)**.
 
 ### Page 15.6
 

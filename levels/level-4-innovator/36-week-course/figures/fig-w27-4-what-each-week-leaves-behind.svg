@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Eight weeks, each with the one idea that should still be in your head and the marks it carries on the paper</title>
+  <desc>Eight tiles in two rows of four, one for each of Weeks 19 to 26. Week 19 ablations: a no-mask row is a leak, not a result; 10 marks. Week 20 byte-pair merges: a merge joins a pair and bytes per token rises; 6 marks. Week 21 log-log line and 6ND: a prediction from the line is not a measurement; 8 marks. Week 22 masked loss and KL: a masked loss is a different number, and KL has an order; 13 marks. Week 23 the harness: a floor beside the score, and the guard stops late; 8 marks. Week 24 prompts and logit mask: a mask fixes the shape, not the sense; 4 marks. Week 25 embeddings: a cosine ignores length; 12 marks. Week 26 RAG: who wrote the questions, and a valid citation proves only that the note was served; 14 marks. The marks add to 75.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">What Weeks 19 to 26 should have left behind</text>
+  <rect x="26" y="66" width="174" height="128" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="40" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 19</text>
+  <text x="40" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">Ablations</text>
+  <text x="40" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">a no-mask row is a</text>
+  <text x="40" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">leak, not a result</text>
+  <rect x="124" y="76" width="64" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="156" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">10 marks</text>
+  <rect x="216" y="66" width="174" height="128" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="230" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 20</text>
+  <text x="230" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">Byte-pair merges</text>
+  <text x="230" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">a merge joins a pair;</text>
+  <text x="230" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">bytes per token rises</text>
+  <rect x="314" y="76" width="64" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="346" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">6 marks</text>
+  <rect x="406" y="66" width="174" height="128" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="420" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 21</text>
+  <text x="420" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">Log-log line, 6ND</text>
+  <text x="420" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">a prediction from the</text>
+  <text x="420" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">line is not a measurement</text>
+  <rect x="504" y="76" width="64" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="536" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">8 marks</text>
+  <rect x="596" y="66" width="174" height="128" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="610" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 22</text>
+  <text x="610" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">Masked loss, KL</text>
+  <text x="610" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">masked loss: a different</text>
+  <text x="610" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">number; KL has an order</text>
+  <rect x="694" y="76" width="64" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="726" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">13 marks</text>
+  <rect x="26" y="208" width="174" height="128" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="40" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 23</text>
+  <text x="40" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">The harness</text>
+  <text x="40" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">a floor beside the score;</text>
+  <text x="40" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">the guard stops late</text>
+  <rect x="124" y="218" width="64" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="156" y="233" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">8 marks</text>
+  <rect x="216" y="208" width="174" height="128" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="230" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 24</text>
+  <text x="230" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">Prompts, logit mask</text>
+  <text x="230" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">a mask fixes the shape,</text>
+  <text x="230" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">not the sense</text>
+  <rect x="314" y="218" width="64" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="346" y="233" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">4 marks</text>
+  <rect x="406" y="208" width="174" height="128" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="420" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 25</text>
+  <text x="420" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">Embeddings</text>
+  <text x="420" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">a cosine ignores length;</text>
+  <text x="420" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">ask who made it near</text>
+  <rect x="504" y="218" width="64" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="536" y="233" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">12 marks</text>
+  <rect x="596" y="208" width="174" height="128" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="610" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">Week 26</text>
+  <text x="610" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="start">RAG</text>
+  <text x="610" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">who wrote the questions?</text>
+  <text x="610" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">a valid citation proves</text>
+  <text x="610" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">only: it was served</text>
+  <rect x="694" y="218" width="64" height="22" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="726" y="233" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">14 marks</text>
+  <text x="400" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">one idea per week to be able to say aloud.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Marks on the paper: 10 + 6 + 8 + 13 + 8 + 4 + 12 + 14 = 75.</text>
+</svg>

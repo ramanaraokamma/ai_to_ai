@@ -85,6 +85,11 @@ If you carried only **three** places in the weights, what is the row sum for the
 
 Before you calculate, **predict**: will the output for `a` lean towards `a`'s own value `[2, 0]` or towards `b`'s value `[0, 4]`? ____________ . Why? ___________________________________________
 
+**Fill in the four grids** with your Part B working: `V`, the scores, the weights (four places) and the output (three places).
+
+![Four empty 2 by 2 grids with rows a and b headed V, scores, weights and output, with arrows labelled softmax and times V, and the given tokens and tables printed below](../figures/fig-w14-6-blank-two-token-pass.svg)
+*Figure 14.5 — Blank: the four grids of a two-token attention pass.*
+
 **Run the check:** `check141.py`. It repeats Part B in numpy and prints each step.
 
 ```python
@@ -564,6 +569,8 @@ Every output number is between 0 and 1 **because the values are all 0s and 1s** 
 **Part B.** `V`: `a` [2, 0], `b` [0, 4]. Scores: row `a` [1, 0], row `b` [0, 1]. Exps: row `a` 2.7183, 1.0000, total **3.7183**; row `b` 1.0000, 2.7183, total **3.7183**. Weights: row `a` **0.7311, 0.2689**; row `b` **0.2689, 0.7311**. Both rows add to 1. Output (printed by `check141.py`): `a` **[1.462, 1.076]**, `b` **[0.538, 2.924]**. Check row `a` by hand: `0.7311×[2,0] + 0.2689×[0,4] = [1.4622, 0] + [0, 1.0756] = [1.4622, 1.0756]`.
 
 Prediction: `a` leans towards **its own value** `[2, 0]` because its score with itself (1) beats its score with `b` (0). (The output `[1.462, 1.076]` has a bigger first number than a plain mean `[1, 2]` would, which is the lean.) Three-place weights (`0.731, 0.269`) give the same output to three places here.
+
+**Figure 14.5 (blank, the four grids).** `V`: row `a` **2, 0**, row `b` **0, 4**. Scores: row `a` **1, 0**, row `b` **0, 1**. Weights: row `a` **0.7311, 0.2689**, row `b` **0.2689, 0.7311**. Output: row `a` **1.462, 1.076**, row `b` **0.538, 2.924**.
 
 ### Page 14.2
 

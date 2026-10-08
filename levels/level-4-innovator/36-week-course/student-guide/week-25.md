@@ -287,6 +287,9 @@ query: which optimiser was best
 
 The table went from `(15, 3906)` to `(15, 14)` and kept `0.941` of the spread. **The right note (`[0]`) came second.** The first was "Learning rate sweep", which also contains the word `best`. Do not fix it: a ranking error is a reason to ask *what was shared*, not evidence of a bug. The rest of the week measures how often this happens.
 
+![Two rows of boxes: built once from the 15 notes through letter pieces, an SVD squeeze and normalising to an index of shape 15 by 14; then for each question, encode it, multiply by the index, and take the top three ids](../figures/fig-w25-4-index-built-once-asked-many-times.svg)
+*Figure 25.3 — The index is built once; each question is only encoded and multiplied against it, and here the right note [0] came second.*
+
 > **Why 14 and not 15?** A table of 15 notes has at most 15 directions, and asking for all 15 keeps everything (`1.000` of the spread), so nothing is squeezed. `l4lib` stops at one fewer than the number of notes (14), so at least one direction is dropped. "14 numbers per note" is not much compression; it is mostly a change of axes.
 
 ### Save it, and load it back
@@ -451,6 +454,9 @@ query: which optimiser was best
 ```
 
 **Read the tie carefully.** For `optimiser` the word table gives the right note `0.000` *and gives the same `0.000` to all 14 others*. Its "rank 1" is only list order (ties go to the earlier note). It is not a success. The last column is the sentence that matters: **15 notes share exactly that score.**
+
+![Two panels of bars for the queries optimiser and which optimiser was best, showing for word tf-idf, lsa and the contrastive embedder the right note's score, its rank, and how many notes share that exact score: 15 and 14 for the word table](../figures/fig-w25-5-optimiser-three-embedders.svg)
+*Figure 25.4 — A rank of 1 means nothing when every note has the same score: the word table ties 15 notes for "optimiser" and 14 for the longer question.*
 
 ### One seed is an anecdote
 

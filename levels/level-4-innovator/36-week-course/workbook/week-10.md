@@ -106,6 +106,11 @@ Week 8's cell: `new note = tanh( W_xh x + W_hh (old note) )`, no bias. The slope
 | 3 | 0.5663 | | |
 | 4 | 0.5126 | | |
 
+**Fill in the empty boxes of the chain below: one slope under each arrow, then the product.**
+
+![A blank chain of four notes, 0.7616, 0.6420, 0.5663 and 0.5126, with an empty dashed box under each arrow for the slope into notes 2, 3 and 4 and an empty product line from note 1 to note 4](../figures/fig-w10-6-blank-slope-chain.svg)
+*Figure W10.6 — The chain of page 10.2, to be filled in with the three slopes and their product.*
+
 **a.** The slope from note 1 all the way to note 4 is the three slopes **multiplied**: ______ x ______ x ______ = ____________
 
 **b.** Last week's cell had `W_hh = 0.5`, and its three slopes were `0.4340, 0.4839, 0.4960`. Multiply them: ____________ (a calculator, four decimals; because these three slopes are themselves rounded, you may get `0.1041` or `0.1042`, and both are right).
@@ -378,7 +383,7 @@ note 1 -> note 4: 0.2944
 | 3 | `1 - 0.3207 = 0.6793` | **0.6793** |
 | 4 | `1 - 0.2628 = 0.7372` | **0.7372** |
 
-**a.** `0.5878 x 0.6793 x 0.7372 =` **0.2944**. **b.** `0.4340 x 0.4839 x 0.4960 =` **0.1041**. **c.** The **bigger** recurrent weight (`W_hh = 1.0`) lost less: `0.2944 / 0.1041` is about **2.8** times as much survives. **d.** Yes: the bigger recurrent weight makes each slope bigger, so less is lost at each step and the note fades more slowly. **e.** `0.6 ** 39` is about `2.2e-09`, so **closest to `0.000000001`**. *(Run yourself: `0.6 ** 39` printed by Python.)* *Common errors:* using the **old** note in `1 - h x h`; forgetting `W_hh`; rounding each slope to one decimal.
+**a.** `0.5878 x 0.6793 x 0.7372 =` **0.2944**. **b.** `0.4340 x 0.4839 x 0.4960 =` **0.1041**. **c.** The **bigger** recurrent weight (`W_hh = 1.0`) lost less: `0.2944 / 0.1041` is about **2.8** times as much survives. **d.** Yes: the bigger recurrent weight makes each slope bigger, so less is lost at each step and the note fades more slowly. **e.** `0.6 ** 39` is about `2.2e-09`, so **closest to `0.000000001`**. *(Run yourself: `0.6 ** 39` printed by Python.)* *Figure W10.6 check:* the boxes hold `0.5878`, `0.6793`, `0.7372` and the product `0.2944`. *Common errors:* using the **old** note in `1 - h x h`; forgetting `W_hh`; rounding each slope to one decimal.
 
 ### Page 10.3
 

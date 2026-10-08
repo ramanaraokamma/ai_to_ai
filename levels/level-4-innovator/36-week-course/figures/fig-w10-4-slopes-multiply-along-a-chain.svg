@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Going back along a loop, the slopes of each step are multiplied together, so the signal shrinks</title>
+  <desc>Top row: four boxes for Week 8's notes, note 1 = 0.7616, note 2 = 0.3634, note 3 = 0.1797, note 4 = 0.0896, with arrows pointing right. Bottom row: four numbered circles with arrows pointing left, each carrying the slope into the later note: times 0.4340 into note 2, times 0.4839 into note 3, times 0.4960 into note 4. A panel states the product, 0.4340 times 0.4839 times 0.4960 equals 0.1041, and that forty steps at slope 0.5 leave 9.1e-13. Numbers are the printout of block 2 in Week 10.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Slopes multiply along the chain</text>
+  <text x="40" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">forward: what the cell does</text>
+  <rect x="55" y="96" width="110" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="110" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">note 1</text>
+  <text x="110" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">0.7616</text>
+  <line x1="169" y1="122" x2="228" y2="122" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(228 122) rotate(0)"/>
+  <rect x="235" y="96" width="110" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="290" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">note 2</text>
+  <text x="290" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">0.3634</text>
+  <line x1="349" y1="122" x2="408" y2="122" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(408 122) rotate(0)"/>
+  <rect x="415" y="96" width="110" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="470" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">note 3</text>
+  <text x="470" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">0.1797</text>
+  <line x1="529" y1="122" x2="588" y2="122" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(588 122) rotate(0)"/>
+  <rect x="595" y="96" width="110" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="650" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">note 4</text>
+  <text x="650" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">0.0896</text>
+  <text x="40" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">backward: how much did the first note matter to this one?</text>
+  <circle cx="110" cy="262" r="16" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="110" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <circle cx="290" cy="262" r="16" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="290" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <circle cx="470" cy="262" r="16" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="470" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <circle cx="650" cy="262" r="16" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="650" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <line x1="271" y1="262" x2="131" y2="262" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(131 262) rotate(180)"/>
+  <rect x="156" y="214" width="88" height="26" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="200" y="227" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215; 0.4340</text>
+  <text x="200" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">into note 2</text>
+  <line x1="451" y1="262" x2="311" y2="262" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(311 262) rotate(180)"/>
+  <rect x="336" y="214" width="88" height="26" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="380" y="227" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215; 0.4839</text>
+  <text x="380" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">into note 3</text>
+  <line x1="631" y1="262" x2="491" y2="262" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(491 262) rotate(180)"/>
+  <rect x="516" y="214" width="88" height="26" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="560" y="227" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215; 0.4960</text>
+  <text x="560" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">into note 4</text>
+  <rect x="40" y="296" width="720" height="56" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.4340 &#215; 0.4839 &#215; 0.4960 = 0.1041</text>
+  <text x="400" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Three steps back, about a tenth is left. Forty steps at slope 0.5: 0.5 ** 40 = 9.1e&#8722;13.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The nudge check agreed with the shortcut: 0.4339 against 0.4340.</text>
+</svg>

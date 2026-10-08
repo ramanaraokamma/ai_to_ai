@@ -168,6 +168,11 @@ ECE = ______ × ______ + ______ × ______ = ____________
 
 **B. Read it.** In the unsure group, every answer was ______ (right / wrong). Is that what a calibrated system looks like? ______ . The group's stated value is ______ and its actual value is ______ ; with only ______ results in it, is that strong evidence? ____________________________________________________
 
+**Plot the two groups of Set A from your table in Part A, one point each, and draw each gap to the dashed line.**
+
+![An empty plot of stated against actual, both from 0 to 1, with a dashed diagonal line for calibrated and three empty write-in boxes on the right](../figures/fig-w32-6-blank-plot-two-groups.svg)
+*Figure 32.5 — Blank: the sure and the unsure group of Set A, to be plotted against the calibrated line.*
+
 **C. Set B (`RESULTS[1::4]`, homework).** Same table, from your Page 32.1 Part C.
 
 | group | n | stated | actual | gap |
@@ -500,6 +505,7 @@ Tick each line only if you can do it without looking anything up.
 
 ### Page 32.2
 - **A.** Sure (`p ≥ 0.8`): rows **1, 2, 3, 5, 7, 8, 9**: n = **7**, stated **0.9086**, actual `6/7 =` **0.8571**, gap **0.0514**. Unsure: rows **4, 6, 10**: n = **3**, stated **0.68**, actual **0.0**, gap **0.68**. ECE `= 0.7 × 0.0514 + 0.3 × 0.68 =` **0.24**. Accept `0.24 ± 0.01`.
+- **Figure 32.5 (blank).** Plot the sure group at (stated `0.909`, actual `0.857`) as a circle and the unsure group at (`0.68`, `0.0`) as a square. Both lie **below** the dashed line (actual is less than stated), so the system said **more** than it delivered. The arrows are `0.051` (sure) and `0.680` (unsure); the longer one is **0.68**, and it rests on only 3 results.
 - **B.** Every unsure answer was **wrong**. No: a calibrated system that said about `0.68` would be right about two times in three. Three results is far too few to be strong evidence; it is a reason to look, not a verdict.
 - **C.** Sure: n = **6**, stated **0.8867**, actual `4/6 =` **0.6667**, gap **0.2200**. Unsure: n = **4**, stated **0.6550**, actual **1.0000**, gap **0.3450**. ECE `= 0.6 × 0.22 + 0.4 × 0.345 =` **0.27**. It differs because a different ten results are in it, and here the unsure group was **all right** (the gap goes the *other* way: the system said `0.655` and delivered `1.0`), whereas set A's unsure group was all wrong. The sign of the gap flips between the two sets of ten; ECE takes the size, so both count. Both sets of ten are noisy; the forty-row ECE is `0.1788`.
 - **D.** `0, 1, 1, 2, 3, 4, 4`. (`0.60` goes to bucket 1, `0.70` to bucket 2, `0.90` to bucket 4: an edge goes to the **upper** bucket.)

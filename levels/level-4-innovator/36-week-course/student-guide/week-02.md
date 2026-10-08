@@ -184,6 +184,9 @@ flipping: g =  +2  -2  +2  -2      v =  2.0 -0.2  1.8 -0.4   (hovers near 0)
 
 When the slope keeps pointing the same way, the running total grows, so you speed up. When the slope flips every step, the running total cancels, so you stop zig-zagging. **Steady pushes add up; flip-flops cancel.** That is the whole intuition.
 
+![Two panels of four bars: with g steady at plus 2 the velocity grows 2.0, 3.8, 5.4, 6.9; with g alternating the velocity reads 2.0, minus 0.2, 1.8, minus 0.4](../figures/fig-w02-4-steady-adds-flipping-cancels.svg)
+*Figure 2.3 — The velocity is a running total: pushes in one direction add, alternating pushes cancel.*
+
 Which of those two rows looks like a zig-zag in a narrow valley? Write it in the Bug Log.
 
 ### 5. The three new lines of syntax
@@ -481,6 +484,9 @@ for lr in (0.01, 0.03, 0.1, 0.3, 1.0):
    0.3 |      0.016    98.9% |      0.659    46.9% | momentum hurts
      1 |      0.528    66.4% |        nan    46.9% | momentum hurts
 ```
+
+![Five pairs of bars of final training loss for plain SGD and momentum at learning rates 0.01 to 1, with a tick and the word helps at the first three and a cross and the word hurts at the last two](../figures/fig-w02-5-helps-or-hurts-bars.svg)
+*Figure 2.4 — The verdict table as bars: momentum helps where plain SGD was stuck and hurts where a longer step overshoots.*
 
 Compare the table with your predictions. Two things to notice:
 

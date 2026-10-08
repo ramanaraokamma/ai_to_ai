@@ -1339,7 +1339,7 @@ The ranges in the last column are guidance for marking, not measured spreads. A 
 
 ### Page 17.6 — What the gap means
 
-**Workbook Part A (600-step run):** gaps **0.002, -0.024, 0.009, 0.027, 0.031, 0.043** at steps 0, 250, 300, 500, 599 and FINAL. 1: no, its validation loss is 1.800 against about 1.447; the gap is small because the model has not learned much. 2: a gap is a difference between two scores, and both can be bad. 3: no, at step 250 the difference is inside the noise of estimating each loss from 20 random batches.
+**Workbook Part A (600-step run):** gaps **0.002, -0.024, 0.009, 0.027, 0.031, 0.043** at steps 0, 250, 300, 500, 599 and FINAL. 1: no, its validation loss is 1.800 against about 1.447; the gap is small because the model has not learned much. 2: a gap is a difference between two scores, and both can be bad. 3: no, at step 250 the difference is inside the noise of estimating each loss from 20 random batches. *Workbook Figure 17.5 (blank axes):* the six points are those gaps joined in order; only the step 250 point is below the 0.00 line, and FINAL (0.043) is the highest.
 
 Model answer: *"The gap is validation loss minus training loss (1.447 - 0.907 = 0.540). It means the model does much better on characters it was trained on than on characters it has not seen, which is what memorising the training text looks like. It was about zero at step 300 and grew at each later checkpoint. It does not mean the model is useless, and it does not prove why; we did not run a version with more text, less training or dropout, which would be the test."*
 

@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Per-field counts for the three prompts against the stand-in add up to 16, 22 and 30 of 32 boxes</title>
+  <desc>A dashed panel marked stand-in, not a model. Three rows of squares, eight squares per cell, filled for each message right. Columns category, urgency, order_id, refund_requested. v1: 6, 3, 4, 3, which adds to 16 of 32, 50.0 percent. v2: 6, 5, 7, 4, which adds to 22 of 32, 68.8 percent. v3: 8, 6, 8, 8, which adds to 30 of 32, 93.8 percent. The constant-answer floor is 14 of 32, 43.8 percent. Seed 0.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Which boxes each prompt got right (out of 8 messages)</text>
+  <rect x="20" y="80" width="760" height="252" rx="12" fill="#F5F8FA" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="314" y="54" width="172" height="26" rx="6" fill="#F5F8FA" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="67" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">stand-in, not a model</text>
+  <text x="110" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start">category</text>
+  <text x="278" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start">urgency</text>
+  <text x="446" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start">order_id</text>
+  <text x="614" y="108" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start">refund_requested</text>
+  <text x="32" y="135" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">v1</text>
+  <rect x="110" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="125" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="140" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="155" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="170" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="185" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="200" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="215" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="234" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">6/8</text>
+  <rect x="278" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="293" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="308" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="323" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="338" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="353" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="368" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="383" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="402" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">3/8</text>
+  <rect x="446" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="461" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="476" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="491" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="506" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="521" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="536" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="551" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="570" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">4/8</text>
+  <rect x="614" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="629" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="644" y="120" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="659" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="674" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="689" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="704" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="719" y="120" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="738" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">3/8</text>
+  <text x="110" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">6 + 3 + 4 + 3 = 16 of 32 = 50.0%</text>
+  <text x="32" y="203" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">v2</text>
+  <rect x="110" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="125" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="140" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="155" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="170" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="185" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="200" y="188" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="215" y="188" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="234" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">6/8</text>
+  <rect x="278" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="293" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="308" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="323" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="338" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="353" y="188" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="368" y="188" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="383" y="188" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="402" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">5/8</text>
+  <rect x="446" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="461" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="476" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="491" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="506" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="521" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="536" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="551" y="188" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="570" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">7/8</text>
+  <rect x="614" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="629" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="644" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="659" y="188" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="674" y="188" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="689" y="188" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="704" y="188" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="719" y="188" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="738" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">4/8</text>
+  <text x="110" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">6 + 5 + 7 + 4 = 22 of 32 = 68.8%</text>
+  <text x="32" y="271" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">v3</text>
+  <rect x="110" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="125" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="140" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="155" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="170" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="185" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="200" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="215" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="234" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">8/8</text>
+  <rect x="278" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="293" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="308" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="323" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="338" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="353" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="368" y="256" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="383" y="256" width="14" height="22" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="402" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">6/8</text>
+  <rect x="446" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="461" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="476" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="491" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="506" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="521" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="536" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="551" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="570" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">8/8</text>
+  <rect x="614" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="629" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="644" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="659" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="674" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="689" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="704" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="719" y="256" width="14" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="738" y="272" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">8/8</text>
+  <text x="110" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">8 + 6 + 8 + 8 = 30 of 32 = 93.8%</text>
+  <text x="400" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the constant-answer floor: 14 of 32 = 43.8%</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Counts from the stand-in, seed 0: each row's four counts add to its field score.</text>
+</svg>

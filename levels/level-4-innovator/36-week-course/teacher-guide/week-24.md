@@ -1719,6 +1719,7 @@ Estimated time: 60-75 minutes (the trainings in 24.2 are most of it).
 | Loss of a model that knows nothing about a six-way choice | `ln 6 = 1.792`. |
 | Expected card score for the 16-round game | `4 x (1/6 + 2/6 + 4/6 + 1) = 8.67` of `16` (`0.67 + 1.33 + 2.67 + 4`). |
 | Is `0.686` at `n = 3` a leak? | No. A simulated perfect player scored `0.640, 0.666, 0.682, 0.688, 0.688` on five sets of 500 prompts; two to four points either way. The workbook's `p1b.py` (dice 200 to 204) gives `0.656, 0.668, 0.678, 0.664, 0.636`, so `-0.031` and `+0.011` from `0.667`; any five draws will differ, and `0.686` is inside the wobble of both. |
+| Workbook 24.1e blank chart (Figure W24.1, four keys) | Dots at `(0, 0.250), (1, 0.500), (2, 0.750), (3, 1.000), (4, 1.000)`: a climb of `0.25` per step that levels off at `1.000` from `n = 3`. |
 | Why nothing beats the line | The unshown key's value is one of `6 - n` unused digits with nothing to choose between them. |
 | Why is the test set generated with `Random(1000 + n)`? | A private dice per `n`: the same prompts every run, and not the dice training uses. |
 

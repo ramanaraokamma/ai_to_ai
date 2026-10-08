@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Weeks 10 to 17 each left one skill on the paper, and Weeks 15 to 17 are the ones Week 19 depends on</title>
+  <desc>Eight tiles in two rows, Weeks 10 to 17, each naming what the week left: 10 slopes multiply, fading, blowing up and clipping; 11 gates and the forget dial; 12 name model, teacher forcing, train against validation loss; 13 temperature, top-k, top-p, greedy; 14 the three-word attention pass; 15 divide by square root of d, the mask, heads; 16 places, the block, 848 knobs at d = 8; 17 TinyGPT with 807,196 knobs and a first loss of ln 28 = 3.332. Tiles for Weeks 15, 16 and 17 are pink with a thick border and a bracket reads Week 19 leans on these three. Below, a box for the Week 18 paper points to a box for Week 19, which takes TinyGPT apart.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">What Weeks 10 to 17 left behind</text>
+  <rect x="40" y="62" width="165" height="84" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="52" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">Week 10</text>
+  <text x="52" y="102" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">slopes multiply:</text>
+  <text x="52" y="117" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">fading, blowing up,</text>
+  <text x="52" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">clipping</text>
+  <line x1="207" y1="104" x2="223" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(223 104) rotate(0)"/>
+  <rect x="225" y="62" width="165" height="84" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="237" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">Week 11</text>
+  <text x="237" y="102" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">gates and the</text>
+  <text x="237" y="117" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">forget dial</text>
+  <line x1="392" y1="104" x2="408" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(408 104) rotate(0)"/>
+  <rect x="410" y="62" width="165" height="84" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="422" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">Week 12</text>
+  <text x="422" y="102" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">name model, teacher</text>
+  <text x="422" y="117" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">forcing, train vs</text>
+  <text x="422" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">validation loss</text>
+  <line x1="577" y1="104" x2="593" y2="104" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(593 104) rotate(0)"/>
+  <rect x="595" y="62" width="165" height="84" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="607" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">Week 13</text>
+  <text x="607" y="102" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">temperature, top-k,</text>
+  <text x="607" y="117" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">top-p, greedy</text>
+  <rect x="40" y="160" width="165" height="84" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="52" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">Week 14</text>
+  <text x="52" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the three-word</text>
+  <text x="52" y="215" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">attention pass</text>
+  <line x1="207" y1="202" x2="223" y2="202" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(223 202) rotate(0)"/>
+  <rect x="225" y="160" width="165" height="84" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="4" stroke-linejoin="round"/>
+  <text x="237" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">Week 15</text>
+  <text x="237" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">divide by sqrt(d),</text>
+  <text x="237" y="215" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">the mask, heads</text>
+  <line x1="392" y1="202" x2="408" y2="202" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(408 202) rotate(0)"/>
+  <rect x="410" y="160" width="165" height="84" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="4" stroke-linejoin="round"/>
+  <text x="422" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">Week 16</text>
+  <text x="422" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">places, the block,</text>
+  <text x="422" y="215" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">848 knobs at d = 8</text>
+  <line x1="577" y1="202" x2="593" y2="202" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(593 202) rotate(0)"/>
+  <rect x="595" y="160" width="165" height="84" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="4" stroke-linejoin="round"/>
+  <text x="607" y="180" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" font-weight="600">Week 17</text>
+  <text x="607" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">TinyGPT: 807,196</text>
+  <text x="607" y="215" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">knobs, first loss</text>
+  <text x="607" y="230" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">ln 28 = 3.332</text>
+  <path d="M410 250 V258 H760 V250" fill="none" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="585" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">Week 19 leans on these three</text>
+  <rect x="40" y="296" width="300" height="50" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <text x="190" y="321" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Week 18: the paper, an X-ray</text>
+  <line x1="342" y1="321" x2="398" y2="321" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(398 321) rotate(0)"/>
+  <rect x="402" y="296" width="358" height="50" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="581" y="311" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Week 19: take TinyGPT apart</text>
+  <text x="581" y="331" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">mask, positions, residuals, norms</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Read left to right, then down: eight weeks of work, one paper, then the teardown.</text>
+</svg>

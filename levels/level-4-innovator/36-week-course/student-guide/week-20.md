@@ -50,6 +50,10 @@ Keep the card. You will check it before the end.
 
 **Pieces.** Something in the middle: common things get one piece, rare things are spelled from smaller pieces. The question is how to *choose* the pieces. The answer today is surprisingly simple: **count**.
 
+![The sentence the baker practised the cricket cut three ways: 31 letter cells, 5 word boxes with practised and cricket dashed as holes, and 17 piece boxes with no holes](../figures/fig-w20-4-three-ways-to-cut.svg)
+
+*Figure 20.3 — Letters never leave a hole and words do; pieces keep the sequence short without leaving one.*
+
 ### 2. A byte is a number from 0 to 255
 
 A computer does not store letters. It stores numbers from 0 to 255 called **bytes**. The letter `h` is the number 104. A pizza emoji is **four** bytes (240, 159, 141, 149). A Devanagari letter is **three**. The way text is turned into bytes is called **UTF-8**.
@@ -627,6 +631,10 @@ Hindi greeting: tokens before 37  after training on Hindi too 3
 ```
 
 **Tokens per character** is `tokens / characters`. English costs **0.68** tokens per character, Hindi **2.85**, emoji **4.00**. That is about 4.2 times as many tokens per character for Hindi as for English. But look at the last line: after the tokenizer was shown the Hindi greeting (repeated 60 times, a contrived case), the same 13 characters cost **3 tokens**. So the Hindi was not "harder". The tokenizer had simply never been shown it. **The vocabulary is whatever the tokenizer was trained on, and whoever trained it decided what that was.**
+
+![Four bars of tokens per character for English, Hindi, emoji and mixed text, and two bars for the Hindi greeting, 37 tokens before and 3 after the tokenizer saw Hindi](../figures/fig-w20-5-tokens-per-character.svg)
+
+*Figure 20.4 — The same tokenizer charges 0.68 tokens per character for English and 2.85 for Hindi, until it has been shown Hindi.*
 
 ---
 

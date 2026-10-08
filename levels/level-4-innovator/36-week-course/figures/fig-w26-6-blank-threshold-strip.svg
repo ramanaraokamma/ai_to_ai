@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Place each question on the similarity scale, draw one refusal line, and count the mistakes</title>
+  <desc>Blank worksheet. A horizontal scale from 0 to 0.7 with two empty bands above it: one for the eight answerable questions A B C D E G I J and one for the four questions that are not in the notes, F H K L. No letters are placed. Two dashed answer boxes at the foot are for the student's line and the number of mistakes.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The threshold strip: place the twelve questions</text>
+  <rect x="24" y="80" width="752" height="90" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="36" y="102" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">answerable</text>
+  <text x="36" y="120" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="start">A B C D E G I J  (8)</text>
+  <rect x="24" y="190" width="752" height="90" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="36" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">NOT in the notes</text>
+  <text x="36" y="230" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="start">F H K L  (4)</text>
+  <line x1="90" y1="80" x2="90" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="137.1" y1="80" x2="137.1" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="184.3" y1="80" x2="184.3" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="231.4" y1="80" x2="231.4" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="278.6" y1="80" x2="278.6" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="325.7" y1="80" x2="325.7" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="372.9" y1="80" x2="372.9" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="420" y1="80" x2="420" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="467.1" y1="80" x2="467.1" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="514.3" y1="80" x2="514.3" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="561.4" y1="80" x2="561.4" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="608.6" y1="80" x2="608.6" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="655.7" y1="80" x2="655.7" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="702.9" y1="80" x2="702.9" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <line x1="750" y1="80" x2="750" y2="280" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="90" y1="292" x2="750" y2="292" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="90" y1="292" x2="90" y2="299" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="90" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="184.3" y1="292" x2="184.3" y2="299" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="184.3" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.1</text>
+  <line x1="278.6" y1="292" x2="278.6" y2="299" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="278.6" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.2</text>
+  <line x1="372.9" y1="292" x2="372.9" y2="299" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="372.9" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.3</text>
+  <line x1="467.1" y1="292" x2="467.1" y2="299" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="467.1" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.4</text>
+  <line x1="561.4" y1="292" x2="561.4" y2="299" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="561.4" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.5</text>
+  <line x1="655.7" y1="292" x2="655.7" y2="299" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="655.7" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.6</text>
+  <line x1="750" y1="292" x2="750" y2="299" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="750" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.7</text>
+  <text x="420" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">similarity of the best note</text>
+  <rect x="560" y="346" width="60" height="22" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="554" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">my line</text>
+  <rect x="716" y="346" width="50" height="22" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="710" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">mistakes</text>
+  <text x="36" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">left of the line = refused</text>
+</svg>

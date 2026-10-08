@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A red-team finding has six parts in order, and the fix is re-tested twice: against the attack and against the real task</title>
+  <desc>A row of six numbered boxes joined by arrows: attack, evidence, mechanism, fix, re-test twice (highlighted), residual risk. Below, inside a dashed frame marked stand-in, not a model, two panels. Under evidence: attack A1 over seeds 0 to 49 landed 15 of 50 times, share 0.30, wobble 3.24 counts. Under re-test: for patch 2, named files only, the attack landed 0 of 50 and the real save worked 50 of 50, each marked with a tick.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A finding is attack, evidence, fix, two re-tests</text>
+  <rect x="20" y="70" width="112" height="56" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="76" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Attack</text>
+  <text x="76" y="109" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">try to break it</text>
+  <circle cx="32" cy="70" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="32" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <line x1="134" y1="98" x2="146" y2="98" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(146 98) rotate(0)"/>
+  <rect x="148" y="70" width="112" height="56" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="204" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Evidence</text>
+  <text x="204" y="109" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">a count out of n</text>
+  <circle cx="160" cy="70" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="160" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <line x1="262" y1="98" x2="274" y2="98" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(274 98) rotate(0)"/>
+  <rect x="276" y="70" width="112" height="56" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="332" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Mechanism</text>
+  <text x="332" y="109" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">why no fence held</text>
+  <circle cx="288" cy="70" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="288" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <line x1="390" y1="98" x2="402" y2="98" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(402 98) rotate(0)"/>
+  <rect x="404" y="70" width="112" height="56" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="460" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Fix</text>
+  <text x="460" y="109" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">smallest change</text>
+  <circle cx="416" cy="70" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="416" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <line x1="518" y1="98" x2="530" y2="98" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(530 98) rotate(0)"/>
+  <rect x="532" y="70" width="112" height="56" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="588" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Re-test</text>
+  <text x="588" y="109" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">twice</text>
+  <circle cx="544" cy="70" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="544" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <line x1="646" y1="98" x2="658" y2="98" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(658 98) rotate(0)"/>
+  <rect x="660" y="70" width="112" height="56" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="716" y="89" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Residual risk</text>
+  <text x="716" y="109" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">what is left</text>
+  <circle cx="672" cy="70" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="672" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+  <rect x="24" y="176" width="752" height="150" rx="12" fill="#F5F8FA" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="314" y="163" width="172" height="26" rx="6" fill="#F5F8FA" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">stand-in, not a model</text>
+  <line x1="204" y1="128" x2="204" y2="192" stroke="#55636F" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(204 192) rotate(90)"/>
+  <line x1="588" y1="128" x2="588" y2="192" stroke="#55636F" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(588 192) rotate(90)"/>
+  <rect x="40" y="198" width="300" height="112" rx="10" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="190" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Evidence: attack A1, seeds 0 to 49</text>
+  <text x="190" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">15 / 50 landed</text>
+  <text x="190" y="286" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">share 0.30, wobble 3.24 counts</text>
+  <rect x="380" y="198" width="380" height="112" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="570" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Re-test twice: patch 2, named files only</text>
+  <rect x="396" y="232" width="168" height="62" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="480" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the attack</text>
+  <text x="480" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0 / 50 landed</text>
+  <rect x="576" y="232" width="168" height="62" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="660" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the real task</text>
+  <text x="660" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">save worked 50 / 50</text>
+  <polyline points="547.8,244 550.8,247.3 556.8,240.4" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="727.8,244 730.8,247.3 736.8,240.4" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A fix lowers the attack count and keeps the real task working; then write down what is left.</text>
+</svg>

@@ -413,6 +413,11 @@ r9 numbered steps, answers nothing: reward +5.047  vs r2 direct and short: +4.57
 r9 beats r2? True
 ```
 
+The five learned weights and the `r9` against `r2` comparison, drawn from that output:
+
+![Five horizontal bars for the learned weights, plus 5.047 and plus 4.578 to the right, minus 2.794, minus 2.534 and minus 6.091 to the left, and two bars showing r9 at plus 5.047 above r2 at plus 4.578](../figures/fig-w22-5-reward-weights-and-hack.svg)
+*Figure 22.4 — Ten invented judgements, no raters: the biggest positive weight is for formatting, so steps alone outscore a direct answer.*
+
 Read it with care. The loss starts at `0.6931` (`ln 2`: "no idea which is better") and falls to `0.0017`; the scorer gets all ten judgements right.
 
 The **biggest positive weight is for formatting** (the biggest in size is `refuses`, at `-6.091`), not for being helpful. The invented answer `r9`, which is *only* numbered steps and answers nothing, scores higher than the short direct answer `r2`. That is **reward hacking**: an optimizer that chases this reward is pushed toward exactly what the scorer over-rewards.
@@ -481,6 +486,11 @@ Work one pair by hand first. The reference log-chances for (chosen, rejected) ar
 - At `beta = 5` the **same movement** gives margin `12.5`, and the loss is `0.000004`.
 
 **Same movement; a loss more than 100,000 times smaller.** A big `beta` is satisfied by a small movement, so the gradient goes quiet early and the model stops early. That is how `beta` acts inside this loss (it is also the strength of the KL penalty that DPO stands in for, so a big `beta` is a tight leash). **`beta` is a dial inside the loss.** The KL is a *measurement we take afterwards*; the loss never contains it.
+
+Here is that one pair drawn: where each answer sat in the frozen copy, where it sits now, and what the same gap does at the two betas.
+
+![Two number lines of log-chance, chosen moving from minus 20.0 to minus 19.0 and rejected from minus 18.0 to minus 19.5, a gap of 2.5, and two cards showing the loss at beta 0.1 and beta 5](../figures/fig-w22-4-dpo-moved-and-margin.svg)
+*Figure 22.3 — "Moved" is now minus the frozen copy; the same gap of 2.5 gives a loss of 0.5759 at beta 0.1 and 0.000004 at beta 5.*
 
 In the toy, the "model" is **four numbers**: the scores of four possible answers. (This is a bare tensor of knobs: `nn.Parameter` comes in Week 31.) Six preferences say A beats everything and D loses to everything. The preferences are invented and perfectly consistent, unlike real raters. **It has no words and no prompt.**
 

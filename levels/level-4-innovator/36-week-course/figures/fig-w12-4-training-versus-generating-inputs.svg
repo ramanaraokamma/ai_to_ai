@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>In training the next input is already known; in generating it is the model's own previous answer</title>
+  <desc>Two panels. Top, training: a row of six solid cells for the inputs of the name anika, START a n i k a, all in a table before the model runs, marked by a bracket and the label x[:, t], a column that already exists. Bottom, generating: a row of six cells for the generated name olen, START then o l e n EOS; only START is solid, the rest are dashed because each is the model's own pick and does not exist until the model has answered, with arrows from each cell to the next. Inputs from block 1 and the name olen from block 5, Week 12.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Training knows every input; generating makes each one</text>
+  <rect x="30" y="64" width="740" height="134" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="48" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">training (teacher forcing): the true previous letters</text>
+  <rect x="62" y="103" width="52" height="38" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="88" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">START</text>
+  <rect x="142" y="103" width="52" height="38" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="168" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">a</text>
+  <rect x="222" y="103" width="52" height="38" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="248" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">n</text>
+  <rect x="302" y="103" width="52" height="38" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="328" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">i</text>
+  <rect x="382" y="103" width="52" height="38" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="408" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">k</text>
+  <rect x="462" y="103" width="52" height="38" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="488" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">a</text>
+  <path d="M62 148 V156 H514 V148" fill="none" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="288" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">all in the table before the model runs</text>
+  <text x="530" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">x[:, t]</text>
+  <text x="530" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">a column that already exists</text>
+  <rect x="30" y="212" width="740" height="140" rx="12" fill="#F5F8FA" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="48" y="236" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">generating: the model's own last pick</text>
+  <rect x="62" y="251" width="52" height="38" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="88" y="270" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">START</text>
+  <line x1="118" y1="270" x2="138" y2="270" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(138 270) rotate(0)"/>
+  <rect x="142" y="251" width="52" height="38" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <text x="168" y="270" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">o</text>
+  <line x1="198" y1="270" x2="218" y2="270" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(218 270) rotate(0)"/>
+  <rect x="222" y="251" width="52" height="38" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <text x="248" y="270" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">l</text>
+  <line x1="278" y1="270" x2="298" y2="270" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(298 270) rotate(0)"/>
+  <rect x="302" y="251" width="52" height="38" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <text x="328" y="270" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">e</text>
+  <line x1="358" y1="270" x2="378" y2="270" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(378 270) rotate(0)"/>
+  <rect x="382" y="251" width="52" height="38" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <text x="408" y="270" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">n</text>
+  <line x1="438" y1="270" x2="458" y2="270" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(458 270) rotate(0)"/>
+  <rect x="462" y="251" width="52" height="38" rx="6" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <text x="488" y="270" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">EOS</text>
+  <text x="288" y="312" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">each letter waits for the one before it</text>
+  <text x="530" y="266" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">tok = the pick</text>
+  <text x="530" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">dashed cells do not exist yet</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The same model step, run both ways. Only where the next input comes from differs.</text>
+</svg>

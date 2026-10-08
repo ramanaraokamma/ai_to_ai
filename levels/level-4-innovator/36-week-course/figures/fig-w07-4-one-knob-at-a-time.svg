@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>One knob at a time keeps the sweep to 75 runs instead of 11,520</title>
+  <desc>Left, the six knob lists drawn as rows of squares, one square per value: lr 5, batch_size 4, dropout 4, weight_decay 4, norm 3, schedule 4, which add up to 24 values. Right, two bars on a log axis of runs. One knob at a time is 24 times 3 plus 3 baseline runs, which is 75 runs. Every combination of all six is 5 times 4 times 4 times 4 times 3 times 4, which is 3,840 configurations, times 3 seeds, 11,520 runs; that bar is dashed because nobody ran it.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">One knob at a time keeps the sweep small</text>
+  <rect x="20" y="62" width="430" height="270" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="36" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">the six knob lists in knobs.py</text>
+  <text x="36" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">one square per value</text>
+  <text x="36" y="135" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="start">lr</text>
+  <rect x="188" y="119" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="218" y="119" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="248" y="119" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="278" y="119" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="308" y="119" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="346" y="135" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">= 5</text>
+  <text x="36" y="166" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="start">batch_size</text>
+  <rect x="188" y="150" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="218" y="150" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="248" y="150" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="278" y="150" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="346" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">= 4</text>
+  <text x="36" y="197" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="start">dropout</text>
+  <rect x="188" y="181" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="218" y="181" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="248" y="181" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="278" y="181" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="346" y="197" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">= 4</text>
+  <text x="36" y="228" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="start">weight_decay</text>
+  <rect x="188" y="212" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="218" y="212" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="248" y="212" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="278" y="212" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="346" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">= 4</text>
+  <text x="36" y="259" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="start">norm</text>
+  <rect x="188" y="243" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="218" y="243" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="248" y="243" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="346" y="259" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">= 3</text>
+  <text x="36" y="290" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="start">schedule</text>
+  <rect x="188" y="274" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="218" y="274" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="248" y="274" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="278" y="274" width="22" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="346" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">= 4</text>
+  <line x1="36" y1="302" x2="434" y2="302" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="36" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">5 + 4 + 4 + 4 + 3 + 4 = 24 values</text>
+  <rect x="466" y="62" width="314" height="270" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="482" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="start">runs it takes</text>
+  <line x1="500" y1="292" x2="728" y2="292" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="500" y1="292" x2="500" y2="298" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="500" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">10</text>
+  <line x1="576" y1="292" x2="576" y2="298" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="576" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">100</text>
+  <line x1="652" y1="292" x2="652" y2="298" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="652" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1,000</text>
+  <line x1="728" y1="292" x2="728" y2="298" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="728" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">10,000</text>
+  <text x="614" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">runs (log scale)</text>
+  <text x="482" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">one knob at a time</text>
+  <rect x="500" y="130" width="66.5" height="22" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="574.5" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">75 runs</text>
+  <text x="482" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">24 &#215; 3 + 3 = 75</text>
+  <text x="482" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">every combination (not run)</text>
+  <rect x="500" y="212" width="232.7" height="22" rx="4" fill="#F5F8FA" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="724.7" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end">11,520 runs</text>
+  <text x="482" y="252" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">5 &#215; 4 &#215; 4 &#215; 4 &#215; 3 &#215; 4 = 3,840</text>
+  <text x="482" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">3,840 &#215; 3 seeds = 11,520</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One knob per run costs 75 runs; crossing every knob with every other would cost 11,520.</text>
+</svg>

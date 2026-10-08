@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank axes for plotting the two hand-built learning-rate schedules</title>
+  <desc>Empty graph paper. The bottom axis is the step from 0 to 50 with a faint line every 5 steps. The side axis is the rate from 0 to 0.02 with a faint line every 0.002. A small key at the top right has a dashed sample line for cosine only and a solid sample line for warm plus cosine, to be coloured in. Nothing is plotted.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Graph paper for M5: plot both rate columns</text>
+  <line x1="110" y1="86" x2="110" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="110" y1="320" x2="110" y2="325" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="110" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="172" y1="86" x2="172" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="234" y1="86" x2="234" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="234" y1="320" x2="234" y2="325" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="234" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">10</text>
+  <line x1="296" y1="86" x2="296" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="358" y1="86" x2="358" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="358" y1="320" x2="358" y2="325" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="358" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">20</text>
+  <line x1="420" y1="86" x2="420" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="482" y1="86" x2="482" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="482" y1="320" x2="482" y2="325" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="482" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">30</text>
+  <line x1="544" y1="86" x2="544" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="606" y1="86" x2="606" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="606" y1="320" x2="606" y2="325" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="606" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">40</text>
+  <line x1="668" y1="86" x2="668" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="730" y1="86" x2="730" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="730" y1="320" x2="730" y2="325" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="730" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">50</text>
+  <line x1="110" y1="320" x2="730" y2="320" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="105" y1="320" x2="110" y2="320" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="101" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="110" y1="296.6" x2="730" y2="296.6" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="110" y1="273.2" x2="730" y2="273.2" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="105" y1="273.2" x2="110" y2="273.2" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="101" y="277.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.004</text>
+  <line x1="110" y1="249.8" x2="730" y2="249.8" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="110" y1="226.4" x2="730" y2="226.4" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="105" y1="226.4" x2="110" y2="226.4" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="101" y="230.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.008</text>
+  <line x1="110" y1="203" x2="730" y2="203" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="110" y1="179.6" x2="730" y2="179.6" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="105" y1="179.6" x2="110" y2="179.6" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="101" y="183.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.012</text>
+  <line x1="110" y1="156.2" x2="730" y2="156.2" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="110" y1="132.8" x2="730" y2="132.8" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="105" y1="132.8" x2="110" y2="132.8" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="101" y="136.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.016</text>
+  <line x1="110" y1="109.4" x2="730" y2="109.4" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="110" y1="86" x2="730" y2="86" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <line x1="105" y1="86" x2="110" y2="86" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="101" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.02</text>
+  <line x1="110" y1="320" x2="730" y2="320" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="110" y1="86" x2="110" y2="320" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="420" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">step (0 to 50)</text>
+  <text x="44" y="203" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 44 203)">rate (0 to 0.02)</text>
+  <rect x="470" y="50" width="260" height="24" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="480" y1="62" x2="510" y2="62" stroke="#55636F" stroke-width="3" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="516" y="66" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">cosine only</text>
+  <line x1="610" y1="62" x2="640" y2="62" stroke="#55636F" stroke-width="3" stroke-linecap="round"/>
+  <text x="646" y="66" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">warm+cos</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Colour each sample line to match the pen you use, then plot nine points on each.</text>
+</svg>

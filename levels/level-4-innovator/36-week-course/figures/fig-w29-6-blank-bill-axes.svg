@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank axes for the bill: steps k from 0 to 15 across, total input tokens from 0 to 8000 up; plot the totals for k equal to 0, 5 and 15</title>
+  <desc>An empty graph with a grid. The horizontal axis is steps k, a count of tool calls, marked 0, 5, 10 and 15. The vertical axis is total input tokens, marked 0, 2000, 4000, 6000 and 8000. To the right a panel called your three points has three empty dashed boxes for k equal to 0, 5 and 15. Nothing is plotted.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw the bill</text>
+  <line x1="130" y1="80" x2="130" y2="300" stroke="#C7CDD4" stroke-width="1"/>
+  <text x="130" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="273.3" y1="80" x2="273.3" y2="300" stroke="#C7CDD4" stroke-width="1"/>
+  <text x="273.3" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5</text>
+  <line x1="416.7" y1="80" x2="416.7" y2="300" stroke="#C7CDD4" stroke-width="1"/>
+  <text x="416.7" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">10</text>
+  <line x1="560" y1="80" x2="560" y2="300" stroke="#C7CDD4" stroke-width="1"/>
+  <text x="560" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">15</text>
+  <line x1="130" y1="300" x2="560" y2="300" stroke="#C7CDD4" stroke-width="1"/>
+  <text x="122" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0</text>
+  <line x1="130" y1="245" x2="560" y2="245" stroke="#C7CDD4" stroke-width="1"/>
+  <text x="122" y="245" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">2000</text>
+  <line x1="130" y1="190" x2="560" y2="190" stroke="#C7CDD4" stroke-width="1"/>
+  <text x="122" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">4000</text>
+  <line x1="130" y1="135" x2="560" y2="135" stroke="#C7CDD4" stroke-width="1"/>
+  <text x="122" y="135" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">6000</text>
+  <line x1="130" y1="80" x2="560" y2="80" stroke="#C7CDD4" stroke-width="1"/>
+  <text x="122" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">8000</text>
+  <line x1="130" y1="80" x2="130" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="130" y1="300" x2="560" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="345" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">steps k (tool calls)</text>
+  <text x="52" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 52 190)">total input tokens</text>
+  <rect x="590" y="90" width="190" height="150" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="685" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">your three points</text>
+  <text x="604" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">k = 0:</text>
+  <rect x="670" y="134" width="100" height="26" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="604" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">k = 5:</text>
+  <rect x="670" y="170" width="100" height="26" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="604" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">k = 15:</text>
+  <rect x="670" y="206" width="100" height="26" rx="6" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Pencil: plot the three points, then join them in order with a ruler.</text>
+</svg>

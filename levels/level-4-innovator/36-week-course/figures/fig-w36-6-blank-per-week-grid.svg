@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank per-week grid: your marks per week of Term 4, and the two weeks to revisit</title>
+  <desc>An empty table with ten rows, weeks 26, 28, 29, 30, 31, 32, 33, 34, 35 and 36, each with a short topic. Each row has three small rings marked S, U and G for sure, unsure and guessed, three empty dashed boxes for scored, available and ratio, and one empty ring to circle the week. Nothing is filled in.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The per-week grid, blank</text>
+  <text x="24" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">week</text>
+  <text x="74" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">topic</text>
+  <text x="318" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">how sure (ring one)</text>
+  <text x="484" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">scored</text>
+  <text x="564" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">available</text>
+  <text x="644" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">ratio</text>
+  <text x="736" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">ring two</text>
+  <line x1="20" y1="84" x2="780" y2="84" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="24" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">W26</text>
+  <text x="74" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">RAG: retrieve, cite, refuse</text>
+  <circle cx="336" cy="104" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="336" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">S</text>
+  <circle cx="378" cy="104" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="378" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">U</text>
+  <circle cx="420" cy="104" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="420" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">G</text>
+  <rect x="456" y="94" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="536" y="94" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="616" y="94" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="736" cy="104" r="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="24" y="129" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">W28</text>
+  <text x="74" y="129" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">Tools and the loop</text>
+  <circle cx="336" cy="129" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="336" y="129" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">S</text>
+  <circle cx="378" cy="129" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="378" y="129" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">U</text>
+  <circle cx="420" cy="129" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="420" y="129" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">G</text>
+  <rect x="456" y="119" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="536" y="119" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="616" y="119" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="736" cy="129" r="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="24" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">W29</text>
+  <text x="74" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">Agents: attack and budget</text>
+  <circle cx="336" cy="154" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="336" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">S</text>
+  <circle cx="378" cy="154" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="378" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">U</text>
+  <circle cx="420" cy="154" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="420" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">G</text>
+  <rect x="456" y="144" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="536" y="144" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="616" y="144" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="736" cy="154" r="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="24" y="179" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">W30</text>
+  <text x="74" y="179" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">Frozen suite and the judge</text>
+  <circle cx="336" cy="179" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="336" y="179" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">S</text>
+  <circle cx="378" cy="179" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="378" y="179" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">U</text>
+  <circle cx="420" cy="179" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="420" y="179" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">G</text>
+  <rect x="456" y="169" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="536" y="169" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="616" y="169" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="736" cy="179" r="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="24" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">W31</text>
+  <text x="74" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">Fine-tuning and LoRA</text>
+  <circle cx="336" cy="204" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="336" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">S</text>
+  <circle cx="378" cy="204" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="378" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">U</text>
+  <circle cx="420" cy="204" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="420" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">G</text>
+  <rect x="456" y="194" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="536" y="194" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="616" y="194" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="736" cy="204" r="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="24" y="229" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">W32</text>
+  <text x="74" y="229" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">Calibration and abstention</text>
+  <circle cx="336" cy="229" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="336" y="229" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">S</text>
+  <circle cx="378" cy="229" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="378" y="229" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">U</text>
+  <circle cx="420" cy="229" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="420" y="229" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">G</text>
+  <rect x="456" y="219" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="536" y="219" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="616" y="219" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="736" cy="229" r="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="24" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">W33</text>
+  <text x="74" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">Attack your own system</text>
+  <circle cx="336" cy="254" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="336" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">S</text>
+  <circle cx="378" cy="254" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="378" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">U</text>
+  <circle cx="420" cy="254" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="420" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">G</text>
+  <rect x="456" y="244" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="536" y="244" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="616" y="244" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="736" cy="254" r="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="24" y="279" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">W34</text>
+  <text x="74" y="279" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">Capstone 1: the frozen eval</text>
+  <circle cx="336" cy="279" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="336" y="279" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">S</text>
+  <circle cx="378" cy="279" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="378" y="279" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">U</text>
+  <circle cx="420" cy="279" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="420" y="279" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">G</text>
+  <rect x="456" y="269" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="536" y="269" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="616" y="269" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="736" cy="279" r="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="24" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">W35</text>
+  <text x="74" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">Capstone 2: build, measure</text>
+  <circle cx="336" cy="304" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="336" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">S</text>
+  <circle cx="378" cy="304" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="378" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">U</text>
+  <circle cx="420" cy="304" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="420" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">G</text>
+  <rect x="456" y="294" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="536" y="294" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="616" y="294" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="736" cy="304" r="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <text x="24" y="329" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">W36</text>
+  <text x="74" y="329" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">Capstone 3: demo and card</text>
+  <circle cx="336" cy="329" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="336" y="329" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">S</text>
+  <circle cx="378" cy="329" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="378" y="329" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">U</text>
+  <circle cx="420" cy="329" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="420" y="329" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">G</text>
+  <rect x="456" y="319" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="536" y="319" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="616" y="319" width="56" height="20" rx="4" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="736" cy="329" r="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2"/>
+  <line x1="20" y1="343" x2="780" y2="343" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="24" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">S = sure, U = unsure, G = guessed.  Marks available are on your marking sheet.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Fill in your own marks and ring at most two weeks. Nothing on the grid is a grade.</text>
+</svg>

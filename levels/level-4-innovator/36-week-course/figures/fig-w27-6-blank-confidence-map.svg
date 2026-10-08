@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Rate how sure you felt about each week, then set it beside the percentage from your grid</title>
+  <desc>Blank worksheet. Eight rows, one for each of Weeks 19 to 26 with its topic. Each row has four empty circles labelled lost, shaky, fair and solid for the student to shade one, an empty dashed box for the percentage from the grid, and an empty ring for circling the week to redo. Nothing is filled in.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Confidence map: how sure did I feel?</text>
+  <text x="440" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">lost</text>
+  <text x="490" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">shaky</text>
+  <text x="540" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">fair</text>
+  <text x="590" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">solid</text>
+  <text x="40" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">week and what it covers</text>
+  <text x="665" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">my % from</text>
+  <text x="665" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the grid</text>
+  <text x="740" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">redo?</text>
+  <text x="740" y="96" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">(ring)</text>
+  <rect x="24" y="102" width="752" height="26" rx="6" fill="#F5F8FA" stroke="#F5F8FA" stroke-width="1" stroke-linejoin="round"/>
+  <text x="40" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Week 19</text>
+  <text x="112" y="121" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">Ablations; the mask leak; heads</text>
+  <circle cx="440" cy="117" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="490" cy="117" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="540" cy="117" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="590" cy="117" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <rect x="636" y="105" width="58" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="740" cy="117" r="12" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="40" y="149" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Week 20</text>
+  <text x="112" y="149" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">BPE: bytes, merges, bytes per token</text>
+  <circle cx="440" cy="145" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="490" cy="145" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="540" cy="145" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="590" cy="145" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <rect x="636" y="133" width="58" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="740" cy="145" r="12" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <rect x="24" y="158" width="752" height="26" rx="6" fill="#F5F8FA" stroke="#F5F8FA" stroke-width="1" stroke-linejoin="round"/>
+  <text x="40" y="177" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Week 21</text>
+  <text x="112" y="177" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">The log-log line; 6ND</text>
+  <circle cx="440" cy="173" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="490" cy="173" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="540" cy="173" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="590" cy="173" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <rect x="636" y="161" width="58" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="740" cy="173" r="12" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="40" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Week 22</text>
+  <text x="112" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">Masked loss; pair loss; KL; the leash</text>
+  <circle cx="440" cy="201" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="490" cy="201" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="540" cy="201" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="590" cy="201" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <rect x="636" y="189" width="58" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="740" cy="201" r="12" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <rect x="24" y="214" width="752" height="26" rx="6" fill="#F5F8FA" stroke="#F5F8FA" stroke-width="1" stroke-linejoin="round"/>
+  <text x="40" y="233" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Week 23</text>
+  <text x="112" y="233" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">The harness: floor, frozen set, guard</text>
+  <circle cx="440" cy="229" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="490" cy="229" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="540" cy="229" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="590" cy="229" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <rect x="636" y="217" width="58" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="740" cy="229" r="12" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="40" y="261" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Week 24</text>
+  <text x="112" y="261" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">Examples in the prompt; the logit mask</text>
+  <circle cx="440" cy="257" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="490" cy="257" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="540" cy="257" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="590" cy="257" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <rect x="636" y="245" width="58" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="740" cy="257" r="12" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <rect x="24" y="270" width="752" height="26" rx="6" fill="#F5F8FA" stroke="#F5F8FA" stroke-width="1" stroke-linejoin="round"/>
+  <text x="40" y="289" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Week 25</text>
+  <text x="112" y="289" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">Cosine; recall</text>
+  <circle cx="440" cy="285" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="490" cy="285" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="540" cy="285" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="590" cy="285" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <rect x="636" y="273" width="58" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="740" cy="285" r="12" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="40" y="317" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Week 26</text>
+  <text x="112" y="317" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">RAG: top k, citations, chunk size</text>
+  <circle cx="440" cy="313" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="490" cy="313" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="540" cy="313" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <circle cx="590" cy="313" r="10" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <rect x="636" y="301" width="58" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="740" cy="313" r="12" fill="#FFFFFF" stroke="#55636F" stroke-width="2"/>
+  <text x="400" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">shade one circle per week before you mark;</text>
+  <text x="400" y="370" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">then fill the % from your grid and ring at most two weeks.</text>
+</svg>

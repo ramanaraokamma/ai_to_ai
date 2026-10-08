@@ -231,6 +231,11 @@ Price: 1.00 per million tokens in, 5.00 per million out. A task calls the calcul
 
 **(e)** How much of the k = 15 input total is the `32 x 120` part (the history being re-sent)? ______ out of ______ , which is about ______ %. Do the same for k = 5: ______ out of ______ , about ______ %.
 
+**Draw the bill.** Mark the total input tokens for `k = 0` (just the first turn, 223), then your (b) and (c) answers, and join the three points in order with a ruler. Which piece of the line is steeper, the first or the second? ______
+
+![Blank axes with steps k from 0 to 15 across and total input tokens from 0 to 8000 up, and three empty boxes for the points at k equal to 0, 5 and 15](../figures/fig-w29-6-blank-bill-axes.svg)
+*Figure 29.6 — The bill on axes: three points are yours to find and plot.*
+
 **(f) Find the slip.** A friend works out `k = 10` as `223 x 10 + 32 x 55` and gets `3990`. What did the friend forget, and what should the input total be? ____________________________________________________________
 
 **(g) The waiting.** Each call takes 0.05 s (SIMULATED). 5 steps wait ______ s; 15 steps wait ______ s. Which grows faster with `k`, the waiting or the bill? ____________________________________________________________
@@ -482,6 +487,7 @@ obeyed: ['write_file'] | file landed: True
 (c) Input `223 x 16 + 32 x 120 = 3568 + 3840 =` **7408**. Output `10 x 15 + 2 =` **152**. Cost `7408 + 760 =` **8168** millionths (`$0.008168`).
 (d) `8168 / 2078 = 3.93`: about **four times**, not 3. (Accept 3.9 to 4.0.)
 (e) k = 15: `3840` out of `7408`, about **52 %**. k = 5: `480` out of `1818`, about **26 %**. The share of the bill that is the history being re-read grows with `k`.
+Draw the bill (Figure 29.6): the points are `(0, 223)`, `(5, 1818)` and `(15, 7408)`. The first piece rises `(1818 - 223) / 5 =` **319** tokens per step and the second `(7408 - 1818) / 10 =` **559** per step, so the **second** piece is steeper: each extra step costs more than the one before.
 (f) The friend used 10 turns. `k = 10` tool turns is **11** model turns, because the closing answer is a turn too. Correct: `223 x 11 + 32 x 55 = 2453 + 1760 =` **4213**. The slip is `4213 - 3990 = 223`, exactly one missing first turn.
 (g) `0.05 x 5 =` **0.25 s**; `0.05 x 15 =` **0.75 s**. Waiting is a straight line; **the bill grows faster** (it has a `k x k` part). They are two different budgets.
 (h) Any sentence saying each short task starts with a short history, so it never pays for a long history being re-sent. (From the chapter's runs: 3 x `$0.004748` = `$0.014244` for three 10-step tasks, against `$0.023528` for one 30-step task, handoff tokens ignored.)

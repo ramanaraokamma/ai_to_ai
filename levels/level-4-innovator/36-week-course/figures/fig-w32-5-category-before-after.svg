@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>At threshold 0.8 the average rose but billing fell, and three rows rest on three or fewer answers</title>
+  <desc>Five rows of paired bars for 40 invented results, a dashed bar for the share right before and a solid bar for the share of the answered that are right after. Greeting 7 of 8 then 6 of 6 with 6 answered. Refund 5 of 8 then 3 of 3 with 3 answered, marked few. Technical 4 of 8 then 1 of 1 with 1 answered, marked few. Billing 4 of 8 then 2 of 6 with 6 answered, outlined in red with a cross as the row that fell. Out of scope 3 of 8 then 1 of 2 with 2 answered, marked few.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Did every category get better at 0.8?</text>
+  <text x="170" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <text x="500" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1.0</text>
+  <text x="556" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">right before</text>
+  <text x="646" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">right after</text>
+  <text x="726" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">answered</text>
+  <line x1="170" y1="90" x2="170" y2="330" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="500" y1="90" x2="500" y2="330" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="30" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">greeting</text>
+  <rect x="170" y="102" width="288.8" height="14" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="170" y="120" width="330" height="14" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="556" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">7 of 8</text>
+  <text x="646" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">6 of 6</text>
+  <text x="726" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">6</text>
+  <text x="30" y="172" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">refund</text>
+  <rect x="170" y="150" width="206.2" height="14" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="170" y="168" width="330" height="14" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="556" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">5 of 8</text>
+  <text x="646" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">3 of 3</text>
+  <text x="726" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3</text>
+  <text x="742" y="170" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">few</text>
+  <text x="30" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">technical</text>
+  <rect x="170" y="198" width="165" height="14" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="170" y="216" width="330" height="14" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="556" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">4 of 8</text>
+  <text x="646" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1 of 1</text>
+  <text x="726" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <text x="742" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">few</text>
+  <text x="30" y="268" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">billing</text>
+  <rect x="170" y="246" width="165" height="14" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="170" y="264" width="110" height="14" rx="2" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="556" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">4 of 8</text>
+  <text x="646" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">2 of 6</text>
+  <text x="726" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">6</text>
+  <polyline points="598,256 610,268" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="598,268 610,256" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="24" y="237" width="740" height="50" rx="8" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="30" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">out_of_scope</text>
+  <rect x="170" y="294" width="123.8" height="14" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="170" y="312" width="165" height="14" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="556" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">3 of 8</text>
+  <text x="646" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1 of 2</text>
+  <text x="726" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <text x="742" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">few</text>
+  <text x="174" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">dashed bar: before    solid bar: right share of the answered    cross and red: fell</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Overall 0.575 to 0.722, yet billing fell from 4 of 8 to 2 of 6; small rows are not readable.</text>
+</svg>

@@ -170,6 +170,12 @@ the x 5      then x 2      than x 2      hat x 3
 | 3 | | | | |
 | 4 | | | | |
 
+**Fill in the sheet.** Use this figure for B1 and B2 if you would rather write on the picture than on the tables above.
+
+![A blank merge-by-hand sheet: four word chips, six headed pair cells with empty boxes beneath, and a four-row table with empty cells for pair glued, count, new piece and the four words](../figures/fig-w20-6-blank-merge-card.svg)
+
+*Figure 20.5 — The class card on one sheet: six counts first, then four merges, all cells empty.*
+
 **B3.** At merge 5 three pairs tie. Write them: ________________________________ Which did you take, and by what rule? ________________________________ Does your choice change the tokens of `then`? ________________________________
 
 **B4.** Encode `thathen` with your **four** merges, earliest first: ________________________________ Does `hat` appear inside it? ____ Why is `that` not a piece? ________________________________

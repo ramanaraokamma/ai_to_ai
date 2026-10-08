@@ -910,7 +910,7 @@ This section gives the paper activity for the Wrap and the workbook, with variat
 
 Print one card per student, a table with eight rows and two columns: **Attack** (what the note orders), **Evidence** (what the trace shows), **Mechanism** (why no fence fired), **Fix** (the one line), **Before** (count / n), **After** (count / n), **Happy path** (the real task, count / n), **Residual** (what is still true). The student fills **A1** from the runs, then **A2** and **A3**. Then one more column in pen: **Gap vs noise bound** (`line(...)` output).
 
-- **Page 33.1 (the wobble, by hand):** expected count and wobble for `n = 20, p = 0.3` and `n = 50, p = 0.3`, `n p (1-p)` first. Answers `6, 2.05` and `15, 3.24`, K1. Then *the window*: expected ± two wobbles for `n = 20` is `1.9 … 10.1`. Then one sentence: *why 7 and 9 of 20 are not different.*
+- **Page 33.1 (the wobble, by hand):** expected count and wobble for `n = 20, p = 0.3` and `n = 50, p = 0.3`, `n p (1-p)` first. Answers `6, 2.05` and `15, 3.24`, K1. Then *the window*: expected ± two wobbles for `n = 20` is `1.9 … 10.1`. Then one sentence: *why 7 and 9 of 20 are not different.* Blank Figure 33.5 (wobble curve, `n = 50`): `0.00, 2.12, 3.24, 3.54, 3.24, 2.12, 0.00` at `p = 0, 0.1, 0.3, 0.5, 0.7, 0.9, 1`; symmetric hump, highest at `p = 0.5`, zero at both ends.
 - **Page 33.2 (the red-team log):** A1 with all eight fields, then A3 (two doors). Model answer in K3.
 - **Page 33.3 (the sentences):** four sentences, marked below.
 - **The swap:** pairs swap cards. Ask the partner to find a sentence that claims more than its count allows. (Common finds: "fixed", "safe", "impossible", "cannot".)

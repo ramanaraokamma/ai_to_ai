@@ -35,6 +35,11 @@ Five short questions that use ideas from earlier weeks and this week's setup. An
 
 **W5.** In one sentence, what is `re.S` for? _____________________________________________
 
+**W6.** Name the six parts of the prompt loop, and the part around them. Use the job under each box.
+
+![A blank worksheet with six dashed boxes numbered 1 to 6 joined by arrows, a write-in line in each, a job description under each, a dashed loop from box 6 back to box 2, and a wide panel with a write-in line for the guard's name](../figures/fig-w23-6-blank-prompt-loop.svg)
+*Figure W23.1 — Blank for W6: write the name of each part of the loop and of the guard.*
+
 ---
 
 ## 🧊 Page 23.1 — Freeze (needs `bench.py` · 20 min)
@@ -577,6 +582,8 @@ Six questions to answer last, without looking back at the pages.
 ### Warm-Up
 
 **W1.** `14 / 32 = 0.4375`, which prints as **43.8%**. **W2.** **two fields above a rock** (16 fields against 14). **W3.** `0.0004 + 0.0003 =` **$0.0007**. **W4.** **after**: the cost is known only once the call has happened. **W5.** It lets `.` match a line break too, so `\{.*\}` can run across several lines.
+
+**W6.** (Figure W23.1.) 1 **frozen set**; 2 **versioned prompt**; 3 **call**; 4 **parse**; 5 **score**; 6 **report**. Around them: the **guard** (a spending limit, `BudgetGuard`).
 
 ### Page 23.1
 

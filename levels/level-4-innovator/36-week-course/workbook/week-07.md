@@ -143,6 +143,11 @@ Use **three decimals** and a calculator. The baseline is **0.039 +/- 0.008**. Th
 | `norm batch` | 0.024 +/- 0.005 | ________ | ________ | ______________ |
 | `schedule step` | 0.033 +/- 0.001 | ________ | ________ | ______________ |
 
+**Draw each row's gap bar and its 2 x spread bar from the left edge, then write the verdict in the box.**
+
+![Blank page with three rows, dropout 0.3, norm batch and schedule step, each with an empty gap track, an empty twice-the-spread track and an empty verdict box](../figures/fig-w07-6-blank-gap-and-threshold-bars.svg)
+*Figure 7.6 — Blank: draw the gap and twice the larger spread to one scale for each row.*
+
 **H1.** One of these three is **close to the line**. Which, and by how much? ________________________________
 
 **H2.** `norm batch` has the lowest mean in the whole table. Is it the winner? Write one sentence that uses the words *gap* and *twice the spread*.
@@ -473,6 +478,7 @@ No right answers. The reveal: of 24 rows, **20 inside noise** (4 are the baselin
 | `norm batch` | 0.024 - 0.039 = -0.015 | 2 x 0.008 = 0.016 | inside noise, **borderline** |
 | `schedule step` | 0.033 - 0.039 = -0.006 | 2 x 0.008 = 0.016 | inside noise |
 
+- **Figure 7.6 (blank bars).** Gap bars end at 0.004 (`dropout 0.3`), 0.015 (`norm batch`) and 0.006 (`schedule step`); the 2 x spread bars end at 0.026, 0.016 and 0.016. In all three the gap bar is the shorter one, so the verdict is **inside noise** each time; `norm batch` falls short by only 0.001.
 - **H1.** `norm batch`: |gap| 0.015 is just under 0.016, short of the line by 0.001.
 - **H2.** No. Its gap (0.015) is below twice the spread (0.016), so the rule calls it inside noise; the lowest of 24 noisy numbers is not a winner.
 - **H3.** The spread (0.001) is the smallest in the table, against 0.008. You may say: on the spirals, with 3 seeds, a decaying schedule looked *steadier*, not lower (three-seed spreads are very noisy, and a learning rate near zero at the end of the run may be part of the reason). You may not say it is better, or that it will hold on another dataset.

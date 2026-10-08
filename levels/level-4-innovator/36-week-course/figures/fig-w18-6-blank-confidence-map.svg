@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank confidence map for Week 18: tick before the paper, shade the percent after, and circle at most two weeks</title>
+  <desc>A blank form with eight rows for Weeks 10 to 17. Each row has three empty circles headed Yes, Maybe and No for the night before, an empty dashed bar for the percent earned after the paper, from 0 to 100 with a dashed vertical line at 60, and an empty dashed box headed circle. Nothing is filled in.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Confidence map: before and after the paper</text>
+  <text x="40" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">week</text>
+  <text x="170" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Yes</text>
+  <text x="215" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Maybe</text>
+  <text x="260" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">No</text>
+  <text x="215" y="62" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">before: could I do this now?</text>
+  <text x="510" y="62" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">after: percent earned</text>
+  <text x="738" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">circle</text>
+  <line x1="546" y1="92" x2="546" y2="332" stroke="#55636F" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="40" y="105" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Week 10</text>
+  <circle cx="170" cy="105" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="215" cy="105" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="260" cy="105" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <rect x="330" y="96" width="360" height="18" rx="3" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="716" y="95" width="44" height="20" rx="4" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="40" y="135" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Week 11</text>
+  <circle cx="170" cy="135" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="215" cy="135" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="260" cy="135" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <rect x="330" y="126" width="360" height="18" rx="3" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="716" y="125" width="44" height="20" rx="4" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="40" y="165" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Week 12</text>
+  <circle cx="170" cy="165" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="215" cy="165" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="260" cy="165" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <rect x="330" y="156" width="360" height="18" rx="3" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="716" y="155" width="44" height="20" rx="4" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="40" y="195" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Week 13</text>
+  <circle cx="170" cy="195" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="215" cy="195" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="260" cy="195" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <rect x="330" y="186" width="360" height="18" rx="3" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="716" y="185" width="44" height="20" rx="4" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="40" y="225" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Week 14</text>
+  <circle cx="170" cy="225" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="215" cy="225" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="260" cy="225" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <rect x="330" y="216" width="360" height="18" rx="3" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="716" y="215" width="44" height="20" rx="4" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="40" y="255" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Week 15</text>
+  <circle cx="170" cy="255" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="215" cy="255" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="260" cy="255" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <rect x="330" y="246" width="360" height="18" rx="3" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="716" y="245" width="44" height="20" rx="4" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="40" y="285" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Week 16</text>
+  <circle cx="170" cy="285" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="215" cy="285" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="260" cy="285" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <rect x="330" y="276" width="360" height="18" rx="3" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="716" y="275" width="44" height="20" rx="4" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="40" y="315" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Week 17</text>
+  <circle cx="170" cy="315" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="215" cy="315" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <circle cx="260" cy="315" r="9" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <rect x="330" y="306" width="360" height="18" rx="3" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="716" y="305" width="44" height="20" rx="4" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="330" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <text x="546" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">60</text>
+  <text x="690" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">100</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Tick tonight. After marking, shade each bar and circle at most two weeks.</text>
+</svg>

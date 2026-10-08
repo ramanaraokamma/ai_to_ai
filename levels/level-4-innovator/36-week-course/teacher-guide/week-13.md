@@ -1249,6 +1249,8 @@ Scores `s t a r e` = `1.5, 1.0, 0.0, -0.5, 2.5`; the best letter is `e` at every
 
 Probabilities `0.579, 0.213, 0.129, 0.078`. **Top-2:** `0.731, 0.269` (drop the other two, re-share: `0.579 / 0.792` and `0.213 / 0.792`). **Running total:** `0.579, 0.792, 0.922, 1.000`. **Top-p 0.9:** the first three letters (the total *above* the third is `0.792 < 0.9`; above the fourth is `0.922`, not below), shares `0.629, 0.231, 0.140`. **Top-p 0.5:** just the first letter (nothing is above it; above the second the total is `0.579`, which is not below `0.5`). A student who answers "two letters" for top-p 0.5 used the *including* test: point at Clinic 6.
 
+Workbook Figure 13.5 (the blank bars-and-lines figure on this page): bars `0.579, 0.213, 0.129, 0.078`; running-total marks `0.579, 0.792, 0.922, 1.000`; fill the `kept?` circles of the first three letters at `p = 0.9`. The `p = 0.9` marker lies between the second mark (`0.792`) and the third (`0.922`); the kept test uses the total *above* each letter, so the third letter passes (`0.792` is below `0.9`) and the fourth does not (`0.922`).
+
 ### Page 13.4 — The copy-task sweep (from `copytask.py`; chance = 0.125)
 
 | Gap D | 1 | 5 | 10 | 20 | 40 |

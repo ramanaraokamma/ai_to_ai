@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank grid: put each failure mode where its likelihood and severity say</title>
+  <desc>A list of five failure modes for Asha's design, numbered 1 to 5, beside an empty five by five grid. The columns are likelihood from 1, rare, to 5, common; the rows are severity from 1, mild, to 5, someone loses something, with 5 at the top. Every cell is empty.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Place the five failure modes</text>
+  <rect x="20" y="66" width="330" height="262" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="36" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">Asha's design (Part A)</text>
+  <circle cx="46" cy="124" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="46" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="66" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">injected note writes outside its folder</text>
+  <circle cx="46" cy="164" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="46" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="66" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">confident wrong answer, real-looking citation</text>
+  <circle cx="46" cy="204" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="46" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="66" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">personal data in the notes ends up in logs</text>
+  <circle cx="46" cy="244" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="46" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="66" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">a sum is copied from a note, not computed</text>
+  <circle cx="46" cy="284" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="46" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <text x="66" y="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">it refuses so often that Asha stops using it</text>
+  <rect x="430" y="82" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="492" y="82" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="554" y="82" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="616" y="82" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="678" y="82" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="430" y="128" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="492" y="128" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="554" y="128" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="616" y="128" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="678" y="128" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="430" y="174" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="492" y="174" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="554" y="174" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="616" y="174" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="678" y="174" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="430" y="220" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="492" y="220" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="554" y="220" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="616" y="220" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="678" y="220" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="430" y="266" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="492" y="266" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="554" y="266" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="616" y="266" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="678" y="266" width="62" height="46" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="461" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <text x="523" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <text x="585" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3</text>
+  <text x="647" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4</text>
+  <text x="709" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5</text>
+  <text x="418" y="105" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">5</text>
+  <text x="418" y="151" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">4</text>
+  <text x="418" y="197" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">3</text>
+  <text x="418" y="243" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">2</text>
+  <text x="418" y="289" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">1</text>
+  <text x="585" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">likelihood (1 rare ... 5 common)</text>
+  <text x="396" y="197" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 396 197)">severity (1 mild ... 5 someone loses something)</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Write each number in its cell, then ring the one you would read first.</text>
+</svg>

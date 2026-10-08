@@ -63,6 +63,17 @@ ________________________________________________________________
 
 **Count the stored numbers.** `nn.LayerNorm(64)`: ______ parameters, ______ stored running numbers. `nn.BatchNorm1d(64)`: ______ parameters, ______ stored running numbers. `nn.Identity()`: ______ parameters.
 
+**Name the parts of the block.** Write what each ringed part is, using the words from this page.
+
+![Blank block diagram: an input x feeds four empty boxes in a row, ringed 1 to 4, then an arrow ringed 7 into a circle ringed 6 that sends the result out; a long arc ringed 5 leaves x, passes over the four boxes and joins the circle from above; no part is named](../figures/fig-w06-6-blank-block.svg)
+*Figure W6.3 — The block with its parts unnamed: write a name for each ring.*
+
+1. Ring 1: ______________ 2. Ring 2: ______________ 3. Ring 3: ______________ 4. Ring 4: ______________
+
+5. Ring 5 (the long arc): ______________ 6. Ring 6: ______________ 7. Ring 7 (what comes out of box 4): ______
+
+If the arc is removed, what does the block hand back? ______
+
 ---
 
 ## 🔮 Page 6.2 — Predict the Output
@@ -366,6 +377,7 @@ This section tests the week's main ideas in seven short gaps. Fill them without 
 - In your own words: a gradient highway is the `x + f(x)` path that lets the error walk back to the first layers with a slope of exactly 1 from the road itself (the block's own slope is then added to that 1); gradient length is the size (length) of all the gradient numbers taken together.
 - Difference between the norms: layer norm normalises across each **row** (one example), batch norm across each **column** (the batch).
 - Counts: `LayerNorm(64)` **128** parameters, **0** stored numbers; `BatchNorm1d(64)` **128** parameters, **129** stored numbers (64 means, 64 variances, 1 counter); `Identity` **0**.
+- Block parts (Figure W6.3): ring 1 the **norm** (layer norm), ring 2 the **linear layer**, ring 3 **GELU**, ring 4 **dropout**, ring 5 the **road** (the residual connection, carrying `x` past the boxes unchanged), ring 6 the **add**, `x + h`, ring 7 **`h`**, what the block adds. With the arc removed the block hands back just `h`, and `x` is lost.
 
 ### Page 6.2
 - **P1.** Raises **`ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 4])`**.

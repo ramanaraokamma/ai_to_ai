@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Without the divide the biggest weight grows with the width and the softmax saturates; with it the biggest weight stays near 0.365</title>
+  <desc>Paired bars of the average biggest weight in a row of 8 scores, from scale.py. Width 4: raw 0.573, divided 0.372. Width 16: raw 0.763, divided 0.363. Width 64: raw 0.880, divided 0.365. A dotted line marks an equal share of 0.125.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The biggest weight in a row of 8</text>
+  <rect x="300" y="62" width="14" height="12" rx="2" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="320" y="73" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">raw scores</text>
+  <rect x="420" y="62" width="14" height="12" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="440" y="73" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">divided by the root of d</text>
+  <line x1="90" y1="300" x2="740" y2="300" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="82" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="90" y1="250" x2="740" y2="250" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="82" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.25</text>
+  <line x1="90" y1="200" x2="740" y2="200" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="82" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.5</text>
+  <line x1="90" y1="150" x2="740" y2="150" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="82" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.75</text>
+  <line x1="90" y1="100" x2="740" y2="100" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="82" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <line x1="90" y1="300" x2="740" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="90" y1="100" x2="90" y2="300" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="40" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 40 200)">average biggest weight</text>
+  <line x1="90" y1="275" x2="740" y2="275" stroke="#55636F" stroke-width="2" stroke-dasharray="2 5" stroke-linecap="round"/>
+  <text x="310" y="251" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">equal share</text>
+  <text x="310" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.125</text>
+  <rect x="134" y="185.4" width="62" height="114.6" rx="2" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="165" y="177.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.573</text>
+  <rect x="204" y="225.6" width="62" height="74.4" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="235" y="217.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.372</text>
+  <text x="200" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">width d = 4</text>
+  <rect x="354" y="147.4" width="62" height="152.6" rx="2" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="385" y="139.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.763</text>
+  <rect x="424" y="227.4" width="62" height="72.6" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="455" y="219.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.363</text>
+  <text x="420" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">width d = 16</text>
+  <rect x="574" y="124" width="62" height="176" rx="2" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="605" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.880</text>
+  <rect x="644" y="227" width="62" height="73" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="675" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.365</text>
+  <text x="640" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">width d = 64</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Raw scores let one winner take nearly all as the width grows; divided scores stay calm.</text>
+</svg>

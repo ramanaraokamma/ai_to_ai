@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A planted note reaches the model as ordinary text; layers 1 and 2 only ask the model to cooperate, layer 3 is a wall that never reads the prompt</title>
+  <desc>A left-to-right chain of four boxes joined by arrows: a dashed planted note written by somebody else, a search result that comes back as text, the model marked stand-in not a model, and a dashed box for the order, write_file outside the folder. A bracket under the first two arrows is labelled layers 1 and 2, wrap the result and flag marker phrases, which change how often. A tall green wall between the model and the order is labelled layer 3: allowlist, human and sandbox, which never read the prompt.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A planted note travels as data</text>
+  <rect x="30" y="78" width="150" height="70" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="105" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">planted note</text>
+  <text x="105" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">written by somebody else</text>
+  <rect x="220" y="78" width="150" height="70" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="295" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">search result</text>
+  <text x="295" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">comes back as text</text>
+  <rect x="410" y="78" width="150" height="70" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="485" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">the model</text>
+  <text x="485" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">stand-in, not a model</text>
+  <rect x="640" y="78" width="130" height="70" rx="8" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="705" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">the order</text>
+  <text x="705" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">write_file outside</text>
+  <line x1="184" y1="113" x2="214" y2="113" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(214 113) rotate(0)"/>
+  <line x1="374" y1="113" x2="404" y2="113" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(404 113) rotate(0)"/>
+  <line x1="564" y1="113" x2="634" y2="113" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(634 113) rotate(0)"/>
+  <rect x="584" y="62" width="18" height="184" rx="4" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="593" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="600">layer 3</text>
+  <text x="593" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">allowlist  ·  human  ·  sandbox</text>
+  <text x="593" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">never reads the prompt</text>
+  <path d="M222 170 V178 H560 V170" fill="none" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="391" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" font-weight="600">layers 1 and 2: wrap the result</text>
+  <text x="391" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">and flag marker phrases</text>
+  <text x="391" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">the model is asked to cooperate</text>
+  <text x="391" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">they change how often</text>
+  <text x="112" y="192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">to the model, the order</text>
+  <text x="112" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and the data arrive in</text>
+  <text x="112" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the same place: text</text>
+  <text x="710" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">layer 3 changes what</text>
+  <text x="710" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">can happen at all</text>
+  <text x="400" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Soft layers lower a rate; only the hard layer bounds the damage.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">defence in depth: stack the soft layers, rely on the hard one</text>
+</svg>

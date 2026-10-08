@@ -974,6 +974,8 @@ No right answers; this is a calibration card. The reveal, for the teacher:
 | norm batch (0.024 ± 0.005) | −0.015 | 2 × 0.008 = 0.016 | inside noise, **borderline** (0.015 is just under 0.016) |
 | schedule step (0.033 ± 0.001) | −0.006 | 2 × 0.008 = 0.016 | inside noise; note its **spread is the smallest in the table** |
 
+**Blank Figure 7.6 (workbook).** The expected drawing: gap bars of length 0.004, 0.015, 0.006 and 2 × spread bars of length 0.026, 0.016, 0.016 on the 0 to 0.03 scale; every gap bar is shorter, so all three verdicts read inside noise (`norm batch` by 0.001).
+
 H1: `norm batch` is the close one (|gap| 0.015 against 2 × spread 0.016, short by 0.001). H2: no; its gap is just under twice the spread, so the rule calls it inside noise. H3: a spread finding is that the three seeds agree closely; on the spirals, with 3 seeds, a decaying schedule looked steadier, not lower; it cannot be called better or carried to other data. H4: mean = 0.0389; 0.0499 / 0.0301 = 1.66, a 66% swing with nothing changed. H5 (extension): `lr 0.01` is 0.096 ± 0.033; gap 0.057, 2 × spread = 0.066, so inside noise, **even though its mean is about 2.5 times the baseline's**. The correct playbook line is "add more seeds before concluding".
 
 *(These hand computations use the rounded three-decimal figures printed in the table, as the student will. The code uses unrounded values and agrees on every verdict above.)*

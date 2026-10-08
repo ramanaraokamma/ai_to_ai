@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The stand-in's chance of getting a box right depends only on three features of the prompt, so the ordering is built in</title>
+  <desc>A dashed panel marked stand-in, not a model. Three columns for v1 zero-shot, v2 rules and v3 few-shot. Every column starts at 0.55. Rules in the system prompt adds 0.15 for v2 and v3 and nothing for v1. Example tags add 0.08 each, at most 3: nothing for v1 and v2, plus 0.24 for v3. The words schema or json add 0.05 for v2 and v3. The resulting chance a box is right is 0.55, 0.75 and 0.99. Each of the 32 boxes is rolled with that chance using the seed.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">What the stand-in does: three switches set one chance</text>
+  <rect x="20" y="80" width="760" height="250" rx="12" fill="#F5F8FA" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="314" y="54" width="172" height="26" rx="6" fill="#F5F8FA" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="67" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">stand-in, not a model</text>
+  <text x="420" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">v1 zero-shot</text>
+  <text x="560" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">v2 rules</text>
+  <text x="700" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">v3 few-shot</text>
+  <line x1="36" y1="118" x2="764" y2="118" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="40" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">every prompt starts at</text>
+  <text x="420" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.55</text>
+  <text x="560" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.55</text>
+  <text x="700" y="144" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0.55</text>
+  <text x="40" y="183" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">&quot;rules:&quot; in the system prompt</text>
+  <polyline points="374,172 386,184" fill="none" stroke="#55636F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="374,184 386,172" fill="none" stroke="#55636F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="396" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">no: +0</text>
+  <polyline points="514.4,178 518.4,182.4 526.4,173.2" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="536" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">yes: +0.15</text>
+  <polyline points="654.4,178 658.4,182.4 666.4,173.2" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="676" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">yes: +0.15</text>
+  <text x="40" y="219" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">&lt;example&gt; tags (at most 3)</text>
+  <polyline points="374,208 386,220" fill="none" stroke="#55636F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="374,220 386,208" fill="none" stroke="#55636F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="396" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0: +0</text>
+  <polyline points="514,208 526,220" fill="none" stroke="#55636F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="514,220 526,208" fill="none" stroke="#55636F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="536" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0: +0</text>
+  <polyline points="654.4,214 658.4,218.4 666.4,209.2" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="676" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">3: +0.24</text>
+  <text x="40" y="255" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">&quot;schema&quot; or &quot;json&quot; in it</text>
+  <polyline points="374,244 386,256" fill="none" stroke="#55636F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="374,256 386,244" fill="none" stroke="#55636F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="396" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">no: +0</text>
+  <polyline points="514.4,250 518.4,254.4 526.4,245.2" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="536" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">yes: +0.05</text>
+  <polyline points="654.4,250 658.4,254.4 666.4,245.2" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="676" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">yes: +0.05</text>
+  <line x1="36" y1="268" x2="764" y2="268" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="40" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">chance a box is right</text>
+  <rect x="374" y="284" width="92" height="40" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="420" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.55</text>
+  <rect x="514" y="284" width="92" height="40" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="560" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.75</text>
+  <rect x="654" y="284" width="92" height="40" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="700" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.99</text>
+  <text x="400" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">each of the 32 boxes is rolled with this chance, using the seed</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The order v1 &lt; v2 &lt; v3 is built in; this is a script, not evidence about a real model.</text>
+</svg>

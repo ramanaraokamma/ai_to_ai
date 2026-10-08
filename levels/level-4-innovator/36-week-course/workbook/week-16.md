@@ -342,6 +342,11 @@ Compare your total with your teacher's **before** you run anything.
 
 The formula is `12 x d x d + 10 x d`. Use it, then fill in the nine rows the long way and see whether they agree.
 
+**Write each part's knob count at `d = 10` in its dashed box, then the two totals.**
+
+![A blank worksheet: nine grey boxes name the parts of one block (ln1, q, k, v, proj, ln2, up, act, down), each with an empty dashed box for its count at d = 10, and two empty dashed boxes for the long total and the formula total with an empty tick box.](../figures/fig-w16-6-blank-block-count-d10.svg)
+*Figure 16.5 — A block at d = 10, to fill in by hand before you run check164.py.*
+
 | Part | Knobs at `d = 10` |
 |---|:--:|
 | `ln1` | ______ |
@@ -969,7 +974,7 @@ Weights: P1 `0.2447, 0.6652, 0.0900`; P2 `0.0900, 0.6652, 0.2447`; P3 `0.1543, 0
 | `down` | 32 x 8 + 8 | 264 |
 | | **total** | **848** |
 
-**Part B, `d = 10`.** `ln1` 20, `q` 100, `k` 100, `v` 100, `proj` 110, `ln2` 20, `up` 440, `act` 0, `down` 410. Total **1300**; formula `12 x 100 + 100` = **1300**. They agree.
+**Part B, `d = 10`.** `ln1` 20, `q` 100, `k` 100, `v` 100, `proj` 110, `ln2` 20, `up` 440, `act` 0, `down` 410. Total **1300**; formula `12 x 100 + 100` = **1300**. They agree. Figure 16.5 (blank): its nine dashed boxes take the same counts as Part B, in the order ln1 20, q 100, k 100, v 100, proj 110, ln2 20, up 440, act 0, down 410, then the two totals **1300** and **1300**, and *yes* they agree.
 
 More widths: `d = 6` **492**; `d = 12` **1848**; `d = 20` **5000**.
 

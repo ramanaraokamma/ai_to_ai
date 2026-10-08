@@ -153,6 +153,11 @@ For a sentence of `T` words, `torch.arange(T)` gives `T` whole numbers, one labe
 
 Why **add** the place to the word, instead of sticking it on the end? Adding keeps the width at `d`, so every layer after it keeps the same shape. (We did not test joining them, so we do not claim either one is better.)
 
+Here is the adding drawn for the five words of the dog sentence, so you can see which row is shared and which is not.
+
+![Five columns for the words the, dog, bit, the, postman. In each, a blue word row plus a purple place row (place row 0 to 4) equals what goes in; the two columns for the word the are pink with a thick border, sharing word row 0 but not a place row.](../figures/fig-w16-4-word-row-plus-place-row.svg)
+*Figure 16.3 — The same word at two seats has the same word row but different place rows, so it goes in as two different rows.*
+
 Type and run `where.py`. It is `blind.py` with the place table added.
 
 **`where.py`**
@@ -546,6 +551,11 @@ The last line is the whole TinyGPT of Week 17, computed by arithmetic only: 28 c
 
 ![A top-to-bottom stack: layer norm, an attention panel with q, k, v and proj, a plus, layer norm, an MLP panel with up, GELU and down, a plus, with residual roads down the left and a knob count in every box.](../figures/fig-w16-2-one-block-knob-count.svg)
 *Figure 16.2 — One block is attention then an MLP, each on a residual road, and its nine parts add to 848 knobs.*
+
+Here is where the knobs of a block sit at the width Week 17 will use, and the formula at three widths.
+
+![A bar split into attention 65,664, MLP 131,712 and a thin sliver for two norms, 512, summing to 197,888; below, three cards for d = 8, 16 and 128 giving 848, 3,232 and 197,888.](../figures/fig-w16-5-block-knobs-by-part-and-width.svg)
+*Figure 16.4 — The MLP holds about twice the knobs of attention, and 12 d d + 10 d counts a block at any width.*
 
 ---
 

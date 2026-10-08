@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Four cures for memorising, each acting on a different part of the training run</title>
+  <desc>Three boxes joined by arrows: 120 training points, the network, and the weight update (AdamW). Below each a ringed card names a cure: 1 augmentation acts on the data with shaken copies each epoch; 2 dropout acts on how the network trains by zeroing a share and scaling survivors by 1 over 1 minus p; 3 weight decay acts on the update by multiplying every weight by 0.9991. A wide card 4 below all of them says early stopping changes nothing inside: it keeps the best weights and stops after patience epochs without a new best.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Each cure acts on a different part of training</text>
+  <rect x="40" y="84" width="200" height="64" rx="12" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="140" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">120 training points</text>
+  <rect x="300" y="84" width="200" height="64" rx="12" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="400" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">the network</text>
+  <rect x="560" y="84" width="200" height="64" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
+  <text x="660" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" fill="#14202B" text-anchor="middle" dominant-baseline="central">weight update (AdamW)</text>
+  <line x1="240" y1="116" x2="298" y2="116" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(298 116) rotate(0)"/>
+  <line x1="500" y1="116" x2="558" y2="116" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(558 116) rotate(0)"/>
+  <line x1="140" y1="150" x2="140" y2="190" stroke="#C42B8C" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+  <rect x="40" y="190" width="200" height="86" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="58" cy="208" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="58" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="76" y="213" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" font-weight="600">Augmentation (jitter)</text>
+  <text x="54" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">changes the data:</text>
+  <text x="54" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">shaken copies each epoch</text>
+  <line x1="400" y1="150" x2="400" y2="190" stroke="#C42B8C" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+  <rect x="300" y="190" width="200" height="86" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="318" cy="208" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="318" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="336" y="213" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" font-weight="600">Dropout</text>
+  <text x="314" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">changes how it trains:</text>
+  <text x="314" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">zero a share, survivors &#215; 1/(1 &#8722; p)</text>
+  <line x1="660" y1="150" x2="660" y2="190" stroke="#C42B8C" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/>
+  <rect x="560" y="190" width="200" height="86" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="578" cy="208" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="578" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="596" y="213" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" font-weight="600">Weight decay</text>
+  <text x="574" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">changes the update:</text>
+  <text x="574" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">every weight &#215; 0.9991</text>
+  <rect x="40" y="296" width="720" height="56" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="58" cy="314" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="58" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="76" y="319" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" font-weight="600">Early stopping</text>
+  <text x="54" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">changes nothing inside: keep the best weights so far, stop after `patience` epochs without a new best</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Weight decay: 1 &#8722; 0.003 &#215; 0.3 = 0.9991 per step, from the lesson's arithmetic.</text>
+</svg>

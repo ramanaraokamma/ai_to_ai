@@ -1262,6 +1262,8 @@ E  lr=0.01                   train 0.013  val 0.059  acc  99.2%
 F  lr=0.1                    train 0.693  val 0.702  acc  46.9%
 ```
 
+Step 7 (the blank bar chart, Figure W1.1): the two blanks are 46.9 and 53.1; the final validation accuracies to draw are A 53.1%, B 55.3%, C 98.1%, D 99.4%, E 99.2%, F 46.9%. A ends on the 53.1 line and F on the 46.9 line; B sits just past a guesser. Accept bars within about 1 point.
+
 ### Page 1.2 — Predict `lr=3e-3`
 
 Either answer is accepted *if the student predicted before running*. The point is the habit. (For reference: `run("lr=0.003", lr=3e-3)` on `l4lib`, CPU, one thread, seed 0, prints train 0.007, val 0.037, acc 98.9%, the same as the workbook's answer page. Its train loss is below both D's and E's and its val loss sits between D's and E's. **Do not mark a third-decimal difference wrong.** The student's own run is the number to use.)

@@ -61,6 +61,10 @@ Rule 1 is why the script below resets the random dice to the same state before s
 
 Rule 3 needs an idea. A **leak** is when the model can see the answer it is being scored on. Its loss comes out very low and means nothing, because the model is not predicting, it is reading. Hold that thought; the table will give you a chance to meet one.
 
+![A panel of the full TinyGPT's four switches, each with an arrow to a dashed box for the model with that part deleted, a panel of four things held fixed, and a box scoring on unseen text](../figures/fig-w19-4-delete-one-part.svg)
+
+*Figure 19.3 — An ablation deletes one part and holds seed, steps, text and scoring batches fixed, so any change in validation loss belongs to that part.*
+
 ### 2. Made-up tasks: so you know what the right answer looks like
 
 On English text nobody can say what an attention head is *supposed* to do. So we also make **synthetic tasks**: tasks made of numbers, generated on the spot, where we know the right mechanism. Three of them:
@@ -296,6 +300,10 @@ Compare each row with the full model by subtraction on **validation** loss: no p
 ![Five horizontal bars of validation loss, one per TinyGPT with a part deleted, with a dashed line at the full model's 1.673 and crosses on the two that fail](../figures/fig-w19-1-ablation-bars.svg)
 
 *Figure 19.1 — Deleting a part can make the score look better; a very low number needs a leak check before it is believed.*
+
+![Two sets of bars for five models: validation loss minus the full model's 1.673, from plus 1.006 to minus 1.596, and the train-validation gap from 0.007 to 0.327](../figures/fig-w19-5-ablation-differences.svg)
+
+*Figure 19.4 — The same table drawn as subtraction: three models land near or below the full one, and only the number that is a leak is far below it.*
 
 ### 6. The leak
 

@@ -1324,6 +1324,7 @@ This section is teacher-only: the answers to every workbook page and to every qu
 | Margin, loss at `beta = 0.1` | `0.25`, `0.5759` (the module prints `0.5757`; rounding). |
 | Margin, loss at `beta = 5` | `12.5`, `0.000004`. |
 | What happened to the loss with the same movement? | Fell to almost zero: the loss is satisfied, so the gradient is almost zero. |
+| Workbook part H (Figure W22.1, the blank for part G) | Chosen: marker at `-13.0`, arrow right, moved `+2.0`. Rejected: marker at `-15.0`, arrow left, moved `-1.0`. Gap `3.0`. `beta = 0.1`: margin `0.3`, loss `0.5544`. `beta = 0.5`: margin `1.5`, loss `0.2014`. |
 
 ### Page 22.4 — Two leashes (from `dpo.py`, `sweep.py`)
 

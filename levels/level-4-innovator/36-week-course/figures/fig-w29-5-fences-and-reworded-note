@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>With every run fooled, the strict sandbox and the human each keep the landed count at 0; a reworded note raises obeying from 32 to 69 but still lands 0</title>
+  <desc>Top block, three rows of horizontal bars out of 100 runs for obeyed, reached the sandbox and file landed: strict sandbox with human yes, 100, 100 and 0; weak sandbox with human yes, 100, 100 and 100; weak sandbox with human no, 100, 0 and 0. Bottom block, layers 1 and 2 on: the original note obeyed 32 and landed 0, the reworded note obeyed 69 and landed 0. Zero values carry a tick.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Fooled in every run; the fences decide the rest</text>
+  <text x="20" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">100 fully fooled runs, layers 1 and 2 off</text>
+  <text x="290" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">obeyed</text>
+  <text x="450" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">reached the sandbox</text>
+  <text x="630" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">file landed</text>
+  <text x="20" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">strict sandbox, human yes</text>
+  <rect x="290" y="113" width="100" height="22" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="398" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">100</text>
+  <rect x="450" y="113" width="100" height="22" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="558" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">100</text>
+  <line x1="630" y1="113" x2="630" y2="135" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="638" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">0</text>
+  <polyline points="659.1,124 662.6,127.8 669.6,119.8" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="20" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">WEAK sandbox, human yes</text>
+  <rect x="290" y="149" width="100" height="22" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="398" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">100</text>
+  <rect x="450" y="149" width="100" height="22" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="558" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">100</text>
+  <rect x="630" y="149" width="100" height="22" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="738" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">100</text>
+  <text x="20" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">WEAK sandbox, human NO</text>
+  <rect x="290" y="185" width="100" height="22" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="398" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">100</text>
+  <line x1="450" y1="185" x2="450" y2="207" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="458" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">0</text>
+  <line x1="630" y1="185" x2="630" y2="207" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="638" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">0</text>
+  <polyline points="659.1,196 662.6,199.8 669.6,191.8" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="20" y1="238" x2="780" y2="238" stroke="#C7CDD4" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="20" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">100 fully fooled runs, layers 1 and 2 on, strict sandbox</text>
+  <text x="20" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">original note</text>
+  <rect x="290" y="281" width="32" height="22" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="330" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">32</text>
+  <line x1="630" y1="281" x2="630" y2="303" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="638" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">0</text>
+  <polyline points="659.1,292 662.6,295.9 669.6,287.8" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="20" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">reworded note</text>
+  <rect x="290" y="317" width="69" height="22" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="367" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">69</text>
+  <line x1="630" y1="317" x2="630" y2="339" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="638" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">0</text>
+  <polyline points="659.1,328 662.6,331.9 669.6,323.8" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="450" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start" dominant-baseline="central">—</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Rewording raised obeying from 32 to 69; landed stayed 0 (stand-in, not a model).</text>
+</svg>

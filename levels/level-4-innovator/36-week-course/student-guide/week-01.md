@@ -91,6 +91,9 @@ Two or three of the names will be unfamiliar. That is intended. Each knob gets a
 
 **Today only `lr` moves.** Every other argument stays at its default. That is the design of the whole year: *one knob alone, so the curve is the witness.*
 
+![Ten knob names with lr ringed, four fixed set-up names in a dashed panel, an arrow into a box labelled run, and an arrow out to a small loss curve falling from 0.691 below a dashed line at 0.693](../figures/fig-w01-4-ten-knobs-one-witness.svg)
+*Figure 1.3 — One harness, ten knobs: this week only `lr` moves, so the loss curve is the witness.*
+
 Two words you will use all day:
 
 - A **harness** is a small piece of code that runs an experiment the same way every time, so the only difference between two runs is the thing you changed on purpose. `run` is our harness.
@@ -316,6 +319,9 @@ F  lr=0.1      12.786    0.520    0.612    0.694    0.695    0.693
 Look at the **first** column, epoch zero. That number is the *average* loss over the whole first epoch, not the loss before any training. Every run begins near 0.694, but during F's first epoch some steps were so large that the average came to **12.786**. A's first epoch averages 0.694.
 
 Compare the last column with the first one before you read on.
+
+![A table of training loss for runs A to F at six epochs; A and B sit at 0.69, C falls to 0.077, D and E fall below 0.02, and F starts at 12.786 before returning to 0.693](../figures/fig-w01-5-epoch-table-shaded.svg)
+*Figure 1.4 — The same table, shaded: the cells at the coin, the cells below it, and the one cell that blew up.*
 
 > **The final loss tells you where it ended. The curve tells you what happened.**
 

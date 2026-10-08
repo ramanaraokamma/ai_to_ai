@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The paper has 75 marks over five sections, and Section E gets the least time per mark</title>
+  <desc>Five rows for Sections A to E of the paper. Solid bars show marks: A 20, B 16, C 12, D 15, E 12. Dashed bars show minutes: A 15, B 15, C 10, D 15, E 13. A third column gives marks per minute by division: 20 divided by 15 is 1.33, 16 divided by 15 is 1.07, 12 divided by 10 is 1.20, 15 divided by 15 is 1.00, 12 divided by 13 is 0.92. Section E is drawn in pink with a thick border. The total row reads 20 + 16 + 12 + 15 + 12 = 75 marks and 15 + 15 + 10 + 15 + 13 = 68 minutes.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The paper in numbers: 75 marks, 70 minutes</text>
+  <text x="215" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">marks</text>
+  <text x="420" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">minutes</text>
+  <text x="560" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">marks per minute</text>
+  <text x="40" y="115" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">A  multiple choice</text>
+  <rect x="215" y="100" width="120" height="28" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="343" y="115" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">20</text>
+  <rect x="420" y="100" width="90" height="28" rx="2" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="518" y="115" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">15</text>
+  <text x="560" y="115" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">20 &#247; 15 = 1.33</text>
+  <text x="40" y="157" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">B  what does this print?</text>
+  <rect x="215" y="142" width="96" height="28" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="319" y="157" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">16</text>
+  <rect x="420" y="142" width="90" height="28" rx="2" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="518" y="157" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">15</text>
+  <text x="560" y="157" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">16 &#247; 15 = 1.07</text>
+  <text x="40" y="199" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">C  find the bug</text>
+  <rect x="215" y="184" width="72" height="28" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="295" y="199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">12</text>
+  <rect x="420" y="184" width="60" height="28" rx="2" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="488" y="199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">10</text>
+  <text x="560" y="199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">12 &#247; 10 = 1.20</text>
+  <text x="40" y="241" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">D  arithmetic</text>
+  <rect x="215" y="226" width="90" height="28" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="313" y="241" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">15</text>
+  <rect x="420" y="226" width="90" height="28" rx="2" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="518" y="241" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">15</text>
+  <text x="560" y="241" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">15 &#247; 15 = 1.00</text>
+  <text x="40" y="283" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central" font-weight="600">E  two real tables</text>
+  <rect x="215" y="268" width="72" height="28" rx="2" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="295" y="283" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">12</text>
+  <rect x="420" y="268" width="78" height="28" rx="2" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="506" y="283" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">13</text>
+  <text x="560" y="283" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#C42B8C" dominant-baseline="central">12 &#247; 13 = 0.92</text>
+  <line x1="40" y1="316" x2="760" y2="316" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="40" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central" font-weight="600">total</text>
+  <text x="215" y="338" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">20 + 16 + 12 + 15 + 12 = 75</text>
+  <text x="480" y="338" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">15 + 15 + 10 + 15 + 13 = 68</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Section E is the biggest single question, so start it with about thirteen minutes left.</text>
+</svg>

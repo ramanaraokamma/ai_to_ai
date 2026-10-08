@@ -66,6 +66,11 @@ probs = F.softmax(scores, dim=-1)
 
 The `dim=-1` means "along the **last** axis". A list of scores has one axis, so that is the whole list. A batch of 64 rows has the scores along the last axis, so the same line works for a batch too. **Always write `dim`.** Leave it out and PyTorch guesses (and prints a warning saying so). A *wrong* `dim` gives no warning at all.
 
+The whole week fits on one line, and the picture below is the map for it.
+
+![A row of five boxes: scores, divide by T, softmax, an optional cut by top-k or top-p, and pick by greedy or a draw, with example numbers for the letters a to e under each and an arrow looping the chosen letter back to the start](../figures/fig-w13-4-scores-to-one-letter.svg)
+*Figure 13.3 — Scores become one letter in a fixed order, and only the plug that chooses changes between samplers.*
+
 ### 2. Do the arithmetic once, by hand
 
 Five letters `a b c d e` with the invented scores `0.0, 2.0, -1.0, 1.0, 0.5`. Use a calculator and fill in page 13.2:
@@ -262,6 +267,11 @@ What the columns mean: **distinct** is how many different names there are out of
 - `T=0.5`: 111 distinct but only **2** new. It mostly recites the training list.
 - `T=1.5`: 192 distinct, **118** new. Lots of new strings. Are they names?
 - Top-p 0.9 sits in between: 128 distinct, 7 new. Top-p with `T=1.5` cuts the wild tail off the hot sampler (new drops from 118 to 50).
+
+Here is the table above drawn as bars.
+
+![Seven pairs of horizontal bars out of 200 names, distinct names above and new names below: greedy 1 and 0, T=0.5 111 and 2, T=1.0 155 and 32, T=1.5 192 and 118, top-k 5 73 and 18, top-p 0.9 128 and 7, T=1.5 with top-p 0.9 159 and 50](../figures/fig-w13-5-sampler-counts.svg)
+*Figure 13.4 — The same table as bars: more distinct names means more new strings, and new includes every misspelling.*
 
 **Why greedy repeats.** Look at the first letter. The model's top five first letters are `a 0.09`, `s 0.06`, `d 0.052`, `c 0.051`, `r 0.05`. It is not sure at all. Greedy takes that tiny edge for `a` every time, then `n`, `d`, `r`, `e`, `i`, and stops. There is only one road.
 

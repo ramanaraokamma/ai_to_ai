@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Momentum helps at learning rates 0.01, 0.03 and 0.1 and hurts at 0.3 and 1, where a step up to ten times longer overshoots</title>
+  <desc>Five pairs of bars of final training loss, plain SGD solid and momentum dashed, against a dashed line at 0.693. At lr 0.01 the bars are 0.692 and 0.440, at 0.03 they are 0.690 and 0.018, at 0.1 they are 0.387 and 0.025, at 0.3 they are 0.016 and 0.659, and at lr 1 plain SGD is 0.528 and momentum has no bar, only the word nan. Under each pair a tick and the word helps, or a cross and the word hurts.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Same learning rate, two rules: final training loss</text>
+  <rect x="190" y="62" width="150" height="24" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="265" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">plain SGD</text>
+  <rect x="460" y="62" width="150" height="24" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="535" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">momentum</text>
+  <line x1="70" y1="262" x2="770" y2="262" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="65" y1="262" x2="70" y2="262" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="61" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.0</text>
+  <line x1="65" y1="224" x2="70" y2="224" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="61" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.2</text>
+  <line x1="65" y1="186" x2="70" y2="186" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="61" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.4</text>
+  <line x1="65" y1="148" x2="70" y2="148" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="61" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.6</text>
+  <line x1="65" y1="110" x2="70" y2="110" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="61" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.8</text>
+  <line x1="70" y1="130.3" x2="770" y2="130.3" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="770" y="124.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.693: a coin</text>
+  <rect x="90" y="130.5" width="44" height="131.5" rx="0" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="112" y="124.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" stroke="#FFFFFF" stroke-width="3" paint-order="stroke">0.692</text>
+  <rect x="142" y="178.4" width="44" height="83.6" rx="0" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 3"/>
+  <text x="164" y="172.4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" stroke="#FFFFFF" stroke-width="3" paint-order="stroke">0.440</text>
+  <text x="138" y="282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">lr 0.01</text>
+  <polyline points="108.4,308 112.4,312.4 120.4,303.2" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="128" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="start">helps</text>
+  <rect x="226" y="130.9" width="44" height="131.1" rx="0" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="248" y="124.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" stroke="#FFFFFF" stroke-width="3" paint-order="stroke">0.690</text>
+  <rect x="278" y="258.6" width="44" height="3.4" rx="0" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 3"/>
+  <text x="300" y="252.6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" stroke="#FFFFFF" stroke-width="3" paint-order="stroke">0.018</text>
+  <text x="274" y="282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">lr 0.03</text>
+  <polyline points="244.4,308 248.4,312.4 256.4,303.2" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="264" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="start">helps</text>
+  <rect x="362" y="188.5" width="44" height="73.5" rx="0" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="384" y="182.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" stroke="#FFFFFF" stroke-width="3" paint-order="stroke">0.387</text>
+  <rect x="414" y="257.2" width="44" height="4.8" rx="0" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 3"/>
+  <text x="436" y="251.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" stroke="#FFFFFF" stroke-width="3" paint-order="stroke">0.025</text>
+  <text x="410" y="282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">lr 0.1</text>
+  <polyline points="380.4,308 384.4,312.4 392.4,303.2" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1B7A4B" text-anchor="start">helps</text>
+  <rect x="498" y="259" width="44" height="3" rx="0" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="520" y="253" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" stroke="#FFFFFF" stroke-width="3" paint-order="stroke">0.016</text>
+  <rect x="550" y="136.8" width="44" height="125.2" rx="0" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 3"/>
+  <text x="572" y="130.8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" stroke="#FFFFFF" stroke-width="3" paint-order="stroke">0.659</text>
+  <text x="546" y="282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">lr 0.3</text>
+  <polyline points="514,301 526,313" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="514,313 526,301" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="534" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="start">hurts</text>
+  <rect x="634" y="161.7" width="44" height="100.3" rx="0" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="656" y="155.7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" stroke="#FFFFFF" stroke-width="3" paint-order="stroke">0.528</text>
+  <text x="708" y="252" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#CC2B1D" text-anchor="middle" font-weight="700">nan</text>
+  <polyline points="700,218 716,234" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="700,234 716,218" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="682" y="282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">lr 1</text>
+  <polyline points="650,301 662,313" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="650,313 662,301" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="670" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#CC2B1D" text-anchor="start">hurts</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">helps = at least 0.05 lower than plain SGD. One seed: a pattern, not a ranking.</text>
+</svg>

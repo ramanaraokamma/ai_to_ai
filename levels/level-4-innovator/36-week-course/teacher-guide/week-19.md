@@ -1291,6 +1291,7 @@ No wrong ranking. Marks for a *reason*. The measured ranking by damage on valida
 ### Page 19.3 — The leak
 
 Model answer: *"With no mask, place 5 can look at place 6, and the token at place 6 of `x` is the character place 5 is supposed to predict. So the model reads the answer instead of guessing. The sample is `tatattt...`. The test: change one later token and see whether earlier scores move; with the mask they don't (0.000000), without they do (0.001437 in an untrained model)."* Hand numbers: `ln(8) = 2.079`; chance on a copy answer 0.125; floor `5 x ln(8) / 12 = 5 x 2.0794 / 12 = 0.866`.
+floor `5 x ln(8) / 12 = 5 x 2.0794 / 12 = 0.866`. Workbook Figure 19.5 (blank strip, 4-symbol copy task): places 0, 1, 2 are R (they must name the random symbols 2, 3, 4); places 3 to 7 are P (separator and four answers); 3 R and 5 P, which is where the `3` in `3 x ln(8) / 8 = 0.780` comes from.
 
 | Marks | |
 |---|:--:|

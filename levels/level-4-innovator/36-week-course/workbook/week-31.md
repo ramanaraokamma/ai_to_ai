@@ -70,6 +70,11 @@ Cells in the grid: ______ · Numbers you had to store to build it: ______ · Its
 
 At what rank does the patch stop saving anything? `r =` ______ . Say why in one line (hint: `2rd` against `d²`). ____________________________________________________
 
+**Label the parts of a rank-4 patch beside a 64 × 64 projection: write in all six boxes of Figure 31.5.**
+
+![A diagram of the input going into an old 64 by 64 projection and, separately, through a dashed patch of boxes A and B at rank 4, added together; six numbered questions on the right have empty write-in boxes](../figures/fig-w31-6-blank-label-the-patch.svg)
+*Figure 31.5 — Blank: the patch beside one projection, to be labelled with shapes and counts.*
+
 Now run the check below. It uses only lists and loops.
 
 ```python
@@ -450,6 +455,7 @@ This page is for checking your work after you have written every answer.
 - **B.** With row 2, column 4 changed to `1`, row 2 is `[0, 0, 0, 1]`, not a multiple of row 1 (`[2, 6, -4, 0]`): rank **2**, so no, it cannot be built from one column and one row.
 - **C.** `256 / 4096 = 0.0625`; `1024 / 4096 = 0.25`; `512 / 3072 = 0.1667` (`4 × 32 + 96 × 4 = 128 + 384`); `1000 / 10000 = 0.1`.
 - **D.** Patches `128, 256, 512, 1024, 2048, 4096, 8192`; shares `0.0312, 0.0625, 0.125, 0.25, 0.5, 1.0, 2.0`. The patch stops saving at **r = 32** (half of 64): `2rd = d²` when `r = d/2`; past it the patch is bigger than the grid it corrects.
+- **Figure 31.5 (blank).** (1) The old projection is **frozen**: it takes part in every forward pass but does not move. (2) `A` is `(4, 64)`: `r` rows by `in` columns. (3) `B` is `(64, 4)`: `out` rows by `r` columns. (4) **`B`** starts at exactly zero (`A` starts small and random). (5) The patch stores `256 + 256 =` **512** numbers. (6) The old projection stores `64 × 64 =` **4,096**; `512 / 4096 = 0.125`.
 
 ### Page 31.2
 - Head: `64 × 5 + 5 = 325`.

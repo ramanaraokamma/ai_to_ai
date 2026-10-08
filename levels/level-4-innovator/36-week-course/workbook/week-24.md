@@ -80,6 +80,11 @@ Expected total out of 16: ____________ . Were you bad, or unlucky? Say what you 
 |---|:--:|:--:|:--:|:--:|:--:|
 | Best possible | | | | | |
 
+**Draw it.** Plot your table from 24.1e on the blank chart: one dot for each `n`, then join the dots.
+
+![A blank chart with n pairs shown from 0 to 4 along the bottom and best possible accuracy from 0 to 1.00 up the side, no dots drawn](../figures/fig-w24-6-blank-four-key-ceiling.svg)
+*Figure W24.1 — Blank chart for 24.1e: the best possible accuracy at each `n` in the four-key game.*
+
 Now type this file as `p1.py` and run it. It plays the game 2,000 times at each `n` with a **perfect player** (copy when the key was shown, otherwise guess among the unused values), using `random.Random(11)`.
 
 ```python
@@ -758,6 +763,8 @@ Your own guesses are yours (typical guesses in class were `0, 50, 90, 100` perce
 | `n` shown | 0 | 1 | 2 | 3 | 4 |
 |---|:--:|:--:|:--:|:--:|:--:|
 | Best possible | 0.250 | 0.500 | 0.750 | 1.000 | 1.000 |
+
+On the blank chart (Figure W24.1) the dots are at **(0, 0.250), (1, 0.500), (2, 0.750), (3, 1.000), (4, 1.000)**: a straight climb of `0.25` per step that levels off at `1.000` from `n = 3`.
 
 The `p1.py` output is printed above (`0.254, 0.500, 0.736, 1.000, 1.000`). If your `p1.py` printed something different, you changed the seed `11` or the order of the dice calls: the plain-Python numbers must match exactly.
 

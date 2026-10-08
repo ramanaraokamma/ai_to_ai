@@ -526,7 +526,7 @@ This section gives the pen-and-paper card used in the Teach and on the first two
 Print the ten rows of Block K1's first printout (every fourth row of the sheet, starting at the first), one per line, with two blank columns: `(p - y)` and `(p - y)^2`.
 
 - **Page 32.1 (Brier):** fill the ten squares (two decimals is enough), add them, divide by ten. Answer `2.388 / 10 = 0.2388`. Then circle the most expensive row (billing `0.96`, wrong: `0.9216`) and write one sentence.
-- **Page 32.2 (ECE, two buckets):** split the ten rows into *sure* (`p >= 0.8`) and *unsure* (`p < 0.8`); for each write the count, the mean `p`, the share right. Then `ECE = (n_sure/10) x gap_sure + (n_unsure/10) x gap_unsure`. Answer `0.24`.
+- **Page 32.2 (ECE, two buckets):** split the ten rows into *sure* (`p >= 0.8`) and *unsure* (`p < 0.8`); for each write the count, the mean `p`, the share right. Then `ECE = (n_sure/10) x gap_sure + (n_unsure/10) x gap_unsure`. Answer `0.24`. Blank Figure 32.5 (plot the two groups of Set A): circle at (stated `0.909`, actual `0.857`), square at (`0.68`, `0.0`), both below the dashed line, so the system said more than it delivered; arrows `0.051` and `0.680`.
 - **The swap:** pairs swap cards: the *other* fourth-row sets (K6) give Brier `0.1963, 0.2937, 0.2707` and ECE `0.270, 0.316, 0.165`. Ask: *"the same sheet, four answers for ECE. Which is the right one?"* (None. Ten results is not enough; forty is a little better.)
 
 ### Variation — shorter (a 60-minute slot)

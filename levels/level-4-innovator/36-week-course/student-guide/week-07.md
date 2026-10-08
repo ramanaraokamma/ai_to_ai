@@ -269,6 +269,9 @@ every combination of all six: 3840 configs x 3 seeds = 11520 runs
 
 Look at the last two lines. Crossing every value of every knob with every other is **3,840 configurations**, or **11,520 runs** with three seeds. At about 0.4 seconds a run on a machine like the author's, that is about 77 minutes. (That time is arithmetic from the measured 30 seconds for 75 runs, **not** a run anyone did.) One knob at a time is **72 runs**.
 
+![Six rows of squares, one per knob value, adding to 24 values, beside two bars on a log axis: 75 runs one knob at a time and 11,520 for every combination](../figures/fig-w07-4-one-knob-at-a-time.svg)
+*Figure 7.4 — One knob at a time is 75 runs; crossing every knob with every other would be 11,520.*
+
 > **✏️ Bug Log.** Doing one knob at a time is cheap. What does it make us unable to see? Write your answer. It will go at the top of your playbook as a limitation.
 
 ### 5. Two traps, on purpose
@@ -483,6 +486,11 @@ schedule     cosine            0.004+/-0.001   0.034+/-0.003    99.2+/-0.0   ins
 schedule     cosine+warmup     0.005+/-0.002   0.035+/-0.007    99.1+/-0.1   inside noise
 schedule     step              0.009+/-0.001   0.033+/-0.001    99.1+/-0.1   inside noise
 ```
+
+Here are six of those rows with the rule worked out beside each, using the 3-decimal numbers above.
+
+![Six rows each with a blue gap bar over a gold twice-the-spread bar, only dropout 0.5 has the gap longer than the gold bar](../figures/fig-w07-5-six-rows-gap-versus-twice-spread.svg)
+*Figure 7.5 — Of these six rows only dropout 0.5 has a gap longer than twice the larger spread.*
 
 Now:
 

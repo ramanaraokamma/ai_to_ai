@@ -1167,6 +1167,8 @@ This section holds the answers to every workbook page, page by page. Keep it awa
 
 Parameter counts (from `key.py`): **`LayerNorm(64)` 128 parameters, no stored numbers; `BatchNorm1d(64)` 128 parameters and 129 stored numbers; `Identity` 0.**
 
+Block-parts figure (workbook Figure W6.3): 1 norm (layer norm), 2 linear layer, 3 GELU, 4 dropout, 5 the road (`x` carried past the boxes), 6 the add `x + h`, 7 `h`. With the road off the block returns just `h`.
+
 ### Page 6.2 — Predict the output
 
 ```python

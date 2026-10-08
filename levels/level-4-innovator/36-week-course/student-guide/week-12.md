@@ -325,11 +325,17 @@ Compare with your predictions. Then compare the last row with `ln 28 = 3.3322`. 
 
 One more detail. The last number, `1.001`, is the loss of the final training step with dropout **on**; `0.906` is the same model measured with dropout **off**. Two modes, two numbers.
 
+![Line chart over steps 0 to 800: train loss falls from 3.346 to 0.906 while validation loss falls to 2.308 at step 100 and then rises to 3.417, above the dashed ln 28 line at 3.332](../figures/fig-w12-5-train-and-validation-loss-curves.svg)
+*Figure 12.5 — Train keeps falling while validation turns round at step 100 and ends above the loss of a model that knows nothing.*
+
 ### Generate
 
 Now the model writes. Read `make_name` against `forward` and answer out loud: **where does the input come from in `forward`? And in `make_name`?** In `forward` it is `x[:, t]`, a column that was there before we started. In `make_name` it is `tok`, which is set from `i`, the last answer: **the model's own pick**.
 
 The next input does not exist until the last answer does, so each letter must wait for the one before it (this code makes one name at a time; a program could run many names side by side, but never the steps of one name out of order). That is the difference the whole week is about.
+
+![Two panels: in training a row of six solid cells START a n i k a for anika, all in a table before the model runs; in generating a row START o l e n EOS for the name olen where only START is solid and each later cell is dashed, because it is the model's own pick](../figures/fig-w12-4-training-versus-generating-inputs.svg)
+*Figure 12.4 — In training every input is already in a column; in generating each input is the previous answer, so each letter waits.*
 
 `draw` is **given to you**; type it in, but you are not asked to explain it. It is a dice-roll: `rng.random()` gives a number between 0 and 1, and the loop adds up the model's probabilities until the total passes the roll, so a letter is picked in proportion to its probability. Next week you open it. The line `scores[PAD] = -1e9` sets the score of padding so low that it is never picked.
 

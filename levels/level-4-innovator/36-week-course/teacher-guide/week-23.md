@@ -1320,6 +1320,8 @@ Estimated time: 60-75 minutes.
 
 ### Page 23.1 — Freeze (from `bench.py`)
 
+Warm-up W6 (Figure W23.1, the blank loop): 1 frozen set, 2 versioned prompt, 3 call, 4 parse, 5 score, 6 report; the panel around them is the guard (budget guard). The dashed loop from 6 to 2 is "change one thing, then go round again".
+
 | Question | Answer |
 |---|---|
 | The fingerprint of `TESTS` | `0f25042fb4`. |

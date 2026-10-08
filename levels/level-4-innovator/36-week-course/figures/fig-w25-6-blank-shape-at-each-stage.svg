@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Fill in the shape of the data at each of six stages of the index</title>
+  <desc>Blank worksheet. Six numbered boxes in two rows of three joined by arrows: the letter-piece table, the table after the SVD squeeze, the length of one row of the index after normalising, one question encoded, the scores from the matrix multiply, and what np.argsort(-sims)[:3] returns. Each box has an empty dashed answer box for the student to fill. No shapes are written in.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Shape at each stage of the index</text>
+  <line x1="253" y1="124" x2="279" y2="124" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(279 124) rotate(0)"/>
+  <line x1="508" y1="124" x2="534" y2="124" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(534 124) rotate(0)"/>
+  <line x1="253" y1="270" x2="279" y2="270" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(279 270) rotate(0)"/>
+  <line x1="508" y1="270" x2="534" y2="270" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(534 270) rotate(0)"/>
+  <polyline points="650,177 650,200 140,200 140,212" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(140 217) rotate(90)"/>
+  <rect x="30" y="74" width="220" height="100" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="48" cy="94" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="48" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="68" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Letter-piece table</text>
+  <text x="68" y="115" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">vec.transform(chunks).shape</text>
+  <rect x="50" y="132" width="180" height="28" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="58" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">shape:</text>
+  <rect x="285" y="74" width="220" height="100" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="303" cy="94" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="303" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="323" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">After the SVD squeeze</text>
+  <text x="323" y="115" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">the index M before searching</text>
+  <rect x="305" y="132" width="180" height="28" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="313" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">shape:</text>
+  <rect x="540" y="74" width="220" height="100" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="558" cy="94" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="558" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <text x="578" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Length of one row of M</text>
+  <text x="578" y="115" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">after normalise, 3 decimals</text>
+  <rect x="560" y="132" width="180" height="28" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="568" y="150" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">length:</text>
+  <rect x="30" y="220" width="220" height="100" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="48" cy="240" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="48" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <text x="68" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">One question, encoded</text>
+  <text x="68" y="261" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">encode(vec, svd, [q])[0]</text>
+  <rect x="50" y="278" width="180" height="28" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="58" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">shape:</text>
+  <rect x="285" y="220" width="220" height="100" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="303" cy="240" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="303" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <text x="323" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Scores, M @ q</text>
+  <text x="323" y="261" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">one number for each note</text>
+  <rect x="305" y="278" width="180" height="28" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="313" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">shape:</text>
+  <rect x="540" y="220" width="220" height="100" rx="10" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="558" cy="240" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="558" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+  <text x="578" y="244" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">What argsort returns</text>
+  <text x="578" y="261" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">np.argsort(-sims)[:3]</text>
+  <rect x="560" y="278" width="180" height="28" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="568" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">how many ids:</text>
+  <text x="400" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">class notebook: 15 notes. Fill each dashed box from your own run,</text>
+  <text x="400" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">then check the Answers page.</text>
+</svg>

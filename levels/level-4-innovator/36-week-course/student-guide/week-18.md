@@ -68,6 +68,11 @@ The paper is **75 marks** and you get **70 minutes**.
 
 It uses **two real tables** printed from this course's own runs: the name model of Week 12 and the TinyGPT of Week 17. The tables are on the paper as numbers, so you do not need to remember them.
 
+The marks and minutes of the five sections, side by side, with the marks per minute worked out by hand.
+
+![Five rows for Sections A to E: solid bars for marks 20, 16, 12, 15, 12, dashed bars for minutes 15, 15, 10, 15, 13, and marks per minute from 1.33 down to 0.92 for Section E, drawn in pink; totals 75 marks and 68 minutes.](../figures/fig-w18-5-paper-marks-and-minutes.svg)
+*Figure 18.4 — The paper has 75 marks over five sections, and Section E gets the least time per mark.*
+
 **Your teacher will say only five things during the paper** (the time-checks). Questions get one of three answers:
 
 - *"Read it again."*
@@ -94,6 +99,11 @@ Go down this list. For each line, ask: **could I do this right now with only a p
 | 15 | Say why the scores are divided by `sqrt(d)`. Build a causal mask, and say why the future is hidden with `-inf` **before** the softmax, not with 0 after. Give the shapes when a width is cut into heads. | 15.2, 15.3 |
 | 16 | Say why attention alone cannot tell `dog bit man` from `man bit dog`, and what fixes it. Count the knobs in one block. | 16.2, 16.4 |
 | 17 | Say what a model that knows nothing about 28 characters should score at step 0, and why. Say what the gap between train and validation loss does and does not tell you. | 17.3, 17.4, 17.6 |
+
+Here is the same list as a map: one skill from each of the eight weeks, and where the paper sits before Week 19.
+
+![Eight tiles for Weeks 10 to 17, each naming what the week left; Weeks 15, 16 and 17 are pink with a thick border under a bracket reading Week 19 leans on these three; below, a box for the Week 18 paper points to a box for Week 19.](../figures/fig-w18-4-what-weeks-10-to-17-left.svg)
+*Figure 18.3 — Weeks 10 to 17 each left one skill for the paper, and Weeks 15 to 17 are the ones Week 19 depends on.*
 
 > **⚠️ Watch out:** do not stay up late. A tired head does the arithmetic worse than a rested one, and one night cannot teach you what nine weeks did not.
 

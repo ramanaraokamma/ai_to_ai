@@ -67,6 +67,12 @@ def main():
     _gen_b04.emit_b04()
     import _gen_b08                          # block 8 (weeks 22-24)
     _gen_b08.emit_b08()
+    # second-round week figures (fig-wNN-4..6): every _gen_cNN.py module exposes build() -> {filename: svg}
+    import glob, importlib
+    for _p in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "_gen_c[0-9][0-9].py"))):
+        _m = importlib.import_module(os.path.basename(_p)[:-3])
+        for _n, _svg in _m.build().items():
+            open(os.path.join(E.HERE, _n if _n.endswith(".svg") else _n + ".svg"), "w").write(_svg + "\n")
     E.emit_motifs()
     E.emit_preview()
     # every pattern, the sprite sheet and every map must be valid XML

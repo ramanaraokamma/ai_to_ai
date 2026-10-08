@@ -642,6 +642,11 @@ My two weeks: ______ and ______ . Redo for week ______ on (day and time) _______
 
 **Total mark:** ______ / 75 . **Pattern, not number:** one week at 30% and seven at 90% is a very different X-ray from eight weeks at 65%. Mine looks like: ___________________________________________
 
+**Tick your before-circles from page 18.1, then shade each bar to the percent you earned and circle at most two weeks.**
+
+![A blank form with eight rows for Weeks 10 to 17: three empty circles headed Yes, Maybe and No, an empty dashed bar from 0 to 100 percent with a dashed line at 60, and an empty circle box; nothing filled in.](../figures/fig-w18-6-blank-confidence-map.svg)
+*Figure 18.5 — Your own before and after, side by side.*
+
 **Section E, your own words.** Write one sentence about what Section E taught you about reading a table that you did not know before: ___________________________________________
 
 > **If you wrote "ablation" or "scaling law" anywhere on the paper**, that is not wrong and not extra: it is from next term, and it is a good sign you have read ahead. Your teacher will say so on the sheet.
@@ -926,7 +931,7 @@ D  0.9
 
 ### Page 18.9
 
-No fixed answer: your marks. Two things to check: (1) the `Marks earned` column adds to your total; (2) you circled **at most two** weeks, and each has a **day and time** next to it. The tie order is **16, then 15, then 17**.
+No fixed answer: your marks. Two things to check: (1) the `Marks earned` column adds to your total; (2) you circled **at most two** weeks, and each has a **day and time** next to it. The tie order is **16, then 15, then 17**. Figure 18.5 (blank confidence map and percent bars) has no key: it is the student's own. Check that each week has one circle ticked before, each bar is shaded to the percent in the grid (the dashed line is 60), and at most two weeks are circled.
 
 ### Page 18.10 and Self-Check
 

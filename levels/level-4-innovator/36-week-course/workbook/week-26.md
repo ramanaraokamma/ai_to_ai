@@ -206,6 +206,11 @@ Twelve questions, each with the similarity of its **best** note (**PRACTICE** nu
 
 **Rule.** A question whose best score is **below** your line is refused; at or above it, answered.
 
+**Place all twelve letters on the strip below (each above its score), then draw your line.**
+
+![Blank worksheet: a scale from 0 to 0.7 with an empty band for the eight answerable questions and an empty band for the four questions not in the notes, and two dashed boxes for the line and the mistakes](../figures/fig-w26-6-blank-threshold-strip.svg)
+*Figure W26.5 — Write each letter above its score in the right band; a letter to the left of your line is refused.*
+
 Fill in each row of the table by hand. "Lost" means an answerable question that was refused (type 1). "Leaked" means an unanswerable one that was answered (type 2).
 
 | line | lost (letters) | how many | leaked (letters) | how many | total mistakes |
@@ -678,6 +683,8 @@ A. The program accepts rows **1, 2 and 5**. B. It should have rejected **2 and 5
 | `0.40` | `B C E I J` | 5 | — | 0 | 5 |
 
 (`0.40` loses every answerable score below `0.40`.)
+
+Strip (Figure W26.5), left to right by score: `H` `0.00` and `L` `0.00` (both in the NOT-in-the-notes band), `B` `0.08`, `I` `0.15`, `E` `0.19` (answerable), `K` `0.22` and `F` `0.27` (not in the notes), `C` `0.31`, `J` `0.36`, `G` `0.44`, `A` `0.52`, `D` `0.64` (answerable). The bands overlap between `0.08` and `0.27`, which is why no line has zero mistakes.
 
 A. Line `0.05` (any line from just above `0.00` up to `0.08`), with **2** mistakes. B. **No.** `F` (`0.27`, unanswerable) is higher than `B` (`0.08`), `E` (`0.19`) and `I` (`0.15`), all answerable; any line that refuses `F` also refuses them. (Accept any valid pair.) C. Just above `0.27`; e.g. `0.30`. It loses **3** answerable questions: `B E I`. D. Accept any reason that names the **cost** of each mistake. Medical: line `0.30` or higher, because an invented answer is worse than a refusal. Personal notes: a low line such as `0.05`, because a false refusal is worse and the writer's own refusal can catch some leaks. E. `6`, `5`, `2`. F. The line that looked best on your wording answers very few of the stranger's questions; you should have tuned on a set that includes questions written by someone else and reported both kinds of mistake. G. **No**: every answerable SVD score (`0.682` and up) is far above `0.25`, so a `0.25` line would let every unanswerable question through. A threshold is a measurement of **one** embedder; re-measure it when you change the embedder.
 

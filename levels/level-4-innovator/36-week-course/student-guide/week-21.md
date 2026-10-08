@@ -90,6 +90,10 @@ Look at the last two rows. `log10(x)` goes 1, 2, 3 and `log10(y)` goes 1, 0, -1:
 
 **This is the whole idea.** A curve like `y = 100 / x` is called a **power law**, and *a power law becomes a straight line once both axes are logged. The slope of the line is the exponent.* A ruler can only extend a straight line, so this is what lets you draw a prediction.
 
+![Two panels for y equals 100 over x: a bending curve on ordinary axes, and a straight line of slope minus 1 once both axes are logged, with a bar stating that ten times x gives 0.1 times y](../figures/fig-w21-4-power-law-straight-line.svg)
+
+*Figure 21.3 — On log axes a power law is a straight line and the slope is the exponent; ten times x multiplies y by 10 ** slope.*
+
 ### 2. What a slope means: a ratio, not a percentage
 
 If a line on log-log paper has slope `s`, then **multiplying `x` by 10 multiplies `y` by `10 ** s`**. For `y = 100 / x`, `s = -1` and `10 ** -1 = 0.1`, which is exactly what you saw. Say the result **as a ratio**, because the ratio is the thing that stays the same. A slope of -0.126 does *not* mean "lose 0.126" and it does *not* mean "lose 12.6%". You will compute what it does in a few minutes.
@@ -588,6 +592,10 @@ Read it in three bites.
 3. **The hypothetical.** Module 4's example is a model with 7 billion knobs reading 1.4 trillion tokens: `6 x 7e9 x 1.4e12 = 5.88e22` operations. At your laptop's best speed that is over a thousand years (1,158 here). That is arithmetic, not a plan: that model would not even fit in your computer's memory.
 
 Also: **characters per knob** is `D / N`. Your width-16 model had 211; your width-256 model had 1.8. Module 4 quotes a published rule of thumb of about **20 tokens per parameter** for training "compute-optimally". **That is quoted, not reproduced**: our units are characters, not tokens, and our models are not tuned. Compare the *idea*, not the number.
+
+![Five bars of signed miss in percent, four small ones for the fitted models and plus 15.8 for the fifth, beside five bars of measured over predicted seconds from 72.9 down to 4.5](../figures/fig-w21-5-misses-and-ratios.svg)
+
+*Figure 21.4 — The percentages repeat on every run; the seconds are one laptop's and vary by machine and from run to run.*
 
 ### Fingerprinting the whole pool
 

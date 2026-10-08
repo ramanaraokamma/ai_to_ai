@@ -157,6 +157,11 @@ Read the output in order:
 ![Left, bars of weights from raw scores 8, minus 2, 1 where one bar takes 0.999044, beside bars from the same scores divided by 8 that are 0.587, 0.168 and 0.245; right, bars of spread by width](../figures/fig-w15-1-why-divide.svg)
 *Figure 15.1 — Dividing by the square root of the width keeps the softmax soft at every width.*
 
+The last table of `scale.py`, drawn as bars.
+
+![Paired bars of the average biggest weight in a row of 8: raw 0.573, 0.763 and 0.880 at widths 4, 16 and 64, divided 0.372, 0.363 and 0.365, with a dotted line at the equal share 0.125](../figures/fig-w15-5-biggest-weight-by-width.svg)
+*Figure 15.3 — Without the divide the biggest weight grows with the width; with it the biggest weight stays near 0.365.*
+
 ### 3. Dial 2: hide the future
 
 A model that learns to predict the next word reads a sentence and must guess each word from the words before it. If word 3 is allowed to *read* word 4 while predicting it, it will simply copy it. That is **label leakage**: the answer is leaking into the question.
@@ -243,6 +248,11 @@ The first word has a single allowed entry, so its row is `[1, 0, 0]` whatever th
 ```
 
 After that, `q @ k.transpose(-2, -1)` has shape `(B, H, T, T)`: a `T` by `T` table of scores for every head in every sentence. `transpose(1, 2)` swaps axes 1 and 2 by number, because here the head axis must come *forward*. `.view` gives the **same numbers in the same order** in a new shape; it never moves data, so the *order* of the four axes matters.
+
+The whole path of one row of scores, and the cut into heads, in one picture:
+
+![Five boxes for scores, divide, hide future, softmax and blend with a worked row 4 5 6, then 4 5 minus infinity, then weights 0.2689 0.7311 0.0000, and a strip of 12 cells cut into three heads with the shapes 2 5 12, 2 5 3 4 and 2 3 5 4](../figures/fig-w15-4-two-dials-and-heads.svg)
+*Figure 15.4 — Divide, then hide the future, then softmax; heads cut the width and add no knobs.*
 
 ---
 

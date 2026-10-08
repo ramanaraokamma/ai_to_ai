@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Every cure ends above its own best validation loss; the control ends furthest above</title>
+  <desc>Five rows, one per cure, from the seed-0 table. Each has a solid bar for best validation loss and a dashed bar for final validation loss. No cure 0.179 and 0.906, gap 0.727. Early stop 0.179 and 0.227 at the stop, gap 0.048. Dropout 0.3: 0.201 and 0.634, gap 0.433. Weight decay 0.3: 0.140 and 0.274, gap 0.134. Jitter 0.1: 0.130 and 0.318, gap 0.188.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Seed 0: the last epoch against the best epoch</text>
+  <rect x="30" y="56" width="740" height="26" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="44" y="63" width="26" height="12" rx="3" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="78" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">best val (picked with hindsight)</text>
+  <rect x="300" y="63" width="26" height="12" rx="3" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="334" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">final val (early stop: at the stop)</text>
+  <text x="740" y="74" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">gap = final &#8722; best</text>
+  <line x1="220" y1="94" x2="220" y2="332" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="220" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.00</text>
+  <line x1="315" y1="94" x2="315" y2="332" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="315" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.25</text>
+  <line x1="410" y1="94" x2="410" y2="332" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="410" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.50</text>
+  <line x1="505" y1="94" x2="505" y2="332" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="505" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.75</text>
+  <line x1="600" y1="94" x2="600" y2="332" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="600" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1.00</text>
+  <text x="40" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">no cure</text>
+  <rect x="220" y="100" width="68" height="16" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="294" y="112" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0.179</text>
+  <rect x="220" y="118" width="344.3" height="16" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="570.3" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">0.906</text>
+  <text x="740" y="126" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="end" font-weight="600">+0.727</text>
+  <text x="40" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">early stop (p=25)</text>
+  <rect x="220" y="148" width="68" height="16" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="294" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0.179</text>
+  <rect x="220" y="166" width="86.3" height="16" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="312.3" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">0.227</text>
+  <text x="740" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end">+0.048</text>
+  <text x="40" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">dropout 0.3</text>
+  <rect x="220" y="196" width="76.4" height="16" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="302.4" y="208" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0.201</text>
+  <rect x="220" y="214" width="240.9" height="16" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="466.9" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">0.634</text>
+  <text x="740" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end">+0.433</text>
+  <text x="40" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">weight decay 0.3</text>
+  <rect x="220" y="244" width="53.2" height="16" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="279.2" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0.140</text>
+  <rect x="220" y="262" width="104.1" height="16" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="330.1" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">0.274</text>
+  <text x="740" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end">+0.134</text>
+  <text x="40" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">jitter 0.1</text>
+  <rect x="220" y="292" width="49.4" height="16" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="275.4" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0.130</text>
+  <rect x="220" y="310" width="120.8" height="16" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="346.8" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">0.318</text>
+  <text x="740" y="318" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end">+0.188</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One seed only; Figure 5.2 has five. Gaps are subtractions of the printed values.</text>
+</svg>

@@ -177,6 +177,11 @@ Total of the four `exp` values: ____________ .
 3. **Top-p, `p = 0.5`.** Letters kept: ____________ . Why not two? ___________________________________________
 4. If `p` is tiny, such as 0.01, how many letters survive? ____________ . Why? ___________________________________________
 
+**Draw it:** on the figure, draw each chance as a bar, mark each running total on its line, and fill the `kept?` circle of each letter that top-p keeps at `p = 0.9`.
+
+![Empty axes for four chances from 0 to 0.6 and four empty running-total lines from 0 to 1 with a dashed marker at p = 0.9 and an empty circle for each letter](../figures/fig-w13-6-blank-top-p.svg)
+*Figure 13.5 — Blank: bars for the four chances, marks for the running totals, kept circles for the letters top-p keeps.*
+
 Now check your hand numbers. Type `check133.py` **after** your hand work is done (it uses only this week's tools: `torch.topk`, `torch.sort`, `torch.cumsum`), run it, and write the number of hand slips: ______ .
 
 ```python
@@ -513,6 +518,8 @@ The `T = 2` total is **7.258** (1.000 + 2.718 + 0.607 + 1.649 + 1.284 = 7.258). 
 2. **Top-p 0.9:** the first **three** (the total above the third is 0.792, which is below 0.9; above the fourth it is 0.922, which is not). Re-shared: `0.629, 0.231, 0.140`.
 3. **Top-p 0.5:** the **first letter only**. Above the first there is nothing (0 is below 0.5); above the second the total is 0.579, which is not below 0.5. **A student who wrote two letters used the total *including* the letter, which is the bug on page 13.6-C.**
 4. **One letter.** The top letter has nothing above it, so its test is always "0 is less than `p`", which is true for any `p` above 0.
+
+**Figure 13.5 (blank).** Bars at heights **0.579, 0.213, 0.129, 0.078**. Running totals marked at **0.579, 0.792, 0.922, 1.000** (the last at the right-hand end of its line). The dashed `p = 0.9` marker sits between the third mark (0.922) and the second (0.792): the `kept?` circles of the **first three** letters are filled, not the fourth's (the total above the third is 0.792, below 0.9; above the fourth it is 0.922).
 
 **Check-file output** (`check133.py`; the first `probs` list is in the letters' own order, and the `top-p` lists are in sorted order):
 

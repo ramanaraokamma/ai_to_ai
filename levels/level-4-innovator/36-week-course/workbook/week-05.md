@@ -255,12 +255,10 @@ Fill with the **mean** over seeds 0 to 4, and the lowest and highest in brackets
 | weight decay 0.3 | | |
 | jitter 0.1 | | |
 
-**Do the ranges of "best val" overlap?** ______ Draw the five ranges as bars on this number line (0.10 to 0.30):
+**Do the ranges of "best val" overlap?** ______ **Draw the five ranges as bars on this number line (0.10 to 0.30), with a diamond at each mean.**
 
-```text
-0.10        0.15        0.20        0.25        0.30
-|-----------|-----------|-----------|-----------|
-```
+![Blank chart: five labelled rows (no cure, early stop p equals 25, dropout 0.3, weight decay 0.3, jitter 0.1) share one bottom axis from 0.10 to 0.30; a key shows an empty bar for lowest to highest and a diamond for the mean; nothing is drawn in the rows](../figures/fig-w05-6-blank-range-bars.svg)
+*Figure W5.3 — Blank number line for the best-val ranges from your five-seed table.*
 
 ### (c) A different dose (so you cannot copy the class table)
 
@@ -593,6 +591,8 @@ Real output of the code (CPU, seeded):
 | jitter 0.1 | 0.149 (0.113 .. 0.180) | 0.366 (0.197 .. 0.524) |
 
 **Yes**, every "best val" range overlaps every other. The cures differ in the **final val** column, which is how far the validation loss climbs if you do not stop. Early stopping is cheapest; its shipped value is a bit flattering because it used the validation set to pick the epoch.
+
+Bars on the number line (lowest to highest, diamond at the mean): no cure 0.159 to 0.264, mean 0.204; early stop 0.159 to 0.264, mean 0.212; dropout 0.122 to 0.257, mean 0.190; weight decay 0.138 to 0.246, mean 0.185; jitter 0.113 to 0.180, mean 0.149. The bars overlap in the middle of the chart, between 0.159 and 0.180.
 
 **(c)** Reference run, seeds 10, 11, 12, means. Compare the `best epoch` and `final val` columns across rows:
 

@@ -1019,6 +1019,8 @@ Winner by raw dot: **D2** (`22`). Winner by cosine: **D3** (`1.000`). The note t
 
 (The word-level column is `0.0` for all three pairs; `banana` shares no pieces either.) The student's own notes (homework 2) have no fixed answer; check that the rank is reported, that a failing question is honestly named, and that `identical` is `True`.
 
+**Part 3 (the blank shapes figure, W25.5):** `(15, 3906)` · `(15, 14)` · `1.000` · `(14,)` · `(15,)` · three ids, `[1, 0, 2]` for `which optimiser was best`. Accept `(1, 14)` for box 4 only if the student says the `[0]` was not applied.
+
 ### Page 25.4 — The recall table (from `recall.py`, `seeds.py`, `untrained.py`)
 
 | embedder | recall@1 | recall@3 |

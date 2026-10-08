@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Six runs that start at the same coin loss part ways by epoch 10, and only run F begins at 12.786</title>
+  <desc>A table of training loss for runs A to F at epochs 0, 5, 10, 20, 40 and 59. Run A stays at 0.694 to 0.693 all the way. Run B drifts from 0.694 to 0.683. Run C falls from 0.694 to 0.077. Run D falls from 0.691 to 0.018 and run E from 0.658 to 0.013. Run F starts at 12.786, marked with a cross, then drops to 0.520 and 0.612 and returns to 0.694, 0.695 and 0.693. Cells at or above 0.68 are plain, cells below it are tinted blue.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Training loss at six epochs, six learning rates</text>
+  <text x="136" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">epoch</text>
+  <text x="200" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">0</text>
+  <text x="300" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">5</text>
+  <text x="400" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">10</text>
+  <text x="500" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">20</text>
+  <text x="600" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">40</text>
+  <text x="700" y="80" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">59</text>
+  <text x="136" y="109" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">A  lr=1e-06</text>
+  <rect x="150" y="92" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="200" y="109" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.694</text>
+  <rect x="250" y="92" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="300" y="109" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.694</text>
+  <rect x="350" y="92" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="400" y="109" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.694</text>
+  <rect x="450" y="92" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="500" y="109" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.694</text>
+  <rect x="550" y="92" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="600" y="109" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.694</text>
+  <rect x="650" y="92" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="700" y="109" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.693</text>
+  <text x="136" y="143" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">B  lr=1e-05</text>
+  <rect x="150" y="126" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="200" y="143" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.694</text>
+  <rect x="250" y="126" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="300" y="143" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.694</text>
+  <rect x="350" y="126" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="400" y="143" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.693</text>
+  <rect x="450" y="126" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="500" y="143" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.692</text>
+  <rect x="550" y="126" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="600" y="143" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.689</text>
+  <rect x="650" y="126" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="700" y="143" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.683</text>
+  <text x="136" y="177" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">C  lr=0.0001</text>
+  <rect x="150" y="160" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="200" y="177" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.694</text>
+  <rect x="250" y="160" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="300" y="177" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.688</text>
+  <rect x="350" y="160" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="400" y="177" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.655</text>
+  <rect x="450" y="160" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="500" y="177" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.575</text>
+  <rect x="550" y="160" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="600" y="177" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.166</text>
+  <rect x="650" y="160" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="700" y="177" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.077</text>
+  <text x="136" y="211" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">D  lr=0.001</text>
+  <rect x="150" y="194" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="200" y="211" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.691</text>
+  <rect x="250" y="194" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="300" y="211" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.399</text>
+  <rect x="350" y="194" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="400" y="211" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.082</text>
+  <rect x="450" y="194" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="500" y="211" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.021</text>
+  <rect x="550" y="194" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="600" y="211" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.011</text>
+  <rect x="650" y="194" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="700" y="211" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.018</text>
+  <text x="136" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">E  lr=0.01</text>
+  <rect x="150" y="228" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="200" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.658</text>
+  <rect x="250" y="228" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="300" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.052</text>
+  <rect x="350" y="228" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="400" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.041</text>
+  <rect x="450" y="228" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="500" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.027</text>
+  <rect x="550" y="228" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="600" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.021</text>
+  <rect x="650" y="228" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="700" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.013</text>
+  <text x="136" y="279" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">F  lr=0.1</text>
+  <rect x="150" y="262" width="100" height="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <text x="192" y="279" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central" font-weight="700">12.786</text>
+  <polyline points="231,274 241,284" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="231,284 241,274" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="250" y="262" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="300" y="279" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.520</text>
+  <rect x="350" y="262" width="100" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="400" y="279" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.612</text>
+  <rect x="450" y="262" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="500" y="279" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.694</text>
+  <rect x="550" y="262" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="600" y="279" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.695</text>
+  <rect x="650" y="262" width="100" height="34" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="700" y="279" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.693</text>
+  <rect x="150" y="318" width="22" height="18" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="180" y="327" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">0.68 or more: at the coin</text>
+  <rect x="360" y="318" width="22" height="18" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="390" y="327" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">below 0.68: better than a coin</text>
+  <rect x="610" y="318" width="22" height="18" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <polyline points="617,323 625,331" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="617,331 625,323" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="640" y="327" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">over 1: blew up</text>
+  <text x="400" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">epoch 0 is the average over the whole first epoch, not the loss before training</text>
+</svg>

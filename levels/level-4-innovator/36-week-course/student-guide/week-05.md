@@ -86,6 +86,9 @@ They are four different answers to one question: *how do I stop the network fitt
 | **Weight decay** | How the weights are updated | Shrink every weight by a tiny fee at every step |
 | **Augmentation (jitter)** | The data | Each epoch, show slightly shaken copies of the training points |
 
+![Three boxes joined by arrows, the 120 training points, the network and the weight update, each with a ringed card beneath it naming a cure: jitter on the data, dropout in the network, weight decay on the update; a wide fourth card below says early stopping changes nothing inside and keeps the best weights](../figures/fig-w05-4-where-each-cure-acts.svg)
+*Figure 5.3 — Each cure acts on a different part of training: the data, the network, the update, or the run itself.*
+
 ### 3. The only arithmetic this week
 
 **Weight decay is a fee.** In `AdamW`, before anything else at each step, every weight is multiplied by `1 − lr × weight_decay`. With `lr = 0.003` and `weight_decay = 0.3`:
@@ -606,6 +609,9 @@ dropout 0.3                70     0.201      0.634        0.100
 weight decay 0.3           61     0.140      0.274        0.053
 jitter 0.1                 81     0.130      0.318        0.061
 ```
+
+![Five rows, one per cure, each with a solid bar for best validation loss and a dashed bar for final validation loss on a 0 to 1 scale, and the gap written at the right: the control's dashed bar is longest, 0.906 against 0.179](../figures/fig-w05-5-seed-zero-best-vs-final.svg)
+*Figure 5.4 — On seed 0 every cure ends nearer its best than the control does, but none ends at its best.*
 
 Copy the five rows into your table. Then answer:
 

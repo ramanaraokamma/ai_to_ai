@@ -217,6 +217,11 @@ Read it. `0.55` is below the first edge, so bucket 0. `0.60` sits exactly on an 
 
 This section builds the week's main instrument. The **reliability table** has one row per bucket: how many results landed in it, how sure the system *said* it was (stated), and how often it was *right* (actual).
 
+The picture below shows the order of the work: sort by what the system said, compare what it said with what it delivered inside each bucket, and only then weight and add.
+
+![The 40 results sorted by stated confidence into five buckets of 9, 7, 6, 8 and 10 results, a zoom on the top bucket with a dashed bar for what it said, 0.931, beside a solid bar for what it delivered, 0.700, and three boxes in order: sort, compare, weight and add](../figures/fig-w32-4-sort-compare-weight.svg)
+*Figure 32.3 — ECE sorts first, compares second and weights third; here the average gap is 0.1788, which is not the share it gets wrong.*
+
 You write two functions, then print the table. Read the functions line by line and ask of each line, "what is this array right now, and how long is it?"
 
 ```python
@@ -369,6 +374,11 @@ Week 31's habit again: the average rose and one row fell. Say billing in results
 Also look at the `answered` column. `technical` has **1** answered result, so its `1.000` is one result. Rows built on one, two or three results are not something to read.
 
 And one caution the other way. **Eight rows is a reason to look, not a verdict.** With this few results, billing's fall could be chance. The table tells you where to look; it does not tell you billing is "the weak category".
+
+Here is the same table drawn: before and after for each category, with the number of answers behind each row.
+
+![Five rows of paired bars, a dashed bar for the share right before and a solid bar for the share of the answered that are right after, with the counts printed: billing falls from 4 of 8 to 2 of 6 and is outlined with a cross, and the rows with 3, 1 and 2 answers are marked few](../figures/fig-w32-5-category-before-after.svg)
+*Figure 32.4 — The average rose while billing fell, and three of the five rows rest on three or fewer answers.*
 
 ---
 

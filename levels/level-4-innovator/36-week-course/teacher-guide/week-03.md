@@ -1407,7 +1407,7 @@ D5 (`lr = 0.003`): adam wd = 0 gives train 0.007, val 0.037, acc 98.9%, and adam
 
 ### Page 3.7 — What epsilon is for
 
-E1: 0.10000. E2: `2` times `g`; the step is **0.05**. E3: ten times smaller than epsilon; much less than 0.05 (0.009091). The table (first step, `lr = 0.1`): 1000 gives 0.100000; 1 gives 0.100000; 0.001 gives 0.099999; 1e-06 gives 0.099010; 1e-08 gives 0.050000; 1e-09 gives 0.009091. E4: `lr` to five decimals for 1000 down to 1; epsilon starts to cost at about 1e-06. E5: it stops dividing by zero **and** costs a smaller step when the gradient is as small as epsilon.
+E1: 0.10000. E2: `2` times `g`; the step is **0.05**. E3: ten times smaller than epsilon; much less than 0.05 (0.009091). The table (first step, `lr = 0.1`): 1000 gives 0.100000; 1 gives 0.100000; 0.001 gives 0.099999; 1e-06 gives 0.099010; 1e-08 gives 0.050000; 1e-09 gives 0.009091. Plot (Figure W3.1): the six points from the table; the line lies on the dashed `lr` line, then falls to half of `lr` at 1e-08 and to 0.009091 at 1e-09. E4: `lr` to five decimals for 1000 down to 1; epsilon starts to cost at about 1e-06. E5: it stops dividing by zero **and** costs a smaller step when the gradient is as small as epsilon.
 
 ### Page 3.8 — A second hand table (start `w = 2.0`)
 

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank chain for Week 10 page 10.2: three slopes to find and multiply</title>
+  <desc>A blank worksheet. Four boxes show the notes given on page 10.2: 0.7616, 0.6420, 0.5663 and 0.5126, with arrows pointing left under them. Under the three arrows are three empty dashed boxes labelled slope into note 2, 3 and 4. At the bottom is an empty product line: an empty box, a times sign, an empty box, a times sign, an empty box, an equals sign and a last empty box, labelled note 1 to note 4.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Page 10.2: fill in the slopes and the product</text>
+  <rect x="55" y="80" width="110" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="110" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">note 1</text>
+  <text x="110" y="120" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">0.7616</text>
+  <rect x="235" y="80" width="110" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="290" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">note 2</text>
+  <text x="290" y="120" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">0.6420</text>
+  <rect x="415" y="80" width="110" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="470" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">note 3</text>
+  <text x="470" y="120" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">0.5663</text>
+  <rect x="595" y="80" width="110" height="52" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="650" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">note 4</text>
+  <text x="650" y="120" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">0.5126</text>
+  <line x1="234" y1="160" x2="166" y2="160" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(166 160) rotate(180)"/>
+  <rect x="154" y="176" width="92" height="40" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="200" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">slope into note 2</text>
+  <line x1="414" y1="160" x2="346" y2="160" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(346 160) rotate(180)"/>
+  <rect x="334" y="176" width="92" height="40" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="380" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">slope into note 3</text>
+  <line x1="594" y1="160" x2="526" y2="160" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(526 160) rotate(180)"/>
+  <rect x="514" y="176" width="92" height="40" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="560" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">slope into note 4</text>
+  <text x="40" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">recurrent weight W_hh = 1.0. The slopes multiply from note 1 to note 4:</text>
+  <rect x="130" y="284" width="110" height="44" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="280" y="284" width="110" height="44" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="430" y="284" width="110" height="44" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="590" y="284" width="130" height="44" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="260" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215;</text>
+  <text x="410" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#215;</text>
+  <text x="565" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle" dominant-baseline="central">=</text>
+  <text x="40" y="306" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">note 1 &#8594; 4</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Dashed boxes are for your pencil. Use the new note in each slope.</text>
+</svg>

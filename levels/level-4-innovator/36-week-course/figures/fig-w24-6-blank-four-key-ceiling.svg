@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank chart: plot the best possible accuracy for the four-key game at n = 0 to 4</title>
+  <desc>A blank chart. The horizontal axis is n pairs shown, 0 to 4. The vertical axis is best possible accuracy from 0 to 1.00 with grid lines at 0.25 steps. No dots or lines are drawn. A dashed box at the right says to plot the table from 24.1e, one dot for each n, then join the dots.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Blank: draw the ceiling for the four-key game</text>
+  <line x1="110" y1="330" x2="540" y2="330" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="102" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="110" y1="270" x2="540" y2="270" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="102" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.25</text>
+  <line x1="110" y1="210" x2="540" y2="210" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="102" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.50</text>
+  <line x1="110" y1="150" x2="540" y2="150" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="102" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.75</text>
+  <line x1="110" y1="90" x2="540" y2="90" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="102" y="94" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1.00</text>
+  <line x1="110" y1="80" x2="110" y2="330" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="110" y1="330" x2="540" y2="330" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="150" y1="330" x2="150" y2="336" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="150" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="250" y1="330" x2="250" y2="336" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="250" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <line x1="350" y1="330" x2="350" y2="336" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="350" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <line x1="450" y1="330" x2="450" y2="336" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="450" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3</text>
+  <line x1="550" y1="330" x2="550" y2="336" stroke="#55636F" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="550" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4</text>
+  <text x="325" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">n pairs shown (of 4 keys)</text>
+  <text x="40" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 40 210)">best possible accuracy</text>
+  <rect x="580" y="110" width="200" height="150" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="596" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Plot your table</text>
+  <text x="596" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">from 24.1e: one dot</text>
+  <text x="596" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">for each n, then</text>
+  <text x="596" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">join the dots.</text>
+</svg>

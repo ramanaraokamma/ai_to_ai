@@ -119,6 +119,11 @@ If your calculator has no `tanh` key: `tanh(a) = (e^(2a) - 1) / (e^(2a) + 1)`. `
 
 **Worked example (done for you; a different forget dial, `f = sigmoid(1) = 0.7311`, so your numbers will be different).** Step 1: `i = sigmoid(2.5) = 0.9241`, `g = tanh(2) = 0.9640`, `c = 0.7311 x 0 + 0.9241 x 0.9640 =` **`0.8909`**, `h = 0.7311 x tanh(0.8909) = 0.7311 x 0.7118 =` **`0.5204`**. Step 2 (`x = 0`): `i = sigmoid(-2.5) = 0.0759`, `g = tanh(0) = 0`, so `c = 0.7311 x 0.8909 + 0.0759 x 0 =` **`0.6513`**, which is **`73.1%`** of step 1. Step 3: `c =` **`0.4761`**, **`53.4%`**. (Notice that `73.1` is just `f`, and `53.4` is `f x f`.)
 
+**Before the table: name the six numbered parts of one unit on the blank diagram below, using its word bank.**
+
+![A blank diagram of one LSTM unit with six numbered rings and no names, six empty answer lines and a word bank of six terms](../figures/fig-w11-6-blank-label-lstm-unit.svg)
+*Figure W11.6 — One LSTM unit with its parts numbered 1 to 6, to be named from the word bank.*
+
 **Fill in your own** (forget dial `f = sigmoid(2) = 0.8808`):
 
 | Step | `x` | `i` | `g` | `c = f x (old c) + i x g` | `h = o x tanh(c)` | `c` as % of step 1 |
@@ -458,6 +463,8 @@ With `f = sigmoid(2) = 0.8808`:
 | 1 | 1 | 0.9241 | 0.9640 | **0.8909** | 0.5204 | 100.0 |
 | 2 | 0 | 0.0759 | 0.0000 | **0.7847** | 0.4791 | 88.1 |
 | 3 | 0 | 0.0759 | 0.0000 | **0.6912** | 0.4377 | 77.6 |
+
+*Figure W11.6:* **1** memory track, **2** forget dial (it multiplies the old memory), **3** input dial, **4** candidate (3 and 4 are multiplied together), **5** the add (the new part joins the scaled memory), **6** output dial (it multiplies `tanh` of the memory to make the note).
 
 **a.** `g = tanh(0) = 0` and `i x g = 0`: nothing new is written, so the memory just **shrinks by the factor `f`** (each step is `0.8808` of the one before). **b.** The number that multiplies the old `c` is **`f = 0.8808`**; over two steps `f x f =` **0.7758**, which matches `77.6%` up to rounding. **c.**
 

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The final paper is 75 marks in five sections, and the sections add up to 75</title>
+  <desc>One bar 75 marks long split into five sections: A 20 marks one-mark multiple choice; B 16 marks short programs; C 12 marks bugs; D 15 marks arithmetic by hand; E 12 marks reading two tables. Ticks on the bar mark the running totals 0, 20, 36, 48, 63 and 75. Below, the sum 20 + 16 + 12 + 15 + 12 = 75 and the time: 75 marks in 75 minutes, one mark a minute. Partial working earns marks.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The paper: 75 marks in five sections</text>
+  <rect x="41" y="96" width="190" height="70" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="136" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Section A</text>
+  <text x="136" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">20 marks</text>
+  <line x1="136" y1="168" x2="136" y2="186" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="136" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">one-mark</text>
+  <text x="136" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">multiple choice</text>
+  <rect x="233" y="96" width="151.6" height="70" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="308.8" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Section B</text>
+  <text x="308.8" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">16 marks</text>
+  <line x1="308.8" y1="168" x2="308.8" y2="186" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="308.8" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">short</text>
+  <text x="308.8" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">programs</text>
+  <rect x="386.6" y="96" width="113.2" height="70" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="443.2" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">C</text>
+  <text x="443.2" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">12 marks</text>
+  <line x1="443.2" y1="168" x2="443.2" y2="186" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="443.2" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">bugs</text>
+  <rect x="501.8" y="96" width="142" height="70" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="572.8" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Section D</text>
+  <text x="572.8" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">15 marks</text>
+  <line x1="572.8" y1="168" x2="572.8" y2="186" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="572.8" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">arithmetic</text>
+  <text x="572.8" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">by hand</text>
+  <rect x="645.8" y="96" width="113.2" height="70" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="702.4" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">E</text>
+  <text x="702.4" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">12 marks</text>
+  <line x1="702.4" y1="168" x2="702.4" y2="186" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="702.4" y="204" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">reading two</text>
+  <text x="702.4" y="220" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">tables</text>
+  <line x1="40" y1="166" x2="40" y2="176" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="40" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="232" y1="166" x2="232" y2="176" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="232" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">20</text>
+  <line x1="385.6" y1="166" x2="385.6" y2="176" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="385.6" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">36</text>
+  <line x1="500.8" y1="166" x2="500.8" y2="176" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="500.8" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">48</text>
+  <line x1="644.8" y1="166" x2="644.8" y2="176" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="644.8" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">63</text>
+  <line x1="760" y1="166" x2="760" y2="176" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="760" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">75</text>
+  <rect x="20" y="250" width="760" height="82" rx="12" fill="#F5F8FA" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">20 + 16 + 12 + 15 + 12 = 75 marks</text>
+  <text x="400" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">75 marks in 75 minutes: one mark a minute</text>
+  <text x="400" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">partial working earns marks; if you do not know, write did not get it</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The ticks 20, 36, 48, 63, 75 are running totals: the sections add up to the paper.</text>
+</svg>

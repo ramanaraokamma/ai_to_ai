@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Train loss keeps falling while validation loss turns upward and ends worse than guessing</title>
+  <desc>A line chart of loss against training steps 0, 100, 200, 300, 400, 600 and 800. The train line is solid with circles: 3.346, 1.960, 1.431, 1.103, 0.984, 0.921, 0.906. The validation line is dashed with squares: 3.349, 2.308, 2.544, 2.880, 3.077, 3.314, 3.417. A dashed horizontal line marks ln 28 = 3.332. Validation is lowest at step 100 (2.308, ringed) and ends above the ln 28 line while train keeps falling. Numbers from block 4, Week 12.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Train keeps falling; validation turns round</text>
+  <line x1="100" y1="316" x2="560" y2="316" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="90" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="100" y1="254.9" x2="560" y2="254.9" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="90" y="258.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1</text>
+  <line x1="100" y1="193.8" x2="560" y2="193.8" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="90" y="197.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">2</text>
+  <line x1="100" y1="132.7" x2="560" y2="132.7" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="90" y="136.7" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">3</text>
+  <text x="100" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <text x="215" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">200</text>
+  <text x="330" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">400</text>
+  <text x="445" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">600</text>
+  <text x="560" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">800</text>
+  <text x="330" y="356" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">training steps</text>
+  <text x="40" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 40 206)">loss (average surprise per real letter)</text>
+  <line x1="100" y1="112.4" x2="560" y2="112.4" stroke="#55636F" stroke-width="2" stroke-dasharray="8 5" stroke-linecap="round"/>
+  <text x="300" y="106.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">ln 28 = 3.332: a model that knows nothing</text>
+  <polyline points="100,111.5 157.5,196.2 215,228.6 272.5,248.6 330,255.9 445,259.7 560,260.6" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="100,111.3 157.5,175 215,160.5 272.5,140 330,128 445,113.5 560,107.2" fill="none" stroke="#845F00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8 5"/>
+  <circle cx="100" cy="111.5" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="157.5" cy="196.2" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="215" cy="228.6" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="272.5" cy="248.6" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="330" cy="255.9" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="445" cy="259.7" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="560" cy="260.6" r="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="94" y="105.3" width="12" height="12" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="151.5" y="169" width="12" height="12" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="209" y="154.5" width="12" height="12" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="266.5" y="134" width="12" height="12" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="324" y="122" width="12" height="12" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="439" y="107.5" width="12" height="12" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="554" y="101.2" width="12" height="12" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="157.5" cy="175" r="13" fill="none" stroke="#C42B8C" stroke-width="3"/>
+  <text x="580" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#845F00">validation (31 names)</text>
+  <text x="580" y="154" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">step 800: 3.417</text>
+  <text x="580" y="174" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C">lowest: 2.308 at step 100</text>
+  <text x="580" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#1F6FB2">train (200 names)</text>
+  <text x="580" y="290" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">step 800: 0.906</text>
+  <text x="580" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">from 3.346 at step 0</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">At step 800 the gap is 3.417 &#8722; 0.906 = 2.511, and validation sits above 3.332.</text>
+</svg>

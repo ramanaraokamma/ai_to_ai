@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank page: unroll the cell for x = [1, 1, 0, 0] and write each pre and note</title>
+  <desc>A blank fill-in figure showing the recurrent cell drawn four times with the same weights, W_xh 1.0 and W_hh 0.5. The inputs above the four boxes are 1, 1, 0 and 0, the starting note on the left is 0, and arrows labelled note run from each box to the next. Each box has two empty write-in boxes, one for the pre and one for the note. No answers are drawn.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Part (c): fill every pre and every note</text>
+  <text x="400" y="76" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">x = [1, 1, 0, 0]    W_xh = 1.0    W_hh = 0.5    bias 0</text>
+  <line x1="84" y1="190" x2="104" y2="190" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(104 190) rotate(0)"/>
+  <line x1="230" y1="190" x2="269" y2="190" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(269 190) rotate(0)"/>
+  <text x="250.5" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">note</text>
+  <line x1="395" y1="190" x2="434" y2="190" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(434 190) rotate(0)"/>
+  <text x="415.5" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">note</text>
+  <line x1="560" y1="190" x2="599" y2="190" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(599 190) rotate(0)"/>
+  <text x="580.5" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">note</text>
+  <line x1="168" y1="120" x2="168" y2="148" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(168 148) rotate(90)"/>
+  <line x1="333" y1="120" x2="333" y2="148" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(333 148) rotate(90)"/>
+  <line x1="498" y1="120" x2="498" y2="148" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(498 148) rotate(90)"/>
+  <line x1="663" y1="120" x2="663" y2="148" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(663 148) rotate(90)"/>
+  <rect x="36" y="172" width="44" height="36" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="58" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="58" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">start note</text>
+  <rect x="144" y="92" width="48" height="28" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="168" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">x = 1</text>
+  <rect x="108" y="150" width="120" height="112" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="168" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">step 1</text>
+  <text x="118" y="197" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">pre</text>
+  <rect x="152" y="182" width="66" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round"/>
+  <text x="118" y="237" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">note</text>
+  <rect x="152" y="222" width="66" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="309" y="92" width="48" height="28" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="333" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">x = 1</text>
+  <rect x="273" y="150" width="120" height="112" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="333" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">step 2</text>
+  <text x="283" y="197" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">pre</text>
+  <rect x="317" y="182" width="66" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round"/>
+  <text x="283" y="237" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">note</text>
+  <rect x="317" y="222" width="66" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="474" y="92" width="48" height="28" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="498" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">x = 0</text>
+  <rect x="438" y="150" width="120" height="112" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="498" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">step 3</text>
+  <text x="448" y="197" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">pre</text>
+  <rect x="482" y="182" width="66" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round"/>
+  <text x="448" y="237" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">note</text>
+  <rect x="482" y="222" width="66" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="639" y="92" width="48" height="28" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="663" y="106" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">x = 0</text>
+  <rect x="603" y="150" width="120" height="112" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="663" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">step 4</text>
+  <text x="613" y="197" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">pre</text>
+  <rect x="647" y="182" width="66" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round"/>
+  <text x="613" y="237" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">note</text>
+  <rect x="647" y="222" width="66" height="24" rx="6" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">the same weights in all four boxes: it is one cell, used again</text>
+  <text x="400" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">pre: add 1.0 &#215; x to 0.5 &#215; the old note.   note: press tanh on the pre.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Four decimals. Each note becomes the next step's old note.</text>
+</svg>

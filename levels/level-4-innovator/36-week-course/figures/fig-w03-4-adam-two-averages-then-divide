@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Adam divides the averaged gradient by the root of the averaged squared gradient, so the first step is the learning rate</title>
+  <desc>A flow of boxes for one knob on the first step. A gradient g equal to 2.0 feeds two boxes: m equal to 0.2, the average of g, and s equal to 0.004, the average of g times g, drawn dashed. Each is divided by what has arrived, giving 2.0 and 4.0. The 4.0 passes through a square root to give 2.0. The two 2.0 values meet in a highlighted box: step equals 0.1 times 2.0 divided by 2.0, which is 0.1.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Adam: divide by the typical size</text>
+  <text x="130" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">two running averages, one knob</text>
+  <rect x="20" y="166" width="84" height="68" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
+  <text x="62" y="191" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">g = 2.0</text>
+  <text x="62" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">this step</text>
+  <rect x="132" y="96" width="150" height="64" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="207" y="119" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">m = 0.2</text>
+  <text x="207" y="139" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">average of g</text>
+  <rect x="132" y="222" width="150" height="64" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 3"/>
+  <text x="207" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">s = 0.004</text>
+  <text x="207" y="265" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">average of g x g</text>
+  <rect x="330" y="96" width="146" height="64" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="403" y="119" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">m / 0.1 = 2.0</text>
+  <text x="403" y="139" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">divide by arrived</text>
+  <rect x="330" y="222" width="146" height="64" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 3"/>
+  <text x="403" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">s / 0.001 = 4.0</text>
+  <text x="403" y="265" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">divide by arrived</text>
+  <rect x="508" y="222" width="100" height="64" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 3"/>
+  <text x="558" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">root = 2.0</text>
+  <text x="558" y="265" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">of 4.0</text>
+  <rect x="630" y="146" width="150" height="108" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="4" stroke-linejoin="round"/>
+  <text x="705" y="191" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">step = 0.1</text>
+  <text x="705" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">0.1 x 2.0 / 2.0</text>
+  <line x1="104" y1="190" x2="130" y2="136" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(130 136) rotate(-64.3)"/>
+  <line x1="104" y1="210" x2="130" y2="246" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(130 246) rotate(54.2)"/>
+  <line x1="282" y1="128" x2="328" y2="128" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(328 128) rotate(0)"/>
+  <line x1="282" y1="254" x2="328" y2="254" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(328 254) rotate(0)"/>
+  <line x1="476" y1="254" x2="506" y2="254" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(506 254) rotate(0)"/>
+  <line x1="476" y1="128" x2="628" y2="180" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(628 180) rotate(18.9)"/>
+  <line x1="608" y1="254" x2="628" y2="226" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(628 226) rotate(-54.5)"/>
+  <text x="556" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">2.0 / 2.0 = 1.0</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">First step: the ratio is exactly 1, so the step is lr = 0.1, whatever g was.</text>
+</svg>

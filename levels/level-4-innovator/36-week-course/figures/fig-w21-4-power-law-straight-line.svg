@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A power law such as y equals 100 over x is a curve on ordinary axes and a straight line of slope minus 1 once both axes are logged</title>
+  <desc>Two panels. On the left, ordinary axes with a bending curve through the points (10, 10), (100, 1) and (1000, 0.1). On the right, both axes logged: the same three points, at log10(x) 1, 2, 3 and log10(y) 1, 0, minus 1, lie on a straight line, with a dashed step marked right 1, down 1. A bar below states that ten times x gives 10 to the power minus 1, which is 0.1 times y.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A power law is a straight line on log paper</text>
+  <rect x="20" y="62" width="370" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="205" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">ordinary axes: a curve</text>
+  <line x1="66" y1="286" x2="370" y2="286" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="66" y1="286" x2="66" y2="100" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="69,106 69.6,136 70.6,166 72.1,196 75.1,226 78.2,241 84.2,256 90.3,263.5 96.4,268 111.6,274 126.8,277 157.2,280 218,282.4 370,284.2" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="69" cy="106" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="96.4" cy="268" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="370" cy="284.2" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="79" y="110" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">10</text>
+  <text x="100.4" y="258" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">1</text>
+  <text x="364" y="272.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end">0.1</text>
+  <text x="370" y="304" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">x</text>
+  <text x="44" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 44 200)">y</text>
+  <text x="205" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">x times 10 each step, y times 0.1</text>
+  <rect x="410" y="62" width="370" height="250" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="595" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">both axes logged: a line, slope -1</text>
+  <line x1="470" y1="280" x2="760" y2="280" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="470" y1="280" x2="470" y2="100" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="518.3" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1</text>
+  <text x="615" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">2</text>
+  <text x="711.7" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">3</text>
+  <text x="462" y="135" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">1</text>
+  <text x="462" y="193" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">0</text>
+  <text x="462" y="251" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">-1</text>
+  <polyline points="470,106 760,280" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="518.3,135 615,135 615,193" fill="none" stroke="#55636F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="566.7" y="127" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">right 1</text>
+  <text x="623" y="164" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">down 1</text>
+  <circle cx="518.3" cy="135" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="615" cy="193" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <circle cx="711.7" cy="251" r="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="770" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">log10(x)</text>
+  <text x="436" y="195" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 436 195)">log10(y)</text>
+  <text x="680" y="130" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">slope = the exponent</text>
+  <rect x="20" y="322" width="760" height="32" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="338" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">10 ** slope  =  10 ** -1  =  0.1</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Ten times x multiplies y by 10 ** slope; a ruler can extend only a straight line.</text>
+</svg>

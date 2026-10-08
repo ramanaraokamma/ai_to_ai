@@ -153,6 +153,9 @@ steps in a run  = steps per epoch × epochs
 
 So batch 64 gives 13 steps per epoch and batch 512 gives **one**. Hold that thought until the experiments.
 
+![Two bars, each the 840 shuffled training points: the first cut into 13 numbered batches of 64 plus a dashed piece of 8 left over, giving 13 steps per epoch and 780 steps in 60 epochs; the second one batch of 512 plus a dashed piece of 328 left over, giving 1 step per epoch and 60 steps](../figures/fig-w04-4-epoch-cut-into-batches.svg)
+*Figure 4.3 — An epoch is cut into whole batches and the leftover points are dropped, so the batch size sets the number of steps.*
+
 ### 5. The four new lines of syntax
 
 **`lambda`.** A function with no name, written on one line. This:
@@ -535,6 +538,9 @@ warmup only    0.043  (lowest 0.031, highest 0.057)
 cosine only    0.035  (lowest 0.032, highest 0.040)
 warmup+cosine  0.037  (lowest 0.029, highest 0.045)
 ```
+
+![Two panels: left, five dots per schedule for final validation accuracy at the too-big rate 0.03, constant and warmup only scattered from 46.9 to 99.2, cosine only and warmup plus cosine stacked near 98.9; right, lowest-to-highest bars with a diamond at the mean for final validation loss at the gentle rate 0.003, all four bars overlapping](../figures/fig-w04-5-two-rates-five-seeds.svg)
+*Figure 4.4 — At the too-big rate a falling schedule rescued every seed; at the gentle rate the bars overlap and the schedules do not separate.*
 
 Compare the gaps between rows with the gap between "lowest" and "highest" inside a row. Then put this beside the Start Here table and say, in two sentences, what a schedule did at the too-big rate and what it did at the gentle one.
 

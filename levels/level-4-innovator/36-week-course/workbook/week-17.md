@@ -464,6 +464,11 @@ This page is for reading the train-validation gap in a run that is not yours, th
 | 599 | 1.777 | 1.808 | ______ |
 | FINAL | 1.757 | 1.800 | ______ |
 
+**Plot the six gaps from the table on the blank axes, join them in order and ring the highest.**
+
+![A blank chart with the gap (validation minus train) from minus 0.04 to 0.06 on the vertical axis and six equal slots labelled 0, 250, 300, 500, 599 and FINAL on the horizontal axis; no points drawn.](../figures/fig-w17-6-blank-gap-axes.svg)
+*Figure 17.5 — Blank axes for the six gaps of the 600-step run.*
+
 1. In this run the gap at the end is small. Is this a **better** model than your 1,500-step run? Compare the two validation losses: ________________________________
 2. A small gap and a good model are **not** the same thing. Write one sentence to say why. ________________________________________________
 3. At step 250 the gap is negative. Is that a problem? ________________ (hint: both numbers are estimates from 20 random batches, and the model is still bad at everything)
@@ -814,6 +819,8 @@ Part A:
 | 500 | 0.027 |
 | 599 | 0.031 |
 | FINAL | 0.043 |
+
+Plot (Figure 17.5, blank axes): six points at 0.002, -0.024, 0.009, 0.027, 0.031 and 0.043 over the slots 0, 250, 300, 500, 599 and FINAL, joined in order. Only the step 250 point sits below the 0.00 line, and the highest point, FINAL (0.043), is the one to ring.
 
 1. **No.** Its validation loss is 1.800, against about 1.447 for the 1,500-step run: the gap is small because the model has not learned much, not because it learned well. 2. A gap measures the *difference* between two scores; both can be bad. (A model that knows nothing has a gap of about 0.002.) 3. No: at step 250 the difference is inside the noise of estimating each loss from 20 random batches, and the model is still bad at everything. (We did not measure that noise.)
 

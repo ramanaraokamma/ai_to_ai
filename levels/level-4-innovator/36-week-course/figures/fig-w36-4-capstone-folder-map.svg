@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>The capstone folder grows in three steps: the test, the system, then the card and the demo</title>
+  <desc>Three panels joined by arrows. Week 34, the test before the system: DESIGN.md, eval/cases.py, eval/freeze.py and eval/FROZEN.txt. Week 35, the system and its numbers: src/contract.py, eval/score.py, src/baseline.py, src/guards.py, src/spine.py, eval/run_eval.py, eval/COMMITTED.json, eval/redteam.py and RED_TEAM.md. Week 36, say it twice: SYSTEM_CARD.md, ask.py and demo.py, with a dashed box for Sitting 2, the paper: 75 marks, no computer, no notes. A line below names the pieces from earlier weeks: Week 26 retrieve and cite, Week 28 tool loop, Week 29 trace and cost, Week 30 frozen suite, Week 33 attacks and redaction.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">What the capstone folder holds</text>
+  <line x1="254" y1="190" x2="274" y2="190" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(274 190) rotate(0)"/>
+  <rect x="20" y="64" width="232" height="250" rx="12" fill="#F5F8FA" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="32" y="76" width="208" height="28" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="136" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Week 34</text>
+  <text x="136" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">the test, before the system</text>
+  <text x="42" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">DESIGN.md</text>
+  <text x="42" y="166" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">eval/cases.py</text>
+  <text x="42" y="184" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">eval/freeze.py</text>
+  <text x="42" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">eval/FROZEN.txt</text>
+  <line x1="510" y1="190" x2="530" y2="190" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(530 190) rotate(0)"/>
+  <rect x="276" y="64" width="232" height="250" rx="12" fill="#F5F8FA" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="288" y="76" width="208" height="28" rx="8" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="392" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Week 35</text>
+  <text x="392" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">the system and its numbers</text>
+  <text x="298" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">src/contract.py</text>
+  <text x="298" y="166" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">eval/score.py</text>
+  <text x="298" y="184" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">src/baseline.py</text>
+  <text x="298" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">src/guards.py</text>
+  <text x="298" y="220" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">src/spine.py</text>
+  <text x="298" y="238" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">eval/run_eval.py</text>
+  <text x="298" y="256" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">eval/COMMITTED.json</text>
+  <text x="298" y="274" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">eval/redteam.py</text>
+  <text x="298" y="292" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">RED_TEAM.md</text>
+  <rect x="532" y="64" width="232" height="250" rx="12" fill="#F5F8FA" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="544" y="76" width="208" height="28" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="648" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Week 36</text>
+  <text x="648" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">say it twice</text>
+  <text x="554" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">SYSTEM_CARD.md</text>
+  <text x="554" y="166" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">ask.py</text>
+  <text x="554" y="184" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">demo.py</text>
+  <rect x="544" y="214" width="208" height="84" rx="8" fill="#FFFFFF" stroke="#55636F" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="648" y="240" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">Sitting 2: the paper</text>
+  <text x="648" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">75 marks, no computer,</text>
+  <text x="648" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">no notes</text>
+  <text x="400" y="330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">pieces from earlier weeks: W26 retrieve and cite &#183; W28 tool loop &#183; W29 trace and cost</text>
+  <text x="400" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">W30 frozen suite &#183; W33 attacks and redaction</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The test was frozen in Week 34; the logs from Week 35 feed the card, so no number is typed.</text>
+</svg>

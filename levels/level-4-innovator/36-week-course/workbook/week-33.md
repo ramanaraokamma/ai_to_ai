@@ -60,6 +60,11 @@ This page is for computing the wobble of a count by hand and using it to judge w
 
 Which is more wobbly in counts, `p = 0.3` or `p = 0.5` (same `n = 50`)? ______ . At which `p` is the wobble biggest? ______ . Why is the wobble `0` at `p = 0` **and** at `p = 1`? ____________________________________________________
 
+**Work out the wobble for each p marked on the bottom axis at n = 50, plot a dot above each p, and join the dots.**
+
+![An empty plot with p from 0 to 1 on the bottom and the wobble of the count from 0 to 4 up the side, seven empty write-in boxes for p equal to 0, 0.1, 0.3, 0.5, 0.7, 0.9 and 1, and two more for the highest dot and the wobble at the ends](../figures/fig-w33-6-blank-wobble-curve.svg)
+*Figure 33.5 — Blank: the wobble of a count of 50 runs against p, to be worked out and plotted.*
+
 **B. The Hook.** A count of 9 of 20 runs at `p = 0.3`: is it inside the window from row 1? ______ . So is "7 of 20 before, 9 of 20 after" evidence that a change made things worse? ______ , because ____________________________________________________
 
 **C. Is a gap more than noise?** For two counts `a` and `b` out of the same `n`: take `p_a = a/n` and `p_b = b/n`, find each wobble `sqrt(n p (1−p))`, square each, add, take the root, and double it. If the gap `|a − b|` is bigger than that **noise bound**, call it more than noise. Four pairs; the counts come from the chapter's Section 8 (the first is the Hook).
@@ -543,6 +548,7 @@ Check your written work against these answers only after you have finished every
 
 ### Page 33.1
 - **A.** Row 3 (`50, 0.5`): expected **25**, `n p (1−p) =` **12.5**, wobble **3.54**, share **0.071**, window **17.9 to 32.1**. Row 4 (`50, 0.1`): **5**, **4.5**, **2.12**, **0.042**, **0.8 to 9.2**. Row 5 (`100, 0.2`): **20**, **16**, **4.00**, **0.040**, **12.0 to 28.0**. Row 6 (`200, 0.5`): **100**, **50**, **7.07**, **0.035**, **85.9 to 114.1**. Row 7 (`50, 0.0`): **0**, **0**, **0.00**, **0.000**, **0 to 0**. Row 8 (`50, 1.0`): **50**, **0**, **0.00**, **0.000**, **50 to 50**. More wobbly: `p = 0.5` (**3.54** against **3.24**). The wobble is biggest at `p = 0.5`. At `p = 0` and `p = 1` the coin always lands the same way, so there is nothing to wobble. (This is also the trap: the formula applied to `0 of 50` says `0.00` whatever the truth.) Accept a window rounded to one decimal.
+- **Figure 33.5 (blank, `n = 50`).** Wobbles at `p = 0, 0.1, 0.3, 0.5, 0.7, 0.9, 1`: **0.00, 2.12, 3.24, 3.54, 3.24, 2.12, 0.00** (`n p (1−p) = 0, 4.5, 10.5, 12.5, 10.5, 4.5, 0`). The dots make a symmetric hump, highest at **p = 0.5**, and the wobble is **0** at both `p = 0` and `p = 1`.
 - **B.** Yes, `9` is inside `1.9 to 10.1`. No, it is not evidence of "worse": 7 and 9 are both ordinary counts for the same system; the difference, 2, is about one wobble.
 - **C.** The Hook: wobbles **2.13** and **2.22**, bound **6.2**, gap **2**, **not** more than noise. Frame vs frame + scan (14 vs 7): **2.05**, **2.13**, bound **5.9**, gap **7**, **more than noise**. Gullibility 1.0 vs 0.8, `n = 200` (62 vs 54): **6.54**, **6.28**, bound **18.1**, gap **8**, **not** distinguishable. `n = 1000` (310 vs 225): **14.63**, **13.21**, bound **39.4**, gap **85**, **more than noise**. Twenty runs sees the big gap (true `0.6` vs `0.3`) and not the small one (`0.30` vs `0.24`); the small one needs several hundred runs on each side (about 440 just clears the noise bound, and seeing it reliably takes more). A small gap needs many runs because the wobble shrinks only with the square root of the runs, so the gap must be big compared with the wobble, and it is the wobble that you are fighting. Accept rounding to one decimal in the bound. (Note the expected gap at `n = 200` is only `0.06 × 200 = 12`; an observed 8 can be a smaller or larger stretch of luck.)
 - **D.** **0.1025, 0.0512, 0.0256.** Each time the wobble of the share **halves**. To halve your uncertainty you need **4** times the runs.

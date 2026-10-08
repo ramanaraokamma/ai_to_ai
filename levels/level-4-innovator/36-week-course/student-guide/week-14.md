@@ -145,6 +145,11 @@ In the people example someone handed us the scores. In a sentence, the words the
 - **Step 3** is the Week 13 softmax, applied to **each row separately**. One row is one word deciding how to share its attention, so it must add to 1.
 - **Step 4**: each word's answer is a weighted average of all three values, using its own row of weights.
 
+The same four steps, drawn as a picture before any numbers go in.
+
+![A word drawn as two numbers with arrows through three tables to a question, a label and a value, then boxes for score, share and blend, with no numbers](../figures/fig-w14-4-question-label-value.svg)
+*Figure 14.3 — Each word becomes a question, a label and a value; questions meet labels, and the values are blended.*
+
 ---
 
 ## 🎲 Your Turn: The Pen Pass
@@ -429,6 +434,11 @@ first table is symmetric (score[i][j] equals score[j][i]): True
 ```
 
 With one table, the score table is a mirror image of itself. With two tables, **what I look for and what I offer can be different**. (Picture a verb that looks for its subject while advertising itself as a verb.) Also look at `the`: its question is all zeros, so every score is 0, every weight is 0.333, and its answer is just the **plain mean** of the values. Attention with no preference is the ordinary average.
+
+Here are both printouts side by side, with the weights under the scores.
+
+![Two panels of score and weight grids for the, cat and sat: with one table the scores 1.0 0.0 1.0, 0.0 1.0 1.0, 1.0 1.0 2.0 mirror across the diagonal; with the question table changed they become 0.0 0.0 0.0, 1.0 0.0 1.0, 1.0 0.0 1.0](../figures/fig-w14-5-one-table-or-two.svg)
+*Figure 14.4 — One table gives a mirror-image score grid; a changed question table breaks the mirror.*
 
 Last check: do the row sums stay at 1 even when the tables are random and nothing makes sense? Type this at the bottom too.
 

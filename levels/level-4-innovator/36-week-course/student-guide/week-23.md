@@ -605,6 +605,11 @@ the stand-in's own meter says $0.0042 over 19 calls
 ![Horizontal bars for the constant-answer floor 43.8 percent and prompts v1, v2, v3 at 50.0, 68.8 and 93.8 percent, with six-seed marks underneath](../figures/fig-w23-2-prompts-vs-floor.svg)
 *Figure 23.2 — A prompt must clear the floor, and one seed is one draw: v1 swings from 31.2 to 59.4 (all scores are of the stand-in).*
 
+The same three runs, box by box. Each row's four counts add to its field score.
+
+![Three rows of eight-square bars for v1, v2 and v3 across category, urgency, order_id and refund_requested, with counts 6, 3, 4, 3 then 6, 5, 7, 4 then 8, 6, 8, 8 and the constant floor of 14 of 32](../figures/fig-w23-5-per-field-counts.svg)
+*Figure 23.3 — Per-field counts of the stand-in at seed 0: 16, 22 and 30 of 32 boxes, against a floor of 14.*
+
 ### 6. Reading the table
 
 Take the numbers one at a time, in this order.
@@ -616,6 +621,11 @@ Take the numbers one at a time, in this order.
 5. **The ordering was built in.** The stand-in gives `p = 0.55`, `0.75`, `0.99` by its one line, so the ordering v1 < v2 < v3 is something you could have predicted from the file. (v2 gets `0.75` not `0.70`, because its system prompt contains the word "JSON" and so earns the schema bonus.) The table does **not** show that examples help a real model.
 6. **The ceiling** (the best score any version could reach on this set). No version is above `93.8%`. Something makes two boxes unreachable for every version at once. When **every** version fails the same case, suspect the test, not the prompt. Which two boxes? Look again at your blind labels against the gold labels: is there a place where a reasonable person would have written something else?
 7. **The guard on the whole run.** With a limit of `$0.004` the run stopped at call `19`, having spent `$0.0042`: over the limit, and the overshoot comes from the one call that crossed it (that call cost about `$0.00033`; `$0.0038` had been spent before it). The stand-in's own meter agrees.
+
+Item 5 drawn: the three switches, and the chance each version ends up with.
+
+![A dashed stand-in panel with three columns v1, v2, v3 and three switch rows for rules, example tags and schema or json, adding up from 0.55 to the chances 0.55, 0.75 and 0.99](../figures/fig-w23-4-stand-in-switches.svg)
+*Figure 23.4 — The stand-in's chance of getting a box right is set by three features of the prompt, which is why the ordering was built in.*
 
 ---
 

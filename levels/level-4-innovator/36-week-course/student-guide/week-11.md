@@ -89,6 +89,9 @@ score z -> dial f = sigmoid(z) -> what f multiplied by itself 40 times leaves
 
 Read the shape. A score of 0 gives a dial of exactly `0.5`, and an untrained gate has a score near 0. Forty halves leave `9e-13`: Week 10's number. The last column is the whole story: **only a dial of about 0.95 or more keeps anything.** Compare it with the number from your card in the Start Here. And the sigmoid only gets close to 1 for a *large positive* score.
 
+![Six bars of the dial for scores minus 2 to 4, from 0.1192 to 0.9820, with forty-step results from 1.126e-37 to 4.838e-01 beside them; only the dials past 0.95 are marked as keeping something](../figures/fig-w11-5-dial-and-forty-steps.svg)
+*Figure 11.5 — Only a dial near 1 leaves a real share after forty multiplications; a dial of one half leaves 9e-13.*
+
 ### 2. Rewrite versus add
 
 Last week's cell **rewrote** its note at every step: `note = tanh(W x + W note)`. The old note had to go through a weight and a `tanh` to get into the new one. That is the multiplication, and forty of them left nothing.
@@ -111,6 +114,9 @@ Four pieces, each made from the same input:
 Now the slope. In Week 6, `x + f(x)` had slope `1 + f'(x)`: the path through the `+` had slope exactly 1 before anything else was added. Here, the old memory `c_old` appears in only one place: multiplied by `f`. So the slope of the new memory with respect to the old memory is **`f`**.
 
 > **Say it in one line:** *the slope back one step along the memory track is the forget dial, so a dial near 1 is Week 6's highway written as a loop, and a dial near one half is Week 10's disease all over again.*
+
+![Four memory boxes 0.8909, 0.8486, 0.8084 and 0.7701 joined by arrows marked times 0.9526, with a new part added under each: written at step 1, nothing new at steps 2 to 4, and the share of step 1 falling from 100.0 to 86.4 percent](../figures/fig-w11-4-memory-scaled-then-added.svg)
+*Figure 11.4 — Each step the memory is multiplied by the forget dial and a new part is added; at x = 0 nothing is added and the memory only shrinks by the dial.*
 
 ![Two bar panels over four steps: the RNN note falls to 11.8 percent of step 1, the LSTM memory only to 86.4 percent](../figures/fig-w11-1-rewrite-versus-add.svg)
 *Figure 11.1 — A memory that is scaled and added to keeps its past; a note that is rewritten at every step loses it.*

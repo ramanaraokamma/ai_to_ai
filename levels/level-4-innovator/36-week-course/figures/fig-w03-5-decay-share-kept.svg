@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>With weight decay and no loss, SGD and AdamW shrink both weights by the same share, but Adam nearly wipes out the small weight</title>
+  <desc>Three pairs of horizontal bars showing how much of each of two weights, 1.0 and 100, is left after ten steps with decay 0.1. SGD leaves 0.9044 of the small weight and 90.4382 of the big one. Adam leaves 0.0762 of the small weight, drawn short, dashed and marked with a cross, and 99.0003 of the big one. AdamW leaves 0.9044 and 90.4382, the same as SGD. A line of text gives the hand sum 0.99 ten times is 0.9044.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Weight decay: how much of each weight is left</text>
+  <text x="400" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">SGD keeps 1 - 0.1 x 0.1 = 0.99 per step; 0.99 ten times is 0.9044</text>
+  <line x1="190" y1="104" x2="190" y2="334" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="190" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0%</text>
+  <line x1="390" y1="104" x2="390" y2="334" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="390" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">50%</text>
+  <line x1="590" y1="104" x2="590" y2="334" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="590" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">100%</text>
+  <text x="590" y="98" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">start</text>
+  <text x="24" y="135" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" font-weight="700">SGD</text>
+  <text x="182" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">weight 1</text>
+  <rect x="190" y="110" width="361.8" height="24" rx="0" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="559.8" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">1 to 0.9044</text>
+  <text x="182" y="154" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">weight 100</text>
+  <rect x="190" y="142" width="361.8" height="24" rx="0" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="559.8" y="154" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">100 to 90.4382</text>
+  <text x="24" y="213" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" font-weight="700">Adam</text>
+  <text x="182" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">weight 1</text>
+  <rect x="190" y="188" width="30.5" height="24" rx="0" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 3"/>
+  <text x="228.5" y="200" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">1 to 0.0762</text>
+  <polyline points="334.5,194 346.5,206" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="334.5,206 346.5,194" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="182" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">weight 100</text>
+  <rect x="190" y="220" width="396" height="24" rx="0" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="594" y="232" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">100 to 99.0003</text>
+  <text x="24" y="291" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" font-weight="700">AdamW</text>
+  <text x="182" y="278" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">weight 1</text>
+  <rect x="190" y="266" width="361.8" height="24" rx="0" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="559.8" y="278" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">1 to 0.9044</text>
+  <text x="182" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">weight 100</text>
+  <rect x="190" y="298" width="361.8" height="24" rx="0" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="559.8" y="310" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">100 to 90.4382</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Adam's divide turns decay into a fixed amount per step; AdamW applies it outside the divide.</text>
+</svg>

@@ -117,6 +117,9 @@ divide each distance by the spread:   -1.342, -0.447, 0.447, 1.342
 
 The row now has mean 0 and spread 1. That is **layer norm: each row, using its own mean and spread.** (The spread divides by 4, the number of entries. Do not worry about 3.) **Batch norm does the same arithmetic down a column** instead: across the examples, one feature at a time.
 
+![Two grids of four examples by four features: in the left grid row B holds 2, 4, 6, 8 and leads to the normalised row minus 1.342, minus 0.447, 0.447, 1.342; in the right grid column 2 is highlighted and an arrow leads to a note that the same arithmetic runs down the column](../figures/fig-w06-4-rows-versus-columns.svg)
+*Figure 6.3 — Layer norm takes its mean and spread from one example's row; batch norm takes them from one feature's column across the batch.*
+
 **E. Why two examples are a disaster for the column version.** Take two numbers, `a` and `b`. Their mean is `(a + b)/2`. Their distances from it are `+(a − b)/2` and `−(a − b)/2`. Their spread is `|a − b|/2`. Divide each distance by the spread and you get exactly **`+1` and `−1`**, for *any* `a` and `b` that differ. Try it with `a = 3, b = 11` and then `a = 100, b = 101` on paper. Keep that result in mind for Step 4.
 
 **F. A length: the 3-4-5 triangle** (Week 2). The gradient `[3, 4]` has length `sqrt(9 + 16) = 5`. To *clip* it to a maximum length of 1, scale both entries by `1/5`, giving `[0.6, 0.8]`: same direction, shorter arrow. If it was already shorter than the maximum, nothing changes.
@@ -535,6 +538,9 @@ batch size     none   batch norm   layer norm
          4     96.4%      63.3%       98.3%
          2     97.8%      46.9%       97.2%
 ```
+
+![Grouped bars of validation accuracy after 10 epochs for no norm, batch norm and layer norm at batch sizes 64, 16, 4 and 2: all near 97 to 98 percent except batch norm at 63.3 percent for batch size 4 and 46.9 percent, on the coin line, for batch size 2](../figures/fig-w06-5-norm-by-batch-size.svg)
+*Figure 6.4 — On seed 0 the batch size 2 row is where batch norm falls to the coin, 46.9%, and the other two do not.*
 
 Look at the bottom row and compare it with your three guesses. Then link it to Part E: what does a column-wise norm do to a batch of two? The batch-size-4 row is one seed and 10 epochs, the noisiest cell in the table, so build your argument on the batch-size-2 row, and do not build a rule on the 63.3%.
 

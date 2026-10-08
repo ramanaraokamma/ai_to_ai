@@ -1045,7 +1045,7 @@ The Week 8 cell with `W_hh = 1.0`, `W_xh = 1.0`, spike `[1, 0, 0, 0]`: notes **0
 | 3 | `1 - 0.5663 squared` | **0.6793** |
 | 4 | `1 - 0.5126 squared` | **0.7372** |
 
-Product, note 1 to note 4: **0.2944**. For `W_hh = 0.5` the three slopes were `0.4340, 0.4839, 0.4960`, product **0.1041**. *Reading:* the bigger recurrent weight loses far less in three steps (`0.2944` against `0.1041`), as Week 8's workbook part g showed (the note fades more slowly). *Common errors:* using the *old* note in `1 - h squared` instead of the new one; forgetting `W_hh` in the slope; rounding each slope to one decimal.
+Product, note 1 to note 4: **0.2944** (the empty boxes of the blank chain, workbook Figure W10.6, hold `0.5878`, `0.6793`, `0.7372` and this product). For `W_hh = 0.5` the three slopes were `0.4340, 0.4839, 0.4960`, product **0.1041**. *Reading:* the bigger recurrent weight loses far less in three steps (`0.2944` against `0.1041`), as Week 8's workbook part g showed (the note fades more slowly). *Common errors:* using the *old* note in `1 - h squared` instead of the new one; forgetting `W_hh` in the slope; rounding each slope to one decimal.
 
 ### Page 10.3 — The parked cell (from block 3)
 

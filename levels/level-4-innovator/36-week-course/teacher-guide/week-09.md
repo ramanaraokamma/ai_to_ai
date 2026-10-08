@@ -1232,6 +1232,7 @@ All values were rerun on CPU, seed 0, torch 2.2.1. **Warm-Up:** W1 0.693; W2 0.4
 - **Page 9.6.** 9.6a gap 0.0173, larger spread 0.0082, twice 0.0163: bigger, only just. 9.6b gap 0.0040 against 0.0163: inside noise. 9.6e (840 / 120) x 10 = 70 steps.
 - **Page 9.7.** The check file prints `val at epochs 20, 40, 60: [0.049, 0.136, 0.059]`, `lowest val 0.012 at epoch 31` and `final accuracy 99.2%`. 9.7c: val went up from epoch 20 to 40 for both W (0.029 to 0.085) and Z (0.049 to 0.136). Y's first-epoch train 7837888.5 and val 5632.9 differ because train is averaged over the epoch's steps and val is measured once after.
 - **Page 9.8.** A `TypeError: total() takes 0 positional arguments but 2 were given`; B prints `True` then `False` (add `model.eval()`); C `ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 5])`; D `AttributeError: 'tuple' object has no attribute 'shape'`. Slope check 1.5, then 0.
+- **Figure 9.6 (blank confidence map, Page 9.9).** No fixed answer. Check one ringed guess per week from Page 9.1, bars shaded to the grid's percentages (a bar under the dashed 60% line is a redo week), and at most two weeks ringed.
 - **Pages 9.1, 9.9, 9.10 and Self-Check.** The per-week grid on Page 9.9 matches Handout B (marks 11, 10, 10, 9, 8, 8, 7, 12 = 75; redo thresholds 6, 5, 5, 5, 4, 4, 4, 7; tie order 8, 2, 6). The other answers are in the student's own words.
 
 ### Answers to every question posed in the lesson

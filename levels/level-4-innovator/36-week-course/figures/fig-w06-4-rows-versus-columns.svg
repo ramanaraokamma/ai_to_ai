@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Layer norm takes its mean and spread from one example's row; batch norm takes them from one feature's column across the batch</title>
+  <desc>Two grids of four examples (rows A to D) by four features (columns 1 to 4). In the left grid row B is highlighted and holds 2, 4, 6, 8; an arrow leads to the normalised row minus 1.342, minus 0.447, 0.447, 1.342, with a note that mean 5 and spread 2.236 come from that row alone. In the right grid column 2 is highlighted; an arrow leads to a box saying the same arithmetic runs down the column, so the mean and spread need the other examples.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The two norms take their mean from different places</text>
+  <text x="182" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Layer norm: one row at a time</text>
+  <text x="98" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <text x="154" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <text x="210" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3</text>
+  <text x="266" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4</text>
+  <text x="60" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">A</text>
+  <text x="60" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">B</text>
+  <text x="60" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">C</text>
+  <text x="60" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">D</text>
+  <rect x="70" y="128" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="126" y="128" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="182" y="128" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="238" y="128" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="70" y="164" width="56" height="36" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="98" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <rect x="126" y="164" width="56" height="36" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="154" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <rect x="182" y="164" width="56" height="36" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="210" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+  <rect x="238" y="164" width="56" height="36" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <text x="266" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">8</text>
+  <rect x="70" y="200" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="126" y="200" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="182" y="200" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="238" y="200" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="70" y="236" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="126" y="236" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="182" y="236" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="238" y="236" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="182" y="102" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">features (columns)</text>
+  <text x="40" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 40 200)">examples (rows)</text>
+  <line x1="182" y1="278" x2="182" y2="302" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(182 302) rotate(90)"/>
+  <rect x="70" y="308" width="56" height="30" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="98" y="323" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;1.342</text>
+  <rect x="126" y="308" width="56" height="30" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="154" y="323" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">&#8722;0.447</text>
+  <rect x="182" y="308" width="56" height="30" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="210" y="323" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0.447</text>
+  <rect x="238" y="308" width="56" height="30" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="266" y="323" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.342</text>
+  <text x="182" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">mean 5, spread 2.236, from this row alone</text>
+  <text x="592" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">Batch norm: one column at a time</text>
+  <text x="508" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <text x="564" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <text x="620" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3</text>
+  <text x="676" y="120" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4</text>
+  <text x="470" y="146" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">A</text>
+  <text x="470" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">B</text>
+  <text x="470" y="218" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">C</text>
+  <text x="470" y="254" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">D</text>
+  <rect x="480" y="128" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="536" y="128" width="56" height="36" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="592" y="128" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="648" y="128" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="480" y="164" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="536" y="164" width="56" height="36" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="592" y="164" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="648" y="164" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="480" y="200" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="536" y="200" width="56" height="36" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="592" y="200" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="648" y="200" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="480" y="236" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="536" y="236" width="56" height="36" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
+  <rect x="592" y="236" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="648" y="236" width="56" height="36" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="592" y="102" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">features (columns)</text>
+  <text x="450" y="200" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 450 200)">examples (rows)</text>
+  <line x1="564" y1="278" x2="564" y2="302" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(564 302) rotate(90)"/>
+  <rect x="480" y="308" width="224" height="30" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="592" y="323" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">same arithmetic, down the column</text>
+  <text x="592" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">mean and spread need the other examples</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Highlighted cells are the numbers that one normalisation uses together.</text>
+</svg>

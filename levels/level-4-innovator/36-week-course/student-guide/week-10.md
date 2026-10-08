@@ -177,6 +177,9 @@ Three steps back, about a tenth of the signal is left (`0.4340 x 0.4839 x 0.4960
 
 The nudge check at the bottom agrees with the shortcut to rounding (`0.4339` against `0.4340`). Two ways to the same number: that is why we trust the shortcut.
 
+![Four note boxes with 0.7616, 0.3634, 0.1797 and 0.0896 and arrows pointing right, and under them four circles with arrows pointing left carrying the slopes 0.4340, 0.4839 and 0.4960, multiplied to 0.1041](../figures/fig-w10-4-slopes-multiply-along-a-chain.svg)
+*Figure 10.4 — Going back along the loop, each step's slope multiplies the one before, so three steps back leave about a tenth.*
+
 ### 3. The parked cell: a loop where every slope is the same
 
 Real slopes change from step to step. To see the theory cleanly, we **cheat on purpose** and build a one-number cell whose note sits still at `0.2177`. Its slope is then `1 - 0.2177 ** 2 = 0.9526` at **every** step. If the theory is right, the gradient at position 1 of a chain of 41 notes should be `0.9526` multiplied forty times. Predict it, then run block 3.
@@ -219,6 +222,9 @@ position  1: gradient 0.1447   0.9526 ** 40 = 0.1434
 ```
 
 The measured `0.1447` and the theory's `0.1434` agree to two places. The rest is the note drifting from `0.2177` to `0.217` by position 41, and the slope drifting with it. This cell is **designed**: it is not what a trained cell looks like. It teaches the arithmetic.
+
+![Seven pairs of bars for positions 41 to 1 of the parked chain: the measured gradient falls from 1.0000 to 0.1447 and the theory, 0.9526 to the power of the steps back, from 1.0000 to 0.1434](../figures/fig-w10-5-parked-cell-measured-vs-theory.svg)
+*Figure 10.5 — Measurement and arithmetic agree at every position: a slope of 0.9526 leaves about 14% after forty steps.*
 
 ### 4. The real probe: a 16-number cell
 

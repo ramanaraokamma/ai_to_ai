@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Most of a block's knobs sit in the MLP, and the formula 12 d d + 10 d counts them at any width</title>
+  <desc>A long bar split into three parts for one block at width 128: attention 65,664 knobs in purple, MLP 131,712 in blue, and a thin pink sliver for the two layer norms, 512. Beneath it the sum 65,664 + 131,712 + 512 = 197,888 and a note that the MLP holds about twice attention's knobs. Below, three cards give 12 times d times d plus 10 times d: d = 8 gives 848, d = 16 gives 3,232 and d = 128 gives 197,888.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Where the knobs of one block sit</text>
+  <text x="50" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">one block at d = 128 (Week 17's size)</text>
+  <rect x="50" y="96" width="232.3" height="48" rx="2" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="282.3" y="96" width="465.9" height="48" rx="2" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="748.2" y="96" width="1.8" height="48" rx="1" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="166.1" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">attention</text>
+  <text x="166.1" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">65,664</text>
+  <text x="515.2" y="114" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">MLP</text>
+  <text x="515.2" y="132" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">131,712</text>
+  <line x1="750" y1="144" x2="750" y2="160" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="750" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="end">two norms 512</text>
+  <text x="50" y="176" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B">65,664 + 131,712 + 512 = 197,888</text>
+  <text x="50" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">the MLP holds about twice the knobs of attention</text>
+  <text x="50" y="234" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">the formula 12 &#215; d &#215; d + 10 &#215; d, at three widths</text>
+  <rect x="50" y="248" width="220" height="84" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="160" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">d = 8</text>
+  <text x="160" y="294" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">12 &#215; 64 + 10 &#215; 8</text>
+  <text x="160" y="318" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle">= 848</text>
+  <rect x="290" y="248" width="220" height="84" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">d = 16</text>
+  <text x="400" y="294" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">12 &#215; 256 + 10 &#215; 16</text>
+  <text x="400" y="318" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#14202B" text-anchor="middle">= 3,232</text>
+  <rect x="530" y="248" width="220" height="84" rx="8" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="640" y="270" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">d = 128</text>
+  <text x="640" y="294" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="middle">12 &#215; 16,384 + 10 &#215; 128</text>
+  <text x="640" y="318" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#C42B8C" text-anchor="middle">= 197,888</text>
+  <text x="400" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The number of words T and the number of heads H are not in the formula.</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank axes for Week 17 page 17.6 Part A: plot the six gaps of the 600-step run</title>
+  <desc>A blank chart. The vertical axis is the gap, validation minus train, from minus 0.04 to 0.06 with grid lines every 0.02 and a solid line at 0.00. The horizontal axis has six equal slots labelled 0, 250, 300, 500, 599 and FINAL. No data is drawn. A key lists three instructions: mark the six gaps, join them in order, ring the highest.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Page 17.6 Part A: plot the gap at each step</text>
+  <line x1="150" y1="90" x2="770" y2="90" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="142" y="94" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end">0.06</text>
+  <line x1="150" y1="130" x2="770" y2="130" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="142" y="134" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end">0.04</text>
+  <line x1="150" y1="170" x2="770" y2="170" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="142" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end">0.02</text>
+  <line x1="150" y1="210" x2="770" y2="210" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="142" y="214" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end">0.00</text>
+  <line x1="150" y1="250" x2="770" y2="250" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="142" y="254" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end">&#8722;0.02</text>
+  <line x1="150" y1="290" x2="770" y2="290" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="142" y="294" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F" text-anchor="end">&#8722;0.04</text>
+  <line x1="150" y1="90" x2="150" y2="290" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="74" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 74 190)">gap = validation &#8722; train</text>
+  <line x1="190" y1="290" x2="190" y2="296" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="190" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0</text>
+  <line x1="300" y1="290" x2="300" y2="296" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="300" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">250</text>
+  <line x1="410" y1="290" x2="410" y2="296" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="410" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">300</text>
+  <line x1="520" y1="290" x2="520" y2="296" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="520" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">500</text>
+  <line x1="630" y1="290" x2="630" y2="296" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="630" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">599</text>
+  <line x1="740" y1="290" x2="740" y2="296" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="740" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">FINAL</text>
+  <text x="460" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">step (one equal slot per row of the table, not to scale)</text>
+  <rect x="170" y="358" width="22" height="14" rx="2" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="200" y="365" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">1. mark the six gaps</text>
+  <line x1="370" y1="365" x2="392" y2="365" stroke="#845F00" stroke-width="3" stroke-linecap="round"/>
+  <text x="400" y="365" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">2. join them in order</text>
+  <circle cx="590" cy="365" r="8" fill="#FFFFFF" stroke="#845F00" stroke-width="3"/>
+  <text x="604" y="365" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" dominant-baseline="central">3. ring the highest</text>
+</svg>

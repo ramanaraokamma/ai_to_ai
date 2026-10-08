@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank worksheet for Week 16 page 16.4 Part B: the knob count of each of the nine parts at d = 10</title>
+  <desc>A blank worksheet. Nine grey boxes name the parts of one block: attention half ln1 LayerNorm(d), q, k and v each Linear(d, d) with no bias, proj Linear(d, d); MLP half ln2 LayerNorm(d), up Linear(d, 4d), act GELU(), down Linear(4d, d). Beside each is an empty dashed box for the knob count at d = 10. At the bottom are two empty dashed boxes for the total counted the long way and the total from the formula 12 times 10 times 10 plus 10 times 10, and an empty tick box for whether they agree.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Page 16.4 Part B: count one block at d = 10</text>
+  <text x="40" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">attention half</text>
+  <text x="420" y="82" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">MLP half</text>
+  <rect x="40" y="92" width="190" height="30" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="50" y="107" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">ln1  LayerNorm(d)</text>
+  <rect x="240" y="92" width="80" height="30" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="40" y="130" width="190" height="30" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="50" y="145" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">q  Linear(d, d), no bias</text>
+  <rect x="240" y="130" width="80" height="30" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="40" y="168" width="190" height="30" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="50" y="183" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">k  Linear(d, d), no bias</text>
+  <rect x="240" y="168" width="80" height="30" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="40" y="206" width="190" height="30" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="50" y="221" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">v  Linear(d, d), no bias</text>
+  <rect x="240" y="206" width="80" height="30" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="40" y="244" width="190" height="30" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="50" y="259" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">proj  Linear(d, d)</text>
+  <rect x="240" y="244" width="80" height="30" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="420" y="92" width="190" height="30" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="430" y="107" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">ln2  LayerNorm(d)</text>
+  <rect x="620" y="92" width="80" height="30" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="420" y="130" width="190" height="30" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="430" y="145" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">up  Linear(d, 4d)</text>
+  <rect x="620" y="130" width="80" height="30" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="420" y="168" width="190" height="30" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="430" y="183" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">act  GELU()</text>
+  <rect x="620" y="168" width="80" height="30" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <rect x="420" y="206" width="190" height="30" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="430" y="221" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" dominant-baseline="central">down  Linear(4d, d)</text>
+  <rect x="620" y="206" width="80" height="30" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="420" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">dashed boxes are for your pencil</text>
+  <rect x="40" y="290" width="720" height="66" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="60" y="312" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">total, the long way:</text>
+  <rect x="230" y="298" width="100" height="28" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="60" y="338" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">total, the formula 12 &#215; 10 &#215; 10 + 10 &#215; 10:</text>
+  <rect x="440" y="324" width="100" height="28" rx="6" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="640" y="312" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">Do they agree?</text>
+  <rect x="732" y="300" width="20" height="20" rx="4" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round" stroke-dasharray="6 4"/>
+</svg>

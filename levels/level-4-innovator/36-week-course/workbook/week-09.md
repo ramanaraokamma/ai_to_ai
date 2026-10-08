@@ -446,6 +446,11 @@ My two weeks: ______ and ______ . Redo for week ______ on (day and time) _______
 
 **Why at most two?** A list of eight redos is a list nobody does. Two is a plan.
 
+**Ring the guess you made on page 9.1 for each week, shade each bar to your percentage, then ring at most two weeks.**
+
+![Blank page with eight week columns, each with empty Y, M, N circles above an empty bar track from 0 to 100 percent and a dashed 60 percent line](../figures/fig-w09-6-blank-confidence-map-and-marks.svg)
+*Figure 9.6 — Blank: set your guess beside your mark, week by week.*
+
 **Total mark:** ______ / 75 . **Pattern, not number:** one week at 30% and seven at 90% is a very different X-ray from eight weeks at 65%. Mine looks like: ___________________________________________
 
 **Section E, your own words.** Write one sentence about what Section E taught you about reading a table that you did not know before: ___________________________________________
@@ -662,6 +667,8 @@ D  AttributeError: 'tuple' object has no attribute 'shape'
 **Slope check.** Slope `1 + 0.5 =` **1.5**. For `f` slope `−1`: `1 + (−1) =` **0**, "the highway has switched off", because the two slopes cancel exactly.
 
 ### Page 9.9
+
+**Figure 9.6 (blank confidence map).** No fixed answer. Check that each week has one ringed guess (Y, M or N) from page 9.1, that each bar is shaded to the percentage in the grid, that a bar below the dashed 60% line matches a "redo if" week in the grid, and that at most two weeks are ringed.
 
 No fixed answer: your marks. Two things to check: (1) the `Marks earned` column adds to your total; (2) you circled **at most two** weeks, and each has a **day and time** next to it. The tie order is **8, then 2, then 6**.
 

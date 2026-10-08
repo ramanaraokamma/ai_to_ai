@@ -60,6 +60,11 @@ Keep the card. We come back to it at the end.
 
 **LoRA** is freezing with a trick. Keep every old weight frozen. Beside a layer, add a small **patch** whose output is added to the layer's output. The patch is built from two thin grids whose product is a full-size correction. Because the patch has few numbers, few numbers train. The patch starts at **exactly zero**, so at **step 0** the patched model *is* the base model. That is what makes "before" and "after" mean something.
 
+Here is the whole path in one picture, in the order it happens.
+
+![Unlabelled text, then step 1 pretrain once, giving an encoder, then step 2 a base model whose head alone trains (18 of 30 right), then step 3 a full fine-tune and a LoRA patch, each 19 of 30; below, the input going through a frozen old layer and a dashed patch of two thin grids A then B, added together](../figures/fig-w31-4-pretrain-base-patch.svg)
+*Figure 31.3 — Pretrain once, build the base, then adjust a copy of it: with B at zero the patch adds nothing at step 0.*
+
 **The regression.** A **regression**, in this course, is one category of Week 30's table getting worse. The overall score is a weighted sum of the categories. **A sum can hide a subtraction.**
 
 ---
@@ -726,6 +731,11 @@ six seeds took 3.4 s
 Read it aloud. The base column runs `18 15 18 16 17 17`. Full is `19 18 19 19 19 20`. LoRA is `19 19 18 19 18 18`. Five of six seeds flag *something*, and it is a different category in different seeds. One single method varies by one to three tickets from seed to seed (base 15 to 18, full 18 to 20, LoRA 18 to 19). **The seed is a small experiment; the spread is the result.** Nothing here ranks full fine-tuning against LoRA.
 
 And one more number to put next to them. Week 30's free rules scored **25 of 30 = 0.833**. Your best model today scored 19. The honest table for a ship decision is *rules → LoRA*, not *base → LoRA*, and it has more flags than the one above.
+
+Here are the six rows side by side, each seed's three counts and the category that fell.
+
+![A dot chart of tickets right out of 30 for seeds 0 to 5, a circle for base, a square for full fine-tuning and a triangle for LoRA, with the numbers and the category that fell from base to LoRA beside each seed, and a callout that 5 of 6 seeds flag something](../figures/fig-w31-5-six-seeds-every-row.svg)
+*Figure 31.4 — Across six seeds the base moves by three tickets, full fine-tuning by two and LoRA by one, and a different category falls each time.*
 
 ---
 

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Writing the working first fixes the last three answer characters that direct answering leaves at chance</title>
+  <desc>Top, the same sum 4211 plus 9 as text: direct is 04211+00009= then 004220.; with working is 04211+00009=, then the working 19011020202040400000# highlighted, then 004220. Bottom left, paired bars for the share right at each of six answer characters, seed 0. Direct: 1.0, 0.98, 0.82, 0.11, 0.11, 0.13. With working: 1.0 at every character. A dotted line marks a pure guess at 0.10. Bottom right, exact match on 500 held-out sums for seeds 0 to 4. Direct: 0.000, 0.038, 0.052, 0.082, 0.000. With working: 1.000 at all five. Compact working: 1.000, 0.090, 0.974, 1.000, 0.000. Direct with 12,000 steps scored 0.994 on one seed.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Working first: the same sum written two ways</text>
+  <text x="20" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">direct</text>
+  <rect x="100" y="74" width="100" height="26" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="150" y="87" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">04211+00009=</text>
+  <rect x="208" y="74" width="64" height="26" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="240" y="87" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">004220.</text>
+  <text x="20" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">with working</text>
+  <rect x="100" y="116" width="100" height="26" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="150" y="129" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">04211+00009=</text>
+  <rect x="208" y="116" width="165" height="26" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <text x="290.5" y="129" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">19011020202040400000#</text>
+  <rect x="381" y="116" width="64" height="26" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="413" y="129" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">004220.</text>
+  <text x="150" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">question</text>
+  <text x="290.5" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">working</text>
+  <text x="413" y="162" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">answer</text>
+  <text x="20" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">right, per answer character</text>
+  <rect x="232" y="186" width="12" height="12" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <text x="250" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">direct</text>
+  <rect x="306" y="186" width="12" height="12" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="324" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">with working</text>
+  <line x1="70" y1="330" x2="420" y2="330" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="64" y="334" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0</text>
+  <line x1="70" y1="270" x2="420" y2="270" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="64" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">0.5</text>
+  <line x1="70" y1="210" x2="420" y2="210" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <text x="64" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">1.0</text>
+  <line x1="70" y1="318" x2="420" y2="318" stroke="#55636F" stroke-width="2" stroke-dasharray="2 4" stroke-linecap="round"/>
+  <rect x="78" y="210" width="22" height="120" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="102" y="210" width="22" height="120" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="89" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.0</text>
+  <text x="113" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.0</text>
+  <text x="101" y="347" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1</text>
+  <rect x="135" y="212.4" width="22" height="117.6" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="159" y="210" width="22" height="120" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="146" y="207.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.98</text>
+  <text x="170" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.0</text>
+  <text x="158" y="347" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">2</text>
+  <rect x="192" y="231.6" width="22" height="98.4" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="216" y="210" width="22" height="120" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="203" y="226.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.82</text>
+  <text x="227" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.0</text>
+  <text x="215" y="347" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3</text>
+  <rect x="249" y="316.8" width="22" height="13.2" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="273" y="210" width="22" height="120" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="260" y="311.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.11</text>
+  <text x="284" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.0</text>
+  <text x="272" y="347" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4</text>
+  <rect x="306" y="316.8" width="22" height="13.2" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="330" y="210" width="22" height="120" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="317" y="311.8" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.11</text>
+  <text x="341" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.0</text>
+  <text x="329" y="347" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5</text>
+  <rect x="363" y="314.4" width="22" height="15.6" rx="2" fill="#F5F8FA" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4 3"/>
+  <rect x="387" y="210" width="22" height="120" rx="2" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2" stroke-linejoin="round"/>
+  <text x="374" y="309.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.13</text>
+  <text x="398" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.0</text>
+  <text x="386" y="347" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">6</text>
+  <line x1="70" y1="210" x2="70" y2="330" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="70" y1="330" x2="420" y2="330" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="245" y="366" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">answer character (seed 0); dotted line: a pure guess, 0.10</text>
+  <text x="440" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">exact match on 500 held-out sums</text>
+  <text x="566" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">seed 0</text>
+  <text x="612" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">seed 1</text>
+  <text x="658" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">seed 2</text>
+  <text x="704" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">seed 3</text>
+  <text x="750" y="224" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">seed 4</text>
+  <text x="440" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">direct</text>
+  <rect x="544" y="238" width="44" height="28" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="566" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.000</text>
+  <rect x="590" y="238" width="44" height="28" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="612" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.038</text>
+  <rect x="636" y="238" width="44" height="28" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="658" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.052</text>
+  <rect x="682" y="238" width="44" height="28" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="704" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.082</text>
+  <rect x="728" y="238" width="44" height="28" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="750" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.000</text>
+  <text x="440" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">with working</text>
+  <rect x="544" y="272" width="44" height="28" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="566" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.000</text>
+  <rect x="590" y="272" width="44" height="28" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="612" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.000</text>
+  <rect x="636" y="272" width="44" height="28" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="658" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.000</text>
+  <rect x="682" y="272" width="44" height="28" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="704" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.000</text>
+  <rect x="728" y="272" width="44" height="28" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="750" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.000</text>
+  <text x="440" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">compact working</text>
+  <rect x="544" y="306" width="44" height="28" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="566" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.000</text>
+  <rect x="590" y="306" width="44" height="28" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="612" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.090</text>
+  <rect x="636" y="306" width="44" height="28" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="658" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.974</text>
+  <rect x="682" y="306" width="44" height="28" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="2"/>
+  <text x="704" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">1.000</text>
+  <rect x="728" y="306" width="44" height="28" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2"/>
+  <text x="750" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.000</text>
+  <text x="440" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">direct, 4 times the steps (12,000):</text>
+  <text x="440" y="357" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">0.994, one seed</text>
+</svg>

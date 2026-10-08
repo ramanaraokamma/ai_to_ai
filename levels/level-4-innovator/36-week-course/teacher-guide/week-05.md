@@ -506,6 +506,8 @@ How to read it (you will say this in the lesson, slowly):
 - **Early stop (p=25)** repeats the control's best epoch and best value (59, 0.179) — it is the *same run*, stopped at epoch 84 — and its "final val" **0.227** is the loss at the moment it stopped, not what you ship. **What you ship is the snapshot: 0.179.**
 - **Five seeds:** the ranges overlap for every "best val" (0.113 to 0.264 across cures). The *final val* column separates the cures much more: 0.803 (do nothing) · 0.575 (dropout) · 0.389 (weight decay) · 0.366 (jitter), against 0.351 for the early-stop row *at the stop*, and **0.212** for what the early-stop snapshot is worth.
 
+On the blank number line (Figure W5.3) the best-val bars run: no cure 0.159 to 0.264 (mean 0.204), early stop 0.159 to 0.264 (0.212), dropout 0.122 to 0.257 (0.190), weight decay 0.138 to 0.246 (0.185), jitter 0.113 to 0.180 (0.149). Every pair overlaps, between 0.159 and 0.180.
+
 **7. (2 min) Run the sweep of the jitter size and the gap check.** You will use the sweep in the "harder" variation; `gap_check.py` is **teacher-only** (it uses `cdist`, `masked_fill` and `quantile`, which the student has not met).
 
 ```python

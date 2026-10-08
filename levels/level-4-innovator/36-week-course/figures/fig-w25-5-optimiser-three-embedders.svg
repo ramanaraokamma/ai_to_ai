@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>A rank of 1 means nothing when every note has the same score</title>
+  <desc>Two panels of three bars each, the cosine score of the right note, note 0. For the query optimiser: word tf-idf scores 0.000, rank 1, with 15 notes sharing that exact score; lsa with 14 numbers scores 0.799, rank 1, alone; the contrastive embedder with seed 0 scores 0.429, rank 1, alone. For the query which optimiser was best: word tf-idf scores 0.000, rank 2, with 14 notes sharing the score; lsa scores 0.525, rank 2, alone; contrastive scores 0.377, rank 1, alone. The two tie counts of 15 and 14 are drawn in red boxes.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Where each embedder put the right note</text>
+  <text x="270" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">score of the right note (note 0)</text>
+  <text x="590" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">rank</text>
+  <text x="690" y="70" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">notes sharing</text>
+  <text x="690" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">that exact score</text>
+  <line x1="270" y1="96" x2="270" y2="310" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="270" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="395" y1="96" x2="395" y2="310" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="395" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.5</text>
+  <line x1="520" y1="96" x2="520" y2="310" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <text x="520" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">1.0</text>
+  <text x="395" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">cosine score</text>
+  <text x="40" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="start">query: optimiser</text>
+  <text x="40" y="137" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">word tf-idf</text>
+  <line x1="270" y1="126" x2="270" y2="146" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <text x="280" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0.000</text>
+  <text x="590" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <rect x="666" y="125" width="48" height="22" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">15</text>
+  <text x="40" y="167" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">lsa (14 numbers)</text>
+  <rect x="270" y="156" width="199.8" height="20" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="479.8" y="171" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0.799</text>
+  <text x="590" y="171" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <rect x="666" y="155" width="48" height="22" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="171" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <text x="40" y="197" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">contrastive, seed 0</text>
+  <rect x="270" y="186" width="107.2" height="20" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="387.2" y="201" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0.429</text>
+  <text x="590" y="201" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <rect x="666" y="185" width="48" height="22" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="201" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <text x="40" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="start">query: which optimiser was best</text>
+  <text x="40" y="249" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">word tf-idf</text>
+  <line x1="270" y1="238" x2="270" y2="258" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/>
+  <text x="280" y="253" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0.000</text>
+  <text x="590" y="253" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">2</text>
+  <rect x="666" y="237" width="48" height="22" rx="6" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="253" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">14</text>
+  <text x="40" y="279" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">lsa (14 numbers)</text>
+  <rect x="270" y="268" width="131.2" height="20" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="411.2" y="283" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0.525</text>
+  <text x="590" y="283" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">2</text>
+  <rect x="666" y="267" width="48" height="22" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="283" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <text x="40" y="309" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">contrastive, seed 0</text>
+  <rect x="270" y="298" width="94.2" height="20" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="374.2" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">0.377</text>
+  <text x="590" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <rect x="666" y="297" width="48" height="22" rx="6" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">the word table's rank 1 for &#8220;optimiser&#8221; is list order: 15 notes tied at 0.000.</text>
+</svg>

@@ -63,6 +63,9 @@ notes -> chunks -> retrieve top k -> number the sources -> writer -> check the i
 
 A wrong answer has exactly two possible homes: the right note was never served (a **retrieval failure**), or it was served and the writer used it badly (a **generation failure**). You find out by reading the served notes.
 
+![Three questions checked in order: is the best score below tau, is the right note among those served, does the answer contain the fact; the outcomes are refused by the gate, a RETRIEVAL failure to fix in the index, a GENERATION failure to fix in the writer, or ok](../figures/fig-w26-4-two-homes-for-a-wrong-answer.svg)
+*Figure 26.3 — Check the gate, then the served notes, then the answer, in that order, and change only the half that failed.*
+
 One more idea concerns the notes themselves: retrieved text is **text somebody wrote**. It can contain orders. Treat it as data.
 
 ---
@@ -491,6 +494,9 @@ The `errors` column adds two kinds of mistake: an answerable question **refused*
 - Look at the stranger column. The strictest threshold, the one that refuses all four unanswerable questions (`0.25`), answers **one** of the ten stranger questions. A threshold tuned on questions you wrote is tuned on the easy ones.
 
 (`0.200` in your list is really `0.19977...`, just below `0.20`, so at `tau = 0.20` eight of ten are answered, not nine. Read the raw number, not the rounded one.)
+
+![Seven rows for refusal lines 0.05 to 0.30, each with a bar for answerable questions refused, a bar for unanswerable questions answered, the total, and ten squares for how many stranger-wording questions were answered; the 0.12 row is ringed with 1 mistake](../figures/fig-w26-5-refusal-line-two-mistakes.svg)
+*Figure 26.4 — Tau 0.12 has the fewest mistakes (1) and no line has zero; the strictest line answers only 1 of the 10 stranger questions.*
 
 ### A threshold belongs to one embedder
 

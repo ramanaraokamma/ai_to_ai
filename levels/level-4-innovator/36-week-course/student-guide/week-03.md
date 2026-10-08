@@ -177,6 +177,9 @@ step = lr x m / (sqrt(s) + eps)
 
 `sqrt(s)` is the third step of RMS. So **Adam's step is `lr` times the average gradient, divided by the running RMS of the gradient.** A knob whose gradients are huge has a huge `sqrt(s)`, which cancels its huge `m`. A knob whose gradients are tiny has a tiny `sqrt(s)`, which also cancels. Either way, when the gradient is steady, the ratio is about 1 and the step is about `lr` (smaller when the gradient is noisy and the average washes out).
 
+![A flow of boxes: a gradient of 2.0 feeds an average m of 0.2 and an average of squares s of 0.004; after dividing by what has arrived they are 2.0 and 4.0, the root of 4.0 is 2.0, and the step is 0.1 times 2.0 over 2.0, which is 0.1](../figures/fig-w03-4-adam-two-averages-then-divide.svg)
+*Figure 3.3 — Adam keeps two running averages per knob and divides one by the root of the other.*
+
 **The snag you already met.** Last week the average of ten, ten, ten, ten, ten started at 1.0 instead of 10, because it started at zero. Adam has the same snag twice. The fix is to divide by **how much has arrived**: after `t` steps that share is `1 - 0.9^t`. Try it on last week's numbers. The loop keeps the start-at-zero average and divides it by the arrived share:
 
 ```python
@@ -426,6 +429,9 @@ AdamW weight_decay=0.1  after 10 steps: [0.9044, 90.4382]
 ```
 
 Compare the two lines. Under **Adam** the small weight is nearly destroyed (1.0 to 0.0762) and the big one barely moves (100 to 99.0003). Every weight is pushed by about `lr` per step: the division by the RMS has turned "decay in proportion to the weight" into "decay by a fixed amount". Under **AdamW** the two weights lose the same *share* (0.9044 and 90.4382, exactly the SGD numbers). That is the whole difference, and the only reason AdamW exists.
+
+![Three pairs of bars of how much of a small weight and a big weight is left after ten steps of decay: SGD and AdamW leave 0.9044 and 90.4382, Adam leaves 0.0762 and 99.0003](../figures/fig-w03-5-decay-share-kept.svg)
+*Figure 3.4 — SGD and AdamW take the same share from both weights; Adam takes a fixed amount and nearly wipes out the small one.*
 
 **This is the cleanest version of the mechanism, on two weights with no loss at all. It is not a measurement of a real network's weights.**
 

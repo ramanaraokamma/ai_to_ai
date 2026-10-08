@@ -161,6 +161,12 @@ This page is for working out, by hand, why the no-mask model scores so low. The 
 
 A loss that sits near this number and **will not go lower** is a correct result, not a bug, if the loss was taken over every place.
 
+**Mark the places.** Under each of the 8 places of the 4-symbol task, write R if the token it must name next is random and P if it can be predicted, then count each.
+
+![A blank strip of nine boxes for a four-symbol copy task, the first eight numbered as places 0 to 7, each with an arrow to an empty dashed box, and two empty count boxes for R and P](../figures/fig-w19-6-blank-predictable-places.svg)
+
+*Figure 19.5 — Eight places, eight empty boxes: one letter each, then the two counts.*
+
 **3.4. Check (Part A).** Type `check193.py` (answers section), or read what it printed:
 
 ```text
@@ -685,6 +691,7 @@ Model one-sentences (**B1**): *full: "the baseline."* *No mask: "the model can s
 - **3.1.** Place **6** (or "the next place"). It holds the **character that place 5 must predict**, so the model is **reading the answer** instead of predicting.
 - **3.2.** `1/8 =` **0.125**; `ln 8 =` **2.079**; lookup chance **0.1**.
 - **3.3.** `3 x 2.0794 / 8 = 6.2382 / 8 =` **0.780** (0.7798 unrounded).
+- **Mark the places (Figure 19.5).** Places 0, 1, 2 are **R** (they must name symbols 2, 3 and 4, which are random); places 3 to 7 are **P** (the separator and the four answers). **3 R, 5 P**; the 3 is the 3 in `3 x ln 8 / 8`.
 - **3.4 (a)** **0.000000**; **0.002955**; untrained; **zero against not zero**.
 - **(b)** A change at place 12 is *supposed* to move the scores at 12 and later; the test only looks at places **before** the change.
 - **(c)** 0.7791 against 0.7798: within 0.001. A loss stuck there is the floor, not a bug, **when the loss is taken over every place**.

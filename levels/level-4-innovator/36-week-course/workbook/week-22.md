@@ -179,6 +179,11 @@ Rounds 2 and 4 use the same two tables. Why are the answers different? _________
 
 The loss at `beta = 0.5` should equal the loss of a **Bradley-Terry** pair from page 22.2 with the same gap. Which one? Pair ____ beats ____ .
 
+**H. Draw it.** Use the blank below for part G: mark where the policy now sits, draw the arrows from the reference, and fill every box.
+
+![A blank worksheet with two log-chance number lines, reference markers at minus 15.0 and minus 14.0, empty boxes for moved, gap, and the margin and loss at beta 0.1 and 0.5](../figures/fig-w22-6-blank-dpo-pair.svg)
+*Figure W22.1 — Blank for part G: plot the policy's new positions, then find moved, gap, margin and loss.*
+
 ---
 
 ## 🎛️ Page 22.4 — Two Leashes (needs `dpo.py` · 20 min)
@@ -464,6 +469,8 @@ Rounds 2 and 4 differ because KL is **not symmetric**: in round 4 the log-ratios
 | 0.5 | `1.5` | `0.2014` |
 
 (At `beta = 0.5`: `sigmoid(1.5) = 0.8176`.) That is page 22.2 part B item 5: **`f` beats `g`** (reward gap `1.5`). At `beta = 5` the margin is `15` and the loss is about `0.0000003`.
+
+**H.** (Figure W22.1.) Chosen: the new marker at **`-13.0`**, arrow to the **right**, moved **`+2.0`**. Rejected: the new marker at **`-15.0`**, arrow to the **left**, moved **`-1.0`**. Gap **`3.0`**. `beta = 0.1`: margin **`0.3`**, loss **`0.5544`**. `beta = 0.5`: margin **`1.5`**, loss **`0.2014`**.
 
 ### Page 22.4
 

@@ -124,6 +124,9 @@ python files in capstone34/src/: ['baseline.py', 'contract.py', 'guards.py', 'sp
 python files in capstone34/eval/: ['cases.py', 'freeze.py', 'redteam.py', 'run_eval.py', 'score.py']
 ```
 
+![Three panels joined by arrows listing the files in the capstone folder by the week that wrote them: Week 34 the design, cases and freeze; Week 35 the system, the eval and the red-team log; Week 36 the card, ask.py and demo.py, plus a dashed box for the paper.](../figures/fig-w36-4-capstone-folder-map.svg)
+*Figure 36.4 — The folder you open today, by the week that put each file in it.*
+
 ```bash
 python capstone34/eval/run_eval.py v1
 ```
@@ -841,6 +844,9 @@ This section describes the final paper so you know what to bring and what it cov
 - **Where a stand-in appears the paper says so**, and nothing on it says anything about how a real model behaves.
 - **It is an X-ray, not a grade.** Partial working earns marks. If you do not know, write *did not get it*; that is recorded and is worth more than a lucky guess.
 - **There is nothing to revise except the pages you got wrong during the term.** Go back to your own workbook pages, not to the answers.
+
+![One bar of 75 marks split into five sections: A 20 marks, B 16, C 12, D 15 and E 12, with the sum 20 + 16 + 12 + 15 + 12 = 75 and 75 marks in 75 minutes below it.](../figures/fig-w36-5-paper-marks-bar.svg)
+*Figure 36.5 — The paper's 75 marks by section, and the sum that checks them.*
 
 At the end you **mark it yourself**, in a pen of a different colour, against the marking sheet your teacher gives you, and fill in the per-week grid. The grid shows which weeks to go back to first.
 

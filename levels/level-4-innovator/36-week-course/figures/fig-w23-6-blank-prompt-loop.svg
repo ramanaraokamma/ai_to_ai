@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Blank prompt loop: write the name of each of the six parts and of the guard around them</title>
+  <desc>A blank worksheet. Six empty dashed boxes in a row, numbered 1 to 6 and joined by arrows, each with a write-in line and a short job description underneath: cases and their right answers written first; what you tell the model kept under a name; send it to the model and get text back; pull the record out of a chatty reply; count the boxes that match the right answers; list the scores and what was right and is now wrong. A dashed arrow loops from box 6 back to box 2, labelled change one thing, then go round again. Below, a wide dashed panel with a write-in line for the name of the part that stops the run when the money runs out. No names are drawn.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Blank: name the six parts of the prompt loop</text>
+  <line x1="133" y1="140" x2="148.6" y2="140" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(148.6 140) rotate(0)"/>
+  <line x1="262.6" y1="140" x2="278.2" y2="140" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(278.2 140) rotate(0)"/>
+  <line x1="392.2" y1="140" x2="407.8" y2="140" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(407.8 140) rotate(0)"/>
+  <line x1="521.8" y1="140" x2="537.4" y2="140" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(537.4 140) rotate(0)"/>
+  <line x1="651.4" y1="140" x2="667" y2="140" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(667 140) rotate(0)"/>
+  <polyline points="724,110 724,82 205.6,82" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <line x1="205.6" y1="82" x2="205.6" y2="108" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 4"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(205.6 108) rotate(90)"/>
+  <text x="464.8" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">change one thing, then go round again</text>
+  <rect x="20" y="110" width="112" height="60" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="38" cy="128" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="38" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">1</text>
+  <line x1="32" y1="158" x2="120" y2="158" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <text x="76" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">cases and their</text>
+  <text x="76" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">right answers,</text>
+  <text x="76" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">written first</text>
+  <rect x="149.6" y="110" width="112" height="60" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="167.6" cy="128" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="167.6" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">2</text>
+  <line x1="161.6" y1="158" x2="249.6" y2="158" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <text x="205.6" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">what you tell</text>
+  <text x="205.6" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the model, kept</text>
+  <text x="205.6" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">under a name</text>
+  <rect x="279.2" y="110" width="112" height="60" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="297.2" cy="128" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="297.2" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">3</text>
+  <line x1="291.2" y1="158" x2="379.2" y2="158" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <text x="335.2" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">send it to the</text>
+  <text x="335.2" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">model and get</text>
+  <text x="335.2" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">text back</text>
+  <rect x="408.8" y="110" width="112" height="60" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="426.8" cy="128" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="426.8" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">4</text>
+  <line x1="420.8" y1="158" x2="508.8" y2="158" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <text x="464.8" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">pull the record</text>
+  <text x="464.8" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">out of a chatty</text>
+  <text x="464.8" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">reply</text>
+  <rect x="538.4" y="110" width="112" height="60" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="556.4" cy="128" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="556.4" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
+  <line x1="550.4" y1="158" x2="638.4" y2="158" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <text x="594.4" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">count the boxes</text>
+  <text x="594.4" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">that match the</text>
+  <text x="594.4" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">right answers</text>
+  <rect x="668" y="110" width="112" height="60" rx="8" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <circle cx="686" cy="128" r="11" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <text x="686" y="128" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">6</text>
+  <line x1="680" y1="158" x2="768" y2="158" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+  <text x="724" y="194" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">list the scores</text>
+  <text x="724" y="211" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">and what was</text>
+  <text x="724" y="228" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">right, now wrong</text>
+  <rect x="20" y="262" width="760" height="70" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4"/>
+  <text x="40" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">around the whole loop, stops the run when the money runs out:</text>
+  <text x="40" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">its name</text>
+  <line x1="100" y1="320" x2="320" y2="320" stroke="#C7CDD4" stroke-width="2" stroke-linecap="round"/>
+</svg>

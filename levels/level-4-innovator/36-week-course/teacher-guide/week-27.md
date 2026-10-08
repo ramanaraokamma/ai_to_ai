@@ -1165,6 +1165,7 @@ Five tasks for the week after the paper, with time estimates.
 
 1. **Mark your own paper** against the printed sheet (Marking Sheet 1), in the *other colour*. For D and E, mark the **working**, not only the answer. *(Estimated 30 minutes.)*
 2. **Fill the per-week grid** (Marking Sheet 2): the marks you got, out of the marks available, for each of the eight weeks, and the percentage. *(5 minutes.)*
+   The workbook (Page 27.3) also has a blank **confidence map** (Figure W27.5): the student shades how sure they felt about each week *before* marking, then sets it beside the grid. There is no key; ask the student which week's feeling and percentage disagreed most.
 3. **Circle at most two weeks** in the remediation table (Marking Sheet 3): the lowest, but with the priority order Week 23, Week 26, Week 22 breaking ties. Write a day and time for each redo next to the circle. *(5 minutes.)*
 4. **The README's small job at the computer: rerun the recall table with a changed chunk size.** Week 26's table cut at 30, 60, 120 and 250 words. Cut at **20, 45 and 90** words (overlaps of 5, 10 and 20 words), using your Week 26 files, and **predict each row before you run it**: will recall@1 rise or fall, and will the share of the notebook sent at k = 3 rise or fall? Then write two sentences: what the table shows, and what ten questions cannot tell you. *(Estimated 15 minutes.)*
 5. **One sentence in the Bug Log**: *"The answer I was most surprised to get wrong was ___, because I thought ___."* *(5 minutes.)*

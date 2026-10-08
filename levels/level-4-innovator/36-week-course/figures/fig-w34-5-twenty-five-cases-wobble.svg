@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>On 25 cases a score wobbles by about 2.3 cases, and one case is worth 0.04 of the score</title>
+  <desc>A row of 25 cells with 17 filled and the 18th half filled, for 17.5 expected passes at a true pass rate of 0.70. A bracket spans 15.2 to 19.8 passes, the expected 17.5 plus and minus a wobble of 2.29 cases. Below, a hand sum: 25 times 0.70 times 0.30 is 5.25, its square root is 2.29 cases, and 2.29 divided by 25 is 0.092 of the score. A second panel shows one cell of 25 highlighted, one case is 0.04 of the score, and one cell of a six-cell category, 0.17.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">What 25 cases can and cannot tell you</text>
+  <rect x="20" y="62" width="760" height="164" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="40" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">a true pass rate of 0.70 on 25 cases</text>
+  <rect x="60" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="87.2" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="114.4" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="141.6" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="168.8" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="196" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="223.2" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="250.4" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="277.6" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="304.8" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="332" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="359.2" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="386.4" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="413.6" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="440.8" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="468" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="495.2" y="100" width="27.2" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <rect x="522.4" y="100" width="27.2" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="549.6" y="100" width="27.2" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="576.8" y="100" width="27.2" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="604" y="100" width="27.2" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="631.2" y="100" width="27.2" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="658.4" y="100" width="27.2" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="685.6" y="100" width="27.2" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="712.8" y="100" width="27.2" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="522.4" y="100" width="13.6" height="34" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <line x1="60" y1="134" x2="60" y2="142" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="60" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0</text>
+  <line x1="196" y1="134" x2="196" y2="142" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="196" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5</text>
+  <line x1="332" y1="134" x2="332" y2="142" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="332" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">10</text>
+  <line x1="468" y1="134" x2="468" y2="142" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="468" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">15</text>
+  <line x1="604" y1="134" x2="604" y2="142" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="604" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">20</text>
+  <line x1="740" y1="134" x2="740" y2="142" stroke="#14202B" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="740" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">25</text>
+  <path d="M473.7 166 V174 H598.3 V166" fill="none" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="536" y1="166" x2="536" y2="150" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="536" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">expected 17.5 passes, wobble 2.29 cases each way</text>
+  <text x="536" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">so 17 of 25 could have been about 15 or 20</text>
+  <rect x="20" y="240" width="370" height="96" rx="12" fill="#FFFFFF" stroke="#845F00" stroke-width="2" stroke-linejoin="round"/>
+  <text x="36" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#845F00" text-anchor="start" dominant-baseline="central">by hand</text>
+  <text x="36" y="286" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">25 &#215; 0.70 &#215; 0.30 = 5.25</text>
+  <text x="36" y="308" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">&#8730;5.25 = 2.29 cases</text>
+  <text x="36" y="328" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">2.29 &#247; 25 = 0.092 of the score</text>
+  <rect x="410" y="240" width="370" height="96" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="425" y="262" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">one case is worth</text>
+  <rect x="425" y="274" width="5" height="14" fill="#F4D5E9" stroke="#C42B8C" stroke-width="1.5"/>
+  <rect x="430" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="435" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="440" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="445" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="450" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="455" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="460" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="465" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="470" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="475" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="480" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="485" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="490" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="495" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="500" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="505" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="510" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="515" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="520" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="525" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="530" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="535" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="540" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <rect x="545" y="274" width="5" height="14" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
+  <text x="560" y="281" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">1 of 25 = 0.04</text>
+  <rect x="425" y="304" width="21" height="22" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
+  <rect x="446" y="304" width="21" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="467" y="304" width="21" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="488" y="304" width="21" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="509" y="304" width="21" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <rect x="530" y="304" width="21" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="2"/>
+  <text x="560" y="315" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">1 of 6 = 0.17</text>
+  <text x="560" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start" dominant-baseline="central">(a six-case category)</text>
+  <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One case is never a finding; a whole category moving, with the failing cases named, is.</text>
+</svg>

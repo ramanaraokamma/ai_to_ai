@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Attention is told the seat by adding a place row to each word row, so the same word at two seats goes in as two different rows</title>
+  <desc>Five columns for the words the, dog, bit, the, postman. In each column a blue box holds a word row (word row 0, 1, 2, 0, 3), a plus sign, a purple box holds a place row (place row 0 to 4), an equals sign, and a bottom box shows what goes in (the at 0, dog at 1, bit at 2, the at 3, postman at 4). The two boxes for the word the are pink with a thick border, and a bracket says they share word row 0 but have different place rows. A panel says the sum is still one row of d numbers.</desc>
+  <text x="400" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Add the place row to the word row</text>
+  <text x="110" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">word row</text>
+  <text x="110" y="123" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">(word table)</text>
+  <text x="110" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">place row</text>
+  <text x="110" y="183" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">(place table)</text>
+  <text x="110" y="226" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">goes in</text>
+  <text x="170" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">the</text>
+  <rect x="120" y="99" width="100" height="30" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="170" y="114" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">word row 0</text>
+  <text x="170" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" dominant-baseline="central">+</text>
+  <rect x="120" y="159" width="100" height="30" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="170" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">place row 0</text>
+  <text x="170" y="201" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" dominant-baseline="central">=</text>
+  <rect x="120" y="213" width="100" height="30" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="4" stroke-linejoin="round"/>
+  <text x="170" y="228" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">the at 0</text>
+  <text x="300" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">dog</text>
+  <rect x="250" y="99" width="100" height="30" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="300" y="114" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">word row 1</text>
+  <text x="300" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" dominant-baseline="central">+</text>
+  <rect x="250" y="159" width="100" height="30" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="300" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">place row 1</text>
+  <text x="300" y="201" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" dominant-baseline="central">=</text>
+  <rect x="250" y="213" width="100" height="30" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="300" y="228" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">dog at 1</text>
+  <text x="430" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">bit</text>
+  <rect x="380" y="99" width="100" height="30" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="430" y="114" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">word row 2</text>
+  <text x="430" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" dominant-baseline="central">+</text>
+  <rect x="380" y="159" width="100" height="30" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="430" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">place row 2</text>
+  <text x="430" y="201" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" dominant-baseline="central">=</text>
+  <rect x="380" y="213" width="100" height="30" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="430" y="228" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">bit at 2</text>
+  <text x="560" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">the</text>
+  <rect x="510" y="99" width="100" height="30" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="560" y="114" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">word row 0</text>
+  <text x="560" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" dominant-baseline="central">+</text>
+  <rect x="510" y="159" width="100" height="30" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="560" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">place row 3</text>
+  <text x="560" y="201" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" dominant-baseline="central">=</text>
+  <rect x="510" y="213" width="100" height="30" rx="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="4" stroke-linejoin="round"/>
+  <text x="560" y="228" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">the at 3</text>
+  <text x="690" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">postman</text>
+  <rect x="640" y="99" width="100" height="30" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="114" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">word row 3</text>
+  <text x="690" y="141" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" dominant-baseline="central">+</text>
+  <rect x="640" y="159" width="100" height="30" rx="6" fill="#DBCEF3" stroke="#6D28D9" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">place row 4</text>
+  <text x="690" y="201" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#14202B" text-anchor="middle" dominant-baseline="central">=</text>
+  <rect x="640" y="213" width="100" height="30" rx="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="690" y="228" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">postman at 4</text>
+  <path d="M170 252 V260 H560 V252" fill="none" stroke="#C42B8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="365" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">same word row 0, different place rows, so different rows go in</text>
+  <rect x="40" y="304" width="720" height="44" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="2" stroke-linejoin="round"/>
+  <text x="400" y="326" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">The sum is still one row of d numbers, so every layer after it keeps its shape.</text>
+  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Rows 0 to 4 of a place table with 8 rows; word ids as in where.py.</text>
+</svg>

@@ -176,6 +176,11 @@ Two programs rate the **old bot's** replies to tickets **11 to 30** (this week's
 (e) `κ = (p_o − p_e) / (1 − p_e) = (____ − ____) / (1 − ____) =` ______
 (f) Look at the two off-diagonal cells. Which way does J lean? ______ Is that the same way as in the class sheet? ______
 
+**Fill in the worksheet as you go: tally into the grid, add the totals, then do the three steps.**
+
+![A blank worksheet with a two by two grid of J and H pass and fail boxes with row and column totals, and three empty boxes for p_o, p_e and kappa](../figures/fig-w30-6-blank-kappa-worksheet.svg)
+*Figure 30.6 — Kappa by hand: every box is yours to fill.*
+
 **Part 2 (pen, then computer): a grid you build.** A different pair of raters gives this tally on 20 replies:
 
 | | H pass | H fail |
@@ -577,6 +582,7 @@ Score `7/10 = 0.7`, lower than `0.833`.
 (d) `p_e = (0.65 × 0.35) + (0.35 × 0.65) = 0.2275 + 0.2275 = 0.455`.
 (e) `κ = (0.70 − 0.455) / (1 − 0.455) = 0.245 / 0.545 = 0.4495` (to three places `0.450`; matches the library's `0.4495`).
 (f) J is **lenient**: it passes `6` replies H fails and never fails one H passes. Yes, the same way as in class (there, `7` and `0`).
+Figure 30.6 totals: row totals J pass `13`, J fail `7`; column totals H pass `7`, H fail `13`; grand total `20`.
 
 **Part 2.** `p_o = (9 + 6) / 20 = 0.75`; J passes `12` of 20 (`0.60`); H passes `11` of 20 (`0.55`); `p_e = 0.60 × 0.55 + 0.40 × 0.45 = 0.33 + 0.18 = 0.51`; `κ = (0.75 − 0.51) / (1 − 0.51) = 0.24 / 0.49 = 0.4898`.
 (i) The cell "J pass, H fail" (3 replies): H says `0` and J says `1` on each. The next block, `[1] * 2` for H and `[0] * 2` for J, is the opposite cell, "J fail, H pass" (2 replies).

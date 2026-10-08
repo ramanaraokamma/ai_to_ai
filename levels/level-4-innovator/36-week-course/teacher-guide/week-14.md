@@ -1103,6 +1103,8 @@ Row totals of exps to four places: `6.4366`, `6.4366`, `12.8257`. Carrying **thr
 
 **Workbook Part B (two words, `Wv = [[2, 0], [0, 4]]`):** scores `[[1, 0], [0, 1]]`, row totals `3.7183`, weights `a [0.7311, 0.2689]`, `b [0.2689, 0.7311]`, output `a [1.462, 1.076]`, `b [0.538, 2.924]`; word `a` leans towards its own value `[2, 0]`.
 
+Workbook Figure 14.5 (four blank 2 by 2 grids for this same pass): `V` `[[2, 0], [0, 4]]`, scores `[[1, 0], [0, 1]]`, weights `[[0.7311, 0.2689], [0.2689, 0.7311]]`, output `[[1.462, 1.076], [0.538, 2.924]]`.
+
 ### Page 14.2 — The soft lookup and the weighted average (from `lookup.py` and `key.py`)
 
 | Question | Answer |

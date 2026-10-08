@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
+  <title>Each deleted model's validation loss minus the full model's 1.673, and its train-validation gap; the no-mask number is lower only because of a leak</title>
+  <desc>Two sets of horizontal bars for five rows: no residual, no positions, full, no norm, no mask. The left bars start at a vertical zero line and run right for plus 1.006 and plus 0.066, nothing for full, and left for minus 0.195 and minus 1.596 (marked a leak). The right bars show the gap, 0.015, 0.288, 0.076, 0.327 and 0.007. A line below gives the leak test, 0.000000 with the mask and 0.001437 without.</desc>
+  <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Five models, two ways to read the table</text>
+  <text x="360" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">validation minus 1.673</text>
+  <text x="356" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">lower than full</text>
+  <text x="364" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">higher than full</text>
+  <text x="610" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">gap = validation minus train</text>
+  <text x="124" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">no residual</text>
+  <rect x="360" y="122" width="70.4" height="24" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="436.4" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">+1.006</text>
+  <rect x="510" y="122" width="7.8" height="24" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="523.8" y="134" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">0.015</text>
+  <text x="124" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">no positions</text>
+  <rect x="360" y="166" width="4.6" height="24" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="370.6" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">+0.066</text>
+  <rect x="510" y="166" width="149.8" height="24" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="665.8" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">0.288</text>
+  <text x="124" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">full</text>
+  <text x="368" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start" dominant-baseline="central">0 (the baseline)</text>
+  <rect x="510" y="210" width="39.5" height="24" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="555.5" y="222" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">0.076</text>
+  <text x="124" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">no norm</text>
+  <rect x="346.4" y="254" width="13.7" height="24" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="340.4" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">-0.195</text>
+  <rect x="510" y="254" width="170" height="24" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="686" y="266" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">0.327</text>
+  <text x="124" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="end" dominant-baseline="central">no mask</text>
+  <rect x="248.3" y="298" width="111.7" height="24" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="242.3" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">-1.596 a leak</text>
+  <rect x="510" y="298" width="3.6" height="24" rx="4" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <text x="519.6" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">0.007</text>
+  <line x1="360" y1="112" x2="360" y2="326" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="510" y1="112" x2="510" y2="326" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="400" y="346" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">leak test (untrained model): a later token changed, scores at places 0-39 move by</text>
+  <text x="400" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">0.000000 with the mask and 0.001437 without</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Subtract from the full model's 1.673; the lowest number is a leak.</text>
+</svg>
