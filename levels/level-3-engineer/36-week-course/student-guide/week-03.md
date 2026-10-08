@@ -345,6 +345,8 @@ prep = ColumnTransformer([
 
 Then the switchboard. Each route is a **triple: a name, a treatment, and the list of columns it applies to.** Route `"num"` sends `number_route` at the five number columns; route `"cat"` sends the word-splitter at the three word columns.
 
+`SimpleImputer(strategy="median")` fills each missing value with the middle value of its own column. `OneHotEncoder` turns a column of words into one on-or-off column per word.
+
 `handle_unknown="ignore"` means: **if you meet a restaurant you have never seen, put zeros instead of crashing.** Remember that setting — it comes back at the end of the chapter and it goes on the card.
 
 ### Step 3 — the weld, the fit, and the shape check

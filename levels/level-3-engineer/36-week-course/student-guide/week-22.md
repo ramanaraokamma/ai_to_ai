@@ -462,6 +462,8 @@ X_va_t = torch.from_numpy(scaler.transform(X_va)).float()
 y_tr_t = torch.from_numpy(y_tr).float()          # <-- deliberately wrong
 ```
 
+`torch.from_numpy(...)` wraps a numpy array as a torch tensor, the container the network takes in.
+
 **Try it wrong on purpose.** Add `loss_fn(model(X_tr_t), y_tr_t)` at the bottom and run it:
 
 ```text
@@ -524,7 +526,7 @@ def train(with_dropout):
     return model, train_hist, val_hist, best
 ```
 
-**What the new lines do.** `build` puts `torch.manual_seed(0)` *inside* it, so both networks start from the same random numbers and the comparison is fair. The five lines of the loop are Week 21's five lines, untouched.
+**What the new lines do.** `build` puts `torch.manual_seed(0)` *inside* it, so both networks start from the same random numbers and the comparison is fair. `torch.optim.Adam(...)` hands the optimiser the numbers it is allowed to change and how big a step to take. The five lines of the loop are Week 21's five lines, untouched.
 
 `model.train()` and `model.eval()` switch dropout on and off; leave them alone until next week. `val_hist.index(min(val_hist))` finds the position of the smallest validation loss — the epoch we want.
 

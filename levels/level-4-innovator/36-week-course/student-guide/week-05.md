@@ -165,7 +165,7 @@ The exact pattern of zeros and twos is seeded, so yours will match. Look for thr
 - about half survive;
 - `eval()` passes every number through.
 
-Next, this file compares a plain `state_dict()` with a `deepcopy` snapshot across one training step:
+Next, this file compares a plain `state_dict()` with a `deepcopy` snapshot across one training step. Its layer, made with `bias=False`, multiplies by one stored number and adds no constant:
 
 ```python
 # alias_demo.py

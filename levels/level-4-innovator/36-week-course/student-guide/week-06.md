@@ -301,7 +301,7 @@ a batch of TWO, batch norm, two completely different pairs:
 
 Read the first four lines: it is the *same* example `a` every time. Compare it with Part E. (The `-0.998` in the last block is because those two inputs, `0.1` and `0.2`, are so close together that the tiny `eps` stops being negligible.)
 
-**Batch norm's stored numbers.** This file feeds three batches to a batch norm layer and watches its stored numbers move.
+**Batch norm's stored numbers.** This file feeds three batches to a batch norm layer and watches its stored numbers move. In it, the `torch.randn` line draws a column of seeded, bell-shaped random numbers, then stretches them to a spread of five and shifts them to centre on ten.
 
 ```python
 # mode_demo.py  -- batch norm keeps running statistics for eval mode
@@ -337,7 +337,7 @@ train mode, ONE example -> ValueError: Expected more than 1 value per channel wh
 
 The stored mean starts at 0 and the stored variance at 1 (arbitrary starting values), then each batch moves them 10% of the way towards the data (mean 10, variance 25). After three batches they are still far away, so in `eval()` mode a 10.0 comes out as `2.753`, not near 0. Stored numbers need many batches to settle. The `try`/`except` is just a safe way to print an error message instead of stopping; you meet the same message as a deliberate error in Step 4.
 
-**`Identity` does nothing, on purpose.** This file shows that `nn.Identity()` returns its input unchanged, then adds a small block's output to it by hand.
+**`Identity` does nothing, on purpose.** This file shows that `nn.Identity()` returns its input unchanged, then adds a small block's output to it by hand. The `nn.init.normal_` line overwrites the layer's weights with random numbers centred on zero, with the last argument as their typical size.
 
 ```python
 # identity_demo.py  -- nn.Identity does nothing, on purpose

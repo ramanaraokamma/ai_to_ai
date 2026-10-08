@@ -622,9 +622,14 @@ is assumed and never re-taught: `print`, variables, f-strings, `if`/`elif`/`else
 ### Used ahead of the ladder
 
 The ladder above is the *teaching* schedule: the week a construct is explained and drilled. An audit
-(2026-10-03) found these constructs appearing in a student-guide code block **before** that week. Most are
-explained where they first appear, as a one-line "what the new line does" rather than a lesson, which is
-why the four-a-week cap was not broken; check the rest before teaching that week. Treat the week below as the **first sighting**, the ladder week
+(2026-10-03) found these constructs appearing in a student-guide code block **before** that week. Each
+one now carries a one-sentence "what this line does" gloss in place in the student guide, so the
+four-a-week cap is not broken; the lesson is still the ladder week. Already glossed when the audit
+ran: `.reshape(`, `named_steps`, `cross_val_score`, `.eval()`, `.numel(`, `.toarray(` and
+`np.argsort`. Glossed now: `.to_string(` (Week 1), `OneHotEncoder` and `SimpleImputer`
+(Week 3), `get_feature_names_out` (Week 4), `coef_` and `np.where(` (Week 5), `StratifiedKFold` and
+`recall_score` (Week 6), `np.log(` (Week 13), `from_numpy` and `optim.Adam` (Week 22) and
+`perf_counter` (Week 26). All 19 are glossed in place. Treat the week below as the **first sighting**, the ladder week
 as the **lesson**.
 
 | Construct | First sighting | Ladder week |

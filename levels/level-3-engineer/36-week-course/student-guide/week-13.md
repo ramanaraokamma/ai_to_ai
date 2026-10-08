@@ -673,6 +673,8 @@ for p in (0.78, 0.25, 0.999, 0.50):
           % (p, odds, z, back))
 ```
 
+`np.log(odds)` is the natural log, the `ln` step from the hand working above; `np.exp` undoes it.
+
 **Real output, instant:**
 
 ```text

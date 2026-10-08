@@ -408,6 +408,8 @@ df.to_csv("sweep_rows.csv", index=False)
 print(len(df), "runs,", round(time.perf_counter() - t0, 1), "seconds, saved sweep_rows.csv")
 ```
 
+`time.perf_counter()` reads a clock in seconds, so the difference between two readings is how long the sweep took.
+
 **Before you run it**, work out how many rows should come out. Then run `python3 sweep.py`. Your seconds will differ.
 
 ```text

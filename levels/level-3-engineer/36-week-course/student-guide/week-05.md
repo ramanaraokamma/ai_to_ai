@@ -613,6 +613,8 @@ co = pd.Series(pipe.named_steps["model"].coef_[0], index=names)
 print(co.reindex(co.abs().sort_values(ascending=False).index).round(3).head(8).to_string())
 ```
 
+`coef_` holds the weight the fitted model learned for each column, and `get_feature_names_out()` supplies the names to label them with.
+
 Real output, for variant D:
 
 ```text
@@ -832,6 +834,8 @@ print("the delta                  : %+.4f" % (auc_bin - auc_raw))
 print("\nthe weight the raw model gave water_ml: %.4f"
       % raw.named_steps["model"].coef_[0][0])
 ```
+
+`np.where(too_dry | too_wet, ...)` gives each plant the higher death risk where it is too dry or too wet, and the lower risk everywhere else.
 
 Notice `bins=[-1, 25, 70, 101]` — the first edge is **−1, below the smallest possible value**, and the last is **101, above the biggest**. That is the Step 4 lesson applied on purpose, and the blank check is right there in the output to prove it worked.
 

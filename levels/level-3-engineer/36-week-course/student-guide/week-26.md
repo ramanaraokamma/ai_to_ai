@@ -390,7 +390,7 @@ for epoch in range(1, 41):
 seconds = time.perf_counter() - t0
 ```
 
-**What the new lines do.** `nn.CrossEntropyLoss()` is the ten-class loss: hand it the ten raw scores and a whole number from 0 to 9. `torch.optim.Adam(model.parameters(), lr=1e-3)` is the same shape as Week 21's `SGD([w], lr=0.1)` — you hand it the things it is allowed to change and how big a step to take. `total += loss.item() * len(yb)` weights each batch's loss by how many rows were in it, so the last short batch does not count as much as a full one.
+**What the new lines do.** `nn.CrossEntropyLoss()` is the ten-class loss: hand it the ten raw scores and a whole number from 0 to 9. `torch.optim.Adam(model.parameters(), lr=1e-3)` is the same shape as Week 21's `SGD([w], lr=0.1)` — you hand it the things it is allowed to change and how big a step to take. `time.perf_counter()` reads a stopwatch in seconds, so the second reading minus the first is how long the loop took. `total += loss.item() * len(yb)` weights each batch's loss by how many rows were in it, so the last short batch does not count as much as a full one.
 
 **Two predictions before you run it.** 1,257 rows at 32 at a time — **how many steps per epoch?** And **what will the loss be at the very start, before it has learned anything?**
 

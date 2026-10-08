@@ -261,9 +261,8 @@ Each level costs roughly **$900–1,200** (three to four days at the cap).
 - L4 plan decisions (learner age 15–16, `tokenizers` in Week 20 only, stand-in banner on every L4 weekly page via
   `stand_in_note` in `site-app/build.py`) are recorded as applied in the L4 README.
 
-**Still open:** L4 W30 key K5 uses a different ticket set from the workbook example; L4 W34 teacher homework item 5 cites
-Pages 34.1–34.3 (workbook runs to 34.6); L4 W4 figure `fig-w04-1` caption/alt describe a 0.003 peak and 50-step warm-up where
-the workbook uses 0.02 and 5 steps. Worth a glance in a browser after the text-fit pass: L1 fig-w26-1, w22-8, w36-6, w27-3 (viewBox grown to 500x744), L3 fig-w36-7 (viewBox 480→500), w25-7.
+**Still open:** nothing known beyond the limits below. (Checked and closed 2026-10-07: L4 W4's figure matches the class lesson, the workbook uses its own practice numbers; L4 W34 homework item 5 correctly cites the three computation pages; L4 W30 K5 now says why its set scores 5/10 and the workbook's scores 7/10.)
+Worth a glance in a browser after the text-fit pass: L1 fig-w26-1, w22-8, w36-6, w27-3 (viewBox grown to 500x744), L3 fig-w36-7 (viewBox 480→500), w25-7.
 
 **Known limits**
 - **No SVG has ever been visually rendered** (headless Chrome, Quick Look and `pip` are all blocked by the sandbox; no
@@ -279,19 +278,20 @@ the workbook uses 0.02 and 5 steps. Worth a glance in a browser after the text-f
   four levels, mostly judged taste calls) are not applied.
 - **Level 4 specifics.** Its reference modules were patched offline against `_ledger/` (every reference
   script run on CPU; the originals had real defects — e.g. M8's rules baseline is 25/30 not 17/30), shared
-  code is `l4lib/` (unit-tested; every scripted stand-in says "stand-in, not a model"). Weekly files have
-  no prev/next nav links, only "Next Week Preview" prose. Known leftovers: `_ledger/scripts/rag.py` has an
-  unused `MiniLMEmbedder` that would download weights; M6's in-corpus note still says "about 4.5 for GPT-2";
-  some M1/M3/M8 numbers came from patch-agent runs and are not in the ledger; the README ladder rows for
-  W17 `torch.randint` and W22 `.detach()` still list them as new though used earlier (see "Ladder
-  amendments"); Week 22 still says `nn.Parameter` "comes in Week 31".
+  code is `l4lib/` (unit-tested; every scripted stand-in says "stand-in, not a model"). Weekly files carry prev/next/course-home nav lines like L1–L3.
+  Known leftovers: `_ledger/scripts/rag.py` has an unused `MiniLMEmbedder` (needs `sentence-transformers` + a download;
+  module 6 marks it 🌐 optional) — nothing calls it offline; M6's in-corpus diary note says "about 4.5 for GPT-2" (an
+  unmeasured outside figure; left because editing the corpus text would shift quoted retrieval scores); some M1/M3/M8
+  numbers came from patch-agent runs and are not in the ledger; the README ladder rows for W17 `torch.randint` and W22
+  `.detach()` still list them as new though used earlier (explained under "Ladder amendments"). Week 22's "`nn.Parameter`
+  comes in Week 31" is correct per the ladder.
 - **L3 weeks 34–36** ship the reference project at **threshold 0.65** (real cost sweep, cost = 10·fp + fn
   on 16 validation rows, ties 0.65/0.70 at 4, lower taken; 0.55 can never win because 0.50 dominates it).
   Reproduce the build by extracting the Answer Key code from `teacher-guide/week-34.md` and `week-35.md`.
   `projects/capstone.md` deliberately prices mistakes the other way (fine-comment-called-negative = 10) and
   its "real output" comes from a separate 80-review corpus (threshold 0.50) not in the repo.
-- L3 uses ~19 constructs ahead of their syntax-ladder week (README "Used ahead of the ladder"); L4's
-  README has "Ladder amendments" and a further list from the final audit.
+- L3 uses 19 constructs ahead of their syntax-ladder week (README "Used ahead of the ladder") and L4 uses a handful (README
+  "Ladder amendments" and "Further early uses"); every one now has a one-sentence gloss at its first sighting (2026-10-07).
 - `.gitignore` excludes `site-app/dist/` (rebuilt by `build.py --clean`; `serve.sh` builds it when missing), `__pycache__/`, `*.pyc` and
   `.DS_Store`; they were untracked on 2026-10-07 (still in git history).
 - `site/index.html` (the old single-file 4-level map) and each level's `36-week-course/site/index.html`

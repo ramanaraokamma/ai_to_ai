@@ -727,6 +727,8 @@ for use_positions in [False, True]:
     print(f"{label:<24}: train {accuracy(model(X[train_i]), y[train_i]):.3f}  val {accuracy(model(X[val_i]), y[val_i]):.3f}")
 ```
 
+In the training loop, `F.binary_cross_entropy_with_logits` is the loss for yes/no labels: it takes the model's raw scores and the yes/no targets and returns one number that is smaller when the scores agree better with the labels.
+
 ```text
 val sentences whose mirror is in train: 18
 attention, no positions : train 0.650  val 0.125

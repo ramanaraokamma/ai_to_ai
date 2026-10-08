@@ -432,7 +432,7 @@ print("=== check 3: missing values ===")
 print(df.isna().sum().to_string())
 ```
 
-A **loop**: do the indented thing once for every column name. `df[col].nunique()` counts how many *different* values that column holds; `len(df)` is the number of rows; divide, and if the answer is above 0.95, say so out loud.
+A **loop**: do the indented thing once for every column name. `df[col].nunique()` counts how many *different* values that column holds; `len(df)` is the number of rows; divide, and if the answer is above 0.95, say so out loud. `.to_string()` prints the missing-value counts as plain text, without pandas's extra footer line.
 
 ```text
 === check 2: ID-like columns ===

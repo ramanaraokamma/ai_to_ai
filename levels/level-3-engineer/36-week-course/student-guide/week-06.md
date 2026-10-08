@@ -664,6 +664,8 @@ print(f"  their total: {right.sum():.3f}   divided by 5: {right.mean():.3f}   <-
 
 > **📌 Two things in that file are not on your ladder yet, and that is on purpose.** `SelectKBest` picks the columns that look most related to the answer — **and it appears here only as the thing that committed the crime, never as a tool.** `cross_val_score` splits the rows into five piles and scores five times instead of once, because a single score on 40 rows is not worth much. **That is genuinely all you need today. Week 11 is entirely about it.**
 
+`StratifiedKFold` is what makes those piles: with `shuffle=True` and a fixed `random_state` it shuffles the rows once, repeatably, and keeps the share of ones and zeros similar in every pile.
+
 **Before running, answer this and mean it: there is nothing in that table. There cannot be anything in that table. So what should an honest method score?** (50%.)
 
 **Real output. Runtime about 0.8 seconds.**
@@ -955,6 +957,8 @@ print("roc_auc %.4f   recall %.4f" % (roc_auc_score(y_va, prob), recall_score(y_
 print("malignant tumours in these", len(y_va), "scans:", int(y_va.sum()),
       "  flagged:", int(((pred == 1) & (y_va == 1)).sum()))
 ```
+
+`recall_score(y_va, pred)` is the share of the scans that really were malignant which the model flagged.
 
 Three things to notice about how the poison was made, because it is deliberately realistic. `1 - df["target"]` flips the label so `1 = malignant`, the thing we are hunting. `np.where(condition, a, b)` means *"a where the condition is true, b where it is false"* — so a malignant scan gets a biopsy booked 92% of the time and a benign one 3% of the time. **And `GOOD` deliberately uses three of the *weakest* measurements in the dataset**, because a hospital does not usually have four perfect columns lying around, and the leak has to have room to look impressive.
 

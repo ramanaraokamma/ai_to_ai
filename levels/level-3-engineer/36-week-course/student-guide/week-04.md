@@ -472,7 +472,7 @@ print("columns created:", ohe.get_feature_names_out())
 print("in shape:", small.shape, " out shape:", out.shape)
 ```
 
-`sparse_output=False` asks for a plain grid of numbers you can look at. Without it you get a memory-saving format that prints as a list of coordinates, which is fine inside a real pipeline and useless while you are learning.
+`sparse_output=False` asks for a plain grid of numbers you can look at. Without it you get a memory-saving format that prints as a list of coordinates, which is fine inside a real pipeline and useless while you are learning. `ohe.get_feature_names_out()` lists the name of every column the encoder created.
 
 **Five restaurants in one column. How many columns come out?**
 

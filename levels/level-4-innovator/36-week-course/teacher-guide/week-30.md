@@ -1625,6 +1625,8 @@ rubric winner of each: ['v1', 'v2', 'v1', 'v2', 'v2', 'v2', 'v1', 'v2', 'v1', 'v
 
 **K5 — a second set (Homework 1)**
 
+*The teacher's set below scores `5/10` for the free rules; the example in workbook Page 30.1 is a different set of ten and scores `7/10`. Any honest second set will differ; what must hold is that it scores below the frozen eval's `0.833`.*
+
 ```python
 # k5_second_set.py (TEACHER-ONLY key for Homework 1): ten NEW tickets written by the teacher, never used to build the rules. Rules before and after tuning.
 SECOND = [
