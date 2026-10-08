@@ -29,7 +29,7 @@ Somebody walks up to a laptop, **closes every terminal window that is open**, op
 
 ```text
 $ python3 serve/predict.py "cold food and a rude driver"
-negative p=0.2110  (threshold 0.65, model sentiment_v1, 0.36 ms, loaded in 620 ms)
+negative p=0.2110  (threshold 0.65, model sentiment_v1, 0.40 ms, loaded in 729 ms)
 ```
 
 That terminal is nine seconds old. **The only cold start worth showing is one that starts cold.**
@@ -137,7 +137,7 @@ These are the seven words you may not use today.
 | Instead of | Say |
 |---|---|
 | "robust" | "it survived **four** malformed requests and answered a fifth time" |
-| "real-time" | "the **p95 is 0.28 ms** over 111 logged requests" |
+| "real-time" | "the **p95 is 0.27 ms** over 111 logged requests" |
 | "production-ready" | "it has a versioned artifact, three golden tests, a log, and a card naming three failure modes" |
 | "99% accurate" | **nothing. Say a real number with its `n` and its baseline.** |
 
@@ -204,7 +204,7 @@ And the thing to be honest about: **five of seven is not a fail. It is a map.** 
 
 **Term 3 — the network.** A `(3,2)` grid times a `(2,4)` grid gives a `(3,4)` grid, and row 0 column 0 was **1 × 10 + 2 × 50 = 110**. Your digit network held **1,898** learnable numbers — `80 + 1,168 + 650` — and you counted every one. It read **528 of 540** digits it had never seen.
 
-**Term 4 — no labels, then words, then shipping.** **178** wines with **13** columns and no answer key. The idf of a word in 1 of 4 documents is **ln(5 ÷ 2) + 1 = 1.916**. And your shipped artifact scores **0.8125** on 16 held-out rows with a **p95 of 0.28 ms** over **111** logged requests.
+**Term 4 — no labels, then words, then shipping.** **178** wines with **13** columns and no answer key. The idf of a word in 1 of 4 documents is **ln(5 ÷ 2) + 1 = 1.916**. And your shipped artifact scores **0.8125** on 16 held-out rows with a **p95 of 0.27 ms** over **111** logged requests.
 
 **Here is the thing to notice about that whole list.** Every single number on it you worked out **by hand first** and checked against the computer afterwards. **Not once the other way round.** That is not a study technique — **it is the difference between using a tool and understanding one**, and it is the only reason you can now be handed an unfamiliar model and a confident number and tell whether to believe it.
 
@@ -220,9 +220,9 @@ Last week they were two lines of output. Today they are a spoken answer, and **t
 
 ```text
 WRONG   "it takes about a second"
-RIGHT   "about 620 ms to load the model once at start-up,
-         and a p95 of 0.28 ms per request over 111 logged requests.
-         The max was 1.06 ms and that was the very first request,
+RIGHT   "about 772 ms to load the model once at start-up,
+         and a p95 of 0.27 ms per request over 111 logged requests.
+         The max was 3.27 ms and that was the very first request,
          before anything was warm."
 ```
 
@@ -271,7 +271,7 @@ Close every terminal. Open one. Then run your own tool **with a full path, from 
 ```text
 $ cd /
 $ time python3 /path/to/ship-it/serve/predict.py "cold food and a rude driver"
-negative p=0.2110  (threshold 0.65, model sentiment_v1, 0.36 ms, loaded in 620 ms)
+negative p=0.2110  (threshold 0.65, model sentiment_v1, 0.40 ms, loaded in 729 ms)
 
 real	0m0.769s
 user	0m1.037s
@@ -281,8 +281,8 @@ sys	0m5.377s
 **Three numbers in that output and every one of them is a different fact:**
 
 - **0.769 s** — the whole command's wall clock. **This is the only honest cold-start number**, because it includes Python starting up, which no stopwatch inside your program can see.
-- **620 ms** — loading the artifact. Paid once.
-- **0.36 ms** — the prediction. Paid every time.
+- **729 ms** — loading the artifact. Paid once.
+- **0.40 ms** — the prediction. Paid every time.
 
 **And the reason it worked from `/` at all** is one line inside your own code: `Path(__file__).resolve().parent`. **A path relative to the folder you happen to be standing in is a path that depends on a fact you never wrote down.**
 
@@ -345,7 +345,7 @@ Then run it:
 ```text
 $ python3 answers.py
 model            : sentiment_v1   (threshold 0.65)
-Q2 how fast      : loads once at start-up; p95 0.28 ms, max 1.06 ms over 111 requests
+Q2 how fast      : loads once at start-up; p95 0.27 ms, max 3.27 ms over 111 requests
 Q3 still working : band rate 16 of 111 = 14.4%, alarm at 40%, no labels needed
 Q4 got it wrong  : 111 log lines, each with input, probability, threshold, version
 Q6 any good      : 0.812 on 16 held-out rows, baseline 0.500, 1 row = 6.25 points
@@ -469,7 +469,7 @@ Here is what the seven stops actually sound like, with the commands and the real
 
 ```text
 $ python3 serve/predict.py "the pizza was hot and delicious"
-positive p=0.7450  (threshold 0.65, model sentiment_v1, 0.39 ms, loaded in 613 ms)
+positive p=0.7450  (threshold 0.65, model sentiment_v1, 0.40 ms, loaded in 729 ms)
 
 $ grep -rnE "\.fit\(|train_test_split|DummyClassifier|optimizer" serve/
 $
@@ -479,11 +479,11 @@ $
 
 ```text
 $ python3 serve/service.py --port 8010
-loaded sentiment_v1 in 610 ms (threshold 0.65)
+loaded sentiment_v1 in 772 ms (threshold 0.65)
 serving on http://127.0.0.1:8010   (Ctrl+C to stop)
 
 $ curl -s http://127.0.0.1:8010/health
-{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.65, "classes": ["negative", "positive"], "load_ms": 609.7}
+{"status": "ok", "model_version": "sentiment_v1", "threshold": 0.65, "classes": ["negative", "positive"], "load_ms": 772.2}
 ```
 
 > *"610 milliseconds to load the model — once, when the service starts. And a quarter of a millisecond per prediction. Two numbers, and I will never add them together."*
@@ -508,13 +508,13 @@ $ wc -l logs/predictions.jsonl
 $ python3 eval/read_logs.py
 requests        : 111
 by label        : {'negative': 76, 'positive': 35}
-latency mean    : 0.23 ms
-latency p50     : 0.21 ms
-latency p95     : 0.28 ms
-latency max     : 1.06 ms
+latency mean    : 0.26 ms
+latency p50     : 0.23 ms
+latency p95     : 0.27 ms
+latency max     : 3.27 ms
 ```
 
-> *"`76 + 35 = 111`. The p95 is 0.28 and the max is 1.06 — and the max was request number one, before anything was warm. With only 111 requests the p95 cannot see a single outlier, so I print both."*
+> *"`76 + 35 = 111`. The p95 is 0.27 and the max is 3.27 — and the max was request number one, before anything was warm. With only 111 requests the p95 cannot see a single outlier, so I print both."*
 
 **Stop 6 — where it breaks (1.5 min). The table, then a live failure you predicted.**
 
@@ -522,7 +522,7 @@ latency max     : 1.06 ms
 
 ```text
 $ python3 serve/predict.py "not boring for a single minute"
-negative p=0.4887  (threshold 0.65, model sentiment_v1, 0.36 ms, loaded in 630 ms)
+negative p=0.4887  (threshold 0.65, model sentiment_v1, 0.40 ms, loaded in 729 ms)
 ```
 
 > *"0.4887. `boring` is one of my strongest negative features and `not` is nearly weightless, because a bag of words throws away word order. On the 13 rows with a negation word my accuracy is 0.462 and my recall is 0 of 6. Twelve of those 13 are traps I wrote on purpose, so that number shows the mechanism, not the rate."*
@@ -538,7 +538,7 @@ Same eight questions, two answers each. **The difference between them is never e
 | # | Not yet | Passing |
 |---:|---|---|
 | **1** | "It handles errors." | "Watch." *(sends four, gets four `400`s, then a `200` on `/health`)* "And the body limit is 100,000 bytes, because my longest training review is 55 characters." |
-| **2** | "It's really fast." | "610 ms to load once at start-up; p95 0.28 ms per request over 111 requests; max 1.06, which was request one." |
+| **2** | "It's really fast." | "772 ms to load once at start-up; p95 0.27 ms per request over 111 requests; max 3.27, which was request one." |
 | **3** | "I'd check it now and then." | "Band rate, 16 of 111 = 14.4% today, alarm at 40%, computable with no labels. If it trips I read the 16 nearest the fence." |
 | **4** | "I'd look into it." | "I'd open the log. 111 lines; each has the input, the probability, the threshold and the version — so I can tell them which model answered and how sure it was." |
 | **5** | "Because it's localhost." | "Because it has no authentication and no rate limit, so `0.0.0.0` would let anybody on this network send it a million requests." |
@@ -707,7 +707,7 @@ This section records how the two sittings ran, so you can follow them or repeat 
 2. **The route and the questions.** Seven stops on the board, eight questions and seven banned words on the wall. Page 36.2 filled in **in pen, five minutes, silent — your own numbers, nobody else's.** *If you cannot fill in a line, that is the question you will be asked worst, and you have five minutes to go and find the number.*
 3. **One volunteer demo, cross-examined in full** — and two mistakes made on purpose first:
    - **the wrong folder**, run from home instead of the project, producing Break 1 above;
-   - **a banned word**, said out loud by the teacher — *"oh, it's basically real-time, it's super fast"* — until somebody tapped the table. Then the same thing said properly: **"610 ms to load once, and a p95 of 0.28 ms per request over 111 logged requests."** Four extra seconds, and the difference between a claim and a boast.
+   - **a banned word**, said out loud by the teacher — *"oh, it's basically real-time, it's super fast"* — until somebody tapped the table. Then the same thing said properly: **"772 ms to load once, and a p95 of 0.27 ms per request over 111 logged requests."** Four extra seconds, and the difference between a claim and a boast.
 4. **The showcase round.** Ten minutes of demo, five of cross-examination, in the order on the board. **The banned-word mechanic: nobody boos. One person taps the table once, the speaker says the number instead, and the demo carries on.** Listeners had a job — one tick per question per presenter, *did the answer contain a number?*
 5. **The audience tally.** *"Across every demo today, which of the eight was answered worst?"* It is almost always **question 3** — the monitoring number — because it is the only one that cannot be read off a metrics table.
 6. **The wrap.** Figure 36.4, read as numbers rather than topics. Then Figure 36.3 for thirty seconds: **nothing in Level 4 is magic; you built the floor.**
@@ -863,7 +863,7 @@ This section lists the words to be able to define with no notes.
 Here are the five you must be able to define **with no notes**, each with the number that proves you mean it:
 
 ![Five words you must define with no notes](../figures/fig-w36-6-five-words-you-must-define.svg)
-*Figure 36.6 — Five words you must define with no notes. Baseline `0.712` and `0.500`; leakage turning a real `0.78` into a reported `0.978`; the gradient as one slope per knob, `3 × 14 = 42`; shapes, `(3,2) @ (2,4) → (3,4)` with `1 × 10 + 2 × 50 = 110`; and a p95 of `0.28 ms` printed beside a max of `1.06 ms`.*
+*Figure 36.6 — Five words you must define with no notes. Baseline `0.712` and `0.500`; leakage turning a real `0.78` into a reported `0.978`; the gradient as one slope per knob, `3 × 14 = 42`; shapes, `(3,2) @ (2,4) → (3,4)` with `1 × 10 + 2 × 50 = 110`; and a p95 of `0.27 ms` printed beside a max of `3.27 ms`.*
 
 | Word | What it means | The number that proves you mean it |
 |---|---|---|
@@ -871,7 +871,7 @@ Here are the five you must be able to define **with no notes**, each with the nu
 | **leakage** | The model saw something at training time that it will not have at prediction time. | ROC-AUC `0.978` reported against a real `0.78` · 75% accuracy on a table of **pure noise** |
 | **the gradient** | One slope per knob, collected together; and slopes multiply along a chain. | `3 × 14 = 42` — measured stage by stage *and* straight through, and the two agreed |
 | **shapes** | A grid of numbers is `rows × columns`, and for `A @ B` the inner numbers must match. | `(3,2) @ (2,4) → (3,4)`, and row 0 column 0 is `1 × 10 + 2 × 50 = 110` |
-| **the p95** | The time 95 percent of requests came in under — reported next to the max, because it cannot see above itself. | `0.28 ms` over 111 requests, with a max of `1.06 ms` that was request number **one** |
+| **the p95** | The time 95 percent of requests came in under — reported next to the max, because it cannot see above itself. | `0.27 ms` over 111 requests, with a max of `3.27 ms` that was request number **one** |
 
 ---
 

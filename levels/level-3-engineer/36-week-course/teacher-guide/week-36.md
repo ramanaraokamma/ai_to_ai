@@ -70,7 +70,7 @@ Here is the route with the reference project's real numbers beside each stop, so
 | At | For | The stop | The number that must be said |
 |---:|---:|---|---|
 | 0:00 | 1 min | **The contract.** One prediction is about one review. A nasty one slipping through costs ten times a nice one read anyway. | threshold **0.65**, not 0.5 |
-| 1:00 | 1 min | **The cold start.** A brand-new terminal, one command, one answer. Then the Rule 1 `grep`. | **751.9 ms** total · the grep prints **0 lines** |
+| 1:00 | 1 min | **The cold start.** A brand-new terminal, one command, one answer. Then the Rule 1 `grep`. | **769 ms** total · the grep prints **0 lines** |
 | 2:00 | 2 min | **The service.** Start it, `GET /health`, one good prediction. | **772.2 ms** to load **once**, against **0.23 ms** per request — **two numbers** |
 | 4:00 | 2 min | **Break it, live.** Four malformed requests, then `/health` again. | four `400`s, then a `200`. **Zero crashes.** |
 | 6:00 | 1.5 min | **The log.** `wc -l`, then `read_logs.py`. | **111** lines · p50 **0.23** · p95 **0.27** · max **3.27**, and the max was request number **one** |

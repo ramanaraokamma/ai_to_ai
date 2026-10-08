@@ -1361,7 +1361,7 @@ model            : tiny_v1   (threshold 0.60)
 | instead of | say |
 |---|---|
 | "robust" | "it survived **four** malformed requests and answered a fifth time" |
-| "real-time" | "the **p95 is 0.28 ms** over 111 logged requests" |
+| "real-time" | "the **p95 is 0.27 ms** over 111 logged requests" |
 | "99% accurate" | **nothing. Say a real number with its `n` and its baseline.** |
 
 **"99% accurate" is the one that should make you wince**, because on a table that is 1% positive, predicting "no" every single time scores 99%. **99% can be the number you get for doing nothing.** And note that **"accurate" *with* a number is fine** — `0.8125 on 16 held-out rows` is a good sentence. The test for any phrase: **could somebody check it?**

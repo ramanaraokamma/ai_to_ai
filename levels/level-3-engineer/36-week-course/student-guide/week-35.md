@@ -26,7 +26,7 @@
 A program is sitting on your laptop doing nothing at all. It is *listening*.
 
 ```text
-loaded sentiment_v1 in 610 ms (threshold 0.65)
+loaded sentiment_v1 in 772 ms (threshold 0.65)
 serving on http://127.0.0.1:8010   (Ctrl+C to stop)
 ```
 
@@ -36,7 +36,7 @@ Last week you froze a model into a file and wrote a tool that reads it. **The to
 $ curl -s -X POST http://127.0.0.1:8010/predict \
      -H 'Content-Type: application/json' \
      -d '{"text": "delicious fresh pizza and kind friendly staff"}'
-{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7661, "threshold": 0.65, "latency_ms": 1.06}
+{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7661, "threshold": 0.65, "latency_ms": 3.27}
 ```
 
 **There are the five fields from box 3 of your contract, over a wire.** Now watch four pieces of deliberate rubbish go in, and **count the crashes**:
@@ -179,7 +179,7 @@ The second one can be acted on **without asking you anything.** This is the easi
 The format is called **JSON Lines**: one JSON object per line. A human can read it, a program can parse it, and you can append to it forever without rewriting what is already there.
 
 ```text
-{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7661, "threshold": 0.65, "latency_ms": 1.06, "input_chars": 45}
+{"model_version": "sentiment_v1", "input": "delicious fresh pizza and kind friendly staff", "label": "positive", "probability": 0.7661, "threshold": 0.65, "latency_ms": 3.27, "input_chars": 45}
 ```
 
 **Count the fields, and ask what each one is for.**
@@ -194,7 +194,7 @@ The format is called **JSON Lines**: one JSON object per line. A human can read 
 
 **Those are the four questions from the start of Week 34.** The log is not a diary you write when something goes wrong. It is the data file that makes the questions answerable **before** anybody asks them.
 
-> **💡 Try this:** open your own log in a text editor and read one line out loud as a sentence. *"Version sentiment_v1 was 77 per cent sure this was positive, against a threshold of 65 per cent, and it took one millisecond."* If your line cannot be read as a sentence like that, a field is missing.
+> **💡 Try this:** open your own log in a text editor and read one line out loud as a sentence. *"Version sentiment_v1 was 77 per cent sure this was positive, against a threshold of 65 per cent, and it took about three milliseconds."* If your line cannot be read as a sentence like that, a field is missing.
 
 ### 5. What one number was hiding
 
@@ -417,7 +417,7 @@ Three arguments to `basicConfig`, each doing one job:
 
 ```text
 $ python3 serve/service.py --port 8010
-loaded sentiment_v1 in 610 ms (threshold 0.65)
+loaded sentiment_v1 in 772 ms (threshold 0.65)
 serving on http://127.0.0.1:8010   (Ctrl+C to stop)
 ```
 
@@ -564,10 +564,10 @@ $ python3 eval/read_logs.py
 requests        : 111
 by version      : {'sentiment_v1': 111}
 by label        : {'negative': 76, 'positive': 35}
-latency mean    : 0.23 ms
-latency p50     : 0.21 ms
-latency p95     : 0.28 ms
-latency max     : 1.06 ms
+latency mean    : 0.26 ms
+latency p50     : 0.23 ms
+latency p95     : 0.27 ms
+latency max     : 3.27 ms
 mean probability: 0.4546
 in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 ```
@@ -576,12 +576,12 @@ in the 0.45-0.65 uncertainty band: 16 of 111 (14.4%)
 
 | Number | What it is for |
 |---|---|
-| mean `0.23` | pulled around by the tail; do not report it alone |
-| p50 `0.21` | the middle request; completely blind to the tail |
-| p95 `0.28` | **nearly everybody's experience** — the headline |
-| max `1.06` | **the one request somebody actually noticed** |
+| mean `0.26` | pulled around by the tail; do not report it alone |
+| p50 `0.23` | the middle request; completely blind to the tail |
+| p95 `0.27` | **nearly everybody's experience** — the headline |
+| max `3.27` | **the one request somebody actually noticed** |
 
-**And the obvious question: the p95 is 0.28 but the max is 1.06. Why didn't the p95 catch it?** Because one request out of 111 sits at the very top, beyond the 99th percentile, and **a p95 cannot see above itself.** So you print the max as well, and you say why.
+**And the obvious question: the p95 is 0.27 but the max is 3.27. Why didn't the p95 catch it?** Because one request out of 111 sits at the very top, beyond the 99th percentile, and **a p95 cannot see above itself.** So you print the max as well, and you say why.
 
 > **⚠️ Watch out:** **latency is the one kind of number in this course that will not reproduce.** Your four numbers will differ from mine and that is correct. Report *yours*, and say which laptop they came from.
 
@@ -806,7 +806,7 @@ np.percentile([3.27, 0.38, 0.31, 0.27, 0.27], 95)  ->  2.6919999999999993
 np.percentile([3.27, 0.38, 0.31, 0.27, 0.27], 50)  ->  0.31
 ```
 
-**Now the question that makes this worth doing.** The p95 of all 111 requests was **0.28** on that laptop. The p95 of these five is **2.692** — **ten times bigger, on fewer numbers.** How?
+**Now the question that makes this worth doing.** The p95 of all 111 requests was **0.27** on that laptop. The p95 of these five is **2.692** — **ten times bigger, on fewer numbers.** How?
 
 Because **95 percent of five numbers is 4.75 numbers**, so the one slow request is a *fifth* of the data and dominates completely. With 111 numbers it is one part in 111, and the p95 never reaches it. **A percentile is a claim about a proportion. Change how many numbers you have and you change what the claim means.**
 
@@ -1039,10 +1039,10 @@ Three questions to discuss with a partner or answer in a short paragraph. Each h
 
 Four claims that sound reasonable and are not. For each, the wrong version comes first, then the right one.
 
-### Trick 1 — "my mean latency is 0.23 ms, so it's fast"
+### Trick 1 — "my mean latency is 0.26 ms, so it's fast"
 
 ![Wrong and right: is one latency number enough?](../figures/fig-w35-5-tricked-one-latency-number.svg)
-*Figure 35.5 — Wrong and right: is one latency number enough? On the left one mean, and the request anybody would actually have felt is invisible in it. On the right four numbers from the same 111 log lines, where `1.06 ÷ 0.28 ≈ 3.8` times the p95, and the max was request number one.*
+*Figure 35.5 — Wrong and right: is one latency number enough? On the left one mean, and the request anybody would actually have felt is invisible in it. On the right four numbers from the same 111 log lines, where `3.27 ÷ 0.27 ≈ 12` times the p95, and the max was request number one.*
 
 **The mean is fine and the *tail* is the user experience.** If you report only a mean you have hidden the only request anybody would have noticed. **Mean, p50, p95, max — four numbers, four jobs.**
 
@@ -1167,7 +1167,7 @@ The six words introduced this week, each with an example.
 | **endpoint** | One path on a server that does one job. | `GET /health` and `POST /predict` — two doors, one machine. |
 | **request / response** | The message a client sends, and the reply. A request is a method, a path, headers and a body; a response is a status code, headers and a body. | `POST /predict` with `{"text": "..."}` in, `200` with five fields out. |
 | **prediction log** | A file with one complete record per line, appended and never rewritten, holding everything needed to explain one prediction later. | 111 JSON Lines, each with the input, label, probability, threshold, version and latency. |
-| **p95 latency** | The time 95 percent of requests came in under. Five percent were slower. | `0.28 ms` over 111 requests, with a max of `1.06 ms` printed beside it. |
+| **p95 latency** | The time 95 percent of requests came in under. Five percent were slower. | `0.27 ms` over 111 requests, with a max of `3.27 ms` printed beside it. |
 | **subgroup metrics** | The same metric computed separately for groups you chose on purpose, with `n` on every row. | `0.800` on the 15 rows without a negation word, `0.462` on the 13 with one. |
 | **monitoring plan · drift** | One page: the number you watch, how you measure it **without labels**, its measured baseline, the alarm level, and what you would do. Drift is inputs slowly stopping looking like your training data. | Band rate `14.4%` today, alarm at 40%, action: read the 16 requests inside the band. |
 
