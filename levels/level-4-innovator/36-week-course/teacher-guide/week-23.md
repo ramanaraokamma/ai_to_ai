@@ -139,7 +139,7 @@ These are all printed by the files in the Prep Checklist. Read them before class
 1. **No language model was involved.** Every answer in every table is a script's. The harness is real; the thing being measured is not.
 2. **The "better prompt" ordering is built in.** `p = 0.55, 0.75, 0.99`. A reader can predict the table from the file before running it. That is a feature for teaching (it makes the arithmetic checkable) and a limit for claiming.
 3. **Eight cases.** One run is one draw: the spread at `p = 0.55` is about `+/- 8.5` points, as big as the gap between many prompt changes. Adding cases is the fix; the workbook asks the student to say so.
-4. **The gold has arguable labels.** t3 and t8 urgency are a specification problem (Round 1 of the Activity). That is the module's "when every version fails the same case, suspect the test" lesson; it happens to be real in the stand-in, by the module's own gold.
+4. **The gold breaks its own scale.** The written scale says `3` = angry, blocked, or money at risk; t3 (charged twice) and t8 (locked out for two days) both fit it, yet the gold says `2` (Round 1 of the Activity). That is the module's "when every version fails the same case, suspect the test" lesson; it happens to be real in the stand-in, by the module's own gold.
 5. **The guard counts dollars from the stand-in's meter**, which is illustrative pricing and a word-count token estimate. Shape, not rate.
 6. **`tinytok` fallback.** `fakellm.count_tokens` calls `tinytok.count`, but `tinytok` exposes `count_tokens`, so the call fails inside a broad `try` and the kit **always falls back to `ceil(words x 1.3)`**; the student's own Week 20 tokenizer is never used. This changes no number in the lesson (we never installed a tokenizer) and is reported in the concerns of this run; do not tell the student the counts come from their BPE.
 7. **The prefix cache is off.** `FakeClient(prefix_cache=False)` in every block, so that a longer prompt costs more on every call. With the cache on (the default), v2 and v3 cost `$0.0009` each, because the identical system prompt is read from cache after the first call. That is Week 24's lesson (`cachekey.py`) and is not taught here.
@@ -872,7 +872,7 @@ The student types. You narrate. **Nobody pastes.** `constructs.py` is for **you*
 
 The full rules are in *The Activity, In Full* below. The shape:
 
-1. **(7 min) Label blind.** The student labels the eight printed messages (four boxes each) **before** seeing `TESTS`. Compare to gold: count disagreements and name the box. Expected: `urgency` on t3 and t8, maybe t4. *"So who is right about t3?"* (Nobody; the spec doesn't say.)
+1. **(7 min) Label blind.** The student labels the eight printed messages (four boxes each) **before** seeing `TESTS`. Compare to gold: count disagreements and name the box. Expected: `urgency` on t3 and t8, maybe t4. *"So who is right about t3?"* (By the written scale, `3`: money is at risk. The gold says `2`, so the gold is the mistake.)
 2. **(6 min) The floor, by hand then by code.** The hand count on page 23.2: `2 + 3 + 4 + 5 = 14`, `14 / 32 = 43.8%`. Run `constant_baseline()`; find **six** ties. Compare with the hook guess.
 3. **(7 min) Fill the table** on page 23.3 from the `versions.py` run (seed 0): field score, exact, tokens, dollars, per-field. Then three questions: *(a)* how far above the rock is v1? *(b)* which single field is the bottleneck in v3? *(c)* what is the highest score any prompt could get on these eight messages against this stand-in, and why? (`urgency` on t3 and t8: the ceiling, `93.8%`; run `key.py` after they answer.)
 4. **(5 min) The guard, one call late.** Set `BudgetGuard(0.004)` around the whole run (it is already in `versions.py`'s last block). **Predict the call it trips on**, run, read `STOPPED: ... 19 calls`. The closing question: *"The guard says we spent $0.0042. We set the limit at $0.004. The stand-in's meter says $0.0042. Who is right, and why did we overspend?"*
@@ -1003,7 +1003,7 @@ Traceback (most recent call last):
 AssertionError: the test set changed since it was frozen
 ```
 
-**Read it aloud:** the run refused to start. That is `check_frozen` doing its one job. Ask the student the question underneath: *"is t3's urgency gold actually wrong?"* (Possibly: the message is polite but money is at risk.) *"How do you change it honestly?"* (Decide the rule first: 'a double charge is always urgent, 3'. Write the change and the date in `log.txt`. Change the gold. Start a **new** frozen set with a **new** fingerprint and say so. Then rerun **every** version, because the old scores were against the old set.) The failure this prevents is quiet: a slow drift of the gold towards whatever the current prompt says.
+**Read it aloud:** the run refused to start. That is `check_frozen` doing its one job. Ask the student the question underneath: *"is t3's urgency gold actually wrong?"* (By the written scale, yes: money is at risk, so `3`.) *"How do you change it honestly?"* (Decide the rule first: 'a double charge is always urgent, 3'. Write the change and the date in `log.txt`. Change the gold. Start a **new** frozen set with a **new** fingerprint and say so. Then rerun **every** version, because the old scores were against the old set.) The failure this prevents is quiet: a slow drift of the gold towards whatever the current prompt says.
 
 ### Mistake 5 — a list as a dataclass default (loud)
 
@@ -1165,7 +1165,7 @@ This section gives the full script for the Floor Race, so you can run it without
 
 ### The five rounds
 
-**Round 1 — label blind (7 min).** Compare the student's labels with gold. **Likely disagreement (not run; depends on the student):** `urgency`, especially t3 ("charged me twice ... please fix", gold 2) and t8 ("can't log in ... 2 days", gold 2); a student might also give t4 (the crash) a 1 or 3. `category` for t6 ("packaging is lovely, no issue") is `other`, which students sometimes label `shipping`. Count the boxes that differ, out of 32. **Then** ask: *"who is right about t3?"* and let it be unresolved; name it: **a specification problem.** Say that two careful people, given the same rule ("3 = money at risk"), still disagree, which is why a gold label needs a written rule, and which is what the module calls "a specification bug".
+**Round 1 — label blind (7 min).** Compare the student's labels with gold. **Likely disagreement (not run; depends on the student):** `urgency`, especially t3 ("charged me twice ... please fix", gold 2) and t8 ("can't log in ... 2 days", gold 2); a student might also give t4 (the crash) a 1 or 3. `category` for t6 ("packaging is lovely, no issue") is `other`, which students sometimes label `shipping`. Count the boxes that differ, out of 32. **Then** ask: *"who is right about t3?"* and let the student check it against the written scale ("3 = money at risk"): the scale gives `3`, the gold says `2`. Name it: **a test bug.** A gold label needs a written rule and must be checked against it, which is what the module calls "a specification bug" when the two disagree.
 
 **Round 2 — the floor (6 min).** By hand: `category` best is 2 of 8 (three tie), `urgency` 3 of 8 (`2` and `3` tie), `order_id` 4 of 8 (`None`), `refund_requested` 5 of 8 (`False`); total `14` of `32` is `43.75%`, which prints as `43.8%`. Run `bench.py`; the code should say the same and list six ties. Ask: *"the hook card said what?"* Then: *"so a prompt that scores 50% has learned how much?"* (Two fields' worth: `16` against `14`.)
 
@@ -1189,7 +1189,7 @@ Give the student the labelled `TESTS` and skip round 1. Do the floor for `order_
 
 ### Variation — harder
 
-Round 1 as a **pair**: two students label blind; count where **they** disagree with each other. Then write the one-line rule that would make them agree on t3, add it to the `urgency` line of `RULES`, and run a fourth version `v4` on the same frozen set. **Ask which rule change counts as "editing the test" and which does not** (changing the prompt: fine; changing gold: not, without a new fingerprint). This guide did not run such a `v4`; let them run it and report what they measure. Expect **no change** from the stand-in, because its rule does not read the urgency wording in the prompt at all.
+Round 1 as a **pair**: two students label blind; count where **they** disagree with each other. Then write the one-line rule that would make them agree on t3 (the scale already says `3` for money at risk; the rule only has to say so plainly), add it to the `urgency` line of `RULES`, and run a fourth version `v4` on the same frozen set. **Ask which rule change counts as "editing the test" and which does not** (changing the prompt: fine; changing gold: not, without a new fingerprint). This guide did not run such a `v4`; let them run it and report what they measure. Expect **no change** from the stand-in, because its rule does not read the urgency wording in the prompt at all.
 
 ---
 
@@ -1283,7 +1283,7 @@ Five questions, orally, during the activity. Not graded; they inform the mastery
 1. **"Why freeze the test set before writing the prompt?"** *Pass:* if you write cases after seeing what the prompt does, you fit the test to the prompt; a frozen set with a fingerprint turns an edit into a loud error.
 2. **"What is the floor and what did we get?"** *Pass:* the score of the best constant answer that ignores the message; `43.8%` (`14` of `32`); a prompt near it has learned almost nothing.
 3. **"What does the regression report tell you that the average does not?"** *Pass:* which fields that used to be right are now wrong; a better average can hide them (`87.5%` with two lost fields).
-4. **"Why did v3 stop at `93.8%`?"** *Pass:* two urgencies (t3, t8) where the stand-in's rules and our gold disagree; a specification bug, not a prompt bug.
+4. **"Why did v3 stop at `93.8%`?"** *Pass:* two urgencies (t3, t8) where the stand-in's rules follow the written scale and our gold does not; a test bug, not a prompt bug.
 5. **"Why does the guard trip one call late?"** *Pass:* the cost is only known after the call; the call that crosses the line has been made and paid.
 
 ### Mastery scale for this week
@@ -1412,7 +1412,7 @@ Full marks need: (1) the student's own numbers from today (fingerprint, floor, v
 | What does `fingerprint(TESTS)` do if one label changes? | It changes. |
 | When does the alarm go off, before or after the call that crosses the line? | After. |
 | Which call sets it off at `$0.0014` per call and a `$0.01` limit? | The 8th. |
-| Who is right about t3's urgency? | Neither; the spec does not decide it. |
+| Who is right about t3's urgency? | The stand-in: the written scale gives `3`; the gold's `2` breaks it. |
 | How far above the rock is v1? | `6.2` points: two fields. |
 | What is the highest any prompt can score here, and why? | `93.8%`: t3 and t8 urgency. |
 | Who is right about the overspend? | Both: the guard and the meter count the same 19 calls, including the one that crossed. |

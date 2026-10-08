@@ -27,6 +27,7 @@
   <text x="203.1" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">1.8</text>
   <text x="670" y="321" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">1.4656</text>
   <text x="670" y="339" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" dominant-baseline="central">line said 1.2654</text>
-  <text x="410" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">each knob gets 1.8 characters to learn from</text>
+  <text x="410" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">each knob gets 1.8</text>
+  <text x="410" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start" dominant-baseline="central">characters to learn from</text>
   <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Every run reads 3,072,000 characters. 3,072,000 &#247; 14,549 = 211.1; &#247; 1,704,149 = 1.8.</text>
 </svg>

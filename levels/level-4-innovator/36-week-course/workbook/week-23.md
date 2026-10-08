@@ -109,7 +109,7 @@ Write the **last line** of the error: __________________________________________
 
 Which function in `bench.py` raised it? ____________________
 
-Is the gold for t3's urgency really wrong? (Nobody knows: the message is polite but money is at risk.) Write the **honest** way to change a gold label, in four short steps (the first is "write the rule down"):
+Is the gold for t3's urgency really wrong? Check it against the written scale (1 = no rush, 2 = normal, 3 = angry, blocked, or money at risk) before you decide. Write the **honest** way to change a gold label, in four short steps (the first is "write the rule down"):
 
 1. ______________________________ 2. ______________________________
 
@@ -250,7 +250,7 @@ for r, c in zip(res3, TESTS):
 
 Copy the printed lines: _______________________________________________
 
-Look at the two messages (t3 and t8) in `TESTS`. Who is right about the urgency, the stand-in's rules or our gold? Circle: **the stand-in** / **our gold** / **neither: the specification does not decide it**
+Look at the two messages (t3 and t8) in `TESTS`. Who is right about the urgency, the stand-in's rules or our gold? Use the written scale (1 = no rush, 2 = normal, 3 = angry, blocked, or money at risk). Circle: **the stand-in** / **our gold** / **neither**
 
 When **every** version fails the same case, what should you suspect first, the prompt or the test? ____________
 
@@ -580,7 +580,7 @@ Six questions to answer last, without looking back at the pages.
 
 ### Page 23.1
 
-**A.** Your own labels, so your counts are yours. Fields people most often disagree on: `urgency`. Two cases where a reasonable person differs from the gold are t3 and t8. (Other disagreements, for example t4's urgency, depend on you.) The total is out of `8 x 4 = 32`.
+**A.** Your own labels, so your counts are yours. Fields people most often disagree on: `urgency`. Two cases where the gold differs from the written scale are t3 and t8. (Other disagreements, for example t4's urgency, depend on you.) The total is out of `8 x 4 = 32`.
 
 **B.** The fingerprint is **`0f25042fb4`**. If yours differs, you changed a letter of a label or a message when you typed `TESTS`.
 
@@ -658,7 +658,7 @@ t3 urgency | stand-in said: 3 | gold says: 2
 t8 urgency | stand-in said: 3 | gold says: 2
 ```
 
-The right answer is **neither: the specification does not decide it** (a double charge, politely put; a locked-out user for two days). When every version fails the same case, suspect **the test** first. It is a specification bug, not a prompt bug.
+The right answer is **the stand-in**: by the written scale, a double charge is money at risk and a user locked out for two days is blocked, so both are `3` and our gold (`2`) breaks the scale. When every version fails the same case, suspect **the test** first. It is a test bug (the gold disagrees with the written scale), not a prompt bug. The honest repair is not to edit the gold in place: write the rule down, log the change, start a new frozen set with a new fingerprint, and rerun every version.
 
 **E.** v3: `2262 x 1.00 / 1,000,000 = 0.002262`; `88 x 5.00 / 1,000,000 = 0.00044`; sum `0.002702` which rounds to **$0.0027**. v2: `0.001566 + 0.00044 = 0.002006` so **$0.0020**. v1: `0.00031 + 0.00084 = 0.00115`, which is exactly on a rounding line: the program prints **$0.0011**, and a calculator that rounds half up writes `0.0012`. Either is fine if you wrote the full sum. `cost(v3) / cost(v1)` = `0.0027 / 0.0011 =` about **2.5**.
 

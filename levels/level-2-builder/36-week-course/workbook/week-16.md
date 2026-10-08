@@ -1167,6 +1167,8 @@ The data is yours, so there is no single right answer. Here is a complete model 
 
 `playlist_data.py` holds thirty records with five keys: `title`, `artist`, `genre` (four repeating values), `minutes` (decimals) and `plays` (whole numbers).
 
+One construct in `validate` below is new and is not on the ladder: `set(...)` turns a list into a group with no order and no repeats, so two groups can be compared with `!=` and subtracted with `-` to see what is missing or extra. You do not need it for your own project; a loop over the expected keys does the same job.
+
 ```python
 """store.py - the Record Store: 30 records out to CSV, back in, round trip proved."""
 

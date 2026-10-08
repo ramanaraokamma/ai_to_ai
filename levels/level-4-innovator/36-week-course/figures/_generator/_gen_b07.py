@@ -238,7 +238,7 @@ XP, YM = 6.2316, 0.1660        # log10(1,704,149) ; log10(1.4656)
 
 
 def w21_1():
-    PX0, PY0, SX, SY = 90, 330, 195.8, 685.7
+    PX0, PY0, SX, SY = 90, 318, 195.8, 685.7
     X = lambda v: PX0 + (v - 4.0) * SX
     Y = lambda v: PY0 - (v - 0.05) * SY
     p = [_ttl("A line through four points, then a fifth")]
@@ -251,7 +251,7 @@ def w21_1():
     p.append(line(PX0, 80, PX0, PY0, INK, 2))
     p.append(line(PX0, PY0, 560, PY0, INK, 2))
     p.append(trot(34, 205, "log10 of validation loss"))
-    p.append(t(325, PY0 + 44, "log10 of knobs (14,549 up to 1,704,149)", 12, MUT, "middle"))
+    p.append(t(325, PY0 + 42, "log10 of knobs (14,549 up to 1,704,149)", 12, MUT, "middle"))
     yl = lambda x: SLOPE * x + ICPT
     p.append(line(X(4.1628), Y(yl(4.1628)), X(5.6618), Y(yl(5.6618)), DATA_S, 2))
     p.append(line(X(5.6618), Y(yl(5.6618)), X(XP), Y(yl(XP)), ACC_S, 2, "6 4"))
@@ -297,7 +297,8 @@ def w21_2():
         p.append(t(670, cy - (7 if last else 0), lo, 14, INK, "middle", central=True))
         if last:
             p.append(t(670, cy + 11, "line said 1.2654", 12, MUT, "middle", central=True))
-    p.append(t(X0 + 220, 120 + 4 * 52 - 6, "each knob gets 1.8 characters to learn from", 12, INK, "start", central=True))
+    p.append(t(X0 + 220, 120 + 4 * 52 - 12, "each knob gets 1.8", 12, INK, "start", central=True))
+    p.append(t(X0 + 220, 120 + 4 * 52 + 4, "characters to learn from", 12, INK, "start", central=True))
     p.append(_cap("Every run reads 3,072,000 characters. 3,072,000 " + DIV + " 14,549 = 211.1; " + DIV + " 1,704,149 = 1.8.", 376))
     title = "The biggest model has the least text per knob, so the budget has two numbers"
     desc = ("Horizontal bars of characters read per knob, since every run reads 3,072,000 characters: 14,549 knobs 211.1, 41,173 knobs 74.6, 131,285 knobs 23.4, "

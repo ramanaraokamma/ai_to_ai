@@ -45,9 +45,9 @@ def w28_1():
     for i, (name, where, ok) in enumerate(rows):
         y = 108 + i * 38
         c = y + 16
-        o.append(rect(34, y, 150, 32, 8, DATA_F, DATA_S, 2))
+        o.append(rect(34, y, 190, 32, 8, DATA_F, DATA_S, 2))
         o.append(t(44, c, name, 14, INK, mono=True, central=True))
-        o.append(arrow(190, c, 280, c, INK, 2))
+        o.append(arrow(230, c, 284, c, INK, 2))
         o.append(t(300, c, where, 14, INK, mono=ok, central=True))
         if ok:
             o.append(rect(556, y, 150, 32, 8, OK_F, OK_S, 3))
@@ -84,8 +84,8 @@ def w28_2():
         o.append(t(x + 35, base - h - 8, str(v), 14, INK, "middle"))
         o.append(t(x + 35, base + 20, "turn %d" % (i + 1), 14, INK, "middle"))
         o.append(t(x + 35, base + 38, labs[i], 12, MUT, "middle"))
-    o.append(cross(60 + 2 * 90 + 8, base + 56, 5, BAD_S))
-    o.append(t(60 + 2 * 90 + 20, base + 60, "tool error, read and recovered", 12, MUT))
+    o.append(cross(60 + 2 * 90 + 8, base + 50, 5, BAD_S))
+    o.append(t(60 + 2 * 90 + 20, base + 54, "tool error, read and recovered", 12, MUT))
     o.append(trot(36, 190, "input tokens sent on that turn", 12))
     # right panel
     o.append(rect(560, 100, 220, 96, 10, PANEL, INK, 2))

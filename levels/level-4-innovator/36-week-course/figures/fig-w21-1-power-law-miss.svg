@@ -2,43 +2,43 @@
   <title>The line fitted the four models it was drawn through and missed the fifth</title>
   <desc>Log-log scatter. X is log10 of knobs, 4.0 to 6.4; y is log10 of validation loss. Four circles for widths 16, 32, 64 and 128 with losses 2.2760, 2.0878, 1.7127, 1.4991 lie close to a solid straight line of slope &#8722;0.1262. A dashed pink extension reaches the width-256 model at 1,704,149 knobs, where a hollow diamond marks the prediction 1.2654. A square marks what that model scored, 1.4656, higher than predicted: 15.8 percent worse. A box says ten times the knobs multiplies the loss by 0.748 and twice the knobs by 0.916.</desc>
   <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">A line through four points, then a fifth</text>
-  <line x1="90" y1="295.7" x2="560" y2="295.7" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
-  <text x="80" y="295.7" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.10</text>
-  <line x1="90" y1="227.1" x2="560" y2="227.1" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
-  <text x="80" y="227.1" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.20</text>
-  <line x1="90" y1="158.6" x2="560" y2="158.6" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
-  <text x="80" y="158.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.30</text>
-  <line x1="90" y1="90" x2="560" y2="90" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
-  <text x="80" y="90" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.40</text>
-  <line x1="90" y1="330" x2="90" y2="336" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
-  <text x="90" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4.0</text>
-  <line x1="187.9" y1="330" x2="187.9" y2="336" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
-  <text x="187.9" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4.5</text>
-  <line x1="285.8" y1="330" x2="285.8" y2="336" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
-  <text x="285.8" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5.0</text>
-  <line x1="383.7" y1="330" x2="383.7" y2="336" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
-  <text x="383.7" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5.5</text>
-  <line x1="481.6" y1="330" x2="481.6" y2="336" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
-  <text x="481.6" y="352" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">6.0</text>
-  <line x1="90" y1="80" x2="90" y2="330" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
-  <line x1="90" y1="330" x2="560" y2="330" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="90" y1="283.7" x2="560" y2="283.7" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="80" y="283.7" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.10</text>
+  <line x1="90" y1="215.1" x2="560" y2="215.1" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="80" y="215.1" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.20</text>
+  <line x1="90" y1="146.6" x2="560" y2="146.6" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="80" y="146.6" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.30</text>
+  <line x1="90" y1="78" x2="560" y2="78" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="80" y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end" dominant-baseline="central">0.40</text>
+  <line x1="90" y1="318" x2="90" y2="324" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="90" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4.0</text>
+  <line x1="187.9" y1="318" x2="187.9" y2="324" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="187.9" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">4.5</text>
+  <line x1="285.8" y1="318" x2="285.8" y2="324" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="285.8" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5.0</text>
+  <line x1="383.7" y1="318" x2="383.7" y2="324" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="383.7" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">5.5</text>
+  <line x1="481.6" y1="318" x2="481.6" y2="324" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <text x="481.6" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">6.0</text>
+  <line x1="90" y1="80" x2="90" y2="318" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <line x1="90" y1="318" x2="560" y2="318" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
   <text x="34" y="205" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 34 205)">log10 of validation loss</text>
-  <text x="325" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">log10 of knobs (14,549 up to 1,704,149)</text>
-  <line x1="121.9" y1="115.2" x2="415.4" y2="244.9" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"/>
-  <line x1="415.4" y1="244.9" x2="526.9" y2="294.2" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="round"/>
-  <circle cx="121.9" cy="119.4" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
-  <text x="131.9" y="111.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">2.2760</text>
-  <circle cx="210.3" cy="145.1" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
-  <text x="220.3" y="137.1" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">2.0878</text>
-  <circle cx="308.9" cy="204" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
-  <text x="318.9" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">1.7127</text>
-  <circle cx="415.4" cy="243.7" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
-  <text x="425.4" y="235.7" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">1.4991</text>
-  <polygon points="526.9,286.2 534.9,294.2 526.9,302.2 518.9,294.2" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
-  <rect x="520.9" y="244.5" width="12" height="12" rx="2" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
-  <text x="575" y="298.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">line predicted 1.2654</text>
-  <text x="575" y="254.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">measured 1.4656</text>
-  <line x1="540.9" y1="252.5" x2="540.9" y2="292.2" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
+  <text x="325" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">log10 of knobs (14,549 up to 1,704,149)</text>
+  <line x1="121.9" y1="103.2" x2="415.4" y2="232.9" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round"/>
+  <line x1="415.4" y1="232.9" x2="526.9" y2="282.2" stroke="#C42B8C" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="round"/>
+  <circle cx="121.9" cy="107.4" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="131.9" y="99.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">2.2760</text>
+  <circle cx="210.3" cy="133.1" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="220.3" y="125.1" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">2.0878</text>
+  <circle cx="308.9" cy="192" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="318.9" y="184" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">1.7127</text>
+  <circle cx="415.4" cy="231.7" r="6" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
+  <text x="425.4" y="223.7" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="start">1.4991</text>
+  <polygon points="526.9,274.2 534.9,282.2 526.9,290.2 518.9,282.2" fill="#FFFFFF" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="520.9" y="232.5" width="12" height="12" rx="2" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
+  <text x="575" y="286.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">line predicted 1.2654</text>
+  <text x="575" y="242.5" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">measured 1.4656</text>
+  <line x1="540.9" y1="240.5" x2="540.9" y2="280.2" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
   <rect x="575" y="96" width="205" height="100" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
   <text x="585" y="116" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start" dominant-baseline="central">the line, from 4 points:</text>
   <text x="585" y="138" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start" dominant-baseline="central">slope &#8722;0.1262</text>

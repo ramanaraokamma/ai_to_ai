@@ -27,9 +27,9 @@
   <text x="455" y="102" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">566</text>
   <text x="455" y="310" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">turn 5</text>
   <text x="455" y="328" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">answer</text>
-  <polyline points="243,341 253,351" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <polyline points="243,351 253,341" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="260" y="350" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">tool error, read and recovered</text>
+  <polyline points="243,335 253,345" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="243,345 253,335" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="260" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">tool error, read and recovered</text>
   <text x="36" y="190" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 36 190)">input tokens sent on that turn</text>
   <rect x="560" y="100" width="220" height="96" rx="10" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
   <text x="570" y="124" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">total input, measured</text>

@@ -6,52 +6,52 @@
   <text x="300" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">where it really points</text>
   <text x="560" y="86" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">at or below the root?</text>
   <line x1="40" y1="96" x2="760" y2="96" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
-  <rect x="34" y="108" width="150" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="34" y="108" width="190" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
   <text x="44" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">report.md</text>
-  <line x1="190" y1="124" x2="280" y2="124" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
-  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(280 124) rotate(0)"/>
+  <line x1="230" y1="124" x2="284" y2="124" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(284 124) rotate(0)"/>
   <text x="300" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">&lt;ROOT&gt;/report.md</text>
   <rect x="556" y="108" width="150" height="32" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
   <polyline points="571.7,124 576.2,128.9 585.2,118.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="596" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">inside: True</text>
-  <rect x="34" y="146" width="150" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="34" y="146" width="190" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
   <text x="44" y="162" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">sub/a.md</text>
-  <line x1="190" y1="162" x2="280" y2="162" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
-  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(280 162) rotate(0)"/>
+  <line x1="230" y1="162" x2="284" y2="162" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(284 162) rotate(0)"/>
   <text x="300" y="162" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">&lt;ROOT&gt;/sub/a.md</text>
   <rect x="556" y="146" width="150" height="32" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
   <polyline points="571.7,162 576.2,166.9 585.2,156.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="596" y="162" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">inside: True</text>
-  <rect x="34" y="184" width="150" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="34" y="184" width="190" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
   <text x="44" y="200" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">notes/../report.md</text>
-  <line x1="190" y1="200" x2="280" y2="200" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
-  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(280 200) rotate(0)"/>
+  <line x1="230" y1="200" x2="284" y2="200" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(284 200) rotate(0)"/>
   <text x="300" y="200" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">&lt;ROOT&gt;/report.md</text>
   <rect x="556" y="184" width="150" height="32" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
   <polyline points="571.7,200 576.2,204.9 585.2,194.6" fill="none" stroke="#1B7A4B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="596" y="200" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">inside: True</text>
-  <rect x="34" y="222" width="150" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="34" y="222" width="190" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
   <text x="44" y="238" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">../escape.md</text>
-  <line x1="190" y1="238" x2="280" y2="238" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
-  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(280 238) rotate(0)"/>
+  <line x1="230" y1="238" x2="284" y2="238" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(284 238) rotate(0)"/>
   <text x="300" y="238" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">(outside the sandbox)</text>
   <rect x="556" y="222" width="150" height="32" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
   <polyline points="571,231 585,245" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <polyline points="571,245 585,231" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="596" y="238" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">inside: False</text>
-  <rect x="34" y="260" width="150" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="34" y="260" width="190" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
   <text x="44" y="276" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">a/../../escape.md</text>
-  <line x1="190" y1="276" x2="280" y2="276" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
-  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(280 276) rotate(0)"/>
+  <line x1="230" y1="276" x2="284" y2="276" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(284 276) rotate(0)"/>
   <text x="300" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">(outside the sandbox)</text>
   <rect x="556" y="260" width="150" height="32" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
   <polyline points="571,269 585,283" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <polyline points="571,283 585,269" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="596" y="276" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">inside: False</text>
-  <rect x="34" y="298" width="150" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="34" y="298" width="190" height="32" rx="8" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
   <text x="44" y="314" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" dominant-baseline="central">/etc/passwd</text>
-  <line x1="190" y1="314" x2="280" y2="314" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
-  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(280 314) rotate(0)"/>
+  <line x1="230" y1="314" x2="284" y2="314" stroke="#14202B" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(284 314) rotate(0)"/>
   <text x="300" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" dominant-baseline="central">(outside the sandbox)</text>
   <rect x="556" y="298" width="150" height="32" rx="8" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
   <polyline points="571,307 585,321" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
