@@ -1278,7 +1278,7 @@ Estimated time: 60-75 minutes.
 
 This section is teacher-only: the answers to every workbook page and to every question posed in the lesson.
 
-> **The workbook pages 22.1-22.6 follow this order.** Where an answer is a number it comes from `sftmask.py`, `pairs.py`, `kl.py`, `reward.py`, `hack.py`, `dpo.py`, `sweep.py` or `key.py`, all run from the Prep Checklist.
+> **The workbook pages 22.1-22.7 follow this order.** Where an answer is a number it comes from `sftmask.py`, `pairs.py`, `kl.py`, `reward.py`, `hack.py`, `dpo.py`, `sweep.py` or `key.py`, all run from the Prep Checklist.
 
 ### Page 22.1 — Mask (from `sftmask.py`, `pairs.py`)
 
@@ -1358,6 +1358,10 @@ Model answers to the open questions on this page are judged against the rubric b
 ### Page 22.6 — Write-up (rubric)
 
 Full marks need: (1) the student's own four numbers from today, each with a seed; (2) one sentence per toy saying what it shows **and what it does not** (no real model, invented preferences, four numbers for a policy); (3) the loss-across-`beta` trap in their own words; (4) the four constructs explained correctly (`logsigmoid` stays finite where `log(sigmoid)` gives `-inf`; `log_softmax` gives log-chances along `dim=-1`; `gather` picks one column per row and needs a column index; `detach` cuts the graph, used for the frozen reference). Deduct for: "DPO is better than RLHF" (not tested), "the model learned to prefer" (four numbers moved), "lower loss is better".
+
+### Workbook-only items on pages 22.1-22.7 (the workbook's own practice numbers; its ANSWERS section holds the full set)
+
+Page 22.1: `PROMPT_LEN` 3, 5, 7 give masked losses `3.9767`, `4.0407`, `4.0043` against `3.8008` over all 8, and the all-8 figure never changes because it ignores the mask; the hand count for `q: 2+2?\na:` is a 10-character prompt, a 7-character answer, 16 guesses, **7 that count**. Page 22.2: gap `-3.0` gives chance `0.04743` and loss `3.049`; gap `+1.5` gives `0.8176` and `0.2014`; the ratio is about **15**. Page 22.3 B: `p3` = `0.4, 0.4, 0.1, 0.1` against `q` is `0.1927`, with the swapped order `0.2231`; `[0.97, 0.01, 0.01, 0.01]` gives `1.2186`, below the `1.3863` ceiling; the beta-0.1 movement of the workbook's second example (chosen `+2.0`, rejected `-1.0`) gives margin `0.3` and loss `0.5544`, and at `beta = 0.5` margin `1.5` and loss `0.2014`. Page 22.5: 4 of the 32 feature rows score above `r2`, and only `[1, 0, 0, 0, 0]` (`r9`) does so without the direct-answer feature. Page 22.7: **A** `dim=0` normalises columns, so a row adds to `0.507` instead of `1.0`; **B** a missing minus sign gives `-0.6931` at step 1 (it must be `+0.6931`); **C** `targets[:len(PROMPT)]` masks one row too many and prints `6 of 16` instead of the hand count of 7.
 
 ### Teacher-only: the map of wrong answers on the KL rounds
 

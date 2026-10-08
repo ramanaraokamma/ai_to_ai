@@ -1319,17 +1319,21 @@ Four quick checks, none of which is a test.
 
 ## 📤 Homework to Assign
 
-**Workbook Week 3** (about 60–75 minutes). The workbook file is authored in a later stage; the pages it must carry, so that it matches today, are:
+**Workbook Week 3** (about 60–75 minutes). The workbook file is `workbook/week-03.md`; the pages it carries, in order, are:
 
 | Page | Task | What it checks |
 |:--:|---|---|
-| 3.1 | **The three-optimizer table.** Four steps each of SGD, momentum and Adam on `f(w) = w*w`, `w = 1.0`, `lr = 0.1`. Then check against `torch.optim`. | Objective 2 |
-| 3.2 | **The first step.** Gradient 1 and gradient 1000, SGD and Adam. Four numbers, one sentence. | Objective 3 |
-| 3.3 | **RMS on your own list.** Pick three numbers (not 3 and -4). Work out the RMS by hand, then in code. Then multiply the list by 100 and show list / RMS has not changed. | Objective 1 |
-| 3.4 | **Adam's rate.** Run Adam at four rates of your choice and write "good" or "coin" against each, from your own screen. | Trap 1 |
-| 3.5 | **Break it on purpose.** Pick one Clinic error. Reproduce it, paste the last line into the Bug Log, then fix it. | Reading errors |
-| 3.6 | **AdamW.** Run Adam and AdamW with `weight_decay=0.1` on the two-weight test (P12 pattern) and say in one sentence which weight each one hurt. | Objective 4 |
-| 3.7 | **Self-check:** *In one sentence, what does Adam divide by, and why does that make every knob move about the same distance?* | Objective 5 |
+| Warm-Up | **W1–W5.** The momentum rule, last week's hand numbers, the meaning of 0.693 and `nan`. | Week 2 habits |
+| 3.1 | **The three-optimizer table.** Four steps each of SGD, momentum and Adam on `f(w) = w*w`, `w = 1.0`, `lr = 0.1` (A1–A4), then check against `torch.optim` and peek at `exp_avg` / `exp_avg_sq`. | Objective 2 |
+| 3.2 | **The first step.** Gradient 1, 1000 and a predicted 2000, SGD and Adam (B1, B2). | Objective 3 |
+| 3.3 | **RMS on your own list.** R1 `[3, -4]`, R2 the same list times 100, R3 three numbers of the student's own, R4 three estimates, R5 two named mistakes. | Objective 1 |
+| 3.4 | **Adam's rate.** Predict, run the seven-rate sweep for Adam and SGD, label good or coin (C1–C5) and add two cards. | Trap 1 |
+| 3.5 | **Break it on purpose.** One of loud mistakes A–D, plus the silent E, F, G. | Reading errors |
+| 3.6 | **AdamW and the quiet bug.** Two-weight decay test (D1–D4), the spirals run (D5), the default `weight_decay` (D6). | Objective 4 |
+| 3.7 | **What epsilon is for.** The first-step table for gradients 1000 down to 1e-9 (E1–E5). | Epsilon |
+| 3.8 | **A second hand table** from `w = 2.0` (F1–F4). | Owning the method |
+| 3.9 | **The Bug Log**, the required line, and mistake H (reading Adam's memory too early). | Silent failures |
+| Self-Check | Eight questions and the tick-box ladder; question 3 is the week's one sentence. | Objective 5 |
 
 **The one line the student writes in the Bug Log tonight:** *"Adam = Week 2's average, divided by the running RMS of the gradient; first step is lr; its lr is on a smaller scale than SGD's; decay goes with AdamW."*
 
@@ -1350,7 +1354,7 @@ This section holds the answers to the workbook pages and to every question posed
 | 3 | 0.5120 | 0.0620 | 0.484082 | 0.0097914 | 0.09883 | 0.7016 |
 | 4 | 0.4096 | -0.3086 | 0.575991 | 0.0117505 | 0.09765 | 0.6039 |
 
-Torch check: `[0.8, 0.64, 0.512, 0.4096]`, `[0.8, 0.46, 0.062, -0.3086]`, `[0.9, 0.8004, 0.7016, 0.6039]` (block P7). Accept the student's figures within 0.0001; the exact tables are blocks P5 and P6. Intermediate columns: the `m/arrived`, `s/arrived` and `rms-root` values (P5) are 2.0000 / 4.0000 / 2.0000, 1.8947 / 3.6198 / 1.9026, 1.7863 / 3.2671 / 1.8075, 1.6749 / 2.9420 / 1.7152.
+Torch check: `[0.8, 0.64, 0.512, 0.4096]`, `[0.8, 0.46, 0.062, -0.3086]`, `[0.9, 0.8004, 0.7016, 0.6039]`. Accept the student's figures within 0.0001. Intermediate columns: the `m/arrived`, `s/arrived` and `rms-root` values (P5) are 2.0000 / 4.0000 / 2.0000, 1.8947 / 3.6198 / 1.9026, 1.7863 / 3.2671 / 1.8075, 1.6749 / 2.9420 / 1.7152.
 
 ### Page 3.2 — The first step
 
@@ -1358,34 +1362,71 @@ Torch check: `[0.8, 0.64, 0.512, 0.4096]`, `[0.8, 0.46, 0.062, -0.3086]`, `[0.9,
 |:--:|:--:|:--:|
 | 1 | 0.1 | 0.1 |
 | 1000 | 100.0 | 0.1 |
+| 2000 (predicted) | 200.0 | 0.1 |
 
-The sentence (full marks): *"Adam divides by the typical size of that knob's own gradient, so the gradient's size cancels; the step is `lr`."* Partial: "Adam normalises the gradient" with no reference to the division.
+B1, full marks: *"Adam divides by the typical size of that knob's own gradient, so the gradient's size cancels; the step is `lr`."* Partial: "Adam normalises the gradient" with no reference to the division. B2: yes, a gradient of 0.001 still gives 0.099999 (Page 3.7).
+
+The 3.1 workbook questions: A1 0.1 and 0.001, and `m_fix` equals `g` exactly (true). A2 Adam's steps stay near 0.1 (0.1000, 0.0996, 0.0988, 0.0977) while SGD's shrink faster. A3 row 2, step 0.09959. A4 Adam is the slowest on this one-knob toy (0.6039); the honest answer is required. Peek inside: `exp_avg` 0.48408 and `exp_avg_sq` 0.0097914, matching row 3.
 
 ### Page 3.3 — RMS on your own list
 
-No single answer. Check: (a) squares first, so the signs are gone; (b) the mean is divided by the count of numbers; (c) the root is last; (d) hand and code agree to four places; (e) multiplying the list by 100 multiplies the RMS by 100 **and leaves list / RMS unchanged.** **Common wrong answers:** the plain mean (signs cancel; error 2); dividing by `sqrt(n)` at the wrong moment; leaving out the root (that is the mean square, 12.5 for `[3, -4]`, not 3.5355). A sample to check their method: `[6, -8]` has RMS 7.0711.
+R1: plain mean -0.5, squares 9 and 16, mean of squares 12.5, RMS 3.5355. R2: RMS 353.55; `300 / RMS = 0.8485`, `-400 / RMS = -1.1314`, the same as the small list. R3 has no single answer. Check: (a) squares first, so the signs are gone; (b) the mean is divided by the count of numbers; (c) the root is last; (d) hand and code agree to four places; (e) multiplying the list by 100 multiplies the RMS by 100 **and leaves list / RMS unchanged.** A sample to check their method: `[2, -2, 4]` has RMS 2.8284 and list / RMS `[0.7071, -0.7071, 1.4142]`. **Common wrong answers:** the plain mean (signs cancel); dividing by the wrong count; leaving out the root (that is the mean square, 12.5 for `[3, -4]`, not 3.5355). R4: `[5, 5, 5, 5]` has RMS 5; `[0, 0, 0, 10]` has RMS 5 (not the plain mean 2.5); `[6, -8]` has plain mean -1.0, RMS 7.0711, length 10, and the RMS is the length divided by `sqrt(2)`. R5: the first friend (12.5) left out the root; the second (-0.5) left out the squaring.
 
 ### Page 3.4 — Adam's rate
 
-Using block P15 as the reference (student's own run should match within ±0.005 and ±0.5 points): good at `0.0001`, `0.001`, `0.003`, `0.01`; coin at `0.03`, `0.1`, `0.3`. Accept any four rates with correct labels from their own screen. **The pair that matters most:** 0.003 (good, 0.007) and 0.03 (coin, 0.658).
+The student's own run should match within ±0.005 and ±0.5 points. Reference (seed 0):
+
+| `lr` | Adam train / acc | SGD train / acc |
+|:--:|---|---|
+| 0.0001 | 0.077 / 98.1% (good) | 0.694 / 53.1% (coin) |
+| 0.001 | 0.018 / 99.4% (good) | 0.693 / 35.6% (coin) |
+| 0.003 | 0.007 / 98.9% (good) | 0.693 / 46.9% (coin) |
+| 0.01 | 0.013 / 99.2% (good) | 0.692 / 46.9% (coin) |
+| 0.03 | 0.658 / 46.9% (coin) | 0.690 / 52.8% (coin) |
+| 0.1 | 0.693 / 46.9% (coin) | 0.387 / 80.0% (slow, not a coin) |
+| 0.3 | 0.701 / 46.9% (coin) | 0.016 / 98.9% (good) |
+
+**The pair that matters most:** Adam 0.003 (good, 0.007) and Adam 0.03 (coin, 0.658). C2: Adam is good from 0.0001 to 0.01, SGD's one good rate is 0.3; Adam has the wider range. C3: SGD 0.3, Adam 0.003, a factor of 100. C4: 0.701 is about the coin-flip loss and nothing crashed; 0.3 suits SGD, not Adam. C5: Week 7; no, it is one seed. Cards: adam 0.003 good, adam 0.03 a coin; force no letter.
 
 ### Page 3.5 — Break it on purpose
 
-Any of the Clinic errors with the last line pasted and a fix. Typical:
+Any one of A–D with the last line pasted and a fix:
 
-```text
-AttributeError: module 'torch.optim' has no attribute 'adamw'. Did you mean: 'AdamW'?
-```
+- **A.** `TypeError: sqrt(): argument 'input' (position 1) must be Tensor, not float`. Fix: `torch.sqrt(torch.tensor(12.5))`.
+- **B.** `AttributeError: module 'torch.optim' has no attribute 'adamw'. Did you mean: 'AdamW'?` Fix: `torch.optim.AdamW` (capital A, capital W).
+- **C.** `ValueError: Invalid weight_decay value: -0.1`. Fix: `weight_decay=0.1`.
+- **D.** `TypeError: 'MLP' object is not iterable`. Fix: `model.parameters()`.
 
-Fix: `torch.optim.AdamW` (capital A, capital W).
+Silent: **E** prints `mean : -0.5`, `sqrt of mean : nan`, `what it should be: 3.535533905029297` (Warm-Up W5: a square root just before the `nan`). **F**: hand step 1 gives **0.6838**, torch **0.9**; `m` is 0.2 and `sqrt(s)` is 0.0632, so the step is 0.316, not 0.1; suspect the hand number. **G**: `w after one step: nan` (`0 / (0 + 0)`); epsilon is there so you never divide by zero.
 
-### Page 3.6 — AdamW
+### Page 3.6 — AdamW and the quiet bug
 
-Expected (P12): Adam `[0.0762, 99.0003]`, AdamW `[0.9044, 90.4382]`. Sentence: under **Adam** the small weight (1.0) was hurt most, almost wiped out, and the big weight (100) barely touched; under **AdamW** both lose the same share (about 10%), so the big one loses most in absolute terms. Full marks: names which weight each hurt **and** says why (the division cancels the decay's size, under Adam). Partial: the numbers only.
+D1: the factor is 0.99; 0.99^10 = 0.9044, so the small weight ends at **0.9044** and the big one at **90.44**. Expected (two-weight test): SGD `[0.9044, 90.4382]`, Adam `[0.0762, 99.0003]`, AdamW `[0.9044, 90.4382]`; D3: SGD and AdamW are the same. D4: under **Adam** the small weight (1.0) was hurt most, almost wiped out, and the big weight barely touched; under **AdamW** both lose the same share (about 10%), so the big one loses most in absolute terms. Full marks: names which weight each hurt **and** says why (the division cancels the decay's size, under Adam). Partial: the numbers only.
 
-### Page 3.7 — The one sentence
+D5 (`lr = 0.003`): adam wd = 0 gives train 0.007, val 0.037, acc 98.9%, and adamw wd = 0 prints the identical line; adam wd = 0.1 is a coin (0.693, 0.694, 46.9%); adamw wd = 0.1 gives 0.011, 0.077, 98.9%, worse on validation than wd = 0. D6: with no `weight_decay=` typed, Adam gives `[1.0, 100.0]` and AdamW `[0.99, 99.0045]`, so AdamW's default is not zero (it is 0.01).
 
-Full marks: *"It divides the average gradient by the running root-mean-square of the gradient, so the size cancels and every knob moves about `lr`."* Partial: "it adapts the step size" with no "divide".
+### Page 3.7 — What epsilon is for
+
+E1: 0.10000. E2: `2` times `g`; the step is **0.05**. E3: ten times smaller than epsilon; much less than 0.05 (0.009091). The table (first step, `lr = 0.1`): 1000 gives 0.100000; 1 gives 0.100000; 0.001 gives 0.099999; 1e-06 gives 0.099010; 1e-08 gives 0.050000; 1e-09 gives 0.009091. E4: `lr` to five decimals for 1000 down to 1; epsilon starts to cost at about 1e-06. E5: it stops dividing by zero **and** costs a smaller step when the gradient is as small as epsilon.
+
+### Page 3.8 — A second hand table (start `w = 2.0`)
+
+| t | w before | g | m | s | m_fix | s_fix | root | step | w after |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| 1 | 2.0000 | 4.0000 | 0.400000 | 0.0160000 | 4.0000 | 16.0000 | 4.0000 | 0.10000 | 1.9000 |
+| 2 | 1.9000 | 3.8000 | 0.740000 | 0.0304240 | 3.8947 | 15.2196 | 3.9012 | 0.09983 | 1.8002 |
+| 3 | 1.8002 | 3.6003 | 1.026033 | 0.0433560 | 3.7861 | 14.4665 | 3.8035 | 0.09954 | 1.7006 |
+| 4 | 1.7006 | 3.4012 | 1.263555 | 0.0548811 | 3.6742 | 13.7409 | 3.7069 | 0.09912 | 1.6015 |
+
+F1: the first step is 0.1, the same as Page 3.1, because the ratio is 1 whatever `g` is. F2: the doubling cancelled. F3: torch gives `[1.9, 1.8002, 1.7006, 1.6015]`. F4: Page 3.1 ended at 0.6039 (total move 0.3961); this page at 1.6015 (total move 0.3985), about the same.
+
+### Page 3.9 — Bug Log and mistake H
+
+Any honest entries. Mistake H: the last line is `KeyError: 'exp_avg'`; Adam creates its two averages on the first call to `opt.step()`. Fix: run at least one step before looking.
+
+### Self-Check
+
+1: square, mean, root: the typical size ignoring sign. 2: RMS 3.5355, plain mean -0.5. 3 (the week's one sentence), full marks: *"It divides the average gradient by the running root-mean-square of the gradient, so the size cancels and every knob moves about `lr`."* Partial: "it adapts the step size" with no "divide". 4: SGD 0.1 and 100.0; Adam 0.1 and 0.1. 5: from their screen; reference good at 0.003 (train 0.007), coin at 0.03 (train 0.658). 6: AdamW. 7: any two, for example Adam is slowest on the one-knob toy (0.6039 against SGD's 0.4096). 8: Parking Lot; Week 4 (warmup).
 
 ### Answers to every question posed in the lesson
 

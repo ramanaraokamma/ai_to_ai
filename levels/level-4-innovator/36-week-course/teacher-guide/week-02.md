@@ -1312,17 +1312,21 @@ Four quick checks, none of which is a test.
 
 This section lists the homework pages and what each one checks.
 
-**Workbook Week 2** (about 60–75 minutes). The workbook file is `workbook/week-02.md`; the pages it carries, matching today, are:
+**Workbook Week 2** (about 60–75 minutes). The workbook file is `workbook/week-02.md`; the pages it carries, in order, are:
 
 | Page | Task | What it checks |
 |:--:|---|---|
-| 2.1 | **The hand table.** Three steps of SGD and of momentum on `f(w) = w*w`, `w = 1.0`, `lr = 0.1`. Then check against `torch.optim`. | Objectives 2, 3 |
-| 2.2 | **Helps or hurts.** The two-column table over five learning rates, with a word per row. | Objective 4 |
-| 2.3 | **The EMA on your own five numbers.** Pick five numbers (not 10, 0, 0, 0, 0). Compute the average by hand, then in code. | Objective 1 |
-| 2.4 | **Find one `lr` where momentum helps and one where it hurts** on your own run, and paste the two lines. | Objective 4 |
-| 2.5 | **Break it on purpose.** Pick one Clinic error. Reproduce it, paste the last line into the Bug Log, then fix it. | Reading errors |
-| 2.6 | **The x10.** Run momentum at `lr = 0.03` and SGD at `lr = 0.3`. Say in one sentence why they match. | The week's link |
-| 2.7 | **Self-check:** *In one sentence, what does momentum remember, and what does it do with it?* | Objective 5 |
+| Warm-Up | **W1–W5.** The guessing loss, the `*`, the SGD rule, epoch 0 of A and F, the seed. | Week 1 habits |
+| 2.1 | **The hand table.** Three steps of SGD and of momentum on `f(w) = w*w`, `w = 1.0`, `lr = 0.1` (H1, H2), the fourth step as extension (H3), then check against `torch.optim`. | Objectives 2, 3 |
+| 2.2 | **Helps or hurts.** Predict, run, and fill the two-column table over five learning rates (P1–P4). | Objective 4 |
+| 2.3 | **The EMA.** Part A on 5, 5, 5, 0, 0; Part B the fade (half-life); Part C five numbers of the student's own, by hand and in code (E1–E6). | Objective 1 |
+| 2.4 | **Steady pushes add, flip-flops cancel.** The velocity for `g = 1, 1, 1, 1` and for `+1, -1, +1, -1` (T1–T3). | The trolley sentence |
+| 2.5 | **The x10.** PyTorch's `v` against the average form, then momentum `lr = 0.03` against SGD `lr = 0.3` (X1–X5). | The week's link |
+| 2.6 | **Break it on purpose.** One of mistakes A–C (loud) and the two silent ones, D and E. | Reading errors |
+| 2.7 | **The length of a gradient.** `.norm()` by hand and in torch (N1–N4). | `.norm()` |
+| 2.8 | **A second hand table** from `w = 2.0`, with S1–S3. | Owning the method |
+| 2.9 | **The Bug Log** and the misspelt-optimizer trap (mistake F). | Silent failures |
+| Self-Check | Six questions and the tick-box ladder. | Objective 5 |
 
 **The one line the student writes in the Bug Log tonight:** *"Momentum is ten times a running average; longer steps help a crawler and wreck a sprinter."*
 
@@ -1334,6 +1338,10 @@ This section lists the homework pages and what each one checks.
 
 Use this key to mark the workbook pages and the questions posed in the lesson. It is for the teacher only.
 
+### Warm-Up
+
+W1: 0.693. W2: pass everything after the tag by name. W3: `w = w - lr * g`. W4: the first epoch (A starts at 0.694 and never moves; F starts at 12.786). W5: the same numbers, digit for digit.
+
 ### Page 2.1 — The hand table
 
 | step | SGD g | SGD w after | Momentum g | v | step (0.1 v) | Momentum w after |
@@ -1343,7 +1351,7 @@ Use this key to mark the workbook pages and the questions posed in the lesson. I
 | 3 | 1.2800 | 0.5120 | 0.9200 | 3.9800 | 0.3980 | 0.0620 |
 | 4 (extension) | 1.0240 | 0.4096 | 0.1240 | 3.7060 | 0.3706 | -0.3086 |
 
-Torch check: `[0.8, 0.64, 0.512, 0.4096]` and `[0.8, 0.46, 0.062, -0.3086]` (block P8). Accept the student's figures within 0.0001; the exact tables are from blocks P6 and P7.
+Torch check: `[0.8, 0.64, 0.512, 0.4096]` and `[0.8, 0.46, 0.062, -0.3086]`. Accept the student's figures within 0.0001. H1: SGD 0.512, momentum 0.062, momentum closer by about 8 times. H2: `v` starts at 0, so the first momentum step equals SGD's. H3: the fourth row above; momentum is negative, overshooting because `v = 3.706` is still carrying earlier steps.
 
 ### Page 2.2 — Helps or hurts
 
@@ -1370,29 +1378,56 @@ Accept any student table within ±0.005 on losses and ±0.5 points on accuracy; 
 
 ### Page 2.3 — The EMA on your own numbers
 
+**Part A** (values 5, 5, 5, 0, 0): averages **0.5000, 0.9500, 1.3550, 1.2195, 1.0976**. E1: the average started at 0, so step 1 is `0.9 x 0 + 0.1 x 5` (the fix is Week 3's topic). E2: it keeps 0.9 of its old self (0.9 x 1.355 = 1.2195); one zero cannot wipe the memory. **Part B** (share left): 0.900, 0.810, 0.729, 0.656, 0.590, 0.531, 0.478; E3: about 7 steps (accept 6, 7 or "about 7"); E4: 0.5, 0.25, 0.125, a shorter memory. **Part C** (E5, E6):
+
 No single answer. Check: (a) first average is `0.1 x first number` (because it started at 0); (b) each step is `0.9 x previous + 0.1 x new`; (c) the hand and code agree to four places. **Common wrong answer:** starting the average at the first value (which is a legitimate choice, but then their numbers differ from the guide's); accept it if they said so.
 
-### Page 2.4 — One helps, one hurts
+### Page 2.4 — Steady pushes add, flip-flops cancel
 
-Any of 0.01, 0.03, 0.1 for "helps"; 0.3 or 1.0 for "hurts". **The pair that matters most:** 0.03 (helps, 0.690 to 0.018) and 0.3 (hurts, 0.016 to 0.659).
+Steady `g = 1`: v = **1.000, 1.900, 2.710, 3.439**. Flip-flop `+1, -1, +1, -1`: v = **+1.000, -0.100, +0.910, -0.181**. T1: steady is bigger, 3.439 against 0.181, about **19 times** (accept "about 20" or "many times"). T2: across the valley = the flip-flop list; along the valley = the steady list; momentum speeds up the steady direction and dampens the flip-flop one. T3 full marks: *"Steady pushes add up and flip-flops cancel."* Partial: "it remembers past gradients" with no add/cancel.
 
-### Page 2.5 — Break it on purpose
+The pair of learning rates that matters most for Page 2.2 and the Self-Check (item 5): 0.03 (helps, 0.690 to 0.018) and 0.3 (hurts, 0.016 to 0.659).
 
-Any of the Clinic errors with the last line pasted and a fix. Typical:
+### Page 2.5 — The x10
 
-```text
-AttributeError: 'NoneType' object has no attribute 'norm'
-```
+X1: step 2 average form 0.3800, momentum form 3.8000, ratio 10 (step 1 ratio also 10). X2: **10**. X3: **0.3**. Momentum `lr = 0.03`: train 0.018, val 0.034, acc 98.6%. SGD `lr = 0.3`: train 0.016, val 0.041, acc 98.9%. X4: on a steady slope the velocity is ten times the average gradient, so the step is like plain SGD with a learning rate ten times larger. X5: true on a steady straight slope; false when the gradient flips, because momentum cancels the flip while a bigger `lr` amplifies it.
 
-Fix: call `.norm()` **after** `backward()` and **before** `zero_grad(set_to_none=True)`.
+### Page 2.6 — Break it on purpose
 
-### Page 2.6 — The x10
+Any of A–C with the last line pasted and a fix:
 
-Momentum `lr = 0.03`: train 0.018, val 0.034, acc 98.6%. SGD `lr = 0.3`: train 0.016, val 0.041, acc 98.9%. Explanation: on a steady slope the velocity is ten times the average gradient, so the step is like plain SGD with a learning rate ten times larger.
+| Mistake | Last line | Fix |
+|:--:|---|---|
+| A | `AttributeError: 'NoneType' object has no attribute 'norm'` | Call `.norm()` **after** `backward()` and **before** `zero_grad(set_to_none=True)`. |
+| B | `TypeError: params argument given to the optimizer should be an iterable of Tensors or dicts, but got torch.FloatTensor` | `SGD([w], ...)`. |
+| C | `ValueError: Invalid momentum value: -0.9` | `momentum=0.9`. |
 
-### Page 2.7 — The one sentence
+Silent D: prints `gradient length: <bound method Tensor.norm of tensor([6., 8.])>`; the missing piece is the brackets, `w.grad.norm()`. Silent E: stored gradient 2.0000, 3.6000, 4.4800 at steps 1-3 (w 0.8000, 0.4400, -0.0080); at step 2 the stored gradient is **3.6000** while the true slope `2w` at `w = 0.8` is **1.6000**, because each `backward()` adds (2.0 + 1.6). Fix: `opt.zero_grad(set_to_none=True)` just before `backward()`, inside the loop. Tidy habit: `set_to_none=False` leaves zeros; `True` leaves `None`.
 
-Full marks: *"It remembers a running average of its past steps (as a running total, ten times the average) and steps by that, so steady pushes add and flip-flops cancel."* Partial: "it remembers past gradients" with no "add / cancel".
+### Page 2.7 — The length of a gradient
+
+N1: sqrt(36 + 64) = **10**. N2: sqrt(25 + 144) = **13**. N3: gradient `[2, 4, 4]`, length sqrt(36) = **6**. N4: `torch.tensor([6, 8]).norm()` raises `RuntimeError: linalg.vector_norm: Expected a floating point or complex tensor as input. Got Long`; fix `torch.tensor([6.0, 8.0])`.
+
+### Page 2.8 — A second hand table (start `w = 2.0`)
+
+| step | SGD g | SGD w after | Mom g | v | step | Mom w after |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| 1 | 4.0000 | 1.6000 | 4.0000 | 4.0000 | 0.4000 | 1.6000 |
+| 2 | 3.2000 | 1.2800 | 3.2000 | 6.8000 | 0.6800 | 0.9200 |
+| 3 | 2.5600 | 1.0240 | 1.8400 | 7.9600 | 0.7960 | 0.1240 |
+| 4 | 2.0480 | 0.8192 | 0.2480 | 7.4120 | 0.7412 | -0.6172 |
+
+S1: step 4; SGD never goes negative. S2: torch gives SGD `[1.6, 1.28, 1.024, 0.8192]`, momentum `[1.6, 0.92, 0.124, -0.6172]`. S3: each SGD step multiplies `w` by 0.8; at `lr = 1.1` the factor is -1.2, not between 0 and 1, so each jump lands farther away (1.0, -1.2, 1.44, -1.728, ...).
+
+### Page 2.9 — Bug Log and the misspelt optimizer
+
+Any real entries are fine if the last line was copied and the fix works. Mistake F prints `typo: momentun   train 0.658  val 0.684  acc 46.9%` and `spelt right: momentum   train 0.018  val 0.034  acc 98.6%`. The typo raised no error: the harness's `else` branch built AdamW (an AdamW run at `lr = 0.03` prints the same 0.658 line).
+
+### Self-Check
+
+1: the one sentence below (Full marks). 2: `new average = 0.9 x old average + 0.1 x new value`. 3: SGD **0.512**, momentum **0.062**; momentum overshoots on step 4 (-0.3086). 4: **10**; SGD at `lr = 10 x L`. 5: numbers from the student's own run; typical: helped at 0.03, hurt at 0.3. 6: any honest guess; the answer is Week 3.
+
+**Self-Check 1, full marks:** *"It remembers a running average of its past steps (as a running total, ten times the average) and steps by that, so steady pushes add and flip-flops cancel."* Partial: "it remembers past gradients" with no "add / cancel".
 
 ### Answers to every question posed in the lesson
 

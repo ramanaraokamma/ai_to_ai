@@ -1460,7 +1460,7 @@ The workbook has six pages (21.1-21.6). The student does them in order, and writ
 
 This section holds the answers for the workbook pages, with the script that produced each number.
 
-> **The workbook pages 21.1-21.6 follow this order.** Where an answer is a number it comes from `fit.py`, `check.py`, `flops.py`, `dedup.py`, `card.py`, `key.py`, `key_seeds.py`, `key_lr.py` or `key_steps.py`, all run from the Prep Checklist. **A student's own run gives the same losses, knob counts and duplicate counts** (same Python version); only the seconds and the FLOP/s differ. (If the workbook author has reordered the pages, match by title.)
+> **The workbook pages 21.1-21.6 follow this order.** Where an answer is a number it comes from `fit.py`, `check.py`, `flops.py`, `dedup.py`, `card.py`, `key.py`, `key_seeds.py`, `key_lr.py` or `key_steps.py`, all run from the Prep Checklist. **A student's own run gives the same losses, knob counts and duplicate counts** (same Python version); only the seconds and the FLOP/s differ.
 
 ### Page 21.1 — The straight-line trick
 
@@ -1560,6 +1560,10 @@ Model sentence: *"md5 finds lines that are exactly the same; it cannot see a lin
 
 Measured (any four): the losses of five widths; the slope -0.126; the miss 15.8% (and 15.5-17.4% over three seeds); the learning-rate rows; the 3,000-step rows (every model better, miss still +17%); the FLOP/s on one laptop; `6ND` against seconds; 10.4% repeats; 5.2% leak. **Not measured** (any four): the cause of the miss; a 20-per-knob diet for width 256; any other depth, context or batch size; a learning rate tuned per width; a GPU; what the repeats or the leak do to the loss; near-duplicates; any real pretraining; any named model. **Not accepted:** a statement about "big models" or "AI" in general.
 
+### The workbook's own practice numbers (pages 21.1-21.7; re-run from its check files)
+
+Page 21.1: `y = 1000 / x^3` at `x` = 1, 10, 100 has slope **-3**; ten times `x` multiplies `y` by `0.1` for slope -1, `0.01` for -2, `0.316` for -0.5, `0.748` for -0.126. Page 21.2 A (a 300-step sweep, widths 16 to 128, losses `2.7459, 2.5256, 2.3303, 2.1188`): slope `-0.0745` by computer and `-0.0751` by ruler, ten times the knobs multiplies the loss by `0.842` (twice: `0.950`), the prediction for width 256 is `1.9215`. Page 21.3 A: that width-256 model measured `2.0093`, a miss of `+4.6%` (too hopeful), against `+15.8%` for the 1,500-step sweep. Page 21.4 A: `D = 3,072,000`; a 50,000-knob model is `9.216e11` operations, `0.9` s at 10^12 a second; Week 17's TinyGPT is `1.488e13`, `9.3` s predicted against 80 s measured (ratio about 8.6); the 7-billion-knob example is `5.88e22` operations, 1,864.5 years at 10^12, 1,165.3 years at 1.6 x 10^12, 4.7 years at the assumed 4 x 10^14. The workbook's own timed row (Part B) read rate `1.513e12` with ratios 6.6 (width 128) and 4.2 (width 256); yours will differ by 10-15%. Page 21.5 A: the 13-line practice log has 8 distinct lines, and after the length filter 8 lines, 4 distinct, 4 repeats = 50.0% (46.2% without the filter); the leaked line is `raise NotImplementedError`. Page 21.7: **A** fitting raw numbers gives `-0.460` at 1,704,149 knobs; **B** `TypeError: Strings must be encoded before hashing`; **C** `D` taken as the number of steps makes the ratios five or six digits (138,436 at width 16) instead of about 68; **D** no length filter makes the repeats `37.9%` instead of about 10%.
+
 ### Teacher-only: the map of wrong answers
 
 | Their number | Likely cause |
@@ -1594,7 +1598,7 @@ Use these as a prompt for conversation, not a certainty.
 | C for the width-128 model? | 8.46e12 |
 | At a trillion a second, how long? | 8.5 s |
 | Why might the gap shrink as the model grows? | Bigger tables run closer to the best speed; a larger share of the work is the big multiplies (believed, not tested) |
-| How many years for the 7-billion-knob model on this laptop? | About 1,150-1,200, depending on the measured rate |
+| How many years for the 7-billion-knob model on this laptop? | About 1,150-1,250, depending on the measured rate (1,165 at 1.6 x 10^12 a second, 1,232 at the workbook's 1.513 x 10^12) |
 | What does the validation loss hide? | A 5.2% overlap of lines with the training text (effect not measured) |
 | A test to find out? | Remove those lines from validation and score again (not run) |
 | What did we **not** do? | Find the cause; a 20-per-knob diet; tune the learning rate per width; train at scale; measure the effect of repeats or leak; near-duplicates; a GPU |

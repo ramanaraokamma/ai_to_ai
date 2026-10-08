@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
-  <title>Draw it here: from photo to numbers</title>
-  <desc>An empty framed drawing area with corner marks, for the student to draw the journey from a photo to a grid of numbers.</desc>
-  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
-<text x="400" y="42" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Draw it here</text><rect x="40" y="66" width="720" height="266" rx="12" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="8 6" stroke-linejoin="round"/><g stroke="#C42B8C" stroke-width="3" stroke-linecap="round"><path d="M60 66 H40 V86"/><path d="M740 66 H760 V86"/><path d="M60 332 H40 V312"/><path d="M740 332 H760 V312"/></g><text x="58" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">your drawing</text><text x="400" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Numbers as well as pictures, please. A grid with no numbers in it is not a picture yet.</text>
-  </g>
-</svg>

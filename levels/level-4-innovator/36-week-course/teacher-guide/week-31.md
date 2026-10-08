@@ -754,7 +754,7 @@ Student runs P12 and reads it aloud. The base column (`18 15 18 16 17 17`), full
 
 ### 🔑 Wrap & Assign (5 minutes)
 
-Each student says one sentence that contains a number of **tickets**. For example: *"LoRA trained 2,373 of 123,525 numbers, got 19 of 30 like full fine-tuning, and billing fell by one ticket of five."* Collect Page 31.3. Assign the homework.
+Each student says one sentence that contains a number of **tickets**. For example: *"LoRA trained 2,373 of 123,525 numbers, got 19 of 30 like full fine-tuning, and billing fell by one ticket of five."* Collect Pages 31.3 and 31.6. Assign the homework.
 
 ---
 
@@ -1027,7 +1027,7 @@ This section tells you how to mark the final workbook page and how to read what 
 
 ### The marking rules
 
-Mark against the four sentences on Page 31.3; each is worth one.
+Mark against the four model sentences under "Page 31.3 — model answer (seed 0)" (the workbook's Page 31.6 sentence is the same idea with the student's own numbers); each is worth one.
 
 1. *What is frozen and what is trained*, with the counts (`121,152` frozen; `2,373` trained; `1.92%`).
 2. *What step 0 is*, with the number (`0.0`) and the reason (`B` is zero).
@@ -1275,7 +1275,7 @@ biggest |A|, biggest |B| after 100 steps: 0.0 0.0
 
 Neither moves: the gradient of `A` is multiplied by `B` and the gradient of `B` by `A`.
 
-### Page 31.3 — model answer (seed 0)
+### Page 31.3 — model answer (seed 0; the board table, not the workbook's seed 1)
 
 | Category | n | Base | LoRA | Delta | Tickets moved |
 |---|:-:|:-:|:-:|:-:|:-:|
@@ -1287,6 +1287,16 @@ Neither moves: the gradient of `A` is multiplied by `B` and the gradient of `B` 
 | **overall** | 30 | 0.600 | 0.633 | +0.033 | +1 |
 
 Four model sentences: *(1) The encoder's 121,152 numbers are frozen; 2,373 (1.92%) are trained. (2) At step 0 the largest difference from the base is exactly 0.0 because B starts at zero. (3) Overall +1 ticket; technical +2; billing -1. (4) The billing drop is one ticket on five, five of six seeds flag some category, and the free rules still score 25/30, so this is a reason to look and not a verdict.*
+
+### Workbook pages 31.1 to 31.6 (TEACHER-ONLY copy of the workbook's ANSWERS page; every value re-run)
+
+- **Warm-Up.** Hidden words (about 20%), no labels; only the new head moves in the base model, the encoder is frozen; `B` is zero so the patch `x @ A.T @ B.T` adds exactly zero; the table by category, with tickets.
+- **Page 31.1.** A: rows `[2, 6, -4, 0]`, `[0, 0, 0, 0]`, `[1, 3, -2, 0]`, `[-1, -3, 2, 0]`; 16 cells, 8 stored, rank 1. B: rank 2, not buildable from one column and one row. C: `256/4096 = 0.0625`, `1024/4096 = 0.25`, `512/3072 = 0.1667`, `1000/10000 = 0.1`. D: patches `128, 256, 512, 1024, 2048, 4096, 8192`, shares `0.0312 ... 2.0`; stops saving at `r = 32`.
+- **Page 31.2.** Head 325. r = 8: 4,096 + 325 = 4,421 of 125,573 = **3.52%**. r = 2: 1,024 + 325 = 1,349 of 122,501 = **1.10%**. Step-0 gap exactly `0.0` at both ranks. (K1 Q3 is the same arithmetic at r = 4: 2,373 of 123,525.)
+- **Page 31.3 (the workbook runs seed 1).** A, practice table: deltas `+0.167, +0.000, +0.143, -0.200, -0.200`; tickets `+1, 0, +1, -1, -1`; contributions `+0.0333, 0, +0.0333, -0.0333, -0.0333`; overall `19 -> 19`; flagged billing and out_of_scope. B, seed 1: base 15/30, LoRA 18/30, overall `+0.100` (+3 tickets); greeting `+1`, refund `+1`, technical `+1`, billing `+1`, out_of_scope `-1` (the only flag, `0.600 -> 0.400`). C: of 8 changed tickets, 4 fixed, 1 broken (`how tall is Mount Kilimanjaro?` now `billing`), 3 still wrong. Seed 0 (board table) is +1 with billing flagged, so one seed cannot settle it; the six-seed run flags something in 5 of 6. Ship the rules (25/30).
+- **Page 31.4.** A: biggest `|B|` is `0.0` against `0.2126`; build the model first, then collect parameters, then the optimiser. B: `alias is b2?` is `True`; "before" and "after" both 18/30 (the real base is 15/30); fix `add_lora(copy.deepcopy(b2))`. C: `A` built `(64, 4)` instead of `(4, 64)`; loud, shapes `(48x64)` and `(4x64)`.
+- **Page 31.5.** 1. The trainable count (2,373 of 123,525, 1.92%), not the model. 2. The gradient of `A` is multiplied by `B` and that of `B` by `A`; both zero means no gradient. 3. Overall rose by one ticket while one category lost a ticket (one on five); the average would have hidden it. 4. Yes: one fixed and one broken ticket in the same row. 5. Tuning on the test set (Week 30).
+- **Page 31.6 and Self-Check.** The student's own words with their own run; for seed 0: 2,373 of 123,525 (1.92%), 19 of 30, overall +1 ticket, billing -1, rules 25.
 
 ### Answers to every question posed in the lesson
 

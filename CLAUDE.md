@@ -182,7 +182,11 @@ dependencies), and all 5,171 Python blocks executed with **no confirmed real bug
 Three tools live in `levels/` and are the way to check a change; all run from the repo root.
 
 ```bash
+levels/verify_all.sh [--quick]                             # every static gate below in one go (--quick skips text-fit)
 python3 levels/check_structure.py [level-N-name ...]       # 36x3 files present, links resolve, SVG contract, every fig embedded
+python3 levels/check_text_fit.py [--summary] [PATH ...]    # measured text fit in every figure (PIL + Helvetica/Menlo, x1.05)
+python3 levels/check_cross_book.py                         # workbook Answers numbers vs the same week's teacher key
+python3 levels/check_ladder.py                             # Level 2 code blocks: no construct before its ladder week
 python3 levels/polish_check.py FILE ...                    # content-safety gate for presentation edits (vs git HEAD)
 python3 levels/polish_check.py --hygiene-only FILE ...     # heading/fence/whitespace hygiene only, no baseline
 ```
@@ -194,9 +198,16 @@ it compares against `HEAD`. `levels/PRESENTATION-SPEC.md` is the binding brief f
 (invariants + the standard); its rules that matter most: no sentence that hints at an exercise's answer,
 no new claims, section purpose lines say what a section is *for* not what it will prove.
 
-All 432 weekly files pass `--hygiene-only` and `check_structure.py` passes for all four levels. Each level's
-figure audit (`figures/_generator/_gen_audit.py`; L2, L3, L4 only) prints 0 findings. Running the audit or a
-generator rewrites tracked `__pycache__` files in L2/L3 — restore them with `git checkout --`.
+`verify_all.sh` passes (2026-10-07): all 432 weekly files pass `--hygiene-only`, `check_structure.py` is OK for all four
+levels, each level's figure audit (`figures/_generator/_gen_audit.py`; L2, L3, L4 only) prints 0 findings, and
+`check_text_fit.py` reports 0 findings over 1,353 figures.
+
+`check_text_fit.py` measures each `<text>` with real glyph metrics and flags text leaving the viewBox, spilling out of the
+box it sits in, or overlapping other text, plus invalid transforms. It found 11 malformed `rotate(-90 x y x y)`
+transforms in 7 L3 figures (browsers ignore an invalid transform, so axis labels drew horizontal) and ~280 overflow/overlap
+cases, all fixed. Reviewed false positives are listed in its `ALLOW` table with the reason; add to it only after looking.
+It is still not a render: it cannot see colour contrast or visual crowding. `check_cross_book.py` coverage is ~0.96 for
+L1–L3 and ~0.86 for L4 (floor 0.60). `check_ladder.py` covers Level 2 only; its two accepted exceptions are documented in the script.
 
 **What every level has been through (2026-10).** (1) A *per-week subject-matter review*: one agent per week
 reading all three books for whether the teaching is *true* — recomputing hand arithmetic, reading code against
@@ -212,7 +223,12 @@ workbook's own Answers section; coverage of workbook answer values in the key ro
 diff for meaning drift (they reverted 78 hunks in total across the four levels: invented sentences, answer-leaking "Look at…" lines,
 dropped numbers). Depth is uneven — roughly half of the file reports describe a light pass, mostly because the
 files were already well structured. (4) A *close-reading verification*: polishers log in-passing observations;
-they were re-checked by recomputation (L1–L4: 410 notes → 76 real defects, 70 fixed).
+they were re-checked by recomputation (L1–L4: 410 notes → 76 real defects, 70 fixed). (5) For **L4**, a *teacher-key vs workbook
+audit* (the L1–L3 realignment had skipped it): the keys referred to pages and exercise labels the workbooks never shipped,
+in-class sheets named "Page N.x" collided with the workbook's real Page N.x (renamed Handout/Sheet), and the keys lacked
+answers for the workbook's own practice pages (added, each recomputed). Values were mostly right; real errors found: L4 W2
+(three steps vs four), W11 (0.0060 → 0.0063), W21 (1,150–1,200 → 1,150–1,250 years), W33 ("about a thousand" runs → ~440),
+W35 (2.03× → 2.02×), W36 (false "most marks" claim).
 
 ## Building or extending a level
 
@@ -233,25 +249,26 @@ Each level costs roughly **$900–1,200** (three to four days at the cap).
 
 ## Known state and gaps
 
-**Open decisions that need the owner** (agents correctly declined to guess):
-- **L4 Week 23** urgency labels for tickets t3 and t8: the written spec in `RULES` favours urgency 3 for
-  both (double charge = money at risk; locked out = blocked), so the lesson claim "the specification does
-  not decide" is wrong as written — reword it, or relabel the gold and refreeze with a new fingerprint.
-- **L3 Week 30** whether to rename the "Dark & Tannic" cluster (spans 3 books, a figure and code).
-- **L3 Weeks 35–36** latency figures come from mixed runs; pick one canonical run and re-render
-  fig-w35-5 / fig-w36-1/2/4/6.
-- **L1 Week 12** the best `mass_g` cut scores 11/12, not 10/12 (changes a ranking table, a scoreboard and
-  the bar figures); **Week 16** the worked-example stapler (74/15/11) gives away the card-6 surprise (99/1/0);
-  **Week 18** the "husky in the snow" single-background mechanism was only hedged, and Experiments 2–3 use
-  ~15 photos per class against a 40-per-class baseline.
-- **L4 plan decisions** ("Decisions the owner must make" in `level-4-innovator/36-week-course/README.md`)
-  are recommended-but-unconfirmed: learner age 15–16, `tokenizers` allowed in Week 20 only, the
-  "stand-in, not a model" banner on site pages.
+**Decisions taken on 2026-10-07** (applied by Claude on the owner's "do all of them"; reverse any you disagree with):
+- L4 Week 23: the written urgency scale gives 3 to both t3 (charged twice) and t8 (locked out), so the gold's 2 breaks the
+  scale; the lesson now says so in all three books (gold unchanged, fingerprint unchanged, the 93.8% ceiling unchanged).
+- L3 Week 30: cluster 1 renamed "Dark & Tannic" → **"Dark & Tart"** (the lesson itself calls it short of phenols; highest malic
+  acid 3.31 supports "sharp"). L3 Weeks 35–36: one canonical latency run (the Week 35 teacher-guide log: mean 0.26, p50 0.23,
+  p95 0.27, max 3.27 ms; Week 36 one-shot 0.40 ms / 729 ms, wall clock 769 ms); self-contained exercise datasets left alone.
+- L1 Week 12: the best `mass_g` rule scores 11/12 and ties `colour` (second boundary now 175). Week 16: the teacher hook uses a
+  fork, so the stapler stays a surprise for card 6. Week 18: the husky mechanism is hedged ("the tool suggested…"; Weeks 15,
+  19 and the Term 2 test too) and the 15-per-class sets are labelled as a deliberate size change.
+- L4 plan decisions (learner age 15–16, `tokenizers` in Week 20 only, stand-in banner on every L4 weekly page via
+  `stand_in_note` in `site-app/build.py`) are recorded as applied in the L4 README.
+
+**Still open:** L4 W30 key K5 uses a different ticket set from the workbook example; L4 W34 teacher homework item 5 cites
+Pages 34.1–34.3 (workbook runs to 34.6); L4 W4 figure `fig-w04-1` caption/alt describe a 0.003 peak and 50-step warm-up where
+the workbook uses 0.02 and 5 steps. Worth a glance in a browser after the text-fit pass: L1 fig-w26-1, w22-8, w36-6, w27-3 (viewBox grown to 500x744), L3 fig-w36-7 (viewBox 480→500), w25-7.
 
 **Known limits**
-- **No SVG has ever been visually rendered** (headless Chrome is blocked by the sandbox). Validity is
-  contract-checked only and the audit cannot see text overflowing a box. Each level has
-  `figures/_preview.html` for eyeballing. L4 has ~108 figures vs L3's ~365 — a lean first pass.
+- **No SVG has ever been visually rendered** (headless Chrome, Quick Look and `pip` are all blocked by the sandbox; no
+  rsvg/cairosvg). Validity and text fit are checked by script only. Roughly 120 L1–L3 figures were edited by text-fit agents
+  (widened boxes, split lines, moved labels) on that basis; open each level's `figures/_preview.html` in a browser to eyeball them. L4 has ~108 figures vs L3's ~365 — a lean first pass.
 - **L1 has no figure generator, and many L2/L3 figure fixes were applied to the `.svg` directly**, so
   re-running those generators would overwrite them. L4 figures are generated: change the module in
   `figures/_generator/` and run `python3 _gen_build.py` there (deterministic, byte-identical) — never
@@ -275,8 +292,8 @@ Each level costs roughly **$900–1,200** (three to four days at the cap).
   its "real output" comes from a separate 80-review corpus (threshold 0.50) not in the repo.
 - L3 uses ~19 constructs ahead of their syntax-ladder week (README "Used ahead of the ladder"); L4's
   README has "Ladder amendments" and a further list from the final audit.
-- There is no `.gitignore`, so generated output is committed: `site-app/dist/` (~2,000+ files; every rebuild
-  re-encrypts all pages under a new salt → ~800-file diffs, commit it separately) and 17 `__pycache__` files.
+- `.gitignore` excludes `site-app/dist/` (rebuilt by `build.py --clean`; `serve.sh` builds it when missing), `__pycache__/`, `*.pyc` and
+  `.DS_Store`; they were untracked on 2026-10-07 (still in git history).
 - `site/index.html` (the old single-file 4-level map) and each level's `36-week-course/site/index.html`
   are hand-authored pages that predate `site-app/` and are **not** generated by it. They can drift.
 

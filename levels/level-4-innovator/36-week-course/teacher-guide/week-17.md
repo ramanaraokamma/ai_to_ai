@@ -1270,11 +1270,15 @@ The workbook has six pages (17.1-17.6). The student does them in order, and writ
 
 This section holds the model answers and marking guidance for the six workbook pages, plus likely causes of wrong numbers.
 
-> **The workbook pages 17.1-17.6 follow this order.** Where an answer is a number it comes from `check_init.py`, `train.py` or `key.py`, all run from the Prep Checklist. **A student's own run uses their own seed; only the structure of the answer is fixed.**
+> **The workbook pages 17.1-17.7 follow this order.** The workbook uses its own practice numbers (a 16-character string, `d = 32`, a 600-step run); the class numbers are kept too, labelled *in class*. Both sets were run.
+>
+> Where an answer is a number it comes from `check_init.py`, `train.py` or `key.py`, all run from the Prep Checklist. **A student's own run uses their own seed; only the structure of the answer is fixed.**
 
 ### Page 17.1 — Windows and the shift
 
-For the text `the cat sat on` (14 characters, counting the spaces: `t h e _ c a t _ s a t _ o n`) with window length `T = 5`:
+**Workbook (`check171.py`):** the string is `a red fox ran up` (16 characters, `_` for a space), `T = 6`. Start 0: `x = a red_`, `y = _red_f`; start 7: `x = ox_ran`, `y = x_ran_`. Part B (prefix, true next): `a` to `_`, `a_` to `r`, `a_r` to `e`, `a_re` to `d`, `a_red` to `_`, `a_red_` to `f`. Part C: the highest start is `s = 9` (`y` is `text[10:16]`; `s = 10` would need a 17th character); valid starts `N - T = 10` (0 to 9), `torch.randint(10, (B,))`; a batch of 8 windows asks `8 x 6 =` **48** questions; `32 x 64 =` **2,048**; train `6,274 - 64 =` **6,210** starts, validation `698 - 64 =` **634**. Part D: start 9 gives `x = _ran_u`, `y = ran_up`; start 10 would slice `text[11:17]`, only 5 characters (program E).
+
+*In class:* for the text `the cat sat on` (14 characters, counting the spaces: `t h e _ c a t _ s a t _ o n`) with window length `T = 5`:
 
 | Start | `x` | `y` |
 |:--:|---|---|
@@ -1285,7 +1289,7 @@ Questions in a batch: **B x T** (32 x 64 = **2,048**). Valid starts for a text o
 
 ### Page 17.2 — Beat the Ladder
 
-Scoring is the student's own. The table of counts is in the Activity (mean **2.308** for the counts over the six cards). Acceptable: any mean, provided each line shows the probability given to the true letter and `-ln p` to three decimals. The quick table: `-ln(0.9) = 0.105`, `-ln(0.5) = 0.693`, `-ln(0.25) = 1.386`, `-ln(0.1) = 2.303`, `-ln(0.01) = 4.605`. The ladder: **3.332, 2.855, 2.033** and, after the run, **TinyGPT about 1.44 on held-out text (seed 0)**. *Common errors:* giving `0` to the true letter (the loss is infinite: `-ln 0`); using log base 10; not dividing the leftover among 25 letters. *What to draw out:* **six cards is a small sample**; a person who sees the whole sentence can beat a model that sees one letter.
+Scoring is the student's own. The table of counts is in the Activity (mean **2.308** for the counts over the six cards). Acceptable: any mean, provided each line shows the probability given to the true letter and `-ln p` to three decimals. The quick table: `-ln(0.9) = 0.105`, `-ln(0.5) = 0.693`, `-ln(0.25) = 1.386`, `-ln(0.1) = 2.303`, `-ln(0.01) = 4.605`. **Workbook Part A:** true `e` at `p = 0.6` scores **0.511**, true `a` at `0.2` scores **1.609**, true `u` at `(1 - 0.9) / 25 = 0.004` scores **5.521**; the second friend (`t` at 0.9, true `s`) has `p = 0.1 / 27 = 0.0037` and scores **5.598**; the third friend (`p = 0`) is infinitely wrong; the mean of the five in `check172.py` is **2.669**. Part C: the hidden letters are `p, l, o, i`; any mean is acceptable with the probability and `-ln p` shown. Part D: nobody knows (four cards is a small sample); a person who sees the whole phrase can beat a one-letter model. The ladder: **3.332, 2.855, 2.033** and, after the run, **TinyGPT about 1.44 on held-out text (seed 0)**. *Common errors:* giving `0` to the true letter (the loss is infinite: `-ln 0`); using log base 10; not dividing the leftover among 25 letters. *What to draw out:* **six cards is a small sample**; a person who sees the whole sentence can beat a model that sees one letter.
 
 ### Page 17.3 — Count the model
 
@@ -1299,6 +1303,8 @@ Scoring is the student's own. The table of counts is in the Activity (mean **2.3
 | output layer | 128 x 28 + 28 | **3,612** |
 | **all** | | **807,196** |
 
+**Workbook Part B (`d = 32`, 3 blocks, `check173.py`):** `28 x 32 =` **896**, `64 x 32 =` **2,048**, one block `12 x 1,024 + 320 =` **12,608**, three blocks **37,824**, final norm **64**, output layer **924**, all **41,756**. Part C: Ana **808,732** (+1,536, a bias on q, k, v in four blocks), Ben **806,044** (-1,152, nine layer norms counted as `d`), Cy **15,644** (blocks in a plain list: 3,584 + 8,192 + 256 + 3,612). Part D: `T = 32` gives **803,100**; `V = 40` gives **810,280**; the mask does not count.
+
 At a width of the student's choosing `d` with `L` blocks, `V = 28`, `T = 64`: `28d + 64d + L(12d^2 + 10d) + 2d + (28d + 28)`. Worked example `d = 64, L = 2`: 1,792 + 4,096 + 2 x 49,792 + 128 + 1,820 = **107,420**. `d = 16, L = 1`: 448 + 1,024 + 3,232 + 32 + 476 = **5,212**. (Both were checked by building `TinyGPT(28, d, 4, L, 64)` and summing `.numel()`; the code is not part of the shipped files.) The attention share is unchanged (`T` and the heads add no knobs in a block); the place table and the output layer grow with `T` and `V`. *Common errors:* forgetting the biases of the output layer (`+ 28`), the place table, or the final norm; counting the mask (36 per block at `T = 6`, 4,096 at `T = 64`, none counted).
 
 ### Page 17.4 — The first-loss check
@@ -1308,6 +1314,8 @@ At a width of the student's choosing `d` with `L` blocks, `V = 28`, `T = 64`: `2
 | `ln(28)` | 3.332 | 3.3322 |
 | `calm_head=False` | about 3.5 or higher; `FAIL` | **3.5025**, distance 0.1702, `FAIL` |
 | `calm_head=True` | within 0.05 | **3.3481**, distance 0.0159, `PASS` |
+
+**Workbook (`check174.py`, `d = 64`, 2 blocks, seed 0):** `calm_head=False` **3.5636** (distance 0.2314, `FAIL`); `calm_head=True` **3.3479** (0.0157, `PASS`); `calm_head=True` with `y = x` **3.3368** (0.0046, `PASS`: the check cannot see a wrong `y`). Part A: `ln 50 = 3.912`; `ln 2 = 0.693`; `ln 10 = 2.303`.
 
 Model answer, one sentence: *"A failed check means the first loss is further from `ln(28)` than 0.05; here it is 0.17, so the model starts a little over-confident, and it trains fine; a check that was off by a lot would make me look for a bug, and the check cannot see a wrong `y`."* The student's own seed gives a different third decimal; the distance should still be under 0.05 for the calm head. *Common error:* "FAIL means the model will not train".
 
@@ -1325,9 +1333,13 @@ What a complete write-up contains, for **their own** run (seed stated):
 | Gap | 0.540 | positive and clearly above 0.3 |
 | Real words (1,000 chars) | 0% · 17% · 60% | rising |
 
+Workbook extras: distance of the step-0 train loss from `ln 28` is **0.017** (3.349 against 3.3322); passes over the text **490**. Optional 600-step run (seed 0): final train 1.757, validation 1.800, gap **0.043**, smaller than 0.540, about 59 ms a step, 196 passes.
+
 The ranges in the last column are guidance for marking, not measured spreads. A student whose numbers fall outside them should look for: a different `STEPS`, a changed `lr`, a missing shift, or a changed model size, before accepting it.
 
 ### Page 17.6 — What the gap means
+
+**Workbook Part A (600-step run):** gaps **0.002, -0.024, 0.009, 0.027, 0.031, 0.043** at steps 0, 250, 300, 500, 599 and FINAL. 1: no, its validation loss is 1.800 against about 1.447; the gap is small because the model has not learned much. 2: a gap is a difference between two scores, and both can be bad. 3: no, at step 250 the difference is inside the noise of estimating each loss from 20 random batches.
 
 Model answer: *"The gap is validation loss minus training loss (1.447 - 0.907 = 0.540). It means the model does much better on characters it was trained on than on characters it has not seen, which is what memorising the training text looks like. It was about zero at step 300 and grew at each later checkpoint. It does not mean the model is useless, and it does not prove why; we did not run a version with more text, less training or dropout, which would be the test."*
 
@@ -1340,6 +1352,18 @@ Model answer: *"The gap is validation loss minus training loss (1.447 - 0.907 = 
 | One concrete next experiment | 1 |
 
 A write-up that says "the model is overfitting, so it is bad" or "the model understands English" loses the last two marks.
+
+### Page 17.7 — Break it on purpose (workbook Programs A-E)
+
+| Program | Loud / silent | Last line, or the printed tell | Fix |
+|:--:|:--:|---|---|
+| A | loud | `RuntimeError: Expected target size [4, 28], got [4, 6]` | `F.cross_entropy(scores.reshape(4 * 6, 28), targets.reshape(4 * 6))` |
+| B | **silent** | PyTorch sees **476**; meant **10,172** (blocks in a plain list) | `nn.ModuleList([...])` |
+| C | loud, after 8 characters | `IndexError: index out of range in self` (8-row position table asked for place 8) | pass `idx[:, -model.T:]` |
+| D | **silent** | training loss **0.044** at step 299; **6.585** on honest targets (`y = x`) | shift `y` one place; a training loss of 0.04 in 300 steps is the alarm |
+| E | loud, only if the top start is drawn | starts `[4, 3, 0, 2, 1, 2, 6, 3, 4, 5, 2, 0]`; `RuntimeError: stack expects each tensor to be equal size, but got [4] at entry 0 and [3] at entry 6` | `torch.randint(len(text) - T, (12,))` |
+
+Workbook warm-up: W1 `0.693`; W2 `12 x 100 + 10 x 10 = 1,300`; W3 the model must see the blocks inside it so `model.parameters()` reaches them; W4 no, a buffer is saved but is not a knob; W5 `ln 28 = 3.332`. Model Bug Log entries: `cross_entropy` shape (A), `AttributeError: cannot assign module before Module.__init__() call`, `IndexError` (C), `stack expects each tensor to be equal size` (E).
 
 ### Teacher-only: the map of wrong answers
 

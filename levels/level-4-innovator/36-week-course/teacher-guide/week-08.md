@@ -1223,14 +1223,16 @@ Five questions, orally, during the relay. Not graded; they inform the mastery sc
 
 This section lists the workbook pages to set and the evidence standard for the write-up.
 
-The workbook has six pages (8.1-8.6). The student does them in order, and writes **predictions before running anything**.
+The workbook has eight pages (8.1-8.8), a Warm-Up and a Self-Check. The student does them in order, and writes **predictions before running anything**.
 
-1. **8.1 Bags** — count the bag for two more pairs of sentences.
-2. **8.2 Embedding** — ids and shapes.
-3. **8.3 Unroll by hand** — seven hand unrolls (including the order swap), each checked with the code.
-4. **8.4 Shapes** — four shape questions, predicted first.
-5. **8.5 Count the knobs** — parameter counts, by hand then by code.
-6. **8.6 The build** — `my_order.py`: their own sentence pair (same words, different order, at least five words each), the bag view and the final states printed, and one sentence about what was and was **not** shown.
+1. **8.1 Bags** (B1-B5): count the bag for two pairs, make up a pair of their own, and work out 5 x 4 x 3 x 2 x 1.
+2. **8.2 Embedding** (E1-E7): ids, shapes, and which lines run or fail.
+3. **8.3 Unroll by hand**: seven hand unrolls (a to g, including the order swap d/e), each checked with the code, then the Sticky-Note Relay sheet (R1-R3).
+4. **8.4 Shapes** (S1-S6): six shape questions, predicted first, including the silent `batch_first` one.
+5. **8.5 Count the knobs** (K1-K4): parameter counts, by hand then by code.
+6. **8.6 The build**: `my_order.py`, the student's own sentence pair (same words, different order, at least five words each), the bag view and the final states printed, and one sentence about what was and was **not** shown.
+7. **8.7 Break it on purpose**: eight programs, two of them silent (5 and 6).
+8. **8.8 The Bug Log** and the Self-Check.
 
 **Every number in a write-up must have been printed by the student's own run in the last 24 hours**, with the seed stated.
 
@@ -1242,15 +1244,19 @@ Estimated time: 60-75 minutes.
 
 This section holds every answer for the workbook pages and for the questions posed in the lesson. It is teacher-only.
 
-> **The workbook pages 8.1-8.6 follow this order.** Where an answer is a number it comes from `key.py`, `hand.py`, `sticky.py` or `order.py`, all run from the Prep Checklist.
+> **The workbook pages 8.1-8.8 and the Self-Check follow this order.** Where an answer is a number it comes from `key.py`, `hand.py`, `sticky.py` or `order.py`, all run from the Prep Checklist.
+
+### Warm-Up
+
+W1 the baseline's number and its spread (and the row's spread). W2 no: 0.004 is less than 0.016. W3 `list`. W4 a cause is a guess until a check has been run. W5 any re-ordered pair, such as "the dog bit the postman" and "the postman bit the dog".
 
 ### Page 8.1 — Bags
 
-For the pair in class the bag over `[the, dog, bit, postman]` is `[2, 1, 1, 1]` for both. For any pair that is a reordering of the same words the bags are equal. A good "two more pairs" answer: `the cat chased the dog` / `the dog chased the cat` (bag over `[the, cat, chased, dog]` is `[2, 1, 1, 1]` for both). *Common error:* writing the word count instead of the list of counts. Also acceptable: a pair that is **not** a reordering has different bags, and the student can say so.
+For the pair in class the bag over `[the, dog, bit, postman]` is `[2, 1, 1, 1]` for both. For any pair that is a reordering of the same words the bags are equal. A good "two more pairs" answer: `the cat chased the dog` / `the dog chased the cat` (bag over `[the, cat, chased, dog]` is `[2, 1, 1, 1]` for both). B1: both bags are `[2, 1, 1, 1]` (same bag, different text). B2: `[2, 1, 1, 1]` against `[2, 2, 1, 0]`, not the same: a bag tells two sentences apart when the words or counts differ, not when they are re-ordered. B4: 5 x 4 x 3 x 2 x 1 = **120** (`bag.py` prints `orderings of 5 different words: 120`). *Common error:* writing the word count instead of the list of counts. Also acceptable: a pair that is **not** a reordering has different bags, and the student can say so.
 
 ### Page 8.2 — Embedding
 
-For `nn.Embedding(4, 3)` and `torch.tensor([0, 1, 2, 0, 3])`: the lookup has shape **(5, 3)**; the table has shape **(4, 3)** and 12 learnable numbers. The first and fourth rows are equal because they are the same id (0). *Errors:* floats (mistake 2); an id of 4 (mistake 3).
+For `nn.Embedding(4, 3)` and `torch.tensor([0, 1, 2, 0, 3])`: the lookup has shape **(5, 3)**; the table has shape **(4, 3)** and 12 learnable numbers. The first and fourth rows are equal because they are the same id (0). E3: yes, the same id gives the same row. E4: the ids stand for *the, dog, bit, the, postman*. E5: no, ids are labels on rows, not sizes. E6: (a) biggest id 5; (b) 12 learnable numbers; (c) shape (4, 2). E7: the first line runs; float ids fail (`Expected tensor for argument #1 'indices' to have one of the following scalar types: Long, Int`); id 4 fails (`IndexError: index out of range in self`). *Errors:* floats (mistake 2); an id of 4 (mistake 3).
 
 ### Page 8.3 — Unroll by hand (from `key.py`)
 
@@ -1269,7 +1275,20 @@ With `W_xh = 1.0`, `W_hh = 0.5`, `b = 0`, note starts at 0:
 Worked line for c, step 2: `1.0×1 + 0.5×0.7616 = 1.3808`, `tanh(1.3808) = 0.8811`. Step 3: `0 + 0.5×0.8811 = 0.4406`, `tanh(0.4406) = 0.4141`.
 
 *What to draw out:* **d against e** (the sum of inputs is 1 in both; the final notes are 0.3634 and 0.7616). **f**: with `W_hh = 0` the cell has no memory: the spike is gone after one step. **g**: with `W_hh = 1.0` the note fades more slowly (0.5126 after four steps against 0.0896). Do not generalise: we tested one input and two values.
+The `pre` values for part (a) are 1.0000, 0.3808, 0.1817, 0.0899; for (c) 1.0000, 1.3808, 0.4406, 0.2071. The note fades by about half each step (0.3634 / 0.7616 = 0.48, 0.1797 / 0.3634 = 0.49, 0.0896 / 0.1797 = 0.50); report it, do not explain it yet.
 *Common errors:* using `tanh` on a value already squashed (double `tanh`); forgetting the old note in step 2; rounding each step to 2 decimals.
+
+**The Sticky-Note Relay** (`the = 0.2`, `dog = 1.0`, `bit = -0.5`, `postman = -1.0`; pre = x + 0.5 x old note; note = tanh(pre)):
+
+| Sentence 1 | pre | note | Sentence 2 | pre | note |
+|---|:--:|:--:|---|:--:|:--:|
+| the | 0.2000 | 0.1974 | the | 0.2000 | 0.1974 |
+| dog | 1.0987 | 0.8000 | postman | -0.9013 | -0.7169 |
+| bit | -0.1000 | -0.0997 | bit | -0.8585 | -0.6955 |
+| the | 0.1502 | 0.1491 | the | -0.1477 | -0.1467 |
+| postman | -0.9255 | -0.7285 | dog | 0.9267 | 0.7290 |
+
+Final notes -0.7285 and 0.7290. R1: both totals are -0.1, so no, you could not say which sentence it was. R2: the last word (`postman` against `dog`); the first word is the same in both, so nothing can be told about it here. R3: *dog bit postman* has notes 0.7616, -0.1186, -0.7854 (final **-0.7854**); *postman bit dog* has notes -0.7616, -0.7068, 0.5694 (final **0.5694**).
 
 ### Page 8.4 — Shapes
 
@@ -1283,7 +1302,7 @@ For `nn.Embedding(10, 4)` on ids of shape (3, 6) followed by `nn.RNN(4, 6, batch
 | `h_n` | (1, 3, 6) |
 | `out[:, -1]` and `h_n[0]` | both (3, 6) and equal |
 
-(From `key.py`.) *Common error:* `h_n` as (3, 6) (that is `h_n[0]`), or `out` as (3, 4, 6) (confusing the feature size 4 with the time length).
+S1 also asks whether `out[:, -1]` equals `h_n[0]`: yes, both are the note after the last word of each sentence. S2: `h_n` is (1, 3, 7). S3: `out` (2, 4, 5), `h_n` (1, 2, 5). S4: without `batch_first=True`, `h_n` is (1, 4, 5): 4 summaries, not the 2 asked for, and nothing complains. S5: `out[-1]` is the last *sentence* (shape (4, 5)); the last word of each sentence is `out[:, -1]`, shape (2, 5), compared with `h_n[0]`. S6: the RNN takes in what the embedding hands over; the error says `input.size(-1) must be equal to input_size. Expected 4, got 3`. (From `key.py`.) *Common error:* `h_n` as (3, 6) (that is `h_n[0]`), or `out` as (3, 4, 6) (confusing the feature size 4 with the time length).
 
 ### Page 8.5 — Count the knobs
 
@@ -1294,7 +1313,7 @@ For `nn.Embedding(10, 4)` on ids of shape (3, 6) followed by `nn.RNN(4, 6, batch
 | both | **112** | 40 + 72 |
 | `nn.RNN(3, 4)` for 5, 50 or 500 words | **36** | 4×3 + 4×4 + 4 + 4; the number of words does not appear |
 
-(The last row is printed by `loop.py`.) *Common error:* leaving out a bias, or counting one bias not two.
+(The last row is printed by `loop.py`.) K1: 4 x 3 + 4 x 4 + 4 + 4 = 36, and the count does not change for 5 or 500 words. K2: `nn.RNN(2, 3)` has 21 knobs and `nn.Embedding(6, 2)` has 12. K3: the four shapes in `nn.RNN(1, 1)` are (1, 1), (1, 1), (1,), (1,); the two `(1, 1)` are `W_xh` and `W_hh`; set both biases to zero. K4: the same weights are applied at every step, so the count does not depend on the length. *Common error:* leaving out a bias, or counting one bias not two.
 
 ### Page 8.6 — The build (model answer and rubric)
 
@@ -1309,6 +1328,21 @@ Any pair of sentences with the same words in a different order and the same leng
 | A sentence that says **"the state can depend on order; the weights are untrained, so it means nothing yet"** (or equivalent) | 2 |
 
 A write-up that says "the RNN understands the sentences" loses the last two marks regardless of the rest. **Also accept** a student who notices that the step-1 distance is `0.0000` when both sentences start with the same word.
+
+### Page 8.7 — Break it on purpose
+
+- **Program 1.** Error: `AttributeError: 'tuple' object has no attribute 'shape'`; `rnn(x)` returns two things; fix `out, h_n = rnn(x)`.
+- **Program 2.** Error: `RuntimeError: Expected tensor for argument #1 'indices' to have one of the following scalar types: Long, Int; but got torch.FloatTensor instead (while checking arguments for embedding)`; fix whole-number ids or `.long()`.
+- **Program 3.** `IndexError: index out of range in self`; a 4-row table takes ids up to 3.
+- **Program 4.** `RuntimeError: input.size(-1) must be equal to input_size. Expected 4, got 3`; make the embedding's `d` and the RNN's first number equal.
+- **Program 5 (silent).** Prints `out shape: (2, 4, 5)   h_n shape: (1, 4, 5)` and `I asked for 2 summaries. I got 4`. Habit: say the expected `h_n` shape, (1, 2, 5), before running.
+- **Program 6 (silent).** Prints `rnn says  : [0.2581, -0.5419, -0.7645, -0.8069]` against the hand `[0.7616, 0.3634, 0.1797, 0.0896]`, and `leftover bias_hh_l0 is -0.7359`. Fix: `rnn.bias_hh_l0.data = torch.zeros(1)`. Habit: check typed weights against the hand calculation.
+- **Program 7.** The first line prints `(4, 5) (1, 2, 5)`; the last line is `RuntimeError: The size of tensor a (4) must match the size of tensor b (2) at non-singleton dimension 1`; fix `out[:, -1]` and compare with `h_n[0]`.
+- **Program 8.** `ValueError: expected sequence of length 5 at dim 1 (got 3)`; a tensor is a rectangle; the real fix (padding) is Week 12.
+
+### Bug Log and Self-Check
+
+Bug Log: any real entries with the last line copied and the fix working; the two no-traceback mistakes are Programs 5 and 6; the habit blanks are `h_n` and "the hand calculation". Self-Check: 1 a bag keeps the counts and throws the order away; 2 a table lookup by the word's number, no arithmetic; 3 the same weights are used at every step, so the knob count (36 for `nn.RNN(3, 4)`) has no number of words in it; 4 `x` (B, T, F), `out` (B, T, H), `h_n` (1, B, H), and `h_n` is the summary; 5 "the final state can depend on the order, but the weights are untrained, so it means nothing yet"; 6 a guess, with the experiment of rerunning (a) at `W_hh = 1.0` (0.5126 after four steps against 0.0896).
 
 ### Answers to every question posed in the lesson
 

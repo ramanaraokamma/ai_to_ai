@@ -1132,6 +1132,8 @@ Every number below comes from `key.py` (teacher-only) or from the files above.
 
 Carrying **three** places in the weights gives `[[0, 1], [0.670, 0.330], [0.751, 0.751]]` (the `sat` row of weights adds to `0.999`): accept it. Adding the rounded four-place weights `0.2483 + 0.5035` gives `0.7518`, which is what the reference module prints: accept `0.7517` and `0.7518`. The written sentence: *"the `cat` row moved most; hiding the future did it."* Accept any sentence that names a row, a number and a dial. **Check:** every number above the diagonal in the weights is 0; every output number is between 0 and 1 (the values are 0s and 1s).
 
+**Workbook Part C (two tokens, `Wv = [[2, 0], [0, 4]]`):** weights `a [1, 0]`, `b [0.3302, 0.6698]`; output `a [2.0, 0.0]`, `b [0.660, 2.679]` (the machine prints `0.6605` for the first number of row `b`; the pen with rounded weights gives `0.6604`).
+
 ### Page 15.2 — The spread table and the softmax before and after (from `scale.py` and `key.py`)
 
 | Question | Answer |
@@ -1143,6 +1145,9 @@ Carrying **three** places in the weights gives `[[0, 1], [0.670, 0.330], [0.751,
 | Softmax of `[1, -0.25, 0.125]` | `0.587, 0.168, 0.245` |
 | Loud river `1, 20, 3` | weights `0, 1, 0` (to six places), answer **50.0** |
 | H1: softmax of `[4, -2, 2]` | `0.8789, 0.0022, 0.1189` (exps `54.598, 0.135, 7.389`, total `62.123`); biggest/smallest **403 : 1** |
+| Workbook Part C widths `d` = 9, 36, 100 | raw spread `3.03, 5.99, 10.00`; after dividing `1.01, 1.00, 1.00` |
+| Workbook Part C: raw `[6, 0, -6]` against scaled `[1, 0, -1]` | `0.9975, 0.0025, 0.0` against `0.6652, 0.2447, 0.0900`; biggest/smallest `162754.8` against `7.39` |
+| Workbook Part A: spreads 5 and 12; 6 and 8 | **13**; **10** |
 | H1: softmax of `[1, -0.5, 0.5]` | `0.5465, 0.1220, 0.3315` (exps `2.7183, 0.6065, 1.6487`, total `4.9735`); biggest/smallest **4.5 : 1** |
 
 ### Page 15.3 — The four settings (from `dials.py`)
@@ -1154,7 +1159,7 @@ Carrying **three** places in the weights gives `[[0, 1], [0.670, 0.330], [0.751,
 | no | yes | `[0.000, 1.000]` · `[0.731, 0.269]` · `[0.788, 0.788]` |
 | **yes** | **yes** | **`[0.000, 1.000]` · `[0.670, 0.330]` · `[0.752, 0.752]`** (the module's) |
 
-Leak test: without the mask `[True, True, True]`; with it `[False, False, True]`. Wrong masks: `0` for `-inf` gives weights `[0.5035, 0.2483, 0.2483]` in row 1 (the future is heard); mask after the softmax gives row sums `0.4011, 0.5989, 1.0`.
+Workbook Part B (four words, scores row 2 `[0, 1]`, row 3 `[2, 0, 1]`): row 2 weights `[0.2689, 0.7311, 0, 0]`, row 3 `[0.6652, 0.0900, 0.2447, 0]`, row 1 `[1, 0, 0, 0]`, row 4 `0.25` each. Part C: the float mask gives `RuntimeError: masked_fill_ only supports boolean masks, but got mask with dtype float`; fix `mask == 0`. Leak test: without the mask `[True, True, True]`; with it `[False, False, True]`. Wrong masks: `0` for `-inf` gives weights `[0.5035, 0.2483, 0.2483]` in row 1 (the future is heard); mask after the softmax gives row sums `0.4011, 0.5989, 1.0`.
 
 ### Page 15.4 — The second pass with both dials (from `hw.py` and `key.py` H2)
 
@@ -1171,7 +1176,11 @@ Exps for `cat`: `2.0281, 1.0000` (total 3.0281). Exps for `sat`: `2.0281, 1.0000
 
 ### Page 15.5 — The shapes of heads, and the computer check
 
-For `B = 2, T = 5, d = 12, H = 3`: `dh = d // H = 4`; after `.view(B, T, H, dh)` the shape is `(2, 5, 3, 4)`; after `.transpose(1, 2)` it is `(2, 3, 5, 4)`; the score table `q @ k.transpose(-2, -1)` is `(2, 3, 5, 5)`; the three tables hold `3 x 12 x 12 = 432` knobs, and the divide is by `sqrt(4) = 2.0`, not `sqrt(12) = 3.464`. `hw.py` prints the weights and output of page 15.4, then the softmax of H1, then `H3 per-head tensor: (2, 3, 5, 4)  scores: (2, 3, 5, 5)`. The extension: `H = 6` gives `dh = 8 // 6`, which is not a whole number, so `view` fails for `d = 8` (Week 16's Mistake 9 shows that error; the habit is to check `H x dh = d`); for `d = 12` and `H = 6`, `dh = 2` and the knob count is unchanged at `432`.
+For `B = 2, T = 5, d = 12, H = 3`: `dh = d // H = 4`; after `.view(B, T, H, dh)` the shape is `(2, 5, 3, 4)`; after `.transpose(1, 2)` it is `(2, 3, 5, 4)`; the score table `q @ k.transpose(-2, -1)` is `(2, 3, 5, 5)`; the three tables hold `3 x 12 x 12 = 432` knobs, and the divide is by `sqrt(4) = 2.0`, not `sqrt(12) = 3.464`. `hw.py` prints the weights and output of page 15.4, then the softmax of H1, then `H3 per-head tensor: (2, 3, 5, 4)  scores: (2, 3, 5, 5)`. Workbook Part B (`B = 3, T = 4, d = 20, H = 5`): `dh = 4`, `(3, 4, 5, 4)`, `(3, 5, 4, 4)`, score table `(3, 5, 4, 4)`, `3 x 20 x 20 = 1200` knobs, divide by `2.0`. The extension: `H = 6` gives `dh = 8 // 6`, which is not a whole number, so `view` fails for `d = 8` (Week 16's Mistake 9 shows that error; the habit is to check `H x dh = d`); for `d = 12` and `H = 6`, `dh = 2` and the knob count is unchanged at `432`.
+
+### Page 15.6 — Break it on purpose (workbook bugs A-F)
+
+**A** (silent) future filled with `0`, weights `[0.5761, 0.2119, 0.2119]`, `[0.2119, 0.5761, 0.2119]`, `[0.3333, 0.3333, 0.3333]`; fix `float("-inf")`. **B** (silent) mask after the softmax, row sums `0.2447, 0.7881, 1.0`. **C** (silent, `nan`) `mask == 1` instead of `mask == 0`, the last row is all `nan`. **D** (silent) `view(B, H, T, dh)`: head 0 holds `[[1, 2], [3, 4]]` instead of `[[1, 2], [10, 20]]`. **E** (loud) last line `RuntimeError: The size of tensor a (3) must match the size of tensor b (6) at non-singleton dimension 3`; fix `torch.tril(torch.ones(T, T))`. **F** (silent) divided by `d = 16` instead of `sqrt(d) = 4`: spread `0.252`, average biggest weight `0.176`; fixed `1.007` and `0.371`.
 
 ### The teacher-only key: every number, and the reconciliation with the module
 

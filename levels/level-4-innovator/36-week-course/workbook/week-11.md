@@ -420,7 +420,7 @@ This checklist is for finding what has not stuck. Tick an item only if you can d
 
 ---
 
-**✂️ ANSWERS - keep this page folded until you have finished**
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 > Real printed outputs below. By-hand numbers are exact. Measured numbers may differ in the last digit on another CPU or PyTorch build; the exponents and the shape of each table will not. These answers are for the pages in **this workbook**.
 
@@ -466,7 +466,7 @@ With `f = sigmoid(2) = 0.8808`:
 | `c` | 0.8909 | 0.4454 | 0.2227 |
 | `c` as % of step 1 | 100.0 | 50.0 | 25.0 |
 
-It **halves every step**: exactly the Week 8 note (`100, 47.7, 23.6` ...) and the Week 10 compounding. **d.** `sigmoid(2)` (the bigger dial keeps more). **e.** **`0.006`**; `0.8808 ** 40 = 0.0062` (the lesson's block 1 printed `6.238e-03` for `sigmoid(2) ** 40`). Even a dial of `0.88` leaves very little after forty steps; you need `0.95` or more to keep a real share. *Common errors:* putting `tanh` around the **old** `c` inside the update (the update has no `tanh` there); adding `h` instead of `c`; reusing the step-1 `i` at step 2 (at `x = 0` it is `0.0759`).
+It **halves every step**: very close to the Week 8 note (`100, 47.7, 23.6` ...), which fell by a little more than half each step, and the Week 10 compounding. **d.** `sigmoid(2)` (the bigger dial keeps more). **e.** **`0.006`**; `0.8808 ** 40 = 0.0062` (the lesson's block 1 printed `6.238e-03` for `sigmoid(2) ** 40`). Even a dial of `0.88` leaves very little after forty steps; you need `0.95` or more to keep a real share. *Common errors:* putting `tanh` around the **old** `c` inside the update (the update has no `tanh` there); adding `h` instead of `c`; reusing the step-1 `i` at step 2 (at `x = 0` it is `0.0759`).
 
 ### Page 11.3
 
@@ -532,7 +532,7 @@ The measured grid (seed 0; letters from the cut-offs):
 | 2.0 (0.881) | 3.54e-01 | 3.10e-01 | 5.77e-02 | 3.37e-02 |
 | 4.0 (0.982) | 7.23e-01 | 8.46e-01 | 3.52e-01 | 1.61e-01 |
 
-**a.** The lstm row runs from `2.0e-09` to `7.1e-08`: about **35 times** between the smallest and biggest. The dial gap at seed 0 is `5.77e-02 / 9.83e-10`, about **`6e7`** (sixty million; accept "seven to eight orders"). **The dial is bigger**, by about six orders of magnitude more than the seed spread (a factor of about 35). **b.** **No.** The gru values (`1.4e-08, 1.5e-09, 8.9e-10`) and the lstm values (`2.0e-09, 7.1e-08, 6.8e-09`) overlap in range and the seeds disagree on which is bigger; with three seeds the gap is inside the spread. **c.** Bias 0 at `T = 80` is `3.92e-17` and bias 2 is `3.37e-02`: **15 powers of ten** apart (accept 15 to 16). At bias `4.0` the number does fall from `3.52e-01` to `1.61e-01`: a factor of **about 2**. **d.** `0.881 ** 40` is about `0.006` (`0.0060`; the lesson's `0.8808 ** 40` is `6.238e-03`). The table's `T = 40` entry for bias 2 is `5.77e-02`: **ten times bigger**, not the same, but both are enormously bigger than `1e-09`; the point is that a dial near 1 keeps something where one half keeps nothing. **e.** Model: *"With seed 0, moving the forget bias from 0 to 2 changed the `T = 40` ratio from `9.83e-10` to `5.77e-02`, far more than the spread between seeds; I did not train anything, so this is about the starting point, not learning."* **Also accept** "the dial opens the highway at the start". *Common errors:* "the LSTM is better than the GRU" from three seeds; "the LSTM learns longer sequences" (nothing was trained).
+**a.** The lstm row runs from `2.0e-09` to `7.1e-08`: about **35 times** between the smallest and biggest. The dial gap at seed 0 is `5.77e-02 / 9.83e-10`, about **`6e7`** (sixty million; accept "seven to eight orders"). **The dial is bigger**, by about six orders of magnitude more than the seed spread (a factor of about 35). **b.** **No.** The gru values (`1.4e-08, 1.5e-09, 8.9e-10`) and the lstm values (`2.0e-09, 7.1e-08, 6.8e-09`) overlap in range and the seeds disagree on which is bigger; with three seeds the gap is inside the spread. **c.** Bias 0 at `T = 80` is `3.92e-17` and bias 2 is `3.37e-02`: **15 powers of ten** apart (accept 15 to 16). At bias `4.0` the number does fall from `3.52e-01` to `1.61e-01`: a factor of **about 2**. **d.** `0.881 ** 40` is about `0.006` (`0.0063`; the lesson's `0.8808 ** 40` is `6.238e-03`). The table's `T = 40` entry for bias 2 is `5.77e-02`: **about nine times bigger**, not the same, but both are enormously bigger than `1e-09`; the point is that a dial near 1 keeps something where one half keeps nothing. **e.** Model: *"With seed 0, moving the forget bias from 0 to 2 changed the `T = 40` ratio from `9.83e-10` to `5.77e-02`, far more than the spread between seeds; I did not train anything, so this is about the starting point, not learning."* **Also accept** "the dial opens the highway at the start". *Common errors:* "the LSTM is better than the GRU" from three seeds; "the LSTM learns longer sequences" (nothing was trained).
 
 ### Page 11.6
 

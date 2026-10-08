@@ -1213,17 +1213,18 @@ Use these three quick checks to see what landed. None of them is a test.
 
 This section lists the homework pages, what each checks, and the one line to record in the Bug Log.
 
-**Workbook Week 1** (about 60–75 minutes). The workbook file is authored in a later stage; the pages it must carry, so that it matches today, are:
+**Workbook Week 1** (about 60–75 minutes). The workbook pages, in the order they appear in the file, are:
 
 | Page | Task | What it checks |
 |:--:|---|---|
-| 1.1 | **The six-curve grid.** Run the harness at the six learning rates. For each, write a label and one number. | Objective 3 |
+| Warm-Up | **W1–W5.** Five Level 3 habits: step size, falling loss, overfitting, split before scoring, what a seed buys. | Last year's vocabulary |
+| 1.3 | **The coin, by hand (M1, M2).** `-ln(p)` for the two-, three- and four-class guessers and a 90%-sure model; then 169/360 and 191/360 and the two constant-guesser accuracies. | `ln 2`; recognising 1.0986; reading accuracy honestly |
+| 1.1 | **The six-curve grid.** Run the harness at the six learning rates. For each, write a label and one number; then the epoch-0 trap for A and F, and a sketch. | Objective 3 |
 | 1.2 | **Predict, then run.** Predict whether `lr=3e-3` (the harness default) will look more like D or E. Then run it and say what you saw. | Prediction habit |
-| 1.3 | **The coin, by hand.** Compute `-ln(0.5)` on a calculator; then `-ln(1/3)` and say what a three-class guesser scores. | `ln 2`; recognising 1.0986 |
-| 1.4 | **The constant guesser.** Count class-0 and class-1 examples in `yva`. Compute 169/360 and 191/360 by hand. Say which learning rates in the sweep match them. | Reading accuracy honestly |
-| 1.5 | **Break the star.** Call `run` with a bare number. Paste the last line of the error into the Bug Log. Then fix it. | The `*`; reading an error |
+| 1.4 | **Name the knobs (K1–K3).** Read the signature of `run`, list the arguments after the `*`, say which one knob the week turned. | The ten knobs; the `*` |
+| 1.5 | **Break the star.** Parts 1–3: the toy call, mistakes 2, 3 and 5 on the real harness, and the `ModuleNotFoundError`. Paste last lines into the Bug Log. | The `*`; reading an error |
 | 1.6 | **Same seed, twice.** Run `lr=1e-3` twice and prove the two `train` lists are equal with `==`. Change `seed=` and say what changed. | Reproducibility |
-| 1.7 | **Self-check:** *In one sentence, why is 0.693 the loss of a guessing two-class model?* | The week's objective |
+| 1.7 | **The Bug Log** and the required line, then the **Self-Check** (four questions, including *why is 0.693 the loss of a guessing two-class model?*). | The week's objective |
 
 **The one line the student writes in the Bug Log tonight:** *"The same final loss can hide opposite stories. Look at the first epoch."*
 
@@ -1234,6 +1235,10 @@ This section lists the homework pages, what each checks, and the one line to rec
 ## 🔑 Answer Key
 
 Teacher only: answers and marking tolerances for every workbook page and every question posed in the lesson.
+
+### Warm-Up
+
+W1: `lr`. W2: it depends (good on validation data; falling training loss alone can be memorising). W3: overfitting. W4: so nothing learned from validation scores leaks into training choices. W5: the same random numbers every run, so changes can be compared one at a time.
 
 ### Page 1.1 — The six curves
 
@@ -1259,30 +1264,42 @@ F  lr=0.1                    train 0.693  val 0.702  acc  46.9%
 
 ### Page 1.2 — Predict `lr=3e-3`
 
-Either answer is accepted *if the student predicted before running*. The point is the habit. (For reference: the ledger's run of the Module's own copy of the harness at `adamw lr=0.003` gave train 0.007, val 0.037, acc 98.9%. `l4lib`'s copy can differ in the third decimal. **Do not mark a third-decimal difference wrong.** This guide did not re-run `3e-3` on `l4lib`; the student's own run is the number to use.)
+Either answer is accepted *if the student predicted before running*. The point is the habit. (For reference: `run("lr=0.003", lr=3e-3)` on `l4lib`, CPU, one thread, seed 0, prints train 0.007, val 0.037, acc 98.9%, the same as the workbook's answer page. Its train loss is below both D's and E's and its val loss sits between D's and E's. **Do not mark a third-decimal difference wrong.** The student's own run is the number to use.)
 
-### Page 1.3 — The coin by hand
+### Page 1.3 — The coin by hand (M1, M2)
 
-`-ln(0.5) = 0.693`; `-ln(1/3) = 1.0986`: a three-class guesser scores **1.099**. Ten classes: 2.3026 (extension). The pattern a strong student may state: **`ln` of the number of classes.**
+**M1.** `-ln(0.5)` = **0.6931**; `-ln(1/3)` = **1.0986**; `-ln(0.25)` = **1.3863**; `-ln(0.9)` = **0.1054**. M1(a): the first row. M1(b): full marks need the one-half reason (see Page 1.7). M1(c): `ln n`; ten classes **2.3026**.
 
-### Page 1.4 — The constant guesser
+**M2.** The constant guesser:
 
 | | Count | Share |
 |---|:--:|:--:|
 | Validation class 0 | 169 | 169/360 = **0.4694**, i.e. 46.9% |
 | Validation class 1 | 191 | 191/360 = **0.5306**, i.e. 53.1% |
 
-Run F's accuracy (46.9%) equals the share of class 0; run A's (53.1%) equals the share of class 1. Both are constant guessers. **Common wrong answer:** "F's accuracy is below 50%, so F is worse than guessing." It is not; see section 5.
+169 + 191 = 360. M2(a): answering "class 1" every time scores 53.1%. M2(b): "class 0" every time scores 46.9%.
+
+Run F's accuracy (46.9%) equals the share of class 0; run A's (53.1%) equals the share of class 1. Both are constant guessers. **Common wrong answer (M2(c)):** "F's accuracy is below 50%, so F is worse than guessing." It is not; see section 5.
+
+### Page 1.4 — Name the knobs (K1–K3)
+
+The signature is `run(tag, *, depth, lr, batch_size, epochs, optimizer, weight_decay, dropout, norm, residual, schedule, warmup_frac, clip, seed, verbose)`: **14** arguments after the `*`. Ten are knobs (`lr, batch_size, optimizer, weight_decay, dropout, norm, residual, schedule, warmup_frac, clip`); the four set-up arguments are `depth`, `epochs`, `seed` and `verbose`. Do not mark a student wrong for calling `depth` a knob; ask which they believe change how it learns and which are bookkeeping. K2: `lr`. K3: any honest guess is full marks.
 
 ### Page 1.5 — Break the star
 
-Any of the errors in the Clinic is acceptable, *if* the student pasted the **last line** (not the whole traceback) and fixed it. Typical:
+Any of the errors in the Clinic is acceptable, *if* the student pasted the **last line** (not the whole traceback) and fixed it. The workbook's answers:
+
+- **Part 1** (toy): `TypeError: run_toy() takes 0 positional arguments but 3 were given`. Fix: `run_toy(lr=0.001, batch_size=64, seed=0)`.
+- **Part 2, mistake 2** (`lrate=`): `TypeError: run() got an unexpected keyword argument 'lrate'`. The message does not give the right name; the signature does. Fix: `lr=`.
+- **Part 2, mistake 3** (bare number):
 
 ```text
 TypeError: run() takes 1 positional argument but 2 were given
 ```
 
-Fix: `run("label", lr=1e-3)`.
+Fix: `run("positional", lr=1e-3)`.
+- **Part 2, mistake 5** (no tag): `TypeError: run() missing 1 required positional argument: 'tag'`. Fix: `run("my label", lr=1e-3)`.
+- **Part 3** (file outside `36-week-course/`): `ModuleNotFoundError: No module named 'l4lib'`. Fix: `cd` into `36-week-course/`, not copy `l4lib`.
 
 ### Page 1.6 — Same seed, twice
 
@@ -1295,9 +1312,11 @@ final train loss, both runs: 0.018484133488247886 0.018484133488247886
 
 `a["train"] == b["train"]` prints `True`. With a different seed the final train loss changes (the three-seed block gave 0.018, 0.006, 0.008 for seeds 0, 1, 2). **Do not mark a student's number wrong if it is within 0.005**; if it is further out, ask whether `set_num_threads(1)` was called before the run, and whether the same PyTorch version is installed.
 
-### Page 1.7 — The one sentence
+### Page 1.7 — The one sentence (Self-Check 1, and the Bug Log)
 
 Full marks: *"A guessing two-class model gives each class probability 1/2; the surprise of a one-in-two event is -ln(0.5) = ln 2 = 0.693."* "0.693 is `ln 2`" without the one-half reason is partial.
+
+Self-Check 2: everything after the `*` must be passed by name. Self-Check 3: look at epoch 0 (A starts at 0.694 and never moves; F starts at 12.786); the accuracies also differ (53.1% against 46.9%). Self-Check 4 (Parking Lot): possibly the start of overfitting, **not checked** this week; a good thing to measure is the train-validation gap as epochs go on (Week 5).
 
 ### Answers to every question posed in the lesson
 

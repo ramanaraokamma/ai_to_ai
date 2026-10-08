@@ -18,7 +18,7 @@ This table is for planning: how long each sitting takes, what the week builds, a
 | **New syntax** | **None.** (Ladder row for Week 36 is empty: *the capstone uses only earlier constructs*.) Every construct in the blocks below is Weeks 1-35: `re.findall` / `re.sub` (W26, W33), f-strings with width and precision, `zip`, `sorted(...)[int(0.95 * len(x))]` (W34), `argparse` (Level 3, Week 34), `assert` (W30, W34), `json` (W29), `Path` (W26-W33) and `sweep` with `st_mtime` (W33). **Two stdlib calls are teacher-only and flagged where they appear:** `subprocess.run` (inside `sh`, which runs the student's terminal command and pastes its real output) and `os.utime` (Clinic D5, to backdate a file instead of waiting a month). |
 | **Dataset** | The student's own project. **Worked example throughout: "Ask My Notes"** over the course's 15 lab notes, for Asha, with the 25 frozen cases of Week 34 (fingerprint `082634635247`) and the system as Week 35 left it (`v1`, and `v1.1` = `v1` + the named-files write guard). Nothing downloads. No internet. |
 | **Model** | **None.** Every "model" is a scripted stand-in and is labelled: the generator that **copies one sentence** (`ExtractiveGenerator`, Week 25, behind `FakeClient`), the agent's **scripted plan** (`ScriptedModel`, Week 28), and the **gullible** planted-note follower (`GullibleModel`, Weeks 29 and 33). All dollars and milliseconds are **stand-in dollars and stand-in milliseconds**. Nothing measured this week says anything about a real model, and the card says so in its first lines. |
-| **Materials** | Sitting 1: laptop with Python 3, numpy, scikit-learn and the student's `capstone34/` folder from Week 35 · their `notes/` · **your paper from Week 34** (12 characters) with **the committed numbers from Week 35** written under them · a timer visible to both of you · Page 36.1 (the claim ledger) and Page 36.2 (the run-sheet) · printed copy of the card's ten headings. Sitting 2: **the printed paper** (one copy, single-sided) · the printed marking sheet (Page 36.3) · a pen · a calculator with a square-root key (airplane mode on) · scrap paper · a timer. |
+| **Materials** | Sitting 1: laptop with Python 3, numpy, scikit-learn and the student's `capstone34/` folder from Week 35 · their `notes/` · **your paper from Week 34** (12 characters) with **the committed numbers from Week 35** written under them · a timer visible to both of you · Page 36.1 (the claim ledger) and Page 36.2 (the run-sheet) · printed copy of the card's ten headings. Sitting 2: **the printed paper** (one copy, single-sided) · the printed marking sheet · a pen · a calculator with a square-root key (airplane mode on) · scrap paper · a timer. |
 | **Prep time** | 60 minutes the night before (the longest prep of the year: it builds the card, the demo and the paper's key) · 3 minutes on each day |
 | **Expected runtime of the code** | **No block is over 10 s; nothing needs a timing record.** On the teacher's laptop (an Apple-silicon Mac, CPU, numpy 1.26.4, torch 2.2.1, Python 3.10.10) the whole guide, Prep to Key, runs in **about 7 s**; the slowest blocks are P8 (about 1.7 s: `demo.py` runs the 25-case suite, the A1 attack 150 times, and starts Python for the demo and for `ask.py`), P2 (about 1.6 s: two terminal commands) and P3 (about 1 s: 300 seeded attack and happy-path runs). One eval run of 25 cases takes under a second. **Anything over 1 minute means something is wrong** (see Fallback). |
 
@@ -741,7 +741,7 @@ stand-in, not a model: nothing above says anything about how a real model behave
 1.7 s for ask.py and demo.py together
 ```
 
-**☐ 9. Print and read the paper (about 25 minutes).** Print **The Paper, in Full** (the Activity section below), single-sided, one copy, with **Tables E1 and E2** pasted into Section E from the output of Block K5 (do not re-generate them on the day: they are printed numbers). Print the marking sheet (Page 36.3). Read the Key once, in particular the **map of wrong answers** in Section A. **Do the arithmetic of Section D yourself on paper first** (it is in the Key as code, after you have tried it).
+**☐ 9. Print and read the paper (about 25 minutes).** Print **The Paper, in Full** (the Activity section below), single-sided, one copy, with **Tables E1 and E2** pasted into Section E from the output of Block K5 (do not re-generate them on the day: they are printed numbers). Print the marking sheet. Read the Key once, in particular the **map of wrong answers** in Section A. **Do the arithmetic of Section D yourself on paper first** (it is in the Key as code, after you have tried it).
 
 ### 3 minutes on the day
 
@@ -848,7 +848,7 @@ Then: *"Questions?"* Answer **only** about logistics. Turn the paper over. Start
 
 **If they ask you something during the paper.** Three legal replies: *"Read it again."* / *"Write what you do know."* / *"I can't help with that one — move on."* Never a fourth. **If they say "I don't get it":** *"That is useful. Write 'did not get it' next to it and go on."* (Marking rule 4.) **If they finish early** with more than 10 minutes left: *"Go back through, starting from the end, and check each one against your own working."* Do not let them leave. **If they are visibly upset:** stop the clock if you must. *"This is the X-ray, not the grade. Nobody here is keeping score but you."* If they cannot continue, write the time on the paper, collect it, and mark only what is there.
 
-**At 1:12: "Pens down."** Take the paper. Do not read it in front of them. Hand over the marking sheet (Page 36.3) and a pen of a *different colour*. Say the homework once and **do not discuss any question**: *"Tonight, with the sheet. Then we'll talk about the pattern."*
+**At 1:12: "Pens down."** Take the paper. Do not read it in front of them. Hand over the marking sheet and a pen of a *different colour*. Say the homework once and **do not discuss any question**: *"Tonight, with the sheet. Then we'll talk about the pattern."*
 
 ---
 
@@ -1536,12 +1536,12 @@ This section is for marking: the rules, the sheets and what each score tells you
 | **Honesty of the card** | 20 | Section 10: a real input, a real wrong output, a number with an `n`, a named person; the `MISSED` line; the *stand-in* label wherever a stand-in appears |
 | **Demo** | 10 | Five minutes by the clock; a failure shown on purpose with its mechanism in one sentence; the worst row read first; the one-line test answered with evidence |
 
-**2. The paper (Sitting 2): marked by the student first, in a different colour, against Page 36.3; then you re-mark only D and E.** Four rules, the same as Weeks 9, 18 and 27:
+**2. The paper (Sitting 2): marked by the student first, in a different colour, against the marking sheet; then you re-mark only D and E.** Four rules, the same as Weeks 9, 18 and 27:
 
 1. **Marks for working.** Section D: marks per step (the sheet says which). Section E: marks per criterion.
 2. **Right reason, wrong letter.** In A, a wrong letter with a correct reason written beside it earns the mark.
 3. **Consequential errors.** If D1(b) is wrong but D1(c) and (d) follow correctly from it, award them.
-4. **"Did not get it"** is recorded on the grid (Page 36.4) and is never scored below a blank.
+4. **"Did not get it"** is recorded on the grid and is never scored below a blank.
 
 ### Reading the pattern
 
@@ -1572,7 +1572,7 @@ This section is for marking: the rules, the sheets and what each score tells you
 
 ~60 minutes after both sittings. Four tasks:
 
-1. **Mark your paper (30 minutes).** At home, in the other colour, against Page 36.3. Give marks for working. Fill in the per-week grid (Page 36.4). **Circle at most two weeks** you would go back to first.
+1. **Mark your paper (30 minutes).** At home, in the other colour, against the marking sheet. Give marks for working. Fill in the per-week grid. **Circle at most two weeks** you would go back to first.
 2. **Final copy of the card (20 minutes).** Apply the teacher's comments. Re-run `check_card` and `quotes_hold`. The last line of the folder's `README.md` (or the card's first line) has the date and the fingerprint.
 3. **One sentence (5 minutes).** On the card's last page, in your own words: *the single most important thing a stranger should know before relying on this system.* One sentence; it must contain a number and an `n`.
 4. **Tidy up (5 minutes).** Delete your scratch traces (`logs/*_trace.jsonl` that you made for the demo, and `logs/trace_live.jsonl` if it exists); keep `eval/`, `src/`, `DESIGN.md`, `RED_TEAM.md`, `SYSTEM_CARD.md`, `ask.py`, `demo.py`, and the committed numbers.
@@ -1913,7 +1913,7 @@ score promise: 0.70 x 25 = 17.5 cases needed; v1 had 17 so one short
 
 Do not penalise a reply for choosing v2 **if** it counts the three lost cases, names the near-miss, and says what the card will tell Asha about it. The paper tests whether the answer is honest and numerical, not whether it ships the teacher's choice.
 
-### Page 36.3 — The marking sheet (print for the student after the paper)
+### The marking sheet (print for the student after the paper)
 
 One page, to be handed over after Sitting 2 and marked in a different colour.
 
@@ -1940,12 +1940,12 @@ E  (12)  (a) wobble 2.3, inside the noise (2)   (b) score promise MISSED by one 
          (d) a ship decision, the missed-promise sentence, who should not rely on it, what the tables cannot say (4)
 ```
 
-### Page 36.4 — The per-week grid (print with 36.3)
+### The per-week grid (print with the marking sheet)
 
 The grid tells the student which weeks lost them marks. Block K7 builds the marks per week (so the sheet adds up to `75`) and prints the grid the student fills in.
 
 ```python
-# grid.py - Week 36 block K7: every mark on the paper, with its question, section and week. The marks must add to 75, and the per-week grid (Page 36.4) is read off this list.
+# grid.py - Week 36 block K7: every mark on the paper, with its question, section and week. The marks must add to 75, and the per-week grid is read off this list.
 PAPER_MARKS = (
     [("A1", "W28", 1), ("A2", "W28", 1), ("A3", "W28", 1), ("A4", "W29", 1), ("A5", "W29", 1), ("A6", "W30", 1), ("A7", "W30", 1), ("A8", "W30", 1),
      ("A9", "W31", 1), ("A10", "W31", 1), ("A11", "W31", 1), ("A12", "W32", 1), ("A13", "W32", 1), ("A14", "W33", 1), ("A15", "W33", 1), ("A16", "W33", 1),
@@ -1987,6 +1987,17 @@ Nothing in this grid is a grade. It is where to look if you ever build on this.
 ```
 
 **Reading the grid.** A student who scores `50-62` has the term. **Weeks 28 and 29 carry `22` marks**: they are the ones to fix first, because the agent's fences and the triangular sum are used again in every later week. Weeks 26 and 34 are one and two marks: **never circle them**, one question is not a pattern. A student who is low everywhere but strong on Section E has the *judgement* and not the *recall*: give them the remediation as pencil work on the old pages, not as new reading.
+
+### Workbook Pages 36.1 to 36.7 (TEACHER-ONLY)
+
+The workbook's practice pages use their own invented numbers; the workbook's ANSWERS page holds the same values. Re-run from the workbook's blocks, which are plain Python and need no files.
+
+- **Page 36.1.** A (eight draft sentences, 25 frozen cases): 1 FIX (17 of 25, the command, a stand-in's score); 2 IN; 3 OUT; 4 FIX; 5 FIX/IN, still missing the control (the legitimate save, 50 of 50 after); 6 OUT; 7 FIX (8 of 9); 8 FIX (both numbers, 17 of 25 = 0.68 MISSED and 18 of 25 = 0.72, "fixed after seeing the score"). C: 0.89 to 0.78 on 9 cases; 0.889 to 0.888 on 900; wobble 0.94 and 9.43 cases (0.105 and 0.010 of the rate); `0.70 x 25 = 17.5`, so 18 passes were needed and 17 was one short. The worked-example ledger above is the model for B.
+- **Page 36.2.** Clock column 0:00, 0:30, 1:30, 2:30, 3:30, 4:30; total 300 s. The draft sheet gives segment 5 ninety seconds: starts 0:00, 0:30, 1:30, 2:30, 3:30, 5:00, total 330 s = 5:30. Trim the talking, never the failure.
+- **Page 36.3 (practice numbers).** A: 1,600; 7,200; $0.0144; 16 steps 27,200, 3.78 times (not doubled). B: p_o 0.75; A says pass 0.60, B 0.65; p_e 0.53; kappa 0.468. C: 0.750, 0.667, 0.500; gaps 0.150, 0.033, 0.000; weighted gap 0.07; the "said 0.9" bucket, over by 0.15. D: 2.05, 2.22, 3.02, bar 6.05; a gap of 3 is inside the noise.
+- **Page 36.4 (two versions, 20 invented cases).** Wobbles 2.13 and 1.79, combined 2.78, bar 5.57, gap 3: inside the noise. Promise `0.75 x 20 = 15`: v1 passed 13, short by 2, MISSED; v3 passed 16, headroom 1, kept, a thin margin. Lookup down 1, sums up 2, refusals up 2: each a hint, not a finding, until the named cases and a mechanism are shown. The overall is 0.8 (counts added), never 0.771 (an average of rates).
+- **Page 36.5.** A: no traceback, an argparse usage line; run a cold start before being watched. B: 0.68 MISSED and 0.72 kept; the reader of the promise table is misled; print both and "fixed after seeing the score". C: the 40-day-old file is still there; nothing calls `sweep`; write "deleted by hand". D: `quote still true: False`; re-ask, never retype.
+- **Page 36.6 and 36.7.** Stop and Think 1 to 8 and the Bug Log rules are in the workbook's ANSWERS and agree with the Concept sections above; the "circle Weeks 28 and 29 first, never Weeks 26 or 34 on one question" advice is the per-week grid's (28 and 29 carry 22 of the 75 marks).
 
 ### Answers to every question posed in the lesson
 

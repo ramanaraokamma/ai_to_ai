@@ -1113,7 +1113,7 @@ Three checks, all oral or on paper, none requiring a computer. Do them at the en
 
 ## 📤 Homework to Assign
 
-~60–75 minutes. Workbook pages 6.1–6.5, plus the build below.
+~60–75 minutes. Workbook pages 6.1–6.6 (6.3 and 6.4 are paper-and-calculator pages, 6.5 is the error-reading page), plus the build below.
 
 **The build.** The student plots the first-block gradient length against depth (2, 8, 16, 32) for plain and residual stacks, on a log vertical axis, using **five seeds and the median** of each cell. They finish `lab6.py` first. Teacher reference:
 
@@ -1167,7 +1167,7 @@ This section holds the answers to every workbook page, page by page. Keep it awa
 
 Parameter counts (from `key.py`): **`LayerNorm(64)` 128 parameters, no stored numbers; `BatchNorm1d(64)` 128 parameters and 129 stored numbers; `Identity` 0.**
 
-### Page 6.2 — Predict the output (answered in pen, in class)
+### Page 6.2 — Predict the output
 
 ```python
 # key.py  -- every number in the answer key, computed
@@ -1223,24 +1223,33 @@ print("    Identity: parameters", sum(p.numel() for p in nn.Identity().parameter
     Identity: parameters 0
 ```
 
-1. `nn.BatchNorm1d(4)` in train mode on **one** row → **`ValueError`** (more than one value per channel).
-2. The same layer in `eval()` mode on one row → **a result** (it uses the running statistics, which at the start are mean 0, variance 1; so it returns very nearly the input).
-3. `nn.LayerNorm(4)` on `[5, 5, 5, 5]` → **`[0, 0, 0, 0]`** (every distance is zero; the `eps` stops the division by zero — see 6.3c above).
-4. Gradient `[6, 8]` with `max_norm=5` → returns **10.0**; the gradient becomes **`[3.0, 4.0]`** (6.2c above).
-5. Gradient `[1, 2]` with `max_norm=5` → **unchanged**; returns **2.236** (6.2d above).
+The workbook's six questions, in its order:
+
+- **P1.** `nn.BatchNorm1d(4)` in train mode on **one** row raises `ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 4])`.
+- **P2.** The same layer after `bn.eval()`: no error; very nearly the input, `[2.0, 4.0, 6.0, 8.0]` (stored mean 0, variance 1).
+- **P3.** `nn.LayerNorm(4)` on `[5, 5, 5, 5]`: every distance 0, spread 0, `eps` stops the division by zero, output `[0.0, 0.0, 0.0, 0.0]`.
+- **P4.** Gradient `[6, 8]`, `max_norm=5`: length `sqrt(100)` = 10, prints `10.0`, gradient becomes `[3.0, 4.0]` (new length 5).
+- **P5.** Gradient `[1, 2]`: length `sqrt(5)` = 2.236, not over 5, gradient unchanged, prints `2.236`.
+- **P6.** `nn.Identity()`; 0 numbers.
 
 ### Page 6.3 — Normalise by hand
 
-- **a.** `[0, 0, 6, 6]` → mean 3, distances `−3, −3, 3, 3`, spread 3 → **`[−1, −1, 1, 1]`**.
-- **b.** `[1, 3, 5, 7]` → **`[−1.342, −0.447, 0.447, 1.342]`**, the same as `[2, 4, 6, 8]`: adding the same number to every entry leaves the answer unchanged.
-- **c.** `[5, 5, 5, 5]` → **`[0, 0, 0, 0]`** (spread zero: only epsilon keeps the division legal). Accept "undefined" with a note that torch returns zeros.
-- **d.** Batch norm on the pair of examples `[1, 5]` and `[3, 9]` → **`[[−1, −1], [1, 1]]`**. *Different numbers, same answer: the collapse.*
+- **Worked example.** `[4, 8]` gives `[−1, 1]`.
+- **(a)** `[0, 0, 6, 6]` → mean 3, distances `−3, −3, 3, 3`, spread 3 → **`[−1, −1, 1, 1]`**.
+- **(b)** `[1, 3, 5, 7]` → mean 4, distances `−3, −1, 1, 3`, spread `sqrt(5)` = 2.236 → **`[−1.342, −0.447, 0.447, 1.342]`**, the same as `[2, 4, 6, 8]`: adding the same number to every entry leaves the answer unchanged.
+- **(c)** `[20, 40, 60, 80]` gives the same `[−1.342, −0.447, 0.447, 1.342]`: every distance and the spread both grow ten times.
+- **(d)** `[5, 5, 5, 5]` → distances 0, spread 0; `0 / 0` is undefined; torch prints **`[0, 0, 0, 0]`** (epsilon keeps the division legal). Accept "undefined" with a note that torch returns zeros.
+- **(e)** Batch norm on the pair `[1, 5]` and `[3, 9]`: feature 1 has mean 2, distances `−1, 1`, spread 1; feature 2 has mean 7, distances `−2, 2`, spread 2; both give `−1, 1`, so **A = [−1, −1], B = [1, 1]**. The second pair, A = `[10, 0]` and B = `[20, 4]`, gives the same **A = [−1, −1], B = [1, 1]**: the collapse. Layer norm for A needs only A, so A's answer does not depend on who else is in the batch.
 
 ### Page 6.4 — The slope of a sum, and the depth table
 
-Slopes (6.4 lines above): one block of slope `0.3` → plain `0.3`, residual **1.3**; slopes `0.5, 0.5, 0.2` → plain **0.05**, residual **2.7**. Method accepted: nudge by `0.001` and divide. **Full credit** for the sentence "the road adds 1 to each slope, so the product cannot shrink to nothing".
+**(a)** For `f(x) = 0.1x²` at `x = 3`: change 0.0006001, slope about **0.6**; `x` has slope **1.0**; `x + f(x)` goes from 3.9 to 3.9016001, slope about **1.6**. Pattern: the slope of a sum is the sum of the slopes (1 plus whatever `f` does). For `f = −0.5x` the slope of `f` is −0.5 and of `x + f` is **0.5**; the road is still open (positive, but shrunk).
 
-The **depth table** is the one printed in 🎲 The Activity, In Full. Accept: any gradient within a factor of two of the printed one *at the student's own seed*, and accuracies within about two points. **The three required observations:** (i) the plain column collapses (`7e-02` to `1e-18`) and is stuck at 46.9% from 16 blocks; (ii) the residual column's gradient *grows* (to about `3e+02` at 32 blocks, seed 0) and trains at every depth; (iii) layer norm alone has a healthy gradient and does **not** train at 16 or 32 blocks, unexplained.
+**(b)** Slopes `0.5, 0.5, 0.2`: plain **0.05**, residual **2.7**; ten blocks of slope 0.5: plain **0.000977**, residual **57.665**; five blocks of slope 0: plain **0**, residual **1**. Plain shrinks to nothing, the residual does not shrink (here it grows) and reaches block 1. The warning sentence: each block gives `1 + slope`, and a number over 1 multiplied again and again grows; the road keeps the signal from vanishing, it does not keep it near 1. Method accepted: nudge by `0.001` and divide. **Full credit** for "the road adds 1 to each slope, so the product cannot shrink to nothing".
+
+**(c)** `7.01e-02` = 0.0701; `3.23e-05` = 0.0000323; 0.0000000012 = `1.2e-09`; `3.00e+02` = 300. `7.01e-02` is bigger, by about 16 powers of ten.
+
+**(d)** The depth table is the one printed in 🎲 The Activity, In Full. Accept any gradient within a factor of two of the printed one *at the student's own seed*, and accuracies within about two points. **Four** coin cells (46.9%): plain and layer-norm-only at depths 16 and 32; the gradient warned about the two plain ones and did not warn about the two layer-norm-only ones. **The three required observations:** (i) the plain column collapses (`7e-02` to `1e-18`) and is stuck at 46.9% from 16 blocks; (ii) the residual column's gradient *grows* (to about `3e+02` at 32 blocks, seed 0) and trains at every depth; (iii) layer norm alone has a healthy gradient and does **not** train at 16 or 32 blocks, unexplained. Five seeds, residual, 32 blocks: **3.00e+02, 2.02e+01, 6.23e+01, 7.47e+01, 2.63e+01**; not near each other, so one seed is not enough to quote this cell. The 64-block question is unanswered: nobody has run it.
 
 ### Page 6.5 — Read the message
 
@@ -1249,8 +1258,17 @@ The **depth table** is the one printed in 🎲 The Activity, In Full. Accept: an
 | `ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 4])` | Batch norm in train mode got one example. | Batch of ≥ 2; or `model.eval()`; or layer norm. |
 | `RuntimeError: Given normalized_shape=[8], expected input with shape [*, 8], but got input of size[3, 4]` | The norm layer was built for 8 features and the data has 4. | `nn.LayerNorm(4)`. |
 | `TypeError: clip_grad_norm_() missing 1 required positional argument: 'max_norm'` | The limit was not given. | Add `max_norm=1.0`. |
+| `TypeError: 'NoneType' object is not callable` | A layer in the chain is `None`. | `nn.Identity()`. |
 
 **Marking note for the batch-norm question:** a student who writes "batch norm has no running average" is *half* right; the running statistics exist and are what `eval()` uses. Give the mark for any of the three fixes with the right reason, not for "use a bigger batch" without the reason (this is the same standard Assessment 1's Bug C3 uses).
+
+**F1.** `nn.LayerNorm(8)` on data of shape `[3, 4]` fails: give `LayerNorm` the size of the last dimension, here 4. **F2.** Building `nn.Sequential(None, nn.Linear(4, 4))` does not complain; calling the network does (`TypeError: 'NoneType' object is not callable`); use `nn.Identity()`.
+
+**S1.** The clip ran before `backward()`, so there was no gradient: it printed `length returned: 0.0` (after `backward()` the same net measures **1.323**). The tell-tale is the returned length of exactly 0.0; fix by clipping after `loss.backward()`. **S2.** Forgot `model.eval()` (and `torch.no_grad()`): in train mode batch norm used only four examples (loss 2.002 in train mode, 0.014 in eval mode). **S3.** Order: `zero_grad` (1), `backward` (2), `clip_grad_norm_` (3), `opt.step()` (4); clipping after the step is too late (loss on the next batch 3741 against 10.5; see Silent mistake 3).
+
+### Page 6.6 and Self-Check
+
+Bug Log: any real entries with the last line copied and the fix working. Sentence: "A deep plain stack that sits at 0.693 is not necessarily **broken**, it may be **a vanishing gradient**." The silent bugs are S1 (the number 0.0), S2 (the loss in `eval()` mode) and S3 (the loss on the next batch). Self-Check: 1 row, column; 2 `ValueError`, returns a result, running statistics; 3 1, the slope of `f`; 4 under, multiplied; 5 no, at 32 blocks the gradient grew to 20 to 300 over five seeds; 6 before the clip, after `backward()` and before `opt.step()`; 7 layer norm alone at depth 16 or 32 (gradient 2.01 or 7.90, accuracy 46.9%).
 
 ### Mastery check — the table in one sentence
 

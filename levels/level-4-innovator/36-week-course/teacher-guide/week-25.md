@@ -1039,6 +1039,10 @@ Full marks for the three sentences if: (1) says the word table scores `0.000` on
 
 `cosine(A, D)` for `D = [3, 1, 0]`: `A . D = 3`, `|A| = 3.162`, `|D| = 3.162`, cosine `3/10 = 0.300`. `cos(C, D)`: `C . D = 14`, `|C| = 4.472`, `|D| = 3.162`, `14/14.142 = 0.990`. Nearest pair: `C` and `D`. (Shown in the block `key4` below.)
 
+### The workbook's own practice numbers (pages 25.1-25.3 and 25.6; the key above is the lesson's class example)
+
+Page 25.1 uses `P = [2, 1, 2]`, `Q = [4, 2, 4]`, `R = [1, 2, 2]`, `S = [0, 3, 4]`: `P . R = 8`; lengths `3`, `3`, `5`; `cos(P, R) = 8/9 = 0.889`; `cos(P, Q) = 1.000`; `cos(R, S) = 14/15 = 0.933`; `cos(P, S) = 11/15 = 0.733`. By cosine `R` is nearer to `P` (`0.889` against `0.733`) but by raw dot `S` is bigger (`11` against `8`), because `S` is longer. Page 25.2 uses `q = [2, 1, 2]` (length 3) and notes `[6, 8, 0]`, `[0, 5, 12]`, `[4, 4, 2]`, `[1, 0, 1]`: raw dots `20, 29, 16, 4`; lengths `10, 13, 6, 1.414`; cosines `0.667, 0.744, 0.889, 0.943`. Raw-dot winner D1, cosine winner D3, and D3 (the shortest) is last by raw dot and first by cosine; normalised D3 is `[0.707, 0, 0.707]`, whose dot with `q` is `0.943 x 3 = 2.828`. Page 25.3 Part 1: `cats` gives ` ca`, `cat`, `ats`, `ts ` (4); ` cats` vs ` cat` share 2 pieces, cosine `2 / (sqrt(3) x sqrt(4)) = 0.577`; `colour` (6 pieces) and `color` (5) share 3, cosine `3 / sqrt(30) = 0.548`. Page 25.6 (the workbook's three bugs): **A** a missing `normalize` gives self-cosines `0.48, 0.77, 0.94, 0.93` instead of `1.000`; **B** `fit_transform` on a question gives `ValueError: X has 65 features, but TruncatedSVD is expecting 387 features as input` (a question gets `transform` only); **C** an index and an encoder built from different texts raise no error and score `2 of 4` against `4 of 4`.
+
 ### The teacher-only key: every number, and the two bits of reconciliation with the module
 
 ```python

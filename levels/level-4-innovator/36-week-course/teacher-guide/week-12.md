@@ -1192,7 +1192,7 @@ This section is the marking reference for the workbook pages and for every quest
 | `bex` | `3, 6, 25, 1, 0, 0, 0, 0` | `0, 3, 6, 25, 1, 0, 0, 0` |
 | `kaia` | `12, 2, 10, 2, 1, 0, 0, 0` | `0, 12, 2, 10, 2, 1, 0, 0` |
 
-*Marking:* each name is 2 marks (targets right, inputs right). *Common errors:* forgetting EOS (a `1` after the last letter); the START token put in the targets; the inputs **not** shifted (the targets copied). The letters' ids are read from the student's printed `aarav`/`anika` table in block 1 and extended with `encode` or `STOI` (block 1 imports both): accept any ids the student checked with code.
+*Marking:* each name is 2 marks (targets right, inputs right). *Common errors:* forgetting EOS (a `1` after the last letter); the START token put in the targets; the inputs **not** shifted (the targets copied). The letters' ids are read from the student's printed `aarav`/`anika` table in block 1 and extended with `encode` or `STOI` (block 1 imports both): accept any ids the student checked with code. **Workbook parts c-e:** generating `o, r, a` gives the inputs `0, 16, 19, 2` (START, then the model's own picks); the `uma` inputs were all known before any model ran, but the input at step 2 of generating did not exist until step 1 had run; the true previous letter is **training**, the model's own last pick is **generating**.
 
 ### Page 12.2 — How much of a batch is padding (from `K1`)
 
@@ -1214,7 +1214,7 @@ Probabilities `0.4, 0.5, 0.25, 0.9`:
 | 3 | 0.25 | 1.3863 |
 | 4 | 0.9 | 0.1054 |
 
-Average over the four real steps: **`0.7753`**. With four padding steps the model is 99% sure of, averaged in as well: **`0.3927`**. *What to draw out:* the second number is about half of the first and the model learned nothing more about names. *Marking:* four surprises (2 marks), the average (1), the padding-counted number (1), one sentence (1). Accept any value within `0.001`.
+Average over the four real steps: **`0.7753`**. With four padding steps the model is 99% sure of, averaged in as well: **`0.3927`**. *What to draw out:* the second number is about half of the first and the model learned nothing more about names. *Marking:* four surprises (2 marks), the average (1), the padding-counted number (1), one sentence (1). Accept any value within `0.001`. **Workbook parts:** b: one blank costs `-ln 0.99 = 0.0101`, four cost `0.0402`, and `(3.1011 + 0.0402) / 8 = 0.3927`. c: about half of (a); the model did not improve, four easy positions were averaged in. d: `ignore_index` removes the blank rows from the sum and from the count. e: first check that both averaged the same positions; here `0.39` is the flattered number.
 
 ### Page 12.4 — Train against validation (from block 4)
 
@@ -1228,7 +1228,7 @@ Average over the four real steps: **`0.7753`**. With four padding steps the mode
 | 600 | 0.921 | 3.314 |
 | 800 | 0.906 | 3.417 |
 
-Model sentences: *"Train fell from 3.346 to 0.906 while validation fell to 2.308 at step 100 and then rose to 3.417, above the 3.332 of a model that knows nothing. The program has memorised the 200 names."* *Where to stop:* "around step 100" is the answer the table supports; **step 80 (`2.301`) is the right answer if they printed more rows** (`T1`). *Marking:* 5 marks for the table (digits in full), 1 for the sentence with two numbers, 1 for a stopping point with a reason. *Do not score the predictions;* look for a student who predicted "validation keeps falling" and said what surprised them.
+Model sentences: *"Train fell from 3.346 to 0.906 while validation fell to 2.308 at step 100 and then rose to 3.417, above the 3.332 of a model that knows nothing. The program has memorised the 200 names."* *Where to stop:* "around step 100" is the answer the table supports; **step 80 (`2.301`) is the right answer if they printed more rows** (`T1`). *Marking:* 5 marks for the table (digits in full), 1 for the sentence with two numbers, 1 for a stopping point with a reason. *Workbook parts:* `last training step (dropout on)` is `1.001` (dropout on) against the table's dropout-off numbers; a: `ln 28 = 3.332` and `3.417` is above it; c: `3.417 - 0.906 = 2.511`; e: any two of steps 200, 300, 400, 600, 800 (validation at 200 is `2.544`, already above step 100's `2.308`). *Do not score the predictions;* look for a student who predicted "validation keeps falling" and said what surprised them.
 
 ### Page 12.5 — The name audit (from block 6)
 

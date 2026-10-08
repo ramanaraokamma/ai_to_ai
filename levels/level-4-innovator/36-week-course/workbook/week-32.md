@@ -485,7 +485,7 @@ Tick each line only if you can do it without looking anything up.
 
 ---
 
-**✂️ ANSWERS - keep this page folded until you have finished**
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 ### Warm-Up
 1. Overconfident: it said 80% and delivered 55%.

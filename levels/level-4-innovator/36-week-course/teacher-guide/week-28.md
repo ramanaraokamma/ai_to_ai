@@ -15,11 +15,11 @@
 | **Type** | 🟦 Teach — the student builds, by hand, the four small guards that sit between "the model asked" and "something happened" (a calculator that cannot run code, a sandbox test, an argument check, a timeout), then fires **all six fences** of the agent loop from plain Python with **no model present**, and finally runs the kit's scripted agent on the worked five-turn task and reads its real trace |
 | **Big idea** | **A tool is a function plus a contract; the model only asks, your code acts.** The loop is *perceive, decide, act, observe, stop*. Everything that keeps the loop safe is **code around the model**, not words to the model: a cap on turns, a cap on money, a sandbox, a timeout, an allowlist and a human. Each of the six works with the model unplugged, which is how you test them. A tool that fails is not a crash; it is a message the model gets to read (the worked run's turn 3 is exactly that). And a long task is dearer than it looks, because **every turn re-sends the whole conversation**. |
 | **New vocabulary** | tool · contract (spec, schema) · agent loop · iteration · tool call / tool result · allowlist · sandbox · path traversal · timeout · human-in-the-loop (confirmation) · guardrail / fence · trace · stop reason (`end_turn`, `max_iterations`, `budget_exhausted`) |
-| **New maths** | **None.** (Ladder row for Week 28 is empty.) The only arithmetic is pricing a turn (`tokens in × price + tokens out × price`) and noticing that the input grows by a roughly constant amount each turn, so the *sum* grows like `1 + 2 + … + k`. Both are pen-and-paper on Page 28.3. |
+| **New maths** | **None.** (Ladder row for Week 28 is empty.) The only arithmetic is pricing a turn (`tokens in × price + tokens out × price`) and noticing that the input grows by a roughly constant amount each turn, so the *sum* grows like `1 + 2 + … + k`. Both are pen-and-paper on the Bill sheet and workbook Page 28.3. |
 | **New syntax** | `ast.parse` with an `operator` whitelist (one idea: the calculator) · `Path.resolve()` + `is_relative_to` (the sandbox test) · `isinstance` checks in `validate_args` · `ThreadPoolExecutor` (a tool runs in another thread so a timeout can be enforced). That is four (the ladder allows four). **Three things the ladder does not list are flagged honestly in section 4:** the walker that calls itself (given, not typed), `future.result(timeout=)` (Week 29's row, but fence 4 cannot exist without it), and the simulated delay (the kit's `FlakyBackend(latency=)` does the sleeping; the student never types `time.sleep`). |
 | **Dataset** | The same 15-note lab notebook as Weeks 25-26 in the folder `notes/` (the student already has it). Nothing new, nothing downloads. **No internet.** |
 | **Model** | **There is no model today. Every "model" is a scripted plan: `toyagent.ScriptedModel`, a stand-in, not a model.** It replays a list of steps a person wrote. The loop, the contracts, the fences, the trace and the *shape* of the cost growth are real engineering; the choices the "model" makes are typed text. Nothing measured against it says anything about how a real model behaves. Token counts come from the kit's local counter (`fakellm.count_tokens`), and dollars from an **illustrative** price table (`fake-small`: 1.00 in, 5.00 out per million tokens). |
-| **Materials** | Laptop with Python 3, numpy, scikit-learn and torch (nothing new) · the `notes/` folder · an empty folder called `sandbox/` (made in Block P4) · printed **Pages 28.1-28.3** (Activity) · a timer · a pen |
+| **Materials** | Laptop with Python 3, numpy, scikit-learn and torch (nothing new) · the `notes/` folder · an empty folder called `sandbox/` (made in Block P4) · the student's workbook (Pages 28.0 to 28.5) and the printed **Trace sheet** and **Bill sheet** (Activity) · a timer · a pen |
 | **Prep time** | 30 minutes the night before · 3 minutes on the day |
 | **Expected runtime of the code** | The **whole** prep (every block in this guide, top to bottom, one session) ran in **about 4 seconds of wall time (measured 4.3 s, one thread)**, of which about 1 second is importing torch, 1 second is the deliberate one-second sleep in Block P6 and 1 second is the same sleep in Mistake 7. **No block takes more than about 1.3 seconds** (the import), so nothing is over the 10-second mark and nothing needs a recorded time. The kit's own 19 tests take about 1.4 seconds. **Anything over 1 minute means something is wrong** (see Fallback). |
 
@@ -44,7 +44,7 @@ By the end of the lesson the student can:
 6. **Fire all six fences with no model** and name each one from its stop reason or error text: `max_iterations`, `budget_exhausted`, `PermissionError`, `timed out`, `no tool named`, `declined`.
 7. **Read a real trace**: the worked five-turn run (search, calculate, a write that fails, a corrected write, the answer), with its stop reason, its spend (`$0.002705`) and its input tokens per turn (`247, 415, 448, 519, 566`), and say why the input rises every turn.
 
-Observable evidence: the printed lines `calc` → `0.36`, the `inside:` column, the `timeout 0.2` line, the eight fence rows, the five-turn trace ending `stop: end_turn | iterations: 5 | spend: $0.002705 | label: stand-in, not a model`, and a filled Page 28.1 with the right fence named for each of ten requests.
+Observable evidence: the printed lines `calc` → `0.36`, the `inside:` column, the `timeout 0.2` line, the eight fence rows, the five-turn trace ending `stop: end_turn | iterations: 5 | spend: $0.002705 | label: stand-in, not a model`, and a filled Page 28.0 with the right fence named for each of ten requests.
 
 ---
 
@@ -60,7 +60,7 @@ The student has an index of 15 notes (Weeks 25-26) and a habit (Week 26): *a val
 
 ### 2. 🔢 The maths you need — taught to you first
 
-**There is no new idea.** You need two bits of arithmetic, both on Page 28.3, and you should do each once by hand before class.
+**There is no new idea.** You need two bits of arithmetic, both on the Bill sheet (and workbook Page 28.3), and you should do each once by hand before class.
 
 **(a) Pricing one turn.** The kit charges `tokens_in × 1.00 + tokens_out × 5.00`, both **per million** (an *illustrative* table, not any vendor's bill). Turn 1 of the worked run: `247 in + 28 out` → `247 × 1.00 + 28 × 5.00 = 247 + 140 = 387` millionths of a dollar = **`$0.000387`**. The whole run: inputs `247 + 415 + 448 + 519 + 566 = 2195`, outputs `28 + 10 + 25 + 19 + 20 = 102`, so `2195 × 1.00 + 102 × 5.00 = 2195 + 510 = 2705` millionths = **`$0.002705`**, which is the printed `spend`. Block K3 recomputes every turn by hand-formula and matches the trace to the last digit.
 
@@ -519,15 +519,15 @@ ok test_worked_plan_five_turns
 19 tests passed
 ```
 
-**☐ 11. Print.** Pages 28.1, 28.2 and 28.3 (Activity), single-sided; keep the key (Answer Key) to yourself. **Never hand the student this guide.** It names the mistakes they are about to make.
+**☐ 11. Print.** Page 28.0, the Trace sheet and the Bill sheet (Activity), single-sided (Page 28.0 is also the first workbook page, and the Bill sheet is the short form of workbook Page 28.3); keep the key (Answer Key) to yourself. **Never hand the student this guide.** It names the mistakes they are about to make.
 
 ### 3 minutes on the day
 
-Start Python in `36-week-course/`, run P1 and have P3 (the student types it) and P7 ready as a saved file; confirm the `calc` lines and the `inside:` column. Print **Page 28.1** before the student arrives. Clear old files: `sandbox/` should be empty before P7 and P8 (`extraction-250.md` is removed by P8's first line).
+Start Python in `36-week-course/`, run P1 and have P3 (the student types it) and P7 ready as a saved file; confirm the `calc` lines and the `inside:` column. Print **Page 28.0** before the student arrives. Clear old files: `sandbox/` should be empty before P7 and P8 (`extraction-250.md` is removed by P8's first line).
 
 ### Fallback if the laptops fail
 
-The lesson is an argument, and Pages 28.1-28.3 carry it on paper. If the laptop is dead: do the hook from the printed `eval` line (Mistake 1), run the pen pages, and read the fence table and the trace off the printout. If a block takes more than a minute, something is wrong: the usual cause is running from the wrong folder (the import of `l4lib` fails at once, not slowly), a stuck notebook kernel, or a slow tool with a timeout *longer* than its delay by mistake (then it just waits).
+The lesson is an argument, and Page 28.0 and the two sheets carry it on paper. If the laptop is dead: do the hook from the printed `eval` line (Mistake 1), run the pen pages, and read the fence table and the trace off the printout. If a block takes more than a minute, something is wrong: the usual cause is running from the wrong folder (the import of `l4lib` fails at once, not slowly), a stuck notebook kernel, or a slow tool with a timeout *longer* than its delay by mistake (then it just waits).
 
 ---
 
@@ -558,7 +558,7 @@ End with the honesty rule: *"There is no model in this room. The 'model' is a li
 
 ### 🎲 Their Turn — Which Fence? (12 minutes)
 
-Hand over the printed sheet (see **The Activity, In Full**). 8 minutes for Page 28.1 (ten requests; name the fence, or "none", that stops each, and say what the model is told); 4 minutes for the first three questions of Page 28.2 (read the printed trace). Sit back. At the end ask: *"which request has no fence against it, and does that worry you?"* (A: `calculate("2 + 2")` is a perfectly good request. **Not every request should be stopped.**) *"Which request is stopped by something that is not a security fence?"* (I: the folder `sub` does not exist; that is an ordinary tool error with a helpful message, which the model can act on.) Do not run the code for this; the key is at the end.
+Hand over the printed sheet (see **The Activity, In Full**). 8 minutes for Page 28.0 (ten requests; name the fence, or "none", that stops each, and say what the model is told); 4 minutes for the first three questions of the Trace sheet (read the printed trace). Sit back. At the end ask: *"which request has no fence against it, and does that worry you?"* (A: `calculate("2 + 2")` is a perfectly good request. **Not every request should be stopped.**) *"Which request is stopped by something that is not a security fence?"* (I: the folder `sub` does not exist; that is an ordinary tool error with a helpful message, which the model can act on.) Do not run the code for this; the key is at the end.
 
 ### 💻 Live-Code Together — `tools_and_loop.py` (36 minutes)
 
@@ -576,7 +576,7 @@ The student types; you narrate. All of it goes in **one file**, `tools_and_loop.
 
 **Part 6 (5 min) — P7.** Build the registry and the eight runs. **Have the student predict the `stop=` for row 3** (`end_turn`, not `PermissionError`: the fence returned an error as a *result*, the scripted model read it and finished). Run. Walk down the `Error:` column: that is each fence speaking. Point at the last two lines: `files the sandbox holds: []`, `escape.md exists outside the sandbox: False`. *"We asked, and nothing happened. That is what a fence looks like."*
 
-**Part 7 (6 min) — P8, P9.** Run the worked task. Walk the trace: turn 1 asks the notes, turn 2 calculates `0.36`, turn 3 tries `reports/extraction-250.md` and gets a plain-English error, turn 4 writes `extraction-250.md`, turn 5 answers. Ask: *"who decided to drop the folder name at turn 4?"* (The plan. A real model might do it, might not.) Then P9: the input tokens climb `247 → 566`; *"why does turn 5 cost more than turn 2 if the model says about the same number of words?"* (It is re-sent the whole conversation.) Put `$0.002705` on the board next to the one line of answer. Close on Page 28.3.
+**Part 7 (6 min) — P8, P9.** Run the worked task. Walk the trace: turn 1 asks the notes, turn 2 calculates `0.36`, turn 3 tries `reports/extraction-250.md` and gets a plain-English error, turn 4 writes `extraction-250.md`, turn 5 answers. Ask: *"who decided to drop the folder name at turn 4?"* (The plan. A real model might do it, might not.) Then P9: the input tokens climb `247 → 566`; *"why does turn 5 cost more than turn 2 if the model says about the same number of words?"* (It is re-sent the whole conversation.) Put `$0.002705` on the board next to the one line of answer. Close on the Bill sheet.
 
 ### 🔑 Wrap & Assign (6 minutes)
 
@@ -832,13 +832,13 @@ KeyError: 'delete_everything'
 
 ### Setup (2 minutes before class)
 
-Print the sheet below once, single-sided. A pen. No computer. **The ten requests were typed by the teacher; they are not the output of any model.** The trace on Page 28.2 is the real output of Block P8 (a scripted plan).
+Print the sheet below once, single-sided. A pen. No computer. **The ten requests were typed by the teacher; they are not the output of any model.** The trace on the Trace sheet is the real output of Block P8 (a scripted plan).
 
 ### The sheet (print only the block between the two ✂ lines)
 
 ```text
 ✂ PRINT ------------------------------------------------------------------
-Page 28.1  Which Fence?          Name: ____________   Date: ________
+Page 28.0  Which Fence?          Name: ____________   Date: ________
 
   Six fences stand between "the model asked" and "something happened":
     1 turns cap   2 money cap   3 sandbox (folder, suffix, size)
@@ -862,7 +862,7 @@ Page 28.1  Which Fence?          Name: ____________   Date: ________
       and what does the model get back?  ___________________________
   (d) The model was told "be careful". Which fences read that? ________
 
-Page 28.2  Read the Trace
+Trace sheet  Read the Trace
   turn 1  in= 247 out= 28  $0.000387  calls=['search_notes']
      search_notes  ok  '[note 14] (similarity 0.322) 2026-08-14 - Cost accounting...'
   turn 2  in= 415 out= 10  $0.000465  calls=['calculate']
@@ -882,7 +882,7 @@ Page 28.2  Read the Trace
   5. Note 14 says "0.00144 dollars per call". Write the one check the
      answer still needs that a valid citation does not give you.  ______
 
-Page 28.3  Pay the Bill          (price: 1.00 per million tokens in, 5.00 per million out)
+Bill sheet  Pay the Bill          (price: 1.00 per million tokens in, 5.00 per million out)
   (a) Turn 1: 247 in + 28 out.  Cost in millionths of a dollar =  247 x 1 + 28 x 5 = ______
   (b) All five turns: add the five "in" numbers: ______   the five "out" numbers: ______
       Cost in millionths = ______ x 1 + ______ x 5 = ______   -> dollars: $______
@@ -897,11 +897,11 @@ Page 28.3  Pay the Bill          (price: 1.00 per million tokens in, 5.00 per mi
 
 ### What "finished" looks like
 
-Page 28.1 filled with a fence for each of A-J and three sentences for (b)-(d); Page 28.2 with five answers (the first three in class); Page 28.3 with the arithmetic shown. The student may keep all three. **Marks:** 28.1 is ten boxes; count a box right if the fence number or a plain-words description is right (see the key for the two arguable ones).
+Page 28.0 filled with a fence for each of A-J and three sentences for (b)-(d); the Trace sheet with five answers (the first three in class); the Bill sheet with the arithmetic shown. The student may keep all three. **Marks:** Page 28.0 is ten boxes; count a box right if the fence number or a plain-words description is right (see the key for the two arguable ones).
 
 ### Variation — shorter (a 50-minute slot)
 
-Drop Part 4 (P5) and Part 5 (P6) from the live code and give the printed outputs; keep P3, P4, P7 and P8. Do only Page 28.1 in class.
+Drop Part 4 (P5) and Part 5 (P6) from the live code and give the printed outputs; keep P3, P4, P7 and P8. Do only Page 28.0 in class.
 
 ### Variation — an anxious or slow student
 
@@ -943,7 +943,7 @@ Use this table to match a symptom in class to its cause and the fix.
 
 | Symptom | What is happening | What to do |
 |---|---|---|
-| The student says "the prompt makes it safe" | Confusing a request with a wall | Hook; Page 28.1 (d) |
+| The student says "the prompt makes it safe" | Confusing a request with a wall | Hook; Page 28.0 (d) |
 | `/etc/passwd` is `True` for the student's `inside` | A dots test, or no `resolve` | Mistakes 4, 5 |
 | A timed-out call takes a full second | A `with` block around the pool | Mistake 7 |
 | `TimeoutError` is not caught | On 3.10 the exception is `concurrent.futures.TimeoutError` | Import it `as TooSlow` (Block P6) |
@@ -1000,8 +1000,8 @@ Ask these out loud near the end; do not rescue.
 |:--:|---|
 | 🟥 Not yet | Thinks the prompt is the safety; cannot say what the model does versus the code. |
 | 🟨 Emerging | Runs the code; gets `calc` and `inside` right; cannot say why resolving must come first, or why four fence rows end `end_turn`. |
-| 🟩 Secure | Completes Page 28.1 with at most one wrong fence; reads the trace (which turn failed, why turn 5 costs more than turn 2); says a timeout stops the wait. |
-| 🟦 Strong | Also predicts Mistakes 4, 5 and 7 before they run, does the arithmetic on Page 28.3 without help, and says in their own words why the scripted recovery is not evidence about a real model. |
+| 🟩 Secure | Completes Page 28.0 with at most one wrong fence; reads the trace (which turn failed, why turn 5 costs more than turn 2); says a timeout stops the wait. |
+| 🟦 Strong | Also predicts Mistakes 4, 5 and 7 before they run, does the arithmetic on the Bill sheet and workbook Page 28.3 without help, and says in their own words why the scripted recovery is not evidence about a real model. |
 
 ---
 
@@ -1025,10 +1025,10 @@ This section is teacher-only. It holds the answers and the numbers behind every 
 
 Every number below comes from the blocks above or from `K1` to `K6` (TEACHER-ONLY; below).
 
-### Page 28.1 — Which Fence?
+### Page 28.0 — Which Fence?
 
 ```python
-# fence_drill.py (TEACHER-ONLY key for Page 28.1): ten requests, each run through the loop alone. What stops it?
+# fence_drill.py (TEACHER-ONLY key for Page 28.0): ten requests, each run through the loop alone. What stops it?
 long_text = "x" * 25000
 drill = [
     ("A", "calculate", {"expression": "2 + 2"}, {}),
@@ -1076,7 +1076,7 @@ F: a plan that never stops -> max_iterations
 
 (b) **A** (the sum). (c) **I**: a tool check (0) that is not a security fence (B is also 0, but it is a security check); the model gets a `ValueError` with a message telling it to use a flat filename. (d) **None.** The prompt is a request to the model; the fences are code. **The money cap (fence 2)** is not in A-J (it is the drill's second row in Block P7: `budget_exhausted`); if the student asks, show it.
 
-### Page 28.2 — Read the Trace
+### Trace sheet — Read the Trace
 
 1. **Turn 3**; `Error: ValueError: directory 'reports' does not exist in the sandbox. …` (the write to `reports/extraction-250.md`).
 2. The **filename**: `reports/extraction-250.md` became the flat `extraction-250.md`. (In the plan; a real model would have to read the error and decide to do this.)
@@ -1084,7 +1084,7 @@ F: a plan that never stops -> max_iterations
 4. The search: **C** (the code ran it); the choice to search: **M** (the plan; in a real system the model); the confirmation: **H** (a person or the `approve` function standing in for one); the error text: **C** (the sandbox wrote it); the answer: **M**.
 5. **Read note 14 and check that it says `0.00144`** (and that `0.00144 × 250 = 0.36`); the citation `[note 14]` only proves the id was served (Week 26). The note does say `0.00144 dollars per call`, and the calculator result `0.36` is the sum.
 
-### Page 28.3 — Pay the Bill
+### Bill sheet — Pay the Bill
 
 (a) `247 × 1 + 28 × 5 = 247 + 140 =` **387** millionths (`$0.000387`). (b) Inputs: `247 + 415 + 448 + 519 + 566 =` **2195**; outputs: `28 + 10 + 25 + 19 + 20 =` **102**; cost `2195 × 1 + 102 × 5 = 2195 + 510 =` **2705** millionths = **`$0.002705`** (the printed `spend`). (c) `223 + 4 × 32 =` **351** (measured steady step is 32.4: block K3 gives 353 at the fifth turn for a constant-size step; accept 351 to 353). (d) `1+…+10 =` **55**, so the growth adds `55 × 32 =` **1760** tokens beyond ten copies of 223; `1+…+20 =` **210**. `210 / 55 = 3.8`: **about four times** the growth for twice the steps. (e) Any sentence that says each turn re-sends the whole history, so the input grows every turn and the total grows roughly with the square of the steps.
 
@@ -1113,7 +1113,7 @@ resolve-first  for 'shortcut/x.md': False
 **K3 — the bill by hand, and the growth (TEACHER-ONLY).** The first five lines are the hand-formula against the trace; the last three are the triangular growth with a constant-size step (`gap/step = 32.4`, the same for `k = 4, 8, 16`).
 
 ```python
-# cost_check.py (TEACHER-ONLY key for Page 28.3): the dollars by hand, then the triangular growth of input tokens.
+# cost_check.py (TEACHER-ONLY key for the Bill sheet and workbook Page 28.3): the dollars by hand, then the triangular growth of input tokens.
 from l4lib import fakellm
 p_in, p_out = fakellm.PRICE_TABLE["fake-small"]
 print("price per million tokens (in, out):", p_in, p_out)
@@ -1216,6 +1216,18 @@ run.sh     mine: refused: suffix          kit: refused
 sub/a.md   mine: refused: no such folder  kit: refused
 big.md     mine: refused: too big         kit: refused
 ```
+
+### Workbook Pages 28.1 to 28.5 and the Warm-Up / Self-Check (TEACHER-ONLY)
+
+The workbook's own ANSWERS page holds the same values; this is the teacher's copy, with the numbers re-run (blocks in the student guide, then the workbook's, in one session).
+
+- **Warm-Up.** 1. Your program. 2. Turns cap, money cap, sandbox, timeout, allowlist, a human. 3. None read the prompt; none needs a model. 4. No: `end_turn` only says the "model" answered in words; look at the tool results and check the answer against its source.
+- **Page 28.0.** Same ten requests and the same answers as the Page 28.0 key above (A none, B 0, C 3, D 3, E 5, F 1, G 6, H 4, I 0, J 3; (b) A; (c) I; (d) none).
+- **Page 28.1 (Homework 1, key K5).** Three things: the function, the registry entry, the contract. Step 1 prints `["no tool named 'count_words'"]` because `validate_args` reads `SPEC`, not the registry. Step 2: `[]`, `["'text' must be string, got int"]`, `["missing 'text'"]`, `["unknown argument 'extra'"]`. Step 3: `[('count_words', False)]`, result `3`.
+- **Page 28.2 (Homework 2).** `inside` for rows 1 to 8: True, True, False, True, False, False, True, False (row 8 is the symlink story, K2). The printed table is the one in the workbook's ANSWERS. The dots test is wrong on rows 2, 4, 5; the compare-first test on rows 3 and 6 (and row 8); the `startswith` test on row 6 only. Question i: the dots test gets row 4 wrong, the compare-first test gets it right only by luck. ii: `startswith` compares letters, `is_relative_to` compares whole parts. iii: only the file system can see a shortcut.
+- **Page 28.3 (Homework 3), the workbook's lettering.** (a) 387, $0.000387. (b) 2195 in, 102 out, 2705 millionths, $0.002705. (c) 415 - 247 = 168; the search result. (d) 223 + 4 x 32 = 351. (e) 55; 55 x 32 = 1760; eleven copies of 223 = 2453; total 4213. (f) 210; 210 / 55 = 3.8 (about four times). (g) The copies of 223 grow only in step with the turns; the whole is 11403 / 4213 = 2.71 times, between 2 and 3.8. Part 3 (measured, scripted plan): k = 4 gives first 223, last 353, growth 324, 32.4 per step; k = 8 gives last 483, growth 1168, 32.4 per step. (h) about 32.4; the real steps were 168, 33, 71, 47. (i) Each turn re-sends the whole history, so the total grows roughly with the square of the steps.
+- **Page 28.4.** A: expect `[True, False, False, False]`; the run gives `[True, True, False, False]` and `True + True = 2`; fix `type(value) is int` (or `not isinstance(value, bool)`). B: `Module list`, then `ValueError: not allowed here: list`; fix `ast.parse(..., mode="eval")` and `walk(tree.body)`. C: the honest guess is `False`; the run gives `True` (the file exists), because `auto_approve=True` switched fence 6 off.
+- **Page 28.5 and Self-Check.** Bug Log: any two true entries, one SILENT, each with a check that could fail. Self-Check 1 to 8: pick a tool name and arguments; `ast.parse` only reads, you run only what is on your list; the text can start with the sandbox name while `..` carries it out; no, the wait stopped, not the work; spend is checked before the turn, so one call is late; only that the writer named a note it was given, the answer still needs checking against the note; the input is bigger (566 vs 415) because the history is re-sent; the plan (a person typed it).
 
 ### Answers to every question posed in the lesson
 

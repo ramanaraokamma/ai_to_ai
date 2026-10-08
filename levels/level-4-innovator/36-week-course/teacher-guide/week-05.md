@@ -1322,7 +1322,7 @@ Three checks, all oral or on paper, none requiring a computer. Do them at the en
 
 ## 📤 Homework to Assign
 
-This section says what to set for home and gives the teacher reference numbers to mark it against. Time: ~60–75 minutes. Workbook pages 5.1–5.5, plus the build below.
+This section says what to set for home and gives the teacher reference numbers to mark it against. Time: ~60–75 minutes. Workbook pages 5.1–5.8 (5.3 and 5.4 are paper pages, 5.5 builds the table and the report, 5.6 reads a curve, 5.7 fixes broken programs), plus the build below.
 
 **The build.** The student finishes their own `lab.py` (the four cures, the snapshot, the seed) and runs it on **three fresh seeds** so that nothing can be copied from class. Teacher reference (seeds 5, 6, 7; the same five rows as `table.py`, three-seed means):
 
@@ -1435,7 +1435,51 @@ The result goes **the wrong way**, and that is the point. A one-pixel roll of an
 
 This section holds the answers to the workbook pages, for the teacher only. Numbers come from the seeded runs described above.
 
-### Page 5.1 — Match the word to the thing
+### Workbook answers
+
+These are the answers for the workbook as shipped (CPU, one thread, torch 2.2.1, the `lab.py` and `patience.py` of this guide).
+
+**Warm-Up.** W1 no (the clock only moves on `sched.step()`). W2 5 and 90. W3 0.693 (`ln 2`). W4 a confound. W5 several seeds show the spread.
+
+**Page 5.1.** overfitting **C**, validation loss **E**, best epoch **H**, patience **I**, snapshot **A**, dropout **D**, weight decay **B**, jitter **G**, label-preserving **F**. Low training loss alone is not enough because a memorising network has it too; only validation loss shows which happened.
+
+**Page 5.2.** P1 ten ones (eval mode). P2 each entry is 0 or 2; about half of each. P3 survivor values 1.25 (p = 0.2), 4.0 (p = 0.75), 1.0 (p = 0). P4 shape `(2, 3)`, dtype `float64`. P5 `alias["weight"]` has moved; `snap["weight"]` has not (deep copy). P6 length 6; sorted list `[0, 1, 2, 3, 4, 5]`.
+
+**Page 5.3** (paper).
+
+- (a) Best so far by epoch: 0.70, 0.40, 0.30, 0.25, 0.25, 0.24, 0.24, 0.24, 0.24; best epoch so far: 0, 1, 2, 3, 3, 5, 5, 5, 5; counter: 0, 0, 0, 0, 1, 0, 1, 2, 3. Patience 3 stops at epoch 8 and keeps epoch 5 (0.24); patience 5 never stops; patience 1 stops at epoch 4, keeps epoch 3 (0.25) and misses epoch 5 (0.24).
+- (b) Best epoch 4 (0.44); patience 2 stops at epoch 6; patience 4 stops at epoch 8.
+- (c) Patience 1 stops at epoch 4 keeping epoch 3; patience 2 stops at 7 keeping 5; patience 3 stops at 8 keeping 5; patience 4 does not stop (epoch 9 at 0.31 is a new best). The lowest loss is at epoch 9; patience 1, 2 and 3 all stop before it.
+- (d) The fee and a weight of 1.0: lr 0.003, wd 0.3 gives 0.9991, then 0.9991 and 0.9982; lr 0.01, wd 0.1 gives 0.9990, 0.9990, 0.9980; lr 0.01, wd 0.5 gives 0.9950, 0.9950, 0.9900; wd 0 gives 1.0000 throughout. F1: 4.0 becomes 3.98, then 3.9601. F2: 0.0 stays 0.0 (the fee only bites weights that are not zero). F3: the fee is 1, so weight decay 0 does nothing.
+- (e) Dropout survivor values 2.0 (p = 0.5), 1.3333 (p = 0.25), 1.25 (p = 0.2), 1.0 (p = 0); the average of the output is about 1 (exactly 1 at p = 0). E1: zeroing half without scaling gives an average of about 0.5. E2: at p = 0 nothing happens.
+
+**Page 5.4.** Steps per epoch `120 // batch`: batch 40 gives 3 (120 used, 0 left out, 750 steps in 250 epochs); 50 gives 2 (100, 20, 500); 64 gives 1 (64, 56, 250); 120 gives 1 (120, 0, 250). A1: 16,962 / 120 = 141.35, so memorising is easy. A2: training 0.000 and validation 0.75 is memorised; 0.19 and 0.23 is a gap of 0.04, learning. A3: `fit` trains on `Xs, ys` (120 points) and measures validation on `Xva, yva` (360 points).
+
+**Page 5.5.** (a) is the seed-0 class table and (b) the five-seed table (both under "In class" below). (c) Reference run, seeds 10, 11, 12, means:
+
+```text
+seeds [10, 11, 12] - each cell is the mean of 3 runs
+row                best epoch  best val  final val
+no cure                    66     0.164      0.576
+early stop (p=10)          23     0.216      0.288
+dropout 0.5               214     0.245      0.446
+weight decay 1.0          151     0.169      0.244
+jitter 0.2                145     0.141      0.188
+```
+
+C1: the early-stop row's best epoch (23) is far earlier than no cure's (66); a small patience can stop in a shallow dip before the real bottom. C2: jitter 0.2 has the lowest final val (0.188), then weight decay 1.0 (0.244); to compare against seed spread you need the per-seed values. C3: its best val (0.216). The prediction surprises: early stop with patience 10 has a higher best val than no cure, and jitter 0.2 is lowest on both best and final val here. (d) The report: target wording is under "The lab report" below.
+
+**Page 5.6** (seed 10, no cure). R1 epoch 22, validation 0.227. R2 training 0.001 then 0.000; validation climbing (0.597, 0.695, 0.750). R3 `ln 2`; the network is guessing. R4 no: 0.750 is worse than the coin. R5 `22 + 10 = 32`: stops at 32, keeps 22; with patience 50 stops at 72 (patience 25 gives `(22, 47)`; patience 5 gives `(16, 21)`). R6 you only see losses up to now. R7 "afterwards", "snapshot".
+
+**Page 5.7.** D1 a share between 0 and 1; `nn.Dropout(0.3)`. D2 the noise is float64 and the weights float32; the first print already said `torch.float64`; fix with `dtype=torch.float32`. D3 `generator=g`. D4 `size=` wants a shape; fix `size=Xs.shape`. S1 to S6 and their numbers (0.906 against 0.179; 0.426 against 0.634; 0.285 and 0.782 against 0.140 and 0.194; 0.229 against 0.140; 0.626 against 0.906; unseeded generator) are in "The six silent mistakes, measured" above: no `deepcopy`; `eval()` forgotten (a lower number is not better); noise drawn once; jitter on the validation set; `AdamW` default `weight_decay=0.01`; unseeded generator.
+
+**Page 5.8 and Self-Check.** The sentence ends "...a **suspect** until I know what I measured." Self-Check: 1 `1 / (1 - p)`, and in `eval()` it returns its input; 2 dropout stays on and validation is measured on a damaged model; 3 `state_dict()` returns live tensors; 4 `1 - lr x wd`; 5 every epoch, training inputs only; 6 shipped val; 7 early stopping.
+
+### In class
+
+The exercises below use the class lists and numbers, which differ from the workbook's.
+
+### In class: match the word to the thing (the same nine rows as the workbook's Page 5.1)
 
 | Word | Match |
 |---|---|
@@ -1449,7 +1493,7 @@ This section holds the answers to the workbook pages, for the teacher only. Numb
 | jitter | fresh random noise added to the training inputs every epoch |
 | label-preserving | a change after which the class is still true |
 
-### Page 5.2 — Predict the output (answered in pen, in class)
+### In class: predict the output (class questions; the workbook's Page 5.2 has its own six, answered above)
 
 1. `nn.Dropout(0.5)` in `eval()` on ten ones: **ten ones.**
 2. The same layer in `train()` mode: **each entry is 0 or 2**; about half are 2; the average is about 1.
@@ -1492,7 +1536,7 @@ Dropout(p=0.3, inplace=False)
 
 (`key_checks.py` imports `when_to_stop` from `patience.py`. The last two lines are the by-hand check for 5.3 and a look at the `Dropout` layer the student met in Week 1.)
 
-### Page 5.3 — Early stopping and the fee, by hand
+### In class: early stopping and the fee, by hand (the workbook's Page 5.3 has more lists; see above)
 
 **(a) The ten made-up numbers, patience 3.** Best so far by epoch: 0.70, 0.40, 0.30, 0.25, 0.25, 0.24, 0.24, 0.24, 0.24. The counter (`epoch − best epoch`): 0, 0, 0, 0, 1, 0, 1, 2, **3**. **Stop at epoch 8, keep epoch 5 (0.24).** With patience 5 it never stops. With patience 1 it stops at epoch 4 and keeps epoch 3 (0.25).
 
@@ -1502,7 +1546,7 @@ Dropout(p=0.3, inplace=False)
 
 **(d) Dropout.** `p = 0.5`: survivors are doubled. `p = 0.25`: survivors are `1.3333`. `p = 0.0`: survivors are multiplied by `1 / 1 = 1`, i.e. nothing happens — this is why the Week 1 printout showed `Dropout(p=0.0)` and it did no harm.
 
-### Page 5.4 — The four-cure table (seed 0)
+### In class: the four-cure table (seed 0), which is also Page 5.5 (a) and (b) of the workbook
 
 | Row | best epoch | best val | final val | shipped val |
 |---|:--:|:--:|:--:|:--:|
@@ -1526,7 +1570,7 @@ Dropout(p=0.3, inplace=False)
 
 **Reading, in the words to accept:** *"Every 'best val' range overlaps every other. The cures differ in the 'final val' column, which is how far the validation loss climbs if you don't stop. Early stopping is cheapest; its shipped value is a bit flattering because it used the validation set to pick the epoch."* **Do not accept** "jitter is best". If the student insists, hand them seeds 5–7 (homework), where it is not.
 
-### Page 5.5 — The lab report
+### The lab report (workbook Page 5.5 (d))
 
 Target wording (any equivalent is fine):
 

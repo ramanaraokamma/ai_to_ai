@@ -1140,7 +1140,7 @@ Model entry for **A3**: two doors, two locks. **Evidence:** `98765` in the model
 | Thing | Count | n | Bound or window |
 |---|:-:|:-:|---|
 | A1 before | 15 | 50 | wobble 3.24; window 8.5-21.5 |
-| A1 after `named_files_only` | 0 | 50 | "did not see it"; a true 0.05 shows none 9% of the time |
+| A1 after `named_files_only` | 0 | 50 | "did not see it"; a true 0.05 shows none about 8% of the time (0.077) |
 | legitimate save after the patch | 50 | 50 | happy path holds |
 | gap `15 → 0` | 15 | 50 | noise bound 6.5: more than noise |
 | 7 vs 9 of 20 | 2 | 20 | noise bound 6.2: cannot tell |

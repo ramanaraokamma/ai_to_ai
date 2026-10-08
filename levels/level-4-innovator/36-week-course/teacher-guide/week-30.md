@@ -21,7 +21,7 @@ This table is the one-page summary of the week: what is taught, what is built, w
 | **New syntax** | `cohen_kappa_score(y1, y2)` from `sklearn.metrics`, called **after** the hand calculation · set intersection `A & B` and union `A | B` for the Jaccard overlap (the student has met `set` and subset checks in Week 26) · `rng.choice([...])` on the seeded `random.Random` of Week 24, to break ties. That is three, as the ladder says. **One mirror rides along and is flagged, not counted:** `rng.random()` (the same object; a float between 0 and 1, used once to decide whether the planted habit fires). **Old and used freely:** `hashlib.md5` and `.encode("utf-8")` (Week 21; the freeze), `re.findall` (Week 20; words), `Counter` (Week 20), f-strings, `lambda` as a `key=` (Week 4), dict and list comprehensions, `zip`, `enumerate`, the `score`/`compare` pair that Week 31 will reuse. **Deliberately not used:** `re.sub` (Week 33's construct: the reference module's scan and scorer used it; here `re.findall` does the same job) and `collections.defaultdict`. |
 | **Dataset** | **30 eval tickets** typed by the student (`evalset.py`: 6 greeting, 7 refund, 7 technical, 5 billing, 5 out_of_scope) and **66 raw training tickets** handed over (`traindata.py`: 14, 15, 14, 15, 8), two of which are too close to eval tickets on purpose. **30 pairs of canned replies** (`replies.py`) built from fixed templates by Python, and a three-point rubric. Nothing downloads. **No internet.** |
 | **Model** | **There is no language model today.** Four things are scripted or tiny: the floor (always one answer), the free keyword rules, a TF-IDF plus logistic regression classifier trained from scratch on 64 tickets, and the **mystery judge in `mystery.py`, which is a stand-in, not a model: it reads a rubric score, not language**, and has a number `BIAS` typed into it. Everything measured about the judge is a property of that number. Nothing says how often a real judge model shows a position habit. |
-| **Materials** | Laptop with Python 3, numpy, scikit-learn (nothing new) · the eight files of Section "Prep Checklist" in one folder · printed **Pages 30.1-30.3** (Activity) · a timer · a pen |
+| **Materials** | Laptop with Python 3, numpy, scikit-learn (nothing new) · the eight files of Section "Prep Checklist" in one folder · printed **the Overlap, Agreement and the Flips sheets** (Activity) · a timer · a pen |
 | **Prep time** | 30 minutes the night before · 3 minutes on the day |
 | **Expected runtime of the code** | The **whole** guide (every Prep block, every Clinic block and every Key block, top to bottom, one session) ran in **about 1 second of wall time** (0.9 s measured), most of it importing scikit-learn and fitting the small classifier in Block P2 (**under 1 second**). **No block takes more than about a second, so nothing is over the 10-second mark and nothing needs a recorded time.** Anything over 1 minute means something is wrong (see Fallback). |
 
@@ -29,7 +29,7 @@ This table is the one-page summary of the week: what is taught, what is built, w
 
 1. **First, the student (and you) will read a number about the stand-in judge as a number about judges.** The judge's habit is `BIAS = 0.5`, typed into a file. The lesson is *how to find out*, not *how biased judges are*. Say "stand-in, not a model" every time the flip rate is on the board.
 2. **Second, one run of the bias test is one draw.** Thirty pairs give an estimate of `0.27` on seed 0 for a true `0.5`; over twenty seeds the estimates run from `0.27` to `0.70` (Block P9) and over two hundred the spread (SD) is `0.087` (Key K2). The student should leave knowing that a small test gives a wobbly answer, and that ten times the pairs cuts the wobble to about a third (SD `0.031`).
-3. **Third, the free rules baseline is not a clean baseline.** Eight of its 32 keys (`hiya`, `afternoon`, `send them back`, `postage`, `blank`, `closes`, `rendering`, `inbox`) occur in eval tickets and in **no** training ticket (Key K7), so the course author wrote the rules with the eval in view. `0.833` is therefore a generous score for "free rules", and on ten brand-new tickets the same rules score `5/10` (Key K5). Tell the student when it comes up (Page 30.1 d); do not hide it, and do not change the rules, because Week 31's numbers (`25/30`) stand on them.
+3. **Third, the free rules baseline is not a clean baseline.** Eight of its 32 keys (`hiya`, `afternoon`, `send them back`, `postage`, `blank`, `closes`, `rendering`, `inbox`) occur in eval tickets and in **no** training ticket (Key K7), so the course author wrote the rules with the eval in view. `0.833` is therefore a generous score for "free rules", and on ten brand-new tickets the same rules score `5/10` (Key K5). Tell the student when it comes up (Overlap sheet d); do not hide it, and do not change the rules, because Week 31's numbers (`25/30`) stand on them.
 4. **Fourth, "flagged" is not "removed"; a scan with a threshold is a dial.** At `0.70` it finds two tickets; at `0.30` it removes seven, including a harmless one; at `0.95` it leaves the near-copy in. And it cannot see a paraphrase at all (Block P4: five paraphrases, highest Jaccard `0.200`, scan caught `0`, score `+2` tickets).
 5. **Fifth, kappa needs both cells.** A high raw agreement with `κ = 0` (Block P7) and a middling `κ` with all the disagreement in one direction (Mistake 7) are the two ways to misread it.
 6. **Sixth, the consistent-pairs verdict is only safe for THIS flaw.** It gives the rubric's answer exactly here because the only flaw is "sometimes says A"; a real judge may be consistently wrong (prefers the longer answer in both orders), and then no amount of swapping shows it. Say so.
@@ -48,7 +48,7 @@ By the end of the lesson the student can:
 6. **Catch a judge with a position habit by swapping the order**: first-position wins `38` of `60` (`0.633`, against `0.500` for no habit), `8` flips in `30`, and estimate the planted bias from the flip rate; then say why the single-order verdict ("v1 wins `16` of `30`") is the wrong one when the rubric says v2 is better in `20`.
 7. **Say what the test cannot show**: that one run of `30` pairs is a wobbly measurement (`0.27` to `0.70` over twenty seeds), that flips on tied pairs are not bias (Mistake 11), and that a judge which is consistently wrong in both orders passes the swap test.
 
-Observable evidence: the printed fingerprint and `True`, the three-line baseline table (`0.200 / 0.833 / 0.700`), the line `Jaccard = 7/9 = 0.778`, the kappa line `kappa = (0.6500 - 0.4400) / (1 - 0.4400) = 0.3750` beside the library's `0.375`, the bias summary of Block P8, and filled Pages 30.1-30.3 (Activity).
+Observable evidence: the printed fingerprint and `True`, the three-line baseline table (`0.200 / 0.833 / 0.700`), the line `Jaccard = 7/9 = 0.778`, the kappa line `kappa = (0.6500 - 0.4400) / (1 - 0.4400) = 0.3750` beside the library's `0.375`, the bias summary of Block P8, and filled the Overlap, Agreement and the Flips sheets (Activity).
 
 ---
 
@@ -105,7 +105,7 @@ For twenty-nine weeks the student has built things and looked at whether they wo
 
 **`cohen_kappa_score(y1, y2)`.** From `sklearn.metrics`. It takes **two lists of labels of the same length**, one per rater, in the same item order, and returns the kappa. Here the lists are 0/1 (fail/pass). It does the arithmetic of Section 2. The student types it only **after** the hand calculation, as a check (`0.375` both ways). **Trap:** lists of different lengths raise `ValueError: Found input variables with inconsistent numbers of samples: [20, 19]` (Mistake 9); if **both** raters say only the same one thing, the answer is `nan`; if only one does, `κ = 0` (Block P7, Key K3).
 
-**Set intersection `A & B` and union `A | B`.** The student has met sets in Week 26 (checking that cited ids are a subset of served ids). A **set** holds each item once and forgets order: `set(["a", "b", "a"])` is `{"a", "b"}`. `A & B` is the items in both; `A | B` is the items in either. `len(A & B) / len(A | B)` is the Jaccard overlap. `words(s)` in `dedup.py` builds the set with `re.findall(r"[a-z0-9]+", s.lower())` (Week 20's tool), so `"doesn't"` becomes `doesn` and `t`: a real quirk, and Page 30.1 (a3) uses it. **Trap:** `&` and `|` are **not defined on lists** (`TypeError: unsupported operand type(s) for &: 'list' and 'list'`, Mistake 5). **Guard:** two tickets with no letters or digits give `len(A | B) = 0` and a `ZeroDivisionError` without the `if (A | B)` test (Mistake 6).
+**Set intersection `A & B` and union `A | B`.** The student has met sets in Week 26 (checking that cited ids are a subset of served ids). A **set** holds each item once and forgets order: `set(["a", "b", "a"])` is `{"a", "b"}`. `A & B` is the items in both; `A | B` is the items in either. `len(A & B) / len(A | B)` is the Jaccard overlap. `words(s)` in `dedup.py` builds the set with `re.findall(r"[a-z0-9]+", s.lower())` (Week 20's tool), so `"doesn't"` becomes `doesn` and `t`: a real quirk, and the Overlap sheet (a3) uses it. **Trap:** `&` and `|` are **not defined on lists** (`TypeError: unsupported operand type(s) for &: 'list' and 'list'`, Mistake 5). **Guard:** two tickets with no letters or digits give `len(A | B) = 0` and a `ZeroDivisionError` without the `if (A | B)` test (Mistake 6).
 
 **`rng.choice([...])`.** On a `random.Random(seed)` (Week 24): it picks one item of a list, reproducibly. Here it breaks a tie, `rng.choice(["A", "B"])`, when the stand-in judge sees two replies with the same rubric score. **The mirror:** `rng.random()` on the same object gives a float in `[0, 1)`; `if rng.random() < bias` is "with chance `bias`". Say "same object, another method". **Trap:** one generator for the whole test. A new `random.Random(0)` inside the loop makes every call draw the same number (Mistake 10).
 
@@ -190,7 +190,7 @@ This section lists what to build and check before class, with the code blocks (t
 2. Type Blocks P1 to P10 in order into **one Python session** (or one file per block, run with `exec`), from that folder. Block P1 prints the fingerprint; compare it with `FROZEN` in `evalset.py` (the file asserts it on import, so a mistyped ticket stops you at once).
 3. Compare every printed number with this guide. **If the counts differ from `30`, `66`, `64`, `2` and `14 14 14 14 8`, stop:** the rest of the guide's numbers, and Week 31's, are for those files. Nothing in the first ten blocks takes more than about a second.
 4. Read Key K7 (the free rules were written with the eval in view) and decide what you will say when the student asks why the rules are so good. Read Key K2 so that you know how wobbly a single run is.
-5. Print **Pages 30.1 to 30.3** (Activity) and the workbook pages.
+5. Print **the Overlap, Agreement and the Flips sheets** (Activity) and the workbook pages.
 6. **Week 31 will ask the student for `evalset.py`, `traindata.py`, `dedup.py`, `scorer.py` and `compare.py`.** Make sure the student's folder has all five at the end of the lesson, and that `python -c "import evalset"` succeeds there (if the fingerprint assertion fires, a ticket was mistyped).
 
 **File 1 of 8 — `evalset.py`.** The student types the first eight tickets and the five freeze lines at the bottom in class, *before* anything else is built, and pastes the other twenty-two from your copy (typing them adds nothing). The freeze lines are explained in Block P1 and Section 2 of "What YOU need to know".
@@ -891,11 +891,11 @@ contribution of each category to the overall delta:
 
 ### 3 minutes on the day
 
-Start Python in the lesson folder and run Block P1 to be sure the eight files import. Confirm that `mystery.py` is not open on the student's screen and that the student's own `evalset.py` has **not yet** got a `FROZEN` value in it (they will add it in Part 1). Print **Pages 30.1-30.3**. Keep Key K4's table (pairs 11-20) within reach: it is Page 30.3's answer.
+Start Python in the lesson folder and run Block P1 to be sure the eight files import. Confirm that `mystery.py` is not open on the student's screen and that the student's own `evalset.py` has **not yet** got a `FROZEN` value in it (they will add it in Part 1). Print **the Overlap, Agreement and the Flips sheets**. Keep Key K4's table (pairs 11-20) within reach: it is Flips sheet's answer.
 
 ### Fallback if the laptops fail
 
-The lesson is an argument, and the pages carry it on paper: the Jaccard of three pairs by hand (Page 30.1), the kappa of twenty printed ratings (Page 30.2), the flips in ten printed pairs (Page 30.3). If the laptop is dead, read the baseline table and the bias summary off this guide. If a block takes more than a minute, something is wrong: the usual cause is running from the wrong folder (an `ImportError` at once, not a slow run), a `FROZEN` value that does not match (an `AssertionError` on import), or a stray `time.sleep` from Week 29 pasted into the session.
+The lesson is an argument, and the pages carry it on paper: the Jaccard of three pairs by hand (Overlap sheet), the kappa of twenty printed ratings (Agreement sheet), the flips in ten printed pairs (Flips sheet). If the laptop is dead, read the baseline table and the bias summary off this guide. If a block takes more than a minute, something is wrong: the usual cause is running from the wrong folder (an `ImportError` at once, not a slow run), a `FROZEN` value that does not match (an `AssertionError` on import), or a stray `time.sleep` from Week 29 pasted into the session.
 
 ---
 
@@ -907,7 +907,7 @@ This is the lesson plan: five segments, each with what to say, ask and show.
 |---|:--:|:--:|---|
 | 🪝 Hook — A Score With No Context | 6 | 0:00-0:06 | "The bot scores 90 percent." Three questions. The report card nobody can check. |
 | 🧠 Concept — The Instrument Before the Thing | 10 | 0:06-0:16 | Freeze first; baseline first; keep the eval out of training; a judge is an instrument; luck and kappa. |
-| 🎲 Their Turn — Overlap and Agreement on Paper | 12 | 0:16-0:28 | Pen: Page 30.1 (Jaccard by hand, three pairs; a threshold) and Page 30.2 (kappa on 20 ratings). |
+| 🎲 Their Turn — Overlap and Agreement on Paper | 12 | 0:16-0:28 | Pen: the Overlap sheet (Jaccard by hand, three pairs; a threshold) and the Agreement sheet (kappa on 20 ratings). |
 | 💻 Live-Code Together — `eval_suite.py` | 36 | 0:28-1:04 | Freeze; baselines; the scan and a leak it misses; replies and kappa with the library as a check; the sealed judge. |
 | 🔑 Wrap & Assign | 6 | 1:04-1:10 | The sentence; what was and was not shown; homework; Week 31. |
 
@@ -924,7 +924,7 @@ Write on the board: **"Our new bot scores 90 percent."** *"Would you ship it?"* 
 
 ### 🎲 Their Turn — Overlap and Agreement on Paper (12 minutes)
 
-Hand over the printed sheet (see **The Activity, In Full**). 6 minutes for Page 30.1: the Jaccard of three pairs of tickets as sets (a1-a3), the removal decision at two thresholds (b), one paraphrase against its eval ticket (c) and the rule-key question (d). 6 minutes for the start of Page 30.2: tally the 20 ratings into the 2 by 2 grid and compute `p_o` and the two pass rates; the rest, `p_e` and `κ`, finishes after the code. Sit back. At the end ask: *"Which of your three pairs is a near-copy, and which two are different questions that happen to share words?"* (a2 is the near-copy; a1 and a3 are different questions.) *"What would a threshold of 0.5 do to the one that is just about the same subject?"* (Remove it: a harmless loss of a training ticket. Thresholds trade copies caught against tickets lost.) Do not run the code for this.
+Hand over the printed sheet (see **The Activity, In Full**). 6 minutes for the Overlap sheet: the Jaccard of three pairs of tickets as sets (a1-a3), the removal decision at two thresholds (b), one paraphrase against its eval ticket (c) and the rule-key question (d). 6 minutes for the start of the Agreement sheet: tally the 20 ratings into the 2 by 2 grid and compute `p_o` and the two pass rates; the rest, `p_e` and `κ`, finishes after the code. Sit back. At the end ask: *"Which of your three pairs is a near-copy, and which two are different questions that happen to share words?"* (a2 is the near-copy; a1 and a3 are different questions.) *"What would a threshold of 0.5 do to the one that is just about the same subject?"* (Remove it: a harmless loss of a training ticket. Thresholds trade copies caught against tickets lost.) Do not run the code for this.
 
 ### 💻 Live-Code Together — `eval_suite.py` (36 minutes)
 
@@ -936,7 +936,7 @@ The student types; you narrate. Blocks go in **one file**, `eval_suite.py`, in t
 
 **Part 3 (8 min) — overlap and the leak.** The student types `words`, `jaccard` and `decontaminate` from your copy after P3's two sets are on the board. Run P3 (`7/9 = 0.778`, and `0.000` for the paraphrase). Run P4: *"the exact copy was worth one ticket (`22` against `21`); five rewordings were worth two more (`23`), and the scan saw none of them."* Ask: *"so is 23 better than 21?"* (No: it measures memory of the paraphrases.) **Mistake 4 and Mistake 5 fit here.**
 
-**Part 4 (8 min) — replies and kappa.** Run P5 (three pairs read aloud; the rubric's own counts `10` and `20`). Then P6 with the hand calculation already on Page 30.2: the student types only the `cohen_kappa_score` line. Check `0.375` against the page. Run P7 (`0.9` and `0.0`). Ask: *"would you trust a judge that agrees with you 90 percent of the time?"* (Not before asking what it says to the easy cases.) **Mistake 7 fits here.**
+**Part 4 (8 min) — replies and kappa.** Run P5 (three pairs read aloud; the rubric's own counts `10` and `20`). Then P6 with the hand calculation already on the Agreement sheet: the student types only the `cohen_kappa_score` line. Check `0.375` against the page. Run P7 (`0.9` and `0.0`). Ask: *"would you trust a judge that agrees with you 90 percent of the time?"* (Not before asking what it says to the easy cases.) **Mistake 7 fits here.**
 
 **Part 5 (6 min) — the sealed judge.** Say: *"this file (`mystery.py`) holds a judge with a flaw. We do not open it. We ask it each question twice."* The student types `bias_test` (you narrate the two `judge_pair` calls: v1 first, then v2 first). Run it: `38` of `60`, `8` flips. **Ask them to say, before you tell them, what a judge with no habit would give for first-position wins** (30, i.e. `0.500`). Then the naive line (`v1 wins 16 of 30`) against the rubric (`10`), and the consistent pairs (`22`). Run P9 and show the twenty estimates (`0.27` to `0.70`): *"one run is one draw."* Open `mystery.py` last and read `BIAS = 0.5`. If time is short, show the P9 output printed and skip the second run. **Mistake 10 is the one to show if there is a minute.**
 
@@ -1226,13 +1226,13 @@ keyword rules (free): 25/30   rules, tuned on the eval: 30/30
 
 ### Setup (2 minutes before class)
 
-Print the sheet below once, single-sided. A pen. No computer. **The tickets on Page 30.1 are the course's own; the ratings on Page 30.2 are the real output of Block P6 (two programs, `H` and `J`); the letters on Page 30.3 are the real output of the stand-in judge (Key K4, seed 0, pairs 11-20).** The scores on Page 30.2 are the rubric's.
+Print the sheet below once, single-sided. A pen. No computer. **The tickets on the Overlap sheet are the course's own; the ratings on the Agreement sheet are the real output of Block P6 (two programs, `H` and `J`); the letters on the Flips sheet are the real output of the stand-in judge (Key K4, seed 0, pairs 11-20).** The scores on the Agreement sheet are the rubric's.
 
 ### The sheet (print only the block between the two ✂ lines)
 
 ```text
 ✂ PRINT ------------------------------------------------------------------
-Page 30.1  Overlap on Paper               Name: ____________   Date: ________
+Overlap sheet  Overlap on Paper             Name: ____________   Date: ________
 
 A ticket is turned into a SET of words: lower case, letters and digits only,
 each word once. "doesn't" becomes two words, "doesn" and "t".
@@ -1267,7 +1267,7 @@ Jaccard = (words in BOTH sets) / (words in EITHER set).
     Is 0.833 then a fair score for "free rules on tickets nobody has seen"?
     ____________________________________________________________________
 
-Page 30.2  Agreement on Paper
+Agreement sheet  Agreement on Paper
 Twenty replies by the old bot. Each has a rubric score out of 3.
 Rater H passes a reply only if it scores 3.  Rater J passes if it scores 2 or 3.
 
@@ -1297,7 +1297,7 @@ Rater H passes a reply only if it scores 3.  Rater J passes if it scores 2 or 3.
     18 of 20.   p_o = ______   p_e = ______   kappa = ______
     Write one sentence about why raw agreement is a poor number. ____________
 
-Page 30.3  Flips on Paper
+Flips sheet  Flips on Paper
 A sealed judge is asked each question twice.  Column A: v1 was shown first.
 Column B: v2 was shown first.  The judge answers "A" (the reply shown first) or
 "B" (the reply shown second).
@@ -1331,15 +1331,15 @@ Column B: v2 was shown first.  The judge answers "A" (the reply shown first) or
 
 ### What "finished" looks like
 
-Page 30.1 with the three Jaccards (`3/6 = 0.500`, `7/9 = 0.778`, `5/13 = 0.385`), the two thresholds (`0.70`: pair 2 only; `0.50`: pairs 1 and 2) and the three sentences; Page 30.2 with the grid `7 7 / 0 6`, `0.65`, `0.44`, `0.375`; Page 30.3 with four flips and a sentence. The student keeps all three. **Marks:** 30.1 (a) three boxes; 30.2 (a) twenty rows, count a row right only if both H and J are right; 30.3 (a) ten rows.
+The Overlap sheet with the three Jaccards (`3/6 = 0.500`, `7/9 = 0.778`, `5/13 = 0.385`), the two thresholds (`0.70`: pair 2 only; `0.50`: pairs 1 and 2) and the three sentences; Agreement sheet with the grid `7 7 / 0 6`, `0.65`, `0.44`, `0.375`; Flips sheet with four flips and a sentence. The student keeps all three. **Marks:** Overlap (a) three boxes; Agreement (a) twenty rows, count a row right only if both H and J are right; Flips (a) ten rows.
 
 ### Variation — shorter (a 50-minute slot)
 
-Give the student `evalset.py` already typed and `dedup.py` already saved. Run P1, P2 and P10 as one block; do Page 30.2 and P6 fully; give the P8 output printed and have them read it against Page 30.3. Drop P4, P9 and Mistake 12. The minimum viable lesson is: *the rules beat my model; kappa by hand; swap the order.*
+Give the student `evalset.py` already typed and `dedup.py` already saved. Run P1, P2 and P10 as one block; do the Agreement sheet and P6 fully; give the P8 output printed and have them read it against the Flips sheet. Drop P4, P9 and Mistake 12. The minimum viable lesson is: *the rules beat my model; kappa by hand; swap the order.*
 
 ### Variation — an anxious or slow student
 
-Give the completed `evalset.py`, `dedup.py` and `bias_test`; have them type only the `cohen_kappa_score` line and the print loop of P6. The sentence that must survive: *"I ask the judge twice, in both orders, and count how often it changes its mind."* Skip Page 30.1 (c) and (d) and Page 30.3 (e) and (f).
+Give the completed `evalset.py`, `dedup.py` and `bias_test`; have them type only the `cohen_kappa_score` line and the print loop of P6. The sentence that must survive: *"I ask the judge twice, in both orders, and count how often it changes its mind."* Skip the Overlap sheet (c) and (d) and the Flips sheet (e) and (f).
 
 ### Variation — harder (a student who finishes early)
 
@@ -1404,7 +1404,7 @@ This section says what to keep and what to cut for a student who is struggling a
 
 ### If the student is struggling
 
-Stay with three ideas: *(1) the eval is written first and frozen, and the free rules are the rung to beat; (2) agreement needs luck taken out (`0.65` is not `0.375`); (3) ask a judge twice, in both orders.* Give the completed `evalset.py`, `dedup.py` and `bias_test`. The student runs P2, P6 and P8 and reads three numbers aloud: `0.833`, `0.375` and `8` of `30`. Skip P3, P4 and P9. The minimum viable lesson: the student says *"a judge that changes its answer when I swap the order is not reading the replies"* and does Page 30.2 (a) to (d).
+Stay with three ideas: *(1) the eval is written first and frozen, and the free rules are the rung to beat; (2) agreement needs luck taken out (`0.65` is not `0.375`); (3) ask a judge twice, in both orders.* Give the completed `evalset.py`, `dedup.py` and `bias_test`. The student runs P2, P6 and P8 and reads three numbers aloud: `0.833`, `0.375` and `8` of `30`. Skip P3, P4 and P9. The minimum viable lesson: the student says *"a judge that changes its answer when I swap the order is not reading the replies"* and does Agreement sheet (a) to (d).
 
 ### If the student is flying
 
@@ -1412,7 +1412,7 @@ Ask them to **predict, then run**: *"If I plant a bias of 0.25 instead of 0.5, w
 
 ### If the student won't engage today
 
-Do the hook and Page 30.2 only. It is a pen lesson at heart: *"you are the strict reader and the lenient reader; count where you differ."* The code can wait for the homework.
+Do the hook and the Agreement sheet only. It is a pen lesson at heart: *"you are the strict reader and the lenient reader; count where you differ."* The code can wait for the homework.
 
 ---
 
@@ -1439,7 +1439,7 @@ Ask these out loud near the end; do not rescue.
 |:--:|---|
 | 🟥 Not yet | Reads scores as facts without asking "of what, compared with what"; treats kappa as "accuracy of the judge"; reads the flip rate as a fact about real judges. |
 | 🟨 Emerging | Runs the code; computes `p_o` but not `p_e`; says the judge has a habit but not how they know; misses that the rules win. |
-| 🟩 Secure | Completes Page 30.2 with `0.375`; says the trained model lost and by how many tickets; recovers roughly the right flip rate and says one run is one draw; says the scan does not catch paraphrases. |
+| 🟩 Secure | Completes the Agreement sheet with `0.375`; says the trained model lost and by how many tickets; recovers roughly the right flip rate and says one run is one draw; says the scan does not catch paraphrases. |
 | 🟦 Strong | Also predicts the first-position rate before it runs, spots that the rules were written with the eval in view, catches the fresh-generator mistake unprompted, and names a flaw the swap test cannot find. |
 
 ---
@@ -1462,7 +1462,7 @@ Extension for the fast student: the flying challenge, and the "prefers the longe
 
 Every number below comes from the blocks above or from `K1` to `K7` (TEACHER-ONLY; below).
 
-### Page 30.1 — Overlap on Paper
+### Overlap sheet — Overlap on Paper
 
 (a1) In both: `should, i, buy` (3); in either: `what, stocks, should, i, buy, bitcoin` (6). `3 / 6 = 0.500`.
 (a2) In both `7` (`what, am, i, paying, month, right, now`); in either `9` (those seven plus `each` and `per`). `7 / 9 = 0.778`.
@@ -1471,7 +1471,7 @@ Every number below comes from the blocks above or from `K1` to `K7` (TEACHER-ONL
 (c) The eye says *the same question*. Jaccard says `0.000`: no shared word. **The scan compares words, not meaning.** (A paraphrase stays in training; Block P4.)
 (d) `rendering`: `charts stopped rendering yesterday afternoon`; `inbox`: `reset email never turns up in my inbox`. Neither is in a training ticket, which suggests the rules were written **after** the eval was seen. So `0.833` is generous: on ten unseen tickets the same rules score `5/10` (Key K5). Accept any answer that says "not a fair score for unseen tickets".
 
-### Page 30.2 — Agreement on Paper
+### Agreement sheet — Agreement on Paper
 
 (a) `H`: pass (1) on rows `1, 5, 7, 11, 13, 17, 19` (score 3), else 0. `J`: pass on every row except `3, 6, 9, 12, 15, 18` (score 1).
 (b) `H pass / J pass` `7`; `H fail / J pass` `7`; `H pass / J fail` `0`; `H fail / J fail` `6`.
@@ -1482,7 +1482,7 @@ Every number below comes from the blocks above or from `K1` to `K7` (TEACHER-ONL
 (g) `J` is **lenient**: it passes `7` replies `H` fails and never fails one `H` passes.
 (h) `p_o = 18 / 20 = 0.90`; `p_e = 1.0 × 0.90 + 0.0 × 0.10 = 0.90`; `κ = 0`. Any sentence that says *raw agreement rewards a judge that never looks when almost everything passes*.
 
-### Page 30.3 — Flips on Paper
+### Flips sheet — Flips on Paper
 
 (a) Winners in column A / column B / same?: `11`: v1 / v1 / yes · `12`: v2 / v2 / yes · `13`: v1 / v2 / **no** · `14`: v1 / v2 / **no** · `15`: v2 / v2 / yes · `16`: v1 / v2 / **no** · `17`: v1 / v1 / yes · `18`: v2 / v2 / yes · `19`: v1 / v2 / **no** · `20`: v2 / v2 / yes. (Key K4 prints the same table.)
 (b) `4` of 10; estimate `0.40`. (The 30-pair run gave `0.267`; the planted value is `0.5`.)
@@ -1586,10 +1586,10 @@ H against itself: 1.0
 
 **Read it:** a judge that passes at `1+` passes everything (`20/20`): agreement `0.35`, equal to the human's pass rate, and `κ = 0.0` (`p_e = 1.0 × 0.35 + 0.0 × 0.65 = 0.35 = p_o`; it is `nan` only if H also said one thing only). At `2+` (our `J`) agreement `0.65` and `κ = 0.375`. At `3+` the judge *is* `H`, so agreement is `1.00` and `κ = 1.0`, which is trivial: `H` is defined as the `3+` rule. The lesson of the row at `1+` is the one of Block P7: **a judge that never looks can have respectable-looking agreement.**
 
-**K4 — Page 30.3's answers**
+**K4 — Flips sheet's answers**
 
 ```python
-# k4_sheet.py (TEACHER-ONLY): pairs 11 to 20 of Page 30.3 (the same seed-0 run as Block P8, so the draws are the ones P8 made) - the mystery judge, seed 0, both orders.
+# k4_sheet.py (TEACHER-ONLY): pairs 11 to 20 of the Flips sheet (the same seed-0 run as Block P8, so the draws are the ones P8 made) - the mystery judge, seed 0, both orders.
 rng = random.Random(0)
 print("pair  ticket                           v1 first -> winner   v2 first -> winner   same?")
 flips10 = first10 = 0
@@ -1699,6 +1699,17 @@ for label, k in seen_in_eval_only:
 
 **Read it:** eight of the 32 keys appear in an eval ticket and in **no** training ticket. Each of these eight is a word the eval contains and the training tickets do not: that is what you see when the rules were written looking at the eval. Nobody did this to cheat (the rules are a plain keyword list, and this is the course's first teaching of baselines), but it means `0.833` is optimistic for an unseen queue; K5 shows `0.500` on ten fresh tickets. **What to do with it:** say it once, plainly, when the student asks why the rules are so good; do not change `RULES`, because Week 31 compares against `25/30`; and use it as the live example of Mistake 12.
 
+
+### Workbook Pages 30.1 to 30.5 and the Warm-Up / Self-Check (TEACHER-ONLY)
+
+The workbook's Pages 30.1 to 30.3 are the homework pages. They are **not** the in-class sheets above: they use fresh data (tickets 11 to 30 of the old bot, pairs 21 to 30 of the seed-0 run, the new bot's replies). All the values below were re-run (the student guide's blocks, then the workbook's, in one session) and agree with the workbook's ANSWERS page.
+
+- **Warm-Up.** 1. An eval written to flatter the system; the fingerprint makes an edit loud, it cannot stop one. 2. Nothing is wrong: `21/30` against `25/30` is the measured result. 3. Against what? Luck can give 90 percent; compute the agreement expected by chance, or kappa. 4. A script imitating a model; its flip rate is a number typed into the file.
+- **Page 30.1 (Homework 1).** Part 1: `7/11 = 0.636`, `2/8 = 0.250`, `3/7 = 0.429`, and `0/0` for the empty pair (guard with `if (A | B)`, which returns `0.0`). At `0.60` only pair 1 is removed; at `0.40` pairs 1 and 3. Part 2 (the workbook's own ten tickets): the free rules score `7/10 = 0.7`, missing tickets 4, 6 and 10 because the key `hi` sits inside `this`, `nothing` and `which`; highest Jaccard `0.25`. The gap of `0.133` is about one and a third tickets: a hint, not a proof. Key K5 holds the teacher's own second set (`5/10`); the student's set will differ, so accept honest numbers.
+- **Page 30.2 (Homework 2).** Part 1 (tickets 11 to 30): grid `7 / 6 / 0 / 7` (J pass H pass 7, J pass H fail 6, J fail H pass 0, both fail 7); `p_o = 0.70`; J passes 13 (`0.65`), H passes 7 (`0.35`); `p_e = 0.455`; `kappa = 0.245 / 0.545 = 0.4495`. Part 2 (grid `9 / 3 / 2 / 6`): `p_o = 0.75`, `p_e = 0.51`, `kappa = 0.4898`. Part 3 (the new bot): J passes 20 of 20, H passes 10 of 20, raw agreement `0.5`, `p_e = 0.5`, `kappa = 0`; two identical all-one lists give `0/0` and the library returns `nan` with a warning.
+- **Page 30.3 (Homework 3, Key K6).** Part 1 (pairs 21 to 30, seed 0): flips on 21, 24, 27, so `3` of 10 (estimate `0.30`; `0.267` on thirty; planted `0.5`); `13` of 20 answers are "A" (6 in column A, 7 in column B); v1 wins `6` of 10 in column A alone and `3` in column B alone; all 7 consistent pairs agree with the rubric. Part 2 (twenty seeds): planted `0.10` gives smallest `0.03`, largest `0.23`, average `0.110`; `0.25` gives `0.13`, `0.37`, `0.247`; `0.30` gives `0.13`, `0.43`, `0.290`; `0.80` gives `0.63`, `0.90`, `0.792`. Only the large habit is "found" from one run; the ranges for `0.10` and `0.25` overlap. Part 3 (`longer_judge`): `0` flips of 30, agrees with the rubric on `5` of 30: the swap test cannot see a judge that is consistently wrong.
+- **Page 30.4.** A: `p_e 0.245`, `kappa 0.536` against the library's `0.375`; fixed `p_e 0.440`, `kappa 0.375` (add the fail-fail term). B: `22` of 30 with the bug, `8` of 30 fixed (`w_rev = "v2" if rev == "A" else "v1"`). C: `+` on sets raises `TypeError`; `&` is in both, `|` is in either; `7/9 = 0.778`.
+- **Page 30.5 and Self-Check.** Bug Log: any two honest entries, one SILENT. Self-Check: 1. the assert fails, the edit is loud but not prevented; 2. the floor is too easy, a free system that ignores language is the real test; 3. a paraphrase shares almost no words (highest Jaccard `0.200` for the five); 4. (agreement - luck) over (1 - luck); 5. raw agreement `0.90`, `kappa = 0`; 6. a single number hides which way the raters differ (J leans lenient); 7. the order pulls the answer to the first reply, one run is one draw; 8. no, a consistently wrong judge passes the swap test; 9. nothing, it is a number typed into `mystery.py`; what transfers is the method.
 
 ### Answers to every question posed in the lesson
 

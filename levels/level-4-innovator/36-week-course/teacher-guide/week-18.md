@@ -40,7 +40,7 @@ By the end of the lesson the student has, **with no computer and no notes:**
 4. **Do the attention arithmetic** on a new set of numbers: scores, softmax by row, weighted average of the values — and say why the scores are divided by `sqrt(d)` and the future hidden *before* the softmax.
 5. **Count and read the block**: the knobs in one block at `d = 16`, why positions are needed, and what the first-loss check (`ln 28`) and the train-against-validation gap tell you.
 
-Observable evidence: a scored paper; a filled **per-week mark grid** (page 18.2); and, most important, **a remediation table with at most two weeks circled** for the student to redo during the following fortnight.
+Observable evidence: a scored paper; a filled **per-week mark grid** (Handout B); and, most important, **a remediation table with at most two weeks circled** for the student to redo during the following fortnight.
 
 ---
 
@@ -134,7 +134,7 @@ These are printed by the prep blocks. Read them before class so nothing surprise
 3. **Every week's guide was on disk this time, but the student guides' exact wording was spot-checked, not read line by line.** A grep of the Week 10-17 student guides found the words the paper uses (*dial*, *forget bias*, *teacher forcing*, *exposure bias*, *top-p*, *temperature*, *compounding*, `ModuleList`, *first-loss*). **Before you print:** if a student guide says *"nucleus"* where the paper says *"top-p"*, or *"memory"* where it says *"cell state"*, change the paper and the key **together**; the numbers will not change.
 4. **The Section E tables are from one dataset, one harness and one seed each.** They show a *shape* (validation falls, bottoms out, rises), not a law. The name model's validation loss moves by about 0.25 between seeds (Week 12 `T2`); the paper's claims are about the *shape*, not the third decimal.
 5. **Three seeds are not enough to call small differences,** and the paper never asks the student to. The one place it asks "is this gap bigger than noise?" (a Week 7 question) is **not on this paper**; it was Week 9's. Term 2 has only one-seed tables, and E(b)/(c) ask the student to say *what one run can and cannot show*.
-6. **The self-marking is honest only if the sheet gives working.** A sheet that shows only answers invites a student to "correct" their paper to match. The marking sheet in page 18.1 shows working for every arithmetic question for that reason.
+6. **The self-marking is honest only if the sheet gives working.** A sheet that shows only answers invites a student to "correct" their paper to match. The marking sheet in Handout A shows working for every arithmetic question for that reason.
 
 ### 7. The misconceptions you will actually see, and where
 
@@ -485,10 +485,10 @@ The set: `big = [2, 0]`, `red = [1, 1]`, `dog = [0, 1]`, `Wq` and `Wk` the ident
 
 **☐ 8. Check the grid adds up (10 seconds).**
 
-**Block P8 — `grid.py` (checks Page 18.2)**
+**Block P8 — `grid.py` (checks Handout B)**
 
 ```python
-# grid.py - Week 18: check that the per-week grid (Page 18.2) adds up to the paper's 75 marks.
+# grid.py - Week 18: check that the per-week grid (Handout B) adds up to the paper's 75 marks.
 marks = {                       # question: (week, marks)
     **{q: (10, 1) for q in ("A1", "A2", "A3")},
     **{q: (11, 1) for q in ("A4", "A5", "A6", "A7")},
@@ -515,7 +515,7 @@ total               : 75
 redo if marks <=    : {10: 6, 11: 3, 12: 6, 13: 7, 14: 4, 15: 5, 16: 5, 17: 5}
 ```
 
-**☐ 9. Print.** Print **one** copy of [The Paper](#-the-paper-in-full) single-sided (so there is room to work), and **one** copy of the **marking sheet** (Page 18.1 of the key — *only* the block between the two "✂ PRINT" lines). Print the **per-week grid** (Page 18.2) and the **remediation table** (Page 18.3) on one page. **Do not print the rest of this file.** Never hand the student any page of this guide except those three.
+**☐ 9. Print.** Print **one** copy of [The Paper](#-the-paper-in-full) single-sided (so there is room to work), and **one** copy of the **marking sheet** (Handout A of the key — *only* the block between the two "✂ PRINT" lines). Print the **per-week grid** (Handout B) and the **remediation table** (Handout C) on one page. **Do not print the rest of this file.** Never hand the student any page of this guide except those three.
 
 **☐ 10. Check the student-guide wording (5 minutes).** See "Honest limits", item 3. Open the Week 11, 13 and 15 student guides and check the words *forget bias*, *top-p* and *dial*. If one differs, edit the paper and the key **together**.
 
@@ -574,7 +574,7 @@ Sit **to the side and a little behind**. Do something quiet and boring: read, ma
 ### 🔑 Wrap & Assign (3 minutes)
 
 1. **At 1:12: "Pens down."** Take the paper. Do not read it in front of them.
-2. **Hand over the marking sheet** (the printed Page 18.1 and the grid, Page 18.2) and a pen of a *different colour* from the one used on the paper.
+2. **Hand over the marking sheet** (the printed Handout A and the grid, Handout B) and a pen of a *different colour* from the one used on the paper.
 3. **Say the homework once:** *"Mark your own paper tonight against this sheet, in the other colour. Give yourself marks for working, not just answers: the sheet tells you how. Then fill in the grid, and circle at most two weeks. Bring it next time."*
 4. **Say one true thing about the paper**, whatever the result: *"Whatever you got, the thing I care about is whether you can tell me, on the grid, where the marks went."*
 5. Do **not** discuss any question. If they ask, *"Tonight, with the sheet. Then we'll talk about the pattern."*
@@ -1093,7 +1093,7 @@ Use this table to answer the questions you are likely to hear, in words that kee
 These are the failures to avoid, most common first.
 
 1. **You help.** The commonest failure. A raised eyebrow changes an answer. Sit to the side.
-2. **You hand over the wrong page.** The student must get only Page 18.1, 18.2 and 18.3. The rest of this file contains every answer *and the mistakes the student is expected to make*.
+2. **You hand over the wrong page.** The student must get only Handouts A, B and C. The rest of this file contains every answer *and the mistakes the student is expected to make*.
 3. **The paper runs over.** Seventy minutes is *tight*; Section D is the slowest. The five time-checks exist so E is not left in the last four minutes. If E is not attempted at all, mark A-D and treat E as a take-home (see "Variation — shorter").
 4. **Marking by the final number.** The marks are in the *working*. D1 (5 marks) has a blend at the end; a student who gets a weight wrong and then does the blend *correctly from their own weights* loses the weight marks, not the blend mark. Follow the key's "follow-through" notes.
 5. **Treating 45 as pass/fail.** The only decision the total drives is how many weeks to redo (at most two). A 70 with a 2/6 on Week 11 means **redo Week 11**, whatever the total.
@@ -1115,7 +1115,7 @@ This section adjusts the same paper for a student who is struggling, flying or n
 - **Read Section E aloud** if reading, not maths, is the barrier. Do not paraphrase; read the words.
 - **Calculators for everything** (already allowed). A student who spends 5 minutes on `e^4` by hand has been unfairly treated by the paper.
 - **After the paper**, the remediation table is for *at most two* weeks, even if five are low. Pick the one that Term 3 needs most (priority order: **Week 16 → Week 15 → Week 17**), then the lowest remaining.
-- **Do not repeat the paper.** Redo the *page* that went wrong (Page 18.3 names it) and ask the **teacher check question** from the table out loud afterwards. A spoken correct answer, in your own words, is the exit ticket.
+- **Do not repeat the paper.** Redo the *page* that went wrong (Handout C names it) and ask the **teacher check question** from the table out loud afterwards. A spoken correct answer, in your own words, is the exit ticket.
 - **If Weeks 10 and 11 are the low ones**, do not panic: nothing in Term 3 leans on them directly. Week 11's gate is the Week 6 residual road in a loop, and Week 19's residual ablation will re-teach the road from the other side.
 
 ### If the student is flying
@@ -1148,7 +1148,7 @@ This section tells you how to mark the paper, how to read the pattern across wee
 ### Reading the pattern
 
 - **The total** is the *least* informative number.
-- **The per-week fraction** (page 18.2) tells you what to redo. **Under 60% of the marks in a week** goes in the "redo" column; **80% or over** is "secure".
+- **The per-week fraction** (Handout B) tells you what to redo. **Under 60% of the marks in a week** goes in the "redo" column; **80% or over** is "secure".
 - **Pairs that matter.** Weeks 15 and 16 together low means *the mask and the positions* have not landed, and those are two of the four things Week 19 deletes. Redo both before Week 19. Weeks 10 and 11 together low means *compounding* has not landed; that is the only idea they share, and it returns in Week 21's scaling arithmetic.
 - **When the total and the pattern disagree, the pattern wins.** A made-up student, to practise the arithmetic (this is an illustration, **not** data from anyone): marks by week `W10 8/11, W11 2/6, W12 9/11, W13 11/13, W14 3/7, W15 7/9, W16 4/9, W17 7/9` for a total of **51**, which the scale below calls "Secure". The grid says otherwise: Week 11 is 33%, Week 14 is 43% and Week 16 is 44%, three weeks at or under their "redo" line (2 ≤ 3, 3 ≤ 4, 4 ≤ 5). The rule is **circle at most two, choosing the lowest percentages** (the order Week 16, Week 15, Week 17 only breaks exact ties, and there is none here): so **circle Weeks 11 and 14** (33% and 43%) and write Week 16 (44%, a near-tie, and one Week 19 leans on) on the side as "first thing to re-check before Week 19". The honest summary for this student is *"Getting there"*, not *"Secure"*, even though 51 says otherwise.
 - **Section C versus Section B.** A student who can say what a program prints (B) but cannot find a bug in it (C) knows the *rule* but has not yet learned to ask what should be true of the output: a different remediation (do the "rows add to 1?" and "count the knobs by hand" checks aloud on two programs) from not knowing the rule.
@@ -1175,9 +1175,9 @@ Self-marking covers A, B and C well: those answers are *checkable*. D and E need
 
 The homework is the marking itself. Say it once in the wrap, then hand over the sheet.
 
-1. **Mark your own paper** against the printed sheet (Page 18.1), in the *other colour*. For D and E, mark the **working**, not only the answer. *(Estimated 30 minutes.)*
-2. **Fill the per-week grid** (Page 18.2): the marks you got, out of the marks available, for each of the eight weeks, and the percentage. *(5 minutes.)*
-3. **Circle at most two weeks** in the remediation table (Page 18.3): the lowest, but with the priority order Week 16, Week 15, Week 17 breaking ties. Write a day and time for each redo next to the circle. *(5 minutes.)*
+1. **Mark your own paper** against the printed sheet (Handout A), in the *other colour*. For D and E, mark the **working**, not only the answer. *(Estimated 30 minutes.)*
+2. **Fill the per-week grid** (Handout B): the marks you got, out of the marks available, for each of the eight weeks, and the percentage. *(5 minutes.)*
+3. **Circle at most two weeks** in the remediation table (Handout C): the lowest, but with the priority order Week 16, Week 15, Week 17 breaking ties. Write a day and time for each redo next to the circle. *(5 minutes.)*
 4. **One sentence in the Bug Log**: *"The answer I was most surprised to get wrong was ___, because I thought ___."* *(5 minutes.)*
 
 **Next time you bring:** the marked paper, the grid, the circled table. No new code. If a student comes back having *redone* a week's page already, that is a lovely surprise; do not insist on it.
@@ -1186,9 +1186,11 @@ The homework is the marking itself. Say it once in the wrap, then hand over the 
 
 ## 🔑 Answer Key
 
-> **How this key is laid out.** **Page 18.1** is the student's marking sheet: *print only the block between the two ✂ lines*. **Page 18.2** is the per-week grid. **Page 18.3** is the remediation table. Then comes everything for **you**: the wrong-option map for Section A, the marking notes for B-E, the model answers, and the answers to every question posed in the lesson. The B outputs come from Block P3; the C outputs from the Clinic; the D numbers from Block P2; the E numbers from Blocks P4-P6.
+> **Names.** The three printed sheets are called **Handout A** (marking sheet), **Handout B** (per-week grid) and **Handout C** (remediation table), so they are not confused with the workbook's own pages 18.1 (confidence map) to 18.10 (Bug Log). The workbook's page 18.9 reproduces Handout B, and its practice pages 18.2 to 18.8 are keyed in the section after Handout C.
+>
+> **How this key is laid out.** **Handout A** is the student's marking sheet: *print only the block between the two ✂ lines*. **Handout B** is the per-week grid. **Handout C** is the remediation table. Then comes everything for **you**: the wrong-option map for Section A, the marking notes for B-E, the model answers, and the answers to every question posed in the lesson. The B outputs come from Block P3; the C outputs from the Clinic; the D numbers from Block P2; the E numbers from Blocks P4-P6.
 
-### Page 18.1 — The marking sheet (the one page the student may keep)
+### Handout A — The marking sheet (the one page the student may keep)
 
 ✂ PRINT FROM HERE
 
@@ -1259,7 +1261,7 @@ The homework is the marking itself. Say it once in the wrap, then hand over the 
 
 ✂ PRINT TO HERE
 
-### Page 18.2 — The per-week grid (print this, with 18.3)
+### Handout B — The per-week grid (print this, with Handout C)
 
 | Week | Topic | Questions | Marks available | Marks earned | % | Redo if marks ≤ | Circle? |
 |:--:|---|---|:--:|:--:|:--:|:--:|:--:|
@@ -1275,7 +1277,7 @@ The homework is the marking itself. Say it once in the wrap, then hand over the 
 
 *(11 + 6 + 11 + 13 + 7 + 9 + 9 + 9 = 75; Block P8 checks this. "Redo if marks ≤" is 60% of the week's marks, rounded down.)*
 
-### Page 18.3 — The remediation table (print with 18.2)
+### Handout C — The remediation table (print with Handout B)
 
 Circle at most **two** weeks. Priority order if there is a tie: **Week 16, Week 15, Week 17**. Each redo is 20 minutes plus the spoken check. **One redo is always available in addition:** the three-token pass on a **new** set of numbers, which the teacher has (Block P7) — do it for any of Weeks 14, 15 or 16.
 
@@ -1289,6 +1291,20 @@ Circle at most **two** weeks. Priority order if there is a tie: **Week 16, Week 
 | 15 | Workbook **Page 15.2** (variances add, a softmax before and after) and **Page 15.3** (the four settings, the mask built by hand) | "Mask before or after the softmax, and `-inf` or 0?" → *before; `-inf`, so the future gets exactly 0* | **Two of the four parts Week 19 deletes.** |
 | 16 | Workbook **Page 16.2** (the seat swap) and **Page 16.4** (count the knobs of one block) | "Why can attention alone not tell `dog bit man` from `man bit dog`, and what fixes it?" → *it has no order; add a position vector* | **The other two parts Week 19 deletes** (positions and the block's layout). |
 | 17 | Workbook **Page 17.3** (count the model) and **Page 17.4** (the first-loss check), then **Page 17.6** (what the gap means) | "What should the loss be at step 0 for 28 characters, and why?" → *about `ln 28 = 3.33`: every character equally likely* | The first-loss check is how Week 19 decides an ablation broke something. |
+
+**Workbook pointer.** Page 18.9 of the workbook adds today's practice page to redo alongside Handout C: weeks 10 and 11 with page 18.2, week 13 with 18.3, week 14 with 18.4 (then the second set of numbers from Block P7), week 15 with 18.4 and 18.5, week 16 with 18.6, weeks 12 and 17 with 18.7.
+
+### Teacher-only: the workbook's practice pages 18.2-18.8 (numbers that are not on the paper)
+
+Every number below was printed by the workbook's own check files (`check182.py` to `check187.py`) and re-run. Page 18.1 (the confidence map) has no right answer.
+
+- **18.2 (compounding, forget dial, clipping).** `0.85 ^ 20 = 0.0388` (fading), `1.15 ^ 20 = 16.37` (blowing up), `0.85` first drops below `0.1` after **15** steps (`0.0874`). Clipping a gradient of length 40 returns **40** and rescales to `[0.6, 0.8]`; a gradient of `4e-07` is untouched, so clipping cures blowing up only. Forget dials `sigmoid(bias)` at biases 0.5, -1, 0, 1.5, 2.5: `0.6225, 0.2689, 0.5000, 0.8176, 0.9241`, and to the 6th power `0.0582, 0.00038, 0.0156, 0.2987, 0.6229`; bias 1.5 keeps about **19** times more than bias 0 (`0.29865 / 0.015625 = 19.1`). Slopes `0.85, 0.7225, 0.6141, 0.5220`; `0.7 ^ 5 = 0.1681`; a gradient `[24, 32]` has length `sqrt(576 + 1024) = sqrt(1600) = 40`.
+- **18.3 (scores to chances).** Scores `[2.0, 1.5, 0.5, 0.0, -1.0]` give chances `0.4963, 0.3010, 0.1107, 0.0672, 0.0247`; at `T = 0.5` the top letter has `0.6952`, at `T = 2` it has `0.3518`; top-2 re-shared `0.6225, 0.3775`; running totals `0.4963, 0.7974, 0.9081, 0.9753, 1.0`; top-p `0.6, 0.8, 0.95` keep **2, 3, 4** letters (the `+ 1`). Working: exponentials `7.389, 4.482, 1.649, 1.000, 0.368`, total `14.887`; at `T = 0.5` the scores become `[4, 3, 1, 0, -2]` with exponentials `54.598, 20.086, 2.718, 1.000, 0.135`, total `78.537`; the other `T = 0.5` chances are `0.2557, 0.0346, 0.0127, 0.0017`; the `T = 2` chances are `0.3518, 0.2740, 0.1662, 0.1294, 0.0785`.
+- **18.4 (attention pass).** `V = [[2, 1], [2, 2], [3, 1]]`; scores `[[2, 2, 3], [2, 4, 2], [3, 2, 5]]`; row 2 plain weights `0.1065, 0.7870, 0.1065`, output `[2.107, 1.787]`; both dials: row 2 weights `[0.1956, 0.8044, 0]`, output `[2.000, 1.804]`; row 3 weights `[0.1784, 0.0879, 0.7337]` (without the divide `[0.1142, 0.0420, 0.8438]`); the mask hides nothing in the last row. Working: row 2 exponentials `7.389, 54.598, 7.389`, total `69.376`; the scaled row 2 is `[1.414, 2.828, 1.414]` with exponentials `4.113, 16.919` (visible places) and total `21.032`; row 3 scaled scores `[2.121, 1.414, 3.536]`, exponentials `8.342, 4.113, 34.313`, total `46.769`; both-dials output rows `[2.0, 1.0]`, `[2.0, 1.804]`, `[2.734, 1.088]`.
+- **18.5 (heads and the mask).** `(3, 6, 3, 4)` then `(3, 3, 6, 4)`; **6** places hidden, **10** visible; row 3 `[0.3333, 0.3333, 0.3333, 0]`; mask applied after the softmax gives row sums `0.25, 0.50, 0.75, 1.00`.
+- **18.6 (count the block at `d = 14`).** Norms **56**, `q, k, v` **588**, `proj` **210**, `up` **840**, `down` **798**; block **2,492** (`12 x 196 + 10 x 14`); three blocks **7,476**; with a 2x MLP the block is **1,680**; the formula at `d = 24` gives **7,152**. Working: `up` is `14 x 56 + 56 = 840`, `down` is `56 x 14 + 14 = 798`, MLP **1,638**; `56 + 798 + 1,638 = 2,492`; `12 x 196 + 10 x 14 = 2,352 + 140`; with the 2x MLP `up` is `14 x 28 + 28 = 420`, `down` is `28 x 14 + 14 = 406`, MLP **826**, block `56 + 798 + 826 = 1,680`.
+- **18.7 (a small letter model, 15,868 knobs).** Validation is lowest at step 200 (`1.357`) and rises to `2.332` by step 1000 while train falls to `0.483`; the counting models score `3.332, 2.854, 2.031` (this window split is 6,270 train and 694 validation windows, so the two counting numbers differ in the third decimal from the paper's `2.855` and `2.033`).
+- **18.8 (four bugs).** A `dim=0` softmax (row sums `0.935, 1.356, 0.709`); B temperature applied after the softmax (sum `2.0`, letter 0 picked about `0.67` of the time, instead of `0.86`); C `IndexError: Dimension out of range` (start token 1-D, fix `torch.full((2, 1), 27)`); D `slope = 1.0` inside the loop prints `0.9` (fixed: `0.3487`).
 
 ### Teacher-only: the map of wrong answers in Section A
 

@@ -23,7 +23,7 @@ This table gives the shape of the week in one place: timing, what is assessed, w
 | **The paper** | 75 marks. **A** 20 multiple choice (1 each) · **B** 8 "what does this print" (2 each) · **C** 4 "find the bug" (3 each) · **D** 3 arithmetic (5 each) · **E** 1 extended question on two real tables (12). Printed in full in [The Paper, in Full](#-the-paper-in-full) below; the key is at the bottom. |
 | **Dataset** | None run by the student. Section E prints two real tables as numbers: Week 19's five-way ablation of the TinyGPT (800 steps) and Week 26's recall table on the 15-note notebook. **Nothing downloads. No internet.** |
 | **Model** | Real PyTorch and numpy on the CPU, used by *you* in the prep to confirm the numbers the paper quotes from Weeks 22 and 26. **The Week 23 scripted client (`FakeClient`) and Week 26's sentence-copier appear on the paper only as named stand-ins, in words ("stand-in, not a model"). Nothing scored against them says anything about a real model, and the paper says so.** |
-| **Materials** | The printed paper (one copy, single-sided) · the printed **marking sheet** (Page 27.1, the one page you may hand over afterwards) · a pen · a calculator with `ln`, `e^x`, `log` (base 10) and a power key (a phone in calculator mode is fine; **airplane mode on**) · scrap paper · a timer · the per-week grid and remediation table (pages 27.2, 27.3) |
+| **Materials** | The printed paper (one copy, single-sided) · the printed **marking sheet** (Marking Sheet 1, the one page you may hand over afterwards) · a pen · a calculator with `ln`, `e^x`, `log` (base 10) and a power key (a phone in calculator mode is fine; **airplane mode on**) · scrap paper · a timer · the per-week grid and remediation table (pages 27.2, 27.3) |
 | **Prep time** | 30 minutes the night before (printing, reading the key, one 2-second prep run) · 3 minutes on the day |
 | **Expected runtime of the code** | The **whole** prep (every block in the Prep Checklist, one session) runs in about **2 seconds** of wall time (measured 1.8 s, most of it importing torch). **No block takes over 10 seconds**, so nothing needs a recorded time; Week 19's 3.6-minute ablation table is deliberately **not** re-run (see section 3). Anything over **1 minute** means something is wrong (see Fallback). The *student* runs no code today. |
 
@@ -48,7 +48,7 @@ By the end of the lesson the student has, **with no computer and no notes:**
 6. **Say what in-context examples and a logit mask do and do not do** (weights do not change; shape is guaranteed, sense is not). *(Week 24)*
 7. **Do a cosine by hand, pick the top k, and read recall@k with the question "who wrote the questions?"**, and know that a valid citation only proves the writer named a note it was handed. *(Weeks 25-26)*
 
-Observable evidence: a scored paper; a filled **per-week mark grid** (page 27.2); and, most important, **a remediation table with at most two weeks circled** for the student to redo during the following fortnight — and, as the README asks, the **recall table re-run with a changed chunk size** (homework, section "Homework to Assign").
+Observable evidence: a scored paper; a filled **per-week mark grid** (Marking Sheet 2); and, most important, **a remediation table with at most two weeks circled** for the student to redo during the following fortnight — and, as the README asks, the **recall table re-run with a changed chunk size** (homework, section "Homework to Assign").
 
 ---
 
@@ -133,7 +133,7 @@ These are printed by the prep blocks. Read them before class so nothing surprise
 3. **Multiple choice can be guessed.** Twenty 4-option questions guessed at random average 5 marks. That is why there are only 20 of 75 marks there, and why every wrong option was built from a real wrong answer or a real tempting half-truth from Weeks 19-26, so a wrong choice *means* something (the key names what).
 4. **Weeks 20, 21 and 24 are quoted from the plan, not from a written guide.** When this file was written, `teacher-guide/week-20.md`, `week-21.md` and `week-24.md` (and the student guides and workbooks for Weeks 19-21 and 24) **were not on disk**. The questions on those weeks (A4-A8, A15-A16, B2, B3, B6, D3) therefore use only what the README's row for each week and the patched Module 4 say — byte-level BPE merging the most common pair, a straight line on log-log paper, `C ≈ 6ND`, learning from examples in the prompt, a schema guarantees shape not sense, `torch.where` as a logit mask — and every number in them is **chosen or computed here**, not quoted from a Week 20/21/24 run. **Status update (audit, Term 3 numbers check):** all three guides and their student guides and workbooks now exist, and each of the six words on the paper (*merge*, *bytes per token*, *power law*, *log-log*, *in-context*, *logit mask*) does appear in the matching lesson (Week 20: merge, bytes per token; Week 21: power law, log-log; Week 24: in-context, logit mask). **Before you print:** still skim those three guides; if the paper's words ever drift from the lessons', change the paper and the key **together**. The arithmetic will not change.
 5. **Every quoted number is one run.** The Week 19 table is one seed plus one repeat; Week 26's recall is ten questions; Week 22's toys are deterministic but tiny. The paper's claims are about the *shape*.
-6. **The self-marking is honest only if the sheet gives working.** A sheet that shows only answers invites a student to "correct" their paper to match. Page 27.1 shows working for every arithmetic question for that reason.
+6. **The self-marking is honest only if the sheet gives working.** A sheet that shows only answers invites a student to "correct" their paper to match. Marking Sheet 1 shows working for every arithmetic question for that reason.
 7. **The stand-ins.** A14, A19 and E(c) mention `FakeClient` and the sentence-copier. They are labelled on the paper. If a student writes that "the model" chose a sentence, mark the sentence for what it says, but write on the sheet: *stand-in, not a model*.
 
 ### 7. The misconceptions you will actually see, and where
@@ -349,7 +349,7 @@ D3 (d) C = 6ND: 1.2e+14
 **Block P6 — `grid.py` (TEACHER-ONLY: dictionaries and a loop)**
 
 ```python
-# grid.py - Week 27: check the per-week grid (Page 27.2) adds up to the paper's 75 marks, and the quoted sums.
+# grid.py - Week 27: check the per-week grid (Marking Sheet 2) adds up to the paper's 75 marks, and the quoted sums.
 items = []                                                       # (label, week, marks)
 weeks_A = [19, 19, 19, 20, 20, 21, 21, 21, 22, 22, 22, 23, 23, 23, 24, 24, 25, 25, 26, 26]
 for i, wk in enumerate(weeks_A):
@@ -386,11 +386,11 @@ A9 : masked minus unmasked loss: 0.2399
 B4 : -ln(sigmoid(2)): 0.1269 | ln 2: 0.6931
 ```
 
-**☐ 7. Run the paper's code (3 minutes).** Every program on the paper is in [The Paper, in Full](#-the-paper-in-full); run the preamble and B1-B8 in one session, then run C1-C4 *as given* (each is deliberately broken, and the **Debugging Clinic** has the real output). The outputs are in the key (Page 27.1). **Do not skip this step**: it is the only way you will recognise a student's wrong answer at a glance.
+**☐ 7. Run the paper's code (3 minutes).** Every program on the paper is in [The Paper, in Full](#-the-paper-in-full); run the preamble and B1-B8 in one session, then run C1-C4 *as given* (each is deliberately broken, and the **Debugging Clinic** has the real output). The outputs are in the key (Marking Sheet 1). **Do not skip this step**: it is the only way you will recognise a student's wrong answer at a glance.
 
 **☐ 8. Read the key once (10 minutes).** Section A's wrong-option map, the D follow-through notes and the E(a)-(d) exemplars. Then decide, honestly, what *you* would write for E(c) (the reply to the classmate).
 
-**☐ 9. Print.** Print **one** copy of [The Paper](#-the-paper-in-full) single-sided (so there is room to work), and **one** copy of the **marking sheet** (Page 27.1 — *only* the block between the two "✂ PRINT" lines). Print the **per-week grid** (Page 27.2) and the **remediation table** (Page 27.3) on one page. **Do not print the rest of this file.** Never hand the student any page of this guide except those three.
+**☐ 9. Print.** Print **one** copy of [The Paper](#-the-paper-in-full) single-sided (so there is room to work), and **one** copy of the **marking sheet** (Marking Sheet 1 — *only* the block between the two "✂ PRINT" lines). Print the **per-week grid** (Marking Sheet 2) and the **remediation table** (Marking Sheet 3) on one page. **Do not print the rest of this file.** Never hand the student any page of this guide except those three.
 
 **☐ 10. Check the student-guide wording (5 minutes).** See "Honest limits", item 4. Open the Week 22, 23, 25 and 26 student guides (they exist) and check the words *masked loss*, *leash*, *floor*, *frozen set*, *recall@k*, *stranger*, *citation*. For Weeks 19, 20, 21 and 24, open whatever exists. If one differs, edit the paper and the key **together**.
 
@@ -457,7 +457,7 @@ Sit **to the side and a little behind**. Do something quiet and boring: read, ma
 ### 🔑 Wrap & Assign (3 minutes)
 
 1. **At 1:12: "Pens down."** Take the paper. Do not read it in front of them.
-2. **Hand over the marking sheet** (the printed Page 27.1 and the grid, Page 27.2) and a pen of a *different colour* from the one used on the paper.
+2. **Hand over the marking sheet** (the printed Marking Sheet 1 and the grid, Sheet 2) and a pen of a *different colour* from the one used on the paper.
 3. **Say the homework once:** *"Mark your own paper tonight against this sheet, in the other colour. Give yourself marks for working, not just answers: the sheet tells you how. Then fill in the grid, and circle at most two weeks. Then one small job at the computer, which the sheet explains. Bring it next time."*
 4. **Say one true thing about the paper**, whatever the result: *"Whatever you got, the thing I care about is whether you can tell me, on the grid, where the marks went."*
 5. Do **not** discuss any question. If they ask, *"Tonight, with the sheet. Then we'll talk about the pattern."*
@@ -1080,7 +1080,7 @@ Use this table for questions during or after the paper. Each row gives an honest
 Read this before class. It lists the failures most likely to spoil the paper or its marking.
 
 1. **You help.** The commonest failure. A raised eyebrow changes an answer. Sit to the side.
-2. **You hand over the wrong page.** The student must get only Page 27.1, 27.2 and 27.3. The rest of this file contains every answer *and the mistakes the student is expected to make*.
+2. **You hand over the wrong page.** The student must get only Marking Sheets 1, 2 and 3. The rest of this file contains every answer *and the mistakes the student is expected to make*.
 3. **The paper runs over.** Seventy minutes is *tight*; Section D is the slowest. The five time-checks exist so E is not left in the last four minutes. If E is not attempted at all, mark A-D and treat E as a take-home (see "Variation — shorter").
 4. **Marking by the final number.** The marks are in the *working*. D1 (5 marks) has a dot product, two lengths and a divide; a student who gets a length wrong and then divides *correctly from their own length* loses the length mark, not the divide mark. Follow the key's "follow-through" notes.
 5. **Treating 45 as pass/fail.** The only decision the total drives is how many weeks to redo (at most two). A 70 with a 1/4 on Week 24 means **ask the spoken check**, whatever the total.
@@ -1103,7 +1103,7 @@ This section covers adjusting the day for a student who is struggling, one who f
 - **Read Section E aloud** if reading, not maths, is the barrier. Do not paraphrase; read the words.
 - **Calculators for everything** (already allowed). A student who spends 5 minutes on `ln 4` by hand has been unfairly treated by the paper.
 - **After the paper**, the remediation table is for *at most two* weeks, even if five are low. Pick the one that Term 4 needs most (priority order: **Week 23 → Week 26 → Week 22**), then the lowest remaining.
-- **Do not repeat the paper.** Redo the *page* that went wrong (Page 27.3 names it) and ask the **teacher check question** from the table out loud afterwards. A spoken correct answer, in your own words, is the exit ticket.
+- **Do not repeat the paper.** Redo the *page* that went wrong (Marking Sheet 3 names it) and ask the **teacher check question** from the table out loud afterwards. A spoken correct answer, in your own words, is the exit ticket.
 - **If Weeks 19-21 are the low ones**, do not panic: nothing in Term 4 leans on them directly. Week 20's token counts return in Week 29's cost arithmetic (the student's own tokenizer, or the `ceil(words × 1.3)` fallback), and Week 21's `6ND` is used once more at the capstone.
 
 ### If the student is flying
@@ -1136,7 +1136,7 @@ This section says how to mark the paper, how to read the pattern across weeks, a
 ### Reading the pattern
 
 - **The total** is the *least* informative number.
-- **The per-week fraction** (page 27.2) tells you what to redo. **Under 60% of the marks in a week** goes in the "redo" column; **80% or over** is "secure". Weeks 20 and 24 are too thin for percentages: see section 6, item 2.
+- **The per-week fraction** (Marking Sheet 2) tells you what to redo. **Under 60% of the marks in a week** goes in the "redo" column; **80% or over** is "secure". Weeks 20 and 24 are too thin for percentages: see section 6, item 2.
 - **Pairs that matter.** Weeks 23 and 26 together low means *the floor and the frozen set* and *the citation and the gate* have not landed, and those are what Week 28's six fences and Week 29's attacks stand on; redo both before Week 28. Weeks 25 and 26 together low means *cosine and recall* have not landed; that is the only idea they share, and it returns in Week 29's mini RAG.
 - **When the total and the pattern disagree, the pattern wins.** A made-up student, to practise the arithmetic (this is an illustration, **not** data from anyone): marks by week `W19 8/10, W20 5/6, W21 7/8, W22 7/13, W23 3/8, W24 3/4, W25 9/12, W26 8/14` for a total of **50**, which the scale below calls "Secure". The grid says otherwise: Week 23 is 38%, Week 22 is 54% and Week 26 is 57%, three weeks at or under their "redo" line (3 ≤ 4, 7 ≤ 7, 8 ≤ 8). The rule is **circle at most two**, with the priority order Week 23 → Week 26 → Week 22: so **circle Weeks 23 and 26**, and write Week 22 on the "if there is time" line.
 - **Section C versus Section B.** A student who can say what a program prints (B) but cannot find a bug in it (C) knows the *rule* but has not yet learned to ask what should be true of the output: a different remediation (do "a loss is never negative", "the best match is the most similar, not the longest" and "print the scores of the ids you picked" aloud on two programs) from not knowing the rule.
@@ -1163,9 +1163,9 @@ Self-marking covers A, B and C well: those answers are *checkable*. D and E need
 
 Five tasks for the week after the paper, with time estimates.
 
-1. **Mark your own paper** against the printed sheet (Page 27.1), in the *other colour*. For D and E, mark the **working**, not only the answer. *(Estimated 30 minutes.)*
-2. **Fill the per-week grid** (Page 27.2): the marks you got, out of the marks available, for each of the eight weeks, and the percentage. *(5 minutes.)*
-3. **Circle at most two weeks** in the remediation table (Page 27.3): the lowest, but with the priority order Week 23, Week 26, Week 22 breaking ties. Write a day and time for each redo next to the circle. *(5 minutes.)*
+1. **Mark your own paper** against the printed sheet (Marking Sheet 1), in the *other colour*. For D and E, mark the **working**, not only the answer. *(Estimated 30 minutes.)*
+2. **Fill the per-week grid** (Marking Sheet 2): the marks you got, out of the marks available, for each of the eight weeks, and the percentage. *(5 minutes.)*
+3. **Circle at most two weeks** in the remediation table (Marking Sheet 3): the lowest, but with the priority order Week 23, Week 26, Week 22 breaking ties. Write a day and time for each redo next to the circle. *(5 minutes.)*
 4. **The README's small job at the computer: rerun the recall table with a changed chunk size.** Week 26's table cut at 30, 60, 120 and 250 words. Cut at **20, 45 and 90** words (overlaps of 5, 10 and 20 words), using your Week 26 files, and **predict each row before you run it**: will recall@1 rise or fall, and will the share of the notebook sent at k = 3 rise or fall? Then write two sentences: what the table shows, and what ten questions cannot tell you. *(Estimated 15 minutes.)*
 5. **One sentence in the Bug Log**: *"The answer I was most surprised to get wrong was ___, because I thought ___."* *(5 minutes.)*
 
@@ -1175,9 +1175,9 @@ Five tasks for the week after the paper, with time estimates.
 
 ## 🔑 Answer Key
 
-> **How this key is laid out.** **Page 27.1** is the student's marking sheet: *print only the block between the two ✂ lines*. **Page 27.2** is the per-week grid. **Page 27.3** is the remediation table. Then comes everything for **you**: the wrong-option map for Section A, the marking notes for B-E, the model answers, and the answers to every question posed in the lesson. The B outputs come from running the preamble and B1-B8 (Block P7 below); the C outputs from the Clinic; the D numbers from Block P5; the E numbers from the Week 19 guide and Blocks P2-P3.
+> **How this key is laid out.** **Marking Sheet 1** is the student's marking sheet: *print only the block between the two ✂ lines*. **Marking Sheet 2** is the per-week grid. **Marking Sheet 3** is the remediation table. Then comes everything for **you**: the wrong-option map for Section A, the marking notes for B-E, the model answers, and the answers to every question posed in the lesson. The B outputs come from running the preamble and B1-B8 (Block P7 below); the C outputs from the Clinic; the D numbers from Block P5; the E numbers from the Week 19 guide and Blocks P2-P3.
 
-The B programs, run exactly as printed on the paper (the preamble first), produce the outputs on Page 27.1. **Block P7** is that run, with the outputs in order, so that you have the real text in front of you:
+The B programs, run exactly as printed on the paper (the preamble first), produce the outputs on Marking Sheet 1. **Block P7** is that run, with the outputs in order, so that you have the real text in front of you:
 
 **Block P7 — the paper's B1-B8, run in one session (the same text as the paper)**
 
@@ -1262,7 +1262,7 @@ B7: [1 2]
 B8: ['2', '7'] False {'7'}
 ```
 
-### Page 27.1 — The marking sheet (the one page the student may keep)
+### Marking Sheet 1 — The marking sheet (the one page the student may keep)
 
 ✂ PRINT FROM HERE
 
@@ -1327,7 +1327,7 @@ B8: ['2', '7'] False {'7'}
 
 ✂ PRINT TO HERE
 
-### Page 27.2 — The per-week grid (print this, with 27.3)
+### Marking Sheet 2 — The per-week grid (print this, with Sheet 3)
 
 | Week | Topic | Questions | Marks available | Marks earned | % | Redo if marks ≤ | Circle? |
 |:--:|---|---|:--:|:--:|:--:|:--:|:--:|
@@ -1343,7 +1343,7 @@ B8: ['2', '7'] False {'7'}
 
 *(10 + 6 + 8 + 13 + 8 + 4 + 12 + 14 = 75; Block P6 checks this. "Redo if marks ≤" is 60% of the week's marks, rounded down. Weeks 20 and 24 are thin: a flag there means "ask the spoken check first".)*
 
-### Page 27.3 — The remediation table (print with 27.2)
+### Marking Sheet 3 — The remediation table (print with Sheet 2)
 
 Circle at most **two** weeks. Priority order if there is a tie: **Week 23, Week 26, Week 22**. Each redo is 20 minutes plus the spoken check. **Weeks 19, 20, 21 and 24 point at their own workbook pages below.**
 
@@ -1357,6 +1357,10 @@ Circle at most **two** weeks. Priority order if there is a tie: **Week 23, Week 
 | 24 | Workbook **Page 24.1** (the ceiling) and **Page 24.4** (the mask, hand softmax first) | "A mask forces valid JSON. What is still wrong?" → *the values; shape, not sense* | Week 28's `validate_args` makes the same promise and the same mistake possible. |
 | 25 | Workbook **Page 25.1** (cosine cards) and **Page 25.4** (recall, the control, and what the table does not show) | "Why does a long vector beat a close one on a plain dot product, and what fixes it?" → *length; normalise once* | Week 29's mini RAG uses cosine. |
 | 26 | Workbook **Page 26.1** (Citation Court) and **Page 26.3** (recall on your own questions) and **Page 26.4** (chunking) | "Recall is 1.00. What is your first question?" → *who wrote the questions? Then: a valid citation proves what?* → *the writer named a note it was handed* | **Week 29 is Week 26's "retrieved text is data" turned into an attack.** |
+
+### The workbook's own practice pages (Workbook Pages 27.1-27.6 are not the marking sheets above)
+
+The workbook pages are practice on numbers that are not the paper's; every figure below was re-run from the workbook's own check files. **Workbook 27.1:** cosines `1.000`, `0.596`, `-1.000` for cards A, B, C; `KL(p from r) = 0.1838` against `KL(r from p) = 0.1920` (not equal, so say "from which"); `KL(p from p) = 0`; pair losses `0.0486`, `0.6931`, `3.0486` at gaps `+3`, `0`, `-3`; bytes per token `2.0` then `3.0`; slope `-0.452` and a prediction of `0.283` at 10,000,000 (a prediction, not a measurement); `6ND = 1.2 x 10^14`; field score `65.6%` against a floor of `53.1%` (4 fields); top three ids `[3, 0, 2]`. **Workbook 27.2:** gaps `0.10, 0.02, 0.30, 0.30` (full, no mask, no positions, no norm); no mask is a leak; one question is `0.10` of ten and `0.125` of eight. **Workbook 27.3:** the practice marks `[8, 2, 5, 6, 7, 3, 10, 9]` total 50 of 75 and flag Week 20 (33%) and Week 22 (46%); its grid has the same 10, 6, 8, 13, 8, 4, 12, 14 marks as Marking Sheet 2. **Workbook 27.4:** 688 notebook words; windows of 20 / 5, 45 / 10 and 90 / 20 give `46, 20, 10` windows, `913, 878, 868` words stored (`1.33, 1.28, 1.26` times the notebook), and at most `60, 135, 270` words sent at k = 3. **Workbook 27.5:** **A** swapped roles in KL print `0.192` for a value that should be `0.1838`, and `KL(p from p)` still prints `0.0`, so that test cannot fail; **B** `ZeroDivisionError: division by zero` on an empty text; **C** mixing `ln` and `log10` gives a slope of `-1.04` and a prediction of `0.073` instead of `-0.452` and `0.283`.
 
 ### Teacher-only: the map of wrong answers in Section A
 

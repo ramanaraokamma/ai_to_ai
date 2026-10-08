@@ -651,7 +651,7 @@ length of [5, 12]: tensor(13.)
 | 4 | 2.0480 | 0.8192 | 0.2480 | 7.4120 | 0.7412 | -0.6172 |
 
 - **S1.** Step 4. SGD never goes negative (0.8192 after four steps).
-- **S2.** Torch, three steps: SGD `[1.6, 1.28, 1.024]`, momentum `[1.6, 0.92, 0.124]`. Both match the table's first three rows.
+- **S2.** Torch, four steps: SGD `[1.6, 1.28, 1.024, 0.8192]`, momentum `[1.6, 0.92, 0.124, -0.6172]`. Both match the table's four rows.
 - **S3.** Each SGD step multiplies `w` by **0.8** (`w - 0.1 x 2w = 0.8 w`). A number between 0 and 1 shrinks `w` without changing its sign, so no overshoot. With `lr = 1.1`: `w x (1 - 2.2) =` `w x (-1.2)`. Not between 0 and 1: it flips the sign **and** makes `w` 1.2 times bigger, so each jump lands farther away than the last (1.0, -1.2, 1.44, -1.728, ...).
 
 ### Page 2.9 — Bug Log and the misspelt optimizer

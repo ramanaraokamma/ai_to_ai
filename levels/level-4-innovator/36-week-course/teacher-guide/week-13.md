@@ -1243,7 +1243,7 @@ Scores `s t a r e` = `1.5, 1.0, 0.0, -0.5, 2.5`; the best letter is `e` at every
 | 1.0 | 0.214 | 0.130 | 0.048 | 0.029 | 0.580 | (reference) |
 | 2.0 | 0.234 | 0.182 | 0.111 | 0.086 | 0.386 | **down** |
 
-Mark the *prediction* and the *measurement* separately. Full marks for a wrong prediction that is honestly recorded and corrected. The extension: the best/worst ratio is `22,026.5` at `T = 0.3`, `20.1` at `T = 1`, `4.5` at `T = 2`, each equal to `e^(3.0 / T)` (the gap between the biggest score 2.5 and the smallest -0.5 is 3.0).
+**Part A (by hand, scores `0, 2, -1, 1, 0.5` for `a b c d e`):** at `T = 1` the `exp` total is `13.124` and the chances are `0.076, 0.563, 0.028, 0.207, 0.126`; at `T = 2` the total is `7.258` and the chances are `0.138, 0.375, 0.084, 0.227, 0.177`; the best letter `b` falls from `0.563` to `0.375`. (`T = 1` exps `1.000, 7.389, 0.368, 2.718, 1.649`; `T = 2` exps `1.000, 2.718, 0.607, 1.649, 1.284`.) Part B exps at `T = 1`: `4.4817, 2.7183, 1.0, 0.6065, 12.1825`, total `20.989`. Page 13.3 Part C: `exp` total `12.756`; worked example probabilities `0.032, 0.087, 0.644, 0.237`, top-p 0.8 keeps the first two (`0.731, 0.269`). **Part C:** 10,000 draws with `torch.manual_seed(0)` give shares `0.208, 0.131, 0.048, 0.030, 0.583` against the table's `0.214, 0.130, 0.048, 0.029, 0.580`: close, not identical. Mark the *prediction* and the *measurement* separately. Full marks for a wrong prediction that is honestly recorded and corrected. The extension: the best/worst ratio is `22,026.5` at `T = 0.3`, `20.1` at `T = 1`, `4.5` at `T = 2`, each equal to `e^(3.0 / T)` (the gap between the biggest score 2.5 and the smallest -0.5 is 3.0).
 
 ### Page 13.3 — Top-k and top-p by hand (from `key.py`; scores `[2, 1, 0.5, 0]`, `T = 1`)
 
@@ -1261,6 +1261,10 @@ The RNN is at chance by D = 10; the LSTM holds to D = 10 and is at chance by D =
 ### Page 13.5 — Exposure bias in two sentences (model answer)
 
 *"The model is trained only on true previous letters, but when it generates it is fed its own letters, which it never practised on. Measured: it scores its own `T = 1` names at 1.122 per letter against 0.954 for real names, with 17.5% of its own names above 1.5 and none of the real ones, which is consistent with drift, though sampling unlikely letters on purpose and reciting memorised names at low temperature also move the number."* Mark the first sentence for the mechanism, the second for the numbers and the caution. **Do not give full marks to "proves".**
+
+### Page 13.4 Part B and Page 13.6 — the exposure table and the three bugs
+
+Page 13.4 Part B (from `exposure.py`): real names mean `0.954`, own names at `T = 1.0` mean `1.122` (gap `+0.167`; share above 1.5 is `0.175`), at `T = 0.5` mean `0.920` (gap `-0.035`; share above 1.5 is `0.010`); real names above 1.5: `0.000`. Page 13.6: **A** (silent) `dim=0` gives row sums `1.3493, 1.6656, 0.9851`, fix `dim=-1`; **B** (silent) the output is `[0.836, 0.121, 0.043]` for both `T = 0.2` and `T = 5.0`, fix `F.softmax(scores / T, dim=-1)`; **C** (loud) `kept` is all zeros and `multinomial` raises `invalid multinomial distribution (sum of probabilities <= 0)`, fix `before = cumsum - sorted_p`, `kept = sorted_p * (before < 0.7)` which keeps one letter (`0.9362`). These are Clinic mistakes 1, 4 and 6; see the Debugging Clinic for the full tracebacks.
 
 ### Answers to every question posed in the lesson
 

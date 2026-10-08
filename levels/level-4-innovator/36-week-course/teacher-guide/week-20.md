@@ -1122,7 +1122,7 @@ The workbook has six pages (20.1-20.6). The student does them in order, and writ
 
 ## 🔑 Answer Key
 
-> **The workbook pages 20.1-20.6 follow this order.** Where an answer is a number it comes from `trace.py`, `test_bpe.py`, `text_merges.py`, `compare.py`, `grow.py`, `cost.py` or `key.py`, all run from the Prep Checklist. **A student's own run gives the same numbers for the corpus files** (no randomness); only the source-text chart depends on the Python version. (If the workbook author has reordered the pages, match by title.)
+> **The workbook pages 20.1-20.6 follow this order.** Where an answer is a number it comes from `trace.py`, `test_bpe.py`, `text_merges.py`, `compare.py`, `grow.py`, `cost.py` or `key.py`, all run from the Prep Checklist. **A student's own run gives the same numbers for the corpus files** (no randomness); only the source-text chart depends on the Python version.
 
 ### Page 20.1 — Three ways to cut
 
@@ -1146,7 +1146,7 @@ First count table (pairs inside words, weighted): `th` **9** (the 5, then 2, tha
 | 4 | `h` + `at` | 3 | `hat` | the · the n · th a n · hat |
 | 5 | three pairs tie at 2: `a`+`n`, `th`+`a`, `the`+`n` | 2 | `an` (letters first) | the · the n · th an · hat |
 
-(The code's seven merges: `th`, `the`, `at`, `hat`, `an`, `than`, `then`.) Question 4: *"the tie at merge 5: whichever you take, `then` ends up as one piece after merge 7, and `than` ends up as one piece; the order of the last three merges changes the numbers, not the final pieces in this card."* Accept any choice with a reason. Question 5: **`thathen` becomes `th`, `a`, `then`** (`th` is learned first and uses the `h` that `hat` needed; `that` is not a piece). If the student gets `that`/`hen` pieces, they applied merges by eye and not in learned order.
+(The code's seven merges: `th`, `the`, `at`, `hat`, `an`, `than`, `then`.) Workbook B3: *"the tie at merge 5: whichever you take, `then` ends up as one piece after merge 7, and `than` ends up as one piece; the order of the last three merges changes the numbers, not the final pieces in this card."* Accept any choice with a reason. Workbook B4: **`thathen` becomes `th`, `a`, `then`** (`th` is learned first and uses the `h` that `hat` needed; `that` is not a piece). If the student gets `that`/`hen` pieces, they applied merges by eye and not in learned order.
 
 | Marks | |
 |---|:--:|
@@ -1210,6 +1210,8 @@ The reference figures for the given strings (300 merges, trained on the corpus):
 | mixed sentence | 15 | 21 | 18 | 1.17 | 1.20 |
 
 A student's own strings will give different numbers; accept any that match their own run with the right columns. **The measured / not-measured sentence** must say: a tokenizer trained on English text only; no production tokenizer measured; not a statement about any product or any language's difficulty. A student who writes bytes-per-token as `len(text) / tokens` for a non-English string has used characters (Where This Goes Wrong 4): give the correct figure and move on.
+
+**Also in the workbook, checked against the same code.** Page 20.1 B3: asking for 0, 10, 100, 300, 500 and 1,000 merges learns 0, 10, 100, 300, **400** and **400** (training stops by itself at 400, when no pair occurs twice), at 1.00, 1.20, 1.69, 2.16, 2.30 and 2.30 bytes per token; vocabularies 256 + 400 = **656** and 256 + 100 = **356**. Page 20.7 (the workbook's bugs): **Bug A** divides by characters, so the Hindi greeting shows 0.35 instead of 37 / 37 = 1.00 (bytes per token cannot be below 1); **Bug B** decodes one byte of a three-byte character (`UnicodeDecodeError ... unexpected end of data`); **Bug C** flips the tie-break: 3,230 tokens against 3,227, the first differing merge is number 10 (`or` and `th` tie at 45), and 277 of the 300 merges differ.
 
 ### Teacher-only: the map of wrong answers
 

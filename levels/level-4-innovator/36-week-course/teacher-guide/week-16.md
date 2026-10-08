@@ -1445,11 +1445,13 @@ Estimated time: 60-75 minutes.
 
 This section is the teacher-only key for the workbook. Keep it away from the student.
 
-> **The workbook pages 16.1-16.6 follow this order.** Where an answer is a number it comes from `key.py`, `blind.py`, `where.py`, `block.py` or `count.py`, all run from the Prep Checklist.
+> **The workbook pages 16.1-16.7 and its Bug Log follow this order.** The workbook uses its own numbers (a new sentence pair, practice cards, `d = 10`); the class numbers are kept here too, labelled *in class*. Where an answer is a number it comes from `key.py`, `blind.py`, `where.py`, `block.py` or `count.py` (Prep Checklist), or from the workbook's own check files (`check161.py` to `check165.py`), all run.
 
 ### Page 16.1 — Blind
 
-For the pair in class, with seed 0: **True, True, True**: the two `the`s get the same row; `dog` gets the same row in both sentences (distance `0.0`); shuffle-then-attend equals attend-then-shuffle. For two copies of the same word in any sentence: identical answers, because the answer depends only on the word's vector and the set of vectors. *Common error:* "no", on the grounds that the second `the` comes later. *What to draw out:* the answer to *"so which sentence did the dog bite in?"* is that attention alone cannot say.
+**Workbook pair** (`the cat chased the mouse` against `the mouse chased the cat`, `perm = [3, 0, 4, 2, 1]`, `check161.py`, seed 0): the three lines are **True, True, True** for words only and **False, False, False** with places (the two controls print `True`). So the guesses are *True / False* for lines 1, 2 and 3. Why line 1 is `True` without places: both `the`s have the same vector and each answer is built from the word's own vector and the whole set of vectors, never the seating. The controls are `True` because the same input through the same weights gives the same output, and an identity shuffle moves nothing; neither contradicts the line above, which is about a shuffle that moves words. **Careful what you claim:** circle **(b)**; (a) is too big because the Week 15 mask is itself a weak clue to position (the first word sees only itself; `masked.py` shows the shuffle test is `False` even with no positions). Warm-up: W1 saturate (one weight near 1, the rest near 0); W2 `8`; W3 before, `-inf`; W4 no, `e^0 = 1`, the future leaks in; W5 `(B, H, T, dh)`.
+
+*In class,* for the pair in the lesson,  with seed 0: **True, True, True**: the two `the`s get the same row; `dog` gets the same row in both sentences (distance `0.0`); shuffle-then-attend equals attend-then-shuffle. For two copies of the same word in any sentence: identical answers, because the answer depends only on the word's vector and the set of vectors. *Common error:* "no", on the grounds that the second `the` comes later. *What to draw out:* the answer to *"so which sentence did the dog bite in?"* is that attention alone cannot say.
 
 ### Page 16.2 — Seat Swap (from `key.py`)
 
@@ -1460,9 +1462,17 @@ For the pair in class, with seed 0: **True, True, True**: the two `the`s get the
 | 3 | `2, 1, 0`, stamps `0, 0.5, 1.0` | `4.0, 3.0, 2.0` | 0.6652, 0.2447, 0.0900 | **1.7876** |
 | 4 | `0, 1, 2`, stamps `0, 0.5, 1.0` | `0.0, 4.5, 9.0` | 0.0001, 0.0110, 0.9889 | **2.9832** |
 
-Worked line for round 3: `e^4 + e^3 + e^2 = 54.5982 + 20.0855 + 7.3891 = 82.0727`; `0.6652 x 2.0 + 0.2447 x 1.5 + 0.0900 x 1.0 = 1.7875` (the printed `1.7876` carries more decimals in the weights). *Common errors:* forgetting to add the stamp **before** multiplying; stamping the *card* (so the stamp moves with it) instead of the seat; using `2 x 2` as a score for the other cards too (the scores are `my card x their card`, where "my card" is always the card `2` for this question). *What to draw out:* **rounds 1 against 2** (same answer, wherever the card sits) and **3 against 4** (different answers).
+Worked line for round 3: `e^4 + e^3 + e^2 = 54.5982 + 20.0855 + 7.3891 = 82.0727`; `0.6652 x 2.0 + 0.2447 x 1.5 + 0.0900 x 1.0 = 1.7875` (the printed `1.7876` carries more decimals in the weights). **Workbook questions.** S1: no, `1.8509` both times (the card `2` at the left end, then the right end). S2: no; attention used only which cards are in the room, never the order. S3: no "right" answer; we chose the stamps and nothing was trained. S4: only the seat stamps changed (`1.8509` to `1.7876` for round 3, `1.8509` to `2.9832` for round 4). In round 4 the card `2` sits at seat 3 with stamp 1.0, so "my card" is **3.0** and the scores are `0, 4.5, 9`.
+
+**Practice cards** (follow the card `1`; stamps `0, 0.5, 1.0`; `check162.py`): P1 seat 1, cards `1, 2, 0`, scores `1, 2, 0`, weights `0.2447, 0.6652, 0.0900`, answer **1.5752**; P2 seat 3, cards `0, 2, 1`, weights `0.0900, 0.6652, 0.2447`, answer **1.5752**; P3 seat 1, cards `1.0, 2.5, 1.0`, weights `0.1543, 0.6914, 0.1543`, answer **2.0372**; P4 seat 3, cards `0.0, 2.5, 2.0` ("my card" is **2.0**), scores `0, 5, 4`, weights `0.0049, 0.7275, 0.2676`, answer **2.3539**. **Stretch (mask on, no stamps, follow the card `2`):** seating `2, 1, 0` gives **2.0000** (seat 1 sees only itself) and seating `0, 1, 2` gives **1.8509**: not the same, so the mask leaks *a little* order. Not shown: that this is enough to read order well.
+
+*Common errors:* forgetting to add the stamp **before** multiplying; stamping the *card* (so the stamp moves with it) instead of the seat; using `2 x 2` as a score for the other cards too (the scores are `my card x their card`, where "my card" is always the card `2` for this question). *What to draw out:* **rounds 1 against 2** (same answer, wherever the card sits) and **3 against 4** (different answers).
 
 ### Page 16.3 — Places
+
+**Workbook (`check163.py`, `nn.Embedding(10, 6)` as the position table):** `torch.arange(4)` is `[0, 1, 2, 3]`; `torch.arange(3, 7)` is `[3, 4, 5, 6]` (the stop is not included); `torch.arange(3.0)` prints `tensor([0., 1., 2.])` (the dots show floats); `nn.Embedding(10, 6)` holds `60` numbers; `pos_table(torch.arange(7))` is `(7, 6)`; `pos_table(torch.arange(3, 7))` is `(4, 6)`; the longest sentence the table serves is `10` words; rows 0 and 3 are equal without places (`True`) and different with places (`False`); the big model's table is `64 x 128 = 8192`. P2: one row per place because the table is indexed by place, so it needs as many rows as the longest sentence allowed (the context length). P3: `IndexError: index out of range in self`, the same kind of message as Week 8. P4: adding keeps the width `d`; joining would make every later layer wider (joining was not tested here, so neither is claimed better). *Common slip:* `torch.arange(3, 7)` read as 3 to 7 inclusive.
+
+*In class (`where.py`):*
 
 | Question | Answer |
 |---|---|
@@ -1497,9 +1507,15 @@ For `d = 8`:
 
 Formula: `12 d^2 + 10 d`. `d = 16`: `3072 + 160 =` **3232**. `d = 6`: `432 + 60 =` **492**. With a **2x** MLP at `d = 8` the block is **576** (`up` is 8 x 16 + 16 = 144, `down` is 16 x 8 + 8 = 136; attention 264 + norms 32 + MLP 280 = 576; `key.py`). The heads: `d = 8` with **2** or **4** heads has the same 848 (more heads do not add knobs). The mask is **36 numbers for `T = 6`, none counted**. Two blocks: **1,696**.
 
+**Workbook Part B (`d = 10`, `check164.py`):** `ln1` 20, `q` 100, `k` 100, `v` 100, `proj` 110, `ln2` 20, `up` 440, `act` 0, `down` 410; total **1300** (`12 x 100 + 100`). More widths: `d = 6` **492**, `d = 12` **1848**, `d = 20` **5000**. Heads do not change the count (`H` is not in the formula); at `d = 10`, `d // 3 = 3` and `3 x 3 = 9`, not 10. **Part C** (wrong totals at `d = 8`): 872, 832, 816, 840 and 800 are the slips in the map below. **Part D:** `up` is `10 x 40 + 40`, `down` is `40 x 10 + 10`: the same 400 weights and biases of 40 against 10, a difference of **30**; a bias belongs to the **output** of a layer.
+
 *Common errors:* a bias on q, k, v (872); the layer norm counted as `d` not `2d` (832); leaving out the `4d` bias of `up` (816); counting the GELU. *What to draw out:* the MLP is **552** of 848, about two thirds, and neither `T` nor `H` appears in the formula.
 
-### Page 16.5 — Who talks to whom (from `block.py`)
+### Page 16.5 — The block, the stack, and where the knobs live
+
+**Workbook:** the order is **1** first layer norm, **2** attention, **3** first residual add, **4** second layer norm, **5** the 4x MLP, **6** second residual add; attention **gathers** (words talk), the MLP **thinks** (each word alone), the adds keep the **road** open. Stack at `d = 10` (`check164.py`): one block **1300**, three blocks **3900**; attention **410**, MLP **850**, norms **40**; shares **0.315, 0.654, 0.031**; the MLP has the most knobs (about two thirds), although people call the whole thing "attention". TinyGPT (`check165.py`): token table **3584**, position table **8192**, one block **197888**, four blocks **791552**, final norm **256**, output layer **3612**, whole model **807196**; the 2-block, 32-place variant is **407324**.
+
+*In class (`block.py`):*
 
 | Question | Answer |
 |---|---|
@@ -1512,19 +1528,46 @@ Formula: `12 d^2 + 10 d`. `d = 16`: `3072 + 160 =` **3232**. `d = 6`: `432 + 60 
 
 *Common error:* answering `[0, 1, 2, 3, 4, 5]` for the whole block (forgetting the mask), or `[3, 4, 5]` for the MLP alone (forgetting it never looks at a neighbour). *If they nudge **every** feature by the same amount*, the MLP-alone answer is `[]`: layer norm erases a constant.
 
-### Page 16.6 — The build (model answer and rubric)
+### Page 16.6 — The build, `my_shuffle.py` (model answer and rubric)
 
-Any sentence of five or more words using ids `0..3` (or a bigger table of their own) and a shuffle that is not the identity. The student's output must show, for their own run with a stated seed: **without positions**, the shuffle test `True` and the two copies of a repeated word equal (`True`); **with positions**, both `False`; a distance (non-zero); and one sentence. Our seed-0 results for the class pair: `True`, `True`, `True` then `False`, `False`, `False`, with the two dogs `0.0` and `0.1529` apart.
+Any sentence of **six or more words with a repeated word**. Sample (sentence `the big cat chased the mouse`, ids `[0, 4, 1, 2, 0, 3]`, `perm = [5, 3, 0, 1, 4, 2]`, seed 0) printed:
+
+```text
+words: 6  largest id: 4  rows in emb: 5
+places needed: 0 to 5  rows in pos_table: 8
+words only  shuffle-then-attend == attend-then-shuffle: True
+with places shuffle-then-attend == attend-then-shuffle: False
+with places, perm = 0,1,2,3,4,5 (nothing moves): True
+knobs in the two tables: 20 + 32 = 52
+```
+
+Required: the word table has at least `largest id + 1` rows, the position table at least as many rows as words, and `perm` is a shuffle of `0..n-1`, each number once. Guesses: **True, False, True**. The identity shuffle gives `True` even with places.
 
 | Criterion | Marks |
 |---|:--:|
-| A sentence of five or more words, and a shuffle that changes it | 1 |
-| Without positions: shuffle test `True`, printed | 1 |
-| With positions: shuffle test `False`, printed, and a non-zero distance | 1 |
-| The control (the identity shuffle, `True` in both cases) | 1 |
-| A sentence that says **"attention without positions cannot tell order; the weights are random, so the numbers mean nothing yet"** (or equivalent) | 2 |
+| Six or more words, with a repeated word | 1 |
+| Table sizes large enough | 1 |
+| Words only `True` | 1 |
+| With places `False`, and the nothing-moves shuffle `True` | 1 |
+| The sentence "attention on its own is blind to order; positions tell it the order on purpose" (or equivalent) | 2 |
 
-A write-up that says "positions fix order" or "the model understands where words are" loses the last two marks regardless of the rest. **Also accept** a student who notices that the answers are equal only in the unmasked version (the mask caveat), and a student who reports `0.0` as the distance for the no-positions case.
+A write-up that says "positions fix order" or "the model understands the sentence" loses the last two marks regardless of the rest. *In class,* the seed-0 results for the lesson pair were `True, True, True` then `False, False, False`, with the two dogs `0.0` and `0.1529` apart; **also accept** a student who notices that the answers are equal only in the unmasked version (the mask caveat).
+
+### Page 16.7 — Break it on purpose (workbook Programs 1-9)
+
+| Program | Loud / silent | Last line, or the printed tell | Fix |
+|:--:|:--:|---|---|
+| 1 | loud | `ValueError: optimizer got an empty parameter list` (the first `print` shows `output shape: (4, 2)`) | `nn.ModuleList([...])` |
+| 2 | **silent** | `knobs PyTorch can see: 3`, `knobs I meant        : 21` | `nn.ModuleList`; count the knobs against the hand count |
+| 3 | loud | `RuntimeError: Expected tensor for argument #1 'indices' to have one of the following scalar types: Long, Int; but got torch.FloatTensor instead (while checking arguments for embedding)` | `torch.arange(4)` |
+| 4 | loud | `IndexError: index out of range in self` (6 rows allow 6 words) | a bigger table, or a shorter sentence |
+| 5 | **silent** | `shape: (1, 5, 4)` and `same input row? True` (should be `False`) | places are `torch.arange(T)` with `T = 5` words, not `arange(B)` |
+| 6 | **silent** | `MLP switched off, output equals input: False`, largest number `0.0` | `y = x + down(act(up(ln(x))))` |
+| 7 | loud | `RuntimeError: Given normalized_shape=[6], expected input with shape [*, 6], but got input of size[1, 5, 24]` | norm the width-`d` stream (`nn.LayerNorm(d)` before `up`), or `LayerNorm(4 * d)` after it |
+| 8 | loud | `RuntimeError: shape '[1, 5, 4, 2]' is invalid for input of size 50` (`1 x 5 x 4 x 2 = 40`, there are 50) | check `H x (d // H) = d`; pairs that work: `(8, 2)`, `(8, 4)`, `(12, 3)`, `(10, 5)`, `(10, 2)` |
+| 9 | **silent** | `saved entries   : ['lin.weight', 'lin.bias']` (no mask) | `self.register_buffer("mask", torch.tril(torch.ones(T, T)))` |
+
+The four no-traceback programs are 2, 5, 6 and 9; the matching checks are: count the knobs, the shuffle test, switch the add-ons off and expect `True`, print `state_dict().keys()`. The Clinic mistakes in this guide (1-9) are the teacher's versions of the same families, with their own numbers. **Bug Log:** any real entries are fine if the **last line** (not the whole traceback) was copied and the fix works; the habit blanks are *knobs, hand, shuffle, equals*. **Self-Check:** see the workbook's answers 1-7 (blind attention; places make a word's vector depend on its seat; the six-part block; `nn.ModuleList`; a buffer is not a knob; the mask leaks *a little* order, and the course's own ablation took best validation loss from `1.278` to `1.632` with one seed; adding against joining is untested here).
 
 ### Teacher-only: the map of wrong answers on page 16.4
 

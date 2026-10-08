@@ -1130,6 +1130,8 @@ The answers to the workbook pages, for checking the student's work. Keep this se
 | h | `0.99 ** 40` | **0.669** |
 | i | How many multiplications by `0.95` until the value is first below one half? | **14** (`0.4877`) |
 
+**j.** `f ** 40` for `0.98, 0.982, 0.983, 0.985`: `0.4457, 0.4836, 0.5037, 0.5463`; **0.983** is closest to one half. **k.** A dial of exactly one half leaves about `9e-13`: nothing. **l.** `0.88 ** 40 = 0.0060` against `0.99 ** 40 = 0.669`: about **110 times** apart. (At step 13 the `0.95` value is still `0.5133`.)
+
 *What to draw out:* **b and f together**: a dial of exactly one half leaves nothing after forty steps. **g and h**: the difference between a dial of `0.88` and `0.99` is `0.006` against `0.67`. *Common errors:* `sigmoid(0) = 0` (it is one half); `0.88 ** 40` rounded to `0.9`; using `e^z` instead of `e^-z` (gives the wrong way round).
 
 ### Page 11.2 — One unit, by hand (from `key.py`)
@@ -1142,7 +1144,9 @@ The hand unit of block 2 with the forget dial changed to `sigmoid(2) = 0.8808`, 
 | 2 | 0 | 0.0759 | 0.0000 | **0.7847** | 0.4791 | 88.1 |
 | 3 | 0 | 0.0759 | 0.0000 | **0.6912** | 0.4377 | 77.6 |
 
-Slope back from step 3 to step 1: `f ** 2 = ` **0.7758**. With `f = sigmoid(0) = 0.5` instead: `c = 0.8909, 0.4454, 0.2227`, which is `100.0, 50.0, 25.0` per cent of step 1: **exactly halving, like the RNN's note**. *What to draw out:* at `x = 0`, `i * g = 0.0759 x 0.0000 = 0`, so nothing is added and `c` just shrinks by `f`. *Common errors:* using `tanh` on the old `c` inside the update; adding `h` instead of `c`; using the step-1 `i` at step 2.
+Slope back from step 3 to step 1: `f ** 2 = ` **0.7758**. With `f = sigmoid(0) = 0.5` instead: `c = 0.8909, 0.4454, 0.2227`, which is `100.0, 50.0, 25.0` per cent of step 1: **exactly halving, close to the RNN's note (`100.0, 47.7, 23.6`)**. **Workbook parts.** a: `g = tanh(0) = 0`, so `i x g = 0` and the memory only shrinks by `f`. b: the slope back is `f = 0.8808`, and over two steps `f x f = 0.7758` (the table's `77.6%`). c: with `f = 0.5` the percentages are `100.0, 50.0, 25.0`. d: `sigmoid(2)`. e: closest to `0.006`; `0.8808 ** 40 = 0.0062`.
+
+*What to draw out:* at `x = 0`, `i * g = 0.0759 x 0.0000 = 0`, so nothing is added and `c` just shrinks by `f`. *Common errors:* using `tanh` on the old `c` inside the update; adding `h` instead of `c`; using the step-1 `i` at step 2.
 
 ### Page 11.3 — The cell from scratch (from block 3)
 
@@ -1154,7 +1158,7 @@ Slope back from step 3 to step 1: `f ** 2 = ` **0.7758**. With `f = sigmoid(0) =
 | 4 | 3.7e-09 | 7.5e-09 |
 | 5 | 1.5e-08 | 3.0e-08 |
 
-`allclose`: `True True`. The cell holds `1408` numbers. *Accept* any gap at or below `1e-06` (another CPU may differ in the last digit). *The sentence that earns full marks:* "a gap of about `1e-08` is float rounding, so my step and PyTorch's are the same calculation". *Common errors:* a gap of order `1` (the groups are in the wrong order, usually input and forget swapped; see Clinic 5); passing `h` alone (Clinic 1).
+`allclose`: `True True`. The cell holds `1408` numbers (`1408 / 352 = 4`: one group of scores for the RNN, four for the LSTM). **Part 1 of the workbook:** `D = 3, H = 8` gives shapes `(32, 3)`, `(32, 8)`, `(32,)` and `416` numbers; `D = 6, H = 10` gives `(40, 6)`, `(40, 10)`, `(40,)` and `720`. **c:** the forget dial is `z[16:32]` (`z[H:2*H]`: the order is input, forget, candidate, output). **d:** a gap of order `1` means the groups are in the wrong order or `h` alone was passed as the state. *Accept* any gap at or below `1e-06` (another CPU may differ in the last digit). *The sentence that earns full marks:* "a gap of about `1e-08` is float rounding, so my step and PyTorch's are the same calculation". *Common errors:* a gap of order `1` (the groups are in the wrong order, usually input and forget swapped; see Clinic 5); passing `h` alone (Clinic 1).
 
 ### Page 11.4 — The dial grid
 
@@ -1164,6 +1168,8 @@ The measured grid is the one in 🎲. The model **sentences**, one per row:
 - **gru:** the same shape, a little higher at short lengths (`2.8e-02` at 10), still `6.7e-18` at 80. Vanishing.
 - **lstm:** the same shape (`7.7e-03` at 10, `6.6e-16` at 80). At default settings, the gates alone did not open the highway.
 - **lstm, forget bias 2:** `3.5e-01` at 10 and `3.4e-02` at 80: stays within a factor of 30 of the last word's pull. The dial near 1 is what helped.
+
+**Workbook parts.** c: the rnn number falls by `1.77e-05 / 1.99e-10`, about `1e5`, between `T = 20` and `T = 40`; the forget-bias-2 row by `0.310 / 0.0577`, about `5`. d: **No**; nothing was trained, so this is the starting point of untrained layers.
 
 *Marking:* full credit for a sentence that gives the **direction** and **one number copied with its exponent**. **Do not score the T/S/L predictions**; look for a student who predicted L for the GRU and LSTM rows and then said what surprised them. *The one sentence that must appear somewhere:* "the gates by themselves did not help at default settings".
 
@@ -1187,6 +1193,8 @@ The measured grid is the one in 🎲. The model **sentences**, one per row:
 | 1.0 (0.731) | 1.07e-01 | 2.95e-02 | 3.52e-04 | 1.44e-06 |
 | 2.0 (0.881) | 3.54e-01 | 3.10e-01 | 5.77e-02 | 3.37e-02 |
 | 4.0 (0.982) | 7.23e-01 | 8.46e-01 | 3.52e-01 | 1.61e-01 |
+
+**Workbook parts.** a: the lstm row runs `2.0e-09` to `7.1e-08`, about **35 times**; the dial gap at seed 0 is `5.77e-02 / 9.83e-10`, about `6e7`; the dial is bigger. b: **No**: the gru and lstm ranges overlap and the seeds disagree on which is bigger. c: bias 0 against bias 2 at `T = 80` (`3.92e-17` against `3.37e-02`) is **15 powers of ten**; at bias 4 the number falls `3.52e-01` to `1.61e-01`, a factor of about 2. d: `0.881 ** 40 = 0.0063`; the table's `5.77e-02` is about nine times bigger, the same kind of size next to `1e-09`.
 
 The sentence that earns full marks: *"With the same weights and seeds, moving the forget bias from 0 to 2 changed the T = 40 ratio from about `1e-09` to about `1e-01`, far more than the spread between seeds; I did not train anything, so this is about the starting point, not learning."* **Also accept** "the dial opens the highway at the start". *Common errors:* "the LSTM is better than the GRU" from three seeds (the gaps are small); "the LSTM learns longer sequences" (nothing was trained).
 

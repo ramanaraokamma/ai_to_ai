@@ -20,7 +20,7 @@
 | **The paper** | 75 marks. **A** 20 multiple choice (1 each) · **B** 8 "what does this print" (2 each) · **C** 4 "find the bug" (3 each) · **D** 3 arithmetic (5 each) · **E** 1 extended question on real loss curves (12). Printed in full in [The Paper, in Full](#-the-paper-in-full) below; the key is at the bottom. |
 | **Dataset** | The same generated spirals (`make_spirals`, seed 0: 840 train / 360 validation) — but **only in Question E, as printed numbers.** The student runs nothing. **Nothing downloads. No internet.** |
 | **Model** | Real PyTorch on the CPU, used by *you* in the prep to produce the Section E tables. **There is no language model and no stand-in anywhere in this week.** |
-| **Materials** | The printed paper (one copy, single-sided) · the printed **marking sheet** (short answers only — the one page you may hand over afterwards) · a pen · a calculator (phone in calculator mode is fine; **airplane mode on**) · scrap paper · a timer · the remediation table (page 9.3) |
+| **Materials** | The printed paper (one copy, single-sided) · the printed **marking sheet** (short answers only — the one page you may hand over afterwards) · a pen · a calculator (phone in calculator mode is fine; **airplane mode on**) · scrap paper · a timer · the remediation table (Handout C) |
 | **Prep time** | 25 minutes the night before (mostly printing and reading the key) · 3 minutes on the day |
 | **Expected runtime of the code** | Every block in the prep finishes in **under a second**, except the Section E table (16 training runs, about **10 seconds** on the author's CPU). Anything over **60 seconds** means something is wrong (see Fallback). The *student* runs no code today. |
 
@@ -40,7 +40,7 @@ By the end of the lesson the student has, **with no computer and no notes:**
 4. **Unroll a three-step recurrent cell** with given weights, and say why the same inputs in a different order give a different final note.
 5. **Decide whether a gap between two runs is bigger than the spread**, using the twice-the-spread rule from Week 7.
 
-Observable evidence: a scored paper; a filled **per-week mark grid** (page 9.2 of the key); and, most important, **a remediation table with at most two weeks circled** for the student to redo during the following fortnight.
+Observable evidence: a scored paper; a filled **per-week mark grid** (Handout B of the key); and, most important, **a remediation table with at most two weeks circled** for the student to redo during the following fortnight.
 
 ---
 
@@ -147,7 +147,7 @@ These are printed by the prep blocks. Read them before class so nothing surprise
 2. **Multiple choice can be guessed.** Twenty 4-option questions guessed at random average 5 marks (`20 × 0.25`). That is why there are only 20 of 75 marks there, and why every option in Section A was built from a real wrong answer from the earlier weeks, so a wrong choice *means* something (the key names what).
 3. **Weeks 3, 5 and 6 had no teacher guide on disk when this one was written.** Questions A6-A8, A12-A14, A15-A17, B3, B5, B6, C2, C3 and D2 were built from the README rows for those weeks and from the reference module, not from the weeks' own guides. **Before you print:** open the Week 3, 5 and 6 teacher guides and check that (i) Week 3 calls the RMS "typical size" and describes AdamW as decaying the weight directly, (ii) Week 5 uses `copy.deepcopy(model.state_dict())` and `model.eval()`, (iii) Week 6 says a batch norm needs more than one example in train mode. If a week's wording differs, change the *wording* of the question and the key together; the numbers will not change.
 4. **The Section E tables are from one dataset and one harness.** They show four *symptoms*, not four laws. "`3e-2` collapses" is true of this 16,962-parameter network, this data and this seed set; nothing about other networks.
-5. **The self-marking is honest only if the sheet gives working.** A sheet that shows only answers invites a student to "correct" their paper to match. The marking sheet in page 9.1 shows working for every arithmetic question for that reason.
+5. **The self-marking is honest only if the sheet gives working.** A sheet that shows only answers invites a student to "correct" their paper to match. The marking sheet in Handout A shows working for every arithmetic question for that reason.
 
 ### 7. The misconceptions you will actually see, and where
 
@@ -437,7 +437,7 @@ S train loss, epochs 48-55      : [0.309, 0.389, 0.259, 0.433, 1.697, 0.72, 0.69
 
 Read that last line carefully. **Clipping did not rescue S** (two of three seeds still end far from healthy, at `0.427` and `0.485`). A student who writes "clip the gradient" as the *action* for E(c) has chosen a plausible-sounding knob that, **measured, does not work here.** That is not a lost mark for the idea (the key gives it credit for being a one-knob action) but it **is** a lost mark for the *evidence* if they claim it works. See the marking guide for E(c).
 
-**☐ 5. Print.** Print **one** copy of [The Paper](#-the-paper-in-full) single-sided (so there is room to work), and **one** copy of the **marking sheet** (Page 9.1 of the key — *only* the block between the two "✂ PRINT" lines). Print the **per-week grid** (Page 9.2) and the **remediation table** (Page 9.3) on one page. **Do not print the rest of this file.** Never hand the student any page of this guide except those three.
+**☐ 5. Print.** Print **one** copy of [The Paper](#-the-paper-in-full) single-sided (so there is room to work), and **one** copy of the **marking sheet** (Handout A of the key — *only* the block between the two "✂ PRINT" lines). Print the **per-week grid** (Handout B) and the **remediation table** (Handout C) on one page. **Do not print the rest of this file.** Never hand the student any page of this guide except those three.
 
 **☐ 6. Check Weeks 3, 5 and 6 (5 minutes).** See "Honest limits", item 3. Open those teacher guides, check the three wordings, and edit the paper and the key **together** if they differ.
 
@@ -502,7 +502,7 @@ Sit **to the side and a little behind**. Do something quiet and boring: read, ma
 ### 🔑 Wrap & Assign (3 minutes)
 
 1. **At 1:12: "Pens down."** Take the paper. Do not read it in front of them.
-2. **Hand over the marking sheet** (the printed Page 9.1 and the grid, Page 9.2) and a pen of a *different colour* from the one used on the paper.
+2. **Hand over the marking sheet** (the printed Handout A and the grid, Handout B) and a pen of a *different colour* from the one used on the paper.
 3. **Say the homework once:** *"Mark your own paper tonight against this sheet, in the other colour. Give yourself marks for working, not just answers: the sheet tells you how. Then fill in the grid, and circle at most two weeks. Bring it next time."*
 4. **Say one true thing about the paper**, whatever the result: *"Whatever you got, the thing I care about is whether you can tell me, on the grid, where the marks went."*
 5. Do **not** discuss any question. If they ask, *"Tonight, with the sheet. Then we'll talk about the pattern."*
@@ -643,7 +643,7 @@ This section holds the paper itself, exactly as the student sees it, followed by
 
 ### The Paper, in Full
 
-> **How to use this section.** Everything between the two lines marked `✂ PAPER STARTS` and `✂ PAPER ENDS` is what the student sees. Print exactly that. Everything *outside* them is for you. The code on the paper is the same text that the key runs (Page 9.1), and the Section E tables are the printed numbers of Blocks P4 and P5.
+> **How to use this section.** Everything between the two lines marked `✂ PAPER STARTS` and `✂ PAPER ENDS` is what the student sees. Print exactly that. Everything *outside* them is for you. The code on the paper is the same text that the key runs (Handout A), and the Section E tables are the printed numbers of Blocks P4 and P5.
 
 ✂ PAPER STARTS
 
@@ -956,7 +956,7 @@ Use this table to answer a question in one honest sentence, and to see when the 
 These are the failures to watch for, most common first.
 
 1. **You help.** The commonest failure. A raised eyebrow changes an answer. Sit to the side.
-2. **You hand over the wrong page.** The student must get only Page 9.1, 9.2 and 9.3. The rest of this file contains every answer *and the mistakes the student is expected to make*.
+2. **You hand over the wrong page.** The student must get only Handouts A, B and C. The rest of this file contains every answer *and the mistakes the student is expected to make*.
 3. **The paper runs over.** Seventy minutes is *tight*. The five time-checks exist so E is not left in the last four minutes. If E is not attempted at all, mark A-D and treat E as a take-home (see "Variation — shorter").
 4. **Marking by the final number.** The marks are in the *working*. D1 (5 marks) is two small tables; a student who gets the arithmetic wrong at step 2 and then does the rest *correctly from their own wrong number* loses one mark, not four. Follow the key's "follow-through" notes.
 5. **Treating 45 as pass/fail.** The only decision the total drives is how many weeks to redo (at most two). A 70 with a 3/10 on Week 2 means **redo Week 2**, whatever the total.
@@ -977,7 +977,7 @@ The paper stays the same for every student. What changes is the sitting, the sup
 - **Read Section E aloud** if reading, not maths, is the barrier. Do not paraphrase; read the words.
 - **Calculators for everything** (already allowed). A student who spends 5 minutes on `tanh` by hand has been unfairly treated by the paper.
 - **After the paper**, the remediation table is for *at most two* weeks, even if five are low. Pick the one that Term 2 needs most (priority order: **Week 8 → Week 2 → Week 6**), then the lowest remaining.
-- **Do not repeat the paper.** Redo the *page* that went wrong (Page 9.3 names it) and ask the **teacher check question** from the table out loud afterwards. A spoken correct answer, in your own words, is the exit ticket.
+- **Do not repeat the paper.** Redo the *page* that went wrong (Handout C names it) and ask the **teacher check question** from the table out loud afterwards. A spoken correct answer, in your own words, is the exit ticket.
 
 ### If the student is flying
 
@@ -1008,7 +1008,7 @@ This section tells you how to mark the paper and how to read the pattern of lost
 ### Reading the pattern
 
 - **The total** is the *least* informative number.
-- **The per-week fraction** (page 9.2) tells you what to redo. **Under 60% of the marks in a week** goes in the "redo" column; **80% or over** is "secure".
+- **The per-week fraction** (Handout B) tells you what to redo. **Under 60% of the marks in a week** goes in the "redo" column; **80% or over** is "secure".
 - **Pairs that matter.** Weeks 2 and 8 together low usually means *the running update* (a number that feeds back into itself) has not landed. That is the whole of Weeks 10 and 11; redo both before Week 10.
 - **When the total and the pattern disagree, the pattern wins.** A made-up student, to practise the arithmetic (this is an illustration, **not** data from anyone): marks by week `9/11, 4/10, 8/10, 7/9, 6/8, 5/8, 3/7, 6/12` for a total of **48**, which the scale below calls "Secure". The grid says otherwise: Week 2 is 40%, Week 7 is 43% and Week 8 is 50%, three weeks at or under their "redo" line (4 ≤ 5, 3 ≤ 4, 6 ≤ 7). The rule is **circle at most two**, with the priority order Week 8 → Week 2 → Week 6: so **circle Weeks 8 and 2**, and write Week 7 on the side as "first thing to re-check in Assessment 2". The honest summary for this student is *"Getting there"*, not *"Secure"*, even though 48 is above 45.
 - **Section C versus Section B.** A student who can say what a program prints (B) but cannot find a bug in it (C) knows the *rule* but has not yet read a traceback: that is a different remediation (read three of the Clinic tracebacks aloud) from not knowing the rule.
@@ -1035,9 +1035,9 @@ Self-marking covers A, B and C well: those answers are *checkable*. D and E need
 
 The homework turns the paper into a plan. Say it once, as in the wrap, and assign these steps:
 
-1. **Mark your own paper** against the printed sheet (Page 9.1), in the *other colour*. For D and E, mark the **working**, not only the answer. *(Estimated 30 minutes.)*
-2. **Fill the per-week grid** (Page 9.2): the marks you got, out of the marks available, for each of the eight weeks, and the percentage. *(5 minutes.)*
-3. **Circle at most two weeks** in the remediation table (Page 9.3): the lowest, but with the priority order Week 8, Week 2, Week 6 breaking ties. Write a day and time for each redo next to the circle. *(5 minutes.)*
+1. **Mark your own paper** against the printed sheet (Handout A), in the *other colour*. For D and E, mark the **working**, not only the answer. *(Estimated 30 minutes.)*
+2. **Fill the per-week grid** (Handout B): the marks you got, out of the marks available, for each of the eight weeks, and the percentage. *(5 minutes.)*
+3. **Circle at most two weeks** in the remediation table (Handout C): the lowest, but with the priority order Week 8, Week 2, Week 6 breaking ties. Write a day and time for each redo next to the circle. *(5 minutes.)*
 4. **One sentence in the Bug Log**: *"The answer I was most surprised to get wrong was ___, because I thought ___."* *(5 minutes.)*
 
 **Next time you bring:** the marked paper, the grid, the circled table. No new code. If a student comes back having *redone* a week's page already, that is a lovely surprise; do not insist on it.
@@ -1046,9 +1046,9 @@ The homework turns the paper into a plan. Say it once, as in the wrap, and assig
 
 ## 🔑 Answer Key
 
-> **How this key is laid out.** **Page 9.1** is the student's marking sheet: *print only the block between the two ✂ lines*. **Page 9.2** is the per-week grid. **Page 9.3** is the remediation table. Then comes everything for **you**: the wrong-option map for Section A, the marking notes for B-E, the model answers, and the answers to every question posed in the lesson. The B and C outputs come from the blocks run below; the D numbers from Block P2.
+> **Handouts A, B and C are the three printed pages for the paper; they are not workbook pages.** (The workbook's own Pages 9.1-9.10 are practice pages on different numbers; their answers are under "Workbook answers" below, and the workbook's own answer page repeats them.) **How this key is laid out.** **Handout A** is the student's marking sheet: *print only the block between the two ✂ lines*. **Handout B** is the per-week grid. **Handout C** is the remediation table. Then comes everything for **you**: the wrong-option map for Section A, the marking notes for B-E, the model answers, and the answers to every question posed in the lesson. The B and C outputs come from the blocks run below; the D numbers from Block P2.
 
-### Page 9.1 — The marking sheet (the one page the student may keep)
+### Handout A — The marking sheet (the one page the student may keep)
 
 ✂ PRINT FROM HERE
 
@@ -1124,7 +1124,7 @@ The homework turns the paper into a plan. Say it once, as in the wrap, and assig
 
 ✂ PRINT TO HERE
 
-### Page 9.2 — The per-week grid (print this, with 9.3)
+### Handout B — The per-week grid (print this, with Handout C)
 
 | Week | Topic | Questions | Marks available | Marks earned | % | Redo if marks ≤ | Circle? |
 |:--:|---|---|:--:|:--:|:--:|:--:|:--:|
@@ -1140,7 +1140,7 @@ The homework turns the paper into a plan. Say it once, as in the wrap, and assig
 
 *(11 + 10 + 10 + 9 + 8 + 8 + 7 + 12 = 75. "Redo if marks ≤" is the highest whole mark strictly under 60% of the week's marks; a week of 10 marks is redone at 5 or fewer, since 6 of 10 is exactly 60%.)*
 
-### Page 9.3 — The remediation table (print with 9.2)
+### Handout C — The remediation table (print with Handout B)
 
 Circle at most **two** weeks. Priority order if there is a tie: **Week 8, Week 2, Week 6**. Each redo is 20 minutes plus the spoken check.
 
@@ -1148,14 +1148,12 @@ Circle at most **two** weeks. Priority order if there is a tie: **Week 8, Week 2
 |:--:|---|---|---|
 | 1 | Workbook **Page 1.3** (the coin, by hand) and the six-curve grid, **Page 1.1** | "Two runs both end at 0.69. How do you tell what each did?" → *the curve, from epoch 1* | Every Term 2 lab starts by reading a curve. |
 | 2 | Workbook **Page 2.1** (the hand table) and **Page 2.8** (a second hand table with new numbers) | "Momentum step 2: what is `v`, and why isn't it `0.1`-something?" → *`0.9·v + g`; PyTorch keeps no `0.1`* | The running update returns as the gate in Week 11. |
-| 3 | The week's by-hand page (RMS on `[3, -4]` then `[300, -400]`; Adam's first step for `g = 1` and `g = 1000`) | "Why is Adam's first step the same for a gradient of 1 and of 1000?" → *it divides by the gradient's own typical size* | Adam is the default optimizer for every later lab. |
+| 3 | Workbook **Page 3.1** (the three-optimizer table, with Adam's first step) and **Page 3.3** (RMS on `[3, -4]` then `[300, -400]`) | "Why is Adam's first step the same for a gradient of 1 and of 1000?" → *it divides by the gradient's own typical size* | Adam is the default optimizer for every later lab. |
 | 4 | Workbook **Page 4.3** (the schedule by hand) and **Page 4.4** (counting steps) | "Batch 256 against 64: what is not equal besides the batch?" → *the number of steps* | Every later comparison has the "what did I hold fixed?" question. |
-| 5 | The week's overfit-and-cure table: redo the four-cure column read, and the `deepcopy` snapshot | "Which column of the cure table do you trust, and why?" → *best validation loss; the final one depends on when you stopped* | Early stopping and `eval()` are used in every training script from now on. |
-| 6 | The week's by-hand page: slope of `x + f(x)` by nudging; batch norm at batch size 2 | "What is the slope of `x + f(x)` when `f` has slope 0.3?" → *1.3* | The residual highway is Week 11's gate. |
+| 5 | Workbook **Page 5.3** (stopping and the fee, by hand) and **Page 5.5** (the four-cure table, and the `deepcopy` snapshot) | "Which column of the cure table do you trust, and why?" → *best validation loss; the final one depends on when you stopped* | Early stopping and `eval()` are used in every training script from now on. |
+| 6 | Workbook **Page 6.3** (normalise by hand, including batch norm on a pair) and **Page 6.4** (slope of `x + f(x)` by nudging) | "What is the slope of `x + f(x)` when `f` has slope 0.3?" → *1.3* | The residual highway is Week 11's gate. |
 | 7 | Workbook **Page 7.3** (is it noise?) and **Page 7.4** (read four curves) | "Gap 0.002, spreads 0.008 and 0.010: bigger than noise?" → *no, 0.002 is under 0.020* | Every lab from here reports mean ± spread. |
 | 8 | Workbook **Page 8.3** (unroll the cell by hand) and **Page 8.4** (shapes) | "Same inputs in a different order: same final note?" → *no; the note depends on the order* | **Week 10 is entirely about this cell.** |
-
-*(Weeks 3, 5 and 6 point at "the week's by-hand page" because those weeks' workbooks had not been authored when this guide was written. When they exist, replace with the page numbers, as for the other five.)*
 
 ### Teacher-only: the map of wrong answers in Section A
 
@@ -1222,6 +1220,19 @@ Circle at most **two** weeks. Priority order if there is a tie: **Week 8, Week 2
 **A 2/4 answer.** *"S is bad. Lower the learning rate. Check that it works."* The symptom has no number, and "check that it works" is not an evidence step (how many seeds? compared with what?). Mark: one for the action, one for the (vague) symptom — be generous on whichever the student's words land closest to.
 
 **A 1/4 answer.** *"Clip the gradient and it will work."* One knob (1), but no number, no check, no evidence, and **it does not work here** (Block P5: two of three seeds end at `0.427` and `0.485`).
+
+### Workbook answers (the practice pages 9.1-9.10)
+
+All values were rerun on CPU, seed 0, torch 2.2.1. **Warm-Up:** W1 0.693; W2 0.4; W3 a cell gives a different final note, a bag gives the same; W4 smaller than 2 times the spread; W5 any honest answer.
+
+- **Page 9.2** (`w = 1.5`, `lr = 0.1`). SGD: w after 1.2000, 0.9600, 0.7680. Momentum: v = 3.0000, 5.1000, 5.9700; w after 1.2000, 0.6900, 0.0930. 9.2a yes (v starts at 0); 9.2b momentum, 0.0930 against 0.7680, a difference of 0.6750; 9.2c the velocity adds up past gradients; 9.2d it goes past 0: the check file prints 1.2, 0.69, 0.093, -0.4629, -0.8706.
+- **Page 9.3.** 9.3a squares 25 and 144, average 84.5, root 9.1924. 9.3b wrong answers 84.5 (forgot the root), -3.5 (plain mean), 13.0 (the length). 9.3c 919.24, 100 times bigger, so it scales. 9.3d 1.02. 9.3e 1.02 too (the gradient's size cancels). 9.3f AdamW applies the decay to the weights directly rather than through the gradient.
+- **Page 9.4** (`W_x = 1.0`, `W_h = -0.5`). `[1, 0, 1]`: notes 0.7616, -0.3634, 0.8280 (pre values 1.0000, -0.3808, 1.1817). `[1, 1, 0]`: notes 0.7616, 0.5506, -0.2685 (pre values 1.0000, 0.6192, -0.2753). 9.4a total 2; last notes 0.8280 and -0.2685, different. 9.4b a bag cannot tell them apart; the cell can. 9.4c the note at step 2 is negative because `W_h` is negative. 9.4d (ii), a single squashed summary.
+- **Page 9.5.** Shapes `(3, 6)`, `(3, 6, 2)`, `(3, 6, 7)`, `(1, 3, 7)`; the embedding has 12 numbers and the RNN 77 (2x7 + 7x7 + 7 + 7).
+- **Page 9.6.** 9.6a gap 0.0173, larger spread 0.0082, twice 0.0163: bigger, only just. 9.6b gap 0.0040 against 0.0163: inside noise. 9.6e (840 / 120) x 10 = 70 steps.
+- **Page 9.7.** The check file prints `val at epochs 20, 40, 60: [0.049, 0.136, 0.059]`, `lowest val 0.012 at epoch 31` and `final accuracy 99.2%`. 9.7c: val went up from epoch 20 to 40 for both W (0.029 to 0.085) and Z (0.049 to 0.136). Y's first-epoch train 7837888.5 and val 5632.9 differ because train is averaged over the epoch's steps and val is measured once after.
+- **Page 9.8.** A `TypeError: total() takes 0 positional arguments but 2 were given`; B prints `True` then `False` (add `model.eval()`); C `ValueError: Expected more than 1 value per channel when training, got input size torch.Size([1, 5])`; D `AttributeError: 'tuple' object has no attribute 'shape'`. Slope check 1.5, then 0.
+- **Pages 9.1, 9.9, 9.10 and Self-Check.** The per-week grid on Page 9.9 matches Handout B (marks 11, 10, 10, 9, 8, 8, 7, 12 = 75; redo thresholds 6, 5, 5, 5, 4, 4, 4, 7; tie order 8, 2, 6). The other answers are in the student's own words.
 
 ### Answers to every question posed in the lesson
 

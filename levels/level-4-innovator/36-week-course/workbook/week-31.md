@@ -435,7 +435,7 @@ This section is for ticking only what you can do without notes.
 
 ---
 
-**✂️ ANSWERS - keep this page folded until you have finished**
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 This page is for checking your work after you have written every answer.
 

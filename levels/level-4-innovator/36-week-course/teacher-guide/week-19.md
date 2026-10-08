@@ -1270,7 +1270,7 @@ The workbook has six pages (19.1-19.6). The student does them in order, and writ
 
 This section holds the answers for the workbook pages and for every question asked in the lesson. **Teacher only.**
 
-> **The workbook pages 19.1-19.6 follow this order.** Where an answer is a number it comes from `text_ablate.py`, `task_table.py`, `heads.py`, `heads_more.py` or `key.py`, all run from the Prep Checklist. **A student's own run uses their own seed; only the structure of the answer is fixed.** (If the workbook author has reordered the pages, match by title.)
+> **The workbook pages 19.1-19.6 follow this order.** Where an answer is a number it comes from `text_ablate.py`, `task_table.py`, `heads.py`, `heads_more.py` or `key.py`, all run from the Prep Checklist. **A student's own run uses their own seed; only the structure of the answer is fixed.**
 
 ### Page 19.1 — Predict before you delete
 
@@ -1345,6 +1345,10 @@ Model answer: *"My name was 'looks 6 back' and that's still true: the picture sh
 | Reports a both-heads result | 1 |
 | Says what the result does to the name (survives as description, not as "needed") | 1 |
 | Says what was not tested (other seeds, other sizes) | 1 |
+
+### Pages 19.7-19.8 and the Warm-Up — the workbook's own bugs and checks
+
+The workbook's three bugs differ from the Debugging Clinic's; answer them from here. **Bug A (silent):** `append` is never undone, so by the last line all four heads are off (the "all four off" case, chance 0.125); the fix is to reset `silence = []` after each test, and the habit is to print the `silence` lists before each test. **Bug B (silent):** the loss is taken over every place; the copy-the-pattern floor is `2 x ln 8 / 11 = 0.378`, because token 0 is an input and only 2 places are unpredictable (the run prints 0.384 with accuracy 1.00; the model is not broken). The 5 in the 0.866 above counts the random symbols 2-6 of the six-symbol copy window. **Bug C (loud):** `IndexError: index 2 is out of bounds for dimension 1 with size 2`; heads are numbered 0 and 1; head `1` would run on and silently switch off the wrong head, so only a range check catches it. Warm-Up: `ln 8 = 2.079`; the mask hides later places; gap 1.4 - 1.0 = 0.4 shows memorising, not quality; residual line `x = x + self.proj(mixed)`; a 0.02 gap is inside the 0.01-0.03 seed wobble.
 
 ### Teacher-only: the map of wrong answers
 

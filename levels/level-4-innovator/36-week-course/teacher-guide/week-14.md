@@ -1099,7 +1099,9 @@ Every number below comes from `key.py` (teacher-only) or from the files above.
 | **Weights, four places** | `the [0.4223, 0.1554, 0.4223]`, `cat [0.1554, 0.4223, 0.4223]`, `sat [0.2119, 0.2119, 0.5761]` |
 | **Output, three places** | `the [0.578, 0.845]`, `cat [0.845, 0.578]`, `sat [0.788, 0.788]` |
 
-Carrying **three** places in the weights gives `[[0.577, 0.844], [0.844, 0.577], [0.788, 0.788]]`: accept it (the `the` and `cat` row sums are 0.999). The written sentence: *"`sat` pays most attention to itself, 0.576."* Accept any sentence naming the word and the number. Check: every output number is between 0 and 1 (the values are 0s and 1s; a weighted average cannot leave that range).
+Row totals of exps to four places: `6.4366`, `6.4366`, `12.8257`. Carrying **three** places in the weights gives `[[0.577, 0.844], [0.844, 0.577], [0.788, 0.788]]`: accept it (the `the` and `cat` row sums are 0.999). The written sentence: *"`sat` pays most attention to itself, 0.576."* Accept any sentence naming the word and the number. Check: every output number is between 0 and 1 (the values are 0s and 1s; a weighted average cannot leave that range).
+
+**Workbook Part B (two words, `Wv = [[2, 0], [0, 4]]`):** scores `[[1, 0], [0, 1]]`, row totals `3.7183`, weights `a [0.7311, 0.2689]`, `b [0.2689, 0.7311]`, output `a [1.462, 1.076]`, `b [0.538, 2.924]`; word `a` leans towards its own value `[2, 0]`.
 
 ### Page 14.2 — The soft lookup and the weighted average (from `lookup.py` and `key.py`)
 
@@ -1113,6 +1115,8 @@ Carrying **three** places in the weights gives `[[0.577, 0.844], [0.844, 0.577],
 | H1: `[0.5, 0.25, 0.25]` | **25.0** |
 | H1: `[0, 1, 0]` | **50.0** |
 | H1: `[0.7, 0.2, 0.2]` | **23.0**; not a weighted average (adds to **1.1**); divided by the total: `23.0 / 1.1 = 20.909` |
+
+**Workbook Part A** (new scores `1.0, 0.0, 2.0` for `bread, river, rope`): the hard lookup picks `rope` and returns **30**; exps `2.7183, 1.0000, 7.3891`, total `11.1073`; weights `0.245, 0.090, 0.665` (add to 1.000); soft lookup `(0.245 x 10) + (0.090 x 50) + (0.665 x 30) = 2.450 + 4.500 + 19.950 =` **26.90** by hand, **26.91** by machine, smaller than the hard 30 because the other two values pull it down in proportion to their weights.
 
 ### Page 14.3 — The agreement table (from `attention.py` Part 3)
 
@@ -1137,6 +1141,10 @@ With one table for questions and keys the score table is symmetric. With `Wq = [
 | cat asks sat / sat asks cat | `1.0` / `0.0` |
 
 Prediction answer: row `the` has equal weights because its question is all zeros, so every score is 0 and every exp is 1. Its answer is the plain mean of the values, `[0.667, 0.667]`. Scores are **not** symmetric (`False`).
+
+### Page 14.6 — Break it on purpose (workbook bugs A-E)
+
+**A** (silent): `e.sum()` is one total for the whole table; printed weights `[[0.44, 0.06], [0.06, 0.44]]`, row sums `0.5, 0.5`; fix `e / e.sum(axis=1).reshape(2, 1)`. **B** (silent): `v @ weights` instead of `weights @ v`; prints `[[9, 2], [2, 16]]` then `[[9, 1], [4, 16]]`; the top-right entry must be `0.9 x 0 + 0.1 x 20 = 2`. **C** (loud): `w.unsqueeze(0)` gives shape `(1, 3)`; last line `RuntimeError: The size of tensor a (3) must match the size of tensor b (2) at non-singleton dimension 1`; fix `unsqueeze(-1)`, blend `[6.5, 6.5]`. **D** (silent): `nn.Linear(2, 2)` keeps its random bias; seed 1 prints `[[2.334, 4.424]]` instead of `[[3.0, 4.0]]`; fix `bias=False`. **E** (silent): `nn.Linear` stores the table turned over; prints `[[2.0, 1.0]]` against the pen's `[[0.0, 1.0]]`; fix `.transpose(0, 1)`; the class tables (identity, swap) are their own transposes, so they never showed it.
 
 ### Page 14.5 — The homework check (from `hw.py`)
 

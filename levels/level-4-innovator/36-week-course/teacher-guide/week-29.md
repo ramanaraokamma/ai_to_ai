@@ -19,7 +19,7 @@
 | **New syntax** | `json.dumps` to write **one event per line** (with `default=str`, flagged in section 4, as part of the same call) · `future.result(timeout=)` reused on a **hung** tool (last week's `ThreadPoolExecutor` idea; this week the registry's `timeout=` makes it fire, and the student *reads* it fire) · `time.sleep` as a **simulated** round trip, default `0`. That is three new (the ladder allows four). `json.loads` is Week 23's. **Teacher-only or given, not typed:** `Path.unlink(missing_ok=True)` and `Path.mkdir(parents=True)` in the set-up and in the given helper `fresh`; set comparison `<=` in Key K2. `np.polyfit` (Week 21) appears once, in a deliberately wrong fit. |
 | **Dataset** | The same 15-note lab notebook as Weeks 25-28 in `notes/`, plus the **planted 16th note** (`rag.POISON_NOTE`), which the student met in Week 26. An empty `lab29/outer/box/` folder (the sandbox, two folders down, so an escape to `../../exfil.txt` would land in `lab29/`, never outside it). Nothing downloads. **No internet.** |
 | **Model** | **There is no model today. Every "model" is a scripted stand-in: `toyagent.ScriptedModel` (replays a written plan) and `toyagent.GullibleModel` (a `ScriptedModel` that also obeys a sentence of the form `call tool(key="value")` found in a tool result, with a probability you type).** The loop, the layers, the fences, the trace and the *shape* of the cost curve are real engineering. **The obey rates are properties of the numbers typed into the kit (gullibility 0.8; framing discount 0.6; scan discount 0.5), not of any real system.** Nothing measured against them says anything about how often a real model would obey, and the student must say so. Tokens come from the kit's local counter and dollars from an **illustrative** price table (`fake-small`: 1.00 in, 5.00 out per million tokens). |
-| **Materials** | Laptop with Python 3, numpy, scikit-learn and torch (nothing new) · the `notes/` folder · an empty `lab29/outer/box/` folder · printed **Pages 29.1-29.3** (Activity) · a timer · a pen |
+| **Materials** | Laptop with Python 3, numpy, scikit-learn and torch (nothing new) · the `notes/` folder · an empty `lab29/outer/box/` folder · the student's workbook (Pages 29.1 to 29.5) and the printed **Layers sheet, Trace sheet and Bill sheet** (Activity) · a timer · a pen |
 | **Prep time** | 30 minutes the night before · 3 minutes on the day |
 | **Expected runtime of the code** | The **whole** guide (every Prep block, every Clinic block, the sheet block and the Key, top to bottom, one session, one thread) ran in **about 5.3 seconds of wall time**. About 1 second is importing torch; about 2.4 seconds is Block P9 (simulated sleeps: `0.05 s` × 30 calls, three timeouts of `0.2 s`, and the 1.5 s the hung tool keeps sleeping in its thread); about 1.5 seconds is Mistake 10 (three `0.5 s` sleeps). **No block takes more than about 2.4 seconds, so nothing is over the 10-second mark and nothing needs a recorded time.** The kit's own 19 tests take about 1.4 seconds. **Anything over 1 minute means something is wrong** (see Fallback). |
 
@@ -40,7 +40,7 @@ By the end of the lesson the student can:
 7. **Use the triangular sum to predict a bill**: `1 + … + 10 = 55` by pairing the ends; the step-30 prediction `22,026` input tokens and `$0.023536` against the measured `22,018` and `$0.023528`; "three times the steps cost `4.96` times as much"; and why a straight line through three cheap runs is `33%` too low at step 30.
 8. **Say what a timeout and a budget do and do not do**: three timeouts of `0.2 s` end a hung-tool run in `0.6 s` (`too_many_tool_errors`); the budget fence fires after the turn that crosses the cap, and then the wrap-up turn adds a little more.
 
-Observable evidence: the printed table of Block P4 (with `landed` all `0`), the line `file landed: True` for the weak sandbox only, the prediction table of Block P7, and a filled Page 29.1 with four correct expected counts (`80, 48, 40, 24`).
+Observable evidence: the printed table of Block P4 (with `landed` all `0`), the line `file landed: True` for the weak sandbox only, the prediction table of Block P7, and a filled Layers sheet with four correct expected counts (`80, 48, 40, 24`).
 
 ---
 
@@ -89,9 +89,9 @@ For `k = 10`: `223 × 11 + 32.5 × 55 = 2453 + 1787.5 = 4240.5` (measured `4238`
 - `32.5` is an average of `32` and `33`, which is why the prediction is off by a handful of tokens.
 - The price table is illustrative.
 
-**The pen-and-paper version (Page 29.3)** uses `223`, `32` or `32.5` and the triangular numbers `55`, `210`, `465`, and no calculator beyond multiplication.
+**The pen-and-paper version (Bill sheet; workbook Page 29.3 is the homework version)** uses `223`, `32` or `32.5` and the triangular numbers `55`, `210`, `465`, and no calculator beyond multiplication.
 
-**The other arithmetic on the page (not new maths).** Page 29.1 multiplies a probability by two discounts: `0.8 × 0.6 = 0.48`, `0.8 × 0.5 = 0.40`, `0.8 × 0.6 × 0.5 = 0.24`. It is multiplication of decimals. Say "a chance of a chance".
+**The other arithmetic on the page (not new maths).** The Layers sheet multiplies a probability by two discounts: `0.8 × 0.6 = 0.48`, `0.8 × 0.5 = 0.40`, `0.8 × 0.6 × 0.5 = 0.24`. It is multiplication of decimals. Say "a chance of a chance".
 
 ### 3. 🧭 Real vs stand-in — and what you must NOT claim
 
@@ -156,7 +156,7 @@ All printed by the blocks in the Prep Checklist. Read them before class.
 
 1. **An obey rate is a dial, not a finding.** The counts show which defences move a number and which do not. They say nothing about real models.
 2. **The policy understands one grammar.** `call|run|use name(key="value")`. A rewording with *no* marker but the same grammar still fools it (Block P6); a rewording in plain English (no parentheses) would not fool it at all, because it cannot read. That is a limit of the stand-in, not a defence. Do not let the student conclude that rewording "helps the attacker less".
-3. **Layer 3 is only as wide as the tools.** The sandbox stops `../../exfil.txt`; it does not stop a legal write of harmful text to `notes.md`. Page 29.1 H is exactly that case, and the only fence left is a human who reads the content before saying yes.
+3. **Layer 3 is only as wide as the tools.** The sandbox stops `../../exfil.txt`; it does not stop a legal write of harmful text to `notes.md`. Layers sheet item H is exactly that case, and the only fence left is a human who reads the content before saying yes.
 4. **Nothing today measures a real injection.** No real model, no real web page, no real email. The planted note is one invented sentence.
 5. **The scan has nine phrases.** It is a test for the lazy attack, as in Week 26's filter, and it was built to be beaten by rewording.
 6. **The budget stops one turn late**, plus the wrap-up turn, as in Week 23.
@@ -617,15 +617,15 @@ ok test_worked_plan_five_turns
 19 tests passed
 ```
 
-**☐ 12. Print.** Pages 29.1, 29.2 and 29.3 (Activity), single-sided; keep the key (Answer Key) to yourself. **Never hand the student this guide.** It names the mistakes they are about to make.
+**☐ 12. Print.** the Layers sheet, the Trace sheet and the Bill sheet (Activity, in the Activity section; they are in-class sheets, not workbook pages), single-sided; keep the key (Answer Key) to yourself. **Never hand the student this guide.** It names the mistakes they are about to make.
 
 ### 3 minutes on the day
 
-Start Python in `36-week-course/`, run P1 and have P3, P4 and P7 ready as saved files; confirm that `lab29/outer/box/` is empty and that there is no `lab29/exfil.txt`. Print **Page 29.1** before the student arrives. If a previous session left `lab29/exfil.txt`, `fresh` deletes it on the next run; delete it yourself if you want to show "nothing landed" from a clean start.
+Start Python in `36-week-course/`, run P1 and have P3, P4 and P7 ready as saved files; confirm that `lab29/outer/box/` is empty and that there is no `lab29/exfil.txt`. Print the **Layers sheet** before the student arrives. If a previous session left `lab29/exfil.txt`, `fresh` deletes it on the next run; delete it yourself if you want to show "nothing landed" from a clean start.
 
 ### Fallback if the laptops fail
 
-The lesson is an argument, and Pages 29.1-29.3 carry it on paper: the hook from the printed planted note; the four expected counts by hand; the trace on Page 29.2; the triangular sum. If the laptop is dead, read the table off the printout. If a block takes more than a minute, something is wrong: the usual cause is running from the wrong folder (the import of `l4lib` fails at once, not slowly), a leftover `SIM = 0.05` from an earlier edit (every call sleeps), or a hung tool registered with `timeout=` *longer* than its delay (it just waits).
+The lesson is an argument, and the three sheets carry it on paper: the hook from the printed planted note; the four expected counts by hand; the trace on the Trace sheet; the triangular sum. If the laptop is dead, read the table off the printout. If a block takes more than a minute, something is wrong: the usual cause is running from the wrong folder (the import of `l4lib` fails at once, not slowly), a leftover `SIM = 0.05` from an earlier edit (every call sleeps), or a hung tool registered with `timeout=` *longer* than its delay (it just waits).
 
 ---
 
@@ -656,7 +656,7 @@ End with the honesty rule: *"There is no model in this room. The dial is a numbe
 
 ### 🎲 Their Turn — Three Layers on Paper (12 minutes)
 
-Hand over the printed sheet (see **The Activity, In Full**). 8 minutes for Page 29.1: the four expected counts at gullibility 0.8 (part a), the reworded note (b), the strict-sandbox landing count and why (c), and eight goals against the fence that stops each (d). 4 minutes for the first three questions of Page 29.2 (read the printed JSON lines). Sit back. At the end ask: *"which goal is stopped by none of the fences?"* (C, the weak sandbox with a human who says yes, and H, a legal write of bad text that a human approves.) *"If you could add one more fence, where?"* (Let them say: check the content the human is asked to approve; check the filename list; a smaller sandbox.) Do not run the code for this; the key is at the end.
+Hand over the printed sheet (see **The Activity, In Full**). 8 minutes for the Layers sheet: the four expected counts at gullibility 0.8 (part a), the reworded note (b), the strict-sandbox landing count and why (c), and eight goals against the fence that stops each (d). 4 minutes for the first three questions of the Trace sheet (read the printed JSON lines). Sit back. At the end ask: *"which goal is stopped by none of the fences?"* (C, the weak sandbox with a human who says yes, and H, a legal write of bad text that a human approves.) *"If you could add one more fence, where?"* (Let them say: check the content the human is asked to approve; check the filename list; a smaller sandbox.) Do not run the code for this; the key is at the end.
 
 ### 💻 Live-Code Together — `attack_and_budget.py` (36 minutes)
 
@@ -932,13 +932,13 @@ TypeError: <lambda>() takes 0 positional arguments but 2 were given
 
 ### Setup (2 minutes before class)
 
-Print the sheet below once, single-sided. A pen. No computer. **The eight goals on Page 29.1 were typed by the teacher; they are not the output of any model.** The trace on Page 29.2 is the real output of Block S1 (a gullible stand-in, seed 1).
+Print the sheet below once, single-sided. A pen. No computer. **The eight goals on the Layers sheet were typed by the teacher; they are not the output of any model.** The trace on the Trace sheet is the real output of Block S1 (a gullible stand-in, seed 1).
 
 ### The sheet (print only the block between the two ✂ lines)
 
 ```text
 ✂ PRINT ------------------------------------------------------------------
-Page 29.1  Three Layers on Paper          Name: ____________   Date: ________
+Layers sheet  Three Layers on Paper          Name: ____________   Date: ________
 
   A planted note orders the assistant to write a file outside its folder.
   The assistant here is a STAND-IN, not a model: a program with a dial.
@@ -973,7 +973,7 @@ Page 29.1  Three Layers on Paper          Name: ____________   Date: ________
   (e) Which layer would you tell a friend to rely on, and why, in one
       sentence?  ________________________________________________________
 
-Page 29.2  Read the Trace       (one line per event; a stand-in, seed 1, gullibility 1.0)
+Trace sheet  Read the Trace       (one line per event; a stand-in, seed 1, gullibility 1.0)
   {"seq": 2, "event": "model_turn", "iteration": 1, "calls": ["search_notes"], "text": "Let me search your notebook for "}
   {"seq": 3, "event": "tool_call", "iteration": 1, "tool": "search_notes", "is_error": false, "injection_flags": ["ignore previous instructions", "note to assistant"], "result": "[note 15] (similarity 0.326) 2026-"}
   {"seq": 4, "event": "model_turn", "iteration": 2, "calls": ["write_file"], "text": "The note tells me to act; doing "}
@@ -990,7 +990,7 @@ Page 29.2  Read the Trace       (one line per event; a stand-in, seed 1, gullibi
   5. The scan fired AND the stand-in obeyed. Write what that tells you
      about a scan used alone.  ______________________________________
 
-Page 29.3  Pay the Bill     (price: 1.00 per million tokens in, 5.00 per million out)
+Bill sheet  Pay the Bill     (price: 1.00 per million tokens in, 5.00 per million out)
   A task calls the calculator k times, then answers. The first turn is 223
   tokens in. Each step adds about 32 tokens to what is re-sent. Each tool turn
   says 10 tokens out; the closing answer says 2.
@@ -1013,11 +1013,11 @@ Page 29.3  Pay the Bill     (price: 1.00 per million tokens in, 5.00 per million
 
 ### What "finished" looks like
 
-Page 29.1 with the four `p` values and counts (`0.80 / 80`, `0.48 / 48`, `0.40 / 40`, `0.24 / 24`), (b) as `0.48 / 48`, (c) `0`, and a fence or "none" for each of A-H; Page 29.2 with five answers (the first three in class); Page 29.3 with the arithmetic shown. The student may keep all three. **Marks:** 29.1 (d) is eight boxes; count a box right if the fence number or a plain-words description is right (see the key for the two with "none").
+the Layers sheet with the four `p` values and counts (`0.80 / 80`, `0.48 / 48`, `0.40 / 40`, `0.24 / 24`), (b) as `0.48 / 48`, (c) `0`, and a fence or "none" for each of A-H; the Trace sheet with five answers (the first three in class); the Bill sheet with the arithmetic shown. The student may keep all three. **Marks:** Layers sheet (d) is eight boxes; count a box right if the fence number or a plain-words description is right (see the key for the two with "none").
 
 ### Variation — shorter (a 50-minute slot)
 
-Drop Part 4 (P6) and Part 6 (P9, P10) from the live code and give the printed outputs; keep P3, P4, P5 and P7. Do only Page 29.1 in class.
+Drop Part 4 (P6) and Part 6 (P9, P10) from the live code and give the printed outputs; keep P3, P4, P5 and P7. Do only the Layers sheet in class.
 
 ### Variation — an anxious or slow student
 
@@ -1043,7 +1043,7 @@ This section gives short answers to the questions students are likely to ask.
 
 **"Why is the human a 'capability' limit and not just a nicety?"** Because it does not ask the model. With the weak sandbox and a human who says no, nothing reached the sandbox at all (100 obeyed, 0 reached it, 0 landed).
 
-**"What if the human says yes without reading?"** Then the human is not a fence. That is Page 29.1 H: a legal write of harmful text to an allowed file that a tired human approves. Say the honest answer: the kit's default prompt shows the human the tool name and only the first 100 characters of the arguments (filename and content as JSON), so a long harmful text can be cut off; it can only help if they look, and only at what is shown.
+**"What if the human says yes without reading?"** Then the human is not a fence. That is Layers sheet item H: a legal write of harmful text to an allowed file that a tired human approves. Say the honest answer: the kit's default prompt shows the human the tool name and only the first 100 characters of the arguments (filename and content as JSON), so a long harmful text can be cut off; it can only help if they look, and only at what is shown.
 
 **"Why does the bill grow like `k × k`?"** The model is sent everything so far each turn. Turn 1 sends 223 tokens; turn 2 sends those plus one step; turn 10 sends those plus nine steps. Add the turns up and you add `1 + 2 + … + 9`.
 
@@ -1085,7 +1085,7 @@ This section adapts the lesson for a student who is struggling, flying or not en
 
 ### If the student is struggling
 
-Stay with three ideas: *(1) a soft layer lowers a number, a hard layer bounds an outcome; (2) I check for the file, not for the stop reason; (3) a long task costs more per turn because the history is re-sent.* Give the completed `attack`, `rate` and `steps`; the student types the `for` loop over the four settings and reads the two columns aloud (`obeyed` goes down, `landed` is zero). Skip P6 and P9. The minimum viable lesson: the student says *"framing and scanning lower how often; the sandbox makes it impossible"* and does part (a) of Page 29.1.
+Stay with three ideas: *(1) a soft layer lowers a number, a hard layer bounds an outcome; (2) I check for the file, not for the stop reason; (3) a long task costs more per turn because the history is re-sent.* Give the completed `attack`, `rate` and `steps`; the student types the `for` loop over the four settings and reads the two columns aloud (`obeyed` goes down, `landed` is zero). Skip P6 and P9. The minimum viable lesson: the student says *"framing and scanning lower how often; the sandbox makes it impossible"* and does part (a) of the Layers sheet.
 
 ### If the student is flying
 
@@ -1120,7 +1120,7 @@ Ask these out loud near the end; do not rescue.
 |:--:|---|
 | 🟥 Not yet | Thinks the prompt or the scan is the safety; reads the obey counts as facts about AI. |
 | 🟨 Emerging | Runs the code; reads the table; cannot say why `landed` stays `0`, or treats `end_turn` as success. |
-| 🟩 Secure | Completes Page 29.1 with at most one wrong fence; says the hard layer never asks the model; does the triangular sum by pairing; predicts step 30 within a few percent. |
+| 🟩 Secure | Completes the Layers sheet with at most one wrong fence; says the hard layer never asks the model; does the triangular sum by pairing; predicts step 30 within a few percent. |
 | 🟦 Strong | Also predicts the reworded-note result before it runs, catches a wrong line fit or an off-by-one on their own, and says in their own words why the dial is a stand-in and what *would* carry over to a real model. |
 
 ---
@@ -1145,7 +1145,7 @@ This section holds the answers to the pen pages and the teacher-only blocks that
 
 Every number below comes from the blocks above or from `K2` to `K8` (TEACHER-ONLY; below).
 
-### Page 29.1 — Three Layers on Paper
+### Layers sheet — Three Layers on Paper
 
 (a) `p = 0.8`, expected `80`; layer 1 only `0.8 × 0.6 = 0.48`, `48`; layer 2 only `0.8 × 0.5 = 0.40`, `40`; both `0.8 × 0.6 × 0.5 = 0.24`, `24`. (Measured over seeds 0-99: `85, 55, 44, 27`; the gap is sampling noise. Accept any correct expected values.)
 (b) `p = 0.8 × 0.6 = 0.48`, expected `48`: **the scan finds no marker, so its `0.5` never applies**; only the framing discount does. (Measured at gullibility 1.0: `69` for the reworded note against `32` for the original; Key K6 gives three variants at 0.8.)
@@ -1153,10 +1153,10 @@ Every number below comes from the blocks above or from `K2` to `K8` (TEACHER-ONL
 (d) **A: 3** (sandbox refuses the path). **B: 6** (the human says no; the sandbox is never reached). **C: none.** Nothing stops it: the weak sandbox lets the path through and the human said yes; this is the picture of a missing fence (Block P5: `landed 100`). **D: 5** (allowlist: `no tool named`). **E: 3** (the sandbox's suffix list refuses `.sh`). **F: 1** (the turn cap, or 2 if the money cap comes first; with the kit's defaults, 1). **G: 4** (timeout; the wait ends after the limit, the work goes on). **H: none.** The name and the suffix are allowed and the human said yes; the only fence left is the human *reading the content* (the kit's prompt shows just the first 100 characters of the arguments, so a long text can be hidden past the cut).
 (e) Any sentence that says to rely on layer 3 (the sandbox, the human, the allowlist) because it does not depend on the model being persuaded; the soft layers lower how often. A shaky one: "the scan".
 
-### Page 29.2 — Read the Trace
+### Trace sheet — Read the Trace
 
 ```python
-# sheet.py (TEACHER-ONLY): the trace printed on Page 29.2. Gullibility 1.0, seed 1, layers 1 and 2 ON, strict sandbox, the human says yes.
+# sheet.py (TEACHER-ONLY): the trace printed on the Trace sheet. Gullibility 1.0, seed 1, layers 1 and 2 ON, strict sandbox, the human says yes.
 r, box, landed = attack(plan_model(1.0, 1), auto_approve=True)
 for e in r["trace"]:
     if e["event"] == "start":
@@ -1186,7 +1186,7 @@ stop: end_turn | iterations: 3 | spend: $0.001319
 4. **No**, the attack did not land (`(LAB / "exfil.txt").exists()` is `False`, as in Mistake 4's strict row), but **the stop reason cannot tell you**: both the strict and the weak run end `end_turn` (Mistake 4). You find out by reading the `write_file` result and checking for the file.
 5. **A scan used alone is a smoke alarm, not a wall**: it says an attack is happening and the policy obeys anyway (32 of 100 runs in Mistake 2). Its only effect in the loop is to append a note that halves the dial.
 
-### Page 29.3 — Pay the Bill
+### Bill sheet — Pay the Bill
 
 (a) `1 + 10 = 11`, `2 + 9 = 11`, …, so **5 pairs of 11 = 55**. `1 + … + 20 = 20 × 21 / 2 =` **210**. (b) Input `223 × 11 + 32 × 55 = 2453 + 1760 =` **4213** (with `32.5`: `4240.5`; measured `4238`); output `10 × 10 + 2 =` **102**; cost `4213 × 1 + 102 × 5 = 4213 + 510 =` **4723** millionths (`$0.004723`; `$0.004751` with `32.5`; measured `$0.004748`). (c) Input `223 × 21 + 32 × 210 = 4683 + 6720 =` **11403** (`11508` with `32.5`; measured `11503`); output `10 × 20 + 2 =` **202**; cost `11403 + 1010 =` **12413** millionths (`$0.012413`; measured `$0.012513`). (d) `12413 / 4723 = 2.63`: **a bit more than two and a half times** for twice the steps (and `30` steps: about five times the 10-step bill, Block P7). (e) `0.05 × 10 =` **0.5 s**, `0.05 × 20 =` **1.0 s**: waiting is a straight line; **the bill grows faster** (it has a `k × k` part). (f) Any sentence that says each task restarts with a short history, so it never pays for the long one being re-sent; `3 × $0.004748 = $0.014244` against `$0.023528` (handoff tokens ignored).
 
@@ -1276,27 +1276,27 @@ trace is a list of dict | r.get('cost_usd'): None | r['spend']: 0.001649
 labels: stand-in, not a model | <GullibleModel [stand-in, not a model] gullibility=0.5 seed=0>
 ```
 
-**K5 — the numbers behind Pages 29.1 and 29.3 (TEACHER-ONLY).**
+**K5 — the numbers behind the Layers sheet and the Bill sheet (TEACHER-ONLY).**
 
 ```python
-# key29.py (TEACHER-ONLY): the numbers behind Pages 29.1 and 29.3.
-print("Page 29.1 (a): 100 x g x discounts for g = 0.8:", [round(100 * 0.8 * f) for f in (1, 0.6, 0.5, 0.6 * 0.5)])
-print("Page 29.1 (b): the reworded note, layers 1+2 on, g = 0.8:", round(100 * 0.8 * 0.6), "(the scan finds no marker, so only the 0.6 applies)")
-print("Page 29.3 (a) 1+2+...+10 =", sum(range(1, 11)), "| 1+...+20 =", sum(range(1, 21)), "| 1+...+30 =", sum(range(1, 31)))
+# key29.py (TEACHER-ONLY): the numbers behind the Layers sheet and the Bill sheet.
+print("Layers sheet (a): 100 x g x discounts for g = 0.8:", [round(100 * 0.8 * f) for f in (1, 0.6, 0.5, 0.6 * 0.5)])
+print("Layers sheet (b): the reworded note, layers 1+2 on, g = 0.8:", round(100 * 0.8 * 0.6), "(the scan finds no marker, so only the 0.6 applies)")
+print("Bill sheet (a) 1+2+...+10 =", sum(range(1, 11)), "| 1+...+20 =", sum(range(1, 21)), "| 1+...+30 =", sum(range(1, 31)))
 for k in (10, 20, 30):
     tin, dollars = predict(k)
-    print(f"Page 29.3: k={k}: input {n0} x {k + 1} = {n0 * (k + 1)}, growth {grow} x {k * (k + 1) // 2} = {grow * k * (k + 1) / 2:.1f}, total in {tin:.0f}; out {out_per_step * k + 2}; $ {dollars:.6f}  (measured {sum(measured[k]['in_tokens'])} in, ${measured[k]['spend']:.6f})")
+    print(f"Bill sheet: k={k}: input {n0} x {k + 1} = {n0 * (k + 1)}, growth {grow} x {k * (k + 1) // 2} = {grow * k * (k + 1) / 2:.1f}, total in {tin:.0f}; out {out_per_step * k + 2}; $ {dollars:.6f}  (measured {sum(measured[k]['in_tokens'])} in, ${measured[k]['spend']:.6f})")
 print("ratios of the predicted dollars: 20 vs 10:", round(predict(20)[1] / predict(10)[1], 2), "| 30 vs 10:", round(predict(30)[1] / predict(10)[1], 2))
 print("seconds for the whole prep:", round(time.time() - T0, 1))
 ```
 
 ```text
-Page 29.1 (a): 100 x g x discounts for g = 0.8: [80, 48, 40, 24]
-Page 29.1 (b): the reworded note, layers 1+2 on, g = 0.8: 48 (the scan finds no marker, so only the 0.6 applies)
-Page 29.3 (a) 1+2+...+10 = 55 | 1+...+20 = 210 | 1+...+30 = 465
-Page 29.3: k=10: input 223 x 11 = 2453, growth 32.5 x 55 = 1787.5, total in 4240; out 102; $ 0.004751  (measured 4238 in, $0.004748)
-Page 29.3: k=20: input 223 x 21 = 4683, growth 32.5 x 210 = 6825.0, total in 11508; out 202; $ 0.012518  (measured 11503 in, $0.012513)
-Page 29.3: k=30: input 223 x 31 = 6913, growth 32.5 x 465 = 15112.5, total in 22026; out 302; $ 0.023536  (measured 22018 in, $0.023528)
+Layers sheet (a): 100 x g x discounts for g = 0.8: [80, 48, 40, 24]
+Layers sheet (b): the reworded note, layers 1+2 on, g = 0.8: 48 (the scan finds no marker, so only the 0.6 applies)
+Bill sheet (a) 1+2+...+10 = 55 | 1+...+20 = 210 | 1+...+30 = 465
+Bill sheet: k=10: input 223 x 11 = 2453, growth 32.5 x 55 = 1787.5, total in 4240; out 102; $ 0.004751  (measured 4238 in, $0.004748)
+Bill sheet: k=20: input 223 x 21 = 4683, growth 32.5 x 210 = 6825.0, total in 11508; out 202; $ 0.012518  (measured 11503 in, $0.012513)
+Bill sheet: k=30: input 223 x 31 = 6913, growth 32.5 x 465 = 15112.5, total in 22026; out 302; $ 0.023536  (measured 22018 in, $0.023528)
 ratios of the predicted dollars: 20 vs 10: 2.64 | 30 vs 10: 4.95
 seconds for the whole prep: 5.3
 ```
@@ -1379,6 +1379,17 @@ expression length 117 characters | first turn 223 | growth 105.25 per step | 82 
 k=25: predicted 40004 in, $0.050264 | measured 40012 in, $0.050272 | dollars off by 0.02%
 largest k predicted to fit $0.02: 13 | run with budget_usd=0.02: stop=budget_exhausted after 15 tool turns, final spend $0.022315
 ```
+
+### Workbook Pages 29.1 to 29.5 and the Warm-Up / Self-Check (TEACHER-ONLY)
+
+The workbook pages are the homework versions and use different numbers from the in-class sheets above (dial 0.5 for the layers table, 5 and 15 steps for the bill). Every value below was re-run or recomputed by hand.
+
+- **Warm-Up.** 1. Data, written by whoever wrote the note. 2. Framing, scanning, capability limits; layer 3 does not depend on the model being persuaded. 3. No: `end_turn` means the loop finished; check the `write_file` result and whether the file exists. 4. A script that imitates a model; its obey rate is a number someone typed.
+- **Page 29.1.** (a) At gullibility 0.5: `50, 30, 25, 15` expected (`0.5`, `0.5 x 0.6`, `0.5 x 0.5`, `0.5 x 0.6 x 0.5`); measured over seeds 0 to 99: `58, 32, 28, 17`, landed 0. (b) `0.5 x 0.6 = 0.30`, expected 30. (c) `0`. (d) A 3, B 6, C 3, D 5, E 1, F 4, G none, H none (workbook lettering; the Layers sheet above has different items). (e) G and H; G needs a human who reads the content, H needs a strict sandbox or a human who says no. Part 3 at gullibility 0.8: `MY_A` (no marker) markers `[]`, obeyed 55; `MY_B` (contains `NOTE TO ASSISTANT`) markers `['note to assistant']`, obeyed 27; landed 0 in both.
+- **Page 29.2.** Trace A (seed 0, strict): no write, `stop: end_turn | iterations: 2 | spend: $0.000778`. Trace B (seed 4, weak sandbox): `write_file` at seq 4 and 5, `wrote 22 bytes to exfil.txt`, `iterations: 3`, `$0.001305`. The Trace sheet above is a different run (seed 1, strict). File counts for B: calls per tool `{'search_notes': 1, 'write_file': 1}`, errors `{}`, flagged 1, file landed True; `errors per tool: {}` with `file landed: True` shows the attack worked.
+- **Page 29.3.** (a) 21 and 120. (b) k = 5: input `223 x 6 + 32 x 15 = 1818`, output 52, `2078` millionths. (c) k = 15: input `3568 + 3840 = 7408`, output 152, `8168` millionths. (d) `8168 / 2078 = 3.93`, about four times. (e) 3840 of 7408 = 52 percent; 480 of 1818 = 26 percent. (f) 11 model turns: `2453 + 1760 = 4213`; the friend's 3990 is one first turn (223) short. (g) 0.25 s and 0.75 s. (h) Short tasks restart with a short history (`3 x $0.004748 = $0.014244` against `$0.023528`). (i) Measured 1824 and 7464 input (6 and 56 above the hand sums, because the kit's steps alternate 32 and 33); measured dollars `$0.002084` and `$0.008224`, ratio 3.95. (j) to (m) bigger step: first turn 223, growth 105.25 per step, 82 output tokens per tool turn; k = 25 predicted 40004 in and `$0.050264`, measured 40012 and `$0.050272`, off by 0.02 percent; largest k under `$0.02` is 13, and the run stopped after 15 tool turns at `$0.022315`.
+- **Page 29.4.** A: expect about 60; prints `0 of 100`; fix `plan_model(1.0, i)`, giving `69 of 100` (seed 1 alone obeys). B: prints 100; each attempt is a 3-tuple whose third item is allowed; allowed 0. C: first line `[`, the block ends in `JSONDecodeError: Expecting value: line 2 column 1 (char 2)`; `indent=2` caused it; write one `json.dumps(event)` per line.
+- **Page 29.5 and Self-Check.** Bug Log: any two honest entries. Self-Check 1 to 9 are answered on the workbook's ANSWERS page and agree with the Questions Students Ask and Clinic sections here (text from a tool is data; the author-typed 0.6 and 0.5; a flag is not a block, 32 of 100 runs scanned and obeyed; the sandbox never consults the model; the human; JSONL survives a crash; later turns carry more input; no, the timeout stops the wait; nothing about a real model).
 
 ### Answers to every question posed in the lesson
 

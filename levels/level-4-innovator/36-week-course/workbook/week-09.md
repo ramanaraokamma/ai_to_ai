@@ -45,10 +45,10 @@ For each line ask: **could I do this right now with only a pen and a calculator?
 |:--:|---|:--:|:--:|:--:|---|
 | 1 | Say what loss a guessing two-class model has. Tell two runs apart by their **whole curves**, not their last number. Call a keyword-only function. | ☐ | ☐ | ☐ | 1.1, 1.3 |
 | 2 | Step by hand with plain SGD **and** with PyTorch momentum (`v = 0.9·v + g`). | ☐ | ☐ | ☐ | 2.1, 2.8 · today's **9.2** |
-| 3 | Compute a root-mean-square. Say what Adam's **first** step looks like. | ☐ | ☐ | ☐ | Week 3 by-hand page · today's **9.3** |
+| 3 | Compute a root-mean-square. Say what Adam's **first** step looks like. | ☐ | ☐ | ☐ | 3.1, 3.3 · today's **9.3** |
 | 4 | Say what a `LambdaLR` multiplier does. Count optimizer steps. | ☐ | ☐ | ☐ | 4.3, 4.4 |
-| 5 | Name the free cure for overfitting. Say what dropout does in eval mode. Say why a snapshot needs `copy.deepcopy`. | ☐ | ☐ | ☐ | Week 5 cure table · today's **9.8** |
-| 6 | Say why batch norm leans on the other examples. Find the slope of `x + f(x)` by nudging. Say what `clip_grad_norm_` returns. | ☐ | ☐ | ☐ | Week 6 by-hand page · today's **9.8** |
+| 5 | Name the free cure for overfitting. Say what dropout does in eval mode. Say why a snapshot needs `copy.deepcopy`. | ☐ | ☐ | ☐ | 5.3, 5.5 · today's **9.8** |
+| 6 | Say why batch norm leans on the other examples. Find the slope of `x + f(x)` by nudging. Say what `clip_grad_norm_` returns. | ☐ | ☐ | ☐ | 6.3, 6.4 · today's **9.8** |
 | 7 | Say whether a gap is bigger than twice the spread. Write a SYMPTOM → CHECK → ACTION row. | ☐ | ☐ | ☐ | 7.3, 7.4 · today's **9.6**, **9.7** |
 | 8 | Say why a bag cannot see order. Give the shapes of `x`, `out`, `h_n`. Unroll the cell. | ☐ | ☐ | ☐ | 8.3, 8.4 · today's **9.4**, **9.5** |
 
@@ -509,7 +509,7 @@ Seven things, no scrolling up. Tick only if you could do it **now**.
 
 ---
 
-### ✂️ ANSWERS - keep this page folded until you have finished
+## ✂️ ANSWERS - keep this page folded until you have finished
 
 > Real printed outputs below. By-hand numbers are exact. Curve tables may differ in the last digit on another CPU or PyTorch build. These answers are for the pages in **this workbook**. They are not the paper's answers, and this page does **not** contain any of them.
 

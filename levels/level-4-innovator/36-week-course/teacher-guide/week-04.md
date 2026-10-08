@@ -18,7 +18,7 @@
 | **New maths** | **None.** (The ladder row for Week 4 is empty on purpose.) You will use three pieces of arithmetic the student already owns: a straight-line ramp, a table of cosine values read off a calculator, and whole-number division with a remainder (`840 // 64`). See 🔢 below. |
 | **New syntax** | `lambda step: ...` · `torch.optim.lr_scheduler.LambdaLR` · `scheduler.step()` · `scheduler.get_last_lr()` — four, the ladder maximum |
 | **Dataset** | The two interleaved spirals from Week 1: 1,200 points, 840 train, 360 validation, via `l4lib.spirals` (`make_spirals`, `get_data`, `run`). Nothing is downloaded. |
-| **Materials** | Graph paper · a calculator with a cosine key (a phone is fine) · printed workbook pages 4.1–4.5 · the Bug Log · a coin (for the polling demonstration in section 6) |
+| **Materials** | Graph paper · a calculator with a cosine key (a phone is fine) · printed workbook pages 4.1–4.8 · the Bug Log · a coin (for the polling demonstration in section 6) |
 | **Tech needed** | Laptop with Python 3, numpy, torch, matplotlib. `l4lib/` importable (see Prep step 1). **No new install. No network.** |
 | **Prep time** | 20 minutes the night before · 5 minutes on the day |
 | **Expected runtime** | `schedules.py` under 1 second · `minitrain.py` about 1 second · `hook.py` about 20 seconds · `batches.py` about 30 seconds (start it, then talk while it runs) · `hwgrid.py` about 15 seconds |
@@ -1048,7 +1048,7 @@ Three checks, all oral or on paper, none requiring a computer. Do them at the en
 
 ## 📤 Homework to Assign
 
-~60–75 minutes. Workbook pages 4.1–4.5, plus the build below.
+~60–75 minutes. Workbook pages 4.1–4.8 (4.3 and 4.4 on paper, 4.5 is the grid, 4.7 the broken programs), plus the build below.
 
 **The build.** Two scripts, both short. Everything printed must come from the student's own run, with the seeds set, in the last 24 hours.
 
@@ -1115,7 +1115,67 @@ bs 256  60 epochs =  180 steps: 0.034   260 epochs = 780 steps: 0.071
 
 This is the teacher-only key to the workbook pages and to every question posed in the lesson. Do not hand it to the student.
 
-### Page 4.1 — Match the word to the thing
+### Workbook answers
+
+These are the answers for the workbook as shipped (CPU, one thread, seed 0, torch 2.2.1). The class-time exercises, which use different numbers, follow under "In class".
+
+**Warm-Up.** W1 `lr`. W2 `ln 2`. W3 overfitting. W4 several seeds show the spread. W5 the train set (840 points).
+
+**Page 4.1.** Schedule **C**, multiplier **E**, warmup **F**, cosine decay **B**, `lambda` **A**, steps per epoch **G**, confound **D**, scheduler **H**.
+
+**Page 4.2.** P1 `7` and `15`. P2 `[0.1]`, `[0.05]`, `[0.025]`. P3 `840 // 150` = 5 steps, 750 used, 90 left out; `840 // 1000` = 0, so no step is ever taken. P4 `0.02` (no error; the scheduler's clock never moved). P5 `0.02, 0.01, 0.0, 0.01`: the cosine is periodic, so after `T` the rate climbs back up.
+
+**Page 4.3** (peak 0.02, `T` = 50, `W` = 5). M1: start cosine 1, multiplier 1, rate 0.02; halfway angle 1.5708, cosine 0, multiplier 0.5, rate 0.01; end angle 3.1416, cosine -1, multiplier 0, rate 0. M2:
+
+| Step | Cos mult | Cos rate | Warm+cos mult | Warm+cos rate |
+|:--:|:--:|:--:|:--:|:--:|
+| 0 | 1.0000 | 0.02000 | 0.2000 | 0.00400 |
+| 2 | 0.9961 | 0.01992 | 0.6000 | 0.01200 |
+| 4 | 0.9843 | 0.01969 | 1.0000 | 0.02000 |
+| 5 | 0.9755 | 0.01951 | 1.0000 | 0.02000 |
+| 10 | 0.9045 | 0.01809 | 0.9698 | 0.01940 |
+| 20 | 0.6545 | 0.01309 | 0.7500 | 0.01500 |
+| 25 | 0.5000 | 0.01000 | 0.5868 | 0.01174 |
+| 40 | 0.0955 | 0.00191 | 0.1170 | 0.00234 |
+| 50 | 0.0000 | 0.00000 | 0.0000 | 0.00000 |
+
+M3: progress (20 - 5) / (50 - 5) = 0.3333; angle 1.0472; cosine 0.5; multiplier 0.75; rate 0.015. M4: a rate of 0, so the first step is wasted. M6: fastest around step 25; a straight line is at 0.016 at step 10 and the cosine at 0.01809, so the cosine starts slower. M7: the script prints `0.004, 0.008, 0.012, 0.016` for steps 0 to 3; the table agrees (step 0 uses 0.004); `get_last_lr()` shows the rate the next step will use. Marking: allow the third decimal on the multiplier and the fifth on the rate; a student who writes 0 for the ramp at step 0 forgot the `+ 1`.
+
+**Page 4.4** (`840 // batch`):
+
+| Batch | Steps/epoch | Used | Left out | Steps in 30 epochs |
+|:--:|:--:|:--:|:--:|:--:|
+| 24 | 35 | 840 | 0 | 1050 |
+| 70 | 12 | 840 | 0 | 360 |
+| 150 | 5 | 750 | 90 | 150 |
+| 400 | 2 | 800 | 40 | 60 |
+| 420 | 2 | 840 | 0 | 60 |
+| 1000 | 0 | 0 | 840 | 0 |
+
+C1: 24, 70, 420, the divisors of 840. C2: 13 steps per epoch, 77 epochs (76 gives 988), 1,001 steps. C3: 105 against 1, so 6,300 / 60 = **105** (not 64). C4: 7 steps per epoch; 51 epochs gives 357 steps (52 gives 364). C5: batch 420 at 60 epochs is "same epochs" (120 steps against 2,100); at 180 epochs it is "same steps" (360 against 350 for batch 24 at 10 epochs).
+
+**Page 4.5** (the workbook grid, seeds 0 to 2, mean validation loss):
+
+```text
+workbook grid: validation loss, mean of seeds 0-2
+bs  24  60 epochs = 2100 steps: 0.052    10 epochs = 350 steps: 0.056
+bs 120  60 epochs =  420 steps: 0.053    51 epochs = 357 steps: 0.039
+bs 420  60 epochs =  120 steps: 0.036   180 epochs = 360 steps: 0.068
+```
+
+R1: column 1 held epochs fixed and also changed steps (2,100 against 120); column 2 held steps fixed (about 360) and also changed epochs (10 against 180). R3: can say that at about 360 steps batch 420 (0.068) was worse than batch 120 (0.039) on these 3 seeds; cannot say bigger batches are worse in general, and in column 1 batch 420 (0.036) is the best row. The two columns point in opposite directions. R4: column 2 supports it, but epochs changed too; steps = epochs x `840 // batch`, so both cannot be held fixed. R5: the ordering holds if the gap is large; the digits always move.
+
+**Page 4.6** (the hook table). H1 two (98.1, 97.2); five. H2 the "always one class" score (46.9% of the validation set is one class). H3 the best, tied, are cosine only and warmup+cosine at 98.9. H4 smaller: the gap between the means is 0.004 (0.039 against 0.035), the seed spread within `constant` is 0.020 (0.030 to 0.050). H5 at the too-big rate the falling rate rescued every seed and warmup alone did not; at the gentle rate no schedule differed by more than the seeds.
+
+**Page 4.7.** D1 `TypeError: 'float' object is not callable`; fix `lambda s: 0.5`. D2 `TypeError: unsupported format string passed to list.__format__`; it shows `[0.02]`; fix `sched.get_last_lr()[0]`. D3 should print `[0.02]`; the lambda returned a rate and `LambdaLR` multiplied by 0.02 again (0.0004); drop the `0.02 *`. D4 `sched.step()` after `opt.step()`. D5 the cosine is periodic past `T`; clamp with `min(1.0, s / T)`. D6 no; a `lambda` holds one expression; write a `def`. D7 `LambdaLR` calls the function once at construction; fix `(s + 1) / max(1, warm)`.
+
+**Page 4.8 and Self-Check.** Any real entries with the last line copied. The silent bugs are D3, D4, D5. 1 `multiplier`, from 1 to 0. 2 `opt.step()` first; `get_last_lr()` shows the rate the next step will use. 3 it returns a list, one entry per parameter group. 4 13 and 1; same epochs gives big batches far fewer steps (780 against 60). 5 at equal steps big batches run many more epochs and can memorise. 6 worse in both designs, over more than one seed, ideally with the rate re-tuned.
+
+### In class
+
+The exercises below use class numbers (peak 0.01, `T` = 100, batches 20 to 840 and 8 to 512), not the workbook's.
+
+### In class: match the word to the thing (the workbook's Page 4.1 has eight rows; see above)
 
 | Word | Match |
 |---|---|
@@ -1128,7 +1188,7 @@ This is the teacher-only key to the workbook pages and to every question posed i
 
 (Distractors for a 7th and 8th row if you want them: *"the number of epochs"* → not the same as steps; *"how many examples the model has seen"* → batch × steps.)
 
-### Page 4.2 — Predict the output (answered in pen, in class)
+### In class: predict the output (these are class questions, not the workbook's Page 4.2)
 
 1. `(lambda x: 2 * x)(4)` → **8.**
 2. After `sched = LambdaLR(opt, lambda s: 0.5)` with `lr=0.01`, `print(sched.get_last_lr())` → **`[0.005]`.** (`0.01 × 0.5`, in a list.)
@@ -1137,7 +1197,7 @@ This is the teacher-only key to the workbook pages and to every question posed i
 5. *"A loop calls `opt.step()` 100 times and never calls `sched.step()`. The rate afterwards?"* → the starting rate; no error. (Real: `0.003 [0.003]`.)
 6. *"What is the rate at step 150 if the cosine runs on past `T = 100`, with peak 0.003 and no `min`?"* → **0.0015** (it has come back up). (Real: the table in Silent Mistake 6.)
 
-### Page 4.3 — The schedule by hand (in class, on graph paper)
+### In class: the schedule by hand (peak 0.01, T = 100, W = 10; the workbook's Page 4.3 uses peak 0.02, T = 50, W = 5)
 
 Peak `0.01`, `T = 100`, warmup `W = 10`. The expected table, with a calculator (checked by `LambdaLR` in code, below):
 
@@ -1203,7 +1263,7 @@ after one opt.step + sched.step: [0.002]
 
 > **Note on the last two lines.** "Right after construction" is `[0.001]`, the rate step 0 will use (`0.01 × 1/10`). After one `opt.step()` and one `sched.step()` it is `[0.002]`, the rate step 1 will use. This is the off-by-one, in numbers.
 
-### Page 4.4 — Counting steps
+### In class: counting steps (batches 20 to 840; the workbook's Page 4.4 uses 24 to 1000)
 
 1. Steps per epoch, examples used and left out, for batch 20, 100, 200, 300, 512, 840 (the harness drops the short last batch):
 
@@ -1228,7 +1288,7 @@ epochs for 1000 steps at bs 128: 167 -> 1002 steps
 3. *"Batch 512 for 60 epochs versus batch 64 for 60 epochs: how many times as many steps does the second take?"* → **13 times** (780 ÷ 60).
 4. *"You want batch 256 to take 780 steps. How many epochs?"* → `780 ÷ 3 = 260`.
 
-### Page 4.5 — Two experiments and a report
+### In class and homework: two experiments and a report (the workbook's Page 4.5 grid uses batches 24, 120, 420)
 
 A model answer (the marker accepts any answer that has all three parts; numbers should come from the student's own run, so these are *examples* with the guide's seeds):
 

@@ -934,7 +934,11 @@ Estimated time: 60-75 minutes.
 
 ## 🔑 Answer Key
 
-> **The workbook pages 7.1-7.6 follow this order.** Where an answer is a number, it comes from the tables in this guide, all produced by running the files in the Prep Checklist.
+> **The workbook pages 7.1-7.8 and the Self-Check follow this order.** Where an answer is a number, it comes from the tables in this guide, all produced by running the files in the Prep Checklist.
+
+### Warm-Up
+
+W1 the starting weights (and the batch order). W2 mean 0.12, spread about 0.016 (`std` dividing by 3). W3 overfitting. W4 guessing, `ln 2`. W5 one item at a time from `xs`.
 
 ### Page 7.1 — Predict before the sweep
 
@@ -970,7 +974,7 @@ No right answers; this is a calibration card. The reveal, for the teacher:
 | norm batch (0.024 ± 0.005) | −0.015 | 2 × 0.008 = 0.016 | inside noise, **borderline** (0.015 is just under 0.016) |
 | schedule step (0.033 ± 0.001) | −0.006 | 2 × 0.008 = 0.016 | inside noise; note its **spread is the smallest in the table** |
 
-Extension answer: `lr 0.01` is 0.096 ± 0.033; gap 0.057, 2 × spread = 0.066, so inside noise, **even though its mean is about 2.5 times the baseline's**. The correct playbook line is "add more seeds before concluding".
+H1: `norm batch` is the close one (|gap| 0.015 against 2 × spread 0.016, short by 0.001). H2: no; its gap is just under twice the spread, so the rule calls it inside noise. H3: a spread finding is that the three seeds agree closely; on the spirals, with 3 seeds, a decaying schedule looked steadier, not lower; it cannot be called better or carried to other data. H4: mean = 0.0389; 0.0499 / 0.0301 = 1.66, a 66% swing with nothing changed. H5 (extension): `lr 0.01` is 0.096 ± 0.033; gap 0.057, 2 × spread = 0.066, so inside noise, **even though its mean is about 2.5 times the baseline's**. The correct playbook line is "add more seeds before concluding".
 
 *(These hand computations use the rounded three-decimal figures printed in the table, as the student will. The code uses unrounded values and agrees on every verdict above.)*
 
@@ -984,13 +988,14 @@ Extension answer: `lr 0.01` is 0.096 ± 0.033; gap 0.057, 2 × spread = 0.066, s
 | `batch_size = 512` | **E** (still falling) | train 0.629 at epoch 10, 0.239 at epoch 30, 0.027 at epoch 59; only 60 steps in total |
 | `norm = batch` | **F** (val below train) | val 0.019 vs train 0.117; check by recomputing the training loss in `eval()` mode |
 
-Question: *Which two runs end with nearly the same loss, and what separates them?* **`lr 1e-5` (0.683) and `lr 0.1` (0.693).** The epoch-0 loss: 0.694 against 12.786.
+Question (R2): *Which two runs end with nearly the same loss, and what separates them?* **`lr 1e-5` (0.683) and `lr 0.1` (0.693).** The epoch-0 loss: 0.694 against 12.786. R3: the larger gradient length (0.163) proves nothing by itself; it is one mini-batch's reading and batch 512 got only 60 steps in all against 780 for batch 64. R4: any honest guess labelled as a guess earns credit; ours (untested) is that the logged training loss is an average taken in train mode while the model changed and validation is scored in `eval()` mode; the check is to recompute the training loss in `eval()` mode. D is not used by any of these five runs.
 
 ### Page 7.5 — Reading the sweep
 
 1. **Three baseline validation losses:** 0.0367, 0.0499, 0.0301. The seed alone moves them by about 66% (0.0499 ÷ 0.0301 = 1.66).
 2. **Which four rows equal the baseline?** `dropout 0.0`, `weight_decay 0.0`, `norm none`, `schedule none`. `seeds.py` prints `1` for each seed: one distinct value among the four. **What this proves:** the harness is deterministic, so the spread is the seed and not randomness in the code.
-3. **How many rows are WORSE, better, inside noise?** 4, 0, 20.
+3. **How many rows are WORSE, better, inside noise?** 4, 0, 20. The four WORSE rows are `lr 1e-5`, `lr 1e-4`, `lr 0.1` and `dropout 0.5`.
+   S5 (dropout and weight decay): zero of eight beat the baseline. S6: the row with the lowest mean is `norm batch` (0.024), and its gap (0.015) is under twice the spread (0.016). S9: a run that is still learning when the budget runs out can look worse (or better) than at another budget, so every claim must state its epoch count.
 4. **Which knob has the smallest effect?** Any of dropout (apart from 0.5), weight decay, batch size (apart from 512 at 30 epochs), norm, schedule are all inside noise; accept any answer that cites a spread. **The best-supported answer is `schedule`**: all three non-baseline values are inside noise *and* have smaller spreads (0.003, 0.007, 0.001) than the baseline (0.008). (Weakly: three-seed spreads are noisy; see the note under 'Spread is itself a finding'.)
 5. **`lr 0.01`'s three seeds** (0.059, 0.090, 0.139) → spread 0.033 → "inside noise", *not* "same as baseline".
 6. **A claim the table does not support:** "layer norm is better than no norm" (0.057 ± 0.031 against 0.039 ± 0.008; the mean is *higher*, the spread huge).
@@ -1028,6 +1033,14 @@ Question: *Which two runs end with nearly the same loss, and what separates them
 - *"Dropout 0.3 improves things (0.043)"*: ask for the baseline's number and the spread. It is inside noise.
 - *"Cosine is best (0.034)"*: compare with `step` (0.033) and `cosine+warmup` (0.035). Three seeds cannot rank them. What can be said is that all three have smaller spreads than the baseline.
 - *"Batch 8 is best because it has the lowest train loss"*: its train loss is 0.018, **higher** than the baseline's 0.007. Check the row.
+
+### Page 7.7 — Break it on purpose
+
+Mistake 1: `TypeError: object of type 'itertools.product' has no len()`; fix `list(itertools.product(...))`. Mistake 2: `TypeError: 'int' object is not iterable`; meant `[3]`, `range(3)` or `SEEDS`. Mistake 3 (silent): predicted 6 and 6; it prints 6 then 0, because the first `list(grid)` used the iterator up; build the list once. Mistake 4 (silent): predicted 0.003, it prints 0.1, because `s = BASE` gives the same dict a second name; `copy_of(BASE)` builds a new dict. Mistake 5 (silent): the three seeds come out identical and the spread is exactly 0.
+
+### Page 7.8 and Self-Check
+
+Bug Log: any real entries with the last line copied and the fix working. Self-Check: 1 SYMPTOM (a number I see), CHECK (one cheap thing), ACTION (one change, backed by a number); 2 `product` gives every combination on demand and never builds the list, so it has no `len()`; wrap it in `list(...)`; 3 "What is the baseline's number and spread?" and "Is the gap bigger than twice the spread?" (0.043 - 0.039 = 0.004, inside noise); 4 batch 512 gets only 60 update steps in 60 epochs, so it may still be learning when time stops; count steps = `840 // batch_size` x epochs.
 
 ### Answers to every question posed in the lesson
 

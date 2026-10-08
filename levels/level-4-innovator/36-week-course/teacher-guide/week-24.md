@@ -1718,9 +1718,13 @@ Estimated time: 60-75 minutes (the trainings in 24.2 are most of it).
 | How many different codes are there? | `6! = 720` (one-to-one pairings of 6 digits with 6 letters). |
 | Loss of a model that knows nothing about a six-way choice | `ln 6 = 1.792`. |
 | Expected card score for the 16-round game | `4 x (1/6 + 2/6 + 4/6 + 1) = 8.67` of `16` (`0.67 + 1.33 + 2.67 + 4`). |
-| Is `0.686` at `n = 3` a leak? | No. A simulated perfect player scored `0.640, 0.666, 0.682, 0.688, 0.688` on five sets of 500 prompts; two to four points either way. |
+| Is `0.686` at `n = 3` a leak? | No. A simulated perfect player scored `0.640, 0.666, 0.682, 0.688, 0.688` on five sets of 500 prompts; two to four points either way. The workbook's `p1b.py` (dice 200 to 204) gives `0.656, 0.668, 0.678, 0.664, 0.636`, so `-0.031` and `+0.011` from `0.667`; any five draws will differ, and `0.686` is inside the wobble of both. |
 | Why nothing beats the line | The unshown key's value is one of `6 - n` unused digits with nothing to choose between them. |
 | Why is the test set generated with `Random(1000 + n)`? | A private dice per `n`: the same prompts every run, and not the dice training uses. |
+
+### Workbook neighbour tables (pages 24.2d-h and 24.4f)
+
+The workbook's neighbour table is **seed 3**, not the class run: `ceiling - all` is `0.009, 0.009, -0.004, 0.037, 0.201, 0.278, 0.314` (against the class gaps `-0.009, 0.021, 0.020, 0.029, 0.167, 0.172, 0.002`). The workbook's neighbour mask (page 24.4f) is `train_json(seed=1, steps=800)`: parses `83 -> 100`, all-right `36 -> 44`, and its `bex 16>` reply is `age 19, adult true` (all five replies agree with themselves); the four replies in the 24.4 table below are from seed 0, so they differ.
 
 ### Page 24.2 — The curve (seed 0, 8,000 steps; `incontext_run.py`)
 
@@ -1751,7 +1755,7 @@ Estimated time: 60-75 minutes (the trainings in 24.2 are most of it).
 | Five seeds (3,000 steps) | Direct `0.000, 0.038, 0.052, 0.082, 0.000`. Working `1.000` x 5. Compact `1.000, 0.090, 0.974, 1.000, 0.000`. |
 | Direct, 12,000 steps, seed 0 | `0.994`. The model could add; it had not learned to yet. |
 | Why does the compact working fail on seeds 1 and 4? | On seed 1 the model writes a **wrong working and copies it faithfully** (Mistake 8: `1.0` with the true working, `0.09` with its own). On seed 4 the failure starts at the first digit (`[0.78, 0.09, 0.11, 0.1, 0.08, 1.0]`). A plausible reason is that writing the digit and the carry in one go from two digits it has to look up is too much for one step; **not tested**. The version that first copies the two digits scored `1.000` on all five. |
-| What did the scratchpad buy? | On this task, reliability and speed (roughly 66 s against 125 s for a model that eventually gets there; rough timings, different machine load), with one seed of evidence against "a capability". |
+| What did the scratchpad buy? | On this task, reliability and speed (roughly 66 s against 125 s for a model that eventually gets there; rough timings, different machine load; the workbook's run read 79 s against 140 s), with one seed of evidence against "a capability". |
 
 ### Page 24.4 — The mask
 
@@ -1773,6 +1777,8 @@ Estimated time: 60-75 minutes (the trainings in 24.2 are most of it).
 | 1 | Loss `1.790` ≈ `ln 6 = 1.792`: the model learned nothing. Keys are random; the targets must be the values. Compare the loss with `ln(choices)` first. |
 | 4 | Two runs, two fingerprints: the shared dice. Use `Random(seed)`. |
 | 6 | `0 of 100` parse, empty reply: the grammar was asked about prompt + reply. |
+
+The workbook's page 24.5 uses its own lettering. **A** `x = rng.shuffle(x)` gives `None` and `TypeError: 'NoneType' object is not iterable`. **B** `sha256` of text gives `TypeError: Strings must be encoded before hashing`. **C** `torch.where(allowed, -inf, scores)` is silent: the chance on the allowed characters prints `0.0`. **D** the shared `random` module gives a new fingerprint every run (compare with `47d6a3db7a1a`). **E** a loss of `1.790`, which is `ln 6`, means nothing was learned (the targets were the next keys, not the values). **F** `0 of 100` parse and an empty last reply. Loud: A and B; silent: C, D, E, F.
 
 ### Page 24.6 — Write-up (rubric)
 

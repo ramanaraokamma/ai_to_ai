@@ -842,7 +842,7 @@ This section describes the final paper so you know what to bring and what it cov
 - **It is an X-ray, not a grade.** Partial working earns marks. If you do not know, write *did not get it*; that is recorded and is worth more than a lucky guess.
 - **There is nothing to revise except the pages you got wrong during the term.** Go back to your own workbook pages, not to the answers.
 
-At the end you **mark it yourself**, in a pen of a different colour, against the marking sheet your teacher gives you (Page 36.3), and fill in the per-week grid (Page 36.4). The grid shows which weeks to go back to first.
+At the end you **mark it yourself**, in a pen of a different colour, against the marking sheet your teacher gives you, and fill in the per-week grid. The grid shows which weeks to go back to first.
 
 ---
 
@@ -860,7 +860,7 @@ If a stranger can act on your card without asking you anything, it is finished. 
 
 About 60 minutes after both sittings.
 
-1. **Mark your paper (30 minutes).** At home, in the other colour, against Page 36.3. Give marks for working. Fill in the per-week grid (Page 36.4). **Circle at most two weeks** you would go back to first.
+1. **Mark your paper (30 minutes).** At home, in the other colour, against the marking sheet. Give marks for working. Fill in the per-week grid. **Circle at most two weeks** you would go back to first.
 2. **Final copy of the card (20 minutes).** Apply your teacher's comments. Run `check_card` and `quotes_hold` again. Put the date and the fingerprint in the card's first line.
 3. **One sentence (5 minutes).** On the card's last page, in your own words: *the single most important thing a stranger should know before relying on this system.* One sentence. It must contain a number and an `n`.
 4. **Tidy up (5 minutes).** Delete the scratch traces you made for the demo (`logs/*_trace.jsonl`, and `logs/trace_live.jsonl` if it exists). Keep `eval/`, `src/`, `DESIGN.md`, `RED_TEAM.md`, `SYSTEM_CARD.md`, `ask.py`, `demo.py` and the committed numbers.
