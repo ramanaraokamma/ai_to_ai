@@ -36,7 +36,7 @@
   <circle cx="581.9" cy="237.5" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
   <circle cx="608.0" cy="163.7" r="5" fill="#1F6FB2" stroke="#FFFFFF" stroke-width="1.5"/>
   <text x="360" y="292" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">20 random guesses, ranked on validation</text>
-  <text x="74" y="185.99999999999994" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 74 186.0 74 185.99999999999994)">AUC</text>
+  <text x="74" y="185.99999999999994" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 74 186.0)">AUC</text>
   <line x1="320.8421052631579" y1="100.53749999999994" x2="320.8421052631579" y2="88" stroke="#C42B8C" stroke-width="2" stroke-linecap="round"/>
   <text x="320.8421052631579" y="84" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">best of the 20: 0.5853</text>
   <rect x="640" y="96" width="140" height="180" rx="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>

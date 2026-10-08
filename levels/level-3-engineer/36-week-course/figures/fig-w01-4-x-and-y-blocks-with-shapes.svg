@@ -15,8 +15,8 @@
   <rect x="274" y="84" width="26" height="180" fill="#E8C671" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
   <rect x="40" y="84" width="260" height="180" rx="10" fill="none" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
   <text x="170" y="76" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the raw table, shape (2020, 10)</text>
-  <text x="53" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" transform="rotate(-90 53 274 53 274)">order_id</text>
-  <text x="287" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" transform="rotate(-90 287 274 287 274)">late</text>
+  <text x="53" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" transform="rotate(-90 53 274)">order_id</text>
+  <text x="287" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#845F00" transform="rotate(-90 287 274)">late</text>
   <text x="40" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">10 columns &#8722; 1 target &#8722; 1 ID = 8 features</text>
   <line x1="310" y1="130" x2="380" y2="130" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(380 130) rotate(0.0)"/>
   <line x1="310" y1="220" x2="380" y2="220" stroke="#14202B" stroke-width="2.5" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#14202B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(380 220) rotate(0.0)"/>
