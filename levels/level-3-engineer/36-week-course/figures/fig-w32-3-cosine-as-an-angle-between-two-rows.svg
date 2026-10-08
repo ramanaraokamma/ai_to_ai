@@ -17,7 +17,7 @@
   <line x1="80" y1="400" x2="316" y2="282" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#1F6FB2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(316 282) rotate(0)"/>
   <line x1="80" y1="400" x2="198" y2="164" stroke="#6D28D9" stroke-width="3" stroke-linecap="round"/><polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#6D28D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(198 164) rotate(0)"/>
   <text x="324" y="274" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#1F6FB2">a = (2, 1, 0)</text>
-  <text x="208" y="152" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6D28D9">b = (1, 2, 0)</text>
+  <text x="190" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#6D28D9" text-anchor="end">b = (1, 2, 0)</text>
   <path d="M175.5 357.8 A 106 106 0 0 0 127.4 310" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round"/>
   <text x="196" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">36.87</text>
   <text x="196" y="332" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">degrees</text>

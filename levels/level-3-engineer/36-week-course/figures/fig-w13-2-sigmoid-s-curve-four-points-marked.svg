@@ -34,7 +34,7 @@
   <circle cx="270" cy="255" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
   <text x="284" y="247" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">(0, 0.5000)</text>
   <circle cx="314.3" cy="167.4" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
-  <text x="326.3" y="189.4" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">(1.4, 0.8022)</text>
+  <text x="326.3" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">(1.4, 0.8022)</text>
   <circle cx="365" cy="123.7" r="6" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
   <text x="377" y="145.7" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">(3, 0.9526)</text>
   <rect x="255" y="122" width="205" height="76" rx="10" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>

@@ -74,7 +74,7 @@
   <path d="M 220 222 L 632 308" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 7"/>
   <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(632 308) rotate(38)"/>
   <text x="662" y="312.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="start">...to L27</text>
-  <text x="405.2" y="260.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">drag the little square</text>
+  <text x="570" y="337" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">drag the little square</text>
   <rect x="250" y="346" width="300" height="42" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
   <text x="400" y="373.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">100 cells filled in one drag</text>
 </svg>

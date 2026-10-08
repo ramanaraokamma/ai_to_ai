@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>Label the parts of this rulebook</title>
   <desc>An unlabelled two-rule rulebook with a default line. Four leader lines run to four empty boxes, one pointing at the part after IF, one at the number inside it, one at the answer the rule gives, and one at the bottom line that answers when nothing matches.</desc>
-  <text x="400" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Write the right word in every empty box</text>
+  <text x="400" y="28" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#14202B" text-anchor="middle">Write the right word in every empty box</text>
 
   <g stroke="#C42B8C" stroke-width="2" fill="none">
-    <path d="M300 122 V90 H196 V78"/>
-    <path d="M366 122 V102 H540 V78"/>
-    <path d="M492 122 V90 H660 V102"/>
+    <path d="M300 122 V104 H196 V88"/>
+    <path d="M366 122 V104 H540 V88"/>
+    <path d="M492 122 V96 H660 V102"/>
     <path d="M300 236 V270 H196 V300"/>
   </g>
 
@@ -27,15 +27,15 @@
   </g>
 
   <g fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round">
-    <rect x="96" y="42" width="200" height="36" rx="8"/>
-    <rect x="440" y="42" width="200" height="36" rx="8"/>
+    <rect x="96" y="52" width="200" height="36" rx="8"/>
+    <rect x="440" y="52" width="200" height="36" rx="8"/>
     <rect x="600" y="102" width="180" height="36" rx="8"/>
     <rect x="96" y="300" width="200" height="36" rx="8"/>
   </g>
 
   <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
-    <text x="96" y="36">the part after IF is the...</text>
-    <text x="440" y="36">the answer it gives is the...</text>
+    <text x="96" y="46">the part after IF is the...</text>
+    <text x="440" y="46">the answer it gives is the...</text>
     <text x="600" y="96">the number in it is the...</text>
     <text x="96" y="352">the bottom line is the...</text>
   </g>

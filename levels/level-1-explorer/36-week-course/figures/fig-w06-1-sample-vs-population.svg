@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
   <title>Thirty measured, eight hundred hoped for</title>
   <desc>Eight hundred small circles arranged in a block, one for every student in the school. Thirty of them in the top left corner are filled in dark and ringed with a dashed box labelled you measured this bit. The other seven hundred and seventy are empty outlines.</desc>
-  <text x="250" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">You measured 30. You are talking about 800.</text>
+  <text x="250" y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#14202B" text-anchor="middle">You measured 30. You are talking about 800.</text>
   <text x="90" y="118" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">you measured this bit</text>
   <line x1="90" y1="126" x2="90" y2="138" stroke="#C42B8C" stroke-width="1.5"/>
   <rect x="24" y="132" width="452" height="240" rx="12" fill="none" stroke="#14202B" stroke-width="3"/>
@@ -28,6 +28,7 @@
   <rect x="26" y="140" width="119" height="42" rx="8" fill="none" stroke="#C42B8C" stroke-width="2.5" stroke-dasharray="7 5"/>
   <text x="250" y="396" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">800 students in the school &#8212; the POPULATION</text>
   <text x="250" y="424" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#1F6FB2" text-anchor="middle">30 filled dots &#8212; the SAMPLE</text>
-  <text x="250" y="456" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">30 out of 800 is 3.75 percent. One person in your sample stands for 27 people.</text>
-  <text x="250" y="478" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">And your 30 all sit in one corner, which is exactly the problem.</text>
+  <text x="250" y="446" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">30 out of 800 is 3.75 percent.</text>
+  <text x="250" y="465" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">One person in your sample stands for 27 people.</text>
+  <text x="250" y="487" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">And your 30 all sit in one corner, which is exactly the problem.</text>
 </svg>

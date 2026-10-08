@@ -26,7 +26,7 @@
     <path d="M380 268 V284 H572 V268" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
     <line x1="476" y1="284" x2="476" y2="296" stroke="#C42B8C" stroke-width="2"/>
 
-    <rect x="296" y="296" width="360" height="62" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="244" y="296" width="464" height="62" rx="10" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
     <text x="476" y="322" font-size="18" fill="#14202B" text-anchor="middle">73.3 - 33.3 = 40 PERCENTAGE POINTS</text>
     <text x="476" y="346" font-size="14" fill="#55636F" text-anchor="middle">"40 percent more" would mean 33.3 x 1.4 = 46.6% - a different claim</text>
 

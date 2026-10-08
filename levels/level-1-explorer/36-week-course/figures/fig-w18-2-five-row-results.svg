@@ -14,7 +14,8 @@
     <g font-size="14" fill="#14202B">
       <text x="52" y="126">0  baseline: 40 each, full variety</text>
       <text x="52" y="176">1  five photos per class</text>
-      <text x="52" y="226">2  one background only (tested at the sink)</text>
+      <text x="52" y="220">2  one background only</text>
+      <text x="52" y="238">(tested at the sink)</text>
       <text x="52" y="276">3  blurry training photos</text>
       <text x="52" y="326">4  imbalance 40 / 40 / 5</text>
     </g>

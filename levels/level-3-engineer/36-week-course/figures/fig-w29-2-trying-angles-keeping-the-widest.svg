@@ -48,7 +48,7 @@
   <text x="630" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">90&#176;</text>
   <text x="630" y="264" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#6D28D9" text-anchor="middle">spread 8.5000</text>
   <text x="400" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#C42B8C" text-anchor="middle">widest of the six tried: 30&#176;, and 17.4192 beats 10.0000 and 8.5000</text>
-  <rect x="150" y="318" width="500" height="46" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="130" y="318" width="540" height="46" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
   <text x="400" y="341" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#14202B" text-anchor="middle" dominant-baseline="central">PCA answered 42.62&#176;, spread 18.2812 &#8212; our grid was 12.62&#176; short</text>
   <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">A finer grid gets closer. PCA goes straight to the answer.</text>
 </svg>

@@ -87,7 +87,8 @@
   <rect x="320" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
   <rect x="342" y="244" width="22" height="22" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
   <rect x="232" y="134" width="132" height="22" rx="0" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
-  <text x="232" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">the bottom of the 6 is now on top</text>
+  <text x="232" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">the bottom of the 6</text>
+  <text x="232" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">is now on top</text>
   <rect x="52" y="300" width="302" height="56" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
   <text x="66" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">label still says 6, but that is not a 6</text>
   <text x="66" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">5 &#215; 1,257 rows bought +0.00 points</text>

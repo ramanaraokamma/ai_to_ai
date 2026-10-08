@@ -1,0 +1,10 @@
+# Generated output — rebuild with `python3 site-app/build.py --clean` (serve.sh does it when dist/ is missing).
+# Every build re-encrypts all pages under a new salt, so committing dist/ produced ~800-file diffs per rebuild.
+site-app/dist/
+
+# Python bytecode (audits and generators rewrite these on every run)
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store

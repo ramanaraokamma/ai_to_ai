@@ -26,8 +26,8 @@
   <rect x="66" y="167" width="224" height="28" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
   <rect x="300" y="164" width="66" height="34" rx="17" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="2" stroke-linejoin="round"/>
   <text x="333" y="181" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#CC2B1D" text-anchor="middle" dominant-baseline="central">?</text>
-  <text x="204" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Gold is top of the table and</text>
-  <text x="204" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">you have no idea who Gold is.</text>
+  <text x="204" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Gold is top of the table and</text>
+  <text x="204" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">you have no idea who Gold is.</text>
   <text x="464" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">house</text>
   <text x="636" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">mean</text>
   <text x="716" y="152" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="end">n</text>
@@ -47,7 +47,7 @@
   <rect x="688" y="167" width="44" height="28" rx="6" fill="#F4D5E9"/>
   <text x="716" y="182" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="end" dominant-baseline="central">2</text>
   <rect x="688" y="167" width="44" height="28" rx="6" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
-  <text x="596" y="276" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Two people. If one were absent,</text>
-  <text x="596" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Gold's average would be one pupil's.</text>
+  <text x="596" y="302" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Two people. If one were absent,</text>
+  <text x="596" y="320" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">Gold's average would be one pupil's.</text>
   <text x="400" y="362" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Print .size() next to .mean(), every single time, before you say a word out loud.</text>
 </svg>

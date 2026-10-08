@@ -167,11 +167,11 @@ It is a **perfect banana detector**: on the question "banana or not banana?" it 
 - apples: 140, 150, 165, 190 → **140–190**
 - oranges: 185, 195, 200, 210 → **185–210**
 
-Bananas separate cleanly. **Apples and oranges overlap between 185 and 190.** Best three-band rule:
+Bananas separate cleanly. **Apples and oranges overlap between 185 and 190.** Best three-band rule (the second boundary can sit anywhere from 166 to 184, or from 191 to 194; this one uses 175):
 
 ```text
 IF mass < 138        THEN banana
-ELSE IF mass <= 187  THEN apple
+ELSE IF mass <= 175  THEN apple
 ELSE                      orange
 ```
 
@@ -182,7 +182,7 @@ ELSE                      orange
 | 3 | 140 | apple | apple | ✓ |
 | 4 | 190 | orange | apple | ✗ |
 | 5 | 200 | orange | orange | ✓ |
-| 6 | 185 | apple | orange | ✗ |
+| 6 | 185 | orange | orange | ✓ |
 | 7 | 210 | orange | orange | ✓ |
 | 8 | 195 | orange | orange | ✓ |
 | 9 | 120 | banana | banana | ✓ |
@@ -190,11 +190,11 @@ ELSE                      orange
 | 11 | 110 | banana | banana | ✓ |
 | 12 | 128 | banana | banana | ✓ |
 
-**10 out of 12 = 83.3%.**
+**11 out of 12 = 91.7%.**
 
 Look at rows 4 and 6: one heavy apple and one light orange, each sitting in the other's territory.
 
-**No threshold can fix both.** Move the boundary up and you fix row 4 but break another one. Moving it can shuffle which row you get wrong, but it can never fix both. That is not a mistake in your maths — real measurements overlap constantly.
+**No threshold can fix both.** Move the boundary up past 190 and you fix row 4 but break row 6. Moving it can shuffle which row you get wrong, but it can never fix both. That is not a mistake in your maths — real measurements overlap constantly.
 
 > **💡 Try this:** try to get `mass_g` to 12 out of 12 by nudging the threshold. Genuinely try. You'll find it isn't stubbornness on your part — it is impossible, and finding that out with your own pencil is worth more than being told.
 
@@ -423,7 +423,7 @@ This section shows the fruit bowl activity from class, so you can repeat it at h
 
 1. **The baseline box goes up first and stays visible.** No score gets written before it.
 2. **One feature at a time, finished completely, before the next one starts.**
-3. **Every score is written twice: as a fraction and as a percentage.** `10/12 = 83.3%`.
+3. **Every score is written twice: as a fraction and as a percentage.** `11/12 = 91.7%`.
 4. **No verdict may be given before the number.** If you catch yourself saying "that one's useless" before counting — count it anyway.
 
 **The baseline box:**
@@ -441,7 +441,7 @@ This section shows the fruit bowl activity from class, so you can repeat it at h
 | `colour` | grouped by red / orange / yellow / green | 11/12 = 91.7% |
 | `quadrant` | grouped by the four corners of the bowl | 4/12 = 33.3% |
 | `length_cm` | banded at 15 cm | 8/12 = 66.7% |
-| `mass_g` | three bands at 138 g and 187 g | 10/12 = 83.3% |
+| `mass_g` | three bands at 138 g and 175 g | 11/12 = 91.7% |
 | `sticker_says` | grouped by what the sticker read | 12/12 = 100% |
 
 **The finished scoreboard, ranked:**
@@ -449,8 +449,8 @@ This section shows the fruit bowl activity from class, so you can repeat it at h
 | rank | feature | score | vs baseline 33.3% | verdict |
 |---|---|---|---|---|
 | — | `sticker_says` | 12/12 = **100%** | +66.7 | 🚨 **LEAKY — remove** |
-| 1 | `colour` | 11/12 = **91.7%** | +58.4 | ✅ very useful |
-| 2 | `mass_g` | 10/12 = **83.3%** | +50.0 | ✅ useful |
+| 1 *(tie)* | `colour` | 11/12 = **91.7%** | +58.4 | ✅ very useful |
+| 1 *(tie)* | `mass_g` | 11/12 = **91.7%** | +58.4 | ✅ very useful |
 | 3 | `length_cm` | 8/12 = **66.7%** | +33.4 | ✅ useful (banana specialist) |
 | — | `quadrant` | 4/12 = **33.3%** | 0.0 | ❌ **useless — remove** |
 

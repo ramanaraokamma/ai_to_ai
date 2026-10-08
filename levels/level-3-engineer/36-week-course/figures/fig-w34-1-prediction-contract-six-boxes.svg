@@ -8,7 +8,7 @@
   <rect x="40" y="62" width="230" height="122" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
   <circle cx="64" cy="86" r="14" fill="#FFFFFF" stroke="#845F00" stroke-width="2"/>
   <text x="64" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">1</text>
-  <text x="88" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">ONE PREDICTION IS ABOUT</text>
+  <text x="88" y="91" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">ONE PREDICTION IS ABOUT</text>
   <text x="58" y="122" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">one review, written by</text>
   <text x="58" y="142" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">one person, at one time</text>
   <text x="58" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">not a person. not an account.</text>
@@ -36,7 +36,7 @@
   <rect x="40" y="198" width="230" height="122" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
   <circle cx="64" cy="222" r="14" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2"/>
   <text x="64" y="227" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">4</text>
-  <text x="88" y="227" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">THE TWO ERRORS, PRICED</text>
+  <text x="88" y="227" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">THE TWO ERRORS, PRICED</text>
   <text x="58" y="256" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">nasty called positive</text>
   <text x="58" y="274" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">and never read: 10</text>
   <text x="58" y="298" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">nice read anyway: 1</text>

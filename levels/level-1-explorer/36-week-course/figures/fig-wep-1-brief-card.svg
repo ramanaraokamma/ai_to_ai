@@ -11,7 +11,7 @@
   <text x="266" y="190.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">not_yet  .  ready  .  too_far  .  other</text>
   <text x="240" y="230.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="end" font-weight="700">BASELINE</text>
   <text x="266" y="232.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">4 roughly equal classes, so 1/4 = 25%</text>
-  <text x="240" y="272.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="end" font-weight="700">SUCCESS BAR</text>
+  <text x="200" y="272.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="end" font-weight="700">SUCCESS BAR</text>
   <text x="266" y="274.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B">I will call it useful if it beats 60%</text>
   <circle cx="220" cy="268" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2.5"/><text x="220" y="272.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle">!</text>
   <rect x="258" y="250" width="372" height="36" rx="8" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>

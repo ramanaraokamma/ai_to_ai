@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 530" role="img">
   <title>Why we hard-code the answers first</title>
   <desc>A circular arrow with three stations - change one thing, run it, read the last line - showing one lap of the debugging loop. Below, two proportional bars on a seconds axis: a short two-second bar labelled hard-coded, and a bar sixteen times longer labelled forty seconds, typed by hand.</desc>
   <text x="250" y="40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">Why we hard-code the answers first</text>
+  <g transform="translate(0 30)">
   <path d="M294 74 A88 88 0 1 1 206 74" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(206 74) rotate(-30)"/>
   <rect x="177.8" y="22" width="144.4" height="32" rx="8" fill="#F5F8FA" stroke="#14202B" stroke-width="2" stroke-linejoin="round"/>
@@ -33,4 +34,5 @@
   <text x="250" y="412" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">You go round this loop thirty times in one lesson.</text>
   <text x="250" y="436" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Hard-coding the six answers is not laziness. It is twenty minutes saved.</text>
   <text x="250" y="468" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Swap in input() last, once the arithmetic already works.</text>
+  </g>
 </svg>

@@ -373,7 +373,7 @@ k = ______  and the lowest possible is inertia ______ at k = ______
 |---|---|---|
 | cluster 2 = "Bold Reserve" | proline 1100 vs 747 · flavanoids 3.00 vs 2.03 · total phenols 2.85 vs 2.30 | ______________________ |
 | cluster 1 = "Expensive" | colour intensity 7.23 vs 5.06 · hue 0.69 vs 0.96 | ______________________ |
-| cluster 1 = "Dark & Tannic" | alcohol 13.13 vs 13.00 · colour intensity 7.23 vs 5.06 · flavanoids 0.82 vs 2.03 | ______________________ |
+| cluster 1 = "Dark & Tart" | alcohol 13.13 vs 13.00 · colour intensity 7.23 vs 5.06 · flavanoids 0.82 vs 2.03 | ______________________ |
 
 **And the question worth as much as all three names put together: which cluster's name is WEAKEST, and give TWO reasons from the printout above.**
 
@@ -973,7 +973,7 @@ both votes agree on k = 3   and THAT is the evidence
 |---|---|
 | cluster 2 = "Bold Reserve" | **Pass.** Three numbers, all well clear of the overall, all pointing the same way: proline 1.47× typical, flavanoids 1.48×, total phenols comfortably up. The name is the table, in words. |
 | cluster 1 = "Expensive" | **Fail.** The two numbers are fine — colour intensity 7.23 against 5.06 is a real standout — but **nothing in thirteen chemical measurements is a price.** The evidence does not support the claim it is being used for. Rename it after what was measured. |
-| cluster 1 = "Dark & Tannic" | **Pass, with one number struck out.** Colour intensity 7.23 vs 5.06 and flavanoids 0.82 vs 2.03 are both strong. **`alcohol 13.13 vs 13.00` must go** — 0.13 apart defends nothing, and putting it in a three-number defence weakens the other two by association. Replace it with `hue 0.69 vs 0.96`. |
+| cluster 1 = "Dark & Tart" | **Pass, with one number struck out.** Colour intensity 7.23 vs 5.06 and flavanoids 0.82 vs 2.03 are both strong. **`alcohol 13.13 vs 13.00` must go** — 0.13 apart defends nothing, and putting it in a three-number defence weakens the other two by association. Replace it with `hue 0.69 vs 0.96`. |
 
 **The weakest name is cluster 0's.** **Reason 1: its own mean silhouette is `0.1774`, about half of cluster 1's 0.3506 and cluster 2's 0.3434.** **Reason 2: seven of its sixty-five bottles score below zero**, meaning they sit closer to a different cluster than to their own — the only cluster with any. *(And the profile table gives a third reason if you want it: cluster 0 is the **lowest** of the three on almost every column and the highest on nothing, and "low on things" is a much weaker basis for a group than "high on a specific thing.")*
 
@@ -1302,7 +1302,7 @@ PC2 (19.2% of the spread)
 | cluster | n | own silhouette | below 0 | name | the three numbers |
 |---|---:|---:|---:|---|---|
 | 2 | 62 | 0.3434 | 0 | **Bold Reserve** | proline **1100 vs 747** · flavanoids **3.00 vs 2.03** · total phenols **2.85 vs 2.30** |
-| 1 | 51 | 0.3506 | 0 | **Dark & Tannic** | flavanoids **0.82 vs 2.03** · colour intensity **7.23 vs 5.06** · hue **0.69 vs 0.96** |
+| 1 | 51 | 0.3506 | 0 | **Dark & Tart** | flavanoids **0.82 vs 2.03** · colour intensity **7.23 vs 5.06** · hue **0.69 vs 0.96** |
 | 0 | 65 | 0.1774 | 7 | **Light & Pale** | colour intensity **2.97 vs 5.06** · proline **510 vs 747** · alcohol **12.25 vs 13.00** |
 
 **Any name passes if the numbers support it** — "Rich & Full", "High-Phenol", "Big Wines" are all fine for cluster 2. **What fails is a bare number, a number that is not a standout (`alcohol 13.13 vs 13.00`), or a claim not in the table ("Expensive", "Award-Winning", "Old").**

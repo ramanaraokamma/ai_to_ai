@@ -41,7 +41,7 @@
     <rect x="646" y="252" width="124" height="72" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
     <text x="708" y="288" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Answer</text>
     <ellipse cx="113" cy="288" rx="95" ry="48" fill="none" stroke="#C42B8C" stroke-width="3" stroke-dasharray="8 6"/>
-    <text x="113" y="352" font-size="14" fill="#C42B8C" text-anchor="middle">the person is HERE — and nowhere else</text>
+    <text x="30" y="352" font-size="14" fill="#C42B8C">the person is HERE — and nowhere else</text>
 
     <text x="400" y="386" font-size="14" fill="#55636F" text-anchor="middle">Same shape, one difference: in row 2 nobody ever writes the rule down.</text>
   </g>

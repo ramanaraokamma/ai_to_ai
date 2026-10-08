@@ -24,7 +24,8 @@
     <line x1="110" y1="212" x2="250" y2="212"/>
     <line x1="110" y1="232" x2="250" y2="232"/>
   </g>
-  <text x="180" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C7CDD4" text-anchor="middle">six cells &#8212; one of them a WORD</text>
+  <text x="180" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C7CDD4" text-anchor="middle">six cells &#8212;</text>
+  <text x="180" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C7CDD4" text-anchor="middle">one of them a WORD</text>
 
   <!-- the arrow between -->
   <line x1="270" y1="192" x2="524" y2="192" stroke="#14202B" stroke-width="3" stroke-linecap="round"/>
@@ -41,7 +42,8 @@
     <line x1="550" y1="212" x2="690" y2="212"/>
     <line x1="550" y1="232" x2="690" y2="232"/>
   </g>
-  <text x="620" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C7CDD4" text-anchor="middle">draw the hole EMPTY, not as a 0</text>
+  <text x="620" y="186" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C7CDD4" text-anchor="middle">draw the hole EMPTY,</text>
+  <text x="620" y="206" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C7CDD4" text-anchor="middle">not as a 0</text>
 
   <!-- hole-count boxes -->
   <rect x="110" y="262" width="140" height="26" rx="8" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 5"/>

@@ -23,7 +23,7 @@
     <rect x="200" y="92" width="396" height="34" rx="4" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3" stroke-linejoin="round"/>
     <text x="612" y="115" font-size="18" fill="#14202B">73.3%</text>
     <rect x="200" y="144" width="540" height="34" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
-    <text x="700" y="167" font-size="18" fill="#FFFFFF">100%</text>
+    <text x="728" y="167" text-anchor="end" font-size="18" fill="#14202B">100%</text>
     <rect x="200" y="196" width="432" height="34" rx="4" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
     <text x="648" y="219" font-size="18" fill="#14202B">80%</text>
     <rect x="200" y="248" width="216" height="34" rx="4" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>

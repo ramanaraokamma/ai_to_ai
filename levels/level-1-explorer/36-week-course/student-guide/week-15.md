@@ -140,7 +140,7 @@ So if all forty spoon photos sit on a wooden table with a window on the left, th
 
 **The true story.** In a 2016 research paper, researchers built a classifier to tell huskies from wolves, partly to show how an AI can be right for the wrong reason. It got most of its test photos right. Some of the people they showed it to said they would trust it.
 
-Then a tool that shows what the model is looking at revealed the trick: **the wolf photos had snow in the background** and the husky photos did not. The model had learned little about wolves. It had mostly learned *white stuff at the bottom of the picture → say wolf.* Photograph a husky standing in snow and it is likely to say wolf, and sound confident about it.
+Then a tool that shows what the model is looking at revealed the trick: **the wolf photos had snow in the background** and the husky photos did not. The tool suggested the model had leaned on the background: a rule like *white stuff at the bottom of the picture → say wolf.* If that is right, a husky standing in snow could well get called a wolf, and the model would sound confident about it.
 
 Nobody wrote that rule. Nobody wanted it. **It came out of the photographs.**
 

@@ -73,6 +73,7 @@
   <text x="165" y="588" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">11 correct out of 12</text>
   <text x="380" y="588" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">91.7%</text>
 
-  <text x="250" y="644" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The rule: red or green means apple, orange means orange, yellow means banana.</text>
-  <text x="250" y="668" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">91.7% beats the 33.3% baseline by a mile, so colour is a useful feature.</text>
+  <text x="250" y="640" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">The rule: red or green means apple, orange means orange,</text>
+  <text x="250" y="658" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">yellow means banana.</text>
+  <text x="250" y="684" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">91.7% beats the 33.3% baseline by a mile, so colour is a useful feature.</text>
 </svg>

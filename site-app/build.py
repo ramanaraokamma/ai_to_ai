@@ -726,6 +726,12 @@ def shell(*, doc: Doc, depth: int, nav_json: str, body: str, encrypted: bool,
     else:
         content = f'<article id="content" class="doc">{body}</article>'
 
+    # Level 4 uses scripted stand-ins for language models (the course labels each one in place);
+    # the site repeats the label so no page can be read as showing a real model.
+    stand_in_note = ('<p class="stand-in-note">Level 4 runs offline on this machine. Where a lesson uses a '
+                     'scripted stand-in for a language model, it is labelled \u201cstand-in, not a model\u201d.</p>'
+                     if doc.level == "l4" and week_badge else "")
+
     return f"""<!DOCTYPE html>
 <html lang="en" data-mode="{doc.mode}" data-level="{doc.level}">
 <head>
@@ -758,6 +764,7 @@ def shell(*, doc: Doc, depth: int, nav_json: str, body: str, encrypted: bool,
   </nav>
   <main class="main">
     <div class="crumbs">{week_badge}<span class="badge kind">{kind_label}</span></div>
+    {stand_in_note}
     {content}
     <nav class="pager" id="pager" aria-label="Previous and next"></nav>
   </main>

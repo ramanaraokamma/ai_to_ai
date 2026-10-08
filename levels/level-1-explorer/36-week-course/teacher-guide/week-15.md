@@ -125,7 +125,7 @@ So if all forty spoon photos sit on a wooden table with a window on the left, th
 
 **The true story to tell in class.** In a 2016 research paper (Ribeiro, Singh and Guestrin, the "Why Should I Trust You?" paper), researchers built a husky-versus-wolf classifier on a deliberately biased, hand-picked set of photos, to show how a model can be right for the wrong reason. They showed it to a small group (as I recall, mostly graduate students; I have not re-checked the details) and asked whether they trusted it; some did.
 
-Then an explanation tool revealed the trick: the wolf photos had **snow** in the background and the husky photos did not. The model had learned little about wolves. It had mostly learned *white stuff at the bottom of the picture → say wolf*.
+Then an explanation tool revealed the trick: the wolf photos had **snow** in the background and the husky photos did not. The tool suggested the model had leaned on the background: a rule like *white stuff at the bottom of the picture → say wolf*.
 
 Photograph a husky in snow and it is likely to say wolf, and sound confident. Do not quote exact numbers of people or percentages in class.
 
@@ -432,7 +432,7 @@ Let them try. Then:
 >
 > In 2016 some researchers wrote a paper about a machine that told huskies from wolves. It got most photos right. They showed it to some people and asked 'do you trust this?' Some of them said yes.
 >
-> Then a tool that shows what the machine is looking at revealed the trick. The wolf photos had **snow** in the background. The husky photos did not. The machine had learned very little about wolves. It had mostly learned: *white stuff at the bottom of the picture, say wolf.* Photograph a husky standing in snow and it is likely to say wolf, and sound confident.
+> Then a tool that shows what the machine is looking at revealed the trick. The wolf photos had **snow** in the background. The husky photos did not. The tool suggested the machine had leaned on the background: a rule like *white stuff at the bottom of the picture, say wolf.* If that is right, a husky standing in snow could well get called a wolf, and sound confident.
 >
 > Nobody wrote that rule. Nobody wanted it. It came out of the photographs, because **the machine learns the easiest pattern that separates your piles** — not the pattern you meant."
 

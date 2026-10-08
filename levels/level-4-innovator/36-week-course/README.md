@@ -693,9 +693,11 @@ seems "too clean", that is the point; restate the label aloud · a student reach
 2. **Learner age and the "16-18" claim.** The repo is one learner growing from 6th grade over two to
    three years; Level 3 was a 9th grader of about 14. Confirm Level 4's learner (this plan assumes
    15-16 and the same maths ceiling as Level 3).
+   **Status (2026-10-07): applied as planned** — the shipped course assumes 15-16 and Level 3's maths ceiling. Change only if the learner differs.
 3. **Is `tokenizers` allowed?** Level 3 bans `transformers`. The audit found `tokenizers` installed
    and able to train locally. This plan allows it for one week (W20) and one comparison. Confirm, or
    drop the comparison and keep only the student's own BPE.
+   **Status (2026-10-07): applied as planned** — `tokenizers` appears in Week 20 only, as one labelled comparison.
 4. **Depth of the FakeLLM.** The Shared Kit gives it *documented* competence functions. A richer fake
    is more fun and more misleading. *Recommendation:* keep it a transparent function of prompt
    features, and put all real learned behaviour in from-scratch models.
@@ -704,6 +706,7 @@ seems "too clean", that is the point; restate the label aloud · a student reach
    transformer. Accept the change in tone: "watch examples in context help a model you trained".
 6. **Course-wide scripted-label policy.** The plan requires the "stand-in, not a model" label
    (W23 onward). Confirm it also appears on the website pages (a banner in the generated HTML).
+   **Status (2026-10-07): done** — every Level 4 weekly page on the site carries the note (`stand_in_note` in `site-app/build.py`).
 7. **Site integration.** Add an `ALL_LEVELS` entry for L4 (key `l4`, accent colour, term names).
    The plan table above keeps Level 3's exact column order, so `parse_weeks()` (which locates the type
    column) should work without change; the author should confirm the type words

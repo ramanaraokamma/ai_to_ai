@@ -14,7 +14,7 @@
   <rect x="30" y="232" width="160" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
   <text x="110" y="249" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">GreenLeaf</text>
   <rect x="30" y="96" width="160" height="170" fill="none" stroke="#1F6FB2" stroke-width="3"/>
-  <rect x="34" y="274" width="100" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="84.0" y="287.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">shape (5, 1)</text>
+  <rect x="34" y="268" width="100" height="18" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="84.0" y="277.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">shape (5, 1)</text>
   <line x1="200" y1="180" x2="246" y2="180" stroke="#14202B" stroke-width="3" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#14202B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(246 180) rotate(0.0)"/>
   <text x="223" y="166" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">one-hot</text>
   <rect x="262" y="62" width="96" height="34" fill="#D9EAF9" stroke="#C7CDD4" stroke-width="1.5"/>
@@ -84,10 +84,10 @@
   <text x="694.0" y="249" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>
   <rect x="262" y="62" width="480" height="204" fill="none" stroke="#1F6FB2" stroke-width="3"/>
   <rect x="262" y="274" width="116" height="26" rx="6" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/><text x="320.0" y="287.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">shape (5, 5)</text>
-  <text x="400" y="316" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">exactly one 1 in every row &#8212; that is the whole idea</text>
+  <text x="560" y="289" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">exactly one 1 in every row &#8212; that is the whole idea</text>
   <rect x="30" y="296" width="160" height="34" rx="8" fill="#E8C671" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
   <text x="110" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">PopUpPizza</text>
-  <text x="30" y="290" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">a 6th restaurant opens:</text>
+  <text x="30" y="294" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">a 6th restaurant opens:</text>
   <line x1="200" y1="313" x2="246" y2="313" stroke="#845F00" stroke-width="2.5" stroke-linecap="round"/><polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#845F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(246 313) rotate(0.0)"/>
   <rect x="262" y="296" width="96" height="34" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
   <text x="310.0" y="313" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">0</text>

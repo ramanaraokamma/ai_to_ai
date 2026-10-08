@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img">
   <title>The wolves that were made of snow</title>
-  <desc>Three photos. A wolf standing in snow, which the model calls wolf and is right. A husky standing on grass, which the model calls husky and is right. A husky standing in snow, which the model still calls wolf and is wrong. The model learned the snow, not the animal.</desc>
+  <desc>Three photos. A wolf standing in snow, which the model calls wolf and is right. A husky standing on grass, which the model calls husky and is right. A husky standing in snow, which the model may still call wolf, and that would be wrong. The explanation tool suggested the model leaned on the snow more than on the animal; the picture shows what that would look like. The third photo is labelled as a likely outcome, not a certain one.</desc>
   <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
     <text x="400" y="42" font-size="24" fill="#14202B" text-anchor="middle">The wolves that were made of snow</text>
 
@@ -71,7 +71,7 @@
       <circle cx="90" cy="18" r="2" fill="#14202B" stroke="none"/>
     </g>
     <text x="650" y="216" font-size="16" fill="#14202B" text-anchor="middle">a husky, in snow</text>
-    <text x="650" y="242" font-size="16" fill="#14202B" text-anchor="middle">model says: WOLF</text>
+    <text x="650" y="242" font-size="16" fill="#14202B" text-anchor="middle">model may say: WOLF</text>
     <g transform="translate(630,254) scale(0.4)">
       <circle cx="50" cy="50" r="34" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
       <g stroke="#CC2B1D" stroke-width="6" stroke-linecap="round">
@@ -81,6 +81,6 @@
     </g>
 
     <text x="400" y="342" font-size="18" fill="#14202B" text-anchor="middle">Every wolf photo had snow in it. Not one husky photo did.</text>
-    <text x="400" y="368" font-size="14" fill="#55636F" text-anchor="middle">Nobody wrote that rule. It came from the photos — and a good score hid it.</text>
+    <text x="400" y="368" font-size="14" fill="#55636F" text-anchor="middle">If it leaned on snow, nobody wrote that rule. It came from the photos — and a good score hid it.</text>
   </g>
 </svg>

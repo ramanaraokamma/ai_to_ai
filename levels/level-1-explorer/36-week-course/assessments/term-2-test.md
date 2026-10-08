@@ -720,8 +720,8 @@ photos *and* trains for longer. If the score moves, you have learned nothing, be
 which change did it.
 
 **Also worth knowing:** the famous version of this is a wolf-versus-husky model where every wolf photo
-had snow in the background and no husky photo did. The model was a snow detector with a wolf's name
-on it, and it scored beautifully until somebody photographed a husky in a garden.
+had snow in the background and no husky photo did. The explanation tool suggested the model had leaned on the snow
+rather than the animal, and it scored beautifully until somebody photographed a husky in a garden.
 </details>
 
 <details>

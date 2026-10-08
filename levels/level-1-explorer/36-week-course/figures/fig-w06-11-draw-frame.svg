@@ -12,7 +12,8 @@
 
   <!-- sample patch -->
   <rect x="316" y="150" width="148" height="94" rx="12" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="8 8" stroke-linejoin="round"/>
-  <text x="390" y="202" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">shade the ones you MEASURED</text>
+  <text x="390" y="196" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">shade the ones</text>
+  <text x="390" y="212" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">you MEASURED</text>
 
   <!-- label lines -->
   <g stroke="#C42B8C" stroke-width="1.5" fill="none">

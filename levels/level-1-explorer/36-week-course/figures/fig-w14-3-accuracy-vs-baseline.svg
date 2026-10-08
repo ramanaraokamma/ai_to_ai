@@ -43,6 +43,7 @@
     <text x="420" y="295" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">points</text>
 
     <line x1="80" y1="400" x2="470" y2="400" stroke="#14202B" stroke-width="2"/>
-    <text x="250" y="472" font-size="14" fill="#55636F" text-anchor="middle">A score means nothing on its own. It only means something next to the baseline.</text>
+    <text x="250" y="470" font-size="14" fill="#55636F" text-anchor="middle">A score means nothing on its own.</text>
+    <text x="250" y="488" font-size="14" fill="#55636F" text-anchor="middle">It only means something next to the baseline.</text>
   </g>
 </svg>

@@ -20,27 +20,27 @@
   <text x="184" y="306" font-size="14" fill="#14202B" text-anchor="middle">Write "not sure" beside any guess.</text>
   <text x="184" y="330" font-size="14" fill="#55636F" text-anchor="middle">Those matter even when they are right.</text>
 
-  <text x="396" y="88" font-size="18" fill="#845F00">WHAT THE SCORE MEANS</text>
+  <text x="384" y="88" font-size="18" fill="#845F00">WHAT THE SCORE MEANS</text>
 
-  <rect x="392" y="102" width="376" height="52" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
-  <text x="412" y="124" font-size="18" fill="#14202B">0 - 29</text>
-  <text x="500" y="124" font-size="14" fill="#14202B">the core ideas have not landed yet</text>
-  <text x="500" y="144" font-size="12" fill="#55636F">go back to weeks 1 to 12 and redo the projects</text>
+  <rect x="380" y="102" width="410" height="52" rx="10" fill="#F6AEA6" stroke="#CC2B1D" stroke-width="3"/>
+  <text x="400" y="124" font-size="18" fill="#14202B">0 - 29</text>
+  <text x="480" y="124" font-size="14" fill="#14202B">the core ideas have not landed yet</text>
+  <text x="480" y="144" font-size="12" fill="#55636F">go back to weeks 1 to 12 and redo the projects</text>
 
-  <rect x="392" y="164" width="376" height="52" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
-  <text x="412" y="186" font-size="18" fill="#14202B">30 - 41</text>
-  <text x="500" y="186" font-size="14" fill="#14202B">vocabulary yes, reasoning not yet</text>
-  <text x="500" y="206" font-size="12" fill="#55636F">redo the weeks you lost marks in, then retake Part B</text>
+  <rect x="380" y="164" width="410" height="52" rx="10" fill="#E8C671" stroke="#845F00" stroke-width="3"/>
+  <text x="400" y="186" font-size="18" fill="#14202B">30 - 41</text>
+  <text x="480" y="186" font-size="14" fill="#14202B">vocabulary yes, reasoning not yet</text>
+  <text x="480" y="206" font-size="12" fill="#55636F">redo the weeks you lost marks in, then retake Part B</text>
 
-  <rect x="392" y="226" width="376" height="52" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
-  <text x="412" y="248" font-size="18" fill="#14202B">42 - 52</text>
-  <text x="500" y="248" font-size="14" fill="#14202B">solid - the gate is open</text>
-  <text x="500" y="268" font-size="12" fill="#55636F">finish the booth, then Level 2</text>
+  <rect x="380" y="226" width="410" height="52" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/>
+  <text x="400" y="248" font-size="18" fill="#14202B">42 - 52</text>
+  <text x="480" y="248" font-size="14" fill="#14202B">solid - the gate is open</text>
+  <text x="480" y="268" font-size="12" fill="#55636F">finish the booth, then Level 2</text>
 
-  <rect x="392" y="288" width="376" height="52" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
-  <text x="412" y="310" font-size="18" fill="#14202B">53 - 60</text>
-  <text x="500" y="310" font-size="14" fill="#14202B">you could teach this</text>
-  <text x="500" y="330" font-size="12" fill="#55636F">take a stretch direction before you move on</text>
+  <rect x="380" y="288" width="410" height="52" rx="10" fill="#DBCEF3" stroke="#6D28D9" stroke-width="3"/>
+  <text x="400" y="310" font-size="18" fill="#14202B">53 - 60</text>
+  <text x="480" y="310" font-size="14" fill="#14202B">you could teach this</text>
+  <text x="480" y="330" font-size="12" fill="#55636F">take a stretch direction before you move on</text>
 
   <text x="400" y="382" font-size="14" fill="#55636F" text-anchor="middle">The score is a mirror, not a verdict. What you do next is the actual result.</text>
 </svg>

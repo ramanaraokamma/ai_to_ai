@@ -35,5 +35,6 @@
   <text x="462" y="168" font-size="16" fill="#CC2B1D" text-anchor="middle" transform="rotate(-90 462 168)">a 50-point drop</text>
 
   <line x1="100" y1="400" x2="400" y2="400" stroke="#14202B" stroke-width="2"/>
-  <text x="250" y="476" font-size="14" fill="#55636F" text-anchor="middle">The left bar is the exam the rulebook wrote for itself. Only the right bar is news.</text>
+  <text x="250" y="476" font-size="14" fill="#55636F" text-anchor="middle">The left bar is the exam the rulebook wrote for itself.</text>
+  <text x="250" y="494" font-size="14" fill="#55636F" text-anchor="middle">Only the right bar is news.</text>
 </svg>

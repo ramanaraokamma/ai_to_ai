@@ -37,5 +37,6 @@
   <text x="88" y="626.3" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">7</text>
   <text x="118" y="616.9" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="start">Break the Week 17 model on purpose</text>
   <text x="118" y="638.2" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="start">10 min</text>
-  <text x="250" y="676" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Stop at Step 5 if you are short of time. Steps 6 and 7 are the proof, not the build.</text>
+  <text x="250" y="676" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Stop at Step 5 if you are short of time.</text>
+  <text x="250" y="694" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Steps 6 and 7 are the proof, not the build.</text>
 </svg>

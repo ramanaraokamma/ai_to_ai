@@ -224,7 +224,7 @@ proline                       510.17  619.06  1100.23   746.89
 | cluster | n | the numbers that justify it | the name |
 |---|---:|---|---|
 | **2** | 62 | highest alcohol (13.68 vs 13.00), highest flavanoids (3.00 vs 2.03), highest proline (1100 vs 747), highest phenols (2.85 vs 2.30) | **Bold Reserve** |
-| **1** | 51 | lowest flavanoids (0.82 vs 2.03), highest colour intensity (7.23 vs 5.06), lowest hue (0.69 vs 0.96), highest malic acid (3.31 vs 2.34) | **Dark & Tannic** |
+| **1** | 51 | lowest flavanoids (0.82 vs 2.03), highest colour intensity (7.23 vs 5.06), lowest hue (0.69 vs 0.96), highest malic acid (3.31 vs 2.34) | **Dark & Tart** |
 | **0** | 65 | lowest alcohol (12.25 vs 13.00), lowest colour intensity (2.97 vs 5.06), lowest proline (510 vs 747), lowest magnesium (92.7 vs 99.7) | **Light & Pale** |
 
 ![A name you can defend from the table](../figures/fig-w30-3-feature-means-table-naming-a-cluster.svg)
@@ -632,7 +632,7 @@ proline                       510.17  619.06  1100.23   746.89
 pca = PCA(n_components=2).fit(X)
 Z = pca.transform(X)
 evr = pca.explained_variance_ratio_
-names = {0: "Light & Pale", 1: "Dark & Tannic", 2: "Bold Reserve"}
+names = {0: "Light & Pale", 1: "Dark & Tart", 2: "Bold Reserve"}
 marks = {0: "o", 1: "^", 2: "s"}
 plt.figure(figsize=(7, 5.5))
 for c in range(3):
@@ -1105,11 +1105,11 @@ cluster 2:  n = 62    own silhouette 0.3434    0 points below zero
 
 **Anybody writing down `alcohol 13.13 vs 13.00` for cluster 1 got asked *"how far from the overall is that?"* immediately.** 0.13 is not a standout.
 
-**Step two: three or four words, in marker, on a card.** *"'Cluster 1' is not a name. 'Dark & Tannic' is a name."*
+**Step two: three or four words, in marker, on a card.** *"'Cluster 1' is not a name. 'Dark & Tart' is a name."*
 
 **Step three: the ceremony.** Hold up the card, say the name, then the three numbers. A good defence sounded like this:
 
-> *"**Dark & Tannic.** Flavanoids 0.82 against an overall 2.03 — less than half. Colour intensity 7.23 against 5.06 — much darker. Hue 0.69 against 0.96 — the lowest of the three. So: deeply coloured, sharp, and short of the soft phenols. 51 bottles, and its own silhouette is 0.3506, the best of the three."*
+> *"**Dark & Tart.** Flavanoids 0.82 against an overall 2.03 — less than half. Colour intensity 7.23 against 5.06 — much darker. Hue 0.69 against 0.96 — the lowest of the three. Malic acid 3.31 against 2.34 — the highest, which is the sharp part. So: deeply coloured, sharp, and short of the soft phenols. 51 bottles, and its own silhouette is 0.3506, the best of the three."*
 
 **A card got torn up if** the defence used no numbers, or a number not compared to the overall, or a number that was not actually a standout, or a name claiming something not in the table at all ("Expensive", "Old", "Award-Winning").
 
@@ -1140,7 +1140,7 @@ Then the whole argument, written out as five lines:
                        5 subsamples: ARI 0.9657
                        noise, 5 seeds: 0.5791
 
-4. what are they       Bold Reserve (62)  Dark & Tannic (51)  Light & Pale (65)
+4. what are they       Bold Reserve (62)  Dark & Tart (51)  Light & Pale (65)
                        and cluster 0 is the weak one: silhouette 0.1774, 7 points below 0
 
 5. does it buy         30 training rows: 141 of 148  ->  145 of 148

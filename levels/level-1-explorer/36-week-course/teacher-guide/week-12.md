@@ -82,11 +82,11 @@ Worked on `colour`, from the twelve-row fruit table:
 
 ```text
 IF mass < 138        THEN banana
-ELSE IF mass <= 187  THEN apple
+ELSE IF mass <= 175  THEN apple
 ELSE                      orange
 ```
 
-which gets 10 of 12 right — it fails on the 190 g apple and the 185 g orange, which sit in each other's territory. **83.3%.** Real measurements overlap constantly; do not treat that as a mistake.
+which gets 11 of 12 right — it fails only on the 190 g apple (the 185 g orange and the 190 g apple sit in each other's territory, so one of the two must be wrong). **91.7%.** Real measurements overlap constantly; do not treat that as a mistake.
 
 ### 3. Can a feature score *below* the baseline?
 
@@ -464,7 +464,7 @@ The twelve-row table:
 
 1. **The baseline box goes up first and stays visible.** No score gets written before it.
 2. **One feature at a time, finished completely, before the next one starts.**
-3. **Every score is written twice: as a fraction and as a percentage.** `10/12 = 83.3%`.
+3. **Every score is written twice: as a fraction and as a percentage.** `11/12 = 91.7%`.
 4. **No verdict may be given before the number.** If they say "that one's useless" before counting, say: "Might be. Count it."
 
 ### Step 1 — `length_cm` (4 minutes)
@@ -499,7 +499,7 @@ Bananas separate cleanly. Apples and oranges **overlap between 185 and 190**. Be
 
 ```text
 IF mass < 138        THEN banana
-ELSE IF mass <= 187  THEN apple
+ELSE IF mass <= 175  THEN apple
 ELSE                      orange
 ```
 
@@ -510,7 +510,7 @@ ELSE                      orange
 | 3 | 140 | apple | apple | ✓ |
 | 4 | 190 | orange | apple | ✗ |
 | 5 | 200 | orange | orange | ✓ |
-| 6 | 185 | apple | orange | ✗ |
+| 6 | 185 | orange | orange | ✓ |
 | 7 | 210 | orange | orange | ✓ |
 | 8 | 195 | orange | orange | ✓ |
 | 9 | 120 | banana | banana | ✓ |
@@ -518,7 +518,7 @@ ELSE                      orange
 | 11 | 110 | banana | banana | ✓ |
 | 12 | 128 | banana | banana | ✓ |
 
-**10 out of 12 = 83.3%.** Point at rows 4 and 6: one heavy apple, one light orange, each sitting in the other's territory. No threshold can fix that, and moving the threshold can never fix both.
+**11 out of 12 = 91.7%.** Point at rows 4 and 6: one heavy apple, one light orange, each sitting in the other's territory. The boundary can sit anywhere from 166 to 184 g (row 4 wrong) or from 191 to 194 g (row 6 wrong); no threshold can fix both, so 11/12 is the best any single mass rule can do. It ties `colour`.
 
 ### Step 3 — `sticker_says` (3 minutes)
 
@@ -552,7 +552,7 @@ The realisation usually arrives here without further help. If it doesn't:
 |---|---|---|---|
 | `sticker_says` | 12/12 = **100%** | +66.7 | 🚨 **LEAKY — remove** |
 | `colour` | 11/12 = **91.7%** | +58.4 | ✅ very useful |
-| `mass_g` | 10/12 = **83.3%** | +50.0 | ✅ useful |
+| `mass_g` | 11/12 = **91.7%** | +58.4 | ✅ very useful |
 | `length_cm` | 8/12 = **66.7%** | +33.4 | ✅ useful (banana specialist) |
 | `quadrant` | 4/12 = **33.3%** | 0.0 | ❌ useless — remove |
 
@@ -776,7 +776,7 @@ Teacher only. This key follows the workbook section by section, using the workbo
 |---|---|---|
 | `sticker_says` | 100% — top of the chart | 🚨 **LEAKY — remove** |
 | `colour` | 91.7% | ✅ very useful (+58.4) |
-| `mass_g` | 83.3% | ✅ useful (+50.0) |
+| `mass_g` | 91.7% | ✅ very useful (+58.4) |
 | `length_cm` | 66.7% | ✅ useful (+33.4) |
 | `quadrant` | 33.3% — flat on the line | ❌ **useless — remove** |
 
@@ -965,12 +965,12 @@ The student did these in class on their blank sheet. The workbook does not repro
 
 Total 3 + 4 + 3 + 1 = **11/12 = 91.7%.** Verdict: ✅ very useful. The only failure is the green row — one green apple and one green (unripe) banana.
 
-**`mass_g` — 10/12 = 83.3%**
+**`mass_g` — 11/12 = 91.7%**
 
 Ranges: bananas 110–135 · apples 140–190 · oranges 185–210. Bananas separate cleanly; apples and oranges overlap between 185 and 190.
-Rule: `IF mass < 138 THEN banana; ELSE IF mass <= 187 THEN apple; ELSE orange`.
-Wrong on id 4 (190 g apple → predicted orange) and id 6 (185 g orange → predicted apple).
-**10/12 = 83.3%.** Verdict: ✅ useful but imperfect. No threshold fixes both; moving it can never fix both.
+Rule: `IF mass < 138 THEN banana; ELSE IF mass <= 175 THEN apple; ELSE orange`.
+Wrong only on id 4 (190 g apple → predicted orange). Moving the second boundary above 190 (for example 192) instead gets id 4 right and id 6 (185 g orange) wrong; either way it is 11/12.
+**11/12 = 91.7%.** Verdict: ✅ very useful, tied with `colour`, but imperfect. No threshold fixes both; moving it can never fix both.
 
 **`length_cm` — 8/12 = 66.7%**
 

@@ -195,7 +195,7 @@ proline                       510.17  619.06  1100.23   746.89
 | cluster | n | the numbers that justify it | the name |
 |---|---:|---|---|
 | **2** | 62 | highest alcohol (13.68 vs 13.00), highest flavanoids (3.00 vs 2.03), highest proline (1100 vs 747), highest phenols (2.85 vs 2.30) | **Bold Reserve** |
-| **1** | 51 | lowest flavanoids (0.82 vs 2.03), highest colour intensity (7.23 vs 5.06), lowest hue (0.69 vs 0.96), highest malic acid (3.31 vs 2.34) | **Dark & Tannic** |
+| **1** | 51 | lowest flavanoids (0.82 vs 2.03), highest colour intensity (7.23 vs 5.06), lowest hue (0.69 vs 0.96), highest malic acid (3.31 vs 2.34) | **Dark & Tart** |
 | **0** | 65 | lowest alcohol (12.25 vs 13.00), lowest colour intensity (2.97 vs 5.06), lowest proline (510 vs 747), lowest magnesium (92.7 vs 99.7) | **Light & Pale** |
 
 ![A name you can defend from the table](../figures/fig-w30-3-feature-means-table-naming-a-cluster.svg)
@@ -537,7 +537,7 @@ print(means.round(2).to_string())
 pca = PCA(n_components=2).fit(X)
 Z = pca.transform(X)
 evr = pca.explained_variance_ratio_
-names = {0: "Light & Pale", 1: "Dark & Tannic", 2: "Bold Reserve"}
+names = {0: "Light & Pale", 1: "Dark & Tart", 2: "Bold Reserve"}
 marks = {0: "o", 1: "^", 2: "s"}
 plt.figure(figsize=(7, 5.5))
 for c in range(3):
@@ -1235,7 +1235,7 @@ Full instructions in **🎲 The Activity, In Full** below. In outline: **twelve 
                        5 subsamples: ARI 0.9657
                        noise, 5 seeds: 0.5791
 
-4. what are they       Bold Reserve (62)  Dark & Tannic (51)  Light & Pale (65)
+4. what are they       Bold Reserve (62)  Dark & Tart (51)  Light & Pale (65)
                        and cluster 0 is the weak one: silhouette 0.1774, 7 points below 0
 
 5. does it buy         30 training rows: 141 of 148  ->  145 of 148
@@ -1347,7 +1347,7 @@ The real answers:
 
 **Three or four words, in marker, on a card.** One card per cluster.
 
-> **Say this:** "The name has to be something a person who has never heard of k-means could read on a slide. **'Cluster 1' is not a name. 'High-Colour Low-Flavanoid Group' is a bit of a mouthful but it is a name. 'Dark & Tannic' is a name.**"
+> **Say this:** "The name has to be something a person who has never heard of k-means could read on a slide. **'Cluster 1' is not a name. 'High-Colour Low-Flavanoid Group' is a bit of a mouthful but it is a name. 'Dark & Tart' is a name.**"
 
 ### Step 3 — the ceremony (5 minutes)
 
@@ -1355,7 +1355,7 @@ One at a time. Hold up the card. **Say the name, then the three numbers.** Every
 
 Good defences sound like this:
 
-> **"Dark & Tannic.** Flavanoids 0.82 against an overall 2.03 — less than half. Colour intensity 7.23 against 5.06 — much darker. Hue 0.69 against 0.96 — the lowest of the three. **So: deeply coloured, sharp, and short of the soft phenols. 51 bottles, and its own silhouette is 0.3506, which is the best of the three.**"
+> **"Dark & Tart.** Flavanoids 0.82 against an overall 2.03 — less than half. Colour intensity 7.23 against 5.06 — much darker. Hue 0.69 against 0.96 — the lowest of the three. Malic acid 3.31 against 2.34 — the highest, which is the sharp part. **So: deeply coloured, sharp, and short of the soft phenols. 51 bottles, and its own silhouette is 0.3506, which is the best of the three.**"
 
 > **"Bold Reserve.** Proline 1100 against 747, flavanoids 3.00 against 2.03, total phenols 2.85 against 2.30 — **highest of the three on every one of those.** Rich, full-bodied, high-extract. 62 bottles, silhouette 0.3434."
 
@@ -1706,7 +1706,7 @@ Three checks, five minutes, exact wording.
 
 > "Point at one of your cluster cards and defend the name. **Three numbers, and each one compared to something.**"
 
-*Good answer:* "Dark & Tannic. Flavanoids 0.82 against an overall 2.03 — less than half. Colour intensity 7.23 against 5.06 — much darker. Hue 0.69 against 0.96 — the lowest of the three. 51 bottles, and its own silhouette is 0.3506, the best of the three clusters."
+*Good answer:* "Dark & Tart. Flavanoids 0.82 against an overall 2.03 — less than half. Colour intensity 7.23 against 5.06 — much darker. Hue 0.69 against 0.96 — the lowest of the three. Malic acid 3.31 against 2.34 — the highest, which is the sharp part. 51 bottles, and its own silhouette is 0.3506, the best of the three clusters."
 
 **What to catch:** a bare number with no comparison (`proline 510`), or a number that is not a standout (`alcohol 13.13 vs 13.00`). **Push once:** *"how far is that from the overall?"* **Full marks needs three comparisons, and a student who volunteers which of their three names is weakest — and why — is at level 4.**
 
@@ -1911,7 +1911,7 @@ both votes agree on k = 3   and THAT is the evidence
 |---|---|
 | cluster 2 = "Bold Reserve" | **Pass.** Three numbers, all well clear of overall, all one way (proline 1.47 times typical, flavanoids 1.48, total phenols up). |
 | cluster 1 = "Expensive" | **Fail.** The numbers are real standouts, but nothing in thirteen chemical measurements is a price. Rename it after what was measured. |
-| cluster 1 = "Dark & Tannic" | **Pass, with one number struck out.** `alcohol 13.13 vs 13.00` must go; replace with `hue 0.69 vs 0.96`. |
+| cluster 1 = "Dark & Tart" | **Pass, with one number struck out.** `alcohol 13.13 vs 13.00` must go; replace with `hue 0.69 vs 0.96`. |
 
 **Weakest: cluster 0.** Reason 1: its own silhouette `0.1774`, about half of 0.3506 and 0.3434. Reason 2: **7 of its 65 bottles score below zero**, the only cluster with any. (A third, from the profile: lowest of the three on almost every column and highest on nothing.) **Marking notes.** Two reasons, both from the printout, is the ask; a student who says "it is the biggest" has not read the printout.
 
@@ -1993,7 +1993,7 @@ Credit comes from a reason attached. "More information is better" is a real hypo
 | cluster | n | own silhouette | below 0 | name | the three numbers |
 |---|---:|---:|---:|---|---|
 | **2** | 62 | 0.3434 | 0 | **Bold Reserve** | proline **1100 vs 747** · flavanoids **3.00 vs 2.03** · total phenols **2.85 vs 2.30** |
-| **1** | 51 | 0.3506 | 0 | **Dark & Tannic** | flavanoids **0.82 vs 2.03** · colour intensity **7.23 vs 5.06** · hue **0.69 vs 0.96** |
+| **1** | 51 | 0.3506 | 0 | **Dark & Tart** | flavanoids **0.82 vs 2.03** · colour intensity **7.23 vs 5.06** · hue **0.69 vs 0.96** |
 | **0** | 65 | 0.1774 | 7 | **Light & Pale** | colour intensity **2.97 vs 5.06** · proline **510 vs 747** · alcohol **12.25 vs 13.00** |
 
 **The weakest cluster: 0.** Reason 1: own silhouette `0.1774`, about half of the other two. Reason 2: seven of its 65 bottles score below zero, the only cluster with any. Full marks also notes that "low on things" is a weaker basis for a group than "high on a specific thing", and a cluster defined mainly by absence is often a sign that `k` is too small, or that the real structure is two strong groups plus a continuum of leftovers.

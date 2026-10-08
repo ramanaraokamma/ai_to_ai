@@ -92,7 +92,7 @@ The baseline for this table is **4/12 = 33.3%**. Fill in the box at the top. The
 |---|---|
 | `sticker_says` | 12/12 = 100% |
 | `colour` | 11/12 = 91.7% |
-| `mass_g` | 10/12 = 83.3% |
+| `mass_g` | 11/12 = 91.7% |
 | `length_cm` | 8/12 = 66.7% |
 | `quadrant` | 4/12 = 33.3% |
 
@@ -609,7 +609,7 @@ A table where 58% is terrible: **95 ordinary emails and 5 spam.** The baseline i
 |---|---|---|
 | `sticker_says` | 100% — top of the chart | 🚨 **LEAKY — remove** |
 | `colour` | 91.7% | ✅ very useful (+58.4) |
-| `mass_g` | 83.3% | ✅ useful (+50.0) |
+| `mass_g` | 91.7% | ✅ very useful (+58.4) |
 | `length_cm` | 66.7% | ✅ useful (+33.4) |
 | `quadrant` | 33.3% — flat on the line | ❌ **useless — remove** |
 

@@ -26,7 +26,7 @@
   <rect x="486" y="113.192" width="84" height="206.808" rx="8" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
   <text x="528" y="99.192" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">0.9848</text>
   <text x="528" y="342" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">CNN smudged</text>
-  <text x="370" y="368" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the same 540 held-out digits &#183; the CNNs are a 5-seed mean</text>
+  <text x="370" y="358" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the same 540 held-out digits &#183; the CNNs are a 5-seed mean</text>
   <rect x="640" y="80" width="140" height="250" rx="10" fill="#F5F8FA" stroke="#55636F" stroke-width="2" stroke-linejoin="round"/>
   <text x="710" y="104" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B" text-anchor="middle">what she claims</text>
   <line x1="652" y1="116" x2="768" y2="116" stroke="#C7CDD4" stroke-width="1.5" stroke-linecap="round"/>
@@ -39,5 +39,5 @@
   <text x="652" y="260" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">NOT claim: that</text>
   <text x="652" y="280" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">a CNN beats a</text>
   <text x="652" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">logistic reg.</text>
-  <text x="400" y="372" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A bar chart with no dummy bar in it has the answer cut off.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">A bar chart with no dummy bar in it has the answer cut off.</text>
 </svg>

@@ -314,6 +314,8 @@ Test items, in the **same order every single run**: ____________ , ____________ 
 | 3 | blurry training photos | ______ | ______ | ______ | ______ | ____________ |
 | 4 | imbalance 40 / 40 / 5 | ______ | ______ | ______ | ______ | ____________ |
 
+> **📏 Size note:** rows 2 and 3 use about 15 photos per class, not 40. That is deliberate, to keep the photo-taking short, but it means those runs change two things at once (the photos *and* how many). Row 1 already showed that fewer photos can shrink margins alone. So compare the two row-2 tests with each other, and treat a comparison with row 0 as a hint, not proof.
+
 **Which experiment hurt the most?** ______________________________
 
 **Did you predict that one?** ______________  If not, which did you predict? ______________
@@ -636,6 +638,8 @@ Your numbers will differ. **The shape is what matters.** This is what a typical 
 | 4 | imbalance 40 / 40 / 5 | 2/3 real | 88 | 83 | *comb never predicted* | blind spot |
 
 **Which hurt most?** **Experiment 2** — and this is where most predictions go wrong. Most people predict experiment 1 (five photos), because five photos *sounds* obviously insufficient. Experiment 2 does more damage **and** does it in a nastier way, because on its own table it looks like an improvement. If you predicted experiment 2 and can say why, that is genuinely strong thinking and you should be told so.
+
+*Size note for the answer:* rows 2 and 3 used about 15 photos per class against the baseline's 40, so those two runs changed the number of photos as well as the background or the blur. The table-against-sink comparison in row 2 is still clean (same model, same photos, only the place changed). The comparison with row 0 is a hint, not proof.
 
 ---
 

@@ -30,7 +30,7 @@
   <circle cx="232" cy="138" r="5" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
   <circle cx="302" cy="114" r="5" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
   <circle cx="372" cy="90" r="5" fill="#F4D5E9" stroke="#C42B8C" stroke-width="2"/>
-  <text x="232" y="370" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">false positive rate</text>
+  <text x="232" y="360" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">false positive rate</text>
   <text x="48" y="210" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle" transform="rotate(-90 48 210)">true positive rate</text>
   <rect x="410" y="78" width="370" height="216" rx="12" fill="#FFFFFF" stroke="#C42B8C" stroke-width="2" stroke-linejoin="round"/>
   <text x="432" y="102" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">each strip: (left + right) &#247; 2 &#215; width</text>

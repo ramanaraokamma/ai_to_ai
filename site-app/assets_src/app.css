@@ -624,3 +624,7 @@ body.nav-open { overflow: hidden; }
 .doc [data-ic="🛟"], .doc [data-ic="🧾"]      { --sec: var(--correct); }
 .doc [data-ic="⛔"], .doc [data-ic="🚫"]      { --sec: var(--wrong); }
 /* 📓 vocabulary · 📋 at-a-glance · ☐ checkbox stay neutral on purpose */
+
+/* Level 4: the stand-in label, repeated at the top of every weekly page */
+.stand-in-note { margin: 0 0 1rem; padding: .5rem .75rem; font-size: .875rem;
+  border-left: 4px solid var(--model); background: color-mix(in srgb, var(--model) 8%, transparent); border-radius: 4px; }

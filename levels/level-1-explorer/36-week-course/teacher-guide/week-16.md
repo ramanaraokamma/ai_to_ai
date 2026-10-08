@@ -199,7 +199,7 @@ not.
 
 This is the big one and it will come from the student in almost exactly those words. Do not just say
 "no." Do this instead: ask *"right about what?"* Then hold up something they never trained on — a
-stapler, a TV remote — and ask what the model will say. They will work out that it has to say one of
+fork, a TV remote — and ask what the model will say. They will work out that it has to say one of
 the three, and that the percentage has nothing to hold on to. That conversation is worth more than
 your correction.
 
@@ -283,8 +283,12 @@ Use this list to get ready. It has what to do the night before, what to do on th
 - [ ] **Decide your own confidence policy** for the spoon/toothbrush/comb model, with a real number
       in it. You need one so you can disagree with the student's and make them defend theirs.
 - [ ] **Find one household object** that is definitely *not* a spoon, a toothbrush or a comb. A
-      stapler, a TV remote, a rubber duck. It sits on the table all lesson, unexplained, until
-      minute 30. This works better than you expect.
+      fork, a TV remote, a rubber duck. It sits on the table all lesson, unexplained, until
+      minute 30. This works better than you expect. (The student guide's worked example uses a
+      fork, so a fork is the easy choice.)
+- [ ] **Find a stapler as well, and keep it hidden** (in a bag or a drawer). It must not be on
+      the table early. It is for card 6, and the surprise only works if the student has not seen
+      a stapler used as the example.
 
 ### 5 minutes on the day
 
@@ -455,21 +459,21 @@ This segment has two parts: **the fork** (you do it) and **the balance arithmeti
 
 > "Right. Same model — spoon, toothbrush, comb. Three boxes. That's all it has. And I hold up…"
 >
-> *(Pick up the mystery object you put on the table at the start. A stapler.)*
+> *(Pick up the mystery object you put on the table at the start. A fork.)*
 >
-> "…this. A stapler. There is no stapler box. There never was. What does the model say?"
+> "…this. A fork. There is no fork box. There never was. What does the model say?"
 >
 > *(Let them think. Then write the answer on the board.)*
 >
 > ```
->    stapler held up:    spoon 74   ·   toothbrush 15   ·   comb 11
+>    fork held up:       spoon 74   ·   toothbrush 15   ·   comb 11
 > ```
 >
 > "Seventy-four per cent spoon. Margin of fifty-nine — that's a *bigger* margin than it gets on a
 > real comb. And it is completely, totally wrong."
 >
 > "It is not broken. Read that again — it is not broken. It's doing exactly what it was built to do.
-> It has a hundred points of belief and three boxes, and a stapler is a bit more spoon-shaped than
+> It has a hundred points of belief and three boxes, and a fork is a bit more spoon-shaped than
 > it is comb-shaped, so that's where the belief went. It had nowhere else to put it."
 
 **Ask this:**
@@ -478,7 +482,7 @@ This segment has two parts: **the fork** (you do it) and **the balance arithmeti
 > - *Hoping for:* a fourth box, a "don't know" box, an "other" box.
 > - *If they say "we should let it say I don't know":* that IS the answer — tell them the professional
 >   name for it. Draw the bin from Figure 16.3 on the board and label it `other`.
-> - *If they say "add a stapler class":* good, and then push: "and a fork class, and a pen class,
+> - *If they say "add a fork class":* good, and then push: "and a pen class, and a mug class,
 >   and a rubber duck class? How many boxes is that?" They should arrive at: one box for everything
 >   else. That is the `other` class.
 > - *If they say "it should just say nothing":* honest and reasonable. Ask "what would a product do
@@ -650,7 +654,7 @@ thirty seconds. Then:
 
 > **"What was held up?"**
 
-Point at the word "stapler" on the card. Then pick up the actual stapler from the table.
+Point at the word "stapler" on the card. Then bring out the actual stapler you hid in your bag and put it on the table.
 
 > "Ninety-nine per cent. The biggest margin on any card. And there is no stapler box. The model has
 > never seen a stapler in its life. It's not lying to you — it has a hundred points of belief and

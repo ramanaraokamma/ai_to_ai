@@ -9,7 +9,8 @@
     <text x="190" y="110">the sun rose.</text>
     <text x="340" y="110">the moon rose.</text>
   </g>
-  <text x="50" y="140" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">12 tokens. 3 sentences. So how many word PAIRS should there be?</text>
+  <text x="50" y="136" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">12 tokens. 3 sentences.</text>
+  <text x="50" y="156" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">So how many word PAIRS should there be?</text>
   <rect x="30" y="176" width="440" height="330" rx="10" fill="#FFFFFF" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
   <path d="M30 186 A10 10 0 0 1 40 176 H460 A10 10 0 0 1 470 186 V216 H30 Z" fill="#F5F8FA" stroke="none"/>
   <line x1="30" y1="216" x2="470" y2="216" stroke="#14202B" stroke-width="3"/>

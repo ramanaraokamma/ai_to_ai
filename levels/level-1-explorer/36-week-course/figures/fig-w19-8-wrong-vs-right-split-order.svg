@@ -22,7 +22,7 @@
     </g>
     <rect x="52" y="244" width="296" height="72" rx="10" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
     <text x="200" y="270" font-size="14" fill="#14202B" text-anchor="middle">The model already studied all six.</text>
-    <text x="200" y="298" font-size="14" fill="#CC2B1D" text-anchor="middle">Score comes out near 100% and means nothing.</text>
+    <text x="200" y="298" font-size="14" fill="#CC2B1D" text-anchor="middle">Score is near 100% and means nothing.</text>
 
     <rect x="430" y="66" width="340" height="270" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
     <g transform="translate(448,80) scale(0.4)">

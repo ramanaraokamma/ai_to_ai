@@ -10,10 +10,10 @@
   <text x="610" y="108" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">FRESH EXAMPLES</text>
 
   <!-- training : open cards, magnifier over them -->
-  <g transform="translate(70,124)">
-    <rect x="0" y="0" width="96" height="24" rx="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
-    <rect x="0" y="32" width="96" height="24" rx="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
-    <rect x="0" y="64" width="96" height="24" rx="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+  <g transform="translate(56,124)">
+    <rect x="0" y="0" width="120" height="24" rx="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="0" y="32" width="120" height="24" rx="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
+    <rect x="0" y="64" width="120" height="24" rx="5" fill="#FFFFFF" stroke="#1F6FB2" stroke-width="2" stroke-linejoin="round"/>
     <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F">
       <text x="8" y="17">message + answer</text>
       <text x="8" y="49">message + answer</text>

@@ -44,7 +44,7 @@
   <rect x="363.4" y="260" width="8" height="22" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>
   <text x="60" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">train and test rows interleaved</text>
   <text x="60" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">through every one of the 30 weeks</text>
-  <text x="246" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end">AUC 0.8139</text>
+  <text x="246" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end">AUC 0.8139</text>
   <rect x="410" y="214" width="360" height="122" rx="12" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
   <g transform="translate(422,224) scale(0.32)"><circle cx="50" cy="50" r="34" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3"/><polyline points="34,52 45,64 68,38" fill="none" stroke="#1B7A4B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g>
   <text x="460" y="242" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B">time split</text>
@@ -81,6 +81,6 @@
   <line x1="667.2" y1="254" x2="667.2" y2="288" stroke="#14202B" stroke-width="2" stroke-dasharray="5 4"/>
   <text x="440" y="296" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">weeks 0&#8211;21 train: 2200 rows</text>
   <text x="440" y="314" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#14202B">weeks 22&#8211;29 test: 800 rows</text>
-  <text x="626" y="324" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end">AUC 0.5249</text>
+  <text x="626" y="344" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="end">AUC 0.5249</text>
   <text x="400" y="370" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">0.8139 &#8722; 0.5249 = 0.2890, produced by nothing but the choice of where to cut.</text>
 </svg>

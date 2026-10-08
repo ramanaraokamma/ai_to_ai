@@ -34,9 +34,9 @@
   <rect x="371" y="129" width="60" height="15" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
   <rect x="431" y="129" width="44" height="15" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
   <rect x="325" y="129" width="150" height="15" fill="none" stroke="#14202B" stroke-width="2"/>
-  <text x="400" y="160" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">four rows, same labels</text>
-  <text x="400" y="168" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">list-of-dicts</text>
-  <text x="400" y="188" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">records in a list = a table</text>
+  <text x="400" y="158" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">four rows, same labels</text>
+  <text x="400" y="178" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">list-of-dicts</text>
+  <text x="400" y="198" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">records in a list = a table</text>
   <rect x="585" y="78" width="46" height="20" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
   <rect x="631" y="78" width="60" height="20" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>
   <rect x="691" y="78" width="44" height="20" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5"/>

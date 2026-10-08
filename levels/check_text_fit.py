@@ -29,6 +29,12 @@ ROOT = Path(__file__).resolve().parent
 SAFETY = 1.05
 TOL = 3.0
 
+# Reviewed false positives: (figure file name, kind) -> why the text is fine as drawn
+ALLOW = {
+    ("fig-w29-3-false-stamp.svg", "OVERLAP"): "the rotated FALSE stamp is deliberately drawn over the words",
+    ("fig-w20-4-item-plain-number-versus-whole-history.svg", "OVERFLOW-BOX"): "text sits on the front card; checker measured the back card",
+    ("fig-w19-9-blank-axis-to-label.svg", "OVERFLOW-BOX"): "circular badge centred on the cell edge, like A, B, D",
+}
 _fonts = {}
 BAD_TRANSFORMS = []
 INHERITED = ("font-size", "font-family", "font-weight", "text-anchor", "dominant-baseline")
@@ -236,7 +242,7 @@ def main(argv):
     total, bad = 0, 0
     kinds = {}
     for f in figures(argv):
-        found = check(f)
+        found = [(k, m) for k, m in check(f) if (Path(f).name, k) not in ALLOW]
         total += 1
         if found:
             bad += 1

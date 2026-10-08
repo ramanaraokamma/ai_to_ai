@@ -19,7 +19,7 @@
     <rect x="178" y="58" width="146" height="200" rx="12" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="3" stroke-linejoin="round"/>
     <rect x="204" y="86" width="46" height="46" rx="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
     <rect x="256" y="86" width="46" height="46" rx="7" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
-    <text x="253" y="150" font-size="12" fill="#55636F" text-anchor="middle">these exact two, learnt by heart</text>
+    <text x="253" y="145" font-size="12" fill="#55636F" text-anchor="middle">these exact two,</text><text x="253" y="159" font-size="12" fill="#55636F" text-anchor="middle">learnt by heart</text>
     <text x="251" y="176" font-size="18" fill="#14202B" text-anchor="middle">memorizing</text>
     <text x="251" y="204" font-size="12" fill="#55636F" text-anchor="middle">works on the exact</text>
     <text x="251" y="222" font-size="12" fill="#55636F" text-anchor="middle">photos it studied</text>

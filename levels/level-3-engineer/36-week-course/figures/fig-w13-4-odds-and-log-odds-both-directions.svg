@@ -2,7 +2,7 @@
   <title>The same journey, both ways</title>
   <desc>Two rows of three boxes. The top row goes forwards: p = 0.90, then odds = 9 because 0.90 divided by 0.10 is 9, then z = 2.197225 because that is ln(9). The bottom row goes backwards: z = 2.197225, then e to the minus z is 0.111111, then p = 0.900000 because 1 divided by 1.111111 is 0.9. A line between them says z is the log of the odds, which is why z is called the logit.</desc>
   <text x="400" y="44" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#14202B" text-anchor="middle">The same journey, both ways</text>
-  <text x="40" y="88" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">forwards: a probability into a raw score</text>
+  <text x="40" y="72" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">forwards: a probability into a raw score</text>
   <rect x="40" y="106" width="220" height="68" rx="10" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3" stroke-linejoin="round"/>
   <text x="150" y="132" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle">p = 0.90</text>
   <text x="150" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#14202B" text-anchor="middle">the chance</text>

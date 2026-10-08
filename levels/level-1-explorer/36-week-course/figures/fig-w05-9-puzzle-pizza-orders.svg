@@ -55,7 +55,8 @@
     <text x="458" y="270">Exactly ONE pair of orders is an</text>
     <text x="458" y="294">exact duplicate. Which two?</text>
   </g>
-  <text x="458" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">Careful — one pair looks like a duplicate and isn't.</text>
+  <text x="458" y="322" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">Careful — one pair looks like a</text>
+  <text x="458" y="340" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">duplicate and isn't.</text>
 
   <text x="400" y="374" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F" text-anchor="middle">Finish by writing the controlled vocabulary that would have stopped all of this.</text>
 </svg>

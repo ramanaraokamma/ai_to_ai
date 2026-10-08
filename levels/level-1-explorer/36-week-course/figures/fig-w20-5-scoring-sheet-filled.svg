@@ -120,6 +120,6 @@
     <rect x="40" y="574" width="420" height="80" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
     <text x="250" y="604" font-size="18" fill="#14202B" text-anchor="middle">correct: 11 out of 15</text>
     <text x="250" y="634" font-size="18" fill="#14202B" text-anchor="middle">11 / 15  =  0.7333  =  73.3%</text>
-    <text x="250" y="682" font-size="14" fill="#55636F" text-anchor="middle">Write the TRUE column in BEFORE you test. Then your brain cannot help you.</text>
+    <text x="250" y="675" font-size="14" fill="#55636F" text-anchor="middle">Write the TRUE column in BEFORE you test.</text><text x="250" y="692" font-size="14" fill="#55636F" text-anchor="middle">Then your brain cannot help you.</text>
   </g>
 </svg>

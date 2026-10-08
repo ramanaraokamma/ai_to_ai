@@ -54,5 +54,6 @@
 
   <circle cx="140" cy="664" r="12" fill="#F4D5E9" stroke="#C42B8C" stroke-width="3"/>
   <path d="M140 656 L142.5 663 L150 663 L144 667.5 L146 675 L140 670.5 L134 675 L136 667.5 L130 663 L137.5 663 Z" fill="#C42B8C" stroke="none"/>
-  <text x="162" y="669" font-size="14" fill="#55636F">The two starred segments are the ones nobody else at the fair has.</text>
+  <text x="162" y="664" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">The two starred segments are the ones</text>
+  <text x="162" y="682" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#55636F">nobody else at the fair has.</text>
 </svg>

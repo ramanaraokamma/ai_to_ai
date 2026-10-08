@@ -44,7 +44,7 @@
       <text x="562" y="234">true cb</text>
     </g>
     <text x="660" y="102" font-size="14" fill="#55636F" text-anchor="middle">what it SAID</text>
-    <text x="660" y="278" font-size="14" fill="#55636F" text-anchor="middle">rows = truth, columns = what it said</text>
+    <text x="645" y="278" font-size="14" fill="#55636F" text-anchor="middle">rows = truth, columns = what it said</text>
     <text x="660" y="300" font-size="14" fill="#55636F" text-anchor="middle">shade the diagonal, then add it up</text>
 
     <text x="400" y="380" font-size="14" fill="#55636F" text-anchor="middle">Leave the empty grid up. The student rules their own copy of it in the activity.</text>

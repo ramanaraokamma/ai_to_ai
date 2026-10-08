@@ -29,10 +29,10 @@
   <text x="195.0" y="228.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">5</text>
   <rect x="228" y="204" width="66" height="48" fill="#FFFFFF" stroke="#CC2B1D" stroke-width="2" stroke-dasharray="6 4"/>
   <text x="261.0" y="228.0" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#CC2B1D" text-anchor="middle" dominant-baseline="central">?</text>
-  <line x1="340" y1="228" x2="300" y2="228" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
+  <line x1="328" y1="228" x2="300" y2="228" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round"/>
   <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#CC2B1D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(300 228) rotate(180.0)"/>
-  <text x="352" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">nothing</text>
-  <text x="352" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">here</text>
+  <text x="334" y="214" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">nothing</text>
+  <text x="334" y="232" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#CC2B1D">here</text>
   <text x="196" y="282" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">3 across, then 2 across. There is no</text>
   <text x="196" y="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">pair of numbers that describes that.</text>
   <rect x="488" y="156" width="66" height="48" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="2"/>

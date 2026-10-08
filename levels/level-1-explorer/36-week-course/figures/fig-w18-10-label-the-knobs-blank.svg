@@ -19,12 +19,12 @@
 
     <rect x="180" y="146" width="440" height="150" rx="12" fill="#F5F8FA" stroke="#14202B" stroke-width="3" stroke-linejoin="round"/>
     <text x="400" y="176" font-size="18" fill="#14202B" text-anchor="middle">MY MODEL</text>
-    <rect x="250" y="196" width="300" height="18" rx="6" fill="#6D28D9"/>
-    <rect x="250" y="222" width="90" height="18" rx="6" fill="#55636F"/>
-    <rect x="250" y="248" width="54" height="18" rx="6" fill="#55636F"/>
-    <text x="230" y="205" font-size="12" fill="#55636F" text-anchor="end">spoon</text>
-    <text x="230" y="231" font-size="12" fill="#55636F" text-anchor="end">toothbrush</text>
-    <text x="230" y="257" font-size="12" fill="#55636F" text-anchor="end">comb</text>
+    <rect x="262" y="196" width="300" height="18" rx="6" fill="#6D28D9"/>
+    <rect x="262" y="222" width="90" height="18" rx="6" fill="#55636F"/>
+    <rect x="262" y="248" width="54" height="18" rx="6" fill="#55636F"/>
+    <text x="244" y="205" font-size="12" fill="#55636F" text-anchor="end">spoon</text>
+    <text x="244" y="231" font-size="12" fill="#55636F" text-anchor="end">toothbrush</text>
+    <text x="244" y="257" font-size="12" fill="#55636F" text-anchor="end">comb</text>
 
     <rect x="52" y="310" width="160" height="42" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 5" stroke-linejoin="round"/>
     <text x="66" y="331" font-size="14" fill="#55636F" dominant-baseline="central">A =</text>

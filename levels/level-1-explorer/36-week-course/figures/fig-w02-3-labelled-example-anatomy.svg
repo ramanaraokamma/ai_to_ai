@@ -35,7 +35,7 @@
       <rect x="44" y="78" width="12" height="8" rx="3" fill="#FFFFFF" stroke="#845F00" stroke-width="3" stroke-linejoin="round"/>
     </g>
 
-    <rect x="60" y="214" width="564" height="40" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
+    <rect x="30" y="214" width="624" height="40" rx="10" fill="#F5F8FA" stroke="#C7CDD4" stroke-width="1.5"/>
     <text x="342" y="234" font-size="18" fill="#14202B" text-anchor="middle" dominant-baseline="central">Both halves required. The label goes on BEFORE training, by a person.</text>
 
     <line x1="30" y1="278" x2="770" y2="278" stroke="#C7CDD4" stroke-width="1.5" stroke-dasharray="6 6"/>

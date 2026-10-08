@@ -30,10 +30,10 @@ Then an explanation tool, which shows what a model is looking at, revealed the t
 
 > **The wolf photos in their training set had snow in the background. The husky photos did not.**
 
-The model had learned very little about wolves. It had mostly learned: *white fuzzy stuff at the bottom of the picture → say wolf.* Photograph a husky standing in snow and it is likely to say **wolf**, and sound sure about it.
+The explanation tool suggested that the model had leaned on the background more than on the animal. The likely story is a rule like *white fuzzy stuff at the bottom of the picture → say wolf.* (We cannot check that ourselves. It is the researchers' explanation, told from memory.) If that is right, a husky standing in snow could well get called **wolf**, and sound sure about it.
 
 ![The wolves that were made of snow](../figures/fig-w18-6-husky-in-snow.svg)
-*Figure 18.6 — Nobody wrote that rule. Nobody wanted it. It came out of the photos.*
+*Figure 18.6 — If the model did lean on snow, nobody wrote that rule and nobody wanted it. It would have come out of the photos.*
 
 Now sit with the part that should genuinely worry you: **it worked.** It passed. A good score hid the problem. And a good score did not show the snow.
 
@@ -330,7 +330,7 @@ Everything below can be redone at home. You need the laptop, `baseline-v1.tm`, y
 - [ ] **Five test items lined up in a fixed order** on the table. Suggested: spoon, toothbrush, comb, fork, empty hand.
 - [ ] Last week's baseline table on the table beside you
 - [ ] The spot marked — tape on the floor, or a book on the table — so you stand in the same place every run
-- [ ] Two folders of photos ready if you're doing experiments 2 and 3: `sabotage-one-background` and `sabotage-blurry` (about 15 per class each)
+- [ ] Two folders of photos ready if you're doing experiments 2 and 3: `sabotage-one-background` and `sabotage-blurry` (about 15 per class each, fewer than the baseline's 40 — see the size note under the results table)
 
 > **⚠️ Watch out:** the fork and the empty hand are in **no class**, so a "perfect" score is **3 out of 5**, not 5 out of 5. That isn't a bug in the lab — it's the point. If you only used your three real objects, score out of 3 and the pattern is identical.
 
@@ -358,6 +358,8 @@ Everything below can be redone at home. You need the laptop, `baseline-v1.tm`, y
 **Experiment 2 — one background only. ⭐ The moment of the term.** This one gets tested **twice**: once on the surface the photos were taken on, and once somewhere completely different. Test A scores *higher than the baseline* and Test B falls apart. If you only do one experiment ever again, do this one.
 
 **Experiment 3 — blurry photos.** Trained on photos shot while waving the object; tested with everything held perfectly still and sharp. Still correct, margins down hard.
+
+> **📏 Size note.** Experiments 2 and 3 use about 15 photos per class, not 40. That is on purpose: it keeps the photo-taking short. But it means these two runs change **two** things at once, the kind of photos *and* how many. Experiment 1 already showed that fewer photos can shrink margins on their own. So the best comparison in Experiment 2 is table against sink (same model, same photos, only the place changed). When you compare Experiments 2 and 3 with the baseline's 40-per-class numbers, treat the difference as a hint, not proof of which change caused it.
 
 And notice the odd bit: **it was trained blurry and tested sharp and it still struggled**, which hints that a mismatch between training and testing photos can hurt. We did not test the reverse direction, but a model trained only on perfect studio photos may well struggle with the wobbly ones real people take.
 

@@ -54,5 +54,5 @@
   <rect x="20" y="334" width="370" height="44" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
   <text x="34" y="360" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">count = ______</text>
   <rect x="410" y="334" width="370" height="44" rx="8" fill="#FFFFFF" stroke="#C7CDD4" stroke-width="1.5" stroke-linejoin="round"/>
-  <text x="424" y="360" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">one sentence about these mornings: ______________</text>
+  <text x="424" y="360" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#55636F">one sentence about these mornings: ________</text>
 </svg>

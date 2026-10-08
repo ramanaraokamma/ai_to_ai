@@ -20,7 +20,7 @@
   <rect x="688" y="66" width="78" height="40" fill="#D9EAF9" stroke="#1F6FB2" stroke-width="3"/>
   <text x="727" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle" dominant-baseline="central">hot</text>
   <text x="727" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B" text-anchor="middle">+2.0701</text>
-  <text x="560" y="46" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the 5 tokens the regex finds</text>
+  <text x="560" y="60" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">the 5 tokens the regex finds</text>
   <rect x="24" y="152" width="470" height="164" rx="10" fill="#F5F8FA" stroke="#C42B8C" stroke-width="3" stroke-linejoin="round"/>
   <text x="40" y="176" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C">add up the evidence the model actually has:</text>
   <text x="48" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#14202B">hot</text>

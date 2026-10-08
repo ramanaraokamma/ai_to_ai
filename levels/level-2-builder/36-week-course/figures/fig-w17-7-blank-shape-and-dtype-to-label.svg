@@ -46,5 +46,5 @@
   <text x="182" y="308" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">E</text>
   <line x1="372" y1="322" x2="336" y2="292" stroke="#55636F" stroke-width="2" stroke-linecap="round"/>
   <polyline points="-13,-8 0,0 -13,8" fill="none" stroke="#55636F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(336 292) rotate(-140.2)"/>
-  <text x="560" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">One phrase per box: how many rows, how many columns, the whole shape, one cell, the dtype.</text>
+  <text x="400" y="376" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#55636F" text-anchor="middle">One phrase per box: how many rows, how many columns, the whole shape, one cell, the dtype.</text>
 </svg>

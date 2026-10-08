@@ -129,12 +129,13 @@ audience was about 27 graduate students on a survey, and only a minority trusted
 before seeing explanations.
 
 Then an explanation tool showed the trick. **The wolf photos in the training set had snow in the
-background; the husky photos did not.** The model had learned very little about wolves. It had
-mostly learned: *white fuzzy stuff at the bottom of the picture → say wolf.* Photograph a husky in
-snow and it is likely to say wolf, and sound sure of itself.
+background; the husky photos did not.** The tool suggested the model had leaned on the background
+more than on the animal. The likely story is *white fuzzy stuff at the bottom of the picture → say
+wolf.* Say it as the researchers' explanation, told from memory, not as something your student can
+check. If it is right, a husky in snow could well be called wolf, and sound sure of itself.
 
-Nobody wrote that rule. Nobody wanted it. **The model learns the easiest pattern that separates your
-classes, not the pattern you meant.**
+If the model did lean on snow, nobody wrote that rule and nobody wanted it. **The model learns the
+easiest pattern that separates your classes, not the pattern you meant** (Week 15's lesson).
 
 Experiment 2 today is a close cousin of that story, shown in your own
 kitchen, in about ten minutes.
@@ -239,6 +240,8 @@ Use this list to get ready.
       *new* photos:
       - **Experiment 2** needs ~15 photos per class taken all on **one surface, one light**.
       - **Experiment 3** needs ~15 photos per class taken **while waving the object** so they blur.
+      These sets are deliberately smaller than the baseline's 40 per class (it keeps the shoot to
+      twelve minutes and the lab inside its timings). See "Size note" under Experiments 2 and 3.
       Twelve minutes with a phone. If the student shot them as their optional extra last week,
       brilliant — check they exist. If not, shoot them yourself tonight.
       *(Experiments 1 and 4 need no new photos — they are done by deleting samples.)*
@@ -305,11 +308,12 @@ This section is the plan for the whole lesson, one segment at a time.
 >
 > *(Pause. Let it land. Then, quietly:)*
 >
-> "The model had learned very little about wolves. It had mostly learned: white fuzzy stuff at the
-> bottom of the picture, say wolf. Photograph a husky standing in snow and it is likely to say wolf,
-> and sound sure about it."
+> "The tool suggested the model had leaned on the background more than on the animal. The likely
+> story is a rule like: white fuzzy stuff at the bottom of the picture, say wolf. That is the
+> researchers' explanation, and I am telling it from memory. If it is right, a husky standing in
+> snow could well get called wolf, and sound sure about it."
 >
-> "Nobody wrote that rule. Nobody wanted it. It came from the photos. And here is the thing that
+> "If that is what happened, nobody wrote that rule. Nobody wanted it. It came from the photos. And here is the thing that
 > should worry you: **it worked.** It passed. A good score hid the problem. You can't just read the
 > answer off the numbers inside a model."
 >
@@ -586,6 +590,12 @@ explanation.) Remove the table and a chunk of the evidence may vanish.
 in the snow: there the snow went with one label, here the table goes with every label, but either way
 the model was never shown that backgrounds vary.**
 
+**Size note (say it once, briefly).** The `sabotage-one-background` set has about 15 photos per class,
+not the baseline's 40. That is a deliberate change of size, so this run changes two things: the
+number of backgrounds *and* the number of photos. Experiment 1 already showed that fewer photos can
+shrink margins by themselves. So the clean comparison is Test A against Test B: same model, same
+photos, only the place changed. The 95% against the baseline's 91% is a hint, not proof.
+
 ### Experiment 3 — blurry photos
 
 **The sabotage:** load the `sabotage-blurry` set — same variety, same counts, but shot while waving
@@ -594,6 +604,11 @@ the object.
 **Test with the objects held perfectly still and sharp.**
 
 **Expected result:** still mostly correct, margins down hard (86 → 34, 66 → 12).
+
+**Size note.** The `sabotage-blurry` set also has about 15 photos per class against the baseline's
+40, so this run changes the photo quality *and* the number of photos. Experiment 1 showed that fewer
+photos can shrink margins on their own, so do not put all of the drop on blur. The blur explanation
+below stays an untested guess.
 
 **The likely explanation (untested):** blur hides edges, and edges are a useful signal in a photo of a small
 object. Feeding blurry photos is like learning to recognise faces from out-of-focus pictures —

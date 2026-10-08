@@ -24,7 +24,7 @@
   <polyline points="600.00,244.00 600.00,296.00 200.00,296.00 200.00,252.00" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#C42B8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(200 250) rotate(-90)"/>
   <text x="400" y="288" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#C42B8C" text-anchor="middle">and again, with the centres where they are now</text>
-  <rect x="300" y="314" width="200" height="44" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="270" y="314" width="260" height="44" rx="10" fill="#E2F7ED" stroke="#1B7A4B" stroke-width="3" stroke-linejoin="round"/>
   <text x="400" y="336" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#14202B" text-anchor="middle" dominant-baseline="central">nobody changed cluster &#8211; STOP</text>
   <line x1="600.00" y1="256.00" x2="600.00" y2="314.00" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round"/>
   <polyline points="-11,-7 0,0 -11,7" fill="none" stroke="#1B7A4B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(600.00 314.00) rotate(90.00)"/>
